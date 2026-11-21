@@ -121,13 +121,12 @@ theorem weaklySorted_step (hn : 0 < n) {f g : AlgElement (HeckeGen n) ℝ}
 
 /-- The Hecke rules alone, as a rewriting system. -/
 noncomputable def heckeOnlySystem (n : ℕ) (hn : 0 < n) (hp : HeckeParams) :
-    RewritingSystem (HeckeGen n) ℝ where
-  rules := (List.finRange n).map (fun i => heckeRelation i hp)
-  nonempty := by
+    RewritingSystem (HeckeGen n) ℝ :=
+  .ofList ((List.finRange n).map (fun i => heckeRelation i hp)) (by
     intro h
     have := congrArg List.length h
     simp at this
-    omega
+    omega)
 
 /-- **Every reduction from a weakly sorted element uses the Hecke rules only.**
     Any reduction sequence in the completed system starting at a weakly sorted

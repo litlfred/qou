@@ -271,9 +271,9 @@ structure JetStratifiedSystem (G : Type u) (k : Type v) [Ring k] where
   /-- The descended subsystem (inherited from level `n`). -/
   descended : RewritingSystem G k
   /-- The transient rules (new at level `n+1`). -/
-  transientRules : List (ReductionRule G k)
+  transientRules : Set (ReductionRule G k)
   /-- The full system is the union of descended and transient. -/
-  union_spec : full.rules = descended.rules ++ transientRules
+  union_spec : full.rules = descended.rules ∪ transientRules
 
 /-! ## §3  Jet-Stratified S-Polynomial Classification -/
 
@@ -342,7 +342,7 @@ theorem JetStratifiedSystem.descended_sub_full
     ∀ r ∈ jss.descended.rules, r ∈ jss.full.rules := by
   intro r hr
   rw [jss.union_spec]
-  exact List.mem_append_left _ hr
+  exact Or.inl hr
 
 /-- **Descended GS inheritance** — a theorem (was an axiom until 2026-11-21).
     If the descended subsystem is a GS basis, every descended × descended
@@ -423,7 +423,7 @@ structure DegreeBucket (G : Type u) (k : Type v) [Ring k] where
   /-- The degree (leading monomial length) for this bucket. -/
   degree : ℕ
   /-- Rules whose leading monomial has this degree. -/
-  rules : List (ReductionRule G k)
+  rules : Set (ReductionRule G k)
 
 /-- Partition a rewriting system into degree buckets.
 
@@ -436,8 +436,8 @@ noncomputable def bucketize {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     List (DegreeBucket G k) :=
   (List.range (maxDeg + 1)).map fun d => {
     degree := d,
-    rules := sys.rules.filter fun r =>
-      (leadingMonomial ord r.relation r.nonzero).length = d
+    rules := {r ∈ sys.rules |
+      (leadingMonomial ord r.relation r.nonzero).length = d}
   }
 
 /-! ### Degree-filtered reduction — axiom deleted 2026-09-06, it COLLAPSED the type

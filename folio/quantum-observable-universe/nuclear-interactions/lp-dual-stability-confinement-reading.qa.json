@@ -7,7 +7,7 @@
     "md": "folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability-confinement-reading.md"
   },
   "source_hashes": {
-    "md": "5e7f17b79bad",
+    "md": "239486dd0431",
     "ts": "f9c31a6c490e"
   },
   "criteria": {
@@ -95,6 +95,40 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-probe-narrative": [
@@ -181,6 +215,40 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "cite-named-theorem": [
@@ -267,6 +335,40 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-agent-speak": [
@@ -353,6 +455,40 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-emoji-content": [
@@ -439,6 +575,40 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-first-person-work": [
@@ -525,6 +695,40 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-time-stamped-notes": [
@@ -611,6 +815,40 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-unicode-crash": [
@@ -697,6 +935,40 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-editorializing": [
@@ -783,6 +1055,40 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-scholarly-default": [
@@ -869,6 +1175,40 @@
           "def_hash": "90af5388e1e9"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-title-scholarly": [
@@ -1007,6 +1347,40 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-author-notes-pollution": [
@@ -1093,6 +1467,40 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "voice-status-section": [
@@ -1179,6 +1587,40 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "framework-canonical": [
@@ -1265,6 +1707,40 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "wall-side-correct": [
@@ -1355,6 +1831,42 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1481,6 +1993,40 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-no-numerology": [
@@ -1567,6 +2113,40 @@
           "def_hash": "bfbb93c220cc"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-witness-pinned": [
@@ -1653,6 +2233,40 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -1791,6 +2405,40 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1877,6 +2525,40 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1963,6 +2645,40 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -2049,6 +2765,40 @@
           "def_hash": "791b80875ca1"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "compute-witness-exists": [
@@ -2299,6 +3049,42 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -2373,6 +3159,44 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -2738,6 +3562,42 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -3029,6 +3889,42 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "bib-cite-resolves": [
@@ -3124,6 +4020,44 @@
           "def_hash": "e703243fe06f"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -3221,6 +4155,44 @@
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -3317,6 +4289,44 @@
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -3412,6 +4422,44 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -3626,6 +4674,36 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. Unchanged: 'The confinement mechanism is not that quarks are unstable, but that the binding operator requires a topologically complete structure to be stable.' Also 'Partial confinement is therefore not sufficient'."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' Fixed: the 'not that quarks are unstable, but that ...' construction is gone."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. No instance of this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -3722,6 +4800,36 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. The only change is the end of the first bullet: 'so this is a property of this matrix' now reads 'so the bound would have to come from the matrix itself; for a singular G (kappa(G) = infinity) it says nothing'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. No instance of this criterion."
       }
     ],
     "trap-em-dash": [
@@ -3818,6 +4926,36 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. The only change is the end of the first bullet: 'so this is a property of this matrix' now reads 'so the bound would have to come from the matrix itself; for a singular G (kappa(G) = infinity) it says nothing'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. No instance of this criterion."
       }
     ],
     "trap-triples": [
@@ -3914,6 +5052,36 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. The only change is the end of the first bullet: 'so this is a property of this matrix' now reads 'so the bound would have to come from the matrix itself; for a singular G (kappa(G) = infinity) it says nothing'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. No instance of this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -4010,6 +5178,37 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. The only change is the end of the first bullet: 'so this is a property of this matrix' now reads 'so the bound would have to come from the matrix itself; for a singular G (kappa(G) = infinity) it says nothing'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' New closing line 'The binding operator is stable on topologically complete structures and on no proper part of them.' is an aphoristic summary, and it carries the overclaim recorded under da-false-claim."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. Fixed: the closing line is a plain consequence sentence that names the B_3 sub-unit."
       }
     ],
     "trap-meta-commentary": [
@@ -4106,6 +5305,36 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. The only change is the end of the first bullet: 'so this is a property of this matrix' now reads 'so the bound would have to come from the matrix itself; for a singular G (kappa(G) = infinity) it says nothing'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. No instance of this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -4202,6 +5431,36 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. The only change is the end of the first bullet: 'so this is a property of this matrix' now reads 'so the bound would have to come from the matrix itself; for a singular G (kappa(G) = infinity) it says nothing'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. No instance of this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -4298,6 +5557,36 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. The only change is the end of the first bullet: 'so this is a property of this matrix' now reads 'so the bound would have to come from the matrix itself; for a singular G (kappa(G) = infinity) it says nothing'. Nothing else changed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. No instance of this criterion."
       }
     ],
     "trap-superlative": [
@@ -4398,6 +5687,36 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. Unchanged: 'This is the precise algebraic statement of confinement.' It rests on the two properties that the opening paragraph says are neither derived nor currently established numerically."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' Fixed: 'the precise algebraic statement of confinement' is gone; 'In this reading' scopes the identification."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. No instance of this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -4498,6 +5817,36 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. Unchanged: 'The braid group realizability constraint prevents this.' has no clear antecedent for 'this' (the global minimum at tr_M = 0?), and it does not say which constraint or how."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' Fixed: 'The braid group realizability constraint prevents this.' is replaced by a sentence that names what is excluded."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. No instance of this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -4605,6 +5954,40 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "acronym-in-glossary": [
@@ -4679,6 +6062,42 @@
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "1 acronym(s) are candidates for the glossary: LP. Run glossary:acronyms for the folio-wide list with expansions."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "1 acronym(s) are candidates for the glossary: LP. Run glossary:acronyms for the folio-wide list with expansions."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "1 acronym(s) are candidates for the glossary: LP. Run glossary:acronyms for the folio-wide list with expansions."
       }
     ],
     "foreshadows-point-forward": [
@@ -4735,6 +6154,42 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f"
       }
     ],
     "da-false-claim": [
@@ -4860,6 +6315,67 @@
         "reviewed_at": "2026-11-21T20:40:00.000Z",
         "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
         "evidence": "Re-read at f50ee4d. Fixed: the bullet no longer calls the kappa bound 'a property of this matrix' for a matrix it declares singular. It now says the bound would have to come from the matrix and is vacuous when kappa(G) is infinite. That is consistent with the opening paragraph."
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "fail",
+        "severity": "major",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' Introduced by 2f18395: 'stable ... on no proper part of them' contradicts 'Individual quarks are LP-stable' two sentences earlier, since each quark is a proper part of the 3-fold Borromean product. 'stable on topologically complete structures' also generalises from the one Borromean case to every topologically complete structure. The replaced sentence ('requires a topologically complete structure to be stable') stated only necessity. The opening paragraph says neither LP property is established, and nothing in prop:lp-dual-stability supports the universal form."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. Fixed: the closing sentence is back to a necessity-only claim scoped to the Borromean product, the form the remark carried before this PR, and it no longer contradicts 'Individual quarks are LP-stable'. The claim stays inside a remark whose opening paragraph says neither LP property is established."
       }
     ],
     "da-vacuous": [
@@ -4921,6 +6437,36 @@
           "version": "v1"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -4984,6 +6530,36 @@
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-overclaim": [
@@ -5046,6 +6622,67 @@
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "fail",
+        "severity": "major",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' See da-false-claim: the new closing sentence asserts stability on all topologically complete structures and on no proper part, which is wider than the old necessity-only sentence and wider than the single Borromean case the remark discusses."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. Fixed: no universal claim over topologically complete structures remains."
       }
     ],
     "da-hidden-dof": [
@@ -5107,6 +6744,36 @@
           "version": "v1"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -5170,6 +6837,36 @@
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-arity-conflation": [
@@ -5231,6 +6928,36 @@
           "version": "v1"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -5294,6 +7021,36 @@
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-citation-misuse": [
@@ -5355,6 +7112,36 @@
           "version": "v1"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -5418,6 +7205,67 @@
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:15:00.000Z",
+        "reviewed_sha": "c4b1ef208a8186da71efdd20590d5d28f6e54ed8",
+        "evidence": "Re-read at c4b1ef2. 2f18395 rewrote the last two paragraphs: 'Individual quarks are LP-stable, but ... This is the precise algebraic statement of confinement ... The confinement mechanism is not that quarks are unstable, but that ...' now reads 'Individual quarks are LP-stable and the B_3 sub-unit is LP-unstable. In this reading, that is what confinement means algebraically: ... The binding operator is stable on topologically complete structures and on no proper part of them.'; '... is the reason the LP has a global minimum at tr_M = 0. The braid group realizability constraint prevents this.' now reads '... gives the unconstrained LP a global minimum at tr_M = 0. Requiring the solution to be realised by a braid excludes that minimum.' 'the unconstrained LP' is new. An LP with no constraints and a linear objective has no finite minimum. What is meant is the LP of prop:lp-dual-stability (sum x_i = n_target, Gx >= 0, x >= 0) without the braid-realisability constraint. The claim that the negative eigenvalue gives a global minimum at tr_M = 0 is unchanged and remains unexplained."
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T21:45:00.000Z",
+        "reviewed_sha": "6f813563c2d40041186c6f0db2b87b6457c1732c",
+        "evidence": "Re-read at 6f81356. 6f81356 replaces 'The binding operator is stable on topologically complete structures and on no proper part of them.' with 'Stability of the binding operator therefore requires the topologically complete structure; the B_3 sub-unit alone is not enough.', and 'gives the unconstrained LP a global minimum' with 'gives the LP, without the braid constraint, a global minimum'. Fixed: the LP is now named as the LP without the braid constraint. Unchanged and not counted: why the negative eigenvalue gives a minimum at tr_M = 0 is not explained."
       }
     ],
     "da-empirical-fragility": [
@@ -5479,6 +7327,36 @@
           "version": "v1"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -5542,6 +7420,36 @@
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-reproducibility": [
@@ -5603,6 +7511,36 @@
           "version": "v1"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -5666,6 +7604,36 @@
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "dak-companion-present": [
@@ -5727,6 +7695,36 @@
           "version": "v1"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "criterion applies to dak; block kind \"remark\" is document"
       }
     ],
@@ -5855,6 +7853,36 @@
           "version": "v1"
         },
         "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      },
+      {
+        "field_hash": {
+          "md": "92498a39b60d",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6e1f4af408c41841d06e6ecf291ac09d9ddd1fac",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      },
+      {
+        "field_hash": {
+          "md": "239486dd0431",
+          "ts": "f9c31a6c490e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "28b88d9c808caa4a62527505d644288d5f69567f",
         "notes": "criterion applies to dak; block kind \"remark\" is document"
       }
     ],

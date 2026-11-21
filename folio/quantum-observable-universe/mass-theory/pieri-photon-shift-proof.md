@@ -14,27 +14,18 @@ $\lambda$-isotypic component of the $\mathrm{SU}_q(2)$ action
 \cite{kassel1995}. The hypothesis on $\beta_m$ says its image lies
 in the $V_\lambda$-isotypic component.
 
-**Support convention.** The element $\gamma \beta_m$ is of mixed
-degree: the identity term of $\gamma$ and the terms built from $\sigma_i$ with
-$i \leq n - 1$ leave $\beta_m$ at level $n$ of the tower, while a
-$\sigma_n$ term, read in $H_{n+1}(q)$, couples one further strand and
-lands at level $n + 1$. Support is therefore tracked in the
-Wedderburn labels of the tower algebra $\bigoplus_m H_m(q)$, one
-label set per level. At level $n + 1$ write
-$\lambda + \square := (\lambda_1 + 1, \lambda_2) \vdash n+1$ and
-$\lambda - \square := (\lambda_1, \lambda_2 + 1) \vdash n+1$; the
-name of the latter comes from the two-row $\mathrm{SU}_q(2)$
-identification, under which a complete two-box column carries the
-trivial determinant weight and $(\lambda_1, \lambda_2 + 1)$
-column-reduces to $(\lambda_1 - 1, \lambda_2)$. All partitions in a
-given support statement below live at the level indicated.
-
 **Step 1: reduction by linearity.**
-Write the photon as $\gamma = \mathbf{1} + \varphi_0\sigma_a + \varphi_1\sigma_b + \varphi_{01}\,\sigma_a\sigma_b^{-1}$ on consecutive generators $a, b = a + 1$ ([photon](#def:photon)). Then $\gamma \beta_m = \beta_m + \varphi_0\,\sigma_a\beta_m + \varphi_1\,\sigma_b\beta_m + \varphi_{01}\,\sigma_a\sigma_b^{-1}\beta_m$. Since $\mathrm{supp}(x + y) \subseteq \mathrm{supp}(x) \cup \mathrm{supp}(y)$, it suffices to bound the support of each summand. The identity term contributes the level-$n$ component $\mathrm{supp}(\beta_m) = \{\lambda\}$, unchanged.
+Write $\gamma\beta_m = \beta_m + \varphi_0\,\sigma_a\beta_m + \varphi_1\,\sigma_b\beta_m + \varphi_{01}\,\sigma_a\sigma_b^{-1}\beta_m$. Since $\mathrm{supp}(x + y) \subseteq \mathrm{supp}(x) \cup \mathrm{supp}(y)$, it suffices to bound the support of each summand.
 
-If $b \leq n - 1$, every term lies in $H_n(q)$. The vertex term is included because $\sigma_b^{-1} = \sigma_b - h$. Every term then commutes with the central idempotent $e_\lambda$. Since $\beta_m = e_\lambda \beta_m$, also $\gamma\beta_m = e_\lambda \gamma \beta_m$. For the four-term photon the step reads: anything that commutes with $\sigma_a$ and the unit $\sigma_b$ commutes with $\gamma(\varphi)$.
+**Case $b \leq n - 1$.** Every term lies in $H_n(q)$; the vertex term does too, because $\sigma_b^{-1} = \sigma_b - h$ with $h = q - q^{-1}$. The central idempotent $e_\lambda$ of $H_n(q)$ commutes with every element, and $\beta_m = e_\lambda \beta_m$, so $\gamma\beta_m = \gamma e_\lambda \beta_m = e_\lambda\gamma\beta_m$. Hence $\mathrm{supp}(\gamma\beta_m) \subseteq \{\lambda\}$.
 
-If $b = n$, the terms containing $\sigma_n$ lie in $H_{n+1}(q)$ and act on the module induced from $V_\lambda$. Its isotypic components are the $\lambda + \square$ and $\lambda - \square$ of the support convention, and every element of $H_{n+1}(q)$, the vertex term included, preserves that decomposition. This is the claimed containment. $\blacksquare$
+**Case $b = n$.** All four terms lie in $H_{n+1}(q) \supset H_n(q)$. Let $e_\mu$, $\mu \vdash n + 1$, be the central idempotents of $H_{n+1}(q)$. By the branching rule for $H_n(q) \subset H_{n+1}(q)$ at generic $q$ (the same as for $S_n \subset S_{n+1}$), $e_\mu e_\lambda = 0$ unless $\mu \supset \lambda$. For any $x \in H_{n+1}(q)$,
+
+$$
+  e_\mu\, x\, \beta_m \;=\; x\, e_\mu\, e_\lambda\, \beta_m ,
+$$
+
+since $e_\mu$ is central. So $e_\mu \gamma \beta_m = 0$ unless $\mu \supset \lambda$. The partitions $\mu \vdash n + 1$ with $\mu \supset \lambda$ are $(\lambda_1 + 1, \lambda_2)$, $(\lambda_1, \lambda_2 + 1)$ when $\lambda_2 < \lambda_1$, and $(\lambda_1, \lambda_2, 1)$. By Schur–Weyl duality for $\mathrm{SU}_q(2)$ \cite{kassel1995}, $H_{n+1}(q)$ acts on $V_\square^{\otimes(n+1)}$ through its two-row quotient, so the three-row component acts by zero there. This gives the stated containment. $\blacksquare$
 
 **Scope.**
 The proposition gives a *containment* of supports, not equality. The

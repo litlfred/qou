@@ -1,7 +1,7 @@
 The proof proceeds in four steps: decomposition of the mass integral
 using the :refterm[descent]{#descent} involution, identification of the descended term
 with the unknot-core holonomy, localisation of the transient terms to
-exceptional divisors, and evaluation via the quantum dilogarithm.
+exceptional divisors, and evaluation via the symmetric $q$-dilogarithm.
 
 By
 ([eigenspace decomposition of the mass integrand](#lem:topological-mass-eigenspace-decomp)),
@@ -39,6 +39,6 @@ in both inequalities above. Both are open: neither is forced by the disc
 splitting and support hypotheses.  If each
 exceptional-divisor summand equals the symmetric $q$-dilogarithm
 $-\mathrm{Li}_2^q(-z_i)$, as the
-[quantum dilogarithm evaluation](#conj:topological-mass-dilogarithm) conjectures,
+[symmetric $q$-dilogarithm evaluation](#conj:topological-mass-dilogarithm) conjectures,
 then the bound reads
 $\mathfrak{m}(\varrho) \le \lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert + \sum_{i=1}^{N} \bigl(-\mathrm{Li}_2^q(-z_i)\bigr)$.  $\square$
