@@ -16,3 +16,7 @@ For the neutron, the deficit is larger: $[\mathbf{1}] = -0.202$, $L_+ = -0.010$,
 ## Confinement universality
 
 The confined nucleon NF depends only on $q_0$ and the quark types. It is independent of the photon polarization $(\varphi_0, \varphi_1, \varphi_{01})$ that created the quarks.
+
+## Consistency check against the net target
+
+This check is a comparison with physical data and is not part of the proof of the selection. Among the candidate operators, the topologically selected $\mathcal{B}_3$ has the smallest $|\Delta\mathrm{net}|$, and it confines. The cost-minimising channel $L_+$ gives $\mathrm{net} \approx 1.22$, which is far from the proton target. The identity leaves the quark demand profile unchanged.
