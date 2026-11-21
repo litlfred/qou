@@ -208,4 +208,140 @@ theorem value_local (R₀ S S' : Code E) (T : Finset E)
 
 end Value
 
+/-! ### Two internal edges -/
+
+section Pair
+
+variable {E : Type u} [Fintype E] [DecidableEq E]
+
+omit [Fintype E] [DecidableEq ι] in
+/-- A sum over the labels of two internal edges is a double sum over `ι`. -/
+theorem sum_glue_pair (e f : E) (hef : e ≠ f) (b : ι) (v : { x // x ∉ ({e, f} : Finset E) } → ι)
+    (G : (E → ι) → R) :
+    ∑ u, G (glue {e, f} u v) =
+      ∑ i, ∑ j, G (Function.update (Function.update (glue {e, f} (fun _ => b) v) e i) f j) := by
+  let φ : ({ x // x ∈ ({e, f} : Finset E) } → ι) ≃ ι × ι :=
+    { toFun := fun u => (u ⟨e, by simp⟩, u ⟨f, by simp⟩)
+      invFun := fun p x => if x.1 = e then p.1 else p.2
+      left_inv := by
+        intro u; funext ⟨x, hx⟩
+        simp only [Finset.mem_insert, Finset.mem_singleton] at hx
+        rcases hx with rfl | rfl
+        · simp
+        · simp [Ne.symm hef]
+      right_inv := by intro p; simp [Ne.symm hef] }
+  rw [← φ.symm.sum_comp, Fintype.sum_prod_type]
+  refine Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ => congrArg G ?_
+  funext x
+  simp only [glue, Equiv.piEquivPiSubtypeProd_symm_apply, φ, Equiv.coe_fn_symm_mk,
+    Function.update_apply, Finset.mem_insert, Finset.mem_singleton]
+  by_cases hxf : x = f
+  · subst hxf; simp [Ne.symm hef]
+  · by_cases hxe : x = e
+    · subst hxe; simp [hef]
+    · simp [hxe, hxf]
+
+end Pair
+
+/-! ### The second Reidemeister move -/
+
+section R2
+
+variable {E : Type u} [Fintype E] [DecidableEq E] (M : Model R ι)
+
+omit [Fintype ι] [DecidableEq ι] [Fintype E] [DecidableEq E] in
+theorem occurs_ofJs_pair (a b c d e : E) :
+    (Code.ofJs {(a, b), (c, d)}).Occurs e ↔ (a = e ∨ b = e) ∨ (c = e ∨ d = e) := by
+  simp [Code.Occurs, Code.ofJs]
+
+omit [Fintype ι] [DecidableEq ι] [Fintype E] [DecidableEq E] in
+theorem occurs_ofXs_bigonPar (a b c d e₁ f₁ e : E) (s : Bool) :
+    (Code.ofXs (bigonPar a b c d e₁ f₁ s)).Occurs e ↔
+      c = e ∨ f₁ = e ∨ a = e ∨ e₁ = e ∨ d = e ∨ b = e := by
+  simp only [Code.Occurs, Code.ofXs, bigonPar, Crossing.Mentions]
+  simp
+  tauto
+
+/-- **Second Reidemeister move, parallel strands.** If the crossing tensors of signs `s` and `!s`
+compose to the identity in the sense of `hX`, the value is unchanged by `r2par`. -/
+theorem value_r2par (R₀ : Code E) (a b c d e₁ f₁ : E) (s : Bool)
+    (he : ¬ R₀.Occurs e₁) (hf : ¬ R₀.Occurs f₁) (hef : e₁ ≠ f₁)
+    (hbd : ∀ x ∈ ({a, b, c, d} : Set E), x ≠ e₁ ∧ x ≠ f₁)
+    (hX : ∀ a b c d : ι, ∑ i, ∑ j, M.X s c j a i * M.X (!s) j d i b =
+      if a = b ∧ c = d then 1 else 0) :
+    value M (R₀ + Code.ofJs {(a, b), (c, d)}) =
+      value M (R₀ + Code.ofXs (bigonPar a b c d e₁ f₁ s)) := by
+  classical
+  obtain ⟨hae, haf⟩ := hbd a (by simp)
+  obtain ⟨hbe, hbf⟩ := hbd b (by simp)
+  obtain ⟨hce, hcf⟩ := hbd c (by simp)
+  obtain ⟨hde, hdf⟩ := hbd d (by simp)
+  refine value_local M R₀ _ _ {e₁, f₁} ?_ ?_ ?_
+  · intro e heT
+    simp only [Finset.mem_insert, Finset.mem_singleton] at heT
+    rcases heT with rfl | rfl <;> assumption
+  · intro e heT
+    simp only [Finset.mem_insert, Finset.mem_singleton, not_or] at heT
+    rw [occurs_ofJs_pair, occurs_ofXs_bigonPar]
+    have h1 : e₁ ≠ e := Ne.symm heT.1
+    have h2 : f₁ ≠ e := Ne.symm heT.2
+    tauto
+  · intro v
+    rw [sum_glue_pair e₁ f₁ hef M.base, sum_glue_pair e₁ f₁ hef M.base]
+    set L₀ := glue {e₁, f₁} (fun _ => M.base) v with hL₀
+    have hL₀e : L₀ e₁ = M.base := by
+      simp [hL₀, glue, Equiv.piEquivPiSubtypeProd_symm_apply]
+    have hL₀f : L₀ f₁ = M.base := by
+      simp [hL₀, glue, Equiv.piEquivPiSubtypeProd_symm_apply]
+    have hnot : e₁ ∉ ({f₁} : Finset E) := by simpa using hef
+    -- left side: only the base labels on `e₁, f₁` survive
+    have hlhs : ∀ i j, loc M {e₁, f₁} (Code.ofJs {(a, b), (c, d)})
+        (Function.update (Function.update L₀ e₁ i) f₁ j) =
+        if i = M.base then if j = M.base then
+          (if L₀ a = L₀ b then 1 else 0) * (if L₀ c = L₀ d then 1 else 0) else 0 else 0 := by
+      intro i j
+      have hn1 : ¬ (Code.ofJs {(a, b), (c, d)} : Code E).Occurs e₁ := by
+        rw [occurs_ofJs_pair]; tauto
+      have hn2 : ¬ (Code.ofJs {(a, b), (c, d)} : Code E).Occurs f₁ := by
+        rw [occurs_ofJs_pair]; tauto
+      simp only [loc]
+      rw [Finset.prod_insert hnot, Finset.prod_singleton]
+      simp only [uf, if_neg hn1, if_neg hn2]
+      have h1 : Function.update (Function.update L₀ e₁ i) f₁ j e₁ = i := by
+        simp [hef]
+      have h2 : Function.update (Function.update L₀ e₁ i) f₁ j f₁ = j := by simp
+      have hx : ∀ x, x ≠ e₁ → x ≠ f₁ → Function.update (Function.update L₀ e₁ i) f₁ j x = L₀ x :=
+        fun x h1 h2 => by simp [h1, h2]
+      rw [h1, h2]
+      simp only [xw, jw, Code.ofJs, Multiset.map_zero, Multiset.prod_zero, one_mul,
+        Multiset.insert_eq_cons, Multiset.map_cons, Multiset.map_singleton, Multiset.prod_cons,
+        Multiset.prod_singleton, hx a hae haf, hx b hbe hbf, hx c hce hcf, hx d hde hdf]
+      by_cases hi : i = M.base <;> by_cases hj : j = M.base <;> simp [hi, hj]
+    have hrhs : ∀ i j, loc M {e₁, f₁} (Code.ofXs (bigonPar a b c d e₁ f₁ s))
+        (Function.update (Function.update L₀ e₁ i) f₁ j) =
+        M.X s (L₀ c) j (L₀ a) i * M.X (!s) j (L₀ d) i (L₀ b) := by
+      intro i j
+      have ho1 : (Code.ofXs (bigonPar a b c d e₁ f₁ s)).Occurs e₁ := by
+        rw [occurs_ofXs_bigonPar]; tauto
+      have ho2 : (Code.ofXs (bigonPar a b c d e₁ f₁ s)).Occurs f₁ := by
+        rw [occurs_ofXs_bigonPar]; tauto
+      simp only [loc]
+      rw [Finset.prod_insert hnot, Finset.prod_singleton]
+      simp only [uf, if_pos ho1, if_pos ho2, mul_one]
+      have h1 : Function.update (Function.update L₀ e₁ i) f₁ j e₁ = i := by
+        simp [hef]
+      have h2 : Function.update (Function.update L₀ e₁ i) f₁ j f₁ = j := by simp
+      have hx : ∀ x, x ≠ e₁ → x ≠ f₁ → Function.update (Function.update L₀ e₁ i) f₁ j x = L₀ x :=
+        fun x h1 h2 => by simp [h1, h2]
+      simp only [xw, jw, Code.ofXs, bigonPar, Multiset.map_zero, Multiset.prod_zero, mul_one,
+        Multiset.insert_eq_cons, Multiset.map_cons, Multiset.map_singleton, Multiset.prod_cons,
+        Multiset.prod_singleton, h1, h2, hx a hae haf, hx b hbe hbf, hx c hce hcf, hx d hde hdf]
+    simp only [hlhs, hrhs]
+    rw [hX]
+    rw [Fintype.sum_eq_single M.base fun x hx => by simp [hx],
+      Fintype.sum_eq_single M.base fun x hx => by simp [hx]]
+    by_cases hab : L₀ a = L₀ b <;> by_cases hcd : L₀ c = L₀ d <;> simp [hab, hcd]
+
+end R2
+
 end QOU.MathlibExt.PL.Diagram
