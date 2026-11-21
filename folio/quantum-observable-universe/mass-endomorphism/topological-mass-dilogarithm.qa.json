@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "624d3737529c",
-    "ts": "2c5416dd4666"
+    "ts": "c9828d9658b7"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -93,6 +93,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-emoji-content": [
@@ -478,6 +495,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -549,6 +581,23 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-ai-slop": [
@@ -646,6 +695,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -882,6 +946,24 @@
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
       }
     ],
     "q-usage-regime-detected": [
@@ -1073,6 +1155,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-no-numerology": [
@@ -1198,6 +1297,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -1269,6 +1385,23 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -1340,6 +1473,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1465,6 +1615,23 @@
           "def_hash": "b5e2fdf9d66a"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1536,6 +1703,23 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -1667,6 +1851,23 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "compute-lp-dual-present": [
@@ -1738,6 +1939,23 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1795,6 +2013,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "detangler-section-band": [
@@ -1852,6 +2088,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1911,6 +2165,25 @@
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1969,6 +2242,25 @@
           "def_hash": "19a5005a8bb6"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2066,6 +2358,37 @@
           "edge_span_mean": 3,
           "worst_target": ""
         }
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 3,
+          "in_degree": 2,
+          "cone_size": 43,
+          "depth": 20,
+          "pagerank": 0.00021,
+          "edge_span_max": 4,
+          "edge_span_mean": 3,
+          "worst_target": ""
+        }
       }
     ],
     "detangler-graph-energy": [
@@ -2138,6 +2461,29 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "detangler-topic-coherence": [
@@ -2195,6 +2541,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2252,6 +2616,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "bib-cite-resolves": [
@@ -2772,6 +3154,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2836,6 +3233,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "fit-section-chapter": [
@@ -2928,6 +3340,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "wall-side-statement": [
@@ -2992,6 +3419,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "wall-side-proof": [
@@ -3056,6 +3498,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -3352,6 +3809,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-vacuous": [
@@ -3474,6 +3961,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-circular": [
@@ -3597,6 +4114,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-overclaim": [
@@ -3719,6 +4266,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-hidden-dof": [
@@ -3842,6 +4419,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-non-sequitur": [
@@ -3965,6 +4572,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -4089,6 +4726,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. The finding at 0def288 (the status note said the second equality 'holds by definition') is fixed: the note now gives the termwise-integration argument, which matches the 40-digit check recorded earlier (z = 0.3: integral 0.2801635352... = -Li2^q(-0.3)). The Lean docstring of negLi2q says the series identity is not proved there, and tm_dilogarithm_evaluation's docstring ('the second is the definition of negLi2q') is correct for the Lean definition, so narrative and Lean no longer disagree."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-citation-misuse": [
@@ -4212,6 +4879,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-definitional-ambiguity": [
@@ -4337,6 +5034,37 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. Title and tag fixed. Left: (1) the Lean headline of tm_dilogarithm_evaluation (tm_dilogarithm_evaluation.lean line 100) still reads 'Exceptional-divisor summand = quantum dilogarithm', the name def:quantum-dilogarithm-disambiguation gives to Phi_q; (2) the new title calls the function the 'Rogers q-dilogarithm' while the .md and the disambiguation table call it the 'symmetric q-dilogarithm (Kashaev limit)', and elsewhere in the corpus 'Rogers dilogarithm' names the classical Bloch-group function; (3) the domain of z_i is still not stated (the series converges for |z| < q), so 'holds unconditionally' in the status note is unqualified."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. Fixed: the naming is now consistent. The .ts title and tag, the Lean module and theorem headlines, the .md ('symmetric q-dilogarithm') and the def:quantum-dilogarithm-disambiguation table row ('Symmetric q-dilogarithm (Kashaev limit)') agree. Unchanged: the .md still does not state the domain of z_i (Lean has z : N -> R; the integral of ln_q(1+t)/t needs 1 + t > 0 on [0, z_i], i.e. z_i > -1, and the series -Li2^q(-z) needs a radius of convergence). Outside this block, not counted here: the sketch rem:topological-mass-dilogarithm-sketch is titled 'Argument sketch for the quantum dilogarithm evaluation', topological-mass-proof.md links this block as 'quantum dilogarithm evaluation', and the disambiguation .ts authorNote calls Li2^q 'the Rogers Li2^q'. In the disambiguation table 'quantum dilogarithm' names the product Phi_q."
       }
     ],
     "da-empirical-fragility": [
@@ -4460,6 +5188,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-physical-implausibility": [
@@ -4583,6 +5341,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-reproducibility": [
@@ -4706,6 +5494,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "da-referee-verdict": [
@@ -4831,6 +5649,36 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -4894,6 +5742,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "expo-milnor-clarity": [
@@ -5247,6 +6110,29 @@
           "broken_edges": 0,
           "redundant_edges": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "metrics": {
+          "uses_count": 3,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
       }
     ],
     "uses-formal-coverage": [
@@ -5328,6 +6214,25 @@
           "def_hash": "ce2b8102b97f"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -5416,6 +6321,27 @@
         "metrics": {
           "decl_claimants": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "metrics": {
+          "decl_claimants": 1
+        }
       }
     ],
     "trap-negation-contrast": [
@@ -5496,6 +6422,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -5576,6 +6517,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "trap-em-dash": [
@@ -5656,6 +6612,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "trap-triples": [
@@ -5736,6 +6707,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -5816,6 +6802,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -5896,6 +6897,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -5976,6 +6992,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -6056,6 +7087,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "trap-superlative": [
@@ -6136,6 +7182,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -6216,6 +7277,21 @@
         "reviewed_at": "2026-11-21T19:59:59.000Z",
         "reviewed_sha": "e7cbb8fee046436e18aba0a701a42216aa85d63b",
         "evidence": "Re-read at e7cbb8f. 28b40d0730 changed only the .ts: title 'Quantum dilogarithm evaluation ...' -> 'Rogers q-dilogarithm evaluation of exceptional-divisor contributions', tag quantum-dilogarithm -> rogers-q-dilogarithm, and the first 2026-11-21 status note now says 'Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series' (was 'holds by definition'). The .md and Lean are unchanged. No issue for this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. f50ee4d changed only the .ts (title 'Rogers q-dilogarithm evaluation ...' -> 'Symmetric q-dilogarithm evaluation of exceptional-divisor contributions'; tag rogers-q-dilogarithm -> symmetric-q-dilogarithm) and the headline of the Lean docstring of tm_dilogarithm_evaluation ('quantum dilogarithm' -> 'symmetric q-dilogarithm'). The .md is unchanged. Title, tag, Lean module and theorem headlines, .md and the disambiguation table row now all say 'symmetric q-dilogarithm'. lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms tm_dilogarithm_evaluation / tm_divisor_chart_evaluation / negLi2q_integral_representation: propext, Classical.choice, Quot.sound; no sorry, no ': True'. No issue for this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -6365,6 +7441,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "3be4cf265aee62e98a84f3382cf53455534332c4"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7",
+          "graph": "58a5d260384c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "dak-companion-present": [
@@ -6430,6 +7524,21 @@
           "version": "v1"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
@@ -6539,6 +7648,21 @@
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
     "dak-label-prefix-matches-kind": [
@@ -6604,6 +7728,21 @@
           "version": "v1"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
@@ -6688,6 +7827,21 @@
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
       }
     ],
     "id-unique": [
@@ -6741,6 +7895,23 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "id-stable": [
@@ -6797,6 +7968,23 @@
         },
         "reviewed_tree": "b4d1537e07090821cb5ec164e34b9056cb9442c9",
         "notes": "renamed from \"lem:topological-mass-dilogarithm\" (declared in renamedFrom)"
+      },
+      {
+        "field_hash": {
+          "md": "624d3737529c",
+          "ts": "c9828d9658b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ]
   },
