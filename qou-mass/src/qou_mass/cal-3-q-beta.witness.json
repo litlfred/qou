@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T14:24:41.681299+00:00",
-  "commitSha": "a887b738d50de18b183f19bda31380997368a24c",
+  "computedAt": "2026-11-20T17:25:27.522062+00:00",
+  "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
   "assertions": [],
   "allPassed": true,
   "durationMs": 3,
   "computation": "cal-3-q-beta",
   "scriptFile": "build_cal_3_q_beta_witness.py",
-  "scriptHash": "c5c490119ed2",
-  "scriptCommitSha": "a887b738d50de18b183f19bda31380997368a24c",
+  "scriptHash": "466d76ef0461",
+  "scriptCommitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,11 +21,10 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "832ce4e14a00d523"
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -34,7 +33,7 @@
     "reproduce": "python3 -u computations/build_cal_3_q_beta_witness.py"
   },
   "description": "CAL-2 proxy: free-neutron β-decay Q-value Q_β(n), derived from the CODATA-2022 registry as (m_n − m_p) − m_e. Per the QOU three-calibration discipline (folio/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md), Q_β(n) is the numerical proxy for CAL-2, the neutron β-decay width 𝔇_β with Q_β = ℏ/𝔇_β — NOT CAL-3, which is the pion decay width 𝔇_π with proxy m_π (owner ruling 2026-06-26; the witness stem 'cal-3-q-beta' is historical and is kept only to avoid a rename blast radius). It fixes the hadronic energy scale E_0 via E_0 = Q_β(n) / |Δ(net)|, where Δ(net) = h(h-2)/2 is the symbolic NF difference between neutron and proton braids. This witness exists so codata_constants.py loads the value from a source-of-truth JSON instead of hardcoding it. DATASET (owner ruling 2026-11-20, \"CODATA 2022\"; bean qou-0e2p / PR #7205): sourced from the CODATA-2022 registry rather than the AME-2020 direct value 0.78233341(61), so that CAL-1, CAL-2 and CAL-3 come from one experimental dataset. The two determinations differ by +190.85 ppb = +0.208 σ — statistically indistinguishable, so this is a dataset-consistency choice and NOT an accuracy claim; the residual direction is an outcome, never a reason.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
   "parameters": {
     "source": "CODATA 2022 registry: neutron-proton mass difference energy equivalent (1.29333251(38) MeV) minus m_e.",

@@ -3,20 +3,21 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-q-beta-spectral-bridge",
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-beta-spectral-bridge-sketch",
   "@type": [
-    "folio-assistant-sci:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:q-beta-spectral-bridge",
-  "kind": "proof",
-  "title": "Proof of q beta spectral bridge",
+  "label": "rem:q-beta-spectral-bridge-sketch",
+  "kind": "remark",
+  "title": "Argument sketch for the Q_β spectral bridge",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-q-beta-spectral-bridge"
+    "papers/quantum-observable-universe/blocks/conj-q-beta-spectral-bridge"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-q-beta-spectral-bridge",
   "text": "q-beta-spectral-bridge-proof.md",
   "provenance": "authored"
 }

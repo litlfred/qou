@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T13:02:58.725919+00:00",
-  "commitSha": "98c4eeceb4cb3b87c81e0ab23c77e42ba9a53f02",
+  "computedAt": "2026-11-21T14:44:03.325363+00:00",
+  "commitSha": "ae1deab3a23413a110bb8f9981ae41dd20234743",
   "assertions": [
     {
       "name": "hecke_relation_both_gens",
@@ -22,11 +22,11 @@
     },
     {
       "name": "chi_std_vs_native_hoefsmit",
-      "computed": 8.881784197001252e-16,
-      "expected": 0.0,
+      "computed": "2.139607135031726108979087162380326057929e-40",
+      "expected": "0",
       "passed": true,
-      "tolerance": "1e-09",
-      "source": "pyhecke_native.chi_lambda_braid([2,1],...)"
+      "tolerance": "1.000000000000000000000000000000000000000e-35",
+      "source": "pyhecke_native.chi_lambda_braid_mpfr([2,1],...)"
     },
     {
       "name": "brute_vs_fast_blocks_light",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 25066,
+  "durationMs": 27464,
   "computation": "all-nuclides-wedderburn-spectral-v2",
   "scriptFile": "all_nuclides_wedderburn_spectral_v2.py",
-  "scriptHash": "cc9e97d3b340",
-  "scriptCommitSha": "cd816982242e2d18d7818fddea30a2fa465625c6",
+  "scriptHash": "2359eb999236",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [

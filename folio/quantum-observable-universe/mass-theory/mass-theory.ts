@@ -135,7 +135,9 @@ export default chapter({
             "pair-skein-mass-formula-proof",
             "flavor-split-substrate",
             "flavor-split-substrate-proof",
+            "flavor-split-substrate-mass",
             "flavor-split-substrate-interpretation",
+            "flavor-split-substrate-codata-comparison",
           ],
         }),
         section({
@@ -1180,6 +1182,7 @@ export default chapter({
       blocks: [
         "mass-open-problems-intro",
         "terminal-resolution",
+        "terminal-resolution-scope",
         "mass-from-generators",
         "volume-tower-decomposition",
         "mass-tower-open-problems-classes",

@@ -1,0 +1,269 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T12:22:14.343288+00:00",
+  "commitSha": "e5d68f9e7ba379b312b990236f834005a3215642",
+  "assertions": [
+    {
+      "name": "v21_is_a_hecke_representation",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "sigma^2 = h sigma + 1 for both generators, the braid relation holds exactly, and chi_(2,1)(sigma_0 sigma_1) = -1 (the standard Hecke character value). Exact in Q(q)."
+    },
+    {
+      "name": "markov_trace_is_a_weighted_character_sum_and_D_kills_1_1_1",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "TR(z) = w_3(z) chi_3 + w_21(z) chi_21 + w_111(z) chi_111 holds on all six NF basis elements with a UNIQUE weight vector, and w_111(z_D) = 0 exactly (convention D is the two-row trace). So D changes only the three scalars w_lambda; the V_(2,1) block of an element does not contain z at all. Weights: w_3 = (q*z + 1)*(q**3*z + q*z + 1)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)), w_21 = -q*(-q + z)*(q*z + 1)/((q**2 - q + 1)*(q**2 + q + 1)), w_111 = q**2*(-q + z)*(-q**3 + q**2*z + z)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))."
+    },
+    {
+      "name": "calibration_reproduces_committed_tr_zD",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "tr^{z_D}(Delta) for all four elements reproduces qbeta-option-e-required-level.witness.json to 1e-24, so the elements are the dashboard's own."
+    },
+    {
+      "name": "block_type_is_independent_of_the_L_slot_convention",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "tr and det of every V_(2,1) block are unchanged under the census's L-/L+ slot swap (reversal is a transpose in this rep)."
+    },
+    {
+      "name": "D_trace_already_contains_the_V21_block",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "for every element, tr^{z_D}(Delta) = w_3(z_D) chi_3 + w_21(z_D) tr(V21 block) exactly. If a block had real positive spectrum, its cosh would ALREADY be inside eps_D; multiplying a separate cosh on top would count it twice."
+    },
+    {
+      "name": "no_scored_element_has_an_imaginary_V21_eigenphase",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "phase types found: ['REAL phase (complex-conjugate spectrum)', 'pi/2 + i a (real spectrum of opposite signs)']. 0 of 4 blocks have real positive spectrum, which is the only case where the half-normalised trace is a cosh >= 1. Delta_S's block is traceless with det = -h^2/4: eigenvalues +-h/2, phase exactly pi/2."
+    },
+    {
+      "name": "alpha_D_is_real_and_negative_at_q0",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "alpha_D(q_0) = -0.04048577734064276491884728 (real, < 0); its zero locus is q**3 - q**2 - 1 = 0, the real root of which is ~1.46557 > q_0. alpha_D(q) + alpha_D(1/q) = h^2/2 exactly (the D bar defect), and beta_D = alpha_D - h^2/4 = -0.05141232947377326226935211 is exactly bar-odd. Both are real at real q, so the ladder factor is a cos, <= 1."
+    },
+    {
+      "name": "beta_D_is_purely_imaginary_on_the_unit_circle_alpha_D_is_not",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "at q = exp(i log q_0): beta_D = (-2.0880974297595278485e-53 - 0.052926948043156916349j) (real part -2.09e-53), alpha_D = (-0.010847534402365170521 - 0.052926948043156916349j). The bar-odd part turns imaginary there, as the Lean lemma says it must; alpha_D itself does not, because of its bar defect h^2/2. So under D only the bar-odd projection has a definite real/imaginary type."
+    },
+    {
+      "name": "even_the_wick_rotated_cosh_is_far_too_small",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "cosh(|Im beta_D|) on that slice = 1.0014009579062729839; the needed phase a = arccosh(F_required) ranges 0.59572051 to 1.1652171 across the four order-zero cells, against |beta_D| = 0.052926948: at least 11.2555x too small. Diagnostic only; no cell is chosen, none is scored."
+    },
+    {
+      "name": "current_base_V3_has_no_imaginary_V21_eigenphase",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "V_(2,1) blocks of the corrected-photon vertex, V^3 and V^-3: ['REAL phase (complex-conjugate spectrum)', 'REAL phase (complex-conjugate spectrum)', 'REAL phase (complex-conjugate spectrum)']. det V = det(s0) det(s1)^-1 = 1, so V^3 is in SL_2; a cosh >= 1 would need real positive spectrum, which none has."
+    },
+    {
+      "name": "vertex_eigenphase_exact_form",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "tr V = -(1 + h^2) and 2 - tr V^3 = h^4 [3]_q exactly in Q(q), so the V^3 eigenphase is theta = 2 arcsin(h^2 sqrt([3]_q)/2) = 0.07626930096809879343628895 at q_0: real, O(h^2). A ladder factor built on it is cos(theta) = 0.99709290648998204336 < 1."
+    },
+    {
+      "name": "gamma_gamma_tower_closed_form_and_bound",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "eps_flavour(V^(3k)) = -h (1 + 2 cos k theta)/[2]^3 reproduces the committed k = [1, 2, 3] to 1e-35. Since |1 + 2 cos| <= 3, every tower member and every probability-weighted average of them gives Q_beta <= 3h E_0/[2]^3 = 0.326065864707 MeV, i.e. F_required >= 2.399311. A factor above 1 needs weights summing to more than 2.4 (a multiplicity), which the corpus does not derive."
+    },
+    {
+      "name": "scored_cell_reproduced_and_cosh_lever_still_far_too_small",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "|eps_flavour(V^3)| E_0^canonical = 0.325433928734692 MeV (matches qbeta-flavour-weight-split.witness.json); F_required = 2.40397002563 > 1, so a real ladder phase (factor <= 1) cannot reach it. A cosh reading needs a = 1.523897207, against the Wick-rotated |beta_D| = 0.052926948: 28.7925x short. Diagnostic only; CODATA in this ratio only."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "qbeta-d-eigenphase-real-or-imaginary",
+  "scriptFile": "qbeta_d_eigenphase_real_or_imaginary_probe.py",
+  "scriptHash": "a1d2098b23eb",
+  "scriptCommitSha": "e5d68f9e7ba379b312b990236f834005a3215642",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_eigenphase_real_or_imaginary_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_eigenphase_real_or_imaginary_probe.py"
+  },
+  "description": "Diagnostic for beans qou-cds1 / qou-pdix: is the convention-D N=1 eigenphase real (cos <= 1) or imaginary (cosh >= 1)? (1) No scored Delta has a V_(2,1) block with real positive spectrum, the only case giving a cosh. (2) Convention D enters only through the scalar Markov weights, w_111(z_D) = 0, and the D trace already contains the V_(2,1) block, so a separate cosh would double count. (3) The ladder phase alpha_D and its bar-odd part beta_D are real at real q; beta_D is purely imaginary on |q| = 1, but even there its cosh is far below every F_required. No fit, no selection, no wiring.",
+  "beans": [
+    "qou-cds1",
+    "qou-pdix"
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "E0_order_zero_MeV": "4.18598136329447589694506215876",
+  "markov_weights": {
+    "w111": "q**2*(-q + z)*(-q**3 + q**2*z + z)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+    "w21": "-q*(-q + z)*(q*z + 1)/((q**2 - q + 1)*(q**2 + q + 1))",
+    "w3": "(q*z + 1)*(q**3*z + q*z + 1)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))"
+  },
+  "alpha_D_q0": "-0.04048577734064276491884727906521444728814",
+  "beta_D_q0": "-0.05141232947377326226935211298456152473019",
+  "beta_D_unit_circle": "(-2.08809742975952784854729411496e-53 - 0.0529269480431569163491334077679j)",
+  "alpha_D_unit_circle": "(-0.0108475344023651705205797413579 - 0.0529269480431569163491334077679j)",
+  "cosh_wick": "1.00140095790627298390595832651",
+  "elements_superseded": [
+    {
+      "element": "nuc9",
+      "tr_V21": "-0.0900168651316554375079485838117",
+      "det_V21": "0.0110459416746485159724008698323",
+      "disc_V21": "-0.0360807306904634193829324369119",
+      "phase_type": "REAL phase (complex-conjugate spectrum)",
+      "half_normalised_trace": "-0.428245211863236392104994164644",
+      "chi_3": "-0.211344607049397707339054365486",
+      "tr_zD": "-0.129075438170319280558296853484",
+      "V21_share_of_tr_zD": "0.17246488436759855045",
+      "F_required_order_zero_E0": "1.4479413773122332157",
+      "arccosh_F_required": "0.91432747875275801331",
+      "superseded": "census element, one-term trace, order-zero E_0; replaced by the V^3 weight-split cell below"
+    },
+    {
+      "element": "nuc11_interleaved",
+      "tr_V21": "-0.0913629738378694766905079844548",
+      "det_V21": "0.0110459416746485159724008698323",
+      "disc_V21": "-0.0358365737100948414347801986794",
+      "phase_type": "REAL phase (complex-conjugate spectrum)",
+      "half_normalised_trace": "-0.434649174134533684998039324037",
+      "chi_3": "-0.260387641790120802073285342788",
+      "tr_zD": "-0.154194885047239705659255514103",
+      "V21_share_of_tr_zD": "0.14652801453303171176",
+      "F_required_order_zero_E0": "1.2120613966167209446",
+      "arccosh_F_required": "0.64025519566455398887",
+      "superseded": "census element, one-term trace, order-zero E_0; replaced by the V^3 weight-split cell below"
+    },
+    {
+      "element": "nuc11_gen_grouped",
+      "tr_V21": "-0.106814457651578049623631258921",
+      "det_V21": "0.0110459416746485159724008698323",
+      "disc_V21": "-0.032774438335193303337715069998",
+      "phase_type": "REAL phase (complex-conjugate spectrum)",
+      "half_normalised_trace": "-0.508157887748645593880406757381",
+      "chi_3": "-0.260387641790120802073285342788",
+      "tr_zD": "-0.158016004341491298055061430273",
+      "V21_share_of_tr_zD": "0.16716654595497026617",
+      "F_required_order_zero_E0": "1.1827515098889144821",
+      "arccosh_F_required": "0.59572050566023748531",
+      "superseded": "census element, one-term trace, order-zero E_0; replaced by the V^3 weight-split cell below"
+    },
+    {
+      "element": "Delta_S",
+      "tr_V21": "0.0",
+      "det_V21": "-0.0109265521331304973505048339193",
+      "disc_V21": "0.0437062085325219894020193356774",
+      "phase_type": "pi/2 + i a (real spectrum of opposite signs)",
+      "half_normalised_trace": null,
+      "chi_3": "-0.210199349900502936568794845697",
+      "tr_zD": "-0.106235639848092790892141987161",
+      "V21_share_of_tr_zD": "0.0",
+      "F_required_order_zero_E0": "1.7592369941834292211",
+      "arccosh_F_required": "1.1652171251406244225",
+      "superseded": "census element, one-term trace, order-zero E_0; replaced by the V^3 weight-split cell below"
+    }
+  ],
+  "current_rulings": {
+    "rulings": "photon s0 s1^-1 (2026-11-20); Q_beta from gamma-gamma, T^3 weight-split scored cell (2026-11-20); two-term Lagrangian trace on all beta routes (2026-11-21)",
+    "two_term_note": "connected two-term part is 0 on three quark strands (BetaRoutesTwoTerm.pairSum_eq_of_total_eq)",
+    "elements": [
+      {
+        "element": "V = s0 s1^-1 (photon vertex)",
+        "tr_V21": "-1.04370620853252198940201933568",
+        "det_V21": "1.0",
+        "disc_V21": "-2.91067735027066772324562475404",
+        "phase_type": "REAL phase (complex-conjugate spectrum)",
+        "half_normalised_trace": "-0.521853104266260994701009667839"
+      },
+      {
+        "element": "V^3 (scored base)",
+        "tr_V21": "1.99418581297996408672819936802",
+        "det_V21": "1.0",
+        "disc_V21": "-0.0232229433094396989938450287024",
+        "phase_type": "REAL phase (complex-conjugate spectrum)",
+        "half_normalised_trace": "0.997092906489982043364099684009"
+      },
+      {
+        "element": "V^-3",
+        "tr_V21": "1.99418581297996408672819936802",
+        "det_V21": "1.0",
+        "disc_V21": "-0.0232229433094396989938450287024",
+        "phase_type": "REAL phase (complex-conjugate spectrum)",
+        "half_normalised_trace": "0.997092906489982043364099684009"
+      }
+    ],
+    "theta_V3": "0.07626930096809879343628895492484340226235",
+    "tower": [
+      {
+        "k": 1,
+        "eps_closed_form": "-0.0769805346013641724322626958124",
+        "eps_committed": "-0.07698053460136417243226269581244475136371"
+      },
+      {
+        "k": 2,
+        "eps_closed_form": "-0.0765329553762894953637514954708",
+        "eps_committed": "-0.07653295537628949536375149547078943833526"
+      },
+      {
+        "k": 3,
+        "eps_closed_form": "-0.0757898820174361267004342291591",
+        "eps_committed": "-0.07578988201743612670043422915905553554544"
+      }
+    ],
+    "Q_beta_tower_sup_MeV": "0.326065864707444644237605293582",
+    "eps_flavour_V3": "-0.07698053460136417243226269581244475136371",
+    "E0_canonical_MeV": "4.22748335562903055026805602659",
+    "Q_beta_scored_MeV": "0.3254339287346917072909656439",
+    "F_required": "2.4039700256262867515",
+    "arccosh_F_required": "1.5238972071635982903",
+    "cosh_lever_shortfall": "28.79246326"
+  },
+  "scope": "(a) for every number; (b) only for real phase => factor <= 1 and bar-odd real-coefficient phase => real on the real axis, both proved in DEigenphaseRealOrImaginary.lean."
+}

@@ -1,4 +1,4 @@
-### Proof — upper bound
+### Sketch — upper bound
 
 **Step 1 (count starting generators).** The Galois orbit of $\zeta_K$
 yields $(K - 1)/2$ complex-conjugate pairs (for prime $K \geq 3$).
@@ -90,7 +90,7 @@ Beilinson-conditional:
 
 ### Generalises Theorem D
 
-Theorem D ([Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \geq 5$](#prop:cyclotomic-depth3-dimension-synthesis))
+Theorem D ([Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \geq 5$](#conj:cyclotomic-depth3-dimension-synthesis))
 gave $(K - 3)/2$ at $n = 3$.  This proposition extends to:
 
 - All odd $n$: same $(K - 3)/2$ formula.

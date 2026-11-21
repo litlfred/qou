@@ -1,4 +1,4 @@
-One derives the proton and neutron from three independent $\gamma\gamma$ pair productions using the full 4-term photon color content.
+**Conjecture.** The proton and neutron arise from three independent $\gamma\gamma$ pair productions using the full 4-term photon color content.
 
 ## The 4-term photon
 

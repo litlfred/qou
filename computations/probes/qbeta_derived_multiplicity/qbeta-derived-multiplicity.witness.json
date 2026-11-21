@@ -1,0 +1,143 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T12:39:11.301058+00:00",
+  "commitSha": "4659deea22276ddd96a2335f0d043acc38094c0e",
+  "assertions": [
+    {
+      "name": "P1_both_photon_orders_give_V3",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "gamma(0,0,qh) gamma(0,0,-h/q) and the reversed order are both V^3 exactly on (C^2)^{x3}. They are the same element, so M1 counts two ordered factorisations of one element, not two elements."
+    },
+    {
+      "name": "P2_orbit_members_have_equal_eps_flavour",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "eps_flavour of V^-3, mirror^3 and mirror^-3 equals eps_flavour(V^3) exactly, so summing over the orbit multiplies (does not cancel). Base: (q - 1)*(q + 1)*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**3)."
+    },
+    {
+      "name": "P3_base_is_the_scored_cell",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "|eps_flavour(V^3)| E0 = 0.32543392873469170729 MeV (matches the committed scored cell in qbeta-flavour-weight-split.witness.json)."
+    },
+    {
+      "name": "P4_no_registered_multiplicity_equals_the_needed_factor",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "needed factor = 2.40397002563; registered values are 1, 2, 3, 4, [2]_q = 2.0108969, [3]_q = 3.0437062. Every one is more than 0.1 away. Integer counts bracket it (2 gives -16.8 %, 3 gives +24.8 %); neither is selected. Scope (a): this list, nothing beyond it."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-derived-multiplicity",
+  "scriptFile": "qbeta_derived_multiplicity_probe.py",
+  "scriptHash": "96bfef0032b0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_derived_multiplicity/qbeta_derived_multiplicity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_derived_multiplicity/qbeta_derived_multiplicity_probe.py"
+  },
+  "description": "Route 1 of issue #8833: multiply the scored Q_beta cell by every pre-registered corpus-fixed multiplicity. Reported, none selected.",
+  "beans": [
+    "qou-cds1",
+    "qou-pdix",
+    "qou-99qc"
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "E0_canonical_MeV": "4.22748335562903055026805602659",
+  "eps_flavour_V3": "(q - 1)*(q + 1)*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**3)",
+  "Q_beta_base_MeV": "0.3254339287346917072909656439",
+  "needed_factor": "2.4039700256262867515",
+  "candidates": [
+    {
+      "id": "M1",
+      "m": "2",
+      "m_value": "2.0",
+      "counts": "ordered photon pairs giving V^3",
+      "flag": "gamma-gamma",
+      "Q_beta_MeV": "0.65086785746938341458",
+      "vs_codata_pct": "-16.804287"
+    },
+    {
+      "id": "M3",
+      "m": "2",
+      "m_value": "2.0",
+      "counts": "{V^3, V^-3}",
+      "flag": "NOT gamma-gamma under the 2026-11-20 photon",
+      "Q_beta_MeV": "0.65086785746938341458",
+      "vs_codata_pct": "-16.804287"
+    },
+    {
+      "id": "M4",
+      "m": "4",
+      "m_value": "4.0",
+      "counts": "{V^3, V^-3, mirror^3, mirror^-3}",
+      "flag": "NOT gamma-gamma under the 2026-11-20 photon",
+      "Q_beta_MeV": "1.3017357149387668292",
+      "vs_codata_pct": "66.391426"
+    },
+    {
+      "id": "M5",
+      "m": "3",
+      "m_value": "3.0",
+      "counts": "quark strands (colour labels)",
+      "flag": "strand count",
+      "Q_beta_MeV": "0.97630178620407512187",
+      "vs_codata_pct": "24.793569"
+    },
+    {
+      "id": "M6",
+      "m": "1",
+      "m_value": "1.0",
+      "counts": "colour-singlet multiplicity",
+      "flag": "strand count",
+      "Q_beta_MeV": "0.32543392873469170729",
+      "vs_codata_pct": "-58.402144"
+    },
+    {
+      "id": "M7",
+      "m": "[2]_q",
+      "m_value": "2.010896866707122299752492",
+      "counts": "q-dimension of the doublet",
+      "flag": "U_q(sl2)",
+      "Q_beta_MeV": "0.65441406761278048777",
+      "vs_codata_pct": "-16.351001"
+    },
+    {
+      "id": "M8",
+      "m": "[3]_q",
+      "m_value": "3.043706208532521989402019",
+      "counts": "q-dimension of spin 1",
+      "flag": "U_q(sl2)",
+      "Q_beta_MeV": "0.9905252693569114576",
+      "vs_codata_pct": "26.611654"
+    }
+  ],
+  "scope": "(a): the closed list in PREREGISTRATION.md; nothing is excluded beyond it."
+}

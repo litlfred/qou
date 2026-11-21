@@ -1,18 +1,31 @@
-import { lemma } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default lemma({
-  label: "lem:topological-mass-dilogarithm",
+export default conjecture({
+  label: "conj:topological-mass-dilogarithm",
+  renamedFrom: ["lem:topological-mass-dilogarithm"],
   lean: { ref: "qou:QOU.LiftingDescent.tm_dilogarithm_evaluation",
     validation: "not_checked",
   },
-  title: "Quantum dilogarithm evaluation of exceptional-divisor contributions",
-  tags: ["quantum-dilogarithm", "exceptional-divisor", "briggs-klein", "spectral-coordinates"],
+  title: "Symmetric q-dilogarithm evaluation of exceptional-divisor contributions",
+  tags: ["symmetric-q-dilogarithm", "exceptional-divisor", "briggs-klein", "spectral-coordinates"],
   uses: [
     "lem:topological-mass-holonomy",
     "lem:topological-mass-transient-localisation",
+    "def:quantum-dilogarithm-disambiguation",
   ],
-  proofs: ["prf:topological-mass-dilogarithm"],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "Demoted from lemma to conjecture (owner card \"Demote confinement-phase-stratification and topological-mass-dilogarithm to conjectures?\", option \"Demote both\", thread \"N2 Lean foundations\"). Proving was tried first: the first equality needs a definition of the non-abelian multiplicative integral and its evaluation in the Briggs–Klein chart, neither of which exists in Lean or Mathlib, and the Lean only projected a class field carrying it. Only the second equality holds unconditionally: the integral equals -Li2^q(-z_i) by termwise integration of the q-logarithm series.",
+    },
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "The statement used to read MI = Φ_q(z_i) = ∫₀^{z_i} ln_q(1+t)/t dt. The middle term was wrong: `def:quantum-dilogarithm-disambiguation` records that the integral is the bounded symmetric q-dilogarithm −Li₂^q(−z), not the unbounded product Φ_q. A 40-digit check at the proton q₀ agrees (z = 0.3: integral 0.28016 = −Li₂^q(−0.3), Φ_q(0.3) ≈ 19.13). The statement now ends in −Li₂^q(−z_i), and the Lean function is renamed `negLi2q`. For the same reason the conjecture was not restated through the discrete holonomy `partBHolonomy`, which is the partial product of Φ_q (owner asked to check first: \"3 1\").",
+    },
     {
       kind: "note",
       date: "2026-08-07",

@@ -18,6 +18,15 @@ is carried here as a `structure BondExtensiveBinding` hypothesis (a conditional 
 lemmas below that consume it (`binding_eq_bond_energy`, `binding_nonneg`) are fully verified
 GIVEN that hypothesis; they do not assert the law holds.
 
+**Status 2026-11-21: the law `B = ε·C(A,2)` is EXCLUDED, not merely open.**
+`QOU.Mass.CoordinationSaturation.complete_graph_no_saturation` proves it gives
+`B(A)/A = ε·(A−1)/2`, unbounded in `A`, so nuclear saturation rules out the
+complete-graph coordination this class encodes (scope (b), invariant =
+saturation). The class is kept only as the named object that theorem refutes.
+Do not instantiate it as a binding model. The graph facts above
+(`coordination_degree`, `bond_count`, `coordination_handshake`) are unaffected
+and are used by `QOU.MassTheory.BraidPathNotCoordination`.
+
 Base ring: the graph facts are `ℕ`-valued (generic); `ℝ` appears only inside
 `BondExtensiveBinding`, where the binding energy is an archimedean quantity (§7c).
 

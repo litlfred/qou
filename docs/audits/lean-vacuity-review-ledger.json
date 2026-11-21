@@ -1310,18 +1310,6 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "folio/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean::dressed_mass_from_substrate_split::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 122,
-      "verdict": "needs-agent",
-      "file_sha": "53029a4a6ee8",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-30T14:38:20Z",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "SHA REFRESHED 2026-08-30, verdict unchanged at `genuine`. Declaration byte-identical to origin/main; the file hash moved because a different self-assuming projection was removed from it (bean `qou-z9ws`).\n\nPrior evidence: Self-assuming projection. The conditional class `DressedMassSubstrateSplit` carries field `split` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `split` is outside CONCLUSION_FIELD.",
-      "stale_prev_verdict": "genuine"
-    },
     "folio/quantum-observable-universe/lean/QOU/FluidDynamics/acoustic_horizon_conditions.lean::AcousticHorizonConditionsContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
@@ -4207,6 +4195,54 @@
       "disposition": "state-the-real-proposition",
       "evidence": "Statement was `∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par` with every hypothesis unused (_q, _hq, _p, _n, _hn); `⟨1, 0, one_pos⟩` proved it, so it asserted nothing about any parent or daughter. The detector did NOT flag it (measured: 0 hits on this file before and after the fix), so this entry is agent-recorded; the next --review-ledger run will prune it because the declaration no longer exists. Replaced by sorry-free, model-scoped `beta_decay_energy_sub_shortModel` (E(p) - E(n) = -|h|) and `beta_decay_energy_negative_shortModel` (q > 1); no model-free statement, since PR #8682 measured the opposite nucleon-only sign in the 11-letter model (scope (a)). Bean qou-n2un.",
       "source": "agent:session_01VQDpPd74VuvpxRU87z8ogX 2026-11-21 (owner request)"
+    },
+    "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.lean::qbeta_ck_truncation_canonical_conjecture::proof-self-assuming-projection-py": {
+      "category": "proof-self-assuming-projection-py",
+      "pattern": "class-field-is-conclusion",
+      "line": 86,
+      "verdict": "needs-agent",
+      "file_sha": "5e2915ba5410",
+      "source": "scripts/lean-self-assuming-audit.py, seeded 2026-11-21 (beans qou-1ccx / qou-0exp, owner ruling 2026-11-21 'All four as recommended'). Own category because the TS audit owns proof-no-self-assuming-projection and its --review-ledger drops entries it cannot reproduce; the TS binder parser skips anonymous instance binders and does not unwrap `by exact`."
+    },
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/acoustic_horizon_conditions.lean::acoustic_horizon_regularity::proof-self-assuming-projection-py": {
+      "category": "proof-self-assuming-projection-py",
+      "pattern": "conjunction-is-conclusion",
+      "line": 99,
+      "verdict": "needs-agent",
+      "file_sha": "fbca35cfaa55",
+      "source": "scripts/lean-self-assuming-audit.py, seeded 2026-11-21 (beans qou-1ccx / qou-0exp, owner ruling 2026-11-21 'All four as recommended'). Own category because the TS audit owns proof-no-self-assuming-projection and its --review-ledger drops entries it cannot reproduce; the TS binder parser skips anonymous instance binders and does not unwrap `by exact`."
+    },
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean::variational_einstein::proof-self-assuming-projection-py": {
+      "category": "proof-self-assuming-projection-py",
+      "pattern": "class-field-is-conclusion",
+      "line": 226,
+      "verdict": "needs-agent",
+      "file_sha": "a81c0159367a",
+      "source": "scripts/lean-self-assuming-audit.py, seeded 2026-11-21 (beans qou-1ccx / qou-0exp, owner ruling 2026-11-21 'All four as recommended'). Own category because the TS audit owns proof-no-self-assuming-projection and its --review-ledger drops entries it cannot reproduce; the TS binder parser skips anonymous instance binders and does not unwrap `by exact`."
+    },
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean::variational_yang_mills::proof-self-assuming-projection-py": {
+      "category": "proof-self-assuming-projection-py",
+      "pattern": "class-field-is-conclusion",
+      "line": 238,
+      "verdict": "needs-agent",
+      "file_sha": "a81c0159367a",
+      "source": "scripts/lean-self-assuming-audit.py, seeded 2026-11-21 (beans qou-1ccx / qou-0exp, owner ruling 2026-11-21 'All four as recommended'). Own category because the TS audit owns proof-no-self-assuming-projection and its --review-ledger drops entries it cannot reproduce; the TS binder parser skips anonymous instance binders and does not unwrap `by exact`."
+    },
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean::variational_transport::proof-self-assuming-projection-py": {
+      "category": "proof-self-assuming-projection-py",
+      "pattern": "class-field-is-conclusion",
+      "line": 250,
+      "verdict": "needs-agent",
+      "file_sha": "a81c0159367a",
+      "source": "scripts/lean-self-assuming-audit.py, seeded 2026-11-21 (beans qou-1ccx / qou-0exp, owner ruling 2026-11-21 'All four as recommended'). Own category because the TS audit owns proof-no-self-assuming-projection and its --review-ledger drops entries it cannot reproduce; the TS binder parser skips anonymous instance binders and does not unwrap `by exact`."
+    },
+    "folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean::tannaka_krein_isomorphism::proof-self-assuming-projection-py": {
+      "category": "proof-self-assuming-projection-py",
+      "pattern": "class-field-is-conclusion",
+      "line": 102,
+      "verdict": "needs-agent",
+      "file_sha": "a5accba1fecb",
+      "source": "scripts/lean-self-assuming-audit.py, seeded 2026-11-21 (beans qou-1ccx / qou-0exp, owner ruling 2026-11-21 'All four as recommended'). Own category because the TS audit owns proof-no-self-assuming-projection and its --review-ledger drops entries it cannot reproduce; the TS binder parser skips anonymous instance binders and does not unwrap `by exact`."
     }
   }
 }

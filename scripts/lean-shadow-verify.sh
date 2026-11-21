@@ -173,8 +173,9 @@ SIBLINGS=$(ls -d "$ROOT"/folio/*/lean/.lake/build/lib/lean 2>/dev/null |
 # is NOT changed here", and an earlier version of this file reordered anyway.
 # Reverted -- their fix removes the asymmetry, ordering only re-aims it.
 #
-# So this block only DIAGNOSES.  It is worth diagnosing because the union script
-# has no callers: nothing runs it, so until an agent does by hand, an incomplete
+# So this block DIAGNOSES, and since 2026-11-21 also runs the union script when
+# it finds an imbalance.  Before that the union script had no callers, so until
+# an agent ran it by hand, an incomplete
 # paper `Mathlib/` still shadows a complete root one and every `import
 # Mathlib.Tactic` still fails naming a path for a file that exists in the other
 # tree.  Measured here 2026-09-08: paper mathlib 2352 oleans with NO
@@ -201,7 +202,15 @@ if [ -n "$_mlfirst" ] && [ -n "$_mlbest" ] && [ "$_mlfirst" -lt "$_mlbest" ]; th
   echo "  but another location has $_mlbest.  Lean resolves a package from the first" >&2
   echo "  root holding that PACKAGE dir, so the smaller one answers for all of" >&2
   echo "  Mathlib and you will see MISSING-OLEAN errors naming files that exist." >&2
-  echo "  Fix: scripts/lean-sync-olean-trees.sh   (bean qou-4h26)" >&2
+  if [ "${LEAN_NO_TREE_SYNC:-0}" = 1 ]; then
+    echo "  Fix: scripts/lean-sync-olean-trees.sh   (bean qou-4h26; LEAN_NO_TREE_SYNC=1 set, not run)" >&2
+  else
+    # Wired 2026-11-21 (bean qou-4h26): the union script had no callers, so
+    # this diagnosis fired and nothing fixed it.  It hardlinks (no disk cost),
+    # is idempotent, and the trees agree afterwards whichever one wins.
+    echo "  Running scripts/lean-sync-olean-trees.sh (set LEAN_NO_TREE_SYNC=1 to skip)." >&2
+    "$ROOT/scripts/lean-sync-olean-trees.sh" >&2 || echo "  WARNING: tree sync failed; results may show phantom MISSING-OLEAN." >&2
+  fi
 fi
 LP="$SHADOW:$PKGROOTS$SIBLINGS$OLEANS"
 

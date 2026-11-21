@@ -61,12 +61,16 @@ noncomputable def ContactAffineChart.affineCoord {M : Type*} {R : Type*} [Field 
     (chart : ContactAffineChart M R) : R :=
   chart.horizontal / chart.reeb_contraction
 
-/-- The affine coordinate is well-defined (denominator nonzero). -/
--- Ref: [leitner2026] Chapter 1
+/-- The affine coordinate is well-defined: it is the unique `Z` with
+`Z · ι_ξ α = α_H`. Uses `reeb_nonzero`; without it the quotient `α_H / 0 = 0`
+would not satisfy the equation when `α_H ≠ 0`. (Until 2026-11-21 this theorem
+returned `reeb_nonzero` itself, a field projection flagged by
+`scripts/lean-self-assuming-audit.py`.) -/
 theorem ContactAffineChart.affineCoord_welldefined {M : Type*} {R : Type*} [Field R]
-    (chart : ContactAffineChart M R) :
-    chart.reeb_contraction ≠ 0 :=
-  chart.reeb_nonzero
+    (chart : ContactAffineChart M R) (Z : R) :
+    Z * chart.reeb_contraction = chart.horizontal ↔ Z = chart.affineCoord := by
+  unfold ContactAffineChart.affineCoord
+  rw [eq_div_iff chart.reeb_nonzero]
 
 /-- The deep-quantum limit: `|Z|` is small when the Reeb contraction is
     large relative to the horizontal component (the archimedean image

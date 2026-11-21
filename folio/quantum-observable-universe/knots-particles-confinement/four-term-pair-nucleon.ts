@@ -1,7 +1,8 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:four-term-pair-nucleon",
+export default conjecture({
+  label: "conj:four-term-pair-nucleon",
+  renamedFrom: ["prop:four-term-pair-nucleon"],
   lean: { ref: "qou:QOU.ParticleInteractions.four_term_pair_nucleon", validation: "not_checked" },
   title: "Nucleon derivation from 4-term photon pair production",
   tags: [
@@ -19,6 +20,14 @@ export default proposition({
     "prop:confinement-operator-selection",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "**Demoted from prop: to conj: (owner card, 2026-11-21, \"Demote both\").** " +
+        "The Lean theorem `four_term_pair_nucleon` returns the two nets from fields of `FourTermPairNucleonContext`; nothing in Lean computes them. " +
+        "A proof needs the Gröbner–Shirshov reduction and the Markov trace in Lean, which are not there. Issue #8911, PR #8912.",
+    },
     {
       kind: "note",
       date: "2026-08-08",
@@ -41,6 +50,14 @@ export default proposition({
         "The proton/neutron nets 0.999 / 0.811 do not depend on the photon (confinement universality: flavours supplied as input) and are unaffected. " +
         "Symbolic γγ NF for the ruled photon: `tbl:trivial-knot-photon-interpretation-table5-data`, Lean `QOU.QuarkState.pairNFChiral_eq`.",
       see: "https://github.com/litlfred/qou/pull/8583",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-21",
+      body:
+        "**Construction predates the 2026-11-21 γγ selection ruling.** The owner now rules that the γγ word is selected by whole-word U(1) neutrality, which picks V³ = (σ₀σ₁⁻¹)³ = β_Bor uniquely up to 10 crossings (`docs/coordination/owner-rulings.md`; `QOU/PhotonU1NeutralCut.lean`). " +
+        "This block instead builds each nucleon as 𝓑₃ times three pair words whose flavours (u,u,d) / (u,d,d) are supplied by hand, so the p/n difference is an input, not a selection. " +
+        "Its Lean theorem `four_term_pair_nucleon` returns the two net values from fields of `FourTermPairNucleonContext` (a self-assuming carrier); nothing in Lean computes 0.999 or 0.811.",
     },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([photon](#def:photon))" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([confinement universality](#prop:confinement-universality))" },

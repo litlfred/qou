@@ -42,6 +42,18 @@ export default proposition({
         "false. Per AGENTS.md §\"Axiomatization is NOT a Proof\", an axiom " +
         "whose statement *is* the theorem's statement does not discharge it.",
     },
+    {
+      kind: "status",
+      date: "2026-11-21",
+      body:
+        "§3b-cond form completed (issue #8948). The `DressedMassSubstrateSplit` class " +
+        "carried this proposition's own conclusion as its `split` field, so the Lean " +
+        "theorem projected its hypothesis (§3b-cond item 5). It is replaced by " +
+        "`FlavorSplitSubstrateMass m_p m_n q`, the Lean class of " +
+        "`conj:flavor-split-substrate-mass` (no instance), which carries only the " +
+        "nucleon split. The theorem now derives `μ_d − μ_u = M_N · s(q)` from that " +
+        "class and the nucleon form of the pair Skein formula, an explicit hypothesis.",
+    },
   ],
   tags: [
     "flavor",
@@ -52,12 +64,12 @@ export default proposition({
   ],
   uses: [
     "def:flavor-dressing-functor",
-    "prop:flavor-split-substrate",
+    "conj:flavor-split-substrate-mass",
     "lem:pair-skein-mass-formula",
   ],
   computation: {
     engine: "mpmath",
-    script: "computations/probe_flavor_dressed_mass_split.py",
+    script: "computations/probe_flavor_dressed_mass_from_substrate_split.py",
     witness: "computations/flavor-dressed-mass-from-substrate-split.witness.json",
     status: "verified",
   },
