@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-11-21T22:42:04Z
+updated_at: 2026-11-21T22:57:04Z
 parent: qou-5p7n
 ---
 
@@ -362,3 +362,5 @@ markovTrace_disjointProduct proves DisjointProductLaw from the restricted IsMark
 
 
 2026-11-21 (N2 thread): uniqueness merged (#8971, markovTrace_unique). Computable evaluator trWord in PR #8972: Hecke-basis expansion plus Markov peeling, structurally recursive (Lean checks termination), kernel-checked examples. Remaining: prove trWord satisfies IsMarkovTrace (existence, Ocneanu); then uniqueness identifies it with the trace.
+
+2026-11-21: trWord_nil and trWord_stable proved on #8972 (70b7d38dee1). Six axioms remain: strip, cyclic, embed_disjoint, hecke, braid, far_comm. Next easiest: hecke (quadratic on last letter) and far_comm.
