@@ -33,11 +33,14 @@ from mpmath import mp  # noqa: F401
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from q_parameter import Q, Q_INV, HA, HBAR_Q_SQ
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import M_E_MEV
 from hecke_core import (
     build_nucleon_nf,
-    check_frobenius,
+)
+from pyhecke.atom import (
+    build_atom_nf_mp,
+    build_nucleon_nf_mp,
+    check_frobenius_mp,
 )
 from hecke_core_legacy import (
     binding_energy,
@@ -45,17 +48,13 @@ from hecke_core_legacy import (
 )
 from pyhecke.gram import (
     build_atom_nf,
-    nf_tr,
-    nf_net,
+    tr_m_mp,
     NF_NAMES,
 )
 from hecke_engine import HeckeEngine, HeckeRational
 from witness_base import WitnessBuilder
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
-# Markov parameter z = 1/(q^{1/2} + q^{-1/2}) for cross-channel weight
-_z = Q**3 / (Q**2 + 1)
-_Z2 = _z * _z
 
 # ── q0 canonical per-generator volumes (mpmath, true substrate) ──────────
 # Use the TRUE substrate q0, not the legacy 111/100 (~2e-4 off). The
@@ -70,6 +69,10 @@ _Q0 = mp.mpf(Q_50_DIGIT_STR)
 _QI0 = 1 / _Q0
 _HA0 = _Q0 - _QI0
 _z_q0 = _Q0**3 / (_Q0**2 + 1)
+# Markov parameter z = q^3/(q^2+1) (convention D) for the cross-channel
+# weight, at the 50-digit substrate q0. It was the float64 `Q**3/(Q**2+1)`.
+_Z2 = _z_q0 * _z_q0
+_TR_M_MP = tr_m_mp()
 _HE = HeckeEngine(111, 100)  # ground-state ordering only (q-independent)
 
 
@@ -184,13 +187,13 @@ def compute_per_generator_volumes(Z, N):
     """
     A = Z + N
     if A < 2:
-        return [], [], 0.0, 0.0
+        return [], [], mp.mpf(0), mp.mpf(0)
 
     ordering, method = _HE.ground_state_ordering(Z, N)
     # V_full at the true substrate q0 (mpmath), not the legacy 111/100.
     V_list = _v_full_all_q0(ordering)
 
-    cross_sum = 0.0
+    cross_sum = mp.mpf(0)
     for i in range(len(V_list) - 1):
         prod = abs(V_list[i] * V_list[i + 1])
         if prod > 1e-300:
@@ -201,28 +204,43 @@ def compute_per_generator_volumes(Z, N):
 
 
 def compute_atom(name, Z, N, quarks=None):
-    """Compute hadron-level NF for one atom."""
-    if quarks:
-        quark_list = list(quarks.replace("u", "u").replace("d", "d"))
-        nf = build_nucleon_nf(quark_list)
-    else:
-        nf = build_atom_nf(Z, N)
+    """Compute hadron-level NF for one atom, in mpmath end to end.
 
-    tr = nf_tr(nf)
-    net = nf_net(nf)
-    stable, Gx, violations = check_frobenius(nf)
+    The NF is built by the float64-free twins (`build_atom_nf_mp`,
+    `build_nucleon_nf_mp`) at the 50-digit substrate q0; the trace, net and
+    Frobenius check use the mpmath trace form. Every recorded number is an
+    `mpf` serialized with `_precision.fmt`. The float64 builder is still run,
+    only to assert that the two twins build the same braid word: they must
+    agree to float64 resolution, or one of them has drifted (bean qou-1qsw).
+    """
+    if quarks:
+        quark_list = list(quarks)
+        nf = build_nucleon_nf_mp(quark_list)
+        nf_f64 = build_nucleon_nf(quark_list)
+    else:
+        nf = build_atom_nf_mp(Z, N)
+        nf_f64 = build_atom_nf(Z, N)
+    scale = max(abs(c) for c in nf)
+    twin_gap = max(abs(nf[i] - nf_f64[i]) for i in range(6)) / scale
+    if twin_gap > mp.mpf("1e-10"):
+        raise RuntimeError(
+            f"{name}: mp and float64 NF builders disagree (rel {mp.nstr(twin_gap, 3)}); "
+            "one twin has drifted from the other's braid word")
+
+    tr = mp.fsum(nf[i] * _TR_M_MP[i] for i in range(6))
+    net = mp.fsum(nf)
+    stable, Gx, violations = check_frobenius_mp(nf)
     alpha_knot, knot_name, is_hyp = classify_nuclear_knot(Z, N)
-    B = binding_energy(Z, N)
+    B = binding_energy(Z, N, as_mpf=True)
 
     # Compact NF: only non-zero coefficients with basis names
     nf_compact = {}
-    for i, (bname, val) in enumerate(zip(NF_NAMES, nf)):
-        if abs(val) > 1e-15:
-            nf_compact[bname] = round(val, 12)
+    for bname, val in zip(NF_NAMES, nf):
+        if abs(val) > mp.mpf("1e-40") * scale:
+            nf_compact[bname] = fmt(val)
 
     # Per-generator traced volumes + cross-channel (mass-tower sum 3)
     ordering, V_list, cross_sum, delta_xchan = compute_per_generator_volumes(Z, N)
-    V_rounded = [round(float(v), 12) for v in V_list]  # float64-ok: legacy 12-digit rounded witness schema
 
     return {
         "name": name,
@@ -231,17 +249,18 @@ def compute_atom(name, Z, N, quarks=None):
         "A": Z + N,
         "nf": nf_compact,
         "n_terms": len(nf_compact),
-        "tr_M": round(float(tr), 12),  # float64-ok: legacy 12-digit rounded witness schema
-        "net": round(float(net), 12),  # float64-ok: legacy 12-digit rounded witness schema
-        "ln_abs_tr": round(mp.log(abs(tr)), 12) if abs(tr) > 1e-300 else None,
+        "tr_M": fmt(tr),
+        "net": fmt(net),
+        "ln_abs_tr": fmt(mp.log(abs(tr))) if tr != 0 else None,
         "frobenius_stable": stable,
         "knot_type": knot_name,
-        "B_MeV": round(B, 4),
+        "B_MeV": fmt(B),
         # Per-generator traced volumes (mass-tower formula, sum 1 + 3)
         "ordering": ordering,
-        "V_per_gen": V_rounded,
-        "cross_channel_sum": round(cross_sum, 12),
-        "delta_xchan_MeV": round(delta_xchan, 6),
+        "V_per_gen": [fmt(v) for v in V_list],
+        "cross_channel_sum": fmt(cross_sum),
+        "delta_xchan_MeV": fmt(delta_xchan),
+        "_twin_gap": twin_gap,
     }
 
 
@@ -304,17 +323,25 @@ def _save_witness(results):
            f"fully computed; nothing is extrapolated.")
     )
     w.set_content_block("rem:hadron-level-knot-table")
-    w.add_parameter("q", Q)
+    w.add_parameter("q", fmt(_Q0))
     w.add_parameter("basis", NF_NAMES)
     w.add_parameter("vhat_weights", VHAT_WEIGHTS_LABEL)
-    w.add_parameter("z_markov", _z)
-    w.add_parameter("z_squared", _Z2)
+    w.add_parameter("z_markov", fmt(_z_q0))
+    w.add_parameter("z_squared", fmt(_Z2))
     w.add_parameter("n_atoms_expected", len(ATOMS))
     w.add_parameter("n_atoms_computed", len(results))
     w.add_parameter("total_nf_entries", total_terms)
 
     # Assertions: LP stability, over the computed atoms only.
     for r in results:
+        w.add_assertion(
+            f"mp_twin_matches_float64_builder({r['name']})",
+            computed=1 if r["_twin_gap_ok"] else 0,
+            expected=1,
+            tolerance=0,
+            unit="bool",
+            source="build_atom_nf_mp / build_nucleon_nf_mp vs the float64 builder, rel gap <= 1e-10",
+        )
         # The `tr_M(<atom>)` assertion that stood here read
         # `computed=r["tr_M"], expected=r["tr_M"]` under
         # `source="hecke_core.build_atom_nf -> nf_tr"` — it advertised a check
@@ -353,26 +380,28 @@ def _save_witness(results):
         "computed": computed_names,
         "missing": missing,
     })
-    w.add_data("atoms", results)
+    w.add_data("atoms", [{k: v for k, v in r.items() if not k.startswith("_")}
+                         for r in results])
     w.save()
 
 
 results = []
 print(f"Hadron-level knot table ({len(ATOMS)} atoms)")
-print(f"q = {Q:.10f}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
+print(f"q = {mp.nstr(_Q0, 17)}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
 print()
 print(f"{'Atom':>12} {'A':>3} {'tr_M':>14} {'B(MeV)':>10} {'cross_sum':>11} {'δ_xchan':>10} {'Frob':>5}")
 print("-" * 80)
 
 for name, Z, N, quarks in ATOMS:
     r = compute_atom(name, Z, N, quarks)
+    r["_twin_gap_ok"] = r.pop("_twin_gap") <= mp.mpf("1e-10")
     results.append(r)
     print(
         f"{name:>12} {r['A']:>3} "
-        f"{r['tr_M']:>14.6f} "
-        f"{r['B_MeV']:>10.4f} "
-        f"{r['cross_channel_sum']:>+11.6f} "
-        f"{r['delta_xchan_MeV']:>+10.4f} "
+        f"{mp.nstr(mp.mpf(r['tr_M']), 8):>14} "
+        f"{mp.nstr(mp.mpf(r['B_MeV']), 7):>10} "
+        f"{mp.nstr(mp.mpf(r['cross_channel_sum']), 7):>11} "
+        f"{mp.nstr(mp.mpf(r['delta_xchan_MeV']), 6):>10} "
         f"{'OK' if r['frobenius_stable'] else 'FAIL':>5}"
     )
     # Checkpoint: a killed run keeps the rows it reached (bean `qou-i7ju`).

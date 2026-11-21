@@ -1889,7 +1889,7 @@ def _q_gaussian_character_approx(entry, n_crossings_at_step, step_idx):
 
 def unified_iterative_correction(Z, N, return_per_step=False,
                                  k_max=K_PARTITION_MAX,
-                                 k_exact=K_PARTITION_MAX):
+                                 k_exact=K_PARTITION_MAX, as_mpf=False):
     """Run the accumulator at the canonical working precision.
 
     MEASURED 2026-09-05 (qou-sv7h): PR #6794 made `_build_ysn_matrices`
@@ -1910,12 +1910,12 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     with _mp.workdps(_CDPS):
         return _unified_iterative_correction_exact(
             Z, N, return_per_step=return_per_step,
-            k_max=k_max, k_exact=k_exact)
+            k_max=k_max, k_exact=k_exact, as_mpf=as_mpf)
 
 
 def _unified_iterative_correction_exact(Z, N, return_per_step=False,
                                         k_max=K_PARTITION_MAX,
-                                        k_exact=K_PARTITION_MAX):
+                                        k_exact=K_PARTITION_MAX, as_mpf=False):
     """Unified iterative correction over per-partition weights.
 
     NAMING CORRECTED 2026-09-05 (owner ruling; PR #6752).  This read
@@ -2528,6 +2528,8 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             per_step[-1]['n_tight_final'] = n_tight
             per_step[-1]['k_exact'] = k_exact
             per_step[-1]['k_max'] = k_max
+        if as_mpf:
+            return cumul_total, per_step
         return float(cumul_total), per_step  # float64-ok: public return boundary after mpf accumulation
     # float, as this function has always returned -- the cast is at the public
     # boundary, and NOW that is true.  The note that stood here said the
@@ -2536,6 +2538,10 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     # conclusion from it: a log that narrows inside the loop is exactly what
     # stops the accumulation keeping anything.  Every log on this path goes
     # through `_exact_log` as of 2026-09-07.
+    # `as_mpf=True` skips the cast for callers that serialize with
+    # `_precision.fmt` (binding_energy(as_mpf=True), hadron_knot_table).
+    if as_mpf:
+        return cumul_total
     return float(cumul_total)  # float64-ok: public return boundary after mpf accumulation
 
 
@@ -3384,8 +3390,12 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     return total_mev, per_pair
 
 
-def binding_energy(Z, N, *, sdp=True, frobenius=True):
+def binding_energy(Z, N, *, sdp=True, frobenius=True, as_mpf=False):
     """Binding energy (MeV) via the categorical path.
+
+    `as_mpf=True` returns the accumulated value as `mpf` instead of casting it
+    to the public float contract below, for callers that serialize with
+    `_precision.fmt`. The default is unchanged.
 
     B = unified_iterative_correction(Z,N)                      [LP-dual shadow]
       + sdp_cross_channel_contribution(Z,N)    (if sdp)        [SDP couplings]
@@ -3396,8 +3406,8 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     _warn_if_kernel_absent()
     A = Z + N
     if A <= 1:
-        return 0.0
-    B = unified_iterative_correction(Z, N)
+        return _mp.mpf(0) if as_mpf else 0.0
+    B = unified_iterative_correction(Z, N, as_mpf=as_mpf)
     if sdp:
         sdp_contrib, _ = sdp_cross_channel_contribution(Z, N)
         B += sdp_contrib
@@ -3423,6 +3433,8 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     # narrowing on the path, and it costs whatever the accumulation carried,
     # which is measured in the hundreds of significand bits rather than 53.
     # It stays because the public contract is a float (bean `qou-sv7h`).
+    if as_mpf:
+        return B
     return float(B)  # float64-ok: public return boundary after mpf accumulation
 
 
