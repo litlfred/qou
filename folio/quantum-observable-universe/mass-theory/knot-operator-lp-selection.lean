@@ -14,7 +14,19 @@
   LP data; in code `pyhecke.gram.G_PINV` / `gram_quotient_inverse`). When
   `det G` is a unit, `G⁺ = G⁻¹` (`gramPinv_eq_inv_of_isUnit_det`);
   `S` the supply matrix (column `o` = NF profile of knot operator `o`),
-  `t` the crossing energies, `n_T` the demand of target `T`. The dual is
+  `t` the cost of each operator (a datum of the statement, read as its
+  crossing energy), and `n_T = demandVector (NF T)` the demand vector of the
+  target, `n_T(i) = max 0 (−c_i)` for `NF(T) = Σ c_i b_i`. The operator
+  family and its braid words are likewise data of the theorems below.
+
+  Owner ruling 2026-11-21: the instance used in the paper is `n = 3`, the
+  family `T_{1,0}, T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}` with
+  standard torus braids `1, σ₀³, σ₀⁵, σ₀⁷, σ₀⁹, (σ₀σ₁)⁴, (σ₀σ₁)⁵` in `H_3(q)`,
+  and cost `t` = crossing energy (`def:crossing-energy`: `q` per positive,
+  `−q⁻¹` per negative crossing). Computed in
+  `computations/knot_operator_lp_selection.py`; nothing here depends on it.
+
+  The dual is
 
       max  Σ_i n_T(i) y(i)   s.t.   y ≥ 0,   (G⁺ S)ᵀ y ≤ t.
 
@@ -29,6 +41,10 @@
   * `knot_operator_lp_selection` bundles the three;
   * `gramPinv_eq_inv_of_isUnit_det`: on a non-degenerate Gram matrix the
     pseudo-inverse is the inverse.
+  * `demandVector_nonneg`, `demandVector_eq_zero_iff`: the demand vector is
+    non-negative and vanishes exactly on the non-negative coefficients;
+  * `feasible_zero_of_no_demand`: a target with no negative normal-form
+    coefficient is met by the empty selection.
 
   The LP lemmas use nothing about `G⁺` beyond `M = G⁺ S`; the pseudo-inverse
   property fixes which matrix `M` is built from.
@@ -217,6 +233,41 @@ theorem complementary_slackness {n_T : Basis → R} {x : Op → R} {y : Basis �
       (Finset.mem_univ o)
 
 end KnotOperatorLP
+
+/-! ### The demand vector of a target
+
+`n_T` is read off the normal form of the target: for `NF(T) = Σ_i c_i b_i`,
+`n_T(i) = max 0 (−c_i)`, the magnitude of each negative coefficient and `0`
+elsewhere (`def:demand-profile`; the demand vector of
+`prf:knot-operator-selection`). -/
+
+/-- The demand vector of a target whose normal-form coefficients are `c`. -/
+def demandVector {R : Type*} [Ring R] [LinearOrder R] {Basis : Type*}
+    (c : Basis → R) : Basis → R :=
+  fun i => max 0 (-c i)
+
+theorem demandVector_nonneg {R : Type*} [Ring R] [LinearOrder R] {Basis : Type*}
+    (c : Basis → R) (i : Basis) : 0 ≤ demandVector c i :=
+  le_max_left _ _
+
+/-- A channel carries demand exactly when its coefficient is negative. -/
+theorem demandVector_eq_zero_iff {R : Type*} [Ring R] [LinearOrder R]
+    [IsOrderedRing R] {Basis : Type*} (c : Basis → R) (i : Basis) :
+    demandVector c i = 0 ↔ 0 ≤ c i := by
+  unfold demandVector
+  rw [max_eq_left_iff, neg_nonpos]
+
+/-- A target with no negative normal-form coefficient is met by the empty
+    selection `x = 0`. -/
+theorem feasible_zero_of_no_demand
+    {R : Type*} [CommRing R] [LinearOrder R] [IsOrderedRing R]
+    {H : Type*} [Ring H] [Algebra R H]
+    {Op Basis : Type*} [Fintype Op] [Fintype Basis] [DecidableEq Basis]
+    (lp : KnotOperatorLP R H Op Basis) {c : Basis → R} (hc : ∀ i, 0 ≤ c i) :
+    lp.Feasible (demandVector c) (fun _ => 0) := by
+  refine ⟨fun _ => le_rfl, fun i => ?_⟩
+  rw [(demandVector_eq_zero_iff c i).2 (hc i)]
+  simp [KnotOperatorLP.supplyOf]
 
 /--
   **Knot-operator LP selection** (`prop:knot-operator-lp-selection`).

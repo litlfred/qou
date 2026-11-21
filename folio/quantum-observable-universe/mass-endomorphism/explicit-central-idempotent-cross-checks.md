@@ -29,4 +29,4 @@ All four cross-checks are proved on the Iwahori–Hecke algebra $H_n(q)$, for ev
 
 **Which involution pairs $\lambda$ with $\lambda'$.** The bar involution does not: it fixes every $e_\lambda$, so an earlier form of cross-check 4, $\overline{e_\lambda} = e_{\lambda'}$, is false already at $n = 2$. The bar involution is the symmetry of the convention-D Markov trace and of non-abelian Stokes path reversal. The sign twist is not a symmetry of that trace: it relates the trace at $q$ to the trace at $-q^{-1}$.
 
-**Formula.** An earlier form took the inner product over the boxes of $\lambda$. Two boxes on one diagonal share a content, so that product can divide by zero (for example $\lambda = (2,2)$). The form above, over all contents $|d| \le n - 1$, is the one in [Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent).
+**Formula.** An earlier form took the inner product over the boxes of $\lambda$. Two boxes on one diagonal share a content, so that product can divide by zero (for example $\lambda = (2,2)$).

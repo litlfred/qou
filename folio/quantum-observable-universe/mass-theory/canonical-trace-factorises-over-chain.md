@@ -76,8 +76,7 @@ required offset is $2.43\times$ more negative than the most negative letter
 that exists. No interface offset can close the gap.
 
 The quantity $L$ itself is a free-energy difference over the Markov state
-sum; that it is the binding energy is a separate and open claim, recorded in
-[the free-energy reading](#rem:bond-log-ratio-is-a-free-energy).
+sum; that it is the binding energy is a separate and open claim.
 
 ## The stated form assumes the grouped intra ordering; the conclusion does not
 

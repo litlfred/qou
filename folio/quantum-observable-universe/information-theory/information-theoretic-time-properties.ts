@@ -21,6 +21,9 @@ export default remark({
     "rem:information-theoretic-time-julia-microscopic",
     "rem:information-theoretic-time-arrow",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): One treats its microscopic Julia-set dynamics ([Julia-set iteration as the microscopic theory](#rem:information-theoretic-time-julia-microscopic)) and its arrow of time ([arrow of time from the braiding order](#rem:information-theoretic-time-arrow)) separately." },
+  ],
   foreshadows: [
     "rem:information-theoretic-time-julia-microscopic",
     "rem:information-theoretic-time-arrow",

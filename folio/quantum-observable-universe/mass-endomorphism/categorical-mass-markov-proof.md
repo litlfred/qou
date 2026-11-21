@@ -55,17 +55,3 @@ Evaluating at $q_0 \approx 1.110$ with Markov parameter $z = q^3/(q^2+1) \approx
 | $4_1$ (figure-eight) | $(\sigma_0\sigma_1^{-1})^2$ | $\approx 0.280$ | $\dfrac{q^8-q^6+q^4-q^2+1}{q^6+2q^4+q^2}$ |
 
 These constitute **dimensionless ratios** relative to the photon ($\mathfrak{m}_{q,\gamma} = 1$). Physical masses in MeV require a calibration constant $E_0$, determined by anchoring to one experimental value (e.g., the free neutron $\beta$-decay $Q$-value).
-
-## Role in the unified mass formula
-
-This proposition supplies the $k = 0$ stratum of the curvature-rank decomposition ([unified mass formula](#prop:unified-curvature-rank-mass-formula)): $\mathfrak{m}^{(0)}_{q,\mathcal{K}}(1) = |\!\int_A\! \rho(\beta_\mathcal{K})|$ is the descended Frobenius integral, equal to $E_\infty^{0,*}$ of the GB spectral sequence.
-
-The integral $\int_A \rho(\beta_\mathcal{K})$ is **vortex-specific**, distinguishing $\varrho_{\mathfrak{p}}$ from $\varrho_{\mathfrak{n}}$ and capturing fine isotope variations. The vortex-independent constant offset is the Frobenius co-Casimir $m_e \cdot \tau(C_{\dim_q})$ ([Frobenius universal](#thm:frobenius-codim-universal)). The full mass is:
-
-$$
-  \mathfrak{m}_{q,\mathcal{K}}
-  \;=\; \sum_{k \geq 0} \alpha_k \cdot \mathfrak{m}^{(k)}_{q,\mathcal{K}}(1)
-       \;+\; m_e \cdot \tau(C_{\dim_q}),
-$$
-
-with this proposition governing the $k = 0$ component.

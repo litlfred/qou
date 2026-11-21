@@ -11,8 +11,7 @@ weight $d_\lambda(q)$ by Schur orthogonality
 $\mathfrak{S} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A = \mathrm{tr}(\Phi)$
 is linear in $\Phi$.  Substituting the spectral decomposition
 (i) and using the identification
-$\mathrm{tr} = \mathrm{tr}_M$ (archimedean :refterm[descent]{#descent},
-[RJ interpretation](#rem:rj-inner-product-interpretation))
+$\mathrm{tr} = \mathrm{tr}_M$ (archimedean :refterm[descent]{#descent})
 gives the stated sum over channels.
 
 **(iii)** The Frobenius pairing

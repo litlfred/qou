@@ -8,4 +8,4 @@ $$
   \bigr\rVert
 $$
 
-([mass identity](#def:mass-identity)) exists as a well-defined element of $R$ for every $\varrho$. One proves uniqueness in [uniqueness of the mass identity](#prop:mass-identity-unique).
+([mass identity](#def:mass-identity)) exists as a well-defined element of $R$ for every $\varrho$.

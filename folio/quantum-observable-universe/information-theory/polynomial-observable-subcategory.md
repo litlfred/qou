@@ -13,4 +13,4 @@ $$
   \bigr\}.
 $$
 
-The set $\Gamma_{\mathrm{poly}}(x, A_0)$ consists of degree-$0$ sections at $x$ that the Markov trace computes in at most $p(c)$ Planck steps. This trace restricts to $\mathcal{R}_{p(c)}$. The poset $\mathcal{R}^{\circ}(L, q)$ forms the computational analog of the physical observable subcategory $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$ ([observable subcategory](#def:observable-subcategory)). It collects the nodes of the resolution tree from which the degree-$0$ answer $P_L(q)$ is polynomial-time accessible.
+The set $\Gamma_{\mathrm{poly}}(x, A_0)$ consists of degree-$0$ sections at $x$ that the Markov trace computes in at most $p(c)$ Planck steps. This trace restricts to $\mathcal{R}_{p(c)}$. It collects the nodes of the resolution tree from which the degree-$0$ answer $P_L(q)$ is polynomial-time accessible.

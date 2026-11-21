@@ -148,5 +148,6 @@ export default remark({
         "No number moves: this block emits no witness and computes nothing.",
       see: "docs/audits/2026-09-04-delta-net-canon-and-crossing-count-analysis.md",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , and [the antiquark ledger](#rem:antiquark-channel-ledger) works it out" },
   ],
 });

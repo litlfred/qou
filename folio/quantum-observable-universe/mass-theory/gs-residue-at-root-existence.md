@@ -9,7 +9,7 @@ $$
 
 **Categorical statement.** The cyclotomic projection of $\Phi_q \cdot \mathrm{tr}_{M,\ell}$ in the Habiro completion forms the residue contribution attached to stratum $\ell$ by the filtered Hochschild spectral sequence.
 
-**Conditional use.** The conjectural content is the existence of the Habiro-completion projection onto each cyclotomic target ring. [Cyclotomic residues of $\Phi_q \cdot \mathrm{tr}_{M, \ell}$ — algebraic definition](#prop:residue-at-root) is stated conditionally on it. The archimedean per-level residue values enter downstream as given data. A fully constructive definition requires a theory of meromorphic functions and of the Habiro completion as a topological ring.
+**Conditional use.** The conjectural content is the existence of the Habiro-completion projection onto each cyclotomic target ring. The archimedean per-level residue values enter downstream as given data. A fully constructive definition requires a theory of meromorphic functions and of the Habiro completion as a topological ring.
 
 **Conjectural status.** The analytic literature guarantees the existence and reality of the residue. A proof within the present framework awaits that meromorphic-function infrastructure; downstream results take the residue values as given.
 

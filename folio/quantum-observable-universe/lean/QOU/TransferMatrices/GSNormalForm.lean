@@ -56,8 +56,12 @@ are now proved in the UGB package, in `UGB/GrobnerShirshov/HeckeChainNormalForm.
    Gröbner–Shirshov basis, so normal forms there are unique.
 3. **No global induction here.** UGB's `chainXi_normalForm` proves that every normal form of
    `Ξ` is the chain form, and that `Ξ` minus the chain form lies in the ideal of the Hecke
-   relations alone. That is the algebraic content of "uses only the Hecke rule". It is not a
-   statement about every reduction path, and the step count `C(A−1, 2)` is still not formalised.
+   relations alone. `HeckeChainEveryPath.lean` adds that every reduction path of `Ξ`, in any
+   order, uses Hecke rules only (`chainXi_every_reduction_heckeOnly`). It also shows the step
+   count `C(A−1, 2)` is not a bound on single rewriting steps: at `A = 3`, with every crossing
+   `σ + 1`, no single step reaches a normal form (`chainXi_L3_needs_two_steps`), while
+   `C(2, 2) = 1`. `heckeStepBound` below counts block multiplications, which is what the
+   appendix's count measures.
 
 So this file discharges the two load-bearing computations in a commutative setting; the
 structural claim is proved in UGB.

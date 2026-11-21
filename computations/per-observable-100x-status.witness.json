@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T04:40:34.830799+00:00",
-  "commitSha": "765d0321eb25779a111569f010d7b1a4292471fd",
+  "computedAt": "2026-11-21T06:13:12.211565+00:00",
+  "commitSha": "b17fcf17954305a46a2e012262827b7764b21c11",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 175,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "073b736aac90",
-  "scriptCommitSha": "765d0321eb25779a111569f010d7b1a4292471fd",
+  "scriptHash": "3b5deac6cb3e",
+  "scriptCommitSha": "b17fcf17954305a46a2e012262827b7764b21c11",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -156,7 +156,7 @@
         "note": null,
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. 🟧 CONDITIONAL ON CONJECTURES, NOT A DERIVED PREDICTION (owner 2026-11-20, qou-99qc option B; and: rulings are temporary conjectures). Q_beta = |eps_n - eps_p|*E0 on the gamma-gamma base V^3 (same word for both nucleons, PR #8564), with eps the T^3 components of Tr(K^x3 .)/[2]^3 = the z_D Markov trace (PR #8586): eps_flavour(V^3) = -0.0769805346013, E0 = 4.2274833556 MeV (tower-summed, posited). The value holds IF conjectures C1 (decay functional = weight-trace difference), C2 (both elements V^3) and C3 (Q_beta = |eps|*E0) hold; QOU.QBeta.DecayConjectures.qbeta_eq_of_conjectures derives it from them (PR #8617). None of C1-C3 is proved. Calibrated: closed form vs explicit weight-space traces, gap 1.13195988485333904593863991136097397258531639976739227369783e-72. Zero c_k rungs (qou-cds1). Same value as the ruled-base cell (0.3254339287 MeV): the change is the label, not the number. The photon is the owner-ruled 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1, and V^3 = gamma(0,0,qh) gamma(0,0,-q^-1 h) for both nucleons (photon_product_eq_borWord), so the plain trace difference is 0 and the non-zero value comes from the T^3 split alone. 🛑 SCOPE: a BASE with no ladder, OUTSIDE the ladder cap (F_required ~ 2.40 > 1, LadderFactorBound). The value was NOT blind (np-splitting audit 2026-11-15 §18/§21 already recorded 0.3254 MeV). UNSCORED HISTORY: nuc11_interleaved (0.6519 MeV), delta_S (0.4491 MeV); retired z = 1 laddered value 0.782334410278 MeV.",
+        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. 🟧 CONDITIONAL ON CONJECTURES, NOT A DERIVED PREDICTION (owner 2026-11-20, qou-99qc option B; and: rulings are temporary conjectures). Q_beta = |eps_n - eps_p|*E0 on the gamma-gamma base V^3 (same word for both nucleons, PR #8564), with eps the T^3 components of Tr(K^x3 .)/[2]^3 = the z_D Markov trace (PR #8586): eps_flavour(V^3) = -0.0769805346013, E0 = 4.2274833556 MeV (tower-summed, posited). The value holds IF conjectures C1 (decay functional = weight-trace difference), C2 (both elements V^3) and C3 (Q_beta = |eps|*E0) hold; QOU.QBeta.DecayConjectures.qbeta_eq_of_conjectures derives it from them (PR #8617). None of C1-C3 is proved. Calibrated: closed form vs explicit weight-space traces, gap 1.13195988485333904593863991136097397258531639976739227369783e-72. Zero c_k rungs (qou-cds1). Same value as the ruled-base cell (0.3254339287 MeV): the change is the label, not the number. The photon is the owner-ruled 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1, and V^3 = gamma(0,0,qh) gamma(0,0,-q^-1 h) for both nucleons (photon_product_eq_borWord). The plain trace difference is 0 for EVERY photon pair, all six weights free (DecayConjectures.photonPair_trace_n_eq_p). The value here is the Cartan K-weighted term of the two-term Lagrangian trace (CategoricalLagrangianTwoTermBridge) only; its matter term, the quark-charge insertion Q_iQ_j, is NOT included (under the ruled all-pairs insertion its connected part is 0 on V^3 and a static -1/3 tr V^3 charge term remains). 🛑 SCOPE: a BASE with no ladder, OUTSIDE the ladder cap (F_required ~ 2.40 > 1, LadderFactorBound). The value was NOT blind (np-splitting audit 2026-11-15 §18/§21 already recorded 0.3254 MeV). UNSCORED HISTORY: nuc11_interleaved (0.6519 MeV), delta_S (0.4491 MeV); retired z = 1 laddered value 0.782334410278 MeV.",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json; CODATA validation value — Q_β is derived, not CAL-3)",
         "compute_truncation_ppb": "3.073e-51",
         "compute_output_dps": 60,

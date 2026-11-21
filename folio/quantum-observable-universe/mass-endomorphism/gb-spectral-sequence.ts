@@ -20,6 +20,7 @@ export default proposition({
     "convergence",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Moved out of the prose by the voice-leak drain (qou-d4kh, W14b, 2026-11-21): the n = 3 example is computed by `computations/probes/gb_spectral_sequence_h3_probe.py`." },
     {
       kind: "refined-framing",
       date: "2026-11-20",

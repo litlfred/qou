@@ -4,7 +4,7 @@ The fine-structure constant emerges as the symbolic root of a self-consistent fi
 
 The equation integrates three components. Only the third remains open:
 
-1. **Tree term $q\cdot[9]_q\cdot[10]_q$**: The bare inverse coupling from [Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection). Its categorical-trace refactoring is proved ([Algebraic identity](#prop:alpha-em-categorical-trace-ratio)).
+1. **Tree term $q\cdot[9]_q\cdot[10]_q$**: The bare inverse coupling from [Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection).
 2. **Zero-mode shift $2/(3\pi) = 2g/(4\pi(g-1))\big|_{g=4}$**: The photon infrared harmonic-$1$-form contribution on Bring's surface. This is proved in [Photon IR zero-mode on Bring's surface](#prop:photon-ir-zero-mode-bring). The normalization $8\pi = \pi b_1 = \pi\dim H^1(M_{\text{Bring}})$ maintains the harmonic count.
 3. **$\mathcal{O}(\alpha^2)$ normalization $H\cdot(1-h^2\alpha)$**: The Habiro deformation $(1-h^2\alpha)$ with coefficient $H = [2]_q/(8\pi)$. Identifying the exact $\mathcal{O}(\alpha^2)$ correction to $H$ with a class in $B_3(\mathbb{C})$ is the single open input. It enters as an explicit hypothesis.
 

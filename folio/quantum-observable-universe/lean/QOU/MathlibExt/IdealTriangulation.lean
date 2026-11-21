@@ -16,7 +16,8 @@
   This file supplies the missing *definitional* layer, at the level where the
   corpus already has real content:
 
-  * `IdealTetrahedron` — a shape parameter in the upper half plane;
+  * `IdealTetrahedron` — a shape parameter in the upper half plane, carried as a
+    point of Mathlib's `UpperHalfPlane` (`ℍ`) since bean `qou-m8xt`;
   * `IdealTetrahedron.volume` — its volume, `D(z)`, in **both** the Lobachevsky
     (angle) form and the dilogarithm form, proved equal via `KummerRadial.kummer`;
   * `IdealTriangulation n` — `n` ideal tetrahedra;
@@ -50,10 +51,12 @@
   -- Ref: [neumann-zagier1985] eq. (37)–(39)
 -/
 import QOU.Knot.KummerRadial
+import Mathlib.Analysis.Complex.UpperHalfPlane.Basic
 
 namespace QOU.MathlibExt
 
 open Real Complex QOU.Archimedean
+open scoped UpperHalfPlane
 
 /-! ### Ideal tetrahedra -/
 
@@ -62,16 +65,28 @@ open Real Complex QOU.Archimedean
 Four ideal vertices on the sphere at infinity, normalised to `0, 1, ∞, z`.  The
 condition `0 < Im z` says the tetrahedron is nondegenerate and positively
 oriented; degenerate (flat) tetrahedra are exactly the real shapes, and are
-excluded. -/
+excluded.
+
+The shape is a point of Mathlib's upper half plane `ℍ` (bean `qou-m8xt`), so the
+positivity is carried by the type rather than by a separate field: `im_pos` below is
+`UpperHalfPlane.im_pos`, and `shape_ne_zero` is `UpperHalfPlane.ne_zero`.  Wherever a
+complex number is expected, `T.shape` coerces to `(T.shape : ℂ)`. -/
 structure IdealTetrahedron where
-  /-- The shape parameter. -/
-  shape : ℂ
-  /-- Nondegenerate and positively oriented. -/
-  im_pos : 0 < shape.im
+  /-- The shape parameter, a point of the upper half plane. -/
+  shape : ℍ
 
 namespace IdealTetrahedron
 
+/-- Build an ideal tetrahedron from a complex shape with positive imaginary part. -/
+def ofIm (z : ℂ) (hz : 0 < z.im) : IdealTetrahedron := ⟨UpperHalfPlane.mk z hz⟩
+
+@[simp] theorem ofIm_shape (z : ℂ) (hz : 0 < z.im) : ((ofIm z hz).shape : ℂ) = z := rfl
+
 variable (T : IdealTetrahedron)
+
+/-- **Nondegenerate and positively oriented** — `UpperHalfPlane.im_pos`, read through the
+coercion `ℍ → ℂ`. -/
+theorem im_pos : 0 < (T.shape : ℂ).im := T.shape.im_pos
 
 /-- The three dihedral angles, one per pair of opposite edges. -/
 noncomputable def angle₁ : ℝ := tetAngle₁ T.shape
@@ -110,12 +125,12 @@ it is licensed now that Kummer is proved on `{Im z > 0}`, where every
 `IdealTetrahedron` lives by construction. -/
 theorem volume_eq_dilog :
     T.volume = (cLiTwoExt T.shape).im
-      + Real.log ‖T.shape‖ * Complex.arg (1 - T.shape) :=
+      + Real.log ‖(T.shape : ℂ)‖ * Complex.arg (1 - T.shape) :=
   QOU.Knot.KummerRadial.kummer T.im_pos
 
 /-- The ideal-tetrahedron law of sines, `‖z‖ = sin θ₂ / sin θ₃`. -/
 theorem law_of_sines :
-    ‖T.shape‖ = Real.sin T.angle₂ / Real.sin T.angle₃ :=
+    ‖(T.shape : ℂ)‖ = Real.sin T.angle₂ / Real.sin T.angle₃ :=
   QOU.Knot.IdealTet.norm_eq_sin_div_sin T.im_pos
 
 /-! #### Edge parameters
@@ -133,7 +148,7 @@ noncomputable def param : Fin 3 → ℂ
 @[simp] theorem param_one : T.param 1 = 1 / (1 - T.shape) := rfl
 @[simp] theorem param_two : T.param 2 = 1 - 1 / T.shape := rfl
 
-theorem shape_ne_zero : T.shape ≠ 0 := QOU.Knot.IdealTet.ne_zero_of_im_pos T.im_pos
+theorem shape_ne_zero : (T.shape : ℂ) ≠ 0 := T.shape.ne_zero
 
 theorem one_sub_shape_ne_zero : (1 : ℂ) - T.shape ≠ 0 :=
   QOU.Knot.IdealTet.one_sub_ne_zero T.im_pos
@@ -165,9 +180,10 @@ volume is unchanged.  This is not a coincidence to be checked numerically; it is
 
 /-- `1/(1 − 1/(1−z)) = 1 − 1/z`: the second edge parameter of the rotated
 tetrahedron is the third of the original. -/
-theorem shape_cycle₂ (hz0 : T.shape ≠ 0) (h1z : (1:ℂ) - T.shape ≠ 0) :
-    1 / (1 - 1 / (1 - T.shape)) = 1 - 1 / T.shape := by
-  have h : (1:ℂ) - 1 / (1 - T.shape) = -T.shape / (1 - T.shape) := by field_simp; ring
+theorem shape_cycle₂ (hz0 : (T.shape : ℂ) ≠ 0) (h1z : (1:ℂ) - T.shape ≠ 0) :
+    (1 : ℂ) / (1 - 1 / (1 - T.shape)) = 1 - 1 / T.shape := by
+  have h : (1:ℂ) - 1 / (1 - T.shape) = -(T.shape : ℂ) / (1 - T.shape) := by
+    field_simp; ring
   rw [h]
   field_simp
   ring
@@ -179,15 +195,15 @@ Needs **no** non-vanishing hypothesis, which the unused-variable linter caught:
 Lean's `1/0 = 0` makes both sides `1` in the degenerate case `1 − z = 0`, so the
 identity holds unconditionally. -/
 theorem shape_cycle₃ :
-    1 - 1 / (1 / (1 - T.shape)) = T.shape := by
+    (1 : ℂ) - 1 / (1 / (1 - T.shape)) = T.shape := by
   field_simp
   ring
 
 /-- The same tetrahedron, relabelled: shape `1/(1−z)`. -/
 noncomputable def rotate : IdealTetrahedron :=
-  ⟨1 / (1 - T.shape), (tet_im_pos _ T.im_pos).1⟩
+  ofIm (1 / (1 - T.shape)) (tet_im_pos _ T.im_pos).1
 
-@[simp] theorem rotate_shape : T.rotate.shape = 1 / (1 - T.shape) := rfl
+@[simp] theorem rotate_shape : (T.rotate.shape : ℂ) = 1 / (1 - T.shape) := rfl
 
 /-- **The dihedral angles cycle under relabelling.** -/
 theorem rotate_angles :
@@ -236,7 +252,7 @@ noncomputable def volume : ℝ := ∑ i, (T.tet i).volume
 /-- The volume in dilogarithm form, termwise. -/
 theorem volume_eq_dilog :
     T.volume = ∑ i, ((cLiTwoExt (T.tet i).shape).im
-      + Real.log ‖(T.tet i).shape‖ * Complex.arg (1 - (T.tet i).shape)) :=
+      + Real.log ‖((T.tet i).shape : ℂ)‖ * Complex.arg (1 - (T.tet i).shape)) :=
   Finset.sum_congr rfl fun i _ => (T.tet i).volume_eq_dilog
 
 /-- A triangulation all of whose tetrahedra have the same shape. -/

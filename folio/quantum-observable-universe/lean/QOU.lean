@@ -7,6 +7,9 @@ import QOU.BringsSurface.CoveringDegreeRamification
 import QOU.RiemannSurface.GermStabiliserCyclic
 import QOU.RiemannSurface.CombinatorialMapQuotient
 import QOU.RiemannSurface.CombinatorialMapEuler
+import QOU.RiemannSurface.CycleCountSwap
+import QOU.RiemannSurface.MapGenusNonneg
+import QOU.BringsSurface.GenusFourFromEquivariantMap
 import QOU.BringsSurface.GenusFourFromGermStabilisers
 import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
 import QOU.Eightfold.CommutativeImageDegeneration
@@ -490,6 +493,7 @@ import QOU.SchurWeyl.PiBlockSeparation
 import QOU.SchurWeyl.HeckeProductSurjective
 import QOU.SchurWeyl.HeckeWedderburnGeneral
 import QOU.SchurWeyl.OcneanuMarkovTraceEveryZ
+import QOU.SchurWeyl.OcneanuTraceFaithful
 import QOU.SchurWeyl.SpinSectorMeasure
 import QOU.SchurWeyl.HeckeSemisimpleGeneral
 import QOU.SchurWeyl.HeckeSemisimpleReal
@@ -663,6 +667,8 @@ import QOU.BraidKnot
 -- that is pre-existing and now visible in the package build rather than
 -- hidden outside it.
 import QOU.BraidKnot.MesonFusionIndexSelection
+import QOU.BraidKnot.ElectronWordCandidates
+import QOU.BraidKnot.LongestWordNotTwoPhoton
 import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.GBRewriteDifferential
@@ -1799,3 +1805,14 @@ import QOU.QBeta.CoshHolonomyAndGPMTBaseBridge
 import QOU.ShellCondensation.SelectorPrune
 import QOU.ShellCondensation.BringLatticeRanks
 import QOU.ShellCondensation.CoefficientPurity
+import QOU.ShellCondensation.GammaGammaAtom
+import QOU.Machinery.HeckeBraidedCategoryScaffoldInstances
+import QOU.Machinery.HeckeTowerBasicConstructionInstances
+import QOU.Machinery.KashiwaraCrystalBasicInstances
+import QOU.Machinery.MarkovTraceOnHeckeInstances
+import QOU.Machinery.SpectralSequenceBasicInstances
+import QOU.Machinery.StrongAJFigureEightInstances
+import QOU.MathlibExt.RSZIsoformalInterfaceInstances
+import QOU.MathlibExt.WenzlSchurElementInstances
+import QOU.QBeta.BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge
+import QOU.QBeta.RationalStateIntegralCuspTorsionBringHomologyGoldenDilogCostinTransseriesBridge

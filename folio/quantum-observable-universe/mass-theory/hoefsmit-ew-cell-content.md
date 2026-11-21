@@ -22,7 +22,7 @@ Enumerating the $76$ standard Young tableaux of size $6$ and classifying each of
 |---|---|---|---|---|---|---|---|
 | $4$ | $2$ | $1$ | $3$ | $3$ | $1$ | $2$ | $4$ |
 
-These counts are computed (the tableau and eigenvalue-class routines in `computations/probes/ew_interface_knot_probe.py`); they are not derived in closed form.
+These counts are computed (by enumerating standard tableaux and eigenvalue classes); they are not derived in closed form.
 
 The naming of the six patterns and of the carrier powers $\sigma_1^4, \sigma_3^6, \sigma_5^8$ as the electroweak carriers $W, Z, H$, together with the minimality of $n = 6$, the interface-knot refinement, the dimension-collapse resolution, the Plancherel-weight special case and the $N_v$ implication, is collected in
 [the Hoefsmit cell-content context](#rem:hoefsmit-ew-cell-content-context).

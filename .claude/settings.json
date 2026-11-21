@@ -51,6 +51,11 @@
           },
           {
             "type": "command",
+            "command": "./scripts/precommit-voice-ratchet-warn.sh",
+            "timeout": 30
+          },
+          {
+            "type": "command",
             "command": "./scripts/precommit-bean-id-warn.sh",
             "timeout": 15
           },

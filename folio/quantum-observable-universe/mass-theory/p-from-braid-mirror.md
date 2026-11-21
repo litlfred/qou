@@ -80,9 +80,6 @@ The conjecture asserts an involution $P$ on braid-group elements ($P^2 = \mathrm
 
 ## Consumers / downstream
 
-- [CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure](#conj:cpt-orbit-closure-density)
-  becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once all
-  three factors are established.
 - The writhe-based chirality classification
   [Chirality factor $1 + w \cdot h$ from ribbon-twist framing (writhe $w$)](#prop:chirality-writhe-ribbon-derivation)
   gets a categorical home: chirality measures the P-anti-symmetric
@@ -105,5 +102,4 @@ The conjecture asserts an involution $P$ on braid-group elements ($P^2 = \mathrm
   reversal, this conjecture supplying parity:
   [Charge conjugation $C$ as the color-sheet flavor-swap $u \leftrightarrow \bar u$, $d \leftrightarrow \bar d$](../brings-surface/c-from-color-flavor-swap.md),
   [Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)](../nuclear-interactions/t-from-trace-cyclicity.md)
-- Composite CPT: [CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure](#conj:cpt-orbit-closure-density)
 - Bar-involution: [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md) Tables 1-4

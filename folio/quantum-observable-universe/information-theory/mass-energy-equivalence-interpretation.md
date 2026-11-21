@@ -13,7 +13,5 @@ The energy $\mathfrak{E} = \mathfrak{m} \cdot c_q^2$ ([energy](#def:mass-energy)
 
 At $q = q_0$, a braid class with mass $\mathfrak{m}$ has energy $\mathfrak{E} = \mathfrak{m}/(q-1)^2 \approx 83\mathfrak{m}$.
 
-One treats the electron ([electron](#rem:mass-energy-electron-check)) and the pair-creation threshold ([pair creation](#rem:mass-energy-pair-creation)) separately.
-
 **Archimedean realisation.**
 Over $\mathbb{C}$, Yekutieli's nonabelian multiplicative integral \cite{yekutieli2015} realises the mass ([mass over $\mathbb{C}$](#cor:mass-identity-C)), and $\mathfrak{E}$ is that norm divided by $(q-1)^2$.

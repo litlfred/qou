@@ -6,6 +6,7 @@ export default conjecture({
     "Gram-determinant ratio $\\kappa$ as a Plancherel-weighted character product",
   uses: ["def:cs-gram-determinant-ratio", "rem:gram-matrix-spectral-connection"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): be the unique pair of\ngenus-$4$ torus knots\n([Bring uniqueness](#prop:force-carrier-bring-uniqueness))" },
     {
       kind: "status",
       date: "2026-11-15",

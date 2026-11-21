@@ -14,9 +14,7 @@
   "label": "prop:binding-error-amplification",
   "kind": "proposition",
   "title": "Binding-energy error amplification: $\\mathcal{A} = M_{\\mathrm{atom}}/B$",
-  "uses": [
-    "papers/quantum-observable-universe/blocks/conj-binding-scale-catalan"
-  ],
+  "uses": [],
   "leanRef": "qou:QOU.MassTheory.BindingErrorAmplification.binding_rel_error",
   "text": "binding-error-amplification.md",
   "leanSource": "binding-error-amplification.lean",

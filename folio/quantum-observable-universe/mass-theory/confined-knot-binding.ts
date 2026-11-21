@@ -7,7 +7,13 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.confined_knot_binding",
     validation: "not_checked",
   },
-  uses: ["conj:nuclear-knot-classification"],
+  // conj:nuclear-knot-classification dropped from uses[] 2026-11-20 (bean
+  // qou-tm3c, owner rule "cut edges the text does not use"). Neither the
+  // statement nor prf:confined-knot-binding cites it: the cancellation
+  // chi_sym + chi_alt = 0 and the standard-channel volume z - h_A/2 follow
+  // from the H_3 characters and the transfer matrix. The edge put 47 provable
+  // blocks downstream of that conjecture, 20 of them through it alone.
+  uses: [],
   tags: [
     "binding-mechanism",
     "character-ratio",
@@ -26,6 +32,7 @@ export default proposition({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): Together with the $A \\ge 3$ ill-posedness of the jet word\n([measured](#conj:jet-filtered-knot-factor)), the three-level product is not\nevaluable as written. Either obstruction alone suffices." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Either obstruction alone suffices.\n`the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py`." },
   ],
 });

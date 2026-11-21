@@ -6,9 +6,7 @@ of a Planck cell — the sections of the jet tower that are partially
 evaluated but not yet resolved to observable knots.  This remark
 records the variational origin, the in-progress-braid counting, the
 quadratic suppression that produces $S_{\mathrm{cell}}$, and the
-numerical values at $q_0$. The associated Julia-set
-Hausdorff-dimension prediction is recorded separately
-([Hausdorff-dimension prediction](#rem:julia-hausdorff-dimension-prediction)).
+numerical values at $q_0$.
 
 **The variational origin of $G$.**
 The field equation $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$

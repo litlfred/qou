@@ -33,5 +33,6 @@ export default proposition({
         "replaced by coreBounded in both encodings.",
       see: "conj:levi-degeneracy",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This establishes exactly the [regularity breakdown](#conj:regularity-breakdown) regime." },
   ],
 });

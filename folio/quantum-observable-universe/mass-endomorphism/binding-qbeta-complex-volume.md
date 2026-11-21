@@ -235,10 +235,7 @@ hypothesis. The bound $\leftrightarrow$ free
 deformation-path reading (endpoints of one Askey–Wilson family, with the
 $\mathfrak{V}$-ladder riding one bar-even three-term multiplier) is likewise a
 conjectural hypothesis, whose two-channel descent is derived from the
-recurrence descent statement above. See the
-companion remarks
-[The channel rotation in the Askey scheme: same eigenfunctions rotated, different measures](#rem:channel-rotation-askey-lit) and
-[Bound $\leftrightarrow$ free as a character-variety path: the deformation reading of $\mathfrak{V}$](#rem:complex-volume-character-variety-path).
+recurrence descent statement above.
 
 **Archimedean specialisation.** The measured binding and $Q_\beta$ form the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$). This provides the archimedean readout of the generic complex-volume construction, acknowledged here.
 

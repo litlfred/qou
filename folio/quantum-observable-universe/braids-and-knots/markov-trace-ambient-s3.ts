@@ -16,6 +16,7 @@ export default remark({
         "question for the author, not a typo. See `docs/audits/2026-09-04-w-derived-not-postulated-" +
         "degree-of-the-volume-form.md` §3, §7.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): : the [Reeb bundle](#def:reeb-bundle) presents a three-sphere as the total space of the Hopf fibration $S^3 \\to \\mathcal{S}_p \\cong S^2$, which is the coset projection $\\mathrm{SU}(2) \\to \\mathrm{SU}(2)/U(1)$, and under that reading the two are the same object. The identification is not settled here" },
   ],
   label: "rem:markov-trace-ambient-s3",
   title:

@@ -93,9 +93,9 @@ export default chapter({
         "sign-sequence-of-braid",
         "sign-sequence-of-braid-invariant",
         "hoefsmit-is-surreal-construction",
+        "jones-birthday",
         "hoefsmit-is-surreal-construction-context",
         "hoefsmit-is-surreal-construction-proof",
-        "jones-birthday",
       ],
     },
     {
@@ -116,6 +116,8 @@ export default chapter({
       label: "sec:conway-normal-form",
       blocks: [
         "conway-normal-form-intro",
+        "surreal-blowup-calculus",
+        "surreal-blowup-calculus-table-data",
         "conway-normal-form",
         "body-asymptotics-catalog",
         "body-asymptotics-catalog-table3-data",
@@ -127,8 +129,6 @@ export default chapter({
       title: "Named surreals for singular objects",
       label: "sec:named-surreals-singular",
       blocks: [
-        "surreal-blowup-calculus",
-        "surreal-blowup-calculus-table-data",
         "surreal-blowup-literal",
         "surreal-blowup-examples",
         // Möbius energy renormalization as a difference of infinite surreals
@@ -171,12 +171,12 @@ export default chapter({
       title: "Surreal rate calculus and the squeeze inequality",
       label: "sec:surreal-rate-calculus",
       blocks: [
+        "surreal-squeeze",
+        "surreal-squeeze-proof",
         "surreal-rate-calculus",
         "surreal-rate-calculus-setup",
         "surreal-rate-calculus-proof",
         "surreal-rate-calculus-interpretation",
-        "surreal-squeeze",
-        "surreal-squeeze-proof",
         "surreal-squeeze-interpretation",
       ],
     },
@@ -194,6 +194,8 @@ export default chapter({
           title: "BSD, RH, and Yang-Mills bounds",
           label: "sec:millennium-bsd-rh-ym",
           blocks: [
+            // RH
+            "rh-surreal-bound",
             // BSD
             "categorical-mordell-weil",
             "categorical-sha-local-global",
@@ -201,8 +203,6 @@ export default chapter({
             "q-bsd-rank-zero",
             "q-bsd-classical-limit",
             "bsd-surreal-bound",
-            // RH
-            "rh-surreal-bound",
             // Yang-Mills
             "yang-mills-surreal-bound",
             "os-reflection-positivity-from-reeb",

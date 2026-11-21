@@ -16,7 +16,7 @@ $$
   \;\succeq\; 0
 $$
 
-*Here, $\mu_\lambda$ is the $q$-Laplacian eigenvalue ([$q$-heat kernel Peter-Weyl](#prop:q-heat-kernel-peter-weyl)) and $c_{\lambda\lambda'}$ is the coupling determined by the atom observables.*
+*Here, $\mu_\lambda$ is the $q$-Laplacian eigenvalue and $c_{\lambda\lambda'}$ is the coupling determined by the atom observables.*
 
 *A regime switch occurs at $(Z, N)$ values where $c_{\lambda\lambda'} \to 0$. The PSD block drops from rank 2 to rank 1, the active-constraint set of the SDP jumps, and the atom's density matrix loses coherence between $\lambda$ and $\lambda'$.*
 

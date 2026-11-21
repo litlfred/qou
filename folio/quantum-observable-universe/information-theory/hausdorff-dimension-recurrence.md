@@ -7,7 +7,7 @@ This defines a contraction mapping for $q > 3/4$. The iteration $d_{H,q} \to d_{
 **Regime table.**
 See [Table 1](#tbl:hausdorff-dimension-recurrence-table1-data).
 
-The $q$-deformed $d_{H,q}$ and the classical Hausdorff dimension $d_H$ of the Julia set over $\mathbb{C}$ are distinct quantities ([classical Hausdorff dimension comparison](#rem:hausdorff-dimension-classical-comparison)).
+The $q$-deformed $d_{H,q}$ and the classical Hausdorff dimension $d_H$ of the Julia set over $\mathbb{C}$ are distinct quantities.
 
 **Convergence from local $q$.**
 The downward iteration $q_{n+1} = q_n - \hbar_{q_n} = (q_n^2 - q_n + 1)/q_n$ flows $q$ toward the classical limit $q = 1$. This is a superattracting fixed point. Starting from the local $q_0$:

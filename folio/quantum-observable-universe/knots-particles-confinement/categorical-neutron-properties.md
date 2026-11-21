@@ -4,7 +4,7 @@ The [neutron definition](#def:categorical-neutron) establishes the $\mathcal{B}_
 As in the [proton](#def:categorical-proton) construction, one finds $\mathrm{net}(\mathcal{B}_3) = +1.000$, establishing intrinsic Hopf link content without an independent $\mathcal{L}_H$ factor.
 
 **Step 2: Typed crossings + Hopf gluon stabilisation.**
-The two down quarks induce stronger $-h_{\mathrm{A}}$ shifts than the single down quark of the proton. The crossing pairs appear in [Table: Neutron crossing pairs](#tbl:categorical-neutron-table-data).
+The two down quarks induce stronger $-h_{\mathrm{A}}$ shifts than the single down quark of the proton.
 
 A single Hopf link $L_- = \sigma_1\sigma_0$ is what the construction applies. The integer LP dual selects $L_-$ as the minimum-action stabiliser, for a total of **11 crossings** (6 from $\mathcal{B}_3$, 3 from quarks, 2 from gluons), and $\mathrm{net}(\mathfrak{n}) = +0.7976$ is the eleven-crossing value ([gluon-stabiliser ledger](#rem:gluon-stabiliser-ledger)).
 
@@ -17,8 +17,6 @@ What remains invariant is the *scope* of the enumeration: every non-trivial brai
 **Step 3: Neutron NF (with Hopf gluon).**
 At $q_0 \approx 1.1100$:
 
-See [Table](#tbl:categorical-neutron-table-data).
-
 $$
   \mathrm{net}(\mathfrak{n}) = +0.7976
 $$
@@ -26,14 +24,14 @@ $$
 Relative to the proton ($\mathrm{net} = +1.0065$), the additional down quark demands a larger $L_+$ compensation ($-0.2206$ versus $-0.1114$). After Hopf gluon stabilisation, the trefoil channel $e^- \approx +1.0$ dominates both nucleons.
 
 **Transition: proton $\to$ neutron.**
-The normal-form difference yields the dimensionless $\beta$-decay transition ([energy scale](#rem:beta-decay-energy-scale)):
+The normal-form difference yields the dimensionless $\beta$-decay transition:
 
 $$
   \Delta\mathrm{net}(\mathfrak{n} - \mathfrak{p})
   = 0.7976 - 1.0065 = -0.2089
 $$
 
-The uniform energy scale $\mathfrak{E}_0 = \mathfrak{Q}_\beta / |\Delta\mathrm{net}| \approx 4.155$ MeV converts these coefficient differences directly to MeV ([formation chain](#rem:meson-to-proton-via-borromean)).
+The uniform energy scale $\mathfrak{E}_0 = \mathfrak{Q}_\beta / |\Delta\mathrm{net}| \approx 4.155$ MeV converts these coefficient differences directly to MeV.
 
 **Mass.**
 
@@ -42,7 +40,7 @@ $$
   2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
 $$
 
-At the CODATA value $q_0$, the base mass is $\mathfrak{m}_{\mathfrak{n}}(q_0) \approx {{ qou.computations.codata-masses.data.m_n_MeV | precision: 6 }}\;\text{MeV}$ MeV, derived strictly from the substrate parameter ([local substrate](#prop:local-substrate-q)). The resulting proton--neutron mass splitting is exactly:
+At the CODATA value $q_0$, the base mass is $\mathfrak{m}_{\mathfrak{n}}(q_0) \approx {{ qou.computations.codata-masses.data.m_n_MeV | precision: 6 }}\;\text{MeV}$ MeV, derived strictly from the substrate parameter. The resulting proton--neutron mass splitting is exactly:
 
 $$
   \mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}} =

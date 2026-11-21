@@ -25,6 +25,7 @@ export default remark({
     "prop:gamma-gamma-generates-particles",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Moved out of the prose by the voice-leak drain (qou-d4kh, W14b, 2026-11-21): coefficients recomputed exactly over Q(q) in `computations/probes/photon_chiral/photon_chiral_ports_probe.py`; witness `computations/probes/photon_chiral/photon-chiral-ports.witness.json`. The earlier citation `breit-wheeler-nucleon-nf.witness.json` does not exist in the repository." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Witness:** `breit-wheeler-nucleon-nf.witness.json`" },
     {
       kind: "refined-framing",

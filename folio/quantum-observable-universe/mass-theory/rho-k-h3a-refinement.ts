@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "conj:hoefsmit-scattering-pipeline",
+    // conj:hoefsmit-scattering-pipeline removed (qou-tm3c): the statement supposes the refinement balance and divides by |tr_M|; the Hoefsmit pipeline is not used.
     "prop:y-lambda-closed-form-wenzl-bridge",
   ],
   cites: ["wenzl1988", "hoefsmit1974", "kassel1995"],

@@ -32,5 +32,6 @@ export default proposition({
         "home chapter (subject-matched), and the true logical flow runs the other " +
         "way: that definition consumes this channel algebra, not vice versa.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): $e_\\pm$ represents the Wedderburn pair of the [Hopf channel](#def:van-der-waals-hopf-channel) and" },
   ],
 });

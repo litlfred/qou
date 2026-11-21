@@ -125,9 +125,7 @@ vanishes identically on the reals, and evaluating it at a real argument would
 force every volume to zero — a *flat* tetrahedron, which is the negation of the
 conjecture rather than a weak form of it. The shape $z(x)$ is therefore taken
 in the upper half plane, so a degenerate shape is excluded, and $x$ keeps its
-own role as the $q$-Pochhammer state variable. The sibling
-([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy))
-imposes the same requirement on its own shape assignment.
+own role as the $q$-Pochhammer state variable.
 
 ## The bar-odd open item: argument identification to $S$
 
@@ -240,7 +238,4 @@ caveat records that it *"does not yet drive a SnapPy Newton iteration"*.
 is the SnapPy side. It compares the bare algebraic seeds against SnapPy's
 converged tetrahedral shape parameters for the figure-eight $4_1$
 ($\mathtt{m004}$), its sister $\mathtt{m003}$, and the Borromean rings
-$\mathtt{L6a4}$, and reports the pairing distance; it seeds no solve. Those
-distances ($0.40$ to $0.91$) are what bound the conjecture's canonical form, as
-[shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)
-§*Empirical scope* records.
+$\mathtt{L6a4}$, and reports the pairing distance; it seeds no solve.

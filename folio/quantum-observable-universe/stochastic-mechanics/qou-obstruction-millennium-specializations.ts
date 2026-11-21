@@ -28,5 +28,6 @@ export default remark({
         "residue does not), with the machine-checked refutation of the " +
         "single-verdict reading in `QOU.Information.ObstructionVerdictCap`.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , and the corpus's own statement elsewhere is the correct one: the proportionality of the evaluations \"is part of the conjecture, not a consequence of it\" ([$\\mathrm{P} \\neq \\mathrm{NP}$ at non-torsion $q$](#conj:qou-p-neq-np))" },
   ],
 });

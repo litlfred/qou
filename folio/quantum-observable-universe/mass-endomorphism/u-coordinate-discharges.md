@@ -1,6 +1,6 @@
 **Macdonald coordinate $u = q^2$ substantive discharges for $H_3 / V_{(2,1)}$ scalar invariants.**
 
-Many scalar invariants in the Hecke and Wenzl-bridge algebras are rational in the Macdonald coordinate $u = q^2$, even when their defining formulas involve square roots in $q$. This Macdonald substitution eliminates the square roots. This provides concrete closed-form identities that verify algebraically the explicit-residual discharges required in [$c_k$ extraction from four algebraic reduction rules](#rem:ck-extraction-from-algebraic-rules) and related proofs.
+Many scalar invariants in the Hecke and Wenzl-bridge algebras are rational in the Macdonald coordinate $u = q^2$, even when their defining formulas involve square roots in $q$. This Macdonald substitution eliminates the square roots.
 
 ## Substantive identities
 
@@ -18,6 +18,4 @@ For example, the Hecke quadratic relation for every generator of $H_3(q)$ requir
 
 These $u$-coordinate identities act as the computational backing for several downstream blocks:
 
-- [$c_k$ extraction from four algebraic reduction rules](#rem:ck-extraction-from-algebraic-rules) rests on these identities for its explicit-residual discharges.
 - [$H_3(q)$ Hecke idempotents](#rem:h3-hecke-idempotents) reduces its computation of $\dim_q(V_{(2,1)})^2$ to a rational function of $u$.
-- [Hoefsmit seminormal matrix for $V_{(2,1)}$ and the Markov-symmetrized cos character](#prop:hoefsmit-V21-cos-symmetrization) gives a square-root-free closed form for the Hoefsmit coupling $b^2$ as a rational function of $u$.
