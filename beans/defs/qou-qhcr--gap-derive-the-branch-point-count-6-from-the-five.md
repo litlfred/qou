@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-11-20T17:50:00Z
+updated_at: 2026-11-21T07:40:00Z
 parent: qou-6qbv
 ---
 
@@ -530,3 +530,17 @@ Still hypotheses:
 - G2/G3: H^1 = 2W with W irreducible.
 
 The 6 is still not derived. W9 is parked.
+
+## 2026-11-21 — W9: "do all" pass
+
+#8719 merged (`f44185ff74`).
+
+- **M2 chart step:** PR #8750, sorry-free.
+- **Identity theorem on a surface:** GAP `qou-4xht`, for Antigravity.
+- **Equivariant triangulation (Rado):** GAP `qou-yslf`, for Antigravity.
+- **G2 (lift A5/S5 to the base):** new bean `qou-khmu`.
+- **G3 (irreducibility of H1 = 2W):** new bean `qou-w8es`.
+
+G2 and G3 are open research. Not attempted: no derivation route was found that does not read the answer off Bring, and choosing one because it gives 4 is fitting.
+
+The 6 is still not derived; bean stays open.

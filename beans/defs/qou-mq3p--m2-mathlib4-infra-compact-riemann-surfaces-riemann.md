@@ -10,7 +10,7 @@ tags:
     - riemann-surfaces
     - complex-analysis
 created_at: 2026-11-19T08:19:49Z
-updated_at: 2026-11-19T08:19:49Z
+updated_at: 2026-11-21T07:40:00Z
 parent: qou-dxbw
 ---
 
@@ -65,3 +65,9 @@ parent: qou-dxbw
 - `axiom parallelogramIntegral_inv_sub_eq_two_pi_i` (`lean/QOU/Mathlib/ParallelogramContour.lean:173`)
 - `opaque QOU.EllipticStabilityLocus.WeierstrassFormHolds` (`predicted-spectra/elliptic-stability-locus.lean:33`)
 - `opaque QOU.EllipticStabilityLocus.IntegerPointIdentificationHolds` (`predicted-spectra/elliptic-stability-locus.lean:38`)
+
+## 2026-11-21 — W9: chart step, PR #8750
+
+`QOU/RiemannSurface/ChartStep.lean`, sorry-free: point stabilisers of a finite holomorphic action (holomorphic in a chart at p) are cyclic, granted local effectiveness.
+
+Open: the identity theorem on a connected Riemann surface (GAP `qou-4xht`, for Antigravity).
