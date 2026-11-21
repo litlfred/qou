@@ -22,6 +22,10 @@ and `q⁻² · c` for the neutron. That is the `K1` reading of the constant term
 the own-sector trace of a common `c`. Nothing here derives that, and nothing here derives the
 value of `c`. The existing bridge puts a different object, the pairwise Coulomb charge, in the
 Reeb piece. That object is untouched here.
+
+`MatterTraceWeightVector.lean` reduces the hypothesis: in a matrix model `ψ* ≫ ψ` is rank
+one, so `c` is the single matrix element `φ ∇ ψ`, and the sector weight is the `K`-eigenvalue
+of the state.
 -/
 
 namespace QOU.MassTheory.TwoTermMatterOwnSector

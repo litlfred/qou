@@ -316,10 +316,29 @@ The two-term Lagrangian is `ℒ = 𝒟² + ψ*·𝒟ψ`, `𝒟 = q⁻¹∇ + (1 
   `(q⁻² − 1)·c + (1 − q⁻¹)·(Reeb matter difference)`.
 
 What is assumed, and stated as Lean hypotheses (`hHorizP`, `hHorizN`): that the horizontal matter
-trace is the own-sector trace of one common `c`. What is not derived: the value of `c`. The naive
-choice, the identity on the 3-dimensional nucleon weight space, gives `q⁻¹ · 3q = 3`, not the `12`
-of the production identity. So the count is still open, now as a precise question: which element
-of the horizontal matter term has own-sector trace `12`.
+trace is the own-sector trace of one common `c`.
+
+**That hypothesis reduces to two checkable facts (`MatterTraceWeightVector.lean`, sorry-free).**
+`ψ* ≫ ψ` factors through the unit, so in a matrix model it is rank one, `ψ φ`. For the quantum
+trace `τ(X) = tr(K X)`:
+
+- `qtrace_rank_one`: if `K ψ = w ψ`, then `tr(K ψ φ M) = w · (φ M ψ)`. The sector weight is the
+  `K`-eigenvalue of the state, by cyclicity alone.
+- `matrix_element_eq_of_intertwiner`: if the up/down flip `P` sends the proton state to the
+  neutron state and intertwines the connections (`P Mp = Mn P`, the shape of `P A₁ = B₁ P`), the two
+  matrix elements are equal.
+
+So `hHorizP`/`hHorizN` hold once (a) the nucleon state is a `K`-weight vector, of weight `q`
+(proton) or `q⁻¹` (neutron), and (b) the flip intertwines the two horizontal connections. Fact (a)
+is what "proton sector" means. Fact (b) is not yet checked against the corpus's `nablaEndo`.
+
+**This also corrects the count framing.** An earlier version of this section said the identity on
+the 3-dimensional weight space gives `3`, not `12`. That treated `c` as a trace over the sector. It
+is not: `c = φ ∇ ψ` is one matrix element. If `∇` acts as the identity, `c = φ ψ`, the
+normalisation of the nucleon state. So the open question is now: what fixes `φ ∇ ψ = 12`? Either
+`∇` on the nucleon state, or the state's normalisation, or both. Neither is fixed by the corpus
+yet. Searching for a `∇` or a normalisation that gives `12` would be selection against the target,
+so it has not been done.
 
 Note that the bridge on `main` already puts the pairwise Coulomb charge in the Reeb matter piece
 (`trace_matter_diff_coulomb_specialization`), so the horizontal piece is not otherwise occupied.
