@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-21T22:59:27Z
+updated_at: 2026-11-21T23:09:22Z
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -61,3 +61,5 @@ Scope (a): the curve provides the right pole (residue 1 over z=-1) but the class
 - q-version test, answered by continuity: any q-deformation of I(z) that tends to I(z) as q -> 1 cannot equal -Li2^q(-z), because -Li2^q(-z) tends to -Li2(-z) and I(z) != -Li2(-z) (e.g. z = 1: pi^2/20 vs pi^2/12). So this route can match only through a deformation that is discontinuous at q = 1, or a different inner form. Scope (a).
 
 2026-11-21: pi^2/20 is the n=5 case of a family. On the curve [n]_X = [n]_t (n odd), the real branch X(t) on t in [0,1] gives I_n(1) = int_0^1 log(-X)/t dt = pi^2/(4n): measured n=3 (1/12, exact: I=-Li2(-1)), 5 (1/20, 40 digits), 7 (1/28), 9 (1/36), 11 (1/44), mpmath quad 20-30 digits + identify. Even n: no negative real branch. For n=5 the two complex branches give Re = 3pi^2/80 each; all three sum to pi^2/8 = int log([4]_t) dlog t. Symbol reduction: t[4]_t = X[4]_X gives X^t = -X^[4]_t mod Steinberg; the quotient by X<->t is rational, v=Xt=(u+1)(u^2+1)/(2u+1), u=X+t. So the 5 in pi^2/20 comes from n, not from a fifth-root dilog value. Open: prove I_n(1)=pi^2/(4n); not proved, numeric only.
+
+2026-11-21 proof attempt for I_n(1)=pi^2/(4n), not closed. Useful reductions: (a) on the real branch X=-y, the curve is (1+y^n)/(1+y) = (1-t^n)/(1-t), with the factor y+t (the X=t component) split off; (b) in K2 mod Steinberg, X^t == [n-1]_X ^ [n-1]_t, from X[n-1]_X = t[n-1]_t = S. A numeric check of the Rogers-dilog boundary split did NOT reproduce pi^2/(4n) (n=3 gave -1/4 pi^2 vs +1/12), so my sign or branch handling of L at negative arguments is wrong; do not reuse those numbers. Still numeric only.
