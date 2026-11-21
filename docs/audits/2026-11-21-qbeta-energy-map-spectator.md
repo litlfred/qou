@@ -437,3 +437,22 @@ derived Q_β; §15's "right order of magnitude" was specific to one ordering.
 
 So in the corpus as it stands, colour does not enter this computation at all: one ruled
 colour object acts between nucleons, the other is trivial on writhe-0 words.
+
+## 18. p–n constructions: derived versus asserted (prereg Addendum 9; owner relaxed the p–n ruling)
+
+The owner relaxed the 2026-08-15 p–n colour-weighting ruling and asked for derivation, not assertion.
+The ledger is in Addendum 9. Result of reading the corpus:
+
+- **One p–n quantity is derived at every step**: the cell 2E₀·ln q (§1, §12). Its assignment to an
+  observable is open, and it cannot be m_n − m_p at any q (cell < 2m_e).
+- **Every construction carrying δ is asserted.** δ = `flavor_split_leading` comes from
+  prop:flavor-split-substrate, whose Step 2 is fitted to experiment (the proof says so) and whose Step 1
+  is the convention-C pair-Skein formula with per-quark masses as inputs. `bring_color_weighted`, the
+  Bring linking weight (0.887 MeV) and `flavor_split_subleading` all inherit it; the last is marked
+  POSITED and the linking weight also inherits the λ_A absolute-mass fit.
+- **The linear cell 0.325 MeV** fails spectator invariance (§1).
+
+Derivation routes R-a to R-d are listed in Addendum 9 with their comparison values recorded in advance.
+The only route that ties the derived cell to m_n − m_p, R-c, needs two derivations not yet done: the
+pair-Skein crossing trace under z_D (which would give [2]_q·z_D = q² exactly), and μ_d − μ_u equal to
+the cell. Its comparison value, q²·cell = 1.0762 MeV (−16.79 %), is not evidence for it.
