@@ -57,8 +57,10 @@ unbroken grading `q^{3Q}` (charges cleared to integers) satisfies `B i j ≠ 0 �
 * No coupling, no energy scale is derived. `y_ν` is free; with the idempotent normalisation
   (`χ(ℓ,u) = 1`) the split is `1` in units of an undetermined scale.
 * Part 4 gives energy to `ν`, not to `e⁻`: the opposite of the Standard Model, where the 3-point
-  vertex `L̄ Φ e_R` with a right-handed singlet gives `e⁻` its mass. The strand model has no
-  right-handed singlet, so that vertex is not available here.
+  vertex `L̄ Φ e_R` with a right-handed singlet gives `e⁻` its mass. No single strand is a
+  right-handed singlet. The corpus does have one two-strand candidate, the right line of the
+  matter ⊗ Higgs crossing (`RightHandedSingletChannel.lean`, route Y step 2); reading it as `e_R`
+  is an owner decision.
 * The Standard-Model electric charges are inputs (labels), as in #8676. Premise L (lepton = fourth
   doublet strand) is assumed in Parts 3–4 and is undecided by the owner.
 * Nothing here identifies any split with `Q_β`.
