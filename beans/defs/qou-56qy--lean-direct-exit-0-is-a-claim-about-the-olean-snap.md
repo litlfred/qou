@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-11-21T15:20:54Z
+updated_at: 2026-11-21T17:39:53Z
 parent: qou-5vkl
 ---
 
@@ -577,3 +577,5 @@ worth knowing before someone plans it as an idle-pass job.
 - Verified at 80-dps `mpmath` (`computations/probes/tl_uniqueness_threerow_factorisation_shadow_gluon_probe.py`, `scriptHash: 3ae4cba85e90`, Commit 1 `1f88e71305a6e71d41389edf2285daae1528f7d8`, Commit 2 / Witness `cfb7f3d64020483db10298c3ccdd51ae1d1bd7d8`, PR `litlfred/qou#8297`).
 
 2026-11-21 (lean-build-red drain, issue #8817): a lean-direct-cone --all sweep from source on main 42ca186dad found only the QOU.lean root red (fixed in PR #8878). Reseed (remedy 2) and the AGENTS.md wording are still open.
+
+2026-11-21: remedy 2 (reseed) done. Cache head is 7c61a1ba876: a fresh incremental lake build of main 9428c3511c, every olean traced, and a clean restore rebuilds 0 modules. AGENTS.md records it on PR #8885. Item 3, the AGENTS wording on finding your dirty files, is still an owner call.
