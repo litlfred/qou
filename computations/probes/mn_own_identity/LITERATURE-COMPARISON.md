@@ -177,8 +177,9 @@ Pre-registered in `PREREGISTRATION-sums-and-premise.md` (with a disclosure of an
 **Sums of words (`mn_sector_sums_probe.py`, 7/7).** Over all 1457 reduced signed words of
 length ≤ 6, the integer span of the own-sector traces `T_p = q·tr_{W_p}` reaches exactly the
 constants `3ℤ`. The minimum is `σ₁ + 2σ₁⁻¹` (`T_p = 3`); `σ₂ + 2σ₂⁻¹` gives the same value; and
-`4σ₁ + 8σ₁⁻¹` gives 12. So sums **allow** 12 but do not **force** it: every multiple of 3 is
-reachable, and choosing multiplicities to hit 12 would be selection against the target. No
+`4σ₁ + 8σ₁⁻¹` gives 12. Within this class every multiple of 3 is reachable, so the class does
+not single out 12, and choosing multiplicities to hit 12 would be selection against the target.
+This is a statement about the searched class only; it does **not** show that 12 is unforced. No
 canonical element of `H_3` (symmetriser, `Σ T_w`, `Σ q^{-ℓ} T_w`, full twist, Jucys–Murphy
 sum) has a q-independent nonzero `T_p`; the antisymmetriser gives 0, as `W_p` has no `(1³)`
 part. The three `S_3` sums give `6 = |S_3|` at `q = 1`, so `12 = 2|S_3|` is suggested at the
@@ -191,13 +192,31 @@ classical point only. Scope (a): words of length ≤ 6.
   traces (`qtrace_eq_sum_sectors`), and for a weight-preserving `x` each sector trace is the
   trace on the sector (`sector_trace_eq_restriction`). For `K^{⊗3}`, `λ_p = q`, `λ_n = q⁻¹`.
   So *if* a term is read sector by sector, its weights and the `q²` ratio are forced.
-- *Not forced.* A rule that treats the volume and constant terms alike cannot make the
-  neutron heavier once the proton mass is positive (`uniform_rule_neutron_not_heavier`). The
-  premise therefore needs the term-specific rule "constant per sector, volume whole-space",
-  and nothing in the weight structure of the axioms distinguishes the two terms.
-- *Also not forced.* The sector trace gives normalisation `s = 1` (K2), which the proton test
-  falsified. K1 needs an extra `q⁻¹`.
+- *Proved, and narrower than it first read.* A rule that treats the volume and constant terms
+  alike cannot make the neutron heavier once the proton mass is positive
+  (`uniform_rule_neutron_not_heavier`). So a heavier neutron needs a rule that separates the
+  two terms. The sector decomposition by itself does not separate them.
+- *Not found.* I have not found where in the axioms the separation comes from. That is a gap
+  in this search, **not** a proof that the axioms cannot supply it (correction 2026-11-21,
+  owner: "You just haven't proven that it's not forced"). The first version of this section
+  said "not derivable from the QOU axioms"; that over-claimed and is withdrawn.
+- *Normalisation.* The plain sector trace gives `s = 1` (K2), which the proton test falsified.
+  K1 needs an extra `q⁻¹`, whose source is likewise not found.
 
-Verdict: the premise is **not derivable** from the QOU axioms as they stand. What is derivable
-is the sector weighting once a term is resolved; what is missing is a reason why only the
-constant term is resolved, and why with an extra `q⁻¹`.
+## 6. Where the 12 and the term separation could come from (candidates)
+
+`NucleonSectorBurnsideCount.lean` (sorry-free) and `mn_twelve_candidates_probe.py`.
+
+The proton identity factors as `m_p/m_e = 2((m_μ/m_e) F_Bor − 6)`, and `6 = F_Bor(1) = [3]_1!`.
+The candidate that ties the count to a sector: the classical `S_3` fixed-point count on the
+flavour labellings of `V^{⊗3}` is `6` on the proton sector, `6` on the neutron sector, `12` on
+both nucleon sectors, and `24` on the whole space (`burnside_*`, by `decide`). At `q = 1` the
+six `S_3` traces on `W_p` also sum to `6` (`own_sector_count_q1`); for general `q` they do not
+(`own_sector_sum_q`). So **if** the constant is a classical `S_3` count, it is `12` only when
+restricted to a nucleon sector, and the whole-space reading gives `24`. That is a link between
+the count and a sector restriction. It does not choose between "2 × own sector" and
+"1 × both nucleon sectors", and it does not show the constant is such a count.
+
+Other candidates that equal 12 numerically are listed in the probe output with no mechanism
+attached (`3 colours × 4 weights of V^{⊗3}`, `|A_4|`, `dim H_4 / 2`, `2|χ(Bring)|`). Equal
+values with no mechanism are not evidence, and none is selected.

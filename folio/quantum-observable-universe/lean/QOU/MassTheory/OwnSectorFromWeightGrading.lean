@@ -2,7 +2,7 @@ import QOU.MassTheory.NeutronCartanConstant
 import Mathlib.LinearAlgebra.Matrix.Trace
 
 /-!
-# What the QOU axioms force about the own-sector premise, and what they do not
+# What the sector decomposition gives the own-sector premise, and what it does not
 
 The own-sector premise (`NeutronSectorQTraceConstant`) says: the constant term of the nucleon
 mass is a quantum trace taken on the nucleon's own weight space, while the volume term is a
@@ -16,14 +16,15 @@ quantum trace of any endomorphism `x` is the `λ`-weighted sum of its weight-sec
 of the mass is read sector by sector, its proton and neutron weights are forced, and with them
 the ratio `q²` (`restrictedTrace_ratio`).
 
-**Not forced (`uniform_rule_neutron_not_heavier`).** Any rule that treats the volume term and
+**Uniform rules fail (`uniform_rule_neutron_not_heavier`).** Any rule that treats the volume term and
 the constant term alike (both bare, or both sector-resolved with the same weight) cannot give a
 heavier neutron once the proton mass is positive. Both bare gives `m_n = m_p`; both resolved
 gives `m_p = s q (v − c) > 0`, so `v > c`, and then `m_n − m_p = −s(q − q⁻¹)(v − c) < 0`.
 
 So the premise needs a term-specific rule: the constant is read in the nucleon's own sector
-and the volume term is not. The weight-space structure of the axioms does not supply that
-distinction. No measured value enters.
+and the volume term is not. The sector decomposition alone does not supply that distinction.
+Whether some other part of the axioms does is open; this file does not exclude it. No measured
+value enters.
 -/
 
 namespace QOU.MassTheory.OwnSectorFromWeightGrading
