@@ -975,3 +975,45 @@ coefficient is not derived, and choosing one to fit would be a fit.
 |Δ_D| ≈ 10⁻³), so the sign of any linear electron-calibrated ℒ′ prediction is set by the
 pair-charge sum, which is lower on the neutron. A positive m_n − m_p would need a q-surviving
 n − p of the opposite sign from somewhere other than QPair.
+
+## §32 Is there a corpus n − p that survives at q = 1 with the neutron heavier? (corpus search + Lean)
+
+No new number is computed. Lean: `StaticChargeTermNP.delta_charge_quadratic` (generic field,
+lean-direct exit 0, standard axioms).
+
+| candidate (corpus source) | n − p at q = 1 | sign | status |
+|---|---|---|---|
+| pair charge QPair·hol (`NucleonWeightSpaceTwoTerm`) | −1 | n lighter | §31 |
+| self charge QSelf·hol (QSelfP = 1, QSelfN = ⅔) | −1 | n lighter | same lemma |
+| any a·Σqᵢ² + b·Σqᵢqⱼ (times hol) | −(a+b) | n heavier iff a + b < 0 | `delta_charge_quadratic` |
+| total charge² Q² (a = 1, b = 2) | −3 | n lighter | same lemma |
+| down-quark crossing orientation, q⁻¹ for q (`down-quark.md`) | 0 | — | vanishes: q = q⁻¹ at q = 1 |
+| K-weight / isospin-odd via (1 − q⁻¹)T³ in 𝒟 | 0 | — | §29, §30 |
+| pair Skein S_dd − S_uu = [2]_q z (μ_d − μ_u) (`lem:pair-skein-mass-formula`) | μ_d − μ_u | n heavier if μ_d > μ_u | μ_d − μ_u not derived, see below |
+
+**Charge-quadratic terms (proved).** Every static term built from the quark charges has n − p
+= −(a + b)/3 · tr V³. It is neutron-heavier only for a + b < 0, i.e. with the opposite sign to the
+total charge squared. So every term of the form "charge squared" (self, pair, or total, with a
+positive coefficient) makes the neutron lighter. Nothing in the corpus fixes a + b < 0.
+
+**Sign of a static term in a Lagrangian (open, not chosen).** If tr ℒ′ is read as a
+Lagrangian, a static term is a potential and enters the energy with a minus sign. That flips
+§31 to +54.33 keV / +48.91 keV (neutron heavier, still about 4 % of CODATA). The corpus treats
+tr ℒ as the action, a functional of 𝒟; it does not say how a degree-0 term enters the energy.
+Taking the sign that agrees with CODATA would be selection, so §31's sign (+S, same as the
+other terms) stands as pre-registered.
+
+**The flavour route (corpus self-labelled as a fit).** The pair Skein formula gives
+m_n − m_p = [2]_q z_mkv (μ_d − μ_u), which survives at q = 1 if μ_d ≠ μ_u. The corpus value of
+μ_d − μ_u comes from `prop:flavor-split-substrate`, whose own proof (Step 2) calls its per-quark
+split h²ℏ_q/√q "a phenomenological ansatz … selection against the target", and whose Steps 1
+and 3 hold only in the excised convention C (also recorded in
+`docs/audits/2026-11-20-qbeta-epsilon-is-ruled-not-derived.md` §4). That ansatz is O((q − 1)³),
+so it vanishes at q = 1 too. The down-quark definition attributes μ_d − μ_u to crossing
+orientation, which also vanishes at q = 1.
+
+**Result.** No corpus term derives a neutron-heavier n − p that survives at q = 1. The charge
+terms survive at q = 1 with the neutron lighter (for any positive "charge squared" coefficient,
+proved). The neutron-heavier routes are either a sign choice on a static term, or a flavour mass
+difference μ_d − μ_u that the corpus does not derive. This is a corpus search, so the scope is
+"not found in the searched class".
