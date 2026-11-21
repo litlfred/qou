@@ -95,3 +95,6 @@ STILL OPEN (192, each needs the block's later result; the ratchet on #8637 stays
 
 
 2026-11-21 (W14): owner chose option 1 (cross-chapter moves, narratively correct). #8702 (stacked on #8637 + #8664-#8669): 42 move clusters, strict L4 194 -> 81. Remaining 81 are true cycles or moves that would read badly (full list in the agent report, scratchpad x/). AGENTS.md photon path updated to knots-particles-confinement/photon.md. Ratchet red (path-keyed): re-baseline is an owner decision.
+
+
+2026-11-21 (W14): owner "Break each loop": 48 links removed (87->39, after main merge); 39 kept because cutting would make text false; thurston-relaxation caveat restored without link. Owner "Allow banner links": audit exempts links inside a **<Kind> (conditional on ..).** banner (af2c71e1e9), 39->29. Remaining 29: in-body conditional hypotheses, links in definition/theorem statements, table cells, 4x dim_q in Ch1 definitions. Ratchet red on them; owner did not choose record-as-debt.
