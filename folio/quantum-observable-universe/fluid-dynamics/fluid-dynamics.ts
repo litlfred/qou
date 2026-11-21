@@ -95,6 +95,8 @@ export default chapter({
         "p1-nonlinear-uniqueness",
         "p1-nonlinear-uniqueness-novelty",
         "q-ns-proof-details",
+        "q-bkm-criterion",
+        "q-bkm-criterion-interpretation",
       ],
     }),
 
@@ -182,8 +184,6 @@ export default chapter({
         "p4-universality-interpretation",
         "p5-counterexample",
         "q-aubin-lions",
-        "q-bkm-criterion",
-        "q-bkm-criterion-interpretation",
         "vorticity-lower-bound",
         "vorticity-lower-bound-argument",
         "root-of-unity-truncation",
