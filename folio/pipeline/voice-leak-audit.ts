@@ -137,6 +137,14 @@ export function classifyCode(span: string): string | null {
 }
 
 // ── L3 ──────────────────────────────────────────────────────────────
+// A quotation is the quoted author's voice, not the paper's: "we" inside
+// "..." or “...” is not a person leak (measured 2026-11-21: all 7 L3 hits
+// left on main were Einstein, Heisenberg and Wigner quotations).
+const QUOTE_RE = /"[^"\n]*"|“[^”\n]*”/g;
+export function stripQuotes(l: string): string {
+  return l.replace(QUOTE_RE, " ");
+}
+
 const L3_RE = /\b(?:[Ww]e|[Oo]ur|[Oo]urs|[Oo]urselves|us|[Ll]et's|[Ll]et\s+us|[Yy]ou|[Yy]our|[Yy]ours|[Yy]ourself|the\s+reader)\b/g;
 
 // ── L4a ─────────────────────────────────────────────────────────────
@@ -166,7 +174,7 @@ export function scanText(src: string, opts: { premature?: boolean; prematureAdvi
       const sub = classifyCode(m[1]!);
       if (sub) hits.push({ cls: "L2", criterion: "leak-lean-ident", sub, line, text: m[0] });
     }
-    for (const m of prose.matchAll(L3_RE))
+    for (const m of stripQuotes(prose).matchAll(L3_RE))
       hits.push({ cls: "L3", criterion: "leak-person", sub: m[0].toLowerCase().replace(/\s+/g, " "), line, text: m[0] });
     if (opts.premature)
       for (const { sub, re } of Q_TOKEN_RES) {
