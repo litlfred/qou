@@ -22,7 +22,6 @@ Then:
 2. **Path independence on $\mathcal{S}_p$.**  Two braiding operations
    $T_1, T_2$ on $\mathfrak{H}$ that produce isotopy-equivalent
    configurations
-   ([isotopy equivalence](#def:bundle-isotopy-equivalence))
    have the same categorical transfer matrix:
    $\mathcal{T}(T_1) = \mathcal{T}(T_2)$.  In particular, the
    specific sequence of crossing changes within the exceptional
