@@ -120,7 +120,7 @@
   ⚠ [confinement-operator-selection]: prop:confinement-operator-selection: no Lean declaration yet
   ⚠ [confinement-lp]: prop:confinement-lp: no Lean declaration yet
   ⚠ [operator-selection-lp]: prop:operator-selection-lp: no Lean declaration yet
-  ⚠ [four-term-pair-nucleon]: prop:four-term-pair-nucleon: no Lean declaration yet
+  ⚠ [four-term-pair-nucleon]: conj:four-term-pair-nucleon: no Lean declaration yet
   ⚠ [four-term-pair-nucleon]: Undefined cross-reference(s) in .md: rem:photon-knot-operations
   ⚠ [derived-atom]: Undefined cross-reference(s) in .md: def:nuclear-groebner-reduction
   ⚠ [demand-stability]: prop:demand-stability: no Lean declaration yet

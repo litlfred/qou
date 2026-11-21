@@ -107,8 +107,8 @@ instantiate the mass formula for the muon–electron ratio. -/
     `Vol(4₁)` (the figure-eight knot — the muon ansatz), the
     mass ratio `m_μ / m_e` equals `Vol(4₁) / ℏ_q²`.
 
-    The denominator `m_e` is the mass of the electron (unknot,
-    with mass set to 1 in the ratio). -/
+    The denominator `m_e` is the electron mass, the unit of the
+    ratio (set to 1). -/
 theorem mass_ratio_from_ansatz {M : Type*}
     (amf : ArchimedeanMassFormula M)
     (h_vol : amf.knotVolume = vol_figure_eight) :
@@ -177,22 +177,19 @@ The theorems in this file depend on:
 
 ### Ansatz (data, not axiom)
 - `KnotRegistry.figureEightEntry` — muon = figure-eight (4₁)
-- `KnotRegistry.trefoilEntry` — electron = trefoil (3₁)
+- Electron: σ₀σ₁σ₀ ∈ B₃ with Hopf-link closure (owner ruling, see
+  `docs/coordination/owner-rulings.md`); the trefoil entry
+  `KnotRegistry.trefoilEntry` is the kept backup. No theorem in this file
+  uses either: `m_e` enters only as the unit of the ratio.
 - `KnotRegistry.borromeanRingsEntry` — nucleon = Borromean (6₂³)
 
-### Formerly assumed, now PROVED (2026-08-31)
+### Removed (owner decision, PR #8917)
 
-Both were context classes whose single field was the bound itself, on the
-stated ground of a "`Real.rpow` limitation". The root is eliminated rather
-than evaluated — with `s = q^{1/2}`, only `s > 0` and `s * s = q` are needed —
-and both are now sorry-free theorems in `HadronicMass`, with the classes
-deleted. The side hypothesis they bound
-(`|q^{1/2} + q^{-1/2} − 2.00228| < 1e-4`) is in fact **false** by 4.3×, so
-neither declaration had ever been invocable; that is recorded as
-`HadronicMass.pair_skein_denom_hypothesis_false`.
-
-They are used only by the pair Skein decomposition (§5a of HadronicMass), not
-by `end_to_end`.
+The two pair-Skein agreement bounds that once sat here were removed with the
+other model-vs-CODATA comparisons. Their side hypothesis
+(`|q^{1/2} + q^{-1/2} − 2.00228| < 1e-4`) is false by 4.3×, which is kept as
+`HadronicMass.pair_skein_denom_hypothesis_false`. Nothing in this file used
+them.
 -/
 
 end QOU.CODATAChain
