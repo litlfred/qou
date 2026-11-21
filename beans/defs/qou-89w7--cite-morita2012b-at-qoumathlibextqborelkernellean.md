@@ -9,7 +9,7 @@ tags:
     - qdiff-stokes
     - reorg-2026-10-04
 created_at: 2026-09-07T08:36:12Z
-updated_at: 2026-10-04T15:17:44Z
+updated_at: 2026-11-21T12:26:55Z
 parent: qou-1qhv
 ---
 
@@ -22,3 +22,11 @@ Why the corpus wants it: bean qou-wgnx records that theta-normalisation of C1's 
 What to do: add `-- Ref: [morita2012b] https://arxiv.org/abs/1205.1453 (Thm 1, Cor 1)` to QBorelKernel.lean beside the morita2014 citation that qou-hnuw will add; optionally note it in the qou-wgnx body under route (a).
 
 Not a compute-check: the corpus has no bilateral 1ψ0 evaluation to compare against (the θ-kernel bilateral Laplace in computations/probes/qbeta_g3_5two_qborel_theta_laplace.py is a different object, the Masbaum bar-side series).
+
+## 2026-11-21 — cite-intake drain (wave 1)
+
+Verdict: **done** (commit `88c4ab972`, branch `claude/cite-intake-drain-2026-11-21`, PR #8818, issue #8814). Morita §3.2 theorem + q-elliptic C(x;q) verified in held copy.
+
+Superseded-premise check: the edited text was read against `docs/coordination/owner-rulings.md` (photon 1+φ₀σ₀+φ₁σ₁+φ₀₁σ₀σ₁⁻¹; electron σ₀σ₁σ₀ with Hopf closure; up quark an unknot strand; two-term Lagrangian trace; T(2,n_s) withdrawn; no virtual photons). None of these forms is asserted or relied on in the cited sentences.
+
+Status stays in-progress until PR #8818 merges.

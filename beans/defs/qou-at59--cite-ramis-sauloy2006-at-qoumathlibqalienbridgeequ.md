@@ -1,7 +1,7 @@
 ---
 # qou-at59
 title: Cite [ramis-sauloy2006] at QOU/Mathlib/QAlienBridgeEquation.lean — Thm 3.5/3.6 are the source of the q-alien derivations the file models
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - qdiff-stokes
     - reorg-2026-10-04
 created_at: 2026-09-07T08:35:51Z
-updated_at: 2026-10-04T15:12:07Z
+updated_at: 2026-11-21T12:26:55Z
 parent: qou-1qhv
 ---
 
@@ -34,3 +34,11 @@ DONE on PR #7032 (72c0b29742): -- Ref: [ramis-sauloy2006] (Prop. 2.5, Thm 3.5-3.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-21 — cite-intake drain (wave 1)
+
+Verdict: **already-on-main** (no commit). QAlienBridgeEquation.lean:72 already carries the Ref (Prop 2.5, Thm 3.5-3.6), landed via #7032; numbering 3.5/3.6 re-verified from TeX source today.
+
+Superseded-premise check: the edited text was read against `docs/coordination/owner-rulings.md` (photon 1+φ₀σ₀+φ₁σ₁+φ₀₁σ₀σ₁⁻¹; electron σ₀σ₁σ₀ with Hopf closure; up quark an unknot strand; two-term Lagrangian trace; T(2,n_s) withdrawn; no virtual photons). None of these forms is asserted or relied on in the cited sentences.
+
+Status set to completed.

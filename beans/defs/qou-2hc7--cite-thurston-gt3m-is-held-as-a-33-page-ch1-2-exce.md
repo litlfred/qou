@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:02:44Z
-updated_at: 2026-10-04T15:14:45Z
+updated_at: 2026-11-21T12:26:55Z
 parent: qou-1qhv
 ---
 
@@ -65,3 +65,11 @@ in `library/thurston`. That is exactly the failure mode path 5 exists to prevent
 the holding is partial.
 
 Found by the citation-gap sweep, `docs/audits/2026-09-04-citation-gap-inventory.md`.
+
+## 2026-11-21 — cite-intake drain (wave 1)
+
+Verdict: **done-partial** (commit `147d65c7df6`, branch `claude/cite-intake-drain-2026-11-21`, PR #8818, issue #8814). FG Def2.4/Prop2.5/Thm1.2 added at 3 named sites; other ~110 thurston1978 citers not swept; full GT3M ingest still open
+
+Superseded-premise check: the edited text was read against `docs/coordination/owner-rulings.md` (photon 1+φ₀σ₀+φ₁σ₁+φ₀₁σ₀σ₁⁻¹; electron σ₀σ₁σ₀ with Hopf closure; up quark an unknot strand; two-term Lagrangian trace; T(2,n_s) withdrawn; no virtual photons). None of these forms is asserted or relied on in the cited sentences.
+
+Status stays in-progress until PR #8818 merges.

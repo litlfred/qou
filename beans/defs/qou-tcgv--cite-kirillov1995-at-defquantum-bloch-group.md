@@ -1,14 +1,14 @@
 ---
 # qou-tcgv
 title: Cite [kirillov1995] at def:quantum-bloch-group
-status: todo
+status: in-progress
 pr: 8404
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:54Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:26:55Z
 parent: qou-1qhv
 ---
 
@@ -28,3 +28,11 @@ In-progress in PR #8404 (`feat/qou-t8mi-tcgv-tiwv-u33z-u8cp-round68`, `QOU.QBeta
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8404, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — cite-intake drain (wave 1)
+
+Verdict: **done** (commit `e105e6333`, branch `claude/cite-intake-drain-2026-11-21`, PR #8818, issue #8814). Thm I + Cor 11 (§2.5) at def:quantum-bloch-group, sign convention noted.
+
+Superseded-premise check: the edited text was read against `docs/coordination/owner-rulings.md` (photon 1+φ₀σ₀+φ₁σ₁+φ₀₁σ₀σ₁⁻¹; electron σ₀σ₁σ₀ with Hopf closure; up quark an unknot strand; two-term Lagrangian trace; T(2,n_s) withdrawn; no virtual photons). None of these forms is asserted or relied on in the cited sentences.
+
+Status stays in-progress until PR #8818 merges.

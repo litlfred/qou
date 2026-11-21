@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:22Z
-updated_at: 2026-10-04T15:17:46Z
+updated_at: 2026-11-21T12:26:55Z
 parent: qou-1qhv
 ---
 
@@ -21,3 +21,11 @@ Source: `library/the-period-matrix-of-bring-s-curve-1hik02mwva/the-period-matrix
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-21 — cite-intake drain (wave 1)
+
+Verdict: **done** (commit `10ee5ddbf`, branch `claude/cite-intake-drain-2026-11-21`, PR #8818, issue #8814). RR92 Thm 1 (p.184) states stabiliser SpS5 x SpGamma0(5); Lemma 1 (pp.183-184) gives 5|p. Both cited.
+
+Superseded-premise check: the edited text was read against `docs/coordination/owner-rulings.md` (photon 1+φ₀σ₀+φ₁σ₁+φ₀₁σ₀σ₁⁻¹; electron σ₀σ₁σ₀ with Hopf closure; up quark an unknot strand; two-term Lagrangian trace; T(2,n_s) withdrawn; no virtual photons). None of these forms is asserted or relied on in the cited sentences.
+
+Status stays in-progress until PR #8818 merges.
