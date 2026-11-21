@@ -247,6 +247,10 @@ The corpus fixes the home: `conj:type-b-folding-cpt` folds the physical H_n(q), 
 
 Grading the σ eigenlines with the −q⁻¹ line odd and putting a Koszul sign on the doubled letter makes the mirror-twisted trace reproduce Lusztig's folded letter {q², −q⁻²} for one letter and for two commuting letters; the opposite grading fails. The test is weak (diagonal, target known in advance), the Koszul sign is a modelling choice, and non-commuting letters, the wall and V³ are untested. Details: `computations/probes/bridge_b/h12_result.md`.
 
+### 10j. The graded six-strand test fails (H13, 2026-11-21)
+
+Written inside H₆(q), H12's per-letter Koszul sign (bᵢ = σ̂ᵢ − 2q⁻²E₃₊ᵢE₃₋ᵢ, mirror ι = reversal with basis flip) is ι-equivariant. But the folded quadratic holds under the twisted trace only for F ∈ {1, b₁}, and the graded letters break the type-B braid relations as operators (exact, q = 3/2 and 2). Scope (a): this construction is not a model of Lusztig's descent. His sign lives on the per-element structures φ_x (§16.4), not per letter. D was not computed. Details: `computations/probes/bridge_b/h13_result.md`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
