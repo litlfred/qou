@@ -2,7 +2,7 @@
 > below is the structurally-wrong leading-order ansatz; the operator-valued
 > form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [graded expansion of $\rho_K$](../mass-endomorphism/rho-k-graded-expansion.md).
+> graded expansion [graded expansion of $\rho_K$](rho-k-graded-expansion.md).
 
 The **Kashaev volume conjecture (KVC)** asserts that, for every
 hyperbolic knot $K \subseteq S^3$, the Kashaev limit of the colored
