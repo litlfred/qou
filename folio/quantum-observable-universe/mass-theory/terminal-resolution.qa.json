@@ -3726,6 +3726,23 @@
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). Resolved: the Scope and Convention paragraphs moved to rem:terminal-resolution-scope; the statement keeps only the hypotheses, the convention-C frame as a hypothesis, and claims (i), (ii)."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Prior minor resolved: the Scope and Convention paragraphs moved to rem:terminal-resolution-scope (which carries interprets: prop:terminal-resolution). The statement now carries hypotheses, the formula and parts (i)-(ii) only; 'in its convention-C frame' is a scope hypothesis, not interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -3792,6 +3809,23 @@
         "reviewed_at": "2026-11-21T17:05:00.000Z",
         "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
         "evidence": "Pair Skein nucleon identities sit in mass-theory next to lem:pair-skein-mass-formula, which is the only block they use. Fits the chapter."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Pair Skein nucleon identities sit in mass-theory beside lem:pair-skein-mass-formula, the only block they use; the scope remark follows directly in the same section."
       }
     ],
     "wall-side-statement": [
@@ -3866,6 +3900,23 @@
         "reviewed_at": "2026-11-21T17:05:00.000Z",
         "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
         "evidence": "Statement (i)-(ii) is a pair of identities in q over the field of the formula; no numerical q, no MeV, no CODATA value. Measured masses appear only in the Scope paragraph as the comparison boundary. Convention-C frame is declared, not hidden. No wall crossing."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Purely algebraic identities over a generic field; no q0, no measured value; categorical/algebraic side of the wall."
       }
     ],
     "wall-side-proof": [
@@ -3903,6 +3954,23 @@
         "reviewed_at": "2026-11-21T17:05:00.000Z",
         "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
         "evidence": "Proof is algebra in q (substitution, cancellation, 2x2 determinant, Cramer). Lean sibling works over a generic Field K with q = s^2; lean-direct -DautoImplicit=false exit 0, axioms propext/Classical.choice/Quot.sound only."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Proof (prf:terminal-resolution and the Lean) uses only field arithmetic; no archimedean step."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -4008,6 +4076,23 @@
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). Resolved: the .md now states the hypotheses the Lean uses (char not 3, s and s+s^-1 nonzero, [2]_q nonzero) and claims a bijection; Lean proves injective and the new surjective theorem, and terminal_resolution bundles (i), injectivity and surjectivity. lean -DautoImplicit=false -s 65536 exit 0; axioms propext, Classical.choice, Quot.sound."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Prior minor resolved. The .md now states the hypotheses (char not 3, q^{1/2} != 0, q^{1/2}+q^{-1/2} != 0, [2]_q != 0) and claims a bijection; Lean `terminal_resolution` takes exactly hs, hD, h2, h3 over a generic field and bundles (i) neutron_sub_proton, injectivity and the new `surjective`. Determinant in (ii) matches det_eq up to the stated common factor. Lean sibling lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms surjective/terminal_resolution/injective/det_eq = [propext, Classical.choice, Quot.sound]."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -4111,6 +4196,23 @@
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). Statement (i)+(ii) matches terminal_resolution's three conjuncts."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Lean proves the stated propositions, not weaker ones: (i) unconditional identity, (ii) injective and surjective under the four stated nonvanishing hypotheses. Lean sibling lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms surjective/terminal_resolution/injective/det_eq = [propext, Classical.choice, Quot.sound]."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -4143,6 +4245,23 @@
         "reviewed_at": "2026-11-21T16:41:49.000Z",
         "reviewed_sha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
         "evidence": "Full read of the restated block (issue #8893). No class or hypothesis carries the conclusion; hypotheses are only s, s+s^-1, [2]_q, 3 nonzero."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Conclusions are derived by unfold/ring/field_simp and mul_div_cancel; no class or structure field projected."
       }
     ],
     "proof-no-trivial-true": [
@@ -4175,6 +4294,23 @@
         "reviewed_at": "2026-11-21T16:41:49.000Z",
         "reviewed_sha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
         "evidence": "Full read of the restated block (issue #8893). No True conclusion; both parts are falsifiable identities in K."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No `: True`, no tautology; each conjunct is a falsifiable field identity or existence statement."
       }
     ],
     "proof-no-false-premise": [
@@ -4207,6 +4343,23 @@
         "reviewed_at": "2026-11-21T16:41:49.000Z",
         "reviewed_sha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
         "evidence": "Full read of the restated block (issue #8893). Hypotheses hold e.g. over Q at s = 2."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Hypotheses are jointly satisfiable (e.g. K = Q, s = 1: s+s^-1 = 2, [2]_q = 2, 3 != 0), so the theorem is not vacuous."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -4239,6 +4392,23 @@
         "reviewed_at": "2026-11-21T16:41:49.000Z",
         "reviewed_sha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
         "evidence": "Full read of the restated block (issue #8893). hs, hD, h2, h3 are each used in up_eq/down_eq (nonvanishing of denominators)."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. hs feeds det_eq via s^2 != 0; hD cancels the (s+s^-1) factor; h2 and h3 make the determinant 3[2]_q^2 invertible. Part (i) needs none and states so in the docstring."
       }
     ],
     "proof-no-decide-masking": [
@@ -4271,6 +4441,23 @@
         "reviewed_at": "2026-11-21T16:41:49.000Z",
         "reviewed_sha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
         "evidence": "Full read of the restated block (issue #8893). No decide/native_decide."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No decide / native_decide."
       }
     ],
     "da-false-claim": [
@@ -4306,6 +4493,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Rechecked: D m_p = (3q+q^-1)mu_u + 2q^-1 mu_d, D m_n = 2q mu_u + (q+3q^-1) mu_d; difference ([2]_q)(mu_d-mu_u)/D; det 3q^2+6+3q^-2 = 3[2]_q^2. Correct."
       }
     ],
     "da-vacuous": [
@@ -4341,6 +4545,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Elementary but honest: the content is the invertibility that shows the old CODATA table could test nothing; not vacuous."
       }
     ],
     "da-circular": [
@@ -4376,6 +4597,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No measured nucleon mass is an input; the July pass on the former CODATA-matching statement is superseded."
       }
     ],
     "da-overclaim": [
@@ -4444,6 +4682,23 @@
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). Claims only the two algebraic facts, under stated hypotheses."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Claims only the splitting identity and bijectivity; no CODATA or predictive claim in the statement."
       }
     ],
     "da-hidden-dof": [
@@ -4496,6 +4751,23 @@
         "reviewed_at": "2026-11-21T16:41:49.000Z",
         "reviewed_sha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
         "evidence": "Full read of the restated block (issue #8893). The two dressed quark masses are named as free inputs; that is the point of part (ii)."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No fitted constant; the block's own part (ii) states that the two dressed masses are free and can reproduce any (m_p, m_n)."
       }
     ],
     "da-non-sequitur": [
@@ -4531,6 +4803,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Bijection follows from the invertible determinant; stated hypotheses are exactly those used."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -4565,6 +4854,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Lean and .md now state the same hypotheses and the same bijection; see proof-narrative-lean-equiv."
       }
     ],
     "da-citation-misuse": [
@@ -4600,6 +4906,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Only lem:pair-skein-mass-formula is cited, and it is in uses[]."
       }
     ],
     "da-definitional-ambiguity": [
@@ -4635,6 +4958,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. S_ab, mu_u, mu_d and [2]_q are defined in the statement."
       }
     ],
     "da-empirical-fragility": [
@@ -4687,6 +5027,23 @@
         "reviewed_at": "2026-11-21T16:41:49.000Z",
         "reviewed_sha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
         "evidence": "Full read of the restated block (issue #8893). No empirical value in the statement or proof."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No measured value or q0 appears; identities hold for every q in the stated field."
       }
     ],
     "da-physical-implausibility": [
@@ -4722,6 +5079,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No physical claim; convention-C scope is flagged in the statement and in the remark."
       }
     ],
     "da-reproducibility": [
@@ -4756,6 +5130,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Lean reproduces it; Lean sibling lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms surjective/terminal_resolution/injective/det_eq = [propext, Classical.choice, Quot.sound]."
       }
     ],
     "da-referee-verdict": [
@@ -4792,6 +5183,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Accept: a small, correct, honestly scoped result that replaces a by-construction CODATA table. Convention-C frame noted as open re-derivation (convention D canonical per owner ruling)."
       }
     ],
     "bib-cite-resolves": [
@@ -4909,6 +5317,23 @@
         "reviewed_at": "2026-11-21T17:05:00.000Z",
         "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
         "evidence": "Full read of the restated block: statement, two parts, scope, convention, in that order; short declarative sentences; symbols ([2]_q, S_ab, mu_u, mu_d) introduced before use."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Hypotheses, formula, then (i) and (ii) in one short statement; reads in order."
       }
     ],
     "expo-milnor-clarity": [
@@ -4924,6 +5349,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Clear: hypotheses, formula, two numbered parts."
       }
     ],
     "milnor-brevity": [
@@ -4939,6 +5381,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Short; no surplus prose after the scope paragraphs moved out."
       }
     ],
     "voice-probe-narrative": [
@@ -6473,6 +6932,23 @@
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
         "evidence": "Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). Generic field K; Field is needed for q^-1 and the division by s + s^-1."
+      },
+      {
+        "field_hash": {
+          "md": "e01a2b9ca98f",
+          "ts": "c47985e60ead",
+          "lean": "deaf0648333e",
+          "lean_statement": "a15b68957019"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Generic `[Field K]` (AGENTS.md section 7c); the square root avoided via q = s^2; characteristic-not-3 carried as hypothesis (3:K) != 0. No real-number construct."
       }
     ],
     "render-math-mode-envelope": [
@@ -7170,6 +7646,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T16:57:04.000Z",
+  "updated_at": "2026-11-21T17:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

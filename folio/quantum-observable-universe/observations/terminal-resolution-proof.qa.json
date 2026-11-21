@@ -2040,6 +2040,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "76c30e4487ca",
+          "ts": "27972b539ea9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Cramer inverse rechecked symbolically against the Lean `surjective` witnesses; the two-sided-inverse sentence is correct under the stated hypotheses."
       }
     ],
     "da-vacuous": [
@@ -2346,6 +2361,21 @@
         },
         "reviewed_tree": "4293e2561bd349ba0c5d722722634f9af5fae0a1",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "76c30e4487ca",
+          "ts": "27972b539ea9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:30:00.000Z",
+        "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Proof now argues both directions (bijection), matching Lean injective + surjective."
       }
     ],
     "da-citation-misuse": [
@@ -3922,6 +3952,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T16:57:04.000Z",
+  "updated_at": "2026-11-21T17:30:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
