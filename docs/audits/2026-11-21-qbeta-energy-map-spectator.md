@@ -36,6 +36,13 @@ log(ε_p′/ε_n′) of the new traces, which this probe did **not** compute. Th
 reports that its 758-word framing scan shows max |F| falling as the gluon's own framing grows;
 that is consistent with, not a test of, S.
 
+**Addendum (eigenphase thread, reanalysis, not pre-registered).** On the committed gluon-strand
+witness of PR #8836 (79 γγ words on 4–5 strands, linked gluons), every word has
+ε_p′/ε_n′ = ε_p/ε_n of V³ to 1.3e-12, the limit of the 12-digit reference values. So each
+gluon word multiplies both nucleons by one common factor, the linear F reported there is exactly
+that factor, and the log cell is unchanged for every word. In 16 words both ε′ are negative (same
+ratio), where the log is undefined as written; the sign convention for negative traces is open.
+
 ## 3. What the log map costs, stated plainly
 
 Under the log map the cell is **only the K-weight step**: moving one unit of T³ changes the
