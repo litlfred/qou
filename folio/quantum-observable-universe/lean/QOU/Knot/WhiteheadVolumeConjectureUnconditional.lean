@@ -18,7 +18,7 @@ gives the volume limit with no hypothesis left:
 Here `J_N(W)` is the Kashaev invariant `whiteheadLinkKashaev`, and the target is
 `Vol_Borromean / 2`.
 
--- Ref: [manuscript] library/arxiv-math-0611181v2/0611181v2.pdf, Lemmas 2 and 4
+-- Ref: [vanderveen2008] library/arxiv-math-0611181v2/0611181v2.pdf, Lemmas 2 and 4
 -/
 
 namespace QOU.Knot.FigureEightVolume
