@@ -71,3 +71,28 @@ q ∈ (1, 23/20].
 
 These are wrong-charge words for n → p e⁻ ν̄, so they are not a candidate, and nothing is adopted.
 The first open item above (linked words) is now closed for e⁻ν̄ on the finite γγ set.
+
+## Charged 5-strand vacuum, option 1 (added 2026-11-21)
+
+Probe `computations/probes/qbeta_lepton_charged_vacuum/` (preregistered, committed before the
+run). The lepton pair is e⁻ ⊔ ν̄ on 5 strands with no extra loop. Lepton words are the 86 γγ words
+of ≤ 6 vertices that #8836 matched to Hopf ⊔ unknot or its mirror. There are 13 junctions, giving
+1118 words on 8 strands and 99 distinct values, normalised by x̂ = Tr(K⁸(P_p⊗1)ρ(W))/[2]⁶.
+
+- Under the forced normalisation no lepton sector is selected, so the vacuum's charge does not
+  enter at all. Unlinked words give exactly ε_p·f_E (e⁻ν̄) and ε_p·f_M with f_M = q⁶f_E
+  (mirror), the same as option 3. My first check compared mirrors to f_E and failed. That was my
+  error, not a property of the words.
+- x̂(1) = 3/8 for every word.
+- **e⁻ν̄, all 559 words: x̂ < ε_n on the whole range (1, 23/20].** Exact root isolation. This is
+  the same picture as option 3: x̂(q₀) ∈ [0.1747, 0.3151].
+- The ≤ 5-vertex subset reproduces option 3's mirror classes exactly: boundaries at
+  q = 1.10487 (window for q below it) and q = 1.02211.
+- **One 6-vertex mirror word lies inside the window at q₀:** lepton V1V2V1V2V0V0, junction
+  V1V2V1V2, with x̂ = −(q⁴+1)(2q⁴+1)(q¹²−2q¹⁰+2q⁸−3q⁶+2q⁴−2q²+1)/(q⁶(q²+1)⁴) and
+  x̂(q₀) = 0.35258. It is inside for all q in (1, 1.14911). It is the first γγ final-state word
+  on record inside the window at q₀. It is an e⁺ν (wrong-charge) word for n → p e⁻ ν̄, so it is
+  **not a candidate and is not adopted**. Option 3 was enumerated only to 5 lepton vertices, so
+  whether option 3 has a 6-vertex analogue is not known.
+
+Scope (b) on this finite word set, and scope (a) beyond 6 lepton vertices and 6 junction vertices.

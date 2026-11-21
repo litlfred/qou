@@ -31,5 +31,5 @@ Exact Laurent polynomials in q; Jimbo R, eigenvalues q, −1/q.
 
 For every distinct x̂: e⁻ν̄ words tested for x̂ < ε_n, mirror words for x̂ > ε_p, on all of
 q ∈ (1, 23/20], by exact real-root isolation (sympy `real_roots`) in t = q − 1. Report every word,
-x̂(1), x̂(q₀), and any window entry with its boundary q. Also the ≤ 5-vertex subset, for parity
+x̂(1), x̂(q₀), and any window entry with its boundary q. For unlinked words the mirror gives ε_p·f_M, f_M = q⁶f_E (#8836); checked the same way. Also the ≤ 5-vertex subset, for parity
 with option 3. Nothing is selected or adopted; a word in the window is reported, not used.
