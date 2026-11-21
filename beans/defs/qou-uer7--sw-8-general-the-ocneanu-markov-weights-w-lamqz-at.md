@@ -905,3 +905,10 @@ z_r (ocneanuWeight_wenzlZ), the z_r are infinitely many, and normalisation / bra
 rep-level Markov condition are each linear in the weight with z-free coefficients. The standing
 "do not finish arbitrary z" note was about the Wenzl route; it does not apply to this one.
 Axioms: propext, Classical.choice, Quot.sound.
+
+## 2026-11-21T04:10:22Z — faithfulness settled (PR #8709)
+
+OcneanuTraceFaithful.lean: the weighted seminormal trace on H_{n+1}(q) is faithful iff every
+weight of size n+1 is nonzero (any weight, any characteristic, via heckeProductF); the Ocneanu
+weight vanishes only through its numerator; so the every-z trace is faithful for all z outside a
+finite set per level (Jones' genericity). Convention D lies in that set from n+1 = 3 on.
