@@ -1,5 +1,6 @@
 import QOU.MathlibExt.LinkDiagramStateSum
 import Mathlib.Tactic.Abel
+import Mathlib.Tactic.FinCases
 
 /-!
 # Markov moves on braid closures
@@ -1233,4 +1234,363 @@ theorem braidClosure_farComm (u v : List (Fin m × Bool)) (i j : Fin m) (b c : B
 
 end FarComm
 
+/-! ### The braid relation -/
+
+omit [Fintype E] [DecidableEq E] in
+theorem Code.map_congr_occurs {F : Type u} (f g : E → F) (D : Code E)
+    (h : ∀ x, D.Occurs x → f x = g x) : D.map f = D.map g := by
+  refine code_ext ?_ ?_
+  · refine Multiset.map_congr rfl fun x hx => ?_
+    have hm : ∀ e, x.Mentions e → f e = g e := fun e he => h e (Or.inl ⟨x, hx, he⟩)
+    simp only [Crossing.map]
+    rw [hm _ (Or.inl rfl), hm _ (Or.inr (Or.inl rfl)), hm _ (Or.inr (Or.inr (Or.inl rfl))),
+      hm _ (Or.inr (Or.inr (Or.inr rfl)))]
+  · refine Multiset.map_congr rfl fun j hj => ?_
+    simp only [Prod.map]
+    rw [h _ (Or.inr ⟨j, hj, Or.inl rfl⟩), h _ (Or.inr ⟨j, hj, Or.inr rfl⟩)]
+
+/-- Contract a join `(a, b, 0)` next to a piece `K` in which `a` or `b` occurs. -/
+theorem contract_step (R K : Code E) (a b : E) (hab : a ≠ b) (hK : K.Occurs a ∨ K.Occurs b) :
+    ReidemeisterEquiv ⟨E, R + (K + Code.ofJs {(a, b, 0)})⟩
+      ⟨E, R.map (Function.update id b a) + K.map (Function.update id b a)⟩ :=
+  (ReidemeisterEquiv.of_move (Move.contract (R + K) a b hab
+    (hK.imp (fun h => (occurs_add _ _ _).2 (Or.inr h)) (fun h => (occurs_add _ _ _).2 (Or.inr h))))).of_eq
+    (code_ext (by simp [add_assoc]) (by simp [add_assoc])) (Code.map_add' _ _ _)
+
+section BraidRel
+
+/-- The three levels of `σᵢσᵢ₊₁σᵢ` on the strands `0, 1, 2` and rows `0, …, 3`. -/
+def braidLHS (e : Fin 4 × Fin 3 → E) : Code E :=
+  Code.ofXs {⟨e (0, 1), e (1, 0), e (0, 0), e (1, 1), true⟩,
+    ⟨e (1, 2), e (2, 1), e (1, 1), e (2, 2), true⟩,
+    ⟨e (2, 1), e (3, 0), e (2, 0), e (3, 1), true⟩} +
+  Code.ofJs {(e (0, 2), e (1, 2), 0), (e (1, 0), e (2, 0), 0), (e (2, 2), e (3, 2), 0)}
+
+/-- The three levels of `σᵢ₊₁σᵢσᵢ₊₁`. -/
+def braidRHS (e : Fin 4 × Fin 3 → E) : Code E :=
+  Code.ofXs {⟨e (0, 2), e (1, 1), e (0, 1), e (1, 2), true⟩,
+    ⟨e (1, 1), e (2, 0), e (1, 0), e (2, 1), true⟩,
+    ⟨e (2, 2), e (3, 1), e (2, 1), e (3, 2), true⟩} +
+  Code.ofJs {(e (0, 0), e (1, 0), 0), (e (1, 2), e (2, 2), 0), (e (2, 0), e (3, 0), 0)}
+
+set_option maxHeartbeats 2000000 in
+/-- **The braid relation, locally.** Three contractions on each side reduce `σᵢσᵢ₊₁σᵢ` and
+`σᵢ₊₁σᵢσᵢ₊₁` to the two sides of the Reidemeister III move, up to relabelling. The rest `R` may
+use the top and bottom rows but not the two interior ones. -/
+theorem braid_local (R : Code E) (e : Fin 4 × Fin 3 → E) (he : Function.Injective e)
+    (hR : ∀ r p, (r = 1 ∨ r = 2) → ¬ R.Occurs (e (r, p))) :
+    ReidemeisterEquiv ⟨E, R + braidLHS e⟩ ⟨E, R + braidRHS e⟩ := by
+  have hne : ∀ x y, x ≠ y → e x ≠ e y := fun x y h h' => h (he h')
+  have hRu : ∀ x y, (x.1 = 1 ∨ x.1 = 2) → R.map (Function.update id (e x) (e y)) = R :=
+    fun x y hx => Code.map_eq_self_of_occurs _ _ fun z hz => by
+      have : z ≠ e x := by rintro rfl; exact hR _ _ hx hz
+      simp [this]
+  -- The left side.
+  have c1 := contract_step R
+    (Code.ofXs {⟨e (0, 1), e (1, 0), e (0, 0), e (1, 1), true⟩,
+      ⟨e (1, 2), e (2, 1), e (1, 1), e (2, 2), true⟩,
+      ⟨e (2, 1), e (3, 0), e (2, 0), e (3, 1), true⟩} +
+      Code.ofJs {(e (1, 0), e (2, 0), 0), (e (2, 2), e (3, 2), 0)})
+    (e (0, 2)) (e (1, 2)) (hne _ _ (by decide))
+    (Or.inr (by simp [Code.Occurs, Code.ofXs, Code.ofJs, Crossing.Mentions]))
+  rw [hRu _ _ (Or.inl rfl)] at c1
+  have c2 := contract_step R
+    (Code.ofXs {⟨e (0, 1), e (1, 0), e (0, 0), e (1, 1), true⟩,
+      ⟨e (0, 2), e (2, 1), e (1, 1), e (2, 2), true⟩,
+      ⟨e (2, 1), e (3, 0), e (2, 0), e (3, 1), true⟩} +
+      Code.ofJs {(e (2, 2), e (3, 2), 0)})
+    (e (1, 0)) (e (2, 0)) (hne _ _ (by decide))
+    (Or.inr (by simp [Code.Occurs, Code.ofXs, Code.ofJs, Crossing.Mentions]))
+  rw [hRu _ _ (Or.inr rfl)] at c2
+  have c3 := contract_step R
+    (Code.ofXs {⟨e (0, 1), e (1, 0), e (0, 0), e (1, 1), true⟩,
+      ⟨e (0, 2), e (2, 1), e (1, 1), e (2, 2), true⟩,
+      ⟨e (2, 1), e (3, 0), e (1, 0), e (3, 1), true⟩})
+    (e (2, 2)) (e (3, 2)) (hne _ _ (by decide))
+    (Or.inl (by simp [Code.Occurs, Code.ofXs, Crossing.Mentions]))
+  set u3 := Function.update id (e (3, 2)) (e (2, 2)) with hu3
+  have r := ReidemeisterEquiv.of_move (Move.r3 (R.map u3) (e (0, 0)) (e (1, 1)) (e (2, 2))
+    (e (0, 1)) (e (1, 0)) (e (3, 1)) (e (0, 2)) (e (2, 1)) (e (3, 0)) (by
+      intro x hx h
+      obtain ⟨y, hy, hyx⟩ := (occurs_map _ _ _).1 h
+      simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hx
+      by_cases hy3 : y = e (3, 2)
+      · subst hy3
+        simp only [hu3, Function.update_self] at hyx
+        rcases hx with rfl | rfl | rfl <;> exact hne _ _ (by decide) hyx
+      · simp only [hu3, Function.update_of_ne hy3, id] at hyx
+        subst hyx
+        rcases hx with rfl | rfl | rfl <;> exact hR _ _ (by decide) hy)
+    (hne _ _ (by decide)) (hne _ _ (by decide)) (hne _ _ (by decide)) (by
+      intro x hx
+      simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hx
+      rcases hx with rfl | rfl | rfl | rfl | rfl | rfl <;>
+        exact ⟨hne _ _ (by decide), hne _ _ (by decide), hne _ _ (by decide)⟩))
+  -- The right side.
+  have d1 := contract_step R
+    (Code.ofXs {⟨e (0, 2), e (1, 1), e (0, 1), e (1, 2), true⟩,
+      ⟨e (1, 1), e (2, 0), e (1, 0), e (2, 1), true⟩,
+      ⟨e (2, 2), e (3, 1), e (2, 1), e (3, 2), true⟩} +
+      Code.ofJs {(e (1, 2), e (2, 2), 0), (e (2, 0), e (3, 0), 0)})
+    (e (0, 0)) (e (1, 0)) (hne _ _ (by decide))
+    (Or.inr (by simp [Code.Occurs, Code.ofXs, Code.ofJs, Crossing.Mentions]))
+  rw [hRu _ _ (Or.inl rfl)] at d1
+  have d2 := contract_step R
+    (Code.ofXs {⟨e (0, 2), e (1, 1), e (0, 1), e (1, 2), true⟩,
+      ⟨e (1, 1), e (2, 0), e (0, 0), e (2, 1), true⟩,
+      ⟨e (2, 2), e (3, 1), e (2, 1), e (3, 2), true⟩} +
+      Code.ofJs {(e (2, 0), e (3, 0), 0)})
+    (e (1, 2)) (e (2, 2)) (hne _ _ (by decide))
+    (Or.inr (by simp [Code.Occurs, Code.ofXs, Code.ofJs, Crossing.Mentions]))
+  rw [hRu _ _ (Or.inr rfl)] at d2
+  have d3 := contract_step R
+    (Code.ofXs {⟨e (0, 2), e (1, 1), e (0, 1), e (1, 2), true⟩,
+      ⟨e (1, 1), e (2, 0), e (0, 0), e (2, 1), true⟩,
+      ⟨e (1, 2), e (3, 1), e (2, 1), e (3, 2), true⟩})
+    (e (2, 0)) (e (3, 0)) (hne _ _ (by decide))
+    (Or.inl (by simp [Code.Occurs, Code.ofXs, Crossing.Mentions]))
+  set v3 := Function.update id (e (3, 0)) (e (2, 0)) with hv3
+  -- Relabel.
+  set σ := ((Equiv.swap (e (1, 1)) (e (2, 1))).trans (Equiv.swap (e (1, 0)) (e (1, 2)))).trans
+    ((Equiv.swap (e (2, 2)) (e (3, 2))).trans (Equiv.swap (e (3, 0)) (e (2, 0)))) with hσ
+  have s := ReidemeisterEquiv.of_equiv σ
+    (R.map u3 + Code.ofXs (triR (e (0, 0)) (e (1, 1)) (e (2, 2)) (e (0, 1)) (e (1, 0)) (e (3, 1))
+      (e (0, 2)) (e (2, 1)) (e (3, 0))))
+  have hσe : ∀ x, σ (e x) = e (((((Equiv.swap ((1 : Fin 4), (1 : Fin 3)) (2, 1)).trans
+      (Equiv.swap (1, 0) (1, 2))).trans ((Equiv.swap (2, 2) (3, 2)).trans
+      (Equiv.swap (3, 0) (2, 0))))) x) := by
+    intro x
+    simp only [hσ, Equiv.trans_apply]
+    rw [he.swap_apply, he.swap_apply,
+      he.swap_apply, he.swap_apply]
+  have hRσ : (R.map u3).map σ = R.map v3 := by
+    rw [Code.map_map]
+    refine Code.map_congr_occurs _ _ _ fun y hy => ?_
+    simp only [Function.comp_apply, hu3, hv3, Function.update_apply, id]
+    by_cases h32 : y = e (3, 2)
+    · subst h32
+      simp only [if_true, if_neg (hne (3, 2) (3, 0) (by decide)), hσe]
+      rfl
+    by_cases h30 : y = e (3, 0)
+    · subst h30
+      simp only [if_true, if_neg (hne (3, 0) (3, 2) (by decide)), hσe]
+      rfl
+    simp only [h32, h30, if_false]
+    have hy' : ∀ x, (x.1 = 1 ∨ x.1 = 2) → y ≠ e x := by
+      rintro x hx rfl; exact hR _ _ hx hy
+    simp only [hσ, Equiv.trans_apply]
+    rw [Equiv.swap_apply_of_ne_of_ne (hy' _ (by decide)) (hy' _ (by decide)),
+      Equiv.swap_apply_of_ne_of_ne (hy' _ (by decide)) (hy' _ (by decide)),
+      Equiv.swap_apply_of_ne_of_ne (hy' _ (by decide)) h32,
+      Equiv.swap_apply_of_ne_of_ne h30 (hy' _ (by decide))]
+  have hK3 : ∀ y, y ≠ e (3, 2) → u3 y = y := fun y hy => by simp [hu3, hy]
+  have s' : ReidemeisterEquiv ⟨E, R.map u3 + Code.ofXs (triR (e (0, 0)) (e (1, 1)) (e (2, 2))
+      (e (0, 1)) (e (1, 0)) (e (3, 1)) (e (0, 2)) (e (2, 1)) (e (3, 0)))⟩
+      ⟨E, R.map v3 + Code.ofXs {⟨e (0, 2), e (1, 1), e (0, 1), e (1, 2), true⟩,
+        ⟨e (1, 1), e (2, 0), e (0, 0), e (2, 1), true⟩,
+        ⟨e (1, 2), e (3, 1), e (2, 1), e (3, 2), true⟩}⟩ := s.of_eq rfl (by
+    rw [Code.map_add', hRσ]
+    congr 1
+    simp [Code.map, Code.ofXs, triR, Crossing.map, hσe, Equiv.swap_apply_def])
+  refine (c1.of_eq ?_ ?_).trans ((c2.of_eq rfl ?_).trans ((c3.of_eq rfl ?_).trans (r.trans
+    (s'.trans ((d3.symm.of_eq ?_ rfl).trans ((d2.symm.of_eq ?_ rfl).trans
+      (d1.symm.of_eq ?_ ?_)))))))
+  all_goals
+    refine code_ext ?_ ?_ <;>
+      simp only [braidLHS, braidRHS, triL, Code.map, Code.ofXs, Code.ofJs, add_xs, add_js,
+        Multiset.map_zero, Multiset.insert_eq_cons, Multiset.map_cons,
+        Multiset.map_singleton, Crossing.map, Prod.map, id, Function.update_apply, he.eq_iff,
+        hu3, hv3, add_zero, zero_add] <;> simp <;> simp only [← Multiset.singleton_add] <;> abel
+
+
+variable {m L : ℕ}
+
+/-- Include the rows of a closure with `L` levels into one with `L + 3` levels. -/
+def rowEmb3 : Fin (L + 1) × Fin (m + 1) ↪ Fin (L + 1 + 1 + 1 + 1) × Fin (m + 1) :=
+  ⟨fun e => (e.1.castSucc.castSucc.castSucc, e.2), fun e e' h => by
+    simp only [Prod.mk.injEq, Fin.castSucc_inj] at h; exact Prod.ext h.1 h.2⟩
+
+@[simp] theorem rowEmb3_apply (e : Fin (L + 1) × Fin (m + 1)) :
+    (rowEmb3 e : Fin (L + 1 + 1 + 1 + 1) × Fin (m + 1)) = (e.1.castSucc.castSucc.castSucc, e.2) :=
+  rfl
+
+theorem letterCrossing_row3 (k : Fin L) (i : Fin m) (b : Bool) :
+    (letterCrossing k i b).map rowEmb3 = letterCrossing k.castSucc.castSucc.castSucc i b := by
+  cases b <;> simp only [letterCrossing, Crossing.map, rowEmb3_apply, Fin.succ_castSucc] <;> rfl
+
+theorem letterJoins_row3 (k : Fin L) (i : Fin m) :
+    (letterJoins k i).map (Prod.map rowEmb3 (Prod.map rowEmb3 id)) =
+      letterJoins k.castSucc.castSucc.castSucc i := by
+  rw [letterJoins, letterJoins, Multiset.map_map]
+  refine Multiset.map_congr rfl fun p _ => ?_
+  simp only [Function.comp_apply, Prod.map, rowEmb3_apply, id, Fin.succ_castSucc]
+
+/-- The rows of the last three levels. -/
+abbrev rowA3 (L : ℕ) (p : Fin (m + 1)) : Fin (L + 1 + 1 + 1 + 1) × Fin (m + 1) :=
+  ((Fin.last L).castSucc.castSucc.castSucc, p)
+abbrev rowB3 (L : ℕ) (p : Fin (m + 1)) : Fin (L + 1 + 1 + 1 + 1) × Fin (m + 1) :=
+  ((Fin.last (L + 1)).castSucc.castSucc, p)
+abbrev rowC3 (L : ℕ) (p : Fin (m + 1)) : Fin (L + 1 + 1 + 1 + 1) × Fin (m + 1) :=
+  ((Fin.last (L + 1 + 1)).castSucc, p)
+abbrev rowD3 (L : ℕ) (p : Fin (m + 1)) : Fin (L + 1 + 1 + 1 + 1) × Fin (m + 1) :=
+  (Fin.last (L + 1 + 1 + 1), p)
+abbrev rowZ3 (L : ℕ) (p : Fin (m + 1)) : Fin (L + 1 + 1 + 1 + 1) × Fin (m + 1) := (0, p)
+
+theorem letterJoins_untouched {n : ℕ} (k : Fin n) (i : Fin m) :
+    letterJoins k i = (untouched i).val.map fun p => ((k.castSucc, p), (k.succ, p), (0 : ℤ)) :=
+  rfl
+
+/-- The closure of a word ending in three letters, written out. -/
+theorem closureOf_snoc3_eq (g : Fin L → Fin m × Bool) (x y z : Fin m × Bool) :
+    closureOf (Fin.snoc (Fin.snoc (Fin.snoc g x) y) z :
+        Fin (L + 1 + 1 + 1) → Fin m × Bool) =
+      (wordCode g).map rowEmb3 + Code.ofJs ((Finset.univ.val : Multiset (Fin (m + 1))).map
+        fun p => (rowD3 L p, rowZ3 L p, (1 : ℤ))) +
+        Code.ofXs {letterCrossing (Fin.last L).castSucc.castSucc x.1 x.2,
+          letterCrossing (Fin.last (L + 1)).castSucc y.1 y.2,
+          letterCrossing (Fin.last (L + 1 + 1)) z.1 z.2} +
+        Code.ofJs ((untouched x.1).val.map fun p => (rowA3 L p, rowB3 L p, (0 : ℤ))) +
+        Code.ofJs ((untouched y.1).val.map fun p => (rowB3 L p, rowC3 L p, (0 : ℤ))) +
+        Code.ofJs ((untouched z.1).val.map fun p => (rowC3 L p, rowD3 L p, (0 : ℤ))) := by
+  refine code_ext ?_ ?_
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_xs, add_zero]
+    rw [univ_map_castSucc_last, univ_map_castSucc_last, univ_map_castSucc_last, Multiset.map_map]
+    simp only [Fin.snoc_castSucc, Fin.snoc_last, Function.comp_def, letterCrossing_row3]
+    simp only [Multiset.insert_eq_cons, ← Multiset.singleton_add]
+    abel
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_js, add_zero, zero_add,
+      Multiset.map_bind]
+    rw [univ_bind_castSucc_last, univ_bind_castSucc_last, univ_bind_castSucc_last]
+    simp only [Fin.snoc_castSucc, Fin.snoc_last, letterJoins_row3]
+    simp only [letterJoins_untouched, Fin.succ_castSucc, Fin.succ_last]
+    abel
+
+theorem untouched_split_adj {α : Type*} (i k : Fin m) (hk : k.val = i.val + 1)
+    (f : Fin (m + 1) → α) :
+    (untouched i).val.map f = {f k.succ} + (untouched i ∩ untouched k).val.map f ∧
+    (untouched k).val.map f = {f i.castSucc} + (untouched i ∩ untouched k).val.map f := by
+  have h1 : untouched i = insert k.succ (untouched i ∩ untouched k) := by
+    ext p
+    simp only [untouched, Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_insert,
+      Finset.mem_inter, ne_eq, Fin.ext_iff, Fin.coe_castSucc, Fin.val_succ]
+    omega
+  have h2 : untouched k = insert i.castSucc (untouched i ∩ untouched k) := by
+    ext p
+    simp only [untouched, Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_insert,
+      Finset.mem_inter, ne_eq, Fin.ext_iff, Fin.coe_castSucc, Fin.val_succ]
+    omega
+  have n1 : k.succ ∉ untouched i ∩ untouched k := by simp [untouched]
+  have n2 : i.castSucc ∉ untouched i ∩ untouched k := by simp [untouched]
+  constructor
+  · conv_lhs => rw [h1, Finset.insert_val_of_notMem n1]
+    simp [Multiset.insert_eq_cons, ← Multiset.singleton_add]
+  · conv_lhs => rw [h2, Finset.insert_val_of_notMem n2]
+    simp [Multiset.insert_eq_cons, ← Multiset.singleton_add]
+
+set_option maxHeartbeats 2000000 in
+/-- **The braid relation** at the end of a word: the closures of `… σᵢσᵢ₊₁σᵢ` and `… σᵢ₊₁σᵢσᵢ₊₁`
+are Reidemeister equivalent. -/
+theorem closureOf_braid (g : Fin L → Fin m × Bool) (i k : Fin m) (hk : k.val = i.val + 1) :
+    ReidemeisterEquiv
+      ⟨_, closureOf (Fin.snoc (Fin.snoc (Fin.snoc g (i, true)) (k, true)) (i, true) :
+        Fin (L + 1 + 1 + 1) → Fin m × Bool)⟩
+      ⟨_, closureOf (Fin.snoc (Fin.snoc (Fin.snoc g (k, true)) (i, true)) (k, true) :
+        Fin (L + 1 + 1 + 1) → Fin m × Bool)⟩ := by
+  have hik : i.succ = k.castSucc := Fin.ext (by simp [hk])
+  set rows : Fin 4 → Fin (L + 1 + 1 + 1 + 1) := ![(Fin.last L).castSucc.castSucc.castSucc,
+    (Fin.last (L + 1)).castSucc.castSucc, (Fin.last (L + 1 + 1)).castSucc,
+    Fin.last (L + 1 + 1 + 1)] with hrows
+  set pos : Fin 3 → Fin (m + 1) := ![i.castSucc, k.castSucc, k.succ] with hpos
+  set e : Fin 4 × Fin 3 → Fin (L + 1 + 1 + 1 + 1) × Fin (m + 1) := fun x => (rows x.1, pos x.2)
+    with he_def
+  have hrv : ∀ r, (rows r).val = L + r.val := by
+    intro r; fin_cases r <;> simp [hrows]
+  have hpv : ∀ p, (pos p).val = i.val + p.val := by
+    intro p; fin_cases p <;> simp [hpos, hk] <;> omega
+  have he : Function.Injective e := by
+    rintro ⟨r, p⟩ ⟨r', p'⟩ h
+    obtain ⟨h1, h2⟩ := Prod.mk.inj h
+    have h1' := congrArg Fin.val h1
+    have h2' := congrArg Fin.val h2
+    rw [hrv, hrv] at h1'
+    rw [hpv, hpv] at h2'
+    exact Prod.ext (Fin.ext (by omega)) (Fin.ext (by omega))
+  set T := untouched i ∩ untouched k with hT
+  set R := (wordCode g).map (rowEmb3 (m := m) (L := L)) +
+    Code.ofJs ((Finset.univ.val : Multiset (Fin (m + 1))).map
+      fun p => (rowD3 L p, rowZ3 L p, (1 : ℤ))) +
+    Code.ofJs (T.val.map fun p => (rowA3 L p, rowB3 L p, (0 : ℤ))) +
+    Code.ofJs (T.val.map fun p => (rowB3 L p, rowC3 L p, (0 : ℤ))) +
+    Code.ofJs (T.val.map fun p => (rowC3 L p, rowD3 L p, (0 : ℤ))) with hRdef
+  have hR : ∀ r p, (r = 1 ∨ r = 2) → ¬ R.Occurs (e (r, p)) := by
+    intro r p hr h
+    have hr' : (rows r).val = L + 1 ∨ (rows r).val = L + 2 := by
+      rw [hrv]; rcases hr with rfl | rfl <;> simp
+    have hp := hpv p
+    have hp3 := p.isLt
+    simp only [hRdef, occurs_add] at h
+    rcases h with (((h | h) | h) | h) | h
+    · obtain ⟨y, -, hy⟩ := (occurs_map _ _ _).1 h
+      have := congrArg (fun z => z.1.val) hy
+      simp only [rowEmb3_apply, Fin.coe_castSucc, he_def] at this
+      have := y.1.isLt
+      omega
+    · rw [occurs_ofJs] at h
+      obtain ⟨_, hj, h⟩ := h
+      obtain ⟨q, -, rfl⟩ := Multiset.mem_map.1 hj
+      rcases h with h | h <;> have := congrArg (fun z => z.1.val) h <;>
+        simp only [he_def, Fin.val_last, Fin.val_zero] at this <;> omega
+    all_goals
+      rw [occurs_ofJs] at h
+      obtain ⟨_, hj, h⟩ := h
+      obtain ⟨q, hq, rfl⟩ := Multiset.mem_map.1 hj
+      simp only [hT, untouched, Finset.mem_val, Finset.mem_inter, Finset.mem_filter,
+        Finset.mem_univ, true_and, ne_eq, Fin.ext_iff, Fin.coe_castSucc, Fin.val_succ] at hq
+      rcases h with h | h <;> have := congrArg (fun z => z.2.val) h <;>
+        simp only [he_def] at this <;> omega
+  have key := braid_local R e he hR
+  refine key.of_eq ?_ ?_
+  · rw [closureOf_snoc3_eq, (untouched_split_adj i k hk _).1, (untouched_split_adj i k hk _).2,
+      (untouched_split_adj i k hk _).1]
+    refine code_ext ?_ ?_ <;>
+      simp only [hRdef, braidLHS, he_def, hrows, hpos, letterCrossing, Code.ofXs, Code.ofJs,
+        add_xs, add_js, add_zero, zero_add, if_true, Fin.succ_castSucc, Fin.succ_last, hik,
+        Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three,
+        Matrix.head_cons, Matrix.tail_cons, ← hT, Multiset.insert_eq_cons, ← Multiset.singleton_add]
+    all_goals abel
+  · rw [closureOf_snoc3_eq, (untouched_split_adj i k hk _).2, (untouched_split_adj i k hk _).1,
+      (untouched_split_adj i k hk _).2]
+    refine code_ext ?_ ?_ <;>
+      simp only [hRdef, braidRHS, he_def, hrows, hpos, letterCrossing, Code.ofXs, Code.ofJs,
+        add_xs, add_js, add_zero, zero_add, if_true, Fin.succ_castSucc, Fin.succ_last, hik,
+        Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three,
+        Matrix.head_cons, Matrix.tail_cons, ← hT, Multiset.insert_eq_cons, ← Multiset.singleton_add]
+    all_goals abel
+
+theorem braidClosure_snoc3 (w : List (Fin m × Bool)) (x y z : Fin m × Bool) :
+    ReidemeisterEquiv ⟨_, closureOf (Fin.snoc (Fin.snoc (Fin.snoc w.get x) y) z :
+        Fin (w.length + 1 + 1 + 1) → Fin m × Bool)⟩ ⟨_, braidClosure (w ++ [x, y, z])⟩ := by
+  rw [braidClosure_eq_closureOf]
+  exact closureOf_congr (m := m) (by simp) _ _ fun k => by
+    refine Fin.lastCases ?_ (fun j => ?_) k
+    · simp
+    · refine Fin.lastCases ?_ (fun j => ?_) j
+      · simp
+      · refine Fin.lastCases ?_ (fun j => ?_) j
+        · simp
+        · simp [List.getElem_append_left]
+
+/-- **The braid relation anywhere.** For `k = i + 1`, the closures of `u σᵢσₖσᵢ v` and
+`u σₖσᵢσₖ v` are Reidemeister equivalent. -/
+theorem braidClosure_braid (u v : List (Fin m × Bool)) (i k : Fin m) (hk : k.val = i.val + 1) :
+    ReidemeisterEquiv ⟨_, braidClosure (u ++ [(i, true), (k, true), (i, true)] ++ v)⟩
+      ⟨_, braidClosure (u ++ [(k, true), (i, true), (k, true)] ++ v)⟩ :=
+  (braidClosure_append_comm (u ++ [(i, true), (k, true), (i, true)]) v).trans
+    ((braidClosure_congr (by simp)).trans
+      ((braidClosure_snoc3 (v ++ u) (i, true) (k, true) (i, true)).symm.trans
+        ((closureOf_braid (v ++ u).get i k hk).trans
+          ((braidClosure_snoc3 (v ++ u) (k, true) (i, true) (k, true)).trans
+            ((braidClosure_congr (by simp)).trans (braidClosure_append_comm v _))))))
+
+end BraidRel
 end QOU.MathlibExt.PL.Diagram
