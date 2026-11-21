@@ -9,7 +9,7 @@ $$
 
 *whose closure is the $T(2,4)$ torus link.*
 
-*(Regime II — Magic shell closure.) At and immediately after a magic number, the optimal operator is a Hopf link $L_\pm$:*
+*(Regime II — Magic shell closure.) At and immediately after a magic number, the optimal operator is $L_\pm$ (closure in $B_3$: the unknot):*
 
 $$
   \Phi_k \in \{L_+ = \sigma_0\sigma_1,\; L_- = \sigma_1\sigma_0\}

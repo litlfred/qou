@@ -71,7 +71,7 @@ The normal-form basis for $H_3(q)$ is $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e
 | $\gamma$ | 3 disjoint unknots |
 | $\sigma_0$ | unknot |
 | $\sigma_1$ | unknot |
-| $L_+, L_-$ | Hopf link $L_H$ |
+| $L_+, L_-$ | unknot (closure in $B_3$) |
 | $e^- = \sigma_1^3$ | trefoil $3_1 = T(2,3)$ |
 
 No basis element closes to a hyperbolic knot. Hyperbolic content arises only from triple products $b_i \cdot \beta(T_{m,n}) \cdot b_j$. By the Birman-Hilden theorem, 3-braid closures yield hyperbolic knots up to 10 crossings. Bring's surface has genus 4 and contains all 3-bridge embeddings as closed 3-braids. Every hyperbolic knot embeddable in Bring's surface with bridge number $\leq 3$ appears in this set.

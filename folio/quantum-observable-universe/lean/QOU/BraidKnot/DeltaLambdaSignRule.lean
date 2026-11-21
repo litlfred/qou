@@ -447,7 +447,7 @@ require the Hecke/Hoefsmit representation as Lean infrastructure to state
 *faithfully*, which this file does not build:
 
   • `χ^{(2,1)}((σ₁σ₂⁻¹)³) = 2 − 3h⁴ − h⁶`     (Borromean; `h = q − q⁻¹`)
-  • `χ^{(2,1)}(σ₀σ₁) = −1`                      (Hopf link)
+  • `χ^{(2,1)}(σ₀σ₁) = −1`                      (L₊)
   • `χ^{(2,1)}(σ₀σ₁σ₀) = 0`                     (electron word)
   • `tr_M(atom_braid A, q) = p_A(u)/d_A(u)`, `p_A, d_A ∈ ℤ[u]`  (Habiro rational)
   • interface multiplicity `= dim(V_{(2,1)}) = 2`  (confinement SDP)
