@@ -944,6 +944,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "[sidecar review 2026-11-15, issue #8030] Lean derives τ(MI∫) = Σ_{n<maxOrder} period n from two hypothesis fields (`tau_additive`, `graded_eq_period`) that together are the claim; the md's sum is over all n ≥ 0 (convergence is part of the claim) but the Lean truncates at a free `maxOrder`. `.ts` says `validation: \"validated\"`. S↔P: prop:mi-sw-abelianisation gives a **norm** equality ‖MI∫‖_{Jⁿ} = | a_D^{(n)}"
+      },
+      {
+        "field_hash": {
+          "md": "8a6fd8bf64d9",
+          "ts": "052eea595cac"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:39:26.084Z",
+        "reviewed_sha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: label references replaced by titles and the sentence naming the Lean witness reworded; the argument is the same. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: [sidecar review 2026-11-15, issue #8030] Lean derives τ(MI∫) = Σ_{n<maxOrder} period n from two hypothesis fields (`tau_additive`, `graded_eq_period`) that together are the claim; the md's sum is over all n ≥ 0 (convergence is part of the claim) but the Lean truncates at a free `maxOrder`. `.ts` says `validation: \"validated\"`. S↔P: prop:mi-sw-abelianisation gives a **norm** equality ‖MI∫‖_{Jⁿ} = | a_D^{(n)}"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1549,6 +1565,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:10.861Z",
+  "updated_at": "2026-11-21T07:39:26.084Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
