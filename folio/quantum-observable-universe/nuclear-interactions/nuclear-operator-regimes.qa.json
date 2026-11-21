@@ -2733,6 +2733,23 @@
         "reviewed_at": "2026-11-21T12:19:12.000Z",
         "reviewed_sha": "26aa3b179d5cd74880a7c0eabb98d0ce536b9382",
         "evidence": "Full read after replacing the leftover 'The Hopf link achieves demand closure' sentence with 'The L± operators, whose closures are the unknot, achieve demand closure'. Lean support for the closure count: QOU.BraidKnot.ElectronWordCandidates.numCycles_Lplus / numCycles_Lminus (one component each; #print axioms [propext, Quot.sound]). The final paragraph narrates the transition sequence; its 'remains purely a quark-level confinement operator' is brief and not physical-meaning prose."
+      },
+      {
+        "field_hash": {
+          "md": "21a865ce0eca",
+          "ts": "9bbd59fba6c1",
+          "lean": "a172219b198b",
+          "lean_statement": "3e1a690e1e38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:30:29.000Z",
+        "reviewed_sha": "bc225d97743d9814652a45adf60eb302f3bfddcf",
+        "evidence": "Full re-read at head bc225d977 after e44e24582 ('optimal'/'demand-minimizing' -> 'selected at step k for the nuclei recorded in this chapter'). The italic statement names the selected operator per regime and its closure; no physical interpretation in the statement. The trailing transition paragraph is narrative outside the statement."
       }
     ],
     "fit-section-chapter": [
@@ -2799,6 +2816,23 @@
         "reviewed_at": "2026-11-21T12:19:12.000Z",
         "reviewed_sha": "26aa3b179d5cd74880a7c0eabb98d0ce536b9382",
         "evidence": "Full read after replacing the leftover 'The Hopf link achieves demand closure' sentence with 'The L± operators, whose closures are the unknot, achieve demand closure'. Lean support for the closure count: QOU.BraidKnot.ElectronWordCandidates.numCycles_Lplus / numCycles_Lminus (one component each; #print axioms [propext, Quot.sound]). Nuclear operator regimes belong to nuclear-interactions."
+      },
+      {
+        "field_hash": {
+          "md": "21a865ce0eca",
+          "ts": "9bbd59fba6c1",
+          "lean": "a172219b198b",
+          "lean_statement": "3e1a690e1e38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:30:29.000Z",
+        "reviewed_sha": "bc225d97743d9814652a45adf60eb302f3bfddcf",
+        "evidence": "Full re-read at head bc225d977 after e44e24582 ('optimal'/'demand-minimizing' -> 'selected at step k for the nuclei recorded in this chapter'). Nuclear binding operator regimes belong in nuclear-interactions."
       }
     ],
     "wall-side-statement": [
@@ -2836,6 +2870,23 @@
         "reviewed_at": "2026-11-21T12:19:12.000Z",
         "reviewed_sha": "26aa3b179d5cd74880a7c0eabb98d0ce536b9382",
         "evidence": "Full read after replacing the leftover 'The Hopf link achieves demand closure' sentence with 'The L± operators, whose closures are the unknot, achieve demand closure'. Lean support for the closure count: QOU.BraidKnot.ElectronWordCandidates.numCycles_Lplus / numCycles_Lminus (one component each; #print axioms [propext, Quot.sound]). Statement is braid-algebraic (operators in B₃, closures); no archimedean machinery."
+      },
+      {
+        "field_hash": {
+          "md": "21a865ce0eca",
+          "ts": "9bbd59fba6c1",
+          "lean": "a172219b198b",
+          "lean_statement": "3e1a690e1e38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:30:29.000Z",
+        "reviewed_sha": "bc225d97743d9814652a45adf60eb302f3bfddcf",
+        "evidence": "Full re-read at head bc225d977 after e44e24582 ('optimal'/'demand-minimizing' -> 'selected at step k for the nuclei recorded in this chapter'). Statement is categorical (braid words in B_3, closures); no archimedean construct."
       }
     ],
     "wall-side-proof": [
@@ -2873,6 +2924,23 @@
         "reviewed_at": "2026-11-21T12:19:12.000Z",
         "reviewed_sha": "26aa3b179d5cd74880a7c0eabb98d0ce536b9382",
         "evidence": "Full read after replacing the leftover 'The Hopf link achieves demand closure' sentence with 'The L± operators, whose closures are the unknot, achieve demand closure'. Lean support for the closure count: QOU.BraidKnot.ElectronWordCandidates.numCycles_Lplus / numCycles_Lminus (one component each; #print axioms [propext, Quot.sound]). No **Proof.** body in this block; nothing archimedean."
+      },
+      {
+        "field_hash": {
+          "md": "21a865ce0eca",
+          "ts": "9bbd59fba6c1",
+          "lean": "a172219b198b",
+          "lean_statement": "3e1a690e1e38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:30:29.000Z",
+        "reviewed_sha": "bc225d97743d9814652a45adf60eb302f3bfddcf",
+        "evidence": "Full re-read at head bc225d977 after e44e24582 ('optimal'/'demand-minimizing' -> 'selected at step k for the nuclei recorded in this chapter'). Lean is a decidable rfl table over an inductive regime type; no archimedean construct. Note, not a wall issue: the sibling .lean docstring still says 'optimal', 'demand-minimiser' and 'the optimum is a Hopf link L_+-' (line 14), which contradicts this PR's corrections."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -5251,6 +5319,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:17:33.000Z",
+  "updated_at": "2026-11-21T15:30:29.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
