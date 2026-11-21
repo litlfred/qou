@@ -14,7 +14,7 @@ existing entry (a candidate disappears, or changes variant) or adds unadjudicate
 | qou-1ccx | anonymous instance binder `[C X]` + `C.field` enters rule 2 | **+5** | **0** | `scripts/lean-self-assuming-audit.py` (qou) |
 | qou-0exp | rule 4: `(h1 : A) (h2 : B) : A ∧ B := ⟨h1, h2⟩`, plus `by exact ⟨…⟩` / `And.intro` unwrapping | **+2** (0 from rule 4 itself) | **0** | same script (qou) |
 | qou-sibdup | new cross-file check: a hypothesis equal to a sibling block's conclusion | 0 with a specificity filter, 232 pairs without | n/a (new category) | new script (qou) |
-| qou-ommr | prose mention of a `:defterm` before its definition in reading order | 43 bare + 45 `:refterm` (body-defined terms) | n/a (not a vacuity check) | `pipeline/validate-defterm.ts` (**cat-harness-tools**, not qou) |
+| qou-ommr | prose mention of a `:defterm` before its definition in reading order | 43 bare + 3 `:refterm` (body-defined terms; corrected, see below) | n/a (not a vacuity check) | `pipeline/validate-defterm.ts` (**cat-harness-tools**, not qou) |
 
 ## qou-1ccx: anonymous instance binder
 
@@ -104,6 +104,13 @@ before the definition, in 95 blocks, for 25 terms. **79 of the 122 point at defi
 chapter**, which is back matter and therefore always "later". Excluding those: **43 mentions in 38
 blocks, 12 terms** (top: `photon` 15, `descent` 11). Separately, **45 `:refterm[…]` links** point forward
 to a block defined later (13 in `quantum-universes`, 8 in `mass-endomorphism`).
+
+**Correction (same day, while implementing).** This note first called the 45 forward `:refterm` links
+"body-defined terms". They are not: 42 of them point at glossary definitions (`monoidal-category` 21,
+`braided-monoidal-category` 14, `monoidal-functor` 4, …), which option (a) exempts. Counted once per
+block and term, the body-defined forward `:refterm` links are **3** (`descent` 2, `linking-operations` 1).
+Measured by running the implemented rule over the paper in reading order: 46 warnings, 43 bare and 3
+`:refterm`, in 41 blocks. The 43 bare figure was right. Nothing else in this note used the 45.
 
 **Options.** (a) Warn on body-defined terms only, glossary definitions exempt. (b) Warn on everything
 (122 + 45, mostly the glossary design). (c) Leave it. **Recommendation (my judgement):** (a) as a
