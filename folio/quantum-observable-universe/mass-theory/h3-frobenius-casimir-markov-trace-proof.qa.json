@@ -16,8 +16,23 @@
         "reviewed_at": "2026-11-17T00:43:10.869Z",
         "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
         "evidence": "Proof states both gaps explicitly; steps follow; c_lambda d_lambda = 6 at q = 1 is consistent."
+      },
+      {
+        "field_hash": {
+          "md": "d0ad8094acb0",
+          "ts": "3f6297acd64b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:15:55.466Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-17 review: list of Lean declaration names removed; associativity sentence reworded (still cited as a standard fact). No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Proof states both gaps explicitly; steps follow; c_lambda d_lambda = 6 at q = 1 is consistent."
       }
     ]
   },
-  "updated_at": "2026-11-17T00:43:10.869Z"
+  "updated_at": "2026-11-21T08:15:55.466Z"
 }

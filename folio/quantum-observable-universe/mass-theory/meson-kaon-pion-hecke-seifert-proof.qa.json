@@ -254,6 +254,21 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "statement .md:12 'The exact algebraic evaluation matches the experimental ratio to 290 ppm' and .md:9 '≈ 3.536' are empirical claims; exponent n_q = 2 underived, scanned against data proof.md:28-37; proof.md:60 cites removed `meson_squaring_exponent`",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
+      },
+      {
+        "field_hash": {
+          "md": "02ce586752dc",
+          "ts": "557e3043beb0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:16:32.405Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: Lean identifiers and witness filenames replaced by prose, the Lean-status table reworded ('recorded (true by definition)'), cross-reference labels expanded; the underived n_q = 2 and the 290 ppm data scan remain in the proof (proof.md:26-36, 64-70). No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: statement .md:12 'The exact algebraic evaluation matches the experimental ratio to 290 ppm' and .md:9 '≈ 3.536' are empirical claims; exponent n_q = 2 underived, scanned against data proof.md:28-37; proof.md:60 cites removed `meson_squaring_exponent`"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1723,6 +1738,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:31.951Z",
+  "updated_at": "2026-11-21T08:16:32.405Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

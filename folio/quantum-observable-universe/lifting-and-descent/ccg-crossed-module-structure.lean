@@ -17,8 +17,8 @@ LaTeX label: `lem:ccg-crossed-module-structure`
 
 ## References
 
-- [yekutieli2010] Central Extensions of Gerbes, §2 (Definition 2.1
-  of a crossed module) and §4
+- [yekutieli2014-descent] Combinatorial Descent Data for Gerbes, §1
+  (Def 1.2, crossed groupoid; Rem 1.3, crossed module)
 - [leitner2026] §3 Lifting and Descent
 -/
 
@@ -30,7 +30,7 @@ namespace QOU.LiftingDescent
     `CrossedModule` whose carriers package the level-`n` analogues
     of `SU_qₙ(2)` and `𝒪_M^×`.  The Peiffer identity is part of the
     `CrossedModule` structure and is therefore automatic. -/
--- Ref: [yekutieli2010] §2, Definition 2.1; §4
+-- Ref: [yekutieli2014-descent] Def 1.2 (crossed groupoid; one object = crossed module, Rem 1.3)
 -- Ref: [leitner2026] §3, Lemma: CCG crossed-module structure
 theorem ccg_crossed_module_structure
     {M : Type*} (ccg : CosimplicialCrossedGroupoid M) (n : ℕ) :
@@ -39,7 +39,7 @@ theorem ccg_crossed_module_structure
 
 /-- The per-level crossed module is exactly `ccg.crossedMod n` and
     inherits Peiffer for free from the `CrossedModule` structure. -/
--- Ref: [yekutieli2010] §2, Definition 2.1
+-- Ref: [yekutieli2014-descent] Def 1.2 (crossed groupoid; one object = crossed module, Rem 1.3)
 theorem ccg_crossed_module_peiffer
     {M : Type*} (ccg : CosimplicialCrossedGroupoid M) (n : ℕ) :
     ∀ (g : (ccg.crossedMod n).G) (x : (ccg.crossedMod n).N),

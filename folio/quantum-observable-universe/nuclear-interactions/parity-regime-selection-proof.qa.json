@@ -975,6 +975,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "The sign of a^Z b^{N−1} is fine. The sign of (a−b) is never shown (it is positive: a−b=(q²−1)(3(q²+1)²−2q²)/(4q³)>0). Per-regime Q formulas not derived. Data table vs Q_exp inside the proof (`:10-16`)"
+      },
+      {
+        "field_hash": {
+          "md": "683080228e2e",
+          "ts": "3062f45945b8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:13:37.635Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. The sign of (a-b) is now stated: a-b=(q^2-1)(3(q^2+1)^2-2q^2)/(4q^3)>0 for q>1, so |b|>|a| (a,b<0). That fixes one earlier point, but the identity is asserted, not derived in the proof. The per-regime Q formulas are still 'stated, not derived' (the proof says so itself), so the proof does not establish the proposition. The Q_calc vs Q_exp table is labelled as not part of the proof but still sits in the proof file."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1555,6 +1571,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:10.232Z",
+  "updated_at": "2026-11-21T08:13:37.635Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

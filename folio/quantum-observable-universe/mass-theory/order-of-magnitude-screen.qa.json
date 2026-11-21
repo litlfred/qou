@@ -54,8 +54,25 @@
         "reviewed_at": "2026-11-18T04:05:49.957Z",
         "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
         "evidence": "screen_mul no longer assumes 0 <= lam, matching item 1. lean-direct -DautoImplicit=false exit 0."
+      },
+      {
+        "field_hash": {
+          "md": "f70717052a24",
+          "ts": "bca47a045370",
+          "lean": "c5385df43e0e",
+          "lean_statement": "4dad5eced8c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:25.014Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-18 review: removed a sentence pointing to the screening-rule remark (lambda = 10, measured target), which was outside the statement. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: screen_mul no longer assumes 0 <= lam, matching item 1. lean-direct -DautoImplicit=false exit 0."
       }
     ]
   },
-  "updated_at": "2026-11-18T04:05:49.957Z"
+  "updated_at": "2026-11-21T08:18:25.014Z"
 }

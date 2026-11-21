@@ -1,40 +1,40 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-14T06:28:28.554145+00:00",
-  "commitSha": "5a32f62f28032c931b0680632048e396543e1dfb",
+  "computedAt": "2026-11-21T12:10:54.711284+00:00",
+  "commitSha": "2ae54ab401071cea1ddab17b6fc54465011fa29d",
   "assertions": [
     {
       "name": "algebraic_q0_matches_transfer",
-      "computed": 2.4531432440966228e-11,
-      "expected": 0.0,
+      "computed": "1.131866508038923155121893893983437234712850339774115967249433461976485e-50",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-09",
+      "tolerance": "0.000000001",
       "source": "max |tr_M_algebraic(q₀) − tr_m_atom_zn| over D/T(/³He), atom & free words"
     },
     {
       "name": "symbolic_delta_matches_li2q",
-      "computed": 2.168404344971009e-19,
-      "expected": 0.0,
+      "computed": "7.355051713735319701139799561265866776192772955813618086406093822876265e-52",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-12",
+      "tolerance": "0.000000000001",
       "source": "flavor_split_leading_sym(q₀) vs _li_2_q_util"
     },
     {
       "name": "grouped_ordering_is_falsified",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1.0",
+      "expected": "1.0",
       "passed": true,
-      "tolerance": 0.0,
-      "source": "|tr_M_algebraic(D, grouped) − transfer| = 4.232039e-01 must exceed 1e-3; the two intra-nucleon orderings are different elements of H_3(q) (bean qou-hu1f)"
+      "tolerance": "0.0",
+      "source": "|tr_M_algebraic(D, grouped) − transfer| = 0.4232039 must exceed 1e-3; the two intra-nucleon orderings are different elements of H_3(q) (bean qou-hu1f)"
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 14,
   "computation": "tr-m-algebraic-q",
   "scriptFile": "tr_m_algebraic_q.py",
-  "scriptHash": "c196effa5477",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptHash": "b8ff5458159e",
+  "scriptCommitSha": "0d4e4a005e3e7a4d358ab3816a8825ea69dac169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -57,9 +58,9 @@
     ],
     "reproduce": "python3 -u computations/tr_m_algebraic_q.py"
   },
-  "description": "Algebraic q-parameterized Markov trace tr_M(q) ∈ ℚ(q): the atom braid word with the colour split flavor_split_leading(q) kept SYMBOLIC (vs the production q₀-baked float), so the trace is a clean Laurent object. Cross-checked: tr_M_algebraic(Z,N).subs(q,q₀) == the canonical transfer value tr_m_atom_zn(Z,N) to ~1e-13 for D/T(/³He) (float64-eval floor of the exact form), in the canonical intra-nucleon ordering, with the legacy grouped word carried as an explicit falsification.",
+  "description": "Algebraic q-parameterized Markov trace tr_M(q) ∈ ℚ(q): the atom braid word with the colour split flavor_split_leading(q) kept SYMBOLIC (vs the production q₀-baked float), so the trace is a clean Laurent object. Cross-checked: tr_M_algebraic(Z,N).subs(q,q₀) == the canonical transfer value tr_m_atom_zn(Z,N) to ~1e-50 for D/T(/³He) (exact-rational evaluation at the 70-digit q₀ vs the 50-dps transfer; ~1e-13 before 2026-11-21, a float64 floor), in the canonical intra-nucleon ordering, with the legacy grouped word carried as an explicit falsification.",
   "parameters": {
-    "q0": 1.1099785827513808,
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
     "intra_ordering_frame": "borromean"
   },
   "data": {
@@ -69,23 +70,23 @@
         "atom": "D",
         "Z": 1,
         "N": 1,
-        "tr_atom_q0_algebraic": 0.1519683392041422,
-        "tr_atom_transfer": 0.1519683392042316,
-        "tr_free_q0_algebraic": 0.2990150171846153,
-        "tr_free_transfer": 0.2990150171846401,
-        "abs_diff_atom": 8.940070905794073e-14,
-        "abs_diff_free": 2.475797344914099e-14
+        "tr_atom_q0_algebraic": "0.151968339204231607592665697751066141271240964655258199352729",
+        "tr_atom_transfer": "0.151968339204231607592665697751066141271240964655247542840855",
+        "tr_free_q0_algebraic": "0.299015017184640076702160426770983832274949474397016651907331",
+        "tr_free_transfer": "0.299015017184640076702160426770983832274949474397005333242251",
+        "abs_diff_atom": "1.06565118733250897203208077418722919501861700088517882425629e-50",
+        "abs_diff_free": "1.13186650803892315512189389398343723471285033977411596724943e-50"
       },
       {
         "atom": "T",
         "Z": 1,
         "N": 2,
-        "tr_atom_q0_algebraic": 0.029144042336440634,
-        "tr_atom_transfer": 0.029144042360972067,
-        "tr_free_q0_algebraic": 0.14207205679817037,
-        "tr_free_transfer": 0.1420720567973048,
-        "abs_diff_atom": 2.4531432440966228e-11,
-        "abs_diff_free": 8.655576255733877e-13
+        "tr_atom_q0_algebraic": "0.0291440423609720653572542187918698440658388035647378565420828",
+        "tr_atom_transfer": "0.0291440423609720653572542187918698440658388035647364915235846",
+        "tr_free_q0_algebraic": "0.142072056797304797470498604255055856206888774468329646470531",
+        "tr_free_transfer": "0.142072056797304797470498604255055856206888774468328126873481",
+        "abs_diff_atom": "1.36501849824435148137800053283708936501598699013290334784983e-51",
+        "abs_diff_free": "1.51959705033047030886299759489946356437685290308265302420290e-51"
       }
     ]
   },

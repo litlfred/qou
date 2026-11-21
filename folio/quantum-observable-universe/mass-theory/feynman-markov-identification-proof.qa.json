@@ -938,6 +938,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "proof.md:19 'w_λ = dim_q(V_λ)·dim(S_λ)/dim_q(V^{⊗n})' breaks tr_M(1)=1: n=3 gives ([4]+4[2])/[2]³ = 3/2 at q=1; proof.md:4 'tr_M(xσ_n^{±1}) = z^{±1}tr_M(x)' false: tr_M(xσ_n⁻¹)=(z−h)tr_M(x)=1/10 vs z⁻¹=5/8 at q=2 (convention D); proof.md:23 'by construction' vs :33 'not tautological'",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "7d8e59657e84",
+          "ts": "58eddd134eb6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:55.632Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "Full review 2026-11-21. Both earlier false steps are fixed. (1) The Markov property now reads tr_M(x s_n) = z tr_M(x) and tr_M(x s_n^{-1}) = (z-h) tr_M(x), correct since s^{-1} = s - h. (2) The weight is now w_lambda = dim_q(V_lambda)/dim_q(V^{otimes n}) without the extra dim(S_lambda); then tr_M(1) = sum dim_q(V_lambda) dim(S_lambda)/[2]^n = 1 by Schur-Weyl, and I checked by hand that the normalised quantum trace gives tr(s) = (q[3]-q^{-1})/[2]^2 = q^3/(q^2+1) = z_D, so the formula is the convention-D (two-row) Jones trace. Remaining gaps: the proof never fixes z (the restriction to l(lambda) <= 2 holds only at z = z_D, and the Markov trace is unique only once z is fixed); 'the Markov weights encode the quantum dimensions' is asserted, not derived or cited (it is the standard quantum-trace / Schur-Weyl fact, e.g. Jones 1987, Wenzl 1988); and the final equality is 'by construction', so the closing 'not tautological' paragraph is interpretation, not proof. No empirical premises, no ruling conflict."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1564,6 +1580,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:29.057Z",
+  "updated_at": "2026-11-21T08:17:55.632Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

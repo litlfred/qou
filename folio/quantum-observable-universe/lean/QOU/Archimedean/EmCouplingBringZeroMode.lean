@@ -95,6 +95,7 @@ theorem hodgeRatio_at_g4 : hodgeRatio 4 = bringZeroModeValue := by
   field_simp
   ring
 
+-- Ref: [riera-rodriguez-1992] pp. 180–181 (Γ* the (2,4,5) triangle group; B = Δ/Γ, genus 4)
 /-- The fundamental triangle of the Bring curve is a (2, 4, 5) hyperbolic triangle.
     Its hyperbolic area is given by the angle defect: π - (π/2 + π/4 + π/5). -/
 noncomputable def bringFundamentalTriangleArea : ℝ :=
@@ -195,6 +196,7 @@ documented attempt ledger — and the stated cost is that the `O(α²)` coeffici
 permanently observational (never computable without a mechanism), so the
 `+0.313 ppb` residual is a floor, not a waypoint. -/
 
+-- Ref: [riera-rodriguez-1992] pp. 180–181 (Γ*/Γ ≅ S₅; a fundamental domain of Γ* is two adjacent triangles, so 2·|S₅| = 240)
 /-- Number of triangles in the `(2,4,5)` tiling of Bring's curve. -/
 def bringTilingFaces : ℕ := 240
 

@@ -253,6 +253,21 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "S↔L: ref resolves only to the sibling (no library decl). `tr_M₁ tr_M₂ : ℝ` are arbitrary reals and `J₁ := C * tr_M₁` (lean:53) defines the Jones value as C·tr. The theorem is then the tautology C·a/(C·b) = a/b over hypothesised values; no braid, trace or Jones polynomial appears. Several further problems. (i) The writhe factor that the docstring says belongs to C (lean:35, \"(-q^{-3/2})^{-w(β)}\") is dropped from `jonesNormFactor` (lean:40). (ii) The Gram/LP/shadow-price claim (md:11) has no Lean content; `gram_entry_proportional` is `C * x = C * x := rfl` (lean:76-77). (iii) Real-only q > 0 is gratuitous for an algebraic cancellation. S↔P: the statement asserts J_{K1}/J_{K2} = tr_M(β1)/tr_M(β2) for all β1, β2 ∈ B_n with a writhe-free C (md:1). The prf itself says C carries (-q^{-3/2})^{-w(β)} and \"cancels in ratios of braids with the same writhe\" (prf:5-6); for different writhes it is \"applied post-hoc\" (prf:7-8). The statement therefore claims more than is proved: an equal-writhe hypothesis is missing. The \"global scalar\" claim for G_ij = tr_M(b_i b_j) (md:11) fails for the same reason, since the correction depends on w(b_i)+w(b_j) and is not global. The loop prefactor q^{1/2}+q^{-1/2} is also the one retracted under convention D in markov-pair-z2.ts:34.",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
+      },
+      {
+        "field_hash": {
+          "md": "d1d783c47ac3",
+          "ts": "0e7236bbba02"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:16:53.523Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: a link label renamed (rem:archimedean-image-table to its title). No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: S↔L: ref resolves only to the sibling (no library decl). `tr_M₁ tr_M₂ : ℝ` are arbitrary reals and `J₁ := C * tr_M₁` (lean:53) defines the Jones value as C·tr. The theorem is then the tautology C·a/(C·b) = a/b over hypothesised values; no braid, trace or Jones polynomial appears. Several further problems. (i) The writhe factor that the docstring says belongs to C (lean:35, \"(-q^{-3/2})^{-w(β)}\") is dropped from `jonesNormFactor` (lean:40). (ii) The Gram/LP/shadow-price claim (md:11) has no Lean content; `gram_entry_proportional` is `C * x = C * x := rfl` (lean:76-77). (iii) Real-only q > 0 is gratuitous for an algebraic cancellation. S↔P: the statement asserts J_{K1}/J_{K2} = tr_M(β1)/tr_M(β2) for all β1, β2 ∈ B_n with a writhe-free C (md:1). The prf itself says C carries (-q^{-3/2})^{-w(β)} and \"cancels in ratios of braids with the same writhe\" (prf:5-6); for different writhes it is \"applied post-hoc\" (prf:7-8). The statement therefore claims more than is proved: an equal-writhe hypothesis is missing. The \"global scalar\" claim for G_ij = tr_M(b_i b_j) (md:11) fails for the same reason, since the correction depends on w(b_i)+w(b_j) and is not global. The loop prefactor q^{1/2}+q^{-1/2} is also the one retracted under convention D in markov-pair-z2.ts:34."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1721,6 +1736,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:27.396Z",
+  "updated_at": "2026-11-21T08:16:53.523Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

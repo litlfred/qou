@@ -21,6 +21,10 @@ far below that:
     50 keV net" to ⁴He — 0.18% of the binding.
   * The same paper quotes the estimate that the long-ranged part of the N³LO
     four-nucleon force contributes "of order a few hundred keV" — ~1.1%.
+    [jurgenson2009srg] p.3 attributes this to its Ref. [20] as a "rough
+    estimate", i.e. a range, not a number: 0.300 MeV below is a representative
+    point chosen inside it. The ×34 headline moves with that choice; the >10×
+    verdict asserted below holds for any value under |μ₄|·B(D)/10 ≈ 1.02 MeV.
 
 So the QOU μ₄ exceeds the N³LO 4N estimate by ~34× and the SRG-induced 4N by
 ~204×. A quantity 36% of the total binding is not a four-body force.
@@ -102,8 +106,8 @@ MU4 = mp.mpf("-4.591048")      # corpus residual-simplex 4-body coeff (B(D) unit
 S4 = mp.mpf("3.7804")          # rho_strong's own 4-body simplex coeff
 G4 = mp.mpf("8.3706")          # rho_grad's  own 4-body simplex coeff
 
-SRG_4N_MEV = mp.mpf("0.050")   # Jurgenson+ arXiv:0905.1873: "about 50 keV net"
-N3LO_4N_MEV = mp.mpf("0.300")  # same paper: "of order a few hundred keV"
+SRG_4N_MEV = mp.mpf("0.050")   # [jurgenson2009srg] p.3: "about 50 keV net" (SRG-induced, λ=2 fm⁻¹)
+N3LO_4N_MEV = mp.mpf("0.300")  # [jurgenson2009srg] p.3, via its Ref. [20]: "of order a few hundred keV" (point chosen in the range)
 
 
 def main() -> int:
@@ -191,9 +195,9 @@ def main() -> int:
         "s4_MeV": float(S4 * B_D), "g4_MeV": float(G4 * B_D),
         "s4_as_fraction_of_B4He": float(S4 * B_D / B_4HE),
         "references": [
-            "Jurgenson, Navratil, Furnstahl, PRL 103, 082501 (2009), arXiv:0905.1873",
+            "[jurgenson2009srg] Jurgenson, Navratil, Furnstahl, PRL 103, 082501 (2009), arXiv:0905.1873",
             "Platter, Hammer, Meissner, arXiv:nucl-th/0409040",
-            "Epelbaum, Modern Theory of Nuclear Forces, arXiv:0811.1338",
+            "[epelbaum2008] Epelbaum, Modern Theory of Nuclear Forces, arXiv:0811.1338",
             "Tjon, PRC 20, 340 (1979) — paywalled/pre-arXiv, NOT needed: superseded for "
             "this argument by nucl-th/0409040 which states and explains the correlation"],
         "verdict": ("mu4 = -4.591 is not a physical four-body quantity (34x the N3LO 4N "
