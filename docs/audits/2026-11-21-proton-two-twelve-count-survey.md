@@ -167,3 +167,41 @@ What this does **not** exclude:
 - a different coupling normalisation, i.e. a rescaled `κ`.
 
 A rescaling chosen so that `k = 2` would be selection against the target.
+
+## §5. The Reeb weight k, on the Bring-cone Reeb triad (2026-11-21)
+
+**Which realisation.** The corpus has a second concrete Reeb operator. `QOU/BringCone.lean`
+defines the Reeb triad as right multiplication `M_u p = p·u` on `ℍ`, for `u ∈ {i, j, k}`.
+Right multiplication commutes with left multiplication, so `M_u` is linear for the left
+complex structure, with `ℍ = ℂ·1 ⊕ ℂ·j`.
+
+This matches the per-strand `C²` of §3 under `e₁ ↦ 1`, `e₂ ↦ j`, which is a set-up
+identification and not derived. In that basis `M_i = diag(i, −i)`. A vector field acts on
+three strands by the Leibniz rule: `R = Σ_s M_u^{(s)}`.
+
+**Results.** Lean file `QOU/MassTheory/ProtonReebBringWeight.lean`: sorry-free,
+`lean -DautoImplicit=false` exit 0. The sympy twin, `computations/probes/proton_reeb_bring_weight_probe.py`,
+builds the matrices from quaternion products.
+
+1. **`u = i`, the K-weight direction.** `R` preserves `W_p`, and `R∘R = −1` on it. So `R∘R` is
+   scalar, `k = 1`, and `τ_{W_p}(R∘R) = −3`, not −12 (`reeb_trace_proton`).
+2. **Parity.** A state with `d` copies of `e₂` has weight `(3 − 2d)·i`. So `k = |3 − 2d|` is odd
+   on three strands, and no weight space has `k = 2` (`weight_ne_two`). The same holds for
+   every odd strand count (`weight_odd_of_odd`).
+   This is a **scope-(b)** exclusion *within this realisation*, and the invariant is parity.
+3. **`u = j` or `k`.** `R` does not preserve `W_p`. The compressed square is not scalar
+   (diagonal −3, off-diagonal −2). The Casimir `Σ_u R_u²` on `W_p` has eigenvalues −15 (once)
+   and −3 (twice), so it is not scalar either.
+
+The Reeb direction `u` is a recorded open freedom in `BringCone.lean`. Only `u = ±i` gives
+an endomorphism of `W_p`.
+
+**Combined with §4.** Neither concrete realisation of `R` in the corpus gives `k = 2`:
+
+| realisation | k on `W_p` |
+|---|---|
+| KZ (`arnold_euler`) | `3|κ|`; ≈ 0.0498 at `q₀` |
+| Bring triad | the odd integer 1 |
+
+The 12 stays a fit. A third realisation, or a rescaling of the triad by 2, would have to be
+derived. Choosing either to make `k = 2` would be selection against the target.
