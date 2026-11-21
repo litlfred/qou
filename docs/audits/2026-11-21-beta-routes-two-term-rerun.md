@@ -205,6 +205,9 @@ unchanged for any `|c_em| < 3.55`, and it stays identical for n and p.
 
 ## 4. Decision for the owner: which covariance group defines "two-term" with lepton strands
 
+> **Superseded 2026-11-21 (owner instruction, PR #8743).** The owner did not pick between the two readings below. He asked for the lepton case to be derived the same way the nucleon two-term was: from the Lagrangian, tracked through non-abelian Stokes. PR #8743 (`QOU.QBeta.LeptonTwoTermStokesCovariance`, `docs/audits/2026-11-21-lepton-two-term-from-lagrangian-stokes.md`) does that. Stokes carries the insertion round the closed boundary, which forces the **full braid group with each strand's charge carried with the strand**. The ruled pairs-only insertion is not carried at a quark–lepton crossing; the carried family adds a forced lepton self-energy weight 2/3 and reduces to the ruled all-pairs insertion on three quarks. Its connected part is **exactly 0 on every β route** (91 quantities). So the H_N-covariant non-zero columns of §2 are an **inadmissible comparison** (they hold the charge at a fixed position instead of moving it with the lepton strand), and scored two-term = one-term on every route. Nothing in this section is an open owner decision any more.
+
+
 Both projections agree on the scored nucleon rows. They differ only once lepton strands are
 present.
 
