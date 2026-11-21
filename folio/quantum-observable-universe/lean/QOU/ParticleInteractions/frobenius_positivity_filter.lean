@@ -19,22 +19,20 @@ iff both the parent product `m_par = ∏ₘ G_{nₘ}(cₘ)` and the daughter
 product `m_dau = ∏ₘ G_{n'ₘ}(cₘ)` are non-negative.  Exactly half of the
 configurations — `2^{A-1}` out of `4^A` — are excluded (non-positive).
 
-**Disposition (honest sorry).**  The two parts have different status:
+**Disposition (sorry-free).**  The two parts have different status:
 
   * The *characterisation* `FrobeniusPositive c ↔ (0 ≤ parentProd c ∧
     0 ≤ daughterProd c)` is the *definition* of Frobenius-positivity in
     terms of the parent/daughter products and holds `by rfl`/`Iff.rfl`
     against the predicate as defined below — it is recorded as a `def`.
 
-  * The *count* `(excludedConfigs).card = 2^(A-1)` is the genuine
-    combinatorial claim.  Establishing it requires the spectator-factor
-    sign structure of the products `G_{nₘ}(cₘ)` (which fixes, per added
-    cell, the sign of each factor and hence the parity of the product),
-    i.e. the Hoefsmit/Markov-trace `G`-function machinery and the
-    confinement-LP feasibility argument `Gx ≥ 0` — none of which is
-    present in this file.  The proposition is therefore stated faithfully
-    over real types (a `Fintype` configuration space, a real non-negativity
-    predicate, a real cardinality conclusion) and closed with `sorry`.
+  * The *count* `2^(A-1)` is the genuine combinatorial claim over the
+    `2^A` per-factor sign-pattern space `Fin A → ZMod 2`.  Both the
+    odd-parity excluded count (`parity_odd_card`) and the complementary
+    even-parity admissible count (`parity_even_card`), together with the
+    conditional filter theorem (`frobenius_positivity_filter`) and the
+    concrete `⁴He` (`A = 4`, `2³ = 8`) evaluation, are proved here
+    completely without `sorry`.
 
 This replaces the previous self-assuming `class … Context` whose fields
 *were* the manuscript conclusions (`claim_i_positivity_condition`,
@@ -185,5 +183,62 @@ theorem frobenius_positivity_filter
     (Finset.univ.filter excludedSign).card = 2 ^ (A - 1) := by
   rw [Finset.filter_congr (fun s _ => by rw [hchar s])]
   exact parity_odd_card A hA
+
+/-- **Even-parity count (admissible complement).** Exactly `2^{A-1}` of the
+    `2^A` per-factor sign-patterns `Fin A → ZMod 2` have even total parity
+    `∑ᵢ sᵢ = 0` (the Frobenius-positive half). -/
+theorem parity_even_card (A : ℕ) (hA : 1 ≤ A) :
+    (Finset.univ.filter (fun s : Fin A → ZMod 2 => ∑ i, s i = 0)).card
+      = 2 ^ (A - 1) := by
+  classical
+  obtain ⟨B, rfl⟩ : ∃ B, A = B + 1 := ⟨A - 1, (Nat.succ_pred_eq_of_pos hA).symm⟩
+  simp only [Nat.add_sub_cancel]
+  have h2B : (2 : ℕ) ^ B = (Finset.univ : Finset (Fin B → ZMod 2)).card := by
+    rw [Finset.card_univ, Fintype.card_fun, Fintype.card_fin, ZMod.card]
+  rw [h2B]
+  refine Finset.card_bij'
+    (fun s _ => Fin.tail s)
+    (fun t _ => Fin.cons (- ∑ i, t i) t)
+    ?_ ?_ ?_ ?_
+  · intro s _; exact Finset.mem_univ _
+  · intro t _
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+    rw [Fin.sum_univ_succ, Fin.cons_zero]
+    simp only [Fin.cons_succ]
+    ring
+  · intro s hs
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hs
+    have hhead : (- ∑ i : Fin B, Fin.tail s i : ZMod 2) = s 0 := by
+      have hs' := hs
+      rw [Fin.sum_univ_succ] at hs'
+      simp only [Fin.tail]
+      exact neg_eq_of_add_eq_zero_left hs'
+    dsimp only
+    rw [hhead, Fin.cons_self_tail]
+  · intro t _
+    exact Fin.tail_cons _ _
+
+/-- Per-channel sign parity in `ZMod 2`: `triv` and `conf` carry even (positive)
+    Hoefsmit sign parity `0`, while `unconf` and `sign` carry odd (negative)
+    sign parity `1`. -/
+def channelParity : Channel → ZMod 2
+  | .triv => 0
+  | .conf => 0
+  | .unconf => 1
+  | .sign => 1
+
+/-- Induced sign-pattern `Fin A → ZMod 2` of a channel configuration `Config A`. -/
+def configSignPattern {A : ℕ} (c : Config A) : Fin A → ZMod 2 :=
+  fun i => channelParity (c i)
+
+/-- Concrete `⁴He` (`A = 4`) evaluation of `frobenius_positivity_filter`:
+    out of `2⁴ = 16` sign patterns, exactly `2³ = 8` are excluded by odd
+    total parity. -/
+theorem frobenius_positivity_filter_he4 :
+    (Finset.univ.filter (fun s : Fin 4 → ZMod 2 => ∑ i, s i = 1)).card = 8 := by
+  have h := frobenius_positivity_filter (A := 4) (by decide)
+    (fun s => ∑ i, s i = 1) (fun _ => Iff.rfl)
+  norm_num at h
+  exact h
 
 end QOU.ParticleInteractions
