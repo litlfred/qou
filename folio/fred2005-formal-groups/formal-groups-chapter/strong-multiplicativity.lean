@@ -1,14 +1,11 @@
 /-!
-# Fred2005.strong_multiplicativity_holds — Frobenius / comultiplication relation preserved under GS deformation at every filtration degree
+# Strong multiplicativity (not formalised)
 
-**Sibling-resolution stub** for content block
-[`thm:strong-multiplicativity`](strong-multiplicativity.md).  The buildable formalisation lives in
-[`Fred2005/FormalGroups.lean §6`](../lean/Fred2005/FormalGroups.lean)
-and is compiled by `lake build Fred2005`.
+Sibling stub for content block
+[`def:strong-multiplicativity`](strong-multiplicativity.md), Def. 1.11 of
+arXiv:math/0602138. The condition needs the tensor-square comultiplication of the splay
+algebra and the flip map; neither is formalised. The block's Lean ref names the Poisson
+structure the condition is imposed on, `Fred2005.SkewedPoissonStructure`.
 
-Canonical declaration: `Fred2005.strong_multiplicativity_holds`.
-
-Frobenius / comultiplication relation preserved under GS deformation at every filtration degree.
-
--- Ref: [fred2005] L. Fred, PhD thesis, U. Arizona, 2005, §6.
+-- Ref: [leitner2006] F. Leitner, arXiv:math/0602138, Def. 1.11, Prop. 1.13.
 -/

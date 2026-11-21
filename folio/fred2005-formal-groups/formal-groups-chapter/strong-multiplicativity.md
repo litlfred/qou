@@ -1,21 +1,25 @@
-Let $G$ be a [non-commutative formal group](#def:non-commutative-formal-group).
-Its comultiplication is an algebra homomorphism: for all $x, y \in \mathrm{Dist}(G)$,
-
+Let $T$ be a splay with coordinate algebras $A_i$, with a strongly
+filtered [Poisson structure](#def:skewed-poisson-structure) $\pi$, and let
+$\cdot$ denote the multiplication of $S = \bigotimes_i A_i$ (transported to
+$T$ through a choice of ordering $<$ on $I$). A map
+$\Delta \colon T \to T \otimes T$ is **strongly multiplicative** with respect
+to $<$ if
 $$
-  \Delta(xy) \;=\; \Delta(x) \cdot \Delta(y)
+  \Delta \circ \pi \;=\; (\cdot \otimes \pi \;+\; \pi \otimes \cdot \;+\; \pi \otimes \pi)
+  \circ (1 \otimes \tau \otimes 1) \circ \Delta,
 $$
+where $\tau$ is the flip of tensor factors.
 
-component-wise, where $\Delta$ is the comultiplication on $\mathrm{Dist}(G)$.
-This is the strong multiplicativity of $\Delta$, and it is the property that
-lets the comultiplication — which encodes the gauge connection in the QOU
-framework — survive the passage from characteristic $p$ to characteristic $0$.
+For the tensor algebra of a Lie algebra $\mathfrak{g}$ with the diagonal
+comultiplication, the $\pi \otimes \pi$ term vanishes on $\mathfrak{g}$ and the
+condition reduces to the usual multiplicativity of a Lie bialgebra
+(\cite{leitner2006}, Remark 1.12).
 
-**What is established here, and what is cited.** The identity above holds for
-any object of the structure by definition: it is the defining compatibility
-axiom, restated. The substantive result of \cite{fred2005}, Theorem 4.12 — that
-the *constructed* $\mathrm{Dist}(G)$ obtained by integrating the skew-Poisson
-structure satisfies it, and that the property is **preserved under the
-[Gröbner--Shirshov deformation](#def:grobner-shirshov-basis) at every filtration
-degree** — is a strictly stronger statement. It is cited, not re-derived, and it
-does not follow from the identity above. Expressing "at every filtration degree"
-requires a filtered-deformation structure this model does not carry.
+**Consequence** (\cite{leitner2006}, Proposition 1.13). If each $A_i$ carries
+an algebra map $\Delta_i \colon A_i \to A_i \otimes A_i$ and the induced
+$\Delta$ on $T$ is strongly multiplicative, then $\Delta$ descends to an
+algebra map $U \to U \otimes U$ on the quotient
+$U = T / (fg - gf - \pi(f, g))$ of
+[the integration theorem](#thm:skew-poisson-integrates).
+
+Reference: \cite{leitner2006}, Definition 1.11 and Proposition 1.13.

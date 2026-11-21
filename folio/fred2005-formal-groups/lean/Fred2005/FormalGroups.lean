@@ -15,6 +15,8 @@ this file names them as the chapter's content blocks refer to them.
 | `def:non-commutative-formal-group` | §2 ("non-commutative" = not necessarily commutative) | `NoncommutativeFormalGroup` |
 | `def:skewed-poisson-structure` | Def. 1.1.3, Poisson structure on a splay | `SkewedPoissonStructure` |
 | `thm:skew-poisson-integrates` | Thm. 3.7, the quotient `U = T / J` | `IntegrationQuotient`, `integration_commutator` |
+| `def:strong-multiplicativity` | Def. 1.11 (not formalised; ref names the Poisson structure) | `SkewedPoissonStructure` |
+| `def:grobner-shirshov-basis` | Prop. 2.4 (general notion in `ugb`) | `UGB.GrobnerShirshov.NormalFormBasis` |
 
 What is not formalised: that `U` is the distribution algebra of a formal group (the content
 of Thm. 3.7), strong multiplicativity (Def. 1.11, Prop. 1.13), the PBW theorem (Thm. 1.9) and

@@ -1,0 +1,30 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "leitner2006",
+  "library": {
+    "docId": "arxiv-math-0602138v1",
+    "dir": "library/arxiv-math-0602138v1",
+    "pdf": "library/arxiv-math-0602138v1/0602138v1.pdf",
+    "stage": "sections",
+    "pages": 24,
+    "sections": 4,
+    "arxiv": "math/0602138v1"
+  },
+  "type": "article",
+  "title": "Non-Commutative Formal Groups in Positive Characteristic",
+  "author": [
+    {
+      "family": "Leitner",
+      "given": "Frederick"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2006
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/math/0602138",
+  "note": "arXiv:math/0602138v1 [math.RA], 7 Feb 2006. Preprint, no journal record. Uploaded by the owner 2026-11-21 as the thesis fred2005; the chapter folio/fred2005-formal-groups cites this paper's numbering. Works over a field of characteristic p > 0 throughout: splays with Poisson structures (Def. 1.1), PBW (Thm. 1.9), strong multiplicativity (Def. 1.11, Prop. 1.13), Gröbner presentation of Dist(G) (Prop. 2.4), integration of geometric formal groups (Thm. 3.7). Metadata read from page 1 of the PDF."
+}
