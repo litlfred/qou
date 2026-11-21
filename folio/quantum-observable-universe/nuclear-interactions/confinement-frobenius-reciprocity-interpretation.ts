@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:confinement-frobenius-reciprocity",
+  interprets: "conj:confinement-frobenius-reciprocity",
   label: "rem:confinement-frobenius-reciprocity-interpretation",
   title: "Master formula: ingredients, corollaries, computational protocol",
   tags: [
@@ -13,7 +13,7 @@ export default remark({
     "computational-protocol",
   ],
   uses: [
-    "prop:confinement-frobenius-reciprocity",
+    "conj:confinement-frobenius-reciprocity",
     "conj:knot-factor-frobenius-pairing",
     "prop:mass-coefficient-shadow-price",
     "rem:yekutieli-stokes",

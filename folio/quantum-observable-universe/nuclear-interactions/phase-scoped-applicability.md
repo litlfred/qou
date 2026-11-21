@@ -1,5 +1,5 @@
 **Remark.**
-*The phase stratification proposition is the scope caveat attached to every statement in the confinement framework. Any formal statement about a confined particle $P$, its electron shell, a dressing morphism, or a trace-class invariant $\mathcal{F}(P)$ includes the implicit quantifier:*
+*The phase-boundary conjecture ([conj:confinement-phase-boundaries](#conj:confinement-phase-boundaries)) proposes the scope caveat attached to every statement in the confinement framework. Any formal statement about a confined particle $P$, its electron shell, a dressing morphism, or a trace-class invariant $\mathcal{F}(P)$ includes the implicit quantifier:*
 
 $$
   \forall\, q \in \Omega_\alpha(P),
@@ -7,7 +7,7 @@ $$
 
 *where $\Omega_\alpha(P)$ is a fixed connected component of the confinement locus $\Omega(P)$ — a single confinement phase.*
 
-**Phase-scoped theorems (these hold only within a single $\Omega_\alpha$):**
+**Conjecturally phase-scoped results (conjectured to hold only within a single $\Omega_\alpha$):**
 
 - *Level sufficiency — preservation of Markov trace under unfolding.*
 - *Shell-closure stability — monotonicity of $\sigma_F$ along the dressing chain and local maxima at noble-gas $Z$.*

@@ -7,7 +7,7 @@ into one of three buckets, per the master formula
 
     ⟨O⟩_T = Σ_{i,j ∈ A*(T)}  u_i*  (G^{-1})_{ij}  ⟨O, b_j⟩
 
-(prop:confinement-frobenius-reciprocity).
+(conj:confinement-frobenius-reciprocity).
 
 Buckets
 -------
