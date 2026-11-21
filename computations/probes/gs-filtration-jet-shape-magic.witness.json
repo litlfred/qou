@@ -1,8 +1,8 @@
 {
   "engine": "python+fractions",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T04:41:05.775448+00:00",
-  "commitSha": "37a281c359874db2715c3fddd74a2aa775d5fe24",
+  "computedAt": "2026-11-21T06:35:56.892017+00:00",
+  "commitSha": "cede6a3c63581a1e22b236f3ae2d70f6ee9cb947",
   "assertions": [
     {
       "name": "h3_quotient_jet_grades",
@@ -162,11 +162,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 413962,
+  "durationMs": 342885,
   "computation": "gs-filtration-jet-shape-magic",
   "scriptFile": "gs_filtration_jet_shape_magic_probe.py",
-  "scriptHash": "36f22f9a69a7",
-  "scriptCommitSha": "30c5628b56945e953a5e3ed5640dd055d328c96d",
+  "scriptHash": "8511449d3e20",
+  "scriptCommitSha": "a6e7047dce20d7fcd1ad8ef43f956038cc8e7ff9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
