@@ -18,5 +18,5 @@ export default remark({
     "def:ecalle-borel-resummation",
     "conj:kashaev-surreal",
   ],
-  cites: ["crew2023", "ecalle1981", "berarducci-mantova2018"],
+  cites: ["crew2023", "ecalle1981", "berarducci-mantova2018", "mcspirit-rolen2025"],
 });
