@@ -14,6 +14,7 @@ import QOU.Interactions.HeckeEngine
 import QOU.Interactions.LRFusion
 import QOU.Interactions.MagicLadderEquivalences
 import QOU.Interactions.NuclearOperatorRegimes
+import QOU.Interactions.NuclearRegimeShellRule
 import QOU.Interactions.NucleonNFWitness
 import QOU.Interactions.ProtonTrefoilSign
 import QOU.Interactions.TrefoilVanishing
