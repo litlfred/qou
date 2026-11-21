@@ -11,7 +11,7 @@ $$
   \qquad \text{where } uv = qvu
 $$
 
-This identity is the **Yang–Baxter equation in
+In the form $e_q(a)\,e_q(b) = e_q(b)\,e_q(-ba)\,e_q(a)$ with $ab = qba$, this is the Faddeev–Kashaev pentagon relation, a quantum analogue of the Rogers five-term relation \cite[\S2.5, Thm.~I and Cor.~11]{kirillov1995}. This identity is the **Yang–Baxter equation in
 exponential form**.
 
 The connection to the QOU framework — why $\Phi_1$ is a quantum

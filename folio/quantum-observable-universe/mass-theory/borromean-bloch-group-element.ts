@@ -16,6 +16,7 @@ export default conjecture({
   ],
   cites: [
     "arxiv-2304.12545v1",
+    "kirillov1995",
     "bloch2000",
     "neumann-zagier1985",
     "suslin1991",
