@@ -174,7 +174,19 @@ def main():
         f, body, vars_, context = hit
         clean = strip_lean_comments(body).strip()
         if "sorry" in clean: skipped.append((lab, "sorry")); continue
-        head, sep, proof = clean.partition(":=")
+        # Split at the declaration's own `:=`, not one inside `let x :=` / `haveI :=`
+        # in the statement (pass 2 cut three statements short at those).
+        cut = None
+        for m in re.finditer(r':=', clean):
+            line_start = clean.rfind("\n", 0, m.start()) + 1
+            prefix = clean[line_start:m.start()]
+            if re.search(r'\b(let|haveI|have|letI)\b', prefix):
+                continue
+            cut = m; break
+        if cut is None:
+            head, proof = clean, ""
+        else:
+            head, proof = clean[:cut.start()], clean[cut.end():]
         if re.search(r':\s*True\s*$', head.strip()): skipped.append((lab, "True")); continue
         head = re.sub(r'\b(theorem|lemma)\s+' + re.escape(short) + r'\b', r'\1 thm', head, count=1)
         plab, pmd = proofs[lab]
