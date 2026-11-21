@@ -136,6 +136,7 @@ export default chapter({
             "flavor-split-substrate",
             "flavor-split-substrate-proof",
             "flavor-split-substrate-interpretation",
+            "flavor-split-substrate-codata-comparison",
           ],
         }),
         section({

@@ -1,5 +1,7 @@
 **Proof.**
 
+Steps 3 to 5 prove the identity. Steps 1, 2 and 6 show how its left-hand side arises as the substrate formula for $(m_n - m_p)/M_N$, under the pair-Skein formula and the ansatz of Step 2.
+
 *Step 1 (Pair-Skein difference, exact).*
 
 Apply [Pair Skein mass and crossing-by-crossing recursion](pair-skein-mass-formula.md) to the Borromean baryon braids of the proton ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$) and neutron ($\mathfrak{u}\mathfrak{d}\mathfrak{d}$). This gives the exact relation:
@@ -121,20 +123,4 @@ $$
   \frac{\hbar_q^2 \cdot h_q \cdot [2]_q}{3}
   \;=\;
   \frac{(q-1)^2 \, (1 - q^{-4})}{3}. \tag{5}
-$$
-
-*Step 7 (Empirical evaluation).*
-
-At $q = q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps):
-
-$$
-  (q_0 - 1)^2 \cdot (1 - q_0^{-4}) / 3
-  \;\approx\;
-  (0.10998)^2 \cdot (1 - 0.6585) / 3
-  \;\approx\;
-  0.01210 \cdot 0.3415 / 3
-  \;\approx\;
-  1.376 \times 10^{-3},
-$$
-
-This matches the CODATA value $1.293 / 938.92 \approx 1.377 \times 10^{-3}$ to $-0.10\%$. $\square$
+$$ $\square$
