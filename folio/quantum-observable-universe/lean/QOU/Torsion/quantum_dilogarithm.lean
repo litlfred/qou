@@ -3,7 +3,7 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.Torsion.quantum_dilogarithm — `tr_trans(ϱ, p_i) = Φ_q(z_i)`
 
-**Definition / Proposition** ([`def:quantum-dilogarithm`](../../../quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md)).
+**Definition / Proposition** ([`def:quantum-dilogarithm`](../../../quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.md)).
 
 *In the archimedean realisation, the transient trace contribution
 `tr_trans(ϱ, p_i)` from the topological decomposition of mass
@@ -31,7 +31,7 @@ Recorded here so §7c sweeps stop re-flagging the module: a bare grep sees a
 `Torsion` module whose every field is `ℝ`-typed and scores a base-ring
 candidate, which it is not.
 
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.md
 -/
 
 namespace QOU.Torsion
@@ -56,7 +56,7 @@ class QuantumDilogarithmContext where
 
     The transient-trace contribution coincides with the quantum
     dilogarithm at the Briggs–Klein spectral coordinate. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-endomorphism/quantum-dilogarithm.md
 theorem quantum_dilogarithm
     [ctx : QuantumDilogarithmContext] (ϱ p : ℝ) :
     ctx.trTransient ϱ p = ctx.Phi_q (ctx.spectralCoord p) :=

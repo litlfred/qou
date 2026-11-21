@@ -7,11 +7,12 @@ section_number: 4.4
 pages: 24-25
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
-doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
-duplicate_of: "s40879-023-00706-0"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.951
-latex_coverage_ratio: 0.971
+latex_coverage_ratio: 0.986
+doc_brief: "Bring’s curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 []{#subsec: quotient by 3-cycle label="subsec: quotient by 3-cycle"} We may utilise the same methods illustrated above for the 2,2-cycles to calculate the quotient of Bring's curve by a 3-cycle. We will work with the 3-cycle $(345)$ for purely aesthetic resaons. Now the normaliser of $\left\langle (345) \right\rangle$ in $S_5$ is $N_{S_5}(\left\langle 345 \right\rangle))=\left\langle (12), (34), (345) \right\rangle\cong D_{12}$ and we expect the quotient genus-2 curve $\mathcal{B}/\left\langle (345) \right\rangle$ to have $D_{12}/C_3 \cong V_4$ symmetry group. Again one of these involutions, which we will later see to be $\overline{(34)}$,[^1] is the hyperelliptic involution on the curve and so further quotienting by this symmetry gives $\mathbb{P}^1$. Quotienting by the other two involutions again yields elliptic curves we shall now describe. As the quotients of both the HC-model and $\mathbb{P}\sp4$-model via semi-invariants proceed analogously we shall present here only the $\mathbb{P}\sp4$-model calculations.
 

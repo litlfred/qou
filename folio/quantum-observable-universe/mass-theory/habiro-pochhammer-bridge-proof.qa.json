@@ -136,6 +136,22 @@
         },
         "reviewed_at": "2026-06-28T22:34:58.468Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:24.734Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "proof:1-18 correct; md:39-42 'S … cannot be expressed as a closed-form rational function of ℏ_q² from representation theory alone' and md:36-38 'degree 226/97 in u' are unproved claims in the statement block",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -945,7 +961,7 @@
           "in_degree": 0,
           "cone_size": 274,
           "depth": 56,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1177,7 +1193,7 @@
         },
         "reviewed_at": "2026-08-21T16:22:01.709Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category \u2014 the block is four sentences of pure derivation with no commentary layer."
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1211,7 +1227,7 @@
         },
         "reviewed_at": "2026-08-21T16:22:01.749Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category \u2014 the block is four sentences of pure derivation with no commentary layer."
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-em-dash": [
@@ -1245,7 +1261,7 @@
         },
         "reviewed_at": "2026-08-21T16:22:01.789Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category \u2014 the block is four sentences of pure derivation with no commentary layer."
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-triples": [
@@ -1279,7 +1295,7 @@
         },
         "reviewed_at": "2026-08-21T16:22:01.828Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category \u2014 the block is four sentences of pure derivation with no commentary layer."
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-closing-aphorism": [
@@ -1313,7 +1329,7 @@
         },
         "reviewed_at": "2026-08-21T16:22:01.869Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category \u2014 the block is four sentences of pure derivation with no commentary layer."
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-meta-commentary": [
@@ -1347,7 +1363,7 @@
         },
         "reviewed_at": "2026-08-21T16:22:01.909Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category \u2014 the block is four sentences of pure derivation with no commentary layer."
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-thesis-restatement": [
@@ -1381,7 +1397,7 @@
         },
         "reviewed_at": "2026-08-21T16:22:01.949Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category \u2014 the block is four sentences of pure derivation with no commentary layer."
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-performed-warmth": [
@@ -1415,7 +1431,7 @@
         },
         "reviewed_at": "2026-08-21T16:22:01.989Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category \u2014 the block is four sentences of pure derivation with no commentary layer."
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-superlative": [
@@ -1449,7 +1465,7 @@
         },
         "reviewed_at": "2026-08-21T16:22:02.029Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category \u2014 the block is four sentences of pure derivation with no commentary layer."
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-nonspeakable": [
@@ -1483,7 +1499,7 @@
         },
         "reviewed_at": "2026-08-21T16:22:02.064Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category \u2014 the block is four sentences of pure derivation with no commentary layer."
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1506,6 +1522,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T16:22:02.064Z",
+  "updated_at": "2026-11-15T21:57:24.734Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

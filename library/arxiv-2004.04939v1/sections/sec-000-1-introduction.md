@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-3
 source_pdf: 2004.04939v1.pdf
 source_sha256: 59a06f9f7d97cad2
-doc_brief: "BRAID GROUP ACTION ON THE MODULE CATEGORY OF — Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.883
+doc_brief: "BRAID GROUP ACTION ON THE MODULE CATEGORY OF — Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra."
 ---
 The monoidal category $\catC_\g$ of  finite-dimensional representations of a quantum affine algebra $\uqpg$ has been extensively investigated because of its rich structure. 
 Among various approaches,  Nakajima (\cite{Nak04}), Varagnolo-Vasserot (\cite{VV03}), and Hernandez (\cite{Her04})  studied $t$-deformations of the Grothendieck ring of $\catC_\g$. 

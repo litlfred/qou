@@ -1,10 +1,10 @@
-The vertex operator algebra $(V, Y, |0\rangle)$ ([vertex operator](#def:vertex-operator)) inherits every QU and QUO axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$ of $H_n(R, q)$, translated into **knot coordinates**: braid words in $\sigma_i$, the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace $\mathrm{tr}_M$, and cup/cap morphisms $\cup\colon \mathbf{1} \to V^{\vee} \otimes V$, $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$. The generators obey the Hecke relation
+The vertex operator algebra $(V, Y, |0\rangle)$ inherits every QU and QUO axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$ of $H_n(R, q)$, translated into **knot coordinates**: braid words in $\sigma_i$, the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace $\mathrm{tr}_M$, and cup/cap morphisms $\cup\colon \mathbf{1} \to V^{\vee} \otimes V$, $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$. The generators obey the Hecke relation
 
 $$
   \sigma_i^2 = (q - q^{-1})\sigma_i + 1 \qquad (1 \leq i \leq n-1),
 $$
 
-and the vertex algebra of a QUO is the quotient of the free algebra on $\{\sigma_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \star\}$ by **26 relations** — 14 structural (the QU/QUO axioms QU-1 through QUO-4) and 12 cohomological (C-1 through C-10) — catalogued in [Table 2](#tbl:vertex-algebra-relations-table2-data) and [Table 3](#tbl:vertex-algebra-relations-table3-data), coupled with the Hecke--Skein dictionary $\sigma_i \leftrightarrow L_+$, $\sigma_i^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$.
+and the vertex algebra of a QUO is the quotient of the free algebra on $\{\sigma_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \star\}$ by **25 relations** — 13 structural (the QU/QUO axioms QU-1 through QUO-4, with QUO-3a withdrawn) and 12 cohomological (C-1 through C-10) — catalogued in [Table 2](#tbl:vertex-algebra-relations-table2-data) and [Table 3](#tbl:vertex-algebra-relations-table3-data), coupled with the Hecke--Skein dictionary $\sigma_i \leftrightarrow L_+$, $\sigma_i^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$.
 
 ## Proof
 
@@ -16,7 +16,7 @@ Each axiom is translated into knot coordinates below.
 
 ### QOU-1: Rigid braided monoidal structure (rigidity is a quantum-observable-universe condition; a quantum universe is braided but not rigid)
 
-The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke representation $\rho_n\colon B_n \to H_n(R, q)$. We write $\sigma_i$ both for the braid generator in $B_n$ and for its image $\rho_n(\sigma_i)$ in $H_n(R, q)$. Three families of relations encode rigidity and braiding:
+The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke representation $\rho_n\colon B_n \to H_n(R, q)$. Write $\sigma_i$ both for the braid generator in $B_n$ and for its image $\rho_n(\sigma_i)$ in $H_n(R, q)$. Three families of relations encode rigidity and braiding:
 
 **(QU-1a) Hecke relation** (quadratic):
 
@@ -246,7 +246,7 @@ $$
   \beta = \varnothing  \text{(empty braid)}.
 $$
 
-Equivalently, the Gram matrix $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$ over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is invertible (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)).
+Equivalently, the Gram matrix $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$ over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is invertible (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical).
 
 ### QUO-2: Observability ($\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$)
 
@@ -264,19 +264,17 @@ Equivalently: the only braid word commuting with all generators is the identity.
 
 ### QUO-3: Measurability (anomaly freedom)
 
-The Chern classes $c_1(\mathrm{Ad}(A)) = c_2(\mathrm{Ad}(A)) = 0$ translate via the fibre functor to:
+The second Chern class $c_2(\mathrm{Ad}(A)) = 0$ translates via the fibre functor to the relation QUO-3b below.
 
-**(QUO-3a) First Chern class vanishing** ($c_1 = 0$):
+**(QUO-3a, withdrawn.)** An earlier version stated $c_1(\mathrm{Ad}(A)) = 0$ as $\sum_{i=1}^{n-1} \mathrm{tr}_M(\sigma_i - \sigma_i^{-1}) = 0$. That relation fails for every linear trace with $\mathrm{tr}_M(1) \neq 0$ when $q^2 \neq 1$. The Hecke relation QU-1a gives $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$, so
 
 $$
   \sum_{i=1}^{n-1}
-  \mathrm{tr}_M\!\bigl(
-    \sigma_i - \sigma_i^{-1}
-  \bigr)
-  =  0.
+  \mathrm{tr}_M\!\bigl(\sigma_i - \sigma_i^{-1}\bigr)
+  = (n-1)(q - q^{-1})\,\mathrm{tr}_M(1).
 $$
 
-This indicates the total writhe of the adjoint representation is zero: the adjoint bundle is orientable.
+This is the skein relation $L_+ - L_- = (q - q^{-1}) L_0$ under the trace; it holds for every word and carries no information about $c_1$. A writhe-type functional that could express $c_1(\mathrm{Ad}(A))$ is not known in this framework.
 
 **(QUO-3b) Second Chern class vanishing** ($c_2 = 0$):
 
@@ -370,10 +368,9 @@ $$
   [\xi, a_m]
   = 
   \mathrm{wr}(a) a_m,
-  \qquad
-  \mathrm{wr}(a) = \sum_i \mathrm{tr}_M(\sigma_i - \sigma_i^{-1})
-   \text{(writhe of $\hat{\beta}_a$)}.
 $$
+
+where $\mathrm{wr}(a)$ is the writhe of $\hat{\beta}_a$: the exponent sum of the braid word $\beta_a$, i.e. its image under the abelianisation $B_n \to \mathbb{Z}$, $\sigma_i^{\pm 1} \mapsto \pm 1$. It is not a trace: the trace of $\sum_i (\sigma_i - \sigma_i^{-1})$ is the constant $(n-1)(q - q^{-1})\mathrm{tr}_M(1)$ for every word.
 
 The curvature 2-form $\omega_V$ is the Hecke Casimir:
 
@@ -442,7 +439,7 @@ The translation operator $L_{-1}$ preserves the Euler characteristic: $\chi(A_{n
 **Descartes constraint** (C-4b): For the physical universe,
 
 $$
-  \chi(A) =  -6
+  \chi_{\mathrm{eu}}(M_0) =  -6
   \qquad\Longleftrightarrow\qquad
   \mathrm{tr}_M(\mathrm{id}) =  -6.
 $$
@@ -465,14 +462,16 @@ $$
 
 where $\check{R}_{(n)}$ is the $R$-matrix at brane level $n$. The class $\kappa_n = 0$ if and only if jet prolongation determines the level-$(n+1)$ braiding entirely from the level-$n$ braiding.
 
-**Perpetual obstruction** (C-5a): When $\chi(A) = -6$,
+**Kummer persistence** (C-5a): When $\chi_{\mathrm{eu}}(M_0) = -6$, item 3 of the [QU-to-QOU theorem](#thm:qu-to-qou) gives
 
 $$
-  \kappa_n  \neq  0
-  \qquad \forall n \geq 0.
+  \kappa_n = 0 \iff n \mid 6,
+  \qquad n \geq 1,
 $$
 
-In Hecke generators: at every brane level, there exist braid words $\beta_{n+1} \in H_{n+1}(q)$ that cannot be expressed as $L_{-1}(\mathcal{B}_n)$ for any $\mathcal{B}_n \in H_n(R, q)$. The jet corrections and the base obstruction occupy complementary subgroups; cancellation is impossible.
+for the Kummer obstruction $\chi(A) \bmod n$. This relation formerly asserted $\kappa_n \neq 0$ for all $n$, on the ground that jet corrections and the base obstruction occupy complementary subgroups; that argument is withdrawn. Whether the $R$-matrix class defined above coincides with the Kummer obstruction is open.
+
+*Scope.* This restates item 3 of [QU-to-QOU](#thm:qu-to-qou) in its earlier, jet-tower form, which is retracted. Item 3 now states persistence in the Kummer tower (the obstruction $\chi(\mathcal{S}) \bmod n$ to an $n$-th root of the Reeb bundle), not at every level of the jet tower. For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou).
 
 ### C-6: Betti numbers and spectral sequence
 
@@ -641,4 +640,4 @@ See [Table 2](#tbl:vertex-algebra-relations-table2-data).
 
 See [Table 3](#tbl:vertex-algebra-relations-table3-data).
 
-These **26 relations** (14 structural + 12 cohomological), coupled with the Hecke--Skein dictionary $T \leftrightarrow L_+$, $T^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$, supply a complete presentation of the QOU vertex algebra in knot coordinates. They encode both algebraic structure and cohomological topology using the single language of braid words and the Markov trace.
+These **25 relations** (13 structural + 12 cohomological), coupled with the Hecke--Skein dictionary $T \leftrightarrow L_+$, $T^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$, supply a complete presentation of the QOU vertex algebra in knot coordinates. They encode both algebraic structure and cohomological topology using the single language of braid words and the Markov trace.

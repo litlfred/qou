@@ -171,7 +171,7 @@ def isShellClosed (nf : Fin 6 → R_q) (neg : R_q → Prop) [DecidablePred neg] 
 
 
 /-- Derived-atom record (placeholder marker for content block ref resolution) -/
--- Ref: [manuscript] disambiguation marker for content-block resolution
+-- Ref: [leitner2026] disambiguation marker for content-block resolution
 structure DerivedAtom where
 
 end QOU.Interactions

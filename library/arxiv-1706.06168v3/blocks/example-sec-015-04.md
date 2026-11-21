@@ -1,1 +1,0 @@
-By Deﬁnition 3.6, the Symb map gives a bijection between certain spaces of linear operators

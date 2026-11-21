@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.887
 latex_coverage_ratio: 0.955
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 []{#subsec:transitionanalytic label="subsec:transitionanalytic"} To any generalized Young diagram $\omega$ we can assign the unique probability measure $\mu^{\omega}$ on ${\mathbb{R}}$, called transition measure of $\omega$, the Cauchy transform of which $$\label{eq:Cauchy} G_{\mu^{\omega}}(z)= \int_{{\mathbb{R}}} \frac{1}{z-x} d
 \mu^{\omega}(x)$$ is given by $$\label{eq:definicja3} \log G_{\mu^{\omega}}(z)= -\frac{1}{2}

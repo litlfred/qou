@@ -16,7 +16,7 @@ extends infinitely in either direction is not assumed.
 
 ## References
 
-- [manuscript] §3 Lifting of Quantum Torsion
+- [leitner2026] §3 Lifting of Quantum Torsion
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -63,7 +63,7 @@ structure BundleInitialConditions where
   /-- The localized knots (position + knot type pairs). -/
   particles : List LocalizedKnot
   /-- Must have at least one particle. -/
-  -- Ref: [manuscript] §3, Definition: Bundle initial conditions
+  -- Ref: [leitner2026] §3, Definition: Bundle initial conditions
   nonempty : particles.length ≥ 1
 
 /-! ## Basic accessors -/

@@ -132,7 +132,7 @@ Z_MARKOV = Q0_PROTON**3 / (Q0_PROTON**2 + 1)
 # Falls back to Plancherel w_λ = d_q²/[n]_q! for comparison audits.
 
 def jones_wenzl_weight(shape: tuple[int, ...],
-                        q=Q0_PROTON, z=Z_MARKOV):
+                        q=None, z=None):
     """Ocneanu/Markov weight w_lam(q, z) for the H_n(q) Markov trace.
 
         w_lam = prod_{(i,j) in lam} [ q^{2i}(q^2 - 1 - q z) + q^{2j+1} z ]
@@ -177,8 +177,19 @@ def jones_wenzl_weight(shape: tuple[int, ...],
     n = sum(shape)
     if n == 0:
         return mpf(1)
-    qm = q if isinstance(q, mpf) else mpf(q)
-    zm = z if isinstance(z, mpf) else mpf(z)
+    # Default to the mpf proton pin, and derive z in mpf from that same q.
+    # The defaults used to be the float64 `Q0_PROTON` / `Z_MARKOV`, so the
+    # returned mpf carried only a double's worth of q, and the normalisation
+    # sum_lam d_lam w_lam = 1 held only to ~1e-16 (bean qou-bsec).
+    if q is None:
+        from qou_substrate.constants import Q_MP as _q_mp
+        qm = _q_mp
+    else:
+        qm = q if isinstance(q, mpf) else mpf(q)
+    if z is None:
+        zm = qm ** 3 / (qm ** 2 + 1)
+    else:
+        zm = z if isinstance(z, mpf) else mpf(z)
     cells: list[tuple[int, int]] = []
     for i, r in enumerate(shape):
         for j in range(r):
@@ -200,7 +211,7 @@ def jones_wenzl_weight(shape: tuple[int, ...],
     return numer / denom
 
 
-def ocneanu_weights_3A(A: int, *, q: float = Q0_PROTON, z: float = Z_MARKOV):
+def ocneanu_weights_3A(A: int, *, q=None, z=None):
     """Return list of (λ, ω_λ) for all λ ⊢ 3A; Jones–Wenzl normalized."""
     return [(shape, jones_wenzl_weight(shape, q=q, z=z))
              for shape in partitions_of(3 * A)]
@@ -999,27 +1010,16 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
 
 def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                              include_inter: bool = True,
-                             weight_scheme: str = "normalized_plancherel",
-                             # NOT changed to "jones_wenzl", and the attempt
-                             # is recorded here so nobody repeats it. That
-                             # scheme's weights DO NOT SUM TO 1 — measured
-                             # Sigma_lambda omega_lambda = -0.8230 at A=1,
-                             # +0.0547 at A=2, -0.0009 at A=3 — against the
-                             # "normalized to Sigma = 1 for the Markov identity
-                             # tr_M(1) = 1" three lines below. It appears to fix
-                             # the Phi_q pole (max|V_hat| 1.08837 -> 0.06979,
-                             # binding_3A_tower 1e7 -> 0.331) only because the
-                             # near-cancelling weights drive every V_hat toward
-                             # zero, not because the volumes become right.
-                             #
-                             # So the Phi_q-pole problem documented on bean
-                             # qou-2tuv is REAL and still OPEN: normalized_
-                             # plancherel puts V_hat at 1.08837 against a cap of
-                             # 1.087779, and docs/audits/2026-05-11-plancherel-
-                             # usage-audit.md marked this scheme DEPRECATED in
-                             # May. Both schemes are wrong for the tower; that
-                             # is the finding, and picking between them is not
-                             # the fix.
+                             weight_scheme: str = "jones_wenzl",  # convention D, owner 2026-11-18
+                             # Switched to "jones_wenzl" (convention D) on owner
+                             # instruction 2026-11-18. The earlier finding that this
+                             # scheme's weights "do not sum to 1" was right for the old
+                             # weight formula (replaced 2026-08-23, qou-bsec) and for
+                             # the w*chi/d collapse below, which this change also fixes.
+                             # With both fixed, V_hat_i = z*a_i + b_i, the Markov trace
+                             # of the generator's word, which can exceed the Phi_q pole
+                             # cap (1.087779). That is the qou-2tuv pole problem and it
+                             # is still open.
                              verbose: bool = False):
     """Per-generator V̂_i at H_{3A}(q) via the full H_{3A} character sum.
 
@@ -1123,8 +1123,9 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
         for i in range(n_gens):
             w_i_steps = word_by_gen[i]
             if not w_i_steps:
-                # Empty word at gen i → trace = dim → contrib = w_lam
-                V_hat[i] += w_lam
+                # Empty word at gen i → trace = dim → contrib = w_lam (or
+                # d_lam * w_lam under jones_wenzl, see the collapse below)
+                V_hat[i] += w_lam * dim if weight_scheme == "jones_wenzl" else w_lam
                 continue
             if i >= len(sigmas):
                 # Shouldn't happen (len(sigmas) = n_strands - 1)
@@ -1136,7 +1137,13 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                 _s = np.trace(sigmas[i])
             _t = _a * _s + _b * dim
             tr = _t if _H3A_MPF else float(_t)
-            V_hat[i] += w_lam * tr / dim
+            # jones_wenzl weights are normalised by sum_lam d_lam w_lam = 1, so
+            # the Markov trace is sum_lam w_lam * chi_lam, NOT w_lam * chi_lam / d_lam.
+            # The old /dim here is what made that scheme "not sum to 1".
+            if weight_scheme == "jones_wenzl":
+                V_hat[i] += w_lam * tr
+            else:
+                V_hat[i] += w_lam * tr / dim
     out = []
     for i, V in enumerate(V_hat):
         out.append({"full": V, "gen_word": list(word_by_gen[i])})
@@ -1312,7 +1319,7 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
 
 def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                        E_0: float = E_0_CALIBRATION_MEV,
-                       weight_scheme: str = "normalized_plancherel",
+                       weight_scheme: str = "jones_wenzl",  # convention D, owner 2026-11-18
                        cap_frac: float = 0.98,
                        use_safe_phi_q: bool = True,
                        cross_mode: str = "full",

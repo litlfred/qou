@@ -8,7 +8,7 @@
   "pages": 20,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,13 +21,13 @@
    "stamp_date": "7 Aug 2007"
   },
   "doi": null,
-  "title": "A geometric model for Hochschild homology of Soergel bimodules Introduction",
+  "title": "A geometric model for Hochschild homology of Soergel bimodules",
   "authors_raw": "BEN WEBSTER",
   "title_lines": [
    "A geometric model for Hochschild",
    "homology of Soergel bimodules"
   ],
-  "abstract": "An important step in the calculation of the triply graded link homology theory of Khovanov and Rozansky is the determination of the Hochschild homology of Soergel bimodules for SL(n). We present a ge- ometric model for this Hochschild homology for any simple group G, as equivariant intersection homology of B \u00d7 B-orbit closures in G. We show that, in type A these orbit closures are equivariantly formal for the conju- gation T -action. We use this fact to show that in the case where the corre- sponding orbit closure is smooth, this Hochschild homology is an exterior algebra over a polynomial ring on generators whose degree is explicitly determined by the geometry of the orbit closure, and describe its Hilbert series, proving a conjecture of Jacob Rasmussen.",
+  "abstract": "An important step in the calculation of the triply graded link homology theory of Khovanov and Rozansky is the determination of the Hochschild homology of Soergel bimodules for SL(n). We present a ge- ometric model for this Hochschild homology for any simple group G, as equivariant intersection homology of B × B-orbit closures in G. We show that, in type A these orbit closures are equivariantly formal for the conju- gation T -action. We use this fact to show that in the case where the corre- sponding orbit closure is smooth, this Hochschild homology is an exterior algebra over a polynomial ring on generators whose degree is explicitly determined by the geometry of the orbit closure, and describe its Hilbert series, proving a conjecture of Jacob Rasmussen.",
   "docinfo": {
    "Title": "arXiv:0707.2003v2  [math.AG]  7 Aug 2007",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -45,7 +45,8 @@
     "text"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "A geometric model for Hochschild homology of Soergel bimodules Introduction"
  },
  "toc": [
   {
@@ -293,8 +294,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1220,
-   "n_words": 172,
+   "n_chars": 103,
+   "n_words": 14,
    "label_start": null,
    "label_end": null
   },
@@ -305,8 +306,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 6971,
-   "n_words": 1228,
+   "n_chars": 8099,
+   "n_words": 1386,
    "label_start": null,
    "label_end": null
   },
@@ -317,8 +318,8 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1041,
-   "n_words": 156,
+   "n_chars": 1039,
+   "n_words": 155,
    "label_start": null,
    "label_end": null
   },
@@ -329,8 +330,8 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 3146,
-   "n_words": 577,
+   "n_chars": 3180,
+   "n_words": 581,
    "label_start": null,
    "label_end": null
   },
@@ -341,8 +342,8 @@
    "level": 1,
    "page_start": 7,
    "page_end": 12,
-   "n_chars": 10042,
-   "n_words": 1798,
+   "n_chars": 10088,
+   "n_words": 1803,
    "label_start": null,
    "label_end": null
   },
@@ -353,8 +354,8 @@
    "level": 1,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 2169,
-   "n_words": 394,
+   "n_chars": 2203,
+   "n_words": 397,
    "label_start": null,
    "label_end": null
   },
@@ -365,8 +366,8 @@
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 2958,
-   "n_words": 521,
+   "n_chars": 2996,
+   "n_words": 525,
    "label_start": null,
    "label_end": null
   },
@@ -377,8 +378,8 @@
    "level": 1,
    "page_start": 15,
    "page_end": 20,
-   "n_chars": 9326,
-   "n_words": 1679,
+   "n_chars": 9348,
+   "n_words": 1681,
    "label_start": null,
    "label_end": null
   }
@@ -398,7 +399,11 @@
    "items": []
   },
   "sections": 8,
-  "chars_total": 36873,
+  "chars_total": 37056,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   1
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "hochschild-soergel.tex",
@@ -418,8 +423,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.887,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -451,7 +456,7 @@
      "id": "sec-004-4-hochschild-homology-and-dg-algebras",
      "title": "Hochschild homology and dg-algebras",
      "prose_ratio": 0.99,
-     "coverage_ratio": 0.961,
+     "coverage_ratio": 0.952,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -459,7 +464,7 @@
      "id": "sec-005-5-the-geometry-of-bott-samelson-bimodules",
      "title": "The geometry of Bott-Samelson bimodules",
      "prose_ratio": 0.836,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },

@@ -1,0 +1,56 @@
+428 Challenges and extensions
+
+to an easily computed constant, the coefficient of (z,zz3z4)" in the generating
+
+function
+I] (zi — 2;)
+Isi<js4
+
+1 = e\(z) + 4ep(z)’
+
+where e; is the jth elementary symmetric function in the variables 21, 22, 73, Z4.
+While symmetry initially makes the problem tractable, the stationary phase
+set is a union of curves rather than points and, to make things worse, the nu-
+merator vanishes to different orders on these curves and their intersections. By
+computing a D-finite equation satisfied by the main diagonal of M, and using
+the numeric methods discussed in Section 8.4.2 and Section 13.1 above, it can
+be shown that the coefficient of interest has asymptotic behavior Cn7>/764" as
+n — co for a constant C ~ 0.4527. It would be interesting to derive this result
+using multivariate techniques. 4
+
+M(Z1, 22,23, 24) =
+
+In the case of real phase, it is possible to compute a degenerate integral as
+a Laplace integral by determining volumes of level sets. Suppose we wish to
+compute an integral of the form
+
+f exp(-19¢(@))A(@) dx,
+D
+
+where D = [0,1]“ c R¢ in some dimension d > 1, the parameter J is large,
+and ¢ and A are analytic functions on D. Fubini’s Theorem tells us that for a
+nonnegative measurable function f defined on a measure space (X, 41) we have
+
+f fla) du(w) = f w((a : flew) > 2) dz,
+X 0
+
+and the change of variable z = exp(—u) converts this integral to
+
+f. e “u({a : — log f(a) < u}) du.
+
+co
+
+Let V,, denote the measure of the sub-level set u({a : — log f(a) < u}). Letting
+f(a) =e), we obtain
+
+Va =f Aocorenradute
+D
+
+and, for simple enough @, it may be possible to compute V,, explicitly. Propo-
+sition 4.7 can then be applied to determine asymptotics.
+
+Exercise 13.1. Compute asymptotics as A > oo for
+
+1 pl
+f f ey xy dx dy.
+0 Jo

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1301.6953v1
-doc_title: "LU TP 13-03 Januray 2013"
+doc_title: "Chiral Perturbation Theory and Mesons"
 section_id: sec-002-3-determining-low-energy-constants-in-the-contin
 section_title: "Determining low-energy-constants in the continuum"
 section_number: 3
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 0.981
+doc_brief: "Chiral Perturbation Theory and Mesons — 7 sections: Front matter; Chiral Perturbation Theory; Introduction"
 ---
 Lattice QCD has now reached the stage where they can start determining
 the ChPT LECs. A review is the FLAG collaboration \cite{FLAG} and

@@ -1,0 +1,37 @@
+516 Stratification and stratified Morse theory
+
+practical algorithms! for the stratification of algebraic varieties using Grébner
+basis computations.
+
+Proposition D.4. Every algebraic variety in R4 or C4 admits a Whitney strat-
+ification. ia)
+
+In examples arising from combinatorial applications, it is often possible to
+deduce a stratification directly from the form of the polynomials under consid-
+eration.
+
+Example D.5. A smooth manifold is a stratified space with a single stratum.
+
+4
+
+Example D.6. If X is a finite union of affine subspaces of R” then a Whitney
+stratification of X is obtained by taking the set A of all intersections of the
+affine subspaces, and choosing the elements of {A \ B: A,B € A with A 2 B}
+as strata. 4
+
+Example D.7. Let Z be a real algebraic curve {(x, y) € R? : f(x,y) = 0} with f
+irreducible and let Y = {(x, y) : V f(x, y) = 0} be the finite set of singular points
+of Z. Taking Z \ Y to be one stratum and each singleton {(x, y)} for (x,y) € Y to
+be another produces a Whitney stratification of Z. The following figure shows
+two examples of this, the first curve x? — y? having a cusp at the origin and the
+second curve 19 — 20x — 20y + 5x? + 14xy + Sy? — 2x?y — 2xy? +x? y? having a
+self-intersection at (1, 1). 4
+
+Figure D.2 Two curves, each stratified by taking one stratum consisting of a sin-
+gular point and another stratum consisting of the rest of the curve.
+
+Let V be any complex variety. As discussed in Chapter 8, it is possible to
+decompose ‘VV into smooth sets by determining algebraic equations for the set
+
+! Helmer and Nanda [HN22] give an implementation of both of these algorithms in Macaulay2,
+available at

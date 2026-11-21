@@ -1,0 +1,470 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2501.03424v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "1",
+   "text": "V [λ] := {v∈V|hv= λ(h)v∀h∈h}",
+   "marks": [
+    {
+     "page": 11,
+     "context": "whereV [λ]areweightspaces"
+    }
+   ],
+   "block": "library/arxiv-2501.03424v1/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p011-2",
+   "page": 11,
+   "mark": "2",
+   "text": "´epaisse,meaning”thick”,denotesanontrivialfullcategorywhichisclosedunderdirectsums.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "rphism of simple modules in O. We deﬁne O0to be the ´epaisse"
+    }
+   ],
+   "block": "library/arxiv-2501.03424v1/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "3",
+   "text": "itis importanttoclarify thatwhatwemeanbyR±will alwaysbea rootsystem.Anyuse ofRwithoutaplusor minus subscript will be the symmetric algebra associated to our construction of Soergel (bi)modules, unless explicitly stated otherwise.",
+   "marks": [
+    {
+     "page": 14,
+     "context": "thedecompositionofg=n+⊕h ⊕n−,theweightlatticeP⊂h∗,rootsystem"
+    }
+   ],
+   "block": "library/arxiv-2501.03424v1/blocks/prose-sec-032"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "W= ⟨s ∈S|(st)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "eneratorss ∈Ssubmittedtotheconditionthatitisinvolutive,i.e.s"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "s= (v−1 −v)δ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "δ"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "s= (1−1 −1)δ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "δ"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "ssatisﬁestheproperty"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ssatisﬁesthepropertys"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Henceδ"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "δ"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "δx= δ"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "δx= δs1δ"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "δx= δs1δs2 · · · δ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Sym"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "glereﬂection.LettingR=R[α],theW-actionisgivenbys(α)=−α.ThusR"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "ﬂection.LettingR=R[α],theW-actionisgivenbys(α)=−α.ThusRs=R[α"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "R = R"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "R = Rs⊕(R"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "a, b ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "a, b ∈Rs.Sincedeg(αs) = 2,wehaveR∼= R"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "a, b ∈Rs.Sincedeg(αs) = 2,wehaveR∼= Rs⊕R"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "Bs= R ⊗R"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Thatis,M(1)"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Thatis,M(1)i≡M"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": ") = B"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": ") = Bs1B"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": ") = Bs1Bs2 · · · B"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "HenceR"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "HenceRsisthepolynomialringk[x + y, xy, z],andR"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i∈ZB"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "i∈ZBiis"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "B(m)"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "B"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "Proof:WehaveM=RmR.Letd=deg(m).ThenM"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Proof:WehaveM=RmR.Letd=deg(m).ThenMd=R"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Proof:WehaveM=RmR.Letd=deg(m).ThenMd=R0mR"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "ThenM"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "ThenMd= L"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "ThenMd= Ld⊕N"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "N"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "s= B"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "s= BsB"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "s= BsBs≃R ⊗R"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "s= BsBs≃R ⊗RsR ⊗R"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "s= BsBs≃R ⊗RsR ⊗RsR(2) ≃R ⊗R"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "s= BsBs≃R ⊗RsR ⊗RsR(2) ≃R ⊗Rs(R"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "s= BsBs≃R ⊗RsR ⊗RsR(2) ≃R ⊗Rs(Rs ⊗R"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "s= BsBs≃R ⊗RsR ⊗RsR(2) ≃R ⊗Rs(Rs ⊗Rs(−2)) ⊗R"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "B"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "≃R ⊗R"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "≃R ⊗RsR(2) ⊕R ⊗R"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "Whenevers̸ = tandmst̸= ∞,RisgeneratedbysubringsR"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "Whenevers̸ = tandmst̸= ∞,RisgeneratedbysubringsRsandR"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "BsBt≃R ⊗R"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "BsBt≃R ⊗RsR ⊗R"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "BtBs≃R ⊗R"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "BtBs≃R ⊗RtR ⊗R"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "vectors in V, whereas the linear terms in R"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "vectors in V, whereas the linear terms in Rs, R"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "v"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "α∈R+gα.TheBorelsubalgebra"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "(−1)"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "(−1)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Foranymonicpolynomialq∈Z≥0[v"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "passes freely through every tensor product (⊗R"
+  },
+  {
+   "page": 15,
+   "mark": "w",
+   "context": "η=V(−w0η)where"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "η=V(−w0η)wherew"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Θs:= T"
+  },
+  {
+   "page": 16,
+   "mark": "w",
+   "context": "Pr⊕m(Pr"
+  },
+  {
+   "page": 16,
+   "mark": "w",
+   "context": "Pr⊕m"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": ") = k ⊗R B"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": ") = k ⊗R Bs1⊗R · · · ⊗R B"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "≃k ⊗R R ⊗R"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "≃k ⊗R R ⊗Rs"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "≃k ⊗R R ⊗Rs1R ⊗R"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "≃k ⊗R R ⊗Rs1R ⊗Rs"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "gmod-R(k ⊗R B,"
+  },
+  {
+   "page": 18,
+   "mark": "z",
+   "context": "Pr⊕m"
+  },
+  {
+   "page": 18,
+   "mark": "z",
+   "context": "⊕m"
+  },
+  {
+   "page": 18,
+   "mark": "z",
+   "context": "B⊕m"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "s"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "objectsinthecategory.ThetensorproductisZ-gradedinthat(M⊗R N)"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i+j=kM"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "i+j=kM i ⊗Z N"
+  }
+ ]
+}

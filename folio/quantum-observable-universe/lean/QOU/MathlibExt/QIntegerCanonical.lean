@@ -92,8 +92,8 @@
   deserves a proof attempt before it is recorded as one.**  Three of five
   write-offs did not survive one.
 
-  -- Ref: [manuscript] docs/audits/2026-08-08-q-integer-convention-derived.md
-  -- Ref: [manuscript] AGENTS.md §7a (Hecke–Skein convention)
+  -- Ref: [leitner2026] docs/audits/2026-08-08-q-integer-convention-derived.md
+  -- Ref: [leitner2026] AGENTS.md §7a (Hecke–Skein convention)
 -/
 
 import QOU.Mass.QHookDimension

@@ -7,30 +7,46 @@
   "bytes": 129609,
   "pages": 3,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1007/s00601-022-01745-1",
-  "title": "Few-Body Syst (2022) 63:46 EDITORIAL Alejandro Kievsky \u00b7 Luca Girlanda Celebrating 30 Y ears of Steven Weinberg\u2019s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the",
+  "title": "Celebrating 30 Years of Steven Weinberg's Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
   "authors_raw": null,
   "title_lines": [
    "Few-Body Syst (2022) 63:46",
    "EDITORIAL",
-   "Alejandro Kievsky \u00b7 Luca Girlanda",
-   "Celebrating 30 Y ears of Steven Weinberg\u2019s Paper Nuclear",
+   "Alejandro Kievsky · Luca Girlanda",
+   "Celebrating 30 Years of Steven Weinberg’s Paper Nuclear",
    "Forces from Chiral Lagrangians - an Introduction to the"
   ],
   "abstract": null,
   "docinfo": {
+   "Title": "Celebrating 30 Years of Steven Weinberg’s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
    "Author": "Alejandro Kievsky ",
-   "CreationDate": "D:20220525072232+05'30'",
    "Creator": "Springer",
-   "Title": "Celebrating 30 Years of Steven Weinberg\u2019s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue"
-  }
+   "CreationDate": "D:20220525072232+05'30'"
+  },
+  "title_raw": "Few-Body Syst (2022) 63:46 EDITORIAL Alejandro Kievsky · Luca Girlanda Celebrating 30 Years of Steven Weinberg’s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Celebrating 30 Years of Steven Weinberg’s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
+   "heading": "Celebrating 30 Years of Steven Weinberg’s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
+   "outline": "Celebrating 30 Years of Steven Weinberg's Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
+   "text": "Few-Body Syst (2022) 63:46 EDITORIAL Alejandro Kievsky · Luca Girlanda Celebrating 30 Years of Steven Weinberg’s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Celebrating 30 Years of Steven Weinberg’s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue"
  },
  "toc": [
   {
@@ -38,17 +54,48 @@
    "title": "Celebrating 30 Years of Steven Weinberg's Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "References",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -56,26 +103,50 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 5990,
-   "n_words": 897
+   "page_end": 1,
+   "n_chars": 113,
+   "n_words": 11,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-000-references",
+   "id": "sec-000-celebrating-30-years-of-steven-weinbergs-paper-n",
+   "number": null,
+   "title": "Celebrating 30 Years of Steven Weinberg's Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 5802,
+   "n_words": 860,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 3626,
-   "n_words": 549
+   "n_chars": 3627,
+   "n_words": 550,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 2,
-  "sections": 2,
-  "chars_total": 9616
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 3,
+  "chars_total": 9542,
+  "furniture_lines_stripped": 0
  }
 }

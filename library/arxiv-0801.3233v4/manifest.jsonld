@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0801.3233v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0801.3233v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "arxiv-0801.3233v4",
   "contains": [
+    "library/arxiv-0801.3233v4/sections/sec-front-matter",
     "library/arxiv-0801.3233v4/sections/sec-000",
     "library/arxiv-0801.3233v4/sections/sec-001",
     "library/arxiv-0801.3233v4/sections/sec-002",
@@ -21,10 +22,11 @@
     "library/arxiv-0801.3233v4/sections/sec-007",
     "library/arxiv-0801.3233v4/sections/sec-008",
     "library/arxiv-0801.3233v4/sections/sec-009",
-    "library/arxiv-0801.3233v4/sections/sec-010"
+    "library/arxiv-0801.3233v4/sections/sec-010",
+    "library/arxiv-0801.3233v4/sections/sec-011"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

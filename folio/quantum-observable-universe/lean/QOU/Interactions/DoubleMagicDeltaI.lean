@@ -20,9 +20,9 @@ LaTeX label: `conj:double-magic-delta-i-bound`
 
 ## References
 
-- [manuscript] observations / double-magic-delta-i-bound
-- [manuscript] conj:diagrammatic-double-magic-lr-fusion
-- [manuscript] prop:torus-knot-shell-binding
+- [leitner2026] observations / double-magic-delta-i-bound
+- [leitner2026] conj:diagrammatic-double-magic-lr-fusion
+- [leitner2026] prop:torus-knot-shell-binding
 -/
 
 namespace QOU.Interactions.DoubleMagicDeltaI
@@ -69,7 +69,7 @@ def empiricalDoubleMagicIsotopes : List DoubleMagicIsotope := [
 /-- **Theorem (PROVED).** Every empirically observed doubly-magic
     isotope satisfies `|Δi| ≤ 1` (in fact, `Δi ∈ {0, 1}` since
     nuclei have N ≥ Z in stable cases). -/
--- Ref: [manuscript] conj:double-magic-delta-i-bound
+-- Ref: [leitner2026] conj:double-magic-delta-i-bound
 theorem empirical_deltaI_le_one :
     ∀ iso ∈ empiricalDoubleMagicIsotopes, |iso.deltaI| ≤ 1 := by
   intro iso h
@@ -78,7 +78,7 @@ theorem empirical_deltaI_le_one :
 
 /-- **Theorem.** All 9 empirical doubly-magic isotopes have
     `Δi ∈ {0, 1}` (non-negative). -/
--- Ref: [manuscript] conj:double-magic-delta-i-bound
+-- Ref: [leitner2026] conj:double-magic-delta-i-bound
 theorem empirical_deltaI_in_zero_one :
     ∀ iso ∈ empiricalDoubleMagicIsotopes, iso.deltaI ∈ ({0, 1} : Set ℤ) := by
   intro iso h
@@ -94,7 +94,7 @@ theorem empirical_deltaI_in_zero_one :
     is proved on empirical data; the reverse — that no isotope
     with `|Δi| ≥ 2` can be doubly-magic — is the framework
     prediction. -/
--- Ref: [manuscript] conj:double-magic-delta-i-bound
+-- Ref: [leitner2026] conj:double-magic-delta-i-bound
 class DeltaIBoundConjecture where
   /-- Predicate: is the (iZ, iN)-shell pair LR-fusion-compatible
       (=> can support a doubly-magic isotope)? -/
@@ -124,14 +124,14 @@ theorem allShellPairs_card : allShellPairs.length = 49 := by
 /-- **Theorem (compute speedup).** The LR-compatible band has 19
     ordered pairs out of 49 — both orderings (iZ, iN) and (iN, iZ)
     are included since the LR-fusion is non-commutative. -/
--- Ref: [manuscript] conj:double-magic-delta-i-bound §compute-optimisations
+-- Ref: [leitner2026] conj:double-magic-delta-i-bound §compute-optimisations
 theorem lrCompatiblePairs_card : lrCompatiblePairs.length = 19 := by
   decide
 
 /-- **Compute speedup factor (ordered pairs).** Replacing exhaustive
     7×7 grid search with the LR-compatible band reduces the work
     by a factor of 49/19 ≈ 2.58. -/
--- Ref: [manuscript] conj:double-magic-delta-i-bound §compute-optimisations
+-- Ref: [leitner2026] conj:double-magic-delta-i-bound §compute-optimisations
 theorem speedup_factor_ordered :
     (49 : ℚ) / 19 > (2 : ℚ) ∧ (49 : ℚ) / 19 < (3 : ℚ) := by
   constructor <;> norm_num
@@ -147,7 +147,7 @@ theorem lrCompatiblePairsOrdered_card :
 
 /-- **Restricted-pair speedup** (assuming iZ ≤ iN convention):
     49/13 ≈ 3.77 reduction factor. -/
--- Ref: [manuscript] conj:double-magic-delta-i-bound
+-- Ref: [leitner2026] conj:double-magic-delta-i-bound
 theorem speedup_factor_restricted :
     (49 : ℚ) / 13 > (3 : ℚ) ∧ (49 : ℚ) / 13 < (4 : ℚ) := by
   constructor <;> norm_num

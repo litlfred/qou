@@ -3,11 +3,12 @@ the framework later reads off physics: its axioms are chosen so that,
 once observability and a volume constraint are imposed, they *force*
 $\mathrm{SU}_2(R)$ as the physical gauge group rather than assuming it.
 Before the axioms, it helps to have one instance in hand:
-$\mathbf{Rep}(\mathrm{SU}_q(2))$, the category of representations of the
-quantum group, is a rigid :refterm[braided monoidal category]{#braided-monoidal-category}
+$\mathbf{Rep}(\mathrm{SU}(2))$, the category of representations of
+$\mathrm{SU}(2)$, is a rigid :refterm[braided monoidal category]{#braided-monoidal-category}
 carrying a Frobenius--Hopf object, and it is the guiding example
-throughout this chapter — worked concretely in its classical symmetric
-($q \to 1$) limit $\mathrm{SU}(2)$.
+throughout this chapter. Its braiding is symmetric, which is the
+classical case; the one-parameter deformation that breaks the symmetry
+is extracted from the braiding in Chapter 2.
 
 This chapter introduces the **quantum universe** (QU): a
 :refterm[braided monoidal category]{#braided-monoidal-category} equipped with a Frobenius--Hopf object,
@@ -16,7 +17,7 @@ this definition.  They are imposed in Chapter 2, on the quantum
 observable universe, where they carry the antiparticles; the
 constructions later in this chapter that do use duals — the
 involutive structure, the categorical Hodge star, the internal
-Poisson object — say so in their own hypotheses.  We begin with
+Poisson object — say so in their own hypotheses.  The chapter opens with
 categorical preliminaries
 ([§ Rigid monoidal categories](#sec:rigid-monoidal)), state the
 core axioms ([§ The Quantum Universe](#sec:quantum-universe)),

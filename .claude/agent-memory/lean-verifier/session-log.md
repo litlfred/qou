@@ -401,3 +401,22 @@ Hecke cone: 14 fresh, TwRep and TwIndependent CHANGED. Rebuilt those 2, their do
 - Mathlib-only file, so no QOU cone: LEAN_PATH = the MAIN checkout's `/home/claude/qou/.lake/packages/*/.lake/build/lib/lean` (the agent worktree has NO `.lake`). First run 2m00s wall / 5.2 s user (cold page cache), then ~6 s.
 - TRAP: `/tmp/qou-lean-build-status.json` said `"status": "unavailable", "Lean toolchain present but unusable"` — FALSE; a 2-line `by decide` + `#eval` scratch exited 0. Run the elaborator, do not trust the status file.
 - TRAP (worktree-isolated agent harness): any Bash call with `$VAR`-computed args, pipes into `bash`, `cd` + compound, or a python heredoc that writes a file is REFUSED as "cannot be shown not to be git". Write a runner script with the Write tool and call `bash /abs/run.sh <file>` plainly; edit with Edit, not sed/python.
+
+## 2026-11-15 — TRAP: `scripts/setup-lean-toolchain.sh` now ALSO restores the cache, into the REAL .git, and fills the disk
+
+Fresh container, no toolchain. Running the script (3m36s) installed the toolchain AND ran a
+best-effort cache restore: it fetched `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`
+(a792c46d01b) into the repo's own `.git` as **22 LOOSE objects (~1.7 G)**, `.git` 1.5G -> 3.2G,
+free 11G -> 1.7G. tar then died with `folio/unital-groebner-bases/lean/.lake/build: Cannot mkdir`
+(exit 2), "cache fetch failed (best-effort)". Mathlib nonetheless landed complete (3480 oleans
+under root `.lake/packages/mathlib`); QOU only **86 of ~2702** (partial, misleading tree).
+Reclaim: the loose objects were reachable only via FETCH_HEAD (`git for-each-ref` had no ref
+containing the commit) -> `rm` the commit/tree/20 part blobs by path + FETCH_HEAD: +1.7G.
+Lesson: on a low-disk container install the toolchain WITHOUT that script's restore step, then
+stream the parts from a throwaway repo (MEMORY.md §"stream the parts INTO tar").
+lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-confirmed both sides.
+
+## 2026-11-15 — ContentCasimir.lean (branch claude/q-laplacian-eigenvalue-derivation-2026-11-15)
+- BASELINE: toolchain already at ~/.elan/toolchains/leanprover--lean4---v4.24.0 (no ~/.elan/bin); release.lean-lang.org 403, GitHub zip 200 (730 MB, 24 s) — not needed.
+- BASELINE: streamed restore of cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ a792c46d01b: fetch 1m36s, root .lake 3758 / per-paper 2703 oleans; disk 16G -> 8.8G free.
+- STABLE: cone rebuild into a `cp -al` shadow of the per-paper lib dir (7 modules, HeckeAlgebra 64 s, rest ≤6 s), LEAN_PATH = shadow + root .lake/packages/*; works with no union mirror.

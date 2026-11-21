@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1203.6551v1/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Hyperbolic graphs with parabolic meridians",
-  "pageStart": 15,
-  "pageEnd": 18,
-  "text": "../sections/sec-002-6-hyperbolic-graphs-with-parabolic-meridians.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.6551v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.6551v1",
+  "title": "Dehn filling on the figure eight knot complement and its sister",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "../sections/sec-002-3-dehn-filling-on-the-figure-eight-knot-compleme.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.6551v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.6551v1/manifest.jsonld",
   "provenance": "ingested"
 }

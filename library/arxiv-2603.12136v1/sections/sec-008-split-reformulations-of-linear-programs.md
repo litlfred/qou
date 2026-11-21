@@ -4,13 +4,14 @@ doc_title: "Folding Mixed-Integer Linear Programs and Reflection Symmetries"
 section_id: sec-008-split-reformulations-of-linear-programs
 section_title: "Split reformulations of linear programs"
 section_number: null
-pages: 14-15
+pages: 14-16
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
-doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.952
-latex_coverage_ratio: 0.77
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 1.0
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 In both papers [@Hojny2025-si] and [@Christophel2014], the authors reduce the problem of finding reflection symmetries to finding permutation symmetries by adding both the original and the complemented variables to the auxiliary graph used for symmetry detection. For linear programs, a similar effect can be achieved by splitting each variable $x$ as $x=x^+ - x^-$, where $x^+$ represents the positive domain of $x$ and $x^-$ corresponds to the negative domain of $x$. We introduce the notion of a *split reformulation* to achieve such a reformulation.
 

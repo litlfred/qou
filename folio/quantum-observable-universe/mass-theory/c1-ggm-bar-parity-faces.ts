@@ -13,6 +13,12 @@ export default conjecture({
     "conj:qdifference-kernel-prolongation-symbol",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): measured in\n[`door_v_residual_scope_probe.py`](../../../computations/probes/door_v_residual_scope_probe.py))." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (`QOU.Mass.GGMAlternationOnset.ggm_solution_no_double_flip`, over an\nordered field)." },
+    {
+      kind: "note",
+      body: "An earlier version of this note denied that the recurrence oscillates inside the window; it does, but never at two consecutive pairs.",
+    },
     {
       kind: "status",
       date: "2026-08-08",

@@ -1,0 +1,51 @@
+274 Walter D. Neumann and Alan W. Reid
+
+pact orbifolds is conjectured (with a bound of 0.09174218) but depends on Lehmer’s
+conjecture of number theory.
+
+We illustrate the greater tractability of non-compact manifolds also by doing some ex-
+plicit computations for a family of manifolds related to Dehn surgeries on one component
+of the Whitehead link. Before describing this we need some terminology.
+
+The most striking dichotomy in the arithmetic of hyperbolic groups is a result of
+Margulis (cf. [Z, Ch. 6]). Define the “commensurator of I’” to be
+
+Comm(L) = {g € Isom(H?) : [7:7 g~'Tg] < oo},
+
+and let Comm*(I) be its orientation preserving subgroup. Margulis shows that
+Comm*(P) is discrete (and hence contains I’ with finite index) if and only if I is
+non-arithmetic. Thus in this case Comm*(L) is the unique maximal element of the
+commensurability class of [. In the arithmetic case Borel showed that there are infinitely
+many maximal elements in the commensurability class ([Bo]).
+
+As several people have observed, Comm(I') can be defined purely group-theor-
+etically. Define a “virtual automorphism” of I to be an isomorphism ¢:T; — [2
+between subgroups of finite index in I’ and define two virtual automorphisms to be
+“equivalent” if they agree on some subgroup of I of finite index. Then Mostow rigidity
+easily implies that Comm(L) is the group of equivalence classes of virtual automor-
+phisms under composition. (We like to call this version of Comm(I) the “abstract
+commensurator” of I’, since in geometric situations without rigidity, for instance Fuchs-
+ian groups, it is much larger than the geometric commensurator. It has also been invented
+by group theorists, since it is interesting for other groups too; a simple example is
+Comm(Z") = GL,,Q. Bass and Kulkarni ([BK]) have investigated it for lattices on
+trees.)
+
+From a geometric point of view, a virtual automorphism ¢:[, — I for I’ represents
+an isometry (or just an isotopy class of homeomorphisms) between the two finite covers
+H/T, and H?/l2 of M = H/T. We call such an isometry a “virtual symmetry” of
+M. We call it a “hidden symmetry” if it does not lift from a symmetry of M, ie, o
+lies in Comm(I) — N(I’), where N(L) is the normalizer of [ in Isom(H3). Define
+virtual symmetries to be equivalent if they have a common lift to some mutual finite cover
+of M (caution: the set of equivalence classes does not form a group). Thus Margulis’
+theorem implies that arithmeticity of M is equivalent to the existence of infinitely many
+non-equivalent hidden symmetries, while for non-arithmetic M there is a finite cover of
+M whose symmetries give all virtual symmetries of M.
+
+As an example, if Oq is the ring of integers of Q(v—d), then Comm PSL20q is
+PGL2Q(V—d) extended by an orientation reversing involution (complex conjugation).
+The existence of hidden symmetries for the orbifold M = H?/PSL20 is nicely illus-
+trated by examples occurring in the literature: the complement B of the Borromean rings
+in S° covers M in at least two inequivalent ways—an embedding of 7B as a normal
+subgroup of PSL20, is given in [FN] and a non-normal embedding is given in [Ri]; it
+is not hard to check that an element of Comm PSL20, which conjugates one of these
+embeddings to the other cannot generate a discrete group with PSL20}.

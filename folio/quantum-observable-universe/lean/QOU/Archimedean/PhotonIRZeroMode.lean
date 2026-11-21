@@ -27,8 +27,8 @@ The topological/geometric facts here are unconditional; the identification
 (cited in the narrative), and the upstream `τ_arch` uniqueness remains the named
 conditional input of `prop:em-coupling-bring-zero-mode`.
 
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [manuscript] prop:photon-ir-zero-mode-bring
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:photon-ir-zero-mode-bring
 -- Ref: [thurston1978] The geometry and topology of three-manifolds.
 -/
 

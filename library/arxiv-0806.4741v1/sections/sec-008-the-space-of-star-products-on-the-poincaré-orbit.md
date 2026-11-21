@@ -10,7 +10,8 @@ source_sha256: 5e7ad85a99fb3552
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.994
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 It is proven in \cite{Bi07} that every Poincar\'e invariant star product on $\MM$ is realized as
 a formal  asymptotic expansion in powers of $\hbar$ of an oscillatory integral expression in terms of the geometrical quantities defined above:

@@ -1,0 +1,1 @@
+Let t E Z, 0 ~ ltl ~ n, n + t E 2Z. Assume 8q =1- 0. (i) If t ~ 0, we have a short exact sequence (ii) If t < 0, we have a short exact sequence Here we adopt the convention that W;(k) = 0 if Iii > k. Repeated application of 2.8 yields

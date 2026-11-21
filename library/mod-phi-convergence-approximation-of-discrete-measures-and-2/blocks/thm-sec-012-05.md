@@ -1,0 +1,1 @@
+— Consider a general scheme of approximation (νn)n∈N of a mod-φ convergent sequence of random variables (Xn)n∈N. We also as- sume that the reference law φ has a third moment, so that in the neigh- borhood of 0, φ(ξ) = −σ2ξ2 + O(|ξ|3). If the hypothesis (H2) is satisﬁed, then dTV(µn, νn) = |β| √ 2π (σ2λn) r+1 Z R |Gr+1(α)| dα  + o

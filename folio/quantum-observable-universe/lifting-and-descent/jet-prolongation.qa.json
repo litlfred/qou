@@ -1224,6 +1224,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "adeb5bc0a8cb",
+          "ts": "57e1114f73bb",
+          "lean": "0b6f3a354bff",
+          "lean_statement": "73a6ecefcdca"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:13.840Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] `lean.ref` `QOU.JetProlongation` is a `structure`, not a theorem: the inherited (Δ', ε', S'), the Frobenius relation `jet_frobenius` and the embedding are all fields; nothing asserts that J¹(A) carries them. The only theorem, `jet_prolongation_preserves_observability`, transfers `Subsingleton` along a caller-supplied injective map (`h_inj` is the whole content). The QOU claim and τ' = τ∘(−⊗Ω¹) are unencoded. S↔P: the vanishing step is a non-sequitur: from Ad(A) ↪ Ad(J¹(A)) (a subobject) it concludes that invariants of the larger object project injectively to the smaller one, which a subobject inclusion does not give; \"uniqueness of A' follows from irreducibility of A'\" is circular in A'; the Frobenius–Hopf inheritance is delegated to lem:jet-prolongation-categorical-jet, which fails above"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2449,6 +2467,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:00:13.840Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,0 +1,68 @@
+Let k = (ke.j)(ce.a/w)(0<j<ec—1) be the family of rational numbers defined by
+
+rNyw
+
+keg = me,j for all C, j.
+
+Then Hi (W) = H,(W). Following [CGG] §3.3], we obtain the following equation which relates the
+functions a™ and A™ for Hy,,(W) with the c-function for Hy(W):
+
+ec=1
+
+e
+ap + AR = —crt+ me, for all E € Irr(W), 5.2
+BAB ecoet OY ey Ww) (52)
+
+where C denotes the orbit of H € A under the action of W.
+
+Remark 5.10 The above formula was also obtained in [GGOR] §6.2] for finite Weyl groups in the equal
+parameter case.
+
+Equation implies that a™ + A™ yields the same ordering on Irr(W) as the c-function (note that
+in this case cz € Q for all E € Irr(W)). Thus, a™ + A™ is also an ordering on the category QO, that is,
+if [A(E) : L(E’)] 4 0 for some E, E’ € Irr(W), then either E = E’ or af, + AW < af + A”. If now
+the function a™ is compatible with a™ + A™, that is, for all E, E’ € Inr(W),
+
+an + AR <af + AP => ab < ak, (5.3)
+
+then a™ is an ordering on the category © and we obtain the existence of a canonical basic set for Hy,, (W)
+with respect to 6 by Proposition [5.9} This is true in several cases, but unfortunately not true in general.
+Some exceptional complex reflection groups where ( holds and the above argument works are:
+
+Go3 = H3, Goa, Go7, Gog and G30 = Ma.
+
+This yields the existence of canonical basic sets for the groups Go4, G27 and Gag, which was not known
+before. To summarise, we have the following Proposition 5.11]:
+
+Proposition 5.11 Let W = Gy, n € {23,24,27,29,30}. Let m and k be defined as above, and let
+E, E' € Irr(W). If (A(Z) : L(E’)| 4 0, then either E = E' or at < ae. In particular, we have
+KZ(L(E£)) 4 0 if and only if E belongs to the canonical basic set of Hy,,(W) with respect to 0: q+ Cr.
+
+5.2.2 Canonical basic sets for Iwahori—Hecke algebras
+
+Equation has also allowed us to show that, in the case where W is a finite Coxeter group, and
+assuming that Lusztig’s conjectures P1 — P15 hold, the c-function is compatible with the ordering <-¢r
+on two-sided cells, since a and A are (see Remark 5.4] for the a-function, Corollary 21.6] and
+Proposition 2.8] for A). This in turn was crucial in showing [CGG] Corollary 4.7]:
+
+Proposition 5.12 Let (W,S) be a finite Coxeter group and let Hq(W,L) be the Iwahori—Hecke algebra
+of W with parameter L, as defined in Chapter[2} For H € A, let sy € W be the reflection with reflecting
+hyperplane H and let C be the orbit of H under the action of W. If H' €C, then we have L(s7) = L(sn)
+and we can set Le := L(sy). Let e,r € Zyo such that gcd(e,r) = 1, and take, for allC € A/W,
+
+DL, DL,
+keo = re and key = — 2.
+e e
+
+If E €Irr(W), then KZ(L(E£)) 4 0 if and only if E belongs to the canonical basic set of Ha(W, L) with
+respect to0:qt> Cr.
+
+The proof uses a connection, established in [CGG] Proposition 4.6], between category O and the
+cellular structure of the Iwahori-Hecke algebra. More specifically, if E € Irr(W), then KZ(A(E)) is iso-
+morphic to the cell module W,(£) defined in Example 4.4]; we will not go into further details here.
+Note though that, in Proposition [5.12] we have not included the assumption that Lusztig’s conjectures
+must hold. The reason is that the only case where they are not known to hold, the case of B,, is covered
+
+by Corollary below.
+
+39

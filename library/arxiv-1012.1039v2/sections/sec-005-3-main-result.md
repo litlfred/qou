@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1012.1039v2
-doc_title: "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume"
+doc_title: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS"
 section_id: sec-005-3-main-result
 section_title: "Main result"
 section_number: 3
 pages: 8-14
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
-doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.997
-latex_coverage_ratio: 0.986
+latex_prose_ratio: 0.975
+latex_coverage_ratio: 0.99
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 []{#s:main label="s:main"} In this section we prove the main result, Theorem [\[t:volumedecreases\]](#t:volumedecreases){reference-type="ref" reference="t:volumedecreases"}. The strategy is to modify an efficient relative fundamental cycle for $(M,\partial M)$ to a fundamental cycle on the filling, without increasing norm by too much.
 

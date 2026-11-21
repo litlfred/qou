@@ -1,0 +1,30 @@
+512 Residue forms and classical Morse theory
+
+Exercise C.8. Let P be a polynomial in two complex variables such that P(0, y)
+has only simple, non-zero roots. Let a be a small torus of polyradius (¢, ¢) and
+let B be a torus of polyradius (¢, M), where M is much larger than any root
+of P(0, y). Compute the intersection class INT[a, 8; V]. Hint: Use the obvious
+homotopy and parametrize V, as y = fj(x) near each root y; of P(0, y).
+
+Exercise C.9 (lumpy sphere). Let X be a sphere with a lump, that is, a patch
+on the northern hemisphere where the surface is raised to produce a local,
+but not global, maximum of the height function. List the critical points of the
+lumpy sphere and determine the homotopy types of the attachments. This gives
+a description of the lumpy sphere as a cell complex different from the complex
+with just two cells. Use this to compute the homology and verify it is the same
+as for the non-lumpy sphere.
+
+Exercise C.10. Let M be a manifold with Morse function h having distinct
+critical values and let x be a critical point of Morse index k. Let P be any sub-
+manifold of M diffeomorphic to an open k-ball about a such that h is strictly
+maximized on P at x. Prove that P is a homology generator for the local ho-
+mology group Hy(M'"@**, M")-*), Hint: This is true of any embedded k-disk
+through x in M"@) that intersects the ascending (n — k)-disk transversely.
+
+Exercise C.11. Let eg : CP“! — CP“ denote the embedding tg(zo : «++ : Za) =
+(Zo 20222 Za 0).
+
+(i) Show that CP? \ Image() is homeomorphic to a (2d)-ball.
+(ii) Describe CP“ as CP¢"! with a (2d)-cell attached. What is the attachment
+map on homology?
+(iii) Use induction on d to compute the homology of CP“.

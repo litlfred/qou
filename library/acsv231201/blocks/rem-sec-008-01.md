@@ -1,0 +1,1 @@
+In examples we often write (x, y, z) for (z1, z2, z3), and (r, s, t) for (r1, r2, r3), to remove the need for subscripts. Exercise 2.2. Which of the following formal power series lie in C{x}? (a) ∞ X n=0 n!xn (b) ∞ X n=0 n2xn (c) ∞ X n=1 xn n Generating functions

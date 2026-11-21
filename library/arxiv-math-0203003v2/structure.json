@@ -8,7 +8,7 @@
   "pages": 13,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -281,8 +281,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 5141,
-   "n_words": 781,
+   "n_chars": 5137,
+   "n_words": 779,
    "label_start": "1",
    "label_end": "2"
   },
@@ -293,8 +293,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 3542,
-   "n_words": 670,
+   "n_chars": 3595,
+   "n_words": 674,
    "label_start": "2",
    "label_end": "4"
   },
@@ -305,8 +305,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 10930,
-   "n_words": 2071,
+   "n_chars": 10945,
+   "n_words": 2068,
    "label_start": "4",
    "label_end": "8"
   },
@@ -317,8 +317,8 @@
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 4494,
-   "n_words": 864,
+   "n_chars": 4510,
+   "n_words": 863,
    "label_start": "8",
    "label_end": "10"
   },
@@ -328,21 +328,33 @@
    "title": "Evaluation Representations",
    "level": 1,
    "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2672,
+   "n_words": 423,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-005-5-comparison-of-mathcal-f-with-the-classical-kaz",
+   "number": "5",
+   "title": "Comparison of $\\mathcal F$ with the classical Kazhdan-Lusztig functor",
+   "level": 1,
+   "page_start": 10,
    "page_end": 11,
-   "n_chars": 5255,
-   "n_words": 863,
+   "n_chars": 2545,
+   "n_words": 432,
    "label_start": "10",
    "label_end": "11"
   },
   {
-   "id": "sec-005-a-appendix-meromorphicity-of-the-r-matrix",
+   "id": "sec-006-a-appendix-meromorphicity-of-the-r-matrix",
    "number": "A",
    "title": "Appendix : Meromorphicity of the R-matrix",
    "level": 1,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 5358,
-   "n_words": 865,
+   "n_chars": 5391,
+   "n_words": 868,
    "label_start": "11",
    "label_end": "13"
   }
@@ -361,13 +373,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 7,
-  "chars_total": 34894,
+  "sections": 8,
+  "chars_total": 34969,
+  "furniture_lines_stripped": 13,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 6,
-   "overlaid": 5,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -414,13 +427,21 @@
     {
      "id": "sec-004-4-evaluation-representations",
      "title": "Evaluation Representations",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-a-appendix-meromorphicity-of-the-r-matrix",
+     "id": "sec-005-5-comparison-of-mathcal-f-with-the-classical-kaz",
+     "title": "Comparison of $\\mathcal F$ with the classical Kazhdan-Lusztig functor",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-a-appendix-meromorphicity-of-the-r-matrix",
      "title": "Appendix : Meromorphicity of the R-matrix",
      "result": "no matching \\section"
     }

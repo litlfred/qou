@@ -4,13 +4,14 @@ doc_title: "Hyperbolic volume of representations of fundamental groups of cusped
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
-pages: 1-6
+pages: 1-3
 source_pdf: 0305275v1.pdf
 source_sha256: 9b356a9d716a0d3e
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.538
-doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C)."
+latex_coverage_ratio: 0.875
+doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2, C)."
 ---
 Let $W$ be a compact manifold and let $\rho$ be a representation of its fundamental group into PSL$(2,\ensuremath{\mathbb C})\simeq$ Isom$^+(\ensuremath{\mathbb H}^3)$. The volume of $\rho$ is defined by taking any $\rho$-equivariant map from the universal cover $\widetilde{W}$ to $\ensuremath{\mathbb H}^3$ and then by integrating the pull-back of the hyperbolic volume form on a fundamental domain. This volume does not depend on the choice of the equivariant map because two equivariant maps are always equivariantly homotopic and the cohomology-class of the pull-back of the volume form is invariant under homotopy.
 
@@ -53,4 +54,4 @@ In Section [\[s cor\]](#s cor){reference-type="ref" reference="s cor"} we give 
 
 Other corollaries that can be useful for checking the hyperbolicity of a $3$-manifold are also shown.
 
-I would like to thank Carlo Petronio and Joan Porti for the very many very interesting conversations about this theme.
+2ex I would like to thank Carlo Petronio and Joan Porti for the very many very interesting conversations about this theme.

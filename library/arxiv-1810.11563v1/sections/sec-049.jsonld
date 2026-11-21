@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1810.11563v1/sections/sec-049",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "IV Conclusion",
+  "pageStart": 80,
+  "pageEnd": 84,
+  "contains": [
+    "library/arxiv-1810.11563v1/blocks/prose-sec-049",
+    "library/arxiv-1810.11563v1/blocks/figure-img-p082-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
+  "provenance": "ingested"
+}

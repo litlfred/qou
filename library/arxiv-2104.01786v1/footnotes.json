@@ -1,0 +1,2793 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2104.01786v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "Note,however,thatinthisreference,somewhatconfusingly,theusualoctoniondivisionalgebrawrittenin a complex basis is referred to as the split octonion algebra.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "soldastheStandardModel(SM)itself,see[1]andreferencestherein."
+    }
+   ],
+   "block": "library/arxiv-2104.01786v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "2",
+   "text": "InthecaseofSpin(7, 7)thereisalsothepossibilitySpin(3, 4) × Spin(4, 3) ⊂Spin(7, 7).",
+   "marks": [
+    {
+     "page": 3,
+     "context": "(7)×Spin(7) ⊂Spin(7, 7) and Spin(7)×Spin(4, 3) ⊂Spin(11, 3)."
+    },
+    {
+     "page": 3,
+     "context": "respectively.ThematricestakingvaluesinEnd((X ⊗Y)"
+    },
+    {
+     "page": 3,
+     "context": "Γ"
+    },
+    {
+     "page": 3,
+     "context": "Γ"
+    },
+    {
+     "page": 3,
+     "context": "truction of the Cliﬀord algebra identiﬁes spinors with (X⊗Y)"
+    }
+   ],
+   "block": "library/arxiv-2104.01786v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "3",
+   "text": "Whenwedescribetheleft/rightsymmetricmodelbelow,itwillbecomeclearthattherightinterpretation of this u(1) is that corresponding to U(1)B−L symmetry.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "E"
+    },
+    {
+     "page": 8,
+     "context": "commuteswithJisso(6)thatcorrespondstorotationsinthee1,2,"
+    },
+    {
+     "page": 8,
+     "context": "su(3)ofthestrongforceandthe”hypercharge”u(1)."
+    }
+   ],
+   "block": "library/arxiv-2104.01786v1/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "4",
+   "text": "BelowwewillseethatthisSU(2)correspondstothediagonalsubgroupinSU(2)L × SU(2)R.",
+   "marks": [
+    {
+     "page": 13,
+     "context": "2(y0 + i y"
+    },
+    {
+     "page": 14,
+     "context": "splitsintoits(1, 0)and(0, 1)eigenspaces.The(1, 0)eigenspaceC"
+    },
+    {
+     "page": 14,
+     "context": "C"
+    },
+    {
+     "page": 14,
+     "context": "C"
+    },
+    {
+     "page": 14,
+     "context": "spinorofwhatcanbeidentiﬁedas”weak”SU(2)."
+    }
+   ],
+   "block": "library/arxiv-2104.01786v1/blocks/prose-sec-014"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "11",
+   "context": "ldtakingvaluesintherepresentationthatcorrespondsto3-formsinR"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "akingvaluesintherepresentationthatcorrespondsto3-formsinR11,"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "chosen,splitsasO =C ⊕C"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "pectively.Thesemi-spinorrepresentationofSpin(3, 3)isacopyofR"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "stepinthisdirectionandshowhowthe3-formﬁeldinΛ"
+  },
+  {
+   "page": 6,
+   "mark": "11",
+   "context": "stepinthisdirectionandshowhowthe3-formﬁeldinΛ3(R"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "stepinthisdirectionandshowhowthe3-formﬁeldinΛ3(R11,"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "octonions1, e"
+  },
+  {
+   "page": 6,
+   "mark": "7",
+   "context": "octonions1, e1, . . . , e"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "x = x0 + x1e"
+  },
+  {
+   "page": 6,
+   "mark": "7",
+   "context": "x = x0 + x1e1+ . . . + x7e"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "x = x0 −x1e"
+  },
+  {
+   "page": 6,
+   "mark": "7",
+   "context": "x = x0 −x1e1−. . . −x7e"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "x = (x0)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "x = (x0)2+ (x1)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "x = (x0)2+ (x1)2+ . . . + (x7)"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "|x|2|y|2.The cross-productsof the imaginary octonions e"
+  },
+  {
+   "page": 6,
+   "mark": "7",
+   "context": "2.The cross-productsof the imaginary octonions e1, . . . , e"
+  },
+  {
+   "page": 6,
+   "mark": "7",
+   "context": "intoa3-forminR"
+  },
+  {
+   "page": 7,
+   "mark": "567",
+   "context": "C= e"
+  },
+  {
+   "page": 7,
+   "mark": "5",
+   "context": "C= e567+ e"
+  },
+  {
+   "page": 7,
+   "mark": "41",
+   "context": "C= e567+ e5∧(e"
+  },
+  {
+   "page": 7,
+   "mark": "23",
+   "context": "C= e567+ e5∧(e41−e"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "C= e567+ e5∧(e41−e23) + e"
+  },
+  {
+   "page": 7,
+   "mark": "42",
+   "context": "C= e567+ e5∧(e41−e23) + e6∧(e"
+  },
+  {
+   "page": 7,
+   "mark": "31",
+   "context": "C= e567+ e5∧(e41−e23) + e6∧(e42−e"
+  },
+  {
+   "page": 7,
+   "mark": "7",
+   "context": "C= e567+ e5∧(e41−e23) + e6∧(e42−e31) + e"
+  },
+  {
+   "page": 7,
+   "mark": "43",
+   "context": "C= e567+ e5∧(e41−e23) + e6∧(e42−e31) + e7∧(e"
+  },
+  {
+   "page": 7,
+   "mark": "12",
+   "context": "C= e567+ e5∧(e41−e23) + e6∧(e42−e31) + e7∧(e43−e"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "wherethenotationiseijk=e"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "wherethenotationiseijk=ei∧e"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "wherethenotationiseijk=ei∧ej∧e"
+  },
+  {
+   "page": 7,
+   "mark": "5",
+   "context": "imaginaryoctonionsfrom(9).Forexample,e"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "imaginaryoctonionsfrom(9).Forexample,e5e"
+  },
+  {
+   "page": 7,
+   "mark": "7",
+   "context": "imaginaryoctonionsfrom(9).Forexample,e5e6=e"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "E"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Ei:= Le"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "E"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "EiE"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "EiEj+ E"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "EiEj+ EjE"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "E"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "E"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "E"
+  },
+  {
+   "page": 7,
+   "mark": "5",
+   "context": "E"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "E"
+  },
+  {
+   "page": 7,
+   "mark": "7",
+   "context": "E"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "as I, e"
+  },
+  {
+   "page": 7,
+   "mark": "7",
+   "context": "as I, e1, . . . , e"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "as I, e1, . . . , e7.They also have the property E"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "as I, e1, . . . , e7.They also have the property EiI = e"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": ". , e7.They also have the property EiI = ei, where both I, e"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "With 8×8 matrices E"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "mutatorsofγ-matrices,orsimplybytheproductsofpairsofdistinctE"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "ωijE"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "ωijEiE"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "AnyoftheCliﬀordgeneratorsE"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "octonionmultiplicationencodedin(9)issuchthate"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "wechooseu = e"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "wechooseu = e4andJ= E"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "allproductsE"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "allproductsEiE"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "allproductsEiEjthatdonotcontainE"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "commuteswithJisso(6)thatcorrespondstorotationsinthee"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "commuteswithJisso(6)thatcorrespondstorotationsinthee1,"
+  },
+  {
+   "page": 8,
+   "mark": "5",
+   "context": "commuteswithJisso(6)thatcorrespondstorotationsinthee1,2,3,"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "commuteswithJisso(6)thatcorrespondstorotationsinthee1,2,3,5,"
+  },
+  {
+   "page": 8,
+   "mark": "7",
+   "context": "mmuteswithJisso(6)thatcorrespondstorotationsinthee1,2,3,5,6,"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": ")eigenspaceofJ.Indeed,thecomplexstructureallowstoidentifyO=C"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "J′:= Ru= E"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "dinates.The(1, 0)coordinatesofeigenvalueofE"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2(Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2(Qi +¯Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2(Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2(Qi −¯Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "⟨x, x⟩=¯LL +¯Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "⟨x, x⟩=¯LL +¯QiQ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "⟨x, (E"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "⟨x, (E1−i E"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "⟨x, (E1−i E5)(E"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "⟨x, (E1−i E5)(E2−i E"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "⟨x, (E1−i E5)(E2−i E6)(E"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "⟨x, (E1−i E5)(E2−i E6)(E3−i E"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "⟨x, (E1−i E5)(E2−i E6)(E3−i E7)x⟩= −4i L"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "⟨x, (E"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "⟨x, (E1E"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "⟨x, (E1E5+ E"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "⟨x, (E1E5+ E2E"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "⟨x, (E1E5+ E2E6+ E"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "⟨x, (E1E5+ E2E6+ E3E"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "⟨x, (E1E5+ E2E6+ E3E7)E"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "⟨x, (E1E5+ E2E6+ E3E7)E4x⟩= −3¯LL +¯Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "⟨x, (E1E5+ E2E6+ E3E7)E4x⟩= −3¯LL +¯QiQ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "\u0000¯L"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "\u0000¯L1L"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "\u0000¯L1L2 +¯L"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "\u0000¯L1L2 +¯L2L"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "\u0000¯L1L2 +¯L2L1 +¯Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2+¯Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "1Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2Q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "⟨x1, E"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "−¯L1L2 +¯L2L1 −¯Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2+¯Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "1Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2Q"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "⟨x1, (E"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "⟨x1, (E1E"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "⟨x1, (E1E5+ E"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "⟨x1, (E1E5+ E2E"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "⟨x1, (E1E5+ E2E6+ E"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "⟨x1, (E1E5+ E2E6+ E3E"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "−3¯L1L2 + 3¯L2L1 −¯Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2+¯Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "1Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "⟨I, E"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "⟨I, EiE"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "⟨I, EiEjE"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "wherethenotationisthateijk=e"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "wherethenotationisthateijk=ei∧e"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "wherethenotationisthateijk=ei∧ej∧e"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "spinors.IfwetakethesetobeI, u=e"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "tanotherwaytoseeSU(3)istonotethatwhileJallowsustoidentifyO=C"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "apreferredcopyofthecomplexplaneinC"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "notpreservethiscopyofthecomplexplane,mixingall4directionsinC"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "y= y0 + y1˜e"
+  },
+  {
+   "page": 10,
+   "mark": "7",
+   "context": "y= y0 + y1˜e1+ . . . + y7˜e"
+  },
+  {
+   "page": 10,
+   "mark": "5",
+   "context": "(˜e"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "(˜e5,"
+  },
+  {
+   "page": 10,
+   "mark": "7",
+   "context": "(˜e5,6,"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(˜e5,6,7)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(˜e"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(˜e1,"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "(˜e1,2,"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "(˜e1,2,3,"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(˜e1,2,3,4)"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "s:= y¯y= (y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "s:= y¯y= (y0)"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "s:= y¯y= (y0)2 −(y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "s:= y¯y= (y0)2 −(y1)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "s:= y¯y= (y0)2 −(y1)2 −(y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "s:= y¯y= (y0)2 −(y1)2 −(y2)"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "s:= y¯y= (y0)2 −(y1)2 −(y2)2 −(y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "s:= y¯y= (y0)2 −(y1)2 −(y2)2 −(y3)"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "s:= y¯y= (y0)2 −(y1)2 −(y2)2 −(y3)2 −(y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "s:= y¯y= (y0)2 −(y1)2 −(y2)2 −(y3)2 −(y4)"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "s:= y¯y= (y0)2 −(y1)2 −(y2)2 −(y3)2 −(y4)2 + (y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "s:= y¯y= (y0)2 −(y1)2 −(y2)2 −(y3)2 −(y4)2 + (y5)"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "s:= y¯y= (y0)2 −(y1)2 −(y2)2 −(y3)2 −(y4)2 + (y5)2 + (y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "s:= y¯y= (y0)2 −(y1)2 −(y2)2 −(y3)2 −(y4)2 + (y5)2 + (y6)"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": " y¯y= (y0)2 −(y1)2 −(y2)2 −(y3)2 −(y4)2 + (y5)2 + (y6)2 + (y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "¯y= (y0)2 −(y1)2 −(y2)2 −(y3)2 −(y4)2 + (y5)2 + (y6)2 + (y7)"
+  },
+  {
+   "page": 11,
+   "mark": "567",
+   "context": "C=˜e"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "C=˜e567−˜e"
+  },
+  {
+   "page": 11,
+   "mark": "41",
+   "context": "C=˜e567−˜e5∧(˜e"
+  },
+  {
+   "page": 11,
+   "mark": "23",
+   "context": "C=˜e567−˜e5∧(˜e41−˜e"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "C=˜e567−˜e5∧(˜e41−˜e23) −˜e"
+  },
+  {
+   "page": 11,
+   "mark": "42",
+   "context": "C=˜e567−˜e5∧(˜e41−˜e23) −˜e6∧(˜e"
+  },
+  {
+   "page": 11,
+   "mark": "31",
+   "context": "C=˜e567−˜e5∧(˜e41−˜e23) −˜e6∧(˜e42−˜e"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "C=˜e567−˜e5∧(˜e41−˜e23) −˜e6∧(˜e42−˜e31) −˜e"
+  },
+  {
+   "page": 11,
+   "mark": "43",
+   "context": "C=˜e567−˜e5∧(˜e41−˜e23) −˜e6∧(˜e42−˜e31) −˜e7∧(˜e"
+  },
+  {
+   "page": 11,
+   "mark": "12",
+   "context": "C=˜e567−˜e5∧(˜e41−˜e23) −˜e6∧(˜e42−˜e31) −˜e7∧(˜e43−˜e"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "changed.Thismeansthatthecross-productinthe˜e"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "changed.Thismeansthatthecross-productinthe˜e5,"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "changed.Thismeansthatthecross-productinthe˜e5,6,"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Operators˜E"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Operators˜Ei:=L˜e"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "˜E"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "˜E"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "˜E"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "˜E"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "˜E"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "˜E"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "˜E"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "˜E"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "˜Ei˜E"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "˜Ei˜Ej+˜E"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "˜Ei˜Ej+˜Ej˜E"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Itisthenclearthatthematrices˜E"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Itisthenclearthatthematrices˜E1,"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Itisthenclearthatthematrices˜E1,2,"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "Itisthenclearthatthematrices˜E1,2,3,"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "Itisthenclearthatthematrices˜E1,2,3,4aresymmetric,while˜E"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "Itisthenclearthatthematrices˜E1,2,3,4aresymmetric,while˜E5,"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "tisthenclearthatthematrices˜E1,2,3,4aresymmetric,while˜E5,6,"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "that˜E"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "that˜E5,"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "that˜E5,6,"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "that˜E5,6,7=E"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "that˜E5,6,7=E5,"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "that˜E5,6,7=E5,6,"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "that˜E5,6,7=E5,6,7.Againwehavethepropertythat˜E"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "that˜E5,6,7=E5,6,7.Againwehavethepropertythat˜Ei˜I=˜e"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "=E5,6,7.Againwehavethepropertythat˜Ei˜I=˜ei,whereboth ˜I, ˜e"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "˜ωij˜E"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "˜ωij˜Ei ˜E"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "so(4,3)τ+ τX"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "so(4,3)τ+ τXs"
+  },
+  {
+   "page": 12,
+   "mark": "5",
+   "context": "generators˜E"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "generators˜E5,"
+  },
+  {
+   "page": 12,
+   "mark": "7",
+   "context": "generators˜E5,6,"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "complexstructureon˜O.Thiscomplexstructureidentiﬁes˜O = C"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Any of the generators˜E"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Any of the generators˜E1,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "Any of the generators˜E1,2,"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "Any of the generators˜E1,2,3,"
+  },
+  {
+   "page": 12,
+   "mark": "5",
+   "context": "τ=˜E"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "τ=˜E5 ˜E"
+  },
+  {
+   "page": 12,
+   "mark": "7",
+   "context": "τ=˜E5 ˜E6 ˜E"
+  },
+  {
+   "page": 12,
+   "mark": "5",
+   "context": "orthatreversesthesignsofthepositive-deﬁnitedirections ˜I, ˜e"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "thatreversesthesignsofthepositive-deﬁnitedirections ˜I, ˜e5,"
+  },
+  {
+   "page": 12,
+   "mark": "7",
+   "context": "atreversesthesignsofthepositive-deﬁnitedirections ˜I, ˜e5,6,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "quadraticform (24),andleavesthenegative-deﬁnitedirections˜e"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "uadraticform (24),andleavesthenegative-deﬁnitedirections˜e1,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "draticform (24),andleavesthenegative-deﬁnitedirections˜e1,2,"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "aticform (24),andleavesthenegative-deﬁnitedirections˜e1,2,3,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "identity τ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2= I, but anti-commutes with any of the Cliﬀord generators˜E"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": " I, but anti-commutes with any of the Cliﬀord generators˜E1,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": ", but anti-commutes with any of the Cliﬀord generators˜E1,2,"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "but anti-commutes with any of the Cliﬀord generators˜E1,2,3,"
+  },
+  {
+   "page": 12,
+   "mark": "5",
+   "context": "withallthe˜E"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "withallthe˜E5,"
+  },
+  {
+   "page": 12,
+   "mark": "7",
+   "context": "withallthe˜E5,6,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ithallthe˜E5,6,7generators).Thus,theproductofτwithanyoneof˜E"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "hallthe˜E5,6,7generators).Thus,theproductofτwithanyoneof˜E1,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "llthe˜E5,6,7generators).Thus,theproductofτwithanyoneof˜E1,2,"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "the˜E5,6,7generators).Thus,theproductofτwithanyoneof˜E1,2,3,"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "inationconstructedfromthem)isacomplexstructure.Wechoose˜u=˜e"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "˜J:=˜E"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ﬁrstfactoristheonedescribingrotationsinthe˜e"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ﬁrstfactoristheonedescribingrotationsinthe˜e1,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "ﬁrstfactoristheonedescribingrotationsinthe˜e1,2,"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "directions˜e"
+  },
+  {
+   "page": 12,
+   "mark": "5",
+   "context": "directions˜e4,"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "directions˜e4,5,"
+  },
+  {
+   "page": 12,
+   "mark": "7",
+   "context": "directions˜e4,5,6,"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "directions˜e4,5,6,7.Thedirection˜e"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "˜J:= −˜E"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "˜J:= −˜E1˜E"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "˜J:= −˜E1˜E2˜E"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "ofthetimelikeCliﬀordgeneratorsthataredistinctfromthechosen˜E"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "2(y"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "2(y0 + i"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "2(y"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "2(yi + i"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "2(yi + i y"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "\u0012u"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "\u0012w"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "\u0012w0 + w"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "\u0012d"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "\u0012w"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "\u0012w1 + i w"
+  },
+  {
+   "page": 14,
+   "mark": "8",
+   "context": "ntroducingthecomplexstructure˜J,thespaceofsplitoctonions˜O=R"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(1,0)= (2,"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "(1,0)= (2, 2,"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "(0,1)= (2,"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(0,1)= (2, 1,"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2(u"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2(u1 + d"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2(u"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2(u1 −d"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2(u"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2(u2 + d"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2(u"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2(u2 −d"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "\u0012u"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "\u0012d"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "−⟨y1,˜E"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "−⟨y1,˜E1 ˜E"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "−⟨y1,˜E1 ˜E2 ˜E"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "φ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "φ1−i φ"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "φ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "⟨y1, (φ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "⟨y1, (φi ˜E"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "φ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "φ1+ i φ"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "−φ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "φ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "φ1−i φ"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "φ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "⟨y1,"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "2(ǫijkφ"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "2(ǫijkφi ˜E"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "2(ǫijkφi ˜Ej˜E"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "2(ǫijkφi ˜Ej˜Ek)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2(ǫijkφi ˜Ej˜Ek)y"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "φ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "φ1+ i φ"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "−φ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "agonal so(3) that describes simultaneous rotations in the ˜e"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "onal so(3) that describes simultaneous rotations in the ˜e1,"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "al so(3) that describes simultaneous rotations in the ˜e1,2,"
+  },
+  {
+   "page": 16,
+   "mark": "5",
+   "context": "3) that describes simultaneous rotations in the ˜e1,2,3and˜e"
+  },
+  {
+   "page": 16,
+   "mark": "6",
+   "context": " that describes simultaneous rotations in the ˜e1,2,3and˜e5,"
+  },
+  {
+   "page": 16,
+   "mark": "7",
+   "context": "hat describes simultaneous rotations in the ˜e1,2,3and˜e5,6,"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "casethesemi-spinoristwicethat(X ⊗Y)"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "ωijE"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "ωijEiE"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "˜ωij˜E"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "˜ωij˜Ei ˜E"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "aijE"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "aijEi⊗˜E"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "4, 3).All the blocks here are constructedfrom 8×8 matrices E"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": ").All the blocks here are constructedfrom 8×8 matrices Ei,˜E"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(ωijE"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "(ωijEiE"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "(ωijEiEj)T= ωijE"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(ωijEiEj)T= ωijEjE"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(ωijEiEj)T= ωijEjEi= −ωijE"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "(ωijEiEj)T= ωijEjEi= −ωijEiE"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "and,using( ˜E"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "and,using( ˜Ei)Tτ= −τ˜E"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(˜ωij˜E"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "(˜ωij˜Ei ˜E"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "(˜ωij˜Ei ˜Ej)Tτ= τ ˜ωij˜E"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(˜ωij˜Ei ˜Ej)Tτ= τ ˜ωij˜Ej˜E"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(˜ωij˜Ei ˜Ej)Tτ= τ ˜ωij˜Ej˜Ei= −τ ˜ωij˜E"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "(˜ωij˜Ei ˜Ej)Tτ= τ ˜ωij˜Ej˜Ei= −τ ˜ωij˜Ei ˜E"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(aijE"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "(aijEi⊗˜E"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(aijEi⊗˜Ej)T(I ⊗τ) = (I ⊗τ)aijE"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "(aijEi⊗˜Ej)T(I ⊗τ) = (I ⊗τ)aijEi⊗˜E"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "ωijE"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "ωijEiE"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "˜ωij˜E"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "˜ωij˜Ei ˜E"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "aijE"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "aijEi⊗˜E"
+  },
+  {
+   "page": 18,
+   "mark": "s",
+   "context": "so(11,3)Ψ′, Ψ⟩⟩+ ⟨⟨Ψ′, X"
+  },
+  {
+   "page": 18,
+   "mark": "o",
+   "context": "so(11,3)Ψ′, Ψ⟩⟩+ ⟨⟨Ψ′, Xs"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "¯d"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "u"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "Q"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "¯Q"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "−¯u"
+  },
+  {
+   "page": 18,
+   "mark": "†",
+   "context": "Φ →ULΦU"
+  },
+  {
+   "page": 19,
+   "mark": "†",
+   "context": "thathasthesametransformationproperties˜Φ →UL˜ΦU"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "\u0012v"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "2)"
+  },
+  {
+   "page": 19,
+   "mark": "v",
+   "context": "2)e¯e + (YL"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2)e¯e + (YLv"
+  },
+  {
+   "page": 19,
+   "mark": "v",
+   "context": "2)e¯e + (YLv2+˜YL"
+  },
+  {
+   "page": 19,
+   "mark": "†",
+   "context": "∆L→UL∆LU"
+  },
+  {
+   "page": 19,
+   "mark": "†",
+   "context": "∆R→UR∆RU"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "Q = T"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "L+ T"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "Thus,thehyperchargeY= T"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "toseethatthegeneratorsE"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "toseethatthegeneratorsE4⊗˜E"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "toseethatthegeneratorsE4⊗˜Ei, i = 1, 2, 3commutewithbothJ= E"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "egeneratorsE4⊗˜Ei, i = 1, 2, 3commutewithbothJ= E4and˜J= −˜E"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "eratorsE4⊗˜Ei, i = 1, 2, 3commutewithbothJ= E4and˜J= −˜E1 ˜E"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "orsE4⊗˜Ei, i = 1, 2, 3commutewithbothJ= E4and˜J= −˜E1 ˜E2 ˜E"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "dditionalgeneratorextendso(3)intoso(4)rotatingthedirectionse"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "ofC"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "2"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "2a"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "2aiǫijk ˜E"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "2aiǫijk ˜Ej˜E"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "2aiǫijk ˜Ej˜Ek + b"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "2aiǫijk ˜Ej˜Ek + biE"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "2aiǫijk ˜Ej˜Ek + biE4 ⊗˜E"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2(a"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2(ai −b"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "2ǫijk ˜E"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "2ǫijk ˜Ej˜E"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "2ǫijk ˜Ej˜Ek −E"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2ǫijk ˜Ej˜Ek −E4 ⊗˜E"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2(a"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2(ai + b"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "2ǫijk ˜E"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "2ǫijk ˜Ej˜E"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "2ǫijk ˜Ej˜Ek + E"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2ǫijk ˜Ej˜Ek + E4 ⊗˜E"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "eigenspaceof˜J=−˜E"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "eigenspaceof˜J=−˜E1 ˜E"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "eigenspaceof˜J=−˜E1 ˜E2 ˜E"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "eigenspaceof˜J=−˜E1 ˜E2 ˜E3wehave˜E"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "eigenspaceof˜J=−˜E1 ˜E2 ˜E3wehave˜E1 ˜E"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "eigenspaceof˜J=−˜E1 ˜E2 ˜E3wehave˜E1 ˜E2=i˜E"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2(a"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2(ai −b"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i˜E"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "i˜Ei−E"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i˜Ei−E4⊗˜E"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2(a"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "2(ai + b"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i˜E"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "i˜Ei+ E"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i˜Ei+ E4⊗˜E"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "the two eigenspaces of J= E"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "Indeed,onthe(1, 0)eigenspaceofJwecanreplaceE"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "subspaceisasingletwithrespecttoSU(2)R.Similarly,theoperatorE"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "S+ × S+= Λ"
+  },
+  {
+   "page": 22,
+   "mark": "11",
+   "context": "S+ × S+= Λ1(R"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "S+ × S+= Λ1(R11,"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "S+ × S+= Λ1(R11,3) ⊕Λ"
+  },
+  {
+   "page": 22,
+   "mark": "11",
+   "context": "S+ × S+= Λ1(R11,3) ⊕Λ3(R"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "S+ × S+= Λ1(R11,3) ⊕Λ3(R11,"
+  },
+  {
+   "page": 22,
+   "mark": "5",
+   "context": "S+ × S+= Λ1(R11,3) ⊕Λ3(R11,3) ⊕Λ"
+  },
+  {
+   "page": 22,
+   "mark": "11",
+   "context": "S+ × S+= Λ1(R11,3) ⊕Λ3(R11,3) ⊕Λ5(R"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "S+ × S+= Λ1(R11,3) ⊕Λ3(R11,3) ⊕Λ5(R11,"
+  },
+  {
+   "page": 22,
+   "mark": "7",
+   "context": "S+ × S+= Λ1(R11,3) ⊕Λ3(R11,3) ⊕Λ5(R11,3) ⊕Λ"
+  },
+  {
+   "page": 22,
+   "mark": "11",
+   "context": "sd(R"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "sd(R11,"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "HereΛ"
+  },
+  {
+   "page": 22,
+   "mark": "11",
+   "context": "HereΛk(R"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "HereΛk(R11,"
+  },
+  {
+   "page": 22,
+   "mark": "11",
+   "context": "HereΛk(R11,3)isthespaceofanti–symmetrictensorsofrankkinR"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "HereΛk(R11,3)isthespaceofanti–symmetrictensorsofrankkinR11,"
+  },
+  {
+   "page": 22,
+   "mark": "7",
+   "context": "isnotanirreduciblerepresentation,butthespaceΛ"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "ProjectionontoΛ"
+  },
+  {
+   "page": 22,
+   "mark": "11",
+   "context": "ProjectionontoΛ3R"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "ProjectionontoΛ3R11,"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Γx"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γx1"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "⟨⟨Ψ, Γx1x"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γx1x2"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "⟨⟨Ψ, Γx1x2x"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γx1x2x3Ψ⟩⟩= ⟨⟨Ψ, L"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Γx1x2x3Ψ⟩⟩= ⟨⟨Ψ, Lx"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γx1x2x3Ψ⟩⟩= ⟨⟨Ψ, Lx1L"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "⟨⟨Ψ, Γx1x2x3Ψ⟩⟩= ⟨⟨Ψ, Lx1Lx"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γx1x2x3Ψ⟩⟩= ⟨⟨Ψ, Lx1Lx2L"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "⟨⟨Ψ, Γx1x2x3Ψ⟩⟩= ⟨⟨Ψ, Lx1Lx2Lx"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Γx"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γx1"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "⟨⟨Ψ, Γx1x"
+  },
+  {
+   "page": 22,
+   "mark": "y",
+   "context": "⟨⟨Ψ, Γx1x2"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Γx1x2y"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γx1x2y1Ψ⟩⟩= ⟨⟨Ψ, L"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Γx1x2y1Ψ⟩⟩= ⟨⟨Ψ, Lx"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γx1x2y1Ψ⟩⟩= ⟨⟨Ψ, Lx1L"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "⟨⟨Ψ, Γx1x2y1Ψ⟩⟩= ⟨⟨Ψ, Lx1Lx"
+  },
+  {
+   "page": 22,
+   "mark": "y",
+   "context": "⟨⟨Ψ, Γx1x2y1Ψ⟩⟩= ⟨⟨Ψ, Lx1Lx2⊗L"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Γx1x2y1Ψ⟩⟩= ⟨⟨Ψ, Lx1Lx2⊗Ly"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Γx"
+  },
+  {
+   "page": 22,
+   "mark": "y",
+   "context": "⟨⟨Ψ, Γx1"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Γx1y"
+  },
+  {
+   "page": 22,
+   "mark": "y",
+   "context": "⟨⟨Ψ, Γx1y1"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "⟨⟨Ψ, Γx1y1y"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "⟨⟨Ψ, Γx1y1y2Ψ⟩⟩= −⟨⟨Ψ, L"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Γx1y1y2Ψ⟩⟩= −⟨⟨Ψ, Lx"
+  },
+  {
+   "page": 22,
+   "mark": "y",
+   "context": "⟨⟨Ψ, Γx1y1y2Ψ⟩⟩= −⟨⟨Ψ, Lx1⊗L"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Γx1y1y2Ψ⟩⟩= −⟨⟨Ψ, Lx1⊗Ly"
+  },
+  {
+   "page": 22,
+   "mark": "y",
+   "context": "⟨⟨Ψ, Γx1y1y2Ψ⟩⟩= −⟨⟨Ψ, Lx1⊗Ly1L"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "⟨⟨Ψ, Γx1y1y2Ψ⟩⟩= −⟨⟨Ψ, Lx1⊗Ly1Ly"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "ismeanswehavethefollowingexpressionfortheprojectionS+ × S+→Λ"
+  },
+  {
+   "page": 23,
+   "mark": "11",
+   "context": "meanswehavethefollowingexpressionfortheprojectionS+ × S+→Λ3R"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "nswehavethefollowingexpressionfortheprojectionS+ × S+→Λ3R11,"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "⟨⟨Ψ, ΓΓΓΨ⟩⟩= ⟨⟨Ψ, E"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "⟨⟨Ψ, ΓΓΓΨ⟩⟩= ⟨⟨Ψ, EiE"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "⟨⟨Ψ, ΓΓΓΨ⟩⟩= ⟨⟨Ψ, EiEjE"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "⟨⟨Ψ, ΓΓΓΨ⟩⟩= ⟨⟨Ψ, EiEjEk⊗IΨ⟩⟩eijk+ ⟨⟨Ψ, E"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "⟨⟨Ψ, ΓΓΓΨ⟩⟩= ⟨⟨Ψ, EiEjEk⊗IΨ⟩⟩eijk+ ⟨⟨Ψ, EiE"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "⟨⟨Ψ, ΓΓΓΨ⟩⟩= ⟨⟨Ψ, EiEjEk⊗IΨ⟩⟩eijk+ ⟨⟨Ψ, EiEj⊗˜E"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "⟨⟨Ψ, ΓΓΓΨ⟩⟩= ⟨⟨Ψ, EiEjEk⊗IΨ⟩⟩eijk+ ⟨⟨Ψ, EiEj⊗˜EkΨ⟩⟩eij˜e"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "−⟨⟨Ψ, E"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "−⟨⟨Ψ, Ei⊗˜E"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "−⟨⟨Ψ, Ei⊗˜Ej˜E"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "−⟨⟨Ψ, Ei⊗˜Ej˜EkΨ⟩⟩e"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "−⟨⟨Ψ, Ei⊗˜Ej˜EkΨ⟩⟩ei˜e"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "−⟨⟨Ψ, Ei⊗˜Ej˜EkΨ⟩⟩ei˜ej˜e"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "−⟨⟨Ψ, Ei⊗˜Ej˜EkΨ⟩⟩ei˜ej˜ek−⟨⟨Ψ, I ⊗˜E"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "−⟨⟨Ψ, Ei⊗˜Ej˜EkΨ⟩⟩ei˜ej˜ek−⟨⟨Ψ, I ⊗˜Ei ˜E"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "−⟨⟨Ψ, Ei⊗˜Ej˜EkΨ⟩⟩ei˜ej˜ek−⟨⟨Ψ, I ⊗˜Ei ˜Ej˜E"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "−⟨⟨Ψ, Ei⊗˜Ej˜EkΨ⟩⟩ei˜ej˜ek−⟨⟨Ψ, I ⊗˜Ei ˜Ej˜EkΨ⟩⟩˜e"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "−⟨⟨Ψ, Ei⊗˜Ej˜EkΨ⟩⟩ei˜ej˜ek−⟨⟨Ψ, I ⊗˜Ei ˜Ej˜EkΨ⟩⟩˜ei˜e"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "−⟨⟨Ψ, Ei⊗˜Ej˜EkΨ⟩⟩ei˜ej˜ek−⟨⟨Ψ, I ⊗˜Ei ˜Ej˜EkΨ⟩⟩˜ei˜ej˜e"
+  },
+  {
+   "page": 23,
+   "mark": "6",
+   "context": "We havethe SU(3) invariant3-forms inR"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Ω:= (e"
+  },
+  {
+   "page": 23,
+   "mark": "5",
+   "context": "Ω:= (e1−i e"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Ω:= (e1−i e5)(e"
+  },
+  {
+   "page": 23,
+   "mark": "6",
+   "context": "Ω:= (e1−i e5)(e2−i e"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "Ω:= (e1−i e5)(e2−i e6)(e"
+  },
+  {
+   "page": 23,
+   "mark": "7",
+   "context": "Ω:= (e1−i e5)(e2−i e6)(e3−i e"
+  },
+  {
+   "page": 23,
+   "mark": "15",
+   "context": "ω= e"
+  },
+  {
+   "page": 23,
+   "mark": "26",
+   "context": "ω= e15+ e"
+  },
+  {
+   "page": 23,
+   "mark": "37",
+   "context": "ω= e15+ e26+ e"
+  },
+  {
+   "page": 23,
+   "mark": "7",
+   "context": "ThelastbuildingblockweareallowedtouseintheR"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "elastbuildingblockweareallowedtouseintheR7factoristhe1-forme"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "sinIm(˜O),weareonlyallowedtousethe1-,2-and3-formsbuiltfrom˜e"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "nIm(˜O),weareonlyallowedtousethe1-,2-and3-formsbuiltfrom˜e1,"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "m(˜O),weareonlyallowedtousethe1-,2-and3-formsbuiltfrom˜e1,2,"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Ψ⟩⟩M= m1⟨⟨Ψ, (E"
+  },
+  {
+   "page": 23,
+   "mark": "5",
+   "context": "⟨⟨Ψ, Ψ⟩⟩M= m1⟨⟨Ψ, (E1E"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "⟨⟨Ψ, Ψ⟩⟩M= m1⟨⟨Ψ, (E1E5+ E"
+  },
+  {
+   "page": 23,
+   "mark": "6",
+   "context": "⟨⟨Ψ, Ψ⟩⟩M= m1⟨⟨Ψ, (E1E5+ E2E"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "⟨⟨Ψ, Ψ⟩⟩M= m1⟨⟨Ψ, (E1E5+ E2E6+ E"
+  },
+  {
+   "page": 23,
+   "mark": "7",
+   "context": "⟨⟨Ψ, Ψ⟩⟩M= m1⟨⟨Ψ, (E1E5+ E2E6+ E3E"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "⟨⟨Ψ, Ψ⟩⟩M= m1⟨⟨Ψ, (E1E5+ E2E6+ E3E7)E"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "⟨⟨Ψ, Ψ⟩⟩M= m1⟨⟨Ψ, (E1E5+ E2E6+ E3E7)E4⊗IΨ⟩⟩−m2⟨⟨Ψ, I ⊗˜E"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "⟨⟨Ψ, Ψ⟩⟩M= m1⟨⟨Ψ, (E1E5+ E2E6+ E3E7)E4⊗IΨ⟩⟩−m2⟨⟨Ψ, I ⊗˜E1 ˜E"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": " Ψ⟩⟩M= m1⟨⟨Ψ, (E1E5+ E2E6+ E3E7)E4⊗IΨ⟩⟩−m2⟨⟨Ψ, I ⊗˜E1 ˜E2 ˜E"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "+ψ"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "+ψi⟨⟨Ψ, (E"
+  },
+  {
+   "page": 23,
+   "mark": "5",
+   "context": "+ψi⟨⟨Ψ, (E1E"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "+ψi⟨⟨Ψ, (E1E5+ E"
+  },
+  {
+   "page": 23,
+   "mark": "6",
+   "context": "+ψi⟨⟨Ψ, (E1E5+ E2E"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "+ψi⟨⟨Ψ, (E1E5+ E2E6+ E"
+  },
+  {
+   "page": 23,
+   "mark": "7",
+   "context": "+ψi⟨⟨Ψ, (E1E5+ E2E6+ E3E"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "+ψi⟨⟨Ψ, (E1E5+ E2E6+ E3E7) ⊗˜E"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "2φ"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "2φiǫijk⟨⟨Ψ, E"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "2φiǫijk⟨⟨Ψ, E4 ⊗˜E"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "2φiǫijk⟨⟨Ψ, E4 ⊗˜Ej˜E"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "ξ∈Cisacomplexparameter,m1,2∈Randφ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "ξ∈Cisacomplexparameter,m1,2∈Randφi, ψ"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "(m"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(m1 + i m"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "(m1 + i m2)I + (φ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "(m1 + i m2)I + (φi−i ψ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "(m1 + i m2)I + (φi−i ψi)σ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "and σ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "(−3m"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "(−3m1 + i m"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "(−3m1 + i m2)I + (φ"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "(−3m1 + i m2)I + (φi+ 3i ψ"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "(−3m1 + i m2)I + (φi+ 3i ψi)σ"
+  },
+  {
+   "page": 24,
+   "mark": "11",
+   "context": "andLorentzinvariant3-form in R"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "andLorentzinvariant3-form in R11,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "the 3-form representation Λ"
+  },
+  {
+   "page": 25,
+   "mark": "11",
+   "context": "the 3-form representation Λ3(R"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "the 3-form representation Λ3(R11,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "inΛ"
+  },
+  {
+   "page": 25,
+   "mark": "11",
+   "context": "inΛ3(R"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "inΛ3(R11,"
+  },
+  {
+   "page": 26,
+   "mark": "11",
+   "context": "s,alsointheSpin(11, 3)casethedimensionalreductionof(99)fromR"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "lsointheSpin(11, 3)casethedimensionalreductionof(99)fromR11,"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "toR"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "toR1,"
+  }
+ ]
+}

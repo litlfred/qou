@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1502.02882v2
-doc_title: "Fusion categories via string diagrams Bruce Bartlett"
+doc_title: "Fusion categories via string diagrams"
 section_id: sec-002-21-conventions-for-general-monoidal-categories
 section_title: "Conventions for general monoidal categories"
 section_number: 2.1
 pages: 4-5
 source_pdf: 1502.02882v2.pdf
 source_sha256: 43641c6f3aed63dd
-doc_brief: "Fusion categories via string diagrams Bruce Bartlett — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.972
-latex_coverage_ratio: 0.978
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.994
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 \label{string_conventions}
 The string diagram calculus for a monoidal category $\cat{C}$ is well-known (see \cite{s11-sgc} or \cite[Chap. 4]{BBthesis} for an overview). Each diagram refers to a certain morphism in $\cat{C}$. Our diagrams go from top to bottom, so that a morphism $f : A \rightarrow B \otimes C$ is drawn as

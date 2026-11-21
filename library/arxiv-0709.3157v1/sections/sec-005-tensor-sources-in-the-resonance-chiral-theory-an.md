@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0709.3157v1
-doc_title: "V . Mateu"
+doc_title: "Chiral Lagrangians with tensor sources"
 section_id: sec-005-tensor-sources-in-the-resonance-chiral-theory-an
 section_title: "Tensor sources in the Resonance chiral theory and the radiative pion decay"
 section_number: null
 pages: 5-6
 source_pdf: 0709.3157v1.pdf
 source_sha256: 22a0d9a93c9dcb8d
-doc_brief: "V . Mateu — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form ¯qi"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.959
+latex_coverage_ratio: 0.979
+doc_brief: "Chiral Lagrangians with tensor sources — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents, that is"
 ---
 It is well known that if one wishes to extend the energy domain of $\chi$PT resonances must be include as active degrees of freedom. The idea of constructing chiral Lagrangians with resonances fields was pioneered in Ref. [@EGPR], but the inclusion of tensor sources was first considered in Ref. [@CMinprogress]. For a consistent introduction of tensor sources one has to consider spin--one resonances of $J^{PC}=1^{+-}$ quantum numbers, first included in Ref. [@Zauner]. It can be shown that such resonances only manifest themselves dynamically when coupled to tensor sources [@CMinprogress]. However tensor sources also couple to vector--meson resonances. The definition of he vector and tensor form factors follow $$\begin{aligned}
  \label{eq:fvperp}

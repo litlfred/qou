@@ -1,0 +1,1 @@
+The induced map χτ : ~HC*^}(A) -» //C*er(^o) is called the Poin- care duality map associated to a trace τ. Recall that there is the long exact sequence > HCn(k) -* HCn(A) -^ ΉCn(A) Λ HCn-λ(k) -+ - - - .

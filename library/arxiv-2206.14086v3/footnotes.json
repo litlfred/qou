@@ -1,0 +1,613 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2206.14086v3",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "3",
+   "text": "τ1z3+ 1",
+   "marks": [
+    {
+     "page": 8,
+     "context": "t = O(L"
+    },
+    {
+     "page": 8,
+     "context": "T= L"
+    }
+   ],
+   "block": "library/arxiv-2206.14086v3/blocks/prose-sec-013"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p009-2",
+   "page": 9,
+   "mark": "3",
+   "text": "τmz3+ 1",
+   "block": "library/arxiv-2206.14086v3/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "7",
+   "text": "p",
+   "block": "library/arxiv-2206.14086v3/blocks/prose-sec-018"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "hT (γ, τ) =h(γT"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "T"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "Since the height, position, and time scale as T"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "Since the height, position, and time scale as T1/3, T"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": ".To each conﬁguration, we can associate a zig-zag graph in R"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Considerthetwo-dimensionallatticeZ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "+.Let(m, n)∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "to(m, n)isasequencep=(pi)"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": ",wherepi∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "+,"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "+,p"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "+,p1=(1, 1),"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "+,p1=(1, 1),p"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "+,p1=(1, 1),pm+n−1=(m, n),and"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "+,p1=(1, 1),pm+n−1=(m, n),andp"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "+,p1=(1, 1),pm+n−1=(m, n),andpi+1−p"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "integer sites for visual aid.Let ws, s ∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "ofR"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "whereSt= {(m, n) ∈Z"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ofZ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "almostsurelyasT→∞,where¯h(x, t) =t"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "almostsurelyasT→∞,where¯h(x, t) =t2+x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "h(γT"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "T"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "eld.If we do not set x = 0, then we should consider h(xT +γT"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "a2dPoissonprocessinR"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "+.Anup/rightpath"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "+.Anup/rightpathpthistimeisdeﬁnedasthegraphof"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "numberofthePoissonpointsonp.For(t, s) ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "t"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "The1/3-powerint"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(whichisoforderN"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "γ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "τ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "−T"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "4τ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(h, γ, τ) 7→(αh, α"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "(h, γ, τ) 7→(αh, α2γ, α"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "sconﬁrmed,inparticular,thatthespatialcorrelationsareoforderT"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "2α(1 −α),"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "discrete-timeTASEPmodels.TheheightscalesasT"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "iscrete-timeTASEPmodels.TheheightscalesasT1/3forα ≥1/2andasT"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "that the height scales as t"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "periodicTASEPbecomestheusualTASEPonZ.Thus,theheightscalesast"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "SincethespatialscaleforKPZlimittheoremsoninﬁnitespacesist"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "\bh(γ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "\bh(γiT"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "\bh(γiT2/3, 2τ"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "\bh(γiT2/3, 2τiT) −τ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "−T"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i) = ((τ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "i) = ((τiϵ)"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "i) = ((τiϵ)1/3"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i) = ((τiϵ)1/3h"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i) = ((τiϵ)1/3hi, (τ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "i) = ((τiϵ)1/3hi, (τiϵ)"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i) = ((τiϵ)1/3hi, (τiϵ)2/3γ"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i) = ((τiϵ)1/3hi, (τiϵ)2/3γi, τ"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "i, τ"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i, τ s) = (−sτ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "i, τ s) = (−sτi+s"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "i, τ s) = (−sτi+s1/2π"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "(h"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "(hs; γ, τ"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "where(h"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "ζ1(1 −ζ1) · · · ζm−1(1 −ζm−1)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ζ1(1 −ζ1) · · · ζm−1(1 −ζm−1)dζ"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "ζ1(1 −ζ1) · · · ζm−1(1 −ζm−1)dζ1 · · · dζ"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "(2πi)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "operator Kζacts on L"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "(u, v) =a(u)T D(u)T D(v)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "changeisthespaceforKζ.Itisℓ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "e−s"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "s"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "sj−i+1(s + 1)−x"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "sj−i+1(s + 1)−xi+y"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "N= {(a"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "N= {(a1, · · ·, aN) ∈ZN:"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "N= {(a1, · · ·, aN) ∈ZN: a"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "N= {(a1, · · ·, aN) ∈ZN: a1< · · · < aN< a"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "w"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "wj−i+1(w + 1)−x"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "wj−i+1(w + 1)−xi+y"
+  },
+  {
+   "page": 10,
+   "mark": "z",
+   "context": "N,wheretheintegralcontourfor"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "2N,and"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "becomese−s"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "xlog det(1 −K) = −rT"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "x"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "xp −prT"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "x"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "xr + rpT"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "x"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "xp −3(∂x"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "xp −3(∂xp)"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "xp −3(∂xp)rT"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "xp −3(∂xp)rT p −3prT (∂x"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "x"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "xr −3(∂x"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "xr −3(∂xr)"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "xr −3(∂xr)pT"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "xr −3(∂xr)pT r −3rpT (∂x"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "x"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "xf −6(∂x"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "xf −6(∂xf)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "xf −6(∂xf)f"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "fork= [n"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "vvp(v)̸=0.In"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "randommatrices[53].ConsidertheprobabilitydensityfunctiononR"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "1≤i<j≤nlog |x"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "1≤i<j≤nlog |xj−x"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "1≤i<j≤nlog |xj−xi|−P"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "p(x1, · · ·, xn) = cn,me"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i=1V (x"
+  }
+ ]
+}

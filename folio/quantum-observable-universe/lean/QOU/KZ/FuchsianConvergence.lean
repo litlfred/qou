@@ -34,7 +34,7 @@ For the three-point KZ system `M_0 = A`, `M_k = −B`, so `C = ‖B‖`, `ρ = 1
 
 That `t ↦ H(t) t^A` is differentiable and solves the ODE on `(0,1)`, and `Φ_KZ`. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1, §5
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1, §5
 -/
 
 namespace QOU.KZ.FuchsianConvergence

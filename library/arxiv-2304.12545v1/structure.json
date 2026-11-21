@@ -6,10 +6,12 @@
   "sha256": "bfc3c2be395b1b2da852c3ddefaf66b3daac043347f1fc9dcc7d19529dfe01ba",
   "bytes": 459137,
   "pages": 19,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +23,26 @@
   "doi": null,
   "title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN",
   "authors_raw": "AND THE WORK OF WALTER NEUMANN",
-  "abstract": null,
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20230426003541Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "pdfTeX-1.40.21",
-   "Title": ""
-  },
-  "title_prev": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
   "title_lines": [
    "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP"
-  ]
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20230426003541Z"
+  },
+  "title_raw": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN Walter Neumann—henceforth simply Walter—has made huge contributions to topology, singularity theory, and number theory. His work on the combinatorics of triangulations of 3-manifolds and its interactions with algebraic K -theory",
+   "outline": "1. Ideal triangulations and the gluing equations",
+   "text": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP"
  },
  "toc": [
   {
@@ -40,53 +50,261 @@
    "title": "Ideal triangulations and the gluing equations",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Volumes and Dehn surgeries",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "The Bloch group and the extended Bloch group",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Symplectic properties",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Quantization",
    "page": 10,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Connections to number theory",
    "page": 12,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "References",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 116,
+   "n_words": 17,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-ideal-triangulations-and-the-gluing-equations",
    "number": "1",
@@ -94,8 +312,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 8553,
-   "n_words": 1501
+   "n_chars": 8626,
+   "n_words": 1533,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-volumes-and-dehn-surgeries",
@@ -104,8 +324,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 7,
-   "n_chars": 10635,
-   "n_words": 2040
+   "n_chars": 10699,
+   "n_words": 2104,
+   "label_start": "3",
+   "label_end": "7"
   },
   {
    "id": "sec-002-3-the-bloch-group-and-the-extended-bloch-group",
@@ -114,8 +336,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 7317,
-   "n_words": 1330
+   "n_chars": 7357,
+   "n_words": 1369,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
    "id": "sec-003-4-symplectic-properties",
@@ -123,19 +347,23 @@
    "title": "Symplectic properties",
    "level": 1,
    "page_start": 9,
-   "page_end": 9,
-   "n_chars": 274,
-   "n_words": 48
+   "page_end": 10,
+   "n_chars": 3495,
+   "n_words": 659,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
    "id": "sec-004-5-quantization",
    "number": "5",
    "title": "Quantization",
    "level": 1,
-   "page_start": 9,
+   "page_start": 10,
    "page_end": 12,
-   "n_chars": 11652,
-   "n_words": 1954
+   "n_chars": 8525,
+   "n_words": 1371,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
    "id": "sec-005-6-connections-to-number-theory",
@@ -144,8 +372,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 17,
-   "n_chars": 16556,
-   "n_words": 2921
+   "n_chars": 16617,
+   "n_words": 2982,
+   "label_start": "12",
+   "label_end": "17"
   },
   {
    "id": "sec-006-references",
@@ -154,21 +384,31 @@
    "level": 1,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 6458,
-   "n_words": 892
+   "n_chars": 6431,
+   "n_words": 865,
+   "label_start": "17",
+   "label_end": "19"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 61445,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 61866,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "walter.tex",
    "tex_sections": 6,
-   "overlaid": 5,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -176,48 +416,55 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-ideal-triangulations-and-the-gluing-equations",
      "title": "Ideal triangulations and the gluing equations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.881,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-volumes-and-dehn-surgeries",
      "title": "Volumes and Dehn surgeries",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-the-bloch-group-and-the-extended-bloch-group",
      "title": "The Bloch group and the extended Bloch group",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-4-symplectic-properties",
      "title": "Symplectic properties",
-     "prose_ratio": 0.12,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-5-quantization",
      "title": "Quantization",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-6-connections-to-number-theory",
      "title": "Connections to number theory",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "latex"
     },

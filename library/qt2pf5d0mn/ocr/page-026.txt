@@ -1,0 +1,34 @@
+Section 2.1 Ribbon Fusion Categories
+
+A
+
+A
+
+Figure 2.5: Tr'(f) (Left) and Tr’(f) (Right)
+3. Tr'(f @g) = Tr'(f) Tr'(g) for f € Hom(A, A), g € Hom(B, B).
+4. Tr'(4) = 1.
+
+Definition 2.1.11 1. A C-linear pivotal category with 1 simple is spherical if Tr! =
+Tr’.
+
+2. A spherical category C is strict if it is strict as a monoidal category and the pivotal
+
+structure is the identity natural isomorphism, namely, Ide = (-)**.
+
+Thus in a spherical category, we simple use the notion ‘the trace of f ’, and the
+notation Tr(f) for either the left trace or the right trace. By [46], every spherical category
+is equivalent to a strict spherical category. Therefore, we will assume spherical categories
+are strict.
+
+In a spherical category, one can use the trace operator to define a bilinear pairing.
+
+Explicitly, define (, ) : Hom(A, B) x Hom(B, A) — C by (f,9) = Tr(f og).
+
+Definition 2.1.12 A spherical category is non-degenerate if the pairing ( , ) is non-
+
+degenerate for all A, B.
+Proposition 2.1.13 Spherical fusion categories are non-degenerate.
+
+Definition 2.1.14 1. The quantum dimension da, of an object A is da = Tr(La).
+
+17

@@ -1,0 +1,48 @@
+Galois action on the principal block and cyclic Sylow subgroups 1967
+
+Using the atlas [Conway et al. 1985] and since 2¢ has a noncyclic Sylow 3-subgroup and can be
+viewed as a subgroup of 2,, for n > 7, we see that the only simple alternating or sporadic groups with
+cyclic Sylow 3-subgroups are 25 and the Janko group J. The remaining possibilities are of the form
+G/Z(G) for G a classical group SL;,(q) with n < 6, or Sp4(q). Further, except in the cases of PSL3(q)
+listed in the statement, |Z(G)| is relatively prime to 3, and hence S has a cyclic Sylow 3-subgroup if and
+only if G does. Further, for the cases G = SL}, (q) with n = 3, 4, 5 under consideration, we may view the
+Sylow subgroup as a Sylow subgroup of G = GL} (q), since [G : G] is not divisible by 3.
+
+Now, using the description of the Sylow subgroups of classical groups in [Carter and Fong 1964;
+Weir 1955], we see that the Sylow subgroups of GLi(q), GL§(q), and Sp,(q) are direct products of
+Sylow subgroups of at least two lower-rank groups, and hence the Sylow 3-subgroup of G is not cyclic.
+In the case PSL§(q) with 3| (g + €) or PSL2(q) with 3{g, we may explicitly construct a cyclic Sylow
+3-subgroup. Finally, if S = PSL2(q) with 3 | g, the Sylow 3-subgroup can be identified with the unipotent
+radical of SL(q), which is not cyclic unless g = 3, contradicting that S is simple. oO
+
+Our goal in the remainder of this section is to prove the following, from which we obtain Theorem C
+for p = 3 as a corollary.
+
+Theorem 3.7. Let S be a nonabelian simple group with order divisible by 3.
+
+(i) If S has a cyclic Sylow 3-subgroup, then there exist 15 # x1, X2 € Irr3(Bo(S))”! such that x1 extends
+to Aut(S).
+
+Gi) If S does not have a cyclic Sylow 3-subgroup and is not a group of Lie type defined in characteristic 3,
+then there exist nontrivial x1, x2, x3 € Irr3(Bo(S))” such that x; and x2 extend to Aut(S). In this
+case, if S is further not one of 26, 27, 2F4(2)', PSLy (q) with n < 4, or PSp4 (22"+1) | then there exist
+nontrivial x1, X2, X3 € Irry(Bo(S))*! such that x; each extend to Aut(S).
+
+(iii) If S is a group of Lie type in characteristic 3, then there exist nontrivial x1, x2, x3 € try (Bo(S))”!
+that are pairwise not Aut(S)-conjugate and such that x, is invariant under X, where X/S €
+
+Syl; (Aut(S)/S).
+
+We first consider Theorem 3.7 for sporadic and alternating groups, as well as some “small” groups of
+Lie type. For two positive integers n and m, we will use n || m to mean that n|m and gcd(n, m/n) = 1.
+
+Proposition 3.8. Theorem 3.7 holds for the sporadic simple groups, G2(3), 7F4(2)', B3(3), G2(2)' =
+PSU3(3), PSU4(3), and the alternating groups A, with n > 5.
+
+Proof. Since the result can be seen directly using GAP for the other cases, we may assume S = 2, with
+n > 10. In this case, S does not have a cyclic Sylow 3-subgroup and satisfies Aut(S) = G,, where G,,
+denotes the corresponding symmetric group.
+
+The characters of G,, are rational-valued and parametrized by partitions of n, with their degrees given by
+the hook formula. Further, two characters lie in the same 3-block if and only if they have the same 3-core.
+We also know that x € Irr(G,,) corresponding to the partition A restricts irreducibly to 2, if and only if

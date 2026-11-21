@@ -1,1 +1,1 @@
-A.3 [Ghate 1999, §5.2]. We have
+4. We have I j F(s) = H(s, k, j) · L(N)(ψF, 2s + k j) k+1 X n=0 (−1)nc′( j, n) Z ∞ Z 1 gn, j y2k−j+s dx dy, where H(s, k, j) := (−1) j j!0(s + k j)N 2s+k j (−2πi)k jπs (A-2) and c′( j, n) := 2k−2 j X ℓ=0 iℓ i · a( j, ℓ, n) −2b( j, ℓ, n)  . □ To compute this, we look at components separately. In particular, consider the integral J n,r F (s) := 2k + 2 n −1 Z ∞ Z 1 Fn(x, y)yr+s dx dy. The expression I j F is a linear combination of J n,2k−j F for varying n. David Loeﬄer and Chris Williams

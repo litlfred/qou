@@ -1,0 +1,45 @@
+28 Chapter 2 — Proof of the vanishing theorem(s)
+
+the origin (0,0) of X x X makes the following diagramm commutative:
+
+(a*L) 00) 1 @, Lo
+
+I Jaca
+a
+
+A
+
+Here Lo = ex (L) = ex (a*(L)) = (a°L) 0) since a0 ex xx = ex holds for
+the unit sections
+
+ex: {O} —> X and exyy: {(0,0)} —> XxX.
+
+With the above normalization, the unique element v € Lo with A(v) = 1 then
+satisfies @ '(a-v@B-v) = aB-v forall a,B EA.
+
+Let A,B € D?(X,A), and let pi, py : X x X — X be the projections onto
+the two factors. Using our fixed choice of @, we get an isomorphism
+
+yw: (AxB)y —> Ay *By
+
+defined by the commutative diagram
+
+(A*B)y if > Ay * By
+(Ra,(A BB) Ra,((A@L) &(B@L))
+| te «(id @S' @id)
+Ra, (id ®
+(ABB) @a*L) “““"*) . Ra, ((A BB) @ (LBL)
+
+where by S’ : p3(B) @ pj(L) —> p}(L) ® p3(B) we denote the symmetry
+constraint of the usual tensor product on the derived category.
+
+The isomorphisms y are compatible with the symmetry constraint S of
+the symmetric monoidal category (D?(X,A),*), i.e. for all A,B in D?(X, A)
+the diagram
+
+(Ax*B)y Ay * By
+J
+(B¥A)y v By *Ay
+
+is commutative. Indeed, unravelling the definition of S in [106] one sees that
+the commutativity of the above diagram is equivalent to the commutativity

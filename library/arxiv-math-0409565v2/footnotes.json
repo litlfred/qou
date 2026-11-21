@@ -1,0 +1,905 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0409565v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "xi<xjifi<j,m"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "quotientA/m"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "A/m"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "α = α"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "α = α1α"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "xα:= xα"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "xα:= xα1· xα"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "f= c"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "f= c1b"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "f= c1b1 + c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "f= c1b1 + c2b"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "suchthatb"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "suchthatb1>b"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "LM (f) := LM< (f) := b"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "LC (f) := LC< (f) := c"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "2:f"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "i"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ir"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "iλ"
+  },
+  {
+   "page": 5,
+   "mark": "u",
+   "context": "iλi"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "iλiu"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "iλiui · h"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "iλiui · hi · v"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "λ"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "λku"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "λkuk · gγk· v"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "LM (u"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "LM (uk · gγk· v"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "LM (uk · gγk· vk) ≤LM (f)wheneveru"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "LM (uk · gγk· vk) ≤LM (f)wheneveruk · gγk· v"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Theninthedivisionalgorithm,wemaychooseh"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Theninthedivisionalgorithm,wemaychoosehi∈Isothath"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λku"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λkuk · gγk· v"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "T:= {k∈K|LM (u"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "T:= {k∈K|LM (uk · gγk· v"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "aredone.Otherwise,letk"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "aredone.Otherwise,letk1̸=k"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "aredone.Otherwise,letk1̸=k2∈T ,anddenotec"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "uki· gγki· v"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "uki· gγki· vk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "BytheassumptionthatGwasaunitalGr¨obnerbasis,wehavethatc"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "uk1· gγ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "uk1· gγk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "uk1· gγk1· v"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "uk1· gγk1· vk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "uk1· gγk1· vk1−λ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "uk1· gγk1· vk1−λk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "uk1· gγk1· vk1−λk2u"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "uk1· gγk1· vk1−λk2uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "uk1· gγk1· vk1−λk2uk2· gγ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "uk1· gγk1· vk1−λk2uk2· gγk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "uk1· gγk1· vk1−λk2uk2· gγk2· v"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "uk1· gγk1· vk1−λk2uk2· gγk2· vk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "h = λ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "h = λk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "h = λk1u"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "h = λk1uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "h = λk1uk1· gγ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "h = λk1uk1· gγk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "h = λk1uk1· gγk1· u"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "h = λk1uk1· gγk1· uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "h = λk1uk1· gγk1· uk1+ λ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "h = λk1uk1· gγk1· uk1+ λk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "h = λk1uk1· gγk1· uk1+ λk2u"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "h = λk1uk1· gγk1· uk1+ λk2uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "h = λk1uk1· gγk1· uk1+ λk2uk2· gγ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "h = λk1uk1· gγk1· uk1+ λk2uk2· gγk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "h = λk1uk1· gγk1· uk1+ λk2uk2· gγk2· u"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "h = λk1uk1· gγk1· uk1+ λk2uk2· gγk2· uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λku"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λkuk · gγk· u"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "c"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ck"
+  },
+  {
+   "page": 6,
+   "mark": "u",
+   "context": "ck1"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "ck1u"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ck1uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "ck1uk1· gγ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ck1uk1· gγk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "ck1uk1· gγk1· v"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ck1uk1· gγk1· vk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "λk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λk1u"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "λk1uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λk1uk1· gγ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "λk1uk1· gγk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λk1uk1· gγk1· u"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "λk1uk1· gγk1· uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "+ λ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "+ λk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "+ λk2u"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "+ λk2uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "+ λk2uk2· gγ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "+ λk2uk2· gγk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "+ λk2uk2· gγk2· u"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "+ λk2uk2· gγk2· uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "c"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ck"
+  },
+  {
+   "page": 6,
+   "mark": "u",
+   "context": "ck1"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "ck1u"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ck1uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "ck1uk1· gγ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ck1uk1· gγk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "ck1uk1· gγk1· v"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ck1uk1· gγk1· vk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λku"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λkuk · gγk· u"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "λk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λk1−λ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "λk1−λk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "uk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "uk1· gγ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "uk1· gγk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "uk1· gγk1· v"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "uk1· gγk1· vk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λku"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "λkuk · gγk· u"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "supposethatf"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "ic"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "f= c"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "f= c1f"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "f"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "f"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "+ (c"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "+ (c1a"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "+ (c1a1 + c"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "+ (c1a1 + c2a"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "+ (c"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "+ (c1a"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "+ (c1a1 + · · · cnan)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "+(c"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "+(c1a"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "c"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "c1a"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "c1a1S"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "c1a1S1,"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "c1a1S1,2 + (c"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "c1a1S1,2 + (c1a"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "c1a1S1,2 + (c1a1 + c"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "c1a1S1,2 + (c1a1 + c2a"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "c1a1S1,2 + (c1a1 + c2a2)S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "c1a1S1,2 + (c1a1 + c2a2)S2,"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "+(c"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "+(c1a"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "+(c1a1 + · · · + cn−1an−1)Sn−1,n + 0"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "h"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "AsAhasanR-basisgivenbyBthenwemaywriteh"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "k∈K"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "k∈Kc"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "k∈Kckβ"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "k∈Kckβk,"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "k∈Kckβk,h"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "k′with"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "k′withc"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "k′∈R∗andβ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "k′β"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "k′βk · g"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i) LM (h"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i) LM (hi) · g"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "λ"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "λli,j∈R∗g"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "λ"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "λli,ju"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "λli,juli,j· g"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "λli,juli,j· gli,j· v"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "u"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "uli,j, v"
+  }
+ ]
+}

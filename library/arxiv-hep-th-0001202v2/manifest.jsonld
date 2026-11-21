@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0001202v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0001202v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-0001202v2",
+  "title": "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees",
   "contains": [
     "library/arxiv-hep-th-0001202v2/sections/sec-front-matter",
     "library/arxiv-hep-th-0001202v2/sections/sec-000",
@@ -26,7 +26,7 @@
     "library/arxiv-hep-th-0001202v2/sections/sec-011"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -36,7 +36,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-0001202v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0001202v2.pdf",
     "source_sha256": "b2e3e22ea3d51c0b10a6678d71c5d5b265646c5c8902b7d24b35a3162f709214",
     "pages": 21,

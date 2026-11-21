@@ -7,10 +7,11 @@ section_number: null
 pages: 3-4
 source_pdf: 2302.05903v2.pdf
 source_sha256: 9a17abd36cc8a317
-doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.974
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.934
+doc_brief: "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities"
 ---
 Eq.([\[gendia\]](#gendia){reference-type="ref" reference="gendia"}) counts Young diagrams, or the ordered integer partitions, while ([\[Cauchy\]](#Cauchy){reference-type="ref" reference="Cauchy"}) is the Cauchy identity for the Schur functions, i.e. for the characters of linear groups $GL_N$. Technically, upon choosing $p_k=\bar p_k=\delta_{k,1}$ in ([\[Cauchy\]](#Cauchy){reference-type="ref" reference="Cauchy"}), the difference between the two formulas is in the power of $d_R:=S_R\{\delta_{k,1}\}$: they are the sums of $d_R^0$ and $d_R^2$, accordingly. Generally, $|R|!\cdot d_R={\rm dim}_R$ are *integer*-valued dimensions of representations of the symmetric group ${\cal S}_{|R|}$ [@Fulton], and the sum $$\begin{aligned}
 \xi_m:=\sum_R q^{|R|} d_R^m = \sum_R q^{|R|}\frac{{\rm dim}_R^m}{(|R|!)^m}

@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T06:11:20.320579+00:00",
-  "commitSha": "e0b5414868c78e877526083b09db396b0cf19fa3",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:41:07.895771+00:00",
+  "commitSha": "37a281c359874db2715c3fddd74a2aa775d5fe24",
   "assertions": [
     {
       "name": "every_CHAIN_triple_IS_the_consecutive_triple",
@@ -42,20 +42,20 @@
     },
     {
       "name": "the_6679_monotone_null_is_majority_NON_vacuous",
-      "computed": "870",
-      "expected": "870",
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0",
-      "unit": "triples",
-      "source": "the Delta = 1 (vacuous) count, recorded so the non-vacuous majority is visible in the witness rather than asserted in prose."
+      "unit": "bool",
+      "source": "the Delta = 1 (vacuous) count is strictly less than half of the monotone triples, so the non-vacuous majority is checked rather than asserted in prose."
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "milnor-one-separated-component-and-the-chain-residual",
   "scriptFile": "milnor_one_separated_component_and_the_chain_residual_probe.py",
-  "scriptHash": "34be4e4891a6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "491d6d30065c",
+  "scriptCommitSha": "44377533a9bb257c0bd1738195af90965db1b26c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,14 +63,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -92,18 +92,18 @@
         "sigma": {
           "separable": 393,
           "separable_nonzero": 0,
-          "separable_delta2": 182,
+          "separable_delta2": 0,
           "chain": 31,
           "chain_nonzero": 0,
-          "chain_delta2": 31
+          "chain_delta2": 0
         },
         "sigma^-1": {
           "separable": 393,
           "separable_nonzero": 0,
-          "separable_delta2": 182,
+          "separable_delta2": 0,
           "chain": 31,
           "chain_nonzero": 0,
-          "chain_delta2": 31
+          "chain_delta2": 0
         }
       },
       "rows": [
@@ -118,7 +118,7 @@
           "separable_delta2": 0,
           "chain": 1,
           "chain_nonzero": 0,
-          "chain_delta2": 1
+          "chain_delta2": 0
         },
         {
           "branch": "sigma",
@@ -128,10 +128,10 @@
           "A_minus_1": 2,
           "separable": 2,
           "separable_nonzero": 0,
-          "separable_delta2": 2,
+          "separable_delta2": 0,
           "chain": 2,
           "chain_nonzero": 0,
-          "chain_delta2": 2
+          "chain_delta2": 0
         },
         {
           "branch": "sigma",
@@ -141,10 +141,10 @@
           "A_minus_1": 2,
           "separable": 2,
           "separable_nonzero": 0,
-          "separable_delta2": 2,
+          "separable_delta2": 0,
           "chain": 2,
           "chain_nonzero": 0,
-          "chain_delta2": 2
+          "chain_delta2": 0
         },
         {
           "branch": "sigma",
@@ -154,10 +154,10 @@
           "A_minus_1": 3,
           "separable": 7,
           "separable_nonzero": 0,
-          "separable_delta2": 6,
+          "separable_delta2": 0,
           "chain": 3,
           "chain_nonzero": 0,
-          "chain_delta2": 3
+          "chain_delta2": 0
         },
         {
           "branch": "sigma",
@@ -167,10 +167,10 @@
           "A_minus_1": 5,
           "separable": 30,
           "separable_nonzero": 0,
-          "separable_delta2": 20,
+          "separable_delta2": 0,
           "chain": 5,
           "chain_nonzero": 0,
-          "chain_delta2": 5
+          "chain_delta2": 0
         },
         {
           "branch": "sigma",
@@ -180,10 +180,10 @@
           "A_minus_1": 7,
           "separable": 77,
           "separable_nonzero": 0,
-          "separable_delta2": 42,
+          "separable_delta2": 0,
           "chain": 7,
           "chain_nonzero": 0,
-          "chain_delta2": 7
+          "chain_delta2": 0
         },
         {
           "branch": "sigma",
@@ -193,10 +193,10 @@
           "A_minus_1": 11,
           "separable": 275,
           "separable_nonzero": 0,
-          "separable_delta2": 110,
+          "separable_delta2": 0,
           "chain": 11,
           "chain_nonzero": 0,
-          "chain_delta2": 11
+          "chain_delta2": 0
         },
         {
           "branch": "sigma^-1",
@@ -209,7 +209,7 @@
           "separable_delta2": 0,
           "chain": 1,
           "chain_nonzero": 0,
-          "chain_delta2": 1
+          "chain_delta2": 0
         },
         {
           "branch": "sigma^-1",
@@ -219,10 +219,10 @@
           "A_minus_1": 2,
           "separable": 2,
           "separable_nonzero": 0,
-          "separable_delta2": 2,
+          "separable_delta2": 0,
           "chain": 2,
           "chain_nonzero": 0,
-          "chain_delta2": 2
+          "chain_delta2": 0
         },
         {
           "branch": "sigma^-1",
@@ -232,10 +232,10 @@
           "A_minus_1": 2,
           "separable": 2,
           "separable_nonzero": 0,
-          "separable_delta2": 2,
+          "separable_delta2": 0,
           "chain": 2,
           "chain_nonzero": 0,
-          "chain_delta2": 2
+          "chain_delta2": 0
         },
         {
           "branch": "sigma^-1",
@@ -245,10 +245,10 @@
           "A_minus_1": 3,
           "separable": 7,
           "separable_nonzero": 0,
-          "separable_delta2": 6,
+          "separable_delta2": 0,
           "chain": 3,
           "chain_nonzero": 0,
-          "chain_delta2": 3
+          "chain_delta2": 0
         },
         {
           "branch": "sigma^-1",
@@ -258,10 +258,10 @@
           "A_minus_1": 5,
           "separable": 30,
           "separable_nonzero": 0,
-          "separable_delta2": 20,
+          "separable_delta2": 0,
           "chain": 5,
           "chain_nonzero": 0,
-          "chain_delta2": 5
+          "chain_delta2": 0
         },
         {
           "branch": "sigma^-1",
@@ -271,10 +271,10 @@
           "A_minus_1": 7,
           "separable": 77,
           "separable_nonzero": 0,
-          "separable_delta2": 42,
+          "separable_delta2": 0,
           "chain": 7,
           "chain_nonzero": 0,
-          "chain_delta2": 7
+          "chain_delta2": 0
         },
         {
           "branch": "sigma^-1",
@@ -284,10 +284,10 @@
           "A_minus_1": 11,
           "separable": 275,
           "separable_nonzero": 0,
-          "separable_delta2": 110,
+          "separable_delta2": 0,
           "chain": 11,
           "chain_nonzero": 0,
-          "chain_delta2": 11
+          "chain_delta2": 0
         }
       ]
     },

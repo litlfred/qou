@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1203.6531v1
-doc_title: "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0"
+doc_title: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n"
 section_id: sec-001-2-gröbner-shirshov-basis-and-reduced-words
 section_title: "Gröbner-Shirshov Basis and Reduced Words"
 section_number: 2
@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.826
+doc_brief: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨obner-Shirshov bases of f An and"
 ---
 ::: defn
 The affine Weyl group $\widetilde{A_n}$ has a presentation with generators $S=\{r_0,r_1, \ldots,r_n\}$ and defining relations

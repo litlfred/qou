@@ -2,315 +2,249 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1309.0865v1",
  "source_sha256": "e610a4fa938a7cc9",
- "brief": "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnati on of the Hecke category , a fundamental object in representation the ory .",
- "extended": "**SOERGEL CALCULUS**\n\n*BEN ELIAS AND GEORDIE WILLIAMSON*\n\n83 pp, 59 sections.\n\n**Abstract.** The monoidal category of Soergel bimodules is an incarnati on of the Hecke category , a fundamental object in representation the ory . W e present this cat- egory by generators and relations, using the language of pla nar diagrammatics. W e show that Libedinsky’s light leaves give a basis for morphis m spaces and give a new proof of Soergel’s classiﬁcation of the indecomposable Soe rgel bimodules. 1. I NTRODUCTION Let us recall the history of the Hecke algebra from the perspe ctives of algebraiza- tion and categoriﬁcation. 1.1. The Hecke algebra by generators and relations. LetG be a split ﬁnite reductive group over a ﬁnite ﬁeld Fq, and letB ⊂G be a Borel subgroup. A fundamental object in representation theory is the Hecke algebra FunB×B(G, C) ofB-biinvariant complex valued functions on G, with multiplication given by con- volution.\n\n**Outline.** 2 BEN ELIAS AND GEORDIE WILLIAMSON; 1 I NTRODUCTION; 1.1 The Hecke algebra by generators and relati; 1.2 The Hecke category. Beginning with the sem; 1.3 Soergel bimodules. Just as Iwahori gave an; 4 BEN ELIAS AND GEORDIE WILLIAMSON; 1.4 Soergel bimodules by generators and relati; 6 BEN ELIAS AND GEORDIE WILLIAMSON; 1.4.1 One color relations: It was pointed out ; 1.4.2 Two color relations: Two color graphs an; 8 BEN ELIAS AND GEORDIE WILLIAMSON; 1.4.3 Three color or “Zamolodchikov” relations; 10 BEN ELIAS AND GEORDIE WILLIAMSON; 1.5 Consequences for the structure of Soergel ; 12 BEN ELIAS AND GEORDIE WILLIAMSON; 1.7 Acknowledgements. Both authors would like ; 2 T HE HECKE ALGEBRA; 2.1 Basic deﬁnitions. Let (W,S ) be a Coxeter \n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: LLx,y is anR-basis for HomD(Bx,B y).\n- Theorem: holds) then this functor is an equivalence of monoid al categories.\n- Theorem 2.3: (Kazhdan-Lusztig [KL79]) There exists a unique basis {H w}w∈W of H as a\n- Theorem: , the assumption that the realization is balanced wi ll drastically simplify\n- Theorem 3.14: Let h be a Soergel realization of W . For all w ∈ W there exists a unique\n- Theorem 3.15: Let h be a Soergel realization ofW . There is a unique isomorphism of Z[v±1]-",
+ "brief": "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory.",
+ "extended": "**SOERGEL CALCULUS**\n\n*BEN ELIAS AND GEORDIE WILLIAMSON*\n\n83 pp, 46 sections.\n\n**Abstract.** The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory. We present this cat- egory by generators and relations, using the language of planar diagrammatics. We show that Libedinsky’s light leaves give a basis for morphism spaces and give a new proof of Soergel’s classiﬁcation of the indecomposable Soergel bimodules.\n\n**Outline.** Front matter; 1 Introduction; 1.1 The Hecke algebra by generators and relati; 1.2 The Hecke category; 1.3 Soergel bimodules; 1.4 Soergel bimodules by generators and relati; 1.4.1 One color relations:; 1.4.2 Two color relations:; 1.4.3 Three color or ``Zamolodchikov'' relatio; 1.5 Consequences for the structure of Soergel ; 1.6 Organization of the paper; 2 The Hecke Algebra; 1.7 Acknowledgements; 2.1 Basic definitions; 2.2 The Kazhdan-Lusztig basis; 2.3 The presentation in the Kazhdan-Lusztig ge; 2.4 The standard trace and the defect formula; 3 Soergel Bimodules",
  "tokens": {
-  "brief": 38,
-  "extended": 556
+  "brief": 37,
+  "extended": 266
  },
  "sections": [
   {
-   "id": "sec-000-2-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-i-ntroduction",
-   "title": "I NTRODUCTION",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
    "pages": "1-1"
   },
   {
-   "id": "sec-002-11-the-hecke-algebra-by-generators-and-relations",
-   "title": "The Hecke algebra by generators and relations. LetG be a split ﬁnite reductive",
+   "id": "sec-001-11-the-hecke-algebra-by-generators-and-relations",
+   "title": "The Hecke algebra by generators and relations",
    "pages": "1-2"
   },
   {
-   "id": "sec-003-12-the-hecke-category-beginning-with-the-seminal",
-   "title": "The Hecke category. Beginning with the seminal work [KL79] of Kazhdan and",
+   "id": "sec-002-12-the-hecke-category",
+   "title": "The Hecke category",
    "pages": "2-3"
   },
   {
-   "id": "sec-004-13-soergel-bimodules-just-as-iwahori-gave-an-int",
-   "title": "Soergel bimodules. Just as Iwahori gave an intrinsic construction of the Hecke",
+   "id": "sec-003-13-soergel-bimodules",
+   "title": "Soergel bimodules",
    "pages": "3-4"
   },
   {
-   "id": "sec-005-4-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-006-14-soergel-bimodules-by-generators-and-relations",
-   "title": "Soergel bimodules by generators and relations. A Bott-Samelson bimodule is a",
+   "id": "sec-004-14-soergel-bimodules-by-generators-and-relations",
+   "title": "Soergel bimodules by generators and relations",
    "pages": "4-6"
   },
   {
-   "id": "sec-007-6-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-008-141-one-color-relations-it-was-pointed-out-in-ek",
-   "title": "One color relations: It was pointed out in [EK] that most of the one color rela-",
+   "id": "sec-005-141-one-color-relations",
+   "title": "One color relations:",
    "pages": "6-7"
   },
   {
-   "id": "sec-009-142-two-color-relations-two-color-graphs-and-soe",
-   "title": "Two color relations: Two color graphs and Soergel bimodules for the dihedral",
+   "id": "sec-006-142-two-color-relations",
+   "title": "Two color relations:",
    "pages": "7-8"
   },
   {
-   "id": "sec-010-8-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "8-8"
+   "id": "sec-007-143-three-color-or-zamolodchikov-relations",
+   "title": "Three color or ``Zamolodchikov'' relations:",
+   "pages": "8-11"
   },
   {
-   "id": "sec-011-143-three-color-or-zamolodchikov-relations-there",
-   "title": "Three color or “Zamolodchikov” relations: There is one relation for each ﬁnite par-",
-   "pages": "8-10"
+   "id": "sec-008-15-consequences-for-the-structure-of-soergel-bim",
+   "title": "Consequences for the structure of Soergel bimodules",
+   "pages": "11-13"
   },
   {
-   "id": "sec-012-10-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-013-15-consequences-for-the-structure-of-soergel-bim",
-   "title": "Consequences for the structure of Soergel bimodules. Let D denote the di-",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-014-12-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "12-13"
-  },
-  {
-   "id": "sec-015-17-acknowledgements-both-authors-would-like-to-t",
-   "title": "Acknowledgements. Both authors would like to thank Mikhail Khovanov for",
+   "id": "sec-009-16-organization-of-the-paper",
+   "title": "Organization of the paper",
    "pages": "13-13"
   },
   {
-   "id": "sec-016-2-t-he-hecke-algebra",
-   "title": "T HE HECKE ALGEBRA",
+   "id": "sec-010-2-the-hecke-algebra",
+   "title": "The Hecke Algebra",
    "pages": "13-13"
   },
   {
-   "id": "sec-017-21-basic-deﬁnitions-let-ws-be-a-coxeter-system-a",
-   "title": "Basic deﬁnitions. Let (W,S ) be a Coxeter system and let e ∈ W denote the",
+   "id": "sec-011-17-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-012-21-basic-definitions",
+   "title": "Basic definitions",
    "pages": "13-14"
   },
   {
-   "id": "sec-018-14-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-019-22-the-kazhdan-lusztig-basis-the-hecke-algebra-i",
-   "title": "The Kazhdan-Lusztig basis. The Hecke algebra is equipped with a /CI -linear bar",
+   "id": "sec-013-22-the-kazhdan-lusztig-basis",
+   "title": "The Kazhdan-Lusztig basis",
    "pages": "14-15"
   },
   {
-   "id": "sec-020-23-the-presentation-in-the-kazhdan-lusztig-gener",
-   "title": "The presentation in the Kazhdan-Lusztig generators. As the elementsHs gen-",
+   "id": "sec-014-23-the-presentation-in-the-kazhdan-lusztig-gener",
+   "title": "The presentation in the Kazhdan-Lusztig generators",
    "pages": "15-16"
   },
   {
-   "id": "sec-021-16-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-022-24-the-standard-trace-and-the-defect-formula-a-t",
-   "title": "The standard trace and the defect formula. A trace on H is a Z[v±1]-linear map",
+   "id": "sec-015-24-the-standard-trace-and-the-defect-formula",
+   "title": "The standard trace and the defect formula",
    "pages": "16-18"
   },
   {
-   "id": "sec-023-18-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+   "id": "sec-016-3-soergel-bimodules",
+   "title": "Soergel Bimodules",
    "pages": "18-18"
   },
   {
-   "id": "sec-024-3-s-oergel-bimodules",
-   "title": "S OERGEL BIMODULES",
-   "pages": "18-18"
+   "id": "sec-017-31-realizations-of-coxeter-systems",
+   "title": "Realizations of Coxeter systems",
+   "pages": "18-22"
   },
   {
-   "id": "sec-025-31-realizations-of-coxeter-systems-for-both-soer",
-   "title": "Realizations of Coxeter systems. For both Soergel’s construction of Soergel bi-",
-   "pages": "18-20"
-  },
-  {
-   "id": "sec-026-20-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "20-22"
-  },
-  {
-   "id": "sec-027-22-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-028-32-t-echnicalities-it-is-important-to-remember-t",
-   "title": "T echnicalities. It is important to remember the key dichotomy in this paper: we",
+   "id": "sec-018-32-technicalities",
+   "title": "Technicalities",
    "pages": "22-23"
   },
   {
-   "id": "sec-029-33-demazure-operators-fixs-s-we-will-extend-the",
-   "title": "Demazure operators. Fixs ∈ S. We will extend the map ⟨α∨",
+   "id": "sec-019-33-demazure-operators",
+   "title": "Demazure operators",
    "pages": "23-24"
   },
   {
-   "id": "sec-030-24-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "24-24"
+   "id": "sec-020-34-soergel-bimodules-and-standard-bimodules",
+   "title": "Soergel bimodules and standard bimodules",
+   "pages": "24-27"
   },
   {
-   "id": "sec-031-34-soergel-bimodules-and-standard-bimodules-in-t",
-   "title": "Soergel bimodules and standard bimodules. In this section we give an intro-",
-   "pages": "24-26"
+   "id": "sec-021-35-categorification",
+   "title": "Categorification",
+   "pages": "27-29"
   },
   {
-   "id": "sec-032-26-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "26-27"
+   "id": "sec-022-36-localization",
+   "title": "Localization",
+   "pages": "29-31"
   },
   {
-   "id": "sec-033-35-categoriﬁcation-we-denote-the-split-grothendi",
-   "title": "Categoriﬁcation. We denote the split Grothendieck group of an additive cate-",
-   "pages": "27-28"
-  },
-  {
-   "id": "sec-034-28-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "28-29"
-  },
-  {
-   "id": "sec-035-36-localization-as-k-is-a-domain-so-is-r-let-q-d",
-   "title": "Localization. As k is a domain, so is R. Let Q denote the fraction ﬁeld of R,",
-   "pages": "29-30"
-  },
-  {
-   "id": "sec-036-30-ben-elias-and-geordie-williamson",
-   "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
-   "pages": "30-31"
-  },
-  {
-   "id": "sec-037-4-d-iagrammatics-for-standard-bimodules",
-   "title": "D IAGRAMMATICS FOR STANDARD BIMODULES",
+   "id": "sec-023-4-diagrammatics-for-standard-bimodules",
+   "title": "Diagrammatics for Standard Bimodules",
    "pages": "31-31"
   },
   {
-   "id": "sec-038-41-diagrammatic-deﬁnition-we-assume-that-the-rea",
-   "title": "Diagrammatic deﬁnition. We assume that the reader is familiar with diagram-",
+   "id": "sec-024-41-diagrammatic-definition",
+   "title": "Diagrammatic definition",
    "pages": "31-34"
   },
   {
-   "id": "sec-039-42-rex-moves-and-rex-graphs-the-terminology-of-t",
-   "title": "Rex moves and rex graphs. The terminology of this section is ad hoc, and non-",
+   "id": "sec-025-42-rex-moves-and-rex-graphs",
+   "title": "Rex moves and rex graphs",
    "pages": "34-37"
   },
   {
-   "id": "sec-040-5-d-iagrammatics-for-soergel-bimodules",
-   "title": "D IAGRAMMATICS FOR SOERGEL BIMODULES",
+   "id": "sec-026-5-diagrammatics-for-soergel-bimodules",
+   "title": "Diagrammatics for Soergel Bimodules",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-027-51-generators-and-relations",
+   "title": "Generators and relations",
    "pages": "37-42"
   },
   {
-   "id": "sec-041-52-jones-wenzl-morphisms-presenting-the-bott-sam",
-   "title": "Jones-Wenzl morphisms. Presenting the Bott-Samelson category in rank 2 is",
+   "id": "sec-028-52-jones-wenzl-morphisms",
+   "title": "Jones-Wenzl morphisms",
    "pages": "42-45"
   },
   {
-   "id": "sec-042-1-at-genericq-for-any-0-k-m-the-direct-sum-decom",
-   "title": "(at genericq), for any 0 ≤k <m. The direct sum decomposition",
-   "pages": "45-45"
+   "id": "sec-029-53-the-functor-to-bimodules",
+   "title": "The functor to bimodules",
+   "pages": "45-46"
   },
   {
-   "id": "sec-043-53-the-functor-to-bimodules-we-now-ﬁx-a-realizat",
-   "title": "The functor to bimodules. We now ﬁx a realization where Demazure Surjec-",
-   "pages": "45-53"
+   "id": "sec-030-54-localization",
+   "title": "Localization",
+   "pages": "46-53"
   },
   {
-   "id": "sec-044-55-computation-using-localization-each-object-bx",
-   "title": "Computation using localization. Each object Bx in D splits in Kar (DQ) as the",
+   "id": "sec-031-55-computation-using-localization",
+   "title": "Computation using localization",
    "pages": "53-55"
   },
   {
-   "id": "sec-045-56-unbalanced-realizations-now-we-discuss-the-di",
-   "title": "Unbalanced realizations. Now we discuss the diagrammatic alterations which",
+   "id": "sec-032-56-unbalanced-realizations",
+   "title": "Unbalanced realizations",
    "pages": "55-57"
   },
   {
-   "id": "sec-046-6-l-ibedinsky-s-light-leaves",
-   "title": "L IBEDINSKY ’S LIGHT LEAVES",
+   "id": "sec-033-6-libedinskys-light-leaves",
+   "title": "Libedinsky's Light Leaves",
    "pages": "57-57"
   },
   {
-   "id": "sec-047-61-diagrammatics-for-light-leaves-fix-a-rex-w-we",
-   "title": "Diagrammatics for light leaves. Fix a rex w. We want to ﬁnd a basis of dia-",
+   "id": "sec-034-61-diagrammatics-for-light-leaves",
+   "title": "Diagrammatics for light leaves",
    "pages": "57-60"
   },
   {
-   "id": "sec-048-62-localizing-light-leaves-let-us-ﬁx-a-light-lea",
-   "title": "Localizing light leaves. Let us ﬁx a light leaves map LLx,e, with e expressing",
+   "id": "sec-035-62-localizing-light-leaves",
+   "title": "Localizing light leaves",
    "pages": "60-62"
   },
   {
-   "id": "sec-049-63-double-leaves-the-previous-section-was-essent",
-   "title": "Double leaves. The previous section was essentially a discussion of mapsBw →",
+   "id": "sec-036-63-double-leaves",
+   "title": "Double leaves",
    "pages": "62-64"
   },
   {
-   "id": "sec-050-64-cellularity-we-assume-theorem-611-so-that-hom",
-   "title": "Cellularity. We assume Theorem 6.11, so that Hom spaces are free leftR-modules",
+   "id": "sec-037-64-cellularity",
+   "title": "Cellularity",
    "pages": "64-65"
   },
   {
-   "id": "sec-051-65-the-diagrammatic-character-recall-that-for-an",
-   "title": "The diagrammatic character. Recall that for any ideal I ⊂ W in the Bruhat",
-   "pages": "65-66"
+   "id": "sec-038-65-the-diagrammatic-character",
+   "title": "The diagrammatic character",
+   "pages": "65-69"
   },
   {
-   "id": "sec-052-66-soergels-theorem-we-present-here-another-proo",
-   "title": "Soergel’s theorem. We present here another proof of Soergel’s Categoriﬁcation",
-   "pages": "66-69"
-  },
-  {
-   "id": "sec-053-67-the-equivalence-to-bimodules-in-this-section",
-   "title": "The equivalence to bimodules. In this section we assume that h is a Soergel",
+   "id": "sec-039-67-the-equivalence-to-bimodules",
+   "title": "The equivalence to bimodules",
    "pages": "69-69"
   },
   {
-   "id": "sec-054-7-d-ouble-leaves-span",
-   "title": "D OUBLE LEAVES SPAN",
+   "id": "sec-040-7-double-leaves-span",
+   "title": "Double Leaves Span",
    "pages": "69-70"
   },
   {
-   "id": "sec-055-71-negative-positive-decompositions-for-the-rest",
-   "title": "Negative-positive decompositions. For the rest of this chapter we will be in-",
-   "pages": "70-73"
+   "id": "sec-041-71-negative-positive-decompositions",
+   "title": "Negative-positive decompositions",
+   "pages": "70-72"
   },
   {
-   "id": "sec-056-ll-this-is-sufﬁcient-to-prove-the-base-case-wher",
-   "title": "This is sufﬁcient to prove the base case where w = e ∈ W , since it is clear that",
+   "id": "sec-042-72-modulo-lower-terms",
+   "title": "Modulo lower terms",
+   "pages": "72-73"
+  },
+  {
+   "id": "sec-043-73-reduction-to-working-modulo-lower-terms",
+   "title": "Reduction to working modulo lower terms",
    "pages": "73-73"
   },
   {
-   "id": "sec-057-74-the-grand-induction-now-comes-the-crux-of-the",
-   "title": "The grand induction. Now comes the crux of the argument, a giant induction",
-   "pages": "73-82"
-  },
-  {
-   "id": "sec-058-references",
-   "title": "References",
-   "pages": "82-83"
+   "id": "sec-044-74-the-grand-induction",
+   "title": "The grand induction",
+   "pages": "73-83"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

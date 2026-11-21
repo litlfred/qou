@@ -15,7 +15,7 @@ LaTeX label: `prop:categorical-jet-prolongation`
 ## References
 
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §1-quantum-observable-universe/categorical-jet-prolongation
+- [leitner2026] §1-quantum-observable-universe/categorical-jet-prolongation
 -/
 
 open CategoryTheory MonoidalCategory
@@ -26,7 +26,7 @@ universe u v
 
 /-- **Prolonged connection data**: the jet prolongation J¹(A)
     inherits a connection ∇' from the original connection ∇. -/
--- Ref: [kock2004], [manuscript] §1
+-- Ref: [kock2004], [leitner2026] §1
 structure ProlongedConnection (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The original Frobenius–Hopf object A. -/
@@ -53,7 +53,7 @@ structure ProlongedConnection (C : Type u) [Category.{v} C]
 
     J¹(A) inherits multiplication, comultiplication, antipode, and
     Frobenius form from A, making it a Frobenius–Hopf object. -/
--- Ref: [kock2004], [manuscript] §1
+-- Ref: [kock2004], [leitner2026] §1
 structure JetPreservesQU (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The original Frobenius–Hopf object. -/
@@ -92,7 +92,7 @@ structure JetPreservesQU (C : Type u) [Category.{v} C]
     satisfied by the identity.  The prolongation content the proposition
     describes is therefore nowhere in the type, and adding it is a
     structure refactor that is deliberately not guessed at here. -/
--- Ref: [manuscript] prop:categorical-jet-prolongation
+-- Ref: [leitner2026] prop:categorical-jet-prolongation
 theorem categorical_jet_prolongation (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) : ∃ (jet : JetPreservesQU C), jet.original = fh :=

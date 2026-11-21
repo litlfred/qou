@@ -27,7 +27,7 @@ observable-level match is degenerate (`Im(q₀)=0`, see
 
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-06-28-frakV-zeta4-fibre-vs-observable.md
+-- Ref: [leitner2026] docs/audits/2026-06-28-frakV-zeta4-fibre-vs-observable.md
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic

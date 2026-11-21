@@ -1,0 +1,38 @@
+7
+
+Overview of analytic methods for multivariate
+GFs
+
+We now return to the problem at the heart of this book: asymptotically ap-
+proximating the coefficients of a convergent Laurent series expansion F(z) =
+Drezd 4yz” through the Cauchy integral representation
+
+d
+«=(s) [entree (7.1)
+2ni T
+
+for a suitable domain of integration T. We accomplish this by deforming T
+and using residue computations to reduce the Cauchy integral into a finite sum
+of local integrals that can be asymptotically approximated using the results of
+Chapter 5. When this approach succeeds, which it does in generic situations,
+it provides asymptotic formulae of the form
+
+dp & » NyPy(r), (7.2)
+wecritical(?)
+where the sum is over a finite set of certain critical points w, each ®,, is
+an asymptotic series that can be computed to any desired accuracy algorith-
+mically, and the coefficients n,, are integers that may or may not be easy to
+compute.
+
+This textbook is designed so that combinatorialists can find easy-to-apply
+results with hypotheses and conclusions that are comprehensible with a mini-
+mum of cross-referencing to lengthy definitions, while readers with topologi-
+cal background can see the larger framework behind the results using advanced
+methods, such as those described in Chapters 4-6 and the appendices. In or-
+der to achieve this goal, the current chapter gives an overview of our approach
+and its relationship to the higher-level theories we draw on. Chapter 8 takes a
+computational view of the same material, giving explicit descriptions of how
+to compute the quantities appearing in the analysis using a computer alge-
+bra system. This material out of the way, Chapters 9-11 give our asymptotic
+
+169

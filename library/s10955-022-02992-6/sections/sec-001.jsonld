@@ -9,14 +9,13 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Introduction",
+  "title": "Abstract",
   "pageStart": 1,
-  "pageEnd": 4,
+  "pageEnd": 1,
   "contains": [
-    "library/s10955-022-02992-6/blocks/prose-sec-001",
-    "library/s10955-022-02992-6/blocks/lem-sec-001-01"
+    "library/s10955-022-02992-6/blocks/prose-sec-001"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10955-022-02992-6",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10955-022-02992-6",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,1 +1,1 @@
-For large b, (1 + Jk), k≥ 1 are simultaneously invertible
+The equation (2.21) can be written as −(1−z)h(z) = F(z)−ˆΛh(z)+ ˆB Z z ǫ h(s)ds− n X j=1 Z z ǫ hj(s)Dj(s−z)ds (2.27) where F(z) := N (H)(1 −z) + F1(z) (2.28) Dj = X |l|≥1 ljGl ∗H∗¯lj + X |l|≥2 ljg0,lH∗¯lj; ¯lj := (l1, l2, ..(lj −1), ..ln) (2.29) (cf. also (1.24)) extend to analytic functions in Dǫ (cf. Proposition 18). Moreover, if H is a vector in L1 b(R+) then, for large b, Dj ∈L1 b(R+) and the functions F(z) and Dj extend to analytic functions in Dǫ.

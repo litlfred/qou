@@ -9,13 +9,19 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Unfolding",
-  "pageStart": 15,
-  "pageEnd": 17,
+  "title": "Parameter Inference and Uncertainty Quantification",
+  "pageStart": 10,
+  "pageEnd": 14,
   "contains": [
-    "library/arxiv-2608.25107v1/blocks/prose-sec-013"
+    "library/arxiv-2608.25107v1/blocks/prose-sec-013",
+    "library/arxiv-2608.25107v1/blocks/figure-img-p013-1",
+    "library/arxiv-2608.25107v1/blocks/figure-img-p013-2",
+    "library/arxiv-2608.25107v1/blocks/figure-img-p013-3",
+    "library/arxiv-2608.25107v1/blocks/figure-img-p013-4",
+    "library/arxiv-2608.25107v1/blocks/figure-img-p013-5",
+    "library/arxiv-2608.25107v1/blocks/figure-img-p013-6"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2608.25107v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2608.25107v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2608.25107v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2608.25107v1/manifest.jsonld",
   "provenance": "ingested"
 }

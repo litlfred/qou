@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/04010141/blocks/prose-sec-000",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "(i) If J-L is a diagram and L is a loop with no marks, J-L II L =",
-  "pageStart": 6,
-  "pageEnd": 13,
-  "text": "../sections/sec-000-25-i-if-j-l-is-a-diagram-and-l-is-a-loop-with-no.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/04010141",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/04010141",
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 3,
+  "text": "../sections/sec-000-introduction.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/04010141/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/04010141/manifest.jsonld",
   "provenance": "ingested"
 }

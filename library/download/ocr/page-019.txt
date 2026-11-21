@@ -1,0 +1,48 @@
+Concentration of empirical distribution functions 1403
+
+where B = (Mo)??n-"/3. In particular, up to some absolute constant C,
+E|Fn(@x) — G@)| < CB + ||F - GI. (6.7)
+
+Let us stress that in all of these applications of Proposition 5.4, only the indicator functions
+FS = 1(~co,x] were used. One may therefore try to get more information about deviations of the
+empirical distributions F, from the mean F by applying the basic bounds (5.5) and (5.6) with
+different (non-smooth) functions f.
+
+For example, of considerable interest is the so-called local regime, where one tries to estimate
+the number
+
+Ny; =card{i <n: X; € 1}
+
+of observations inside a small interval J = [x, x + ¢] and to take into account the size of the
+increment ¢ = |/|. In case of 1.i.d. observations, this may done using various tools; already, the
+formula
+1 F(x+e)— F(x)
+Var(Fn(D) = =F) (1 — FU) = ——————
+suggests that when F is Lipschitz, F,(/) has small oscillations for small ¢ (where F, and F are
+treated as measures).
+However, the infimum- and supremum-convolution operators P,; f and Q, f do not provide
+such information. Indeed, for the indicator function f = 17, by (5.5), we only have, similarly to
+Proposition 6.1, that
+
+logEe!"O-FO) <i[ (F(x +e +h) — F(x)) — (F(x) — F(x —h))],
+
+where t > 0 andh=,/ 2ort Here, when h is fixed and ¢ — 0, the right-hand side is not van-
+ishing, in contrast with the i.i.d. case. This also shows that standard chaining arguments, such
+as Dudley’s entropy bound or more delicate majorizing measure techniques (described, e.g., in
+[40]), do not properly work through the infimum-convolution approach.
+
+Nevertheless, the above estimate is still effective for ¢ of order h, so we can control devi-
+ations of F,(/) — F(Z) relative to |/| when the intervals are not too small. This can be done
+with the arguments used in the proof of Proposition 6.3 or, alternatively (although with worse
+absolute constants), one can use the inequality (6.3), by applying it to the points x and x + ¢.
+This immediately gives that
+
+P(|F,(1) — F(D| = 2Br} < 42327.
+
+Changing variables, one may rewrite the above in terms of N; as
+
+ltl)?
+P{|N; —nF(1)| > nd|I|} < sexo{e( “U)
+with c = 1/112. Note that the right-hand side is small only when |/| >> 8/5, which is of order
+n~'/3 with respect to the number of observations.
+This can further be generalized if we apply Proposition 6.4.

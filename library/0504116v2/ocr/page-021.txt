@@ -1,0 +1,43 @@
+Deforming hyperbolic 3—manifolds with boundary 455
+
+Corollary 3.6 Fix a boundary edge f lying on a compact lateral hexagon of some
+tetrahedron of T , and let & : Q(T) > R be the function which associates to x € 2(T)
+the length of f in the geometric realization parameterized by x. Then det, =0.
+
+Corollary 3.7 Fix an internal edge f in a compact tetrahedron of T and let af: Q(T)
+— R be the function that associates to x € Q(T) the dihedral angle assigned to f by x.
+Then dd. =0.
+
+3.3. Infinitesimal deformations of the geodesic boundary
+
+Let Teich(ON) be the Teichmiiller space of hyperbolic structures on ON, ie, the space of
+equivalence classes of hyperbolic metrics on ON, where two such metrics are considered
+equivalent if they are isometric through a diffeomorphism homotopic to the identity
+of ON. For x € Q(T) we denote by B(x) € Teich(ON) the equivalence class of the
+hyperbolic structure induced by N(x) on ON. It is well-known that Teich(ON) admits a
+structure of differentiable manifold such that B: Q(7) — Teich(ON) is smooth. As a
+consequence of Mostow-Prasad’s rigidity Theorem and of Proposition 3.4 we get the
+following:
+
+Proposition 3.8 We have dB,, = 0.
+
+A Cohomology theory of representations
+
+A.1_ The tangent space to a representation
+
+Let G be a Lie group with associated Lie algebra g and I be any group, and denote by
+R(L, G) the set of representations of [ in G. We say that a path {p, € R(T, G): te
+(—e, €)} is smooth if p(y) is a smooth function of t for any y € T. If {p;} is a smooth
+path of representations, the tangent vector to the map t+ p;,(7) at 0 gives an element
+in T,,(yG. Identifying this tangent space with g = T;G by right translation we get an
+element (7) of the Lie algebra g:
+
+d
+po) =F] _ (edo!) -
+
+Differentiating the homomorphism relation p;(7y172) = pr(y1)pr(y2) we see that 6: T
+g satisfies the so-called cocycle relation
+
+PONY2) = PCN) + Ad(po(1))(H2)),
+
+Algebraic & Geometric Topology 6 (2006)

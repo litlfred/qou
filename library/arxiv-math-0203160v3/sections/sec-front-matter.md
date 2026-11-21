@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0203160v3.pdf
 source_sha256: a84f478d72d40af2
 toc_source: inferred
+doc_brief: "arXiv:math/0203160v3 [math.QA] 28 Oct 2002 — We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on"
 ---
 arXiv:math/0203160v3  [math.QA]  28 Oct 2002
 Diﬀerential and complex geometry of

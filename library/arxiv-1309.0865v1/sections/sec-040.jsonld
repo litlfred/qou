@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1309.0865v1/sections/sec-040",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Double Leaves Span",
+  "pageStart": 69,
+  "pageEnd": 70,
+  "contains": [
+    "library/arxiv-1309.0865v1/blocks/prose-sec-040"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.0865v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.0865v1/manifest.jsonld",
+  "provenance": "ingested"
+}

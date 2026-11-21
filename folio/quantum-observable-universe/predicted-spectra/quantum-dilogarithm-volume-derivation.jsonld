@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prf-quantum-dilogarithm-volume",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-sci:Proof",
     "doco:Section"
   ],
   "label": "prf:quantum-dilogarithm-volume",
@@ -15,7 +16,7 @@
   "title": "Derivation of the quantum dilogarithm volume from the topological mass formula",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-quantum-dilogarithm-volume",
-    "papers/quantum-observable-universe/blocks/prop-topological-mass-formula"
+    "papers/quantum-observable-universe/blocks/conj-topological-mass-formula"
   ],
   "text": "quantum-dilogarithm-volume-derivation.md",
   "provenance": "authored"

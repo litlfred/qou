@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/0406242v4/blocks/prose-sec-023",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "B.1 Volume estimates for bundles",
-  "pageStart": 40,
-  "pageEnd": 41,
-  "text": "../sections/sec-023-b1-volume-estimates-for-bundles.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0406242v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0406242v4",
+  "title": "A.5 Flat tetrahedra never maximize volume",
+  "pageStart": 37,
+  "pageEnd": 40,
+  "text": "../sections/sec-023-a5-flat-tetrahedra-never-maximize-volume.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406242v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406242v4/manifest.jsonld",
   "provenance": "ingested"
 }

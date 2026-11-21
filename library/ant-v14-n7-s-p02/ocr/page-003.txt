@@ -1,0 +1,49 @@
+Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1713
+
+In [Jarossay 2015], by writing these two expressions and observing that they are equal, we get an
+expression for p-adic cyclotomic multiple zeta values in terms of the numbers har,«((1;)a3 (&)a+1) and
+vice-versa. We are going to do something similar here, not for the harmonic Frobenius but for the study of
+the numbers harga ((ni)a; (&)a+1), as functions of a € N*. Since the harmonic Frobenius can be expressed
+in terms of these numbers, this will directly provide a study of the iterated harmonic Frobenius in terms
+of its number of iterations.
+
+After some preliminaries (Section 1) we will do this study in terms of integrals (Section 2), in terms
+of series (Section 3), and we will use the fact that these two ways give the same result (Section 4). In
+Section 5 we will go back from the harmonic Frobenius to the Frobenius.
+
+Moreover, we will keep track of the motivic structure underlying this framework. Indeed, p-adic
+cyclotomic multiple zeta values are reductions of p-adic periods [Yamashita 2010], and there is a motivic
+Galois action on the pro-unipotent fundamental groupoid of P! \ {0, j1y, 00} [Deligne and Goncharov
+2005, Section 5].
+
+The Frobenius is expressed by means of the Ihara action (1-1), which is the image of the motivic Galois
+action by a certain morphism (see Section 1A3). In [Jarossay 2015], the passage from the Frobenius
+to the harmonic Frobenius lifts to a passage from the Ihara action to an operation which we called the
+pro-unipotent harmonic action of integrals, and we also find a pro-unipotent harmonic action of series
+(see Section 1D). The interest of pro-unipotent harmonic actions is that, being byproducts of the motivic
+Galois action, they retain certain properties of motivic Galois actions; and having a computation which
+keeps track of the motivic Galois action is key for us. The pro-unipotent harmonic actions are the main
+objects in our papers [Jarossay 2014; 2016a; 2016b] in which we show the compatibility between our
+computation and the motivic Galois theory of p-adic cyclotomic multiple zeta values.
+
+Establishing the definition of pro-unipotent harmonic actions requires enriching the pro-unipotent
+fundamental groupoid, which is a groupoid in affine schemes over P! \ {0, zy, 00} by turning it into a
+groupoid in ultrametric complete normed algebras [Jarossay 2015, Section 1].
+
+0C. A few definitions. The study will require new definitions. First, we will define an ad hoc notion
+of contraction mapping (Definition 1B.2). We will show that the Frobenius at base-points (i, I) isa
+contraction in our ad hoc sense. This will shed light on the dynamics of the Frobenius which has a unique
+fixed point. Thus, the ultrametric framework established in [Jarossay 2015] will be crucial here because
+in this framework we will introduce a notion of contraction mapping and we will see that the Frobenius is
+a contraction. Keeping track of the motivic structures will also require new definitions.
+
+We will study har,a as a function of @ “in terms of integrals” (Section 2) by viewing har,a via their
+expression in terms of p-adic cyclotomic multiple zeta values proved in the main theorem of [Jarossay
+2015]. This will be done in two different ways, corresponding to the two types of p-adic cyclotomic
+multiple zeta values evoked in Section 0A:
+
+(i) A way involving the fixed point of the Frobenius and the numbers KZ, It will lead us to introduce a
+
+f1.0 (Definition 2A.3), which is a variant of
+
+pro-unipotent harmonic action of integrals at (1, 0), o).°

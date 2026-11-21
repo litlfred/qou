@@ -9,7 +9,7 @@ projective line ℙ(V), via a morphism 𝟙 → Sym^n(𝒦_p) ⊗ ℒ_p^bind.
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ), taken
 from `QOU.Archimedean.GroundRing` (the library home reused by the
@@ -24,7 +24,7 @@ open Archimedean (R_q)
 
 /-- Binding structure: the Hopf link and its Skein polynomial
     contribution to the hadronic binding energy. -/
--- Ref: [manuscript] §3, Definition: Hadron mass
+-- Ref: [leitner2026] §3, Definition: Hadron mass
 structure HadronBinding where
   /-- The q-deformation parameter. -/
   q : R_q
@@ -38,7 +38,7 @@ structure HadronBinding where
     its binding-link data.
 
     LaTeX: `\label{def:localized-hadron}` -/
--- Ref: [manuscript] §3, Definition: Localized hadron
+-- Ref: [leitner2026] §3, Definition: Localized hadron
 structure LocalizedHadron extends Hadron where
   /-- The categorical point: coordinate `θ` of the base point. -/
   point_theta : R_q

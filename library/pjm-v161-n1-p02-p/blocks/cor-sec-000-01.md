@@ -1,0 +1,1 @@
+We may assume that F is simultaneously a Ben- nequin surface relative to both H and H'. Moreover, there is a sec- ond shortest word W = W'{h), necessarily of the same length as W = W(L), in generators b\y hi, Z?3 which describes the Bennequin disc-band decomposition of F relative to H'.

@@ -1,0 +1,510 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1210.6243v1",
+  "pages": [
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 121,
+      "rasterImagesOnPage": 13,
+      "captionCandidates": [
+        "Figure 2. Mask movement. A mask is moved over a double-slit (inset) and the resulting probability distributions are shown. The mask allows the blocking of one slit, both slits, or neither slit in a non destructive way. The individual slits are 50 nm wide and separated by 280 nm. The mask has a 5 µm wide opening. The labeled dimensions are the positions of the center of the mask. P1, P2, and P12 are the probability distributions shown in ﬁgure 1. (See Supplementary Movie 1 for more positions of the mask.)"
+      ],
+      "labels": [
+        {
+          "text": "Controlled double-slit electron diﬀraction",
+          "bbox": [
+            72.0,
+            64.77,
+            280.3,
+            76.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            510.84,
+            65.07,
+            516.69,
+            77.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2760 nm",
+          "bbox": [
+            362.98,
+            119.03,
+            397.09,
+            128.36
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "2640 nm",
+          "bbox": [
+            362.98,
+            159.82,
+            397.09,
+            169.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "2540 nm",
+          "bbox": [
+            362.98,
+            200.6,
+            397.09,
+            209.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "P1",
+          "bbox": [
+            391.35,
+            215.26,
+            400.76,
+            225.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMR12"
+          ],
+          "sizes": [
+            6.48,
+            9.26
+          ]
+        },
+        {
+          "text": "2500 nm",
+          "bbox": [
+            362.98,
+            241.39,
+            397.09,
+            250.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "2240 nm",
+          "bbox": [
+            362.98,
+            282.18,
+            397.09,
+            291.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "1620 nm",
+          "bbox": [
+            362.98,
+            322.97,
+            397.09,
+            332.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "P12",
+          "bbox": [
+            391.35,
+            337.62,
+            404.03,
+            348.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMR12"
+          ],
+          "sizes": [
+            6.48,
+            9.26
+          ]
+        },
+        {
+          "text": "−140 nm",
+          "bbox": [
+            360.31,
+            363.58,
+            397.1,
+            373.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "−1440 nm",
+          "bbox": [
+            355.78,
+            404.37,
+            397.1,
+            413.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "−2320 nm",
+          "bbox": [
+            355.78,
+            445.15,
+            397.1,
+            454.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "P2",
+          "bbox": [
+            391.35,
+            460.06,
+            400.76,
+            470.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMR12"
+          ],
+          "sizes": [
+            6.48,
+            9.26
+          ]
+        },
+        {
+          "text": "−2500 nm",
+          "bbox": [
+            355.78,
+            485.94,
+            397.1,
+            495.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "−2540 nm",
+          "bbox": [
+            355.78,
+            526.73,
+            397.1,
+            536.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "−2580 nm",
+          "bbox": [
+            355.78,
+            567.52,
+            397.1,
+            577.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "−2680 nm",
+          "bbox": [
+            355.78,
+            608.31,
+            397.1,
+            617.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.26
+          ]
+        },
+        {
+          "text": "Figure 2.",
+          "bbox": [
+            143.76,
+            638.7,
+            190.62,
+            648.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Mask movement.",
+          "bbox": [
+            199.2,
+            638.97,
+            274.44,
+            648.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A mask is moved over a double-slit (inset) and the",
+          "bbox": [
+            282.96,
+            638.97,
+            516.7,
+            648.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "resulting probability distributions are shown. The mask allows the blocking of one",
+          "bbox": [
+            143.76,
+            651.93,
+            516.82,
+            661.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "slit, both slits, or neither slit in a non destructive way. The individual slits are 50",
+          "bbox": [
+            143.76,
+            664.89,
+            516.78,
+            674.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "nm wide and separated by 280 nm. The mask has a 5 µm wide opening. The labeled",
+          "bbox": [
+            143.76,
+            677.85,
+            516.73,
+            688.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "dimensions are the positions of the center of the mask.",
+          "bbox": [
+            143.76,
+            690.81,
+            396.24,
+            700.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P1, P2, and P12 are the",
+          "bbox": [
+            405.24,
+            690.81,
+            516.7,
+            702.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "probability distributions shown in ﬁgure 1.",
+          "bbox": [
+            143.76,
+            703.77,
+            336.72,
+            713.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(See Supplementary Movie 1 for more",
+          "bbox": [
+            345.12,
+            703.77,
+            516.82,
+            713.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "positions of the mask.)",
+          "bbox": [
+            143.76,
+            716.73,
+            243.26,
+            726.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

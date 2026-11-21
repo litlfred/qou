@@ -78,7 +78,7 @@ as the numeral it is).
   `prop:color-su3-from-g2`; what is proved is only that its **dimension** is
   `2 · 3` and that no orthogonal quotient shares it.
 
--- Ref: [manuscript] docs/audits/2026-09-04-the-g2-frame.md
+-- Ref: [leitner2026] docs/audits/2026-09-04-the-g2-frame.md
 -- Ref: [baez2002] https://doi.org/10.1090/S0273-0979-01-00934-X
 -/
 

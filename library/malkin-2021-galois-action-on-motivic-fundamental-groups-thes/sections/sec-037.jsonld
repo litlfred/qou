@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-037",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Degeneration to rational curves: Voronoi complexes and multiple -values",
+  "pageStart": 112,
+  "pageEnd": 120,
+  "contains": [
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-037",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-037-01",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-037-02",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-037-03",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-037-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "provenance": "ingested"
+}

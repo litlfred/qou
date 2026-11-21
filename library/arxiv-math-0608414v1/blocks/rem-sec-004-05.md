@@ -1,0 +1,1 @@
+If Sβ̸ = 0 (cf. Lemma 20) then the general solution of (1.25) is given by Y0(p) = (1 −λ)Y+ 0 (p) + λY− 0 (p) (2.54) with λ ∈C. Indeed, if a1̸ ≡0 (cf. Lemma 20) we get at least two distinct solutions of (2.49) (i.e., two distinct values of C) by taking diﬀerent values of λ in (2.54). The remark follows from (2.53) (2.52) and Lemma 24.. 2.5

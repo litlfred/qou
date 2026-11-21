@@ -1,0 +1,942 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1312.3086v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "4",
+   "text": "ℏ",
+   "marks": [
+    {
+     "page": 6,
+     "context": "by η"
+    },
+    {
+     "page": 6,
+     "context": "byP0=ηt× (1 −nrπΓ/Ω) × η"
+    },
+    {
+     "page": 6,
+     "context": "(1 −4πΓ/Ω) η"
+    }
+   ],
+   "block": "library/arxiv-1312.3086v1/blocks/prose-sec-005"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "2",
+   "text": "µBB",
+   "block": "library/arxiv-1312.3086v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p007-3",
+   "page": 7,
+   "mark": "3",
+   "text": "ℏ",
+   "block": "library/arxiv-1312.3086v1/blocks/prose-sec-005"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "ric) occupational states |n"
+  },
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "els{|i⟩,i = 1, . . . , K}inanensembleofN"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "odes{L"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "odes{Lk, R"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "|s⟩↔|r±,A⟩onasamplewithN"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "tation,(|r"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "tation,(|rks . . . s⟩+ |sr"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "tation,(|rks . . . s⟩+ |srks . . . s⟩+ . . . + |s . . . sr"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "eﬃciency can be made very close to one η"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "|r"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "tion|r"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "|N"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "|N0L, N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "|N0L, N1L, N"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "|N0L, N1L, N0R, N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "|N0L, N1L, N0R, N1R, N"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "|N0L, N1L, N0R, N1R, N0A, N"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "|N0L, N1L, N0R, N1R, N0A, N1A⟩wheretheN"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "{|N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "{|N0L, (1 −N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "{|N0L, (1 −N0L) , N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "{|N0L, (1 −N0L) , N0R, (1 −N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "{|N0L, (1 −N0L) , N0R, (1 −N0R) , N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "{|N0L, (1 −N0L) , N0R, (1 −N0R) , N0A, (1 −N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "|N"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "|N0L= N"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "|N0L= N1R= N"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "|N0L= N1R= N1A= 1;N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "|N0L= N1R= N1A= 1;N1L= N"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "|N0L= N1R= N1A= 1;N1L= N0R= N"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "ak,ja"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "k+1,j+ a"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "k,j"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "k,ja"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "η"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "ηt= exp (−L"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "lengthL"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "lengthL0isthusgivenby(1 −η"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "nianℏ"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "a"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "±|s⟩⟨r±|+h.c. where"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "4σ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "thepairs(R"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "thepairs(R2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "thepairs(R2k−1, L"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "thepairs(R2k−1, L2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(R"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(R2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(R2k, L"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(R2k, L2"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "measuresallsubnodes(R"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "measuresallsubnodes(Rk, L"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "subnodes(R"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "subnodes(Rk, L"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "2σ"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "4σ"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "2σ"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "2σ"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "\u0000\f\fN"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "\u0000\f\fN"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "\u0000\f\fN"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "\u0000\f\fN"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k=2W"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "whereW"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "whereWkdependsonthevalues(iL"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "whereWkdependsonthevalues(iLk, iR"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "|¯0A⟩,beforeapplyingtoeachpairofsubnodes(A"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "|¯0A⟩,beforeapplyingtoeachpairofsubnodes(Ak, R"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iL"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iLk, iR"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iLk, iRk)=(0, 0) ⇒W"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "subnode (A"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "subnode (Ak), respectively (A"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iL"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iLk, iR"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iLk, iRk)=(0, 1) ⇒W"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "(iLk, iRk)=(0, 1) ⇒Wk= σ"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iL"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iLk, iR"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iLk, iRk)=(1, 0) ⇒W"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "(iLk, iRk)=(1, 0) ⇒Wk= σ"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "pied,orinthestate|N"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "pied,orinthestate|NrA= 1⟩ifthesubnode(R"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iL"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iLk, iR"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(iLk, iRk)=(1, 1) ⇒W"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "(iLk, iRk)=(1, 1) ⇒Wk= σ"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "(iLk, iRk)=(1, 1) ⇒Wk= σzσ"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "whereσ"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "andσ"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "tionwillmissinoneofthesubnodes(R"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "tionwillmissinoneofthesubnodes(Rk, L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "exp (−L"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "km,η"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "c×¯n(P"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "estimatedbyT∼L"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "agnosis)isroughlygivenbyn"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Ω× Γwhere"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "Ω× Γwheren"
+  },
+  {
+   "page": 6,
+   "mark": "9",
+   "context": "∼5.5 × 10"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "lossyopticalﬁber(1/χ"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "1 −n"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "byP"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "byP0=η"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "byP0=ηt× (1 −n"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "bility, i.e.P"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "bility, i.e.P0≈exp (−L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "L"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "L0/c=0.5msforL"
+  },
+  {
+   "page": 6,
+   "mark": "8",
+   "context": "L0/c=0.5msforL0=100kmandc=2 × 10"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "whose expression is calculated in Appendix.For P"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "obtains¯n (P"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "andΓ = 1kHz,onegetsP"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ns"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "ns1/2, m"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "mplementationofourschemewithCsatoms.Theﬁgureshowsthestates|j"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "ationofourschemewithCsatoms.Theﬁgureshowsthestates|jl⟩j=0,1;"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "ns"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "ns1/2, m"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "6s"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "2; F= 4;"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "12p"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "12p1/2, m"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "12p"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "12p1/2, m"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "(km),foratotalnumberofnodesN=2"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "12p"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "12p1/2, m"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "thedecayrateofthelevel12p"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "entangle,foraﬁxednumberofN=2"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "retrievaleﬃciencyofη"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "and,notingthatp"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "and,notingthatp1 (n) = P"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "and,notingthatp1 (n) = P0 (1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "and,notingthatp1 (n) = P0 (1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "pK (n)=pK−1 (n) [1 −(1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "pK (n)=pK−1 (n) [1 −(1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "P"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "P0 (1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "P0 (1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "SettingSK (n)≡P"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "m=1"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "SK−1 (n) [1 −(1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "SK−1 (n) [1 −(1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "whenceSK (n)=S"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "whenceSK (n)=S1 (n) [1 −(1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "whenceSK (n)=S1 (n) [1 −(1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "S1 (n)=[1 −(1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "S1 (n)=[1 −(1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "S1 (n)=[1 −(1 −P0)n],SK (n)=[1 −(1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "S1 (n)=[1 −(1 −P0)n],SK (n)=[1 −(1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "1 −(1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "1 −(1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "1 −(1 −P0)n−1"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "pK (n) = [1 −(1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "pK (n) = [1 −(1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "[1 −(1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "[1 −(1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "1 −(1 −P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "1 −(1 −P0)"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "1 −(1 −P0)n−1"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "wherefK (n)=[1 −(1 −P"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "wherefK (n)=[1 −(1 −P0)"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "magnitude,¯n (P"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "magnitude,¯n (P0, N)≳−2 ln (N/2) / ln (1 −P"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "N/2gives"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "N/2givesagoodindicationonhow¯n (L"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "=−ln K/ ln (1 −P"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "6s"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "12p"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "7p"
+  }
+ ]
+}

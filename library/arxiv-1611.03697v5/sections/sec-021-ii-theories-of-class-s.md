@@ -7,10 +7,11 @@ section_number: null
 pages: 14-15
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
-doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.974
+latex_prose_ratio: 0.895
+latex_coverage_ratio: 0.99
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donaldson-Thomas theory."
 ---
 Our second  example relates to the class of $N=2$, $d=4$  gauge theories known as theories of class $S$. We consider only the case of  gauge group $\SU(2)$. To specify the theory we need to fix a genus $g\geq 0$ and a collection of $d\geq 1$ integers  \[m=(m_1,\cdots,m_d),  \quad m_i\geq 2.\]
  Mathematically, we can then proceed by introducing a complex orbifold  $\Quad(g,m)$ parameterizing pairs $(S,q)$ consisting of a Riemann surface $S$ of genus $g$, and a meromorphic quadratic differential $q$ on $S$ which has simple zeroes, and poles of the given multiplicities $m_i$. It is proved in \cite{BS} that this  space also  arises as a (discrete quotient of) the space of stability conditions on a  triangulated category $\cD(g,m)$ having the three-dimensional Calabi-Yau property. Applying generalized Donaldson-Thomas theory then leads to a variation of BPS structures over $\Quad(g,m)$, whose central charge is given by the periods of the differential $q$, and whose BPS invariants are counts of finite-length trajectories.

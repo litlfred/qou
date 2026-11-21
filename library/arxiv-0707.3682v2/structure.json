@@ -6,10 +6,22 @@
   "sha256": "609a6f67a0cd5fc8b4ab67d4ec03a229c4a6ed673cc809d4f66c949058967a14",
   "bytes": 565975,
   "pages": 44,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 5,
+    "reason": "15 of 473 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 25,
+    "reason": "11 of 525 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +33,26 @@
   "doi": null,
   "title": "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS",
   "authors_raw": "AMNON BESSER, PAUL BUCKINGHAM, ROB DE JEU",
-  "abstract": "We formulate a conjectural p-adic analogue of Borel\u2019s theorem re- lating regulators for higher K-groups of number \ufb01elds to special values of the corresponding \u03b6-functions, using syntomic regulators and p-adic L-functions. We also formulate a corresponding conjecture for Artin moti ves, and state a conjecture about the precise relation between the p-adic and classical situa- tions. Parts of the conjectures are proved when the number \ufb01e ld (or Artin motive) is Abelian over the rationals, and all conjectures a re veri\ufb01ed numeri- cally in some other cases.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181105152436-05'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
   "title_lines": [
    "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER",
    "FIELDS"
-  ]
+  ],
+  "abstract": "We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the corresponding ζ-functions, using syntomic regulators and p-adic L-functions. We also formulate a corresponding conjecture for Artin motives, and state a conjecture about the precise relation between the p-adic and classical situa- tions. Parts of the conjectures are proved when the number ﬁeld (or Artin motive) is Abelian over the rationals, and all conjectures are veriﬁed numeri- cally in some other cases.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181105152436-05'00'"
+  },
+  "title_raw": "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS. 1. Introduction The Beilinson conjectures about special values of L -functions [2] are a far reaching generalization of the class number formula for the Dedekind zeta function. For every algebraic variety X over the rationals it predicts the lead",
+   "outline": "1. Introduction",
+   "text": "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,112 +60,706 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The p-adiccomingchar Beilinson conjecture for totally real fields",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "A motivic version of the conjecture",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "More explicit  K -groups and regulators",
+   "title": "More explicit K -groups and regulators",
    "page": 17,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Computing  K -groups in practice",
+   "title": "Computing K -groups in practice",
    "page": 23,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Computing p-adiccomingchar L-functionscomingchar",
    "page": 27,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 30,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "5.1",
+   "title": "The subgroups of G = D8 and their ﬁxed ﬁelds in k/Q. Then Q[G] = Q[G]π1⊕Q[G]π2 where π1 = (1+σ2)/2 and π2 = 1−π1 are orthogonal",
+   "page": 25,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Splitting ﬁeld of x3 −x2 −3x + 1, where C(χπ) = 22 · 37. n = 3",
+   "page": 37,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Splitting ﬁeld of x3 −6x −2, where C(χπ) = 22 · 33 · 7. n = 3",
+   "page": 37,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Splitting ﬁeld of x3 −4x −1, where C(χπ) = 229. n = 3",
+   "page": 38,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Splitting ﬁeld of x3 −6x2 + 2, where C(χπ) = 22 · 34 · 5. n = 3",
+   "page": 38,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "Splitting ﬁeld of x4 −x3 −3x2 + x + 1, where C(χπ) = 5 · 29. n = 3",
+   "page": 39,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "Splitting ﬁeld of x4 −2x3 −3x2 + 4x + 1, where C(χπ) = 22 · 32 · 11. n = 3",
+   "page": 39,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "7",
+   "title": "Splitting ﬁeld of x4 −6x2 + 6, where C(χπ) = 27 · 32. n = 3",
+   "page": 40,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "8",
+   "title": "Splitting ﬁeld of x4 −6x2 −4x + 2, where C(χπ) = 25 · 17. n = 3",
+   "page": 40,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "9",
+   "title": "Splitting ﬁeld of x4 −2x3 + 5x2 −4x + 2, where C(χπ) = 23 · 17. n = 2",
+   "page": 41,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "10",
+   "title": "Splitting ﬁeld of x4 −x3 + 3x2 −2x + 4, where C(χπ) = 5 · 41. n = 2",
+   "page": 41,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "11",
+   "title": "Splitting ﬁeld of x4 −2x3 + 6x2 −5x + 2, where C(χπ) = 13 · 17. n = 2",
+   "page": 42,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "12",
+   "title": "Splitting ﬁeld of x4 + 3x2 −6x + 6, where C(χπ) = 22 · 32 · 11. n = 2",
+   "page": 42,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "13",
+   "title": "Splitting ﬁeld of x6 −x5 −6x4 + 7x3 + 4x2 −5x + 1, where C(χπ ⊗id) = 22 · 5 · 19. n = 3",
+   "page": 43,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "14",
+   "title": "Splitting ﬁeld of x6 −x5 −8x4 −x3 + 12x2 + 7x + 1, where C(χπ ⊗id) = 22 · 5 · 31. n = 3",
+   "page": 43,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "15",
+   "title": "Splitting ﬁeld of x6 −x5 −8x4 + 5x3 + 19x2 −4x −11, where C(χπ ⊗id) = 5 · 139. n = 3",
+   "page": 44,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "16",
+   "title": "Splitting ﬁeld of x6 −x5 −8x4 + 11x3 + 2x2 −5x + 1, where C(χπ ⊗id) = 22 · 32 · 13. n = 3",
+   "page": 44,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 806,
+   "n_words": 119,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 9,
-   "n_chars": 25998,
-   "n_words": 4795
+   "page_end": 4,
+   "n_chars": 11568,
+   "n_words": 1946,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-3-a-motivic-version-of-the-conjecture",
+   "id": "sec-001-2-the-p-adiccomingchar-beilinson-conjecture-for",
+   "number": "2",
+   "title": "The p-adiccomingchar Beilinson conjecture for totally real fields",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 14255,
+   "n_words": 2747,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-a-motivic-version-of-the-conjecture",
    "number": "3",
    "title": "A motivic version of the conjecture",
    "level": 1,
    "page_start": 9,
-   "page_end": 29,
-   "n_chars": 54625,
-   "n_words": 10668
+   "page_end": 17,
+   "n_chars": 21843,
+   "n_words": 4271,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-7-examples",
+   "id": "sec-003-4-more-explicit-k--groups-and-regulators",
+   "number": "4",
+   "title": "More explicit K -groups and regulators",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 23,
+   "n_chars": 14718,
+   "n_words": 2940,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-5-computing-k--groups-in-practice",
+   "number": "5",
+   "title": "Computing K -groups in practice",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 30,
+   "n_chars": 19922,
+   "n_words": 3853,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-7-examples",
    "number": "7",
    "title": "Examples",
    "level": 1,
-   "page_start": 29,
+   "page_start": 30,
    "page_end": 34,
-   "n_chars": 13073,
-   "n_words": 2601
+   "n_chars": 10128,
+   "n_words": 1982,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 34,
    "page_end": 44,
-   "n_chars": 34068,
-   "n_words": 5425
+   "n_chars": 32764,
+   "n_words": 4130,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 8,
-  "sections": 4,
-  "chars_total": 127764,
+  "toc_inferred_entries": 0,
+  "figure_entries": 17,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 126004,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 7,
-   "overlaid": 2,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -153,29 +767,57 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.723,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.697,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-3-a-motivic-version-of-the-conjecture",
+     "id": "sec-001-2-the-p-adiccomingchar-beilinson-conjecture-for",
+     "title": "The p-adiccomingchar Beilinson conjecture for totally real fields",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-3-a-motivic-version-of-the-conjecture",
      "title": "A motivic version of the conjecture",
-     "prose_ratio": 0.575,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-7-examples",
-     "title": "Examples",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-references",
+     "id": "sec-003-4-more-explicit-k--groups-and-regulators",
+     "title": "More explicit K -groups and regulators",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-computing-k--groups-in-practice",
+     "title": "Computing K -groups in practice",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-7-examples",
+     "title": "Examples",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-references",
      "title": "References",
      "result": "no matching \\section"
     }

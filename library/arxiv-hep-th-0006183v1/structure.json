@@ -8,7 +8,7 @@
   "pages": 22,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-11T05:48:35Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,12 +20,12 @@
    "stamp_date": "23 Jun 2000"
   },
   "doi": null,
-  "title": "arXiv:hep-th/0006183v1 23 Jun 2000",
+  "title": "Fine-tuning and the Wilson renormalization group",
   "authors_raw": "M. Bonini and E. Tricarico",
   "title_lines": [
    "Fine-tuning and the Wilson renormalization group"
   ],
-  "abstract": "We use the Wilson renormalization group (RG) formulation to solve the \ufb01ne-tuning proce- dure needed in renormalization schemes breaking the gauge symmetry. To illustrate this method we systematically compute the non-invariant couplings of the ultraviolet action of the SU(2) pure Yang-Mills theory at one-loop order.",
+  "abstract": "We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge symmetry. To illustrate this method we systematically compute the non-invariant couplings of the ultraviolet action of the SU(2) pure Yang-Mills theory at one-loop order.",
   "docinfo": {
    "Title": "arXiv:hep-th/0006183v1  23 Jun 2000",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -43,7 +43,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/0006183v1 23 Jun 2000"
  },
  "toc": [
   {
@@ -76,7 +77,7 @@
   },
   {
    "level": 1,
-   "title": "Renormalization group \ufb02ow",
+   "title": "Renormalization group ﬂow",
    "page": 3,
    "source": "inferred",
    "number": "2",
@@ -90,7 +91,7 @@
   },
   {
    "level": 1,
-   "title": "E\ufb00ective ST identity",
+   "title": "Eﬀective ST identity",
    "page": 4,
    "source": "inferred",
    "number": "3",
@@ -166,7 +167,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Graphical contribution to the A-c-vertex of \u02c6\u2206\u0393. The curly and dashed line denotes the gluon and ghost \ufb01eld respectively; the double lines represent the BRS source associated to the \ufb01eld depicted by the top line. All momenta are incoming",
+   "title": "Graphical contribution to the A-c-vertex of ˆ∆Γ. The curly and dashed line denotes the gluon and ghost ﬁeld respectively; the double lines represent the BRS source associated to the ﬁeld depicted by the top line. All momenta are incoming",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -179,7 +180,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "One-loop values of the couplings \u03c31 and \u03c32 for three di\ufb00erent cuto\ufb00functions (r =",
+   "title": "One-loop values of the couplings σ1 and σ2 for three diﬀerent cutoﬀfunctions (r =",
    "page": 9,
    "confidence": 0.8,
    "evidence": [
@@ -191,7 +192,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Graphical contribution to the A-A-c-vertex of \u02c6\u2206\u0393",
+   "title": "Graphical contribution to the A-A-c-vertex of ˆ∆Γ",
    "page": 10,
    "confidence": 0.9,
    "evidence": [
@@ -204,7 +205,7 @@
   {
    "kind": "table",
    "number": "2",
-   "title": "One-loop values of the coupling \u03c33 for three di\ufb00erent cuto\ufb00functions (r =",
+   "title": "One-loop values of the coupling σ3 for three diﬀerent cutoﬀfunctions (r =",
    "page": 11,
    "confidence": 0.8,
    "evidence": [
@@ -216,7 +217,7 @@
   {
    "kind": "table",
    "number": "3",
-   "title": "One-loop values of the couplings \u03c35 and \u03c36 for three di\ufb00erent cuto\ufb00functions (r =",
+   "title": "One-loop values of the couplings σ5 and σ6 for three diﬀerent cutoﬀfunctions (r =",
    "page": 12,
    "confidence": 0.8,
    "evidence": [
@@ -228,7 +229,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Graphical contribution to the w-c-c-vertex of \u02c6\u2206\u0393",
+   "title": "Graphical contribution to the w-c-c-vertex of ˆ∆Γ",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -241,7 +242,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Graphical contribution to the w-c-c-A-vertex of \u02c6\u2206\u0393",
+   "title": "Graphical contribution to the w-c-c-A-vertex of ˆ∆Γ",
    "page": 14,
    "confidence": 0.7,
    "evidence": [
@@ -266,7 +267,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Graphical contribution to the A-A-A-c vertex of \u02c6\u2206\u0393",
+   "title": "Graphical contribution to the A-A-A-c vertex of ˆ∆Γ",
    "page": 18,
    "confidence": 0.9,
    "evidence": [
@@ -279,7 +280,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "Graphical contribution to the A-A-A-c vertex of \u02c6\u2206\u0393",
+   "title": "Graphical contribution to the A-A-A-c vertex of ˆ∆Γ",
    "page": 20,
    "confidence": 0.9,
    "evidence": [
@@ -508,8 +509,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 442,
-   "n_words": 59,
+   "n_chars": 440,
+   "n_words": 58,
    "label_start": null,
    "label_end": "1"
   },
@@ -520,32 +521,32 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 3350,
-   "n_words": 555,
+   "n_chars": 3348,
+   "n_words": 554,
    "label_start": "1",
    "label_end": "2"
   },
   {
-   "id": "sec-002-2-renormalization-group-\ufb02ow",
+   "id": "sec-002-2-renormalization-group-ﬂow",
    "number": "2",
-   "title": "Renormalization group \ufb02ow",
+   "title": "Renormalization group ﬂow",
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 4449,
-   "n_words": 876,
+   "n_chars": 4447,
+   "n_words": 875,
    "label_start": "2",
    "label_end": "3"
   },
   {
-   "id": "sec-003-3-e\ufb00ective-st-identity",
+   "id": "sec-003-3-eﬀective-st-identity",
    "number": "3",
-   "title": "E\ufb00ective ST identity",
+   "title": "Eﬀective ST identity",
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2685,
-   "n_words": 490,
+   "n_chars": 2683,
+   "n_words": 489,
    "label_start": "3",
    "label_end": "4"
   },
@@ -556,8 +557,8 @@
    "level": 1,
    "page_start": 5,
    "page_end": 15,
-   "n_chars": 11538,
-   "n_words": 2317,
+   "n_chars": 11514,
+   "n_words": 2307,
    "label_start": "4",
    "label_end": "14"
   },
@@ -568,7 +569,7 @@
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 4490,
+   "n_chars": 4499,
    "n_words": 731,
    "label_start": "14",
    "label_end": "15"
@@ -580,8 +581,8 @@
    "level": 1,
    "page_start": 16,
    "page_end": 21,
-   "n_chars": 5785,
-   "n_words": 1187,
+   "n_chars": 5770,
+   "n_words": 1182,
    "label_start": "15",
    "label_end": "20"
   },
@@ -592,8 +593,8 @@
    "level": 1,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 1706,
-   "n_words": 273,
+   "n_chars": 1700,
+   "n_words": 271,
    "label_start": "20",
    "label_end": "21"
   }
@@ -613,7 +614,7 @@
    "items": []
   },
   "sections": 9,
-  "chars_total": 34681
- },
- "structure_note": "Sectioning: split by hand at the paper's numbered section headings (automatic heading inference picked display-math lines)."
+  "chars_total": 34637,
+  "furniture_lines_stripped": 21
+ }
 }

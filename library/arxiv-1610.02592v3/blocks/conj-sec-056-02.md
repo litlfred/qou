@@ -1,1 +1,0 @@
-Every simply connected closed

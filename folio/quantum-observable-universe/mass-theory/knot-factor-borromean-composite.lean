@@ -49,7 +49,7 @@ here.
 
 ## References
 
-- [manuscript] Ch. Braids and Knots, §Knot factor / Borromean
+- [leitner2026] Ch. Braids and Knots, §Knot factor / Borromean
 -/
 
 namespace QOU.BraidKnot
@@ -80,7 +80,7 @@ theorem knot_factor_borromean_of_uniform {k : ℕ} {component : Fin k → ℝ}
     The per-component value is a *hypothesis* here, not an import: see the
     module header — `knot_factor_amphicheiral` derives `1 - w_alt(1 + h²)`
     under the normalisation it states. -/
--- Ref: [manuscript] Ch. Braids and Knots, §Knot factor / Borromean
+-- Ref: [leitner2026] Ch. Braids and Knots, §Knot factor / Borromean
 theorem knot_factor_borromean {k : ℕ} (h : ℝ) {component : Fin k → ℝ}
     {composite : ℝ} (huniform : ∀ i, component i = 1 - h ^ 2)
     (decouple : BrunnianDecoupling k component composite) :

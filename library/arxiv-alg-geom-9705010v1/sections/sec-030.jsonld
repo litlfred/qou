@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-alg-geom-9705010v1/sections/sec-030",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "References",
+  "pageStart": 39,
+  "pageEnd": 41,
+  "contains": [
+    "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-030"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9705010v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9705010v1/manifest.jsonld",
+  "provenance": "ingested"
+}

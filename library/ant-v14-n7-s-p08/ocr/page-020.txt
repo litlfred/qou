@@ -1,0 +1,46 @@
+1930 Lillian B. Pierce and Junyan Xu
+
+(ID The second ingredient [Xu 2018, Proposition 1.5] relates the moments M,(r, s) for finite extensions k/«
+to the dimension of the subschemes X ;.
+
+(I) The third ingredient [Xu 2018, Proposition 1.6(a)] is an upper bound of O((#k)”*) (that is, of
+square-root strength) for the number of tuples (m, ..., m2) € k?"5 such that F;,{m\(x) is a perfect
+dj-th power in K(x1,...,Xn)-
+
+(IV) The fourth ingredient [Xu 2018, Proposition 1.6 (b)] is an application of the Weil bound to save one
+factor of (#k)!/2 off the trivial bound (#k)” for an n-dimensional character sum that is a generalization
+of 7; in an extension k/x. Precisely, it is the statement that uniformly in finite extensions k/« and tuples
+
+(m,..., m2) €k?", if Fiumy © k(x1, ..-, Xn) is not a perfect d;-th power in k(x1,..., Xn), then
+Yo Xi Nie Fim) = O(HKN""?). (4-12)
+xek"
+
+These four ingredients are applied in a bootstrapping process. The general philosophy is that a weak
+bound with very few exceptions can be bootstrapped into a stronger bound with possibly more exceptions.
+More precisely, ingredients (III) and (IV) are the initial input, showing that a small savings holds for
+the sums 7;, aside from possibly O((#k)”*) many (that is, square-root many) exceptional choices of
+(m™,..., m°)) €k?"’, For the possible exceptional choices, a trivial upper bound of O((#k)") is applied
+in place of (4-12).
+
+This input step provides a savings, on average, for the sums 7; on the multilinear right-hand side of the
+identity (4-11) in ingredient (I) and hence for the moment of S on the left-hand side of (I). Ingredient (II)
+then expresses this savings on the moment of S as a stratification in terms of a lower bound on codimX ; for
+each j. This result holds uniformly for sums S of the shape (4-10). Since each 7; is also a sum of this shape
+(with s, x;, F; defined appropriately), the resulting bound for sums S can be applied to each T7;, yielding
+an improvement over the initial savings for 7;. This argument then bootstraps to prove the final result.
+
+With this outline in hand, we may now briefly verify Theorem 4.1. The only point at which this
+argument utilized the assumption that each F; is d;-th power-free and has T,, finite was at the initial input
+to the bootstrapping, when ingredient (III) was used once; see [Xu 2018, §2.3]. Thus all we must do is
+show that this step, namely [Xu 2018, Proposition 1.6 (a)] can be proved under the alternate assumption
+that for each i, the reduction of F; modulo q is (d;, q)-admissible, and that deg F; < g. We will replace
+[Xu 2018, Proposition 1.6 (a)] with the following proposition.
+
+Proposition 4.5. Let « = Fg with q prime and fix a rational function F € k(x1,..., Xn) with deg F <q
+such that the reduction of F modulo q is (d, q)-admissible. Fix s € N. Then for each finite extension k/k,
+the number of (m®,...,m°) € k?"* such that Fm\(x) is a perfect d-th power over K is at most
+O((#k)").
+
+Once this has been proved, this replaces [Xu 2018, Proposition 1.6(a)] as ingredient (III) in Xu’s
+proof, and the results of Theorem A and Corollary B follow under our alternative hypotheses, thus
+verifying Theorem 4.1.

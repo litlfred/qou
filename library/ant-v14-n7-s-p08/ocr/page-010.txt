@@ -1,0 +1,46 @@
+1920 Lillian B. Pierce and Junyan Xu
+
+To give the flavor of this stratification, we state here a special case in dimension n = 2 (see Section 4
+and in particular Theorem 4.4 for the full setting). Let k = (k,k,...,k) be a fixed tuple in Z”, with
+k > 1. We will consider tuples x € Z” that lie in the box x € (0, k], and more generally, a collection
+{x} = (x, 2.2.2, 2°} € (0, k]°" of 2r such n-tuples.
+
+Theorem 2.1. Letn=2 and letr, A, D> 1 be fixed. There exists a constant C=C (n, r, D) and a constant
+Cc” =C"(n,r, A, D) such that the following holds. For any prime q, for any nonprincipal multiplicative
+Dirichlet character x of order A modulo q, and for any F € Fq{x1, X2] that is (A, q)-admissible, for
+every tuple k = (k,k),
+
+kv" if j =0,
+Hex} COKE] YO xCFyom)]> CaP? b SCT ffs,
+m (mod q) ker if j =2.
+
+We can interpret this as follows: for n = 2, the trivial bound for the number of collections {x} in the
+box (0, KP" c Z?"" is k4”. When j = 1, we see that at most O(k?’+!) collections can violate square-root
+cancellation, i.e., as soon as r > 2, generically square-root cancellation holds. This stratification, in its
+general formulation (Theorem 4.4) is the key input which allows us to prove the Burgess bound for all
+dimensions n > 2. (See Section A.1 for a further demonstration of why the full stratification is useful.)
+
+We stated Theorem 2.1 for simplicity in the case where the length k has identical values in each coordi-
+nate. In our argument, we must instead allow k = (k1,..., kn) with k; varying independently; in particular
+this arises in the step when we deduce a bound for the maximal moment in (2-4) from the nonmaximal
+moment in (2-5). This raises another difficulty in the multi-dimensional setting, which we now outline.
+
+Xu’s stratification (Theorem A, Theorem 4.1) shows that for each j = 1,...,n, the collections
+{x,...,x°)} counted by Bad; j(k) lie on a certain subscheme over F, with a certain codimension. In
+general, fix a dimension R, let X C Ag be a subscheme of codimension @ and let U be the sum of the
+degrees of its irreducible components. " Given subsets M; C F,, define the “box” M = cha Mic AR.
+We require a bound for
+
+R
+Iy(M) =#(xE 0] [Mi), (2-9)
+i=l
+which depends only on the codimension of X and the degree of the irreducible components of X. A trivial
+bound, best possible if codim X = 0, is Ix(M) < ||M|| := Th, |M;|. We need to improve on this when
+codim X > 1.
+
+To gain an intuition, consider the case of R = 2 and X of codimension 1. A naive hope might be
+that Iy(M) < || M||'/? = ||M])-|M)|-!/7|M,|~!/. But this need not be true. Supposing for example that
+|M,| © 1 is very small while |Mp| is very large, it could happen that X of codimension 1 lies along the
+subset M2 of M, thus leading to the bound Jy (M) > |M2| = ||M || - |i |-! = ||M]]. Thus in general, in
+estimating Jy(M) we can only expect to save factors corresponding to the smallest components of the
+“box” M.

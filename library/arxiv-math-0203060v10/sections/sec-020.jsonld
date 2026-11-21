@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Proof of Theorem 2.18",
-  "pageStart": 20,
-  "pageEnd": 20,
+  "title": "Proof of Theorem 2.24",
+  "pageStart": 18,
+  "pageEnd": 19,
   "contains": [
-    "library/arxiv-math-0203060v10/blocks/prose-sec-020"
+    "library/arxiv-math-0203060v10/blocks/prose-sec-020",
+    "library/arxiv-math-0203060v10/blocks/rem-sec-020-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203060v10",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203060v10",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203060v10/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203060v10/manifest.jsonld",
   "provenance": "ingested"
 }

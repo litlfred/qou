@@ -64,7 +64,7 @@ partition `λ` over `ℝ`, the transpose-invariance of the combinatorial hook-le
 Nothing here refers to it. The declaration below is named `qDimWith_rightDual` to keep the two
 apart.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 
 namespace QOU.MathlibExt

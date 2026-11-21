@@ -2,7 +2,7 @@
   "computation": "qbeta-decay-operator-elliptic-spectrum",
   "engine": "mpmath",
   "description": "qou-cds1: CORRECTS Step 21. That step concluded no phase can hide in the jet tower because every tower TRACE is real at real q; but the ladder needs an elliptic GENERATOR (complex-conjugate spectrum), and a real trace says nothing about a real spectrum. Following the owner's framing -- look for the thing that DOES the decay, and for the trefoil -- both are already in the corpus: the H_3 normal-form basis is [1,T0,T1,T0T1,T1T0,T0T1T0] whose sixth element is named 'e^-', the electron, which IS the trefoil; and qbeta_hoefsmit_tbeta_matrix_build already builds T_beta operator-valued per block. Measured in the (2,1) block at the proton pin: Delta_L = NF(n)-NF(p), the LONG model production runs on, is ELLIPTIC (tr^2-4det = -0.035837, det(traceless) = +0.008959, eigenvalues -0.045681 +- 0.094653 i), while Delta_S, the short model the ladder's closed forms come from, is HYPERBOLIC (+0.043706). Step 18's exclusions never touched Delta_L: it is an algebra element not a braid-group element, it lives in the block chi^(2,1)(Delta_S)=0 hides, and its trace is real. BUT its eigenphase is 2.020445 rad against a required 0.056595 -- a factor 35.7 -- so it is not THE ladder phase. What it retires is 'branch 3 is out of named candidates'. A coincidence is flagged and not pursued: theta sits 0.012 % from |c_3(muon)| at the SUPERSEDED CODATA-2018 anchor, with no mechanism and a documented precedent for the trap. Lean: QOU/QBeta/TraceRealSpectrumComplex.lean, sorry-free.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "assertions": [
     {
       "name": "electron_word_is_the_longest_element_is_the_trefoil",
@@ -58,8 +58,8 @@
     "anti_fit": "the theta-vs-c_3 proximity is REPORTED, not pursued; no search over combinations was run, and the anchor it matches is the superseded CODATA-2018 one"
   },
   "data": {
-    "q0": "1.1099785827513808",
-    "u": "0.008517234550156141",
+    "q0": "1.1099785827513808076",
+    "u": "0.008517234550156142",
     "theta_required": "0.05659473754330691",
     "block_2_1": {
       "Delta_S": {
@@ -92,14 +92,14 @@
     "corrects": "Step 21's 'no phase can hide in the jet tower' and Step 20/21's 'branch 3 is out of named candidates'. The vanishing Step 21 proved -- bar-odd operators have zero Plancherel trace -- STANDS and is unaffected; what is withdrawn is the inference from trace-realness to spectrum-realness.",
     "scope": "Scope-(a) for the finding, scope-(b) for the correction. Nothing derived, proposed, wired or readmitted; no c_k value asserted."
   },
-  "gitCommit": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
+  "gitCommit": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
   "durationMs": 0,
   "scriptFile": "qbeta_decay_operator_elliptic_spectrum_probe.py",
-  "scriptHash": "8e85bfad6ee2",
-  "scriptCommitSha": "1540977a438630ea1dc16b6bdb2ed6c8c2440107",
-  "commitSha": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
-  "computedAt": "2026-09-03T05:10:52.622312+00:00",
-  "engineVersion": "mpmath 1.4.1",
+  "scriptHash": "9023e30c2bf2",
+  "scriptCommitSha": "1bc2558e4627e77333cf92b0e9db6e0abf7e26a9",
+  "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
+  "computedAt": "2026-11-20T17:25:31.500417+00:00",
+  "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808"
+  "q0Value": "1.10997858275138080759166909561"
 }

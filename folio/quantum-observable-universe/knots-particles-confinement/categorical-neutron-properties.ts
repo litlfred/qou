@@ -19,6 +19,11 @@ export default remark({
   },
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body: "Earlier text, removed from the prose 2026-11-15: (1) \"the bare 9-crossing element remains LP unstable; the sigma_0 channel violates Frobenius positivity after the second quark crossing\"; (2) \"L_+ -> L_-, 4 gluon crossings, 13 total\" (bean qou-vtlj: the stated net(n) = +0.7976 is the eleven-crossing value); (3) \"the dd crossing creates a deeper instability than the proton's (tr_M = -0.132 vs -0.006)\" (bean qou-jqjx: those figures came from fsh-guts/deprecated/computations/integer-lp-gluon.py on convention C with tr_M(e^-) = z^3, a weight retired 2026-05-19; reproduced there as -0.132224 and -0.005936). Both corrections were needed: fixing the crossing count removed the 4-vs-2 asymmetry and moved the claim onto the two convention-C numbers.",
+    },
+    {
       kind: "status",
       date: "2026-08-24",
       body:
@@ -152,5 +157,10 @@ export default remark({
         "rather than patching \u2014 and that judgement is not revisited " +
         "here. Flagged, not resolved. Scope-(a).",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): See [Table](#tbl:categorical-neutron-table-data)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The crossing pairs appear in [Table: Neutron crossing pairs](#tbl:categorical-neutron-table-data)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([energy scale](#rem:beta-decay-energy-scale))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([formation chain](#rem:meson-to-proton-via-borromean))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([local substrate](#prop:local-substrate-q))" },
   ],
 });

@@ -1,37 +1,70 @@
 A Frobenius formula for the characters of the Hecke algebras 469
+
 Proof. Let d, be the dimension of the irreducible representation of CS, corres-
-ponding to . Using (1.2) we have that
-tr(Dpa) _tr(Dz
-1 da
-d, f! Z xs,(0)tr(Do) .
-qeSf
-Since both xs,(o) and tr(Do) are constant on conjugacy classes Cμ in Sf,
-tr(Dpa) : Z x^(μ) tr(Du)ICul
-μf
-μf u?
-where μ? is given by (1.1). Thus, by [Mac, (7.6)J, tr(Dpa) is the Schur function
-Sa(x). 
-(3.8) Theorem. For any he Hf,
-tr(Dh) = Z x^(h)sa(x) ,
-where, for each   f, ×~ is the corresponding irreducible character of Hf and sa(x) is
-the corresponding Schur function in the variables X1, : . . , Xn.
-Proof. Let {pi), a ←f, 1 ≤ i ≤ da be a partition of unity in H, with the property
-a partition of unity of CSf. Partitions of unity for H, that satisfy this property are
-known, see the remark below. For each a and each 1 ≤ i ≤ d let hi be the constant
-in C(q) such that p?hp? =- hip?. Note that the hä are the diagonal elements of the
-matrix of h in the irreducible representation corresponding to a determined by this
-partition of unity. Thus, for each a, Z;hi - x^(h).
-Since the action of D and pä commute in all cases, the trace property gives that
-tr(Dpihp) = tr(Dp’pih) = O unless α= μ and i = j.
-tr(Dh) - tr(Dphp*)
-2, uFf
-1≤ijda
-tr(Dp hp)
-af
-1≤ida
-Z。ht tr(Dpt).
-af
-1≤ida
-By virtue of Lemma 3.5, tr(Dpi) = sa(x) for all 1 ≤ i ≤ da. Since Z,hi = x^(h) we
+ponding to J. Using (1.2) we have that
+
+1
+tr(Dp,) = q, TP)
+
+1 d, A
+= >> a) tr(Do) .
+df dy, Bile te Do)
+
+Since both %8,(0) and tr(Do) are constant on conjugacy classes C, in S,,
+
+tr(Dp,) = ah (Hw) trDy,)|Cul
+
+= Y 7 wee
+ub
+where y? is given by (1.1). Thus, by [Mac, (7.6)], tr(Dp,) is the Schur function
+s,(x). O
+
+(3.8) Theorem. For any heH,,
+tr(Dh) = x x*(h)s,(x) ,
+
+where, for each At f, x’ is the corresponding irreducible character of Hy and s,(x) is
+the corresponding Schur function in the variables x1,...,Xn-
+
+Proof. Let {p?}, AF f, 1 Si<d, be a partition of unity in H, with the property
+that when we specialize g = 1 each p? is well defined and that, at q = 1, { p?|,-1} is
+a partition of unity of CS,. Partitions of unity for H, that satisfy this property are
+known, see the remark below. For each J and each 1 <i < d, let hj be the constant
+in C(q) such that p/hp} = hip}. Note that the h} are the diagonal elements of the
+matrix of h in the irreducible representation corresponding to J determined by this
+partition of unity. Thus, for each A, Yihi = x7().
+
+Since the action of . D and p} commute in all cases, the trace property gives that
+tr(Dp?hp#) = tr(Dpp?h) = 0 unless A = p and i = j.
+
+tr(Dh) = Y_ tr(Dp? hp)
+Stila,
+= tr(Dp?hp})
+
+FE
+i
+
+Wn
+
+Ws,
+ee
+x
+
+1 a
+
+= hi tr(Dp?) .
+rf
+
+1si
+
+Ws
+
+d,
+
+ll
+
+By virtue of Lemma 3.5, tr(Dp) = s,(x) for all 1 <i < dj. Since }\;h} = x*(h) we
+
 have that
-tr(Dh) = Z x^(h)sa(x) . 
+
+tr(Dh) = ¥° x*(h)s,(x)
+Arf

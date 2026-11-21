@@ -1,0 +1,204 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1610.05082v3",
+  "figures": [
+    {
+      "id": "vfig-p007",
+      "file": "figures/vfig-p007.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 7
+      },
+      "page": 7,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        178.73,
+        88.67,
+        287.47,
+        197.4
+      ],
+      "assembly": {
+        "drawings": 54,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              178.73,
+              88.67,
+              287.47,
+              197.4
+            ],
+            "drawings": 24,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "x1 = (0, 1)",
+              "x3 = (0, −1)",
+              "2",
+              "1"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              233.1,
+              91.1,
+              285.03,
+              143.04
+            ],
+            "parent": null,
+            "labels": [
+              "2",
+              "1"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 38,
+        "connectors": [
+          {
+            "from": null,
+            "to": "b0",
+            "bbox": [
+              233.1,
+              143.04,
+              233.1,
+              194.97
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              181.16,
+              143.04,
+              233.1,
+              143.04
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              427.85,
+              91.1,
+              427.85,
+              143.04
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              427.85,
+              143.04,
+              479.78,
+              143.04
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              427.85,
+              143.04,
+              427.85,
+              194.97
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              375.91,
+              143.04,
+              427.85,
+              143.04
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              181.16,
+              91.1,
+              285.03,
+              194.97
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              375.91,
+              91.1,
+              479.78,
+              194.97
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              120.88,
+              568.3,
+              131.57,
+              568.3
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              128.22,
+              608.56,
+              141.94,
+              608.56
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              151.67,
+              597.33,
+              155.06,
+              597.33
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              159.61,
+              608.56,
+              173.33,
+              608.56
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              243.08,
+              645.65,
+              297.0,
+              645.65
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 65
+      }
+    }
+  ]
+}

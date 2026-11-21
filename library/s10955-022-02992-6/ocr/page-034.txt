@@ -1,0 +1,57 @@
+33 Page 34 of 47 S. Jansen, L. Kolesnikov
+
+sequence of non-negative numbers and consider the activity
+
+c= | X={m,m+1,..., m-+ €— 1} for some m € Z, (4.18)
+0, else.
+Theorem 4.5 Let d = 1 and let (zp)¢en be a sequence of non-negative activities.
+(a) Suppose there exists « > 0 such that
+00
+Yietce <e* = 1. (4.19)
+
+Then T (D; z) is absolutely convergent for all finite subsets D C Z.
+(b) Conversely, if T (D; z) is absolutely convergent for all finite subsets D C Z, then there
+exists a > 0 such that (4.19) holds true.
+
+Remark 4.4 The condition (4.19) is exactly the necessary and sufficient criterion for absolute
+convergence of the activity expansion of the pressure in the system derived in [13]. While
+the result itself is not novel, we consider the proof to be instructive since it demonstrates how
+our approach can provide conditions improving on the Fernandez—Procacci criterion. In this
+concrete setup even the optimal result—recovering the whole domain of convergence—can
+be achieved.
+
+The proof of the sufficient condition relies on a refinement of Theorem 2.7. Roughly, we
+weaken condition (i) to consider the Kirkwood-Salsburg inequalities being satisfied only for
+single rods rather than for arbitrary configurations of rods; at the same time we specify the
+selection rule by assuming that the leftmost (or, alternatively, the rightmost) element {x} is
+always picked from any given domain.
+
+Proposition 4.6 Suppose there exists a non-negative function a(-) from the finite intervals of
+Z to (0, 00) with a(@) = 0 and for every finite interval D of Z with x = min D such that
+
+> 2(¥) MP —ADY < ga(D'Ule)—aD) _ 1 (4.20)
+Y5x,
+YND'=2
+where we set D! = D\{x}. Then T(D, z) is absolutely convergent, for all finite D C Z
+(interval or not).
+
+Proof We revisit the proof of the implication (i) = (ii) of Theorem 2.7 given on p. 24 and
+prove first by induction over N that Ty(D;z) < exp(a a(D)), for all finite discrete intervals
+D C Z. For N = 1, the inequality is trivial because T\(D; z) = lypj<y <1 exp(a(D)).
+Now, /, Suppose Ty (D; z) < exp(a(D)) for some N € N and all discrete intervals D C Z.
+Let D C Zbe any discrete interval. IfD= @, then Ty 41D; g=Hl< exp(a(D)). If D
+is non-empty, let x := min D (or, alternatively, x := max D) and set D! = D\{x}, then
+Proposition 3.12 yields
+Tyyi(D; 2) =Ty(D3+ Yo 2z)Ty(D'UY; 2).
+Yax:
+YND'=2
+
+Since all the arguments D’ and D’U Y of Ty on the right side of this identity are again finite
+discrete intervals, the inductive hypothesis and our assumption (4.20) imply that
+
+Fwir(D; 2) <P) 4 Serpe) < ),
+
+Yax:
+YND'=o
+
+D Springer

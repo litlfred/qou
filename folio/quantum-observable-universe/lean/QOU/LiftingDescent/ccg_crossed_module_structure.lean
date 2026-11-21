@@ -13,7 +13,7 @@ The Lean encoding records the crossed-module axioms (Peiffer
 identity + boundary compatibility) as fields of an abstract
 `CrossedModuleContext`.
 
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.md
 -- Ref: [yekutieli2010] A. Yekutieli, *Nonabelian Multiplicative Integration*, 2010
 -/
 
@@ -51,7 +51,7 @@ class CrossedModuleContext where
 
 /-- **Crossed-module axioms hold for `(SU_{q_n}(2), 𝓞_M^×)`**
     ([`lem:ccg-crossed-module-structure`]). -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.md
 -- Ref: [yekutieli2010]
 theorem ccg_crossed_module_structure
     [ctx : CrossedModuleContext] :

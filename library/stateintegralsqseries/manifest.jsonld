@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "stateintegralsqseries",
   "contains": [
+    "library/stateintegralsqseries/sections/sec-front-matter",
     "library/stateintegralsqseries/sections/sec-000",
     "library/stateintegralsqseries/sections/sec-001",
     "library/stateintegralsqseries/sections/sec-002",
@@ -25,10 +26,12 @@
     "library/stateintegralsqseries/sections/sec-011",
     "library/stateintegralsqseries/sections/sec-012",
     "library/stateintegralsqseries/sections/sec-013",
-    "library/stateintegralsqseries/sections/sec-014"
+    "library/stateintegralsqseries/sections/sec-014",
+    "library/stateintegralsqseries/sections/sec-015",
+    "library/stateintegralsqseries/sections/sec-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "stateintegralsqseries",
     "title_source": "slug",

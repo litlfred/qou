@@ -8,6 +8,7 @@ pages: 28-31
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
 toc_source: inferred
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 18 sections: Front matter; Contents; Introduction."
 ---
 For every simple reﬂection s of go, ho (“simple” with respect to the ﬁxed Borel bo of go) Kazhdan and
 Lusztig [1980] deﬁne a proper homotopy equivalence αs of the conormal variety Z of the K-action on

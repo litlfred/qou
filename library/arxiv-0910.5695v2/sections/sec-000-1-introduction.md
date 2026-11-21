@@ -4,13 +4,14 @@ doc_title: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St)"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-1
+pages: 1-2
 source_pdf: 0910.5695v2.pdf
 source_sha256: 703c2a2f1f9380b1
-doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Re p(St)."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.686
-latex_coverage_ratio: 0.978
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.956
+doc_brief: "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St) — We describe blocks in Deligne’s category Rep(St)."
 ---
 Let $F$ be a field of characteristic zero and $t\in F$. Recently P. Deligne introduced the tensor category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ which in a certain precise sense interpolates the categories $\operatorname{Rep}(S_d)$ of $F-$linear representations of the symmetric groups $S_d$, see [@Del07]. In general, the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ is additive but not abelian; however it is proved in [@Del07 Théorème 2.18] that for $t$ which is not a nonnegative integer the category $\underline{\operatorname{Re}}\!\operatorname{p}(S_t)$ is semisimple (and hence abelian).
 

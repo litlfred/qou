@@ -1,1 +1,1 @@
-If (u, D) is a regular vertically constrained broken strip that is also rigid, it has at
+If (u, D) is a regular vertically constrained broken strip that is also rigid, it has at most two levels and the inside piece does not intersect the critical locus crit(πm). Similarly, if (u, D) is a regular vertically constrained broken disc with point constraint, it has at most two levels and the inside piece does not intersect the critical locus crit(πm).

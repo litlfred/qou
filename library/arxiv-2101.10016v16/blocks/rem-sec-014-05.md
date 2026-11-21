@@ -1,0 +1,1 @@
+As we shall see, natural constructions in conformal field theory give rise to canonically associated associative algebras A, the Zhu algebras, and also to linear functors E, which are already known to play an important role in the theory of VOAs. The construction of compatible triples for these remarkable examples is our main motivation in the definition.

@@ -7,11 +7,17 @@
   "bytes": 694971,
   "pages": 39,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 21,
+    "reason": "15 of 423 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,19 +27,29 @@
    "stamp_date": "4 Mar 2020"
   },
   "doi": null,
-  "title": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM",
-  "authors_raw": "INV ARIANTS OF HYPERBOLIC KNOTS",
+  "title": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS",
+  "authors_raw": "S. BETTIN AND S. DRAPPEAU",
   "title_lines": [
-   "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM"
+   "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM",
+   "INVARIANTS OF HYPERBOLIC KNOTS"
   ],
-  "abstract": "We obtain an exact modularity relation for the q-Pochhammer symbol. Using this formula, we show that Zagier\u2019s modularity conjecture for a knot K essentially reduces to the arithmeticity conjecture for K. In particular, we show that Zagier\u2019s conjecture holds for hyperbolic knots K \u2044= 7 2 with at most seven crossings. For K = 4 1, we also prove a complementary reciprocity formula which allows us to prove a law of large numbers for the values of the colored Jones polynomials at roots of unity. We conjecture a similar formula holds for all knots and we show that this is the case if one assumes a suitable version of Zagier\u2019s conjecture.",
+  "abstract": "We obtain an exact modularity relation for the q-Pochhammer symbol. Using this formula, we show that Zagier’s modularity conjecture for a knot K essentially reduces to the arithmeticity conjecture for K. In particular, we show that Zagier’s conjecture holds for hyperbolic knots K̸ = 72 with at most seven crossings. For K = 41, we also prove a complementary reciprocity formula which allows us to prove a law of large numbers for the values of the colored Jones polynomials at roots of unity. We conjecture a similar formula holds for all knots and we show that this is the case if one assumes a suitable version of Zagier’s conjecture.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20200305014046Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20200305014046Z"
+  },
+  "title_raw": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS 1. Introduction Among knot invariants, the colored Jones polynomials { J K,n } n ≥ 2 and the Kashaev invariants {⟨ K ⟩ N } N ≥ 2 are of particular interest, by their relation to quantum ﬁeld theory, and the geometry of hyper",
+   "outline": "1. Introduction",
+   "text": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM"
  },
  "toc": [
   {
@@ -41,109 +57,572 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Outline of the paper and sketch of the proofs",
    "page": 6,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Acknowledgment",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Notation",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Two reciprocity formulae for the q-Pochhammer symbol",
    "page": 8,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Abel-Plana's summation formula",
    "page": 8,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "First reciprocity formula for the q-Pochhammer symbol",
    "page": 9,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Sums of cotangents",
    "page": 14,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Second reciprocity formula for the q-Pochhammer symbol",
    "page": 19,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Proof of Theorem ??",
    "page": 21,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Proof of Lemma ??",
    "page": 28,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Proof of Lemma ??",
    "page": 31,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Proof of Theorems ??",
    "page": 34,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 1,
    "title": "Proof of Theorem ??",
    "page": 35,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "References",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Global graph of H41 and H∗",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Graph of H41 and H∗",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Parameters of the Kashaev invariants",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Values of νK",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 749,
+   "n_words": 125,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -151,8 +630,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 6,
-   "n_chars": 13694,
-   "n_words": 2447
+   "n_chars": 13748,
+   "n_words": 2512,
+   "label_start": "1",
+   "label_end": "6"
   },
   {
    "id": "sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs",
@@ -161,8 +642,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 4645,
-   "n_words": 791
+   "n_chars": 4676,
+   "n_words": 822,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-002-acknowledgment",
@@ -172,7 +655,9 @@
    "page_start": 7,
    "page_end": 8,
    "n_chars": 690,
-   "n_words": 116
+   "n_words": 116,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-003-notation",
@@ -181,8 +666,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 380,
-   "n_words": 74
+   "n_chars": 382,
+   "n_words": 76,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
    "id": "sec-004-2-two-reciprocity-formulae-for-the-q-pochhammer",
@@ -191,8 +678,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1847,
-   "n_words": 369
+   "n_chars": 1871,
+   "n_words": 393,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-005-22-first-reciprocity-formula-for-the-q-pochhamme",
@@ -201,8 +690,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 14,
-   "n_chars": 8846,
-   "n_words": 2051
+   "n_chars": 9049,
+   "n_words": 2254,
+   "label_start": "9",
+   "label_end": "14"
   },
   {
    "id": "sec-006-23-sums-of-cotangents",
@@ -211,8 +702,10 @@
    "level": 2,
    "page_start": 14,
    "page_end": 19,
-   "n_chars": 9770,
-   "n_words": 2009
+   "n_chars": 10040,
+   "n_words": 2279,
+   "label_start": "14",
+   "label_end": "19"
   },
   {
    "id": "sec-007-24-second-reciprocity-formula-for-the-q-pochhamm",
@@ -220,32 +713,92 @@
    "title": "Second reciprocity formula for the q-Pochhammer symbol",
    "level": 2,
    "page_start": 19,
-   "page_end": 38,
-   "n_chars": 34307,
-   "n_words": 7154
+   "page_end": 21,
+   "n_chars": 3228,
+   "n_words": 804,
+   "label_start": "19",
+   "label_end": "21"
   },
   {
-   "id": "sec-008-references",
+   "id": "sec-008-3-proof-of-theorem",
+   "number": "3",
+   "title": "Proof of Theorem ??",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 31,
+   "n_chars": 16399,
+   "n_words": 3671,
+   "label_start": "21",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-009-32-proof-of-lemma",
+   "number": "3.2",
+   "title": "Proof of Lemma ??",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 6458,
+   "n_words": 1405,
+   "label_start": "31",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-010-4-proof-of-theorems",
+   "number": "4",
+   "title": "Proof of Theorems ??",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 2985,
+   "n_words": 656,
+   "label_start": "34",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-011-5-proof-of-theorem",
+   "number": "5",
+   "title": "Proof of Theorem ??",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 38,
+   "n_chars": 5621,
+   "n_words": 1215,
+   "label_start": "35",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-012-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 6682,
-   "n_words": 969
+   "n_chars": 6678,
+   "n_words": 965,
+   "label_start": "38",
+   "label_end": "39"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 9,
-  "chars_total": 80861,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 82574,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "reciprocity13.tex",
    "tex_sections": 14,
-   "overlaid": 8,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -253,10 +806,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.78,
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -264,7 +822,7 @@
      "id": "sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs",
      "title": "Outline of the paper and sketch of the proofs",
      "prose_ratio": 0.952,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -280,7 +838,7 @@
      "id": "sec-003-notation",
      "title": "Notation",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.893,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -288,7 +846,7 @@
      "id": "sec-004-2-two-reciprocity-formulae-for-the-q-pochhammer",
      "title": "Two reciprocity formulae for the q-Pochhammer symbol",
      "prose_ratio": 0.79,
-     "coverage_ratio": 0.915,
+     "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -296,7 +854,7 @@
      "id": "sec-005-22-first-reciprocity-formula-for-the-q-pochhamme",
      "title": "First reciprocity formula for the q-Pochhammer symbol",
      "prose_ratio": 0.918,
-     "coverage_ratio": 0.919,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -304,20 +862,45 @@
      "id": "sec-006-23-sums-of-cotangents",
      "title": "Sums of cotangents",
      "prose_ratio": 0.924,
-     "coverage_ratio": 0.919,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-007-24-second-reciprocity-formula-for-the-q-pochhamm",
      "title": "Second reciprocity formula for the q-Pochhammer symbol",
-     "prose_ratio": 0.91,
-     "coverage_ratio": 0.921,
+     "prose_ratio": 0.873,
+     "coverage_ratio": 0.846,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-references",
+     "id": "sec-008-3-proof-of-theorem",
+     "title": "Proof of Theorem ??",
+     "prose_ratio": 0.776,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-32-proof-of-lemma",
+     "title": "Proof of Lemma ??",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-proof-of-theorems",
+     "title": "Proof of Theorems ??",
+     "prose_ratio": 0.444,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-5-proof-of-theorem",
+     "title": "Proof of Theorem ??",
+     "prose_ratio": 0.242,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-references",
      "title": "References",
      "result": "no matching \\section"
     }

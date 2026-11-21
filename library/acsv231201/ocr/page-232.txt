@@ -1,0 +1,45 @@
+214 Overview of analytic methods for multivariate GFs
+7.5 Deformations
+
+Finally, we end this chapter with a treatment of critical points and critical val-
+ues at infinity. After giving a rigorous definition of such points we show how, in
+their absence, to construct the deformations that prove Lemmas 7.25 and 7.28.
+These two lemmas then imply Theorems 7.15 and 7.30.
+
+7.5.1 Critical points at infinity
+
+As described above and in Appendix C, the results of Morse theory typically
+require a proper height function so that certain gradient flows are guaranteed
+to reach points of low height, except when they get stuck near critical points.
+This properness condition is often satisfied in classical contexts by studying
+compact spaces, however our singular varieties are not compact and we often
+have non-proper height functions.
+
+Our goal, therefore, is to formulate weaker but still sufficient conditions for
+there to be no topological obstructions to deforming our Cauchy integral to
+points of low height, proving results like Lemma 7.14 and Theorem 7.35 above.
+A considerable stream of topological research has gone into defining bifurca-
+tion values, at which the height function is not a locally trivial fibration and the
+topology of the space changes. While exact conditions for these topological
+obstructions remain murky, we care only about pushing down domains of in-
+tegration to lower height, and may thus proceed by generalizing our definition
+of critical points (and critical values) to include “points at infinity.”
+
+We begin by defining the binary relation R ¢ C4 x CP! that holds for a
+pair (z,7) when the differential dh,|s of the height function /, restricted to
+the stratum S containing z vanishes at z. To facilitate computation we view 7
+as an element of CP*!.
+
+Definition 7.42 (CPAI). Let 8 be the closure in CP? x CP“! of the relation 8.
+A critical point at infinity (CPAI) in the direction 7, is a limit point (z,, 7,,) in
+R of points (z, *) € R such that z, ¢ C4. When necessary we refer to our usual
+notion of critical points (not at infinity) as affine critical points to distinguish
+them from critical points at infinity.
+
+In other words, a critical point at infinity in the direction 7, is a limit, lying
+either at infinity or on a coordinate plane, of a sequence 2 of critical points
+contained in strata S; such that the projection of 7, to the tangent space of N;,
+at 2 converges to zero as k > © (i.e, #, lies in the “limit normal space” of
+the sequence z™ — see Figure 7.28.
+
+To track the heights of CPAIs, given # € CP“! we define the ternary relation

@@ -17,6 +17,7 @@ export default proposition({
   ],
   proofs: ["prf:centered-hecke-variance-positive"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): , formalized in `QOU.SchurWeyl.ocneanuWeight_conventionD_pos_of_two_rows`)" },
     {
       kind: "status",
       body: "**Provable arithmetic.** The proof in `prf:centered-hecke-variance-positive` is direct algebra: under convention D the variance is $(q^4+q^2+1)/(q^2+1)^2$, a ratio of manifestly positive polynomials, minimised at $q = 1$ where it equals $3/4$. (Superseded 2026-08-09: the earlier route ran through $(q^{1/2}+q^{-1/2})^2 > 4$ ⟹ Wenzl regime ⟹ variance positive, which was convention-C-specific.)",

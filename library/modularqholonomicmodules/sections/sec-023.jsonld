@@ -9,14 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Determinants",
-  "pageStart": 45,
-  "pageEnd": 46,
+  "title": "Monodromy",
+  "pageStart": 40,
+  "pageEnd": 43,
   "contains": [
     "library/modularqholonomicmodules/blocks/prose-sec-023",
-    "library/modularqholonomicmodules/blocks/cor-sec-023-01"
+    "library/modularqholonomicmodules/blocks/cor-sec-023-01",
+    "library/modularqholonomicmodules/blocks/lem-sec-023-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
   "provenance": "ingested"
 }

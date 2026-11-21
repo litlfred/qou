@@ -13,7 +13,7 @@ LaTeX label: `def:q-dilogarithm`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-dilogarithm
+- [leitner2026] §2-quantum-observable-universes/q-dilogarithm
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]`.  The iterated-primitive
 characterisation and pentagon identity are Hopf-algebraic and
@@ -28,7 +28,7 @@ abbrev R_q := LaurentPolynomial ℤ
 
 /-- **q-Dilogarithm data**: a level-2 iterated primitive of H_q
     characterised by the pentagon identity.  `Li2_q ∈ H ⊗ H`.  -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure QDilogarithm (H : Type*) [Add H] where
   /-- The level-2 primitive Li₂_q ∈ H ⊗ H. -/
   Li2 : H × H

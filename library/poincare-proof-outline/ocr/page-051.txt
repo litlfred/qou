@@ -1,0 +1,88 @@
+by (auto simp add: mult.commute)
+
+moreover
+
+have Re (nu * cnj nu / (du * cnj du)) > 0 Re (nv * cnj nv / (du * enj dv)) > 0
+using (du # 0) «dv £ 0»
+unfolding complex-mult-cnj-cmod
+by simp-all
+
+ultimately
+
+have 1 — cmod (nu * cnj nu / (du « cnj du)) = cmod (1 — nu * cnj nu / (du * cnj du))
+
+1 — cmod (nv * cnj nv / (du * cnj dv)) = cmod (1 — nv * cnj nv / (dv * enj dv))
+
+by (simp-all add: cmod-def)
+
+thus ?thesis
+
+using nz
+by (simp add: diff-divide-distrib norm-mult)
+qed
+also have ... = cmod(((ddu * kk) / (du * cnj du)) * ((ddv * kk) / (du * cnj dv)))
+by (subst ddu, subst ddv, simp)
+also have ... = cmod((dduxdduxkk«kk) / (duxcnj duxduxcnj dv))
+
+by (simp add: field-simps)
+finally have 2: ?rhs = cmod((dduxdduxkk«xkk) / (duxcnj duxdu«cnj dv))
+
+have ?lhs / ?rhs =
+cmod ((d*cnj dxkkxkk) / (duxcnj duxduxcnj dv)) / cmod((dduxdduxkk*kk) / (duxcnj duxduxcnj dv))
+
+by (subst 1, subst 2, simp)
+
+also have ... = cmod ((d*cnj d)/(dduxddv))
+
+using nz by (simp add: norm-mult norm-divide)
+also have ... = (cmod d)? / ((1 — (emod u')?)*(1 — (emod v')?))
+proof—
+
+have (cmod u’)? < 1 (cmod v’)? < 1
+using <cmod u' < 1» «cmod v' < 1>
+by (simp-all add: cmod-def)
+hence cmod (1 — u' * enj u’) = 1 — (emod u’)? emod (1 — v! * enj v') = 1 — (emod v')?
+by (auto simp add: cmod-eq-Re cmod-power2 power2-eq-square|symmetric])
+thus ?thesis
+using nz
+by (simp add: **(6) **(7) norm-divide norm-mult power2-eq-square)
+qed
+finally
+have 3: ?lhs / ?rhs = (emod d)? / ((1 — (emod u’)?)*(1 — (emod v')?)) «
+
+have cmodk 4 1u' 41 / cnjkv' £1 / cnjkuF won vF Wn
+using <cmod k < 1) <u € unit-disc» «v € unit-discy * (k A 0» ** «kk # Oy nz
+by auto
+
+thus ?thesis using assms
+using * ** 3
+using moebius-pt-blaschke|of k u'|
+using moebius-pt-blaschke[of k v']
+by (simp add: norm-divide)
+
+qed
+
+To prove the equivalence between the h-distance definition and the distance formula, we shall employ the without
+loss of generality principle. Therefore, we must show that the distance formula is preserved by h-isometries.
+
+Rotation preserve poincare-distance-formula.
+
+lemma rotation-preserve-distance-formula [simp]:
+
+assumes u € unit-disc v € unit-disc
+
+shows poincare-distance-formula (to-complex (moebius-pt (moebius-rotation y) u)) (to-complex (moebius-pt (moebius-rotation
+gy) vy) =
+
+poincare-distance-formula (to-complez u) (to-complex v)
+
+using assms
+
+using inf-or-of-complez|of u] inf-or-of-complez|of v]
+
+by (auto simp: norm-mult)
+
+Unit disc fixing Mébius preserve poincare-distance-formula.
+
+lemma unit-disc-fic-preserve-distance-formula [simp]:
+assumes unit-disc-fix Mu € unit-disc v € unit-disc

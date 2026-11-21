@@ -1,0 +1,1 @@
+— A lattice FC G is arithmetic in G if and only if ^ for each embed- ding a ofF in R, not inducing the identity embedding of E in R, the real group Gp ®p g R is compact [i.e. °G(R) is a compact group).

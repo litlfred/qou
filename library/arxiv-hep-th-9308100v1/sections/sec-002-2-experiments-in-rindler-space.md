@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9308100v1
-doc_title: "arXiv:hep-th/9308100v1 20 Aug 1993"
+doc_title: "Gedanken Experiments Involving Black Holes"
 section_id: sec-002-2-experiments-in-rindler-space
 section_title: "Experiments in Rindler Space"
 section_number: 2
@@ -8,6 +8,7 @@ pages: 4-10
 source_pdf: 9308100v1.pdf
 source_sha256: 032c25faa757b650
 toc_source: inferred
+doc_brief: "Gedanken Experiments Involving Black Holes — Analysis of several gedanken experiments indicates that black hole complementarity cannot be ruled out on the basis of known physical principles."
 ---
 Before considering ﬁnite mass black holes it is instructive to consider the simpler geom-
 etry of Rindler space which can be viewed as the exterior region close to the horizon in the

@@ -1,0 +1,1 @@
+Let A be an abelian variety deﬁned over a ﬁnite ﬁeld Fq of odd characteristic. For each f ∈Qn,qm, denote by A f the quadratic twist of A ×Fq Fqm(x) by f . Let Rn,m be the set { f ∈Qn,qm : A f has positive rank}. Then lim m→∞lim sup n→∞ |Rn,m| |Qn,qm| = 0.

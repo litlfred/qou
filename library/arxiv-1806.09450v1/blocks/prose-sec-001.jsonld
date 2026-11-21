@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1806.09450v1/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The automorphism group F4 of the exceptional Jordan algebra and its Lie algebra f4",
-  "pageStart": 6,
-  "pageEnd": 8,
-  "text": "../sections/sec-001-31-the-automorphism-group-f4-of-the-exceptional.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1806.09450v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1806.09450v1",
+  "title": "Exceptional finite quantum geometry",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "text": "../sections/sec-001-2-exceptional-finite-quantum-geometry.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
   "provenance": "ingested"
 }

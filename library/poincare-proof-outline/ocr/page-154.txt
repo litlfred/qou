@@ -1,0 +1,75 @@
+by auto
+
+thus is-real ?y A 0 < Re ?y
+using rx (?X € unit-discy <y € unit-discy
+by (metis (mono-tags, opaque-lifting) arg-0-iff of-complex-zero-iff poincare-between-Ouv poincare-between-sandwich
+to-complex-of-complex unit-disc-to-complez-inj zero-in-unit-disc)
+qed
+
+have ynoneg: V x € unit-disc. yp x —+ (is-real (to-complex x) \ Re (to-complex x) > 0)
+proof(rule balll, rule imp!)
+
+fix x
+
+assume z € unit-disc yp x
+
+obtain y where y € unit-disc w y
+using <3 y € unit-disc. w y» by blast
+
+let ?x = to-compler x and ?y = to-complex y
+
+have is-real ?y Re ?y > 0
+using wpos «1 y> <y € unit-disc»
+by auto
+
+have poincare-between On xy
+using <set-order 0n y w>
+using (x € unit-disc) «p x» <yeunit-discy «Wy»
+by auto
+
+thus is-real ?x \ 0 < Re ?x
+using (x € unit-disc» (y € unit-disc» <is-real (to-complex y)> «w y>
+using <set-order 0n y w>
+using «yp ?X> «?X © unit-disc» «Re ?y > 0)
+by (metis arg-0-iff le-less of-complex-zero poincare-between-Ouv to-complex-of-complex zero-complex.simps(1)
+zero-complex.simps(2))
+qed
+
+have ylessy): V re unit-disc. V yeunit-disc. p zx \ ~ y —> Re (to-complez x) < Re (to-complex y)
+proof((rule balll)+, rule imp!)
+
+fix ry
+
+let ?x = to-compler x and ?y = to-complex y
+
+assume z € unit-disc y € unit-disc p x A Wy
+
+hence poincare-between On x y
+using <set-order 0n y w>
+by auto
+moreover
+have is-real ?x Re ?x > 0
+using ynoneg
+using <2 € unit-disc) «p « A w y> by auto
+
+moreover
+have is-real ?y Re ?y > 0
+
+using wpos
+
+using <y € unit-disc» (p A w y> by auto
+ultimately
+
+have Re ?x < Re ?y
+using <x € unit-discy <y € unit-discy
+by (metis Re-complex-of-real arg-0-iff le-less of-complex-zero poincare-between-OQuv rcis-cmod-Arg rcis-zero-arg
+to-complex-of-complez)
+
+have Re ?x # Re ?y
+using «p z A w y> ¢is-real ?x» <is-real ?y>
+using <7 (5 Beunit-disc. p B A w B)> (a € unit-disc> <y € unit-disc»
+by (metis complex.expand unit-disc-to-complex-inj)
+
+thus Re ?x < Re ?y
+using (Re ?x < Re ?y» by auto
+qed

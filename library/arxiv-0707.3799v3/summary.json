@@ -2,99 +2,138 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0707.3799v3",
  "source_sha256": "0b29cbced7939f72",
- "brief": "EQUIVARIANT SATAKE CATEGORY AND KOSTANT-WHITTAKER REDUCTION — 16 sections: ROMAN BEZRUKAVNIKOV AND MICHAEL FI; ROMAN BEZRUKAVNIKOV AND MICHAEL FI; ROMAN BEZRUKAVNIKOV AND MICHAEL FI",
- "extended": "**EQUIVARIANT SATAKE CATEGORY AND KOSTANT-WHITTAKER REDUCTION**\n\n*ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG*\n\n32 pp, 16 sections.\n\n**Outline.** 4 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 6 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 8 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 10 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; L We denote byπ L the projection fromt/W L tot; 12 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 14 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 16 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 18 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 20 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 22 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 24 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 26 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 28 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; 30 ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: a) AssumeGis simply connected. We have a canonical isomorphism\n- Theorem 2: The functorS:Rep( ˇG)→Perv GO⋊Gm(Gr)extends to a full imbedding\n- Theorem 3: The convolution algebra of equivariant homologyH GO⋊Gm\n- Theorem 4: The functor ˜Sextends to a full imbedding ˜Sqc :Coh\n- Theorem 5: There exist canonical equivalences of monoidal triangulated categories\n- Theorem: for torus-equivariant cohomology, the latter is Q",
+ "brief": "Equivariant Satake category and Kostant-Whittaker reduction — 24 sections: Front matter; Introduction; Notation and statements of the res",
+ "extended": "**Equivariant Satake category and Kostant-Whittaker reduction**\n\n*KOSTANT-WHITTAKER REDUCTION*\n\n32 pp, 24 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Notation and statements of the results; 2.2 Asymptotic ˇg-modules; 2.3 Kostant functor κℏ; 2.4 Equivariant cohomology of GrG; 2.5 Equivariant homology and quantum Toda latt; 2.6 Quasiclassical limit; 2.7 Equivalences; 3 Topology; 3.3 Levi-equivariant cohomology; 3.4 Transitivity for a pair of Levi subgroups; 3.5 Tensor structure on equivariant cohomology; 4 Algebra; 4.1 Some properties of the Kostant functor κℏ; 4.2 De-symmetrized Kostant functor κℏ; 4.3 Canonical filtration on φ(V ); 4.4 Whittaker modules for Levi subalgebras",
  "tokens": {
-  "brief": 45,
-  "extended": 334
+  "brief": 34,
+  "extended": 173
  },
  "sections": [
   {
-   "id": "sec-000-4-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "4-6"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-6-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "6-8"
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
   },
   {
-   "id": "sec-002-8-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "id": "sec-001-2-notation-and-statements-of-the-results",
+   "title": "Notation and statements of the results",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-22-asymptotic-ˇg-modules",
+   "title": "Asymptotic ˇg-modules",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-23-kostant-functor-κℏ",
+   "title": "Kostant functor κℏ",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-24-equivariant-cohomology-of-grg",
+   "title": "Equivariant cohomology of GrG",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-005-25-equivariant-homology-and-quantum-toda-lattice",
+   "title": "Equivariant homology and quantum Toda lattice",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-006-26-quasiclassical-limit",
+   "title": "Quasiclassical limit",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-007-27-equivalences",
+   "title": "Equivalences",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-3-topology",
+   "title": "Topology",
    "pages": "8-10"
   },
   {
-   "id": "sec-003-10-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "10-10"
+   "id": "sec-009-33-levi-equivariant-cohomology",
+   "title": "Levi-equivariant cohomology",
+   "pages": "10-11"
   },
   {
-   "id": "sec-004-l-we-denote-byπ-l-the-projection-fromtw-l-totw-w",
-   "title": "We denote byπ L the projection fromt/W L tot/W. We denote byX +",
-   "pages": "10-12"
+   "id": "sec-010-34-transitivity-for-a-pair-of-levi-subgroups",
+   "title": "Transitivity for a pair of Levi subgroups",
+   "pages": "11-11"
   },
   {
-   "id": "sec-005-12-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "12-14"
+   "id": "sec-011-35-tensor-structure-on-equivariant-cohomology",
+   "title": "Tensor structure on equivariant cohomology",
+   "pages": "11-14"
   },
   {
-   "id": "sec-006-14-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "14-16"
+   "id": "sec-012-4-algebra",
+   "title": "Algebra",
+   "pages": "14-14"
   },
   {
-   "id": "sec-007-16-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "16-18"
+   "id": "sec-013-41-some-properties-of-the-kostant-functor-κℏ",
+   "title": "Some properties of the Kostant functor κℏ",
+   "pages": "14-15"
   },
   {
-   "id": "sec-008-18-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "18-20"
+   "id": "sec-014-42-de-symmetrized-kostant-functor-κℏ",
+   "title": "De-symmetrized Kostant functor κℏ",
+   "pages": "15-16"
   },
   {
-   "id": "sec-009-20-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "20-22"
+   "id": "sec-015-43-canonical-filtration-on-φv",
+   "title": "Canonical filtration on φ(V )",
+   "pages": "16-16"
   },
   {
-   "id": "sec-010-22-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "22-24"
+   "id": "sec-016-44-whittaker-modules-for-levi-subalgebras",
+   "title": "Whittaker modules for Levi subalgebras",
+   "pages": "16-17"
   },
   {
-   "id": "sec-011-24-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "24-26"
+   "id": "sec-017-45-transitivity-for-a-pair-of-levi-subgroups",
+   "title": "Transitivity for a pair of Levi subgroups",
+   "pages": "17-19"
   },
   {
-   "id": "sec-012-26-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "26-28"
+   "id": "sec-018-47-quasiclassical-limit-of-ϕv",
+   "title": "Quasiclassical limit of ϕ(V )",
+   "pages": "19-19"
   },
   {
-   "id": "sec-013-28-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "28-30"
+   "id": "sec-019-51-equivariant-cohomology-for-g-pgl2",
+   "title": "Equivariant cohomology for G = PGL(2)",
+   "pages": "19-20"
   },
   {
-   "id": "sec-014-30-roman-bezrukavnikov-and-michael-finkelberg",
-   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
-   "pages": "30-31"
+   "id": "sec-020-g-pgl2",
+   "title": "G = PGL(2)",
+   "pages": "20-20"
   },
   {
-   "id": "sec-015-references",
-   "title": "References",
-   "pages": "31-32"
+   "id": "sec-021-53-kostant-functor-for-ˇg-sl2",
+   "title": "Kostant functor for ˇG = SL(2)",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-022-54-generic-splitting-of-the-canonical-filtration",
+   "title": "Generic splitting of the canonical filtration on Kostant functor for ˇG = SL(2)",
+   "pages": "21-32"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

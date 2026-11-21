@@ -1,0 +1,45 @@
+Deforming hyperbolic 3—manifolds with boundary 443
+
+Proposition 1.9 Let F and F’ be paired exceptional lateral hexagons. Their pairing
+can be realized by an isometry if and only if 0°(F) + o9(F') = 0 and €°(F) = 0°(F’).
+
+Proof We concentrate on the “if” part of the statement, the “only if” part being obvious.
+Let fi, f2 and f/,f; be the boundary edges of of F and F” respectively, and assume that
+the orientation-reversing pairing between F and F’ glues f; to fj and f{ to fy. Since
+0°(F) = 0°(F’), Lemma 1.4 easily implies that L(f1) < L(f) if and only if L(4) > L(fi).
+Moreover the assumption that o9(F) = —0°(F’) and Proposition 1.8 give L(fi) < L$)
+if and only if Lf) < L(f{). This forces L(f;) = L(f) and Lif) = L(f{), whence the
+conclusion. oO
+
+Remark 1.10 Let A be a partially truncated tetrahedron and suppose that v is the
+unique ideal vertex of A. Let F, F2,F3 be the faces of A incident to v and for
+i = 1,2,3 let e; be the edge of F; not containing v. The isometry classes of the
+geometric realizations of A are parameterized by the lengths of the e;’s and the values
+taken by o on the F;’s. More precisely, the map that associates to any geometric
+realization 6 of A the point (L°(e1), L°(e2), L°(e3), 0°(F1), 0°(F2), 0°(F3)) defines a
+diffeomorphism between open subsets of two affine hyperplanes of R°.
+
+1.6 Consistency equations
+
+Recall now that we are considering a candidate hyperbolic 3—manifold N endowed
+with a good triangulation T , and that we have fixed a geometric realization 6 of the
+tetrahedra in T . The above discussion implies the following:
+
+Theorem 1.11 The parameterization 6 defines on N a hyperbolic structure with
+geodesic boundary if and only if the following conditions hold:
+
+(1) the total dihedral angle along any edge of T in N is equal to 27;
+
+(2) Le) = L%e’) for all pairs (e, e’) of matching compact internal edges;
+
+(3) oF) + 09°F’) = 0 for all pairs (F, F’) of matching exceptional hexagons.
+
+By Propositions 1.5, 1.8, conditions (1), (2), (3) of Theorem 1.11 translate into a set
+C(T) of smooth equations on @, which are called consistency equations. Our next task
+is to compare the number of equations in C(Z) with the dimension of the moduli space
+of geometric realizations of the tetrahedra of T .
+
+Let c (resp. p) be the number of compact (resp. non-compact) tetrahedra of T. By
+Theorem 1.3, the number of parameters for the geometric realizations of T is equal to
+
+Algebraic & Geometric Topology 6 (2006)

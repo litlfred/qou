@@ -31,7 +31,7 @@ equivalently `S − r·S = a`. This is the defining recurrence the geometric tow
 
 Base ring `ℝ` (§7c): the archimedean substrate evaluation at `q₀` is the intended use.
 
--- Ref: [manuscript] docs/audits/2026-08-02-bloch-wigner-torus-composition-volume-probe.md
+-- Ref: [leitner2026] docs/audits/2026-08-02-bloch-wigner-torus-composition-volume-probe.md
 -/
 
 namespace QOU.MassTheory

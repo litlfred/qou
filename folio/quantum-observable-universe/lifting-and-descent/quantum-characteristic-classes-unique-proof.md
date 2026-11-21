@@ -1,7 +1,8 @@
-Giraud's classification: the category of central
-$\mathcal{B}$-extensions of $\mathfrak{G}_n$ is equivalent to
-$H^2(\mathcal{S}, \mathcal{B})$.  Different local trivialisations of
-$\mathfrak{G}_n$ yield Čech cocycles differing by $1$-coboundaries,
-hence the same cohomology class.  The class $\kappa_n$ therefore
-depends only on the extension and the brane tower, not on the
+Fix the central extension
+$1 \to \mathcal{B} \to \mathfrak{G}_{n+1} \to \mathfrak{G}_n \to 1$ and the
+global object $g$ of $\mathfrak{G}_n$ to be lifted. Two choices of local lifts
+of $g$ differ on each open set by a section of $\mathcal{B}$, and the resulting
+obstruction cocycles differ by the Čech coboundary of that $1$-cochain
+\cite{yekutieli2010}. Refining the cover does not change the class. So
+$\kappa_n$ depends only on the extension and on $g$, not on the
 trivialisation.

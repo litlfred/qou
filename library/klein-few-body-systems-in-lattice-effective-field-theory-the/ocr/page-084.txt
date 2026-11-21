@@ -1,0 +1,26 @@
+Chapter 6 Lattice Improvement in Lattice Effective Field Theory
+
+While a four-boson contact interaction is not needed for renormalization in the three-dimensional theory
+[158, 159], one lesson learned from the analysis presented here is that the four-boson interaction could
+be useful as part of a comprehensive lattice improvement program to remove lattice errors in systems
+with four or more bosons.
+
+The lattice improvement program for more complicated systems in lattice effective field theory can
+proceed along similar lines, but may require more effort. Some complications occur in effective field
+theories where non-perturbative iteration is used and singular interactions prevent the limit of infinite
+cutoff momentum. For example, this is the case in chiral effective field theory for nucleons (see Ref. [52]
+for a review). In such cases one would need to verify the convergence of improved lattice formulations
+over a finite range of lattice spacings with each other rather than comparing with the limit of zero
+lattice spacing. Similar issues strategies are used in non-relativistic QCD for heavy quarks on the lattice,
+where the lattice spacing should not be much smaller than the Compton wavelength of the heavy quark
+[160-162].
+
+While the analysis we presented here is for a simple system of zero-range bosons in one dimension, it
+serves as a useful guide for increasing the accuracy of more complicated calculations in lattice effective
+field theory with improved lattice actions. For zero-range bosons in one dimension, we found that our
+estimates of the lattice errors from naive dimensional analysis of individual diagrams were accurate.
+However, this is directly related to the ultraviolet finiteness of our one-dimensional system. In general,
+we will need to regulate and renormalize divergent diagrams. And, therefore, the renormalization group
+will be needed to compute anomalous dimensions that modify the naive dimensional analysis.
+
+78

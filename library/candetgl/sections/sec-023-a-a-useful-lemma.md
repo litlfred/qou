@@ -8,6 +8,7 @@ pages: 23-26
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 The proof that the Biot–Savart operator is bounded, as asserted in ~1! above, will follow along
 the lines of the usual Young’s inequality proof that convolution operators are bounded; see
@@ -28,8 +29,6 @@ Proof: Fix yeV. Then, using the Cauchy–Schwarz inequality,
 897
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 uTf~V!~y!u<E
 VuV~x!uuf~y2x!u d~volx!
 5E
@@ -82,8 +81,6 @@ and we conclude that BS:VF(V)→VF(V) is a bounded operator.
 898
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 Now let VF(V) denote the L2 completion of the space VF~V!; we will refer to the elements
 of VF(V) as L2 vector ﬁelds.
 Then we can, and do, extend the Biot–Savart operator to a bounded operator,
@@ -128,8 +125,6 @@ Suppose that V1 and V2 are smooth vector ﬁelds deﬁned on V. Then
 899
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 ^V1 ,BS~V2!&5E
 VV1~y!•BS~V2!~y! d~voly!
 5E

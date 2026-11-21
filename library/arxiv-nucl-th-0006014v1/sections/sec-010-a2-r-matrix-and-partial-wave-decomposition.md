@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-nucl-th-0006014v1
-doc_title: "arXiv:nucl-th/0006014v1 9 Jun 2000"
+doc_title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)"
 section_id: sec-010-a2-r-matrix-and-partial-wave-decomposition
 section_title: "R-matrix and partial wave decomposition"
 section_number: A.2
@@ -8,6 +8,7 @@ pages: 18-21
 source_pdf: 0006014v1.pdf
 source_sha256: 208c7a6aaf628b30
 toc_source: inferred
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 56 sections: Front matter; Introduction; The model"
 ---
 In solving the scattering equation, it is more convenient to deal with real quantities. We
 shall therefore introduce the real R-matrix (better known as ‘K-matrix’) deﬁned by
@@ -53,7 +54,6 @@ where J denotes the total angular momentum of the two nucleons. Here we are chan
 our notation for momenta: in the above equation and throughout the rest of Appendix
 A, momenta denoted by non-bold letters are the magnitude of three-momenta, e. g. q ≡
 |q|, k ≡|k|, etc.; h1 and h2 are the helicities in intermediate states for nucleon 1 and 2,
-18
 respectively. Equation (A21) is a system of coupled integral equations which needs to be
 solved to obtain the desired matrix elements of RJ.
 Ignoring anti-particles, there are 4 × 4 = 16 helicity amplitudes for RJ. However, time-
@@ -134,7 +134,6 @@ Z ∞
 dk k2
 M
 q2 −k2[ 34V J(q′, k) 34RJ(k, q)
-19
 + 66V J(q′, k) 55RJ(k, q)]
 55RJ(q′, q) = 55V J(q′, q) + P
 Z ∞
@@ -243,7 +242,6 @@ q2 −k2[ V J1
 + V J1
 +−(q′, k) RJ1
 −−(k, q)]
-20
 RJ1
 −+(q′, q) = V J1
 −+(q′, q) + P

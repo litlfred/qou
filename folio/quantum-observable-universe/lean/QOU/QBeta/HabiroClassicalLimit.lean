@@ -15,7 +15,7 @@ This connects the Habiro polynomial (knot-theoretic) to the cusp geometry
 
 Sorry-free. All theorems by norm_num or ring.
 
--- Ref: [manuscript] docs/coordination/ck-dk-canonical-registry.md §3
+-- Ref: [leitner2026] docs/coordination/ck-dk-canonical-registry.md §3
 -- Ref: [ggmw2020] Gukov–Garoufalidis–Mariño–Wheeler (2020), eq (161)
 -/
 

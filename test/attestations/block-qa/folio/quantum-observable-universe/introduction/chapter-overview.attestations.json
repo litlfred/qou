@@ -1,0 +1,196 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/introduction/chapter-overview",
+    "path": "folio/quantum-observable-universe/introduction/chapter-overview"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. \"one algebraic skeleton and a single substrate parameter\" uses \"skeleton\" as an ordinary mathematical metaphor, not as a stub/placeholder marker.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9cfc0a274f58",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:27.442Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full read; 'eliminating volume as an external assumption' and 'without empirical nuclear tuning' are substantive scope statements; no not-X-but-Y scaffolding."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9cfc0a274f58",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:27.483Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "No setup-then-reframe constructions across 20 chapter summaries."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9cfc0a274f58",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:27.523Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Five em-dash pairs, all genuine appositive lists (measured constants; three constraints; millennium problems; calibration inputs).",
+        "notes": "false-positive class: true parentheticals"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9cfc0a274f58",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:27.564Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Triples are substantive: three cohomological constraints, three action terms (gravity/gauge/matter), three calibration DOF — each is the actual mathematical count."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9cfc0a274f58",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:27.606Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Final line ('Every other physical mass, binding energy, and coupling acts strictly as a zero-parameter prediction.') is a substantive framework claim, not a decorative quotable."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9cfc0a274f58",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:27.651Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "No narrated emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9cfc0a274f58",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:27.692Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'That skeleton structurally anchors the framework.' (para 1) is mildly redundant but positional (opening framing, not a closer); the Calibration paragraph is new content."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9cfc0a274f58",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:27.733Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9cfc0a274f58",
+          "ts": "da134280c0f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:27.774Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "severity": "minor",
+        "evidence": "Pervasive intensifier saturation, ~30 sites: 'organically derives', 'effortlessly fixes/recovers' x2, 'rigorously recovers/limits/generate/constructing' x4, 'perfectly separates', 'firmly behaves', 'forcefully connects', 'correctly internalizes', 'natively' x3, 'systematically' x4, 'precisely' x4, 'strictly' x8, 'cleanly', 'identically' x2, 'comprehensively', 'dynamically'. Near-every verb carries a maximum-strength adverb — the classic density tell.",
+        "notes": "proposed (structural, whole block): strip decorative adverbs, keep load-bearing qualifiers ('exactly three', 'uniquely'). E.g. 'This fundamental triple organically derives...' -> 'This triple derives...'; 'The geometry effortlessly fixes...' -> 'The geometry fixes...'. Also flagged separately (not a trap category): 'predict... the exact proton and neutron masses' conflicts with the 2026-08-11 absolute-mass excision ruling, and 'q_0 approx 1.1097' mis-rounds q_0 approx 1.10998."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9cfc0a274f58",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:27.815Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Dense but speakable; formula-anchored sentences parse aloud."
+      }
+    ]
+  }
+}

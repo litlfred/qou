@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-000",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
   "title": "The Generalized Riemann Problem for Linear Differential Equations and the Allied Problems for Linear Difference and q-Difference Equations [pp. 521-568]",
   "pageStart": 1,
   "pageEnd": 1,
   "text": "../sections/sec-000-the-generalized-riemann-problem-for-linear-diffe.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/birkhoff-generalizedriemannproblem-1913",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/birkhoff-generalizedriemannproblem-1913",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/birkhoff-generalizedriemannproblem-1913/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/birkhoff-generalizedriemannproblem-1913/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -164,8 +164,8 @@ def main() -> int:
     q0_num = mpf(q0_str)
     Q_codata = mpf("0.78233341")
 
-    tr_p_num = float(sp.N(tr_p_sym.subs(q, sp.Float(str(q0_num), 50)), 30))
-    tr_n_num = float(sp.N(tr_n_sym.subs(q, sp.Float(str(q0_num), 50)), 30))
+    tr_p_num = mpf(str(sp.N(tr_p_sym.subs(q, sp.Float(str(q0_num), 50)), 30)))
+    tr_n_num = mpf(str(sp.N(tr_n_sym.subs(q, sp.Float(str(q0_num), 50)), 30)))
     delta_tr_num = tr_n_num - tr_p_num
     print(f"  Numerical sanity at q₀:")
     print(f"     tr_M(β_p, q₀) = {tr_p_num:.15f}")

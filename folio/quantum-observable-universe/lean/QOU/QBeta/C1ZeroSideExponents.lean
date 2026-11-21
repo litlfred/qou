@@ -90,9 +90,9 @@ comes from the **common** numerator `θ_p(z)` of the character `e_t` above, so i
 sits in both columns and is an artifact of *this* normalisation, not connection
 data.
 
--- Ref: [manuscript] computations/qbeta/c3_w2_c1_theta_canonical.py
--- Ref: [manuscript] computations/qbeta/c3_w2_c1_connection_matrix.py
--- Ref: [manuscript] computations/qbeta/c3_w2_c1_pole_divisor.py
+-- Ref: [leitner2026] computations/qbeta/c3_w2_c1_theta_canonical.py
+-- Ref: [leitner2026] computations/qbeta/c3_w2_c1_connection_matrix.py
+-- Ref: [leitner2026] computations/qbeta/c3_w2_c1_pole_divisor.py
 -- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
 -/
 

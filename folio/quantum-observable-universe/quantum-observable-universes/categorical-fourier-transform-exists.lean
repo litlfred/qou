@@ -15,7 +15,7 @@ LaTeX: `\label{prop:categorical-fourier-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-fourier-transform-exists
+- [leitner2026] §2-quantum-observable-universes/categorical-fourier-transform-exists
 - [kassel1995] Quantum Groups, §IV
 -/
 

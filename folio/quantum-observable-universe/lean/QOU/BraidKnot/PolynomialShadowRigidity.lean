@@ -83,7 +83,7 @@ no ingredient and refutes no route.
 
 -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -- Ref: [fintushelstern1990] https://doi.org/10.1112/plms/s3-61.1.109
--- Ref: [manuscript] docs/audits/2026-07-17-habiro-interpolation-wlambda.md
+-- Ref: [leitner2026] docs/audits/2026-07-17-habiro-interpolation-wlambda.md
 -/
 
 namespace QOU.BraidKnot.Keystone

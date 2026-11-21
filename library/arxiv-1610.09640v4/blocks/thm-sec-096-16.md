@@ -1,0 +1,1 @@
+Let A be a cohomologically left pseudo-noetherian nonpositive DG ring, and let L be a DG A-module. The following two conditions are equivalent. (i) L is an algebraically perfect DG A-module. (ii) L has ﬁnite projective dimension and belongs to D− f (A).

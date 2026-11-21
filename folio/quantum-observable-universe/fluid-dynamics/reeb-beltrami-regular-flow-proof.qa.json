@@ -1,0 +1,25 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "feabb8ae2242",
+          "ts": "9d136e68daa2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:10.764Z",
+        "reviewed_sha": "dd3595d7dc1ecd1099ddcb695fb47671676c4ba6",
+        "severity": "minor",
+        "evidence": "Computations sit in sorry-free Lean (`BeltramiSteadyEuler`). Warn: the proof states honestly that descent to Γ\\PSL₂(ℝ) and the operator identifications are not formalised",
+        "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
+      }
+    ]
+  },
+  "updated_at": "2026-11-15T21:55:10.764Z"
+}

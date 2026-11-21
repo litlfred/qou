@@ -3,12 +3,13 @@
  "doc_id": "arxiv-nucl-th-0103005v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "c2aaa21b51d7bc107ff141a37385ce66140f1069f1df3e8c6bbf9441affe3ba2",
   "file": "0103005v2.pdf"
  },
  "provenance": {
-  "title": "Quantum Monte Carlo Calculations of Light Nuclei",
+  "title": "arXiv:nucl-th/0103005v2 6 Mar 2001",
   "authors": "Steven C. Pieper and R. B. Wiringa",
   "arxiv": {
    "id": "nucl-th/0103005",
@@ -20,9 +21,70 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 2,
+  "by_kind": {
+   "proposition": 2
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 2
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The experimental value for $a_2(8,1)$ is extracted using 16.80 MeV as the excitation of the pure $T=1$ isobaric analog state in $^8$Be [@B66]. :::",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-004-5-energy-results.md (p. 20-27)",
+   "external_refs": [],
+   "quantitative_values": [
+    "16.80 MeV"
+   ],
+   "section_file": "sections/sec-004-5-energy-results.md",
+   "section_title": "ENERGY RESULTS",
+   "pages": "20-27",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-004-5-energy-results.md (p. 20-27)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/arxiv-nucl-th-0103005v2/blocks/prop-sec-004-01",
+   "claim_id": "arxiv-nucl-th-0103005v2#prop-sec-004-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The $^3$H--$^3$He mass difference is 757 keV with the AV18/IL2 Hamiltonian, in excellent agreement with the experimental value of 764 keV.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-004-5-energy-results.md (p. 20-27)",
+   "external_refs": [],
+   "quantitative_values": [
+    "757 keV",
+    "764 keV"
+   ],
+   "section_file": "sections/sec-004-5-energy-results.md",
+   "section_title": "ENERGY RESULTS",
+   "pages": "20-27",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-004-5-energy-results.md (p. 20-27)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-004-02",
+   "block_iri": "library/arxiv-nucl-th-0103005v2/blocks/prop-sec-004-02",
+   "claim_id": "arxiv-nucl-th-0103005v2#prop-sec-004-02"
+  }
+ ]
 }

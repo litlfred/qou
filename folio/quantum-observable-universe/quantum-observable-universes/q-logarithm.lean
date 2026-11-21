@@ -14,7 +14,7 @@ LaTeX label: `def:q-logarithm`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-logarithm
+- [leitner2026] §2-quantum-observable-universes/q-logarithm
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]`.  Base-ring independent at the
 Hopf-algebra level; archimedean series representation needs char 0.
@@ -27,7 +27,7 @@ abbrev R_q := LaurentPolynomial ℤ
 
 /-- **q-Logarithm data**: a primitive element of the q-shuffle Hopf
     algebra, inverse to the q-exponential grouplike. -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure QLogarithm (H : Type*) where
   /-- The primitive element log_q ∈ H. -/
   log_q : H
@@ -52,7 +52,7 @@ structure QLogarithm (H : Type*) where
     this block's sibling compiles standalone (the adjoint-pair
     structure below needs the q-exponential fields `D_q` and `e_q`
     in scope). -/
--- Ref: [manuscript] §2-quantum-observable-universes/q-exponential
+-- Ref: [leitner2026] §2-quantum-observable-universes/q-exponential
 structure QExponential (H : Type*) where
   /-- The grouplike element e_q ∈ H. -/
   e_q : H
@@ -71,7 +71,7 @@ structure QExponential (H : Type*) where
 
 /-- **Adjoint pair**: log_q ⊣ e_q as an inverse pair between
     primitives and grouplikes. -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure QLogExpAdjoint (H : Type*) where
   log : QLogarithm H
   exp : QExponential H

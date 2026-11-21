@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-021-18-curls-and-divergences
 section_title: "Curls and divergences."
 section_number: 18
@@ -8,6 +8,7 @@ pages: 43-46
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 If  x  is a fixed point on  S3  and  V  is a tangent vector to  S3  at  x ,  then the parallel 
 transport  PyxV  of  V  to the point  y  is defined for all  y  ≠  —x ,  and may be 
@@ -46,7 +47,6 @@ For example,  ↓Ei  =  θi   and  ↑θi  =  Ei   for  i  =  1, 2, 3.  Likewise
 ⇓E2  =  θ3 ∧ θ1   and   ⇓E3  =  θ1 ∧ θ2 ,   and  ⇑  is simply the inverse of this. 
  
  
-44 
  
  
  
@@ -89,7 +89,6 @@ Thus the above verification of Proposition 18.1 in this single instance also ser
 as its proof. 
  
  
-45 
  
  
  
@@ -120,9 +119,4 @@ Proposition 18.2, since
 < y , V >  =  < y , X1 >  =  y1   and  1  +  < x , y >  =  1  +  y0 . 
  
 And just as in the case of the curl formula of Proposition 18.1, this single 
-verification of Proposition 18.2 also serves as its proof. 
- 
- 
- 
- 
-46
+verification of Proposition 18.2 also serves as its proof.

@@ -157,23 +157,23 @@
     "conj:gb-depth-period-correspondence": {
       "derived": [
         "conj:bring-figure-eight-depth-2-witness",
-        "prop:curvature-rank-gb-stratification"
+        "conj:curvature-rank-gb-stratification"
       ],
       "declared": [],
       "effective": [
         "conj:bring-figure-eight-depth-2-witness",
-        "prop:curvature-rank-gb-stratification"
+        "conj:curvature-rank-gb-stratification"
       ]
     },
     "conj:geom-yekutieli-alignment": {
       "derived": [
         "rem:chern-simons-as-knot-invariant",
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ],
       "declared": [],
       "effective": [
         "rem:chern-simons-as-knot-invariant",
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ]
     },
     "conj:gs-residue-at-root-existence": {
@@ -288,12 +288,12 @@
         "def:hecke-mass-element",
         "def:z-habiro-ring",
         "prop:categorical-mass-markov",
-        "prop:hecke-mass-trace",
+        "conj:hecke-mass-trace",
         "prop:knot-operator-selection",
         "prop:rj-canonical-inner-product",
-        "prop:topological-mass-formula",
+        "conj:topological-mass-formula",
         "thm:knot-mass-formula-unified",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ],
       "declared": [],
       "effective": [
@@ -303,12 +303,12 @@
         "def:hecke-mass-element",
         "def:z-habiro-ring",
         "prop:categorical-mass-markov",
-        "prop:hecke-mass-trace",
+        "conj:hecke-mass-trace",
         "prop:knot-operator-selection",
         "prop:rj-canonical-inner-product",
-        "prop:topological-mass-formula",
+        "conj:topological-mass-formula",
         "thm:knot-mass-formula-unified",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ]
     },
     "conj:on-p-modular-hecke": {
@@ -351,11 +351,11 @@
     },
     "conj:proton-borromean-assembly": {
       "derived": [
-        "prop:proton-mass-substrate-identity"
+        "conj:proton-mass-substrate-identity"
       ],
       "declared": [],
       "effective": [
-        "prop:proton-mass-substrate-identity"
+        "conj:proton-mass-substrate-identity"
       ]
     },
     "conj:q-geometric-langlands": {
@@ -480,13 +480,13 @@
     "conj:two-filtration-bridge": {
       "derived": [
         "conj:gb-depth-period-correspondence",
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:quantum-dilogarithm-stratified"
       ],
       "declared": [],
       "effective": [
         "conj:gb-depth-period-correspondence",
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:quantum-dilogarithm-stratified"
       ]
     },
@@ -499,15 +499,15 @@
         "conj:casimir-epsilon-vacuum"
       ]
     },
-    "conj:weak-spectral-completeness": {
+    "prop:weak-spectral-completeness": {
       "derived": [
         "prop:bar-t-duality-substrate",
-        "prop:weak-symmetric-normalization"
+        "conj:weak-symmetric-normalization"
       ],
       "declared": [],
       "effective": [
         "prop:bar-t-duality-substrate",
-        "prop:weak-symmetric-normalization"
+        "conj:weak-symmetric-normalization"
       ]
     },
     "conj:wigner-axiom": {
@@ -981,7 +981,7 @@
         "tbl:torus-ns-regular-table-data"
       ]
     },
-    "lem:bond-order-eq-jet-degree": {
+    "conj:bond-order-eq-jet-degree": {
       "derived": [
         "rem:bond-order-eq-jet-degree-context"
       ],
@@ -1026,7 +1026,7 @@
         "rem:bsd-surreal-bound"
       ]
     },
-    "prf:alpha-k-derivation-procedure": {
+    "rem:alpha-k-derivation-procedure-proof-sketch": {
       "derived": [
         "prop:y-lambda-closed-form-wenzl-bridge",
         "prop:y-lambda-recipe-from-partition"
@@ -1046,7 +1046,7 @@
         "conj:dilogarithm-archimedean-limit"
       ]
     },
-    "prf:atom-knot-mass-derivation": {
+    "rem:atom-knot-mass-derivation-proof-sketch": {
       "derived": [
         "prop:recursive-atom-knot-atlas"
       ],
@@ -1055,13 +1055,13 @@
         "prop:recursive-atom-knot-atlas"
       ]
     },
-    "prf:bond-order-eq-jet-degree": {
+    "rem:bond-order-eq-jet-degree-sketch": {
       "derived": [
-        "prop:jet-prefix-gb-filtration"
+        "conj:jet-prefix-gb-filtration"
       ],
       "declared": [],
       "effective": [
-        "prop:jet-prefix-gb-filtration"
+        "conj:jet-prefix-gb-filtration"
       ]
     },
     "prf:borromean-markov-trace-closed-form": {
@@ -1200,7 +1200,7 @@
         "rem:mass-ordering-corrected"
       ]
     },
-    "prf:curvature-rank-gb-stratification": {
+    "rem:curvature-rank-gb-stratification-proof-sketch": {
       "derived": [
         "tbl:curvature-rank-gb-stratification-table-data",
         "thm:knot-mass-formula-unified"
@@ -1345,12 +1345,12 @@
     "prf:frobenius-codim-universal": {
       "derived": [
         "thm:knot-mass-formula-unified",
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ],
       "declared": [],
       "effective": [
         "thm:knot-mass-formula-unified",
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ]
     },
     "prf:frobenius-pairing-exists": {
@@ -1611,13 +1611,13 @@
     },
     "prf:phi-q-categorical-truncation": {
       "derived": [
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:spectral-sequence-collapse",
         "prop:unified-curvature-rank-mass-formula"
       ],
       "declared": [],
       "effective": [
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:spectral-sequence-collapse",
         "prop:unified-curvature-rank-mass-formula"
       ]
@@ -1731,7 +1731,7 @@
       "derived": [
         "conj:hoefsmit-scattering-pipeline",
         "prf:spectral-sequence-collapse",
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:phi-q-categorical-truncation",
         "prop:plancherel-weight-boundedness"
       ],
@@ -1739,7 +1739,7 @@
       "effective": [
         "conj:hoefsmit-scattering-pipeline",
         "prf:spectral-sequence-collapse",
-        "prop:curvature-rank-gb-stratification",
+        "conj:curvature-rank-gb-stratification",
         "prop:phi-q-categorical-truncation",
         "prop:plancherel-weight-boundedness"
       ]
@@ -1811,7 +1811,7 @@
         "prop:mass-coefficient-shadow-price"
       ]
     },
-    "prf:six-term-per-derivation-weights": {
+    "rem:six-term-per-derivation-weights-argument": {
       "derived": [
         "prop:chirality-dual-space-derivation",
         "tbl:six-term-per-derivation-weights-table3-data"
@@ -1908,7 +1908,7 @@
         "prop:q-beta-cos-resummation"
       ]
     },
-    "prf:three-calibration-inputs": {
+    "rem:three-calibration-inputs-sketch": {
       "derived": [
         "prop:three-parameters-wedderburn"
       ],
@@ -2183,7 +2183,7 @@
         "conj:qdifference-kernel-prolongation-symbol"
       ]
     },
-    "prop:binding-scale-catalan": {
+    "conj:binding-scale-catalan": {
       "derived": [
         "def:algebraic-quantum-volume"
       ],
@@ -2507,7 +2507,7 @@
         "cor:finite-connes-forces-trivial-kernel"
       ]
     },
-    "prop:gram-determinant-plancherel-ratio": {
+    "conj:gram-determinant-plancherel-ratio": {
       "derived": [
         "prop:force-carrier-bring-uniqueness"
       ],
@@ -2684,11 +2684,11 @@
     },
     "prop:mass-coefficient-shadow-price": {
       "derived": [
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ],
       "declared": [],
       "effective": [
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ]
     },
     "prop:mass-identity-exists": {
@@ -2787,7 +2787,7 @@
         "prf:interface-knot-markov-z"
       ]
     },
-    "prop:proton-mass-substrate-identity": {
+    "conj:proton-mass-substrate-identity": {
       "derived": [
         "rem:proton-mass-substrate-identity-derivation"
       ],
@@ -2850,7 +2850,7 @@
         "prop:markov-trace-recursive-reducer"
       ]
     },
-    "prop:qbeta-c-k-closed-forms": {
+    "conj:qbeta-c-k-closed-forms": {
       "derived": [
         "conj:kazhdan-lusztig-classical-limit",
         "prop:q-beta-categorical-precision-ladder"
@@ -2910,7 +2910,7 @@
     },
     "prop:rho-k-graded-expansion": {
       "derived": [
-        "prop:binding-scale-catalan",
+        "conj:binding-scale-catalan",
         "tbl:rho-k-graded-expansion-table1-data",
         "tbl:rho-k-graded-expansion-table2-data",
         "thm:knot-mass-formula-unified",
@@ -2918,7 +2918,7 @@
       ],
       "declared": [],
       "effective": [
-        "prop:binding-scale-catalan",
+        "conj:binding-scale-catalan",
         "tbl:rho-k-graded-expansion-table1-data",
         "tbl:rho-k-graded-expansion-table2-data",
         "thm:knot-mass-formula-unified",
@@ -3015,7 +3015,7 @@
         "prop:habiro-precision-ladder-equivalence"
       ]
     },
-    "prop:three-calibration-inputs": {
+    "conj:three-calibration-inputs": {
       "derived": [
         "rem:three-calibration-inputs-context"
       ],
@@ -3044,7 +3044,7 @@
         "tbl:toffoli-lp-stability-table2-data"
       ]
     },
-    "prop:topological-mass-formula": {
+    "conj:topological-mass-formula": {
       "derived": [
         "rem:kashaev-volume-density",
         "rem:topological-mass-formula-context"
@@ -3952,11 +3952,11 @@
     },
     "rem:geometric-invariant-piecewise": {
       "derived": [
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ],
       "declared": [],
       "effective": [
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ]
     },
     "rem:gluon-stabiliser-ledger": {
@@ -5335,12 +5335,12 @@
     "sec:mass-endomorphism-opener-intro": {
       "derived": [
         "def:mass-identity",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ],
       "declared": [],
       "effective": [
         "def:mass-identity",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ]
     },
     "sec:molecular-chains-rings-intro": {
@@ -5373,7 +5373,7 @@
         "prop:q-beta-c-k-recursion-from-habiro-q-difference",
         "prop:q-beta-direction-sanity-gate",
         "prop:q-beta-q-eq-one-shadow-gate",
-        "prop:q-beta-radius-of-convergence-gate",
+        "conj:q-beta-radius-of-convergence-gate",
         "prop:qbeta-c8-c10-silver-rationals",
         "prop:qbeta-z-recursion-to-ck-recursion-bridge"
       ],
@@ -5385,7 +5385,7 @@
         "prop:q-beta-c-k-recursion-from-habiro-q-difference",
         "prop:q-beta-direction-sanity-gate",
         "prop:q-beta-q-eq-one-shadow-gate",
-        "prop:q-beta-radius-of-convergence-gate",
+        "conj:q-beta-radius-of-convergence-gate",
         "prop:qbeta-c8-c10-silver-rationals",
         "prop:qbeta-z-recursion-to-ck-recursion-bridge"
       ]
@@ -5479,15 +5479,15 @@
     "tbl:binding-knots-visual-inventory-table1-data": {
       "derived": [
         "cor:spectral-decomposition-qvalue",
-        "prop:atom-knot-mass-derivation",
-        "prop:binding-scale-catalan",
+        "conj:atom-knot-mass-derivation",
+        "conj:binding-scale-catalan",
         "rem:figure-8-archimedean-illustration"
       ],
       "declared": [],
       "effective": [
         "cor:spectral-decomposition-qvalue",
-        "prop:atom-knot-mass-derivation",
-        "prop:binding-scale-catalan",
+        "conj:atom-knot-mass-derivation",
+        "conj:binding-scale-catalan",
         "rem:figure-8-archimedean-illustration"
       ]
     },
@@ -5715,7 +5715,7 @@
         "rem:skein-filtration-trichotomy"
       ]
     },
-    "thm:topological-mass": {
+    "conj:topological-mass": {
       "derived": [
         "prf:topological-mass"
       ],

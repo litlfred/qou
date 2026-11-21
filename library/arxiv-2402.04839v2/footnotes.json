@@ -1,0 +1,1564 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2402.04839v2",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "Thereadermayinterpretthisasaquantificationofhowmuchpotentialthemanifoldhas.Weread this as topological volume or volume topologique. The name was coined with permission of Michel Boileau and Joan Porti.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "LetMbeaclosed3–manifold.Atopologicalinvariantvolt(M)"
+    }
+   ],
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "2",
+   "text": "[Mye93] in fact established that all compact3–manifolds,including non-orientable3–manifolds,con- tain hyperbolic knots. However we restrict ourselves to the closed and orientable case.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "orientable3–manifoldcontainsahyperbolicknot[Mye82, Mye93]."
+    }
+   ],
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p004-2",
+   "page": 4,
+   "mark": "3",
+   "text": "The naming convention throughout this paper follows that of the SnapPy census manifolds.Hence the symbol m means that the corresponding manifolds can be triangulated with at most 5 ideal tetrahedra.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "Example2.1Asourfirstexample,weobservethatvolt(S"
+    },
+    {
+     "page": 4,
+     "context": "m004inSnapPy’s[CDGW21]OrientableCuspedCensus,"
+    },
+    {
+     "page": 4,
+     "context": "However,m003admitsnofillingtoS"
+    },
+    {
+     "page": 4,
+     "context": "admitsnofillingtoS3andthusdoesnotrepresentaknotcomplementinS"
+    }
+   ],
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p014-4",
+   "page": 14,
+   "mark": "3",
+   "text": "059338057779 m026(0, 1) L(8, 3)",
+   "marks": [
+    {
+     "page": 13,
+     "context": "basisifthecensusmanifoldisthecomplementofaknotinS"
+    },
+    {
+     "page": 13,
+     "context": "S"
+    }
+   ],
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "2",
+   "text": "56897060093671 m006(1, 1) SFS[S2 : (2, 1)(2, 1)(5, −2)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-2",
+   "page": 13,
+   "mark": "2",
+   "text": "56897060093671 m007(1, 1) SFS[S2 : (2, 1)(3, 1)(7, −5)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-3",
+   "page": 13,
+   "mark": "2",
+   "text": "56897060093671 m006(−2, 1) SFS[S2 : (3, 1)(3, 1)(3, −1)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-4",
+   "page": 13,
+   "mark": "2",
+   "text": "56897060093671 m007(0, 1) SFS[S2 : (2, 1)(4, 1)(5, −3)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-5",
+   "page": 13,
+   "mark": "2",
+   "text": "56897060093671 m007(−1, 1) SFS[S2 : (2, 1)(3, 1)(9, −7)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-6",
+   "page": 13,
+   "mark": "2",
+   "text": "56897060093671 m007(−2, 1) SFS[A : (2, 1)]/[0, −1| −1, 0]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-7",
+   "page": 13,
+   "mark": "2",
+   "text": "56897060093671 m006(−3, 1) SFS[D : (2, 1)(3, 1)] ∪(−1,1|0,1) SFS[D : (2, 1)(3, 1)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-8",
+   "page": 13,
+   "mark": "2",
+   "text": "56897060093671 m006(1, 2) SFS[A : (2, 1)]/[0, 1|1, 0]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-9",
+   "page": 13,
+   "mark": "2",
+   "text": "56897060093671 m007(−3, 1) L(2, 1)",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-10",
+   "page": 13,
+   "mark": "2",
+   "text": "66674478344906 m009(1, 0) L(6, 1)",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-11",
+   "page": 13,
+   "mark": "2",
+   "text": "66674478344906 m010(1, 0) SFS[S2 : (2, 1)(2, 1)(4, −1)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-12",
+   "page": 13,
+   "mark": "2",
+   "text": "66674478344906 m010(0, 1) SFS[S2 : (2, 1)(3, 1)(8, −7)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-13",
+   "page": 13,
+   "mark": "2",
+   "text": "66674478344906 m009(0, 1) SFS[S2 : (2, 1)(4, 1)(6, −5)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-14",
+   "page": 13,
+   "mark": "2",
+   "text": "66674478344906 m009(−1, 1) SFS[S2 : (3, 1)(3, 1)(5, −4)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-15",
+   "page": 13,
+   "mark": "2",
+   "text": "66674478344906 m009(−2, 1) SFS[S2 : (3, 1)(3, 2)(3, −1)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-16",
+   "page": 13,
+   "mark": "2",
+   "text": "66674478344906 m010(1, 1) T × I/[3, 2|1, 1]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-17",
+   "page": 13,
+   "mark": "2",
+   "text": "66674478344906 m009(1, 1) T × I/[−3, −2| −1, −1]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-18",
+   "page": 13,
+   "mark": "2",
+   "text": "66674478344906 m010(−2, 1) SFS[D : (2, 1)(2, 1)] ∪(0,1|1,0) SFS[D : (2, 1)(4, 1)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p013-19",
+   "page": 13,
+   "mark": "2",
+   "text": "66674478344906 m009(−3, 1) continued on next page –",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "2",
+   "text": "98912028293 m023(−1, 1) SFS[D : (2, 1)(2, 1)] ∪(0,1|1,1) SFS[D : (2, 1)(5, 4)]]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p014-2",
+   "page": 14,
+   "mark": "2",
+   "text": "98912028293 m022(−2, 1) SFS[D : (2, 1)(2, 1)] ∪(0,1|1,0) SFS[D : (2, 1)(5, 1)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p014-3",
+   "page": 14,
+   "mark": "2",
+   "text": "98912028293 m023(3, 1) L(19, 4)",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p014-5",
+   "page": 14,
+   "mark": "3",
+   "text": "059338057779 m026(1, 0) SFS[S2 : (2, 1)(3, 2)(5, −4)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p014-6",
+   "page": 14,
+   "mark": "3",
+   "text": "059338057779 m026(−1, 1) SFS[S2 : (2, 1)(3, 1)(3, 2)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p014-7",
+   "page": 14,
+   "mark": "3",
+   "text": "059338057779 m026(1, 1) SFS[D : (2, 1)(3, 1)] ∪(−1,1|0,1) SFS[D : (2, 1)(4, 1)]",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p014-8",
+   "page": 14,
+   "mark": "3",
+   "text": "059338057779 m026(1, 2)",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p023-1",
+   "page": 23,
+   "mark": "114",
+   "text": "MR3630197 [Ada86] C. C. Adams, Augmented alternating link complements are hyperbolic, Low-dimensional topology and Kleinian groups (Coventry/Durham, 1984), 1986, pp. 115–130. MR903861 [Ada94] C. Adams, Dehn filling hyperbolic 3-manifolds, Pacific J. Math. 165 (1994), 217–238. MR1300832 [Ago00] I. Agol, Bounds on exceptional Dehn filling, Geom. Topol. 4 (2000), 431–449. MR1799796 [Ago10] I. Agol, The minimal volume orientable hyperbolic 2-cusped 3-manifolds, Proc. Amer. Math. Soc. 138 (2010), 3723–3732. MR2661571 [Bak08] K. L. Baker, Surgery descriptions and volumes of Berge knots. I. Large volume Berge knots, J. Knot Theory Ramifications 17 (2008), 1077–1097. MR2457837 [BAR19] R. Blair, H. Allen, and L. Rodriguez, Twist number and the alternating volume of knots, J. Knot Theory Ramifications 28 (2019), 1950016, 16. MR3910957 [BBB+10] L. Bessi`eres, G. Besson, M. Boileau, S. Maillot, and J. Porti, Geometrisation of 3-manifolds, EMS Tracts in Mathematics, vol. 13, European Mathematical Society (EMS), Z¨urich, 2010. MR2683385 [BBP] B. Burton, R. Budney, and W. Pettersson, Regina: Software for low-dimensional topology. http://regina-normal.github.io. [Ber18] J. Berge, Some knots with surgeries yielding lens spaces, 2018. arXiv:1802.09722. [BJK09] K. L. Baker, J. E. Johnson, and E. A. Klodginski, Tunnel number one, genus-one fibered knots, Comm. Anal. Geom. 17 (2009), 1–16. MR2495831",
+   "block": "library/arxiv-2402.04839v2/blocks/prose-sec-018"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "thatarenotS"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "thatarenotS3,RP"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "n-componentlinkL ⊂S"
+  },
+  {
+   "page": 2,
+   "mark": "g",
+   "context": "168.602< volt(M) < 37"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "168.602< volt(M) < 37g + 22"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "wherethefillingslopes"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "q′and"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "\u0000 p"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "1, . . . ,"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "1, . . . ,p"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "p"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "jgives"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "p"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "jonthe"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "jonthej–thcuspmayleadto"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "ofRP"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "ofRP3,andhencevolt(RP"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "dhencevolt(RP3)=volH(m009)≈2.66674.OneseesthisbynotingthatRP"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "manifoldofsmallervolume.AswesawinProposition2.1,wehavevolt(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "volt(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "volt(S3) < 2 volt(RP"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "canseethatthelifttoS"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "canseethatthelifttoS3oftheminimiserinRP"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "2 · volt(RP"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "d to give bounds on degrees of covers.Recall that a linkL ⊂S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "ifeveryclosed,orientable3–manifoldarisesasacoverofS"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "Corollary2.11LetLbe a hyperbolic universal link inS"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "degreeofacoverM→S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "volt(M) ≤dK4a1(M) volH(K4a1) = dK4a1(M) volt(S"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "ral lower bounds ondL(M)from the the topological volumes ofS"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "letMibeaclosed,orientable3–manifoldwhichisnothomeomorphictoS"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Supposethe3–manifoldMisgivenbysurgeryonahyperboliclinkL⊂S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "ofthesurgerydiagram,thereisalinkL∗⊂MsuchthatS"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "volH(S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Example3.1The 3–torusT"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "B(ahyperboliclink).ThusthereisahyperboliclinkB∗⊂T"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "asBinS"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "asBinS3.Inparticular,wehavevolt(T"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "rticular,wehavevolt(T3)≤volH(B)<7.33.ThetopologicalvolumeofT"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "thatvolt(T"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "components.ThusT"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "components.ThusT3isacandidatetohaveh(T"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "n-componentlinkL ⊂S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "inS"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "sult of [Bla09],showing that the complement of every knotK⊂S"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "ume of the linkK ⊔Uis bounded above by10(5c(K)−1)vtet.SinceS"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "≤rk(H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "≤rk(H1(M\\ L; Z"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "cuspc"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "cuspciofM\\ Lwechooseasequenceofslopesp"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "cuspciofM\\ Lwechooseasequenceofslopespc"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "cuspciofM\\ Lwechooseasequenceofslopespcin /q"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "cuspciofM\\ Lwechooseasequenceofslopespcin /qc"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "Notethatthelatterissatisfiedifallp"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Notethatthelatterissatisfiedifallpc"
+  },
+  {
+   "page": 11,
+   "mark": "g",
+   "context": "168.602< volt(M) < 37"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "168.602< volt(M) < 37g + 22"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "andthusKmustrepresentanelementofordertwoinH"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "8LetMbe a closed,orientable 3–manifold not diffeomorphic toS"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Inthissectionweshowthat,forp"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Inthissectionweshowthat,forp2+ q"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "ofalllensspacesoftopologicalvolumeatmost3.07—withp"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "ofalllensspacesoftopologicalvolumeatmost3.07—withp2+ q"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Wenotethat(p, q)–surgeryonthefirstcuspofM∈{P, W}forp"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Wenotethat(p, q)–surgeryonthefirstcuspofM∈{P, W}forp2+ q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "p2+ 4pq + 8q2−π"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q2−π4(p"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "p2+ 4pq + 8q2−π4(p2 −8"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q2−π4(p2 −8q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q2−π4(p2 −8q2)(p"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "p2+ 4pq + 8q2−π4(p2 −8q2)(p2 + 8pq + 8"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q2−π4(p2 −8q2)(p2 + 8pq + 8q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "3(p"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "3(p2+ 4pq + 8q"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "3(p2+ 4pq + 8q2)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(p"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(p2+ 4pq + 8q"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "(p2+ 4pq + 8q2)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(p −4q)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(p −4q)2+ (p −3q)"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "(p −4q)2+ (p −3q)2+π"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "(p −4q)2+ (p −3q)2+π4(4"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p2"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p2q"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p2q2 −1520pq"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p2q2 −1520pq3 + 1535"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p2q2 −1520pq3 + 1535q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "24((p −4q)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "24((p −4q)2+ (p −3q)"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "24((p −4q)2+ (p −3q)2)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "((p −4q)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "((p −4q)2+ (p −3q)"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "((p −4q)2+ (p −3q)2)"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "wherethefillingslopes"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "q′and"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Throughout,thesurgerycoefficient"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "longthefirstcuspofbothWandP .Sincethefirstcuspisanunknot(inS"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "assumethatp"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "i+ q"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "Hence for all"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "iobtained from"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "iobtained fromp"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Corollary5.2Thesequence( volt(L(p, q)) )(p,q)converges,asp"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "rollary5.2Thesequence( volt(L(p, q)) )(p,q)converges,asp2+ q"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2p"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "(p −4q)"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "(p −4q)2+ (p −3q)"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "forp(andq)sufficientlylarge,and"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "q"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "fractionexpansion.Wecallthesequenceofrationalnumbers(p"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "qi)"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "qi)i∈Nwith"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "qi)i∈Nwithp"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "qi=⟨a;"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "qi=⟨a; a"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "qi=⟨a; a1, . . . , a"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "<|xq"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "<|xqi −p"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "Theorem5.8(Theorem 7.14 from [NZM91])Let"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "q∈Q,"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "q∈Q,p,"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "q∈Q,p,qco-prime,"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "q∈Q,p,qco-prime,q> 0,and let"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "withconvergents(p"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "qi)"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "qi)i∈N.If|qx −p| < |q"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "qi)i∈N.If|qx −p| < |qi"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "qi)i∈N.If|qx −p| < |qix −p"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "qi)i∈N.If|qx −p| < |qix −pi|forsome"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "qi)i∈N.If|qx −p| < |qix −pi|forsomei,then"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "qi)i∈N.If|qx −p| < |qix −pi|forsomei,thenq≥q"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "ithrespecttotheinequality.Hence,foranarbitraryrationalnumber"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "+1x −pi+1|whileq≥qi+1,andtheinequalityisstrictifweassumethat"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "vetothemagnitudeoferrorbounds,isminimisedfortheconvergents(p"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "qi)"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "qi)i∈Nof"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "qi)i∈Nofx"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "and(a"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "bj)"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "bj)j∈Nof"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "bj)j∈Nofx"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "qi,"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "qi,a"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "awayfrom∆volPforrationals"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "awayfrom∆volPforrationalsp"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "bj∈Q,is"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "forarbitrary"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "qi,"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "qi,a"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "bj∈Q.Sincewemayexcludefinitelymanypoints,wecanassume"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "bj∈Q.Sincewemayexcludefinitelymanypoints,wecanassumep(and"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(p −4q)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(p −4q)2+ (p −3q)"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "qi,"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "qi,a"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": ".It follows that for the convergents"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": ".It follows that for the convergentsp"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "p2+ 4pq + 8q2−π"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q2−π4(p"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "p2+ 4pq + 8q2−π4(p2 −8"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q2−π4(p2 −8q"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q2−π4(p2 −8q2)(p"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "p2+ 4pq + 8q2−π4(p2 −8q2)(p2 + 8pq + 8"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q2−π4(p2 −8q2)(p2 + 8pq + 8q"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "3(p"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "3(p2+ 4pq + 8q"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "3(p2+ 4pq + 8q2)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(p −4q)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(p −4q)2+ (p −3q)"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "(p −4q)2+ (p −3q)2+π"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "(p −4q)2+ (p −3q)2+π4(4"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p2q"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p2q2 −1520pq"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p2q2 −1520pq3 + 1535"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "(p −4q)2+ (p −3q)2+π4(4p4 −80p3q + 540p2q2 −1520pq3 + 1535q"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "24((p −4q)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "24((p −4q)2+ (p −3q)"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "24((p −4q)2+ (p −3q)2)"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "3(1 −z"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "3(1 −z3)"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "z"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "1(1 −z"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "1(1 −z1)"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "1(1 −z1)d"
+  },
+  {
+   "page": 26,
+   "mark": "b",
+   "context": "1(1 −z1)dz"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "2(1 −z"
+  },
+  {
+   "page": 26,
+   "mark": "e",
+   "context": "2(1 −z2)"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "2(1 −z2)e"
+  },
+  {
+   "page": 26,
+   "mark": "c",
+   "context": "2(1 −z2)ez"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "{z"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "1−3"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "1−3z"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "1+ 5"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "1+ 5z"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "−z"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "1+ z"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "1+ z1+ 2"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "1+ z1+ 2z"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "−z"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "1+ z"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "1+ z1+ 2"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "1+ z1+ 2z"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "w3 −z"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "1+ 2"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "1+ 2z"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "w1 −z"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "1+ 2"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "1+ 2z"
+  },
+  {
+   "page": 27,
+   "mark": "v",
+   "context": "1−u1and"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "1−u1andv"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "1−u1andv2= v"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "1−u1andv2= v3=u"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "{1−z1 + z1"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "w3 −z1"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "w2 −z1"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "w1 −z1 −z1"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "v3 −z1 −z1"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "v2 −z1 −z1"
+  }
+ ]
+}

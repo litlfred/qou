@@ -51,8 +51,8 @@ Note also that this is a **scope-(a)** result in the AGENTS.md sense for the
 extension programme as a whole: it excludes rank-1 targets, not the extension.
 A target of rank ≥ 2 is untouched by everything here.
 
--- Ref: [manuscript] `braids-and-knots/fundamental-knots-operator-basis.md`
--- Ref: [manuscript] bean `qou-yb2b` (the sewing / degeneration question)
+-- Ref: [leitner2026] `braids-and-knots/fundamental-knots-operator-basis.md`
+-- Ref: [leitner2026] bean `qou-yb2b` (the sewing / degeneration question)
 -/
 
 namespace QOU.Eightfold

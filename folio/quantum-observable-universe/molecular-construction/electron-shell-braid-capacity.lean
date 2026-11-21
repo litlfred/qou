@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 10, §electron-shell-braid-capacity
+-- Ref: [leitner2026] Ch. 10, §electron-shell-braid-capacity
 -- Electron shell as braid bonding capacity
 
 namespace QOU.Molecular

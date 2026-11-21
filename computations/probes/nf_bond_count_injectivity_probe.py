@@ -78,7 +78,7 @@ import os
 import sys
 import time
 from fractions import Fraction
-from math import comb
+from math import comb  # float64-ok: exact integer binomial coefficient
 
 sys.path[:0] = ['/home/user/qou/computations/probes',
                 '/home/user/qou/computations',
@@ -240,14 +240,19 @@ def main() -> int:
         wb.add_assertion("control_reproduces_canonical_builder",
                          computed=str(ctrl_ok), expected="True")
         wb.add_assertion("configurations_swept",
-                         computed=str(n), expected=str(n))
+                         computed=str(n > 0), expected="True")
         wb.add_assertion("shape_is_many_to_one_on_this_sample",
-                         computed=f"{len(by_shape)} shapes / {n} configs",
-                         expected=f"{len(by_shape)} shapes / {n} configs")
+                         computed=str(len(by_shape) < n),
+                         expected="True")
         wb.add_assertion("normal_forms_distinct_on_this_sample",
-                         computed=f"{len(by_nf)} normal forms / {n} configs",
-                         expected=f"{len(by_nf)} normal forms / {n} configs")
-        out = wb.save(extra={"auditOnly": True})
+                         computed=str(len(by_nf) == n),
+                         expected="True")
+        out = wb.save(extra={
+            "auditOnly": True,
+            "q0Anchor": "independent",
+            "q0AnchorReason": "exact Laurent-polynomial normal forms over Q (fractions.Fraction) "
+                              "compared by dict equality; nothing is evaluated at any numerical q",
+        })
         print(f"\nWrote {out}", flush=True)
     except Exception as exc:  # pragma: no cover
         print(f"\n(witness not written: {exc})", flush=True)

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/5s032x/blocks/prose-sec-005",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Two Qubits and the Quaternionic Hopf Fibration",
-  "pageStart": 9,
-  "pageEnd": 10,
-  "text": "../sections/sec-005-two-qubits-and-the-quaternionic-hopf-fibration.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/5s032x",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/5s032x",
+  "title": "The Bloch Sphere and the Complex Hopf Fibration",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-005-the-bloch-sphere-and-the-complex-hopf-fibration.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/5s032x/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/5s032x/manifest.jsonld",
   "provenance": "ingested"
 }

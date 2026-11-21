@@ -1,0 +1,58 @@
+A representation theoretic explanation... 1389
+
+(a) T (po) is real-rooted or identically zero.
+(b) T(p)(xo, yo) = 0 for all p € V(n).
+
+Proof Let qo, ro € Vig(m) be such that T(po) = go + iro. Also suppose that T(po) 4 0
+and that (b) does not hold, and let p; be such that T(p1)(xo, yo) # 0. WLOG, we may also
+assume p; € Viz(n) by considering its real or imaginary part. We will now prove that T (po)
+must be real-rooted.
+
+First, suppose further that T (po) has a multiple root at (xo, yo). For small fixed €, po+€p1
+is H4-stable and so Lemma 4.10 implies T(po + €p1) is either H4-stable or _-stable.
+Hermite-Biehler (Proposition 4.9) then implies go + €T(p1) and ro have interlacing roots.
+However, since T restricts to a real linear operator, it must be that go and ro both have a multiple
+root at (xo, yo). The fact that go + €T(p1) has no root at (x0, yo) yields a contradiction, as
+interlacing is then impossible.
+
+Otherwise, T(po) has a simple root at (xo, yo). Define R € Hom(V(n), V(1)) via
+R:= dy oT, where @ € SL2(C) is such that (xp : yo) is the pole of ¢. We have that
+R(po)(xo, yo) = 0, but R(po) ¥ 0 since the root is simple. Further, R(p1)(xo, yo) 4 0, and
+therefore R is a surjective continuous linear map. By the open mapping theorem, there exists
+a one-real-dimensional curve ! C V(n) through po, for which R(T) contains elements with
+root in #4 on one side of po (call this side ',.) and elements with root in 7_ on the other
+side (call it "_). So by Laguerre’s theorem (Proposition 4.6), elements of T(I'4.) have some
+roots in #4 and elements of T(I'_) have some roots in H_. Since polynomials near po are
+7, -stable, Lemma 4.10 implies elements of T(I. MN Be(po)) are all 714.-stable or H_-stable
+for some small ball Be(po) about po. So elements of T(P4 9 Be(po)) are H—-stable and
+elements of T([T_ 9 Be(po)) are H+-stable, and therefore T (po) is real-rooted. oO
+
+We now prove our main result on ray- and interval-stability preserving operators. First we
+state the theorem for closed bounded output intervals, as it clarifies the proof quite a bit. We
+will then extend the result to other connected regions in R.
+
+Theorem 7.8 Fix n,m € No and a linear operator T € Hom(V(n), V(m)) which restricts
+to a real linear operator. Further, let I C R be any interval, and let J C R be any closed
+bounded interval. The following are equivalent.
+
+(i) T preserves weak real-rootedness and maps I-rooted polynomials to nonzero J -rooted
+polynomials.
+(ii) One of the following holds:
+
+(a) Symb(T) is (HUT) x (Hy\J)-stable.
+(b) Symb(T) is (H- UT) x (H_\J)-stable.
+(c) T has image of dimension at most two, and is of the form
+
+T:prrqg-Wilp) +r: yop)
+
+where q,r € Vig(m) are top-degree monic and weakly J-rooted such thatq <r,
+and wy and wp are real linear functionals such that \(p) - v2(p) => 0 (not both
+zero) holds for any I-rooted p.
+
+Proof (i) = (ii). Suppose T is nondegenerate. So, Symb(T) is either (H_ x 7)-stable or
+(H— x H_)-stable by Corollary 7.4. By Lemma 7.3, either T maps H-stable evaluation
+symbols entirely to nonzero 1,-stable polynomials or entirely to nonzero 11_-stable poly-
+nomials. If for some (zo : wo) € H— we have that T[(wox — zoy)"] has a root in R, then we
+can apply the previous lemma. If condition (a) of the lemma holds, then T[(wox — zoy)"]
+
+D Springer

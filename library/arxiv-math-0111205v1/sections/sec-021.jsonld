@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0111205v1/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "On Quantum Doubles of Finite Dimensional Hopf Algebras",
+  "pageStart": 54,
+  "pageEnd": 62,
+  "contains": [
+    "library/arxiv-math-0111205v1/blocks/prose-sec-021",
+    "library/arxiv-math-0111205v1/blocks/lem-sec-021-01",
+    "library/arxiv-math-0111205v1/blocks/rem-sec-021-02",
+    "library/arxiv-math-0111205v1/blocks/lem-sec-021-03",
+    "library/arxiv-math-0111205v1/blocks/prop-sec-021-04",
+    "library/arxiv-math-0111205v1/blocks/rem-sec-021-05",
+    "library/arxiv-math-0111205v1/blocks/def-sec-021-06",
+    "library/arxiv-math-0111205v1/blocks/thm-sec-021-07",
+    "library/arxiv-math-0111205v1/blocks/lem-sec-021-08",
+    "library/arxiv-math-0111205v1/blocks/prop-sec-021-09",
+    "library/arxiv-math-0111205v1/blocks/rem-sec-021-10",
+    "library/arxiv-math-0111205v1/blocks/thm-sec-021-11",
+    "library/arxiv-math-0111205v1/blocks/lem-sec-021-12",
+    "library/arxiv-math-0111205v1/blocks/cor-sec-021-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0111205v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0111205v1/manifest.jsonld",
+  "provenance": "ingested"
+}

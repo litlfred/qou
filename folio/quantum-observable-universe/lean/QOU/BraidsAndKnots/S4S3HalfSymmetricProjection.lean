@@ -1,13 +1,14 @@
 /-
-  S_4 ↓ S_3 half-symmetric projection extracts one octahedral cell.
+  S_3-trivial share of the half-symmetric part of H_4 (S_4 ↓ S_3 branching).
 
-  The half-symmetric Wedderburn projection on H_4, restricted to the
-  S_3-trivial subspace (3-component Borromean permutation), gives a
-  factor 2/5.  Applied to the 8-fold ideal-octahedral tessellation
-  of 𝓑_3's complement, effective cell count = (5/2) × (2/5) = 1.
+  Weighted dimension 5, weighted trivial-S_3 multiplicity 2, share 2/5.
+  This is branching arithmetic only.  It selects no cell of a hyperbolic
+  decomposition: S³ ∖ 𝓑₃ is TWO regular ideal octahedra (Vol = 2·V_oct
+  = 8G, V_oct = 4G), so the earlier "one of eight octahedra" reading had
+  no geometric basis and was removed (2026-11-15).
 
   -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7
-  -- Ref: [adams1985hyperbolic] ISBN 978-0-7167-1510-2
+  -- Ref: [adams1985hyperbolic] ISBN 978-0-7167-1510-2 (two ideal octahedra)
 -/
 import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.Data.Fintype.Basic
@@ -55,12 +56,12 @@ def halfSymTrivialS3 : ℚ :=
 /-- The S_3-trivial projection factor. -/
 def s3TrivialFactor : ℚ := halfSymTrivialS3 / halfSymTotalDim
 
-/-- Effective cell count = (5/2) × (2/5) = 1. -/
+/-- The product (5/2) × (2/5) = 1.  Arithmetic only: 5/2 is the weighted
+    number of half-symmetric irreducibles.  No geometric meaning is claimed. -/
 def effectiveCellCount : ℚ := (5 : ℚ) / 2 * s3TrivialFactor
 
--- The three key assertions, verified by `decide` / `native_decide`.
+-- The three key assertions, verified by `simp` / `norm_num`.
 -- Ref: [james1984representation] §2 (S_n branching rules)
--- Ref: [adams1985hyperbolic] (8 ideal octahedra in 𝓑_3 complement)
 
 theorem halfSymTotalDim_eq : halfSymTotalDim = 5 := by
   simp only [halfSymTotalDim, halfSymRepresentatives, List.foldl_cons, List.foldl_nil]; norm_num
@@ -77,66 +78,13 @@ theorem effectiveCellCount_eq : effectiveCellCount = 1 := by
   rw [s3TrivialFactor_eq]
   norm_num
 
-/-- The per-cell ratio 1/8 (one effective cell of eight total). -/
-theorem perCellRatio_eq : effectiveCellCount / 8 = 1 / 8 := by
-  rw [effectiveCellCount_eq]
-
-/-- Main result: the half-symmetric H_4 projection, restricted to
-    the S_3-trivial subspace, extracts exactly ONE of the 8 ideal
-    octahedral cells in the Borromean complement tessellation.
-
-    Scope (2026-05-24, post-purge): combinatorial bijection only.
-    The proof states the standard S_n branching arithmetic; it
-    makes NO claim about per-cell curvature κ. The earlier
-    `Yekutieli per-cell` reading (κ = −G) was purged from
-    production on 2026-05-24 (commit 71d674da1) as non-canonical:
-    PR #985 found the natural-reading bijection gives κ = +0.5,
-    not −G, and no categorical derivation supplies −G·h².
-
-    Per the absorbed-into-VolDensity framing (PR #1080), the
-    canonical mass formula is m(K) = m_e · VolDensity(K, q_0)
-    with no separate λ_scale constant. This bijection is a
-    structural input that constrains VolDensity(𝓑₃)'s categorical
-    refinement at h² order; it is NOT a per-cell additive
-    correction. -/
--- Ref: [adams1985hyperbolic] https://doi.org/10.1007/978-1-4684-9458-7
+/-- Main result: in the half-symmetric part of H_4 at q = 1, the weighted
+    dimension is 5, the weighted trivial-S_3 multiplicity is 2, and the
+    S_3-trivial share is 2/5.  Branching arithmetic only
+    ([james1984representation] §2); no per-cell or curvature claim. -/
 -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7
 theorem s4_s3_half_symmetric_projection :
-    effectiveCellCount = 1 ∧ effectiveCellCount / 8 = 1 / 8 :=
-  ⟨effectiveCellCount_eq, perCellRatio_eq⟩
+    halfSymTotalDim = 5 ∧ halfSymTrivialS3 = 2 ∧ s3TrivialFactor = 2 / 5 :=
+  ⟨halfSymTotalDim_eq, halfSymTrivialS3_eq, s3TrivialFactor_eq⟩
 
 end QOU.BraidsAndKnots
-
-
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub)
-
-This proposition is conditional on the conjecture's class
-`BorromeanCommonScale` (declared in the lake-package sibling).  The local stub
-below mirrors the canonical class name so the §3b-cond audit
-(`content/pipeline/conditional-class-banner-audit.ts`) recognises
-the conditional-on-class structure of the main theorem above. -/
-
-namespace QOU.BraidsAndKnots.S4S3Audit.ConditionalAudit
-
-/-- §3b-cond conjecture class (non-degenerate per AGENTS.md §3b-cond item 5):
-    the conjectural Borromean common-scale hypothesis identifies the
-    mass-channel scale factor `scale` with the per-cell ratio
-    `effectiveCellCount / 8`.  This is the HYPOTHESIS (the categorical
-    scale identification), not the combinatorial conclusion (proved
-    unconditionally above as `perCellRatio_eq`). -/
-class BorromeanCommonScale where
-  /-- The conjectural mass-channel scale factor. -/
-  scale : ℚ
-  /-- Conjecture: the common scale equals the per-cell ratio. -/
-  scale_eq_per_cell : scale = QOU.BraidsAndKnots.effectiveCellCount / 8
-
--- Ref: [adams1985hyperbolic] https://doi.org/10.1007/978-1-4684-9458-7
-/-- **Theorem (conditional on `BorromeanCommonScale`).** Combining the
-    conjectural common-scale identification with the proved combinatorial
-    per-cell ratio (`perCellRatio_eq`), the mass-channel scale factor is
-    exactly `1/8` — a rigorous conditional, not a `True := trivial` stub. -/
-theorem conditional_on_BorromeanCommonScale [inst : BorromeanCommonScale] :
-    inst.scale = 1 / 8 := by
-  rw [inst.scale_eq_per_cell, QOU.BraidsAndKnots.perCellRatio_eq]
-
-end QOU.BraidsAndKnots.S4S3Audit.ConditionalAudit

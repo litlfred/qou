@@ -1,0 +1,63 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0405258v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "dbd6bf5a94deebaf152abfa7f11ee13eb42f2fd13671bfa7cc466d2fdcacae0b",
+  "file": "0405258v2.pdf"
+ },
+ "provenance": {
+  "title": "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES",
+  "authors": "JAMES A. MINGO (\u2217), PIOTR \u015aNIADY (\u2021), AND ROLAND SPEICHER (\u2217)(\u2020)",
+  "arxiv": {
+   "id": "math/0405258",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "27 Jun 2005"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "There has been much interest in global fluctuations of random matrices, in particular, since it was observed that for large classes of one-matrix models these fluctuations are universal.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-008-4-failure-of-universality-for-multi-matrix-model.md (p. 27-30)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-008-4-failure-of-universality-for-multi-matrix-model.md",
+   "section_title": "Failure of Universality for multi-matrix models",
+   "pages": "27-30",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-008-4-failure-of-universality-for-multi-matrix-model.md (p. 27-30)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-008-01",
+   "block_iri": "library/arxiv-math-0405258v2/blocks/prop-sec-008-01",
+   "claim_id": "arxiv-math-0405258v2#prop-sec-008-01"
+  }
+ ]
+}

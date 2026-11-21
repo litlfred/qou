@@ -1,0 +1,1 @@
+These two problems prolong the “riff in the key of q”: the amusing fact that traditional, apparently independent uses of that letter, denoting the number of elements in a finite field, the deformation parameter q =e", the variable in the Poincaré series of a space, the variable in the theory of modular forms, etc. turn out to be related.

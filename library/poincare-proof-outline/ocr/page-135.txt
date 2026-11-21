@@ -1,0 +1,75 @@
+proof—
+have Re ?Byu / ?Ayu < -1
+using (Re ?Byz / ?Ayz < —1> «?ReByz / ?Ayz > ?ReByu / ?Ayu
+by (subst (asm) «Re ?Byz = ?ReByz>, subst «Re ?Byu = ?ReByu») simp
+thus intersects-x-azis-positive-cmat (poincare-line-cvec-cmat (of-complez-cvec (cor ry * cis 0)) (of-complex-cvec
+(cor ru * cis y)))
+using yu
+by simp
+qed
+
+let ?a = calc-x-axis-intersection ?yu
+
+have ?a € positive-x-axis 2a € circline-set ?yu ?a € unit-disc
+using <intersects-x-axis-positive ?yu)
+using intersects-x-azis-positive-iff ‘lof ?yu] «y # wu
+by auto
+
+then obtain a’ where a’: ?a = of-complez a’ is-real a’ Re a' > 0 Rea’ < 1
+unfolding positive-x-axis-def circline-set-x-axis
+by (auto simp add: cmod-eq-Re)
+
+have intersects-r-azxis ?yz intersects-z-aris ?yu
+using <intersects-x-axis-positive ?yz) <intersects-x-axis-positive ?yu>
+by auto
+
+show Ja. a € unit-disc \ poincare-between u a y A poincare-between 0, a (of-complex v)
+proof (rule-tac c= ?a in exI, safe)
+show poincare-between u ?a y
+using poincare-between-z-axis-intersection|[of y u ?a]
+using calc-z-azis-intersection| OF is-poincare-line-poincare-line|OF «y # wu] <intersects-x-axis ?yu>]
+using calc-z-azis-intersection-in-unit-disc| OF is-poincare-line-poincare-line|OF <y # wu] <intersects-x-axis ?yu>]
+using in-disc ‘y # u> <y ¢ circline-set z-axis» «u ¢ circline-set z-axis»
+using « «(p = Arg u «= Argy? «px v0 < 0»
+by (subst poincare-between-rev, auto simp add: mult.commute)
+next
+show poincare-between 0; ?a (of-complex v)
+proof—
+have —?ReByz / ?Ayz < —?ReByu / ?Ayu
+using <?ReByz / ?Ayz > ?ReByu / ?Ayw
+
+by linarith
+
+have outward ?yz ?yu
+using * (y! = cor ry * cis 0) (z' = cor rz * cis yp (u' = cor ru * cis y>
+apply simp
+
+apply (transfer fixing: ry rz ru 0 ~)
+apply (transfer fixing: ry rz ru 0 ~)
+apply (subst yz yu)+
+unfolding outward-cmat-def
+apply (simp only: Let-def prod.case)
+apply (subst yz yu)+
+using ‘(—?ReByz / ?Ayz < —?ReByu / ?Ayur
+by simp
+
+hence Re a’ < Rev
+using <?v = of-complex v»
+using ‘?a = of-complez a'»
+using <intersects-x-axis-positive ?yz) <intersects-a-axis-positive ?yu>
+using outward[OF is-poincare-line-poincare-line|OF <y # z»| is-poincare-line-poincare-line|OF «y # w»]]
+by simp
+
+thus ?thesis
+using <?v = of-complex v»
+using poincare-between-zr-axis-Ouvlof Re a’ Re v| a’ v
+by simp
+
+qed
+next
+show 7a € unit-disc
+by fact
+qed
+qed
+
+135

@@ -1,0 +1,1 @@
+The set ∆spans a real vector space E ⊂h∗of dimension equal to the complex dimension of h∗. Moreover, the bilinear form κ is positive deﬁnite when restricted to E, and the set ∆is an abstract root system in E.

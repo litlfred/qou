@@ -3,49 +3,59 @@
  "doc_id": "arxiv-0905.0228v4",
  "source_sha256": "1744545d0f210949",
  "brief": "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials.",
- "extended": "**A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS**\n\n*JOHANN CIGLER AND JIANG ZENG*\n\n19 pp, 8 sections.\n\n**Abstract.** Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials. In this paper we consider a new family of q-Hermite polynomials and prove several curious properties about these polynomials. One st riking property is the connection with q-Fibonacci and q-Lucas polynomials. The latter relation yields a generaliz ation of the Touchard-Riordan formula.\n\n**Outline.** 1 Introduction; 3 The rescaled discrete q-Hermite polynomials ; 4 Connection with q-Fibonacci polynomials and ; 5 Appendix; 5.1 Some well-known facts; 5.2 A second proof of Proposition 14; Acknowledgement; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4: The q-Hermite polynomials Hn(x, s |q), deﬁned as moments Fx, 0, −s(zn), have the\n- Theorem 5: The matrices (c(i, j, q ))n−1\n- Theorem 6: The generating function of hn(x, s ; q) has the continued fraction expansion:\n- Theorem 8: Let Tn(x, s ) = ( x + (1 − q)sDq)n · 1. Then\n- Theorem 5: and the orthogonality of the continuous q-Hermite polynomials. Clearly Theorem 5\n- Proposition 16: The continuous q-Hermite polynomials ˜Hn(x, s |q) deﬁned by (1.9), i.e.,",
+ "extended": "**A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS**\n\n*JOHANN CIGLER AND JIANG ZENG*\n\n19 pp, 10 sections.\n\n**Abstract.** Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials. In this paper we consider a new family of q-Hermite polynomials and prove several curious properties about these polynomials. One striking property is the connection with q-Fibonacci and q-Lucas polynomials. The latter relation yields a generalization of the Touchard-Riordan formula.\n\n**Outline.** Front matter; 1 Introduction; 2 The q-Hermite polynomials Hn(x,s|q); 3 The rescaled discrete q-Hermite polynomials ; 4 Connection with q-Fibonacci polynomials and ; 5 Appendix; 5.1 Some well-known facts; 5.2 A second proof of Proposition 14; Acknowledgement; References",
  "tokens": {
   "brief": 34,
-  "extended": 311
+  "extended": 194
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-7"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-the-q-hermite-polynomials-hnxsq",
+   "title": "The q-Hermite polynomials Hn(x,s|q)",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-002-3-the-rescaled-discrete-q-hermite-polynomials-ii",
    "title": "The rescaled discrete q-Hermite polynomials II",
    "pages": "7-12"
   },
   {
-   "id": "sec-002-4-connection-with-q-fibonacci-polynomials-and-q",
+   "id": "sec-003-4-connection-with-q-fibonacci-polynomials-and-q",
    "title": "Connection with q-Fibonacci polynomials and q-Lucas polynomials",
    "pages": "12-16"
   },
   {
-   "id": "sec-003-5-appendix",
+   "id": "sec-004-5-appendix",
    "title": "Appendix",
    "pages": "16-16"
   },
   {
-   "id": "sec-004-51-some-well-known-facts",
+   "id": "sec-005-51-some-well-known-facts",
    "title": "Some well-known facts",
    "pages": "16-17"
   },
   {
-   "id": "sec-005-52-a-second-proof-of-proposition-14",
+   "id": "sec-006-52-a-second-proof-of-proposition-14",
    "title": "A second proof of Proposition 14",
    "pages": "17-19"
   },
   {
-   "id": "sec-006-acknowledgement",
+   "id": "sec-007-acknowledgement",
    "title": "Acknowledgement",
    "pages": "19-19"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "title": "References",
    "pages": "19-19"
   }
@@ -54,8 +64,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

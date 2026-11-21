@@ -5,34 +5,46 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/czechmathj-60-2010-1-4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/czechmathj-60-2010-1-4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "czechmathj-60-2010-1-4",
+  "title": "Czechoslovak Mathematical Journal",
   "contains": [
-    "library/czechmathj-60-2010-1-4/sections/sec-front-matter",
-    "library/czechmathj-60-2010-1-4/sections/sec-000",
-    "library/czechmathj-60-2010-1-4/sections/sec-001",
-    "library/czechmathj-60-2010-1-4/sections/sec-002",
-    "library/czechmathj-60-2010-1-4/sections/sec-003",
-    "library/czechmathj-60-2010-1-4/sections/sec-004",
-    "library/czechmathj-60-2010-1-4/sections/sec-005",
-    "library/czechmathj-60-2010-1-4/sections/sec-006",
-    "library/czechmathj-60-2010-1-4/sections/sec-007"
+    "library/czechmathj-60-2010-1-4/sections/page-001",
+    "library/czechmathj-60-2010-1-4/sections/page-002",
+    "library/czechmathj-60-2010-1-4/sections/page-003",
+    "library/czechmathj-60-2010-1-4/sections/page-004",
+    "library/czechmathj-60-2010-1-4/sections/page-005",
+    "library/czechmathj-60-2010-1-4/sections/page-006",
+    "library/czechmathj-60-2010-1-4/sections/page-007",
+    "library/czechmathj-60-2010-1-4/sections/page-008",
+    "library/czechmathj-60-2010-1-4/sections/page-009",
+    "library/czechmathj-60-2010-1-4/sections/page-010",
+    "library/czechmathj-60-2010-1-4/sections/page-011",
+    "library/czechmathj-60-2010-1-4/sections/page-012",
+    "library/czechmathj-60-2010-1-4/sections/page-013",
+    "library/czechmathj-60-2010-1-4/sections/page-014",
+    "library/czechmathj-60-2010-1-4/sections/page-015",
+    "library/czechmathj-60-2010-1-4/sections/page-016",
+    "library/czechmathj-60-2010-1-4/sections/page-017",
+    "library/czechmathj-60-2010-1-4/sections/page-018",
+    "library/czechmathj-60-2010-1-4/sections/page-019"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "czechmathj-60-2010-1-4",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "CzechMathJ_60-2010-1_4.pdf",
     "source_sha256": "7595f81d1398d0bfdb2bc0fd44c5a0653dbcdeecec6804bdec90e7e3bfee5092",
     "pages": 19,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

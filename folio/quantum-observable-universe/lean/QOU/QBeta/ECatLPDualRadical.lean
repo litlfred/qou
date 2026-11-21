@@ -84,12 +84,12 @@
   a generic field with no ordering, so nothing here depends on the archimedean
   structure of the LP -- only on its linear algebra.
 
-  -- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/.../operator_selection_lp.lean
+  -- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/.../operator_selection_lp.lean
   --      (y_0_eq_zero_of_radical -- the recorded Hecke collapse)
-  -- Ref: [manuscript] computations/confinement_lp_braid_gram_probe.py
-  -- Ref: [manuscript] tools/pyhecke/python/pyhecke/lp_dual_solver.py
-  -- Ref: [manuscript] QOU/QBeta/ECatBlockDecomposition.lean  (the cost being proposed)
-  -- Ref: [manuscript] .beans/qou-99qc
+  -- Ref: [leitner2026] computations/confinement_lp_braid_gram_probe.py
+  -- Ref: [leitner2026] tools/pyhecke/python/pyhecke/lp_dual_solver.py
+  -- Ref: [leitner2026] QOU/QBeta/ECatBlockDecomposition.lean  (the cost being proposed)
+  -- Ref: [leitner2026] .beans/qou-99qc
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Lemmas
@@ -252,5 +252,20 @@ theorem diagonal_gram_kills_every_cost_on_its_diagonal
   rw [ht j]
   calc g j * u j * v j = u j * (g j * v j) := by ring
     _ = 0 := by rw [hrad j, mul_zero]
+
+/-- Against a diagonal Gram with radical vector `v`, any cost `t j = g j * u j`
+built from the diagonal is orthogonal to `v` and therefore forces the dual
+shadow price `y₀ = 0`. -/
+theorem dual_price_zero_of_diagonal_gram_cost
+    (g u one v Gy t : ι → R) (y₀ : R)
+    (hdual : ∀ j, y₀ * one j + Gy j = t j)
+    (hGy : ∑ i, Gy i * v i = 0)
+    (hone : ∑ i, one i * v i ≠ 0)
+    (hrad : ∀ j, g j * v j = 0)
+    (ht : ∀ j, t j = g j * u j) :
+    y₀ = 0 := by
+  have horth : ∑ i, t i * v i = 0 :=
+    diagonal_gram_kills_every_cost_on_its_diagonal g u v t hrad ht
+  exact dual_price_zero_of_cost_orthogonal_to_radical t one v Gy y₀ hdual hGy hone horth
 
 end QOU.QBeta.ECatLPDualRadical

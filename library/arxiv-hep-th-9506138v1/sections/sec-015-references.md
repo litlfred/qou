@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9506138v1
-doc_title: "arXiv:hep-th/9506138v1 21 Jun 1995"
+doc_title: "Black Hole Complementarity vs. Locality"
 section_id: sec-015-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 28-28
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
 toc_source: inferred
+doc_brief: "Black Hole Complementarity vs. Locality — 18 sections: Front matter; Introduction; The Nice-Slice Argument"
 ---
 [1]
 L. Susskind, L. Thorlacius, and J. Uglum, Phys. Rev. D48 (1993) 3743.

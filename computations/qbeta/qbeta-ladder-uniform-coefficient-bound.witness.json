@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T17:35:08.194837+00:00",
-  "commitSha": "b5f5f6bd8f92f88c6532d78513db772b50af553c",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:11:05.044227+00:00",
+  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
   "assertions": [
     {
       "name": "1. G = u^2/(1-u) matches the truncated geometric sum at both pins",
@@ -60,11 +60,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 48,
   "computation": "qbeta-ladder-uniform-coefficient-bound",
   "scriptFile": "qbeta_ladder_uniform_coefficient_bound_probe.py",
-  "scriptHash": "100e85867f8a",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "scriptHash": "207c3426afe7",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,14 +72,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.16",
+    "python": "3.13.18",
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -190,5 +191,7 @@
         "anything about the cosh route, re-opened on the ruled base"
       ]
     }
-  }
+  },
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "u and the geometric total G are evaluated at BOTH the proton pin (q_at) and the live CODATA-2022 muon pin (q_muon_at) and both are recorded; the bound's headline is at proton, the muon arm checks the hypothesis holds at both pins"
 }

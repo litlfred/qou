@@ -10,7 +10,7 @@ Owner directive (alpha_{basis-knot} program): "per-force alpha_K assembly
 
 WHAT IS ESTABLISHED (corpus, not fitted).
   The per-force assembly mechanism is already carried by
-  prop:force-carrier-intertwining-correspondence (conditional on
+  conj:force-carrier-intertwining-correspondence (conditional on
   conj:e-hartree-categorical-derivation): a torus-knot force carrier T_{m,k}
   (first index m = strand count) acts on an n-strand molecular braid via
   B_m -> B_n and lands on the Wedderburn partition
@@ -59,7 +59,7 @@ WHAT REMAINS OPEN (honest scope; NOT fitted here).
   the step-2 writhe decorations, and tabulates the derived (partition, writhe)
   data per carrier.  Nothing fitted.
 
-Refs: prop:force-carrier-intertwining-correspondence (the assembly mechanism);
+Refs: conj:force-carrier-intertwining-correspondence (the assembly mechanism);
 prop:alpha-em-categorical-trace-ratio (the EM trace-ratio, no pi);
 prop:torus-knot-delta-q-writhe (step 2: delta_q = h[(m-1)k]_q);
 prop:force-carrier-bring-uniqueness (T_{2,9}, T_{3,5} are THE genus-4 carriers).
@@ -108,15 +108,12 @@ except Exception:
 # The muon fallback below is retained only for the no-`qou_substrate`
 # environment, and taking it is warned about and recorded.
 #
-# STILL LIVE, but now LATENT rather than active: this module imports
-# `qou_substrate.constants.q_at` directly instead of routing through
-# `q_parameter`, and it is `q_parameter` that reads the manifest and honours an
-# `ideal_muon` tag. So the tag still cannot fire here. That is harmless while
-# the tag says `physical_proton` (the direct import gives the same pin), but if
-# this producer were ever re-tagged to `ideal_muon` the tag would silently fail
-# and this code would keep using proton -- the original defect, re-armed. Any
-# such re-tag must also switch this import to `q_parameter`. Tracked in
-# qou-7vm4, which stays OPEN for that reason.
+# RESOLVED 2026-11-15 (bean qou-7vm4): this module now routes anchor selection
+# through `qou_substrate.witness.resolve_q0_anchor(__file__)`, which consults
+# `QOU_Q0_ANCHOR` and `q0_anchor_manifest.json`, dispatching `q_muon_at()` when
+# resolved to `muon` and `q_at()` when resolved to `proton`. Under the current
+# `physical_proton` tag, `Q0`, `Q0_SOURCE`, and `Q0_ANCHOR` are unchanged, and a
+# future re-tag to `ideal_muon` will take effect automatically.
 def _manifest_tag() -> str:
     """This producer's anchor group, read from `q0_anchor_manifest.json`.
 
@@ -145,10 +142,17 @@ def _manifest_tag() -> str:
 
 
 try:
-    from qou_substrate.constants import q_at
-    Q0 = str(q_at())
-    Q0_SOURCE = "qou_substrate.constants.q_at()"
-    Q0_ANCHOR = "proton"
+    from qou_substrate.constants import q_at, q_muon_at
+    from qou_substrate.witness import resolve_q0_anchor
+    _resolved_anchor, _ = resolve_q0_anchor(__file__)
+    if _resolved_anchor == "muon":
+        Q0 = str(q_muon_at(mp.mp.dps if HAVE_MP else 70))
+        Q0_SOURCE = "qou_substrate.constants.q_muon_at() [via resolve_q0_anchor]"
+        Q0_ANCHOR = "muon"
+    else:
+        Q0 = str(q_at())
+        Q0_SOURCE = "qou_substrate.constants.q_at()"
+        Q0_ANCHOR = "proton"
 except Exception as _e:  # pragma: no cover - environment-dependent
     # No fallback (bean qou-4bef, 2026-09-03): the retired muon literal this fell
     # back to changed the physics anchor silently; refuse instead.
@@ -295,7 +299,7 @@ def main() -> None:
         "conj:e-hartree-categorical-derivation; NO carrier-pair-vs-coupling "
         "enumeration is done (anti-fishing).  Pre-archimedean decorations, no pi."
     )
-    w.set_content_block("prop:force-carrier-intertwining-correspondence")
+    w.set_content_block("conj:force-carrier-intertwining-correspondence")
     w.add_data("q0", str(q))
     # Which anchor this run actually used, and how it was obtained. Recorded
     # unconditionally so a later reader never has to infer the layer from a
@@ -334,7 +338,7 @@ def main() -> None:
     w.add_assertion(
         "carrier intertwining channels (3,1) and (2,1,1) are transpose partitions",
         computed=bool(transpose_ok), expected=True,
-        source="prop:force-carrier-intertwining-correspondence",
+        source="conj:force-carrier-intertwining-correspondence",
     )
     w.add_assertion(
         "1/alpha_EM assembled from derived decorations is within 0.2% of CODATA",

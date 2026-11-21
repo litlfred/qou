@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1910.09966v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1910.09966v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1910.09966v1",
+  "title": "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics",
   "contains": [
+    "library/arxiv-1910.09966v1/sections/sec-front-matter",
     "library/arxiv-1910.09966v1/sections/sec-000",
     "library/arxiv-1910.09966v1/sections/sec-001",
     "library/arxiv-1910.09966v1/sections/sec-002",
@@ -27,10 +28,15 @@
     "library/arxiv-1910.09966v1/sections/sec-013",
     "library/arxiv-1910.09966v1/sections/sec-014",
     "library/arxiv-1910.09966v1/sections/sec-015",
-    "library/arxiv-1910.09966v1/sections/sec-016"
+    "library/arxiv-1910.09966v1/sections/sec-016",
+    "library/arxiv-1910.09966v1/sections/sec-017",
+    "library/arxiv-1910.09966v1/sections/sec-018",
+    "library/arxiv-1910.09966v1/sections/sec-019",
+    "library/arxiv-1910.09966v1/sections/sec-020",
+    "library/arxiv-1910.09966v1/sections/sec-021"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -40,7 +46,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1910.09966v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1910.09966v1.pdf",
     "source_sha256": "21798500c98ed25ac187cd3bf4f48e1023bb88df048edf57d5a967e2236b9e0e",
     "pages": 37,

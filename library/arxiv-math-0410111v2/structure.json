@@ -8,9 +8,15 @@
   "pages": 7,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 5,
+    "reason": "16 of 796 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -25,7 +31,7 @@
   "authors_raw": "Raymond Hemmecke",
   "title_lines": [
    "Integer Polynomial Optimization in Fixed Dimension",
-   "Jes\u00fas A. De Loera",
+   "Jesús A. De Loera",
    "University of California, Dept. of Mathematics, Davis CA 95616, USA",
    "email: deloera@math.ucdavis.edu"
   ],
@@ -37,13 +43,13 @@
    "Creator": "NM",
    "CreationDate": "D:20181023182836-04'00'"
   },
-  "title_raw": "Integer Polynomial Optimization in Fixed Dimension Jes\u00fas A. De Loera University of California, Dept. of Mathematics, Davis CA 95616, USA email: deloera@math.ucdavis.edu",
+  "title_raw": "Integer Polynomial Optimization in Fixed Dimension Jesús A. De Loera University of California, Dept. of Mathematics, Davis CA 95616, USA email: deloera@math.ucdavis.edu",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
    "metadata": "createdbydvipdf",
    "heading": "Integer Polynomial Optimization in Fixed Dimension",
-   "text": "Integer Polynomial Optimization in Fixed Dimension Jes\u00fas A. De Loera University of California, Dept. of Mathematics, Davis CA 95616, USA email: deloera@math.ucdavis.edu",
+   "text": "Integer Polynomial Optimization in Fixed Dimension Jesús A. De Loera University of California, Dept. of Mathematics, Davis CA 95616, USA email: deloera@math.ucdavis.edu",
    "corroborated_by": [
     "text"
    ],
@@ -110,7 +116,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "Computational complexity of problem (1) in \ufb01xed dimension",
+   "title": "Computational complexity of problem (1) in ﬁxed dimension",
    "page": 1,
    "confidence": 0.8,
    "evidence": [
@@ -205,8 +211,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3217,
-   "n_words": 524,
+   "n_chars": 3144,
+   "n_words": 513,
    "label_start": "1",
    "label_end": "2"
   },
@@ -229,8 +235,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 6,
-   "n_chars": 13533,
-   "n_words": 2637,
+   "n_chars": 13057,
+   "n_words": 2498,
    "label_start": "2",
    "label_end": "6"
   },
@@ -241,8 +247,8 @@
    "level": 1,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 5362,
-   "n_words": 840,
+   "n_chars": 5183,
+   "n_words": 813,
    "label_start": "6",
    "label_end": "7"
   }
@@ -262,7 +268,8 @@
    "items": []
   },
   "sections": 5,
-  "chars_total": 26410,
+  "chars_total": 25682,
+  "furniture_lines_stripped": 15,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "may10.tex",
@@ -283,7 +290,7 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.936,
-     "coverage_ratio": 0.949,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -299,7 +306,7 @@
      "id": "sec-002-3-fptas-for-optimizing-non-negative-polynomials",
      "title": "FPTAS for Optimizing Non-Negative Polynomials over Integer Points of Polytopes",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 0.936,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -307,7 +314,7 @@
      "id": "sec-003-4-an-extension-to-the-mixed-integer-case",
      "title": "An extension to the mixed integer case",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.596,
+     "coverage_ratio": 0.602,
      "result": "overlaid",
      "converter": "pandoc"
     }

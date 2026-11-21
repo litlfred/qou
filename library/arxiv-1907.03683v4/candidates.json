@@ -1,0 +1,177 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1907.03683v4",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "eb8cc2ddfc8c0739d117c22d5275d35c54c83fa10144f8e7491329b3a4db5978",
+  "file": "1907.03683v4.pdf"
+ },
+ "provenance": {
+  "title": "EXPLICIT DESCRIPTION OF CHRISTOFFEL DEFORMATIONS AND",
+  "authors": "PALM MEASURES OF THE PLANCHEREL MEASURE, THE",
+  "arxiv": {
+   "id": "1907.03683",
+   "version": "4",
+   "primary_class": "math.PR",
+   "stamp_date": "7 Mar 2024"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "theorem": 1,
+   "remark": 2,
+   "proposition": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 3,
+  "by_domain": {
+   "math": 5
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 3,
+   "explanatory": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2,
+   "elsewhere": 1,
+   "both": 2
+  },
+  "by_lean_status": {
+   "unformalized": 3
+  },
+  "needs_lean_proof": 3
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.5",
+   "name": null,
+   "statement": "Let (z, z\u2032) be admissible parameters either in the principal or in the comple- mentary series cases, and let K1 z,z\u2032,\u03be be the correlation kernel of the Christo\ufb00el deformation of order 1 at u \u2208R de\ufb01ned by (16). We have, for all x, y \u2208Z\u2032, x\u0338 = y: lim \u03be\u21921(1 \u2212\u03be)2K1 z,z\u2032,\u03be(x, y) = Cz,z\u2032 |(x \u2212u)(y \u2212u)| Az,z\u2032(x, y) \u03a6z,z\u2032,0,\u22121(u)2(x \u2212y) where: Az,z\u2032(x, y) = X i,j=0 \u03a6z,z\u2032,a(i)b(i)(u)\u03a6z,z\u2032,a(j)+1,b(j)+1(u)\u03a8z,z\u2032,i,j(x, y), \u03a8z,z\u2032,i,j(x, y) = hz,z\u2032(x, \u22121/2 + i)hz\u2032,z(y, 1/2 + j) + hz\u2032,z(x, \u22121/2 + i)hz,z\u2032(y, 1/2 + j) \u2212hz,z\u2032(x, 1/2 + j)hz\u2032,z(y, \u22121/2 + i) \u2212hz\u2032,z(x, 1/2 + j)hz,z\u2032(y, \u22121/2 + i), \u03a6z,z\u2032,a(i),b(i)(u) = hz,z\u2032(u, \u22121/2 + a(i))h\u2032 z\u2032,z(u, \u22121/2 + b(i)) +",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-022-43-a-deformation-of-the-gamma-kernel.md (p. 26-28)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-022-43-a-deformation-of-the-gamma-kernel.md",
+   "section_title": "A deformation of the Gamma kernel",
+   "pages": "26-28",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-022-43-a-deformation-of-the-gamma-kernel.md (p. 26-28)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-022-01",
+   "block_iri": "library/arxiv-1907.03683v4/blocks/thm-sec-022-01",
+   "claim_id": "arxiv-1907.03683v4#theorem:4.5",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.6",
+   "name": null,
+   "statement": "An explicit expression for the function \u03a8z,z\u2032,i,j(x, y) may be found from: hz,z\u2032(x, a)hz\u2032,z(y, b) + hz\u2032,z(x, a)hz,z\u2032(y, b) \u2212hz,z\u2032(x, b)hz\u2032,z(y, a) \u2212hz\u2032,z(x, b)hz,z\u2032(y, a) = \u0393(z \u2212z\u2032)\u0393(z\u2032 \u2212z) \u00d7 \u0012\u0393(x + z + 1/2)\u0393(x + z\u2032 + 1/2)\u0393(y + z + 1/2)\u0393(y + z\u2032 + 1/2) \u0393(z \u2212a + 1/2)\u0393(z\u2032 \u2212a + 1/2)\u0393(z \u2212b + 1/2)\u0393(z\u2032 \u2212b + 1/2) \u00131/2 \u00d7 \u001a \u0393(\u2212z + a + 1/2)\u0393(\u2212z\u2032 + b + 1/2)\u0393(x + z\u2032 + 1/2)\u0393(y + z + 1/2) + \u0393(\u2212z\u2032 + a + 1/2)\u0393(\u2212z + b + 1/2)\u0393(x + z + 1/2)\u0393(y + z\u2032 + 1/2) \u2212 \u0393(\u2212z\u2032 + a + 1/2)\u0393(\u2212z + b + 1/2)\u0393(x + z\u2032 + 1/2)\u0393(y + z + 1/2) \u2212 \u0393(\u2212z + a + 1/2)\u0393(\u2212z\u2032 + b + 1/2)\u0393(x + z + 1/2)\u0393(y + z\u2032 + 1/2) \u001b . It only involves the Gamma function. A similar expression for the function \u03a6z,z\u2032",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-022-43-a-deformation-of-the-gamma-kernel.md (p. 26-28)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-022-43-a-deformation-of-the-gamma-kernel.md",
+   "section_title": "A deformation of the Gamma kernel",
+   "pages": "26-28",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-022-02",
+   "block_iri": "library/arxiv-1907.03683v4/blocks/rem-sec-022-02",
+   "claim_id": "arxiv-1907.03683v4#remark:4.6"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.7",
+   "name": null,
+   "statement": "The factor (1\u2212\u03be)2 appearing in our statement should be interpreted as (1\u2212\u03be)2k in order to recover Borodin-Olshanski Theorem from [9] and [11] in the case k = 0.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [9], [11] in sections/sec-022-43-a-deformation-of-the-gamma-kernel.md",
+   "external_refs": [
+    "[9]",
+    "[11]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-022-43-a-deformation-of-the-gamma-kernel.md",
+   "section_title": "A deformation of the Gamma kernel",
+   "pages": "26-28",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-022-03",
+   "block_iri": "library/arxiv-1907.03683v4/blocks/rem-sec-022-03",
+   "claim_id": "arxiv-1907.03683v4#remark:4.7"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.8",
+   "name": null,
+   "statement": "For any u \u2208R, a \u2208Z\u2032, we have: (1 \u2212\u03be)\u22121 2\u03c8a(u; z, z\u2032, \u03be) = hz,z\u2032(u, a)(1 \u2212\u03be) z\u2032\u2212z (1 + O(1 \u2212\u03be)) + hz\u2032,z(u, a)(1 \u2212\u03be) z\u2212z\u2032 (1 + O(1 \u2212\u03be)) and (1 \u2212\u03be)\u22121 2\u03c6a(u; z, z\u2032, \u03be) = h\u2032 z,z\u2032(u, a)(1 \u2212\u03be) z\u2032\u2212z (1 + O(1 \u2212\u03be)) + h\u2032 z\u2032,z(u, a)(1 \u2212\u03be) z\u2212z\u2032 (1 + O(1 \u2212\u03be)) as \u03be tends to 1.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-023-44-proof-of-theorem-45.md (p. 28-30) citing [9]",
+   "external_refs": [
+    "[9]"
+   ],
+   "proof_excerpt": "This is similar to that in [9], Theorem 2.3 . We apply the formula: 1 \u0393(C) 2F1 (A, B; C; w) = \u0393(B \u2212A)(\u2212w)\u2212A \u0393(B)\u0393(C \u2212A) 2F1 (A, 1 \u2212C + A; 1 \u2212B + A; w\u22121) + \u0393(A \u2212B)(\u2212w)\u2212B \u0393(A)\u0393(C \u2212B) 2F1 (B, 1 \u2212C + B; 1 \u2212A + B; w\u22121) 28 We specialize this results with: A = \u2212z + a + 1/2 ; B = \u2212z\u2032 + a",
+   "section_file": "sections/sec-023-44-proof-of-theorem-45.md",
+   "section_title": "Proof of Theorem 4.5",
+   "pages": "28-30",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-023-44-proof-of-theorem-45.md (p. 28-30) citing [9]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-023-01",
+   "block_iri": "library/arxiv-1907.03683v4/blocks/prop-sec-023-01",
+   "claim_id": "arxiv-1907.03683v4#proposition:4.8",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.9",
+   "name": null,
+   "statement": "For any a, b \u2208Z + 1/2, and any x, y \u2208R, we have: lim \u03be\u21921(1 \u2212\u03be)\u22121 (\u03c8a(x)\u03c8b(y) \u2212\u03c8a(y)\u03c8b(x)) = hz,z\u2032(x, a)hz\u2032,z(y, b) + hz\u2032,z(x, a)hz,z\u2032(y, b) \u2212hz,z\u2032(x, b)hz\u2032,z(y, a) \u2212hz\u2032,z(x, b)hz,z\u2032(y, a) and lim \u03be\u21921(1 \u2212\u03be)\u22121(\u03c8a(x)\u03c6b(x) \u2212\u03c8b(x)\u03c6a(x)) = hz,z\u2032(x, a)h\u2032 z\u2032,z(x, b) + hz\u2032,z(x, a)h\u2032 z,z\u2032(x, b) \u2212hz,z\u2032(x, b)h\u2032 z\u2032,z(x, a) \u2212hz\u2032,z(x, b)h\u2032 z,z\u2032(x, a).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-023-44-proof-of-theorem-45.md (p. 28-30) citing [9]",
+   "external_refs": [
+    "[9]"
+   ],
+   "proof_excerpt": "It is similar to that in [9], Theorem 2.3 and we use the formulas from Proposition 4.8. Since from (24) and (23) we have hz,z\u2032(x, a)hz,z\u2032(y, b) = hz,z\u2032(x, b)hz,z\u2032(y, a) and hz\u2032,z(x, a)hz\u2032,z(y, b) = hz\u2032,z(x, b)hz\u2032,z(y, a), the terms involving the factors (1 \u2212\u03be)\u00b1(z\u2212z\u2032) will vanish ",
+   "section_file": "sections/sec-023-44-proof-of-theorem-45.md",
+   "section_title": "Proof of Theorem 4.5",
+   "pages": "28-30",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-023-44-proof-of-theorem-45.md (p. 28-30) citing [9]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-023-02",
+   "block_iri": "library/arxiv-1907.03683v4/blocks/lem-sec-023-02",
+   "claim_id": "arxiv-1907.03683v4#lemma:4.9",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

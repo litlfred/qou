@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-115",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Balanced DC: Definition, Uniqueness and Local Duality",
+  "pageStart": 389,
+  "pageEnd": 392,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-115",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-115-01",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-115-02",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-115-03",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-115-04",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-115-05",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-115-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

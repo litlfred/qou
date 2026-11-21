@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1204.4824v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1204.4824v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1204.4824v2",
+  "title": "Spectral networks",
   "contains": [
+    "library/arxiv-1204.4824v2/sections/sec-front-matter",
     "library/arxiv-1204.4824v2/sections/sec-000",
     "library/arxiv-1204.4824v2/sections/sec-001",
     "library/arxiv-1204.4824v2/sections/sec-002",
@@ -61,10 +62,20 @@
     "library/arxiv-1204.4824v2/sections/sec-047",
     "library/arxiv-1204.4824v2/sections/sec-048",
     "library/arxiv-1204.4824v2/sections/sec-049",
-    "library/arxiv-1204.4824v2/sections/sec-050"
+    "library/arxiv-1204.4824v2/sections/sec-050",
+    "library/arxiv-1204.4824v2/sections/sec-051",
+    "library/arxiv-1204.4824v2/sections/sec-052",
+    "library/arxiv-1204.4824v2/sections/sec-053",
+    "library/arxiv-1204.4824v2/sections/sec-054",
+    "library/arxiv-1204.4824v2/sections/sec-055",
+    "library/arxiv-1204.4824v2/sections/sec-056",
+    "library/arxiv-1204.4824v2/sections/sec-057",
+    "library/arxiv-1204.4824v2/sections/sec-058",
+    "library/arxiv-1204.4824v2/sections/sec-059",
+    "library/arxiv-1204.4824v2/sections/sec-060"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -74,7 +85,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1204.4824v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1204.4824v2.pdf",
     "source_sha256": "bf01cbaa5a8712c82f1f20fb5c85ce796468cf5e67b2968e1fca5ab18bb77d3d",
     "pages": 87,

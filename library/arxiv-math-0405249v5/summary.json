@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0405249v5",
  "source_sha256": "bc699482e5cd7679",
- "brief": "Twisted homology of quantum SL(2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group",
- "extended": "**Twisted homology of quantum SL(2)**\n\n*Tom Hadfield ∗1, Ulrich Krähmer2*\n\n28 pp, 17 sections.\n\n**Abstract.** We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group relative to twisting automorphisms acting by resc aling the standard generators a,b,c,d . We discover a family of automorphisms for which the “twisted” Hochschild dimension coincides wit h the classical dimension of SL(2, C), thus avoiding the “dimension drop” in Hochschild homology seen for many quantum deformations. Strikingly, t he simplest such automorphism is the canonical modular automorphism ar ising from the Haar functional. In addition, we identify the twisted cy clic cohomol- ogy classes corresponding to the three covariant diﬀerenti al calculi over quantumSU (2) discovered by Woronowicz.\n\n**Outline.** Front matter; Introduction; Twisted cyclic homology; motivation; twisted hochschild and cyclic homology; hochschild homology of hopf algebras; noncommutative koszul resolutions; Quantum SL(2); the haar functional; a koszul resolution of A/ ker; Case 2; Case 1; Cases 3, 4 and 5; three dimensional left-covariant calculus; four dimensional bicovariant calculi; Conclusions; Acknowledgements",
+ "brief": "Twisted homology of quantum SL (2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra of the quan- tum SL(2) group",
+ "extended": "**Twisted homology of quantum SL (2)**\n\n*Tom Hadfield∗1, Ulrich Krähmer2*\n\n28 pp, 24 sections.\n\n**Abstract.** We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra of the quan- tum SL(2) group relative to twisting automorphisms acting by rescaling the standard generators a, b, c, d. We discover a family of automorphisms for which the “twisted” Hochschild dimension coincides with the classical dimension of SL(2, C), thus avoiding the “dimension drop” in Hochschild homology seen for many quantum deformations. Strikingly, the simplest such automorphism is the canonical modular automorphism arising from the Haar functional. In addition, we identify the twisted cyclic cohomol- ogy classes corresponding to the three covariant diﬀerential calculi over quantum SU(2) discovered by Woronowicz.\n\n**Outline.** Front matter; Introduction; Twisted cyclic homology; motivation; twisted hochschild and cyclic homology; hochschild homology of hopf algebras; noncommutative koszul resolutions; Quantum SL(2); the hopf algebra A(SLq (2)); the haar functional; the automorphism group of A( SLq (2)); Twisted Hochschild homology of A( SLq (2)); a koszul resolution of A/ ker; Computation of HHn(A), n 3; Twisted cocycles defined by derivations; Twisted cyclic homology of A( SLq (2)); Case 1; Case 2",
  "tokens": {
   "brief": 48,
-  "extended": 319
+  "extended": 341
  },
  "sections": [
   {
@@ -17,12 +17,12 @@
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "1-4"
   },
   {
    "id": "sec-001-twisted-cyclic-homology",
    "title": "Twisted cyclic homology",
-   "pages": "3-4"
+   "pages": "4-4"
   },
   {
    "id": "sec-002-motivation",
@@ -42,55 +42,90 @@
   {
    "id": "sec-005-noncommutative-koszul-resolutions",
    "title": "noncommutative koszul resolutions",
-   "pages": "7-7"
+   "pages": "7-8"
   },
   {
    "id": "sec-006-quantum-sl2",
    "title": "Quantum SL(2)",
-   "pages": "7-9"
+   "pages": "8-8"
   },
   {
-   "id": "sec-007-the-haar-functional",
+   "id": "sec-007-the-hopf-algebra-aslq-2",
+   "title": "the hopf algebra A(SLq (2))",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-008-the-haar-functional",
    "title": "the haar functional",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-009-the-automorphism-group-of-a-slq-2",
+   "title": "the automorphism group of A( SLq (2))",
    "pages": "9-10"
   },
   {
-   "id": "sec-008-a-koszul-resolution-of-a-ker",
-   "title": "a koszul resolution of A/ ker",
-   "pages": "10-20"
+   "id": "sec-010-twisted-hochschild-homology-of-a-slq-2",
+   "title": "Twisted Hochschild homology of A( SLq (2))",
+   "pages": "10-10"
   },
   {
-   "id": "sec-009-case-2",
-   "title": "Case 2",
+   "id": "sec-011-a-koszul-resolution-of-a-ker",
+   "title": "a koszul resolution of A/ ker",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-012-computation-of-hhna-n-3",
+   "title": "Computation of HHn(A), n 3",
+   "pages": "11-15"
+  },
+  {
+   "id": "sec-013-twisted-cocycles-defined-by-derivations",
+   "title": "Twisted cocycles defined by derivations",
+   "pages": "15-20"
+  },
+  {
+   "id": "sec-014-twisted-cyclic-homology-of-a-slq-2",
+   "title": "Twisted cyclic homology of A( SLq (2))",
    "pages": "20-21"
   },
   {
-   "id": "sec-010-case-1",
+   "id": "sec-015-case-1",
    "title": "Case 1",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-016-case-2",
+   "title": "Case 2",
    "pages": "21-24"
   },
   {
-   "id": "sec-011-cases-3-4-and-5",
+   "id": "sec-017-cases-3-4-and-5",
    "title": "Cases 3, 4 and 5",
    "pages": "24-26"
   },
   {
-   "id": "sec-012-three-dimensional-left-covariant-calculus",
+   "id": "sec-018-covariant-differential-calculi",
+   "title": "Covariant differential calculi",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-019-three-dimensional-left-covariant-calculus",
    "title": "three dimensional left-covariant calculus",
    "pages": "26-26"
   },
   {
-   "id": "sec-013-four-dimensional-bicovariant-calculi",
+   "id": "sec-020-four-dimensional-bicovariant-calculi",
    "title": "four dimensional bicovariant calculi",
    "pages": "26-27"
   },
   {
-   "id": "sec-014-conclusions",
+   "id": "sec-021-conclusions",
    "title": "Conclusions",
    "pages": "27-27"
   },
   {
-   "id": "sec-015-acknowledgements",
+   "id": "sec-022-acknowledgements",
    "title": "Acknowledgements",
    "pages": "27-28"
   }

@@ -1,0 +1,46 @@
+160 Laurent series, amoebas, and convex geometry
+
+Theorem 6.44. Let f(z) = P(z)/Q(z) be the ratio of coprime polynomials
+P,Q € R[z] with series expansion f(Z) = Dineza dp2" on the domain of con-
+vergence D = Relog”|(B).
+
+a) Let # € R¢ \ {0}. If the minimum of —? - x over x € B is finite then it is
+achieved by x = Relog(w) for a minimal point w € C4 and there exists a
+supporting hyperplane to B at Relog(w) with outward normal ?.
+
+b) If w € C4 is a minimal point then (Viog Q)(w) = Av for some A € C, and
+v € R4 Ifv £ 0 then the hyperplane through Relog(w) with normal v
+is a supporting hyperplane to B. If v is an outward-facing normal for this
+supporting hyperplane then x = Relog(w) achieves the minimum of —v - x
+on B (if v is an inward-facing normal then the maximum of —v - x on B is
+achieved at this point).
+
+The contour of an amoeba amoeba(Q), denoted C(Q), is the collection of
+points in Vg MN C4 where Viog Q is a multiple of a real vector. Theorem 6.44
+implies all boundary points of amoeba(Q) lie in the contour which, as we will
+see in Chapter 8, can be useful for sketching amoebas.
+
+Proof Part (a) follows from the fact that on the closed convex set B the linear
+function —? - x is either unbounded from below or achieves its minimum on at
+least one point y € OB, which by Proposition 6.33 corresponds to at least one
+minimal point. If 7 is not an outward-facing normal to a supporting hyperplane
+of B through y then there exists b € B with (b — y) - # > 0, contradicting that
+y minimizes —# - a on B.
+
+To prove part (b), let log : C4 > R¢ be a branch of the logarithm log(z) =
+(log(z),...,log(zg)) and suppose w €¢ VN Cé with (VQ)(w) # 0. If w isa
+minimal point then the tangent spaces to V and T(w) at w can’t jointly span
+all of C4 as a 2d-dimensional real vector space. Thus, since the tangent space to
+Y has real dimension 2d — 2 and the tangent space to T(w) has real dimension
+d, if w is minimal then the tangent spaces of V and T(w) at w intersect in a
+subspace of dimension at least d — 1. This final condition is equivalent to the
+tangent spaces of log(Vg) and log(T(w)) at log(w) intersecting in a subspace
+of dimension at least d — 1. Because
+
+log(T(w)) = {(log |wi| + i61,..., log |wal + iq) for all 6; € (-2,7)},
+
+the tangent space to log(T(w)) at log(w) is IR? c C4, and w is a minimal
+point only if the tangent space to log(Vg) contains d — | linearly independent
+vectors in iR“. The tangent space to log(‘V¢) at log(w) is the hypersurface with
+normal (Vjog Q)(w) = a + ib for some a, b € R¢. When (Viog Q)(w) is normal
+to d— 1 purely imaginary vectors then the real matrix with rows a and b has

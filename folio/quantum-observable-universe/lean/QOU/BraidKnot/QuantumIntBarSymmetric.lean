@@ -129,6 +129,12 @@ theorem parity_gate_admits_all_quantumInt {q : R}
     ∀ n : ℕ, IsCPEven (quantumInt n q) :=
   fun n => quantumInt_isCPEven hbarq hden n
 
+/-- Adding the bar-involution image of the denominator to the denominator itself yields zero. -/
+theorem denominator_bar_add_self_eq_zero {q : R}
+    (hbarq : BarInvolution.bar q = q⁻¹) :
+    BarInvolution.bar (q - q⁻¹) + (q - q⁻¹) = 0 := by
+  rw [denominator_bar_antisymmetric hbarq, neg_add_cancel]
+
 end Field
 
 end QOU.BraidKnot.QuantumIntBarSymmetric

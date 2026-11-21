@@ -1,1 +1,1 @@
-B.1. Let ei and ej be two edges of T˚D that correspond to adjacent regions. Then
+1. Let ei and ej be two edges of T˚D that correspond to adjacent regions. Then there is a triple h = (h,h′,h′′) of vectors such that hj +h′ j +h′′ j = 0 and ⟨f +h,e⟩−⟨ f,e⟩ =    −1 if e =ei 1 if e =ej 0 otherwise In addition, such h can be chosen independently of f.

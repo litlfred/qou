@@ -1,0 +1,865 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2601.05136v2",
+  "pages": [
+    {
+      "page": 16,
+      "rotation": 0,
+      "drawings": 8,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: The arguments of the dilogarithms in the state integrals JN(D, µ, β|k) are of the form ζ/N + ti −tj with ti, tj ∈[0, 1]. As N →∞the segments over which they vary approach the singular region X = (−∞, 0] ∪[1, ∞)."
+      ],
+      "labels": [
+        {
+          "text": "References",
+          "bbox": [
+            38.24,
+            61.58,
+            86.22,
+            71.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            404.34,
+            61.58,
+            414.0,
+            71.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ζ",
+          "bbox": [
+            235.76,
+            96.91,
+            240.13,
+            106.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ζ + [−1, 1]",
+          "bbox": [
+            270.48,
+            105.03,
+            315.42,
+            115.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ζ/2 + [−1, 1]",
+          "bbox": [
+            249.22,
+            119.2,
+            304.12,
+            129.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            134.58,
+            142.14,
+            142.84,
+            152.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1: The arguments of the dilogarithms in the state integrals JN(D, µ, β|k) are of the form",
+          "bbox": [
+            36.0,
+            163.84,
+            414.0,
+            174.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            6.97,
+            9.96,
+            9.98
+          ]
+        },
+        {
+          "text": "ζ/N + ti −tj with ti, tj ∈[0, 1]. As N →∞the segments over which they vary approach the",
+          "bbox": [
+            36.0,
+            175.79,
+            414.0,
+            187.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            6.97,
+            9.96,
+            10.06
+          ]
+        },
+        {
+          "text": "singular region X = (−∞, 0] ∪[1, ∞).",
+          "bbox": [
+            36.0,
+            187.75,
+            192.74,
+            197.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Stokes’ Theorem can move only the interior of the contour, not the boundary.9 This is a serious",
+          "bbox": [
+            36.0,
+            217.6,
+            414.0,
+            231.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            6.97,
+            10.03
+          ]
+        },
+        {
+          "text": "issue. As shown in Figure 1 the arguments of the quantum dilogarithms in the action in the original",
+          "bbox": [
+            36.0,
+            233.18,
+            414.0,
+            243.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "state integral approach the real axis as N →∞. Unfortunately the real axis is precisely where",
+          "bbox": [
+            36.0,
+            245.13,
+            414.0,
+            255.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96,
+            10.06
+          ]
+        },
+        {
+          "text": "the problems are: as N →∞the singularities of e±ϕN become dense in X. Near this region",
+          "bbox": [
+            36.0,
+            254.47,
+            414.0,
+            267.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMSY10",
+            "CMSY7",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96,
+            10.06
+          ]
+        },
+        {
+          "text": "SN(D, µ) can fail to uniformly converge to S(D), which is related to the fact that the branch",
+          "bbox": [
+            36.0,
+            269.04,
+            414.0,
+            280.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            6.97,
+            9.96,
+            10.06
+          ]
+        },
+        {
+          "text": "points of the dilogarithm lie there. While the interior of the contour can be moved away the",
+          "bbox": [
+            36.0,
+            281.0,
+            414.0,
+            290.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "remaining boundary will still approach the singular region. Understanding why the remaining",
+          "bbox": [
+            36.0,
+            292.95,
+            414.0,
+            302.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "boundary terms cancel or do not contribute is a hard analytic problem. There may be subtleties",
+          "bbox": [
+            36.0,
+            304.91,
+            414.0,
+            314.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            10.04
+          ]
+        },
+        {
+          "text": "here that obstruct Conjecture 1 for certain (ρ, µ).",
+          "bbox": [
+            36.0,
+            316.86,
+            229.9,
+            327.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "One case where this occurs is already known. When ρ is boundary-parabolic experimental",
+          "bbox": [
+            50.94,
+            328.82,
+            414.0,
+            338.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96,
+            10.06
+          ]
+        },
+        {
+          "text": "evidence [McP25a, Remark 6.2] suggests Zψ",
+          "bbox": [
+            36.0,
+            338.5,
+            203.56,
+            350.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            6.97,
+            9.86,
+            9.96
+          ]
+        },
+        {
+          "text": "N(K, ρ, µ) vanishes unless 2µ ≡−1 (mod NZ). This",
+          "bbox": [
+            198.29,
+            338.78,
+            414.0,
+            353.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "Cochineal-Roman",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.86,
+            9.96
+          ]
+        },
+        {
+          "text": "suggests there can be nontrivial cancellations in the sum (3.10) and/or indicate other barriers to",
+          "bbox": [
+            36.0,
+            352.73,
+            413.99,
+            362.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96,
+            10.04
+          ]
+        },
+        {
+          "text": "moving the contour. Examining these issues may shed light on why it sometimes is possible to",
+          "bbox": [
+            36.0,
+            364.68,
+            414.0,
+            375.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "move the contour and prove asymptotic growth.",
+          "bbox": [
+            36.0,
+            376.64,
+            225.44,
+            386.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "References",
+          "bbox": [
+            36.0,
+            403.6,
+            83.98,
+            413.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[ADO92]",
+          "bbox": [
+            36.0,
+            425.42,
+            70.97,
+            435.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Yasuhiro Akutsu, Tetsuo Deguchi, and Tomotada Ohtsuki. “Invariants of colored links”.",
+          "bbox": [
+            83.5,
+            425.42,
+            415.41,
+            435.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "In: Journal of Knot Theory and its Ramiﬁcations 1.2 (1992), pp. 161–184. issn: 0218-2165.",
+          "bbox": [
+            83.5,
+            437.38,
+            415.4,
+            447.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "doi: 10.1142/S0218216592000094.",
+          "bbox": [
+            83.5,
+            449.33,
+            223.79,
+            459.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BeraSansMono-Roman",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            7.97,
+            9.96
+          ]
+        },
+        {
+          "text": "[AGP23]",
+          "bbox": [
+            36.0,
+            465.27,
+            68.92,
+            475.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fathi Ben Aribi, François Guéritaud, and Eiichi Piguet-Nakazawa. “Geometric triangu-",
+          "bbox": [
+            83.5,
+            465.27,
+            415.84,
+            475.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "lations and the Teichmüller TQFT volume conjecture for twist knots”. In: Quantum",
+          "bbox": [
+            83.5,
+            477.23,
+            414.0,
+            487.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            10.05
+          ]
+        },
+        {
+          "text": "Topol. 14.2 (2023), pp. 285–406. issn: 1663-487X. doi: 10 . 4171 / QT / 178. arXiv:",
+          "bbox": [
+            83.5,
+            489.18,
+            415.09,
+            499.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BeraSansMono-Roman",
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.06
+          ]
+        },
+        {
+          "text": "1903.09480 [math.GT].",
+          "bbox": [
+            83.26,
+            501.14,
+            178.68,
+            511.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BeraSansMono-Roman",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            7.97,
+            9.96
+          ]
+        },
+        {
+          "text": "[AGW25]",
+          "bbox": [
+            36.0,
+            517.08,
+            72.2,
+            527.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fathi Ben Aribi, Antonin Guilloux, and Ka Ho Wong. FAMED by computer: proving",
+          "bbox": [
+            83.5,
+            517.08,
+            414.0,
+            527.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "the Andersen-Kashaev volume conjecture for 42,000 knots. 2025. arXiv: 2512.17437",
+          "bbox": [
+            83.5,
+            529.03,
+            414.24,
+            539.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BeraSansMono-Roman",
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.06
+          ]
+        },
+        {
+          "text": "[math.GT].",
+          "bbox": [
+            83.5,
+            540.99,
+            128.7,
+            550.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BeraSansMono-Roman",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            7.97,
+            9.96
+          ]
+        },
+        {
+          "text": "[AK13]",
+          "bbox": [
+            36.0,
+            556.93,
+            63.18,
+            566.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Jørgen Ellegaard Andersen and Rinat Kashaev. A new formulation of the Teichmüller",
+          "bbox": [
+            83.5,
+            556.93,
+            414.0,
+            567.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "TQFT. 2013. arXiv: 1305.4291 [math.GT].",
+          "bbox": [
+            83.5,
+            568.88,
+            252.24,
+            579.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BeraSansMono-Roman",
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            7.97,
+            9.96
+          ]
+        },
+        {
+          "text": "[AK14]",
+          "bbox": [
+            36.0,
+            584.82,
+            63.18,
+            594.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Jørgen Ellegaard Andersen and Rinat Kashaev. “A TQFT from quantum Teichmüller",
+          "bbox": [
+            83.5,
+            584.82,
+            414.19,
+            594.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "theory”. In: Commun. Math. Phys. 330.3 (2014), pp. 887–934. issn: 0010-3616. doi:",
+          "bbox": [
+            83.5,
+            596.78,
+            415.1,
+            607.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "10.1007/s00220-014-2073-2. arXiv: 1109.6295 [math.QA].",
+          "bbox": [
+            83.26,
+            608.73,
+            325.86,
+            618.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BeraSansMono-Roman",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            7.97,
+            9.96
+          ]
+        },
+        {
+          "text": "[AW24]",
+          "bbox": [
+            36.0,
+            624.67,
+            65.01,
+            634.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fathi Ben Aribi and Ka Ho Wong. The Andersen-Kashaev volume conjecture for FAMED",
+          "bbox": [
+            83.5,
+            624.67,
+            414.0,
+            635.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            9.89
+          ]
+        },
+        {
+          "text": "geometric triangulations. 2024. arXiv: 2410.10776 [math.GT].",
+          "bbox": [
+            83.5,
+            636.63,
+            323.13,
+            647.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BeraSansMono-Roman",
+            "Cochineal-Italic",
+            "Cochineal-Roman"
+          ],
+          "sizes": [
+            7.97,
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

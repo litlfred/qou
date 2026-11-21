@@ -7,10 +7,11 @@
   "bytes": 401873,
   "pages": 20,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,30 @@
    "stamp_date": "9 Feb 2022"
   },
   "doi": null,
-  "title": "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE",
-  "authors_raw": "Some recent results forSU(3) and Octonions within the",
+  "title": "Received <day> <Month>, <year>",
+  "authors_raw": "Revised <day> <Month>, <year>;",
   "title_lines": [
-   "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year>",
-   "ARTICLE TYPE"
+   "Received <day> <Month>, <year>;"
   ],
-  "abstract": "Di\ufb00erent ways of representing the groupSU(3) within a Geometric Algebra approach are explored. As part of this we consider characteristic multivectors for SU(3), and how these are linked with decomposition of generators into commut- ing bivectors. The setting for this work is within a 6d Euclidean Cli\ufb00ord Algebra. We then go on to consider whether the fundamental forces of particle physics might arisefromsymmetryconsiderationsinjustthe4dgeometricalgebraofspacetime\u2014 the STA. As part of this, a representation ofSU(3)is found wholly within the STA, involvingpreservationofabivectornorm.WealsoshowhowOctonionscanbefully representedwithintheSpacetimeAlgebra,whichwebelievewillbeusefulinmaking them understandable and accessible to a new community in Physics and Engineer- ing. The two strands of the paper are drawn together in showing how preserving the octonion norm is the same as preserving the timelike part of the Dirac current of a particle.Thissuggestsanewmodelforthesymmetriespreservedinparticlephysics. Following on from work by G\u00fcnaydin and G\u00fcrsey on the link between quarks, and octonions, and by Furey on chains of octonionic multiplications, we show how both ofthese\ufb01twellwithinourscheme,andgivesomewhollySTAversionsoftheopera- tionsinvolved,whichinthecasesconsideredhaveeasilyunderstandableequivalents intermsof4dgeometry.Linkswithlargergroupscontaining SU(3),suchas G2 and SU(8), are also considered.",
+  "abstract": "Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored. As part of this we consider characteristic multivectors for 푆푈(3), and how these are linked with decomposition of generators into commut- ing bivectors. The setting for this work is within a 6d Euclidean Cliﬀord Algebra. We then go on to consider whether the fundamental forces of particle physics might arise from symmetry considerations in just the 4d geometric algebra of spacetime — the STA. As part of this, a representation of 푆푈(3) is found wholly within the STA, involving preservation of a bivector norm. We also show how Octonions can be fully represented within the Spacetime Algebra, which we believe will be useful in making them understandable and accessible to a new community in Physics and Engineer- ing. The two strands of the paper are drawn together in showing how preserving the octonion norm is the same as preserving the timelike part of the Dirac current of a particle. This suggests a new model for the symmetries preserved in particle physics. Following on from work by Günaydin and Gürsey on the link between quarks, and octonions, and by Furey on chains of octonionic multiplications, we show how both of these ﬁt well within our scheme, and give some wholly STA versions of the opera- tions involved, which in the cases considered have easily understandable equivalents in terms of 4d geometry. Links with larger groups containing 푆푈(3), such as 퐺2 and 푆푈(8), are also considered.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20220215021733Z",
-   "Creator": "LaTeX with hyperref",
+   "Title": "Overleaf Example",
    "Producer": "pdfTeX-1.40.21",
-   "Title": "Overleaf Example"
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20220215021733Z"
+  },
+  "title_raw": "Received <day> <Month>, <year>;",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "Overleaf Example",
+   "heading": "Some recent results for 푆푈 (3) and Octonions within the Geometric Algebra approach to the fundamental forces of nature",
+   "outline": "Some recent results for SU(3) and Octonions within the Geometric Algebra approach to the fundamental forces of nature",
+   "text": "Received <day> <Month>, <year>",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE"
  },
  "toc": [
   {
@@ -41,255 +52,592 @@
    "title": "Some recent results for SU(3) and Octonions within the Geometric Algebra approach to the fundamental forces of nature",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Characteristic multivectors and SU(3)",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 3,
    "title": "Characteristic Multivectors",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
    "page": 3,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "Application to generators of SU(3)",
    "page": 3,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
    "page": 5,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "GA and the forces of nature",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "Strong forces",
    "page": 7,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Octonions and the STA",
    "page": 8,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "Explicit assignment of octonion units to STA elements",
    "page": 9,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Octonions, the STA and particle physics",
    "page": 12,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "An identification of the SU(8) subgroup of E7 within the 64-dimensional octonionic left multiplication space",
    "page": 14,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 3,
    "title": "The group G2 and the representation of quarks and gluons via the STA",
    "page": 15,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Future prospects",
    "page": 18,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "References",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 120,
+   "n_words": 16,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-some-recent-results-for-su3-and-octonions-within",
+   "number": null,
+   "title": "Some recent results for SU(3) and Octonions within the Geometric Algebra approach to the fundamental forces of nature",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 405,
+   "n_words": 47,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-abstract",
    "number": null,
    "title": "Abstract",
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1417,
-   "n_words": 160
+   "n_chars": 1505,
+   "n_words": 248,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-002-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4745,
-   "n_words": 529
+   "n_chars": 5037,
+   "n_words": 820,
+   "label_start": null,
+   "label_end": "2"
   },
   {
-   "id": "sec-002-2-characteristic-multivectors-and-su3",
+   "id": "sec-003-2-characteristic-multivectors-and-su3",
    "number": "2",
    "title": "Characteristic multivectors and SU(3)",
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1908,
-   "n_words": 275
+   "n_chars": 1014,
+   "n_words": 162,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-003-22-the-characteristic-polynomial-and-the-cayley",
+   "id": "sec-004-21-characteristic-multivectors",
+   "number": "2.1",
+   "title": "Characteristic Multivectors",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 971,
+   "n_words": 175,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-005-22-the-characteristic-polynomial-and-the-cayley",
    "number": "2.2",
    "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
    "level": 3,
    "page_start": 3,
-   "page_end": 5,
-   "n_chars": 6807,
-   "n_words": 923
+   "page_end": 3,
+   "n_chars": 857,
+   "n_words": 143,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-004-24-the-characteristic-polynomial-and-cayley-hami",
+   "id": "sec-006-23-application-to-generators-of-su3",
+   "number": "2.3",
+   "title": "Application to generators of SU(3)",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 6337,
+   "n_words": 1169,
+   "label_start": "3",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-007-24-the-characteristic-polynomial-and-cayley-hami",
    "number": "2.4",
    "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
    "level": 3,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3262,
-   "n_words": 396
+   "n_chars": 3518,
+   "n_words": 607,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-005-3-ga-and-the-forces-of-nature",
+   "id": "sec-008-3-ga-and-the-forces-of-nature",
    "number": "3",
    "title": "GA and the forces of nature",
    "level": 2,
    "page_start": 6,
-   "page_end": 6,
-   "n_chars": 394,
-   "n_words": 55
+   "page_end": 7,
+   "n_chars": 2092,
+   "n_words": 340,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-006-31-strong-forces",
+   "id": "sec-009-31-strong-forces",
    "number": "3.1",
    "title": "Strong forces",
    "level": 3,
-   "page_start": 6,
+   "page_start": 7,
    "page_end": 8,
-   "n_chars": 5923,
-   "n_words": 865
+   "n_chars": 4569,
+   "n_words": 861,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-007-4-octonions-and-the-sta",
+   "id": "sec-010-4-octonions-and-the-sta",
    "number": "4",
    "title": "Octonions and the STA",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 6235,
-   "n_words": 874
+   "n_chars": 6550,
+   "n_words": 1142,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-008-41-explicit-assignment-of-octonion-units-to-sta",
+   "id": "sec-011-41-explicit-assignment-of-octonion-units-to-sta",
    "number": "4.1",
    "title": "Explicit assignment of octonion units to STA elements",
    "level": 3,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 6326,
-   "n_words": 1057
+   "n_chars": 6552,
+   "n_words": 1274,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
-   "id": "sec-009-5-octonions-the-sta-and-particle-physics",
+   "id": "sec-012-5-octonions-the-sta-and-particle-physics",
    "number": "5",
    "title": "Octonions, the STA and particle physics",
    "level": 2,
    "page_start": 12,
-   "page_end": 18,
-   "n_chars": 24262,
-   "n_words": 3224
+   "page_end": 14,
+   "n_chars": 8412,
+   "n_words": 1489,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
-   "id": "sec-010-6-future-prospects",
+   "id": "sec-013-51-an-identification-of-the-su8-subgroup-of-e7-w",
+   "number": "5.1",
+   "title": "An identification of the SU(8) subgroup of E7 within the 64-dimensional octonionic left multiplication space",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 5469,
+   "n_words": 1012,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-014-52-the-group-g2-and-the-representation-of-quarks",
+   "number": "5.2",
+   "title": "The group G2 and the representation of quarks and gluons via the STA",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 11745,
+   "n_words": 2192,
+   "label_start": "15",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-015-6-future-prospects",
    "number": "6",
    "title": "Future prospects",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 3673,
-   "n_words": 506
+   "n_chars": 3821,
+   "n_words": 647,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-016-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 4398,
-   "n_words": 452
+   "n_chars": 4543,
+   "n_words": 613,
+   "label_start": "19",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 17,
-  "sections": 12,
-  "chars_total": 69350,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 18,
+  "chars_total": 73517,
+  "furniture_lines_stripped": 38,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 14,
-   "overlaid": 9,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -297,90 +645,134 @@
    },
    "sections": [
     {
-     "id": "sec-000-abstract",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-some-recent-results-for-su3-and-octonions-within",
+     "title": "Some recent results for SU(3) and Octonions within the Geometric Algebra approach to the fundamental forces of nature",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-abstract",
      "title": "Abstract",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-introduction",
+     "id": "sec-002-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-2-characteristic-multivectors-and-su3",
+     "title": "Characteristic multivectors and SU(3)",
+     "prose_ratio": 0.951,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-2-characteristic-multivectors-and-su3",
-     "title": "Characteristic multivectors and SU(3)",
-     "prose_ratio": 0.961,
-     "coverage_ratio": 0.887,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-003-22-the-characteristic-polynomial-and-the-cayley",
-     "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.869,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-004-24-the-characteristic-polynomial-and-cayley-hami",
-     "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.855,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-005-3-ga-and-the-forces-of-nature",
-     "title": "GA and the forces of nature",
-     "prose_ratio": 0.248,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-006-31-strong-forces",
-     "title": "Strong forces",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.738,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-007-4-octonions-and-the-sta",
-     "title": "Octonions and the STA",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.617,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-008-41-explicit-assignment-of-octonion-units-to-sta",
-     "title": "Explicit assignment of octonion units to STA elements",
-     "prose_ratio": 0.881,
+     "id": "sec-004-21-characteristic-multivectors",
+     "title": "Characteristic Multivectors",
+     "prose_ratio": 0.965,
      "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-5-octonions-the-sta-and-particle-physics",
+     "id": "sec-005-22-the-characteristic-polynomial-and-the-cayley",
+     "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-23-application-to-generators-of-su3",
+     "title": "Application to generators of SU(3)",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-24-the-characteristic-polynomial-and-cayley-hami",
+     "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-3-ga-and-the-forces-of-nature",
+     "title": "GA and the forces of nature",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-31-strong-forces",
+     "title": "Strong forces",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-4-octonions-and-the-sta",
+     "title": "Octonions and the STA",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-41-explicit-assignment-of-octonion-units-to-sta",
+     "title": "Explicit assignment of octonion units to STA elements",
+     "prose_ratio": 0.881,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-5-octonions-the-sta-and-particle-physics",
      "title": "Octonions, the STA and particle physics",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.98,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-6-future-prospects",
+     "id": "sec-013-51-an-identification-of-the-su8-subgroup-of-e7-w",
+     "title": "An identification of the SU(8) subgroup of E7 within the 64-dimensional octonionic left multiplication space",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-52-the-group-g2-and-the-representation-of-quarks",
+     "title": "The group G2 and the representation of quarks and gluons via the STA",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-6-future-prospects",
      "title": "Future prospects",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-references",
+     "id": "sec-016-references",
      "title": "References",
      "result": "no matching \\section"
     }

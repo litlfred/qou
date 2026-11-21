@@ -2,56 +2,66 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-lat-9912004v2",
  "source_sha256": "7033719ec7a8a0bc",
- "brief": "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD F. Farchioni — 9 sections: Hip; B. Lang; INTRODUCTION",
- "extended": "**Microscopic Universality and the Chiral Phase Transition in two Flavor QCD F. Farchioni**\n\n*Deutsches Elektronen-Synchrotron DESY, Notkestr. 85, D-22603 Hamburg, Germany*\n\n9 pp, 9 sections.\n\n**Outline.** I Hip; C B. Lang; I INTRODUCTION; II EXPECTATIONS FROM CHRMT; III GAUGE FIELD CONFIGURATIONS AND; IV REPORTING THE RESULTS; C Soft inner edge; V SUMMARY AND CONCLUSIONS; Acknowledgments",
+ "brief": "arXiv:hep-lat/9912004v2 9 Mar 2000 — 11 sections: Front matter; Chiral Random Matrix Theory; Introduction",
+ "extended": "**arXiv:hep-lat/9912004v2 9 Mar 2000**\n\n*F. Farchioni*\n\n9 pp, 11 sections.\n\n**Outline.** Front matter; 1.1 Chiral Random Matrix Theory; 1 Introduction; 1.2 Temperature transition; 2 Expectations from chRMT; 3 Gauge field configurations and analysis; 4 Reporting the results; 4.1 Eigenvalue density; 4.2 Level spacing distribution; 4.3 Soft inner edge; 5 Summary and conclusions",
  "tokens": {
-  "brief": 32,
-  "extended": 97
+  "brief": 26,
+  "extended": 94
  },
  "sections": [
   {
-   "id": "sec-000-i-hip",
-   "title": "Hip",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-c-b-lang",
-   "title": "B. Lang",
+   "id": "sec-000-11-chiral-random-matrix-theory",
+   "title": "Chiral Random Matrix Theory",
    "pages": "1-1"
   },
   {
-   "id": "sec-002-i-introduction",
-   "title": "INTRODUCTION",
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-003-ii-expectations-from-chrmt",
-   "title": "EXPECTATIONS FROM CHRMT",
+   "id": "sec-002-12-temperature-transition",
+   "title": "Temperature transition",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-2-expectations-from-chrmt",
+   "title": "Expectations from chRMT",
    "pages": "2-3"
   },
   {
-   "id": "sec-004-iii-gauge-field-configurations-and",
-   "title": "GAUGE FIELD CONFIGURATIONS AND",
+   "id": "sec-004-3-gauge-field-configurations-and-analysis",
+   "title": "Gauge field configurations and analysis",
    "pages": "3-4"
   },
   {
-   "id": "sec-005-iv-reporting-the-results",
-   "title": "REPORTING THE RESULTS",
-   "pages": "4-7"
+   "id": "sec-005-4-reporting-the-results",
+   "title": "Reporting the results",
+   "pages": "4-4"
   },
   {
-   "id": "sec-006-c-soft-inner-edge",
+   "id": "sec-006-41-eigenvalue-density",
+   "title": "Eigenvalue density",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-007-42-level-spacing-distribution",
+   "title": "Level spacing distribution",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-008-43-soft-inner-edge",
    "title": "Soft inner edge",
    "pages": "7-8"
   },
   {
-   "id": "sec-007-v-summary-and-conclusions",
-   "title": "SUMMARY AND CONCLUSIONS",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-008-acknowledgments",
-   "title": "Acknowledgments",
+   "id": "sec-009-5-summary-and-conclusions",
+   "title": "Summary and conclusions",
    "pages": "8-9"
   }
  ],

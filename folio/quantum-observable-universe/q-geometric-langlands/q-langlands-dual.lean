@@ -17,7 +17,7 @@ namespace QOU
 
 /-- $q$-Langlands dual group -/
 def QLanglandsDual   :=
-  -- Ref: [manuscript] def:q-langlands-dual
+  -- Ref: [leitner2026] def:q-langlands-dual
   trivial
 
 end QOU

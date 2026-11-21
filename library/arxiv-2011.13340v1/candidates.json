@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2011.13340v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "e73876ed2c923608a5efcf6053a7d21c0148bfd9c3b1d63bc32fe6ba91179480",
+  "file": "2011.13340v1.pdf"
+ },
+ "provenance": {
+  "title": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions *",
+  "authors": "Tarun Kathuria",
+  "arxiv": {
+   "id": "2011.13340",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "26 Nov 2020"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

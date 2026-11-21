@@ -7,10 +7,11 @@ section_number: 1.1
 pages: 9-10
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.986
+doc_brief: "Standard model physics from an algebra? — 77 sections: Front matter; Abstract; Acknowledgements"
 ---
 The safest conceivable theory is one which implements the fewest initial assumptions possible.
 

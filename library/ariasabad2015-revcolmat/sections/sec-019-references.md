@@ -1,6 +1,6 @@
 ---
 doc_id: ariasabad2015-revcolmat
-doc_title: "Revista Colombiana de Matemáticas"
+doc_title: "Introduction to representations of braid groups"
 section_id: sec-019-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 37-38
 source_pdf: ariasabad2015-revcolmat.pdf
 source_sha256: 822d696773a274e0
 toc_source: inferred
+doc_brief: "Introduction to representations of braid groups — These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation the- ory, held"
 ---
 [1] J. Alexander, A Lemma on a System of Knotted Curves, Proc. Nat. Acad.
 Sci. 9 (1923), 93–95.
@@ -39,11 +40,7 @@ Letters in Math. Phys. 10 (1985), 63–69.
 [16] T. Kohno, Conformal Field Theory and Topology, Translations of Math.
 Monographs, Amer. Math. Soc.
 Revista Colombiana de Matem´aticas
-i
-i
 “v49n1a01-Arias” — 2015/6/30 — 9:58 — page 38 — #38
-i
-i
 i
 i
 i

@@ -23,8 +23,8 @@
   a matter of supplying `a = π|cot θ_k|/N` and `L = log(2 sin θ_k)` — but the
   assembly itself has no knot in it.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevWindowSum.lean
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianWindowSum.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevWindowSum.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianWindowSum.lean
 -/
 import QOU.Knot.KashaevWindowIndex
 

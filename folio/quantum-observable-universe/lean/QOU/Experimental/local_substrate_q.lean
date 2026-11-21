@@ -45,7 +45,7 @@ This is the §3b "name the conditional conjecture" disposition (pattern
 C): `LocalSubstrateQ ctx` is the proposition the manuscript conjectures
 for the substrate data `ctx`; the open state is honestly represented by
 the absence of an instance.  It is *not* a self-assuming projection. -/
--- Ref: [manuscript] quantum-observable-universe/observations/local-substrate-q.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/local-substrate-q.ts
 def LocalSubstrateQ (ctx : LocalSubstrateQContext) : Prop :=
     |ctx.q - ctx.q_measured| ≤ ctx.Δq
 

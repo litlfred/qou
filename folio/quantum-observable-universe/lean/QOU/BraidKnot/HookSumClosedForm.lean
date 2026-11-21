@@ -56,7 +56,7 @@ keeps the statement usable against whatever bound a caller already has.
 
 All sums over `ℤ`, matching `PieceAGeneral` — no `ℝ`, no archimedean input.
 
--- Ref: [manuscript] computations/deltalambda/wlambda_covariance_epic_A1_sigmah_not_polynomial.py
+-- Ref: [leitner2026] computations/deltalambda/wlambda_covariance_epic_A1_sigmah_not_polynomial.py
 -/
 
 namespace QOU.BraidKnot.HookSum

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "JOHN MILNOR",
-  "pageStart": 4,
-  "pageEnd": 6,
-  "text": "../sections/sec-001-12-john-milnor.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/milnor-1982-hyperbolic-geometry-the-first-150-years",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/milnor-1982-hyperbolic-geometry-the-first-150-years",
+  "title": "of Humbert. Here (-D/ri) is a generalized quadratic residue symbol, with values ± 1 or 0. In order to express this infinite series in terms of the function JI(0), note first that the real-valued function n \\-^ (-D/ri) on Z/D is equal to its own Fourier transform, up to a factor of V-D = iVD . More precisely k£àD\\ k I",
+  "pageStart": 13,
+  "pageEnd": 16,
+  "text": "../sections/sec-001-21-of-humbert-here--dri-is-a-generalized-quadrat.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/milnor-1982-hyperbolic-geometry-the-first-150-years/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/milnor-1982-hyperbolic-geometry-the-first-150-years/manifest.jsonld",
   "provenance": "ingested"
 }

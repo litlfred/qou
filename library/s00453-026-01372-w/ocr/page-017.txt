@@ -1,0 +1,51 @@
+Algorithmica (2026) 88:21 Page 170f19 21
+
+where the final equality follows directly by definition of G ;. This completes the proof.
+im
+
+Using the lemma, we can follow the standard Chernoff bound techniques to com-
+plete the proof. Let X = Via fj (X1,..., Xm); we can apply Markov’s inequality
+for any 4 < 0 to obtain
+
+Pr[X < qn] = Prlexp(aX) > exp(agn)] < exp(—Agn) - E[exp(X)]
+
+As mentioned before, we can take Fj = exp(A- fj(X1,..., Xm)) and apply inequality
+(11) to obtain that
+
+exp@X) = ETT} Fi] < 11 LPN".
+
+Combining this inequality with the previous inequality, we now have that
+
+1/k
+Pr[X < qn] < exp(—Agn) - []}-, ELPSV* = ([T} 1 B[LF;/exp@.q)I*])
+Writing out the definition of F;, we have
+
+[Fj /expagyl* =exp(Ak - fj(X1,..., Xm))/ exp(Akq).
+
+Define A’ = Ak; since 4 was arbitrary, we will abuse notation and let A = A’. Com-
+bining the two previous inequalities, we have that
+
+h I/k
+Pr[X < qn] < (IT Blexp@: fi)/exp@g)l) |
+
+Here, the right-hand side is in exactly the same form as in the proof of the Chernoff-
+Hoeffding theorem under independence, except with an additional exponent 1/k. As
+a result, we can follow the Chernoff-Hoeffding proof and take g = p — € to obtain
+
+Pr[X < (p — €)n] < exp(—D(p — €||p) -n/k),
+
+which was our desired result.
+
+References
+
+1. Qiu, F, Singla, S.: Submodular dominance and applications. In: Chakrabarti, A., Swamy, C.
+(eds.) Approximation, Randomization, and Combinatorial Optimization. Algorithms and Techniques,
+APPROX/RANDOM 2022. LIPIcs, vol. 245, pp. 44-14421. Schloss Dagstuhl - Leibniz-Zentrum fiir
+Informatik, ??? (2022). https://doi.org/10.4230/LIPIcs.APPROX/RANDOM. 2022.44
+
+2. Chekuri, C., Vondrak, J., Zenklusen, R.: Dependent randomized rounding via exchange properties of
+combinatorial structures. In: 51th Annual IEEE Symposium on Foundations of Computer Science,
+FOCS 2010, pp. 575-584. IEEE Computer Society, ??? (2010). https://doi.org/10.1109/FOCS.2010.
+60
+
+cay Springer

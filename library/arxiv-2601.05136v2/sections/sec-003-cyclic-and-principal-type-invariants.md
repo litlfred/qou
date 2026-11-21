@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.05136v2
-doc_title: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant"
+doc_title: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant"
 section_id: sec-003-cyclic-and-principal-type-invariants
 section_title: "Cyclic and principal type invariants"
 section_number: null
 pages: 4-5
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
-doc_brief: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant — Previous work of the author and N."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.87
-latex_coverage_ratio: 0.892
+latex_coverage_ratio: 0.967
+doc_brief: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant — Previous work of the author and N."
 ---
 []{#sec:negative type label="sec:negative type"}
 

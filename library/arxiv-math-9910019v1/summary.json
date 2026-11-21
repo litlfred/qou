@@ -2,32 +2,52 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-9910019v1",
  "source_sha256": "07dd7ab7068b1482",
- "brief": "Symmetrized random permutations — 4 sections: Introduction; (−x)3/2+; (−x)3/2−",
- "extended": "**Symmetrized random permutations**\n\n*Jinho Baik∗and*\n\n17 pp, 4 sections.\n\n**Outline.** Introduction; 3 (−x)3/2+; 3 (−x)3/2−; References",
+ "brief": "Symmetrized random permutations — 8 sections: Front matter; Introduction; Tracy-Widom distribution functions",
+ "extended": "**Symmetrized random permutations**\n\n*Jinho Baik∗and*\n\n17 pp, 8 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Tracy-Widom distribution functions; 3 Main Results; 4 Applications and related topics; 4.1 Random involutions and random signed invol; 4.3 Random turn vicious walker model; 4.4 Symmetrized versions of Johansson's model",
  "tokens": {
-  "brief": 19,
-  "extended": 34
+  "brief": 27,
+  "extended": 84
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-6"
+   "pages": "1-4"
   },
   {
-   "id": "sec-001-3-x32",
-   "title": "(−x)3/2+",
-   "pages": "6-6"
+   "id": "sec-001-2-tracy-widom-distribution-functions",
+   "title": "Tracy-Widom distribution functions",
+   "pages": "4-7"
   },
   {
-   "id": "sec-002-3-x32",
-   "title": "(−x)3/2−",
-   "pages": "6-15"
+   "id": "sec-002-3-main-results",
+   "title": "Main Results",
+   "pages": "7-9"
   },
   {
-   "id": "sec-003-references",
-   "title": "References",
-   "pages": "15-17"
+   "id": "sec-003-4-applications-and-related-topics",
+   "title": "Applications and related topics",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-41-random-involutions-and-random-signed-involuti",
+   "title": "Random involutions and random signed involutions",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-005-43-random-turn-vicious-walker-model",
+   "title": "Random turn vicious walker model",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-006-44-symmetrized-versions-of-johanssons-model",
+   "title": "Symmetrized versions of Johansson's model",
+   "pages": "12-17"
   }
  ],
  "provenance": {

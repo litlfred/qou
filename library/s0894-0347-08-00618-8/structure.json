@@ -8,9 +8,15 @@
   "pages": 47,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:26Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 37,
+    "reason": "10 of 474 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -31,7 +37,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS Contents Introduction A plethora of negative dependence properties and conjectures Negative dependence concepts Strongly Rayleigh measures Symmetric homogenization Measures on countably in\ufb01nite sets Towards a theory of negative dependence: Problems",
+   "heading": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS Contents Introduction A plethora of negative dependence properties and conjectures Negative dependence concepts Strongly Rayleigh measures Symmetric homogenization Measures on countably inﬁnite sets Towards a theory of negative dependence: Problems",
    "outline": "1. Introduction",
    "text": "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8",
    "corroborated_by": [],
@@ -181,7 +187,7 @@
   },
   {
    "level": 2,
-   "title": "Symmetric homogenization via G\u00e5rding hyperbolic polynomials",
+   "title": "Symmetric homogenization via Gårding hyperbolic polynomials",
    "page": 21,
    "source": "outline",
    "number": "4.1",
@@ -738,8 +744,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 288,
-   "n_words": 40,
+   "n_chars": 285,
+   "n_words": 39,
    "label_start": "521",
    "label_end": "521"
   },
@@ -750,8 +756,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 11357,
-   "n_words": 1725,
+   "n_chars": 11370,
+   "n_words": 1726,
    "label_start": "521",
    "label_end": "524"
   },
@@ -912,9 +918,9 @@
    "label_end": "541"
   },
   {
-   "id": "sec-014-41-symmetric-homogenization-via-g\u00e5rding-hyperbol",
+   "id": "sec-014-41-symmetric-homogenization-via-gårding-hyperbol",
    "number": "4.1",
-   "title": "Symmetric homogenization via G\u00e5rding hyperbolic polynomials",
+   "title": "Symmetric homogenization via Gårding hyperbolic polynomials",
    "level": 2,
    "page_start": 21,
    "page_end": 24,
@@ -953,26 +959,38 @@
    "title": "The partial symmetrization procedure",
    "level": 2,
    "page_start": 29,
-   "page_end": 33,
-   "n_chars": 12100,
-   "n_words": 2213,
+   "page_end": 31,
+   "n_chars": 4035,
+   "n_words": 748,
    "label_start": "549",
+   "label_end": "551"
+  },
+  {
+   "id": "sec-018-5-preservation-of-negative-dependence-by-symmetr",
+   "number": "5",
+   "title": "Preservation of negative dependence by symmetric exclusion processes",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 8025,
+   "n_words": 1460,
+   "label_start": "551",
    "label_end": "553"
   },
   {
-   "id": "sec-018-6-almost-exchangeable-measures",
+   "id": "sec-019-6-almost-exchangeable-measures",
    "number": "6",
    "title": "Almost exchangeable measures",
    "level": 1,
    "page_start": 33,
    "page_end": 41,
-   "n_chars": 16912,
-   "n_words": 3515,
+   "n_chars": 16808,
+   "n_words": 3455,
    "label_start": "553",
    "label_end": "561"
   },
   {
-   "id": "sec-019-7-negative-results-on-negative-dependence",
+   "id": "sec-020-7-negative-results-on-negative-dependence",
    "number": "7",
    "title": "Negative results on negative dependence",
    "level": 1,
@@ -984,26 +1002,26 @@
    "label_end": "564"
   },
   {
-   "id": "sec-020-acknowledgements",
+   "id": "sec-021-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 44,
    "page_end": 45,
-   "n_chars": 340,
-   "n_words": 51,
+   "n_chars": 336,
+   "n_words": 50,
    "label_start": "564",
    "label_end": "565"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-022-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 45,
    "page_end": 47,
-   "n_chars": 11458,
-   "n_words": 1571,
+   "n_chars": 11469,
+   "n_words": 1572,
    "label_start": "565",
    "label_end": "567"
   }
@@ -1021,11 +1039,10 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 3,
+    "count": 2,
     "items": [
      "Article electronically published on September 19,",
-     "Introduction",
-     "A plethora of negative dependence properties and conjectures"
+     "Introduction"
     ]
    },
    "found_not_listed": {
@@ -1037,7 +1054,8 @@
     "items": []
    }
   },
-  "sections": 23,
-  "chars_total": 128261
+  "sections": 24,
+  "chars_total": 128134,
+  "furniture_lines_stripped": 0
  }
 }

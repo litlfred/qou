@@ -8,9 +8,15 @@
   "pages": 103,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 27,
+    "reason": "18 of 419 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -21,25 +27,25 @@
    "stamp_date": "23 Nov 2015"
   },
   "doi": null,
-  "title": "MOD-\u03c6 CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
-  "authors_raw": "VALENTIN F\u00c9RAY, PIERRE-LO\u00cfC M\u00c9LIOT, AND ASHKAN NIKEGHBALI",
+  "title": "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
+  "authors_raw": "VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI",
   "title_lines": [
-   "MOD-\u03c6 CONVERGENCE, I:",
+   "MOD-φ CONVERGENCE, I:",
    "NORMALITY ZONES AND PRECISE DEVIATIONS"
   ],
-  "abstract": "In this paper, we use the framework of mod-\u03c6 convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n\u2208N, which can be lattice or non-lattice distributed. We establish precise estimates of the \ufb02uctuations P[Xn \u2208tnB], instead of the usual estimates for the rate of exponential decay log(P[Xn \u2208tnB]). Our approach provides us with a systematic way to characterise the normality zone, that is the zone in which the Gaussian approxima- tion for the tails is still valid. Besides, the residue function measures the extent to which this approximation fails to hold at the edge of the normality zone. The \ufb01rst sections of the article are devoted to a proof of these abstract results and comparisons with existing results. We then propose new examples covered by this the- ory and coming from various areas of mathematics: classical probability theory, number theory (statistics of additive arithmetic functions), combinatorics (statistics of random permutations), random matrix theory (characteristic polynomials of random matrices in compact Lie groups), graph theory (number of subgraphs in a random Erd\u02ddos-R\u00e9nyi graph), and non-commutative probability theory (asymptotics of random character val- ues of symmetric groups). In particular, we complete our theory of precise deviations by a concrete method of cumulants and dependency graphs, which applies to many examples of sums of \u201cweakly dependent\u201d random variables. The large number as well as the variety of examples hint at a universality class for second order \ufb02uctuations. Date: November 24, 2015. 1 arXiv:1304.2934v4 [math.PR] 23 Nov 2015",
+  "abstract": "In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N, which can be lattice or non-lattice distributed. We establish precise estimates of the ﬂuctuations P[Xn ∈tnB], instead of the usual estimates for the rate of exponential decay log(P[Xn ∈tnB]). Our approach provides us with a systematic way to characterise the normality zone, that is the zone in which the Gaussian approxima- tion for the tails is still valid. Besides, the residue function measures the extent to which this approximation fails to hold at the edge of the normality zone. The ﬁrst sections of the article are devoted to a proof of these abstract results and comparisons with existing results. We then propose new examples covered by this the- ory and coming from various areas of mathematics: classical probability theory, number theory (statistics of additive arithmetic functions), combinatorics (statistics of random permutations), random matrix theory (characteristic polynomials of random matrices in compact Lie groups), graph theory (number of subgraphs in a random Erd˝os-Rényi graph), and non-commutative probability theory (asymptotics of random character val- ues of symmetric groups). In particular, we complete our theory of precise deviations by a concrete method of cumulants and dependency graphs, which applies to many examples of sums of “weakly dependent” random variables. The large number as well as the variety of examples hint at a universality class for second order ﬂuctuations. Date: November 24, 2015. 1 arXiv:1304.2934v4 [math.PR] 23 Nov 2015",
   "docinfo": {
    "Producer": "pdfTeX-1.40.12",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20151124022337Z"
   },
-  "title_raw": "MOD-\u03c6 CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
+  "title_raw": "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
-   "heading": "MOD- \u03c6 CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
+   "heading": "MOD- φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
    "outline": "1. Introduction",
-   "text": "MOD-\u03c6 CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
+   "text": "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS",
    "corroborated_by": [
     "text"
    ],
@@ -289,7 +295,7 @@
   },
   {
    "level": 2,
-   "title": "Link with the Cram\u00e9r-Petrov expansion",
+   "title": "Link with the Cramér-Petrov expansion",
    "page": 43,
    "source": "outline",
    "number": "5.3",
@@ -299,7 +305,7 @@
   },
   {
    "level": 1,
-   "title": "A precise version of the Ellis-G\u00e4rtner theorem",
+   "title": "A precise version of the Ellis-Gärtner theorem",
    "page": 44,
    "source": "outline",
    "number": "6",
@@ -509,7 +515,7 @@
   },
   {
    "level": 1,
-   "title": "Subgraph count statistics in Erd\u00f6s-R\u00e9nyi random graphs",
+   "title": "Subgraph count statistics in Erdös-Rényi random graphs",
    "page": 80,
    "source": "outline",
    "number": "10",
@@ -604,7 +610,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Panorama of the \ufb02uctuations of a sum of n i.i.d. random variables",
+   "title": "Panorama of the ﬂuctuations of a sum of n i.i.d. random variables",
    "page": 10,
    "confidence": 0.7,
    "evidence": [
@@ -616,7 +622,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Panorama of the \ufb02uctuations of the number of cycles Xn of a",
+   "title": "Panorama of the ﬂuctuations of the number of cycles Xn of a",
    "page": 11,
    "confidence": 0.7,
    "evidence": [
@@ -640,7 +646,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Panorama of the \ufb02uctuations of a sequence of random variables (Xn)n\u2208N that converges modulo a lattice distribution (with x =",
+   "title": "Panorama of the ﬂuctuations of a sequence of random variables (Xn)n∈N that converges modulo a lattice distribution (with x =",
    "page": 21,
    "confidence": 0.9,
    "evidence": [
@@ -653,7 +659,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Panorama of the \ufb02uctuations of a sequence of random variables (Xn)n\u2208N that converges modulo an absolutely continuous distribu-",
+   "title": "Panorama of the ﬂuctuations of a sequence of random variables (Xn)n∈N that converges modulo an absolutely continuous distribu-",
    "page": 34,
    "confidence": 0.9,
    "evidence": [
@@ -666,7 +672,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "The in\ufb01mum of F on an admissible closed set C is attained",
+   "title": "The inﬁmum of F on an admissible closed set C is attained",
    "page": 45,
    "confidence": 0.7,
    "evidence": [
@@ -691,7 +697,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Domain \u22060(r, R, \u03c6)",
+   "title": "Domain ∆0(r, R, φ)",
    "page": 56,
    "confidence": 0.9,
    "evidence": [
@@ -717,7 +723,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "Illustration of the de\ufb01nition of \u03c6H. We can thus write \u03ba(G) = \u2211",
+   "title": "Illustration of the deﬁnition of φH. We can thus write κ(G) = ∑",
    "page": 77,
    "confidence": 0.9,
    "evidence": [
@@ -730,7 +736,7 @@
   {
    "kind": "figure",
    "number": "11",
-   "title": "Panorama of the \ufb02uctuations of a sum of Nn random vari-",
+   "title": "Panorama of the ﬂuctuations of a sum of Nn random vari-",
    "page": 79,
    "confidence": 0.7,
    "evidence": [
@@ -742,7 +748,7 @@
   {
    "kind": "figure",
    "number": "12",
-   "title": "For m \u22652, the de\ufb01nition of Hm",
+   "title": "For m ≥2, the deﬁnition of Hm",
    "page": 83,
    "confidence": 0.8,
    "evidence": [
@@ -754,7 +760,7 @@
   {
    "kind": "figure",
    "number": "13",
-   "title": "Graphs involved in the computation of the main term in \u03ba(2)(X(n)",
+   "title": "Graphs involved in the computation of the main term in κ(2)(X(n)",
    "page": 86,
    "confidence": 0.9,
    "evidence": [
@@ -767,7 +773,7 @@
   {
    "kind": "figure",
    "number": "14",
-   "title": "Graphs involved in the computation of the main term in \u03ba(3)(X(n)",
+   "title": "Graphs involved in the computation of the main term in κ(3)(X(n)",
    "page": 86,
    "confidence": 0.9,
    "evidence": [
@@ -1189,9 +1195,10 @@
    "physical": 44,
    "label": "44",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -1208,9 +1215,10 @@
    "physical": 46,
    "label": "46",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -1538,9 +1546,10 @@
    "physical": 81,
    "label": "81",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -1781,8 +1790,8 @@
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 4570,
-   "n_words": 752,
+   "n_chars": 4568,
+   "n_words": 751,
    "label_start": "5",
    "label_end": "7"
   },
@@ -1793,8 +1802,8 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3897,
-   "n_words": 628,
+   "n_chars": 3984,
+   "n_words": 642,
    "label_start": "7",
    "label_end": "8"
   },
@@ -1817,8 +1826,8 @@
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2102,
-   "n_words": 337,
+   "n_chars": 2100,
+   "n_words": 336,
    "label_start": "8",
    "label_end": "9"
   },
@@ -1829,8 +1838,8 @@
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 296,
-   "n_words": 52,
+   "n_chars": 313,
+   "n_words": 53,
    "label_start": "9",
    "label_end": "9"
   },
@@ -1865,8 +1874,8 @@
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1266,
-   "n_words": 238,
+   "n_chars": 1263,
+   "n_words": 237,
    "label_start": "12",
    "label_end": "13"
   },
@@ -1877,8 +1886,8 @@
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 2471,
-   "n_words": 582,
+   "n_chars": 2554,
+   "n_words": 593,
    "label_start": "13",
    "label_end": "14"
   },
@@ -1913,8 +1922,8 @@
    "level": 2,
    "page_start": 16,
    "page_end": 21,
-   "n_chars": 8101,
-   "n_words": 1687,
+   "n_chars": 8098,
+   "n_words": 1686,
    "label_start": "16",
    "label_end": "21"
   },
@@ -1925,8 +1934,8 @@
    "level": 2,
    "page_start": 21,
    "page_end": 25,
-   "n_chars": 8961,
-   "n_words": 1817,
+   "n_chars": 9047,
+   "n_words": 1830,
    "label_start": "21",
    "label_end": "25"
   },
@@ -1949,8 +1958,8 @@
    "level": 2,
    "page_start": 26,
    "page_end": 29,
-   "n_chars": 5345,
-   "n_words": 1119,
+   "n_chars": 4935,
+   "n_words": 993,
    "label_start": "26",
    "label_end": "29"
   },
@@ -1961,8 +1970,8 @@
    "level": 2,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 3221,
-   "n_words": 611,
+   "n_chars": 3253,
+   "n_words": 616,
    "label_start": "29",
    "label_end": "30"
   },
@@ -1972,26 +1981,38 @@
    "title": "Central limit theorem at the scales o(tn) and o(tn23)",
    "level": 2,
    "page_start": 30,
-   "page_end": 36,
-   "n_chars": 13475,
-   "n_words": 2579,
+   "page_end": 35,
+   "n_chars": 9994,
+   "n_words": 1921,
    "label_start": "30",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-018-44-normality-zones-for-mod-phi-and-mod-gaussian",
+   "number": "4.4",
+   "title": "Normality zones for mod-phi and mod-Gaussian sequences",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 1225,
+   "n_words": 224,
+   "label_start": "35",
    "label_end": "36"
   },
   {
-   "id": "sec-018-45-discussion-and-refinements",
+   "id": "sec-019-45-discussion-and-refinements",
    "number": "4.5",
    "title": "Discussion and refinements",
    "level": 2,
    "page_start": 36,
    "page_end": 38,
-   "n_chars": 5117,
-   "n_words": 928,
+   "n_chars": 7321,
+   "n_words": 1352,
    "label_start": "36",
    "label_end": "38"
   },
   {
-   "id": "sec-019-5-an-extended-deviation-result-from-bounds-on-cu",
+   "id": "sec-020-5-an-extended-deviation-result-from-bounds-on-cu",
    "number": "5",
    "title": "An extended deviation result from bounds on cumulants",
    "level": 1,
@@ -2003,7 +2024,7 @@
    "label_end": "38"
   },
   {
-   "id": "sec-020-51-bounds-on-cumulants-and-mod-gaussian-converge",
+   "id": "sec-021-51-bounds-on-cumulants-and-mod-gaussian-converge",
    "number": "5.1",
    "title": "Bounds on cumulants and mod-Gaussian convergence",
    "level": 2,
@@ -2015,7 +2036,7 @@
    "label_end": "39"
   },
   {
-   "id": "sec-021-52-precise-deviations-for-random-variables-with",
+   "id": "sec-022-52-precise-deviations-for-random-variables-with",
    "number": "5.2",
    "title": "Precise deviations for random variables with control on cumulants",
    "level": 2,
@@ -2027,9 +2048,9 @@
    "label_end": "43"
   },
   {
-   "id": "sec-022-53-link-with-the-cram\u00e9r-petrov-expansion",
+   "id": "sec-023-53-link-with-the-cramér-petrov-expansion",
    "number": "5.3",
-   "title": "Link with the Cram\u00e9r-Petrov expansion",
+   "title": "Link with the Cramér-Petrov expansion",
    "level": 2,
    "page_start": 43,
    "page_end": 44,
@@ -2039,55 +2060,55 @@
    "label_end": "44"
   },
   {
-   "id": "sec-023-6-a-precise-version-of-the-ellis-g\u00e4rtner-theorem",
+   "id": "sec-024-6-a-precise-version-of-the-ellis-gärtner-theorem",
    "number": "6",
-   "title": "A precise version of the Ellis-G\u00e4rtner theorem",
+   "title": "A precise version of the Ellis-Gärtner theorem",
    "level": 1,
    "page_start": 44,
    "page_end": 45,
-   "n_chars": 1333,
-   "n_words": 204,
+   "n_chars": 1330,
+   "n_words": 203,
    "label_start": "44",
    "label_end": "45"
   },
   {
-   "id": "sec-024-61-technical-preliminaries",
+   "id": "sec-025-61-technical-preliminaries",
    "number": "6.1",
    "title": "Technical preliminaries",
    "level": 2,
    "page_start": 45,
    "page_end": 46,
-   "n_chars": 2246,
-   "n_words": 461,
+   "n_chars": 2328,
+   "n_words": 472,
    "label_start": "45",
    "label_end": "46"
   },
   {
-   "id": "sec-025-62-a-precise-upper-bound",
+   "id": "sec-026-62-a-precise-upper-bound",
    "number": "6.2",
    "title": "A precise upper bound",
    "level": 2,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 1981,
-   "n_words": 359,
+   "n_chars": 1978,
+   "n_words": 358,
    "label_start": "46",
    "label_end": "47"
   },
   {
-   "id": "sec-026-63-a-precise-lower-bound",
+   "id": "sec-027-63-a-precise-lower-bound",
    "number": "6.3",
    "title": "A precise lower bound",
    "level": 2,
    "page_start": 47,
    "page_end": 48,
-   "n_chars": 2532,
-   "n_words": 472,
+   "n_chars": 2610,
+   "n_words": 487,
    "label_start": "47",
    "label_end": "48"
   },
   {
-   "id": "sec-027-7-examples-with-an-explicit-generating-function",
+   "id": "sec-028-7-examples-with-an-explicit-generating-function",
    "number": "7",
    "title": "Examples with an explicit generating function",
    "level": 1,
@@ -2099,7 +2120,7 @@
    "label_end": "48"
   },
   {
-   "id": "sec-028-71-mod-convergence-from-an-explicit-formula-for",
+   "id": "sec-029-71-mod-convergence-from-an-explicit-formula-for",
    "number": "7.1",
    "title": "Mod-convergence from an explicit formula for the Laplace transform",
    "level": 2,
@@ -2111,7 +2132,7 @@
    "label_end": "50"
   },
   {
-   "id": "sec-029-72-additive-arithmetic-functions-of-random-integ",
+   "id": "sec-030-72-additive-arithmetic-functions-of-random-integ",
    "number": "7.2",
    "title": "Additive arithmetic functions of random integers",
    "level": 2,
@@ -2123,7 +2144,7 @@
    "label_end": "55"
   },
   {
-   "id": "sec-030-73-number-of-cycles-in-weighted-probability-meas",
+   "id": "sec-031-73-number-of-cycles-in-weighted-probability-meas",
    "number": "7.3",
    "title": "Number of cycles in weighted probability measure",
    "level": 2,
@@ -2135,7 +2156,7 @@
    "label_end": "58"
   },
   {
-   "id": "sec-031-74-rises-in-random-permutations",
+   "id": "sec-032-74-rises-in-random-permutations",
    "number": "7.4",
    "title": "Rises in random permutations",
    "level": 2,
@@ -2147,7 +2168,7 @@
    "label_end": "61"
   },
   {
-   "id": "sec-032-75-characteristic-polynomials-of-random-matrices",
+   "id": "sec-033-75-characteristic-polynomials-of-random-matrices",
    "number": "7.5",
    "title": "Characteristic polynomials of random matrices in a compact Lie group",
    "level": 2,
@@ -2159,7 +2180,7 @@
    "label_end": "64"
   },
   {
-   "id": "sec-033-8-mod-gaussian-convergence-from-a-factorization",
+   "id": "sec-034-8-mod-gaussian-convergence-from-a-factorization",
    "number": "8",
    "title": "Mod-Gaussian convergence from a factorization of the probability generating function",
    "level": 1,
@@ -2171,7 +2192,7 @@
    "label_end": "64"
   },
   {
-   "id": "sec-034-81-background-central-limit-theorem-from-locatio",
+   "id": "sec-035-81-background-central-limit-theorem-from-locatio",
    "number": "8.1",
    "title": "Background: central limit theorem from location of zeros",
    "level": 2,
@@ -2183,7 +2204,7 @@
    "label_end": "64"
   },
   {
-   "id": "sec-035-82-mod-gaussian-convergence-from-non-negative-fa",
+   "id": "sec-036-82-mod-gaussian-convergence-from-non-negative-fa",
    "number": "8.2",
    "title": "Mod-Gaussian convergence from non-negative factorizations",
    "level": 2,
@@ -2195,7 +2216,7 @@
    "label_end": "67"
   },
   {
-   "id": "sec-036-83-two-examples-uniform-permutations-and-uniform",
+   "id": "sec-037-83-two-examples-uniform-permutations-and-uniform",
    "number": "8.3",
    "title": "Two examples: uniform permutations and uniform set-partitions",
    "level": 2,
@@ -2207,7 +2228,7 @@
    "label_end": "68"
   },
   {
-   "id": "sec-037-84-third-cumulant-of-the-number-of-blocks-in-uni",
+   "id": "sec-038-84-third-cumulant-of-the-number-of-blocks-in-uni",
    "number": "8.4",
    "title": "Third cumulant of the number of blocks in uniform set-partitions",
    "level": 2,
@@ -2219,7 +2240,7 @@
    "label_end": "69"
   },
   {
-   "id": "sec-038-9-dependency-graphs-and-mod-gaussian-convergence",
+   "id": "sec-039-9-dependency-graphs-and-mod-gaussian-convergence",
    "number": "9",
    "title": "Dependency graphs and mod-Gaussian convergence",
    "level": 1,
@@ -2231,7 +2252,7 @@
    "label_end": "70"
   },
   {
-   "id": "sec-039-91-the-theory-of-dependency-graphs",
+   "id": "sec-040-91-the-theory-of-dependency-graphs",
    "number": "9.1",
    "title": "The theory of dependency graphs",
    "level": 2,
@@ -2243,7 +2264,7 @@
    "label_end": "72"
   },
   {
-   "id": "sec-040-92-joint-cumulants",
+   "id": "sec-041-92-joint-cumulants",
    "number": "9.2",
    "title": "Joint cumulants",
    "level": 2,
@@ -2255,7 +2276,7 @@
    "label_end": "73"
   },
   {
-   "id": "sec-041-93-useful-combinatorial-lemmas",
+   "id": "sec-042-93-useful-combinatorial-lemmas",
    "number": "9.3",
    "title": "Useful combinatorial lemmas",
    "level": 2,
@@ -2267,7 +2288,7 @@
    "label_end": "76"
   },
   {
-   "id": "sec-042-94-proof-of-the-bound-on-cumulants",
+   "id": "sec-043-94-proof-of-the-bound-on-cumulants",
    "number": "9.4",
    "title": "Proof of the bound on cumulants",
    "level": 2,
@@ -2279,7 +2300,7 @@
    "label_end": "78"
   },
   {
-   "id": "sec-043-95-sums-of-random-variables-with-a-sparse-depend",
+   "id": "sec-044-95-sums-of-random-variables-with-a-sparse-depend",
    "number": "9.5",
    "title": "Sums of random variables with a sparse dependency graph",
    "level": 2,
@@ -2291,9 +2312,9 @@
    "label_end": "80"
   },
   {
-   "id": "sec-044-10-subgraph-count-statistics-in-erd\u00f6s-r\u00e9nyi-rand",
+   "id": "sec-045-10-subgraph-count-statistics-in-erdös-rényi-rand",
    "number": "10",
-   "title": "Subgraph count statistics in Erd\u00f6s-R\u00e9nyi random graphs",
+   "title": "Subgraph count statistics in Erdös-Rényi random graphs",
    "level": 1,
    "page_start": 80,
    "page_end": 81,
@@ -2303,7 +2324,7 @@
    "label_end": "81"
   },
   {
-   "id": "sec-045-101-a-bound-on-cumulants",
+   "id": "sec-046-101-a-bound-on-cumulants",
    "number": "10.1",
    "title": "A bound on cumulants",
    "level": 2,
@@ -2315,31 +2336,31 @@
    "label_end": "83"
   },
   {
-   "id": "sec-046-102-polynomiality-of-cumulants",
+   "id": "sec-047-102-polynomiality-of-cumulants",
    "number": "10.2",
    "title": "Polynomiality of cumulants",
    "level": 2,
    "page_start": 83,
    "page_end": 85,
-   "n_chars": 3611,
-   "n_words": 729,
+   "n_chars": 3608,
+   "n_words": 728,
    "label_start": "83",
    "label_end": "85"
   },
   {
-   "id": "sec-047-103-moderate-deviations-for-subgraph-count-stati",
+   "id": "sec-048-103-moderate-deviations-for-subgraph-count-stati",
    "number": "10.3",
    "title": "Moderate deviations for subgraph count statistics",
    "level": 2,
    "page_start": 85,
    "page_end": 88,
-   "n_chars": 6905,
-   "n_words": 1317,
+   "n_chars": 6962,
+   "n_words": 1324,
    "label_start": "85",
    "label_end": "88"
   },
   {
-   "id": "sec-048-11-random-character-values-from-central-measures",
+   "id": "sec-049-11-random-character-values-from-central-measures",
    "number": "11",
    "title": "Random character values from central measures on partitions",
    "level": 1,
@@ -2351,7 +2372,7 @@
    "label_end": "91"
   },
   {
-   "id": "sec-049-111-preliminaries",
+   "id": "sec-050-111-preliminaries",
    "number": "11.1",
    "title": "Preliminaries",
    "level": 2,
@@ -2363,7 +2384,7 @@
    "label_end": "93"
   },
   {
-   "id": "sec-050-112-bounds-and-limits-of-the-cumulants",
+   "id": "sec-051-112-bounds-and-limits-of-the-cumulants",
    "number": "11.2",
    "title": "Bounds and limits of the cumulants",
    "level": 2,
@@ -2375,7 +2396,7 @@
    "label_end": "96"
   },
   {
-   "id": "sec-051-113-asymptotics-of-the-random-character-values-a",
+   "id": "sec-052-113-asymptotics-of-the-random-character-values-a",
    "number": "11.3",
    "title": "Asymptotics of the random character values and partitions",
    "level": 2,
@@ -2387,7 +2408,7 @@
    "label_end": "100"
   },
   {
-   "id": "sec-052-references",
+   "id": "sec-053-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -2412,12 +2433,9 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 4,
+    "count": 1,
     "items": [
-     "A precise version of the Ellis-G\u00e4rtner theorem",
-     "A precise upper bound",
-     "A precise lower bound",
-     "A bound on cumulants"
+     "A precise lower bound"
     ]
    },
    "found_not_listed": {
@@ -2427,12 +2445,13 @@
    "page_mismatch": {
     "count": 1,
     "items": [
-     "MOD-\u03c6 CONVERGENCE, I: listed p3, found p1"
+     "MOD-φ CONVERGENCE, I: listed p3, found p1"
     ]
    }
   },
-  "sections": 54,
-  "chars_total": 223358,
+  "sections": 55,
+  "chars_total": 223399,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "deviant.tex",
@@ -2468,8 +2487,8 @@
     {
      "id": "sec-002-13-applications",
      "title": "Applications",
-     "prose_ratio": 0.927,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -2493,7 +2512,7 @@
      "id": "sec-005-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -2501,7 +2520,7 @@
      "id": "sec-006-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-007-21-basic-examples-of-mod-convergence",
@@ -2522,8 +2541,8 @@
     {
      "id": "sec-009-23-gaussian-integrals",
      "title": "Gaussian integrals",
-     "prose_ratio": 0.874,
-     "coverage_ratio": 0.944,
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -2531,7 +2550,7 @@
      "id": "sec-010-3-fluctuations-in-the-case-of-lattice-distributi",
      "title": "Fluctuations in the case of lattice distributions",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-011-31-lattice-and-non-lattice-distributions",
@@ -2553,7 +2572,7 @@
      "id": "sec-013-33-central-limit-theorem-at-the-scales-otn-and-o",
      "title": "Central limit theorem at the scales o(tn) and o(tn23)",
      "prose_ratio": 0.92,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -2569,32 +2588,38 @@
      "id": "sec-015-41-berry-esseen-estimates",
      "title": "Berry-Esseen estimates",
      "prose_ratio": 0.923,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 0.908,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-016-42-deviations-at-scale-otn",
      "title": "Deviations at scale O(tn)",
-     "prose_ratio": 0.262,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.316,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-017-43-central-limit-theorem-at-the-scales-otn-and-o",
      "title": "Central limit theorem at the scales o(tn) and o(tn23)",
-     "prose_ratio": 0.567,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.517,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-018-45-discussion-and-refinements",
+     "id": "sec-018-44-normality-zones-for-mod-phi-and-mod-gaussian",
+     "title": "Normality zones for mod-phi and mod-Gaussian sequences",
+     "prose_ratio": 0.434,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-45-discussion-and-refinements",
      "title": "Discussion and refinements",
      "prose_ratio": 0.937,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.763,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-5-an-extended-deviation-result-from-bounds-on-cu",
+     "id": "sec-020-5-an-extended-deviation-result-from-bounds-on-cu",
      "title": "An extended deviation result from bounds on cumulants",
      "prose_ratio": 0.889,
      "coverage_ratio": 1.0,
@@ -2602,7 +2627,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-020-51-bounds-on-cumulants-and-mod-gaussian-converge",
+     "id": "sec-021-51-bounds-on-cumulants-and-mod-gaussian-converge",
      "title": "Bounds on cumulants and mod-Gaussian convergence",
      "prose_ratio": 0.907,
      "coverage_ratio": 1.0,
@@ -2610,7 +2635,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-021-52-precise-deviations-for-random-variables-with",
+     "id": "sec-022-52-precise-deviations-for-random-variables-with",
      "title": "Precise deviations for random variables with control on cumulants",
      "prose_ratio": 0.928,
      "coverage_ratio": 0.965,
@@ -2618,31 +2643,31 @@
      "converter": "latex"
     },
     {
-     "id": "sec-022-53-link-with-the-cram\u00e9r-petrov-expansion",
-     "title": "Link with the Cram\u00e9r-Petrov expansion",
+     "id": "sec-023-53-link-with-the-cramér-petrov-expansion",
+     "title": "Link with the Cramér-Petrov expansion",
      "prose_ratio": 0.926,
      "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-023-6-a-precise-version-of-the-ellis-g\u00e4rtner-theorem",
-     "title": "A precise version of the Ellis-G\u00e4rtner theorem",
+     "id": "sec-024-6-a-precise-version-of-the-ellis-gärtner-theorem",
+     "title": "A precise version of the Ellis-Gärtner theorem",
      "prose_ratio": 0.94,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-024-61-technical-preliminaries",
+     "id": "sec-025-61-technical-preliminaries",
      "title": "Technical preliminaries",
-     "prose_ratio": 0.923,
-     "coverage_ratio": 0.915,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.903,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-025-62-a-precise-upper-bound",
+     "id": "sec-026-62-a-precise-upper-bound",
      "title": "A precise upper bound",
      "prose_ratio": 0.938,
      "coverage_ratio": 0.978,
@@ -2650,15 +2675,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-026-63-a-precise-lower-bound",
+     "id": "sec-027-63-a-precise-lower-bound",
      "title": "A precise lower bound",
-     "prose_ratio": 0.966,
+     "prose_ratio": 0.974,
      "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-027-7-examples-with-an-explicit-generating-function",
+     "id": "sec-028-7-examples-with-an-explicit-generating-function",
      "title": "Examples with an explicit generating function",
      "prose_ratio": 0.842,
      "coverage_ratio": 1.0,
@@ -2666,7 +2691,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-028-71-mod-convergence-from-an-explicit-formula-for",
+     "id": "sec-029-71-mod-convergence-from-an-explicit-formula-for",
      "title": "Mod-convergence from an explicit formula for the Laplace transform",
      "prose_ratio": 0.971,
      "coverage_ratio": 0.955,
@@ -2674,7 +2699,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-029-72-additive-arithmetic-functions-of-random-integ",
+     "id": "sec-030-72-additive-arithmetic-functions-of-random-integ",
      "title": "Additive arithmetic functions of random integers",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.982,
@@ -2682,7 +2707,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-030-73-number-of-cycles-in-weighted-probability-meas",
+     "id": "sec-031-73-number-of-cycles-in-weighted-probability-meas",
      "title": "Number of cycles in weighted probability measure",
      "prose_ratio": 0.977,
      "coverage_ratio": 0.965,
@@ -2690,7 +2715,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-031-74-rises-in-random-permutations",
+     "id": "sec-032-74-rises-in-random-permutations",
      "title": "Rises in random permutations",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.96,
@@ -2698,7 +2723,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-032-75-characteristic-polynomials-of-random-matrices",
+     "id": "sec-033-75-characteristic-polynomials-of-random-matrices",
      "title": "Characteristic polynomials of random matrices in a compact Lie group",
      "prose_ratio": 0.83,
      "coverage_ratio": 0.953,
@@ -2706,12 +2731,12 @@
      "converter": "latex"
     },
     {
-     "id": "sec-033-8-mod-gaussian-convergence-from-a-factorization",
+     "id": "sec-034-8-mod-gaussian-convergence-from-a-factorization",
      "title": "Mod-Gaussian convergence from a factorization of the probability generating function",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-034-81-background-central-limit-theorem-from-locatio",
+     "id": "sec-035-81-background-central-limit-theorem-from-locatio",
      "title": "Background: central limit theorem from location of zeros",
      "prose_ratio": 0.94,
      "coverage_ratio": 0.988,
@@ -2719,7 +2744,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-035-82-mod-gaussian-convergence-from-non-negative-fa",
+     "id": "sec-036-82-mod-gaussian-convergence-from-non-negative-fa",
      "title": "Mod-Gaussian convergence from non-negative factorizations",
      "prose_ratio": 0.955,
      "coverage_ratio": 0.962,
@@ -2727,7 +2752,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-036-83-two-examples-uniform-permutations-and-uniform",
+     "id": "sec-037-83-two-examples-uniform-permutations-and-uniform",
      "title": "Two examples: uniform permutations and uniform set-partitions",
      "prose_ratio": 0.948,
      "coverage_ratio": 0.947,
@@ -2735,7 +2760,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-037-84-third-cumulant-of-the-number-of-blocks-in-uni",
+     "id": "sec-038-84-third-cumulant-of-the-number-of-blocks-in-uni",
      "title": "Third cumulant of the number of blocks in uniform set-partitions",
      "prose_ratio": 0.967,
      "coverage_ratio": 0.989,
@@ -2743,7 +2768,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-038-9-dependency-graphs-and-mod-gaussian-convergence",
+     "id": "sec-039-9-dependency-graphs-and-mod-gaussian-convergence",
      "title": "Dependency graphs and mod-Gaussian convergence",
      "prose_ratio": 0.938,
      "coverage_ratio": 0.956,
@@ -2751,7 +2776,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-039-91-the-theory-of-dependency-graphs",
+     "id": "sec-040-91-the-theory-of-dependency-graphs",
      "title": "The theory of dependency graphs",
      "prose_ratio": 0.918,
      "coverage_ratio": 0.961,
@@ -2759,7 +2784,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-040-92-joint-cumulants",
+     "id": "sec-041-92-joint-cumulants",
      "title": "Joint cumulants",
      "prose_ratio": 0.94,
      "coverage_ratio": 0.988,
@@ -2767,7 +2792,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-041-93-useful-combinatorial-lemmas",
+     "id": "sec-042-93-useful-combinatorial-lemmas",
      "title": "Useful combinatorial lemmas",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.974,
@@ -2775,7 +2800,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-042-94-proof-of-the-bound-on-cumulants",
+     "id": "sec-043-94-proof-of-the-bound-on-cumulants",
      "title": "Proof of the bound on cumulants",
      "prose_ratio": 0.929,
      "coverage_ratio": 0.96,
@@ -2783,7 +2808,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-043-95-sums-of-random-variables-with-a-sparse-depend",
+     "id": "sec-044-95-sums-of-random-variables-with-a-sparse-depend",
      "title": "Sums of random variables with a sparse dependency graph",
      "prose_ratio": 0.875,
      "coverage_ratio": 0.942,
@@ -2791,15 +2816,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-044-10-subgraph-count-statistics-in-erd\u00f6s-r\u00e9nyi-rand",
-     "title": "Subgraph count statistics in Erd\u00f6s-R\u00e9nyi random graphs",
+     "id": "sec-045-10-subgraph-count-statistics-in-erdös-rényi-rand",
+     "title": "Subgraph count statistics in Erdös-Rényi random graphs",
      "prose_ratio": 0.958,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-045-101-a-bound-on-cumulants",
+     "id": "sec-046-101-a-bound-on-cumulants",
      "title": "A bound on cumulants",
      "prose_ratio": 0.961,
      "coverage_ratio": 0.955,
@@ -2807,7 +2832,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-046-102-polynomiality-of-cumulants",
+     "id": "sec-047-102-polynomiality-of-cumulants",
      "title": "Polynomiality of cumulants",
      "prose_ratio": 0.961,
      "coverage_ratio": 0.962,
@@ -2815,7 +2840,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-047-103-moderate-deviations-for-subgraph-count-stati",
+     "id": "sec-048-103-moderate-deviations-for-subgraph-count-stati",
      "title": "Moderate deviations for subgraph count statistics",
      "prose_ratio": 0.92,
      "coverage_ratio": 0.98,
@@ -2823,7 +2848,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-048-11-random-character-values-from-central-measures",
+     "id": "sec-049-11-random-character-values-from-central-measures",
      "title": "Random character values from central measures on partitions",
      "prose_ratio": 0.687,
      "coverage_ratio": 0.983,
@@ -2831,13 +2856,13 @@
      "converter": "latex"
     },
     {
-     "id": "sec-049-111-preliminaries",
+     "id": "sec-050-111-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-050-112-bounds-and-limits-of-the-cumulants",
+     "id": "sec-051-112-bounds-and-limits-of-the-cumulants",
      "title": "Bounds and limits of the cumulants",
      "prose_ratio": 0.92,
      "coverage_ratio": 0.961,
@@ -2845,7 +2870,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-051-113-asymptotics-of-the-random-character-values-a",
+     "id": "sec-052-113-asymptotics-of-the-random-character-values-a",
      "title": "Asymptotics of the random character values and partitions",
      "prose_ratio": 0.945,
      "coverage_ratio": 0.973,
@@ -2853,7 +2878,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-052-references",
+     "id": "sec-053-references",
      "title": "References",
      "result": "no matching \\section"
     }

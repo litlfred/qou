@@ -8,7 +8,7 @@
   "pages": 7,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,13 +21,13 @@
    "stamp_date": "7 May 2004"
   },
   "doi": null,
-  "title": "arXiv:math/0405126v1 [math.GT] 7 May 2004",
+  "title": "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT",
   "authors_raw": "HITOSHI MURAKAMI",
   "title_lines": [
    "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES",
    "POLYNOMIALS OF A TORUS KNOT"
   ],
-  "abstract": "We study the asymptotic behaviors of the colored Jones polyno- mials of torus knots. Contrary to the works by R. Kashaev, O. Tirkkonen, Y. Yokota, and the author, they do not seem to give the volumes or the Chern\u2013Simons invariants of the three-manifolds obtained by Dehn surgeries. On the other hand it is proved that in some cases the limits give the inverse of the Alexander polynomial. Let K be a knot in the three-sphere and JN(K; t) the colored Jones polynomial corresponding to the N-dimensional representation of sl2(C) normalized so that JN(unknot; t) = 1 [8, 12]. R. Kashaev found a series of link invariants parameterized by positive integers [9] and proposed a conjecture that the asymptotic behavior of his invariants would determine the hyperbolic volume of the knot complement for any hyperbolic knot [10]. It turned out [19] that Kashaev\u2019s invariant with parameter N is equal to JN \u0010 K; e2\u03c0\u221a\u22121/N\u0011 . Kashaev\u2019s conjecture was generalized to the volume conjecture which states that the asymptotic behavior of Kashaev\u2019s invariant would determine the Gromov norm [5] of the knot complement for any knot. Kashaev and O. Tirkkonen [11] proved the volume conjecture for torus knots. More precisely they proved that for the torus knot T (a, b) for coprime integers a and b, lim N\u2192\u221elog JN \u0010 T (a, b), e2\u03c0\u221a\u22121/N\u0011. N = 0. Note that since the complement of a torus knot is a Seifert \ufb01bered space [17], its Gromov norm is zero. The volume conjecture (or Kashaev\u2019s conjecture in this case) is also proved for the \ufb01gure-eight knot by T. Ekholm (see for example [18]). Moreover in [20] Y. Yokota and the author proved that for the \ufb01gure-eight knot E the asymptotic behavior of JN \u0010 E; e2\u03c0r\u221a\u22121/N\u0011 determines the volume and the Chern\u2013Simons invariant for the closed three-manifold obtained by a Dehn surgery along E, where r is a com- plex parameter near 1. More precisely limN\u2192\u221elog JN \u0010 E; e2\u03c0r\u221a\u22121/N\u0011. N is an analytic function of r that is almost the potential function of W. Neumann and D. Zagier [21] ",
+  "abstract": "We study the asymptotic behaviors of the colored Jones polyno- mials of torus knots. Contrary to the works by R. Kashaev, O. Tirkkonen, Y. Yokota, and the author, they do not seem to give the volumes or the Chern–Simons invariants of the three-manifolds obtained by Dehn surgeries. On the other hand it is proved that in some cases the limits give the inverse of the Alexander polynomial. Let K be a knot in the three-sphere and JN(K; t) the colored Jones polynomial corresponding to the N-dimensional representation of sl2(C) normalized so that JN(unknot; t) = 1 [8, 12]. R. Kashaev found a series of link invariants parameterized by positive integers [9] and proposed a conjecture that the asymptotic behavior of his invariants would determine the hyperbolic volume of the knot complement for any hyperbolic knot [10]. It turned out [19] that Kashaev’s invariant with parameter N is equal to JN \u0010 K; e2π√−1/N\u0011 . Kashaev’s conjecture was generalized to the volume conjecture which states that the asymptotic behavior of Kashaev’s invariant would determine the Gromov norm [5] of the knot complement for any knot. Kashaev and O. Tirkkonen [11] proved the volume conjecture for torus knots. More precisely they proved that for the torus knot T (a, b) for coprime integers a and b, lim N→∞log JN \u0010 T (a, b), e2π√−1/N\u0011. N = 0. Note that since the complement of a torus knot is a Seifert ﬁbered space [17], its Gromov norm is zero. The volume conjecture (or Kashaev’s conjecture in this case) is also proved for the ﬁgure-eight knot by T. Ekholm (see for example [18]). Moreover in [20] Y. Yokota and the author proved that for the ﬁgure-eight knot E the asymptotic behavior of JN \u0010 E; e2πr√−1/N\u0011 determines the volume and the Chern–Simons invariant for the closed three-manifold obtained by a Dehn surgery along E, where r is a com- plex parameter near 1. More precisely limN→∞log JN \u0010 E; e2πr√−1/N\u0011. N is an analytic function of r that is almost the potential function of W. Neumann and D. Zagier [21] ",
   "docinfo": {
    "Title": "arXiv:math/0405126v1  [math.GT]  7 May 2004",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -45,7 +45,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0405126v1 [math.GT] 7 May 2004"
  },
  "toc": [
   {
@@ -222,6 +223,7 @@
   },
   "sections": 4,
   "chars_total": 14554,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "torus.tex",
@@ -259,7 +261,7 @@
      "title": "Comments",
      "prose_ratio": 0.919,
      "coverage_ratio": 0.406,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

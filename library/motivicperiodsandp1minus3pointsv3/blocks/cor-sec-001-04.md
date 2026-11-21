@@ -1,0 +1,1 @@
+The periods of mixed Tate motives over Z are polynomials with rational coeﬃcients of (2πi)−1 and (3.2). More precisely [13], if M ∈MT (Z) has non-negative weights (i.e. W−1M = 0), then the periods of M are polynomials in (3.2) and 2πi. 3.1. Canonical generators. Recall that the unipotent zeta values ζu are elements of O(U dR). As a consequence of theorem 3.1:

@@ -22,7 +22,7 @@ LaTeX label: `conj:p-vs-np-qou`.
   STOC 1971. DOI:10.1145/800157.805047.
 - [freedman2003] Freedman–Kitaev–Larsen–Wang, *Topological Quantum
   Computation*, Bull. AMS 40 (2003) 31–38.
-- [manuscript] Chapter 8 §5 (P vs NP in the QOU).
+- [leitner2026] Chapter 8 §5 (P vs NP in the QOU).
 -/
 
 namespace QOU.AlgebraicSubstrate

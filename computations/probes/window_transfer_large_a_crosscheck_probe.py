@@ -55,6 +55,7 @@ import _path_bridge  # noqa: F401, E402
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from chi_window_transfer import chi_all_lambda_window  # noqa: E402

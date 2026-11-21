@@ -7,10 +7,11 @@ section_number: 2.2
 pages: 10-11
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.919
-latex_coverage_ratio: 0.974
+latex_coverage_ratio: 0.983
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 For a system with $N$ degrees of freedom, the scrambling time $t_*$ is a measure of how long it takes for information about a small $O(1)$ perturbation to spread over $O(N)$ degrees of freedom \cite{fastscramble}. Another useful definition \cite{Page:1993df} is that this is the time required for reduced density matrix of any subsystem with fewer than half the degrees of freedom  to look approximately thermal.\footnote{In general, this concept is only useful for systems described by  $k$-local Hamiltonian with $k \ll N$. For more discussion, see Appendix~\ref{sec:appendix:A1}}
 

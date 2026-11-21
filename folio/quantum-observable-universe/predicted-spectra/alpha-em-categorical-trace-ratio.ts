@@ -23,25 +23,46 @@ import { proposition } from "../../schema/builders";
  * into "h²/(force-carrier categorical-trace product)" — moving it from
  * the operator-selection LP layer into the q-dimension layer.
  *
- * Combined with prop:force-carrier-intertwining-correspondence, this
+ * Combined with conj:force-carrier-intertwining-correspondence, this
  * provides the post-round-18 closure path for
  * conj:e-hartree-categorical-derivation.
  */
 export default proposition({
   label: "prop:alpha-em-categorical-trace-ratio",
   title:
-    "Algebraic identity: $\\alpha_{EM} = h^2 / [q \\cdot \\delta_q(T_{2,9}) \\cdot \\delta_q(T_{3,5})]$",
+    "Algebraic identity: $\\alpha_{EM} = h^2 / [q \\cdot \\delta^{\\mathrm{top}}_q(T_{2,9}) \\cdot \\delta^{\\mathrm{top}}_q(T_{3,5})]$",
   lean: { ref: "qou:QOU.ArchimedeanUniverse.alpha_em_categorical_trace_ratio" },
   // All three are named in the proposition's own setup sentence: the
   // q-dimension decoration it applies, the result identifying T_{2,9} and
   // T_{3,5} as the genus-4-saturating pair, and the 1/alpha_EM value the
   // decomposition is stated against.
   uses: [
-    "def:delta-q-decoration",
+    "def:torus-knot-top-channel-decoration",
     "prop:em-coupling-projection",
     "prop:force-carrier-bring-uniqueness",
   ],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-15",
+      body:
+        "**Decoration made explicit (owner ruling 2026-11-15, option A).** The statement used $\\delta_q$ from " +
+        "`def:delta-q-decoration`, a tuple of characters, and the derivation said $\\delta_q(T_{3,5}) = h[10]_q$ came from " +
+        "summing the characters over $V_{(3)}, V_{(2,1)}, V_{(1,1,1)}$. That sum is $q^{10} - 1 + q^{-10}$. The value " +
+        "$h[10]_q$ is the top-channel bar-odd rule of `computations/rosso_jones_three_strand_delta_q.py`, now stated as " +
+        "`def:torus-knot-top-channel-decoration` and written $\\delta^{\\mathrm{top}}_q$. The identity and every number are unchanged; " +
+        "the Lean (`delta_q_T_2_n`, `delta_q_T_3_5`) already uses the top-channel values.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-09-05",
+      body: "Pin mismatch measured 2026-09-05 (bean qou-i229) by computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py (6/6).",
+    },
+    {
+      kind: "note",
+      date: "2026-09-05",
+      body: "**Corrected 2026-09-05.** This section previously read *\"The witness assertion\nvalidates this match: `delta-q-decoration.witness.json`.\"* That witness\ndeclares a **different** block (`def:delta-q-decoration`), carries\nMarkov-trace machinery rather than any of these four quantities, and is\nanchored `q0Anchor: proton` — so it validates nothing here and disagrees on\nthe pin. This is why the candidate-producer sweep found no witness among 3277\ncarrying more than one of this table's figures.",
+    },
     {
       kind: "refined-framing",
       date: "2026-08-09",

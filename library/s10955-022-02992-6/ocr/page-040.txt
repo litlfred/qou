@@ -1,0 +1,67 @@
+33 Page 40 of 47 S. Jansen, L. Kolesnikov
+
+For the inequality (4.33) to be satisfied, it is sufficient that
+
+oo
+Ye Lecce + O(e) < eM ee, (4.34)
+t=1
+
+Arguments similar to the proof of Theorem 4.5(b), applied to the convex function h : Ry >
+
+R, h(@u) := 1+ yaa zeu“¢, show that under condition (4.28) there exists w > 0 such that
+
+not only condition (4.28) holds true but in addition
+
+0
+h'(e%) = Ye Lecce” <i.
+e=1
+Thus one can choose L = L(q@) large enough and ¢ small enough so that (4.34) and
+hence (4.33) hold true. o
+
+Proof of Theorem 4.7(b) We proceed as in the proof of Theorem 4.5(b). Suppose that the
+expansions are absolutely convergent and define
+
+x
+1
+
+a(D) := log T(D; ~z) = J ul. Usicine vind 2a |9E M1, «+ Ye)| ACY).
+k=l
+
+Then by Proposition 3.13 and since inf,cjy Ly is bounded from below by ¢ > 0,
+
+[ Txney 2a, xno) OP MPA (AX) s eM VEV—MP) (4.35)
+x
+
+for example for E; = [0, €) and D’ = [e, ¢ + L] with L > 0 and ¢ sufficiently small.
+
+Before we evaluate the two sides of the inequality, we note two useful properties of a(-).
+First, the map a does not see gaps of diameter at most ¢. Precisely, if X = [x — Le, x] with
+x €[0,¢) and D’ is as above, then
+
+a(D'U X) = a({x — Le, + L)).
+
+Indeed, any rod Y; € X that intersects [0, ¢) must also intersect D’ U X because it has a
+length | ¥;| > ¢. Second, because of translational invariance, the weight a(D) of a non-empty
+interval depends only on its length | D|. We check that in addition, it is an affine function of
+the length. For x € R, define
+
+x wy]
+ax) = Dia dG I. Upvietk: Y.c(-co.xt) Prig 1s «--s Yes Le = Le, al) Ak(aY).
+t=1 k=0
+
+The quantity a(x) is best thought of as an integral over clusters in which the right-most
+rod [x — Le, x] has its right end pinned at x. By translational invariance, a(x) is actually
+independent of x and we may write w(x) = a for some scalar a > 0. Now let J = [a, b] and
+J = [b,c] witha < b < c. Then
+
+oo
+~an=yi T k
+adUJ)-aVJ) = > BJs Isic: yar eo) Wviete: vins—oy |, M1. sees ¥;)| A2(dY).
+kal
+
+Any cluster (Y;,..., Y¢) that intersects / but not J has its right-most end in [a, b), therefore
+
+ad UJ)—-a(J) = [ ecoax =a{l|.
+1
+
+D Springer

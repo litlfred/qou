@@ -1,0 +1,52 @@
+24 Chapter 2 — Proof of the vanishing theorem(s)
+
+such that we have natural unity constraints
+Kxl <= K => 14K
+and natural commutativity and associativity constraints
+Sku: K*L—+L*K and Agpy: K*(L*M)—>(K*L)*M
+
+for all objects K,L,M in D?(X,A), and these constraints satisfy the usual
+compatibilities, in particular the pentagon and hexagon axioms as well as
+the symmetry property Sz,x 0 Sx, = idx»y. The commutativity constraint
+is defined as follows. The involution o : X x X —> X x X, (x,y) & (y,x)
+together with the usual commutativity constraint for the tensor product of
+complexes induces a natural isomorphism K XL ~ o* (LEK), and Sx _z is
+defined by the following commutative diagram.
+
+SKL
+
+KxL LeK
+
+Ra,(K®L Ra,(L&K)
+
+‘\
+/
+
+Ie
+
+Ra.(o*(LWK)) = Ra,(o,0*(LEK))
+
+The definition of the associativity constrains Ax yy is similar, and the unit
+
+object 1 of the category D?(X, A) is the skyscraper sheaf 5p of rank one with
+support in the zero point of the abelian variety.
+
+Furthermore, if we define the adjoint dual of a complex K € D?(X,A)
+in terms of the Verdier dual D(K) by
+
+KY = (~idy)"D(K),
+then the symmetric monoidal category D(X, A) has been shown in [105] to
+
+be rigid in the following sense: We have natural evaluation and coevaluation
+morphisms
+
+eve: KY *xK —+1 and coeve: 1 —> K*xKY
+
+such that the composite morphisms
+Av!
+
+coevg *idx (Kx KY) aK KRY K Kx (KY « K) idx *evx
+KY dae 08 KY «(K* KY) Ae (KY * K) * KY crete KY
+
+are the identity morphisms. In passing we remark that every skyscraper
+sheaf K = 6, of rank one, supported in a point x € X(C), is an invertible

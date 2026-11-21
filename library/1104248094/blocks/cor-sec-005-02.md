@@ -1,0 +1,1 @@
+For feC f(Kc)n/C f(Kc)n+ί,xεU(g)n, we have <x,σω/> = <adJ(x),/>. (5.5) Note that C f(Kc)JC f(Kc)n+1^(U(g)JU(g)) f^(S^g)y^S n(g^ where S" Hochschild and Cyclic Homology of Quantum Groups denotes the n th symmetric power. Therefore the E 1 of the spectral sequence of the filtered complex C.(g*, C /(XC)) is H(g*, S n(g*)), where g* acts on S"(g) by ad.

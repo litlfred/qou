@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9909027v1
-doc_title: "arXiv:math/9909027v1 [math.QA] 4 Sep 1999"
+doc_title: "Planar Algebras, I"
 section_id: sec-006-31-algebra-structure-markov-trace
 section_title: "Algebra structure, Markov trace"
 section_number: 3.1
@@ -8,6 +8,7 @@ pages: 67-74
 source_pdf: 9909027v1.pdf
 source_sha256: e6cd544cdc141d3b
 toc_source: inferred
+doc_brief: "Planar Algebras, I — We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions."
 ---
 The proof of Theorem 3.1.3 below is routine for those conversant with [J1]
 or [GHJ]. We include it since, as stated, it can be useful in determining prin-
@@ -168,50 +169,43 @@ Theorem 3.1.6 With notation as above, suppose τpδ = 2 cos π/(λ(p)+2)
 (τpδ ≥2 if λ(p) = ∞).
 Then P (A,TR) is a (spherical) C∗-planar algebra
 71
-with principal and dual principal graphs equal to ΓA,λ. The (normalized)
-trace of the minimal projection in P (A,TR)
-k
-corresponding to the word w =
-pm1
-1 pm2
-2
-. . . pmr
-r
-( P mi =k and pi̸ = pi+1) is Qr
-i=1 τpiTmi(τpiδ).
-Proof. We shall give explicit projections satisfying conditions (i)–(iv)
-of 3.1.1. The key observation is that tangles with a ﬁxed p labelling each
-string form a Temperley-Lieb subalgebra Bp with parameter δτp (and identity
-p
-p
-. . . p
-). So if m < λ(p) we consider the projection
-fm
-p
-p
-p
-p
-p
-p
-p
-where fm is calculated in Temperley-Lieb with j strings and Z(
-) = τpδ.
-Now set
-p1
-p2
-pr
-p1
-p2
-pr
-fm1
-fm2
-fmr
-where we have combined the mj strings at the top (and bottom) of fmj into
+with principal and dual principal graphs equal to ['4,.. The (normalized)
+trace of the minimal projection in PAT) corresponding to the word w=
+
+pips? ...pr (Somp=k and p; # pir) is TE, 7. Tmi (7,4).
+
+PROOF. We shall give explicit projections satisfying conditions (i)—(iv)
+of 3.1.1. The key observation is that tangles with a fixed p labelling each
+string form a Temperley-Lieb subalgebra B, with parameter 67, (and identity
+
+_ ). So if m < A(p) we consider the projection
+| | | |
+
+P P P P
+
+Jin
+
+where f,, is calculated in Temperley-Lieb with 7 strings and Z (QO) = 7,0.
+
+Now set , ,
+
+Pi P2 Pr
+I I I
+
+fina tina eee tim,
+I I
+
+Pi P2 Pr
+I I I
+
+where we have combined the m, strings at the top (and bottom) of fm, into
 one. Orientations are completely forgotten and may be inserted, if required,
-so as to satisfy Deﬁnition 1.7.
-Condition (1) of 3.1.1 is easy: Pk is linearly spanned by Temperley Lieb
+so as to satisfy Definition 1.7.
+
+Condition (1) of 3.1.1 is easy: P, is linearly spanned by Temperley Lieb
 diagrams with matrix units (with the p’s among the diagonal ones) from the
 simple summands of A in a single box on each string. If x is such an element,
+
 72
 then if xek−1 is non-zero, the product pwxek−1 contains
 e

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1809.08419v1",
  "source_sha256": "7ebca632544a6ea4",
- "brief": "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨ obner- Shirshov bases and the corresponding standard",
- "extended": "**GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS**\n\n*JEONG-YUP LEE AND DONG-IL LEE ∗*\n\n14 pp, 5 sections.\n\n**Abstract.** For the noncrystallographic Coxeter groups of type H, we construct their Gr¨ obner- Shirshov bases and the corresponding standard monomials.\n\n**Outline.** 1 Introduction; 2 Preliminaries; 3 Coxeter groups of types H2 and H3; 4 Main results for H4; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.6: Let S be a subset of monic elements in F⟨X⟩. Then the following conditions\n- Theorem 3.3: We denote by ˆR the set of deﬁning relations R combined with the relations in\n- Theorem 4.17: We denote by ˆR the set of deﬁning relations R combined with the relations\n- Proposition 2.3: The set of S-standard monomials spans the algebra A = F⟨X⟩/I deﬁned by the\n- Proposition 3.1: The R-standard monomials form the C-basis elements for the type H2. We\n- Lemma 2.2: Every p ∈ F⟨X⟩ can be expressed as",
+ "brief": "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨obner- Shirshov bases and the corresponding standard",
+ "extended": "**GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS**\n\n*JEONG-YUP LEE AND DONG-IL LEE∗*\n\n14 pp, 6 sections.\n\n**Abstract.** For the noncrystallographic Coxeter groups of type H, we construct their Gr¨obner- Shirshov bases and the corresponding standard monomials.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 3 Coxeter groups of types H2 and H3; 4 Main results for H4; References",
  "tokens": {
   "brief": 48,
-  "extended": 237
+  "extended": 101
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -39,8 +44,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

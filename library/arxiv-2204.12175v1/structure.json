@@ -1,0 +1,348 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2204.12175v1",
+ "source": {
+  "file": "2204.12175v1.pdf",
+  "sha256": "06b0b7730504855b3f78134a47eb7a748769d4bfeac3febf96cd5c9996214632",
+  "bytes": 739724,
+  "pages": 13,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:22:14Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2204.12175",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "26 Apr 2022"
+  },
+  "doi": null,
+  "title": "Beyond the Standard Model with Lepton Flavor Universality Violation",
+  "authors_raw": "Andreas Crivellin",
+  "title_lines": [
+   "Beyond the Standard Model with Lepton Flavor",
+   "Universality Violation"
+  ],
+  "abstract": "In recent years, exciting (indirect) hints for physics beyond the Standard Model (SM) have been accumulated. In particular, semi-leptonic B decays show deviations from the SM predictions, which, due to the ratios R(K(\u2217)) and R(D(\u2217)) are obviously related to lepton \ufb02avour universality violation (LFUV). However, we point out there are more anomalies which admit an interpretation in terms of LFUV: The anomalous magnetic moment of the muon, the Cabibbo angle anomaly, the CMS measurements of non-resonant di-electrons, the di\ufb00erence of the forward-backward asymmetry in B \u2192D\u2217\u2113\u03bd and leptonic tau decays. In this letter we discuss the experimental and theoretical status of these anomalies, compare their strength and weaknesses and examine and synthesize how they can be explained in terms of possible extensions of the SM by new particles and interactions. Even though not all anomalies might be con\ufb01rmed in the future, this uni\ufb01ed view of the anomalies in terms of LFUV signi\ufb01cantly strengthens their relevance, which is crucial in order to construct a convincing physics case for future colliders.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20220427002119Z"
+  },
+  "title_raw": "Beyond the Standard Model with Lepton Flavor Universality Violation",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Beyond the Standard Model with Lepton Flavor Universality Violation",
+   "text": "Beyond the Standard Model with Lepton Flavor Universality Violation",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "17 inferred entries, 65% of them starting on page(s) 1, 6 of 13 \u2014 a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (17 inferred entries, 65% of them starting on page(s) 1, 6 of 13 \u2014 a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Synthesis of possible explanations (red boxes) of the anomalies (blue boxes). The arrows indicate to which extensions of the SM the anomalies point. Thick arrows stand for probable explanations without signi\ufb01cant experimental or theoretical shortcomings while the thin ones indicate that the new part",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Quantitative comparison, using a one to \ufb01ve stars rating, of the di\ufb00erent anomalies pointing towards LFUV",
+   "page": 6,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2509,
+   "n_words": 373,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 4005,
+   "n_words": 650,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3804,
+   "n_words": 634,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 4054,
+   "n_words": 675,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 4036,
+   "n_words": 693,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1403,
+   "n_words": 224,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 3931,
+   "n_words": 586,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 4305,
+   "n_words": 549,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 4464,
+   "n_words": 574,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 4626,
+   "n_words": 627,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 4076,
+   "n_words": 516,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 4328,
+   "n_words": 551,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1583,
+   "n_words": 208,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "toc_inferred_entries": 17,
+  "toc_inferred_mean_confidence": 0.759,
+  "toc_inferred_empty_share": 0.188,
+  "toc_inferred_method": "font",
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 47124,
+  "furniture_lines_stripped": 0
+ }
+}

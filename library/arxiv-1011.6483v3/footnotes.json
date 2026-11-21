@@ -1,0 +1,4278 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1011.6483v3",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Note,thatinthispaperweareusingacohomologicalgradingforourdiﬀerentialgraded modules, see Convention (7) on page 7. Also, this paper only deals with Hochschild chains and Hochschild homology, and never with Hochschild cochains or Hochschild cohomology.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "Inthispaper,westudythehigherHochschildchain"
+    },
+    {
+     "page": 2,
+     "context": "caseofthestandardsimplicialsetmodelX•= S"
+    },
+    {
+     "page": 2,
+     "context": "S"
+    }
+   ],
+   "block": "library/arxiv-1011.6483v3/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "2",
+   "text": "Werecallthatweareusingacohomologicaltypegradingforourdiﬀerentialgradedmodules, see Convention (7) on page 7, hence the upper index n. Note that, nowhere in this paper will we consider Hochschild cochains.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "AwithvaluesinMoverY•isdeﬁnedas"
+    },
+    {
+     "page": 11,
+     "context": "ThesimplicialconditionsondiimplythatD"
+    }
+   ],
+   "block": "library/arxiv-1011.6483v3/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "3",
+   "text": "Recallthatwe areusing a cohomologicaltypegrading forourdiﬀerentialgradedmodules,see Convention (7) on page 7.",
+   "marks": [
+    {
+     "page": 13,
+     "context": "thecohomology"
+    }
+   ],
+   "block": "library/arxiv-1011.6483v3/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p013-2",
+   "page": 13,
+   "mark": "4",
+   "text": "ThetensorproductinProposition3isthetensorproductof(simplicial)modulesoverthe simplicial diﬀerential graded commutative algebra CH• Z•(A, A). Passing to the Hochschild chain complexes, it induces a natural map of CDGAs and modules and yield a quasi-isomorphism if Z• injects into either X• or Y•, see [13, Corollary 2.4.3].",
+   "marks": [
+    {
+     "page": 13,
+     "context": "Proposition3.Thereisanaturalmapofsimplicialmodules"
+    }
+   ],
+   "block": "library/arxiv-1011.6483v3/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p034-1",
+   "page": 34,
+   "mark": "2",
+   "text": "g",
+   "marks": [
+    {
+     "page": 34,
+     "context": "i2:X֒→Rn"
+    },
+    {
+     "page": 34,
+     "context": "→X,Rn"
+    }
+   ],
+   "block": "library/arxiv-1011.6483v3/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p040-1",
+   "page": 40,
+   "mark": "5",
+   "text": "notethatwealsodonotwritethefactorDn−minthenotation",
+   "marks": [
+    {
+     "page": 40,
+     "context": "ingeneral,eventhoughitisnotexplicitinthenotation"
+    }
+   ],
+   "block": "library/arxiv-1011.6483v3/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p048-1",
+   "page": 48,
+   "mark": "6",
+   "text": "thisis,forn=1,aninstanceofthelinearcategorywithasingleobjectassociatedtoan associative algebra and, for general n, a slight variant of the construction of an (∞, n)-category Bn(A) associated to an En-algebra A as in [11]",
+   "marks": [
+    {
+     "page": 48,
+     "context": "AdeﬁnesanA∞-n-category"
+    }
+   ],
+   "block": "library/arxiv-1011.6483v3/blocks/prose-sec-015"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p042-1",
+   "page": 42,
+   "mark": "i",
+   "text": "∈IMi f∈F F ⊂J F ﬁnite",
+   "block": "library/arxiv-1011.6483v3/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p059-1",
+   "page": 59,
+   "mark": "353",
+   "text": "(3) (2001), 937–1007.",
+   "block": "library/arxiv-1011.6483v3/blocks/prose-sec-017"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "X(A)in"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "MA,is deﬁned for any E"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "manifoldM,m ≤n,suchthatM × D"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "MAisanE"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "MAisanEn−m-algebrawhichisalso"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "MAisanEn−m-algebrawhichisalsoamoduleovertheE"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Theorem5.LetMbeamanifoldendowedwithaframingofM × D"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "M(A)viewedasanE"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "MAisindependentofthe"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "algebrainR"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "M×R"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "algebrasonMwithvalueinE"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Given an n-framed manifold Mof dimension m (i.e.M ×R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": " of A indexed by balls in the manifold.Now, if we embed M ×R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "in M×R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "MB for an E"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "algebra.But twodiﬀerent framings of M × R"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "formd:A"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "formd:Ai→A"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "(7)WewilldenotebyCH"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "i(y)andthedegeneraciesare"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "i(y)forany"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "i(y)foranyx ∈X"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "i(y)foranyx ∈Xk֒→W"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "i(y)foranyx ∈Xk֒→Wkand"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "i(y)foranyx ∈Xk֒→Wkandy∈Y"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "i(y)foranyx ∈Xk֒→Wkandy∈Yk֒→W"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "N•(We(M[n]))"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "spaceN•(We(M[n]))"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i∈ZA"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "i∈ZAi, d, •)be"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i∈ZM"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "i∈ZM i, dM)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "n∈ZCH"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "CH"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "(M⊗A⊗y"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "(M⊗A⊗yk)"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "Y•(A, M), we deﬁne morphisms"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Y•(A, M), we deﬁne morphisms d"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Y•(A, M), we deﬁne morphisms di: Y"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Y•(A, M), we deﬁne morphisms di: Yk→Y"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Y•(A, M), we deﬁne morphisms di: Yk→Yk−1, for"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "First note that for any map f: Y"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "First note that for any map f: Yk→Y"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "t note that for any map f: Yk→Ylof pointed sets, and for m⊗a"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "at for any map f: Yk→Ylof pointed sets, and for m⊗a1⊗· · ·⊗a"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "M⊗A⊗y"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "M⊗A⊗yk,wedenotebyf∗: M⊗A⊗y"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "M⊗A⊗yk,wedenotebyf∗: M⊗A⊗yk→M⊗A⊗y"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "whereb"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "i∈f−1(j)"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i∈f−1(j)a"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "i∈f−1(j)ai(or"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "i∈f−1(j)ai(orb"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "i∈f−1(j)ai(orbj=1if"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "i∈f−1(j)ai(orbj=1iff −1(j)=∅)for"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "i∈f−1(j)ai(orbj=1iff −1(j)=∅)forj=0, . . . , y"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "i∈f−1(j)ai(orbj=1iff −1(j)=∅)forj=0, . . . , yl,and"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "i∈f−1(basepoint),i̸=basepoint"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i∈f−1(basepoint),i̸=basepointa"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Y•(A, M)→CH"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "areinducedboundaries(di)∗:CH"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Y•(A, M) →CH"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "(sj)∗: CH"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(−1)k+ǫ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "(−1)k+ǫia"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(−1)k+ǫia0 ⊗· · · ⊗d(a"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "(−1)k+ǫia0 ⊗· · · ⊗d(ai) ⊗· · · ⊗a"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "whereǫiisagaingivenbytheKoszulsignrule,i.e.,(−1)ǫ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "whereǫiisagaingivenbytheKoszulsignrule,i.e.,(−1)ǫi=(−1)|a"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "iisagaingivenbytheKoszulsignrule,i.e.,(−1)ǫi=(−1)|a0|+···+|a"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "n∈ZCH"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "CH"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "k≥0(A⊗A⊗y"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "k≥0(A⊗A⊗yk)"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "k≥0(A⊗A⊗yk)n+k.Formula (1) again induces boundaries"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "k≥0(A⊗A⊗yk)n+k.Formula (1) again induces boundaries d"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "Y•(A, M)is"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "Y•(A)is"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "Y•(A, M)"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "Y•(A), D, shY•)is"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "Y•(A, M), D, shY•)is"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "X•(A)is"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "Y•(A, M)is"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "X•(B)is"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "Z•(B, M)is"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "Z•(B, N)is"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "S"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "Z•Y•ahomotopypushout,thereis"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "whereˆg•: Z•→bY•isacoﬁbrationandp :"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "Z•Y•,thereis"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "=⇒HH"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "S1•(A)maybewrittenas"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "overthebimoduleA"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "HH•(A) = T orA"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "{pt•,pt−• }(A)=A ⊗Aop=A"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "whereweusedthatS"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "Z•pt•.Weobtain"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "givenbymodelsforintervalI•andthesquareI"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "A⊗(k+2)"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "I"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(i + 1)thtensorfactors,andinthecaseofI"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "•bymultiplyingthe"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "weobtaintheHochschildcomplexforthecylinderC•=I"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "gluingI"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "•andI•alongI•∪I•onoppositeedgesofI"
+  },
+  {
+   "page": 19,
+   "mark": "h",
+   "context": "S"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "sknX•(A) which commutes with the inclusions sk"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "sknX•(A) which commutes with the inclusions skn−1X•֒→sk"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "x∈X0{x}(A) ∼= A⊗X"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n≥0sk"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "k= Hom∆([k], [n])of thetopological"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "asimplicialmodelforthesphereS"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "x∈NXn∆n•(A)-algebrasaswellas"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "•=sk"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "x∈NXn∂∆n•(A) as well as between Fsk"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "•→sk"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "x∈NXn∂∆n•(A) ⊗Fsk"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "skn−1X•(A)isequivalenttoFsk"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "x∈NXn∂∆n•(A)-CDGAs.Bythehomotopyinvarianceandvalueon"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "→A⊗#NX"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "•→pt•foreachnon-degeneratesimplexinNX"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "x∈NXn∂∆n•(A)-algebrastructureonA⊗#NX"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "A⊗#NX"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "lenttoA⊗#NX"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "with A⊗#NX"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "x∈NXn∂∆n•(A)) we obtain a natural equivalence Fsk"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "whichcommuteswiththeinclusionssk"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "whichcommuteswiththeinclusionsskn−1X•֒→sk"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "n≥0sk"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈Nsk"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈Nsk"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈Nsk"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈Nsk"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈Nsk"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈Nsk"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈Nsk"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "sknX•(A) for all"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈Nsk"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n∈Nsk"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "−→Fsk"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "−→A"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "X•(A"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "˜B"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "˜Bi∼= A"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "˜Bi∼= Aiifi̸ = i"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "˜Bi∼= Aiifi̸ = i0and˜B"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "X•( ˜B"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "X•(A"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "X•(A)givenbyProposition"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "X•(A, M)isnaturally"
+  },
+  {
+   "page": 23,
+   "mark": "h",
+   "context": "S"
+  },
+  {
+   "page": 23,
+   "mark": "h",
+   "context": "S"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "Z•Y•be"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "=⇒HH"
+  },
+  {
+   "page": 24,
+   "mark": "c",
+   "context": "Proof.Let"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "M→Mbe a coﬁbrant replacement of Min A-Mod,"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "replacementofX•and"
+  },
+  {
+   "page": 24,
+   "mark": "c",
+   "context": "A,"
+  },
+  {
+   "page": 24,
+   "mark": "c",
+   "context": "X•(A,"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "Since"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "=⇒H"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "ltrationofasimplicialsetX•inducesadecreasingﬁltration· · ·⊃F"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "X•(A, M),whereF"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "F−1⊃F"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "pF"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "pF p/F"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "X•(H•(A), H•(M))"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "X•(H•(A), H•(M))q=⇒HH"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "p,q:= HH"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "E"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "X(A).Further,thecells C"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "X•(A)ofCDGAs.Themaps(X"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "indicesi"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "indicesi0, i"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "indicesi0, i1suchthatU"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "indicesi0, i1suchthatUi0∩U"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "Ui∩Uj(A)→AbecauseUis"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "N1(I)U"
+  },
+  {
+   "page": 27,
+   "mark": "j",
+   "context": "N1(I)Ui∩U"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "IU"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "U(A)togetherwiththemapsµU1,...,Un,Vdeﬁne"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "∅(A) ∼= kandthatthemapsµU"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "∅(A) ∼= kandthatthemapsµU1,...,U"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "\u0011µU"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "U(A)is"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "U(A)is"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "pairwisedisjointopensubsetsU"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "pairwisedisjointopensubsetsU1, . . . , U"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "pairwisedisjointopensubsetsU1, . . . , UkinUsuchthat{x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "sedisjointopensubsetsU1, . . . , UkinUsuchthat{x1, . . . , x"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "sjointopensubsetsU1, . . . , UkinUsuchthat{x1, . . . , xn}⊂S"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "i=1U"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "F(U"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "F(Ui1∩· · · ∩U"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "U"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "Ui1 ∈α"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "Ui1 ∈α1,...,Uik ∈α"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "F(α"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "F(α1, . . . , α"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "F(α1, . . . , αk)→F(α"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "α1,...,αk∈P UF(α"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "α1,...,αk∈P UF(α1, . . . , α"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "U(A)is"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "U(A)is"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "` · · · ` U"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "` · · · ` Un)∩(V"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "` · · · ` V"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "VU"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "U(A)is"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "UVU"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "alocallyconstantfactorizationalgebraonR"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Aforthemoment)onR"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "subsetofR"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Now,letXbeanymanifold,andleti: X֒→R"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Now,letXbeanymanifold,andleti: X֒→RnbeanembeddingofXinR"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "LetNXbeanopentubularneighborhoodofXinR"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "forthebundlemap.AnyfactorizationalgebraFonR"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "→A=A(R"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "→A=A(Rn)foranyopenballB⊂R"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "asthebaseoflocallytrivialﬁbrationU→XwhereUisanopeninsomeR"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "torizationalgebraonR"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "onR"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "Proof.Choosing a Riemannian metric on X, the set Ball"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "Ball"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "foranyα1, . . . , αj∈PBall"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "ˇC(Ball"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "α1,...,αk∈P Ball"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "α1,...,αk∈P Ball"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "ItfollowsthatwehaveanequivalenceˇC(Ball"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "ItfollowsthatwehaveanequivalenceˇC(Ballg(X), F)∼=ˇC(Ball"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "andofthetubularneighborhoodmadeinExample7.Indeed,ifi1: X֒→R"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "andofthetubularneighborhoodmadeinExample7.Indeed,ifi1: X֒→Rn"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "i2:X֒→R"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "giventwochoicesR"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "giventwochoicesRn"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "→X,R"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "letΣ"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "(see Theorem 4) on Σ"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "that C∞(M) ⊗C∞(M)∼= C∞(M × M)).Let Ω"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "Σ"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ω"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "Ω"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "whereV [n]isthegradedspace(V [n])"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "whereV [n]isthegradedspace(V [n])i=V"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "whereUXisanopensubsetofsomeR"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "tothemanifoldcase,theCDGAAyieldsafactorizationalgebraAonR"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "X(A)in"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "UforXinsteadofBall"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "α1,...,αk∈P UCHX(α"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "α1,...,αk∈P UCHX(α1, . . . , α"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "X× D"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "X× Dn−k֒→R"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "algebras in R"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "algebras in Rnto factorization algebras in D"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "factorization algebras in Dn−k, and thus via the inclusion D"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "Rn−kalsotofactorizationalgebrasinR"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "CHX: FacR"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "CHX: FacRn(CDGA∞) →FacR"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "callyconstantfactorizationalgebraonM× D"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "projectionπ1:M× D"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "Proposition10.Thepushforwardalongp:R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "Rn(k-Mod∞)→N(Disklc(R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "Rn(k-Mod∞)→N(Disklc(Rn))-AlgwhereN(Disklc(R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "full subcategory spanned by the locally constant N(Disk(R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "with the global section F(R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "subsetsofR"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "theRanspaceRan(R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "algebra.Wedenoteq(E) := EtheinducedfactorizationalgebraoverR"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "anyopenDhomeomorphictoaneuclideandisk,themapE(D)→E(R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "whichyieldsanisotopybetweentheinclusionD֒→R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "anyconvexopensetC,wehaveacanonicalequivalenceF(C)∼= F(R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "Lemma4.LetMbeamanifoldandπ1: M× R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "M×R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "M(E"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "M×R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "HF(F, M× R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "Proof.Letπ2:M× R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "Proof.Letπ2:M× Rd→R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "set UinM,therestriction A|U×R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "π2∗(A|U×R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "π2∗(A|U×Rd)isafactorizationalgebraonR"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "π2∗(A|U×Rd)isafactorizationalgebraonRd.Notethatπ2∗(A|U×R"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "onstant.Indeed,let Bbe any (open,homeomorphic to a) ball B⊂R"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "Ball"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "U).ThenthefamilyBall"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "π2∗(A|U×R"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "ˇC(Ball"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "A((U"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "A((Ui1∩· · · ∩U"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "α1...αk∈P Ball"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "A((U"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "A((Ui1∩· · · ∩U"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "α1...αk∈P Ball"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "ˇC(Ball"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "ˇC(Ballg(U) ×eB, A)∼=π"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "ˇC(Ballg(U) ×eB, A)∼=π2∗(A|U×R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "whichprovesthatπ2∗(A|U×R"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "the structure map π"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "the structure map π2∗(A|U×R"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "the structure map π2∗(A|U×Rd)(B) →π"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "the structure map π2∗(A|U×Rd)(B) →π2∗(A|U×R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "π2∗(A|U×R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "AU∼=π2∗(A|U×R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "AU∼=π2∗(A|U×Rd)(R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "AU∼=π2∗(A|U×Rd)(Rd)∼=A(U× R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "Sinceπ1∗(A)(U)=A(U× R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "M× R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "µU1,...,Uk,V: π1∗(A)(U1) ⊗· · · ⊗π1∗(A)(Uk)∼= A(U1 × R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": " π1∗(A)(U1) ⊗· · · ⊗π1∗(A)(Uk)∼= A(U1 × Rd) ⊗· · · ⊗A(Uk × R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "−→A(V× R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "M(E"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "M(E"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "on R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "on Rd:Op(R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "on Rd:Op(Rd) ∋V7→B(U)(V ).A basis of neighborhood of M ×R"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "products U ×V∈Op(M)×Op(R"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "on M ×R"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "Op(M)×Op(R"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "Op(M)×Op(Rd)-factorization algebra where Op(M)×Op(R"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "factorization algebra where Op(M)×Op(Rd) is the cover of M×R"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "thattheE"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "B(U)(V )extendstogiveafactorizationalgebraE(B)onM× R"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "M(E"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "M×R"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "oneoftheEd-algebraA(U× R"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "V7→π2∗(A|U×R"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "(in Ed-Alg∞) π1∗(E(B))(U)∼= E(B)(U ×R"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "trivializationN× D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "∪N×IYwhereX, Yaresubmanifolds(withcorners) ofMgluedalongN× D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "AccordingtoLemma4aboveHF(A|N×D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "HF(A|Y )arerightandleftHF(A|N×D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "isanequivalenceforallt∈D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "U×(a, b)⊂N×D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "opensetsoftheformU× (a, b)formafactorizingcoverofN× D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "−→N × D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "in D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "in D1(where we assume I0= (−1, t0) for some t0∈D"
+  },
+  {
+   "page": 39,
+   "mark": "t",
+   "context": "denoteX"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "A(X) ⊗A(N× D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "µXt0 ,N×I"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "AN×D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "AN×D1,henceinducesastructureofrightHF(AN×D"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "AN×D1,henceinducesastructureofrightHF(AN×D1)∼= A(N× D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "and N ×(a, b) (where t0, s, a < b ∈D"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "forms a factorizing cover Nof Mand we also denote"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "ofN× D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "Xto, N× (t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "Xto, N× (t1, t"
+  },
+  {
+   "page": 40,
+   "mark": "m",
+   "context": "Xto, N× (t1, t2), . . . , N× (t"
+  },
+  {
+   "page": 40,
+   "mark": "m",
+   "context": "Xto, N× (t1, t2), . . . , N× (tm, t"
+  },
+  {
+   "page": 40,
+   "mark": "t",
+   "context": "Xto, N× (t1, t2), . . . , N× (tm, tm+1), Y"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "Xto, N× (t1, t2), . . . , N× (tm, tm+1), Ytmfor−1 < t"
+  },
+  {
+   "page": 40,
+   "mark": "m",
+   "context": "N× (t1, t2), . . . , N× (tm, tm+1), Ytmfor−1 < t0< · · · < t"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "whereπ2:N× D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "whereπ2:N× D1→D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "N , A|N×D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "qisthemapidentifyingX\\ (N× D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "qisthemapidentifyingX\\ (N× D1)with{−1},Y\\ (N× D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "projectingN× D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "projectingN× D1ontoD"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "zation algebra on [−1, 1] which assign the E1-algebra A(N ×D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "A(N×D"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "A(X), A(N× D"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "manifold of dimension m equipped with a framing of M ×D"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "N(Disj(M× D"
+  },
+  {
+   "page": 41,
+   "mark": "d",
+   "context": "d(A)fortheE"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "MAcomputestheglobalsectionsof"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "M×D"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "theformN× I"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "theformN× Im−1−j(forsome0≤j≤m −1)withatrivializationN× I"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "ofitsneighborhoodandthatMisdecomposableasM= X ∪N×I"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "aresubmanifolds(withcorners)ofMgluedalongN× I"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "NAisanE"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "YAareE"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "(framing of Z × D"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "M×D"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "M×Dn−misframedandwehaveadecompositionM=X∪N×I"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "whereX, YaresubmanifoldsofMgluedalongasubmanifoldN×I"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "nand X, Yare"
+  },
+  {
+   "page": 42,
+   "mark": "a",
+   "context": "NAis"
+  },
+  {
+   "page": 42,
+   "mark": "j",
+   "context": "NAisa"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "NAisaj-arrowinE≤n-Alg,henceanE"
+  },
+  {
+   "page": 42,
+   "mark": "m",
+   "context": "andψA(Y )areEn−m-algebras.SinceN× I"
+  },
+  {
+   "page": 43,
+   "mark": "i",
+   "context": "i∈IM"
+  },
+  {
+   "page": 43,
+   "mark": "f",
+   "context": "f∈FM"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "f∈FMf.The inclusion MF⊂Myields a canonical map N(Disj(MF ×D"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "N(Disj(M× D"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "N(Disj(M× Dn−m)).SinceanobjectinN(Disj(M× D"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "ion of connected open sets in M, every object in N(Disj(M ×D"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "N(Disj(MF× D"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "D"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "N(Disj(MF× D"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "M× D"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "M(A)viewedasanE"
+  },
+  {
+   "page": 43,
+   "mark": "j",
+   "context": "j-handlestoMj−1,see[28].ThatisgluingacopyofH"
+  },
+  {
+   "page": 43,
+   "mark": "j",
+   "context": "j-handlestoMj−1,see[28].ThatisgluingacopyofHj=D"
+  },
+  {
+   "page": 43,
+   "mark": "m",
+   "context": "j-handlestoMj−1,see[28].ThatisgluingacopyofHj=Dj× D"
+  },
+  {
+   "page": 43,
+   "mark": "j",
+   "context": "attachingmapS"
+  },
+  {
+   "page": 43,
+   "mark": "m",
+   "context": "attachingmapSj−1× D"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "D"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "D0×D"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "D0×D2to the empty set, then attaching a D"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "D0×D2to the empty set, then attaching a D1×D"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "theboundaryofthepreviousD"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "ofthepreviousribbon,andtheﬁnallyattachingaD"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "ofthepreviousribbon,andtheﬁnallyattachingaD2×D"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "−→ψX"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "−→ψX"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "˜ψN(V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "1∪· · · ∪V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "wheretheV"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "andthuscontainsanopenballV"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "V"
+  },
+  {
+   "page": 44,
+   "mark": "a",
+   "context": "VAisanequivalence.Itfollowsthat,given"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "enoughandopensetsV"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "1⊂V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "1⊂V1,....,V"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "n⊂V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "n⊂VninX"
+  },
+  {
+   "page": 44,
+   "mark": "a",
+   "context": "n⊂VninXkwhicharehomeomorphicto"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "˜ψN(V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "1, . . . , V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "V"
+  },
+  {
+   "page": 44,
+   "mark": "g",
+   "context": "Herewehavedenoted"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "ofopensubsetsofNwhicharehomeomorphictoF× R"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "−→ψX"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "agreeonapointandfurtheronanydiskD"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "∅⊂M0 × D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "∅⊂M0 × Dk⊂· · · ⊂Mm × D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "∅⊂M0 × Dk⊂· · · ⊂Mm × Dk= M× D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "∅⊂M0 × Dk⊂· · · ⊂Mm × Dk= M× DkisahandledecompositionofM× D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "Thatis(M× D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "Thatis(M× Dk)j= Mj× D"
+  },
+  {
+   "page": 45,
+   "mark": "j",
+   "context": "Thatis(M× Dk)j= Mj× Dkwherewereplaceeachj-handleH"
+  },
+  {
+   "page": 45,
+   "mark": "j",
+   "context": "Thatis(M× Dk)j= Mj× Dkwherewereplaceeachj-handleHj= D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "Thatis(M× Dk)j= Mj× Dkwherewereplaceeachj-handleHj= Dj× D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "Dm−j× D"
+  },
+  {
+   "page": 45,
+   "mark": "j",
+   "context": "attached toMj−1bythej-handleD"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "attached toMj−1bythej-handleDj× D"
+  },
+  {
+   "page": 45,
+   "mark": "j",
+   "context": "attached toMj−1bythej-handleDj× Dm+k−j∼= D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "Mj−1 ×D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "Mj−1 ×Dk= (M ×D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "ofeachMj× D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "ofeachMj× Dk= (M× D"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "CHM×D"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "k+d(B))whereι"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "k+d(B))whereιd: E"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "k+d(B))whereιd: Ek֒→E"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": " by induction that it holds for all ((m+d)-framed) spheres S"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "E"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "Em+d-algebraA.ForS"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "S"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "S0 A ∼= A ⊗A ∼= CHS"
+  },
+  {
+   "page": 45,
+   "mark": "d",
+   "context": "S0 A ∼= A ⊗A ∼= CHS0(A)(asE"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "forS"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "forSm−1andm≥1.Wehaveadecompositionofthem-sphereS"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "forSm−1andm≥1.Wehaveadecompositionofthem-sphereSmasS"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "Dm∪S"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "Dm∪Sm−1 D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "S"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "S"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "S"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "Clearly,M"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "Clearly,M0isadisjointunionM"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "I0D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "I0Dmofﬁnitelymany"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "D"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "Dm B∼=BviewedasanE"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "Dm B∼=BviewedasanEk-algebra,weget"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 45,
+   "mark": "j",
+   "context": "I0"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "NA by [25, Theorem 5.3.3.1], the set I"
+  },
+  {
+   "page": 45,
+   "mark": "j",
+   "context": "NA by [25, Theorem 5.3.3.1], the set I0is ﬁnite and"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "NA by [25, Theorem 5.3.3.1], the set I0is ﬁnite and j"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "D"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "ssumption M1is obtained by attaching ﬁnitelymany 1-handles H"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "1, . . . , H"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "∂D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "∂D1× D"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "fortheimageof∂D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "fortheimageof∂D1× D"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "∂D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "∂D1× [0, ε] × D"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "⊂H"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "1,wecanassumethattheresultM"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "1,wecanassumethattheresultM0 ∪∂D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "1,wecanassumethattheresultM0 ∪∂D1×D"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "1,wecanassumethattheresultM0 ∪∂D1×Dm−1H"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "attachingH"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "1toM"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "∂D"
+  },
+  {
+   "page": 45,
+   "mark": "m",
+   "context": "∂D1×D"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "M0∪∂D"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "M0∪∂D1×Dm−1 H"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "M0∪∂D"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "M0∪∂D1×Dm−1 H"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "∂D"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "∂D1×D"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Ek-algebrasandsimilarlyfor∂D"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "Ek-algebrasandsimilarlyfor∂D1× D"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Ek-algebrasandsimilarlyfor∂D1× Dm−1andD"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "Ek-algebrasandsimilarlyfor∂D1× Dm−1andD1× D"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "M0∪∂D"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "M0∪∂D1×Dm−1 H"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "M0∪∂D"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "M0∪∂D1×Dm−1 H"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "∂D"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "∂Dj×D"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "∂D"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "∂Dj×D"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "spheres(withvalueinA)proved above.Indeed,∂D"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "spheres(withvalueinA)proved above.Indeed,∂Dj× D"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "spheres(withvalueinA)proved above.Indeed,∂Dj× Dm−j∼= S"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "spheres(withvalueinA)proved above.Indeed,∂Dj× Dm−j∼= Sj−1× D"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "Sj−1×D"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "Sj−1×D"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "a",
+   "context": "Sj−1 A,thatweget"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "m−j"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "Sj−1×D"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "Sj−1×D"
+  },
+  {
+   "page": 46,
+   "mark": "j",
+   "context": "S"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "Sj−1×D"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "· · · X"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "n≥0X"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "n≥0Xn=M"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "D"
+  },
+  {
+   "page": 46,
+   "mark": "m",
+   "context": "D"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "F"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "F"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "M"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "MiA.WritingM"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "MiA.WritingMi=X"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "MiA.WritingMi=X0⊂X"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "MiA.WritingMi=X0⊂X1⊂· · · X"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "n≥0X"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "n≥0Xn=M"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "XnAforall"
+  },
+  {
+   "page": 47,
+   "mark": "a",
+   "context": "XnAforallnandthus"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "MAisdeﬁnedforany"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "M ×D"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "of M × D"
+  },
+  {
+   "page": 47,
+   "mark": "k",
+   "context": "of M × Dn−m× D"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "of M × Dn−m× Dk∼= M × D"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "MAas anE"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "φ1: M→S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "φ1: M→Snand φ2: M→S"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "forlargentheframingthatcomesfromtheembeddingintoS"
+  },
+  {
+   "page": 47,
+   "mark": "k",
+   "context": "that any twoabstract framings of M × D"
+  },
+  {
+   "page": 47,
+   "mark": "l",
+   "context": "that any twoabstract framings of M × DkandM × D"
+  },
+  {
+   "page": 47,
+   "mark": "k",
+   "context": "for example, forM × D"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "for example, forM × Dkwe canmake Msit insideR"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "ofMinR"
+  },
+  {
+   "page": 47,
+   "mark": "k",
+   "context": "ofMinRnisthecomplementoftheframingofthetangentbundleofM× D"
+  },
+  {
+   "page": 47,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 47,
+   "mark": "k",
+   "context": "Rn× D"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "M2AofEmin(k"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "M2AofEmin(k1,k"
+  },
+  {
+   "page": 47,
+   "mark": "k",
+   "context": "M1(A)ofE"
+  },
+  {
+   "page": 47,
+   "mark": "k",
+   "context": "M2(A)ofE"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "M2(A)ofEk2-algebras.SinceM"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "M2(A)ofEk2-algebras.SinceM1andM"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "Disk"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "kR"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "ℓR"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "ℓRn)ofsmoothembeddingsof"
+  },
+  {
+   "page": 48,
+   "mark": "a",
+   "context": "ℓRn)ofsmoothembeddingsofkdisjointcopiesof"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "diskR"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "MAin"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "ofmanifoldstotensorproducts[29,Property1.3.2]andB∗(D"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "Remark16.LetA=C•(Ω"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "TheBlobcomplexB∗(M, CC•(Ω"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "MΩ"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "folds.ForanymanifoldMofdimensionmwhichisn-framed(i.e.M× D"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "VA(sinceanyballinS U"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "VA(sinceanyballinS Uiis"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "VnA where V"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "VnA where V1, . . . , V"
+  },
+  {
+   "page": 50,
+   "mark": "a",
+   "context": "MA∼=HF(FM, M),thenwehave"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "factorization algebra FM×R"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "factorization algebra FM×RdonM × R"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "factorization algebra FM×RdonM × RdandfurtherHF(FM×R"
+  },
+  {
+   "page": 50,
+   "mark": "d",
+   "context": "factorization algebra FM×RdonM × RdandfurtherHF(FM×Rd, M × R"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "BA∼=AofE"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "BA∼=AofEn−m-algebras(wheretheE"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "(framed)embeddingofS"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "(framed)embeddingofS0× D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "FB(S"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "FB(Si× D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "FB(Si× Dm−i)∼=HF(FS"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "FB(Si× Dm−i)∼=HF(FSi×D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "FB(Si× Dm−i)∼=HF(FSi×Dm−i, S"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "FB(Si× Dm−i)∼=HF(FSi×Dm−i, Si× D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "S"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "Si×D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "foranyembeddingofS"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "foranyembeddingofSi× D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "ofthesphereS"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "ofthesphereSi× D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "ofthesphereSi× Dm−iasS"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "ofthesphereSi× Dm−iasSi× D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "ofthesphereSi× Dm−iasSi× Dm−i∼=D+∪S"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "ofthesphereSi× Dm−iasSi× Dm−i∼=D+∪Si−1×D"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "ofthesphereSi× Dm−iasSi× Dm−i∼=D+∪Si−1×Di−m×D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "FS"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "FSi−1×D"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "FSi−1×Di−m×D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "S"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "Si−1×D"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "Si−1×Di−m AasanE"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "hypothesis.Now theequivalence HF(FS"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "hypothesis.Now theequivalence HF(FSi×D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "hypothesis.Now theequivalence HF(FSi×Dm−i, S"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "hypothesis.Now theequivalence HF(FSi×Dm−i, Si× D"
+  },
+  {
+   "page": 50,
+   "mark": "i",
+   "context": "S"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "Si×D"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "i=1B"
+  },
+  {
+   "page": 51,
+   "mark": "a",
+   "context": "i=1Biis"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "i=1Biisadisjointunionofballsofdimension"
+  },
+  {
+   "page": 51,
+   "mark": "l",
+   "context": "`··· ` U"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "n subsets Ui⊂Bi.In particular, this applies to the case of S"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "ubsets Ui⊂Bi.In particular, this applies to the case of S0×D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "Now let M∼= S"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "Now let M∼= Sm×D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "assumetheresultofthepropositionisknownforS"
+  },
+  {
+   "page": 51,
+   "mark": "l",
+   "context": "assumetheresultofthepropositionisknownforSm−1× D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "covers).Wewishtoapplythistoadecompositionofthem-sphereS"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "covers).Wewishtoapplythistoadecompositionofthem-sphereSmasS"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "D+∪S"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "D+∪Sm−1×D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "D+∪Sm−1×D1D−whereD+andD"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "D+× D"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "D+× DdandD−× D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "D+× DdandD−× DdwhichareequivalenttoT CD"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "equivalencestoS"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "equivalencestoSm−1× D"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "equivalencestoSm−1× D1× D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "F+|S"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "F+|Sm−1×D"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "F+|Sm−1×D1×D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "−→F−|S"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "−→F−|Sm−1×D"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "−→F−|Sm−1×D1×D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "SinceS"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "SinceSm−1× D"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "SinceSm−1× D1× D"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "SinceSm−1× D1× DdistheintersectionofD+× D"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "SinceSm−1× D1× DdistheintersectionofD+× DdwithD−× D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "alocallyconstantfactorizationalgebraFontheirunionS"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "alocallyconstantfactorizationalgebraFontheirunionSm× D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "Lemma5andProposition11,thatF(S"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "Lemma5andProposition11,thatF(Sm× D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "S"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "Sm×D"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "Sm×Dd AasanE"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "UAfollowsforanyopenpropersubsetofS"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "UAfollowsforanyopenpropersubsetofSm×D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "T CS"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "T CSm×D"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "constant)familyofEn-algebrasparametrizedbythepointsinM× D"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "M×D"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "M×Dn−m, the operad of little"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "M×Dn−m, the operad of little n-cubes in M ×D"
+  },
+  {
+   "page": 52,
+   "mark": "n",
+   "context": "constantN(Disk(M× D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "−→A(V"
+  },
+  {
+   "page": 52,
+   "mark": "n",
+   "context": "−→A(V1) ⊗· · · ⊗A(V"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "atthereisacodimension1submanifoldNofMwithatrivializationN× D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "itsneighborhoodsuchthatMisdecomposableasM= X ∪N×D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "submanifoldsofMgluedalongN× D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "N×D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "N×D1 AisanE"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "N×D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "N×D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "N×D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "N× D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "N× D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "inN× D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "N×D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "YAandtheE"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "N×D"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "N×D"
+  },
+  {
+   "page": 52,
+   "mark": "4",
+   "context": "YAandDeﬁnition"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "U"
+  },
+  {
+   "page": 53,
+   "mark": "g",
+   "context": "where"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "iseitherinX0orY0orinN× D"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "U"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "U1, . . . , Ukincluded in N ×D"
+  },
+  {
+   "page": 53,
+   "mark": "d",
+   "context": "M(E"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "M(Ed-Alg)whichﬁtsinto"
+  },
+  {
+   "page": 53,
+   "mark": "d",
+   "context": "M(E"
+  },
+  {
+   "page": 53,
+   "mark": "d",
+   "context": "M(E"
+  },
+  {
+   "page": 53,
+   "mark": "d",
+   "context": "algebraovertheoperadoflittlecubesinM×D"
+  },
+  {
+   "page": 53,
+   "mark": "d",
+   "context": "M×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "for Ui’s pairwise disjoint open subsets of V∈Op(M ×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "factorizationalgebra onM × D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M×D"
+  },
+  {
+   "page": 54,
+   "mark": "a",
+   "context": "M×Dd-algebraAsatisﬁesthat,foranyballBwhichis"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M×Dd-Alg→N(Disk(M×R"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M×Dd-Alg and locally constant N(Disk(M×R"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M(E"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M(E"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M(E"
+  },
+  {
+   "page": 54,
+   "mark": "a",
+   "context": "M(Ed-Alg∞).ByLemma4,wecanthinkofFas"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "ization algebra on M ×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "ization algebra on M ×Dd.Let B∈Op(M ×D"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "herestrictionF|BisalocallyconstantfactorizationalgebraonB∼=R"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "way.ThisshowsthatthecollectionF(B)forallopensetsB⊂M× D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "omorphictoaballisalocallyconstantN(Disk(M× R"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "unctor EAM(F) is simply induced by the composition Disk(M ×R"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "Op(M ×R"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "constant)N(Disk(M× R"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "nonicalequivalenceEAM◦T CM(A)∼=AoflocallyconstantN(Disk(M× R"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "M×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "above.Fixing a Riemannian metric on M ×D"
+  },
+  {
+   "page": 54,
+   "mark": "g",
+   "context": "Fixing a Riemannian metric on M ×Dd, we can ﬁnd a cover Ball"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": " a Riemannian metric on M ×Dd, we can ﬁnd a cover Ballg(M ×D"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "ofMgivenbyopensetsinM×D"
+  },
+  {
+   "page": 54,
+   "mark": "g",
+   "context": "U∈Ball"
+  },
+  {
+   "page": 54,
+   "mark": "d",
+   "context": "U∈Ballg(M× R"
+  },
+  {
+   "page": 54,
+   "mark": "i",
+   "context": "i∈IU"
+  },
+  {
+   "page": 55,
+   "mark": "g",
+   "context": "bydescentfromtheirrestrictionsonthecoverBall"
+  },
+  {
+   "page": 55,
+   "mark": "d",
+   "context": "bydescentfromtheirrestrictionsonthecoverBallg(M× R"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "Example12.Since S"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "Example12.Since S2×D"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "Example12.Since S2×D1embeds as an open set in R"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "byrestriction,a(locallyconstant)factorizationalgebraAS"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "byrestriction,a(locallyconstant)factorizationalgebraAS2onS"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "ksgluedalongtheequator,wegetthatthefactorizationhomologyofAS"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "HF(AS"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "asanE1-algebra.HereCHS"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "factorizationalgebraonR"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "on a torus T= S"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "on a torus T= S1×S"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "on a torus T= S1×S1∼= R"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "on a torus T= S1×S1∼= R2/Z"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "Notethatthetwocanonicalprojectionsp1, p2:R"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "S1× D"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "S1× D1∼=R"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "topologicalchiralhomologyofS"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "topologicalchiralhomologyofS1× D"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "S1×D"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "to the usual Hochschild chain complex CHS"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "HF(BT )∼= CHS"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "CHS1 (B1)⊗(CHS1(B1))opCHS"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "CHS1 (B1)⊗(CHS1(B1))opCHS1(B"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "CHS1 (B1)⊗(CHS1(B1))opCHS1(B1) ∼= CHS"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "CHS1 (B1)⊗(CHS1(B1))opCHS1(B1) ∼= CHS1(CHS"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "CHS1 (B1)⊗(CHS1(B1))opCHS1(B1) ∼= CHS1(CHS1(B"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "algebraonM× D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "−→R"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "SinceMisn-framed,thereisabundleisomorphismϕ :T (M× D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "whereR"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "isatrivialbundleoverM× D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "M × D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "iﬀeomorphisms of (abasisof) openneighborhoods ofany x ∈M × D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "setsinthetangentspaceT (M× D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "setsinthetangentspaceT (M× Dn−m)xofM× D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "themapϕinducedbytheframing,wegetdiﬀeomorphismsU7→ψ(Ux) ∈Op(R"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "Let Ubethe cover of M × D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "φx(Ux) ∈Ball(R"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "subsetsofM× D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "factorizationalgebraonR"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "algebraonR"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "algebraonRnandM× D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "toafactorizationalgebraonM× D"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "M×D"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "(Y, A"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "thatthereisanhomotopyequivalenceS"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "S1×S"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "S1×S"
+  },
+  {
+   "page": 57,
+   "mark": "h",
+   "context": "S1×S1(R)"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "S1×S1(R)h(S"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "S1×S1(R)h(S1×S"
+  },
+  {
+   "page": 57,
+   "mark": "3",
+   "context": "Example14.ThecompositionS"
+  },
+  {
+   "page": 58,
+   "mark": "3",
+   "context": "CDGAasS"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "Remark21.Note that S"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "two3-framingsofS"
+  },
+  {
+   "page": 58,
+   "mark": "a",
+   "context": "NAhas"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "NAhasacanonicalliftasanE"
+  },
+  {
+   "page": 58,
+   "mark": "d",
+   "context": "Proof.ReplacingMbyM× R"
+  },
+  {
+   "page": 59,
+   "mark": "k",
+   "context": "[24]J.Lurie,DerivedAlgebraicGeometryVI:E"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "[34]B.To¨en,G.Vezzosi,S"
+  }
+ ]
+}

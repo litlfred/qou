@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0405126v1
-doc_title: "arXiv:math/0405126v1 [math.GT] 7 May 2004"
+doc_title: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT"
 section_id: sec-000-1-statement-of-the-result
 section_title: "Statement of the result"
 section_number: 1
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.929
 latex_coverage_ratio: 0.945
+doc_brief: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT — We study the asymptotic behaviors of the colored Jones polyno- mials of torus knots. Contrary to the works by R. Kashaev, O."
 ---
 Let $T(a,b)$ be the $(a,b)$-torus knot for coprime integers $a$ and $b$ ($a>1$, $b>1$). Then its colored Jones polynomial $J_N\bigl(T(a,b);t\bigr)$ is given as follows [@Morton:MATPC95]. $$J_N\bigl(T(a,b);t\bigr)
   =

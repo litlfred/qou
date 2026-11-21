@@ -1,0 +1,48 @@
+Symmetry 2012, 4 70
+
+For example, the three d quirks of letter A (d* for A*) count as a single point of first order fusion to
+form AA* because of the unbroken triangular symmetry of each component. On the other hand, each
+of the two d* antiquirks of letter B* counts as a potential point of fusion because the symmetry is
+broken by the direction of traverse and the existence of its u quirk. Hence the term 2x for words AB*
+and BA* which we interpret to mean that those words are each doubly degenerate. In forming BB* the
+single u quirk of B and the single u* antiquirk of B* can fuse in only one way but the two d quirks of B
+and two d* antiquirks of B* can fuse in four ways, ergo the term 4x + y, meaning that BB* is
+degenerate in five ways.
+
+Similar considerations apply in the case of BC* and the two words CB* and CC* in the second
+column. In that regard, note that inverting, top to bottom, the second column and exchanging x and y as
+well as A and D, B and C as before makes it identical to the first column. Finally, we note that this is
+where the exclusionary considerations discussed above come into play. Specifically, we note the “0”
+terms associated with words AD* and DA* meaning that those words cannot form because neither an x
+nor a y junction is possible.
+
+Summing up the terms in each coefficient of the words then produces the total degeneracy for first
+order fusion as shown in Figure 33 where we have regrouped according to twist. Comparing this figure
+with its original counterpart, Figure 24, we see that the consideration of detailed composition has
+removed two terms (from the NHT = 0 column) but added 18 terms for a net increase of 16 terms; this
+doubles the count of Figure 24 to 32 which matches the number associated with the stick figure
+configuration of Figure 31 and is twice the direct product/convolution tally. Thus we have reconciled
+the cited discrepancy for first order fusion.
+
+Figure 33. Composition-enhanced twist assemblies for first-order fusion
+
+NHT=-6 _-4 2 0 42 +4 +6
+AA*® 2xAB* AC*
+2xBA* CA* 4xCB* 5xCC*
+5xBB* 4xBC* BD* 2xCD*
+DB* 2xDCc* DD*
+
+Sum = 1 4 7 8 7 4
+
+We can formally encode this ad hoc compilation [3] by invoking the requirement for continuity of
+traverse which implies the mutually exclusive existence of only two kinds of junctions, an x junction
+formed by the fusion of a d quirk and a d* antiquirk and a y junction formed by the fusion of a u quirk
+and a u* antiquirk; du* and ud* combinations are excluded. On this basis, it is straightforward to
+formalize the process of fusion as follows: we define dd* = x, uu* = y, du* = ud* = 0, the symbolic
+two-vectors
+
+a,(¢d+ mu) and
+(pdt +qup, eo)
+and an inner product such that
+
+a,(ld + mu)(pd* + qu*)B, = a@,8,(lpx + may). (6-2)

@@ -1,0 +1,2030 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "ant-v14-n7-s-p10",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "denote by φ"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "for φ; that is, assume that the backward orbit {β ∈K| φ"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "φ−n(α) = {β ∈K| φ"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "n≥0K"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "on.In the limit as n →+∞, Gal(K∞/K) acts faithfully on T∞=ST"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "for each n ≥1; this is equivalent to the irreducibility of φ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "d"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "dn≤|Gal(Kn/K)| ≤d!(d"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": " (2) is achieved for all n ≥1.For example, letK= Q, φ(x) = x"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "isstable,indeedφ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "isstable,indeedφn(x) −α=x"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "isstable,indeedφn(x) −α=x2"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "isstable,indeedφn(x) −α=x2n+ 1isthe2"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "over Q, and |Gal(Kn/Q)| = [Kn: Q] = 2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "2≃{±} × Z"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "(i)ψ(x) = x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "overQisQ-conjugatetox"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "tensionK∞(φ, α)/Qisabelianifandonlyif(φ, α)isQ-conjugateto(x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "(x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "y, we treat the particular postcritically ﬁnite map φ(x) = x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "we prove the Conjecture for stable pairs (x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Zhang pairing ⟨x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Zhang pairing ⟨x2−1, x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "lly inﬁnite or else Q-conjugate to either the squaring map x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "conjugate to either the squaring map x2, the Chebyshev map x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "orx"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "w that in each of the cases described above, stable pairs (x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "(i)For any primep, the (postcritically inﬁnite) pair (x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "(ii)Ifα∈Zandα≡2 or 3(mod 4),thenthesquaringpair(x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "(x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "(x2+ 2αx + α"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "such as (x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "such as (x2, −1), and nonabelian examples, such as (x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "iii)If α ∈Z and α ≡0 or 1(mod 4), then the Chebyshev pair (x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "to (x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "to (x2+ 2αx + α"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "examples, such as (x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ples, such as (x2−2, 0), and nonabelian examples, such as (x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "pair(x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "pair(x2−1, α)isstable.Itsufﬁcestoshowthat(φ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1, α)isstable.Itsufﬁcestoshowthat(φ2, α)isstable,whereφ(x)=x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "φ"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "φ2(x) = x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "φ2(x) = x4−2x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "φ2(x) = x4−2x2, since the irreducibility of φ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "φ2(x) = x4−2x2, since the irreducibility of φ2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "e irreducibility of φ2n(x) −αimplies the irreducibility of φ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": " irreducibility of φ2n(x) −αimplies the irreducibility of φ2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Thestabilityof(φ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Thestabilityof(φ2, α)followsfromthefactthatitisconjugateto(φ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "for arboreal Galois representations associated to φ(x) = x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Sections 7 and 8 we treat the particular polynomial φ(x) = x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "pairing ⟨x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "pairing ⟨x2−1, x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ing ⟨x2−1, x2⟩, and prove the Conjecture for stable pairs (x"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "G"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "Gx⊆G"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "Gx⊆G y, and G"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "Gx⊆G y, and Gx= G"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "x∈XG"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Lemma 4.Let Gbe an abelian, transitive subgroup ofS2"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "elian, transitive subgroup ofS2nwhich is not a subgroup ofA2"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Proof.By Lemma 2,we have |G| = 2"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "sition σ= c1c2 · · · crinto disjoint ℓ-cycles c j, and rℓ= 2"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "sgn(c j) = (−1)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Thus ris odd, and as rℓ= 2"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "nd as rℓ= 2n, we must have r= 1.We conclude that σ= c1is a 2"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "The assumption that G̸⊆A2"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Lemma5.Letf (x) =Ax"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "disc( f"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "disc( fn) = (−1)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "disc( fn) = (−1)2"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "disc( fn) = (−1)2n−12"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "disc( fn) = (−1)2n−122"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "disc( fn) = (−1)2n−122nA"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "disc( fn) = (−1)2n−122nA2"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "disc( fn) = (−1)2n−122nA22"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "disc( fn) = (−1)2n−122nA22n−1−1disc( f"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "disc( fn) = (−1)2n−122nA22n−1−1disc( fn−1)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "disc( fn) = (−1)2n−122nA22n−1−1disc( fn−1)2f"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "through Jones’ calculation and keep track of the factor (−1)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "hrough Jones’ calculation and keep track of the factor (−1)2"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "1 when n = 1 and +1 when n ≥2.To check (3) when n = 1, takef"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "n ≥2.To check (3) when n = 1, takef0(x) = xand hence disc( f"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "of (3) simpliﬁes to −4Af (c) = B"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "form pOL = q"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "1· · · q"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "rfor primes"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "rfor primes q"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "rfor primes q1, . . . ,"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "rfor primes q1, . . . , q"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "rfor primes q1, . . . , qrofL, and ref= [L : K], where"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "or primes q1, . . . , qrofL, and ref= [L : K], where e = e(q"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "s q1, . . . , qrofL, and ref= [L : K], where e = e(qi/p) and"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": ". . . , qrofL, and ref= [L : K], where e = e(qi/p) andf=f (q"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "rtia groups.ThusIqi/p has order e(qi/p), p is unramiﬁed inLI"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "tia groups.ThusIqi/p has order e(qi/p), p is unramiﬁed inLIq"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "and if p′denotes any prime ofLI"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "and if p′denotes any prime ofLIq"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "ofK,andletK∞=SK"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "p"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "pn−1.Let n"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "1.Let n0be maximal with the property that p is unramiﬁed inK"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": " maximal with the property that p is unramiﬁed inKn0; thus p"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "e property that p is unramiﬁed inKn0; thus pn0is ramiﬁed inK"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "To summarize, we have shown that p is unramiﬁed inK"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "mmarize, we have shown that p is unramiﬁed inKn0, and that p"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "hat p is unramiﬁed inKn0, and that pn0is totally ramiﬁed inK"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "f (pn/p) =f (pn0/p) ≤[Kn0: K] =p"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "f (pn/p) =f (pn0/p) ≤[Kn0: K] =pn"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "e(pn/p) = e(pn/pn0) = [Kn: Kn0] =p"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "e(pn/p) = e(pn/pn0) = [Kn: Kn0] =pn−n"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "e(pn/p) ≤|OK/p|f (p"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "hypotheses imply via Lemma 2 that [Kn: K] = 2"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Gal(Kn/K)isnotcontainedinA2"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Gal(Kn/K)isnotcontainedinA2nwhenviewedasasubgroupofS2"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "φ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "φn(x) −α.Suppose on the contrary that Gal(Kn/K) ⊆A2"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "exercise in elementary Galois theory, this means that disc(φ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "disc(φ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "disc(φn(x) −α) = disc(φ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "disc(φn(x) −α) = disc(φn(x + α) −α) = disc(ψ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "disc(φn(x) −α) = disc(φn(x + α) −α) = disc(ψn(x)) =R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "nAψ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Aψ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "polynomial ψ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "olynomial ψ3(x) has eight distinct roots inK, and thus C= {y"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "omial ψ3(x) has eight distinct roots inK, and thus C= {y2=Aψ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "curveofgenus3.Thereareinﬁnitelymanyn≥3forwhichAψ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "which ψ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "vides a contradiction, and thus the assumption Gal(Kn/K) ⊆A2"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "h(α"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "m≥1µ"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "m≥1µ2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "m≥1µ2m; thus Q(µ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "m≥1Q(ζ"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "m≥1Q(ζ2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "µ"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "elements in the special case that k = 2"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "he smallest positive integer with the property that ζα ∈Q(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "α ∈Q(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "α ∈Q(ζ2m) and that ζα/∈Q(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Write Gal(Q(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Write Gal(Q(ζ2m)/Q(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Write Gal(Q(ζ2m)/Q(ζ2m−1)) = {1, σ}; thus σ(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Write Gal(Q(ζ2m)/Q(ζ2m−1)) = {1, σ}; thus σ(ζ2m) = −ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "γ= σ(α)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "γ= σ(α)2−α"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "either σ(α) = αor σ(α) = −α; the former case implies α ∈Q(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "the latter case implies ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "the latter case implies ζ2mα ∈Q(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "If vis a place of Q(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "|γ |v ≤max(1, |α|v)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "|γ |v ≤max(1, |α|v)2max(1, |σ(α)|v)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "4max(1, |α|v)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "4max(1, |α|v)2 max(1, |σ(α)|v)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "|γ |v ≤2max(1, |α|v)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "|γ |v ≤2max(1, |α|v)2max(1, |σ(α)|v)"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "v"
+  },
+  {
+   "page": 9,
+   "mark": "v",
+   "context": "vr"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "vrv log|γ |v ≤4"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "vrv log|γ |v ≤4h(α) −log"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "vrv log|γ |v ≤4h(α) −log 4 + log 2, and the desired bound"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "γ |v ≤4h(α) −log 4 + log 2, and the desired bound h(α) ≥(log"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Itremainsonlytoprove(7);thusﬁxaplacev | 2ofQ(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "[Bombieri and Gubler 2006], there exists β ∈Z[ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": " and Gubler 2006], there exists β ∈Z[ζ2m] such that αβ ∈Z[ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Note that for arbitraryx∈Z[ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Note that for arbitraryx∈Z[ζ2m], writingx= 6 ja jζ"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2m, since σ(ζ"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "2m, since σ(ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2m, since σ(ζ2m) = −ζ"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "2m, since σ(ζ2m) = −ζ2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "σ(x)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "σ(x)2−x"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "a jζ"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "a jζ"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "and thus |σ(x)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "and thus |σ(x)2−x"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "v|γ |v = |β"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "v|γ |v = |β2σ(α)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "v|γ |v = |β2σ(α)2 −α"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "v|γ |v = |β2σ(α)2 −α2β"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "= |(β"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "= |(β2−σ(β)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "= |(β2−σ(β)2)σ(α)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "= |(β2−σ(β)2)σ(α)2+ σ(αβ)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "= |(β2−σ(β)2)σ(α)2+ σ(αβ)2−(αβ)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "≤max(|β"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "≤max(|β2−σ(β)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "v, |σ(αβ)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "v, |σ(αβ)2 −(αβ)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "v,"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "4max(1, |σ(α)|v)"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "andK"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "andKn = K"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "andKn = Kn(φ, α) = K"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ndKn = Kn(φ, α) = Kn−1(φ−n(α)) for n ≥1, and setK∞(φ, α) =SK"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "powering mapx"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "and assume that the pair (φ, α) isK-conjugate to the pair (x"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "only if βis a root of unity and (φ, α) isKab-conjugate to (x"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "at βis a root of unity and that (φ, α) isKab-conjugate to (x"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "of unity and that (φ, α) isKab-conjugate to (xd, β).ThenK∞(x"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "K∞(x"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "point ofx"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "point ofxd.)But β"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "point ofxd.)But β1/d"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "point ofxd.)But β1/dn∈K∞(x"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "point ofxd.)But β1/dn∈K∞(xd, β) ⊆Lfor all n ≥0,andh(β"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "point ofxd.)But β1/dn∈K∞(xd, β) ⊆Lfor all n ≥0,andh(β1/d"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "d"
+  },
+  {
+   "page": 10,
+   "mark": "h",
+   "context": "dn"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "dn h(β) →0+as"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "dn h(β) →0+as n →+∞,"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "ally, we must show that theK-conjugacy between (φ, α) and (x"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "ypothesis there exists γ (x) = ax + b deﬁned overKfor whichx"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "bijection from the backward φ-orbit of α onto the backward x"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "areinﬁnitesetscontainedinKab,sincebothK∞(φ, α)/KandK∞(x"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "uniquepolynomialofdegreedsatisfyingTd(x + 1/x) = x"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "uniquepolynomialofdegreedsatisfyingTd(x + 1/x) = xd+ 1/x"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2-to-1 rational map π: Gm→A"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "x"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "−−−→A"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "By the commutative diagram (9), the points ϵ ∈Ksatisfying T"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "formϵ=ξ+ 1/ξ,asξrangesoverthed"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "d(ϵ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "d(ϵn) = β; thus ϵ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "d(ϵn) = β; thus ϵn = ξ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "d(ϵn) = β; thus ϵn = ξn +1/ξ"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "d(ϵn) = β; thus ϵn = ξn +1/ξnfor some"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "d(ϵn) = β; thus ϵn = ξn +1/ξnfor some d"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "d(ϵn) = β; thus ϵn = ξn +1/ξnfor some dn-th root ξ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "d(ϵn) = β; thus ϵn = ξn +1/ξnfor some dn-th root ξn = ζ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "d(ϵn) = β; thus ϵn = ξn +1/ξnfor some dn-th root ξn = ζ 1/d"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "hus ϵn = ξn +1/ξnfor some dn-th root ξn = ζ 1/dnof ζ.Since ϵ"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "= ξn +1/ξnfor some dn-th root ξn = ζ 1/dnof ζ.Since ϵn ∈K∞(T"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "satisfying T"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "d"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "dn"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "h(φ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "d"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "d"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "dnlog+|φ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Fφ,v = {x∈Cv | |φ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": " and µφ,vneed to be interpreted on the Berkovich afﬁne lineA"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "In the special case ψ(x) = x"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "at the Gauss point ofA"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "vwhen"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": " non-Archimedean.In particular, the value of the pairing ⟨φ,"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "on-Archimedean.In particular, the value of the pairing ⟨φ, x"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "x] be a polynomial of degree d≥2 deﬁned overKsuch that ⟨φ, x"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "B0(L) ≤⟨φ, x"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Proof.Foreachn≥1,letαn∈K∞⊆Lsatisfyφ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "ˆhφ(α)/d"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "rem 1 of [Petsche et al. 2012], it follows that h(αn) →⟨φ, x"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "number ﬁeld K, there exists a constant CKsuch that Gal(K∞((x"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "verKfor all α ∈Kand all primesp ≥CK.In particular, Gal(K∞((x"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "Proof.It has been shown by Petsche and Stacy [2019] that ⟨(x"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "has been shown by Petsche and Stacy [2019] that ⟨(xp−x)/p, x"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "K∞((x"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": " that, according to the Conjecture, we expect that Gal(K∞((x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "7.The map x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "nomials over Q, represented by x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "nomials over Q, represented by x2,x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "nomials over Q, represented by x2,x2−1, andx"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "φc(x) = x"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "assumption that the critical point 0 is preperiodic (i.e., φ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "c(0) = φ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Mandelbrot set M = {c ∈C | φ"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "c(0)̸ →∞}.It is elementary to check that M ∩Z = {−2, −1,"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Sincex"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Sincex2andx"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "of Theorem 1, it sufﬁces to consider the polynomial φ(x) = x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "InordertoshowthatK∞(x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "outthattheArakelov–Zhangpairing⟨x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "outthattheArakelov–Zhangpairing⟨x2−1, x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "er this strategy (in the stable case) by showing that ifK∞(x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Lemma 16.Let φ(x) = x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "K∞= K∞(x"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "ity and abelian hypotheses imply via Lemma 2 that [Kn:K] = 2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ψ(x) = φ(x + α) −α = x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ψ(x) = φ(x + α) −α = x2+ 2αx + α"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "2-cycle; that is, ψ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "2-cycle; that is, ψn(c) = −αfor all even n, and ψ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "\u001aR"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "disc(φ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "disc(φn(x) −α) = disc(φ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "disc(φn(x) −α) = disc(φn(x + α) −α) = disc(ψ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Case 1:−1 −αis not a square inK.Then disc(φ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "viewing Gal(Kn/K) as a subgroup ofS2"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "al(Kn/K) as a subgroup ofS2nvia its action on the roots of φ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "subgroup ofA2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Case 2:−1−α = t"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "tability hypothesis we know that disc(φ(x)−α) = 4(1+α) = −4t"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Theorem 17.Let φ(x) = x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⟨x"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "⟨x2−1, x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "and we conclude from Theorem 14 thatB0(Q(µ2∞)) ≤⟨x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "and we conclude from Theorem 14 thatB0(Q(µ2∞)) ≤⟨x2−1, x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Archimedean part of the Arakelov–Zhang pairing ⟨x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Archimedean part of the Arakelov–Zhang pairing ⟨x2+ c, x"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "2nlog(1 + |φ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "2nlog(1 + |φn(x)|2)"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": " compared to (10), we have replaced log+|·| with log(1+|·|2)"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "|log(1 + |φ(x)|2)"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "|log(1 + |φ(x)|2)1/2−2 log(1 + |x|2)"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "2nlog(1 + |φ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "2nlog(1 + |φn(x)|2)"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Proposition 18.Let φ(x) = x"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "λφ(e"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "2Nlog(1 + |φN(ζ)|2)"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "λφ(e"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2Nlog(1 + |φN(e"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "2Nlog(1 + |φN(e2πit)|2)"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "N∥∞≤2πT N, and so applying (20) with"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "≤2π|F(e"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "≤2π|F(e2πit)||F′(e"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "dtlog(1 + |F(e"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "dtlog(1 + |F(e2πit)|2)"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "1 + |F(e"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "The choice of Tin terms of c was made so that T"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "T"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "|xφ(x)φ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Indeed, if |φ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "the smallest n for which |φ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "the smallest n for which |φn(x)|>T .Using (22) we have |φ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "smallest n for which |φn(x)|>T .Using (22) we have |φn(x)|<T"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "est n for which |φn(x)|>T .Using (22) we have |φn(x)|<T1/2|φ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "|xφ(x)φ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "|xφ(x)φ2(x) · · · φN(x)| ≤T"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "|xφ(x)φ2(x) · · · φN(x)| ≤Tn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "|xφ(x)φ2(x) · · · φN(x)| ≤Tn0|φ"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "|xφ(x)φ2(x) · · · φN(x)| ≤Tn0|φn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "|xφ(x)φ2(x) · · · φN(x)| ≤Tn0|φn0(x)||φ"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "|xφ(x)φ2(x) · · · φN(x)| ≤Tn0|φn0(x)||φn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "< T"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "< Tn"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "< Tn0T"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "< Tn0T1/2|φ"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "< Tn0T1/2|φn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "< Tn0T1/2|φn0+1(x)|1/2+1|φ"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "< Tn0T1/2|φn0+1(x)|1/2+1|φn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "< T"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "< Tn"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "< Tn0T"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "< Tn0T1/2T"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "< Tn0T1/2T1/4+1/2|φ"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "< Tn0T1/2T1/4+1/2|φn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "< Tn0T1/2T1/4+1/2|φn0+2(x)|1/4+1/2+1|φ"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "< Tn0T1/2T1/4+1/2|φn0+2(x)|1/4+1/2+1|φn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "< T"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "< Tn"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "< Tn0T"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "< Tn0T1/2T"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "< Tn0T1/2T1/4+1/2· · · T"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "< Tn0T1/2T1/4+1/2· · · T1/2"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "< Tn0T1/2T1/4+1/2· · · T1/2m"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "< Tn0T1/2T1/4+1/2· · · T1/2m0+···+1/2|φN(x)|1/2"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "< Tn0T1/2T1/4+1/2· · · T1/2m0+···+1/2|φN(x)|1/2m"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "of ⟨x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "of ⟨x2−1, x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "of ⟨x2−1, x2⟩to the speciﬁed precision.Since both φ(x) = x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "o the speciﬁed precision.Since both φ(x) = x2−1 and ψ(x) = x"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "λφ,∞(e"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "approximate this integral using Proposition 18 with φ(x) = x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "log 1 + |x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(1 + |x|2)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "5(1 + |x|2)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "5(1 + |x|2)2 ≤1 + |x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "5(1 + |x|2)2 ≤1 + |x2 −1|2 ≤5(1 + |x|2)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "the triangle inequality that 1+|x"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "proof by noting that (r"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "proof by noting that (r4−2r"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "proof by noting that (r4−2r2+ 2)/(1 +r"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "proof by noting that (r4−2r2+ 2)/(1 +r2)"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2with minimum value"
+  },
+  {
+   "page": 17,
+   "mark": "24",
+   "context": "Using Proposition 18 withM= 2"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "λφ,∞(e"
+  },
+  {
+   "page": 17,
+   "mark": "13",
+   "context": "log(1 + |φ"
+  },
+  {
+   "page": 17,
+   "mark": "38",
+   "context": "2"
+  },
+  {
+   "page": 17,
+   "mark": "14",
+   "context": "where |θ| ≤(log 5)/2"
+  },
+  {
+   "page": 17,
+   "mark": "13",
+   "context": "5)/2)"
+  },
+  {
+   "page": 17,
+   "mark": "24",
+   "context": "5)/2)13/2"
+  },
+  {
+   "page": 17,
+   "mark": "13",
+   "context": "log(1 + |φ"
+  },
+  {
+   "page": 17,
+   "mark": "38",
+   "context": "2"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "n anonymous referee that, if one only wants to check that ⟨x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "ymous referee that, if one only wants to check that ⟨x2−1, x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "but without giving an explicit numerical approximation for⟨x"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "thout giving an explicit numerical approximation for⟨x2−1, x"
+  },
+  {
+   "page": 17,
+   "mark": "16",
+   "context": "away with the smaller parametersN= 9 andM= 2"
+  }
+ ]
+}

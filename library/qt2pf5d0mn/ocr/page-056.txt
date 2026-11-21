@@ -1,0 +1,33 @@
+Section 3.3 Examples
+
+Again, it can be checked that Cat(H, G, p,a) is a categorical group.
+
+Proposition 3.3.1 If (H,G,p,a) is a crossed module and G is a categorical group, then
+Mod(Cat(H, G, p,a)) = (H,G, p,a)) and Cat(Mod(G)) = G.
+
+Proof: Direct verification. a
+From a crossed module (H,G,p,a) we can construct a G-BSFC denoted by D =
+D(H,G,p,a) = D Cy. As a category, D(H, G, p,a) is the same as Vecty, the H-graded
+category. We identify the simple objects in D with elements of H. For each g € G, the
+g-sector C, is spanned by all simple objects in p~'(g). This defines a G-grading on D due
+to the fact that p is a group morphism. The G-action on simple objects of D is defined to
+be the action a on H. It can be checked that this is a well-defined action, and Condition
+(1) above guarantees that the G-action g sends the g’-sector to the %g'-sector.
+Let h € Cy,h’ € Cy, namely, p(h) = g,p(h’) = g’, then h @h! = hh! € Cog, and
+I @h =n @h="h' @h=hh' Ee Cyg', where the second equality is due to Condition
+
+(2). We define the G-crossed braiding by the identity map, namely,
+Ch = Id: h@h' —+ 4h’ @h
+
+We now describe the partition function associated with D(H, G, p,a). Let F= (9, f, t)
+be an extended coloring. Then for each 2-simplex (012), foiz € Cgoogorgi2- For any 3-
+
+simplex (0123), if the space V*(0123) is to be non-zero, we need to have
+
+fos fos = foisfi2s = tors (3.6)
+
+Thus the color on a 3-simplex is uniquely determined by those on its boundary faces.
+Given an extended coloring such that the condition from Equation is satisfied for
+
+every 3-simplex, it is direct to see that for each 4-simplex a, Z*(o) =1 by Figure [3.3]
+AT

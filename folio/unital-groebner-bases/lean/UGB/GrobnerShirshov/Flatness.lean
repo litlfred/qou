@@ -1,4 +1,5 @@
 import UGB.GrobnerShirshov.NormalForms
+import Mathlib.Algebra.Field.Rat
 
 /-!
 # Flatness of the Gröbner–Shirshov Deformation
@@ -13,9 +14,11 @@ gained when deforming the multiplication.
 
 ## Key results
 
-- `gs_implies_flat`: a GS basis guarantees flatness of the associated
-  filtered-to-graded deformation.
-- `dist_flat_deformation`: specialisation to `Dist(G)` over `Dist(H)`.
+- `gs_implies_flat_false`: the former axiom `gs_implies_flat` was false as
+  stated (its Hilbert functions were arbitrary); it and its restatement
+  `dist_flat_deformation` are removed (2026-11-15).
+- `normal_forms_preserved`: proved (normal forms depend only on leading
+  monomials).
 - `basis_preserved`: the normal-form basis of the deformed algebra
   projects bijectively onto the PBW basis of the associated graded.
 
@@ -74,59 +77,63 @@ def HilbertFunction := ℕ → ℕ
 def isFlat (h₁ h₂ : HilbertFunction) : Prop :=
   ∀ n, h₁ n = h₂ n
 
-/-- **GS basis implies flatness**: if the defining relations of a
-    filtered algebra form a GS basis (under a filtration-compatible
-    admissible order), then the algebra is a flat deformation of its
-    associated graded.
+namespace GsImpliesFlatRefutation
 
-    Concretely: the normal-form monomials of degree `≤ n` form a basis
-    of `Fₙ`, and their images in `gr_n` form a basis of the `n`-th
-    graded piece.  Since the normal-form monomials are the same in
-    both the deformed and undeformed settings, the Hilbert function
-    is preserved.
+open AlgElement
 
-    The proof uses the composition lemma: normal-form monomials are
-    a basis (by `composition_lemma`).  The same monomials, projected
-    to the associated graded, are a basis of `gr` (since they are
-    homogeneous by construction of the deg-lex order).
+/-- The relation `K` over `ℚ`. -/
+noncomputable def rel : AlgElement SU2Gen ℚ := single [SU2Gen.K] 1
 
-    Reference: [fred2005, Theorem 3.15], Bergman 1978 §5. -/
--- Ref: [fred2005] Theorem 3.15 (GS basis ⟹ flat: Hilbert function preserved between deformed algebra and associated graded)
-axiom gs_implies_flat
-    {G : Type u} {k : Type v} [Field k] [DecidableEq G]
-    (ord : AdmissibleOrder G)
-    (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (h_deformed h_graded : HilbertFunction) :
-    isFlat h_deformed h_graded
+theorem rel_support : rel.support = {[SU2Gen.K]} := by
+  show (if (1 : ℚ) = 0 then ∅ else {[SU2Gen.K]}) = {[SU2Gen.K]}
+  norm_num
 
-/-! ## §3  Flatness for `Dist(G)` over `Dist(H)` -/
+/-- The rule `K ↦ 0`. -/
+noncomputable def rule : ReductionRule SU2Gen ℚ :=
+  ⟨rel, by rw [rel_support]; exact ⟨_, Finset.mem_singleton_self _⟩⟩
 
-/-- **Flat deformation of distribution algebras** ([fred2005, Theorem 3.15]):
+theorem rule_lm : rule.lm degLexOrder = [SU2Gen.K] := by
+  apply leadingMonomial_eq_of_max
+  · show [SU2Gen.K] ∈ rel.support
+    rw [rel_support]; exact Finset.mem_singleton_self _
+  · intro m hm hne
+    rw [show (rule.relation) = rel from rfl, rel_support] at hm
+    exact absurd (Finset.mem_singleton.mp hm) hne
 
-    The distribution algebra `Dist(G)` of the non-commutative formal
-    group `G / ℤ_p` is a flat deformation of `Dist(H)`, the
-    distribution algebra of the commutative base group `H / 𝔽_p`.
+/-- The one-rule system `{K ↦ 0}` is a Gröbner–Shirshov basis. -/
+theorem sys_isGS :
+    IsGrobnerShirshovBasis SU2Gen ℚ degLexOrder ⟨[rule], by simp⟩ :=
+  isGrobnerShirshovBasis_of_single_letter_rule degLexOrder rule SU2Gen.K rule_lm
 
-    This means:
-    - `Dist(G)` and `Dist(H)` have the same `k`-dimension in each
-      filtration degree.
-    - The multiplication on `Dist(G)` reduces to that on `Dist(H)`
-      modulo lower filtration degrees.
-    - The GS normal forms for `Dist(G)` coincide with the PBW
-      (divided-power) basis of `Dist(H)`.
+end GsImpliesFlatRefutation
 
-    This is the algebraic content of the statement that the
-    integration of a skewed-Poisson structure produces a genuine
-    deformation, not a degeneration. -/
-theorem dist_flat_deformation
-    {G : Type u} {k : Type v} [Field k] [DecidableEq G]
-    (ord : AdmissibleOrder G)
-    (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (h_distG h_distH : HilbertFunction) :
-    isFlat h_distG h_distH :=
-  gs_implies_flat ord sys hgs h_distG h_distH
+/-- **The former axiom `gs_implies_flat` is false** (removed 2026-11-15).
+
+    It concluded `isFlat h_deformed h_graded` for two *arbitrary* Hilbert
+    functions, which are not tied to `sys` at all; `isFlat` is pointwise
+    equality. So any GS basis (here the one-rule system `{K ↦ 0}` over `ℚ`)
+    together with the Hilbert functions `0` and `1` refutes it.
+
+    The true statement ([fred2005, Theorem 3.15]) is about the Hilbert
+    functions *of* the deformed algebra and its associated graded, which
+    need to be defined from `sys`; open in Lean. -/
+theorem gs_implies_flat_false :
+    ¬ (∀ {G : Type} {k : Type} [Field k] [DecidableEq G]
+        (ord : AdmissibleOrder G) (sys : RewritingSystem G k)
+        (_hgs : IsGrobnerShirshovBasis G k ord sys)
+        (h_deformed h_graded : HilbertFunction),
+        isFlat h_deformed h_graded) := by
+  intro h
+  have := h degLexOrder _ GsImpliesFlatRefutation.sys_isGS (fun _ => 0) (fun _ => 1) 0
+  exact absurd this (by decide)
+
+/-! ## §3  Flatness for `Dist(G)` over `Dist(H)`
+
+The former theorem `dist_flat_deformation` restated `gs_implies_flat`
+verbatim (same hypotheses, same conclusion) and is removed with it
+(2026-11-15). The `Dist(G)` statement ([fred2005, Theorem 3.15]) needs the
+Hilbert functions of `Dist(G)` and `Dist(H)`, defined from their relations;
+open in Lean. -/
 
 /-! ## §4  Basis Preservation under Deformation -/
 
@@ -148,7 +155,7 @@ theorem dist_flat_deformation
     Reference: Bergman 1978, §5 (filtered deformations preserve
     the leading-term ideal). -/
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 §5 (filtered deformations preserve the leading-term ideal / normal forms)
-axiom normal_forms_preserved
+theorem normal_forms_preserved
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys_deformed sys_graded : RewritingSystem G k)
@@ -162,6 +169,21 @@ axiom normal_forms_preserved
         (sys_graded.rules[i]'hi_g).nonzero)
     (h_same_length : sys_deformed.rules.length = sys_graded.rules.length)
     (f : AlgElement G k) :
-    isNormalForm ord sys_deformed f ↔ isNormalForm ord sys_graded f
+    isNormalForm ord sys_deformed f ↔ isNormalForm ord sys_graded f := by
+  -- Was an axiom; proved 2026-11-15: `isNormalForm` only looks at the
+  -- leading monomials of the rules, and these agree index by index.
+  constructor
+  · intro h r hr m hm hsub
+    obtain ⟨i, hi, rfl⟩ := List.getElem_of_mem hr
+    have hi' : i < sys_deformed.rules.length := h_same_length ▸ hi
+    refine h _ (List.getElem_mem hi') m hm ?_
+    show leadingMonomial ord _ _ <:+: m
+    rw [h_same_lm i hi' hi]; exact hsub
+  · intro h r hr m hm hsub
+    obtain ⟨i, hi, rfl⟩ := List.getElem_of_mem hr
+    have hi' : i < sys_graded.rules.length := h_same_length ▸ hi
+    refine h _ (List.getElem_mem hi') m hm ?_
+    show leadingMonomial ord _ _ <:+: m
+    rw [← h_same_lm i hi hi']; exact hsub
 
 end UGB.GrobnerShirshov

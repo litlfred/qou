@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T17:59:18.559735+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:21:58.456537+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [
     {
       "name": "preflight_det_closed_forms_verified",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "deltalambda-icosahedral-smatrix-magnitude",
   "scriptFile": "deltalambda_icosahedral_smatrix_magnitude_probe.py",
-  "scriptHash": "9c54aef2544f",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "6d464e6605c6",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,14 +53,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -79,8 +80,8 @@
     "data_ratios_AME2020": {
       "rho_4": "12.719896",
       "rho_3He": "3.4695311",
-      "rho_3H": "3.8128675",
-      "mirror_3H_over_3He": "1.0989576"
+      "rho_3H": "3.8128658",
+      "mirror_3H_over_3He": "1.0989571"
     },
     "candidates": {
       "ceiling_1_over_sqrt5": {
@@ -197,10 +198,10 @@
       "rho_4_AME": "12.719896",
       "rho_4_rel_err": 0.00394,
       "mirror_model": "2.4223233",
-      "mirror_AME": "1.0989576",
+      "mirror_AME": "1.0989571",
       "mirror_rel_err": 1.2042,
       "rho_3H_model": "5.9767518",
-      "rho_3H_AME": "3.8128675",
+      "rho_3H_AME": "3.8128658",
       "rho_3H_rel_err": 0.56752
     },
     "small_m_structural_limits": {

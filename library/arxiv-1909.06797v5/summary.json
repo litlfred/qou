@@ -3,16 +3,21 @@
  "doc_id": "arxiv-1909.06797v5",
  "source_sha256": "87095d7e46ebe286",
  "brief": "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov.",
- "extended": "**Quantum Mechanics of Plancherel Growth**\n\n*Arghya Chattopadhyaya,b, Suvankar Duttac, Debangshu Mukherjeec,d, Neetuc*\n\n34 pp, 12 sections.\n\n**Abstract.** Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov. Using the technology of unitary matrix model we show that such growth process is exactly same as the growth of gap-less phase in Gross-Witten and Wadia (GWW) model. The limit shape of asymptotic Young diagrams corresponds to GWW transition point. Our analysis also o ﬀers an alternate proof of limit shape theorem of Vershik-Kerov and Logan-Shepp. Using the connection between unitary matrix model and free Fermi droplet description, we map the Young diagrams in automodel class to diﬀerent shapes of two dimensional phase space droplets. Quantising these droplets we further set up a correspondence between automodel diagrams and coherent states in the Hilbert space. Thus growth of Young diagrams are mapped to evolution of coherent states in the Hilbert space.\n\n**Outline.** 1 Introduction; 2 Review 1 : Droplet description of unitary ma; 2.1 The large N droplets; 3.1 The Universal Diagram and Automodel; 3.2 Fluctuations of automodel diagrams; 4.1 A connection between Young lattice and Gro; 5 Large N analysis of partition function : an ; 5.1 Large N solutions and automodel diagrams; 5.2 A connection with automodel; 6 The Hilbert space for Plancherel growth; 6.1 Droplet quantisation; 7 Conclusion",
+ "extended": "**Quantum Mechanics of Plancherel Growth**\n\n*Arghya Chattopadhyaya,b, Suvankar Duttac, Debangshu Mukherjeec,d, Neetuc*\n\n34 pp, 21 sections.\n\n**Abstract.** Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov. Using the technology of unitary matrix model we show that such growth process is exactly same as the growth of gap-less phase in Gross-Witten and Wadia (GWW) model. The limit shape of asymptotic Young diagrams corresponds to GWW transition point. Our analysis also oﬀers an alternate proof of limit shape theorem of Vershik-Kerov and Logan-Shepp. Using the connection between unitary matrix model and free Fermi droplet description, we map the Young diagrams in automodel class to diﬀerent shapes of two dimensional phase space droplets. Quantising these droplets we further set up a correspondence between automodel diagrams and coherent states in the Hilbert space. Thus growth of Young diagrams are mapped to evolution of coherent states in the Hilbert space.\n\n**Outline.** Front matter; 1 Introduction; 2 Review 1 : Droplet description of unitary ma; 2.1 The large N droplets; 3 Review 2 : Plancherel Growth of Young diagra; 3.1 The Universal Diagram and Automodel; 3.2 Fluctuations of automodel diagrams; 4 Partition Function for Young lattice; 4.1 A connection between Young lattice and Gro; 5 Large N analysis of partition function : an ; 5.1 Large N solutions and automodel diagrams; 5.2 A connection with automodel; 6 The Hilbert space for Plancherel growth; 6.1 Droplet quantisation; 7 Conclusion; Appendix A Analysing Unitary Matrix Models; Appendix A.1 Eigenvalue analysis; Appendix A.2 Young diagram analysis",
  "tokens": {
   "brief": 35,
-  "extended": 365
+  "extended": 419
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-5"
+   "pages": "2-5"
   },
   {
    "id": "sec-001-2-review-1-droplet-description-of-unitary-matrix",
@@ -22,52 +27,92 @@
   {
    "id": "sec-002-21-the-large-n-droplets",
    "title": "The large N droplets",
-   "pages": "7-10"
+   "pages": "7-9"
   },
   {
-   "id": "sec-003-31-the-universal-diagram-and-automodel",
+   "id": "sec-003-3-review-2-plancherel-growth-of-young-diagrams",
+   "title": "Review 2 : Plancherel Growth of Young diagrams",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-31-the-universal-diagram-and-automodel",
    "title": "The Universal Diagram and Automodel",
    "pages": "10-12"
   },
   {
-   "id": "sec-004-32-fluctuations-of-automodel-diagrams",
+   "id": "sec-005-32-fluctuations-of-automodel-diagrams",
    "title": "Fluctuations of automodel diagrams",
    "pages": "12-13"
   },
   {
-   "id": "sec-005-41-a-connection-between-young-lattice-and-gross",
+   "id": "sec-006-4-partition-function-for-young-lattice",
+   "title": "Partition Function for Young lattice",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-007-41-a-connection-between-young-lattice-and-gross",
    "title": "A connection between Young lattice and Gross-Witten-Wadia model",
    "pages": "13-15"
   },
   {
-   "id": "sec-006-5-large-n-analysis-of-partition-function-an-alte",
+   "id": "sec-008-5-large-n-analysis-of-partition-function-an-alte",
    "title": "Large N analysis of partition function : an alternate proof of the limit shape theorem",
    "pages": "15-16"
   },
   {
-   "id": "sec-007-51-large-n-solutions-and-automodel-diagrams",
+   "id": "sec-009-51-large-n-solutions-and-automodel-diagrams",
    "title": "Large N solutions and automodel diagrams",
    "pages": "16-18"
   },
   {
-   "id": "sec-008-52-a-connection-with-automodel",
+   "id": "sec-010-52-a-connection-with-automodel",
    "title": "A connection with automodel",
    "pages": "18-19"
   },
   {
-   "id": "sec-009-6-the-hilbert-space-for-plancherel-growth",
+   "id": "sec-011-6-the-hilbert-space-for-plancherel-growth",
    "title": "The Hilbert space for Plancherel growth",
    "pages": "19-19"
   },
   {
-   "id": "sec-010-61-droplet-quantisation",
+   "id": "sec-012-61-droplet-quantisation",
    "title": "Droplet quantisation",
    "pages": "19-25"
   },
   {
-   "id": "sec-011-7-conclusion",
+   "id": "sec-013-7-conclusion",
    "title": "Conclusion",
-   "pages": "25-34"
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-014-appendix-a-analysing-unitary-matrix-models",
+   "title": "Appendix A Analysing Unitary Matrix Models",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-015-appendix-a1-eigenvalue-analysis",
+   "title": "Appendix A.1 Eigenvalue analysis",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-016-appendix-a2-young-diagram-analysis",
+   "title": "Appendix A.2 Young diagram analysis",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-017-appendix-a3-finding-the-connection-between-two-p",
+   "title": "Appendix A.3 Finding the connection between two pictures",
+   "pages": "28-30"
+  },
+  {
+   "id": "sec-018-appendix-b-spectral-curve",
+   "title": "Appendix B Spectral curve",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-019-appendix-c-asymmetric-solutions",
+   "title": "Appendix C Asymmetric solutions",
+   "pages": "31-34"
   }
  ],
  "provenance": {

@@ -1,0 +1,73 @@
+184 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+and by induction we can prove the Leibniz rule
+
+k
+
+Un Wa) = > (‘) (Liv) (Uva)
+i=0
+
+with Ley = Le (i 'W) and Ley = w, justifying the name of Lie derivative. In addition, given two vector fields f and g, then
+
+Oy Lg + gL g = Loi traxg,
+[Le, Lg] = Ip Lg — Lg lp = Ln,
+
+where h is another vector field corresponding to the Lie bracket of the vector fields f and g, denoted by h = (f, g), whose
+components are
+
+“(08 afi
+
+h; = (f, = [gi — Lg fi = —-g—). 156
+
+i= (Eg): = Legi — Lgl 2 (55, si) (156)
+Moreover, from (151) and (153) (replacing F with g) we can write
+
+d d
+
+Gr? Io) = F-8(H" (Xo) = (Les) (H" (Xo) = PLL ](%0).
+Particularizing to the function g(x) = Id;(x) = x;, we get
+
+d t t 7
+
+ae? Ud) = PL lidl(y), j= 1,....m Y= Xo
+or, in short,
+
+d t t
+
+—P' = P'ley, Y=Xo, (157)
+
+dt
+ie., a linear differential equation for the operator ©‘. Notice that, as expected, Eq. (157) admits as formal solution
+
+&' =exp(tlay)), y= Xo- (158)
+We can follow the same steps for the non-autonomous equation
+
+x = f(t, x), (159)
+where, now, the operational equation to be solved is
+
+d t t
+
+a? =P ley, Y=Xo- (160)
+
+To simplify notation, from now on we consider Xo as a set of coordinates such that f(t, xo) is a differentiable function of Xo.
+Since Ls is a linear operator, we can then directly use the Magnus series expansion to obtain the formal solution of (160) as
+' = exp(Lwitx,)), With w = >, w;. The first two terms are now
+
+t
+wictsxa) =f f(s, Xo)ds
+0
+
+1 t $1
+W2(t, Xo) = -/ as, [ ds (f(s1, Xo), f(S2, Xo)). (161)
+0 0
+
+Observe that the sign of wz is changed when compared with £22 in (43), and the integrals only affect the explicit time-
+dependent part of the vector field. In general, due to the structure of Eqs. (30) and (160), the expression for w,(t, Xo) can be
+obtained from the corresponding 2,,(t) in the linear case by applying the following rules:
+
+(1) replace A(t)) by f(t), Xo);
+(2) replace the commutator [-, -] by the Lie bracket (156);
+(3) change the sign in w,(t, Xo) for even n.
+
+Once wi"! = a w;(t, Xo) is computed, it still remains to evaluate the action of the Lie transform exp(Lyw(r,x9)) on the
+initial conditions xo. At time t = T, this can be seen as the 1-flow solution of the autonomous differential equation

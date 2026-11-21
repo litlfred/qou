@@ -8,7 +8,7 @@
   "pages": 42,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -634,8 +634,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 6,
-   "n_chars": 13782,
-   "n_words": 2489,
+   "n_chars": 13777,
+   "n_words": 2488,
    "label_start": "1853",
    "label_end": "1858"
   },
@@ -658,8 +658,8 @@
    "level": 1,
    "page_start": 11,
    "page_end": 18,
-   "n_chars": 12007,
-   "n_words": 2683,
+   "n_chars": 12002,
+   "n_words": 2681,
    "label_start": "1863",
    "label_end": "1870"
   },
@@ -669,22 +669,22 @@
    "title": ", N AB f h)",
    "level": 1,
    "page_start": 18,
-   "page_end": 20,
-   "n_chars": 3882,
-   "n_words": 790,
+   "page_end": 21,
+   "n_chars": 4338,
+   "n_words": 868,
    "label_start": "1870",
-   "label_end": "1872"
+   "label_end": "1873"
   },
   {
    "id": "sec-004-4-upper-bounds-for-moments",
    "number": "4",
    "title": "Upper bounds for moments",
    "level": 1,
-   "page_start": 20,
+   "page_start": 21,
    "page_end": 29,
-   "n_chars": 12788,
-   "n_words": 2904,
-   "label_start": "1872",
+   "n_chars": 12403,
+   "n_words": 2841,
+   "label_start": "1873",
    "label_end": "1881"
   },
   {
@@ -811,6 +811,7 @@
    "items": []
   },
   "sections": 15,
-  "chars_total": 71395
+  "chars_total": 71456,
+  "furniture_lines_stripped": 3
  }
 }

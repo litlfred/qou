@@ -2,17 +2,22 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2104.14491v1",
  "source_sha256": "1aea658f17283df1",
- "brief": "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia",
- "extended": "**Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia**\n\n20 pp, 27 sections.\n\n**Abstract.** We compute explicitly the Khovanov polynomials (using the computer program from katlas.org) for the two simplest families of the satellite knots, which are the twisted Whitehead doubles and the two- strand cables. We ﬁnd that a quantum group decomposition for the HOMFLY polynomial of a satellite knot can be extended to the Khovanov polynomial, whose quantum group properties are not manifest. Namely, the Khovanov polynomial of a twisted Whitehead double or two-strand cable (the two simplest satellite families) can be presented as a naively deformed linear combination of the pattern and companion invariants. For a given companion, the satellite polynomial “smoothly” depends on the pattern but for the “jump” at one critical point deﬁned by the s-invariant of the companion knot. A similar phenomenon is known for the knot Floer homology and τ-invariant for the same kind of satellites\n\n**Outline.** 1 Introduction; 2 The knots we study and the questions we ask; 2.1 Coloured decompositions for the simplest s; 2.2 The pattern decomposition; 2.3 How to get the satellite class from a knot; 2.4 Summary of Jones formulae; 3 Khovanov-evolution formulae for satellite fa; 3.1 Preliminaries; 3.2 Positive pattern-companion decompositions; 3.3 False adjoint Khovanov polynomials; 4 Explicit form of the pattern and companion i; 4.2 AAK for the simplest prime knots; 4.3 AAK for the two-strand torus knots; 4.3.1 General formulae; 4.3.2 Reduced vs unreduced polynomials; 4.3.3 Mirror symmetry; 4.4 AAK for the twist knots; 4.4.2 Why there is no mirror symmetry?",
+ "brief": "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia",
+ "extended": "**Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia**\n\n20 pp, 32 sections.\n\n**Abstract.** We compute explicitly the Khovanov polynomials (using the computer program from katlas.org) for the two simplest families of the satellite knots, which are the twisted Whitehead doubles and the two- strand cables. We ﬁnd that a quantum group decomposition for the HOMFLY polynomial of a satellite knot can be extended to the Khovanov polynomial, whose quantum group properties are not manifest. Namely, the Khovanov polynomial of a twisted Whitehead double or two-strand cable (the two simplest satellite families) can be presented as a naively deformed linear combination of the pattern and companion invariants. For a given companion, the satellite polynomial “smoothly” depends on the pattern but for the “jump” at one critical point deﬁned by the s-invariant of the companion knot. A similar phenomenon is known for the knot Floer homology and τ-invariant for the same kind of satellites\n\n**Outline.** Front matter; 1 Introduction; 2 The knots we study and the questions we ask; 2.1 Coloured decompositions for the simplest s; 2.2 The pattern decomposition; 2.3 How to get the satellite class from a knot; 2.4 Summary of Jones formulae; 3 Khovanov-evolution formulae for satellite fa; 3.1 Preliminaries; 3.2 Positive pattern-companion decompositions; 3.3 False adjoint Khovanov polynomials; 4 Explicit form of the pattern and companion i; 4.1 The pattern-defining polynomial; 4.2 AAK for the simplest prime knots; 4.3 AAK for the two-strand torus knots; 4.3.1 General formulae; 4.3.2 Reduced vs unreduced polynomials; 4.3.3 Mirror symmetry",
  "tokens": {
   "brief": 49,
-  "extended": 450
+  "extended": 445
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-001-2-the-knots-we-study-and-the-questions-we-ask",
@@ -62,85 +67,105 @@
   {
    "id": "sec-010-4-explicit-form-of-the-pattern-and-companion-inv",
    "title": "Explicit form of the pattern and companion invariants",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-011-41-the-pattern-defining-polynomial",
+   "title": "The pattern-defining polynomial",
    "pages": "8-9"
   },
   {
-   "id": "sec-011-42-aak-for-the-simplest-prime-knots",
+   "id": "sec-012-42-aak-for-the-simplest-prime-knots",
    "title": "AAK for the simplest prime knots",
    "pages": "9-9"
   },
   {
-   "id": "sec-012-43-aak-for-the-two-strand-torus-knots",
+   "id": "sec-013-43-aak-for-the-two-strand-torus-knots",
    "title": "AAK for the two-strand torus knots",
    "pages": "9-10"
   },
   {
-   "id": "sec-013-431-general-formulae",
+   "id": "sec-014-431-general-formulae",
    "title": "General formulae",
    "pages": "10-10"
   },
   {
-   "id": "sec-014-432-reduced-vs-unreduced-polynomials",
+   "id": "sec-015-432-reduced-vs-unreduced-polynomials",
    "title": "Reduced vs unreduced polynomials",
    "pages": "10-10"
   },
   {
-   "id": "sec-015-433-mirror-symmetry",
+   "id": "sec-016-433-mirror-symmetry",
    "title": "Mirror symmetry",
    "pages": "10-10"
   },
   {
-   "id": "sec-016-44-aak-for-the-twist-knots",
+   "id": "sec-017-44-aak-for-the-twist-knots",
    "title": "AAK for the twist knots",
    "pages": "10-11"
   },
   {
-   "id": "sec-017-442-why-there-is-no-mirror-symmetry",
+   "id": "sec-018-441-general-formulae",
+   "title": "General formulae",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-019-442-why-there-is-no-mirror-symmetry",
    "title": "Why there is no mirror symmetry?",
    "pages": "11-11"
   },
   {
-   "id": "sec-018-45-double-evolution-phase-diagrams",
+   "id": "sec-020-45-double-evolution-phase-diagrams",
    "title": "Double-evolution phase diagrams",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-021-5-eigenvalue-expressions-polynomiality-and-posit",
+   "title": "Eigenvalue expressions, polynomiality and positivity",
    "pages": "11-12"
   },
   {
-   "id": "sec-019-6-possible-applications-and-further-development",
+   "id": "sec-022-6-possible-applications-and-further-development",
    "title": "Possible applications and further development",
-   "pages": "12-17"
+   "pages": "12-16"
   },
   {
-   "id": "sec-020-b-first-symmetric-polynomials-for-the-simplest-k",
+   "id": "sec-023-a-cabling-and-an-invariant-definition-of-the-m-s",
+   "title": "A Cabling and an invariant definition of the m-strand satellite",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-024-b-first-symmetric-polynomials-for-the-simplest-k",
    "title": "B First symmetric polynomials for the simplest knot families",
    "pages": "17-18"
   },
   {
-   "id": "sec-021-b1-two-strand-torus-knots",
+   "id": "sec-025-b1-two-strand-torus-knots",
    "title": "B.1 Two-strand torus knots",
    "pages": "18-18"
   },
   {
-   "id": "sec-022-b2-twist-knots",
+   "id": "sec-026-b2-twist-knots",
    "title": "B.2 Twist knots",
    "pages": "18-19"
   },
   {
-   "id": "sec-023-c-technical-guidance-to-the-experimental-data",
+   "id": "sec-027-c-technical-guidance-to-the-experimental-data",
    "title": "C Technical guidance to the experimental data",
    "pages": "19-19"
   },
   {
-   "id": "sec-024-c1-simplest-knots",
+   "id": "sec-028-c1-simplest-knots",
    "title": "C.1 Simplest knots",
    "pages": "19-19"
   },
   {
-   "id": "sec-025-c2-simplest-knot-families",
+   "id": "sec-029-c2-simplest-knot-families",
    "title": "C.2 Simplest knot families",
    "pages": "19-20"
   },
   {
-   "id": "sec-026-c3-precaution",
+   "id": "sec-030-c3-precaution",
    "title": "C.3 Precaution",
    "pages": "20-20"
   }

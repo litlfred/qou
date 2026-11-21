@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2412.04241v2
-doc_title: "THE HABIRO RING OF A NUMBER FIELD"
+doc_title: "The Habiro ring of a number field"
 section_id: sec-011-21-the-infinite-pochhammer-symbol
 section_title: "The infinite Pochhammer symbol"
 section_number: 2.1
 pages: 18-20
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
-doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.926
-latex_coverage_ratio: 0.88
+latex_coverage_ratio: 0.91
+doc_brief: "The Habiro ring of a number field — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 \label{sub.poch}
 

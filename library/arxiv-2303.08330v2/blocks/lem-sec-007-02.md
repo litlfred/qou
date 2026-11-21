@@ -1,0 +1,1 @@
+The Alexander polynomial of C(13,3)(41) is given by ∆ C(13, 3)(41)(x) = ∆ 41(x3)∆ T(3, 13)(x) =−t15− 1 t15 + t14 + 1 t14 + 2t12 + 2 t12− 2t11− 2 t11 + t9 + 1 t9− t8− 1 t8 + t6 + 1 t6 − t5− 1 t5 + t3 + 1 t3− 2t2− 2 t2 + t + 1 t + 1

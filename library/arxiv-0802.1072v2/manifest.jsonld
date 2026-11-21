@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0802.1072v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0802.1072v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0802.1072v2",
+  "title": "A note on closed 3-braids ∗",
   "contains": [
+    "library/arxiv-0802.1072v2/sections/sec-front-matter",
     "library/arxiv-0802.1072v2/sections/sec-000",
     "library/arxiv-0802.1072v2/sections/sec-001",
     "library/arxiv-0802.1072v2/sections/sec-002",
@@ -20,7 +21,7 @@
     "library/arxiv-0802.1072v2/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -30,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0802.1072v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0802.1072v2.pdf",
     "source_sha256": "6f4d93f0b7ba5cd72c25ce3f0f068d6c4baa1173c29794007b654ddfc9963b1b",
     "pages": 14,

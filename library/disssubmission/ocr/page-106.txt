@@ -1,0 +1,41 @@
+98 Chapter 5 — A family of surfaces
+
+the top power @8~? under the degree map degy : H8~?(Y,Q) —+ Q. To
+achieve this recall that Y is the intersection of two general translates of the
+theta divisor. Since the intersection of cycles corresponds to the cup product
+on cohomology, it follows that the fundamental class of Y is the cup product
+square [Y] = [O]* € H*(X,Q). Hence
+
+degy(@%*) = degy([@)**-[Y]) = degy([®]*) = g!
+where the last equality holds by the Poincaré formula [13, sect. 11.2.1]. As
+
+a direct application we have the following
+
+COROLLARY 5.6. For g > 2 the topological Euler characteristic of Y is
+given by the formula
+
+XY) = (-DF-(g—1)-g!.
+
+Proof. By the Gauss-Bonnet theorem [48, p. 416] the topological Euler
+characteristic of any compact complex manifold is equal to the degree of its
+top Chern class. Hence 7(Y) = degy(cg—2(Y)), and the claim follows from
+lemma 5.5 and from the above formula for the degree degy (08-7). Oo
+
+To get a feeling for the geometry involved in the above constructions,
+let us take a more explicit look at the situation for some small values of the
+dimension g = dim(X) of the underlying ppav.
+
+The case g = 2. Here Y consists of two points which are interchanged
+by the involution o so that we have the following picture.
+
+The fundamental classes p,q of the two interchanged points of Y form a
+basis of H°(Y,Q), and the eigenspace
+
+H°(Y,Q)* = Q-(pt+q) = H°(X,Q)
+
+equals the image of the weak Lefschetz embedding. Thus V; = 0, and the
+Hodge structure V_ = Q- (p —q) of weight zero has rank one.
+
+The case g = 3. In this case the morphism Y —> Y* is an étale double
+covering of smooth projective curves. To any such covering one can attach
+its Prym variety [79] [13, ch. 12]. Before we come to the specific example

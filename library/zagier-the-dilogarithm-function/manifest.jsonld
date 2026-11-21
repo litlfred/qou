@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -22,10 +22,12 @@
     "library/zagier-the-dilogarithm-function/sections/sec-007",
     "library/zagier-the-dilogarithm-function/sections/sec-008",
     "library/zagier-the-dilogarithm-function/sections/sec-009",
-    "library/zagier-the-dilogarithm-function/sections/sec-010"
+    "library/zagier-the-dilogarithm-function/sections/sec-010",
+    "library/zagier-the-dilogarithm-function/sections/sec-011",
+    "library/zagier-the-dilogarithm-function/sections/sec-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "zagier-the-dilogarithm-function",
     "title_source": "corroborated",

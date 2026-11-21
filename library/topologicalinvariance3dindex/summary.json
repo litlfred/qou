@@ -3,119 +3,179 @@
  "doc_id": "topologicalinvariance3dindex",
  "source_sha256": "22953b4eee66dca2",
  "brief": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of",
- "extended": "**1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD**\n\n*STA VROS GAROUF ALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN*\n\n60 pp, 22 sections.\n\n**Abstract.** In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of q-series with integer coe cients, intro- duced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic 3-manifolds. To achieve our goal we show that (a) T admits an index structure if and only if T is 1-e cient and (b) if M is hyperbolic, it has a canonical set of 1-e cient ideal triangu- lations related by 2-3 and 0-2 moves which preserve the 3D index. We illustrate our results with several examples.\n\n**Outline.** 1 Introduction; 1.1 The 3D index of Dimofte-Gaiotto-Gukov; 1.3 Regular ideal triangulations and topologic; 1.4 Plan of the paper; 2 Definitions; 4 A review of the index of an ideal triangulat; 4.1 The tetrahedron index and its properties; 4.2 The degree of the tetrahedron index; 4.3 Angle structure equations; 4.4 Peripheral equations; 4.5 The index of an ideal triangulation; 4.6 Choice of edges in the summation for index; 4.8 Invariance of index under isotopy of perip; 6.2 Regular triangulations; 7 Computations; 7.2 The index of the 41 knot complement; 7.3 The index of the sister of the 41 knot com; 7.4 The index of the 52 knot complement\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: An ideal triangulation T of an oriented 3-manifold with cusps admits an\n- Theorem 1.5: Let T be an ideal triangulation of an oriented atoroidal 3\u0015manifold with at\n- Theorem: s 1.1(a) and 1.2. We show that any two of these triangulations are related to each\n- Theorem 1.8: If M is a cusped hyperbolic 3-manifold, and T∈ XEP\n- Theorem 1.9: Fix a cusped hyperbolic 3-manifold M .\n- Theorem 4.7: below shows that the index is unchanged by an isotopy of ϖ so only depends",
+ "extended": "**1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD**\n\n*STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN*\n\n60 pp, 34 sections.\n\n**Abstract.** In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of q-series with integer coe cients, intro- duced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic 3-manifolds. To achieve our goal we show that (a) T admits an index structure if and only if T is 1-e cient and (b) if M is hyperbolic, it has a canonical set of 1-e cient ideal triangu- lations related by 2-3 and 0-2 moves which preserve the 3D index. We illustrate our results with several examples.\n\n**Outline.** Front matter; 1 Introduction; 1.1 The 3D index of Dimofte-Gaiotto-Gukov; 1.2 Index structures and 1-efficiency; 1.3 Regular ideal triangulations and topologic; 1.4 Plan of the paper; 2 Definitions; 3 Index structures and 1--efficiency; 4 A review of the index of an ideal triangulat; 4.1 The tetrahedron index and its properties; 4.2 The degree of the tetrahedron index; 4.3 Angle structure equations; 4.4 Peripheral equations; 4.5 The index of an ideal triangulation; 4.6 Choice of edges in the summation for index; 4.7 A reformulation of the definition of the i; 4.8 Invariance of index under isotopy of perip; 5 Invariance of index under the 0--2 move",
  "tokens": {
   "brief": 49,
-  "extended": 481
+  "extended": 350
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-001-11-the-3d-index-of-dimofte-gaiotto-gukov",
    "title": "The 3D index of Dimofte-Gaiotto-Gukov",
-   "pages": "1-4"
+   "pages": "2-3"
   },
   {
-   "id": "sec-002-13-regular-ideal-triangulations-and-topological",
+   "id": "sec-002-12-index-structures-and-1-efficiency",
+   "title": "Index structures and 1-efficiency",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-13-regular-ideal-triangulations-and-topological",
    "title": "Regular ideal triangulations and topological invariance",
    "pages": "4-5"
   },
   {
-   "id": "sec-003-14-plan-of-the-paper",
+   "id": "sec-004-14-plan-of-the-paper",
    "title": "Plan of the paper",
    "pages": "5-6"
   },
   {
-   "id": "sec-004-2-definitions",
+   "id": "sec-005-2-definitions",
    "title": "Definitions",
-   "pages": "6-16"
+   "pages": "6-9"
   },
   {
-   "id": "sec-005-4-a-review-of-the-index-of-an-ideal-triangulatio",
+   "id": "sec-006-3-index-structures-and-1--efficiency",
+   "title": "Index structures and 1--efficiency",
+   "pages": "9-16"
+  },
+  {
+   "id": "sec-007-4-a-review-of-the-index-of-an-ideal-triangulatio",
    "title": "A review of the index of an ideal triangulation",
    "pages": "16-16"
   },
   {
-   "id": "sec-006-41-the-tetrahedron-index-and-its-properties",
+   "id": "sec-008-41-the-tetrahedron-index-and-its-properties",
    "title": "The tetrahedron index and its properties",
    "pages": "16-17"
   },
   {
-   "id": "sec-007-42-the-degree-of-the-tetrahedron-index",
+   "id": "sec-009-42-the-degree-of-the-tetrahedron-index",
    "title": "The degree of the tetrahedron index",
    "pages": "17-17"
   },
   {
-   "id": "sec-008-43-angle-structure-equations",
+   "id": "sec-010-43-angle-structure-equations",
    "title": "Angle structure equations",
    "pages": "17-18"
   },
   {
-   "id": "sec-009-44-peripheral-equations",
+   "id": "sec-011-44-peripheral-equations",
    "title": "Peripheral equations",
    "pages": "18-19"
   },
   {
-   "id": "sec-010-45-the-index-of-an-ideal-triangulation",
+   "id": "sec-012-45-the-index-of-an-ideal-triangulation",
    "title": "The index of an ideal triangulation",
    "pages": "19-20"
   },
   {
-   "id": "sec-011-46-choice-of-edges-in-the-summation-for-index",
+   "id": "sec-013-46-choice-of-edges-in-the-summation-for-index",
    "title": "Choice of edges in the summation for index",
-   "pages": "20-26"
+   "pages": "20-24"
   },
   {
-   "id": "sec-012-48-invariance-of-index-under-isotopy-of-peripher",
+   "id": "sec-014-47-a-reformulation-of-the-definition-of-the-inde",
+   "title": "A reformulation of the definition of the index",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-015-48-invariance-of-index-under-isotopy-of-peripher",
    "title": "Invariance of index under isotopy of peripheral curve",
-   "pages": "26-34"
+   "pages": "26-29"
   },
   {
-   "id": "sec-013-62-regular-triangulations",
+   "id": "sec-016-5-invariance-of-index-under-the-0--2-move",
+   "title": "Invariance of index under the 0--2 move",
+   "pages": "29-32"
+  },
+  {
+   "id": "sec-017-6-the-xmep-class-of-triangulations",
+   "title": "The XMEP class of triangulations",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-018-61-subdivisions-of-the-epstein--penner-decomposi",
+   "title": "Subdivisions of the Epstein--Penner decomposition",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-019-62-regular-triangulations",
    "title": "Regular triangulations",
-   "pages": "34-43"
+   "pages": "34-39"
   },
   {
-   "id": "sec-014-7-computations",
+   "id": "sec-020-63-interpreting-flip-moves-using-2--3-moves",
+   "title": "Interpreting flip moves using 2--3 moves",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-021-64-moving-paths-in-the-1--skeleton-of-the-associ",
+   "title": "Moving paths in the 1--skeleton of the associahedron using 2--3 and 0--2 moves",
+   "pages": "40-43"
+  },
+  {
+   "id": "sec-022-7-computations",
    "title": "Computations",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-023-71-how-to-compute-the-coefficients-of-a-q-series",
+   "title": "How to compute the coefficients of a q-series",
    "pages": "43-44"
   },
   {
-   "id": "sec-015-72-the-index-of-the-41-knot-complement",
+   "id": "sec-024-72-the-index-of-the-41-knot-complement",
    "title": "The index of the 41 knot complement",
    "pages": "44-45"
   },
   {
-   "id": "sec-016-73-the-index-of-the-sister-of-the-41-knot-comple",
+   "id": "sec-025-73-the-index-of-the-sister-of-the-41-knot-comple",
    "title": "The index of the sister of the 41 knot complement",
    "pages": "45-45"
   },
   {
-   "id": "sec-017-74-the-index-of-the-52-knot-complement",
+   "id": "sec-026-74-the-index-of-the-52-knot-complement",
    "title": "The index of the 52 knot complement",
-   "pages": "45-48"
+   "pages": "45-47"
   },
   {
-   "id": "sec-018-76-the-index-of-the-61-knot-complement",
+   "id": "sec-027-75-the-index-of-the--237-pretzel-knot-complement",
+   "title": "The index of the (-2,3,7) pretzel knot complement",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-028-76-the-index-of-the-61-knot-complement",
    "title": "The index of the 61 knot complement",
    "pages": "48-49"
   },
   {
-   "id": "sec-019-77-the-index-of-the-72-knot-complement",
+   "id": "sec-029-77-the-index-of-the-72-knot-complement",
    "title": "The index of the 72 knot complement",
    "pages": "49-51"
   },
   {
-   "id": "sec-020-78-acknowledgments",
+   "id": "sec-030-78-acknowledgments",
    "title": "Acknowledgments",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-031-appendix-a-the-2--3-move",
+   "title": "Appendix A. The 2--3 move",
    "pages": "51-57"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-032-references",
    "title": "References",
    "pages": "57-60"
   }
@@ -124,8 +184,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

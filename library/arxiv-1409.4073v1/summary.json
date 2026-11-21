@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1409.4073v1",
  "source_sha256": "b40be7f0022f70a1",
- "brief": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves",
- "extended": "**SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI**\n\n35 pp, 8 sections.\n\n**Abstract.** W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves (of algeb ras) of stacks. They generalize the homogeneous sheaﬁﬁcation of graded modules for projective schemes and have applications in the theory of non-abelian Galois covers and of Cox rings an d homogeneous sheaﬁﬁcation functors. Moreover, using this theory, we prove a non-neutr al form of Tannaka’s reconstruction, extending the classical correspondence between torsors an d strong monoidal functors.\n\n**Outline.** Introduction; Notation; Acknowledgements; 2 Sheafification functors.; 3 Yoneda embeddings.; 4 Group schemes and representations.; 5 Tannaka reconstruction for stacks with the r; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: Let X be a quasi-compact stack over R for the fpqc topology with quasi-\n- Theorem: [5.7] Let X be a quasi-compact category ﬁbered in groupoids over R admitting a\n- Theorem: Let X be a pseudo-algebraic category ﬁbered in groupoids over R and\n- Theorem: Let X be a pseudo-algebraic category ﬁbered in groupoids over R and\n- Theorem: Let X be a pseudo-algebraic category ﬁbered in groupoids over R\n- Theorem 3.8: Let DA be the subcategory of QCohA X of sheaves G such that δG : FΩ G, C − → G",
+ "brief": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION — We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of",
+ "extended": "**SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION**\n\n*FABIO TONINI*\n\n35 pp, 12 sections.\n\n**Abstract.** We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of stacks. They generalize the homogeneous sheaﬁﬁcation of graded modules for projective schemes and have applications in the theory of non-abelian Galois covers and of Cox rings and homogeneous sheaﬁﬁcation functors. Moreover, using this theory, we prove a non-neutral form of Tannaka’s reconstruction, extending the classical correspondence between torsors and strong monoidal functors.\n\n**Outline.** Front matter; Introduction; Notation; Acknowledgements; 1 Preliminaries on sheaves and fibered categor; 2 Sheafification functors.; 2.1 Sheafifying R-linear functors.; 2.2 Sheafifying R-linear monoidal functors.; 3 Yoneda embeddings.; 4 Group schemes and representations.; 5 Tannaka reconstruction for stacks with the r; References",
  "tokens": {
   "brief": 49,
-  "extended": 348
+  "extended": 246
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -22,30 +27,45 @@
   {
    "id": "sec-002-acknowledgements",
    "title": "Acknowledgements",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-003-1-preliminaries-on-sheaves-and-fibered-categorie",
+   "title": "Preliminaries on sheaves and fibered categories",
    "pages": "5-9"
   },
   {
-   "id": "sec-003-2-sheafification-functors",
+   "id": "sec-004-2-sheafification-functors",
    "title": "Sheafification functors.",
-   "pages": "9-16"
+   "pages": "9-10"
   },
   {
-   "id": "sec-004-3-yoneda-embeddings",
+   "id": "sec-005-21-sheafifying-r-linear-functors",
+   "title": "Sheafifying R-linear functors.",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-006-22-sheafifying-r-linear-monoidal-functors",
+   "title": "Sheafifying R-linear monoidal functors.",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-007-3-yoneda-embeddings",
    "title": "Yoneda embeddings.",
    "pages": "16-26"
   },
   {
-   "id": "sec-005-4-group-schemes-and-representations",
+   "id": "sec-008-4-group-schemes-and-representations",
    "title": "Group schemes and representations.",
    "pages": "26-27"
   },
   {
-   "id": "sec-006-5-tannaka-reconstruction-for-stacks-with-the-res",
+   "id": "sec-009-5-tannaka-reconstruction-for-stacks-with-the-res",
    "title": "Tannaka reconstruction for stacks with the resolution property.",
    "pages": "27-35"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-010-references",
    "title": "References",
    "pages": "35-35"
   }
@@ -54,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

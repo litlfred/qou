@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Conclusion",
-  "pageStart": 10,
-  "pageEnd": 11,
+  "title": "Numerical results",
+  "pageStart": 7,
+  "pageEnd": 10,
   "contains": [
-    "library/arxiv-1007.2335v1/blocks/prose-sec-003"
+    "library/arxiv-1007.2335v1/blocks/prose-sec-003",
+    "library/arxiv-1007.2335v1/blocks/figure-img-p008-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1007.2335v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1007.2335v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1007.2335v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1007.2335v1/manifest.jsonld",
   "provenance": "ingested"
 }

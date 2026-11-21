@@ -2,17 +2,22 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1603.06017v2",
  "source_sha256": "3ff091e40573a5dd",
- "brief": "Automatic Theorem Proving in Walnut Hamoon Mousavi — 34 sections: Introduction; Basics; Words and Automata",
- "extended": "**Automatic Theorem Proving in Walnut Hamoon Mousavi**\n\n*May 27, 2021*\n\n34 pp, 34 sections.\n\n**Outline.** 1 Introduction; 2 Basics; 2.1 Words and Automata; 2.2 Number Systems; 2.3 Automatic Words; 2.4 Automata accepting Predicates; 3.3 Variables; 3.4 Operators; 3 Syntax and Semantic of Predicates in Walnut; 3.1 Alphabets; 3.2 Arithmetic and Alphabetic Constants; 3.5 Arithmetic Expressions; 3.6 Indexing Expressions and Their Semantic Ru; 3.9 Predicates; 3.7 Calling Expressions and Their Semantic Rul; 3.8 Relative Expressions; 4.1 Cross Product; 4.3 Complement and Reverse",
+ "brief": "Automatic Theorem Proving in Walnut — 42 sections: Front matter; Introduction; Basics",
+ "extended": "**Automatic Theorem Proving in Walnut**\n\n*Hamoon Mousavi*\n\n34 pp, 42 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Basics; 2.1 Words and Automata; 2.2 Number Systems; 2.3 Automatic Words; 2.4 Automata accepting Predicates; 3 Syntax and Semantic of Predicates in Walnut; 3.1 Alphabets; 3.2 Arithmetic and Alphabetic Constants; 3.3 Variables; 3.4 Operators; 3.5 Arithmetic Expressions; 3.6 Indexing Expressions and Their Semantic Ru; 3.7 Calling Expressions and Their Semantic Rul; 3.8 Relative Expressions; 3.9 Predicates; 4 Decision Procedure: Walnut's Implementation",
  "tokens": {
-  "brief": 26,
+  "brief": 21,
   "extended": 144
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-001-2-basics",
@@ -37,37 +42,37 @@
   {
    "id": "sec-005-24-automata-accepting-predicates",
    "title": "Automata accepting Predicates",
-   "pages": "7-8"
+   "pages": "7-9"
   },
   {
-   "id": "sec-006-33-variables",
-   "title": "Variables",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-007-34-operators",
-   "title": "Operators",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-008-3-syntax-and-semantic-of-predicates-in-walnut",
+   "id": "sec-006-3-syntax-and-semantic-of-predicates-in-walnut",
    "title": "Syntax and Semantic of Predicates in Walnut",
    "pages": "9-9"
   },
   {
-   "id": "sec-009-31-alphabets",
+   "id": "sec-007-31-alphabets",
    "title": "Alphabets",
    "pages": "9-9"
   },
   {
-   "id": "sec-010-32-arithmetic-and-alphabetic-constants",
+   "id": "sec-008-32-arithmetic-and-alphabetic-constants",
    "title": "Arithmetic and Alphabetic Constants",
    "pages": "9-9"
   },
   {
+   "id": "sec-009-33-variables",
+   "title": "Variables",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-010-34-operators",
+   "title": "Operators",
+   "pages": "9-10"
+  },
+  {
    "id": "sec-011-35-arithmetic-expressions",
    "title": "Arithmetic Expressions",
-   "pages": "9-11"
+   "pages": "10-11"
   },
   {
    "id": "sec-012-36-indexing-expressions-and-their-semantic-rules",
@@ -75,107 +80,142 @@
    "pages": "11-11"
   },
   {
-   "id": "sec-013-39-predicates",
-   "title": "Predicates",
-   "pages": "11-11"
-  },
-  {
-   "id": "sec-014-37-calling-expressions-and-their-semantic-rules",
+   "id": "sec-013-37-calling-expressions-and-their-semantic-rules",
    "title": "Calling Expressions and Their Semantic Rules",
    "pages": "11-11"
   },
   {
-   "id": "sec-015-38-relative-expressions",
+   "id": "sec-014-38-relative-expressions",
    "title": "Relative Expressions",
    "pages": "11-12"
   },
   {
-   "id": "sec-016-41-cross-product",
-   "title": "Cross Product",
-   "pages": "12-15"
+   "id": "sec-015-39-predicates",
+   "title": "Predicates",
+   "pages": "12-12"
   },
   {
-   "id": "sec-017-43-complement-and-reverse",
+   "id": "sec-016-4-decision-procedure-walnuts-implementation",
+   "title": "Decision Procedure: Walnut's Implementation",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-017-41-cross-product",
+   "title": "Cross Product",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-018-42-quantification",
+   "title": "Quantification",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-019-43-complement-and-reverse",
    "title": "Complement and Reverse",
    "pages": "15-16"
   },
   {
-   "id": "sec-018-44-arithmetic-and-comparison-operators",
+   "id": "sec-020-44-arithmetic-and-comparison-operators",
    "title": "Arithmetic and Comparison Operators",
    "pages": "16-17"
   },
   {
-   "id": "sec-019-45-calling-an-automaton",
+   "id": "sec-021-45-calling-an-automaton",
    "title": "Calling an Automaton",
    "pages": "17-18"
   },
   {
-   "id": "sec-020-46-indexing-an-automatic-word",
+   "id": "sec-022-46-indexing-an-automatic-word",
    "title": "Indexing an Automatic Word",
    "pages": "18-19"
   },
   {
-   "id": "sec-021-5-special-automata-in-walnut",
+   "id": "sec-023-5-special-automata-in-walnut",
    "title": "Special Automata in Walnut",
    "pages": "19-19"
   },
   {
-   "id": "sec-022-51-true-and-false-automata",
+   "id": "sec-024-51-true-and-false-automata",
    "title": "True and False Automata",
    "pages": "19-19"
   },
   {
-   "id": "sec-023-52-non-arithmetic-automata",
+   "id": "sec-025-52-non-arithmetic-automata",
    "title": "Non-arithmetic Automata",
    "pages": "19-20"
   },
   {
-   "id": "sec-024-6-installation",
+   "id": "sec-026-6-installation",
    "title": "Installation",
    "pages": "20-20"
   },
   {
-   "id": "sec-025-61-eclipse",
+   "id": "sec-027-61-eclipse",
    "title": "Eclipse",
    "pages": "20-20"
   },
   {
-   "id": "sec-026-7-commands",
+   "id": "sec-028-7-commands",
    "title": "Commands",
    "pages": "20-22"
   },
   {
-   "id": "sec-027-71-eval-eval-name-predicate",
+   "id": "sec-029-71-eval-eval-name-predicate",
    "title": "eval: eval <name> <predicate>",
    "pages": "22-26"
   },
   {
-   "id": "sec-028-72-def-def-name-predicate",
+   "id": "sec-030-72-def-def-name-predicate",
    "title": "def: def <name> <predicate>",
    "pages": "26-27"
   },
   {
-   "id": "sec-029-73-macro-macro-name-template",
+   "id": "sec-031-73-macro-macro-name-template",
    "title": "macro: macro <name> <template>",
    "pages": "27-29"
   },
   {
-   "id": "sec-030-74-matrices-with-eval-and-def",
+   "id": "sec-032-74-matrices-with-eval-and-def",
    "title": "Matrices with eval and def",
    "pages": "29-29"
   },
   {
-   "id": "sec-031-75-reg",
+   "id": "sec-033-75-reg",
    "title": "reg",
-   "pages": "29-32"
+   "pages": "29-31"
   },
   {
-   "id": "sec-032-8-working-with-inputoutput",
+   "id": "sec-034-76-load-load-file-name",
+   "title": "load: load <file name>",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-035-8-working-with-inputoutput",
    "title": "Working with Input/Output",
-   "pages": "32-34"
+   "pages": "32-32"
   },
   {
-   "id": "sec-033-references",
+   "id": "sec-036-81-defining-automata-in-text-files",
+   "title": "Defining Automata in Text Files",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-037-82-defining-new-automatic-words",
+   "title": "Defining New Automatic Words",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-038-83-defining-new-number-systems",
+   "title": "Defining New Number Systems",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-039-84-converting-gv-files-to-jpeg",
+   "title": "Converting .gv files to .jpeg",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-040-references",
    "title": "References",
    "pages": "34-34"
   }

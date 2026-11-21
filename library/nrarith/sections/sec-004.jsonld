@@ -13,9 +13,11 @@
   "pageStart": 15,
   "pageEnd": 19,
   "contains": [
-    "library/nrarith/blocks/prose-sec-004"
+    "library/nrarith/blocks/prose-sec-004",
+    "library/nrarith/blocks/thm-sec-004-01",
+    "library/nrarith/blocks/prop-sec-004-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/nrarith",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/nrarith",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/nrarith/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/nrarith/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -7,10 +7,11 @@
   "bytes": 253303,
   "pages": 23,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,32 @@
    "stamp_date": "6 Jan 2025"
   },
   "doi": null,
-  "title": "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner",
+  "title": "Soergel bimodules and Kazhdan-Lusztig polynomials",
   "authors_raw": "University of California, Berkeley",
   "title_lines": [
    "Soergel bimodules and Kazhdan-Lusztig",
    "polynomials",
    "ethan eugene wynner"
   ],
-  "abstract": "This paper presents an exposition of Soergel bimodules, the categ ori\ufb01cation of Hecke alge- bras, and their applications to various topics in Kazhdan-Lusztig th eory. We ultimately exposit a few of Soergel\u2019s main results, which allowed him to give alternative pro ofs, using his theory, of the Kazhdan-Lusztig conjectures. This paper should be viewed as a (very) condensed exposition following the work of primarily Elias, Makisumi, Thiel, and Williamson in their lo vely book Intro- duction to Soergel Bimodules 2. It is also important to note that much of Soergel\u2019s theory has bee n omitted from this paper in light of brevity, as well as the depth of pro ofs and lead-up information. Many proofs concerning covered material are left out of this pape r, again, due to their length, as well as their residence in many of the texts listed in the references s ection. 5 1",
+  "abstract": "This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in Kazhdan-Lusztig theory. We ultimately exposit a few of Soergel’s main results, which allowed him to give alternative proofs, using his theory, of the Kazhdan-Lusztig conjectures. This paper should be viewed as a (very) condensed exposition following the work of primarily Elias, Makisumi, Thiel, and Williamson in their lovely book Intro- duction to Soergel Bimodules2. It is also important to note that much of Soergel’s theory has been omitted from this paper in light of brevity, as well as the depth of proofs and lead-up information. Many proofs concerning covered material are left out of this paper, again, due to their length, as well as their residence in many of the texts listed in the references section. 5 1",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20250107201220-05'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20250107201220-05'00'"
+  },
+  "title_raw": "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Soergel bimodules and Kazhdan-Lusztig polynomials",
+   "outline": "Coxeter Systems, Hecke algebras, and Kazhdan-Lusztig preliminaries",
+   "text": "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner"
  },
  "toc": [
   {
@@ -42,431 +54,829 @@
    "title": "Coxeter Systems, Hecke algebras, and Kazhdan-Lusztig preliminaries",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Coxeter Systems",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Remark:",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Hecke algebras",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Example",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Kazhdan-Lusztig polynomials, and a basis for the Hecke algebra",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "Lemma:",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "Lemma:",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Soergel Bimodules",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Easing into it",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "Theorem (Chevalley-Shephard-Todd)",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "Example",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Bott-Samelson bimodules",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "Example of Soergel bimodule",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 3,
    "title": "Lemma",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "Example",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "Remark",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Grothendieck groups, Soergel's categorization",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "Definition",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "Soergel's Categorification theorem",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "Soergel's Hom formula",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "Soergel's conjecture",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "Important Remark",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Historical Interlude: The Kazhdan-Lusztig conjectures",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Briefly recognizing some Lie theory",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "Definition: Category O",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "Definition: Soergel module",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Back to Kazhdan-Lusztig",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "Theorem",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "The Kazhdan-Lusztig conjecture",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "Kazhdan-Lusztig Inversion Formula",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "Theorem (Polo)",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "More on positivity",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 3,
    "title": "Flag and Schubert varieties",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Soergel's Proof of the Kazhdan-Lusztig conjecture",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "The V-functor",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 3,
    "title": "Definition",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 3,
    "title": "Theorem",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 3,
    "title": "Theorem",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Translation functors",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 3,
    "title": "Lemma",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 3,
    "title": "Lemma",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 3,
    "title": "Lemma",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 3,
    "title": "Corollary",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Projectives",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 3,
    "title": "Proposition",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Recontextualizing Soergel modules from Bott-Samelson modules",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 3,
    "title": "Definition",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 3,
    "title": "Proposition",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Proving the Kazhdan-Lusztig conjecture",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 3,
    "title": "Restating the conjecture",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 3,
    "title": "Proposition",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "References",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Appendic Miscellany",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Computation of",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Geometric representation of a Coxeter system",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "A fun but ancillary category",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "In aid of lemma 4.2.3,",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 3,
    "title": "Proposition",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Berstein-Gelfand-Gelfand Reciprocity",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 3,
    "title": "BGG Reciprocity",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 6573,
+   "n_words": 2312,
+   "label_start": null,
+   "label_end": "4"
+  },
   {
    "id": "sec-000-coxeter-systems-hecke-algebras-and-kazhdan-luszt",
    "number": null,
@@ -474,8 +884,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 723,
-   "n_words": 152
+   "n_chars": 775,
+   "n_words": 157,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-001-remark",
@@ -484,8 +896,10 @@
    "level": 3,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1105,
-   "n_words": 194
+   "n_chars": 986,
+   "n_words": 200,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-002-example",
@@ -494,8 +908,10 @@
    "level": 3,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 628,
-   "n_words": 126
+   "n_chars": 636,
+   "n_words": 127,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-003-kazhdan-lusztig-polynomials-and-a-basis-for-the",
@@ -504,8 +920,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 485,
-   "n_words": 98
+   "n_chars": 550,
+   "n_words": 109,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-004-lemma",
@@ -514,8 +932,10 @@
    "level": 3,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 368,
-   "n_words": 80
+   "n_chars": 374,
+   "n_words": 80,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-005-soergel-bimodules",
@@ -524,8 +944,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 17,
+   "n_words": 2,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-006-easing-into-it",
@@ -534,321 +956,611 @@
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1027,
-   "n_words": 221
+   "n_chars": 389,
+   "n_words": 81,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-007-bott-samelson-bimodules",
+   "id": "sec-007-theorem-chevalley-shephard-todd",
+   "number": null,
+   "title": "Theorem (Chevalley-Shephard-Todd)",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 226,
+   "n_words": 48,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-008-example",
+   "number": null,
+   "title": "Example",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 412,
+   "n_words": 92,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-009-bott-samelson-bimodules",
    "number": null,
    "title": "Bott-Samelson bimodules",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 897,
-   "n_words": 173
+   "n_chars": 924,
+   "n_words": 178,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-008-example-of-soergel-bimodule",
+   "id": "sec-010-example-of-soergel-bimodule",
    "number": null,
    "title": "Example of Soergel bimodule",
    "level": 3,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1654,
-   "n_words": 316
+   "n_chars": 1675,
+   "n_words": 313,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-009-lemma",
+   "id": "sec-011-lemma",
    "number": null,
    "title": "Lemma",
    "level": 3,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 946,
-   "n_words": 196
+   "n_chars": 950,
+   "n_words": 200,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-010-remark",
+   "id": "sec-012-remark",
    "number": null,
    "title": "Remark",
    "level": 3,
    "page_start": 8,
-   "page_end": 10,
-   "n_chars": 3032,
-   "n_words": 545
+   "page_end": 9,
+   "n_chars": 696,
+   "n_words": 139,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-011-important-remark",
+   "id": "sec-013-grothendieck-groups-soergels-categorization",
+   "number": null,
+   "title": "Grothendieck groups, Soergel's categorization",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 762,
+   "n_words": 123,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-014-definition",
+   "number": null,
+   "title": "Definition",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 472,
+   "n_words": 94,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-015-soergels-categorification-theorem",
+   "number": null,
+   "title": "Soergel's Categorification theorem",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 455,
+   "n_words": 79,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-016-soergels-hom-formula",
+   "number": null,
+   "title": "Soergel's Hom formula",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 420,
+   "n_words": 71,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-017-soergels-conjecture",
+   "number": null,
+   "title": "Soergel's conjecture",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 87,
+   "n_words": 14,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-018-important-remark",
    "number": null,
    "title": "Important Remark",
    "level": 3,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 619,
-   "n_words": 104
+   "n_chars": 633,
+   "n_words": 103,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-012-historical-interlude-the-kazhdan-lusztig-conject",
+   "id": "sec-019-historical-interlude-the-kazhdan-lusztig-conject",
    "number": null,
    "title": "Historical Interlude: The Kazhdan-Lusztig conjectures",
    "level": 1,
    "page_start": 11,
-   "page_end": 12,
-   "n_chars": 1947,
-   "n_words": 367
+   "page_end": 11,
+   "n_chars": 53,
+   "n_words": 5,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-013-back-to-kazhdan-lusztig",
+   "id": "sec-020-briefly-recognizing-some-lie-theory",
+   "number": null,
+   "title": "Briefly recognizing some Lie theory",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 389,
+   "n_words": 82,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-021-definition-category-o",
+   "number": null,
+   "title": "Definition: Category O",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 515,
+   "n_words": 99,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-022-definition-soergel-module",
+   "number": null,
+   "title": "Definition: Soergel module",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1017,
+   "n_words": 175,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-023-back-to-kazhdan-lusztig",
    "number": null,
    "title": "Back to Kazhdan-Lusztig",
    "level": 2,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 442,
-   "n_words": 81
+   "n_chars": 468,
+   "n_words": 86,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-014-theorem",
+   "id": "sec-024-theorem",
    "number": null,
    "title": "Theorem",
    "level": 3,
    "page_start": 12,
-   "page_end": 13,
-   "n_chars": 1181,
-   "n_words": 211
+   "page_end": 12,
+   "n_chars": 250,
+   "n_words": 49,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-015-theorem-polo",
+   "id": "sec-025-the-kazhdan-lusztig-conjecture",
+   "number": null,
+   "title": "The Kazhdan-Lusztig conjecture",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 275,
+   "n_words": 45,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-026-kazhdan-lusztig-inversion-formula",
+   "number": null,
+   "title": "Kazhdan-Lusztig Inversion Formula",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 628,
+   "n_words": 101,
+   "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-027-theorem-polo",
    "number": null,
    "title": "Theorem (Polo)",
    "level": 3,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 104,
-   "n_words": 23
+   "n_chars": 117,
+   "n_words": 23,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-016-more-on-positivity",
+   "id": "sec-028-more-on-positivity",
    "number": null,
    "title": "More on positivity",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 260,
-   "n_words": 37
+   "n_chars": 277,
+   "n_words": 38,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-017-flag-and-schubert-varieties",
+   "id": "sec-029-flag-and-schubert-varieties",
    "number": null,
    "title": "Flag and Schubert varieties",
    "level": 3,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 535,
-   "n_words": 96
+   "n_chars": 512,
+   "n_words": 93,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-018-the-v-functor",
+   "id": "sec-030-soergels-proof-of-the-kazhdan-lusztig-conjecture",
+   "number": null,
+   "title": "Soergel's Proof of the Kazhdan-Lusztig conjecture",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-031-the-v-functor",
    "number": null,
    "title": "The V-functor",
    "level": 2,
    "page_start": 13,
-   "page_end": 14,
-   "n_chars": 1521,
-   "n_words": 271
+   "page_end": 13,
+   "n_chars": 200,
+   "n_words": 33,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-019-translation-functors",
+   "id": "sec-032-definition",
+   "number": null,
+   "title": "Definition",
+   "level": 3,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 796,
+   "n_words": 143,
+   "label_start": "13",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-033-theorem",
+   "number": null,
+   "title": "Theorem",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 348,
+   "n_words": 57,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-034-translation-functors",
    "number": null,
    "title": "Translation functors",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 974,
-   "n_words": 202
+   "n_chars": 988,
+   "n_words": 196,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-020-lemma",
+   "id": "sec-035-lemma",
    "number": null,
    "title": "Lemma",
    "level": 3,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1500,
-   "n_words": 318
+   "n_chars": 1494,
+   "n_words": 307,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-021-corollary",
+   "id": "sec-036-corollary",
    "number": null,
    "title": "Corollary",
    "level": 3,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 113,
-   "n_words": 21
+   "n_chars": 122,
+   "n_words": 21,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-022-projectives",
+   "id": "sec-037-projectives",
    "number": null,
    "title": "Projectives",
    "level": 2,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 46,
-   "n_words": 10
+   "n_chars": 56,
+   "n_words": 9,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-023-proposition",
+   "id": "sec-038-proposition",
    "number": null,
    "title": "Proposition",
    "level": 3,
    "page_start": 16,
    "page_end": 16,
    "n_chars": 950,
-   "n_words": 205
+   "n_words": 194,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-024-recontextualizing-soergel-modules-from-bott-same",
+   "id": "sec-039-recontextualizing-soergel-modules-from-bott-same",
    "number": null,
    "title": "Recontextualizing Soergel modules from Bott-Samelson modules",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1307,
-   "n_words": 249
+   "n_chars": 483,
+   "n_words": 79,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-025-proposition",
+   "id": "sec-040-definition",
+   "number": null,
+   "title": "Definition",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 873,
+   "n_words": 170,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-041-proposition",
    "number": null,
    "title": "Proposition",
    "level": 3,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 876,
-   "n_words": 161
+   "n_chars": 878,
+   "n_words": 152,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-026-proving-the-kazhdan-lusztig-conjecture",
+   "id": "sec-042-proving-the-kazhdan-lusztig-conjecture",
    "number": null,
    "title": "Proving the Kazhdan-Lusztig conjecture",
    "level": 2,
    "page_start": 18,
    "page_end": 18,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 38,
+   "n_words": 4,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
-   "id": "sec-027-restating-the-conjecture",
+   "id": "sec-043-restating-the-conjecture",
    "number": null,
    "title": "Restating the conjecture",
    "level": 3,
    "page_start": 18,
-   "page_end": 20,
-   "n_chars": 1643,
-   "n_words": 313
+   "page_end": 18,
+   "n_chars": 647,
+   "n_words": 108,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
-   "id": "sec-028-references",
+   "id": "sec-044-proposition",
+   "number": null,
+   "title": "Proposition",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 976,
+   "n_words": 194,
+   "label_start": "18",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-045-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 1918,
-   "n_words": 251
+   "n_chars": 1910,
+   "n_words": 233,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-029-appendic-miscellany",
+   "id": "sec-046-appendic-miscellany",
    "number": null,
    "title": "Appendic Miscellany",
    "level": 1,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 19,
+   "n_words": 2,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-030-computation-of",
+   "id": "sec-047-computation-of",
    "number": null,
    "title": "Computation of",
    "level": 2,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 226,
-   "n_words": 78
+   "n_chars": 230,
+   "n_words": 68,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-031-geometric-representation-of-a-coxeter-system",
+   "id": "sec-048-geometric-representation-of-a-coxeter-system",
    "number": null,
    "title": "Geometric representation of a Coxeter system",
    "level": 2,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 311,
-   "n_words": 66
+   "n_chars": 355,
+   "n_words": 71,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-032-a-fun-but-ancillary-category",
+   "id": "sec-049-a-fun-but-ancillary-category",
    "number": null,
    "title": "A fun but ancillary category",
    "level": 2,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 765,
-   "n_words": 137
+   "n_chars": 795,
+   "n_words": 143,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
-   "id": "sec-033-in-aid-of-lemma-423",
+   "id": "sec-050-in-aid-of-lemma-423",
    "number": null,
    "title": "In aid of lemma 4.2.3,",
    "level": 2,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 36,
-   "n_words": 7
+   "n_chars": 59,
+   "n_words": 12,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-034-proposition",
+   "id": "sec-051-proposition",
    "number": null,
    "title": "Proposition",
    "level": 3,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 1426,
-   "n_words": 303
+   "n_chars": 1417,
+   "n_words": 283,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-035-berstein-gelfand-gelfand-reciprocity",
+   "id": "sec-052-berstein-gelfand-gelfand-reciprocity",
    "number": null,
    "title": "Berstein-Gelfand-Gelfand Reciprocity",
    "level": 2,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 389,
-   "n_words": 78
+   "n_chars": 422,
+   "n_words": 76,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-036-bgg-reciprocity",
+   "id": "sec-053-bgg-reciprocity",
    "number": null,
    "title": "BGG Reciprocity",
    "level": 3,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 47,
-   "n_words": 18
+   "n_chars": 57,
+   "n_words": 14,
+   "label_start": "23",
+   "label_end": "23"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 61,
-  "sections": 37,
-  "chars_total": 30001,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 1,
+    "items": [
+     "2 W is in bijection with the set of indecomposable objects in SBim mod shift and isomorphism."
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 55,
+  "chars_total": 36626,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 72,
-   "overlaid": 25,
+   "overlaid": 31,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -856,10 +1568,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-coxeter-systems-hecke-algebras-and-kazhdan-luszt",
      "title": "Coxeter Systems, Hecke algebras, and Kazhdan-Lusztig preliminaries",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.881,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -867,7 +1584,7 @@
      "id": "sec-001-remark",
      "title": "Remark:",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.926,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -883,7 +1600,7 @@
      "id": "sec-003-kazhdan-lusztig-polynomials-and-a-basis-for-the",
      "title": "Kazhdan-Lusztig polynomials, and a basis for the Hecke algebra",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.92,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -899,44 +1616,96 @@
      "id": "sec-005-soergel-bimodules",
      "title": "Soergel Bimodules",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-006-easing-into-it",
      "title": "Easing into it",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.88,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-theorem-chevalley-shephard-todd",
+     "title": "Theorem (Chevalley-Shephard-Todd)",
+     "prose_ratio": 0.382,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-example",
+     "title": "Example",
+     "prose_ratio": 0.118,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-bott-samelson-bimodules",
+     "title": "Bott-Samelson bimodules",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-example-of-soergel-bimodule",
+     "title": "Example of Soergel bimodule",
+     "prose_ratio": 0.535,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-lemma",
+     "title": "Lemma",
+     "prose_ratio": 0.5,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-remark",
+     "title": "Remark",
+     "prose_ratio": 0.122,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-grothendieck-groups-soergels-categorization",
+     "title": "Grothendieck groups, Soergel's categorization",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-bott-samelson-bimodules",
-     "title": "Bott-Samelson bimodules",
+     "id": "sec-014-definition",
+     "title": "Definition",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.98,
+     "coverage_ratio": 0.917,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-example-of-soergel-bimodule",
-     "title": "Example of Soergel bimodule",
-     "prose_ratio": 0.379,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-015-soergels-categorification-theorem",
+     "title": "Soergel's Categorification theorem",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-009-lemma",
-     "title": "Lemma",
-     "prose_ratio": 0.5,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-016-soergels-hom-formula",
+     "title": "Soergel's Hom formula",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-010-remark",
-     "title": "Remark",
-     "prose_ratio": 0.347,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-017-soergels-conjecture",
+     "title": "Soergel's conjecture",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-011-important-remark",
+     "id": "sec-018-important-remark",
      "title": "Important Remark",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.98,
@@ -944,15 +1713,37 @@
      "converter": "latex"
     },
     {
-     "id": "sec-012-historical-interlude-the-kazhdan-lusztig-conject",
+     "id": "sec-019-historical-interlude-the-kazhdan-lusztig-conject",
      "title": "Historical Interlude: The Kazhdan-Lusztig conjectures",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-briefly-recognizing-some-lie-theory",
+     "title": "Briefly recognizing some Lie theory",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.981,
+     "coverage_ratio": 0.81,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-back-to-kazhdan-lusztig",
+     "id": "sec-021-definition-category-o",
+     "title": "Definition: Category O",
+     "prose_ratio": 0.763,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-definition-soergel-module",
+     "title": "Definition: Soergel module",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.833,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-back-to-kazhdan-lusztig",
      "title": "Back to Kazhdan-Lusztig",
      "prose_ratio": 0.773,
      "coverage_ratio": 0.971,
@@ -960,133 +1751,173 @@
      "converter": "latex"
     },
     {
-     "id": "sec-014-theorem",
+     "id": "sec-024-theorem",
      "title": "Theorem",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.959,
+     "coverage_ratio": 0.727,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-theorem-polo",
+     "id": "sec-025-the-kazhdan-lusztig-conjecture",
+     "title": "The Kazhdan-Lusztig conjecture",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-kazhdan-lusztig-inversion-formula",
+     "title": "Kazhdan-Lusztig Inversion Formula",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-theorem-polo",
      "title": "Theorem (Polo)",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.778,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-016-more-on-positivity",
+     "id": "sec-028-more-on-positivity",
      "title": "More on positivity",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.923,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-flag-and-schubert-varieties",
+     "id": "sec-029-flag-and-schubert-varieties",
      "title": "Flag and Schubert varieties",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-the-v-functor",
+     "id": "sec-030-soergels-proof-of-the-kazhdan-lusztig-conjecture",
+     "title": "Soergel's Proof of the Kazhdan-Lusztig conjecture",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-031-the-v-functor",
      "title": "The V-functor",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.989,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.226,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-019-translation-functors",
+     "id": "sec-032-definition",
+     "title": "Definition",
+     "prose_ratio": 0.227,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-033-theorem",
+     "title": "Theorem",
+     "prose_ratio": 0.188,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-034-translation-functors",
      "title": "Translation functors",
-     "prose_ratio": 0.509,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.518,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-020-lemma",
+     "id": "sec-035-lemma",
      "title": "Lemma",
      "prose_ratio": 0.318,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-021-corollary",
+     "id": "sec-036-corollary",
      "title": "Corollary",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.875,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-022-projectives",
+     "id": "sec-037-projectives",
      "title": "Projectives",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.75,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-023-proposition",
+     "id": "sec-038-proposition",
      "title": "Proposition",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-024-recontextualizing-soergel-modules-from-bott-same",
+     "id": "sec-039-recontextualizing-soergel-modules-from-bott-same",
      "title": "Recontextualizing Soergel modules from Bott-Samelson modules",
-     "prose_ratio": 0.686,
-     "coverage_ratio": 0.972,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.343,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-025-proposition",
+     "id": "sec-040-definition",
+     "title": "Definition",
+     "prose_ratio": 0.182,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-041-proposition",
      "title": "Proposition",
      "prose_ratio": 0.135,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-026-proving-the-kazhdan-lusztig-conjecture",
+     "id": "sec-042-proving-the-kazhdan-lusztig-conjecture",
      "title": "Proving the Kazhdan-Lusztig conjecture",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-027-restating-the-conjecture",
+     "id": "sec-043-restating-the-conjecture",
      "title": "Restating the conjecture",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.944,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.547,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-028-references",
+     "id": "sec-044-proposition",
+     "title": "Proposition",
+     "prose_ratio": 0.243,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-045-references",
      "title": "References",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.98,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-029-appendic-miscellany",
+     "id": "sec-046-appendic-miscellany",
      "title": "Appendic Miscellany",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-030-computation-of",
+     "id": "sec-047-computation-of",
      "title": "Computation of",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.5,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-031-geometric-representation-of-a-coxeter-system",
+     "id": "sec-048-geometric-representation-of-a-coxeter-system",
      "title": "Geometric representation of a Coxeter system",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -1094,38 +1925,38 @@
      "converter": "latex"
     },
     {
-     "id": "sec-032-a-fun-but-ancillary-category",
+     "id": "sec-049-a-fun-but-ancillary-category",
      "title": "A fun but ancillary category",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.98,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-033-in-aid-of-lemma-423",
-     "title": "In aid of lemma 4.2.3,",
-     "prose_ratio": 0.068,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-034-proposition",
-     "title": "Proposition",
-     "prose_ratio": 0.351,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-035-berstein-gelfand-gelfand-reciprocity",
-     "title": "Berstein-Gelfand-Gelfand Reciprocity",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-036-bgg-reciprocity",
+     "id": "sec-050-in-aid-of-lemma-423",
+     "title": "In aid of lemma 4.2.3,",
+     "prose_ratio": 0.068,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-051-proposition",
+     "title": "Proposition",
+     "prose_ratio": 0.351,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-052-berstein-gelfand-gelfand-reciprocity",
+     "title": "Berstein-Gelfand-Gelfand Reciprocity",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-053-bgg-reciprocity",
      "title": "BGG Reciprocity",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     }
    ]
   }

@@ -10,7 +10,8 @@ source_sha256: 87885f4d03661f26
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.974
+latex_coverage_ratio: 0.97
+doc_brief: "arXiv:hep-th/9609174v2 23 Sep 1996 — We prove the universality of correlation functions of chiral unitary and unitary ensembles of ran- dom matrices in the microscopic limit."
 ---
 We shall prove the following theorem on the asymptotic behavior 
 of these orthogonal polynomials:

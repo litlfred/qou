@@ -45,17 +45,16 @@ Every other eightfold relation this chapter examines --- [Gell-Mann--Okubo](#rem
 [the decuplet equal-spacing rule](#rem:decuplet-equal-spacing) and
 [Coleman--Glashow](#rem:u-spin-coleman-glashow) --- turns out to be an identity
 of its first-order ansatz, true for all parameter values and therefore evidence
-for no mechanism.  This one is different, and the difference is machine-checked
-sorry-free in `QOU/Eightfold/OctetWeightDegeneracy.lean`:
+for no mechanism.  This one is different, and the difference is proved:
 
 - The decuplet's ten weights are pairwise distinct
-  (`decuplet_weights_nodup`); the octet's eight are not
-  (`octet_weights_not_nodup`), with exactly one collision, at the origin
-  (`lambda_sigma0_same_weight`, `octet_degeneracy_only_at_origin`).
+; the octet's eight are not
+, with exactly one collision, at the origin
+.
 - Hence **no** function of the weight alone can separate $\Lambda$ from
   $\Sigma^0$.  The statement holds for an arbitrary target, not for
   real-valued masses alone
-  (`weight_function_cannot_separate_lambda_sigma0`).  Any mass formula built
+.  Any mass formula built
   from $(2I_3, Y)$ predicts $\mathfrak{m}_\Lambda = \mathfrak{m}_{\Sigma^0}$.
 
 Experiment gives $\mathfrak{m}_\Lambda \approx 1115.7$ MeV against
@@ -68,8 +67,8 @@ proved rather than asserted: non-injectivity of the weight map on the octet.
 The obligation it creates falls on every framework, this one included --- a
 label beyond $(2I_3, Y)$ must be supplied.  Physically that label is isospin,
 which is demonstrably not a function of the weight
-(`isospin_not_a_function_of_weight`).  The decuplet incurs no such obligation
-(`decuplet_weight_function_separates`), which is precisely why its
+.  The decuplet incurs no such obligation
+, which is precisely why its
 equal-spacing rule runs on $Y$ alone while Gell-Mann--Okubo needs the isospin
 Casimir as well.
 
@@ -80,8 +79,8 @@ are both doublings, and they are unrelated.  The first counts copies of the
 whole eight-dimensional irrep inside $V^{\otimes 3}$; the second counts states
 over a single lattice point inside one copy.  Reading either as the other would
 make the octet's extra label look as though the Hecke algebra already supplied
-it.  It does not: the channel arithmetic (`schur_weyl_cube_arithmetic`) and the
-degeneracy count (`octet_deficit_is_one`) are recorded separately for that
+it.  It does not: the channel arithmetic and the
+degeneracy count are recorded separately for that
 reason.
 
 ## What the framework supplies

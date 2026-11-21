@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1108.3035v2/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "C.2 The odd polynomials R2j+1(x)",
+  "pageStart": 24,
+  "pageEnd": 27,
+  "contains": [
+    "library/arxiv-1108.3035v2/blocks/prose-sec-013",
+    "library/arxiv-1108.3035v2/blocks/prop-sec-013-01",
+    "library/arxiv-1108.3035v2/blocks/prop-sec-013-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.3035v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.3035v2/manifest.jsonld",
+  "provenance": "ingested"
+}

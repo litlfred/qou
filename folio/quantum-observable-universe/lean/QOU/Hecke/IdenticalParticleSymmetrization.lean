@@ -48,7 +48,7 @@ Self-contained (`CommRing` identities, `import Mathlib.Tactic.Ring` only) — do
 NOT depend on the rest of `QOU.Hecke`, so it builds independently.
 
 ## References
-- [manuscript] `docs/audits/2026-06-10-missing-identical-nucleon-symmetrization.md`
+- [leitner2026] `docs/audits/2026-06-10-missing-identical-nucleon-symmetrization.md`
 - Schur–Weyl duality; symmetric functions (Macdonald, *Symmetric Functions and
   Hall Polynomials*).
 -/

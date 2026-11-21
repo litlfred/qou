@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2301.00125v3/blocks/prose-sec-011",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "D Contour integral alternative derivation of Lemma 2.2",
-  "pageStart": 23,
-  "pageEnd": 25,
-  "text": "../sections/sec-011-d-contour-integral-alternative-derivation-of-lem.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.00125v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.00125v3",
+  "title": "B Review of the physicists' replica approach to the SK model",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "../sections/sec-011-b-review-of-the-physicists-replica-approach-to-t.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.00125v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.00125v3/manifest.jsonld",
   "provenance": "ingested"
 }

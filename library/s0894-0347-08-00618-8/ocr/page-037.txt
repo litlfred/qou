@@ -1,0 +1,59 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 557
+
+Suppose that {ay}R_9 and {bp }p-9 are LC sequences that satisfy
+(i) {ap + de }peo is LC, and
+(ii) Aber > angibe for allO<k<n-1.
+
+Then pu is CNA.
+
+Proof. Asin we denote by X;, i € [n+1], the i-th coordinate function/random
+(binary) variable on 2in+1]_ First, observe that it is enough to prove that pis NA.
+To see this, note that if 4 is conditioned on X; = 1 for k values of i < n, on X; = 0
+for | values of i < n, and possibly on the value of X,4+1, the resulting measure is
+of the same form with a new value n’ of n and new a,’s and b;’s that again satisfy
+the assumptions of the theorem. Using primes to denote the new values, we have
+n’ =n—k-—l, and if the value of X,41 is not conditioned on, then, except for
+a constant factor, a, = ajz, and bi = bi+,. If the value of X;,41 is conditioned
+on, then a} = b! = a+ if the conditioning is on X,41 = 1 and a} = bi = die, if
+the conditioning is on X,41; = 0. Now take two increasing functions F and G on
+alr+1] that depend on disjoint sets of coordinates (cf. Definition 2.2). Without loss
+of generality, we may assume that there is an m satisfying 1 < m <n such that
+F depends on the coordinates {X1...,Xm}, and G depends on the coordinates
+{Xingi,---;Xn4i}. We need to prove
+
+(24) [ Poa < [Pe fea.
+
+Since jz is symmetric in the first n coordinates, these three integrals are not changed
+if F and G are replaced by the functions obtained by symmetrizing them with
+respect to the coordinates {X1,...,Xm} and {Xm41,-.-,Xn}, respectively. These
+symmetrized functions are also increasing. Therefore, we may assume that F’ and
+G are of the following form:
+
+m
+
+F(X1,...,Xm) = fe if SO Xi =k,
+i=l
+
+n
+G(Xmpis-.s Xn Xnp1 =0) = ge if SS Xi =k, and
+
+i=m+1
+
+n
+G(Xmgas Xn Xng1 = VY =heif SO Xi =k,
+i=m41
+
+where fx, gx and hy, are increasing, and g;, < hy, for each k. Using the fact that the
+covariance of F and G with respect to the measure jz can be written as
+
+1
+
+5 LPS) — FIDYIG(S) — G(T) a(S) a7),
+
+S.Te2ln+)
+
+becomes
+
+SVM an ft-ro
+
++ (gk — ge)be+ibdery + (he — ge)an+ibers + (ge — he)acyjbeti] = 0.

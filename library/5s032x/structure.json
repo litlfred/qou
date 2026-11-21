@@ -6,28 +6,40 @@
   "sha256": "17761383781f7bdc4da9f3aba337cc913bb4b438134d413ae1d8f6b22cbf75dd",
   "bytes": 895942,
   "pages": 20,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.32388/5S032X",
-  "title": "The standard model symmetry and qubit entanglement",
-  "authors_raw": "Research at the intersection of quantum gravity and quantum information theory has seen sig-",
-  "abstract": "quantum description. Indeed, the links appear so deep that Susskind has proposed to generalize ER =EPR , the conjecture that quantum entanglement is equivalent to wormholes in spacetime [6], to GR = QM, proposing that ‘where there is quantum mechanics, there is also gravity’ [7]. Hence, a quantum system does not merely come equipped with a geometry, but that geometry is dynamical, approximating general relativistic spacetimes in a classical limit. The origin of this idea can be traced to work of Jacobson, who has shown that Einstein’s equations can be recovered from thermodynamics in the presence of black hole horizons [8] (see also [9, 10]). These arguments rely essentially on the area law-scaling of the Bekenstein-Hawking entropy of black holes [11]. This scaling is also observed, in many cases, for the entanglement entropy of quantum systems—indeed, it has been proposed to explain black hole entropy as the entanglement entropy of degrees of freedom across the horizon [12, 13]. Along a different thread, van Raamsdonk has suggested that entanglement may be responsible for spacetime connec- tivity [14, 15]. In the AdS/CFT correspondence, the Ryu-Takayanagi formula [16] relates the entanglement between different patches of the conformal field theory on the boundary of Anti-de Sitter space with the area of a surface partitioning the AdS-space; if the entanglement between both goes to zero, the space partitions into two disconnected regions. Combining these perspectives, the linearized Einstein equations follow from ‘entanglement thermodynamics’ for perturbations of the AdS-spacetime [17, 18]. While the bulk of this work assumes the AdS/CFT-correspondence, Jacobson has shown that a derivation of the full Einstein equations is possible without assuming an AdS-background, given a condition of entanglement equilibrium [19]. A way to think about this is in terms of a graph, each node of which is itself an abstract element of quantum information—a qubit, or perhaps more gen",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20230605023211Z",
-   "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Producer": "3-Heights™ PDF Toolbox API 6.12.0.6 (http://www.pdf-tools.com)"
-  },
+  "title": "The Standard Model Symmetry and Qubit Entanglement",
+  "authors_raw": "Jochen Szangolies∗",
   "title_lines": [
-   "The Standard Model Symmetry and Qubit Entanglement",
-   "Jochen Szangolies∗"
+   "The Standard Model Symmetry and Qubit Entanglement"
   ],
-  "title_prev": "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗"
+  "abstract": "quantum description. Indeed, the links appear so deep that Susskind has proposed to generalize ER = EPR, the conjecture that quantum entanglement is equivalent to wormholes in spacetime [6], to GR = QM, proposing that ‘where there is quantum mechanics, there is also gravity’ [7]. Hence, a quantum system does not merely come equipped with a geometry, but that geometry is dynamical, approximating general relativistic spacetimes in a classical limit. The origin of this idea can be traced to work of Jacobson, who has shown that Einstein’s equations can be recovered from thermodynamics in the presence of black hole horizons [8] (see also [9, 10]). These arguments rely essentially on the area law-scaling of the Bekenstein-Hawking entropy of black holes [11]. This scaling is also observed, in many cases, for the entanglement entropy of quantum systems—indeed, it has been proposed to explain black hole entropy as the entanglement entropy of degrees of freedom across the horizon [12, 13]. Along a different thread, van Raamsdonk has suggested that entanglement may be responsible for spacetime connec- tivity [14, 15]. In the AdS/CFT correspondence, the Ryu-Takayanagi formula [16] relates the entanglement between different patches of the conformal field theory on the boundary of Anti-de Sitter space with the area of a surface partitioning the AdS-space; if the entanglement between both goes to zero, the space partitions into two disconnected regions. Combining these perspectives, the linearized Einstein equations follow from ‘entanglement thermodynamics’ for perturbations of the AdS-spacetime [17, 18]. While the bulk of this work assumes the AdS/CFT-correspondence, Jacobson has shown that a derivation of the full Einstein equations is possible without assuming an AdS-background, given a condition of entanglement equilibrium [19]. A way to think about this is in terms of a graph, each node of which is itself an abstract element of quantum information—a qubit, or perhaps more gen",
+  "docinfo": {
+   "Producer": "3-Heights™ PDF Toolbox API 6.12.0.6 (http://www.pdf-tools.com)",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20230605023211Z"
+  },
+  "title_raw": "The Standard Model Symmetry and Qubit Entanglement",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The Standard Model Symmetry and Qubit Entanglement",
+   "outline": "The Standard Model Symmetry and Qubit Entanglement",
+   "text": "The Standard Model Symmetry and Qubit Entanglement",
+   "corroborated_by": [
+    "outline",
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "The standard model symmetry and qubit entanglement"
  },
  "toc": [
   {
@@ -35,129 +47,391 @@
    "title": "The Standard Model Symmetry and Qubit Entanglement",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Introduction: The `Quantum First'-Program",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Complex Case: Single Qubits",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "SL(2,C) and 3+1-Dimensional Spacetime",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "The Bloch Sphere and the Complex Hopf Fibration",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "Spin(3) and the Complex Hopf Fibration",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "The Quaternionic Case: Two Qubits",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 3,
    "title": "SL(2,H) and 5+1-Dimensional Spacetime",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "Two Qubits and the Quaternionic Hopf Fibration",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "Spin(5) and SU(2)U(1)/Z2",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "The Octonionic Case: Three Qubits",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "`SL(2,O)' and 9+1-Dimensional Spacetime",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "Three Qubits and the Octonionic Hopf Fibration",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "Spin(9) and SU(3)SU(2)U(1)/Z6",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Entanglement and Massive Particles",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Conclusion",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "References",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The entanglement entropy of a region R across its boundary ∂R is computed by summing up the contributions of entanglement ‘links’ cut by the boundary. For a state with ‘short-range’ entanglement, this yields an area law",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A state with additional long-range entanglement, or entanglement due to a state ‘encoded’ into it in the sense of quantum error correction, receives subleading corrections to the entanglement entropy from these additional terms",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-000-the-standard-model-symmetry-and-qubit-entangleme",
@@ -166,95 +440,217 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 2607,
-   "n_words": 398
+   "n_chars": 1249,
+   "n_words": 194,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-abstract",
+   "id": "sec-001-introduction-the-quantum-first-program",
+   "number": null,
+   "title": "Introduction: The `Quantum First'-Program",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1312,
+   "n_words": 197,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-abstract",
    "number": null,
    "title": "Abstract",
    "level": 2,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 14699,
-   "n_words": 2316
+   "n_chars": 14737,
+   "n_words": 2327,
+   "label_start": null,
+   "label_end": "5"
   },
   {
-   "id": "sec-002-the-complex-case-single-qubits",
+   "id": "sec-003-the-complex-case-single-qubits",
    "number": null,
    "title": "The Complex Case: Single Qubits",
    "level": 2,
    "page_start": 5,
-   "page_end": 6,
-   "n_chars": 3874,
-   "n_words": 719
+   "page_end": 5,
+   "n_chars": 854,
+   "n_words": 194,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-003-the-bloch-sphere-and-the-complex-hopf-fibration",
+   "id": "sec-004-sl2c-and-31-dimensional-spacetime",
+   "number": null,
+   "title": "SL(2,C) and 3+1-Dimensional Spacetime",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3059,
+   "n_words": 573,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-the-bloch-sphere-and-the-complex-hopf-fibration",
    "number": null,
    "title": "The Bloch Sphere and the Complex Hopf Fibration",
    "level": 3,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1918,
-   "n_words": 342
+   "n_chars": 1976,
+   "n_words": 361,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-004-spin3-and-the-complex-hopf-fibration",
+   "id": "sec-006-spin3-and-the-complex-hopf-fibration",
    "number": null,
    "title": "Spin(3) and the Complex Hopf Fibration",
    "level": 3,
    "page_start": 7,
-   "page_end": 9,
-   "n_chars": 5271,
-   "n_words": 958
+   "page_end": 7,
+   "n_chars": 1548,
+   "n_words": 289,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-005-two-qubits-and-the-quaternionic-hopf-fibration",
+   "id": "sec-007-the-quaternionic-case-two-qubits",
+   "number": null,
+   "title": "The Quaternionic Case: Two Qubits",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1526,
+   "n_words": 329,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-008-sl2h-and-51-dimensional-spacetime",
+   "number": null,
+   "title": "SL(2,H) and 5+1-Dimensional Spacetime",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2247,
+   "n_words": 399,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-009-two-qubits-and-the-quaternionic-hopf-fibration",
    "number": null,
    "title": "Two Qubits and the Quaternionic Hopf Fibration",
    "level": 3,
    "page_start": 9,
-   "page_end": 10,
-   "n_chars": 4828,
-   "n_words": 895
+   "page_end": 9,
+   "n_chars": 1503,
+   "n_words": 273,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-006-the-octonionic-case-three-qubits",
+   "id": "sec-010-spin5-and-su2u1z2",
+   "number": null,
+   "title": "Spin(5) and SU(2)U(1)/Z2",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3352,
+   "n_words": 635,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-011-the-octonionic-case-three-qubits",
    "number": null,
    "title": "The Octonionic Case: Three Qubits",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 3635,
-   "n_words": 627
+   "n_chars": 2828,
+   "n_words": 539,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-007-three-qubits-and-the-octonionic-hopf-fibration",
+   "id": "sec-012-sl2o-and-91-dimensional-spacetime",
+   "number": null,
+   "title": "`SL(2,O)' and 9+1-Dimensional Spacetime",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 848,
+   "n_words": 141,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-013-three-qubits-and-the-octonionic-hopf-fibration",
    "number": null,
    "title": "Three Qubits and the Octonionic Hopf Fibration",
    "level": 3,
    "page_start": 12,
-   "page_end": 16,
-   "n_chars": 12125,
-   "n_words": 2227
+   "page_end": 12,
+   "n_chars": 942,
+   "n_words": 180,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-008-conclusion",
+   "id": "sec-014-spin9-and-su3su2u1z6",
+   "number": null,
+   "title": "Spin(9) and SU(3)SU(2)U(1)/Z6",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2293,
+   "n_words": 398,
+   "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-015-entanglement-and-massive-particles",
+   "number": null,
+   "title": "Entanglement and Massive Particles",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 9089,
+   "n_words": 1849,
+   "label_start": "13",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-016-conclusion",
    "number": null,
    "title": "Conclusion",
    "level": 2,
    "page_start": 16,
    "page_end": 20,
-   "n_chars": 18215,
-   "n_words": 2691
+   "n_chars": 18151,
+   "n_words": 2625,
+   "label_start": "16",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 18,
-  "sections": 9,
-  "chars_total": 67172
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 17,
+  "chars_total": 67514,
+  "furniture_lines_stripped": 19
  }
 }

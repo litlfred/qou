@@ -1,0 +1,1 @@
+Under the assumptions of Lemma 3.11, the identities ˜T (D′ ∪{x}; z) = ˜T (D′; z) +  Y∋x: Y∩D′=∅ z(Y) ˜T (D′ ∪Y; z) and for N ∈N, ˜TN+1(D′ ∪{x}; z) = ˜TN(D′; z) +  Y∋x: Y∩D′=∅ z(Y) ˜TN(D′ ∪Y; z), hold for any non-negative activity z.

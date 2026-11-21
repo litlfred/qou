@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 2506.10206v2.pdf
 source_sha256: d0631a9abd9b1da3
 toc_source: inferred
+doc_brief: "Analytic Dilogarithm Identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
 ---
 arXiv:2506.10206v2  [math.NT]  19 Jun 2025
 Analytic dilogarithm identities
@@ -28,4 +29,3 @@ with arguments in algebraic number fields such as Q(
 Moreover, single-term dilogarithm evaluations are introduced and derived.
 MSC: 33B30, 33B15.
 Keywords: dilogarithm, hypergeometric series, beta function, closed form, polylogarithm, Clausen function.
-1

@@ -24,8 +24,8 @@
   real, so the theta series has no growth from the `z` direction — summed
   against a two-sided geometric series via `n² ≥ |n|`.
 
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianThetaSum.lean
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianSumBound.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianThetaSum.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianSumBound.lean
 -/
 import QOU.MathlibExt.GaussianThetaSum
 

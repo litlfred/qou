@@ -9,7 +9,7 @@
 
   These are the algebraic origins of the BW mass formula terms.
 
-  Ref: [manuscript] §5.15, prop:eigenvalue-product-expansion
+  Ref: [leitner2026] §5.15, prop:eigenvalue-product-expansion
 -/
 
 import Mathlib.Algebra.Group.NatPowAssoc

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2104.14491v1
-doc_title: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Mo"
+doc_title: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Mos"
 section_id: sec-004-23-how-to-get-the-satellite-class-from-a-knot-di
 section_title: "How to get the satellite class from a knot diagram"
 section_number: 2.3
 pages: 5-6
 source_pdf: 2104.14491v1.pdf
 source_sha256: 1aea658f17283df1
-doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.718
 latex_coverage_ratio: 0.974
+doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
 ---
 #### The first Reidemeister of the companion and the full twist in the pattern.
 

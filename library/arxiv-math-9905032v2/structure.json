@@ -8,7 +8,7 @@
   "pages": 43,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "11 Sep 1999"
   },
   "doi": null,
-  "title": "arXiv:math/9905032v2 [math.CO] 11 Sep 1999",
+  "title": "Asymptotics of Plancherel measures for symmetric groups",
   "authors_raw": "SYMMETRIC GROUPS",
   "title_lines": [
    "ASYMPTOTICS OF PLANCHEREL MEASURES FOR"
   ],
-  "abstract": "We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to in\ufb01nity. We prove that the local structure of a Plancherel typical partition in the middle of the limit shape converges to a determinantal point process with the discrete sine kernel. On the edges of the limit shape, we prove that the joint distri- bution of suitably scaled 1st, 2nd, and so on rows of a Plancherel typical diagram converges to the corresponding distribution for eigenvalues of random Hermitian matrices (given by the Airy ker- nel). This proves a conjecture due to Baik, Deift, and Johansson by methods di\ufb00erent from the Riemann-Hilbert techniques used in their original papers [2, 3] and from the combinatorial proof given in [23]. Our approach is based on an exact determinantal formula for the correlation functions of the poissonized Plancherel measures in terms of a new kernel involving Bessel functions. Our asymptotic analysis relies on the classical asymptotic formulas for the Bessel functions and depoissonization techniques.",
+  "abstract": "We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity. We prove that the local structure of a Plancherel typical partition in the middle of the limit shape converges to a determinantal point process with the discrete sine kernel. On the edges of the limit shape, we prove that the joint distri- bution of suitably scaled 1st, 2nd, and so on rows of a Plancherel typical diagram converges to the corresponding distribution for eigenvalues of random Hermitian matrices (given by the Airy ker- nel). This proves a conjecture due to Baik, Deift, and Johansson by methods diﬀerent from the Riemann-Hilbert techniques used in their original papers [2, 3] and from the combinatorial proof given in [23]. Our approach is based on an exact determinantal formula for the correlation functions of the poissonized Plancherel measures in terms of a new kernel involving Bessel functions. Our asymptotic analysis relies on the classical asymptotic formulas for the Bessel functions and depoissonization techniques.",
   "docinfo": {
    "Title": "arXiv:math/9905032v2  [math.CO]  11 Sep 1999",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -38,13 +38,14 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/9905032v2 [math.CO] 11 Sep 1999",
-   "heading": "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS 1. Introduction 1.1. Plancherel measures. Given a \ufb01nite group G , by the corresponding Plancherel measure we mean the probability measure on the set G \u2227 of irreducible representations of G which assigns to a representation \u03c0 \u2208 G \u2227 the weight (d",
+   "heading": "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS 1. Introduction 1.1. Plancherel measures. Given a ﬁnite group G , by the corresponding Plancherel measure we mean the probability measure on the set G ∧ of irreducible representations of G which assigns to a representation π ∈ G ∧ the weight (d",
    "text": "ASYMPTOTICS OF PLANCHEREL MEASURES FOR",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/9905032v2 [math.CO] 11 Sep 1999"
  },
  "toc": [
   {
@@ -379,7 +380,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The limit shape of a typical diagram. After this scaling, the Plancherel measures Mn converge as n \u2192\u221e",
+   "title": "The limit shape of a typical diagram. After this scaling, the Plancherel measures Mn converge as n →∞",
    "page": 2,
    "confidence": 0.9,
    "evidence": [
@@ -695,26 +696,14 @@
  ],
  "sections": [
   {
-   "id": "sec-front-matter",
-   "number": null,
-   "title": "Front matter",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 44,
-   "n_words": 5,
-   "label_start": null,
-   "label_end": null
-  },
-  {
    "id": "sec-000-11-plancherel-measures",
    "number": "1.1",
    "title": "Plancherel measures",
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1125,
-   "n_words": 177,
+   "n_chars": 348,
+   "n_words": 48,
    "label_start": null,
    "label_end": null
   },
@@ -725,8 +714,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 4506,
-   "n_words": 791,
+   "n_chars": 5328,
+   "n_words": 925,
    "label_start": null,
    "label_end": null
   },
@@ -797,13 +786,25 @@
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 272,
-   "n_words": 52,
+   "n_chars": 228,
+   "n_words": 45,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-008-21-proof-of-theorem",
+   "id": "sec-008-2-correlation-functions-of-the-measures-mtheta",
+   "number": "2",
+   "title": "Correlation functions of the measures $M^\\theta$",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-21-proof-of-theorem",
    "number": "2.1",
    "title": "Proof of Theorem",
    "level": 2,
@@ -815,19 +816,31 @@
    "label_end": null
   },
   {
-   "id": "sec-009-22-proof-of-theorem",
+   "id": "sec-010-22-proof-of-theorem",
    "number": "2.2",
    "title": "Proof of Theorem",
    "level": 2,
    "page_start": 15,
-   "page_end": 18,
-   "n_chars": 6214,
-   "n_words": 1305,
+   "page_end": 17,
+   "n_chars": 4128,
+   "n_words": 909,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-010-3-correlation-functions-in-the-bulk-of-the-spect",
+   "id": "sec-011-24-commuting-difference-operator",
+   "number": "2.4",
+   "title": "Commuting difference operator",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2023,
+   "n_words": 388,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-3-correlation-functions-in-the-bulk-of-the-spect",
    "number": "3",
    "title": "Correlation functions in the bulk of the spectrum",
    "level": 1,
@@ -839,7 +852,7 @@
    "label_end": null
   },
   {
-   "id": "sec-011-31-proof-of-theorem",
+   "id": "sec-013-31-proof-of-theorem",
    "number": "3.1",
    "title": "Proof of Theorem",
    "level": 2,
@@ -851,7 +864,7 @@
    "label_end": null
   },
   {
-   "id": "sec-012-4-edge-of-the-spectrum-convergence-to-the-airy-e",
+   "id": "sec-014-4-edge-of-the-spectrum-convergence-to-the-airy-e",
    "number": "4",
    "title": "Edge of the spectrum: convergence to the Airy ensemble",
    "level": 1,
@@ -863,43 +876,55 @@
    "label_end": null
   },
   {
-   "id": "sec-013-41-results-and-strategy-of-proof",
+   "id": "sec-015-41-results-and-strategy-of-proof",
    "number": "4.1",
    "title": "Results and strategy of proof",
    "level": 2,
    "page_start": 24,
-   "page_end": 25,
-   "n_chars": 955,
-   "n_words": 189,
+   "page_end": 26,
+   "n_chars": 2464,
+   "n_words": 486,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-014-42-proof-of-theorem",
+   "id": "sec-016-42-proof-of-theorem",
    "number": "4.2",
    "title": "Proof of Theorem",
    "level": 2,
-   "page_start": 25,
+   "page_start": 26,
    "page_end": 33,
-   "n_chars": 12396,
-   "n_words": 2836,
+   "n_chars": 10893,
+   "n_words": 2539,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-015-43-depoissonization-and-proof-of-theorem",
+   "id": "sec-017-43-depoissonization-and-proof-of-theorem",
    "number": "4.3",
    "title": "Depoissonization and proof of Theorem",
    "level": 2,
    "page_start": 33,
-   "page_end": 36,
-   "n_chars": 3280,
-   "n_words": 780,
+   "page_end": 35,
+   "n_chars": 2222,
+   "n_words": 595,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-016-a1-fredholm-determinants-and-determinantal-proce",
+   "id": "sec-018-a-general-properties-of-determinantal-point-proc",
+   "number": "A",
+   "title": "General properties of determinantal point processes",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 1003,
+   "n_words": 178,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-019-a1-fredholm-determinants-and-determinantal-proce",
    "number": "A.1",
    "title": "Fredholm determinants and determinantal processes",
    "level": 2,
@@ -911,31 +936,31 @@
    "label_end": null
   },
   {
-   "id": "sec-017-a2-correlation-functions-of-determinantal-proces",
+   "id": "sec-020-a2-correlation-functions-of-determinantal-proces",
    "number": "A.2",
    "title": "Correlation functions of determinantal processes",
    "level": 2,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1417,
-   "n_words": 293,
+   "n_chars": 1414,
+   "n_words": 292,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-018-a3-complementation-principle",
+   "id": "sec-021-a3-complementation-principle",
    "number": "A.3",
    "title": "Complementation principle",
    "level": 2,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 1221,
-   "n_words": 262,
+   "n_chars": 1287,
+   "n_words": 272,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-019-a4-convergence-of-trace-class-operators",
+   "id": "sec-022-a4-convergence-of-trace-class-operators",
    "number": "A.4",
    "title": "Convergence of trace class operators",
    "level": 2,
@@ -953,7 +978,7 @@
   "toc_entries": 25,
   "toc_inferred_entries": 25,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_empty_share": 0.13,
   "toc_inferred_method": "latex",
   "figure_entries": 1,
   "figure_sequence_gaps": [],
@@ -961,13 +986,18 @@
    "count": 0,
    "items": []
   },
-  "sections": 21,
-  "chars_total": 71653,
+  "sections": 23,
+  "chars_total": 71561,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   1,
+   26
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "boo.tex",
    "tex_sections": 20,
-   "overlaid": 7,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -975,21 +1005,16 @@
    },
    "sections": [
     {
-     "id": "sec-front-matter",
-     "title": "Front matter",
-     "result": "no matching \\section"
-    },
-    {
      "id": "sec-000-11-plancherel-measures",
      "title": "Plancherel measures",
-     "prose_ratio": 0.307,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.089,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-1-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-12-poissonization-and-correlation-functions",
@@ -1034,78 +1059,101 @@
     {
      "id": "sec-007-17-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.073,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.85,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-008-21-proof-of-theorem",
+     "id": "sec-008-2-correlation-functions-of-the-measures-mtheta",
+     "title": "Correlation functions of the measures $M^\\theta$",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-21-proof-of-theorem",
      "title": "Proof of Theorem",
      "prose_ratio": 0.414,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-009-22-proof-of-theorem",
+     "id": "sec-010-22-proof-of-theorem",
      "title": "Proof of Theorem",
-     "prose_ratio": 0.418,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.312,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-010-3-correlation-functions-in-the-bulk-of-the-spect",
+     "id": "sec-011-24-commuting-difference-operator",
+     "title": "Commuting difference operator",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-3-correlation-functions-in-the-bulk-of-the-spect",
      "title": "Correlation functions in the bulk of the spectrum",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-011-31-proof-of-theorem",
+     "id": "sec-013-31-proof-of-theorem",
      "title": "Proof of Theorem",
      "prose_ratio": 0.515,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-4-edge-of-the-spectrum-convergence-to-the-airy-e",
+     "id": "sec-014-4-edge-of-the-spectrum-convergence-to-the-airy-e",
      "title": "Edge of the spectrum: convergence to the Airy ensemble",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-013-41-results-and-strategy-of-proof",
+     "id": "sec-015-41-results-and-strategy-of-proof",
      "title": "Results and strategy of proof",
-     "prose_ratio": 0.431,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.886,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-014-42-proof-of-theorem",
+     "id": "sec-016-42-proof-of-theorem",
      "title": "Proof of Theorem",
      "prose_ratio": 0.996,
-     "coverage_ratio": 0.818,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-43-depoissonization-and-proof-of-theorem",
+     "id": "sec-017-43-depoissonization-and-proof-of-theorem",
      "title": "Depoissonization and proof of Theorem",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.543,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.938,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-a1-fredholm-determinants-and-determinantal-proce",
+     "id": "sec-018-a-general-properties-of-determinantal-point-proc",
+     "title": "General properties of determinantal point processes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-a1-fredholm-determinants-and-determinantal-proce",
      "title": "Fredholm determinants and determinantal processes",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-017-a2-correlation-functions-of-determinantal-proces",
+     "id": "sec-020-a2-correlation-functions-of-determinantal-proces",
      "title": "Correlation functions of determinantal processes",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-018-a3-complementation-principle",
+     "id": "sec-021-a3-complementation-principle",
      "title": "Complementation principle",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-019-a4-convergence-of-trace-class-operators",
+     "id": "sec-022-a4-convergence-of-trace-class-operators",
      "title": "Convergence of trace class operators",
      "result": "no matching \\section"
     }

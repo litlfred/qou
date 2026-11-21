@@ -25,7 +25,7 @@ namespace QOU.BraidsAndKnots
     which the `q`-deformation `θ(q₀) ≈ 117.087°` departs (`Δθ ≈ −2.913°`, the
     derived symmetry-breaking seed of the `c₃` bar-odd `S`). -/
 -- Ref: [jones1987] Jones, Hecke algebra representations of braid groups (1987)
--- Ref: [manuscript] prop:figure-eight-reeb-rotation
+-- Ref: [leitner2026] prop:figure-eight-reeb-rotation
 theorem figure_eight_classical_reeb (lam : ℂ)
     (hroot : lam ^ 2 + lam + 1 = 0) :
     ‖lam‖ = 1 ∧ lam ^ 3 = 1 ∧ lam ≠ 1 := by

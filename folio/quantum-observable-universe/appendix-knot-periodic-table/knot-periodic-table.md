@@ -138,9 +138,6 @@ crossings.  The full building-block catalogue with Jones polynomials
 and volumes is in
 ([building-block knots](#rem:building-block-knots)).
 
-**Per-element table.** The full $Z = 1$ to $92$ grid lives as the *Per-element stability summary* section of the [recursive atom-knot atlas](#prop:recursive-atom-knot-atlas), which also carries the per-isotope coverage table for all 3558 nuclides in AME 2020 (Z = 0 to 118).
-
-
 **Column key.** $N_{\mathrm{pred}}$ = predicted $N$ from beta-stability formula
 ([beta-stability](#prop:beta-stability)),
 $\Delta$ = $|N - N_{\mathrm{pred}}|$,

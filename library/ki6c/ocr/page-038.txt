@@ -1,0 +1,62 @@
+Hessian of f is not positive where the contour lines are not convex, though we like to
+show that the Hesse matrix of f is positive definite at any critical point of f.
+
+Lemma 4.4. Firing X and Y, we regard f as a function of Z.
+(1) Ifs+u > 4, then f is monotonically decreasing.
+(2) Ifstu<, then f has a unique minimal point at Z = g3(t,s,u), where
+1 sin 27s
+3(t,s,u) = = log ———_——_....
+ga(t, 8.4) 20 * sin 2n(E — 5 —u)
+In particular, this minimal point goes to co as s +u> 3 —0.
+
+Proof. As a function of Z, the differential of f is presented by
+
+of 1
+
+of = Arg(1—z)-2nr(s+u-— 3)
+where z = e2"¥-1(“+ZV-1)_ Hence, we can show the lemma in a similar way as the proof
+of Lemma 3.5. O
+
+When we regard f as a function of Z fixing X and Y, by Lemma 4.4, f has a unique
+minimal point at Z = g3(t, s,u); we note that this minimal point does not depend on X
+and Y. In order to consider the behavior of f, putting
+
+MXY) = F(XY.gs(t.s,w)), (68)
+
+we consider the behavior of f in each fiber of the projection C? + R° at (t,s,u) € A’ Cc R’.
+
+1 , f has a unique
+
+Lemma 4.5. For each (t,8,u) € A’ satisfying that t— 5 < stu <
+minimal point and no other critical points.
+
+Nie
+
+Proof. The differentials of f are presented by
+
+Of _ Of _ y 1
+
+ax ~ ax 7 Im (= 2log(1 = 2) + log (1 = *)) + 2n(t— 5)
+
+Of _ Of _ y
+
+ay ~ by = Im (2log(1 —y) — log (1- “)) —2n(2s+u-—1),
+
+where x = eV T(H+XVD) and y = e"V-16+YV-1)_ Hence, since = —2na,
+af 2 wy dt) | Qa X
+a = (+ a) i) = 2eim(— 7 a)
+2 1
+~ 2m Im ( — 1-2 7):
+
+where we obtain the last equality by changing the content of the parentheses by a real
+number, which does not change its imaginary part. Similarly, we have that
+
+2 Ff 2 Ff
+of = 27Im ! oF = an Im (—>— ! ).
+1
+
+aX OY 1-47 ay? -y 1-#
+
+ale
+
+38

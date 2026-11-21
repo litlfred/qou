@@ -1,0 +1,64 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-101
+section_title: "Page 101"
+section_number: null
+pages: 101-101
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 473
+
+Problem 7.3 (S.K. Hansen, T. Takata) Do the family of quantum G invari-
+ants re or the family of quantum PG invariants 7? GG running through all
+simply connected compact simple Lie groups and r running through all allowed
+levels, separate rational homology 3-spheres? How well do these families of
+
+invariants separate closed oriented 3-manifolds?
+
+Remark (S.K. Hansen, T. Takata) It is well known that the LMO invariant
+is a weak invariant outside the class of rational homology 3-spheres; see the
+last remark on Problem 11.1. On the contrary there are 3-manifolds with
+arbitrary high first Betti number and non-trivial quantum SU(2) invariants as
+the example of Seifert manifolds shows. We note that the non-triviality of the
+invariants of Seifert manifolds e.g. follows from the fact that these invariants
+have non-trivial asymptotic expansion in the limit of large quantum level; see
+[354], [168], and Section 7.2. It is likely to believe, e.g. from the asymptotic
+expansion conjecture of Andersen, see Conjecture 7.7, that the quantum G
+invariants are quite strong invariants also outside the class of rational homology
+3-spheres. It is known, however, that the family of quantum SU(n) invariants,
+n running through all integers > 1, is not a complete invariant, that is to say
+that this family of invariants can not separate all closed oriented 3-manifolds, cf.
+[256]. It is still an open question if this is also the case if we include the quantum
+invariants for all the other simply connected compact simple Lie groups.
+
+Problem 7.4 Find a 3-dimensional topological interpretation of quantum in-
+variants of 3-manifolds.
+
+Remark Certain special values have some interpretations. For a closed ori-
+ented 3-manifold M,
+SUR) (yp) 0 if there exists a € H!(M;Z/2Z) with a3 4 0,
+T. 1) = . £2
+3 Varank MZ /22) a Myx V=T/4 otherwise,
+
+(38)
+
+where 6(M/) denotes the Brown invariant. Further, for a closed oriented 3-
+manifold M,
+TUM y= > eT H(M,0)-30V=T/8
+o
+where the sum runs over all spin structures o of M and yu(M,o) denotes the
+Rokhlin invariant of a spin structure o of M. For details, see [221].
+
+It is known [291] that, for any rational homology 3-sphere M and any prime
+p> |Hi(M;Z)|,
+| (M; Z)|
+
+|H,(M;Z)|-73°@) (M) = ( 7
+
+) ( +6\(M)(¢ — 1))
+
+Geometry & Topology Monographs, Volume 4 (2002)

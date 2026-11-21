@@ -18,7 +18,7 @@
   Ref: [hoefsmit1974] P.N. Hoefsmit, "Representations of Hecke algebras
        of finite groups with BN-pairs of classical type", PhD thesis, 1974.
        [wenzl1988] https://doi.org/10.1007/BF01404457
-       [manuscript] §5.5, prop:hoefsmit-seminormal-form
+       [leitner2026] §5.5, prop:hoefsmit-seminormal-form
 -/
 
 import Mathlib.LinearAlgebra.Matrix.Trace
@@ -296,7 +296,7 @@ theorem figure_eight_hoefsmit_trace (q : ℝ) (hq : 1 < q) :
   -- Both sides equal 1 - q² - q⁻²:
   --   2 - [3] = 2 - (q²+1+q⁻²) = 1 - q² - q⁻²
   --   -1 - h² = -1 - (q-q⁻¹)² = -1 - q² + 2 - q⁻² = 1 - q² - q⁻²
-  -- Ref: [manuscript] §5.9, verified by SymPy
+  -- Ref: [leitner2026] §5.9, verified by SymPy
   have hq0 : q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
   have hq_pos : (0 : ℝ) < q := lt_trans zero_lt_one hq
   have hh : q - q⁻¹ ≠ 0 := by

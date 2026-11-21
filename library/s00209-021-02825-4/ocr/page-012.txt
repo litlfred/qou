@@ -1,0 +1,54 @@
+1370 J. Leake
+
+We call Symb(T) the (universal) symbol of T.
+
+This expression bears striking resemblance to the symbol used by Borcea and Brandén
+in [1], which motivates the use of the name “symbol” here. (In fact, Symb is almost the
+homogenization of the Borcea—Brandén symbol.) In Sect. 6, Symb will allow us to reduce
+the study of Hom(V (A), V(@)) to the study of V(A Liq) via the next lemma. We refer to this
+next result as the symbol lemma, and it demonstrates the fundamental connection between
+an operator 7, its symbol, and the apolarity form. Note that the computation done here in
+the proof of this lemma is in a sense redundant. The operator Symb was essentially defined
+such that Symb(T) acts as T via D+.
+
+Lemma 3.7 (Symbol Lemma) Fix A € Ni, a € Ni, and a linear operator T €
+Hom(V (A), V(@)). For g € V(A) andr € V(a), we have:
+
+D* (Symb(T) @ q-r) = (AIP TQ) @r
+
+Proof Letting q,, be the coefficient of the x“ y*~ term of g, we compute:
+
+D*(Symb(T) ®q-r) = D* | > (2) een" TOMY @ ger
+
+MSA
+a\? ,
+=> ( ) (A= plat Toy") @ (aay Mgyr
+wer
+= (aly? > TH yP) @ quer
+MSA
+
+= (Al?T(q) @r
+
+4 Polynomial stability theory
+
+Given 4 € Nj, a polynomial p(x), y1,..., Xm. Ym) € V(A) is said to be stable if it doesn’t
+vanish in Hi"! C (CP!)”. More generally, p is said to be Q-stable if it doesn’t vanish in Q.
+As above, we say p is weakly Q-stable if possibly p = 0. Most all results related to zero
+location of polynomials then can be translated into statements about stability properties of
+polynomials and stability preservation properties of operations applied to polynomials.
+
+A linear operator T is said to preserve weak Q2-stability if T (p) is Q-stable or identically
+zero for all Q-stable p. Further, a real linear operator T preserves weak real stability if the
+same holds for real stable polynomials. In [1], Borcea and Brindén were concerned with
+classifying such weak stability preserving operators. As seen in their main characterization
+results (Theorems 1.1 and 1.2), allowing the zero polynomial leads to a degeneracy condition
+in their characterization.
+
+In order to remove this condition, we define a slightly different notion of stability: we say
+a linear operator T preserves (strong) Q-stability if T (p) is stable and nonzero for all stable
+p. Similarly, we say a real linear operator T preserves (strong) real stability if the same holds
+for real stable polynomials. Most of the main results of this paper rely on this notion of strong
+stability preservation, and we will demonstrate how it relates to weak stability preservation
+in Sects. 6.3 and 7.3.
+
+D Springer

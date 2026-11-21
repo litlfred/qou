@@ -1,0 +1,45 @@
+D.1 Whitney stratified spaces 517
+
+Xp of its singular points, letting Sp = V \ Xo encode the smooth points of
+YY, then recursively computing the sets Z,,,,; and S,,,,; of smooth and singular
+points of &,, until arriving at some Ly = @. From the previous two examples,
+one might get the idea that this decomposition is always a Whitney stratifica-
+tion, but Exercise D.6 below shows this not to be the case. It is true, however,
+that any stratification must be at least this coarse.
+
+Example D.8. Let Z be a complex algebraic hypersurface in C* defined by
+(x,y,z) = 0 and suppose V f vanishes along an algebraic curve y. It is pos-
+sible that {y,Z \ y} is a Whitney stratification for Z. On the other hand, if y is
+not smooth then a Whitney stratification of Z will have at least three strata, one
+containing singularities of y, one containing the rest of y, and one containing
+Z\y. <
+
+Exercise D.2. Compute a Whitney stratification of the real variety Vg where
+Oxy.2)=2-—x -y?.
+
+The following exercise implies, with a little more work, that any manifold
+with corners (including any manifold with boundary) is a Whitney stratified
+space, with strata {S; : 0 < j < d} defined by the union of the open j-
+dimensional faces.
+
+Exercise D.3. Let H = R4, be the positive orthant, let F be a (open) face of
+H and let x be a point of F. Prove directly that the interior Sg = H° and face
+Sq = F satisfy the Whitney condition (Definition D.3) at x.
+
+One fundamental result of stratified spaces concerns their local product struc-
+ture, implying that the local behavior of a stratified space “looks the same” in
+neighborhoods of different points on the same stratum. The proof of this fact
+is long and difficult, but we sketch some of it in the next section.
+
+Theorem D.9 (local product structure). Let p be a point in a k-dimensional
+stratum S of a stratified space Z. There is a topological space N, called the
+normal slice, depending only on S and not the choice of p € S, such that
+some neighborhood of p in Z is homeomorphic to B* x N, where BE is a k-
+dimensional ball. im
+
+We end this section with the following concept.
+
+Definition D.10 (stratification of a pair). If Y C X are closed subsets of real
+space then a stratification of the pair (X,Y) is defined to be a stratification
+of X such that intersecting each stratum with Y gives a stratification of Y and
+intersecting each stratum with X \ Y gives a stratification of X \ Y.

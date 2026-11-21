@@ -1,4 +1,4 @@
-Let $z=x_0/x_1\in\mathbb{P}^1(\mathbb{C})$ be the projective spacetime ratio ([braid group action](#rem:braid-group-action)(i)). We substitute the constraint $x_0+x_1=C$ and eliminate $x_0,x_1$ in favour of $z$. The quadratic and cubic power-sum conditions on the color variable $X=(x_2,x_3,x_4)$ reduce at each fixed $z$ to the cubic
+Let $z=x_0/x_1\in\mathbb{P}^1(\mathbb{C})$ be the projective spacetime ratio ([braid group action](#rem:braid-group-action)(i)). Substitute the constraint $x_0+x_1=C$ and eliminate $x_0,x_1$ in favour of $z$. The quadratic and cubic power-sum conditions on the color variable $X=(x_2,x_3,x_4)$ reduce at each fixed $z$ to the cubic
 
 ```tex
 \begin{equation}\label{eq:color-elliptic}

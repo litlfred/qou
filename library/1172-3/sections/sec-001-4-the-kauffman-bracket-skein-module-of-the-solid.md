@@ -8,6 +8,7 @@ pages: 4-7
 source_pdf: 1172-3.pdf
 source_sha256: e9c32f59e9db7970
 toc_source: inferred
+doc_brief: "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS — 4 sections: Front matter; RESULTS; THE KAUFFMAN BRACKET SKEIN MODULE"
 ---
 We use the Kauﬀman bracket skein module $B=B(V)$ of the solid
 torus
@@ -44,7 +45,6 @@ $e_{i}$ corresponds
 to the $(i+1)$-dimensional irreducible representation of the quantum
 group
 $U_{q}(sl_{2})$ .
-37
 ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS
 5. THE PAIRING
 Let
@@ -93,7 +93,6 @@ Namely the
 $Q_{i}$ form an orthogonal basis of $B$ . The property (1) above
 comes from the fact that
 $\langle z+a^{i+1}+a^{-i-1}, e_{i}\rangle=0$.
-38
 KAZUO HABIRO
 We modify the deﬁnition of
 $Q_{n}$ above as follows.
@@ -135,5 +134,4 @@ $R_{n}$ basis.
 Proposition 5.1. For each
 $n\geq 0_{f}$
 $e_{n}= \sum_{i=0}^{n}(-1)ih$ .
-39
 ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS

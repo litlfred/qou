@@ -40,7 +40,7 @@ object from this multiplication associator; not claimed here.) Generic `ZMod 2`
 (§7c), sorry-free.
 
 -- Ref: [albuquerque-majid1999] https://arxiv.org/abs/math/9802116
--- Ref: [manuscript] docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md
+-- Ref: [leitner2026] docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md
 -/
 
 namespace QOU.BringsSurface.OctonionCocycle

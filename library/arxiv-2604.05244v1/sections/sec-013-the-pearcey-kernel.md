@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.897
 latex_coverage_ratio: 1.0
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 Just as the Airy kernel arises from the fold normal form $\zeta^3/3-u\zeta$, one expects the cusp normal form [\[eq:cusp-phase\]](#eq:cusp-phase){reference-type="eqref" reference="eq:cusp-phase"} to produce the *Pearcey kernel* [@Pearcey1946]. In its standard integrable representation [@TracyWidomPearcey; @BleherKuijlaars2007; @AdlerFerrariVanMoerbeke2010], $$K_{\rm P}^{(\gamma)}(\sigma,\sigma')
   = \frac{1}{(2\pi i)^2}\int_\Gamma d\zeta\int_\Sigma d\eta\;

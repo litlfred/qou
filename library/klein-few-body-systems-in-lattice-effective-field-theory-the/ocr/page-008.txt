@@ -1,0 +1,55 @@
+Chapter 1 Introduction and Motivation
+
+structure leads to phenomena like gluon self-interaction, quark confinement and asymptotic freedom.
+The strong coupling constant is defined by a, = g’ |(4r). In contrast to quantum electrodynamics, where
+the coupling constant runs weakly and is small, ag), ~ 1/137, the coupling constant a, runs strongly
+depending on the momentum scale of the system. Its theoretical and experimental values are shown in
+Fig. 1.1.
+
+5
+6 J psssnee A a,,/x DESY HERMES
+S eh a,,/m CERN COMPASS
+s © Gym SLAC E142/E143
+ve ayy SLAC E1S4/E155
+os @ a, ,/x JLab RSS
+Fay’ CERN SMC
+06
+04-F
+— AdS/QCD
+Y) Bjorken sum rule constraint.
+so GDH limit 3K ctpy/s0
+02-0 Oy.) OPAL
+A a,,/ JLab CLAS (2008)
+V_ a,,/x JLab CLAS (2014)
+a,x Hall A/CLAS
+OF .
+1 1
+
+101" 1 10
+Q (GeV)
+
+Figure 1.1: Running coupling constant for the strong force a. Figure taken from [1].
+
+Although QCD can be solved perturbatively for Q > 1 GeV due to asymptotic freedom, this is not the
+case in the low-energy region, where a; ~ |. This strong coupling is responsible for quark confinement
+and makes it necessary to use non-perturbative methods like lattice QCD or to use an effective field
+theory approach. Both methods are explained in the subsequent sections.
+
+While lattice QCD and effective theory are highly successful in the two- and partly three- and four-body
+sector, one has to use different methods for the description of many-body physics. The reason is that
+an extension of the corresponding Faddeev-Yakubovsky equations become impractical to solve. There
+are various many-body methods whereas we just name a few in the following. Firstly we have coupled
+cluster theory or shell/no-core shell models, which use phenomenological Lagrangians as input. Secondly,
+there are Green’s function Monte Carlo methods which combine variational methods with Monte Carlo
+methods for the evaluation of integrals. This method is rather successful and details will be given below.
+
+In this thesis we will use a third approach, namely the nuclear lattice effective field theory (NLEFT),
+where the interactions are determined from ab initio 2N and 3N interactions based on chiral effective
+theory. Moreover, the space is discretized, such that a natural cutoff A arises by the lattice spacing a,
+A = x/a and exact methods as well as statistical methods known from Lattice QCD are used for the
+evaluation of binding energies, phase shifts, etc. for two-, few- and many-body problems.
+
+1.2 Lattice QCD
+
+Lattice QCD is a non-perturbative method for solving QCD in the low-energy region. Generally, one
+calculates correlation functions in a discretized space-time using Monte Carlo methods. In the following

@@ -1,0 +1,1 @@
+In the situation of Theorem 10.1.13, suppose K has enough K-injectives, and let (I, ρ) be a system of K-injective resolutions in K. Then the function I extends uniquely to a triangulated functor I : D →Kinj, such that IdKinj = I ◦Q |Kinj, and ρ : IdD ⇒Q ◦I is an isomorphism of triangulated functors.

@@ -1,0 +1,22 @@
+---
+doc_id: arxiv-0707.2052v1
+doc_title: "The Mukai pairing, I: a categorical approach"
+section_id: sec-023-open-closed-2d-tqfts
+section_title: "Open-closed 2d TQFTs."
+section_number: null
+pages: 26-27
+source_pdf: 0707.2052v1.pdf
+source_sha256: 0a1d1cca848706be
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.994
+doc_brief: "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3"
+---
+Consider the open and closed 2-cobordism category $2\textsf{Cob}_{\text{oc}}$ whose objects are oriented, compact one-manifolds --- in other words, disjoint unions of circles and intervals --- and whose morphisms are (diffeomorphism classes of) cobordisms-with-corners between the source and target one-manifolds. A morphism can be drawn as a vertical cobordism, from the source at the bottom to the target at the top. As well as parts of the boundary being at the top and the bottom, there will be parts of the boundary in between, corresponding to the fact that this is a cobordism with corners. An example is shown below. $$\raisebox{-.45\height}{}$$ Disjoint union makes $2\textsf{Cob}_{\text{oc}}$ into a symmetric monoidal category and an open-closed two-dimensional topological quantum field theory (2d TQFT) is defined to be a symmetric monoidal functor from $2\textsf{Cob}_{\text{oc}}$ to some appropriate symmetric monoidal target category, which we will take to be the category of vector spaces or the category of graded vector spaces. The category $2\textsf{Cob}_{\text{oc}}$ has a simple description in terms of generators and relations which means that there is a reasonably straight forward classification of open-closed 2d TQFTs up to equivalence. This is what we will now describe. The following morphisms generate $2\textsf{Cob}_{\text{oc}}$ as a symmetric monoidal category. $$\raisebox{-.45\height}{}$$ We will come back to the relations below.
+
+To specify an open-closed 2d TQFT up to equivalence on objects it suffices to specify the image $\textsf{C}$ of the circle and the image $\textsf{O}$ of the interval. The former is called the space of closed string states and the latter is called the space of open-string states. Using the four *planar* generating morphisms pictured above, together with the relations between them, it transpires that $\textsf{O}$, the space of open-string states is precisely a symmetric, but not-necessarily commutative Frobenius algebra. This means that it is a unital algebra with a non-degenerate, symmetric, invariant inner-product. It is useful to note here that the inner product is symmetric because the two surfaces pictured below are diffeomorphic, however these surfaces are *not* ambient isotopic --- so one cannot be deformed to the other in three-space while the bottom boundary is fixed. $$\raisebox{-.45\height}{}\stackrel{\text{diffeo}}{=}\raisebox{-.45\height}{}$$ On the other hand, the first four generating morphisms, along with their relations, mean that $\textsf{C}$, the space of closed string states, is a *commutative* Frobenius algebra. The last two morphisms mean that there are maps $i_*\colon \textsf{C}\to\textsf{O}$ and $i^*\colon \textsf{O}\to \textsf{C}$, and by the relations these are adjoint with respect to the pairings on these spaces. Moreover, $i_*$ is an algebra map, such that its image lies in the centre of $\textsf{O}$. The final relation that these must satisfy is the *Cardy Condition*. In terms of the generators pictured above this is the following relation: $$\raisebox{-.45\height}{}=\raisebox{-.45\height}{}.$$ Note again that these surfaces are diffeomorphic but not isotopic in three-space. In terms of maps, writing $\mu\colon \textsf{O}\otimes
+\textsf{O}\to \textsf{O}$ and $\delta\colon\textsf{O}\to\textsf{O}\otimes\textsf{O}$ for the product and coproduct of the open string state space and writing $\tau\colon\textsf{O}\otimes\textsf{O}\to\textsf{O}\otimes\textsf{O}$ for the symmetry in the target category, the Cardy Condition is the equality of maps from $\textsf{O}$ to $\textsf{O}$: $$\mu\circ \tau\circ \delta=i_*\circ i^*.$$ We will have reason to use an equivalent condition below.
+
+To summarize, having an open-closed 2d TQFT is equivalent to having the data of a commutative Frobenius algebra $\textsf{C}$, a symmetric Frobenius algebra $\textsf{O}$, and an algebra map $i_*\colon \textsf{C}\to
+\textsf{O}$ with central image, such that the Cardy Condition is satisfied.

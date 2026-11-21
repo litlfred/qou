@@ -32,7 +32,7 @@ those stay beaned, and no conjecture-class asserting the identification is defin
 (anti-laundering). §7c: identity over generic `CommRing` (`geomSum_form`); `[k]_z`
 naming over `Field` (`qInt_form`). Sorry-free. No fit; nothing wired.
 
--- Ref: [manuscript] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1/G1)
+-- Ref: [leitner2026] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1/G1)
 -/
 import QOU.MathlibExt.QIntegerFactorial
 

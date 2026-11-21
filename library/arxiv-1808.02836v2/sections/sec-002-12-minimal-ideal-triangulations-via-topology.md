@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1808.02836v2
-doc_title: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds"
+doc_title: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction"
 section_id: sec-002-12-minimal-ideal-triangulations-via-topology
 section_title: "Minimal ideal triangulations via topology"
 section_number: 1.2
 pages: 2-3
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
-doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.716
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.95
+latex_coverage_ratio: 0.995
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds Introduction — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low"
 ---
 In this paper, we are first concerned with the anatomy of a minimal ideal triangulation. In particular, in §[\[sec:anatomy\]](#sec:anatomy){reference-type="ref" reference="sec:anatomy"} we characterise edges of low degree, and analyse subcomplexes that we call *maximal layered $\partial$--punctured solid tori.* These are solid tori with a point missing on the boundary, and imbued with a special ideal triangulation. These subcomplexes were exhibited by Guéritaud and Schleimer [@Gueritaud-canonical-2010] in canonical decompositions of cusped hyperbolic 3--manifolds satisfying certain genericity hypotheses, and are thus a natural part of the structure of an ideal triangulation to analyse from a geometrical viewpoint. Our methods show that they also have an important topological role to play. In §[\[sec:normsurfs\]](#sec:normsurfs){reference-type="ref" reference="sec:normsurfs"} we describe normal surfaces representing $\mathbb{Z}_2$--homology classes in ideal triangulations. We use this in §[\[sec:quadsurfs\]](#sec:quadsurfs){reference-type="ref" reference="sec:quadsurfs"} to prove our main result Theorem [\[thm:sumofnorms\]](#thm:sumofnorms){reference-type="ref" reference="thm:sumofnorms"}, which is analogous to the main result of [@Jaco-Z2-2013]. Before we can state it, we need to introduce some extra definitions.
 

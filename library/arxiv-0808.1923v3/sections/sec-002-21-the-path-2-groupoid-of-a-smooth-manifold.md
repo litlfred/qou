@@ -7,10 +7,11 @@ section_number: 2.1
 pages: 6-7
 source_pdf: 0808.1923v3.pdf
 source_sha256: 3c53f7c0fd9acf89
-doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transp ort of connections on gerbes."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.992
+latex_coverage_ratio: 1.0
+doc_brief: "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes."
 ---
 \label{sec:path2groupoid}
 

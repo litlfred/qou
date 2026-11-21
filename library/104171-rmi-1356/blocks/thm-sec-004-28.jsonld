@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/104171-rmi-1356/blocks/thm-sec-004-28",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 34,
+  "pageEnd": 43,
+  "text": "thm-sec-004-28.md",
+  "derivedFrom": "library/104171-rmi-1356/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-rmi-1356/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.29",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-004-5-handlebody-brauer-and-bmw-algebras.md (p. 34-43)"
+  }
+}

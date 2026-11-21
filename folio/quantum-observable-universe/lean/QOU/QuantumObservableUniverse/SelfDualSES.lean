@@ -49,7 +49,7 @@ identification as checkable statements rather than leaving it as prose: it
 means a parity-collapse argument and a self-duality argument are one argument,
 and either file's hypotheses can be discharged by the other's.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes
 -/
 
 namespace QOU.SelfDualSES

@@ -1,0 +1,46 @@
+Canonical triangulations 1265
+
+where A, = a+ sb for 0 < s < N, and an identical relation for a’, b’.
+
+Next, each fan, when stripped of two of its four limiting (grey) triangles, is a parallelo-
+gram. This follows from cot(a + Nb) = cot(7 — a) = — cota, and the same for a’. In
+particular, each fan admits a center of symmetry.
+
+Furthermore, these two parallelograms are congruent. To see this, let a, a’, 3, 3’ denote
+the squared cotangents of a,a’',b, b'. Raising (6) to the power —2, we get
+
+Ita = -604+ 6) hence “= B+H/8+1 _ B
+I¢+a = -9(14+87)) a 8 +B/B4+1 Br
+so cota/cotb = + cota’/cotb’, the correct sign being minus by the estimates (7).
+
+Further yet, the limiting (grey) triangles of the two fans have the same shape: by
+(8) their complex ratios are sin? a/ sin? b and sin? b’/sin? a’, both equal by (6) to
+— cos? b’/ cos? b.
+
+Finally, all triangles are positively oriented, that is, Im(sin? A,/ sin? b) > 0 for all
+0<s<N. We first check this for s = 0 (the case s = N will follow by symmetry): we
+have sin? a/ sin? b = —(cos* b!/ cos? b) = —((1 — sin? b’)/(1 — sin? b)). In the latter
+expression, both the numerator and denominator are ~ 1, but their imaginary parts are
+equivalent to —477/M? and 41?/N? respectively (with an O(N—*, M~*) error), by (7).
+Therefore, the ratio does lie above the real line, and the “pinched” angles of the limiting
+(grey) triangles in Figure 11 are both roughly
+
+2n?(N~> + M~3) radians.
+Very pinched, but not flat!
+
+To check that arg(sinA;/ sin b) lies in (0, 7/2) for all other 0 < s < N, we need to
+draw the level curves of z +> arg(sinz) in C. This is done in Figure 12, in the case
+0 < Re(z) < m: the curves fall into 4 symmetric families (“quadrants” meeting at
+m/2 € C), and it is an easy exercise to check that the families above (resp. below) the
+real axis are made of convex (resp. concave) curves. The authorized region for the
+As = a+ sb is in grey (with a narrow collar near 7/2); the forbidden regions are left in
+white. The segment [AgAy] clearly stays in the grey region, which implies the result.
+
+By the same argument, the triangles in the fan of L” are well-oriented, too. Therefore
+we may tile the plane with parallelograms (or fans) congruent to those in Figure 11 to
+get a Euclidean realization of Figure 4. Oo
+
+Finally, notice that the Kleinian group associated to the embedding of the left fan in
+Figure 11 contains the Mobius transformation z +> (zcos b — sinb/(z sin b + cos b)) (it
+
+Geometry & Topology 10 (2006)

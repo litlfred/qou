@@ -95,6 +95,7 @@ B_AME = {
 # running mass_table_ppb.predict() in PR #1111.  For atoms not
 # covered by mass_table_ppb's ATOM_ASSIGN (5Li, 6Li, 7Li gap), use
 # None.
+# witness-copy-intentional: outputs recorded from mass_table_ppb.predict() in PR #1111.
 B_PRED_KASHAEV = {
     "2H":    2.2488207948647343,
     "3H":    8.46859838653302,

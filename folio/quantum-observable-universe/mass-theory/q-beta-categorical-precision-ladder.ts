@@ -37,6 +37,9 @@ export default proposition({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): (per [$\\mathfrak{Q}_\\beta$ spectral bridge](#prop:q-beta-spectral-bridge))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): from [Symbolic $Q$-value of free neutron decay](#prop:neutron-qvalue-symbolic)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , below the $0.0094$ ppm $N=3$ c(K) ceiling from the [exponential decay of the archimedean brane-tower truncation remainder](#conj:archimedean-remainder-exponential-decay); at the canonical proton pin the same five rungs give $+0.0377$ ppm, which does not clear that ceiling." },
     {
       kind: "status",
       date: "2026-08-31",

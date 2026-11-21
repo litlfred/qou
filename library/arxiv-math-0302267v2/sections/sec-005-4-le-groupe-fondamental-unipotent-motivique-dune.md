@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "arXiv:math/0302267v2 [math.NT] 27 Feb 2003"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-005-4-le-groupe-fondamental-unipotent-motivique-dune
 section_title: "Le groupe fondamental unipotent motivique d’une vari´et´e rationnelle"
 section_number: 4
@@ -8,6 +8,7 @@ pages: 43-53
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
 toc_source: inferred
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 4.1. Soient k un corps de nombres, P une droite projective sur k, X le compl´ement d’un
 ensemble ﬁni S de points rationnels et x, y ∈X(k). Dans Deligne (1989) §13, nous avons

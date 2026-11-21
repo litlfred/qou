@@ -23,9 +23,9 @@ results are verified by Lean.
 This pattern (axiomatize the conjecture as a class, prove conditional
 downstream results) follows §3b of `AGENTS.md`.
 
--- Ref: [manuscript] conj:mass-endomorphism
--- Ref: [manuscript] conj:brane-tower-z-habiro
--- Ref: [manuscript] prop:quantum-dilogarithm-stratified
+-- Ref: [leitner2026] conj:mass-endomorphism
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified
 -/
 
 namespace QOU.WedderburnMass
@@ -44,7 +44,7 @@ namespace QOU.WedderburnMass
     Σ_i Φ_q(z_i) = Vol(K)/ℏ_q² — the topological-decomposition
     part of the conjecture (Step 2 in conj:mass-endomorphism's
     "What is known"). -/
--- Ref: [manuscript] conj:mass-endomorphism
+-- Ref: [leitner2026] conj:mass-endomorphism
 class MassEndomorphism (R : Type*) [CommRing R] (β : Type*) where
   /-- The substrate parameter q ∈ R. -/
   q : R
@@ -63,14 +63,14 @@ class MassEndomorphism (R : Type*) [CommRing R] (β : Type*) where
   /-- The volume identity as an equality. The proof of this equality
       is the open part of the conjecture; instances supply it as a
       hypothesis (axiomatic input). -/
-  -- Ref: [manuscript] conj:mass-endomorphism §"Statement"
+  -- Ref: [leitner2026] conj:mass-endomorphism §"Statement"
   vol_eq : tr_transient = vol_identity - tr_descended
 
 /-- The full categorical mass at brane-tower-saturation. Conditional
     on a `MassEndomorphism` instance, this gives the mass as the sum
     of the descended Markov trace plus the transient brane-tower —
     fully derived from the class data, no further sorries. -/
--- Ref: [manuscript] conj:mass-endomorphism §"Step 2"
+-- Ref: [leitner2026] conj:mass-endomorphism §"Step 2"
 def fullMass {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] : R :=
   M.tr_descended + M.tr_transient
@@ -79,7 +79,7 @@ def fullMass {R : Type*} [CommRing R] (β : Type*)
     full categorical mass equals the volume identity term. This is
     proved unconditionally from the class instance — the only
     "axiomatic" input is the existence of the instance itself. -/
--- Ref: [manuscript] conj:mass-endomorphism §"What is known", Step 2
+-- Ref: [leitner2026] conj:mass-endomorphism §"What is known", Step 2
 theorem fullMass_eq_volume {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] :
     fullMass β = M.vol_identity := by
@@ -92,7 +92,7 @@ theorem fullMass_eq_volume {R : Type*} [CommRing R] (β : Type*)
     `conj:brane-tower-z-habiro` Cauchy-sequence claim: the partial
     sums tr_transient stabilise as N grows, with the limit in the
     z-Habiro completion. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
 def braneTowerPartialSum {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] : R :=
   M.tr_transient
@@ -107,7 +107,7 @@ def braneTowerPartialSum {R : Type*} [CommRing R] (β : Type*)
     there is exactly one value of tr_transient consistent with the
     class — namely `vol_identity - tr_descended`.  Any other element
     satisfying the same equation equals tr_transient. -/
--- Ref: [manuscript] conj:mass-endomorphism §Statement
+-- Ref: [leitner2026] conj:mass-endomorphism §Statement
 theorem transient_unique {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] (t : R)
     (h : t = M.vol_identity - M.tr_descended) :
@@ -120,7 +120,7 @@ theorem transient_unique {R : Type*} [CommRing R] (β : Type*)
     brane-tower contribution `tr_transient` is non-negative.  This is
     the algebraic content of the physical expectation that the tower
     always contributes positively to mass. -/
--- Ref: [manuscript] conj:mass-endomorphism §"Tower convergence"
+-- Ref: [leitner2026] conj:mass-endomorphism §"Tower convergence"
 theorem transient_nonneg {R : Type*} [CommRing R] [PartialOrder R] [IsOrderedRing R] (β : Type*)
     [M : MassEndomorphism R β]
     (h : M.tr_descended ≤ M.vol_identity) :
@@ -132,7 +132,7 @@ theorem transient_nonneg {R : Type*} [CommRing R] [PartialOrder R] [IsOrderedRin
 
     When the brane tower contributes nothing (all z_i = 0 or no
     blow-up centres), the full mass is entirely descended. -/
--- Ref: [manuscript] conj:mass-endomorphism §"What is known", Step 1
+-- Ref: [leitner2026] conj:mass-endomorphism §"What is known", Step 1
 theorem fullMass_eq_descended_of_zero_transient {R : Type*} [CommRing R]
     (β : Type*) [M : MassEndomorphism R β]
     (h : M.tr_transient = 0) :
@@ -144,7 +144,7 @@ theorem fullMass_eq_descended_of_zero_transient {R : Type*} [CommRing R]
 
     This is definitional but stated as a lemma to make the two-term
     structure available for downstream rewrites. -/
--- Ref: [manuscript] conj:mass-endomorphism §"What is known"
+-- Ref: [leitner2026] conj:mass-endomorphism §"What is known"
 theorem mass_decomposition {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] :
     fullMass β = M.tr_descended + M.tr_transient := rfl
@@ -152,7 +152,7 @@ theorem mass_decomposition {R : Type*} [CommRing R] (β : Type*)
 /-- **The descended part equals vol_identity minus the transient.**
 
     Equivalent rearrangement of `vol_eq` expressed for the descended piece. -/
--- Ref: [manuscript] conj:mass-endomorphism §Statement
+-- Ref: [leitner2026] conj:mass-endomorphism §Statement
 theorem descended_eq_vol_minus_transient {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] :
     M.tr_descended = M.vol_identity - M.tr_transient := by
@@ -162,7 +162,7 @@ theorem descended_eq_vol_minus_transient {R : Type*} [CommRing R] (β : Type*)
 
     Under the natural physical conditions (positive volume, non-negative
     descended trace), the full categorical mass is positive. -/
--- Ref: [manuscript] conj:mass-endomorphism §"What is known"
+-- Ref: [leitner2026] conj:mass-endomorphism §"What is known"
 theorem fullMass_pos_of_vol_pos {R : Type*} [CommRing R] [PartialOrder R] [IsOrderedRing R] (β : Type*)
     [M : MassEndomorphism R β]
     (hvol : 0 < M.vol_identity)

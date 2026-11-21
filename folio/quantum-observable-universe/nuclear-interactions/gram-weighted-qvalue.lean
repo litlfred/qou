@@ -6,7 +6,7 @@
   where w_k^G is the normalised Frobenius norm of the difference
   between parent and k-th daughter typed Garside elements.
 
-  Ref: [manuscript] §6.3c, Proposition prop:gram-weighted-qvalue
+  Ref: [leitner2026] §6.3c, Proposition prop:gram-weighted-qvalue
 -/
 
 import Mathlib.Analysis.InnerProductSpace.Basic
@@ -16,7 +16,7 @@ namespace QOU.Archimedean
 
 /-- The Gram matrix G_{ij} = tr_M(b_i · b_j) of the Iwahori-Hecke
     algebra restricted to a finite-dimensional NF subspace. -/
--- Ref: [manuscript] Proposition prop:frobenius-gram-matrix
+-- Ref: [leitner2026] Proposition prop:frobenius-gram-matrix
 structure GramMatrix (n : ℕ) where
   entries : Fin n → Fin n → ℝ
   symmetric : ∀ i j, entries i j = entries j i
@@ -32,14 +32,14 @@ noncomputable def frobeniusNorm {n : ℕ} (G : GramMatrix n) (v : Fin n → ℝ)
 
 /-- The NF reduction cost Δ_k: change in L1 norm when neutron k converts.
     Δ_k = ||N_par||₁ - ||N_dau^(k)||₁ -/
--- Ref: [manuscript] Equation eq:nf-reduction-cost
+-- Ref: [leitner2026] Equation eq:nf-reduction-cost
 noncomputable def nfReductionCost
     (parentL1 : ℝ) (daughterL1 : ℝ) : ℝ :=
   parentL1 - daughterL1
 
 /-- The Gram weight for neutron k:
     w_k^G = ||δ_k||_F / Σ_j ||δ_j||_F -/
--- Ref: [manuscript] Equation eq:gram-weight
+-- Ref: [leitner2026] Equation eq:gram-weight
 noncomputable def gramWeight {n N : ℕ}
     (G : GramMatrix n)
     (deltas : Fin N → (Fin n → ℝ)) -- δ_k for each neutron
@@ -50,7 +50,7 @@ noncomputable def gramWeight {n N : ℕ}
 
 /-- The Gram-weighted Q-value:
     Q = (Σ_k w_k^G × Δ_k) × N × m_e -/
--- Ref: [manuscript] Equation eq:gram-weighted-qvalue
+-- Ref: [leitner2026] Equation eq:gram-weighted-qvalue
 noncomputable def gramWeightedQ {n : ℕ}
     (G : GramMatrix n)
     (N : ℕ) -- number of neutrons
@@ -65,7 +65,7 @@ theorem gramWeight_sum_one {n N : ℕ} (hN : 0 < N)
     (deltas : Fin N → (Fin n → ℝ))
     (h_nonzero : ∑ j, frobeniusNorm G (deltas j) ≠ 0) :
     ∑ k, gramWeight G deltas k = 1 := by
-  -- Ref: [manuscript] Proposition prop:gram-weighted-qvalue
+  -- Ref: [leitner2026] Proposition prop:gram-weighted-qvalue
   -- Each weight = norms k / total (else-branch since total ≠ 0);
   -- summing gives (Σ norms) / total = total / total = 1.
   simp only [gramWeight, if_neg h_nonzero]
@@ -78,7 +78,7 @@ theorem gramWeight_nonneg {n N : ℕ}
     (deltas : Fin N → (Fin n → ℝ))
     (k : Fin N) :
     0 ≤ gramWeight G deltas k := by
-  -- Ref: [manuscript] Proposition prop:gram-weighted-qvalue
+  -- Ref: [leitner2026] Proposition prop:gram-weighted-qvalue
   -- frobeniusNorm = √|·| ≥ 0; sum of nonneg ≥ 0; ratio of nonneg ≥ 0.
   simp only [gramWeight]
   split_ifs with h
@@ -98,7 +98,7 @@ theorem gramWeight_uniform_when_equal {n N : ℕ} (hN : 0 < N)
     (deltas : Fin N → (Fin n → ℝ))
     (h_equal : ∀ j k, frobeniusNorm G (deltas j) = frobeniusNorm G (deltas k)) :
     ∀ k, gramWeight G deltas k = 1 / N := by
-  -- Ref: [manuscript] Proposition prop:gram-weighted-qvalue
+  -- Ref: [leitner2026] Proposition prop:gram-weighted-qvalue
   intro k
   simp only [gramWeight]
   -- Every j-th norm equals the k-th norm.

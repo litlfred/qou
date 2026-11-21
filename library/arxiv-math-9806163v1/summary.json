@@ -2,145 +2,79 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-9806163v1",
  "source_sha256": "dba44975f29cb017",
- "brief": "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn.",
- "extended": "**Weights of Markov traces on Hecke algebras**\n\n*November 16, 2021*\n\n23 pp, 25 sections.\n\n**Abstract.** We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn. In order to prove the weight formula, we deﬁne representations of the Hecke algebra of ty pe B onto a reduced Hecke Algebra of type A. To compute the weights for type D we use the inclusion of the Hecke algebra of type D into the Hecke algebra of type B.\n\n**Outline.** Abstract; Introduction; 2 R. C. Orellana; 1 Preliminaries and Notation; 1.1 Partitions and Standard Tableaux; 4 R. C. Orellana; 1.2 Schur Functions; 6 R. C. Orellana; 1.3 The Braid Group; 2 Hecke Algebra of type Bn; 8 R. C. Orellana; 3 Representations of the Hecke algebra of type; 3.1 The Hecke Algebra of type A; 10 R. C. Orellana; 3.2 A Homomorphism of Hn(q, −qr1+m) onto a red; 12 R. C. Orellana; 14 R. C. Orellana; 4 Markov Traces on the Hecke Algebra of type B\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.3: Let f, n be as in Lemma 3.2 and assume that q is not a root of unity. Then\n- Theorem 4.3: We are particularly interested in the special case when yi = yi for all i ∈ N, this is the case\n- Theorem 5.3: Let A, B, EA, eA, and tr be as deﬁned above. Then\n- Theorem 5.5: If tr is a Markov trace on the Hecke algebra of type B, with parameter z =\n- Proposition 1.1: Let n, f ∈ N and ˜ρf,n be as deﬁned above for the generators of Bn(B).\n- Proposition 4.1: Let z, y ∈ C(q, Q) and tr : H∞(q, Q) − →C(q, Q) be a Markov trace with",
+ "brief": "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempotents, for the Markov trace on the Hecke algebra of type Bn and type Dn.",
+ "extended": "**Weights of Markov traces on Hecke algebras**\n\n*R.C. Orellana*\n\n23 pp, 12 sections.\n\n**Abstract.** We compute the weights, i.e. the values at the minimal idempotents, for the Markov trace on the Hecke algebra of type Bn and type Dn. In order to prove the weight formula, we deﬁne representations of the Hecke algebra of type B onto a reduced Hecke Algebra of type A. To compute the weights for type D we use the inclusion of the Hecke algebra of type D into the Hecke algebra of type B.\n\n**Outline.** Front matter; 1 Preliminaries and Notation; 1.1 Partitions and Standard Tableaux; 1.2 Schur Functions; 1.3 The Braid Group; 2 Hecke Algebra of type $B_n$; 3 Representations of the Hecke algebra of type; 3.1 The Hecke Algebra of type $A$; 3.2 A Homomorphism of $H_n(q,-q^{r_1+m})$ onto; 4 Markov Traces on the Hecke Algebra of type $; 5 The Weight Formula; 6 Markov Trace for the Hecke algebra of type D",
  "tokens": {
   "brief": 44,
-  "extended": 389
+  "extended": 226
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-introduction",
-   "title": "Introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-2-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-1-preliminaries-and-notation",
+   "id": "sec-000-1-preliminaries-and-notation",
    "title": "Preliminaries and Notation",
    "pages": "2-3"
   },
   {
-   "id": "sec-004-11-partitions-and-standard-tableaux",
+   "id": "sec-001-11-partitions-and-standard-tableaux",
    "title": "Partitions and Standard Tableaux",
    "pages": "3-4"
   },
   {
-   "id": "sec-005-4-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-006-12-schur-functions",
+   "id": "sec-002-12-schur-functions",
    "title": "Schur Functions",
    "pages": "4-6"
   },
   {
-   "id": "sec-007-6-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-008-13-the-braid-group",
+   "id": "sec-003-13-the-braid-group",
    "title": "The Braid Group",
    "pages": "6-7"
   },
   {
-   "id": "sec-009-2-hecke-algebra-of-type-bn",
-   "title": "Hecke Algebra of type Bn",
-   "pages": "7-8"
+   "id": "sec-004-2-hecke-algebra-of-type-b-n",
+   "title": "Hecke Algebra of type $B_n$",
+   "pages": "7-9"
   },
   {
-   "id": "sec-010-8-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-011-3-representations-of-the-hecke-algebra-of-type-b",
-   "title": "Representations of the Hecke algebra of type B onto",
+   "id": "sec-005-3-representations-of-the-hecke-algebra-of-type-b",
+   "title": "Representations of the Hecke algebra of type $B$ onto a Reduced Hecke Algebra of type $A$",
    "pages": "9-9"
   },
   {
-   "id": "sec-012-31-the-hecke-algebra-of-type-a",
-   "title": "The Hecke Algebra of type A",
+   "id": "sec-006-31-the-hecke-algebra-of-type-a",
+   "title": "The Hecke Algebra of type $A$",
    "pages": "9-10"
   },
   {
-   "id": "sec-013-10-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "10-10"
+   "id": "sec-007-32-a-homomorphism-of-h-nq-qr-1m-onto-a-reduced-a",
+   "title": "A Homomorphism of $H_n(q,-q^{r_1+m})$ onto a reduced algebra of $H_{n+f}(q)$",
+   "pages": "10-14"
   },
   {
-   "id": "sec-014-32-a-homomorphism-of-hnq-qr1m-onto-a-reduced-alg",
-   "title": "A Homomorphism of Hn(q, −qr1+m) onto a reduced algebra of",
-   "pages": "10-12"
-  },
-  {
-   "id": "sec-015-12-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "12-14"
-  },
-  {
-   "id": "sec-016-14-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-017-4-markov-traces-on-the-hecke-algebra-of-type-b",
-   "title": "Markov Traces on the Hecke Algebra of type B",
+   "id": "sec-008-4-markov-traces-on-the-hecke-algebra-of-type-b",
+   "title": "Markov Traces on the Hecke Algebra of type $B$",
    "pages": "14-16"
   },
   {
-   "id": "sec-018-16-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-019-5-the-weight-formula",
+   "id": "sec-009-5-the-weight-formula",
    "title": "The Weight Formula",
-   "pages": "16-18"
+   "pages": "16-21"
   },
   {
-   "id": "sec-020-18-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "18-20"
-  },
-  {
-   "id": "sec-021-20-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "20-21"
-  },
-  {
-   "id": "sec-022-6-markov-trace-for-the-hecke-algebra-of-type-d",
+   "id": "sec-010-6-markov-trace-for-the-hecke-algebra-of-type-d",
    "title": "Markov Trace for the Hecke algebra of type D",
-   "pages": "21-22"
-  },
-  {
-   "id": "sec-023-22-r-c-orellana",
-   "title": "R. C. Orellana",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-024-references",
-   "title": "References",
-   "pages": "22-23"
+   "pages": "21-23"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

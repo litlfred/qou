@@ -1,0 +1,1 @@
+— Let Γ be a planar 3-connected graph with at least 4 ver- tices, and with a weight θe ∈] 2 3π, π[ attached to each edge e of Γ. Then there exists a strictly hyperideal polyhedron P in H3 with dual graph isomorphic to Γ and with external dihedral angle θe at the edge corresponding to the edge e of Γ. In addition, P is unique up to isometry of H3.

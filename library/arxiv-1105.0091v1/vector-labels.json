@@ -1,0 +1,5933 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1105.0091v1",
+  "pages": [
+    {
+      "page": 34,
+      "rotation": 0,
+      "drawings": 21,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 1 Test function f+",
+        "Fig. 2 Test function f−"
+      ],
+      "labels": [
+        {
+          "text": "34",
+          "bbox": [
+            72.0,
+            67.77,
+            80.46,
+            75.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Pierre-Loïc Méliot",
+          "bbox": [
+            341.01,
+            67.77,
+            408.72,
+            75.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "f +",
+          "bbox": [
+            361.79,
+            95.9,
+            373.9,
+            107.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ε",
+          "bbox": [
+            366.71,
+            102.02,
+            370.47,
+            108.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "αm+1",
+          "bbox": [
+            157.6,
+            149.32,
+            181.13,
+            159.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α1",
+          "bbox": [
+            249.24,
+            149.8,
+            259.57,
+            160.45
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Fig. 1 Test function f+",
+          "bbox": [
+            72.0,
+            174.14,
+            163.76,
+            184.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "SFBX0800",
+            "SFRM0800"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "ε .",
+          "bbox": [
+            157.3,
+            176.17,
+            166.61,
+            185.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "SFRM0800"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "f −",
+          "bbox": [
+            362.31,
+            206.42,
+            374.53,
+            222.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ε",
+          "bbox": [
+            367.23,
+            212.76,
+            370.99,
+            219.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "αm+1",
+          "bbox": [
+            158.24,
+            260.06,
+            181.77,
+            270.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "α1",
+          "bbox": [
+            249.88,
+            260.54,
+            260.21,
+            271.19
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Fig. 2 Test function f−",
+          "bbox": [
+            72.0,
+            284.82,
+            163.93,
+            294.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMSY6",
+            "SFBX0800",
+            "SFRM0800"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "ε .",
+          "bbox": [
+            157.3,
+            286.93,
+            166.78,
+            296.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "SFRM0800"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "2. Similarly, let us prove that am",
+          "bbox": [
+            74.22,
+            323.42,
+            215.13,
+            335.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n is bigger than α1−2ε with probability going",
+          "bbox": [
+            207.69,
+            323.42,
+            408.75,
+            342.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to 1 as n goes to inﬁnity (again, we suppose that α1 > 0, this case being",
+          "bbox": [
+            86.94,
+            335.37,
+            408.72,
+            348.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "obvious). We consider a test function f −",
+          "bbox": [
+            86.94,
+            347.33,
+            267.01,
+            363.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ε that takes its values in [0, 1], is",
+          "bbox": [
+            259.71,
+            347.33,
+            408.74,
+            362.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "continuous, and is equal to 1 after α1 −ε and to 0 before α1 −2ε (see",
+          "bbox": [
+            86.94,
+            359.28,
+            408.73,
+            379.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2). For ε small enough, we may also suppose that α1 −2ε > αm+1.",
+          "bbox": [
+            86.94,
+            371.24,
+            408.74,
+            391.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Then, Xω(f −",
+          "bbox": [
+            86.94,
+            383.19,
+            145.79,
+            399.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ε ) = mα1, whereas",
+          "bbox": [
+            138.49,
+            383.19,
+            223.5,
+            397.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            262.58,
+            397.81,
+            269.23,
+            434.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "o",
+          "bbox": [
+            339.52,
+            397.81,
+            346.17,
+            434.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ai",
+          "bbox": [
+            275.98,
+            400.4,
+            291.9,
+            443.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Xλ(f −",
+          "bbox": [
+            149.52,
+            406.99,
+            179.05,
+            423.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ε ) ≤(α1 + 2ε) card",
+          "bbox": [
+            171.75,
+            408.84,
+            259.26,
+            426.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n ≥α1 −2ε",
+          "bbox": [
+            285.12,
+            408.84,
+            339.52,
+            432.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            269.22,
+            409.09,
+            272.66,
+            419.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with big probability — indeed, we already know that the ai’s are smaller",
+          "bbox": [
+            86.94,
+            431.01,
+            408.75,
+            443.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "than α1 + 2ε with probability almost 1. For ε small enough and as n goes",
+          "bbox": [
+            86.94,
+            442.96,
+            408.74,
+            456.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to inﬁnity, this leads to the inequality card {i | ai",
+          "bbox": [
+            86.94,
+            454.92,
+            302.24,
+            473.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n ≥α1 −2ε} ≥m, which",
+          "bbox": [
+            296.54,
+            454.92,
+            408.73,
+            477.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is equivalent to ask that am",
+          "bbox": [
+            86.94,
+            466.87,
+            207.14,
+            479.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n ≥α1 −2ε.",
+          "bbox": [
+            199.71,
+            466.87,
+            257.54,
+            489.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Thus, for any ε > 0, the probability of the event",
+          "bbox": [
+            72.0,
+            490.77,
+            282.61,
+            503.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "α1 + 2ε ≥a1",
+          "bbox": [
+            161.67,
+            508.94,
+            218.04,
+            532.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n ≥· · · ≥am",
+          "bbox": [
+            210.67,
+            508.94,
+            271.45,
+            539.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n ≥α1 −2ε",
+          "bbox": [
+            262.54,
+            515.43,
+            319.07,
+            539.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "goes to 1 as n goes to inﬁnity, which is exactly Theorem 15 for the m ﬁrst rows",
+          "bbox": [
+            72.0,
+            537.6,
+            408.74,
+            550.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of λ. Now, an induction enables us to treat the other rows, and the columns",
+          "bbox": [
+            72.0,
+            549.55,
+            408.7,
+            562.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "are treated exactly the same way.",
+          "bbox": [
+            72.0,
+            561.51,
+            218.2,
+            574.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Example. When ω = 0, the law of large numbers ensures that all the rows of λ",
+          "bbox": [
+            72.0,
+            582.22,
+            408.73,
+            594.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "are some o(n), and similarly for its columns. Actually, it is a well-known fact",
+          "bbox": [
+            72.0,
+            594.17,
+            408.77,
+            606.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that the rows and the columns have order of magnitude √n, and that there is a",
+          "bbox": [
+            72.0,
+            600.56,
+            408.73,
+            625.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "limit shape for the random partitions under Plancherel measures after scaling",
+          "bbox": [
+            72.0,
+            618.08,
+            408.72,
+            630.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the Young diagrams in both directions by the factor √n (cf. [LS77,KV77]):",
+          "bbox": [
+            72.0,
+            624.47,
+            401.28,
+            648.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 35,
+      "rotation": 0,
+      "drawings": 18,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 3 Random partition under the Plancherel measure Pn,0 = Pn."
+      ],
+      "labels": [
+        {
+          "text": "A central limit theorem for the characters of S∞and H (S∞)",
+          "bbox": [
+            72.0,
+            67.62,
+            304.53,
+            76.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY6",
+            "EUFM10",
+            "SFRM0800",
+            "rsfs10"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "35",
+          "bbox": [
+            400.27,
+            67.77,
+            408.74,
+            75.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "n = 500",
+          "bbox": [
+            325.34,
+            235.46,
+            359.73,
+            245.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fig. 3 Random partition under the Plancherel measure Pn,0 = Pn.",
+          "bbox": [
+            72.0,
+            274.61,
+            323.53,
+            285.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX6",
+            "CMMI6",
+            "CMR8",
+            "MSBM10",
+            "SFBX0800",
+            "SFRM0800"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Hence, for this particular point of Ω, the law of large numbers is not precise",
+          "bbox": [
+            72.0,
+            313.12,
+            408.72,
+            325.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "enough; however, an accurate law of large numbers and a central limit theorem",
+          "bbox": [
+            72.0,
+            325.07,
+            408.72,
+            337.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "can be proved in this case (and for other classes of measures on partitions) by",
+          "bbox": [
+            72.0,
+            337.03,
+            408.71,
+            349.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a slight modiﬁcation of the tools that we use here (see [IO02,Mél11]). Another",
+          "bbox": [
+            72.0,
+            348.98,
+            408.74,
+            361.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "important example is when ω = (α, β) with α and β geometric progressions",
+          "bbox": [
+            72.0,
+            360.94,
+            408.73,
+            373.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of same ratio q. However, these examples are better understood in the setting",
+          "bbox": [
+            72.0,
+            372.89,
+            408.71,
+            385.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the Hecke algebras, see Section 7.",
+          "bbox": [
+            72.0,
+            384.85,
+            229.55,
+            397.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "To conclude this section, let us interpret the geometric law of large numbers",
+          "bbox": [
+            86.94,
+            423.07,
+            408.71,
+            435.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in terms of properties of ω-shuﬄes. We ﬁx an integer r. Given a shuﬄe σ of",
+          "bbox": [
+            72.0,
+            435.02,
+            408.74,
+            447.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n1 +n2 +· · ·+m1 +m2 +· · ·+l cards as in §2.3, it is obvious that the maximal",
+          "bbox": [
+            72.0,
+            446.98,
+            408.74,
+            465.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sum",
+          "bbox": [
+            72.0,
+            458.93,
+            89.75,
+            471.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ℓ(iw1) + ℓ(iw2) + · · · + ℓ(iwr)",
+          "bbox": [
+            175.92,
+            472.5,
+            304.82,
+            489.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of the lengths of r disjoint increasing subwords in σ is at least n1+n2+· · ·+nr.",
+          "bbox": [
+            72.0,
+            488.26,
+            408.74,
+            507.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Indeed, it suﬃces to consider the words",
+          "bbox": [
+            72.0,
+            500.21,
+            244.32,
+            512.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "iwj = [[n1 + · · · + nj−1 + 1, n1 + · · · + nj]] ,",
+          "bbox": [
+            147.76,
+            522.03,
+            332.98,
+            539.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "because they stay in this order in σ.",
+          "bbox": [
+            72.0,
+            540.63,
+            229.89,
+            553.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Example. Take r = 1, n = 9 = 5 + 4. Any shuﬄe of 12345 and 6789 contains",
+          "bbox": [
+            72.0,
+            555.44,
+            408.73,
+            567.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "an increasing subword of length at least 5, namely, 12345. However, for many",
+          "bbox": [
+            72.0,
+            567.4,
+            408.75,
+            579.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "shuﬄes, one can do better: for instance, 162378495 is a shuﬄe of 12345 with",
+          "bbox": [
+            72.0,
+            579.35,
+            408.74,
+            591.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6789, and it contains an increasing subword of length 6, namely, 123789.",
+          "bbox": [
+            72.0,
+            591.31,
+            388.2,
+            603.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Thus, the r-th Greene invariant of σ, which we shall denote by GIr(σ), is",
+          "bbox": [
+            72.0,
+            606.13,
+            408.74,
+            618.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "bigger than n1 + · · · + nr. Now, if the sizes of the blocks are taken according",
+          "bbox": [
+            72.0,
+            618.08,
+            408.74,
+            636.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to a multinomial law of parameter (α, β, γ), then the law of large numbers",
+          "bbox": [
+            72.0,
+            630.04,
+            408.73,
+            642.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 41,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 4 Test functions for the proof of the geometric central limit theorem."
+      ],
+      "labels": [
+        {
+          "text": "A central limit theorem for the characters of S∞and H (S∞)",
+          "bbox": [
+            72.0,
+            67.62,
+            304.53,
+            76.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY6",
+            "EUFM10",
+            "SFRM0800",
+            "rsfs10"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "41",
+          "bbox": [
+            400.27,
+            67.77,
+            408.74,
+            75.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "fk",
+          "bbox": [
+            327.99,
+            100.04,
+            337.15,
+            110.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "αik+mk",
+          "bbox": [
+            250.46,
+            158.01,
+            281.0,
+            169.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "αik",
+          "bbox": [
+            301.74,
+            158.01,
+            314.64,
+            169.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "αik−1",
+          "bbox": [
+            339.22,
+            158.01,
+            362.99,
+            173.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            92.7,
+            159.68,
+            105.48,
+            176.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            238.27,
+            160.29,
+            243.25,
+            170.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            380.0,
+            160.29,
+            384.98,
+            170.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fig. 4 Test functions for the proof of the geometric central limit theorem.",
+          "bbox": [
+            72.0,
+            189.01,
+            349.65,
+            196.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX0800",
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "We ﬁx an index k. Since λi",
+          "bbox": [
+            72.0,
+            226.47,
+            193.51,
+            239.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n →αi for all i, with probability going to 1 as n",
+          "bbox": [
+            187.6,
+            226.47,
+            408.73,
+            248.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "goes to inﬁnity, the intersection of the support of Xλ with Wk consists exactly",
+          "bbox": [
+            72.0,
+            238.42,
+            408.73,
+            252.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in",
+          "bbox": [
+            72.0,
+            250.38,
+            80.3,
+            262.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u001aλik",
+          "bbox": [
+            174.67,
+            256.9,
+            195.75,
+            294.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u001b",
+          "bbox": [
+            294.16,
+            256.9,
+            301.63,
+            294.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n , λik+1",
+          "bbox": [
+            187.09,
+            264.43,
+            226.72,
+            287.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ", . . . , λik+mk−1",
+          "bbox": [
+            228.41,
+            264.43,
+            292.47,
+            281.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            303.29,
+            271.17,
+            306.06,
+            281.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            212.44,
+            278.0,
+            218.42,
+            287.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            269.37,
+            278.0,
+            275.34,
+            287.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that are even in Vk with big probability. So,",
+          "bbox": [
+            72.0,
+            294.62,
+            264.0,
+            308.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Xλ(fk) = λik + λik+1 + · · · + λik+mk−1",
+          "bbox": [
+            153.81,
+            318.07,
+            325.23,
+            335.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            259.52,
+            331.89,
+            265.5,
+            341.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with probability going to 1; on the other hand, Xω(fk) = mk αik. Hence,",
+          "bbox": [
+            72.0,
+            350.48,
+            389.43,
+            363.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Λik,mk,n = ∇n,ω(fk)",
+          "bbox": [
+            196.45,
+            376.04,
+            284.29,
+            393.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for any k with probability going to 1; similarly, Λ′",
+          "bbox": [
+            72.0,
+            398.37,
+            294.19,
+            410.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "jl,wl,n = ∇n,ω(gl) with big",
+          "bbox": [
+            291.89,
+            398.37,
+            408.74,
+            417.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "probability. Then, by Theorem 18, the random vector of the statement of our",
+          "bbox": [
+            72.0,
+            410.32,
+            408.74,
+            422.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "theorem converges in law to a centered gaussian vector",
+          "bbox": [
+            72.0,
+            422.28,
+            311.58,
+            434.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(Λi1,m1,∞, . . . , Λir,mr,∞, Λ′",
+          "bbox": [
+            139.24,
+            445.98,
+            254.66,
+            463.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j1,l1,∞, . . . , Λ′",
+          "bbox": [
+            252.37,
+            445.98,
+            310.49,
+            464.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "js,ls,∞),",
+          "bbox": [
+            308.19,
+            448.08,
+            341.5,
+            464.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with k(Λik,mk,∞, Λil,ml,∞) equal to",
+          "bbox": [
+            72.0,
+            470.16,
+            225.27,
+            487.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Xω((xfk(x))′(xfl(x))′) −Xω((xfk(x))′) Xω((xfl(x))′),",
+          "bbox": [
+            122.34,
+            493.87,
+            358.4,
+            513.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and the same kind of formula with variables Λ′",
+          "bbox": [
+            72.0,
+            518.04,
+            268.26,
+            530.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "jk,wk,∞. Now, notice that f ′",
+          "bbox": [
+            265.97,
+            518.04,
+            383.24,
+            536.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k(x) =",
+          "bbox": [
+            379.88,
+            519.9,
+            408.74,
+            531.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "0 for any x in the support of Xω, and any k. Hence, the previous covariance",
+          "bbox": [
+            72.0,
+            530.0,
+            408.73,
+            542.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "may be written as",
+          "bbox": [
+            72.0,
+            541.95,
+            150.93,
+            554.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Xω(fkfl) −Xω(fk) Xω(fl) = δkl mk αik −mkml αikαil,",
+          "bbox": [
+            120.64,
+            567.51,
+            360.1,
+            587.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and the proof for the other covariance formulas is the same with functions gl",
+          "bbox": [
+            72.0,
+            589.83,
+            408.2,
+            602.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "instead of functions fk.",
+          "bbox": [
+            72.0,
+            601.79,
+            173.19,
+            614.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 43,
+      "rotation": 0,
+      "drawings": 10,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 5 Random walk associated to the 2-shuﬄe 162374895 = Std(121121221)."
+      ],
+      "labels": [
+        {
+          "text": "A central limit theorem for the characters of S∞and H (S∞)",
+          "bbox": [
+            72.0,
+            67.62,
+            304.53,
+            76.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY6",
+            "EUFM10",
+            "SFRM0800",
+            "rsfs10"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "43",
+          "bbox": [
+            400.27,
+            67.77,
+            408.74,
+            75.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Fig. 5 Random walk associated to the 2-shuﬄe 162374895 = Std(121121221).",
+          "bbox": [
+            72.0,
+            177.45,
+            362.77,
+            185.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "SFBX0800",
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Given a permutation σ obtained by standardization from a word w in",
+          "bbox": [
+            86.94,
+            215.65,
+            408.74,
+            228.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "{1, 2}∗, the shape of the tableau P(σ) is the same as the shape of the tableau",
+          "bbox": [
+            72.0,
+            227.61,
+            408.71,
+            246.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P(w). Actually, for any k ≤n, if Pk(σ) (respectively, Pk(w)) is the tableau",
+          "bbox": [
+            72.0,
+            239.56,
+            408.73,
+            258.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "obtained after Schensted insertion of the k ﬁrst letters of σ (resp., of the k ﬁrst",
+          "bbox": [
+            72.0,
+            251.52,
+            408.74,
+            264.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "letters of w), then Pk(σ) has the same shape as Pk(w). Hence, we will study",
+          "bbox": [
+            72.0,
+            263.47,
+            408.74,
+            276.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the random process (P(wk))k≥0, where wk = b1b2 . . . bk is a random word in",
+          "bbox": [
+            72.0,
+            275.43,
+            408.73,
+            292.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "{1, 2}k with independent Bernoulli letters. This process takes its values in",
+          "bbox": [
+            72.0,
+            283.77,
+            394.83,
+            306.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "SST{1, 2} = {semi-standard tableaux with entries in {1, 2}}.",
+          "bbox": [
+            108.27,
+            312.22,
+            372.47,
+            331.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A semi-standard tableau with entries in {1, 2} has at most two rows, and the",
+          "bbox": [
+            72.0,
+            337.06,
+            408.73,
+            355.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "entries in the second row are all equal to 2. Thus, if one knows the size n of",
+          "bbox": [
+            72.0,
+            349.02,
+            408.74,
+            361.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the tableau, then it is entirely determined by the number m11 of entries 1 on",
+          "bbox": [
+            72.0,
+            360.97,
+            408.73,
+            375.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the ﬁrst row, and by the number m12 of entries 2 on the ﬁrst row:",
+          "bbox": [
+            72.0,
+            372.93,
+            360.38,
+            386.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m22 “2”",
+          "bbox": [
+            173.11,
+            402.12,
+            206.19,
+            416.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m11 “1”",
+          "bbox": [
+            195.79,
+            416.29,
+            228.87,
+            430.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m12 “2”",
+          "bbox": [
+            280.83,
+            416.29,
+            313.91,
+            430.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with m22 = n −m11 −m12. So, let us study in detail the random process",
+          "bbox": [
+            72.0,
+            447.27,
+            408.71,
+            467.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(m11(k), m12(k)). For this purpose, we introduce the random walk Xk = 3k −",
+          "bbox": [
+            72.0,
+            459.22,
+            408.74,
+            478.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(b1 + b2 + · · · + bk); this is a standard random walk on Z, starting from 0.",
+          "bbox": [
+            72.0,
+            470.55,
+            399.76,
+            490.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k+Xk",
+          "bbox": [
+            239.81,
+            491.26,
+            260.64,
+            498.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "Lemma 20. For any k, m11(k) =",
+          "bbox": [
+            72.0,
+            492.86,
+            233.11,
+            503.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFBX1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and m12(k) = Sk −Xk, where",
+          "bbox": [
+            267.48,
+            492.86,
+            408.75,
+            511.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            248.52,
+            498.84,
+            252.5,
+            505.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Sk = supj≤k Xj.",
+          "bbox": [
+            72.0,
+            504.82,
+            143.29,
+            521.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. The quantity m11(k) is just the number of “1” in the sequence b1, . . . , bk.",
+          "bbox": [
+            72.0,
+            529.75,
+            408.74,
+            542.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Hence,",
+          "bbox": [
+            72.0,
+            541.71,
+            101.04,
+            554.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            162.93,
+            567.47,
+            167.16,
+            574.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            157.94,
+            568.0,
+            172.33,
+            605.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2 −bi = 2k −(b1 + b2 + · · · + bk) = k + Xk",
+          "bbox": [
+            173.99,
+            570.94,
+            361.89,
+            594.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m11(k) =",
+          "bbox": [
+            114.22,
+            577.68,
+            155.17,
+            588.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            363.75,
+            577.68,
+            366.52,
+            587.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            344.65,
+            584.51,
+            349.63,
+            594.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            158.68,
+            591.68,
+            171.59,
+            598.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "As for m12(k), let us prove the result by induction on k. Supposing m12(k) =",
+          "bbox": [
+            72.0,
+            609.92,
+            408.74,
+            622.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Sk −Xk, let us compute m12(k + 1):",
+          "bbox": [
+            72.0,
+            621.88,
+            232.36,
+            642.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 45,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 6 A trajectory of the 3-dimensional Bessel process."
+      ],
+      "labels": [
+        {
+          "text": "A central limit theorem for the characters of S∞and H (S∞)",
+          "bbox": [
+            72.0,
+            67.62,
+            304.53,
+            76.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY6",
+            "EUFM10",
+            "SFRM0800",
+            "rsfs10"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "45",
+          "bbox": [
+            400.27,
+            67.77,
+            408.74,
+            75.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "With these classical results from probability, Lemma 20 can be reinterpreted",
+          "bbox": [
+            72.0,
+            90.08,
+            408.73,
+            102.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "as follows:",
+          "bbox": [
+            72.0,
+            102.03,
+            116.39,
+            114.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 21. Let σ be a random permutation obtained by a 2-shuﬄe. We",
+          "bbox": [
+            72.0,
+            122.31,
+            408.75,
+            132.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFBX1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "denote",
+          "bbox": [
+            72.0,
+            134.27,
+            100.25,
+            144.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012\u0002",
+          "bbox": [
+            144.86,
+            145.82,
+            156.35,
+            188.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            390.64,
+            145.82,
+            397.97,
+            183.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0003",
+          "bbox": [
+            362.34,
+            151.79,
+            366.49,
+            188.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            132.37,
+            153.34,
+            137.36,
+            163.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−nt",
+          "bbox": [
+            368.7,
+            153.34,
+            389.44,
+            177.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L(n)",
+          "bbox": [
+            82.77,
+            157.15,
+            100.7,
+            170.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "√n",
+          "bbox": [
+            127.72,
+            159.53,
+            142.0,
+            176.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(⌊nt + 1⌋−nt) ℓ⌊nt⌋(σ) + (nt −⌊nt⌋) ℓ⌊nt⌋+1(σ)",
+          "bbox": [
+            156.35,
+            159.83,
+            362.34,
+            177.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "t∈[0,1[ =",
+          "bbox": [
+            89.55,
+            160.08,
+            123.76,
+            177.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            382.16,
+            166.92,
+            387.14,
+            176.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the random process obtained by renormalization and interpolation of the pro-",
+          "bbox": [
+            72.0,
+            187.18,
+            408.81,
+            197.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ")t∈[0,1] converges in law8 in",
+          "bbox": [
+            291.14,
+            196.9,
+            408.74,
+            216.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFRM0700",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2)k∈[[0,n]]. As n goes to inﬁnity, (L(n)",
+          "bbox": [
+            131.19,
+            197.88,
+            290.64,
+            216.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "cess (ℓk(σ) −k",
+          "bbox": [
+            72.0,
+            199.13,
+            135.21,
+            217.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            279.49,
+            205.51,
+            282.5,
+            212.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "C ([0, 1]) to a 3-dimensional Bessel process (BES3",
+          "bbox": [
+            72.0,
+            212.09,
+            287.69,
+            224.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFTI1000",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "t)t∈[0,1] (see Figure 6).",
+          "bbox": [
+            283.72,
+            213.89,
+            383.25,
+            230.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "BES3",
+          "bbox": [
+            87.13,
+            261.49,
+            105.86,
+            271.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            5.58,
+            7.97
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            102.69,
+            266.86,
+            105.09,
+            272.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            5.58
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            387.83,
+            393.45,
+            390.7,
+            401.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Fig. 6 A trajectory of the 3-dimensional Bessel process.",
+          "bbox": [
+            72.0,
+            414.7,
+            282.4,
+            422.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "SFBX0800",
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "In particular,",
+          "bbox": [
+            72.0,
+            451.8,
+            130.08,
+            461.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            337.83,
+            465.68,
+            347.79,
+            502.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√n",
+          "bbox": [
+            151.92,
+            467.39,
+            166.2,
+            484.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000√n",
+          "bbox": [
+            195.73,
+            473.27,
+            214.57,
+            510.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            214.57,
+            473.27,
+            219.14,
+            510.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ℓ(σ) = λ1 = n",
+          "bbox": [
+            75.38,
+            474.82,
+            137.35,
+            493.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            349.51,
+            474.82,
+            354.49,
+            484.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "π y2 e−y2",
+          "bbox": [
+            348.98,
+            475.79,
+            388.31,
+            498.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with Y ∼BES3",
+          "bbox": [
+            235.41,
+            479.45,
+            301.67,
+            498.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 dy.",
+          "bbox": [
+            383.26,
+            479.84,
+            405.36,
+            491.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "1 ∼1y≥0",
+          "bbox": [
+            297.7,
+            481.24,
+            335.67,
+            501.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI7",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 +",
+          "bbox": [
+            131.88,
+            481.56,
+            148.52,
+            498.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2 Y + o",
+          "bbox": [
+            156.57,
+            481.56,
+            194.07,
+            498.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            220.8,
+            481.56,
+            223.57,
+            491.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "To conclude this paragraph, let us give yet another representation of the",
+          "bbox": [
+            86.94,
+            531.75,
+            408.72,
+            544.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3-dimensional Bessel process. We denote by su(2, C) the space of traceless",
+          "bbox": [
+            72.0,
+            543.07,
+            408.72,
+            556.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "EUFM10",
+            "MSBM10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hermitian matrices of size 2 × 2. An element of su(2, C) can be written as",
+          "bbox": [
+            72.0,
+            555.03,
+            393.07,
+            574.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "EUFM10",
+            "MSBM10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            199.97,
+            571.26,
+            207.3,
+            608.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            293.04,
+            571.26,
+            300.38,
+            608.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "m1",
+          "bbox": [
+            221.38,
+            579.45,
+            234.1,
+            590.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m2 + im3",
+          "bbox": [
+            251.67,
+            579.45,
+            292.55,
+            590.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "M =",
+          "bbox": [
+            175.93,
+            585.52,
+            197.2,
+            595.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            302.04,
+            585.52,
+            304.81,
+            595.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "m2 −im3",
+          "bbox": [
+            207.3,
+            591.15,
+            248.18,
+            609.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−m1",
+          "bbox": [
+            261.87,
+            591.15,
+            282.34,
+            608.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "8 As usual, the interpolation is only needed in order to work in C ([0, 1]); if one uses instead",
+          "bbox": [
+            78.56,
+            611.41,
+            408.73,
+            622.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "SFRM0600",
+            "SFRM0800",
+            "rsfs10"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "step càdlàg functions, one has the same result of convergence, but this time in Skorohod’s",
+          "bbox": [
+            72.0,
+            623.69,
+            408.71,
+            631.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800",
+            "SFTI0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "space D([0, 1]), see [Bil69, Chapter 3, §14].",
+          "bbox": [
+            72.0,
+            632.99,
+            229.86,
+            641.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "SFRM0800",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 50,
+      "rotation": 0,
+      "drawings": 10,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 7 Action of Pitman’s transform on a brownian motion when d = 3."
+      ],
+      "labels": [
+        {
+          "text": "50",
+          "bbox": [
+            72.0,
+            67.77,
+            80.46,
+            75.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Pierre-Loïc Méliot",
+          "bbox": [
+            341.01,
+            67.77,
+            408.72,
+            75.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Fig. 7 Action of Pitman’s transform on a brownian motion when d = 3.",
+          "bbox": [
+            72.0,
+            477.88,
+            341.9,
+            485.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "SFBX0800",
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "This conditioned brownian motion is the Markov process on C with tran-",
+          "bbox": [
+            86.94,
+            513.6,
+            408.74,
+            526.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sition probabilities",
+          "bbox": [
+            72.0,
+            525.56,
+            152.93,
+            538.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            235.48,
+            542.81,
+            249.87,
+            579.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "qt(x, y) = ∆(y)",
+          "bbox": [
+            160.33,
+            545.75,
+            227.39,
+            563.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ε(σ) pt(x, σ(y))",
+          "bbox": [
+            254.87,
+            552.49,
+            320.41,
+            563.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∆(x)",
+          "bbox": [
+            205.88,
+            559.33,
+            227.62,
+            569.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σ∈Sd",
+          "bbox": [
+            232.14,
+            566.45,
+            252.72,
+            578.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMSY7",
+            "EUFM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            209.16,
+            575.61,
+            215.11,
+            612.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            252.34,
+            575.61,
+            258.28,
+            612.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−∥x−y∥2",
+          "bbox": [
+            215.11,
+            582.63,
+            250.64,
+            603.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where pt(x, y) = (2πt)−d−1",
+          "bbox": [
+            72.0,
+            583.71,
+            187.27,
+            597.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY5",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is the transition kernel of the stan-",
+          "bbox": [
+            260.89,
+            585.03,
+            408.73,
+            597.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "exp",
+          "bbox": [
+            192.28,
+            586.89,
+            207.5,
+            596.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            179.33,
+            589.25,
+            182.73,
+            594.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "2t",
+          "bbox": [
+            234.11,
+            592.57,
+            241.09,
+            599.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "dard brownian motion in H, and",
+          "bbox": [
+            72.0,
+            599.36,
+            215.33,
+            611.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            197.45,
+            612.86,
+            210.18,
+            650.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            282.09,
+            612.86,
+            294.82,
+            650.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⟨α | x⟩=",
+          "bbox": [
+            231.38,
+            622.3,
+            269.03,
+            639.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "xi −xj",
+          "bbox": [
+            306.77,
+            622.3,
+            336.95,
+            641.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∆(x) =",
+          "bbox": [
+            142.89,
+            622.55,
+            175.15,
+            632.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "α positive root",
+          "bbox": [
+            177.91,
+            636.39,
+            229.71,
+            643.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "SFRM0700"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "1≤i<j≤d",
+          "bbox": [
+            271.8,
+            636.55,
+            305.11,
+            648.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 65,
+      "rotation": 0,
+      "drawings": 21,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 8 A random Young diagram under a (q, t)-Plancherel measure."
+      ],
+      "labels": [
+        {
+          "text": "A central limit theorem for the characters of S∞and H (S∞)",
+          "bbox": [
+            72.0,
+            67.62,
+            304.53,
+            76.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY6",
+            "EUFM10",
+            "SFRM0800",
+            "rsfs10"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "65",
+          "bbox": [
+            400.27,
+            67.77,
+            408.74,
+            75.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Now, let us describe the asymptotics of the (q, t)-Plancherel measures.",
+          "bbox": [
+            86.94,
+            90.08,
+            408.72,
+            102.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "First, we give the algebraic central limit theorem, noticing that",
+          "bbox": [
+            72.0,
+            102.03,
+            348.16,
+            114.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "pk(ωq,t) = (tk −(t −1)k)(1 −q)k",
+          "bbox": [
+            167.49,
+            120.42,
+            311.38,
+            141.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 −qk",
+          "bbox": [
+            250.4,
+            137.22,
+            276.59,
+            154.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for any k ≥1.",
+          "bbox": [
+            72.0,
+            154.85,
+            132.59,
+            173.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 33. If λ ∼Pn,q,t, then as n goes to inﬁnity, the random variables",
+          "bbox": [
+            72.0,
+            172.4,
+            408.77,
+            191.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10",
+            "MSBM10",
+            "SFBX1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            176.66,
+            187.56,
+            181.23,
+            224.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "χλ(q, Tl) −(t −1)l−1(1 −q)l−1\u0001",
+          "bbox": [
+            181.23,
+            187.56,
+            320.01,
+            224.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "√n",
+          "bbox": [
+            160.72,
+            187.94,
+            175.0,
+            205.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "converge jointly to a gaussian vector (∆∞,q,t(q, l))l≥1 with covariances",
+          "bbox": [
+            72.0,
+            216.5,
+            378.14,
+            232.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1 −q)−l−m+2 k(∆∞,q,t(q, l), ∆∞,q,t(q, m))",
+          "bbox": [
+            92.57,
+            233.65,
+            276.94,
+            254.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u00121 −ua+b−1",
+          "bbox": [
+            216.89,
+            246.26,
+            272.43,
+            283.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            380.83,
+            246.26,
+            388.17,
+            283.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(t −1)ν −tν",
+          "bbox": [
+            159.85,
+            249.93,
+            213.08,
+            270.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            124.23,
+            250.85,
+            138.62,
+            288.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −qa",
+          "bbox": [
+            304.34,
+            252.42,
+            330.62,
+            270.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 −qb",
+          "bbox": [
+            336.07,
+            252.42,
+            361.53,
+            270.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 −u",
+          "bbox": [
+            276.97,
+            253.54,
+            299.84,
+            270.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −ub −1",
+          "bbox": [
+            335.62,
+            260.28,
+            380.83,
+            284.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            95.34,
+            260.53,
+            103.09,
+            270.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −qa+b−1",
+          "bbox": [
+            225.87,
+            266.5,
+            271.98,
+            284.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 −ua",
+          "bbox": [
+            303.89,
+            266.73,
+            331.07,
+            284.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 −q",
+          "bbox": [
+            277.42,
+            267.11,
+            299.02,
+            284.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "zν(1) zν(2)",
+          "bbox": [
+            167.24,
+            267.36,
+            205.66,
+            278.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ν(1)∈Yl",
+          "bbox": [
+            117.07,
+            274.98,
+            145.27,
+            288.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMSY7",
+            "EUFM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "ν(2)∈Ym",
+          "bbox": [
+            115.21,
+            284.06,
+            147.13,
+            297.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMSY7",
+            "EUFM7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "a∈ν(1) , b∈ν(2)",
+          "bbox": [
+            105.85,
+            291.8,
+            156.5,
+            306.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "t , ν = ν(1) ⊔ν(2), and (t −1)ν −tν = Qℓ(ν)",
+          "bbox": [
+            125.41,
+            307.46,
+            320.61,
+            352.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i=1 ((t −1)νi −tνi).",
+          "bbox": [
+            306.59,
+            312.29,
+            391.49,
+            332.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "SFTI1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where u = t−1",
+          "bbox": [
+            72.0,
+            313.25,
+            133.52,
+            325.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "SFTI1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Remark. When t = 1, this formula can be simpliﬁed by using a Möbius inver-",
+          "bbox": [
+            72.0,
+            331.47,
+            408.71,
+            344.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sion formula, and it becomes",
+          "bbox": [
+            72.0,
+            343.43,
+            197.46,
+            355.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k(∆∞,q,t(q, l), ∆∞,q,t(q, m)) = (q −q2)l+m−3 (1 −q2) {l −1}q {m −1}q",
+          "bbox": [
+            85.08,
+            362.07,
+            393.71,
+            388.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "{l + m −1}q {l + m −2}q {l + m −3}q",
+          "bbox": [
+            222.1,
+            379.01,
+            391.51,
+            397.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "see [Mél10].",
+          "bbox": [
+            72.0,
+            397.71,
+            122.68,
+            410.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Now, let us give the geometric version of the central limit theorem. We",
+          "bbox": [
+            86.94,
+            425.11,
+            408.75,
+            437.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "have drawn below a random Young diagram taken according to the (q, t)-",
+          "bbox": [
+            72.0,
+            437.06,
+            408.73,
+            449.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Plancherel measure of parameters n = 300, q = 1",
+          "bbox": [
+            72.0,
+            449.02,
+            294.6,
+            461.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 and t = 2",
+          "bbox": [
+            290.62,
+            449.02,
+            344.52,
+            464.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3. With q = 1",
+          "bbox": [
+            340.55,
+            449.02,
+            404.78,
+            463.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2,",
+          "bbox": [
+            400.8,
+            449.02,
+            408.74,
+            463.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            198.92,
+            527.85,
+            205.34,
+            557.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "λ = (101, 49, 30, 14, 8, . . .)",
+          "bbox": [
+            213.32,
+            536.18,
+            301.66,
+            544.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "λ′ = (54, 30, 17, 11, 8, . . .)",
+          "bbox": [
+            213.32,
+            544.82,
+            299.84,
+            556.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            5.58,
+            7.97
+          ]
+        },
+        {
+          "text": "Fig. 8 A random Young diagram under a (q, t)-Plancherel measure.",
+          "bbox": [
+            72.0,
+            623.18,
+            326.04,
+            631.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "SFBX0800",
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 67,
+      "rotation": 0,
+      "drawings": 23,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 9 Random partition under the Schur-Weyl measure of parameter c = 1."
+      ],
+      "labels": [
+        {
+          "text": "A central limit theorem for the characters of S∞and H (S∞)",
+          "bbox": [
+            72.0,
+            67.62,
+            304.53,
+            76.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY6",
+            "EUFM10",
+            "SFRM0800",
+            "rsfs10"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "67",
+          "bbox": [
+            400.27,
+            67.77,
+            408.74,
+            75.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "When ω = 0, our methods do not describe with suﬃcient precision the asymp-",
+          "bbox": [
+            72.0,
+            90.08,
+            408.69,
+            102.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "totic behaviour of the random partitions; however, they can be adapted to this",
+          "bbox": [
+            72.0,
+            102.03,
+            408.72,
+            114.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "purpose, see [IO02]. One obtains again a law of large numbers and a central",
+          "bbox": [
+            72.0,
+            113.99,
+            408.73,
+            126.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "limit theorem, and this CLT seems to have a universality property; cf. [Mél11].",
+          "bbox": [
+            72.0,
+            125.94,
+            408.74,
+            138.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Hence, the next step in the asymptotic study of the models presented in this",
+          "bbox": [
+            72.0,
+            137.9,
+            408.68,
+            150.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "article would be to understand what happens “in the neighbourhood” of the",
+          "bbox": [
+            72.0,
+            149.85,
+            408.67,
+            162.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "point 0 of the Thoma simplex. More precisely, we would like to understand",
+          "bbox": [
+            72.0,
+            161.81,
+            408.71,
+            174.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "what happens when ω varies with n and converges to 0. Let us give a concrete",
+          "bbox": [
+            72.0,
+            173.76,
+            408.73,
+            186.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "SFRM1000",
+            "SFTI1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "example — this is one of the two cases studied in [Mél11], and we refer also",
+          "bbox": [
+            72.0,
+            185.72,
+            408.72,
+            198.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to [Bia01]. Suppose that",
+          "bbox": [
+            72.0,
+            197.67,
+            177.88,
+            210.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012\u0012 1",
+          "bbox": [
+            173.82,
+            214.97,
+            196.72,
+            252.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            268.45,
+            214.97,
+            275.79,
+            252.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            320.07,
+            214.97,
+            327.4,
+            252.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "N , . . . , 1",
+          "bbox": [
+            189.68,
+            222.5,
+            230.34,
+            246.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ωn =",
+          "bbox": [
+            148.91,
+            229.24,
+            171.05,
+            240.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "N , 0, 0, . . .",
+          "bbox": [
+            223.3,
+            229.24,
+            268.46,
+            246.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ", (0, 0, . . .)",
+          "bbox": [
+            277.45,
+            229.24,
+            320.07,
+            239.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            329.06,
+            229.24,
+            331.83,
+            239.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "N , and cN ≃√n. Then, there is a limit shape",
+          "bbox": [
+            201.9,
+            252.46,
+            408.72,
+            276.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with N coordinates equal to",
+          "bbox": [
+            72.0,
+            258.02,
+            196.93,
+            270.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            203.44,
+            258.21,
+            207.42,
+            265.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "for the random partitions λ ∼Pn,ωn; it has been found by P. Biane in [Bia01],",
+          "bbox": [
+            72.0,
+            269.35,
+            408.72,
+            288.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and it is drawn on Figure 9 in the case when c = 1.",
+          "bbox": [
+            72.0,
+            281.93,
+            296.3,
+            294.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fig. 9 Random partition under the Schur-Weyl measure of parameter c = 1.",
+          "bbox": [
+            72.0,
+            534.67,
+            358.82,
+            542.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "SFBX0800",
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Now, the interesting fact is that the ﬂuctuations of the partitions under",
+          "bbox": [
+            86.94,
+            572.66,
+            408.72,
+            585.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "these measures (called Schur-Weyl measures) are described by a gaussian",
+          "bbox": [
+            72.0,
+            584.61,
+            408.71,
+            597.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1000",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "free ﬁeld that does not depend on c (or, to be more precise, only by a trans-",
+          "bbox": [
+            72.0,
+            596.57,
+            408.73,
+            609.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "lation of the ﬂuctuations on the x-axis). More generally, we conjecture the",
+          "bbox": [
+            72.0,
+            608.53,
+            408.73,
+            621.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "following (the statement is willingly left unprecise):",
+          "bbox": [
+            72.0,
+            620.48,
+            296.04,
+            633.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

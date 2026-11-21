@@ -1,0 +1,1 @@
+Let xk be a feasible solution, let αs be a steepest-descent augmentation relative to xk, and let xk+1 := xk + αs. Let βt be a steepest-descent augmentation relative to xk+1. Then we have −c⊺s/∥s∥1 ≥−c⊺t/∥t∥1.

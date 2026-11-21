@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "PII: 0550-3213(85)90492-4",
   "contains": [
+    "library/np-b250-1985-465/sections/sec-front-matter",
     "library/np-b250-1985-465/sections/sec-000",
     "library/np-b250-1985-465/sections/sec-001",
     "library/np-b250-1985-465/sections/sec-002",
@@ -32,10 +33,30 @@
     "library/np-b250-1985-465/sections/sec-018",
     "library/np-b250-1985-465/sections/sec-019",
     "library/np-b250-1985-465/sections/sec-020",
-    "library/np-b250-1985-465/sections/sec-021"
+    "library/np-b250-1985-465/sections/sec-021",
+    "library/np-b250-1985-465/sections/sec-022",
+    "library/np-b250-1985-465/sections/sec-023",
+    "library/np-b250-1985-465/sections/sec-024",
+    "library/np-b250-1985-465/sections/sec-025",
+    "library/np-b250-1985-465/sections/sec-026",
+    "library/np-b250-1985-465/sections/sec-027",
+    "library/np-b250-1985-465/sections/sec-028",
+    "library/np-b250-1985-465/sections/sec-029",
+    "library/np-b250-1985-465/sections/sec-030",
+    "library/np-b250-1985-465/sections/sec-031",
+    "library/np-b250-1985-465/sections/sec-032",
+    "library/np-b250-1985-465/sections/sec-033",
+    "library/np-b250-1985-465/sections/sec-034",
+    "library/np-b250-1985-465/sections/sec-035",
+    "library/np-b250-1985-465/sections/sec-036",
+    "library/np-b250-1985-465/sections/sec-037",
+    "library/np-b250-1985-465/sections/sec-038",
+    "library/np-b250-1985-465/sections/sec-039",
+    "library/np-b250-1985-465/sections/sec-040",
+    "library/np-b250-1985-465/sections/sec-041"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "np-b250-1985-465",
     "title_source": "pdf-info",

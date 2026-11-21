@@ -144,6 +144,7 @@ import _path_bridge  # noqa: F401,E402
 import networkx as nx  # noqa: E402
 import sympy as sp  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
+from codata_constants import AME_B_LI6_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -154,7 +155,7 @@ except Exception:  # pragma: no cover
 # The corpus's own a_D, and B(D) as the single-bond anchor.
 A_D = {2: 1.0, 3: 1.3370, 4: 2.5328}
 B_D = AME_B_DEUTERON_MEV_VALIDATION
-B_6LI_AME = 31.994
+B_6LI_AME = float(AME_B_LI6_MEV_VALIDATION)
 
 
 def deltahedron(A: int) -> set:

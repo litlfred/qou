@@ -1,0 +1,58 @@
+1378 J. Leake
+
+maps p to p(a,b) = p(aj,bi,..., Gm, bm). We call Symb(ev(a,p)) € V(A) the evaluation
+symbol with root (a, b). Further:
+
+m
+Symb(ev(a,p)) = T[@ix _ ajyj)*! =: (bx — ay)*
+j=l
+
+The main significance of this notion comes from the following result, which is essentially
+just a restatement of the symbol lemma (Lemma 3.7) for evaluation symbols.
+
+Lemma 5.10 (Evaluation Symbol Lemma) Fix A € Nj, p € VA), and (a,b) =
+(a1, bi,.--.dm. bm) € C2" such that (aj,bj;) A (0,0) for all j € [m]. Considering
+(bx — ay)*, the evaluation symbol with root (a, b), we have:
+
+D* ((bx — ay)* ® p) = (A!)’ p(a, b) ® 1 = (A!) pla, b)
+
+In what follows, we will extend Grace’s theorem in a number of ways, mainly relying on
+the previous lemma and the symbol lemma itself. As we will see, the representation theoretic
+mentality combined with repeated use of the symbol lemma will yield many of the results of
+this paper with surprising simplicity.
+
+We now obtain an interesting corollary of Grace’s theorem, making use of the notion of a
+disjoint Grace pair. This particular formulation of the theorem will serve as a model for our
+linear operator characterization in Sect. 6.2.
+
+Corollary 5.11 Fix A € Ng’, g € V(A), and any disjoint Grace pair (C, x «++ x Cm, By x
++++ x Bm). Then the following are equivalent.
+
+(i) D*(p @ q) € O forall (Cy x «++ x Cn)-stable p € V(A).
+(ii) D*(p @ q) # O for all (Cy x +++ X Cm)-stable evaluation symbols p € V(A).
+(iii) g is (By x +--+ x By)-stable.
+
+Proof (i) = (ii) Immediate.
+
+(ii) = (ili) Fix any (a, b) = (a1, b1,..-, dm, bm) € C2” such that (az : bg) € By for all
+k € [m]. Since By and Cx are disjoint, we have that (ax : by) ¢ Cx for all k, and therefore
+Symb(ev(a,p)) = (bx — ay)* is an evaluation symbol which is (C; x --- x C,)-stable. The
+evaluation symbol lemma given above then implies:
+
+0 # D*(Symb(evqa:5)) ® g) = (A!)?G(a, b) ® 1 = (!)?q(a, b)
+
+That is, g(a, b) 0 for any (a, b) € C2” such that (a : b) € By x-++ x By, and this implies
+q is (Bi x --- x By)-stable.
+(iii) > (i) This follows immediately from the definition of Grace pair (Definition 5.2). 0
+
+6 Stability properties of complex linear operators
+
+In [1], Borcea and Brandén were concerned with classifying the class of weak (2-stability
+preserving operators, where Q is some product of open circular regions. What they found is
+that an operator preserves weak Q-stability if a particular associated polynomial (what they
+called the symbol) is Q-stable. However, the “only if” direction does not necessarily hold. In
+particular, there are some weak {2-stability preserving operators for which the corresponding
+symbol is not Q-stable. They then showed that this could only happen under very specific
+circumstances: the operator must have image of dimension at most one.
+
+D Springer

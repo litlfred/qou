@@ -1,0 +1,1 @@
+It was observed in \cite{LogShe,VerKer77} that a Young lattice equipped with Plancherel measure terminates to a universal class of diagram in the limit $k\ra \infty$ when the diagrams are scaled properly.

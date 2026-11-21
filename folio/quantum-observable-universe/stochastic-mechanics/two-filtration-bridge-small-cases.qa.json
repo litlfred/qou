@@ -1141,6 +1141,40 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "18f3b658af53",
+          "ts": "cfa8caab839e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:05:35.905Z",
+        "reviewed_sha": "d452093fabf877690aeba624197ad015c6b9aa74",
+        "severity": "major",
+        "evidence": "Self-assuming: bridge_small_cases rewrites by ctx.depth_formula, a class field that is the claim. The md 'verifications' rest on unproved pairings (e.g. Markov-trace pairing with Li_2^q gives Vol(4_1)) and (2,1) 'holds structurally'."
+      },
+      {
+        "field_hash": {
+          "md": "5869abfb6875",
+          "ts": "cfa8caab839e",
+          "lean": "574dc95bfdf4",
+          "lean_statement": "8071778537bf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:11:03.683Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "major",
+        "evidence": "Re-read 2026-11-17. bridge_small_cases rewrites by ctx.depth_formula, a context field that is the claimed depth formula, so the Lean is self-assuming. The md's own status note says this is a comparison with chosen knots, yet its Result section still says the bridge is verified at n <= 4; (2,1) has no witness."
       }
     ],
     "proof-statement-integrity": [
@@ -2128,6 +2162,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:10:21.724Z",
+  "updated_at": "2026-11-17T18:11:03.683Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

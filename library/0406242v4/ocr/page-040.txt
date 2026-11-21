@@ -1,0 +1,44 @@
+1278 Francois Guéritaud and David Futer
+
+B_ Applications
+
+Our construction of geometric triangulations using volume maximization methods has
+several corollaries that relate hyperbolic geometry (of bundles and links) to combinatorics
+(of the Farey complex and link diagrams).
+
+B.1 Volume estimates for bundles
+
+Theorem B.1 Let V, be a once-punctured torus bundle defined by the cyclic word
+Q= ROLY... R&L, Then
+
+2nv3 < Vol(Vy) < 2nve,
+
+where v3 © 1.0149 is the volume of a regular ideal tetrahedron and vg © 3.6638 is the
+volume of a regular ideal octahedron. Both of these bounds are sharp.
+
+This is a sharp, quantitative version of Brock’s result in [8], in the special case of
+punctured torus bundles. The upper bound is not new; it is a special case of [2, Corollary
+2.4].
+
+Proof To prove the lower bound on volume, we exhibit a particular angle structure.
+It follows from the proof of Theorem 1.1 that the volume of the complete hyperbolic
+structure on V,, is the global maximum of V over the closed polytope P. Thus, for any
+w € P, Vw) < Vol(V,).
+
+We choose w in the simplest possible manner: by letting w; = 5 for all i. It is easy to
+check that this choice of parameters satisfies at least the weak form of all the inequalities
+of (3). In other words, all angles are nonnegative, and w € P. Any nonhinge tetrahedron
+A; will have one vanishing angle and will therefore have volume 0. However, every
+hinge tetrahedron A, will be a regular tetrahedron, with all angles } and volume v3.
+Thus V(w) = 2nv3.
+
+When 22 = (RL)", and thus all tetrahedra are hinges, this choice of angles will in fact
+give the complete structure on V,,. These bundles, which are n—fold cyclic covers of the
+figure—8 knot complement, have volume exactly 2nv3. On the other hand, the bundles
+that contain some nonhinge tetrahedra have Vol(V,) > 2nv3, because V is maximized
+at a point where all tetrahedra have positive angles.
+
+To prove the upper bound, we employ a Dehn surgery construction. For every Farey
+vertex s which corresponds to a fan RL*R or LR*L (with « > 0), drill a closed curve of
+
+Geometry & Topology 10 (2006)

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Coxeter groups",
+  "title": "Introduction",
   "pageStart": 1,
-  "pageEnd": 1,
-  "text": "../sections/sec-001-coxeter-groups.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/generalised-markov-traces-and-jucys-murphy-element",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/generalised-markov-traces-and-jucys-murphy-element",
+  "pageEnd": 2,
+  "text": "../sections/sec-001-introduction.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/generalised-markov-traces-and-jucys-murphy-element/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/generalised-markov-traces-and-jucys-murphy-element/manifest.jsonld",
   "provenance": "ingested"
 }

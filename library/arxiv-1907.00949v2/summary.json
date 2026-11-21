@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1907.00949v2",
  "source_sha256": "865defaa34bf42be",
  "brief": "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces.",
- "extended": "**OPTIMIZATION ON FLAG MANIFOLDS**\n\n*KE YE, KEN SZE-WAI WONG, AND LEK-HENG LIM*\n\n27 pp, 17 sections.\n\n**Abstract.** A ﬂag is a sequence of nested subspaces. Flags are ubiquitous in numerical analysis, arising in ﬁnite elements, multigrid, spectral, and pseudospectral methods for numerical pde; they arise in the form of Krylov subspaces in matrix computations, and as multiresolution analysis in wavelets constructions. They are common in statistics too — principal component, canonical cor- relation, and correspondence analyses may all be viewed as methods for extracting ﬂags from a data set. The main goal of this article is to develop the tools needed for optimizing over a set of ﬂags, which is a smooth manifold called the ﬂag manifold, and it contains the Grassmannian as the simplest special case.\n\n**Outline.** 1 Introduction; 1.1 Flags in numerical analysis; 1.2 Flags in statistics; 1.3 Prior work and our contributions; 1.4 Outline; 2 Basic differential geometry of homogeneous s; 2.1 Lie groups and Lie algebras; 2.3 Geodesic orbit spaces; 2.4 Riemannian notions; 3 Basic differential geometry of flag manifold; 4 Flag manifolds as matrix homogeneous spaces; 5 Flag manifolds as matrix manifolds; 6 Riemannian Gradient and Hessian over the fla; 7 Optimization algorithms over flag manifolds; 8 Numerical experiments; 9 Conclusion; References",
+ "extended": "**OPTIMIZATION ON FLAG MANIFOLDS**\n\n*KE YE, KEN SZE-WAI WONG, AND LEK-HENG LIM*\n\n27 pp, 28 sections.\n\n**Abstract.** A ﬂag is a sequence of nested subspaces. Flags are ubiquitous in numerical analysis, arising in ﬁnite elements, multigrid, spectral, and pseudospectral methods for numerical pde; they arise in the form of Krylov subspaces in matrix computations, and as multiresolution analysis in wavelets constructions. They are common in statistics too — principal component, canonical cor- relation, and correspondence analyses may all be viewed as methods for extracting ﬂags from a data set. The main goal of this article is to develop the tools needed for optimizing over a set of ﬂags, which is a smooth manifold called the ﬂag manifold, and it contains the Grassmannian as the simplest special case.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Flags in numerical analysis; 1.2 Flags in statistics; 1.3 Prior work and our contributions; 1.4 Outline; 2 Basic differential geometry of homogeneous s; 2.1 Lie groups and Lie algebras; 2.2 Homogeneous spaces; 2.3 Geodesic orbit spaces; 2.4 Riemannian notions; 3 Basic differential geometry of flag manifold; 4 Flag manifolds as matrix homogeneous spaces; 4.1 Orthogonal coordinates for the flag manifo; 4.2 Stiefel coordinates for the flag manifold; 5 Flag manifolds as matrix manifolds; 5.1 Projection coordinates for the flag manifo; 5.2 Refined projection coordinates for the fla",
  "tokens": {
   "brief": 18,
-  "extended": 339
+  "extended": 359
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -42,55 +47,105 @@
   {
    "id": "sec-006-21-lie-groups-and-lie-algebras",
    "title": "Lie groups and Lie algebras",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-007-22-homogeneous-spaces",
+   "title": "Homogeneous spaces",
    "pages": "5-6"
   },
   {
-   "id": "sec-007-23-geodesic-orbit-spaces",
+   "id": "sec-008-23-geodesic-orbit-spaces",
    "title": "Geodesic orbit spaces",
    "pages": "6-7"
   },
   {
-   "id": "sec-008-24-riemannian-notions",
+   "id": "sec-009-24-riemannian-notions",
    "title": "Riemannian notions",
    "pages": "7-7"
   },
   {
-   "id": "sec-009-3-basic-differential-geometry-of-flag-manifolds",
+   "id": "sec-010-3-basic-differential-geometry-of-flag-manifolds",
    "title": "Basic differential geometry of flag manifolds",
    "pages": "7-9"
   },
   {
-   "id": "sec-010-4-flag-manifolds-as-matrix-homogeneous-spaces",
+   "id": "sec-011-4-flag-manifolds-as-matrix-homogeneous-spaces",
    "title": "Flag manifolds as matrix homogeneous spaces",
-   "pages": "9-16"
+   "pages": "9-10"
   },
   {
-   "id": "sec-011-5-flag-manifolds-as-matrix-manifolds",
+   "id": "sec-012-41-orthogonal-coordinates-for-the-flag-manifold",
+   "title": "Orthogonal coordinates for the flag manifold",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-013-42-stiefel-coordinates-for-the-flag-manifold",
+   "title": "Stiefel coordinates for the flag manifold",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-014-5-flag-manifolds-as-matrix-manifolds",
    "title": "Flag manifolds as matrix manifolds",
-   "pages": "16-19"
+   "pages": "16-17"
   },
   {
-   "id": "sec-012-6-riemannian-gradient-and-hessian-over-the-flag",
+   "id": "sec-015-51-projection-coordinates-for-the-flag-manifold",
+   "title": "Projection coordinates for the flag manifold",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-016-52-refined-projection-coordinates-for-the-flag-m",
+   "title": "Refined projection coordinates for the flag manifold",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-017-6-riemannian-gradient-and-hessian-over-the-flag",
    "title": "Riemannian Gradient and Hessian over the flag manifold",
    "pages": "19-21"
   },
   {
-   "id": "sec-013-7-optimization-algorithms-over-flag-manifolds",
+   "id": "sec-018-7-optimization-algorithms-over-flag-manifolds",
    "title": "Optimization algorithms over flag manifolds",
-   "pages": "21-23"
+   "pages": "21-21"
   },
   {
-   "id": "sec-014-8-numerical-experiments",
+   "id": "sec-019-71-steepest-descent-over-a-flag-manifold",
+   "title": "Steepest descent over a flag manifold",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-020-72-conjugate-gradient-over-a-flag-manifold",
+   "title": "Conjugate gradient over a flag manifold",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-021-73-newton-and-other-algorithms-over-a-flag-manif",
+   "title": "Newton and other algorithms over a flag manifold",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-022-8-numerical-experiments",
    "title": "Numerical experiments",
-   "pages": "23-26"
+   "pages": "23-23"
   },
   {
-   "id": "sec-015-9-conclusion",
+   "id": "sec-023-81-principal-flags",
+   "title": "Principal flags",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-024-82-nonlinear-eigenflags",
+   "title": "Nonlinear eigenflags",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-025-9-conclusion",
    "title": "Conclusion",
    "pages": "26-26"
   },
   {
-   "id": "sec-016-references",
+   "id": "sec-026-references",
    "title": "References",
    "pages": "26-27"
   }

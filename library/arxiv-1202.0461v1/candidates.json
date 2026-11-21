@@ -1,0 +1,63 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1202.0461v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "656a2ea80ef2e25ce2795cb06f644c6cb11cf0ba5bc55c356f2db32c105f0486",
+  "file": "1202.0461v1.pdf"
+ },
+ "provenance": {
+  "title": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS",
+  "authors": "Enrique Garc\u00b4\u0131a\u2013Berro1,2, Pablo Lor\u00e9n\u2013Aguilar1,2, Gabriela Aznar\u2013Sigu\u00e1n1,2, Santiago Torres1,2",
+  "arxiv": {
+   "id": "1202.0461",
+   "version": "1",
+   "primary_class": "astro-ph.SR",
+   "stamp_date": "2 Feb 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "We computed the boundaries of the convective region using the Schwarzschild criterion, and we found that the inner and outer edges of the convective region are located at radii $R\\approx 0.012\\, R_{\\sun}$, and $R \\approx 0.026\\, R_{\\sun}$, respectively, and that the total mass inside this region is $\\sim 0.24 \\, M_{\\sun}$ (see Fig.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-2-the-stellar-dynamo.md (p. 1-3)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-2-the-stellar-dynamo.md",
+   "section_title": "The stellar dynamo",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-2-the-stellar-dynamo.md (p. 1-3)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-01",
+   "block_iri": "library/arxiv-1202.0461v1/blocks/prop-sec-001-01",
+   "claim_id": "arxiv-1202.0461v1#prop-sec-001-01"
+  }
+ ]
+}

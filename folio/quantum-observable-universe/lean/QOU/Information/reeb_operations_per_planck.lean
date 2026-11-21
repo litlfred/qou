@@ -47,7 +47,7 @@ one jet-prolongation step, advancing the phase by `ℏ_q` of a full circuit.
   assumed, not constructed: it is **not** the archimedean τ-functor, and
   `ArchimedeanEval.ofRingHom` machine-checks how little it takes to inhabit.
 
--- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
 -/
 
 namespace QOU.Information
@@ -94,7 +94,7 @@ class ReebOperationsPerPlanckContext extends QOU.Shared.ArchimedeanEval where
     `0 < ℏ_q < 1`, and each iteration performs one `∇_q` application and
     one `R`-matrix evaluation — all *derived* from the substrate
     definitions and `q > 1`. -/
--- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
 theorem reeb_operations_per_planck [ctx : ReebOperationsPerPlanckContext] :
     (ctx.n_R = ctx.t_P ∧ ctx.t_P = ctx.q_real / (ctx.q_real - 1) ∧
      ctx.t_P = 1 / ctx.hbar_q) ∧

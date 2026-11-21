@@ -1,1 +1,1 @@
-Let the discrete unital algebra A be endowed with two weak quasibialgebra structures A = (A, ε, ∆, Φ) and A′ = (A, ε, ∆′
+Let the discrete unital algebra A be endowed with two weak quasibialgebra structures A = (A, ε, ∆, Φ) and A′ = (A, ε, ∆′ , Φ ′ ). Then there is a bijective correspondence between tensor structures on the identity linear equivalence E : Rep(A) → Rep′(A) and twists F ∈ M(A ⊗ A) such that A′ = AF as weak quasi-bialgebras. Given F, the tensor structure Eρ,σ : Eρ ⊗ Eσ → Eρ⊗σ is given by the action of F −1 .

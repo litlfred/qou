@@ -1,0 +1,48 @@
+150 G Kuperberg
+be a generating function. Then
+
+B(x) = A(xB(x)) . (8)
+
+Proof. (Sketch) By Theorem 6.10, b, may equally well be defined as the number
+of G2 basis webs with n endpoints. Each triangulation is dual to a connected basis
+web. Equation (8.1) becomes a standard relation between the number of connected
+graphs of a certain type and the number of disjoint unions of such graphs. More
+precisely, consider n boundary points on a disk with one marked, and consider a
+basis web w € B(11---1) with this boundary. Then w is given by an ordered tree
+whose vertices are its connected components: The root is the component with the
+marked vertex, and the children of each component are the adjacent components
+other than the parent, if there is one. The children of each component are ordered
+going counterclockwise, with the distinguished boundary point separating the first
+and last children of the root. Equation (8) is the usual generating function for
+ordered trees [3, p. 11-12]. O
+
+The sequence {b,} is easy to compute using character theory. Thus, Theorem 8.1
+produces a fast algorithm for computing {a,}.
+
+It is easy to show that the radius of convergence of B(x) is 1/7. Then by
+Theorem 8.1, the radius of convergence of A(x) is at least B(1/7)/7. Furthermore,
+numerical evidence supports the conjecture that it is exactly B(1/7)/7, i.e., that
+
+Conjecture 8.2. If a, and b, are defined as in Theorem 8.1, then
+
+7
+lim in =6811....
+dim, Jan = Sp aaa = 98
+
+Our equinumeration theorems count all basis webs with a fixed boundary. How-
+ever, for each n and k, one can also consider the set of G2 basis webs, for example,
+with n endpoints of type 1 and x internal vertices. The role of these sets and their
+cardinality in representation theory is not known.
+
+Given an A> basis-web set B(s) for some sign string s, there are various H-maps
+corresponding to different adjacent pairs of signs. But if s’ is another sign string of
+the same weight as s, then any two sequences of H-maps permuting s into s’ yield
+the same bijection B(s) — B(s’), provided that the first and the last sign of s are
+not considered adjacent. On the other hand, if a sign is moved all the way around
+the boundary by H-maps, monodromy arises:
+
+feaaea at
+
++
+
+_. Sb sve sw

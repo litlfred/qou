@@ -1,0 +1,50 @@
+O
+O U
+
+details of which are given in iLspana [28]. We start by introducing some classical theory
+of unbounded operators, following [50] and [64]. Another good reference for the theory
+of unbounded operators is [78].
+
+Let H be a separable, complex Hilbert space. Let A be a linear operator in H. A
+
+bounded linear operator A can be defined for all u € H; it satisfies the inequality
+|Aul] < Cllul,
+
+where the least possible value of C' defines the norm ||A]|. Conversely, differential oper-
+ators, in particular A, are unbounded and as a result do not have this property. They
+are however defined for some u € H, so to properly define an unbounded operator A, we
+must also give its domain D(A) C H. Often we will write (A, D(A)). The graph of the
+
+operator is used to define A as
+gr(A) := {(u, Au) |u € D(A)} CH x H,
+and comes with a norm (called the graph norm):
+WJeul].4 = lJeel] + |] Aca].
+Definition 2.1 (Densely defined operator) We say that A is densely defined if D(A)
+
+is dense in H.
+
+Example 2.2 A®, that is, the Laplacian acting on Q, is defined on CH (Q), and satisfies
+Dirichlet boundary conditions trivially due to the property of compact support. Note that
+
+it is also a non-negative operator since for @ € C§°(Q), an integration by parts shows that
+
+(¢, Ad) = ||Vol|? > 0. Cc]
+(2°(9) is|dense in L2(Q), so (A®, C§(Q)) is densely defined on L?(Q). Using Theo-
+rem 2.13, we will create an extension of P§ = (A®, C§°(Q)) to define AY, on L?(Q).
+
+Being densely defined is an essential property for defining the adjoint of an unbounded
+operator. For our unbounded, densely defined operator A, we want to construct an
+extension of A to a continuous operator on all of H, that is, a linear operator A such
+that D(A) C D(A) and for all u € D(A), Au = Au. In the case of bounded operators,
+we have the bounded linear OTE dena, (or so-called ‘BLT’) theorem that allows us
+to do this (see, for example, [70] for details of this and other named but unacknowledged
+theorems in this section). On the other hand, for unbounded operators
+
+sup Aull =
+oueD() |||
+so a continuous extension is not possible. The problem then, is to create a natural
+extension of D(A) in a way that allows us to replicate, or at least approximate, the spectral
+
+theory of bounded operators. First, we need to introduce the concept of closability.
+
+26

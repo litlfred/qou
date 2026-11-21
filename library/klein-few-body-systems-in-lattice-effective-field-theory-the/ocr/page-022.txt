@@ -1,0 +1,67 @@
+Chapter 2 Theory
+
+the first and second kind, j,(qr) and n,(qr),
+
+uj(qr) = (qr) j(qr). (2.38)
+uj (qr) = (qr)n(qr). (2.39)
+
+As the solutions are « sin(qr — Im/2) and « —cos(qr — Im/2) for large (qr), the real solution can be
+approximated by a superposition of the two free solutions, leading to
+
+u(r) 22 Asin (ar - ) — Beos (ar - ) IP, sin (ar - ig + 61) . (2.40)
+6, is the phase shift and it can be read off from the coefficients A, B immediately by
+
+tan 6, = (2.41)
+
+A
+
+Alternatively, one expands the incoming partial wave of Eq. (2.25), rearranges the solution and uses
+Eq. (2.41) to get the form
+
+21+ 1 oi
+——]1
+
+5) exp(—iqr) — (-1! exp(2i6)) exp(+igr)| : (2.42)
+q
+
+u(r) >
+Due to the orthogonality of the spherical harmonics, one can not only separate the contributions of the
+wave function according to their angular momentum, but also the Lippmann-Schwinger equation as well
+as the scattering matrix S, themselves. For example, the S-matrix for angular momentum / reads
+
+S, = exp (2i6,). (2.43)
+
+Then the full scattering matrix S is given by the sum S = }),S;. In the former Eqs. (2.38) to (2.40)
+we see that momentum gq and position r always appear as a pair (gr) and one could think about the
+very low-energy limit of the equations. The Wronskian method uses the asymptotic wave function
+of Eq. (2.40) with and without interaction at zero momentum approximation and gives the following
+equation,
+
+g'*" cols) = -— + Eg? + 01g"), (2.44)
+
+a, 2
+
+with a, the scattering length and r, the effective range. The term on the left can be analytically expanded
+around zero-momentum as the phase shift is 5; o q'"* for q > 0. It can be shown that the scattering
+length is the zero of the asymptotic wave function in the zero-energy limit. In the case of repulsive or
+only weakly attractive potentials, the scattering length and the effective range are indeed approximately
+in the range of the potential. The effective range expansion can be linked to the scattering matrix,
+
+1
+
+S) = exp(2id5)) = 1 + 2ig?*! —_—__________,
+U L gai cot (5,) - igh
+
+(2.45)
+
+and the projected scattering amplitude
+
+(21+ 1)q”!
+
+G* cot, (6) — igh”
+
+f= (2.46)
+
+whereas f; is given by f(@) = >), f,P)(cos @). Bound states appear as poles in the scattering amplitude
+
+16

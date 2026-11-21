@@ -1,0 +1,1 @@
+Set r = √ θ. We have r 3 J  2r + xr 3 , 2r + yr 3 , r2 →A(x, y), r →+∞, uniformly in x and y on compact sets of R. The prefactor r 3 corresponds to the fact that we change the local scale near 2r to get nonvanishing limit correlations. Using this and verifying certain tail estimates we obtain the following

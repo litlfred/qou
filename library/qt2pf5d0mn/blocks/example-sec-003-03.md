@@ -1,1 +1,0 @@
-1.Vect : The objects are ﬁnite dimensional vector spaces over C and

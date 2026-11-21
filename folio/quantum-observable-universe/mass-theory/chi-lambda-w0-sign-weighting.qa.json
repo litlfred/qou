@@ -1124,6 +1124,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cef3cde8020f",
+          "ts": "30b79a130fe4",
+          "lean": "db5754d39d41",
+          "lean_statement": "3702ed90a148"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:26.241Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: c_k^{(λ)} are hard-coded ℝ literals (lean:60-75 `c5_V111 : ℝ := 533 / 2` …), not derived from the characters (I checked the values from the prf:19-21 closed forms with sympy: 1/4, 65/4, 533/2, 1/4, 45/2, 955/2, so they agree). The theorem (lean:154-159) proves only S_w0 = c3−c111 and S_w0 < 0. The statement's claims \"do not match a uniform Plancherel-weighted sum\" and \"reproduces the sign of the empirical c_k\" (md:1,9) are not encoded; the empirical −395.41/−45485 is only in comments (lean:131-132). The ℝ is gratuitous for ℚ data. S↔P: the statement is an empirical-comparison claim (\"empirical coefficients c_k\", md:1,9). The proof never computes the empirical c_k (prf:78-83: \"The empirical c_k ... selects the same signed combination\", asserted). Step 3's \"sign tied to the parity of the dominant j\" and Step 4's \"c_k^{(1,1,1)} ≫ c_k^{(3)} for k ≥ 5\" (prf:64-70) are heuristic, not proved.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2118,6 +2136,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T14:57:45.145Z",
+  "updated_at": "2026-11-15T21:57:26.241Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,0 +1,1 @@
+Consider the functors F and G on D(A⊗Bop, gr) from Deﬁnition 16.6.3. Assume that the copointed object (P, ρ) is idempotent. Then the kernel of F equals the kernel of G. Namely for every M ∈D(A ⊗Bop, gr) we have F(M) = 0 if and only if G(M) = 0.

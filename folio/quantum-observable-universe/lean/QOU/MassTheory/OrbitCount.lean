@@ -95,7 +95,7 @@ file.
 So the general cycle-count gap those two files name is closed; the word-specific
 accounting is not. **Do not cite this file as verifying `c(σ_atom) = A + 1`.**
 
--- Ref: [manuscript] bean qou-zrx2 follow-up (5); the transposition/cycle-count
+-- Ref: [leitner2026] bean qou-zrx2 follow-up (5); the transposition/cycle-count
 -- step is the classical fact underlying well-definedness of the sign of a
 -- permutation, standard in any treatment of symmetric groups.
 -/

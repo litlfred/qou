@@ -1,0 +1,47 @@
+STUDYING LINKS VIA CLOSED BRAIDS II 33
+
+holes” in the standard disc-band decomposition of F. The foliation
+of the digons by their arcs of intersection with fibers of H and H’
+will be the key to our proof. The standard axis A is disjoint from
+Q and the foliation of each digon which is induced by the standard
+fibration H is free of singularities in the interiors of the digons. The
+non-standard axis A’, however, may pierce Q repeatedly, and we
+need to understand the relationship of A’ and the fibers of H’ to Q.
+We prove that S? split along FUQ isa union of three 3-balls B; , Bz,
+B; and a solid torus T. We show that L has a natural “projection”
+onto OT. We show that W can be determined from the projection
+of L on OT. We then prove that A’, like A, may be assumed to be
+disjoint from the union of all the digons.
+
+In §4 we study the foliation of the digons which is induced by the
+fibration H’ of S3—A’. We show that its singularities are very special,
+and begin to show (see Corollary 4.9) how knowledge of the foliation
+enables us to draw conclusions about W.
+
+In §5 we show that we may assume that A’ is inside T.
+
+In §6 we use all of this structure to prove the Classification Theorem.
+
+In §7 the Classification Theorem is translated into an algorithmic
+solution to the link problem for links which are defined by closed
+3-braids. The algorithm depends directly upon known solutions to
+the conjugacy problem in B3. In addition to giving a unique and
+complete invariant for links defined by closed 3-braids, the algorithm
+answers other questions: Is invertible or amphicheiral or both? Is
+the braid index 3, 2 or 1? Is & split or composite? With the help of
+[X], one can also answer the question: what is the genus of “? We
+also prove that the stabilization index for two 3-braid representatives
+of the same link is one.
+
+Knowing a complete invariant for a class of links such as links of
+braid index < 3, it is natural to ask how this invariant compares to
+“Jones invariants” i.e. the Jones polynomial [J] and its generalizations.
+We call a link type invariant a Jones invariant if it is constructed from
+traces in matrix representations of the braid group. The key prop-
+erty is that the traces in question change in a very simple way when
+one changes the defining braid by the moves which generate Markov’s
+equivalence relation. It is to be expected that Markov equivalence
+will imply the existence of trace identities in any representation of B;
+which admits a Jones invariant. We discuss this question briefly at the
+end of §7. We prove that, for any N > 0, there exist infinitely many
+sets, each of which contains N distinct links of braid index 3 which

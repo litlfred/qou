@@ -4,11 +4,12 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.Shared.ArchimedeanEval — tying `q_real` to the inherited `q : R`
 
-Bean `qou-mt7r`. Three `MarkovTraceContext` descendants live past the §7c wall
-and declare their own `q_real : ℝ`:
+Bean `qou-mt7r` / `qreal`. Four `MarkovTraceContext` descendants live past the
+§7c wall and use `q_real : ℝ`:
 
 * `QOU/Information/reeb_operations_per_planck.lean`
 * `QOU/Information/toffoli_transfer_matrix.lean`
+* `QOU/Observations/brane_tower_q_laplacian_decay.lean`
 * `QOU/Observations/strangelet_crossing_energy.lean`
 
 Each is genuinely archimedean — `1 < q_real`, `Real.sqrt q_real`, `inv_pos`,
@@ -71,7 +72,7 @@ it would put an archimedean field on every one of them — the §7c wall in
 reverse. A mixin costs the three archimedean descendants one word in their
 `extends` clause and leaves the other twelve untouched.
 
--- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
 -/
 
 namespace QOU.Shared

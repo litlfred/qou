@@ -1,0 +1,1 @@
+(The data in Table XV are used in the theoretical expressions.) • Table XXV, D1–D52, a wide variety of input data ranging from the experimental value of the electron magnetic-moment anomaly aeðexpÞ to the theoretically calculated magnetic-shielding difference of the triton t and proton p in the HT molecule σtp.

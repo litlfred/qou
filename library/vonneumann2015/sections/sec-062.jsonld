@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-062",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The tower of type II1 factors and the ei’s.",
+  "pageStart": 146,
+  "pageEnd": 147,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-062",
+    "library/vonneumann2015/blocks/prop-sec-062-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

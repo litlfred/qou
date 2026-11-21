@@ -1,0 +1,46 @@
+18 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+Corollary 3.8. The number of trivalent labeled trees with m = 2k vertices is
+(2k — 3)" BEE,
+
+3.10. Counting oriented trees. Feynman calculus can be used to count not only
+non-oriented, but also oriented graphs. For example, suppose we want to count
+labeled oriented trees, whose vertices are either sources or sinks (see Fig. 7). In
+this case, it is easy to see (check it!) that the relevant integration problem is in two
+dimensions, with the action S = xy — be* — ae¥. So the critical point is found from
+the equations
+te Y=a,ye*=b.
+Like before, look for a solution (2, y) = (zo, yo) in the form
+t=at > Cpqa? by = b+ > dyqa?b"".
+p2lgq>l polg>l
+
+A calculation with residues similar to the one we did for unoriented trees yields
+
+1 z 1 eft Py g'pr-t
+co ae f ararmarte = aap ff ayer tt eon = Oe
+Similarly, dyg = ae. Now, similarly to the unoriented case, we find that
+
+—a0,5(a2,y) = 2, —bd,S(z,y) = y, 80
+
+a q—-1,p-1
+—S(a,y) = v+ | - du =atb+ > ped apps
+o U piq!
+pq>l
+This implies that the number of labeled trees with p sources and q sinks is
+pi tge 1 ety In particular, if we specify which vertices are sources and which
+are sinks, the number of trees is p?—'q?—!.
+
+3.11. 1-particle irreducible diagrams and the effective action. Let Z = Zs
+be the partition function corresponding to the action S. In the previous subsections
+we have seen that the “classical” (or “tree”) part (In(Zs/Zo))o of the quantity
+In(Zs/Zo) is quite elementary to compute — it is just minus the critical value of the
+action S(a). Thus, if we could find a new “effective” action Seg (a “deformation”
+of S) such that
+
+(In(Zs.¢/Zo))o = In(Zs/Zo)
+
+1 4
+2 5
+3 6
+
+FIGURE 7. A labeled oriented tree with 3 sources and 3 sinks.

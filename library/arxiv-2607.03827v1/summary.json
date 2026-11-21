@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2607.03827v1",
  "source_sha256": "965d69603381942a",
- "brief": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS — The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical",
- "extended": "**AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS**\n\n*PAULA A.A.B. CARVALHO, STEFFEN KOENIG, AND CHRISTIAN LOMP*\n\n32 pp, 9 sections.\n\n**Abstract.** The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical and affine situations and comparing with Lusztig’s asymptotic Hecke algebras. The main new results are about a double centraliser property betweenA and ˆA, about constructing ˆAfrom cell modules ofA, about existence of an embeddingA→ ˆAand about a faithful functor from torsionlessˆA-modules toA-modules as well as about the embedding being weakly spectrum preserving (in the sense of Baum and Nistor) and about non-zero endomorphisms of cell modules being injective, while there are no non-zero homomorphisms between non-isomorphic cell modules.\n\n**Outline.** 1 Introduction; 2 Determinants for affine Cellular Algebras; 3 Homomorphisms between affine cell ideals.; 4 The asymptotic algebra of an affine cellular; 5 Properties of the embedding into the asympto; 6 Examples and methods; 6.1 An explicit example; 6.3 Gram determinants and Jucys Murphy element; References",
+ "brief": "Affine cellular algebras and asymptotic algebras — The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between",
+ "extended": "**Affine cellular algebras and asymptotic algebras**\n\n*PAULA A.A.B. CARVALHO, STEFFEN KOENIG, AND CHRISTIAN LOMP*\n\n32 pp, 11 sections.\n\n**Abstract.** The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical and affine situations and comparing with Lusztig’s asymptotic Hecke algebras. The main new results are about a double centraliser property between A and ˆA, about constructing ˆA from cell modules of A, about existence of an embedding A →ˆA and about a faithful functor from torsionless ˆA-modules to A-modules as well as about the embedding being weakly spectrum preserving (in the sense of Baum and Nistor) and about non-zero endomorphisms of cell modules being injective, while there are no non-zero homomorphisms between non-isomorphic cell modules.\n\n**Outline.** Front matter; 1 Introduction; 2 Determinants for affine Cellular Algebras; 3 Homomorphisms between affine cell ideals.; 4 The asymptotic algebra of an affine cellular; 5 Properties of the embedding into the asympto; 6 Examples and methods; 6.1 An explicit example; 6.2 Extended affine Hecke algebra of type A; 6.3 Gram determinants and Jucys Murphy element; References",
  "tokens": {
-  "brief": 49,
-  "extended": 291
+  "brief": 47,
+  "extended": 309
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -42,15 +47,20 @@
   {
    "id": "sec-006-61-an-explicit-example",
    "title": "An explicit example",
-   "pages": "22-29"
+   "pages": "22-26"
   },
   {
-   "id": "sec-007-63-gram-determinants-and-jucys-murphy-elements",
+   "id": "sec-007-62-extended-affine-hecke-algebra-of-type-a",
+   "title": "Extended affine Hecke algebra of type A",
+   "pages": "26-29"
+  },
+  {
+   "id": "sec-008-63-gram-determinants-and-jucys-murphy-elements",
    "title": "Gram determinants and Jucys Murphy elements",
    "pages": "29-31"
   },
   {
-   "id": "sec-008-references",
+   "id": "sec-009-references",
    "title": "References",
    "pages": "31-32"
   }

@@ -1,0 +1,1 @@
+Let A be a point con gura- tion. The subgraph of the ip graph induced by all regular triangulations of A that use the same vertices is connected. In our case, since the vertices lie on a sphere, all vertices are used in every triangulation, so this says that we can get from any regular triangulation of the polyhedron to any other by performing ips.

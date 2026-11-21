@@ -1,0 +1,51 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-162
+section_title: "Page 162"
+section_number: null
+pages: 162-162
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+534 T. Ohtsuki (Editor)
+
+Connected sum :
+
+Unzip :
+
+Bubbling :
+
+Unknot :
+
+Figure 21: Four operations of KTG’s [40]. The left hand side of the connected sum
+denotes a disjoint union of two separate graphs.
+
+operations such that they give another construction of the Kontsevich invariant
+starting from the invariants of tetrahedron and Mobius strip.
+
+Problem 12.6 Find a new proof of the existence of a universal Vassiliev in-
+variant of knots, presenting them by KTG’s and their operations.
+
+Conjecture 12.7 (D. Bar-Natan, D. Thurston) For each compact Lie group
+G, level k, and every KTG K :T => R’, there exists a collection of measures
+[t, on the space of gauge equivalence classes of G-connections on I’ satisfying
+the following conditions.
+
+e It is well-behaved under KTG operations.
+e It is “localized” near connections that extend to S°— K.
+
+e A half-twist framing change acts by e¥~'* h/ ? where H is the Schrédinger
+operator on G.
+
+e It recovers quantum invariants by
+
+Ie) = f he Ald (A),
+where hr(A) denotes the holonomy of A in R. Here, R is a set of
+
+representations of G associated to edges of [ and appropriate intertwiners
+associated to vertices of [.
+
+Geometry & Topology Monographs, Volume 4 (2002)

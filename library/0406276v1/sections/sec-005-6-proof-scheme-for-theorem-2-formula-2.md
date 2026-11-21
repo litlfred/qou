@@ -8,6 +8,7 @@ pages: 15-18
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 Now we are working on  S3  in parallel transport format, and use an entirely different 
 approach. 
@@ -47,7 +48,6 @@ orthogonal to the 3-space spanned by  A ,  B  and  C ,  and whose length is the
  
  
  
-16
  
 Once the Key Lemma is proved, we apply it using the kernel function 
  
@@ -88,7 +88,6 @@ V(y)  —  < V(y), y > y  =  V(y) ,
  
 since  V(y) is a tangent vector to  S3  at  y ,  and hence orthogonal to  y  in  R4 . 
  
-17
  
  
 Taking the curl and the gradient outside the two integrals on the left-hand side,  
@@ -128,6 +127,4 @@ Remark.  Jason Parsley, in his thesis (2004), proves Maxwell's equation in the
 case that the current flow  J  runs only within some bounded subdomain  Ω  ⊂  S3 . 
 In that situation, the  ∂E/∂t  term also reflects the time rate of change of the 
 electric field due to the gradual deposit or removal of charge along the boundary  
-of  Ω .  His proof of this in left-invariant format inspired our own arguments. 
- 
-18
+of  Ω .  His proof of this in left-invariant format inspired our own arguments.

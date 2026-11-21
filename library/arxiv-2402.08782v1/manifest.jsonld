@@ -5,22 +5,27 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2402.08782v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2402.08782v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2402.08782v1",
+  "title": "Hecke–Farey coordinates for Bring’s surface",
   "contains": [
+    "library/arxiv-2402.08782v1/sections/sec-front-matter",
     "library/arxiv-2402.08782v1/sections/sec-000",
     "library/arxiv-2402.08782v1/sections/sec-001",
     "library/arxiv-2402.08782v1/sections/sec-002",
     "library/arxiv-2402.08782v1/sections/sec-003",
     "library/arxiv-2402.08782v1/sections/sec-004",
     "library/arxiv-2402.08782v1/sections/sec-005",
-    "library/arxiv-2402.08782v1/sections/sec-006"
+    "library/arxiv-2402.08782v1/sections/sec-006",
+    "library/arxiv-2402.08782v1/sections/sec-007",
+    "library/arxiv-2402.08782v1/sections/sec-008",
+    "library/arxiv-2402.08782v1/sections/sec-009",
+    "library/arxiv-2402.08782v1/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -30,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2402.08782v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2402.08782v1.pdf",
     "source_sha256": "30311f0bd815f93f253a60438c999770726ebcf838e361d5741b564b313389a1",
     "pages": 12,

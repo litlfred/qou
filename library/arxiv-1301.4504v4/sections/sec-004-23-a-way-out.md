@@ -7,10 +7,11 @@ section_number: 2.3
 pages: 13-14
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.978
+latex_coverage_ratio: 1.0
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 A key step in the AMPS argument is that $B$ and $R_B$ are accessible to both Charlie and Alice and that therefore they must agree on the entanglement between them. But is this really true? In [@harlow] it was argued that it is difficult for Alice to measure $B$ because she passes through it quickly, but the details of that argument have not worked out satisfactorily. The much more difficult measurement however is the one on $R_B$. $R_B$ is defined as the subfactor of the Hawking radiation which is entangled with $B$, but this subfactor is presumably very convoluted from the point of view of a basis of Hawking quanta that is easy to measure. Probing $R_B$ entails doing quantum measurements involving nonlocal quantum superpositions of large numbers of Hawking quanta. Such measurements need to be very carefully engineered, and one might expect that this engineering takes a significant amount of time. This is no problem for Charlie, who has all the time in the world to look at the Hawking radiation, but Alice needs to be able to make the measurement fast enough that she can then jump into the black hole before it evaporates. In this paper we will argue that Alice simply does not have time to do this.
 

@@ -5,15 +5,16 @@ decomposition $X = (X - S \cdot 1) + S \cdot 1$ and expand the
 Frobenius norm-squared:
 
 $$
-\| X \|^2_\tau = \mathrm{tr}_M(X \cdot X)
-              = \mathrm{tr}_M\big((X - S \cdot 1)(X - S \cdot 1)\big)
-                + 2 S \, \mathrm{tr}_M(X) - S^2 \, \mathrm{tr}_M(1).
+\| X \|^2_\tau = \mathrm{tr}_M(X X^\dagger)
+              = \mathrm{tr}_M\big((X - S \cdot 1)(X - S \cdot 1)^\dagger\big)
+                + S \, \mathrm{tr}_M(X + X^\dagger) - S^2 \, \mathrm{tr}_M(1).
 $$
 
-(The scalar $S \cdot 1$ is central in $H$, so the square expands as
-$(X - S \cdot 1)(X - S \cdot 1) = X \cdot X - 2 S \cdot X + S^2 \cdot 1$
-even though $H$ is non-commutative; applying the linearity of
-$\mathrm{tr}_M$ term by term and rearranging gives the identity above.)
+(The scalar $S \cdot 1$ is central and fixed by $\dagger$, so
+$(X - S \cdot 1)(X - S \cdot 1)^\dagger = X X^\dagger - S(X + X^\dagger) + S^2 \cdot 1$.
+Since $\mathrm{tr}_M(T_w) = \mathrm{tr}_M(T_{w^{-1}})$, the trace is
+$\dagger$-invariant, so $\mathrm{tr}_M(X^\dagger) = \mathrm{tr}_M(X) = S$;
+applying linearity term by term gives the identity above.)
 
 Substituting the Markov normalisation $\mathrm{tr}_M(1) = 1$ and the
 constraint $\mathrm{tr}_M(X) = S$:
@@ -23,20 +24,21 @@ $$
              = \| X - S \cdot 1 \|^2_\tau + S^2.
 $$
 
-The Jones–Markov trace $\mathrm{tr}_M$ is **positive-semi-definite on
-squares** (a standard property of the unique normalised trace on
-the symmetric semisimple Iwahori–Hecke algebra at generic $q$),
-so $\| X - S \cdot 1 \|^2_\tau \ge 0$.  Therefore
+The twisted form is **positive-semi-definite**: in the orthogonal
+seminormal form each $\sigma_i$ is real symmetric, so $\dagger$ is the
+blockwise transpose and
+$\| Y \|^2_\tau = \sum_\lambda y_\lambda \, \| Y_\lambda \|_F^2 \ge 0$,
+since every Markov weight $y_\lambda \ge 0$. Therefore
 
 $$
 \| X \|^2_\tau \;\ge\; S^2,
 $$
 
-with equality iff $\| X - S \cdot 1 \|^2_\tau = 0$.  By the
-[non-degeneracy](#prop:markov-trace-frobenius-selection) of
-$\mathrm{tr}_M$ (Wenzl 1988, Jones 1987), the only $Y \in H$ with
-$\mathrm{tr}_M(Y \cdot Y) = 0$ is $Y = 0$; hence $X - S \cdot 1 = 0$, i.e.
-$X = S \cdot 1$.
+with equality iff $\| X - S \cdot 1 \|^2_\tau = 0$, i.e. iff
+$X - S \cdot 1$ vanishes on every block with $y_\lambda > 0$. Under
+convention D the blocks with $y_\lambda = 0$ are exactly the shapes with
+three or more rows, so the minimiser is $S \cdot 1$ up to that radical.
+(The untwisted form $\mathrm{tr}_M(X \cdot X)$ cannot be used: it is
+negative on $\sigma_1\sigma_2 - \sigma_2\sigma_1 \in H_3$.)
 
-Therefore the minimum-Frobenius-norm primal-feasible element is
-$T_\beta = S \cdot 1$, with $\| T_\beta \|^2_\tau = S^2$. $\quad\blacksquare$
+Therefore $T_\beta = S \cdot 1$ is a minimum-Frobenius-norm primal-feasible element, with $\| T_\beta \|^2_\tau = S^2$. $\quad\blacksquare$

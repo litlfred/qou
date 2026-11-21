@@ -66,6 +66,8 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))
@@ -74,7 +76,7 @@ for _p in (os.path.join(_ROOT, "computations"),
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-B_AME_MEV = {"d": "2.22452", "t": "8.48180", "3he": "7.71804", "4he": "28.29567"}
+B_AME_MEV = {"d": "2.22452", "t": _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30), "3he": _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30), "4he": _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)}
 M_E_MEV = "0.51099895000"
 A_OF = {"d": 2, "t": 3, "3he": 3, "4he": 4}
 

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
   "title": "The fundamental solution of the Laplacian on the 3-torus",
   "pageStart": 25,
   "pageEnd": 26,
   "text": "../sections/sec-007-the-fundamental-solution-of-the-laplacian-on-the.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/manifest.jsonld",
   "provenance": "ingested"
 }

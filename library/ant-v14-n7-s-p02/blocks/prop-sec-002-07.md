@@ -1,0 +1,1 @@
+B.1 considering the coefﬁcients of these noncommutative formal power series series, one has equations relating the p-adic cyclotomic multiple zeta values ζp,α(w) and ζp,α′(w′), for any α, α′ ∈Z ∪{±∞} \ {0}, as follows:

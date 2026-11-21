@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/210811825v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Spectral theory",
+  "pageStart": 35,
+  "pageEnd": 43,
+  "contains": [
+    "library/210811825v1/blocks/prose-sec-002",
+    "library/210811825v1/blocks/ex-sec-002-01",
+    "library/210811825v1/blocks/prop-sec-002-02",
+    "library/210811825v1/blocks/ex-sec-002-03",
+    "library/210811825v1/blocks/ex-sec-002-04",
+    "library/210811825v1/blocks/thm-sec-002-05",
+    "library/210811825v1/blocks/thm-sec-002-06",
+    "library/210811825v1/blocks/ex-sec-002-07",
+    "library/210811825v1/blocks/ex-sec-002-08",
+    "library/210811825v1/blocks/rem-sec-002-09",
+    "library/210811825v1/blocks/prop-sec-002-10",
+    "library/210811825v1/blocks/thm-sec-002-11",
+    "library/210811825v1/blocks/ex-sec-002-12",
+    "library/210811825v1/blocks/thm-sec-002-13",
+    "library/210811825v1/blocks/thm-sec-002-14"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "provenance": "ingested"
+}

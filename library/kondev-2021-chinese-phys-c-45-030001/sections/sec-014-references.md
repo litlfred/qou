@@ -1,6 +1,6 @@
 ---
 doc_id: kondev-2021-chinese-phys-c-45-030001
-doc_title: "The NUBASE2020 evaluation of nuclear physics properties *"
+doc_title: "The NUBASE2020 evaluation of nuclear physics properties"
 section_id: sec-014-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 15-15
 source_pdf: Kondev_2021_Chinese_Phys._C_45_030001.pdf
 source_sha256: 29b14ce8a7c0ecac
 toc_source: inferred
+doc_brief: "The NUBASE2020 evaluation of nuclear physics properties — 119 sections: Front matter; Introduction; Isomers"
 ---
 experimental results, especially for cases that are not included
 in ENSDF or in other topical evaluations. Such a traceability
@@ -26,4 +27,3 @@ sections of importance to nuclear astrophysics applications,
 as well as additional decay properties of relevance to en-
 ergy and non-energy applications, in order to better serve the
 broader nuclear physics community.
-5

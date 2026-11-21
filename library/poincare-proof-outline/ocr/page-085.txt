@@ -1,0 +1,66 @@
+have ?r € unit-disc ?y € unit-disc ?z € unit-disc
+using assms
+by auto
+
+have distinct: distinct [?x, ?y, ?z, inversion ?y]
+using (y # @ (z # «) False <?x € unit-discy «?y € unit-discy «?z € unit-disc»
+using inversion-noteg-unit-disc[of ?y ?y]
+using inversion-noteg-unit-disc[of ?y ?z]
+using inversion-noteg-unit-disclof ?y ?z]
+using of-complez-injlof x y| of-complez-injlof y z| of-complez-inj[of x z]
+by auto
+
+have cor y * corz # 1
+using assms
+by (smt minus-mult-minus mult-less-cancel-left2 mult-less-cancel-right2 of-real-1 of-real-eq-iff of-real-mult)
+
+let ?cr = cross-ratio ?x ?y ?z (inversion ?y)
+have Re (to-complex ?cr) = (x — y) * (zxy — 1)/ ((xxy — 1)*(z — y))
+proof —
+have Ayxz.[yAa;z242;2Ay; cory* corr A#l;¢40;y 40,24 0] =>
+(yey ty*(y*(e*2)) —(ysaty*(y*(y*2))) /
+(yey ty* (ys (e*2)) — (yee ty «(yx (y*2)))) =
+(y + y * (uz) — (@ + y* (y* 2))) / (yt y® (w* 2) — (2 + y* (y * 2)))
+by (metis (no-types, opaque-lifting) ab-group-add-class.ab-diff-conv-add-uminus distrib-left mult-divide-mult-cancel-left-if
+mult-minus-right)
+thus ?thesis
+using (y 4 @ (z # a> False 4 (tx =OVy=0Vz=0)>
+using ‘cor y * corz # 1>
+unfolding inversion-def
+by (transfer, transfer, auto simp add: vec-cnj-def power2-eq-square field-simps split: if-split-asm)
+qed
+
+moreover
+have (xxy — 1) < 0
+using assms
+by (smt minus-mult-minus mult-less-cancel-right2 zero-less-mult-iff )
+moreover
+have (zxy — 1) < 0
+using assms
+by (smt minus-mult-minus mult-less-cancel-right2 zero-less-mult-iff )
+moreover
+have (x — y) / (z — y) < 0 ++ ?rhs
+using (y #4 a (z # «) False (4 («@ =OVy=O0Vz=0)>
+by (smt divide-less-cancel divide-nonneg-nonpos divide-nonneg-pos divide-nonpos-nonneg divide-nonpos-nonpos)
+ultimately
+have «: Re (to-complex ?cr) < 0 +> ?rhs
+by (smt algebra-split-simps(24) minus-divide-left zero-less-divide-iff zero-less-mult-iff )
+show ?thesis
+proof
+assume ?/hs
+have is-real (to-compler ?cr) Re (to-complex ?cr) < 0
+using <?lhs) distinct
+unfolding poincare-between-def Let-def
+by auto
+thus ?rhs
+using *
+by simp
+next
+assume ?rhs
+hence Re (to-complex ?cr) < 0
+using *
+by simp
+moreover
+
+have {of-complex (cor x), of-complex (cor y), of-complex (cor z), inversion (of-complex (cor y))} C circline-set
+x-axis

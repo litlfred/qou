@@ -50,6 +50,6 @@ theorem selfDual_iff_fixed (lam : D.Partition) :
 
 end ShellSchurWeylSelfDuality
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality-proof.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality-proof.ts
 
 end QOU.BraidKnot

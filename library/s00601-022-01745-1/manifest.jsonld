@@ -5,17 +5,18 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00601-022-01745-1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00601-022-01745-1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Celebrating 30 Years of Steven Weinberg’s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
   "contains": [
     "library/s00601-022-01745-1/sections/sec-front-matter",
-    "library/s00601-022-01745-1/sections/sec-000"
+    "library/s00601-022-01745-1/sections/sec-000",
+    "library/s00601-022-01745-1/sections/sec-001"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "s00601-022-01745-1",
     "title_source": "pdf-info",

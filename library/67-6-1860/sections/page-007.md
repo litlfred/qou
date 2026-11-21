@@ -1,13 +1,15 @@
 ---
 doc_id: 67-6-1860
-doc_title: "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982"
+doc_title: "Quaternionic Weinberg-Salam Theory"
 section_id: page-007
 section_title: "Page 7"
-section_number: null
 pages: 7-7
+pdf_page: 7
 source_pdf: 67-6-1860.pdf
 source_sha256: e2e5d45edd369762
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Quaternionic Weinberg-Salam Theory — 17 sections: Page 1; Page 2; Page 3"
 ---
 1866 K. Morita
 
@@ -55,4 +57,4 @@ However, it can be shown that @.=a@e=a@ up to a constant, since (21) with a> a@z
 Bx’ must be compatible with the definition (7). Hence, Au°=B,° as before. (The non gauge field should
 not appear in the covariant derivative.)
 
-9z0z Ainr 90 uo ysanB Aq 79Z2881/0981/9/29/A101112/d}d/Wios'dno-o1wapese//:sdyjy Wo. pepeojuMoq
+9z0z Ainr 06 uo ysanB Aq 79Z2881/0981/9/29/A101112/d}d/Wios'dno-o1wapese//:sdyjy Wo. pepeojuMoq

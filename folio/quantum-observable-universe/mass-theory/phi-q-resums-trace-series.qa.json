@@ -586,7 +586,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/mass-theory/phi-q-resums-trace-series.ts:0: forward ref: uses thm:six-term-mass-formula-complete (manifest pos 684) which appears after this block (pos 403) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/phi-q-resums-trace-series.ts:0: forward ref: uses conj:six-term-mass-formula-complete (manifest pos 684) which appears after this block (pos 403) in the chapter"
       }
     ],
     "detangler-section-band": [

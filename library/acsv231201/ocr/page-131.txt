@@ -1,0 +1,45 @@
+4.3 Analytic versus smooth functions 113
+
+Show that ¢ is of class C® and that all derivatives of ¢ vanish at 0. Explain
+the relevance of this fact to the asymptotic formulae derived in the theorems in
+this chapter.
+
+Exercise 4.11. If k = 2 and ¢ = 0 then Theorem 4.1 gives
+
+T= by fa? + ana-3? + 0S),
+ro
+
+Compute the coefficient a2 in terms of bo, bi, bz, c2, c3, and c4.
+
+Exercise 4.12. The Bessel function is defined by
+
+Te
+In(r) = m f exp(ir sin 0 — im) dé,
+0
+
+where m is a fixed parameter (you may assume it is a positive integer). Use
+Theorem 4.10 to find the two leading terms of an asymptotic series for J,,(r)
+in decreasing powers of r.
+
+Exercise 4.13. The Airy function is defined by
+
+Ai(x) = ~ i ell) dp
+
+T Joo
+Find an asymptotic expression for Ai(x) as x — oo in R by (1) performing the
+change of variables t = ix'/?u, (2) finding the critical points and deforming
+the contour of integration to pass through one or more of them, and (3) com-
+puting the expansion on a compactly supported interval and arguing that this
+converges as the limits of integration go to infinity.
+
+Exercise 4.14. Continue the error estimation in Exercise 4.9.
+
+(a) In terms of ¢ and j, what is the least value of supy<,<, la'(x)| for a bump
+function a that is flat on the complement of [0, €] and goes from value zero
+to value one?
+
+(b) What does this imply about a lower bound on the implied constant Cy in
+the O(A”) error term?
+
+(c) Assuming this lower bound can be achieved, for fixed A what value of M
+optimizes the error bound Cya”?

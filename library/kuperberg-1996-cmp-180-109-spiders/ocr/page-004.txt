@@ -1,0 +1,38 @@
+112 G Kuperberg
+
+A rotation operation is the linear extension to a web space of rotation of basis
+
+webs:
+RCN KT
+eee
+MO af
+
+A join operation is a bilinear operation on a pair of web spaces. Given two basis
+webs, their join is given by connecting their disks by a band:
+
+A join operation extends bilinearly to arbitrary webs. Finally, a stitch operation is
+a linear transformation between web spaces. Given a basis web, its stitch at an
+adjacent pair of vertices is given by connecting the vertices by an arc:
+
+If the result produces a closed loop, then strictly speaking, it is not a matching of
+vertices on the boundary and therefore it is not a basis web. In this case, erase
+the closed loop and replace it by a factor of a, the element of IF chosen at the
+
+beginning:
+orn WON 7"
+‘ vs
+SVG _.
+‘ U
+. ‘
+
+The factor of a is a reminder that stitch is a linear operation whose value on a basis
+web might be a non-basis web. A stitch also extends linearly from a family of map
+B, — W,-2 to a map W,, — W,-2.
+
+The combinatorial A, spider, parameterized by a, is the list of web spaces,
+together with all rotation, join, and stitch operations.
+
+Theorem 2.2 (Rumer, Teller, Weyl). If a = —2, then the isomorphisms oy: W, —
+Inv(V®") can be uniquely chosen to send the operations of join to tensor product,
+stitch to contraction, and rotation to cyclic permutation of tensor factors composed
+with negation.

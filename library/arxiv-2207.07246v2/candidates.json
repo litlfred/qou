@@ -3,6 +3,7 @@
  "doc_id": "arxiv-2207.07246v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "91e70e5fe39e07a55eb3fbf1eebcbbc4e2e354224ed9eb6adf9272de24c970ec",
   "file": "2207.07246v2.pdf"
@@ -20,9 +21,110 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 4,
+  "by_kind": {
+   "proposition": 4
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 4
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3,
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Lattice QCD methods ([@davies2002lattice]) are working toward calculating the nucleon many-body problem from quark and gluons degrees of freedom, however the current simulations are not capable of a system beyond two nucleons ([@BEANE2008; @savage2015nuclear]).",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-007-111-evolution-of-the-nucleon-nucleon-interaction.md (p. 11-12)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-007-111-evolution-of-the-nucleon-nucleon-interaction.md",
+   "section_title": "Evolution of the Nucleon-Nucleon Interaction",
+   "pages": "11-12",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-007-111-evolution-of-the-nucleon-nucleon-interaction.md (p. 11-12)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-007-01",
+   "block_iri": "library/arxiv-2207.07246v2/blocks/prop-sec-007-01",
+   "claim_id": "arxiv-2207.07246v2#prop-sec-007-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "We also listed the experimental value of the binding energies ([@WiringaPieper02a; @Lee2020FiP; @wiki:NBE]) for comparison.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-040-412-calculations.md (p. 91-98)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-040-412-calculations.md",
+   "section_title": "Calculations",
+   "pages": "91-98",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-040-412-calculations.md (p. 91-98)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-040-01",
+   "block_iri": "library/arxiv-2207.07246v2/blocks/prop-sec-040-01",
+   "claim_id": "arxiv-2207.07246v2#prop-sec-040-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "We calculate our response functions in the center of mass frame first because it can give lower variance compare with lab frame.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-044-44-euclidean-response-functions.md (p. 110-116)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-044-44-euclidean-response-functions.md",
+   "section_title": "Euclidean Response Functions",
+   "pages": "110-116",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-044-44-euclidean-response-functions.md (p. 110-116)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-044-01",
+   "block_iri": "library/arxiv-2207.07246v2/blocks/prop-sec-044-01",
+   "claim_id": "arxiv-2207.07246v2#prop-sec-044-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "We calculate our response functions in the center of mass frame \ufb01rst because it will give lower variance compared with absolute coordinate (laboratory frame).",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-070-e2-euclidean-response-functions-in-different-coo.md (p. 163-165)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-070-e2-euclidean-response-functions-in-different-coo.md",
+   "section_title": "E.2 Euclidean Response Functions in Different Coordinates",
+   "pages": "163-165",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-070-e2-euclidean-response-functions-in-different-coo.md (p. 163-165)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-070-01",
+   "block_iri": "library/arxiv-2207.07246v2/blocks/prop-sec-070-01",
+   "claim_id": "arxiv-2207.07246v2#prop-sec-070-01"
+  }
+ ]
 }

@@ -1,1 +1,1 @@
-A homomorphism of LCA groups is a continuous group homomorphism
+A homomorphism of LCA groups is a continuous group homomorphism between locally compact abelian groups. An isomorphism of LCA groups is a group isomorphism ϕ: L →H that is also a homeomorphism. In other words, it is a bijective continuous map whose inverse is also continuous.

@@ -3,13 +3,18 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-16",
+      body: "The Lean sibling carried `axiom demazure_principal_specialization_eq_schur_axiom`, asserting that every `DemazureModel` instance has `D_{w0}(λ)` equal to one opaque value. That axiom was inconsistent: two instances with constant characters 1 and 2 both satisfy `schur_nonzero`, and the axiom then proves `1 = 2` (checked lean-direct: a `theorem : False` compiled against it). The identity is now the class field `schur_recovery`, so it constrains a given instance rather than all of them. The statement also called $V_\\lambda$ an $S_n$-module; Demazure characters belong to highest-weight $\\mathrm{GL}_n$-modules, now stated.",
+    },
+    {
       kind: "note",
       date: "2026-08-08",
       body:
         "**§7c base-ring note.** Two independent reasons the Lean sibling " +
         "stays on `ℝ`. (i) **Ordering**: every substantive declaration " +
         "carries `(q : ℝ) (hq : q > 1)` — the principal-specialisation " +
-        "`x_i ↦ q^{i-1}` and the `demazure_principal_specialization_eq_schur_axiom` " +
+        "`x_i ↦ q^{i-1}` and the `schur_recovery` field of `DemazureModel` " +
         "are stated in the `q > 1` regime, and `q > 1` has no " +
         "generic-`CommRing` form. (ii) **`opaque`**: `yLambda` and " +
         "`demazureCharacter` are `opaque`, and a polymorphic `opaque` is a " +

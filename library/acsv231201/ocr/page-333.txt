@@ -1,0 +1,47 @@
+10.3 Main results on coefficient asymptotics 315
+
+for an arrangement point as it is for the hyperplane arrangement defined by the
+tangent planes of the surfaces intersecting near the point. However, when Q
+factors locally but not globally near several different multiple points, it is not
+clear how multiple local partial fraction decompositions of the type produced
+in Theorem 10.33 can be used together to give the correct integral represen-
+tations for coefficients. Therefore, though we don’t have an application that
+makes essential use of the homological decomposition in the non-transverse
+case, we will go ahead and describe it.
+
+Without a transversality assumption, there is no longer a single generator
+per critical point in the Morse theoretic decomposition of H“(M). Instead of a
+single linking torus t, whose coefficient will be zero or non-zero depending
+on whether r is in the normal cone, there will be more than one homology gen-
+erator. Different regions of 7 may yield different non-zero homology elements
+local to o which combine with linking tori elsewhere to produce the Cauchy
+domain of integration. We sum this up as follows.
+
+Let A denote the hyperplane arrangement defined by the linear divisors
+€; and suppose that o is a critical point in the direction * on some flat E
+of codimension k in a generic direction #7. Let N(o) denote a sufficiently
+small ball around o in M and consider the rank-d homology group G(o) =
+Ha(N(o), N(@)<ne)-«), Where € > 0 is small enough that this pair is the at-
+tachment pair at o.
+
+Proposition 10.36. Let A(E) C A be the subarrangement of A consisting
+of all hyperplanes containing E and let A’ C A(E) be any collection of k
+hyperplanes of A(E) whose (necessarily transverse) common intersection is E.
+Lett denote the inclusion C4\ A(E) = C4\A' and let te, denote the linking
+torus at o in C4\ A’. There is a unique homology element B(a,*) € G(o) such
+that for every such collection A’ we have .B = te, if F € Na (a) and 1.8 = 0
+otherwise. These homology elements satisfy
+
+[Te,....8)] = » Blo, #) (10.16)
+
+oecritical(A)
+
+for any € > 0 sufficiently small. ia)
+
+Example 10.37 (Example 10.32, continued). If * has slope 3/2, as shown in
+Figure 10.13, then B(o,7) is the sum of imaginary fibers with signs shown
+in the figure. To see this, observe that if the flattest line, called in Exam-
+ple 10.32, is removed then the + and — fibers cancel in pairs, corresponding
+to v8 vanishing because 7 is not in the normal cone spanned by the other
+two normals (1, 1) and (2, 1). Conversely, if either of the other two lines is re-
+moved then 1,8 equals T,, corresponding to the fact that 7 is in the normal

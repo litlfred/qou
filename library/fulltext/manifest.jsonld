@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -22,10 +22,12 @@
     "library/fulltext/sections/sec-007",
     "library/fulltext/sections/sec-008",
     "library/fulltext/sections/sec-009",
-    "library/fulltext/sections/sec-010"
+    "library/fulltext/sections/sec-010",
+    "library/fulltext/sections/sec-011",
+    "library/fulltext/sections/sec-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "fulltext",
     "title_source": "corroborated",
@@ -36,8 +38,8 @@
     "pages": 63,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

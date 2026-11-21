@@ -1,82 +1,115 @@
-[[ spread 12, left page ]]
 850 V. G. DRINFEL'D
-Suppose we have already proved that Q(A, B) 三 1 moddegn (i.e., Q(A, B) =
-1+ terms of degree n and higher). If Q(A, B) = 1 +q(A, B)moddeg(n + 1) :
-where g is homogeneous of degree n , then the left-hand side of (5.10) is con-
-we find, denoting by α, β, and y the residue classes of A, B - q(A, B),
-and  - q(A, C)moddeg(n + 1), that e°e"e" = 1. Therefore (5.6) holds,
-with s - 1. Hence the right-hand side of (5.10) is congruent to q(A, B) +
-q(A, C) moddeg(n + 1). From the definition of Q it follows that q(A, C) =
-q(B, A). Thus, q(B, A) = (n - 1)- q(A, B). Therefore, q = O (for n = 2,
-portional to [A, B]) .
-It remains to prove (2.13). Denote the left-hand side of (2.13) by f , and the
-right by g . Suppose we have already proved that f = g moddeg n . To prove
-that f. = g moddeg(n + 1), it suffices to show that
-f(X12, X13 , txl3,...)l
-= g(X12, X13, .. mod deg(n + 1) 
-i.e., that
-(α, β)+ (,) =y(a, o)+ (u,v)+ y(α, ) moddeg(n + 1), (5.11)
-where
-12
-α = β= y=X13
-8 = 0(x13 +X23, x34)- . X340(x13 +x23 , x34)
- = 0(X12, x23)-1 x230(X12 , x23) ,
-u = 9(x12, X23)-(x12 + X13)0(X12, X23)
-13
-V = 0(X12 , X23)-1p(X12
-34
-(X12 + X13, X24 + x34)g(X12 , X23)
-Using (2.12), (5.3), and the congruence f = g moddeg n , we construct (see
-the proof of Proposition 5.1) a homomorphism h: K4(k) -→ exp(a^/I) , where
-I  [a E a I a = Omoddeg(n + 1)). Then in (5.7) putting Sj  lnh(xuj),
-where the Xi; are defined by (4.6), we obtain (5.11).
-PROPOSITION 5.3. M,(k) + .
-PRooF. Since M,(C) +  (see g2), the sequence (5.8) is exact for k = C.
-This implies (5.8) is exact for k = Q: Therefore M,(Q)   (see Proposition
-5.2) and, so much the more, M,(k) ÷ . Another version of the proof: since
-the composite of the homomorphism Gal(Q/Q) -→ GT(Q,) (see s4) and the
-homomorphism v: GT(Q,) -→ Q' is the homomorphism f: Gal(Q/Q) -→ Z)
-defined by the relation αI() = f(o), where
-that the image of v is infinite, the sequence (5.8) is exact for k = Q , etc.
-Thus, Theorem A" (see s1) is proved.
 
-[[ spread 12, right page ]]
+Suppose we have already proved that Q(A, B) = 1moddegn (ie., Q(A, B) =
+1+ terms of degree n and higher). If Q(A, B) = 1+ 4(A, B)moddeg(n +1),
+where g is homogeneous of degree 7, then the left-hand side of (5.10) is con-
+gruent to n-q(A, B) mod deg(n+1). Since e%e6 = e 4? Q(A, C)e~4”O(A, B) :
+we find, denoting by a, 8, and y the residue classes of A, B— (A, B),
+and C — 4(A, C)moddeg(n + 1), that e*e%e” = 1. Therefore (5.6) holds,
+with s = 1. Hence the right-hand side of (5.10) is congruent to (4, B) +
+q(A, C)moddeg(n + 1). From the definition of Q it follows that g(A, C) =
+q(B, A). Thus, g(B, A) = (n-1)-q(A, B). Therefore, g = 0 (for n =2,
+this follows from the fact that q(A, B) is a Lie polynomial and therefore pro-
+portional to [4, B]).
+
+It remains to prove (2.13). Denote the left-hand side of (2.13) by f, and the
+right by g. Suppose we have already proved that f = gmoddegn. To prove
+that f = gmod deg(n + 1), it suffices to show that
+
+-1 d
+AEP KE ERIK XE dy
+
+-1 d
+= (x, x80) 1 atk", tX?,...)|,_, moddeg(n +1),
+
+t=1
+
+ie., that
+
+wa, B)+ wy, 6) = yA, d)+ y(u,v)+y(a,4) moddeg(n+1), (5.11)
+where
+
+a= Xx, Ba=f- (xP 4x4. f, yo XP 4 x?
+b= 9(X 4 x7, xy! Xo XP 4 x? x*),
+
+A= o(X", 5 onan Gt 16 aa x),
+
+wa 9(X?, XB) 1X? 4 XBox? x),
+
+v =9(X", Xe tox? a x, x4 eH
+
+x (X74 4 xox? 4 xX, x a(x”, x),
+
+Using (2.12), (5.3), and the congruence f = gmoddegn, we construct (see
+the proof of Proposition 5.1) a homomorphism h: K,(k) > exp(ai /T), where
+I={ae ay | a = Omod deg(n + 1)}. Then in (5.7) putting yj = MA(x,,),
+where the x,, are defined by (4.6), we obtain (5.11). @
+
+PROPOSITION 5.3. M,(k) #2.
+
+Proor. Since M,(C) 4 © (see §2), the sequence (5.8) is exact for k = C.
+This implies (5.8) is exact for k =Q. Therefore M,(Q) 4 © (see Proposition
+5.2) and, so much the more, M|(k) #@. Another version of the proof: since
+the composite of the homomorphism Gal(Q/Q) — GT(Q,) (see §4) and the
+homomorphism v: GT(Q,) > Q is the homomorphism /: Gal(@/Q) - Zy
+defined by the relation o~'(C) = cf | where fain , o € Gal(Q/Q), it follows
+that the image of vy is infinite, the sequence (5.8) is exact for kK =Q,, etc. ©
+
+Thus, Theorem A” (see §1) is proved.
+
 QUASITRIANGULAR QUASI-HOPF ALGEBRAS 851
-PRoPOsITION 5.4. The set MI(k) = (Φ E M,(k) I Φ(-A, -B) - @(A, B)) is
-nonempty. It is acted on by the group GT+(k) = [(a, f) E GT(k) 1 f(X-1 , Y-1)
-= f(X, Y)), and the action on Mt(k) by the subgroup GT+(k) n GT,(k) is
+
+Proposition 5.4. The set Mi (k) = {g € M,(k) | o(-A, —B) = 9(A, B)} is
+nonempty. It is acted on by the group GT*(k) = {(4, f) € GT(k) | f(x, ¥4)
+= f(X, ¥)}, and the action on Mj (k) by the subgroup GT*(k) N GT, (k) is
 free and transitive.
-PRooF. Mt(k) is the set of c-invariant elements of Mi(k), where a E
-GT(k) is the involution corresponding to ^ - -l, f = 1. Since (5.8) has a
-g-invariant splitting, we have M,(k)  . The rest is obvious. 
-REMARK. Φkz(-A, -B) ≠ 甲kz(A, B) (see (2.15), (2.17), Or (2.18).
+
+Proor. M/'(k) is the set of o-invariant elements of M,(k), where a €
+GT(k) is the involution corresponding to 4 = —-1, f = 1. Since (5.8) has a
+g-invariant splitting, we have My (k) #@. The rest is obvious. @
+
+REMARK. 9,7(—A, —B) # Qxz(A, B) (see (2.15), (2.17), or (2.18)).
+
 The above proof of Proposition 5.3 is nonconstructive. Our next objective is
-to prove Proposition 5.8, which will show that constructing elements of M, (k)
+to prove Proposition 5.8, which will show that constructing elements of A4,(k)
+by successive approximations presents no problems. For this we introduce the
 following modification GRT(k) of the group GT(k). We denote by GRT,(k)
-the set of all g E Fr,(A, B) such that
-g(B, A) = g(A, B)-1, . (5.12)
-g(C, A)g(B, C)g(A, B) = 1 for A +B +C = 0, (5.13)
-A+g(A, B)-Bg(A, B)+g(A, C)-1Cg(A, C) = 0 (5.14)
-for A+ B+ C = 0.
-g(X12 , x23 + X24)g(X13 + x23 , X34)
-= g(x23 , x34)g(X12 + X13 , X24 + X34)g(x12 , x23) (5.15)
-where the Xij satisfy (5.1). GRT (k) is a group with the operation
-(g1 0 82)(A, B) = g1(82(4, B)A82(A, B)-1 , B) · 82(A, B). (5.16)
-On GRTi(k) there is an action of k*, given by g(A, B) = g(c-1 A, c- B), c E
-k*. The semidirect product of k* and GRT,(k) we denote by GRT(k). The
-Lie algebra grt(k) of the group GRT;(k) consists of the series y E fr(A, B)
+the set of all g € Fr,(A, B) such that
+
+g(B, A)=8(A, B)', (5.12)
+g(C, A)g(B, C)g(A, B)=1 ford+B+C=0, (5.13)
+
+A+ 9(A, B)'Bg(A, B)+8(A, C)'Cg(4, C) =0
+
+(5.14)
+forA+B+C=0,
+
+ex”, x3 4 xo x3 4 x8, x4
+= (x2, xy ex2 4 x3, x4 4 xox? x73), (5.15)
+
+where the X“/ satisfy (5.1). GRT,(k) is a group with the operation
+(8, ° &)(A, B) = 8;(8,(4, B)Ag,(A, B)', B)-8,(A, B). (5.16)
+
+On GRT, (k) there is an action of k”, given by (A, B) = g(c!A,c'B), ce
+k* . The semidirect product of k*” and GRT,(k) we denote by GRT(k). The
+Lie algebra gvt,(k) of the group GRT,(k) consists of the series y € fr,(A, B)
 such that
-V(B, A) - --(A, B), (5.17)
-V(C, A)+(B, C)+(A, B) =0 for A+ B+C =.0, (5.18)
-[B, (A, B)]+[C, (A, C)]=O for A+ B+C = 0, (5.19)
-V(X12, x23 + X24) + (x13 + X23, X34)
-= y(X23, x34) + V(X12 + X13 , x24 + X34) + y(X12, x23), (5.20)
-where the Xij satisfy (5.1). A commutator (, ) in grt,(k) is of the form
-(W1, V2) =[yt, 2] + D,() - Dy(V2), (5.21)
-where [y,, 2l is the commutator in frt;(A, B) and Dw is the derivation of
-frs(A, B) given by Du(A) = [, A], Dw(B) = O. The algebra gtt;(k) is
-graded, and the Lie algebra grt(k) of the group GRT(k) is the semidirect
-sum of the 1-dimensional algebra k and grt,(k), where k acts on grt,(k) as
-follows: 1 E k takes a homogeneous element y E grt,(k) of degree n into
--ny.
+
+y(B, A)=—y(A, B), (5.17)
+
+wiC, A)+y(B,C)+W(A, B)=0 forA+B+C=0, (5.18)
+[B, w(A, B]+IC, w(A, C)]=0 for A+B+C=0, (5.19)
+
+wx, x3 4 x) 4 wx 4 x, x4)
+= W(X, x) 4 w(x? 4x8 x 4) 4 W(X", X”), (5.20)
+
+where the X” satisfy (5.1). A commutator (, ) in gtt,(k) is of the form
+(Wy > Yo) =[Yy> lt Dy (Wy) — Dy (YW) (5.21)
+where [y,, Y] is the commutator in fr,(4, B) and D, is the derivation of
+jt,(A, B) given by D,(A) = [y, A], D,(B) = 0. The algebra gtt,(k) is
+graded, and the Lie algebra gtt(k) of the group GRT(k) is the semidirect
+sum of the 1-dimensional algebra k and gtt,(k), where k acts on gtt,(k) as
+
+follows: 1 € k takes a homogeneous element w € gtt,(k) of degree n into
+—ny.
 

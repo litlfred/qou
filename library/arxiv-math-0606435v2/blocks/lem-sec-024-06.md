@@ -1,0 +1,1 @@
+If D = D[n] = b(σk1 1 σk2 2 ...σkn 1 δ2) with n ≥1 odd, k1,kn ≥1 and ki ≥2 when i = 2,...,n −1, then mindega Λ(D) = −1. Writing k = (k1,...,kn) and ˜w(k) = (k1 −1)+ n ∑ l=2 (kl −2), we have maxdegz[Λ(D)]a−1 = ˜w(k).

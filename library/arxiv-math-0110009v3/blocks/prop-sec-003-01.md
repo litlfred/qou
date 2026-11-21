@@ -1,0 +1,1 @@
+Let α = n/2 −1. If f : Rn →R is a radial function, then bf(t) = 2π|t|−α Z ∞ f(r)Jα(2πr|t|)rn/2 dr, where “f(r)” denotes the common value of f on vectors of length r. For a proof, see Theorem 9.10.3 of [AAR]. Here Jα denotes the Bessel function of order α.

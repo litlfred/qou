@@ -7,10 +7,11 @@ section_number: 2
 pages: 7-8
 source_pdf: 1203.3404v1.pdf
 source_sha256: 2318b14fb2702665
-doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanu jan equation between the origin and the inﬁnity."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.644
+latex_prose_ratio: 0.978
 latex_coverage_ratio: 1.0
+doc_brief: "On local solutions of the Ramanujan equation and their connection formulae — We show connection formulae of local solutions of the Ramanujan equation between the origin and the inﬁnity."
 ---
 In this section, we review our notations. We assume that $q\in\mathbb{C}^*$ satisfies $0<|q|<1$. The $q$-shifted operator $\sigma_q$ is given by $\sigma_qf(x)=f(qx)$. For any fixed $\lambda\in\mathbb{C}^*\setminus q^{\mathbb{Z}}$, the set $[\lambda ;q]$-spiral is $[\lambda ;q]:=\lambda q^{\mathbb{Z}}=\{\lambda q^k;k\in\mathbb{Z}\}$. The (generalized) basic hypergeometric series ${}_r\varphi_s(a_1,\dots ,a_r;b_1,\dots ,b_s;q,x)$ is $$\begin{aligned}
 {}_r\varphi_s(a_1,\dots ,a_r&;b_1,\dots ,b_s;q,x)\\
@@ -24,7 +25,3 @@ In this section, we review our notations. We assume that $q\in\mathbb{C}^*$ sati
 3.  The inversion formula; $$\theta_q\left(\frac{1}{x}\right)=\frac{1}{x}\theta_q(x).$$
 
 We remark that the function $\theta (-\lambda x)/\theta (\lambda x)$, $\lambda\in\mathbb{C}^*$ satisfies a $q$-difference equation $$u(qx)=-u(x)$$ which is also satisfied by the function $u(x)=e^{\pi i\left(\frac{\log x}{\log q}\right)}$.
-
-# Two types of the $q$-analogue of the Airy function and the connection formula
-
-There are two different $q$-analogue of the Airy function. One is called the Ramanujan function which appears in [@Ramanujan]. Ismail [@Is] pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The other one is called the $q$-Airy function which is obtained by K.  Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [@KMNOY] . In this section, we see the properties of these functions. We explain the reason why they are called $q$-analogue of the Airy function and we show $q$-difference equations which they satisfy.

@@ -1,0 +1,1 @@
+Let g be a lie algebra over R, a commutative ring with unity, with lie bracket [ , ]g. Then: Ug = T g/J where J = (xy −yx −[x, y]g |x, y ∈g֒ →T g) is isomorphic as an R-module to Sg, the symmetric algebra on g.

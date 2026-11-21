@@ -1,0 +1,75 @@
+200 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+5.2. Runge-Kutta methods
+
+The Runge-Kutta (RK) class of methods are possibly the most frequently used algorithms for numerically solving ODEs.
+Among them, perhaps the most successful during more than half a century has been the 4th-order method, which, applied
+to Eq. (224), provides the following numerical approximation for the integration step t, > thy: = th +h:
+
+Y; =Xn
+
+h
+Y2 = Xn + hltn, Ys)
+h h
+Ys = 1+ 58( t+ 5.¥ (227)
+h
+Yq = Xp, + hf | t+ 7%3
+
+h h h
+Knut = Xa te (f1.¥) + 2t(t + A) + 2t(t + a) + (ty + nv.) .
+
+Notice that the function f can always be computed explicitly because each Y; depends only on the Yj, j < i, previously
+evaluated. To measure the computational cost of the method, it is usual to consider that the evaluation of the function f(t, x)
+is the most consuming part. In this sense, scheme (227) requires four evaluations, which is precisely the number of stages
+(or inner steps) in the algorithm.
+
+The general class of s-stage Runge-Kutta methods are characterized by the real numbers aj, bj (i,j = 1,...,5) and
+
+§
+Ci = Dijan aij, aS
+
+s
+Yi=X th) ayfltr +GhY), i=1....s
+j=l
+s
+Xnu1 = Xn tM) bi fla + cit, Yi), (228)
+i=1
+where Y;,i = 1,..., s are the intermediate stages. For simplicity, the associated coefficients are usually displayed with the
+
+so-called Butcher tableau [125,126] as follows:
+
+(229)
+
+If aj = 0,j = i, then the intermediate stages Y; can be evaluated recursively and the method is explicit. In that case, the
+zero aj coefficients (in the upper triangular part of the tableau) are omitted for clarity. With this notation, ‘the’ 4th-order
+Runge-Kutta method (227) can be expressed as
+
+(230)
+
+BNIB NIE O
+oONe
+
+1
+6
+
+IN| One
+
+1
+
+1 2
+
+6 6
+Otherwise, the scheme is implicit and requires one to numerically solve a system of sd nonlinear equations of the form
+
+y=X, +hG(h,y), (231)
+
+wherey = (Y;,..., Ys)", Xn = (Xn, .--,Xn)" € R™, and Gis a function which depends on the method. A standard procedure
+to get Xn+1 from (231) is applying simple iteration:
+
+yl =x,+hn6(h,y"), j=1,2,.... (232)
+
+When h is sufficiently small, the iteration starts with y'°! = X, and stops once ||y! — y¥-"|| is smaller than a prefixed
+tolerance. Of course, more sophisticated techniques can be used [126].
+
+After these general considerations, let us now turn our attention to the linear equation (223). When dealing with
+numerical methods applied to this equation, it is important to keep in mind that the relevant small parameter here is no
+longer the norm of the matrix A(t) as in the analytical treatment, but the time step h. For this reason, the concept of order of

@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0803.1227v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0803.1227v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0803.1227v1",
+  "title": "Linear programming bounds for unitary space time codes",
   "contains": [
+    "library/arxiv-0803.1227v1/sections/sec-front-matter",
     "library/arxiv-0803.1227v1/sections/sec-000",
     "library/arxiv-0803.1227v1/sections/sec-001",
     "library/arxiv-0803.1227v1/sections/sec-002",
@@ -19,7 +20,7 @@
     "library/arxiv-0803.1227v1/sections/sec-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -29,7 +30,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0803.1227v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0803.1227v1.pdf",
     "source_sha256": "cf72e0fcdc7f3ddf37201694d6a3eddefb985dd5f90723ff2d21767b78e8fc77",
     "pages": 11,
@@ -40,8 +43,8 @@
       "stamp_date": "8 Mar 2008"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

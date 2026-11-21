@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-000-organization
 section_title: "ORGANIZATION"
 section_number: null
@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 The integral formulas in this paper contain vectors lying in different tangent spaces;  
 in non-Euclidean settings these vectors must be moved to a common location to be 
@@ -31,7 +32,4 @@ In part C, we prove these formulas on  S3  in parallel transport format.
 In part D, we prove them in  H3  in parallel transport format. 
  
 In part E, we verify Maxwell's equations and then prove the linking formulas in   
-S3  and  H3  in all formats. 
- 
- 
-3
+S3  and  H3  in all formats.

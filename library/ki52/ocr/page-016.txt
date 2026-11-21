@@ -1,0 +1,53 @@
+Remark 3.3. We can extend Proposition 3.2 to the case where ~(z) depends on N in
+such a way that ¢(z) is of the form
+
+V2) = vole) +)y tee)gg tot Unga trnl)yaat> 23)
+
+where ~;(z)’s are holomorphic functions independent of N, and we assume that ~o(z)
+satisfies the assumption of the proposition and |r,(z)| is bounded by a constant which is
+independent of N. Then, eN?@) = ¢(z)e%¥@), where we put
+
+1
+
+o(z) = exp (vi(z) + Wl) fee dnl a + rm(2) 5m)
+
+= (2) + on(2)55 + onl) x9 teh bm-al2) 3a + Pm (2) Fm
+
+Here, m(z) is the error term such that |f,(z)| is bounded by a constant which is indepen-
+dent of N. As written in [39], in the same way as in the proof of Proposition 3.2, we can
+show the asymptotic expansion of [ bi(z)eNo@dz by expanding ¢;(z) at z = 0. Further,
+we can estimate [ Fm(z)eN¥o) dz similarly as in the proof of Proposition 3.2, noting that
+only values of #(z) in a sufficiently small neighborhood of 0 contribute to the resulting
+expansion. In this way, we can justify the statement of Proposition 3.2 in the case where
+w(z) depends on N as in the form (23).
+
+We generalize Proposition 3.1 to the case of n variables. Let A be a non-singular
+symmetric complex n xn matrix, and let z be a column vector (2,--- ,2n)" € C”. The
+domain
+
+{zeC" | Rez’Az < 0} (24)
+
+is homotopy equivalent to S"-!. Let D be an oriented n-ball embedded in C” such that
+OD is included in the domain (24), whose inclusion is homotopy equivalent. There exists
+a matrix P such that -A = P?P; we note that det P = +,/det(—A). We choose an
+n-ball as a neighborhood of the origin in R? C C”. The matrix P~! takes this n-ball
+to an n-ball satisfying the above assumption of D. We choose the sign of \/det(—A) by
+setting it to be det P if P takes the orientation of D to the standard orientation of R”,
+and —det P otherwise.
+
+Proposition 3.4. Let A, D be as above. Then, there exists ¢ > 0 such that
+
+r qr/2 ;
+| eN@ Atdg = +4 O(e),
+D Nr/2,/det(—A)
+
+where we put dz = dz,---dzn, and we choose the sign of \/det(—A) as above.
+
+Proof. By changing the coordinate of z linearly, we can reduce the proof to the case where
+A is a diagonal matrix. Further, since d(eN "A" dz) = 0, we can move the domain D in
+C” by Stokes’ theorem; we can also move OD in the domain (24) ignoring error terms of
+order e~** for some € > 0 as in the proof of Proposition 3.1. In this way, we can move D
+into R” Cc C", which means that we can reduce the proof to the product of copies of the
+formula of Proposition 3.1. O
+
+16

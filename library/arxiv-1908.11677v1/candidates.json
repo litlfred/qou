@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1908.11677v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "c53663eeb457daf97d31447655b450d448abc48ffba9bf432bee5e8cabc4f0f7",
+  "file": "1908.11677v1.pdf"
+ },
+ "provenance": {
+  "title": "Variational formulae and estimates of O\u2019Hara\u2019s knot energies",
+  "authors": "Shoya Kawakami",
+  "arxiv": {
+   "id": "1908.11677",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "30 Aug 2019"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

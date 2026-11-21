@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/download-3/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proof of the Main Theorem. First of all note the following fact which follows",
-  "pageStart": 20,
-  "pageEnd": 23,
-  "text": "../sections/sec-010-42-proof-of-the-main-theorem-first-of-all-note-t.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download-3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download-3",
+  "title": "In the same fashion we get the morphism 2τ ' C*(M, CC*_2(A:)) -^ CC^*( given by {ct/o...^}",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "../sections/sec-010-1-in-the-same-fashion-we-get-the-morphism-2τ-cm.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
   "provenance": "ingested"
 }

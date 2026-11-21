@@ -1,0 +1,1 @@
+A quantization of Poisson Hopf algebra A0 over C is a Hopf algebra A over C [[/*]] such that (a) A/hA = A0 as Hopf algebra over C, (b) A is a free C[[/z]]-wodw/£, (c) Vα, be A, (ab — ba)/hmod(h)= (αmod(/ι), ft mod (/z)}, where {,} is the Poisson bracket of AQ. The notion of quantization of co-Poisson Hopf algebra is similar.

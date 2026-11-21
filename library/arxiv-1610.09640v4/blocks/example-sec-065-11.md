@@ -1,1 +1,0 @@
-Let (X,A) be a ringed space. Usually there aren’t enough

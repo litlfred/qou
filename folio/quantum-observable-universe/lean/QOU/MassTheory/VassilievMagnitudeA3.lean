@@ -52,7 +52,7 @@ Kontsevich structure from a *larger* closure where an integer weight combines wi
 ingredients — that is untested here. Nothing is fit; nothing is wired.
 
 -- Ref: [barnatan1995] On the Vassiliev knot invariants, Topology 34 (1995) 423–472.
--- Ref: [manuscript] deltalambda GAP-A-4 audit 2026-08-01; milnor_weight_parity_convergence_probe.py.
+-- Ref: [leitner2026] deltalambda GAP-A-4 audit 2026-08-01; milnor_weight_parity_convergence_probe.py.
 -/
 import Mathlib.Tactic
 
@@ -89,7 +89,7 @@ theorem borrDeficit_pos (h : ℝ) (hh : h ≠ 0) : 0 < borrDeficit h := by
 /-- **KEY (exact, all `h`).** The leading Vassiliev weight `(3/4)h⁴` is bounded ABOVE by the
 full Borromean deficit `h⁴(3+h²)/(h²+4)`. Reason: `(3/4)(h²+4) = (3/4)h²+3 ≤ h²+3 = 3+h²`,
 i.e. the leading term is the smallest term of the positive convergent series. Consequently no
-finite-type truncation exceeds the full (Hecke) value. -/
+finite-type truncation exceeds the full series value. -/
 theorem leadingWeight_le_borrDeficit (h : ℝ) : leadingWeight h ≤ borrDeficit h := by
   unfold leadingWeight borrDeficit
   rw [le_div_iff₀ (by positivity : (0 : ℝ) < h ^ 2 + 4)]
@@ -107,17 +107,23 @@ noncomputable def mu3 : ℝ := 4708 / 10000
 noncomputable def rStar : ℝ := mu3 / c3bare
 
 theorem rStar_gt_three_halves : (3 / 2 : ℝ) < rStar := by
-  unfold rStar mu3 c3bare; norm_num
+  unfold rStar
+  unfold mu3
+  unfold c3bare
+  norm_num
 
 theorem rStar_lt_two : rStar < 2 := by
-  unfold rStar mu3 c3bare; norm_num
+  unfold rStar
+  unfold mu3
+  unfold c3bare
+  norm_num
 
 /-! ### 4. Verdict — the Vassiliev weight cannot supply the magnitude factor -/
 
 /-- **MAIN (scope-(b) structural exclusion).** For every `h ≠ 0` the Vassiliev weight-to-Hecke
 ratio `leadingWeight h / borrDeficit h ≤ 1 < 3/2 < r*`. A finite-type weight-system correction
 of the Borromean deficit cannot supply the `1.585×` A=3 magnitude factor: it is bounded above
-by the Hecke value (the full Markov-trace sum), whereas `r*` requires *exceeding* it. -/
+by the full series value (the complete trace sum), whereas `r*` requires *exceeding* it. -/
 theorem vassiliev_weight_cannot_supply_magnitude (h : ℝ) (hh : h ≠ 0) :
     leadingWeight h / borrDeficit h < rStar := by
   have hpos := borrDeficit_pos h hh
@@ -126,9 +132,9 @@ theorem vassiliev_weight_cannot_supply_magnitude (h : ℝ) (hh : h ≠ 0) :
   have := rStar_gt_three_halves
   linarith
 
-/-- The length-A Milnor reading (`A−1=2`): the genuine μ̄(123) is realized as an INTEGER-valued
-Vassiliev invariant (`BrunnianVassilievBridge.muBar_realized`, value `±1`), and the
-corpus-measured Milnor ratio is the integer `−2`. No integer weight equals `r* ∈ (3/2, 2)`. -/
+/-- The length-A link-invariance reading (`A−1=2`): the genuine μ̄(123) is realized as an INTEGER-valued
+finite-type invariant (`BrunnianVassilievBridge.muBar_realized`, value `±1`), and the
+corpus-measured link ratio is the integer `−2`. No integer weight equals `r* ∈ (3/2, 2)`. -/
 theorem no_integer_weight_eq_rStar (z : ℤ) : (z : ℝ) ≠ rStar := by
   intro hz
   have h1 : (3 / 2 : ℝ) < (z : ℝ) := hz ▸ rStar_gt_three_halves
@@ -152,5 +158,14 @@ theorem two_pow_ne_three_pow (a b : ℕ) (ha : 1 ≤ a) : 2 ^ a ≠ 3 ^ b := by
   have he : Even (2 ^ a) := Nat.even_pow.mpr ⟨by decide, by omega⟩
   rw [h, Nat.even_pow] at he
   exact (by decide : ¬ Even 3) he.1
+
+/-- Exact higher-degree tail identity: clearing the denominator `h^2 + 4` from the
+difference `borrDeficit h - leadingWeight h` yields `(1/4) * h^6`. -/
+theorem borrDeficit_sub_leadingWeight_mul (h : ℝ) :
+    (borrDeficit h - leadingWeight h) * (h ^ 2 + 4) = (1 / 4) * h ^ 6 := by
+  unfold borrDeficit leadingWeight
+  have hpos : h ^ 2 + 4 ≠ 0 := by positivity
+  field_simp
+  ring
 
 end QOU.MassTheory.VassilievMagnitudeA3

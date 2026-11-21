@@ -73,7 +73,7 @@
   "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
   "data": {
     "the_dropped_qualifier": {
-      "source": "library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:216-217",
+      "source": "library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md:216-217",
       "sentence_as_held": "asymptotic crossing numbers ac( Lk, L) for borromean links can be estimated below",
       "corpus_records_that_drop_it": [
         "qou-a9li",
@@ -202,5 +202,5 @@
     }
   },
   "q0Anchor": "independent",
-  "q0AnchorReason": "reads no q0 anywhere. Inputs are integer linking numbers of the canonical atom-word closure (permutation and crossing-sign arithmetic, exact integers) and a literal text search of library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md. No substrate pin is evaluated on any path, so no q0Value exists."
+  "q0AnchorReason": "reads no q0 anywhere. Inputs are integer linking numbers of the canonical atom-word closure (permutation and crossing-sign arithmetic, exact integers) and a literal text search of library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md. No substrate pin is evaluated on any path, so no q0Value exists."
 }

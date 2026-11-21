@@ -17,5 +17,4 @@ $\mathbb{P}^1(\mathbb{C}) \cong S^2$.  What collapses is the
 $\mathrm{U}(1)$-invariant observable algebra, which reduces to
 functions on $S^1$ modulo the two polar fixed points.  The physical
 interpretation of this $S^1$ as the single $\mathrm{U}(1)$ phase
-tube is recorded in
-[rem:u1-phase-tube](#rem:u1-phase-tube).
+tube is taken up in the chapter on nuclear interactions and binding.

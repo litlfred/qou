@@ -1,0 +1,42 @@
+22 Generating functions
+
+class C = A x 8 defined by letting C, be the disjoint union of Cartesian
+products A,x8,_s over all s € N@ that are coordinatewise less than or equal to
+r. This is the canonical definition of product in any category of graded objects.
+Students of probability theory will recognize the product class as a convolu-
+tion. Suppose that F and G are any power series with nonnegative coefficients
+whose sets of coefficients both sum to 1. Then F is the probability generating
+function for a probability distribution on N¢ that gives mass [z”]F(z) to the
+points r € N“, and the analogous result holds for G. The series coefficients
+in the product FG characterize the convolution of these distributions, which is
+the distribution of the sum of independent picks from the two given distribu-
+tions. Thus the study of sums of independent, identically distributed random
+variables taking values in N@ is subsumed by the study of powers of generating
+functions. The laws of large numbers in probability theory may be derived via
+generating function analyses, and the central limit theorem is usually proved
+this way. In Chapter 12, versions of these laws are proved for coefficients of
+generating functions beyond powers of probability generating functions.
+
+Example 2.3 (enumerating partial sums). Let A(z) enumerate a class A and
+let B(z) = 1/(1—z) enumerate the class 8 with |8,,| = 1 for all n. Then A(z)B(z)
+enumerates the class C where C,, is the disjoint union Li Aj of objects in A
+with size at most n, and the coefficients of C(z) = A(z)/(1 — z) form the partial
+sum sequence Cy, = Yo dj. 4
+
+Quasi-inverse corresponds to finite tuples
+
+Let B be a combinatorial class with By = 0. Then we can construct the se-
+quence class A = SEQ(8) containing all finite tuples of elements of 8, where
+Ay consists of all tuples (41,...,x,) € B* (of any length k) with 6(x,) +
++++ + d(x) = 1. For instance, in the univariate case A, contains all finite
+tuples of elements in 8 whose sizes sum to n. Since A is the disjoint union of
+the empty sequence, the class of singleton sequences, the class of sequences
+of length 2, and so forth, we have the generating function equation A(z) =
+1+ B(z) + B(z)? +--+» = 1/(1 — B(z)), where convergence in the ring of formal
+power series follows from the fact that B(0) = |Bo| = 0.
+
+Example 2.4 (binary strings by zeros and ones). Consider the class A of bi-
+nary strings in Example 2.1 enumerated by the number of zeros and the num-
+ber of ones they contain, rather than by total length. Any such sequence can be
+uniquely decomposed into a finite sequence of the blocks 0 and O1. If B is the
+combinatorial class containing these blocks, with weight function ¢(0) = (1,0)

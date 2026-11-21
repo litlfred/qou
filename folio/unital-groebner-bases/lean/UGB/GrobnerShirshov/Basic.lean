@@ -282,7 +282,7 @@ structure RewritingSystem (G : Type u) (k : Type v) [Ring k] where
     it targets: `g.coeff (a·lm(r)·b) = 0`. Two degenerate readings are excluded
     by it. Without `f.coeff (a·lm(r)·b) ≠ 0` and the equation on `c`, the
     choice `c = 0`, `g = f` would be a legal step, `→` would be reflexive, and
-    `CompositionLemma.reduction_well_founded` would be a *false* axiom. And
+    `reduction_well_founded` (§6, now a theorem) would be *false*. And
     the previous version — which asked only that `lm(r)` be an infix of some
     monomial of `f`, with no relation between `f` and `g` at all — admitted
     `g = 0` from any `f` whatsoever.
@@ -308,7 +308,7 @@ structure SingleStepReduction {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 
 /-- **A step eliminates the monomial it targets.**  This is what makes the
     repaired reduction relation terminating, and it is the property the
-    `reduction_well_founded` axiom of `CompositionLemma.lean` rests on. -/
+    `reduction_well_founded` theorem of §6 rests on (via `singleStep_dmLt`). -/
 theorem SingleStepReduction.exists_eliminated {G : Type u} {k : Type v}
     [Ring k] [DecidableEq G] {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
     {f g : AlgElement G k} (h : SingleStepReduction ord sys f g) :
@@ -781,26 +781,207 @@ counterexample satisfies it, so no confluence hypothesis could have rescued it.
 `normal_form_exists` is now a **theorem** with that hypothesis, and `reduce` is
 built from it, so nothing in the development rests on the false statement. -/
 
+/-! ### Termination: the Dershowitz–Manna order on live supports
+
+`reduction_well_founded` was an axiom until 2026-11-20 (bean `qou-2q7r`); it is
+now proved. The argument is Bergman's (1978, §2): a step `f → g` eliminates the
+monomial `w = a·lm(r)·b` it targets and changes coefficients only at monomials
+strictly below `w` (`ord` is compatible with concatenation and `lm(r)` dominates
+every monomial of `r`). So the finite set of monomials carrying a non-zero
+coefficient (`liveSupport`) strictly decreases in the Dershowitz–Manna order on
+finite sets, which is well-founded because `ord` is (`wellFounded_DMLt`).
+
+The Mathlib module `Mathlib.Data.Multiset.DershowitzManna` is not used: the set
+version needed here is proved directly, by well-founded induction on the
+maximum, so the file needs no further import. -/
+
+section Termination
+
+variable {G : Type u}
+
+/-- Dershowitz–Manna order on finite sets of monomials. -/
+def DMLt (ord : AdmissibleOrder G) (T S : Finset (Monomial G)) : Prop :=
+  T ≠ S ∧ ∀ x ∈ T, x ∉ S → ∃ y ∈ S, y ∉ T ∧ ord.lt x y
+
+theorem acc_empty (ord : AdmissibleOrder G) : Acc (DMLt ord) ∅ := by
+  constructor
+  intro T hT
+  exfalso
+  obtain ⟨hne, h⟩ := hT
+  obtain ⟨x, hx⟩ := Finset.nonempty_iff_ne_empty.mpr hne
+  obtain ⟨y, hy, -⟩ := h x hx (Finset.notMem_empty x)
+  exact Finset.notMem_empty y hy
+
+/-- Every finite set bounded above (non-strictly) by `m` is accessible. -/
+theorem acc_of_le (ord : AdmissibleOrder G) [DecidableEq G] :
+    ∀ m : Monomial G, ∀ S : Finset (Monomial G),
+      (∀ x ∈ S, ord.lt x m ∨ x = m) → Acc (DMLt ord) S := by
+  intro m
+  induction m using ord.wf.induction with
+  | _ m IH =>
+  -- (★) sets strictly below `m`
+  have hstar : ∀ S : Finset (Monomial G), (∀ x ∈ S, ord.lt x m) → Acc (DMLt ord) S := by
+    intro S hS
+    rcases S.eq_empty_or_nonempty with h | h
+    · rw [h]; exact acc_empty ord
+    · obtain ⟨m', hm', hmax⟩ := ord.exists_max S h
+      refine IH m' (hS m' hm') S ?_
+      intro x hx
+      rcases ord.trichotomy x m' with h1 | h1 | h1
+      · exact Or.inl h1
+      · exact Or.inr h1
+      · exact absurd h1 (hmax x hx)
+  -- sets containing `m` with the rest strictly below
+  have hins : ∀ S0 : Finset (Monomial G), (∀ x ∈ S0, ord.lt x m) →
+      Acc (DMLt ord) (insert m S0) := by
+    intro S0 hS0
+    have hacc := hstar S0 hS0
+    induction hacc with
+    | intro S0 _ IH0 =>
+    constructor
+    intro T hT
+    obtain ⟨hne, hdom⟩ := hT
+    have hTle : ∀ x ∈ T, ord.lt x m ∨ x = m := by
+      intro x hx
+      by_cases hxS : x ∈ insert m S0
+      · rcases Finset.mem_insert.mp hxS with h | h
+        · exact Or.inr h
+        · exact Or.inl (hS0 x h)
+      · obtain ⟨y, hy, -, hxy⟩ := hdom x hx hxS
+        rcases Finset.mem_insert.mp hy with h | h
+        · exact Or.inl (h ▸ hxy)
+        · exact Or.inl (ord.lt_trans hxy (hS0 y h))
+    by_cases hmT : m ∈ T
+    · have hT0 : ∀ x ∈ T.erase m, ord.lt x m := by
+        intro x hx
+        rcases hTle x (Finset.mem_of_mem_erase hx) with h | h
+        · exact h
+        · exact absurd h (Finset.ne_of_mem_erase hx)
+      have hTeq : T = insert m (T.erase m) := (Finset.insert_erase hmT).symm
+      rw [hTeq]
+      refine IH0 (T.erase m) ?_ hT0
+      have hmS0 : m ∉ S0 := fun h => ord.irrefl m (hS0 m h)
+      refine ⟨?_, ?_⟩
+      · intro heq
+        apply hne
+        rw [hTeq, heq]
+      · intro x hx hxS0
+        have hxm : x ≠ m := Finset.ne_of_mem_erase hx
+        have hxT : x ∈ T := Finset.mem_of_mem_erase hx
+        have hxS : x ∉ insert m S0 := by
+          rw [Finset.mem_insert]; push_neg; exact ⟨hxm, hxS0⟩
+        obtain ⟨y, hy, hyT, hxy⟩ := hdom x hxT hxS
+        have hym : y ≠ m := fun h => hyT (h ▸ hmT)
+        refine ⟨y, ?_, ?_, hxy⟩
+        · rcases Finset.mem_insert.mp hy with h | h
+          · exact absurd h hym
+          · exact h
+        · exact fun h => hyT (Finset.mem_of_mem_erase h)
+    · refine hstar T ?_
+      intro x hx
+      rcases hTle x hx with h | h
+      · exact h
+      · exact absurd (h ▸ hx) hmT
+  intro S hS
+  by_cases hm : m ∈ S
+  · have hS0 : ∀ x ∈ S.erase m, ord.lt x m := by
+      intro x hx
+      rcases hS x (Finset.mem_of_mem_erase hx) with h | h
+      · exact h
+      · exact absurd h (Finset.ne_of_mem_erase hx)
+    rw [← Finset.insert_erase hm]
+    exact hins _ hS0
+  · refine hstar S ?_
+    intro x hx
+    rcases hS x hx with h | h
+    · exact h
+    · exact absurd (h ▸ hx) hm
+
+theorem wellFounded_DMLt (ord : AdmissibleOrder G) [DecidableEq G] :
+    WellFounded (DMLt ord) := by
+  constructor
+  intro S
+  rcases S.eq_empty_or_nonempty with h | h
+  · rw [h]; exact acc_empty ord
+  · obtain ⟨m, hm, hmax⟩ := ord.exists_max S h
+    refine acc_of_le ord m S ?_
+    intro x hx
+    rcases ord.trichotomy x m with h1 | h1 | h1
+    · exact Or.inl h1
+    · exact Or.inr h1
+    · exact absurd h1 (hmax x hx)
+
+
+/-- The monomials carrying a non-zero coefficient. -/
+noncomputable def liveSupport {k : Type v} [Ring k] (f : AlgElement G k) : Finset (Monomial G) := by
+  classical exact f.support.filter (fun m => f.coeff m ≠ 0)
+
+theorem mem_liveSupport {k : Type v} [Ring k] (f : AlgElement G k) (m : Monomial G) :
+    m ∈ liveSupport f ↔ f.coeff m ≠ 0 := by
+  classical
+  unfold liveSupport
+  rw [Finset.mem_filter]
+  exact ⟨fun h => h.2, fun h => ⟨AlgElement.mem_support_of_coeff_ne_zero h, h⟩⟩
+
+theorem singleStep_dmLt {k : Type v} [Ring k] [DecidableEq G] {ord : AdmissibleOrder G}
+    {sys : RewritingSystem G k} {f g : AlgElement G k}
+    (h : SingleStepReduction ord sys f g) :
+    DMLt ord (liveSupport g) (liveSupport f) := by
+  obtain ⟨r, -, a, b, c, hne, hc, heq⟩ := h.exists_witness
+  set w := a ++ r.lm ord ++ b with hw
+  have hg : ∀ m, g.coeff m = f.coeff m - c * (AlgElement.contextMul a r.relation b).coeff m := by
+    intro m
+    rw [heq m, AlgElement.sub_coeff, AlgElement.smul_coeff]
+  have hgw : g.coeff w = 0 := by
+    rw [hg w, hw, AlgElement.contextMul_coeff_middle, ← hc]
+    exact sub_self _
+  -- every changed coefficient sits at `w` or strictly below it
+  have hbelow : ∀ m, g.coeff m ≠ f.coeff m → m = w ∨ ord.lt m w := by
+    intro m hm
+    have hcm : (AlgElement.contextMul a r.relation b).coeff m ≠ 0 := by
+      intro h0
+      apply hm
+      rw [hg m, h0, mul_zero, sub_zero]
+    obtain ⟨m', rfl, hm'⟩ := AlgElement.contextMul_shape hcm
+    by_cases hlm : m' = r.lm ord
+    · left; rw [hw, hlm]
+    · right
+      have hlt := lt_leadingMonomial_of_coeff_ne_zero ord r.relation r.nonzero hm' hlm
+      exact ord.right_compat _ _ b (ord.left_compat _ _ a hlt)
+  refine ⟨?_, ?_⟩
+  · intro heqS
+    have hwf : w ∈ liveSupport f := (mem_liveSupport f w).mpr hne
+    rw [← heqS, mem_liveSupport] at hwf
+    exact hwf hgw
+  · intro x hx hxS
+    rw [mem_liveSupport] at hx hxS
+    push_neg at hxS
+    refine ⟨w, (mem_liveSupport f w).mpr hne, fun h => (mem_liveSupport g w).mp h hgw, ?_⟩
+    rcases hbelow x (by rw [hxS]; exact hx) with h1 | h1
+    · exact absurd (h1 ▸ hgw) hx
+    · exact h1
+
+end Termination
+
 /-- **Termination**: every sequence of single-step reductions is finite.
 
-    Each `SingleStepReduction` strictly decreases the multiset of monomials in
-    the support under the Dershowitz–Manna ordering, which inherits
-    well-foundedness from `ord.wf`.
-
-    Axiomatised because the proof requires a `Multiset (Monomial G)`
-    representation of `AlgElement` support, a proof that a step strictly
-    decreases it, and the Dershowitz–Manna theorem — components that need
-    subtraction and support extraction not available at this level.
-
-    Lives here rather than in `CompositionLemma` because it is stated purely in
-    this file's vocabulary and `normal_form_exists` below needs it.
+    Each `SingleStepReduction` strictly decreases `liveSupport` in the
+    Dershowitz–Manna order `DMLt` (`singleStep_dmLt`), which is well-founded
+    (`wellFounded_DMLt`). No hypothesis on the rules is needed: termination
+    holds for every rewriting system and every coefficient ring. What fails
+    without unit leading coefficients is that a non-normal element can be
+    stuck, not that reduction runs forever.
 
     Reference: Bergman 1978, §2, proof of Theorem 1.1 (termination). -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 §2 Thm 1.1 (reduction is well-founded / terminating)
-axiom reduction_well_founded {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+theorem reduction_well_founded {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k) :
-    ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f
+    ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f := by
+  intro f
+  have hsub : Subrelation (fun g h => SingleStepReduction ord sys h g)
+      (InvImage (DMLt ord) liveSupport) := fun h => singleStep_dmLt h
+  exact Subrelation.accessible hsub
+    (InvImage.accessible liveSupport ((wellFounded_DMLt ord).apply _))
 
 /-- **Existence of normal forms** — the repaired statement, and a theorem.
 
@@ -883,7 +1064,9 @@ by every non-trivial context, so an argument of the form "the S-polynomial
 reduces to zero, hence the overlap is resolved" would be reading `0 = 0` off
 a term that was never there. The hypothesis is threaded through the results
 that need it — `local_confluence` and its consequences in
-`CompositionLemma.lean` — and discharged where the algebra is concrete. -/
+`CompositionLemma.lean` — and discharged where the algebra is concrete. (Since
+2026-11-20 those are theorems proved in `DiamondLemma.lean` without using it;
+the parameter is kept for callers.) -/
 
 /-- **No quasi-zeros**, in the chapter's wording, for an abstract ring. -/
 def NoQuasiZeros (A : Type*) [Ring A] : Prop :=

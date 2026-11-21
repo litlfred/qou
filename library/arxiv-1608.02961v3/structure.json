@@ -7,10 +7,11 @@
   "bytes": 1184956,
   "pages": 33,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,30 @@
    "stamp_date": "15 Oct 2016"
   },
   "doi": null,
-  "title": "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Tudor Dimofte",
-  "authors_raw": "Perimeter Institute for Theoretical Physics, 31 Caroline St. N, Waterloo, ON N2J 2Y5, Canada",
+  "title": "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Contents",
+  "authors_raw": "Chern-Simons Theory",
   "title_lines": [
-   "Perturbative and nonperturbative aspects of complex",
-   "Chern-Simons Theory",
-   "Tudor Dimofte"
+   "Perturbative and nonperturbative aspects of complex"
   ],
-  "abstract": "We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C). We discuss some of the challenges in de\ufb01ning the theory as a full- \ufb02edged TQFT, as well as some successes inspired by the 3d-3d correspondence. The 3d-3d correspondence relates partition functions (and other aspects) of complex Chern-Simons the- ory on a 3-manifold M to supersymmetric partition functions (and other observables) in an associated 3d theory T [M]. Many of these observables may be computed by supersymmetric localization. We present several prominent applications to 3-manifold topology and number theory in light of the 3d-3d correspondence. This is a contribution to the review volume \u201cLocalization techniques in quantum \ufb01eld theories\u201d (eds. V. Pestun and M. Zabzine) which contains 17 Chapters available at [1]",
+  "abstract": "We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C). We discuss some of the challenges in deﬁning the theory as a full- ﬂedged TQFT, as well as some successes inspired by the 3d-3d correspondence. The 3d-3d correspondence relates partition functions (and other aspects) of complex Chern-Simons the- ory on a 3-manifold M to supersymmetric partition functions (and other observables) in an associated 3d theory T[M]. Many of these observables may be computed by supersymmetric localization. We present several prominent applications to 3-manifold topology and number theory in light of the 3d-3d correspondence. This is a contribution to the review volume “Localization techniques in quantum ﬁeld theories” (eds. V. Pestun and M. Zabzine) which contains 17 Chapters available at [1]",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20161018003041Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20161018003041Z"
+  },
+  "title_raw": "Perturbative and nonperturbative aspects of complex",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Contents",
+   "outline": "1 Introduction",
+   "text": "Perturbative and nonperturbative aspects of complex",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Tudor Dimofte"
  },
  "toc": [
   {
@@ -42,193 +52,652 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Warmup: quantization of H(T2)",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Equivariant quantization",
    "page": 8,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Holomorphic polarizations and CFT",
    "page": 9,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Complex Chern-Simons theory as a TQFT?",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Symmetries, regularizations, and the 3d-3d correspondence",
    "page": 12,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Three connections to three-manifold topology",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Hyperbolic volumes, twisted torsion, and large N",
    "page": 13,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "State-integral models and angle structures",
    "page": 15,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Embedded surfaces and M2 branes in the 3d index (k=0)",
    "page": 20,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "The Quantum Modularity Conjecture",
    "page": 22,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "4.1",
+   "title": "Ideal (i.e. truncated) tetrahedra, glued together along their large hexagonal faces to form an ideal triangulation of a knot complement M. The small triangular faces at truncated vertices become part of the boundary of M",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "4.2",
+   "title": "Left: dihedral angles assigned to edges of an oriented ideal tetrahedron, obeying",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "4.3",
+   "title": "Three incompressible surfaces inside an ideal tetrahedron, corresponding to three unconstrained operators in the theory T[∆]",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "5.1",
+   "title": "The graph of JK(α)/JK(1/α) when K is the ﬁgure-eight knot, from [36]. Another observation of [36] is that, for hyperbolic several knots, the ratio JK(α)/JK(γ(α))",
+   "page": 24,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1883,
+   "n_words": 356,
+   "label_start": null,
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 8,
-   "n_chars": 18055,
-   "n_words": 3099
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 8151,
+   "n_words": 1246,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
-   "id": "sec-001-21-equivariant-quantization",
+   "id": "sec-001-2-warmup-quantization-of-ht2",
+   "number": "2",
+   "title": "Warmup: quantization of H(T2)",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 9288,
+   "n_words": 1780,
+   "label_start": "4",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-002-21-equivariant-quantization",
    "number": "2.1",
    "title": "Equivariant quantization",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2572,
-   "n_words": 452
+   "n_chars": 2613,
+   "n_words": 470,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-002-22-holomorphic-polarizations-and-cft",
+   "id": "sec-003-22-holomorphic-polarizations-and-cft",
    "number": "2.2",
    "title": "Holomorphic polarizations and CFT",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 2301,
-   "n_words": 371
+   "n_chars": 2342,
+   "n_words": 382,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-003-3-complex-chern-simons-theory-as-a-tqft",
+   "id": "sec-004-3-complex-chern-simons-theory-as-a-tqft",
    "number": "3",
    "title": "Complex Chern-Simons theory as a TQFT?",
    "level": 1,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 5364,
-   "n_words": 873
+   "n_chars": 5409,
+   "n_words": 885,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-004-31-symmetries-regularizations-and-the-3d-3d-corr",
+   "id": "sec-005-31-symmetries-regularizations-and-the-3d-3d-corr",
    "number": "3.1",
    "title": "Symmetries, regularizations, and the 3d-3d correspondence",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 5022,
-   "n_words": 786
+   "n_chars": 5096,
+   "n_words": 808,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-005-4-three-connections-to-three-manifold-topology",
+   "id": "sec-006-4-three-connections-to-three-manifold-topology",
    "number": "4",
    "title": "Three connections to three-manifold topology",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 643,
-   "n_words": 105
+   "n_chars": 688,
+   "n_words": 110,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-006-41-hyperbolic-volumes-twisted-torsion-and-large",
+   "id": "sec-007-41-hyperbolic-volumes-twisted-torsion-and-large",
    "number": "4.1",
    "title": "Hyperbolic volumes, twisted torsion, and large N",
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 5258,
-   "n_words": 878
+   "n_chars": 5327,
+   "n_words": 905,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-007-42-state-integral-models-and-angle-structures",
+   "id": "sec-008-42-state-integral-models-and-angle-structures",
    "number": "4.2",
    "title": "State-integral models and angle structures",
    "level": 2,
    "page_start": 15,
    "page_end": 20,
-   "n_chars": 12592,
-   "n_words": 2130
+   "n_chars": 12692,
+   "n_words": 2192,
+   "label_start": "15",
+   "label_end": "20"
   },
   {
-   "id": "sec-008-43-embedded-surfaces-and-m2-branes-in-the-3d-ind",
+   "id": "sec-009-43-embedded-surfaces-and-m2-branes-in-the-3d-ind",
    "number": "4.3",
    "title": "Embedded surfaces and M2 branes in the 3d index (k=0)",
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 6918,
-   "n_words": 1205
+   "n_chars": 7000,
+   "n_words": 1243,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-009-5-the-quantum-modularity-conjecture",
+   "id": "sec-010-5-the-quantum-modularity-conjecture",
    "number": "5",
    "title": "The Quantum Modularity Conjecture",
    "level": 1,
    "page_start": 22,
    "page_end": 33,
-   "n_chars": 24424,
-   "n_words": 3221
+   "n_chars": 24168,
+   "n_words": 3231,
+   "label_start": "22",
+   "label_end": "33"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 10,
-  "chars_total": 83149,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 12,
+  "chars_total": 84657,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "DI.tex",
    "tex_sections": 12,
-   "overlaid": 9,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -236,83 +705,96 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.662,
+     "prose_ratio": 0.893,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-warmup-quantization-of-ht2",
+     "title": "Warmup: quantization of H(T2)",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-21-equivariant-quantization",
+     "title": "Equivariant quantization",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-22-holomorphic-polarizations-and-cft",
+     "title": "Holomorphic polarizations and CFT",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-3-complex-chern-simons-theory-as-a-tqft",
+     "title": "Complex Chern-Simons theory as a TQFT?",
+     "prose_ratio": 0.961,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-21-equivariant-quantization",
-     "title": "Equivariant quantization",
-     "prose_ratio": 0.944,
-     "coverage_ratio": 0.964,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-002-22-holomorphic-polarizations-and-cft",
-     "title": "Holomorphic polarizations and CFT",
-     "prose_ratio": 0.934,
-     "coverage_ratio": 0.984,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-003-3-complex-chern-simons-theory-as-a-tqft",
-     "title": "Complex Chern-Simons theory as a TQFT?",
-     "prose_ratio": 0.961,
+     "id": "sec-005-31-symmetries-regularizations-and-the-3d-3d-corr",
+     "title": "Symmetries, regularizations, and the 3d-3d correspondence",
+     "prose_ratio": 0.919,
      "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-31-symmetries-regularizations-and-the-3d-3d-corr",
-     "title": "Symmetries, regularizations, and the 3d-3d correspondence",
-     "prose_ratio": 0.919,
-     "coverage_ratio": 0.972,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-005-4-three-connections-to-three-manifold-topology",
+     "id": "sec-006-4-three-connections-to-three-manifold-topology",
      "title": "Three connections to three-manifold topology",
      "prose_ratio": 0.982,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-41-hyperbolic-volumes-twisted-torsion-and-large",
+     "id": "sec-007-41-hyperbolic-volumes-twisted-torsion-and-large",
      "title": "Hyperbolic volumes, twisted torsion, and large N",
      "prose_ratio": 0.898,
-     "coverage_ratio": 0.933,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-42-state-integral-models-and-angle-structures",
+     "id": "sec-008-42-state-integral-models-and-angle-structures",
      "title": "State-integral models and angle structures",
      "prose_ratio": 0.93,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-43-embedded-surfaces-and-m2-branes-in-the-3d-ind",
+     "id": "sec-009-43-embedded-surfaces-and-m2-branes-in-the-3d-ind",
      "title": "Embedded surfaces and M2 branes in the 3d index (k=0)",
      "prose_ratio": 0.954,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-5-the-quantum-modularity-conjecture",
+     "id": "sec-010-5-the-quantum-modularity-conjecture",
      "title": "The Quantum Modularity Conjecture",
      "prose_ratio": 0.966,
-     "coverage_ratio": 0.472,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.48,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

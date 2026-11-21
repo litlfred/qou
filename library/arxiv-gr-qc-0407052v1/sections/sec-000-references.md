@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-gr-qc-0407052v1
-doc_title: "arXiv:gr-qc/0407052v1 14 Jul 2004"
+doc_title: "Black hole entropy in loop quantum gravity"
 section_id: sec-000-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: 0407052v1.pdf
 source_sha256: 4624ea2fb4d318ad
 toc_source: inferred
+doc_brief: "Black hole entropy in loop quantum gravity — We calculate the black hole entropy in Loop Quantum Gravity as a function of the horizon area and provide the exact formula for the leading and"
 ---
 [1] G. t’Hooft, Nucl. Phys. B335 (1990) 138.
 [2] L. Susskind, Some Speculations about Black Hole Entropy in String

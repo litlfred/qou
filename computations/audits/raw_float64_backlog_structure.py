@@ -331,7 +331,13 @@ def main() -> int:
                f"predicate (under 5 %) so the witness summary reports a pass "
                f"for a measured negative rather than FAILURES.",
     )
-    b.save()
+    b.save(extra={
+        "q0Anchor": "independent",
+        "q0AnchorReason": "structural audit of the committed witness corpus and "
+                          "producer sources (float-leaf counts, AST import "
+                          "buckets); computes no q-dependent quantity and never "
+                          "reads q0",
+    })
 
     print(f"baselined witnesses {len(base)}   scanned {scanned}")
     print(f"non-integral float leaves {total}   distinct leaf names {len(leaf)}\n")

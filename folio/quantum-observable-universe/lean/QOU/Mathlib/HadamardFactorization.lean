@@ -87,9 +87,23 @@
           side condition of PI-2 holds only EVENTUALLY, which is exactly what
           `Summable.of_norm_bounded_eventually_nat` accepts.
     PI-4  order/genus lemmas (`p ≤ ρ`, exponent of convergence ≤ order).
+          Exponent of convergence ≤ order is PROVED (2026-11-20) in
+          `QOU.Mathlib.ExponentOfConvergence.summable_divisor_mul_rpow_neg`, via Jensen
+          (`QOU.Mathlib.JensenZeroCounting`); genus corollary `summable_divisor_floor_genus`.
+    PI-5  progress (2026-11-20). PROVED: the canonical product is entire and of order
+          ≤ σ when ∑‖aₙ‖^{-σ} < ∞ (`QOU.Mathlib.CanonicalProductGrowth`); a zero-free
+          entire function of order ≤ ρ is exp of a polynomial of degree ≤ ρ
+          (`QOU.Mathlib.HadamardZeroFree.exists_polynomial_of_zeroFree`). STILL OPEN:
+          enumerating the zeros (divisor → sequence with multiplicity), showing f/P is
+          entire and zero-free, and the lower bound on |P| off small discs that gives
+          f/P order ≤ ρ (minimum-modulus estimate).
+          UPDATE (same day): all three are PROVED (`HadamardQuotient`,
+          `HadamardMinimumModulus`), and `HasHadamardFactorization` is instantiated,
+          sorry-free, by `QOU.Mathlib.HadamardAssembly.hadamard_factorization_unconditional`.
+          The class stays declared here only because this module cannot import the proof.
     PI-5  Jensen ⇒ zero-counting ⇒ the factorization (deepest; needs Nevanlinna).
 
-  -- Ref: [manuscript] standard complex analysis: Ahlfors, *Complex Analysis*,
+  -- Ref: [leitner2026] standard complex analysis: Ahlfors, *Complex Analysis*,
      3rd ed., §5.3 (Weierstrass products) + §5.3.2 (Hadamard's theorem);
      Conway, *Functions of One Complex Variable I*, XI.§2–3.
 -/
@@ -181,7 +195,7 @@ def IsGenus (a : ℕ → ℂ) (p : ℕ) : Prop :=
     for every `p ≥ 1` and would not suffice. -/
 theorem norm_one_sub_weierstrassFactor_le (p : ℕ) {z : ℂ} (hz : ‖z‖ ≤ 1) :
     ‖1 - weierstrassFactor p z‖ ≤ ‖z‖ ^ (p + 1) := by
-  -- Ref: [manuscript] Ahlfors §5.3, Lemma; Conway XI.§2, Lemma 2.6.
+  -- Ref: [leitner2026] Ahlfors §5.3, Lemma; Conway XI.§2, Lemma 2.6.
   have hdef : weierstrassFactor p z
       = QOU.Mathlib.WeierstrassFactorEstimate.weierstrassFactor p z := rfl
   rw [hdef]
@@ -194,7 +208,7 @@ theorem norm_one_sub_weierstrassFactor_le (p : ℕ) {z : ℂ} (hz : ‖z‖ ≤ 
 theorem multipliable_canonicalProduct {a : ℕ → ℂ} (p : ℕ)
     (ha : ∀ n, a n ≠ 0) (hsum : Summable (fun n => 1 / ‖a n‖ ^ (p + 1)))
     (z : ℂ) : Multipliable (fun n => weierstrassFactor p (z / a n)) := by
-  -- Ref: [manuscript] Ahlfors §5.3, Theorem 5; Conway XI.§2, Theorem 2.4.
+  -- Ref: [leitner2026] Ahlfors §5.3, Theorem 5; Conway XI.§2, Theorem 2.4.
   -- PROVED 2026-08-08. The estimate does the work, but note where the `‖z‖ ≤ 1`
   -- hypothesis is discharged: it is NOT true for every `n`, only eventually.
   -- Summability forces `1/‖aₙ‖^{p+1} → 0`, hence `‖aₙ‖ → ∞`, hence `‖z/aₙ‖ ≤ 1`

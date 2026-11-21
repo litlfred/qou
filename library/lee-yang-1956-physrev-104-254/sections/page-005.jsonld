@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/lee-yang-1956-physrev-104-254/sections/page-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 5",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "contains": [
+    "library/lee-yang-1956-physrev-104-254/blocks/prose-page-005"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lee-yang-1956-physrev-104-254/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lee-yang-1956-physrev-104-254/manifest.jsonld",
+  "provenance": "ingested"
+}

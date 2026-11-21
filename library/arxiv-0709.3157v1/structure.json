@@ -6,10 +6,12 @@
   "sha256": "22a0d9a93c9dcb8d0677f1ff4e0cc10b6c519fbe5b3c667be77dc9879375db59",
   "bytes": 71982,
   "pages": 7,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,16 +21,30 @@
    "stamp_date": "20 Sep 2007"
   },
   "doi": null,
-  "title": "V . Mateu",
-  "authors_raw": "Departament de F\u00edsica Te\u00f2rica, IFIC, Universitat de Val\u00e8ncia-CSIC",
-  "abstract": "The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form \u00afqi \u03c3 \u03bc\u03bd q j. Whereas only four new terms show up at O(p4), we \ufb01nd around a hundred of them at O(p6). So it becomes essential to ensure that this set o operators i s indeed minimal and non\u2013 redundant (i.e., it is a basis). We discuss two phenomenological applications in the context of vector meson resonances and the radiative pion decay.",
+  "title": "Chiral Lagrangians with tensor sources",
+  "authors_raw": "V. Mateu",
+  "title_lines": [
+   "Chiral Lagrangians with tensor sources"
+  ],
+  "abstract": "The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents, that is, quark bilinears of the form ¯qi σ µν q j. Whereas only four new terms show up at O(p4), we ﬁnd around a hundred of them at O(p6). So it becomes essential to ensure that this set o operators is indeed minimal and non– redundant (i.e., it is a basis). We discuss two phenomenological applications in the context of vector meson resonances and the radiative pion decay.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210720151934-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20210720151934-04'00'"
+  },
+  "title_raw": "Chiral Lagrangians with tensor sources",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Chiral Lagrangians with tensor sources",
+   "outline": "Introduction",
+   "text": "Chiral Lagrangians with tensor sources",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "V . Mateu"
  },
  "toc": [
   {
@@ -36,53 +52,139 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "QCD in the presence of external sources",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Chiral building blocks",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The chiral Lagrangian",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Two comments on tensor sources",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Tensor sources in the Resonance chiral theory and the radiative pion decay",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 879,
+   "n_words": 132,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -90,8 +192,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2086,
-   "n_words": 356
+   "n_chars": 2066,
+   "n_words": 336,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-qcd-in-the-presence-of-external-sources",
@@ -100,8 +204,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2094,
-   "n_words": 467
+   "n_chars": 2027,
+   "n_words": 400,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-chiral-building-blocks",
@@ -110,8 +216,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1691,
-   "n_words": 391
+   "n_chars": 1624,
+   "n_words": 324,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-the-chiral-lagrangian",
@@ -120,8 +228,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 3323,
-   "n_words": 662
+   "n_chars": 3257,
+   "n_words": 596,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-two-comments-on-tensor-sources",
@@ -130,8 +240,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1086,
-   "n_words": 178
+   "n_chars": 1075,
+   "n_words": 167,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-tensor-sources-in-the-resonance-chiral-theory-an",
@@ -140,8 +252,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1750,
-   "n_words": 373
+   "n_chars": 1690,
+   "n_words": 322,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-conclusions",
@@ -150,16 +264,26 @@
    "level": 1,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2107,
-   "n_words": 350
+   "n_chars": 2098,
+   "n_words": 341,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 14137,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 14716,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -172,58 +296,63 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.89,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-qcd-in-the-presence-of-external-sources",
      "title": "QCD in the presence of external sources",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-chiral-building-blocks",
      "title": "Chiral building blocks",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-the-chiral-lagrangian",
      "title": "The chiral Lagrangian",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-two-comments-on-tensor-sources",
      "title": "Two comments on tensor sources",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-tensor-sources-in-the-resonance-chiral-theory-an",
      "title": "Tensor sources in the Resonance chiral theory and the radiative pion decay",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.628,
      "result": "overlaid",
      "converter": "pandoc"
     }

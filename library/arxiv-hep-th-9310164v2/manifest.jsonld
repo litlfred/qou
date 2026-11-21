@@ -5,28 +5,31 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9310164v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9310164v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-9310164v2",
+  "title": "SPHERICAL CATEGORIES",
   "contains": [
-    "library/arxiv-hep-th-9310164v2/sections/sec-000",
-    "library/arxiv-hep-th-9310164v2/sections/sec-001",
-    "library/arxiv-hep-th-9310164v2/sections/sec-002",
-    "library/arxiv-hep-th-9310164v2/sections/sec-003",
-    "library/arxiv-hep-th-9310164v2/sections/sec-004",
-    "library/arxiv-hep-th-9310164v2/sections/sec-005",
-    "library/arxiv-hep-th-9310164v2/sections/sec-006",
-    "library/arxiv-hep-th-9310164v2/sections/sec-007",
-    "library/arxiv-hep-th-9310164v2/sections/sec-008",
-    "library/arxiv-hep-th-9310164v2/sections/sec-009",
-    "library/arxiv-hep-th-9310164v2/sections/sec-010",
-    "library/arxiv-hep-th-9310164v2/sections/sec-011",
-    "library/arxiv-hep-th-9310164v2/sections/sec-012"
+    "library/arxiv-hep-th-9310164v2/sections/page-001",
+    "library/arxiv-hep-th-9310164v2/sections/page-002",
+    "library/arxiv-hep-th-9310164v2/sections/page-003",
+    "library/arxiv-hep-th-9310164v2/sections/page-004",
+    "library/arxiv-hep-th-9310164v2/sections/page-005",
+    "library/arxiv-hep-th-9310164v2/sections/page-006",
+    "library/arxiv-hep-th-9310164v2/sections/page-007",
+    "library/arxiv-hep-th-9310164v2/sections/page-008",
+    "library/arxiv-hep-th-9310164v2/sections/page-009",
+    "library/arxiv-hep-th-9310164v2/sections/page-010",
+    "library/arxiv-hep-th-9310164v2/sections/page-011",
+    "library/arxiv-hep-th-9310164v2/sections/page-012",
+    "library/arxiv-hep-th-9310164v2/sections/page-013",
+    "library/arxiv-hep-th-9310164v2/sections/page-014",
+    "library/arxiv-hep-th-9310164v2/sections/page-015",
+    "library/arxiv-hep-th-9310164v2/sections/page-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -36,7 +39,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-9310164v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9310164v2.pdf",
     "source_sha256": "e0972e04667ccc47e526b1289acfeb7cfda6f852c08ed2431f1dffdebbd689e8",
     "pages": 16,
@@ -47,8 +52,8 @@
       "stamp_date": "22 Jul 1998"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

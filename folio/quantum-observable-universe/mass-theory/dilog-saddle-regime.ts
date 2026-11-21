@@ -17,6 +17,9 @@ export default remark({
     "consolidation-home",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): Blocks that invoke the dilog saddle regime — the\ncontinuum $c_3$ geometry discussion, the\n[$\\Phi_q$/AJ machinery identification](#prop:phi-q-aj-machinery-identification),\nand the\n[$q_0$ Stokes-region identification](#conj:q-zero-stokes-region-identification)\n— reference this derivation rather than repeating it." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Clausen function $\\mathrm{Cl}_2$](#rem:clausen-function-mathlib-filler))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ([Clausen function Mathlib filler](#rem:clausen-function-mathlib-filler))" },
     {
       kind: "status",
       date: "2026-07-26",

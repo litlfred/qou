@@ -987,7 +987,7 @@
           "in_degree": 0,
           "cone_size": 7,
           "depth": 7,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 3,
           "edge_span_mean": 2,
           "worst_target": ""
@@ -1135,6 +1135,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b",
+          "lean": "555218f753a6",
+          "lean_statement": "7a521eea858f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:59.813Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Library ref `QOU/Archimedean/OptimalNF.lean:257`: ∃ support, prefix-closed ∧ (non-I₉-absorbable words lie in the standard basis), witnessed by the standard basis itself via `nf_support_prefix_closed` (:228 builds `standardBasis (Z+N−1)` directly); the nucleus's normal form never appears, so the valley hypothesis does no work (vacuous). The sibling `.lean:46` (different) is `∃ c, ∀ i, c i = markovVolume i q` with `opaque markovVolume`, witnessed by `markovVolume` itself. `.ts` says `validation: \"stub\"`. No own prf; the sketch is in `shell-closure-normal-form-proof.md:68-86`, which says \"We formally prove this in Lean (`OptimalNF.lean`)\" (prf:79): false, given the vacuity above; \"verify computationally for all A ≤ 8\" is a finite check, and \"the boundary N ≥ Z−1 matches the nuclear valley of stability\" (prf:86) is an empirical claim"
       }
     ],
     "proof-statement-integrity": [
@@ -1769,7 +1787,7 @@
         },
         "reviewed_at": "2026-08-22T04:34:38.538Z",
         "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
-        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A — internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1804,7 +1822,7 @@
         },
         "reviewed_at": "2026-08-22T04:34:38.578Z",
         "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
-        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A — internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1839,7 +1857,7 @@
         },
         "reviewed_at": "2026-08-22T04:34:38.618Z",
         "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
-        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A — internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1874,7 +1892,7 @@
         },
         "reviewed_at": "2026-08-22T04:34:38.656Z",
         "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
-        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A — internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1909,7 +1927,7 @@
         },
         "reviewed_at": "2026-08-22T04:34:38.695Z",
         "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
-        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A — internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1944,7 +1962,7 @@
         },
         "reviewed_at": "2026-08-22T04:34:38.733Z",
         "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
-        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A — internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1979,7 +1997,7 @@
         },
         "reviewed_at": "2026-08-22T04:34:38.774Z",
         "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
-        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A — internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -2014,7 +2032,7 @@
         },
         "reviewed_at": "2026-08-22T04:34:38.815Z",
         "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
-        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A — internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -2049,7 +2067,7 @@
         },
         "reviewed_at": "2026-08-22T04:34:38.855Z",
         "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
-        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A — internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -2085,7 +2103,7 @@
         "reviewed_at": "2026-08-22T04:34:38.894Z",
         "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
         "evidence": "Statement register throughout; the one long sentence is a theorem statement with its hypotheses in apposition and reads cleanly aloud.",
-        "notes": "pass. THREE FINDINGS, none fixed inline. (1) THE LEAN THE REF RESOLVES TO IS A TAUTOLOGY THAT SHADOWS A REAL PROOF. lean.ref is qou:QOU.OptimalNF.optimal_nf_is_standard_basis, and TWO declarations of that exact name exist in that exact namespace. The library one, lean/QOU/Archimedean/OptimalNF.lean:257, is substantive \u2014 it takes h_stable : valleyOfStability Z N and h_pos, and concludes an existential over prefix-closed supports whose non-I9-absorbable words lie in standardBasis (Z+N-1), discharged from nf_support_prefix_closed and optimal_from_prefix_closed. The sibling one, predicted-spectra/optimal-normal-form-valley.lean:46, is what AGENTS.md 0a resolution reaches FIRST, and it states 'exists c : Fin (massNumber Z N) -> R, forall i, c i = markovVolume i q' proved by 'exact <fun i => markovVolume i q, fun _ => rfl>'. That is 'there exists a function equal to this function' \u2014 true for any function whatsoever, with markovVolume declared 'opaque'. Both hypotheses, hq : q > 1 and hval : inValley Z N, are UNUSED, which is the operational test AGENTS.md's Strict Lean Discipline item 5 gives for a banned tautological conclusion. Nothing about Groebner--Shirshov reduction, the I8/I9 ideals, the valley of stability, or the term count is encoded. The .ts marking validation 'stub' is partial honesty, but 1a's honest dispositions are prove / state-with-sorry-plus-Ref / demote to conjecture \u2014 a rfl-provable existential is none of the three. Proposed: delete the sibling so the ref resolves to the library theorem (0a's 'no shadowing stubs' says exactly this when the real formalisation exists), or restate the sibling with sorry and a -- Ref:. (2) SYMBOL COLLISION IN THE THEOREM STATEMENT: 'For any nucleus $N(Z, N)$ with $N \\geq Z - 1$' uses N as both the nucleus and the neutron count, twice in one line. The chapter's own convention elsewhere is calligraphic \u2014 prop:nuclear-spin-parity writes $\\mathcal{N}(Z, N)$ \u2014 and this block uses $\\mathcal{N}_{opt}$ in its own display two lines later. Proposed: $\\mathcal{N}(Z,N)$. (3) 'valley of stability ($N \\geq Z - 1$)' is a very loose reading of the valley: it excludes only proton-rich nuclides and admits arbitrarily neutron-rich ones, so it is a half-plane rather than a valley. The Lean agrees with the .md (inValley Z N := N + 1 >= Z), so this is a definitional choice rather than a transcription error, but the name oversells it."
+        "notes": "pass. THREE FINDINGS, none fixed inline. (1) THE LEAN THE REF RESOLVES TO IS A TAUTOLOGY THAT SHADOWS A REAL PROOF. lean.ref is qou:QOU.OptimalNF.optimal_nf_is_standard_basis, and TWO declarations of that exact name exist in that exact namespace. The library one, lean/QOU/Archimedean/OptimalNF.lean:257, is substantive — it takes h_stable : valleyOfStability Z N and h_pos, and concludes an existential over prefix-closed supports whose non-I9-absorbable words lie in standardBasis (Z+N-1), discharged from nf_support_prefix_closed and optimal_from_prefix_closed. The sibling one, predicted-spectra/optimal-normal-form-valley.lean:46, is what AGENTS.md 0a resolution reaches FIRST, and it states 'exists c : Fin (massNumber Z N) -> R, forall i, c i = markovVolume i q' proved by 'exact <fun i => markovVolume i q, fun _ => rfl>'. That is 'there exists a function equal to this function' — true for any function whatsoever, with markovVolume declared 'opaque'. Both hypotheses, hq : q > 1 and hval : inValley Z N, are UNUSED, which is the operational test AGENTS.md's Strict Lean Discipline item 5 gives for a banned tautological conclusion. Nothing about Groebner--Shirshov reduction, the I8/I9 ideals, the valley of stability, or the term count is encoded. The .ts marking validation 'stub' is partial honesty, but 1a's honest dispositions are prove / state-with-sorry-plus-Ref / demote to conjecture — a rfl-provable existential is none of the three. Proposed: delete the sibling so the ref resolves to the library theorem (0a's 'no shadowing stubs' says exactly this when the real formalisation exists), or restate the sibling with sorry and a -- Ref:. (2) SYMBOL COLLISION IN THE THEOREM STATEMENT: 'For any nucleus $N(Z, N)$ with $N \\geq Z - 1$' uses N as both the nucleus and the neutron count, twice in one line. The chapter's own convention elsewhere is calligraphic — prop:nuclear-spin-parity writes $\\mathcal{N}(Z, N)$ — and this block uses $\\mathcal{N}_{opt}$ in its own display two lines later. Proposed: $\\mathcal{N}(Z,N)$. (3) 'valley of stability ($N \\geq Z - 1$)' is a very loose reading of the valley: it excludes only proton-rich nuclides and admits arbitrarily neutron-rich ones, so it is a half-plane rather than a valley. The Lean agrees with the .md (inValley Z N := N + 1 >= Z), so this is a definitional choice rather than a transcription error, but the name oversells it."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2109,6 +2127,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T04:34:38.894Z",
+  "updated_at": "2026-11-15T21:55:59.813Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

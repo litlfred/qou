@@ -1,4 +1,4 @@
-*Let $\mathcal{S}_N$ be a composite of $N$ baryon-number units of strange quark matter. Each unit contains one up, one down, and one strange quark in a Borromean triple $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})$ linked by the Hopf link $\mathcal{L}_H$. We have:*
+*Let $\mathcal{S}_N$ be a composite of $N$ baryon-number units of strange quark matter. Each unit contains one up, one down, and one strange quark in a Borromean triple $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})$ linked by the Hopf link $\mathcal{L}_H$. Explicitly:*
 
 *1. Electromagnetic neutrality.*
 *The Coulomb charge ([Coulomb charge](#def:coulomb-charge)) of each baryon-number unit vanishes:*
@@ -7,7 +7,7 @@ $$
   =  +\tfrac{2}{3} - \tfrac{1}{3} - \tfrac{1}{3}
   =  0.
 $$
-*The strangelet is electromagnetically neutral for all $q > 0$. The vanishing depends only on the crossing orientation partition within the Borromean structure, evaluated on the canonical $n = 3$ word.* It is an invariant of that canonical presentation, not a topological invariant of the closure: $Q$ is writhe-derived, and the writhe shifts by $\pm 1$ under stabilisation (`QOU/StandardModel/WritheMarkovInvariance.lean`, `writhe_stabilize`). Fixing the minimal level is what makes the statement well-posed, and the Borromean word is already at its braid index.
+*The strangelet is electromagnetically neutral for all $q > 0$. The vanishing depends only on the crossing orientation partition within the Borromean structure, evaluated on the canonical $n = 3$ word.* It is an invariant of that canonical presentation, not a topological invariant of the closure: $Q$ is writhe-derived, and the writhe shifts by $\pm 1$ under stabilisation. Fixing the minimal level is what makes the statement well-posed, and the Borromean word is already at its braid index.
 
 *2. Purely antisymmetric crossing energy.*
 *With $Q = 0$ the symmetric channel vanishes and the [crossing energy](#def:crossing-energy) reduces to:*
@@ -18,9 +18,7 @@ $$
 $$
 *The entire crossing energy lies in the antisymmetric channel ([decomposition](#prop:crossing-energy-decomposition)): the symmetric multiplicity is the writhe $n_+ - n_-$, which is what $Q = 0$ annihilates, while the antisymmetric multiplicity is the crossing count $n_+ + n_-$, which $Q = 0$ leaves untouched.*
 
-> **Correction (2026-08-29, bean `qou-toul`).** This item previously read *"Purely strong crossing energy … there is no Coulomb correction; the entire crossing energy lies in the symmetric (strong) channel"*, with the count $n_+ + n_-$ on the weight $(q + q^{-1})$. Both halves were inherited from the channel swap then present in [the Coulomb-charge definition](#def:coulomb-charge), and both invert the conclusion: at $n_+ = n_-$ it is the *symmetric* term that vanishes. The stated energy also exceeded the true one by $2 N n_- q^{-1}$, a factor of $9.62$ at $q_0$. The proposition cited here carried the correct multiplicities throughout; only the citing text was wrong.
->
-> **Open, and not resolved by this correction.** Under the corrected assignment the strangelet has *zero* symmetric content and *maximal* antisymmetric content, which is the opposite of the physical reading in items 1 and 3. Whether "electromagnetic neutrality" survives, and whether the enhanced-binding argument below still follows, requires re-deriving those items rather than relabelling them — the identification of the antisymmetric channel with electromagnetism is itself [not established](#def:coulomb-charge).
+> **Open.** Under this assignment the strangelet has *zero* symmetric content and *maximal* antisymmetric content, which is the opposite of the physical reading in items 1 and 3. Whether "electromagnetic neutrality" survives, and whether the enhanced-binding argument below still follows, requires re-deriving those items rather than relabelling them — the identification of the antisymmetric channel with electromagnetism is itself [not established](#def:coulomb-charge).
 >
 > **Separately: the $Q$ values used in item 1 are not representable.** [The Coulomb charge](#def:coulomb-charge) is $\tfrac{1}{2}(n_+ - n_-) \in \tfrac{1}{2}\mathbb{Z}$, so $+\tfrac{2}{3}$ and $-\tfrac{1}{3}$ are outside its range for every braid word. Item 1 computes $Q$ from assigned quark charges rather than from crossing counts, so the two are distinct quantities sharing a symbol. The vanishing of the *sum* is unaffected, but it is not a statement about the crossing-count $Q$ that item 2 uses.
 

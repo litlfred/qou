@@ -1,1 +1,1 @@
-Letp= (2,3,p 3)with(6,p 3) = 1andℓ= (1,1,ℓ 3)∈Z 3 satisfy0< ℓ 3 < p3
+Let p = (2, 3, p3) with (6, p3) = 1 and ℓ= (1, 1, ℓ3) ∈Z3 satisfy 0 < ℓ3 < p3 and write χ = χ(1,1,ℓ3) (2,3,p3). If M and N are coprime positive integers and q = e 2πiM N , then 6p3N X n=0 χ(n)q n2 24p3 = 4 2p3N X n=0 χ(n)q n2 24p3 . (3.26)

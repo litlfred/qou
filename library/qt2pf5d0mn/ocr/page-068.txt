@@ -1,0 +1,35 @@
+Section 4.2 Invariance under change of ordering
+
+to s;. If § and & are any two elements in F,_; such that p,($) = pn(5’) = s € Sp, then
+we say § and §’ represent the same permutation s and § is a representative of s.
+
+For each s € S, and any non-empty subset T C {0,1,---,n — 1}, if we order the
+elements in T and in s(T), respectively, by 0,1,--- ,|Z'| — 1 according to their relative
+order, then we get a permutation sr, called the restriction of s on T, on {0,1,--+ ,|T]—1},
+namely, s;(i) = j if s maps the ¢-th greatest element in T to the j-th greatest element
+in s(T). When no confusion arises, we simply write sp as s. For example, if s = 59 € S3,
+then s10,13 = $0 € Se, S02} = Id € Sy. It is clear that sp is a group morphism in the
+sense that sip) 87 = (s's)r.
+
+The rough idea of proof of invariance under reordering goes as follows. Let T be a
+fixed ordered triangulation with vertices ordered by 0,1,--- , N—1, where N = |T°|. Let
+T' be any ordered triangulation obtained from 7 by reordering its vertices. Apparently,
+each reordering of vertices corresponds to an element of Sy. To make it clear, if s € Sy,
+then we obtain J’ from T by replacing the label i of a vertex by s(i). See Figure
+for the reordering of a 2-simplex. That is, we are thinking that the ‘physical’
+unordered triangulation is fixed all the time; only the labels on vertices are
+permuting. For a k-simplex o = (aga,---ax_1) € T*, denote by o, the corresponding
+k-simplex (o(ao)o(a1)---o(ax-1)) € (T')*. Note that o and o, are the same as an
+unordered simplex. Given a coloring F’ = (g, f) on 7, we wish to define a corresponding
+
+coloring F” = (g’, f’) on T’ so that,
+1. for each 2-simplex 6 € T?, dg = dg, ;
+
+2. for each 4-simplex a, there exists an isomorphism ®§ : Vp(0a0) —> Vp/(do,) such
+
+that Ze(o) = Zr(a,) 0 B;
+
+3. B:= & 8: Ve(T) — Vr(T") maps or to dp .
+ocT4
+
+59

@@ -19,7 +19,12 @@ export default proposition({
   lean: { ref: "qou:QOU.ParticleInteractions.towerBinding",
     validation: "not_checked",
   },
+  // Was rem:hecke-charge-mass-duality, which the text never cites; that
+  // remark reaches the open conj:hecke-mass-trace. The formula evaluates the
+  // product quantum dilogarithm Phi_q (pole at |V| = q, named in the text),
+  // which the disambiguation definition fixes. Retargeted 2026-11-20 (owner,
+  // option 2 of the W11b ask on #8526; bean qou-tm3c).
   uses: [
-        "rem:hecke-charge-mass-duality",
+    "def:quantum-dilogarithm-disambiguation",
   ],
 });

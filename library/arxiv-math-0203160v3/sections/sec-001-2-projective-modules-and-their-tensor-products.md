@@ -10,7 +10,8 @@ source_sha256: a84f478d72d40af2
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.994
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.92
+doc_brief: "arXiv:math/0203160v3 [math.QA] 28 Oct 2002 — We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on"
 ---
 One can define the algebra $T_{\theta }^{d}$ of smooth functions on $d$ -dimensional noncommutative torus as an algebra of formal linear combinations $f=\sum C_{\overrightarrow{n}}U_{\overrightarrow{n}}$ where $\overrightarrow{n}\in \mathbb Z^{d}$ and $C_{\overrightarrow{n}}$ are complex numbers tending to zero at infinity faster then any power and the multiplication is governed by the rule
 

@@ -1,0 +1,67 @@
+Cluster Expansions: Necessary... Page5of47 33
+
+The weight of a graph G with vertex set [n] = {1,..., n} and edge set E(G) is
+w(G;X1,...,%n) = Il S (xi, xj).
+{i, jJEE(G)
+
+Let G,, be the set of all graphs with vertex set [1], C, C G, the set of connected graphs and
+
+oh (x1, ---Xn) = > w(G;X1,..-,Xn)
+GEC
+the n-th Ursell function. For n € N and k € No, let Dan4k C Gn+x be the collection of all
+graphs G such that every vertex j € {n+1,..., n+k} connects to at least one of the vertices
+i € {1,...,n}. We may view the vertices {1, ... , n} as roots and call the graphs G € Dy nk
+multi-rooted graphs or, following the footnote 53 in [30], root-connected graphs. Consider
+the functions
+
+Vnntk (1s. ++, Xntk) = > w(G;XxX1,..., Xntk)-
+
+GEDp n+k
+
+For n = 1, the functions coincide with the standard Ursell functions, i.e., W444 = Plan:
+We are interested in the associated series
+
+oy A
+Pn(X1, 0065 Xn3 Z) I= y TO Winn tk 1s ee Xn Vie MIZO1) ++ + ZOn)Az (dy).
+qo KL Jock
+The summand for k = 0 is to be read as Wyn (X1,.--, Xn)Z(X1) +++ Z(Xp,). The series py
+
+corresponds to the n-point correlation function of a grand-canonical Gibbs measure [30,
+Eqs. (4—7)], see also [14]—it is the expansion of the correlation function in the activity z
+around 0.
+
+We will say that the activity expansions p converge absolutely for a non-negative activity
+function z if
+
+co
+1
+
+Y al. Winn-bk Ls ees ns Vises YEO) +++ Zn)AK (dy) < 00
+
+k=0 YS
+
+for alln € Nand (x1,..., x) € X”.
+
+Our main concern is to derive necessary and sufficient convergence conditions, but some-
+times it is useful to view the series as purely formal; relevant background on formal power
+series whose variable is a measure (here 4,(dx)) is given in [17, Appendix A].
+
+Next we introduce sign-flipped Kirkwood-Salsburg operators. A selection rule s(-) is a
+
+map from P(X) := UP? ,X" to N such that s(x1,..., Xn) € {1,..., 2} forall (x1, ..., Xn) €
+P(X). To lighten notation we write x, rather than x5 .;,...,x,). Further let (x4 pees x},) be
+the vector obtained from (x;,..., Xn) by deleting the entry x,, leaving the order otherwise
+
+unchanged. For the simplest selection rule that picks the first entry s = 1, we have x/ = x;.
+The sign-flipped Kirkwood-Salsburg operator K: = with selection rule s(-) acts on families
+& = (&,)nen of measurable symmetric functions &, : X” > R4 as
+
+(KEE )n (er, Xn) = crs) [+ Fs, X)))( Mns2}8n—1 0X3 beees xi)
+i=2
+0° 1 k
+a ! k
++ Bi fy LI} 70s 20] 6e-ncs vee Hee Vises YA (y)),
+
+(2.4)
+
+D Springer

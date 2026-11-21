@@ -1,0 +1,84 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-043
+section_title: "Page 43"
+pages: 43-43
+pdf_page: 43
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+Lemma 8:
+
+Assume that (f(m,.))men is a family of C! even functions on Ip such that Plancherel for-
+mula holds, i.e
+
+¥ [x (m, p)(@) f(m, p)dp = €(¢) Vo € Funee(SLy(2,C)r) (138)
+then f(m,p) = P(m, p).
+
+A B
+Proof: We first compute h( x(m,p) S~'(k4) @ E%), this is equal to:
+ug (GLE) (2|DC\c4;
+
+n> kus @ BPE (2 D ) (; Di yi NAG" (m,p))
+CDF
+_ baci t 1p r(j l|F z
+
+=v age sinnt de) (eo plo) Ee
+
+CDF
+_ [dB] tr|F «|B A) B_ipypr
+~ fal 2 AB|a F\lpn ugha’ (m
+
+Assume that Plancherel formula holds with the densities f(m,.), the previous computation
+implies that Plancherel formula is equivalent to:
+
+he te F y
+np Cr IPeLaaG,
+Ine
+A B
+
+m=0
+Therefore if we multiply both sides of this equation by Pi. R es and if we take the trace on V @V
+we obtain that:
+
+DC\C_ii yor
+pi yi whic (m, p)
+
++P).
+
+BA
+sn
+
+A_
+) ART (m, p) f(m, p)dp = tw ',5.0
+
+ye al by Tl, ART (m, p)f(m p)( “A&B 4p = [dain o. (139)
+
+Fr (dal
+Using the relation
+
+(4m+ip)
+Sah ome p(B =¥ a
+
+whe
+
+proved in the previous lemma, the system of equations (139) is equivalent to:
+
+(£m-+ip)
+| =n fom.) =[dalbno. (140)
+
+m|AL2 EN * IA
+
+We can develop f(m,.) in Fourier series and write: f(m,p) = Yi pez pd mq~s-, Using the relation:
+
++m+i, 2B
+[(2B oe a = So gt Biemtin),
+(a)
+
+k=0
+
+43

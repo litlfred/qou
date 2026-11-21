@@ -1,5 +1,5 @@
 **Purpose.**
-This appendix bridges the categorical derivation chain to the executable compute layer that generates every numerical prediction. For each step of the substrate-to-observable chain, we detail the algorithm, its justifying propositions, the canonical Python API entry point, and the corresponding witness-JSON record.
+This appendix bridges the categorical derivation chain to the executable compute layer that generates every numerical prediction. For each step of the substrate-to-observable chain, this appendix details the algorithm, its justifying propositions, the canonical Python API entry point, and the corresponding witness-JSON record.
 
 **Layered compute stack.**
 The Python API provides a facade over a layered stack:
@@ -10,7 +10,7 @@ The Python API provides a facade over a layered stack:
 4. **Layer 3 — `qou-mass`** (Python facade): external-researcher API exposing `predict()`, `compute_tr_M()`, and `canonical_braid()`.
 
 **Conventions.**
-*Precision* reports in two legs: L1 (internal compute agreement, target $10^{-15}$) and L2 (per-observable absolute accuracy, target $\sigma_{\mathrm{pred}} \leq \sigma_{\mathrm{exp}} / 100$). *Status flags* mirror the canonical derivation table: *proved* (sorry-free Lean), *derived* (categorical, no fit), *conditional* (conjecture-conditional), *open* (open question, no derivation yet). *Witness JSON* paths are relative to `computations/`.
+*Precision* reports in two legs: L1 (internal compute agreement, target $10^{-15}$) and L2 (per-observable absolute accuracy, target $\sigma_{\mathrm{pred}} \leq \sigma_{\mathrm{exp}} / 100$). *Status flags* mirror the canonical derivation table: *proved* (Lean), *derived* (categorical, no fit), *conditional* (conjecture-conditional), *open* (open question, no derivation yet). *Witness JSON* paths are relative to `computations/`.
 
 **Reading order.**
 A chain-map table maps each step to its propositions and API call. Subsequent sections expand each step into a per-algorithm block in dependency order. Sidecar algorithms appear after the eleven canonical steps.

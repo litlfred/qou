@@ -33,8 +33,8 @@ Base ring is `ℂ` by necessity (§7c archimedean side): the `Re`/`Im` projectio
 against the imaginary substrate direction are the content. No `sorry`; no `c_k`
 wired.
 
--- Ref: [manuscript] conj:im-q-physical-role
--- Ref: [manuscript] computations/qbeta/qbeta_c3_borel_pade_resummation_probe.py (Ohtsuki κ-tower)
+-- Ref: [leitner2026] conj:im-q-physical-role
+-- Ref: [leitner2026] computations/qbeta/qbeta_c3_borel_pade_resummation_probe.py (Ohtsuki κ-tower)
 -- Ref: [murakami-murakami2001] complex volume 𝔙 = Vol + i·CS
 -/
 

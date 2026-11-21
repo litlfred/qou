@@ -8,7 +8,7 @@
   "pages": 31,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,11 +22,11 @@
   },
   "doi": null,
   "title": "The Polyanalytic Ginibre Ensembles",
-  "authors_raw": "Antti Haimi and H\u00e5kan Hedenmalm",
+  "authors_raw": "Antti Haimi and Håkan Hedenmalm",
   "title_lines": [
    "The Polyanalytic Ginibre Ensembles"
   ],
-  "abstract": "For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and \u00afz, of degree \u2264n \u22121 in z and of degree \u2264q \u22121 in \u00afz. We supply Poln,q with the inner product structure of L2 \u0010 C, e\u2212m|z|2dA \u0011 , where dA(z) = dxdy \u03c0 , z = x + iy; the resulting Hilbert space is denoted by Polm,n,q. Here, it is assumed that m is a positive real. We let Km,n,q denote the reproducing kernel of Polm,n,q, and study the associated determinantal process, in the limit as m, n \u2192+\u221ewhile n = m + O(1); the number q, the degree of polyanalyticity, is kept \ufb01xed. We call these processes polyanalytic Ginibre ensembles, because they generalize the Ginibre ensemble \u2013 the eigenvalue process of random (normal) matrices with Gaussian weight. A possible interpretation is that we permit a few higher Landau levels. We consider local blow-ups of the polyanalytic Ginibre ensem- bles around points in the spectral droplet, which is here the closed unit disk \u00afD := {z \u2208C : |z| \u22641}. We obtain asymptotics for the blow-up process, using a blow-up to characteristic distance m\u22121/2; the typical distance is the same both for interior and for boundary points of \u00afD. This amounts to obtaining the asymp- totical behavior of the generating kernel Km,n,q. Following [2], the asymptotics of the Km,n,q is rather conveniently expressed in terms of the Berezin measure (and density) dB\u27e8z\u27e9 m,n,q(w) := B\u27e8z\u27e9 m,n,q(w)dA(w), B\u27e8z\u27e9 m,n,q(w) = |Km,n,q(z, w)|2 Km,n,q(z, z) e\u2212m|z|2. For interior points |z| < 1, we obtain that dB\u27e8z\u27e9 m,n,q(w) \u2192d\u03b4z in the weak-star sense, where \u03b4z denotes the unit point mass at z. Moreover, if we blow up to the scale of m\u22121/2 around z, we get convergence to a measure which is Gaussian for q = 1, but exhibits more complicated Fresnel zone behavior for q > 1. In contrast, for exterior points |z| > 1, we have instead that dB\u27e8z\u27e9 m,n,q(w) \u2192d\u03c9(w, z, De), where d\u03c9(w, z, De) is the harmonic measure at z with respect to the exterior disk De := {w \u2208C : |w| > 1}. For boundary points, |z| = 1, ",
+  "abstract": "For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z. We supply Poln,q with the inner product structure of L2 \u0010 C, e−m|z|2dA \u0011 , where dA(z) = dxdy π , z = x + iy; the resulting Hilbert space is denoted by Polm,n,q. Here, it is assumed that m is a positive real. We let Km,n,q denote the reproducing kernel of Polm,n,q, and study the associated determinantal process, in the limit as m, n →+∞while n = m + O(1); the number q, the degree of polyanalyticity, is kept ﬁxed. We call these processes polyanalytic Ginibre ensembles, because they generalize the Ginibre ensemble – the eigenvalue process of random (normal) matrices with Gaussian weight. A possible interpretation is that we permit a few higher Landau levels. We consider local blow-ups of the polyanalytic Ginibre ensem- bles around points in the spectral droplet, which is here the closed unit disk ¯D := {z ∈C : |z| ≤1}. We obtain asymptotics for the blow-up process, using a blow-up to characteristic distance m−1/2; the typical distance is the same both for interior and for boundary points of ¯D. This amounts to obtaining the asymp- totical behavior of the generating kernel Km,n,q. Following [2], the asymptotics of the Km,n,q is rather conveniently expressed in terms of the Berezin measure (and density) dB⟨z⟩ m,n,q(w) := B⟨z⟩ m,n,q(w)dA(w), B⟨z⟩ m,n,q(w) = |Km,n,q(z, w)|2 Km,n,q(z, z) e−m|z|2. For interior points |z| < 1, we obtain that dB⟨z⟩ m,n,q(w) →dδz in the weak-star sense, where δz denotes the unit point mass at z. Moreover, if we blow up to the scale of m−1/2 around z, we get convergence to a measure which is Gaussian for q = 1, but exhibits more complicated Fresnel zone behavior for q > 1. In contrast, for exterior points |z| > 1, we have instead that dB⟨z⟩ m,n,q(w) →dω(w, z, De), where dω(w, z, De) is the harmonic measure at z with respect to the exterior disk De := {w ∈C : |w| > 1}. For boundary points, |z| = 1, ",
   "docinfo": {
    "Producer": "pdfTeX-1.40.10",
    "Creator": "LaTeX with hyperref package",
@@ -113,7 +113,7 @@
   {
    "kind": "figure",
    "number": "1.1",
-   "title": "The polyanalytic Ginibre process with the kernel Km,n,q with m = n = 61 and q = 3. The simulation is based on the algorithm by Hough, Krishnapur, Peres, and Vir\u00e1g [15]",
+   "title": "The polyanalytic Ginibre process with the kernel Km,n,q with m = n = 61 and q = 3. The simulation is based on the algorithm by Hough, Krishnapur, Peres, and Virág [15]",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -411,8 +411,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2642,
-   "n_words": 460,
+   "n_chars": 2640,
+   "n_words": 459,
    "label_start": null,
    "label_end": "2"
   },
@@ -423,8 +423,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 8,
-   "n_chars": 16833,
-   "n_words": 3018,
+   "n_chars": 16849,
+   "n_words": 3020,
    "label_start": "2",
    "label_end": "8"
   },
@@ -447,8 +447,8 @@
    "level": 1,
    "page_start": 14,
    "page_end": 21,
-   "n_chars": 11577,
-   "n_words": 2177,
+   "n_chars": 11574,
+   "n_words": 2176,
    "label_start": "14",
    "label_end": "21"
   },
@@ -459,8 +459,8 @@
    "level": 1,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 5420,
-   "n_words": 1024,
+   "n_chars": 5448,
+   "n_words": 1027,
    "label_start": "21",
    "label_end": "23"
   },
@@ -501,7 +501,8 @@
    "items": []
   },
   "sections": 7,
-  "chars_total": 63955,
+  "chars_total": 63994,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "polyanalytic1.tex",

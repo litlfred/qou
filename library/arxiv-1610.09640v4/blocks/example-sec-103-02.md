@@ -1,1 +1,0 @@
-ANCring Aiscalled regularifithasﬁniteglobalcohomological

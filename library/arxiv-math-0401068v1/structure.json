@@ -6,10 +6,12 @@
   "sha256": "8168d7e7f60699781175252c397fc949e5a49790a3d65ecac66e77ed015b66c2",
   "bytes": 176004,
   "pages": 12,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +22,27 @@
   },
   "doi": null,
   "title": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS",
-  "authors_raw": null,
-  "abstract": "@We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum\u2019s formula of the colored Jones p olynomial. Our result supports the AJ conjecture due to S.Garoufalidis.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181024063829-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
+  "authors_raw": "TOSHIE TAKATA",
   "title_lines": [
    "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL",
-   "FOR TWIST KNOTS",
-   "TOSHIE TAKATA"
+   "FOR TWIST KNOTS"
   ],
-  "title_prev": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA"
+  "abstract": "@We show that for a twist knot, the A-polynomial can be obtained from recur- rences for the summand in Masbaum’s formula of the colored Jones polynomial. Our result supports the AJ conjecture due to S.Garoufalidis.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181024063829-04'00'"
+  },
+  "title_raw": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS 1. introduction The colored Jones polynomial is a one variable polynomial invariant of a knot colored with irreducible ﬁnite dimensional representation of sl (2 , C ) [14]. The original Jones polynomial [6] corresponds to the colored",
+   "outline": "1. introduction",
+   "text": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -42,39 +50,178 @@
    "title": "introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Main Theorem",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Proof of Theorem ??",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Observations",
    "page": 6,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "References",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 348,
+   "n_words": 53,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -82,8 +229,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3222,
-   "n_words": 551
+   "n_chars": 3198,
+   "n_words": 527,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-2-main-theorem",
@@ -91,37 +240,63 @@
    "title": "Main Theorem",
    "level": 1,
    "page_start": 2,
-   "page_end": 6,
-   "n_chars": 6761,
-   "n_words": 1643
+   "page_end": 3,
+   "n_chars": 3212,
+   "n_words": 618,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-4-observations",
+   "id": "sec-002-3-proof-of-theorem",
+   "number": "3",
+   "title": "Proof of Theorem ??",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 3290,
+   "n_words": 786,
+   "label_start": "3",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-4-observations",
    "number": "4",
    "title": "Observations",
    "level": 1,
    "page_start": 6,
    "page_end": 11,
-   "n_chars": 12317,
-   "n_words": 3068
+   "n_chars": 11788,
+   "n_words": 2539,
+   "label_start": "6",
+   "label_end": "11"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-004-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2728,
-   "n_words": 405
+   "n_chars": 2705,
+   "n_words": 382,
+   "label_start": "11",
+   "label_end": "12"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 4,
-  "chars_total": 25028,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 24541,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ApolyJones.tex",
@@ -134,31 +309,41 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.857,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-main-theorem",
      "title": "Main Theorem",
-     "prose_ratio": 0.694,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.673,
+     "coverage_ratio": 0.882,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-4-observations",
+     "id": "sec-002-3-proof-of-theorem",
+     "title": "Proof of Theorem ??",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-4-observations",
      "title": "Observations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.935,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-references",
+     "id": "sec-004-references",
      "title": "References",
      "result": "no matching \\section"
     }

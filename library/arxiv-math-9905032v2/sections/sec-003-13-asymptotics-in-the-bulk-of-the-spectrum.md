@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9905032v2
-doc_title: "arXiv:math/9905032v2 [math.CO] 11 Sep 1999"
+doc_title: "Asymptotics of Plancherel measures for symmetric groups"
 section_id: sec-003-13-asymptotics-in-the-bulk-of-the-spectrum
 section_title: "Asymptotics in the bulk of the spectrum"
 section_number: 1.3
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.98
+doc_brief: "Asymptotics of Plancherel measures for symmetric groups — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 []{#s13 label="s13"}
 

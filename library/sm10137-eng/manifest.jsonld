@@ -5,17 +5,25 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sm10137-eng",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
   "contains": [
     "library/sm10137-eng/sections/sec-front-matter",
-    "library/sm10137-eng/sections/sec-000"
+    "library/sm10137-eng/sections/sec-000",
+    "library/sm10137-eng/sections/sec-001",
+    "library/sm10137-eng/sections/sec-002",
+    "library/sm10137-eng/sections/sec-003",
+    "library/sm10137-eng/sections/sec-004",
+    "library/sm10137-eng/sections/sec-005",
+    "library/sm10137-eng/sections/sec-006",
+    "library/sm10137-eng/sections/sec-007",
+    "library/sm10137-eng/sections/sec-008"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "sm10137-eng",
     "title_source": "pdf-info",
@@ -25,8 +33,8 @@
     "pages": 26,
     "arxiv": null,
     "doi": "10.4213/sm10137e",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

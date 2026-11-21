@@ -130,7 +130,7 @@ $$
     `V_B` and the energy-comparison predicate are opaque inputs, so the
     three-part claim is recorded as the conditional conjecture over the
     context rather than discharged by a fake projection. -/
--- Ref: [manuscript] quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts
 def borromean_hopf_energy_crossover (ctx : BorromeanHopfEnergyCrossoverContext) :
     Prop :=
   ctx.M_B = 2 * ctx.V_B / ((ctx.q - 1) / ctx.q) ^ 2 ∧

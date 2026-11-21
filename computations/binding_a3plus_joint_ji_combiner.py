@@ -108,7 +108,7 @@ chi_witness_for_atom = {
 # no longer embeds y_lambda (format drift); the jones-markov table is the
 # light json source (no symbolic stack).  tables_by_n[str(n)].weights[]
 # carries {partition, y_lambda}.  The ³He-baseline validation assertion
-# below catches any q-mismatch (must reproduce the full-θ 0.7587).
+# below catches any q-mismatch (must reproduce the full-θ assembly's ³He sum).
 Y_JM = load_witness("y-lambda-jones-markov-witness.json")["tables_by_n"]
 y_lambda_per_atom: dict[str, dict[str, mp.mpf]] = {}
 PARTIAL_ATOMS: list[tuple[str, int, int]] = []
@@ -288,16 +288,22 @@ wb.add_data("partial_atoms_excluded", [
     for a, n, nt in PARTIAL_ATOMS])
 
 # Validation assertion: baseline ³He Σ|Δθ| must reproduce the
-# full-θ-assembly value (0.7587) — proves the witness read is correct.
+# full-θ-assembly value, read live from its witness. Until 2026-11-21 the
+# expected value was the literal 0.7587, which went stale when the Reeb-phase
+# witness was regenerated (2026-09-13); a hardcoded copy cannot follow its
+# source, so the check failed for every run on current inputs.
+ASSEMBLY = load_witness("binding-a3plus-full-theta-assembly.witness.json")
 if "3He" in per_atom_combined:
     he3_base = mp.mpf(per_atom_combined["3He"]["baseline_sum_y_dim_abs_dtheta"])
+    he3_asm = mp.mpf(ASSEMBLY["data"]["per_atom_sums"]["3He"]["sum_y_dim_abs_dtheta"])
     wb.add_assertion(
         "he3_baseline_sum_reproduces_full_theta_assembly",
-        computed=he3_base,
-        expected=0.7587,
+        computed=fmt(he3_base),
+        expected=fmt(he3_asm),
         tolerance=0.01,
         source="baseline Σ y·dim·|Δθ| for ³He must match "
-               "binding-a3plus-full-theta-assembly (0.7587) — read check.",
+               "binding-a3plus-full-theta-assembly.witness.json "
+               "data.per_atom_sums.3He — read check.",
     )
 # Headline: does the joint combiner beat the +17.4% ³He baseline?
 if "3He" in comparison["rho_v2_mu_0"]["per_atom"]:

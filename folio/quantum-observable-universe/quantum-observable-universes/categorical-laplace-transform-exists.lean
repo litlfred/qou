@@ -11,7 +11,7 @@ LaTeX: `\label{prop:categorical-laplace-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-laplace-transform-exists
+- [leitner2026] §2-quantum-observable-universes/categorical-laplace-transform-exists
 - [kassel1995] Quantum Groups, §IV
 -/
 

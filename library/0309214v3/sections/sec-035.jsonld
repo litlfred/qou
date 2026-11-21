@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/0309214v3/sections/sec-035",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The R--matrix and the braiding",
+  "pageStart": 30,
+  "pageEnd": 31,
+  "contains": [
+    "library/0309214v3/blocks/prose-sec-035",
+    "library/0309214v3/blocks/thm-sec-035-01",
+    "library/0309214v3/blocks/rem-sec-035-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0309214v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0309214v3/manifest.jsonld",
+  "provenance": "ingested"
+}

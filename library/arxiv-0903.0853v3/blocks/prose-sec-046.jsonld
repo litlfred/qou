@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-046",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Sheaf theoretical interpretation of irregularity",
-  "pageStart": 115,
-  "pageEnd": 118,
-  "text": "../sections/sec-046-222-sheaf-theoretical-interpretation-of-irregula.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "title": "Divisors and sectors on the elliptic curve ${\\mathbf{E}_{q}} = {\\mathbf C}^*/q^{\\mathbf Z}$",
+  "pageStart": 73,
+  "pageEnd": 77,
+  "text": "../sections/sec-046-151-divisors-and-sectors-on-the-elliptic-curve-m.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
   "provenance": "ingested"
 }

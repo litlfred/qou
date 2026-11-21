@@ -1,0 +1,68 @@
+then obtain za’ where za’: a’ = of-complez 2a’ is-real xa’
+using <a’ € unit-disc»
+using circline-set-def on-circline-x-axis
+by auto
+
+hence —1 < Re xa’ Re xa’ < 1 2a' 4 0
+using <a’ € unit-disc» <a’ # On»
+by (auto simp add: cmod-eq-Re)
+
+hence Re za’ > 0 Re xa’ < 1 is-real xa’
+using <poincare-on-ray a’ On (of-complex za)»
+using poincare-between-z-azis-Ouvlof Re za’ Re xa]
+using poincare-between-z-azis-Ouv|of Re ta Re xa’
+using circline-set-positive-x-axis-I[of Re xa’|
+using xa xa’ complez-of-real-Re
+unfolding poincare-on-ray-def
+by (smt of-real-0, linarith, blast)
+
+moreover
+
+obtain zx where is-real «x Re xz > 0 Re rx < 1 & = of-complex xx
+using x
+unfolding positive-x-azis-def
+using circline-set-def cmod-eq-Re on-circline-a-axis
+by auto
+
+ultimately
+
+show poincare-between 0p x a’ V poincare-between On a’ x
+using <a’ = of-complex xa’>
+by (smt <a’ € unit-disc> arg-0-iff poincare-between-Ouv poincare-between-def to-complex-of-complex
+2(1))
+qed
+
+qed
+
+thus ?thesis
+using (x € unit-discy
+unfolding poincare-ray-meets-line-def poincare-on-line-def
+by (metis insert-commute)
+qed
+qed
+next
+show a # 0;
+proof (rule ccontr)
+assume — ?thesis
+then obtain k where k<0 to-complex ?a1 = cor k * to-complex ?a2
+using poincare-between-u0v[OF <?al € unit-disc» «?a2 € unit-discr «?al # On» (?a2 F On>]
+using <poincare-between ?a1 a ?a2>
+by auto
+hence to-complex il = cor k * to-complex i2 k < 0
+by auto
+hence 0), € circline-set (poincare-line x1 x2)
+using ideal-points-proportionallof poincare-line x1 x2 il i2 k| <ideal-points (poincare-line x1 x2) = {i1,
+i2}>
+using is-poincare-line-poincare-line[OF «11 # x2)]
+by simp
+thus False
+using ‘7~ poincare-collinear {On, c1, t2}>
+using is-poincare-line-poincare-line[OF «11 # x2)]
+unfolding poincare-collinear-def
+by (meson «a1 # x2) empty-subsetl insert-subset poincare-line-circline-set(1) poincare-line-circline-set(2))
+qed
+next
+fix yu
+let ?R’= a zero. V a’ al a2 x1 x2 il i2. PR zero a’ al a2 c1 x2 il i2a
+
+168

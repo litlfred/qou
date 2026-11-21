@@ -1,0 +1,51 @@
+9.3 Smooth bivariate functions 269
+
+ing components containing points of X*°" and Y”“», working counterclock-
+wise, then y; will move up the descending region to peak at the critical point.
+Descending regions between two ascending regions both containing points of
+X°“y have y; twice with opposite orientations, which can be joined and pushed
+to lower height. Descending regions between two ascending regions both con-
+taining points of Y**» are not touched by the intersection cycle. Taking these
+sign considerations into account gives the stated formula for x. ia)
+
+Theorem 9.31 immediately gives an algorithm for the bivariate case.
+
+Algorithm 3: Determination of W in the smooth, bivariate case.
+
+Input: Bivariate rational function F(x, y) and direction (r, s).
+Output: Set of critical points W determining coefficient asymptotics of
+F in the (r, s) direction.
+1 Verify that Assumptions 9.1 and 9.2 hold using Grébner bases and Puiseux
+expansions
+2 List the critical value in order of decreasing height
+
+we
+
+Set the provisional value of c,y to the highest critical value
+4 For each critical point at height c,y do
+
+(a) Compute the order k of the critical point
+
+(b) Follow each of the k ascent paths until it is clear whether the
+x-coordinate or the y-coordinate goes to zero
+
+(c) Add the point to the set W if and only if at least one of the k paths has
+x-coordinate going to zero and at least one of the k paths has
+y-coordinate going to zero
+
+5 If W is nonempty then terminate and output c,y and W
+
+6 Else, if cy is not the least critical value then replace c,y by the next lower
+critical value and go to step 4
+
+7 Else, if no critical values remain then c,, = —oo, W is empty, and the
+asymptotics decay super-exponentially
+
+The doctoral dissertation [DeV11] discusses how to turn this breakdown
+into effective steps, and [MS22] give an implementation in Sage using interval
+arithmetic. The trickiest part is Step 4b. Ascent paths could conceivably get
+caught in a trap, approaching a critical point rather than continuing to height
++oco. However, this is a higher critical point, hence already known to be in
+an x- or y-component. Therefore, one only needs to know a radius ¢ for each
+higher critical point p such |w — p| < € implies w is in the same component as
+p, which can be done with interval arithmetic. We conclude this section with

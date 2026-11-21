@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/equations-aux-q-differences",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/equations-aux-q-differences/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -23,10 +23,11 @@
     "library/equations-aux-q-differences/sections/sec-008",
     "library/equations-aux-q-differences/sections/sec-009",
     "library/equations-aux-q-differences/sections/sec-010",
-    "library/equations-aux-q-differences/sections/sec-011"
+    "library/equations-aux-q-differences/sections/sec-011",
+    "library/equations-aux-q-differences/sections/sec-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "equations-aux-q-differences",
     "title_source": "slug",

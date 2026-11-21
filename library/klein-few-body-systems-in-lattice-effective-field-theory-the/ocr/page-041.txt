@@ -1,0 +1,51 @@
+3.7 Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory
+
+operator insertion for
+expectation value
+free a free
+<Y onl SUA) full LO O full LO SU(4) # |P on
+SOURS eee
+ee ee
+2L,+Lh, L,+h, L,+L,/2 L, 0
+
+0) 7
+
+Figure 3.4: Schematic time steps for time evolution. Figure taken from [33].
+
+determine the ground state energy. The procedure is as follows:
+
+1. Initialization
+Firstly, we create a random configuration of auxiliary fields sy, where sy is an abbreviation for all
+auxiliary fields of the theory used in Eqs. (3.56), (3.57), and (3.61).
+
+2. Molecular dynamics
+Corresponding to the initial configuration we create the conjugate momenta randomly according to
+a Gaussian distribution,
+
+> 1 >
+P[p,, (iin,)] exp {-5 [Ps, (i. nl} ; (3.68)
+The weight exp[—V(s)] and has the explicit form
+IZ(L,)lexp(-S,,). (3.69)
+
+and it is used for the Hamiltonian dynamics of the auxiliary fields according to
+
+Py, = Tae, (3.70)
+5x (1) = Ps,» (3.71)
+
+whereas Hy is
+Aymc = Pa +V(sy). (3.72)
+
+3. Exploring the phase space
+With the previous equations we can explore the phase space of the process using the discretized
+equations. Therefore, we use the leapfrog method, which is a simple and phase space area
+preserving discretization scheme. We start with a half step departing from the initial configuration,
+
+P.O) = p,,(0) - “ue Ps, (0)- (3.73)
+
+Afterward we explore the phase space with full step size,
+
+sx (t+ 1) = sy (7) + GacP5, (7), (3.74)
+
+Pry (r+ I = py, (1) + uc Psy (t), (3.75)
+
+35

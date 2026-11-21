@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0604057v2",
  "source_sha256": "649fad141dc34eb9",
- "brief": "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT — In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true",
- "extended": "**VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT**\n\n*WEIPING LI AND QINGXUE W ANG*\n\n19 pp, 14 sections.\n\n**Abstract.** In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true for the SL2(C) character variety of the hyperbolic knot in S3. Furthermore, we prove that the corresponding C∗-valued 1-form is a secondary characteristic class (Chern-Simons) arising from the vanishing ﬁrst Chern class of the ﬂat line bundle over the smooth part of the character variety, where the ﬂat line bund le is the pullback of the universal Heisenberg line bundle over C∗ × C∗. The second part of the paper is to deﬁne an algebro-geometric invariant of 3-manifolds resulting from the Dehn surgery along a hyperbolic knot complement in S3. We establish a Casson type invariant for these 3-manifolds. In the last section, we exp licitly calculate the character variety of the ﬁgure-eight knot and discuss some applications.\n\n**Outline.** 1 Introduction; 2 Terminology and Notation; 2.1.; 2.2.; 2.3.; 2.4.; 3 A-polynomial, regulator and K2 of a curve; 3.1.; 3.2 The regulator map of K2; 3.3.; 4.1 The curve of characters; 4.2 Invariant and Dehn Surgery of Hyperbolic K; 5 An Example: The Figure Eight Knot; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.3: (i) The closed real 1-form η(l, m) = log |l| d arg m − log |m| d arg l is exact on Yh;\n- Theorem 4.9: The integer b(p, q) is a well-deﬁned invariant of the 3-manifold K(p/q) resulting\n- Theorem 4.12: Assume the conjecture 1 is true. The quantity λ(p, q) is a well-deﬁned algebro-\n- Theorem 5.7: The map r : X0 → X(∂M ) ∈ C3 is given by the formulas:\n- Proposition 3.1: (1) The curvature of the line bundle associated to the class r(f, g) is d f\n- Proposition 3.2: The element {l, m} ∈ K2(C(Y )) is a torsion element.",
+ "brief": "Volume conjecture, regulator and SL2(C)-character variety of a knot — In this paper, by using the regulator map of Beilinson-Deligne, we show that the quan- tization condition posed by Gukov is true",
+ "extended": "**Volume conjecture, regulator and SL2(C)-character variety of a knot**\n\n*OF A KNOT*\n\n19 pp, 16 sections.\n\n**Abstract.** In this paper, by using the regulator map of Beilinson-Deligne, we show that the quan- tization condition posed by Gukov is true for the SL2(C) character variety of the hyperbolic knot in S3. Furthermore, we prove that the corresponding C∗-valued 1-form is a secondary characteristic class (Chern-Simons) arising from the vanishing ﬁrst Chern class of the ﬂat line bundle over the smooth part of the character variety, where the ﬂat line bundle is the pullback of the universal Heisenberg line bundle over C∗× C∗. The second part of the paper is to deﬁne an algebro-geometric invariant of 3-manifolds resulting from the Dehn surgery along a hyperbolic knot complement in S3. We establish a Casson type invariant for these 3-manifolds. In the last section, we explicitly calculate the character variety of the ﬁgure-eight knot and discuss some applications.\n\n**Outline.** Front matter; 1 Introduction; 2 Terminology and Notation; 2.1.; 2.2.; 2.3.; 2.4.; 3 A-polynomial, regulator and K2 of a curve; 3.1.; 3.2 The regulator map of K2; 3.3.; 4 SL2(C) Character Variety and a New Knot Inva; 4.1 The curve of characters; 4.2 Invariant and Dehn Surgery of Hyperbolic K; 5 An Example: The Figure Eight Knot; References",
  "tokens": {
   "brief": 49,
-  "extended": 468
+  "extended": 333
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -60,22 +65,27 @@
    "pages": "5-7"
   },
   {
-   "id": "sec-010-41-the-curve-of-characters",
+   "id": "sec-010-4-sl2c-character-variety-and-a-new-knot-invarian",
+   "title": "SL2(C) Character Variety and a New Knot Invariant",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-011-41-the-curve-of-characters",
    "title": "The curve of characters",
    "pages": "7-9"
   },
   {
-   "id": "sec-011-42-invariant-and-dehn-surgery-of-hyperbolic-knot",
+   "id": "sec-012-42-invariant-and-dehn-surgery-of-hyperbolic-knot",
    "title": "Invariant and Dehn Surgery of Hyperbolic Knots",
    "pages": "9-12"
   },
   {
-   "id": "sec-012-5-an-example-the-figure-eight-knot",
+   "id": "sec-013-5-an-example-the-figure-eight-knot",
    "title": "An Example: The Figure Eight Knot",
    "pages": "12-18"
   },
   {
-   "id": "sec-013-references",
+   "id": "sec-014-references",
    "title": "References",
    "pages": "18-19"
   }
@@ -84,8 +94,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

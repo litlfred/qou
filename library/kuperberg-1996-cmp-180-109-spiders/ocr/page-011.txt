@@ -1,0 +1,51 @@
+Spiders for Rank 2 Lie Algebras 119
+
+An internal clasp of size n is a particular web in W>, that satisfies the axioms
+
+k
+n-k-2
+
+Equation (2.2) uses the convention that a strand labelled by n denotes n parallel
+strands. The equation says that an internal clasp is an idempotent of the n-strand
+Temperley—Lieb algebra and it annihilates all basis webs other than the identity on
+the right. Therefore a clasp concatenated with any web is proportional to a clasp. In
+particular, a clasp is unique, if it exists, and it has the same annihilation property
+on the left. The Wenzl recursion formula [24] demonstrates that clasps do exist, at
+least for most values of q:
+
+n-1
+
+—t tt rats
+
+[n]
+
+n-1
+
+Internal clasps are also called magic weaving elements [7], boxes [10], and Jones—
+Wenzl idempotents [12].
+An internal clasp is the concatenation of the unique basis web of W(n,1,1,
+
+1,...,1) with itself:
+"4 L» la ;
+
+In terms of representations, this concatenation is a composition of the form
+yen 3, yen .
+
+Since the composition is a non-zero idempotent, it is the equivariant projection from
+V®" to its highest-weight irreducible summand.
+
+2.3. Isomorphism and equinumeration. In this section, we prove Theorem 2.3. It is
+fairly easy to construct each Py and to prove that is surjective. If n =n, +---+m,
+there is a projection
+
+tw = Inv(V®") > Inv(Vy) ,
+
+and let dy = 1y 0d, 0 in, where iy is the inclusion W(N) C W,. Suppose that
+the i clasp of a web w has k U-turns, and let m =n —2k. Then the invariant
+my © bn(w) lies in the image of some map which has a tensor factor of the form
+yen _, V,,, where m < nj;, and any such map must be zero.
+
+Thus, zy 0 b, = oy oO jn, where jy is the projection W, — W(N). From this,
+it is routine to show that the maps @y take spider operations to spider operations.
+Moreover, each @y is surjective, because both zy and @, are surjective and i,
+complements the kernel of my © on.

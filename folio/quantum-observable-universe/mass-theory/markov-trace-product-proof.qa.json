@@ -237,6 +237,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "099fd7243b92",
+          "ts": "3b361a5db076"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:24.244Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Induction on k with the Markov property for the adjoined generator; scope to monotone words and rotations is stated."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1155,7 @@
           "in_degree": 0,
           "cone_size": 38,
           "depth": 16,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1269,7 +1284,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the docs/audits link and the word \"audit\" are gone from the caveat, which now reads \"(Earlier versions had these two values swapped; fixed.)\" \u2014 ordinary errata prose.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the docs/audits link and the word \"audit\" are gone from the caveat, which now reads \"(Earlier versions had these two values swapped; fixed.)\" — ordinary errata prose.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -1440,7 +1455,7 @@
         },
         "reviewed_at": "2026-08-21T21:32:50.794Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Two dashes, both true parentheticals introducing an appositive definition ('non-adjacent \u2014 that is, step 4 above ... must hold')."
+        "evidence": "Two dashes, both true parentheticals introducing an appositive definition ('non-adjacent — that is, step 4 above ... must hold')."
       }
     ],
     "trap-triples": [
@@ -1543,7 +1558,7 @@
         "reviewed_at": "2026-08-21T21:32:50.954Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "severity": "major",
-        "evidence": "'(Earlier versions had these two values swapped; fixed.)' narrates the document's own revision history inside scholarly prose rather than stating mathematics \u2014 a status leak of the same family as one-voice Category H.",
+        "evidence": "'(Earlier versions had these two values swapped; fixed.)' narrates the document's own revision history inside scholarly prose rather than stating mathematics — a status leak of the same family as one-voice Category H.",
         "notes": "Proposed (structural, touches the .ts): migrate to authorNotes: [{kind: 'note', body: 'Earlier versions had the vertex-product and corrected-Markov values swapped; corrected.'}] and delete the parenthetical from the .md. Not applied here because it moves content between siblings."
       }
     ],
@@ -1704,6 +1719,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:32:51.142Z",
+  "updated_at": "2026-11-16T07:13:24.244Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

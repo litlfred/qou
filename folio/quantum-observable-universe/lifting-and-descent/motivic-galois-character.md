@@ -9,7 +9,7 @@ $$
   \;\longrightarrow\;
   \mathrm{Aut}_{\widehat{\mathcal{M}}}\bigl([A]\bigr).
 $$
-This encodes the action of the cyclotomic Galois group on the realization tower $\{\rho_p\}_{p \in \mathrm{Pl}(\mathbb{Q})}$ ([adelic substrate](#def:adelic-substrate)) of $[A]$. At each finite place $p$, the local component
+This encodes the action of the cyclotomic Galois group on the realization tower $\{\rho_p\}_{p \in \mathrm{Pl}(\mathbb{Q})}$ of $[A]$. At each finite place $p$, the local component
 $$
   \chi^{\mathrm{mot}}_{A,\,p}
   \;\colon\;
@@ -20,6 +20,6 @@ $$
 is the Frobenius character on the cyclotomic projection $\rho_p \colon \widehat{\mathcal{M}} \twoheadrightarrow \mathbb{Z}[q]/\Phi_{p^k}(q)$. The obstruction $\kappa_n$ ([quantum characteristic classes](#def:quantum-characteristic-classes)) is the image of $\chi^{\mathrm{mot}}_A$ under the [HKR comparison](#rem:hochschild-kummer-connection) to $H^2(\mathcal{S}, \mathbb{G}_m)$.
 
 **Choice of level.**
-Working directly with $\chi^{\mathrm{mot}}_A$ replaces per-level Čech-cocycle non-vanishing arguments with a single non-vanishing theorem about the character ([motivic perpetual obstruction](#thm:motivic-perpetual-obstruction), proved via Route A: prime-ideal collapse, $C = a_0(-1) + 2 \cdot a_1(-1)$). The Čech-cocycle and Hochschild presentations of $\kappa_n$ become realizations of $\chi^{\mathrm{mot}}_A$ at the archimedean and Hochschild-deformation places. The [Hochschild–Kummer](#rem:hochschild-kummer-connection) duality corresponds to the duality between these two realizations.
+The Čech-cocycle and Hochschild presentations of $\kappa_n$ become realizations of $\chi^{\mathrm{mot}}_A$ at the archimedean and Hochschild-deformation places. The [Hochschild–Kummer](#rem:hochschild-kummer-connection) duality corresponds to the duality between these two realizations.
 
 Conditional on the motivic substrate, the character $\chi^{\mathrm{mot}}_A$ is defined and is compatible with each local realization $\rho_p$.

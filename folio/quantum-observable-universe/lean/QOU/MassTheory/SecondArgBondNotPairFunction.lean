@@ -55,7 +55,7 @@ Fully generic: `bondOf` carries no typeclass, and nothing here needs an order,
 a `Real`, or any archimedean construct.  The decomposition section asks only for
 `CommRing`.
 
--- Ref: [manuscript] bean `qou-ix0x`; probe
+-- Ref: [leitner2026] bean `qou-ix0x`; probe
 --      `gamma_gamma_bond_is_pair_independent_probe`
 -/
 

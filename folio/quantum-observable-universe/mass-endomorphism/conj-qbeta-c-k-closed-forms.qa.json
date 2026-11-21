@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:qbeta-c-k-closed-forms",
+  "label": "conj:qbeta-c-k-closed-forms",
   "kind": "proposition",
   "paths": {
     "ts": "folio/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.ts",
@@ -92,6 +92,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f445bf0051d2",
+          "ts": "8ce4d33f17b0",
+          "lean": "3161fc14f23b",
+          "lean_statement": "d1d712b0dd63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:58.749Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Lean (sibling) ref is the class `QBetaCKClosedForms`, whose fields *are* the closed forms; nothing asserted, and the `def defaultQBetaCKClosedForms` records the fit. The block is a `prop:` whose body says the closed forms are conjectures matched to data (0.9 %, 2.4 %, 14 %, +114 % residuals), and \"calibration-anchored fits … encode the CODATA datum\". That is fitted content presented in a proposition, against the owner's no-fit rule. The \"Hopf–Jones seed c₃ = −2\" conflicts with the block's own Evidence table (live extraction −2.0693 under C, −974.43 under D)"
       }
     ],
     "proof-statement-integrity": [
@@ -2719,6 +2737,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-14T18:16:10.389Z",
+  "updated_at": "2026-11-15T21:55:58.749Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

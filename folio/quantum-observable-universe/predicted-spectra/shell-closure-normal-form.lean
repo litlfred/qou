@@ -22,7 +22,7 @@ the normal form structure at doubly-even (p,p) nuclei.
 LaTeX label: `prop:shell-closure-normal-form`
 
 ## References
-- [manuscript] §6/shell-closure-normal-form
+- [leitner2026] §6/shell-closure-normal-form
 - [unital-groebner-bases] main theorem (division algorithm)
 - Computation: computations/pruned-normal-forms.py
 
@@ -84,15 +84,22 @@ structure IsNormalForm (support : List (List ℕ)) : Prop where
 
 /-- The Gröbner division algorithm preserves well-foundedness.
     Given any element of H_n(q), the division algorithm terminates
-    and produces a unique normal form remainder. -/
+    and produces a unique normal form remainder.
+
+    **Was an axiom; now proved (2026-11-15).** As stated, the conclusion
+    does not mention `elem`, so it only says that *some* normal-form
+    support exists, and the empty support is one. The intended content
+    (the remainder of `elem` is in normal form, and it is unique) needs
+    the division algorithm itself and is open in Lean (bean `qou-n2un`). -/
 -- Ref: [unital-groebner-bases:thm:ugb-main-theorem]
-axiom division_terminates_unique (n : ℕ) (q : ℝ) (hq : q > 1) :
-  ∀ elem : List (List ℕ × ℝ),  -- element as list of (word, coeff) pairs
-  ∃ nf : List (List ℕ × ℝ),    -- normal form
-  IsNormalForm (nf.map Prod.fst)
+theorem division_terminates_unique (_n : ℕ) (_q : ℝ) (_hq : _q > 1) :
+    ∀ _elem : List (List ℕ × ℝ),  -- element as list of (word, coeff) pairs
+    ∃ nf : List (List ℕ × ℝ),    -- normal form
+    IsNormalForm (nf.map Prod.fst) :=
+  fun _ => ⟨[], ⟨by simp, by simp, by simp⟩⟩
 
 /-- Base case: the identity element is in normal form. -/
--- Ref: [manuscript] §6/shell-closure-normal-form
+-- Ref: [leitner2026] §6/shell-closure-normal-form
 theorem identity_is_normal_form : IsNormalForm [[]] where
   no_squares := by intro w hw i hi; simp only [List.mem_singleton] at hw; subst hw; simp at hi
   no_far_comm := by intro w hw i hi; simp only [List.mem_singleton] at hw; subst hw; simp at hi
@@ -115,7 +122,7 @@ theorem hopf_link_preserves_normal_form (n : ℕ) (q : ℝ) (hq : q > 1)
 
 /-- The sequential construction produces a normal form at every step.
     By induction on A. -/
--- Ref: [manuscript] §6/shell-closure-normal-form
+-- Ref: [leitner2026] §6/shell-closure-normal-form
 theorem sequential_build_always_normal_form (q : ℝ) (hq : q > 1) :
     ∀ A : ℕ, A ≥ 1 →
     ∃ nf : List (List ℕ × ℝ),
@@ -131,30 +138,26 @@ theorem sequential_build_always_normal_form (q : ℝ) (hq : q > 1) :
 -- This is a FINITE representation for any nucleus.
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- **External axiom (Kazhdan-Lusztig 1979): Hecke algebra
-    `H_A(q)` has basis of size ≤ A!, all reduced.** -/
--- Ref: [kazhdan-lusztig1979] Kazhdan & Lusztig, "Representations of Coxeter groups and Hecke algebras," Invent. Math. 53 (1979)
-axiom hecke_basis_size_axiom :
-    ∀ (A : ℕ),
-      ∃ basis : Finset (List ℕ),
-      basis.card ≤ Nat.factorial A ∧
-      ∀ w ∈ basis, IsNormalForm [w]
-
 /-- The number of reduced words in H_A(q) is at most A!.
-    (It equals A! when q is not a root of unity.) -/
+    (It equals A! when q is not a root of unity.)
+
+    **Was an axiom; now proved (2026-11-15).** As stated it only asks for
+    *some* finite set of normal-form words of size at most `A!`, and the
+    empty set is one. The Kazhdan–Lusztig content (the reduced words form
+    a basis of size exactly `A!`) is open in Lean, bean `qou-n2un`. -/
 -- Ref: [kazhdan-lusztig1979] Kazhdan & Lusztig, "Representations of Coxeter groups and Hecke algebras," Invent. Math. 53 (1979)
 theorem hecke_basis_size (A : ℕ) :
     ∃ basis : Finset (List ℕ),
     basis.card ≤ Nat.factorial A ∧
     ∀ w ∈ basis, IsNormalForm [w] :=
-  hecke_basis_size_axiom A
+  ⟨∅, by simp, by simp⟩
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART I: Palindromic histogram
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- A word-length histogram is palindromic if h(ℓ) = h(L - ℓ) for all ℓ. -/
--- Ref: [manuscript] §6/shell-closure-normal-form
+-- Ref: [leitner2026] §6/shell-closure-normal-form
 def isPalindrome (h : List ℕ) : Prop :=
   ∀ i, (hi : i < h.length) →
     h.get ⟨i, hi⟩ = h.get ⟨h.length - 1 - i,
@@ -162,7 +165,7 @@ def isPalindrome (h : List ℕ) : Prop :=
         (Nat.sub_lt (Nat.lt_of_le_of_lt (Nat.zero_le i) hi) Nat.one_pos)⟩
 
 /-- ⁴He histogram {1, 3, 4, 3, 1} is palindromic. -/
--- Ref: [manuscript] pruned-normal-forms.py witness, A=4
+-- Ref: [leitner2026] pruned-normal-forms.py witness, A=4
 theorem he4_palindrome : isPalindrome [1, 3, 4, 3, 1] := by
   intro i hi
   simp only [List.length_cons, List.length_nil] at hi
@@ -184,7 +187,7 @@ theorem he4_palindrome : isPalindrome [1, 3, 4, 3, 1] := by
    grading and preserves the coefficient structure. -/
 
 /-- ⁶Li(3,3) histogram is palindromic. -/
--- Ref: [manuscript] pruned-normal-forms.py witness, A=6
+-- Ref: [leitner2026] pruned-normal-forms.py witness, A=6
 theorem li6_palindrome :
     isPalindrome [1, 5, 13, 23, 31, 34, 31, 23, 13, 5, 1] := by
   intro i hi
@@ -196,7 +199,7 @@ theorem li6_palindrome :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- The Hecke reduction energy at step k (adding k-th nucleon). -/
--- Ref: [manuscript] sequential-nucleus-builder.witness.json
+-- Ref: [leitner2026] sequential-nucleus-builder.witness.json
 noncomputable def hecke_energy_step (k : ℕ) : ℝ :=
   match k with
   | 0 => 0        -- free proton
@@ -208,7 +211,7 @@ noncomputable def hecke_energy_step (k : ℕ) : ℝ :=
   | _ => 0
 
 /-- Shell gap: ΔE(step 4) / ΔE(step 3) > 14. -/
--- Ref: [manuscript] sequential-nucleus-builder.witness.json
+-- Ref: [leitner2026] sequential-nucleus-builder.witness.json
 theorem shell_gap_he4 :
     hecke_energy_step 4 / hecke_energy_step 3 > 14 := by
   unfold hecke_energy_step; norm_num
@@ -228,7 +231,7 @@ theorem energy_jumps_after_closure :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Dominant coefficient at each A. -/
--- Ref: [manuscript] pruned-normal-forms.py witness
+-- Ref: [leitner2026] pruned-normal-forms.py witness
 noncomputable def dominant_coeff : ℕ → ℝ
   | 1 => 1.000
   | 2 => 1.116

@@ -1,0 +1,71 @@
+al € unit-disc \ a2 € unit-disc \ il € unit-circle-set \ i2 € unit-circle-set \
+poincare-on-ray a’ On a \ a’ # On A poincare-between al aa2 Na#al Aa a2 —>
+poincare-ray-meets-line On a’ x1 22 (isV a’ al a2 xl x2 i1 i2. ?R On a’ al a2 zl x2 il i2 a)
+proof (rule wlog-rotation-to-positive-x-axis[OF «a € unit-disc»])
+let ?R’= a zero. V a’ al a2 x1 x2 il i2. PR zero a’ al a2 c1 x2 il i2a
+fix ra
+assume za: is-real ra 0 < Re za Re za < 1
+let ?a = of-complex xa
+show ?R! ?a 0;
+proof safe
+fix a’ al a2 rl x2 il i2
+let ?i1 = to-complex i1 and ?i2 = to-complex i2
+let a1 = of-complex (?i1 / 2) and ?a2 = of-complex (?i2 / 2)
+let ?la = poincare-line ?a1 ?a2 and ?lz = poincare-line x1 x2 and ?li = poincare-line i1 i2
+assume a’ € unit-disc r1 € unit-disc 12 € unit-disc x1 # «2
+assume — poincare-collinear {0,, 21, x2} ideal-points ?lx = {i1, i2}
+assume poincare-on-ray a’ On 2a a' # On
+assume poincare-between ?a1 ?a ?a2 ?a # ?al 2a # ?a2
+assume il # i2 ?al # ?a2 poincare-collinear {0n, ?a1, i1} poincare-collinear {0;, ?a2, i2}
+assume a1 € unit-disc ?a2 € unit-disc
+assume il € unit-circle-set i2 € unit-circle-set
+show poincare-ray-meets-line 0;, a’ x1 x2
+proof—
+have ?lx = ?li
+using <ideal-points ?lx = {i1, i2}> «a1 4 22» ideal-points-line-unique
+by auto
+
+have Iz: is-poincare-line ?lx
+using is-poincare-line-poincare-line[OF «11 # 22>]
+by simp
+
+have x1 € circline-set ?lz x2 € circline-set ?lx
+using Iz «rl # x2)
+by auto
+
+have ?lx # z-axis
+using ‘~ poincare-collinear {On, 21, 22}> «x1 € circline-set ?lx) «x2 € circline-set ?lx> lx
+unfolding poincare-collinear-def
+by auto
+
+have 0» ¢ circline-set ?lx
+using (~ poincare-collinear {On, 21, 22}> lx ‘21 © circline-set ?lay «x2 € circline-set ?lx>
+unfolding poincare-collinear-def
+by auto
+
+have za # 0 2a 4 On
+using za
+by auto
+
+hence 0; 4 ?a
+by metis
+
+have ?a € positive-r-axis
+using za
+unfolding positive-r-azis-def
+by simp
+
+have ?a € unit-disc
+
+using za
+
+by (auto simp add: cmod-eq-Re)
+have ?a € circline-set ?la
+
+using <poincare-between ?al ?a ?a2>
+
+using <«?al # ?a2) <?a € unit-discy (?al © unit-disc) «?a2 € unit-disc> poincare-between-poincare-line-uzv
+
+by blast
+
+163

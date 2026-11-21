@@ -2,220 +2,285 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1304.2934v4",
  "source_sha256": "b7ed2a9e85264568",
- "brief": "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N",
- "extended": "**MOD-φ CONVERGENCE, I:**\n\n*NORMALITY ZONES AND PRECISE DEVIATIONS*\n\n103 pp, 42 sections.\n\n**Abstract.** In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N, which can be lattice or non-lattice distributed. We establish precise estimates of the ﬂuctuations P[Xn∈ tnB], instead of the usual estimates for the rate of exponential decay log(P[Xn∈ tnB]). Our approach provides us with a systematic way to characterise the normality zone, that is the zone in which the Gaussian approxima- tion for the tails is still valid. Besides, the residue function measures the extent to which this approximation fails to hold at the edge of the normality zone. The ﬁrst sections of the article are devoted to a proof of these abstract results and comparisons with existing results.\n\n**Outline.** 1.2 Theoretical results; 1.3 Applications; 1.4 Forthcoming works; 1.5 Discussion on our hypotheses; Acknowledgements; 2.1 Basic examples of mod-convergence; 2.2 Legendre-Fenchel transforms; 2.3 Gaussian integrals; 3.1 Lattice and non-lattice distributions; 3.2 Deviations at the scale O(tn); 3.3 Central limit theorem at the scales o(tn) ; 4.1 Berry-Esseen estimates; 4.2 Deviations at scale O(tn); 4.3 Central limit theorem at the scales o(tn) ; 5.1 Bounds on cumulants and mod-Gaussian conve; 5.2 Precise deviations for random variables wi; 5.3 Link with the Cramér-Petrov expansion; 6.1 Technical preliminaries",
+ "brief": "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of",
+ "extended": "**MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS**\n\n*VALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI*\n\n103 pp, 55 sections.\n\n**Abstract.** In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N, which can be lattice or non-lattice distributed. We establish precise estimates of the ﬂuctuations P[Xn ∈tnB], instead of the usual estimates for the rate of exponential decay log(P[Xn ∈tnB]). Our approach provides us with a systematic way to characterise the normality zone, that is the zone in which the Gaussian approxima- tion for the tails is still valid. Besides, the residue function measures the extent to which this approximation fails to hold at the edge of the normality zone. The ﬁrst sections of the article are devoted to a proof of these abstract results and comparisons with existing results.\n\n**Outline.** Front matter; 1 Introduction; 1.2 Theoretical results; 1.3 Applications; 1.4 Forthcoming works; 1.5 Discussion on our hypotheses; Acknowledgements; 2 Preliminaries; 2.1 Basic examples of mod-convergence; 2.2 Legendre-Fenchel transforms; 2.3 Gaussian integrals; 3 Fluctuations in the case of lattice distribu; 3.1 Lattice and non-lattice distributions; 3.2 Deviations at the scale O(tn); 3.3 Central limit theorem at the scales o(tn) ; 4 Fluctuations in the non-lattice case; 4.1 Berry-Esseen estimates; 4.2 Deviations at scale O(tn)",
  "tokens": {
   "brief": 49,
-  "extended": 379
+  "extended": 373
  },
  "sections": [
   {
-   "id": "sec-000-12-theoretical-results",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-001-12-theoretical-results",
    "title": "Theoretical results",
    "pages": "5-7"
   },
   {
-   "id": "sec-001-13-applications",
+   "id": "sec-002-13-applications",
    "title": "Applications",
    "pages": "7-8"
   },
   {
-   "id": "sec-002-14-forthcoming-works",
+   "id": "sec-003-14-forthcoming-works",
    "title": "Forthcoming works",
    "pages": "8-8"
   },
   {
-   "id": "sec-003-15-discussion-on-our-hypotheses",
+   "id": "sec-004-15-discussion-on-our-hypotheses",
    "title": "Discussion on our hypotheses",
    "pages": "8-9"
   },
   {
-   "id": "sec-004-acknowledgements",
+   "id": "sec-005-acknowledgements",
    "title": "Acknowledgements",
    "pages": "9-9"
   },
   {
-   "id": "sec-005-21-basic-examples-of-mod-convergence",
+   "id": "sec-006-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-007-21-basic-examples-of-mod-convergence",
    "title": "Basic examples of mod-convergence",
    "pages": "9-12"
   },
   {
-   "id": "sec-006-22-legendre-fenchel-transforms",
+   "id": "sec-008-22-legendre-fenchel-transforms",
    "title": "Legendre-Fenchel transforms",
    "pages": "12-13"
   },
   {
-   "id": "sec-007-23-gaussian-integrals",
+   "id": "sec-009-23-gaussian-integrals",
    "title": "Gaussian integrals",
    "pages": "13-14"
   },
   {
-   "id": "sec-008-31-lattice-and-non-lattice-distributions",
+   "id": "sec-010-3-fluctuations-in-the-case-of-lattice-distributi",
+   "title": "Fluctuations in the case of lattice distributions",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-011-31-lattice-and-non-lattice-distributions",
    "title": "Lattice and non-lattice distributions",
    "pages": "14-16"
   },
   {
-   "id": "sec-009-32-deviations-at-the-scale-otn",
+   "id": "sec-012-32-deviations-at-the-scale-otn",
    "title": "Deviations at the scale O(tn)",
    "pages": "16-21"
   },
   {
-   "id": "sec-010-33-central-limit-theorem-at-the-scales-otn-and-o",
+   "id": "sec-013-33-central-limit-theorem-at-the-scales-otn-and-o",
    "title": "Central limit theorem at the scales o(tn) and o(tn23)",
-   "pages": "21-26"
+   "pages": "21-25"
   },
   {
-   "id": "sec-011-41-berry-esseen-estimates",
+   "id": "sec-014-4-fluctuations-in-the-non-lattice-case",
+   "title": "Fluctuations in the non-lattice case",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-015-41-berry-esseen-estimates",
    "title": "Berry-Esseen estimates",
    "pages": "26-29"
   },
   {
-   "id": "sec-012-42-deviations-at-scale-otn",
+   "id": "sec-016-42-deviations-at-scale-otn",
    "title": "Deviations at scale O(tn)",
    "pages": "29-30"
   },
   {
-   "id": "sec-013-43-central-limit-theorem-at-the-scales-otn-and-o",
+   "id": "sec-017-43-central-limit-theorem-at-the-scales-otn-and-o",
    "title": "Central limit theorem at the scales o(tn) and o(tn23)",
-   "pages": "30-38"
+   "pages": "30-35"
   },
   {
-   "id": "sec-014-51-bounds-on-cumulants-and-mod-gaussian-converge",
+   "id": "sec-018-44-normality-zones-for-mod-phi-and-mod-gaussian",
+   "title": "Normality zones for mod-phi and mod-Gaussian sequences",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-019-45-discussion-and-refinements",
+   "title": "Discussion and refinements",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-020-5-an-extended-deviation-result-from-bounds-on-cu",
+   "title": "An extended deviation result from bounds on cumulants",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-021-51-bounds-on-cumulants-and-mod-gaussian-converge",
    "title": "Bounds on cumulants and mod-Gaussian convergence",
    "pages": "38-39"
   },
   {
-   "id": "sec-015-52-precise-deviations-for-random-variables-with",
+   "id": "sec-022-52-precise-deviations-for-random-variables-with",
    "title": "Precise deviations for random variables with control on cumulants",
    "pages": "39-43"
   },
   {
-   "id": "sec-016-53-link-with-the-cramér-petrov-expansion",
+   "id": "sec-023-53-link-with-the-cramér-petrov-expansion",
    "title": "Link with the Cramér-Petrov expansion",
-   "pages": "43-45"
+   "pages": "43-44"
   },
   {
-   "id": "sec-017-61-technical-preliminaries",
+   "id": "sec-024-6-a-precise-version-of-the-ellis-gärtner-theorem",
+   "title": "A precise version of the Ellis-Gärtner theorem",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-025-61-technical-preliminaries",
    "title": "Technical preliminaries",
    "pages": "45-46"
   },
   {
-   "id": "sec-018-62-a-precise-upper-bound",
+   "id": "sec-026-62-a-precise-upper-bound",
    "title": "A precise upper bound",
    "pages": "46-47"
   },
   {
-   "id": "sec-019-63-a-precise-lower-bound",
+   "id": "sec-027-63-a-precise-lower-bound",
    "title": "A precise lower bound",
    "pages": "47-48"
   },
   {
-   "id": "sec-020-71-mod-convergence-from-an-explicit-formula-for",
+   "id": "sec-028-7-examples-with-an-explicit-generating-function",
+   "title": "Examples with an explicit generating function",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-029-71-mod-convergence-from-an-explicit-formula-for",
    "title": "Mod-convergence from an explicit formula for the Laplace transform",
    "pages": "48-50"
   },
   {
-   "id": "sec-021-72-additive-arithmetic-functions-of-random-integ",
+   "id": "sec-030-72-additive-arithmetic-functions-of-random-integ",
    "title": "Additive arithmetic functions of random integers",
    "pages": "50-55"
   },
   {
-   "id": "sec-022-73-number-of-cycles-in-weighted-probability-meas",
+   "id": "sec-031-73-number-of-cycles-in-weighted-probability-meas",
    "title": "Number of cycles in weighted probability measure",
    "pages": "55-58"
   },
   {
-   "id": "sec-023-74-rises-in-random-permutations",
+   "id": "sec-032-74-rises-in-random-permutations",
    "title": "Rises in random permutations",
    "pages": "58-61"
   },
   {
-   "id": "sec-024-75-characteristic-polynomials-of-random-matrices",
+   "id": "sec-033-75-characteristic-polynomials-of-random-matrices",
    "title": "Characteristic polynomials of random matrices in a compact Lie group",
    "pages": "61-64"
   },
   {
-   "id": "sec-025-81-background-central-limit-theorem-from-locatio",
+   "id": "sec-034-8-mod-gaussian-convergence-from-a-factorization",
+   "title": "Mod-Gaussian convergence from a factorization of the probability generating function",
+   "pages": "64-64"
+  },
+  {
+   "id": "sec-035-81-background-central-limit-theorem-from-locatio",
    "title": "Background: central limit theorem from location of zeros",
    "pages": "64-64"
   },
   {
-   "id": "sec-026-82-mod-gaussian-convergence-from-non-negative-fa",
+   "id": "sec-036-82-mod-gaussian-convergence-from-non-negative-fa",
    "title": "Mod-Gaussian convergence from non-negative factorizations",
    "pages": "64-67"
   },
   {
-   "id": "sec-027-83-two-examples-uniform-permutations-and-uniform",
+   "id": "sec-037-83-two-examples-uniform-permutations-and-uniform",
    "title": "Two examples: uniform permutations and uniform set-partitions",
    "pages": "67-68"
   },
   {
-   "id": "sec-028-84-third-cumulant-of-the-number-of-blocks-in-uni",
+   "id": "sec-038-84-third-cumulant-of-the-number-of-blocks-in-uni",
    "title": "Third cumulant of the number of blocks in uniform set-partitions",
    "pages": "68-69"
   },
   {
-   "id": "sec-029-9-dependency-graphs-and-mod-gaussian-convergence",
+   "id": "sec-039-9-dependency-graphs-and-mod-gaussian-convergence",
    "title": "Dependency graphs and mod-Gaussian convergence",
    "pages": "69-70"
   },
   {
-   "id": "sec-030-91-the-theory-of-dependency-graphs",
+   "id": "sec-040-91-the-theory-of-dependency-graphs",
    "title": "The theory of dependency graphs",
    "pages": "70-72"
   },
   {
-   "id": "sec-031-92-joint-cumulants",
+   "id": "sec-041-92-joint-cumulants",
    "title": "Joint cumulants",
    "pages": "72-73"
   },
   {
-   "id": "sec-032-93-useful-combinatorial-lemmas",
+   "id": "sec-042-93-useful-combinatorial-lemmas",
    "title": "Useful combinatorial lemmas",
    "pages": "73-76"
   },
   {
-   "id": "sec-033-94-proof-of-the-bound-on-cumulants",
+   "id": "sec-043-94-proof-of-the-bound-on-cumulants",
    "title": "Proof of the bound on cumulants",
    "pages": "76-78"
   },
   {
-   "id": "sec-034-95-sums-of-random-variables-with-a-sparse-depend",
+   "id": "sec-044-95-sums-of-random-variables-with-a-sparse-depend",
    "title": "Sums of random variables with a sparse dependency graph",
-   "pages": "78-81"
+   "pages": "78-80"
   },
   {
-   "id": "sec-035-101-a-bound-on-cumulants",
+   "id": "sec-045-10-subgraph-count-statistics-in-erdös-rényi-rand",
+   "title": "Subgraph count statistics in Erdös-Rényi random graphs",
+   "pages": "80-81"
+  },
+  {
+   "id": "sec-046-101-a-bound-on-cumulants",
    "title": "A bound on cumulants",
    "pages": "81-83"
   },
   {
-   "id": "sec-036-102-polynomiality-of-cumulants",
+   "id": "sec-047-102-polynomiality-of-cumulants",
    "title": "Polynomiality of cumulants",
    "pages": "83-85"
   },
   {
-   "id": "sec-037-103-moderate-deviations-for-subgraph-count-stati",
+   "id": "sec-048-103-moderate-deviations-for-subgraph-count-stati",
    "title": "Moderate deviations for subgraph count statistics",
-   "pages": "85-91"
+   "pages": "85-88"
   },
   {
-   "id": "sec-038-111-preliminaries",
+   "id": "sec-049-11-random-character-values-from-central-measures",
+   "title": "Random character values from central measures on partitions",
+   "pages": "88-91"
+  },
+  {
+   "id": "sec-050-111-preliminaries",
    "title": "Preliminaries",
    "pages": "91-93"
   },
   {
-   "id": "sec-039-112-bounds-and-limits-of-the-cumulants",
+   "id": "sec-051-112-bounds-and-limits-of-the-cumulants",
    "title": "Bounds and limits of the cumulants",
    "pages": "93-96"
   },
   {
-   "id": "sec-040-113-asymptotics-of-the-random-character-values-a",
+   "id": "sec-052-113-asymptotics-of-the-random-character-values-a",
    "title": "Asymptotics of the random character values and partitions",
    "pages": "96-100"
   },
   {
-   "id": "sec-041-references",
+   "id": "sec-053-references",
    "title": "References",
    "pages": "100-103"
   }

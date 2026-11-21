@@ -1,0 +1,70 @@
+next
+show « € unit-disc y € unit-disc
+by fact+
+next
+show y # x using (xz # y> by simp
+next
+fix Muv
+assume unit-disc-fic M u € unit-disc v € unit-disc u # v
+assume ?P (moebius-pt M v) (moebius-pt M u)
+then obtain z where «: z € unit-disc poincare-between (moebius-pt M v) (moebius-pt M u) z poincare-distance
+(moebius-pt Mu) z = d
+by auto
+obtain z’ where z’: z = moebius-pt M z' z' € unit-disc
+using <z € unit-discy
+using unit-disc-fiz-iff [of M] <unit-disc-fix M»
+by blast
+thus ?P vu
+using * <u € unit-disc) (v € unit-disc) ‘unit-disc-fir M>
+by auto
+qed
+qed
+thus ?thesis
+using assms d
+by auto
+qed
+
+11.3 Five segment axiom
+
+lemma five-segment-axiom:
+assumes
+in-disc:  € unit-disc y € unit-disc z € unit-disc u € unit-disc and
+in-disc': x' € unit-disc y’ € unit-dise z' € unit-disc u’ € unit-disc and
+x #yand
+betw: poincare-between x y z poincare-between x’ y' z' and
+xy: poincare-distance x y = poincare-distance x' y’ and
+xu: poincare-distance x u = poincare-distance x’ u' and
+yu: poincare-distance y u = poincare-distance y’ u’ and
+yz: poincare-distance y z = poincare-distance y’ z'
+shows
+poincare-distance z u = poincare-distance z' u'
+proof—
+from assms obtain M where
+M: unit-disc-fixz-f MMx=2'Mu=u'My=y’'
+using unit-disc-fiz-f-congruent-triangles|of x y u]
+
+by blast
+have M z = z’
+proof (rule unique-poincare-distance-on-ray[where u=x' and v=y’ and y=M z and z=z' and d=poincare-distance
+2)
+
+show 0 < poincare-distance x z
+using poincare-distance-ge0 in-disc
+by simp
+next
+show 2/4 y’
+using M «x 4 y>
+using in-disc in-disc’ poincare-distance-eq-0-iff xy
+by auto
+next
+show poincare-distance x' (M z) = poincare-distance x z
+using M in-disc
+unfolding unit-disc-fix-f-def
+by auto
+next
+show M z € unit-disc
+using M in-disc
+unfolding unit-disc-fix-f-def
+by auto
+
+140

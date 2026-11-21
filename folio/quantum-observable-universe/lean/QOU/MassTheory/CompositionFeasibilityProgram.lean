@@ -28,7 +28,7 @@ The one-parameter alphabet `(1 − e)σ + eσ⁻¹` (`InterfaceLetterCrossingMix
 enumerated at `A = 2` by `composition_feasibility_a2_probe.py`. Nothing here supplies an
 objective; the Möbius objective's gap is bean `qou-ypc5`. Bean `qou-8r6b`.
 
--- Ref: [manuscript] prop:operator-selection-lp; def:markov-axioms-primitive
+-- Ref: [leitner2026] prop:operator-selection-lp; def:markov-axioms-primitive
 -/
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Tactic.Linarith

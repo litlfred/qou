@@ -25,7 +25,7 @@ LaTeX label: `prop:genus-filtration-ideal`
 
 ## References
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
-- [manuscript] §6/genus-filtration-ideal
+- [leitner2026] §6/genus-filtration-ideal
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -47,24 +47,24 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Number of irreps of H_n(q) = number of partitions of n. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 def heckeIrreps : ℕ → ℕ
   | 2 => 2  -- partitions of 2: (2), (1,1)
   | 3 => 3  -- partitions of 3: (3), (2,1), (1,1,1)
   | _ => 0  -- only H_2 and H_3 are relevant
 
 /-- Total irreps of H_2(q) ⊕ H_3(q) = 5. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 theorem total_irreps : heckeIrreps 2 + heckeIrreps 3 = 5 := by rfl
 
 /-- A torus knot T_{m,n} embeds in genus g iff (m-1)(n-1) ≤ 2g. -/
--- Ref: [manuscript] §6/torus-embeddable-complete
+-- Ref: [leitner2026] §6/torus-embeddable-complete
 def torusEmbeddable (m n g : ℕ) : Prop :=
   (m - 1) * (n - 1) ≤ 2 * g
 
 /-- At genus 3, we have at most 4 embeddable torus knots —
     insufficient to span 5 irreps. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 theorem genus3_insufficient :
     torusEmbeddable 2 3 3 ∧
     torusEmbeddable 2 5 3 ∧
@@ -76,7 +76,7 @@ theorem genus3_insufficient :
 
 /-- At genus 4, we have 6 embeddable torus knots —
     sufficient to span 5 irreps (rank 5 verified numerically). -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 theorem genus4_complete :
     torusEmbeddable 2 3 4 ∧
     torusEmbeddable 2 5 4 ∧
@@ -88,7 +88,7 @@ theorem genus4_complete :
 
 /-- g = 4 is the minimal genus where completeness holds:
     at g = 3 we have < 5 knots, at g = 4 we have ≥ 5. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 theorem minimal_complete_genus :
     -- At g = 3: T_{2,9} doesn't embed
     ¬ torusEmbeddable 2 9 3 ∧
@@ -103,14 +103,14 @@ theorem minimal_complete_genus :
 /-- The Hecke coefficient a_n: T^n = a_n · T + a_{n-1} · 1 in H_2(q).
     Satisfies the recurrence a_{n+1} = s · a_n + a_{n-1}
     with a_0 = 0, a_1 = 1, where s = q - q⁻¹. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 noncomputable def heckeCoeff (s : R_q) : ℕ → R_q
   | 0 => 0
   | 1 => 1
   | n + 2 => s * heckeCoeff s (n + 1) + heckeCoeff s n
 
 /-- The Seifert genus of T_{2,p} is (p-1)/2. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 def seifertGenus_T2p (p : ℕ) : ℕ := (p - 1) / 2
 
 /-- The same recurrence carried in `ℤ[X]` rather than in `R_q`.
@@ -121,13 +121,13 @@ def seifertGenus_T2p (p : ℕ) : ℕ := (p - 1) / 2
     formal indeterminate, not of an element of the coefficient ring. So
     the degree statements below are made about `heckePoly`, the same
     recurrence with `s := X`. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 noncomputable def heckePoly : ℕ → Polynomial ℤ
   | 0 => 0
   | 1 => 1
   | n + 2 => Polynomial.X * heckePoly (n + 1) + heckePoly n
 
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 lemma heckePoly_two : heckePoly 2 = (Polynomial.X : Polynomial ℤ) := by
   show Polynomial.X * heckePoly 1 + heckePoly 0 = Polynomial.X
   show Polynomial.X * 1 + 0 = Polynomial.X
@@ -139,7 +139,7 @@ lemma heckePoly_two : heckePoly 2 = (Polynomial.X : Polynomial ℤ) := by
     once: the degree step needs the *leading coefficient* of the previous
     term to be nonzero, and the monic step needs the previous *degree* to
     dominate. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 theorem heckePoly_monic_natDegree (n : ℕ) :
     (heckePoly (n + 1)).Monic ∧ (heckePoly (n + 1)).natDegree = n := by
   induction n using Nat.strong_induction_on with
@@ -167,14 +167,14 @@ theorem heckePoly_monic_natDegree (n : ℕ) :
           Polynomial.natDegree_eq_of_degree_eq
             (Polynomial.degree_add_eq_left_of_degree_lt hlt), hXd]
 
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 theorem heckePoly_natDegree (n : ℕ) : (heckePoly (n + 1)).natDegree = n :=
   (heckePoly_monic_natDegree n).2
 
 /-- Every nonzero coefficient of `a_{n+1}` sits in a degree congruent to
     `n` mod 2. For odd `p` this says `a_p` is an *even* polynomial in `s`,
     which is what makes it a polynomial in `u = s²` at all. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 theorem heckePoly_coeff_parity (n : ℕ) :
     ∀ k, (heckePoly (n + 1)).coeff k ≠ 0 → k % 2 = n % 2 := by
   induction n using Nat.strong_induction_on with
@@ -226,7 +226,7 @@ theorem heckePoly_coeff_parity (n : ℕ) :
     which is `(p-1)/2 = (p-1)/2` by `rfl` — the binders `s` and
     `heckeCoeff` did not occur in the conclusion, so the claim carried
     none of the content its docstring described. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem chebyshev_degree_eq_genus (p : ℕ) (hp : Odd p) (hp3 : 3 ≤ p) :
     (heckePoly p).natDegree = p - 1
@@ -249,7 +249,7 @@ theorem chebyshev_degree_eq_genus (p : ℕ) (hp : Odd p) (hp3 : 3 ≤ p) :
 
 /-- Arithmetic equivalence: (p-1)/2 ≤ g ↔ (p-1) ≤ 2g.
     Links the Seifert genus bound to the embeddability condition. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 theorem seifert_genus_le_iff (p g : ℕ) (hp : Odd p) :
     (p - 1) / 2 ≤ g ↔ (p - 1) ≤ 2 * g := by
   obtain ⟨m, rfl⟩ := hp
@@ -257,7 +257,7 @@ theorem seifert_genus_le_iff (p g : ℕ) (hp : Odd p) :
 
 /-- At the completeness-determined genus g = 4:
     T_{2,p} embeds iff p ≤ 9. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 theorem genus4_cutoff (p : ℕ) (hp : Odd p) (hp2 : 3 ≤ p) :
     (p - 1) / 2 ≤ 4 ↔ p ≤ 9 := by
   obtain ⟨m, rfl⟩ := hp
@@ -276,7 +276,7 @@ theorem genus4_cutoff (p : ℕ) (hp : Odd p) (hp2 : 3 ≤ p) :
     `- s^(p-1)` added to both sides and closed by `ring` — a
     rearrangement of the definition, saying nothing about any leading
     coefficient. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem leading_chebyshev_coeff_is_one (p : ℕ) (hp : Odd p) (hp3 : 3 ≤ p) :
     (heckePoly p).leadingCoeff = 1 ∧ (heckePoly p).coeff (p - 1) = 1 := by
@@ -293,12 +293,12 @@ theorem leading_chebyshev_coeff_is_one (p : ℕ) (hp : Odd p) (hp3 : 3 ≤ p) :
 
 /-- All primes p ≥ 11 are obstructed at the completeness-determined
     genus g = 4.  Their Hecke coefficients lie in I_4 = (u^5). -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 theorem all_large_primes_obstructed (p : ℕ) (hp : 11 ≤ p) :
     ¬ ((p - 1) / 2 ≤ 4) := by omega
 
 /-- Concrete instances for readability. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
+-- Ref: [leitner2026] §6/genus-filtration-ideal
 example : ¬ ((11 - 1) / 2 ≤ 4) := all_large_primes_obstructed 11 (by omega)
 example : ¬ ((13 - 1) / 2 ≤ 4) := all_large_primes_obstructed 13 (by omega)
 

@@ -1,0 +1,55 @@
+Chapter 5 The Tjon band in Nuclear Lattice Effective Field Theory
+
+we utilize a more sophisticated procedure: Using the radial projection method we impose a spherical
+wall, but we first project the system onto its partial waves where the only degree of freedom is the radial
+one. This projection accelerates the fit procedures and is necessary particularly in the case of small lattice
+spacings. Then the basis turns from a three-dimensional vector IR) to a radial basis IRYe::
+
+Ry = YY Ree |R’) (5.43)
+R
+
+Here, the ¥;; are the spherical harmonics specified by their angular momentum /, /,. Consequently, all
+operators are projected to a radial basis, too,
+
+OR) > O(R), (5.44)
+
+and the problem can be solved completely in the reduced basis analogous to Eqs. (5.41,5.42). Details of
+the method can be found in Refs. [83, 133] where the projection, the binning, the new radial metric and
+the extraction method for coupled channels are explained. In an uncoupled channel, the projected radial
+wave function solution Wr) can be directly identified with the spherical Bessel functions in a region
+
+between the interaction region and the spherical wall, which we confine to be between R,,, and R,,,. Thus,
+the phase shift 6, can be read off immediately,
+Wp (7) = NP [cot (61) ji(pr) + m(pr)] (5.45)
+
+where p is the relative momentum, NV” a normalization constant and j,(pr) and n,(pr) the spherical Bessel
+functions of first and second kind. For the perturbative energy corrections, we have to use the projected
+potentials and the new phase shifts are calculated using the energy shifts according to Ref. [61]. For the
+lattice spacing of a = 1.97 fm we use L = 32 [l.u.], Ryay = 14.02 [1.u.], Rin = 9.02 and Roy, = 12.02 [l.u.].
+For the smaller lattice spacings, we use the same values for these parameters in physical units (fm). For
+the neutron-proton fit procedure we follow Ref. [116]. In general, we doa XV fit to partial wave analysis
+data PWA, NijmlI, NijmlI and Reid93 of [134] according to [22],
+
+_ gpway?
+v=) ae (5.46)
+7
+
+i
+where the error is defined as A; = max[AP™A, je" - FWA, jee" - PWAY, jsReidds - oPWAN, Further
+details on errors and error propagation can be found in App. C. At LO we fit the LECs C: So and C3 S,
+
+to the 'S 9 and 35 ; channel up to 100 MeV, and we keep the smearing parameter b fixed at b = 0.07.
+While we could use it as a fit parameter as well for the coarse lattice, it will cause some problem for
+small lattice spacing. As one can see in Ref. [116], most of the partial waves are better described with
+smaller lattice spacing except for the 's 9 channel which becomes too strong. The reason is that the
+LO smearing parameter is mainly determined by the 35 ,; channel due to the different errors in the PWA
+analysis. This effect is negligible for large lattice spacings but becomes sizable for smaller ones and
+worsens the prediction of the 's ¢ wave. Hence, we keep the smearing parameter close to the fit value for
+a = 1.97 fm and all corrections are done by NLO and N2LO insertions.
+
+Once the LO is fixed, we include isospin-breaking effects, the improved description of the OPEP,
+the TPEP at NLO and N2L0 as well as the NLO contact terms. We fit all remaining coefficients to S
+and P waves up to 150 MeV momentum as well as the deuteron binding energy. Afterwards we fit the
+proton-proton interaction term to the pp 's Phase shift and the neutron-neutron interaction term to the
+
+56

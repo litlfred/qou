@@ -47,7 +47,7 @@ $\{A_n\}_{n \geq 0}$
 base-level morphism $\varrho_0 \colon \mathbf{1} \to A_0$.
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/topological-mass.ts
 theorem mass_decomposition_categorical [ctx : MassDecompositionCategoricalContext] :
     ctx.mass = (Finset.range ctx.N).sum (fun n => ctx.mass_level n) :=
   ctx.impl_mass_decomposition_categorical ctx.decomposition_active

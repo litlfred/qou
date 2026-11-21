@@ -1,0 +1,28 @@
+1254 Francois Guéritaud and David Futer
+
+Sublemma 6.5 Let U be the quotient of the torus at infinity of V, by the action of
+the hyperelliptic involution o of the fiber, so that B’ C U. Suppose (wj) is critical
+for V. Then the representation p: 7\(B’,xo) + C* « C descends to a representation
+pu: ™(U,x0) — C* « C whose first projection wy: ™(U, x0) — C* is trivial.
+
+Figure 8
+
+Proof To see that py is well-defined, we only need to check that, if 7 is (conjugated
+to) a loop around a vertex v of A’, then p(y) = 1. If v has valence 4, it has already
+been done. If not, by the argument preceding Sublemma 6.5, it is sufficient to check
+that 2([y]) = 1, where [y] denotes the homology class of y. But in H\(B’, Z), the
+element [7] is a sum of loops around 4—valent vertices and curves following “grey”
+levels (see Figure 8: the vertical edges of B’ on the two sides of the picture are identified,
+and the curves crossing these edges undergo a “split-and-paste” process to yield 7).
+So by Sublemma 6.4, ~([y]) = 1; therefore py is well-defined. Moreover, if 3 is a
+curve following a “grey” level, Sublemma 6.4 tells that py(3) = p(G) is a nonidentical
+Euclidean translation. The value of py on another generator of 7(U) (which is abelian)
+must commute with py(3), and therefore be a translation too. So py has its image
+contained in {1} x C and wy = 1, completing the proof. a
+
+By assigning length 1, for example, to the reference edge €o of A’, a critical point (w,)
+of the volume functional thus defines the lengths of all other edges of A’ in a coherent
+way. This yields a complete Euclidean metric g on U. The universal cover U of U thus
+embeds into C (the embedding, also called the developing map of the local Euclidean
+
+Geometry & Topology 10 (2006)

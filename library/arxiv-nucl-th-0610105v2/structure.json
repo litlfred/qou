@@ -6,10 +6,12 @@
   "sha256": "5f3bd6d31a419d4d5368b1a25d578c46d67ad6aa626a2cbeb5b49eb411bcda90",
   "bytes": 208806,
   "pages": 14,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,22 +22,30 @@
   },
   "doi": null,
   "title": "Universal Properties of the Four-Body System with Large Scattering Length",
-  "authors_raw": "Universit\u00e4t Bonn, 53115 Bonn, Germany",
-  "abstract": "Few-body systems with large scattering length have univers al properties that do not depend on the details of their interactions at short distances. We stu dy the universal bound state properties of the four-boson system with large scattering length in an e \ufb00ective quantum mechanics approach. We compute the four-body binding energies using the Yakubov sky equations for positive and negative scattering length. Moreover, we study the correla tion between three- and four-body energies and present a generalized E\ufb01mov plot for the four-b ody system. These results are useful for understanding the cluster structure of nuclei and for th e creation of weakly-bound tetramers with cold atoms close to a Feshbach resonance. PACS numbers: 03.65.Ge, 36.40.-c, 21.45.+v \u2217 Electronic address: hammer@itkp.uni-bonn.de \u2020Electronic address: lplatter@phy.ohiou.edu 1",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20190508150818-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "Universal Properties of the Four-Body System with Large Scattering Length H.-W. Hammer \u2217 Helmholtz-Institut f\u00fcr Strahlen- und Kernphysik (Theori e)",
+  "authors_raw": "H.-W. Hammer∗",
   "title_lines": [
    "Universal Properties of the Four-Body System with Large",
-   "Scattering Length",
-   "H.-W. Hammer \u2217",
-   "Helmholtz-Institut f\u00fcr Strahlen- und Kernphysik (Theori e)"
-  ]
+   "Scattering Length"
+  ],
+  "abstract": "Few-body systems with large scattering length have universal properties that do not depend on the details of their interactions at short distances. We study the universal bound state properties of the four-boson system with large scattering length in an eﬀective quantum mechanics approach. We compute the four-body binding energies using the Yakubovsky equations for positive and negative scattering length. Moreover, we study the correlation between three- and four-body energies and present a generalized Eﬁmov plot for the four-body system. These results are useful for understanding the cluster structure of nuclei and for the creation of weakly-bound tetramers with cold atoms close to a Feshbach resonance. PACS numbers: 03.65.Ge, 36.40.-c, 21.45.+v ∗Electronic address: hammer@itkp.uni-bonn.de †Electronic address: lplatter@phy.ohiou.edu",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20190508150818-04'00'"
+  },
+  "title_raw": "Universal Properties of the Four-Body System with Large Scattering Length",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Universal Properties of the Four-Body System with Large Scattering Length Abstract",
+   "outline": "Introduction",
+   "text": "Universal Properties of the Four-Body System with Large Scattering Length",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Universal Properties of the Four-Body System with Large Scattering Length Abstract"
  },
  "toc": [
   {
@@ -43,173 +53,449 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Few-Body Bound State Equations in Effective Theory",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "The Two-Body Sector",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The Three-Body Sector",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "The Four-Body Sector",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Four-Body Universality",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Bound State Spectrum",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Universal Correlations",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Summary and Outlook",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "References",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The a−1–K plane for the three-body problem",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The a−1–K plane for the four-body problem. The circles and triangles indicate the fourbody ground and excited state energies B(0)",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The correlation between the three-body ground state energy B(0)",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The correlation between the three-body ground state energy B(0)",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1202,
+   "n_words": 162,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 9102,
-   "n_words": 1489
+   "page_end": 3,
+   "n_chars": 6800,
+   "n_words": 1060,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-001-the-two-body-sector",
+   "id": "sec-001-few-body-bound-state-equations-in-effective-theo",
+   "number": null,
+   "title": "Few-Body Bound State Equations in Effective Theory",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2241,
+   "n_words": 362,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-the-two-body-sector",
    "number": null,
    "title": "The Two-Body Sector",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1300,
-   "n_words": 232
+   "n_chars": 1308,
+   "n_words": 224,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-002-the-three-body-sector",
+   "id": "sec-003-the-three-body-sector",
    "number": null,
    "title": "The Three-Body Sector",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3320,
-   "n_words": 566
+   "n_chars": 3297,
+   "n_words": 545,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-003-the-four-body-sector",
+   "id": "sec-004-the-four-body-sector",
    "number": null,
    "title": "The Four-Body Sector",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 3344,
-   "n_words": 594
+   "n_chars": 3420,
+   "n_words": 583,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-004-four-body-universality",
+   "id": "sec-005-four-body-universality",
    "number": null,
    "title": "Four-Body Universality",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 87,
-   "n_words": 15
+   "n_chars": 109,
+   "n_words": 16,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-005-bound-state-spectrum",
+   "id": "sec-006-bound-state-spectrum",
    "number": null,
    "title": "Bound State Spectrum",
    "level": 2,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 8780,
-   "n_words": 1381
+   "n_chars": 8151,
+   "n_words": 1294,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
-   "id": "sec-006-universal-correlations",
+   "id": "sec-007-universal-correlations",
    "number": null,
    "title": "Universal Correlations",
    "level": 2,
    "page_start": 10,
-   "page_end": 13,
-   "n_chars": 9313,
-   "n_words": 1574
+   "page_end": 12,
+   "n_chars": 3778,
+   "n_words": 632,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-007-acknowledgments",
+   "id": "sec-008-summary-and-outlook",
+   "number": null,
+   "title": "Summary and Outlook",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 5478,
+   "n_words": 873,
+   "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-009-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 3502,
-   "n_words": 557
+   "n_chars": 3481,
+   "n_words": 540,
+   "label_start": "13",
+   "label_end": "14"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 8,
-  "chars_total": 38748,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 39265,
+  "furniture_lines_stripped": 14,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "4bdyrev2.tex",
    "tex_sections": 9,
-   "overlaid": 6,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -217,61 +503,82 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.856,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-the-two-body-sector",
+     "id": "sec-001-few-body-bound-state-equations-in-effective-theo",
+     "title": "Few-Body Bound State Equations in Effective Theory",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-the-two-body-sector",
      "title": "The Two-Body Sector",
      "prose_ratio": 0.962,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-the-three-body-sector",
+     "id": "sec-003-the-three-body-sector",
      "title": "The Three-Body Sector",
      "prose_ratio": 0.957,
-     "coverage_ratio": 0.982,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-003-the-four-body-sector",
-     "title": "The Four-Body Sector",
-     "prose_ratio": 0.941,
      "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-four-body-universality",
-     "title": "Four-Body Universality",
-     "prose_ratio": 0.348,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-005-bound-state-spectrum",
-     "title": "Bound State Spectrum",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.964,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-006-universal-correlations",
-     "title": "Universal Correlations",
-     "prose_ratio": 0.941,
+     "id": "sec-004-the-four-body-sector",
+     "title": "The Four-Body Sector",
+     "prose_ratio": 0.965,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-acknowledgments",
+     "id": "sec-005-four-body-universality",
+     "title": "Four-Body Universality",
+     "prose_ratio": 0.348,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-bound-state-spectrum",
+     "title": "Bound State Spectrum",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-universal-correlations",
+     "title": "Universal Correlations",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-summary-and-outlook",
+     "title": "Summary and Outlook",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-acknowledgments",
      "title": "Acknowledgments",
      "result": "no matching \\section"
     }

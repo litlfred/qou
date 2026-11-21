@@ -1,0 +1,1 @@
+Let (A’, d(A)) be a complex of finite dimensional complex vector spaces with the differential depending on a complex parameter 2 holomorphic in a neighbourhood of zero. Suppose that (A’, d(0)) is acyclic.

@@ -1,0 +1,48 @@
+21 Page 6 of 19 Algorithmica (2026) 88:21
+
+association doesn’t imply negative regression [22], but the opposite implication is not
+known. This will be the other focus of the paper.
+Strong Rayleigh.
+A collection of random variables X1,..., Xp is said to satisfy the strong Rayleigh
+property if the generating function
+n Xj
+
+F(z1,.-+5 Zn) = Elf [ja 2;']
+is a real stable polynomial (i.e., it has no root (z1,..., Zn) € C” with all positive
+imaginary components). The strong Rayleigh property is the strongest notion of neg-
+ative dependence, and has been shown to imply all other studied negative dependence
+definitions [28]. As a result, all of our results apply here as well.
+
+2.2 Submodular Functions
+We also give a quick review of the basics of submodular functions.
+
+Submodular Functions.
+We say that a function f : {0, 1}” — R is submodular if
+
+f(X1,..-, Kina, 1, Xig1, -.. Xn) — f(X1,«.., Xi-1, 0, Xigi,..- Xn)
+is a non-increasing function of X,..., X;-1, Xi41,.-., Xp» for eachi € [n]. When
+viewing the binary input of f as the indicator vector for a set, this is equivalent to the
+
+more common definition that f is submodular if for any X, Y C [n] with X C Y and
+any x ¢ Y, we have
+
+F(X U Lx) — F(X) >= FWY {x})) — fF).
+
+Supermodular Functions.
+We say that a function g : {0, 1}” > R is supermodular if
+
+8(X1,..-, Xin, 1, Xig1, --. Xn) — 9(X1,..., Xi-1, 0, Xigi,.-- Xn)
+is a non-decreasing function of X;,..., Xj-1, Xi41,..., Xn for eachi € [n]. When
+viewing the binary input of g as the indicator vector for a set, this is equivalent to the
+
+more common definition that g is supermodular if for any X,Y C [n] with X C Y
+and any x ¢ Y, we have
+
+g(X U{x}) — 8(X) < g(VU {x}) — 8).
+
+Mutlilinear Extension.
+The multilinear extension of a function f is
+
+F(x)= E[f(x)] = sew f(S) Ties xi Tigs( — Xi),
+
+aN Springer

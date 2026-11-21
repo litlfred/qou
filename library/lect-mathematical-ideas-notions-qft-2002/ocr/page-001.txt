@@ -1,0 +1,49 @@
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD
+THEORY
+
+1. GENERALITIES ON QUANTUM FIELD THEORY
+
+1.1. Classical mechanics. In classical mechanics, we study the motion of a par-
+ticle. This motion is described by a (vector) function of one variable, gq = q(t),
+representing the position of the particle as a function of time. This function must
+satisfy the Newton equation of motion,
+
+g=-U'(q),
+
+where U the potential energy, and the mass of the particle is 1. Another way
+to express this law of motion is to say that q(t) must be a solution of a certain
+variational problem. Namely, one introduces the Lagrangian
+
+im
+
+La= 7 -U@
+
+(the difference of kinetic and potential energy), and the action functional
+
+b
+s@= [ cat
+
+(for some fixed a < b). Then the law of motion can be expressed as the least action
+principle: q(t) must be a critical point of S on the space of all functions with given
+q(a) and q(b). In other words, the Newton equation is the Euler-Lagrange equation
+for the solution of the variational problem defined by S.
+
+Remark 1. The name “least action principle” comes from the fact that in
+some cases (for example when U" < 0) the action is not only extremized but also
+minimized at the solution q(t). In general, however, it is not the case, and the
+trajectory of the particle may not be a minimum, but only a saddle point of the
+action. Therefore, the law of motion is better formulated as the “extremal (or
+stationary) action principle”; this is the way we will think of it in the future.
+
+Remark 2. Physicists often consider solutions of Newton’s equation on the
+whole line rather than on a fixed interval [a,b]. In this case, the naive definition
+of an extremal does not make sense, since the action integral S(q) = fy £(q)dt
+is improper and in general diverges. Instead, one makes the following “correct”
+definition: a function g(t) on R is an extremal of S if the expression
+
+d OL, OL.
+Selo [ Cla + seat = [Get Geto
+
+where e(t) is any compactly supported perturbation, is identically zero. With this
+definition, the extremals are exactly the solutions of Newton’s equation.
+1

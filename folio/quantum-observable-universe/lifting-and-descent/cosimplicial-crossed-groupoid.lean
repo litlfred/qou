@@ -16,7 +16,7 @@ maps from descent, and the crossed structure from conjugation of
 
 - [yekutieli2010] Central Extensions of Gerbes, §3–4
 - [yekutieli2015] Nonabelian Multiplicative Integration on Surfaces
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -117,8 +117,26 @@ in the category of crossed groupoids. -/
     - Codegeneracy maps `σʲ : 𝔊ₙ₊₁ → 𝔊ₙ` from descent
     - Crossed structure from conjugation via Ad(SU_{qₙ}(2))
 
-    LaTeX: `\label{prop:cosimplicial-crossed-groupoid}` -/
--- Ref: [yekutieli2010] §4, [manuscript] §3
+    LaTeX: `\label{prop:cosimplicial-crossed-groupoid}`
+
+    **🛑 Vacuity status (audited 2026-11-20, bean `qou-dx7g`; triage rank 41).**
+    This structure does **not** encode the proposition.  (1) The three
+    "cosimplicial identities" constrain only the `.level : ℕ` field of the
+    image triples, never the triples themselves, and they are not the
+    cosimplicial identities: there is one coface and one codegeneracy per
+    level rather than the indexed families `δⁱ : 𝔊ₙ → 𝔊ₙ₊₁` (`0 ≤ i ≤ n+1`) and
+    `σʲ : 𝔊ₙ₊₁ → 𝔊ₙ`, so `δʲδⁱ = δⁱδʲ⁻¹` cannot even be stated.  (2) No field
+    ties `coface` to `tripleAt` or to jet prolongation, and `crossedMod n` is
+    unrelated to the triple at level `n`; `cosimplicial_crossed_groupoid_exists`
+    inhabits it with level-shifts and `PUnit` crossed modules.  A faithful
+    version would take the cosimplicial object from Mathlib
+    (`CategoryTheory.CosimplicialObject`, whose identities are theorems) with
+    `[n] ↦ 𝔊ₙ` and the coface maps given by jet prolongation.  Neither the
+    brane tower (`QOU.Torsion.RecursiveBraneTower` is itself abstract) nor jet
+    prolongation is defined in the corpus, so the free fields — `tripleAt`,
+    `coface`, `codegeneracy`, `crossedMod` — stay free.  The library twin
+    `QOU.LiftingDescent.CosimplicialCrossedGroupoid` has the same shape. -/
+-- Ref: [yekutieli2010] §4, [leitner2026] §3
 structure CosimplicialCrossedGroupoid (M : Type*) where
   /-- The Yekutieli triple at each level. -/
   tripleAt : (n : ℕ) → YekutielijTriple M
@@ -149,7 +167,7 @@ structure CosimplicialCrossedGroupoid (M : Type*) where
     identity holds by conjugation-triviality and no archimedean
     specialisation to `ℝ` is required anywhere. -/
 -- Ref: [yekutieli2010] §4, Theorem 4.2
--- Ref: [manuscript] §3, Proposition: Cosimplicial crossed groupoid
+-- Ref: [leitner2026] §3, Proposition: Cosimplicial crossed groupoid
 theorem cosimplicial_crossed_groupoid_exists (M : Type*)
     [inst : Nonempty M] :
     Nonempty (CosimplicialCrossedGroupoid M) := by

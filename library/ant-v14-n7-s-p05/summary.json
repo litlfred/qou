@@ -2,100 +2,70 @@
  "_schema": "library-summary/v1",
  "doc_id": "ant-v14-n7-s-p05",
  "source_sha256": "1c8e94ff62a8d920",
- "brief": "Motivic Gauss–Bonnet formulas — 18 sections: Duality and Euler characteristics; TX/B(1X×B X); TX/B(p∗",
- "extended": "**Motivic Gauss–Bonnet formulas**\n\n*Marc Levine and Arpon Raksit*\n\n52 pp, 18 sections.\n\n**Outline.** 2 Duality and Euler characteristics; 1 TX/B(1X×B X); 1 TX/B(p∗; 1 TX/B(1X×B X))≃πX♯6−TX/B p1♯(1X×B X)≃πX! p1♯ ; 3 SL-oriented motivic spectra; 4 Projective pushforward in twisted cohomology; 5 Motivic Gauss–Bonnet; 6 SL-oriented cohomology theories; 2 M); 1 L⊗ p∗; 7 Comparison isomorphisms; 8 Applications; 0 (X;ωX/k)= Hd(X, KMW; 0 (X, L):= GW(Dperf(X), L[r], can),; 0 (k)= GW(k),; 0 (k)≃ GW(k). □; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 5.3: Let E∈ SH(B) be an SL-oriented motivic ring spectrum,πX:\n- Theorem 7.1: Suppose the pushforward maps\n- Theorem 1.1.9: ], where for p, using the projective bundle formula, the key point is to show that both\n- Theorem 8.1: Let X∈ Smk be projective of dimension dX. Then\n- Theorem 8.2: Let X∈ Smk be projective of dimension dX. Then\n- Theorem 8.3: LetπX: X→ B be a smooth projective morphism with B a regular separated scheme of",
+ "brief": "Motivic Gauss–Bonnet formulas — 12 sections: Front matter; Introduction; X+ ∈SH(k) is dualizable. In partic",
+ "extended": "**Motivic Gauss–Bonnet formulas**\n\n*Marc Levine and Arpon Raksit*\n\n52 pp, 12 sections.\n\n**Outline.** Front matter; 1 Introduction; T X+ ∈SH(k) is dualizable. In particular, we c; 2 Duality and Euler characteristics; 3 SL-oriented motivic spectra; 4 Projective pushforward in twisted cohomology; 5 Motivic Gauss–Bonnet; 6 SL-oriented cohomology theories; 7 Comparison isomorphisms; 8 Applications; Acknowledgements; References",
  "tokens": {
-  "brief": 25,
-  "extended": 254
+  "brief": 26,
+  "extended": 106
  },
  "sections": [
   {
-   "id": "sec-000-2-duality-and-euler-characteristics",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-t-x-shk-is-dualizable-in-particular-we-can-assoc",
+   "title": "X+ ∈SH(k) is dualizable. In particular, we can associate to X a natural Euler characteristic χ(X/k) ∈EndSH(k)(1k), deﬁned as the composition",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-2-duality-and-euler-characteristics",
    "title": "Duality and Euler characteristics",
-   "pages": "4-9"
+   "pages": "4-13"
   },
   {
-   "id": "sec-001-1-txb1xb-x",
-   "title": "TX/B(1X×B X)",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-002-1-txbp",
-   "title": "TX/B(p∗",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-003-1-txb1xb-xπx6txb-p11xb-xπx-p1-p",
-   "title": "TX/B(1X×B X))≃πX♯6−TX/B p1♯(1X×B X)≃πX! p1♯ p∗",
-   "pages": "10-13"
-  },
-  {
-   "id": "sec-004-3-sl-oriented-motivic-spectra",
+   "id": "sec-003-3-sl-oriented-motivic-spectra",
    "title": "SL-oriented motivic spectra",
    "pages": "13-21"
   },
   {
-   "id": "sec-005-4-projective-pushforward-in-twisted-cohomology",
+   "id": "sec-004-4-projective-pushforward-in-twisted-cohomology",
    "title": "Projective pushforward in twisted cohomology",
-   "pages": "21-25"
+   "pages": "21-26"
   },
   {
-   "id": "sec-006-5-motivic-gaussbonnet",
+   "id": "sec-005-5-motivic-gaussbonnet",
    "title": "Motivic Gauss–Bonnet",
-   "pages": "25-27"
+   "pages": "26-27"
   },
   {
-   "id": "sec-007-6-sl-oriented-cohomology-theories",
+   "id": "sec-006-6-sl-oriented-cohomology-theories",
    "title": "SL-oriented cohomology theories",
-   "pages": "27-27"
-  },
-  {
-   "id": "sec-008-2-m",
-   "title": "M)",
-   "pages": "27-27"
-  },
-  {
-   "id": "sec-009-1-l-p",
-   "title": "L⊗ p∗",
    "pages": "27-31"
   },
   {
-   "id": "sec-010-7-comparison-isomorphisms",
+   "id": "sec-007-7-comparison-isomorphisms",
    "title": "Comparison isomorphisms",
    "pages": "31-36"
   },
   {
-   "id": "sec-011-8-applications",
+   "id": "sec-008-8-applications",
    "title": "Applications",
-   "pages": "36-40"
+   "pages": "36-50"
   },
   {
-   "id": "sec-012-0-xωxk-hdx-kmw",
-   "title": "(X;ωX/k)= Hd(X, KMW",
-   "pages": "40-41"
-  },
-  {
-   "id": "sec-013-0-x-l-gwdperfx-lr-can",
-   "title": "(X, L):= GW(Dperf(X), L[r], can),",
-   "pages": "41-45"
-  },
-  {
-   "id": "sec-014-0-k-gwk",
-   "title": "(k)= GW(k),",
-   "pages": "45-45"
-  },
-  {
-   "id": "sec-015-0-k-gwk",
-   "title": "(k)≃ GW(k). □",
-   "pages": "45-50"
-  },
-  {
-   "id": "sec-016-acknowledgements",
+   "id": "sec-009-acknowledgements",
    "title": "Acknowledgements",
    "pages": "50-50"
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-010-references",
    "title": "References",
    "pages": "50-52"
   }
@@ -103,8 +73,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

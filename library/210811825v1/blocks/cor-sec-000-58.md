@@ -1,1 +1,0 @@
-Let (M, g) be as above, and assume∂M⁄=∅. Assume there exists a

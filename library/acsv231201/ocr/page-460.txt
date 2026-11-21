@@ -1,0 +1,46 @@
+442 Integration on manifolds
+
+Exercise A.3. Give a description of the complex projective variety Vo when
+Oz) =1-x-y".
+
+A real m-manifold is called an orientable manifold if it can be covered by
+charts (Uy, ¢) such that the real transition maps ¢y ° oj" 2 @g(Ua NM Ug) >
+¢a(Ug OM Ug) have Jacobian matrices with positive determinants. Such a cover
+yields an orientation, which is the set of all chart maps consistent with the
+chosen orientation (meaning that all transition maps still have positive Jacobian
+determinants).
+
+Exercise A.4. Show that the standard 2-sphere S* ¢ R? is orientable.
+
+In fact, the notion of orientability is interesting only for real manifolds. The
+following classical result follows from the results of Section A.4 below.
+
+Proposition A.6. Every complex manifold is orientable when considered as a
+real manifold.
+
+A smooth map between two real manifolds M and M’ of dimensions m and
+nis a function f : M — M’ such that for any p € M and any chart maps
+¢ on a chart of M containing p and w on a chart of M’ containing f(p), the
+function y o f o 6"! from a subset of R” to R” is smooth. Holomorphic maps
+between complex manifolds are defined analogously, requiring wo f o @! to
+be holomorphic instead of smooth.
+
+In this appendix we construct various objects associated with manifolds:
+tangent bundles, differential forms, chain complexes, homology, etc. Without
+introducing large amounts of category theory for its own sake, some categorical
+terminology is useful because it guides us to what should be true and what
+arguments are predictable symbol manipulation — so-called diagram chases
+— that can be skipped. In particular, our constructions are functorial. In the
+covariant case this means that, in addition to associating an object G(M) with
+each manifold M, we associate a map G.(f) : GM) — G(M’) with every
+map f : M —> M’ between manifolds, having the property that G.(g 0 f) =
+G.(g) o G.(f). The map G.(f) between the objects G/M) and G(M’) is said
+to be the induced map associated to f. In the contravariant case, the induced
+map G*(f) : GM’) — G(M)) goes in the other direction (as indicated by the
+raised *) and G*(g 0 f) = G*(f) ° G*(g).
+
+Exercise A.5. Let G(M) denote the space of smooth real-valued functions on
+M. Determine whether this should be viewed as a covariant or contravariant
+functor, and define the map G, or G* as the case may be.
+
+Given a manifold M, an R'-bundle E over M is a map of manifolds 7: E >

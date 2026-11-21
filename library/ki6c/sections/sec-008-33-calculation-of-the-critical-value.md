@@ -1,6 +1,6 @@
 ---
 doc_id: ki6c
-doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction"
+doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings"
 section_id: sec-008-33-calculation-of-the-critical-value
 section_title: "Calculation of the critical value"
 section_number: 3.3
@@ -8,7 +8,9 @@ pages: 18-20
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings."
 ---
+Calculation of the critical value
 In this section, we calculate the concrete values of a critical point and the Hesse matrix
 of ˆV .
 The diﬀerentials of ˆV are presented by
@@ -190,4 +192,3 @@ H0 = 2π
 .
 (42)
 19
-3.4

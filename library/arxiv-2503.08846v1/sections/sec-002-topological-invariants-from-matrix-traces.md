@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Topological invariants from matrix traces
 It will be useful to review a few important steps explaining the origin of the Jones polynomial, as they
 will also be helpful for later applications.
 An important object is the (Artin) braid group.
@@ -95,4 +96,3 @@ Markov property can be expressed diagrammatically as
 which is a particular expression of the I Reidemeister move. Therefore, Markov traces of braids should be
 invariant under all the Reidemester moves, or, in other words, they should compute topological invariants
 of knots and links.
-2.2

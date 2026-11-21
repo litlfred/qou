@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume"
+doc_title: "Formulas on hyperbolic volume ∗"
 section_id: sec-005-23-hyperbolic-orthogonal-coordinate-system
 section_title: "Hyperbolic orthogonal coordinate system"
 section_number: 2.3
 pages: 4-5
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
-latex_coverage_ratio: 0.906
+latex_coverage_ratio: 0.919
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 Put an orthogonal system of axes to paracycle coordinate system such that, the new half-axes let the tangent half-lines at the origin of the old one. (We can see it on Fig.3.) To determine the new coordinates of the point $P$ we project $P$ orthogonally to the hyperplane spanned by the axes $x_1,x_2,\cdots, x_{n-2},x_n$. The getting point is $P_{n-1}$. Then we project orthogonally $P_{n-1}$ onto the $(n-2)$-space spanned by $x_1,x_2,\cdots, x_{n-3},x_n$. The new point is $P_{n-2}$. Now the $(n-1)^{th}$ coordinate is the distance of $P$ and $P_{n-1}$, the $(n-2)^{th}$ is the distance of $P_{n-1}$ and $P_{n-2}$ and so on \... In the last step we get the $n^{th}$ coordinate which is the distance of the point $P_1$ from the origin $O$.
 

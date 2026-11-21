@@ -1,8 +1,8 @@
-**Proposition (q-difference recurrence of the binding generating function; conditional on [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)).**
+**Proposition (q-difference recurrence of the binding generating function).**
 
 Let $G(x;q)=\sum_{n\geq 0} B_n(K)\,x^n$ be the generating function of the
 body-order binding terms
-([`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)).
+([Binding many-body series equals the jet-order filtration: $B(K)=\sum_n m_e\,a_D^{(n)}$](#conj:binding-manybody-eq-jet-filtration)).
 Suppose $G$ satisfies a fibre-level $q$-difference equation
 
 $$
@@ -12,42 +12,46 @@ $$
 
 Then:
 
-1. **Linear recurrence.** The body terms satisfy a depth-$d$ linear
-   recurrence $B_{n+d} = \sum_{j=0}^{d-1} a_j(q)\,B_{n+j}$, with kernel
-   $\{a_j\}$ read off from $R$. In particular the empirical "$\rho\cdot A$"
-   scale rule governing the growth of the terms is the **solution of the
-   recurrence — an output of $R$, not a fitted constant**.
+1. **Linear $q$-recurrence.** Writing $R = \sum_j r_j(q)\,x^j$, the body terms
+   satisfy an order-$d$ linear recurrence whose coefficients depend on the
+   position through $q^n$; for polynomial $R$,
+   $(q^n - r_0)\,B_n = \sum_{j=1}^{d} r_j\,B_{n-j}$. Every term is fixed by
+   $R$ and the first $d$ terms, so whatever growth the $B_n$ show is an
+   output of $R$, not a fitted constant. The coefficients are **not**
+   constant in $n$: for $R = 1 - x$ the solution $B_n = 1/(q;q)_n$ gives
+   $1, -1, 1/3, -1/21, 1/315$ at $q = 2$, which satisfies no constant-coefficient
+   recurrence of depth $1$ or $2$.
 2. **Archimedean image.** Under the realisation functor $\tau$ at $q=q_0$,
    the $q$-difference equation passes to a linear (Dirac-type) differential
    equation on the realised generating function: the fibre $q$-shift becomes
    a derivation in the archimedean limit.
 
 The implications (1)--(2) are the standard passage from a $q$-holonomic
-generating function to a $P$-recursive coefficient sequence and its
+generating function to a $q$-recursive coefficient sequence (coefficients
+polynomial in $q^n$) and its
 confluent (differential) limit; they hold for *any* such $R$. What is
 **open** is the existence and identity of the kernel $R$ for the binding
 $G$. By the precision-floor obstruction — the $c_k$ information bound, which
 makes term data unmeasurable beyond low order — $R$ **cannot** be fixed by
 fitting the $B_n$; it must be derived from the fibre root-of-unity
 singularity structure of the Seiberg--Witten differential
-([`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum)). This is the
+([The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum)). This is the
 same $q$-difference machinery as the $\mathfrak{Q}_\beta$ precision ladder, applied to
 the binding series.
 
-> **Scope note (2026-08-26) — the rank-1 hypothesis is unsatisfiable on both
+> **Scope of the rank-1 hypothesis — unsatisfiable on both
 > proposed carriers; the proposition survives only in rank $2$.** The
 > supposition above is a *first-order* (rank-1) $q$-difference relation. Two
 > carriers have been proposed for $G$, and neither admits one.
 >
 > The **raw** carrier — the ordinary generating function of the raw body terms
 > $B_n = I(n)/n$ — was excluded by the confluent/Gevrey growth argument
-> ([`QOU.Mass.QDifferenceConfluentObstruction.no_bounded_depth_first_order_kernel`](../lean/QOU/Mass/QDifferenceConfluentObstruction.lean),
-> sorry-free). That exclusion explicitly re-targeted the conjecture at the
+> (proved).
+> That exclusion explicitly re-targeted the conjecture at the
 > **$q$-Borel / Gevrey-normalized** carrier $b_n = f_n/[n]_q!$, predicting depth
 > $d = 2$. The normalized carrier provably satisfies
 > $[m+2]_q\,b_{m+2} = b_{m+1} + b_m$, i.e. the operator
-> $L_{\mathcal{K}} = (q^2x-1)\sigma^2 - (q-1)\sigma - (q-1)$ named by
-> [`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol).
+> $L_{\mathcal{K}} = (q^2x-1)\sigma^2 - (q-1)\sigma - (q-1)$.
 >
 > A scalar kernel is a first-order right factor $\sigma - a$ of
 > $L_{\mathcal{K}}$, i.e. a solution $a\in K(x)$ of the $q$-Riccati equation
@@ -61,8 +65,7 @@ the binding series.
 > $L_{\mathcal{K}}$ obeys any scalar relation $G(qx) = R(q,x)G(x)$ with
 > $R \in K(x)$** — a fortiori none with $R\in\mathbb{Q}(q)[x,x^{-1}]$ of any
 > depth $d$; the depth never enters the argument, only the degrees do.
-> Sorry-free in
-> [`QOU.Mass.BindingScalarKernelParityExclusion`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean).
+> This exclusion is proved.
 >
 > **Scope (b), structural exclusion, invariant cited.** The parity is the
 > Newton-slope invariant: $L_{\mathcal{K}}$ is pure isoclinic of slope

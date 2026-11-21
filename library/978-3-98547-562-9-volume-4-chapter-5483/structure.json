@@ -7,29 +7,45 @@
   "bytes": 645269,
   "pages": 22,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.4171/ICM2022/13",
-  "title": "Floer cohomology , singularities, and birational geometry Mark McLean",
-  "authors_raw": null,
+  "title": "Floer cohomology, singularities, and birational geometry",
+  "authors_raw": "Mark McLean",
   "title_lines": [
    "Floer cohomology",
    "singularities, and",
-   "birational geometry",
-   "Mark McLean"
+   "birational geometry"
   ],
-  "abstract": "We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity theory and birational geometry. We will also state conjectures and open problems related to these results. We start out with a purely dynamical interpretation of the minimal discrepancy of an isolated singularity and explain how Floer theory fits into this story. Using similar ideas, we show how one can prove part of the cohomological McKay correspondence by computing a Floer cohomology group in two different ways. Finally, we illustrate how Hamiltonian Floer cohomology can be used to prove that birational Calabi\u2013Y au manifolds have the same small quantum cohomology algebras, and we speculate how this might extend to orbifolds. Mathematics Subject Classification 2020 Primary 53D40; Secondary 53D42, 14E16, 14N35, 14J17, 14E05, 14E18 \u00a9 2022 International Mathematical Union Proc. Int. Cong. Math. 2022, Vol. 4, pp. 2616\u20132637 DOI 10.4171/ICM2022/13 Published by EMS Press and licensed under a CC BY 4.0 license",
+  "abstract": "We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity theory and birational geometry. We will also state conjectures and open problems related to these results. We start out with a purely dynamical interpretation of the minimal discrepancy of an isolated singularity and explain how Floer theory fits into this story. Using similar ideas, we show how one can prove part of the cohomological McKay correspondence by computing a Floer cohomology group in two different ways. Finally, we illustrate how Hamiltonian Floer cohomology can be used to prove that birational Calabi–Yau manifolds have the same small quantum cohomology algebras, and we speculate how this might extend to orbifolds. Mathematics Subject Classification 2020 Primary 53D40; Secondary 53D42, 14E16, 14N35, 14J17, 14E05, 14E18 © 2022 International Mathematical Union Proc. Int. Cong. Math. 2022, Vol. 4, pp. 2616–2637 DOI 10.4171/ICM2022/13 Published by EMS Press and licensed under a CC BY 4.0 license",
   "docinfo": {
+   "Title": "Floer cohomology, singularities, and birational geometry",
    "Author": "Mark McLean",
-   "CreationDate": "D:20231209234016+02'00'",
-   "Creator": "LaTeX with hyperref",
    "Producer": "LuaTeX-1.10.0",
-   "Title": "Floer cohomology, singularities, and birational geometry"
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20231209234016+02'00'"
+  },
+  "title_raw": "Floer cohomology, singularities, and birational geometry",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Floer cohomology, singularities, and birational geometry",
+   "heading": "Floer cohomology, singularities, and birational geometry",
+   "outline": "1. Introduction",
+   "text": "Floer cohomology, singularities, and birational geometry",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Floer cohomology , singularities, and birational geometry Mark McLean"
  },
  "toc": [
   {
@@ -37,67 +53,329 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2617"
   },
   {
    "level": 1,
    "title": "Minimal discrepancy of isolated singularities",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2618"
   },
   {
    "level": 1,
    "title": "Cohomological McKay correspondence",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2623"
   },
   {
    "level": 1,
-   "title": "Quantum cohomology of birational Calabi\u2013Yau manifolds",
+   "title": "Quantum cohomology of birational Calabi–Yau manifolds",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2627"
   },
   {
    "level": 2,
    "title": "Example",
    "page": 14,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2629"
   },
   {
    "level": 2,
    "title": "Symplectic cohomology of compact subsets",
    "page": 14,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2629"
   },
   {
    "level": 2,
    "title": "Idea of proof",
    "page": 16,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2631"
   },
   {
    "level": 2,
    "title": "Further directions",
    "page": 17,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2632"
   },
   {
    "level": 1,
    "title": "References",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2633"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "2616",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2617",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2618",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "2619",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "2620",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "2621",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "2622",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "2623",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "2624",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "2625",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "2626",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "2627",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "2628",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "2629",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "2630",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "2631",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "2632",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "2633",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "2634",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "2635",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "2636",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "2637",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1134,
+   "n_words": 168,
+   "label_start": "2616",
+   "label_end": "2617"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -105,8 +383,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 3044,
-   "n_words": 521
+   "n_chars": 3040,
+   "n_words": 520,
+   "label_start": "2617",
+   "label_end": "2618"
   },
   {
    "id": "sec-001-2-minimal-discrepancy-of-isolated-singularities",
@@ -115,8 +395,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 8,
-   "n_chars": 13966,
-   "n_words": 2681
+   "n_chars": 13985,
+   "n_words": 2699,
+   "label_start": "2618",
+   "label_end": "2623"
   },
   {
    "id": "sec-002-3-cohomological-mckay-correspondence",
@@ -124,66 +406,98 @@
    "title": "Cohomological McKay correspondence",
    "level": 1,
    "page_start": 8,
-   "page_end": 14,
-   "n_chars": 15303,
-   "n_words": 2796
+   "page_end": 12,
+   "n_chars": 10127,
+   "n_words": 1873,
+   "label_start": "2623",
+   "label_end": "2627"
   },
   {
-   "id": "sec-003-41-example",
+   "id": "sec-003-4-quantum-cohomology-of-birational-calabiyau-man",
+   "number": "4",
+   "title": "Quantum cohomology of birational Calabi–Yau manifolds",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5134,
+   "n_words": 922,
+   "label_start": "2627",
+   "label_end": "2629"
+  },
+  {
+   "id": "sec-004-41-example",
    "number": "4.1",
    "title": "Example",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 1627,
-   "n_words": 355
+   "n_chars": 1641,
+   "n_words": 369,
+   "label_start": "2629",
+   "label_end": "2629"
   },
   {
-   "id": "sec-004-42-symplectic-cohomology-of-compact-subsets",
+   "id": "sec-005-42-symplectic-cohomology-of-compact-subsets",
    "number": "4.2",
    "title": "Symplectic cohomology of compact subsets",
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 2932,
-   "n_words": 545
+   "n_chars": 2936,
+   "n_words": 548,
+   "label_start": "2629",
+   "label_end": "2631"
   },
   {
-   "id": "sec-005-43-idea-of-proof",
+   "id": "sec-006-43-idea-of-proof",
    "number": "4.3",
    "title": "Idea of proof",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 2390,
-   "n_words": 446
+   "n_chars": 2413,
+   "n_words": 468,
+   "label_start": "2631",
+   "label_end": "2632"
   },
   {
-   "id": "sec-006-44-further-directions",
+   "id": "sec-007-44-further-directions",
    "number": "4.4",
    "title": "Further directions",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 3342,
-   "n_words": 575
+   "n_chars": 3343,
+   "n_words": 576,
+   "label_start": "2632",
+   "label_end": "2633"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 18,
    "page_end": 22,
-   "n_chars": 10046,
-   "n_words": 1609
+   "n_chars": 9996,
+   "n_words": 1559,
+   "label_start": "2633",
+   "label_end": "2637"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 8,
-  "chars_total": 52650
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 53749,
+  "furniture_lines_stripped": 0
  }
 }

@@ -1,0 +1,49 @@
+Definition 1.17 (Weak derivative) Let ~ and g be locally integrable functions on a
+domainQ CS. We say that g is the a‘*-weak partial derivative of w if for all y € C§°(Q),
+
+[eeratae= (9m f Drove Cc
+
+With the weak derivative, we can now define the spaces of functions on which we
+consider our eigenvalue problems, namely, Sobolev spaces. In Section 2.1, we will see
+how to extend the Laplacian on these spaces to a self-adjoint operator on L?($), but for
+
+now, we simply give enough detail to define the subsequent “variational” theorems.
+
+Definition 1.18 (Sobolev space) Let 2 be as above. The Sobolev spaces, indexed by
+p€ [l,oo) andk EN, are given by
+
+We? := {yb © LP(Q)| Dw € L?(Q), 0 < lal < k},
+
+and are complete with respect to the Sobolev norm
+
+lls = | 2 DVM)
+
+0<|al<k
+where D°y is the weak partial derivative. We may also define We? (Q) as the closure of
+
+C§°(Q) with respect to the Sobolev norm.
+
+Remark 1.19 Again, we are most interested in the case where p = 2, since W*:?(Q) is
+
+a separable Hilbert space with inner product
+
+(6, U)wee = So (D%d, DW) 12.
+
+0<Jal<k
+
+The variational characterization of the Laplacian (and its associated eigenvalue prob-
+
+lems) is concerned with the validity of the formula
+
+(Ad, fie = Did, f],
+
+where the ¢ is typically an eigenfunction, and the quantity on the right is the Dirichlet
+integral
+
+D[f, hj = (D'f, D'h) 2
+for f, h € W!?(Q) in the case when we consider a closed or Neumann problem and f, h €
+Wo 7) when we consider a Dirichlet problem. .D! denotes the first weak derivative. We
+
+can now state the following theorems as in [15]?
+
+13

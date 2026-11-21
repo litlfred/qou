@@ -8,9 +8,15 @@
   "pages": 31,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 20,
+    "reason": "14 of 521 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -28,7 +34,7 @@
    "SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC",
    "GEOMETRY"
   ],
-  "abstract": "This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geometry. We start from a brief review of the paper and motivations. The \ufb01rst sections deal with model theory. In Section 2.1 we describe the geometric equivalence, the elementary equiv- alence, and the isotypicity of algebras. We look at these notions from the positions of universal algebraic geometry and make emphasis on the cases of the \ufb01rst order rigidity. In this setting Plotkin\u2019s problem on the structure of automorphisms of (auto)endomorphisms of free objects, and auto-equivalence of categories is pretty natural and important. Section 2.2 is dedicated to particular cases of Plotkin\u2019s problem. Section 2.3 is devoted to Plotkin\u2019s problem for automorphisms of the group of polynomial symplectomorphisms. This setting has applications to math- ematical physics through the use of model theory (non-standard analysis) in the studying of homomorphisms between groups of symplectomorphisms and automor- phisms of the Weyl algebra. The last two sections deal with algorithmic problems for noncommutative and commutative algebraic geometry. Section 3.1 is devoted to the Gr\u00a8obner basis in non-commutative situation. Despite the existence of an algorithm for checking equalities, the zero divisors and nilpotency problems are al- gorithmically unsolvable. Section 3.2 is connected with the problem of embedding of algebraic varieties; a sketch of the proof of its algorithmic undecidability over a \ufb01eld of characteristic zero is given. Dedicated to the 70-th anniversary of A.L. Semenov and to the 95-th anniversary of B.I. Plotkin.",
+  "abstract": "This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geometry. We start from a brief review of the paper and motivations. The ﬁrst sections deal with model theory. In Section 2.1 we describe the geometric equivalence, the elementary equiv- alence, and the isotypicity of algebras. We look at these notions from the positions of universal algebraic geometry and make emphasis on the cases of the ﬁrst order rigidity. In this setting Plotkin’s problem on the structure of automorphisms of (auto)endomorphisms of free objects, and auto-equivalence of categories is pretty natural and important. Section 2.2 is dedicated to particular cases of Plotkin’s problem. Section 2.3 is devoted to Plotkin’s problem for automorphisms of the group of polynomial symplectomorphisms. This setting has applications to math- ematical physics through the use of model theory (non-standard analysis) in the studying of homomorphisms between groups of symplectomorphisms and automor- phisms of the Weyl algebra. The last two sections deal with algorithmic problems for noncommutative and commutative algebraic geometry. Section 3.1 is devoted to the Gr¨obner basis in non-commutative situation. Despite the existence of an algorithm for checking equalities, the zero divisors and nilpotency problems are al- gorithmically unsolvable. Section 3.2 is connected with the problem of embedding of algebraic varieties; a sketch of the proof of its algorithmic undecidability over a ﬁeld of characteristic zero is given. Dedicated to the 70-th anniversary of A.L. Semenov and to the 95-th anniversary of B.I. Plotkin.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
@@ -108,7 +114,7 @@
   },
   {
    "level": 2,
-   "title": "Finite Gr\u00f6bner basis algebras with unsolvable nilpotency problem and zero divisors problem",
+   "title": "Finite Gröbner basis algebras with unsolvable nilpotency problem and zero divisors problem",
    "page": 23,
    "source": "outline",
    "number": "3.1",
@@ -366,9 +372,9 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1955,
-   "n_words": 285,
+   "page_end": 2,
+   "n_chars": 3431,
+   "n_words": 476,
    "label_start": null,
    "label_end": null
   },
@@ -377,10 +383,10 @@
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 5,
-   "n_chars": 15055,
-   "n_words": 2375,
+   "n_chars": 13589,
+   "n_words": 2184,
    "label_start": null,
    "label_end": null
   },
@@ -403,25 +409,37 @@
    "level": 2,
    "page_start": 5,
    "page_end": 13,
-   "n_chars": 28482,
-   "n_words": 4924,
+   "n_chars": 25244,
+   "n_words": 4388,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-003-23-on-the-independence-of-the-b-kk-isomorphism-o",
+   "id": "sec-003-22-plotkins-problem-automorphisms-of-endomorphis",
+   "number": "2.2",
+   "title": "Plotkin's problem: automorphisms of endomorphism semigroups and groups of polynomial automorphisms",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 3213,
+   "n_words": 533,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-23-on-the-independence-of-the-b-kk-isomorphism-o",
    "number": "2.3",
    "title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
    "level": 2,
    "page_start": 13,
    "page_end": 23,
-   "n_chars": 26843,
-   "n_words": 4878,
+   "n_chars": 26751,
+   "n_words": 4795,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-004-3-algorithmic-aspects-of-algebraic-geometry",
+   "id": "sec-005-3-algorithmic-aspects-of-algebraic-geometry",
    "number": "3",
    "title": "Algorithmic aspects of algebraic geometry",
    "level": 1,
@@ -433,9 +451,9 @@
    "label_end": null
   },
   {
-   "id": "sec-005-31-finite-gr\u00f6bner-basis-algebras-with-unsolvable",
+   "id": "sec-006-31-finite-gröbner-basis-algebras-with-unsolvable",
    "number": "3.1",
-   "title": "Finite Gr\u00f6bner basis algebras with unsolvable nilpotency problem and zero divisors problem",
+   "title": "Finite Gröbner basis algebras with unsolvable nilpotency problem and zero divisors problem",
    "level": 2,
    "page_start": 23,
    "page_end": 25,
@@ -445,7 +463,7 @@
    "label_end": null
   },
   {
-   "id": "sec-006-32-on-the-algorithmic-undecidability-of-the-embe",
+   "id": "sec-007-32-on-the-algorithmic-undecidability-of-the-embe",
    "number": "3.2",
    "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
    "level": 2,
@@ -457,7 +475,7 @@
    "label_end": null
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -480,13 +498,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 9,
-  "chars_total": 105166,
+  "sections": 10,
+  "chars_total": 105059,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 29,
-   "overlaid": 6,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -502,7 +521,7 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.932,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -510,18 +529,26 @@
      "id": "sec-001-2-model-theoretical-aspects",
      "title": "Model-theoretical aspects",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-21-algebraic-geometry-over-algebraic-systems",
      "title": "Algebraic geometry over algebraic systems",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.954,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-23-on-the-independence-of-the-b-kk-isomorphism-o",
+     "id": "sec-003-22-plotkins-problem-automorphisms-of-endomorphis",
+     "title": "Plotkin's problem: automorphisms of endomorphism semigroups and groups of polynomial automorphisms",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-23-on-the-independence-of-the-b-kk-isomorphism-o",
      "title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.98,
@@ -529,7 +556,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-004-3-algorithmic-aspects-of-algebraic-geometry",
+     "id": "sec-005-3-algorithmic-aspects-of-algebraic-geometry",
      "title": "Algorithmic aspects of algebraic geometry",
      "prose_ratio": 0.933,
      "coverage_ratio": 1.0,
@@ -537,15 +564,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-31-finite-gr\u00f6bner-basis-algebras-with-unsolvable",
-     "title": "Finite Gr\u00f6bner basis algebras with unsolvable nilpotency problem and zero divisors problem",
+     "id": "sec-006-31-finite-gröbner-basis-algebras-with-unsolvable",
+     "title": "Finite Gröbner basis algebras with unsolvable nilpotency problem and zero divisors problem",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.767,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-32-on-the-algorithmic-undecidability-of-the-embe",
+     "id": "sec-007-32-on-the-algorithmic-undecidability-of-the-embe",
      "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
      "prose_ratio": 0.995,
      "coverage_ratio": 0.947,
@@ -553,7 +580,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-007-references",
+     "id": "sec-008-references",
      "title": "References",
      "result": "no matching \\section"
     }

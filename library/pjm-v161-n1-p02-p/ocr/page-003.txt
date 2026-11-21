@@ -1,0 +1,44 @@
+26 JOAN S. BIRMAN AND WILLIAM W. MENASCO
+
+boundary the given oriented link. It was shown in [Be] and in [B-M,
+II] that when the link has braid index < 3 these surfaces are especially
+simple. As a result, the combinatorial data which was introduced in
+[B-M, I] to describe the surfaces reduces to a cyclic word in a special
+set of generators for the braid group B;. The algorithm which we
+give then not only solves the link problem for links of braid index 3,
+it also (with the help of results in [X]) provides a surface of maximal
+Euler characteristic with boundary the given link. The long range goal
+of the series of manuscripts [B-M, I-VI] is to generalize these results
+to arbitrary braid index n.
+
+Let Y be an oriented link type in oriented S3, let L be a rep-
+resentative of /, and let A be an oriented circle in S?—L. We
+say that L is a closed n-braid with braid axis A if there is a choice
+H = {Hg; 0 € [0, 22]} of a fibration H of the open solid torus S3—A
+by meridian discs Hy such that L intersects each Hy transversally.
+The number n is the number of points in LN Hg. In 1923 James
+Alexander proved in [Al] that every link could be so-represented,
+in many ways and for many different values of n. The connection
+between braids and links was further developed by Emil Artin. In
+his 1925 manuscript [Ar] he introduced the n-string braid group By
+(n=1,2,3,...) and uncovered its structure. In 1935 A. A. Markov
+studied the disjoint union B,, of all the B,’s, describing in [Ma] the
+equivalence relation in B,. which relates all of the open braids whose
+closures have the same oriented link type. Two elementary equiva-
+lences are needed: conjugacy in B, and a stabilization move which
+changes n. In 1968 Garside [Ga] solved the conjugacy problem in
+B,. This was a highly non-trivial step in the translation of Markov’s
+equivalence relation into an algorithmic solution to the link problem.
+
+The role of “stabilization” in Markov’s equivalence relation (and
+indeed in many other areas of low dimensional topology such as Hee-
+gaard theory, bridge representations of links, Kirby’s Calculus, and
+Waldhausen’s study of the Heegaard splittings of S3) has been some-
+what mysterious. The present investigation began with an attempt to
+understand what is accomplished when one stabilizes, in the situation
+of Markov’s theorem. In the papers [B-M, I-VI] and subsequent ones
+we hope to establish a version of Markov’s theorem which does net
+involve stabilization, i.e. in which one studies the braid representa-
+tives of a link in B,, for fixed n, rather than in the disjoint union
+Bo of all of the braid groups. In this manuscript we do exactly that
+for the first non-trivial case, n = 3. The classification of links which

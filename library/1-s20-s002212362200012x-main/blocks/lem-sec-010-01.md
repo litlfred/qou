@@ -1,0 +1,1 @@
+Let ε > 0. Let Wt be a standard Brownian motion and let Xt, Qt be adapted to Wt, which satisfy Xt = ε + Wt + t  Qsds and such that Qt ≤0, almost surely for all t. Let τ = inf{t; Xt = 0}. One has P(τ ≥s) ≤ ε √s, ∀s > 0.

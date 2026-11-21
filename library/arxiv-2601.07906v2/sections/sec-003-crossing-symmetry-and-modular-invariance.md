@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.07906v2
-doc_title: "March 2026 A universal sum over topologies in 3d gravity"
+doc_title: "A universal sum over topologies in 3d gravity"
 section_id: sec-003-crossing-symmetry-and-modular-invariance
 section_title: "Crossing symmetry and modular invariance"
 section_number: null
 pages: 13-16
 source_pdf: 2601.07906v2.pdf
 source_sha256: e69b1bf37f2c75b0
-doc_brief: "March 2026 A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.888
-latex_coverage_ratio: 0.936
+latex_coverage_ratio: 0.994
+doc_brief: "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory."
 ---
 \label{sec:crossing}
 The next set of consistency conditions that we impose on the ensemble are modular invariance of the torus partition function and crossing symmetry of all higher-genus partition functions. We will impose these constraints on the average, instead of on each member of the ensemble. That is, we demand that

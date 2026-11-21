@@ -13,9 +13,12 @@
   "pageStart": 10,
   "pageEnd": 10,
   "contains": [
-    "library/1992evansberger/blocks/prose-page-010"
+    "library/1992evansberger/blocks/prose-page-010",
+    "library/1992evansberger/blocks/figure-img-p010-1",
+    "library/1992evansberger/blocks/figure-img-p010-2",
+    "library/1992evansberger/blocks/figure-img-p010-3"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1992evansberger",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1992evansberger",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1992evansberger/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1992evansberger/manifest.jsonld",
   "provenance": "ingested"
 }

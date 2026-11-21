@@ -1,0 +1,1 @@
+Eq. (6) holds for cn,+ = (−1)n an(n+3)/2 {n}! . (7) Let us deﬁne ω−to be the conjugate of ω+, where conjugation is deﬁned, as usual, by A = A−1 and z = z. Since conjugation corresponds to taking mirror images, we have that ⟨ω−, x⟩= ⟨t−1(x)⟩ (8) for every even x.

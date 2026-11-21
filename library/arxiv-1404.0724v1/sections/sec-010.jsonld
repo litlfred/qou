@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The Yang-Baxter equation and the Drinfeld-Kohno theorem",
-  "pageStart": 22,
-  "pageEnd": 22,
+  "title": "The Lawrence-Krammer-Bigelow representation",
+  "pageStart": 13,
+  "pageEnd": 15,
   "contains": [
-    "library/arxiv-1404.0724v1/blocks/prose-sec-010"
+    "library/arxiv-1404.0724v1/blocks/prose-sec-010",
+    "library/arxiv-1404.0724v1/blocks/lem-sec-010-01",
+    "library/arxiv-1404.0724v1/blocks/lem-sec-010-02",
+    "library/arxiv-1404.0724v1/blocks/thm-sec-010-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.0724v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.0724v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
   "provenance": "ingested"
 }

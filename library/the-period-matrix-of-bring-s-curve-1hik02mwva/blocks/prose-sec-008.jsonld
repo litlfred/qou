@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "B does not admit more automorphisms, we obtain",
-  "pageStart": 7,
-  "pageEnd": 7,
-  "text": "../sections/sec-008-b-does-not-admit-more-automorphisms-we-obtain.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/the-period-matrix-of-bring-s-curve-1hik02mwva",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/the-period-matrix-of-bring-s-curve-1hik02mwva",
+  "title": "so that we can write oi Λ r o r roi . Λ r o r . Λ r o i r o n",
+  "pageStart": 17,
+  "pageEnd": 20,
+  "text": "../sections/sec-008-195-so-that-we-can-write-oi-λ-r-o-r-roi-λ-r-o-r.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,49 @@
+158 Appendix B — Irreducible subgroups with bounded determinant
+
+With this input from geometry, the rest of the argument for the desired
+finiteness result will be an exercise in representation theory. Recall that a
+complex algebraic group G is reductive iff the abelian category Repc(G)
+of its finite-dimensional representations over C is semisimple, which is the
+case iff G admits a faithful irreducible representation. This is in particular
+the case for any irreducible subgroup G > Gi(V) of the general linear group
+attached to a finite-dimensional complex vector space V, where as usual by
+an irreducible subgroup we mean a subgroup which acts irreducibly on the
+given vector space. The result we are looking for is the following.
+
+LEMMA B.2. Fix an integer n € N, and let V be a finite-dimensional
+complex vector space. Then up to conjugacy there exist only finitely many
+irreducible algebraic subgroups G — GI(V) such that
+
+(a) the quotient m = G/H by the connected component H = G isa
+finite abelian group, and
+
+(b) via conjugation 7 acts trivially on H® = H/|H,H), and
+(c) the determinant det(V) is a character of G of order at most n.
+
+Proof. Using the structure theory of connected reductive groups and
+the fact that every such group has at most finitely many representations
+of any given dimension, one checks that up to conjugation there are only
+finitely many connected reductive algebraic subgroups H — GI(V). So it
+will be enough to show that for any given H there exist only finitely many
+irreducible subgroups G > Gi(V) with connected component G° = H such
+that (a) — (c) hold. For this we will show that every such subgroup G can
+be recovered from the connected component G? = H together with certain
+finite data. We proceed in the following steps.
+
+Step 1. Let G* C G be anormal subgroup of finite index, and decompose
+the restriction of the given representation as V|g: = @', V; with irreducible
+representations V; € Repc(G*). Then we claim that for each index i the
+determinant character
+
+det(Vi): G* —+ C*
+
+is a character of order at most m-n. Indeed, by the bound in (c) it will be
+enough to show that det(V;) does not depend on i. Note that each g € G
+defines an automorphism int(g) : Gt —> G*, and since V is an irreducible
+representation of G, all the irreducible constituents V; of the restriction V|g*
+are conjugate to each other by such inner automorphisms. Hence it follows
+from assumption (b) that the restriction det(V;)|77 does not depend on the
+index i. Again by the bound in (c) this restriction is then a torsion character
+of the connected group H” and as such it must be trivial. Thus all the
+det(V;) are characters of the quotient group G*/H. By assumption (a) the
+adjoint action of G on this quotient group is trivial, so our claim follows.

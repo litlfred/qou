@@ -1,0 +1,45 @@
+78 Chapter 4 — The Tannaka group of the theta divisor
+
+LEMMA 4.9. With notations as above, the specialization of 6 is given
+by the formulae
+
+sp(6) = PH°(i*Rj.(5)) = *(jeS[1])[- 1].
+
+Proof, We first claim that in the triangulated category D(Y,) = D?(Y,,A),
+the cone of the morphism N is given by
+
+(x) Cone(¥1 (6) s ¥(8)(-1)) = i*Rj.(8[1]).
+
+Indeed, if we forget about weights, the cone of N on (5) is isomorphic to
+the cone of T — 1 on ‘¥(6) because T — 1 is an isomorphism on Wz; (6) and
+on ‘¥; (6) its kernel and cokernel are isomorphic to those of N. Hence (x)
+follows by the same argument as in [60, eq. (3.6.2) and thereafter], using
+that by assumption the wild inertia group P acts trivially on ¥(5). Now if
+for n € {0,1} we write
+
+sp"(5) ="H"(PRj.(8)),
+we obtain from (x) an exact sequence of perverse sheaves
+0 — sp°(5) — B, (5) “+ ¥,(5)(-1) — sp!(6) 0.
+
+Hence the first equality in the lemma follows. For the second equality note
+that we always have i* j\,.(6[1]) = ?t<oi*Rj,(6[1]) by the basic properties
+of the intermediate extension functor shown as in [65, sect. IJI.5.1], and
+that again by (x) the sheaf complex i*R/j,(6[1]) is concentrated in perverse
+cohomology degrees —1 and 0. Oo
+
+To connect these local algebraic results to the more global setting of
+section 4.4 below, it will be convenient to reset our notation. So let S be a
+smooth complex algebraic curve and f : Y —> S a morphism of complex
+algebraic varieties which is smooth over the complement of some given
+point s € S(C). Consider the strict Henselization S = Spec(@$" ) — S of S
+at the point s, and let 1) be the generic point of the strictly Henselian local
+scheme S. Referring to the base change
+
+f: ¥Y=YxsS > S§
+
+of the morphism f under this strict Henselization, we can form as above the
+nearby cycles and specialization functors
+y
+
+PU») PCY)
+sp

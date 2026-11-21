@@ -6,7 +6,9 @@
   "sha256": "22953b4eee66dca290f6b793517cc2eb020c8e862e13b54bd43329c3979f32e7",
   "bytes": 1244055,
   "pages": 60,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,20 +16,27 @@
   "arxiv": null,
   "doi": null,
   "title": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD",
-  "authors_raw": "STA VROS GAROUF ALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN",
-  "abstract": "In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of q-series with integer coe cients, intro- duced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic 3-manifolds. To achieve our goal we show that (a) T admits an index structure if and only if T is 1-e cient and (b) if M is hyperbolic, it has a canonical set of 1-e cient ideal triangu- lations related by 2-3 and 0-2 moves which preserve the 3D index. We illustrate our results with several examples.",
-  "docinfo": {
-   "Author": "",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.3",
-   "CreationDate": "D:20150114084434-05'00'"
-  },
-  "title_prev": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC3-MANIFOLD",
+  "authors_raw": "STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN",
   "title_lines": [
    "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED",
    "HYPERBOLIC 3-MANIFOLD"
-  ]
+  ],
+  "abstract": "In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifold M (a collection of q-series with integer coe cients, intro- duced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic 3-manifolds. To achieve our goal we show that (a) T admits an index structure if and only if T is 1-e cient and (b) if M is hyperbolic, it has a canonical set of 1-e cient ideal triangu- lations related by 2-3 and 0-2 moves which preserve the 3D index. We illustrate our results with several examples.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.3",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20150114084434-05'00'"
+  },
+  "title_raw": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD Contents Introduction The 3D index of Dimofte-Gaiotto-Gukov Index structures and 1-e ciency Regular ideal triangulations and topological invariance Plan of the paper De nitions Index structures and 1\u0015e ciency A review of the",
+   "outline": "1. Introduction",
+   "text": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -35,462 +44,1676 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "The 3D index of Dimofte-Gaiotto-Gukov",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Index structures and 1-efficiency",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Regular ideal triangulations and topological invariance",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Plan of the paper",
    "page": 5,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Definitions",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Index structures and 1--efficiency",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "A review of the index of an ideal triangulation",
    "page": 16,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "The tetrahedron index and its properties",
    "page": 16,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "The degree of the tetrahedron index",
    "page": 17,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Angle structure equations",
    "page": 17,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Peripheral equations",
    "page": 18,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "The index of an ideal triangulation",
    "page": 19,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Choice of edges in the summation for index",
    "page": 20,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "A reformulation of the definition of the index",
    "page": 24,
    "source": "outline",
-   "number": "4.7"
+   "number": "4.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Invariance of index under isotopy of peripheral curve",
    "page": 26,
    "source": "outline",
-   "number": "4.8"
+   "number": "4.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "Invariance of index under the 0--2 move",
    "page": 29,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "The XMEP class of triangulations",
    "page": 32,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Subdivisions of the Epstein--Penner decomposition",
    "page": 32,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Regular triangulations",
    "page": 34,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 2,
    "title": "Interpreting flip moves using 2--3 moves",
    "page": 39,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "Moving paths in the 1--skeleton of the associahedron using 2--3 and 0--2 moves",
    "page": 40,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 1,
    "title": "Computations",
    "page": 43,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "How to compute the coefficients of a q-series",
    "page": 43,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "The index of the 41 knot complement",
    "page": 44,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "The index of the sister of the 41 knot complement",
    "page": 45,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "The index of the 52 knot complement",
    "page": 45,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "The index of the (-2,3,7) pretzel knot complement",
    "page": 47,
    "source": "outline",
-   "number": "7.5"
+   "number": "7.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "The index of the 61 knot complement",
    "page": 48,
    "source": "outline",
-   "number": "7.6"
+   "number": "7.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "The index of the 72 knot complement",
    "page": 49,
    "source": "outline",
-   "number": "7.7"
+   "number": "7.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 51,
    "source": "outline",
-   "number": "7.8"
+   "number": "7.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 1,
    "title": "Appendix A. The 2--3 move",
    "page": 51,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 1,
    "title": "References",
    "page": 57,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Moves on (topological) triangulations",
+   "page": 7,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The three quad types within an oriented tetrahedron, arranged in our chosen cyclic order",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "A normal octagon in a tetrahedron with a semi-angle structure with angles α, β, γ ∈[0, π]. The curvature of this octagon is 4α + 2β + 2γ − (8 −2)π = 2α + 2π −6π = 2α −4π < 0",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "A layered triangulation of the complement of the trefoil knot, seen as a punctured torus bundle",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Part of a triangulation that does not admit an index structure, and part of the corresponding surface. The edge e1 is degree 1, so the two faces incident to it are identi ed (indicated by the arrows)",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The degree of the tetrahedron index I∆(m, e). Here the positive m axis is to the right and the positive e axis is upwards",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Each term of the \u0010turning number\u0011 vector (aϖ|bϖ|cϖ) is calculated as a sum of the signed number of times the curve ϖ turns anticlockwise around the corners of the triangular ends of the truncated tetrahedra. Edges and arcs on the back side of the tetrahedron are drawn with dashed lines",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Note that at each step of the sequence, both ends of each element of Sk have a + sign,",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The last graph in the sequence has one of these two forms",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "The graph of edges and cusps for the Whitehead link. The rows E0, E1, E2, E3 of (A | B) satisfy the relations: E0 + 2E1 + E2 = 0 (from cusp 0) and E0 + E2 + 2E3 = 0 (from cusp 1), which imply that E1 = E3",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "The two kinds of isotopy moves on a curve relative to the triangulation of ∂M",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "The four ways in which a curve can travel through a triangle. We call the last two possibilities a positive backtrack and negative backtrack respectively",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Four cases of isotopy across a vertex and six cases of isotopy across an edge. All other cases are symmetries of these",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "The 0\u00152 move shown with truncated tetrahedra. The four triangulated ends of the new pair of tetrahedra are shown. All of the \u0010zoomed in\u0011 pictures are as seen from viewpoints outside of the pair of tetrahedra. The labels at the corners of the triangles in the \u0010zoomed in\u0011 pictures are explained in Sec",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Then we have ¯a eϖ,1 = ¯a eϖ,2 = 0,",
+   "page": 31,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Circuits with 4 and 5 elements",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "37"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "The almost\u0015triangulation in case (1) of Lemma 6.23, and its two re nements to triangulations. Note that although the top and lower left pictures are identical, the top is to be interpreted as a single 3\u0015cell, while the lower left shows two tetrahedra meeting in a triangle. The associated ip between",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "Almost\u0015triangulations in cases (2) and (3) of Lemma 6.23, and the associated 2\u00152 ips. In all diagrams, vertices v1 through v4 are coplanar",
+   "page": 39,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "The possible 2\u00152 moves on a triangulation of a point con guration, realised using 2\u00153 and 3\u00152 moves. Again in each case, vertices v1 through",
+   "page": 41,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "41"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "The 2\u0015cells of the associahedron",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "The fan of the summand of I52(0). Let Cij denote the two-dimensional cone with rays ρi and ρj. Then we have:",
+   "page": 46,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "46"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "The plot of the degree of the summand of 52. and the inequality δ(k1, k2) ≤N give the bounds (34a)",
+   "page": 47,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "The 2\u00153 move shown with truncated tetrahedra and labelled vertices",
+   "page": 51,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "Change in turning numbers under a 1\u00153 move",
+   "page": 53,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "53"
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "Change in turning numbers under a 2\u00152 move",
+   "page": 53,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "53"
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "Intersection numbers and turning numbers in a triangle",
+   "page": 54,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "Turning numbers and intersection numbers at all corners of the bipyramid",
+   "page": 56,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "56"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2607,
+   "n_words": 440,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 15,
+   "n_words": 2,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-the-3d-index-of-dimofte-gaiotto-gukov",
    "number": "1.1",
    "title": "The 3D index of Dimofte-Gaiotto-Gukov",
    "level": 2,
-   "page_start": 1,
-   "page_end": 4,
-   "n_chars": 7570,
-   "n_words": 1283
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3496,
+   "n_words": 575,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-13-regular-ideal-triangulations-and-topological",
+   "id": "sec-002-12-index-structures-and-1-efficiency",
+   "number": "1.2",
+   "title": "Index structures and 1-efficiency",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2102,
+   "n_words": 355,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-13-regular-ideal-triangulations-and-topological",
    "number": "1.3",
    "title": "Regular ideal triangulations and topological invariance",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 5451,
-   "n_words": 954
+   "n_chars": 5440,
+   "n_words": 943,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-003-14-plan-of-the-paper",
+   "id": "sec-004-14-plan-of-the-paper",
    "number": "1.4",
    "title": "Plan of the paper",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 991,
-   "n_words": 169
+   "n_chars": 989,
+   "n_words": 167,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-004-2-definitions",
+   "id": "sec-005-2-definitions",
    "number": "2",
    "title": "Definitions",
    "level": 1,
    "page_start": 6,
-   "page_end": 16,
-   "n_chars": 27045,
-   "n_words": 4840
+   "page_end": 9,
+   "n_chars": 9383,
+   "n_words": 1707,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
-   "id": "sec-005-4-a-review-of-the-index-of-an-ideal-triangulatio",
+   "id": "sec-006-3-index-structures-and-1--efficiency",
+   "number": "3",
+   "title": "Index structures and 1--efficiency",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 16,
+   "n_chars": 17713,
+   "n_words": 3217,
+   "label_start": "9",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-007-4-a-review-of-the-index-of-an-ideal-triangulatio",
    "number": "4",
    "title": "A review of the index of an ideal triangulation",
    "level": 1,
    "page_start": 16,
    "page_end": 16,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-006-41-the-tetrahedron-index-and-its-properties",
+   "id": "sec-008-41-the-tetrahedron-index-and-its-properties",
    "number": "4.1",
    "title": "The tetrahedron index and its properties",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1267,
-   "n_words": 248
+   "n_chars": 1297,
+   "n_words": 278,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-007-42-the-degree-of-the-tetrahedron-index",
+   "id": "sec-009-42-the-degree-of-the-tetrahedron-index",
    "number": "4.2",
    "title": "The degree of the tetrahedron index",
    "level": 2,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 552,
-   "n_words": 122
+   "n_chars": 557,
+   "n_words": 127,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-008-43-angle-structure-equations",
+   "id": "sec-010-43-angle-structure-equations",
    "number": "4.3",
    "title": "Angle structure equations",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1081,
-   "n_words": 206
+   "n_chars": 1099,
+   "n_words": 224,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-009-44-peripheral-equations",
+   "id": "sec-011-44-peripheral-equations",
    "number": "4.4",
    "title": "Peripheral equations",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 2245,
-   "n_words": 430
+   "n_chars": 2288,
+   "n_words": 473,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-010-45-the-index-of-an-ideal-triangulation",
+   "id": "sec-012-45-the-index-of-an-ideal-triangulation",
    "number": "4.5",
    "title": "The index of an ideal triangulation",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2040,
-   "n_words": 405
+   "n_chars": 2078,
+   "n_words": 441,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-011-46-choice-of-edges-in-the-summation-for-index",
+   "id": "sec-013-46-choice-of-edges-in-the-summation-for-index",
    "number": "4.6",
    "title": "Choice of edges in the summation for index",
    "level": 2,
    "page_start": 20,
-   "page_end": 26,
-   "n_chars": 13041,
-   "n_words": 2662
+   "page_end": 24,
+   "n_chars": 8636,
+   "n_words": 1817,
+   "label_start": "20",
+   "label_end": "24"
   },
   {
-   "id": "sec-012-48-invariance-of-index-under-isotopy-of-peripher",
+   "id": "sec-014-47-a-reformulation-of-the-definition-of-the-inde",
+   "number": "4.7",
+   "title": "A reformulation of the definition of the index",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 4526,
+   "n_words": 992,
+   "label_start": "24",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-015-48-invariance-of-index-under-isotopy-of-peripher",
    "number": "4.8",
    "title": "Invariance of index under isotopy of peripheral curve",
    "level": 2,
    "page_start": 26,
-   "page_end": 34,
-   "n_chars": 17093,
-   "n_words": 3143
+   "page_end": 29,
+   "n_chars": 5981,
+   "n_words": 1126,
+   "label_start": "26",
+   "label_end": "29"
   },
   {
-   "id": "sec-013-62-regular-triangulations",
+   "id": "sec-016-5-invariance-of-index-under-the-0--2-move",
+   "number": "5",
+   "title": "Invariance of index under the 0--2 move",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 32,
+   "n_chars": 5188,
+   "n_words": 1142,
+   "label_start": "29",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-017-6-the-xmep-class-of-triangulations",
+   "number": "6",
+   "title": "The XMEP class of triangulations",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 25,
+   "n_words": 4,
+   "label_start": "32",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-018-61-subdivisions-of-the-epstein--penner-decomposi",
+   "number": "6.1",
+   "title": "Subdivisions of the Epstein--Penner decomposition",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 5886,
+   "n_words": 976,
+   "label_start": "32",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-019-62-regular-triangulations",
    "number": "6.2",
    "title": "Regular triangulations",
    "level": 2,
    "page_start": 34,
-   "page_end": 43,
-   "n_chars": 21856,
-   "n_words": 4004
+   "page_end": 39,
+   "n_chars": 12947,
+   "n_words": 2395,
+   "label_start": "34",
+   "label_end": "39"
   },
   {
-   "id": "sec-014-7-computations",
+   "id": "sec-020-63-interpreting-flip-moves-using-2--3-moves",
+   "number": "6.3",
+   "title": "Interpreting flip moves using 2--3 moves",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 2292,
+   "n_words": 417,
+   "label_start": "39",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-021-64-moving-paths-in-the-1--skeleton-of-the-associ",
+   "number": "6.4",
+   "title": "Moving paths in the 1--skeleton of the associahedron using 2--3 and 0--2 moves",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 43,
+   "n_chars": 6515,
+   "n_words": 1171,
+   "label_start": "40",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-022-7-computations",
    "number": "7",
    "title": "Computations",
    "level": 1,
    "page_start": 43,
-   "page_end": 44,
-   "n_chars": 3673,
-   "n_words": 677
+   "page_end": 43,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "43",
+   "label_end": "43"
   },
   {
-   "id": "sec-015-72-the-index-of-the-41-knot-complement",
+   "id": "sec-023-71-how-to-compute-the-coefficients-of-a-q-series",
+   "number": "7.1",
+   "title": "How to compute the coefficients of a q-series",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 3648,
+   "n_words": 674,
+   "label_start": "43",
+   "label_end": "44"
+  },
+  {
+   "id": "sec-024-72-the-index-of-the-41-knot-complement",
    "number": "7.2",
    "title": "The index of the 41 knot complement",
    "level": 2,
    "page_start": 44,
    "page_end": 45,
-   "n_chars": 2771,
-   "n_words": 411
+   "n_chars": 2799,
+   "n_words": 439,
+   "label_start": "44",
+   "label_end": "45"
   },
   {
-   "id": "sec-016-73-the-index-of-the-sister-of-the-41-knot-comple",
+   "id": "sec-025-73-the-index-of-the-sister-of-the-41-knot-comple",
    "number": "7.3",
    "title": "The index of the sister of the 41 knot complement",
    "level": 2,
    "page_start": 45,
    "page_end": 45,
-   "n_chars": 333,
-   "n_words": 54
+   "n_chars": 332,
+   "n_words": 53,
+   "label_start": "45",
+   "label_end": "45"
   },
   {
-   "id": "sec-017-74-the-index-of-the-52-knot-complement",
+   "id": "sec-026-74-the-index-of-the-52-knot-complement",
    "number": "7.4",
    "title": "The index of the 52 knot complement",
    "level": 2,
    "page_start": 45,
-   "page_end": 48,
-   "n_chars": 5317,
-   "n_words": 919
+   "page_end": 47,
+   "n_chars": 3623,
+   "n_words": 648,
+   "label_start": "45",
+   "label_end": "47"
   },
   {
-   "id": "sec-018-76-the-index-of-the-61-knot-complement",
+   "id": "sec-027-75-the-index-of-the--237-pretzel-knot-complement",
+   "number": "7.5",
+   "title": "The index of the (-2,3,7) pretzel knot complement",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 1655,
+   "n_words": 302,
+   "label_start": "47",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-028-76-the-index-of-the-61-knot-complement",
    "number": "7.6",
    "title": "The index of the 61 knot complement",
    "level": 2,
    "page_start": 48,
    "page_end": 49,
-   "n_chars": 2770,
-   "n_words": 552
+   "n_chars": 2847,
+   "n_words": 629,
+   "label_start": "48",
+   "label_end": "49"
   },
   {
-   "id": "sec-019-77-the-index-of-the-72-knot-complement",
+   "id": "sec-029-77-the-index-of-the-72-knot-complement",
    "number": "7.7",
    "title": "The index of the 72 knot complement",
    "level": 2,
    "page_start": 49,
    "page_end": 51,
-   "n_chars": 2021,
-   "n_words": 434
+   "n_chars": 2045,
+   "n_words": 460,
+   "label_start": "49",
+   "label_end": "51"
   },
   {
-   "id": "sec-020-78-acknowledgments",
+   "id": "sec-030-78-acknowledgments",
    "number": "7.8",
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 51,
-   "page_end": 57,
-   "n_chars": 11972,
-   "n_words": 2468
+   "page_end": 51,
+   "n_chars": 370,
+   "n_words": 53,
+   "label_start": "51",
+   "label_end": "51"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-031-appendix-a-the-2--3-move",
+   "number": null,
+   "title": "Appendix A. The 2--3 move",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 57,
+   "n_chars": 11708,
+   "n_words": 2468,
+   "label_start": "51",
+   "label_end": "57"
+  },
+  {
+   "id": "sec-032-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 57,
    "page_end": 60,
-   "n_chars": 8334,
-   "n_words": 1191
+   "n_chars": 8271,
+   "n_words": 1128,
+   "label_start": "57",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 33,
-  "sections": 22,
-  "chars_total": 137423
+  "toc_inferred_entries": 0,
+  "figure_entries": 27,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 3,
+    "items": [
+     "De nitions",
+     "A reformulation of the de nition of the index",
+     "The XEP M class of triangulations"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 34,
+  "chars_total": 138358,
+  "furniture_lines_stripped": 0
  },
  "duplicate_copies": [
   "arxiv-1303.5278v1"

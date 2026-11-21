@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1007.1250v4/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Quasi Crossed Modules and Additive Feedback",
+  "pageStart": 71,
+  "pageEnd": 83,
+  "contains": [
+    "library/arxiv-1007.1250v4/blocks/prose-sec-005",
+    "library/arxiv-1007.1250v4/blocks/figure-img-p076-1",
+    "library/arxiv-1007.1250v4/blocks/figure-img-p078-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1007.1250v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1007.1250v4/manifest.jsonld",
+  "provenance": "ingested"
+}

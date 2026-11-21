@@ -1,1 +1,1 @@
-TheX-coordinates of a Ptolemy assignmentc agree with theX-coordinates
+Let D = (g0B, g1B, g2B, g3B) be a generic decoration on a simplex. The natural (PGL(n, C), B, H)-cocycle is the unique cocycle, which is compatible with the dec- oration and satisﬁes (i) Short edges are labeled by elements in H. (ii) Middle edges are labeled by normalized elements in B. (iii) Long edges are labeled by q1.

@@ -1,0 +1,44 @@
+7.3 The general case via stratified Morse theory 197
+
+a rational function to simplify our presentation, the results discussed here hold
+for general meromorphic functions with minor modifications.
+
+Example 7.23. Figure 7.15 shows the zero set V of the polynomial Q = (z3 —
+x°)(2 — x — y— z). We can split the variety V into a finite number of semi-
+algebraic strata (defined by polynomial equalities and inequalities): two strata
+of codimension 1,
+
+S; ={x+y+z=2and2- 2» 0}
+S2={2-x =Oandx+y+2#2}\(x=2= 0},
+two strata of codimension 2,
+S3={3- x? =Oandxt+y+z=2and(x,2) 40,0},
+S4 = {(x,z) =O and y # 2},
+and one stratum of codimension 3 at the point
+
+Ss=(O-w=xty+c-2=x= - = 0} = {(0, 2, 0)}.
+
+Note that we introduce additional strata both to account for multiple irreducible
+components of V and to account for singularities in individual components.
+
+As described in Appendix D, it is usually not sufficient to partition V into
+any general set of smooth manifolds — we must also make sure the elements in
+such a partition “fit together nicely.” This concept is formalized by the notion
+of a Whitney stratification, given in Definition D.3 of Appendix D. For the rest
+of this chapter we fix a Whitney stratification of V, which is a partition of V
+into manifolds {Sq : a € J} indexed by some partially ordered set J such that
+
+(i) Sa NSg #0 if and only if S_ C Sz if and only if a < B, and
+
+(ii) if a < B, if the sequences {x; € Sg} and {y; € Sq} both converge to y € So,
+if the lines ¢; = X;yj converge to a line ¢, and if tangent planes T,,(Sg)
+converge to a plane 7, then both ¢ and 7,(S ,) are contained in T.
+
+We always take algebraic stratifications defined by polynomial equalities
+and inequalities. In fact, we may assume that our Whitney stratification is de-
+fined by a finite sequence of nested algebraic sets V = Fy D Fi D-++ 3 Fy, =
+@ such that the connected components of the sets F; \ Fi+; for all 1 <i< m-1
+form the strata. If S is a stratum defined as a connected component of F; \ Fii+1
+then the dimension of the stratum S (respectively the codimension of the stra-
+tum S) is the dimension (respectively codimension) of F; c C@ as an algebraic
+set. Whitney stratifications exist for all algebraic (and analytic) varieties, and
+algorithms to compute them are discussed in Chapter 8 and Appendix D.

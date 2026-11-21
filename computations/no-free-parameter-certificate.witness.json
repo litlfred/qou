@@ -27,6 +27,7 @@
       "qbeta_e0",
       "qbeta_t4_stokes3_crux_probe",
       "qou_substrate",
+      "two_term_qtrace_weighting",
       "witness_base"
     ],
     "unresolved_imports": [],
@@ -39,19 +40,19 @@
       },
       "canonical_mass": {
         "description": "absolute nucleon mass (m_p, m_n)",
-        "modules": 11,
+        "modules": 13,
         "unresolved": [],
         "untraceable": []
       },
       "meson_mass_from_hecke": {
         "description": "meson ratios (m_K/m_pi)",
-        "modules": 8,
+        "modules": 9,
         "unresolved": [],
         "untraceable": []
       },
       "per_observable_100x_status": {
         "description": "the L2 dashboard \u2014 all seven scored observables",
-        "modules": 10,
+        "modules": 15,
         "unresolved": [],
         "untraceable": []
       },
@@ -74,9 +75,9 @@
       }
     },
     "counts": {
-      "modules": 17,
+      "modules": 18,
       "unresolved_imports": 0,
-      "unit_or_structural_floats": 26,
+      "unit_or_structural_floats": 28,
       "adjudicated_legit": 0,
       "untraceable": 1
     },
@@ -96,10 +97,10 @@
   },
   "scriptFile": "no_free_parameter_certificate.py",
   "scriptHash": "3c6b46da0fb6",
-  "scriptCommitSha": "6a6704d178f88f95ad1fdff32df3b8c331a6d06b",
-  "commitSha": "606a711778e4229098a387dc4024a0b10de8b7f1",
+  "scriptCommitSha": "4368f190768ffff142d30a9a01fc47befb68ba1c",
+  "commitSha": "e78fcf72cf2a10d34f0c07635a9affb64e504bc8",
   "engine": "python",
-  "computedAt": "2026-09-14T06:25:54.365464+00:00",
+  "computedAt": "2026-11-21T04:45:02.176769+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

@@ -1,0 +1,49 @@
+Definition 2.3 (Closed operator) A is called closed if for all u,v € H and a sequence
+{un}nen C D(A), the conditions
+
+Un—z>u and Au, v
+
+as n — oo imply
+we D(A) and Au=v.
+
+In other words A is closed if D(A) is a complete vector space with respect to the graph
+
+norm.
+
+Any bounded operator is closed by the closed graph theorem. Unbounded operators
+are not necessarily closed, but we have a similar notion: A is called closable if it has a
+closed extension, that is, if its graph remains the graph of an operator A when its closure
+gr(A) is taken. Once again, question of domains makes defining the adjoint harder for
+unbounded operators; for bounded operators, it follows from the Riesz representation
+
+theorem.
+
+Definition 2.4 (Adjoint of an unbounded operator) Let A be a densely defined op-
+
+erator in H. Its adjoint A* is uniquely defined as follows
+
+D(A*) := {ue H| du* €H s.t. Vu € D(A), (u, Av) = (u*,v)},
+
+Atu:=u*
+
+Proposition 2.5 A* is always closed, regardless of whether or not A is.
+
+To see this, we can look at an alternative definition of the adjoint, taking advantage
+
+of the fact that we can describe an operator by its graph. For A’*,
+gr(A*) = R(gr(A)~),
+where F acts like a rotation on H x H, namely R(w1, U2) = (ue, —u1).
+
+Definition 2.6 (Symmetric operator) A is symmetric if it is densely defined and its
+
+adjoint A* is an extension of A.
+
+An easy consequence of pijsoaton = 1s Jat if A is symmetric, then it is closable.
+
+The preceding definitions have laid the groundwork for us to define self-adjointness for
+unbounded operators. These will be crucial for developing a functional calculus of oper-
+ators f(A), f : R > C, whereby we will be able to use function analytic methods in our
+
+spectral analysis of operators.
+
+27

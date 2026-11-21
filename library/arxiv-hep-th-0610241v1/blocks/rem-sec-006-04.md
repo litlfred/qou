@@ -1,0 +1,1 @@
+It is a consequence of the classiﬁcation of Dirac operators obtained in this section that color is unbroken in our model, as is physically expected. In fact, this follows from the fact that Dirac operators are of the form (2.31), with the S term of the form (2.32).

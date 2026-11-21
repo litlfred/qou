@@ -1,1 +1,1 @@
-II.4. [34] If t is a tensor operator of rank j then (1)t = t⊗ 1 and (2)t =ψR(t⊗ 1)ψ−1
+1. Let C ∈Uq(su(2)) invariant under the adjoint action, then C commutes with the generators Jσ, σ = +, −, z. Conversely, if C ∈Uq(su(2)) commutes with Jσ, then it is invariant under the adjoint action. B.

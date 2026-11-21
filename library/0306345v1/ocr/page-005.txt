@@ -1,0 +1,49 @@
+Skein-theoretical derivation of some formulas of Habiro 541
+
+Remark 1.2 The skein element w = w+ is related to, but different from, the
+element often called w appearing in the surgery axiom of Topological Quantum
+Field Theory (see for example [BHMV2]). If we call the latter w7@¥7, then
+Equations (6) and (8) would be satisfied by appropriate scalar multiples of
+t(wF@FT) and t(w?@PT), respectively; moreover, they would now hold not
+just for even x, but for all 2. This applies in particular to the w of [BHMV1],
+which was constructed in a similar way as Habiro’s w_ (but using polynomials
+Qn = Tit (z — ;) in place of the polynomials R,,).
+
+2 A proof using orthogonal polynomials
+
+Habiro’s proof of Theorem 1.1 uses the relationship with the quantum group
+Ugsl2. Here is another proof, using the method of orthogonal polynomials as in
+[BHMV1].
+
+Testing with the S;,-basis, we see that (8) holds if and only if
+
+(t1S;)
+
+(Rn, Sn) ,
+
+Thus, it is clear that an w_ satisfying (8) exists, and to compute its coefficients,
+we just need to compute (¢7!S,).
+
+As in [BHMV1], define another bilinear form (, ); by
+(x, y)1 = (t(x), t(y)) -
+Define polynomials #,, and .%,, by
+UBn) = UnRn, t(%n) = H2nSn -
+
+(The factors fn and fign, are included so that #, and -%, are monic, i.e. have
+leading coefficient equal to one.)
+
+Cn, =
+
+Again, the &,, form a basis of B, and the -%, form a basis of the even part Be’
+of B, since the twist map t preserves B®’. We have (#n,-%m)1 = 0 for n #m,
+and
+
+(Bn: Fn)1 = Mnblan(Rn; Sn) - (10)
+Note that (t7!S,,) = p5,/(%,). Thus, we just need to compute (.%,).
+
+Proposition 2.1 The polynomials .%,, satisfy a four-term recursion formula
+Srv = (2 _ On) Sn — Bn1Pn—1 — Yn-2-Fn-2 (11)
+
+for certain Om, Bn—1,%n—2 € Z[A*).
+
+Algebraic & Geometric Topology, Volume 3 (2003)

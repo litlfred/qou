@@ -15,7 +15,7 @@ Given a subset I ⊆ A, defines:
 LaTeX label: `def:remainder-modules`
 
 ## References
-- [manuscript] §1/remainder-modules
+- [leitner2026] §1/remainder-modules
 -/
 
 namespace QOU.UnitalGroebner
@@ -31,7 +31,7 @@ variable (A : Type u) [Ring A] [Algebra R A] [Module R A]
 
     These are the monomials (with coefficients) that do NOT appear
     as the leading term of any element of I. -/
--- Ref: [manuscript] §1/remainder-modules
+-- Ref: [leitner2026] §1/remainder-modules
 structure RemainderModule where
   /-- The subset I ⊆ A whose leading terms are avoided. -/
   ideal : Set A

@@ -1,4 +1,4 @@
-The proof strategy uses characteristic classes and gauge equivalence. We demonstrate that the second Chern class $c_2$ completely classifies the solutions up to gauge transformations. Consequently, any two instantons with the same $c_2$ coincide, and the moduli space of solutions is faithfully parameterized by $H^4$.
+The proof strategy uses characteristic classes and gauge equivalence. The second Chern class $c_2$ completely classifies the solutions up to gauge transformations. Consequently, any two instantons with the same $c_2$ coincide, and the moduli space of solutions is faithfully parameterized by $H^4$.
 
 Two self-dual connections with the same $c_2$ differ by an element
 of $\ker(d_{\nabla_1})$ acting on the fibre — i.e. by an

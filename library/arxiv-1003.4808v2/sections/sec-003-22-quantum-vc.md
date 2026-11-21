@@ -7,10 +7,11 @@ section_number: 2.2
 pages: 9-11
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
-doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
-latex_coverage_ratio: 0.942
+latex_coverage_ratio: 0.963
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume"
 ---
 The second option for generalizing the volume conjecture [\[VC\]](#VC){reference-type="eqref" reference="VC"} is to ask for higher-order terms in the asymptotic expansion of the colored Jones polynomial. Let us define a new "quantum" parameter $\hbar$ as
 

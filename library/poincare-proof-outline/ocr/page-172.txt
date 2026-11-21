@@ -1,0 +1,69 @@
+using Poincare TarskiAbsolute.on-line-def
+by simp
+
+11. Limiting parallels
+
+thus dal a2.
+— TarskiAbsolute.on-line p-between a al a2 A
+— TarskiAbsolute.ray-meets-line p-between a al «1 x2 A
+— TarskiAbsolute.ray-meets-line p-between a a2 «1 x2 A
+(Va'. TarskiAbsolute.in-angle p-between a’ al a a2 —+ TarskiAbsolute.ray-meets-line p-between a a’ x1 x2)
+unfolding TarskiAbsolute.in-angle-def[OF Poincare TarskiAbsolute. TarskiAbsolute-axioms]
+unfolding TarskiAbsolute.on-ray-def|OF Poincare TarskiAbsolute. TarskiAbsolute-axioms]
+unfolding TarskiAbsolute.ray-meets-line-def|OF Poincare TarskiAbsolute. TarskiAbsolute-axioms]
+unfolding TarskiAbsolute.on-ray-def|OF Poincare TarskiAbsolute. TarskiAbsolute-axioms]
+unfolding TarskiAbsolute.on-line-def[OF Poincare TarskiAbsolute. TarskiAbsolute-axioms|
+unfolding Poincare TarskiAbsolute.on-line-def
+apply transfer
+proof—
+fix a x1 x2
+assume *: a € unit-disc x1 € unit-disc 72 € unit-disc
+7 (poincare-between a x1 x2 V poincare-between x1 a 22 V poincare-between t1 x2 a)
+hence — poincare-on-line a x1 «2
+using poincare-collinear3-iff [of a x1 x2]
+using poincare-between-rev poincare-on-line-def by blast
+hence 5 al €unit-disc.
+da2€unit-disc.
+— poincare-on-line a al a2 A
+— poincare-ray-meets-line a al x1 72 \
+— poincare-ray-meets-line a a2 x1 «2 A
+(V a'Eunit-disc.
+poincare-in-angle a' al a a2 —+
+poincare-ray-meets-line a a’ x1 x2)
+using limiting-parallels[of a x1 x2] *
+by blast
+then obtain al a2 where **: al €unit-disc a2€unit-disc — poincare-on-line a al a2
+— poincare-ray-meets-line a a2 x1 42
+7 poincare-ray-meets-line a al x1 42
+V a’Eunit-disc.
+poincare-in-angle a’ al a a2 —+
+poincare-ray-meets-line a a’ x1 x2
+by blast
+have 7 (Ax€{z. z € unit-disc}.
+(poincare-between a x al V
+poincare-between a al x) A
+(poincare-between x x1 42 V
+poincare-between x1 x x2 V
+poincare-between x1 x2 x))
+using (— poincare-ray-meets-line a al «1 «2»
+unfolding poincare-on-line-def poincare-ray-meets-line-def poincare-on-ray-def
+using poincare-collinear3-iff [of - x1 x2] poincare-between-rev *(2, 3)
+by auto
+moreover
+have 7 (Ax€{z. z € unit-disc}.
+(poincare-between a x a2 V
+poincare-between a a2 x) \
+(poincare-between x x1 42 V
+poincare-between x1 x x2 V
+poincare-between x1 x2 x))
+using (— poincare-ray-meets-line a a2 «1 x2»
+unfolding poincare-on-line-def poincare-ray-meets-line-def poincare-on-ray-def
+using poincare-collinear3-iff [of - x1 x2] poincare-between-rev *(2, 3)
+by auto
+moreover
+have 7- (poincare-between a al a2 V poincare-between al a a2 V poincare-between al a2 a)
+using ‘~ poincare-on-line a a1 a2) poincare-collinear3-iff [of a al a2]
+using *(1) **(1—2)
+unfolding poincare-on-line-def
+
+172

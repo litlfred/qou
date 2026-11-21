@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.872
 latex_coverage_ratio: 0.988
+doc_brief: "Fock–Goncharov Coordinates for Semisimple Lie Groups — Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi- nates on varieties of surface representations into"
 ---
 The process described can be applied to $3$-manifolds as well as
   surfaces. We omit all details. An element of $\Conf_4^{\ast}(G/K)$ is

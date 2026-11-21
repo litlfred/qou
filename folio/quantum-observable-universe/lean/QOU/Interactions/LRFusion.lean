@@ -25,7 +25,7 @@ LaTeX label: `conj:diagrammatic-double-magic-lr-fusion`
 - [turaev2010] https://doi.org/10.1515/9783110221848
 - [jucys1974] — Jucys–Murphy elements
 - [murphy1992] https://doi.org/10.1016/0021-8693(92)90105-T
-- [manuscript] observations / diagrammatic-double-magic-lr-fusion
+- [leitner2026] observations / diagrammatic-double-magic-lr-fusion
 -/
 
 namespace QOU.Interactions.LRFusion
@@ -81,7 +81,7 @@ def Composite.fromUnion (ydZ ydN : YoungDiagram) : Composite where
     proof* (no axiom). Provides a concrete instance of
     `ContentAdditive` against which downstream theorems can be
     smoke-tested. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 instance contentAdditive_fromUnion (ydZ ydN : YoungDiagram) :
     ContentAdditive (Composite.fromUnion ydZ ydN) where
   kappa_add := by
@@ -118,7 +118,7 @@ def IsDoubleMagic (C : Composite) : Prop :=
     Stated on the two self-conjugacy facts rather than on `IsDoubleMagic`,
     because that is all the proof uses — saturation is irrelevant to it, and
     requiring it would weaken the lemma for no gain. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 theorem kappa_zero_of_selfConj_constituents
     (C : Composite) [CA : ContentAdditive C]
     (hZ' : isSelfConjugate C.ydZ) (hN' : isSelfConjugate C.ydN) :
@@ -129,7 +129,7 @@ theorem kappa_zero_of_selfConj_constituents
 
 /-- **Lemma (proved):** a double-magic composite has zero global
     Jucys–Murphy charge `κ_{ydA} = 0`. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 theorem doubleMagic_kappa_zero
     (C : Composite) [ContentAdditive C]
     (hM : IsDoubleMagic C) :
@@ -187,7 +187,7 @@ theorem doubleMagic_kappa_zero
 
     Bean `qou-z9ws`; refutation of the old form in
     `docs/audits/2026-08-31-double-magic-conjecture-is-false.lean`. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 class DoubleMagicConjecture where
   /-- LR-rigidity: the dominant composite of two self-conjugate
       saturated constituents is itself self-conjugate. -/
@@ -197,7 +197,7 @@ class DoubleMagicConjecture where
 
 /-- Re-export: at a double-magic composite, the dominant module is
     self-conjugate. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 theorem composite_self_conjugate_of_double_magic
     [D : DoubleMagicConjecture]
     {C : Composite} (h : IsDoubleMagic C) :
@@ -207,7 +207,7 @@ theorem composite_self_conjugate_of_double_magic
 /-- Re-export: a double-magic composite has zero global Jucys–Murphy
     charge.  Combines content additivity with the
     self-conjugate-zero-charge field. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 theorem composite_kappa_zero_of_double_magic
     [D : DoubleMagicConjecture]
     (C : Composite) [ContentAdditive C]
@@ -220,7 +220,7 @@ theorem composite_kappa_zero_of_double_magic
     `κ_{ydA} = 0`. This is `doubleMagic_kappa_zero` specialised to
     `Composite.fromUnion`, where `ContentAdditive` is a real
     instance rather than an axiomatic typeclass field. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 theorem fromUnion_kappa_zero_of_double_magic
     (ydZ ydN : YoungDiagram)
     (hZ : isSelfConjugate ydZ) (hN : isSelfConjugate ydN) :
@@ -237,7 +237,7 @@ theorem fromUnion_kappa_zero_of_double_magic
     Littlewood–Richardson rule, but content additivity and
     self-conjugacy preservation hold at the union level too, giving
     a non-vacuous structural lower bound. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 theorem fromUnion_lr_rigidity
     (ydZ ydN : YoungDiagram)
     (h : IsDoubleMagic (Composite.fromUnion ydZ ydN)) :

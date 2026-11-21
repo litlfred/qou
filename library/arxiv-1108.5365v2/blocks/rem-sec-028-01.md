@@ -1,0 +1,1 @@
+The term N Q 2b is to make the corepresentation unitary. As seen from below, it is coming from the modular element δ−1 2 in the fundamental corepre- sentation (6.45) of the quantum plane. The factor chosen for N in T λ,t is for later convenience when we obtain the fundamental representation.

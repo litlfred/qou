@@ -86,7 +86,7 @@ structure PoleOrderData where
 
     The single field asserts that identity **about the supplied `P`**;
     the class can no longer manufacture its own indicator. -/
--- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
+-- Ref: [leitner2026] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
 -- Ref: [mathas1999] Mathas, "Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group," AMS Univ. Lect. Series 15, 1999
 -- Ref: [hoefsmit1974] http://hdl.handle.net/2429/19407
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see folio/bib-qa-verifications.json
@@ -107,7 +107,7 @@ namespace CrystalRMatrixSubLemma
     The pole order at the column-extreme axial distance is 1,
     matching the eigenvalue `-q⁻¹` of `σ_i` on a same-column SYT
     pair (Hoefsmit; audit Step 1). -/
--- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
+-- Ref: [leitner2026] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
 theorem poleIndicator_minus_one_eq_true
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q]
@@ -118,7 +118,7 @@ theorem poleIndicator_minus_one_eq_true
 /-- Unconditional structural lemma: `poleIndicator (+1) = false`.
     The pole order at the row-extreme axial distance is 0,
     matching the eigenvalue `+q` of `σ_i` on a same-row SYT pair. -/
--- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
+-- Ref: [leitner2026] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
 theorem poleIndicator_plus_one_eq_false
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q]
@@ -134,7 +134,7 @@ theorem poleIndicator_plus_one_eq_false
     `pole_indicator_correct`, every generator contributes a pole
     of order 1, so the cycle pole is `p - 1`.  Matches
     `prop:alpha-shift-torus-knot` (`α_shift(T_{(p, 1)}) = p - 1`). -/
--- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
+-- Ref: [leitner2026] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
 def column_syt_pole_per_cycle (p : ℕ) : ℕ :=
   if p = 0 then 0 else p - 1
 
@@ -161,7 +161,7 @@ theorem axkia_pole_T_3_5 :
     boundary generators contributes a single pole (audit Step 2,
     via `pole_indicator_correct` at axial distance `-1`); cycles
     compose multiplicatively in `k`. -/
--- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
+-- Ref: [leitner2026] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
 theorem cycle_pole_torus_knot
     (p k : ℕ) (hp : 1 ≤ p) :
     k * column_syt_pole_per_cycle p = k * (p - 1) := by
@@ -176,7 +176,7 @@ theorem cycle_pole_torus_knot
     the integer envelopes are `α_shift(T_{(2, 9)}) = 9` and
     `α_shift(T_{(3, 5)}) = 10`.  Their **product** is `90` —
     matches `[9]·[10]` in the `q → 1` limit of `α_EM⁻¹`. -/
--- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
+-- Ref: [leitner2026] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
 theorem axkia_pole_product :
     (9 * column_syt_pole_per_cycle 2) * (5 * column_syt_pole_per_cycle 3) = 90 := rfl
 
@@ -192,7 +192,7 @@ theorem axkia_pole_product :
     interface piece — the per-nucleon `18` and `21` are inputs from
     the AXKIA per-new-nucleon decomposition (cited in audit Step 5,
     not provable from `pole_indicator_correct` alone). -/
--- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md §"Step 5"
+-- Ref: [leitner2026] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md §"Step 5"
 theorem inter_nucleon_interface_pole :
     column_syt_pole_per_cycle 2 = 1 := rfl
 

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0309426v2
-doc_title: "arXiv:math/0309426v2 [math.RT] 1 Jul 2004"
+doc_title: "ELEMENTARY DIVISORS OF SPECHT MODULES"
 section_id: sec-003-4-diagonalizability-and-elementary-divisors
 section_title: "Diagonalizability and elementary divisors"
 section_number: 4
@@ -9,8 +9,9 @@ source_pdf: 0309426v2.pdf
 source_sha256: f2aa01164d9f243c
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.981
+latex_prose_ratio: 0.618
+latex_coverage_ratio: 1.0
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 9 sections: Front matter; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 Given an integer $m\geq 1$, an $m\times m$ matrix $A$ with coefficients in $R$ is
 {\sf diagonalizable} if there exist matrices $S$ and $T$ in $\GL_m(R)$ such that

@@ -84,7 +84,7 @@ has been checked at the source and does not already contain it.
 - Exact finite-n margin: [`wlambda_covariance_epic_M1_finite_n_cs_margin.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_finite_n_cs_margin.py) (exit 0; exact `Fraction`; `m(n)>0`, 4≤n≤40).
 - Leading closed forms: [`2026-08-29-covariance-kernel-M1-po72-leading-constants.md`](2026-08-29-covariance-kernel-M1-po72-leading-constants.md) (merged #5969).
 - `V_A` rate `θ^{−1}`: [`2026-08-29-covariance-kernel-M1-tvok-remainder-rate.md`](2026-08-29-covariance-kernel-M1-tvok-remainder-rate.md) (merged #5959).
-- BOO bulk limit (rate-free): `library/arxiv-math-9905032v2/sections/sec-006-13-asymptotics-in-the-bulk-of-the-spectrum-given.md`, Theorem 3.
+- BOO bulk limit (rate-free): `library/arxiv-math-9905032v2/sections/sec-003-13-asymptotics-in-the-bulk-of-the-spectrum.md`, Theorem 3.
 - Fulman Stein's method: `library/arxiv-math-0305423v3`; Śniady–Dołęga: `library/arxiv-1402.4615v3`.
 
 ## Cross-references

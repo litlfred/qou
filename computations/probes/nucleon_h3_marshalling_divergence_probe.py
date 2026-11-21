@@ -234,6 +234,7 @@ def main() -> int:
         # Feeding it to the wrong kernel is what produced `unsupported crossing
         # c=-1.0` on a first attempt.
         mword = MM.marshal_to_chi_lambda_braid(chain, float(h))
+        # float64-intentional: the marshaller takes float(h); this path measures that loss
         marshalled_explicit = mp.fsum(
             [y[pp] * mp.mpf(str(chi_lambda_braid(pp, mword, q0,
                                                  precision="mpfr_50dps")))
@@ -244,7 +245,7 @@ def main() -> int:
         rel_marsh = abs(marshalled - target) / abs(target)
 
         print(f"\n  {nuc}: census = {dict(census)}")
-        print(f"     marshalled EXPLICIT    {mp.nstr(marshalled_explicit, 18)}"
+        print(f"     marshalled EXPLICIT    {mp.nstr(marshalled_explicit, 18)}"  # float64-intentional: the lossy path, measured
               f"   rel vs habiro = {mp.nstr(rel_lossy, 3)}"
               f"   (ratio {mp.nstr(marshalled_explicit / preserving, 6)})")
         print(f"     d-preserving           {mp.nstr(preserving, 18)}"

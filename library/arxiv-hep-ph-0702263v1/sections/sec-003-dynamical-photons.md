@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-hep-ph-0702263v1
-doc_title: "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna"
+doc_title: "Chiral Low-Energy Constants ∗"
 section_id: sec-003-dynamical-photons
 section_title: "Dynamical photons"
 section_number: null
 pages: 8-9
 source_pdf: 0702263v1.pdf
 source_sha256: 8ae381b4eba60286
-doc_brief: "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna — The progress in determining the coupling constants of meson ic chi- ral Lagrangians is reviewed, with emphasis on the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.935
 latex_coverage_ratio: 1.0
+doc_brief: "Chiral Low-Energy Constants ∗ — The progress in determining the coupling constants of mesonic chi- ral Lagrangians is reviewed, with emphasis on the work performed in three successive European"
 ---
 Radiative corrections at low energies involve the effective Lagrangians
 in Table \ref{tab:Leff} with superscripts {\it em}, {\it emweak} or

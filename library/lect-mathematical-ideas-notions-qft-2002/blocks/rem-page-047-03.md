@@ -1,0 +1,1 @@
+The fact that we can only define amplitudes of graphs whose all components have at least one 1-valent vertex (see above) means that we actually cannot define either Z(0) or Z(J) but can only define their ratio Z(J)/Z(0).

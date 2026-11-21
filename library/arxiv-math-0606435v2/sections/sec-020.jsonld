@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Positive links",
-  "pageStart": 35,
-  "pageEnd": 38,
+  "title": "The proof of Theorem thmwf: Initial simplifications",
+  "pageStart": 28,
+  "pageEnd": 29,
   "contains": [
-    "library/arxiv-math-0606435v2/blocks/prose-sec-020"
+    "library/arxiv-math-0606435v2/blocks/prose-sec-020",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-020-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
   "provenance": "ingested"
 }

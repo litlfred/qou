@@ -1,0 +1,186 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1206.3156v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "384b83fa69f21305a5b1a7b841d98b4006e729ac0b172bc67daec51b43f3c050",
+  "file": "1206.3156v2.pdf"
+ },
+ "provenance": {
+  "title": "Isospin breaking in octet baryon mass splittings",
+  "authors": "December 20, 2012",
+  "arxiv": {
+   "id": "1206.3156",
+   "version": "2",
+   "primary_class": "hep-lat",
+   "stamp_date": "21 Dec 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "proposition": 7
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 7
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 4,
+   "computational-simulation": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 5,
+   "both": 1,
+   "elsewhere": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "(30)3, X\u2217 \u03c0 = 0.4116 GeV, (47) (of course this is very close to the experimental value of Xexp \u03c0 = 0.4126 GeV).",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-009-5-physical-values-of-the-quark-masses.md (p. 16-18)",
+   "external_refs": [],
+   "quantitative_values": [
+    "0.4116 GeV",
+    "0.4126 GeV"
+   ],
+   "section_file": "sections/sec-009-5-physical-values-of-the-quark-masses.md",
+   "section_title": "Physical values of the quark masses",
+   "pages": "16-18",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-009-5-physical-values-of-the-quark-masses.md (p. 16-18)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "(58) This is to be compared with the experimental result given in eq.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-013-72-physical-values-of-the-mass-splittings.md (p. 22-23)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-013-72-physical-values-of-the-mass-splittings.md",
+   "section_title": "Physical values of the mass splittings",
+   "pages": "22-23",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-013-72-physical-values-of-the-mass-splittings.md (p. 22-23)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Despite the fact that QED e\ufb00ects are treated slightly di\ufb00erently in each work, good agreement amongst the various determinations and with the experimental result is found. \u22121 0 1 2 3 4 MeV QCDSF\u2212UKQCD RM123 Blum et al NPLQCD Figure 8: Comparison of the n \u2013 p mass di\ufb00erence of the present result (QCDSF- UKQCD or lowest plotted number) with NPLQCD, Blum et al., and RM123 [2, 3, 4], respectively (top to bottom plotted numbers).",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper result in sections/sec-013-72-physical-values-of-the-mass-splittings.md combined with [2, 3, 4]",
+   "external_refs": [
+    "[2, 3, 4]"
+   ],
+   "quantitative_values": [
+    "4 MeV"
+   ],
+   "section_file": "sections/sec-013-72-physical-values-of-the-mass-splittings.md",
+   "section_title": "Physical values of the mass splittings",
+   "pages": "22-23",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: both \u2014 In-paper result in sections/sec-013-72-physical-values-of-the-mass-splittings.md combined with [2, 3, 4]). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The vertical dashed line is the experimental result given in eq.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-013-72-physical-values-of-the-mass-splittings.md (p. 22-23)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-013-72-physical-values-of-the-mass-splittings.md",
+   "section_title": "Physical values of the mass splittings",
+   "pages": "22-23",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-013-72-physical-values-of-the-mass-splittings.md (p. 22-23)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Acknowledgements The numerical con\ufb01guration generation was performed using the BQCD lattice QCD program [25] on the IBM BlueGeneL at EPCC (Edinburgh, UK), the Blue- GeneL and P at NIC (J\u00a8ulich, Germany), the SGI ICE 8200 at HLRN (Berlin- Hannover, Germany), and the JSCC (Moscow, Russia).",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [25] in sections/sec-014-73-conclusions.md",
+   "external_refs": [
+    "[25]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-014-73-conclusions.md",
+   "section_title": "Conclusions",
+   "pages": "23-25",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: elsewhere \u2014 Cites external source [25] in sections/sec-014-73-conclusions.md). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "SFB/TR 55 (Hadron Physics from Lattice QCD) and by the EU Grants No.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-014-73-conclusions.md (p. 23-25)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-014-73-conclusions.md",
+   "section_title": "Conclusions",
+   "pages": "23-25",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-014-73-conclusions.md (p. 23-25)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "For the lightest 243 \u00d7 48 point, namely, (\u03bal, \u03bas) = (0.121040, 0.120620), M\u03c0L \u223c3.4 (where L is the spatial lattice size, here 24a), and the mass ratio \u02dc M has \ufb01nite size error \u223c1%, from comparing the 243 \u00d748 lattice result with the 323 \u00d764 lattice result.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-015-a-systematic-errors.md (p. 25-27)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-015-a-systematic-errors.md",
+   "section_title": "A Systematic errors",
+   "pages": "25-27",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-015-a-systematic-errors.md (p. 25-27)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  }
+ ]
+}

@@ -10,7 +10,8 @@ source_sha256: 1660907865346bdf
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.914
-latex_coverage_ratio: 0.983
+latex_coverage_ratio: 0.975
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 The random matrix predictions for the microscopic spectral correlations depend on the number of zero modes of the Dirac operator and, thus, on the topological charge $\nu$ of the gauge field configurations. Thus, one should sort the configurations according to their values of $\nu$ and make the comparison with RMT separately in sectors of fixed topological charge.
 

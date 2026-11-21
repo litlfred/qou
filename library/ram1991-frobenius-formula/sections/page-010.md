@@ -1,0 +1,65 @@
+---
+doc_id: ram1991-frobenius-formula
+doc_title: "A Frobenius formula for the characters of the Hecke algebras"
+section_id: page-010
+section_title: "Page 10"
+pages: 10-10
+pdf_page: 10
+source_pdf: ram1991-frobenius-formula.pdf
+source_sha256: 26b2fc85338d9150
+text_source: ocr
+granularity: page
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — 28 sections: Page 1; Page 2; Page 3"
+---
+470 A. Ram
+
+Remark. Some possible choices for the partition of unity in the proof of the above
+theorem can be given explicitly. [Wz1] constructs a partition of unity in H, with
+the property that at q = 1 it reduces to the partition of unity given by the Young
+orthogonal minimal idempotents of S,. [Gy] constructs a partition of unity in
+H, with the property that at q = 1 it is the partition of unity in CS, given by Young
+symmetrizers. Either of these is sufficient for our purposes. The only advantage of
+the [Gy] approach is that it is immediate from the definition of the minimal
+idempotents that they are the same as the Young symmetrizers at q = 1.
+
+4 The Frobenius formula for the characters of H,
+
+The crucial step in this development is to evaluate the left hand side of the
+expression in Theorem 3.8 by another means.
+
+(4.1) Theorem. For 1 <r <f the trace of the operator DT,, on V®" is given by
+tr(DT,,) = YP g — VIO xi, xn. Xi,»
+I
+
+where the sum is over all sequences I = (i,,i2,...,i,) such that 1 Si, S...Si,,
+e(I) denotes the number of i; = ij4 in I and I(I) denotes the number of i; < ij in I.
+Proof. The proof is by induction on r.
+
+Let w = 0;,0;,...0;,, W = 0;,0;,...0;,_, and Ww” = 0;,0;,... Ui,_,.
+Case 1 i,-, >i,:
+
+Dwg,-1---9ilw = q'!? Dw" 0,0; )Gr—2 oa “Grlv,...v, :
+
+Since g,_....g, acts only on the letters in wv, and v;,_, + 0;,, DwT,,|y = 0.
+Case 2 i,-4 <i,:
+
+DwT,,| = (q — 1)DwT,
+
+rd
+
+lw + q*?w"v,0;,_,T-lw
+= (q — 1)xi,(Dw'T,,_.)lw + 0.
+Case 3 i,-; =i,:
+DwT,, lw = QDWT,,_ .lw = 9Xi,(Dw'T,,_ ,)lw' +
+So, by induction,
+tr(DT,,)= Y DwT,,\w
+
+w
+Iwl=r
+
+S YX Dvj,¥;,--- 0;,T,,lo,,0,,.. .»,
+
+1 Sis,in,...,i,50
+
+= Y gt Fim tng — 1)# Fi <tr x, x x, o
+i; Sbhs...54

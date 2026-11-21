@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1412.4711v1
-doc_title: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT"
+doc_title: "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT"
 section_id: sec-003-12-decorated-versions
 section_title: "Decorated versions"
 section_number: 1.2
 pages: 4-5
 source_pdf: 1412.4711v1.pdf
 source_sha256: 4fb1d6ee062cca8c
-doc_brief: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.952
+latex_coverage_ratio: 0.99
+doc_brief: "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
 ---
 From now on, we assume $G=\PGL(n,\bC)$. A key point to study the previous defined spaces is to add a geometric structure on it, as usual in the study of moduli spaces. 
 Such a structure is called a \emph{decoration} and will be most easily defined with additional assumption: from now on $\Gamma$ is the fundamental group of a $1$-cusped hyperbolic $3$-variety $M$ (as the figure eight knot complement)\footnote{This assumption is not necessary and one may work with a triangulated $3$-variety (either hyperbolic with more cusps, or with boundary, or even not hyperbolic). We refer to \cite{BFG} for this setting.}. As $M=\mathbb H^3/\Gamma$ is a cusped hyperbolic manifold, we let

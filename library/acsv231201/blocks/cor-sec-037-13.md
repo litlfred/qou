@@ -1,0 +1,1 @@
+Replacing (Vcj+ε, Vc j−ε) by Vz,loc for each z, the conclu- sions of Theorem 7.15 hold without the assumption of distinct critical values. □ We end this subsection with some examples of this topological decomposi- tion.

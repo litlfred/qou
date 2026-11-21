@@ -1,0 +1,40 @@
+46
+
+Figure V.4: The Conway skein relation on links: A(L4) - A(L_) = (v— v7!)A(Lo)
+
+For the skein relation, it suffices to show that
+A(ao,) — A(agz) = (v—v7)A(a). (V.8)
+
+Let x be any permutation diagram for a, and let y; and y_ be permutation diagrams for ao, and
+ao;}, respectively. Now, consider the permutation 7 = (x). If 7 =1, so x is admissible, then
+y4 must be resolved straight through to form states. For any such state with sign sequences with
+
+(Er, Er41) equal to (+, +) or (—, —), we verify that
+M(aor,y+.€) — M(ao,",y_,e) = (v—v7")M(a,x, 6).
+
+When the signs on strands r and r+ 1 are different, we calculate
+
+-1 uv yr
+M(a0,,y+,€) -—M(aoz' y_,e) = | a -—
+
+rr} rl
+=(v-—v')M(a,x,€). (V.10)
+
+) M(a,x,€) (V.9)
+
+Finally, consider the case where 7 = (r r + 1), so x is not admissible. There are no states
+for a with such a permutation diagram. Any state for ac#! must have y+ with a crossing of
+
+strands r and r+ 1. The contribution to the sum when (€,,€,-41) = (+, —) is
+
++i} r+)
+
+[rj [rl
+
+M(ao,,¥+4,€) ~ M(ao;z',y-,e) = ( ) alayxe) =0
+
+The case (€,,€r41) = (—,+) gives 0 as well.
+The Conway normalization for the Alexander polynomial has V(unknot) = 1. A braid
+representative is the trivial braid on one strand. There is only one state available, carrying the
+
+sign -+. The weight involves the empty product, hence gives value 1. Oo

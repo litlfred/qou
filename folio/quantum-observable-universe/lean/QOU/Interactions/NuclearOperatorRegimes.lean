@@ -10,7 +10,7 @@ distinct regimes. L₊ ≠ L₋ is proved symbolically.
 
 ## Proved theorems
 
-- Uses `hopf_ne` from BorromeanUnique.lean: L₊ ≠ L₋
+- Uses `lPlus_ne_lMinus` from BorromeanUnique.lean: L₊ ≠ L₋
 
 ## References
 
@@ -26,35 +26,37 @@ open QOU.Archimedean
 
 /-- The three nuclear binding regimes. -/
 inductive BindingRegime where
-  | shellFilling  : BindingRegime  -- Torus knot T_{2,n_s}
-  | magicClosure  : BindingRegime  -- Hopf link L₊ or L₋
+  | shellFilling  : BindingRegime  -- the braid (σ₀σ₁)²σ₀, closure T(2,4)
+  | magicClosure  : BindingRegime  -- L₊ or L₋ (closure in B₃: the unknot)
   | openShell     : BindingRegime  -- Bare typed crossing
   deriving DecidableEq, Repr
 
-/-! ## §2  The trefoil = σ₀σ₁σ₀ -/
+/-! ## §2  The electron word σ₀σ₁σ₀ (closure: the Hopf link) -/
 
-/-- The trefoil (electron) e⁻ = σ₀σ₁σ₀ in the standard representation. -/
-noncomputable def trefoilMatrix : TMatrix :=
+/-- The electron word e⁻ = σ₀σ₁σ₀ in the standard representation. Its
+    closure in `B₃` is the Hopf link, not the trefoil (owner ruling
+    2026-11-21; it was named `trefoilMatrix` until then). -/
+noncomputable def electronWordMatrix : TMatrix :=
   stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0
 
-/-- The trefoil equals L₊ · σ₀ = σ₀σ₁ · σ₀. -/
+/-- The electron word equals L₊ · σ₀ = σ₀σ₁ · σ₀. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem trefoil_eq_hopfPlus_gen0 :
-    trefoilMatrix = hopfPlus * stdRep3_gen0 := by
-  unfold trefoilMatrix hopfPlus
+theorem electronWord_eq_lPlus_gen0 :
+    electronWordMatrix = lPlus * stdRep3_gen0 := by
+  unfold electronWordMatrix lPlus
   rw [Matrix.mul_assoc]
 
-/-- The trefoil also equals σ₀ · L₋ = σ₀ · σ₁σ₀ (by braid relation). -/
+/-- The electron word also equals σ₀ · L₋ = σ₀ · σ₁σ₀ (by braid relation). -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem trefoil_eq_gen0_hopfMinus :
-    trefoilMatrix = stdRep3_gen0 * hopfMinus := by
-  unfold trefoilMatrix hopfMinus
+theorem electronWord_eq_gen0_lMinus :
+    electronWordMatrix = stdRep3_gen0 * lMinus := by
+  unfold electronWordMatrix lMinus
   rw [Matrix.mul_assoc]
 
 /-! ## §3  L₊ and L₋ are distinct operators -/
@@ -68,8 +70,8 @@ theorem trefoil_eq_gen0_hopfMinus :
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem hopf_links_distinct : hopfPlus ≠ hopfMinus :=
-  hopf_ne
+theorem lPlus_lMinus_distinct : lPlus ≠ lMinus :=
+  lPlus_ne_lMinus
 
 /-! ## §4  L₊ and L₋ are related by the braid relation -/
 
@@ -80,9 +82,9 @@ theorem hopf_links_distinct : hopfPlus ≠ hopfMinus :=
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem yang_baxter_hopf :
-    hopfPlus * stdRep3_gen0 = hopfMinus * stdRep3_gen1 := by
-  unfold hopfPlus hopfMinus
+theorem yang_baxter_lPlus_lMinus :
+    lPlus * stdRep3_gen0 = lMinus * stdRep3_gen1 := by
+  unfold lPlus lMinus
   exact stdRep3_braid
 
 /-! ## §5  B₃ is quark-level only (statement) -/
@@ -99,34 +101,35 @@ theorem yang_baxter_hopf :
 -- Computational witness: nuclear-binding-lp.witness.json
 theorem borromean3_not_nuclear_level :
     -- B₃ operates at the quark level, not nuclear. At the nuclear level,
-    -- the distinct operators L₊ and L₋ (proved distinct by hopf_ne)
+    -- the distinct operators L₊ and L₋ (proved distinct by lPlus_ne_lMinus)
     -- are the binding operators.
-    hopfPlus ≠ hopfMinus :=
-  hopf_ne
+    lPlus ≠ lMinus :=
+  lPlus_ne_lMinus
 
 /-! ## §6  Regime transitions at magic numbers (statement) -/
 
 /-- **Regime transition at Z = 2 — typeclass.**
-    Per-`(demandT25, demandLplus)` witness that the
-    demand-minimizing operator transitions from `T_{2,5}` to `L₊`
+    Per-`(demandT24, demandLplus)` witness that the
+    demand-minimizing operator transitions from `(σ₀σ₁)²σ₀` (closure
+    `T(2,4)`, mislabelled `T_{2,5}` until 2026-11-21) to `L₊`
     at the first proton magic number. Pending q₀-numeric demand
     evaluation. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-class RegimeTransitionZ2 (demandT25 demandLplus : ℝ) : Prop where
-  /-- `L₊` strictly dominates `T_{2,5}` at `Z = 2`. -/
-  Lplus_dominates : demandLplus < demandT25
+class RegimeTransitionZ2 (demandT24 demandLplus : ℝ) : Prop where
+  /-- `L₊` strictly dominates `(σ₀σ₁)²σ₀` at `Z = 2`. -/
+  Lplus_dominates : demandLplus < demandT24
 
 /-- **Default instance from a strict-positivity hypothesis on the
-    difference**. When `demandLplus + ε ≤ demandT25` for some
-    `ε > 0` (witnessed by `Fact (0 < demandT25 - demandLplus)`),
+    difference**. When `demandLplus + ε ≤ demandT24` for some
+    `ε > 0` (witnessed by `Fact (0 < demandT24 - demandLplus)`),
     the strict inequality holds. -/
 instance regimeTransitionZ2_of_positive_gap
-    (demandT25 demandLplus : ℝ)
-    [hpos : Fact (0 < demandT25 - demandLplus)] :
-    RegimeTransitionZ2 demandT25 demandLplus :=
+    (demandT24 demandLplus : ℝ)
+    [hpos : Fact (0 < demandT24 - demandLplus)] :
+    RegimeTransitionZ2 demandT24 demandLplus :=
   ⟨by linarith [hpos.out]⟩
 
 /-- **He-4 demand closure — typeclass.**

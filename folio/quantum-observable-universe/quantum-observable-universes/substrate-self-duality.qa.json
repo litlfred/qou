@@ -79,6 +79,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2c0e03ee8a86",
+          "ts": "fae89a47d0e4",
+          "lean": "c0f4343dcb26",
+          "lean_statement": "e959525682cd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:05:35.229Z",
+        "reviewed_sha": "d452093fabf877690aeba624197ad015c6b9aa74",
+        "severity": "major",
+        "evidence": "lean.ref is the data structure SelfDualPairingData. The sibling now proves the unconstrained isomorphism claim false (Bool counterexample). The md quasi-isomorphism to the dualizing complex and the Serre duality are not encoded; the true statement needs snake laws as fields."
       }
     ],
     "proof-statement-integrity": [
@@ -2148,6 +2166,6 @@
       }
     ]
   },
-  "updated_at": "2026-10-10T12:00:00.000Z",
+  "updated_at": "2026-11-16T07:05:35.229Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

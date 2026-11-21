@@ -37,7 +37,7 @@ gives the solution normalised at `1`. These two solutions are the input to the a
 Invertibility of `G`, `t`-independence of `G₁⁻¹ G₀` (hence `Φ_KZ`), hexagon and pentagon.
 Base: complete normed `ℝ`-algebra (archimedean by necessity: this is the analytic step). Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1, §5
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1, §5
 -/
 
 namespace QOU.KZ.FuchsianAnalytic

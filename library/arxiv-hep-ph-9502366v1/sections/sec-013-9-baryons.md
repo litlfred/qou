@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-013-9-baryons
 section_title: "Baryons"
 section_number: 9
@@ -8,6 +8,7 @@ pages: 36-38
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 The inclusion of baryons in the low-energy eﬀective ﬁeld theory follows the same
 procedure used in section 6 to incorporate the mesonic resonances. The octet of baryon
@@ -39,8 +40,6 @@ n
 
 ,
 (9.1)
-Chiral Perturbation Theory
-37
 which under SU(3)L ⊗SU(3)R transforms non-linearly
 B
 G
@@ -106,8 +105,6 @@ Equation (9.7) is the well-known Goldberger–Treiman (1958) relation, which is 
 satisﬁed by the measured value gπNN ≈13.3 ± 0.3. The same coupling gA determines
 many other interactions with the pion ﬁelds, like the Kroll–Ruderman (1954) NπγN
 term.
-38
-A Pich
 With 3 light ﬂavours, the baryon axial-vector currents get diﬀerent contributions
 from the D and F terms.
 Therefore, using semileptonic hyperon decays, one can

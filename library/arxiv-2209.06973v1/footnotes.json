@@ -1,0 +1,3270 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2209.06973v1",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p055-1",
+   "page": 55,
+   "mark": "6",
+   "text": "ℓ+2",
+   "marks": [
+    {
+     "page": 54,
+     "context": "j′= (j1, j3, j4, j5, j"
+    },
+    {
+     "page": 54,
+     "context": "j′= (j1, j3, j4, j5, j6, j7) ∈(n + 1)"
+    },
+    {
+     "page": 54,
+     "context": "j1≤min{j3, j4 + j5.j5 + j"
+    },
+    {
+     "page": 54,
+     "context": "max{j3 + j4, j4 + j5, j5 + j"
+    },
+    {
+     "page": 55,
+     "context": "withi = (i1, . . . , i"
+    },
+    {
+     "page": 55,
+     "context": "withi = (i1, . . . , i6ℓ+2) ∈(n + 1)"
+    }
+   ],
+   "block": "library/arxiv-2209.06973v1/blocks/prose-sec-008"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "v",
+   "text": ")",
+   "block": "library/arxiv-2209.06973v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p036-1",
+   "page": 36,
+   "mark": "4",
+   "text": "+ n",
+   "block": "library/arxiv-2209.06973v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p036-2",
+   "page": 36,
+   "mark": "4",
+   "text": "+ n",
+   "block": "library/arxiv-2209.06973v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p053-1",
+   "page": 53,
+   "mark": "6",
+   "text": "ℓ+1",
+   "block": "library/arxiv-2209.06973v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p065-1",
+   "page": 65,
+   "mark": "102",
+   "text": "(2), 2000, 273–306 [18] Lin, X. S. ; Wang, Z. ; Random walk on knot diagrams, colored Jones poly- nomial and Ihara-Selberg zeta function, in Knots, braids and mapping class groups - papers dedicated to Joan S. Biorman, New York 1998, 207–121, AMS Stud. Adv. Math. 24, AMS Providence RI 2001 [19] Loebl, Martin; Chromatic polynomial, q-binomial counting and colored Jones function, Advances in Mathematics 211 (2007), 546–565 [20] Lickorish, W. B. R. , Millet, K. C. ; A polynomial invariant of oriented links, Topology 26 (1987), 107–141 [21] Mishra, Rama; Staﬀeldt, Ross; Polynomial invariants, knot homologies, and higher twisting numbers of weaving knots W(3, n), Journal; Knot Ramiﬁca- tions 30 (2021), no. 4, Paper No. 2150025, 57 pp.",
+   "block": "library/arxiv-2209.06973v1/blocks/prose-sec-010"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "LetKbeaframedorientedlinkinR"
+  },
+  {
+   "page": 3,
+   "mark": "v",
+   "context": "v∈Vβ"
+  },
+  {
+   "page": 4,
+   "mark": "v",
+   "context": "conditionsonthecoloringsatvertices.Notethatβ(f)̸=0⇐⇒β"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "LetΦ:G"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "LetΦ:G1→G"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "foreachG∈G"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "φG: St"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "φG: St1(G) →St"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "φG: St1(G) →St2(Φ(G))suchthatforeachf∈St"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "bijectionsst"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "bijectionsst1(G) →st"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "fis in N"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "digraphGisdenotedbyF(G)respectivelyF"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "digraphGisdenotedbyF(G)respectivelyFn(G).LetF"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "F(G) ⊃F"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "F(G) ⊃Fn(G) ⊃F"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Example.TheﬂowsetF"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "linkinR"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "linkinR2× [0, 1],whichprojectstoasmoothimmersionintheplaneR"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "TheimageoftheimmersiondeﬁnedbyKinR"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "F"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "±(PK)ofF"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "e"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "vfrom"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "vfromavertex"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "vfromavertexvtothevertex"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "v to the next overcrossing arc ending at w.The red arc e"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "Remark.(a) There is exactly one red edge e"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "vand one blue edge"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "vand one blue edge e"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ofallthosecoloringsofGKisdenotedF"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "(r, β)withr:V→N"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "(r, β)withr:V→N0andβ:{2, . . . , µ}→N"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Hereλ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2σ"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "2σ1,whichis"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "furtherhavetorestricttor"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "furtherhavetorestricttor1≤r"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "furtherhavetorestricttor1≤r3≤β"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "closure.Notethatthethef(e"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "3) = β"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "3) = β2 −r"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "3) = β2 −r3isnot"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "φ±: F"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "φ±: Fn(G±K) →F"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "ﬁnef(e"
+  },
+  {
+   "page": 15,
+   "mark": "v",
+   "context": "v) = r(v)forallvertices"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "arcs.Deﬁnef(e"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "v)=β"
+  },
+  {
+   "page": 15,
+   "mark": "v",
+   "context": "v)=βjforthevertex"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "whichanovercrossingarcvends.Sothisdeﬁnesf(e"
+  },
+  {
+   "page": 15,
+   "mark": "v",
+   "context": "v)forallvertices"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "f(e"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "w)foreachedge"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "w)foreachedgee"
+  },
+  {
+   "page": 15,
+   "mark": "v",
+   "context": "wendingatvertex"
+  },
+  {
+   "page": 15,
+   "mark": "7",
+   "context": "wendingatvertexv.Figure"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "blueandrededgesatthevertexuofGKwiththef(e"
+  },
+  {
+   "page": 15,
+   "mark": "w",
+   "context": "w′)where"
+  },
+  {
+   "page": 15,
+   "mark": "w",
+   "context": "w′)wherew′istheovercrossingarcpreceding"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "w′)wherew′istheovercrossingarcprecedingw.Then"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "f(e"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "ℓ= i + randj, karedeﬁnedasj"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ℓ= i + randj, karedeﬁnedasj0 + r"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "spondtoeachother,andmoreoveraﬂowinF"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "corresponds to a ﬂow in F"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "followsℓ−i ≥0.Thenumbersr"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "crossing arc u.It follows that j= j"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "crossing arc u.It follows that j= j0+r"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "ρ′+ r≤nbecausethisis"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "f(e"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "e<e"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Jnwhilewewillusethevariablev"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "{a} := v"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "{a} := va−v−a= v−a(v"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "{a} := va−v−a= v−a(v2"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "{a} := va−v−a= v−a(v2a−1) = (ta/2−t−a/2= t−a/2(t"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "{1}=v"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "v −v−1= v"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "= t−ab/2+b(b−1)/4(t"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "= t−ab/2+b(b−1)/4(ta−1)(t"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "= t−ab/2+b(b−1)/4(ta−1)(ta−1−1) · · · (t"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "= (−1)"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "= (−1)bt−ab/2+b(b−1)/4(1 −t"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "= (−1)bt−ab/2+b(b−1)/4(1 −ta)(1 −t"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "= (−1)bt−ab/2+b(b−1)/4(1 −ta)(1 −ta−1) · · · (1 −t"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "(1 −t"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "{a}b= (−1)(1+ε)"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "= t"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "= tb(b−a)/2 (t"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "= tb(b−a)/2 (ta −1) · · · (t"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "(t"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "relatedtothesign-dependentversionsin[7]asfollows:(a)t:=t"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "(a)"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "(a)t! := (1)"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "(a)t! := (1)t(2)"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "(a)t! := (1)t(2)t · · · (a)"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "(b)"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "(b)t!(a −b)"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "(b)t!(a −b)t!=(t"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "(b)t!(a −b)t!=(ta −1) · · · (t"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "(t"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "= t"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "= t−cd/2 (t"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "= t−cd/2 (tc+d −1) · · · (t"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "(t"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "(t"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "(td−1) · · · (t"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "(t"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "(tc−1) · · · (t"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "describedin[4],Remark3.5,inthefollowingway:LetF"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "sbethenumberofbraidstringsandlet{c"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "sbethenumberofbraidstringsandlet{c1, . . . c"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "s∈F"
+  },
+  {
+   "page": 20,
+   "mark": "b",
+   "context": "v−n+2"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "f+(n, i, j, r) := (−1)"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "f+(n, i, j, r) := (−1)rv−((n−2"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "f+(n, i, j, r) := (−1)rv−((n−2i)(n−2"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "f−(n, i, j, r) := v((n−2"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "f−(n, i, j, r) := v((n−2i−2"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "f−(n, i, j, r) := v((n−2i−2r)(n−2"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "f−(n, i, j, r) := v((n−2i−2r)(n−2j+2"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n(U)=1forall"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "n(U(1)) = v−n"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "v−n+2"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "v−n+2rv(n(n−2"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "v"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "= v"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "= vn"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "v"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "{n}r= v"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "{n}r= v2"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "which is easily proved by induction using {n+1}r+1= (v"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "1 + v(v −v−1) = v"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "v"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "(v"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "=1 + v"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "=1 + v2· v"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "=1 + v2· v2"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "=1 + v2· v2n−v−2"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "=1 + v2· v2n−v−2n· v"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "=1 + v2· v2n−v−2n· v2"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "v−1/2J′(K+) −v"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "v−1/2J′(K+) −v1/2J′(K−) = (v−1−v)J′(K"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "isv,correspondingtothestatesonK"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "(−1)"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "−v"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "ω(K"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "v−2J(K+) −v"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "v−2J(K+) −v2J(K−) = (v−1−v)J(K"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "thevariablet=v"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "2(1−ε)"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "(−1)(1+ε)"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "2 t−ε/2((n−2"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "2 t−ε/2((n−2b−(1−ε)"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "2 t−ε( (n+r−a)"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "t−ε· (−1)(1+ε)"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "tε/2·(−n"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "σ= −2ab + (b −a)r + br −(r −a)r + r"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2(1 −ε)"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "2(1 −ε)2= (1 −ε).Ifwelet"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Herewealsoused"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "σ= −2ar −2aR + (b −a)r + br −r"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "σ= −2ar −2aR + (b −a)r + br −r2+ ar + r"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "c"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "k<i≤µ"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "k<i≤µrjiandsothecontributionfrom"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "rji) = r"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "(r + r′)(a −(b −(r + r′)) = (r + r′)"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "r(a −(b −r)) + r′(a −r −(b −r −r′)) = r"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "fromformula(1)toformula(3)aboveweeliminatecopiesofr"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Butthismeansthatinthespeciﬁcsituationabovewesubtract(r + r′)"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "for the above sum and speciﬁc chord and r"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "hat this will changePr(a−b) by a contribution r(c−(c−r)) = r"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "whichineachcaseisr"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "j=1"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "j=1a"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "forA=(a"
+  },
+  {
+   "page": 29,
+   "mark": "12",
+   "context": "A = a"
+  },
+  {
+   "page": 29,
+   "mark": "12",
+   "context": "A = a12E"
+  },
+  {
+   "page": 29,
+   "mark": "12",
+   "context": "A = a12E12 + (a"
+  },
+  {
+   "page": 29,
+   "mark": "13",
+   "context": "A = a12E12 + (a12 + a"
+  },
+  {
+   "page": 29,
+   "mark": "13",
+   "context": "A = a12E12 + (a12 + a13)E"
+  },
+  {
+   "page": 29,
+   "mark": "12",
+   "context": "A = a12E12 + (a12 + a13)E13 + · · · + (a"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "A = a12E12 + (a12 + a13)E13 + · · · + (a12 + · · · + a"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": " = a12E12 + (a12 + a13)E13 + · · · + (a12 + · · · + a1,µ−1)E"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "i=2"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "i=2a"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i=2a1"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "a"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "tions in the products (aj,k +1)(−(aj,k+1 −1)),(a"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "ions in the products (aj,k +1)(−(aj,k+1 −1)),(aj+1,k −1)(−(a"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "(a"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "(aj+1,k−1)(ajk+ 1)and(a"
+  },
+  {
+   "page": 30,
+   "mark": "24",
+   "context": "a"
+  },
+  {
+   "page": 30,
+   "mark": "23",
+   "context": "(a"
+  },
+  {
+   "page": 30,
+   "mark": "24",
+   "context": "(a23 + 1)(−(a"
+  },
+  {
+   "page": 30,
+   "mark": "23",
+   "context": "(a23 + 1)(−(a24 −1)) = −a"
+  },
+  {
+   "page": 30,
+   "mark": "24",
+   "context": "(a23 + 1)(−(a24 −1)) = −a23a"
+  },
+  {
+   "page": 30,
+   "mark": "23",
+   "context": "(a23 + 1)(−(a24 −1)) = −a23a24 + a"
+  },
+  {
+   "page": 30,
+   "mark": "24",
+   "context": "(a23 + 1)(−(a24 −1)) = −a23a24 + a23 −a"
+  },
+  {
+   "page": 30,
+   "mark": "34",
+   "context": "(a"
+  },
+  {
+   "page": 30,
+   "mark": "24",
+   "context": "(a34 + 1)(a"
+  },
+  {
+   "page": 30,
+   "mark": "34",
+   "context": "(a34 + 1)(a24 −1) = a"
+  },
+  {
+   "page": 30,
+   "mark": "24",
+   "context": "(a34 + 1)(a24 −1) = a34a"
+  },
+  {
+   "page": 30,
+   "mark": "34",
+   "context": "(a34 + 1)(a24 −1) = a34a24 −a"
+  },
+  {
+   "page": 30,
+   "mark": "24",
+   "context": "(a34 + 1)(a24 −1) = a34a24 −a34 + a"
+  },
+  {
+   "page": 30,
+   "mark": "24",
+   "context": "Notethatthe±a"
+  },
+  {
+   "page": 30,
+   "mark": "23",
+   "context": "Notethatthe±a24and±1cancelout,the−a"
+  },
+  {
+   "page": 30,
+   "mark": "24",
+   "context": "Notethatthe±a24and±1cancelout,the−a23a"
+  },
+  {
+   "page": 30,
+   "mark": "34",
+   "context": "Notethatthe±a24and±1cancelout,the−a23a24anda"
+  },
+  {
+   "page": 30,
+   "mark": "24",
+   "context": "Notethatthe±a24and±1cancelout,the−a23a24anda34a"
+  },
+  {
+   "page": 30,
+   "mark": "23",
+   "context": "(∗)-summationforA,sothereisacontributionofa"
+  },
+  {
+   "page": 30,
+   "mark": "34",
+   "context": "(∗)-summationforA,sothereisacontributionofa23 −a"
+  },
+  {
+   "page": 30,
+   "mark": "35",
+   "context": "additional−a"
+  },
+  {
+   "page": 30,
+   "mark": "13",
+   "context": "a"
+  },
+  {
+   "page": 30,
+   "mark": "23",
+   "context": "a13 + a"
+  },
+  {
+   "page": 30,
+   "mark": "34",
+   "context": "a13 + a23 −(a"
+  },
+  {
+   "page": 30,
+   "mark": "35",
+   "context": "a13 + a23 −(a34 + a"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "1σ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Thecyclerelationisr"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Thecyclerelationisr1 −r"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "Thecyclerelationisr1 −r2 + r"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "Thecyclerelationisr1 −r2 + r3 + r"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "ε(a −b) = + [r"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "ε(a −b) = + [r1 −(−r"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "−[−r"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "−[−r1 + r"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "−[−r1 + r2 −r"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "−[−r1 + r2 −r4 + r) −(r"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "−[−r1 + r2 −r4 + r) −(r1 −r"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "−[(r"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "−[(r1 −r"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "−[(r1 −r2 + r"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "−[0 −(−r"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "−[0 −(−r1 −r"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "+ [(−r"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "+ [(−r1 −r"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "=r"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "=r1 −r"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "=r1 −r2 −r"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "=r1 −r2 −r3 + r"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "TheﬂowlemmaidentiﬁesthecoloringbinFigure10withf(e"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "f(e"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "v)isthejump"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "v)isthejumprincolorsat"
+  },
+  {
+   "page": 34,
+   "mark": "c",
+   "context": "v)isthejumprincolorsatacrossing"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "ε(v)f(e"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "e<e"
+  },
+  {
+   "page": 34,
+   "mark": "f",
+   "context": "e<erv"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "ε(v)f(e"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "e<e"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "e<e"
+  },
+  {
+   "page": 34,
+   "mark": "f",
+   "context": "e<erv"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "HereT(e)̸ = ∅onlyfore"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "v, e"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "atthetopofthebraid.Fore"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "vwehaveT(e)={e"
+  },
+  {
+   "page": 35,
+   "mark": "e",
+   "context": "v}whilefor"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "v}whilefore"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "{e:e<e"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "v} ∪{e"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "δ′(K, n) := −n"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "Nextrecallthatf(v) = f(e"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "v) + f(e"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "n(GK) ⊂F"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "n(GK) ⊂Fn(GK)bethesetof"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "n(GK) ⊂Fn(GK)bethesetofn-ﬂows,whichwillinduce"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "string.Thisimpliesf(e"
+  },
+  {
+   "page": 35,
+   "mark": "w",
+   "context": "w)=f(e)=0for"
+  },
+  {
+   "page": 35,
+   "mark": "f",
+   "context": "tnε(v)"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "tnε(v)f(e"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "immersionsalongthecomponentsofK.Weknowthatthevalue1 ∈S"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "n(K(r)) = t−r( n"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Jn(K) := tω(K)( n"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "δ(K, n) := δ′(K, n) + ω(K)(n"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": " colored Jones polynomial from the theorem.It follows that J"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "t−1/4J′(K+) −t"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "t−1/4J′(K+) −t1/4J(K−) = (t−1/2−t"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "t−1/4J′(K+) −t1/4J(K−) = (t−1/2−t1/2)J(K"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "t−1J(K+) −tJ(K−) = (t−1/2−t"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "t−1J(K+) −tJ(K−) = (t−1/2−t1/2)J(K"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "recall that each cycle of length ℓ"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "(ℓ"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "J"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "Jn(K)∈Z[t±1].Ontheotherhand,ifnand|K|areoddthenJ"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "t"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "Iff(e"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "f(e"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "e<e"
+  },
+  {
+   "page": 38,
+   "mark": "f",
+   "context": "e<erv"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "calculatingJ"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "t−1.Atrivialcomponentcontributest"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "−(t"
+  },
+  {
+   "page": 38,
+   "mark": "r",
+   "context": "atthecrossingsforf(e"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "partarcsforf(e"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "eachvertexofGKwehaveauniqueoutgoingblueedgee"
+  },
+  {
+   "page": 39,
+   "mark": "r",
+   "context": "e"
+  },
+  {
+   "page": 39,
+   "mark": "v",
+   "context": "each v∈V .Note that the order o"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "ng edges of the fat vertex vof GK with the convention that e"
+  },
+  {
+   "page": 39,
+   "mark": "r",
+   "context": "precedese"
+  },
+  {
+   "page": 39,
+   "mark": "w",
+   "context": "wforeach"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "wforeachw∈τ −1(v).AlsonotethatV= ⊔vτ −1(v)is"
+  },
+  {
+   "page": 39,
+   "mark": "r",
+   "context": "uniquepartarcontheboundaryofthefatvertexvfollowingtheedgee"
+  },
+  {
+   "page": 39,
+   "mark": "r",
+   "context": "(c)Weleteτ −1(v):= {e"
+  },
+  {
+   "page": 39,
+   "mark": "c",
+   "context": "i=1"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "τ−1(v) ∩V"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "v"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "j:V→n + 1,andvaluesβ"
+  },
+  {
+   "page": 40,
+   "mark": "r",
+   "context": "notationjv:=f(e"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "v),"
+  },
+  {
+   "page": 40,
+   "mark": "v",
+   "context": "v),i"
+  },
+  {
+   "page": 40,
+   "mark": "b",
+   "context": "v),iv:=f(e"
+  },
+  {
+   "page": 40,
+   "mark": "f",
+   "context": "w,τ(w)=v"
+  },
+  {
+   "page": 40,
+   "mark": "r",
+   "context": "w,τ(w)=vf(e"
+  },
+  {
+   "page": 40,
+   "mark": "j",
+   "context": "v),"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "function i : V→N"
+  },
+  {
+   "page": 41,
+   "mark": "v",
+   "context": "Then for each v∈Vlet k"
+  },
+  {
+   "page": 41,
+   "mark": "v",
+   "context": "Then for each v∈Vlet kv∈c be the unique number such that σ−k"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": " each v∈Vlet kv∈c be the unique number such that σ−kv(v) = v"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "Supposethativ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "iv= iv"
+  },
+  {
+   "page": 41,
+   "mark": "v",
+   "context": "i"
+  },
+  {
+   "page": 41,
+   "mark": "v",
+   "context": "iv= iσ−1(v) + jτ −1(v) −j"
+  },
+  {
+   "page": 41,
+   "mark": "v",
+   "context": "i"
+  },
+  {
+   "page": 41,
+   "mark": "v",
+   "context": "iv= iσ−2(v) + (jτ −1σ−1(v) −jσ−1(v)) + (jτ −1(v) −j"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "becauseifweapplytov"
+  },
+  {
+   "page": 41,
+   "mark": "c",
+   "context": "sinceσ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "iσ−c(v"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "iσ−c(v1)= iv"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "jτ −1σ−k(v"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "jτ −1σ−k(v1) −jσ−k(v"
+  },
+  {
+   "page": 41,
+   "mark": "v",
+   "context": "jτ −1σ−k(v1) −jσ−k(v1)= i"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "jτ −1σ−k(v1) −jσ−k(v1)= iv"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "component.Thusforeachv∈Vsuchthatσ−k"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "i"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "iv, j"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "iv, jv≥0andi"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "iv, jv≥0andiv + j"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "j"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "j"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "jv, i"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "jv, iv≥0andi"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "jv, iv≥0andiv≤n −j"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "0 ≤j"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "0 ≤j"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "0 ≤jvℓ, βℓandβℓ+ j"
+  },
+  {
+   "page": 42,
+   "mark": "v",
+   "context": "nent is iσ−1(vℓ) +jτ −1(vℓ)≤n because iσ−1(vℓ) +jτ −1(vℓ) −j"
+  },
+  {
+   "page": 42,
+   "mark": "k",
+   "context": "σ"
+  },
+  {
+   "page": 43,
+   "mark": "v",
+   "context": "j"
+  },
+  {
+   "page": 43,
+   "mark": "v",
+   "context": "jv≤a"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "jv≤av + j"
+  },
+  {
+   "page": 43,
+   "mark": "s",
+   "context": "jv≤av + j1 + . . . + j"
+  },
+  {
+   "page": 43,
+   "mark": "v",
+   "context": "j"
+  },
+  {
+   "page": 43,
+   "mark": "v",
+   "context": "jv≤a"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "jv≤av + j"
+  },
+  {
+   "page": 43,
+   "mark": "s",
+   "context": "jv≤av + j1 + . . . j"
+  },
+  {
+   "page": 43,
+   "mark": "j",
+   "context": "tcan occur (like"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "tcan occur (like j"
+  },
+  {
+   "page": 44,
+   "mark": "a",
+   "context": "nGKin6.2for"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "thevaluecanonlydecrease.Thisimpliesjv"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "ofcoursealsothatiσ−1(v"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "ofcoursealsothatiσ−1(v1)= jτ −1(v"
+  },
+  {
+   "page": 44,
+   "mark": "w",
+   "context": "coursealsothatiσ−1(v1)= jτ −1(v1)= 0.Notethatjτ −1(v)= 0 ⇐⇒j"
+  },
+  {
+   "page": 44,
+   "mark": "w",
+   "context": "forallw∈τ−1(v).Butnotethati"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "symmetryislostbecauseτisnolongerdeﬁnedfortheverticesinτ−1(v"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "Alsoσwillnolongerbedeﬁnedonσ−1(v"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "Alsoσwillnolongerbedeﬁnedonσ−1(v1)ifwedeletethebasevertexv"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "allrecursivelydeﬁnedformulaswewillstillincludethebasevertexv"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "LetV∗:=V\\({v"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "LetV∗:=V\\({v1}∪τ−1(v"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "LetV∗:=V\\({v1}∪τ−1(v1))andV′:=V\\{v"
+  },
+  {
+   "page": 44,
+   "mark": "v",
+   "context": "nGK ↔{j := (j"
+  },
+  {
+   "page": 44,
+   "mark": "v",
+   "context": "nGK ↔{j := (jv, βℓ) :"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": " ↔{j := (jv, βℓ) : v∈V∗, ℓ= 2, . . . µ, (17), cyclerelations"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "{j := (jv, βℓ) : v∈V∗, ℓ= 2, . . . µ, (17), cyclerelations3."
+  },
+  {
+   "page": 45,
+   "mark": "v",
+   "context": "i"
+  },
+  {
+   "page": 45,
+   "mark": "w",
+   "context": "iv+Pj"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "δ′(K, n) := −n"
+  },
+  {
+   "page": 46,
+   "mark": "v",
+   "context": "nGKasdeﬁnedin(18),andforeach"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "βn(j, v) = tnε(v)"
+  },
+  {
+   "page": 46,
+   "mark": "v",
+   "context": "βn(j, v) = tnε(v)i"
+  },
+  {
+   "page": 46,
+   "mark": "v",
+   "context": "t−ε(v){n −˜j"
+  },
+  {
+   "page": 46,
+   "mark": "v",
+   "context": "t−ε(v){n −˜jv}j"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "Remark.(a) The appearence of"
+  },
+  {
+   "page": 46,
+   "mark": "v",
+   "context": "orderingso"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "orderingsovforeachv∈V .IfOorderstheverticesas{v"
+  },
+  {
+   "page": 46,
+   "mark": "c",
+   "context": "orderingsovforeachv∈V .IfOorderstheverticesas{v1, . . . , v"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "theorderingisgivenbytheelementsinτ−1(v"
+  },
+  {
+   "page": 46,
+   "mark": "v",
+   "context": "theorderingisgivenbytheelementsinτ−1(vi)orderedbyo"
+  },
+  {
+   "page": 48,
+   "mark": "r",
+   "context": "jτ −1(m"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "j"
+  },
+  {
+   "page": 49,
+   "mark": "k",
+   "context": "jτ −1(k−1) −j"
+  },
+  {
+   "page": 49,
+   "mark": "c",
+   "context": "fork=1, . . . c(1)−2,andi"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "β"
+  },
+  {
+   "page": 49,
+   "mark": "c",
+   "context": "β2= i"
+  },
+  {
+   "page": 49,
+   "mark": "c",
+   "context": "β2= ic(1)= i"
+  },
+  {
+   "page": 49,
+   "mark": "c",
+   "context": "β2= ic(1)= ic−1 + jτ −1(c(0) −j"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "totheﬁrstcomponenttoc(1) −2.Nowwehaveachoiceofβ"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "suchthat0 ≤j"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "max(0, j"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "max(0, j3 −β) ≤j"
+  },
+  {
+   "page": 50,
+   "mark": "5",
+   "context": "max(0, j3 −β) ≤j1≤j"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "max(0, j3 −β) ≤j1≤j5≤min(n + j"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "max(0, j3 −β) ≤j1≤j5≤min(n + j1 −j"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "inequalities reduce to 0 ≤j"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "inequalities reduce to 0 ≤j3≤j"
+  },
+  {
+   "page": 50,
+   "mark": "5",
+   "context": "inequalities reduce to 0 ≤j3≤j1≤j"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "inequalities reduce to 0 ≤j3≤j1≤j5≤n.So there are"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "1σ"
+  },
+  {
+   "page": 52,
+   "mark": "m",
+   "context": "1σ2)"
+  },
+  {
+   "page": 52,
+   "mark": "k",
+   "context": "byk∈2m −1willbesuchthatε(k) = (−1)"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "1σ"
+  },
+  {
+   "page": 52,
+   "mark": "3",
+   "context": "1σ2)"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "1σ"
+  },
+  {
+   "page": 52,
+   "mark": "a",
+   "context": "1σ2,whichisbraidrepresentationoftheunknot.Itis"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 52,
+   "mark": "4",
+   "context": "i2ℓ−1 + j"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "j′= (j"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "j′= (j1, j"
+  },
+  {
+   "page": 54,
+   "mark": "4",
+   "context": "j′= (j1, j3, j"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "j′= (j1, j3, j4, j"
+  },
+  {
+   "page": 54,
+   "mark": "7",
+   "context": "j′= (j1, j3, j4, j5, j6, j"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "j"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "j1≤min{j"
+  },
+  {
+   "page": 54,
+   "mark": "4",
+   "context": "j1≤min{j3, j"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "j1≤min{j3, j4 + j"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "j1≤min{j3, j4 + j5.j"
+  },
+  {
+   "page": 54,
+   "mark": "3",
+   "context": "max{j"
+  },
+  {
+   "page": 54,
+   "mark": "4",
+   "context": "max{j3 + j"
+  },
+  {
+   "page": 54,
+   "mark": "4",
+   "context": "max{j3 + j4, j"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "max{j3 + j4, j4 + j"
+  },
+  {
+   "page": 54,
+   "mark": "5",
+   "context": "max{j3 + j4, j4 + j5, j"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "1σ"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "1σ2)"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "1σ"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "1σ2)"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "withi = (i"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "j1 + j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "j1 + j2 + · · · + j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "j1 + j2 + · · · + j2ℓ−1= j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "j1 + j2 + · · · + j2ℓ−1= j2ℓ+ j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "j1 + j2 + · · · + j2ℓ−1= j2ℓ+ j2ℓ+1 + · · · + j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "j1 + j2 + · · · + j2ℓ−1= j2ℓ+ j2ℓ+1 + · · · + j4ℓ−2 + j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "j2ℓ+ j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "j2ℓ+ j2ℓ+1 + · · · + j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "j2ℓ+ j2ℓ+1 + · · · + j4ℓ−2 + j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "j2ℓ+ j2ℓ+1 + · · · + j4ℓ−2 + j4ℓ−1= j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "j2ℓ+ j2ℓ+1 + · · · + j4ℓ−2 + j4ℓ−1= j4ℓ+ j"
+  },
+  {
+   "page": 56,
+   "mark": "6",
+   "context": "j2ℓ+ j2ℓ+1 + · · · + j4ℓ−2 + j4ℓ−1= j4ℓ+ j4ℓ+1 + · · · + j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "j"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "j2ℓ= j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "j2ℓ= j1 + · · · j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "j2ℓ= j1 + · · · j2ℓ−1 −(j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "j2ℓ= j1 + · · · j2ℓ−1 −(j2ℓ+1 + · · · + j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "j4ℓ= j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "j4ℓ= j2ℓ+ · · · j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "j4ℓ= j2ℓ+ · · · j4ℓ−1 −(j"
+  },
+  {
+   "page": 56,
+   "mark": "6",
+   "context": "j4ℓ= j2ℓ+ · · · j4ℓ−1 −(j4ℓ+1 + · · · j"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "= j"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "= j1 + · · · j"
+  },
+  {
+   "page": 56,
+   "mark": "4",
+   "context": "= j1 + · · · j2ℓ−1 −(j"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "= j1 + · · · j2ℓ−1 −(j4"
+  },
+  {
+   "page": 56,
+   "mark": "6",
+   "context": "= j1 + · · · j2ℓ−1 −(j4l+1 + · · · + j"
+  },
+  {
+   "page": 56,
+   "mark": "6",
+   "context": "= j1 + · · · j2ℓ−1 −(j4l+1 + · · · + j6ℓ−3, j"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "β= σϵ"
+  },
+  {
+   "page": 58,
+   "mark": "2",
+   "context": "η1σϵ"
+  },
+  {
+   "page": 58,
+   "mark": "2",
+   "context": "η"
+  },
+  {
+   "page": 58,
+   "mark": "b",
+   "context": "η2· · · σϵ"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "|ϵ"
+  },
+  {
+   "page": 59,
+   "mark": "b",
+   "context": "|ϵ1|+. . .+|ϵ"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "thissetdecomposesV= V"
+  },
+  {
+   "page": 59,
+   "mark": "b",
+   "context": "f(e"
+  },
+  {
+   "page": 59,
+   "mark": "b",
+   "context": "v) = f(e"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "σ−1(v)) + f(e"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "τ−1(v)) −f(e"
+  },
+  {
+   "page": 59,
+   "mark": "b",
+   "context": "andwewillreachf(e"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "v"
+  },
+  {
+   "page": 59,
+   "mark": "v",
+   "context": "v0)forsome"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "v0)forsomev"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "β= ση"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "2· · · ση"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "1σδ"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "1σδ"
+  },
+  {
+   "page": 59,
+   "mark": "k",
+   "context": "withη"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "freegrouponσ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "freegrouponσ1, σ"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "freegrouponσ1, σ2tothegroupG=⟨σ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "freegrouponσ1, σ2tothegroupG=⟨σ1, σ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "freegrouponσ1, σ2tothegroupG=⟨σ1, σ2:σ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "1=σ"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "resultincontractionelementsσ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "resultincontractionelementsσ1σ"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "resultincontractionelementsσ1σ2σ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "resultincontractionelementsσ1σ2σ1 · · ·∈Grespectivelyσ"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "resultincontractionelementsσ1σ2σ1 · · ·∈Grespectivelyσ2σ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "resultincontractionelementsσ1σ2σ1 · · ·∈Grespectivelyσ2σ1σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "2=(σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "2=(σ1σ"
+  },
+  {
+   "page": 60,
+   "mark": "3",
+   "context": "2=(σ1σ2)"
+  },
+  {
+   "page": 60,
+   "mark": "3",
+   "context": "usingtheobvioushomomorphismintoΣ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "usingtheobvioushomomorphismintoΣ3=⟨σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "usingtheobvioushomomorphismintoΣ3=⟨σ1, σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "usingtheobvioushomomorphismintoΣ3=⟨σ1, σ2:σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "1=σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "(σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "(σ2σ"
+  },
+  {
+   "page": 60,
+   "mark": "3",
+   "context": "(σ2σ1)"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "(σ2σ1)3= 1⟩it follows that σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "(σ2σ1)3= 1⟩it follows that σ1σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "(σ2σ1)3= 1⟩it follows that σ1σ2, (σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "(σ2σ1)3= 1⟩it follows that σ1σ2, (σ2σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "(σ2σ1)3= 1⟩it follows that σ1σ2, (σ2σ1)"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "(σ2σ1)3= 1⟩it follows that σ1σ2, (σ2σ1)2map to (132), σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "(σ2σ1)3= 1⟩it follows that σ1σ2, (σ2σ1)2map to (132), σ2σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "2σ1)3= 1⟩it follows that σ1σ2, (σ2σ1)2map to (132), σ2σ1, (σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "1)3= 1⟩it follows that σ1σ2, (σ2σ1)2map to (132), σ2σ1, (σ1σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "3= 1⟩it follows that σ1σ2, (σ2σ1)2map to (132), σ2σ1, (σ1σ2)"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "(123),σ1, (σ2σ1)"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "σ2, (σ1σ2)"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "Case1:σ1:(i)isfollowedσ1:σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "1,σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "2,σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "2,σ1σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "2,σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "2,σ1σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "1σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "1σ2,σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "1σ2,σ1σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "2σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "2σ1,σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "2σ1,σ1σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "1,σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "1,σ1σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "2σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "1,σ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "1,σ1[σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "2σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "string1tostring3.Notethatifσ"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "2σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "2σ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "1:ThiswillbeexactlythesequenceinCase"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "2:thiscorrespondstoCase"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "Ifσ"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "Ifσ1isinpositioni −1thenτ(i) = σ(i −1)wheretheσ"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "1σ"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "1σ2σ"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "1σ2σ1σ"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "σ(0) = 2, τ(1) = 2,soi"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "σ(0) = 2, τ(1) = 2,soi2 + j"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "σ(0) = 2, τ(1) = 2,soi2 + j2= i"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "σ(0) = 2, τ(1) = 2,soi2 + j2= i0 + j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "σ(0) = 2, τ(1) = 2,soi2 + j2= i0 + j1,ori"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "σ(0) = 2, τ(1) = 2,soi2 + j2= i0 + j1,ori2= j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "σ(0) = 2, τ(1) = 2,soi2 + j2= i0 + j1,ori2= j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "σ(2) = 5, τ(3) = 5,soi"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "σ(2) = 5, τ(3) = 5,soi5 + j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "σ(2) = 5, τ(3) = 5,soi5 + j5= i"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "σ(2) = 5, τ(3) = 5,soi5 + j5= i2 + j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "σ(2) = 5, τ(3) = 5,soi5 + j5= i2 + j3,ori"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "σ(2) = 5, τ(3) = 5,soi5 + j5= i2 + j3,ori5= j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "σ(2) = 5, τ(3) = 5,soi5 + j5= i2 + j3,ori5= j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "σ(2) = 5, τ(3) = 5,soi5 + j5= i2 + j3,ori5= j1 −j2 + j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "σ(2) = 5, τ(3) = 5,soi5 + j5= i2 + j3,ori5= j1 −j2 + j3 −j"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "σ(5) = 3, τ(6) = 3,soi"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "σ(5) = 3, τ(6) = 3,soi3 + j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "σ(5) = 3, τ(6) = 3,soi3 + j3= i"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "σ(5) = 3, τ(6) = 3,soi3 + j3= i5 + j"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "σ(5) = 3, τ(6) = 3,soi3 + j3= i5 + j6,ori"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "σ(5) = 3, τ(6) = 3,soi3 + j3= i5 + j6,ori3= j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "σ(5) = 3, τ(6) = 3,soi3 + j3= i5 + j6,ori3= j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "σ(5) = 3, τ(6) = 3,soi3 + j3= i5 + j6,ori3= j1 −j2 −j"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "σ(5) = 3, τ(6) = 3,soi3 + j3= i5 + j6,ori3= j1 −j2 −j5 + j"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "σ(3) = 4,τ−1(4) = ∅,soi"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "σ(3) = 4,τ−1(4) = ∅,soi4 + j"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "σ(3) = 4,τ−1(4) = ∅,soi4 + j4= i"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "σ(3) = 4,τ−1(4) = ∅,soi4 + j4= i3,ori"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "σ(3) = 4,τ−1(4) = ∅,soi4 + j4= i3,ori4= j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "σ(3) = 4,τ−1(4) = ∅,soi4 + j4= i3,ori4= j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "σ(3) = 4,τ−1(4) = ∅,soi4 + j4= i3,ori4= j1 −j2 −j"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "σ(3) = 4,τ−1(4) = ∅,soi4 + j4= i3,ori4= j1 −j2 −j5 −j"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "σ(3) = 4,τ−1(4) = ∅,soi4 + j4= i3,ori4= j1 −j2 −j5 −j4 + j"
+  },
+  {
+   "page": 63,
+   "mark": "7",
+   "context": "σ(4) = 7,τ−1(7) = ∅,soi"
+  },
+  {
+   "page": 63,
+   "mark": "7",
+   "context": "σ(4) = 7,τ−1(7) = ∅,soi7 + j"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "σ(4) = 7,τ−1(7) = ∅,soi7 + j7= i"
+  },
+  {
+   "page": 63,
+   "mark": "7",
+   "context": "σ(4) = 7,τ−1(7) = ∅,soi7 + j7= i4,ori"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "σ(4) = 7,τ−1(7) = ∅,soi7 + j7= i4,ori7= j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "σ(4) = 7,τ−1(7) = ∅,soi7 + j7= i4,ori7= j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "σ(4) = 7,τ−1(7) = ∅,soi7 + j7= i4,ori7= j1 −j2 −j"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "σ(4) = 7,τ−1(7) = ∅,soi7 + j7= i4,ori7= j1 −j2 −j5 −j"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "σ(4) = 7,τ−1(7) = ∅,soi7 + j7= i4,ori7= j1 −j2 −j5 −j4 + j"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "σ(7) = 1, τ(0) = 1,soi"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "σ(7) = 1, τ(0) = 1,soi1 + j"
+  },
+  {
+   "page": 63,
+   "mark": "7",
+   "context": "σ(7) = 1, τ(0) = 1,soi1 + j1= i"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "σ(7) = 1, τ(0) = 1,soi1 + j1= i7 + j"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "σ(7) = 1, τ(0) = 1,soi1 + j1= i7 + j0,ori"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "σ(7) = 1, τ(0) = 1,soi1 + j1= i7 + j0,ori1= j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "σ(7) = 1, τ(0) = 1,soi1 + j1= i7 + j0,ori1= j6 −j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "σ(7) = 1, τ(0) = 1,soi1 + j1= i7 + j0,ori1= j6 −j2 −j"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "σ(7) = 1, τ(0) = 1,soi1 + j1= i7 + j0,ori1= j6 −j2 −j5 −j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "i′=(−j"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "i′=(−j2 −j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "i′=(−j2 −j4 −j"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "i′=(−j2 −j4 −j5 + j"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "i′=(−j2 −j4 −j5 + j6, j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "i′=(−j2 −j4 −j5 + j6, j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "i′=(−j2 −j4 −j5 + j6, j1 −j2, j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "i′=(−j2 −j4 −j5 + j6, j1 −j2, j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "i′=(−j2 −j4 −j5 + j6, j1 −j2, j1 −j2 −j"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "i′=(−j2 −j4 −j5 + j6, j1 −j2, j1 −j2 −j5 + j"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "i′=(−j2 −j4 −j5 + j6, j1 −j2, j1 −j2 −j5 + j6, j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "i′=(−j2 −j4 −j5 + j6, j1 −j2, j1 −j2 −j5 + j6, j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "i′=(−j2 −j4 −j5 + j6, j1 −j2, j1 −j2 −j5 + j6, j1 −j2 −j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "i′=(−j2 −j4 −j5 + j6, j1 −j2, j1 −j2 −j5 + j6, j1 −j2 −j4 −j"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "j2 −j4 −j5 + j6, j1 −j2, j1 −j2 −j5 + j6, j1 −j2 −j4 −j5 + j"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "j1 −j2 + j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "j1 −j2 + j3 −j"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "j1 −j2 + j3 −j5, j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "j1 −j2 + j3 −j5, j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "j1 −j2 + j3 −j5, j1 −j2 −j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "j1 −j2 + j3 −j5, j1 −j2 −j4 −j"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "j1 −j2 + j3 −j5, j1 −j2 −j4 −j5 + j"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "rot(j′) = (i"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "rot(j′) = (i3 + j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "rot(j′) = (i3 + j4) + (i"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "rot(j′) = (i3 + j4) + (i5 + j"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "rot(j′) = (i3 + j4) + (i5 + j6) = 2(j"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "rot(j′) = (i3 + j4) + (i5 + j6) = 2(j1 −j"
+  },
+  {
+   "page": 63,
+   "mark": "5",
+   "context": "rot(j′) = (i3 + j4) + (i5 + j6) = 2(j1 −j2 −j"
+  },
+  {
+   "page": 63,
+   "mark": "6",
+   "context": "rot(j′) = (i3 + j4) + (i5 + j6) = 2(j1 −j2 −j5 + j"
+  },
+  {
+   "page": 63,
+   "mark": "3",
+   "context": "rot(j′) = (i3 + j4) + (i5 + j6) = 2(j1 −j2 −j5 + j6) + j"
+  },
+  {
+   "page": 63,
+   "mark": "4",
+   "context": "ot(j′) = (i3 + j4) + (i5 + j6) = 2(j1 −j2 −j5 + j6) + j3 + j"
+  }
+ ]
+}

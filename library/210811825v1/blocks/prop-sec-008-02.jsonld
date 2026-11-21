@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/210811825v1/blocks/prop-sec-008-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 61,
+  "pageEnd": 65,
+  "text": "prop-sec-008-02.md",
+  "derivedFrom": "library/210811825v1/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.5",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-008-the-bolza-surface.md (p. 61-65)",
+    "claim_id": "210811825v1#proposition:3.5",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,1 @@
+These calculations are exactly analogous to those for calculating the holonomy of a peripheral curve given shapes of ideal hyperbolic tetrahedra satisfying Thurston's gluing equations. Thus this argument can easily be adapted to reprove the well-known fact that the holonomy is independent of the choice of simple closed curve representing an element of H1(∂M; Z).

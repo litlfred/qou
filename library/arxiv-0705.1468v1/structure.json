@@ -7,10 +7,11 @@
   "bytes": 403915,
   "pages": 21,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,30 @@
    "stamp_date": "10 May 2007"
   },
   "doi": null,
-  "title": "Knots in the Skyrme-Faddeev model Paul Sutcliffe",
-  "authors_raw": "Department of Mathematical Sciences, Durham University, Durham DH1 3LE, U.K",
+  "title": "Knots in the Skyrme-Faddeev model",
+  "authors_raw": "Paul Sutcliffe",
   "title_lines": [
-   "Knots in the Skyrme-Faddeev model",
-   "Paul Sutcliffe"
+   "Knots in the Skyrme-Faddeev model"
   ],
-  "abstract": "The Skyrme-Faddeev model is a modi\ufb01ed sigma model in three-d imensional space, which has string-like topological solitons classi\ufb01ed by th e integer-valued Hopf charge. Numerical simulations are performed to compute soliton sol utions for Hopf charges up to sixteen, with initial conditions provided by families of rational maps from the three- sphere into the complex projective line. A large number of ne w solutions are presented, including a variety of torus knots for a range of Hopf charges . Often these knots are only local energy minima, with the global minimum being a lin ked solution, but for some values of the Hopf charge they are good candidates for th e global minimum energy solution. The computed energies are in agreement wit h Ward\u2019s conjectured energy bound. 1",
+  "abstract": "The Skyrme-Faddeev model is a modiﬁed sigma model in three-dimensional space, which has string-like topological solitons classiﬁed by the integer-valued Hopf charge. Numerical simulations are performed to compute soliton solutions for Hopf charges up to sixteen, with initial conditions provided by families of rational maps from the three- sphere into the complex projective line. A large number of new solutions are presented, including a variety of torus knots for a range of Hopf charges. Often these knots are only local energy minima, with the global minimum being a linked solution, but for some values of the Hopf charge they are good candidates for the global minimum energy solution. The computed energies are in agreement with Ward’s conjectured energy bound. 1",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.05",
-   "CreationDate": "D:20130215094628-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20130215094628-05'00'"
+  },
+  "title_raw": "Knots in the Skyrme-Faddeev model",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Knots in the Skyrme-Faddeev model",
+   "outline": "Introduction",
+   "text": "Knots in the Skyrme-Faddeev model",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Knots in the Skyrme-Faddeev model Paul Sutcliffe"
  },
  "toc": [
   {
@@ -41,39 +52,348 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "The Skyrme-Faddeev model and low charge solitons",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Rational maps, torus knots and links",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Higher charge solitons",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The position (light tube) and linking (dark tube) curves for the known lowest energy solitons with Hopf charges 1 ≤Q ≤7",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The position (light tube) and linking (dark tube) curves for initial conditions",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Initial conditions and ﬁnal solutions",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Solution types and energies",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The ratio of the energy to the conjectured bound, that is, E/Q3/4, as a function of Hopf charge Q for a variety of solutions: unknots and links (white circles); K3,2 (triangles);",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The position curves for a variety of solutions with Hopf charge 8 ≤Q ≤16. Each",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "String length (circles) as a function of charge Q for several solitons, together with",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 989,
+   "n_words": 147,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -81,8 +401,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 3182,
-   "n_words": 543
+   "n_chars": 3169,
+   "n_words": 518,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-001-the-skyrme-faddeev-model-and-low-charge-solitons",
@@ -91,8 +413,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 7,
-   "n_chars": 15497,
-   "n_words": 2859
+   "n_chars": 15389,
+   "n_words": 2709,
+   "label_start": "3",
+   "label_end": "7"
   },
   {
    "id": "sec-002-rational-maps-torus-knots-and-links",
@@ -101,8 +425,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 11,
-   "n_chars": 10800,
-   "n_words": 2143
+   "n_chars": 10676,
+   "n_words": 1988,
+   "label_start": "7",
+   "label_end": "11"
   },
   {
    "id": "sec-003-higher-charge-solitons",
@@ -111,8 +437,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 19,
-   "n_chars": 19582,
-   "n_words": 3973
+   "n_chars": 19143,
+   "n_words": 3514,
+   "label_start": "11",
+   "label_end": "19"
   },
   {
    "id": "sec-004-conclusion",
@@ -121,16 +449,26 @@
    "level": 1,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 3794,
-   "n_words": 653
+   "n_chars": 3774,
+   "n_words": 623,
+   "label_start": "19",
+   "label_end": "21"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 5,
-  "chars_total": 52855,
+  "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 53140,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "sf.tex",
@@ -143,42 +481,47 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-the-skyrme-faddeev-model-and-low-charge-solitons",
      "title": "The Skyrme-Faddeev model and low charge solitons",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-rational-maps-torus-knots-and-links",
      "title": "Rational maps, torus knots and links",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-higher-charge-solitons",
      "title": "Higher charge solitons",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 0.906,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.707,
      "result": "overlaid",
      "converter": "pandoc"
     }

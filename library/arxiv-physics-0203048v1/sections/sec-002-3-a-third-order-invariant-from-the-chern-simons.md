@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-physics-0203048v1
-doc_title: "arXiv:physics/0203048v1 [physics.plasm-ph] 15 Mar 2002"
+doc_title: "Towards a third-order topological invariant for magnetic fields"
 section_id: sec-002-3-a-third-order-invariant-from-the-chern-simons
 section_title: "A third-order invariant from the Chern-Simons three-form"
 section_number: 3
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.991
+doc_brief: "Towards a third-order topological invariant for magnetic fields — An expression for a third-order link integral of three magnetic ﬁelds is presented."
 ---
 []{#section-third-order-invariant label="section-third-order-invariant"} In this section we construct a third-order invariant which, under conditions specified below, yields an invariant for three magnetic fields. The derivation is based on some basic knowledge in differential geometry found e.g. in Frankel (1997).
 

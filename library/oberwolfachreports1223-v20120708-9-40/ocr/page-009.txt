@@ -1,0 +1,44 @@
+Invariants in Low-Dimensional Topology and Knot Theory 9
+
+Abstracts
+
+Virtual Knot Theory - Problems and Ideas
+Louis H. KAUFFMAN
+
+1. INTRODUCTION
+
+Virtual knot theory [3, 2] is a generalization of classical knot theory that can be
+described in a number of ways. One way to describe it is to say that virtual knot
+theory uses diagrams just like the diagrams for classical knot theory except that
+there is a new type of crossing, called virtual, that is neither an under-crossing
+nor an overcrossing. The virtual crossing behaves in the following way: any arc
+in the diagram with a consecutive sequence of virtual crossings can be excised
+from the diagram and another arc can be placed transversely to the remaining
+part of the diagram so that all the crossings introduced in the new arc are also
+taken to be virtual. Otherwise, one applies the usual Reidemister moves to the
+classical crossings in the diagram. This diagrammatic definition of virtual knot
+theory is equivalent to saying that virtual knot theory is the set of equivalence
+classes of oriented Gauss codes modulo the abstract Reidemeister moves on these
+codes. Since not all codes are realizable in the plane, a diagram for a virtual knot
+or link may contain virtual crossings in the same way that an attempt to embed a
+non-planar graph into the plane leads to extra crossings of the edges of the graph
+with itself. In this view, the virtual crossings are artifacts of the attempt to embed
+a non-planar code into the plane.
+
+Another equivalent definition of virtual knot theory is that a virtual knot is
+represented by an embedding of a circle (or circles) into a thickened oriented surface
+of some genus g. Two such embeddings are equivalent if there is an orientation
+preserving homeomorphism of the surface that carries one embedding to the other,
+or if one can perform a 1-handle surgery in the complement of the knot in the
+thickened surface, retaining connectiviity and changing the genus. We say that
+virtual knots are knots in thickened surfaces taken up to handle stabilization.
+From this point of view, one would like to find the least genus surface in which
+such a knot could be represented. Kuperberg [4] proved that the embedding type
+of the knot in its minimal genus surface is uniquely determined and so there is a
+definite topological interpretation for the virual knot as its least genus embedding.
+It follows from this Theorem of Kuperberg that virtual knot theory embeds in
+classical knot theory (this was proved earlier by a more algebraic argument [3, 2]).
+
+In this talk we describe a polynomial invariant of virtual knots and links that
+has the advantage of being quite easy to calculate, and it can detect features that
+the Jones polynomial cannot see.

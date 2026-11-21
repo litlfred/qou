@@ -25,7 +25,7 @@ commutes with `P` and `Q`.  Consecutive charts agree at the corners
 (`KZPentagon.corner12` … `KZPentagon.corner51`).
 
 -- Ref: [drinfeld1990] Leningrad Math. J. 1 (1990) 1419–1457, §2
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
 -/
 namespace QOU.KZ.KZ4
 open Set

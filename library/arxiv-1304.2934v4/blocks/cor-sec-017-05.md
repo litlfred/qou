@@ -1,0 +1,1 @@
+If y = o((tn)1/4), then one has P  Xn ≥tnη′(0) + q tnη′′(0) y  = (1 + o(1)) y √ 2π e−y2 2 exp  η′′′(0) 6 (η′′(0))3/2 y3 √tn  . (18) More generally, if y = o((tn)1/2−1/m), then one has P  Xn ≥tnη′(0) + q tnη′′(0) y  = (1 + o(1)) y √ 2π exp

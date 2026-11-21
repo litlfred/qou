@@ -1,0 +1,50 @@
+5.4. Néron-Severi lattices 111
+
+be the quotient of the finitely generated abelian group H7(S,Z) by its torsion
+subgroup. Since the intersection form
+
+b: H?(S,Z) x H?(S,Z) —> Z
+
+takes its values in the torsion-free group Z, it is clear that the intersection
+pairing between any torsion class and any other class vanishes. Hence the
+intersection form of the surface factors over a non-degenerate symmetric
+bilinear form b : Ls x Ls —> Z, and we view Ls as a lattice with respect
+to this bilinear form. Note that by Poincaré duality this lattice is always
+unimodular. We also have the following well-known
+
+LEMMa 5.13. If for some integral class « € H?(S,Z) the first Chern
+class satisfies c\(S) = 2a modulo torsion, then Ls is an even lattice.
+
+Proof. By naturality, the reduction map r : Z —> Z/2Z gives rise to a
+commutative diagram
+
+degy
+
+H?(S,Z) x H?(S,Z) H4(S,Z) Z
+
+wal | |
+
+H?(S,Z/2) x H2(S,Z/2) —-—> H4(S,Z/2) _ fees Z/2
+
+where the degree maps deg, are defined by evaluation on the fundamental
+homology class of S. The composite of the upper horizontal arrows is the
+intersection pairing we are interested in. Now the image of the first Chern
+class c;(S) under the reduction map r, : H?(S,Z) —> H?(S,Z/2Z) is the
+Stiefel-Whitney class w2(S) by [77, p. 171], and for the intersection form
+modulo two we have
+
+degs(w2(S)Ur.(B)) = r(degs(B*)) forall B €H°(S,Z)
+by the Wu formula [45, prop. 1.4.18]. Hence the claim follows. Oo
+
+After this topological digression, let us now come back to the smooth
+surfaces Y and Y* defined by a general intersecion of translates of a smooth
+theta divisor on a complex ppav X of dimension g = 4. Let us first determine
+the abstract isomorphism type of the corresponding lattices.
+
+LEMMA 5.14. With notations as above,
+Ly ~ L?@U? and Ly+=L.
+
+Proof. It follows from corollary 5.9 that the intersection form on the
+lattices Ly and Ly+ is indefinite of signature (35,51) resp. (13,21). Aneven
+unimodular lattice is determined uniquely by its rank and signature [96], so
+it only remains to show that both Ly and Ly+ are even lattices. For this we

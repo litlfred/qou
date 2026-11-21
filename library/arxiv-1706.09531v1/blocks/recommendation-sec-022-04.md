@@ -1,1 +1,0 @@
-With little understanding of conﬁnement in those days, we thought that the case of fcq with permanent conﬁnement should be regarded only as an alternative to the case of spontaneously broken SU(3)c, which would lead to gauge in- teger charge quarks (icq), with possibly semi-conﬁned but ultimately liberated quarks.

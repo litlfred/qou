@@ -1,0 +1,1 @@
+12. Let T be an ideal triangulation of a compact manifold M with boundary consisting of tori. Then there exist a strict angle structure on T with vanishing peripheral rotational holonomy if and only if there exists no Q-normal class 0̸ = Q ∈Q(T; R+) with χ(S) ≥0 if and only if 0̸ = Q ∈Q(T; R+) implies χ(S) < 0.

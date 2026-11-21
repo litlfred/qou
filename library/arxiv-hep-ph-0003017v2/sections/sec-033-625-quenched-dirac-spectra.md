@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.908
 latex_coverage_ratio: 0.963
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
 A chRMT for quenched QCD at nonzero chemical potential is obtained by replacing the determinant in Eq. ([\[zrandommu\]](#zrandommu){reference-type="ref" reference="zrandommu"}) by its absolute value. This model can be solved analytically in the large-$N$ limit [@Misha]. However, we will follow a different approach by analyzing the corresponding effective theory [@many1]. The advantage of this approach is that the effective theory is as valid for quenched QCD as it is for the quenched chiral random matrix model.
 

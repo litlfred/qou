@@ -54,6 +54,6 @@ def elementSetoid : Setoid AtomKnot := ⟨I.IsoEquiv, I.isoEquiv_equivalence⟩
 
 end IsotopeKnot
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/isotope-knot-equivalence-proof.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/isotope-knot-equivalence-proof.ts
 
 end QOU.BraidKnot

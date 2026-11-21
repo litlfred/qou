@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-3
 source_pdf: 1711.08944v2.pdf
 source_sha256: ad7a020e7e92b788
-doc_brief: "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥ 3."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.69
-latex_coverage_ratio: 0.99
+latex_prose_ratio: 0.68
+latex_coverage_ratio: 0.926
+doc_brief: "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥3."
 ---
 []{#s-1 label="s-1"} Let $G=(V(G),E(G))$ be a simple undirected graph of order $n$. The *adjacency matrix* of $G$, denoted by $A(G)$, is the $n\times n$ matrix with entries $a_{uv}=1$ if $\{u,v\}\in E(G)$ and $a_{uv}=0$ otherwise. The eigenvalues of $A(G)$ are denoted by $\lambda_1(G)\geq \lambda_2(G)\geq \cdots\geq \lambda_n(G)$, which are also called the *eigenvalues* of $G$.
 

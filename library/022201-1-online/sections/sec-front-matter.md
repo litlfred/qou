@@ -1,6 +1,6 @@
 ---
 doc_id: 022201-1-online
-doc_title: "Online  Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann  ; Tyler Helmuth"
+doc_title: "Efficient algorithms for approximating quantum partition functions"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 022201_1_online.pdf
 source_sha256: 50331bf18a2bd4d5
 toc_source: inferred
+doc_brief: "Efficient algorithms for approximating quantum partition functions — 13 sections: Front matter; AFFILIATIONS; ABSTRACT"
 ---
 
 View
@@ -32,8 +33,6 @@ J. Math. Phys. (February 2015)
  30 August 2026 09:11:26
 Journal of
 Mathematical Physics
-ARTICLE
-scitation.org/journal/jmp
 Efficient algorithms for approximating quantum
 partition functions
 Cite as: J. Math. Phys. 62, 022201 (2021); doi: 10.1063/5.0013689

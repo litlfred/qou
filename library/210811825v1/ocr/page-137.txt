@@ -1,0 +1,67 @@
+plot (Th, wait=true , fill=true);
+
+fespace Vh(Th,P2, periodic =[[1,cos(pi/8)*(y—y01)—sin(pi/8)*(x—x01)],
+[6 , cos (3* pi/8)*(y—y06)—sin(—3* pi/8)*(x—x06)],
+[3 , cos (3* pi /8) *(y—y03)—sin (3% pi/8)*(x—x03)],
+[8 , cos (pi/8) *(y—y08)—sin(—pi/8) *(x-x08)],
+[5 , cos (5* pi/8)*(y—y05)—sin (5* pi/8)*(x—x05)],
+[10 ,cos(pi/8)*(y—y10)—sin (pi/8)*(x-x10)],
+[7 , cos (7* pi/8) *(y—y07)—sin (7* pi/8)*(x—x07)],
+[12 , cos (3* pi /8)*(y—y12)—sin (3 pi/8)*(x—x12)],
+[9 , cos (9* pi /8) *(y—y09)—sin (9% pi/8)*(x—x09)],
+[14 cos (5% pi/8)*(y—y14)—sin (5* pi/8)*(x—x14)],
+[11 ,cos(11* pi/8)*(y—y11)—sin (11* pi/8)*(x-x11)],
+[16 ,cos(7* pi /8)*(y—y16)—sin(7* pi/8)*(x—x16)],
+[13 , cos(13* pi/8)*(y—y13)—sin (13% pi/8)*(x-x13)],
+[2 , cos (9* pi /8) *(y—y02)—sin (9% pi/8)*(x—x02)],
+[15 ,cos(15* pi/8)*(y—y15)—sin (15% pi/8)*(x—-x15)],
+[4 cos (11* pi /8)*(y—y04)—sin (11* pi /8) *(x—x04 )]]);
+
+Vh ul, u2;
+
+real sigma = 0.00001;
+
+varf op(ul,u2)= int2d(Th)(dx(ul)*dx(u2)+ dy(ul)*dy(u2)— sigma*(4*ul*u2)/(1—x*2—y~2)~2);
+varf b([ul] ,[u2]) = int2d(Th)((4*ul*u2)/(1—x*2-y~2)>2);
+
+matrix OP= op(Vh,Vh, solver=Crout , factorize=1);
+matrix B=b(Vh, Vh, solver=CG, eps=le —20);
+
+real[int] ev(nev);
+Vh[int] eV(nev);
+
+int k=EigenValue (OP,B,sym=true , sigma=sigma , value=ev , vector=eV, tol=le—10,maxit=0,ncv=0);
+for (int i=0;i<k;i++) {
+
+ul=eV [i];
+
+real gg = int2d(Th)(dx(ul)*dx(ul) + dy(ul)*dy(ul)); real mm= int2d(Th)(ul*ul) ;
+
+ofstream Eva(fnm, append);
+
+Eva << ev[i] << "\n";
+
+}
+
+Remark D.1 The observant reader will recognize 2 in Table D.3 - it is roughly equal to
+the first positive eigenvalue of the Bolza surface! Moreover, it appears to habe the same
+
+multiplicity. In fact, if one takes the subset of eigenvalues in Table D.3 With multiplicity
+1, 2 or 8, one finds that they match the subset of eigenvalues of Table C.1, and that
+
+the multiplicities are the same. coincidence. Recall the presentation of the
+
+automorphism group given in Chapter 1:
+
+(a, b,c
+
+a’ = b8 = c? = (ab)? = (ab)? = (a*b’)? = acac = bebe = e) ,
+
+where a is a rotation of order 8 around the centre of the fundamental 16-gon, b is a
+rotation of order 3 arownd one of the 32 (4,4,4) triangles that can be used to tessellate
+the surface (note this is twice as many as in the case of the Bolza surface), and c is a
+reflection in the real line. As we have done with the Bolza surface and Klein quartic, we
+
+can input this presentation into GAP to get information about the structure of the group
+
+127

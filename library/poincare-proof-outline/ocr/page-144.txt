@@ -1,0 +1,71 @@
+apply (subst Im-express-cnj{of B])
+apply (simp add: vec-cnj-def)
+apply (simp add: field-simps)
+done
+hence Re (6*A + 4*Re B+ 4*Im B) = 0
+by simp
+hence 3*Re A + 2xRe B + 2xIm B= 0
+using <is-real A»
+by simp
+
+hence 3/2 + Re B/Re A+ Im B/Re A= 0
+using «Re A # 0)
+by (simp add: field-simps)
+
+hence —Im B/Re A — 3/2 < -1
+using (Re B / Re A < —1)
+by simp
+
+hence Im B/Re A > —1/2
+by (simp add: field-simps)
+
+thus — intersects-y-azis-positive-cmat H
+using *
+by simp
+
+qed
+
+lemma negated-euclidean-axiom:
+shows J abcdt.
+a € unit-disc \ b € unit-disc \ c € unit-disc A d € unit-dise A t € unit-disc A
+poincare-between a d t A poincare-betweenbdcA\a#dA
+(V vy. x € unit-disc A y € unit-disc \
+poincare-between a b x A poincare-between x t y —+ — poincare-between ac y)
+proof—
+let ?a = On
+let 2b = of-complez (1/2)
+let 2c = of-complex (i/2)
+let ?dl = (5 — sqrt 17) / 4
+let ?d = of-complex (?dl + ix ?dl)
+let ?t = of-complex (1/2 + i/2)
+
+have ?dl 4 0
+proof—
+have (sqrt 172)? 4 5?
+by simp
+hence sqrt 17 4 5
+by force
+thus ?thesis
+by simp
+qed
+have ?d # ?a
+
+proof (rule ccontr)
+assume — ?thesis
+hence ?dl + ix?dl = 0
+by simp
+hence Re (?dl + ix?dl) = 0
+by simp
+thus False
+using <?dl # 0)
+by simp
+qed
+
+have ?dl > 0
+proof—
+have (sqrt 172)? < 5?
+by (simp add: power2-eq-square)
+hence sqrt 17 < 5
+by (rule power2-less-imp-less, simp)
+
+144

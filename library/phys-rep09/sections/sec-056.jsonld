@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Time-independent Schrödinger equation",
-  "pageStart": 75,
-  "pageEnd": 76,
+  "title": "Additional numerical examples",
+  "pageStart": 64,
+  "pageEnd": 66,
   "contains": [
-    "library/phys-rep09/blocks/prose-sec-056"
+    "library/phys-rep09/blocks/prose-sec-056",
+    "library/phys-rep09/blocks/figure-img-p065-1",
+    "library/phys-rep09/blocks/figure-img-p066-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
   "provenance": "ingested"
 }

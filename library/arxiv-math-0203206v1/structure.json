@@ -8,7 +8,7 @@
   "pages": 43,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,12 +22,12 @@
   },
   "doi": null,
   "title": "arXiv:math/0203206v1 [math.QA] 20 Mar 2002",
-  "authors_raw": "M. M\u00fcger, J. E. Roberts and L. Tuset",
+  "authors_raw": "M. Müger, J. E. Roberts and L. Tuset",
   "title_lines": [
    "Representations of Algebraic Quantum Groups and",
    "Reconstruction Theorems for Tensor Categories"
   ],
-  "abstract": "We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein reconstruction problem. We show that every concrete semisimple tensor \u2217-category with conjugates is equivalent to the category of \ufb01nite dimensional non-degenerate \u2217- representations of a discrete algebraic quantum group. Working in the self-dual framework of algebraic quantum groups, we then relate this to earlier results of S. L. Woronowicz and S. Yamagami. We establish the relation between braidings and R-matrices in this context. Our approach emphasizes the role of the natural transformations of the embedding functor. Thanks to the semisimplicity of our categories and the emphasis on representations rather than corepresentations, our proof is more direct and conceptual than previous reconstructions. As a special case, we reprove the classical Tannaka-Krein result for compact groups. It is only here that analytic aspects enter, otherwise we proceed in a purely algebraic way. In particular, the existence of a Haar functional is reduced to a well known general result concerning discrete multiplier Hopf \u2217-algebras.",
+  "abstract": "We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein reconstruction problem. We show that every concrete semisimple tensor ∗-category with conjugates is equivalent to the category of ﬁnite dimensional non-degenerate ∗- representations of a discrete algebraic quantum group. Working in the self-dual framework of algebraic quantum groups, we then relate this to earlier results of S. L. Woronowicz and S. Yamagami. We establish the relation between braidings and R-matrices in this context. Our approach emphasizes the role of the natural transformations of the embedding functor. Thanks to the semisimplicity of our categories and the emphasis on representations rather than corepresentations, our proof is more direct and conceptual than previous reconstructions. As a special case, we reprove the classical Tannaka-Krein result for compact groups. It is only here that analytic aspects enter, otherwise we proceed in a purely algebraic way. In particular, the existence of a Haar functional is reduced to a well known general result concerning discrete multiplier Hopf ∗-algebras.",
   "docinfo": {
    "Title": "arXiv:math/0203206v1  [math.QA]  20 Mar 2002",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -670,8 +670,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1375,
-   "n_words": 202,
+   "n_chars": 1373,
+   "n_words": 201,
    "label_start": "1",
    "label_end": "1"
   },
@@ -681,33 +681,33 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 2819,
-   "n_words": 429,
-   "label_start": "1",
-   "label_end": "2"
-  },
-  {
-   "id": "sec-001-21-tensor-categories",
-   "number": "2.1",
-   "title": "Tensor Categories",
-   "level": 2,
-   "page_start": 2,
    "page_end": 3,
-   "n_chars": 8009,
-   "n_words": 1259,
-   "label_start": "2",
+   "n_chars": 10953,
+   "n_words": 1707,
+   "label_start": "1",
    "label_end": "3"
   },
   {
-   "id": "sec-002-2-preliminaries",
+   "id": "sec-001-2-preliminaries",
    "number": "2",
    "title": "Preliminaries",
    "level": 1,
    "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1111,
+   "n_words": 173,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-21-tensor-categories",
+   "number": "2.1",
+   "title": "Tensor Categories",
+   "level": 2,
+   "page_start": 3,
    "page_end": 6,
-   "n_chars": 7991,
-   "n_words": 1533,
+   "n_chars": 6871,
+   "n_words": 1358,
    "label_start": "3",
    "label_end": "6"
   },
@@ -718,8 +718,8 @@
    "level": 2,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 11582,
-   "n_words": 2272,
+   "n_chars": 11603,
+   "n_words": 2274,
    "label_start": "6",
    "label_end": "9"
   },
@@ -730,8 +730,8 @@
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 4468,
-   "n_words": 941,
+   "n_chars": 4490,
+   "n_words": 944,
    "label_start": "9",
    "label_end": "11"
   },
@@ -742,8 +742,8 @@
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2064,
-   "n_words": 377,
+   "n_chars": 2073,
+   "n_words": 378,
    "label_start": "11",
    "label_end": "12"
   },
@@ -754,8 +754,8 @@
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 1032,
-   "n_words": 181,
+   "n_chars": 1028,
+   "n_words": 180,
    "label_start": "12",
    "label_end": "12"
   },
@@ -766,8 +766,8 @@
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 6030,
-   "n_words": 1258,
+   "n_chars": 6057,
+   "n_words": 1260,
    "label_start": "12",
    "label_end": "14"
   },
@@ -778,8 +778,8 @@
    "level": 2,
    "page_start": 14,
    "page_end": 17,
-   "n_chars": 9660,
-   "n_words": 1810,
+   "n_chars": 9717,
+   "n_words": 1815,
    "label_start": "14",
    "label_end": "17"
   },
@@ -790,8 +790,8 @@
    "level": 2,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 7445,
-   "n_words": 1485,
+   "n_chars": 7496,
+   "n_words": 1489,
    "label_start": "17",
    "label_end": "20"
   },
@@ -802,8 +802,8 @@
    "level": 1,
    "page_start": 20,
    "page_end": 25,
-   "n_chars": 11377,
-   "n_words": 2246,
+   "n_chars": 11433,
+   "n_words": 2252,
    "label_start": "20",
    "label_end": "25"
   },
@@ -813,33 +813,69 @@
    "title": "From Concrete Tensor Categories to Discrete Quantum Groups",
    "level": 1,
    "page_start": 25,
-   "page_end": 32,
-   "n_chars": 19987,
-   "n_words": 4032,
+   "page_end": 25,
+   "n_chars": 267,
+   "n_words": 47,
    "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-012-51-natural-transformations-of--preserving-functo",
+   "number": "5.1",
+   "title": "Natural Transformations of $*$-Preserving Functors",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 8052,
+   "n_words": 1653,
+   "label_start": "25",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-013-52-concrete-tensor--categories-and-discrete-quan",
+   "number": "5.2",
+   "title": "Concrete Tensor $*$-Categories and Discrete Quantum Semigroups",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 32,
+   "n_chars": 11611,
+   "n_words": 2327,
+   "label_start": "28",
    "label_end": "32"
   },
   {
-   "id": "sec-012-53-conjugates-and-antipodes-discrete-quantum-gro",
+   "id": "sec-014-53-conjugates-and-antipodes-discrete-quantum-gro",
    "number": "5.3",
    "title": "Conjugates and Antipodes: Discrete Quantum Groups",
    "level": 2,
    "page_start": 32,
-   "page_end": 37,
-   "n_chars": 14698,
-   "n_words": 2794,
+   "page_end": 36,
+   "n_chars": 9527,
+   "n_words": 1864,
    "label_start": "32",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-015-54-the-non--case",
+   "number": "5.4",
+   "title": "The Non-$*$ Case",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 5204,
+   "n_words": 933,
+   "label_start": "36",
    "label_end": "37"
   },
   {
-   "id": "sec-013-6-concrete-braided-and-symmetric-categories",
+   "id": "sec-016-6-concrete-braided-and-symmetric-categories",
    "number": "6",
    "title": "Concrete Braided and Symmetric Categories",
    "level": 1,
    "page_start": 37,
    "page_end": 43,
-   "n_chars": 17434,
-   "n_words": 3084,
+   "n_chars": 17476,
+   "n_words": 3089,
    "label_start": "37",
    "label_end": "43"
   }
@@ -858,13 +894,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 15,
-  "chars_total": 125971,
+  "sections": 18,
+  "chars_total": 126342,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 17,
-   "overlaid": 10,
+   "overlaid": 15,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -879,26 +916,30 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.381,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-001-21-tensor-categories",
-     "title": "Tensor Categories",
-     "prose_ratio": 0.443,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-2-preliminaries",
+     "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-tensor-categories",
+     "title": "Tensor Categories",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-003-22-algebraic-quantum-groups",
      "title": "Algebraic Quantum Groups",
      "prose_ratio": 0.996,
-     "coverage_ratio": 0.992,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -923,7 +964,7 @@
      "title": "Representation Theory",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.0,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-007-31-the-universal-corepresentation",
@@ -945,7 +986,7 @@
      "id": "sec-009-33-conjugates-for-representations-and-corepresen",
      "title": "Conjugates for Representations and Corepresentations",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.964,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -953,28 +994,52 @@
      "id": "sec-010-4-cocommutative-algebraic-quantum-groups-vs-comp",
      "title": "Cocommutative Algebraic Quantum Groups vs. Compact Groups",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-011-5-from-concrete-tensor-categories-to-discrete-qu",
      "title": "From Concrete Tensor Categories to Discrete Quantum Groups",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.727,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-51-natural-transformations-of--preserving-functo",
+     "title": "Natural Transformations of $*$-Preserving Functors",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-52-concrete-tensor--categories-and-discrete-quan",
+     "title": "Concrete Tensor $*$-Categories and Discrete Quantum Semigroups",
      "prose_ratio": 0.983,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-53-conjugates-and-antipodes-discrete-quantum-gro",
+     "title": "Conjugates and Antipodes: Discrete Quantum Groups",
+     "prose_ratio": 0.977,
      "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-53-conjugates-and-antipodes-discrete-quantum-gro",
-     "title": "Conjugates and Antipodes: Discrete Quantum Groups",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.986,
+     "id": "sec-015-54-the-non--case",
+     "title": "The Non-$*$ Case",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-6-concrete-braided-and-symmetric-categories",
+     "id": "sec-016-6-concrete-braided-and-symmetric-categories",
      "title": "Concrete Braided and Symmetric Categories",
      "prose_ratio": 0.978,
      "coverage_ratio": 0.613,

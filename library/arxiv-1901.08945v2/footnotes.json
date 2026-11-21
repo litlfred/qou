@@ -1,0 +1,705 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1901.08945v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Ext"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "D"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "B(A) = ⟨D"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "F(A), D"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "egoryDqc,β"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "egoryDqc,βi(S)ofβ"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "category.Inparticular,wealsohavesuchadecompositionforD"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "areobjectsofD(A),wesometimesabbreviateExt"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "A(E, F) := HomD(A)(E, Σ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "(d)Ext"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "B(T, F) = 0forallobjectsT∈T ,F∈Fandallintegers"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Forn=1weneedtoprovethatExt"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Letf∈Ext"
+  },
+  {
+   "page": 7,
+   "mark": "f",
+   "context": "B(T, F),i.e.,"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "B(T, F),i.e.,f :T→Σ"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "B(T, F),i.e.,f :T→ΣnFis"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Σ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "g−→Σ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "−−−−→Σ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "π∗:Ext"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "−→Ext"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "since we already know that Ext"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "B(t(B), F)and HomB(t(B), F) vanish.Hence"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "f= (Σ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "f= (Σn−1h) ◦g= (Σ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "f= (Σn−1h) ◦g= (Σn−1h′) ◦(Σ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Byinduction,the(n −1)-extension(Σ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Byinduction,the(n −1)-extension(Σn−1π) ◦g :T→Σ"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "S(B),andD"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Ext"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "D"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "B(A) = ⟨D"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "F(A), D"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "Serresubcategories ofA,andD"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "F(A)andD"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "categoriesofD"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "Repeated use of truncation shows that D"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "tssmallestsuchsubcategorycontainingbothFandT .Inparticular,D"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "generated,asatriangulatedcategory,byitssubcategoriesD"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "F(A)andD"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "on and condition (2.1),there are no nonzero morphisms from D"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "toD"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "D(A)iseﬀectiveiftheinducedmapsH"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "D(A)iseﬀectiveiftheinducedmapsHp(holimn Fn)→limn H"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "motopylimits,andalllimitslimn H"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "if and only if H"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "if and only if Hp(Fn) = 0 for all p < −n and the maps H"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "d only if Hp(Fn) = 0 for all p < −n and the maps Hp(Fn+1) →H"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "inducedinversesystems(H"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "Inparticular,thenalllimitslimn H"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "(b)Forallp∈Zthereisanintegern≥−psuchthatH"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "(b)Forallp∈Zthereisanintegern≥−psuchthatHp(G)→H"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "heshift map.SinceA has exact countable products,thefunctor H"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "δ−→H"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "δ−→H"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "inAwhereσisagaintheshiftmap.Notethattheinversesystem(H"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "nH"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "nHp(F"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Σ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Σn+1H−n−1(Fn+1) →Fn+1→Fn→Σ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "quasi-coherent,thefunctorH"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "Hp(U, Fn+1) →H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "(H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "isa(split)epimorphism.Itskernelislimn H"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "Note that the functors H"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "Note that the functors Hq(U, −) = H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "in thecategory of abelian groups.Hence applying H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": ". . . →H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "nH"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "nHp(U, F"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "−→H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "for all m ≥−p.For an arbitrary object G in D(X), the sheaf H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "sociated to the presheaf U7→H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ciated to the presheaf U7→Hp(U, G).Hence the canonical map H"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "0 →H"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "0 →Hp(B′) →H"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "0 →Hp(B′) →Hp(B) →H"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "withﬁrsttermH"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "withﬁrsttermHp(B′)inTandthirdtermH"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Ext"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "whereeachTnistheprojectionofBntoD"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "H"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "HenceH"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "HenceHp(T )→H"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "sequenceswithH"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "anditscohomologygroupsH"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "(b)The morphism G →His the morphism Gm→Gm given by x 7→x"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "α"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "groupinSfppf.ThenthegroupH"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "inH"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ϕ∗[α]inH"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "only on the class of α in H"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Qcohα(S)evenifαisjustacohomologyclassinH"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "Sonthebands.Fix"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "S→G"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "Qcohα"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "foranyd ∈Z,whereα"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Remark4.5ifαisjustacohomologyclassinH"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Ext"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "OX(E, F) ∼= H"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "(U→S) 7→Ext"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "orem4.7,themorphismFχ→FinducesanisomorphismH"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "orem4.7,themorphismFχ→FinducesanisomorphismHn(Fχ)→H"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "Sonthebands.Fix"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "S→G"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "Dqc,α"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "foranyd ∈Z,whereα"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Theclass[β]ofβ :B→S(seeTheorem3.11)inH"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Remark6.1.ConsidertheBrauer–Severischemeπ:[P"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "to the category Dqc,β"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "to the category Dqc,βi(S) of β"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Recallthat,asexplainedabove,[β] ∈H"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "idenotes the restriction of Ψ"
+  },
+  {
+   "page": 26,
+   "mark": "b",
+   "context": "correspondingdecompositionofD"
+  }
+ ]
+}

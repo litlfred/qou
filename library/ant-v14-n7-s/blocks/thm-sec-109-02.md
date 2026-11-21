@@ -1,1 +1,1 @@
-Finally, (3) follows from (2), after we check that the unit map uBO induces the identity map
+Finally, (3) follows from (2), after we check that the unit map uBO induces the identity map on GW(k) via GW(k) (Morel) ∼ −−−→10,0 k (Spec k) uBO ∼ −→BO0,0(Spec k) ≃KO[0] 0 (k) = GW(k), where the ﬁrst isomorphism arises from Morel’s theorem [2004, Theorem 6.4.1, Remark 6.4.2; 2012,

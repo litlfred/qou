@@ -5,7 +5,3 @@ $$
 $$
 
 is an exact meromorphic differential on $\Sigma$. Consequently $\mathrm{Res}_p\,\lambda_{\mathrm{SW}}^{(n)} = 0$ at every point $p \in \Sigma$, and $\oint_\gamma \lambda_{\mathrm{SW}}^{(n)} = 0$ over every closed cycle $\gamma$ avoiding the poles of $X^{(n-1)}$. In particular the residue-sum period of the [SW period framework](#prop:sw-period-residue-sum) vanishes identically at every vertical degree $n \ge 1$ under the classical-jet rule, so the classical-jet prolongation cannot realise the nonzero binding periods $a_D^{(m)} = \mathrm{lw}(m-1) = \frac{1}{m}\sum_{\lambda \vdash m} \dim_q(\lambda)$; the prolongation carrying the binding periods must therefore be non-classical (q-difference).
-
-## Lean structure
-
-The load-bearing invariant is proved on the formal-residue model over a generic commutative ring: a local Laurent expansion is its coefficient function, the residue is the coefficient of $t^{-1}$, and a termwise derivative has vanishing $t^{-1}$ coefficient (`fresidue_fderiv`). The theorem `classical_jet_period_zero` composes this with the residue-sum shape of [`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum) (taken as an explicit hypothesis, as in the sibling `sw_period_eq_residue_sum`), and `classical_jet_period_ne_lw` concludes against the nonzero classical binding period $I(m)/m$ (involution numbers). Exact numerical companion at $z = \infty$ (sheet expansions, jets $n = 1\ldots4$): `computations/lever1_saddle_action_jet_residue_probe.py`.

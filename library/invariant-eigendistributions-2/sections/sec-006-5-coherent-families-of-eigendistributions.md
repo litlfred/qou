@@ -8,6 +8,7 @@ pages: 7-10
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
 toc_source: inferred
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 18 sections: Front matter; Contents; Introduction."
 ---
 To bring in the Integral Formula we need to pass from the conormal variety Z of the K-action to the
 conormal variety S of the Go-action by means of the involution ι : (x, y) →(x, ¯y) of g = go × go which
@@ -137,4 +138,3 @@ sees that (6) exists for all λ ∈h∗(regular or not). This means that
 as promised above. This ﬁnishes the proof of the theorem. We record explicitly the special case when
 Γ = Sw :
 REPRESENTATIONS OF WEYL GROUPS
-10

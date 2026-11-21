@@ -1,0 +1,1 @@
+There exists a one-to-one correspondence between the paths counted by Ek,i(n, j) and the overpartitions counted by Bk,i(n, j). This correspondence is such that the paths have N peaks if and only if the length of the multiplicity sequence of the overpartition is N (see Section 5.2 for the deﬁnition).

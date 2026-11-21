@@ -36,7 +36,7 @@ input), carried as the class hypothesis and **never given an instance** here (an
 a false injectivity). The conditional theorem states what *would* follow; it does not establish the
 premise. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-17-habiro-interpolation-wlambda.md
+-- Ref: [leitner2026] docs/audits/2026-07-17-habiro-interpolation-wlambda.md
 -- Ref: [hikami2005brieskorn] https://doi.org/10.1063/1.1834694
 -- Ref: [fintushelstern1990] https://doi.org/10.1112/plms/s3-61.1.109
 -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716

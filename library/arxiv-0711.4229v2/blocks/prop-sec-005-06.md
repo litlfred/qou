@@ -1,0 +1,1 @@
+Every element J ∈B is ambidextrous and A(J) = B. The construction in Section 3 gives a function d = dJ : B →C[[h]][h−1] and an invariant F ′ = F ′ J, which do not depend on J up to multiplication by a non-zero element of C[[h]][h−1].

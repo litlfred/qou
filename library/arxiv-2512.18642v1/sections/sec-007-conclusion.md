@@ -1,22 +1,24 @@
 ---
 doc_id: arxiv-2512.18642v1
-doc_title: "A Hidden Quantum Markov model framework for"
+doc_title: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain"
 section_id: sec-007-conclusion
 section_title: "Conclusion"
 section_number: null
 pages: 16-20
 source_pdf: 2512.18642v1.pdf
 source_sha256: c4c7f8b0a719aa2d
-doc_brief: "A Hidden Quantum Markov model framework for — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a"
+toc_source: outline
+doc_brief: "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af"
 ---
+Conclusion
 This work establishes a HQMMs structure on the AKLT spin chain. By identifying the virtual
-spin-½chain as the hidden quantum system, and the physical spin-1 sites as the observable
+spin-½ chain as the hidden quantum system, and the physical spin-1 sites as the observable
 output. The results transforms the algebraic-probabilistic HQMMs into a model grounded in
 many-body quantum physics, revealing connections between quantum memory, topological order,
 and correlation structures. The analysis of the hidden chain demonstrates how the entangled
-structure of the AKLT state manifests as a non-classical memory resource. Furthermore, by
+structure of the AKLT state manifests as a non-classical memory resource.
+Furthermore, by
 extending the notion of SPT order to the statistical properties of the emitted symbol sequences.
-16
 This framework naturally bridges to measurement-based quantum computation [48] and quan-
 tum machine learning [50]. Our HQMM construction, where transitions correspond to local op-
 erations and emissions to measurement outcomes, can be reinterpreted as a stochastic unraveling
@@ -52,7 +54,6 @@ Control (ICCSEC) (pp. 1430-1433). IEEE, (2017).
 [4] Viterbi, A. Error bounds for convolutional codes and an asymptotically optimum decoding
 algorithm. IEEE transactions on Information Theory, 13(2), 260-269 (2003).
 [5] Forney, G. D. The viterbi algorithm. Proceedings of the IEEE, 61(3), 268-278, (2005).
-17
 [6] Hayashi, M., Yoshida, Y.: Asymptotic and non-asymptotic analysis for hidden Markovian
 process with quantum hidden system. J. Phys. A Math. Theor. 51(33), 1 (2018)
 [7] A. Monras, A. Beige, and K. Wiesner, Hidden quantum Markov models and non-adaptive
@@ -75,7 +76,7 @@ tals,174,113804,(2023).
 [14] Souissi, A. Matrix Product States as Observations of Entangled Hidden Markov Models: A.
 Souissi. Journal of Statistical Physics, 192(7), 88 (2025).
 [15] Accardi, L.: Non-commutative Markov chains. In: Proceedings of the School of Mathematical
-Physics, University of Rome “Tor Vergata” . pp. 268–295 (1974)
+Physics, University of Rome “Tor Vergata”. pp. 268–295 (1974)
 [16] Accardi, L., Souissi, A., & Soueidy, E. G., Quantum Markov chains: A unification approach.
 Infinite Dimensional Analysis, Quantum Probability and Related Topics, 23(02), 2050016,
 (2020).
@@ -86,32 +87,31 @@ chains. Communications in mathematical physics, 144(3), 443-490 (1992).
 [19] Fannes M, Nachtergaele B and Werner R F 1992 Ground states of VBS models on Cayley
 trees J. Stat. Phys. 939–973
 [20] Fannes M, Nachtergaele B and Werner R F 1992 Entropy estimates for finitely correlated
-states Annales de l’IHP Physique th´ eorique 57(3) 259-277
+states Annales de l’IHP Physique th´eorique 57(3) 259-277
 [21] Ticozzi, F., Viola, L.: Quantum Markovian subsystems: invariance, attractivity, and control.
-IEEE Transactions on Automatic Control53(9), 2048–2063 (2008)
+IEEE Transactions on Automatic Control 53(9), 2048–2063 (2008)
 [22] Guan, J., Feng, Y., Turrini, A., Ying, M.: Measurement-based verification of quantum
 markov chains. In: Computer Aided Verification. pp. 533–554. Springer Nature Switzerland,
 Cham (2024)
 [23] Ying, M.: Foundations of Quantum Programming. Morgan Kaufmann (2016)
-18
 [24] Wolf, M.M.: Quantum channels & operations: guided tour. Lecture notes (2012). Available
 at https://mediatum.ub.tum.de/doc/1701036/document.pdf
 [25] Ambainis, A.: Quantum walks and their algorithmic applications. International Journal of
-Quantum Information1(4), 507–518 (2003)
+Quantum Information 1(4), 507–518 (2003)
 [26] Affleck, I., Kennedy, T., Lieb, E. H., & Tasaki, H. (1987). Rigorous results on valence-bond
-ground states in antiferromagnets.Physical Review Letters, 59(7), 799.
+ground states in antiferromagnets. Physical Review Letters, 59(7), 799.
 [27] Affleck, I., Kennedy, T., Lieb, E. H., & Tasaki, H. (1988). Valence bond ground states
 in isotropic quantum antiferromagnets, Communications in Mathematical Physics, 115(3),
 477–528.
 [28] F. D. M. Haldane, Nonlinear field theory of large-spin heisenberg antiferromagnets: semiclas-
-sically quantized solitons of the one-dimensional easy-axis n´ eel state, Physical review letters
+sically quantized solitons of the one-dimensional easy-axis n´eel state, Physical review letters
 50, 1153 (1983).
 [29] F. Pollmann, A. M. Turner, E. Berg, and M. Oshikawa, Entanglement spectrum of a topo-
-logical phase in one dimension, Phys. Rev. B81, 064439 (2010).
+logical phase in one dimension, Phys. Rev. B 81, 064439 (2010).
 [30] ] F. Pollmann, E. Berg, A. M. Turner, and M. Oshikawa, Symmetry protection of topological
 order in one-dimensional quantum spin systems, Phys. Rev. B 85, 075125 (2012).
 [31] X. Chen, Z.-C. Gu, and X.-G. Wen, Complete classification of one-dimensional gapped quan-
-tum phases in interacting spin systems, Phys. Rev. B84, 235128 (2011).
+tum phases in interacting spin systems, Phys. Rev. B 84, 235128 (2011).
 [32] O. Bratteli, D. W. Robinson, Operator Algebras and Quantum Statistical Mechanics 1
 (Springer-Verlag, BerlinHeidelberg-New York, 1986).
 [33] Ogata, Y., AZ 2-index of symmetry protected topological phases with reflection symmetry
@@ -121,18 +121,17 @@ symmetry for two-dimensional Fermion systems. Communications in Mathematical Phy
 395(1), 405-457, (2022).
 [35] H. Tasaki, Rigorous index theory for one-dimensional interacting topological insulators, J.
 Math. Phys. 64, 041903 (2023)
-[36] Liu, L. L., Hwang, T. Controlled remote state preparation protocols via AKLT states.Quan-
+[36] Liu, L. L., Hwang, T. Controlled remote state preparation protocols via AKLT states. Quan-
 tum Information Processing, 13(7), 1639–1650 (2014). .
-[37] N. Schuch, D. P´ erez-Garc´ ıa, and I. Cirac, Classifying quantum phases using matrix product
-states and projected entangled pair states, Phys. Rev. B84, 165139 (2011).
+[37] N. Schuch, D. P´erez-Garc´ıa, and I. Cirac, Classifying quantum phases using matrix product
+states and projected entangled pair states, Phys. Rev. B 84, 165139 (2011).
 [38] Cirac, J. I., Perez-Garcia, D., Schuch, N., Verstraete, F., Matrix product states and projected
 entangled pair states: Concepts, symmetries, theorems. Reviews of Modern Physics, 93(4),
 045003 (2021).
-[39] Frembs, M., Cavalcanti, E. G. Variations on the Choi–Jamio/suppress lkowski isomorphism. Journal of
+[39] Frembs, M., Cavalcanti, E. G. Variations on the Choi–Jamio lkowski isomorphism. Journal of
 Physics A: Mathematical and Theoretical, 57(26), 265301 (2024).
 [40] Kitaev, A., Preskill, J. Topological entanglement entropy. Phys. Rev. Lett. 96, 110404, DOI:
 10.1103/PhysRevLett.96. 110404 (2006).
-19
 [41] Singh, S., Vidal, G., Tensor network states and algorithms in the presence of a global SU
 (2) symmetry. Physical Review B—Condensed Matter and Materials Physics, 86(19), 195114,
 (2012).
@@ -149,11 +148,11 @@ able logic, Found. Phys. 38(5) (2008), 448–457.
 Phys. 43, 4452 (2002).
 [47] Ikegami S, Fukui K, Pohle R, Motome Y. Kitaev Meets AKLT: Competing Quantum Disorder
 in Spin-3/2 Honeycomb Systems. arXiv:2512.06322 (2025).
-[48] Briegel, H. J., Browne, D. E., D¨ ur, W., Raussendorf, R., Van den Nest, M., Measurement-
+[48] Briegel, H. J., Browne, D. E., D¨ur, W., Raussendorf, R., Van den Nest, M., Measurement-
 based quantum computation. Nature Physics, 5(1), 19-26, (2009).
 [49] L. Fidkowski and A. Kitaev, Topological phases of fermions in one dimension, Phys. Rev. B
 83, 075103 (2011).
-[50] Jerbi, S., Fiderer, L. J., Poulsen Nautrup, H., K¨ ubler, J. M., Briegel, H. J., Dunjko, V. Quan-
+[50] Jerbi, S., Fiderer, L. J., Poulsen Nautrup, H., K¨ubler, J. M., Briegel, H. J., Dunjko, V. Quan-
 tum machine learning beyond kernel methods. Nature Communications, 14(1), 517 (2023).
 [51] Schuld, M., Sinayskiy, I., Petruccione, F. An introduction to quantum machine learning.
 Contemporary Physics, 56(2), 172-185 (2015).
@@ -162,4 +161,3 @@ Projectivity, Ergodicity, and Mixing. arXiv preprint arXiv:2503.06546, (2025).
 [53] Kapustin, A., Sopenko, N. Anomalous Symmetries of Quantum Spin Chains and a General-
 ization of the Lieb–Schultz–Mattis Theorem: A. Kapustin, N. Sopenko. Communications in
 Mathematical Physics, 406(10), 238 (2025).
-20

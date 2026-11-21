@@ -8,6 +8,7 @@ pages: 5-7
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
 toc_source: inferred
+doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spaces."
 ---
 The map W ∧֒ →NG is not necessarily surjective. It is an interesting problem to
 understand the pair (O, E ) which is not contained in the image of W ∧(for example,
@@ -124,4 +125,3 @@ P Kξ0 gives the original
 Springer correspondence in Theorem 3.2 and Theorem 4.1. In this case,
 • 1W ↔IC(O1, ¯Ql) : O1 : the regular unipotent class in Guni.
 • εW ↔IC(O0, ¯Ql) : O0 = {1} ; the identity class.
-7

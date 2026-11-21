@@ -1,0 +1,44 @@
+Figure 3.4: The domain of integration Qr in H
+
+represents the circular symmetry that we observed when plotting the eigenfunction in
+FreeFEM++. We started with 1 as the coefficient of x?, and after several numerical
+experiments, found 22 to be among the optimal integer coefficients for producing a good
+bound.
+
+We wish to evaluate the L? norms of both this function and its gradient over Qr.
+Unfortunately, these cannot be explicitly calculated, however we can use Mathematica [37|
+to integrate explicitly with respect to y and then approximate the final integral using
+Simpson’s rule, as we will then be integrating a continuous curve over an interval in
+one variable. We are aware of the limitations of performing symbolic integration using
+computer software, however the integrands that we integrate with respect to y consist
+of terms that are integer powers of y. We have sen Mathematica to perform our
+integrations, but have checked them in SAGE [79], which is open source, and have also
+checked some of the less cumbersome ones by hand.
+
+First, we consider y;(x, y). Integrating with respect to y allows us to define a function
+
+in 2,
+
+a re (y— VI 222? ~1)' (y— Ve)
+
+dy.
+Jci(x) y y
+
+We do not display the closed evaluated form of h(x) here, since it is long, unpleasant,
+and tells us little information. It is given as a sum of polynomial terms of x, as well as
+their square roots and logs, and can be calculated in Mathematica with the following line
+of code:
+
+q = Sart[3 +2 Sqrt[2] — 2 Sart[4 + 3 Sart [2]]];
+u[x_, y_] = (y — 1 — Sqrt[1 — 22 x°2]) (y — Sart [q*2 — x~2]);
+Integrate [(u[x, y] ul[x, yl)/y72, {y, Sart[q72 — x72],
+
+Sqrt [Csc[Pi/8]*2 — (x + Cot[Pi/8])>2]}]
+
+We now need to approximate the integral
+
+2t-1
+[ h(x)dx.
+Jo
+
+57

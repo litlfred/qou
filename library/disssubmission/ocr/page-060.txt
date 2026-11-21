@@ -1,0 +1,57 @@
+52 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+It is sometimes convenient to have a lift of the quotient category P to
+a category of true perverse sheaves. To obtain such a lift, consider the full
+subcategory Pin; C P of all perverse sheaves without subquotients in S. By
+the same arguments as in [41, sect. 3.7] the functor P —> P restricts to an
+equivalence of categories between Pin; and P, and via this equivalence the
+convolution product + induces a bifunctor
+
+*int > Pint X Pine —> Pint
+
+with respect to which Pj, becomes a A-linear symmetric monoidal category
+equivalent to P. The unit object 1 of Pin; is the rank one skyscraper sheaf
+supported in the neutral element of the group variety X.
+
+As an application we show that the category P is rigid in the sense of
+section 2.1, i.e. that we have a notion of duality which involves evaluation
+and coevaluation morphisms with the properties familiar from the case of
+finite-dimensional vector spaces or group representations.
+
+THEOREM 3.9. The symmetric monoidal abelian category P is rigid.
+
+Proof. Let P € Pins be a perverse sheaf without constituents in S. Via
+the adjunction property in lemma 3.4 the identity morphism idp : P —> P
+defines two morphisms 1 —+ PY +, P and P+; PY —+ 1 in D. Under the
+quotient functor D —> D these induce morphisms in the full subcategory P
+by lemma 3.7. Let us denote by
+
+coev: 1 —> PY xin P and ev: Pings PY —1
+
+the corresponding morphisms in Pj,;. By definition, rigidity means that for
+all P € Pin; the composite morphism
+
+id *ing CoeVv eV ing id
+
+y: P=Pinl
+
+V
+Ping P* ing P
+
+1 ing P = P
+
+and its counterpart (id *jn,ev) © (Coev*in id) : PY —+ PY are the identity
+morphisms. Since the argument is the same in both cases, we will only deal
+with the morphism y in what follows.
+
+We must show y—idp = 0. This assertion is invariant under character
+twists, so by the generic vanishing property GV(X) we can assume that for
+all subquotients Q of the perverse sheaf P the hypercohomology H*(X,Q)
+is concentrated in degree zero. Then H*(X , —) behaves like an exact functor
+on all short exact sequences which only involve subquotients of P. After a
+suitable character twist we can furthermore assume that
+
+H°(X,PY *)P) = H°(X,PY *in P) = H°(X,PY *,P)
+
+and that the forget support morphism for these hypercohomology groups
+is an isomorphism. Then for H = H*(X,P) and HY = Hom,(H,A) the

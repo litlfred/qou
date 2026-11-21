@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2404.03933v2/blocks/prose-sec-013",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Appendix E. Proof of Theorems 9.5 and 9.6",
-  "pageStart": 42,
-  "pageEnd": 43,
-  "text": "../sections/sec-013-appendix-e-proof-of-theorems-95-and-96.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2404.03933v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2404.03933v2",
+  "title": "Appendix D. Proof of Theorem 9.4",
+  "pageStart": 41,
+  "pageEnd": 42,
+  "text": "../sections/sec-013-appendix-d-proof-of-theorem-94.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.03933v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.03933v2/manifest.jsonld",
   "provenance": "ingested"
 }

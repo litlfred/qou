@@ -1,0 +1,52 @@
+480 BAO (X.) & BONAHON (F.)
+
+LEMMA 18. — For every face Q of Pi" which corresponds to a face of
+type (ii) of the truncated polyhedron Pj*"", either all the edges of OQ are
+labelled by 0, or there are at least 4 sign changes in OQ.
+
+Proof. — The proof is identical to that of Lemma 16, using Lemma 17 instead
+of Lemma 15. oO
+
+We now conclude with a purely combinatorial argument.
+
+LEMMA 19. — Label each edge of P3*"™ by a sign +, 0 or — in such a way
+that, for each face Q of P3*™, either all the edges of Q are labelled by 0 or
+there are at least 4 sign changes in OQ. Then, all the edges are labelled by 0.
+
+Proof. — This is Cauchy’s famous combinatorial lemma [5]; see also [15,
+Lemma T]. Since it is fairly simple, we include a proof for the sake of
+completeness.
+
+Let G be the 1-skeleton of the dual cell decomposition of dP{™™. Note
+that G is a combinatorial graph, in the sense that an edge has two distinct
+end vertices and no two edges have the same end vertices. Label each edge
+of G with the label of the dual edge of P™"". The sign condition for the faces
+of PTrun translates to a similar sign condition for each vertex v of G: either
+all the edges adjacent to v are labelled by 0, or one encounters at last 4 sign
+changes as one goes around v.
+
+Lemma 19 then follows from the following statement.
+
+SUBLEMMA 20. — Let G be a graph embedded in S? with each edge of G labelled
+by a sign +, 0 or — in such a way that, for each vertex v of G, either all the
+edges adjacent to v are labelled by 0, or one encounters at least 4 sign changes
+as we go around v. Then, all the edges of G are labelled by 0.
+
+Proof of Sublemma 20. — Suppose that there is a graph G for which the prop-
+erty fails. Erasing from G all the edges labelled by 0 (which does not disturb
+the sign change condition) and restricting attention to a connected component
+of the remaining graph, we can assume that all edges are labelled by + or —,
+and that G is connected and non-empty. Adding edges labelled by + if neces-
+sary (which again does not disturb the sign change condition), we can assume
+that the complement of G in S? consists of triangles.
+
+For i = 0, 2, let F; be the number of triangles in the complement of G
+with 7 sign changes in their boundary. Then, if V and E respectively denote
+the number of vertices and edges of G,, the hypothesis that there are at least 4
+sign changes at each vertex implies that 4V < 2F>. Since we arranged that
+the complement of G consists of triangles, counting edge sides in two different:
+ways gives 3(Fp + F2) = 2B, while the Euler characteristic equation shows
+that V — E + Fo + Fy = 2. Combining these three relations, we obtain that
+Fo +4 <0, a contradiction. Oo
+
+TOME 130 ~ 2002 — N° 3

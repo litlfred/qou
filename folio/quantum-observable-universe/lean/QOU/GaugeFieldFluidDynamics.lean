@@ -373,7 +373,7 @@ theorem q_bounded_cond_finite (L : QBoundedLeviForm) :
     - If cond = O(1): blowup (counter-example established)
     - If cond ~ κ: regularity (Levi form degenerates)
 
-    Ref: [manuscript] Ch 5 §8 Root-of-unity truncation -/
+    Ref: [leitner2026] Ch 5 §8 Root-of-unity truncation -/
 structure LeviDegeneracyConjecture where
   /-- Truncation level (κ in q = e^{iπ/κ}). -/
   κ : ℕ
@@ -447,7 +447,7 @@ theorem eigenspace_dim_pos (twice_j : ℕ) : eigenspace_dim twice_j > 0 := by
     which is spanned by the matrix coefficients.
 
     Ref: [woronowicz1987] https://doi.org/10.1007/BF01219077
-    Ref: [manuscript] Ch 5 §8 Quantum Peter-Weyl theorem -/
+    Ref: [leitner2026] Ch 5 §8 Quantum Peter-Weyl theorem -/
 theorem quantum_peter_weyl_completeness :
     ∀ (twice_j : ℕ), eigenspace_dim twice_j = (twice_j + 1) ^ 2 := by
   intro twice_j; rfl
@@ -468,10 +468,17 @@ theorem q_bkm_trivial {M : Type*} (sp : ArchimedeanSubstrateField M)
 -- ════════════════════════════════════════════════════════════════
 
 /-- **Boundary observability**: the limit of Hom(1, Ad(A_q)) as q → 1.
-    A QOU is NS-regular iff this is nonzero (observability fails
-    at the boundary, gauge mode appears, contact degenerates).
-    A QOU is NS-singular iff this is zero (observability persists,
-    contact stays non-degenerate, blowup occurs).
+    Per owner decision Q-VO9T-2 = 1 (2026-11-15, beans `qou-nzyr`, `qou-hjl0`,
+    matching `QOU.FluidDynamics.qou_ns_in_qou`), the NS obstruction `NS(A)` is
+    the **global** surface Euler class `e(ξ) ∈ H²(S, ℤ) ≅ ℤ` of degree
+    `euler_char = χ(A)` (not the curve restriction `e(ξ)|_Σ`, which vanishes
+    identically by `thm:ns-singularity-descartes` item 3).
+    A quantum universe is Categorically NS-regular iff `euler_char = 0` and
+    Categorically NS-singular iff `euler_char ≠ 0` (`euler_char_ne_zero`);
+    `ns_singular` additionally records the Kummer root-obstruction `2κ ∤ χ(A)`
+    at all levels `κ ≥ 4` (`thm:ns-singularity-descartes` item 2).
+    These labels are internal categorical properties of `(𝐂, A, τ)` (framework
+    model correspondence, not a deductive classical 3D PDE theorem).
 
     LaTeX: `\label{def:ns-regular-qou}` -/
 structure BoundaryObservability where
@@ -549,7 +556,7 @@ theorem descartes_euler_ne_zero : descartes_euler ≠ 0 := by
 
 /-- For κ ≥ 4, 2κ does not divide -6.
     This is the key arithmetic: |2κ| ≥ 8 > 6 = |-6|.
-    Ref: [manuscript] Ch 5 §8 Kummer specialisation -/
+    Ref: [leitner2026] Ch 5 §8 Kummer specialisation -/
 theorem obstruction_persists (κ : ℕ) (hκ : κ ≥ 4) :
     ¬ ((2 * (κ : ℤ)) ∣ (-6 : ℤ)) := by
   intro ⟨c, hc⟩
@@ -605,7 +612,7 @@ export QOU.FluidDynamics (ObservabilityData)
     survives Kummer specialisation (2κ ∤ -6 for κ ≥ 4).
 
     LaTeX: `\label{thm:ns-singularity-descartes}` -/
--- Ref: [manuscript] Ch 5 §8 NS-singularity of the Descartes universe
+-- Ref: [leitner2026] Ch 5 §8 NS-singularity of the Descartes universe
 structure NSSingularityDescartes (C : Type*) where
   /-- Euler characteristic. -/
   chi : ℤ := -6

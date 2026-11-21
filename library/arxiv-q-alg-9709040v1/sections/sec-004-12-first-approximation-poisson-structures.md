@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-004-12-first-approximation-poisson-structures
 section_title: "First approximation: Poisson structures"
 section_number: 1.2
@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 It follows from the associativity of ⋆that the bilinear map B1 : A × A−→A satisﬁes the equation
 fB1(g, h) −B1(fg, h) + B1(f, gh) −B1(f, g)h = 0,

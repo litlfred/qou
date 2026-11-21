@@ -9,13 +9,20 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Unitarity of the Burau representation",
-  "pageStart": 48,
-  "pageEnd": 50,
+  "title": "Positive links",
+  "pageStart": 35,
+  "pageEnd": 38,
   "contains": [
-    "library/arxiv-math-0606435v2/blocks/prose-sec-024"
+    "library/arxiv-math-0606435v2/blocks/prose-sec-024",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-024-01",
+    "library/arxiv-math-0606435v2/blocks/lem-sec-024-02",
+    "library/arxiv-math-0606435v2/blocks/lem-sec-024-03",
+    "library/arxiv-math-0606435v2/blocks/lem-sec-024-04",
+    "library/arxiv-math-0606435v2/blocks/rem-sec-024-05",
+    "library/arxiv-math-0606435v2/blocks/lem-sec-024-06",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-024-07"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
   "provenance": "ingested"
 }

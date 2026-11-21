@@ -82,4 +82,12 @@ theorem binding_trace_two_cosh (θ : ℝ) :
   rw [← Real.exp_neg, Real.cosh_eq]
   ring
 
+/-- **Eigenvalue root identity of the binding transfer kernel (`qou-4mrb`).**
+For any nonzero eigenvalue `lam : ℝ`, the binding transfer polynomial
+`x^2 - (lam + lam⁻¹) * x + 1` vanishes at `x = lam`. -/
+theorem binding_kernel_eval_root (lam : ℝ) (hlam : lam ≠ 0) :
+    lam ^ 2 - (lam + lam⁻¹) * lam + 1 = 0 := by
+  rw [binding_kernel_factors lam lam hlam]
+  ring
+
 end QOU.Mass.BindingHyperbolicRecurrence

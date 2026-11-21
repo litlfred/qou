@@ -7,10 +7,11 @@ section_number: 6.2
 pages: 36-38
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.986
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 In the limit studied in the last section, the time of the shock $|t_w|$ was taken to infinity, and the asymptotic energy of the shock (as compared to the mass of the black hole) $E/M$ was taken to zero, such that the quantity $h \sim e^{2\pi t_w / \beta} E/M$ was held fixed. This was to ensure that the precursor was a small perturbation and provided a simple relationship between the coordinates when crossing the shock. A relic of this limit was that the shock wave had to lie on the $u=0$ horizon. Additionally, the rate of complexity growth was always fixed at $2M$. If instead we inject finite energy into the system from the left boundary, we expect that the complexification rate should change accordingly.
 

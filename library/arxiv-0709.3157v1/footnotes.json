@@ -1,0 +1,520 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-0709.3157v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p006-4",
+   "page": 6,
+   "mark": "4",
+   "text": "J. Bijnens, G. Colangelo and G. Ecker, JHEP 9902 (1999) 020 [arXiv:hep-ph/9902437]; J. Bijnens, G. Colangelo and G. Ecker, Annals Phys. 280 (2000) 100 [arXiv:hep-ph/9907333].",
+   "marks": [
+    {
+     "page": 6,
+     "context": "O(p"
+    }
+   ],
+   "block": "library/arxiv-0709.3157v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p006-5",
+   "page": 6,
+   "mark": "5",
+   "text": "N. S. Craigie and J. Stern, Phys. Rev. D 26 (1982) 2430.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "¯uσµν γ"
+    }
+   ],
+   "block": "library/arxiv-0709.3157v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p006-6",
+   "page": 6,
+   "mark": "6",
+   "text": "D. Becirevic, V. Lubicz, F. Mescia and C. Tarantino, JHEP 0305 (2003) 007 [arXiv:hep-lat/0301020].",
+   "marks": [
+    {
+     "page": 6,
+     "context": "O(p4)andO(p"
+    },
+    {
+     "page": 6,
+     "context": "parity sector with tensor sources at the O(p"
+    }
+   ],
+   "block": "library/arxiv-0709.3157v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p006-8",
+   "page": 6,
+   "mark": "8",
+   "text": "O. Catà and V. Mateu, arXiv:0705.2948 [hep-ph].",
+   "marks": [
+    {
+     "page": 5,
+     "context": "–parity sector with tensor sources necessarily starts at O(p"
+    }
+   ],
+   "block": "library/arxiv-0709.3157v1/blocks/prose-sec-005"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "Talkgivenatthe4thInternationalWorshoponQuantumChromoDynamics, Theoryandexperiment, June 16-20, 2007. Martina Franca - Valle d’Itria - Italy. IFIC-07-54, FTUV-07-0920. To appear in the proceedings.",
+   "block": "library/arxiv-0709.3157v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "S. Weinberg, PhysicaA 96 (1979) 327.",
+   "block": "library/arxiv-0709.3157v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p006-2",
+   "page": 6,
+   "mark": "2",
+   "text": "J. Gasser and H. Leutwyler, Annals Phys. 158 (1984) 142; J. Gasser and H. Leutwyler, Nucl. Phys. B 250 (1985) 465.",
+   "block": "library/arxiv-0709.3157v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p006-3",
+   "page": 6,
+   "mark": "3",
+   "text": "H. W. Fearing and S. Scherer, Phys. Rev. D 53 (1996) 315 [arXiv:hep-ph/9408346].",
+   "block": "library/arxiv-0709.3157v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p006-7",
+   "page": 6,
+   "mark": "7",
+   "text": "V. Mateu and J. Portoles, arXiv:0706.1039 [hep-ph];",
+   "block": "library/arxiv-0709.3157v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p006-9",
+   "page": 6,
+   "mark": "9",
+   "text": "H. Leutwyler, Annals Phys. 235 (1994) 165 [arXiv:hep-ph/9311274].",
+   "block": "library/arxiv-0709.3157v1/blocks/prose-sec-005"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "4",
+   "context": "¯qi σµνq j.WhereasonlyfournewtermsshowupatO(p"
+  },
+  {
+   "page": 1,
+   "mark": "6",
+   "context": "atO(p"
+  },
+  {
+   "page": 1,
+   "mark": "4",
+   "context": "tionofloopdiagrams[O(p"
+  },
+  {
+   "page": 1,
+   "mark": "6",
+   "context": "[O(p"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "L"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "QCD+Lext(vµ,"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "QCD+Lext(vµ,aµ,"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "QCD+Lext(vµ,aµ,s,"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "where L"
+  },
+  {
+   "page": 2,
+   "mark": "5",
+   "context": "Lext=¯q γµ (vµ+γ"
+  },
+  {
+   "page": 2,
+   "mark": "5",
+   "context": "Lext=¯q γµ (vµ+γ5aµ)q−¯q(s−iγ"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "¯qσµν ¯tµνq=¯qLσµνt"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "µν"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "µνqR +¯qRσ µν"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "µνqR +¯qRσ µνtµν"
+  },
+  {
+   "page": 2,
+   "mark": "g",
+   "context": "4(gµλ"
+  },
+  {
+   "page": 2,
+   "mark": "g",
+   "context": "4(gµλgνρ −gνλ"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "snotdifﬁculttocheckthatPLRarechiralprojectors,andthentµνandt"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "WewantLexttohavethesamesymmetriesasL"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "qLR →gLR(x) qLR, with gLR(x) SU(n"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "on Lextand L"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "QCDseparately : it must be done on Lext +L"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "rµ→gR rµ g"
+  },
+  {
+   "page": 2,
+   "mark": "g",
+   "context": "R+ igR∂µ"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "R+ igR∂µ g"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "ℓµ→gLℓµ g"
+  },
+  {
+   "page": 2,
+   "mark": "g",
+   "context": "L+ igL ∂µ"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "L+ igL ∂µ g"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "χ→gR χ g"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "tµν→gR tµν g"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "χPTisbasedonthespontaneousbreakdownoftheglobalG= SU(n"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "TisbasedonthespontaneousbreakdownoftheglobalG= SU(nf)L ⊗SU(n"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "symmetry down to its subgroup SU(nf)V. The dynamical ﬁelds φ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 3,
+   "mark": "u",
+   "context": "f−1 ﬁelds in the matrix"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "u(φ"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "u(φa) →gR u(φ"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "u(φa) →gR u(φa)h"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "u(φa) →gR u(φa)h†=hu(φ"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "u(φa) →gR u(φa)h†=hu(φa)g"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "u(φ"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "φ"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "φaλ"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "Atverylow energies,φ"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "D uDu"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "s invariant under the same set of transformations as Lext +L"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "u†(∂µ −irµ)u−u(∂µ −iℓµ)u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "uµ→huµ h"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "u†± u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "±= u"
+  },
+  {
+   "page": 3,
+   "mark": "u",
+   "context": "±= u†tµν"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "±= u†tµν u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "±= u†tµν u† ± utµν"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "χ± = u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "χ± = u†χ u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "χ± = u†χ u†± uχ"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "u"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "u†(∂ρ −irρ)u+u(∂ρ −iℓρ)u"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "u ∼O(p"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "vµ ,aµ∼O(p"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "χ ,tµν∼O(p"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "four new terms [8] at O(p"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": " new terms [8] at O(p4) [tensor sources do not appear at O(p"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "=Λ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "f+µν ⟩−iΛ"
+  },
+  {
+   "page": 4,
+   "mark": "u",
+   "context": "+uµ"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "+uµuν ⟩+ Λ"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "+t+µν ⟩+ Λ"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "where ⟨···⟩stands for the trace in n"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "µνand"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "AtO(p"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "V"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "ρ"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "T"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "ρ"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "µ"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "ν"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "2"
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+The right derived functor RF from Deﬁnition 8.3.1 is a left Kan extension of F along Q. Likewise, the left derived functor LF from Deﬁnition 8.3.28 is a right Kan extension of F along Q. See [102, Chapter X].

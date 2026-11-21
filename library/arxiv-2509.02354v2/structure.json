@@ -6,10 +6,12 @@
   "sha256": "14680221e597fe617f4a06b79d8305ba3833dcfc54fb27a0419e629fbee2a4be",
   "bytes": 889074,
   "pages": 41,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +23,29 @@
   "doi": null,
   "title": "The holonomy braiding for U_xi(sl2) in terms of geometric quantum dilogarithms",
   "authors_raw": "CALVIN MCPHAIL-SNYDER AND NICOLAI RESHETIKHIN",
-  "abstract": "We derive an explicit formula for the holonomyR-matrix of quantumsl2 at a root of unity. We show it factorizes into a product of four quantum dilogarithms and satisfies a holonomy Yang-Baxter equation. This factorization extends previously known results and we collect many existing results needed for our computation.",
-  "docinfo": {
-   "Author": "Calvin McPhail-Snyder; Nicolai Reshetikhin",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
-   "Producer": "pikepdf 8.15.1",
-   "Title": "The holonomy braiding for $\\mathcal{U}_\\xi(\\mathfrak{sl}_2)$ in terms of geometric quantum dilogarithms"
-  },
   "title_lines": [
-   "THE HOLONOMY BRAIDING FORU\u03be(sl2) IN TERMS OF GEOMETRIC",
+   "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC",
    "QUANTUM DILOGARITHMS"
   ],
-  "title_prev": "THE HOLONOMY BRAIDING FORU\u03be(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS"
+  "abstract": "We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity. We show it factorizes into a product of four quantum dilogarithms and satisfies a holonomy Yang-Baxter equation. This factorization extends previously known results and we collect many existing results needed for our computation.",
+  "docinfo": {
+   "Title": "The holonomy braiding for $\\mathcal{U}_\\xi(\\mathfrak{sl}_2)$ in terms of geometric quantum dilogarithms",
+   "Author": "Calvin McPhail-Snyder; Nicolai Reshetikhin",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "The holonomy braiding for $\\mathcal{U}_\\xi(\\mathfrak{sl}_2)$ in terms of geometric quantum dilogarithms",
+   "heading": "THE HOLONOMY BRAIDING FOR U ξ ( sl 2 ) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS Contents Introduction Quantum sl 2 and Weyl algebras The braiding for quantum sl 2 The braiding for U q ( sl 2 ) Representation into the Weyl algebra Specialization to a root of unity Central subalgebras at roots of un",
+   "outline": "1. Introduction",
+   "text": "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS"
  },
  "toc": [
   {
@@ -40,202 +53,793 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Quantum sl2 and Weyl algebras",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "The braiding for quantum sl2",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "The braiding for Uq(sl2)",
    "page": 3,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Representation into the Weyl algebra",
    "page": 4,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Specialization to a root of unity",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Central subalgebras at roots of unity",
    "page": 5,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
-   "title": "U\u03be-modules.",
+   "title": "Uξ-modules.",
    "page": 6,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The braiding on characters",
    "page": 6,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The homomorphism from Uq to the Weyl algebra at root of unity",
    "page": 7,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
-   "title": "Braiding of U\u03be-modules.",
+   "title": "Braiding of Uξ-modules.",
    "page": 9,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
-   "title": "W\u03be-modules",
+   "title": "Wξ-modules",
    "page": 11,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "The R-matrix in the Fourier dual basis",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Recursions for the R-matrix coefficients",
    "page": 12,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "The normalized R-matrix",
    "page": 14,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Factorization of the R-matrix",
    "page": 15,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "The holonomy Yang-Baxter equation",
    "page": 17,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "R-matrix computations",
    "page": 23,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Log-parameter dependence",
    "page": 23,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "The pinched limit of the R-matrix",
    "page": 25,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "The determinant of the R-matrix",
    "page": 28,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "The Fourier transform of the R-matrix",
    "page": 29,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "Appendix A. Quantum dilogarithms",
    "page": 33,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "A.1. Basic definitions",
    "page": 33,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "A.2. Fusion identities",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "A.3. Fourier transform identities",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 1,
    "title": "References",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Labels for the segments and the regions near a crossing. 4. The R-matrix in the Fourier dual basis 4.1. Recursions for the R-matrix coefficients. We can now explicitly compute the matrix coefficients of R as a function of the geometric parameters ˆχi. We begin by fixing some terminology and conventi",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Building an ideal octahedron",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "A side view of the ideal octahedron in Figure 2d. The grey dashed edges indicate the identification of the ideal vertices P+, P ′",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "χ-colorings of the braid diagrams occurring in an R3 move. β",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A log-colored R3 move is allowed when the log-parameters of the boundary regions and segments are the same on both sides and additionally",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Invariance under R3 moves follows from showing that Jξ is the identity map on this diagram for every choice of coloring and any log-coloring with trivial log-decoration and matching values on the boundary. A coloring of the whole diagram is determined by the choice of colors χ1, χ2, χ3 on the top",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "We require the log-parameters of the boundary regions and segments to be compatible as shown. We allow any choice of internal log-parameters as long as β2 −β2′ + β2′′ −β2′′′ = 0",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Signs for the dependence of the R-matrix on the segment logparameters βi",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1662,
+   "n_words": 259,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 4762,
-   "n_words": 732
+   "n_chars": 3583,
+   "n_words": 562,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-quantum-sl2-and-weyl-algebras",
@@ -243,162 +847,348 @@
    "title": "Quantum sl2 and Weyl algebras",
    "level": 1,
    "page_start": 3,
-   "page_end": 4,
-   "n_chars": 2165,
-   "n_words": 349
+   "page_end": 3,
+   "n_chars": 140,
+   "n_words": 25,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-23-representation-into-the-weyl-algebra",
+   "id": "sec-002-21-the-braiding-for-quantum-sl2",
+   "number": "2.1",
+   "title": "The braiding for quantum sl2",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 324,
+   "n_words": 74,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-22-the-braiding-for-uqsl2",
+   "number": "2.2",
+   "title": "The braiding for Uq(sl2)",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1637,
+   "n_words": 312,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-23-representation-into-the-weyl-algebra",
    "number": "2.3",
    "title": "Representation into the Weyl algebra",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1562,
-   "n_words": 303
+   "n_chars": 1617,
+   "n_words": 358,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-003-3-specialization-to-a-root-of-unity",
+   "id": "sec-005-3-specialization-to-a-root-of-unity",
    "number": "3",
    "title": "Specialization to a root of unity",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-31-central-subalgebras-at-roots-of-unity",
+   "id": "sec-006-31-central-subalgebras-at-roots-of-unity",
    "number": "3.1",
    "title": "Central subalgebras at roots of unity",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1086,
-   "n_words": 188
+   "n_chars": 1117,
+   "n_words": 218,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-005-32-u\u03be-modules",
+   "id": "sec-007-32-uξ-modules",
    "number": "3.2",
-   "title": "U\u03be-modules.",
+   "title": "Uξ-modules.",
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1242,
-   "n_words": 209
+   "n_chars": 1282,
+   "n_words": 249,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-006-33-the-braiding-on-characters",
+   "id": "sec-008-33-the-braiding-on-characters",
    "number": "3.3",
    "title": "The braiding on characters",
    "level": 2,
    "page_start": 6,
-   "page_end": 11,
-   "n_chars": 7797,
-   "n_words": 1415
+   "page_end": 7,
+   "n_chars": 1409,
+   "n_words": 259,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-007-36-w\u03be-modules",
+   "id": "sec-009-34-the-homomorphism-from-uq-to-the-weyl-algebra",
+   "number": "3.4",
+   "title": "The homomorphism from Uq to the Weyl algebra at root of unity",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3647,
+   "n_words": 828,
+   "label_start": "7",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-010-35-braiding-of-uξ-modules",
+   "number": "3.5",
+   "title": "Braiding of Uξ-modules.",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2800,
+   "n_words": 519,
+   "label_start": "9",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-011-36-wξ-modules",
    "number": "3.6",
-   "title": "W\u03be-modules",
+   "title": "Wξ-modules",
    "level": 2,
    "page_start": 11,
-   "page_end": 17,
-   "n_chars": 10803,
-   "n_words": 1885
+   "page_end": 12,
+   "n_chars": 1391,
+   "n_words": 268,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-008-44-the-holonomy-yang-baxter-equation",
+   "id": "sec-012-4-the-r-matrix-in-the-fourier-dual-basis",
+   "number": "4",
+   "title": "The R-matrix in the Fourier dual basis",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-013-41-recursions-for-the-r-matrix-coefficients",
+   "number": "4.1",
+   "title": "Recursions for the R-matrix coefficients",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4042,
+   "n_words": 796,
+   "label_start": "12",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-014-42-the-normalized-r-matrix",
+   "number": "4.2",
+   "title": "The normalized R-matrix",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2125,
+   "n_words": 461,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-015-43-factorization-of-the-r-matrix",
+   "number": "4.3",
+   "title": "Factorization of the R-matrix",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 3229,
+   "n_words": 593,
+   "label_start": "15",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-016-44-the-holonomy-yang-baxter-equation",
    "number": "4.4",
    "title": "The holonomy Yang-Baxter equation",
    "level": 2,
    "page_start": 17,
    "page_end": 23,
-   "n_chars": 11487,
-   "n_words": 1907
+   "n_chars": 11696,
+   "n_words": 2116,
+   "label_start": "17",
+   "label_end": "23"
   },
   {
-   "id": "sec-009-5-r-matrix-computations",
+   "id": "sec-017-5-r-matrix-computations",
    "number": "5",
    "title": "R-matrix computations",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 1157,
-   "n_words": 201
+   "n_chars": 1196,
+   "n_words": 240,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-010-51-log-parameter-dependence",
+   "id": "sec-018-51-log-parameter-dependence",
    "number": "5.1",
    "title": "Log-parameter dependence",
    "level": 2,
    "page_start": 23,
-   "page_end": 33,
-   "n_chars": 17663,
-   "n_words": 3277
+   "page_end": 25,
+   "n_chars": 2733,
+   "n_words": 577,
+   "label_start": "23",
+   "label_end": "25"
   },
   {
-   "id": "sec-011-appendix-a-quantum-dilogarithms",
+   "id": "sec-019-52-the-pinched-limit-of-the-r-matrix",
+   "number": "5.2",
+   "title": "The pinched limit of the R-matrix",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 6245,
+   "n_words": 1279,
+   "label_start": "25",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-020-53-the-determinant-of-the-r-matrix",
+   "number": "5.3",
+   "title": "The determinant of the R-matrix",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 1290,
+   "n_words": 323,
+   "label_start": "28",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-021-54-the-fourier-transform-of-the-r-matrix",
+   "number": "5.4",
+   "title": "The Fourier transform of the R-matrix",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 33,
+   "n_chars": 7847,
+   "n_words": 1764,
+   "label_start": "29",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-022-appendix-a-quantum-dilogarithms",
    "number": null,
    "title": "Appendix A. Quantum dilogarithms",
    "level": 1,
    "page_start": 33,
    "page_end": 33,
-   "n_chars": 461,
-   "n_words": 80
+   "n_chars": 463,
+   "n_words": 82,
+   "label_start": "33",
+   "label_end": "33"
   },
   {
-   "id": "sec-012-a1-basic-definitions",
+   "id": "sec-023-a1-basic-definitions",
    "number": null,
    "title": "A.1. Basic definitions",
    "level": 2,
    "page_start": 33,
    "page_end": 36,
-   "n_chars": 3878,
-   "n_words": 729
+   "n_chars": 3965,
+   "n_words": 816,
+   "label_start": "33",
+   "label_end": "36"
   },
   {
-   "id": "sec-013-a2-fusion-identities",
+   "id": "sec-024-a2-fusion-identities",
    "number": null,
    "title": "A.2. Fusion identities",
    "level": 2,
    "page_start": 36,
    "page_end": 37,
-   "n_chars": 840,
-   "n_words": 160
+   "n_chars": 879,
+   "n_words": 199,
+   "label_start": "36",
+   "label_end": "37"
   },
   {
-   "id": "sec-014-a3-fourier-transform-identities",
+   "id": "sec-025-a3-fourier-transform-identities",
    "number": null,
    "title": "A.3. Fourier transform identities",
    "level": 2,
    "page_start": 37,
    "page_end": 39,
-   "n_chars": 2382,
-   "n_words": 450
+   "n_chars": 2412,
+   "n_words": 480,
+   "label_start": "37",
+   "label_end": "39"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-026-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 39,
    "page_end": 41,
-   "n_chars": 7632,
-   "n_words": 938
+   "n_chars": 7684,
+   "n_words": 988,
+   "label_start": "39",
+   "label_end": "41"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 27,
-  "sections": 16,
-  "chars_total": 74917,
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Wξ-modules"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 28,
+  "chars_total": 76415,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "new-paper.tex",
    "tex_sections": 23,
-   "overlaid": 10,
+   "overlaid": 19,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -406,113 +1196,202 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-quantum-sl2-and-weyl-algebras",
      "title": "Quantum sl2 and Weyl algebras",
-     "prose_ratio": 0.763,
-     "coverage_ratio": 0.643,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.846,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-23-representation-into-the-weyl-algebra",
+     "id": "sec-002-21-the-braiding-for-quantum-sl2",
+     "title": "The braiding for quantum sl2",
+     "prose_ratio": 0.3,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-22-the-braiding-for-uqsl2",
+     "title": "The braiding for Uq(sl2)",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.731,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-representation-into-the-weyl-algebra",
      "title": "Representation into the Weyl algebra",
      "prose_ratio": 0.941,
-     "coverage_ratio": 0.724,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-3-specialization-to-a-root-of-unity",
+     "id": "sec-005-3-specialization-to-a-root-of-unity",
      "title": "Specialization to a root of unity",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-004-31-central-subalgebras-at-roots-of-unity",
+     "id": "sec-006-31-central-subalgebras-at-roots-of-unity",
      "title": "Central subalgebras at roots of unity",
      "prose_ratio": 0.941,
-     "coverage_ratio": 0.738,
+     "coverage_ratio": 0.891,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-32-u\u03be-modules",
-     "title": "U\u03be-modules.",
+     "id": "sec-007-32-uξ-modules",
+     "title": "Uξ-modules.",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.833,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-33-the-braiding-on-characters",
+     "id": "sec-008-33-the-braiding-on-characters",
      "title": "The braiding on characters",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.812,
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-36-w\u03be-modules",
-     "title": "W\u03be-modules",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.889,
+     "id": "sec-009-34-the-homomorphism-from-uq-to-the-weyl-algebra",
+     "title": "The homomorphism from Uq to the Weyl algebra at root of unity",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-44-the-holonomy-yang-baxter-equation",
-     "title": "The holonomy Yang-Baxter equation",
-     "prose_ratio": 0.949,
+     "id": "sec-010-35-braiding-of-uξ-modules",
+     "title": "Braiding of Uξ-modules.",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-36-wξ-modules",
+     "title": "Wξ-modules",
+     "prose_ratio": 0.873,
+     "coverage_ratio": 0.844,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-4-the-r-matrix-in-the-fourier-dual-basis",
+     "title": "The R-matrix in the Fourier dual basis",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-41-recursions-for-the-r-matrix-coefficients",
+     "title": "Recursions for the R-matrix coefficients",
+     "prose_ratio": 0.921,
      "coverage_ratio": 0.897,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-5-r-matrix-computations",
+     "id": "sec-014-42-the-normalized-r-matrix",
+     "title": "The normalized R-matrix",
+     "prose_ratio": 0.873,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-43-factorization-of-the-r-matrix",
+     "title": "Factorization of the R-matrix",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-44-the-holonomy-yang-baxter-equation",
+     "title": "The holonomy Yang-Baxter equation",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-5-r-matrix-computations",
      "title": "R-matrix computations",
      "prose_ratio": 0.978,
-     "coverage_ratio": 0.957,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-51-log-parameter-dependence",
+     "id": "sec-018-51-log-parameter-dependence",
      "title": "Log-parameter dependence",
-     "prose_ratio": 0.937,
-     "coverage_ratio": 0.89,
+     "prose_ratio": 0.839,
+     "coverage_ratio": 0.841,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-appendix-a-quantum-dilogarithms",
+     "id": "sec-019-52-the-pinched-limit-of-the-r-matrix",
+     "title": "The pinched limit of the R-matrix",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-53-the-determinant-of-the-r-matrix",
+     "title": "The determinant of the R-matrix",
+     "prose_ratio": 0.879,
+     "coverage_ratio": 0.933,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-54-the-fourier-transform-of-the-r-matrix",
+     "title": "The Fourier transform of the R-matrix",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-appendix-a-quantum-dilogarithms",
      "title": "Appendix A. Quantum dilogarithms",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-012-a1-basic-definitions",
+     "id": "sec-023-a1-basic-definitions",
      "title": "A.1. Basic definitions",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-013-a2-fusion-identities",
+     "id": "sec-024-a2-fusion-identities",
      "title": "A.2. Fusion identities",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-014-a3-fourier-transform-identities",
+     "id": "sec-025-a3-fourier-transform-identities",
      "title": "A.3. Fourier transform identities",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-015-references",
+     "id": "sec-026-references",
      "title": "References",
      "result": "no matching \\section"
     }

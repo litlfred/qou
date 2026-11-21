@@ -65,7 +65,7 @@ an equivalence relation.  The `FSType` half is inherited from the companion.
 
 -- Ref: [thurston1978] (holonomy of a hyperbolic structure; conjugate holonomy
 -- is the mirror's holonomy — carried as the `MirrorConjugate` hypothesis).
--- Ref: [manuscript] `docs/audits/2026-08-04-pgl3-higher-teichmuller-assessment.md`;
+-- Ref: [leitner2026] `docs/audits/2026-08-04-pgl3-higher-teichmuller-assessment.md`;
 -- `observations/time-reversal-energy-barrier.md` §1.
 -/
 

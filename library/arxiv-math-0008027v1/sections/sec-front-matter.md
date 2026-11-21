@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0008027v1.pdf
 source_sha256: 8bce0b8a1bca372e
 toc_source: inferred
+doc_brief: "arXiv:math/0008027v1 [math.GT] 3 Aug 2000 — I follow Y."
 ---
 arXiv:math/0008027v1  [math.GT]  3 Aug 2000
 KASHAEV’S INVARIANT AND THE VOLUME OF A

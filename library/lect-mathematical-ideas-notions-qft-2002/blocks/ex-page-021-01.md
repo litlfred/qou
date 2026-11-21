@@ -1,0 +1,1 @@
+Let f(z) = az?/2. Then px — f = pa — 27/2 has a critical point at p = 2/a, and the critical value is p?/2a. L(ax?/2) = p?/2a. Similarly, if f(z) = B(a,x)/2 where B is a nondegenerate symmetric form, then L(f)(p) = B-!(p, p)/2.

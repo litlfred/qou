@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/5s032x",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/5s032x/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "5s032x",
+  "title": "The Standard Model Symmetry and Qubit Entanglement",
   "contains": [
     "library/5s032x/sections/sec-000",
     "library/5s032x/sections/sec-001",
@@ -19,13 +19,23 @@
     "library/5s032x/sections/sec-005",
     "library/5s032x/sections/sec-006",
     "library/5s032x/sections/sec-007",
-    "library/5s032x/sections/sec-008"
+    "library/5s032x/sections/sec-008",
+    "library/5s032x/sections/sec-009",
+    "library/5s032x/sections/sec-010",
+    "library/5s032x/sections/sec-011",
+    "library/5s032x/sections/sec-012",
+    "library/5s032x/sections/sec-013",
+    "library/5s032x/sections/sec-014",
+    "library/5s032x/sections/sec-015",
+    "library/5s032x/sections/sec-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "5s032x",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "5S032X.pdf",
     "source_sha256": "17761383781f7bdc4da9f3aba337cc913bb4b438134d413ae1d8f6b22cbf75dd",
     "pages": 20,

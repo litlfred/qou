@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1009.4034v1/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Moments of the deviations and Chebyshev polynomials of the second kind",
+  "pageStart": 13,
+  "pageEnd": 21,
+  "contains": [
+    "library/arxiv-1009.4034v1/blocks/prose-sec-004"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1009.4034v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1009.4034v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,1 +1,0 @@
-For cluster expansion bounds:

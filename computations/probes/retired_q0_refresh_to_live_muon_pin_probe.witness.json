@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T19:34:56.491759+00:00",
-  "commitSha": "2508fb55d0ffe1267c7dc66fd4132fa6f6b41458",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:21:07.778231+00:00",
+  "commitSha": "f1be230920b1bdc1f6a9070fd8fc7d187c5c2345",
   "assertions": [
     {
       "name": "all seven rows of hecke-log-decomposition move, so a figure-by-figure refresh would have broken the table's internal recomputability",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 2,
   "computation": "retired_q0_refresh_to_live_muon_pin_probe",
   "scriptFile": "retired_q0_refresh_to_live_muon_pin_probe.py",
-  "scriptHash": "9a0fd2655d34",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a7b53d064862",
+  "scriptCommitSha": "660d4c3c55f096e925c57ca18d1fd68545d820d5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,14 +48,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -63,7 +64,7 @@
     ],
     "reproduce": "python3 -u computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py"
   },
-  "description": "THE REFRESH. Recomputes every closed-form published figure that carried the retired q0 = 1.1099785955541805752... at the live muon pin 1.109978595642739046681795129380001752700065561029011556974045769999095 from the canonical q-pinning-50-digit witness. The retired value is the CODATA-2018 vintage of the muon anchor and survives only in computations/_deprecated/; the 2026-08-15 substrate fix reached computations/ and tools/ but not content/. Refreshes per BLOCK, not per figure: an earlier pass substituted only the six sweep-flagged figures and was reverted because each table's other q0-derived rows were never flagged (the sweep looks for figures with NO provenance), leaving a table the reader could not recompute from itself. All seven rows of hecke-log-decomposition move, not the three flagged. Constants (2/(3pi)) and experimental inputs (CODATA 1/alpha, Q_beta^CODATA) are fixed and untouched. Two pre-existing transcription slips surfaced: 1+q0 published 2.10997859556 where the retired pin gives ...555, and log(1/hbar_q) published 2.31181024982 where it gives ...985 -- 1e-11 and 3e-11, wrong at their own anchor and independent of the pin, corrected by construction. Nothing physical moves: q0 shifts 8e-11 relative and the alpha^-1 residual stays at -4.2e-6. E_0, Q_beta and the spectral-bridge quantities are OUT OF SCOPE -- producer outputs whose values also depend on the trace convention, and the qbeta C->D migration is qou-cds1's. qou-i229.",
+  "description": "THE REFRESH. Recomputes every closed-form published figure that carried the retired q0 = 1.1099785955541805752... at the live muon pin 1.109978595642739046681795129380001752700065561029011556974045769999095 from the canonical q-pinning-50-digit witness. The retired value is the CODATA-2018 vintage of the muon anchor and survives only in fsh-guts/deprecated/computations/; the 2026-08-15 substrate fix reached computations/ and tools/ but not content/. Refreshes per BLOCK, not per figure: an earlier pass substituted only the six sweep-flagged figures and was reverted because each table's other q0-derived rows were never flagged (the sweep looks for figures with NO provenance), leaving a table the reader could not recompute from itself. All seven rows of hecke-log-decomposition move, not the three flagged. Constants (2/(3pi)) and experimental inputs (CODATA 1/alpha, Q_beta^CODATA) are fixed and untouched. Two pre-existing transcription slips surfaced: 1+q0 published 2.10997859556 where the retired pin gives ...555, and log(1/hbar_q) published 2.31181024982 where it gives ...985 -- 1e-11 and 3e-11, wrong at their own anchor and independent of the pin, corrected by construction. Nothing physical moves: q0 shifts 8e-11 relative and the alpha^-1 residual stays at -4.2e-6. E_0, Q_beta and the spectral-bridge quantities are OUT OF SCOPE -- producer outputs whose values also depend on the trace convention, and the qbeta C->D migration is qou-cds1's. qou-i229.",
   "contentBlock": "tbl:hecke-log-decomposition-table-data",
   "data": {
     "pins": {
@@ -206,5 +207,7 @@
   "caveats": [
     "Closed-form figures ONLY. E_0, Q_beta and the spectral-bridge quantities are producer outputs and convention-dependent; refreshing a pin under a convention that is itself about to change would produce numbers nobody has checked. Those come from their producers.",
     "Constants and experimental inputs are deliberately NOT refreshed: 2/(3pi), CODATA 1/alpha = 137.035999177(21), Q_beta^CODATA. A refresh that moved them would be a different and wrong change."
-  ]
+  ],
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "compares two pins on purpose: the retired CODATA-2018 muon pin 1.10997859555418... and the live muon pin 1.10997859564273...; it recomputes each published figure at both, so no single pin applies"
 }

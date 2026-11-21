@@ -1,0 +1,1 @@
+Let 1 ≤i ≤n, b ∈N, λ ∈Λ(n, d), and B ∈Nn. We have the following identities in the algebra T 0: Hi1λ = λi1λ, Hi b  1λ = λi b  1λ (a) HB 1λ = λB 1λ, where λB = Y i λi Bi  (b) HB = X λ λB 1λ (c) where the sum in part (c) is carried out over all λ ∈Λ(n, d).

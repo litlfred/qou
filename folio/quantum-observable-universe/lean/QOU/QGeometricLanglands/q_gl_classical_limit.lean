@@ -58,6 +58,37 @@ class q_gl_classical_limit (R : Type*) [Ring R] where
       recovering $\mathbb{L}_{\mathrm{BD}}$. -/
   recovers_classical : differential_limit ∧ dual_group_limit
 
+namespace q_gl_classical_limit
+
+variable {R : Type*} [Ring R] [h : q_gl_classical_limit R]
+
+/-- **Involution identity at the classical point $q = 1$.**
+    Every limiting eigenvalue $T \in \{1, -1\}$ satisfies $T \cdot T = 1$
+    over any base ring $R$. -/
+theorem limiting_eigenvalue_sq_eq_one (T : R) (hT : h.heckeEigenvalue 1 T) :
+    T * T = 1 := by
+  rcases h.hecke_limit T hT with rfl | rfl
+  · exact mul_one 1
+  · rw [neg_mul_neg, mul_one]
+
+/-- **Quadratic polynomial annihilation at the classical point $q = 1$.**
+    Every limiting eigenvalue $T$ satisfies the symmetric-group quadratic
+    identity $(T - 1)(T + 1) = 0$. -/
+theorem limiting_eigenvalue_quad_eq_zero (T : R) (hT : h.heckeEigenvalue 1 T) :
+    (T - 1) * (T + 1) = 0 := by
+  rcases h.hecke_limit T hT with rfl | rfl
+  · rw [sub_self, zero_mul]
+  · rw [neg_add_cancel, mul_zero]
+
+/-- **Cubic fixed-point identity at $q = 1$.**
+    Since $T \cdot T = 1$, every limiting eigenvalue satisfies
+    $T \cdot (T \cdot T) = T$. -/
+theorem limiting_eigenvalue_mul_sq_eq_self (T : R) (hT : h.heckeEigenvalue 1 T) :
+    T * (T * T) = T := by
+  rw [limiting_eigenvalue_sq_eq_one (h := h) T hT, mul_one]
+
+end q_gl_classical_limit
+
 -- **No instance is provided — that is the honest open state** (AGENTS.md
 -- §3b-tax).  An instance would have to supply the field(s) below, which is
 -- exactly the open conjecture; supplying one asserts the conjecture.

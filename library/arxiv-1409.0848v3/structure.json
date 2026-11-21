@@ -8,7 +8,7 @@
   "pages": 52,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES"
   ],
-  "abstract": "This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of strati\ufb01ed spaces with tangential structures. Examples of such factorization homology theories include intersection homology, compactly supported strati\ufb01ed mapping spaces, and Hochschild homology with coe\ufb03cients. Our main theorem characterizes factorization homology theories by a generalization of the Eilenberg\u2013Steenrod axioms; it can also be viewed as an analogue of the Baez\u2013Dolan cobordism hypothesis formulated for the observables, rather than state spaces, of a topological quantum \ufb01eld theory. Using these axioms, we extend the nonabelian Poincar\u00b4e duality of Salvatore and Lurie to the setting of strati\ufb01ed spaces \u2013 this is a nonabelian version of the Poincar\u00b4e duality given by intersection homology. We pay special attention to the simple case of singular manifolds whose singularity datum is a properly embedded submanifold and give a further simpli\ufb01ed algebraic characterization of these homology theories. In the case of 3-manifolds with 1-dimensional submanifolds, these structure gives rise to knot and link homology theories.",
+  "abstract": "This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential structures. Examples of such factorization homology theories include intersection homology, compactly supported stratiﬁed mapping spaces, and Hochschild homology with coeﬃcients. Our main theorem characterizes factorization homology theories by a generalization of the Eilenberg–Steenrod axioms; it can also be viewed as an analogue of the Baez–Dolan cobordism hypothesis formulated for the observables, rather than state spaces, of a topological quantum ﬁeld theory. Using these axioms, we extend the nonabelian Poincar´e duality of Salvatore and Lurie to the setting of stratiﬁed spaces – this is a nonabelian version of the Poincar´e duality given by intersection homology. We pay special attention to the simple case of singular manifolds whose singularity datum is a properly embedded submanifold and give a further simpliﬁed algebraic characterization of these homology theories. In the case of 3-manifolds with 1-dimensional submanifolds, these structure gives rise to knot and link homology theories.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
    "Creator": "LaTeX with hyperref package",
@@ -36,7 +36,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES Contents Introduction Recollections Strati\ufb01ed spaces Symmetric monoidal \u221e -categories Factorization Disk algebras Factorization homology Disks and \ufb01nite subsets Localizing with respect to isotopy equivalences Pushforward Algebras over a closed interval Hom",
+   "heading": "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES Contents Introduction Recollections Stratiﬁed spaces Symmetric monoidal ∞ -categories Factorization Disk algebras Factorization homology Disks and ﬁnite subsets Localizing with respect to isotopy equivalences Pushforward Algebras over a closed interval Hom",
    "outline": "Introduction",
    "text": "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES",
    "corroborated_by": [],
@@ -206,7 +206,7 @@
   },
   {
    "level": 2,
-   "title": "Non-abelian Poincar\u00e9 duality",
+   "title": "Non-abelian Poincaré duality",
    "page": 40,
    "source": "outline",
    "number": "3.4",
@@ -762,45 +762,45 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1309,
-   "n_words": 183,
+   "page_end": 2,
+   "n_chars": 2756,
+   "n_words": 386,
    "label_start": "1",
-   "label_end": "1"
+   "label_end": "2"
   },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 5,
-   "n_chars": 16040,
-   "n_words": 2519,
-   "label_start": "1",
-   "label_end": "5"
-  },
-  {
-   "id": "sec-001-11-stratified-spaces",
-   "number": "1.1",
-   "title": "Stratified spaces",
-   "level": 2,
-   "page_start": 5,
+   "page_start": 2,
    "page_end": 6,
-   "n_chars": 1133,
-   "n_words": 173,
-   "label_start": "5",
+   "n_chars": 15835,
+   "n_words": 2505,
+   "label_start": "2",
    "label_end": "6"
   },
   {
-   "id": "sec-002-1-recollections",
+   "id": "sec-001-1-recollections",
    "number": "1",
    "title": "Recollections",
    "level": 1,
    "page_start": 6,
+   "page_end": 6,
+   "n_chars": 93,
+   "n_words": 15,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-002-11-stratified-spaces",
+   "number": "1.1",
+   "title": "Stratified spaces",
+   "level": 2,
+   "page_start": 6,
    "page_end": 14,
-   "n_chars": 26185,
-   "n_words": 4656,
+   "n_chars": 25989,
+   "n_words": 4626,
    "label_start": "6",
    "label_end": "14"
   },
@@ -949,9 +949,9 @@
    "label_end": "40"
   },
   {
-   "id": "sec-015-34-non-abelian-poincar\u00e9-duality",
+   "id": "sec-015-34-non-abelian-poincaré-duality",
    "number": "3.4",
-   "title": "Non-abelian Poincar\u00e9 duality",
+   "title": "Non-abelian Poincaré duality",
    "level": 2,
    "page_start": 40,
    "page_end": 42,
@@ -1035,12 +1035,13 @@
    }
   },
   "sections": 21,
-  "chars_total": 149379,
+  "chars_total": 149385,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 24,
-   "overlaid": 17,
+   "overlaid": 18,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1055,23 +1056,24 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.899,
-     "coverage_ratio": 0.933,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-11-stratified-spaces",
-     "title": "Stratified spaces",
-     "prose_ratio": 0.09,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-001-1-recollections",
+     "title": "Recollections",
+     "prose_ratio": 0.209,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-002-1-recollections",
-     "title": "Recollections",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.09,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "id": "sec-002-11-stratified-spaces",
+     "title": "Stratified spaces",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-2-factorization",
@@ -1170,8 +1172,8 @@
      "converter": "latex"
     },
     {
-     "id": "sec-015-34-non-abelian-poincar\u00e9-duality",
-     "title": "Non-abelian Poincar\u00e9 duality",
+     "id": "sec-015-34-non-abelian-poincaré-duality",
+     "title": "Non-abelian Poincaré duality",
      "prose_ratio": 0.962,
      "coverage_ratio": 0.977,
      "result": "overlaid",

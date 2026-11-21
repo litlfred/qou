@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1009.4034v1/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Moments of the deviations and Chebyshev polynomials of the second kind",
-  "pageStart": 13,
-  "pageEnd": 23,
-  "text": "../sections/sec-002-5-moments-of-the-deviations-and-chebyshev-polyno.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1009.4034v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1009.4034v1",
+  "title": "Some computations around the limit shapes c",
+  "pageStart": 8,
+  "pageEnd": 12,
+  "text": "../sections/sec-002-3-some-computations-around-the-limit-shapes-c.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1009.4034v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1009.4034v1/manifest.jsonld",
   "provenance": "ingested"
 }

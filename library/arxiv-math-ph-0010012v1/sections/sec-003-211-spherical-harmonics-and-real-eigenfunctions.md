@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 We denote by $\Delta$ the standard Laplacian on $S^m$ and by ${\mathcal H}_N (S^m)$ the space of spherical harmonics of degree $N$ on $S^m.$ They are the eigenfunctions of $\Delta$ of eigenvalue $\lambda_{m,N} = N ( N + m - 1)$ and form a real vector space of dimension $d_{m, N} = \frac{2N + m -1}{N + m -1}
 \left( \begin{array}{l} N + m -1 \\ \\ m -1 \end{array} \right)$.

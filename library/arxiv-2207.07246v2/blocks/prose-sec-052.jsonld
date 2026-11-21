@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2207.07246v2/blocks/prose-sec-052",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "C.2 Hubbard-Stratonovich Transformation",
-  "pageStart": 145,
-  "pageEnd": 147,
-  "text": "../sections/sec-052-c2-hubbard-stratonovich-transformation.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2207.07246v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2207.07246v2",
+  "title": "B.1 Time-Dependent Green's Function",
+  "pageStart": 133,
+  "pageEnd": 134,
+  "text": "../sections/sec-052-b1-time-dependent-greens-function.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2207.07246v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2207.07246v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,58 @@
+20 3. THE MODULAR REPRESENTATION THEORY OF #
+
+reflections t;,...,t, € T such that w = vt),...t, and ¢(vt, ...t;) = &(v) +7 for
+j =1,2,....k.) In particular, this shows that > is a partial order on Gy.
+
+The partial order & on G,, is the ubiquitous Bruhat—Chevalley order. Perhaps
+surprisingly, it agrees with the dominance ordering on row standard p-tableaux
+(when restricted to B,).
+
+3.7 Proposition (Dipper—James) Let js be a composition of n and suppose that s
+and t are row standard jt-tableaur. Then § & t if and only if d(s) & d(t).
+
+Proof. First suppose that s > ¢ and choose r minimal such that row r of s and
+row r of t are different. Let a be the smallest number which is in row r of s but
+not in row r of t; similarly, let 6 be the smallest number which is in row r of t but
+not in row r of s. Then a <b since s > t. Therefore, if v = t(a,6) then » D t and
+d(o) > d(t). Further, if a is in row ¢ of t and 5 is in row s of s then t > r and #> s;
+so, either » = s or s & 0. Therefore, by induction, d(s) & d(o); so d(s) p d(t) as
+required.
+
+To prove the converse it is sufficient to consider the case where d(t) = d(s)é for
+some ¢ € T such that &(d(t)) = (d(s)) + 1. However, in this case it is easy to see
+from the definitions that $ > t. Oo
+
+The Proposition has a technical Corollary which will be used many times below.
+
+3.8 Corollary Suppose that rT, g and t are row standard \-tableaur such that 7 > g
+and d(t) = d(g)w for some w € Gy with &(d(t)) = E(d(g)) + €(w). Then there exist
+rs € R such that my Ty7)Tw = do, 7sMpTas) and where rs #0 only ifs > t.
+
+Proof. It follows from Theorem 1.11 that there exist elements r, € R such that
+Tar\Twe = So reT, where the sum is over elements x € G, which have a reduced
+expression which is a subexpression of d(r)w; that is, re # 0 only if x & d(r)w.
+Consequently, by Corollary 3.4, m)Tyz)Tw = 205 7sMyTa(s) Where the sum is over
+row standard \-tableaux s such that r, # 0 only if d(s) & d(r)w. By assump-
+tion d(r) is a proper subexpression of d(g) and ¢(d(g)w) = ¢(d(g)) + £(w); so d(r)w
+is a proper subexpression of d(t) = d(g)w. Thus, ifr, #0 then sb d(r)w b> d(t),
+giving the result. Oo
+
+2. The Murphy basis
+
+In Corollary 3.4 we saw that the permutation modules M* have a basis indexed
+by row standard tableaux; in this section we show that # = M("”) has a cellular
+basis indexed by pairs of standard tableaux of the same shape.
+
+Let * be the R-linear antiautomorphism of .# determined by T = T;, for
+¢=1,2,...,n—1. Then Tz = T,,-1 for all w € Gy.
+
+Let yp be a composition of n and let s and t be row standard s-tableaux.
+Define mgi2 = TiysyT ae (cf. Example 2.2(ii)). In particular, m%, = ms for all
+row standard tableaux § and t of the same shape.
+
+Tf wp = (1") then, as R-modules, M" = 3% so the elements {m,,} certainly
+span # by Corollary 3.4. First we show that we need only those elements mg,
+where the shape of 5 and t is a partition (not just a composition).
+
+3.9 Lemma Let ps be a composition of n and let X be the partition obtained from
+yt by reordering its parts. Suppose that s and t are row standard jt-tableaux. Then

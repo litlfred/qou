@@ -2,35 +2,65 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1304.3481v1",
  "source_sha256": "d0840f2775c0f761",
- "brief": "Quadruply-graded colored homology of knots — W e conjecture the existence of four independent gradings in the colored HOMFLY homology.",
- "extended": "**Quadruply-graded colored homology of knots**\n\n*Eugene Gorsky, Sergei Gukov, and Marko Stoˇ sić*\n\n78 pp, 5 sections.\n\n**Abstract.** W e conjecture the existence of four independent gradings in the colored HOMFLY homology. W e describe these gradings explic itly for the rectangular colored homology of torus knots and make qualit ative predictions of various interesting structures and symmetries in the col ored homology of general knots. W e also give a simple representation-theore tic model for the HOMFLY homology of the unknot colored by any representation . While some of these structures have a natural interpretation in the phy sical realization of knot homologies based on counting supersymmetric conﬁgu rations (BPS states, instantons, and vortices), others are completely n ew. They suggest new geometric and physical realizations of colored HOMFLY h omology as the Hochschild homology of the category of branes in a Landau-Gi nzburg B-model or, equivalently, in the mirror A-model.\n\n**Outline.** 1 Introduction; 2 Bosonic and Fermionic generators; 4 Examples; Appendix A. Rectangle-colored invariants of (2; References\n\n**Extracted claims (proposals, not verified).**\n- Proposition 7.1: ([34]) The dimension of the “bottom row” of the reduced\n- Proposition 7.2: ([34]) The dimension of the “ k-th row” of the reduced un-\n- Proposition 7.3: The gradings of Dyck paths are given by the following equa-\n- Definition 5.2: The unreduced moduli space\n- Definition 5.4: The reduced moduli space Mp,q(r) is deﬁned in the aﬃne\n- Corollary 3.4: In ( a, Q, tr, tc) gradings one has",
+ "brief": "Quadruply-Graded Colored Homology of Knots — We conjecture the existence of four independent gradings in the colored HOMFLY homology.",
+ "extended": "**Quadruply-Graded Colored Homology of Knots**\n\n*Eugene Gorsky, Sergei Gukov, and Marko Stoˇsić*\n\n78 pp, 11 sections.\n\n**Abstract.** We conjecture the existence of four independent gradings in the colored HOMFLY homology. We describe these gradings explicitly for the rectangular colored homology of torus knots and make qualitative predictions of various interesting structures and symmetries in the colored homology of general knots. We also give a simple representation-theoretic model for the HOMFLY homology of the unknot colored by any representation. While some of these structures have a natural interpretation in the physical realization of knot homologies based on counting supersymmetric conﬁgurations (BPS states, instantons, and vortices), others are completely new. They suggest new geometric and physical realizations of colored HOMFLY homology as the Hochschild homology of the category of branes in a Landau-Ginzburg B-model or, equivalently, in the mirror A-model.\n\n**Outline.** Front matter; 1 Introduction; 2 Bosonic and Fermionic generators; 3 Gradings, Differentials, Mirror Symmetry; 4 Examples; 5 Colored HOMFLY homology for torus knots; 6 HOMFLY homology from A-model and B-model; 7 ``Bottom row'' of the colored HOMFLY homolog; Appendix A. Rectangle-colored invariants of (2; Appendix B. Unreduced colored HOMFLY homology; References",
  "tokens": {
   "brief": 33,
-  "extended": 396
+  "extended": 339
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-8"
+   "pages": "1-7"
   },
   {
    "id": "sec-001-2-bosonic-and-fermionic-generators",
    "title": "Bosonic and Fermionic generators",
-   "pages": "8-35"
+   "pages": "7-19"
   },
   {
-   "id": "sec-002-4-examples",
+   "id": "sec-002-3-gradings-differentials-mirror-symmetry",
+   "title": "Gradings, Differentials, Mirror Symmetry",
+   "pages": "19-35"
+  },
+  {
+   "id": "sec-003-4-examples",
    "title": "Examples",
-   "pages": "35-68"
+   "pages": "35-47"
   },
   {
-   "id": "sec-003-appendix-a-rectangle-colored-invariants-of-2m-to",
+   "id": "sec-004-5-colored-homfly-homology-for-torus-knots",
+   "title": "Colored HOMFLY homology for torus knots",
+   "pages": "47-55"
+  },
+  {
+   "id": "sec-005-6-homfly-homology-from-a-model-and-b-model",
+   "title": "HOMFLY homology from A-model and B-model",
+   "pages": "55-61"
+  },
+  {
+   "id": "sec-006-7-bottom-row-of-the-colored-homfly-homology",
+   "title": "``Bottom row'' of the colored HOMFLY homology",
+   "pages": "61-68"
+  },
+  {
+   "id": "sec-007-appendix-a-rectangle-colored-invariants-of-2m-to",
    "title": "Appendix A. Rectangle-colored invariants of (2,m) torus knots",
-   "pages": "68-75"
+   "pages": "68-69"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-008-appendix-b-unreduced-colored-homfly-homology",
+   "title": "Appendix B. Unreduced colored HOMFLY homology",
+   "pages": "69-75"
+  },
+  {
+   "id": "sec-009-references",
    "title": "References",
    "pages": "75-78"
   }
@@ -39,8 +69,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

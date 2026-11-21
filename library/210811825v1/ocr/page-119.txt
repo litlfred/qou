@@ -1,0 +1,65 @@
+varf b({ul] ,[u2]) = int2d (Th) ((4*ul*u2)/(1—x*2-y*2)*2);
+
+matrix OP= op(Vh,Vh, solver=Crout , factorize=1);
+matrix B=b(Vh,Vh, solver=CG, eps=le —20);
+
+real[int] ev(nev);
+Vh[int] eV(nev);
+
+int k-EigenValue(OP,B,sym-true , sigma=sigma , value=ev , vector=eV, tol=le—10,maxit=0,ncv=0);
+for (int i=0;i<k;i++) {
+
+ul=eV [i];
+
+real gg = int2d(Th)(dx(ul)*dx(ul) + dy(ul)*dy(ul)); real mm int2d(Th)(ulxul) ;
+
+ofstream Eva(fnm, append);
+
+Eva << ev[i] << "\n";
+
+[/ cout <K<M——Nc< ccceufif<<"erra="
+
+//<<de (ul )* dx (ul) + dy(ul)*dy(ul) — (ev[i])*uleul << "—— "<<endl; plot(eV/i],
+cmm="Eigen_ Vector "+i+" valeur=" + ev[i] ,wait=1,value=1);
+
+(/uapconamer tHe above two lines to display level sets for each eigenfunction
+}
+
+Table C.1 shows the positive eigenvalues of the veclel wae up to approximately
+
+y eigenvalues calculated by.
+
+—
+
+//wiw1.maths.leeds.ac.uk/~pmtast/publications/eigdata/datafile.html. Here
+
+100. They can be compared with the much higher accu:
+
+trohmaier and Uski using the algorithm described in _ The data files associated wit
+
+can be found the first 1000 eigenvalues of the Bolza surface, and other genus 2 surfaces,
+including the other two in this appendix.
+
+Related to the Bolza surface is the (2, 3, 8) triangle that tessellates it. We have
+produced a program to calculate that eigenvalues of this - please see the Bolza surface
+code for comments. The one comment included in this code relates to boundary conditions
+- it is straightforward to change between Dirichlet and Neumann boundary conditions.
+int n = 50;
+int nev = 100;
+
+string fmm = "238tri_50n_100nev_nnn. txt";
+
+border Gl (t=0,0.4056163087774724) { x=t; y=0;};
+
+border G2 (t=0.33681578765748216,0) { x=t; y=t*tan(pi/8);};
+
+border G3 (t=0.4056163087774724 ,0.33681578765748216) { x=t;
+y=0.5946036542842016— sqrt ((1.189207445439991~2) —(t —1.435500206409523) ~2);};
+
+plot (G1(n)+G2(n)+G3(n));
+mesh Th=buildmesh (G1(n)+G2(n)+G3(n));
+plot (Th);
+
+fespace Vh(Th,P2);
+
+109

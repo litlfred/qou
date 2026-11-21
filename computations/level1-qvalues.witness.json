@@ -1,13 +1,13 @@
 {
-  "computedAt": "2026-03-27T21:32:34.201472+00:00",
   "computation": "level1-qvalues",
-  "description": "Level 1 (quark-level) Q-value computation. Each nucleon expanded to 3 quark strands (u,u,d or u,d,d). Uses block ordering — ground-state search not performed.",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-  "q": 1.1099786,
-  "hbar_q_sq": 0.00981718851347867,
+  "timestamp": "2026-11-20T17:58:10.397421+00:00",
+  "description": "Level 1 (quark-level) Q-value computation. Each nucleon expanded to 3 quark strands (u,u,d or u,d,d). All n neutron positions tested as conversion sites; the site giving negative Q_q with smallest magnitude is selected.",
+  "q": "554989291375690403795834547805384439937/500000000000000000000000000000000000000",
+  "q_digits": 40,
+  "hbar_q_sq": "0.00981718645427507381056905717956425288904928457539794617042750",
   "nuclei": [
     {
-      "name": "³H",
+      "name": "\u00b3H",
       "A": 3,
       "p": 1,
       "n": 2,
@@ -18,14 +18,16 @@
         4
       ],
       "affected_generators": 5,
-      "log_ratio_sum": -0.577312910837804,
-      "Q_q_skein_units": -58.80633849957885,
+      "log_ratio_sum": "-0.595905273344219812360493308534992920418271154137867192455631",
+      "Q_q_skein_units": "-60.7002093848102413215787445994623165826078771048415057864636",
       "Q_exp_MeV": 0.0186,
-      "elapsed_s": 0.0006508827209472656,
-      "status": "computed"
+      "elapsed_s": 0.07679986953735352,
+      "status": "computed",
+      "conversion_site": 1,
+      "n_sites_tested": 2
     },
     {
-      "name": "¹⁴C",
+      "name": "\u00b9\u2074C",
       "A": 14,
       "p": 6,
       "n": 8,
@@ -33,17 +35,19 @@
       "crossings_L1": 861,
       "ordering_method": "block",
       "converting_positions": [
-        19
+        31
       ],
-      "affected_generators": 20,
-      "log_ratio_sum": -0.7607026345202486,
-      "Q_q_skein_units": -77.48681136924583,
+      "affected_generators": 32,
+      "log_ratio_sum": "-0.407597635058047759199171192511335984293861528107600127838080",
+      "Q_q_skein_units": "-41.5187831010942953942762110136365440852728025156020765544402",
       "Q_exp_MeV": 0.156,
-      "elapsed_s": 0.0251312255859375,
-      "status": "computed"
+      "elapsed_s": 0.685929536819458,
+      "status": "computed",
+      "conversion_site": 10,
+      "n_sites_tested": 8
     },
     {
-      "name": "⁶⁰Co",
+      "name": "\u2076\u2070Co",
       "A": 60,
       "p": 27,
       "n": 33,
@@ -51,17 +55,19 @@
       "crossings_L1": 16110,
       "ordering_method": "alternating",
       "converting_positions": [
-        4
+        163
       ],
-      "affected_generators": 5,
-      "log_ratio_sum": -0.33527716074258507,
-      "Q_q_skein_units": -34.152054866040395,
+      "affected_generators": 164,
+      "log_ratio_sum": "-0.338877023613616472703775960603659111217968093402101635235631",
+      "Q_q_skein_units": "-34.5187519043245084200338769480429615772622995265047869198716",
       "Q_exp_MeV": 0.318,
-      "elapsed_s": 1.6899631023406982,
-      "status": "computed"
+      "elapsed_s": 46.941601276397705,
+      "status": "computed",
+      "conversion_site": 54,
+      "n_sites_tested": 33
     },
     {
-      "name": "⁹⁰Sr",
+      "name": "\u2079\u2070Sr",
       "A": 90,
       "p": 38,
       "n": 52,
@@ -69,17 +75,19 @@
       "crossings_L1": 36315,
       "ordering_method": "alternating",
       "converting_positions": [
-        4
+        256
       ],
-      "affected_generators": 5,
-      "log_ratio_sum": 0.4559795561207771,
-      "Q_q_skein_units": 46.44706124311787,
+      "affected_generators": 257,
+      "log_ratio_sum": "-0.146228248217200077815290716274161969977550263956974423171479",
+      "Q_q_skein_units": "-14.8951279369378083337728989322197474597831736110390943417991",
       "Q_exp_MeV": 0.546,
-      "elapsed_s": 6.179962873458862,
-      "status": "computed"
+      "elapsed_s": 225.06339144706726,
+      "status": "computed",
+      "conversion_site": 85,
+      "n_sites_tested": 52
     },
     {
-      "name": "¹³⁷Cs",
+      "name": "\u00b9\u00b3\u2077Cs",
       "A": 137,
       "p": 55,
       "n": 82,
@@ -87,17 +95,19 @@
       "crossings_L1": 84255,
       "ordering_method": "alternating",
       "converting_positions": [
-        4
+        403
       ],
-      "affected_generators": 5,
-      "log_ratio_sum": 1.7417717249399978,
-      "Q_q_skein_units": 177.42062531941846,
+      "affected_generators": 404,
+      "log_ratio_sum": "-0.147934876211965166766595309518724779659653268071802978606668",
+      "Q_q_skein_units": "-15.0689687825521754221163655844357011107470246642562089642906",
       "Q_exp_MeV": 0.514,
-      "elapsed_s": 24.734798669815063,
-      "status": "computed"
+      "elapsed_s": 1634.7393462657928,
+      "status": "computed",
+      "conversion_site": 134,
+      "n_sites_tested": 82
     },
     {
-      "name": "²¹⁰Bi",
+      "name": "\u00b2\u00b9\u2070Bi",
       "A": 210,
       "p": 83,
       "n": 127,
@@ -105,26 +115,59 @@
       "crossings_L1": 198135,
       "ordering_method": "alternating",
       "converting_positions": [
-        4
+        622
       ],
-      "affected_generators": 5,
-      "log_ratio_sum": 3.4231922533986605,
-      "Q_q_skein_units": 348.6937475733233,
+      "affected_generators": 623,
+      "log_ratio_sum": "1.53393357887233408514635491729160186251053207715751517236500",
+      "Q_q_skein_units": "156.249816178682700693194957457080903956641169699591762338658",
       "Q_exp_MeV": 1.163,
-      "elapsed_s": 107.39233183860779,
-      "status": "computed"
+      "elapsed_s": 1454.3021743297577,
+      "status": "computed",
+      "conversion_site": 207,
+      "n_sites_tested": 127,
+      "reused_from": "committed witness at dbbda13e9f (2026-11-18T21:28Z), produced by a byte-identical producer and hecke engine at the same q; not recomputed in this run (2026-11-20: CPU-contended 2-core container, load ~10, ~9 CPU-s/min per worker; est. >2.5 h)"
     }
   ],
+  "borromean_v3_two_term_diagnostics": {
+    "lean_ref": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm",
+    "tr_V3": "2.99418581297996408672819936801871670008913958251181483468283",
+    "tr_e3_V3": "1.00000000000000000000000000000000000000000000000000000000000",
+    "tr_e21_V3": "1.99418581297996408672819936801871670008913958251181483468283",
+    "Delta_tr_QCD_V3": "0.625965380711255510512825558499444368098764266149619567707062",
+    "Delta_tr_QCD_e21_V3": "0.416905081915616195081979345369769424239006770886595012325366",
+    "Delta_m_QCD_V3_alpha_bind_MeV": "2.34390211659328845177785827424678393929665159104448574670866",
+    "Delta_m_QCD_e21_E0_full_MeV": "1.76245929467542501236442957150813718255953866059882645732720",
+    "Delta_m_QCD_e21_E0_N0_MeV": "1.74515690316152622921219348902044529328241550652026670541207",
+    "Delta_m_QCD_e21_alpha_bind_MeV": "1.56108426125767741418892973749795013326249182241353272407482",
+    "tr_e21_QAdjp_V3": "-0.00448304953501474741784649815461315748616611526397720726566021",
+    "tr_e21_QAdjn_V3": "-0.444092609533361298985812867290024712923064547468203554661117",
+    "Delta_tr_e21_QAdj_V3": "-0.439609559998346551567966369135411555436898432204226347395456",
+    "Delta_m_QED_e21_me_MeV": "-0.224640023872447685986210788845404507349555863364465767302330",
+    "tr_conn_p_V3": "-0.000430680520002660242355602368983948141545216110235938171642300",
+    "tr_conn_n_V3": "0.000218432446192849358984871857099514542503160704055923881255874",
+    "Delta_tr_conn_V3": "0.000649112966195509601340474226083462684048376814291862052898174",
+    "weighting_canonical": "derived Tr(K^{\u22973}\u00b7)/[2]_q\u00b3 (qou-99qc); scored insertion is covariant all-pairs (owner 2026-11-20 16:44), connected part 0 on V\u00b3; *_derived_covariant are the scored values (0); *_derived_adjacent is the option-1 comparison; M_p/Delta_m without suffix are the historical 1/3-normalised adjacent 'plain' entries",
+    "M_p_QED_conn_derived_covariant_MeV": "0.0",
+    "Delta_m_QED_conn_derived_covariant_MeV": "0.0",
+    "M_p_QED_conn_derived_adjacent_MeV": "0.0000901242572668167005355174000476572394425926543269945930976605",
+    "Delta_m_QED_conn_derived_adjacent_MeV": "-0.000127224300963902134703541684537673261384858289594112159614578",
+    "M_p_QED_conn_MeV": "0.000220077293803982939852293904393675701782981027519847774036932",
+    "Delta_m_QED_conn_MeV": "-0.000331696044605178847674802546955639259910491553300866504437196"
+  },
   "notes": [
     "Block ordering [protons first] is NOT the ground state for Level 1.",
     "Ground-state search at Level 1 has binom(3A, total_u) orderings.",
-    "For A=3: binom(9,5) = 126 orderings — feasible.",
-    "For A=14: binom(42,20) ~ 10^11 — needs heuristic.",
+    "For A=3: binom(9,5) = 126 orderings \u2014 feasible.",
+    "For A=14: binom(42,20) ~ 10^11 \u2014 needs heuristic.",
     "The Q_q values here are UPPER BOUNDS (block ordering overestimates)."
   ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0,
-  "engine": "python",
   "scriptFile": "level1-qvalues.py",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+  "scriptHash": "892598ed0c63",
+  "scriptCommitSha": "e91fbecea025081a656f69f751df1678ec0da598",
+  "commitSha": "fe2b46954eaefb49d4c56139078713156ffda66c",
+  "engine": "python",
+  "computedAt": "2026-11-20T17:58:10.423889+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

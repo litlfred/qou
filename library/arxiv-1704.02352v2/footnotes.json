@@ -1,0 +1,3317 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1704.02352v2",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "60",
+   "text": "B20, Key words and phrases. Jack polynomials, Jack characters, random Young diagrams, random matrices, β-ensemble.",
+   "block": "library/arxiv-1704.02352v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "24",
+   "text": "C",
+   "block": "library/arxiv-1704.02352v2/blocks/prose-sec-034"
+  },
+  {
+   "id": "fn-p035-2",
+   "page": 35,
+   "mark": "24",
+   "text": "C |g|",
+   "block": "library/arxiv-1704.02352v2/blocks/prose-sec-034"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "tiveintegersλ"
+  },
+  {
+   "page": 1,
+   "mark": "l",
+   "context": "tiveintegersλ1≥· · ·≥λ"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "|λ| := λ"
+  },
+  {
+   "page": 1,
+   "mark": "l",
+   "context": "|λ| := λ1 + · · · + λ"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "β-log gases [For10], i.e. the probability distributions on R"
+  },
+  {
+   "page": 1,
+   "mark": "e",
+   "context": "Z"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "Z eV (x"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "Z eV (x1)+···+V (x"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "|x"
+  },
+  {
+   "page": 1,
+   "mark": "j",
+   "context": "|xi −x"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "contexts; for this reason we will use two symbols P"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "contexts; for this reason we will use two symbols Pnand Y"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "family(χλ)offunctionsχλ :P"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "family(χλ)offunctionsχλ :Pn→Rwhichisindexedbyλ∈Y"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "t (χλ) is a linear basis of the space of real functions on P"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "that for each λ ∈Y"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "χλ(1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "where 1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Our starting point is some character χ:P"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "χ(1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "λ∈Y"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "ation theory of the symmetric groups.For a Young diagram λ∈Y"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "with n boxes let ρλ:S(n) →M"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "t the irreducible character χλ(π) is also well-deﬁned if π∈P"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "if µ = 1"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "π(λ)"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "integer n≥1,anyYoungdiagramλ∈Y"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "integer n≥1,anyYoungdiagramλ∈Ynandanypartitionπ∈P"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "mi(λ)! i"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "mi(λ)! im"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "{k: λ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "λ∈Y"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "χ(λ)≥0arenon-negative,wewillsaythatχis"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "(λ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(λ1ր λ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "1.9.Cumulants.For partitions π"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "1.9.Cumulants.For partitions π1, . . . , π"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "lants.For partitions π1, . . . , πk we deﬁne their product π"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": " partitions π1, . . . , πk we deﬁne their product π1 · · · π"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "n≥0P"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "n≥0Pnbecomes"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "e"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "et"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "et1π"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "ℓ(π"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "∂t"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "t"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "ℓ(l"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "1(l"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "1(l1) = χ(l"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "2(l"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "2(l1, l"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "2(l1, l2) = χ(l"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "2(l1, l2) = χ(l1, l"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "2(l1, l2) = χ(l1, l2) −χ(l"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "2(l1, l2) = χ(l1, l2) −χ(l1)χ(l"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "asequence(χ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "asequence(χn)ofreduciblecharactersχ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "asequence(χn)ofreduciblecharactersχn :P"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "lowing we will use the following convention.If χ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "lowing we will use the following convention.If χn :P"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "P"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "χn(π) := χn(π, 1"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "In this way the cumulant kχ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ℓ(l"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "ℓ(l1, . . . , lℓ) is well deﬁned if"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ℓ(l1, . . . , lℓ) is well deﬁned if n ≥l"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "χ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "χn :P"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "χn :Pn→R.We say that the sequence (χ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "property [´Sni06] if for each integer ℓ≥1 and all integers l"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n→∞kχ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ℓ(l"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "ℓ(l1, . . . , lℓ)"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "a"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "al+1, b"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "2= al+1 +b"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "kχ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "1(l)"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "l"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "|a"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "l"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "(1.9) holds true.Assume that χ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "(1.9) holds true.Assume that χn :P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n→∞ωΛ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Λ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "αnλ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "∥ωΛ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n (ωΛ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "mials f"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "mials f1, . . . , f"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "⟨∆n, f"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "ωΛ"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "oint distribution of any ﬁnite family of random variables (Y"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "nt distribution of any ﬁnite family of random variables (Yk)"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "withn′:=αi"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "2n′ boxes will be denoted by λ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "meanvaluet7→EωΛ"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n(EωΛ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "For any tuple x"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "A(x"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "A(x1, . . . , xℓ) = [t"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "A(x1, . . . , xℓ) = [t1 · · ·tℓ] log E"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "A(x1, . . . , xℓ) = [t1 · · ·tℓ] log Ee"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "A(x1, . . . , xℓ) = [t1 · · ·tℓ] log Eet"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "A(x1, . . . , xℓ) = [t1 · · ·tℓ] log Eet1"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "A(x1, . . . , xℓ) = [t1 · · ·tℓ] log Eet1x"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "A(x1, . . . , xℓ) = [t1 · · ·tℓ] log Eet1x1+···+tℓ"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "log Ee"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "log Eet"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "log Eet1"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "log Eet1x"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "log Eet1x1+···+tℓ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "∂t"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "t"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "γ"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "(γ"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "(γpChπ) • (γ"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "(γpChπ) • (γqChσ) := γ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "thatχ:P"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "Let us ﬁx a partition π∈P"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "Y"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "the characters χ"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Jack character χ"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Jack character χn :P"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "(A)for each integer ℓ≥1 and all integers l"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n→∞kχ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ℓ(l"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "ℓ(l1, . . . , lℓ)"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "(B)foreachintegerℓ≥1andallx"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "(B)foreachintegerℓ≥1andallx1, . . . , xℓ∈{Ch"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(B)foreachintegerℓ≥1andallx1, . . . , xℓ∈{Ch1, Ch"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ℓ(x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "ℓ(x1, . . . , xℓ)"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "ℓ(x1, . . . , xℓ) n−deg"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n→∞κχ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "(C)for each integer ℓ≥1 and all x"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ℓ(x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "ℓ(x1, . . . , xℓ)"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "ℓ(x1, . . . , xℓ) n−deg"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n→∞κχ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "(D)for each integer ℓ≥1 and all x"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "•ℓ(x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "•ℓ(x1, . . . , xℓ)"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "•ℓ(x1, . . . , xℓ) n−deg"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n→∞κχ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "const1 +const"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "in the limit n →∞and all choices of l"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "property if for all choices of x"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "A(x"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "A(x1, . . . , xℓ) ≤(degA"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "A(x1, . . . , xℓ) ≤(degAx"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "A(x1, . . . , xℓ) ≤(degAx1) + · · · + (degA"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "is immediate since Ch"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "is immediate since Ch1, Ch"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "zi,"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "zi,1 · · ·zi,l"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "deg z≥deg zi,"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "deg z≥deg zi,1 + · · · + deg zi,l"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": " the above assumption, if condition (B) holds true for all x"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "X then more general condition (C) holds true for arbitrary x"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "We claim that the set X= {γ, Ch"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "We claim that the set X= {γ, Ch1, Ch"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "We claim that the set X= {γ, Ch1, Ch2, Ch"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "assumption of Lemma 3.4 for z= γ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "π=(π"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "z= γ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "z= γkChπ"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "γ"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "γkChπ −γ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "γkChπ −γkChπ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Weclaimthat(2.7)holdstrueforallx"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "casewhenx"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "casewhenx1, . . . , xℓ∈{Ch"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "casewhenx1, . . . , xℓ∈{Ch1, Ch"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "1(γ)"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "κχ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "κχ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "rom [´Sni06, Section 4.7] with the roles of the cumulants κχ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "κχ"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "3.4.Functionals S"
+  },
+  {
+   "page": 23,
+   "mark": "y",
+   "context": "α"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "and we shall simply write S"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "ni18, Proposition 4.6] the second-named author proved that S"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "3.5.FreecumulantsR"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "diagram λbyfree cumulants R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i!(l −1)"
+  },
+  {
+   "page": 23,
+   "mark": "l",
+   "context": "S"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "R"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Rk"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Rk1 · · · R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "Rk1 · · · Rk"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "k1,...,k"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i!(−l + 1)"
+  },
+  {
+   "page": 23,
+   "mark": "l",
+   "context": "R"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "S"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Sk"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Sk1 · · ·S"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "Sk1 · · ·Sk"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "k1,...,k"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "whereweuseashorthandnotationS"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "whereweuseashorthandnotationSk=S"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "whereweuseashorthandnotationSk=Sk(λ),R"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "whereweuseashorthandnotationSk=Sk(λ),Rk=R"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "•EachfreecumulantR"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "takesaparticularlysimpleform(morespeciﬁcally,“R"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "•Thefamily(γ, R"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "•Thefamily(γ, R2, R"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "the algebra Pwith deg γ=1 and deg R"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "Ch"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "Chl= R"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "note that it is a stronger version of (2.10) with const"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Eχ"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "Eχn(R"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "l+1"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Eχ"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "Eχn(S"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "l"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "l+1= a"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "i!(l −1)"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "k1,...,k"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "characters)aspolynomials inthebasisR"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "characters)aspolynomials inthebasisR2, R"
+  },
+  {
+   "page": 25,
+   "mark": "l",
+   "context": "original top-degree term R"
+  },
+  {
+   "page": 25,
+   "mark": "l",
+   "context": "F:= κ•(Ch"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "F:= κ•(Chl"
+  },
+  {
+   "page": 25,
+   "mark": "l",
+   "context": "F:= κ•(Chl1, Ch"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "F:= κ•(Chl1, Chl"
+  },
+  {
+   "page": 26,
+   "mark": "l",
+   "context": "cumulantκ•(Ch"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "cumulantκ•(Chl"
+  },
+  {
+   "page": 26,
+   "mark": "l",
+   "context": "cumulantκ•(Chl1, Ch"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "cumulantκ•(Chl1, Chl"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "byγ"
+  },
+  {
+   "page": 26,
+   "mark": "l",
+   "context": "R"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "i(k"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "i(k1 −1) · · ·(k"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "i(k1 −1) · · ·(ki −1)R"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "i(k1 −1) · · ·(ki −1)Rk"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "i(k1 −1) · · ·(ki −1)Rk1 · · · R"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "i(k1 −1) · · ·(ki −1)Rk1 · · · Rk"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "+(terms divisible by γ"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "(σ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "(σ1, σ"
+  },
+  {
+   "page": 26,
+   "mark": "l",
+   "context": "X"
+  },
+  {
+   "page": 26,
+   "mark": "l",
+   "context": "The group S(l −1) acts on X"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "πσ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "πσ1π−1, πσ"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "π · (σ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "π · (σ1, σ"
+  },
+  {
+   "page": 26,
+   "mark": "l",
+   "context": "he orbits of this action deﬁne an equivalence relation ∼on X"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "seealso[DF´S10],ifσ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "seealso[DF´S10],ifσ1, σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "seealso[DF´S10],ifσ1, σ2∈S(l)arepermutationsandq:C(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "{2, 3, . . .}isafunctiononthesetofcyclesofσ"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "q(c) = |C(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "q(c) = |C(σ1)| + |C(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "and for every set A ⊂C(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "and for every set A ⊂C(σ2) such that A̸ = ∅and A̸ = C(σ"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "c ∈C(σ"
+  },
+  {
+   "page": 27,
+   "mark": "l",
+   "context": "l≥1 the expansion of the character Ch"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "γ, R"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "γ, R2, R"
+  },
+  {
+   "page": 27,
+   "mark": "l",
+   "context": "γ"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "γl+1−|C(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "γl+1−|C(σ1)|−|C(σ"
+  },
+  {
+   "page": 27,
+   "mark": "q",
+   "context": "R"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "[(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "[(σ1,σ"
+  },
+  {
+   "page": 27,
+   "mark": "l",
+   "context": "[(σ1,σ2)]∈X"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "q :C(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Eχ"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "Eχn(R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "l+1"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "l+1"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "i(k"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "i(k1 −1) · · · (k"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "i(k1 −1) · · · (ki −1)"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "i(k1 −1) · · · (ki −1)a"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "i(k1 −1) · · · (ki −1)ak"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "i(k1 −1) · · · (ki −1)ak1 · · · a"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "i(k1 −1) · · · (ki −1)ak1 · · · ak"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "for thespeciﬁcchoice ofx"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "for thespeciﬁcchoice ofx1=S"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Eχ"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "Eχn(S"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "l"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "l"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "(i −1)!(l −1)"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "k1"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "k1,...,k"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "to b"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "g"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "gl+1−|C(σ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "gl+1−|C(σ1)|−|C(σ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "[(σ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "[(σ1,σ"
+  },
+  {
+   "page": 28,
+   "mark": "l",
+   "context": "[(σ1,σ2)]∈X"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "q :C(σ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "g′g"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "g′gl−|C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "g′gl−|C(σ1)|−|C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "l + 1 −|C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "l + 1 −|C(σ1)| −|C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "[(σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "[(σ1,σ"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "[(σ1,σ2)]∈X"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "q :C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "g"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "gl+1−|C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "gl+1−|C(σ1)|−|C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "[(σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "[(σ1,σ"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "[(σ1,σ2)]∈X"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "c′∈C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "q :C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "ontheinterval[x"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "ontheinterval[x0, ∞)(respectively,ontheinterval(−∞, x"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "|m"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "|ml| ≤C"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "|ml| ≤Cll"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "|ml| ≤Cll2"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "|m"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "|ml| ≤C"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "|ml| ≤Cll"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "interval[x"
+  },
+  {
+   "page": 30,
+   "mark": "x",
+   "context": "interval[x0, ∞).Wedeﬁneaprobabilitymeasureµ"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "interval[x0, ∞).Wedeﬁneaprobabilitymeasureµx"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "x"
+  },
+  {
+   "page": 30,
+   "mark": "x",
+   "context": "xldµ"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "(x −x"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "(x −x0)"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "x"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "(−x"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "(−x0)"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "m"
+  },
+  {
+   "page": 30,
+   "mark": "x",
+   "context": "ml(µ"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "ml(µx"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "|x"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "|x0|l−k|m"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "|x"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "|x0|l−kC"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "|x0|l−kCkk"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "|x0|l−kCkk2"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "|x0|l−kCkk2k≤(C + |x"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "|x0|l−kCkk2k≤(C + |x0|)"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "|x0|l−kCkk2k≤(C + |x0|)ll"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "|x0|l−kCkk2k≤(C + |x0|)ll2"
+  },
+  {
+   "page": 30,
+   "mark": "x",
+   "context": "ByCarleman’scriterionitmeansthatthemeasureµ"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "The case, when µ is supported on the interval (−∞, x"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "4.2.Slow growth of (R"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "4.2.Slow growth of (Rn) implies slow growth of (S"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "Lemma4.2.Let(S"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "Lemma4.2.Let(Sl)"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "Lemma4.2.Let(Sl)l≥2beasequenceofrealnumbersandlet(R"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "Lemma4.2.Let(Sl)l≥2beasequenceofrealnumbersandlet(Rl)"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "|R"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "|Rl| ≤C"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "Then the sequence (S"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "|S"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "|Sl| ≤C"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "Proof.The expansion (3.6) for S"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i!(l −1)"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "i!(l −1)i−1 C"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "kmk"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "· · · kmk"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "|S"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "k1,...,k"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 30,
+   "mark": "l",
+   "context": "≤C"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i!(l −1)"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "k1,...,k"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "k1,...,k"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "k1,...,k"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "i!(l −1)"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "k1,...,k"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "k1+···+k"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "≤2"
+  },
+  {
+   "page": 31,
+   "mark": "l",
+   "context": "≤22"
+  },
+  {
+   "page": 31,
+   "mark": "l",
+   "context": "|S"
+  },
+  {
+   "page": 31,
+   "mark": "l",
+   "context": "|Sl| ≤(4C)"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "≤l"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "≤l2"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "< l"
+  },
+  {
+   "page": 32,
+   "mark": "l",
+   "context": "of parametrizing the equivalence classes in X"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "σ2= (1, 2, . . . , i"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "σ2= (1, 2, . . . , i1)(i"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "σ2= (1, 2, . . . , i1)(i1 + 1, i"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "σ2= (1, 2, . . . , i1)(i1 + 1, i1 + 2, . . . , i"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "for some increasing sequence 1≤i"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "for some increasing sequence 1≤i1<i"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "ﬁxed ℓ= |C(σ"
+  },
+  {
+   "page": 32,
+   "mark": "l",
+   "context": "the random variable R"
+  },
+  {
+   "page": 32,
+   "mark": "l",
+   "context": "the random variable Rl= R"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "the random variable Rl= Rl(λ"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "2Eχ"
+  },
+  {
+   "page": 32,
+   "mark": "l",
+   "context": "2EχnR"
+  },
+  {
+   "page": 32,
+   "mark": "l",
+   "context": "|r"
+  },
+  {
+   "page": 32,
+   "mark": "l",
+   "context": "|rl| ≤C"
+  },
+  {
+   "page": 32,
+   "mark": "l",
+   "context": "2R"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "R"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "Rk"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "Rk1 · · · R"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "= r"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "= rk"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "= rk1 · · · r"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "2andtakethe meanvalue Eχ"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "the mean value Eχ"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "g"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "gl+1−|C(σ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "gl+1−|C(σ1)|−|C(σ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "[(σ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "[(σ1,σ"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "[(σ1,σ2)]∈X"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "q :C(σ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "u := ∥σ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "v:= l + 1 −|C(σ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "v:= l + 1 −|C(σ1)| −|C(σ"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "the deﬁnition of X"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "corresponding to the cycles of σ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "corresponding to the cycles of σ1and the cycles of σ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "corresponding to the cycles of σ1and the cycles of σ2:V◦=C(σ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "not disjoint, that is e=(c"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "not disjoint, that is e=(c1, c"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "not disjoint, that is e=(c1, c2)∈Eif c"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "not disjoint, that is e=(c1, c2)∈Eif c1 ∩c"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "of the action of the group generated by σ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "of the action of the group generated by σ1, σ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "|C(σ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "|C(σ1)|+|C(σ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "(id, σ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "(id, σ2) : σ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "(id, σ2) : σ2∈S(l) is such that |C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "v",
+   "context": "g"
+  },
+  {
+   "page": 34,
+   "mark": "l",
+   "context": "r"
+  },
+  {
+   "page": 34,
+   "mark": "l",
+   "context": "rl+1= a"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "[(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "[(σ1,σ"
+  },
+  {
+   "page": 34,
+   "mark": "l",
+   "context": "[(σ1,σ2)]∈X"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "q :C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "∥σ"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "l+1−|C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "l+1−|C(σ1)|−|C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "q(c) = v + |C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "q(c) = v + |C(σ1)| + |C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "l",
+   "context": "C"
+  },
+  {
+   "page": 34,
+   "mark": "l",
+   "context": "C"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "C(l + 1)"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "[(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "[(σ1,σ"
+  },
+  {
+   "page": 34,
+   "mark": "l",
+   "context": "[(σ1,σ2)]∈X"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "∥σ"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "l+1−|C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "l+1−|C(σ1)|−|C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "C"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Cq(c)(l + 1)"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "Cq(c)(l + 1)2"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "q :C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "l"
+  },
+  {
+   "page": 34,
+   "mark": "u",
+   "context": "l2"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "u! (l + 1)|C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "u! (l + 1)|C(σ2)|−1=l"
+  },
+  {
+   "page": 34,
+   "mark": "u",
+   "context": "u! (l + 1)|C(σ2)|−1=l2"
+  },
+  {
+   "page": 34,
+   "mark": "u",
+   "context": "u! (l + 1)"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "u! (l + 1)u−v≤(l + 1)"
+  },
+  {
+   "page": 34,
+   "mark": "u",
+   "context": "u! (l + 1)u−v≤(l + 1)3"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "functionsq:C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(l + 1)|C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "u",
+   "context": "(l + 1)|C(σ2)|−1= (l + 1)"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "r"
+  },
+  {
+   "page": 34,
+   "mark": "l",
+   "context": "≤C"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "q(c)"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "q(c)2"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "q(c)"
+  },
+  {
+   "page": 35,
+   "mark": "q",
+   "context": "q(c)2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "q(c)2q(c)≤24(u−v)(l + 1)"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "R|C(σ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "q(c) : c ∈C(σ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "|C(σ"
+  },
+  {
+   "page": 35,
+   "mark": "q",
+   "context": "C"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Cq(c)(l + 1)"
+  },
+  {
+   "page": 35,
+   "mark": "q",
+   "context": "Cq(c)(l + 1)2"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "c∈C(σ"
+  },
+  {
+   "page": 35,
+   "mark": "l",
+   "context": "C"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "(l + 1)"
+  },
+  {
+   "page": 35,
+   "mark": "u",
+   "context": "(l + 1)3"
+  },
+  {
+   "page": 35,
+   "mark": "u",
+   "context": "(l + 1)"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "C(l + 1)"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "2"
+  },
+  {
+   "page": 35,
+   "mark": "u",
+   "context": "24"
+  },
+  {
+   "page": 35,
+   "mark": "l",
+   "context": "C"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "2"
+  },
+  {
+   "page": 35,
+   "mark": "16",
+   "context": "+ (e"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "point (x"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "point (x0, y"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "nt (x0, y0), contains also the whole rectangle {(x, y):0≤x≤x"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "y≤y"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "y≤y0};bycomparisonoftheareasitfollowsthatx"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "y≤y0};bycomparisonoftheareasitfollowsthatx0y"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "u"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "u"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "u"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "Λ"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "2S"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "2Sk+2(λ"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "2S"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "2Sk(λ"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "case ℓ= 1 and x"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "case ℓ= 1 and x1= S"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "n→∞Eχ"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "2Eχ"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "2EχnS"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "exists;inthespecialcaseℓ=2andx"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "exists;inthespecialcaseℓ=2andx1=x"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "exists;inthespecialcaseℓ=2andx1=x2=S"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "2S"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "2Sk,"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "= κχ"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "2S"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "k)"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "k)nconverges(as"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "k)nconverges(asn→∞)to"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "k)nconverges(asn→∞)tos"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "u 7→EfΛ"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "k + 1Eχ"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "k + 1"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "k + 1s"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "S"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Sk"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "Sk1 · · · S"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "= s"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "= sk"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "= sk1 · · · s"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "ws that the relation between the families of real numbers (s"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": " that the relation between the families of real numbers (sk)"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "(r"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "(rk)"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "|r"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "|rk| ≤C"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "≤C′k+2(k + 2)"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "k + 1"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "k + 1s"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "that the length lof the bottom rectangle constituting Λ"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "−∞,"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "vergence of densities.For ǫ > 0 and u"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "EfΛ"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "EfΛn(u"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "EfΛ"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "EfΛn(u"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "EfΛn(u0) −EfΛ"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "EfΛ"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "EfΛn(u"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "EfΛn(u0) −EfΛ"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "EfΛ"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "EfΛn(u"
+  },
+  {
+   "page": 38,
+   "mark": "c",
+   "context": "andfΛ∞withrespecttothesupremumnormonthesetK"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "∥EfΛ"
+  },
+  {
+   "page": 39,
+   "mark": "c",
+   "context": "∥EfΛn−fΛ∞∥L∞[K"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "Then there exists a function fΛ∞such that EfΛ"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "k)"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "k)nconverges (as"
+  },
+  {
+   "page": 39,
+   "mark": "s",
+   "context": "k)nconverges (as n →∞) to"
+  },
+  {
+   "page": 39,
+   "mark": "k",
+   "context": "k)nconverges (as n →∞) to s"
+  },
+  {
+   "page": 39,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "ukdPΛ"
+  },
+  {
+   "page": 39,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "fΛ"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "fΛn(u"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "fΛ"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "fΛn(u"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "∥fΛ"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "We start with the case ℓ≥2.By (1.17), each Y"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "X"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "u"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "2S"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "2Sk(λ"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "n−i"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "S"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "Si"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "S"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "(S"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "(Si"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "(Si1, . . . , S"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "n→∞κ"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "n→∞κ2 (Y"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "n→∞κ2 (Yi"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "n→∞κ2 (Yi1, Y"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "n→∞κ2 (Yi1, Yi"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "2ES"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "2ESk(λ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "κ"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "κ1(Y"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "κ1(Yk) = EY"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "2ES"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "2ESk(λ"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "2ES"
+  },
+  {
+   "page": 41,
+   "mark": "m",
+   "context": "2ESk(λ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "exists and is ﬁnite for any choice of ℓ≥1 and i"
+  }
+ ]
+}

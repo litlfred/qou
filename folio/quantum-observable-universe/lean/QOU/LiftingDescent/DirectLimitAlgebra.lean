@@ -13,7 +13,7 @@ by `lake build`.  The co-located documentation stub at
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 LaTeX label: `def:direct-limit-algebra`
 -/
 
@@ -29,7 +29,7 @@ variable {R : Type*} [CommRing R]
     the formal-chain stub uses `R = ℤ[q^±1]` or generic `R`).
 
     LaTeX: `\label{def:direct-limit-algebra}` -/
--- Ref: [manuscript] §3, Definition: Direct limit algebra
+-- Ref: [leitner2026] §3, Definition: Direct limit algebra
 structure DirectLimitAlgebra (R : Type*) [CommRing R] where
   /-- The module at each level. -/
   levelMod : ℕ → Type*

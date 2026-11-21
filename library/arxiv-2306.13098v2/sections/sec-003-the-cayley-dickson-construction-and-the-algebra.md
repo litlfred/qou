@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2306.13098v2
-doc_title: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions"
+doc_title: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions"
 section_id: sec-003-the-cayley-dickson-construction-and-the-algebra
 section_title: "The Cayley-Dickson construction and the algebra of sedenions"
 section_number: null
 pages: 6-6
 source_pdf: 2306.13098v2.pdf
 source_sha256: edeb214d587bfca4
-doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.979
+doc_brief: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the"
 ---
 []{#sedenions label="sedenions"}
 

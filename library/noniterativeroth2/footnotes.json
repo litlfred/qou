@@ -1,0 +1,133 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "noniterativeroth2",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "That is, the progression to which we pass with each iteration, is unrelated to the additive characters of places where ˆS is “large”.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "r3(N)/N,forM=(log N)"
+    },
+    {
+     "page": 2,
+     "context": "cularadditivecharacterswheretheFouriertransformofSis“large”."
+    }
+   ],
+   "block": "library/noniterativeroth2/blocks/prose-page-002"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "tionof asetA,thisisjustthenumberof progressionsinAdividedbyp"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "makeuseoftheFouriertransform"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "makeuseoftheFouriertransformbf: F"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "bf(r) := E"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "bf(r) := Ex∈F"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "bf(r) := Ex∈Fpf(x)e"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "|bf(r)|2= E"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "bf(r)"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "R := {r∈F"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "R := {r∈Fp: |bf(r)| ⩾(2 log log p/ log p)"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "|x| < p"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "|bf(r) −bg(r)|≪(log log p/ log p)"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "|Λ(f) −Λ(g)| ≪(log log p/ log p)"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Λ(g) ≪(log log p/ log p)"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Λ(T) ≪(log log p/ log p)"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Λ(T′) ≫|T ′|/N−r"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "M= ⌊(log p/ log log p)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "(log log p/ log p)"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "r3(N)/N= |S|/N⩽3r3(M)/4M+ O((log log p/ log p)"
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+Cluster Expansions: Necessary... Page 350f47 33
+
+This completes the inductive proof of the inequality Ty (D; z) < exp(a(D)). Passing to the
+limit N + oo, we get T(D; z) < exp(a(D)) < oo for all intervals D C Z. The convergence
+extends to all finite sets because log T (-; z) is subadditive. o
+
+Proof of Theorem 4.5(a) Consider the selection rule s(D) := min D that picks the left-most
+point of a finite set. Fora > 0 and L € N let
+
+Vi(D) := |{X C Z| X isan L-rod, XN D # @}|
+and a(D) = ay, (D) := a Vi (D). The choice of w and L is specified later. For a non-empty
+
+interval D, write x := s(D) = min(D), and D’ := D \ {x}. If D’ is non-empty, then
+condition (4.20) reads
+
+=
+Yocee™’ <e*=1. (4.21)
+t=1
+
+Indeed in that case for each ¢ there is a single ¢-rod X that contains x but does not intersect
+D’ (note that x + 1 € D’ because of the assumption that D is an interval and x = min D).
+The rod is simply the €-rod with right-most endpoint x. Moreover V_(D’U X) — Vi (D’) = €
+and V;,(D! U {x}) — V_(D’) = 1.
+
+On the other hand if D’ is empty, then the number of ¢-rods that contain any given site
+x € Z4 is equal to ¢ and the number of L-rods intersecting an ¢-rod is equal to L + € — 1,
+therefore condition (4.20) reads instead
+
+oo
+Sbee et PD < eh 1. (4.22)
+t=1
+
+The proof of Theorem 4.5 is complete once we check the existence of w > O and L € N such
+that the inequalities (4.21) and (4.22) hold true. Set
+
+oo
+h(u) := 14+ Viz uf (u € Ry).
+t=
+
+Conditions (4.21) and (4.22) are equivalent to
+h(e%) <e%, Ae) < 1-e (4.23)
+
+Notice that / is convex and monotone increasing with h(0) = 1. The assumption (4.19)
+yields the existence of some u = e% > 0 such that (uw) < u. On the other hand, clearly
+h(O) = 1 > 0. Therefore the mean-value theorem yields the existence of a point a € (0, u)
+such that h(i) = a. The point a is necessarily larger then 1 because h(i) is. Suppose by
+contradiction that h’(7) > 1. Then the convexity of h implies
+
+h(u) = h(i) + h' (a) (u — tt) > h@) + (u— t) =u,
+
+which contradicts the assumption h(w) < u. Therefore h(#) = @ > 1 and h’(i) < 1.
+Replacing a with @ := loga if needed, and picking L = L(q) large enough, we find that
+(4.23) is satisfied for some a > 0. This concludes the proof. o
+
+Proof of Theorem 4.5(b) Let a(D) := log T(D:z) = log T(D; —z). In view of Eq. (2.15)
+and the alternating sign property, we have
+
+oo
+1
+aD) =P DE Msexnpgoylee i... Yad] 2) ---<(e).
+k=l (¥4,...,¥x)eX*
+
+D Springer

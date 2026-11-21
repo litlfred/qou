@@ -1,0 +1,67 @@
+Theorem 6.2 Let {&,1,...,€a-1} be the set of all d-th roots of unity (ordered arbitrarily). Let T be
+a standard d-tableau of shape X € P(d,n). For brevity, we set p; := p(T |i) and c; := c(T |i) for all
+
+i=1,...,n. The vector space Vy is a representation of C(q)Yan(q) with the action of the generators on
+the basis element v, defined as follows: for j =1,...,n,
+
+ty(v) = &pjVr 5 (6.8)
+fori=1,...,n—-1, if pi > pizi then
+
+giv) F Ves; > (6.9)
+if pi < pisi then
+
+GV) = IV 75; 5 (6.10)
+and if pi = pit+i then
+
+qCi41 — Cit1 qCi4+1 — Ci ~
+i(v_) = vet Vis. 3 6.11
+gl r) Cin — Cj T cui-G 7" ( )
+
+where s; is the transposition (i,i +1). Further, the set {V,x|A € P(d,n)} is a complete set of pairwise
+non-isomorphic irreducible representations of C(q)Yan(q)-
+
+The above theorem implies that the algebra C(q)Ya,n(q) is split. As we have already mentioned,
+when g++ 1, the algebra C(q)Ya,n(q) specialises to the group algebra C[G(d, 1,n)], which is semisimple.
+By Tits’s deformation theorem, we obtain that the algebra C(q)Ya,n(q) is also semisimple.
+
+Let now 6: C[g,q7!] + C be a ring homomorphism such that 6(q) = 7 € C \ {0}. Using the
+representation theory of C(q)Yamn(q), we have proved the following semisimplicity criterion for CYa,n(7)
+
+hPdA} Proposition 9]:
+Proposition 6.3 The specialised Yokonuma-Hecke algebra CY a.n(n) is (split) semisimple if and only if
+6(P(q)) £0, where
+P= [J G+a+--+a°}).
+
+1<i<n
+
+Note that following Ariki’s semisimplicity criterion (4.2), the algebra CYy,n(7) is semisimple if and
+only if the specialised Iwahori-Hecke algebra CH,,(7) is semisimple.
+
+Another way to obtain the above result is through our definition of a canonical symmetrising form T
+on Yun(q) Proposition 10]. Having calculated the Schur elements of Yg,n(q) with respect to
+T Proposition 11], we can deduce the above semisimplicity criterion with the use of Theorem
+More precisely, we have the following:
+
+Theorem 6.4 We define the linear map T : Yan(q) > C[q,q74] by
+
+1 if w=1 and r;=0 forall j =1,2,...,n .
+ry Pn _ Jj 1) rey
+T(t. gw) = { 0 otherwise, (6.12)
+where w € Gy and0 < rj <d—1 for allj = 1,2,...,n. Then 7 is a symmetrising form on Yan(q),
+called the canonical symmetrising form. If X = (A,...,A¢-Y) € P(d,n), then the Schur element of
+Vy with respect to T is
+sy, = d" 8 y(0)8\() «- 8\(d-1) , (6.13)
+
+where sy is the Schur element of the Iwahori-Hecke algebra H)\(\(q) corresponding to AM for all
+i=0,1,...,d—1 (we take sg := 1).
+
+A simple formula for the calculation of the Schur elements of Iwahori-Hecke algebras of type A is
+given by Theorem |4.3}
+
+The connection between the representation theory of the Yokonuma-Hecke algebra and that of
+Iwahori-Hecke algebras of type A implied by is explained by a result of Lusztig §34],
+who has proved that Yokonuma-Hecke algebras, in general, are isomorphic to direct sums of matrix
+algebras over certain subalgebras of classical Iwahori-Hecke algebras. Using the new presentation for
+Yajn(q), Jacon and Poulain d’Andecy have explicitly described this isomorphism between the
+
+47

@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v7-n2-p13-s",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Quantum hyperbolic geometry",
   "contains": [
+    "library/agt-v7-n2-p13-s/sections/sec-front-matter",
     "library/agt-v7-n2-p13-s/sections/sec-000",
     "library/agt-v7-n2-p13-s/sections/sec-001",
     "library/agt-v7-n2-p13-s/sections/sec-002",
@@ -29,10 +30,15 @@
     "library/agt-v7-n2-p13-s/sections/sec-015",
     "library/agt-v7-n2-p13-s/sections/sec-016",
     "library/agt-v7-n2-p13-s/sections/sec-017",
-    "library/agt-v7-n2-p13-s/sections/sec-018"
+    "library/agt-v7-n2-p13-s/sections/sec-018",
+    "library/agt-v7-n2-p13-s/sections/sec-019",
+    "library/agt-v7-n2-p13-s/sections/sec-020",
+    "library/agt-v7-n2-p13-s/sections/sec-021",
+    "library/agt-v7-n2-p13-s/sections/sec-022",
+    "library/agt-v7-n2-p13-s/sections/sec-023"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "agt-v7-n2-p13-s",
     "title_source": "pdf-info",

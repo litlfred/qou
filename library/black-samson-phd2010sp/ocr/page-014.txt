@@ -1,0 +1,31 @@
+CHAPTER IE
+
+BRAIDS, LINKS, AND THE JONES POLYNOMIAL
+
+II.1. Links and Braids
+
+IDi.1, Links
+
+We recall some standard notions and establish some conventions (see (25, chapter 2] or [10,
+chapter 1] for details). A link is a smooth embedding S1U---LIS! > S°, Whenever it is convenient
+and does not cause confusion, we also refer to the image of the embedding as the link. All links
+are oriented. A link with one component is called a knot. An isotopy of links is a smooth path in
+the space of embeddings, or equivalently a smooth embedding ($1 Li--- Li $1) x J > S*. Isotopy
+forms an equivalence relation whose equivalence classes are called link types. For our purposes, a
+link invariant is a function on link types taking values in a ring.
+
+A link diagram is a four-valent graph embedded in S? along with the choice of over- and
+under-crossing strands at each vertex. An isotopy of link diagrams is an isotopy of the underlying
+graphs that preserves the crossing data. By compactness, we may assume that the diagram embeds
+into a disk in R? (which is how links are usually drawn), but we allow for isotopies of link diagrams
+that utilize the connectivity of the sphere $?. A link diagram specifies a link type in a natural way:
+compose the planar embedding of the link diagram with the standard embedding R? G R®° and
+locally perturb the two strands at each crossing in opposite directions normal to the plane. Thus,
+we have a well-defined surjective map called realization D — L, where D is the set of link diagrams
+up to planar isotopy and C is the set of link types. Using standard transversality arguments, there
+exist generic projections IR? — H, where IT is a plane, under which the image of a link is a link
+diagram (there are only finitely many transverse double points). Thus, we have sections £ >D of
+
+the realization map. The fibers of the realization map are described by Reidemeister’s theorem.
+
+Theorem [1.1.1. Two link diagrams realize isotopic links if and only if they are related by a

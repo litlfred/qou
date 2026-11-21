@@ -36,7 +36,7 @@ Then `A_m · B_m → L·(−1) = −L = log x`, and uniqueness of limits gives `
 
 Archimedean throughout (`ℝ`): `Real.exp`, `Real.log`, `atTop` limits.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md (2026-07-25 counter-sequence); bean qou-jplv
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md (2026-07-25 counter-sequence); bean qou-jplv
 -/
 
 namespace QOU.Archimedean

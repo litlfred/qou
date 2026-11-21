@@ -16,7 +16,7 @@ Ground ring `R_q = ℤ[q, q⁻¹]` from `QOU.Archimedean.GroundRing`.
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes
+- [leitner2026] §2-quantum-observable-universes
 - [kassel1995] Quantum Groups (Springer GTM 155), §IV
 -/
 
@@ -25,7 +25,7 @@ namespace QOU
 /-- **Categorical Fourier transform data**: a monoidal functor
     intertwining q-convolution with pointwise product, given as the
     family of Peter–Weyl projections. -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure CategoricalFourier (A : Type*) (Irreps : Type*) where
   /-- The Fourier-image family: one projection per irreducible. -/
   project : Irreps → (A → A) → (A → A)
@@ -38,7 +38,7 @@ structure CategoricalFourier (A : Type*) (Irreps : Type*) where
 /-- **Categorical Laplace transform data**: a monoidal functor from
     q-convolution to pointwise product (Hopf pairing with the
     real-exponential grouplike). -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure CategoricalLaplace (A : Type*) where
   /-- Pairing: `f ↦ (s ↦ ⟨exp_q(-s·), f⟩)`. -/
   transform : (A → A) → Archimedean.R_q → (A → A)

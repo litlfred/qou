@@ -1,0 +1,58 @@
+11.3 Evaluating asymptotics 363
+
+form that is particularly easy to integrate; for instance, in Chapters 4 and 5
+saddle point integrals with general amplitudes are reduced to those whose am-
+plitudes are monomials. The key result for doing this is a Big-O Lemma, which
+tells us that functions differing by a small quantity will have integrals differing
+by a correspondingly small quantity. First, we show how to approximate the
+reciprocal of a function by its leading homogeneous part.
+
+Lemma 11.36 (Straightening Lemma). Suppose that q(x) = G(x) + R(x),
+where q is a homogeneous polynomial of degree a and R is analytic in a neigh-
+borhood of the origin with R(aw) = O(\a|**!). Let K be any closed cone on
+which @ does not vanish. Then on the intersection of K with some neighbor-
+hood of the origin the function q does not vanish and there is a convergent
+
+expansion
+q(x) =) Gay » com) (11.12)
+n=0 |ml=n(e+1)
+Furthermore,
+qay?= YS) clmn)a™ aay" = O(lal*) . (11.13)
+|m|-an<N
+
+Proof Let R(®) = Yimiso+1 b(m)x™ be a power series expansion for R, ab-
+solutely convergent in some ball B, centered at the origin, and let
+sup)? [b(m)llal"™
+
+laleB.
+
+M=
+
+|m[Ea+1
+inf G
+
+mat A)
+
+By homogeneity
+
+|bm)ax™|
+
+——  < 1/2
+lacey
+
+Impeat1
+on the ball B.;(24) of radius ¢/(2M) centered at the origin, and the binomial
+expansion (1 + u)~* = Ds0 (;)u" converges for |u| < 1/2. Thus, the series
+
+expansion
+R(a)\* 5 am )"
+1+——] = b(m)—
+(1655) > Pe me)
+
+~—S
+
+converges on Bem) K, and multiplying through by g~* yields (11.12). Con-
+vergence on any neighborhood of the origin implies the estimate (11.13). oO
+
+Exercise 11.7. Let g(x,y) = y — x— x”. Find g and R, the expansion (11.12) to
+second order, and the exponent in the remainder term in (11.13).

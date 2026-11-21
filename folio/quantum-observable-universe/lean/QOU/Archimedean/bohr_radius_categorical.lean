@@ -19,7 +19,7 @@ balance: `Φ_1^kin(a_0^cat) = Φ_1^Coul(a_0^cat)`.*
 from the standard QED virial argument by analogy. Listed as a
 research-grade direction.*
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/bohr-radius-categorical.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/bohr-radius-categorical.md
 -/
 
 namespace QOU.Archimedean
@@ -55,7 +55,7 @@ class BohrRadiusCategoricalContext where
 
 /-- **Virial-balance condition at the categorical Bohr radius**
     ([`prop:bohr-radius-categorical`]). -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/bohr-radius-categorical.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/bohr-radius-categorical.md
 theorem bohr_radius_categorical [ctx : BohrRadiusCategoricalContext] :
     ctx.Phi_kin (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM)
       = ctx.Phi_Coul (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM) := by

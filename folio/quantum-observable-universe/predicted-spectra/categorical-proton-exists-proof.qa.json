@@ -624,7 +624,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -983,6 +983,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.360Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of prop:categorical-proton-exists row) Same pattern: sibling `.lean:39` `Nonempty CategoricalProton` witnessed by zeros (degenerate proton). Proof (prf:2): \"LP-dual feasibility verifies Gx[γ] ≥ 0 at every intermediate step\" is asserted, not shown; Frobenius stability, the actual content of the statement (md:7), is never argued"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1688,6 +1704,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T01:21:15.273Z",
+  "updated_at": "2026-11-15T21:56:04.360Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

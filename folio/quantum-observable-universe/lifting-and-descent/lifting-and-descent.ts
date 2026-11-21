@@ -87,6 +87,7 @@ export default chapter({
         "yekutieli-setting-explicit",
         "qu-to-qou",
         "qu-to-qou-su2",
+        "jet-tower-splitting-bring",
       ],
     }),
     section({
@@ -94,16 +95,9 @@ export default chapter({
       label: "sec:yekutieli-lifting-kummer-motivic",
       blocks: [
         "yekutieli-lifting-kummer-motivic-intro",
-        "p3-blowup-yekutieli-intro",
-        "p3-blowup-yekutieli",
-        "blowup-cohomological-address",
-        "blowup-regularity-as-lifting",
-        "blowup-local-cohomology-origin",
-        "blowup-topological-selection",
-        "fermionic-twisted-sectors",
         "kummer-filtration-obstruction",
         "kummer-tower",
-        "kummer-tower-motivic-galois",
+        "motivic-substrate",
         "hochschild-kummer-connection",
         "hkr-theorem",
         "s1-action-and-loop-space",
@@ -111,10 +105,9 @@ export default chapter({
         // functor; lives here alongside motivic-galois-character +
         // qou-motivic-galois-instance (its consumers). Detangler
         // P34 (2026-05-22).
-        "motivic-substrate",
-        "motivic-substrate-canonicity",
         "motivic-galois-character",
         "motivic-perpetual-obstruction",
+        "kummer-tower-motivic-galois",
       ],
     }),
 
@@ -167,6 +160,7 @@ export default chapter({
         "algebraic-filter-classification",
         "algebraic-filter-physical",
         "algebraic-filter",
+        "fermionic-twisted-sectors",
         "distributional-connection",
       ],
     }),
@@ -184,13 +178,9 @@ export default chapter({
         "brane-boundary-su2",
         "brane-boundary-structure",
         "descent-reduction-zero",
-        "descent-physical-zero",
         "descent-reduction",
-        "descent-physical",
         "descent-reduction-two",
-        "descent-physical-two",
         "descent-reduction-three",
-        "descent-physical-three",
         "descent-fixed-point",
       ],
     }),
@@ -213,6 +203,9 @@ export default chapter({
         "descent-cocycle-deviation",
         "descent-cocycle-deviation-proof",
         "descent-condition-proof",
+        "p3-blowup-yekutieli-intro",
+        "p3-blowup-yekutieli",
+        "blowup-cohomological-address",
         "weak-equiv-invariance",
         "weak-equiv-invariance-proof",
         "yekutieli-mapping-table",
@@ -233,6 +226,10 @@ export default chapter({
     // Detangler P4 split (2026-05-23): 25-block sec:archimedean-lifting
     // split 3-way into foundations + topological-mass-formula +
     // topological-mass-variants.
+    // Reading-order drain L4 (2026-11-21): cor:quantum-dilogarithm and its
+    // proof moved to mass-endomorphism after prop:topological-mass-upper-bound;
+    // the two topological-mass sections, left holding only their (stale)
+    // intros, were removed and the outro now closes the foundations section.
     section({
       title: "Archimedean specialisations: foundations",
       label: "sec:archimedean-lifting-foundations",
@@ -246,26 +243,6 @@ export default chapter({
         // moved to mass-theory (2026-05-27).
         "euler-char-stability-C",
         "brane-boundary-structure-proof",
-      ],
-    }),
-    section({
-      title: "Archimedean specialisations: topological-mass formula",
-      label: "sec:archimedean-lifting-topological-mass-formula",
-      blocks: [
-        "archimedean-lifting-topological-mass-formula-intro",
-        "quantum-dilogarithm",
-        "quantum-dilogarithm-proof",
-        // topological-mass + topological-mass-conjecture moved to
-        // mass-theory (2026-05-27).
-      ],
-    }),
-    section({
-      title: "Archimedean specialisations: topological-mass variants",
-      label: "sec:archimedean-lifting-topological-mass-variants",
-      blocks: [
-        // topological-mass variants (eigenspace, holonomy, transient,
-        // dilogarithm, proof, su2) moved to mass-theory (2026-05-27).
-        "archimedean-lifting-topological-mass-variants-intro",
         "outro-lifting-and-descent",
       ],
     }),

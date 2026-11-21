@@ -7,10 +7,25 @@
   "bytes": 324410,
   "pages": 23,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 11,
+    "reason": "14 of 653 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 17,
+    "reason": "22 of 637 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 18,
+    "reason": "20 of 626 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +35,27 @@
    "stamp_date": "27 Jul 2008"
   },
   "doi": null,
-  "title": "P\u00d3LYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES",
-  "authors_raw": "JULIUS BORCEA AND PETTER BR\u00c4ND\u00c9N",
+  "title": "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES",
+  "authors_raw": "JULIUS BORCEA AND PETTER BRÄNDÉN",
   "title_lines": [
-   "P\u00d3LYA-SCHUR MASTER THEOREMS FOR CIRCULAR",
+   "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR",
    "DOMAINS AND THEIR BOUNDARIES"
   ],
-  "abstract": "W e characterize all linear operators on \ufb01nite or in\ufb01nite-di mensio- nal polynomial spaces that preserve the property of having t he zero set inside a prescribed region \u2126 \u2286 C for arbitrary closed circular domains \u2126 (i.e., images of the closed unit disk under a M\u00a8 obius transformation) and t heir boundaries. This provides a natural framework for dealing with several l ong-standing fun- damental problems, which we solve in a uni\ufb01ed way. In particu lar, for \u2126 = R our results settle open questions that go back to Laguerre an d P\u00b4 olya-Schur.",
+  "abstract": "We characterize all linear operators on ﬁnite or inﬁnite-dimensio- nal polynomial spaces that preserve the property of having the zero set inside a prescribed region Ω⊆C for arbitrary closed circular domains Ω(i.e., images of the closed unit disk under a M¨obius transformation) and their boundaries. This provides a natural framework for dealing with several long-standing fun- damental problems, which we solve in a uniﬁed way. In particular, for Ω= R our results settle open questions that go back to Laguerre and P´olya-Schur.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181107145841-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181107145841-05'00'"
+  },
+  "title_raw": "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "P ´ OLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES 1. Introduction Some of the main challenges in the theory of distribution of zeros of polynomials and transcendental entire functions concern the description of linear operators that preserve certain prescribed (“good”) propert",
+   "outline": "1. Introduction",
+   "text": "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,74 +64,281 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Main Results",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Hyperbolicity and Stability Preservers",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Preservers of Polynomials with Zeros in a Closed Circular Domain or Its Boundary",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proofs of the Main Results",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Hyperbolic and Stable Polynomials",
    "page": 9,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Transcendental Characterization",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Closed Circular Domains and Their Boundaries",
    "page": 17,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Open Problems",
    "page": 20,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 691,
+   "n_words": 102,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -116,8 +346,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 7653,
-   "n_words": 1330
+   "n_chars": 7556,
+   "n_words": 1233,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-main-results",
@@ -127,7 +359,9 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-21-hyperbolicity-and-stability-preservers",
@@ -136,8 +370,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 7,
-   "n_chars": 9255,
-   "n_words": 1928
+   "n_chars": 9043,
+   "n_words": 1717,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-22-preservers-of-polynomials-with-zeros-in-a-clo",
@@ -146,8 +382,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 6131,
-   "n_words": 1358
+   "n_chars": 6051,
+   "n_words": 1219,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-3-proofs-of-the-main-results",
@@ -157,7 +395,9 @@
    "page_start": 9,
    "page_end": 9,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-31-hyperbolic-and-stable-polynomials",
@@ -165,19 +405,23 @@
    "title": "Hyperbolic and Stable Polynomials",
    "level": 2,
    "page_start": 9,
-   "page_end": 16,
-   "n_chars": 18679,
-   "n_words": 4414
+   "page_end": 14,
+   "n_chars": 14069,
+   "n_words": 3029,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-32-the-transcendental-characterization",
    "number": "3.2",
    "title": "The Transcendental Characterization",
    "level": 2,
-   "page_start": 16,
+   "page_start": 14,
    "page_end": 17,
-   "n_chars": 1631,
-   "n_words": 360
+   "n_chars": 5695,
+   "n_words": 1193,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-33-closed-circular-domains-and-their-boundaries",
@@ -186,8 +430,10 @@
    "level": 2,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 10961,
-   "n_words": 2349
+   "n_chars": 10760,
+   "n_words": 2149,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-4-open-problems",
@@ -196,8 +442,10 @@
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 3656,
-   "n_words": 611
+   "n_chars": 3615,
+   "n_words": 570,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-references",
@@ -206,21 +454,31 @@
    "level": 1,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 6161,
-   "n_words": 985
+   "n_chars": 6078,
+   "n_words": 902,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 10,
-  "chars_total": 64127,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 63558,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 9,
-   "overlaid": 6,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -228,10 +486,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -239,13 +502,13 @@
      "id": "sec-001-2-main-results",
      "title": "Main Results",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-21-hyperbolicity-and-stability-preservers",
      "title": "Hyperbolicity and Stability Preservers",
      "prose_ratio": 0.95,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -253,7 +516,7 @@
      "id": "sec-003-22-preservers-of-polynomials-with-zeros-in-a-clo",
      "title": "Preservers of Polynomials with Zeros in a Closed Circular Domain or Its Boundary",
      "prose_ratio": 0.958,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -261,35 +524,37 @@
      "id": "sec-004-3-proofs-of-the-main-results",
      "title": "Proofs of the Main Results",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-31-hyperbolic-and-stable-polynomials",
      "title": "Hyperbolic and Stable Polynomials",
      "prose_ratio": 0.947,
-     "coverage_ratio": 0.863,
+     "coverage_ratio": 0.952,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-32-the-transcendental-characterization",
      "title": "The Transcendental Characterization",
-     "prose_ratio": 0.517,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-007-33-closed-circular-domains-and-their-boundaries",
      "title": "Closed Circular Domains and Their Boundaries",
-     "prose_ratio": 0.947,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-4-open-problems",
      "title": "Open Problems",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },

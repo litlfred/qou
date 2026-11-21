@@ -25,7 +25,7 @@ characteristic root". This probe checks that claim and finds it is
      u_silver = u(1+√2) ≈ 0.321, giving characteristic root
      1/u_silver ≈ 3.12 — far from the established dominant tail ratio
      1/u_substrate ≈ 117.4 (u_substrate = u(q₀) ≈ 0.00852,
-     prop:q-beta-radius-of-convergence-gate / PR #1727). Since
+     conj:q-beta-radius-of-convergence-gate / PR #1727). Since
      u_substrate < u_silver, the dominant (nearest-to-0) pole is at
      u_substrate and comes from a NON-Q_A source; the Q_A/silver zero
      contributes only the subdominant root 3.12.

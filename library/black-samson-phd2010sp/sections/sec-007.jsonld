@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/black-samson-phd2010sp/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "IlI.3. The Quantum Group Uv (.6'[(2))",
+  "pageStart": 32,
+  "pageEnd": 36,
+  "contains": [
+    "library/black-samson-phd2010sp/blocks/prose-sec-007",
+    "library/black-samson-phd2010sp/blocks/thm-sec-007-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "provenance": "ingested"
+}

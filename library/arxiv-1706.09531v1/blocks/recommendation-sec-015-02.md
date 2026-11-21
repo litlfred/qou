@@ -1,1 +1,0 @@
-For the f33-term to be leading, being ∼1, we must assign the ﬂavor-charge of 16H to be −a (see 22There is an impression, sometimes conveyed in the literature, that a multiplet like 126H of SO(10) (or equivalently (1, 3R, 10)H of G(2, 2, 4)) is needed to give Majorana masses to the RH neutrinos.

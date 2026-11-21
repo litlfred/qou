@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0306165v1
-doc_title: "arXiv:hep-th/0306165v1 17 Jun 2003"
+doc_title: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial"
 section_id: sec-023-62-path-integral-interpretation
 section_title: "Path Integral Interpretation"
 section_number: 6.2
@@ -8,6 +8,7 @@ pages: 47-49
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
 toc_source: inferred
+doc_brief: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial — We study three-dimensional Chern-Simons theory with complex gauge group SL(2,C), which has many interesting connections"
 ---
 6.2. Path Integral Interpretation
 As we already pointed out earlier, the colored Jones polynomial can be viewed as the

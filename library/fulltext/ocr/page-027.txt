@@ -1,0 +1,54 @@
+The Dilogarithm Function 29
+
+with proving identities F(q) = G(q) between two given q-series considered
+as elements of Ql[{q]]. This is usually done either by purely combinatorial ar-
+guments (such as interpreting the coefficients of gq” in F(q) and G(q) as the
+numbers of partitions of n of two different types and then giving a bijection
+between these) or else via algebraic tricks such as introducing an extra para-
+meter x and showing that both F(x, q) and G(x, q) satisfy the same functional
+equations under x +> qx (as in the proof of Proposition 2 below). The quan-
+tum aspects, on the other hand, are the ones that emerge when one studies
+the asymptotic behavior of the q-series as g tends to 1 (or more generally to
+a root of unity) rather than to 0, an example being the asymptotic expansion
+of Lig(x;e~*) as e > 0 given above.
+
+In the study of g-hypergeometric functions and other q-series, an important
+role is played by the g-analogues
+
+n n—-1
+m= T[G-@"), (aa = T[Q-¢2)
+m=1 i=0
+
+of the classical factorial function and Pochhammer symbol, respectively. One
+can also allow n = oo and set
+oo oo
+@o = [[Q-4"), (a0 = T[a-¢),
+m=1 i=0
+the g-analogues of the classical gamma function; the function (q)o0 is up toa
+factor q'/?4 the modular form (7) (Dedekind eta-function), where q = €?7"7.
+Observe that the finite products can be expressed in terms of the infinite
+ones by (4)n = (4)oo/(g"**; g)oo and (#3 q)n = (#3 )o0/ (9; Q)oo- Following a
+much-practised abuse of notation we will consider q as given and omit it from
+the notations, writing simply (2), and (x). instead of (2; q)n and (a; q)oo «
+This causes no confusion with the notations (q)n and (q)oo since (q)n = (43 @)n
+and (q)oo = (93q)oo, but is an abuse of notation because, for instance, (q)2
+means (1—g)(1—g?) but (x) means (1—zx)(1—gz) rather than (1—x)(1—2”).
+The first surprise is now that the quantum dilogarithm Lig(z; q) is es
+tially equivalent to the q-gamma function (x). ! This is the third part of the
+following simple (and well-known) result which gives the expansions of the
+functions (2)oo, 1/(%)oo and log(x).. as power series in x. All three formulas
+will play a role in §3 in connection with Nahm’s conjecture.
+
+sen-
+
+Proposition 2. For x,q€C with |x| <1, |q| <1 we have the power series
+expansions
+
+= (ayn g(’)
+(v:a)ao = Sy PE gm (7)
+
+n=0
+1 cog”
+(too » Qn’ ®)
+
+— log (2; q)oo = Lig(x;¢) « (9)

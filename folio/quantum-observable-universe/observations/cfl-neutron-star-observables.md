@@ -41,7 +41,7 @@ $$
 **Prediction**: Neutron stars with CFL cores show a cooling plateau at ages $10^2\text{--}10^4$ years. The surface temperature $T_s$ remains higher than predicted by standard cooling models. The Cassiopeia A neutron star ($\sim 330$ years old, $T_s \approx 2 \times 10^6$ K) shows rapid cooling. This constrains but does not rule out a CFL core.
 
 **3. Gravitational wave $f$-mode splitting.**
-The first-order phase transition at $\rho_c$ produces a density discontinuity at the Borromean–CFL interface. This discontinuity modifies the fundamental ($f$) mode oscillation frequency of the neutron star:
+The first-order phase transition at $\rho_c$ produces a density discontinuity at the Borromean–CFL interface. This discontinuity modifies the principal ($f$) mode oscillation frequency of the neutron star:
 
 $$
   \delta f
@@ -53,7 +53,7 @@ $$
   0.996 f_0.
 $$
 
-The density jump is nearly total (the Borromean contribution $V_B / \hbar_q^2 \approx 749$ dominates). The $f$-mode shows a split peak or significant broadening. This is detectable by third-generation gravitational wave observatories (Einstein Telescope, Cosmic Explorer) during neutron star mergers.
+The density jump is nearly total (the Borromean contribution $V_B / \hbar_q^2 \approx 749$ dominates). The $f$-mode shows a split peak or broadening. This is detectable by third-generation gravitational wave observatories (Einstein Telescope, Cosmic Explorer) during neutron star mergers.
 
 **Summary of predictions.**
 | Observable | Borromean-only | With CFL core | Instrument |

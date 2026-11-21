@@ -1,0 +1,63 @@
+Proof of Lemma C.1. By Lemmas C.2, C.3 and C.5, the domain A is included in
+{(t,s,u) |O<t<05, 05<s<1, 0<u<05}.
+
+We put H to be the Hesse matrix of the function
+2 A(t) + A(s — t) — 2A(s) + A(s — u) +2 A(u) -<,
+
+which defines A. By Lemma B.2, it is sufficient to show that H is negative definite.
+We show that H is negative definite, as follows. We have that
+
+2A" (t) + A”(s — t) —A"(s —t) 0
+H= —A"(s—t) —2A"(s) + A’(s—t) + A"(s — u) —A"(s—u)
+0 —A"(s — u) 2A”(u) + A”(s — u)
+2 cot xt + cot 7(s—t) — cot m(s—t) 0
+=-7 —cotm(s—t)  —2cotms+cota(s—t)+cotm(s—u) —cota(s—u)
+0 — cot m(s—u) 2cot tu + cot 7(s—u)
+We put a = cotat, b = —cotms and c = cot tu, noting that they are positive. Further,
+
+noting that cot(a+) = (cot acot 6 — 1)/(cot a + cot 8), we have that
+
+ab—1 ab—1
+1 2a — “ay atb 0
+__ ab— ab— Co eC
+_-H b-1 _ ab—1 __ be-1 be-1
+~ a+b a+b b+e b+e
+T 0 be—1 Qe — be=t
+b+e ° b+e
+
+It is sufficient to show that the above matrix is positive definite. By Lemma C.6 below,
+it is sufficient to show that
+
+ab-1 ab-1 be=1 be=1
+2a atb atb and b bt+e bt+e
+ab—1 b- ab—-1 be-1 Ie — be-1
+
+at+b atb bte bte
+
+are positive definite. Further, by Lemma C.7 below, they are positive definite. Therefore,
+FH is negative definite, as required. Oo
+
+The following two lemmas are used in the above proof of Lemma C.1.
+
+Lemma C.6. Let a; and 6; be real numbers. If O12 \ ond By Pe are positive
+ag AZ Bo By
+definite, then
+
+Qy ay 0
+a2 a3+P3 Be
+0 By By
+
+is positive definite.
+
+ay
+
+Proof. Since (a1) is obtained from
+a2
+
+”) by restricting R? to Rx {0}, (a1) is positive
+3
+
+definite, t.e., a; > 0. Hence, O1 02) is related to ( 0 2 by an elementary
+ag a3 0 a3 —az/ay .
+
+65

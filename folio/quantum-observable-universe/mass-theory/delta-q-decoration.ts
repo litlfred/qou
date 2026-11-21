@@ -14,7 +14,7 @@ import { definition } from "../../schema/builders";
  * Key application: round-18 finding that the H_2 molecular braid's δ_q
  * decoration projects onto the (3,1) and (2,1,1) Wedderburn channels
  * (transpose pair), corresponding to T_{3,5} and T_{2,9} intertwining
- * the 4-strand bound state — see prop:force-carrier-intertwining-correspondence.
+ * the 4-strand bound state — see conj:force-carrier-intertwining-correspondence.
  *
  * Computational implementation: computations/delta_q_decoration.py
  * Cached witness: computations/delta-q-decoration.witness.json
@@ -24,6 +24,9 @@ export default definition({
   title:
     "$q$-dimension decoration $\\delta_q : H_n(q) \\to R^{|\\mathrm{Par}(n)|}$ of the NF basis",
   uses: ["prop:operator-selection-lp"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The decoration lands in the $q$-dimension layer $R^{|\\mathrm{Par}(n)|}$ ([$q$-dimension layer](#def:q-dimension-layer)), the per-irrep coordinate structure that the Markov trace normally collapses." },
+  ],
   defines: ["delta-q-decoration"],
   computation: {
     engine: "python",

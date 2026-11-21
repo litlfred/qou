@@ -8,6 +8,6 @@ $$
 \end{cases}
 $$
 
-For the Descartes universe with $\chi(A) = -6$, the obstruction vanishes at only finitely many levels and persists at all levels $n$ with $\gcd(n, 6) \neq n$.
+For the Descartes universe with $\chi_{\mathrm{eu}}(M_0) = -6$, the obstruction vanishes at only finitely many levels and persists at all levels $n$ with $\gcd(n, 6) \neq n$.
 
 **Physical consequence:** The classical limit $q \to 1$ must pass through infinitely many Kummer levels where the obstruction is nonzero. In the limit, the obstruction is nonzero at a density-$1$ set of levels.

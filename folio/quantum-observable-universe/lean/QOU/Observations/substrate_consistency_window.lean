@@ -47,7 +47,7 @@ measurements each fix $q$ to a narrow range, and these ranges
 overlap.
 
 The Lean encoding below derives the equality from the hypothesis class. -/
--- Ref: [manuscript] quantum-observable-universe/observations/substrate-consistency-window.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/substrate-consistency-window.ts
 theorem substrate_consistency_window (ctx : SubstrateConsistencyWindowContext)
     [hc : SubstrateConsistencyWindowConjecture ctx] :
     ∀ k : ℕ, k < ctx.n_classes →

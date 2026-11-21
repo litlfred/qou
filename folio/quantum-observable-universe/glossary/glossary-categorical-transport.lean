@@ -17,7 +17,7 @@ namespace QOU
     In the QOU framework this is the q-deformed covariant derivative
     condition on sections ψ ∈ τ(J¹(A)). The q-correction comes from
     the categorical q-exterior derivative d_q acting on the jet bundle. -/
--- Ref: [manuscript] Ch. 8 Glossary
+-- Ref: [leitner2026] Ch. 8 Glossary
 structure CategoricalTransport (E : Type*) [AddCommGroup E] where
   /-- The q-deformed covariant derivative `D_∇`, acting on sections.
 

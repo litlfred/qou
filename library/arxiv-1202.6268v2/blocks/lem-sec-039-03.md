@@ -1,0 +1,1 @@
+3. (a) Suppose (A B) is the upper half of a symplectic 2N × 2N matrix. If A has rank r, then any r linearly independent columns of A and their complementary N −r columns in B form a basis for the column space of (A B). (b) There always exists a choice of quad type for which B is non-degenerate (for any ﬁxed choice of redundant edge and meridian path).

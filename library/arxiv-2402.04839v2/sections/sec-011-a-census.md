@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2402.04839v2
-doc_title: "On a volume invariant of 3–manifolds"
+doc_title: "On a volume invariant of 3-manifolds"
 section_id: sec-011-a-census
 section_title: "A census"
 section_number: null
 pages: 12-15
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
-doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.917
+latex_coverage_ratio: 0.995
+doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
 ---
 \label{sec:census}
 

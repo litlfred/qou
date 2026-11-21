@@ -7,8 +7,8 @@
   "bytes": 592678,
   "pages": 7,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -21,17 +21,33 @@
   },
   "doi": null,
   "title": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems",
-  "authors_raw": "Coleridge Faraday,1,\u2217 Ben Bert,1,\u2020 Jack Brand,1,\u2021 Werner Vogelsang,2,\u00a7 and W. A. Horowitz 1, 3,\u00b6",
+  "authors_raw": "Coleridge Faraday,1, ∗Ben Bert,1, † Jack Brand,1, ‡ Werner Vogelsang,2, § and W. A. Horowitz1, 3, ¶",
   "title_lines": [
    "From Lead to Helium: Discovery Potential for",
    "Jet Quenching in the Smallest Collision Systems"
   ],
   "abstract": null,
   "docinfo": {
+   "Title": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems",
    "Author": "Coleridge Faraday; Ben Bert; Jack Brand; Werner Vogelsang; W. A. Horowitz",
-   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems"
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)"
+  },
+  "title_raw": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems",
+   "heading": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems",
+   "outline": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems",
+   "text": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,80 +56,213 @@
    "title": "From Lead to Helium: Discovery Potential for Jet Quenching in the Smallest Collision Systems",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Nuclear modification factor",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Baseline perturbative QCD expectation",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Partonic energy loss predictions",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Results",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Conclusions",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Author Contributions",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "References",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "RAB versus (",
+   "page": 1,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Plot of RAA as a function of pT for π0 hadrons produced in 3He + 3He (left), 4He + 4He (central), and 6Li + 6Li (right) collisions. Predictions from our partonic energy loss model are shown for 0–100% centrality (red) as well as 0–10% centrality (green), where the band represents the envelope of all",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-000-from-lead-to-helium-discovery-potential-for-jet",
@@ -122,8 +271,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1247,
-   "n_words": 185
+   "n_chars": 1249,
+   "n_words": 187,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-introduction",
@@ -132,8 +283,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 5069,
-   "n_words": 812
+   "n_chars": 5113,
+   "n_words": 828,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-002-nuclear-modification-factor",
@@ -142,8 +295,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 1585,
-   "n_words": 240
+   "n_chars": 1620,
+   "n_words": 258,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-003-baseline-perturbative-qcd-expectation",
@@ -152,8 +307,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 3897,
-   "n_words": 644
+   "n_chars": 3943,
+   "n_words": 689,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-004-partonic-energy-loss-predictions",
@@ -161,19 +318,23 @@
    "title": "Partonic energy loss predictions",
    "level": 2,
    "page_start": 3,
-   "page_end": 3,
-   "n_chars": 1482,
-   "n_words": 240
+   "page_end": 4,
+   "n_chars": 5040,
+   "n_words": 820,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-005-results",
    "number": null,
    "title": "Results",
    "level": 2,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 7307,
-   "n_words": 1164
+   "n_chars": 3844,
+   "n_words": 630,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-006-conclusions",
@@ -182,8 +343,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 2250,
-   "n_words": 357
+   "n_chars": 2290,
+   "n_words": 369,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-007-acknowledgments",
@@ -192,8 +355,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 940,
-   "n_words": 139
+   "n_chars": 970,
+   "n_words": 146,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-008-author-contributions",
@@ -202,15 +367,25 @@
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 9500,
-   "n_words": 1351
+   "n_chars": 9659,
+   "n_words": 1497,
+   "label_start": "5",
+   "label_end": "7"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 9,
-  "chars_total": 33277
+  "chars_total": 33728,
+  "furniture_lines_stripped": 6
  }
 }

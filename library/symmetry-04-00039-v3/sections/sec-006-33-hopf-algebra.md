@@ -8,6 +8,7 @@ pages: 18-19
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 These functions turn out to find expression as coefficients in a tensor formalism [2] that describes 
 the operations of fusion and fission, which implicate this model’s identity as a Hopf algebra [14]. 

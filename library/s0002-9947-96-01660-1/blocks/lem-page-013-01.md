@@ -1,0 +1,1 @@
+These linear maps determine an action of the group S3 on this vector bundle, or, in other words, this is an S3-equivariant vector bundle. Furthermore, the action of any permutation on elements of V ∗(a, b, c) is the adjoint of the inverse of the action on V (a, b, c).

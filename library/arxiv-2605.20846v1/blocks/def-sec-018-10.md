@@ -1,0 +1,1 @@
+1.10. (Smaller Relations) Let R, R′ be binary relations on homs of F(G). We say R′ is smaller than R, denoted R′ ⊊R, if R′ a,b ⊆Ra,b for all pairs of objects a, b and there exists at least one pair of objects X, Y such that R′ X,Y ⊊RX,Y . In English, R′ is smaller than R if it can be obtained from R by removing some binary relations.

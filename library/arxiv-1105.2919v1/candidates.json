@@ -1,0 +1,154 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1105.2919v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "6d94496f2093ddd05116bd66aa47443aba198a512121113b0858c2cbda34a684",
+  "file": "1105.2919v1.pdf"
+ },
+ "provenance": {
+  "title": "Chiral e\ufb00ective \ufb01eld theory and nuclear forces",
+  "authors": "R. Machleidta,\u2217, D. R. Entemb",
+  "arxiv": {
+   "id": "1105.2919",
+   "version": "1",
+   "primary_class": "nucl-th",
+   "stamp_date": "15 May 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "proposition": 5
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 5
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 4,
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 5
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Therefore, in terms of quarks and gluons, the nuclear force is a very complicated problem that, nevertheless, can be attacked with brute computing power on a discretized, Euclidean space-time lattice (known as lattice QCD).",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md (p. 6-7)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md",
+   "section_title": "Effective field theory for low-energy QCD",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md (p. 6-7)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-01",
+   "block_iri": "library/arxiv-1105.2919v1/blocks/prop-sec-001-01",
+   "claim_id": "arxiv-1105.2919v1#prop-sec-001-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "In a recent study~\\cite{Bea06}, the neutron-proton scattering lengths in the singlet and triplet $S$-waves have been determined in fully dynamical lattice QCD, with a smallest pion mass of 354 MeV.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md (p. 6-7)",
+   "external_refs": [],
+   "quantitative_values": [
+    "354 MeV"
+   ],
+   "section_file": "sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md",
+   "section_title": "Effective field theory for low-energy QCD",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md (p. 6-7)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-02",
+   "block_iri": "library/arxiv-1105.2919v1/blocks/prop-sec-001-02",
+   "claim_id": "arxiv-1105.2919v1#prop-sec-001-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "In a lattice calculation of a very different kind, the nucleon-nucleon ($NN$) potential was studied~\\cite{IAH07,Ino10}.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md (p. 6-7)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md",
+   "section_title": "Effective field theory for low-energy QCD",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md (p. 6-7)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-03",
+   "block_iri": "library/arxiv-1105.2919v1/blocks/prop-sec-001-03",
+   "claim_id": "arxiv-1105.2919v1#prop-sec-001-03"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "In any case, advanced lattice QCD calculations are under way and continuously improved.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md (p. 6-7)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md",
+   "section_title": "Effective field theory for low-energy QCD",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-2-effective-field-theory-for-low-energy-qcd.md (p. 6-7)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-04",
+   "block_iri": "library/arxiv-1105.2919v1/blocks/prop-sec-001-04",
+   "claim_id": "arxiv-1105.2919v1#prop-sec-001-04"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "3PE was found to be negligible at this order~\\cite{Kai00a,Kai00b}.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-013-32-the-hierarchy-of-nuclear-forces.md (p. 18-19)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-013-32-the-hierarchy-of-nuclear-forces.md",
+   "section_title": "The hierarchy of nuclear forces",
+   "pages": "18-19",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-013-32-the-hierarchy-of-nuclear-forces.md (p. 18-19)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-013-01",
+   "block_iri": "library/arxiv-1105.2919v1/blocks/prop-sec-013-01",
+   "claim_id": "arxiv-1105.2919v1#prop-sec-013-01"
+  }
+ ]
+}

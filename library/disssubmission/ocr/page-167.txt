@@ -1,0 +1,52 @@
+159
+
+Step 2. We now apply step 1 as follows. Let U C V|z be an irreducible
+constituent of the restriction of V to the connected component G° =H, and
+consider the stabilizer
+
+G = {ge€G|gU =U in Repc(H)} CG.
+
+We define the isotypic part W C V|y to be the sum of all subrepresentations
+of V|# which are isomorphic to the chosen representation U. Then W is a
+representation of G*, and a version of Mackey’s lemma shows that
+
+V & Ind@.(W)
+
+is isomorphic to the representation induced from W. Since V € Repc(G)
+is irreducible, it follows that W € Repc(G*) is irreducible as well. But
+the group 2* = G*/H of connected components is abelian by (a) and the
+restriction W|# is isotypic, hence lemma B.3 below shows that even W|1
+is irreducible. Hence in step 1 we can take V; = W, and accordingly each
+of the conjugate representations V},...,Vj, is stable under the group G* and
+irreducible. For the centralizer of the subgroup H in G then
+
+Z(H) @ Ze(H) @ T] C*-idy,,
+i=l
+
+where the first inclusion comes from the fact that the centralizer preserves
+each isotypic component and is therefore contained in G* and where the
+second inclusion comes from Schur’s lemma. So each element of Z(H)
+acts on each V; by a scalar, and by step 1 this scalar is a root of unity of
+bounded order. Hence Zg(H) is a finite group of bounded order.
+
+Step 3. This being said, let us fix as before a connected and reductive
+subgroup H — GI(V). By [99, cor. 2.14] the short exact sequence of inner
+and outer automorphism groups admits a splitting
+
+as
+z
+
+1 —~ Int(H) —~ Aut(H) —~ Out(H) —~> 1
+
+with some section s. In what follows we will fix such a section once and
+for all. If G GI(V) is an irreducible algebraic subgroup with G? = H
+and such that (a) — (c) hold, we want to show that G can be recovered
+from certain finite data involving H and s. To achieve this, consider the
+conjugation action
+int: G —+» Aut(H)
+
+and denote by F = int~!(Im(s)) C G the preimage of the section s. By
+construction we have an exact sequence
+
+1 Zo(H) F —> Out(H)
+

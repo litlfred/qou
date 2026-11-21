@@ -27,7 +27,7 @@ way (`qinv` + `q_unit` + `nabla_q` + `nabla_q_formula`).
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes
+- [leitner2026] §2-quantum-observable-universes
 - [connes1994] Noncommutative Geometry
 -/
 

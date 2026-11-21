@@ -1,0 +1,1 @@
+If a triangulated right derived functor (RF, ηR) exists, then it is unique, up to a unique isomorphism. Namely, if (G, θ) is another triangu- lated right derived functor of F, then there is a unique isomorphism of triangulated functors µ : RF ≃ =⇒G such that θ = (µ ◦idQ) ∗ηR.

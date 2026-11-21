@@ -1,1 +1,1 @@
-For some ﬁxed ρ ∈ [0, ∞)P let Tρ be a map of the form (3.12)/(4.8) and assume
+Let G = (P, E) be a polymer system and assume there exist functions cn : Pn+1 → [0, ∞), for n ∈N, invariant under permutations of the last n arguments such that

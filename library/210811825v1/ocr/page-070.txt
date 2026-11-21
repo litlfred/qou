@@ -1,0 +1,72 @@
+q = Sart[3 +2 Sqrt[2] — 2 Sart[4 + 3 Sart [2]]];
+ulx_, y_] = (y — 1 — Sart[1 — 22 x~2]) (y — Sart[q72 — x72]);
+Integrate [
+Grad[{u[x, y], {x, y}].Grad[u[x, y], {x, y}], {x, 0, 2°
+)
+
+1/4) — 1}, {y,
+Sqrt [a72 — x72], Sqrt[Csc[Pi/8]~2 — (x + Cot[Pi/8])~2]}]
+
+(1/
+2)}
+
+As before, we find a value for n, based on the maximum value of |g (a)|, to ensure
+S;, is accurate enough. Once again, we find that we take the maximum value of x in our
+interval, that is, Qa 1, to achieve this maximum. Our error formula is
+
+g[x_]=Integrate[
+
+Grad[u[x, y], {x, y}]-Grad[u[x, y], {x, y}], {x, 0, 2
+Sqrt[q72 — x72], Sqrt[Csc[Pi/8]~2 — (x + Cot[Pi/8])
+
+adg[x_] = Abs[D[g[x], {x, 4}]];
+
+((10°6) (adg[2~(1/4) — 1] (27(1/4) — 1)~5)/180)~(1/4)
+
+71/4) — 1}, fy,
+~2)}]
+This time we find that we must take n = 150 in Simpson’s formula. Our approximation
+
+is calculated with the following in Mathematica:
+
+gradphi=((27(1/4) — 1)/(450)) Total[{g[0], g[2-(1/4) — 1],
+Total [Table |
+2 gli], {i, 2 (2°(1/4) — 1)/150,
+148 (27(1/4) — 1)/150, (27>(1/4) — 1)/75}]],
+Total [Table |
+4 efi], {i, (2°(1/4) — 1)/150,
+149 (27(1/4) — 1)/150, (27(1/4) — 1)/75}]]}1;
+The symbolic form of this is approximately equal to 0.1164682, correct again to within
+
+106-®. We need an upper bound for ||Vyi||?, so we take
+116469
+1000000°
+We can finally bound the first positive eigenvalue of the Bolza surface by
+
+116469
+28089
+
+It is possible to bound higher eigenvalues using the min-max principle. We will need an
+
+Vell? <
+
+M< Rly) < we 4.1464274.
+
+upper bound for Ag in order to prove that it has multiplicity 4. The Rayleigh quotient of
+
+a function ye that is orthonormal to y; will give us such a bound, if we chose the function
+
+q jately-tthat is, {91, ~2} form a 2 dimensional subspace of Wo? as required by
+Theorem 1.22).
+
+Remark 3.7 Why is it sufficient to only consider two test functions? There are three
+
+functions corresponding to the first eigenvalue on the entire surface, but here we have re-
+
+stricted ourselves to a fundamental domain Q. of a subgroup of the isometry group Isom(B).
+By reflecti tend an eigenfunction on this domain to one on the entire sur-
+face (see overt g-tiy-l i, particular, when we reflect the domain along its “free” edges,
+
+that is, the edges with a Neumann boundary condition, we get a larger region with closed
+
+60

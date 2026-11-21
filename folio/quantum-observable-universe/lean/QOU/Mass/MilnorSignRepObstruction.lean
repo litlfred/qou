@@ -46,7 +46,7 @@
   archimedean construct — `decide` is used only on decidable `Fin 3` / finite
   `Finset` data, never on ring elements.
 
-  -- Ref: [manuscript] docs/audits/2026-07-13-mirror-split-s3-em-functional-attempt.md §D2
+  -- Ref: [leitner2026] docs/audits/2026-07-13-mirror-split-s3-em-functional-attempt.md §D2
   -- Ref: [milnor1954] https://doi.org/10.2307/1969685
 -/
 

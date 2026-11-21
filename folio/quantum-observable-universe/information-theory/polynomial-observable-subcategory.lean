@@ -13,7 +13,7 @@ computational analog of the observable subcategory Bun°(ℙ(V)).
 LaTeX label: `def:polynomial-observable-subcategory`
 
 ## References
-- [manuscript] §9/p-vs-np-boundary
+- [leitner2026] §9/p-vs-np-boundary
 -/
 
 namespace QOU.PvsNPBoundary
@@ -28,14 +28,14 @@ abbrev TreeNode := ℕ
     nodes from which the degree-0 answer is computable in at most
     `polyBound` Planck steps.  Modelled as the subset of nodes for
     which a non-vanishing predicate `gammaPolyNonzero` holds. -/
--- Ref: [manuscript] §9/p-vs-np-boundary
+-- Ref: [leitner2026] §9/p-vs-np-boundary
 def polynomialObservableSubcategory
     (gammaPolyNonzero : TreeNode → Prop) : Set TreeNode :=
   {x : TreeNode | gammaPolyNonzero x}
 
 /-- Membership in R° is exactly the non-vanishing of the
     polynomial-time degree-0 section space. -/
--- Ref: [manuscript] §9/p-vs-np-boundary
+-- Ref: [leitner2026] §9/p-vs-np-boundary
 theorem mem_polynomialObservableSubcategory
     (gammaPolyNonzero : TreeNode → Prop) (x : TreeNode) :
     x ∈ polynomialObservableSubcategory gammaPolyNonzero ↔

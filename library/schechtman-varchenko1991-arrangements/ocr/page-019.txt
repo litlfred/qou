@@ -1,34 +1,51 @@
 Arrangements of hyperplanes and Lie algebra homology 157
-Clearly, a(o).E-ZN-2 acts as multiplication by a(u)e(v) on the subgroup
-AN - 1 - ker(d*: IN -1(G) → QN-2(C)CN -1(). So, it remains to show that
-(3.11.2) det(a(v)· E- ZN -2)limd*~ II II a(L)e(L)d(L).
-i≥1  Le%j
-Lc Ho
+
+_. Clearly, a(v)-E— aN ? acts as multiplication by a(v)* on the subgroup
+AN~t=ker(d*: %~'(@) + I~? (@))— A '(@). So, it remains to show that
+
+(3.11.2) det(a(v)-E—A%~)hima~T] [I a(Lyoem,
+iZ1 Le@;
+LoHo
+
 By 3.10.5 and 3.10.9 the left hand side of (3.11.2) divides the right hand side.
-On the other hand, because of independence of det sn on the choice of Ho.
+On the other hand, because of independence of det S on the choice of Ho,
 and by induction on N, the r.h.s. divides the l.h.s., so they are proportional.
 This completes the proof of Theorem 3.7.
-3.12 Corollary. Maps μ'(L) (3.10.8) are isomorphisms.
+
+3.12 Corollary. Maps p'(L) (3.10.8) are isomorphisms.
+
 4 Topology
-Let  be an arrangement in V, dim V - N. Put Y() =- () H  V; U()= V/Y()
-4.1 Orlik-Solomon theorem. Denote by 2'(U() the de Rham complex of holo-
-morphic forms over U(6). One has canonical isomorphism
-(4.1.1) H(2(U()=H(U (); C)
-For any He& choose an affine equation t =O of H; assign to H a l-form
-(4.1.2) (H) = d log teQ (U (C)
-i(H) doesn't depend on the choice of tu. This assignment defines an inclusion
-of graded -algebras
-(4.1.3) (%)n).0←(). :1
-which is compatible with differentials if we imply the zero differential on α'()
+
+Let @ be an arrangement in V, dim V=N. Put Y(@)= U HcV;U(@)=V\ Y(@).
+
+He€
+
+4.1 Orlik-Solomon theorem. Denote by Q°(U(@)) the de Rham complex of holo-
+morphic forms over U(@). One has canonical isomorphism
+
+(4.1.1) H’(Q'(U(@))= H'(U(@); ©).
+For any He@ choose an affine equation 4, =0 of H; assign to H a I-form
+(4.1.2) 1(H)=d log 4,EQ'(U(@)).
+
+1(H) doesn’t depend on the choice of 4,. This assignment defines an inclusion
+of graded @-algebras
+
+(4.1.3) 1: L(€) 2 Q(U())
+which is compatible with differentials if we imply the zero differential on /"(@)
 [Br, OS].
+
 4.1.4 Theorem (Brieskorn-Orlik-Solomon). 1 is a quasi-isomorphism, i.e. it induces
 the isomorphism
-α()= H(U(); C
-which maps P()z isomorphically to HP(U(); (2πi)PZ)
+
+A (6)=H'(U(6); ©)
+which maps f° (€)z isomorphically to H?(U (@); (2 i)? Z).
 Proof. Follows from [Br, OS] and 1.3.2.
 4.1.5 Corollary.
-(Z:(%)n);H -N(I -)  =(%)X
-i-0
-4.2 For a topological space X denote by C.(X) (resp., C(X)) the complex of
-integer-valued singular chains (resp., cochains) of X. Put C.(V, Y(C):=C.(V)
-*(((%)X 4)0)=(%)X ).0 (%)X)0
+
+N
+x(@)= Y (-* irk H(U(@);Z).
+i=0
+4.2 For a topological space X denote by C,(X) (resp., C’(X)) the complex of
+
+integer-valued singular chains (resp., cochains) of X. Put C,(V, Y(C)):=C,(V)/
+C(Y(@), CV, Y@H(CV, Y())*.

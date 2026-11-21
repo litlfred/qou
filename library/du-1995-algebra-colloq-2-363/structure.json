@@ -1,0 +1,361 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "du-1995-algebra-colloq-2-363",
+ "source": {
+  "file": "du-1995-algebra-colloq-2-363.pdf",
+  "sha256": "d19081c4f214b7036b2e84420e01590c67aee007256385c9b30b93130544c361",
+  "bytes": 145171,
+  "pages": 13,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:22:14Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "A note on quantized Weyl reciprocity at roots of unity",
+  "authors_raw": "RECIPROCITY AT ROOTS OF UNITY",
+  "title_lines": [
+   "A NOTE ON QUANTIZED WEYL"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "weylweb.dvi",
+   "Producer": "Acrobat Distiller 9.0.0 (Windows)",
+   "Creator": "dvips(k) 5.92b Copyright 2002 Radical Eye Software",
+   "CreationDate": "D:20100819170221+10'00'"
+  },
+  "title_raw": "A NOTE ON QUANTIZED WEYL",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "weylweb.dvi",
+   "heading": "Algebra Colloquium , 2 (1995), 363–372. A NOTE ON QUANTIZED WEYL RECIPROCITY AT ROOTS OF UNITY Jie Du School of Mathematics University of New South Wales Sydney, 2052, Australia In this note we show that the epimorphism over Q ( v ) from the quantized enveloping Z [ v, v − 1 ]-form of U . 0. Introdu",
+   "text": "A NOTE ON QUANTIZED WEYL",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "A note on quantized Weyl reciprocity at roots of unity",
+   "basis": "Printed title on page 1 (J. Du, Algebra Colloquium 2 (1995) 363-372); the extracted title was cut at a line break",
+   "extracted_title": "A NOTE ON QUANTIZED WEYL",
+   "corrected_on": "2026-11-15"
+  }
+ },
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "7 inferred entries, 71% of them starting on page(s) 8, 12 of 13 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (7 inferred entries, 71% of them starting on page(s) 8, 12 of 13 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1635,
+   "n_words": 279,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2084,
+   "n_words": 407,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1344,
+   "n_words": 289,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1809,
+   "n_words": 392,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1817,
+   "n_words": 382,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1574,
+   "n_words": 333,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1215,
+   "n_words": 264,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1582,
+   "n_words": 348,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1434,
+   "n_words": 301,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1138,
+   "n_words": 267,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1139,
+   "n_words": 280,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 2175,
+   "n_words": 371,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 306,
+   "n_words": 43,
+   "label_start": "13",
+   "label_end": "13"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 19252,
+  "furniture_lines_stripped": 25
+ }
+}

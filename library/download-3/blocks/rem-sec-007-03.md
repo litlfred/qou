@@ -1,0 +1,1 @@
+Our main examples will be A = A^(M), AQ = A^(M) (or may be matrices over these rings). The ideal AQ is NOT the zero degree part of A. Let g be a Lie subalgebra of Dsr(A) which includes ad (A) and preserves AQ. Suppose, moreover, that τ is a g-invariant trace on AQ.

@@ -1,0 +1,55 @@
+33 Page 14 of 47 S. Jansen, L. Kolesnikov
+
+Theorem 2.9 /f z(-) is a non-negative activity and T (D; z) is absolutely convergent for all
+finite subsets D C Z4, then necessarily
+
+> 2Yyev <0o
+
+Yax
+
+forallx € Zz.
+
+Proof By condition (i) in Theorem 2.7, evaluated at D’ = @, there exists a non-negative
+function a(-) such that
+
+are < eM!) 1 <0,
+Yax
+
+For any polymer Y € X, the value a(Y) is necessarily larger than V(Y) by (2.19) and the
+claim follows. ao
+
+For translationally invariant systems, Theorem 2.9 says that if the activity expansions are
+absolutely convergent, then necessarily the activities are exponentially small in the size of
+the object—by (2.21) we can observe that z(X) = O(exp(—zo|X|)) when |X| — oo. Let
+us emphasize that the necessary exponential decay is an intrinsic limitation of the activity
+expansion, which cannot be eliminated by tinkering with different sufficient convergence
+conditions. Rigorous results for one-dimensional and hierarchical models [13, 15] suggest
+that the exponential decay is not needed for the convergence of the multi-species virial
+expansion, however for general systems this is so far an unproven conjecture.
+
+3 Combinatorial Lemmas: Proof of Theorems 2.1, 2.6, and 2.7
+3.1 Forest Partition Schemes: Alternating Sign Property
+
+To obtain a better understanding of the series p, given by the generating functions of multi-
+rooted graphs, we now consider a particular way to construct the latter—by taking a designated
+spanning forest and successively adding edges to it. This perspective onto multi-rooted graphs
+leads to a forest-graph equality analogous to the familiar tree-graph identity for connected
+graphs [8, Proposition 5] and allows for a direct proof of an alternating sign property for
+the coefficients Wnn+x Of Py, in the case of repulsive interactions (i.e., for non-negative
+potentials).
+
+The forest-graph equality builds on the notion of forest partition schemes—maps that
+assign spanning forests to multi-rooted graphs in Dnjn+x and thereby in a specific manner
+provide partitions of Dy n+k-
+
+In the following, we let F,,»4 denote the set of forest graphs on the vertex set [n + k]
+consisting of n rooted trees, where the vertices {1,...,} are the roots of the trees (recall
+that a forest is an acyclic graph and a tree is a connected acyclic graph).
+
+Definition 3.1 (Forest partition scheme) A forest partition scheme is a family of maps 7p, :
+Dnin+k — Fnn+k Such that for alln € N, k € No, and all F € Fy 14x, there exists a graph
+Rnk(F) € Dan+k with
+
+m, L(LF}) = {G € Dante | EF) C E(G) C E(Rne(F))} = LF. Rn (P)I.
+
+D Springer

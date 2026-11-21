@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0811.2435v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0811.2435v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0811.2435v1",
+  "title": "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations",
   "contains": [
+    "library/arxiv-0811.2435v1/sections/sec-front-matter",
     "library/arxiv-0811.2435v1/sections/sec-000",
     "library/arxiv-0811.2435v1/sections/sec-001",
     "library/arxiv-0811.2435v1/sections/sec-002",
@@ -53,10 +54,17 @@
     "library/arxiv-0811.2435v1/sections/sec-039",
     "library/arxiv-0811.2435v1/sections/sec-040",
     "library/arxiv-0811.2435v1/sections/sec-041",
-    "library/arxiv-0811.2435v1/sections/sec-042"
+    "library/arxiv-0811.2435v1/sections/sec-042",
+    "library/arxiv-0811.2435v1/sections/sec-043",
+    "library/arxiv-0811.2435v1/sections/sec-044",
+    "library/arxiv-0811.2435v1/sections/sec-045",
+    "library/arxiv-0811.2435v1/sections/sec-046",
+    "library/arxiv-0811.2435v1/sections/sec-047",
+    "library/arxiv-0811.2435v1/sections/sec-048",
+    "library/arxiv-0811.2435v1/sections/sec-049"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -66,7 +74,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0811.2435v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0811.2435v1.pdf",
     "source_sha256": "615b04eca83bcadea694b71a073c1bdb91fa776c2659656e13b2e7b727259bb1",
     "pages": 148,

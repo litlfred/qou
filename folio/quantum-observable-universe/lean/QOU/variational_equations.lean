@@ -105,7 +105,7 @@ equations are:
     `D_∇ ψ = 0`.  Naming the conditional conjecture is honest per §3b;
     an instance discharging it (none here) would be the conjecture,
     the open state being the absence of one. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/variational-equations.ts
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/variational-equations.ts
 def variational_equations (ctx : VariationalEquationsContext) : Prop :=
     ctx.sub ctx.R_int ctx.R_int_trace_half = ctx.T_q ∧
     ctx.YM_LHS = ctx.J_psi ∧

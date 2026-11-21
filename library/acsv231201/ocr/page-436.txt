@@ -1,0 +1,51 @@
+418 Combinatorial applications
+
+denotes the (d — 1)-variate normal density with mean km and covariance M.
+It follows that
+sup KVP lek a, — en(r®)| > 0
+
+rirg=k
+
+ask > ,
+
+Remark. We can compute the constant c by comparing (12.23) and (12.24),
+although a LCLT traditionally does not require knowledge of the normalizing
+constant.
+
+Proof Let x(r) = log w(r). Comparing (12.24) to (12.23) in Lemma 12.35,
+it is sufficient to prove that the rate function B(r) = —r - x(r) satisfies
+
+1
+Bikm + y) = -s-y" Moly + Cy + 0(1)
+
+as k > oo with |y| = o(k?/). The rate function is homogeneous of degree one,
+so this is the same as
+
+Bmt+y) = —5y" My + Cy +01), (12.25)
+
+where we have scaled y by 1/k so it is now restricted to be o(k“").
+
+The hyperplane with normal r going through a(r) is a support hyperplane
+to B, so x(r) is a minimizing point for —r - x on B. When r € S we may write
+r = (r°, 1), and we write 2 = (x°, 9(x°)) for points x in a neighborhood of
+a(m) in log VN OB. The function g is concave, because locally the logarithmic
+domain of convergence B is described by {(a,u) : u < g(a)} and logarithmic
+domains of convergence are convex. Thus,
+
+Br’, 1) = inf {-g(a°)-r° - x}
+weRt!
+which is the negative of the convex dual of the convex function —g. As dis-
+cussed in Chapter 6, the convex dual of the quadratic form a 1 a’ Aa rep-
+resented by a positive definite matrix A is represented in the dual basis by the
+inverse matrix r +» r7A~'r, The quadratic Taylor expansion of the convex
+dual at a point r is determined by the quadratic Taylor expansion of the func-
+tion (assuming this is nondegenerate) at the point where the minimum occurs.
+
+The minimizing point for r = m is at the origin and the quadratic term in
+the expansion of —g at the origin is the matrix —M representing the Hessian of
+—g at the origin. Therefore the Taylor expansion of 8 about m on S is given by
+
+1
+fom + y) = Bon) ~ sy" My + Olly!).
+
+The condition |y| = o(k~"/) is exactly what is needed for O(|y|*) to be o(k7!)

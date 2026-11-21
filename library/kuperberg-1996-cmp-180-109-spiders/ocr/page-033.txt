@@ -1,0 +1,44 @@
+Spiders for Rank 2 Lie Algebras 141
+
+flat and its boundary is qualitatively a hexagon:
+
+Cc
+
+d
+
+If w is not connected, then the above argument applies to each connected component
+of w, with the additional observation that at most one component of w can meet all
+three clasps c, d, and e. A component that only meets two clasps is necessarily a
+bare strand.
+
+In the case of interest, e = [+]. In this case, w might consist entirely of bare
+strands, or it might have a component in the shape of a parallelogram or a trapezoid:
+
+d d
+c Cc
+These possibilities exactly match the restrictions on the weights of c and d. O
+Finally, we prove Theorem 6.1:
+Proof. Let A, be the set of all weights A = adj + 6d, with a,b € Zao. Con-
+sider the abelian group Z[A;] of formal sums of elements v(A) for each 1 € Ax.
+
+Then we can define a product in Z[A,] using the dimensions of the clasped web
+spaces:
+
+v(A o(A2) = » |B(cic2c3 )|v(A3) ,
+
+where in the sum each c; is some clasp of weight /;. By Theorem 6.2, there exist
+bijections
+
+U (B(cie2d) x B(c3c4d*)) & B(cyere3¢4) & (Uaeed) x B(c4c\d* )) .
+d d
+
+These bijections imply that multiplication is associative, and therefore Z[A,] is
+a ring. To establish Theorem 6.1, it suffices to check that the map (1) V(A)
+induces an isomorphism from Z[A] to the Grothendieck ring of A2. Using induc-
+tion, it suffices to check that for all 2 € Ax,
+
+o(0)o(A) = v(A),
+
+v(A oA) = v(A +41) 4+ 0A - A, +42) +000 - dy),
+
+v(Ag)o(A) = (A+ dg) + (A = dg + U1) + 0A — A),

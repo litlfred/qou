@@ -1,59 +1,37 @@
-**Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
-and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
-"Core Levi form").**
+**Proposition ("Core Levi form").**
 
-Let $\varrho$ track a [geodesic vortex](#rem:geodesic-vortices) on the [state bundle](#ex:c-quantum-observable-universe) $(\mathcal{S}, \varTheta)$ with [Levi form](#def:levi-form-defect) $\mathcal{L}_\varTheta(V, W) = -id\varTheta(V, \bar{W})$. At $p \in \varrho$ take the horizontal normal plane $N_p\varrho \subset \ker(\varTheta_p)$, with Levi eigenvalues $\lambda_\parallel(p), \lambda_\perp(p)$ ($\lambda_\parallel$ toward an adjacent filament, $\lambda_\perp$ perpendicular) and core radii $a_\parallel(p), a_\perp(p)$ from the half-maximum boundaries of $|\psi|^2$ along $N_p\varrho$. Then:
-
-*(a)* The Levi eigenvalue ratio tightly bounds the core aspect ratio:
+Let $D$ be the three-dimensional flow domain, $\mathbb{R}^3$ or $\mathbb{T}^3$ with the Euclidean metric. This is a statement on $D$, not on the [state bundle](#ex:c-quantum-observable-universe) $\mathcal{S}$: the chapter also uses $\mathcal{S}$ as a surface, where a contact structure cannot exist. Let $u$ be a smooth velocity field on $D$ with vorticity $\omega = \mathrm{curl}\,u$, and on the open set $D_\omega = \{\omega \neq 0\}$ let $\xi = \omega/|\omega|$ be the vorticity direction. For a smooth scalar $f > 0$ on $D_\omega$ set
 
 $$
-  \frac{a_\perp(p)}{a_\parallel(p)}
-  = 
-  \sqrt{\frac{\lambda_\parallel(p)}{\lambda_\perp(p)}}
-   \cdot 
-  \bigl(1 + O(\hbar_q^2)\bigr).
+  \varTheta := f\,\xi^\flat ,
 $$
 
-*(b)* The Levi form condition number over $N_p\varrho$ evaluates as
+where $\xi^\flat$ is the metric dual of $\xi$. Then on $D_\omega$:
+
+*(a)* The plane field is the orthogonal complement of the vorticity line: $\ker \varTheta = \xi^\perp$.
+
+*(b)* $\varTheta \wedge d\varTheta = f^2\,(\xi\cdot\mathrm{curl}\,\xi)\,\mathrm{vol}$. Hence $\ker\varTheta$ is a contact structure at $x$ if and only if $(\xi\cdot\mathrm{curl}\,\xi)(x) \neq 0$, independently of $f$.
+
+*(c)* The [Levi datum](#def:levi-form-defect) of $\ker\varTheta$ is one scalar. For $v, w \in \xi^\perp$,
 
 $$
-  \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p})
-  \equiv
-  \frac{\max(\lambda_\parallel, \lambda_\perp)}
-       {\min(\lambda_\parallel, \lambda_\perp)}
-  = 
-  \max\!\left(
-    \frac{a_\perp}{a_\parallel},
-    \frac{a_\parallel}{a_\perp}
-  \right)^2
-  \cdot
-  \bigl(1 + O(\hbar_q^2)\bigr).
+  d\varTheta(v, w) = f\,(\xi\cdot\mathrm{curl}\,\xi)\;\xi\cdot(v\times w),
 $$
 
-*(c)* The following assertions are strictly equivalent:
+so the restriction of $d\varTheta$ to $\ker\varTheta$ is $f\,(\xi\cdot\mathrm{curl}\,\xi)$ times the area form of the plane. There is no pair of Levi eigenvalues and no Levi condition number in dimension $3$.
 
-1. Core aspect ratio stays bounded: $\sup_{t < T^*} a_\perp(t) / a_\parallel(t) \leq C$.
-2. Levi form condition number stays bounded: $\sup_{t < T^*} \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p}) \leq C^2$.
-3. Contact structure $\ker(\varTheta)$ remains **non-degenerate** exactly at the collision locus $\Sigma$ (both $\lambda_\parallel, \lambda_\perp > 0$ globally on $\Sigma$).
-4. The local [observability axiom](#def:quantum-observable-universe) $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds at all $p \in \Sigma$.
-5. Frobenius integrability fails cleanly: no 2-dimensional integral submanifold of $\ker(\varTheta)$ nucleates at $\Sigma$.
+*(d)* $\omega\cdot\mathrm{curl}\,\omega = |\omega|^2\,(\xi\cdot\mathrm{curl}\,\xi)$. The contact locus of $\ker\varTheta$ is therefore $\{\omega\cdot\mathrm{curl}\,\omega \neq 0\}$.
 
-*(d)* Evaluated for $q > 1$, the continuous [quantum pressure](#rem:madelung-fluid) mechanically enforces
+**Proof.** Part (a) is the definition, since $f > 0$.
 
-$$
-  \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p})
-   \leq 
-  1 + C_0\hbar_q^2
-   <  \infty.
-$$
+For (b), $d\varTheta = df\wedge\xi^\flat + f\,d\xi^\flat$. The first term wedges to zero against $\varTheta$ because $\xi^\flat\wedge\xi^\flat = 0$. The identity $\xi^\flat\wedge d\xi^\flat = (\xi\cdot\mathrm{curl}\,\xi)\,\mathrm{vol}$ then gives the formula, and $f^2 > 0$ gives the criterion.
 
-Conditions (1)--(5) uniformly hold. The [well-posedness theorem](#thm:q-ns-wellposedness) remains intact.
+For (c), $df\wedge\xi^\flat$ vanishes on $\xi^\perp$, and $d\xi^\flat(v,w) = \mathrm{curl}\,\xi\cdot(v\times w)$. For $v, w \perp \xi$ the vector $v\times w$ is parallel to the unit vector $\xi$, so $\mathrm{curl}\,\xi\cdot(v\times w) = (\xi\cdot\mathrm{curl}\,\xi)\,\xi\cdot(v\times w)$.
 
-*(e)* Evaluated at $q = 1$, $\hbar_q = 0$ and isotropic resistance zeroes out. The [vorticity lower bound](#prop:vorticity-lower-bound) and the [counter-example](#conj:ns-counterexample) trigger if and only if condition (3) holds rigidly at $q = 1$.
+For (d), write $\omega = |\omega|\,\xi$. Then $\mathrm{curl}\,\omega = |\omega|\,\mathrm{curl}\,\xi + \nabla|\omega|\times\xi$, and $\xi\cdot(\nabla|\omega|\times\xi) = 0$. $\square$
+
+**Examples.** For the Beltrami flow $u = e^{-\nu t}(\sin z, \cos z, 0)$ on $\mathbb{T}^3$, $\xi\cdot\mathrm{curl}\,\xi = 1$ everywhere, so $\ker\varTheta$ is contact on all of $\mathbb{T}^3$. For a straight anti-parallel vortex pair, $\xi = \pm e_z$ is constant on each core, so $\xi\cdot\mathrm{curl}\,\xi = 0$ there and $\ker\varTheta$ is integrable. This holds whatever the cross-sectional shape of the cores, so the core aspect ratio carries no Levi information.
+
+**Relation to the regularity criteria.** The Constantin–Fefferman condition \cite{constantin1993} and its $\tfrac{1}{2}$-Hölder improvement by Beirão da Veiga and Berselli \cite{beiraodaveiga2002} bound the variation of the line field $[\xi]$ on the high-vorticity set. Such a bound controls all of $\nabla\xi$, and so gives an *upper* bound on $|\xi\cdot\mathrm{curl}\,\xi|$. The Levi scalar is one component of $\nabla\xi$. Neither its vanishing nor its non-vanishing implies either criterion.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -14,7 +14,7 @@ against measured couplings (anti-fishing).
 THE SELECTION RULE (conditional, structural; derived here exactly).
 
   Setting: n = 4 reference braid (covalent worked example of
-  prop:force-carrier-intertwining-correspondence).  Two established layers:
+  conj:force-carrier-intertwining-correspondence).  Two established layers:
     - q-dimension layer (SU_q(2) fibre): A^{(x)4} = V_2 + 3 V_1 + 2 V_0; the
       multiplicity space of the unit is 2-dimensional
       (alpha_k_four_strand_singlet_selection.py) and, under Schur-Weyl
@@ -66,7 +66,7 @@ HONESTY TIER.
     a comparison would be fishing until the archimedean functor for
     non-scalar channels is derived).
 
-Refs: prop:force-carrier-intertwining-correspondence;
+Refs: conj:force-carrier-intertwining-correspondence;
 prop:alpha-em-categorical-trace-ratio; prop:torus-knot-delta-q-writhe;
 thm:em-spectral-completeness; cor:gauge-coupling-uniqueness;
 prop:alpha-em-shift-multiplicative-chain (pole-order primitive);
@@ -222,7 +222,7 @@ def main() -> None:
         "invariant).  NO comparison to measured running couplings (fishing "
         "gate: archimedean functor for non-scalar channels underived)."
     )
-    w.set_content_block("prop:force-carrier-intertwining-correspondence")
+    w.set_content_block("conj:force-carrier-intertwining-correspondence")
     w.add_data("q0", str(q0))
     w.add_data("selection", {
         "EM": {"block": "(2,2) self-transpose scalar", "mediator": "pair "
@@ -245,7 +245,7 @@ def main() -> None:
     w.add_assertion(
         "carrier channels (3,1), (2,1,1) are the unique transpose-dual pair",
         computed=bool(pair_transpose and unique_pair), expected=True,
-        source="prop:force-carrier-intertwining-correspondence channels",
+        source="conj:force-carrier-intertwining-correspondence channels",
     )
     w.add_assertion(
         "slot space dim 2 = #SYT(2,2) (Schur-Weyl identification)",

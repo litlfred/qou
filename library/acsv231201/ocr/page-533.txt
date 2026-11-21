@@ -1,0 +1,46 @@
+D.1 Whitney stratified spaces 515
+
+Stratifications
+
+As a first attempt to perform calculus on an algebraic variety V, one might
+partition V into a finite disjoint union of smooth sets and then work on each
+piece of the partition. Although such smooth partitions can be easily under-
+stood, and easily computed using standard algebro-geometric techniques, they
+are not sufficient for our (and many other) purposes. The problem is that the
+pieces in an arbitrary smooth partition may not fit together nicely; among other
+difficulties, this means the local behavior of V near points in the same piece of
+the partition can be very different.
+
+The issue of determining the “right” type of smooth partition to use for topo-
+logical arguments was taken up by Whitney [Whi65b], who introduced what
+we now call (Whitney) stratifications. An [-decomposition of a space X C R"
+is a finite disjoint union U,¢y Sa of smooth manifolds of various dimensions,
+indexed by a partially ordered set J, such that for every a, 8 € J,
+
+SaNSg#O0 — > SyCSp — > af. (D.1.1)
+
+Definition D.3 (Whitney stratification). Let Z be a closed subset of R’. A
+Whitney stratification of Z is an I-decomposition of Z with the additional
+property that whenever
+
+a < B, and
+the sequences {x; € Sg} and {y; € S,} both converge to some y € Sy, and
+
+the lines €; = x;y; converge to a line €, and
+e the tangent planes 7,,(Sg) converge to a plane T,
+
+then £ C T. We call Z a Whitney stratified space.
+
+Remark. In the original definition, in addition to € C T (the so-called second
+Whitney condition), it was required that T,(S,) € T (the so-called first Whit-
+ney condition). The second condition turns out to imply the first, so the first
+condition is usually omitted.
+
+This definition is well crafted: the conditions are easy to fulfill — for ex-
+ample, every algebraic variety admits a Whitney stratification, see [Whi65b,
+Theorem 18.11] or [Hir73, Theorem 4.8] — and the conditions have strong con-
+sequences (for instance, they are strong enough for stratified Morse theorems
+to hold). Stratifications of algebraic varieties are also effectively computable.
+A classic approach to algorithmic stratification through quantifier elimination
+and real algebraic geometry, relying on cylindrical algebraic decomposition, is
+discussed in [Ran98; MR91]. Recently, [DJ21] and [HN22] have given more

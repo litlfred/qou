@@ -1,0 +1,58 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 209
+
+1
+
+— Exact
+Ke Eul
+og} | = Bier
+— — Magnus-2
+
+0.8 + Magnus-4 4
+
+0.7
+2
+3 0.6 | 4
+Q
+[4
+a
+© 0.5 |
+aI
+g 0.4}
+©
+fc
+
+0.3 |
+
+o2b
+
+0.1}
+
+Fig. 14. Rosen-Zener model: Transition probabilities as a function of y, with € = 0.3 and € = 1. The curves are coded as follows. Solid line represents the
+exact result; E1: solid lines with squares; RK4: solid lines with triangles; M2: dashed lines; M4: dashed-broken lines (indistinguishable from exact result
+in left panel).
+
+Transition Probability
+
+1
+§
+
+Fig. 15. Rosen-Zener model: Transition probabilities as a function of €, with y = 2 and y = 5. Lines are coded as in Fig. 14.
+
+In Fig. 15 we repeat the experiment, now taking y = 1 and y = 2, and for different values of &. In the first case, only the
+Euler method differs considerably from the exact solution, and in the second case this happens for both RK methods.
+
+To increase the accuracy, one can always take smaller time steps, but then the number of evaluations of A(t) increases,
+and this may be computationally very expensive for some problems due to the complexity of the time dependence and/or
+the size of the matrix. In those cases, it is important to have reliable numerical methods, providing the desired accuracy as
+fast as possible or, alternatively, leading to the best possible accuracy at a given computational cost.
+
+A good perspective of the overall performance of a given numerical integrator is provided by the so-called efficiency
+diagram. This efficiency plot is obtained by carrying out the numerical integration with different time steps, corresponding
+to different numbers of evaluations of A(t). For each run, one compares the corresponding approximation with the exact
+solution, and plots the error as a function of the total number of matrix evaluations. The results are better illustrated in a
+double logarithmic scale. In that case, the slope of the curves should correspond, in the limit of very small time steps, to
+(minus) the order of accuracy of the method.
+
+To illustrate this issue, in Fig. 16 we collect the efficiency plots of the previous schemes when € = 0.3 with y = 10
+(left) and y = 100 (right). We have also included the results obtained by several higher order integrators, namely the
+sixth-order RK method (RK6) whose coefficients are collected in (229) and the sixth-order Magnus integrator (M6) given

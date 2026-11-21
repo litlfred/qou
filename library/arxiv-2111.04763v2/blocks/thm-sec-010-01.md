@@ -1,1 +1,1 @@
-The matrixJ m(q)is a fundamental solution to the linearq-difference equation
+The matrix Jm(x, q) is a fundamental solution to the linear q-difference equa- tion Jm+1(x, q) = Jm(x, q)A(x, qm, q), A(x, qm, q) =   −1 x−1 + x −qm+1  , (97) has det(Jm(x, q)) = x−1 −x and satisfies the analytic extension Jm(x, q−1) =    J−m−1(x, q)    . (98)

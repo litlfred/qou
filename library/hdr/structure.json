@@ -6,30 +6,55 @@
   "sha256": "35c190fd2d2a393c8cdfc7083bd44d308c4e37611e0f09fce9929668ec1a91d6",
   "bytes": 1121857,
   "pages": 75,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 32,
+    "reason": "11 of 464 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 52,
+    "reason": "47 of 782 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
   "title": "Hecke algebras, generalisations and representation theory",
   "authors_raw": "The documents may come from teaching and research",
-  "abstract": null,
-  "docinfo": {
-   "Creator": "HAL",
-   "Title": "Hecke algebras, generalisations and representation theory",
-   "Author": "Maria Chlouveraki",
-   "Producer": "PDFLaTeX",
-   "CreationDate": "D:20260426145152+02'00'"
-  },
   "title_lines": [
    "HAL Id: tel-01411063",
    "HAL is a multi-disciplinary open access archive",
    "for the deposit and dissemination of scientific re-",
    "search documents, whether they are published or not"
   ],
-  "title_prev": "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not"
+  "abstract": null,
+  "docinfo": {
+   "Title": "Hecke algebras, generalisations and representation theory",
+   "Author": "Maria Chlouveraki",
+   "Producer": "PDFLaTeX",
+   "Creator": "HAL",
+   "CreationDate": "D:20260426145152+02'00'"
+  },
+  "title_raw": "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Hecke algebras, generalisations and representation theory",
+   "heading": "Hecke algebras, generalisations and representation theory",
+   "outline": "Algebras of Finite Type",
+   "text": "HAL Id: tel-01411063 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not",
+   "corroborated_by": [
+    "heading",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -37,214 +62,1128 @@
    "title": "Algebras of Finite Type",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Blocks",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Symmetrising forms and Schur elements",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Decomposition maps",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Iwahori–Hecke Algebras",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Kazhdan–Lusztig cells",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Schur elements and the a-function",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Families of characters and Rouquier families",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Decomposition maps and canonical basic sets",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Cyclotomic Hecke Algebras",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Hecke algebras for complex reflection groups",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Schur elements and the a-function",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "Families of characters and Rouquier families",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Decomposition maps and canonical basic sets",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Ariki–Koike Algebras",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Combinatorics of partitions and multipartitions",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Schur elements and the a-function",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "Families of characters and Rouquier families",
    "page": 35,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Decomposition maps and canonical basic sets",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 1,
    "title": "Rational Cherednik Algebras",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "Rational Cherednik Algebras at t =1",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "Canonical basic sets for Hecke algebras from rational Cherednik algebras",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Rational Cherednik Algebras at t = 0",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "Families of characters for Hecke algebras from rational Cherednik algebras",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 1,
    "title": "Yokonuma–Hecke Algebras",
    "page": 48,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "Representation theory of Yokonuma–Hecke algebras",
    "page": 49,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "Affine and Cyclotomic Yokonuma–Hecke algebras",
    "page": 51,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "Temperley–Lieb quotients of Yokonuma–Hecke algebras",
    "page": 54,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 2,
    "title": "Knot invariants",
    "page": 57,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 1,
    "title": "Bibliography",
    "page": 68,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "6.1",
+   "title": "The framed links in the skein relation in open braid form",
+   "page": 60,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "57"
+  },
+  {
+   "kind": "figure",
+   "number": "6.2",
+   "title": "The links in the special skein relation in open braid form",
+   "page": 63,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "60"
+  },
+  {
+   "kind": "table",
+   "number": "6.1",
+   "title": "Six P-equivalent pairs of 3-component links which are not Θd-equivalent. Further, in [CJKL, Theorem 7.3], we have proved diagrammatically that the invariants Θd, for d > 1,",
+   "page": 63,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "60"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "-1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "0",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "13",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "14",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "17",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "18",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "20",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "21",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "23",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "25",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "26",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "27",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "29",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "31",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "32",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "33",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "35",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "36",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "38",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "41",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "42",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "45",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "46",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "48",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "51",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "54",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "65",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 16,
+   "n_chars": 47959,
+   "n_words": 7653,
+   "label_start": null,
+   "label_end": "13"
+  },
   {
    "id": "sec-000-algebras-of-finite-type",
    "number": null,
@@ -252,8 +1191,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 267,
-   "n_words": 48
+   "n_chars": 269,
+   "n_words": 50,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
    "id": "sec-001-blocks",
@@ -262,8 +1203,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 943,
-   "n_words": 179
+   "n_chars": 966,
+   "n_words": 196,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
    "id": "sec-002-symmetrising-forms-and-schur-elements",
@@ -272,8 +1215,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 2653,
-   "n_words": 529
+   "n_chars": 2717,
+   "n_words": 560,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
    "id": "sec-003-decomposition-maps",
@@ -282,8 +1227,10 @@
    "level": 2,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 3228,
-   "n_words": 608
+   "n_chars": 3277,
+   "n_words": 642,
+   "label_start": "14",
+   "label_end": "17"
   },
   {
    "id": "sec-004-iwahorihecke-algebras",
@@ -292,8 +1239,10 @@
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 1750,
-   "n_words": 337
+   "n_chars": 1815,
+   "n_words": 402,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
    "id": "sec-005-kazhdanlusztig-cells",
@@ -302,8 +1251,10 @@
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2417,
-   "n_words": 453
+   "n_chars": 2494,
+   "n_words": 510,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
    "id": "sec-006-schur-elements-and-the-a-function",
@@ -312,8 +1263,10 @@
    "level": 2,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 3098,
-   "n_words": 548
+   "n_chars": 3156,
+   "n_words": 577,
+   "label_start": "18",
+   "label_end": "20"
   },
   {
    "id": "sec-007-families-of-characters-and-rouquier-families",
@@ -322,8 +1275,10 @@
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 5391,
-   "n_words": 930
+   "n_chars": 5459,
+   "n_words": 959,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
    "id": "sec-008-decomposition-maps-and-canonical-basic-sets",
@@ -332,8 +1287,10 @@
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 3371,
-   "n_words": 610
+   "n_chars": 3435,
+   "n_words": 636,
+   "label_start": "21",
+   "label_end": "23"
   },
   {
    "id": "sec-009-cyclotomic-hecke-algebras",
@@ -341,186 +1298,283 @@
    "title": "Cyclotomic Hecke Algebras",
    "level": 1,
    "page_start": 26,
-   "page_end": 28,
-   "n_chars": 7011,
-   "n_words": 1260
+   "page_end": 26,
+   "n_chars": 1952,
+   "n_words": 393,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-010-schur-elements-and-the-a-function",
+   "id": "sec-010-hecke-algebras-for-complex-reflection-groups",
+   "number": null,
+   "title": "Hecke algebras for complex reflection groups",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 5160,
+   "n_words": 972,
+   "label_start": "23",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-011-schur-elements-and-the-a-function",
    "number": null,
    "title": "Schur elements and the a-function",
    "level": 2,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 2486,
-   "n_words": 448
+   "n_chars": 2525,
+   "n_words": 458,
+   "label_start": "25",
+   "label_end": "26"
   },
   {
-   "id": "sec-011-families-of-characters-and-rouquier-families",
+   "id": "sec-012-families-of-characters-and-rouquier-families",
    "number": null,
    "title": "Families of characters and Rouquier families",
    "level": 2,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 6708,
-   "n_words": 1140
+   "n_chars": 6761,
+   "n_words": 1154,
+   "label_start": "26",
+   "label_end": "27"
   },
   {
-   "id": "sec-012-decomposition-maps-and-canonical-basic-sets",
+   "id": "sec-013-decomposition-maps-and-canonical-basic-sets",
    "number": null,
    "title": "Decomposition maps and canonical basic sets",
    "level": 2,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 1136,
-   "n_words": 198
+   "n_chars": 1200,
+   "n_words": 224,
+   "label_start": "27",
+   "label_end": "28"
   },
   {
-   "id": "sec-013-arikikoike-algebras",
+   "id": "sec-014-arikikoike-algebras",
    "number": null,
    "title": "Ariki–Koike Algebras",
    "level": 1,
    "page_start": 31,
    "page_end": 32,
-   "n_chars": 2208,
-   "n_words": 406
+   "n_chars": 2196,
+   "n_words": 402,
+   "label_start": "28",
+   "label_end": "29"
   },
   {
-   "id": "sec-014-combinatorics-of-partitions-and-multipartitions",
+   "id": "sec-015-combinatorics-of-partitions-and-multipartitions",
    "number": null,
    "title": "Combinatorics of partitions and multipartitions",
    "level": 2,
    "page_start": 32,
    "page_end": 34,
-   "n_chars": 4215,
-   "n_words": 863
+   "n_chars": 4372,
+   "n_words": 1018,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
-   "id": "sec-015-schur-elements-and-the-a-function",
+   "id": "sec-016-schur-elements-and-the-a-function",
    "number": null,
    "title": "Schur elements and the a-function",
    "level": 2,
    "page_start": 34,
    "page_end": 35,
-   "n_chars": 3707,
-   "n_words": 691
+   "n_chars": 3815,
+   "n_words": 770,
+   "label_start": "31",
+   "label_end": "32"
   },
   {
-   "id": "sec-016-families-of-characters-and-rouquier-families",
+   "id": "sec-017-families-of-characters-and-rouquier-families",
    "number": null,
    "title": "Families of characters and Rouquier families",
    "level": 2,
    "page_start": 35,
    "page_end": 36,
-   "n_chars": 3244,
-   "n_words": 590
+   "n_chars": 3332,
+   "n_words": 639,
+   "label_start": "32",
+   "label_end": "33"
   },
   {
-   "id": "sec-017-decomposition-maps-and-canonical-basic-sets",
+   "id": "sec-018-decomposition-maps-and-canonical-basic-sets",
    "number": null,
    "title": "Decomposition maps and canonical basic sets",
    "level": 2,
    "page_start": 36,
    "page_end": 38,
-   "n_chars": 4798,
-   "n_words": 784
+   "n_chars": 4885,
+   "n_words": 833,
+   "label_start": "33",
+   "label_end": "35"
   },
   {
-   "id": "sec-018-rational-cherednik-algebras",
+   "id": "sec-019-rational-cherednik-algebras",
    "number": null,
    "title": "Rational Cherednik Algebras",
    "level": 1,
    "page_start": 38,
-   "page_end": 41,
-   "n_chars": 8729,
-   "n_words": 1670
+   "page_end": 39,
+   "n_chars": 1947,
+   "n_words": 435,
+   "label_start": "35",
+   "label_end": "36"
   },
   {
-   "id": "sec-019-canonical-basic-sets-for-hecke-algebras-from-rat",
+   "id": "sec-020-rational-cherednik-algebras-at-t-1",
+   "number": null,
+   "title": "Rational Cherednik Algebras at t =1",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 6803,
+   "n_words": 1287,
+   "label_start": "36",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-021-canonical-basic-sets-for-hecke-algebras-from-rat",
    "number": null,
    "title": "Canonical basic sets for Hecke algebras from rational Cherednik algebras",
    "level": 2,
    "page_start": 41,
    "page_end": 44,
-   "n_chars": 10698,
-   "n_words": 2032
+   "n_chars": 10878,
+   "n_words": 2159,
+   "label_start": "38",
+   "label_end": "41"
   },
   {
-   "id": "sec-020-rational-cherednik-algebras-at-t-0",
+   "id": "sec-022-rational-cherednik-algebras-at-t-0",
    "number": null,
    "title": "Rational Cherednik Algebras at t = 0",
    "level": 2,
    "page_start": 44,
    "page_end": 45,
-   "n_chars": 1216,
-   "n_words": 213
+   "n_chars": 1248,
+   "n_words": 215,
+   "label_start": "41",
+   "label_end": "42"
   },
   {
-   "id": "sec-021-families-of-characters-for-hecke-algebras-from-r",
+   "id": "sec-023-families-of-characters-for-hecke-algebras-from-r",
    "number": null,
    "title": "Families of characters for Hecke algebras from rational Cherednik algebras",
    "level": 2,
    "page_start": 45,
    "page_end": 48,
-   "n_chars": 5591,
-   "n_words": 936
+   "n_chars": 5650,
+   "n_words": 940,
+   "label_start": "42",
+   "label_end": "45"
   },
   {
-   "id": "sec-022-yokonumahecke-algebras",
+   "id": "sec-024-yokonumahecke-algebras",
    "number": null,
    "title": "Yokonuma–Hecke Algebras",
    "level": 1,
    "page_start": 48,
    "page_end": 49,
-   "n_chars": 3839,
-   "n_words": 674
+   "n_chars": 3958,
+   "n_words": 793,
+   "label_start": "45",
+   "label_end": "46"
   },
   {
-   "id": "sec-023-representation-theory-of-yokonumahecke-algebras",
+   "id": "sec-025-representation-theory-of-yokonumahecke-algebras",
    "number": null,
    "title": "Representation theory of Yokonuma–Hecke algebras",
    "level": 2,
    "page_start": 49,
-   "page_end": 54,
-   "n_chars": 16542,
-   "n_words": 2980
+   "page_end": 51,
+   "n_chars": 6173,
+   "n_words": 1216,
+   "label_start": "46",
+   "label_end": "48"
   },
   {
-   "id": "sec-024-temperleylieb-quotients-of-yokonumahecke-algebra",
+   "id": "sec-026-affine-and-cyclotomic-yokonumahecke-algebras",
+   "number": null,
+   "title": "Affine and Cyclotomic Yokonuma–Hecke algebras",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 54,
+   "n_chars": 10376,
+   "n_words": 2038,
+   "label_start": "48",
+   "label_end": "51"
+  },
+  {
+   "id": "sec-027-temperleylieb-quotients-of-yokonumahecke-algebra",
    "number": null,
    "title": "Temperley–Lieb quotients of Yokonuma–Hecke algebras",
    "level": 2,
    "page_start": 54,
    "page_end": 57,
-   "n_chars": 10602,
-   "n_words": 1818
+   "n_chars": 10875,
+   "n_words": 2060,
+   "label_start": "51",
+   "label_end": "54"
   },
   {
-   "id": "sec-025-knot-invariants",
+   "id": "sec-028-knot-invariants",
    "number": null,
    "title": "Knot invariants",
    "level": 2,
    "page_start": 57,
    "page_end": 68,
-   "n_chars": 30883,
-   "n_words": 5402
+   "n_chars": 31204,
+   "n_words": 5709,
+   "label_start": "54",
+   "label_end": "65"
   },
   {
-   "id": "sec-026-bibliography",
+   "id": "sec-029-bibliography",
    "number": null,
    "title": "Bibliography",
    "level": 1,
    "page_start": 68,
    "page_end": 75,
-   "n_chars": 22079,
-   "n_words": 3306
+   "n_chars": 21990,
+   "n_words": 3217,
+   "label_start": "65",
+   "label_end": "72"
   }
  ],
  "diagnostics": {
   "pages_without_text": 5,
   "likely_scanned": false,
   "toc_entries": 30,
-  "sections": 27,
-  "chars_total": 168810
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 2,
+    "items": [
+     "1 For a disjoint union L of k knots, with k ⩾1, it holds that:",
+     "2 On crossings involving diﬀerent components the following skein relation holds:"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 31,
+  "chars_total": 218847,
+  "furniture_lines_stripped": 0
  }
 }

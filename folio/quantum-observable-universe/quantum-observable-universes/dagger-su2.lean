@@ -15,7 +15,7 @@ LaTeX label: `ex:dagger-su2`
 
 ## References
 
-- [manuscript] §1 Example: Involutive structure on Rep(SU(2))
+- [leitner2026] §1 Example: Involutive structure on Rep(SU(2))
 -/
 
 namespace QOU.Examples
@@ -24,7 +24,7 @@ namespace QOU.Examples
     definite involutive structure from the Hilbert-space adjoint.
 
     LaTeX: `\label{ex:dagger-su2}` -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure SU2DaggerData where
   /-- Number of linearly independent invariant inner products on V_j. -/
   numInvariantForms : ℕ
@@ -44,7 +44,7 @@ structure SU2DaggerData where
   positive_definite : fundamentalDim > 0
 
 /-- The dagger data for Rep(SU(2)). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2Dagger : SU2DaggerData where
   numInvariantForms := 1
   invariant_ip_unique := rfl

@@ -27,7 +27,7 @@ open QOU.Archimedean
     Two closed braids that are Markov-equivalent share the same
     canonical representative. The `strandCount` field is the `n` of
     the underlying `BraidWord n`. -/
--- Ref: [manuscript] braids-and-knots/hecke-normal-form
+-- Ref: [leitner2026] braids-and-knots/hecke-normal-form
 structure MarkovClass where
   /-- Number of strands of the canonical representative. -/
   strandCount : ℕ
@@ -42,7 +42,7 @@ structure MarkovClass where
     Note: the coarse strand count is derived from the Markov class
     rather than stored separately, so well-formedness
     (`coarseStrands = markovClass.strandCount`) holds by definition. -/
--- Ref: [manuscript] braids-and-knots/confined-particle
+-- Ref: [leitner2026] braids-and-knots/confined-particle
 structure ConfinedParticle where
   /-- Symbol from the particle-shortcut registry
       (e.g. `"proton"`, `"\\He4"`, `"electron"`). -/
@@ -66,7 +66,7 @@ end ConfinedParticle
     semantic content (`confined P q ↔ Slater-strict SDP feasibility
     at (P, q)`) is supplied per-instance via `HasConfinementWitness`
     below; the ambient predicate is just a typeclass accessor. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
+-- Ref: [leitner2026] particle-interactions/confinement-sdp
 class HasConfinementWitness (P : ConfinedParticle) where
   /-- The confinement predicate at parameter `q`. -/
   confined : R_q → Prop
@@ -80,7 +80,7 @@ def confined (P : ConfinedParticle) [h : HasConfinementWitness P] (q : R_q) :
     The earlier `WellFormedConfinedParticle` typeclass is no longer
     needed: `coarseStrands` is now a derived projection through the
     Markov class, so the equality holds by `rfl`. -/
--- Ref: [manuscript] braids-and-knots/confined-particle
+-- Ref: [leitner2026] braids-and-knots/confined-particle
 theorem coarseStrands_eq_markov_strands (P : ConfinedParticle) :
     P.coarseStrands = P.markovClass.strandCount := rfl
 

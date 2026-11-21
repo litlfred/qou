@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-005",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
-  "pageStart": 35,
-  "pageEnd": 36,
-  "text": "../sections/sec-005-7-low-energy-nucleon-nucleus-scattering.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0103005v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0103005v2",
+  "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
+  "pageStart": 27,
+  "pageEnd": 35,
+  "text": "../sections/sec-005-6-density-and-momentum-distributions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0103005v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0103005v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1608.02961v3/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The Quantum Modularity Conjecture",
-  "pageStart": 22,
-  "pageEnd": 33,
-  "text": "../sections/sec-009-5-the-quantum-modularity-conjecture.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.02961v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.02961v3",
+  "title": "Embedded surfaces and M2 branes in the 3d index (k=0)",
+  "pageStart": 20,
+  "pageEnd": 22,
+  "text": "../sections/sec-009-43-embedded-surfaces-and-m2-branes-in-the-3d-ind.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.02961v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.02961v3/manifest.jsonld",
   "provenance": "ingested"
 }

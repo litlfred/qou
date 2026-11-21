@@ -1,1 +1,0 @@
-Thespace Teich(Sg)isatopologicalmanifoldwithbound-

@@ -1,0 +1,44 @@
+1.2 New multivariate methods 9
+
+and that sequences of generating functions obeying (1.4) satisfy a central limit
+theorem and a local central limit theorem.
+
+The GF-sequence method is limited to the single, though important, case
+where the coefficients a, are nonnegative and possess Gaussian (central limit)
+behavior. The work of [BR83] has been greatly expanded upon, but always
+in a similar framework. For example, it has been extended to matrix recur-
+sions [BRW83] and, in [GR92; BR99], from algebraic to algebraico-logarithmic
+singularities of the form F ~ (za g(a))4 log’(1/(za— g(a))). The difficult step
+under these hypotheses is deducing asymptotics from the guasi-power hypoth-
+esis (1.4).
+
+1.2 New multivariate methods
+
+The research presented in this book grew out of several problems encoun-
+tered by the first author, concerning bivariate and trivariate arrays of probabil-
+ities. One might have thought, based on the situation for univariate generating
+functions, that there would be well-known, neatly packaged results yielding
+asymptotic estimates for the probabilities in question. At that time, the most
+recent and complete reference on asymptotic enumeration was a 1995 survey
+of Odlyzko [Od195]. As mentioned in the preface, only six of the over 100
+pages of the survey are devoted to multivariate asymptotics, mainly to the GF-
+sequence results of Bender et al., and its section on multivariate methods closes
+with a call for further work in this area. Evidently, a general asymptotic method
+was not known in the multivariate case, even for the simplest non-trivial class
+of rational functions.
+
+This stands in stark contrast to the univariate theory of rational functions,
+which is trivial in combinatorial applications (see Chapter 3). The relative dif-
+ficulty of the problem in higher dimensions is perhaps unexpected, but connec-
+tions to other areas of mathematics such as Morse theory are quite intriguing.
+These connections, as much as anything else, have caused us to pursue this
+line of research long after the urgency of the original motivating problems had
+faded.
+
+Odlyzko [Od195] describes why he believes multivariate coefficient estima-
+tion to be difficult. First, generating function singularities are no longer iso-
+lated, but generally form (d— 1)-dimensional hypersurfaces, so even multivari-
+ate rational functions have an infinite set of singularities. Second, the multivari-
+ate analogue of the one-dimensional residue theorem is the considerably more
+difficult theory of Leray residues [Ler59]. This theory is fleshed out in the text
+of Aizenberg and Yuzhakov [AY83], who also spend a few pages [AY83, Sec-

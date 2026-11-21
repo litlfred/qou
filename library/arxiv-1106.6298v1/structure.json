@@ -6,10 +6,12 @@
   "sha256": "23b0754067873a045774878d26073722bbc8d527e4209057d37b5bdf7f80b6d4",
   "bytes": 251672,
   "pages": 18,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,20 +21,27 @@
    "stamp_date": "30 Jun 2011"
   },
   "doi": null,
-  "title": "ON THE UNIFICATION OF QUANTUM 3\u2013MANIFOLD INVARIANTS",
+  "title": "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS",
   "authors_raw": "ANNA BELIAKOVA AND THANG LE",
-  "abstract": "In 2006 Habiro initiated a construction of generating functions for Witten\u2013 Reshetikhin\u2013Turaev (WRT) invariants known as uni\ufb01ed WRT invariant s. In a series of papers together with Irmgard B\u00a8 uhler and Christian Blanchet we ex tended his construc- tion to a larger class of 3\u2013manifolds. The uni\ufb01ed invariants provide a s trong tool to study properties of the whole collection of WRT invariants, e.g. their integrality, and hence, their categori\ufb01cation. In this paper we give a survey on ideas and techniques used in the con struction of the uni\ufb01ed invariants.",
+  "title_lines": [
+   "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS"
+  ],
+  "abstract": "In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariants. In a series of papers together with Irmgard B¨uhler and Christian Blanchet we extended his construc- tion to a larger class of 3–manifolds. The uniﬁed invariants provide a strong tool to study properties of the whole collection of WRT invariants, e.g. their integrality, and hence, their categoriﬁcation. In this paper we give a survey on ideas and techniques used in the construction of the uniﬁed invariants.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181123172218-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181123172218-05'00'"
   },
-  "title_prev": "ON THE UNIFICATION OF QUANTUM3\u2013MANIFOLD INVARIANTS",
-  "title_lines": [
-   "ON THE UNIFICATION OF QUANTUM 3\u2013MANIFOLD INVARIANTS"
-  ]
+  "title_raw": "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS 2000 Mathematics Subject Classiﬁcation: 57N10 (primary), 57M25 (secondary) Introduction Background. In the 60s and 70s Rochlin, Lickorish and Kirby established a remarkable connection between links and 3–manifolds. They showed that every 3–manifold",
+   "outline": "Introduction",
+   "text": "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,200 +49,426 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Background",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Unified invariants of integral homology 3\u2013spheres",
+   "title": "Unified invariants of integral homology 3–spheres",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Unified invariants of rational homology 3\u2013spheres",
+   "title": "Unified invariants of rational homology 3–spheres",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Quantum (WRT) invariants",
    "page": 5,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Notations and conventions",
    "page": 5,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The colored Jones polynomial",
    "page": 6,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Kirby moves",
    "page": 6,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Evaluation and Gauss sums",
    "page": 7,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Definition of the WRT invariants",
    "page": 7,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Habiro's cyclotomic expansion of the colored Jones polynomial",
    "page": 8,
    "source": "outline",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Main Results",
    "page": 9,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Strategy of the proof",
    "page": 10,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Laplace transform",
    "page": 10,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Definition of the unified invariant: diagonal case",
    "page": 11,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Diagonalization using lens spaces",
    "page": 11,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Cyclotomic completions of polynomial rings",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "On cyclotomic polynomials",
    "page": 12,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Habiro's results",
    "page": 12,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Taylor expansion",
    "page": 13,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Splitting of Sp and evaluation",
    "page": 14,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "On the Ohtsuki series at roots of unity",
    "page": 14,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Laplace transform, Andrews identity and Frobenius maps",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Laplace transform",
    "page": 15,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Andrews identity",
    "page": 16,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Frobenius isomorphism",
    "page": 16,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Integrality",
    "page": 17,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 761,
+   "n_words": 111,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -242,7 +477,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-background",
@@ -250,202 +487,320 @@
    "title": "Background",
    "level": 2,
    "page_start": 1,
-   "page_end": 5,
-   "n_chars": 10307,
-   "n_words": 1850
+   "page_end": 3,
+   "n_chars": 4824,
+   "n_words": 769,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-13-kirby-moves",
-   "number": "1.3",
-   "title": "Kirby moves",
+   "id": "sec-002-unified-invariants-of-integral-homology-3spheres",
+   "number": null,
+   "title": "Unified invariants of integral homology 3–spheres",
    "level": 2,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 440,
-   "n_words": 72
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2325,
+   "n_words": 420,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-1-quantum-wrt-invariants",
+   "id": "sec-003-unified-invariants-of-rational-homology-3spheres",
+   "number": null,
+   "title": "Unified invariants of rational homology 3–spheres",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3435,
+   "n_words": 632,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-1-quantum-wrt-invariants",
    "number": "1",
    "title": "Quantum (WRT) invariants",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-11-notations-and-conventions",
+   "id": "sec-005-11-notations-and-conventions",
    "number": "1.1",
    "title": "Notations and conventions",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1078,
-   "n_words": 218
+   "n_chars": 1070,
+   "n_words": 210,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-12-the-colored-jones-polynomial",
+   "id": "sec-006-12-the-colored-jones-polynomial",
    "number": "1.2",
    "title": "The colored Jones polynomial",
    "level": 2,
    "page_start": 6,
-   "page_end": 7,
-   "n_chars": 2349,
-   "n_words": 438
+   "page_end": 6,
+   "n_chars": 1273,
+   "n_words": 235,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-14-evaluation-and-gauss-sums",
+   "id": "sec-007-13-kirby-moves",
+   "number": "1.3",
+   "title": "Kirby moves",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 986,
+   "n_words": 183,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-14-evaluation-and-gauss-sums",
    "number": "1.4",
    "title": "Evaluation and Gauss sums",
    "level": 2,
    "page_start": 7,
-   "page_end": 9,
-   "n_chars": 4113,
-   "n_words": 853
+   "page_end": 7,
+   "n_chars": 500,
+   "n_words": 111,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-2-main-results",
+   "id": "sec-009-15-definition-of-the-wrt-invariants",
+   "number": "1.5",
+   "title": "Definition of the WRT invariants",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2309,
+   "n_words": 449,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-16-habiros-cyclotomic-expansion-of-the-colored-j",
+   "number": "1.6",
+   "title": "Habiro's cyclotomic expansion of the colored Jones polynomial",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1136,
+   "n_words": 228,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-2-main-results",
    "number": "2",
    "title": "Main Results",
    "level": 1,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1416,
-   "n_words": 291
+   "n_chars": 1402,
+   "n_words": 276,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-22-laplace-transform",
+   "id": "sec-012-22-laplace-transform",
    "number": "2.2",
    "title": "Laplace transform",
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 1089,
-   "n_words": 204
+   "n_chars": 1077,
+   "n_words": 192,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-21-strategy-of-the-proof",
+   "id": "sec-013-21-strategy-of-the-proof",
    "number": "2.1",
    "title": "Strategy of the proof",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2052,
-   "n_words": 454
+   "n_chars": 964,
+   "n_words": 191,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-24-diagonalization-using-lens-spaces",
+   "id": "sec-014-23-definition-of-the-unified-invariant-diagonal",
+   "number": "2.3",
+   "title": "Definition of the unified invariant: diagonal case",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 977,
+   "n_words": 221,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-24-diagonalization-using-lens-spaces",
    "number": "2.4",
    "title": "Diagonalization using lens spaces",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1193,
-   "n_words": 222
+   "n_chars": 1184,
+   "n_words": 213,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-3-cyclotomic-completions-of-polynomial-rings",
+   "id": "sec-016-3-cyclotomic-completions-of-polynomial-rings",
    "number": "3",
    "title": "Cyclotomic completions of polynomial rings",
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 238,
-   "n_words": 40
+   "n_chars": 237,
+   "n_words": 39,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-31-on-cyclotomic-polynomials",
+   "id": "sec-017-31-on-cyclotomic-polynomials",
    "number": "3.1",
    "title": "On cyclotomic polynomials",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 3007,
-   "n_words": 656
+   "n_chars": 2946,
+   "n_words": 595,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-33-taylor-expansion",
+   "id": "sec-018-33-taylor-expansion",
    "number": "3.3",
    "title": "Taylor expansion",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 496,
-   "n_words": 105
+   "n_chars": 481,
+   "n_words": 90,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-34-splitting-of-sp-and-evaluation",
+   "id": "sec-019-34-splitting-of-sp-and-evaluation",
    "number": "3.4",
    "title": "Splitting of Sp and evaluation",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 763,
-   "n_words": 172
+   "n_chars": 745,
+   "n_words": 154,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-35-on-the-ohtsuki-series-at-roots-of-unity",
+   "id": "sec-020-35-on-the-ohtsuki-series-at-roots-of-unity",
    "number": "3.5",
    "title": "On the Ohtsuki series at roots of unity",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 813,
-   "n_words": 168
+   "n_chars": 797,
+   "n_words": 154,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-4-laplace-transform-andrews-identity-and-frobeni",
+   "id": "sec-021-4-laplace-transform-andrews-identity-and-frobeni",
    "number": "4",
    "title": "Laplace transform, Andrews identity and Frobenius maps",
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3048,
-   "n_words": 657
+   "n_chars": 1594,
+   "n_words": 309,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-43-frobenius-isomorphism",
+   "id": "sec-022-42-andrews-identity",
+   "number": "4.2",
+   "title": "Andrews identity",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1374,
+   "n_words": 285,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-43-frobenius-isomorphism",
    "number": "4.3",
    "title": "Frobenius isomorphism",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 743,
-   "n_words": 147
+   "n_chars": 731,
+   "n_words": 137,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-44-integrality",
+   "id": "sec-024-44-integrality",
    "number": "4.4",
    "title": "Integrality",
    "level": 2,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 1370,
-   "n_words": 319
+   "n_chars": 1417,
+   "n_words": 293,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-025-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 2953,
-   "n_words": 451
+   "n_chars": 2925,
+   "n_words": 423,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 28,
-  "sections": 20,
-  "chars_total": 37468,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 27,
+  "chars_total": 37470,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Beliakova_Le_final.tex",
    "tex_sections": 27,
-   "overlaid": 13,
+   "overlaid": 21,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -453,84 +808,132 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-background",
      "title": "Background",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-13-kirby-moves",
-     "title": "Kirby moves",
-     "prose_ratio": 0.101,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-002-unified-invariants-of-integral-homology-3spheres",
+     "title": "Unified invariants of integral homology 3–spheres",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-003-1-quantum-wrt-invariants",
+     "id": "sec-003-unified-invariants-of-rational-homology-3spheres",
+     "title": "Unified invariants of rational homology 3–spheres",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-1-quantum-wrt-invariants",
      "title": "Quantum (WRT) invariants",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-004-11-notations-and-conventions",
+     "id": "sec-005-11-notations-and-conventions",
      "title": "Notations and conventions",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.948,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-12-the-colored-jones-polynomial",
+     "id": "sec-006-12-the-colored-jones-polynomial",
      "title": "The colored Jones polynomial",
      "prose_ratio": 0.956,
-     "coverage_ratio": 0.54,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-14-evaluation-and-gauss-sums",
+     "id": "sec-007-13-kirby-moves",
+     "title": "Kirby moves",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-14-evaluation-and-gauss-sums",
      "title": "Evaluation and Gauss sums",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 0.871,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-2-main-results",
+     "id": "sec-009-15-definition-of-the-wrt-invariants",
+     "title": "Definition of the WRT invariants",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-16-habiros-cyclotomic-expansion-of-the-colored-j",
+     "title": "Habiro's cyclotomic expansion of the colored Jones polynomial",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-2-main-results",
      "title": "Main Results",
      "prose_ratio": 0.55,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-008-22-laplace-transform",
+     "id": "sec-012-22-laplace-transform",
      "title": "Laplace transform",
-     "prose_ratio": 0.279,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.462,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-009-21-strategy-of-the-proof",
+     "id": "sec-013-21-strategy-of-the-proof",
      "title": "Strategy of the proof",
      "prose_ratio": 0.947,
-     "coverage_ratio": 0.425,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
-    },
-    {
-     "id": "sec-010-24-diagonalization-using-lens-spaces",
-     "title": "Diagonalization using lens spaces",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.963,
+     "coverage_ratio": 0.698,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-3-cyclotomic-completions-of-polynomial-rings",
+     "id": "sec-014-23-definition-of-the-unified-invariant-diagonal",
+     "title": "Definition of the unified invariant: diagonal case",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-24-diagonalization-using-lens-spaces",
+     "title": "Diagonalization using lens spaces",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-3-cyclotomic-completions-of-polynomial-rings",
      "title": "Cyclotomic completions of polynomial rings",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -538,7 +941,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-012-31-on-cyclotomic-polynomials",
+     "id": "sec-017-31-on-cyclotomic-polynomials",
      "title": "On cyclotomic polynomials",
      "prose_ratio": 0.991,
      "coverage_ratio": 0.982,
@@ -546,15 +949,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-013-33-taylor-expansion",
+     "id": "sec-018-33-taylor-expansion",
      "title": "Taylor expansion",
      "prose_ratio": 0.889,
-     "coverage_ratio": 0.833,
+     "coverage_ratio": 0.842,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-34-splitting-of-sp-and-evaluation",
+     "id": "sec-019-34-splitting-of-sp-and-evaluation",
      "title": "Splitting of Sp and evaluation",
      "prose_ratio": 0.938,
      "coverage_ratio": 0.969,
@@ -562,7 +965,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-015-35-on-the-ohtsuki-series-at-roots-of-unity",
+     "id": "sec-020-35-on-the-ohtsuki-series-at-roots-of-unity",
      "title": "On the Ohtsuki series at roots of unity",
      "prose_ratio": 0.951,
      "coverage_ratio": 0.929,
@@ -570,15 +973,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-016-4-laplace-transform-andrews-identity-and-frobeni",
+     "id": "sec-021-4-laplace-transform-andrews-identity-and-frobeni",
      "title": "Laplace transform, Andrews identity and Frobenius maps",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.683,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-43-frobenius-isomorphism",
+     "id": "sec-022-42-andrews-identity",
+     "title": "Andrews identity",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-43-frobenius-isomorphism",
      "title": "Frobenius isomorphism",
      "prose_ratio": 0.894,
      "coverage_ratio": 0.913,
@@ -586,15 +997,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-018-44-integrality",
+     "id": "sec-024-44-integrality",
      "title": "Integrality",
-     "prose_ratio": 0.983,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-references",
+     "id": "sec-025-references",
      "title": "References",
      "result": "no matching \\section"
     }

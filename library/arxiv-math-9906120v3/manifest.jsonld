@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9906120v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9906120v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9906120v3",
+  "title": "Discrete orthogonal polynomial ensembles and the Plancherel measure",
   "contains": [
     "library/arxiv-math-9906120v3/sections/sec-front-matter",
     "library/arxiv-math-9906120v3/sections/sec-000",
@@ -20,7 +20,7 @@
     "library/arxiv-math-9906120v3/sections/sec-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -35,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9906120v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9906120v3.pdf",
     "source_sha256": "436982ef45e940bd6b66fa812f8bc38804cabe34d274584de05fe4d6cfeb8bfd",
     "pages": 38,
@@ -46,8 +48,8 @@
       "stamp_date": "24 Feb 2004"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

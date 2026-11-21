@@ -1,0 +1,24 @@
+{
+  "probe": "triality_hypercharge_y2_probe",
+  "bean": "qou-99qc",
+  "id": "ε-Y2",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "no q at all: exact Fraction arithmetic over rational hypercharges and integer strand counts",
+  "scan": "Y = k/36, |Y| <= 4, strand lists up to length 6",
+  "solutions": [
+    "-11/3",
+    "-7/3",
+    "-5/3",
+    "-1/3",
+    "1/3",
+    "5/3",
+    "7/3",
+    "11/3"
+  ],
+  "all_of_form_pm1/3_plus_2Z": true,
+  "residual_freedom": "sign of Y/2 mod 1 (±1/6) and an integer shift Y -> Y + 2k",
+  "consequence_eps_EM1_asymmetry_2Y": {
+    "-1/3": "-2/3",
+    "1/3": "2/3"
+  }
+}

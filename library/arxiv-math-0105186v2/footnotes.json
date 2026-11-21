@@ -1,0 +1,10862 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0105186v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "1",
+   "text": "Called“exactMorseﬁbration”in[28]. The present terminology is more in line with general usage, since the notion is closely related to, even though not quite the same as, the symplectic Lefschetz ﬁbrations considered by Donaldson, Gompf, and others.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "with values in functions on theﬁbres, and is given by (Z"
+    },
+    {
+     "page": 6,
+     "context": "frontofdt"
+    },
+    {
+     "page": 6,
+     "context": "D(1):E"
+    },
+    {
+     "page": 6,
+     "context": "D(1):E1→E"
+    },
+    {
+     "page": 6,
+     "context": "dependent) Hamiltonian on E"
+    },
+    {
+     "page": 6,
+     "context": "dependent) Hamiltonian on E1which vanishes near ∂E"
+    },
+    {
+     "page": 6,
+     "context": "ρ ∈Sympe(M).Tomakethisinto anexactsymplecticﬁbrationoverS"
+    },
+    {
+     "page": 6,
+     "context": "(ii)Θ|Q = dKQ + π∗κQforsomeκQ∈Ω"
+    },
+    {
+     "page": 7,
+     "context": "SbethesurfaceobtainedbyidentifyingC"
+    },
+    {
+     "page": 7,
+     "context": "give some details of this.To start, take oriented collars ψ"
+    },
+    {
+     "page": 7,
+     "context": "s of this.To start, take oriented collars ψ1: (−1; 0]×R/Z →S"
+    },
+    {
+     "page": 7,
+     "context": "ψ2:[0; 1) × R/Z→S2aroundC"
+    },
+    {
+     "page": 7,
+     "context": "byusingψ2◦(ψ"
+    },
+    {
+     "page": 7,
+     "context": "Ψ"
+    },
+    {
+     "page": 7,
+     "context": "E"
+    },
+    {
+     "page": 7,
+     "context": "π"
+    },
+    {
+     "page": 7,
+     "context": "ψ"
+    },
+    {
+     "page": 7,
+     "context": "S"
+    },
+    {
+     "page": 7,
+     "context": "(Ek, πk)alongCkviaΨ2◦(Ψ"
+    },
+    {
+     "page": 7,
+     "context": "ofthesurfaceS"
+    },
+    {
+     "page": 7,
+     "context": "ofthesurfaceS1byp(z)=zforz/∈im(ψ"
+    },
+    {
+     "page": 7,
+     "context": "ofthesurfaceS1byp(z)=zforz/∈im(ψ1),p(ψ"
+    },
+    {
+     "page": 7,
+     "context": "ofthesurfaceS1byp(z)=zforz/∈im(ψ1),p(ψ1(s, t))=ψ"
+    },
+    {
+     "page": 7,
+     "context": "collapsesasmallneighbourhoodofC"
+    },
+    {
+     "page": 7,
+     "context": "place(E"
+    },
+    {
+     "page": 7,
+     "context": "place(E1, π"
+    },
+    {
+     "page": 7,
+     "context": "place(E1, π1)byitspullbackunderp,itbecomesﬂatnearC"
+    },
+    {
+     "page": 7,
+     "context": "ﬁbration"
+    }
+   ],
+   "block": "library/arxiv-math-0105186v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "2",
+   "text": "ThedeﬁnitionofdcinthispaperissuchthatωC=−ddc( 1",
+   "marks": [
+    {
+     "page": 8,
+     "context": "is(J0, j0)-holomorphicnearEcrit,andtheHessianD"
+    },
+    {
+     "page": 8,
+     "context": "nondegenerateasacomplexquadraticform.Theclosedtwo-formΩ∈Ω"
+    },
+    {
+     "page": 8,
+     "context": "Lemma1.5.Ifβ∈Ω"
+    },
+    {
+     "page": 8,
+     "context": "(ξ−1◦π ◦Ξ)(x) = x"
+    },
+    {
+     "page": 8,
+     "context": "1+ · · · + x"
+    },
+    {
+     "page": 8,
+     "context": "criticalpointofπ.ThentherearesmoothfamiliesΩµ∈Ω"
+    },
+    {
+     "page": 9,
+     "context": "Lemma1.7.LetωbeaK¨ahlerformontheballB= B"
+    },
+    {
+     "page": 9,
+     "context": "which has constant coeﬃcients near the origin.For this write"
+    },
+    {
+     "page": 9,
+     "context": "C"
+    },
+    {
+     "page": 9,
+     "context": "withΘ=Θ0outsideim(Ξ)andsatisﬁesdΘ1=Ω1liesinH"
+    }
+   ],
+   "block": "library/arxiv-math-0105186v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "3",
+   "text": "Thishaslittleornothingtodowiththeusualtopologicalnotionofframedmanifold.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "Let(M, ω, θ)beanexactsymplecticmanifold.Aframed"
+    }
+   ],
+   "block": "library/arxiv-math-0105186v2/blocks/prose-sec-003"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p009-2",
+   "page": 9,
+   "mark": "4",
+   "text": "|z|2).Thisdiﬀersfromthe majority convention by a negative constant.",
+   "block": "library/arxiv-math-0105186v2/blocks/prose-sec-002"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "Let (M"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "Let (M2"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "convex.Assumeinadditionthat[ω, α]∈H"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "ferreddiﬀeomorphismf: S"
+  },
+  {
+   "page": 1,
+   "mark": "0",
+   "context": "submanifoldsL"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "submanifoldsL0, L"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "HF(L, L"
+  },
+  {
+   "page": 1,
+   "mark": "0",
+   "context": "HF(L, L1) ⊗HF(L"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "whichtheEulercharacteristicofFloercohomologyis(−1)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": " which one ﬁxes a trivialization of the bicanonical bundle K"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "HF(L"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "HF(L0, L)∼=HF(τL(L"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "considerationusingthedualityHF(L"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "considerationusingthedualityHF(L0, L"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "considerationusingthedualityHF(L0, L1)∼=HF(L"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "considerationusingthedualityHF(L0, L1)∼=HF(L1, L"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "∂M, R) suchthatφ∗θ′= θ + dKφ.WedenotebySymp"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "Inparticular,Symp"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "special situation which will occur later on is that φ ∈Symp"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Ω∈Ω"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Ω∈Ω2(E) and Θ ∈Ω"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "Ω2(E) and Θ ∈Ω1(E), satisfying dΘ = Ω, such that each ﬁbre E"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "nd Θ ∈Ω1(E), satisfying dΘ = Ω, such that each ﬁbre Ezwith ω"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "Ω|E"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "Ω|Ezandθ"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "Ω|Ezandθz=Θ|E"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "z∈Sandconsiderthetrivialﬁbration˜π:˜E=S× E"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Lemma1.1.Takeapointz∈Sandachartψ:U→S,withU⊂R"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "Ψ : U× E"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "Ψ : U× Ez→ψ∗E,suchthatΨ | {0} × E"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "HereH"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "HereH1, . . . , H"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "HereH1, . . . , Hk, R ∈C∞(U ×E"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": " . . . , Hk, R ∈C∞(U ×Ez, R)arefunctionswhichvanishnearU ×∂E"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "andtithecoordinatesonR"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "◦Ψ"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "◦Ψ1: (U, 0) →(Symp"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "◦Ψ1: (U, 0) →(Sympe(E"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "Symp"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "ρ"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "ρc:E"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "ρc:Ec(a)→E"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "isomorphisms,andlieinSymp"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "iH"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "iHi dt"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "c(E"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "c(Ez\\ ∂E"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "thatT Ex=T E"
+  },
+  {
+   "page": 5,
+   "mark": "v",
+   "context": "x⊕T E"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "xsplitsinto"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "xsplitsintoahorizontaland"
+  },
+  {
+   "page": 5,
+   "mark": "v",
+   "context": "T E"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "x= ker(Dπ"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "T E"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "x= {X∈T E"
+  },
+  {
+   "page": 5,
+   "mark": "v",
+   "context": "x= {X∈T Ex:Ω(X, ·)|T E"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "Each Z∈T S"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "Each Z∈T Szhas a unique lift Z"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "Each Z∈T Szhas a unique lift Zh∈C∞(T E"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "Each Z∈T Szhas a unique lift Zh∈C∞(T Eh|E"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "sameconnectionasbefore(conversely,onecanshowthatgivenaSymp"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "−∂H"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "+∂H"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "−ω"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "−ωz(X"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "−ωz(Xi, X"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "dt"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "dti ∧dt"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "H"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "with values in functions on theﬁbres, and is given by (Z1, Z"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "ues in functions on theﬁbres, and is given by (Z1, Z2) 7→Ω(Z"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "1, Z"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "frontofdt1 ∧dt"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "frontofdt1 ∧dt2in(1.4)isnonnegative;orequivalently,ifΩ|T E"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "tivefortheinducedorientationofT E"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "ρ ∈Symp"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "ﬁbre E"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "such that each ﬁbre Q"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "such that each ﬁbre Qc(t)⊂E"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "whoserestrictionsKQ"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "whoserestrictionsKQc(t)= KQ|Q"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "whoserestrictionsKQc(t)= KQ|Qc(t)maketheQ"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "(iii)themapsρ"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "(iii)themapsρc|[s;"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "(iii)themapsρc|[s;s′]:E"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "(iii)themapsρc|[s;s′]:Ec(s)→E"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "(iii)themapsρc|[s;s′]:Ec(s)→Ec(s′)satisfyρ"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "(iii)themapsρc|[s;s′]:Ec(s)→Ec(s′)satisfyρc|[s;"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "(iii)themapsρc|[s;s′]:Ec(s)→Ec(s′)satisfyρc|[s;s′](Q"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "(iii)themapsρc|[s;s′]:Ec(s)→Ec(s′)satisfyρc|[s;s′](Qc(s))=Q"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "twoorientedsurfacesS"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "twoorientedsurfacesSk,k=1, 2,andboundarycirclesC"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "twoorientedsurfacesSk,k=1, 2,andboundarycirclesCk⊂∂S"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "SbethesurfaceobtainedbyidentifyingC1, C"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "posethatwehaveexactsymplecticﬁbrations(E"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "posethatwehaveexactsymplecticﬁbrations(Ek, π"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "posethatwehaveexactsymplecticﬁbrations(Ek, πk, Ω"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "posethatwehaveexactsymplecticﬁbrations(Ek, πk, Ωk, Θ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "posethatwehaveexactsymplecticﬁbrations(Ek, πk, Ωk, Θk)overS"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "monodromiesaroundC"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "additionally that (E"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "additionally that (Ek, π"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "dditionally that (Ek, πk) is ﬂat (has zero curvature) near C"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ψ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ψ2:[0; 1) × R/Z→S"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ψ2:[0; 1) × R/Z→S2aroundC1, C"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "byusingψ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "hereshouldbeanexact symplecticisomorphism betweentheﬁbresofE"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "ψ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "ψk(0, 0),say,whichrelatesthemonodromiesaroundψ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Ψ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "E"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ψ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "suchthat(Ψ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "suchthat(Ψk)∗Ω"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "suchthat(Ψk)∗Ωk=ΩEρand(Ψ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "suchthat(Ψk)∗Ωk=ΩEρand(Ψk)∗Θ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "suchthat(Ψk)∗Ωk=ΩEρand(Ψk)∗Θk=ΘEρ+ dR"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "suchthat(Ψk)∗Ωk=ΩEρand(Ψk)∗Θk=ΘEρ+ dRkforsomefunctionsR"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Clearly, one can introduce modiﬁed forms˜Θ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Clearly, one can introduce modiﬁed forms˜Θk= Θ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Clearly, one can introduce modiﬁed forms˜Θk= Θk−d˜R"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "˜R"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "˜Rk,insuchawaythat(Ψ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "˜Rk,insuchawaythat(Ψk)∗˜Θ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "(E"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "(Ek, π"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "(Ek, πk)alongC"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(Ek, πk)alongCkviaΨ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "andtheΩ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "andtheΩk,˜Θ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "ofthecurvatureof(E"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "ofthecurvatureof(Ek, π"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Remark1.4.Theﬂatnessconditionon(E"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Remark1.4.Theﬂatnessconditionon(Ek, π"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Remark1.4.Theﬂatnessconditionon(Ek, πk)nearC"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Ecrit⊂E,Scrit⊂Sthesetofcriticalpointsresp.ofcriticalvalues.J"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "mustbenondegenerateonT E"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "x=ker(Dπ"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "x=ker(Dπx)foreach"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "x=ker(Dπx)foreachx∈E,and"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "formforJ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "formforJ0insomeneighbourhoodofEcrit.Θ∈Ω"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "Foranyx∈EthereisadecompositionT E"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "Foranyx∈EthereisadecompositionT Ex=T E"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "x⊕T E"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "xwithT E"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "LefschetzﬁbrationhasnonnegativecurvatureifΩ|T E"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "x≥0foreach"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "thatifx/∈Ecritisclosetoacriticalpoint,Ω|T E"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "atthestructureofthecriticalpoints.Takez"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "atthestructureofthecriticalpoints.Takez0∈Scritandlocal j"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "thatξ(0)=z"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "thatξ(0)=z0.Byassumptionthereisauniquecriticalpointx"
+  },
+  {
+   "page": 8,
+   "mark": "z",
+   "context": "thatξ(0)=z0.Byassumptionthereisauniquecriticalpointx0∈E"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "thatξ(0)=z0.Byassumptionthereisauniquecriticalpointx0∈Ez"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "W⊂C"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "W⊂Cn+1andaJ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "W⊂Cn+1andaJ0-holomorphicchartΞ : W→EwithΞ(0) = x"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "isthestandardnondegeneratequadraticformonC"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "thatΞ∗ΩisthestandardK¨ahlerformonW⊂C"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "criticalpointofπ.ThentherearesmoothfamiliesΩµ∈Ω2(E),Θµ∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "(i)Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "(i)Ω0= Ω,Θ"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "(ii)forallµ,Ωµ= Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "(ii)forallµ,Ωµ= Ω0andΘµ= Θ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "re is a holomorphicMorse chart (ξ, Ξ) around x0such that Ξ∗Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": " a holomorphicMorse chart (ξ, Ξ) around x0such that Ξ∗Ω1,Ξ∗Θ"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "P dx"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "P dxk∧d¯x"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "P x"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "P xkd¯x"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "P xkd¯xk −¯x"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "P xkd¯xk −¯xkdx"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Lemma1.7.LetωbeaK¨ahlerformontheballB= B2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "inC"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "s constant coeﬃcients near the origin.For this write2ω= β+dd"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "ω′′= ω −dd"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "ω′′= ω −ddcfǫ= β + dd"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "β′= β−tωC"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "β′= β−tωCn+1is still K¨ahler.Take a two-form γon C"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "toωC"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "toωCn+1outsideacompactsubset;thiscanbeobtainedasγ=−dd"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "1.7 says that one can ﬁnd a two-form Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "ays that one can ﬁnd a two-form Ω1on Ewhich agrees with Ω= Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "im(Ξ),suchthatΞ∗Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "smallconstantc>0.TheobstructiontoﬁndingaΘ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "smallconstantc>0.TheobstructiontoﬁndingaΘ1∈Ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "withΘ=Θ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "withΘ=Θ0outsideim(Ξ)andsatisﬁesdΘ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "withΘ=Θ0outsideim(Ξ)andsatisﬁesdΘ1=Ω"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "2n + 2)-dimensional ball;which iszero.Anarbitrarily chosen Θ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "bemodiﬁedtomakeΞ∗Θ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "thatΞ∗Ω"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "thatΞ∗Ω1= ωCn+1andΞ∗Θ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "ConsiderT=T∗S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "ConsiderT=T∗SnwithitsstandardformsωT∈Ω"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "ConsiderT=T∗SnwithitsstandardformsωT∈Ω2(T ),θT∈Ω"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "concretecomputationsweusethecoordinatesT={(u, v)∈R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "concretecomputationsweusethecoordinatesT={(u, v)∈Rn+1× R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "miltoniancircleactionσonT\\ T (0)which,afteridentifyingT∼=T S"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "hestandardmetric,canbedescribedasthenormalizedgeodesicﬂowonS"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "σ"
+  },
+  {
+   "page": 10,
+   "mark": "u",
+   "context": "σt(u, v) = (cos(t)u −sin(t)||u||v, cos(t)v + sin(t)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "commute, so that φH"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "tφH"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "= φH"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "= φH1+H"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": ".Decomposing Hinto H"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "2π= φH"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "σkπ=A"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "Symp"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "Lemma1.9.Supposethatτisδ-wobbly.LetF"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "Lemma1.9.Supposethatτisδ-wobbly.LetF0= T (λ)"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Lemma1.9.Supposethatτisδ-wobbly.LetF0= T (λ)y0,F"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "Lemma1.9.Supposethatτisδ-wobbly.LetF0= T (λ)y0,F1= T (λ)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ﬁbresofT (λ)→S"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "ﬁbresofT (λ)→Snatpointsy"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ﬁbresofT (λ)→Snatpointsy0, y"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "dist(y"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "dist(y0, y"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "dist(y0, y1) ≥2πδ.Thenτ(F"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "dist(y0, y1) ≥2πδ.Thenτ(F0)intersectsF"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "2πR′(||y||) = dist(y"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2πR′(||y||) = dist(y0, y"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "spaceofT (λ)atycanbeidentiﬁedsymplecticallywithC"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "thesubspacestangenttoτ(F0),T (0),F1becomerespectively,R"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "thesubspacestangenttoτ(F0),T (0),F1becomerespectively,Rn,e"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ubspacestangenttoτ(F0),T (0),F1becomerespectively,Rn,e2πi/3R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "eπi/3R"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Proof.Considerﬁrstthecasewheny"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "Proof.Considerﬁrstthecasewheny1̸= A(y"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Proof.Considerﬁrstthecasewheny1̸= A(y0).Supposethaty∈F"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "withτ−1(y)∈F"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "withτ−1(y)∈F0.ByidentifyingT∼=T S"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "c′(1),wherec : [0; 1] →S"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "c′(1),wherec : [0; 1] →Snistheminimalgeodesicfromc(0) = y"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "erec : [0; 1] →Snistheminimalgeodesicfromc(0) = y0toc(1) = y"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "oreover,theangleofrotationmustbe2πR′(||y||)=||c′(1)||=dist(y"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ver,theangleofrotationmustbe2πR′(||y||)=||c′(1)||=dist(y0, y"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Takingthederivative,oneseesthatavectorY∈T (F"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "Takingthederivative,oneseesthatavectorY∈T (F1)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Takingthederivative,oneseesthatavectorY∈T (F1)y∼=T (S"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "Takingthederivative,oneseesthatavectorY∈T (F1)y∼=T (Sn)"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Takingthederivative,oneseesthatavectorY∈T (F1)y∼=T (Sn)y"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "(T τ)−1(Y ) ∈T (F"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "showsthatY= 0.Thereforey∈τ(F"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "showsthatY= 0.Thereforey∈τ(F0) ∩F"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Now consider the case when y"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "Now consider the case when y1= A(y"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Now consider the case when y1= A(y0).Then y= y"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "sider the case when y1= A(y0).Then y= y1 clearly lies in τ(F"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "r the case when y1= A(y0).Then y= y1 clearly lies in τ(F0)∩F"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "thenotationfromtheproofofLemma1.8,τ(F0)=φH"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "2π(A(F"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2π(A(F0))=φH"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2π(F"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "andyisastationarypointof(φH"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "t).ItfollowsthatT (τ(F"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "t).ItfollowsthatT (τ(F0))"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "quadraticform"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2Hess(H"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "2Hess(H1)"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "2Hess(H1)y.IfoneidentiﬁesthetangentspacetoTat"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "T (S"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "T (Sn)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "T (Sn)y⊕T (S"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "T (Sn)y⊕T (Sn)"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "T (Sn)y⊕T (Sn)yinsuchawaythattheﬁrstsummandisT (F"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "T (Sn)y⊕T (Sn)yinsuchawaythattheﬁrstsummandisT (F1)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "TakingsomeisomorphismT (S"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "TakingsomeisomorphismT (Sn)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "TakingsomeisomorphismT (Sn)y∼=R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "TakingsomeisomorphismT (Sn)y∼=RnanditscomplexiﬁcationT (S"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "TakingsomeisomorphismT (Sn)y∼=RnanditscomplexiﬁcationT (Sn)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "T (S"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "T (Sn)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "T (Sn)y∼=C"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "T (Sn)y∼=Cn,oneﬁndsthatthetangentspacesofτ(F"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "T (Sn)y∼=Cn,oneﬁndsthatthetangentspacesofτ(F0),T (0),andF"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(1 + 2πiR′′(0))R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(1 + 2πiR′′(0))Rn,iR"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(1 + 2πiR′′(0))Rn,iRn,R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(1 + 2πiR′′(0))Rn,iRn,Rn⊂C"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "Inparticular,sinceR′′(0)<0byδ-wobblyness,theintersectionτ(F"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "rticular,sinceR′′(0)<0byδ-wobblyness,theintersectionτ(F0) ∩F"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "cationofnondegeneratequadraticformsonR"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "clearlydeformthethreesubspaces(1.9)inthiswaytoR"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "clearlydeformthethreesubspaces(1.9)inthiswaytoRn,e"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "clearlydeformthethreesubspaces(1.9)inthiswaytoRn,e2πi/3R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "rlydeformthethreesubspaces(1.9)inthiswaytoRn,e2πi/3Rn,eπi/3R"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "¯D(r),togetherwithadiﬀeomorphismφ:E"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "byρ∈Symp"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "byρ∈Sympe(E"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "Thenτ= φ ◦ρ ◦φ−1∈Symp"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Proof.TakeC"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "C"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Cn+1→C,q(x)=x"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "n+1.Eventhough(C"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1+ · · · + x"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "x= {X∈C"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "x= {X∈Cn+1:ωC"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "x= {X∈Cn+1:ωCn+1(X, ker Dq"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "T (C"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "T (Cn+1)"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "Σ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "zS"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "zy"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "zy"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "zyn+1):y∈S"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "zyn+1):y∈Sn⊂R"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "z̸=0,whichforz→0degeneratetoΣ"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "unionofallΣ"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "unionofallΣz,z̸= 0,andΣ = Σ∗∪Σ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "θC"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "θCn+1 | Σ∗= q∗d"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "needisthatωC"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "q−1(c(a)) \\ Σ"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "q−1(c(a)) \\ Σc(a)→q−1(c(b)) \\ Σ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "thatapointinC"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "function,h(x) = ||x||4−|q(x)|2,whichsatisﬁesdh"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "radialdirectiontotrivializeq: C"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "˜ρ"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "theorigin,˜ρ"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "theorigin,˜ρs | (q−1(s) \\ Σ"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "symplecticautomorphismsofq−1(s) \\ Σ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Φ : C"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "whereβ(x)=(||x||2+h(x)"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "whereβ(x)=(||x||2+h(x)1/2)"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "adiﬀeomorphismφ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t2+ s"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "(Φ−1)∗θC"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "(Φ−1)∗θCn+1= θT−˜R"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "more:ifonerestrictstoanyrayα=const.inthebasisthenΦ∗ωT=ωC"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "s that Φ trivializes the symplectic parallel transport on (C"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "Consider˜τ"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "Consider˜τs= φ"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "Consider˜τs= φs◦˜ρ"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": ": T→T , where˜ρ"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "above.From(1.14)itfollowsthat˜τ"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "of theHamiltonian˜H"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "of theHamiltonian˜Hs=˜R"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "of theHamiltonian˜Hs=˜Rs(µ).Since˜R"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "of theHamiltonian˜Hs=˜Rs(µ).Since˜Rs(−t) =˜R"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "0 >˜R"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "dt˜R"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "16"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "16s"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "16s2"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "16"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "16s"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "16s2"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "thereisauniqueγ∈Ω"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "thereisauniqueγ∈Ω1(C"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "Since˜R"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "Since˜R0(t)=0,thefunction˜R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "which means that γ is smooth at least on C"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": " that γ is smooth at least on Cn+1\\Σ.Now µ(Φ(x)) = (1/2)h(x)"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Θ = (θC"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "φ = φ"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "φ = φr|E"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "φ = φr|Er: E"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "E⊂C"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "E⊂Cn+1iscutoutbytheinequalitiesh(x)≤4λ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "facesare∂vE=π−1(∂¯D(r))and∂hE={h(x)=4λ"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "(r) × ∂T (λ)).Becauseγvanisheswhenrestricted toanyﬁbre,Ω|T E"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "ωC"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "ωCn+1|ker Dq"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "Θ | (E \\ Σ) = Φ∗(θT+ (g(µ) −1) ˜R"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "restrictedtoT (λ) \\ T (0),isthetime2πmapofR"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "R"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "Rr(t) = (1 −g(t)) ˜R"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "class [f] of diﬀeomorphisms f: S"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "class [f] of diﬀeomorphisms f: Sn→L.Here f"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "class [f] of diﬀeomorphisms f: Sn→L.Here f1, f"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "2"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "2f"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "be deformed insideDiﬀ(S"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "associates a Dehn twist τ(L,[f])∈Symp"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": " is not diﬃcult to show that the isotopy class [τ(L,[f])] ∈π"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "t diﬃcult to show that the isotopy class [τ(L,[f])] ∈π0(Symp"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "Moreover,ΦagreeswithφonN∩E"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "istheuniquecriticalpointx"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "0is"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "0isasmooth"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "ΘL| (ΣL)∗= (πL)∗d"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "x"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "U⊂Coftheorigin;Ξ∗ΘL=θC"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "U⊂Coftheorigin;Ξ∗ΘL=θCn+1andΞ∗ΩL=ωC"
+  },
+  {
+   "page": 16,
+   "mark": "z",
+   "context": "Σ"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "R"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "Rrfrom(1.19);inparticularR"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "f.(i)From (1.17) oneseesthatΣ ∩q−1( ¯D(r)) ⊂E,and thatΘ = θC"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "∂s˜R"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "atthefunctionR"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "atthefunctionRr.Thereisat"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "atthefunctionRr.Thereisat0>0suchthatg(t)=0fort∈[0; t"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "thatintervalRr(t)=˜Rr(t),sothat(∂/∂t)Rr(t)>0,(∂2/∂t"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "t ∈[t"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "∂t˜R"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "∂t˜Rr(t) ≤r"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "∂tR"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "∂tRr(t) = −g′(t) ˜R"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "Takez"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "theuniquecriticalpointx"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "theuniquecriticalpointx0∈E"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "theuniquecriticalpointx0∈Ez"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "pathwithc(b)=z"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "pathwithc(b)=z0,c−1(Scrit)={b};andletρ"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "pathwithc(b)=z0,c−1(Scrit)={b};andletρc|[s,s′]:E"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "pathwithc(b)=z0,c−1(Scrit)={b};andletρc|[s,s′]:Ec(s)→E"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "B"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "Bc= {x ∈E"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "s′→bρ"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "s′→bρc|[s;"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "s′→bρc|[s;s′](x) = x"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "s′→bρc|[s;s′](x) = x0} ∪{x"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "Lemma1.13.B"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "Lemma1.13.Bcisanembeddedclosed(n + 1)-ball,with∂B"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "Lemma1.13.Bcisanembeddedclosed(n + 1)-ball,with∂Bc=B"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "Lemma1.13.Bcisanembeddedclosed(n + 1)-ball,with∂Bc=Bc∩E"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "Thefunctionp = c−1◦π: B"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "Thefunctionp = c−1◦π: Bc→[a; b]hasx"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "isanondegeneratelocalmaximum.Moreover,Ω|B"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "(i)itishorizontaleverywhere,X"
+  },
+  {
+   "page": 18,
+   "mark": "h",
+   "context": "(i)itishorizontaleverywhere,Xx∈T E"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(ii)foreachx̸ = x"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "(ii)foreachx̸ = x0,Dπ(X)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "Morsechart,whereitisJ"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "Morsechart,whereitisJ0∇H.Let˜B⊂Ebethestablemanifoldofx"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "DX"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "DXx"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "DXx0; one shows easily that D"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "DXx0; one shows easily that D2˜p|T˜B"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "DXx0; one shows easily that D2˜p|T˜Bx"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "DXx0; one shows easily that D2˜p|T˜Bx0diﬀers from DX|T˜B"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "DXx0; one shows easily that D2˜p|T˜Bx0diﬀers from DX|T˜Bx"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "WeclaimthatB"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "ofB"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "ofBc.LetYbethevectorﬁeldonπ−1(im(˜c)) \\ {x"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "to∞asoneapproachesx"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "ofcoursefor{x"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "Proof.SinceB"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "Proof.SinceBcisaballandΘ|B"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "Proof.SinceBcisaballandΘ|Bcisclosed,thereisauniqueK∈C∞(B"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "withK(x"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "withK(x0) = 0anddK= Θ|B"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "withK(x0) = 0anddK= Θ|Bc.Therestriction KV"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "withK(x0) = 0anddK= Θ|Bc.Therestriction KVc= K|V"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "withK(x0) = 0anddK= Θ|Bc.Therestriction KVc= K|Vcmakes V"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "maps gives a diﬀeomorphism V"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "maps gives a diﬀeomorphism Vc→S"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "TheframedexactLagrangian sphereV"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "TheframedexactLagrangian sphereVc⊂E"
+  },
+  {
+   "page": 19,
+   "mark": "l",
+   "context": "[ρ"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "[ρl] = [τV"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "[ρl] = [τVc] ∈π"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "[ρl] = [τVc] ∈π0(Symp"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "[ρl] = [τVc] ∈π0(Sympe(E"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "x0∈E"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "x0∈E0.WriteM=E"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "x0∈E0.WriteM=Er.Inaddition,x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "chart(ξ, Ξ)whereΞisdeﬁnedonW={x ∈C"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "plectic geometry of (E, π) equals that of the local model (C"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "ﬁbre E"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "z= Ξ(Σ"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "0={x"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "Σ"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "rS"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "Symp"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Hamiltonian(α, x)7→RE(r, α, x).Clearly,[ρ]∈π"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "Hamiltonian(α, x)7→RE(r, α, x).Clearly,[ρ]∈π0(Symp"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "canbedeterminedfromthelocalmodel(C"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Deﬁneanembeddingι:T (λ)→M,forsomeλ>0,bycombiningΞ"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Ξ|(W ∩q−1(r)) →Mwith the inverse of the isomorphism φ"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "C"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "= (Φ−1)∗θC"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "= (Φ−1)∗θCn+1= θT−˜R"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "cussionabove,andthefactthat˜R"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "cussionabove,andthefactthat˜Rr(−t)=˜R"
+  },
+  {
+   "page": 20,
+   "mark": "c",
+   "context": "zintoeach other,theball B"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "zforall"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "zforallz∈[0;"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "S,and x"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "S,and x0∈E"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "S,and x0∈Ez"
+  },
+  {
+   "page": 20,
+   "mark": "c",
+   "context": "⊂E"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "holomorphicMorsechartsissatisﬁed,andhence[ρl]=[ρ"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "l]=[ρ"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "l]=[τV"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "c] = [τV"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "c] = [τVc] ∈π"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "c] = [τVc] ∈π0(Symp"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "c] = [τVc] ∈π0(Sympe(E"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "[τV"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Let(E"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Let(E2"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "∂hEandsuchthatπ|Q:Q →∂Sisasubmersion,togetherwithκQ∈Ω"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "Q"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "Qz= Q ∩E"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "Qz= Q ∩Ez,z∈∂S,isanexactLagrangian submanifoldofE"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "KQ|Q"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "π|Q is dropped, so that the Q"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Φ"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "(iii)Ω(·, J·)|T E"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "xissymmetricandpositivedeﬁniteforany"
+  },
+  {
+   "page": 23,
+   "mark": "h",
+   "context": "(iv)inaneighbourhoodof∂hE,J(T E"
+  },
+  {
+   "page": 23,
+   "mark": "h",
+   "context": "(iv)inaneighbourhoodof∂hE,J(T Eh) = T E"
+  },
+  {
+   "page": 23,
+   "mark": "z",
+   "context": "x∼= T S"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "x∼= T Sz⊕T E"
+  },
+  {
+   "page": 23,
+   "mark": "h",
+   "context": "T Ex= T E"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "x⊕T E"
+  },
+  {
+   "page": 23,
+   "mark": "z",
+   "context": "x,"
+  },
+  {
+   "page": 23,
+   "mark": "z",
+   "context": "\u0012j"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "∈End(T E"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "x)is"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "x)isacomplexstructurecompatiblewithΩ|T E"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "x)isC-antilinearwithrespectto"
+  },
+  {
+   "page": 23,
+   "mark": "z",
+   "context": "∈Hom(T S"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "∈Hom(T Sz, T E"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "tiveβ∈Ω"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "x∼= RN⊕RR ⊕(ker Θ ∩ker dσ ∩T E"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "T E"
+  },
+  {
+   "page": 23,
+   "mark": "z",
+   "context": "eσ|E"
+  },
+  {
+   "page": 24,
+   "mark": "j",
+   "context": "x"
+  },
+  {
+   "page": 24,
+   "mark": "z",
+   "context": "xj"
+  },
+  {
+   "page": 24,
+   "mark": "u",
+   "context": "aninﬁnite-dimensionalmanifold,withT B"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "aninﬁnite-dimensionalmanifold,withT Bu={X∈C∞(u∗T E"
+  },
+  {
+   "page": 24,
+   "mark": "z",
+   "context": "X"
+  },
+  {
+   "page": 24,
+   "mark": "z",
+   "context": "T (Q"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "T (Qz)forallz∈∂S};notethatu∗T E"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "bundleE→B × J(E, π, j)whoseﬁbreat(u, J)isΩ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "bundleE→B × J(E, π, j)whoseﬁbreat(u, J)isΩ0,"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "bundleE→B × J(E, π, j)whoseﬁbreat(u, J)isΩ0,1(u∗T E"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "(0, 1)-formson(S, j)withvaluesinu∗(T E"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "(0, 1)-formson(S, j)withvaluesinu∗(T Ev, J|T E"
+  },
+  {
+   "page": 24,
+   "mark": "u",
+   "context": "tiveof¯∂Jatu∈MJisamapDu,J:T B"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "XJ)◦Du ◦jwhere˜Xisany section of T E"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "dleT E"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "inwhich¯∂J,u∗∇=(u∗∇)"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "inwhich¯∂J,u∗∇=(u∗∇)0,"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "nectionu∗∇onu∗(T E"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "nectionu∗∇onu∗(T Ev, J|T E"
+  },
+  {
+   "page": 24,
+   "mark": "u",
+   "context": ":T B"
+  },
+  {
+   "page": 24,
+   "mark": "h",
+   "context": "king Wand ǫ smaller, we may assume that W ∩Q = ∅, that Ω|T E"
+  },
+  {
+   "page": 25,
+   "mark": "h",
+   "context": "onW,andthat(iv)holdsthere.FromΩ|T E"
+  },
+  {
+   "page": 25,
+   "mark": "h",
+   "context": "x=0andJ(T E"
+  },
+  {
+   "page": 25,
+   "mark": "h",
+   "context": "x)=T E"
+  },
+  {
+   "page": 25,
+   "mark": "x",
+   "context": "follows that Ω(X, JX) ≥0for all X∈T E"
+  },
+  {
+   "page": 25,
+   "mark": "u",
+   "context": "S"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "u ∈MJbecome pseudo-holomorphic curves with the same energy"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "Lemma2.3.MJiscompactinanyC"
+  },
+  {
+   "page": 25,
+   "mark": "z",
+   "context": "discsinE"
+  },
+  {
+   "page": 25,
+   "mark": "z",
+   "context": "discsinEz,z∈∂S,withboundaryonQ"
+  },
+  {
+   "page": 25,
+   "mark": "z",
+   "context": "sumptions,since Ωis exact and Q"
+  },
+  {
+   "page": 25,
+   "mark": "z",
+   "context": "sumptions,since Ωis exact and Qz⊂E"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "involvesspacesofW"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Du,JextendstoaFredholmoperatorW"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "u→W"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "u,JfromtheW"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 25,
+   "mark": "u",
+   "context": "uof T B"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "uof T Bu to the L"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "uof T Bu to the Lp-completion W"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": ": W"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "u× T−→W"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "surjectivityisconcerned).LetF→SbethebundledualtoΛ"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "surjectivityisconcerned).LetF→SbethebundledualtoΛ0,"
+  },
+  {
+   "page": 26,
+   "mark": "v",
+   "context": "surjectivityisconcerned).LetF→SbethebundledualtoΛ0,1(u∗T E"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "u,J)∗∼=L"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "u,J)∗∼=Lq(F),"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "u,J)∗∼=Lq(F),p−1+ q−1=1.Supposethatη∈L"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "that(W"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "thatz∈U\\ ∂Sisapointwhereη"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "a(j, J)-antilinearmapZ:T S"
+  },
+  {
+   "page": 26,
+   "mark": "v",
+   "context": "a(j, J)-antilinearmapZ:T Sz→T E"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "xsuchthat⟨η"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "willsatisfy⟨η"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "willsatisfy⟨ηz, (Y◦Du ◦j)"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "u× T−→W"
+  },
+  {
+   "page": 26,
+   "mark": "x",
+   "context": "u,J× T (Qζ)"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "(2.9)andasbeforeitfollowsthatη=0.Then⟨ξ, Xζ⟩=0forallX∈W"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "Φ"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "φ"
+  },
+  {
+   "page": 27,
+   "mark": "c",
+   "context": "φt: Q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Denoteby∆, Γ⊂Q"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "ζthediagonalandthegraphofφ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "eevζ: [0; 1] × MJ→[0; 1] × Q"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "eevζ(t, u) = (t, u(ζ), φ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "representsaclass˜Φ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "representsaclass˜Φ2(E, π, Q)∈H∗([0; 1] × Q"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "Let S"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Let S1, S"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "Let S1, S2be two compact surfaces with marked points ζ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "Let S1, S2be two compact surfaces with marked points ζk∈∂S"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "byS=S"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "byS=S1#ζ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "byS=S1#ζ1∼ζ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "byS=S1#ζ1∼ζ2S"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "oneshouldchooseorientedembeddingsψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "oneshouldchooseorientedembeddingsψk:¯D+(1)→S"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "|z|≤1,im z≥0}intoS"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "|z|≤1,im z≥0}intoSk,suchthatψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "ζ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "ζkand(ψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "ζkand(ψk)−1(∂S"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "ofsomeradius0<ρ<1,oneformsSbytakingthetwoS"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "ofsomeradius0<ρ<1,oneformsSbytakingthetwoSk\\ψ"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "andidentifyingψ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "andidentifyingψ1(z)withψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "ﬁbrations (E"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "ﬁbrations (Ek, π"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "ﬁbrations (Ek, πk) over S"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "im(ψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "im(ψk);together with Lagrangian boundary conditions Q"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "im(ψk);together with Lagrangian boundary conditions Qk⊂E"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "one-forms κQ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "one-forms κQkvanish on ψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "withanexactLagrangiansubmanifoldL,andisomorphismsφ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "withanexactLagrangiansubmanifoldL,andisomorphismsφk:M→(E"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "withanexactLagrangiansubmanifoldL,andisomorphismsφk:M→(Ek)ζ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "Onecanthengluethe(E"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "Onecanthengluethe(Ek, π"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "Onecanthengluethe(Ek, πk)andQ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "satisfyingφ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "satisfyingφk(L)=(Q"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "satisfyingφk(L)=(Qk)ζ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "Ψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "E"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "π"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "ψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "S"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "suchthatΨ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "suchthatΨk|{0} × M= φ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "(Ψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "(Ψk)∗Ω"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "(Ψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "(Ψk)∗Θ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "(Ψk)∗Θk= θ + dR"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "(Ψ"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "(Ψk)−1(Q"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "forsomefunctionsR"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "1.1,oneneedstointroducemodiﬁedforms˜Θ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "1.1,oneneedstointroducemodiﬁedforms˜Θksuchthat(Ψ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "1.1,oneneedstointroducemodiﬁedforms˜Θksuchthat(Ψk)∗˜Θ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "ThefunctionsKQ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "ward, so we will not write it down explicitly.Now take the E"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "Ψ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "Ψk(D+(ρ)×M) and identify Ψ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Ψk(D+(ρ)×M) and identify Ψ1(z, x) with Ψ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "ζ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "Assumethatonehaschosencomplexstructuresj"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "AssumethatonehaschosencomplexstructuresjkonS"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "AssumethatonehaschosencomplexstructuresjkonSksuchthattheψ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "TakeJ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "J(E"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "J(Ek, π"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "J(Ek, πk, j"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "J(Ek, πk, jk) such that (Ψ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "J(Ek, πk, jk) such that (Ψk)∗(J"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "thateventhoughwehaverestrictedthebehaviourofJ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "thateventhoughwehaverestrictedthebehaviourofJkoverim(Ψ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "2.4.Moreover, Lemma 2.5 says that for suitably chosen J"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "ζ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "evζ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "evζk|MJ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "evζk|MJk: MJ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "evζk|MJk: MJk→Q"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "Proposition2.7.AssumethatJ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "Proposition2.7.AssumethatJk∈Jreg(E"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "Proposition2.7.AssumethatJk∈Jreg(Ek, π"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "Proposition2.7.AssumethatJk∈Jreg(Ek, πk, Q"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "Proposition2.7.AssumethatJk∈Jreg(Ek, πk, Qk, j"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "theevζ"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "theevζk|MJ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "MJ∼= MJ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "MJ∼= MJ1×L MJ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "wheretherighthandsideistheﬁbreproductof(evζ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "wheretherighthandsideistheﬁbreproductof(evζ1, evζ"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "base.J∈J(E, π, j)iscalledhorizontalifJ"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "base.J∈J(E, π, j)iscalledhorizontalifJx(T E"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "x) = T E"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "xforall"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": " Jvh= 0,which shows that they form a contractible subspace J"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "Proof.ForJ∈J"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "sociated metric by ||·||.Write Ω|T E"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "sociated metric by ||·||.Write Ω|T Eh= f(π∗β|T E"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "there is the familiar equality"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "tosectionsuandsplitDu = (Du)"
+  },
+  {
+   "page": 29,
+   "mark": "v",
+   "context": "tosectionsuandsplitDu = (Du)h+ (Du)"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "Since||(Du)"
+  },
+  {
+   "page": 29,
+   "mark": "v",
+   "context": "||(Du)"
+  },
+  {
+   "page": 29,
+   "mark": "u",
+   "context": "S"
+  },
+  {
+   "page": 29,
+   "mark": "z",
+   "context": "Asectionu:S→EiscalledhorizontalifDu"
+  },
+  {
+   "page": 29,
+   "mark": "z",
+   "context": "Asectionu:S→EiscalledhorizontalifDuz(T S"
+  },
+  {
+   "page": 29,
+   "mark": "h",
+   "context": "Asectionu:S→EiscalledhorizontalifDuz(T Sz)=(T E"
+  },
+  {
+   "page": 29,
+   "mark": "u",
+   "context": "Asectionu:S→EiscalledhorizontalifDuz(T Sz)=(T Eh)"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "carriesu(c(a))∈E"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "carriesu(c(a))∈Ec(a)tou(c(b))∈E"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "ofthesymplecticconnectiononEisreducedfromSymp"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Symp"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "namely,writingΩ|T E"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "namely,writingΩ|T Eh= f(π∗β|T E"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "namely,writingΩ|T Eh= f(π∗β|T Eh)forsomepositiveβ∈Ω"
+  },
+  {
+   "page": 30,
+   "mark": "z",
+   "context": "d(f|E"
+  },
+  {
+   "page": 30,
+   "mark": "u",
+   "context": "d(f|Ez)"
+  },
+  {
+   "page": 30,
+   "mark": "v",
+   "context": "If u is horizontal, the symplectic vector bundle u∗T E"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "s induced from the connection on Eby the derivative map Symp"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "ZX= u∗([Z"
+  },
+  {
+   "page": 30,
+   "mark": "v",
+   "context": "ZX= u∗([Zh,˜X]),where˜XisanysectionofT E"
+  },
+  {
+   "page": 30,
+   "mark": "x",
+   "context": "Sp(T M"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "u∗˜X=X.Usingthecanonicalisomorphismsp(V )∼=sym"
+  },
+  {
+   "page": 30,
+   "mark": "v",
+   "context": "with values in quadratic forms on the ﬁbres of u∗T E"
+  },
+  {
+   "page": 30,
+   "mark": "z",
+   "context": "byF∇u= Hess(f|E"
+  },
+  {
+   "page": 30,
+   "mark": "u",
+   "context": "byF∇u= Hess(f|Ez)"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "subgroup of maps in Symp"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "boundaryconditionQ.WriteM"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "itsvalueatanypoint,evaluationatζ∈∂SidentiﬁesM"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "Asobservedabove,M"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "Asobservedabove,Mh⊂MJforallJ∈J"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "restrictionofsomeu′∈M"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "Then,givensomeJ∈J"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "J′∈J"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "withthepropertythatanyu ∈MJ′\\ M"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "there,wehavetoshowthatforanyu ∈MJ\\ M"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "u× T"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "u× Th−→W"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": ": W"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "isonto.HereT"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "isonto.HereTh=T ∩T J"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "forY∈T"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "Supposethatu|Uishorizontal.Byassumptiononecouldthenﬁndau′∈M"
+  },
+  {
+   "page": 31,
+   "mark": "z",
+   "context": "plythatu′= u,acontradiction.Hencethereisaz∈Usuch thatDu"
+  },
+  {
+   "page": 31,
+   "mark": "z",
+   "context": "plythatu′= u,acontradiction.Hencethereisaz∈Usuch thatDuz(T S"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "(T E"
+  },
+  {
+   "page": 31,
+   "mark": "u",
+   "context": "(T Eh)"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "choosingYsuitablyinT"
+  },
+  {
+   "page": 31,
+   "mark": "z",
+   "context": "choosingYsuitablyinTh,onecanmake(Y◦Du ◦j)"
+  },
+  {
+   "page": 31,
+   "mark": "z",
+   "context": "(j, J)-antilinearhomomorphismT S"
+  },
+  {
+   "page": 31,
+   "mark": "v",
+   "context": "(j, J)-antilinearhomomorphismT Sz→(T E"
+  },
+  {
+   "page": 31,
+   "mark": "u",
+   "context": "(j, J)-antilinearhomomorphismT Sz→(T Ev)"
+  },
+  {
+   "page": 31,
+   "mark": "z",
+   "context": "j, J)-antilinearhomomorphismT Sz→(T Ev)u(z).Inparticular,ifη"
+  },
+  {
+   "page": 31,
+   "mark": "z",
+   "context": "canachievethat⟨η"
+  },
+  {
+   "page": 31,
+   "mark": "z",
+   "context": "canachievethat⟨ηz, (Y◦Du ◦j)"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "Inparticular,takingU=SshowsthatifM"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "Jreg(E, π, Q, j) ∩J"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "Jreg(E, π, Q, j) ∩Jh(E, π, j)⊂J"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "J∈J"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "LetTZar(M"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "LetTZar(Mh)ubetheZariskitangentspaceofM"
+  },
+  {
+   "page": 31,
+   "mark": "v",
+   "context": "consistsofthoseX∈C∞(u∗T E"
+  },
+  {
+   "page": 31,
+   "mark": "u",
+   "context": "consistsofthoseX∈C∞(u∗T Ev)thatsatisfy∇uX=0andlieinT B"
+  },
+  {
+   "page": 31,
+   "mark": "v",
+   "context": "meaningthatX|∂S⊂u∗(T Q∩T E"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "Lemma2.11.Take J∈J"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "Lemma2.11.Take J∈Jh(E, π, j) and u ∈M"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "Lemma2.11.Take J∈Jh(E, π, j) and u ∈Mh.Then TZar(M"
+  },
+  {
+   "page": 31,
+   "mark": "u",
+   "context": "Lemma2.11.Take J∈Jh(E, π, j) and u ∈Mh.Then TZar(Mh)"
+  },
+  {
+   "page": 31,
+   "mark": "u",
+   "context": "TheoutcomeisthatforX∈T B"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "CallM"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "equaltoTZarM"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "M"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "ThenΦ1(E, π, Q) = [evζ(M"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "Proof.TakeJ∈J"
+  },
+  {
+   "page": 32,
+   "mark": "u",
+   "context": "S"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "itfollowsthatMJ=M"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "itfollowsthatMJ=Mh,andmoreoverthateveryu∈M"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "whichinturnimpliesHess(f|E"
+  },
+  {
+   "page": 32,
+   "mark": "u",
+   "context": "whichinturnimpliesHess(f|Ez)"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "dimker Du,J=dimTZarM"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "dimker Du,J=dimTZarMh=dimM"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "z,"
+  },
+  {
+   "page": 32,
+   "mark": "a",
+   "context": "z,z̸=0,contains"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "z,describedbyLemma1.12(i);for"
+  },
+  {
+   "page": 32,
+   "mark": "c",
+   "context": "κQL= d"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "aimhereistoprovethefollowingresultabouttheinvariantΦ"
+  },
+  {
+   "page": 32,
+   "mark": "h",
+   "context": "foralls.NowﬁxsomeJ∈J"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "0= {x"
+  },
+  {
+   "page": 33,
+   "mark": "b",
+   "context": "foldwithcorners(bEL,"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "(i)Away from ZL= (ηL)−1(x"
+  },
+  {
+   "page": 33,
+   "mark": "b",
+   "context": "(ii)"
+  },
+  {
+   "page": 33,
+   "mark": "b",
+   "context": "(ii)bELcarries a symplectic form"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "4im((r′−w)¯zdz),andwhereδissupportedin"
+  },
+  {
+   "page": 33,
+   "mark": "b",
+   "context": "(iii)(bEL,"
+  },
+  {
+   "page": 33,
+   "mark": "b",
+   "context": "(iii)(bEL,bΩL)containsaLagrangiansubmanifoldwithboundary"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "projectsto[0; r′] × S"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "ηL(bQL∩(ˆπL)−1({s} × S"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "{x"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "E= {x ∈C"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Ω= ωC"
+  },
+  {
+   "page": 33,
+   "mark": "z",
+   "context": "D(r′)Σ"
+  },
+  {
+   "page": 33,
+   "mark": "s",
+   "context": "withthereasoningabove,onecanalsointroduce(E"
+  },
+  {
+   "page": 33,
+   "mark": "s",
+   "context": "withthereasoningabove,onecanalsointroduce(Es, π"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "Q"
+  },
+  {
+   "page": 34,
+   "mark": "z",
+   "context": "D(s)Σ"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "D(s)Σzfor"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "D(s)Σzfors ∈(0;"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "tionmap,m∗E={(w, z, x)∈¯D(r′) ×¯D(1) × E:q(x)=wz}⊂C"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "C"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "by"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "2dz ∧d¯z + dγ= ωC"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": ", i·)is nonnegative, which one can doby decomposing dγ= (dγ)"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "i·)is nonnegative, which one can doby decomposing dγ= (dγ)1,"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "(dγ)"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(dγ)0,"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(dγ)0,2+ (dγ)"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "(dγ)0,2+ (dγ)2,"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "(dγ)0,2+ (dγ)2,0;then(dγ)"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "(dγ)0,2+ (dγ)2,0;then(dγ)1,"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "(dγ)0,2+ (dγ)2,0;then(dγ)1,1= re(r′−w)"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "w)≥0,while(dγ)"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "w)≥0,while(dγ)0,"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "similarly for (dγ)"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "similarly for (dγ)2,"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "to"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "(ii’)Thereisasymplecticform"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "(ii’)ThereisasymplecticformbΩon"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "isasubmanifold,sinceitistheimageoftheembeddingS"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "isasubmanifold,sinceitistheimageoftheembeddingS1×Z/2¯B"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "C"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Cn+3, (z, y) 7→(|y|2, z"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "in fact the reason for our choice of symplectic form.Deﬁne"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "of(2.20) in"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "(iii’)ˆπ(bQ) = [0; r] × S"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "Q"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "η(bQ ∩ˆπ−1({s} × S"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "ProofofLemma2.14.TakeaholomorphicMorsechart(ξ, Ξ)aroundx"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "onthesetE⊂C"
+  },
+  {
+   "page": 35,
+   "mark": "s",
+   "context": "onthesetE⊂Cn+1from(2.18),andthatQL,s=Ξ(Q"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "esneighbourhoodsofthesingularpoints(0, 0, 0) ∈m∗Eand(0, 0, x"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "modelledlocallyon"
+  },
+  {
+   "page": 35,
+   "mark": "m",
+   "context": "2dz∧d¯z+dγon"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "gets"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "getsbΩLby gluing this together with the symplectic form"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "andthatproves(ii).Similarly,thedeﬁnitionof"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "andthatproves(ii).Similarly,thedeﬁnitionofbQLfollowsthatof"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "Lemma2.15.Choosesomeneighbourhoodofthecriticalpointx"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "Proof.Let(s"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "Proof.Let(sk)beasequencein(0; r′]convergingtozero,andu"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "Proof.Let(sk)beasequencein(0; r′]convergingtozero,anduk∈ML,s"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "ˆu"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "lemma,thismapsS"
+  },
+  {
+   "page": 36,
+   "mark": "b",
+   "context": "lemma,thismapsS1to"
+  },
+  {
+   "page": 36,
+   "mark": "b",
+   "context": "k"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "4(r′ −s"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "2(r′ −s"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "2"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "2s"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "ˆu"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "ˆuk:( ¯D(1), S"
+  },
+  {
+   "page": 36,
+   "mark": "b",
+   "context": "ˆuk:( ¯D(1), S1)→(bEL,"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "holomorphic“cuspdisc”or“stabledisc”ˆu∞.Sinceim(ˆu"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "lomorphic“cuspdisc”or“stabledisc”ˆu∞.Sinceim(ˆuk)⊂(ˆπL)−1({s"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "cusp disc” u∞in Ewhose boundary lies in ηL(bQL∩(ˆπL)−1({0}×S"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "c” u∞in Ewhose boundary lies in ηL(bQL∩(ˆπL)−1({0}×S1)) = {x"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "ﬁbration,itstillmakessensetoconsider thespacesM"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "w:¯D(s)→E"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "w:¯D(s)→EswithboundaryinQ"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "w:¯D(s)→EswithboundaryinQs.InfactQ"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "ofC"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "any holomorphic discin C"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "any holomorphic discin Cn+1withboundary in Q"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "orphic discin Cn+1withboundary in Qsisactuallycontained in E"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "Lemma2.16.M"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "Lemma2.16.Msconsistsofmapsw(z)=s−1/2az + s"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "Lemma2.16.Msconsistsofmapsw(z)=s−1/2az + s1/2¯a,wherea∈C"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "Proof.Theholomorphicfunctionsv:¯D(s)→Cwhichsatisfyv(z)∈z"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "forallz∈∂¯D(s)arev(z)=s−1/2cz+ s"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "w∈M"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "J"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "J0onC"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "holomorphic maps X:¯D(s) →C"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "zR"
+  },
+  {
+   "page": 36,
+   "mark": "w",
+   "context": "k"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "kw"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "kwk(z)X"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "kwk(z)Xk(z) = 0forall"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "determinesallsuchXexplicitly,theoutcomebeingthatker Dw,J"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "determinesallsuchXexplicitly,theoutcomebeingthatker Dw,J0∼=R"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "eterminesallsuchXexplicitly,theoutcomebeingthatker Dw,J0∼=R2"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "thatind Dw,J"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "sothatM"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "sothatMscanbeidentiﬁedwiththespherebundleS(T∗S"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "(u, v) = (−2 im a, 2 rea).With this and the diﬀeomorphism S"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": ", v) = (−2 im a, 2 rea).With this and the diﬀeomorphism Sn→Σ"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "onecanidentifytheevaluationev"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "onecanidentifytheevaluationevs:M"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "onecanidentifytheevaluationevs:Ms→Σ"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "S(T∗S"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "S(T∗Sn)→S"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "S(T∗Sn)→Sn.ThisclearlyrepresentsthezerocycleinH∗(S"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "ifonedeﬁnedaninvariantΦ1(E"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "ifonedeﬁnedaninvariantΦ1(Es, π"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "ifonedeﬁnedaninvariantΦ1(Es, πs, Q"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "morphicMorsechart(ξ, Ξ)withΞdeﬁnedonE⊂C"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "andtoJonEL;andthatittakesQ"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "M"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "Itiseasytoseethat,forw∈M"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "withprojectionS(T∗S"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "withprojectionS(T∗Sn)→S"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "projectionS(T∗S"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "projectionS(T∗Sn) →S"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "(ii)Supposethat(E"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "(ii)Supposethat(E1, π"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "(ii)Supposethat(E1, π1, Q"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "arycondition,andthatwehaveanotherexactLefschetzﬁbration(E"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "rycondition,andthatwehaveanotherexactLefschetzﬁbration(E2, π"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "ndition,andthatwehaveanotherexactLefschetzﬁbration(E2, π2, Q"
+  },
+  {
+   "page": 37,
+   "mark": "c",
+   "context": "S, c−1(Scrit) = {b}, and c′(b)̸ = 0, whose vanishing cycle V"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "[0; 1] × M"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "[0; 1] × Ms−→[0; 1] × Σ"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "[0; 1] × Ms−→[0; 1] × Σs × Σ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "(t, w) 7−→(t, w(s), eπi(1−t)w(se"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "HereΣse"
+  },
+  {
+   "page": 38,
+   "mark": "s",
+   "context": "HereΣse2πit→Σ"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "[0; 1] × S(T∗S"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "[0; 1] × S(T∗Sn) −→[0; 1] × S"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "[0; 1] × S(T∗Sn) −→[0; 1] × Sn× S"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "fundamentalclass[S"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "fundamentalclass[Sn× S"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "H∗(S"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "H∗(Sn× S"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "H∗(Sn× Sn; Z/2) →H∗(S"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "H∗(Sn× Sn; Z/2) →H∗(Sn× S"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "∼= H∗([0; 1] × S"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "∼= H∗([0; 1] × Sn× S"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "ﬁnitesetsI−, I+andorientedproperembeddings{γ"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "{γ"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "symplecticmanifoldM,togetherwithsmooth trivializations {Γ"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "eE}e∈I−,{Γ"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "im(γ"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "im(γe) ∩∂S.Toseethesigniﬁcanceofthis,recallthatthefamilyQ"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "im(γe) ∩∂S.Toseethesigniﬁcanceofthis,recallthatthefamilyQz⊂E"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "(R±× {0} × Le,"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "(R±× {0} × Le,0) ∪(R±× {1} × Le,"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "Le,"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "Le,0, Le,"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "Le,0, Le,1⊂M;wesaythatQismodelledon(Le,"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "Le,0, Le,1⊂M;wesaythatQismodelledon(Le,0, Le,"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "d(KQ ◦Γ"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "Le,"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "Le,0 ∩Le,"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "HF(Le,"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "HF(Le,0, Le,"
+  },
+  {
+   "page": 39,
+   "mark": "e",
+   "context": "from γ"
+  },
+  {
+   "page": 39,
+   "mark": "e",
+   "context": "from γe(s, t) to γ"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "uptothe“Poincar´eduality”isomorphismHF(Le,"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "uptothe“Poincar´eduality”isomorphismHF(Le,0, Le,"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "uptothe“Poincar´eduality”isomorphismHF(Le,0, Le,1)∼=HF(Le,"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "the“Poincar´eduality”isomorphismHF(Le,0, Le,1)∼=HF(Le,1, Le,"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "folds.The action functional on the path space P(L"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "folds.The action functional on the path space P(L0, L"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "c(0) ∈L"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "c(0) ∈L0,c(1) ∈L"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "c∗θ+ KL"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "c∗θ+ KL1(c(1)) −KL"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "aL"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "aL0,L"
+  },
+  {
+   "page": 39,
+   "mark": "x",
+   "context": "the constant paths c"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "the constant paths cxat points x ∈L"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "the constant paths cxat points x ∈L0 ∩L"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "the constant paths cxat points x ∈L0 ∩L1.Wewrite aL"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "the constant paths cxat points x ∈L0 ∩L1.Wewrite aL0,L"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": " constant paths cxat points x ∈L0 ∩L1.Wewrite aL0,L1(x) = aL"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "nstant paths cxat points x ∈L0 ∩L1.Wewrite aL0,L1(x) = aL0,L"
+  },
+  {
+   "page": 39,
+   "mark": "x",
+   "context": "ant paths cxat points x ∈L0 ∩L1.Wewrite aL0,L1(x) = aL0,L1(c"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "KL"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "KL1(x) −KL"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "KL1(x) −KL0(x)fortheiraction.TheFloercochainspaceCF(L"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "KL1(x) −KL0(x)fortheiraction.TheFloercochainspaceCF(L0, L"
+  },
+  {
+   "page": 39,
+   "mark": "t",
+   "context": "basisvectorsby⟨x⟩.LetJ(M)bethespaceofsmoothfamiliesJ=(J"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "basisvectorsby⟨x⟩.LetJ(M)bethespaceofsmoothfamiliesJ=(Jt)"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "neartheboundary.ForJ∈J(M)andx±∈L"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "neartheboundary.ForJ∈J(M)andx±∈L0 ∩L"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "σ(R × {0}) ⊂L"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "σ(R × {0}) ⊂L0,σ(R × {1}) ⊂L"
+  },
+  {
+   "page": 39,
+   "mark": "s",
+   "context": "lim"
+  },
+  {
+   "page": 39,
+   "mark": "x",
+   "context": "lims→±∞σ(s, ·) = c"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "wherethelimitisunderstoodtobeintheC"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "aL"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "aL0,L"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "aL0,L1(x−) ≤aL"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "aL0,L1(x−) ≤aL0,L"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "subspaceJreg(M, L"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "subspaceJreg(M, L0, L"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "J(x−, x+)/R, are smooth manifolds.In that case one deﬁnes"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "Chooseapointx"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "Chooseapointxe∈Le,"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "Chooseapointxe∈Le,0 ∩Le,"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "Chooseapointxe∈Le,0 ∩Le,1foreach ende,andwriteB({x"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "◦u ◦γ"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "◦u ◦γe(s, t) = (s, t, σ"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "◦u ◦γe(s, t) = (s, t, σe(s, t))withmapsσ"
+  },
+  {
+   "page": 40,
+   "mark": "s",
+   "context": "satisfyinglim"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "satisfyinglims→±∞σ"
+  },
+  {
+   "page": 40,
+   "mark": "x",
+   "context": "satisfyinglims→±∞σe(s, ·)=c"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "satisfyinglims→±∞σe(s, ·)=cx"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "S"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "Su∗ωis convergent for all"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "Su∗ωis convergent for all u ∈B({x"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "aLe,"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "aLe,0,Le,"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "aLe,0,Le,1(x"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "alsoaJ"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "alsoaJe=(Je,t)"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "alsoaJe=(Je,t)0≤t≤1∈J(M)foreache.ThenJ(E, π, j, {J"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "eJ,foreach"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "MJ({x"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "MJ({xe})⊂B({x"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "EJ→B({x"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "EJ→B({xe}),itscanonicalsection¯∂Jwhosezero-setisMJ({x"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "suitablydeﬁnedW"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "suitablydeﬁnedW1,p-version W"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "uofT B({x"
+  },
+  {
+   "page": 40,
+   "mark": "u",
+   "context": "uofT B({xe})"
+  },
+  {
+   "page": 40,
+   "mark": "p",
+   "context": "uofT B({xe})utoanL"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "uofT B({xe})utoanLp-version W"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "Thisallowsonetodeﬁnethenotionofregularityofu∈MJ({x"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "J∈J(E, π, j, {J"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "denotedbyJreg(E, π, Q, j, {J"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "grangianboundaryconditionQ=(R×{0}×L"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "grangianboundaryconditionQ=(R×{0}×L0)∪(R×{1} ×L"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "standardcomplexstructurejonS,thesameJ"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "deﬁneJ∈J(E, π, j, {J"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "sicpropertiesofthespacesMJ({x"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "Lemma2.19.ForeveryJ∈J(E, π, j, {J"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "e(K) = R±×[0; 1]×K"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "e(K) = R±×[0; 1]×Keforsome compactK"
+  },
+  {
+   "page": 41,
+   "mark": "u",
+   "context": "e(K) = R±×[0; 1]×Keforsome compactKe⊂M \\∂M, such that"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "forallu ∈MJ({x"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "forallu ∈MJ({xe})andallpoints{x"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "Lemma2.20.Jreg(E, π, Q, j, {J"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "Lemma2.20.Jreg(E, π, Q, j, {Je})isC∞-denseinJ(E, π, j, {J"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "andaJ∈J(E, π, j, {J"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "andaJ∈J(E, π, j, {Je}),thereareJ′∈Jreg(E, π, Q, j, {J"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "on Eas in Lemma 2.1, and the associated metric,one ﬁnds that"
+  },
+  {
+   "page": 41,
+   "mark": "u",
+   "context": "WβforanycompactsubsetW⊂Sand"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "WβforanycompactsubsetW⊂Sandu∈MJ({x"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "MJ({x"
+  },
+  {
+   "page": 41,
+   "mark": "r",
+   "context": "MJ({xe})hasasubsequencewhichisC"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "MJ({x"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "ofMJ({x"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "(i)the“principalcomponent”u ∈MJ({ˆx"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "(i)the“principalcomponent”u ∈MJ({ˆxe})forsome{ˆx"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "(ii)for each end e ∈I±, a ﬁnite sequence of pointsˆxe,"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "ch end e ∈I±, a ﬁnite sequence of pointsˆxe,0, . . . , ˆxe,l"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "d e ∈I±, a ﬁnite sequence of pointsˆxe,0, . . . , ˆxe,le∈Le,"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "±, a ﬁnite sequence of pointsˆxe,0, . . . , ˆxe,le∈Le,0 ∩Le,"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "l"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "le≥0.Iftheendisnegative(positive),thisshouldsatisfyˆxe,"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "le≥0.Iftheendisnegative(positive),thisshouldsatisfyˆxe,0= x"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "ˆxe,le=ˆx"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "ˆxe,le=ˆxe(ˆxe,"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "ˆxe,le=ˆxe(ˆxe,0=ˆx"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "ˆxe,le=ˆxe(ˆxe,0=ˆxeandˆxe,le= x"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "J"
+  },
+  {
+   "page": 41,
+   "mark": "x",
+   "context": "Je(ˆ"
+  },
+  {
+   "page": 41,
+   "mark": "x",
+   "context": "Je(ˆxe,m−1, ˆ"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "Je(ˆxe,m−1, ˆxe,m)/R,foreach"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "Je(ˆxe,m−1, ˆxe,m)/R,foreacheand"
+  },
+  {
+   "page": 41,
+   "mark": "e",
+   "context": "Je(ˆxe,m−1, ˆxe,m)/R,foreacheand1 ≤m ≤l"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "(aLe,"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "(aLe,0,Le,"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "(aLe,0,Le,1(ˆxe,m−1) −aLe,"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "(aLe,0,Le,1(ˆxe,m−1) −aLe,0,Le,"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "NotethatalltermsofthePare> 0;thereforeA(u) ≤A(u"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "FromnowonassumethatJ"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "FromnowonassumethatJe∈Jreg(M, Le,"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "FromnowonassumethatJe∈Jreg(M, Le,0, Le,"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "Jreg(E, π, Q, j, {J"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "Thenind Du,J≥0andind Dσe,m,J"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "andl"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "andle= 0foralle.Itfollowsthatthezero-dimensionalpartofMJ({x"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "any{x"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "any{xe},iscompact,henceaﬁniteset.WriteνJ({x"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "CF(Le,"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "CF(Le,0, Le,"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "givenbythematrixwithentriesνJ({x"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "e∈I+⟨x"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "νJ({x"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "e∈I−⟨x"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "{x"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "part ofMJ({x"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "MJ({x"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "thatthepointisapair(u, σf,"
+  },
+  {
+   "page": 42,
+   "mark": "a",
+   "context": "0(E, π, Q, J)is"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "keepingtheJeﬁxedforthemoment.Anytwoj"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "keepingtheJeﬁxedforthemoment.Anytwoj0, j"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "J"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "J0∈Jreg(E, π, Q, j"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "J0∈Jreg(E, π, Q, j0, {J"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "J0∈Jreg(E, π, Q, j0, {Je}),J"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "J0∈Jreg(E, π, Q, j0, {Je}),J1∈Jreg(E, π, Q, j"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "J0∈Jreg(E, π, Q, j0, {Je}),J1∈Jreg(E, π, Q, j1, {J"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "{µ} × MJµ({x"
+  },
+  {
+   "page": 42,
+   "mark": "e",
+   "context": "(Jµ)({x"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "sets,sothatonecanusethenumberofpointsλ({x"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "0(E, π, Q, J"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "0(E, π, Q, J"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "specialcase.SupposethenthatS"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "ecialcase.SupposethenthatS1isasurfacewithstrip-likeends,andS"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "compactsurface,togetherwithpointsζ"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "compactsurface,togetherwithpointsζk∈∂S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "compactsurface,togetherwithpointsζk∈∂Sk(ζ"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "course always be achieved by making the ends smaller).Let (E"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "se always be achieved by making the ends smaller).Let (Ek, π"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "beexact Lefschetzﬁbrations over S"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "schetzﬁbrations over Skwith Lagrangian boundary conditions Q"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "(E"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "(E1, π"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "φ"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "φk:M→(E"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "φk:M→(Ek)ζ"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "φk:M→(Ek)ζk,andtrivializations(ψ"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "φk:M→(Ek)ζk,andtrivializations(ψk, Ψ"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "Section 2.1.The boundary connected sum S= S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "Section 2.1.The boundary connected sum S= S1#ζ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "Section 2.1.The boundary connected sum S= S1#ζ1∼ζ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "Section 2.1.The boundary connected sum S= S1#ζ1∼ζ2S"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "samekindofstrip-likeendsasS"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "theendsonthesameLagrangian submanifoldsasQ"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "Choose complex structures j"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "Choose complex structures jkon S"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "Choose complex structures jkon Sksuch that (ψ"
+  },
+  {
+   "page": 43,
+   "mark": "k",
+   "context": "Choose complex structures jkon Sksuch that (ψk)∗j"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "se complex structures jkon Sksuch that (ψk)∗jkis standard; j"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "alsobestandardontheends.Take{J"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "alsobestandardontheends.Take{Je}andJ"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "alsobestandardontheends.Take{Je}andJ1∈Jreg(E"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "alsobestandardontheends.Take{Je}andJ1∈Jreg(E1, π"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "alsobestandardontheends.Take{Je}andJ1∈Jreg(E1, π1, Q"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "alsobestandardontheends.Take{Je}andJ1∈Jreg(E1, π1, Q1, j"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "lsobestandardontheends.Take{Je}andJ1∈Jreg(E1, π1, Q1, j1, {J"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "whendeﬁningtherelativeinvariantof(E"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "whendeﬁningtherelativeinvariantof(E1, π"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "whendeﬁningtherelativeinvariantof(E1, π1, Q"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "we want (Ψ"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "we want (Ψ1)∗J"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "J"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "J2∈Jreg(E"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "J2∈Jreg(E2, π"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "J2∈Jreg(E2, π2, Q"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "J2∈Jreg(E2, π2, Q2, j"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "J2∈Jreg(E2, π2, Q2, j2)withthesamerestrictionon(Ψ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "J2∈Jreg(E2, π2, Q2, j2)withthesamerestrictionon(Ψ2)∗J"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "ζ"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "evζ"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "evζ1 | MJ"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "evζ1 | MJ1({x"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "evζ1 | MJ1({xe}) : MJ"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "evζ1 | MJ1({xe}) : MJ1({x"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "evζ1 | MJ1({xe}) : MJ1({xe}) −→Q"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "ζ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "evζ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "evζ2 | MJ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "evζ2 | MJ2: MJ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "evζ2 | MJ2: MJ2−→Q"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "aretransversetoeachotherforevery{x"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "aretransversetoeachotherforevery{xe}.LetJ∈J(E, π, j, {J"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "almostcomplexstructureconstructedfromJ"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "almostcomplexstructureconstructedfromJ1, J"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "MJ({x"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "MJ({xe})[0]∼= (MJ"
+  },
+  {
+   "page": 43,
+   "mark": "e",
+   "context": "MJ({xe})[0]∼= (MJ1({x"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "MJ({xe})[0]∼= (MJ1({xe}) ×L MJ"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "Lemma2.21.IfΦ1(E"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "Lemma2.21.IfΦ1(E2, π"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "Lemma2.21.IfΦ1(E2, π2, Q"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "Proof.Forsimplicity,supposethatΦ1(E"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "Proof.Forsimplicity,supposethatΦ1(E2, π"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "Proof.Forsimplicity,supposethatΦ1(E2, π2, Q"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "withboundaryGandasmoothmapg:G→L,suchthat∂G=MJ"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "g|∂G=evζ"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "toallmapsevζ"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "G({x"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "G({xe}) = MJ"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "G({xe}) = MJ1({x"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "G({x"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "partG({x"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "partG({xe})[0]isaﬁniteset;onecountsthepointsξJ,G,g({x"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "ciatedto(E"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "ciatedto(E1, π"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "ciatedto(E1, π1, Q"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "CΦ"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "G({x"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "one-dimensionalpartG({x"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "itsboundarypointsareoftwokinds:ﬁrst,boundarypointsofG({x"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "∂G({x"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "∂G({xe})[1]=(MJ"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "∂G({xe})[1]=(MJ1({x"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "∂G({xe})[1]=(MJ1({xe}) ×L ∂G)[0]∼=MJ({x"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "isνJ({x"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "MJ({x"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "(u, σf,"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "{ˆx"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "{ˆxe}withˆx"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "{ˆxe}withˆxe= x"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "u × q∈G({ˆx"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "σf,"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "ξJ,G,g({ˆx"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "ξJ,G,g({ˆxe}) nJ"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "ξJ,G,g({ˆxe}) nJf (ˆx"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "ξJ,G,g({ˆxe}) nJf (ˆxf, x"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "nJ"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "nJf (x"
+  },
+  {
+   "page": 44,
+   "mark": "f",
+   "context": "nJf (xf, ˆx"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "nJf (xf, ˆxf) ξJ,G,g({ˆx"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "ThefactthatthisisequaltoνJ({x"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "AssumethatS"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "AssumethatS1, S"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "AssumethatS1, S2aresurfaceswithstrip-likeends,suchthatS"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "positiveende"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "positiveende1,andS"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "positiveende1,andS2asinglenegativeende"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "ones and vice versa).Choose some σ> 0, and deﬁne S= S"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "ones and vice versa).Choose some σ> 0, and deﬁne S= S1#e"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "ones and vice versa).Choose some σ> 0, and deﬁne S= S1#e1∼e"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "nes and vice versa).Choose some σ> 0, and deﬁne S= S1#e1∼e2S"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "S"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "S1\\ γ"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "S1\\ γe"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "S1\\ γe1((σ; ∞) × [0; 1]) and S"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "S1\\ γe1((σ; ∞) × [0; 1]) and S2\\ γ"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "S1\\ γe1((σ; ∞) × [0; 1]) and S2\\ γe"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": ") × [0; 1]) and S2\\ γe2((−∞; −σ) × [0; 1]), and identifyingγ"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": " × [0; 1]) and S2\\ γe2((−∞; −σ) × [0; 1]), and identifyingγe"
+  },
+  {
+   "page": 44,
+   "mark": "e",
+   "context": "withγ"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "withγe"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "ofS"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "ofS1togetherwiththepositiveendsofS"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "j"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "jkon S"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "wehaveexactLefschetzﬁbrations(E"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "wehaveexactLefschetzﬁbrations(Ek, π"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "wehaveexactLefschetzﬁbrations(Ek, πk)overS"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "LagrangianboundaryconditionsQ"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "LagrangianboundaryconditionsQ1, Q"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "angianboundaryconditionsQ1, Q2forthemmodelledon(L0, L1)overe"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "and over e"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "over Sby identifying Γ"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "over Sby identifying Γe"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "over Sby identifying Γe1(s, t, y) ∈E"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "over Sby identifying Γe1(s, t, y) ∈E1with Γ"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "over Sby identifying Γe1(s, t, y) ∈E1with Γe"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "over Sby identifying Γe1(s, t, y) ∈E1with Γe2(s−σ, t, y) ∈E"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "condition Q.Choose almost complex structures J"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "condition Q.Choose almost complex structures Jkon E"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "0(E"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "0(Ek, π"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "0(Ek, πk, Q"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "0(Ek, πk, Qk, J"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "0(Ek, πk, Qk, Jk).WerequirethattheJ"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "0(Ek, πk, Qk, Jk).WerequirethattheJe"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "0(Ek, πk, Qk, Jk).WerequirethattheJek∈Jreg(M, L"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "0(Ek, πk, Qk, Jk).WerequirethattheJek∈Jreg(M, L0, L"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "whichJ"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "whichJkismodelledover theende"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "hichJkismodelledover theendekshouldbethesamefork= 1, 2.ThenJ"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "andJ"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "Proposition2.22.ForﬁxedJ"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Proposition2.22.ForﬁxedJ1, J"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "MJ({x"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "MJ"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "MJ1({x"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "MJ1({xe}e∈I−, x)[0] × MJ"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "MJ1({xe}e∈I−, x)[0] × MJ2(x, {x"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "forany{x"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "0(E"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "0(E1, π"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "0(E1, π1, Q"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "0(E1, π1, Q1, J"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "0(E"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "0(E2, π"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "0(E2, π2, Q"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "0(E2, π2, Q2, J"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "theyarefunctorialifoneregards thegluingS= S"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "theyarefunctorialifoneregards thegluingS= S1#e"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "theyarefunctorialifoneregards thegluingS= S1#e1∼e"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "theyarefunctorialifoneregards thegluingS= S1#e1∼e2S"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "thesurfacesS"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "thesurfacesS1, S"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "QmodelledovertheendsonpairsL"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "QmodelledovertheendsonpairsL0,e, L"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "exactLagrangian submanifolds.For{x"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "exactLagrangian submanifolds.For{xe}e∈I−∪I+withx"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "exactLagrangian submanifolds.For{xe}e∈I−∪I+withxe∈L"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "exactLagrangian submanifolds.For{xe}e∈I−∪I+withxe∈L0,e ∩L"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "χ({x"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "aL"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "aL0,e,L"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "aL0,e,L1,e(x"
+  },
+  {
+   "page": 45,
+   "mark": "u",
+   "context": "∂SκQforall"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "∂SκQforallu ∈B({x"
+  },
+  {
+   "page": 45,
+   "mark": "a",
+   "context": "∂SκQforallu ∈B({xe}).Afterﬁxing"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "By(2.23)A(u) = χ({x"
+  },
+  {
+   "page": 45,
+   "mark": "e",
+   "context": "structurejonSwhichisstandard on theends,andaJ"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "J"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "Jh(E, π, j, {J"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "Jh(E, π, j, {Je}) = J"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "Jh(E, π, j, {Je}) = Jh(E, π, j) ∩J(E, π, j, {J"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "j±×J"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "horizontal.AlittlemorethoughtshowsthatJ"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "horizontal.AlittlemorethoughtshowsthatJh(E, π, j, {J"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "ChoosingJinthatspace,oneﬁndsthatforallu ∈B({x"
+  },
+  {
+   "page": 46,
+   "mark": "v",
+   "context": "||(Du)"
+  },
+  {
+   "page": 46,
+   "mark": "v",
+   "context": "Here|| · ||isthemetriconT E"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "Here|| · ||isthemetriconT EvassociatedtoΩandJ;β∈Ω"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "two-form;andfisthefunctiondeﬁnedbyΩ|T E"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "two-form;andfisthefunctiondeﬁnedbyΩ|T Eh=f(π∗β|T E"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "J"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "Jh(E, π, j, {J"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "Jh(E, π, j, {Je}).Then MJ({x"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "Jh(E, π, j, {Je}).Then MJ({xe}) = ∅for all {x"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "Jh(E, π, j, {Je}).Then MJ({xe}) = ∅for all {xe} with χ({x"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "Lemma2.24.Inthesamesituation,letαbetheminimumofaL"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Lemma2.24.Inthesamesituation,letαbetheminimumofaL0,e,L"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "aL"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "aL0,e,L"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "aL0,e,L1,e(x+),takenoveralleandallx±∈L"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "aL0,e,L1,e(x+),takenoveralleandallx±∈L0,e ∩L"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "ThenthespacesMJ({x"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "{x"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "{xe}suchthatχ({x"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "Proof.Considerasequence(u"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "Proof.Considerasequence(ui)inMJ({x"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "MJ({x"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "MJ({xe}).Thedeﬁnitionofγimpliesthatin(2.24),eachaLe,"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "MJ({xe}).Thedeﬁnitionofγimpliesthatin(2.24),eachaLe,0,Le,"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "aLe,"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "aLe,0,Le,"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "A(u) ≤A(u"
+  },
+  {
+   "page": 46,
+   "mark": "l",
+   "context": "e"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "el"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "By assumption A(u"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "By assumption A(ui) = χ({x"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "sothatthelimitactuallyliesinMJ({x"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "Asbefore,denotebyM"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "◦u ◦γ"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "◦u ◦γe(s, t) = (s, t, σ"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "eiﬀσ"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "eiﬀσe≡x∈Misconstant,inwhichcasetheboundaryconditionsσ"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "Le,"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "Le,0,σ"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Le,0,σe(s, 1)∈Le,"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "Le,0,σe(s, 1)∈Le,1implythatx∈Le,"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Le,0,σe(s, 1)∈Le,1implythatx∈Le,0∩Le,"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "mined by its value at any one point,for any e and any x ∈Le,"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "by its value at any one point,for any e and any x ∈Le,0 ∩Le,"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "can be at most one u ∈M"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "can be at most one u ∈Mhsuch that σ"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "can be at most one u ∈Mhsuch that σe≡x.Thus M"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "of thesubsetsM"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "of thesubsetsMh({x"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "of thesubsetsMh({xe}) = M"
+  },
+  {
+   "page": 46,
+   "mark": "e",
+   "context": "of thesubsetsMh({xe}) = Mh∩B({x"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "Lemma2.25.For(E, π)andJasinLemma2.23,supposethat{x"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "∂SκQ;thenMJ({x"
+  },
+  {
+   "page": 47,
+   "mark": "h",
+   "context": "∂SκQ;thenMJ({xe}) = M"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "∂SκQ;thenMJ({xe}) = Mh({x"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "χ({x"
+  },
+  {
+   "page": 47,
+   "mark": "h",
+   "context": "w(∂S∩U)⊂Qistherestrictionofau∈M"
+  },
+  {
+   "page": 47,
+   "mark": "h",
+   "context": "J"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "Jh(E, π, j, {J"
+  },
+  {
+   "page": 47,
+   "mark": "h",
+   "context": "Jh(E, π, j, {Je}),there are J′∈J"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "Jh(E, π, j, {Je}),there are J′∈Jh(E, π, j, {J"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "agreewithitoutsideπ−1(U),suchthatforall{x"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "agreewithitoutsideπ−1(U),suchthatforall{xe},anyu ∈MJ({x"
+  },
+  {
+   "page": 47,
+   "mark": "h",
+   "context": "reewithitoutsideπ−1(U),suchthatforall{xe},anyu ∈MJ({xe}) \\ M"
+  },
+  {
+   "page": 47,
+   "mark": "h",
+   "context": "Lemma2.27.Let (E, π) and Jbe as in Lemma 2.23.If u ∈M"
+  },
+  {
+   "page": 47,
+   "mark": "u",
+   "context": "ut its validity.It certainly holds for those elements of T B"
+  },
+  {
+   "page": 47,
+   "mark": "v",
+   "context": "C∞(u∗T E"
+  },
+  {
+   "page": 47,
+   "mark": "z",
+   "context": "C∞(u∗T Ev):X"
+  },
+  {
+   "page": 47,
+   "mark": "z",
+   "context": "C∞(u∗T Ev):Xz∈T (Q"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "by continuity, for all Xin the W"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "by continuity, for all Xin the W1,"
+  },
+  {
+   "page": 47,
+   "mark": "v",
+   "context": "th respect to the metric ||·|| and the connection ∇uon u∗T E"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "want tousetheformulawithX∈W"
+  },
+  {
+   "page": 47,
+   "mark": "a",
+   "context": "uandthisis"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "uandthisisaspaceof W"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "p > 2,hencenotcontainedinW"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "p > 2,hencenotcontainedinW1,"
+  },
+  {
+   "page": 47,
+   "mark": "z",
+   "context": "Hess(f|E"
+  },
+  {
+   "page": 47,
+   "mark": "u",
+   "context": "Hess(f|Ez)"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "Hess(f|Ez)u(z)arenonnegative.Onethenseesfrom(2.15)thatanyX∈W"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "withDu,JX=0satisﬁes∇uX=0.Choosesomeendeandwritex=x"
+  },
+  {
+   "page": 47,
+   "mark": "v",
+   "context": "e(u∗T E"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "R±× [0; 1],whichidentiﬁesitwiththetrivialbundlewithﬁbreT M"
+  },
+  {
+   "page": 47,
+   "mark": "a",
+   "context": "eXbecomes"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "eXbecomesamapR± × [0; 1] →T M"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "ofT BuandofW"
+  },
+  {
+   "page": 47,
+   "mark": "x",
+   "context": "utellusthatYs,k∈T (Le,k)"
+  },
+  {
+   "page": 47,
+   "mark": "k",
+   "context": "utellusthatYs,k∈T (Le,k)xfor"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "intersecttransversally,itfollowsthatY=0,hencethatX|im(γ"
+  },
+  {
+   "page": 47,
+   "mark": "e",
+   "context": "theimplicationsforthecoeﬃcientsνJ({x"
+  },
+  {
+   "page": 48,
+   "mark": "h",
+   "context": "anyu ∈M"
+  },
+  {
+   "page": 48,
+   "mark": "h",
+   "context": "M"
+  },
+  {
+   "page": 48,
+   "mark": "h",
+   "context": "Mh.ThenforanyJ∈J"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "Mh.ThenforanyJ∈Jh(E, π, j, {J"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "henforanyJ∈Jh(E, π, j, {Je})thereareJ′∈Jreg,h(E, π, Q, j, {J"
+  },
+  {
+   "page": 48,
+   "mark": "h",
+   "context": "J"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "Jh(E, π, j, {J"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "Jh(E, π, j, {Je}) ∩Jreg(E, π, Q, j, {J"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "(ii)IfJ"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "(ii)IfJe∈Jreg(M, L"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "(ii)IfJe∈Jreg(M, L0,e, L"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "i)IfJe∈Jreg(M, L0,e, L1,e)foralle,andJ∈Jreg,h(E, π, Q, j, {J"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "ifχ({x"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "νJ({x"
+  },
+  {
+   "page": 48,
+   "mark": "h",
+   "context": "#M"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "#Mh({x"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "ifχ({x"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "Proof.(i) Take a J′as given by Lemma 2.26.Then all u ∈MJ′({x"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "ofνJ({x"
+  },
+  {
+   "page": 48,
+   "mark": "r",
+   "context": "r∈RC"
+  },
+  {
+   "page": 48,
+   "mark": "r",
+   "context": "C"
+  },
+  {
+   "page": 48,
+   "mark": "r",
+   "context": "R-vectorspacesissaidtobeoforderIiff(C"
+  },
+  {
+   "page": 48,
+   "mark": "s",
+   "context": "s∈r+ID"
+  },
+  {
+   "page": 48,
+   "mark": "r",
+   "context": "s∈r+IDsforall"
+  },
+  {
+   "page": 48,
+   "mark": "r",
+   "context": "R-graded,withC"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "R-graded,withCrthesubspacespannedbythose⟨x⟩withaL"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "R-graded,withCrthesubspacespannedbythose⟨x⟩withaL0,L"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "ThenthemapCΦ"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "precise statement, take α > 0 to be the minimum of χ({x"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "{x"
+  },
+  {
+   "page": 48,
+   "mark": "h",
+   "context": "#M"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "#Mh({x"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "e∈I+⟨x"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "e∈I−⟨x"
+  },
+  {
+   "page": 48,
+   "mark": "e",
+   "context": "{x"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "Thereisaversion ofthisforthehomotopiesbetweentheCΦ"
+  },
+  {
+   "page": 49,
+   "mark": "k",
+   "context": "complexstructuresj"
+  },
+  {
+   "page": 49,
+   "mark": "k",
+   "context": "structuresJ"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "structuresJk∈Jreg,h(E, π, Q, j, {J"
+  },
+  {
+   "page": 49,
+   "mark": "e",
+   "context": "structuresJk∈Jreg,h(E, π, Q, j, {Je});notethattheJ"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "sameforbothk.ThenthemapsCΦ"
+  },
+  {
+   "page": 49,
+   "mark": "k",
+   "context": "rel(E, π, Q, J"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "rel(E, π, Q, Jk)arehomotopicby"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "dD= δ + (dD −δ)withδoforder[0; ǫ),satisfyingδ"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "subsetsR"
+  },
+  {
+   "page": 49,
+   "mark": "m",
+   "context": "subsetsR1, . . . , R"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "subsetsR1, . . . , Rmsuchthatforr∈R"
+  },
+  {
+   "page": 49,
+   "mark": "j",
+   "context": "subsetsR1, . . . , Rmsuchthatforr∈Ri,s ∈R"
+  },
+  {
+   "page": 49,
+   "mark": "k",
+   "context": "F"
+  },
+  {
+   "page": 49,
+   "mark": "r",
+   "context": "r∈Rk∪Rk+1∪···∪RmD"
+  },
+  {
+   "page": 49,
+   "mark": "k",
+   "context": "Thereisa“spectralsequence”whichtakestheformofasequence(E"
+  },
+  {
+   "page": 49,
+   "mark": "k",
+   "context": "diﬀerentialvectorspaces,suchthatE"
+  },
+  {
+   "page": 49,
+   "mark": "k",
+   "context": "diﬀerentialvectorspaces,suchthatEk+1=H(E"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "diﬀerentialvectorspaces,suchthatEk+1=H(Ek, ∂k).ItstartswithE"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "iF"
+  },
+  {
+   "page": 49,
+   "mark": "i",
+   "context": "iF i/F"
+  },
+  {
+   "page": 49,
+   "mark": "a",
+   "context": "iF i/F i+1,which has"
+  },
+  {
+   "page": 49,
+   "mark": "d",
+   "context": "iF i/F i+1,which hasadiﬀerential ∂0inducedby"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "identiﬁedwith(D, δ),sotheassumptionsaysthatE"
+  },
+  {
+   "page": 49,
+   "mark": "k",
+   "context": "E"
+  },
+  {
+   "page": 50,
+   "mark": "r",
+   "context": "Proof.ConsiderintervalsI"
+  },
+  {
+   "page": 50,
+   "mark": "r",
+   "context": "Proof.ConsiderintervalsIr= [r; r + ǫ)forr ∈supp(C′),andI"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "anexactsymplecticmanifold.L"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "anexactsymplecticmanifold.L0, L"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "f:S"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "(I)L ∩L"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "(I)L ∩L0,L ∩L"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "(I)L ∩L0,L ∩L1,L"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "(I)L ∩L0,L ∩L1,L0 ∩L"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "(I)L ∩L0,L ∩L1,L0 ∩L1aretransverse intersections,andL ∩L"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "(I)L ∩L0,L ∩L1,L0 ∩L1aretransverse intersections,andL ∩L0 ∩L"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "(II)TheactionsaL"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "(II)TheactionsaL0,L"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "(II)TheactionsaL0,L1(x)ofdistinctpointsx∈L"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "(II)TheactionsaL0,L1(x)ofdistinctpointsx∈L0∩L"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "Secondly,as(x"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "Secondly,as(x0, x"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "Secondly,as(x0, x1)runsover(L"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "Secondly,as(x0, x1)runsover(L0∩L)×(L∩L"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "aL"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "aL0,L(x"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "aL0,L(x0) + aL,L"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "aL0,L(x0) + aL,L1(x"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "L"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "L0 ∩L"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "L0 ∩L1,(x"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "L0 ∩L1,(x0, x"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "L0 ∩L1,(x0, x1) ∈(L"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "L0 ∩L1,(x0, x1) ∈(L0 ∩L) × (L ∩L"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "|aL"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "|aL0,L"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "|aL0,L1(x) −aL"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "|aL0,L1(x) −aL0,L(x"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "|aL0,L1(x) −aL0,L(x0) −aL,L"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "|aL0,L1(x) −aL0,L(x0) −aL,L1(x"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "(III)For all y"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "(III)For all yk∈f−1(L∩L"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "(III)For all yk∈f−1(L∩Lk), k= 0, 1, the distance dist(y"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "(III)For all yk∈f−1(L∩Lk), k= 0, 1, the distance dist(y0, y"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "metriconS"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "toLiszero.Moreover,eachι−1(L"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "L"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "L0∩L"
+  },
+  {
+   "page": 52,
+   "mark": "k",
+   "context": "intersectionsL ∩L"
+  },
+  {
+   "page": 52,
+   "mark": "k",
+   "context": "T (λ)→M,forsomeλ>0,whichextendsfandsuchthatι−1(L ∩L"
+  },
+  {
+   "page": 52,
+   "mark": "k",
+   "context": "θ|L"
+  },
+  {
+   "page": 52,
+   "mark": "k",
+   "context": "θ|LkvanishesonL"
+  },
+  {
+   "page": 52,
+   "mark": "k",
+   "context": "θ|LkvanishesonLk∩im(ι);inotherwordsKL"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "C′= CF(L, L"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "C′= CF(L, L1) ⊗CF(τL(L"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "τL(L"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "τL(L0) ∩Liﬀx"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "L(˜x"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "L(˜x0)liesinL"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "L(˜x0)liesinL0∩L"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "L(˜x0)liesinL0∩L1.BydeﬁnitionofKτL(L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "aτL(L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "aτL(L0),L(˜x"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "aτL(L0),L(˜x0) = aL"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "aτL(L0),L(˜x0) = aL0,L(x"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "aτL(L0),L(˜x0) = aL0,L(x0) −KτL(x"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "aτL(L0),L(˜x0) = aL0,L(x0) −KτL(x0) = aL"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "aτL(L0),L(˜x0) = aL0,L(x0) −KτL(x0) = aL0,L(x"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "HenceC′canbeidentiﬁedwithCF(L, L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "HenceC′canbeidentiﬁedwithCF(L, L1) ⊗CF(L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "p : (τL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "p : (τL(L0) ∩L) × (L ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "p : (τL(L0) ∩L) × (L ∩L1) −→τL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "p : (τL(L0) ∩L) × (L ∩L1) −→τL(L0) ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "q: L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "q: L0 ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "q: L0 ∩L1−→τL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "q: L0 ∩L1−→τL(L0) ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "suchthatτL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "suchthatτL(L0) ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "aτL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "aτL(L0),L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "aτL(L0),L1(x)=aL"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "aτL(L0),L1(x)=aL0,L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "aτL(L0),L1(x)=aL0,L1(x).Moreover,foranyw∈τL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "aτL(L0),L1(x)=aL0,L1(x).Moreover,foranyw∈τL(L0) ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "L0 ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "L0 ∩L1withw̸= q(x)onehasaL"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "L0 ∩L1withw̸= q(x)onehasaL0,L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "L0 ∩L1withw̸= q(x)onehasaL0,L1(x) −aτL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "L0 ∩L1withw̸= q(x)onehasaL0,L1(x) −aτL(L0),L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "0 ≤aτL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "0 ≤aτL(L0),L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "0 ≤aτL(L0),L1(˜x) −aτL(L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "0 ≤aτL(L0),L1(˜x) −aτL(L0),L(˜x"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "0 ≤aτL(L0),L1(˜x) −aτL(L0),L(˜x0) −aL,L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "0 ≤aτL(L0),L1(˜x) −aτL(L0),L(˜x0) −aL,L1(x"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "Moreover,foranyw∈τL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "Moreover,foranyw∈τL(L0) ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "Moreover,foranyw∈τL(L0) ∩L1and(˜x"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "Moreover,foranyw∈τL(L0) ∩L1and(˜x0, x"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "Moreover,foranyw∈τL(L0) ∩L1and(˜x0, x1) ∈(τL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "Moreover,foranyw∈τL(L0) ∩L1and(˜x0, x1) ∈(τL(L0) ∩L) × (L ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "withw̸=p(˜x"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "withw̸=p(˜x0, x"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "withw̸=p(˜x0, x1)onehasaτL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "withw̸=p(˜x0, x1)onehasaτL(L0),L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "withw̸=p(˜x0, x1)onehasaτL(L0),L1(w) −aτL(L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "withw̸=p(˜x0, x1)onehasaτL(L0),L1(w) −aτL(L0),L(˜x"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "withw̸=p(˜x0, x1)onehasaτL(L0),L1(w) −aτL(L0),L(˜x0) −aL,L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "ithw̸=p(˜x0, x1)onehasaτL(L0),L1(w) −aτL(L0),L(˜x0) −aL,L1(x"
+  },
+  {
+   "page": 53,
+   "mark": "k",
+   "context": "(iii)Suppose that there are x"
+  },
+  {
+   "page": 53,
+   "mark": "k",
+   "context": "(iii)Suppose that there are xk∈L∩L"
+  },
+  {
+   "page": 53,
+   "mark": "k",
+   "context": "i)Suppose that there are xk∈L∩Lk, k= 0, 1, whose preimages y"
+  },
+  {
+   "page": 53,
+   "mark": "k",
+   "context": "e that there are xk∈L∩Lk, k= 0, 1, whose preimages yk= ι−1(x"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "are antipodeson S"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "are antipodeson Sn.Since τ|S"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "are antipodeson Sn.Since τ|Snis the antipodal map,˜x"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "are antipodeson Sn.Since τ|Snis the antipodal map,˜x0= τL(x"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "to x"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "to x1(hence x"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "to x1(hence x1∈τL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "to x1(hence x1∈τL(L0)∩L∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "Proof.(I)and(IV)implythatL"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "Proof.(I)and(IV)implythatL0∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "outsideim(ι),onehasL"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "outsideim(ι),onehasL0 ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "outsideim(ι),onehasL0 ∩L1= (τL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "outsideim(ι),onehasL0 ∩L1= (τL(L0) ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "Thereisabijectivecorrespondencebetweenpairs(˜x"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "Thereisabijectivecorrespondencebetweenpairs(˜x0, x"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "Thereisabijectivecorrespondencebetweenpairs(˜x0, x1)∈(τL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "(L∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "(L∩L1)and(y"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "(L∩L1)and(y0, y"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "(L∩L1)and(y0, y1)∈ι−1(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "(L∩L1)and(y0, y1)∈ι−1(L0∩L)×ι−1(L∩L"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "(L∩L1)and(y0, y1)∈ι−1(L0∩L)×ι−1(L∩L1),givenbysettingy"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "L(˜x"
+  },
+  {
+   "page": 53,
+   "mark": "y",
+   "context": "L(˜x0)),"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "L(˜x0)),y"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "L(˜x0)),y1= ι−1(x"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "L(˜x0)),y1= ι−1(x1).As"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "ι−1(τL(L"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "ι−1(τL(L0) ∩L"
+  },
+  {
+   "page": 53,
+   "mark": "y",
+   "context": "τ(T (λ)"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "τ(T (λ)y"
+  },
+  {
+   "page": 53,
+   "mark": "y",
+   "context": "τ(T (λ)y0) ∩T (λ)"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "τ(T (λ)y0) ∩T (λ)y"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "Sinceτisδ-wobbly(V)anddist(y"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "Sinceτisδ-wobbly(V)anddist(y0, y"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "onepoint.Fixtemporarilysome(y"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "onepoint.Fixtemporarilysome(y0, y"
+  },
+  {
+   "page": 54,
+   "mark": "y",
+   "context": "onepoint.Fixtemporarilysome(y0, y1)andwriteτ(T (λ)"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "onepoint.Fixtemporarilysome(y0, y1)andwriteτ(T (λ)y"
+  },
+  {
+   "page": 54,
+   "mark": "y",
+   "context": "onepoint.Fixtemporarilysome(y0, y1)andwriteτ(T (λ)y0) ∩T (λ)"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "nepoint.Fixtemporarilysome(y0, y1)andwriteτ(T (λ)y0) ∩T (λ)y"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "aτL(L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "aτL(L0),L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "aτL(L0),L1(˜x) = KL"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "aτL(L0),L1(˜x) = KL1(˜x) −KτL(L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "= KL"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "= KL1(˜x) −KL"
+  },
+  {
+   "page": 54,
+   "mark": "y",
+   "context": "By construction˜ylies in the ﬁbre T (λ)"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "By construction˜ylies in the ﬁbre T (λ)y"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "By construction˜ylies in the ﬁbre T (λ)y1, and since KL"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "L(˜x))=KL"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "L(˜x))=KL0(x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "L(˜x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "aτL(L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "aτL(L0),L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "aτL(L0),L1(˜x) = KL"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "aτL(L0),L1(˜x) = KL1(x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "aτL(L0),L1(˜x) = KL1(x1) −KL"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "aτL(L0),L1(˜x) = KL1(x1) −KL0(x"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "= aL,L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "= aL,L1(x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "= aL,L1(x1) + aL"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "= aL,L1(x1) + aL0,L(x"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "= aL,L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "= aL,L1(x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "= aL,L1(x1) + aτL(L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "= aL,L1(x1) + aτL(L0),L(˜x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "from their deﬁnitions that p, qare injective.A point of τL(L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": " their deﬁnitions that p, qare injective.A point of τL(L0)∩L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "hencethetwoimagesaredisjointandcoverτL(L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "hencethetwoimagesaredisjointandcoverτL(L0) ∩L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "followsfromLemma1.9forim(p)andfromthatofL"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "followsfromLemma1.9forim(p)andfromthatofL0 ∩L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "ofL"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "ofL0 ∩L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "ofL0 ∩L1diﬀerentfromx,onehas|aτL(L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "ofL0 ∩L1diﬀerentfromx,onehas|aτL(L0),L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "ofL0 ∩L1diﬀerentfromx,onehas|aτL(L0),L1(w) −aL"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "ofL0 ∩L1diﬀerentfromx,onehas|aτL(L0),L1(w) −aL0,L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "ofL0 ∩L1diﬀerentfromx,onehas|aτL(L0),L1(w) −aL0,L1(x)|= |aL"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "L0 ∩L1diﬀerentfromx,onehas|aτL(L0),L1(w) −aL0,L1(x)|= |aL0,L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "aL"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "aL0,L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "x)|≥3ǫ by (II).In the remaining case, which is when w = p(˜x"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "3ǫ by (II).In the remaining case, which is when w = p(˜x0, x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "shows that |aτL(L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "shows that |aτL(L0),L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "shows that |aτL(L0),L1(w)−aL"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "shows that |aτL(L0),L1(w)−aL0,L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "shows that |aτL(L0),L1(w)−aL0,L1(x)| > |aτL(L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "shows that |aτL(L0),L1(w)−aL0,L1(x)| > |aτL(L0),L(˜x"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "shows that |aτL(L0),L1(w)−aL0,L1(x)| > |aτL(L0),L(˜x0)+aL,L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "ows that |aτL(L0),L1(w)−aL0,L1(x)| > |aτL(L0),L(˜x0)+aL,L1(x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "hat |aτL(L0),L1(w)−aL0,L1(x)| > |aτL(L0),L(˜x0)+aL,L1(x1)−aL"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": " |aτL(L0),L1(w)−aL0,L1(x)| > |aτL(L0),L(˜x0)+aL,L1(x1)−aL0,L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "concludesthat|aτL(L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "concludesthat|aτL(L0),L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "concludesthat|aτL(L0),L1(w)−aL"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "concludesthat|aτL(L0),L1(w)−aL0,L"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "x∈τL(L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "x∈τL(L0) ∩L"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "byβ(⟨x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "byβ(⟨x1⟩⊗⟨˜x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "byβ(⟨x1⟩⊗⟨˜x0⟩)=⟨p(˜x"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "byβ(⟨x1⟩⊗⟨˜x0⟩)=⟨p(˜x0, x"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "byβ(⟨x1⟩⊗⟨˜x0⟩)=⟨p(˜x0, x1)⟩andγ(⟨p(˜x"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "byβ(⟨x1⟩⊗⟨˜x0⟩)=⟨p(˜x0, x1)⟩andγ(⟨p(˜x0, x"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "exactsymplecticﬁbrationπ:E=S× M→S,withΩ∈Ω"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "exactsymplecticﬁbrationπ:E=S× M→S,withΩ∈Ω2(E),Θ∈Ω"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "Q = (∂1S × τL(L"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "Q = (∂1S × τL(L0)) ∪(∂2S × L) ∪(∂3S × L"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "0(E, π, Q) : HF(L, L"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "0(E, π, Q) : HF(L, L1) ⊗HF(τL(L"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "0(E, π, Q) : HF(L, L1) ⊗HF(τL(L0), L) →HF(τL(L"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "0(E, π, Q) : HF(L, L1) ⊗HF(τL(L0), L) →HF(τL(L0), L"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "σ(z) ≡x ∈Misconstant,and itfurthersatisﬁes u(∂S) ⊂Qiﬀx ∈τL(L"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "L∩L"
+  },
+  {
+   "page": 55,
+   "mark": "h",
+   "context": "tou ∈M"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "Fix some x ∈τL(L"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "Fix some x ∈τL(L0)∩L∩L"
+  },
+  {
+   "page": 55,
+   "mark": "h",
+   "context": "me x ∈τL(L0)∩L∩L1and the corresponding constant section u ∈M"
+  },
+  {
+   "page": 55,
+   "mark": "x",
+   "context": "T M"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "T Mx∼= C"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "T Mx∼= Cnwhich takes the tangent spaces to τL(L"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "T Mx∼= Cnwhich takes the tangent spaces to τL(L0), L, and L"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "= Cnwhich takes the tangent spaces to τL(L0), L, and L1 to R"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "which takes the tangent spaces to τL(L0), L, and L1 to Rn, e"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "takes the tangent spaces to τL(L0), L, and L1 to Rn, e2πi/3R"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "and eπi/3R"
+  },
+  {
+   "page": 55,
+   "mark": "x",
+   "context": "compatibleJMonM.WemayalsoassumethattheisomorphismT M"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "compatibleJMonM.WemayalsoassumethattheisomorphismT Mx∼=C"
+  },
+  {
+   "page": 55,
+   "mark": "v",
+   "context": "aresectionsofthevectorbundleu∗(T E"
+  },
+  {
+   "page": 55,
+   "mark": "v",
+   "context": "aresectionsofthevectorbundleu∗(T Ev, J|T E"
+  },
+  {
+   "page": 55,
+   "mark": "x",
+   "context": "aresectionsofthevectorbundleu∗(T Ev, J|T Ev)∼=S× T M"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "u= {X∈W"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "u= {X∈W 1,p(S, C"
+  },
+  {
+   "page": 56,
+   "mark": "z",
+   "context": "u= {X∈W 1,p(S, Cn):X"
+  },
+  {
+   "page": 56,
+   "mark": "i",
+   "context": "u= {X∈W 1,p(S, Cn):Xz∈e"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "u= {X∈W 1,p(S, Cn):Xz∈ei(1−k)π/3R"
+  },
+  {
+   "page": 56,
+   "mark": "z",
+   "context": "u= {X∈W 1,p(S, Cn):Xz∈ei(1−k)π/3Rnfor"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 56,
+   "mark": "p",
+   "context": "u,J= L"
+  },
+  {
+   "page": 56,
+   "mark": "0",
+   "context": "u,J= Lp(Λ"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "u,J= Lp(Λ0,"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "u,J= Lp(Λ0,1S ⊗C"
+  },
+  {
+   "page": 56,
+   "mark": "0",
+   "context": "W"
+  },
+  {
+   "page": 56,
+   "mark": "h",
+   "context": "becauseDu ◦jtakesvaluesinT E"
+  },
+  {
+   "page": 56,
+   "mark": "v",
+   "context": "becauseDu ◦jtakesvaluesinT Ehwhereas∇XJisnontrivialonlyonT E"
+  },
+  {
+   "page": 56,
+   "mark": "v",
+   "context": "andmoreover,thepullbackconnectionu∗∇onu∗T E"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "thatDu,Jisthestandard¯∂-operatorforfunctionsS→C"
+  },
+  {
+   "page": 56,
+   "mark": "t",
+   "context": "aclosedpathl:[0; 6]→∂¯S,suchthatl(t)=z"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "Let¯Dbethe¯∂-operatoronthetrivialbundle¯S× C"
+  },
+  {
+   "page": 57,
+   "mark": "l",
+   "context": "conditiongivenbythefamilyofLagrangiansubspacesΛ"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "conditiongivenbythefamilyofLagrangiansubspacesΛl(t)=eπiλ(t)R"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "ditiongivenbythefamilyofLagrangiansubspacesΛl(t)=eπiλ(t)Rn⊂C"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "copyofDu,J(inoneofthetwocases,thevectorspaceC"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "e points z in one of these intervals are all equal to eπi/3R"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "fortheotherinterval,theyareoftheformeπisR"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "eπi/3R"
+  },
+  {
+   "page": 57,
+   "mark": "n",
+   "context": "eπi/3Rn∩eπisR"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "J(1)∈Jreg(M, τL(L"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "J(2)∈Jreg(M, L, L"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "J(3)∈Jreg(M, τL(L"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "J(3)∈Jreg(M, τL(L0), L"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "νJ(˜x"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "νJ(˜x0, x"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "νJ(˜x0, x1, x) for˜x"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "νJ(˜x0, x1, x) for˜x0∈τL(L"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "νJ(˜x0, x1, x) for˜x0∈τL(L0)∩L, x"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "νJ(˜x0, x1, x) for˜x0∈τL(L0)∩L, x1∈L∩L"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "νJ(˜x0, x1, x) for˜x0∈τL(L0)∩L, x1∈L∩L1, x ∈τL(L"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "νJ(˜x0, x1, x) for˜x0∈τL(L0)∩L, x1∈L∩L1, x ∈τL(L0)∩L"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "χ(˜x"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "χ(˜x0, x"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "χ(˜x0, x1, x) = aτL(L"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "χ(˜x0, x1, x) = aτL(L0),L"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "χ(˜x0, x1, x) = aτL(L0),L1(x) −aτL(L"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "χ(˜x0, x1, x) = aτL(L0),L1(x) −aτL(L0),L(˜x"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "χ(˜x0, x1, x) = aτL(L0),L1(x) −aτL(L0),L(˜x0) −aL,L"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "χ(˜x0, x1, x) = aτL(L0),L1(x) −aτL(L0),L(˜x0) −aL,L1(x"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "is< 0.Lemma3.2(ii)showsthatχ(˜x"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "is< 0.Lemma3.2(ii)showsthatχ(˜x0, x"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "[3ǫ; ∞),andthattheﬁrstcaseonlyhappensforx=p(˜x"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "[3ǫ; ∞),andthattheﬁrstcaseonlyhappensforx=p(˜x0, x"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "φ(⟨˜x"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "φ(⟨˜x0⟩⊗⟨x"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "φ(⟨˜x0⟩⊗⟨x1⟩) = νJ(˜x"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "φ(⟨˜x0⟩⊗⟨x1⟩) = νJ(˜x0, x"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "φ(⟨˜x0⟩⊗⟨x1⟩) = νJ(˜x0, x1, p(˜x"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "φ(⟨˜x0⟩⊗⟨x1⟩) = νJ(˜x0, x1, p(˜x0, x"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "φ(⟨˜x0⟩⊗⟨x1⟩) = νJ(˜x0, x1, p(˜x0, x1))⟨p(˜x"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "φ(⟨˜x0⟩⊗⟨x1⟩) = νJ(˜x0, x1, p(˜x0, x1))⟨p(˜x0, x"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "x∈τL(L"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "x∈τL(L0) ∩L ∩L"
+  },
+  {
+   "page": 58,
+   "mark": "h",
+   "context": "3.2(iii),andthereforeνJ(x, x, x)=#M"
+  },
+  {
+   "page": 58,
+   "mark": "h",
+   "context": "#M"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "Choose˜x"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "Choose˜x0∈τL(L"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "Choose˜x0∈τL(L0) ∩L,x"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "Choose˜x0∈τL(L0) ∩L,x1∈L ∩L"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "L(τL)−1(˜x"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "1=x"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "1=x1∈L ∩L"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "L(L0) ∩L"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "L(L0) ∩L"
+  },
+  {
+   "page": 58,
+   "mark": "x",
+   "context": "L(L0) ∩L1remain transverse, which implies that auniquefamily"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "L(L0) ∩L"
+  },
+  {
+   "page": 58,
+   "mark": "x",
+   "context": "L(L0) ∩L1,suchthat"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "L"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "Lemma3.5.Forany(˜x0, x1)thereisa“deformation”suchthat˜x"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "0= x"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "L(˜x"
+  },
+  {
+   "page": 58,
+   "mark": "y",
+   "context": "L(˜x0)),"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "L(˜x0)),y"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "L(˜x0)),y1=f −1(x"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "onS"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "onSnwhosedistanceis≥2πδ.Letgµ∈Diﬀ(S"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "onSnwhosedistanceis≥2πδ.Letgµ∈Diﬀ(Sn)beanisotopy,g"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "thatg"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "thatg1(y"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "thatg1(y0),g"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "thatg1(y0),g1(y"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "andwithC"
+  },
+  {
+   "page": 58,
+   "mark": "y",
+   "context": "Cµ≥||D(gµ)"
+  },
+  {
+   "page": 58,
+   "mark": "n",
+   "context": "forally∈S"
+  },
+  {
+   "page": 58,
+   "mark": "e",
+   "context": "δµ= δ/Cµ;hereGµ∈Symp"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "distance between any point of (fµ)−1(L∩L"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "distance between any point of (fµ)−1(L∩L0) = gµf−1(L∩L"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "(fµ)−1(L∩L"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "(fµ)−1(L∩L1) = gµf−1(L∩L"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "Sinceg"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "Sinceg1(y1) = A(g"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "L(τL)−1(˜x"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L(τL)−1(˜x0) = f◦(g"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L(τL)−1(˜x0) = f◦(g1)−1 ◦A ◦g"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "L(τL)−1(˜x0) = f◦(g1)−1 ◦A ◦g1(y"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L(τL)−1(˜x0) = f◦(g1)−1 ◦A ◦g1(y0) = f(y"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L(τL)−1(˜x0) = f◦(g1)−1 ◦A ◦g1(y0) = f(y1) = x"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L(τL)−1(˜x0) = f◦(g1)−1 ◦A ◦g1(y0) = f(y1) = x1= x"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "˜x"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "0= τ"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L(L0), L),(L, L"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L(L0), L"
+  },
+  {
+   "page": 59,
+   "mark": "h",
+   "context": "senonesforµ= 0,andsimilarlyafamilyJµ∈J"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L(L0), L"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L(L0), L"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L(L0),L"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "L(L0),L1(xµ) −aτ"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "L(L"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "0) −aL,L"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "J"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "νJ(˜x0, x1, x) = νJ"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "νJ(˜x0, x1, x) = νJ1(˜x"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "0, x"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "1, x"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "specialcasewhichwehavealreadydiscussed,sothatνJ"
+  },
+  {
+   "page": 60,
+   "mark": "0",
+   "context": "specialcasewhichwehavealreadydiscussed,sothatνJ1(˜x"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "0, x"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "1, x"
+  },
+  {
+   "page": 60,
+   "mark": "0",
+   "context": "S→Misa“pseudo-holomorphictriangle”whosesideslieonτL(L"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "→Misa“pseudo-holomorphictriangle”whosesideslieonτL(L0), L, L"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "wing Remark 1.4, we want to modify this by a pullback.Take S"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "and amapp : S"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "(E"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "(Ep, π"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "theannulusS"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "theannulusSp\\ D(r);andusingtheisomorphismφ"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "theannulusSp\\ D(r);andusingtheisomorphismφp: (E"
+  },
+  {
+   "page": 61,
+   "mark": "1",
+   "context": "theannulusSp\\ D(r);andusingtheisomorphismφp: (Ep)"
+  },
+  {
+   "page": 61,
+   "mark": "r",
+   "context": "fromφL:(EL)"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "fromφL:(EL)r→M,onecanidentifyitsmonodromyaround∂S"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "Torepresentthisproperty,wedraw(E"
+  },
+  {
+   "page": 61,
+   "mark": "p",
+   "context": "Torepresentthisproperty,wedraw(Ep, π"
+  },
+  {
+   "page": 61,
+   "mark": "f",
+   "context": "NowtakethesurfaceS"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "NowtakethesurfaceSf=(R × [−1; 1]) \\ D(1/2)⊂R"
+  },
+  {
+   "page": 61,
+   "mark": "f",
+   "context": "(s, t),anddivideitintotwopartsSf,±= S"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "Ωf,±isthepullbackofω∈Ω"
+  },
+  {
+   "page": 62,
+   "mark": "f",
+   "context": "β(s)=0fors≥1/4,β(s)=1fors≤−1/4.Deﬁneaﬁbration(E"
+  },
+  {
+   "page": 62,
+   "mark": "f",
+   "context": "β(s)=0fors≥1/4,β(s)=1fors≤−1/4.Deﬁneaﬁbration(Ef, π"
+  },
+  {
+   "page": 62,
+   "mark": "f",
+   "context": "S"
+  },
+  {
+   "page": 62,
+   "mark": "f",
+   "context": "uptoformsΩ"
+  },
+  {
+   "page": 62,
+   "mark": "f",
+   "context": "uptoformsΩf,Θ"
+  },
+  {
+   "page": 62,
+   "mark": "f",
+   "context": "Thismakes(E"
+  },
+  {
+   "page": 62,
+   "mark": "f",
+   "context": "Thismakes(Ef, π"
+  },
+  {
+   "page": 62,
+   "mark": "p",
+   "context": "If one identiﬁes the ﬁbres of E"
+  },
+  {
+   "page": 62,
+   "mark": "f",
+   "context": "If one identiﬁes the ﬁbres of Epand E"
+  },
+  {
+   "page": 62,
+   "mark": "p",
+   "context": "e identiﬁes the ﬁbres of Epand Efat the point 1/2 by using φ"
+  },
+  {
+   "page": 62,
+   "mark": "p",
+   "context": "ntiﬁes the ﬁbres of Epand Efat the point 1/2 by using φp: (E"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "iﬁes the ﬁbres of Epand Efat the point 1/2 by using φp: (Ep)"
+  },
+  {
+   "page": 62,
+   "mark": "f",
+   "context": "M= (E"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "M= (Ef)"
+  },
+  {
+   "page": 62,
+   "mark": "p",
+   "context": "S=S"
+  },
+  {
+   "page": 62,
+   "mark": "f",
+   "context": "S=Sp∪S"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "LagrangianboundaryconditionQwhichistheunionofR × {1} × L"
+  },
+  {
+   "page": 62,
+   "mark": "0",
+   "context": "andR × {−1} × τL(L"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "KL"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "KL1on R×{1}×L"
+  },
+  {
+   "page": 62,
+   "mark": "0",
+   "context": "KL1on R×{1}×L1 and KτL(L"
+  },
+  {
+   "page": 62,
+   "mark": "0",
+   "context": "KL1on R×{1}×L1 and KτL(L0) −β(s)KτL|τL(L"
+  },
+  {
+   "page": 62,
+   "mark": "0",
+   "context": "KL1on R×{1}×L1 and KτL(L0) −β(s)KτL|τL(L0) on R×{−1}×τL(L"
+  },
+  {
+   "page": 62,
+   "mark": "0",
+   "context": "0(E, π, Q) : HF(τL(L"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "0(E, π, Q) : HF(τL(L0), L"
+  },
+  {
+   "page": 62,
+   "mark": "0",
+   "context": "0(E, π, Q) : HF(τL(L0), L1) →HF(L"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "0(E, π, Q) : HF(τL(L0), L1) →HF(L0, L"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "conditionsofProposition2.28(i).Moreover,givenw∈τL(L"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "conditionsofProposition2.28(i).Moreover,givenw∈τL(L0) ∩L"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "L"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "L0∩L"
+  },
+  {
+   "page": 63,
+   "mark": "h",
+   "context": "L0∩L1, the space M"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "vature,sodoes(E, π).Toanypointx ∈L"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "vature,sodoes(E, π).Toanypointx ∈L0 ∩L"
+  },
+  {
+   "page": 63,
+   "mark": "f",
+   "context": "sectionu"
+  },
+  {
+   "page": 63,
+   "mark": "f",
+   "context": "sectionuf: S"
+  },
+  {
+   "page": 63,
+   "mark": "f",
+   "context": "sectionuf: Sf→E"
+  },
+  {
+   "page": 63,
+   "mark": "f",
+   "context": "sectionuf: Sf→Efsatisfyingu"
+  },
+  {
+   "page": 63,
+   "mark": "f",
+   "context": "u"
+  },
+  {
+   "page": 63,
+   "mark": "p",
+   "context": "rivialpart¯D(r) × (M\\ im(ι)),seeProposition1.11.ThepullbackE"
+  },
+  {
+   "page": 63,
+   "mark": "p",
+   "context": "g property, which means that there is a horizontal section u"
+  },
+  {
+   "page": 63,
+   "mark": "p",
+   "context": "perty, which means that there is a horizontal section upof E"
+  },
+  {
+   "page": 63,
+   "mark": "f",
+   "context": "matchingupwithu"
+  },
+  {
+   "page": 63,
+   "mark": "h",
+   "context": "matchingupwithuftoformau ∈M"
+  },
+  {
+   "page": 63,
+   "mark": "h",
+   "context": "matchingupwithuftoformau ∈Mh(x, x) ⊂M"
+  },
+  {
+   "page": 63,
+   "mark": "f",
+   "context": "S"
+  },
+  {
+   "page": 63,
+   "mark": "f",
+   "context": "Sf (u"
+  },
+  {
+   "page": 63,
+   "mark": "f",
+   "context": "Sf (uf)∗Ω"
+  },
+  {
+   "page": 63,
+   "mark": "f",
+   "context": "Sf (uf)∗Ωf=0bydeﬁnitionofΩ"
+  },
+  {
+   "page": 63,
+   "mark": "p",
+   "context": "S"
+  },
+  {
+   "page": 63,
+   "mark": "p",
+   "context": "Sp(u"
+  },
+  {
+   "page": 63,
+   "mark": "p",
+   "context": "Sp(up)∗Ω"
+  },
+  {
+   "page": 63,
+   "mark": "p",
+   "context": "theimageofu"
+  },
+  {
+   "page": 63,
+   "mark": "p",
+   "context": "theimageofupliesinthetrivialpartofE"
+  },
+  {
+   "page": 63,
+   "mark": "v",
+   "context": "haveconstructedsatisﬁesA(u)=0.Theconnection∇uonu∗T E"
+  },
+  {
+   "page": 63,
+   "mark": "v",
+   "context": "oneﬁndsthatthesubbundleu∗(T Q ∩T E"
+  },
+  {
+   "page": 63,
+   "mark": "v",
+   "context": "oneﬁndsthatthesubbundleu∗(T Q ∩T Ev)⊂u∗T E"
+  },
+  {
+   "page": 63,
+   "mark": "v",
+   "context": "u∗(T E"
+  },
+  {
+   "page": 63,
+   "mark": "n",
+   "context": "u∗(T Ev)∼=S × C"
+  },
+  {
+   "page": 63,
+   "mark": "v",
+   "context": "that u∗(T Q∩T E"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "∗(T Q∩T Ev) is mapped to the subbundle (R×{−1}×Λ−1)∪(R×{1}×Λ"
+  },
+  {
+   "page": 63,
+   "mark": "n",
+   "context": "forsomeLagrangiansubspacesΛ±1⊂C"
+  },
+  {
+   "page": 63,
+   "mark": "h",
+   "context": "Next,supposethatu∈M"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "forpointsx+∈L"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "forpointsx+∈L1,x−∈τL(L"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "alongSf,+∩Sf,−isthatx−=x+=τL(x+).Inparticularx±∈L"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "alongSf,+∩Sf,−isthatx−=x+=τL(x+).Inparticularx±∈L0∩L"
+  },
+  {
+   "page": 63,
+   "mark": "h",
+   "context": "followsthattheconstructionaboveyieldsallofM"
+  },
+  {
+   "page": 63,
+   "mark": "h",
+   "context": "tosomeelementofM"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "J(3)∈Jreg(M, τL(L"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "J(3)∈Jreg(M, τL(L0), L"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "J(5)∈Jreg(L"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "J(5)∈Jreg(L0, L"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "writec=φ + (c −φ),whereφdependsonlyonthesectionsinM"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "bedenotedby(E"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "bedenotedby(Eb, π"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "bedenotedby(Eb, πb),itsbasebyS"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "by Q"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": "by Qb; and correspondingly we write (E"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": "by Qb; and correspondingly we write (Ec, π"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": "by Qb; and correspondingly we write (Ec, πc), S"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": "by Qb; and correspondingly we write (Ec, πc), Sc, Q"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "inSection3.3todeﬁnec.OvertheuniquenegativeendofS"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "inSection3.3todeﬁnec.OvertheuniquenegativeendofSb,Q"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": "on(τL(L0), L1),andthesameholdsforQ"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": "on(τL(L0), L1),andthesameholdsforQcoverthepositiveendofS"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "(Ebc, πbc) has nonnegative curvature because (E"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "(Ebc, πbc) has nonnegative curvature because (Eb, π"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": "(Ebc, πbc) has nonnegative curvature because (Eb, πb) and (E"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": ", πbc) has nonnegative curvature because (Eb, πb) and (Ec, π"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "property.MoreoverM"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "ouldreversethegluingconstructionandobtainahorizontalsectionu"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "ofE"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "ofEbwithboundaryinQ"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": "ofEbwithboundaryinQb,aswellasasimilarsectionu"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": "ofEbwithboundaryinQb,aswellasasimilarsectionucofE"
+  },
+  {
+   "page": 64,
+   "mark": "b",
+   "context": "seenpreviouslythatsuchu"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "seenpreviouslythatsuchubcorrespondtopointsinτL(L"
+  },
+  {
+   "page": 64,
+   "mark": "1",
+   "context": "seenpreviouslythatsuchubcorrespondtopointsinτL(L0) ∩L ∩L"
+  },
+  {
+   "page": 64,
+   "mark": "c",
+   "context": "enpreviouslythatsuchubcorrespondtopointsinτL(L0) ∩L ∩L1,andu"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "topointsinL"
+  },
+  {
+   "page": 64,
+   "mark": "1",
+   "context": "topointsinL0∩L"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "toapointofL"
+  },
+  {
+   "page": 64,
+   "mark": "1",
+   "context": "toapointofL0∩L ∩L"
+  },
+  {
+   "page": 65,
+   "mark": "b",
+   "context": "Proof.SupposeﬁrstthatjisinducedfromthecomplexstructuresonS"
+  },
+  {
+   "page": 65,
+   "mark": "c",
+   "context": "oof.SupposeﬁrstthatjisinducedfromthecomplexstructuresonSb, S"
+  },
+  {
+   "page": 65,
+   "mark": "0",
+   "context": "σ,Jisregular;andthenwehavemoreoverCΦ"
+  },
+  {
+   "page": 65,
+   "mark": "o",
+   "context": "structionofthesameexactLefschetzﬁbration.ConsiderthesurfaceS"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "Figure10,embeddedintoR"
+  },
+  {
+   "page": 65,
+   "mark": "o",
+   "context": "tion,wedivideitintoSo,±=S"
+  },
+  {
+   "page": 65,
+   "mark": "o",
+   "context": ",whichyieldsanexactsymplecticﬁbration(E"
+  },
+  {
+   "page": 65,
+   "mark": "o",
+   "context": ",whichyieldsanexactsymplecticﬁbration(Eo, π"
+  },
+  {
+   "page": 65,
+   "mark": "o",
+   "context": "overS"
+  },
+  {
+   "page": 65,
+   "mark": "o",
+   "context": "builtupinthisparticularway).Takethepiecesof∂S"
+  },
+  {
+   "page": 65,
+   "mark": "o",
+   "context": "andconstructaLagrangianboundaryconditionQ"
+  },
+  {
+   "page": 65,
+   "mark": "o",
+   "context": "andconstructaLagrangianboundaryconditionQofor(E"
+  },
+  {
+   "page": 65,
+   "mark": "o",
+   "context": "andconstructaLagrangianboundaryconditionQofor(Eo, π"
+  },
+  {
+   "page": 65,
+   "mark": "0",
+   "context": "of∂1So,−× τL(L"
+  },
+  {
+   "page": 65,
+   "mark": "1",
+   "context": "of∂1So,−× τL(L0),∂2So,−× L⊂Eo,−and∂2So,+× L,∂3So,+× L"
+  },
+  {
+   "page": 65,
+   "mark": "o",
+   "context": "Theassociated functionKQ"
+  },
+  {
+   "page": 65,
+   "mark": "0",
+   "context": "Theassociated functionKQoisequaltoKτL(L"
+  },
+  {
+   "page": 65,
+   "mark": "0",
+   "context": "Theassociated functionKQoisequaltoKτL(L0) −η(t)KτL|τL(L"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "κQ"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "∂S"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "∂So κQ"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "Q"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "overthenegativeend;asuitabletrivializationof(E"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "overthenegativeend;asuitabletrivializationof(Eo, π"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "Lemma3.10.TakethesubsetU"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "Lemma3.10.TakethesubsetUo⊂S"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "nohorizontalsectionsu : U"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "nohorizontalsectionsu : Uo→E"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "nohorizontalsectionsu : Uo→Eowithu(∂S"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "nohorizontalsectionsu : Uo→Eowithu(∂So∩U"
+  },
+  {
+   "page": 66,
+   "mark": "o",
+   "context": "nohorizontalsectionsu : Uo→Eowithu(∂So∩Uo) ⊂Q"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "For the following step,we need theﬁbration (E"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "For the following step,we need theﬁbration (Ep, π"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "For the following step,we need theﬁbration (Ep, πp) over S"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "conditionQ"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "conditionQpforit.AsitstandsκQ"
+  },
+  {
+   "page": 66,
+   "mark": "c",
+   "context": "conditionQpforit.AsitstandsκQp=d"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "becomeszeronear−1/2 ∈∂S"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "becomeszeronear−1/2 ∈∂Sp.ThiscanbecompensatedbyachangeofKQ"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "of Proposition 2.13 that the Φ1-invariant of (E"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "of Proposition 2.13 that the Φ1-invariant of (Ep, π"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "of Proposition 2.13 that the Φ1-invariant of (Ep, πp, Q"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "Lemma3.11.Let U"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "Lemma3.11.Let Up⊂S"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "hoodof−1/2 ∈∂S"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "hoodof−1/2 ∈∂Sp.Thentherearenopartialhorizontalsectionsw: U"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "odof−1/2 ∈∂Sp.Thentherearenopartialhorizontalsectionsw: Up→E"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "satisfyingw(∂S"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "satisfyingw(∂Sp∩U"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "satisfyingw(∂Sp∩Up) ⊂Q"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "Proof.Fromthestandard ﬁbration,E"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "spheres Σ"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "z⊂E"
+  },
+  {
+   "page": 66,
+   "mark": "z",
+   "context": "z,"
+  },
+  {
+   "page": 66,
+   "mark": "0",
+   "context": "along any path, and they degenerate to the critical point x"
+  },
+  {
+   "page": 66,
+   "mark": "p",
+   "context": "ong any path, and they degenerate to the critical point x0∈E"
+  },
+  {
+   "page": 66,
+   "mark": "z",
+   "context": "0as"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "our boundarycondition ismadeupof theΣ"
+  },
+  {
+   "page": 67,
+   "mark": "z",
+   "context": "zfor"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "zfor z∈∂S"
+  },
+  {
+   "page": 67,
+   "mark": "w",
+   "context": "zfor z∈∂Sp;therefore asection"
+  },
+  {
+   "page": 67,
+   "mark": "z",
+   "context": "zforall"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "zforallz∈∂S"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "zforallz∈∂Sp ∩U"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "withthepropertiesstatedabovewouldsatisfyw(z) ∈Σ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "and by parallel transport for all z∈U"
+  },
+  {
+   "page": 67,
+   "mark": "0",
+   "context": "ansport for all z∈Up̸= {0}.In the limit this yields w(0) = x"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "OnecanidentifytheﬁbreofE"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "OnecanidentifytheﬁbreofEooverζ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "OnecanidentifytheﬁbreofEooverζo=(0, 0) ∈∂S"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "OnecanidentifytheﬁbreofEooverζo=(0, 0) ∈∂SowiththeﬁbreofE"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "overζ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "overζp= −1/2 ∈∂S"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "φ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "(E"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "(Eo)ζ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "1/2∼= (E"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "1/2∼= (Ep)ζ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "←−−E"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "(3.12) takes(Q"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "(3.12) takes(Qo)(0,0)to(Q"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "(3.12) takes(Qo)(0,0)to(Qp)−1/2.Theﬁbrations(E"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "(3.12) takes(Qo)(0,0)to(Qp)−1/2.Theﬁbrations(Eo, π"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "(3.12) takes(Qo)(0,0)to(Qp)−1/2.Theﬁbrations(Eo, πo)and(E"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "3.12) takes(Qo)(0,0)to(Qp)−1/2.Theﬁbrations(Eo, πo)and(Ep, π"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "near the points ζ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "near the points ζo, ζ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "near the points ζo, ζp, and the one-forms κQ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "near the points ζo, ζp, and the one-forms κQo, κQ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": " 2.4 to produce an exact Lefschetz ﬁbration (E, π) over S= S"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "4 to produce an exact Lefschetz ﬁbration (E, π) over S= So#ζ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "o produce an exact Lefschetz ﬁbration (E, π) over S= So#ζo∼ζ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "produce an exact Lefschetz ﬁbration (E, π) over S= So#ζo∼ζpS"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "tillmodelledover theendson thesameLagrangian submanifoldsasS"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "Proof.Letj"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "Proof.LetjobesomecomplexstructureonS"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "Lemmas3.10and2.28 onecan ﬁndaJ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "Lemmas3.10and2.28 onecan ﬁndaJo∈J(E"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "Lemmas3.10and2.28 onecan ﬁndaJo∈J(Eo, π"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "Lemmas3.10and2.28 onecan ﬁndaJo∈J(Eo, πo, j"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "whatJ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "whatJoisoutside(π"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "whatJoisoutside(πo)−1(U"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "whatJoisoutside(πo)−1(Uo)⊂E"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "gluingargument,J"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "ζ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "ζo/∈U"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "productofj"
+  },
+  {
+   "page": 67,
+   "mark": "0",
+   "context": "nowhaveevaluationmaps,for˜x"
+  },
+  {
+   "page": 67,
+   "mark": "0",
+   "context": "nowhaveevaluationmaps,for˜x0∈τL(L"
+  },
+  {
+   "page": 67,
+   "mark": "1",
+   "context": "nowhaveevaluationmaps,for˜x0∈τL(L0) ∩L,x"
+  },
+  {
+   "page": 67,
+   "mark": "1",
+   "context": "nowhaveevaluationmaps,for˜x0∈τL(L0) ∩L,x1∈L ∩L"
+  },
+  {
+   "page": 67,
+   "mark": "0",
+   "context": "nowhaveevaluationmaps,for˜x0∈τL(L0) ∩L,x1∈L ∩L1,x ∈τL(L"
+  },
+  {
+   "page": 67,
+   "mark": "1",
+   "context": "nowhaveevaluationmaps,for˜x0∈τL(L0) ∩L,x1∈L ∩L1,x ∈τL(L0) ∩L"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "evζ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "evζo: MJ"
+  },
+  {
+   "page": 67,
+   "mark": "0",
+   "context": "evζo: MJo(˜x"
+  },
+  {
+   "page": 67,
+   "mark": "1",
+   "context": "evζo: MJo(˜x0, x"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "evζo: MJo(˜x0, x1, x) −→Q"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "ζ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "Take some complex structure j"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "Take some complex structure jpon S"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "a J"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "a Jp∈Jreg,h(E"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "a Jp∈Jreg,h(Ep, π"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "a Jp∈Jreg,h(Ep, πp, Q"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "a Jp∈Jreg,h(Ep, πp, Qp, j"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "a Jp∈Jreg,h(Ep, πp, Qp, jp) with ﬁxed behaviour outside (π"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "∈Jreg,h(Ep, πp, Qp, jp) with ﬁxed behaviour outside (πp)−1(U"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "sinceζ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "sinceζp/∈U"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "sinceζp/∈Up,onecanusethistomakeJ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "time,Lemma2.10allowsustomaketheevaluationmapevζ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "time,Lemma2.10allowsustomaketheevaluationmapevζp:MJ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "time,Lemma2.10allowsustomaketheevaluationmapevζp:MJp→Q"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "ζ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "ζ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "ζoandQ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "(3.13)forall˜x0, x1, x,identifyingQ"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "ζ"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "Let jbe the complex structure on Sglued together from j"
+  },
+  {
+   "page": 67,
+   "mark": "p",
+   "context": "Let jbe the complex structure on Sglued together from jo, j"
+  },
+  {
+   "page": 67,
+   "mark": "h",
+   "context": "J∈J"
+  },
+  {
+   "page": 67,
+   "mark": "o",
+   "context": "1), J(2), J(5)) the almost complex structure obtained from J"
+  },
+  {
+   "page": 68,
+   "mark": "p",
+   "context": "andJ"
+  },
+  {
+   "page": 68,
+   "mark": "p",
+   "context": "WeknowthatΦ1(E"
+  },
+  {
+   "page": 68,
+   "mark": "p",
+   "context": "WeknowthatΦ1(Ep, π"
+  },
+  {
+   "page": 68,
+   "mark": "p",
+   "context": "WeknowthatΦ1(Ep, πp, Q"
+  },
+  {
+   "page": 68,
+   "mark": "o",
+   "context": "MJ"
+  },
+  {
+   "page": 68,
+   "mark": "0",
+   "context": "MJo(˜x"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "MJo(˜x0, x"
+  },
+  {
+   "page": 68,
+   "mark": "o",
+   "context": "MJo(˜x0, x1, x) ×Q"
+  },
+  {
+   "page": 68,
+   "mark": "o",
+   "context": "ζ"
+  },
+  {
+   "page": 68,
+   "mark": "p",
+   "context": "where (G, g) is some cycle bounding(MJ"
+  },
+  {
+   "page": 68,
+   "mark": "p",
+   "context": "where (G, g) is some cycle bounding(MJp, evζ"
+  },
+  {
+   "page": 68,
+   "mark": "0",
+   "context": "oneseesthat(3.14)isemptyunlessaL"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "oneseesthat(3.14)isemptyunlessaL0,L"
+  },
+  {
+   "page": 68,
+   "mark": "0",
+   "context": "oneseesthat(3.14)isemptyunlessaL0,L1(x)≥aτL(L"
+  },
+  {
+   "page": 68,
+   "mark": "0",
+   "context": "oneseesthat(3.14)isemptyunlessaL0,L1(x)≥aτL(L0),L(˜x"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "neseesthat(3.14)isemptyunlessaL0,L1(x)≥aτL(L0),L(˜x0) + aL,L"
+  },
+  {
+   "page": 68,
+   "mark": "1",
+   "context": "eesthat(3.14)isemptyunlessaL0,L1(x)≥aτL(L0),L(˜x0) + aL,L1(x"
+  },
+  {
+   "page": 68,
+   "mark": "p",
+   "context": "his is not diﬃcult,since both ﬁbrations contain a copy of (E"
+  },
+  {
+   "page": 68,
+   "mark": "p",
+   "context": "is not diﬃcult,since both ﬁbrations contain a copy of (Ep, π"
+  },
+  {
+   "page": 70,
+   "mark": "1",
+   "context": "[24]M.Schwarz.CohomologyoperationsfromS"
+  }
+ ]
+}

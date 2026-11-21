@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Magog trapezoids",
+  "title": "Gog trapezoids, Magog trapezoids and Krattenthaler's conjecture",
   "pageStart": 3,
-  "pageEnd": 3,
-  "text": "../sections/sec-003-112-magog-trapezoids.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s009731651830061x-main",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s009731651830061x-main",
+  "pageEnd": 4,
+  "text": "../sections/sec-003-11-gog-trapezoids-magog-trapezoids-and-krattenth.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s009731651830061x-main/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s009731651830061x-main/manifest.jsonld",
   "provenance": "ingested"
 }

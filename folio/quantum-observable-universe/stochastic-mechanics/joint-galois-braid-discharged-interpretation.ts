@@ -7,7 +7,7 @@ export default remark({
     "The joint-action conjecture was open in form, not content — what its discharge completes",
   uses: [
     "prop:joint-galois-braid-discharged",
-    "prop:joint-galois-braid-figure-8-verified",
+    "conj:joint-galois-braid-figure-8-verified",
     "conj:joint-galois-braid-action",
     "conj:gb-depth-period-correspondence",
     "prop:hecke-baer-star-generic",

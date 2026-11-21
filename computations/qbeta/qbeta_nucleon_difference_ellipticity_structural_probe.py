@@ -268,7 +268,7 @@ def main() -> int:
             "q in [1.01,1.61], so no fine-tuning at q_0. Does NOT make it the right "
             "generator: the eigenphase stays a factor 35.7 from the ladder phase. Lean: "
             "QOU/QBeta/TracelessDifferenceEllipticity.lean, sorry-free."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": ok,
         "parameters": {"pin": "experimental (proton)", "dps": 30,

@@ -1,0 +1,70 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-ph-0010012v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "cd6eca5ccb81ff90b6fa939571e87119d442d754e67f12c8a0e1b5326431b8d2",
+  "file": "0010012v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math-ph/0010012v1 10 Oct 2000",
+  "authors": "Steve Zelditch",
+  "arxiv": {
+   "id": "math-ph/0010012",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "10 Oct 2000"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": null,
+   "statement": "([Ze1], Lemma (2.15)) Let {\u03d5Nj} be a random orthonormal basis of spherical harmonics of S2. Then: E(S2(N)) = 1 N [ vol(S\u2217S2) R S\u2217S2 |\u03c3ave A (\u03b6) \u2212\u00af \u03c3A|2d\u00b5(\u03b6)] + O(1/N 2). The optimist may conjecture a similar rate for quantum chaotic eigenfunctions. In [Ze1] it is further proved that almost all orthonormal bases of spherical harmonics are quantum ergodic, and this was improved to quantum unique ergodicity by VanderKam [V]. On the level of quantum mixing, however, random spherical harmonics do not provide a good model, but random combinations of Laplace eigefunctions on generic Riemannian manifolds do; that was the motivation for studying the m",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-015-4-quantum-ergodicity-and-random-waves.md (p. 6-7)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-015-4-quantum-ergodicity-and-random-waves.md",
+   "section_title": "Quantum ergodicity and random waves",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-015-4-quantum-ergodicity-and-random-waves.md (p. 6-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-015-01",
+   "block_iri": "library/arxiv-math-ph-0010012v1/blocks/thm-sec-015-01",
+   "claim_id": "arxiv-math-ph-0010012v1#theorem:4.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

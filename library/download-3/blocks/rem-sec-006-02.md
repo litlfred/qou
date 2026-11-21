@@ -1,0 +1,1 @@
+At one point we will use yet another equivalent definition of cyclic homology. Let b 1 \ A® m+l -> A® m be same as in formula (2.1.2) but without the last summand. Then b(\ - /) = (1 - λ)b' and b'N = Nb (this is why the image of 1 — / is invariant under b). Therefore the complex NC*(A)',b') is isomorphic to CC*(A\

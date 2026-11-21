@@ -37,7 +37,7 @@ lemma tilting_module_rigidity (R : Type) [CommRing R] (q : R)
   -- A cemetery module's node lies in the cemetery group (the `cemeteryModule_inCemetery`
   -- bridge field), so its τ-image vanishes by `tauImage_eq_zero_of_inCemetery`; then the
   -- structural `module_forces_words` closes the goal from `RestrictsKernel`.
-  -- Ref: [manuscript] §tilting-module-rigidity
+  -- Ref: [leitner2026] §tilting-module-rigidity
   have h_mod : ∀ T, Rigid.IsCemeteryModule T → E.tauImage T = 0 :=
     fun T hT => h_tau T (Rigid.cemeteryModule_inCemetery T hT)
   exact Rigid.module_forces_words h_mod h_ker

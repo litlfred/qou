@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/physrevd111094513/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "I. INTRODUCTION",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "contains": [
+    "library/physrevd111094513/blocks/prose-sec-001",
+    "library/physrevd111094513/blocks/prop-sec-001-01",
+    "library/physrevd111094513/blocks/prop-sec-001-02",
+    "library/physrevd111094513/blocks/prop-sec-001-03",
+    "library/physrevd111094513/blocks/prop-sec-001-04",
+    "library/physrevd111094513/blocks/prop-sec-001-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/physrevd111094513/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/physrevd111094513/manifest.jsonld",
+  "provenance": "ingested"
+}

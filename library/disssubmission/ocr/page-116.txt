@@ -1,0 +1,45 @@
+108 Chapter 5 — A family of surfaces
+
+where the left hand side denotes group cohomology with coefficients in the
+T-module H4(W,Z). We apply this for W = Y and T = (o). To compute
+in this case some of the E-terms, recall that the group cohomology of any
+module M under the cyclic group (o) ~ Z/2Z is given by
+
+ker(o — 1) for p =0,
+H?((o),M) = ¢ ker(o+1)/im(o—1) for p > 0 odd,
+ker(o —1)/im(o+1) for p > O even.
+
+Let us plug in M = H1(Y,Z) with q € {0, 1,2}. Clearly on H°(Y,Z) = Z the
+involution o acts trivially, whereas by the weak Lefschetz theorem we know
+that on H!(Y,Z) & H'(X,Z) & Z8 the involution o acts by —1. Hence in
+this case we have
+
+ker(o +1| H4(Y,Z)
+
+(¥,Z))  ~ JO for q=0,
+im(o—1|H4(Y,Z)) ~~ )(Z/2Z)8 for g=1,
+(Y,Z))
+)
+
+ker(o—1| H4(¥,Z)) (o for q=0,
+
+im(o+1|H4(Y,Z)) ~— )0 for g=1.
+
+In other words, in the case at hand the £-tableau of the spectral sequence
+takes the following form.
+
+q
+
+1 0 Sa (z/22)8
+
+0 Z 0 Z/22 0
+
+0 1 2 3 Pp
+
+In particular it follows that H°(Y*,Z) = Z and H'(Y+,Z) = 0. The zeroes
+for (p,q) = (2,1), (3,0) furthermore show that for the graded object with
+respect to the limit filtration we have
+
+H?(Y,Z)+ fori=2,
+Gri(H?(Y*,Z)) = ¢ (Z/2Z)8  fori=1,
+Z/2Z for i=0,

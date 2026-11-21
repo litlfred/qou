@@ -1,0 +1,1 @@
+— J/B^cBi are von Neumann subalgebras in M and S'cS is the set of all finite families (xo, x\, x^..., x^) in S mth each x^ f^ 1, a scalar multiple of a projection and x^eB^, then H(BjB^)= sup S(TTiEB,(xO-TTiE^)). (^)eS' i

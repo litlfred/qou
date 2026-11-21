@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-014-12-proof-of-theorem-2-formula-1
 section_title: "Proof of Theorem 2, formula (1)."
 section_number: 12
@@ -8,6 +8,7 @@ pages: 32-34
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 Let  V  be a smooth vector field on  S3 .  Thinking of  V  as a steady current flow, 
 we define the corresponding magnetic field  BS(V)  by the formula 
@@ -36,7 +37,6 @@ we used the fact, mentioned in section 6, that the Green's operator on  S3
 commutes with divergence. 
  
  
-33 
  
  
  
@@ -74,8 +74,4 @@ BS(V)  =  — ∇ × Gr(V)
  
      +  2 ∇y ∫S3  Lyx—1 V(x) ∙ ∇y ϕ1(x, y)  dx , 
  
-as claimed. 
- 
- 
- 
-34
+as claimed.

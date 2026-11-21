@@ -1,0 +1,46 @@
+7.2 The smooth case 191
+
+Theorem 7.35(b). In the present smooth case, a nice simplification occurs: be-
+cause the height function is the real part of a complex (locally) analytic func-
+tion, every critical point z ¢ V, has Morse index d — 1.
+
+Exercise 7.8. Prove that the real part of a complex analytic function defined
+on an open set in Cé has Morse index d, then prove that the real part of such a
+function restricted to a smooth hypersurface has Morse index d— 1. Hint: The
+Cauchy—Riemann equations yield a lot of information about the eigenvectors
+and eigenvalues of the Hessian.
+
+This characterization of the index allows us to show that Hg_\(V..) is homo-
+logically a bouquet of (d — 1)-spheres, one quasi-local to each critical point. A
+version of the following theorem, with the stronger assumption that h is proper
+replacing the assumption of no CVAI, is stated and proved as Theorem C.39
+in Appendix C (the appendices contain background material not specialized
+to ACSV). The restriction that the critical values are distinct is removed in
+Corollary 7.17.
+
+Theorem 7.15. Assume that V is smooth, hp is a Morse height function, and
+there are no critical values at infinity (according to Definition 7.43 below).
+Assume further that the critical values cj = hp(z;) are distinct and listed in
+descending order.
+
+(i) Each projection Ha_-\(Vx) > Ha-1(Vecj+esV <e)-e) is surjective. In other
+words, the relative homology generator at z; can be chosen to be an
+absolute cycle.
+
+(ii) Each inclusion Vz. © V. induces an injection on Hy-). In other words,
+there are no relations: no homology generator ever gets killed.
+
+It follows that Ha-\(V.) = Z” and that a basis y1,..., Ym for Ha-1(V+) can be
+chosen so that each y; is a cycle on which hg attains its maximum value at Z;.
+
+Proof Part (i) of Theorem 7.44 below extends the fundamental Morse Lemma,
+namely homotopy equivalence of M<, as c varies in an interval with no critical
+values (Lemma C.27) from the case where / is a proper Morse function to the
+case where / need not be proper but there are no CVAI in the interval. Part (ii)
+of Theorem 7.44 extends the smooth attachment theorem for a single critical
+value c (Theorem C.28) from the case where h is a proper Morse function to
+the case where / need not be proper but there are no CVAI in the interval.
+Accordingly, the conclusions of Theorems C.38 and C.39 hold for this case,
+via the same argument. Specifically, these follow from the identification of the
+attachment and from the homology long exact sequence for the filtration of
+pairs (Map, —oo), where b; are real numbers between each successive pair of

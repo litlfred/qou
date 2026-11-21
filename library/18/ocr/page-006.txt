@@ -1,0 +1,47 @@
+56 DARYL COOPER AND IGOR RIVIN
+
+Lemma 4.1. A simplex T is conformal if and only if there exists a unique
+sphere sy which is tangent to all of the edges of T. Furthermore, the point
+of tangency of sp with the edge e;; is at distance r; from v;.
+
+Proof. We will show this result in all dimensions greater than 1. The “if”
+direction is trivial. We will show the “only if” direction by induction on
+dimension. In dimension 2, where all triangles are conformal, the result is
+obvious.
+
+Now let T be a conformal simplex with radii r;. First note that there is
+a unique sphere s tangent to e1;, 7 € 1. such that the points of tangency
+are r; away from v,. Consider the intersection of s with one of the faces of
+T containing v; — by induction we know that that the lower dimensional
+sphere is tangent to all of the edges of that face. Since all edges of T belong
+to a face containing v,, the lemma follows. O
+
+Now, first normalize so that the radius of s; is equal to 1, and consider
+the pattern of circles formed on sy by the spheres of radii r; centered at
+the vertices of T. These circles are mutually tangent. Conversely, any such
+pattern of circles C determines a conformal simplex. Since for any two cir-
+cle packings C, and C2 of the sphere S? whose nerve is the simplex graph,
+there is a conformal transformation sending C1 to C2 (this is elementary ge-
+ometry, not requiring the Andreev-Thurston theorem; in particular, it also
+works in any dimension), the set of such packings can be naturally identi-
+fied with the group of conformal transformations of the sphere — PS'L(2,C).
+Since we are only interested in the congruence class of the conformal sim-
+plex T, and are no interested in which way it is pointing, we must further
+normalize by factoring out the rotation group SO(3). What we have just
+determined is:
+
+Theorem 4.2. The space of isometry classes of Euclidean conformal sim-
+plices Cr can be naturally identified with the hyperbolic space H3. In par-
+ticular, Crp is homeomorphic to the ball B4 = HP x R.
+
+Note. The discussion above applies just as well to hyperbolic conformal
+simplices, except that since we can no longer normalize by fixing the radius
+of the mid-sphere s;, and so Cy ~ H? x Rt, where Cy is the deformation
+space of hyperbolic conformal simplices.
+
+It will be useful to know exactly how Cr is parametrized by our coor-
+dinates, in particular, what the boundary of Cp (as a subset of R“) looks
+like. Note that while for any three positive real numbers ri, r2, and r3,
+the sums r; + rg, 71 +173, and rg + r3 satisfy the triangle inequality, not
+every positive quadruple r = (r1,72,73,174) defines a geometric conformal
+simplex. Degeneracy occurs when ry, is large enough so that the sphere

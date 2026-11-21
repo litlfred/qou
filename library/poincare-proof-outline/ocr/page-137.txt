@@ -1,0 +1,68 @@
+using assms
+by (meson poincare-between-rev poincare-between-transitivity)
+thus ?thesis
+using assms
+by (rule-tac x=x in exI, simp)
+next
+case False
+hence poincare-between y zx
+using <poincare-between y x z V poincare-between y z x)
+by auto
+hence poincare-between x z v
+using assms
+by (meson poincare-between-rev poincare-between-transitivity)
+hence poincare-between x uv
+using assms poincare-between-transitivity poincare-between-rev
+by (smt poincare-between-sum-distances)
+thus ?thesis
+using assms
+by (rule-tac x=u in exl, simp)
+qed
+qed
+next
+case False
+hence 7~ distinct [x, y, z, u, v]
+using assms(6) by auto
+show ?thesis
+proof (cases u=z)
+case True
+thus ?thesis
+using assms
+apply(rule-tac =v in ex!)
+by(simp add:poincare-between-rev)
+next
+case False
+hence x 4 z
+using assms poincare-between-sandwich by blast
+show ?thesis
+proof (cases v=z)
+case True
+thus ?thesis
+using assms
+by (rule-tac x=u in exl, simp)
+next
+case False
+hence y # z
+using assms poincare-between-sandwich by blast
+show ?thesis
+proof(cases u = zx)
+case True
+thus ?thesis
+using assms
+by (rule-tac c=x in exl, simp)
+next
+case False
+have x # y
+using assms ‘7 poincare-collinear {x, y, z}>
+by fastforce
+have x #4 v
+using assms ‘7 poincare-collinear {x, y, z}>
+by (metis insert-commute poincare-between-poincare-collinear)
+have u #4 y
+using assms ‘7 poincare-collinear {x, y, z}>
+using poincare-between-poincare-collinear by blast
+have u # v
+proof (rule ccontr)
+assume 7 u #4 v
+
+137

@@ -1,0 +1,34 @@
+C. PROOFS ON S* IN PARALLEL TRANSPORT FORMAT
+
+13. Parallel transport in s°.
+
+We want to switch formats now, from left-translation to parallel transport.
+
+First we explain how to conduct vector calculus in this mode. Then we derive
+formula (2) of Theorem 2 for the Biot-Savart operator, and use it to help us obtain
+formula (2) of Theorem 3 for the Green's operator. Note that this is the reverse of
+the order of derivation that we used in left-translation format.
+
+It is interesting to contrast the two formats for thinking about and calculating with
+vector fields on S°.
+
+Left-translation format takes advantage of the group structure on S* and has the
+following very attractive features:
+
+e If we start with a tangent vector V ata single point x € S* and left-translate it
+to each possible point y € S*, we get a vector field W(y) = Lyx-1 V which is
+left-invariant, and tangent to the fibres of a Hopf fibration of S by parallel great
+circles.
+
+e This left-invariant vector field W(y) = Lyx-1 V is divergence-free, and is a
+curl-eigenfield with eigenvalue — 2.
+
+We have already seen, in the study of the calculus of vector convolutions in S$? ,
+how "computationally convenient" these two features are.
+
+But left-translation format, however attractive and convenient, is specific to Ss
+because of its group structure. Parallel transport, by contrast, makes sense on any
+Riemannian manifold, although it is limited by the non-uniqueness of geodesic
+connections between distant points.
+
+34

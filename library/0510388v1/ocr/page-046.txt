@@ -1,0 +1,41 @@
+19. Statement of the Key Lemma.
+
+The following result plays a lead role in obtaining the formulas for the Biot-Savart
+and Green's operators on S° in parallel transport format.
+
+KEY LEMMA, spherical version.
+
+Vy X{PyxV(x) XV O} — Vy {V(X ¢ Vx (cos a o)}
+
+= (Ad — 9) (VQ) -— <V@,y>y)-
+
+This formula is quite flexible: it is useful whether V is a smooth vector field
+defined on all of S*, or just on a bounded subdomain Q of S’, or just along
+a smooth closed curve K in S*, or even just at the single point x.
+
+As usual, « is the distance on S* between x and y. The kernel function (a)
+is any smooth function, which typically blows up at «1 =0 and is asymptotic there
+to —1/(4na) .
+
+The Key Lemma can be understood intuitively in the special case that (a) is the
+fundamental solution of the operator ¢ >  —@ on S°, in which case we
+will see that cos a ¢(a) is the fundamental solution of the scalar Laplacian there.
+
+With this choice of kernel function, the quantity P,,V(x) XV, can be viewed
+as the contribution made by a little bit of current V(x) at the location x to the
+magnetic field at the location y. When integrated over S* with respect to x,
+the result will be the magnetic field B at y. Thus the first term on the left hand
+side of the Key Lemma integrates to V XB.
+
+In similar fashion, the term Vy, {V(x) ¢ Vx (cos a ¢)} integrates to the time
+derivative OE/ot of the electric field at y due to the accumulation or dispersion
+of charge by the current flow V , while the right hand side of the Key Lemma
+integrates to the current flow V itself.
+
+Thus the Key Lemma, for this special choice of kernel function  , can be
+viewed as a pointwise or infinitesimal version of Maxwell's equation
+
+V XB — oE/t =V.
+
+46
+

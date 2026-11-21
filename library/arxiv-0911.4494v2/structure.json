@@ -6,10 +6,12 @@
   "sha256": "1ba1c79686b12d984c69492e90a923ed7ca108d283c813d9b5d1a78791349226",
   "bytes": 186337,
   "pages": 14,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +22,28 @@
   },
   "doi": null,
   "title": "The geometry of Markov traces",
-  "authors_raw": "Department of Mathematics, Mathematical Institute",
-  "abstract": "We give a geometric interpretation of the Jones-Ocneanu tra ce on the Hecke algebra, using the equivariant cohomology of shea ves on SLn. This construction makes sense for all simple algebraic groups, s o we obtain a gener- alization of the Jones-Ocneanu trace to Hecke algebras of ot her types. We give a geometric expansion of this trace in terms of the irreducib le characters of the Hecke algebra, and conclude that it agrees with a trace de\ufb01ned independently by Gomi. Based on our proof, we also prove that certain simple pervers e sheaves on a reductive algebraic group G are equivariantly formal for the conjugation action of a Borel B, or equivalently , that the Hochschild homology of any Soerg el bimodule is free, as the authors had previously conjectured . This construction is closely tied to knot homology . This int erpretation of the Jones-Ocneanu trace is a more elementary manifestation of the geometric construction of HOMFLYPT homology given by the authors in [WW ].",
+  "authors_raw": "Ben Webster",
+  "title_lines": [
+   "The geometry of Markov traces"
+  ],
+  "abstract": "We give a geometric interpretation of the Jones-Ocneanu trace on the Hecke algebra, using the equivariant cohomology of sheaves on SLn. This construction makes sense for all simple algebraic groups, so we obtain a gener- alization of the Jones-Ocneanu trace to Hecke algebras of other types. We give a geometric expansion of this trace in terms of the irreducible characters of the Hecke algebra, and conclude that it agrees with a trace deﬁned independently by Gomi. Based on our proof, we also prove that certain simple perverse sheaves on a reductive algebraic group G are equivariantly formal for the conjugation action of a Borel B, or equivalently, that the Hochschild homology of any Soergel bimodule is free, as the authors had previously conjectured. This construction is closely tied to knot homology. This interpretation of the Jones-Ocneanu trace is a more elementary manifestation of the geometric construction of HOMFLYPT homology given by the authors in [WW].",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181104011748-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181104011748-05'00'"
   },
-  "title_lines": [
-   "The geometry of Markov traces",
-   "Ben Webster Geordie Williamson"
-  ],
-  "title_prev": "The geometry of Markov traces Ben Webster Geordie Williamson"
+  "title_raw": "The geometry of Markov traces",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The geometry of Markov traces",
+   "outline": "1. Introduction",
+   "text": "The geometry of Markov traces",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,89 +51,275 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Hecke algebras",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Hecke algebras and geometry",
    "page": 4,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "A categorified trace",
    "page": 5,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Character sheaves and character expansions",
    "page": 9,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Character sheaves and Molien series",
    "page": 11,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "References",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The type B and D Dynkin diagrams traces1 Trn with values in Z((q",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1242,
+   "n_words": 184,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 1969,
-   "n_words": 330
-  },
-  {
-   "id": "sec-001-2-hecke-algebras",
-   "number": "2",
-   "title": "Hecke algebras",
-   "level": 1,
-   "page_start": 2,
    "page_end": 3,
-   "n_chars": 2836,
-   "n_words": 460
+   "n_chars": 4854,
+   "n_words": 765,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-acknowledgments",
+   "id": "sec-001-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 3,
+   "page_end": 3,
+   "n_chars": 417,
+   "n_words": 65,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-2-hecke-algebras",
+   "number": "2",
+   "title": "Hecke algebras",
+   "level": 1,
+   "page_start": 3,
    "page_end": 4,
-   "n_chars": 3803,
-   "n_words": 733
+   "n_chars": 3146,
+   "n_words": 668,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-003-3-hecke-algebras-and-geometry",
@@ -131,52 +327,80 @@
    "title": "Hecke algebras and geometry",
    "level": 1,
    "page_start": 4,
-   "page_end": 9,
-   "n_chars": 10675,
-   "n_words": 2022
+   "page_end": 5,
+   "n_chars": 3213,
+   "n_words": 548,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-5-character-sheaves-and-character-expansions",
+   "id": "sec-004-4-a-categorified-trace",
+   "number": "4",
+   "title": "A categorified trace",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 7217,
+   "n_words": 1411,
+   "label_start": "5",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-005-5-character-sheaves-and-character-expansions",
    "number": "5",
    "title": "Character sheaves and character expansions",
    "level": 1,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 6109,
-   "n_words": 1117
+   "n_chars": 6037,
+   "n_words": 1097,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-005-6-character-sheaves-and-molien-series",
+   "id": "sec-006-6-character-sheaves-and-molien-series",
    "number": "6",
    "title": "Character sheaves and Molien series",
    "level": 1,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 4076,
-   "n_words": 745
+   "n_chars": 3994,
+   "n_words": 733,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
-   "id": "sec-006-references",
+   "id": "sec-007-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 4285,
-   "n_words": 701
+   "n_chars": 4204,
+   "n_words": 620,
+   "label_start": "13",
+   "label_end": "14"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 8,
-  "sections": 7,
-  "chars_total": 33753,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 34324,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "markov.tex",
    "tex_sections": 7,
-   "overlaid": 3,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -184,50 +408,68 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.496,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-001-2-hecke-algebras",
-     "title": "Hecke algebras",
-     "prose_ratio": 0.314,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-acknowledgments",
+     "id": "sec-001-acknowledgments",
      "title": "Acknowledgments",
-     "prose_ratio": 0.868,
-     "coverage_ratio": 0.216,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.842,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-hecke-algebras",
+     "title": "Hecke algebras",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-3-hecke-algebras-and-geometry",
      "title": "Hecke algebras and geometry",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.953,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-5-character-sheaves-and-character-expansions",
+     "id": "sec-004-4-a-categorified-trace",
+     "title": "A categorified trace",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-character-sheaves-and-character-expansions",
      "title": "Character sheaves and character expansions",
      "prose_ratio": 0.971,
-     "coverage_ratio": 0.923,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-6-character-sheaves-and-molien-series",
+     "id": "sec-006-6-character-sheaves-and-molien-series",
      "title": "Character sheaves and Molien series",
      "prose_ratio": 0.916,
-     "coverage_ratio": 0.92,
+     "coverage_ratio": 0.931,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-references",
+     "id": "sec-007-references",
      "title": "References",
      "result": "no matching \\section"
     }

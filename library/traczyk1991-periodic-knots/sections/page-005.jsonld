@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/traczyk1991-periodic-knots/sections/page-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 5",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "contains": [
+    "library/traczyk1991-periodic-knots/blocks/prose-page-005",
+    "library/traczyk1991-periodic-knots/blocks/prop-page-005-01",
+    "library/traczyk1991-periodic-knots/blocks/thm-page-005-02",
+    "library/traczyk1991-periodic-knots/blocks/cor-page-005-03",
+    "library/traczyk1991-periodic-knots/blocks/lem-page-005-04",
+    "library/traczyk1991-periodic-knots/blocks/ex-page-005-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/traczyk1991-periodic-knots/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/traczyk1991-periodic-knots/manifest.jsonld",
+  "provenance": "ingested"
+}

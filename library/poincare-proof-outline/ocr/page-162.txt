@@ -1,0 +1,68 @@
+by blast
+
+let ?a1 = of-complex (?i1 / 2)
+let ?a2 = of-complex (?i2 / 2)
+let ?la = poincare-line ?a1 ?a2
+
+have ?a1 € unit-disc ?a2 € unit-disc
+using <i1 € unit-circle-set) (i2 € unit-circle-set)
+unfolding unit-circle-set-def unit-disc-def disc-def circline-set-def
+by auto (transfer, transfer, case-tac i1, case-tac i2, simp add: vec-cnj-def)+
+
+have ?al 4 On ?a2 4 On
+using <i1 € unit-circle-set) (i2 € unit-circle-set)
+unfolding unit-circle-set-def
+by auto
+
+have ?al # ?a2
+using <i1  i2>
+by (metis <i1 € unit-circle-set» (i2 € wnit-circle-set) circline-set-def divide-cancel-right inversion-infty inver-
+sion-unit-circle mem-Collect-eq of-complez-to-complex of-complex-zero to-complex-of-complex unit-circle-set-def zero-neq-numeral)
+
+have poincare-collinear {On, ?a1, i1}
+unfolding poincare-collinear-def
+using <?al 4 0);,>[symmetric] is-poincare-line-poincare-line[of 0), a1]
+unfolding circline-set-def
+apply (rule-tac z=poincare-line 0, ?a1 in exI, auto)
+apply (transfer, transfer, auto simp add: vec-cnj-def)
+done
+
+have poincare-collinear {0n, ?a2, i2}
+unfolding poincare-collinear-def
+using <?a2 4 0);,>[symmetric] is-poincare-line-poincare-line[of 0), ?a2]
+unfolding circline-set-def
+apply (rule-tac z=poincare-line 0, ?a2 in exI, auto)
+apply (transfer, transfer, auto simp add: vec-cnj-def)
+done
+
+have = poincare-ray-meets-line 0, ?a1 1 «2
+using tangent-not-meet[of x1 x2 il ?a1]
+using (21 © unit-disc» «x2 € unit-disc» «?a1 € unit-disc» (x1 4 x2» (> poincare-collinear {0;,, x1, x2}>
+using <ideal-points ?lx = {i1, i2}) «?al # On» <poincare-collinear {0;, ?a1, i1}>
+by simp
+
+moreover
+
+have — poincare-ray-meets-line On ?a2 x1 «2
+using tangent-not-meet[of x1 x2 i2 ?a2]
+using (21 © unit-disc» (x2 € unit-disc» «?a2 € unit-disc» (x1 # x2) (> poincare-collinear {0;,, x1, 2}>
+using <ideal-points ?lx = {i1, i2}» «?a2 4 On» <poincare-collinear {0;, ?a2, i2}>
+by simp
+
+moreover
+
+have Va’ € unit-disc. poincare-in-angle a’ ?a1 On ?a2 —+ poincare-ray-meets-line On a’ x1 x2
+unfolding poincare-in-angle-def
+proof safe
+fix a’ a
+assume +: a’ € unit-disc a € unit-disc poincare-on-ray a' On aa’ # On
+poincare-between ?al a ?a2a 4 ?al a # ?a2
+show poincare-ray-meets-line 0;, a’ 1 x2
+proof—
+have V a’ al a2 a1 22 i1 i2.
+a’ € unit-disc \ x1 € unit-disc \ x2 € unit-disc A zl #4 22 A
+7 poincare-collinear {On, x1, x2} A ideal-points (poincare-line x1 12) = {i1, i2} A
+al = of-complex (to-complex il / 2) A a2 = of-complex (to-complex i2 / 2) \
+il # i2 A al ¥ a2 A poincare-collinear {0n, a1, i1} A poincare-collinear {On, a2, i2} A
+
+162

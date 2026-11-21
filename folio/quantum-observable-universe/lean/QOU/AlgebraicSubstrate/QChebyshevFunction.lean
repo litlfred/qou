@@ -54,7 +54,7 @@ structure QChebyshevFunction where
   psi_def : ∀ X,
     psi_q X = ∑ m ∈ ideals.filter (fun m => N m ≤ X), Lambda_q m
 
--- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.ts
+-- Ref: [leitner2026] quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.ts
 
 /-- Below the smallest norm the count is empty: if every summed ideal has
     norm exceeding `X`, then `ψ_q(X) = 0`. -/

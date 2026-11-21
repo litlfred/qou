@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2007.15570v1",
  "source_sha256": "6e46f4346a29fd83",
- "brief": "A quantum Monte Carlo based approach to intranuclear cascades — 2 sections: Front matter; A quantum Monte Carlo based approa",
- "extended": "**A quantum Monte Carlo based approach to intranuclear cascades**\n\n*Joshua Isaacson a, William I. Jay a, Alessandro Lovato b,c, Pedro A. N. Machado a, Noemi Rocco a,b*\n\n14 pp, 2 sections.\n\n**Outline.** Front matter; A quantum Monte Carlo based approach to intran",
+ "brief": "A quantum Monte Carlo based approach to intranuclear cascades — 16 sections: Front matter; A quantum Monte Carlo based approa; I Introduction",
+ "extended": "**A quantum Monte Carlo based approach to intranuclear cascades**\n\n*Joshua Isaacson a, William I. Jay a, Alessandro Lovato b,c, Pedro A. N. Machado a, Noemi Rocco a,b*\n\n14 pp, 16 sections.\n\n**Outline.** Front matter; A quantum Monte Carlo based approach to intran; I Introduction; II The physics of the impact parameter based i; A Nuclear configuration; B Nucleon momentum distribution; C Nucleon-nucleon interaction algorithm; D Phase space, Pauli blocking and after-intera; E Exiting the nucleus; III Results and Model Validation; A Mean free path; B Proton-carbon Scattering Data; C Nuclear transparency; D Correlation effects; V Acknowledgments; A Nucleon-nucleon interaction Models",
  "tokens": {
-  "brief": 31,
-  "extended": 65
+  "brief": 35,
+  "extended": 171
  },
  "sections": [
   {
@@ -17,7 +17,77 @@
   {
    "id": "sec-000-a-quantum-monte-carlo-based-approach-to-intranuc",
    "title": "A quantum Monte Carlo based approach to intranuclear cascades",
-   "pages": "1-14"
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-i-introduction",
+   "title": "I Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-ii-the-physics-of-the-impact-parameter-based-int",
+   "title": "II The physics of the impact parameter based intranuclear cascade model",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-a-nuclear-configuration",
+   "title": "A Nuclear configuration",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-004-b-nucleon-momentum-distribution",
+   "title": "B Nucleon momentum distribution",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-c-nucleon-nucleon-interaction-algorithm",
+   "title": "C Nucleon-nucleon interaction algorithm",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-006-d-phase-space-pauli-blocking-and-after-interacti",
+   "title": "D Phase space, Pauli blocking and after-interaction",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-e-exiting-the-nucleus",
+   "title": "E Exiting the nucleus",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-008-iii-results-and-model-validation",
+   "title": "III Results and Model Validation",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-009-a-mean-free-path",
+   "title": "A Mean free path",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-010-b-proton-carbon-scattering-data",
+   "title": "B Proton-carbon Scattering Data",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-011-c-nuclear-transparency",
+   "title": "C Nuclear transparency",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-012-d-correlation-effects",
+   "title": "D Correlation effects",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-013-v-acknowledgments",
+   "title": "V Acknowledgments",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-014-a-nucleon-nucleon-interaction-models",
+   "title": "A Nucleon-nucleon interaction Models",
+   "pages": "13-14"
   }
  ],
  "provenance": {

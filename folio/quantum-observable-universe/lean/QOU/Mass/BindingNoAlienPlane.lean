@@ -74,7 +74,7 @@ substrate quantity, no `ℝ`.  Sorry-free.
 
 -- Ref: [ramis-sauloy2006] https://arxiv.org/abs/math/0611521
 -- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853
--- Ref: [manuscript] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md
+-- Ref: [leitner2026] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md
 -/
 import QOU.MathlibExt.RSZIsoformalInterface
 

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/physrevd108106023/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "APPENDIX: QUIVER MATRIX",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "contains": [
+    "library/physrevd108106023/blocks/prose-sec-007"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/physrevd108106023/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/physrevd108106023/manifest.jsonld",
+  "provenance": "ingested"
+}

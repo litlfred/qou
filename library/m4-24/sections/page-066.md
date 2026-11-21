@@ -1,0 +1,66 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-066
+section_title: "Page 66"
+section_number: null
+pages: 66-66
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+438 T. Ohtsuki (Editor)
+
+relations. We will present B{°°P )) for 1 = 0,1,2 in this way, to state the loop
+
+conn
+
+expansion in these loop-degrees.
+
+When | = 0, we have the map
+
+n legs
+‘ ‘ re
+Mederces a
+Qlz] — Bio), am fF ‘, (22)
+
+regarding x as a basis of H!(circle). Since the orientation-reversing automor-
+phism of S! takes 2” to —a” by the AS relation, the above map deduces the
+following isomorphism,
+
+plloe? ) = Qa’ (23)
+For a knot K,
+(log, 2(K)) 0? ) = biog SREP) ioga(er), (24)
+2 a/2 2
+
+where log,, is the logarithm in By regarding Z(/) as in By, and the left
+hand side is the summand of logy, Z(K) € Boon in B&°°? . This development
+
+follows from the theory of [34]. See also [231, 139] (and references therein) for
+a recent direct calculation.
+
+When | = 1, we have the map
+
+Qlx1, v2, x3] —> Bloop 1). xy 22? 038
+
+conn
+
+regarding H'(@-graph) as the vector space spanned by x1, %2, %3 subject to
+the relation 11 + 72 + 23 =0. Since Aut(6-graph) = G2 x G3, the above map
+deduces
+
+Bloor ) = Qa, x2, 23]/(G2 x Gy, x1 +2 +23 = 0)
+
+‘conn
+
+= (Ql, 22,.03]/ (1 +x9+23 = 0)) Sex
+
+~ (Qin, 02,03) /(o1 = 0)) (even) Qloo, 32], (25)
+
+where o; denotes the i-th elementary symmetric polynomial in 71, x2, and x3.
+(To compute Boop 1) in a precise argument, we must also consider the space
+
+conn
+
+Geometry & Topology Monographs, Volume 4 (2002)

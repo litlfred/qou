@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1012.1039v2
-doc_title: "where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume"
+doc_title: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS"
 section_id: sec-004-22-symmetrization
 section_title: "Symmetrization"
 section_number: 2.2
 pages: 6-8
 source_pdf: 1012.1039v2.pdf
 source_sha256: acb2575050db419d
-doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.94
-latex_coverage_ratio: 0.949
+latex_coverage_ratio: 0.955
+doc_brief: "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections."
 ---
 []{#ss:symm label="ss:symm"} It will be convenient in the arguments of Section [\[s:main\]](#s:main){reference-type="ref" reference="s:main"} to assume that all chains considered are *symmetric*. Here we say what this means and justify the assumption.
 

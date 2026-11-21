@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/sm10137-eng/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "§5 A link between the Bessel operator and the determinantal point process with Bessel kernel",
+  "pageStart": 7,
+  "pageEnd": 10,
+  "contains": [
+    "library/sm10137-eng/blocks/prose-sec-004",
+    "library/sm10137-eng/blocks/def-sec-004-01",
+    "library/sm10137-eng/blocks/thm-sec-004-02",
+    "library/sm10137-eng/blocks/prop-sec-004-03",
+    "library/sm10137-eng/blocks/prop-sec-004-04",
+    "library/sm10137-eng/blocks/lem-sec-004-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
+  "provenance": "ingested"
+}

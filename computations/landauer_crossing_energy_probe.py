@@ -47,7 +47,8 @@ def main() -> int:
     cq2 = 1 / hbar_q**2
     eta_q = (2 * q0 - 1) / q0**3
     m_e = mp.mpf(str(M_E_MEV))
-    e0 = m_e / (q0 * (q0 - 1))  # E_0 = m_e/(q0(q0-1)), the canonical binding scale
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    e0 = _qbeta_e0.order_zero_scaled(m_e, q0)  # E_0 = m_e/(q0(q0-1)), the canonical binding scale
 
     info_qbits = BORROMEAN_CROSSINGS * eta_q
     scales = {

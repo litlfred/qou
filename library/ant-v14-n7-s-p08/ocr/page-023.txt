@@ -1,0 +1,43 @@
+Burgess bounds for short character sums evaluated at forms 1933
+for either choice of 5; € {0, 1}. Hence for any m with M — L < m < M, (5-4) shows that
+
+SCF; M, K)| <2" max |S(F; m, f)]. (5-5)
+
+There are at least L;/2 integers with M; — L; <_m; < Mj, so that there are at least 2~"||L|| values m in
+the range M — L <m < M, and the lemma now follows by averaging (5-5) over these values.
+
+Finally, we prove (5-4). This is simple to see in the case of dimension n = 1: for any m, < M;, we
+observe that as intervals,
+
+(M1, M+ Ki] = (m1, M+ Ki] \ Orn, Mi].
+Thus in terms of the sums over these intervals,
+SCF; M, Ki) = S(F; m, Mj —m, + Ki) — S(F,m,, M, —m).
+
+For general dimensions n > 1, (5-4) follows from the principle of inclusion-exclusion. Explicitly, the sum
+S(F; M, K) has a range of summation over the box W := Ms (M;, M; + K;]. Temporarily, for ease of
+notation, let S(W) denote this sum, with range of summation over the box W; similarly, given any box W’
+defined below, we will let S(W’) denote the corresponding sum, with range of summation over the box W’.
+
+Suppose m < M is fixed. Let W* be the larger box W* := THe @n. M+ Kj]. For each j =1,...,7,
+let W“ be the box defined as a product of intervals for | < i <n, with “short” interval (m;, Mj] in the
+j-th coordinate and “long” interval (m;, M; + K;] in every other coordinate, for i A j. For each j let
+W®) be the complement of W“) inside W*. Precisely, WO isa product of intervals for 1 <i <n, with
+interval (M;, Mj + Kj] in the j-th coordinate and interval (m;, M; + Kj] for i # j. Observe that our
+box W of interest is W =(}j_, W. Then by the principle of inclusion-exclusion,
+
+n
+S(W) = S(W*)— SSW) 4 YX SWI NW) FH" SW! NWOT WO),
+i=l Isji<jsn
+
+We can recognize that this is the identity (5-4) as follows. First, on the left-hand side, S(W) is by
+definition our desired sum S(F; M, K). Next, we observe that the entries on the right-hand side are in
+bijection with the entries on the right-hand side of (5-4). Precisely, fix a tuple (51, ..., 5,) with 5; € {0, 1}.
+Suppose that this tuple has k entries of 1, occurring at the indices j,,..., jx. If k =0 then in the notation
+of the identity (5-4), the sum S(F; m, M—m-+ (1—54)-K) is precisely the sum S(W*). If 1<k <n, then
+S(F;m, M— m+ (1—8)-K) is precisely S(WY) N- -- A W) appearing in the inclusion-exclusion
+identity above. In each case, the signs (— 1)° = (-1)* agree as well. oO
+
+We apply Lemma 5.1 to (5-3) with L; = H;/P > 1. We obtain
+
+|SCFSN, A) <|Pr' >> > 2?" | AP" 3 max |S(F:m, k)|. (5-6)
+PEP a (mod p) me(N'—H/P,N’] k<2H/P

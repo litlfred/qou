@@ -1,1 +1,1 @@
-B.7. The map φ−log(q)/log(p) : 51,0(K) →51,0(K) is a (1/q)-contraction. If 5(p)
+B.7. The map φ−log(q)/log(p) : 51,0(K) →51,0(K) is a (1/q)-contraction. If 5(p) 1,0(K) is identiﬁed to 51,0(K) by the isomorphism deﬁned by e0 7→e0 and eξ(pα) 7→eξ for all ξ ∈µN(K), the map φ−1 : 51,0(K) →5(p) 1,0(K) is a (1/p)-contraction.

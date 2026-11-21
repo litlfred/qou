@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1202.4698v3/sections/sec-031",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B.2 Useful corollaries.",
+  "pageStart": 25,
+  "pageEnd": 28,
+  "contains": [
+    "library/arxiv-1202.4698v3/blocks/prose-sec-031",
+    "library/arxiv-1202.4698v3/blocks/cor-sec-031-01",
+    "library/arxiv-1202.4698v3/blocks/cor-sec-031-02",
+    "library/arxiv-1202.4698v3/blocks/cor-sec-031-03",
+    "library/arxiv-1202.4698v3/blocks/cor-sec-031-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
+  "provenance": "ingested"
+}

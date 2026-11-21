@@ -1,0 +1,1 @@
+In the situation of Theorem 10.1.13, assume that K has enough K-injectives. Let E be a triangulated category, and let F : K →E be a triangulated functor. Then F has a right derived functor (RF, ηR) : D →E. Furthermore, for every I ∈Kinj the morphism ηR I : F(I) →RF(I) in E is an isomorphism.

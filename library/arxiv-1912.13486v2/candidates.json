@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1912.13486v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "9a8dbc1a143f7448e02fc7a60e40955738c1a63fc2badf03771a875897d0701b",
   "file": "1912.13486v2.pdf"
  },
  "provenance": {
-  "title": null,
-  "authors": null,
+  "title": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
+  "authors": "Hee-Joong Chung",
   "arxiv": {
    "id": "1912.13486",
    "version": "2",
@@ -20,25 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "remark": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "s on topologically twisted index on S2\u00d7qS1",
-   "section_file": "sections/sec-001-22-analysis-on-homological-block-and-index-of-le.md",
-   "section_title": "Analysis on homological block and index of lens space theory",
-   "pages": "9-21",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

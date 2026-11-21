@@ -15,7 +15,7 @@ LaTeX label: `prop:variational-equations`
 
 ## References
 
-- [manuscript] §1-quantum-observable-universe/variational-equations
+- [leitner2026] §1-quantum-observable-universe/variational-equations
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -39,7 +39,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Variational equations**: the three Euler–Lagrange equations
     from the unified categorical action S_q. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 inductive VariationalEquationType
   | gravity    -- Einstein field equation
   | gauge      -- Yang–Mills equation
@@ -47,7 +47,7 @@ inductive VariationalEquationType
 
 /-- **Variational equation data**: each equation relates a
     left-hand side (kinematic) to a right-hand side (source). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure VariationalEquation where
   /-- The type of variational equation. -/
   eqType : VariationalEquationType
@@ -64,7 +64,7 @@ structure VariationalEquation where
 
 /-- **The gravitational equation**: Einstein's equation with
     q-deformed stress-energy tensor. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure GravitationalEquation extends VariationalEquation where
   /-- The Ricci curvature scalar. -/
   ricciScalar : R_q
@@ -74,7 +74,7 @@ structure GravitationalEquation extends VariationalEquation where
   is_gravity : eqType = .gravity
 
 /-- **The gauge equation**: Yang–Mills with q-deformed nonlinear term. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure GaugeEquation extends VariationalEquation where
   /-- The covariant divergence of the curvature. -/
   covDiv : R_q
@@ -84,7 +84,7 @@ structure GaugeEquation extends VariationalEquation where
   is_gauge : eqType = .gauge
 
 /-- **The matter equation**: parallel transport D_∇ ψ = 0. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure MatterEquation extends VariationalEquation where
   /-- The matter field norm. -/
   fieldNorm : R_q
@@ -94,13 +94,13 @@ structure MatterEquation extends VariationalEquation where
   is_matter : eqType = .matter
 
 /-- The matter equation is purely kinematic (zero source). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem matter_eq_zero_source (m : MatterEquation) :
     m.kinematic = 0 := by
   rw [m.equation, m.source_zero]
 
 /-- All three equations emerge from a single variational principle. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure UnifiedAction where
   /-- The substrate parameter. (Positivity `0 < q` is archimedean and
       not meaningful over `R_q`; imposed after `R_q → ℝ`.) -/

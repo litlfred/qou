@@ -96,7 +96,7 @@ archimedean).  No `ℝ`, no `Real.*`; the numerics live only in the Python witne
 
 - [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (q-characters, connection matrix,
   isoformal classification).
-- [manuscript] `QOU.MathlibExt.QCharacter` (`IsQChar`, `IsQChar.ratio_qInvariant`);
+- [leitner2026] `QOU.MathlibExt.QCharacter` (`IsQChar`, `IsQChar.ratio_qInvariant`);
   `QOU.QBeta.A3AntiSelfAdjointLift` (`amplitude_nonzero`, `amplitude_surjective`,
   `amplitude_injective`, `evenFaceCorrection`, `crossTerm`);
   `QOU.QBeta.BirkhoffAmplitudeWellPosed` (`AmplitudeIsGaugeInvariantCrossRatio`,

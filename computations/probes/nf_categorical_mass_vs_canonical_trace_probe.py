@@ -60,7 +60,7 @@ def main() -> int:
         A = Z + N
         t0 = time.monotonic()
         cs = compound_shift(Z, N, atom, dps=DPS)
-        cat = mpf(cs.categorical_mass)
+        cat = mpf(getattr(cs, "nf_trace_pairing", getattr(cs, "categorical_mass", None)))
         tr_atom, _tr_free, _chi, _wall = tr_m_atom_zn(Z, N, dps=DPS)
         tr_atom = mpf(tr_atom)
         delta = cat - tr_atom

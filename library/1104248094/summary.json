@@ -2,127 +2,72 @@
  "_schema": "library-summary/v1",
  "doc_id": "1104248094",
  "source_sha256": "c1fdb4791afcad3b",
- "brief": "Commun. Math. Phys. 140, 481-521 (1991) Communications in Mathematical Physics© Springer-Verlag 1991 Hochschild and Cyclic Homology of Quantum Groups — For an arbitrary complex linear semisimple Lie",
- "extended": "**Commun. Math. Phys. 140, 481-521 (1991) Communications in Mathematical Physics© Springer-Verlag 1991 Hochschild and Cyclic Homology of Quantum Groups**\n\n*Ping Feng1'* and Boris Tsygan2'***\n\n42 pp, 23 sections.\n\n**Abstract.** For an arbitrary complex linear semisimple Lie group G, we consider Hopf algebras of the deformations of the formal and algebraic functions on G. The Hochschild and cyclic homology of these Hopf algebras are computed when the value of the deformation parameter is generic. Table of Contents\n\n**Outline.** Front matter; 2 Definitions of Hochschild and Cyclic Homolog; 1 Associativity:; 3 Coassociativity:; 4 Counit:; 5 Connection Axiom:; 6 Antipode:; 3 Quantum Groups; 2 Let G be connected and semi-simple, then eve; 3 For the Lie bialgebra (g, g*) there is a uni; 4 A Spectral Sequence; 5 The Lie Algebra Homology; 5.1 Formal Functions. Recall that we have the ; 5.2 Algebraic Functions. Now we do not have a ; 6 Hochschild and Cyclic Homology of Quantum Gr; 6.2 Quantum Algebraic Groups. This subsection ; References; 12 Drinfeld, V. G.: Hamiltonian structure on L",
+ "brief": "Hochschild and cyclic homology of quantum groups — For an arbitrary complex linear semisimple Lie group G, we consider Hopf algebras of the deformations of the formal and algebraic functions on G.",
+ "extended": "**Hochschild and cyclic homology of quantum groups**\n\n*Ping Feng1'* and Boris Tsygan2'***\n\n42 pp, 12 sections.\n\n**Abstract.** For an arbitrary complex linear semisimple Lie group G, we consider Hopf algebras of the deformations of the formal and algebraic functions on G. The Hochschild and cyclic homology of these Hopf algebras are computed when the value of the deformation parameter is generic. Table of Contents\n\n**Outline.** Front matter; © Springer-Verlag; 1 Introduction; 2 Definitions of Hochschild and Cyclic Homolog; 3 Quantum Groups; 4 A Spectral Sequence; 5 The Lie Algebra Homology; 5.1 Formal Functions; 6 Hochschild and Cyclic Homology of Quantum Gr; 6.1 Quantum Formal Groups; 6.2 Quantum Algebraic Groups; Appendix B Example G = SL(2, C)",
  "tokens": {
   "brief": 49,
-  "extended": 273
+  "extended": 188
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-springer-verlag",
+   "title": "© Springer-Verlag",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
    "pages": "1-4"
   },
   {
-   "id": "sec-000-2-definitions-of-hochschild-and-cyclic-homology",
+   "id": "sec-002-2-definitions-of-hochschild-and-cyclic-homology",
    "title": "Definitions of Hochschild and Cyclic Homology",
-   "pages": "4-5"
+   "pages": "4-8"
   },
   {
-   "id": "sec-001-1-associativity",
-   "title": "Associativity:",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-002-3-coassociativity",
-   "title": "Coassociativity:",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-003-4-counit",
-   "title": "Counit:",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-004-5-connection-axiom",
-   "title": "Connection Axiom:",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-005-6-antipode",
-   "title": "Antipode:",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-006-3-quantum-groups",
+   "id": "sec-003-3-quantum-groups",
    "title": "Quantum Groups",
-   "pages": "7-9"
+   "pages": "8-13"
   },
   {
-   "id": "sec-007-2-let-g-be-connected-and-semi-simple-then-every",
-   "title": "Let G be connected and semi-simple, then every Poisson Lie group structure on G",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-008-3-for-the-lie-bialgebra-g-g-there-is-a-unique-li",
-   "title": "For the Lie bialgebra (g, g*) there is a unique Lie algebra structure on the vector",
-   "pages": "9-13"
-  },
-  {
-   "id": "sec-009-4-a-spectral-sequence",
+   "id": "sec-004-4-a-spectral-sequence",
    "title": "A Spectral Sequence",
    "pages": "13-20"
   },
   {
-   "id": "sec-010-5-the-lie-algebra-homology",
+   "id": "sec-005-5-the-lie-algebra-homology",
    "title": "The Lie Algebra Homology",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-011-51-formal-functions-recall-that-we-have-the-iden",
-   "title": "Formal Functions. Recall that we have the identification:",
    "pages": "20-21"
   },
   {
-   "id": "sec-012-52-algebraic-functions-now-we-do-not-have-a-nice",
-   "title": "Algebraic Functions. Now we do not have a nice filtration for C[XC] as we",
+   "id": "sec-006-51-formal-functions",
+   "title": "Formal Functions",
    "pages": "21-25"
   },
   {
-   "id": "sec-013-6-hochschild-and-cyclic-homology-of-quantum-grou",
+   "id": "sec-007-6-hochschild-and-cyclic-homology-of-quantum-grou",
    "title": "Hochschild and Cyclic Homology of Quantum Groups",
    "pages": "25-26"
   },
   {
-   "id": "sec-014-62-quantum-algebraic-groups-this-subsection-is-m",
-   "title": "Quantum Algebraic Groups. This subsection is mainly devoted to the proof2",
-   "pages": "26-40"
+   "id": "sec-008-61-quantum-formal-groups",
+   "title": "Quantum Formal Groups",
+   "pages": "26-26"
   },
   {
-   "id": "sec-015-references",
-   "title": "References",
-   "pages": "40-40"
+   "id": "sec-009-62-quantum-algebraic-groups",
+   "title": "Quantum Algebraic Groups",
+   "pages": "26-36"
   },
   {
-   "id": "sec-016-12-drinfeld-v-g-hamiltonian-structure-on-lie-gro",
-   "title": "Drinfeld, V. G.: Hamiltonian structure on Lie groups, Lie bialgebras and the geometric",
-   "pages": "40-40"
-  },
-  {
-   "id": "sec-017-16-feigin-b-l-tsygan-b-l-riemann-roch-theorem-an",
-   "title": "Feigin, B. L., Tsygan, B. L.: Riemann-Roch theorem and Lie algebra cohomology. In:",
-   "pages": "40-40"
-  },
-  {
-   "id": "sec-018-20-hilton-p-j-stammbach-u-a-course-in-homologica",
-   "title": "Hilton, P. J., Stammbach, U.: A course in homological algebra. Berlin, Heidelberg, New",
-   "pages": "40-41"
-  },
-  {
-   "id": "sec-019-25-knapp-a-w-representation-theory-of-semisimple",
-   "title": "Knapp, A. W.: Representation theory of semisimple groups. Princeton, NJ: Princeton",
-   "pages": "41-41"
-  },
-  {
-   "id": "sec-020-28-lu-j-h-weinstein-a-poisson-lie-groups-dressin",
-   "title": "Lu, J.-H., Weinstein, A.: Poisson Lie groups, dressing transformations and the Bruhat",
-   "pages": "41-41"
-  },
-  {
-   "id": "sec-021-30-mack-g-schomerus-v-conformal-field-algebras-w",
-   "title": "Mack, G., Schomerus, V.: Conformal field algebras with quantum symmetry from the theory",
-   "pages": "41-42"
+   "id": "sec-010-appendix-b-example-g-sl2-c",
+   "title": "Example G = SL(2, C)",
+   "pages": "36-42"
   }
  ],
  "provenance": {

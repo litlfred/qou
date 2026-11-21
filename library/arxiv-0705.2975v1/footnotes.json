@@ -1,0 +1,2421 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-0705.2975v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "ThepreparationofthispaperwassupportedbyNSFGrantCCR-0096842andbyfundsfromthe Isaac Newton Institute for Mathematical Sciences during a visit in May 2005.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "Zo´eChatzidakis∗,CharlotteHardouin,MichaelF.Singer"
+    }
+   ],
+   "block": "library/arxiv-0705.2975v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "1",
+   "text": "Allﬁeldsinthispaperareassumedtobeofcharacteristiczero",
+   "marks": [
+    {
+     "page": 1,
+     "context": "dernGaloistheoryofpolynomialsofdegreenwithcoeﬃcientsinaﬁeldk"
+    },
+    {
+     "page": 1,
+     "context": "2xyoverk=C(x), x′=1,theﬁeldsk(x"
+    }
+   ],
+   "block": "library/arxiv-0705.2975v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-3",
+   "page": 1,
+   "mark": "2",
+   "text": "thatis,aninvertiblen × nmatrixZsuchthatZ′= AZ.NotethatthecolumnsofZformabasisof the solution space",
+   "marks": [
+    {
+     "page": 1,
+     "context": "equation"
+    }
+   ],
+   "block": "library/arxiv-0705.2975v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "3",
+   "text": "ItisinterestingtonotethattheGaloistheorywasdevelopedbeforeitwasknownifsuchKalways exist. See the footnote on p.29 of [15]",
+   "marks": [
+    {
+     "page": 2,
+     "context": "theory"
+    }
+   ],
+   "block": "library/arxiv-0705.2975v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p002-2",
+   "page": 2,
+   "mark": "4",
+   "text": "Bialynicki-Birula[2]developedageneralGaloistheoryforﬁeldswithoperatorsbutwithrestrictions that forced his Galois groups to be connected.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "TheﬁeldtheoreticapproachwasdevelopedbyFranke"
+    }
+   ],
+   "block": "library/arxiv-0705.2975v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "5",
+   "text": "ThehypothesisCR= Ckisnotexplicitlystatedinthestatementofthisresultin[23]butisassumed in the proof.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "Lemma2.3LetRbeaPicard-VessiotringoveraﬁeldkwithCR=Ck"
+    }
+   ],
+   "block": "library/arxiv-0705.2975v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "6",
+   "text": "Warning:ThisisnottheusualGaloisgroupdeﬁnedbymodeltheorists,pleaseseethediscussionin subsection 4.4.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "KCU"
+    }
+   ],
+   "block": "library/arxiv-0705.2975v1/blocks/prose-sec-005"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "y",
+   "context": "2x"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "2xyover"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "2xyoverk=C(x), x′=1,theﬁelds"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "2xyoverk=C(x), x′=1,theﬁeldsk(x1/2)and"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "overk=C(x), x′=1,theﬁeldsk(x1/2)andk(z), ztranscendentalover"
+  },
+  {
+   "page": 1,
+   "mark": "x",
+   "context": "2"
+  },
+  {
+   "page": 1,
+   "mark": "z",
+   "context": "2x"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "2xzarenot"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "2xzarenotk-isomorphic.IfoneinsiststhattheconstantsC"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "AY,A∈GL"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "solution matrix.If the ﬁeld of constants C"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "One thenhas that z"
+  },
+  {
+   "page": 3,
+   "mark": "q",
+   "context": "C∗=C\\{0}withq−automorphismσ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "isC[Y ]/(Y"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Deﬁnition2.1LetKbeadiﬀerenceﬁeldwithautomorphismσandletA ∈GL"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "det(Z)]whereZ∈GL"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "det(Y )]/qasthequotientof"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "tiﬁedwiththegroupofmatricesM∈GL"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "det(Yi,j)] ⊗CBgeneratedby"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Letq=(q"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "Letq=(q1, . . . , q"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "Letq=(q1, . . . , qr)andwriteσM"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Letq=(q1, . . . , qr)andwriteσM0(q"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "C(M"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "C(M0, i, j)e"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "C(M0, i, j)eiwithallC(M"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "where{e"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "LetBbeaC-algebraandφ∈GR(B)identiﬁedwithφMforsomeM∈GL"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "C-algebrahomomorphismΨ:U→BwithΨ(M"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "beanidealofR ⊗C"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "RbeaPicard-VessiotringoverkwithCR=C"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "eaPicard-VessiotringoverkwithCR=CkfortheequationσX=AX, A ∈GL"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "det(Y )]/qwhereYisan"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "det(Y )]/qwhereYisann × nmatrixofindeterminates,σY=AYand"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "det(Y )]/qwhereYisann × nmatrixofindeterminates,σY=AYandqis"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "det(Y )]/qKis"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "asaboveandAacommutativeC"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "aboveandAacommutativeCkalgebrawithidentity,anyσ-idealNofR ⊗C"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "R ⊗C"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "R ⊗CkCKissimple.Thereforethemapψ:R ⊗C"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "oftheform"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "bforsome"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "bforsomea∈R′, b∈k[C"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "GR(A):=Aut(R ⊗C"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "FfromCK-algebrastogroupsasF(B):=Aut((R ⊗C"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "isalsoarepresentablefunctorrepresentedbyTR ⊗C"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "YonedaLemmaimpliesthatTR ⊗C"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "det(Y )].Let{e"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "det(Y )].Let{ei}be"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "det(Y )],wemaywrite"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "det(Y )],wemaywritefuniquelyas"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "det(Y )],wemaywritefuniquelyasf=P"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "det(Y )],wemaywritefuniquelyasf=P f"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "det(Y )],wemaywritefuniquelyasf=P fi"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "det(Y )],wemaywritefuniquelyasf=P fie"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "det(Y )],wemaywritefuniquelyasf=P fiei,"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "det(Y )],wemaywritefuniquelyasf=P fiei,f"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "thenumberofisuchthatf"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "assume that there exists an i"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "assume that there exists an i1such that f"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "assume that there exists an i1such that fi"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ani"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "ani2̸= i"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "ani2̸= i1suchthatf"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ani2̸= i1suchthatfi"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "i2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "i2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "i2)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "i2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "i2"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Proposition2.7LetKbeadiﬀerenceﬁeldwithconstantsCandletA∈GL"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "det(U)],U∈GL"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "det(U)],U∈GLn(S),σ(U)=AUbe"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "CS=C"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "CS=CkandletL=K(V ),V∈GL"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "LetX=(Xi,j)beann×nmatrixofindeterminatesoverLandletS"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "det(X)].Wedeﬁne"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "slightly,wemaywriteS= S"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "slightly,wemaywriteS= S0/pwherepisamaximalσ-idealofS"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "det(Y )].DeﬁneS"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "det(Y )].Theideal"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "det(Y )].Theidealp ⊂S"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "det(Y )].Wedeﬁne˜p=(p) ∩S"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "det(Y )].Wedeﬁne˜p=(p) ∩S1.Let"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "det(Y )].Wedeﬁne˜p=(p) ∩S1.Letmbe"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "inS"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "inS1suchthat˜p ⊂m.WethenhaveahomomorphismS"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "inS1suchthat˜p ⊂m.WethenhaveahomomorphismS1→S"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "det(Y )]=L ⊗CS"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "wehaveadiﬀerencehomomorphismψ:S"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "ρ : S= S"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "InProposition2.7,wehavethatρ(U) = V (ci,j)forsome(ci,j) ∈GL"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "2.σY=AYbeadiﬀerenceequationwithA∈GL"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "a.If we write L = K(V ) where V∈GL"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "det(V )]isalso"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "det(Y )]/(p)Kis"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "overview).WewilldenotebyD"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "LetMbeaD"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "Theorem3.1LetM∈Diff(k, σ)beaD"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "1. For all c ∈C∗, the restriction to CKof the map σ"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "thefunctionσ"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "ﬁxedﬁeldofAut(CK/C).Becauseσ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "c"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ci(z)k"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "wherec"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "whereci∈CEandk"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "c"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ci(z)k"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "3.Letibeanaturalintegerandf(X) = cX"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "τ(σq(f)) = τ(cq"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "τ(σq(f)) = τ(cqiX"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "τ(σq(f)) = τ(cqiXi) = τ(c)q"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "τ(σq(f)) = τ(cqiXi) = τ(c)qiX"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "withτ∈Aut(CK/C).Thus,theactionofAut(CK/C)commuteswithσ"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "Constr"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "mensionoverk,wehaveHom"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "thereexists,bydeﬁnition,aconstructionM′= Constr"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "existM"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "existM1andM"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "existM1andM2twoobjectsofConstr"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "existM1andM2twoobjectsofConstrk(M)suchthatN⊂M"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "existM1andM2twoobjectsofConstrk(M)suchthatN⊂M1 ⊗k KandN⊂M"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Then,byadiagonalembeddingN⊂(M"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Then,byadiagonalembeddingN⊂(M1⊕M"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "(M"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(M1 ⊕M"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "(M1 ⊕M2) ⊗k Kis the directsum of the actionof Aut(CK/C) on M"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ofAut(CK/C)onM"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "M"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "M1 ⊗kKtoNisthesameastherestrictionoftheactionofAut(CK/C)onM"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "σX=AX, A∈GL"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "satisﬁesRK⊗KKMK=RK⊗CK˜ωM(MK).LetσX=AX, A ∈GL"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "det(Y )]/IbeitscorrespondingPicard-Vessiotringover"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "(equalityinsideωM(M′) ⊗C CKforanyM′= Constr"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "(M′⊗K),the action of Aut(CK/C) commutes with the action of σ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "τ(Ker(σ"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "τ(Ker(σq −Id, RK⊗KN)) = Ker(σ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "beanequationofMwithA ∈GL"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Visanotherfundamentalmatrixofsolutionsof(3),thereexistsP∈GL"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(e.g.,inourcase,wemaytakeκ=|C|+=(2ℵ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "considertheﬁeldUwiththeautomorphismσ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "considertheﬁeldUwiththeautomorphismσn.Then(U, σ"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "WeletDR= {a ∈R|σ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Later we will work with powers of σ, and will write Fix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "rk with powers of σ, and will write Fix(σn)(R) for {a ∈R | σ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "IfR=U,wewillsimplywriteFix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "RecallthatadeﬁnablesubsetSofU"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "withparametersfrom U,thenR ∩S"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "fromFix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "fromFix(σd),thereisadeﬁnableisomorphismbetweenFix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "fromFix(σd),thereisadeﬁnableisomorphismbetweenFix(σd)andC"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "(vi)foreveryd > 0,Fix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "KDU,i.e.,thereissomeﬁniteσ-stableextensionM"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "KDU,i.e.,thereissomeﬁniteσ-stableextensionM0ofKsuchthatM⊂M"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "Then,inthediﬀerenceﬁeld(U, σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "Then,inthediﬀerenceﬁeld(U, σd),Fix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "Kanddcl(Fix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "Kanddcl(Fix(σd))=Fix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "Kanddcl(Fix(σd))=Fix(σd).Denotingtypesin(U, σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "Kanddcl(Fix(σd))=Fix(σd).Denotingtypesin(U, σd)bytp"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "K ∩Fix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "K ∩Fix(σd)) ⊢tp"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "K/Fix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "[5]),withGaloisgroupG.Choosedlargeenoughsothatσ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "KFix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "isomorphicwaysofextendingσ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "K/Fix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "KFix(σ"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "KFix(σd)-isomorphismtypeof theσ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "U,A ∈GL"
+  },
+  {
+   "page": 18,
+   "mark": "g",
+   "context": "elementg∈Hiscompletelydeterminedbythe matrixM"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "elementg∈Hiscompletelydeterminedbythe matrixMg= T−1g(T) ∈GL"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "B∈S,thenB−1T∈GL"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "Proposition4.3LetH"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "2.M0isaﬁniteσ-stableextensionofKϕ(CL)and[H : H"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "3.[H′:H"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "3.[H′:H0]=[H(CU):H"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "3.[H′:H0]=[H(CU):H0(CU)]equalsthenumberofleftcosetsofGal(M/M"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "2.As M"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "2.As M0⊂Kϕ(L), we obtain that [M"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "2.As M0⊂Kϕ(L), we obtain that [M0: Kϕ(CL)] is ﬁnite and σ(M"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "M0⊂Kϕ(L), we obtain that [M0: Kϕ(CL)] is ﬁnite and σ(M0) = M"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "HenceH"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "3.Theﬁrstequalityfollowsfrom thefactthatH"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "lityfollowsfrom thefactthatH0(CU)andH′(CU)areZariskidenseinH"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "componentofWandτ∈Gal(M/Kϕ(CL))suchthatW"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "thereforeW"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "thereforeW1∩S̸=∅.Conversely,ifB∈W"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Kϕ(CL)),andτ(M"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Kϕ(CL)),andτ(M0)⊂Kϕ(CL)(B).HencethediﬀerencesubﬁeldsM"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Kϕ(CL)),andτ(M0)⊂Kϕ(CL)(B).HencethediﬀerencesubﬁeldsM0andτ(M"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "and only if σ−1τ−1στ∈Gal(M/M"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "nly if σ−1τ−1στ∈Gal(M/M0), if and only if the coset τGal(M/M"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "[H : H"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "obtainanalgebraicgroupH"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "obtainanalgebraicgroupH1,withH"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Throughouttherestofthissection,weﬁxadiﬀerenceringK,someA∈GL"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i=0σ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i=0R"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i=0Ri,whereR"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i=0Ri,whereRi=R/σ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i=0R"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "i=0Ri,anddenoteby"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i=0Ri,anddenotebye"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "thateiR′=Ri.Thenei=σ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "iistheﬁeldoffractionsofR"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "0].Wecall"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "0].Wecallm(R′)the"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "S= ⊕iS"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "S= ⊕iSi,thenKr.dim(S) = sup{Kr.dim(S"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "area"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "area1, . . . , a"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Let0̸=c"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Let0̸=c1, . . . , c"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Let0̸=c1, . . . , cn∈KbesuchthatP"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "i=1"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1a"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "i=1ai"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1aic"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "i=1aici=0.Multiplyingby"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "c1=1.Thenσ(P"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "i=1"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1a"
+  },
+  {
+   "page": 21,
+   "mark": "c",
+   "context": "i=1ai"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1aic"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "i=1aici)=P"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "i=1"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1a"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1aiσ(c"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "i=1aiσ(ci)=0,andthereforeP"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "i=2"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=2a"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=2ai(σ(c"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=2ai(σ(ci) −c"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "minimalityofn,all(σ(c"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "minimalityofn,all(σ(ci) −c"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "minimalityofn,all(σ(ci) −ci)are0,i.e.,allc"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "Observethat e"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "Observethat e0CR′⊂Fix(σℓ)(R"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "⊂Fix(σℓ)(R0), and we may therefore replace R′by the domain R"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "i=0D"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "b"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "b0, . . . ,"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "1.Ifc∈CR∗,thenccanberepresentedbysomeℓ-tuple(a"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "a"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ai, b"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ai, bi∈R"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ai, bi∈Ri, and b"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "theelementb = (b"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "2.Assumethat a ∈e"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "2.Assumethat a ∈e0R∗satisﬁesσℓ(a) = a.Thena = e"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=0σ"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "i=0σi(e"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "i=0σi(e0"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "thereforebelongstoCR′.Hencea ∈e"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "3.Ifa ∈R∗satisﬁesσ"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "3.Ifa ∈R∗satisﬁesσm(a) = aforsomem,thenσmℓ(e"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "3.Ifa ∈R∗satisﬁesσm(a) = aforsomem,thenσmℓ(eia) = e"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1, . . . , ℓ−1,onechoosesacopyR"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "i=1, . . . , ℓ−1,onechoosesacopyRiofthedomainR"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "fi: R"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "fi: R0→R"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "fi: R0→Riwhichextendsσ"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "fi: R0→RiwhichextendsσionK.Thisf"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": " R0→RiwhichextendsσionK.ThisfitheninducesanautomorphismσℓofR"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=0R"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "i=0Ribysettingσ(a"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "i=0Ribysettingσ(a0, . . . , aℓ−1) = (f"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "i=0Ribysettingσ(a0, . . . , aℓ−1) = (f1(a"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "i=0Ribysettingσ(a0, . . . , aℓ−1) = (f1(a0), f"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "i=0Ribysettingσ(a0, . . . , aℓ−1) = (f1(a0), f2"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "1(a"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "1(a1), . . . , σℓ"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Proposition4.8LetK⊂K"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Proposition4.8LetK⊂K1bediﬀerenceﬁeldsofcharacteristic0whereK"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "tion4.8LetK⊂K1bediﬀerenceﬁeldsofcharacteristic0whereK1= K(CK"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "andassumethatCK=DK.ThenR′⊗KK"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "iis"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "ringforσ(X)=AXoverK"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "OurassumptionimpliesthatK⊗CKCK"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "algebraicclosureofCKinCK"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "i=1"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1g"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1C"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1Ci,where C"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "i=1Ci,where Ciis generatedoverCby a root of"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1Ci,where Ciis generatedoverCby a root of g"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "gi(a ⊗1);ontheotherhand,eachg"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i=1R′ ⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "ByLemmas2.3and4.5,eachR′⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "iis"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "iis"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "KC"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i⊗KC"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "i⊗KCiK"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i⊗KCiK1C"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "i⊗KCiK1Ciis"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i⊗KCiK1CiisaPicard-Vessiotring.BecauseC"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "i⊗KCiK1CiisaPicard-Vessiotring.BecauseCiandK"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "linearlydisjointoverC,andC"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "linearlydisjointoverC,andCiisalgebraicoverC,KC"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "linearlydisjointoverC,andCiisalgebraicoverC,KCi ⊗KCK"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "linearlydisjointoverC,andCiisalgebraicoverC,KCi ⊗KCK1≃K"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "linearlydisjointoverC,andCiisalgebraicoverC,KCi ⊗KCK1≃K1C"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "i⊗KCK"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i⊗KC"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "i⊗KCiK"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i⊗KCiK1C"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "ThisshowsthatR′⊗KK"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "ThisshowsthatR′⊗KK1isthedirectsumofPicard-VessiotringsoverK"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "j=0R"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "j=0Rj) ⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "j=0R"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "j=0Rj⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Rj⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "Rj⊗CR′CiisalsoaPicard-Vessiotringforσℓ(X)=AℓX.ThusR"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Rj⊗CR′CiisalsoaPicard-Vessiotringforσℓ(X)=AℓX.ThusR0⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "s",
+   "context": "Rj⊗CR′CiisalsoaPicard-Vessiotringforσℓ(X)=AℓX.ThusR0⊗CR′Ci=P"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "j=0S"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "0is the ﬁeldof fractions of S"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "0is the ﬁeldof fractions of S0.Toshow that"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "0⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "0⊗CR′Ci) = Fix(σ)(R′ ⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "0⊗CR′Ci) = Fix(σ)(R′ ⊗CR′Ci) = C"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "0∩C"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "i=CR′(α),andleta, b ∈R"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "i=CR′(α),andleta, b ∈R0,"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "i.TheminimalprimeidealsofR"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i.TheminimalprimeidealsofR0⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "i:CR′]andQ"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "isshowsthatr= s,sincesisalsothenumberofminimalprimeidealsofR"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "thatr= s,sincesisalsothenumberofminimalprimeidealsofR0 ⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "LetebeaprimitiveidempotentofR"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "LetebeaprimitiveidempotentofR0⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "LetebeaprimitiveidempotentofR0⊗CR′CisuchthatS"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "LetebeaprimitiveidempotentofR0⊗CR′CisuchthatS0=e(R"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "LetebeaprimitiveidempotentofR0⊗CR′CisuchthatS0=e(R0⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "0is"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "0,anditsdegreeovereC"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "i: CR′],i.e.,equals"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "i: CR′],i.e.,equalsm(R"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "0= eC"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "0⊗CR′C"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "0⊗CR′Cisatisﬁesσ"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "0⊗CR′Cisatisﬁesσm(c) = cforsome"
+  },
+  {
+   "page": 22,
+   "mark": "c",
+   "context": "0⊗CR′Cisatisﬁesσm(c) = cforsomem̸ = 0.Write"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "k"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "ka"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "kak ⊗c"
+  },
+  {
+   "page": 22,
+   "mark": "c",
+   "context": "0,andthe"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "0,andthec"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "0,andtheckareinC"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "σ"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "kσ"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "kσm(a"
+  },
+  {
+   "page": 22,
+   "mark": "c",
+   "context": "kσm(ak)"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "kσm(ak)c"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "kσm(ak)ck,whichimpliesσ"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "kσm(ak)ck,whichimpliesσm(a"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "kσm(ak)ck,whichimpliesσm(ak)=a"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "kσm(ak)ck,whichimpliesσm(ak)=akforall"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "kσm(ak)ck,whichimpliesσm(ak)=akforallk,andall"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "kσm(ak)ck,whichimpliesσm(ak)=akforallk,andalla"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "0isoftheformecforsuch"
+  },
+  {
+   "page": 23,
+   "mark": "c",
+   "context": "0isoftheformecforsucha"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "0= eC"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "R0.Thisﬁnishestheproofthat"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "ConsidernowR′⊗KC K"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "isomorphic to S"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "isomorphic to S0⊗KC K"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "isomorphic to S0⊗KC K1.Because K"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "orphic to S0⊗KC K1.Because K1is a regular extension of KC, S"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": " to S0⊗KC K1.Because K1is a regular extension of KC, S0⊗KC K"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "0arelinearlydisjointoverKC,whichimpliesthatCK"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "0arelinearlydisjointoverKC,whichimpliesthatCK1C"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "ﬁeldofconstantsofS"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "ﬁeldofconstantsofS0 ⊗KCK"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "ﬁeldofconstantsofS0 ⊗KCK1,CK"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "0: CK"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "0: CK1C"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "S"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "S0: C"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "S0: Ci] = m(S"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "S0: Ci] = m(S0).Thisshowsthat"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "i⊗KC K"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "ThenIP=T"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "andthereexistsm>0suchthatσ"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i=0σ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "i=0σi(P)is"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "elementP"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "elementP1notintheorbitofPunderσ.ObservethatIP"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "anypropersubsetofPisnon-trivial,IP+ IP"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "IP,andthereforeequals1.IfP"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "IP,andthereforeequals1.IfP1, . . . , P"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "someB∈GL"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "σℓ-diﬀerence ﬁeld Ucontaining R"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "U,and concludeas abovethatKFix(σℓ)[R"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "whereσ(V )=AV ,withﬁeldoffractionsL"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "whereσ(V )=AV ,withﬁeldoffractionsL1,andassumethatCL"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "theﬁeldsDKorDL,andthatFix(σ"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "resultstotheequationσ"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "adomain,KCL[R]isaPicard-Vessiotringforσ"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "simpleσ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "ℵ"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "theformσ(X)=AX"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "theformσ(X)=AXp"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "σ(x)"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "0,evenwhenDR"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "0,evenwhenDR0=CK.Thusonecanwonder:canonealwaysﬁnd"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "ringR"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": " regular extension of K, we may choose another K-embedding ϕ"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "analgebraicgroupH"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "nalgebraicgroupH1,whichwillbeisomorphictoH(viasomematrixC∈GL"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "R"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "overK.ThenthePicard-VessiotringisR′=K(y),wherey"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "U),andσactingonC.As"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "fi(Y )/g"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "fi(Y )/gi(Y ), where f"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "fi(Y )/gi(Y ), where fi(Y ), g"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "), where fi(Y ), gi(Y ) ∈K[Y ] are relatively prime.Then σ(f"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": ", gi(Y ) ∈K[Y ] are relatively prime.Then σ(fi)(AY ) and σ(g"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "thatthereissomek"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "thatthereissomeki∈Ksuchthatσ(f"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "thatthereissomeki∈Ksuchthatσ(fi)(AY ) = k"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "thatthereissomeki∈Ksuchthatσ(fi)(AY ) = kif"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "thatthereissomeki∈Ksuchthatσ(fi)(AY ) = kifi(Y )andσ(g"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "hereissomeki∈Ksuchthatσ(fi)(AY ) = kifi(Y )andσ(gi)(AY ) = k"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "reissomeki∈Ksuchthatσ(fi)(AY ) = kifi(Y )andσ(gi)(AY ) = kig"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "andg"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "andgi(Y )arebothinq,orelse,sayiff"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "andgi(Y )arebothinq,orelse,sayiffi(Y )/∈q,thatthereissomec"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ofc"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ofcioverCKandisofdegreer,theng"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "ofcioverCKandisofdegreer,thengi(Y )"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ofcioverCKandisofdegreer,thengi(Y )rP"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ofcioverCKandisofdegreer,thengi(Y )rPi(g"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ofcioverCKandisofdegreer,thengi(Y )rPi(gi(Y )/f"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "isthecaseforinstanceifCKisalgebraicallyclosed),thenc"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "sthecaseforinstanceifCKisalgebraicallyclosed),thenci∈CK,andg"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "forinstanceifCKisalgebraicallyclosed),thenci∈CK,andgi(Y ) −c"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "rinstanceifCKisalgebraicallyclosed),thenci∈CK,andgi(Y ) −cif"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "willbelongtoq.(Notealsothatifk"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "willbelongtoq.(Notealsothatifki=k"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "willbelongtoq.(Notealsothatifki=kj,thenalsoforsomed"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "f"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "fj(Y ) −d"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "fj(Y ) −djf"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "fj(Y ) −djfi(Y )∈q,andg"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "fj(Y ) −djfi(Y )∈q,andgj(Y ) −c"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "fj(Y ) −djfi(Y )∈q,andgj(Y ) −cjd"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "fj(Y ) −djfi(Y )∈q,andgj(Y ) −cjdjf"
+  }
+ ]
+}

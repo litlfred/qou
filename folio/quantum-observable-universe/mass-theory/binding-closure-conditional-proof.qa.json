@@ -582,7 +582,7 @@
           "in_degree": 0,
           "cone_size": 250,
           "depth": 50,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 20,
           "edge_span_mean": 10.5,
           "worst_target": ""
@@ -877,6 +877,22 @@
         "notes": "The argument flow in 'Proof of binding closure conditional on the per-term mass identity' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "265293a60ab0",
+          "ts": "6846a369a657"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:28.522Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "proof.md:8 algebra correct; but statement .md:27-29 'fully verified by Lean modulo the single named input (B)' while proof.md:17 'carries (C) and (B) as the fields of the class' — the verification claim in the statement overstates what is proved",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1502,6 +1518,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:39:36.532Z",
+  "updated_at": "2026-11-15T21:57:28.522Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

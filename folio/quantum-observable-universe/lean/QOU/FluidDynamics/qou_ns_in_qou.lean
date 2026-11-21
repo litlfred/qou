@@ -18,10 +18,12 @@ is the open wall (`bean qou-innq`); it is deliberately **not** asserted.
 
 Given a QOU, its defining **observability axiom** `Hom_𝐂(𝟙, Ad(A)) = 0` forces
 irreducibility of the adjoint, hence a nonzero Euler characteristic `χ(A)`
-(`qou-obstruction-reduction`), hence — via Kummer non-divisibility — a nonzero
-NS obstruction `NS(A) = e(ξ)|_Σ` (`ns-obstruction`, `ns-kummer-specialisation`),
-which is by definition the QOU's internal q-NS singularity at `q = 1`
-(`ns-obstruction-tower`, `blowup-yekutieli`). The capstone
+(`qou-obstruction-reduction`), hence a nonzero **global** Euler class
+`NS(A) := e(ξ) ∈ H²(S, ℤ)` of the Reeb bundle (its degree is `χ(A)`; item 1 of
+`thm:ns-singularity-descartes`), which is by definition the QOU's internal q-NS
+singularity at `q = 1` (`ns-obstruction-tower`, `blowup-yekutieli`). The
+obstruction lives on the whole surface `S`, not on the vortex locus `Σ`: every
+class in `H²` restricts to zero on a one-dimensional `Σ` (item 3). The capstone
 `qou_internal_ns_singular` composes these QOU-structural steps.
 
 **Every QOU is internally singular — from the axiom, not from `χ = -6`.** The
@@ -46,20 +48,35 @@ arithmetic `-6 ≠ 0` is decidable and `internalBlowup` is definitionally
 *unconditional* proof that this QOU's internal q-NS is singular — the capstone
 is not an empty conditional.
 
-## Two layers, honestly separated
-- **base `QOUFluidUniverse`** — the definitional/arithmetic chain (observability
-  → χ → obstruction → internal blow-up). Fully instantiable (`descartesQOU`).
-- **`QOUFluidUniverseLevi`** — adds the *geometric* Yekutieli–Levi equivalence
-  (`obstruction ≠ 0 ↔ Levi non-degenerate`, the T8 result), which is a genuine
-  categorical theorem, **not** a definition; it is kept as a conditional
-  extension and is *not* collapsed to `rfl` in `descartesQOU`.
+## The Levi layer is withdrawn (2026-11-15, owner decision, PR #7747)
+
+This module used to add a second layer, `QOUFluidUniverseLevi`, carrying the
+"Yekutieli–Levi equivalence" `NS(A) ≠ 0 ↔ Levi non-degenerate`, and the theorem
+`qou_levi_nondegenerate` placing every QOU on branch (A) of
+`conj:levi-degeneracy`. Both are removed: step (d) of `prop:ns-obstruction-tower`
+is withdrawn, the Levi datum of the vorticity plane field in dimension 3 is the
+single scalar `ξ·curl ξ` (`prop:core-levi-form`), and branch (A) is refuted under
+that reading by a Beltrami solution (`beltrami_refutes_branchA`). No Lean
+declaration consumed them. Bean `qou-fm7s`.
+
+## The obstruction is the global class (2026-11-15, owner decision, PR #7747)
+
+Until this date the base chain modelled `NS(A) = e(ξ)|_Σ` and justified
+`χ(A) ≠ 0 → NS(A) ≠ 0` by Kummer non-divisibility. That contradicts item 3 of the
+restated `thm:ns-singularity-descartes`: `H²(Σ, ·) = 0` for one-dimensional `Σ`, so
+`e(ξ)|_Σ = 0` always and the old step 2 could not be instantiated. The owner chose
+to restate the chain on the global class. The obstruction is now `e(ξ) ∈ H²(S, ℤ)`,
+and step 2 is the degree statement `deg e(ξ) = χ(A)`, so `χ(A) ≠ 0` gives
+`e(ξ) ≠ 0` with no Kummer input. `descartesQOU` already modelled the global class
+(`χ = -6`), so it is unchanged. The cost is that the chain no longer localises the
+singularity on `Σ`; that localisation was the withdrawn Levi step.
 
 ## Base ring (§7c)
 Generic `{k : Type*} [CommRing k]` for the obstruction; `χ(A) : ℤ`; other data
 are `Prop`s. The concrete instance uses `k = ℤ`. No `ℝ`.
 
 ## References
-- [manuscript] quantum-observable-universes/quantum-observable-universe,
+- [leitner2026] quantum-observable-universes/quantum-observable-universe,
   stochastic-mechanics/qou-obstruction-reduction, fluid-dynamics/ns-obstruction,
   ns-obstruction-tower, ns-kummer-specialisation, ns-singularity-descartes,
   lifting-and-descent/p3-blowup-yekutieli
@@ -79,15 +96,16 @@ structure QOUFluidUniverse (k : Type*) [CommRing k] where
   observability_holds : observability
   /-- The Euler characteristic `χ(A) : ℤ`. -/
   eulerChar : ℤ
-  /-- The NS obstruction value `NS(A) = e(ξ)|_Σ`. -/
+  /-- The NS obstruction `NS(A) := e(ξ)`, the **global** Euler class of the Reeb
+      bundle in `H²(S, ℤ) ≅ ℤ` (not its restriction to `Σ`, which is always 0). -/
   obstruction : k
   /-- "The QOU's internal q-NS flow at `q = 1` is singular" — categorical
       internal observable (`blowup-yekutieli`), NOT the `ℝ³` PDE. -/
   internalBlowup : Prop
   /-- **Step 1 (`qou-obstruction-reduction`):** observability forces `χ(A) ≠ 0`. -/
   observability_forces_chi : observability → eulerChar ≠ 0
-  /-- **Step 2 (`ns-obstruction`, `ns-kummer-specialisation`):** `χ(A) ≠ 0`
-      forces `NS(A) ≠ 0` (Kummer non-divisibility). -/
+  /-- **Step 2 (item 1 of `thm:ns-singularity-descartes`):** `deg e(ξ) = χ(A)`,
+      so `χ(A) ≠ 0` forces the global class `NS(A) ≠ 0`. -/
   chi_forces_obstruction : eulerChar ≠ 0 → obstruction ≠ 0
   /-- **Step 3 (`ns-obstruction`):** a nonzero NS obstruction *is*, by
       definition, the QOU's internal q-NS singularity (NS-singular ⟺ NS(A)≠0). -/
@@ -95,24 +113,25 @@ structure QOUFluidUniverse (k : Type*) [CommRing k] where
 
 variable {k : Type*} [CommRing k]
 
-/-- **The QOU's NS obstruction is nonzero.** Given a QOU, `NS(A) ≠ 0`. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction, ns-kummer-specialisation
+/-- **The QOU's NS obstruction is nonzero.** Given a QOU, the global class
+    `NS(A) = e(ξ) ≠ 0`. -/
+-- Ref: [leitner2026] fluid-dynamics/ns-singularity-descartes
 theorem qou_obstruction_nonzero (U : QOUFluidUniverse k) : U.obstruction ≠ 0 :=
   U.chi_forces_obstruction (U.observability_forces_chi U.observability_holds)
 
 /-- **Given a QOU, its internal q-NS flow at `q = 1` is singular.**
 
     Derived by composing the QOU's own structural steps: observability ⇒
-    `χ(A) ≠ 0` ⇒ `NS(A) ≠ 0` ⇒ internal blow-up. A statement **about the QOU** —
+    `χ(A) ≠ 0` ⇒ `e(ξ) ≠ 0` in `H²(S)` ⇒ internal blow-up. A statement **about the QOU** —
     it does **not** resolve the classical Navier–Stokes problem, and
     `internalBlowup` is the categorical internal observable, not the `ℝ³` PDE. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower, blowup-yekutieli
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction-tower, blowup-yekutieli
 theorem qou_internal_ns_singular (U : QOUFluidUniverse k) : U.internalBlowup :=
   U.obstruction_iff_internal_blowup.mp (qou_obstruction_nonzero U)
 
 /-- **Contrapositive scope check.** If a QOU's internal q-NS flow were regular,
     its NS obstruction would vanish — impossible for a genuine QOU. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction-tower
 theorem qou_not_internally_regular (U : QOUFluidUniverse k)
     (hreg : ¬ U.internalBlowup) : False :=
   hreg (qou_internal_ns_singular U)
@@ -120,8 +139,8 @@ theorem qou_not_internally_regular (U : QOUFluidUniverse k)
 /-! ### Non-vacuity: the concrete Descartes QOU -/
 
 /-- **The Descartes QOU** (`χ(A) = -6`, Bring's surface; `ns-singularity-descartes`)
-    as a concrete `QOUFluidUniverse ℤ`. The obstruction is modelled by the scalar
-    `-6 = χ(A)` and `internalBlowup` is *defined* as `NS(A) ≠ 0` (the categorical
+    as a concrete `QOUFluidUniverse ℤ`. The obstruction is the global class
+    `e(ξ) ∈ H²(S, ℤ) ≅ ℤ`, modelled by its degree `-6 = χ(A)` and `internalBlowup` is *defined* as `NS(A) ≠ 0` (the categorical
     meaning of NS-singular). Every base field discharges sorry-free: `-6 ≠ 0` is
     decidable arithmetic, and Step 3 is `Iff.rfl`. -/
 def descartesQOU : QOUFluidUniverse ℤ where
@@ -138,31 +157,8 @@ def descartesQOU : QOUFluidUniverse ℤ where
     capstone applied to the concrete instance; no `sorry`, no open hypothesis
     (still an *in-QOU* statement, not the `ℝ³` PDE). Witnesses that the general
     `qou_internal_ns_singular` is not vacuous. -/
--- Ref: [manuscript] fluid-dynamics/ns-singularity-descartes
+-- Ref: [leitner2026] fluid-dynamics/ns-singularity-descartes
 theorem descartes_internal_ns_singular : descartesQOU.internalBlowup :=
   qou_internal_ns_singular descartesQOU
-
-/-! ### Geometric layer: the Levi branch (conditional extension) -/
-
-/-- A QOU together with the **geometric** Yekutieli–Levi equivalence. This
-    equivalence (`ns-obstruction-tower` (c)/(d), the T8 result
-    `ns_obstruction_iff_levi`) is a categorical *theorem*, not a definition, so
-    it is carried here as an extra hypothesis rather than folded into the base. -/
-structure QOUFluidUniverseLevi (k : Type*) [CommRing k]
-    extends QOUFluidUniverse k where
-  /-- "The QOU's Levi form is non-degenerate along its ladder" (branch A of
-      `conj:levi-degeneracy`). -/
-  leviNonDegenerate : Prop
-  /-- **Yekutieli–Levi unification:** `NS(A) ≠ 0 ↔ Levi non-degenerate.** -/
-  obstruction_iff_levi : obstruction ≠ 0 ↔ leviNonDegenerate
-
-/-- **Given a QOU (with the Yekutieli–Levi equivalence), its internal q-NS is
-    forced into the non-degenerate branch** — branch A of `conj:levi-degeneracy`
-    (`β = 0`, blow-up side). *In a QOU* the trichotomy branch is decided; the
-    general growth-rate `β` of a classical flow is untouched. -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower, levi-degeneracy-conjecture
-theorem qou_levi_nondegenerate (U : QOUFluidUniverseLevi k) :
-    U.leviNonDegenerate :=
-  U.obstruction_iff_levi.mp (qou_obstruction_nonzero U.toQOUFluidUniverse)
 
 end QOU.FluidDynamics

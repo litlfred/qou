@@ -1,0 +1,1 @@
+Let 3 = (/31,...,8n) be the sequence of beta numbers for X and let b and h be integers with 1 <b <n andh> 1. Then there exists a composition T such that d;(81,..., 8% —h,...,8n) #0 only if h = h2, for some (a,b) € [A]. In

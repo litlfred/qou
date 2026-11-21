@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Electromagnetic Form Factors for the Baryon Octet",
-  "pageStart": 12,
-  "pageEnd": 13,
-  "text": "../sections/sec-001-3-electromagnetic-form-factors-for-the-baryon-oc.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9511320v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9511320v1",
+  "title": "Effective Lagrangian of Goldstones, Baryons and Spin--1 Fields",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-001-2-effective-lagrangian-of-goldstones-baryons-and.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9511320v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9511320v1/manifest.jsonld",
   "provenance": "ingested"
 }

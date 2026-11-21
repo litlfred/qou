@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2306.13098v2",
  "source_sha256": "edeb214d587bfca4",
- "brief": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the",
- "extended": "**Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions**\n\n*Niels G. Gresnigt 1⋆, Liam Gourlay 1 and Abhinav Varma1*\n\n18 pp, 12 sections.\n\n**Abstract.** An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the Cayley-Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convincingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an algebraic origin for the existence of exactly three generations has proven difficult to sub- stantiate. We motivate S as a natural algebraic candidate to describe three generations with SU (3)C gauge symmetry. We initially represent one generation of leptons and quarks in terms of two minimal left ideals of Cℓ(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the finite group S3, which are automorphisms of S but not of O to generate two additional generations.\n\n**Outline.** Introduction; Normed division algebras; One generation of electrocolor states from CO; The Cayley-Dickson construction and the algebr; Octonion subalgebras inside the sedenions; Automorphisms of sedenions; Why not sedenions?; One generation of electrocolor states from CS; Generating two additional generations from S3 ; Linear dependence of minimal ideal states; Outlook; Discussion",
+ "brief": "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the",
+ "extended": "**Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions**\n\n*Niels G. Gresnigt1⋆, Liam Gourlay1 and Abhinav Varma1*\n\n18 pp, 16 sections.\n\n**Abstract.** An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the Cayley-Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convincingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an algebraic origin for the existence of exactly three generations has proven difficult to sub- stantiate. We motivate S as a natural algebraic candidate to describe three generations with SU(3)C gauge symmetry. We initially represent one generation of leptons and quarks in terms of two minimal left ideals of Cℓ(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the finite group S3, which are automorphisms of S but not of O to generate two additional generations.\n\n**Outline.** Front matter; Introduction; Normed division algebras; One generation of electrocolor states from CO; The Cayley-Dickson construction and the algebr; Octonion subalgebras inside the sedenions; The left multiplication algebra of CS; Automorphisms of sedenions; Three generations of color states from CS; Why not sedenions?; One generation of electrocolor states from CS; Generating two additional generations from S3 ; SU(3)C color symmetries of three generations; Linear dependence of minimal ideal states; Outlook; Discussion",
  "tokens": {
   "brief": 48,
-  "extended": 359
+  "extended": 393
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -32,40 +37,55 @@
   {
    "id": "sec-004-octonion-subalgebras-inside-the-sedenions",
    "title": "Octonion subalgebras inside the sedenions",
-   "pages": "6-8"
+   "pages": "6-7"
   },
   {
-   "id": "sec-005-automorphisms-of-sedenions",
+   "id": "sec-005-the-left-multiplication-algebra-of-cs",
+   "title": "The left multiplication algebra of CS",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-automorphisms-of-sedenions",
    "title": "Automorphisms of sedenions",
    "pages": "8-9"
   },
   {
-   "id": "sec-006-why-not-sedenions",
+   "id": "sec-007-three-generations-of-color-states-from-cs",
+   "title": "Three generations of color states from CS",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-008-why-not-sedenions",
    "title": "Why not sedenions?",
    "pages": "9-10"
   },
   {
-   "id": "sec-007-one-generation-of-electrocolor-states-from-cs",
+   "id": "sec-009-one-generation-of-electrocolor-states-from-cs",
    "title": "One generation of electrocolor states from CS",
    "pages": "10-11"
   },
   {
-   "id": "sec-008-generating-two-additional-generations-from-s3-au",
+   "id": "sec-010-generating-two-additional-generations-from-s3-au",
    "title": "Generating two additional generations from S3 automorphisms",
    "pages": "11-13"
   },
   {
-   "id": "sec-009-linear-dependence-of-minimal-ideal-states",
+   "id": "sec-011-su3c-color-symmetries-of-three-generations",
+   "title": "SU(3)C color symmetries of three generations",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-012-linear-dependence-of-minimal-ideal-states",
    "title": "Linear dependence of minimal ideal states",
    "pages": "13-13"
   },
   {
-   "id": "sec-010-outlook",
+   "id": "sec-013-outlook",
    "title": "Outlook",
    "pages": "13-14"
   },
   {
-   "id": "sec-011-discussion",
+   "id": "sec-014-discussion",
    "title": "Discussion",
    "pages": "14-18"
   }

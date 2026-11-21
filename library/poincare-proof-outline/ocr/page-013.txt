@@ -1,0 +1,89 @@
+have wu: ul 4 0u2 4 0v1 F0v2 40
+using *(1—/)
+by (auto simp add: vec-cnj-def)
+
+have u: cor ((Re (ul/u2))?) + cor ((Im (ul/u2))?) = 1
+using <on-circline-cmat-cvec unit-circle-cmat ?ur uv
+apply (subst of-real-add[symmetric])
+apply (subst complex-mult-cnj|symmetric])
+apply (simp add: vec-cnj-def mult.commute)
+done
+
+have v: cor ((Re (v1/v2))?) + cor ((Im (v1/v2))?) = 1
+using (on-circline-cmat-cvec unit-circle-cmat ?v) uv
+apply (subst of-real-add[symmetric])
+apply (subst complex-mult-cnj|symmetric])
+apply (simp add: vec-cnj-def mult.commute)
+done
+
+have
+
+Al * (cor ((Re (ul/u2))?) + cor ((Im (ul/u2))?) + 1) + cor (Re B1) * cor(2 * Re (ul/u2)) + cor (Im B1)
+«x cor(2 * Im (ul/u2)) = 0
+
+A2 « (cor ((Re (ul/u2))?) + cor ((Im (ul/u2))?) + 1) + cor (Re B2) * cor(2 * Re (ul/u2)) + cor (Im B2)
+«x cor(2 * Im (ul/u2)) = 0
+
+Al « (cor ((Re (v1/v2))?) + cor ((Im (v1/v2))?) + 1) + cor (Re B1) * cor(2 * Re (v1/v2)) + cor (Im B1) *
+cor(2 « Im (v1/v2)) = 0
+
+A2 « (cor ((Re (v1/v2))?) + cor ((Im (v1/v2))?) + 1) + cor (Re B2) * cor(2 * Re (v1/v2)) + cor (Im B2) «
+cor(2 « Im (v1/v2)) = 0
+
+using circline-equation-quadratic-equation|of Al ul/u2 B1 D1 Re (ul/u2) Im (ul / u2) Re B1 Im B1]
+
+using circline-equation-quadratic-equation|of A2 ul/u2 B2 D2 Re (ul/u2) Im (ul / u2) Re B2 Im B2]
+
+using circline-equation-quadratic-equation|of Al v1/v2 B1 D1 Re (v1/v2) Im (v1 / v2) Re B1 Im B1]
+
+using circline-equation-quadratic-equation|of A2 v1/v2 B2 D2 Re (v1/v2) Im (v1 / v2) Re B2 Im B2]
+
+using (on-circline-cmat-cvec ?H1 ?u) ‘on-circline-cmat-cvec ?H2 ?uy
+
+using (on-circline-cmat-cvec ?H1 ?v) <on-circline-cmat-cvec ?H2 ?uy
+
+using ** wu
+
+by (simp-all add: vec-cnj-def field-simps)
+
+hence
+Al + cor (Re B1) * cor(Re (ul/u2)) + cor (Im B1) * cor(Im (ul/u2)) = 0
+Al + cor (Re B1) * cor(Re (v1/v2)) + cor (Im B1) * cor(Im (v1/v2)) = 0
+A2 + cor (Re B2) * cor(Re (ul/u2)) + cor (Im B2) * cor(Im (ul/u2)) = 0
+A2 + cor (Re B2) * cor(Re (v1/v2)) + cor (Im B2) * cor(Im (v1/v2)) = 0
+
+using u v
+by simp-all algebra+
+
+hence
+cor (Re Al + Re B1 * Re (ul/u2) + Im B1 * Im (ul/u2)) = 0
+cor (Re A2 + Re B2 * Re (ul/u2) + Im B2 * Im (ul/u2)) = 0
+cor (Re Al + Re B1 * Re (v1/v2) + Im B1 * Im (v1/v2)) = 0
+cor (Re A2 + Re B2 * Re (v1/v2) + Im B2 * Im (v1/v2)) = 0
+using <is-real A1) <is-real A2»
+by simp-all
+
+hence
+Re Al + Re B1 * Re
+Re Al + Re B1 * Re
+Re A2 + Re B2 * Re
+Re A2 + Re B2 * Re
+using of-real-eq-0-iff
+by blast+
+
+ul/u2) + Im B1 * Im (ul/u2) =
+v1/v2) + Im B1 * Im (v1/v2) =
+ul/u2) + Im B2 * Im (ul/u2) =
+
+0
+0
+0
+v1/v2) + Im B2 « Im (v1/v2) = 0
+
+moreover
+have Re(ul/u2) 4 Re(v1/v2) V Im(ul/u2) 4 Im(v1/v2)
+
+proof (rule ccontr)
+assume 7 ?thesis
+
+13

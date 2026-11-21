@@ -76,7 +76,7 @@ namespace QOU.BraidsAndKnots
   property argument (peel boundary generator from the right; cite
   prop:frobenius-gram-matrix §"Markov trace of NF basis elements").
 -/
--- Ref: [manuscript] prop:frobenius-gram-matrix
+-- Ref: [leitner2026] prop:frobenius-gram-matrix
 -- Ref: [jones1987] DOI:10.2307/1971403 (Markov-trace cyclicity for H_n)
 class MarkovTraceCyclic
     (T : Type*) [Mul T] (R : Type*) (tr_M : T → R) : Prop where
@@ -90,7 +90,7 @@ class MarkovTraceCyclic
     latter follows from this swap *plus* the pre-trace integer-power
     group law of `c_{A,A}` and is captured by
     `markov_trace_cyclic_three_factor` below. -/
--- Ref: [manuscript] prop:frobenius-gram-matrix § "Markov trace
+-- Ref: [leitner2026] prop:frobenius-gram-matrix § "Markov trace
 --      of NF basis elements"
 theorem markov_trace_swap
     {T : Type*} [Mul T] {R : Type*} (tr_M : T → R)
@@ -112,8 +112,8 @@ theorem markov_trace_swap
     this rotation, that is the cyclicity half of the post-trace
     multiplicativity step flagged as open in
     `categorical-linking-operation.md` §"Proof of Property 3". -/
--- Ref: [manuscript] prop:frobenius-gram-matrix
--- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 3"
+-- Ref: [leitner2026] prop:frobenius-gram-matrix
+-- Ref: [leitner2026] categorical-linking-operation.md §"Proof of Property 3"
 theorem markov_trace_cyclic_three_factor
     {T : Type*} [Semigroup T] {R : Type*} (tr_M : T → R)
     [hC : MarkovTraceCyclic T R tr_M]
@@ -133,8 +133,8 @@ theorem markov_trace_cyclic_three_factor
     braiding-inversion identity `c⁻¹ = c̄`, which is downstream
     structure not exposed in this Hecke-level lemma. The lemma
     here records the cyclicity half of the discharge sorry-free. -/
--- Ref: [manuscript] prop:frobenius-gram-matrix
--- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 4"
+-- Ref: [leitner2026] prop:frobenius-gram-matrix
+-- Ref: [leitner2026] categorical-linking-operation.md §"Proof of Property 4"
 theorem trace_cut_cyclicity_step
     {T : Type*} [Semigroup T] {R : Type*} (tr_M : T → R)
     [hC : MarkovTraceCyclic T R tr_M]
@@ -202,7 +202,7 @@ variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
 
 /-- `Lk_R^{(k)}(−, b)` is additive. -/
 -- Ref: [kassel1995] §XIV (R-linear rigid monoidal axioms)
--- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 1"
+-- Ref: [leitner2026] categorical-linking-operation.md §"Proof of Property 1"
 theorem lk_add_left (D : LinkingData R A) (k : ℤ) (a a' b : A) :
     D.lk k (a + a') b = D.lk k a b + D.lk k a' b := by
   unfold LinkingData.lk
@@ -239,7 +239,7 @@ theorem lk_bilinear (D : LinkingData R A) (k : ℤ) :
 /-- **Property 2 (`.md`), proved:** `Lk_R^{(0)}(a, b) = τ_R(b) · a^*`.
     The previous revision "proved" this as `q ^ (0 : ℕ) = 1`. -/
 -- Ref: [kassel1995] §X (rigid monoidal categories, coev/eval, duals)
--- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 2"
+-- Ref: [leitner2026] categorical-linking-operation.md §"Proof of Property 2"
 theorem lk_zero (D : LinkingData R A) (a b : A) :
     D.lk 0 a b = D.tau b • D.dual a := by
   unfold LinkingData.lk
@@ -257,7 +257,7 @@ Property 3 under "proved"; that is the pre-trace statement. -/
     `PreLk^{(k₁+k₂)}(a, b) = c^{k₂} · PreLk^{(k₁)}(a, b)`, by
     `zpow_add` in the group `Aˣ`. -/
 -- Ref: [kassel1995] §X (integer-power group law in monoidal categories)
--- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 3"
+-- Ref: [leitner2026] categorical-linking-operation.md §"Proof of Property 3"
 theorem preLk_add (D : LinkingData R A) (k₁ k₂ : ℤ) (a b : A) :
     D.preLk (k₁ + k₂) a b = ↑(D.c ^ k₂) * D.preLk k₁ a b := by
   unfold LinkingData.preLk
@@ -294,7 +294,7 @@ theorem preLk_add (D : LinkingData R A) (k₁ k₂ : ℤ) (a b : A) :
   is not used.
 
   No instance is provided; supplying one asserts the conjecture. -/
--- Ref: [manuscript] conj:categorical-linking-operation
+-- Ref: [leitner2026] conj:categorical-linking-operation
 -- Ref: [kassel1995] §XIV (ribbon-category braiding, bar-functoriality)
 class CategoricalLinkingOperation
     (R : Type*) [CommRing R] (A : Type*) [Ring A] [Algebra R A]

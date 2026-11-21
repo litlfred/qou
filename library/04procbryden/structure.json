@@ -6,7 +6,9 @@
   "sha256": "8baffbc6542c34a52724236a5986f58cc30248251dd7d4257f88533feea456c0",
   "bytes": 732089,
   "pages": 18,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,17 +16,29 @@
   "arxiv": null,
   "doi": null,
   "title": "Some computations of Ohtsuki series",
-  "authors_raw": "Nori Jacoby ( nori jacoby@hotmail.com) and Ruth Lawrence",
-  "abstract": "We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand knots’, closures of the simplest rational tangles. This data allows us to make certain conjectures about the growth rate of the coeﬃcients in Ohtsuki series generally, based on which we introduce an invariant which we call the slope σ(M) of a manifold M (not to be confused with slopes in hyperbolic geometry). For Seifert ﬁbred manifolds, M, the conjectures are known to hold while π 2σ(M) ∈ Q; furthermore if M is also an integer homology sphere, π2σ(M) ∈ Z. Assuming the conjectures, the numerical data enables us to give an example of a ZHS for which π2σ(M) ⁄∈Z. This paper is based on the ﬁrst author’s M.Sc. thesis.",
-  "docinfo": {
-   "CreationDate": "D:20041021133527+02'00'",
-   "Title": "cofor.dvi",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Producer": "Acrobat Distiller 5.0.5 (Windows)"
-  },
+  "authors_raw": "Nori Jacoby (nori jacoby@hotmail.com) and Ruth Lawrence",
   "title_lines": [
    "Some computations of Ohtsuki series"
-  ]
+  ],
+  "abstract": "We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand knots’, closures of the simplest rational tangles. This data allows us to make certain conjectures about the growth rate of the coeﬃcients in Ohtsuki series generally, based on which we introduce an invariant which we call the slope σ(M) of a manifold M (not to be confused with slopes in hyperbolic geometry). For Seifert ﬁbred manifolds, M, the conjectures are known to hold while π2σ(M) ∈Q; furthermore if M is also an integer homology sphere, π2σ(M) ∈Z. Assuming the conjectures, the numerical data enables us to give an example of a ZHS for which π2σ(M)̸ ∈Z. This paper is based on the ﬁrst author’s M.Sc. thesis.",
+  "docinfo": {
+   "Title": "cofor.dvi",
+   "Producer": "Acrobat Distiller 5.0.5 (Windows)",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20041021133527+02'00'"
+  },
+  "title_raw": "Some computations of Ohtsuki series",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "cofor.dvi",
+   "heading": "Some computations of Ohtsuki series",
+   "text": "Some computations of Ohtsuki series",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -32,109 +46,324 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "A two-parameter family of manifolds",
    "page": 4,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "Definition of the manifolds",
-   "page": 4,
-   "source": "inferred",
-   "number": "2.1"
-  },
-  {
-   "level": 2,
-   "title": "Calculation of ZK",
-   "page": 5,
-   "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 2,
-   "title": "Properties of Ohtsuki series",
-   "page": 8,
-   "source": "inferred",
-   "number": "2.3"
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Computer calculations of Ohtsuki series",
    "page": 9,
    "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 2,
-   "title": "Growth of number of states",
-   "page": 9,
-   "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 2,
-   "title": "Numerical precision and summand size",
-   "page": 9,
-   "source": "inferred",
-   "number": "3.2"
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Results and conjectures",
    "page": 11,
    "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 2,
-   "title": "Individual Ohtsuki series",
-   "page": 11,
-   "source": "inferred",
-   "number": "4.1"
-  },
-  {
-   "level": 2,
-   "title": "Polynomiality of coefficients",
-   "page": 12,
-   "source": "inferred",
-   "number": "4.2"
-  },
-  {
-   "level": 2,
-   "title": "Slopes",
-   "page": 13,
-   "source": "inferred",
-   "number": "4.3"
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 16,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 17,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 17,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Knot family K(( S",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Allowed states for K(( S",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Recombination",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Relative sizes of ZK and its summands against s",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Graph of slopes for S = −3 and T even",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Graph of slopes for S and T even, against T",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1168,
+   "n_words": 179,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -142,8 +371,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 5571,
-   "n_words": 1051
+   "n_chars": 5569,
+   "n_words": 1038,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-a-two-parameter-family-of-manifolds",
@@ -151,146 +382,91 @@
    "title": "A two-parameter family of manifolds",
    "level": 1,
    "page_start": 4,
-   "page_end": 4,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-002-21-definition-of-the-manifolds",
-   "number": "2.1",
-   "title": "Definition of the manifolds",
-   "level": 2,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 1567,
-   "n_words": 323
-  },
-  {
-   "id": "sec-003-22-calculation-of-zk",
-   "number": "2.2",
-   "title": "Calculation of ZK",
-   "level": 2,
-   "page_start": 5,
-   "page_end": 8,
-   "n_chars": 1967,
-   "n_words": 386
-  },
-  {
-   "id": "sec-004-23-properties-of-ohtsuki-series",
-   "number": "2.3",
-   "title": "Properties of Ohtsuki series",
-   "level": 2,
-   "page_start": 8,
    "page_end": 9,
-   "n_chars": 2151,
-   "n_words": 438
+   "n_chars": 5845,
+   "n_words": 1197,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-3-computer-calculations-of-ohtsuki-series",
+   "id": "sec-002-3-computer-calculations-of-ohtsuki-series",
    "number": "3",
    "title": "Computer calculations of Ohtsuki series",
    "level": 1,
    "page_start": 9,
-   "page_end": 9,
-   "n_chars": 651,
-   "n_words": 134
-  },
-  {
-   "id": "sec-006-31-growth-of-number-of-states",
-   "number": "3.1",
-   "title": "Growth of number of states",
-   "level": 2,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 813,
-   "n_words": 146
-  },
-  {
-   "id": "sec-007-32-numerical-precision-and-summand-size",
-   "number": "3.2",
-   "title": "Numerical precision and summand size",
-   "level": 2,
-   "page_start": 9,
    "page_end": 11,
-   "n_chars": 2954,
-   "n_words": 558
+   "n_chars": 4516,
+   "n_words": 838,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-4-results-and-conjectures",
+   "id": "sec-003-4-results-and-conjectures",
    "number": "4",
    "title": "Results and conjectures",
    "level": 1,
    "page_start": 11,
-   "page_end": 11,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-009-41-individual-ohtsuki-series",
-   "number": "4.1",
-   "title": "Individual Ohtsuki series",
-   "level": 2,
-   "page_start": 11,
-   "page_end": 12,
-   "n_chars": 1011,
-   "n_words": 125
-  },
-  {
-   "id": "sec-010-42-polynomiality-of-coefficients",
-   "number": "4.2",
-   "title": "Polynomiality of coefficients",
-   "level": 2,
-   "page_start": 12,
-   "page_end": 13,
-   "n_chars": 1376,
-   "n_words": 314
-  },
-  {
-   "id": "sec-011-43-slopes",
-   "number": "4.3",
-   "title": "Slopes",
-   "level": 2,
-   "page_start": 13,
    "page_end": 16,
-   "n_chars": 2896,
-   "n_words": 576
+   "n_chars": 5384,
+   "n_words": 1026,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-5-conclusions",
+   "id": "sec-004-5-conclusions",
    "number": "5",
    "title": "Conclusions",
    "level": 1,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 2199,
-   "n_words": 369
+   "n_chars": 2209,
+   "n_words": 369,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-6-acknowledgements",
+   "id": "sec-005-6-acknowledgements",
    "number": "6",
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 527,
-   "n_words": 83
+   "n_chars": 544,
+   "n_words": 84,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-references",
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 2390,
-   "n_words": 350
+   "n_chars": 2378,
+   "n_words": 338,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 15,
-  "sections": 15,
-  "chars_total": 26073
+  "toc_entries": 7,
+  "toc_inferred_entries": 7,
+  "toc_inferred_mean_confidence": 0.779,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 6,
+  "figure_sequence_gaps": [
+   "figure 5"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 27613,
+  "furniture_lines_stripped": 0
  }
 }

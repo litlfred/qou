@@ -1,0 +1,75 @@
+2. THE MURPHY BASIS 21
+
+Mg, ts an R-linear combination of terms of the form my, where u and v are row
+standard \-tableauz.
+
+Proof. Choose an element d € G, such that G, = d6,d7! and such that ¢*d and
+t#d-! are both row standard (d and d~! permute the rows of t* and t respectively;
+see Example 3.10). Then G,d = dG,, d€ A and d-! € F,; 80 my Ty = Tam, by
+Proposition 3.3. Consequently, my = Ty!mT, can be written as a linear combi-
+nation of terms my, where u and v are row standard \-tableaux by Corollary 3.4
+and its left-handed analogue. The general case follows from this and Corollary 3.4
+since M5, = Th mula = Ty sla MT Ta: oO
+
+3
+
+3.10 Example Suppose that jy: = (2,1, 3,3). Then, using the notation of Lemma 3.9,
+A = (3,3, 2,1) and
+
+, me] , —ePa
+=f and t =Bee
+i ENG is]
+Thus we may take d= (1,4, 7)(2,5, 8)(3,6,9), in which case
+4 [773] x ays 6]
+td = FE and td= He
+ats tc| EI
+
+Note, however, that d is not unique; we could also let d
+
+Ea]
+
+5Jé]
+2f2]
+
+(1, 7)(2,8)(3, 9), then
+
+3]
+6]
+
+dota
+
+and d=
+
+PEE
+
+=P]
+PEE
+
+are again row standard. However, for both choices of d we have 6, = dG, d7'.
+
+Let \ be a partition and suppose that 5 and ¢ are row standard A-tableaux. We
+need to show that m,, can be written as a linear combination of terms my» where
+u and b are standard tableaux of the same shape. We begin with a special case.
+
+Suppose that (i,j) € [A] where Aj41 > j and let a = (i,j) andb = (i+, j).
+The (i, j)th Garnir tableau of shape A is the row standard \-tableau g = gj; in which
+all numbers less than a or greater than 6 occupy the same positions in t* and g,
+and where the numbers a,a+1,... , are inserted in increasing order from left to
+tight, first along row i+ 1 and then along row ?, into the remaining positions.
+
+3.11 Example Let \ = (3,3) then gi, = i] Let
+
+EET)
+g =g11 and v = (4, 2). In this case, the proof of the Lemma 3.12 below reduces to
+the (easily verified) coset identity
+
+2|3]4 ij3]4 ij2]4 iets} — pele if2]3]5 ij2|3]4
+EEE + EE + EE + EER = KEP! + EEF + Ee
+where, for this example, a tableau t on the left hand side is identified with m)Tiy
+and a tableau » on the right hand side is identified with Tippy Mv
+
+For the next few Lemmas we need another ordering on the set of partitions.
+Given partitions X and ys we write A > y if X is greater than jy in the lexicographic
+ordering. That is, there exists an integer 7 > 1 such that A; = yr; for 1 <i <j and
+Aj > wy. Similarly we write A > yc if either X = ys or X > ys. Note that if AB ys
+then A> yp.

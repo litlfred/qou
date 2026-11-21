@@ -2,150 +2,210 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1507.03238v3",
  "source_sha256": "1da6a5498c08a521",
- "brief": "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M.",
- "extended": "**TRIANGULATION INDEPENDENT PTOLEMY VARIETIES**\n\n*MATTHIAS GOERNER AND CHRISTIAN K. ZICKERT*\n\n26 pp, 28 sections.\n\n**Abstract.** The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M. It is closely related to Thurston’s gluing equation variety. The Ptolemy variety maps naturally to the set of conjugacy classes of boundary-unipotentSL(2, C)- representations, but (like the gluing equation variety) it depends on the triangulation, and may miss several components of representations. In this paper, we deﬁne a Ptolemy variety, which is independent of the choice of triangulation, and detects all boundary-unipotent irre- ducible SL(2, C)-representations. We also deﬁne variants of the Ptolemy variety forPSL(2, C)- representations, and representations that are not necessarily boundary-unipotent. In particu- lar, we obtain an algorithm to compute all irreducibleSL(2, C)-characters as well as the full A-polynomial. All the varieties are topological invariants ofM.\n\n**Outline.** 1 Introduction; 1.2 Decorated representations; 1.3 Ptolemy varieties in brief; 1.4 Statement of results; 2 Ptolemy coordinates, decorations and cocycle; 2.1 Ptolemy assignments; 2.3 Natural cocycles; 2.4 The diagonal action; 2.5 The fundamental correspondence; 3.2 Non-boundary-unipotent representations; 4 Generalization of the fundamental correspond; 4.1 Cocycles, and the action by coboundaries; 4.2 Bruhat cocycles; 4.4 Non-boundary-unipotent representations; 5 The edge relations; 5.2 Edge relations for enhanced Ptolemy assign; 6 Transitive edge sets and degeneracy types; 6.1 Decorations, Ptolemy assignments and Bruha\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: The conjugation action on the set of non totally degenerate decorated boundary-\n- Theorem: s 1.4, 1.5 and 1.6 below are elementary corollaries of Theorem 1.2 and its analogues\n- Theorem 1.6: SupposeM has c boundary components, all of which are tori. There is a map\n- Theorem 2.20: We have a one-to-one-correspondence\n- Theorem 4.8: There is a one-to-one correspondence\n- Theorem 4.11: There is a one-to-one correspondence between decoratedSL(2, C)-representations",
+ "brief": "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M.",
+ "extended": "**TRIANGULATION INDEPENDENT PTOLEMY VARIETIES**\n\n*MATTHIAS GOERNER AND CHRISTIAN K. ZICKERT*\n\n26 pp, 40 sections.\n\n**Abstract.** The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M. It is closely related to Thurston’s gluing equation variety. The Ptolemy variety maps naturally to the set of conjugacy classes of boundary-unipotent SL(2, C)- representations, but (like the gluing equation variety) it depends on the triangulation, and may miss several components of representations. In this paper, we deﬁne a Ptolemy variety, which is independent of the choice of triangulation, and detects all boundary-unipotent irre- ducible SL(2, C)-representations. We also deﬁne variants of the Ptolemy variety for PSL(2, C)- representations, and representations that are not necessarily boundary-unipotent. In particu- lar, we obtain an algorithm to compute all irreducible SL(2, C)-characters as well as the full A-polynomial. All the varieties are topological invariants of M.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Motivation: Thurston's gluing equations; 1.2 Decorated representations; 1.3 Ptolemy varieties in brief; 1.4 Statement of results; 1.5 Definition and computation of the refined ; 2 Ptolemy coordinates, decorations and cocycle; 2.1 Ptolemy assignments; 2.2 Decorations; 2.3 Natural cocycles; 2.4 The diagonal action; 2.5 The fundamental correspondence; 3 Other variants of the Ptolemy variety; 3.2 Non-boundary-unipotent representations; 4 Generalization of the fundamental correspond; 4.1 Cocycles, and the action by coboundaries; 4.2 Bruhat cocycles",
  "tokens": {
   "brief": 39,
-  "extended": 547
+  "extended": 406
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-motivation-thurstons-gluing-equations",
+   "title": "Motivation: Thurston's gluing equations",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-12-decorated-representations",
+   "id": "sec-002-12-decorated-representations",
    "title": "Decorated representations",
    "pages": "2-2"
   },
   {
-   "id": "sec-002-13-ptolemy-varieties-in-brief",
+   "id": "sec-003-13-ptolemy-varieties-in-brief",
    "title": "Ptolemy varieties in brief",
    "pages": "2-3"
   },
   {
-   "id": "sec-003-14-statement-of-results",
+   "id": "sec-004-14-statement-of-results",
    "title": "Statement of results",
-   "pages": "3-5"
+   "pages": "3-4"
   },
   {
-   "id": "sec-004-2-ptolemy-coordinates-decorations-and-cocycles",
+   "id": "sec-005-15-definition-and-computation-of-the-refined-pto",
+   "title": "Definition and computation of the refined Ptolemy varieties - an overview",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-2-ptolemy-coordinates-decorations-and-cocycles",
    "title": "Ptolemy coordinates, decorations and cocycles",
    "pages": "5-5"
   },
   {
-   "id": "sec-005-21-ptolemy-assignments",
+   "id": "sec-007-21-ptolemy-assignments",
    "title": "Ptolemy assignments",
-   "pages": "5-7"
+   "pages": "5-6"
   },
   {
-   "id": "sec-006-23-natural-cocycles",
+   "id": "sec-008-22-decorations",
+   "title": "Decorations",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-009-23-natural-cocycles",
    "title": "Natural cocycles",
    "pages": "7-7"
   },
   {
-   "id": "sec-007-24-the-diagonal-action",
+   "id": "sec-010-24-the-diagonal-action",
    "title": "The diagonal action",
    "pages": "7-7"
   },
   {
-   "id": "sec-008-25-the-fundamental-correspondence",
+   "id": "sec-011-25-the-fundamental-correspondence",
    "title": "The fundamental correspondence",
-   "pages": "7-9"
+   "pages": "7-8"
   },
   {
-   "id": "sec-009-32-non-boundary-unipotent-representations",
+   "id": "sec-012-3-other-variants-of-the-ptolemy-variety",
+   "title": "Other variants of the Ptolemy variety",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-013-32-non-boundary-unipotent-representations",
    "title": "Non-boundary-unipotent representations",
    "pages": "9-10"
   },
   {
-   "id": "sec-010-4-generalization-of-the-fundamental-corresponden",
+   "id": "sec-014-4-generalization-of-the-fundamental-corresponden",
    "title": "Generalization of the fundamental correspondence",
    "pages": "10-10"
   },
   {
-   "id": "sec-011-41-cocycles-and-the-action-by-coboundaries",
+   "id": "sec-015-41-cocycles-and-the-action-by-coboundaries",
    "title": "Cocycles, and the action by coboundaries",
    "pages": "10-11"
   },
   {
-   "id": "sec-012-42-bruhat-cocycles",
+   "id": "sec-016-42-bruhat-cocycles",
    "title": "Bruhat cocycles",
    "pages": "11-13"
   },
   {
-   "id": "sec-013-44-non-boundary-unipotent-representations",
+   "id": "sec-017-44-non-boundary-unipotent-representations",
    "title": "Non-boundary-unipotent representations",
    "pages": "13-13"
   },
   {
-   "id": "sec-014-5-the-edge-relations",
+   "id": "sec-018-5-the-edge-relations",
    "title": "The edge relations",
    "pages": "13-14"
   },
   {
-   "id": "sec-015-52-edge-relations-for-enhanced-ptolemy-assignmen",
+   "id": "sec-019-52-edge-relations-for-enhanced-ptolemy-assignmen",
    "title": "Edge relations for enhanced Ptolemy assignments",
    "pages": "14-14"
   },
   {
-   "id": "sec-016-6-transitive-edge-sets-and-degeneracy-types",
+   "id": "sec-020-6-transitive-edge-sets-and-degeneracy-types",
    "title": "Transitive edge sets and degeneracy types",
    "pages": "14-15"
   },
   {
-   "id": "sec-017-61-decorations-ptolemy-assignments-and-bruhat-co",
+   "id": "sec-021-61-decorations-ptolemy-assignments-and-bruhat-co",
    "title": "Decorations, Ptolemy assignments and Bruhat cocycles",
    "pages": "15-16"
   },
   {
-   "id": "sec-018-62-the-totally-degenerate-edge-set",
+   "id": "sec-022-62-the-totally-degenerate-edge-set",
    "title": "The totally degenerate edge set",
    "pages": "16-16"
   },
   {
-   "id": "sec-019-71-edge-degenerate-edge-sets",
+   "id": "sec-023-7-the-ptolemy-variety-of-a-transitive-edge-set",
+   "title": "The Ptolemy variety of a transitive edge set",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-024-71-edge-degenerate-edge-sets",
    "title": "Edge-degenerate edge sets",
    "pages": "16-18"
   },
   {
-   "id": "sec-020-73-face-degenerate-edge-sets",
+   "id": "sec-025-72-embeddings-in-affine-space",
+   "title": "Embeddings in affine space",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-026-73-face-degenerate-edge-sets",
    "title": "Face-degenerate edge sets",
    "pages": "18-19"
   },
   {
-   "id": "sec-021-74-simplex-degenerate-edge-sets",
+   "id": "sec-027-74-simplex-degenerate-edge-sets",
    "title": "Simplex-degenerate edge sets",
    "pages": "19-20"
   },
   {
-   "id": "sec-022-8-the-invariant-ptolemy-varieties",
+   "id": "sec-028-8-the-invariant-ptolemy-varieties",
    "title": "The invariant Ptolemy varieties",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-029-81-affine-coverings",
+   "title": "Affine coverings",
    "pages": "20-21"
   },
   {
-   "id": "sec-023-10-summary-of-the-proofs-of-main-results",
+   "id": "sec-030-9-the-reduced-ptolemy-varieties",
+   "title": "The reduced Ptolemy varieties",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-031-10-summary-of-the-proofs-of-main-results",
    "title": "Summary of the proofs of main results",
    "pages": "21-21"
   },
   {
-   "id": "sec-024-11-examples",
+   "id": "sec-032-11-examples",
    "title": "Examples",
-   "pages": "21-25"
+   "pages": "21-22"
   },
   {
-   "id": "sec-025-114-recovering-the-representations",
+   "id": "sec-033-111-the-ptolemy-variety-pt",
+   "title": "The Ptolemy variety P(T)",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-034-112-the-ptolemy-varieties-pt",
+   "title": "The Ptolemy varieties P(T)",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-035-113-the-ptolemy-variety-ept-and-the-a-polynomial",
+   "title": "The Ptolemy variety EP(T) and the A-polynomial",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-036-114-recovering-the-representations",
    "title": "Recovering the representations",
    "pages": "25-26"
   },
   {
-   "id": "sec-026-acknowledgment",
+   "id": "sec-037-acknowledgment",
    "title": "Acknowledgment",
    "pages": "26-26"
   },
   {
-   "id": "sec-027-references",
+   "id": "sec-038-references",
    "title": "References",
    "pages": "26-26"
   }
@@ -154,8 +214,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

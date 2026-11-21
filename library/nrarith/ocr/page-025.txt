@@ -1,0 +1,44 @@
+Arithmetic of Hyperbolic Manifolds = 297
+
+Our next theorem says that 7(W(p,q)) determines W(p, q). To state it we need some
+notation. Let NV denote the closed parallelogram in R? with vertices +(—4, 1), +(0, 1)
+(Fig. 16).
+
+(4,1) (0,1)
+
+(0,-1) (4,51)
+
+Figure 16
+
+It is known (and we shall show) that this is the “non-hyperbolic” domain in the space
+of real Dehn surgery parameters. Since (p,q) Dehn surgery and (—p, —q) Dehn surgery
+give the same result, the space of real surgery parameters for hyperbolic Dehn surgeries
+is
+
+H = (R?U {oo} —N)/+1.
+
+Theorem 6.1. The map (p,q) +> t(W(p,q)) is a homeomorphism H — U, where U
+is the complex upper half plane.
+
+Proof. By elementary calculation from Fig. 15 one obtains 7 in terms of 2 as
+
+dx
+
+r=—
+1-2?
+
+-2. (6.6)
+By solving equation (6.6) for x in terms of 7 one verifies that this map xz +> 7 isa
+2-fold branched cover U — U, branched at x = i, and that x and —a~! both map to
+the same 7. Note that replacing « by —a~! replaces u by —u, v by —v, and hence
+(p,q) by (—p, —q). To prove the theorem we must thus show that the map z +> (p,q)
+is ahomeomorphism of U to R? U {oo} — N. We shall denote the map x +> (p,q) by
+o:U > R? U {oo}.
+
+Thurston’s hyperbolic Dehn surgery theorem (cf., [T] or [NZ]) asserts that ¢ is
+a homeomorphism from a neighborhood of the parameter value x = 7 corresponding
+to the complete structure on W to a neighborhood of oo. Elementary computation
+shows that ¢ takes the boundary R U {oo} of U homeomorphically to the boundary
+of N (specifically, the intervals [—co,—1], [1,0], [0,1], [1,00] go to the segments
+[(4, -1), (0, 1)], [(0, 1), (—4,1)], [(—4,1), (0,-1)], [(0, —1), (4, —1)] respectively). It
+therefore suffices to show that ¢ has non-vanishing Jacobian at all « € U — {i}.

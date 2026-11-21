@@ -6,10 +6,18 @@
   "sha256": "eee6d535af1996ca3f1592e51bba764df3ae6b01e6f7edfdb79a93abb196c08d",
   "bytes": 524780,
   "pages": 25,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 15,
+    "reason": "14 of 633 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,19 +27,34 @@
    "stamp_date": "27 May 2026"
   },
   "doi": null,
-  "title": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS",
+  "title": "The sum-product conjecture is false for real numbers",
   "authors_raw": "THOMAS F. BLOOM, WILL SAWIN, CARL SCHILDKRAUT, AND DMITRII ZHELEZOV",
-  "abstract": "We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA\u2282R(whose elements are algebraic integers in a number field of degree\u224dlog|A|) such that max(|A+A|,|AA|)\u2264|A| 2\u2212c wherec >0 is an absolute constant. We also disprove the many sums and products conjecture by constructing, for anyk\u22653, arbitrarily largeA\u2282Rsuch that max(|kA|,|A (k)|)\u2264|A| C logk log logk for some constantC >0. We obtain similar constructions forp-adics, finite fields, and function fields in positive characteristic, and also obtain new lower bounds for the number of solutions to linear equations in a multiplicative group, and the number of solutions to the unit equation in sufficiently many variables. 1.Introduction Given any finite setAin some ring we define the sum set and product set ofAas A+A={a+b:a,b\u2208A}andAA={ab:a,b\u2208A}. The sum-product conjecture in a given ring is that at least one of these must grow near-maximally; more precisely (1.1) max(|A+A|,|AA|)\u2265|A| 2\u2212o(1) (where theo(1) term tends 0 as|A|\u2192\u221e). This is often attributed to Erd\u02dd os and Szemer\u00b4 edi, who proved the first results in this direction [13], but it first appeared in the literature in a paper of Erd\u02dd os in 1976 [10] (in which he says he first made the conjecture 18 months earlier). This question makes sense over any ring (although there are obvious complications in finite rings or rings with zero divisors). Erd\u02dd os [10] asked this specifically forZ,R, andC, although his main interest was for A\u2282Z. Most proofs in the sum-product literature are geometric and combinatorial, using no number theory, and thus apply to any finiteA\u2282R; the best result achieved in this direction so far is max(|A+A|,|AA|)\u2265|A| 4 3 +c\u2212o(1) forA\u2282R for some small constantc >0. This was proved withc= 0 by Solymosi [38] and for somec>0 by Konyagin and Shkredov [25]. The value ofchas been improved a number of times since, with the current record ofc= 10 4407 due to Cushman [8]. In this paper we prove that the sum-product conjecture (1.",
-  "docinfo": {
-   "Author": "Thomas F Bloom; Will Sawin; Carl Schildkraut; Dmitrii Zhelezov",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
-   "Producer": "pikepdf 8.15.1",
-   "Title": "The sum-product conjecture is false for real numbers"
-  },
   "title_lines": [
    "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL",
    "NUMBERS"
-  ]
+  ],
+  "abstract": "We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a number field of degree ≍log|A|) such that max(|A + A| , |AA|) ≤|A|2−c where c > 0 is an absolute constant. We also disprove the many sums and products conjecture by constructing, for any k ≥3, arbitrarily large A ⊂R such that max(|kA| , |A(k)|) ≤|A|C log k log log k for some constant C > 0. We obtain similar constructions for p-adics, finite fields, and function fields in positive characteristic, and also obtain new lower bounds for the number of solutions to linear equations in a multiplicative group, and the number of solutions to the unit equation in sufficiently many variables.",
+  "docinfo": {
+   "Title": "The sum-product conjecture is false for real numbers",
+   "Author": "Thomas F Bloom; Will Sawin; Carl Schildkraut; Dmitrii Zhelezov",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "The sum-product conjecture is false for real numbers",
+   "heading": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS 1. Introduction Given any finite set A in some ring we define the sum set and product set of A as AA = { ab : a, b ∈ A } . and The sum-product conjecture in a given ring is that at least one of these must grow near-maximally; more precisely max( |",
+   "outline": "1. Introduction",
+   "text": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS"
  },
  "toc": [
   {
@@ -39,149 +62,398 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Many sums and products",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Linear equations in a multiplicative group",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Sum-product in other settings",
    "page": 3,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The role of AI in this proof",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Sketch of the construction",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Algebraic number theory",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The additive lattice",
    "page": 7,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The unit lattice",
    "page": 8,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The construction",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Numerical estimates",
    "page": 11,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Linear equations in a multiplicative group",
    "page": 12,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Variants",
    "page": 14,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The p-adics",
    "page": 15,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Finite fields",
    "page": 16,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Function fields",
    "page": 17,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
   {
-   "id": "sec-000-11-many-sums-and-products",
-   "number": "1.1",
-   "title": "Many sums and products",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 398,
-   "n_words": 59
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "id": "sec-001-1-introduction",
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 860,
+   "n_words": 143,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3517,
+   "n_words": 660,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-11-many-sums-and-products",
+   "number": "1.1",
+   "title": "Many sums and products",
+   "level": 2,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 4861,
-   "n_words": 762
+   "n_chars": 1448,
+   "n_words": 270,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-12-linear-equations-in-a-multiplicative-group",
@@ -190,8 +462,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1110,
-   "n_words": 177
+   "n_chars": 1163,
+   "n_words": 230,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-13-sum-product-in-other-settings",
@@ -200,8 +474,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 1861,
-   "n_words": 294
+   "n_chars": 1926,
+   "n_words": 359,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-the-role-of-ai-in-this-proof",
@@ -211,7 +487,9 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 653,
-   "n_words": 101
+   "n_words": 101,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-acknowledgements",
@@ -220,8 +498,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 551,
-   "n_words": 91
+   "n_chars": 548,
+   "n_words": 89,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-2-sketch-of-the-construction",
@@ -229,29 +509,35 @@
    "title": "Sketch of the construction",
    "level": 1,
    "page_start": 5,
-   "page_end": 6,
-   "n_chars": 3659,
-   "n_words": 591
-  },
-  {
-   "id": "sec-007-31-the-additive-lattice",
-   "number": "3.1",
-   "title": "The additive lattice",
-   "level": 2,
-   "page_start": 6,
    "page_end": 7,
-   "n_chars": 1425,
-   "n_words": 218
+   "n_chars": 5336,
+   "n_words": 992,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-3-algebraic-number-theory",
+   "id": "sec-007-3-algebraic-number-theory",
    "number": "3",
    "title": "Algebraic number theory",
    "level": 1,
    "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1674,
+   "n_words": 303,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-31-the-additive-lattice",
+   "number": "3.1",
+   "title": "The additive lattice",
+   "level": 2,
+   "page_start": 7,
    "page_end": 8,
-   "n_chars": 2974,
-   "n_words": 491
+   "n_chars": 1339,
+   "n_words": 270,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-32-the-unit-lattice",
@@ -260,8 +546,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2788,
-   "n_words": 472
+   "n_chars": 1973,
+   "n_words": 409,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-4-the-construction",
@@ -270,8 +558,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 3119,
-   "n_words": 504
+   "n_chars": 4225,
+   "n_words": 858,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-011-5-numerical-estimates",
@@ -280,8 +570,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2787,
-   "n_words": 469
+   "n_chars": 2844,
+   "n_words": 526,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-012-6-linear-equations-in-a-multiplicative-group",
@@ -290,8 +582,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 5285,
-   "n_words": 882
+   "n_chars": 3346,
+   "n_words": 651,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-013-7-variants",
@@ -300,51 +594,83 @@
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 404,
-   "n_words": 61
+   "n_chars": 2979,
+   "n_words": 534,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-72-finite-fields",
+   "id": "sec-014-71-the-p-adics",
+   "number": "7.1",
+   "title": "The p-adics",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 3233,
+   "n_words": 633,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-72-finite-fields",
    "number": "7.2",
    "title": "Finite fields",
    "level": 2,
-   "page_start": 15,
+   "page_start": 16,
    "page_end": 17,
-   "n_chars": 6454,
-   "n_words": 1158
+   "n_chars": 2901,
+   "n_words": 596,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-73-function-fields",
+   "id": "sec-016-73-function-fields",
    "number": "7.3",
    "title": "Function fields",
    "level": 2,
    "page_start": 17,
    "page_end": 23,
-   "n_chars": 12859,
-   "n_words": 2133
+   "n_chars": 13299,
+   "n_words": 2571,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-references",
+   "id": "sec-017-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 23,
    "page_end": 25,
-   "n_chars": 7725,
-   "n_words": 1113
+   "n_chars": 7749,
+   "n_words": 1137,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 18,
-  "sections": 17,
-  "chars_total": 58913,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 19,
+  "chars_total": 61013,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   9,
+   14
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "SPArxiv.tex",
    "tex_sections": 17,
-   "overlaid": 10,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -352,16 +678,23 @@
    },
    "sections": [
     {
-     "id": "sec-000-11-many-sums-and-products",
-     "title": "Many sums and products",
-     "prose_ratio": 0.218,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.683,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-11-many-sums-and-products",
+     "title": "Many sums and products",
+     "prose_ratio": 0.923,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -369,7 +702,7 @@
      "id": "sec-002-12-linear-equations-in-a-multiplicative-group",
      "title": "Linear equations in a multiplicative group",
      "prose_ratio": 0.939,
-     "coverage_ratio": 0.803,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -377,7 +710,7 @@
      "id": "sec-003-13-sum-product-in-other-settings",
      "title": "Sum-product in other settings",
      "prose_ratio": 0.917,
-     "coverage_ratio": 0.833,
+     "coverage_ratio": 0.936,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -400,77 +733,89 @@
     {
      "id": "sec-006-2-sketch-of-the-construction",
      "title": "Sketch of the construction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-31-the-additive-lattice",
-     "title": "The additive lattice",
-     "prose_ratio": 0.299,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-007-3-algebraic-number-theory",
+     "title": "Algebraic number theory",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-008-3-algebraic-number-theory",
-     "title": "Algebraic number theory",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.511,
+     "id": "sec-008-31-the-additive-lattice",
+     "title": "The additive lattice",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.889,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-009-32-the-unit-lattice",
      "title": "The unit lattice",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.809,
+     "prose_ratio": 0.738,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-010-4-the-construction",
      "title": "The construction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.93,
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.677,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-011-5-numerical-estimates",
      "title": "Numerical estimates",
-     "prose_ratio": 0.521,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.486,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-012-6-linear-equations-in-a-multiplicative-group",
      "title": "Linear equations in a multiplicative group",
-     "prose_ratio": 0.773,
-     "coverage_ratio": 0.27,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.682,
+     "coverage_ratio": 0.313,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-013-7-variants",
      "title": "Variants",
-     "prose_ratio": 0.209,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.406,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-014-72-finite-fields",
-     "title": "Finite fields",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.494,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
-    },
-    {
-     "id": "sec-015-73-function-fields",
-     "title": "Function fields",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.756,
+     "id": "sec-014-71-the-p-adics",
+     "title": "The p-adics",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.916,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-references",
+     "id": "sec-015-72-finite-fields",
+     "title": "Finite fields",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-73-function-fields",
+     "title": "Function fields",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-references",
      "title": "References",
      "result": "no matching \\section"
     }

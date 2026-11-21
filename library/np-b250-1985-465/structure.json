@@ -6,22 +6,38 @@
   "sha256": "8568b8322e8204276ac6f6f043dcbde0fe90b015e740515dd6651a0f1dda3b94",
   "bytes": 7862492,
   "pages": 52,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Nuclear Physics B250 (1985) 465-516 North-Holland Publishing Company CHIRAL PERTURBATION THEORY: EXPANSIONS IN THE MASS OF THE STRANGE QUARK* J. GASSER lnstitut f~r Theoretische Physik der Universitiit Bern, 3012 Bern, Switzerland",
-  "authors_raw": null,
+  "title": "Chiral Perturbation Theory: Expansions in the Mass of the Strange Quark",
+  "authors_raw": "North-Holland Publishing Company",
+  "title_lines": [
+   "Nuclear Physics B250 (1985) 465-516"
+  ],
   "abstract": null,
   "docinfo": {
    "Title": "PII: 0550-3213(85)90492-4",
-   "Creator": "Acrobat 3.0 Capture Plug-in ",
    "Producer": "Mac OS X 10.5.2 Quartz PDFContext",
+   "Creator": "Acrobat 3.0 Capture Plug-in ",
    "CreationDate": "D:20080521180756Z00'00'"
-  }
+  },
+  "title_raw": "Nuclear Physics B250 (1985) 465-516",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "PII: 0550-3213(85)90492-4",
+   "heading": "Nuclear Physics B250 (1985) 465-516 North-Holland Publishing Company CHIRAL PERTURBATION THEORY: EXPANSIONS IN THE MASS OF THE STRANGE QUARK* J. GASSER lnstitut f~r Theoretische Physik der Universitiit Bern, 3012 Bern, Switzerland H. LEUTWYLER I CERN, Geneva, Switzerland Received 3 July 1984 (Revise",
+   "text": "Nuclear Physics B250 (1985) 465-516",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Nuclear Physics B250 (1985) 465-516"
  },
  "toc": [
   {
@@ -29,207 +45,1136 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "465"
   },
   {
    "level": 1,
-   "title": "Chirai symmetry",
-   "page": 2,
+   "title": "Gasser, H. Leutwvler / Chiral perturbation theory",
+   "page": 5,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "O(x) tr \"\"~ 16rr 2 . (G~,,G ). (2.2)",
-   "page": 3,
-   "source": "inferred",
-   "number": "1"
+   "number": "J",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "469"
   },
   {
    "level": 1,
    "title": "Effective low-energy lagrangian",
    "page": 6,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "470"
   },
   {
    "level": 1,
    "title": "Ground state",
    "page": 8,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "472"
+  },
+  {
+   "level": 2,
+   "title": "Gasser, H. Leut~Tler / Chiral perturbation theoo'",
+   "page": 11,
+   "source": "inferred",
+   "number": "J",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "475"
   },
   {
    "level": 1,
    "title": "Low-energy expansion at leading order",
    "page": 11,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "475"
   },
   {
    "level": 1,
    "title": "Effective lagrangian to order p4",
    "page": 15,
    "source": "inferred",
-   "number": "6"
+   "number": "6",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "479"
   },
   {
-   "level": 1,
-   "title": "Loops",
-   "page": 17,
+   "level": 2,
+   "title": "Z = Z, +ZA+Z,+Zoo~,,,op",
+   "page": 15,
    "source": "inferred",
-   "number": "7"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "479"
+  },
+  {
+   "level": 2,
+   "title": "D(fl )f( v' a' s' p' O) = I dx [tr { i[fl' a~'] 8vuSf(x) + V.fl 8a.Sf(x)",
+   "page": 15,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "479"
+  },
+  {
+   "level": 2,
+   "title": "Gasser, H. Leutwyler / ('hiral perturbation theory",
+   "page": 16,
+   "source": "inferred",
+   "number": "J",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "480"
+  },
+  {
+   "level": 2,
+   "title": "Nc I",
+   "page": 16,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "480"
+  },
+  {
+   "level": 3,
+   "title": "and D stands for the differential operator ^ab I F• -- tr([A\",Ah]F,)",
+   "page": 19,
+   "source": "inferred",
+   "number": "483",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "483"
+  },
+  {
+   "level": 3,
+   "title": "V UV.U V~O>-aS(V' ~'-+U V.CV- ~-+U V.O>-",
+   "page": 20,
+   "source": "inferred",
+   "number": "C",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "484"
+  },
+  {
+   "level": 3,
+   "title": "_N(F~_IF~,.L~j+)",
+   "page": 20,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "484"
   },
   {
    "level": 1,
    "title": "Tadpoles and unitarity corrections",
    "page": 21,
    "source": "inferred",
-   "number": "8"
+   "number": "8",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "485"
+  },
+  {
+   "level": 2,
+   "title": "M~ln(MZp/pf)-M~ln(M~/p. 2) M~- MZo",
+   "page": 23,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "487"
   },
   {
    "level": 1,
    "title": "Vacuum expectation values",
    "page": 24,
    "source": "inferred",
-   "number": "9"
+   "number": "9",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "488"
+  },
+  {
+   "level": 2,
+   "title": "} <01 ul0 -!",
+   "page": 25,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "489"
+  },
+  {
+   "level": 2,
+   "title": "M%- M% In _M.!]",
+   "page": 25,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "489"
   },
   {
    "level": 1,
    "title": "Masses and decay constants",
    "page": 25,
    "source": "inferred",
-   "number": "10"
+   "number": "10",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "489"
   },
   {
-   "level": 1,
-   "title": "Pa* P'o",
+   "level": 2,
+   "title": "Gasser. H. Leutwyler / Chiral perturbation theory",
    "page": 26,
    "source": "inferred",
-   "number": "2"
+   "number": "J",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "490"
   },
   {
-   "level": 1,
-   "title": "MR /z~ -/x,, (M2\"--M2K')QCD=(md--mo)Bo 1 +3/zn+ 2 2",
+   "level": 2,
+   "title": "K~ = (m~+ mj+ mJ ~",
+   "page": 27,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "491"
+  },
+  {
+   "level": 2,
+   "title": "Gasser, H. Leutwvler / Chiral perturbation theo~",
    "page": 28,
    "source": "inferred",
-   "number": "2"
+   "number": "J",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "492"
   },
   {
-   "level": 1,
-   "title": "M~ , In K (10.25) Cl=167r2F ~ 1 M~-M~, \"",
+   "level": 2,
+   "title": "(MK°--MK')QCD",
+   "page": 29,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "493"
+  },
+  {
+   "level": 2,
+   "title": "MK-M,-M,,In",
+   "page": 29,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "493"
+  },
+  {
+   "level": 2,
+   "title": "^ (MK",
    "page": 30,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "494"
   },
   {
-   "level": 1,
-   "title": "M 2 M~-\" M~} f-\"- ,13M2,71n.. +M~ln--~ . (10.27) C2- 167r2F ~ M~-M;~I. M~,",
+   "level": 2,
+   "title": "+M~ln--~",
    "page": 30,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "494"
   },
   {
    "level": 1,
-   "title": "The ~/'",
-   "page": 34,
+   "title": "!. Comparison with SU(2) x SU(2)",
+   "page": 30,
    "source": "inferred",
-   "number": "12"
+   "number": "1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "494"
+  },
+  {
+   "level": 2,
+   "title": "Gasser, H. Leutwyler / ('hiral perturbation theory",
+   "page": 33,
+   "source": "inferred",
+   "number": "J",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "497"
+  },
+  {
+   "level": 2,
+   "title": "(M~*-M;°)ocD=(mu -",
+   "page": 33,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "497"
+  },
+  {
+   "level": 2,
+   "title": "Gasser. H. Leutwyler / Chiral perturbation theory",
+   "page": 38,
+   "source": "inferred",
+   "number": "J",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "502"
   },
   {
    "level": 1,
    "title": "Large No, Zweig rule",
    "page": 38,
    "source": "inferred",
-   "number": "13"
+   "number": "13",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "502"
+  },
+  {
+   "level": 2,
+   "title": "Gasser, H. Leut~Tler/ Chiral perturbation theoo'",
+   "page": 41,
+   "source": "inferred",
+   "number": "Z",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "505"
   },
   {
    "level": 1,
    "title": "Values of the low-energy constants",
    "page": 42,
    "source": "inferred",
-   "number": "14"
+   "number": "14",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "506"
   },
   {
    "level": 1,
-   "title": "Summary",
-   "page": 46,
+   "title": "Gasser, H. Leutwvler / Chiral perturbation theory",
+   "page": 43,
    "source": "inferred",
-   "number": "15"
+   "number": "J",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "507"
   },
   {
-   "level": 1,
-   "title": "G ~/~ / \u00a3s=\u00b03 1fins ///~/",
-   "page": 48,
+   "level": 2,
+   "title": ", 8Bom~,~",
+   "page": 45,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "509"
   },
   {
-   "level": 1,
+   "level": 2,
+   "title": "FKF-~-K=",
+   "page": 45,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "509"
+  },
+  {
+   "level": 2,
+   "title": "| I I I mS ~ghys",
+   "page": 47,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "511"
+  },
+  {
+   "level": 3,
    "title": "Appendix",
    "page": 49,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "513"
+  },
+  {
+   "level": 3,
+   "title": "Gasser, H. Leutwyler / Chiral perturbation theory'",
+   "page": 50,
+   "source": "inferred",
+   "number": "J",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "514"
+  },
+  {
+   "level": 3,
+   "title": "= (J ; p.J~; p.p~J2+ g.~sJ3) •",
+   "page": 50,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "514"
+  },
+  {
+   "level": 1,
+   "title": "Ja\"",
+   "page": 51,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "515"
   },
   {
    "level": 1,
    "title": "References",
    "page": 51,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.8,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "515"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The decay constants F~, FK and F, as a function of rn~ at fixed ratios m u : mu : ms",
+   "page": 48,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "512"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The order parameters (01,~ul0) and (01gsl0) as a function of m~ at fixed ratios ma: m a : m~ (compare Novikov et al. 1981). These quantities depend on the high-energy constant H2 which specifies the subtraction prescription in (01~ql0). We show the results for two values of.this constant, chosen suc",
+   "page": 48,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "512"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "465",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "466",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "467",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "468",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "469",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "470",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "471",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "472",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "473",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "474",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "475",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "476",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "477",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "478",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "479",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "480",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "481",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "482",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "483",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "484",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "485",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "486",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "487",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "488",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "489",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "490",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "491",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "492",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "493",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "494",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "495",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "496",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "497",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "498",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "499",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "500",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "501",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "502",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "503",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "504",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "505",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "506",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "507",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "508",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "509",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "510",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "511",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "512",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "513",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "514",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "515",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "516",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1125,
+   "n_words": 170,
+   "label_start": "465",
+   "label_end": "465"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 3937,
-   "n_words": 646
+   "page_end": 5,
+   "n_chars": 8427,
+   "n_words": 1434,
+   "label_start": "465",
+   "label_end": "469"
   },
   {
-   "id": "sec-001-2-chirai-symmetry",
-   "number": "2",
-   "title": "Chirai symmetry",
+   "id": "sec-001-j-gasser-h-leutwvler-chiral-perturbation-theory",
+   "number": "J",
+   "title": "Gasser, H. Leutwvler / Chiral perturbation theory",
    "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 463,
-   "n_words": 74
-  },
-  {
-   "id": "sec-002-1-ox-tr-16rr-2-gg-22",
-   "number": "1",
-   "title": "O(x) tr \"\"~ 16rr 2 . (G~,,G ). (2.2)",
-   "level": 1,
-   "page_start": 3,
+   "page_start": 5,
    "page_end": 6,
-   "n_chars": 7925,
-   "n_words": 1407
+   "n_chars": 3937,
+   "n_words": 698,
+   "label_start": "469",
+   "label_end": "470"
   },
   {
-   "id": "sec-003-3-effective-low-energy-lagrangian",
+   "id": "sec-002-3-effective-low-energy-lagrangian",
    "number": "3",
    "title": "Effective low-energy lagrangian",
    "level": 1,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 5845,
-   "n_words": 1014
+   "n_chars": 5870,
+   "n_words": 1014,
+   "label_start": "470",
+   "label_end": "472"
   },
   {
-   "id": "sec-004-4-ground-state",
+   "id": "sec-003-4-ground-state",
    "number": "4",
    "title": "Ground state",
    "level": 1,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 7797,
-   "n_words": 1396
+   "n_chars": 6218,
+   "n_words": 1111,
+   "label_start": "472",
+   "label_end": "475"
+  },
+  {
+   "id": "sec-004-j-gasser-h-leuttler-chiral-perturbation-theoo",
+   "number": "J",
+   "title": "Gasser, H. Leut~Tler / Chiral perturbation theoo'",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1561,
+   "n_words": 277,
+   "label_start": "475",
+   "label_end": "475"
   },
   {
    "id": "sec-005-5-low-energy-expansion-at-leading-order",
@@ -238,8 +1183,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 15,
-   "n_chars": 5768,
-   "n_words": 994
+   "n_chars": 5816,
+   "n_words": 987,
+   "label_start": "475",
+   "label_end": "479"
   },
   {
    "id": "sec-006-6-effective-lagrangian-to-order-p4",
@@ -247,166 +1194,576 @@
    "title": "Effective lagrangian to order p4",
    "level": 1,
    "page_start": 15,
-   "page_end": 17,
-   "n_chars": 5516,
-   "n_words": 941
+   "page_end": 15,
+   "n_chars": 723,
+   "n_words": 118,
+   "label_start": "479",
+   "label_end": "479"
   },
   {
-   "id": "sec-007-7-loops",
-   "number": "7",
-   "title": "Loops",
-   "level": 1,
-   "page_start": 17,
+   "id": "sec-007-z-z-zazzooop",
+   "number": null,
+   "title": "Z = Z, +ZA+Z,+Zoo~,,,op",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 444,
+   "n_words": 69,
+   "label_start": "479",
+   "label_end": "479"
+  },
+  {
+   "id": "sec-008-dfl-f-v-a-s-p-o-i-dx-tr-ifl-a-8vusfx-vfl-8asfx",
+   "number": null,
+   "title": "D(fl )f( v' a' s' p' O) = I dx [tr { i[fl' a~'] 8vuSf(x) + V.fl 8a.Sf(x)",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 593,
+   "n_words": 108,
+   "label_start": "479",
+   "label_end": "480"
+  },
+  {
+   "id": "sec-009-j-gasser-h-leutwyler-hiral-perturbation-theory",
+   "number": "J",
+   "title": "Gasser, H. Leutwyler / ('hiral perturbation theory",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1580,
+   "n_words": 259,
+   "label_start": "480",
+   "label_end": "480"
+  },
+  {
+   "id": "sec-010-nc-i",
+   "number": null,
+   "title": "Nc I",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 3965,
+   "n_words": 694,
+   "label_start": "480",
+   "label_end": "483"
+  },
+  {
+   "id": "sec-011-483-and-d-stands-for-the-differential-operator-a",
+   "number": "483",
+   "title": "and D stands for the differential operator ^ab I F• -- tr([A\",Ah]F,)",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2017,
+   "n_words": 366,
+   "label_start": "483",
+   "label_end": "484"
+  },
+  {
+   "id": "sec-012-c-v-uvu-vo-asv--u-vcv---u-vo",
+   "number": "C",
+   "title": "V UV.U V~O>-aS(V' ~'-+U V.CV- ~-+U V.O>-",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 79,
+   "n_words": 22,
+   "label_start": "484",
+   "label_end": "484"
+  },
+  {
+   "id": "sec-013--nf-iflj",
+   "number": null,
+   "title": "_N(F~_IF~,.L~j+)",
+   "level": 3,
+   "page_start": 20,
    "page_end": 21,
-   "n_chars": 5465,
-   "n_words": 1048
+   "n_chars": 1572,
+   "n_words": 320,
+   "label_start": "484",
+   "label_end": "485"
   },
   {
-   "id": "sec-008-8-tadpoles-and-unitarity-corrections",
+   "id": "sec-014-8-tadpoles-and-unitarity-corrections",
    "number": "8",
    "title": "Tadpoles and unitarity corrections",
    "level": 1,
    "page_start": 21,
-   "page_end": 24,
-   "n_chars": 4756,
-   "n_words": 903
+   "page_end": 23,
+   "n_chars": 3107,
+   "n_words": 603,
+   "label_start": "485",
+   "label_end": "487"
   },
   {
-   "id": "sec-009-9-vacuum-expectation-values",
+   "id": "sec-015-mlnmzppf-mlnmp-2-m--mzo",
+   "number": null,
+   "title": "M~ln(MZp/pf)-M~ln(M~/p. 2) M~- MZo",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1698,
+   "n_words": 301,
+   "label_start": "487",
+   "label_end": "488"
+  },
+  {
+   "id": "sec-016-9-vacuum-expectation-values",
    "number": "9",
    "title": "Vacuum expectation values",
    "level": 1,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 2649,
-   "n_words": 466
+   "n_chars": 1982,
+   "n_words": 338,
+   "label_start": "488",
+   "label_end": "489"
   },
   {
-   "id": "sec-010-10-masses-and-decay-constants",
+   "id": "sec-017-1-01-ul0",
+   "number": "1",
+   "title": "} <01 ul0 -!",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 22,
+   "n_words": 7,
+   "label_start": "489",
+   "label_end": "489"
+  },
+  {
+   "id": "sec-018-m--m-in-m",
+   "number": null,
+   "title": "M%- M% In _M.!]",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 646,
+   "n_words": 118,
+   "label_start": "489",
+   "label_end": "489"
+  },
+  {
+   "id": "sec-019-10-masses-and-decay-constants",
    "number": "10",
    "title": "Masses and decay constants",
    "level": 1,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 2499,
-   "n_words": 439
+   "n_chars": 1248,
+   "n_words": 206,
+   "label_start": "489",
+   "label_end": "490"
   },
   {
-   "id": "sec-011-2-pa-po",
-   "number": "2",
-   "title": "Pa* P'o",
-   "level": 1,
+   "id": "sec-020-j-gasser-h-leutwyler-chiral-perturbation-theory",
+   "number": "J",
+   "title": "Gasser. H. Leutwyler / Chiral perturbation theory",
+   "level": 2,
    "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2319,
+   "n_words": 432,
+   "label_start": "490",
+   "label_end": "491"
+  },
+  {
+   "id": "sec-021-k-m-mj-mj",
+   "number": null,
+   "title": "K~ = (m~+ mj+ mJ ~",
+   "level": 2,
+   "page_start": 27,
    "page_end": 28,
-   "n_chars": 2380,
-   "n_words": 437
+   "n_chars": 1133,
+   "n_words": 200,
+   "label_start": "491",
+   "label_end": "492"
   },
   {
-   "id": "sec-012-2-mr-z--x-m2--m2kqcdmd--mobo-1-3zn-2-2",
-   "number": "2",
-   "title": "MR /z~ -/x,, (M2\"--M2K')QCD=(md--mo)Bo 1 +3/zn+ 2 2",
-   "level": 1,
+   "id": "sec-022-j-gasser-h-leutwvler-chiral-perturbation-theo",
+   "number": "J",
+   "title": "Gasser, H. Leutwvler / Chiral perturbation theo~",
+   "level": 2,
    "page_start": 28,
-   "page_end": 30,
-   "n_chars": 3540,
-   "n_words": 665
+   "page_end": 29,
+   "n_chars": 1811,
+   "n_words": 319,
+   "label_start": "492",
+   "label_end": "493"
   },
   {
-   "id": "sec-013-1-m-in-k-1025-cl167r2f-1-m-m",
-   "number": "1",
-   "title": "M~ , In K (10.25) Cl=167r2F ~ 1 M~-M~, \"",
-   "level": 1,
+   "id": "sec-023-mk--mkqcd",
+   "number": null,
+   "title": "(MK°--MK')QCD",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1193,
+   "n_words": 224,
+   "label_start": "493",
+   "label_end": "493"
+  },
+  {
+   "id": "sec-024-mk-m-min",
+   "number": null,
+   "title": "MK-M,-M,,In",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 826,
+   "n_words": 156,
+   "label_start": "493",
+   "label_end": "494"
+  },
+  {
+   "id": "sec-025-mk",
+   "number": null,
+   "title": "^ (MK",
+   "level": 2,
    "page_start": 30,
    "page_end": 30,
-   "n_chars": 659,
-   "n_words": 113
+   "n_chars": 826,
+   "n_words": 142,
+   "label_start": "494",
+   "label_end": "494"
   },
   {
-   "id": "sec-014-1-m-2-m--m-f---13m271n-mln---1027-c2--167r2f-m-m",
+   "id": "sec-026-mln",
+   "number": null,
+   "title": "+M~ln--~",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 568,
+   "n_words": 112,
+   "label_start": "494",
+   "label_end": "494"
+  },
+  {
+   "id": "sec-027-1-comparison-with-su2-x-su2",
    "number": "1",
-   "title": "M 2 M~-\" M~} f-\"- ,13M2,71n.. +M~ln--~ . (10.27) C2- 167r2F ~ M~-M;~I. M~,",
+   "title": "!. Comparison with SU(2) x SU(2)",
    "level": 1,
    "page_start": 30,
-   "page_end": 34,
-   "n_chars": 7188,
-   "n_words": 1285
+   "page_end": 33,
+   "n_chars": 4409,
+   "n_words": 789,
+   "label_start": "494",
+   "label_end": "497"
   },
   {
-   "id": "sec-015-12-the",
-   "number": "12",
-   "title": "The ~/'",
-   "level": 1,
-   "page_start": 34,
+   "id": "sec-028-j-gasser-h-leutwyler-hiral-perturbation-theory",
+   "number": "J",
+   "title": "Gasser, H. Leutwyler / ('hiral perturbation theory",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 384,
+   "n_words": 65,
+   "label_start": "497",
+   "label_end": "497"
+  },
+  {
+   "id": "sec-029-m-mocdmu",
+   "number": null,
+   "title": "(M~*-M;°)ocD=(mu -",
+   "level": 2,
+   "page_start": 33,
    "page_end": 38,
-   "n_chars": 11150,
-   "n_words": 2037
+   "n_chars": 10421,
+   "n_words": 1847,
+   "label_start": "497",
+   "label_end": "502"
   },
   {
-   "id": "sec-016-13-large-no-zweig-rule",
+   "id": "sec-030-j-gasser-h-leutwyler-chiral-perturbation-theory",
+   "number": "J",
+   "title": "Gasser. H. Leutwyler / Chiral perturbation theory",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 2636,
+   "n_words": 486,
+   "label_start": "502",
+   "label_end": "502"
+  },
+  {
+   "id": "sec-031-13-large-no-zweig-rule",
    "number": "13",
    "title": "Large No, Zweig rule",
    "level": 1,
    "page_start": 38,
-   "page_end": 42,
-   "n_chars": 8628,
-   "n_words": 1492
+   "page_end": 41,
+   "n_chars": 4266,
+   "n_words": 746,
+   "label_start": "502",
+   "label_end": "505"
   },
   {
-   "id": "sec-017-14-values-of-the-low-energy-constants",
+   "id": "sec-032-z-gasser-h-leuttler-chiral-perturbation-theoo",
+   "number": "Z",
+   "title": "Gasser, H. Leut~Tler/ Chiral perturbation theoo'",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 4339,
+   "n_words": 739,
+   "label_start": "505",
+   "label_end": "506"
+  },
+  {
+   "id": "sec-033-14-values-of-the-low-energy-constants",
    "number": "14",
    "title": "Values of the low-energy constants",
    "level": 1,
    "page_start": 42,
-   "page_end": 46,
-   "n_chars": 8560,
-   "n_words": 1606
+   "page_end": 43,
+   "n_chars": 1580,
+   "n_words": 268,
+   "label_start": "506",
+   "label_end": "507"
   },
   {
-   "id": "sec-018-15-summary",
-   "number": "15",
-   "title": "Summary",
+   "id": "sec-034-j-gasser-h-leutwvler-chiral-perturbation-theory",
+   "number": "J",
+   "title": "Gasser, H. Leutwvler / Chiral perturbation theory",
    "level": 1,
-   "page_start": 46,
-   "page_end": 48,
-   "n_chars": 4220,
-   "n_words": 732
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 4479,
+   "n_words": 819,
+   "label_start": "507",
+   "label_end": "509"
   },
   {
-   "id": "sec-019-1-g-s3-1fins",
-   "number": "1",
-   "title": "G ~/~ / \u00a3s=\u00b03 1fins ///~/",
-   "level": 1,
-   "page_start": 48,
+   "id": "sec-035-8bom",
+   "number": null,
+   "title": ", 8Bom~,~",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 462,
+   "n_words": 86,
+   "label_start": "509",
+   "label_end": "509"
+  },
+  {
+   "id": "sec-036-fkf--k",
+   "number": null,
+   "title": "FKF-~-K=",
+   "level": 2,
+   "page_start": 45,
    "page_end": 49,
-   "n_chars": 2769,
-   "n_words": 457
+   "n_chars": 9066,
+   "n_words": 1556,
+   "label_start": "509",
+   "label_end": "513"
   },
   {
-   "id": "sec-020-appendix",
+   "id": "sec-037-appendix",
    "number": null,
    "title": "Appendix",
-   "level": 1,
+   "level": 3,
    "page_start": 49,
-   "page_end": 51,
-   "n_chars": 2288,
-   "n_words": 443
+   "page_end": 50,
+   "n_chars": 353,
+   "n_words": 51,
+   "label_start": "513",
+   "label_end": "514"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-038-j-gasser-h-leutwyler-chiral-perturbation-theory",
+   "number": "J",
+   "title": "Gasser, H. Leutwyler / Chiral perturbation theory'",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 157,
+   "n_words": 20,
+   "label_start": "514",
+   "label_end": "514"
+  },
+  {
+   "id": "sec-039-j-pj-ppj2-gsj3",
+   "number": null,
+   "title": "= (J ; p.J~; p.p~J2+ g.~sJ3) •",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 1269,
+   "n_words": 252,
+   "label_start": "514",
+   "label_end": "515"
+  },
+  {
+   "id": "sec-040-2-ja",
+   "number": "2",
+   "title": "Ja\"",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 529,
+   "n_words": 109,
+   "label_start": "515",
+   "label_end": "515"
+  },
+  {
+   "id": "sec-041-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 51,
    "page_end": 52,
-   "n_chars": 4106,
-   "n_words": 715
+   "n_chars": 4107,
+   "n_words": 715,
+   "label_start": "515",
+   "label_end": "516"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 22,
-  "sections": 22,
-  "chars_total": 108108
+  "toc_entries": 43,
+  "toc_inferred_entries": 60,
+  "toc_inferred_mean_confidence": 0.728,
+  "toc_inferred_empty_share": 0.083,
+  "toc_inferred_method": "font",
+  "figure_entries": 2,
+  "figure_sequence_gaps": [
+   "figure 1"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 43,
+  "chars_total": 109763,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "~BoFo(mu+md+m~)+~1Ytop2+O(P'),",
+    "page": 14,
+    "action": "dropped",
+    "why": "ends with a comma"
+   },
+   {
+    "title": "where",
+    "page": 18,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "tr([A\",Ah]F,)",
+    "page": 19,
+    "action": "rejoined",
+    "as": "and D stands for the differential operator ^ab I F• -- tr([A\",Ah]F,)",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "(47r):(d_4)SP(c~l,,.F",
+    "page": 19,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "Fo{",
+    "page": 23,
+    "action": "dropped",
+    "why": "a single short word"
+   },
+   {
+    "title": "_iAp(O)=2MpA+TT._sMpI",
+    "page": 23,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "<01 ul0 -!",
+    "page": 25,
+    "action": "rejoined",
+    "as": "} <01 ul0 -!",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "FK",
+    "page": 28,
+    "action": "dropped",
+    "why": "a single short word"
+   },
+   {
+    "title": "azr to\\",
+    "page": 33,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "(ola,,Io)",
+    "page": 47,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "(olaulo>-l-",
+    "page": 47,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "~ghys",
+    "page": 47,
+    "action": "rejoined",
+    "as": "| I I I mS ~ghys",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "1fins ///~/",
+    "page": 48,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "/,/.<olOu",
+    "page": 48,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "Io>",
+    "page": 48,
+    "action": "dropped",
+    "why": "a single short word"
+   },
+   {
+    "title": "-i Y daz eiPZO~'AP(z)Ao(z) = -iP~'Jl(s) '",
+    "page": 49,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "ip=",
+    "page": 49,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "-iAe(O):~",
+    "page": 50,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "fo'",
+    "page": 50,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "Io'",
+    "page": 50,
+    "action": "dropped",
+    "why": "a single short word"
+   }
+  ]
  }
 }

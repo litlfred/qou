@@ -1,0 +1,1 @@
+Let µ be an odd branch of λ. Then at least one of the following is true: (i) (µ)∼is odd. (ii) OddRank(λ) > 0, D(µ) is an odd branch of D(λ) and (µ)∼is odd if and only if {D(µ)} ⊆Podd D(λ) is odd. We need one final piece to finish the puzzle:

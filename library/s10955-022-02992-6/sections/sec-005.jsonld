@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Hard-Core Systems in the Continuum",
-  "pageStart": 11,
-  "pageEnd": 12,
+  "title": "Abstract Polymer Models",
+  "pageStart": 8,
+  "pageEnd": 11,
   "contains": [
-    "library/s10955-022-02992-6/blocks/prose-sec-005"
+    "library/s10955-022-02992-6/blocks/prose-sec-005",
+    "library/s10955-022-02992-6/blocks/rem-sec-005-01",
+    "library/s10955-022-02992-6/blocks/ex-sec-005-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10955-022-02992-6",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10955-022-02992-6",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
   "provenance": "ingested"
 }

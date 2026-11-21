@@ -55,7 +55,7 @@ surviving the cross-knot test is the open question this file sharpens — it is
 symmetry structure).
 
 -- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (symmetry eq 65, eq 60)
--- Ref: [manuscript] docs/audits/2026-08-02-aomega-internal-derivation-symmetry-constant-target.md
+-- Ref: [leitner2026] docs/audits/2026-08-02-aomega-internal-derivation-symmetry-constant-target.md
 -/
 
 namespace QOU.QBeta.StokesSymmetryConstantQZero

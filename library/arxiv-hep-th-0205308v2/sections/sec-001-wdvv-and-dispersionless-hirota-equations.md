@@ -7,10 +7,11 @@ section_number: null
 pages: 3-5
 source_pdf: 0205308v2.pdf
 source_sha256: 2de5a4f40d80174c
-doc_brief: "WDVV Equations as Functional Relations — 5 sections: Introduction; WDVV and dispersionless Hirota equ; The associativity equations as coc"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.983
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.943
+doc_brief: "WDVV Equations as Functional Relations — 6 sections: Front matter; Introduction; WDVV and dispersionless Hirota equ"
 ---
 The WDVV equations usually follow from the crossing relations $$\label{crossing}
 \sum_k C^k_{\ ij}C^n_{\ kl} = \sum_k C^k_{\ il}C^n_{\ kj}$$ for the structure constants of some algebra $$\label{alg}

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2402.04839v2
-doc_title: "On a volume invariant of 3–manifolds"
+doc_title: "On a volume invariant of 3-manifolds"
 section_id: sec-002-definition-of-topological-volume-and-its-spectru
 section_title: "Definition of topological volume and its spectrum"
 section_number: null
 pages: 4-5
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
-doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.966
-latex_coverage_ratio: 0.857
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 0.994
+doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
 ---
 \label{sec:definition}
 

@@ -1,0 +1,62 @@
+12.5 Higher order asymptotics 401
+
+where
+
+1
+7_y¢d. i
+1- Di=1 Ty
+
+Bix) = 1- (1 - e1(x))A(w)
+
+A(a) =
+
+for the elementary symmetric function e|(x) = a x;. The combinatorial
+constructions discussed in Chapter 2 imply that W enumerates words over the
+alphabet {1,...,d}, where x; marks occurrences of the letter j and y marks oc-
+currences of snaps, which are nonoverlapping pairs of duplicate letters. The
+factor A(a) counts snapless words over X, which are the Smirnov words de-
+scribed in Example 2.11. If y denotes the random variable counting snaps
+among words with n occurrences of each letter then the expected value and
+
+variance of w satisfy
+
+La" |Wy(@, 1) [w" JA)! B(a)(1 — e1(w))?
+[a"|W(a, 1) [a] - (a)!
+
+and V(W) = E(w?) — E(w)? with
+
+EW) =
+
+[x"!] (Wyy(a, 1) + Wye, 1))
+[a"!] W(x, 1)
+
+EW) =
+
+_ [e@"A@)?B@)(B@) + I) - e1@)y?
+
+7 [2] — e(@)y! ,
+Each of the above coefficient extractions applies to a rational function whose
+denominator is a power of Q(x) = | — e;(x). By Lemma 6.41, asymptotics
+can be determined by applying the smooth ACSV results of Chapter 9 to the
+strictly minimal critical point (1/d,..., 1/d) of each function, giving
+
+3v3 _ 61V3,-1 + O(n?)
+
+n
+E(y) =
+Br - Bn + O(n)
+
+= (3/4)n — 15/32 + O(n")
+
+and
+9v3 35v3 4 O(n!)
+
+320 ~ 28r
+
+E(y*) = 332 —_282
+Birt - Bn + O(n")
+
+= (9/16)n? — (27/64)n + O(1)
+
+so that V(W) = (9/32)n + O(1). Note that determining the leading term of
+VW) requires the second-order terms in the expansions of E(w) and E(y7).

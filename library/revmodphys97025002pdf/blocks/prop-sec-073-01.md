@@ -1,0 +1,1 @@
+The theory of the Lamb shift in μ4Heþ discussed in the same section together with its experimentally measured value provides for the first time a recom- mended value of the rms charge radius of the alpha particle rα; its relative uncertainty is 1.2 × 10−3. • The updated theory of the electron magnetic- moment anomaly ae discussed in Sec.

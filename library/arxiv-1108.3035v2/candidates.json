@@ -1,0 +1,115 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1108.3035v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "935bf1bd3e13821bced6a5f488f30e5d70554a99d189637bc3755aee8eb0f9ce",
+  "file": "1108.3035v2.pdf"
+ },
+ "provenance": {
+  "title": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE \u2013 GUE Transition",
+  "authors": "Gernot Akemann1 and Taro Nagao2",
+  "arxiv": {
+   "id": "1108.3035",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "2 Nov 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "proposition": 3
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 3
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3
+  },
+  "by_evidence_location": {
+   "both": 1,
+   "in-paper": 1,
+   "elsewhere": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Most of the RMT predictions have been checked using Lattice QCD, ranging from checks of the topology dependence of algorithms with good chiral properties on small Lattices [18], up to fully unquenched two-\ufb02avour simulations leading to realistic values of \u03a3 and F [19], to where we refer as well as to [3] for more references.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper result in sections/sec-000-1-introduction.md combined with [18], [19], [3]",
+   "external_refs": [
+    "[18]",
+    "[19]",
+    "[3]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: both \u2014 In-paper result in sections/sec-000-1-introduction.md combined with [18], [19], [3]). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-1108.3035v2/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-1108.3035v2#prop-sec-000-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Goltermann, \u201cApplications of chiral perturbation theory to lattice QCD\u201d, Lectures at Les Houches School \u201dModern perspectives in lattice QCD\u201d 2009 arXiv:0912.4042v4 [hep-lat]; S.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-013-c2-the-odd-polynomials-r2j1x.md (p. 24-27)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-013-c2-the-odd-polynomials-r2j1x.md",
+   "section_title": "C.2 The odd polynomials R2j+1(x)",
+   "pages": "24-27",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-013-c2-the-odd-polynomials-r2j1x.md (p. 24-27)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-013-01",
+   "block_iri": "library/arxiv-1108.3035v2/blocks/prop-sec-013-01",
+   "claim_id": "arxiv-1108.3035v2#prop-sec-013-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Sharpe, \u201cApplications of Chiral Perturbation theory to lattice QCD\u201d, Lectures at ILFTN Workshop \u201dPerspectives in Lattice QCD\u201d 2005 hep-lat/0607016v2. [23] S.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [23] in sections/sec-013-c2-the-odd-polynomials-r2j1x.md",
+   "external_refs": [
+    "[23]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-013-c2-the-odd-polynomials-r2j1x.md",
+   "section_title": "C.2 The odd polynomials R2j+1(x)",
+   "pages": "24-27",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: elsewhere \u2014 Cites external source [23] in sections/sec-013-c2-the-odd-polynomials-r2j1x.md). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-013-02",
+   "block_iri": "library/arxiv-1108.3035v2/blocks/prop-sec-013-02",
+   "claim_id": "arxiv-1108.3035v2#prop-sec-013-02"
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9707006v1
-doc_title: "arXiv:q-alg/9707006v1 4 Jul 1997"
+doc_title: "Drinfeld twist for quantum su(2) in the adjoint representation"
 section_id: sec-002-21-the-factorized-basis
 section_title: "The factorized basis"
 section_number: 2.1
@@ -8,7 +8,9 @@ pages: 3-3
 source_pdf: 9707006v1.pdf
 source_sha256: b9513be9294f56d9
 toc_source: inferred
+doc_brief: "Drinfeld twist for quantum su(2) in the adjoint representation — We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2)."
 ---
+The factorized basis
 We ﬁrst recall the deﬁnition of the adjoint representation in the quantum case. Classically, this representation is
 deﬁned via the adjoint action of the generators among themselves, which closes linearly in the generators. The
 representation is then extended to the entire universal enveloping algebra as a homomorphism. In the quantum
@@ -210,4 +212,3 @@ q−1/2
 
 
 . (7)
-2.2

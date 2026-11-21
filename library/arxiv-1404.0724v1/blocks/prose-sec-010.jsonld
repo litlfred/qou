@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1404.0724v1/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The Yang-Baxter equation and the Drinfeld-Kohno theorem",
-  "pageStart": 22,
-  "pageEnd": 22,
-  "text": "../sections/sec-010-5-the-yang-baxter-equation-and-the-drinfeld-kohn.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.0724v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.0724v1",
+  "title": "The Lawrence-Krammer-Bigelow representation",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "../sections/sec-010-34-the-lawrence-krammer-bigelow-representation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
   "provenance": "ingested"
 }

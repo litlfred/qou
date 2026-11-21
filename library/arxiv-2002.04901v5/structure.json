@@ -7,10 +7,11 @@
   "bytes": 473216,
   "pages": 20,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +21,28 @@
    "stamp_date": "7 May 2021"
   },
   "doi": null,
-  "title": "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS",
+  "title": "Weak Proregularity, Derived Completion, Adic Flatness, and Prisms",
   "authors_raw": "AND PRISMS",
   "title_lines": [
    "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS"
   ],
-  "abstract": null,
+  "abstract": "We begin by recalling the role that weak proregularity of an ideal in a commu- tative ring has in derived completion and adic ﬂatness. We also introduce the new concepts of idealistic and sequential derived completion, and prove a few results about them, includ- ing the fact that these two concepts agree iﬀthe ideal is weakly proregular. Next we study the local nature of weak proregularity, and its behavior w.r.t. ring quotients. These results allow us to prove our main theorem, which states that weak proregularity occurs in the context of bounded prisms. Prisms belong to the new groundbreaking theory of perfectoid rings, developed by Scholze and his collaborators. Since perfectoid ring theory makes heavy use of derived completion and adic ﬂatness, we anticipate that our results shall help simplify and improve some of the more technical aspects of this theory.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210510015436Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210510015436Z"
+  },
+  "title_raw": "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS, AND PRISMS Contents Introduction Idealistic Derived Completion and Torsion Sequential Derived Completion and Torsion Weak Proregularity: When Idealistic and Sequential Agree Weak Proregularity and Adic Flatness Weak Proregularity and Quotient Ri",
+   "outline": "0. Introduction",
+   "text": "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS"
  },
  "toc": [
   {
@@ -40,99 +50,378 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Idealistic Derived Completion and Torsion",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Sequential Derived Completion and Torsion",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Weak Proregularity: When Idealistic and Sequential Agree",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Weak Proregularity and Adic Flatness",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Weak Proregularity and Quotient Rings",
    "page": 15,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Local Nature of Weak Proregularity",
    "page": 18,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Weak Proregularity and Prisms",
    "page": 19,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 973,
+   "n_words": 153,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 5,
-   "n_chars": 11975,
-   "n_words": 1698
+   "page_end": 4,
+   "n_chars": 9497,
+   "n_words": 1629,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-1-idealistic-derived-completion-and-torsion",
    "number": "1",
    "title": "Idealistic Derived Completion and Torsion",
    "level": 1,
-   "page_start": 5,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5224,
+   "n_words": 874,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-sequential-derived-completion-and-torsion",
+   "number": "2",
+   "title": "Sequential Derived Completion and Torsion",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 10717,
+   "n_words": 1871,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-3-weak-proregularity-when-idealistic-and-sequent",
+   "number": "3",
+   "title": "Weak Proregularity: When Idealistic and Sequential Agree",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 7695,
+   "n_words": 1318,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-4-weak-proregularity-and-adic-flatness",
+   "number": "4",
+   "title": "Weak Proregularity and Adic Flatness",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4765,
+   "n_words": 858,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-5-weak-proregularity-and-quotient-rings",
+   "number": "5",
+   "title": "Weak Proregularity and Quotient Rings",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 8917,
+   "n_words": 1623,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-6-the-local-nature-of-weak-proregularity",
+   "number": "6",
+   "title": "The Local Nature of Weak Proregularity",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2265,
+   "n_words": 418,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-7-weak-proregularity-and-prisms",
+   "number": "7",
+   "title": "Weak Proregularity and Prisms",
+   "level": 1,
+   "page_start": 19,
    "page_end": 20,
-   "n_chars": 41343,
-   "n_words": 5908
+   "n_chars": 1836,
+   "n_words": 330,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 2761,
+   "n_words": 360,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 2,
-  "chars_total": 53318,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 54650,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 8,
-   "overlaid": 2,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -140,20 +429,78 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-1-idealistic-derived-completion-and-torsion",
      "title": "Idealistic Derived Completion and Torsion",
-     "prose_ratio": 0.962,
-     "coverage_ratio": 0.816,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-sequential-derived-completion-and-torsion",
+     "title": "Sequential Derived Completion and Torsion",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-weak-proregularity-when-idealistic-and-sequent",
+     "title": "Weak Proregularity: When Idealistic and Sequential Agree",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-weak-proregularity-and-adic-flatness",
+     "title": "Weak Proregularity and Adic Flatness",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-weak-proregularity-and-quotient-rings",
+     "title": "Weak Proregularity and Quotient Rings",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-6-the-local-nature-of-weak-proregularity",
+     "title": "The Local Nature of Weak Proregularity",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.905,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-7-weak-proregularity-and-prisms",
+     "title": "Weak Proregularity and Prisms",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-references",
+     "title": "References",
+     "result": "no matching \\section"
     }
    ]
   }

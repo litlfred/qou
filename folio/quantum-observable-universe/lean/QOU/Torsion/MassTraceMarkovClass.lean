@@ -166,6 +166,21 @@ theorem massClass_wordBraid (hqi : q * qi = 1) (w : Fin 2 → R) (hw : (1 + q ^ 
           * (wi ^ (m + 1) * Matrix.trace (siteWeight w * hol q qi ℓs)) := by
   rw [massClass_classOf, jonesFn_wordBraid]
 
+/-- **The mass identity on braid classes, Temperley–Lieb state-sum form (Option 3).**
+    The framing-corrected mass functional of the braid class of `wordBraid ℓs` expands over all
+    Temperley–Lieb states `s : Fin ℓs.length → Bool`. -/
+theorem massClass_wordBraid_eq_tlStateSum (hqi : q * qi = 1) (w : Fin 2 → R)
+    (hw : (1 + q ^ 2) * wi = 1) (h0 : w 0 = 1) (h1 : w 1 = q ^ 2) {m : ℕ}
+    (ℓs : List (Fin m × Bool)) :
+    massClass q qi wi hqi w hw h0 h1
+        (QOU.MathlibExt.MarkovMoves.classOf artinTower ⟨m, wordBraid ℓs⟩)
+      = ((strandFactor q qi wi hqi hw ^ (m + 1) : Rˣ) : R)
+          * ((writheFactor q qi hqi ^ signedLength ℓs : Rˣ) : R)
+          * (∑ s : Fin ℓs.length → Bool,
+              tlStateWeight q qi ℓs s *
+                (wi ^ (m + 1) * Matrix.trace (siteWeight w * tlStateMatrix q qi ℓs s))) := by
+  rw [massClass_classOf, jonesFn_wordBraid_eq_tlStateSum]
+
 /-- **Markov-equivalent words have equal framing-corrected multiplicative-integral traces**,
 including words on different numbers of strands. -/
 theorem holTrace_eq_of_markovEquiv (hqi : q * qi = 1) (w : Fin 2 → R)

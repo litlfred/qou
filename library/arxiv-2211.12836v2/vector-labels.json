@@ -1,0 +1,2682 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2211.12836v2",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 52,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Graph B2,4 encoding the movement of 2 nonintersecting particles on a discrete circle of size 4. The dashed line marks the origin of the circle."
+      ],
+      "labels": [
+        {
+          "text": "2",
+          "bbox": [
+            69.98,
+            53.35,
+            74.21,
+            61.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "J. GUILHOT, C. LECOUVEY, AND P. TARRAGO",
+          "bbox": [
+            205.93,
+            53.35,
+            401.78,
+            61.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 1. Graph B2,4 encoding the movement of 2 nonintersecting particles on a",
+          "bbox": [
+            105.85,
+            250.86,
+            501.85,
+            265.79
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "discrete circle of size 4. The dashed line marks the origin of the circle.",
+          "bbox": [
+            105.84,
+            266.19,
+            441.69,
+            277.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a degree d rational function from P1(C) to P1(C) at 2d+1 generic points uniquely determines this",
+          "bbox": [
+            69.98,
+            310.55,
+            537.72,
+            323.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "function (see Example A.3).",
+          "bbox": [
+            69.98,
+            325.88,
+            203.85,
+            336.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The adjacency matrix of the graph Bk,n can be turned into a Markov kernel up to conjugation by",
+          "bbox": [
+            81.93,
+            338.84,
+            537.77,
+            351.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "an appropriate diagonal matrix. Such a transformation, using the Perron-Frobenius eigenvector and",
+          "bbox": [
+            69.98,
+            351.79,
+            537.79,
+            362.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "eigenvalue of the adjacency matrix, is just a generalization of the Doob h-transform for conditioned",
+          "bbox": [
+            69.98,
+            364.74,
+            537.72,
+            375.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "random walks [20]. Then, from a probabilistic perspective, the notion of positively multiplicative",
+          "bbox": [
+            69.98,
+            377.69,
+            537.77,
+            388.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "graph translates into the existence of a large family of commuting Markov kernels which are obtained",
+          "bbox": [
+            69.98,
+            390.64,
+            537.75,
+            401.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in this way from the algebra generated by the adjacency matrix of the graph. This family is the",
+          "bbox": [
+            69.98,
+            403.59,
+            537.76,
+            414.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "largest possible in the following sense: for any probability distribution on the set of vertices, there",
+          "bbox": [
+            69.98,
+            416.54,
+            537.76,
+            427.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "exists a Markov kernel of the aforementioned family mapping the Dirac mass on the root to this",
+          "bbox": [
+            69.98,
+            429.5,
+            537.74,
+            440.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "probability distribution. The basic example of positively multiplicative graphs is provided by the",
+          "bbox": [
+            69.98,
+            442.45,
+            537.79,
+            453.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "directed cycle graph of size n rooted at one of its vertices. The underlying algebra of Markov",
+          "bbox": [
+            69.98,
+            455.4,
+            537.74,
+            466.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "kernels commuting with the adjacency matrix S of this graph is the set of circulant matrices with",
+          "bbox": [
+            69.98,
+            468.35,
+            537.72,
+            479.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "nonnegative entries. It has a basis {Sk, 0 ≤k ≤n−1} with the multiplication rule SkSl = S(k+l)[n],",
+          "bbox": [
+            69.98,
+            477.44,
+            537.7,
+            492.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "where (k + l)[n] means the value of k + l modulo n. In this particular simple case, the h-transform",
+          "bbox": [
+            69.98,
+            494.36,
+            537.7,
+            505.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of the original adjacency matrix is trivial since it is already a Markov kernel.",
+          "bbox": [
+            69.98,
+            507.31,
+            437.37,
+            518.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The case of the directed cycle graph of size n actually corresponds to the simplest case B1,n",
+          "bbox": [
+            81.94,
+            518.6,
+            537.2,
+            531.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of our graphs.",
+          "bbox": [
+            69.98,
+            533.21,
+            139.5,
+            544.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In a probabilistic context, it is known that products of linear combinations of",
+          "bbox": [
+            148.89,
+            533.21,
+            537.8,
+            544.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "{Sk, 0 ≤k ≤n−1} generate all spatially homogeneous random walks on a discrete circle. Moreover,",
+          "bbox": [
+            69.98,
+            544.5,
+            537.71,
+            557.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "we can diagonalize the action of any of these operators on the so-called Fourier basis, and the",
+          "bbox": [
+            69.98,
+            559.11,
+            537.73,
+            570.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "change of basis from the canonical basis to the Fourier basis is then called the discrete Fourier",
+          "bbox": [
+            69.98,
+            572.06,
+            537.73,
+            582.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "transform. As n goes to inﬁnity and after normalization, the discrete circle becomes a continuous",
+          "bbox": [
+            69.98,
+            585.02,
+            537.72,
+            595.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "circle of radius 2π and the discrete Fourier transform becomes the continuous Fourier transform",
+          "bbox": [
+            69.98,
+            597.97,
+            537.74,
+            608.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "for periodic functions on R with period 2π. The interplay between discrete and continuous Fourier",
+          "bbox": [
+            69.98,
+            608.53,
+            537.74,
+            621.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "transforms allows to prove several precise probabilistic results such as the wrapped central limit",
+          "bbox": [
+            69.98,
+            623.87,
+            537.72,
+            634.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "theorem and their reﬁned versions, local limit theorem and Berry-Esseen theorem, [9]. To put",
+          "bbox": [
+            69.98,
+            636.82,
+            537.73,
+            647.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "those three results in a nutshell, the wrapped central limit theorem states that a random walk on",
+          "bbox": [
+            69.98,
+            649.77,
+            537.74,
+            660.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a discrete circle of size n can be embedded in a continuous circle such that after a number m of",
+          "bbox": [
+            69.98,
+            662.72,
+            537.7,
+            673.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "steps with order n2, the distribution is close to a wrapped normal distribution on the circle. Then,",
+          "bbox": [
+            69.98,
+            674.01,
+            537.76,
+            686.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the Berry-Esseen theorem gives quantitative convergence towards the limit distribution while the",
+          "bbox": [
+            69.98,
+            688.63,
+            537.72,
+            699.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 56,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Graph B2,4 from a combinatorial perspective."
+      ],
+      "labels": [
+        {
+          "text": "4",
+          "bbox": [
+            69.98,
+            53.35,
+            74.21,
+            61.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "J. GUILHOT, C. LECOUVEY, AND P. TARRAGO",
+          "bbox": [
+            205.93,
+            53.35,
+            401.78,
+            61.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "The size ⟨I⟩of an element I = {I1 > . . . > Ik} ∈Bk,n is the sum of its parts (remark that the size",
+          "bbox": [
+            81.94,
+            74.83,
+            537.7,
+            87.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "is always positive when I ∈Bk,n). The discrete set Bk,n is given a graph structure by saying there",
+          "bbox": [
+            69.98,
+            87.78,
+            537.72,
+            100.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "is an oriented edge from I to J when ⟨J⟩= ⟨I⟩+ 1 mod n and #{1 ≤l, l′ ≤k, Jl′ = Il} = k −1.",
+          "bbox": [
+            69.98,
+            96.77,
+            537.7,
+            112.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We then write I ↗J when there is such an oriented edge from I to J.",
+          "bbox": [
+            69.98,
+            113.68,
+            437.57,
+            124.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The edges of Bk,n",
+          "bbox": [
+            447.62,
+            113.82,
+            537.2,
+            125.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "encode the clockwise movement of the k particles around the circle conditioned to never intersect.",
+          "bbox": [
+            69.98,
+            126.77,
+            537.73,
+            137.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A distinguished vertex of Bk,n is given by the sequence I0 = {0, . . . , k −1}, which represents k",
+          "bbox": [
+            69.98,
+            139.58,
+            537.36,
+            152.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "particles stacked after the origin on the discrete circle. See Figure 2 for the graph structure of B2,4.",
+          "bbox": [
+            69.98,
+            152.68,
+            537.7,
+            164.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 2. Graph B2,4 from a combinatorial perspective.",
+          "bbox": [
+            164.45,
+            345.14,
+            438.39,
+            360.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "For ﬁxed k ≥1, the family of graphs {Bk,n, n ≥1} has a continuous counterpart embodied by the",
+          "bbox": [
+            81.94,
+            372.65,
+            537.73,
+            384.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "set Tk of positions of k indistinguishable particles on a continuous circle of radius 1. Identifying the",
+          "bbox": [
+            69.98,
+            385.75,
+            537.77,
+            398.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "positions of the particles by their distance from a distinguished point of the circle in the clockwise",
+          "bbox": [
+            69.98,
+            398.7,
+            537.75,
+            409.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "direction, we formally identify Tk with the subset of vectors⃗u = (u1, . . . , uk) ∈[0, 2π[k such that",
+          "bbox": [
+            69.98,
+            407.69,
+            530.02,
+            424.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2π > u1 ≥u2 ≥· · · ≥uk ≥0.",
+          "bbox": [
+            234.18,
+            429.27,
+            373.5,
+            441.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Remark that we authorize particles to be at the same position in the continuous case, since this",
+          "bbox": [
+            69.98,
+            447.17,
+            537.71,
+            458.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "situation may theoretically appear as a limit case of discrete conﬁgurations as n goes to inﬁnity",
+          "bbox": [
+            69.98,
+            460.12,
+            537.71,
+            471.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(although it will almost surely not be the case).",
+          "bbox": [
+            69.98,
+            473.07,
+            298.09,
+            483.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "For x ∈R, denote by x the unique element of [0, 2π[ such that x −x ∈2πZ. Then, reﬂecting the",
+          "bbox": [
+            81.93,
+            483.64,
+            537.71,
+            496.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "circular nature of the model, there is a shift action of R on Tk given by",
+          "bbox": [
+            69.98,
+            496.59,
+            410.22,
+            511.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Rt(⃗u) = Sort(u1 −2tπ, . . . , uk −2tπ),",
+          "bbox": [
+            214.01,
+            516.59,
+            393.67,
+            529.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "where Sort(⃗u) is the sequence obtained from⃗u ∈[0, 2π[k by sorting it in decreasing order. For",
+          "bbox": [
+            74.27,
+            530.8,
+            537.73,
+            545.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "each n ≥1, the graph Bk,n can actually be embedded in Tk through the map",
+          "bbox": [
+            69.98,
+            547.57,
+            438.39,
+            560.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            294.06,
+            564.28,
+            304.97,
+            575.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Bk,n",
+          "bbox": [
+            263.21,
+            564.42,
+            283.6,
+            576.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Tk",
+          "bbox": [
+            315.88,
+            564.42,
+            326.66,
+            576.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            253.52,
+            566.24,
+            263.22,
+            577.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0013 .",
+          "bbox": [
+            359.58,
+            573.47,
+            373.66,
+            592.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            253.52,
+            576.06,
+            263.22,
+            586.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(1)",
+          "bbox": [
+            69.98,
+            580.76,
+            83.92,
+            591.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ξn :",
+          "bbox": [
+            234.02,
+            580.76,
+            250.49,
+            593.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u00122π",
+          "bbox": [
+            331.45,
+            581.32,
+            352.34,
+            592.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "7→R k−1",
+          "bbox": [
+            294.06,
+            588.71,
+            327.93,
+            599.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMR6",
+            "CMSY10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            10.91
+          ]
+        },
+        {
+          "text": "I",
+          "bbox": [
+            263.21,
+            588.85,
+            268.01,
+            599.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "n I",
+          "bbox": [
+            343.43,
+            588.85,
+            358.73,
+            607.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            253.52,
+            595.69,
+            263.22,
+            606.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2n",
+          "bbox": [
+            317.07,
+            599.59,
+            325.32,
+            605.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Note that there is a shift of π(k−1)",
+          "bbox": [
+            72.91,
+            613.19,
+            231.33,
+            627.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "which seems at ﬁrst sight arbitrary: its role is mainly to simplify",
+          "bbox": [
+            235.46,
+            616.37,
+            537.73,
+            627.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            215.17,
+            622.43,
+            220.31,
+            630.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "later expressions.",
+          "bbox": [
+            69.98,
+            629.33,
+            151.73,
+            640.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2.2. A complete family of commuting Markov kernels associated to Bk,n. In order to",
+          "bbox": [
+            69.98,
+            649.31,
+            537.7,
+            661.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "state our main results, let us brieﬂy explain how to associate to Bk,n a family of Markov chains.",
+          "bbox": [
+            69.98,
+            662.26,
+            537.72,
+            674.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "By analogy with the space L2(Tk) of square integrable functions on Tk, denote by L2(Bk,n) the",
+          "bbox": [
+            69.98,
+            674.01,
+            537.7,
+            687.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Hermitian space of functions on Bk,n with the distinguished orthonormal basis B0 = {eI, I ∈Bk,n}",
+          "bbox": [
+            69.98,
+            688.48,
+            537.7,
+            701.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 30,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. Particles hopping to the left with probability t and to the right with probability s, conditioned to not intersect."
+      ],
+      "labels": [
+        {
+          "text": "10",
+          "bbox": [
+            69.98,
+            53.35,
+            78.44,
+            61.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "J. GUILHOT, C. LECOUVEY, AND P. TARRAGO",
+          "bbox": [
+            205.92,
+            53.35,
+            401.77,
+            61.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Remark that C depends decreasingly on t0 and thus this theorem is useful only when m is of",
+          "bbox": [
+            81.94,
+            74.97,
+            537.7,
+            87.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "order n2 or larger. By taking appropriate Lipschitz functions, one can deduce from the previous",
+          "bbox": [
+            69.98,
+            83.96,
+            537.77,
+            98.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "results convergence estimates for probability of open sets of Tk: namely for an open set O of Tk",
+          "bbox": [
+            69.98,
+            100.73,
+            526.37,
+            112.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Bα,γ \u0010 m",
+          "bbox": [
+            272.69,
+            121.19,
+            314.59,
+            147.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            384.76,
+            123.73,
+            395.67,
+            134.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "log n",
+          "bbox": [
+            396.87,
+            125.92,
+            419.32,
+            136.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "P (I∗m ∈O) −P",
+          "bbox": [
+            184.13,
+            128.6,
+            264.35,
+            152.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0011\f\f\f ≤CO",
+          "bbox": [
+            345.11,
+            128.6,
+            384.03,
+            152.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            266.17,
+            129.03,
+            272.69,
+            139.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            316.64,
+            129.03,
+            323.15,
+            139.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∈O",
+          "bbox": [
+            326.18,
+            133.16,
+            344.81,
+            144.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            420.52,
+            133.3,
+            423.55,
+            144.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "n2",
+          "bbox": [
+            304.16,
+            139.93,
+            314.94,
+            151.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            404.82,
+            140.78,
+            411.37,
+            151.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with CO depending on O. The theorem of the next section, which provides a quantitative local",
+          "bbox": [
+            69.98,
+            161.23,
+            537.73,
+            173.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0000 1",
+          "bbox": [
+            290.0,
+            167.64,
+            300.88,
+            184.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            302.53,
+            173.19,
+            307.52,
+            184.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "limit theorem, would improve this speed to O",
+          "bbox": [
+            69.98,
+            174.18,
+            287.88,
+            185.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in the special case where α = 0.",
+          "bbox": [
+            311.16,
+            174.18,
+            462.89,
+            185.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            296.19,
+            180.24,
+            301.33,
+            188.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "In comparison, the usual central limit theorem would only state that for each O open set of Tk, we",
+          "bbox": [
+            81.93,
+            187.13,
+            537.7,
+            199.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "−P (Bα,γ (t) ∈O)",
+          "bbox": [
+            170.9,
+            196.12,
+            256.93,
+            210.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "= o(1) as n goes to inﬁnity for some sequence of constant",
+          "bbox": [
+            256.93,
+            197.35,
+            537.7,
+            216.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            95.05,
+            197.7,
+            105.35,
+            216.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            107.17,
+            199.09,
+            112.17,
+            210.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            163.48,
+            199.09,
+            168.48,
+            210.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "I∗(mn) ∈O",
+          "bbox": [
+            112.17,
+            199.94,
+            163.18,
+            213.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX8",
+            "CMMI10",
+            "CMMI6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "have",
+          "bbox": [
+            69.98,
+            200.08,
+            91.49,
+            210.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tn2-uples of h-probability measures mn = (µn, . . . , µn) (where µn is a ﬁxed h-probability measure",
+          "bbox": [
+            69.98,
+            210.43,
+            537.71,
+            226.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "in Bk,n for each n ≥0) with ∥˜mn∥2, V ar2(mn) converging to some constant and ∥˜mn∥3, V ar3(mn)",
+          "bbox": [
+            69.98,
+            227.18,
+            537.7,
+            240.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "uniformly bounded. The fact that we only require a bound on moments of order 3 to get a central",
+          "bbox": [
+            69.98,
+            240.29,
+            537.77,
+            251.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "limit theorem is not at all obvious for constrained random walks. In general, the minimal order of",
+          "bbox": [
+            69.98,
+            253.24,
+            537.76,
+            264.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "moment which is required to be ﬁnite to get a central limit theorem should depend on the geometry",
+          "bbox": [
+            69.98,
+            266.19,
+            537.73,
+            277.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of the domain, and may be much higher than 3, see [19]. The fact that our central limit theorem",
+          "bbox": [
+            69.98,
+            279.14,
+            537.75,
+            290.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "holds for such minimal moment assumptions (which could actually be lower to require only bound",
+          "bbox": [
+            69.98,
+            292.09,
+            537.76,
+            303.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "on moments of order 2 + ϵ for some ϵ > 0) is due to the high symmetry of the considered transition",
+          "bbox": [
+            69.98,
+            305.04,
+            537.73,
+            315.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "kernels.",
+          "bbox": [
+            69.98,
+            318.0,
+            105.83,
+            328.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Example 2.5. For a concrete application of Theorem 2.4, let us consider the case where for",
+          "bbox": [
+            69.98,
+            341.13,
+            537.72,
+            352.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "µh(I−)eI−with s + t = 1 and I+ = (k + 1, k −1, . . . , 2),",
+          "bbox": [
+            256.44,
+            350.13,
+            537.7,
+            368.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY6",
+            "CMTI10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            207.62,
+            352.09,
+            211.54,
+            360.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            268.44,
+            352.09,
+            271.5,
+            360.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "all 1 ≤i ≤m, µi(I) =",
+          "bbox": [
+            69.98,
+            353.94,
+            189.76,
+            365.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "µh(I+)eI+ +",
+          "bbox": [
+            196.13,
+            354.08,
+            251.96,
+            368.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "I−= (k, k−1, . . . , 2, 0). Then, by Proposition 2.1 and the fact that the convolution algebra L2(Bk,n)",
+          "bbox": [
+            69.98,
+            368.75,
+            537.7,
+            382.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "is stable by conjugation (see also Remark 2.2),",
+          "bbox": [
+            69.98,
+            383.47,
+            292.21,
+            394.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "µi ∗y = 1",
+          "bbox": [
+            233.97,
+            405.25,
+            281.62,
+            425.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0003h (y)",
+          "bbox": [
+            347.74,
+            406.37,
+            373.71,
+            423.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "S(sA + tAt)",
+          "bbox": [
+            289.63,
+            410.42,
+            347.74,
+            423.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0002",
+          "bbox": [
+            285.09,
+            411.63,
+            289.63,
+            422.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            275.71,
+            420.11,
+            282.07,
+            431.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "for all y ∈L2(Bk,n), where S is the shift operator introduced in Remark 2.2. Thus, up to the shift",
+          "bbox": [
+            69.98,
+            439.56,
+            537.72,
+            453.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "operator, convolution by µi corresponds to the graph of transitions of k particles on n sites, where",
+          "bbox": [
+            69.98,
+            454.18,
+            537.7,
+            466.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "at each time a uniformly randomly chosen particle jumps to the right with probability t and to the",
+          "bbox": [
+            69.98,
+            467.13,
+            537.69,
+            478.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "left with probability s (with the usual conditioning on non-intersection of the particles), see Figure",
+          "bbox": [
+            69.98,
+            480.08,
+            537.71,
+            490.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3. Beware that the transition probabilities of our model are diﬀerent to the ones of ASEP, since we",
+          "bbox": [
+            69.98,
+            493.03,
+            537.7,
+            503.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "are conditioning the particles to not intersect instead of directly deﬁning the transition probabilities",
+          "bbox": [
+            69.98,
+            505.98,
+            537.71,
+            516.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "which prevent the intersection. There is a repulsive behavior in the conditioned model which is not",
+          "bbox": [
+            69.98,
+            518.93,
+            537.71,
+            529.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "present in the ASEP situation, and the dynamics of both processes are very diﬀerent.",
+          "bbox": [
+            69.98,
+            531.88,
+            476.08,
+            542.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 3.",
+          "bbox": [
+            105.85,
+            613.29,
+            157.39,
+            624.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Particles hopping to the left with probability t and to the right with",
+          "bbox": [
+            169.13,
+            615.67,
+            501.86,
+            626.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "probability s, conditioned to not intersect.",
+          "bbox": [
+            105.85,
+            628.62,
+            308.37,
+            639.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Then, Theorem 2.4 shows a bound of O(log n",
+          "bbox": [
+            81.93,
+            660.09,
+            294.59,
+            673.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "n ) on the 1-Wasserstein distance between the law of",
+          "bbox": [
+            283.28,
+            662.72,
+            537.69,
+            677.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the positions of the particles after rescaling and the distribution of k non-intersecting Brownian",
+          "bbox": [
+            69.98,
+            675.68,
+            537.69,
+            686.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "motions on a circle conditioned to not intersect each other.",
+          "bbox": [
+            69.98,
+            688.63,
+            352.24,
+            699.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

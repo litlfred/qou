@@ -6,7 +6,7 @@ corrections to the nuclear binding energy arise from the
 Skein-polynomial factorization of the multi-nucleon link into
 closed sub-links (one per closed shell).
 
--- Ref: [manuscript]
+-- Ref: [leitner2026]
 Per `AGENTS.md §3b-cond`, opaque Prop + class field + sorry
 instance. Algebraic tier only — the numerical match to observed
 shell-correction energies belongs to a future Archimedean tier
@@ -14,8 +14,8 @@ shell-correction energies belongs to a future Archimedean tier
 
 ## References
 
-- `[manuscript]` `conj:skein-shell-correction`
-- `[manuscript]` `rem:elliptic-stability-locus`
+- `[leitner2026]` `conj:skein-shell-correction`
+- `[leitner2026]` `rem:elliptic-stability-locus`
 -/
 
 namespace QOU.SkeinShellCorrection

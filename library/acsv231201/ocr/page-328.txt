@@ -1,0 +1,46 @@
+310 Multiple point asymptotics
+
+[1/2,2], since the lognormal cone at p is spanned by the vectors (2, 1) and
+(1, 2) with slopes 1/2 and 2.
+
+When (r,s) lies in the open cone defined by 2 € (1/2,2), the exponen-
+tial contributions R; and R2 can be bounded below | as they are increasing
+functions of A. Thus, Theorem 10.25 with detly = 1/3 implies that when
+1/2<A<2,
+
+3(r — 2s)?! (5 — 2ny™!
+ars (a-D\b_-D!
+
+Note that the boundary directions 2 € {1/2,2} are not generic and so The-
+orem 10.25 does not apply. In these cases p; and pp are distinct, but one of
+them coincides with p and the other corresponds to an exponentially decay-
+ing contribution. We deal with this boundary case in Example 10.66 via the
+surgery method. It is also possible for A to approach the boundary of the inter-
+val rather than being constant, and in this case the analysis of asymptotics is
+more delicate — see Section 13.2 for a brief discussion. 4
+
+Example 10.28 (queueing partition function). Let a, b,c, and d be positive real
+constants, and consider the partition generating function
+
+exp(x+y)
+
+FOy) = (1 - ax - by)(1 - cx - dy)
+
+for a closed multi-class queueing network with one infinite server [BM93;
+Kog02]. The most interesting case in applications occurs, without loss of gen-
+erality, when a > c and b < d, whence D = ad—bc > 0. The two linear divisors
+intersect in the positive real quadrant at the point p = (x0, yo) = (& ; a),
+which is a critical transverse multiple point. In the main diagonal direction,
+there are also critical points at (1/2a, 1/2b) and (1/2c, 1/2d), contributing ex-
+ponential growth rates of 4ab and 4cd; the first of these coincides with the
+double point p if and only if ad + bc — 2ab = 0, and the second if and only if
+ad + bc — 2cd = 0. Thus, if we consider the case where the two points listed
+above are distinct and each different from the double point, the calculation
+
+(ad — bc)’ - 4ab(a - c)(d — b) = [a(d -— b) + (a — &) FP — 4ab(a - c)(d - b)
+= [a(d - b) - b(a- oP
+= [ad + bc - 2abP > 0,
+and an analogous one with 4cd in place of 4ab, shows that the double point
+
+has larger exponential growth rate than either of the smooth points. Leading
+asymptotics are determined by (10.5) throughout the cone of directions (7, s)

@@ -1,0 +1,55 @@
+Invariants in Low-Dimensional Topology and Knot Theory 49
+
+called Kato surface (a known minimal class VII surface). Xo does not contain
+any effective divisor (irreducible or not) in the classes e;. A natural question is:
+What happens with the exceptional curves E;, as t + 0? Why do they vanish?
+The answer is: Explosion of area. The area of E; 4 tends to infinity as t + 0! A
+more sophisticated answer is given in a recent paper with G. Dloussky: “Infinite
+bubbling”.
+
+About Kato surfaces: they are the known minimal class VII surfaces with b2 >
+0. Any Kato is a deformation of blown up Hopf surfaces and has (intriguing) bo
+rational curves. So the total number of rational curves is constant in the known
+deformations, but the classes which are represented by these curves are not. Curves
+appear in classes with negative expected dimension... and we have no tools to
+count all rational curves in all possible homology classes (including those with
+negative GW expected dimension).
+
+2. Class VII surfaces (not classified yet) VII > VII’° 5 Kato surfaces (the
+known surfaces in the class).
+
+Conjecture 1. If X € vire>9 then X has bz rational curves. This would imply
+
+that X is Kato, so it would complete classification. It is equivalent to the GSS
+conjecture.
+
+Conjecture 2. If X € vire>° then X has a cycle of rational curves. This would
+imply that X is a deformation of blown up Hopf surfaces, so it would complete
+ication up to deformation equivalence.
+
+class
+
+3. Using Donaldson theory: E Hermitian 2-bundle D := det(£) fix a € A(D).
+
+Put MASP(B) := {A € Aq(E) |(Fa)g = 0}/T(SU(B)). The obvious pimorphism
+p: Hi(M,Z) -+ {+1} defines a flat line bundle Ly. Important @L, defines an
+involution on MASP(E): its fixed points are twisted reductions (whose pull-back
+on the double cover M p associated with p are split) and its quotient is the usual
+moduli space of PU(2) instantons on Pp.
+Example: b = 2. Take E with co(E) = 0, ci(E) = e1 +e. One has —pi(Pr) =
+A(E) = 4c2(E) — c{(E) = 2 < 3, so the corresponding moduli space is compact.
+It contains two circles of reductions corresponding to the topological splittings
+E= Lo ® Leyte., E = Le, @ L-,. Any circle C; has a neighborhood which is a
+fibration over C; with fibre cone over P! (= D*) so smooth! If 7(M) ~ Z, one
+can count also the twisted reductions and gets two isolated twisted reductions.
+For generic metric one gets a smooth 4-manifold. Its signature oy := o(M) is a
+C*-invariant of M.
+
+We will prove: If M is the underlying differentiable manifold of an unknown
+minimal class VII surface with bp = 2 then M ~ S*, and using this fact, we will
+prove Conjecture 2 for by = 2. Therefore the moduli space M can be accurately
+described (although the information we have on the base manifold M is very vague)
+using complex geometry. The main tool will be the KH correspondence, relating
+instantons to stable bundles. This correspondence has been used by Donaldson
+to compute Donaldson invariants, so he used complex geometry to solve gauge
+

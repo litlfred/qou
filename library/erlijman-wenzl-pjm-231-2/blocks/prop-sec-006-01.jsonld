@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-006-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 36,
+  "pageEnd": 40,
+  "text": "prop-sec-006-01.md",
+  "derivedFrom": "library/erlijman-wenzl-pjm-231-2/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/erlijman-wenzl-pjm-231-2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.1",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-006-6-examples.md (p. 36-40)",
+    "claim_id": "erlijman-wenzl-pjm-231-2#proposition:6.1",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,48 @@
+2.2. Character twists and convolution 27
+
+by [75, prop. 9.2]. It remains to deal with R = Z/nZ when n = p’ for some
+integer r € N. In that case H!(X,Z/nZ) = H'(X,W,)" by [95, prop. 13],
+and our claim then follows by taking Frobenius invariants and using the
+isomorphism H!(X x X,W,) = H!(X,W,) © H!(X,W,) of [98, p. 136].
+
+Now, using [75, rem. 15.5] for R = Z; and [95, p. 50] for R = Z/nZ we
+have in all cases a natural identification
+
+H!(X,R) = Hom(m(X,0),R),
+
+where in the étale setting homomorphisms are required to be continuous. If
+we write the group structure on fundamental groups additively, it follows
+that
+
+dy: ™%(X,0) x m(X,0) = m(X x X,0) — m(X,0)
+
+is the addition morphism (x,y) > x+y. For w € Hom(m(X,0),R) this
+implies y(a.(x,y)) = W(x+y) = YQ) + Wy), Le. yoa. = yHy as an
+additive character on 1 (X,0) x 2(X,0) = m(X x X,0). For multiplicative
+characters Y : 1 (X,0) + A* this implies
+
+Lax%y)) = Xx+y)=X)-X(y), Le. You, = xHyx.
+
+Indeed, for A C C one has Hom(7m(X,0),R) @z C* = Hom(m(X,0),C*)
+taking R = Z. For A C Q, any multiplicative character y takes values in
+E* ~Z~x F* x U, where F is the residue field of a finite extension field E
+of Q; and U is its group of 1-units. By continuity we have ¥ = Yr - Xu for
+certain characters %p and Yy with values in F* resp. U. The character yy
+can be handled as above, and the discussion for the character 7 is covered
+by the case R = Z/nZ with n = #F*.
+
+For the local system L = Ly defined by a character ¥ : 2;(X,0) + A*
+this gives an isomorphism of local systems on X x X
+
+g: a*L —> LRL
+
+which is uniquely determined up to multiplication by an scalar in A*. In
+what follows, we fix a choice of @ once and for all. The choice of @ will
+not matter for the commutativity of the diagrams below, as long as we use
+the same @ consistently. However, we remark that the datum of a tensor
+functor consists not only of the underlying functor but also comprises the
+isomorphisms that describe the compatibility of the functor with the tensor
+product. In this sense, different choices of @ will lead to different (though
+of course isomorphic) tensor functors. For us, it will be most convenient
+to fix a trivialization A : Lo = A of the stalk Lo at the origin 0 of X, and to
+require that the stalk morphism @p : a*L(o,.9) —> (LEIL) (0.9) = Lo @a Lo at

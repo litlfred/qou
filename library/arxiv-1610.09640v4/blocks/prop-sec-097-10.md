@@ -1,0 +1,1 @@
+Let A and B be DG rings, F : D(A) →D(B) an equivalence of triangulated categories, E ⊆D(A) a full triangulated subcategory that’s closed under inﬁnite direct sums, and L ∈D(A). (1) L is a compact object relative to E if and only if F(L) is a compact object relative to F(E). (2) L is a generator relative to E if and only if F(L) is a generator relative to F(E).

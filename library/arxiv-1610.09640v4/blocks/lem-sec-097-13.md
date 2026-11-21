@@ -1,0 +1,1 @@
+Let A and B be DG rings, let E be a full triangulated subcategory of D(A) which is closed under inﬁnite direct sums and isomorphisms, and let G : D(B) →D(A) be a triangulated functor that commutes with inﬁnite direct sums. Assume that G(B) ∈E. Then the essential image of G is contained in E.

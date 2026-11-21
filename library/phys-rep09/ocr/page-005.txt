@@ -1,0 +1,77 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 155
+
+But important as it certainly was, Magnus’ paper left some problems, at least partially, open:
+
+e First, for what values of t and for what operators A does Eq. (4) admit a true exponential solution? This, we call the
+existence problem.
+
+e Second, for what values of t and for what linear operators A does the series in Eq. (6) converge? This we describe as the
+convergence problem. We want to emphasize that, although related, these are two different problems. To see why, think
+of the scalar equation y’ = y? with y(0) = 1. Its solution y(t) = (1 — t)~! exists for t 4 1, but its form in power series
+y(t) = yo t" converges only for |t| < 1.
+
+e Third, how does one construct higher order terms 2;(t),k > 3, in the series? Moreover, is there a closed-form expression
+for 2,(t)?
+
+e Fourth, how does one calculate in an efficient way exp 2!%!, where Q!N! = ae Q(t) is a truncation of the ME?
+
+All these questions, and many others, will be dealt with in the rest of the paper. But before entering that analysis, we
+think it is interesting to present a view, however brief, from the historical perspective of the half-century of developments
+on the Magnus series. Needless to say, we by no means try to present a detailed and exhaustive chronological account of
+the many approaches followed by authors from very different disciplines. To minimize duplication with later sections, we
+simply mention some representative samples, so that the reader can understand the evolution of the field.
+
+Including some precedents, and with a (as undeniable as unavoidable) dose of arbitrariness, we may distinguish four
+periods in the history of our topic:
+
+(1) Before 1953. The problem which ME solves has a centennial history dating back at least to the work of Peano, by the
+end of 19th century, and Baker, at the beginning of the 20th (for references to the original papers see e.g. [8]). They
+combine the theory of differential equations with an algebraic formulation. Intimately related to these treatments from
+the very beginning, is the study of the so called Baker-Campbell-Hausdorff (or BCH formula for short) [9-11] which
+gives C in terms of A, B and their multiple nested commutators when expressing exp(A) exp(B) as exp(C). This topic
+has a long history in its own right, and will also be discussed in Section 2. As one of its early hallmarks, we quote [12].
+In Physics literature, the interest in the problem posed by Eq. (4) was very much revived with the advent of Quantum
+Electrodynamics (QED). The works of Dyson [13] and, in particular, Feynman [6] in the late forties and early fifties, are
+worth mentioning here.
+
+1953-1970. We have quoted as the ‘birth certificate’ of ME, the paper [4] by Magnus in 1954. This is not strictly true:
+there is a Research Report [14] dated June 1953 which differs from the published paper in the title and in a few minor
+details, and which should in fact be taken as a preliminary draft of it. In both publications, the result summarized above
+on ME appears, in almost identical words. The work of Pechukas and Light [15] gave, for the first time, a more specific
+analysis of the problem of convergence than the rather vague considerations in Magnus’ paper. Wei and Norman [16,
+17] did the same for the existence problem. Robinson, to the best of our knowledge, seems to have been the first to apply
+ME to a physical problem [18]. Special mention in this period should be given to a paper by Wilcox [19], in which useful
+mathematical tools are given, and ME is presented together with other algebraic treatments of Eq. (4), in particular
+Fer’s infinite product expansion [20]. Also worth mentioning here, is the first application of ME as a numerical tool for
+integrating the time-independent Schrédinger equation for potential scattering, by Chang and Light [21].
+
+(3) 1971-1990. During these years, ME was consolidated on different fronts. It was successfully applied to a wide spectrum
+of fields in Physics and Chemistry: from atomic [22] and molecular [23] Physics to Nuclear Magnetic Resonance
+(NMR) [24,25] to Quantum Electrodynamics [26] and elementary particle Physics [27]. A number of case studies also
+helped to clarify its mathematical structure, see for example [28]. The construction of higher order terms was approached
+from different angles. The intrinsic and growing complexity of ME allows for different schemes. One which has shown
+itself very useful in tackling other questions like the convergence problem, was the recurrent scheme by Klarsfeld and
+Oteo [29].
+
+Since 1991. The last decade of the 20th century witnessed a renewed interest in ME, which still continues now. It has
+followed different lines. Concerning the basic problems of existence and convergence of ME, there has been definite
+progress [30-33]. ME has also been adapted for specific types of equations: Floquet theory when A(t) is a periodic
+function [34], stochastic differential equations [35] or equations of the form Z’ = AZ — ZB [36]. Special mention should
+be made of the new field, open in this most recent period, that uses Magnus’ scheme to build novel algorithms [37]
+for the numerical integration of differential equations within the widest field of geometric integration [38]. After
+optimization [39,40], these integrators have proved to be highly competitive.
+
+(2
+
+(4
+
+As proof of the persistent impact the 1954 paper by Magnus has had in scientific literature, we present in Figs. 1 and 2, the
+number of citations per year and the cumulative number of citations, respectively, as December 2007 with data taken from
+ISI Web of Science. The original paper appears about 750 times of which, roughly, 50, 320 and 380 correspond, respectively,
+to each of the last three periods we have considered. The enduring interest in that seminal paper is clear from the figures.
+
+The presentation of this report is organized as follows. In the remainder of this section, we include some mathematical
+tools and notations that will be used time and again in our treatment. In Section 2 we formally introduce the Magnus
+expansion, study its main features and thoroughly analyze the convergence issue. Next, in Section 3 several generalizations
+of the Magnus expansion are reviewed, with special emphasis in its application to general nonlinear differential equations.
+In order to illustrate the main properties of ME, in Section 4 we consider simple examples for which the computations

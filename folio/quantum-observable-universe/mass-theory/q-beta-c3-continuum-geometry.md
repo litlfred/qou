@@ -16,7 +16,7 @@ The critical saddle point of the continuous action sits at $\theta = \pi/3$, whe
 
 ## The asymptotic bound (scope-limited)
 
-The full non-perturbative Kashaev invariant (calculated via high-precision [Borel–Padé extrapolation](#def:ecalle-borel-resummation) across $N \in [1000, 2050]$) pins the topological action of the geometric envelope:
+The full non-perturbative Kashaev invariant (calculated via high-precision Borel–Padé extrapolation across $N \in [1000, 2050]$) pins the topological action of the geometric envelope:
 $$ A = \frac{\text{Vol}(4_1)}{\pi} \approx 0.6461318 $$
 
 The candidate identification

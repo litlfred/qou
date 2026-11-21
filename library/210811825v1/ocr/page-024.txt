@@ -1,0 +1,51 @@
+Theorem 1.20 (Rayleigh’s theorem) Let S be a closed and connected Riemann sur-
+face, Q CS be a domain with compact closure and non-empty piecewise smooth boundary.
+
+Consider a fixed eigenvalue problem on Q with eigenvalues
+Ay < Ag <..-
+
+repeated according to multiplicity. For any 0 4 f € W'?(Q) in the case when we consider
+a closed or Neumann problem, and0 4 f € Wy?(Q) when we consider a Dirichlet
+
+problem,
+
+with equality if and only if f eigenfunction corresponding to 1. The object on the right
+is called the Rayleigh quotient, and will be denoted R(f).
+
+We can use Rayleigh’s quotient to characterize A; for any k. In particular, we have
+
+the following pair of theorems, taken from [6]:
+
+Theorem 1.21 (Max-min) Let M be a smooth, connected, compact manifold, possibly
+with boundary OM. For the Neumann eigenvalue problem on M, or closed eigenvalue
+
+problem where OM = 0, we have
+Me = sup inf{R(f) |\f #0, f L Vid,
+k
+
+where V;, runs through the k-dimensional subspaces of W'?(M). We consider the
+(k — 1)-dimensional subspaces of Wo?(M) for the Dirichlet eigenvalue problem on M.
+
+Theorem 1.22 (Min-max) Let M be as above. For the Neumann eigenvalue problem
+
+on M, or closed eigenvalue problem where OM =, we have
+
+Ac = infsup{R(f)| fF #0. f € Vib.
+
+where V;, runs through the (k + 1)-dimensional subspaces of W1?(M). We consider the
+
+k-dimensional subspaces of Wo?(M) for the Dirichlet eigenvalue problem on M.
+
+Remark 1.23 In this work, we use Theorem 1.22 in Section 3.3 to produce an upper
+
+bound on the second positive eigenvalue of the Bolza surface. We do not actually use its
+
+sister theorem at any point, but include it for completion.
+
+The eigenvalues in the spectrum of the Laplacian on a compact Riemann surface are
+known to have finite multiplicity; it is a reasonable question to ask what this multiplicity
+is, and and whether it is possible to bound_the oral for a given eigenvalue ei-
+
+ther from below or above. We will see in Se the multiplicities of a compact
+
+14

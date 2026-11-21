@@ -7,10 +7,11 @@ section_number: 2.3
 pages: 11-13
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
-doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
-latex_coverage_ratio: 0.951
+latex_coverage_ratio: 1.0
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume"
 ---
 So far, we have considered two continuous deformations of the volume conjecture, in $u$ and $\hbar$, as drawn schematically in Figure [1](#fig:uh){reference-type="ref" reference="fig:uh"}. In addition, there are two discrete generalizations that we can make.
 

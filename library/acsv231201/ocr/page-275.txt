@@ -1,0 +1,45 @@
+9.2 The method of residue forms 257
+
+Definition 9.20 (strong torality). We say Q satisfies the strong torality hy-
+pothesis on the torus T(w) if Q(z) = 0 and |z,| = |w,| for 1 < j < d—1 implies
+that |zy| = |wal.
+
+Exercise 9.6. Suppose that the function Q(x, y) = a+ bx +cy + dxy is bilinear.
+What conditions on the constants a,b, c,d are equivalent to strong torality of
+
+Q?
+
+In the following proposition g is the multivalued function solving for zy as a
+function of z°; the number of values, counted with multiplicities, is the degree
+m of zq in Q, except on a lower dimensional set where two values coincide.
+The multivalued integrand should be interpreted as a sum over all m values.
+
+Corollary 9.21 (reduction under strong torality). Suppose w satisfies all of the
+hypotheses of Theorem 9.5 except that instead of w being finitely minimal, it
+is minimal and Q satisfies the strong torality hypothesis on T(w). If all poles
+of F on T(w) are simple (i.e., p = 1) then
+
+a=(z rf yn eye
+Noni Tw’) 8 Zz”
+
+where ¥ is given by (9.13).
+
+Proof This time we may take C, to be the circle of radius of p — 6 and C2 to
+be the circle of radius p + 6 for any 6 € (0,p). The inner integral will be the
+sum of simple residues at points g(z°) for any z° and the proof is completed
+the same way as Theorem 9.17. ia)
+
+In this case dimension is reduced by one without localizing. The localization
+occurs when we apply the multivariate saddle point results of Chapter 5, which
+implies that this (d — 1)-dimensional integral is determined by the behavior of
+g and V near the critical points on T(w).
+
+Corollary 9.22. Suppose w satisfies all of the hypotheses of Theorem 9.5 ex-
+cept that instead of w being finitely minimal, Q satisfies the torality hypothesis
+on T(w). Then the conclusions of Theorem 9.5 still hold.
+
+9.2 The method of residue forms
+
+In this section we use the homological framework of previous chapters, to-
+gether with the appendices, to prove Theorem 9.12. For convenience, we begin
+by naming the minimality property assumed in Theorem 9.12.

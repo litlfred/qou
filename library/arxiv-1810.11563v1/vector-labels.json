@@ -1,0 +1,7239 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1810.11563v1",
+  "pages": [
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 9,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1 is a schematic representation of a 2-qubit gate."
+      ],
+      "labels": [
+        {
+          "text": "The volume of an epsilon-ball of dimension N 2 −1 is",
+          "bbox": [
+            72.0,
+            85.38,
+            344.08,
+            101.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "N2−1",
+          "bbox": [
+            293.89,
+            111.68,
+            313.88,
+            120.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            285.63,
+            117.29,
+            292.26,
+            129.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            302.06,
+            120.68,
+            305.71,
+            126.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "\u0000 N2−1",
+          "bbox": [
+            281.03,
+            128.32,
+            310.24,
+            145.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            311.44,
+            133.8,
+            316.92,
+            145.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            316.92,
+            134.89,
+            320.17,
+            146.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            296.86,
+            142.13,
+            301.09,
+            150.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Using Stirling’s formula, and identifying the number of unitary operatos with the number",
+          "bbox": [
+            72.0,
+            180.25,
+            529.26,
+            192.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of epsilon-balls in SU(N)",
+          "bbox": [
+            72.0,
+            197.82,
+            202.28,
+            209.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013 N2",
+          "bbox": [
+            339.03,
+            220.29,
+            359.11,
+            239.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0012N",
+          "bbox": [
+            317.22,
+            227.31,
+            336.59,
+            239.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            352.49,
+            229.18,
+            356.14,
+            235.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "≈",
+          "bbox": [
+            297.96,
+            235.41,
+            307.26,
+            247.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "#unitaries",
+          "bbox": [
+            229.69,
+            235.57,
+            288.0,
+            247.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ϵ2",
+          "bbox": [
+            327.8,
+            243.43,
+            336.76,
+            255.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u00134K/2",
+          "bbox": [
+            342.47,
+            262.88,
+            371.01,
+            279.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI6",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u00122K",
+          "bbox": [
+            317.22,
+            266.43,
+            340.21,
+            279.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            298.05,
+            275.74,
+            307.16,
+            287.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(6.13)",
+          "bbox": [
+            499.29,
+            275.74,
+            529.22,
+            287.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ϵ2",
+          "bbox": [
+            329.51,
+            283.6,
+            338.47,
+            295.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Taking the logarithm,",
+          "bbox": [
+            72.0,
+            316.32,
+            183.89,
+            328.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "log (#unitaries) ≈4K",
+          "bbox": [
+            196.35,
+            338.17,
+            311.0,
+            359.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 K log 2 + 4K log 1",
+          "bbox": [
+            302.11,
+            339.39,
+            403.66,
+            367.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(6.14)",
+          "bbox": [
+            499.29,
+            347.48,
+            529.22,
+            359.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ϵ",
+          "bbox": [
+            398.37,
+            355.68,
+            403.09,
+            367.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "which is comparable to 5.11. Again, we see the strong exponential dependence on K and",
+          "bbox": [
+            72.0,
+            384.97,
+            529.21,
+            396.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the weak logarithmic dependence on ϵ. The log 1",
+          "bbox": [
+            72.0,
+            400.94,
+            324.14,
+            414.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ϵ term is multiplied by the dimension of",
+          "bbox": [
+            320.31,
+            402.53,
+            529.2,
+            418.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the space.",
+          "bbox": [
+            72.0,
+            420.1,
+            122.79,
+            432.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Exploring SU(2K)",
+          "bbox": [
+            101.06,
+            453.78,
+            246.02,
+            473.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMMI12",
+            "CMR17"
+          ],
+          "sizes": [
+            11.96,
+            17.22
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            72.0,
+            455.92,
+            81.69,
+            473.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "We’ve seen that the space of unitary operators is gigantic. Now I want to discuss how",
+          "bbox": [
+            72.0,
+            489.43,
+            529.25,
+            501.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to move through it. I’ve already hinted that we don’t make big complexity jumps, but",
+          "bbox": [
+            72.0,
+            507.0,
+            529.26,
+            518.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "instead move in little steps called gates. A sequence of gates is called a circuit although it",
+          "bbox": [
+            72.0,
+            524.56,
+            529.24,
+            536.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "has nothing to do with periodicity. It’s just a name.",
+          "bbox": [
+            72.0,
+            542.13,
+            339.19,
+            554.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Deﬁnition:",
+          "bbox": [
+            72.0,
+            571.64,
+            134.05,
+            583.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A k-local gate is a nontrivial k-qubit unitary operator chosen from some allowed uni-",
+          "bbox": [
+            89.56,
+            589.21,
+            529.27,
+            601.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "versal gate set. We assume that if g is in allowed set, so is g†.",
+          "bbox": [
+            72.0,
+            605.45,
+            388.32,
+            618.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1 is a schematic representation of a 2-qubit gate.",
+          "bbox": [
+            89.56,
+            624.34,
+            376.42,
+            636.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 4: Standard circuit architecture. Note that in each step the gates all commute because they act on non-overlapping qubits."
+      ],
+      "labels": [
+        {
+          "text": "Deﬁnition A k-local all-to-all circuit is one which is k-local but permits any group of",
+          "bbox": [
+            89.56,
+            89.87,
+            529.22,
+            101.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "k qubits to interact. Figure 2 is 2-local and all-to-all.",
+          "bbox": [
+            72.0,
+            107.44,
+            348.72,
+            119.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In ﬁgure 2 the gates act in series, one gate at a time, but it is more eﬃcient to allow",
+          "bbox": [
+            89.56,
+            125.0,
+            529.26,
+            136.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "parallel action of gates. The standard k-local all-to-all circuit architecture is shown in",
+          "bbox": [
+            72.0,
+            142.57,
+            529.25,
+            154.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ﬁgure 4.",
+          "bbox": [
+            72.0,
+            160.13,
+            113.63,
+            172.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 4: Standard circuit architecture. Note that in each step the gates all commute",
+          "bbox": [
+            72.0,
+            302.59,
+            529.25,
+            314.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "because they act on non-overlapping qubits.",
+          "bbox": [
+            72.0,
+            317.04,
+            297.82,
+            328.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The rule is that at each step the qubits are grouped into pairs and each pair interacts",
+          "bbox": [
+            89.56,
+            365.84,
+            529.25,
+            377.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "by means of a two-qubit gate.",
+          "bbox": [
+            72.0,
+            383.4,
+            224.92,
+            395.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We imagine that such a circuit is equipped with a clock, and with each tick of the clock",
+          "bbox": [
+            89.56,
+            400.96,
+            529.24,
+            412.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "K/2 gates act. We’ll call this a “step.” The number of steps in a circuit is called its depth",
+          "bbox": [
+            72.0,
+            418.53,
+            529.23,
+            430.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "D. The depth of the circuit in ﬁgure 4 is D = 5. The number of gates in the circuit is KD",
+          "bbox": [
+            72.0,
+            434.5,
+            524.52,
+            448.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 .",
+          "bbox": [
+            515.19,
+            436.09,
+            529.2,
+            452.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Between steps the qubits may be permuted so that any pair can potentially interact. A",
+          "bbox": [
+            89.56,
+            453.66,
+            529.24,
+            465.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "circuit of this type can be called k-local (2-local in ﬁgure 4) and all-to-all. The meaning of",
+          "bbox": [
+            72.0,
+            471.22,
+            529.25,
+            483.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "all-to-all is that any pair of qubits can potentially interact. Note that in a given time-step",
+          "bbox": [
+            72.0,
+            488.79,
+            529.27,
+            500.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the diﬀerent gates commute because they act on non-overlapping qubit pairs .",
+          "bbox": [
+            72.0,
+            506.35,
+            472.51,
+            518.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "If we measure time τ in units of steps then the number of gates that act per unit time",
+          "bbox": [
+            89.56,
+            523.91,
+            529.22,
+            535.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is K/2.",
+          "bbox": [
+            72.0,
+            541.48,
+            108.9,
+            553.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A given circuit prepares a particular unitary operator U. Preparing U by a series of",
+          "bbox": [
+            89.56,
+            571.0,
+            529.21,
+            582.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "steps can be viewed as a discrete motion of a ﬁctitious classical particle, called the auxiliary",
+          "bbox": [
+            72.0,
+            588.56,
+            529.24,
+            600.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "system A in Brown-Susskind https://arxiv.org/pdf/1701.01107.pdf.",
+          "bbox": [
+            72.0,
+            605.97,
+            448.46,
+            618.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10",
+            "CMTT12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The auxiliary system represents the motion of U(t) on SU(N) as time unfolds. The",
+          "bbox": [
+            89.56,
+            623.69,
+            529.2,
+            635.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "classical particle starts at the identity operator I and ends at U.",
+          "bbox": [
+            72.0,
+            641.25,
+            403.04,
+            653.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 7: Vertex with d = 8."
+      ],
+      "labels": [
+        {
+          "text": "Figure 7: Vertex with d = 8.",
+          "bbox": [
+            227.5,
+            359.11,
+            373.71,
+            371.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The number of branches or edges d at a vertex is called the degree of that vertex. In",
+          "bbox": [
+            89.56,
+            407.91,
+            529.23,
+            419.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "K!",
+          "bbox": [
+            340.61,
+            423.88,
+            350.67,
+            431.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "our construction every internal vertex has degree",
+          "bbox": [
+            72.0,
+            425.48,
+            327.49,
+            437.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(K/2)!. A graph in which every vertex",
+          "bbox": [
+            333.32,
+            425.48,
+            529.21,
+            440.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "has degree d is called d-regular. But so far the circuit graph is not d-regular because the",
+          "bbox": [
+            72.0,
+            443.04,
+            529.22,
+            455.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "outer boundary vertices have a single edge. The leaves of the graph are unitary operators",
+          "bbox": [
+            72.0,
+            460.6,
+            529.27,
+            472.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in SU(2K).",
+          "bbox": [
+            72.0,
+            476.94,
+            129.16,
+            490.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Now let’s grow the circuit depth by adding another step.",
+          "bbox": [
+            89.56,
+            507.69,
+            396.77,
+            519.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "I’m going to make one",
+          "bbox": [
+            407.33,
+            507.69,
+            529.26,
+            519.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "restriction of a technical nature.",
+          "bbox": [
+            72.0,
+            525.25,
+            243.49,
+            537.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "For large K it makes no diﬀerence but it simpliﬁes",
+          "bbox": [
+            253.84,
+            525.25,
+            529.19,
+            537.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "things. I will assume that when I add a step the choice of pairings is not the same as in",
+          "bbox": [
+            72.0,
+            542.82,
+            529.23,
+            554.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the previous step. This implies that the next layer of the tree has",
+          "bbox": [
+            72.0,
+            560.38,
+            408.56,
+            572.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "K!",
+          "bbox": [
+            283.33,
+            581.97,
+            297.4,
+            593.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(K/2)! −1",
+          "bbox": [
+            273.25,
+            589.9,
+            329.15,
+            610.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "new branches. This is shown in ﬁgure 8",
+          "bbox": [
+            72.0,
+            630.47,
+            275.17,
+            642.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "17",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 8: Regular tree with degree 8, depth 2."
+      ],
+      "labels": [
+        {
+          "text": "Figure 8: Regular tree with degree 8, depth 2.",
+          "bbox": [
+            182.24,
+            357.67,
+            418.99,
+            369.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Now comes an important assumption which underlies everything I will say.",
+          "bbox": [
+            89.56,
+            406.47,
+            493.01,
+            418.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Each",
+          "bbox": [
+            504.03,
+            406.47,
+            529.24,
+            418.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "endpoint (leaf) of the tree represents a unitary operator. I will assume that the probability",
+          "bbox": [
+            72.0,
+            424.04,
+            529.26,
+            435.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of two leaves being the same unitary is vanishingly small.",
+          "bbox": [
+            72.0,
+            441.6,
+            379.48,
+            453.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Basically the reason is the",
+          "bbox": [
+            389.06,
+            441.6,
+            529.24,
+            453.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "extremely high dimension of the space of unitaries.",
+          "bbox": [
+            72.0,
+            459.16,
+            345.87,
+            471.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "If two leaves represent the same",
+          "bbox": [
+            356.59,
+            459.16,
+            529.21,
+            471.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "unitary to within ϵ I will say that a collision occurred. My provisional assumption is that",
+          "bbox": [
+            72.0,
+            476.73,
+            529.26,
+            488.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "collisions are so rare that they can be ignored.",
+          "bbox": [
+            72.0,
+            494.29,
+            309.61,
+            506.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This no-collision assumption must eventually break down as the tree grows outward",
+          "bbox": [
+            89.56,
+            511.86,
+            529.25,
+            523.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and we will calculate when that happens. But for now let’s ignore collisions.",
+          "bbox": [
+            72.0,
+            529.42,
+            463.62,
+            541.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Assuming no-collisions, the number of unitaries that have been reached at depth D is,",
+          "bbox": [
+            89.56,
+            546.98,
+            529.2,
+            558.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013 DK",
+          "bbox": [
+            354.21,
+            584.26,
+            376.5,
+            600.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI6"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "\u00122K",
+          "bbox": [
+            326.35,
+            588.77,
+            352.16,
+            600.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            368.73,
+            590.65,
+            372.39,
+            596.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "#unitaries = dD ≈",
+          "bbox": [
+            222.6,
+            591.94,
+            323.03,
+            608.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(8.23)",
+          "bbox": [
+            499.29,
+            597.03,
+            529.22,
+            608.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            341.97,
+            605.23,
+            347.39,
+            617.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The number of gates in a circuit of depth D is DK/2. Assuming no-collisions, the",
+          "bbox": [
+            89.56,
+            638.28,
+            529.21,
+            650.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "path to each leaf is the minimal path, implying that the number of gates is the complexity.",
+          "bbox": [
+            72.0,
+            655.84,
+            529.25,
+            667.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Thus we can write,",
+          "bbox": [
+            72.0,
+            673.41,
+            169.6,
+            685.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "18",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 10: Two paths collide on the same epsilon-ball."
+      ],
+      "labels": [
+        {
+          "text": "Figure 10: Two paths collide on the same epsilon-ball.",
+          "bbox": [
+            161.25,
+            281.67,
+            439.97,
+            293.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The ﬁgure illustrates the fact that collisions induce loops in the graph. This allows us to",
+          "bbox": [
+            89.56,
+            328.53,
+            529.24,
+            340.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "translate the rarity of collisions into graph-theoretic terms. No collisions at all would mean",
+          "bbox": [
+            72.0,
+            346.1,
+            529.27,
+            358.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "no loops, i.e., exact tree-ness. But as we will see, eventually for very large depth, collisions",
+          "bbox": [
+            72.0,
+            363.66,
+            529.21,
+            375.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "must happen. This means that very large loops must occur. The correct formulation,",
+          "bbox": [
+            72.0,
+            381.23,
+            529.25,
+            393.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "which we will come back to, is that small loops must be absent or very rare.",
+          "bbox": [
+            72.0,
+            398.79,
+            462.89,
+            410.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Since the number of epsilon-regulated unitaries is ﬁnite we will eventually run out of",
+          "bbox": [
+            89.56,
+            426.38,
+            529.22,
+            438.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "room on SU(2K). That happens when the number of leaves (as given by 8.24) is equal to",
+          "bbox": [
+            72.0,
+            442.72,
+            529.25,
+            455.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the total number of epsilon-balls as given in 6.13. This determines the maximum possible",
+          "bbox": [
+            72.0,
+            461.51,
+            529.23,
+            473.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "complexity.",
+          "bbox": [
+            72.0,
+            479.07,
+            129.89,
+            491.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u00134K/2",
+          "bbox": [
+            335.02,
+            516.35,
+            363.56,
+            532.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI6",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013Cmax",
+          "bbox": [
+            265.0,
+            518.04,
+            293.03,
+            532.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u00122K",
+          "bbox": [
+            309.77,
+            519.9,
+            332.76,
+            533.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u00122K",
+          "bbox": [
+            237.14,
+            520.95,
+            262.95,
+            533.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            297.35,
+            529.21,
+            306.46,
+            541.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(8.25)",
+          "bbox": [
+            499.29,
+            529.21,
+            529.22,
+            541.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ϵ2",
+          "bbox": [
+            322.07,
+            537.07,
+            331.02,
+            549.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            252.76,
+            537.41,
+            258.18,
+            549.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "or",
+          "bbox": [
+            72.0,
+            566.7,
+            82.41,
+            578.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u00141",
+          "bbox": [
+            294.2,
+            603.53,
+            307.56,
+            615.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0015",
+          "bbox": [
+            356.04,
+            603.53,
+            362.35,
+            615.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 + | log ϵ|",
+          "bbox": [
+            301.7,
+            603.54,
+            354.84,
+            631.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Cmax = 4K",
+          "bbox": [
+            238.86,
+            609.97,
+            291.14,
+            625.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(8.26)",
+          "bbox": [
+            499.29,
+            611.79,
+            529.22,
+            623.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "log K",
+          "bbox": [
+            325.64,
+            619.99,
+            352.71,
+            631.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Again, strong dependence on K, weak dependence on ϵ. Roughly",
+          "bbox": [
+            72.0,
+            652.37,
+            405.15,
+            664.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Cmax ∼4K.",
+          "bbox": [
+            272.2,
+            688.1,
+            329.0,
+            703.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "21",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 24,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 12: Graph ceases being a tree and doubles back. Since a group-space is homoge- neous the structure must look the same from every vertex. The shortest loops (girth of graph) is of order 4K. Thus the red loop is too short. The loops must look more like the blue loop."
+      ],
+      "labels": [
+        {
+          "text": "But once we reach Cmax the graph can not continue to grow. Collisions occur and loops",
+          "bbox": [
+            72.0,
+            89.72,
+            529.26,
+            103.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "must form. The graph must double back on itself and revisit previously visited epsilon-",
+          "bbox": [
+            72.0,
+            107.44,
+            529.23,
+            119.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "balls8. We show a couple of possible loops that might form in ﬁgure 12.",
+          "bbox": [
+            72.0,
+            123.78,
+            439.33,
+            136.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 12: Graph ceases being a tree and doubles back. Since a group-space is homoge-",
+          "bbox": [
+            72.0,
+            412.49,
+            529.24,
+            424.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "neous the structure must look the same from every vertex. The shortest loops (girth of",
+          "bbox": [
+            72.0,
+            426.93,
+            529.25,
+            438.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "graph) is of order 4K. Thus the red loop is too short. The loops must look more like the",
+          "bbox": [
+            72.0,
+            440.16,
+            529.24,
+            453.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "blue loop.",
+          "bbox": [
+            72.0,
+            455.82,
+            122.4,
+            467.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Now we know that any loop which passes through the central node must be very big,",
+          "bbox": [
+            89.56,
+            504.2,
+            529.25,
+            516.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "namely of length ∼4K. But because the space SU(2K) is a group space, every point on",
+          "bbox": [
+            72.0,
+            520.54,
+            529.23,
+            533.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the graph is the same as every other point. Thus it must be that loops passing through",
+          "bbox": [
+            72.0,
+            539.33,
+            529.26,
+            551.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "any point must be equally long. It is clear from the ﬁgure that loop containing the red",
+          "bbox": [
+            72.0,
+            556.89,
+            529.27,
+            568.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "segment is much shorter and should not occur, but the loop containing the blue segment",
+          "bbox": [
+            72.0,
+            574.46,
+            529.24,
+            586.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is long and may occur.",
+          "bbox": [
+            72.0,
+            592.02,
+            188.17,
+            603.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let me summarize the conjectured properties of circuit graphs generated by iterating one-",
+          "bbox": [
+            72.0,
+            621.12,
+            529.24,
+            633.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "step circuits:",
+          "bbox": [
+            72.0,
+            638.69,
+            137.16,
+            650.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "8If we follow an epsilon ball from the identity it will not in general perfectly coincide with an epsilon",
+          "bbox": [
+            85.46,
+            666.29,
+            529.27,
+            677.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ball after executing a loop. There is a bit of sloppiness but it doesn’t seem to be important. Note that if",
+          "bbox": [
+            72.0,
+            679.52,
+            529.25,
+            689.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ϵ is decreased the maximum complexity increases and the graph becomes bigger.",
+          "bbox": [
+            72.0,
+            691.48,
+            424.01,
+            701.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "23",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 25,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 13: 50-vertex, (almost) regular d = 4 expander. Generated by some AI optimization protocol."
+      ],
+      "labels": [
+        {
+          "text": "1. The degree is the same for all vertices and is given by",
+          "bbox": [
+            86.31,
+            89.87,
+            376.95,
+            101.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013 K",
+          "bbox": [
+            369.19,
+            111.88,
+            384.53,
+            128.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMTI7"
+          ],
+          "sizes": [
+            5.98,
+            11.96
+          ]
+        },
+        {
+          "text": "\u00122K",
+          "bbox": [
+            341.29,
+            116.39,
+            366.25,
+            128.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "K!",
+          "bbox": [
+            298.89,
+            116.56,
+            312.87,
+            128.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            380.09,
+            118.27,
+            383.69,
+            124.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI7"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "(K/2)! ∼",
+          "bbox": [
+            287.61,
+            124.49,
+            337.97,
+            144.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "degree =",
+          "bbox": [
+            238.15,
+            124.65,
+            283.1,
+            136.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            389.07,
+            124.65,
+            392.32,
+            136.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(8.27)",
+          "bbox": [
+            499.28,
+            124.65,
+            529.22,
+            136.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            356.5,
+            132.85,
+            361.88,
+            144.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This is much smaller than the number of vertices. The graph can be said to be",
+          "bbox": [
+            101.26,
+            165.23,
+            529.21,
+            177.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "sparse.",
+          "bbox": [
+            101.26,
+            182.79,
+            135.86,
+            194.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2. The number of vertices in the graph is of order e4K.",
+          "bbox": [
+            86.31,
+            207.84,
+            366.7,
+            222.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3. The greatest distance between vertices (diameter) is Cmax ∼4K. The diameter is",
+          "bbox": [
+            86.31,
+            236.62,
+            529.2,
+            251.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "therefore logarithmic in the number of vertices.",
+          "bbox": [
+            101.26,
+            255.41,
+            343.6,
+            267.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4. Loops of length less than 4K are rare or absent.",
+          "bbox": [
+            86.31,
+            278.6,
+            345.66,
+            294.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "5. The graph is homogenous and from any point looks tree-like out to distances of order",
+          "bbox": [
+            86.31,
+            310.46,
+            529.27,
+            322.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the diameter.",
+          "bbox": [
+            101.26,
+            328.03,
+            169.55,
+            339.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "These properties are very familiar to graph theorists. They are the properties of a",
+          "bbox": [
+            89.56,
+            358.54,
+            529.26,
+            370.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "good expander graph. Graphs of this type are discrete analogs of ﬁniite negatively curved",
+          "bbox": [
+            72.0,
+            376.11,
+            529.25,
+            388.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "geometries such as the hyperbolic plane, with identiﬁcations that render it compact9",
+          "bbox": [
+            72.0,
+            392.45,
+            505.06,
+            405.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 13: 50-vertex, (almost) regular d = 4 expander. Generated by some AI optimization",
+          "bbox": [
+            72.0,
+            596.13,
+            529.23,
+            608.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "protocol.",
+          "bbox": [
+            72.0,
+            610.58,
+            117.21,
+            622.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "9The relation between complexity and such geometries was described in Brown, Susskind and Zhao,",
+          "bbox": [
+            85.46,
+            653.35,
+            529.22,
+            664.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "https://arxiv.org/pdf/1608.02612.pdf.",
+          "bbox": [
+            72.0,
+            666.58,
+            263.06,
+            677.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTT10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "24",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 26,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 14: 120 vertex, regular d = 4 Ramanujan-expander. Quoting Donetti, et al.: “Some remarks on its topological properties are in order. The average distance 3.714 is relatively small (i.e. one reaches any of the 120 nodes starting from any arbitrary origin in less than four steps, on average.” Note: log 120 = 4.78749174278. Not too diﬀerent from 3.714. The authors then go on to say, “The clustering coeﬃcient vanishes, reﬂecting the absence of short loops (triangles), and the minimum loop size is large, equal to 6, and identical for all the nodes. In a nutshell: the network homogeneity is remarkable; all nodes look alike, forming rather intricate, decentralized structure, with delta-peak distributed topological properties.”"
+      ],
+      "labels": [
+        {
+          "text": "Figure 14: 120 vertex, regular d = 4 Ramanujan-expander. Quoting Donetti, et al.: “Some",
+          "bbox": [
+            72.0,
+            259.43,
+            529.27,
+            271.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "remarks on its topological properties are in order. The average distance 3.714 is relatively",
+          "bbox": [
+            72.0,
+            273.88,
+            529.29,
+            285.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "small (i.e. one reaches any of the 120 nodes starting from any arbitrary origin in less than",
+          "bbox": [
+            72.0,
+            288.32,
+            529.29,
+            300.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "four steps, on average.” Note: log 120 = 4.78749174278. Not too diﬀerent from 3.714. The",
+          "bbox": [
+            72.0,
+            302.77,
+            529.28,
+            314.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "authors then go on to say, “The clustering coeﬃcient vanishes, reﬂecting the absence of",
+          "bbox": [
+            72.0,
+            317.21,
+            529.24,
+            329.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "short loops (triangles), and the minimum loop size is large, equal to 6, and identical for",
+          "bbox": [
+            72.0,
+            331.66,
+            529.27,
+            343.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "all the nodes. In a nutshell: the network homogeneity is remarkable; all nodes look alike,",
+          "bbox": [
+            72.0,
+            346.1,
+            529.26,
+            358.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "forming rather intricate, decentralized structure, with delta-peak distributed topological",
+          "bbox": [
+            72.0,
+            360.55,
+            529.26,
+            372.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "properties.”",
+          "bbox": [
+            72.0,
+            375.0,
+            132.23,
+            386.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            72.0,
+            452.77,
+            81.69,
+            469.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "The Second Law of Quantum Complexity",
+          "bbox": [
+            101.06,
+            452.77,
+            452.98,
+            469.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "I’m not sure why complexity theorists never remarked on the similarity of quantum com-",
+          "bbox": [
+            72.0,
+            486.28,
+            529.25,
+            498.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "plexity and classical entropy, or the existence of a second law of complexity10. Just to be",
+          "bbox": [
+            72.0,
+            502.62,
+            529.2,
+            515.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "clear, although ensemble-averaged complexity is a kind of entropy it is NOT conventional",
+          "bbox": [
+            72.0,
+            521.41,
+            529.26,
+            533.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "entropy. The conventional entropy of a system of K qubits is bounded by K log 2, the log-",
+          "bbox": [
+            72.0,
+            538.98,
+            529.21,
+            550.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "arithm of the maximum number of mutually orthogonal vectors in the Hilbert space. By",
+          "bbox": [
+            72.0,
+            556.54,
+            529.26,
+            568.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "contrast the maximum complexity is exponential in K. Maximum complexity ∼4K log 1/ϵ,",
+          "bbox": [
+            72.0,
+            569.77,
+            529.2,
+            586.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the number of ϵ-balls in SU(2K).",
+          "bbox": [
+            72.0,
+            590.44,
+            241.26,
+            603.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The quantity 4K log 1/ϵ does have an interpretation in terms of the entropy of a classical",
+          "bbox": [
+            89.56,
+            604.89,
+            529.24,
+            621.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "auxiliary system A associated with the quantum system of K qubits. We may think of",
+          "bbox": [
+            72.0,
+            626.64,
+            529.22,
+            638.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "10There is a very interesting paper by Zurek in which he argues that that the classical entopy of a system",
+          "bbox": [
+            81.49,
+            654.33,
+            529.23,
+            665.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is the ensemble average of the Kolmogorov algorithmic complexity of states in phase space. [W. Zurek,",
+          "bbox": [
+            72.0,
+            667.56,
+            529.21,
+            677.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Phys. Rev. A 40, 4731 (1989)] The idea is very similar to the connection between quantum-computational-",
+          "bbox": [
+            72.0,
+            679.52,
+            529.23,
+            689.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "complexity and entropy described by Brown et.al in https://arxiv.org/pdf/1701.0110.pdf",
+          "bbox": [
+            72.0,
+            691.48,
+            484.76,
+            701.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTT10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "25",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 39,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 19: One sided AdS black hole foliated by maximal slices. The dark portions of the slices represents the region behind the horizon, i.e., the bridge to nowhere."
+      ],
+      "labels": [
+        {
+          "text": "Figure 19: One sided AdS black hole foliated by maximal slices. The dark portions of the",
+          "bbox": [
+            72.0,
+            365.35,
+            529.25,
+            377.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "slices represents the region behind the horizon, i.e., the bridge to nowhere.",
+          "bbox": [
+            72.0,
+            379.8,
+            453.69,
+            391.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In the one-sided case there is no bounce, only a growth that begins when the horizon",
+          "bbox": [
+            89.56,
+            428.6,
+            529.24,
+            440.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "forms. In the remote past the slices do not penetrate behind the horizon at all, so we",
+          "bbox": [
+            72.0,
+            446.16,
+            529.24,
+            458.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "assign them zero volume. At some time the maximal slice intersects the point at which",
+          "bbox": [
+            72.0,
+            463.73,
+            529.23,
+            475.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the horizon forms at r = 0. From then on the portion of the maximal slice behind the",
+          "bbox": [
+            72.0,
+            481.29,
+            529.23,
+            493.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "horizon grows as a function of anchoring time.",
+          "bbox": [
+            72.0,
+            498.85,
+            309.55,
+            510.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In this one-sided case the black hole is not in perfect thermal equilibrium throughout its",
+          "bbox": [
+            89.56,
+            516.42,
+            529.22,
+            528.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "history. The entropy starts zero or very small, and then quickly saturates at the equilibrium",
+          "bbox": [
+            72.0,
+            533.98,
+            529.26,
+            545.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "value. This takes a very short time13, but the increase of the volume of the dark blue slices",
+          "bbox": [
+            72.0,
+            550.32,
+            529.21,
+            563.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "behind the horizon goes on indeﬁnitely, at least classically. Evidently some feature of the",
+          "bbox": [
+            72.0,
+            569.11,
+            529.24,
+            581.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "quantum state evolves long after the system has come to thermal equilibrium.",
+          "bbox": [
+            72.0,
+            586.67,
+            472.0,
+            598.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "As a matter of terminology, the portion of each slice behind the horizon in ﬁgure 17 is",
+          "bbox": [
+            89.56,
+            604.24,
+            529.26,
+            616.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the instantaneous Einstein-Rosen bridge or wormhole connecting the two horizons. The",
+          "bbox": [
+            72.0,
+            621.8,
+            529.24,
+            633.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "growth phenomenon we are interested in is the growth of the wormhole. In ﬁgures 18 and",
+          "bbox": [
+            72.0,
+            639.37,
+            529.25,
+            651.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "19 there are not two sides to connect, but there is a growing region behind the horizon that",
+          "bbox": [
+            72.0,
+            656.93,
+            529.27,
+            668.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "13About a millisecond for a solar mass black hole.",
+          "bbox": [
+            81.49,
+            684.74,
+            299.17,
+            695.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "38",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 40,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 20: The grey areas are not covered by the maximal-slice foliation."
+      ],
+      "labels": [
+        {
+          "text": "Ying Zhao and I called the “bridge-to-nowhere.” Both the ERB and the bridge-to-nowhere",
+          "bbox": [
+            72.0,
+            89.87,
+            529.23,
+            101.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "grow in similar manner.",
+          "bbox": [
+            72.0,
+            107.44,
+            194.03,
+            119.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "One point to note is that the maximal surfaces do not foliate the entire geometry. As",
+          "bbox": [
+            89.56,
+            125.0,
+            529.26,
+            136.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the anchoring time goes to inﬁnity the maximal surfaces tend to an asymptotic maximal",
+          "bbox": [
+            72.0,
+            142.57,
+            529.27,
+            154.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "surface that lies somewhat below the singularity. Figure 20 shows the regions that are not",
+          "bbox": [
+            72.0,
+            160.13,
+            529.26,
+            172.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "covered by the foliation.",
+          "bbox": [
+            72.0,
+            177.69,
+            195.58,
+            189.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "To reiterate, the important virtue of maximal slicing is that it is deﬁned in a coordinate-",
+          "bbox": [
+            89.56,
+            195.26,
+            529.26,
+            207.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "independent manner.",
+          "bbox": [
+            72.0,
+            212.82,
+            179.96,
+            224.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 20: The grey areas are not covered by the maximal-slice foliation.",
+          "bbox": [
+            113.65,
+            399.28,
+            487.61,
+            411.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "12.1",
+          "bbox": [
+            72.0,
+            449.36,
+            100.72,
+            463.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Properties of Growth",
+          "bbox": [
+            116.86,
+            449.36,
+            268.04,
+            463.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Let’s review some facts about the growth of wormhole volume that follow from the black",
+          "bbox": [
+            72.0,
+            476.51,
+            529.26,
+            488.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "hole geometry. First of all, except for an early transient, lasting about a thermal time, the",
+          "bbox": [
+            72.0,
+            494.08,
+            529.27,
+            506.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "growth is linear with time. In the two-sided case the rate of growth of the volume satisﬁes,",
+          "bbox": [
+            72.0,
+            511.64,
+            529.23,
+            523.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dV (t)",
+          "bbox": [
+            261.2,
+            548.65,
+            290.04,
+            560.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∼ladsAT",
+          "bbox": [
+            294.56,
+            556.58,
+            339.57,
+            569.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(12.34)",
+          "bbox": [
+            493.43,
+            556.73,
+            529.23,
+            568.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dt",
+          "bbox": [
+            270.47,
+            564.93,
+            280.78,
+            576.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "where t is the anchoring time, A is the horizon area, T is the black hole temperature, and",
+          "bbox": [
+            72.0,
+            594.22,
+            529.22,
+            606.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "lads is the AdS length scale. This is not hard to show using the AdS black hole metric but",
+          "bbox": [
+            72.0,
+            611.79,
+            529.23,
+            625.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "an easier argument is just dimensional analysis. In the one-sided case the asymptotic rate",
+          "bbox": [
+            72.0,
+            629.35,
+            529.23,
+            641.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of growth is half that of the two-sided case.",
+          "bbox": [
+            72.0,
+            646.92,
+            294.63,
+            658.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let’s deﬁne a geometric quantity C (yes, we will eventually identify it with complexity,",
+          "bbox": [
+            89.56,
+            664.48,
+            529.21,
+            676.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "39",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 41,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 21"
+      ],
+      "labels": [
+        {
+          "text": "but not yet),",
+          "bbox": [
+            72.0,
+            89.87,
+            137.69,
+            101.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "V",
+          "bbox": [
+            308.47,
+            111.99,
+            315.3,
+            123.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "C ≡",
+          "bbox": [
+            273.82,
+            119.92,
+            295.68,
+            132.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(12.35)",
+          "bbox": [
+            493.43,
+            120.08,
+            529.23,
+            132.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Glads",
+          "bbox": [
+            300.19,
+            128.28,
+            325.68,
+            141.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Then 12.34 gives",
+          "bbox": [
+            72.0,
+            159.3,
+            157.92,
+            171.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dC",
+          "bbox": [
+            275.01,
+            180.88,
+            289.48,
+            192.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dt = A",
+          "bbox": [
+            277.52,
+            180.88,
+            317.47,
+            209.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "GT",
+          "bbox": [
+            308.47,
+            188.97,
+            325.76,
+            209.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(12.36)",
+          "bbox": [
+            493.43,
+            188.97,
+            529.23,
+            200.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and using the Hawking-Bekenstein area-entropy relation",
+          "bbox": [
+            72.0,
+            226.46,
+            360.08,
+            238.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dC",
+          "bbox": [
+            276.88,
+            248.04,
+            291.34,
+            260.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dt = ST",
+          "bbox": [
+            279.38,
+            256.13,
+            323.89,
+            276.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(12.37)",
+          "bbox": [
+            493.43,
+            256.13,
+            529.23,
+            268.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In a little while we will see that this is the expected rate of growth of complexity for a",
+          "bbox": [
+            72.0,
+            293.62,
+            529.23,
+            305.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "circuit with K ∼S qubits.",
+          "bbox": [
+            72.0,
+            311.03,
+            208.5,
+            323.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "12.2",
+          "bbox": [
+            72.0,
+            343.98,
+            100.72,
+            358.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Rindler Time and CV",
+          "bbox": [
+            116.86,
+            343.98,
+            272.07,
+            358.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "The standard architecture for quantum circuits (explained in Lecture I) is illustrated in",
+          "bbox": [
+            72.0,
+            371.13,
+            529.24,
+            383.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ﬁgure 21.",
+          "bbox": [
+            72.0,
+            388.7,
+            119.49,
+            400.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 21",
+          "bbox": [
+            276.3,
+            568.76,
+            324.92,
+            580.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We assume that the circuit comes equipped with a clock, and in each time-step K/2",
+          "bbox": [
+            89.56,
+            617.55,
+            529.21,
+            629.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "gates act. For sub-exponential time the number of gates in a circuit corresponds to the",
+          "bbox": [
+            72.0,
+            635.12,
+            529.25,
+            647.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "40",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 47,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 23: Each infected (blue) qubit infects each each qubit that it interacts with. The epidemic grows until all qubits are infected.",
+        "Figure 24: Uninfected gates cancel with their mirror images."
+      ],
+      "labels": [
+        {
+          "text": "the epidemic is shown in ﬁgure 23.",
+          "bbox": [
+            72.0,
+            89.87,
+            249.36,
+            101.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 23: Each infected (blue) qubit infects each each qubit that it interacts with. The",
+          "bbox": [
+            72.0,
+            221.06,
+            529.23,
+            233.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "epidemic grows until all qubits are infected.",
+          "bbox": [
+            72.0,
+            235.5,
+            295.85,
+            247.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Notice that any gate involving uninfected qubits can cancel a mirror image gate on the",
+          "bbox": [
+            89.56,
+            284.3,
+            529.28,
+            296.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "other side. The result, after canceling all un-infected gates, is shown in ﬁgure 24.",
+          "bbox": [
+            72.0,
+            301.86,
+            487.57,
+            313.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 24: Uninfected gates cancel with their mirror images.",
+          "bbox": [
+            145.51,
+            436.41,
+            455.72,
+            448.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Evidently the minimum number of gates needed to prepare the precursor is less then",
+          "bbox": [
+            89.56,
+            485.21,
+            529.21,
+            497.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the total number of gates in ﬁgure 22. Let us quantitatively estimate it.",
+          "bbox": [
+            72.0,
+            502.77,
+            441.49,
+            514.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Suppose the circuit has evolved to the right by n steps and at that stage the epidemic",
+          "bbox": [
+            89.56,
+            520.33,
+            529.22,
+            532.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "has size s(n). Then the average number of new infections that result in the next step is",
+          "bbox": [
+            72.0,
+            537.9,
+            529.22,
+            549.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "easy to compute. It is given by,",
+          "bbox": [
+            72.0,
+            555.46,
+            233.75,
+            567.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∆s = (K −s)s",
+          "bbox": [
+            261.12,
+            577.56,
+            338.89,
+            597.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "K −1",
+          "bbox": [
+            300.47,
+            593.85,
+            331.75,
+            605.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The shift by one unit in the denominator can be ignored,",
+          "bbox": [
+            72.0,
+            623.29,
+            365.39,
+            635.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∆s = (K −s)s",
+          "bbox": [
+            259.49,
+            645.38,
+            337.26,
+            665.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            338.46,
+            653.63,
+            341.71,
+            665.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(14.49)",
+          "bbox": [
+            493.43,
+            653.63,
+            529.23,
+            665.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            309.07,
+            661.83,
+            319.03,
+            673.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "46",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 53,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 28"
+      ],
+      "labels": [
+        {
+          "text": "Figure 28",
+          "bbox": [
+            276.3,
+            359.35,
+            324.92,
+            371.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In order to study the eﬀects of such a shock wave I will give a general “master formula”",
+          "bbox": [
+            89.56,
+            408.15,
+            529.25,
+            420.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "for the volume of the maximal slice as a function of the anchoring times tL, tR and tw. The",
+          "bbox": [
+            72.0,
+            425.72,
+            529.2,
+            439.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "formula was derived by Shenker and Stanford https://arxiv.org/pdf/1306.0622.pdf",
+          "bbox": [
+            72.0,
+            443.28,
+            529.36,
+            455.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTT12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in another context but it was shown in Stanford-Susskind https://arxiv.org/pdf/1406.",
+          "bbox": [
+            72.0,
+            460.84,
+            529.33,
+            473.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTT12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2678.pdf that it is a good approximation to the volume of maximal slices17. It is a purely",
+          "bbox": [
+            72.0,
+            477.18,
+            529.2,
+            490.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "CMTT12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "classical consequence of general relativity,",
+          "bbox": [
+            72.0,
+            495.97,
+            285.52,
+            507.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "V",
+          "bbox": [
+            183.94,
+            544.93,
+            190.77,
+            556.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "= S log {cosh τL + τR",
+          "bbox": [
+            206.17,
+            544.93,
+            318.05,
+            564.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "+ e(|τw|−τ∗)+ 1",
+          "bbox": [
+            322.46,
+            549.5,
+            386.79,
+            564.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 (τL−τR)}",
+          "bbox": [
+            383.13,
+            551.09,
+            426.74,
+            564.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(15.62)",
+          "bbox": [
+            493.43,
+            553.02,
+            529.23,
+            564.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Glads",
+          "bbox": [
+            175.66,
+            561.22,
+            201.15,
+            574.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            296.79,
+            561.22,
+            302.65,
+            573.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "where τ is the dimensionless Rindler time, τ = 2πt/β, and S is the entropy.",
+          "bbox": [
+            72.0,
+            604.86,
+            459.86,
+            616.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let us consider the complexity V/Glads at tL = tR = 0. The answer should be the",
+          "bbox": [
+            89.56,
+            622.42,
+            529.19,
+            636.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "complexity of the precursor itself since the complexity of the TFD is zero. Using S ≈K",
+          "bbox": [
+            72.0,
+            639.83,
+            528.34,
+            651.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "17It is a good approximation as long as the times are not exponentially large, at which the classical",
+          "bbox": [
+            81.49,
+            667.79,
+            529.23,
+            679.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "geometric description is expected to break down.",
+          "bbox": [
+            72.0,
+            681.03,
+            285.29,
+            690.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "52",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 59,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 32: An intially super-Planckian shockwave will be “kicked” into the singularity by a single thermal quantum. The green region is the Plankian region."
+      ],
+      "labels": [
+        {
+          "text": "throw in a single thermal photon. The result is shown in ﬁgure 32.",
+          "bbox": [
+            72.0,
+            89.87,
+            414.37,
+            101.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "16.1",
+          "bbox": [
+            72.0,
+            121.98,
+            100.72,
+            136.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Firewalls are Fragile",
+          "bbox": [
+            116.86,
+            121.98,
+            260.09,
+            136.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Figure 32: An intially super-Planckian shockwave will be “kicked” into the singularity by",
+          "bbox": [
+            72.0,
+            392.34,
+            529.26,
+            404.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a single thermal quantum. The green region is the Plankian region.",
+          "bbox": [
+            72.0,
+            406.78,
+            417.98,
+            418.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The photon and the shock wave will undergo a high energy collision. On can think about",
+          "bbox": [
+            72.0,
+            452.94,
+            529.26,
+            464.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the collision from the point of view of a frame in which the photon is high energy and the",
+          "bbox": [
+            72.0,
+            470.5,
+            529.25,
+            482.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "shock wave is low energy. In other words we can exchange the role of the photon and the",
+          "bbox": [
+            72.0,
+            488.07,
+            529.24,
+            500.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "shock wave. In that frame the infalling photon causes a Dray-’t Hooft shift of the original",
+          "bbox": [
+            72.0,
+            505.63,
+            529.27,
+            517.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "shock wave, kicking it out of the Planckian region and pushing it deeper into the black",
+          "bbox": [
+            72.0,
+            523.2,
+            529.26,
+            535.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "hole. The calculation is easy and one ﬁnds that no matter how high the energy of the",
+          "bbox": [
+            72.0,
+            540.76,
+            529.25,
+            552.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "original shock wave, it will fall into the singularity approximately a scrambling time after",
+          "bbox": [
+            72.0,
+            558.32,
+            529.29,
+            570.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the photon is thrown in. The lesson is that shock waves or ﬁrewalls are very fragile and",
+          "bbox": [
+            72.0,
+            575.89,
+            529.25,
+            587.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "can be destroyed by a single thermal photon. If Bob throws in the photon and waits a",
+          "bbox": [
+            72.0,
+            593.45,
+            529.25,
+            605.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "scrambling time he can be sure that the horizon will be transparent.",
+          "bbox": [
+            72.0,
+            611.02,
+            422.75,
+            622.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Lecture III is all about the counter-intuitive power of a single qubit—in this case a",
+          "bbox": [
+            89.56,
+            628.58,
+            529.22,
+            640.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "thermal photon—to accomplish what seem like impossible tasks. One of those tasks is",
+          "bbox": [
+            72.0,
+            646.14,
+            529.24,
+            658.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "destroying a ﬁrewall of tremendous energy18",
+          "bbox": [
+            72.0,
+            662.49,
+            297.48,
+            675.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "18The energy of a shock wave grows exponentially with |tw|. For reasons explained in Section 13 the",
+          "bbox": [
+            81.49,
+            690.2,
+            529.22,
+            702.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "58",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 74,
+      "rotation": 0,
+      "drawings": 7,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 36"
+      ],
+      "labels": [
+        {
+          "text": "Figure 36",
+          "bbox": [
+            276.3,
+            181.03,
+            324.92,
+            192.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let me explain ﬁgure 36. The initial state is,",
+          "bbox": [
+            89.56,
+            227.92,
+            320.41,
+            239.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|Ψ⟩= |max⟩⊗|0⟩",
+          "bbox": [
+            254.47,
+            255.29,
+            346.73,
+            267.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(22.91)",
+          "bbox": [
+            493.43,
+            255.45,
+            529.23,
+            267.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The single-qubit gates H are Hadamard gates, which have the following action,",
+          "bbox": [
+            72.0,
+            292.94,
+            478.91,
+            304.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            297.8,
+            313.93,
+            303.66,
+            325.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            309.83,
+            320.93,
+            315.31,
+            332.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            357.38,
+            320.93,
+            362.85,
+            332.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            292.82,
+            321.5,
+            302.78,
+            333.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H|0⟩",
+          "bbox": [
+            238.15,
+            321.86,
+            262.6,
+            333.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|0⟩+ |1⟩",
+          "bbox": [
+            315.31,
+            321.86,
+            357.38,
+            333.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            272.56,
+            322.01,
+            281.67,
+            333.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            302.78,
+            331.54,
+            308.64,
+            343.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            297.8,
+            341.83,
+            303.66,
+            353.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            309.83,
+            348.83,
+            315.31,
+            360.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            357.57,
+            348.83,
+            363.05,
+            360.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            292.82,
+            349.41,
+            302.78,
+            361.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "H|1⟩",
+          "bbox": [
+            238.15,
+            349.76,
+            262.6,
+            361.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|0⟩−|1⟩",
+          "bbox": [
+            315.31,
+            349.76,
+            357.57,
+            361.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            272.56,
+            349.92,
+            281.67,
+            361.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(22.92)",
+          "bbox": [
+            493.43,
+            349.92,
+            529.23,
+            361.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            302.78,
+            359.45,
+            308.64,
+            371.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            498.17,
+            391.03,
+            503.65,
+            402.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|0⟩+",
+          "bbox": [
+            503.65,
+            391.97,
+            529.21,
+            404.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The protocol begins with a Hadamard acting on the clean qubit to transform it to",
+          "bbox": [
+            72.0,
+            392.12,
+            494.37,
+            404.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            85.82,
+            408.6,
+            91.3,
+            420.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|1⟩",
+          "bbox": [
+            72.0,
+            409.53,
+            85.82,
+            421.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            91.3,
+            409.69,
+            94.55,
+            421.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Next, a “controlled” G operation acts. The dot at the bottom indicates a controlled",
+          "bbox": [
+            89.56,
+            427.25,
+            529.26,
+            439.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "operation: if the clean qubit is in the state |0⟩then the unitary operator G acts on the",
+          "bbox": [
+            72.0,
+            444.66,
+            529.21,
+            456.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "remaining qubits; if the clean qubit is in state |1⟩then G does not act and |max⟩is left",
+          "bbox": [
+            72.0,
+            462.22,
+            529.19,
+            474.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "undisturbed. The last element of the circuit is another Hadamard.",
+          "bbox": [
+            72.0,
+            479.94,
+            412.99,
+            491.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It is straightforward to follow the circuit and see that the ﬁnal state is,",
+          "bbox": [
+            89.56,
+            497.51,
+            454.11,
+            509.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            287.58,
+            518.49,
+            293.44,
+            530.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|Ψ′⟩",
+          "bbox": [
+            237.48,
+            524.66,
+            257.35,
+            538.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            294.63,
+            525.49,
+            300.1,
+            537.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            329.61,
+            525.49,
+            335.09,
+            537.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "⊗|0⟩",
+          "bbox": [
+            337.75,
+            526.43,
+            363.53,
+            538.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            267.32,
+            526.58,
+            276.42,
+            538.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "G + 1",
+          "bbox": [
+            300.11,
+            526.58,
+            329.62,
+            538.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            287.58,
+            534.78,
+            293.44,
+            546.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            287.58,
+            553.62,
+            293.44,
+            565.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            294.63,
+            560.62,
+            300.1,
+            572.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            329.8,
+            560.62,
+            335.28,
+            572.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "G −1",
+          "bbox": [
+            300.11,
+            561.56,
+            329.81,
+            573.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "⊗|1⟩",
+          "bbox": [
+            337.94,
+            561.56,
+            363.72,
+            573.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            267.32,
+            561.71,
+            276.42,
+            573.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(22.93)",
+          "bbox": [
+            493.43,
+            561.71,
+            529.23,
+            573.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            287.58,
+            569.91,
+            293.44,
+            581.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Finally we compute the expectation value of the Z Pauli operator for the clean qubit",
+          "bbox": [
+            72.0,
+            599.2,
+            529.23,
+            611.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(which by the way, is no longer clean).",
+          "bbox": [
+            72.0,
+            616.76,
+            269.46,
+            628.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0012G† + G",
+          "bbox": [
+            288.99,
+            636.25,
+            336.13,
+            652.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            337.33,
+            640.41,
+            346.13,
+            652.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "⟨Z⟩= ⟨max|",
+          "bbox": [
+            222.07,
+            648.52,
+            287.0,
+            660.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|max⟩",
+          "bbox": [
+            348.12,
+            648.52,
+            379.13,
+            660.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(22.94)",
+          "bbox": [
+            493.43,
+            648.67,
+            529.23,
+            660.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            314.63,
+            656.87,
+            320.49,
+            668.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We now make use of the fact that |max⟩is maximally complex. A maximally complex",
+          "bbox": [
+            89.56,
+            689.76,
+            529.23,
+            701.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "73",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 75,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 37"
+      ],
+      "labels": [
+        {
+          "text": "state is Haar-random, which allows us to replace the expectation value by the normalized",
+          "bbox": [
+            72.0,
+            89.87,
+            529.25,
+            101.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "trace,",
+          "bbox": [
+            72.0,
+            107.44,
+            100.62,
+            119.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0012G† + G",
+          "bbox": [
+            295.97,
+            141.5,
+            343.81,
+            157.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR12",
+            "CMSY8",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            346.07,
+            145.66,
+            354.86,
+            157.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "⟨Z⟩= Tr",
+          "bbox": [
+            246.34,
+            153.77,
+            293.98,
+            165.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(22.95)",
+          "bbox": [
+            493.43,
+            153.92,
+            529.23,
+            165.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            321.61,
+            162.12,
+            327.59,
+            174.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Thus the circuit transforms the initial state to a ﬁnal state that indeed has information",
+          "bbox": [
+            89.56,
+            194.5,
+            529.26,
+            206.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "about TrG. Of course that is not the end of the story; we still have to measure Z and repeat",
+          "bbox": [
+            72.0,
+            212.07,
+            529.21,
+            224.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMMI12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the procedure enough times to determine the ⟨Z⟩but that is not part of the reversible",
+          "bbox": [
+            72.0,
+            229.48,
+            529.23,
+            241.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "process that we deﬁne to be the computational work.",
+          "bbox": [
+            72.0,
+            247.2,
+            344.97,
+            259.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            269.08,
+            260.08,
+            276.22,
+            272.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            303.66,
+            260.08,
+            310.8,
+            272.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "G†−G",
+          "bbox": [
+            277.42,
+            261.83,
+            301.82,
+            271.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY6",
+            "CMSY8",
+            "CMTI8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "It is also possible to determine Tr",
+          "bbox": [
+            89.56,
+            264.76,
+            267.09,
+            276.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "by a similar method which I will leave to",
+          "bbox": [
+            315.19,
+            264.76,
+            529.21,
+            276.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            287.22,
+            272.0,
+            291.6,
+            279.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "you.",
+          "bbox": [
+            72.0,
+            282.32,
+            93.47,
+            294.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "One might complain that applying G is not a k-local operation, but that is easy to",
+          "bbox": [
+            89.56,
+            299.89,
+            529.26,
+            311.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "repair assuming that G can be written as a product of gates as in 22.89. In that case the",
+          "bbox": [
+            72.0,
+            317.45,
+            529.25,
+            329.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "circuit in ﬁgure 36 can also be decomposed into local gates. This is shown in ﬁgure 37.",
+          "bbox": [
+            72.0,
+            335.02,
+            517.59,
+            346.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 37",
+          "bbox": [
+            276.3,
+            493.32,
+            324.92,
+            505.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The circuit can be simpliﬁed by using H2 = 1 to eliminate all the Hadamards except",
+          "bbox": [
+            89.56,
+            537.78,
+            529.24,
+            554.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "for the ones at the beginning and end. I will leave you to ponder this circuit and show",
+          "bbox": [
+            72.0,
+            559.68,
+            529.24,
+            571.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "that it is the same as the original circuit in ﬁgure 36.",
+          "bbox": [
+            72.0,
+            577.24,
+            344.72,
+            589.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "22.2",
+          "bbox": [
+            72.0,
+            610.03,
+            100.72,
+            624.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Expending Uncomplexity and Negentropy",
+          "bbox": [
+            116.86,
+            610.03,
+            414.34,
+            624.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "The uncomplexity of |max⟩is zero but by adding the clean qubit we bought ourselves an",
+          "bbox": [
+            72.0,
+            637.03,
+            529.24,
+            649.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "uncomplexity 2K. But the action of the circuit will inevitably increase the complexity by",
+          "bbox": [
+            72.0,
+            653.53,
+            529.23,
+            666.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "roughly the number of applied gates. Assuming that 22.89 is the minimal description of G",
+          "bbox": [
+            72.0,
+            672.32,
+            529.2,
+            684.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "then we can expect the increase of complexity to be of order n which is also the complexity",
+          "bbox": [
+            72.0,
+            689.88,
+            529.21,
+            701.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "74",
+          "bbox": [
+            294.75,
+            719.81,
+            306.46,
+            731.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

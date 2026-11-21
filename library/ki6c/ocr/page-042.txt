@@ -1,0 +1,54 @@
+goes to oo as X2 + Y? + oo. Hence, putting
+F(X,Y) = (t-5)X ifX>0 1 (1-28 —u)Y ifY 20
+—(t-4)X if X <0 —uY ifY <0
+(t—s+4)(X-Y) ifX >Y
+0 ifX<Y /’
+by Lemma 2.2, it is sufficient to show that F(X,Y) — 00 as X? + Y? > ov.
+We show that F(X,Y) + co as X? + Y? > ov, as follows. As for the first summand
+of (73), since t > 0.5, this summand goes to oo as |X| — oo. As for the second summand
+of (73), since 1 - 2s —u > 0 and u > 0, this summand goes to oo as |Y| — oo. As for
+
+the third summand of (73), since t — s + ; > 0, this summand is non-negative. Hence,
+F(X,Y) > co as X° + Y? > ov, as required. O
+
+(73)
+
+Lemma 4.8. Suppose that t—4 > s+u, and consider the flow from (X,Y) = (0,0) along
+
+the vector field (— or — 2h), Then, Y — —oo.
+
+Proof. The differential of f with respect to X is presented by
+of _ of
+
+OX ax
+where x = e2"V-1(t+XV-1) and b= eW2tv-l(t-s)e2"(X-Y) Ty particular, when X = 0,
+noting that Arg (1 — 2) = m(t — i),
+
+= —2Arg(1— 2x) + Arg (1 — *) + 2n(t— 5):
+
+af y
+Ps = Arg(1-= :
+OX |x=0 v8 ( < 9,
+since 3 <t—s<0.7. Hence, the flow of the lemma goes in the domain {X > 0}. We
+
+suppose that X > 0 in the following of this proof.
+The differential of f with respect to Y is presented by
+of _ af
+oy ~ oY
+
+where y = e™V-THSt¥V"D) and ¥ = e2tvTs)e2(X-Y)_ Hence,
+
+= 2Arg(1—y) — Arg (1—- 2) — 2n(2s+u-—1),
+x
+
+of 1 1 1
+a vee —2.2n(5—s) +2n(t-s— 3) —2n(2s+u—1) = Iw(t-—s—u- 5) > 0
+Further, when Y < 0, similarly as in the proof of Lemma 4.5, we have that
+1 Of I ( 2 1 )
+—.L4 = Im(—~—_
+Qn OY? l-y —#
+2sin 27s sin 2n7(1—t+s)
+
+e2rY 4 e-2Y — cos2ns — e2™(X-¥) + @2"(V—X) — cos 2a(1 —t + 8)
+
+42

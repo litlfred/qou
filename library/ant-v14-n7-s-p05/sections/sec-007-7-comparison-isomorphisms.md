@@ -8,6 +8,7 @@ pages: 31-36
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
 toc_source: inferred
+doc_brief: "Motivic Gauss–Bonnet formulas — 12 sections: Front matter; Introduction; X+ ∈SH(k) is dualizable. In partic"
 ---
 We recall the element η ∈HomSH(B)(1B, S−1,−1∧1B) induced by the map of B-schemes η : A2\{0} →P1,
 η(a, b) = (a : b). As every E ∈SH(B) is a module for 1B, we have the map ×η : E →S−1,−1 ∧E for

@@ -5,7 +5,7 @@ Two ingredients:
 1. **Positivity** (lower bound). By substrate construction,
  $q > 1$ implies $(q-1)^2 > 0$ and $1 - q^{-4} > 0$. Their
  product is positive; division by $3$ preserves the sign. By
- [`prop:flavor-dressed-mass-from-substrate-split`](flavor-dressed-mass-from-substrate-split.md)
+ [Substrate-pure derivation of the dressed-quark mass splitting](flavor-dressed-mass-from-substrate-split.md)
  the splitting $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ is
  $M_N$ times this positive substrate factor (modulo
  $O((\Delta m / M_N)^2)$, which is below the leading term), so
@@ -43,14 +43,14 @@ that the realised splitting is exactly $(1/3) \cdot (q^{1/2} +
 q^{-1/2})/(q + q^{-1})$ of the bound (plus a small higher-order
 correction). The dominant factor is the explicit $1/3$ baked
 into the substrate formula of
-[`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md).
+[Substrate-pure derivation of the $u$--$d$ flavor split](../observations/flavor-split-substrate.md).
 Tightening would require either:
 
 - A finer substrate factor that absorbs the $1/3$ directly into
  the categorical derivation (rather than as an artefact of the
  closed-form algebra).
 - A different categorical bound source (e.g.
- [`prop:hecke-convergence-bound`](hecke-convergence-bound.md)
+ [Hecke convergence bound: $\mathrm{MAE}(H_k) \leq C \cdot r^{-(k-3)}$](hecke-convergence-bound.md)
  applied to the splitting word) — but this requires further
  development and is not committed in this revision.
 
@@ -60,4 +60,4 @@ This theorem does not assert per-flavor bounds
 $0 < \mu_q < c \cdot M_N$. Such bounds require additional
 non-substrate inputs (the nucleon-baryon sum rule for the average
 $\bar\mu$) and live in the open follow-up; see
-[`rem:dressed-quark-numerology-at-q0`](../observations/dressed-quark-numerology-at-q0.md).
+[Dressed-quark numerology at $q_0$](../observations/dressed-quark-numerology-at-q0.md).

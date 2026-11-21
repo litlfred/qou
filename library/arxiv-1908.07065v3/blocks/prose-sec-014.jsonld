@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1908.07065v3/blocks/prose-sec-014",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "On the modified Mathieu operator and Painlevé III3",
-  "pageStart": 36,
-  "pageEnd": 37,
-  "text": "../sections/sec-014-6-on-the-modified-mathieu-operator-and-painlevé.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1908.07065v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1908.07065v3",
+  "title": "Comparison to Zamolodchikov's TBA equation",
+  "pageStart": 33,
+  "pageEnd": 36,
+  "text": "../sections/sec-014-53-comparison-to-zamolodchikovs-tba-equation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1908.07065v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1908.07065v3/manifest.jsonld",
   "provenance": "ingested"
 }

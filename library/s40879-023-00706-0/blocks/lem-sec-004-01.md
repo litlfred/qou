@@ -1,0 +1,1 @@
+The genus of Bring’s curve is g = 4 and we have the ordered basis of (unnormalised) differentials on B v1 = (y3 −x)dx ∂y f (x, y) , v2 = (y2x −1)dx ∂y f (x, y) , v3 = (y −x2)dx ∂y f (x, y) , v4 = y(x2 −y)dx ∂y f (x, y) .

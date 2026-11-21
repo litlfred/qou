@@ -1,0 +1,44 @@
+116 Multivariate Fourier—Laplace integrals
+where cf = 1.
+
+Exercise 5.3. Let c > 0, where c is independent of A. What happens to the
+right side of (5.5) if we change ¢ to ¢/c and A to cA?
+
+When Re{} is strictly positive except at a finite number of points in the do-
+main of integration of J(A) then, up to an asymptotically negligible error, we
+can express (A) as a sum of integrals localized to neighborhoods of these van-
+ishing points. A chain of integration in a manifold which can be localized to
+arbitrarily small neighborhoods can be pulled back to correspondingly local-
+ized integrals over R¢, which is why the above results are stated for integrals
+over neighborhoods of the origin in R¢. In dimension greater than one, how-
+ever, it is possible for an analytic function to have a real part that vanishes
+along a set of positive dimension without vanishing everywhere, meaning it
+may not be possible to localize.
+
+Exercise 5.4. Over which of the following chains in C? does @(x,y) = x7 + y?
+have a nonnegative real part and, among those where this holds, which have
+the real part of ¢ vanishing only at the origin?
+
+(a) asmall neighborhood of 0 in the real x real subspace of C?
+
+(b) a small neighborhood of 0 in the imaginary x imaginary subspace of C?
+
+(c) asmall neighborhood of 0 in the diagonal subspace {(x, y) € C? : x = y} of
+(ez
+
+(d) a small neighborhood of 0 in the linear subspace of C? spanned over R by
+(1 + i,0) and (0, 1 + i)
+
+Such difficulties lead us to state our most general results in the language of
+stratified spaces and vector flows. A vector flow on a space X is the solution ¥ :
+Xx([0,T] — X toa differential equation (d/dt)¥(x, t) = v(Y(a, t)), where v is
+a vector field on X (see, e.g., Lemma 5.14); an upward gradient flow is defined
+by the vector field v = V¢, while a downward gradient flow is defined by
+v =-—V¢@. These constructions and results, summarized in Appendix D, have
+been around for over 50 years, though they are not very well known outside of
+differential topology and singularity theory. To ease exposition we now state
+our main result using some terminology to be defined in Section 5.4, where the
+result is proved. If X is an oriented stratified space then g € X is a critical point
+(in the stratified sense) of an analytic map ¢ : X — Cif q lies in a stratum
+S and the differential d¢|s at q is zero. Appendix D contains a more complete
+explanation of the vector flows we use.

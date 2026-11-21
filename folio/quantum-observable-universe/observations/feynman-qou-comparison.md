@@ -1,4 +1,4 @@
-The Bethe–Weizsäcker semi-empirical mass formula (SEMF) requires five fitted coefficients. The Wedderburn formula ([three-invariant mass formula](#thm:wedderburn-mass-formula)) derives binding from the Hecke algebra trace with zero fitted parameters.
+The Bethe–Weizsäcker semi-empirical mass formula (SEMF) requires five fitted coefficients. The Wedderburn formula ([three-invariant mass formula](#thm:wedderburn-mass-formula)) derives binding from the Hecke algebra trace with zero fitted parameters. The SEMF is not the only external benchmark: modern nuclear theory is organised as a sequence of effective field theories (chiral, pionless, halo/cluster), each an expansion around a different low-energy limit of QCD with its own range of validity in energy and in nucleon number \cite{hammer2019}.
 
 ## Term dictionary
 
@@ -27,5 +27,3 @@ The near-zero volume at generator $k$ encodes nuclear saturation.
 ## Improving: the pion channel
 
 Including the hook channel supplies missing shell structure.
-
-**Witness**: `feynman-qou-comparison.witness.json`.

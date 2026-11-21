@@ -1,0 +1,1 @@
+(i) Jk is a 2-sided ideal of Pk(L) and Jk+1 ∩Pk(L) = Jk. (ii) Let Pk = Pk(L)/Jk and let Φ be the quotient map. Then P = ∪Pk becomes a planar algebra presented by Φ with partition function ZΦ = Z′. (iii) If x ∈Pk then x = 0 iﬀZΦ(A(x))=0 ∀A ∈Ak,0.

@@ -29,7 +29,7 @@ Verified `lean`-direct against `PhiBProd`. Sorry-free.
 
 -- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995) 249.
 --        https://doi.org/10.1007/BF01872779
--- Ref: [manuscript] docs/workplans/2026-07-26-faddeev-growth-estimate-epic-scope.md
+-- Ref: [leitner2026] docs/workplans/2026-07-26-faddeev-growth-estimate-epic-scope.md
 -/
 
 open Complex

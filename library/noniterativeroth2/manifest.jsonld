@@ -5,22 +5,20 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/noniterativeroth2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/noniterativeroth2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "noniterativeroth2",
   "contains": [
-    "library/noniterativeroth2/sections/sec-000",
-    "library/noniterativeroth2/sections/sec-001",
-    "library/noniterativeroth2/sections/sec-002",
-    "library/noniterativeroth2/sections/sec-003",
-    "library/noniterativeroth2/sections/sec-004",
-    "library/noniterativeroth2/sections/sec-005",
-    "library/noniterativeroth2/sections/sec-006"
+    "library/noniterativeroth2/sections/page-001",
+    "library/noniterativeroth2/sections/page-002",
+    "library/noniterativeroth2/sections/page-003",
+    "library/noniterativeroth2/sections/page-004",
+    "library/noniterativeroth2/sections/page-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "noniterativeroth2",
     "title_source": "slug",

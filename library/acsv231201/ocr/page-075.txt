@@ -1,0 +1,45 @@
+2.5 Labeled classes 57
+
+By Theorem 2.30, the main diagonal of every rational function is a D-finite
+univariate generating function. The converse is not true, but Christol conjec-
+tured that every D-finite univariate function that satisfies a mild condition
+called global boundedness is the main diagonal of some rational function (see
+[Chr15] for a recent survey of progress). Rational diagonals occur very often
+in applications: see, for instance, [Mel21, Ch. 3.4] for a list of interesting ex-
+amples.
+
+There are several methods for computing asymptotics of P-recursive se-
+quences, which can be used to compute asymptotics for rational diagonal se-
+quences, including the method of Frobenius for D-finite series and methods
+arising from the work of Birkhoff and Trjitzinsky [WZ85]. The difficulty in
+such work is typically expressing the sequence of interest as a linear combina-
+tion of certain known series expansions, which is a type of connection problem.
+In Chapter 8 we discuss how to combine methods for D-finite series and mul-
+tivariate asymptotics to resolve the connection problem, and how to effectively
+compute with algebraic and D-finite series.
+
+Moving on from D-finite series, one might consider the even larger class
+of differentially algebraic series, defined to be those that satisfy an equation
+P(z, f, f’,..-,f%”) = 0 for some positive integer m and some polynomial P.
+The question of possible behaviors of the coefficient sequence of such a func-
+tion is wide open; some of the few known results are summarized in [Rub83;
+Rub92]. Some negative results using model theory can be found in [MMO8].
+
+In the other direction, the theory of hypergeometric sequences is well de-
+veloped. These are the coefficients of univariate formal power series satisfying
+a first order linear recurrence with polynomial coefficients (equivalently, they
+are sequences where the ratio of successive coefficients a;,41/d, is some fixed
+rational function of 7), and hence correspond to a special subclass of D-finite
+generating functions. A substantial algorithmic theory exists, well described at
+an elementary level in the book [PWZ96].
+
+Additional exercises
+
+Exercise 2.13. A domino or dimer is a union of two unit squares along a
+common edge. Let a,, be the number of ways of placing k non-overlapping
+dominoes on a 2 x n grid. Find the generating function enumerating {ax}.
+
+Exercise 2.14. From the defining algebraic equation for the Catalan number
+generating function C(z) = Yins0 nz", derive a first order linear differential
+equation with polynomial coefficients for C(z), and then a first order linear
+recurrence for c,. Use this to deduce an explicit formula for c, in terms of

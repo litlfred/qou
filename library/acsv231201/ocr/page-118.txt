@@ -1,0 +1,44 @@
+100 Fourier-Laplace integrals in one variable
+
+for a remainder R, that decays exponentially, and applying Theorem 4.6 (with
+complex amplitude) to the integral over a gives the asymptotic series
+
+fy » ajCtk, j(cpay Pk
+
+jae
+
+satisfying conclusion (7) of Theorem 4.1.
+
+Step 2: evaluation of the two-sided integral
+In order to reduce the two-sided integral to the one-sided case, define the con-
+tour y_ : [0,e] — C by y_(t) = y(—2). The curve y_ is oriented from 0 to —e
+so it appears with sign reversed. In other words, J = I, — J_, where
+
+i f A(z) exp(-Ab(2)) dz.
+y-
+The integral for J_ has nearly the same data as the integral for J ,.: the functions
+A and ¢ are identical so the only difference between the two integrals is the
+contour. The contour affects the integral only via the choice of 7 in (4.12).
+Denoting the two choices by 7, and 7_, we know a fortiori that n_ = n/ for
+some ¢ with ¢* = 1. Denoting the respective inverse functions of f(x) in (4.12)
+by gs and g_ we see that g_(y) = g,(Cy). The two changes of variables produce
+amplitudes A, and A_ in (4.13) satisfying
+
+Ay) = A(g+0)) + 8.0)
+and
+
+A_(y) = A(g-0)) 820)
+= A(gi(Zy)) > Sg. (Cy)
+= CAG).
+
+The coefficients of the power series for A, and A_ are therefore related by
+[y/JA_(y) = 2*![y/]A,(y). The asymptotic expansions of A, are integrated
+term by term in (4.13), which implies that the coefficients a; for the two-sided
+integral I are related to the coefficients a; for the one-sided integral ZT, via
+a; = (1 - ¢/*!)a;. Thus, part (iii) of Theorem 4.1 is reduced to the correct
+identification of ¢. The evaluation of ¢ breaks into two cases, depending on the
+parity of k.
+
+Suppose first that k is even. Since $(z) ~ c,z*, the image of the smooth curve
+y under ¢ moves back in the same direction at the origin, with the tangents to
+the images ¢(y_(t)) and #(y(t)) coinciding at t = 0 (see Figure 4.3). Because

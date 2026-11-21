@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/physrevd111094513/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "VI. SUMMARY AND CONCLUSIONS",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "contains": [
+    "library/physrevd111094513/blocks/prose-sec-011"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/physrevd111094513/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/physrevd111094513/manifest.jsonld",
+  "provenance": "ingested"
+}

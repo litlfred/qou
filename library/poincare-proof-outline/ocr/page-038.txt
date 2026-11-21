@@ -1,0 +1,69 @@
+show ?thesis
+qed
+
+lemma calc-ideal-point2-mia:
+assumes (21, 22) = calc-ideal-point2-cvec A B is-real A (cmod B)* > (emod A)?
+shows B * cnj z1 * 22 + cnj B* z1 * cnj 22 = — 2 * A * (B * cnj B)?
+proof—
+have Bxcnj z1 + cnj Bxzl = —2*xA*xBxcnj B
+using assms eq-cnj-iff-real[of A]
+by (simp, simp add: field-simps)
+moreover
+have cnj z2 = 22
+using assms
+by simp
+hence Bxcnj z1*z2 + cnj Bxz1*cnj 22 = (Bxcnj 21 + cnj Bxz1)*z2
+by (simp add: field-simps)
+
+ultimately
+
+have Bxcnj z1*z2 + cnj Bxzl*cnj 22 = —2*Ax(Bx cnj B)xz2
+by simp
+
+also have ... = —2*A*(B * cnj B)?
+
+using assms
+using complez-mult-cnj-cmod|of B]
+by (simp add: power2-eq-square)
+finally
+show ?thesis
+
+qed
+
+lemma calc-ideal-point1-on-circline:
+assumes (21, 22) = calc-ideal-point1-cvec A B is-real A (cmod B)* > (cmod A)?
+shows Axz1xcnj z1 + Bxenj z1*z2 + cnj Bxz1*cnj 22 + Axz2xcnj z2 = 0 (is ?lhs = 0)
+proof—
+have ?lhs = A « (z1 * enj zl + 22 * cnj 22) + (B * cnj 21 * 22 + cnj B x 21 * cnj 22)
+by (simp add: field-simps)
+also have ... = 2*A«(Benj B)? + (—2xA*(Bxenj B)?)
+using calc-ideal-point1-sq|OF assms]
+using calc-ideal-point1-mix|OF assms]
+by simp
+finally
+show ?thesis
+by simp
+qed
+
+lemma calc-ideal-point2-on-circline:
+assumes (21, 22) = calc-ideal-point2-cvec A B is-real A (cmod B)* > (emod A)?
+shows Axz1xcnj z1 + Bxenj z1*z2 + cnj Bxz1*cnj 22 + Axz2xcnj z2 = 0 (is ?lhs = 0)
+proof—
+have ?lhs = A « (z1 * enj zl + 22 * cnj 22) + (B * cnj 21 * 22 + cnj B x 21 * cnj 22)
+by (simp add: field-simps)
+also have ... = 2*A*(Bxcnj B)? + (—2*Ax*(Bxcnj B)*)
+using calc-ideal-point2-sq|OF assms]
+using calc-ideal-point2-mix|OF assms]
+by simp
+finally
+show ?thesis
+by simp
+qed
+
+lemma calc-ideal-points-on-circline:
+assumes is-poincare-line H
+shows V z € calc-ideal-points H. z € circline-set H
+using assms
+unfolding circline-set-def
+apply simp
+proof (transfer, transfer)

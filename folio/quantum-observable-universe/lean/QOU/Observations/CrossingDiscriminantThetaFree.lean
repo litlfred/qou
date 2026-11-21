@@ -25,7 +25,7 @@ the substrate anchor lives in
 `computations/cp/delta_cp_theta_order_and_mass_asymmetry_probe.py`, per §7c —
 nothing below needs an anchor, so nothing below mentions one.
 
--- Ref: [manuscript] `conj:complex-chirality-rotation`,
+-- Ref: [leitner2026] `conj:complex-chirality-rotation`,
 --      `prop:antiparticle-crossing-reversal`, `def:crossing-energy`
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle

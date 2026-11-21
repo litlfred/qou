@@ -7,10 +7,11 @@ section_number: 2.4
 pages: 13-16
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
-doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.791
-latex_coverage_ratio: 0.975
+latex_coverage_ratio: 0.995
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles."
 ---
 A (strict) \emph{Lie 2-group} is a  Lie groupoid $\Gamma$ whose objects and morphisms are Lie groups, and all of whose structure maps are Lie group homomorphisms. One can conveniently bundle the multiplications and the inversions into smooth functors
 \begin{equation*}

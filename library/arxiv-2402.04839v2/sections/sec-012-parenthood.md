@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2402.04839v2
-doc_title: "On a volume invariant of 3–manifolds"
+doc_title: "On a volume invariant of 3-manifolds"
 section_id: sec-012-parenthood
 section_title: "Parenthood"
 section_number: null
 pages: 15-15
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
-doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.918
-latex_coverage_ratio: 0.88
+latex_coverage_ratio: 0.987
+doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
 ---
 Next, we describe all ways in which the fourteen $1$-cusped manifolds in $\mathcal{V}$ of volumes at most $3.07$ can arise as fillings of the two $2$-cusped manifolds of minimal volume~\cite{agol-2cusped}. These are the Whitehead link complement $m129$ and the Whitehead link sister $m125$; compare~\Cref{sec:WandP}.
 

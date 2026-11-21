@@ -1,0 +1,33 @@
+54. Proof scheme for Theorem 1.
+
+Recall from section 2 what we imagine to be Gauss's second line of reasoning for
+obtaining his linking integral. Runa current through the first loop, and calculate
+the circulation of the resulting magnetic field around the second loop. By Ampere's
+Law, this circulation is equal to the total current enclosed by the second loop,
+which means the current flowing along the first loop multiplied by the linking
+number of the two loops. Then the Biot-Savart formula for the magnetic field
+
+leads directly to Gauss's linking integral.
+
+current \
+
+Linking numbers via Ampere's Law
+
+The same line of reasoning in S* and H? will lead us in the next two sections
+from the three formulas for the magnetic field given in Theorem 2 to the three
+linking integrals given in Theorem 1.
+
+But there is an issue which must be dealt with first. We have proved Theorem 2
+only when V is a smooth, compactly supported current distribution on R?, S°
+or H’. As things stand, when currents run through wires, we have not proved
+the corresponding formula for the resulting magnetic field, nor the accompanying
+Ampere's Law.
+
+We will get around this by observing that a field defined for a current running in a
+wire loop is the limit, in an appropriate sense, of magnetic fields caused by currents
+running in thin tubular neighborhoods of the loop. Then the Ampere's Law that
+
+we want will simply be the limit of Ampere's Laws that we already know, as the
+thickness of the neighborhoods goes to zero.
+
+101

@@ -1,0 +1,43 @@
+STUDYING LINKS VIA CLOSED BRAIDS II 35
+
+2. Admissible words. In this section we begin the new work needed
+for our proof of the Classification Theorem. Let “&, L, F, A, A’,
+W, W’ be as in §1. We say that W is admissible if W is a shortest
+representative of its conjugacy class in B3, also if among all shortest
+words it has shortest syllable length k, and finally if it involves all
+three generators a; , a), a3 non-trivially.
+
+LEMMA 2.1. Given any closed 3-braid L which represents a prime,
+non-split link of braid index 3, there is a Bennequin surface F with
+OF —L such that W = W(L) is admissible.
+
+Proof. We may assume that L is the boundary of a Bennequin
+surface F with defining word W. From this it follows that W is a
+shortest representative of the conjugacy class of L, for if not the Euler
+characteristic y(F) would not be maximal. Among all Bennequin
+surfaces with boundary L, assume we have chosen ours so that the
+syllable length of W is also minimal. Then either W uses all three
+generators, in which case we are done, or (up to conjugation by a
+rotation which cyclically permutes the generators) we may assume that
+W = (a;)?:(az)P2(a))?3---(az)P2, where each pj # 0 and s > 1. If
+s = 1 then & is the connected sum of a type (2, p;) and a type
+(2, p2) torus link, so s > 2. Thus W contains a subword
+
+U = (a1)? (az)P2(ay)P(a2)?s
+
+of syllable length 4.
+
+Since the assertion of Lemma 2.1 can be proved for any choice of
+orientations on and on 3-space, we may if necessary replace W by
+its inverse for the purposes of the proof, so we may assume without
+loss of generality that p3 > 0. Now observe the following relation
+holds:
+
+(2.1) Aza) = A3a2 = a, a3.
+
+But then, we may apply the relation aa, = a,a3 repeatedly to the
+subword (a)?:(a,) of U, replacing it by (a;)(a3)?2. Thus U has the
+equivalent form (a;)?:+!(a3)?2(a,)?s-!(ay)?s. Since W is by hypoth-
+esis a shortest word and has shortest syllable length, each of the four
+syllables in the new expression for U must be non-trivial, and the
+lemma is proved. a

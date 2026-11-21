@@ -1,0 +1,45 @@
+R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392 3
+
+VL (x) X BIn, Vr ER”, (2)
+where the inequality is in the positive-definite sense.
+
+Our main theorem gives a nontrivial concentration bound for Lipschitz functions with
+respect to such measures.
+
+Theorem 2. Let 6 > 1. If v is a 8-semi-log-concave probability measure on Cy, and y is
+1-Lipschitz, then
+
+Var, [ye] < CB2n?-«/4
+where C,c > 0 are universal constants.
+
+Remark 3. Our proof shows that one can take for example C = 10 and c = 1/20, however
+these constants are probably very sub-optimal.
+
+The theorem shows in particular that for any 6 € R there exists n large enough such
+that 6-semi-log-concave measures on C,, admit nontrivial concentration.
+
+Before we proceed, let us give an alternative and slightly stronger notion of semi-log-
+concavity which could hopefully shed some light and give better intuition regarding the
+relation to the usual notion of log concavity in R”. We first need to recall the multi-linear
+extension of the measure into the continuous hypercube, C, := [—1, 1]". Given a function
+f:C, — R, there is a unique function f : 2l7] -s R such that
+
+fa) = SD A) TP (3)
+]
+
+AC{n i€A
+
+The function f : 2!"] + R is known as the Walsh-Fourier transform of f and satisfies
+f(A) =2- Yeec, f(*) Tica ti Observing that the above form makes sense as a func-
+tion from C, to R, we refer to this as the multi-linear (or harmonic) extension of f.
+Since the two coincide on C,,, below we allow ourselves to use the same notation for both
+the function and its multi-linear extension. The following fact is attained via a simple
+calculation, see Section 4 below.
+
+Fact 4. Suppose that
+24., n
+Vlog (2) < My, Ye € [LI (4)
+Then v is (8 + 3)-semi-log-concave.
+
+Thus, a corollary to Theorem 2 is that the condition (4) implies that every 1-Lipschitz
+function ¢ satisfies Var,[y] < C(B + 3)n?-/ (+3),

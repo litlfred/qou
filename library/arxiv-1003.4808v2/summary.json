@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1003.4808v2",
  "source_sha256": "72301d4bee491f86",
- "brief": "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC",
- "extended": "**Quantum Field Theory and the Volume Conjecture**\n\n*Tudor Dimofte and Sergei Gukov*\n\n32 pp, 14 sections.\n\n**Outline.** 1 Preliminaries; 2 The many dimensions of the volume conjecture; 2.1 Parametrized VC; 2.2 Quantum VC; 2.3 Groups and representations; 2.4 Links and 3-manifolds; 3 TQFT; 3.1 Cutting and gluing; 3.2 Quantization; 3.2.1 Methods; 3.2.2 Simple examples; 3.3 Chern-Simons theory; 3.3.1 Quantization of Chern-Simons theory; 3.3.2 Synthesis",
+ "brief": "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume",
+ "extended": "**Quantum Field Theory and the Volume Conjecture**\n\n*Tudor Dimofte and Sergei Gukov*\n\n32 pp, 15 sections.\n\n**Outline.** Front matter; 1 Preliminaries; 2 The many dimensions of the volume conjecture; 2.1 Parametrized VC; 2.2 Quantum VC; 2.3 Groups and representations; 2.4 Links and 3-manifolds; 3 TQFT; 3.1 Cutting and gluing; 3.2 Quantization; 3.2.1 Methods; 3.2.2 Simple examples; 3.3 Chern-Simons theory; 3.3.1 Quantization of Chern-Simons theory; 3.3.2 Synthesis",
  "tokens": {
-  "brief": 32,
-  "extended": 113
+  "brief": 31,
+  "extended": 116
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-1-preliminaries",
    "title": "Preliminaries",
@@ -37,22 +42,22 @@
   {
    "id": "sec-005-24-links-and-3-manifolds",
    "title": "Links and 3-manifolds",
-   "pages": "13-13"
+   "pages": "13-14"
   },
   {
    "id": "sec-006-3-tqft",
    "title": "TQFT",
-   "pages": "13-15"
+   "pages": "14-15"
   },
   {
    "id": "sec-007-31-cutting-and-gluing",
    "title": "Cutting and gluing",
-   "pages": "15-16"
+   "pages": "15-17"
   },
   {
    "id": "sec-008-32-quantization",
    "title": "Quantization",
-   "pages": "16-18"
+   "pages": "17-18"
   },
   {
    "id": "sec-009-321-methods",

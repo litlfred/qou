@@ -60,7 +60,7 @@ Archimedean (ℝ): `Λ`, the hyperbolic volume measure, ordering, `π` — §7c.
 --      (Appendix: the ideal-simplex volume formula and the normalized position)
 -- Ref: [thurston1978] Ch. 7 (ideal simplices, geodesic faces, the Lobachevsky function)
 -- Ref: [ratcliffe] §4.6–4.7 (the totally-geodesic-plane classification, cited in File A1)
--- Ref: [manuscript] beans qou-idvt (T2), qou-5gai (H1–H5), qou-krvm (iv), qou-473l
+-- Ref: [leitner2026] beans qou-idvt (T2), qou-5gai (H1–H5), qou-krvm (iv), qou-473l
 -/
 
 import QOU.Archimedean.OrthoschemeTiling

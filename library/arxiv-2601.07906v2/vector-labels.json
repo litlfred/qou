@@ -1,0 +1,6377 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2601.07906v2",
+  "pages": [
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 40,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Example of a crossing transformation γ on a genus-2 Riemann surface. The two sets of contractible cycles (the thick closed curves) lead to two distinct genus-2 handlebodies upon filling in the bulk."
+      ],
+      "labels": [
+        {
+          "text": "γ",
+          "bbox": [
+            294.45,
+            114.04,
+            301.74,
+            128.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Figure 1. Example of a crossing transformation γ on a genus-2 Riemann surface. The two",
+          "bbox": [
+            83.34,
+            208.73,
+            511.97,
+            219.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "sets of contractible cycles (the thick closed curves) lead to two distinct genus-2 handlebodies",
+          "bbox": [
+            83.34,
+            223.64,
+            511.93,
+            234.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "upon filling in the bulk.",
+          "bbox": [
+            83.34,
+            238.54,
+            196.73,
+            249.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Handlebodies and crossing symmetry.",
+          "bbox": [
+            83.34,
+            271.73,
+            303.62,
+            283.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "To illustrate the question that we want",
+          "bbox": [
+            315.33,
+            271.73,
+            512.05,
+            283.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to ask, suppose that the asymptotic boundary Σ is a Riemann surface of genus g ⩾1,",
+          "bbox": [
+            83.34,
+            285.0,
+            512.0,
+            299.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "MSAM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and fix the boundary moduli Ωi, ¯Ωi. Then a natural class of 3-manifolds contributing",
+          "bbox": [
+            83.34,
+            300.48,
+            511.97,
+            316.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "to the sum over topologies consists of the genus-g handlebodies:2",
+          "bbox": [
+            83.34,
+            318.17,
+            413.28,
+            331.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            290.07,
+            344.48,
+            307.33,
+            356.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Zgrav[M γ] .",
+          "bbox": [
+            330.61,
+            345.42,
+            384.78,
+            360.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "⊃",
+          "bbox": [
+            254.17,
+            347.09,
+            263.47,
+            359.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Z[Σg]",
+          "bbox": [
+            210.5,
+            347.24,
+            239.14,
+            360.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(1.2)",
+          "bbox": [
+            487.87,
+            347.24,
+            511.95,
+            359.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ∈MCG(Σg)/Hg",
+          "bbox": [
+            266.79,
+            364.8,
+            329.9,
+            373.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Topologically, a genus-g handlebody is homeomorphic to a ‘filled-in’ genus-g surface.",
+          "bbox": [
+            83.34,
+            386.4,
+            511.98,
+            398.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Geometrically, it admits an infinite-volume hyperbolic metric after choosing a col-",
+          "bbox": [
+            83.34,
+            402.29,
+            511.98,
+            414.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "lection of 3g −3 disjoint cycles on the boundary Σg that become contractible in the",
+          "bbox": [
+            83.34,
+            418.02,
+            511.96,
+            431.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "bulk (a choice of identity channel, in CFT parlance). Different choices of cycles are",
+          "bbox": [
+            83.34,
+            434.07,
+            511.96,
+            446.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "related to each other by crossing transformations γ, which are elements of the map-",
+          "bbox": [
+            83.34,
+            449.96,
+            511.98,
+            461.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ping class group of Σg.3 An example of such a mapping class group transformation",
+          "bbox": [
+            83.34,
+            461.51,
+            511.99,
+            478.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "is shown in figure 1. The sum over handlebodies can hence be written as a sum over",
+          "bbox": [
+            83.34,
+            481.74,
+            511.96,
+            493.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "crossing transformations, modulo the bulk mapping class group of the handlebody",
+          "bbox": [
+            83.34,
+            497.63,
+            512.0,
+            509.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Hg (the so-called handlebody group).",
+          "bbox": [
+            83.34,
+            513.36,
+            274.9,
+            527.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Note that in the g = 1 case, the handlebody sum (1.2) was studied by Maloney",
+          "bbox": [
+            104.41,
+            529.41,
+            511.99,
+            541.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and Witten [21] and subsequently by Keller and Maloney [22]. The resulting sum",
+          "bbox": [
+            83.34,
+            545.3,
+            511.97,
+            557.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "over solid tori takes the form of a Poincar´e series, with MCG(Σ1) = PSL(2, Z) and",
+          "bbox": [
+            83.34,
+            558.58,
+            511.97,
+            574.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "H1 = Z. Each Zgrav[M γ] evaluates to a product of left- and right moving Virasoro",
+          "bbox": [
+            83.34,
+            574.47,
+            512.01,
+            590.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "vacuum characters, |χ1(γ ·τ)|2, and hence the role of the sum over topologies is quite",
+          "bbox": [
+            83.34,
+            591.75,
+            511.97,
+            604.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "dsrom8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "clear: it renders the average partition function modular invariant. Restricting the",
+          "bbox": [
+            83.34,
+            608.86,
+            512.02,
+            620.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "sum to a smaller set of bulk saddles would violate modular invariance of the average.4",
+          "bbox": [
+            83.34,
+            623.53,
+            511.44,
+            636.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2Here and in the rest of the paper, we use the symbol ⊃to denote that the right-hand side is a",
+          "bbox": [
+            96.8,
+            646.48,
+            511.98,
+            657.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sub-sum of the full sum over topologies.",
+          "bbox": [
+            83.34,
+            660.91,
+            257.23,
+            670.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3For an introduction to crossing transformations, see [20].",
+          "bbox": [
+            96.8,
+            671.95,
+            348.99,
+            683.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "4A larger set of bulk manifolds may be included, as long as it does not spoil modular invariance.",
+          "bbox": [
+            96.8,
+            684.26,
+            512.01,
+            695.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In the genus-1 case, such additional contributions are conjectured to be necessary in order to cure",
+          "bbox": [
+            83.34,
+            698.69,
+            511.97,
+            708.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the negativity in the spectral density in the near-extremal limit [23–27].",
+          "bbox": [
+            83.34,
+            711.84,
+            397.11,
+            721.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "– 5 –",
+          "bbox": [
+            284.96,
+            781.36,
+            310.34,
+            793.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 73,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. In section 4, we show that index contractions, in a statistical ensemble of heavy OPE coefficients, correspond to 3-manifold surgery where the gluing surface is a cylinder. Combining this surgery with crossing transformations generates many non-handlebodies."
+      ],
+      "labels": [
+        {
+          "text": "P3",
+          "bbox": [
+            318.01,
+            92.14,
+            329.25,
+            104.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "P4",
+          "bbox": [
+            460.91,
+            92.94,
+            472.14,
+            104.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "glue",
+          "bbox": [
+            385.95,
+            131.12,
+            405.35,
+            142.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "· · · Ci1i2i3Ci4i5i6 · · ·",
+          "bbox": [
+            122.12,
+            144.71,
+            251.97,
+            166.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96,
+            11.96,
+            17.22
+          ]
+        },
+        {
+          "text": "OPE index contractions (typicality)",
+          "bbox": [
+            95.34,
+            219.41,
+            279.15,
+            231.36
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "cylinder surgery",
+          "bbox": [
+            355.98,
+            221.43,
+            438.0,
+            233.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 2. In section 4, we show that index contractions, in a statistical ensemble of heavy",
+          "bbox": [
+            83.34,
+            253.76,
+            511.96,
+            264.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "OPE coefficients, correspond to 3-manifold surgery where the gluing surface is a cylinder.",
+          "bbox": [
+            83.34,
+            268.66,
+            511.98,
+            279.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Combining this surgery with crossing transformations generates many non-handlebodies.",
+          "bbox": [
+            83.34,
+            283.57,
+            507.39,
+            294.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Let us emphasize that the above question is distinct from previous work on",
+          "bbox": [
+            104.41,
+            316.28,
+            511.97,
+            328.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Euclidean wormholes and the factorization puzzle [2, 3, 32–36]. When the boundary",
+          "bbox": [
+            83.34,
+            332.17,
+            512.0,
+            344.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Σ has multiple disconnected components, there are well-known wormhole topologies",
+          "bbox": [
+            83.34,
+            348.06,
+            511.96,
+            360.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "connecting them (the simplest example being the Maldacena-Maoz solution [32]),",
+          "bbox": [
+            83.34,
+            363.95,
+            511.97,
+            375.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and these are always non-handlebodies. Moreover, it is by now well understood that",
+          "bbox": [
+            83.34,
+            379.84,
+            511.98,
+            391.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "these Euclidean wormholes probe higher statistical moments (such as the variance)",
+          "bbox": [
+            83.34,
+            395.73,
+            511.97,
+            407.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in the ensemble of OPE coefficients [2, 3, 12, 13]. So, in the multi-boundary case,",
+          "bbox": [
+            83.34,
+            411.62,
+            511.97,
+            423.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "non-handlebodies are clearly needed for the ensemble to have non-zero fluctuations",
+          "bbox": [
+            83.34,
+            427.51,
+            511.96,
+            439.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "around the average. On the other hand, the single-boundary non-handlebodies that",
+          "bbox": [
+            83.34,
+            443.4,
+            512.0,
+            455.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "we address in this paper have so far remained elusive.",
+          "bbox": [
+            83.34,
+            459.29,
+            358.76,
+            471.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Non-handlebodies from statistics.",
+          "bbox": [
+            83.34,
+            484.07,
+            279.82,
+            496.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In section 4, we demonstrate that including",
+          "bbox": [
+            291.53,
+            484.07,
+            512.05,
+            496.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "non-handlebodies in the sum over topologies becomes necessary when, in addition to",
+          "bbox": [
+            83.34,
+            499.96,
+            511.97,
+            511.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "crossing symmetry, we require the ensemble of CFT2 data to satisfy typicality. This",
+          "bbox": [
+            83.34,
+            515.85,
+            511.96,
+            529.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "concept is familiar from the Eigenstate Thermalization Hypothesis [37–41] and can",
+          "bbox": [
+            83.34,
+            531.74,
+            512.0,
+            543.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "be generalized to chaotic 2d CFTs [13, 29, 42], where it amounts to approximate",
+          "bbox": [
+            83.34,
+            547.63,
+            512.02,
+            559.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "local rotational invariance in microcanonical windows around primary states of high",
+          "bbox": [
+            83.34,
+            563.52,
+            512.03,
+            575.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "conformal dimension. Importantly, typicality predicts the structure of index con-",
+          "bbox": [
+            83.34,
+            579.41,
+            511.98,
+            591.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "tractions of random OPE coefficients, which in the bulk translates to precise surgery",
+          "bbox": [
+            83.34,
+            595.3,
+            511.98,
+            607.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "operations on 3-manifolds, as illustrated in figure 2. We show that iteratively apply-",
+          "bbox": [
+            83.34,
+            611.19,
+            512.0,
+            623.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ing these surgery moves and combining them with crossing transformations generates",
+          "bbox": [
+            83.34,
+            627.08,
+            511.99,
+            639.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a large class of non-handlebody topologies.",
+          "bbox": [
+            83.34,
+            642.97,
+            303.06,
+            654.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We will refer to this inductive procedure for generating topologies from proper-",
+          "bbox": [
+            104.41,
+            658.86,
+            511.99,
+            670.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ties of the statistical ensemble of CFT2 data as the “gravitational machine”. This",
+          "bbox": [
+            83.34,
+            674.75,
+            511.99,
+            688.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "machine takes as input any handlebody (or multiple handlebodies) and repeatedly",
+          "bbox": [
+            83.34,
+            690.64,
+            511.99,
+            702.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "acts on it with three basic surgery operations, which will be specified in section 4.2.",
+          "bbox": [
+            83.34,
+            706.54,
+            511.96,
+            718.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The resulting set of 3-manifold topologies should be seen as the minimal completion",
+          "bbox": [
+            83.34,
+            722.43,
+            511.97,
+            734.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "– 7 –",
+          "bbox": [
+            284.96,
+            781.36,
+            310.34,
+            793.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 42,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. Examples of non-handlebodies with genus-2 boundary. These non-handlebodies are all necessary in the sum over topologies, in order for the statistical description of the CFT to be consistent. a) Complement of a handlebody-knot in S3. b) Twisted I-bundle. c) Dehn surgery on the complement of a handlebody embedded in S3."
+      ],
+      "labels": [
+        {
+          "text": "n1",
+          "bbox": [
+            395.75,
+            131.7,
+            405.71,
+            142.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n3",
+          "bbox": [
+            462.42,
+            131.7,
+            472.38,
+            142.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "/ Φ",
+          "bbox": [
+            338.23,
+            144.69,
+            363.36,
+            161.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR17"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "n2",
+          "bbox": [
+            429.02,
+            148.76,
+            438.97,
+            159.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n4",
+          "bbox": [
+            430.22,
+            172.83,
+            440.17,
+            183.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a)",
+          "bbox": [
+            103.2,
+            190.02,
+            113.9,
+            201.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b)",
+          "bbox": [
+            226.84,
+            190.02,
+            236.37,
+            201.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "c)",
+          "bbox": [
+            372.71,
+            190.02,
+            382.3,
+            201.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3. Examples of non-handlebodies with genus-2 boundary. These non-handlebodies",
+          "bbox": [
+            83.34,
+            241.88,
+            512.0,
+            252.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "are all necessary in the sum over topologies, in order for the statistical description of the",
+          "bbox": [
+            83.34,
+            256.79,
+            511.97,
+            267.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "CFT to be consistent. a) Complement of a handlebody-knot in S3. b) Twisted I-bundle.",
+          "bbox": [
+            83.34,
+            270.03,
+            511.96,
+            282.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "c) Dehn surgery on the complement of a handlebody embedded in S3.",
+          "bbox": [
+            83.34,
+            284.93,
+            417.01,
+            297.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of the handlebody sum that is compatible with typicality, crossing symmetry and",
+          "bbox": [
+            83.34,
+            320.38,
+            511.99,
+            332.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "consistency between higher and lower statistical moments.5",
+          "bbox": [
+            83.34,
+            335.05,
+            386.07,
+            348.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The main results of this paper are to study and rigorously prove certain appealing",
+          "bbox": [
+            104.41,
+            352.16,
+            512.01,
+            364.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "properties of the gravitational machine, which we summarize here:",
+          "bbox": [
+            83.34,
+            368.06,
+            423.94,
+            380.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "• The machine generates non-handlebodies. We will explicitly show that",
+          "bbox": [
+            100.9,
+            393.69,
+            511.99,
+            405.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the examples illustrated in figure 3 are generated by the machine. Moreover,",
+          "bbox": [
+            112.6,
+            409.8,
+            511.98,
+            421.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "we show that they are indeed non-handlebodies by analyzing their fundamen-",
+          "bbox": [
+            112.6,
+            425.69,
+            511.97,
+            437.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "tal groups. As a simple class of examples of non-handlebodies, we similarly",
+          "bbox": [
+            112.6,
+            441.58,
+            511.95,
+            453.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "analyze all genus-2 handlebody-knots with fewer than 6 crossings (see table 1).",
+          "bbox": [
+            112.6,
+            457.47,
+            511.98,
+            469.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "More generally, the machine applies for arbitrary genus g ⩾2 of the boundary",
+          "bbox": [
+            112.6,
+            470.75,
+            512.0,
+            485.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "MSAM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "manifold and also works for disconnected boundaries.",
+          "bbox": [
+            112.6,
+            489.25,
+            386.37,
+            501.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "• The machine is hyperbolic. In section 4.3, we prove that starting from any",
+          "bbox": [
+            100.9,
+            514.88,
+            512.03,
+            527.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "hyperbolic 3-manifold, the action of the gravitational machine only produces",
+          "bbox": [
+            112.6,
+            530.99,
+            512.0,
+            542.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3-manifolds that are also hyperbolic. The proof follows from studying how the",
+          "bbox": [
+            112.6,
+            546.89,
+            511.99,
+            558.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "fundamental group changes under the operations of the machine, making use",
+          "bbox": [
+            112.6,
+            562.78,
+            511.98,
+            574.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of Thurston’s hyperbolization theorem [45] and geometric group theory. This",
+          "bbox": [
+            112.6,
+            578.67,
+            512.0,
+            590.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "key result makes precise the intuition that OPE statistics in the boundary",
+          "bbox": [
+            112.6,
+            594.56,
+            511.97,
+            606.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "description only requires on-shell saddles in the bulk.",
+          "bbox": [
+            112.6,
+            610.45,
+            385.1,
+            622.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "• But not all hyperbolic non-handlebodies are generated. This is perhaps",
+          "bbox": [
+            100.9,
+            636.08,
+            512.04,
+            648.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the most interesting outcome of our analysis: in section 4.4, we show that all",
+          "bbox": [
+            112.6,
+            652.19,
+            511.99,
+            664.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "manifolds generated by the machine are so-called cylindrical 3-manifolds, which",
+          "bbox": [
+            112.6,
+            668.08,
+            511.95,
+            680.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "5However, this is not the end of the story: in this paper, we focus on OPE statistics and ignore",
+          "bbox": [
+            96.8,
+            689.81,
+            511.98,
+            701.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "spectral correlations. The latter are expected to arise from off-shell topologies [4, 6, 14, 25, 43, 44]",
+          "bbox": [
+            83.34,
+            704.24,
+            511.95,
+            714.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that further correct the dictionary (1.1). We will have more to say on this in the discussion.",
+          "bbox": [
+            83.34,
+            717.39,
+            485.52,
+            727.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "– 8 –",
+          "bbox": [
+            284.96,
+            781.36,
+            310.34,
+            793.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "rotation": 0,
+      "drawings": 120,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. The three basic Moore-Seiberg moves, acting on embedded bordered surfaces in a given pair-of-pants decomposition of a Riemann surface. From left to right, these are the braiding transformation, the fusion move and the modular S-transform."
+      ],
+      "labels": [
+        {
+          "text": "F",
+          "bbox": [
+            284.85,
+            87.55,
+            292.15,
+            99.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            442.25,
+            87.55,
+            448.89,
+            99.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            135.83,
+            87.88,
+            143.81,
+            99.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 4. The three basic Moore-Seiberg moves, acting on embedded bordered surfaces",
+          "bbox": [
+            83.34,
+            143.82,
+            511.95,
+            154.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in a given pair-of-pants decomposition of a Riemann surface. From left to right, these are",
+          "bbox": [
+            83.34,
+            158.72,
+            511.98,
+            169.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the braiding transformation, the fusion move and the modular S-transform.",
+          "bbox": [
+            83.34,
+            173.63,
+            444.08,
+            184.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2.2",
+          "bbox": [
+            83.34,
+            206.31,
+            100.54,
+            218.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Crossing symmetry and modular invariance",
+          "bbox": [
+            113.99,
+            206.31,
+            370.87,
+            218.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The next set of consistency conditions that we impose on the ensemble are modular",
+          "bbox": [
+            83.34,
+            228.18,
+            511.96,
+            240.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "invariance of the torus partition function and crossing symmetry of all higher-genus",
+          "bbox": [
+            83.34,
+            244.07,
+            511.99,
+            256.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "partition functions. We will impose these constraints on the average, instead of on",
+          "bbox": [
+            83.34,
+            259.96,
+            511.98,
+            271.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "each member of the ensemble. That is, we demand that",
+          "bbox": [
+            83.34,
+            275.85,
+            369.62,
+            287.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Σg; γ· Ω, γ· ¯Ω",
+          "bbox": [
+            130.89,
+            299.79,
+            198.28,
+            315.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Σg; Ω, ¯Ω",
+          "bbox": [
+            232.86,
+            299.79,
+            273.53,
+            315.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "for all γ ∈MCG(Σg) and g ⩾1.",
+          "bbox": [
+            290.22,
+            300.2,
+            454.19,
+            315.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "MSAM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0002",
+          "bbox": [
+            125.91,
+            301.73,
+            130.9,
+            313.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0003",
+          "bbox": [
+            198.28,
+            301.73,
+            203.27,
+            313.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0002",
+          "bbox": [
+            227.88,
+            301.73,
+            232.87,
+            313.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0003",
+          "bbox": [
+            273.53,
+            301.73,
+            278.51,
+            313.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            117.04,
+            302.81,
+            125.05,
+            314.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "= Z",
+          "bbox": [
+            206.59,
+            302.81,
+            227.02,
+            314.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(2.7)",
+          "bbox": [
+            487.89,
+            302.81,
+            511.97,
+            314.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Since we are not taking an average over an ensemble of exact CFT’s, this is a non-",
+          "bbox": [
+            83.34,
+            329.78,
+            511.98,
+            341.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "trivial constraint on the measure µ({hi, ¯hi, Cijk}). When g = 1, γ is an element of",
+          "bbox": [
+            83.34,
+            342.51,
+            511.95,
+            358.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the modular group MCG(Σ1) ∼= PSL(2, Z), which acts on the torus moduli τ, ¯τ by",
+          "bbox": [
+            83.34,
+            358.09,
+            511.96,
+            374.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the usual fractional linear transformations. For g ⩾1, γ is a mapping class group",
+          "bbox": [
+            83.34,
+            374.84,
+            512.02,
+            389.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "MSAM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "transformation, which can be represented as a composition of the basic generating",
+          "bbox": [
+            83.34,
+            393.34,
+            511.99,
+            405.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "moves of the Moore-Seiberg groupoid MSg shown in figure 4. These moves are allowed",
+          "bbox": [
+            83.34,
+            409.23,
+            511.96,
+            422.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "to act on all subsurfaces Σ0,3, Σ0,4 and Σ1,1 that are embedded in Σg.7",
+          "bbox": [
+            83.34,
+            423.9,
+            441.01,
+            438.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "As an illustration, consider again the genus-2 crossing transformation shown in",
+          "bbox": [
+            104.41,
+            441.01,
+            512.0,
+            452.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "figure 1 from the introduction. To see how it can be obtained by composing the basic",
+          "bbox": [
+            83.34,
+            456.9,
+            511.99,
+            468.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Moore-Seiberg moves, we make the following sequence of crossing transformations:",
+          "bbox": [
+            83.34,
+            472.79,
+            506.48,
+            484.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "F",
+          "bbox": [
+            193.28,
+            498.81,
+            200.58,
+            510.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "F",
+          "bbox": [
+            373.48,
+            498.81,
+            380.78,
+            510.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "B2",
+          "bbox": [
+            284.17,
+            500.05,
+            296.37,
+            512.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(2.8)",
+          "bbox": [
+            487.88,
+            512.11,
+            511.95,
+            524.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Here we only drew the dual graph, which can be drawn on a genus-2 surface in such",
+          "bbox": [
+            83.34,
+            552.26,
+            511.96,
+            564.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a way that each edge intersects a cycle in the pair-of-pants decomposition once. In",
+          "bbox": [
+            83.34,
+            568.15,
+            511.97,
+            580.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "particular, the pair-of-pants decomposition on the right of figure 1 corresponds to",
+          "bbox": [
+            83.34,
+            584.04,
+            512.0,
+            596.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the dual graph on the right of equation (2.8).",
+          "bbox": [
+            83.34,
+            599.93,
+            315.89,
+            611.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Note that the constraint in (2.7) implies that crossing symmetry is also enforced",
+          "bbox": [
+            104.41,
+            615.82,
+            512.0,
+            627.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "for averages of products of partition functions, such as Z[Σg1]Z[Σg2]. To see this, we",
+          "bbox": [
+            83.34,
+            631.71,
+            511.93,
+            645.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMTI12"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "just have to take a higher-genus Riemann surface Σg, such that pinching it along a",
+          "bbox": [
+            83.34,
+            647.6,
+            511.97,
+            660.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "7The Moore-Seiberg groupoid can be used to represent the mapping class group MCG(Σg) =",
+          "bbox": [
+            96.8,
+            670.1,
+            511.94,
+            682.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Diff+(Σg)/Diff0(Σg) of large diffeomorphisms of Σg. This can be seen by composing two braids B",
+          "bbox": [
+            83.34,
+            682.35,
+            511.94,
+            695.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to obtain a Dehn twist [20] and using that the mapping class group of Σg is generated by Dehn",
+          "bbox": [
+            83.34,
+            697.68,
+            511.95,
+            709.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "twists along 2g + 1 standard a- and b-cycles (the so-called Humphries generators [58, 59]). Each of",
+          "bbox": [
+            83.34,
+            710.83,
+            511.96,
+            720.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "these cycles can be reached by acting with F and S on a given pair-of-pants decomposition.",
+          "bbox": [
+            83.34,
+            721.81,
+            481.59,
+            733.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "– 13 –",
+          "bbox": [
+            282.03,
+            781.36,
+            313.27,
+            793.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 23,
+      "rotation": 0,
+      "drawings": 100,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5. For a closed Riemann surface of genus g ⩾2, the mapping class group MCG(Σg) is generated by Dehn twists along the 2g + 1 cycles drawn in red."
+      ],
+      "labels": [
+        {
+          "text": ". . .",
+          "bbox": [
+            290.86,
+            107.67,
+            304.6,
+            119.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 5. For a closed Riemann surface of genus g ⩾2, the mapping class group MCG(Σg)",
+          "bbox": [
+            83.34,
+            156.6,
+            511.94,
+            170.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSAM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "is generated by Dehn twists along the 2g + 1 cycles drawn in red.",
+          "bbox": [
+            83.34,
+            173.89,
+            396.1,
+            184.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "conformal structure moduli at the boundary. If we fix the values of these moduli,",
+          "bbox": [
+            83.34,
+            206.88,
+            511.98,
+            218.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the handlebody carries a hyperbolic metric (i.e. of constant negative curvature) with",
+          "bbox": [
+            83.34,
+            222.77,
+            511.99,
+            234.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "infinite volume, which is unique up to isometry [75].",
+          "bbox": [
+            83.34,
+            238.66,
+            350.45,
+            250.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "There are three important groups associated to a handlebody. The first is the",
+          "bbox": [
+            104.41,
+            254.55,
+            511.99,
+            266.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "fundamental group π1(M), which for a handlebody is isomorphic to the free group",
+          "bbox": [
+            83.34,
+            270.44,
+            511.97,
+            283.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "on g generators. The second is the mapping class group of the boundary surface:",
+          "bbox": [
+            83.34,
+            286.33,
+            498.22,
+            298.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "MCG(Σg) = Diff+(Σg)",
+          "bbox": [
+            238.96,
+            309.2,
+            355.12,
+            332.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.2)",
+          "bbox": [
+            487.87,
+            319.32,
+            511.95,
+            331.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Diff0(Σg)",
+          "bbox": [
+            307.82,
+            327.52,
+            353.95,
+            340.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "where the numerator is the group of orientation preserving diffeomorphisms of Σg and",
+          "bbox": [
+            83.34,
+            351.77,
+            511.94,
+            365.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the denominator is the subgroup of diffeomorphisms that are continuously connected",
+          "bbox": [
+            83.34,
+            367.66,
+            511.99,
+            379.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to the identity. A famous theorem by Lickorish states that the mapping class group",
+          "bbox": [
+            83.34,
+            383.56,
+            512.0,
+            395.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is generated by a finite collection of Dehn twists [58]. A Dehn twist T is a local",
+          "bbox": [
+            83.34,
+            399.45,
+            511.98,
+            411.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "operation on a cylinder neighborhood of a closed curve C, where the cylinder is cut",
+          "bbox": [
+            83.34,
+            415.34,
+            511.99,
+            427.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "along C and reglued after a rotation by 2π:",
+          "bbox": [
+            83.34,
+            431.23,
+            306.18,
+            443.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "T :",
+          "bbox": [
+            156.56,
+            479.9,
+            171.62,
+            491.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            435.46,
+            479.9,
+            438.71,
+            491.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.3)",
+          "bbox": [
+            487.87,
+            479.9,
+            511.95,
+            491.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The minimal number of Dehn twist generators for MCG(Σg) with g ⩾2 is 2g + 1",
+          "bbox": [
+            83.34,
+            521.79,
+            511.97,
+            537.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "MSAM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "[59] (while for g = 1 the minimum number is 2). A canonical choice of cycles, whose",
+          "bbox": [
+            83.34,
+            540.29,
+            511.97,
+            552.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "corresponding Dehn twists generate the mapping class group, is shown in figure 5.",
+          "bbox": [
+            83.34,
+            556.18,
+            511.98,
+            568.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Although finitely generated, it is not a free group: there are relations among the Dehn",
+          "bbox": [
+            83.34,
+            572.07,
+            512.0,
+            584.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "twist generators. These relations can be used to reduce the number of generators to",
+          "bbox": [
+            83.34,
+            587.97,
+            511.97,
+            599.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 elements [76], which consist of products of Dehn twists.",
+          "bbox": [
+            83.34,
+            603.86,
+            377.52,
+            615.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The third important group associated to a handlebody is the so-called handlebody",
+          "bbox": [
+            104.41,
+            619.75,
+            511.99,
+            631.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "group Hg of M. To describe it, consider the bulk mapping class group MCG(M),",
+          "bbox": [
+            83.34,
+            635.48,
+            511.94,
+            649.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "which consists of all large diffeomorphisms of M. Then we have the injection",
+          "bbox": [
+            83.34,
+            651.53,
+            478.31,
+            663.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "MCG(M) ,→MCG(Σg)",
+          "bbox": [
+            237.32,
+            678.88,
+            357.96,
+            691.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.4)",
+          "bbox": [
+            487.88,
+            679.03,
+            511.95,
+            690.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "by restricting the diffeomorphisms of M to its boundary. The image of this map is",
+          "bbox": [
+            83.34,
+            706.54,
+            511.98,
+            718.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "precisely the handlebody group. It is an infinite index (and non-normal) subgroup",
+          "bbox": [
+            83.34,
+            722.43,
+            511.99,
+            734.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "– 23 –",
+          "bbox": [
+            282.03,
+            781.36,
+            313.27,
+            793.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 36,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6. Two VTQFT diagrams that describe the same handlebody: one is in the sunset basis (left), the other in the dumbbell basis (right)."
+      ],
+      "labels": [
+        {
+          "text": "\"",
+          "bbox": [
+            202.02,
+            89.27,
+            208.99,
+            101.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "#",
+          "bbox": [
+            270.47,
+            89.27,
+            277.44,
+            101.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\"",
+          "bbox": [
+            328.51,
+            89.27,
+            335.48,
+            101.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "#",
+          "bbox": [
+            406.79,
+            89.27,
+            413.76,
+            101.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ZVir",
+          "bbox": [
+            181.51,
+            101.12,
+            201.52,
+            114.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            277.44,
+            101.12,
+            280.69,
+            113.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ZVir",
+          "bbox": [
+            308.01,
+            101.12,
+            328.01,
+            114.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "P3 P2",
+          "bbox": [
+            238.61,
+            102.65,
+            262.72,
+            114.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P1",
+          "bbox": [
+            214.4,
+            102.79,
+            224.77,
+            113.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P1",
+          "bbox": [
+            342.22,
+            103.82,
+            352.59,
+            114.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P2",
+          "bbox": [
+            392.15,
+            103.82,
+            402.52,
+            114.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P3",
+          "bbox": [
+            365.93,
+            108.31,
+            376.3,
+            119.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 6. Two VTQFT diagrams that describe the same handlebody: one is in the sunset",
+          "bbox": [
+            83.34,
+            141.6,
+            511.96,
+            152.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "basis (left), the other in the dumbbell basis (right).",
+          "bbox": [
+            83.34,
+            156.5,
+            328.53,
+            167.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "OPE index contractions that we discussed in section 2. We highlight the distinction",
+          "bbox": [
+            83.34,
+            188.42,
+            511.97,
+            200.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "between γ and γC because a mapping class γ does not change the topology of the",
+          "bbox": [
+            83.34,
+            204.31,
+            511.98,
+            218.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "graph ΓC (instead, what changes is the embedding of ΓC in the Riemann surface).",
+          "bbox": [
+            83.34,
+            220.2,
+            511.94,
+            233.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "On the other hand, γC can be any crossing transformation (in the Moore-Seiberg",
+          "bbox": [
+            83.34,
+            236.09,
+            511.98,
+            249.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "groupoid), which may change the graph topology of ΓC.",
+          "bbox": [
+            83.34,
+            251.98,
+            368.55,
+            264.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "An example at genus 2 will help to understand this point. In the dumbbell chan-",
+          "bbox": [
+            104.41,
+            267.87,
+            511.96,
+            279.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "nel, the handlebody sum (3.46) should include the contribution from the mapping",
+          "bbox": [
+            83.34,
+            283.76,
+            511.99,
+            295.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "class γ = S ◦S ◦F ◦B2 ◦F, whose VTQFT diagram is the linked dumbbell shown",
+          "bbox": [
+            83.34,
+            295.16,
+            511.95,
+            311.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "in figure 6 (right). This is indeed a MCG transformation, and γC = 1. In the sunset",
+          "bbox": [
+            83.34,
+            315.54,
+            511.94,
+            329.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "channel, on the other hand, we have γC = F, so the same handlebody is now repre-",
+          "bbox": [
+            83.34,
+            328.82,
+            511.95,
+            345.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "sented by γ ◦γC = S ◦S ◦F ◦B2, where we used that F2 = 1. The corresponding",
+          "bbox": [
+            83.34,
+            342.98,
+            511.96,
+            361.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "VTQFT diagram is shown in figure 6 (left). The two representations of the same",
+          "bbox": [
+            83.34,
+            363.21,
+            511.97,
+            375.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "handlebody indeed lead to the same identity block:",
+          "bbox": [
+            83.34,
+            379.1,
+            345.84,
+            391.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            339.49,
+            403.16,
+            347.46,
+            415.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            415.58,
+            403.16,
+            423.56,
+            415.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Z ∞",
+          "bbox": [
+            95.29,
+            405.33,
+            115.72,
+            422.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0014P1P2",
+          "bbox": [
+            234.09,
+            410.33,
+            265.25,
+            423.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0015\u0000",
+          "bbox": [
+            265.75,
+            410.33,
+            277.54,
+            429.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u00012Fg=2",
+          "bbox": [
+            305.05,
+            414.7,
+            338.99,
+            431.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "d3P S1P1[1]S1P2[1]F1P3",
+          "bbox": [
+            118.21,
+            415.98,
+            233.09,
+            432.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "MSBM10",
+            "dsrom12",
+            "dsrom8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "BP3",
+          "bbox": [
+            277.54,
+            415.98,
+            294.53,
+            427.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "P1",
+          "bbox": [
+            339.49,
+            419.81,
+            363.64,
+            436.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96,
+            11.96
+          ]
+        },
+        {
+          "text": "P3 P2",
+          "bbox": [
+            382.24,
+            419.81,
+            409.28,
+            431.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            415.58,
+            424.67,
+            423.56,
+            436.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "P1P2",
+          "bbox": [
+            285.51,
+            424.95,
+            304.05,
+            433.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "P1P2",
+          "bbox": [
+            240.4,
+            426.72,
+            265.25,
+            439.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            101.93,
+            432.5,
+            106.17,
+            440.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            387.63,
+            450.18,
+            395.61,
+            462.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            458.85,
+            450.18,
+            466.82,
+            462.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "′",
+          "bbox": [
+            395.55,
+            453.81,
+            397.85,
+            461.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "′",
+          "bbox": [
+            457.29,
+            454.08,
+            459.59,
+            462.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            387.63,
+            464.3,
+            405.61,
+            483.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10",
+            "dsrom10"
+          ],
+          "sizes": [
+            9.96,
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            447.4,
+            464.3,
+            453.49,
+            474.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "dsrom10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= Fg=2",
+          "bbox": [
+            350.98,
+            465.46,
+            387.13,
+            478.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            458.85,
+            465.61,
+            472.06,
+            483.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.48)",
+          "bbox": [
+            482.02,
+            465.61,
+            511.95,
+            477.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            423.2,
+            471.13,
+            429.29,
+            481.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "dsrom10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This reproduces the answer from our previous calculation (3.32) in the dumbbell",
+          "bbox": [
+            83.34,
+            502.78,
+            511.98,
+            514.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "channel. The two representations of the same handlebody are related by an overall",
+          "bbox": [
+            83.34,
+            518.67,
+            511.98,
+            530.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "fusion move, which we can think of as a change of basis.",
+          "bbox": [
+            83.34,
+            534.56,
+            371.71,
+            546.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Spin quantization.",
+          "bbox": [
+            83.34,
+            558.97,
+            190.73,
+            570.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "One immediate corollary of equation (3.46), which expresses",
+          "bbox": [
+            202.44,
+            558.97,
+            512.03,
+            570.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a statistical moment of CFT data in terms of a mapping class group orbit, is that the",
+          "bbox": [
+            83.34,
+            574.86,
+            512.0,
+            586.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "spins Ji = hi −¯hi are manifestly quantized. To see this, note that the sum over the",
+          "bbox": [
+            83.34,
+            587.6,
+            511.97,
+            604.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "mapping class group contains a sub-sum where we precompose with powers of Dehn",
+          "bbox": [
+            83.34,
+            606.64,
+            511.96,
+            618.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "acting on the cycles in the channel C. Writing γ = ˜γ ◦T n1 ◦· · · ◦T n3g−3,",
+          "bbox": [
+            138.52,
+            619.15,
+            511.94,
+            634.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMSY10",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "twists T ni",
+          "bbox": [
+            83.34,
+            620.32,
+            133.44,
+            634.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            124.01,
+            628.71,
+            126.89,
+            636.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "the corresponding partial sum over crossing kernels takes the form:",
+          "bbox": [
+            83.34,
+            638.42,
+            426.82,
+            650.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 3g−3",
+          "bbox": [
+            359.84,
+            659.76,
+            385.94,
+            672.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            310.75,
+            664.7,
+            314.98,
+            672.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "K ˜γ",
+          "bbox": [
+            210.62,
+            667.03,
+            229.84,
+            693.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "K ˜γ",
+          "bbox": [
+            331.23,
+            667.03,
+            350.46,
+            693.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "n3g−3",
+          "bbox": [
+            283.72,
+            668.91,
+            305.77,
+            677.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            182.75,
+            669.42,
+            200.01,
+            681.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            368.62,
+            669.42,
+            383.89,
+            681.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1h T n1",
+          "bbox": [
+            223.9,
+            669.57,
+            255.41,
+            686.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMMIB8",
+            "CMR6",
+            "MSBM10",
+            "dsrom8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "h1 · · · T",
+          "bbox": [
+            245.21,
+            669.57,
+            282.32,
+            688.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            318.81,
+            672.18,
+            327.91,
+            684.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "δZ(Ji),",
+          "bbox": [
+            387.93,
+            672.18,
+            421.14,
+            685.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.49)",
+          "bbox": [
+            482.03,
+            672.18,
+            511.96,
+            684.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1h",
+          "bbox": [
+            344.51,
+            676.88,
+            355.36,
+            686.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMIB8",
+            "dsrom8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "h3g−3",
+          "bbox": [
+            282.31,
+            678.62,
+            304.1,
+            687.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "n∈Z3g−3",
+          "bbox": [
+            174.14,
+            688.24,
+            208.13,
+            697.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMIB8",
+            "CMR6",
+            "CMSY6",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "i=1",
+          "bbox": [
+            369.4,
+            689.13,
+            383.1,
+            697.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where we used the Poisson resummation formula to rewrite the sum over Dehn twists",
+          "bbox": [
+            83.34,
+            706.54,
+            511.96,
+            718.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "n∈Z e2πin(hi−¯hi) = δZ(hi −¯hi). Note that this holds when all",
+          "bbox": [
+            200.2,
+            718.09,
+            511.95,
+            737.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "as the Dirac comb, P",
+          "bbox": [
+            83.34,
+            722.06,
+            200.2,
+            742.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "– 36 –",
+          "bbox": [
+            282.03,
+            781.36,
+            313.27,
+            793.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 55,
+      "rotation": 0,
+      "drawings": 16,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7. Pinching the innermost curve leads to two surfaces with fewer intersections with the boundary ∂M1 = ∂M2."
+      ],
+      "labels": [
+        {
+          "text": "M1",
+          "bbox": [
+            127.23,
+            87.76,
+            142.78,
+            100.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M2",
+          "bbox": [
+            186.76,
+            87.76,
+            202.31,
+            100.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M1",
+          "bbox": [
+            285.97,
+            87.76,
+            301.52,
+            100.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M2",
+          "bbox": [
+            335.57,
+            87.76,
+            351.13,
+            100.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M1",
+          "bbox": [
+            418.91,
+            87.76,
+            434.47,
+            100.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M2",
+          "bbox": [
+            474.47,
+            87.76,
+            490.03,
+            100.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Ci",
+          "bbox": [
+            317.88,
+            159.2,
+            329.14,
+            172.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Ci",
+          "bbox": [
+            177.0,
+            179.04,
+            188.26,
+            191.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "S1",
+          "bbox": [
+            428.91,
+            204.83,
+            440.34,
+            217.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "S2",
+          "bbox": [
+            484.47,
+            244.52,
+            495.9,
+            257.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            188.85,
+            245.42,
+            196.05,
+            257.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "S",
+          "bbox": [
+            345.61,
+            245.42,
+            352.8,
+            257.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 7. Pinching the innermost curve leads to two surfaces with fewer intersections",
+          "bbox": [
+            83.34,
+            307.95,
+            511.96,
+            318.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with the boundary ∂M1 = ∂M2.",
+          "bbox": [
+            83.34,
+            322.85,
+            237.1,
+            335.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "minimal. This n cannot be zero since then S would lie entirely in M. But since",
+          "bbox": [
+            83.34,
+            356.04,
+            511.93,
+            367.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π2(M) = 0 by hypothesis (for any connected component of M), this implies that S",
+          "bbox": [
+            83.34,
+            371.93,
+            511.28,
+            384.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "is null-homotopic in M and thus in f",
+          "bbox": [
+            83.34,
+            387.82,
+            280.97,
+            408.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "M, contradicting non-triviality of S in π2(f",
+          "bbox": [
+            267.73,
+            387.82,
+            497.83,
+            405.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M).",
+          "bbox": [
+            484.59,
+            387.82,
+            504.96,
+            399.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Now choose an innermost curve of the intersection, i.e. a Ci that bounds a disk",
+          "bbox": [
+            104.41,
+            403.71,
+            511.96,
+            417.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "on S. Then [Ci] cannot be a non-trivial element of π1(Σ0,2). For if it were, the disk",
+          "bbox": [
+            83.34,
+            419.6,
+            511.94,
+            432.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "would define a null-homotopy of [Ci] in one of the connected components of M, thus",
+          "bbox": [
+            83.34,
+            435.49,
+            511.95,
+            448.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "contradicting the injectivity assumption of the maps π1(Σ0,2) ,−→π1(M). Thus Ci",
+          "bbox": [
+            83.34,
+            451.22,
+            511.44,
+            464.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "has to be a contractible curve on Σ0,2. Since Ci is contractible on Σ0,2 and doesn’t",
+          "bbox": [
+            83.34,
+            467.27,
+            511.95,
+            481.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "contain any other intersection curves in its interior, we can isotope it to a point.",
+          "bbox": [
+            83.34,
+            483.16,
+            511.99,
+            495.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This pinches the 2-sphere S along the curve Ci and we obtain two 2-spheres S1 and",
+          "bbox": [
+            83.34,
+            499.05,
+            511.94,
+            512.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "S2 connected at a single point. If we separate them, at least one of the 2-spheres",
+          "bbox": [
+            83.34,
+            514.94,
+            511.96,
+            528.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "still defines a non-trivial element of π2(f",
+          "bbox": [
+            83.34,
+            530.83,
+            300.42,
+            548.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M) by the definition of π2. See figure 7 for",
+          "bbox": [
+            287.18,
+            530.83,
+            511.95,
+            543.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "an illustration of this procedure. Say [S1] is non-trivial. However, the number of",
+          "bbox": [
+            83.34,
+            546.72,
+            511.95,
+            559.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "intersections with Σ0,2 of S1 is at most n −1 since we removed the curve Ci. This",
+          "bbox": [
+            83.34,
+            562.46,
+            511.93,
+            576.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "contradicts the assumption that we chose n minimal. Thus we have arrived at a",
+          "bbox": [
+            83.34,
+            578.5,
+            511.98,
+            590.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "contradiction and conclude that π2(f",
+          "bbox": [
+            83.34,
+            594.39,
+            279.96,
+            611.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M) = 0.",
+          "bbox": [
+            266.72,
+            594.39,
+            308.71,
+            606.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Computing π1.",
+          "bbox": [
+            83.34,
+            619.29,
+            170.66,
+            632.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMBX8",
+            "CMMIB10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Next, we want to show that the gluing move 3 also preserves the",
+          "bbox": [
+            182.36,
+            619.29,
+            511.98,
+            631.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "fact that the manifold M is atoroidal. This can be checked by computing π1(f",
+          "bbox": [
+            83.34,
+            635.18,
+            504.8,
+            652.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "M).",
+          "bbox": [
+            491.56,
+            635.18,
+            511.93,
+            647.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The computation differs depending on whether we glue disconnected components or",
+          "bbox": [
+            83.34,
+            651.07,
+            511.96,
+            663.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the same connected component to itself.",
+          "bbox": [
+            83.34,
+            666.96,
+            289.3,
+            678.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "For gluing two disconnected components M1#P1∼P2M2, this is a standard appli-",
+          "bbox": [
+            104.41,
+            682.85,
+            511.95,
+            696.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "cation of the Seifert-Van-Kampen theorem. Before gluing, we have M = M1 ⊔M2,",
+          "bbox": [
+            83.34,
+            698.59,
+            511.94,
+            712.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "with M1 ∩M2 ∼= Σ0,2 with fundamental group π1(Σ0,2) ∼= Z. The theorem tells us",
+          "bbox": [
+            83.34,
+            711.16,
+            511.93,
+            728.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "– 55 –",
+          "bbox": [
+            282.03,
+            781.36,
+            313.27,
+            793.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 61,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 8. Cartoon comparing 3d gravity to 2d JT gravity: in 3d, the hyperbolic manifolds with totally geodesic boundary are acylindrical, and in 2d the hyperbolic manifolds with geodesic boundaries have negative Euler characteristic."
+      ],
+      "labels": [
+        {
+          "text": "totally",
+          "bbox": [
+            315.22,
+            121.76,
+            348.73,
+            133.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "totally",
+          "bbox": [
+            89.29,
+            122.82,
+            122.8,
+            134.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "hyperbolic,",
+          "bbox": [
+            445.42,
+            123.1,
+            502.0,
+            135.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "hyperbolic,",
+          "bbox": [
+            231.77,
+            127.01,
+            288.35,
+            138.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "M3",
+          "bbox": [
+            184.42,
+            136.59,
+            199.98,
+            149.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "geodesic",
+          "bbox": [
+            315.22,
+            137.65,
+            357.23,
+            149.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "geodesic",
+          "bbox": [
+            89.29,
+            138.71,
+            131.3,
+            150.67
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "χ < 0",
+          "bbox": [
+            445.42,
+            138.99,
+            474.36,
+            150.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "acylindrical",
+          "bbox": [
+            231.77,
+            142.9,
+            290.63,
+            154.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 8. Cartoon comparing 3d gravity to 2d JT gravity: in 3d, the hyperbolic manifolds",
+          "bbox": [
+            83.34,
+            212.24,
+            512.03,
+            223.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with totally geodesic boundary are acylindrical, and in 2d the hyperbolic manifolds with",
+          "bbox": [
+            83.34,
+            227.15,
+            512.03,
+            238.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "geodesic boundaries have negative Euler characteristic.",
+          "bbox": [
+            83.34,
+            242.05,
+            345.63,
+            252.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "There is a nice characterization of acylindrical hyperbolic manifolds, again due to",
+          "bbox": [
+            104.41,
+            275.23,
+            511.99,
+            287.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Thurston [48], which (roughly) says that a hyperbolic 3-manifold M with boundary",
+          "bbox": [
+            83.34,
+            291.13,
+            512.0,
+            303.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "admits a hyperbolic structure with totally geodesic boundary if and only if M is",
+          "bbox": [
+            83.34,
+            307.02,
+            511.96,
+            318.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "acylindrical. See [99] for self-contained exposition to this theorem, and see below for",
+          "bbox": [
+            83.34,
+            322.91,
+            511.98,
+            334.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the more precise statement of the theorem. Recall that in section 4.3, we used the",
+          "bbox": [
+            83.34,
+            338.8,
+            511.96,
+            350.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "most general version of Thurston’s hyperbolization theorem, which guarantees the",
+          "bbox": [
+            83.34,
+            354.69,
+            511.99,
+            366.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "existence of a hyperbolic metric regardless of whether this metric is of finite or infinite",
+          "bbox": [
+            83.34,
+            370.58,
+            511.96,
+            382.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "volume and regardless of whether the boundary of the convex core is geodesic or a",
+          "bbox": [
+            83.34,
+            386.47,
+            511.98,
+            398.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "pleated surface. By contrast, for geodesic boundaries (i.e. with vanishing extrinsic",
+          "bbox": [
+            83.34,
+            402.36,
+            511.97,
+            414.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "curvature) the relevant version of Thurston’s theorem reads:",
+          "bbox": [
+            83.34,
+            418.25,
+            392.21,
+            430.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let M be a compact, orientable, irreducible 3-manifold. Then M admits a",
+          "bbox": [
+            112.6,
+            444.1,
+            482.68,
+            456.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "finite-volume hyperbolic structure where ∂M is a totally geodesic boundary",
+          "bbox": [
+            112.6,
+            459.99,
+            482.7,
+            471.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "if and only if:",
+          "bbox": [
+            112.6,
+            475.88,
+            182.84,
+            487.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1. M is atoroidal.",
+          "bbox": [
+            122.94,
+            501.74,
+            215.94,
+            513.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2. M is ∂-irreducible.",
+          "bbox": [
+            122.94,
+            522.61,
+            234.88,
+            534.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3. M is acylindrical.",
+          "bbox": [
+            122.94,
+            543.48,
+            229.69,
+            555.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In appendix A.1, we define what ∂-irreducible means, and explain the simple direction",
+          "bbox": [
+            83.34,
+            569.33,
+            511.94,
+            581.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the implication (why the existence of essential cylinders obstructs the presence of",
+          "bbox": [
+            83.34,
+            585.22,
+            511.94,
+            597.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a hyperbolic metric with totally geodesic boundary).",
+          "bbox": [
+            83.34,
+            601.11,
+            353.33,
+            613.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Geodesic boundaries and comparison to JT gravity.",
+          "bbox": [
+            83.34,
+            626.01,
+            398.26,
+            637.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The above theorem",
+          "bbox": [
+            409.97,
+            626.01,
+            512.05,
+            637.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "suggests an analogy to JT gravity [34], illustrated in figure 8. Namely, in JT gravity",
+          "bbox": [
+            83.34,
+            641.9,
+            512.04,
+            653.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(with negative cosmological constant), one evaluates the path integral on a Riemann",
+          "bbox": [
+            83.34,
+            657.79,
+            512.03,
+            669.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "surface Σg,n with Euler characteristic χ(Σg,n) < 0 by gluing trumpets to a bordered",
+          "bbox": [
+            83.34,
+            673.68,
+            511.98,
+            687.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Riemann surface with geodesic boundaries. The only manifolds for which this cannot",
+          "bbox": [
+            83.34,
+            689.57,
+            511.97,
+            701.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "be done are the disk and the cylinder (double trumpet): if we remove the trumpets,",
+          "bbox": [
+            83.34,
+            705.47,
+            511.96,
+            717.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "we are not left with a 2-manifold. Similarly, for 3-manifolds we can also ask if it",
+          "bbox": [
+            83.34,
+            721.36,
+            511.98,
+            733.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "– 61 –",
+          "bbox": [
+            282.03,
+            781.36,
+            313.27,
+            793.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

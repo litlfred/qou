@@ -4,7 +4,7 @@ doc_title: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applica
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
-pages: 1-1
+pages: 1-2
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
 toc_source: outline
@@ -33,3 +33,42 @@ Wm,n. For practical computation, we also include in an appendix a SageMath imple
 tation of our Murnaghan–Nakayama rule, which computes individual character values and
 the full character table.
 Contents
+1.
+Introduction
+2
+2.
+Preliminaries
+7
+3.
+Murnaghan–Nakayama rule for the cyclotomic Hecke algebra
+12
+4.
+Special cases of the Murnaghan–Nakayama rule
+18
+5.
+A dual Murnaghan–Nakayama rule via vertex operators
+20
+6.
+Application I: Regev-type formula
+25
+7.
+Application II: L¨ubeck–Prasad–Adin–Roichman-type formula
+34
+8.
+Multiple bitrace for the irreducible characters
+43
+Appendix A.
+An alternative proof of Corollary 6.3
+49
+Appendix B.
+SageMath implementation of the Murnaghan–Nakayama rule
+51
+References
+55
+2020 Mathematics Subject Classification. Primary: 20C08; Secondary: 05E10, 17B69.
+Key words and phrases. Murnaghan–Nakayama rule, cyclotomic Hecke algebra, Ariki–Koike algebra,
+vertex operators, Regev formula, L¨ubeck–Prasad–Adin–Roichman formula, multiple bitrace.
+1
+arXiv:2504.18825v2  [math.RT]  11 Mar 2026
+2
+NAIHUAN JING AND NING LIU

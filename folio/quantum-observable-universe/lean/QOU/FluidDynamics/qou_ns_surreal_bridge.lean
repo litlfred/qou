@@ -105,7 +105,7 @@ Generic: `S` is an abstract surreal line, all other data are `Prop`s. `L²(ℝ³
 lives in the interpretation, not the statements. No `ℝ`.
 
 ## References
-- [manuscript] appendix-surreals/surreal-blowup-calculus,
+- [leitner2026] appendix-surreals/surreal-blowup-calculus,
   standard-part-classical-limits, surreal-limit-transfer;
   fluid-dynamics/ns-obstruction-tower, regularity-breakdown
 -/
@@ -143,7 +143,7 @@ variable {S : Type*}
     the open hypothesis `classical_regular_iff_finite`. Compose with
     `qou_internal_ns_singular` (given a QOU, `internalBlowup` holds) to conclude:
     *given a QOU + the surreal bridge, the classical flow is singular.* -/
--- Ref: [manuscript] fluid-dynamics/ns-obstruction-tower, appendix-surreals/surreal-blowup-calculus
+-- Ref: [leitner2026] fluid-dynamics/ns-obstruction-tower, appendix-surreals/surreal-blowup-calculus
 theorem classical_singular_of_internal_blowup (B : QOUNSSurrealBridge S)
     (h : B.internalBlowup) : ¬ B.classicalRegular := by
   rw [B.classical_regular_iff_finite]
@@ -155,11 +155,18 @@ theorem classical_singular_of_internal_blowup (B : QOUNSSurrealBridge S)
     (whose internal flow is singular) can have a regular standard-part flow
     *under this bridge*. This is the honest statement of what closing B2 would
     require. -/
--- Ref: [manuscript] fluid-dynamics/regularity-breakdown
+-- Ref: [leitner2026] fluid-dynamics/regularity-breakdown
 theorem internal_regular_of_classical_regular (B : QOUNSSurrealBridge S)
     (h : B.classicalRegular) : ¬ B.internalBlowup := by
   rw [B.blowup_iff_infinite]
   rw [B.classical_regular_iff_finite] at h
   exact not_not_intro h
+
+/-- **Combined B2 equivalence (`bean qou-joia`):** under `QOUNSSurrealBridge`,
+    internal blow-up holds if and only if the standard-part flow is not
+    classically regular. -/
+theorem internalBlowup_iff_not_classicalRegular (B : QOUNSSurrealBridge S) :
+    B.internalBlowup ↔ ¬ B.classicalRegular := by
+  rw [B.blowup_iff_infinite, B.classical_regular_iff_finite]
 
 end QOU.FluidDynamics

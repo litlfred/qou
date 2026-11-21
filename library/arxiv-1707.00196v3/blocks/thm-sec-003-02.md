@@ -1,1 +1,1 @@
-Two R-matrices R, S ∈R0 are equivalent if and only if they have
+[26] Let χ be an extremal character of S∞with Thoma parameters (α, β) ∈T. Then χ is faithful as a state of the group C∗-algebra C∗S∞if and only if either P i αi + P i βi < 1, or P i αi + P i βi = 1 and inﬁnitely many αi or βi are non-zero. In combination with Prop. 2.4 ii), this immediately implies the following result.

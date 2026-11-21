@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1301.4504v4",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "201acc5bb1d4b6a0fdf39f7edffb36e11b0119366d1459d968d80b8278a969f3",
   "file": "1301.4504v4.pdf"
  },
  "provenance": {
-  "title": "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Science, Princeton University, Princeton NJ 08540 USA",
-  "authors": null,
+  "title": "Quantum Computation vs. Firewalls",
+  "authors": "Daniel Harlowa Patrick Haydenb",
   "arxiv": {
    "id": "1301.4504",
    "version": "4",
@@ -22,23 +23,41 @@
  "summary": {
   "candidates": 1,
   "by_kind": {
-   "conjecture": 1
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": ", Phys.Rev. D55 (1997) 5112\u20135128, [ hep-th/9610043].",
-   "section_file": "sections/sec-021-a-the-absorption-probability-for-a-nambu-goto-st.md",
-   "section_title": "A The Absorption Probability for a Nambu-Goto String",
-   "pages": "59-66",
+   "statement": "Then $$|P_1(a)-P_2(a)|=|\\mathrm{Tr}\\left\\{(\\rho_1-\\rho_2)\\Pi_a\\right\\}|\\leq||(\\rho_1-\\rho_2)||_1,$$ so if the trace norm of the difference of two density operators is less than $\\epsilon$ then the probabilities they predict for any experimental result will differ by at most $\\epsilon$.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-005-3-the-amps-experiment-as-a-quantum-computation.md (p. 14-16)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-005-3-the-amps-experiment-as-a-quantum-computation.md",
+   "section_title": "The AMPS Experiment as a Quantum Computation",
+   "pages": "14-16",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-005-3-the-amps-experiment-as-a-quantum-computation.md (p. 14-16)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-005-01",
+   "block_iri": "library/arxiv-1301.4504v4/blocks/prop-sec-005-01",
+   "claim_id": "arxiv-1301.4504v4#prop-sec-005-01"
   }
  ]
 }

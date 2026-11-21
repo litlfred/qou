@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1911.04486v4/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Electromagnetic knot fields",
-  "pageStart": 12,
-  "pageEnd": 19,
-  "text": "../sections/sec-003-32-electromagnetic-knot-fields.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1911.04486v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1911.04486v4",
+  "title": "Maxwell equations in covariant formulation",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "text": "../sections/sec-003-22-maxwell-equations-in-covariant-formulation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1911.04486v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1911.04486v4/manifest.jsonld",
   "provenance": "ingested"
 }

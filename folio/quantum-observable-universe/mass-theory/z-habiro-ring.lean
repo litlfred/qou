@@ -18,7 +18,7 @@ This file provides the algebraic skeleton; the conjecture that the
 brane tower lives in this ring as a Cauchy limit is stated separately.
 
 -- Ref: [habiro2004cyclotomic] Habiro, "Cyclotomic completions of polynomial rings," arXiv:math/0209324
--- Ref: [manuscript] Chapter 3, def:z-habiro-ring
+-- Ref: [leitner2026] Chapter 3, def:z-habiro-ring
 -/
 
 open Polynomial
@@ -45,7 +45,7 @@ def ZHabiroEquiv (n : ℕ) (f g : ℝ → Polynomial ℝ) : Prop :=
     at each cyclotomic-in-z level. The polynomial structure lets us speak
     of degree, leading coefficient, and unique-representative-of-degree-<n
     inside each quotient. -/
--- Ref: [manuscript] def:z-habiro-ring
+-- Ref: [leitner2026] def:z-habiro-ring
 structure ZHabiroElement where
   /-- Polynomial representative at each level: a polynomial in z (over ℝ)
       whose coefficients depend on q. -/
@@ -66,7 +66,7 @@ noncomputable def embedQ (f : ℝ → ℝ) : ZHabiroElement where
     representative at level n; together with the compatibility data
     these are the structural truncations replacing Yekutieli's ad-hoc
     cutoff. -/
--- Ref: [manuscript] def:z-habiro-ring (cyclotomic projections)
+-- Ref: [leitner2026] def:z-habiro-ring (cyclotomic projections)
 noncomputable def cyclotomicProjection (n : ℕ) (h : ZHabiroElement)
     (q : ℝ) : Polynomial ℝ :=
   h.family n q

@@ -1,0 +1,53 @@
+392 Combinatorial applications
+
+A = Akin) = k/n and let x, be the positive real solution of the equation
+(v3 x) = 1-A. Then
+
+a Axk
+[Z"Ifok ~ nk-n =(1—ay"v'Gx)" a ;
+UE ~ Moana 2nno?(v; xa) ( riven) 2nno?(v; x)
+
+(12.12)
+
+uniformly as A varies over any compact subset of (0, 1).
+
+Proof Exercise 12.5 below asks the reader to prove that if y is analytic at the
+origin then
+
+1
+[e"WF) = =[y""] WOO". (12.13)
+
+a classic extension of Proposition 12.7. Assuming this result and taking Y(y) =
+y*, we see that
+
+k
+"Lf = = [y"*] voy"
+n
+k 1
+= = [x"y"*]—__ 12.14
+nh bey") T=)’ ( )
+representing coefficients in the powers of f as a Riordan array determined
+by the (known) function v. We thus apply Theorem 12.2 with @ = 1, after
+
+reversing the roles of x and y to obtain the Riordan array {a,;} with generating
+function 1/(1 — yv(x)), yielding
+
+[e"f@* = Hank
+—_ tt
+y2n07(V; x2) ;
+
+The final equality in (12.12) follows from the defining equation pu(v;.x,) =
+1-a. im
+
+~ Av(x, kon?
+
+Examples seen in previous chapters, including binomial coefficients and De-
+lannoy numbers, fit into this framework, but we present a more interesting ex-
+ample here.
+
+Example 12.9 (Forests of trees with restricted offspring sizes). Consider the
+class of unlabeled plane trees with the restriction that the number of children of
+each node must lie in a prescribed finite subset Q C N. The generating function
+f(z) counting such trees by their number of vertices satisfies f(z) = zv(f(z))
+where v(z) = Liew’ (see [FSO9, Section VII.3]) and asymptotic behavior
+follows from Proposition 12.8. For instance, unary-binary trees are defined by

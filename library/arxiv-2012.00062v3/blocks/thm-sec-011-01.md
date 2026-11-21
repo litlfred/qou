@@ -1,1 +1,1 @@
-(a) The descendant state-integral can be expressed in terms of the descendant
+Wm(q) is a fundamental solution of the linear q-diﬀerence equation (49) that has constant determinant det(Wm(q)) = 2 , (52) satisﬁes the symmetry Wm(q−1) = W−m(q)  −1  , (53) the orthogonality property 2Wm(q)  −1  Wm(q)T =  −1  (54) as well as 2Wm(q)  −1  Wℓ(q)T ∈SL(2, Z[q±]) (55) for all integers m, ℓand for |q|̸ = 1.

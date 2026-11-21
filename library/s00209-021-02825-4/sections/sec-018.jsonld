@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Strong stability preservation",
-  "pageStart": 21,
-  "pageEnd": 21,
+  "title": "Other regions",
+  "pageStart": 17,
+  "pageEnd": 19,
   "contains": [
-    "library/s00209-021-02825-4/blocks/prose-sec-018"
+    "library/s00209-021-02825-4/blocks/prose-sec-018",
+    "library/s00209-021-02825-4/blocks/cor-sec-018-01",
+    "library/s00209-021-02825-4/blocks/lem-sec-018-02",
+    "library/s00209-021-02825-4/blocks/ex-sec-018-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00209-021-02825-4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00209-021-02825-4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
   "provenance": "ingested"
 }

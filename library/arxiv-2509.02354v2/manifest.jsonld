@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2509.02354v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2509.02354v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "The holonomy braiding for $\\mathcal{U}_\\xi(\\mathfrak{sl}_2)$ in terms of geometric quantum dilogarithms",
   "contains": [
+    "library/arxiv-2509.02354v2/sections/sec-front-matter",
     "library/arxiv-2509.02354v2/sections/sec-000",
     "library/arxiv-2509.02354v2/sections/sec-001",
     "library/arxiv-2509.02354v2/sections/sec-002",
@@ -26,10 +27,21 @@
     "library/arxiv-2509.02354v2/sections/sec-012",
     "library/arxiv-2509.02354v2/sections/sec-013",
     "library/arxiv-2509.02354v2/sections/sec-014",
-    "library/arxiv-2509.02354v2/sections/sec-015"
+    "library/arxiv-2509.02354v2/sections/sec-015",
+    "library/arxiv-2509.02354v2/sections/sec-016",
+    "library/arxiv-2509.02354v2/sections/sec-017",
+    "library/arxiv-2509.02354v2/sections/sec-018",
+    "library/arxiv-2509.02354v2/sections/sec-019",
+    "library/arxiv-2509.02354v2/sections/sec-020",
+    "library/arxiv-2509.02354v2/sections/sec-021",
+    "library/arxiv-2509.02354v2/sections/sec-022",
+    "library/arxiv-2509.02354v2/sections/sec-023",
+    "library/arxiv-2509.02354v2/sections/sec-024",
+    "library/arxiv-2509.02354v2/sections/sec-025",
+    "library/arxiv-2509.02354v2/sections/sec-026"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

@@ -145,4 +145,10 @@ theorem extra_rows_tradeoff {F : Type*} [Field F] [LinearOrder F] [IsStrictOrder
   rw [le_div_iff₀ hL2]
   nlinarith [sq_nonneg (L * j - (A + L / 2))]
 
+/-- Subtracting the net extra-row gain from the quadratic ceiling yields a non-negative difference. -/
+theorem extra_rows_tradeoff_sub_nonneg {F : Type*} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
+    (A L j : F) (hL : 0 < L) :
+    0 ≤ (A + L / 2) ^ 2 / (2 * L) - (j * A - L / 2 * (j * (j - 1))) :=
+  sub_nonneg.mpr (extra_rows_tradeoff A L j hL)
+
 end QOU.BraidKnot.RoundedWaterfillExchange

@@ -7,10 +7,11 @@ section_number: 1.1
 pages: 6-15
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
-doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
-latex_coverage_ratio: 0.818
+latex_coverage_ratio: 0.977
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphere X we show that the q-series invariant ˆZ0(X; q) introduced by"
 ---
 We now begin our investigation of $\mathcal{M}(X,\mathop{\mathrm{SL}}(2,\mathbb{C})),$ which closely follows [@FintushelStern90]. We have the following presentation of the fundamental group of $X$ $$\label{presentation}
 \pi_1(X) \simeq \left\langle h,  x_1,...,x_n \mid  x_1x_2\cdots x_n, x_j^{p_j}h^{-q_j}, [x_j,h], j=1,...,n  \right\rangle.$$

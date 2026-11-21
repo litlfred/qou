@@ -168,11 +168,11 @@ print("BOND OPERATORS (per-generator 3-channel)")
 print("=" * 70)
 print()
 
-# Inverse trefoil σ₀⁻¹σ₁⁻¹σ₀⁻¹:
+# Inverse electron word σ₀⁻¹σ₁⁻¹σ₀⁻¹ (closure: negative Hopf link):
 #   σ₀⁻¹ → gen 0: (1, -h)
 #   σ₁⁻¹ → gen 1: (1, -h)
 #   σ₀⁻¹ → gen 0: (1, -h)
-compute_H2_bond([(1,-h), (1,-h)], [(1,-h)], "Inverse trefoil T(2,3)⁻¹ = σ₀⁻¹σ₁⁻¹σ₀⁻¹")
+compute_H2_bond([(1,-h), (1,-h)], [(1,-h)], "Inverse electron word σ₀⁻¹σ₁⁻¹σ₀⁻¹ (negative Hopf link)")
 print()
 
 # Hopf link (σ₁⁻¹)²:
@@ -185,11 +185,11 @@ print()
 compute_H2_bond([], [(1,-h), (1,-h), (1,-h)], "(σ₁⁻¹)³ (all gen 1, NOT trefoil)")
 print()
 
-# Positive trefoil σ₀σ₁σ₀:
-compute_H2_bond([(1,0), (1,0)], [(1,0)], "Positive trefoil T(2,3) = σ₀σ₁σ₀")
+# Electron word σ₀σ₁σ₀ (closure: positive Hopf link):
+compute_H2_bond([(1,0), (1,0)], [(1,0)], "Electron word σ₀σ₁σ₀ (positive Hopf link)")
 print()
 
-# Mixed: σ₁⁻¹σ₀⁻¹σ₁⁻¹ (same as inverse trefoil by YB)
+# Mixed: σ₁⁻¹σ₀⁻¹σ₁⁻¹ (same as the inverse electron word by YB)
 compute_H2_bond([(1,-h)], [(1,-h), (1,-h)], "σ₁⁻¹σ₀⁻¹σ₁⁻¹ (= T⁻¹ by Yang-Baxter)")
 print()
 

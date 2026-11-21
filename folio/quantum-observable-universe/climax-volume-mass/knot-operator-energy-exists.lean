@@ -46,7 +46,7 @@ content-block file elaborates on its own; there is no library module for it. -/
     projection AGENTS.md §3b-cond item 5 forbids. Here uniqueness is a
     consequence of functionality, not an assumption. -/
 -- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
--- Ref: [manuscript] prop:mass-coefficient-shadow-price
+-- Ref: [leitner2026] prop:mass-coefficient-shadow-price
 structure KnotOperatorEnergy {R : Type u} [CommRing R]
     (dualValue : List ℕ → R → R) (partition : List ℕ) (q : R) where
   /-- Shadow price `y_λ(q) ∈ R` (algebraic, base-ring-independent). -/
@@ -57,14 +57,14 @@ structure KnotOperatorEnergy {R : Type u} [CommRing R]
   energy : Option R := none
 
 /-- The record built from the LP-dual value map. -/
--- Ref: [manuscript] braids-and-knots/knot-operator-energy
+-- Ref: [leitner2026] braids-and-knots/knot-operator-energy
 def KnotOperatorEnergy.ofDualValue {R : Type u} [CommRing R]
     (dualValue : List ℕ → R → R) (partition : List ℕ) (q : R) :
     KnotOperatorEnergy dualValue partition q :=
   { shadowPrice := dualValue partition q, shadowPrice_eq := rfl }
 
 /-- **Existence of the knot operator energy.** -/
--- Ref: [manuscript] braids-and-knots/knot-operator-energy
+-- Ref: [leitner2026] braids-and-knots/knot-operator-energy
 theorem KnotOperatorEnergy.exists {R : Type u} [CommRing R]
     (dualValue : List ℕ → R → R) (partition : List ℕ) (q : R) :
     Nonempty (KnotOperatorEnergy dualValue partition q) :=

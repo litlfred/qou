@@ -1,6 +1,6 @@
 ## Proof
 
-Let $R$, $A$, $\tau$, $S$, and $X$ be as in the statement: $R$ an ordered field, $A$ a unital $R$-algebra with unit $1_A$, $\tau : A \to R$ an $R$-linear map with $\tau(1_A) = 1$ and $\tau(xy) = \tau(yx)$, positive-semi-definite on squares, and $X \in A$ an element satisfying the constraint $\tau(X) = S$. For $Y \in A$ we abbreviate $Y^2 = Y \cdot Y$.
+Let $R$, $A$, $\tau$, $S$, and $X$ be as in the statement: $R$ an ordered field, $A$ a unital $R$-algebra with unit $1_A$, $\tau : A \to R$ an $R$-linear map with $\tau(1_A) = 1$ and $\tau(xy) = \tau(yx)$, positive-semi-definite on squares, and $X \in A$ an element satisfying the constraint $\tau(X) = S$. For $Y \in A$ write $Y^2 = Y \cdot Y$.
 
 **Step 1 — centrality of scalars.** For any $S \in R$ the element $S \cdot 1_A$ is central in $A$: the compatibility of the $R$-action with the multiplication gives $(S \cdot 1_A)\,Y = S \cdot Y = Y\,(S \cdot 1_A)$ for every $Y \in A$. In particular $S \cdot 1_A$ commutes with $X$ even when $A$ is non-commutative, and $(S \cdot 1_A)(S \cdot 1_A) = S^2 \cdot 1_A$.
 
@@ -50,4 +50,4 @@ The cyclicity hypothesis $\tau(xy) = \tau(yx)$ is part of what makes $\tau$ a tr
 
 ## Specialisations
 
-For $A = R$ and $\tau = \mathrm{id}$ this recovers the substrate-model statement, where completing the square reduces to the scalar identity $x^2 = (x - S)^2 + 2 S x - S^2$. For $A = H_n(R, q)$ the Iwahori–Hecke algebra at generic $q$ with $\tau = \mathrm{tr}_M$ the Jones–Markov trace — positive-semi-definite and non-degenerate on squares in this regime — the unique minimum-Frobenius-norm element satisfying $\mathrm{tr}_M(T_\beta) = S$ is $T_\beta = S \cdot 1_H$, as claimed in [`prop:t-beta-markov-frobenius-collapse`](t-beta-markov-frobenius-collapse.md).
+For $A = R$ and $\tau = \mathrm{id}$ this recovers the substrate-model statement, where completing the square reduces to the scalar identity $x^2 = (x - S)^2 + 2 S x - S^2$. The proposition does not apply directly to $A = H_n(R, q)$ with $\tau = \mathrm{tr}_M$ for $n \ge 3$: there $\mathrm{tr}_M(X \cdot X)$ takes negative values (at $X = \sigma_1\sigma_2 - \sigma_2\sigma_1$), and under convention D it is degenerate. The Hecke statement $T_\beta = S \cdot 1_H$, up to the radical, is proved with the twisted form $\mathrm{tr}_M(X \cdot X^\dagger)$ in [Min-Frobenius-norm collapse: T_β = S · 1 under the canonical Markov-trace inner product on H_n(R, q)](t-beta-markov-frobenius-collapse.md).

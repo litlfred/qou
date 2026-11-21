@@ -1,0 +1,72 @@
+IOP Publishing
+
+J. Phys. Commun. 6 (2022) 015002 LDiCairano
+
+so that Yj, (a(X), X) can be dropped since constant and the potential function ca be approximated as follows
+
+. 1’
+FQ X) & > (ai — ai» Ky(q; — aj). (28)
+‘j=l
+Note that the factor in the K;; matrix of equation (27) has the physical dimension ofa frequency, therefore, we
+define a new set of frequencies
+
+> _ 2 36n; EF
+
+i; = —>
+oj
+
+w Viel NI, (29)
+which allows us to rewrite the initial set of parameters (7;, €;, 0) in terms of a new one: (w;, 7; €); in particular, the
+equilibrium map a; in equation (26) now reads:
+aj(X) = x + wt n(x), Vie[l, N]. (30)
+Gj wi
+We note that if X € R then we have n(X) = X/|X| and this implies that n(X) = sgn(X). Therefore, during the
+system dynamics, that is, along the equation of motion, the function X = X(f) gives rise to a discontinuous
+equilibrium map since n(X) = sgn(X (t)) can change sign discontinuously in time passing from +1 to —1 and
+viceversa. Hence, the application to a one-dimensional case requires that the potential function is not of the
+form V= V(|X — €q;]).
+By going back to the three-dimensional case, we observe that the interaction matrix K does not depend on
+the parameters 7; and ¢; describing the interactions.
+We will show that, in order to coherently define a continuum limit of the kernel function appearing in a GLE
+obtained through the elimination procedure, we have to normalize the equilibrium map as we show in the
+upcoming section.
+
+2.2. Generalization of the equilibrium map
+In order to make our derivation as general as possible, we assume to have n heavy particle position-dependent
+functions, { f, (X)}7_), such that each a; map can be written as a sum of these functions weighted with different
+parameters 77, , € IR which, in turn, represent the interaction strength.
+
+Thus, we have:
+
+a,(X) = DO nif (X), (31)
+I=1
+
+Essentially, the main trick is to separate, in the equilibrium map, the dependence by X from the dependence by
+the parameters 7; ;, so that the f;-functions do not depend on such parameters. Although each function f; could
+have a generic X dependence, without loss of generality, we assume that only the gradient of the first function f,
+equals the identity matrix in R°. These assumptions can be formalized as follows
+
+Vx fi) = Ip, Vx f,(X) = lps, VIeé [2, N]. (32)
+The specific case provided in equation (26) can be obtained from the definition (31) posing n = 2 and f,(X) =X
+and f,(X) := X/||X]|.
+
+Therefore, in this setting, the Hamiltonian function of the system is:
+
+P\2; TP sw
+Ha(P, X) = Pl + V(X) + [lies Ie
+1 n N
++ a — Mh Os Kiyi(Qj — 14, COD). (33)
+LJ=lij=1
+
+2.3. Alternative derivation
+The system of Hamilton’s equations of motion (22) based on the Hamiltonian (33) written as a system of second
+order differential equations reads:
+
+X(t) = Vaal (XO) K(QW) — a(X()) — VemV(XO), (34)
+Q(t) = —K (Q(t) — a(X())). (35)
+
+We note that equation (35) is linear in the heat bath-variables Q, this allows us to apply the Laplace transform
+method [24-26]. Hence, the Laplace transform of equation (35) is
+
+Q(s) = (K + s? 1s QO) + QW) + Ka(X(s))]. (36)
+

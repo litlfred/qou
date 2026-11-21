@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0108011v1/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Hopf link decorated with any Young diagrams",
+  "pageStart": 13,
+  "pageEnd": 21,
+  "contains": [
+    "library/arxiv-math-0108011v1/blocks/prose-sec-010",
+    "library/arxiv-math-0108011v1/blocks/lem-sec-010-01",
+    "library/arxiv-math-0108011v1/blocks/thm-sec-010-02",
+    "library/arxiv-math-0108011v1/blocks/rem-sec-010-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108011v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108011v1/manifest.jsonld",
+  "provenance": "ingested"
+}

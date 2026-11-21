@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Equivalence of Categories",
-  "pageStart": 28,
-  "pageEnd": 29,
+  "title": "Products and Coproducts",
+  "pageStart": 27,
+  "pageEnd": 28,
   "contains": [
-    "library/arxiv-1610.09640v4/blocks/prose-sec-013"
+    "library/arxiv-1610.09640v4/blocks/prose-sec-013",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-013-01",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-013-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "provenance": "ingested"
 }

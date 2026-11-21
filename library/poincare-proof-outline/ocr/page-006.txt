@@ -1,0 +1,67 @@
+for A € R, and B € C, and |B|? > A?, where the circline equation is the usual one: z* Hz = 0, for homogenous
+coordinates z.
+
+definition is-poincare-line-cmat :: complex-mat = bool where
+[simp]: is-poincare-line-cmat H <—>
+(let (A, B, C, D) = H
+in hermitean (A, B, C, D) \ A= D A (emod B)? > (emod A)?)
+
+lift-definition is-poincare-line-clmat :: circline-mat = bool is is-poincare-line-cmat
+done
+
+We introduce the predicate that checks if a given complex matrix is a matrix of a h-line in the Poincaré model,
+and then by means of the lifting package lift it to the type of non-zero Hermitean matrices, and then to circlines
+(that are equivalence classes of such matrices).
+
+lift-definition is-poincare-line :: circline = bool is is-poincare-line-clmat
+proof (transfer, transfer)
+fix H1 H2 :: complex-mat
+assume hh: hermitean H1 A H1 4 mat-zero hermitean H2 \ H2 # mat-zero
+assume circline-eq-cmat H1 H2
+thus is-poincare-line-cmat H1 <—>+ is-poincare-line-cmat H2
+using hh
+by (cases H1, cases H2) (auto simp: norm-mult power-mult-distrib)
+qed
+
+lemma is-poincare-line-mk-circline:
+assumes (A, B, C, D) € hermitean-nonzero
+shows is-poincare-line (mk-circline A B C D) <—+ (emod B)? > (emod A)? \ A= D
+using assms
+by (transfer, transfer, auto simp add: Let-def)
+
+Abstract characterisation of is-poincare-line predicate: H-lines in the Poincaré model are real circlines (circlines
+with the negative determinant) perpendicular to the unit circle.
+
+lemma is-poincare-line-iff:
+shows is-poincare-line H <— circline-type H = —1 A perpendicular H unit-circle
+unfolding perpendicular-def
+proof (simp, transfer, transfer)
+fix H
+assume hh: hermitean H \ H # mat-zero
+obtain A B C D where «: H = (A, B, C, D)
+by (cases H, auto)
+have *: is-real A is-real D C = cnj B
+using hh « hermitean-elems
+by auto
+hence (Re A = Re D A cmod A *« cmod A < cmod B * cmod B) =
+(Re Ax Re D < Re Bx Re B+ ImBx ImBA (Re D= Re AV Re A* Re D= Re B* Re B+ IMB x Im
+B))
+using *
+by (smt cmod-power2 power2-eq-square zero-power2)+
+thus is-poincare-line-cmat H <—>
+circline-type-cmat H = — 1 A cos-angle-cmat (of-circline-cmat H) unit-circle-cmat = 0
+using * **
+by (auto simp add: sgn-1-neg complex-eq-if-Re-eq cmod-square power2-eq-square simp del: pos-oriented-cmat-def )
+qed
+
+The x-azis is an h-line.
+
+lemma is-poincare-line-z-axis [simp]:
+shows is-poincare-line x-axis
+by (transfer, transfer) (auto simp add: hermitean-def mat-adj-def mat-cnj-def)
+
+The unit-circle is not an h-line.
+
+lemma not-is-poincare-line-unit-circle [simp]:
+shows -— is-poincare-line unit-circle
+by (transfer, transfer, simp)

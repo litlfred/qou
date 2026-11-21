@@ -8,7 +8,9 @@ pages: 6-6
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
 toc_source: inferred
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
+Acknowledgment
 This work was started while I was visiting Chern Institute of Mathematics
 at Nankai University and the Morningside Center of Mathematics at Beijing,
 China in the summer of 2007. The paper was revised later while I was visiting
@@ -20,4 +22,3 @@ Vollinga and J.A.M. Vermaseren for answering some of my questions regarding
 the numerical computation of MPVs and MZVs, to my colleagues E. Fernan-
 dez and J. Zuev for their help with Matlab, and to the anonymous referee for
 comments and suggestions that improved the paper greatly.
-2

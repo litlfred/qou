@@ -1295,6 +1295,42 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "57ed7ff0410b",
+          "ts": "594482f6a233",
+          "lean": "2e13ae1254ff",
+          "lean_statement": "9324cca01776"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:23.861Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "lean/QOU/Archimedean/beta_decay_transfer_matrix.lean:103-106 conclusion `T_mix q - T_nn q = T_pp q - T_mix q` over `q : ℝ`; boxed md:66-71 'Δ_β(q) = ½(q − q⁻¹) I' not encoded; sibling mass-theory/beta-decay-transfer-matrix.lean differs from the library file",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "f829800b6a1d",
+          "ts": "594482f6a233",
+          "lean": "837927149440",
+          "lean_statement": "7d5a232b05d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:06:46.201Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "minor",
+        "evidence": "Lean proves traces, determinants and T_mix - T_nn = T_pp - T_mix for the three 2x2 matrices. Not encoded: uniqueness of the (1,-(q-q^-1)) nn convention, and the T_{3,5} role (a model identification). Base ring is R though everything is polynomial (sec 7c)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2706,6 +2742,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:39:33.562Z",
+  "updated_at": "2026-11-16T07:06:46.201Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -6,10 +6,12 @@
   "sha256": "2ce621c8982ee764ae92c77c954e7adc547e074091133cea4ca4ad4de6d194c2",
   "bytes": 1311248,
   "pages": 33,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,104 +21,705 @@
    "stamp_date": "16 Nov 2013"
   },
   "doi": null,
-  "title": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN\u2013NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON",
-  "authors_raw": "CHARACTER DEFLATIONS AND A GENERALIZATION"
+  "title": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE",
+  "authors_raw": "ANTON EVSEEV, ROWENA PAGET AND MARK WILDON",
+  "title_lines": [
+   "CHARACTER DEFLATIONS AND A GENERALIZATION",
+   "OF THE MURNAGHAN–NAKAYAMA RULE"
+  ],
+  "abstract": "Given natural numbers m and n, we deﬁne a deﬂation map from the characters of the symmetric group Smn to the characters of Sn. This map is obtained by ﬁrst restricting a character of Smn to the wreath product Sm ≀Sn, and then taking the sum of the irreducible constituents of the restricted character on which the base group Sm × · · · × Sm acts trivially. We prove a combinatorial formula which gives the values of the images of the irreducible characters of Smn under this map. We also prove an analogous result for more general deﬂation maps in which the base group is not required to act trivially. These results generalize the Murnaghan–Nakayama rule and special cases of the Littlewood– Richardson rule. As a corollary we obtain a new combinatorial formula for the character multiplicities that are the subject of the long-standing Foulkes’ Conjecture. Using this formula we verify Foulkes’ Conjecture in some new cases.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181031141732Z"
+  },
+  "title_raw": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE 1. Introduction Tableaux combinatorics is a pivotal theme in the representation theory of the symmetric groups. Fundamental results in this area include the Murnaghan–Nakayama rule for the values taken by irreducible characters",
+   "outline": "1. Introduction",
+   "text": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON"
  },
- "toc": [],
- "toc_source": "headings",
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Character deflations",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Some special cases",
+   "page": 5,
+   "source": "outline",
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Outline of the paper",
+   "page": 6,
+   "source": "outline",
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Deflation by averaging",
+   "page": 7,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Skew characters",
+   "page": 9,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Quotients of skew-partitions",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "A model for induction from a Young subgroup",
+   "page": 10,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 3.3",
+   "page": 11,
+   "source": "outline",
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Example",
+   "page": 13,
+   "source": "outline",
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.5",
+   "page": 14,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "An application to Foulkes' Conjecture",
+   "page": 18,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Generalized deflations",
+   "page": 22,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Symmetric functions",
+   "page": 30,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 31,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 31,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A border-strip tableau of shape (8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1) and type (6, 3, 3, 3)",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The bijection in Proposition 3.6 between border-strip tableaux of shape (8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1) and type (6, 3, 3, 3) and 3-quotient border-strip tableaux of the same shape and type (2, 1, 1, 1)",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The left-hand graph shows log2",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The top graph shows log2",
+   "page": 21,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1052,
+   "n_words": 175,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 7,
-   "id": "sec-000-introduction",
-   "n_chars": 13301,
-   "n_words": 2647
+   "page_end": 2,
+   "n_chars": 1577,
+   "n_words": 233,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-001-11-character-deflations",
+   "number": "1.1",
+   "title": "Character deflations",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 7070,
+   "n_words": 1438,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-12-some-special-cases",
+   "number": "1.2",
+   "title": "Some special cases",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2049,
+   "n_words": 391,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-13-outline-of-the-paper",
+   "number": "1.3",
+   "title": "Outline of the paper",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2240,
+   "n_words": 418,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-2-deflation-by-averaging",
    "number": "2",
    "title": "Deflation by averaging",
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "id": "sec-001-deflation-by-averaging",
-   "n_chars": 4255,
-   "n_words": 1054
+   "n_chars": 4135,
+   "n_words": 962,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-005-3-skew-characters",
    "number": "3",
    "title": "Skew characters",
    "level": 1,
    "page_start": 9,
-   "page_end": 18,
-   "id": "sec-002-skew-characters",
-   "n_chars": 20447,
-   "n_words": 4335
+   "page_end": 9,
+   "n_chars": 282,
+   "n_words": 48,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-006-31-quotients-of-skew-partitions",
+   "number": "3.1",
+   "title": "Quotients of skew-partitions",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2982,
+   "n_words": 534,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-32-a-model-for-induction-from-a-young-subgroup",
+   "number": "3.2",
+   "title": "A model for induction from a Young subgroup",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1293,
+   "n_words": 315,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-33-proof-of-theorem-33",
+   "number": "3.3",
+   "title": "Proof of Theorem 3.3",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5114,
+   "n_words": 988,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-34-example",
+   "number": "3.4",
+   "title": "Example",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2267,
+   "n_words": 507,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-4-proof-of-theorem-15",
+   "number": "4",
+   "title": "Proof of Theorem 1.5",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 7702,
+   "n_words": 1493,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-5-an-application-to-foulkes-conjecture",
    "number": "5",
-   "title": "An application to Foulkes\u2019 Conjecture",
+   "title": "An application to Foulkes' Conjecture",
    "level": 1,
    "page_start": 18,
-   "page_end": 18,
-   "id": "sec-003-an-application-to-foulkes-conjecture",
-   "n_chars": 153,
-   "n_words": 37
-  },
-  {
-   "number": "1",
-   "title": "Foulkes\u2019 Conjecture asserts that if m \u2264 n",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 19,
-   "id": "sec-004-foulkes-conjecture-asserts-that-if-m-n",
-   "n_chars": 1621,
-   "n_words": 337
-  },
-  {
-   "number": "1",
-   "title": "X (n \u2212 1)! X",
-   "level": 1,
-   "page_start": 19,
    "page_end": 22,
-   "id": "sec-005-x-n-1-x",
-   "n_chars": 3563,
-   "n_words": 708
+   "n_chars": 5196,
+   "n_words": 970,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-012-6-generalized-deflations",
    "number": "6",
    "title": "Generalized deflations",
    "level": 1,
    "page_start": 22,
    "page_end": 30,
-   "id": "sec-006-generalized-deflations",
-   "n_chars": 18374,
-   "n_words": 4139
+   "n_chars": 17706,
+   "n_words": 3608,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-013-7-symmetric-functions",
    "number": "7",
    "title": "Symmetric functions",
    "level": 1,
    "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2738,
+   "n_words": 518,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 110,
+   "n_words": 17,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 31,
    "page_end": 33,
-   "id": "sec-007-symmetric-functions",
-   "n_chars": 6659,
-   "n_words": 1145
+   "n_chars": 3683,
+   "n_words": 536,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 0,
-  "sections": 8,
-  "chars_total": 69666,
+  "toc_entries": 16,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 17,
+  "chars_total": 67196,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Deflation23.tex",
    "tex_sections": 15,
-   "overlaid": 4,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -124,59 +727,124 @@
    },
    "sections": [
     {
-     "id": "sec-000-introduction",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.972,
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.796,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-deflation-by-averaging",
+     "id": "sec-001-11-character-deflations",
+     "title": "Character deflations",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-12-some-special-cases",
+     "title": "Some special cases",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-outline-of-the-paper",
+     "title": "Outline of the paper",
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-2-deflation-by-averaging",
      "title": "Deflation by averaging",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.891,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-skew-characters",
+     "id": "sec-005-3-skew-characters",
      "title": "Skew characters",
-     "prose_ratio": 0.799,
-     "coverage_ratio": 0.954,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-an-application-to-foulkes-conjecture",
-     "title": "An application to Foulkes\u2019 Conjecture",
-     "prose_ratio": 0.058,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-006-31-quotients-of-skew-partitions",
+     "title": "Quotients of skew-partitions",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-004-foulkes-conjecture-asserts-that-if-m-n",
-     "title": "Foulkes\u2019 Conjecture asserts that if m \u2264 n",
+     "id": "sec-007-32-a-model-for-induction-from-a-young-subgroup",
+     "title": "A model for induction from a Young subgroup",
+     "prose_ratio": 0.268,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-33-proof-of-theorem-33",
+     "title": "Proof of Theorem 3.3",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-005-x-n-1-x",
-     "title": "X (n \u2212 1)! X",
+     "id": "sec-009-34-example",
+     "title": "Example",
+     "prose_ratio": 0.359,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-4-proof-of-theorem-15",
+     "title": "Proof of Theorem 1.5",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-006-generalized-deflations",
+     "id": "sec-011-5-an-application-to-foulkes-conjecture",
+     "title": "An application to Foulkes' Conjecture",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-6-generalized-deflations",
      "title": "Generalized deflations",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.961,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-symmetric-functions",
+     "id": "sec-013-7-symmetric-functions",
      "title": "Symmetric functions",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.442,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-references",
+     "title": "References",
+     "result": "no matching \\section"
     }
    ]
   }

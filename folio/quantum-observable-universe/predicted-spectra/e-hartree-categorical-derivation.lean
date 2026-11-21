@@ -31,7 +31,7 @@ not missing proof.
 
 ## References
 
-- [manuscript] §Hartree-energy categorical derivation,
+- [leitner2026] §Hartree-energy categorical derivation,
   `conj:e-hartree-categorical-derivation`
 -/
 
@@ -65,7 +65,7 @@ abbrev R_q := LaurentPolynomial ℤ
     as an explicit hypothesis to remain `theorem` / `proposition`
     per AGENTS.md §3b-cond.
 
-    Ref: [manuscript] §Hartree-energy categorical derivation -/
+    Ref: [leitner2026] §Hartree-energy categorical derivation -/
 class EHartreeCategoricalDerivation where
   /-- The categorical-side electron-mass token. -/
   m_e_cat   : R_q
@@ -106,19 +106,19 @@ def bohr_radius_from_hartree [QOU.Archimedean.EHartreeCategoricalDerivation] :
   -- E_h = m_e · c² · α² ⟹ α² = E_h / (m_e · c²)
   -- ⟹ α = √(E_h / (m_e · c²))
   -- ⟹ a₀ = 1 / (m_e · c · α) is determined.
-  -- Ref: [manuscript] prop:bohr-radius-categorical
+  -- Ref: [leitner2026] prop:bohr-radius-categorical
   trivial
 
 /-- **CONDITIONAL.** If the Hartree derivation holds, then the
     force-carrier intertwining correspondence
-    (prop:force-carrier-intertwining-correspondence) follows —
+    (conj:force-carrier-intertwining-correspondence) follows —
     the Hartree energy scale connects electromagnetic and
     strong-force scales through the categorical α_EM. -/
 def force_carrier_from_hartree [QOU.Archimedean.EHartreeCategoricalDerivation] :
     True :=
   -- The intertwining maps Hecke σ_i ↔ gauge boson vertices.
   -- E_h provides the energy scale at which the intertwining is exact.
-  -- Ref: [manuscript] prop:force-carrier-intertwining-correspondence
+  -- Ref: [leitner2026] conj:force-carrier-intertwining-correspondence
   trivial
 
 /-- **STRUCTURAL (sorry-free).** The Hartree identity is consistent

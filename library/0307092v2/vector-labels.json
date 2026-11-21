@@ -1,0 +1,7140 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "0307092v2",
+  "pages": [
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 7,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1"
+      ],
+      "labels": [
+        {
+          "text": "421",
+          "bbox": [
+            471.72,
+            132.54,
+            488.97,
+            142.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Extended Bloch group and the Cheeger–Chern–Simons class",
+          "bbox": [
+            114.48,
+            133.21,
+            370.29,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            9.41
+          ]
+        },
+        {
+          "text": "There is another way of describing the cross-ratio parameter z = [z0 : z1 : z2 : z3]",
+          "bbox": [
+            114.48,
+            166.06,
+            488.9,
+            178.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of a simplex. The group of orientation preserving isometries of H3 ﬁxing the",
+          "bbox": [
+            114.48,
+            175.54,
+            488.92,
+            190.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "points z0 and z1 is isomorphic to C∗and the element of this C∗that takes z2",
+          "bbox": [
+            114.48,
+            191.3,
+            488.31,
+            205.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "to z3 is z (equivalently: if we position z0, z1 at 0, ∞in the upper half-space",
+          "bbox": [
+            114.48,
+            206.62,
+            488.8,
+            219.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "model of H3 then z3 = zz2). Thus the cross-ratio parameter z is associated",
+          "bbox": [
+            114.48,
+            216.22,
+            488.57,
+            232.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "with the edge z0z1 of the simplex1. The parameter associated in this way with",
+          "bbox": [
+            114.48,
+            231.98,
+            488.81,
+            246.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the other two edges z0z3 and z0z2 out of z0 are z′ and z′′ respectively, while",
+          "bbox": [
+            114.48,
+            243.34,
+            488.92,
+            259.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the edges z2z3, z1z2, and z1z3 have the same parameters z, z′, and z′′ as their",
+          "bbox": [
+            114.48,
+            256.9,
+            488.83,
+            273.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "opposite edges. See Figure 1.",
+          "bbox": [
+            114.48,
+            274.42,
+            253.58,
+            285.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "z2",
+          "bbox": [
+            233.44,
+            293.79,
+            242.09,
+            303.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            362.44,
+            293.79,
+            371.09,
+            303.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z′",
+          "bbox": [
+            298.61,
+            301.65,
+            306.06,
+            314.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z′′",
+          "bbox": [
+            287.58,
+            322.03,
+            297.32,
+            335.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            250.16,
+            344.36,
+            254.79,
+            354.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            362.44,
+            344.36,
+            367.07,
+            354.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z′′",
+          "bbox": [
+            287.59,
+            362.44,
+            297.32,
+            375.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z′",
+          "bbox": [
+            300.48,
+            395.82,
+            307.93,
+            408.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z3",
+          "bbox": [
+            233.88,
+            396.83,
+            242.53,
+            406.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z0",
+          "bbox": [
+            362.44,
+            396.83,
+            371.09,
+            406.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1",
+          "bbox": [
+            283.44,
+            420.57,
+            319.86,
+            430.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Note that zz′z′′ = −1, so the sum",
+          "bbox": [
+            114.48,
+            446.5,
+            277.41,
+            461.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "log z + log z′ + log z′′",
+          "bbox": [
+            252.24,
+            465.22,
+            350.54,
+            480.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "is an odd multiple of πi, depending on the branches of log used. In fact, if we",
+          "bbox": [
+            114.48,
+            488.98,
+            488.8,
+            499.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "use standard branch of log then this sum is πi or −πi depending on whether",
+          "bbox": [
+            114.48,
+            502.54,
+            488.83,
+            513.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "z is in the upper or lower half plane.",
+          "bbox": [
+            114.48,
+            516.1,
+            290.06,
+            527.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The imaginary parts of log z, log z′, and log z′′ are the dihedral angles of the",
+          "bbox": [
+            114.48,
+            531.34,
+            488.92,
+            546.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ideal simplex (resp. their negatives if the vertex ordering does not agree with",
+          "bbox": [
+            114.48,
+            548.86,
+            488.82,
+            559.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the orientation the simplex inherits from H3). We now consider certain “ad-",
+          "bbox": [
+            114.48,
+            560.66,
+            488.79,
+            573.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "justments” of these angles by multiples of π.",
+          "bbox": [
+            114.48,
+            575.98,
+            328.7,
+            586.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁnition 3.1 We shall call any triple of the form",
+          "bbox": [
+            114.48,
+            601.61,
+            364.65,
+            612.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "w = (w0, w1, w2) = (log z + pπi, log z′ + qπi, log z′′ + rπi)",
+          "bbox": [
+            165.84,
+            616.66,
+            437.43,
+            633.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "with",
+          "bbox": [
+            114.48,
+            640.42,
+            135.66,
+            651.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "p, q, r ∈Z",
+          "bbox": [
+            216.72,
+            653.46,
+            262.99,
+            664.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            273.84,
+            653.98,
+            291.42,
+            664.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "w0 + w1 + w2 = 0",
+          "bbox": [
+            302.4,
+            653.98,
+            386.7,
+            666.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1It is associated with the unoriented edge since there is an orientation preserving",
+          "bbox": [
+            126.84,
+            671.0,
+            489.06,
+            681.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR6",
+            "CMTI10"
+          ],
+          "sizes": [
+            5.98,
+            9.96
+          ]
+        },
+        {
+          "text": "symmetry of the simplex exchanging z0 and z1 (it also exchanges z2 and z3 and acts",
+          "bbox": [
+            114.48,
+            683.85,
+            488.85,
+            695.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "on C∗by z 7→1/z).",
+          "bbox": [
+            114.48,
+            692.63,
+            202.8,
+            705.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Geometry & Topology, Volume 8 (2004)",
+          "bbox": [
+            114.48,
+            730.65,
+            280.48,
+            740.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.41,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 13,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2"
+      ],
+      "labels": [
+        {
+          "text": "423",
+          "bbox": [
+            471.72,
+            132.54,
+            488.97,
+            142.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Extended Bloch group and the Cheeger–Chern–Simons class",
+          "bbox": [
+            114.48,
+            133.21,
+            370.29,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            9.41
+          ]
+        },
+        {
+          "text": "For each 1–simplex E connecting two of the points zi we get a corresponding",
+          "bbox": [
+            114.48,
+            166.06,
+            489.05,
+            178.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "linear combination",
+          "bbox": [
+            114.48,
+            179.5,
+            203.09,
+            190.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            243.84,
+            189.5,
+            248.07,
+            197.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            238.08,
+            190.3,
+            253.83,
+            231.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(−1)ilE(∆i, ℓ(xi; pi, qi))",
+          "bbox": [
+            253.8,
+            198.62,
+            365.19,
+            212.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(5)",
+          "bbox": [
+            474.96,
+            200.86,
+            488.79,
+            211.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "i=0",
+          "bbox": [
+            239.04,
+            216.14,
+            252.75,
+            224.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "of log-parameters (Deﬁnition 3.1), where we put lE(∆i, ℓ(xi; pi, qi)) = 0 if the",
+          "bbox": [
+            114.48,
+            231.34,
+            488.92,
+            243.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "line E is not an edge of ∆i. This linear combination has just three non-zero",
+          "bbox": [
+            114.48,
+            244.78,
+            488.81,
+            256.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "terms corresponding to the three simplices that meet at the edge E. One easily",
+          "bbox": [
+            114.48,
+            258.34,
+            488.75,
+            269.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "checks that the real part is zero and the imaginary part can be interpreted",
+          "bbox": [
+            114.48,
+            271.9,
+            488.7,
+            282.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(with care about orientations) as the sum of the “adjusted angles” of the three",
+          "bbox": [
+            114.48,
+            285.46,
+            488.92,
+            296.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ﬂattened simplices meeting at E.",
+          "bbox": [
+            114.48,
+            299.02,
+            273.98,
+            309.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁnition 3.3 We say that the (xi; pi, qi) satisfy the ﬂattening condition if",
+          "bbox": [
+            114.48,
+            327.28,
+            488.85,
+            339.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "each of the above linear combinations (5) of log-parameters is equal to zero.",
+          "bbox": [
+            114.48,
+            341.14,
+            488.78,
+            352.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "That is, the adjusted angle sum of the three simplices meeting at each edge is",
+          "bbox": [
+            114.48,
+            354.7,
+            488.86,
+            365.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "zero.",
+          "bbox": [
+            114.48,
+            368.14,
+            136.82,
+            379.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 3.4 Relation (4) is an instance of the lifted ﬁve term relation (2) if",
+          "bbox": [
+            114.48,
+            396.4,
+            488.85,
+            407.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMSL10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and only if the (xi; pi, qi) satisfy the ﬂattening condition.",
+          "bbox": [
+            114.48,
+            410.26,
+            387.62,
+            422.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSL10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Proof We ﬁrst consider the case that (x0, . . . , x4) ∈FT+. Recall this means",
+          "bbox": [
+            114.48,
+            439.1,
+            488.86,
+            452.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "that each xi is in H. Geometrically, this implies that each of the above ﬁve",
+          "bbox": [
+            114.48,
+            454.14,
+            488.8,
+            467.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "tetrahedra is positively oriented by the ordering of its vertices. This implies",
+          "bbox": [
+            114.48,
+            468.22,
+            488.86,
+            479.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the conﬁguration of Figure 2 with z1 and z3 on opposite sides of the plane",
+          "bbox": [
+            114.48,
+            481.78,
+            488.92,
+            494.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of the triangle z0z2z4 and the line from z1 to z3 passing through the interior",
+          "bbox": [
+            114.48,
+            495.34,
+            488.71,
+            507.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            280.35,
+            522.3,
+            288.99,
+            532.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z0",
+          "bbox": [
+            356.39,
+            540.02,
+            365.04,
+            549.99
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z2",
+          "bbox": [
+            226.81,
+            575.47,
+            235.45,
+            585.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z4",
+          "bbox": [
+            371.92,
+            613.77,
+            380.57,
+            623.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z3",
+          "bbox": [
+            288.88,
+            665.28,
+            297.52,
+            675.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2",
+          "bbox": [
+            283.44,
+            693.81,
+            319.86,
+            703.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Geometry & Topology, Volume 8 (2004)",
+          "bbox": [
+            114.48,
+            730.65,
+            280.48,
+            740.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.41,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "rotation": 0,
+      "drawings": 5,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: Three triangles in developing image of N in C showing rotation levels of edges and resulting adjusted angles. One triangle is from a “folded” simplex."
+      ],
+      "labels": [
+        {
+          "text": "433",
+          "bbox": [
+            471.72,
+            132.54,
+            488.97,
+            142.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Extended Bloch group and the Cheeger–Chern–Simons class",
+          "bbox": [
+            114.48,
+            133.21,
+            370.29,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            9.41
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            263.93,
+            172.82,
+            268.45,
+            183.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "3π/2",
+          "bbox": [
+            274.22,
+            205.42,
+            289.27,
+            216.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "−π/3",
+          "bbox": [
+            245.05,
+            219.15,
+            260.5,
+            229.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "−π/4",
+          "bbox": [
+            330.85,
+            219.15,
+            346.31,
+            229.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "π/3",
+          "bbox": [
+            305.11,
+            220.87,
+            316.04,
+            231.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "2π/3",
+          "bbox": [
+            356.6,
+            220.87,
+            371.65,
+            231.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            323.99,
+            263.77,
+            328.11,
+            274.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "4π/3",
+          "bbox": [
+            222.74,
+            296.38,
+            237.79,
+            307.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "−2π/3",
+          "bbox": [
+            294.82,
+            296.38,
+            314.39,
+            307.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "π/3",
+          "bbox": [
+            317.13,
+            303.24,
+            328.06,
+            313.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "−2π/3",
+          "bbox": [
+            258.78,
+            359.87,
+            278.35,
+            370.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "π/3",
+          "bbox": [
+            274.22,
+            373.6,
+            285.15,
+            384.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "−2π/3",
+          "bbox": [
+            351.45,
+            373.6,
+            371.02,
+            384.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "7π/4",
+          "bbox": [
+            269.07,
+            416.51,
+            284.12,
+            427.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "3π/2",
+          "bbox": [
+            270.79,
+            495.45,
+            285.84,
+            506.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "−π/4",
+          "bbox": [
+            339.43,
+            495.45,
+            354.89,
+            506.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            8.24
+          ]
+        },
+        {
+          "text": "Figure 3: Three triangles in developing image of N in C showing rotation levels of",
+          "bbox": [
+            114.48,
+            521.98,
+            488.92,
+            532.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "edges and resulting adjusted angles. One triangle is from a “folded” simplex.",
+          "bbox": [
+            114.48,
+            534.33,
+            450.24,
+            544.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3 so D(˜v) = ∞. Thus for each 3–simplex of the closure of ˜N ,",
+          "bbox": [
+            178.2,
+            559.3,
+            488.9,
+            576.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "D: | ˜K| →",
+          "bbox": [
+            114.48,
+            563.02,
+            165.23,
+            576.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "H",
+          "bbox": [
+            169.68,
+            565.26,
+            178.16,
+            576.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3,",
+          "bbox": [
+            480.24,
+            576.86,
+            488.9,
+            592.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the other three vertices of the simplex map to points in C ⊂C ∪{∞} = ∂",
+          "bbox": [
+            114.48,
+            580.74,
+            471.14,
+            592.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "H",
+          "bbox": [
+            471.72,
+            580.74,
+            480.2,
+            591.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and thus determine a triangle in C. Each 2–simplex incident to v determines",
+          "bbox": [
+            114.48,
+            594.3,
+            488.86,
+            605.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a 1–simplex in Lv and hence a line segment in C. For each such segment S,",
+          "bbox": [
+            114.48,
+            607.74,
+            488.9,
+            620.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the angle of this line segment from horizontal is well deﬁned in R/πZ; choose a",
+          "bbox": [
+            114.48,
+            621.3,
+            488.82,
+            632.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "speciﬁc lift a(S) of this number in R and call it the rotation level for S. Then",
+          "bbox": [
+            114.48,
+            634.86,
+            488.94,
+            646.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "diﬀerences of rotation levels for segments corresponding to adjacent 2–faces of a",
+          "bbox": [
+            114.48,
+            648.94,
+            488.81,
+            659.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3–simplex determine a ﬂattening in the star neighborhood of N (see Figure 3).",
+          "bbox": [
+            114.48,
+            662.5,
+            488.78,
+            673.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Speciﬁcally:",
+          "bbox": [
+            114.48,
+            676.06,
+            170.78,
+            686.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Suppose we have two adjacent 2–faces incident to v of a 3–simplex ∆i of N .",
+          "bbox": [
+            114.48,
+            695.02,
+            488.9,
+            707.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Geometry & Topology, Volume 8 (2004)",
+          "bbox": [
+            114.48,
+            730.65,
+            280.48,
+            740.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.41,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 24,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: Conﬁguration for the cycle relation"
+      ],
+      "labels": [
+        {
+          "text": "436",
+          "bbox": [
+            114.48,
+            132.54,
+            131.73,
+            142.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Walter D Neumann",
+          "bbox": [
+            405.96,
+            133.21,
+            488.85,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            9.41
+          ]
+        },
+        {
+          "text": "E",
+          "bbox": [
+            290.71,
+            208.22,
+            298.06,
+            218.19
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4: Conﬁguration for the cycle relation",
+          "bbox": [
+            203.16,
+            288.81,
+            400.33,
+            298.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Suppose now further that a combinatorial ﬂattening wi has been chosen for",
+          "bbox": [
+            114.48,
+            321.16,
+            488.83,
+            334.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "each ∆j such that the “signed sum” of log parameters around the 1–simplex",
+          "bbox": [
+            114.48,
+            335.02,
+            488.75,
+            347.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "E vanishes and the same for parity parameters:",
+          "bbox": [
+            114.48,
+            348.46,
+            342.38,
+            359.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            199.68,
+            365.78,
+            204.81,
+            373.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            312.48,
+            365.78,
+            317.61,
+            373.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            194.4,
+            366.58,
+            210.15,
+            407.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            307.2,
+            366.58,
+            322.95,
+            407.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ǫjlE(∆j, wj) = 0,",
+          "bbox": [
+            212.04,
+            376.96,
+            294.38,
+            389.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ǫjδE(∆j, wj) = 0.",
+          "bbox": [
+            324.84,
+            376.96,
+            408.86,
+            389.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(6)",
+          "bbox": [
+            474.96,
+            377.26,
+            488.79,
+            388.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            195.0,
+            392.54,
+            209.79,
+            400.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            307.8,
+            392.54,
+            322.59,
+            400.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "We think of the 1–simplex E as being vertical, so that we can label the two",
+          "bbox": [
+            114.48,
+            408.94,
+            488.69,
+            419.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1–simplices other than E of the common triangle of ∆j and ∆j+1 as Tj and",
+          "bbox": [
+            114.48,
+            422.5,
+            488.81,
+            435.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Let w′",
+          "bbox": [
+            272.52,
+            434.3,
+            305.89,
+            446.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "j be the ﬂattening obtained from wj",
+          "bbox": [
+            303.48,
+            435.76,
+            487.98,
+            450.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Bj (for “top” and “bottom”).",
+          "bbox": [
+            114.48,
+            436.06,
+            262.82,
+            448.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "by adding ǫjπi to the log parameter at Tj and its opposite edge in ∆j and",
+          "bbox": [
+            114.48,
+            449.62,
+            488.81,
+            462.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "subtracting ǫjπi from the log parameter at Bj and its opposite edge in ∆j . If",
+          "bbox": [
+            114.48,
+            463.18,
+            488.85,
+            475.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "we do this for each j then the total log parameter (and, by Corollary 5.4, also",
+          "bbox": [
+            114.48,
+            476.74,
+            488.81,
+            487.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "parity parameter) around any 1–simplex of the complex K is not changed (we",
+          "bbox": [
+            114.48,
+            490.3,
+            488.8,
+            501.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "sum log-parameters with the appropriate sign ǫj ): — at E no log-parameter",
+          "bbox": [
+            114.48,
+            503.86,
+            488.58,
+            516.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "has changed while at every other 1–simplex πi has been added at one of the",
+          "bbox": [
+            114.48,
+            517.42,
+            488.92,
+            528.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "two adjacent 3–simplices and subtracted at the other.",
+          "bbox": [
+            114.48,
+            530.98,
+            372.62,
+            541.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 6.1 (Cycle relation about E) With the above notation,",
+          "bbox": [
+            114.48,
+            559.84,
+            432.14,
+            571.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSL10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            229.56,
+            577.94,
+            234.69,
+            585.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            290.04,
+            577.94,
+            295.17,
+            585.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            224.28,
+            578.86,
+            240.03,
+            619.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            284.64,
+            578.86,
+            300.39,
+            619.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∈bP(C),",
+          "bbox": [
+            340.92,
+            586.42,
+            378.98,
+            627.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ǫj[w′",
+          "bbox": [
+            302.28,
+            587.18,
+            325.57,
+            601.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ǫj[wj] =",
+          "bbox": [
+            241.8,
+            589.12,
+            281.59,
+            601.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "j]",
+          "bbox": [
+            323.16,
+            589.42,
+            330.62,
+            602.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            224.76,
+            604.7,
+            239.55,
+            612.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "j=1",
+          "bbox": [
+            285.24,
+            604.7,
+            300.03,
+            612.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where we are using [w] as a shorthand for [ℓ−1w] (ie, [w] means [z; p, q] where",
+          "bbox": [
+            114.48,
+            620.9,
+            488.92,
+            633.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSL10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ℓ(z; p, q) = w; see Lemma 3.2).",
+          "bbox": [
+            114.48,
+            635.92,
+            262.46,
+            647.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSL10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Proof Each of the 3–simplices ∆i has an associated ideal hyperbolic struc-",
+          "bbox": [
+            114.48,
+            667.61,
+            488.91,
+            680.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ture compatible with the combinatorial ﬂattenings wj . This ideal hyperbolic",
+          "bbox": [
+            114.48,
+            681.16,
+            488.92,
+            694.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "structure is also compatible with the ﬂattening w′",
+          "bbox": [
+            114.48,
+            693.26,
+            352.45,
+            705.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "j. Choose a realization of ∆1",
+          "bbox": [
+            350.04,
+            695.02,
+            488.43,
+            708.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Geometry & Topology, Volume 8 (2004)",
+          "bbox": [
+            114.48,
+            730.65,
+            280.48,
+            740.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.41,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 32,
+      "rotation": 0,
+      "drawings": 3,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5"
+      ],
+      "labels": [
+        {
+          "text": "444",
+          "bbox": [
+            114.48,
+            132.54,
+            131.73,
+            142.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Walter D Neumann",
+          "bbox": [
+            405.96,
+            133.21,
+            488.85,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            9.41
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            114.48,
+            163.09,
+            122.54,
+            177.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Proof of Theorem 4.5",
+          "bbox": [
+            138.72,
+            163.09,
+            290.54,
+            177.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "In this section we will prove Theorem 4.5, which says that a strong ﬂattening",
+          "bbox": [
+            114.48,
+            199.66,
+            488.82,
+            210.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of any G–labeled ordered 3–cycle K exists.",
+          "bbox": [
+            114.48,
+            213.1,
+            322.46,
+            224.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This proof, and the ﬁrst two lemmas in the next section, depend heavily on [13].",
+          "bbox": [
+            114.48,
+            235.3,
+            488.78,
+            246.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We must ﬁrst therefore recall some notation and results from there. (The results",
+          "bbox": [
+            114.48,
+            248.86,
+            488.86,
+            259.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of [13] do not require as strong conditions on K as we have here: there, the",
+          "bbox": [
+            114.48,
+            262.42,
+            488.92,
+            273.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ordering is not needed and K is only required to be a quasi-simplicial complex.)",
+          "bbox": [
+            114.48,
+            275.98,
+            488.67,
+            286.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Recall that K is an ordered 3–cycle: the vertices of each 3–simplex are ordered",
+          "bbox": [
+            114.48,
+            298.18,
+            488.82,
+            309.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with orderings agreeing on common faces.",
+          "bbox": [
+            114.48,
+            311.74,
+            321.98,
+            322.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The underlying space |K| is an",
+          "bbox": [
+            331.56,
+            311.74,
+            488.82,
+            322.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "oriented 3–manifold except possibly at 0–simplices, where it is topologically",
+          "bbox": [
+            114.48,
+            325.3,
+            488.51,
+            336.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the cone on a connected oriented surface, Lv , the link of v (see Deﬁnitions 4.1",
+          "bbox": [
+            114.48,
+            338.86,
+            488.82,
+            351.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and 4.2).",
+          "bbox": [
+            114.48,
+            352.42,
+            156.86,
+            363.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "To an oriented 3–simplex ∆of K we associate a 2–dimensional bilinear space",
+          "bbox": [
+            114.48,
+            374.62,
+            488.8,
+            385.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "J∆over Z as follows. As a Z–module J∆is generated by the six edges e0, . . . , e5",
+          "bbox": [
+            114.48,
+            387.66,
+            488.31,
+            400.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of ∆(see Figure 5) with the relations:",
+          "bbox": [
+            114.48,
+            401.74,
+            298.1,
+            412.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ei −ei+3 = 0",
+          "bbox": [
+            233.64,
+            423.94,
+            294.66,
+            436.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "for i = 0, 1, 2.",
+          "bbox": [
+            305.64,
+            423.94,
+            369.38,
+            434.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "e0 + e1 + e2 = 0.",
+          "bbox": [
+            262.08,
+            440.5,
+            341.18,
+            453.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "e2",
+          "bbox": [
+            302.52,
+            480.82,
+            311.16,
+            490.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e1",
+          "bbox": [
+            290.81,
+            513.03,
+            299.46,
+            522.99
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e3",
+          "bbox": [
+            349.34,
+            534.49,
+            357.99,
+            544.45
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e0",
+          "bbox": [
+            247.88,
+            536.44,
+            256.53,
+            546.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e4",
+          "bbox": [
+            283.0,
+            550.1,
+            291.65,
+            560.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "e5",
+          "bbox": [
+            306.42,
+            581.41,
+            315.07,
+            591.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5",
+          "bbox": [
+            283.44,
+            609.09,
+            319.86,
+            619.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Thus, opposite edges of ∆represent the same element of J∆, so J∆has three",
+          "bbox": [
+            114.48,
+            645.7,
+            488.92,
+            657.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "“geometric” generators, and the sum of these three generators is zero.",
+          "bbox": [
+            114.48,
+            659.26,
+            461.3,
+            670.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The",
+          "bbox": [
+            470.04,
+            659.26,
+            488.92,
+            670.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "bilinear form on J∆is the non-singular skew-symmetric form given by",
+          "bbox": [
+            114.48,
+            672.82,
+            450.95,
+            684.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "⟨e0, e1⟩= ⟨e1, e2⟩= ⟨e2, e0⟩= −⟨e1, e0⟩= −⟨e3, e1⟩= −⟨e0, e2⟩= 1.",
+          "bbox": [
+            142.2,
+            695.02,
+            461.06,
+            706.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Geometry & Topology, Volume 8 (2004)",
+          "bbox": [
+            114.48,
+            730.65,
+            280.48,
+            740.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.41,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 41,
+      "rotation": 0,
+      "drawings": 29,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6: Double cone on a disc"
+      ],
+      "labels": [
+        {
+          "text": "453",
+          "bbox": [
+            471.72,
+            132.54,
+            488.97,
+            142.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Extended Bloch group and the Cheeger–Chern–Simons class",
+          "bbox": [
+            114.48,
+            133.21,
+            370.29,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            9.41
+          ]
+        },
+        {
+          "text": "need this in the case that |K| is a manifold, which is explicit in Pachner’s work.",
+          "bbox": [
+            114.48,
+            166.06,
+            488.78,
+            176.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In the next section we reduce to the case that |K| is a manifold and use this",
+          "bbox": [
+            114.48,
+            179.5,
+            488.86,
+            190.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "to complete the proof of Theorem 4.6.",
+          "bbox": [
+            114.48,
+            193.06,
+            296.66,
+            203.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            114.48,
+            231.13,
+            130.58,
+            245.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Completion of proof of Theorem 4.6",
+          "bbox": [
+            146.76,
+            231.13,
+            402.02,
+            245.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "In this section we show that we can always resolve the singularities of |K|",
+          "bbox": [
+            114.48,
+            265.06,
+            488.9,
+            275.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "to replace it by a triangulated 3–manifold and then discuss surgery on this",
+          "bbox": [
+            114.48,
+            278.62,
+            488.86,
+            289.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3–manifold to complete the proof of Theorem 4.6.",
+          "bbox": [
+            114.48,
+            292.18,
+            353.54,
+            303.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The underlying space of K is a 3–manifold except at 0–simplices, where it",
+          "bbox": [
+            114.48,
+            312.34,
+            488.79,
+            323.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "may look locally like the cone on a closed surface of genus ≥1. Suppose this",
+          "bbox": [
+            114.48,
+            325.9,
+            488.86,
+            336.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "occurs at some 0–simplex v. Choose a non-separating simple closed simplicial",
+          "bbox": [
+            114.48,
+            339.46,
+            488.78,
+            350.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "curve C in the link Lv. This curve is determined by an open disk D in the",
+          "bbox": [
+            114.48,
+            353.02,
+            488.92,
+            364.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "star of v. We slice |K| open along D and splice in a complex as in Figure 6,",
+          "bbox": [
+            114.48,
+            366.58,
+            488.9,
+            377.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "gluing the top and the bottom of that complex to the two copies of D resulting",
+          "bbox": [
+            114.48,
+            380.14,
+            488.94,
+            391.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "from slicing |K|. This introduces a new 0–simplex v′ in K. We give v′ a",
+          "bbox": [
+            114.48,
+            389.74,
+            488.81,
+            404.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "G–label distinct from that of each adjacent 0–simplex. We order 0–simplices",
+          "bbox": [
+            114.48,
+            407.26,
+            488.74,
+            418.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "by inserting v′ anywhere (eg, as a new maximal element). We must check that",
+          "bbox": [
+            114.48,
+            416.74,
+            488.79,
+            431.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "we can put ﬂattenings on the inserted 3–simplices so that the conditions for a",
+          "bbox": [
+            114.48,
+            434.26,
+            488.81,
+            445.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "strong ﬂattening of our complex still hold.",
+          "bbox": [
+            114.48,
+            447.82,
+            316.46,
+            458.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 6: Double cone on a disc",
+          "bbox": [
+            231.96,
+            548.85,
+            371.26,
+            558.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We ﬁrst show that it suﬃces to satisfy the log-parameter ﬂattening conditions.",
+          "bbox": [
+            114.48,
+            580.06,
+            488.78,
+            590.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Indeed, by Corollary 5.4, if we satisfy the logarithmic ﬂattening conditions, the",
+          "bbox": [
+            114.48,
+            593.62,
+            488.92,
+            604.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "parity conditions hold around edges. Parity along normal paths then gives a",
+          "bbox": [
+            114.48,
+            607.18,
+            488.82,
+            618.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "homomorphism from H1(|K −K(0)|) to Z/2. If we denote the new complex",
+          "bbox": [
+            114.48,
+            618.98,
+            488.75,
+            632.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "by K′ and the curve in K′ given by the two vertical 1–simplices by C, then",
+          "bbox": [
+            114.48,
+            630.22,
+            488.81,
+            645.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "H1(|K −K(0)|) = H1(|K′ −K(0)| −C) which surjects to H1(|K′ −(K′)(0)|) by",
+          "bbox": [
+            114.48,
+            643.78,
+            488.87,
+            659.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the inclusion, so the parity condition will hold for all normal paths.",
+          "bbox": [
+            114.48,
+            661.3,
+            436.94,
+            672.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We satisfy the log-parameter strong ﬂattening condition as follows. The added",
+          "bbox": [
+            114.48,
+            681.46,
+            488.81,
+            692.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3–simplices come in pairs with identical G–labelings, adjacent to each other",
+          "bbox": [
+            114.48,
+            695.02,
+            488.83,
+            705.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Geometry & Topology, Volume 8 (2004)",
+          "bbox": [
+            114.48,
+            730.65,
+            280.48,
+            740.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.41,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 45,
+      "rotation": 0,
+      "drawings": 6,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7: Left and right sides are identiﬁed to form an annulus. Signs indicate change of ﬂattening by ±πi and 0 signiﬁes that ﬂattening has been changed by both πi and −πi so total change is zero. The log-parameters aﬀected by applying the cycle relation about a single ei are bold."
+      ],
+      "labels": [
+        {
+          "text": "457",
+          "bbox": [
+            471.72,
+            132.54,
+            488.97,
+            142.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Extended Bloch group and the Cheeger–Chern–Simons class",
+          "bbox": [
+            114.48,
+            133.21,
+            370.29,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            9.41
+          ]
+        },
+        {
+          "text": "However, to blow up we need the log-parameter along the appropriate normal",
+          "bbox": [
+            114.48,
+            166.06,
+            488.9,
+            176.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "curve to be zero, which need not be the case. We describe how to remedy this.",
+          "bbox": [
+            114.48,
+            179.5,
+            488.9,
+            190.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Suppose we are in the situation just before we do the blow-down, so the ﬂat-",
+          "bbox": [
+            114.48,
+            198.34,
+            488.79,
+            209.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "tening have been matched on pairs of 3–simplices in the ﬁgure. If we apply",
+          "bbox": [
+            114.48,
+            211.9,
+            488.87,
+            222.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the cycle relation about the lower vertical 1–simplex joining v to v′ we destroy",
+          "bbox": [
+            114.48,
+            221.5,
+            488.75,
+            236.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "this matching. The procedure described above to make ﬂattenings match again",
+          "bbox": [
+            114.48,
+            239.02,
+            488.69,
+            249.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "then applies the cycle relation once about each of the 1–simplices e1, . . . , e6.",
+          "bbox": [
+            114.48,
+            252.58,
+            488.9,
+            264.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We claim that the end result is to change the log-parameter along the normal",
+          "bbox": [
+            114.48,
+            266.14,
+            488.9,
+            277.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "curve we are interested in by 2πi.",
+          "bbox": [
+            114.48,
+            279.7,
+            276.26,
+            290.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Indeed, recall that the full star neighborhood of the curve C consists of the com-",
+          "bbox": [
+            114.48,
+            298.54,
+            488.79,
+            309.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "plex of Figure 6 glued to the cone on an annulus. In Figure 7 we show a possible",
+          "bbox": [
+            114.48,
+            312.1,
+            488.92,
+            323.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "triangulation of the annulus (we may assume it is triangulated this way, since",
+          "bbox": [
+            114.48,
+            325.66,
+            488.8,
+            336.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "we may choose the triangulation). The ﬁgure also shows how log-parameters",
+          "bbox": [
+            114.48,
+            339.1,
+            488.62,
+            350.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "are changed by the above procedure. The normal curve that interests us is the",
+          "bbox": [
+            114.48,
+            352.66,
+            488.92,
+            363.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "vertical curve, and the log-parameter along it has been changed by 2πi.",
+          "bbox": [
+            114.48,
+            366.22,
+            458.06,
+            377.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            214.96,
+            386.18,
+            221.67,
+            402.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            264.51,
+            386.18,
+            271.21,
+            402.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            314.06,
+            386.18,
+            320.76,
+            402.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            363.61,
+            386.18,
+            370.31,
+            402.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            413.16,
+            386.18,
+            419.86,
+            402.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            192.66,
+            386.69,
+            199.19,
+            402.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            291.76,
+            386.69,
+            298.29,
+            402.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            341.31,
+            386.69,
+            347.84,
+            402.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            390.86,
+            386.69,
+            397.39,
+            402.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            440.41,
+            386.69,
+            446.94,
+            402.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            165.41,
+            387.07,
+            172.54,
+            398.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier-Bold"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            192.66,
+            416.26,
+            198.61,
+            426.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier-Bold"
+          ],
+          "sizes": [
+            9.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            242.21,
+            416.26,
+            248.16,
+            426.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier-Bold"
+          ],
+          "sizes": [
+            9.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            294.24,
+            417.94,
+            298.2,
+            428.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            7.93
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            343.79,
+            417.94,
+            347.75,
+            428.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            7.93
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            393.34,
+            417.94,
+            397.3,
+            428.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            7.93
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            442.89,
+            417.94,
+            446.85,
+            428.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            7.93
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            155.5,
+            423.34,
+            162.21,
+            439.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            254.6,
+            423.34,
+            261.3,
+            439.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            304.15,
+            423.34,
+            310.85,
+            439.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            353.7,
+            423.34,
+            360.4,
+            439.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            403.25,
+            423.34,
+            409.95,
+            439.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            187.71,
+            423.85,
+            194.23,
+            439.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            286.8,
+            423.85,
+            293.33,
+            439.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            336.35,
+            423.85,
+            342.88,
+            439.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            385.9,
+            423.85,
+            392.43,
+            439.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            435.45,
+            423.85,
+            441.98,
+            439.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            205.05,
+            424.23,
+            212.18,
+            436.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Courier-Bold"
+          ],
+          "sizes": [
+            11.89
+          ]
+        },
+        {
+          "text": "Figure 7: Left and right sides are identiﬁed to form an annulus. Signs indicate change",
+          "bbox": [
+            114.48,
+            453.93,
+            488.98,
+            463.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of ﬂattening by ±πi and 0 signiﬁes that ﬂattening has been changed by both πi and",
+          "bbox": [
+            114.48,
+            465.93,
+            488.89,
+            475.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−πi so total change is zero. The log-parameters aﬀected by applying the cycle relation",
+          "bbox": [
+            114.48,
+            477.81,
+            489.01,
+            487.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "about a single ei are bold.",
+          "bbox": [
+            114.48,
+            489.81,
+            230.28,
+            501.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Since the log-parameter along the normal curve is a multiple of 2πi (Corollary",
+          "bbox": [
+            114.48,
+            513.58,
+            488.75,
+            524.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "5.4), we can apply a multiple of the above procedure to make sure that desired",
+          "bbox": [
+            114.48,
+            527.14,
+            488.82,
+            538.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "log-parameter along the curve is zero before we perform the blow-down.",
+          "bbox": [
+            114.48,
+            540.7,
+            458.06,
+            551.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This would complete the proof of Theorem 4.6 except that we have carried out",
+          "bbox": [
+            114.48,
+            559.54,
+            488.91,
+            570.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the proof only for ordered 3–cycles whose vertex-orderings come from a global",
+          "bbox": [
+            114.48,
+            573.1,
+            488.66,
+            584.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ordering of the 0–simplices of K. We now show that this stronger condition",
+          "bbox": [
+            114.48,
+            586.66,
+            488.7,
+            597.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is unnecessary. We will also show, as promised earlier, that K need only be",
+          "bbox": [
+            114.48,
+            600.22,
+            488.92,
+            611.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a quasi-simplicial complex (closed simplices do not necessarily embed in |K|).",
+          "bbox": [
+            114.48,
+            613.78,
+            488.78,
+            624.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "An example of such a quasi-simplicial ordered 3–cycle is given by gluing the",
+          "bbox": [
+            114.48,
+            627.34,
+            488.92,
+            638.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "two 3–simplices in Figure 8 by matching each face of the left 3–simplex with",
+          "bbox": [
+            114.48,
+            640.9,
+            488.82,
+            651.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the correspondingly decorated face of the right 3–simplex (the decorations in",
+          "bbox": [
+            114.48,
+            654.34,
+            488.82,
+            665.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "question are the single and double arrows on the edges that bound the face).",
+          "bbox": [
+            114.48,
+            667.9,
+            488.66,
+            678.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The arrows on the edges order the vertices of each 3–simplex as shown, and, by",
+          "bbox": [
+            114.48,
+            681.46,
+            488.87,
+            692.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "construction, these orderings match on common faces. The resulting complex",
+          "bbox": [
+            114.48,
+            695.02,
+            488.75,
+            705.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Geometry & Topology, Volume 8 (2004)",
+          "bbox": [
+            114.48,
+            730.65,
+            280.48,
+            740.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.41,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 46,
+      "rotation": 0,
+      "drawings": 22,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 8: A quasi-simplicial ordered 3–cycle"
+      ],
+      "labels": [
+        {
+          "text": "458",
+          "bbox": [
+            114.48,
+            132.54,
+            131.73,
+            142.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Walter D Neumann",
+          "bbox": [
+            405.96,
+            133.21,
+            488.85,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            9.41
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            226.46,
+            159.78,
+            231.21,
+            172.45
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            392.71,
+            159.78,
+            397.46,
+            172.45
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            389.74,
+            210.24,
+            394.49,
+            222.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            223.5,
+            213.21,
+            228.25,
+            225.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            152.25,
+            236.96,
+            157.0,
+            249.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            279.9,
+            236.96,
+            284.65,
+            249.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            321.46,
+            236.96,
+            326.21,
+            249.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            446.14,
+            236.96,
+            450.89,
+            249.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "Figure 8: A quasi-simplicial ordered 3–cycle",
+          "bbox": [
+            204.96,
+            272.01,
+            398.62,
+            281.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "has one 0–simplex, two 1–simplices, four 2–simplices, and two 3–simplices.",
+          "bbox": [
+            114.48,
+            301.18,
+            488.66,
+            312.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(This 3–cycle is simply connected, so it cannot give a non-trivial element of",
+          "bbox": [
+            114.48,
+            314.74,
+            488.85,
+            325.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "H3(G; Z) in Theorem 4.6, but we will return to it when discussing invariants",
+          "bbox": [
+            114.48,
+            327.78,
+            488.74,
+            340.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of 3–manifolds, since |K| −K(0) is Thurston’s ideal triangulation of the ﬁgure",
+          "bbox": [
+            114.48,
+            337.9,
+            488.92,
+            352.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "eight knot complement.)",
+          "bbox": [
+            114.48,
+            355.42,
+            230.91,
+            366.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Proposition 11.2 Any quasi-simplicial ordered 3–cycle K is related by Pach-",
+          "bbox": [
+            114.48,
+            377.92,
+            488.67,
+            389.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSL10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ner moves that respect vertex-orderings of 3–simplices to a simplicial 3–cycle",
+          "bbox": [
+            114.48,
+            391.78,
+            488.68,
+            402.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSL10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "K′ whose vertex-orderings are induced by a global ordering of the 0–simplices",
+          "bbox": [
+            114.48,
+            401.38,
+            488.74,
+            416.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSL10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of K′.",
+          "bbox": [
+            114.48,
+            417.02,
+            144.38,
+            429.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSL10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Proof We will start with an arbitrary ordering of the 0–simplices of K. At",
+          "bbox": [
+            114.48,
+            442.6,
+            488.79,
+            453.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ﬁrst this ordering will not induce the given vertex-orderings of simplices. We",
+          "bbox": [
+            114.48,
+            456.46,
+            488.8,
+            467.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "will perform various Pachner moves on K. Each time we perform a 1 →4 move",
+          "bbox": [
+            114.48,
+            470.02,
+            488.68,
+            480.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "we will add the new 0–simplex as a new maximal element both in our ordering",
+          "bbox": [
+            114.48,
+            483.58,
+            488.93,
+            494.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of 0–simplices and also in the vertex-orderings of the new 3–simplices created",
+          "bbox": [
+            114.48,
+            497.14,
+            488.69,
+            508.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "by the move. At each stage in the process, the ordering of the two vertices of",
+          "bbox": [
+            114.48,
+            510.7,
+            488.84,
+            521.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a 1–simplex will be induced by the global ordering of the 0–simplices except",
+          "bbox": [
+            114.48,
+            524.14,
+            488.79,
+            535.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "maybe if both vertices are “old” 0–simplices (ie, they occurred in K). We will",
+          "bbox": [
+            114.48,
+            537.7,
+            488.78,
+            548.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "therefore be done once no two old 0–simplices are joined by a 1–simplex.",
+          "bbox": [
+            114.48,
+            551.26,
+            465.14,
+            562.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We will assume no 3–simplex of K meets itself across a 2–face (do a 1 →4",
+          "bbox": [
+            114.48,
+            569.02,
+            488.81,
+            579.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Pachner move on any such simplex if it occurs). Suppose K has n 3–simplices.",
+          "bbox": [
+            114.48,
+            582.46,
+            488.66,
+            593.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We ﬁrst do 1 →4 Pachner moves on each of the 3–simplices of K, creating",
+          "bbox": [
+            114.48,
+            596.02,
+            488.69,
+            606.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "n new 0–simplices. Next, for each old 2–simplex (ie, a 2–simplex that was",
+          "bbox": [
+            114.48,
+            609.58,
+            488.73,
+            620.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "already in K) we do a 2 →3 Pachner move on the two 3–simplices that meet",
+          "bbox": [
+            114.48,
+            623.14,
+            488.79,
+            634.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "across it. Each 3–simplex of the resulting complex is in the star of a unique",
+          "bbox": [
+            114.48,
+            636.7,
+            489.04,
+            647.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "“old” 1–simplex. So if we operate in the star of an old 1–simplex it will not",
+          "bbox": [
+            114.48,
+            650.26,
+            488.91,
+            661.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "aﬀect the star of any other old simplex.",
+          "bbox": [
+            114.48,
+            663.82,
+            303.38,
+            674.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "If there are three or more three 3–simplices in the star of an old 1–simplex,",
+          "bbox": [
+            114.48,
+            681.46,
+            488.78,
+            692.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "we reduce the number to three by repeatedly doing 2 →3 moves on pairs of",
+          "bbox": [
+            114.48,
+            695.02,
+            488.84,
+            705.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Geometry & Topology, Volume 8 (2004)",
+          "bbox": [
+            114.48,
+            730.65,
+            280.47,
+            740.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.41,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 59,
+      "rotation": 0,
+      "drawings": 32,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 9: Fundamental domain of the cusp torus, triangulated as the link of the 0– simplex of the ideal triangulation of m004."
+      ],
+      "labels": [
+        {
+          "text": "471",
+          "bbox": [
+            471.72,
+            132.54,
+            488.97,
+            142.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Extended Bloch group and the Cheeger–Chern–Simons class",
+          "bbox": [
+            114.48,
+            133.21,
+            370.29,
+            142.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9"
+          ],
+          "sizes": [
+            9.41
+          ]
+        },
+        {
+          "text": "z´´",
+          "bbox": [
+            379.5,
+            167.34,
+            389.04,
+            176.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´´",
+          "bbox": [
+            229.15,
+            169.55,
+            238.68,
+            178.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            304.32,
+            193.86,
+            308.14,
+            203.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            153.97,
+            196.07,
+            157.79,
+            205.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            322.22,
+            200.33,
+            327.94,
+            206.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            169.36,
+            200.63,
+            175.08,
+            206.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "(y´´)",
+          "bbox": [
+            156.66,
+            202.7,
+            172.4,
+            212.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            288.21,
+            202.7,
+            292.03,
+            212.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "(y´´)",
+          "bbox": [
+            309.69,
+            202.7,
+            325.43,
+            212.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            438.57,
+            202.7,
+            442.38,
+            212.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´",
+          "bbox": [
+            153.97,
+            211.54,
+            160.65,
+            220.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´",
+          "bbox": [
+            304.32,
+            211.54,
+            311.0,
+            220.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´",
+          "bbox": [
+            454.68,
+            211.54,
+            461.35,
+            220.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            294.66,
+            217.43,
+            300.37,
+            223.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            443.94,
+            220.08,
+            449.65,
+            225.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "(y´´)",
+          "bbox": [
+            282.84,
+            220.38,
+            298.58,
+            229.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "(y´´)",
+          "bbox": [
+            430.51,
+            222.59,
+            446.25,
+            232.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            219.84,
+            234.67,
+            225.55,
+            240.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            368.22,
+            235.11,
+            373.94,
+            241.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            215.72,
+            235.85,
+            220.02,
+            245.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            363.39,
+            235.85,
+            367.69,
+            245.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´",
+          "bbox": [
+            229.15,
+            238.06,
+            235.82,
+            247.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´",
+          "bbox": [
+            379.5,
+            238.06,
+            386.18,
+            247.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            239.35,
+            246.16,
+            245.06,
+            252.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            389.7,
+            246.16,
+            395.42,
+            252.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "z´´",
+          "bbox": [
+            213.04,
+            246.9,
+            222.58,
+            256.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            234.52,
+            246.9,
+            238.81,
+            256.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´´",
+          "bbox": [
+            363.39,
+            246.9,
+            372.93,
+            256.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            384.87,
+            246.9,
+            389.17,
+            256.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´´",
+          "bbox": [
+            229.15,
+            257.95,
+            238.68,
+            267.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´´",
+          "bbox": [
+            379.5,
+            257.95,
+            389.04,
+            267.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            370.55,
+            259.42,
+            376.26,
+            265.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            220.38,
+            259.86,
+            226.09,
+            265.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "(y´)",
+          "bbox": [
+            210.35,
+            262.37,
+            223.23,
+            271.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "(y´)",
+          "bbox": [
+            360.71,
+            262.37,
+            373.59,
+            271.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            445.01,
+            273.57,
+            450.73,
+            279.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            295.73,
+            275.33,
+            301.45,
+            281.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "(y´)",
+          "bbox": [
+            433.2,
+            275.64,
+            446.08,
+            285.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            457.36,
+            276.7,
+            465.72,
+            288.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            9.74
+          ]
+        },
+        {
+          "text": "(y´)",
+          "bbox": [
+            285.53,
+            277.85,
+            298.41,
+            287.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            153.97,
+            282.27,
+            157.79,
+            291.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            304.32,
+            282.27,
+            308.14,
+            291.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            454.68,
+            284.48,
+            458.49,
+            293.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            175.81,
+            288.15,
+            181.52,
+            294.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            321.69,
+            288.6,
+            327.4,
+            294.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "(y´´)",
+          "bbox": [
+            162.03,
+            291.11,
+            177.77,
+            300.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            290.9,
+            291.11,
+            294.71,
+            300.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "(y´´)",
+          "bbox": [
+            309.69,
+            291.11,
+            325.43,
+            300.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            441.25,
+            291.11,
+            445.07,
+            300.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "l",
+          "bbox": [
+            135.18,
+            292.17,
+            138.16,
+            303.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            9.74
+          ]
+        },
+        {
+          "text": "z´",
+          "bbox": [
+            153.97,
+            302.16,
+            160.65,
+            311.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´",
+          "bbox": [
+            304.32,
+            302.16,
+            311.0,
+            311.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            294.66,
+            303.18,
+            300.37,
+            309.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            4.87
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            290.9,
+            304.37,
+            295.19,
+            313.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´",
+          "bbox": [
+            229.15,
+            326.47,
+            235.82,
+            335.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "z´",
+          "bbox": [
+            379.5,
+            326.47,
+            386.18,
+            335.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.8
+          ]
+        },
+        {
+          "text": "Figure 9: Fundamental domain of the cusp torus, triangulated as the link of the 0–",
+          "bbox": [
+            114.48,
+            355.53,
+            488.94,
+            365.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "simplex of the ideal triangulation of m004.",
+          "bbox": [
+            114.48,
+            367.53,
+            302.52,
+            377.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Thus the ﬂattening condition about the edge is",
+          "bbox": [
+            118.08,
+            399.1,
+            343.66,
+            410.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2p + q −s −2(1 −r −s) = −2 .",
+          "bbox": [
+            226.08,
+            418.78,
+            377.18,
+            429.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(19)",
+          "bbox": [
+            469.44,
+            418.78,
+            488.67,
+            429.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The log holonomy for a meridian and longitude can be read oﬀfrom the fun-",
+          "bbox": [
+            114.48,
+            438.46,
+            489.03,
+            449.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "damental domain of the cusp torus illustrated in Figure 9 (taken from [16]",
+          "bbox": [
+            114.48,
+            452.02,
+            488.9,
+            462.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "but modiﬁed since orientation conventions diﬀer; in particular, w, w′, w′′ there",
+          "bbox": [
+            114.48,
+            461.62,
+            488.92,
+            476.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "are our (y′′)−1, (y′)−1, y−1 because of diﬀerent vertex-ordering for the second",
+          "bbox": [
+            114.48,
+            475.18,
+            488.81,
+            490.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "simplex). They are:",
+          "bbox": [
+            114.48,
+            492.7,
+            208.46,
+            503.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "u := log z′′ + log y′′",
+          "bbox": [
+            193.56,
+            507.82,
+            283.45,
+            523.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "v := 2 log z −2 log z′′ .",
+          "bbox": [
+            305.76,
+            507.82,
+            409.82,
+            523.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(20)",
+          "bbox": [
+            469.44,
+            512.38,
+            488.67,
+            523.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Their vanishing thus gives ﬂattening conditions",
+          "bbox": [
+            114.48,
+            532.06,
+            340.66,
+            542.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(1 −r −s) + (−1 −p −q) = 0",
+          "bbox": [
+            229.56,
+            550.78,
+            373.73,
+            561.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2p −2(−1 −p −q) = 0",
+          "bbox": [
+            264.12,
+            567.34,
+            373.73,
+            578.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "which simplify to",
+          "bbox": [
+            114.48,
+            586.18,
+            196.61,
+            597.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "−p −q −r −s = 0",
+          "bbox": [
+            254.4,
+            605.86,
+            343.97,
+            616.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(21)",
+          "bbox": [
+            469.44,
+            605.86,
+            488.67,
+            616.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2 + 4p + 2q = 0 .",
+          "bbox": [
+            270.24,
+            622.42,
+            348.74,
+            633.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(22)",
+          "bbox": [
+            469.44,
+            622.42,
+            488.67,
+            633.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Solving equations (19), (21), (22) gives",
+          "bbox": [
+            114.48,
+            642.1,
+            299.86,
+            653.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "q = −1 −2p,",
+          "bbox": [
+            228.12,
+            661.78,
+            289.22,
+            672.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(r, s) = −(p, q).",
+          "bbox": [
+            301.92,
+            661.78,
+            375.14,
+            672.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(23)",
+          "bbox": [
+            469.44,
+            661.78,
+            488.67,
+            672.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Simultaneously solving the consistency condition (18) and the cusp conditions",
+          "bbox": [
+            114.48,
+            681.46,
+            488.74,
+            692.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "u = v = 0 (see (20)) gives z = ω, y = ω−1. Thus, as promised earlier, we see",
+          "bbox": [
+            114.48,
+            693.26,
+            488.8,
+            705.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Geometry & Topology, Volume 8 (2004)",
+          "bbox": [
+            114.48,
+            730.65,
+            280.48,
+            740.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSL9",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.41,
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

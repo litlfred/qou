@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2506.10206v2/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A sextic two-term identity",
+  "pageStart": 31,
+  "pageEnd": 33,
+  "contains": [
+    "library/arxiv-2506.10206v2/blocks/prose-sec-021"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
+  "provenance": "ingested"
+}

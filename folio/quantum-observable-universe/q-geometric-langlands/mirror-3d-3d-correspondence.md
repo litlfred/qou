@@ -15,14 +15,13 @@ dressing as the value of that partition function at $q_0$:
 | the dimensionless Borromean dressing $F_{\mathcal{B}} = \lvert\mathrm{tr}_M(\beta_{\mathcal{B}})\rvert\,[3]_q!/q^3$ | partition function $Z_{T[\mathcal{B}_3]}(q_0)$ on $S^3_b$ |
 | $h^4 = -3/4$ Markov-trace coefficient | 4-loop perturbative contribution to $Z_{T[\mathcal{B}_3]}$ |
 
-The middle row previously read $m_p \leftrightarrow Z_{T[\mathcal{B}_3]}(q_0)$,
-i.e. an **absolute** proton mass in MeV as the value of the partition function.
-That form is retired for two independent reasons. It is excised by the standing
-ruling that the framework no longer claims, targets, or scores an absolute
-nucleon mass as a prediction — absolute mass is $\mathfrak{m}_e$ times a
+The middle row is not $m_p \leftrightarrow Z_{T[\mathcal{B}_3]}(q_0)$,
+an **absolute** proton mass in MeV as the value of the partition function.
+That form is excluded for two independent reasons. The framework the framework no longer claims, targets, or scores an absolute
+nucleon mass as a prediction: absolute mass is $\mathfrak{m}_e$ times a
 dimensionless ratio, and $\mathfrak{m}_e$ is the calibration that fixes the MeV
 scale, so the MeV figure carries no content beyond the ratio. Independently of
-that ruling, a partition function is a **dimensionless** number, so setting it
+that, a partition function is a **dimensionless** number, so setting it
 equal to a quantity carried in MeV was never dimensionally coherent.
 
 **What is not settled, and is not settled here:** *which* dimensionless
@@ -60,8 +59,8 @@ spacetime are two computations of the same hyperbolic invariant.
 
 ## Cross-references
 
-- [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- [Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](../mass-theory/borromean-bloch-group-element.md)
   — K-theoretic regulator parallel
-- [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)
+- [Kashaev volume conjecture](../mass-theory/kashaev-volume-conjecture.md)
   — Volume Conjecture is the leading-order 3d–3d statement
 - [Dimofte–Gaiotto–Gukov 2014; Terashima–Yamazaki 2011]

@@ -2,35 +2,64 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-ph-0405028v2",
  "source_sha256": "90a0e4ba456988d6",
- "brief": "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES — We study an exact asymptotic behavior of the Witten–Reshet ikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ( p1, p 2",
- "extended": "**ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES**\n\n*KAZUHIRO HIKAMI*\n\n26 pp, 3 sections.\n\n**Abstract.** We study an exact asymptotic behavior of the Witten–Reshet ikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ( p1, p 2, p 3) by use of properties of the modular form following a method proposed by R. Lawrence and D. Zagier. Key observation is that the invariant coincides with a limiting value of the Eichler integral of th e modular form with weight 3/ 2. We show that the Casson invariant is related to the number of the Eichler integrals which do not van- ish in a limit τ → N ∈ Z. Correspondingly there is a one-to-one correspondence bet ween the non-vanishing Eichler integrals and the irreducible representation of the fundamental group, and the Chern–Simons invariant is given from the Eichler integral i n this limit.\n\n**Outline.** Front matter; S-matrix and the Reidemeister Torsion; The Ohtsuki Invariant\n\n**Extracted claims (proposals, not verified).**\n- Theorem 15: Let the function Λ n(p1, p2, p3) be deﬁned by\n- Corollary 13: We have an asymptotic behavior of the Witten invariant (1.1) for the Brieskorn",
+ "brief": "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES — We study an exact asymptotic behavior of the Witten–Reshetikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ(p1, p2, p3)",
+ "extended": "**ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES**\n\n*KAZUHIRO HIKAMI*\n\n26 pp, 9 sections.\n\n**Abstract.** We study an exact asymptotic behavior of the Witten–Reshetikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ(p1, p2, p3) by use of properties of the modular form following a method proposed by R. Lawrence and D. Zagier. Key observation is that the invariant coincides with a limiting value of the Eichler integral of the modular form with weight 3/2. We show that the Casson invariant is related to the number of the Eichler integrals which do not van- ish in a limit τ →N ∈Z. Correspondingly there is a one-to-one correspondence between the non-vanishing Eichler integrals and the irreducible representation of the fundamental group, and the Chern–Simons invariant is given from the Eichler integral in this limit. It is also shown that the Ohtsuki invariant follows from a nearly modular property of the Eichler integral, and we give an explicit form in terms of the L-function.\n\n**Outline.** Front matter; Introduction; The Witten--Reshetikhin--Turaev Invariant for ; Modular Forms; The Eichler Integral and the Chern--Simons Inv; The Witten--Reshetikhin--Turaev Invariant and ; S-matrix and the Reidemeister Torsion; The Ohtsuki Invariant; Discussions",
  "tokens": {
   "brief": 49,
-  "extended": 288
+  "extended": 322
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-17"
+   "pages": "1-1"
   },
   {
-   "id": "sec-000-s-matrix-and-the-reidemeister-torsion",
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-the-witten--reshetikhin--turaev-invariant-for-th",
+   "title": "The Witten--Reshetikhin--Turaev Invariant for the Brieskorn Homology Spheres",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-002-modular-forms",
+   "title": "Modular Forms",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-the-eichler-integral-and-the-chern--simons-invar",
+   "title": "The Eichler Integral and the Chern--Simons Invariant",
+   "pages": "8-14"
+  },
+  {
+   "id": "sec-004-the-witten--reshetikhin--turaev-invariant-and-th",
+   "title": "The Witten--Reshetikhin--Turaev Invariant and the Eichler Integral",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-005-s-matrix-and-the-reidemeister-torsion",
    "title": "S-matrix and the Reidemeister Torsion",
    "pages": "17-20"
   },
   {
-   "id": "sec-001-the-ohtsuki-invariant",
+   "id": "sec-006-the-ohtsuki-invariant",
    "title": "The Ohtsuki Invariant",
-   "pages": "20-26"
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-007-discussions",
+   "title": "Discussions",
+   "pages": "23-26"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,3 +1,3 @@
 import { prose } from "../../schema/builders";
 
-export default prose({ title: "Chapter close — Measurement and observation" });
+export default prose({ label: "prose:outro-measurement-observation", title: "Chapter close — Measurement and observation" });

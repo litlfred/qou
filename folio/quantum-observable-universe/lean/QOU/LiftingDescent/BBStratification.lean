@@ -45,7 +45,7 @@ infrastructure).
   deformation quantization
 - Mathlib `CategoryTheory.Filtered`, `Algebra.Homology.HomologicalComplex`
   — the underlying generic infrastructure.
-- [manuscript] lifting-and-descent / homological-shell-condensation
+- [leitner2026] lifting-and-descent / homological-shell-condensation
 -/
 
 namespace QOU.LiftingDescent.BBStratification
@@ -173,7 +173,7 @@ class BBSpectralSequenceProvider where
     then the spectral sequence at `n` vanishes in positive q. This
     is the abstract form of `condensation_at_magic` once we have a
     BB-spectral-sequence in scope. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem vanishes_when_all_complete
     {n : ℕ} (B : BBSpectralSequence n)
     (h : ∀ i, B.stratification.is_complete_intersection i) :
@@ -183,7 +183,7 @@ theorem vanishes_when_all_complete
 /-- **Lemma (convergence stability).** Sizes on the `E_∞`-page are
     stable: equal to `E_r` for `r ≥ r₀(p, q)`. Provable from the
     `converges` field. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem einf_eq_eventually_at
     (S : SpectralSequence) (p q : ℕ) :
     ∃ r₀, ∀ r, r₀ ≤ r → S.size r p q = S.einf p q := by
@@ -195,7 +195,7 @@ theorem einf_eq_eventually_at
 
 /-- The spectral sequence's positive-q vanishing implies, in
     particular, that the eventual `E_∞^{p, q}` is zero for q > 0. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem vanishesAt_of_vanishesInPositiveQ
     {S : SpectralSequence}
     (h : S.vanishesInPositiveQ)
@@ -210,7 +210,7 @@ theorem vanishesAt_of_vanishesInPositiveQ
     This is the structural form of `condensation_at_magic`: instead
     of asserting the predicate axiomatically per-n, we derive it from
     the BB-stratum complete-intersection property. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem framework_condensation_of_all_complete
     [P : BBSpectralSequenceProvider]
     {n : ℕ} {q : ℝ}

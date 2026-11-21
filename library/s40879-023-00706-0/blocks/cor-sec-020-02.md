@@ -1,0 +1,1 @@
+Bring’s curve has a unique theta characteristic invariant under the action of the automorphism group, which is also the theta characteristic invariant under the A5 subgroup found in [11]. The existence of the unique invariant theta characteristic was known in [8], but it had not been identiﬁed. This we rectify with the following result.

@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Multivariable big q-Jacobi polynomials",
-  "pageStart": 27,
-  "pageEnd": 29,
+  "title": "Multivariable little q-Jacobi polynomials",
+  "pageStart": 24,
+  "pageEnd": 27,
   "contains": [
-    "library/arxiv-math-0606222v2/blocks/prose-sec-013"
+    "library/arxiv-math-0606222v2/blocks/prose-sec-013",
+    "library/arxiv-math-0606222v2/blocks/thm-sec-013-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606222v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606222v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606222v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606222v2/manifest.jsonld",
   "provenance": "ingested"
 }

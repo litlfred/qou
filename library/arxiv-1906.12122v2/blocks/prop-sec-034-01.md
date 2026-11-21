@@ -1,0 +1,1 @@
+With the same parameters that led to an excellent postdiction of the \FourHe excited state, the ground-state energy of \SixLi came out at 70\% of the experimental value, which is consistent with the \apriori \LO uncertainty estimate from the pionless power counting.

@@ -16,7 +16,7 @@ decomposition theorem (as corollary of cohomological embedding).
 ## References
 
 - [beta-decay-skein] Def: beta decay as skein crossing change.
-- [manuscript] §5/embeddability-closure: torus knots exhaust H¹(Σ_g).
+- [leitner2026] §5/embeddability-closure: torus knots exhaust H¹(Σ_g).
 - [rosso-jones1993] Completeness of torus knot invariants.
 -/
 
@@ -225,7 +225,7 @@ noncomputable def knotOperator (τ : TorusKnotLabel) (N : ℕ) (g : ℕ) : R_t :
     (5) tower termination (embeddability bound).
     Until those land, the equality is per-instance. -/
 -- Ref: [rosso-jones1993] On the invariants of torus knots derived from quan — see folio/schema/references.ts
--- Ref: [manuscript] §5/embeddability-closure
+-- Ref: [leitner2026] §5/embeddability-closure
 class SpectralDecompositionQValue
     (g : ℕ) (_hg : g = 4)
     (op : BetaDecayOp)

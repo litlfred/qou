@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0908.3425v1/sections/sec-051",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Pion-nucleon form factor",
+  "pageStart": 75,
+  "pageEnd": 76,
+  "contains": [
+    "library/arxiv-0908.3425v1/blocks/prose-sec-051"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0908.3425v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0908.3425v1/manifest.jsonld",
+  "provenance": "ingested"
+}

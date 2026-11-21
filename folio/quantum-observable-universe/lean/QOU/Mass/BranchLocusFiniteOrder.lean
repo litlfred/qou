@@ -60,7 +60,7 @@ on the three-point rigidity of a Möbius map, argued in prose and measured exact
 §7c: generic `[Field K]` for the core; `ℝ` and `ℂ` only in the two archimedean
 corollaries, where an order comparison is genuinely required. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-09-08-w1-palindromic-involution-lifts-and-is-elliptic.md
+-- Ref: [leitner2026] docs/audits/2026-09-08-w1-palindromic-involution-lifts-and-is-elliptic.md
 -/
 import Mathlib.Tactic
 import Mathlib.Data.Complex.Basic

@@ -48,7 +48,7 @@ No ring at all: hooks are `ℕ`, and the sum identity is stated for an arbitrary
 target exactly as `(I')` is in `HookSumBetaCoordinates`.  The `ε`-valued specialisation the arc
 uses lives downstream, past the archimedean wall.
 
--- Ref: [manuscript] computations/deltalambda/rev_staircase_closed_form_and_constant_term_probe.py
+-- Ref: [leitner2026] computations/deltalambda/rev_staircase_closed_form_and_constant_term_probe.py
 -/
 
 namespace QOU.BraidKnot.HookSum

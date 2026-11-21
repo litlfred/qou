@@ -1,0 +1,68 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-015
+section_title: "Page 15"
+pages: 15-15
+pdf_page: 15
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 153
+
+3.4.5 Corollary. If a(L)+0 for all edges L of codimension p then $?(a) is iso.
+(cf. Theorem 3.7).
+
+3.5 Remark. Let us consider groups
+F” (€@)=F (@)(ker S?(a)=S"(F?(@)) <A).
+
+S? induces non-degenerate symmetric forms S? on ¥?; differentials d, d* on
+A’ induce differentials on ¥°=@¥F? which are adjoint with respect to S’. If
+all a(H), He@, are real then S? are real and we have usual “Hodge” decomposi-
+tion H?(F'(€))= {xeF?()|dx=0 and d* x =0}, ete. cf. 6.13, [Kos].
+
+Determinant formula. All S?(a) are linear operators between vector spaces of
+equal dimension, depending polynomially on {a(H)}y<¢. So, det S?(a) is a poly-
+nomial in {a(H)} well defined up to a non-zero multiplicative constant. We'll
+write down the formula for it.
+
+3.6 Let @ be a central arrangement in C™ with a unique vertex. Choose some
+He@, and put
+
+(3.6.1) e(®@)=x(Gy)
+
+where @,, is as in 1.4 (cf. 1.7.4). From 4.1.5 follows that this number doesn’t
+depend on the choice of H.
+Now let @ be arbitrary. For an edge L of @ put
+
+(3.6.2) e(L) =e(@(L)).
+
+(We consider @(L) as a central arrangement in the normal space to L in V).
+Let @, be an arrangement in L induced by @, ie. @,={HOL}ace,n4c-
+Put
+
+(3.6.3) d?(L)=dim ?(@;).
+
+3.7 Theorem. Let @ be an arrangement in V=CN with exponents a: € +. Then
+for all p20
+
+(3.7.1) det SY~"(a)=const-[] [] a(Lyeee
+
+i20 Le@
+
+(We put e(V)=0; so det S°=1.)
+
+Choose a framing of @. This gives bases in V”(€), F?(@), see 1.6, 2.9.2.
+With respect to these bases, det SY~?(a) is equal to the r.h.s. of (3.7.1) with Const
+=1.
+
+3.7.2 Example. Consider an arrangement @ on the plane consisting of n lines
+going through a point, with exponents a,,...,a,. Then det 5S?
+
+n n-2
+=Const:a, a4(¥ a) .
+
+=1

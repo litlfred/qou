@@ -1,0 +1,1 @@
+Let I ∈M(A, gr), and let W := Soc(I). The following three conditions are equivalent. (i) I is graded-injective and m-torsion. (ii) I is graded-injective and W is an essential submodule of I. (iii) There is an isomorphism I ∼= A∗⊗W in C(A, gr) which is the identity on W. In condition (iii) we view W as a submodule of A∗⊗W using the canonical embedding (16.3.10).

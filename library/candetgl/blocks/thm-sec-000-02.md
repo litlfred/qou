@@ -1,1 +1,1 @@
-B: The kernel of the Biot –Savart operator is precisely the space of gradient vector
+The kernel of the Biot–Savart operator is precisely the space of gradient vector ﬁelds which are orthogonal to the boundary of V. Actually, somewhat more is true. If V is a smooth gradient vector ﬁeld deﬁned on V and orthogonal to its boundary, then its magnetic ﬁeld BS(V)50 throughout 3-space. Conversely, if V is a smooth vector ﬁeld deﬁned on V whose magnetic ﬁeld BS(V)50 in V, then V is a gradient ﬁeld orthogonal to the boundary of V, and hence BS(V)50 throughout 3-space.

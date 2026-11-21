@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1504.07260v3/blocks/prose-sec-011",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Heterotic T-duality",
-  "pageStart": 22,
-  "pageEnd": 22,
-  "text": "../sections/sec-011-33-heterotic-t-duality.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1504.07260v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1504.07260v3",
+  "title": "String-string duality and Fricke S-duality",
+  "pageStart": 16,
+  "pageEnd": 20,
+  "text": "../sections/sec-011-31-string-string-duality-and-fricke-s-duality.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1504.07260v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1504.07260v3/manifest.jsonld",
   "provenance": "ingested"
 }

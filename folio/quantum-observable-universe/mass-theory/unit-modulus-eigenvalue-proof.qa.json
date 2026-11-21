@@ -237,6 +237,38 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "90f25156491f",
+          "ts": "136b2c1b611d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:25.835Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "critical",
+        "evidence": "CRITICAL false statement: md:1-3 unit modulus for every even-length word — σ₁² has eigenvalues q², q⁻²; proof:7-9 '|tr| ≤ 2 … holds for real traces of 2×2 matrices with unit determinant' false. md:4-5 / proof:15 'χ_(2,1)(β_Bor) = −2' — sympy: χ_(2,1)(β_Bor) = 2 − 3h⁴ − h⁶ = −1573/64 at q=2, eigenvalues (−1573 ± 153√105)/128",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "32347f71fa5c",
+          "ts": "136b2c1b611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:24.638Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Determinant (-1)^n on V_(2,1) and the characteristic-polynomial argument follow; the explicit model and trace are proved in Lean (unitMod_braid, borromean_trace_standard)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1172,7 @@
           "in_degree": 0,
           "cone_size": 20,
           "depth": 8,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1703,6 +1735,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:25:13.966Z",
+  "updated_at": "2026-11-16T07:13:24.638Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

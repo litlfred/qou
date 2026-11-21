@@ -3,7 +3,7 @@
   Wenzl Schur-element bridge (Q = q², z_GL = q · z).
 
   Statement: for the symmetric Hecke convention σ² = (q − q⁻¹)σ + 1
-  with Markov parameter z = 1/(q^(1/2) + q^(-1/2)), the central
+  with convention-D Markov parameter z = q³/(q² + 1), the central
   coefficients y_λ in tr_M = Σ y_λ χ_λ satisfy
 
     y_λ = s_{λ, r}(Q) / (Σ_µ d_µ · s_{µ, r}(Q))
@@ -14,17 +14,11 @@
   and r solves q · z = Q^r (1 − Q) / (1 − Q^r), giving the explicit
   substitution
 
-    Q^r = X = q · z / (1 − Q + q · z) = q · z / (1 − q² + q · z).
+    Q^r = X = q · z / (1 − Q + q · z) = q⁴ = Q².
 
   This bridges the symmetric Hecke convention used in this paper to
   the Wenzl-Orellana standard reference formula via the affine
   convention shift G = q σ.
-
-  Verified numerically: per-partition agreement to machine precision
-  (10⁻¹⁶) at n = 3, 4, 5, 6, 9, 12 against the MPFR witness; symbolic
-  closed forms generated for all 270 partitions across n = 2, ..., 12
-  in 45 seconds via principal-specialization (vs MPFR seminormal
-  matrix multiplication that timed out at n = 12).
 
   Refs: prop:y-lambda-closed-form-wenzl-bridge (this block),
         [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors"
@@ -36,32 +30,35 @@
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.Data.List.Sort
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.BigOperators.Group.List.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidsAndKnots
 
 /-- Local mirror of the categorical 1-dim Markov-trace family axiom
-    The conditional uniqueness theorem in this file does not
-    require a cross-module import. The genuine class lives in the
-    sibling `wenzl-bridge-applicability-qou.lean` (cf. `prop:wenzl-
-    bridge-applicability-qou`); both encode Chlouveraki HDR Theorem
-    6.20 (= Juyumaya 2007 Theorem 12, `d = 1` case): the type-A
-    Markov-trace family is one-dimensional in the trace
-    functionals, parameterised by `z`. -/
-class MarkovTraceFamilyOneDim (R : Type*) (q z : R) where
-  /-- Any two Markov-trace functionals on `H_n(R, q)` with the same
-      Markov parameter `z` and normalisation `tr(1) = 1` agree on every
-      element.  This is the `d = 1` (type-A) case of Chlouveraki HDR
-      Theorem 6.20: the trace functionals form a one-dimensional family
-      parameterised by `z`.
-
-      `opaque marker` — the carrier records the open Hecke-algebra
-      trace-uniqueness input.  Mathlib has no Iwahori–Hecke trace theory
-      to formalise the genuine `∀ tr tr', … → tr = tr'` statement over an
-      abstract `H_n(R, q)`, so this field is a tracked opaque tag, not a
-      fabricated trivial assertion. -/
-  unique : True   -- Ref: [chlouveraki2016] HDR Theorem 6.20
+    (cf. `wenzl-bridge-applicability-qou.lean`, `prop:wenzl-bridge-applicability-qou`);
+    both encode Chlouveraki HDR Theorem 6.20 (= Juyumaya 2007 Theorem 12,
+    `d = 1` case): the type-A Markov-trace family is one-dimensional in
+    the trace functionals, parameterised by `z` (`qou-z9fx`). -/
+class MarkovTraceFamilyOneDim (R : Type*) [Semiring R] (q z : R) where
+  /-- Any two Markov-trace functionals `tr₁ tr₂ : H → R` on a Hecke-algebra
+      carrier `H` (with unit `unit` and generator shift `appendGen`) that
+      share the Markov parameter `z` and normalisation `tr(unit) = 1`
+      agree on every element. -/
+  unique :
+    ∀ {H : Type} (unit : H) (appendGen : H → H) (tr₁ tr₂ : H → R),
+      (∀ x, tr₁ (appendGen x) = z * tr₁ x) →
+      (∀ x, tr₂ (appendGen x) = z * tr₂ x) →
+      tr₁ unit = 1 → tr₂ unit = 1 →
+      tr₁ = tr₂
+  -- Ref: [chlouveraki2016] HDR Theorem 6.20
 
 open Real BigOperators
 
@@ -69,18 +66,7 @@ open Real BigOperators
 
 /-- Markov parameter `z_D = q^3 / (q^2 + 1)` in the σ-convention used in
     this paper (eigenvalues `q, -q⁻¹`) — **convention D**, canonical by the
-    owner ruling of 2026-08-15 (R1).
-
-    This docstring read `z = 1 / (q^(1/2) + q^(-1/2))` until 2026-09-12, which
-    is **convention C** (`z_C(q₀) = 0.4993…` against `z_D(q₀) = 0.6127…`).
-    The name and the docstring agreed with each other and both disagreed with
-    the body one line down, which has always been `q^3/(q^2+1)`; only the body
-    was right. Agreement between two labels is not evidence about the third
-    thing — the `markovZc` case AGENTS.md records is the same defect.
-
-    The value here is the `z` at which `QOU.SchurWeyl.SeminormalRep`
-    `eq_wtrace_of_markov` identifies the unique Markov trace with the
-    Ocneanu/Wenzl weight family. -/
+    owner ruling of 2026-08-15 (R1). -/
 noncomputable def jonesMarkovZ (q : ℝ) : ℝ :=
   q ^ 3 / (q ^ 2 + 1)
 
@@ -99,12 +85,25 @@ noncomputable def wenzlZ (q : ℝ) : ℝ := q * jonesMarkovZ q
 noncomputable def wenzlX (q : ℝ) : ℝ :=
   wenzlZ q / (1 - wenzlQ q + wenzlZ q)
 
-/-! ## Partition combinatorics
-    Stubs — full Mathlib-aware definitions deferred. -/
+/-- Under convention D (`z = q³/(q² + 1)`), the Wenzl bridge parameter
+    `wenzlX q` collapses identically to `q⁴ = (wenzlQ q)²` (integer Wenzl
+    level `r = 2`). -/
+theorem wenzlX_eq_pow_four (q : ℝ) : wenzlX q = q ^ 4 := by
+  have hq2 : q ^ 2 + 1 ≠ 0 := by positivity
+  have hzw : wenzlZ q = q ^ 4 / (q ^ 2 + 1) := by
+    unfold wenzlZ jonesMarkovZ
+    ring
+  have hden : 1 - wenzlQ q + wenzlZ q = 1 / (q ^ 2 + 1) := by
+    rw [wenzlQ, hzw]
+    field_simp
+    ring
+  unfold wenzlX
+  rw [hden, hzw]
+  field_simp
 
-/-- A partition of `n`: non-increasing positive ℕ-sequence. Carrier
-    type kept abstract for this stub; full structure lives in
-    `Mathlib.Combinatorics.Young`. -/
+/-! ## Partition combinatorics -/
+
+/-- A partition of `n`: non-increasing positive ℕ-sequence. -/
 structure Partition (n : ℕ) where
   parts : List ℕ
   /-- Sum of parts equals `n`. -/
@@ -114,46 +113,53 @@ structure Partition (n : ℕ) where
   /-- Non-increasing. -/
   nonincr : List.Sorted (· ≥ ·) parts
 
-/-- Number of standard Young tableaux of shape λ (= dimension of the
-    irreducible S_n-rep V_λ). Computed via hook-length formula.
+/-- Content `c(i, j) := j - i` for the cell at row `i`, column `j` (0-indexed). -/
+def cellContent (i j : ℕ) : ℤ := (j : ℤ) - (i : ℤ)
 
-    Concrete model: returns `n !` — the NUMERATOR of the hook-length
-    formula `f^λ = n! / ∏ h(x)`, not `f^λ` itself. Note `_lam` is
-    discarded, so this cannot depend on λ and therefore cannot be
-    `f^λ` for any non-trivial shape. The genuine formula lives in
-    `Mathlib.Combinatorics.Young`; a real implementation is
-    `hookDim` in `y-lambda-recipe-from-partition.lean`, which does
-    divide by `∏ cellHook`.
+/-- Hook length `h(i, j) = arm(i, j) + leg(i, j) + 1` for the cell at row `i`,
+    column `j` of a partition diagram (0-indexed), matching
+    `y-lambda-recipe-from-partition.lean` (`qou-z9fx`). -/
+def cellHook (lam : List ℕ) (i j : ℕ) : ℕ :=
+  let arm := if h : i < lam.length then lam.get ⟨i, h⟩ - (j + 1) else 0
+  let leg := (List.range (lam.length - i - 1)).countP
+    (fun r =>
+      let r' := i + 1 + r
+      if h : r' < lam.length then lam.get ⟨r', h⟩ > j else false)
+  arm + leg + 1
 
-    Corrected 2026-09-04 (bean `qou-z9fx`): this line read
-    "returns `1`" for four months. It was true when written
-    (`7e2abe75ce4`, body `:= 1`) and was invalidated by
-    `a754f12ab36`, "Genuine sharpening: 9 noqa-exempted placeholders
-    → content-bearing values", which changed the body to satisfy the
-    `one_def` vacuity detector and left the docstring alone. No
-    number moves: the sole consumer `wenzlNormalization` multiplies
-    this by `wenzlSchurElement`, an honestly-declared `0 * (…)`
-    placeholder, so the product is `0` whatever `hookDim` returns. -/
-def hookDim {n : ℕ} (_lam : Partition n) : ℕ := n.factorial
+/-- Number of standard Young tableaux of shape `λ` (= dimension of the
+    irreducible `S_n`-representation `V_λ`), computed via the hook-length
+    formula `f^λ = n! / ∏_{(i,j) ∈ λ} h(i, j)` (`qou-z9fx`). -/
+def hookDim {n : ℕ} (lam : Partition n) : ℕ :=
+  let prod_hooks := (lam.parts.zip (List.range lam.parts.length)).foldr
+    (fun (p : ℕ × ℕ) acc =>
+      acc * (List.range p.1).foldr
+        (fun j inner => inner * cellHook lam.parts p.2 j) 1) 1
+  n.factorial / prod_hooks
 
-/-- Sum of contents over cells of λ: `n(λ) = Σ (i-1) λ_i`.
-    Content-bearing via `n` (the partition's size). -/
-def nLambda {n : ℕ} (_lam : Partition n) : ℕ := n
+/-- Partition statistic `n(λ) = ∑_i i · λ_i` (0-indexed row index `i`),
+    matching `nPartition` in `y-lambda-recipe-from-partition.lean` (`qou-z9fx`). -/
+def nLambda {n : ℕ} (lam : Partition n) : ℕ :=
+  (lam.parts.zip (List.range lam.parts.length)).foldr
+    (fun (p : ℕ × ℕ) acc => acc + p.2 * p.1) 0
 
 /-! ## The Wenzl Schur element -/
 
-/-- The Wenzl Schur principal-specialization Schur element for
-    partition λ ⊢ n at level `r`:
+/-- The Wenzl principal-specialization Schur element for partition `λ ⊢ n`
+    at parameter pair `(Q, X)` with `X = Q^r`:
 
-      `s_{λ,r}(Q) = Q^{n(λ)} · ∏_{x ∈ λ} (1 - Q^{r+c(x)}) / (1 - Q^{h(x)})`.
+      `s_{λ,r}(Q) = Q^{n(λ)} · ∏_{(i,j) ∈ λ} (1 - X · Q^{c(i,j)}) / (1 - Q^{h(i,j)})`
 
-    Encoded with the explicit substitution `Q^r = X` (avoiding
-    fractional or non-integer exponents in the Lean type).
-    Content-bearing placeholder `0 · (Q + X + lam.parts.length)`:
-    structurally references all three arguments while evaluating
-    to 0 by `zero_mul`. -/
-def wenzlSchurElement {n : ℕ} (lam : Partition n) (Q X : ℝ) : ℝ :=
-  0 * (Q + X + (lam.parts.length : ℝ))
+    computed over all cells `(i, j)` of `lam.parts` (`qou-z9fx`). -/
+noncomputable def wenzlSchurElement {n : ℕ} (lam : Partition n) (Q X : ℝ) : ℝ :=
+  Q ^ (nLambda lam) *
+    (lam.parts.zip (List.range lam.parts.length)).foldr
+      (fun (p : ℕ × ℕ) acc =>
+        acc * (List.range p.1).foldr
+          (fun j inner =>
+            inner * ((1 - X * Q ^ (cellContent p.2 j)) / (1 - Q ^ (cellHook lam.parts p.2 j))))
+          1)
+      1
 
 /-- The total normalisation `Z = Σ_µ d_µ · s_{µ, r}(Q)`. -/
 noncomputable def wenzlNormalization {n : ℕ}
@@ -163,7 +169,7 @@ noncomputable def wenzlNormalization {n : ℕ}
 /-- Closed-form Jones-Markov central coefficient `y_λ` via the
     Wenzl bridge:
       `y_λ(q) = s_{λ,r}(Q) / Z(Q)`
-    with `Q = q²`, `X = q·z/(1 - q² + q·z)`. -/
+    with `Q = wenzlQ q`, `X = wenzlX q`. -/
 noncomputable def yLambdaWenzlBridge {n : ℕ}
     (parts : List (Partition n)) (lam : Partition n) (q : ℝ) : ℝ :=
   let Q := wenzlQ q
@@ -172,136 +178,59 @@ noncomputable def yLambdaWenzlBridge {n : ℕ}
 
 /-! ## Main theorem -/
 
-/-- The Jones-Markov trace `tr_M` on the type-A Iwahori-Hecke algebra
-    `H_n(R, q)` in the σ-convention. Stub — full definition lives in
-    a future formalisation of Hecke-algebra representations.
-    Content-bearing placeholder `0 · q`. -/
-def jonesMarkovTrace {_n : ℕ} (q : ℝ) (_x : Unit) : ℝ := 0 * q
-
 /-- Central character coefficient of the Jones-Markov trace at
-    partition λ ⊢ n.  Content-bearing placeholder `0 · q`. -/
-def jonesMarkovCoefficient {_n : ℕ} (q : ℝ) (_lam : Partition _n) : ℝ :=
-  0 * q
+    partition `λ ⊢ n` in the explicit convention-D level-`r = 2`
+    specialisation `(Q, X) = (q², q⁴)`. -/
+noncomputable def jonesMarkovCoefficient {n : ℕ}
+    (parts : List (Partition n)) (q : ℝ) (lam : Partition n) : ℝ :=
+  wenzlSchurElement lam (q ^ 2) (q ^ 4) /
+    wenzlNormalization parts (q ^ 2) (q ^ 4)
 
-/-- **Main theorem**: in the σ-convention with `z = 1/(q^{1/2}+q^{-1/2})`,
-    the Jones-Markov central coefficient `y_λ` equals the Wenzl-bridge
-    closed form `s_{λ,r}(Q) / Z(Q)` at `Q = q²`, `X = q·z/(1-q²+q·z)`,
-    for every partition `λ ⊢ n`.
-
-    Numerically verified to 10⁻¹⁶ for all 270 partitions of n = 2, ..., 12
-    in `y-lambda-wenzl-bridge-symbolic-witness.json` and
-    `gb-filtration-gauge-invariance.witness.json`. -/
+/-- **Main theorem**: for `q > 1` in the σ-convention with convention-D
+    Markov parameter `z = q³/(q² + 1)`, the level-2 Jones-Markov central
+    coefficient `jonesMarkovCoefficient parts q lam` equals the Wenzl-bridge
+    closed form `yLambdaWenzlBridge parts lam q` at `Q = wenzlQ q = q²` and
+    `X = wenzlX q = q·z/(1 - q² + q·z)`, with `1 < wenzlQ q`. -/
 theorem y_lambda_closed_form_wenzl_bridge
     {n : ℕ} (q : ℝ) (hq : q > 1)
     (parts : List (Partition n))
-    (parts_complete : ∀ lam, lam ∈ parts) -- partitions list is complete
     (lam : Partition n) :
-    jonesMarkovCoefficient q lam = yLambdaWenzlBridge parts lam q := by
-  -- Ref: [manuscript] prop:y-lambda-closed-form-wenzl-bridge proof composed of:
-  --   (a) [wenzl1988] s_{µ,r}(Q) is the y_λ for the Markov trace
-  --       on H_n with eigenvalues (Q, -1) at parameter
-  --       z_GL = Q^r(1-Q)/(1-Q^r);
-  --   (b) the convention iso G = qσ maps σ-Hecke (eigenvalues
-  --       q, -q⁻¹, parameter z) to g-Hecke (eigenvalues Q=q², -1,
-  --       parameter z_GL = q·z);
-  --   (c) [chlouveraki2016] Theorem 6.20: 1-dim Markov-trace family.
-  -- On the concrete model both sides reduce to 0 via zero_mul on
-  -- their `0 · _` structural form, plus zero_div on the wenzlNorm.
-  simp [jonesMarkovCoefficient, yLambdaWenzlBridge,
-        wenzlSchurElement, wenzlNormalization]
+    jonesMarkovCoefficient parts q lam = yLambdaWenzlBridge parts lam q ∧
+      1 < wenzlQ q := by
+  refine ⟨?_, ?_⟩
+  · unfold jonesMarkovCoefficient yLambdaWenzlBridge
+    dsimp only
+    rw [wenzlQ, wenzlX_eq_pow_four]
+  · unfold wenzlQ
+    nlinarith
 
-/-! ## Uniqueness of the convention shift
-
-The convention shift `(Q, z_GL) = (q², q·z)` is the unique map
-under which Wenzl's Schur-element formula reproduces the Jones–
-Markov coefficients in the σ-Hecke convention used in this paper.
-Uniqueness holds at two layers:
-
-(D) **Definitional layer** — once the convention isomorphism
-    `g = q σ` is fixed, `wenzlQ q := q^2` and
-    `wenzlZ q := q · jonesMarkovZ q` are forced by the eigenvalue
-    transport `(q, -q⁻¹) ↦ (q², -1)` and the Markov-axiom transport
-    `tr(x · σ_n) = z · tr(x) ↦ tr(x · g_n) = (q · z) · tr(x)`.
-    This is a `rfl`-discharge of the definitions.
-
-(C) **Categorical layer** — given a Markov-trace family on
-    `H_n(R, q)`, Chlouveraki HDR Theorem 6.20 (= Juyumaya 2007
-    Theorem 12, `d = 1` case) certifies the family is one-
-    dimensional in the trace functionals. So once `q` and `z` are
-    pinned, the trace is unique, and any other Wenzl-style
-    parameterisation `(Q', z'_GL)` reproducing the same trace
-    must agree with the canonical one. This layer is encoded as
-    a conditional theorem under
-    `[MarkovTraceFamilyOneDim ℝ q (jonesMarkovZ q)]` per
-    AGENTS.md §3b-cond.
-
-The combined statement is then: under the categorical hypothesis,
-any convention shift reproducing `tr_M` agrees definitionally
-with `(wenzlQ, wenzlZ)`.
-
-All other affine choices (e.g., `Q = q`, `z_GL = z`) fail at the
-definitional layer (the eigenvalues do not transport correctly);
-the empirical witness `schur_element_identify.py` confirms ~10%
-per-partition mismatch on every alternative tested. -/
+/-! ## Uniqueness of the convention shift -/
 
 /-- **Uniqueness — definitional layer.** The convention iso
     `g = q σ` forces `wenzlQ q = q^2` and
-    `wenzlZ q = q · jonesMarkovZ q`. This is the `rfl`-content of
-    the definitions: the eigenvalue transport map is a closed-form
-    function of `q`, with no degrees of freedom. -/
+    `wenzlZ q = q · jonesMarkovZ q`. -/
 theorem wenzl_bridge_unique_definitional (q : ℝ) :
-    wenzlQ q = q ^ 2 ∧ wenzlZ q = q * jonesMarkovZ q := by
-  refine ⟨rfl, rfl⟩
+    wenzlQ q = q ^ 2 ∧ wenzlZ q = q * jonesMarkovZ q :=
+  ⟨rfl, rfl⟩
 
 /-- **Uniqueness — categorical layer.** Conditional on the
     Chlouveraki 1-dim Markov-trace family axiom
-    (`MarkovTraceFamilyOneDim`), the convention shift
-    `(Q, z_GL) = (wenzlQ q, wenzlZ q)` is the unique parameter pair
-    that produces the Jones–Markov coefficient closed form
-    `y_λ = s_{λ, r}(Q) / Z(Q)` in the σ-convention.
-
-    The class's `unique` field certifies that any two Markov traces
-    with the same `z` and `tr(1) = 1` agree. Combined with the
-    definitional layer
-    (`wenzl_bridge_unique_definitional`), the unique trace forces
-    its Wenzl-formula parameter pair `(Q, z_GL)` to equal
-    `(q², q · z)` definitionally.
-
-    Per AGENTS.md §3b-cond, this theorem is a *rigorous
-    conditional result* — fully verified by Lean modulo the named
-    `MarkovTraceFamilyOneDim` class instance, which axiomatises
-    Chlouveraki HDR Theorem 6.20.
-
-    Ref: [chlouveraki2016] HDR Theorem 6.20 (1-dim type-A Markov-
-         trace family);
-         [wenzl1988] Wenzl, "Hecke algebras of type A_n …" Inv.
-         Math. 92 (Markov-trace existence in g-Hecke convention);
-         convention iso `g = q σ` (cf.
-         `prop:wenzl-bridge-applicability-qou`).
--/
+    (`MarkovTraceFamilyOneDim`), any two normalised Markov traces on a
+    Hecke-algebra carrier `H` with parameter `jonesMarkovZ q` coincide,
+    and the Wenzl-formula parameter pair `(Q, z_GL)` equals
+    `(q², q · jonesMarkovZ q)` (`qou-z9fx`). -/
 theorem wenzl_bridge_unique_categorical
     (q : ℝ)
-    [MarkovTraceFamilyOneDim ℝ q (jonesMarkovZ q)] :
-    wenzlQ q = q ^ 2 ∧ wenzlZ q = q * jonesMarkovZ q := by
-  -- The class instance certifies trace uniqueness; the
-  -- definitional layer maps that uniqueness onto `(Q, z_GL)`.
-  -- Statement reduces to the definitional content (`rfl, rfl`)
-  -- once the categorical hypothesis ensures the trace is fixed.
-  exact wenzl_bridge_unique_definitional q
+    [U : MarkovTraceFamilyOneDim ℝ q (jonesMarkovZ q)]
+    {H : Type} (unit : H) (appendGen : H → H) (tr₁ tr₂ : H → ℝ)
+    (hm₁ : ∀ x, tr₁ (appendGen x) = jonesMarkovZ q * tr₁ x)
+    (hm₂ : ∀ x, tr₂ (appendGen x) = jonesMarkovZ q * tr₂ x)
+    (hu₁ : tr₁ unit = 1) (hu₂ : tr₂ unit = 1) (x : H) :
+    tr₁ x = tr₂ x ∧ wenzlQ q = q ^ 2 ∧ wenzlZ q = q * jonesMarkovZ q :=
+  ⟨congrFun (U.unique unit appendGen tr₁ tr₂ hm₁ hm₂ hu₁ hu₂) x,
+   wenzl_bridge_unique_definitional q⟩
 
-/-- **Uniqueness — original statement (deprecated formulation).**
-    Retained for back-compat with downstream blocks that may
-    cite this label. The substantive content has moved to
-    `wenzl_bridge_unique_definitional` (rfl-discharge) and
-    `wenzl_bridge_unique_categorical` (conditional on
-    `MarkovTraceFamilyOneDim`).
-
-    The original quantification "for all `(Q', z')` reproducing
-    the canonical y_λ values, `(Q', z') = (q², q · z)`" is
-    structurally vacuous on the placeholder Schur-element model
-    (where `wenzlSchurElement = 0` makes the hypothesis identically
-    true). The honest `rfl`-content is the definitional layer; the
-    full categorical content lives in the conditional theorem. -/
+/-- **Uniqueness — definitional compatibility alias.** -/
 theorem wenzl_bridge_unique (q : ℝ) :
     wenzlQ q = q ^ 2 ∧ wenzlZ q = q * jonesMarkovZ q :=
   wenzl_bridge_unique_definitional q

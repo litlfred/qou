@@ -65,4 +65,12 @@ theorem finrank_homG_regular_partitionIndex {n : ℕ} (i : PartitionIndex n) :
       = finrank k (SpechtSubmodule (k := k) i.diagram) :=
   finrank_homG_regular_specht (k := k) i.property
 
+omit [CharZero k] in
+/-- Zero-subtracted difference between the regular representation multiplicity of `S^{i.diagram}` and `dim_k S^{i.diagram}` vanishes. -/
+theorem finrank_homG_regular_partitionIndex_sub_eq_zero {n : ℕ} (i : PartitionIndex n) :
+    finrank k (homG (regular k (Perm (Fin n))) (spechtRepAt (k := k) i.property))
+      - finrank k (SpechtSubmodule (k := k) i.diagram) = 0 := by
+  rw [finrank_homG_regular_partitionIndex (k := k) i]
+  exact Nat.sub_self _
+
 end QOU.BraidKnot.SpechtRegularMultiplicity

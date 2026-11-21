@@ -3,6 +3,7 @@
  "doc_id": "lee-vanderveen-colored-jones-polynomials-without-tails",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "fcc45aebd34e25dca6e89084c6609f3715e13ab3dc689eb942bddd8595a352e6",
   "file": "lee-vanderveen-colored-jones-polynomials-without-tails.pdf"
@@ -19,7 +20,20 @@
   "by_kind": {
    "theorem": 1
   },
-  "formalization_candidates": 1
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "elsewhere": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
@@ -27,13 +41,28 @@
    "source_kind": "theorem",
    "number": "3.1",
    "name": null,
-   "statement": "If u\u2264\u22123 then C(5;\u22123; 5;u ) is a Manx knot.",
-   "section_file": "sections/sec-005-3-the-lack-of-tail.md",
-   "section_title": "The lack of tail",
+   "statement": "If u \u2264\u22123 then C(5, \u22123, 5, u) is a Manx knot. More precisely, the leading coe\ufb03cient of JC(5,\u22123,5,u),n+1(v) is \u230an/2\u230b. The same techniques will also show that the pretzel knot P(5, \u22123, 5) is Manx but this appears to be the only Manx pretzel knot [9]. We expect that many more Manx knots exist but not in the family C(r, s, t, u) we considered. All Montesinos Manx knots seem to derive from the unique Manx pretzel P(5, \u22123, 5). Although our Manx knots do not stabilize in the ordinary sense they may still be c-stable. This more general notion of stability was introduced in Garoufalidis-Vuong [7] and allows growing leading coe\ufb03cients. Brie\ufb02y, a sequenc",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [9], [7] in sections/page-004.md",
+   "external_refs": [
+    "[9]",
+    "[7]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/page-004.md",
+   "section_title": "Page 4",
    "pages": "4-4",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [9], [7] in sections/page-004.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-004-01",
+   "block_iri": "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/thm-page-004-01",
+   "claim_id": "lee-vanderveen-colored-jones-polynomials-without-tails#theorem:3.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

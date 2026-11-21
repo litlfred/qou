@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-3
 source_pdf: 2305.07425v1.pdf
 source_sha256: 2f7d2ac5818b6af4
-doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a grou p G on diﬀerent hyperbolic metric spaces carries a natural partial order."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.997
-latex_coverage_ratio: 0.947
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.986
+doc_brief: "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order."
 ---
 A fixed group $G$ will admit many different cobounded actions on different hyperbolic metric spaces. Abbott, Balasubramanya, and Osin in [@ABO19] show that the set of equivalence classes of cobounded hyperbolic actions of a group $G$ carries a natural partial order; see Section [\[sec:prelim\]](#sec:prelim){reference-type="ref" reference="sec:prelim"}. The resulting poset is called the *poset of hyperbolic structures* on $G$, denoted $\mathcal{H}(G)$. Roughly speaking, one action is larger than another if the smaller space can be formed by equivariantly collapsing some subspaces of the larger. The motivation is that the larger an action is in this partial order, the more information about the geometry of the group it should provide.
 

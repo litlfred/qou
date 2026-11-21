@@ -55,7 +55,7 @@ they are the reusable content. What is **not** in this file is a Lean definition
 which is why the concrete corollaries below name it as their source. Formalising the
 producer would be a separate and much larger undertaking.
 
--- Ref: [manuscript] bean qou-tjys; computations/probes/atom_word_merge_count_probe.py
+-- Ref: [leitner2026] bean qou-tjys; computations/probes/atom_word_merge_count_probe.py
 -/
 
 namespace QOU.MassTheory

@@ -294,25 +294,36 @@ structure YekutieliLiftingData where
   level : ℕ
   /-- The number of good-cover patches needed (genus 4 ⟹ ≤ 9 patches). -/
   num_patches : ℕ := 9
-  /-- The obstruction class in `H²(M, centre(G))` vanishes because
-      `centre(SU_q(2)) = {±1}` and `H²(Σ₄, ℤ/2) = 0` by homological
-      computation (genus 4 surface with S₅ symmetry). -/
+  /-- Placeholder field: asserts only `num_patches > 0`. It does **not**
+      encode the vanishing of the lifting obstruction in
+      `H²(M, centre(G))`. Note `H²(Σ₄, ℤ/2) ≅ ℤ/2` (closed orientable
+      surface), so the obstruction is NOT forced to vanish by cohomology;
+      an earlier docstring claiming `H²(Σ₄, ℤ/2) = 0` was false. -/
   obstruction_vanishes : num_patches > 0
 
 /-- **Yekutieli lifting**: the brane tower over Bring's surface satisfies
     the nonabelian multiplicative integration lifting condition of
     Yekutieli (2015).
 
-    Proof: The obstruction to lifting lies in `H²(Σ₄, centre(SU_q(2)))`.
-    Since `centre(SU_q(2)) = {±1} ≅ ℤ/2` and `H²(Σ₄, ℤ/2) = 0`
-    (the genus-4 surface with S₅ symmetry has vanishing second cohomology
-    with ℤ/2 coefficients), the lifting obstruction vanishes at every level.
+    The obstruction to lifting lies in `H²(Σ₄, centre(SU_q(2)))`, and
+    `centre(SU_q(2)) = {±1} ≅ ℤ/2`. **`H²(Σ₄, ℤ/2) ≅ ℤ/2`, not `0`**: Σ₄ is a
+    closed orientable surface, so `H²(Σ₄, ℤ/2) ≅ H₀(Σ₄, ℤ/2) ≅ ℤ/2` by
+    Poincaré duality. So cohomology does not force the obstruction class to
+    vanish (it may or may not vanish), and its vanishing is **not
+    established here**.
+    (An earlier docstring asserted `H²(Σ₄, ℤ/2) = 0`; that was false.)
+
+    **The statement below is vacuous**: it only builds a record whose single
+    field is `9 > 0`, and says nothing about the obstruction class. It is no
+    longer the formalisation of `prop:yekutieli-lifting`: that block now
+    points at `QOU.YekutieliLifting` (sibling `yekutieli-lifting.lean`),
+    which carries the general lift-iff-obstruction-vanishes criterion.
 
     LaTeX: `\label{prop:brings-is-qou}` (item 3) -/
 -- Ref: [yekutieli2015] Amnon Yekutieli, *Nonabelian Multiplicative Integration on Surfaces*, 2015
 theorem yekutieli_lifting (_bq : BringsQOU) (n : ℕ) :
-    -- The obstruction class H²(Σ₄, Z(SU_q(2))) = H²(Σ₄, ℤ/2) = 0 vanishes.
-    -- Encoded: a good cover with 9 patches exists (num_patches > 0).
+    -- VACUOUS: only `num_patches > 0` is encoded. H²(Σ₄, ℤ/2) ≅ ℤ/2 (not 0),
+    -- so the obstruction class is not forced to vanish; see docstring.
     ∃ (yd : YekutieliLiftingData), yd.level = n := by
   exact ⟨{ level := n, num_patches := 9, obstruction_vanishes := by omega }, rfl⟩
 
@@ -351,7 +362,7 @@ structure CameraState where
 
     LaTeX label: `def:viz-brings-surface` (chapter-dir sibling
     `folio/visualizer/overview/viz-brings-surface.lean`). -/
--- Ref: [manuscript] folio/visualizer/overview/viz-brings-surface.md
+-- Ref: [leitner2026] folio/visualizer/overview/viz-brings-surface.md
 structure ViewportState where
   /-- Torsion / chirality parameter `q`.  `q = 0` is the classical
       limit; `q > 0` introduces chiral twist. -/

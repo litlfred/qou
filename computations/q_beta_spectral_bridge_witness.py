@@ -102,7 +102,8 @@ def main() -> int:
     # Convert both to MeV via the same E_0 derivation
     # (derived from CAL-1 m_e + CAL-2 q_0; no CAL-3 input).
     m_e = M_E_MEV
-    e_0 = m_e / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    e_0 = _qbeta_e0.order_zero_scaled(m_e, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     q_beta_form_a_mev = form_a * e_0
     q_beta_form_b_mev = form_b * e_0 / z  # 1/z normalization
     q_beta_agreement_mev = abs(q_beta_form_a_mev - q_beta_form_b_mev)

@@ -1,0 +1,1 @@
+The cross section integrals are evaluated with the parameterization speciﬁed in subsection 5.1, except for ˜ ΣF1, where the contribution from the region of the Delta is calculated with BC instead of MD. experimental result for αE + βM shows that, at small values of Q2, the leading term of the chiral series dominates.

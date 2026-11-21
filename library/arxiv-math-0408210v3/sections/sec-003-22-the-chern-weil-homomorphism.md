@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0408210v3
-doc_title: "arXiv:math/0408210v3 [math.QA] 7 May 2005"
+doc_title: "A simple algebraic proof of the algebraic index theorem"
 section_id: sec-003-22-the-chern-weil-homomorphism
 section_title: "The Chern-Weil homomorphism"
 section_number: 2.2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.988
+doc_brief: "A simple algebraic proof of the algebraic index theorem — In math.QA/0311303 B. Feigin, G. Felder, and B."
 ---
 Let ${\mathfrak{g}}$ be a Lie algebra and ${\mathfrak{h}}\subset{\mathfrak{g}}$ be a subalgebra of ${\mathfrak{g}}$. Suppose that there is an ${\mathfrak{h}}$-equivariant projection $pr\,:\,{\mathfrak{g}}\mapsto {\mathfrak{h}}$, that is a map commuting with the adjoint action of ${\mathfrak{h}}$ and satisfying the property $\displaystyle pr\, |_{{\mathfrak{h}}} = Id_{{\mathfrak{h}}}\,.$ The amount by which $pr$ fails to be a Lie algebra homomorphism is measured by the "curvature" $C\in Hom(\wedge^2 {\mathfrak{g}}, {\mathfrak{h}})$ $$\label{curvature}
 C(v,w)= [pr(v), pr(w)]- pr ([v,w])\,,

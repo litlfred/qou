@@ -3,12 +3,13 @@
  "doc_id": "arxiv-2401.04019v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "1a29e52a816396404032a27d93864e411e2f1cd775b4c0ac7a7bbe7cc2c52fcf",
   "file": "2401.04019v1.pdf"
  },
  "provenance": {
-  "title": "TRUNCA TED THET A SERIES RELA TED TO THE JACOBI TRIPLE PRODUCT IDENTITY",
+  "title": "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY",
   "authors": "CRISTINA BALLANTINE AND BROOKE FEIGON",
   "arxiv": {
    "id": "2401.04019",
@@ -20,197 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 14,
-  "by_kind": {
-   "conjecture": 4,
-   "theorem": 6,
-   "remark": 3,
-   "corollary": 1
-  },
-  "formalization_candidates": 7
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "1",
-   "name": null,
-   "statement": "[14, Conjecture 4.3] For 1 \u2264S <R, k \u2265 1, the theta series",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.1",
-   "name": null,
-   "statement": "If k \u2208 { 1, 2, 3} and 1 \u2264 S < R, then the theta series (7) has",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1",
-   "name": null,
-   "statement": "From [5, Lemma 1.2] it follows that the q-series on the right hand side",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.2",
-   "name": null,
-   "statement": "Letk \u2265 1. Then for all n \u2265 0,",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.3",
-   "name": null,
-   "statement": "[9, Conjecture 3] Forn \u2265 0,k >0",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2",
-   "name": null,
-   "statement": "In [9, Conjecture 3], the inequality (11) is conjectured to be strict for",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "1",
-   "name": null,
-   "statement": "is equivalent to Conjecture 4 in [16], which states that for k \u2265 1 the",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.4",
-   "name": null,
-   "statement": "If k \u2265 1 there exists Nk such that ck(n) \u2265 0 if n \u2265Nk. Moreover,",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "2",
-   "name": null,
-   "statement": "Letk be a positive integer. Then, the series",
-   "section_file": "sections/sec-002-3-proof-of-theorem-11-and-applications.md",
-   "section_title": "Proof of Theorem 1.1 and applications",
-   "pages": "6-12",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "5.1",
-   "name": null,
-   "statement": "Letm,s be positive integers such that m \u2265 2 and 0<s<m . Then,",
-   "section_file": "sections/sec-007-5-combinatorial-proof-of-an-identity-related-to.md",
-   "section_title": "Combinatorial proof of an identity related to the Jacobi Triple Product",
-   "pages": "13-16",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "5.2",
-   "name": null,
-   "statement": "If m = 5, then for s = 1, 2, 3, 4, we obtain the respective identities",
-   "section_file": "sections/sec-007-5-combinatorial-proof-of-an-identity-related-to.md",
-   "section_title": "Combinatorial proof of an identity related to the Jacobi Triple Product",
-   "pages": "13-16",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "3",
-   "name": null,
-   "statement": "In [13], the authors point out that identities (6.7), (6.10), (6.12), ( 6.13)",
-   "section_file": "sections/sec-007-5-combinatorial-proof-of-an-identity-related-to.md",
-   "section_title": "Combinatorial proof of an identity related to the Jacobi Triple Product",
-   "pages": "13-16",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "5.3",
-   "name": "[13], Theorem 38",
-   "statement": "Let a be 1 or 3. Furthermore, let (an)n\u22650 be",
-   "section_file": "sections/sec-007-5-combinatorial-proof-of-an-identity-related-to.md",
-   "section_title": "Combinatorial proof of an identity related to the Jacobi Triple Product",
-   "pages": "13-16",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "6.15",
-   "name": null,
-   "statement": "on [14] states that, for all k \u2265 1, each ofT+(q,k,S,R ), \u2212T\u2212(q,k,S,R ),",
-   "section_file": "sections/sec-009-7-concluding-remarks.md",
-   "section_title": "Concluding remarks",
-   "pages": "18-20",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

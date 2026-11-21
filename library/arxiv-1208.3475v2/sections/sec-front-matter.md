@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1208.3475v2.pdf
 source_sha256: d53fc4eefa070ba3
 toc_source: inferred
+doc_brief: "Poisson - Random Matrix transition in the QCD Dirac spectrum — 12 sections: Front matter; Introduction; Simulation details"
 ---
 arXiv:1208.3475v2  [hep-lat]  12 Sep 2012
 Poisson - Random Matrix transition in the QCD Dirac spectrum
@@ -25,4 +26,3 @@ from random matrix to Poisson statistics. We demonstrate this with lattice QCD s
 2 + 1 ﬂavors of light dynamical quarks with physical masses. Drawing an analogy with Anderson
 transitions we also examine the mobility edge separating localized and delocalized modes in the
 spectrum. We show that it scales in the continuum limit and increases sharply with the temperature.
-I.

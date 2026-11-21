@@ -1,0 +1,48 @@
+Deforming hyperbolic 3—manifolds with boundary 453
+
+Lemma 3.1 Let j € {1,...,k}. Then there exists a complex number 7; with non-zero
+imaginary part such that if {yn }nen C Q(T) is a sequence with lim)... yy = Xo and
+uj(Yn) # O for every n EN, then limy—oo vj(¥n)/Ujn) = 7)-
+
+3.1 Thurston’s hyperbolic Dehn filling Theorem
+
+Let U be a sufficiently small neighbourhood of x9 in 2(7) and let x € U. For
+j =1,...,k, we define the j-Dehn filling coefficient (pj(x), qj(x)) € R? U {co} as
+follows: if uj(x) = 0, then (p;(x), gj(x)) = 00; otherwise, p;(x), g(x) are the unique real
+solutions of the equation
+
+Dix)uj(x) + qix)vjx) = 277i.
+(Existence and uniqueness of such solutions near x9 can be easily deduced from
+
+Theorem 2.2 and Lemma 3.1.)
+
+Let us set
+
+k
+d=(d,...,d,): U3 II’. dj(x) = (pj), @) € S? = R? U {oo}.
+i=1
+
+As a consequence of Theorem 2.2 and Lemma 3.1 we have the following:
+
+Theorem 3.2 If U is small enough, the map d defines a diffeomorphism onto an open
+neighbourhood of (00, ..., oo) in S? x --- x §?.
+
+For x € (7) we denote by N(x) the hyperbolic structure induced on N by x, and by
+N(x) the metric completion of N(x). Recall that a preferred basis juj, A; of Hi (Tj; Z) is
+fixed for every i= 1,...,k. We also set
+
+1Q(T) = {xe UC QZ): each Dehn filling coefficient corresponding to x
+
+is equal either to oo or to a pair of coprime integers}.
+
+Theorem 3.3 If U is sufficiently small and x belongs to 10(T) NU, then N (x) admits
+a complete finite-volume smooth hyperbolic structure which is obtained by adding to
+N(x) a closed geodesic at any cusp with non-infinite Dehn filling coefficient. From a
+topological point of view, N(x) is obtained by Dehn filling the i“ cusp of N along the
+slope pi(x){4i + gi(x)d; if (pi(x), gi(x)) 4 00, and by leaving the ith cusp of N unfilled
+if (pi(x), qi(x)) = 00, i= 1,...,k.
+
+Proof See eg, Thurston [15], Neumann—Zagier [12], Benedetti—Petronio [1], Frige-
+rio [5]. im]
+
+Algebraic & Geometric Topology 6 (2006)

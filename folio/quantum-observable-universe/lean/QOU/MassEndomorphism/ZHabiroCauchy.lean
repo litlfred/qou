@@ -233,9 +233,9 @@ truncation map itself is now concrete.
 
 ## References
 
-- [manuscript] `conj:brane-tower-z-habiro` §"Statement"
+- [leitner2026] `conj:brane-tower-z-habiro` §"Statement"
   (`folio/quantum-observable-universe/mass-theory/brane-tower-z-habiro.md`)
-- [manuscript] `def:z-habiro-ring`
+- [leitner2026] `def:z-habiro-ring`
   (`folio/quantum-observable-universe/mass-theory/z-habiro-ring.md`):
   the cyclotomic completion `varprojlim_n ℤ[q^±1][z]/(P_n)`.
 - [habiro2004cyclotomic] Habiro, *Cyclotomic completions of polynomial
@@ -396,8 +396,8 @@ NOT faked here. -/
     `conj:brane-tower-z-habiro`, discharged modulo the increment hypothesis;
     the analytic prerequisite is closed in
     `QOU.MassEndomorphism.PhiQConvergence.quantumDilog_multipliable`. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
--- Ref: [manuscript] def:z-habiro-ring §"Cyclotomic projections"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [leitner2026] def:z-habiro-ring §"Cyclotomic projections"
 -- Ref: [habiro2004cyclotomic]
 theorem quantumDilog_zHabiro_cauchy_limit (qinv : R) {a : ℕ → R[X]}
     (hcauchy : IsCauchyFiltration qinv a) :
@@ -409,7 +409,7 @@ theorem quantumDilog_zHabiro_cauchy_limit (qinv : R) {a : ℕ → R[X]}
   -- `factor h (mk I_{n+1} x) = mk I_n x` (the bonding map sends the class of
   -- `a (n+1)` mod `I_{n+1}` to its class mod `I_n`), then `mk I_n (a (n+1))
   -- = mk I_n (a n)` because `a (n+1) - a n ∈ I_n` (the increment criterion).
-  -- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
+  -- Ref: [leitner2026] conj:brane-tower-z-habiro §"What survives the closure"
   rw [Ideal.Quotient.factor_mk]
   rw [Ideal.Quotient.eq]
   exact hcauchy n
@@ -443,8 +443,8 @@ unconditionally and over a generic `[CommRing R]` (§7c). -/
     (`increment_checks[*].divisible_by_P_n = true`, `remainder = 0`): the
     quantum-dilog truncation tower *is* a cyclotomic partial sum, so its
     increment-coherence hypothesis is a theorem, not a conjecture. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
--- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [leitner2026] computations/z-habiro-increment-probe.witness.json
 theorem cyclotomicPartialSum_isCauchy (qinv : R) (c : ℕ → R) :
     IsCauchyFiltration qinv
       (fun n => ∑ m ∈ Finset.range (n + 1), C (c m) * branePoly qinv m) := by
@@ -473,8 +473,8 @@ theorem cyclotomicPartialSum_isCauchy (qinv : R) (c : ℕ → R) :
     item 1 for the cyclotomic shape: the increment hypothesis is now a
     theorem. Items 2 (`varprojlim` as a `CommRing`) and 3 (`Trunc_{<n}`
     section) remain open. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
--- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [leitner2026] computations/z-habiro-increment-probe.witness.json
 -- Ref: [habiro2004cyclotomic]
 theorem quantumDilog_zHabiro_cauchy_limit_cyclotomic (qinv : R) (c : ℕ → R) :
     ∀ n : ℕ,
@@ -516,8 +516,8 @@ neg`. -/
     This is the inverse-limit object of `def:z-habiro-ring`'s cyclotomic
     completion `varprojlim_n ℤ[q^±1][z]/(P_n)`, modelled over generic
     `[CommRing R]` (§7c). -/
--- Ref: [manuscript] def:z-habiro-ring §"Statement"
--- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
+-- Ref: [leitner2026] def:z-habiro-ring §"Statement"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"What survives the closure"
 -- Ref: [habiro2004cyclotomic]
 noncomputable def ZHabiroCompletion (qinv : R) :
     Subring (∀ n, R[X] ⧸ braneIdeal qinv n) where
@@ -569,9 +569,9 @@ unconditional cyclotomic limit theorem
     / `def:z-habiro-ring`, compute-backed by
     `computations/z-habiro-increment-probe.witness.json` (the `Φ_q` truncation
     tower IS a cyclotomic partial sum). -/
--- Ref: [manuscript] def:z-habiro-ring §"Statement" (universal element)
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
--- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+-- Ref: [leitner2026] def:z-habiro-ring §"Statement" (universal element)
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [leitner2026] computations/z-habiro-increment-probe.witness.json
 -- Ref: [habiro2004cyclotomic]
 noncomputable def zHabiroLimit (qinv : R) (c : ℕ → R) : ZHabiroCompletion qinv :=
   ⟨fun n => (Ideal.Quotient.mk (braneIdeal qinv n))
@@ -705,8 +705,8 @@ theorem modByMonic_well_defined (qinv : R) (hq : IsUnit qinv) (n : ℕ)
     `Trunc_{<n}[Φ_q]` that the conjecture's `Φ̃^(N)` uses. Hypothesis:
     `IsUnit qinv` (so `P_n` has a unit leading coefficient, hence a monic
     associate). -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
--- Ref: [manuscript] def:z-habiro-ring §"Cyclotomic projections"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [leitner2026] def:z-habiro-ring §"Cyclotomic projections"
 -- Ref: [habiro2004cyclotomic]
 noncomputable def truncSection (qinv : R) (hq : IsUnit qinv) (n : ℕ) :
     (R[X] ⧸ braneIdeal qinv n) → R[X] :=
@@ -787,8 +787,8 @@ statement (file-header item 3 / `def:z-habiro-ring`'s `Trunc_{<n}`). -/
     `conj:brane-tower-z-habiro` §"Statement": the abstract inverse-limit
     coordinate (`zHabiroLimit_coe_apply`) and the concrete degree-`< n`
     representative (`truncSection`) agree. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
--- Ref: [manuscript] def:z-habiro-ring §"Trunc_{<n}"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [leitner2026] def:z-habiro-ring §"Trunc_{<n}"
 theorem truncSection_zHabiroLimit (qinv : R) (hq : IsUnit qinv)
     (c : ℕ → R) (n : ℕ) :
     truncSection qinv hq n
@@ -833,7 +833,7 @@ That bridge is item 2(i) and is deliberately not faked. -/
     and `Ring.inverse` for the cyclotomic denominators; over the localisation
     these inverses are genuine. This is the closed Euler form the compute
     witness `z-habiro-increment-probe` uses (`series_coeff_formula`). -/
--- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+-- Ref: [leitner2026] computations/z-habiro-increment-probe.witness.json
 -- Ref: [habiro2004cyclotomic]
 noncomputable def eulerCoeff (qinv : R) (n : ℕ) : R :=
   qinv ^ n * ∏ j ∈ Finset.range n, Ring.inverse (1 - qinv ^ (j + 1))
@@ -867,8 +867,8 @@ theorem eulerCoeff_succ (qinv : R) (n : ℕ) :
     checking these two hypotheses — the genuinely-analytic residue being only
     that the analytic `Φ_q` satisfies the functional equation
     (`QOU.MassEndomorphism.PhiQConvergence`). -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
--- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"What survives the closure"
+-- Ref: [leitner2026] computations/z-habiro-increment-probe.witness.json
 theorem eulerCoeff_unique (qinv : R) (b : ℕ → R)
     (h0 : b 0 = 1)
     (hrec : ∀ n, b (n + 1) = b n * qinv * Ring.inverse (1 - qinv ^ (n + 1))) :
@@ -893,7 +893,7 @@ theorem eulerCoeff_unique (qinv : R) (b : ℕ → R)
     coefficients obey the q-difference recurrence IS the localised-Euler limit
     (by `eulerCoeff_unique`). The sole remaining input is the analytic functional
     equation itself (the `tprod` reindex in `PhiQConvergence`). -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"What survives the closure"
 theorem zHabiroLimit_eq_euler (qinv : R) (c : ℕ → R)
     (h0 : c 0 = 1)
     (hrec : ∀ n, c (n + 1) = c n * qinv * Ring.inverse (1 - qinv ^ (n + 1))) :
@@ -925,8 +925,8 @@ theorem braneMonic_coeff_eq_zero_of_lt [Nontrivial R] (qinv : R) {m n : ℕ}
     Proved by descending on the top degree: the `X^n`-coefficient of the sum is
     `d_n` (only `g_n` reaches degree `n`, and it is monic), forcing `d_n = 0`,
     then recursing on the lower sum. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
--- Ref: [manuscript] def:z-habiro-ring §"Cyclotomic projections"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"What survives the closure"
+-- Ref: [leitner2026] def:z-habiro-ring §"Cyclotomic projections"
 theorem braneMonic_coords_unique [Nontrivial R] (qinv : R) (d : ℕ → R) :
     ∀ n : ℕ, (∑ m ∈ Finset.range (n + 1), C (d m) * braneMonic qinv m) = 0 →
       ∀ m, m ≤ n → d m = 0 := by
@@ -976,7 +976,7 @@ facts (they hold for any monic degree-graded family). -/
     `Polynomial.degreeLT R n`). Proved by induction, peeling the top coefficient
     against the monic `g (n-1)`. The brane-tower family `braneMonic qinv` is such
     a family, so this gives the existence of cyclotomic coordinates. -/
--- Ref: [manuscript] def:z-habiro-ring §"Trunc_{<n}"
+-- Ref: [leitner2026] def:z-habiro-ring §"Trunc_{<n}"
 theorem cyclo_repr_exists (g : ℕ → R[X]) (hmon : ∀ m, (g m).Monic)
     (hdeg : ∀ m, (g m).degree = m) (n : ℕ) (f : R[X]) (hf : f.degree < n) :
     ∃ c : ℕ → R, f = ∑ m ∈ Finset.range n, C (c m) * g m := by
@@ -1064,8 +1064,8 @@ theorem eulerTrunc_degree_lt (qinv : R) (n : ℕ) :
     on `n` (per-level base change); a level-INDEPENDENT `c` is supplied by the
     q-difference recurrence (`eulerCoeff_unique` + `zHabiroLimit_eq_euler`)
     conditional on the functional equation. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
--- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [leitner2026] computations/z-habiro-increment-probe.witness.json
 -- Ref: [habiro2004cyclotomic]
 theorem eulerTrunc_eq_cyclotomic [Nontrivial R] (qinv : R) (hq : IsUnit qinv)
     (n : ℕ) :
@@ -1091,7 +1091,7 @@ theorem eulerTrunc_eq_cyclotomic [Nontrivial R] (qinv : R) (hq : IsUnit qinv)
     inverse-limit element literally carries the quantum dilogarithm's truncation
     data, level by level. The level-independent coherent `c` is the residual
     closed (conditionally) by `zHabiroLimit_eq_euler`. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Statement"
 theorem zHabiroLimit_coord_eq_eulerTrunc [Nontrivial R] (qinv : R) (hq : IsUnit qinv)
     (n : ℕ) :
     ∃ c : ℕ → R,

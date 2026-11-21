@@ -2,17 +2,22 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1206.5522v6",
  "source_sha256": "6e992242435b5e9f",
- "brief": "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds , after Beilinson, Drinfeld and Lurie, are homology-type theories for topological",
- "extended": "**FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS**\n\n*DAVID AYALA & JOHN FRANCIS*\n\n37 pp, 13 sections.\n\n**Abstract.** Factorization homology theories of topological manifolds , after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds whose coeﬃcient systems are n-disk algebras or n-disk stacks. In this work we prove a precise formulation of t his idea, giving an axiomatic characterization of factorization homology wit h coeﬃcients in n-disk algebras in terms of a generalization of the Eilenberg–Steenrod axioms for si ngular homology. Each such theory gives rise to a kind of topological quantum ﬁeld theory, for w hich observables can be deﬁned on general n-manifolds and not only closed n-manifolds. For n-disk algebra coeﬃcients, these ﬁeld theories are characterized by the condition that globa l observables are determined by local observables in a strong sense. Our axiomatic point of view ha s a number of applications.\n\n**Outline.** 1 Introduction; 2 B-framed disks and manifolds; 2.1 B-framings; 2.2 Disks; 2.3 Manifolds with boundary; 2.4 Localizing with respect to isotopy equival; 3 Homology theories for topological manifolds; 3.1 Disk algebras; 3.3 Homology theories; 3.4 Pushforward; 3.5 Homology theories; 5 Commutative algebras, free algebras, and Lie; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: Evaluation on a point, ev∗ : H(Spaces, Ch⊕)→ Ch, deﬁnes\n- Theorem 1.2: There is an equivalence between homology theories for topol ogical n-manifolds valued\n- Theorem 3.24: becomes an algebraic characterization of part of the structure of such quantum ﬁeld\n- Theorem 2.3: The continuous homomorphism of topological monoids Top(n)→ Emb(Rn, Rn)\n- Theorem: B we must show that each morphism (֒→M )֒→( ֒→M ) in I induces an equivalence\n- Theorem 3.19: For an associative algebra A in a symmetric monoidal ∞-category V which is",
+ "brief": "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds",
+ "extended": "**FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS**\n\n*DAVID AYALA & JOHN FRANCIS*\n\n37 pp, 19 sections.\n\n**Abstract.** Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds whose coeﬃcient systems are n-disk algebras or n-disk stacks. In this work we prove a precise formulation of this idea, giving an axiomatic characterization of factorization homology with coeﬃcients in n-disk algebras in terms of a generalization of the Eilenberg–Steenrod axioms for singular homology. Each such theory gives rise to a kind of topological quantum ﬁeld theory, for which observables can be deﬁned on general n-manifolds and not only closed n-manifolds. For n-disk algebra coeﬃcients, these ﬁeld theories are characterized by the condition that global observables are determined by local observables in a strong sense. Our axiomatic point of view has a number of applications.\n\n**Outline.** Front matter; 1 Introduction; 2 B-framed disks and manifolds; 2.1 B-framings; 2.2 Disks; 2.3 Manifolds with boundary; 2.4 Localizing with respect to isotopy equival; 3 Homology theories for topological manifolds; 3.1 Disk algebras; 3.2 Factorization homology over oriented 1-man; 3.3 Homology theories; 3.4 Pushforward; 3.5 Homology theories; 4 Nonabelian Poincaré duality; 5 Commutative algebras, free algebras, and Lie; 5.1 Factorization homology with coefficients i; 5.2 Factorization homology with coefficients i; 5.3 Factorization homology from Lie algebras",
  "tokens": {
-  "brief": 47,
-  "extended": 476
+  "brief": 49,
+  "extended": 384
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-6"
+   "pages": "2-6"
   },
   {
    "id": "sec-001-2-b-framed-disks-and-manifolds",
@@ -47,30 +52,55 @@
   {
    "id": "sec-007-31-disk-algebras",
    "title": "Disk algebras",
-   "pages": "14-18"
+   "pages": "14-17"
   },
   {
-   "id": "sec-008-33-homology-theories",
+   "id": "sec-008-32-factorization-homology-over-oriented-1-manifo",
+   "title": "Factorization homology over oriented 1-manifolds with boundary",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-009-33-homology-theories",
    "title": "Homology theories",
    "pages": "18-19"
   },
   {
-   "id": "sec-009-34-pushforward",
+   "id": "sec-010-34-pushforward",
    "title": "Pushforward",
    "pages": "19-23"
   },
   {
-   "id": "sec-010-35-homology-theories",
+   "id": "sec-011-35-homology-theories",
    "title": "Homology theories",
-   "pages": "23-28"
+   "pages": "23-26"
   },
   {
-   "id": "sec-011-5-commutative-algebras-free-algebras-and-lie-alg",
+   "id": "sec-012-4-nonabelian-poincaré-duality",
+   "title": "Nonabelian Poincaré duality",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-013-5-commutative-algebras-free-algebras-and-lie-alg",
    "title": "Commutative algebras, free algebras, and Lie algebras",
-   "pages": "28-36"
+   "pages": "28-28"
   },
   {
-   "id": "sec-012-references",
+   "id": "sec-014-51-factorization-homology-with-coefficients-in-c",
+   "title": "Factorization homology with coefficients in commutative algebras",
+   "pages": "28-31"
+  },
+  {
+   "id": "sec-015-52-factorization-homology-with-coefficients-in-f",
+   "title": "Factorization homology with coefficients in free n-disk algebras",
+   "pages": "31-35"
+  },
+  {
+   "id": "sec-016-53-factorization-homology-from-lie-algebras",
+   "title": "Factorization homology from Lie algebras",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-017-references",
    "title": "References",
    "pages": "36-37"
   }
@@ -79,8 +109,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.07042v1
-doc_title: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE"
+doc_title: "A Tannakian description of the local Kaletha gerbe"
 section_id: sec-006-22-limits-of-gerbes
 section_title: "Limits of gerbes"
 section_number: 2.2
 pages: 6-7
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
-doc_brief: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE — We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha’s Galois"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.764
+latex_coverage_ratio: 0.96
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 For $s \mid s'$, we have a fully faithful embedding of categories from $\iota_{s,s'} \colon P_{E/F,s}$ to $P_{E/F,s'}$, which sends the triple $(V, \Phi, \mathcal{D})$ to the triple $(V, \Phi, \mathcal{D}_{s'/s})$, where $\mathcal{D}_{s'/s}$ is the ${\prod_{\Gamma_{E/F}}\frac{1}{s'}\mathbb{Z}}$-grading of $V$ given by $V_{(b_{\sigma}/s')} = V_{([b_{\sigma}/(s'/s)]/s)}$ if $s'/s$ divides $b_{\sigma}$ for all $\sigma$, and is zero otherwise.
 

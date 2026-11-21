@@ -1,0 +1,100 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0203003v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "7579ae76959396b8dd4a05f6fe3f58a79b25d1b8bc72c21e6fd1ec6ac82819ef",
+  "file": "0203003v2.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/0203003v2 [math.QA] 24 Apr 2002",
+  "authors": "Pavel I. Etingof",
+  "arxiv": {
+   "id": "math/0203003",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "24 Apr 2002"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "lemma": 1,
+   "remark": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1,
+   "explanatory": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1,
+   "elsewhere": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
+   "name": null,
+   "statement": "1. Let f \u2208zCn[[z]] be a formal solution to the di\ufb00erence equation f(pz) = G(f(z)) Then f converges to an analytic function in some neighborhood of zero.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-006-a-appendix-meromorphicity-of-the-r-matrix.md (p. 11-13)",
+   "external_refs": [],
+   "proof_excerpt": "Let f(z) = P n\u22651 fnzn, and G(y) = P n\u22651 gnyn, where gn are multilinear operators. Since G is analytic at zero, there exists A > 0 such that the norms of the coe\ufb03cients are estimated by |gn| < An for all n. Let k0 be so big that for k \u2265k0 one has|(pk \u2212g1)\u22121| < 2|p|\u2212k, and 2A < |p|",
+   "section_file": "sections/sec-006-a-appendix-meromorphicity-of-the-r-matrix.md",
+   "section_title": "Appendix : Meromorphicity of the R-matrix",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-006-a-appendix-meromorphicity-of-the-r-matrix.md (p. 11-13)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-006-01",
+   "block_iri": "library/arxiv-math-0203003v2/blocks/lem-sec-006-01",
+   "claim_id": "arxiv-math-0203003v2#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "It is clear that the same result and proof applies to V, W being in category O as Uq(g) modules (since the R-matrix has zero weight, and the weight spaces of V \u2297W are \ufb01nite dimensional). References [ABRR98] Arnaudon, D.-Bu\ufb00enoir, E.-Ragoucy, E.-Roche, Ph. Universal solutions of quantum dynamical Yang-Baxter equations. Lett. Math. Phys., 44:201\u2013214, 1998. q-alg/9712037. [BBB95] Babelon, O.; Bernard, D.; Billey, E. A quasi-Hopf algebra interpretation of quantum 3-j and 6-j symbols and di\ufb00erence equations. Phys. Lett. B 375 (1996), 89\u201397, q-alg/9511019. [Ca01] A.Cavalli, Ph.D. thesis, ETH, Zurich, 2001. [EFK98] Etingof, P.-Frenkel, I.-Kirillov J",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [ABRR98], [BBB95], [Ca01] in sections/sec-006-a-appendix-meromorphicity-of-the-r-matrix.md",
+   "external_refs": [
+    "[ABRR98]",
+    "[BBB95]",
+    "[Ca01]",
+    "[EFK98]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-006-a-appendix-meromorphicity-of-the-r-matrix.md",
+   "section_title": "Appendix : Meromorphicity of the R-matrix",
+   "pages": "11-13",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-006-02",
+   "block_iri": "library/arxiv-math-0203003v2/blocks/rem-sec-006-02",
+   "claim_id": "arxiv-math-0203003v2#rem-sec-006-02"
+  }
+ ]
+}

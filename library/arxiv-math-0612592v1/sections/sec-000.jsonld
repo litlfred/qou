@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Document",
-  "pageStart": 1,
-  "pageEnd": 16,
+  "title": "Difference equations in general",
+  "pageStart": 2,
+  "pageEnd": 3,
   "contains": [
-    "library/arxiv-math-0612592v1/blocks/prose-sec-000"
+    "library/arxiv-math-0612592v1/blocks/prose-sec-000",
+    "library/arxiv-math-0612592v1/blocks/prop-sec-000-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0612592v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0612592v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0612592v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0612592v1/manifest.jsonld",
   "provenance": "ingested"
 }

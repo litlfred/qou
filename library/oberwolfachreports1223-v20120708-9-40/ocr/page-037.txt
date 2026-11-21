@@ -1,0 +1,54 @@
+Invariants in Low-Dimensional Topology and Knot Theory 37
+
+attachment of a Weinstein 2-handle and thus gives rise to a Stein cobordism from
+(M,&) to (M’,€'), it is immediate that it always preserves symplectic fillability;
+the latter implies tightness, but the converse is not true. The following joint result
+with Janko Latschev shows that there is a great deal of interesting structure within
+the class of contact manifolds that are tight but not fillable.
+
+Theorem 1 ((l]). There exists a nested infinite sequence of classes of closed
+contact 3-manifolds
+
+{all} = Eo DE, D By D...D Exo D {symplectically fillable}
+with the following properties:
+(1) For each k = 0,1,2,...,00, E, is preserved by Legendrian surgery,
+
+(2) 21 contains all closed contact 3-manifolds that are tight.
+
+It is possible that =, in this result may be precisely the class of tight contact
+3-manifolds: this would be equivalent to the statement that a closed contact 3-
+manifold has vanishing contact homology if and only if it is overtwisted. That
+would of course imply a new proof of the conjecture about surgery and tightness,
+but as yet no one knows how to prove that vanishing contact homology implies
+overtwistedness. Regardless, one can interpret the theorem as saying that there
+is an infinite hierarchy of “degrees of tightness,” in which some tight contact
+manifolds are tighter than others. There are examples to show that the inclusions
+=, © Ex-1 are all proper (see below). There are also candidates that might
+belong to = without being fillable, but no proof of this as yet.
+
+The classes =, are defined in terms of a contact invariant that lives in the
+Symplectic Field Theory outlined by Eliashberg, Givental and Hofer. The version
+of SFT we are interested in is, roughly speaking, the homology of a chain complex
+
+HS®"(M,€) = H. (Alfh), Dser)
+
+where A is a free graded commutative algebra with unit, with generators q, cor-
+responding to closed Reeb orbits y on (M,&), h is a formal variable, and
+
+Dgpr : Al[h]] > Al[h]
+
+is a linear operator that encodes a count of rigid pseudoholomorphic curves in
+the symplectization of (M,£), with cylindrical ends asymptotic to closed Reeb
+orbits. This homology is functorial with respect to exact symplectic cobordisms:
+in particular, whenever there exists an exact cobordism from (M_,&_) to (M+, &+),
+it induces an R{[A]]-module morphism
+
+HS®™ (My, €4) + HPP? (M_,€)
+which maps [fi] + [f*] for all k > 0. This property is especially useful in light of
+the following hypothetical example: suppose that for some choice of suitable data,
+the symplectization of (M,€) contains only one rigid pseudoholomorphic curve,
+
+which has genus 0, no negative ends and positive ends approaching a set of k
+distinct Reeb orbits 71,..., 7. Then it turns out that
+
+Dspr (i +++) = ne,

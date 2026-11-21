@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1204.4824v2
-doc_title: "Prepared for submission to JHEP Spectral networks"
+doc_title: "Spectral networks"
 section_id: sec-001-2-a-brief-review-of-theories-of-class-s
 section_title: "A brief review of theories of class S"
 section_number: 2
 pages: 11-12
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.986
+latex_coverage_ratio: 0.993
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 \label{sec:review-S}
 

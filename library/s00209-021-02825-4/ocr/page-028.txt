@@ -1,0 +1,64 @@
+1386 J. Leake
+
+Example 7.1 Define T : R,[x] > R[x] via:
+
+n
+
+n
+
+T:>) (j)avx" > yx" $ Gna"! = (dyx + dn—2)x"!
+k=0
+
+This operator obviously preserves weak real stability. We then have that Symbz,(T) =
+
+(<2 +.x)x"~!, which is not H},-stable nor (H_ x H4.)-stable.
+
+Again, the degeneracy condition is required for the characterization but obscures the con-
+nection between an operator and its symbol. To remove it, we now turn to our characterization
+of strong real stability preserving operators.
+
+7.2 Strong real stability preservation
+
+We state and prove our strong real stability preservation characterization here, and then derive
+the Borcea—Brindén characterization as a corollary. The proof here takes a bit more work
+than in the complex case, and will rely on many of the real stability results discussed in Sect.
+4.3. This extra work is essentially taken from the proof of Theorem 1.2 found in [1].
+
+Theorem 7.2 Fix A € Nj, a € Ni, and a linear operator T € Hom(V (A), V(@)) such that
+T restricts to a real linear operator from Vig(d) to Viz(a). The following are equivalent.
+
+(i) T preserves strong real stability.
+(ii) Symb(7) is either (H_” x H!.)-stable or (H.” x H!)-stable.
+
+Proof (i) => (ii). Fixing (zo : wo) € A", we have that (wox — zoy)* is H't-stable. If
+(zo : Wo) € R’, then T[(wox — zoy)*] is nonzero and real stable by assumption. Combining
+the symbol lemma (Lemma 3.7) and the evaluation symbol lemma (Lemma 5.10), this implies
+Symb(T)(zo, wo, x, y) = (—1)*T[(wox — zoy)*] is both Ht, -stable and H!_-stable.
+
+On the other hand, suppose (zo : wo) ¢ R” ByLemma4.10, we have that T[(wox—zoy)*]
+is either Ht, -stable, H_-stable, or zero. Now suppose there are (zo : wo), (zy : wo) €
+Hq.” \R" such that T[(wox — zoy)*] is Hi, -stable and Tlowox - zyy4] is H!-stable. By
+a homotopy argument, there exists (zg : wo) eH” \R" such that T[(wox _ yyy] is
+(Ht, UHL )-stable or zero. By Lemma ‘4, 11, T[co(wox - yyy di is either real stable or zero
+for some complex scalar co # 0.
+
+Let co(wgx _ zy) = = q(x, y) +ir(x, y) forg,r € Vg(A), which are both real stable or
+zero by Hermite-Biehler (Proposition 4.9). Note further that r # 0 since (zg : wo) ¢ R”
+However, since T(q + ir) = T(q) +iT(r) is real stable or zero and T restricts to real linear
+operator, it must be that T(r) = 0. This contradicts the fact that T strongly preserves real
+stability.
+
+So, Symb(T)(zo, wo, x, ¥) = (—1)*TL(wox — zoy)*] is either H!,-stable (in the x, y
+variables) for all (zo : wo) € H— "\R", or H!-stable for all (zo : wo) € Hq” \R".
+Combining this with the (zo : wo) € R” case, we have that Symb(7) is either (H_” x H!)-
+stable or (H.” x HE )-stable.
+
+(ii) > (i). By the complex stability characterization (Theorem 6.2), T maps H'}-stable
+polynomials to either nonzero H!, -stable polynomials or nonzero #1!_-stable polynomials.
+Since T restricts to a real linear operator on Vg (A), T preserves strong real stability. Oo
+
+As a final note, the “homotopy argument” used in the previous proof is not quite that of
+the proof found in [1], though it is similar. Here, one just needs to be a bit more careful about
+the precise homotopy with respect to points at infinity.
+
+D Springer

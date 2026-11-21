@@ -3,25 +3,30 @@
  "doc_id": "arxiv-1901.01312v1",
  "source_sha256": "a480da38283622d6",
  "brief": "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of",
- "extended": "**Braided fermions from Hurwitz algebras**\n\n*Xi’an Jiaotong-Liverpool University, Department of Mathematical Sciences. 111 Ren’ai Road*\n\n10 pp, 22 sections.\n\n**Abstract.** Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of Standard Model fermions were recently identiﬁed. The non-trivial braid groups that can be represented using the four normed division algebras are B2 and Bc 3, exactly those required to represent a single generation of fermions in terms of simple three strand ribbon braids. These braided fermion states can be identiﬁed with the basis states of the minimal left ideals of the Cliﬀord algebra C𝓁(6), generated from the nested left actions of the complex octonions C⊗ O on itself. That is, the ribbon spectrum can be related to octonion algebras. Some speculative ideas relating to ongoing research that attempts to construct a uniﬁed theory based on braid groups and Hurwitz algebras are discussed.\n\n**Outline.** 2 Hurwitz algebras; 1 Introduction; 2.1 Cliﬀord and Lie algebras from Hurwitz alge; 3 Unbroken fermion symmetries from Hurwitz alg; 3.1 Primitive idempotents and orthogonal subsp; 3.2 Minimal left ideals of C𝓁(6); 1 The ﬁrst ideal is then; 4 Representation of fermions as three strand r; 4.1 The Helon model; 4.2 Braid group representations from Cliﬀord a; 4.3 Braid group representations from Hurwitz a; 5 Relating Hurwitz algebras to the Helon model; 5.1 Helon braids as the basis states of minima; 3 Letting B = (σ−1; 6 Extending the connections between the braid ; 6.1 Electric charge structure of fermions from; 6.2 Equivalence classes of braids from H; 3 Written in pure twist form, σ2",
+ "extended": "**Braided fermions from Hurwitz algebras**\n\n*Niels G Gresnigt*\n\n10 pp, 19 sections.\n\n**Abstract.** Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of Standard Model fermions were recently identiﬁed. The non-trivial braid groups that can be represented using the four normed division algebras are B2 and Bc 3, exactly those required to represent a single generation of fermions in terms of simple three strand ribbon braids. These braided fermion states can be identiﬁed with the basis states of the minimal left ideals of the Cliﬀord algebra Cℓ(6), generated from the nested left actions of the complex octonions C ⊗O on itself. That is, the ribbon spectrum can be related to octonion algebras. Some speculative ideas relating to ongoing research that attempts to construct a uniﬁed theory based on braid groups and Hurwitz algebras are discussed.\n\n**Outline.** Front matter; 1 Introduction; 2 Hurwitz algebras; 2.1 Clifford and Lie algebras from Hurwitz alg; 3 Unbroken fermion symmetries from Hurwitz alg; 3.1 Primitive idempotents and orthogonal subsp; 3.2 Minimal left ideals of $C\\ell(6)$; 4 Representation of fermions as three strand r; 4.1 The Helon model; 4.2 Braid group representations from Clifford ; 4.3 Braid group representations from Hurwitz a; 5 Relating Hurwitz algebras to the Helon model; 5.1 Helon braids as the basis states of minima; 6 Extending the connections between the braid ; 6.1 Electric charge structure of fermions from; 6.2 Equivalence classes of braids from $\\mathb; 6.3 From one generation to exactly three; 7 Discussion",
  "tokens": {
   "brief": 49,
-  "extended": 433
+  "extended": 415
  },
  "sections": [
   {
-   "id": "sec-000-2-hurwitz-algebras",
-   "title": "Hurwitz algebras",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "1-2"
   },
   {
-   "id": "sec-002-21-cliﬀord-and-lie-algebras-from-hurwitz-algebra",
-   "title": "Cliﬀord and Lie algebras from Hurwitz algebras",
+   "id": "sec-001-2-hurwitz-algebras",
+   "title": "Hurwitz algebras",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-21-clifford-and-lie-algebras-from-hurwitz-algebr",
+   "title": "Clifford and Lie algebras from Hurwitz algebras",
    "pages": "3-3"
   },
   {
@@ -35,87 +40,67 @@
    "pages": "3-4"
   },
   {
-   "id": "sec-005-32-minimal-left-ideals-of-c𝓁6",
-   "title": "Minimal left ideals of C𝓁(6)",
+   "id": "sec-005-32-minimal-left-ideals-of-cell6",
+   "title": "Minimal left ideals of $C\\ell(6)$",
    "pages": "4-4"
   },
   {
-   "id": "sec-006-1-the-ﬁrst-ideal-is-then",
-   "title": "The ﬁrst ideal is then",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-007-4-representation-of-fermions-as-three-strand-rib",
+   "id": "sec-006-4-representation-of-fermions-as-three-strand-rib",
    "title": "Representation of fermions as three strand ribbon braids",
    "pages": "4-4"
   },
   {
-   "id": "sec-008-41-the-helon-model",
+   "id": "sec-007-41-the-helon-model",
    "title": "The Helon model",
    "pages": "4-4"
   },
   {
-   "id": "sec-009-42-braid-group-representations-from-cliﬀord-alge",
-   "title": "Braid group representations from Cliﬀord algebras",
+   "id": "sec-008-42-braid-group-representations-from-clifford-alg",
+   "title": "Braid group representations from Clifford algebras",
    "pages": "4-5"
   },
   {
-   "id": "sec-010-43-braid-group-representations-from-hurwitz-alge",
+   "id": "sec-009-43-braid-group-representations-from-hurwitz-alge",
    "title": "Braid group representations from Hurwitz algebras",
    "pages": "5-6"
   },
   {
-   "id": "sec-011-5-relating-hurwitz-algebras-to-the-helon-model",
+   "id": "sec-010-5-relating-hurwitz-algebras-to-the-helon-model",
    "title": "Relating Hurwitz algebras to the Helon model",
    "pages": "6-6"
   },
   {
-   "id": "sec-012-51-helon-braids-as-the-basis-states-of-minimal-l",
-   "title": "Helon braids as the basis states of minimal left ideals of C𝓁(6)",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-013-3-letting-b-σ1",
-   "title": "Letting B = (σ−1",
+   "id": "sec-011-51-helon-braids-as-the-basis-states-of-minimal-l",
+   "title": "Helon braids as the basis states of minimal left ideals of $C\\ell(6)$",
    "pages": "6-7"
   },
   {
-   "id": "sec-014-6-extending-the-connections-between-the-braid-an",
+   "id": "sec-012-6-extending-the-connections-between-the-braid-an",
    "title": "Extending the connections between the braid and Hurwitz algebraic models",
    "pages": "7-7"
   },
   {
-   "id": "sec-015-61-electric-charge-structure-of-fermions-from-th",
-   "title": "Electric charge structure of fermions from the C representation of B2",
+   "id": "sec-013-61-electric-charge-structure-of-fermions-from-th",
+   "title": "Electric charge structure of fermions from the $\\mathbb{C}$ representation of $B_2$",
    "pages": "7-7"
   },
   {
-   "id": "sec-016-62-equivalence-classes-of-braids-from-h",
-   "title": "Equivalence classes of braids from H",
+   "id": "sec-014-62-equivalence-classes-of-braids-from-mathbbh",
+   "title": "Equivalence classes of braids from $\\mathbb{H}$",
    "pages": "7-8"
   },
   {
-   "id": "sec-017-3-written-in-pure-twist-form-σ2",
-   "title": "Written in pure twist form, σ2",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-018-63-from-one-generation-to-exactly-three",
+   "id": "sec-015-63-from-one-generation-to-exactly-three",
    "title": "From one generation to exactly three",
    "pages": "8-9"
   },
   {
-   "id": "sec-019-7-discussion",
+   "id": "sec-016-7-discussion",
    "title": "Discussion",
    "pages": "9-9"
   },
   {
-   "id": "sec-020-acknowledgments",
-   "title": "Acknowledgments",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-021-references",
+   "id": "sec-017-references",
    "title": "References",
    "pages": "9-10"
   }

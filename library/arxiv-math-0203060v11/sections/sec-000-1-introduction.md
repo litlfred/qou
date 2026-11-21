@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-3
 source_pdf: 0203060v11.pdf
 source_sha256: fa7e21ceab3e9933
-doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in pa rtic- ular, the theory of weak Hopf algebras), we prove a number of g eneral results about fusion categories in"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.996
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.979
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 Throughout this paper (except for Section 9), $k$ denotes an algebraically closed field of characteristic zero. By a *fusion category* ${\mathcal C}$ over $k$ we mean a $k$-linear semisimple rigid tensor (=monoidal) category with finitely many simple objects and finite dimensional spaces of morphisms, such that the endomorphism algebra of the neutral object is $k$ (see [@BaKi]). Fusion categories arise in several areas of mathematics and physics -- conformal field theory, operator algebras, representation theory of quantum groups, and others.
 

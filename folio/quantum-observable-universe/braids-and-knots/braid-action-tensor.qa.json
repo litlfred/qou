@@ -1223,6 +1223,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5df3230e072f",
+          "ts": "44cfe9412e11",
+          "lean": "fff5ba2ea46c",
+          "lean_statement": "11493cc3a222"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:33.527Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "md: \"For each object V ... and each n >= 2, there is a group [homomorphism] rho_n: B_n -> Aut(V^{otimes n})\". Lean braid-action-tensor.lean:229 braid_action_tensor builds only BraidRepB3 (gen1, gen2, braid_rel on V^{otimes 3}): the n = 3 instance, not all n."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2443,6 +2461,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:27:33.527Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1235,6 +1235,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1365f6b92ba8",
+          "ts": "89b2a2c2f7dc",
+          "lean": "1042ef325d2a",
+          "lean_statement": "09fa2b8c3ff8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:13.001Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Lean proves q⁻¹ < q, an identity for `coulombCorrection`, and its positivity. The skein relation and the tanh ratio are not encoded. **The skein relation as written is false** (see above, sympy residuals). Also \"Coulomb correction relative to a mixed-charge baseline\" is a physical identification inside a proposition."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2203,6 +2221,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:00:13.001Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -718,7 +718,7 @@
           "in_degree": 0,
           "cone_size": 85,
           "depth": 16,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -959,6 +959,20 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1f90e9ee0f2f",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.396Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1190,7 +1204,7 @@
         },
         "reviewed_at": "2026-08-22T04:06:51.018Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) \u2014 all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
+        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1225,7 +1239,7 @@
         },
         "reviewed_at": "2026-08-22T04:06:51.057Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) \u2014 all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
+        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1260,7 +1274,7 @@
         },
         "reviewed_at": "2026-08-22T04:06:51.097Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) \u2014 all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
+        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1295,7 +1309,7 @@
         },
         "reviewed_at": "2026-08-22T04:06:51.136Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) \u2014 all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
+        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1330,7 +1344,7 @@
         },
         "reviewed_at": "2026-08-22T04:06:51.174Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) \u2014 all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
+        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1365,7 +1379,7 @@
         },
         "reviewed_at": "2026-08-22T04:06:51.213Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) \u2014 all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
+        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1402,7 +1416,7 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "severity": "major",
         "evidence": "The paragraph closing the 'lepton tower' section restated, in weaker words, the two things the two preceding lines had just said: 'The recurrence relations underlying this lepton tower are elementary identities in $\\mathbb{Z}[q^{\\pm 1}]$' duplicated the immediately preceding 'The recurrence is exact in $\\mathbb{Z}[q^{\\pm 1}]$', and 'satisfy a standard induction over $n$ via the quadratic Hecke relation' duplicated the section-1 derivation that ends 'This completes the induction.' It carried no fact not already on the page.",
-        "notes": "FIXED inline (2 sentences, pure prose, both facts stated verbatim elsewhere in the same block, no meaning change). before -> 'The recurrence is exact in $\\mathbb{Z}[q^{\\pm 1}]$. The decimal values are evaluations at $q = q_0$.\\n\\nThe recurrence relations underlying this lepton tower are elementary identities in $\\mathbb{Z}[q^{\\pm 1}]$. The Morgan-Voyce sequences $\\{a_n\\}$ and $\\{b_n\\}$ satisfy a standard induction over $n$ via the quadratic Hecke relation.\\n\\n## Structural content' ; after -> 'The recurrence is exact in $\\mathbb{Z}[q^{\\pm 1}]$. The decimal values are evaluations at $q = q_0$.\\n\\n## Structural content'. Math delimiters re-checked after the edit: 1 display pair, balanced inline. Separately: the block also spelled the name 'Morgan-Voyce' with a hyphen against 'Morgan--Voyce' in the parent proposition; the deletion removes that inconsistency incidentally. See the Morgan--Voyce misattribution finding recorded on prop:lepton-continuant-recurrence \u2014 the sequences are the Fibonacci polynomials, not Morgan--Voyce."
+        "notes": "FIXED inline (2 sentences, pure prose, both facts stated verbatim elsewhere in the same block, no meaning change). before -> 'The recurrence is exact in $\\mathbb{Z}[q^{\\pm 1}]$. The decimal values are evaluations at $q = q_0$.\\n\\nThe recurrence relations underlying this lepton tower are elementary identities in $\\mathbb{Z}[q^{\\pm 1}]$. The Morgan-Voyce sequences $\\{a_n\\}$ and $\\{b_n\\}$ satisfy a standard induction over $n$ via the quadratic Hecke relation.\\n\\n## Structural content' ; after -> 'The recurrence is exact in $\\mathbb{Z}[q^{\\pm 1}]$. The decimal values are evaluations at $q = q_0$.\\n\\n## Structural content'. Math delimiters re-checked after the edit: 1 display pair, balanced inline. Separately: the block also spelled the name 'Morgan-Voyce' with a hyphen against 'Morgan--Voyce' in the parent proposition; the deletion removes that inconsistency incidentally. See the Morgan--Voyce misattribution finding recorded on prop:lepton-continuant-recurrence — the sequences are the Fibonacci polynomials, not Morgan--Voyce."
       }
     ],
     "trap-performed-warmth": [
@@ -1436,7 +1450,7 @@
         },
         "reviewed_at": "2026-08-22T04:06:51.253Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) \u2014 all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
+        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1471,7 +1485,7 @@
         },
         "reviewed_at": "2026-08-22T04:06:51.292Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) \u2014 all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
+        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1506,7 +1520,7 @@
         },
         "reviewed_at": "2026-08-22T04:06:51.331Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) \u2014 all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
+        "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1530,6 +1544,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T04:06:51.375Z",
+  "updated_at": "2026-11-15T21:56:04.396Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

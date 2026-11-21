@@ -37,10 +37,11 @@ from codata_constants import (
     M_E_MEV  # noqa: E402  single source of truth (CODATA,
 )
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 HERE = str(_HERE)
 m_e = mpf(str(M_E_MEV))
-B_AME = {"D": mpf("2.22452"), "T": mpf("8.48180"), "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
+B_AME = {"D": mpf("2.22452"), "T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
        "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
 # NOTE (2026-08-30, bean qou-gecf): this is the C(A,2) NUCLEON-PAIR count, and

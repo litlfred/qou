@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0501112v3/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Products of conjugacy classes",
+  "pageStart": 27,
+  "pageEnd": 29,
+  "contains": [
+    "library/arxiv-math-0501112v3/blocks/prose-sec-032"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0501112v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0501112v3/manifest.jsonld",
+  "provenance": "ingested"
+}

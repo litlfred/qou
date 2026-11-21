@@ -5,17 +5,18 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 # QOU.Observations.TraceLocalityMeetsGsNonLocality
 
 The locality / non-locality reconciliation, encoded as a typeclass
-packaging the three structural ingredients of
+packaging the structural ingredients of
 `prop:trace-locality-meets-gs-non-locality`:
 
 1. **Markov-property locality** — `tr_M(x · σ_n) = z · tr_M(x)`.
 2. **GS non-locality** — normal-form depends on the full braid word.
-3. **Product factorisation bridge** — `tr_M(NF(β)) = Π_i V̂_i(q)`,
-   local in the normal-form word.
 
-The class fields carry concrete content (a Markov parameter `z`, a
-normal-form function, a vertex-volume sequence, and the three
-identities relating them).
+The product factorisation `tr_M(NF(β)) = Π_i V̂_i(q)` was part (3) of the
+statement until the owner moved it to a remark (2026-11-15). It is no
+longer a field here, so the class assumes no more than the statement.
+
+Note: field `vertexVolume_local` is a tautology (it follows from
+`congrArg`), so it constrains nothing.
 
 Resolves issue #649 §3.
 -/
@@ -36,7 +37,8 @@ class HasReconciliation
     [CommMonoid R] [Mul A] where
   /-- The Markov trace on `A`. -/
   trM : A → R
-  /-- The Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`. -/
+  /-- The Markov parameter `z`. Canonically convention D,
+      `z = q³/(q² + 1)`; not pinned by this class. -/
   markovParameter : R
   /-- A distinguished family of "single generators" (analogue of
       `σ_i`) producing the Markov-locality identity. -/
@@ -68,12 +70,5 @@ class HasReconciliation
       i < nfLength x → i < nfLength y →
         nfSymbolAt x i = nfSymbolAt y i →
         vertexVolume (nfSymbolAt x i) = vertexVolume (nfSymbolAt y i)
-  /-- **(3) Product factorisation**: the Markov trace of the
-      normal form equals the product of per-position vertex
-      volumes, each depending only on its local normal-form
-      symbol. -/
-  productFactorisation :
-    ∀ (x : A),
-      trM x = ∏ i ∈ Finset.range (nfLength x), vertexVolume (nfSymbolAt x i)
 
 end QOU.Observations.TraceLocalityMeetsGsNonLocality

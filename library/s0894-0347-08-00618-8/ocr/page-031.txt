@@ -1,0 +1,56 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 551
+
+5. PRESERVATION OF NEGATIVE DEPENDENCE
+BY SYMMETRIC EXCLUSION PROCESSES
+
+In this section we study some consequences of the results in {4] for symmetric
+exclusion processes and provide an answer to the problem of finding a natural
+negative dependence property that is preserved by such evolutions (Problem 3.5).
+
+Let us first describe these processes in more detail. A configuration of particles
+on a countable set S$ is a point 7 on the Boolean lattice 2°, which we identify with
+{0,1}5, so 7(i) = 1 means that site i is occupied, while (i) = 0 means that it is
+vacant. One is given a non-negative symmetric kernel Q = (qi,j)ijes satisfying
+
+16 su ij <
+(16) wp 2 hs
+
+The corresponding exclusion process 7 is the Markov process on {0, 1s in which
+n > 7i,3(m) at rate q;,;, where 7;,; is the transposition that interchanges the coordi-
+nates 7(i) and n(j). Note that if n(i) = (Jj) (ie., the two sites are both occupied or
+both empty), this transposition has no effect, while if 7(i) 4 n(j), the transposition
+has the effect of moving the particle from the occupied site to the vacant site. In the
+language of semigroups and generators, the semigroup T(t) on C({0,1}5) defined
+by T(t)F(n) = E"F(m) has a generator
+
+LF(n) = 5 asl Fam) ~ Fn)
+ag
+
+for functions F that depend on finitely many coordinates. Condition guaran-
+tees that the process is well defined and uniquely determined by Q.
+
+One can give a more probabilistic description of the symmetric exclusion process
+in terms of Poisson processes. Recall that a Poisson process N(t) with rate \ > 0
+is a random increasing step function with jumps of size one, in which the times
+between jumps are independent exponentially distributed random variables 7} with
+parameter \: P(r, > t) = e~*'. Now take a collection Nj,;(t) of independent
+Poisson processes indexed by unordered pairs i, j (N;,;(t) with rate q;,;) and apply
+the transposition 7;,; to 7 at the jump times of N;,;(t). We will denote probabilities
+for the process with initial configuration 7 by P”.
+
+Negative correlation inequalities have played an important role in the develop-
+ment of the theory of symmetric exclusion processes. For example, Proposition 1.7
+
+of Chap. VII] implies that
+
+(17) P"(m =10n A) <T[ PXm() =1), ACS.
+icA
+This inequality was used in an essential way in the characterization of stationary
+distributions of the process; see Theorem 1.44 in op. cit. and the end of this section.
+Inequality (7) was generalized by Andjel in 2] to
+P"(m =10n AUB) < P"(m =1 on A)P"(m =1 on B),
+
+(18) A,BCS,ANB=9,
+
+and used to prove an ergodic theorem. For further applications of correlation in-
+equalities in this setting; see the references and discussion in [55].

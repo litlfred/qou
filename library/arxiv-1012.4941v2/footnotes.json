@@ -1,0 +1,744 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1012.4941v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "privatecommunication",
+   "marks": [
+    {
+     "page": 6,
+     "context": "Remark16.IthasbeenobservedbyScharlauandSch¨urmann"
+    }
+   ],
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p020-2",
+   "page": 20,
+   "mark": "2",
+   "text": "Robert Bixby and D. K. Wagner, A note on detecting simple redundancies in linear systems, OR Letters",
+   "marks": [
+    {
+     "page": 19,
+     "context": "identifythecomplexnumberswithR"
+    },
+    {
+     "page": 19,
+     "context": "(x, 0, 1) ∈R"
+    },
+    {
+     "page": 19,
+     "context": "12) ∈R"
+    }
+   ],
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-009"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "1",
+   "text": "Timo Berthold and Marc E. Pfetsch, Detecting orbitopal symmetries, Operations Research Proceedings 2008 (Bernhard Fleischmann, Karl Heinz Borgwardt, Robert Klein, and Axel Tuma, eds.), Springer- Verlag, 2009, pp. 433–438.",
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p020-3",
+   "page": 20,
+   "mark": "6",
+   "text": "(1987), no. 1, 15–17.",
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p020-4",
+   "page": 20,
+   "mark": "3",
+   "text": "Richard B¨odi, Theo Grundh¨ofer, and Katrin Herr, Symmetries of linear programs, Note di Matematica",
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p020-5",
+   "page": 20,
+   "mark": "30",
+   "text": "(2010), no. 1.",
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p020-6",
+   "page": 20,
+   "mark": "4",
+   "text": "David Bremner, Mathieu Dutour Sikiri´c, and Achill Sch¨urmann, Polyhedral representation conversion up to symmetries, Polyhedral computation, CRM Proc. Lecture Notes, vol. 48, Amer. Math. Soc., Providence, RI, 2009, pp. 45–71. MR 2503772",
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p020-7",
+   "page": 20,
+   "mark": "5",
+   "text": "Eric J. Friedman, Fundamental domains for integer programs with symmetries, COCOA 2007 (Y. Zu, B. Zhu, and A. Dress, eds.), LNCS, vol. 4616, Springer-Verlag Berlin Heidelberg, 2007, pp. 146–153.",
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "22",
+   "text": "Wulf Rossmann, Lie groups, Oxford Graduate Texts in Mathematics, vol. 5, Oxford University Press, Oxford, 2002, An introduction through linear groups. MR 1889121 (2003f:22001)",
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p021-2",
+   "page": 21,
+   "mark": "23",
+   "text": "Peter Webb, Finite group representations for the pure mathematician, http://www.math.umn.edu/~webb/RepBook/index.html.",
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p021-3",
+   "page": 21,
+   "mark": "24",
+   "text": "G¨unter M. Ziegler, Lectures on polytopes, Graduate Texts in Mathematics, vol. 152, Springer-Verlag, New York, 1995. MR 1311028 (96a:52011) School of Engineering, Z¨urcher Hochschule f¨ur Angewandte Wissenschaften, Rosenstr. 2, 8400 Winterthur, Switzerland E-mail address: richard.boedi@zhaw.ch Fachbereich Mathematik, TU Darmstadt, Dolivostr. 15, 64293 Darmstadt, Germany E-mail address: {herr,joswig}@mathematik.tu-darmstadt.de",
+   "block": "library/arxiv-1012.4941v2/blocks/prose-sec-010"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "ongroupsactingassignedpermutationsonthestandardbasisofR"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "assignedpermutations)inO(mn"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "c"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Ax ≤b ,x ∈R"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "whereA∈R"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "whereA∈Rm×n,b∈R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "whereA∈Rm×n,b∈Rm,andc∈R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "P(A, b):={x∈R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "inR"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "doesnotchangetheobjectivevaluec"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "ThenP(A, b)isthenon-negativequadrantinR"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "x ∈R"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "x ∈R2wehavec"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "x ∈R2wehavectx = c"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Thefeasibleregionisthenon-negativequadrantinR"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Thelineartransformationγ=(0"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "c"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "ctx = c"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "SinceweviewpointsinR"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "b, c)) is ﬁnite.Moreover,the objective function c satisﬁes c"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "is ﬁnite.Moreover,the objective function c satisﬁes ctγx = c"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "forallx ∈R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "v, w2 −v, . . . , wn −v form a basis of R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "followsfromlin(P(A, b)) = R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Deﬁnition8.GivenasubsetY⊆R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ThesetofﬁxedpointsFixγ(R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "sformationγwithrespecttotheeigenvalue1.ThisimpliesthatFixΓ(R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "FixΓ(R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Fixγ(R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "setofﬁxedpointsFixΓ(R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ForanyﬁnitesetS⊂R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Rn→FixΓ(R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Let S⊆R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "S⊆Rnbeaﬁniteset whichisspanning,that is,werequire lin(S) = R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "representationofanabstractgroupΓonthevectorspaceR"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "spansR"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "FixΓ(R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Inparticular,dim FixΓ(R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Lemma 11 to the set S, we obtain a generating set for FixΓ(R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Proposition13.LetΓ≤Aut(LP(A, b, c))beﬁnite.Ifx∈R"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "barycenterofitsΓ-orbitsatisﬁesc"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "barycenterofitsΓ-orbitsatisﬁesctβ(Γx)=c"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "f.AstheobjectivefunctionisconstantontheorbitΓxitfollowsthatc"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "bjectivefunctionisconstantontheorbitΓxitfollowsthatctβ(Γx)=c"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "eamatrixEsuchthat thekernel{x | Ex = 0} istheﬁxedspaceFixΓ(R"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "inearequations.ThetotalnumberofoperationstodosoisoforderO(tn"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "P′={x ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "c"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": ",x ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "Thisimpliesthat(P"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "j=1"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "j=1aj,·)x > kb"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "j=1aj,·)x > kbi,andhence"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "spaceR"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Alternatively,onecanprojectFixΓ(R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "thestandardbasisofR"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "c"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Ax ≤b ,x ∈Z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "ts on the signed standard basis {±e1, ±e2, . . . , ±en} of R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Z2 ≀Sym(n)=(Z2)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "thegroup Sym(n)actson thedirect product (Z2)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "afewbasicresultsontheactionofthegroupOnZontheentirespaceR"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "FixΓ(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "twocorrespondingrepresentationsofΓ,onR"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "FixΓ(R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "isone-dimensional,orFixΓ(R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "knowthatciscontainedintheﬁxedspaceFixΓ(R"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "Hc,k=ker(x 7→c"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Lemma24.Ifc̸=0isprojectivelyrational,theintegralpointx∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "c-layerwithnumbercoprime(c)"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "Proof.Thenumberk=coprime(c)"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "=c"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "=ct\u0000d"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "d"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "c"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "∥d∥2"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "∥d∥2 c"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "∥d∥2 ct"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "∥d∥2 ctx=c"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "∥d∥2"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "ncex −(k/ ∥d∥2)d iscontained inthekernel of thelinear form c"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "setZ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "thatHc,k ∩Z"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "However,theleftsideofthisequationequalsc"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "ﬁrstc-layerHc,1.Nowc"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "ﬁrstc-layerHc,1.Nowct(kx) = kc"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "1.If z is an optimal solution of the relaxation LP(A, b"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "1-layers partitionZ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "standardbasisofR"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "DuetotheinvarianceofZ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "thek-thlayer.HencexisnotcontainedintheﬁxedspaceR"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "uwehave"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "inO(mn"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "ForagivenmatrixA ∈R"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "ForagivenmatrixA ∈Rm×n,right handsideb ∈R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "enmatrixA ∈Rm×n,right handsideb ∈Rm,andobjectivefunctionc ∈R"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "γis"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "γis"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "actsonthestandardbasisofR"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "γ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "γ1γ"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "γyielding"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "ation which acts as a permutation of the standard basis of R"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "{u1, . . . , um}∪{w1, . . . , wn}.AsourmatrixAG=(aij)∈R"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "1.RehninvestigatesarbitraryautomorphismsoftheintegerlatticeZ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "hyperplanedeﬁnedbyPx"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "C′={x∈[0, 1]n|Px"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "C′′=conv(C′∪λ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "λ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "C′.TheyarealsoverticesofC′′.Sincenλexceedsr,thehyperplanePx"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "separateC′′,anditsintersectionwithC′′onlycontainsthepointλ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "incasethepointλ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "inequalityPx"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "ofC′′arethefacetsthroughthevertexλ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "′arethefacetsthroughthevertexλ1.Eachofthemistheconvexhullofλ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "∆(r, n).LookingforanaﬃnehyperplanecontainingAandλ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "thefullsymmetricgroupactingonthestandardbasisofR"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "ofO(mn"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "6"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "10"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "10e"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "(x, 0, 1) ∈R2× R"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "12) ∈R2 × R"
+  }
+ ]
+}

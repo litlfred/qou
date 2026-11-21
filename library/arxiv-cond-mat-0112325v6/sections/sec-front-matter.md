@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0112325v6.pdf
 source_sha256: f09f5047bd12651c
 toc_source: inferred
+doc_brief: "Knots in Condensed Matters — 6 sections: Front matter; Introduction; Knot in Skyrme theory"
 ---
 arXiv:cond-mat/0112325v6  19 Jul 2006
 Knots in Condensed Matters
@@ -24,4 +25,3 @@ versa. We discuss how these knots can be constructed in the spin-1/2 condensate 
 and in two-gap superconductor of MgB2.
 PACS numbers: 03.75.Fi, 05.30.Jp, 67.40.Vs, 74.72,-h
 Keywords: Topological knot in BEC, Knot in two-gap superconductor
-I.

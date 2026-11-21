@@ -1,15 +1,16 @@
 ---
 doc_id: arxiv-1610.09640v4
-doc_title: "Derived Categories | Amnon Yekutieli | 14 Apr 2019 DERIVED CATEGORIES AMNON YEKUTIELI"
+doc_title: "Derived Categories"
 section_id: sec-008-08-acknowledgments
 section_title: "Acknowledgments"
 section_number: 0.8
 pages: 24-25
 source_pdf: 1610.09640v4.pdf
 source_sha256: db5e7a5c5e85f95f
-doc_brief: "Derived Categories | Amnon Yekutieli | 14 Apr 2019 DERIVED CATEGORIES AMNON YEKUTIELI — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by"
+toc_source: outline
+doc_brief: "Derived Categories — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge University Press."
 ---
-onderivedcategories, thatwasheldatBenGurionUniversityinSpring2012. Iwant
+on derived categories, that was held at Ben Gurion University in Spring 2012. I want
 to thank the participants of this course for correcting many of my mistakes (both in
 real time during the lectures, and afterwards when writing the notes [170]). Thanks
 also to Joseph Lipman, Pierre Schapira, Amnon Neeman and Charles Weibel for
@@ -17,7 +18,8 @@ helpful discussions during the preparation of that course. Vincent Beck, Yang Ha
 and Lucas Simon sent me corrections and useful comments on the material in [170].
 I started writing the book itself while teaching a four semester course on the
 subject at Ben Gurion University, spanning the academic years 2015-16 and 2016-
-17. I wish to thank the participants of this course, and especially Rishi Vyas,
+17.
+I wish to thank the participants of this course, and especially Rishi Vyas,
 Stephan Snigerov, Asaf Yekutieli, S.D. Banerjee, Alberto Boix and William Woods,
 who contributed material and corrected numerous mistakes.
 Ben Gurion University was generous enough to permit this long project. The
@@ -32,14 +34,14 @@ Shaul, Johan de Jong, Steven Kleiman, Louis Rowen, Amnon Neeman, Amiram
 Braun, Jesse Wolfson, Bjarn de Jong, James Zhang, Jun-Ichi Miyachi, Vladimir
 Hinich, Brooke Shipley, Jeremy Rickard, Peter Jørgensen, Michael Sharpe (on La-
 TeX), Roland Berger, Mattia Ornaghi, Georges Maltsiniotis, Harry Gindi, Goncalo
-Tabuada, Seﬁ Ladkani, Saurabh Singh, and the anonymous referees for Cambridge
+Tabuada, SeﬁLadkani, Saurabh Singh, and the anonymous referees for Cambridge
 University Press.
 Special thanks to Thomas Harris, my editor at Cambridge University Press,
 whose initiative made the publication of this book possible; and to Clare Dennison
 and Libby Haynes at CUP, for their assistance.
 24
-Derived Categories | Amnon Yekutieli | 14 Apr 2019
-1. Basic F acts on Categories
-It is assumed that the reader has a working knowledge of categories and functors.
-References for this material are [101], [102], [129], [65], [158], [75] and [76]. In this
-section we review the relevant material, and establish notation.
+Derived Categories
+|
+Amnon Yekutieli
+|
+14 Apr 2019

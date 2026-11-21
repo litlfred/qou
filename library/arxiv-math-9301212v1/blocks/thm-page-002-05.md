@@ -1,0 +1,1 @@
+The number Ke(M) of isomorphism classes of knots which have rep- resentatives of energy less than or equal to M is bounded by 2(24−4/2π)(241/2π)M ≈ (0.264)(1.658)M. In particular, only ﬁnitely many knot types occur below any ﬁnite energy threshold.

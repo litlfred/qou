@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2501.00914v2
-doc_title: "L-SPACES AND KNOT TRACES"
+doc_title: "L-spaces and knot traces"
 section_id: sec-002-12-questions
 section_title: "Questions"
 section_number: 1.2
 pages: 3-4
 source_pdf: 2501.00914v2.pdf
 source_sha256: d94bd6edf8544d4a
-doc_brief: "L-SPACES AND KNOT TRACES — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.949
+latex_coverage_ratio: 0.977
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 Our results  above and their  comparisons with results about characterizing slopes raise many natural questions; we record a few of these here. The first asks whether we can upgrade our main result, Theorem \ref{thm:main}, to a statement about characterizing slopes:
 

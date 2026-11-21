@@ -1,0 +1,37 @@
+Chapter 4 Regularization Methods for Nuclear Lattice Effective Field Theory
+
+a ' [MeV] | a [fm] ] Css [MeV] ] Cis, [MeV] | b[MeV~*] | ass [fim] | rsg_ [fm]
+100 1.97 —54.07 -36.11 | 259-10 | 5.470(1) | 1.818(1)
+130 1.52 -67.11 -45.47 | 2.40-10° | 5.513(1) | 1.878(1)
+160 1.23 -69.31 -46.52 | 2.41-10° | 5.527(1) | 1.899(1)
+200 0.99 -63.83 -41.39 | 2.65-10° | 5.523(1) | 1.893(1)
+240 0.82 -61.55 ~39.23 | 2.83-10°> | 5.511(1) | 1.876(1)
+300 0.66 -62.20 -39.44 | 2.92-10° | 5.498(1) | 1.858(1)
+350 0.56 -63.30 -40.19 | 2.92-10° | 5.491(1) | 1.842(1)
+400 0.49 -64.31 -40.97 | 2.91-10° | 5.491(1) | 1.842(1)
+500 0.39 -65.47 -41.90 | 2.89-10°> | 5.500(1) | 1.836(1)
+600 0.33 -66.14 -42.71 | 282-107 | 5.553(1) | 1.835(1)
+700 0.28 -65.61 -42.64 | 2.86-10° | 5.649(1) | 1.845(1)
+
+Table 4.3: Fit results in EFT with Gaussian-smeared contact interaction and position space regularization for the
+pion-nucleon interaction with N = 3.5. The lattice size is L = 34, 36, 38 for a = 0.49... 1.97 fm and L = 38, 40, 42
+for a = 0.39...0.28 fm. The values for 31, and rss, are predictions (modulo the consistency condition Eq. (4.20)).
+
+in the 'S 0 partial wave together with the deuteron binding energy to fix the two LECs related to the
+LO four-nucleon contact interaction and the smearing parameter b. To focus on the lattice spacing
+dependence, we have worked at sufficiently large lattice volumes so that finite volume effects do not play
+any role here. In the pionless case, it is sufficient to smear the contact interactions with a Gaussian-type
+function, cf. Eq. (4.11), to achieve a-independence in the range 0.5 < a < 2.0 fm. We have explicitly
+shown this for the scattering length and the effective range in the 35 ,-channel, being aware of the strong
+correlation between Ep and a3, r In the pionful theory, the contribution from the one-pion-exchange is
+best to be regularized in position space, as discussed in detail in Ref. [22]. Again, we can demonstrate
+lattice spacing independence for the same range of a. Therefore, it should be possible to calculate the
+phase shifts with the transfer matrix method and the spherical wall method. Smaller lattice spacings
+should minimize the lattice errors such as the broken rotational invariance and make it possible to increase
+the accuracy especially for higher momenta in the partial wave decomposition. Clearly, when decreasing
+the lattice spacing, one has to be aware that the perturbative treatment of the NLO and higher order
+corrections becomes doubtful and requires a separate investigation but it does not invalidate the results
+found here. Furthermore, one should implement this regularization in Monte Carlo simulations in order
+to minimize the lattice spacing and artifacts in the simulation. This, however, is a separate issue.
+
+48

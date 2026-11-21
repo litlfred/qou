@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kirbycal",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kirbycal/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -35,7 +35,7 @@
     "library/kirbycal/sections/page-022"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "kirbycal",
     "title_source": "pdf-info",

@@ -1,0 +1,44 @@
+340 Cone point asymptotics
+
+(Lemma D.16), which requires the advanced apparatus of controlled vector
+fields. In this chapter we chart a course between these extremes, using the the-
+ory of hyperbolic polynomials to build a smooth vector field to deform a torus
+of integration below a given height except at minimal critical points. This is
+reasonably general, deforming any torus defined by an element of B up to and
+just beyond the amoeba boundary except arbitrarily close to critical points.
+
+Proving all necessary results from scratch would necessitate adding (at least)
+another appendix to this book, so this chapter is not entirely self-contained. In-
+stead, some of the technical background is cited from [BP11], which itself
+condenses a fair amount of background from [ABG70]. We give a complete,
+albeit telegraphic, rendition of the geometric results, extending the foundation
+built in Chapter 6 to the context of hyperbolic polynomials, but largely quote
+without proof the generalized function theory from [BP11, Section 6] neces-
+sary for rigorous justification of certain Fourier transforms.
+
+Organization of the chapter
+The remainder of this chapter proceeds as follows. First, we state Theorem 11.1,
+which asserts the existence of certain semi-continuously varying cones. In this
+context, a function from points x € C4 to open cones K(x) ¢ R¢ is lower
+semi-continuous if for all sequences x, — x we have K(a) C liminf K(x,),
+where the limit inferior of a sequence (S,,) of sets contains the point y if and
+only if y is in all but finitely many of the sets S,,.
+
+Exercise 11.1. Let H,, be the open halfspace {(x,y) € R? : x + ny > 0}. What
+is liminf H,,?
+
+Several deformation results are derived from Theorem 11.1. In order to il-
+lustrate the concepts involved, a proof of Theorem 11.1 is first provided in
+the simplest case when the intersection of the minimal torus and the variety
+consists entirely of smooth points. The second section of this chapter con-
+tains a full proof of Theorem 11.1, divided into a number of subsections: using
+cones to construct deformations, cones of hyperbolicity in the homogeneous
+case, cones of hyperbolicity in the general case, strong and weak hyperbolic-
+ity, semi-continuity of cones, the final steps of the proof, and a coda in which
+a projective (log-linear) version of the deformation is constructed.
+
+Having localized all integrals using these deformations, in the third sec-
+tion we compute asymptotics for the local integrals using results from [BP11]
+and [ABG70]. These computations are simplified using log-linear deforma-
+tions. The final section of the chapter applies this computational apparatus to a
+number of examples including cube groves, Szegé functions, Aztec diamonds,

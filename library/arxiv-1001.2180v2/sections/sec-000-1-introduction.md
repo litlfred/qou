@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-1
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
+toc_source: outline
 doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 

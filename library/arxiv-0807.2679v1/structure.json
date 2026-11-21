@@ -7,10 +7,11 @@
   "bytes": 198624,
   "pages": 12,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,31 @@
    "stamp_date": "17 Jul 2008"
   },
   "doi": null,
-  "title": "A cabling formula for the colored Jones polynomial Roland van der Veen",
-  "authors_raw": "November 18, 2021",
+  "title": "A cabling formula for the colored Jones polynomial",
+  "authors_raw": "Roland van der Veen",
   "title_lines": [
    "A cabling formula for the colored Jones",
-   "polynomial",
-   "Roland van der Veen"
+   "polynomial"
   ],
-  "abstract": "We prove an explicit cabling formula for the colored Jones po lynomial. As an application we prove the volume conjecture for all zero vo lume knots and links, i.e. all knots and links that are obtained from the unknot by repeated cabling and connected sum.",
+  "abstract": "We prove an explicit cabling formula for the colored Jones polynomial. As an application we prove the volume conjecture for all zero volume knots and links, i.e. all knots and links that are obtained from the unknot by repeated cabling and connected sum.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211117235235-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20211117235235-05'00'"
+  },
+  "title_raw": "A cabling formula for the colored Jones polynomial",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "A cabling formula for the colored Jones polynomial",
+   "outline": "Introduction",
+   "text": "A cabling formula for the colored Jones polynomial",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "A cabling formula for the colored Jones polynomial Roland van der Veen"
  },
  "toc": [
   {
@@ -42,25 +53,171 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of the cabling formula",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of the volume conjecture for zero volume links",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "We have drawn the link L4",
+   "page": 2,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Sliding the coupon α up through the tangle Ti;s",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The Pascal-like triangle of all two part partitions that can be glued from 5 or less border strips of length p = 4",
+   "page": 9,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 394,
+   "n_words": 64,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -68,8 +225,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 5482,
-   "n_words": 1061
+   "n_chars": 5408,
+   "n_words": 975,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-proof-of-the-cabling-formula",
@@ -77,22 +236,44 @@
    "title": "Proof of the cabling formula",
    "level": 1,
    "page_start": 4,
+   "page_end": 10,
+   "n_chars": 14482,
+   "n_words": 2860,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-proof-of-the-volume-conjecture-for-zero-volume-l",
+   "number": null,
+   "title": "Proof of the volume conjecture for zero volume links",
+   "level": 1,
+   "page_start": 10,
    "page_end": 12,
-   "n_chars": 20260,
-   "n_words": 4299
+   "n_chars": 5183,
+   "n_words": 858,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 3,
-  "sections": 2,
-  "chars_total": 25742,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 25467,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Verkabeling5.tex",
    "tex_sections": 3,
-   "overlaid": 2,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -100,18 +281,31 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.973,
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-proof-of-the-cabling-formula",
      "title": "Proof of the cabling formula",
-     "prose_ratio": 0.859,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-proof-of-the-volume-conjecture-for-zero-volume-l",
+     "title": "Proof of the volume conjecture for zero volume links",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.554,
      "result": "overlaid",
      "converter": "pandoc"
     }

@@ -1,20 +1,21 @@
 ---
 doc_id: arxiv-0907.4143v1
-doc_title: "Soft and Supersoft X-ray Sources in Symbiotic Stars1"
+doc_title: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1"
 section_id: sec-008-conclusions
 section_title: "Conclusions"
 section_number: null
 pages: 12-14
 source_pdf: 0907.4143v1.pdf
 source_sha256: a2090d1e574b27db
-doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
+toc_source: outline
+doc_brief: "Soft and Supersoft X-ray Sources in Symbiotic Stars 1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak"
 ---
+Conclusions
 Assuming that SSs in SySs result from the violent collisions of the stellar
 winds during strong symbiotic novae, and SSSs from weak symbiotic novae or
 steady hydrogen burning SySs, we investigate the Galactic population of SSs
 and SSSs in SySs. The Galactic occurrence rates of SSs and SSSs are from ∼
 2 to 20 yr−1, and ∼2 to 17 yr−1, respectively. The numbers of X-ray sources
-12
 in SySs range from 2390 to 6120. The percentage of the X-ray sources in all
 SySs is between ∼20% and 60%, which is in agreement with the observations.
 In the present paper we do not model the X-ray spectra emissions of SSs
@@ -55,7 +56,6 @@ M¨urset U., Schmid H.M., 1999, A&A, 137, 473.
 M¨urset U., WolﬀB., Jordan S., 1997, A&A, 319, 201.
 Nelemans G., Tout C.A., 2005, MNRAS, 356, 753.
 Nelson L.A., MacCannell K.A., Dubeau E., 2004, ApJ, 602, 938.
-13
 Nelson T., Orio M., Cassinelli J. P., Still M., Leibowitz E., Mucciarelli P.,
 2008, ApJ, 673, 1067.
 Olofsson H., Gonz´alez Delgado D., Kerschbaum F., Sch¨oier F.L., 2002, A&A,
@@ -79,4 +79,3 @@ Yungelson L., Livio M., Truran J.W., Tutukov A., Fedorova A., 1996, ApJ,
 466, 890.
 Yungelson L., Livio M., Tutukov A.V., Kenyon S.J., 1995, ApJ, 447, 656.
 Yungelson L., Livio M., Tutukov A.V., Saﬀer R.A., 1994, ApJ, 420, 336.
-14

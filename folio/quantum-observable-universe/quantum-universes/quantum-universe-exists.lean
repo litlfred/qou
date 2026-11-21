@@ -11,7 +11,7 @@ LaTeX: `\label{prop:quantum-universe-exists}`
 
 ## References
 
-- [manuscript] §1-quantum-universes/quantum-universe-exists
+- [leitner2026] §1-quantum-universes/quantum-universe-exists
 - [kassel1995] Quantum Groups (Springer GTM 155), §XI
 -/
 
@@ -39,9 +39,9 @@ universe w
     This does **not** extend to `QuantumObservableUniverse`: at `A = 𝟙` the
     augmentation ideal vanishes, so `adjoint_nontrivial` fails.  QOU existence
     still rests on its own cited `sorry`. -/
--- Ref: [manuscript] §1-quantum-universes/quantum-universe-exists
+-- Ref: [leitner2026] §1-quantum-universes/quantum-universe-exists
 theorem QuantumUniverse.exists_instance (R : Type w) [CommRing R] :
-    Nonempty (QuantumUniverse.{w + 1, w, w, w, w} R) :=
+    Nonempty (QuantumUniverse.{w + 1, w, w, w} R) :=
   QOU.TrivialWitness.nonempty_quantumUniverse R
 
 end QOU

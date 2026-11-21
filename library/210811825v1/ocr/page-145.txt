@@ -1,0 +1,63 @@
+list-the-vigenvalues and their predicted multiplicities based on the numerical results.
+The FreeFEM-++ code follows the same style as that in earlier appendices; please refer
+to Appendix C for comments on how to interpret it.
+
+The fundamental polygon for Bring’s surface can be tessellated by 240 (2, 4, 5) tri-
+angles. The group action naps between the triangles in this tessellation
+give the 240 symmetries of Bring’s surface. Note that this means Bring’s surface is not a
+Hurwitz surface (recall Theorem 1.30), and that there does not exist a Hurwitz surface
+
+of genus 4. The generators of the group satisfy the following relations
+(r, 8, t|r? = 8° =? =rtrt = stst = (rs) = (sr’sr*)? =e),
+
+where r is rotation of order 5 about the center o the fundamental icosagon, s is rotation
+of order 2 about a vertex where 4 triangles meet in the tessellation by (2, 4, 5) triangles,
+and ¢ is a reflection in the real line (see [71] for more details on this group). The final
+piece of code in this appendix shows analysis of this finitely presented group in GAP. In
+
+particular, we see that it is isomorphic to S; x Ze, and show its character table.
+
+int n = 30;
+
+int nev = 100;
+
+string fm="brings—surface—Higenvalues—n30—nev100.txt"; //file name for saving
+real cx = 1.00156;
+
+real cy = 0.17178;
+
+real r = 0.180621;
+
+real s = 0.837843;
+
+real = 0.138855;
+real = sxcos(theta);
+real y sxsin(theta);
+real sxcos(pi/5—theta);
+real y sxsin(p );
+real sxcos(p );
+real y sxsin ( ;
+real s*cos ( );
+real y sxsin ( );
+real sxcos(2*pi/5+theta);
+real y sxsin (2*pi/5+theta);
+real sxcos (‘ );
+real y sxsin(; );
+real excou(S+pi/st thats);
+real y sxsin (3 pi/5 );
+real sxcos(4* pi );
+real y sxsin (4% pi );
+real sxcos(4*pi/5+theta);
+real y sxsin (4% pi );
+real sxcos(5*pi );
+real y sxsin(5*pi );
+real sxcos(5*pi/5+theta);
+real y sxsin(5*pi );
+real = sxcos(6*pi );
+real y sxsin(6*pi/5—theta);
+real sxcos(6*pi/5+theta);
+real y sxsin (6% pi/ );
+real sxcos(7*pi );
+( )
+
+real 3 s*sin(7*pi/5

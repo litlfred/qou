@@ -1,0 +1,1 @@
+A conformal structure on (M 3, T ) cannot be deformed (ex- cept by rescaling) while keeping the solid angles at the vertices of T ﬁxed; that is, the set of conformal structures with prescribed solid angles is a discrete subset of C1. Note. The proof actually shows something a bit stronger than Theorem 5.1 – we need only keep the diﬀerences between the solid angles ﬁxed.

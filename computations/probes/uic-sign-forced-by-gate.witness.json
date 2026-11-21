@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
-  "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T15:00:01.188566+00:00",
-  "commitSha": "cf13de45381038fe90515829757a2d4b8ed809af",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T08:46:08.074831+00:00",
+  "commitSha": "db9d378eed2572ec9c7b3f06b7f2947367f37ab5",
   "assertions": [
     {
       "name": "C_lambda >= 0 on every partition",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "uic-sign-forced-by-gate",
   "scriptFile": "uic_sign_forced_by_gate_probe.py",
   "scriptHash": "508870deae9b",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "scriptCommitSha": "b5a241bb2428034003892719ea91a88b9c02e593",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.16",
-    "numpy": "2.5.3",
+    "python": "3.13.18",
+    "numpy": "2.5.5",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "1909bbe0316e1236"
   },
   "invocation": {
     "argv": [
@@ -100,8 +101,8 @@
         "gated_negative": 15,
         "n_slack": 13,
         "slack_negative": 8,
-        "gated_sum": "-1.36568481708787983488824552517391627048808482049417832304465",
-        "ungated_sum": "-2.25113197732131113650186438771942010476118720999213004061417"
+        "gated_sum": "-1.36568481708787959451161177964245214072808242058583092930070",
+        "ungated_sum": "-2.25113197732131088363248304502969651893818955129344236895988"
       },
       {
         "atom": "3H",
@@ -110,8 +111,8 @@
         "gated_negative": 9,
         "n_slack": 19,
         "slack_negative": 13,
-        "gated_sum": "-0.970408945618667063118543921161231375965812032343274721543680",
-        "ungated_sum": "-1.80361722573592841252242611145289128560621863697964710552266"
+        "gated_sum": "-0.970408945618666899314013872613202712900308913914875590338592",
+        "ungated_sum": "-1.80361722573592805776946306679814885000562333115241467486018"
       },
       {
         "atom": "3He",
@@ -120,8 +121,8 @@
         "gated_negative": 9,
         "n_slack": 19,
         "slack_negative": 13,
-        "gated_sum": "-0.807940426483000953381708240147814964099658291249277836017115",
-        "ungated_sum": "-1.74659293477633870216797287095096229833854607544902699852316"
+        "gated_sum": "-0.807940426483000880574044491980859707143323484789872110918477",
+        "ungated_sum": "-1.74659293477633837235492618085893082984530843798977494882324"
       },
       {
         "atom": "4He",
@@ -130,8 +131,8 @@
         "gated_negative": 9,
         "n_slack": 18,
         "slack_negative": 12,
-        "gated_sum": "-0.802091711635765904934343561405220905152528533696837174543659",
-        "ungated_sum": "-1.37011872340989898202054828203877465445462124255346094307766"
+        "gated_sum": "-0.802091711635765891463828094512804247158109116867062670347206",
+        "ungated_sum": "-1.37011872340989884215047801412284881742524471298128226442069"
       },
       {
         "atom": "6Li",
@@ -140,8 +141,8 @@
         "gated_negative": 14,
         "n_slack": 13,
         "slack_negative": 8,
-        "gated_sum": "-1.07697056503999892320670440926302376759543981853903302840460",
-        "ungated_sum": "-1.96967839280866058979833659900274408686531494317733516847376"
+        "gated_sum": "-1.07697056503999897115246466529033561144015276202922847034445",
+        "ungated_sum": "-1.96967839280866058316649474999067879629630860644572066887787"
       }
     ],
     "retraction_2026_09_12": "The Pass-2 gate was DROPPED from the producer on 2026-09-12 (owner ruling, bean qou-21oc) after its complementary-slackness justification was refuted sorry-free (PR #7251). This probe's title claim -- that the wrong sign is FORCED BY the gate -- is thereby refuted: every atom's UNGATED sum is negative too, and larger in magnitude. What survives is steps 1 and 3 (C_lambda >= 0 everywhere; |Tr| >= d is ~10x rarer when Tr <= 0), i.e. the gate BIASED the sign, it did not create it.",

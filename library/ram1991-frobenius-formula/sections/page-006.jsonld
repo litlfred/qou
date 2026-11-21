@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/ram1991-frobenius-formula/sections/page-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 6",
+  "pageStart": 6,
+  "pageEnd": 6,
+  "contains": [
+    "library/ram1991-frobenius-formula/blocks/prose-page-006",
+    "library/ram1991-frobenius-formula/blocks/thm-page-006-01",
+    "library/ram1991-frobenius-formula/blocks/rem-page-006-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ram1991-frobenius-formula/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ram1991-frobenius-formula/manifest.jsonld",
+  "provenance": "ingested"
+}

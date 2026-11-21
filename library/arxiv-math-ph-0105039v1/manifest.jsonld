@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0105039v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0105039v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-ph-0105039v1",
+  "title": "Hyperbolic Structure Arising from a Knot Invariant",
   "contains": [
     "library/arxiv-math-ph-0105039v1/sections/sec-front-matter",
     "library/arxiv-math-ph-0105039v1/sections/sec-000",
@@ -23,10 +23,12 @@
     "library/arxiv-math-ph-0105039v1/sections/sec-008",
     "library/arxiv-math-ph-0105039v1/sections/sec-009",
     "library/arxiv-math-ph-0105039v1/sections/sec-010",
-    "library/arxiv-math-ph-0105039v1/sections/sec-011"
+    "library/arxiv-math-ph-0105039v1/sections/sec-011",
+    "library/arxiv-math-ph-0105039v1/sections/sec-012",
+    "library/arxiv-math-ph-0105039v1/sections/sec-013"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -36,7 +38,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-ph-0105039v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0105039v1.pdf",
     "source_sha256": "850e6a00721e38d0eadbdc9a3ce14b2e0d732742c8d9bfea0d4621d621c2e71c",
     "pages": 31,

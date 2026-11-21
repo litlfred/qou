@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0005296v1
-doc_title: "arXiv:math/0005296v1 [math.QA] 31 May 2000"
+doc_title: "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: 0005296v1.pdf
 source_sha256: 1714653ecfdf01bc
 toc_source: inferred
+doc_brief: "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant — Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s {τ"
 ---
 arXiv:math/0005296v1  [math.QA]  31 May 2000
 An example concerning Ohtsuki’s invariant and the full

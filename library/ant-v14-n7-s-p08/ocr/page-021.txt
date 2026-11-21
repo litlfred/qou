@@ -1,0 +1,53 @@
+Burgess bounds for short character sums evaluated at forms 1931
+
+We prove Proposition 4.5 as follows. Suppose that F has the property that its reduction modulo q
+is (d,q)-admissible. Write F = G4F in which G, Fe K(X1,...,X,) and F is d-th power-free, with
+deg F <chark. Under the assumption that the reduction modulo q of F is (d, q)-admissible, by definition
+there is no linear change of variables A € GL, (F,) such that F(xA) €Fg[x2, ..., Xn]. Hence by Lemma 3.3
+(which we may apply since deg F< q), the only value of m € &” such that F(x) = F(x+m) ism=0, so that
+
+Ty = {mek" | F(x) = F(x +m)}
+
+is certainly finite. Thus we may apply the following lemma to F (which we quote without repeating
+the proof):
+
+Lemma 4.6 [Xu 2018, Lemma 3.16]. Fix r, D > 1. There exists Co = Co(r, D) such that the following
+holds. Let k be a finite field and ko its prime field. Let H € k(x1,...,X,) be a d-th power-free rational
+
+function of degree at most D, and assume that
+Ty = {mek" | H(x)=H(x+m)}
+
+is finite. For any finite extension k/k and {aj}2" , CZ such that ged(d, a;) = | for each | <i < 2r, let Py
+
+be the collection of tuples (m™, ...,m@”) € k?"" such that the rational function nem H(x+m)4 is
+a perfect d-th power over K. Then
+#PrH < Co(#k)" (#Ty)’. (4-13)
+
+Now note that for any such set of exponents {a; ars we have that Te F(x +m)4 isa perfect d-th
+
+power if and only if
+
+2r 2r 2r d
+
+[[ fe tm) =[] Fest m4 ( [[ ee +m")
+
+i=l i=l i=l
+
+is. Thus if we define Py, respectively Pj, to be the collection of tuples (m™,2.., m2) € k"" such
+that the rational function TT F(x +m)“ is a perfect d-th power over & (or analogously for F), we
+have by Lemma 4.6 that
+
+#Pp =#Px < Co(#k)"”.
+
+This concludes the verification of Proposition 4.5 and hence of Theorem 4.1.
+
+5. Initiation of the Burgess argument
+
+We now derive the first steps of the Burgess method, generalizing the approach of [Gallagher and Mont-
+gomery 2010; Heath-Brown 2013] from the one-variable case and [Pierce 2016] in the multi-variable case.
+The central complications that are distinctive to our new stratified setting are mainly addressed in Section 6.
+
+We make the observation that given a character sum S(F; N, H) with data F, N, H, we may reorder
+the variables x;,..., x, so that the lengths Hj, ..., H, satisfy
+
+Ay < Ay <---< My. (5-1)

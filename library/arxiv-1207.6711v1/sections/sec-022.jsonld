@@ -9,15 +9,13 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Proof for internal equations",
-  "pageStart": 19,
-  "pageEnd": 20,
+  "title": "Proof for edge equations",
+  "pageStart": 18,
+  "pageEnd": 19,
   "contains": [
-    "library/arxiv-1207.6711v1/blocks/prose-sec-022",
-    "library/arxiv-1207.6711v1/blocks/lem-sec-022-01",
-    "library/arxiv-1207.6711v1/blocks/cor-sec-022-02"
+    "library/arxiv-1207.6711v1/blocks/prose-sec-022"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1207.6711v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1207.6711v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.6711v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.6711v1/manifest.jsonld",
   "provenance": "ingested"
 }

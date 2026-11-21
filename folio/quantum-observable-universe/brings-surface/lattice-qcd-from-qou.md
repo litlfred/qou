@@ -8,6 +8,8 @@ Discretizing $\Sigma$ — tessellating it into cells that each carry
 quantum-group data, with the surface-ordered product in the role of the
 $2$-holonomy — realizes a $q$-deformed lattice gauge theory on the surface.
 
+Two points about the displayed formula. When $\partial\Sigma$ bounds a disk it is the operator form of the non-Abelian Stokes theorem \cite[\S2.1.3]{broda2002}. A Seifert surface of a nontrivial knot has genus $g \geq 1$ and is not a disk; there the theorem in its original form does not apply, and the holonomy is instead written as a product of surface-ordered factors over topologically trivial pieces of $\Sigma$ \cite[\S2.3.1]{broda2002}. The single surface-ordered integral above is exact only in the disk case.
+
 Two features separate it from a naive lattice regularization. First, the
 $q$-deformed surface state-sum is triangulation-invariant: refining the
 tessellation leaves the holonomy unchanged, so no continuum limit in the cell

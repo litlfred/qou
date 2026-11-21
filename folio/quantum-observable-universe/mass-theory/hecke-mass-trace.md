@@ -3,7 +3,7 @@ be a vortex with braid representative $\beta \in B_n$, and let
 $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ be its Hecke mass element
 ([Hecke mass element](#def:hecke-mass-element)).
 
-**Proposition.**  The categorical mass
+**Conjecture.**  The categorical mass
 ([mass identity](#def:mass-identity)) equals the norm of the Markov
 trace of the Hecke mass element:
 
@@ -15,8 +15,9 @@ $$
   \bigr\rvert.
 $$
 
-Moreover, the topological decomposition
-([topological mass](#thm:topological-mass)) descends to $H_n(R, q)$:
+Moreover, the splitting into descended and transient parts used in the
+[topological decomposition of mass](#conj:topological-mass) descends to
+$H_n(R, q)$:
 
 $$
   \mathrm{tr}_M\!\bigl(\Phi_{\mathrm{mass}}(\beta)\bigr)

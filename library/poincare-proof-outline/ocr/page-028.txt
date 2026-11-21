@@ -1,0 +1,77 @@
+The constructed line is an h-line in the Poincaré model (in all cases when the two points are different)
+
+lemma is-poincare-line-poincare-line [simp]:
+assumes z 4 w
+shows is-poincare-line (poincare-line z w)
+using poincare-line-typelof z w, OF assms|
+proof (transfer, transfer)
+fix zw
+assume vz: z # vec-zero w # vec-zero
+obtain A B C D where *: poincare-line-cvec-cmat z w = (A, B, C, D)
+by (cases poincare-line-cvec-cmat z w) auto
+assume circline-type-cmat (poincare-line-cvec-cmat zw) = — 1
+thus is-poincare-line-cmat (poincare-line-cvec-cmat z w)
+using vz *
+using poincare-line-cvec-cmat-hermitean|of z w]
+using poincare-line-cvec-cmat-nonzero|of z w]
+using poincare-line-cvec-cmat-AeqD[of z w A B C D]
+using hermitean-elems|of A B C D|
+using cmod-power2[of D] cmod-power2|of C]
+unfolding is-poincare-line-cmat-def
+by (simp del: poincare-line-cvec-cmat-def add: sgn-1-neg power2-eq-square)
+qed
+
+When the points are different, the constructed h-line between two points also contains their inverses
+
+lemma poincare-line-inversion:
+
+assumes z 4 w
+
+shows on-circline (poincare-line z w) (inversion z)
+on-circline (poincare-line z w) (inversion w)
+
+using assms
+
+using is-poincare-line-poincare-line|OF «z # w]
+
+using is-poincare-line-inverse-point
+
+unfolding circline-set-def
+
+by auto
+
+When the points are different, the onstructed h-line between two points contains the inverse of its every point
+
+lemma poincare-line-inversion-full:
+assumes u # v
+assumes on-circline (poincare-line u v) x
+shows on-circline (poincare-line u v) (inversion 2)
+using is-poincare-line-inverse-point|of poincare-line u v |
+using is-poincare-line-poincare-line|OF <u # v»] assms
+unfolding circline-set-def
+by simp
+
+4.2.2 Existence of h-lines
+
+There is an h-line trough every point in the Poincaré model
+
+lemma ex-poincare-line-one-point:
+shows 4 I. is-poincare-line | A z € circline-set |
+proof (cases z = 0n)
+case True
+thus ?thesis
+by (rule-tac c=2-avis in exI) simp
+next
+case False
+thus ?thesis
+by (rule-tac «=poincare-line 0; z in exl) auto
+qed
+
+lemma poincare-collinear-singleton [simp]:
+assumes u € unit-disc
+shows poincare-collinear {u}
+using assms
+using exz-poincare-line-one-point[of u|
+by (auto simp add: poincare-collinear-def)
+
+28

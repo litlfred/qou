@@ -1,0 +1,67 @@
+by presburger
+finally show ?thesis
+using assms
+by simp
+qed
+
+lemma calc-ideal-point-2-unit:
+assumes is-real A (cmod B)? > (cmod A)?
+assumes (21, 22) = calc-ideal-point2-cvec A B
+shows z1 * cnj z1 = 22 * cnj 22
+proof—
+let ?discr = Re ((cmod B)? — (Re A)?)
+have ?discr > 0
+using assms
+by (simp add: cmod-power2)
+have (Bx(—A + ixsgrt(?discr))) « enj (Bx(—A + ixsgrt(?discr))) = (B * cnj B) * (A? + cor (abs ?discr))
+using <is-real Ay eq-cnj-iff-real|of A]
+by (simp add: field-simps power2-eq-square)
+also have ... = (B * cnj B) * (emod B)?
+using <?discr > 0»
+using assms
+using comple-of-real-Re[of (cmod B)? — (Re A)?| complez-of-real-Re[of A] <is-real A»
+by (simp add: power2-eq-square)
+also have ... = (cmod B)? * cnj ((cmod B)?)
+using complez-cnj-complez-of-real complez-mult-cnj-cmod
+by presburger
+finally show ?thesis
+using assms
+by simp
+qed
+
+lemma calc-ideal-points-on-unit-circle:
+shows V z € calc-ideal-points H. z € circline-set unit-circle
+unfolding circline-set-def
+apply simp
+proof (transfer, transfer)
+fix H
+assume hh: hermitean H \ H # mat-zero
+obtain A B C D where «: H = (A, B, C, D)
+by (cases H, auto)
+have V (z1, 22) € calc-ideal-points-cmat-cvec H. 21 * cnj 21 = 22 * cnj 22
+using hermitean-elems|of A B C D|
+unfolding calc-ideal-points-cmat-cvec-def
+using calc-ideal-point-1-unit[of A B]
+using calc-ideal-point-2-unit[of A B]
+using hh *
+apply (cases calc-ideal-point1-cvec A B, cases calc-ideal-point2-cvec A B)
+apply (auto simp add: Let-def simp del: calc-ideal-point1-cvec-def calc-ideal-point2-cvec-def )
+done
+thus Ball (calc-ideal-points-cmat-cvec H) (on-circline-cmat-cvec unit-circle-cmat)
+using on-circline-cmat-cvec-unit
+by (auto simp del: on-circline-cmat-cvec-def calc-ideal-points-cmat-cvec-def )
+qed
+
+Calculated ideal points are on the h-line
+
+lemma calc-ideal-point1-sq:
+assumes (21, 22) = calc-ideal-point1-cvec A B is-real A (cmod B)* > (emod A)?
+shows 21 * cnj zl + 22 * cnj z2 = 2 * (B * cnj B)?
+proof—
+let ?discr = Re ((emod B)? — (Re A)?)
+have ?discr > 0
+using assms
+by (simp add: cmod-power2)
+have z1 * cnj zl = (B * cnj B) * (—A + ixsqrt(?discr))*(—A — ixsqrt( ?discr))
+using assms eq-cnj-iff-real[of A]
+by (simp)

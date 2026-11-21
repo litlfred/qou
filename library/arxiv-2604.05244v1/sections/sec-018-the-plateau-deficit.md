@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 0.994
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 For a single spinless channel with energy-independent transmission $\mathcal T$ at zero temperature, the standard photo-assisted partition noise is [@LesovikLevitov1994; @PedersenBuett1998; @BlanterBuettiker2000] $$S_I(V) = \frac{2e^2}{h}\,\mathcal T(1-\mathcal T)\sum_{n\in\mathbb Z} J_n^2(A)\,|eV+n\hbar\Omega|.
   \label{eq:PAN}$$ Equation [\[eq:PAN\]](#eq:PAN){reference-type="eqref" reference="eq:PAN"} is the standard PASN expression, well established both theoretically [@LesovikLevitov1994; @VanevicNazarovBelzig2007] and experimentally [@Schoelkopf1998; @Reydellet2003]. The new result here is its large-$A$ edge asymptotics: we show that the derivative $dS_I/dV$ near the highest active sideband isolates the diagonal discrete Bessel kernel, and that the resulting plateau deficit collapses onto the Airy kernel diagonal under universal scaling.

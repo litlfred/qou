@@ -228,7 +228,7 @@ theorem oneDim_character_closed_form [CommRing R] [Invertible (2 : R)]
 
 /-! ## Specialisations: trivial-irrep formula -/
 
--- Ref: [manuscript] prop:hecke-1d-irrep-closed-form-character §"Proof"
+-- Ref: [leitner2026] prop:hecke-1d-irrep-closed-form-character §"Proof"
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
 /-- **Trivial-irrep character closed form.** For `λ_σ = +q`,
     `χ_(n)_q(β) = q^w · ([2]_q / 2)^m`. -/
@@ -237,14 +237,14 @@ theorem hecke_1d_trivial_character_closed_form [CommRing R] [Invertible (2 : R)]
     oneDimCharacter q q β
       = ((q ^ (writhe β) : Rˣ) : R) * (⅟(2 : R) * qInt2 q) ^ (averagedCount β) := by
   -- From oneDim_character_closed_form + trivial_action_averaged.
-  -- Ref: [manuscript] prop:hecke-1d-irrep-closed-form-character §"Specialisation V_(n)"
+  -- Ref: [leitner2026] prop:hecke-1d-irrep-closed-form-character §"Specialisation V_(n)"
   rw [oneDim_character_closed_form q q β]
   congr 1
   exact congrArg (· ^ averagedCount β) (trivial_action_averaged (R := R) q)
 
 /-! ## Specialisations: sign-irrep formula -/
 
--- Ref: [manuscript] prop:hecke-1d-irrep-closed-form-character §"Proof"
+-- Ref: [leitner2026] prop:hecke-1d-irrep-closed-form-character §"Proof"
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
 /-- **Sign-irrep character closed form.** For `λ_σ = -q⁻¹`,
     `χ_(1^n)_q(β) = (-q⁻¹)^w · (-[2]_q / 2)^m`. -/
@@ -265,7 +265,7 @@ We define it as the conjunction of both specialisations, which together
 exhaust the 1-d slice of the Wedderburn decomposition for any `H_n(q)`.
 -/
 
--- Ref: [manuscript] prop:hecke-1d-irrep-closed-form-character
+-- Ref: [leitner2026] prop:hecke-1d-irrep-closed-form-character
 /-- **Universal 1-d Hecke irrep character closed form.** Combines the
     trivial and sign specialisations into the canonical export. -/
 theorem hecke_1d_irrep_closed_form_character [CommRing R] [Invertible (2 : R)]
@@ -301,7 +301,7 @@ namespace QOU.Hecke1dIrrepClosedFormCharacter.ConditionalAudit
     of pairwise linking numbers `pairLink : Fin 3 → Fin 3 → ℤ` that
     vanishes on every pair (`pairLink i j = 0`) — the algebraic
     signature of the Borromean property. -/
--- Ref: [manuscript] conj:borromean-quark
+-- Ref: [leitner2026] conj:borromean-quark
 class BorromeanQuark : Prop where
   /-- The three colour-tube constituents are pairwise unlinked:
       every pairwise linking number vanishes (Borromean signature). -/

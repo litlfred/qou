@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bm-markov-j",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bm-markov-j/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,7 +29,7 @@
     "library/bm-markov-j/sections/page-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "bm-markov-j",
     "title_source": "slug",

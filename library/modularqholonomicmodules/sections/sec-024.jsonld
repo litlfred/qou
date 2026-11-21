@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "State integral",
-  "pageStart": 46,
-  "pageEnd": 47,
+  "title": "Residues",
+  "pageStart": 43,
+  "pageEnd": 45,
   "contains": [
-    "library/modularqholonomicmodules/blocks/prose-sec-024"
+    "library/modularqholonomicmodules/blocks/prose-sec-024",
+    "library/modularqholonomicmodules/blocks/lem-sec-024-01",
+    "library/modularqholonomicmodules/blocks/lem-sec-024-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
   "provenance": "ingested"
 }

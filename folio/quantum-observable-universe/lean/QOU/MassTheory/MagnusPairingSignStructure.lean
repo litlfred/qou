@@ -78,4 +78,22 @@ theorem magnus_pairing_sign_indefinite :
       0 < (ρp * (A * B - B * A)).trace ∧ (ρn * (A * B - B * A)).trace < 0 := by
   refine ⟨!![0, 1; 0, 0], !![0, 0; 1, 0], !![1, 0; 0, 0], !![0, 0; 0, 1], ?_, ?_⟩ <;> decide
 
+/-- **Scalar-identity density control (`qou-dp32`).** For any scalar multiple
+    `c • 1` of the identity density matrix, the linear Magnus commutator trace
+    pairing vanishes identically: `tr((c • 1) · (A·B − B·A)) = 0`. -/
+theorem trace_scalar_mul_commutator_eq_zero {R : Type*} [CommRing R] {n : Type*} [Fintype n]
+    [DecidableEq n] (c : R) (A B : Matrix n n R) :
+    ((c • (1 : Matrix n n R)) * (A * B - B * A)).trace = 0 := by
+  rw [smul_mul_assoc, one_mul, Matrix.trace_smul, trace_commutator_eq_zero, smul_zero]
+
+/-- **Commutator-reversal antisymmetry (`qou-dp32`).** Swapping the order of the
+    generators `A, B` in the Magnus commutator `⁅A, B⁆ = A·B − B·A` negates the
+    linear trace pairing against any density matrix `ρ`. -/
+theorem trace_pairing_commutator_swap {R : Type*} [CommRing R] {n : Type*} [Fintype n]
+    (ρ A B : Matrix n n R) :
+    (ρ * (B * A - A * B)).trace = - (ρ * (A * B - B * A)).trace := by
+  have hsub : ρ * (B * A - A * B) = - (ρ * (A * B - B * A)) := by
+    rw [mul_sub, mul_sub, neg_sub]
+  rw [hsub, Matrix.trace_neg]
+
 end QOU.MassTheory

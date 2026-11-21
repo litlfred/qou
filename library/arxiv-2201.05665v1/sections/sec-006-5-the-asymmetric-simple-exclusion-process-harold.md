@@ -7,10 +7,11 @@ section_number: 5
 pages: 10-14
 source_pdf: 2201.05665v1.pdf
 source_sha256: bad7bde03d199a73
-doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.998
-latex_coverage_ratio: 0.986
+latex_prose_ratio: 0.959
+latex_coverage_ratio: 0.976
+doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
 ---
 The asymmetric simple exclusion process (ASEP) was introduced (in the probability literature) in Spitzer's 1970 work [@Sp]. It is a continuous time Markov process of interacting particles on the integer lattice ${\Bbb Z}$. A particle at a location $x$ waits an exponential time with parameter one (independently of all other particles). When that time has elapsed, the particle flips a coin and with probability $p$ attempts to jump one position to the right, and with probability $q=1-p$ attempts to jump one position to the left. These jumps are achieved only if the destination site is unoccupied at that time. Due to the memoryless property of the exponential distribution, this defines a Markov process. See Figure [2](#fig:asep){reference-type="ref" reference="fig:asep"} for an illustration of ASEP. Since its appearance, the ASEP model has attracted immense attention in both the mathematical and physics communities, due to the fact that this is one of the simplest nontrivial processes modeling nonequilibrium phenomena.
 

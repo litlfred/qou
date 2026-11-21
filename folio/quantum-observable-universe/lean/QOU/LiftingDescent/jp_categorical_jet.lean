@@ -31,7 +31,7 @@ category, and inherits a Frobenius--Hopf structure
 $(\Delta', \varepsilon', S')$ from $A$.
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts
 theorem jp_categorical_jet [ctx : JpCategoricalJetContext] :
     ∀ x : ctx.J1A, ctx.S' (ctx.S' x) = x :=
   ctx.antipode_involutive

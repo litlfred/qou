@@ -3,21 +3,142 @@
  "doc_id": "aif-2000-50-4-1021-0",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a7ca398590a266d8753d1b7ccbcb80c47bb38d937e3a86113aade5f13342e4dc",
   "file": "AIF_2000__50_4_1021_0.pdf"
  },
  "provenance": {
-  "title": null,
-  "authors": null,
+  "title": "Syst\u00e8mes aux q-diff\u00e9rences singuliers r\u00e9guliers : classification, matrice de connexion et monodromie",
+  "authors": "JACQUES SAULOY",
   "arxiv": null,
   "doi": null
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 4,
+  "by_kind": {
+   "proposition": 4
+  },
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "in-paper": 3,
+   "elsewhere": 1
+  },
+  "by_lean_status": {
+   "unformalized": 4
+  },
+  "needs_lean_proof": 4
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "\u2014 Le syst\u00e8me (TqM = UM admet une unique solution \u00e0 coefficients dans C[\u00a3q\\ = Z^x)0^ soit M = 40;^o + ^M^ 4- \u2022 \u2022 -, ANNALES DE L'INSTITUT FOURIER SYST\u00c8MES AUX ^-DIFF\u00c9RENCES SINGULIERS R\u00c9GULIERS telle que Mo = In- Cette solution est d\u00e9finie par Mj\u00e7 = N1^ pour tout k >_ 0. Elle commute avec N etU. On le prouve par identification; les iq sont en effet lin\u00e9airement ind\u00e9pendants sur C, autrement dit, tq est transcendant (voir annexe A). L'exponentielle d'une matrice niipotente et le logarithme d'une matrice unipotente \u00e9tant d\u00e9finies sur un corps commutatif de caract\u00e9ristique 0 quelconque, cette solution vaut donc U^ = exp(\u00a3q log(J, + N)} = ^ (^ )^.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-008-112-cas-dun-syst\u00e8me-\u00e0-coefficients-constants.md (p. 11-14)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-008-112-cas-dun-syst\u00e8me-\u00e0-coefficients-constants.md",
+   "section_title": "Cas d'un syst\u00e8me \u00e0 coefficients constants",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-008-112-cas-dun-syst\u00e8me-\u00e0-coefficients-constants.md (p. 11-14)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-008-01",
+   "block_iri": "library/aif-2000-50-4-1021-0/blocks/prop-sec-008-01",
+   "claim_id": "aif-2000-50-4-1021-0#prop-sec-008-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "(i) lim^o+(\u00e7 - 1)W = log(-^). (ii) Si (c - 1)/(<7 - 1) -^ 7, alors lim^o+ <\u00b0g,c(^) = (-^)7- II s'agit des d\u00e9terminations principales sur l'ouvert simplement connexe ^ = S - q^ = C* - q^ (resp. -1 i-^ 0, -1 \u00bb-^ 1). Pour prouver cette proposition, on introduit la fonction \u00eb(r,;r)=9,(e2\u2014), qui v\u00e9rifie l'\u00e9quation fonctionnelle (voir [15], [17]) \u00a9(^) = ^^^i^ \u00a9( - ^ ^)- Soit a G C; on cherche un \u00e9quivalent de Qq(qoiz) = 6(r,.r \u2014 ra) lorsque e = T/TO ^ O^ L'\u00e9quation fonctionnelle se r\u00e9\u00e9crit Q(r,x-ra) = . , ., v i, .n^Qf- -'-^ +\u00fb-). v \u00e7(\u00ee7r/T)(a;-ra-^(r+l))2 \\ T T / Le \u00ab facteur d'automorphie \u00bb vaut /^^-\u00c7i^/r){x- \\ )2 \u00e72t7r(a+ ^ )(o:- \\ )(l+0(r)) ave",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [15], [17] in sections/sec-022-31-estimation-asymptotique-de-eqc-et-de-iq.md",
+   "external_refs": [
+    "[15]",
+    "[17]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-022-31-estimation-asymptotique-de-eqc-et-de-iq.md",
+   "section_title": "Estimation asymptotique de eq^c et de iq",
+   "pages": "25-28",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [15], [17] in sections/sec-022-31-estimation-asymptotique-de-eqc-et-de-iq.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-022-01",
+   "block_iri": "library/aif-2000-50-4-1021-0/blocks/prop-sec-022-01",
+   "claim_id": "aif-2000-50-4-1021-0#prop-sec-022-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "\u2014 X converge uniform\u00e9ment vers X sur un disque ouvert non vide D{0, r) C f^o-",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-025-331-\u00e9tude-locale.md (p. 31-31)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-025-331-\u00e9tude-locale.md",
+   "section_title": "\u00c9tude locale",
+   "pages": "31-31",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-025-331-\u00e9tude-locale.md (p. 31-31)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-025-01",
+   "block_iri": "library/aif-2000-50-4-1021-0/blocks/prop-sec-025-01",
+   "claim_id": "aif-2000-50-4-1021-0#prop-sec-025-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "\u2014 Dans ces conditions, on a une \u00e9quivalence : TT ^(T? x(t ) ^ \u00e7-(^/To)B^-(27r/To)A/e ^ 11 Q(^o) En particulier, si A = 0, il y a une limite finie non nulle.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-033-532-am\u00e9lioration-des-estimations-de-\u00f4.md (p. 42-43)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-033-532-am\u00e9lioration-des-estimations-de-\u00f4.md",
+   "section_title": "Am\u00e9lioration des estimations de \u00f4",
+   "pages": "42-43",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-033-532-am\u00e9lioration-des-estimations-de-\u00f4.md (p. 42-43)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-033-01",
+   "block_iri": "library/aif-2000-50-4-1021-0/blocks/prop-sec-033-01",
+   "claim_id": "aif-2000-50-4-1021-0#prop-sec-033-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
 }

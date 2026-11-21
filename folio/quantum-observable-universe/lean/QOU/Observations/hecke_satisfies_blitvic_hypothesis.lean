@@ -154,7 +154,7 @@ theorem hecke_satisfies_blitvic_hypothesis
     ∀ (w : List ℕ), w.length % 2 = 1 →
       HeckeSatisfiesBlitvicHypothesisContext.centredMoment w = 0 := by
   -- Ref: [blitvic2012] https://doi.org/10.1016/j.jfa.2012.08.006
-  -- Ref: [manuscript] observations/hecke-satisfies-blitvic-hypothesis.md
+  -- Ref: [leitner2026] observations/hecke-satisfies-blitvic-hypothesis.md
   suffices H : ∀ n, ∀ w : List ℕ, w.length = n → n % 2 = 1 →
       HeckeSatisfiesBlitvicHypothesisContext.centredMoment w = 0 by
     intro w hw; exact H w.length w rfl hw

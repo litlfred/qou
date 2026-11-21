@@ -5,27 +5,23 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/exploring-the-geometric-buchberger-algorithm-in-integer-prog",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/exploring-the-geometric-buchberger-algorithm-in-integer-prog/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "exploring-the-geometric-buchberger-algorithm-in-integer-prog",
   "contains": [
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-000",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-001",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-002",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-003",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-004",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-005",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-006",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-007",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-008",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-009",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-010",
-    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/sec-011"
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-001",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-002",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-003",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-004",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-005",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-006",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-007",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-008"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "exploring-the-geometric-buchberger-algorithm-in-integer-prog",
     "title_source": "slug",
@@ -33,9 +29,9 @@
     "source_sha256": "73854bc5e3bcffb077c7b33c26ca1cb507db17677f21112024bea49d2484bef1",
     "pages": 8,
     "arxiv": null,
-    "doi": "10.1145/3666000.3669706",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

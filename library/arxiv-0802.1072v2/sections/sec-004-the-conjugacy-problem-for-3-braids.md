@@ -5,12 +5,13 @@ section_id: sec-004-the-conjugacy-problem-for-3-braids
 section_title: "The conjugacy problem for 3-braids"
 section_number: null
 pages: 5-6
-source_pdf: 0802.1072v2 (1).pdf
+source_pdf: 0802.1072v2.pdf
 source_sha256: 6f4d93f0b7ba5cd7
-doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.99
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.995
+doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
 []{#SS:the conjugacy problem label="SS:the conjugacy problem"} The conjugacy problem is close-by. The *summit set* of $W$, denoted SS($W)$, is the subset of those elements in the conjugacy class of $W$ which, when represented by words in normal form, have maximal power. It is, by definition, invariant under conjugation by powers of $\delta$. Even more, it must be finite, for the following reasons. The defining relations in the band presentation preserve the algebraic sum of the exponents of an element in $B_3$, and conjugation does too. Therefore the algebraic sum is a class invariant, and from this it follows that every time that the power is increased by conjugation, the tail goes down in letter length, until we reach the summit set. As for the summit set, it must be finite because the letter length of the tail of a word in SS$(W)$ is finite and is an invariant. The summit set is Xu's basic invariant of the conjugacy class of $W$. This was the invariant in Garside's algorithm in [@Ga], however in the special case of $B_3$, using the band presentation, Xu was able to determine SS$(W)$ rapidly, and choose a unique symbol $\Sigma^\star(W)$ with the property that two elements $W,W'$ are conjugate if and only if $\Sigma^\star(W) = \Sigma^\star(W')$. Her unique symbol is defined as follows. Suppose that $X = \delta^m a_{i_1}^{l_1}a_{i_2}^{l_2}\cdots a_{i_t}^{l_t}$ is in the summit set of $W$. She associates to $X$ the array $\Sigma(X) = (m,(l_1,l_2,\dots,l_t))$. The integer $m$ is fixed (and is minimal for the conjugacy class. Her representative $\Sigma^\star(W)$ is chosen so that $t$ is minimal, and so that among all sequences with the same $t$ it is lexicographically smallest. Thus, for example, $(5,(2,2))<  (5,(1,2,1))$ and $(5,(1,3))<(5,(2,2))$. She proves that $W, W'\in B_3$ are conjugate if and only if $\Sigma^\star(W) = \Sigma^\star(W')$. We illustrate the algorithm via an example.
 

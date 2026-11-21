@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-007-53-natural-growth-by-a-single-node
 section_title: "Natural growth by a single node"
 section_number: 5.3
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.928
 latex_coverage_ratio: 1.0
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 There is a clear candidate for the second operator: the natural growth operator $N$, which appends a single node in all possible ways, and hence obeys a Leibniz rule.
 

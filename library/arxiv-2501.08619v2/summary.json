@@ -1,0 +1,100 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2501.08619v2",
+ "source_sha256": "29ce7af1791830fb",
+ "brief": "Lattice QCD calculation of the Compton amplitude subtraction function — 16 sections: Front matter; Lattice QCD calculation of the Com; Introduction",
+ "extended": "**Lattice QCD calculation of the Compton amplitude subtraction function**\n\n*T. Schar,1 G. Schierholz,4 H. Stüben,5 R. D. Young,1 and J. M. Zanotti1*\n\n15 pp, 16 sections.\n\n**Outline.** Front matter; Lattice QCD calculation of the Compton amplitu; Introduction; Background; Feynman-Hellmann method; Lattice determination; Subtraction Function Results; Discretisation artefacts; Free fermion; Proton subtraction function; Evaluation of the discretisation artefact; Improved subtraction function; Summary and Conclusions; Acknowledgements; Details of Lattice Operator Product Expansion; Tabulated Subtraction Function Results",
+ "tokens": {
+  "brief": 36,
+  "extended": 155
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-lattice-qcd-calculation-of-the-compton-amplitude",
+   "title": "Lattice QCD calculation of the Compton amplitude subtraction function",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-background",
+   "title": "Background",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-feynman-hellmann-method",
+   "title": "Feynman-Hellmann method",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-lattice-determination",
+   "title": "Lattice determination",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-subtraction-function-results",
+   "title": "Subtraction Function Results",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-discretisation-artefacts",
+   "title": "Discretisation artefacts",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-007-free-fermion",
+   "title": "Free fermion",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-008-proton-subtraction-function",
+   "title": "Proton subtraction function",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-009-evaluation-of-the-discretisation-artefact",
+   "title": "Evaluation of the discretisation artefact",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-010-improved-subtraction-function",
+   "title": "Improved subtraction function",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-011-summary-and-conclusions",
+   "title": "Summary and Conclusions",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-012-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-013-details-of-lattice-operator-product-expansion",
+   "title": "Details of Lattice Operator Product Expansion",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-014-tabulated-subtraction-function-results",
+   "title": "Tabulated Subtraction Function Results",
+   "pages": "14-15"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

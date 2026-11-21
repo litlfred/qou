@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1006.1099v3/sections/sec-033",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Exterior Algebra",
+  "pageStart": 56,
+  "pageEnd": 59,
+  "contains": [
+    "library/arxiv-1006.1099v3/blocks/prose-sec-033",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-033-01",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-033-02",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-033-03",
+    "library/arxiv-1006.1099v3/blocks/cor-sec-033-04",
+    "library/arxiv-1006.1099v3/blocks/rem-sec-033-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
+  "provenance": "ingested"
+}

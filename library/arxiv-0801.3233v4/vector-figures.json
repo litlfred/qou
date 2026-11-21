@@ -1,0 +1,57 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-0801.3233v4",
+  "figures": [
+    {
+      "id": "vfig-p008",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 8
+      },
+      "page": 8,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 2,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              235.76,
+              633.04,
+              402.76,
+              633.04
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              242.95,
+              660.01,
+              423.64,
+              660.01
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    }
+  ]
+}

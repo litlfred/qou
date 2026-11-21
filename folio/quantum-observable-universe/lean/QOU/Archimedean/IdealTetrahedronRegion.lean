@@ -51,7 +51,7 @@
 
   -- Ref: [milnor1982] Appendix (the normalization quoted above)
   -- Ref: [thurston1978] Ch. 7
-  -- Ref: [manuscript] beans qou-5gai (H3), qou-w3eg, qou-idvt (T2)
+  -- Ref: [leitner2026] beans qou-5gai (H3), qou-w3eg, qou-idvt (T2)
 -/
 
 import QOU.Archimedean.HyperbolicVolumeMeasure

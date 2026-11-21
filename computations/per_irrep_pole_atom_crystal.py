@@ -448,10 +448,26 @@ def verify_atom(
     }
 
 
+def _selftest() -> int:
+    """Fast self-test (bean qou-g94g): verify proton and deuteron crystal
+    u-pole orders and the measured 16Z + 20N + 2 vs asserted 18Z + 21N + 1
+    gap without overwriting the committed witness."""
+    r_p = verify_atom("proton", 1, 0, 19, asserted=True, verbose=False)
+    r_d = verify_atom("²H", 1, 1, 40, asserted=True, verbose=False)
+    assert r_p["u_pole_order_inferred"] == 16 * 1 + 20 * 0 + 2 == 18, r_p
+    assert r_p["expected_shift"] == 18 * 1 + 21 * 0 + 1 == 19, r_p
+    assert r_d["u_pole_order_inferred"] == 16 * 1 + 20 * 1 + 2 == 38, r_d
+    assert r_d["expected_shift"] == 18 * 1 + 21 * 1 + 1 == 40, r_d
+    print("self-test: ok (proton pole_u=18 vs 19; deuteron pole_u=38 vs 40)")
+    return 0
+
+
 def main(argv: list[str]) -> int:
     """Run the crystal-asymptotic Path A pole-order check across
     all listed atoms.  Stops at the first MISMATCH unless
     `--continue-on-mismatch` is passed."""
+    if "--self-test" in argv or "--selftest" in argv:
+        return _selftest()
     cont = "--continue-on-mismatch" in argv
     only = None
     if "--only" in argv:

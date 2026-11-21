@@ -1,0 +1,43 @@
+1926 Lillian B. Pierce and Junyan Xu
+
+we have that whenever chark ¢ S, there exist subschemes
+A2"” = Xp DX, DX2d--- DX,
+such that for each 1 < j <n,
+
+(1) the sum of the degrees of irreducible components of X ; is at most C’,
+(2) dim X; < 2nr — 6; with 6; defined as in (4-1);
+(3) forall (x, ..., x2) € A" (K)\ Xj («),
+
+IS, 2.2, xP) < CHI D?,
+
+Remark. The hypothesis that for each 1 <i <2r, x; has order d; > 0 could allow that x; is the principal
+character. However, if x; is principal then d; = 1 and hence to be d;-th power-free F; € k(x1,..., Xn)
+must be a constant function. This implies that T,, is infinite, thus excluding this possibility from the
+theorem. This remark applies to Corollary B, below, and the resulting Theorem 4.1 and Corollary 4.2.
+
+Remark. Note that while the subschemes X; may depend on the Fj, the parameters C, C’, 0; depend
+only on the maximum degree D of the F;. The constant C = C(n, r, D) noted above is bounded above
+by (4r(D + 1)+ 1)” as computed in [Katz 2001, Theorem 11] (see the remarks following Theorem 1.1 in
+[Xu 2018], again recalling that we have 2r in place of r). The constant C’ (and later C” in Corollary 4.3)
+only depends on n, r, D, A but is not explicitly determined. For further details on the dependence of C’
+and C” see [Xu 2018, Section 2.1, and the remark following Theorem 1.1] and Corollary 4.3.
+
+Next, we must convert Theorem A into a count for the number of points (x, 2.2, xP) © A"" (x)
+(later denoted as collections {x“), ..., x°”)}) such that a given upper bound for |S(x, ..., x”)| holds.
+It is convenient to define for each 0 < j <n and any sequence | < kj < kp <--: < ky, < oo the function
+
+1 if 7 =0,
+KY IDOI it fad... n 2,
+Br Gs) = Bur Gs kis oes kn) = kit ar if j=n-], (4-5)
+(ky ++ Knj2)" if j =n,n even,
+
+(ky ad Kn /2)"" Kong if j =n,n odd.
+(To aid comparison to Xu’s original notation [2018] involving parameters denoted by 9, 7, we make the
+simple observation that for j = and 6; =nr, if n is even we write nr = (n/2)2r (with ng = n/2 and
+n = 0) and when n is odd we write nr = ((n — 1)/2)-2r +r (with no = (n — 1)/2 and n =r), so that
+Xu’s original notation results in the expression stated above for B, (j,k) in the case j =n, and with
+ambient dimension 2r.)
+
+Corollary B [Xu 2018, Corollary 1.8]. Let integers n,r, A, D > 1 be fixed. There exist integers
+C =C(n,r, D) = 1 and C' = C'(n,r, A, D) = 1 and a finite set S = S(n,r, A, D) of primes such
+that the following holds.

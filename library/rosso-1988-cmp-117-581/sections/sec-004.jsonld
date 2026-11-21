@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/rosso-1988-cmp-117-581/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Weyl group W acts on the set P of weights. Each weight subspace Vμ is finite dimensional and dim Vσμ = dim Vμ V σeW.",
+  "pageStart": 10,
+  "pageEnd": 10,
+  "contains": [
+    "library/rosso-1988-cmp-117-581/blocks/prose-sec-004"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/rosso-1988-cmp-117-581/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/rosso-1988-cmp-117-581/manifest.jsonld",
+  "provenance": "ingested"
+}

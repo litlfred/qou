@@ -8,6 +8,7 @@ pages: 6-7
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
 toc_source: inferred
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 18 sections: Front matter; Contents; Introduction."
 ---
 We shall now apply the above construction with Go replaced by G ≈Go × Go. B will again denote the
 ﬂag manifold of g, Bo that of Go, so that B = Bo × Bo. N = No × No is the nilpotent cone in g∗, No that

@@ -1,0 +1,73 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2311.15631v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "a3cc6d51cd04fc0736955afa21ff937ff60793a255bc282e835a6e7b662688db",
+  "file": "2311.15631v3.pdf"
+ },
+ "provenance": {
+  "title": "Classification of connected \u00e9tale algebras in pre-modular fusion categories up to rank three",
+  "authors": "Ken KIKUCHI",
+  "arxiv": {
+   "id": "2311.15631",
+   "version": "3",
+   "primary_class": "math.QA",
+   "stamp_date": "2 May 2024"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "lemma": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "both": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "There does not exist a pre-modular fusion category with fusion ring K(psu(2)5) and trivial conformal dimension. In other words, all pre-modular fusion categories with fu- sion ring K(psu(2)5) are modular.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-007-conformal-dimensions-of-bpsu25.md (p. 26-30) citing [30], [34]",
+   "external_refs": [
+    "[30]",
+    "[34]"
+   ],
+   "proof_excerpt": "Assume the opposite, and suppose there exist pre-MFCs with trivial conformal dimensions obeying the fusion ring K(psu(2)5). When conformal dimensions are trivial, they turn out to be symmetric. For a symmetric fusion category B, there exists a \ufb01nite group G such that B \u2243Rep(G) [3",
+   "section_file": "sections/sec-007-conformal-dimensions-of-bpsu25.md",
+   "section_title": "Conformal dimensions of Bpsu(2)5",
+   "pages": "26-30",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-007-conformal-dimensions-of-bpsu25.md (p. 26-30) citing [30], [34]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-007-01",
+   "block_iri": "library/arxiv-2311.15631v3/blocks/lem-sec-007-01",
+   "claim_id": "arxiv-2311.15631v3#lem-sec-007-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

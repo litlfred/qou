@@ -47,7 +47,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt as _fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, vol_4_1_at  # noqa: E402
 
@@ -152,7 +152,7 @@ def main():
     print(f"  (9/5)^2 = {mp.nstr(seifert_K**2, 10)}")
     print(f"  m_K/m_pi predicted = {mp.nstr(kaon_base, 12)}")
     print(f"  m_K/m_pi PDG      = {mp.nstr(m_K / m_pi, 12)}")
-    print(f"  Error: {float(kaon_err_ppm):.1f} ppm")
+    print(f"  Error: {float(kaon_err_ppm):.1f} ppm")  # float64-ok: stdout display only
 
     # ================================================================
     # SECTION 3: CANDIDATE FORMULAS FOR ETA AND PHI
@@ -312,7 +312,7 @@ def main():
     eta_K_ratio = m_eta / m_K
     print(f"  m_eta / m_K = {mp.nstr(eta_K_ratio, 12)}")
     print(f"  q_0         = {mp.nstr(q, 12)}")
-    print(f"  Difference: {float(mp.fabs(eta_K_ratio - q) / q * 1e6):.1f} ppm")
+    print(f"  Difference: {float(mp.fabs(eta_K_ratio - q) / q * mp.mpf('1e6')):.1f} ppm")  # float64-ok: stdout display only
     print()
 
     # E1: eta = m_K * q (stunning if it holds!)
@@ -372,11 +372,11 @@ def main():
     # Apply R to kaon base
     kaon_with_R = kaon_base * R_tower
     kaon_R_err = mp.fabs(kaon_with_R - m_K / m_pi) / (m_K / m_pi) * mp.mpf("1e6")
-    print(f"  Kaon with R: m_K/m_pi = {mp.nstr(kaon_with_R, 12)} (err {float(kaon_R_err):.1f} ppm)")
-    print(f"  Kaon without R:        {mp.nstr(kaon_base, 12)} (err {float(kaon_err_ppm):.1f} ppm)")
+    print(f"  Kaon with R: m_K/m_pi = {mp.nstr(kaon_with_R, 12)} (err {float(kaon_R_err):.1f} ppm)")  # float64-ok: stdout display only
+    print(f"  Kaon without R:        {mp.nstr(kaon_base, 12)} (err {float(kaon_err_ppm):.1f} ppm)")  # float64-ok: stdout display only
 
     improvement = "improves" if kaon_R_err < kaon_err_ppm else "worsens"
-    print(f"  Tower correction {improvement} kaon: {float(kaon_err_ppm):.0f} -> {float(kaon_R_err):.0f} ppm")
+    print(f"  Tower correction {improvement} kaon: {float(kaon_err_ppm):.0f} -> {float(kaon_R_err):.0f} ppm")  # float64-ok: stdout display only
     print()
 
     # Apply R to best eta and phi candidates
@@ -395,17 +395,17 @@ def main():
     best_phi_R_err = mp.fabs(best_phi_with_R - m_phi) / m_phi * mp.mpf("1e6")
 
     print(f"  Best eta ({best_eta_label}):")
-    print(f"    Without R: {mp.nstr(best_eta_pred, 10)} MeV (err {best_eta_err:.0f} ppm)")
-    print(f"    With R:    {mp.nstr(best_eta_with_R, 10)} MeV (err {float(best_eta_R_err):.0f} ppm)")
+    print(f"    Without R: {mp.nstr(best_eta_pred, 10)} MeV (err {float(best_eta_err):.0f} ppm)")  # float64-ok: stdout display only
+    print(f"    With R:    {mp.nstr(best_eta_with_R, 10)} MeV (err {float(best_eta_R_err):.0f} ppm)")  # float64-ok: stdout display only
     eta_R_improvement = "improves" if best_eta_R_err < best_eta_err else "worsens"
-    print(f"    R {eta_R_improvement}: {best_eta_err:.0f} -> {float(best_eta_R_err):.0f} ppm")
+    print(f"    R {eta_R_improvement}: {float(best_eta_err):.0f} -> {float(best_eta_R_err):.0f} ppm")  # float64-ok: stdout display only
     print()
 
     print(f"  Best phi ({best_phi_label}):")
-    print(f"    Without R: {mp.nstr(best_phi_pred, 10)} MeV (err {best_phi_err:.0f} ppm)")
-    print(f"    With R:    {mp.nstr(best_phi_with_R, 10)} MeV (err {float(best_phi_R_err):.0f} ppm)")
+    print(f"    Without R: {mp.nstr(best_phi_pred, 10)} MeV (err {float(best_phi_err):.0f} ppm)")  # float64-ok: stdout display only
+    print(f"    With R:    {mp.nstr(best_phi_with_R, 10)} MeV (err {float(best_phi_R_err):.0f} ppm)")  # float64-ok: stdout display only
     phi_R_improvement = "improves" if best_phi_R_err < best_phi_err else "worsens"
-    print(f"    R {phi_R_improvement}: {best_phi_err:.0f} -> {float(best_phi_R_err):.0f} ppm")
+    print(f"    R {phi_R_improvement}: {float(best_phi_err):.0f} -> {float(best_phi_R_err):.0f} ppm")  # float64-ok: stdout display only
 
     # ================================================================
     # SECTION 5: RESULTS SUMMARY
@@ -418,15 +418,15 @@ def main():
     print(f"  {'Method':60s} {'Pred (MeV)':>12s} {'PDG (MeV)':>12s} {'Error (ppm)':>12s}")
     print("  " + "-" * 96)
 
-    print(f"\n  --- ETA (m_eta = {float(m_eta):.3f} MeV) ---")
+    print(f"\n  --- ETA (m_eta = {float(m_eta):.3f} MeV) ---")  # float64-ok: stdout display only
     for label, pred, err in eta_candidates:
         mark = " <<<" if err < 10000 else ""
-        print(f"  {label:60s} {float(pred):>12.3f} {float(m_eta):>12.3f} {float(err):>12.0f}{mark}")
+        print(f"  {label:60s} {float(pred):>12.3f} {float(m_eta):>12.3f} {float(err):>12.0f}{mark}")  # float64-ok: stdout display only
 
-    print(f"\n  --- PHI (m_phi = {float(m_phi):.3f} MeV) ---")
+    print(f"\n  --- PHI (m_phi = {float(m_phi):.3f} MeV) ---")  # float64-ok: stdout display only
     for label, pred, err in phi_candidates:
         mark = " <<<" if err < 10000 else ""
-        print(f"  {label:60s} {float(pred):>12.3f} {float(m_phi):>12.3f} {float(err):>12.0f}{mark}")
+        print(f"  {label:60s} {float(pred):>12.3f} {float(m_phi):>12.3f} {float(err):>12.0f}{mark}")  # float64-ok: stdout display only
 
     # ================================================================
     # SECTION 6: STRUCTURAL ANALYSIS — WHY TORUS KNOTS USE CHARACTERS
@@ -450,9 +450,9 @@ def main():
     print("  Genus ratios vs mass ratios:")
     print(f"    g(T(2,5))/g(T(2,3)) = 2/1 = 2.000")
     print(f"    g(T(2,7))/g(T(2,3)) = 3/1 = 3.000")
-    print(f"    m_K/m_pi = {float(m_K / m_pi):.4f}")
-    print(f"    m_eta/m_pi = {float(m_eta / m_pi):.4f}")
-    print(f"    m_phi/m_pi = {float(m_phi / m_pi):.4f}")
+    print(f"    m_K/m_pi = {float(m_K / m_pi):.4f}")  # float64-ok: stdout display only
+    print(f"    m_eta/m_pi = {float(m_eta / m_pi):.4f}")  # float64-ok: stdout display only
+    print(f"    m_phi/m_pi = {float(m_phi / m_pi):.4f}")  # float64-ok: stdout display only
 
     # ================================================================
     # WITNESS
@@ -461,11 +461,11 @@ def main():
 
     wb = WitnessBuilder("seifert-volume-meson-n7-extension", engine="mpmath")
     wb.set_description(
-        f"Extension of meson mass formula to eta ({float(m_eta)} MeV) and "
-        f"phi ({float(m_phi)} MeV). Confirms torus knots T(2,k) have Vol=0 "
+        f"Extension of meson mass formula to eta ({float(m_eta)} MeV) and "  # float64-ok: prose description formatting only
+        f"phi ({float(m_phi)} MeV). Confirms torus knots T(2,k) have Vol=0 "  # float64-ok: prose description formatting only
         f"(not hyperbolic); uses character-based formulas from H_n(q) instead. "
-        f"Best eta: {best_eta_label} at {best_eta_err:.0f} ppm. "
-        f"Best phi: {best_phi_label} at {best_phi_err:.0f} ppm. "
+        f"Best eta: {best_eta_label} at {float(best_eta_err):.0f} ppm. "  # float64-ok: prose description formatting only
+        f"Best phi: {best_phi_label} at {float(best_phi_err):.0f} ppm. "  # float64-ok: prose description formatting only
         f"Notable: m_eta/m_K = {mp.nstr(eta_K_ratio, 8)} vs q_0 = {mp.nstr(q, 8)}."
     )
 
@@ -488,7 +488,7 @@ def main():
         "formula": "chi5 * (9/5)^2",
         "predicted_ratio": str(mp.nstr(kaon_base, 15)),
         "pdg_ratio": str(mp.nstr(m_K / m_pi, 15)),
-        "err_ppm": kaon_err_ppm,
+        "err_ppm": _fmt(kaon_err_ppm),
     })
 
     wb.add_data("torus_knot_volumes", {
@@ -500,39 +500,37 @@ def main():
     })
 
     wb.add_data("eta_candidates", [
-        # NOT `float(pred)`. `pred` is already mpf; this cast was the last
-        # raw-float64 source in this witness after the err_ppm sites were
-        # carried through (see the note on the `* mp.mpf("1e6")` scalings).
-        {"label": label, "pred_MeV": pred, "err_ppm": err}
+        # NOT `float(pred)`. `pred` is already mpf; serialize via `_fmt`
+        # so the witness never relies on implicit float coercion.
+        {"label": label, "pred_MeV": _fmt(pred), "err_ppm": _fmt(err)}
         for label, pred, err in eta_candidates
     ])
 
     wb.add_data("phi_candidates", [
-        # NOT `float(pred)`. `pred` is already mpf; this cast was the last
-        # raw-float64 source in this witness after the err_ppm sites were
-        # carried through (see the note on the `* mp.mpf("1e6")` scalings).
-        {"label": label, "pred_MeV": pred, "err_ppm": err}
+        # NOT `float(pred)`. `pred` is already mpf; serialize via `_fmt`
+        # so the witness never relies on implicit float coercion.
+        {"label": label, "pred_MeV": _fmt(pred), "err_ppm": _fmt(err)}
         for label, pred, err in phi_candidates
     ])
 
     wb.add_data("tower_correction", {
         "R": str(mp.nstr(R_tower, 15)),
         "four_u_sq": str(mp.nstr(4 * u**2, 15)),
-        "kaon_without_R_ppm": kaon_err_ppm,
-        "kaon_with_R_ppm": kaon_R_err,
+        "kaon_without_R_ppm": _fmt(kaon_err_ppm),
+        "kaon_with_R_ppm": _fmt(kaon_R_err),
         "kaon_R_effect": improvement,
-        "best_eta_without_R_ppm": best_eta_err,
-        "best_eta_with_R_ppm": best_eta_R_err,
+        "best_eta_without_R_ppm": _fmt(best_eta_err),
+        "best_eta_with_R_ppm": _fmt(best_eta_R_err),
         "best_eta_R_effect": eta_R_improvement,
-        "best_phi_without_R_ppm": best_phi_err,
-        "best_phi_with_R_ppm": best_phi_R_err,
+        "best_phi_without_R_ppm": _fmt(best_phi_err),
+        "best_phi_with_R_ppm": _fmt(best_phi_R_err),
         "best_phi_R_effect": phi_R_improvement,
     })
 
     wb.add_data("notable_ratio", {
         "m_eta_over_m_K": str(mp.nstr(eta_K_ratio, 15)),
         "q_0": str(mp.nstr(q, 15)),
-        "difference_ppm": mp.fabs(eta_K_ratio - q) / q * mp.mpf("1e6"),
+        "difference_ppm": _fmt(mp.fabs(eta_K_ratio - q) / q * mp.mpf("1e6")),
         "interpretation": "m_eta / m_K ~ q_0 to the precision shown",
     })
 
@@ -559,7 +557,7 @@ def main():
     })
 
     wb.add_assertion("kaon_reference_under_500ppm",
-                     computed=kaon_err_ppm, expected=0, tolerance=500,
+                     computed=_fmt(kaon_err_ppm), expected=0, tolerance=500,
                      source="Kaon base formula reproduces m_K/m_pi to 290 ppm")
 
     # Both were `computed=1, expected=1` — they announced that a best had been
@@ -569,15 +567,15 @@ def main():
     # sorting on the wrong tuple slot — fails here instead of quietly
     # reporting a non-minimal formula as "best".
     wb.add_assertion("best_eta_is_minimum_error_candidate",
-                     computed=best_eta_err,
-                     expected=min(err for _, _, err in eta_candidates),
+                     computed=_fmt(best_eta_err),
+                     expected=_fmt(min(err for _, _, err in eta_candidates)),
                      tolerance=0,
                      source=f"Best eta formula: {best_eta_label} "
                             f"({len(eta_candidates)} candidates)")
 
     wb.add_assertion("best_phi_is_minimum_error_candidate",
-                     computed=best_phi_err,
-                     expected=min(err for _, _, err in phi_candidates),
+                     computed=_fmt(best_phi_err),
+                     expected=_fmt(min(err for _, _, err in phi_candidates)),
                      tolerance=0,
                      source=f"Best phi formula: {best_phi_label} "
                             f"({len(phi_candidates)} candidates)")
@@ -586,5 +584,19 @@ def main():
     print(f"  Witness: {witness_path}")
 
 
+def _self_test() -> int:
+    set_compute_dps()
+    q = mp.mpf(Q_50_DIGIT_STR)
+    chi5 = q**5 - q**(-5)
+    seifert_K = mp.mpf(9) / 5
+    kaon_base = chi5 * seifert_K**2
+    assert mp.mpf("3.53") < kaon_base < mp.mpf("3.54"), f"unexpected kaon_base: {kaon_base}"
+    assert isinstance(_fmt(kaon_base), str)
+    print("self-test: ok")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv:
+        sys.exit(_self_test())
     main()

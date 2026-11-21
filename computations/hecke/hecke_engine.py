@@ -63,10 +63,11 @@ class HeckeRational:
         self.q = Fraction(p_num, p_den)
         self.q_inv = Fraction(p_den, p_num)
         self.ha = self.q - self.q_inv
-        # z = 1/(q^{1/2} + q^{-1/2}) — approximate as rational
-        # For exact: z = 4993/10000 at q=111/100
-        # Better: use the exact value from q^{1/2} ≈ 1053/1000
-        self.z = Fraction(4993, 10000)
+        # Convention-D Markov parameter z = q^3/(q^2+1), exact in Q for
+        # rational q (owner rulings 2026-08-15 and 2026-11-15: replace the
+        # convention-C value with convention D).  Previously the rounded
+        # convention-C z = 4993/10000 (~ sqrt(q)/(q+1)).
+        self.z = self.q ** 3 / (self.q ** 2 + 1)
 
     def crossing(self, ti, tj):
         """Returns (c, d) where crossing = c σ + d."""
@@ -95,6 +96,33 @@ class HeckeRational:
             n10 = M10*t00 + M11*t10; n11 = M10*t01 + M11*t11
             M00, M01, M10, M11 = n00, n01, n10, n11
         return self.z * M10 + M11
+
+    def traced_volumes_all(self, ordering):
+        """All traced volumes [V̂_0, ..., V̂_{A-2}] in one right-to-left sweep.
+
+        Same exact rationals as ``traced_volume(i, ordering)`` for every i,
+        but O(A) matrix products instead of O(A^2). The transfer matrix
+        T(c,d) depends only on the pair of strand types, so for each
+        type t the suffix product R_t(i) = T(t,t_{i+1})...T(t,t_{A-1})
+        obeys R_t(i-1) = T(t,t_i)·R_t(i). Row i uses R_{t_i}(i).
+        """
+        A = len(ordering)
+        one, zero = Fraction(1), Fraction(0)
+        # suffix products for each strand type: [M00, M01, M10, M11]
+        R = {t: [one, zero, zero, one] for t in set(ordering)}
+        out = [None] * max(A - 1, 0)
+        for i in range(A - 2, -1, -1):
+            tj = ordering[i + 1]
+            for t, (M00, M01, M10, M11) in R.items():
+                c, d = self.crossing(t, tj)
+                t00 = c * self.ha + d; t01 = c
+                t10 = c;               t11 = d
+                # left-multiply: T · M
+                R[t] = [t00*M00 + t01*M10, t00*M01 + t01*M11,
+                        t10*M00 + t11*M10, t10*M01 + t11*M11]
+            M = R[ordering[i]]
+            out[i] = self.z * M[2] + M[3]
+        return out
 
     def markov_trace(self, ordering):
         """Product of traced volumes (exact rational)."""
@@ -361,7 +389,7 @@ def main():
         witness = {
             "computation": "hecke-engine",
             "q": "111/100",
-            "z": "4993/10000",
+            "z": str(HeckeRational().z),
             "results": [asdict(r) for r in results],
         }
         out = Path(_HERE_W.parent / "hecke-engine.witness.json")

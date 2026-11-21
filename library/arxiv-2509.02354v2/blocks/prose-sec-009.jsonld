@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2509.02354v2/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "R-matrix computations",
-  "pageStart": 23,
-  "pageEnd": 23,
-  "text": "../sections/sec-009-5-r-matrix-computations.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2509.02354v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2509.02354v2",
+  "title": "The homomorphism from Uq to the Weyl algebra at root of unity",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "text": "../sections/sec-009-34-the-homomorphism-from-uq-to-the-weyl-algebra.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2509.02354v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2509.02354v2/manifest.jsonld",
   "provenance": "ingested"
 }

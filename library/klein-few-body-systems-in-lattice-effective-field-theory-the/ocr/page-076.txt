@@ -1,0 +1,62 @@
+Chapter 6 Lattice Improvement in Lattice Effective Field Theory
+
+increasing numbers of particles has not yet been performed. In this chapter we address this problem
+and benchmark the effectiveness of the lattice improvement program in removing lattice errors for a
+one-dimensional system of bosons with zero-range interactions [62]. By building the improved lattice
+action step by step, we show that the lattice errors go from O(a') at leading order (LO), to O(a’) at
+next-to-leading order (NLO), and then to O(a’) at next-to-next-to-leading order (N2LO). Our discussion
+is organized as follows. In Sec. 6.2 we introduce the one-dimensional boson system in the continuum,
+and in Sec. 6.3 we present the lattice implementation. We show and discuss our results in Sec. 6.4 and
+then summarize and give an outlook for future applications in Sec. 6.5.
+
+6.2 Bosons in one dimension
+
+We consider a one-dimensional system of bosons with attractive zero-range interactions [62]. The
+Hamiltonian is given by
+
+1 N & N
+H=-— —_ + O(x,-— x; 6.2
+am 24 ie Co 24 (x)-x)), (6.2)
+
+where m is the boson mass, N is the number of particles and Cy < 0 is the two-boson contact interaction
+coefficient. From either the Bethe ansatz [155] or by direct inspection, the ground state of this Hamiltonian
+is a bound state with energy
+
+EN = -" C?n(n? - 1), (6.3)
+24
+and wave function
+mCy
+Wy (X1,%9,---,Xy) = N exp Fs (ln - x9| + |x, - x3 +...) , (6.4)
+
+with normalization constant N [62]. We note that no regularization or renormalization is needed, and all
+quantities are finite.
+
+Here, we consider several different bound state and scattering observables. We will consider the
+binding energies of the N-boson bound state for up to five bosons and the root-mean-square radii of their
+corresponding wave functions. The root-mean-square radii for all the particle positions will be the same
+due to Bose symmetry and can be calculated as
+
+2
+Fins = f dey dy
+
+For the scattering observables, we compute coefficients of the effective range expansion for the boson-
+boson and dimer-boson even-parity scattering phase shifts, which we denote as 6, and 63, respectively.
+We use the conventions
+
+Xp ter + Xy
+
+2
+a Py (x29 xml» (6.5)
+
+xy
+
+1
+ptanéd, = —+2p?+..., (6.6)
+ay 2
+1
+ptand, = —+2p?+..., (6.7)
+“ay 2
+
+where q; is the scattering length, 7; is the effective range, and p is the relative momentum. From the
+
+70

@@ -1,0 +1,28 @@
+22. The RHS of the Key Lemma.
+Now we express the RHS
+( > — o) (V(X) — < VX), y>y)
+as a linear combination of E;, E, and E;3.
+Recall that
+d = >" + 29'coso/sina,
+
+and hence
+
+d—o = >" + 26'cosa/sina — o.
+Next, note that V(x) = (0, 1, 0, 0) can be viewed as the gradient in R* of the
+coordinate function y;, and that V(x) — < V(x), y>y is the orthogonal
+projection of this onto the tangent plane TS° to S° at y, and is therefore the
+gradient on S° of y,. Thus
+
+V(x) — <V@x),.y>y = Vy
+= E; — (yi/(1 + yo)) (v1 Er + y2 En + y3 Es),
+according to our calculation in the preceding section.
+Hence the RHS of the Key Lemma is given by
+( @ — )(V@®) — < Vi), y>y)
+= {(@" + 26' cos o/sina — o) (1 — y2/+yo)) } Ei
++ {(" + 2'cos a/sina — ) (—yry2/(1 + yo)) } Ex
++ {(o" + 26' cos o/sin a — ) (—yiys(1 + yo)) } Es.
+
+This matches the LHS, as given in the previous section, and so completes the
+proof of the Key Lemma.
+
+52

@@ -18,7 +18,7 @@ LaTeX label: `prop:descent-condition`
 ## References
 
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
-- [manuscript] §3-lifting-of-quantum-torsion/descent-condition
+- [leitner2026] §3-lifting-of-quantum-torsion/descent-condition
 -/
 
 namespace QOU.Torsion
@@ -48,7 +48,7 @@ structure CechCocycleData (G : Type*) [Group G] where
 
     When this holds, the distributional connection `A_∞` is globally
     consistent — the local deformations glue into a well-defined sheaf. -/
--- Ref: [yekutieli2010] §4, [manuscript] §3
+-- Ref: [yekutieli2010] §4, [leitner2026] §3
 structure TwistedCocycleCondition (G : Type*) [Group G] where
   /-- The underlying Čech cocycle data. -/
   cech : CechCocycleData G
@@ -68,7 +68,7 @@ structure TwistedCocycleCondition (G : Type*) [Group G] where
 
     This is the categorical formulation: the obstruction class
     `κ_n ∈ H²(𝒮, ℬ)` is the cohomology class of the twisted cocycle. -/
--- Ref: [yekutieli2010] §3-4, [manuscript] §3
+-- Ref: [yekutieli2010] §3-4, [leitner2026] §3
 structure DescentCondition where
   /-- The group of transition functions at each brane level. -/
   G : ℕ → Type*

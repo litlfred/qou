@@ -1,0 +1,96 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "arxiv-physics-0203048v1",
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.030126,
+        "imagesOnPage": 2,
+        "page": 2
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p002-2",
+      "file": "images/img-p002-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.02313,
+        "imagesOnPage": 2,
+        "page": 2
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.0363,
+        "imagesOnPage": 4,
+        "page": 10
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p010-2",
+      "file": "images/img-p010-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.060211,
+        "imagesOnPage": 4,
+        "page": 10
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p010-3",
+      "file": "images/img-p010-3.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.045858,
+        "imagesOnPage": 4,
+        "page": 10
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p010-4",
+      "file": "images/img-p010-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.056599,
+        "imagesOnPage": 4,
+        "page": 10
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    }
+  ]
+}

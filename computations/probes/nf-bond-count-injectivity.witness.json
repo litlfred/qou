@@ -1,8 +1,8 @@
 {
   "engine": "python+fractions",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T04:24:19.388581+00:00",
-  "commitSha": "30c5628b56945e953a5e3ed5640dd055d328c96d",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:21:07.482578+00:00",
+  "commitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "assertions": [
     {
       "name": "control_reproduces_canonical_builder",
@@ -12,29 +12,29 @@
     },
     {
       "name": "configurations_swept",
-      "computed": "222",
-      "expected": "222",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "shape_is_many_to_one_on_this_sample",
-      "computed": "107 shapes / 222 configs",
-      "expected": "107 shapes / 222 configs",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     },
     {
       "name": "normal_forms_distinct_on_this_sample",
-      "computed": "222 normal forms / 222 configs",
-      "expected": "222 normal forms / 222 configs",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 39919,
+  "durationMs": 17901,
   "computation": "nf-bond-count-injectivity",
   "scriptFile": "nf_bond_count_injectivity_probe.py",
-  "scriptHash": "7597067cecd3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a562e9f12e7a",
+  "scriptCommitSha": "63f43bc1b39f2c02d35d1ffadd491bf61df99b8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -3025,5 +3026,7 @@
   ],
   "normal_form_collision_list": [],
   "arithmetic": "exact over Q (fractions.Fraction); comparison is exact dict equality; no float, no evaluation at any numerical q",
-  "auditOnly": true
+  "auditOnly": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "exact Laurent-polynomial normal forms over Q (fractions.Fraction) compared by dict equality; nothing is evaluated at any numerical q"
 }

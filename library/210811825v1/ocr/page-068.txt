@@ -1,0 +1,54 @@
+Simpson’s rule allows us to control the accuracy of our approximation by selecting the
+step size, and comes with a formula for a rigorous error bound. Moreover, both the error
+bound and the approximation can be given symbolically. Recall that for an even value
+
+of n, Simpson’s rule approximates an integral as
+
+b
+/ f(a)dz ® S),,
+where
+
+Sn =F (Flexo) + 4Fl0r) + 2F (22) + Af rs) +--+ 24-2) + AL na) + Hl),
+
+Ar oo"
+
+, and x, =at+iAr, i€ {0,..., n}.
+
+The error for such an approximation depends on the maximum value of the fourth deriva-
+tive on the interval. In particular, suppose that |f(2)| <K fora<x<bandkK ER.
+
+Then 5 ( s
+K(b— a)’
+r)dx — <
+
+| f(a)da — Sn) S$ aaa
+
+We will chose n such that our error will be less than 106° every time we approximate
+
+with Simpson’s rule, that is, we take the smallest even value of n such that
+
+(w (max | f‘ (x)|) oa) <n.
+
+For h(x), the maximum value will occur at the upper end of the integral, that is, at
+x = 2t—1, This is due to the fact that both h(x) function and its fourth derivative include
+the term log (1 — x? — 2x cot ()), which has a singularity just outside the interval.
+
+The following line of code gives us the closed form of the fourth derivative evaluated
+at 214 — 1, and then substituted into our error formula.
+h[x_]=Integrate [(u[x, y] ulx, y])/y72, {y, Sart[a*2 — x2],
+
+Sqrt[Csc[Pi/8]~2 — (x + Cot[Pi/8])~2]}];
+adh[x_] = Abs[D[h[x], {x, 4}]];
+((10°6) (adh[2*(1/4) — 1] (2°(1/4) — 1)75)/180)>(1/4)
+Again, the symbolic output is too long to include here, but it is approximately equal
+to 89.7433. Therefore, we take our n to be the next even integer, 90, to guarantee the
+required level of accuracy. We can now approximate the integral of h(x), and thus the
+L? norm of yi(z,y), using So9. The following input in Mathematica gives us our closed
+form.
+
+phi = ((2>(1/4) — 1)/(270)) Total[{h[0], h[27(1/4) — 1],
+Total [Table [
+2hfi], {i, 2 (2°*(1/4) — 1)/90,
+88 (27(1/4) — 1)/90, (27(1/4) — 1)/45}]],
+
+58

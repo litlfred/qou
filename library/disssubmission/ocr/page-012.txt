@@ -1,0 +1,47 @@
+4 Introduction
+
+direct summand 6, is a perverse sheaf. Let us say that a perverse sheaf is
+a Brill-Noether sheaf if it is a subquotient of 6, for some n € N. Then for
+a suitable normalization of the Abel-Jacobi morphism, it has been shown
+in theorem 14 of loc. cit. that the category of all Brill-Noether sheaves is
+equivalent to the category of algebraic representations of the group
+
+G(&e) = Sprg2(C) if C is hyperelliptic,
+aan Slog2(C) otherwise,
+
+and that the tensor product of representations is induced by the convolution
+product of perverse sheaves. This Tannakian description reduces classical
+geometric problems to simple computations in representation theory. For
+example, if g denotes the genus of C, then the perverse sheaf dg attached
+to the theta divisor © = W,_; C X corresponds via the above equivalence
+to the g— 1% fundamental representation of G(dc). Using this one may
+decompose the convolution 5g * dg into its irreducible constituents, which
+leads to a new proof of Torelli’s theorem [111].
+
+Alongside our proof of the vanishing theorem and still based on [68], in
+chapter 2 we generalize the Tannakian constructions from above to the case
+of semisimple sheaf complexes on arbitrary complex abelian varieties X. In
+particular, we show that every convolution of semisimple perverse sheaves
+is a direct sum of a semisimple perverse sheaf and a further sheaf complex
+which is negligible in a suitable sense (for example, on a simple abelian
+variety a complex is negligible iff all its cohomology sheaves are locally
+constant). To any semisimple perverse sheaf P € Perv(X,C) we then attach
+a reductive algebraic group G(P) whose representation theory governs the
+decomposition of the convolution powers P*” = P x---* P up to negligible
+direct summands, see corollary 2.14.
+
+We remark that for algebraic tori in place of abelian varieties, similar
+results have been obtained by Gabber and Loeser in [41]. However, in their
+case the essential problem is to define the correct notion of convolution in
+the non-proper case, and once this has been done, the required properties
+follow from Artin’s vanishing theorem for affine morphisms. By way of
+contrast, in the case of abelian varieties the main point of the construction
+is to find a proper analog of Artin’s theorem, which will be precisely the
+vanishing theorem that we stated earlier.
+
+The Tannaka groups G(P) attached to perverse sheaves P € Perv(X,C)
+as above form an interesting family of new invariants which contain much
+information about the geometry and the moduli of the underlying abelian
+variety. So far the most efficient method to determine such Tannaka groups
+has been to study degenerations of the abelian variety (an example for this
+can be found in chapter 4). Even if one is only interested in semisimple

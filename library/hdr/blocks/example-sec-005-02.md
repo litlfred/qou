@@ -1,1 +1,0 @@
-Following the notation of Example 2.1, for W = S3 ={1,s,t,st,ts,sts =tst} andl> 0,

@@ -35,7 +35,7 @@
   §7c: this is genuinely archimedean (sign / ordering of `ℝ`), so `ℝ` is the
   correct base ring here — not a gratuitous specialization.
 
-  -- Ref: [manuscript] docs/audits/2026-07-20-qlift-doorV-stokes.md
+  -- Ref: [leitner2026] docs/audits/2026-07-20-qlift-doorV-stokes.md
   -- Ref: [ramis-sauloy-zhang2013] q-difference formal classification / Stokes
 -/
 

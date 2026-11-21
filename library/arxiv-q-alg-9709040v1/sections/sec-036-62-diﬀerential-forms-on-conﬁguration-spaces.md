@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-036-62-diﬀerential-forms-on-conﬁguration-spaces
 section_title: "Diﬀerential forms on conﬁguration spaces"
 section_number: 6.2
@@ -8,6 +8,7 @@ pages: 22-23
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 The space C2,0 (the Eye) is homotopy equivalent to the standard circle S1 ≃R/2πZ. Moreover, one of
 its boundary components, the space C2 = C2, is naturally S1. The other component of the boundary is the

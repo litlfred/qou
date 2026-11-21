@@ -1,0 +1,71 @@
+have circline-eq-cmat (mk-circline-cmat ?A ?B ?C ?D)
+(poincare-line-cvec-cmat (ul, u2) (v1, v2))
+
+by simp
+
+thus ?thesis
+using symp-circline-eq-cmat
+unfolding symp-def
+by blast
+
+next
+
+case False
+
+show ?thesis
+
+proof (cases v1 * cnj v2 # 0)
+case True
+let ?nom = v1 * cnj v2
+let ?H’ = mk-poincare-line-cmat 0 (i * ?nom)
+
+have circline-eq-cmat ?H ?H'
+proof—
+let ?k = (vl * cnj v2) / ?d
+
+have is-real ?k
+proof—
+have is-real ((v1 « cnj v2) / ?d2)
+proof—
+let ?rhs = (v2 * cnj v2) / ((ul*v2)/(u2*vl) — 1)
+
+have 1: (v1 « cnj v2) / ?d2 = ?rhs
+using «4 ?den # 0) (u2 4 0» (v2 FO» * (v1 * cnj v2 F 0»
+by (simp add: field-simps)
+moreover
+have cnj ?rhs = ?rhs
+proof—
+have cnj (ul « v2 / (u2 * v1) — 1) = ul « v2 / (u2 * v1) — 1
+using (<— ?den £ 0» ‘u2 4 0» (v2 FO» * «v1 * cnj v2 FO»
+by (simp add: field-simps)
+moreover
+have cnj (v2 * cnj v2) = v2 * cnj v2
+by simp
+ultimately
+show ?thesis
+by simp
+qed
+
+ultimately
+
+show ?thesis
+using eq-cnj-iff-real
+by fastforce
+qed
+
+thus ?thesis
+using ** <is-real ?d1)>
+by (metis complex-cnj-divide divide-divide-eq-left' eq-cnj-iff-real)
+qed
+
+have ?k 4 0
+using <?d #4 0) «vl * cnj v2 # 0»
+by simp
+
+have cnj ?k = ?k
+using <is-real ?k)
+using eq-cnj-iff-real by blast
+
+have Re ?k 4 0
+using <?k # 0» <is-real ?k»
+by (metis complex.expand zero-complez.simps(1) zero-complex.simps(2))

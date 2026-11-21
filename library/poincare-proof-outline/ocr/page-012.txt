@@ -1,0 +1,69 @@
+proof—
+have u # inversion uv # inversion u
+using in-disc
+using inversion-noteg-unit-disc[of u v]
+using inversion-noteq-unit-disclof u ul
+by auto
+thus ?thesis
+using on-l
+using unique-circline-set|of u inversion u v| <u # v>
+using is-poincare-line-inverse-point|of l1 ul
+using is-poincare-line-inverse-point|of 12 ul
+using pl
+by auto
+qed
+
+For the rest of our formalization it is often useful to consider points on h-lines that are not within the unit disc.
+Many lemmas in the rest of this section will have such generalizations.
+
+There is no more than one h-line that contains two different and not mutually inverse points (not necessary in
+the unit disc).
+
+lemma unique-is-poincare-line-general:
+assumes different: u #4 v u 4 inversion v
+assumes pl: is-poincare-line l1 is-poincare-line 12
+assumes on-l: {u, v} C circline-set l1 M circline-set 12
+shows li = 12
+proof (cases u # inversion u)
+case True
+thus ?thesis
+using unique-circline-set|of u inversion u v|
+using assms
+using is-poincare-line-inverse-point by force
+next
+case False
+show ?thesis
+proof (cases v # inversion v)
+case True
+thus ?thesis
+using unique-circline-set[of u inversion v v]
+using assms
+using is-poincare-line-inverse-point by force
+next
+case False
+
+have on-circline unit-circle u on-circline unit-circle v
+using (7 u # inversion u) ‘7 v # inversion v>
+using inversion-id-iff-on-unit-circle
+by fastforce+
+thus ?thesis
+using pl on-l (u # v>
+unfolding circline-set-def
+apply simp
+proof (transfer, transfer, safe)
+fix ul u2 v1 v2 Al B1 Cl D1 A2 B2 C2 D2 :: complex
+let ?u = (ul, u2) and ?v = (v1, v2) and ?H1 = (A1, B1, Cl, D1) and ?H2 = (A2, B2, C2, D2)
+assume *: ?u 4 vec-zero ?v # vec-zero
+on-circline-cmat-cvec unit-circle-cmat ?u on-circline-cmat-cvec unit-circle-cmat ?v
+is-poincare-line-cmat ?H1 is-poincare-line-cmat ?H2
+hermitean ?H1 ?H1 # mat-zero hermitean ?H2 ?H2 # mat-zero
+on-circline-cmat-cvec ?H1 ?u on-circline-cmat-cvec ?H1 ?v
+on-circline-cmat-cvec ?H2 ?u on-circline-cmat-cvec ?H2 ?v
+a (ul, u2) &y (v1, v2)
+have x*: Al = D1 A2 = D2 Cl = cnj B1 C2 = cnj B2 is-real Al is-real A2
+using <is-poincare-line-cmat ?H1) <is-poincare-line-cmat ?H2)
+using <hermitean ?H1» «?H1 4 mat-zeroy <hermitean ?H2) «?H2 4 mat-zeroy
+using hermitean-elems
+by auto
+
+12

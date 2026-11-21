@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-030-51-deﬁnitions
 section_title: "Deﬁnitions"
 section_number: 5.1
@@ -8,6 +8,7 @@ pages: 18-18
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 deﬁne an equivalence relation (homotopy equivalence) on the set of L-morphisms.
 Firstly, the multiplicative group R× acts by automorphisms of Tpoly(X), multiplying elements γ ∈

@@ -1,0 +1,49 @@
+260 Smooth point asymptotics
+
+is not bounded from below (whose existence is guaranteed by Theorem 6.29),
+then the intersection class INT(T, T’) is represented by the intersection of V
+with any homotopy from T to T’ intersecting V transversely. Choosing such
+a homotopy whose time-f cross-sections are tori that expand with ¢ and go
+through w, perhaps slightly perturbed to intersect V transversely, the class
+INT(T, T’) can be represented by a smooth (d — 1)-chain y on V on which
+hp reaches its (not necessarily unique) maximum at w. The Cauchy integral
+formula and the residue theorems from Chapter C imply
+
+1
+r= opi | Fe dz
+(2ni)4 Jr
+
+1 ope 1 up
+= One [Retrere ldz)+ Grape {. F(z)z-" 1 dz
+1 f -r-1
+= ——— | Res(F(z)z dz). (9.18)
+(2ni)t"! Jy
+
+Assume first that Q is square-free and ry > 0, so that (C.2.1) in Proposi-
+tion C.8 implies
+
+ay
+
+eam few PR) ane
+On J, OMe;
+
+with A = rg. Applying Theorem 5.3 with a generic triangulation of C = y gives
+an asymptotic expansion of a, which, after the change of variables z; = w eit
+and algebraic simplification, gives the expression for ®,, in (9.2). Note that
+the Hessian determinant of h on V with respect to the 6; variables equals the
+Hessian determinant with respect to the z; variables multiplied by the Jacobian
+for the change of variables because the gradient of /, restricted to V vanishes
+at w.
+
+This completes the proof of Theorem 9.12 in the case that p = | and rg > 0.
+The derivation for p > 1 is similar, with Lemma C.13 describing the residue
+and leading to (9.4). Likewise, accounting for the sign change in A = —rg when
+rq < 0 produces the sign factors in (9.4). a
+
+9.2.2 Homological decompositions
+
+Our results above help us prove that there is at most one torus containing
+smooth nondegenerate contributing points. A minimal torus with respect to
+a component B and direction # is a torus T.(a) for some x € 0B minimizing
+# - a on B, containing at least one point w = exp(a + iy) that is critical in
+direction #.

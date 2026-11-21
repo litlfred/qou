@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "A q-difference equation of the 41 knot",
-  "pageStart": 37,
-  "pageEnd": 40,
+  "title": "The Appell-Lerch sums",
+  "pageStart": 33,
+  "pageEnd": 37,
   "contains": [
-    "library/modularqholonomicmodules/blocks/prose-sec-020"
+    "library/modularqholonomicmodules/blocks/prose-sec-020",
+    "library/modularqholonomicmodules/blocks/lem-sec-020-01",
+    "library/modularqholonomicmodules/blocks/lem-sec-020-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
   "provenance": "ingested"
 }

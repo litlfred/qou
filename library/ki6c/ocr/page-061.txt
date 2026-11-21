@@ -1,0 +1,52 @@
+is a convex domain and its boundary is a smooth surface. The aim of this section is to
+show the following lemma.
+
+Lemma B.2. Let F(x, y,z) be a smooth concave function whose maximal value is positive
+and Hesse matrix is negative definite. Then, the domain (96) is a convex domain and its
+boundary is a smooth surface whose Gaussian curvature is positive everywhere.
+
+Proof. We choose any point on the boundary of the domain (96). Similarly as in the proof
+of Lemma B.1, we can assume that this point is the origin (0,0,0), and the domain (96)
+is in the upper half space and it is tangent to the (2, y)-plane at the origin. Then, in a
+neighborhood of the origin, we can present the boundary curve as z = f(x,y) with some
+smooth function f defined in a neighborhood of 0. It is sufficient to show that the Hesse
+matrix of f is positive definite at the origin.
+
+We show that the Hesse matrix of f is positive definite at the origin, as follows. Since
+the boundary curve is given by F(x,y,z) = 0, we have that F(z,y, f(x,y)) = 0. Its
+differentials are given by
+
+F,(0,y,2) + Fala,y,2) fo(t,y) = 0,
+
+F, (x,y, 2) + F. (x,y,z) fy(@,y) = 0.
+Since the domain (95) is tangent to the (, y)-plane at the origin, f,(0,0) = f,(0,0) = 0.
+Further, the differentials of the above formulas are given by
+
+Pra(@,y,2) +2 Fye(x,y, 2) fe(@,y) + Fez(x, y, 2) (fi (2, y)) + F.(2,y,2) fee(a,y) = 0,
+Fry (2, yy, 2) + F,2(«, Y, 2) fy(a, y) + Fy.(«, y, 2) fila, y)
++ F.,(a, yy, 2) fi(a, y) ful, y) + F.(a, Y, 2) fey(x, y) = 0,
+Fy, (2, y, 2) + 2 Fyz(2, y, 2) fyl(x.y) + F.(@, 4 ’ 2)(frlv,y))” + F.(a,y, 2) fay (9) = 0.
+By putting « = y = z = 0, we have that
+
+Fy2(0,0,0) + F.(0, 0,0) fx ( ,0) 0,
+Fry (0, 0, 0) + F.(0, 0, 0) Fry (0, 0) = 0,
+Fyy(0, 0, 0) + F.(0, 0, 0) uy (9, 0) =0
+
+Further, by considering the function g(z) = F(0,0,z), we can show that F.(0,0,0) =
+g'(0) > 0, similarly as in the proof of Lemma B.1. Furthermore, we obtain the following
+
+matrix
+fx (0, 0) fry(0, 0) _ Fx (0,0, 0) Fyy(0,0, 0)
+—F(0,0,0) (t0.0 too) = (F(0.0.0 rln0.0))
+
+from the Hesse matrix of F by restricting R® to R? x {0}. Therefore, the above matrix
+is negative definite. Hence, the Hesse matrix of f is positive definite at the origin, as
+required. oO
+
+C On the domain {Re Vit, 8,u) >¢} for the 63 knot
+
+In Section 5.1, we put
+
+A = {(t,s,uJeR? |0<t<s<1, 0<usst},
+
+61

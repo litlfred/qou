@@ -1,1 +1,0 @@
-- A natural choice for the commuting subalgebra S in Proposition 8.6 is the

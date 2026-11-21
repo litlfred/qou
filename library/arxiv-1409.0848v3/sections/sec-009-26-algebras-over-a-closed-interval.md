@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
 latex_coverage_ratio: 0.971
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 \begin{definition}[$\Ass^{\sf RL}$]\label{Assoc}
 Let $\Ass^{\sf RL}$ denote an $\infty$-operad corepresenting triples $(A;Q,P)$ consisting of an associative algebra together with a unital left and a unital right module.  
