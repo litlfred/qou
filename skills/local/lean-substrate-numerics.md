@@ -37,7 +37,7 @@ bracketed, every dependent `q^(±1/2)` bound discharges by
 |--------|--------|-----------------|
 | `0e0a14a8` | `sqrt_substrate_q_gt`, `sqrt_substrate_q_lt`, `sqrt_substrate_q_bracket` | Direct `1.05341 < √substrate_q < 1.05342` two-sided bracket |
 | `78d28acf` | `Real.lt_sqrt_of_sq_lt`, `Real.sqrt_lt_of_lt_sq` | `MathlibExt` companions that drive the bracket |
-| `1f34de8c` | `Real.rpow_half_eq_sqrt`, `Real.rpow_neg_half_eq`, `Real.q_half_denom` | Convert `q ^ (±1/2 : ℝ)` to `Real.sqrt q` and `1 / Real.sqrt q` |
+| `1f34de8c` | `Real.rpow_half_eq_sqrt`, `Real.rpow_neg_half_eq`, `QOU.MathlibExt.q_half_denom` | Convert `q ^ (±1/2 : ℝ)` to `Real.sqrt q` and `1 / Real.sqrt q` |
 
 ## Canonical brackets (already in `QOU/MassDerivation.lean`)
 
@@ -73,7 +73,7 @@ rw [Real.rpow_neg_half_eq q hq_pos]        -- q ^ (-(1/2) : ℝ) → 1 / Real.sq
 ### Discharge a denominator bound `q^(1/2) + q^(-1/2) ≈ 2.00228`
 
 ```lean
-rw [Real.q_half_denom q hq_pos]
+rw [QOU.MathlibExt.q_half_denom q hq_pos]
 -- Goal is now in `Real.sqrt q + 1 / Real.sqrt q`.
 have ⟨hgt, hlt⟩ := sqrt_substrate_q_bracket
 have hsq_pos : Real.sqrt substrate_q > 0 := by linarith
@@ -119,6 +119,6 @@ If the brackets fail to close, it is almost always one of:
 - `lean-q-substitution.md` — for the symbolic-`q` bounds that
   feed the numeric bracket here.
 - `lean-mathlibext-curator.md` — for the `Real.lt_sqrt_of_sq_lt`
-  family and `Real.q_half_denom`.
+  family and `QOU.MathlibExt.q_half_denom`.
 - `verify-local-substrate.md` — for the upstream check that
   `substrate_q` is *the* pinned constant.

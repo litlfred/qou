@@ -88,11 +88,11 @@ finite-dimensional linear-algebra under Slater (proven from R2).
 
 ## What this module provides
 
-* `Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter`
+* `QOU.MathlibExt.SDPRankEquality.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter`
   (theorem — fully proven): for PSD `M`, the filter
   `{i : eigenvalues i > 0}` equals `{i : eigenvalues i ≠ 0}`.
 
-* `Matrix.PosSemidef.rank_via_eigenvalues` (axiom — Mathlib API
+* `QOU.MathlibExt.SDPRankEquality.PosSemidef.rank_via_eigenvalues` (axiom — Mathlib API
   shape): for PSD `M`, `rank M = #{i : eigenvalues_i > 0}`.
   Standard fact (`Boyd-Vandenberghe §A.5.5`), supplied by
   Mathlib as `Matrix.IsHermitian.rank_eq_card_non_zero_eigenvalues`

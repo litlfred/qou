@@ -27,7 +27,7 @@ file does **not** fabricate one. Instead it delivers, honestly:
   partial product (`solution_eq_prod`), and — given the *pentagon closure*
   (`∏` over a full period `= 1`, the cyclotomic-collapse shadow of the pentagon,
   carried as an honest hypothesis in `PentagonClosure`) — is **`N`-periodic**
-  (`PentagonClosure.solution_periodic`). No open input; pure finite algebra over
+  (`QOU.QBeta.CyclicDilogPentagon.solution_periodic`). No open input; pure finite algebra over
   a generic `CommRing`.
 
 * **(A-core, fully proved)** the analytic *ambiguity is a periodic function*:

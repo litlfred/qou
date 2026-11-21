@@ -29,7 +29,7 @@ root-of-unity forms.
 * `pole_reciprocal_is_char_root` — a denominator root `u₀` gives a root `u₀⁻¹`
   of the reversed (characteristic) polynomial.
 * `CFinite` — the order-`d` recurrence itself.
-* `CFinite.recurrence_step` — the recurrence *solves for the leading term*: the
+* `QOU.QBeta.recurrence_step` — the recurrence *solves for the leading term*: the
   "kernel produces `c_k` from the seed" engine in math form.
 
 All verified sorry-free against mathlib (pinned `f897ebcf`, lean v4.24.0).

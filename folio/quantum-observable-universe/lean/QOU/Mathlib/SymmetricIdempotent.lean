@@ -58,7 +58,7 @@ open QOU.Archimedean
     determines the cleared trace via the symmetric character — a
     multiset invariant of the σ-coefficients (independent of
     ordering). The trivial witness `b = x` is always available
-    via `InSymmetricIdempotent.refl`, so the predicate is
+    via `QOU.Mathlib.refl`, so the predicate is
     logically `True`; the value lies in carrying the Murphy data
     structure for downstream refinements that demand a
     non-syntactic witness.

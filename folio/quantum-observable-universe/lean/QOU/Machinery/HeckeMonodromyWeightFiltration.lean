@@ -22,7 +22,7 @@ monodromy Jordan structure (`HeckeMonodromyJordan`, #4090) and the
   nilpotent (factors through the semisimple quotient — the local-to-global
   monodromy step) together with a ρ-partner and the intertwining law.
   Content-bearing fields; NO instance declared. Derived (never restated):
-  **`TauAssignmentData.bar_kills_nilpotent`** — the partner automatically
+  **`QOU.Machinery.HeckeGeneral.bar_kills_nilpotent`** — the partner automatically
   kills the conjugate nilpotent, from the fields plus `monodromyN_star`.
 
 Inhabiting `TauAssignmentData` with functorial provenance (the map coming

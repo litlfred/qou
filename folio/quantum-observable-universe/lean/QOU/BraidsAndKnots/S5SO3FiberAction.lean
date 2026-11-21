@@ -656,7 +656,7 @@ theorem so3_to_a5_irrep_content :
     (`restrictsToA5Irrep = true`), and its dim 6 splits as the chirality
     pair T₁ ⊕ T₂ (3 + 3) swapped by the S₅∖A₅ parity.  The self-conjugacy
     (= invariance under the sign-twist) is exactly the structural reason
-    the block carries the chirality (cf. `PartitionOf5.electron_block`). -/
+    the block carries the chirality (cf. `QOU.BraidsAndKnots.electron_block`). -/
 theorem s5_to_a5_electron_block_splits :
     PartitionOf5.threeOneOne.conjugate = PartitionOf5.threeOneOne ∧
     PartitionOf5.threeOneOne.restrictsToA5Irrep = true ∧

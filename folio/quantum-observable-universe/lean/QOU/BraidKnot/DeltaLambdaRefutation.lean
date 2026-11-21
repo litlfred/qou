@@ -111,7 +111,7 @@ into a miss-shaped lemma they do not fit (which would misrepresent them).
 | C | Demazure-fibre `y_λ·D_w/D_{w₀}` | **tautological** — `Δ_λ ~ 10⁻⁵`, reproduces `M_LO`, vortex-blind | `2026-05-18-delta-lambda-gating-context.md` row C |
 | D-Plancherel | LP shadow price `min Σ\|Δ_λ\|·w_λ` | **under-determined** (not a miss) — reproduces Occam exactly, `L∞ = 1.9e-15`; shifts the freedom to the cost choice | gating-context row D-Plancherel |
 | D-Frobenius | LP alt cost | under-determined — picks a different singleton (`λ=[6]`, `Δ=−47.16`); same defect | gating-context row D-Frobenius |
-| E | crystal-graph (Kashiwara, `q→1`) | **KL-positivity prune** — target `Δ_λ = sgn(w₀)·dim` is mixed-sign, KL multiplicities are `≥ 0`, so no `Σ_w n^w_λ·X_w` can supply the chirality sign | Lean sorry-free `QOU.BraidsAndKnots.S5SO3FiberAction.PartitionOf5.deltaSign_mixed`; `2026-06-16-option-e-probe4-kl-positivity-prune.md` |
+| E | crystal-graph (Kashiwara, `q→1`) | **KL-positivity prune** — target `Δ_λ = sgn(w₀)·dim` is mixed-sign, KL multiplicities are `≥ 0`, so no `Σ_w n^w_λ·X_w` can supply the chirality sign | Lean sorry-free `QOU.BraidsAndKnots.deltaSign_mixed`; `2026-06-16-option-e-probe4-kl-positivity-prune.md` |
 | F | Wenzl-bridge augmented Markov | **ill-posed** — over-determined axiom set (closure-pickle) | gating-context row F |
 
 The co-Casimir `≠` lemmas above are the machine-checked face of row B; rows C/D/F are

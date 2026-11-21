@@ -23,7 +23,7 @@
 
   3. `hopf_jones_at_q_one_unfolds` — trivial unfolding helper.
 
-  Sorry-free. Composes with PR #1839's `CFinite.recurrence_step` via
+  Sorry-free. Composes with PR #1839's `QOU.QBeta.recurrence_step` via
   the Track C unified typeclass.
 
   Ref: [pr1786] https://github.com/litlfred/qou/pull/1786

@@ -14,7 +14,7 @@ whole algebra, overclaiming the gauge structure.
 
 What is actually **proved** here is exactly the group-action content:
 
-* `IsSU2.mul` / `IsSU2.one` — the unit quaternions are closed under
+* `QOU.Tetraplectic.mul` / `QOU.Tetraplectic.one` — the unit quaternions are closed under
   multiplication and contain the identity (the `SU(2) ≅ S³` group);
 * `su2L_normSq` / `su2R_normSq` — the left and right actions are
   **norm-preserving** (isometric / unitary): the defining property of a genuine

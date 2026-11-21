@@ -147,7 +147,7 @@ theorem dtEulerG_neg_iff (N d : ℕ) :
     `PartitionOf5.nStat` is `nStatList p.parts` for the *same* fold — so the
     general `dtEulerG` at the corpus data `(n(λ), dim V_λ)` reproduces the corpus
     `Δ_λ = deltaSign · dim` for every one of the seven `λ ⊢ 5`, discharging the
-    original `PartitionOf5.dtEuler_eq_deltaLambda` from the general identity. -/
+    original `QOU.BraidsAndKnots.dtEuler_eq_deltaLambda` from the general identity. -/
 
 /-- The general a-function statistic on a partition's parts — the identical fold
     that defines `PartitionOf5.nStat`, read on a general `List ℕ`. -/
