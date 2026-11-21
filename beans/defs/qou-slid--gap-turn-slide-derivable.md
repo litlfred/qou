@@ -7,7 +7,7 @@ priority: normal
 tags:
     - pl-knots
 created_at: 2026-11-21T22:45:00Z
-updated_at: 2026-11-21T22:45:00Z
+updated_at: 2026-11-21T23:50:00Z
 ---
 
 Issue #8902, PR #8962. `Move.slide` in `QOU/MathlibExt/LinkDiagramCode.lean` moves `t` turns from
@@ -29,3 +29,21 @@ Status: neither derived nor shown independent.
 Next honest steps: (1) look for a derivation that uses a third strand already present in a braid
 closure (enough for Markov invariance, though not for all codes); (2) search a wider model class,
 e.g. general 2-label tensors, for an independence proof.
+
+## 2026-11-21 (later): owner picked both routes ("1 2")
+
+Wider model search (route 2), numerical only, scratch, mpmath 30 dps, Levenberg-Marquardt over general
+2-label tensors (16 entries of X+, X- = inverse via r2par, K = (k0, k1), theta free), residuals
+= the r1, r2anti, r3 identities of `Model.Invariant`:
+- With only k0 != k1 imposed, 3 of 8 starts converged (residual < 1e-40), all with k1 = -k0. Their
+  charge-changing entries change charge by 2, so K_a K_c = K_b K_d still holds and the slide holds.
+- With k0^2 != k1^2 imposed (10 starts): no convergence. Runs stall at residual 1e-10..1e-5 with
+  w = 1/(k0^2 - k1^2) growing (|w| ~ 1e2..3e3) and det R -> 0, i.e. they drift to the boundary
+  where the slide holds again.
+- With k1 = -k0 and a parity-violating entry imposed (6 starts): no convergence (residual >= 6e-5).
+So no 2-label model breaking the slide was found. This is evidence, not proof, and it means
+state sums are unlikely to show the slide independent.
+
+Route 1 notes: a turn can cross a crossing only through `r2anti` (antiparallel bigon), and
+braid strands meet only in parallel, so the obvious third-strand route needs an antiparallel pair.
+Not yet attempted in Lean.
