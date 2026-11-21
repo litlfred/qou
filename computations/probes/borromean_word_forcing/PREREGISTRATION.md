@@ -81,3 +81,17 @@ every one is conjugate to β_Bor or to its mirror (σ₀⁻¹σ₁)³ with |c| �
 [σ₀⁴, σ₁²]-type Brunnian braids, Milnor invariant 2), so "nontrivial
 zero-linking pure ⇒ Borromean trace" is a statement about the *shortest*
 words only.
+
+## Addendum 2 (2026-11-21 20:31Z, owner chose "extend to length 14"; written before the run)
+
+**E3. Same-character fibre to length 14.** All reduced writhe-0 words of length
+12 and 14 with χ = χ(β_Bor) or tr_M = −tr_M(β_Bor). For each, search a conjugator
+c (reduced, |c| ≤ 6) with c·β·c⁻¹ = w, β in the 4-word orbit (Burau equality,
+faithful on B₃, cited). Prediction: still no −tr_M word; every same-χ word is
+found conjugate to β_Bor. A same-χ word with no conjugator found is reported as
+"not found within |c| ≤ 6", not as "not conjugate"; for those, report the
+closure data (components, pairwise linking).
+
+**E4. Brunnian characters to length 14.** Count the distinct non-trivial
+characters among pure zero-linking words at lengths 12 and 14. No prediction
+beyond: β_Bor's character stays the only one at length 6–8.
