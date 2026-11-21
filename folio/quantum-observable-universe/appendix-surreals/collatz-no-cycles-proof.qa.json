@@ -632,7 +632,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -984,6 +984,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e8f7e628d24d",
+          "ts": "fb8025c7a8fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:57:21.171Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[first real review 2026-11-21; no hashed entry existed] I checked the proof by hand. The odd step P -> ([3]P+1)/[2] and the even step P -> P/[2] compose to A P + B with A = [3]^k_odd / [2]^k. With A = 1 the cycle condition forces B = 0, but B is a nonempty sum of positive terms when k_odd >= 1, so B > 0 at every real q > 0 and B is nonzero in Q(q). Coprimality: [3] - q[2] = 1, so [3] is congruent to 1 mod [2], and [2] = 1+q is not a unit in Z[q] or Z[q^+-1]; hence [3]^a = [2]^k has no solution with a, k >= 1 there. The plastic-number example also checks: rho^3 = rho + 1 gives [2] = rho^3 and [3] = rho^5, so [3]^3 = [2]^5 = rho^15. The proof matches the re-scoped statement (balanced-holonomy case only), and the Scope paragraph correctly leaves the A != 1 case open. Minor: 'b_i = 1/[2]_q^{.}' has a stray exponent placeholder; on an odd step b_i = 1/[2]_q."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1358,7 +1373,7 @@
         "reviewed_at": "2026-08-15T10:30:59.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "2 negation-contrast construction(s): \", not linear:\"; \", not impossible;\" \u2014 state the positive claim directly"
+        "evidence": "2 negation-contrast construction(s): \", not linear:\"; \", not impossible;\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1428,7 +1443,7 @@
         "reviewed_at": "2026-08-15T10:30:59.495Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "8 stylistic spaced dashes in 389 words (2.06/100w) \u2014 restructure into sentences"
+        "evidence": "8 stylistic spaced dashes in 389 words (2.06/100w) — restructure into sentences"
       },
       {
         "field_hash": {
@@ -1705,6 +1720,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-21T07:57:21.171Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
