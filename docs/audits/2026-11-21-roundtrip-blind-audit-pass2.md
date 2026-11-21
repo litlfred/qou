@@ -177,3 +177,9 @@ addressed:
 | C09: the content sibling `quantum-universes/frobenius-relation.lean` still proved the relation by projecting a field, and `lean.ref` resolution picks the sibling first | sibling deleted (no consumers); the ref now resolves to `lean/QOU/frobenius_relation.lean` (`sorry`); stale `leanSource` dropped from the `.jsonld` |
 | The Wigner 2026-10-11 author note still said the axiom discharges the theorem | note now says it did until 2026-11-21, when the axiom was deleted |
 | C16: the `.md` said tr(id) = −6 determines χ(M₀), while both Leans take χ = −6 as input | `.md` states the identification as a hypothesis; the sibling's module, structure and `genus_unique` docstrings no longer claim "maximal" (lean-direct exit 0, axioms `propext, Classical.choice, Quot.sound`) |
+
+**QA follow-up (review comment 7065408011).** Same shadowing defect for C06:
+the content sibling `quantum-observable-universes/qou-exists-axiom-2.lean`
+proved only that a fibre functor exists (`⟨Q.fibreFunctor⟩`), and `lean.ref`
+resolved to it, which hid the library `sorry`. Sibling deleted (no consumers);
+stale `leanSource` dropped from the `.jsonld`.
