@@ -501,8 +501,8 @@
 | [prop:crystal-isospin-degeneracy](#prop:crystal-isospin-degeneracy) | Crystal-limit isospin degeneracy: $S_{\mathrm{crystal}}$ is invariant under $\sigma_i \leftrightarrow \sigma_i^{-1}$ | Ch 11 |
 | [prop:cusp-shape-bar-parity](#prop:cusp-shape-bar-parity) | Cusp-shape bar-parity: the figure-eight modulus splits as $\mathfrak{V} = \mathrm{Vol} + i\,\mathrm{CS}$ | Ch 5 |
 | [prop:cyclotomic-l-value-decomposition](#prop:cyclotomic-l-value-decomposition) | Cyclotomic depth-$n$ generators decompose into Dirichlet $L$-values: $\beta(3) = \pi^3/32$ as a corollary | Ch 22 |
-| [prop:cyclotomic-depth3-dimension-synthesis](#prop:cyclotomic-depth3-dimension-synthesis) | Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \geq 5$ | Ch 11 |
-| [prop:cyclotomic-dimension-synthesis-all-depths](#prop:cyclotomic-dimension-synthesis-all-depths) | Cyclotomic dimension synthesis at every depth: $(K - 3)/2$ for $n$ odd, $(K - 1)/2$ for $n$ even | Ch 11 |
+| [conj:cyclotomic-depth3-dimension-synthesis](#conj:cyclotomic-depth3-dimension-synthesis) | Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \geq 5$ | Ch 11 |
+| [conj:cyclotomic-dimension-synthesis-all-depths](#conj:cyclotomic-dimension-synthesis-all-depths) | Cyclotomic dimension synthesis at every depth: $(K - 3)/2$ for $n$ odd, $(K - 1)/2$ for $n$ even | Ch 11 |
 | [prop:cyclotomic-strand-doubling](#prop:cyclotomic-strand-doubling) | Cyclotomic doubling identity: $\Phi_8(X) = \Phi_4(X^2)$ | Ch 11 |
 | [prop:full-pole-structure-mass-trace](#prop:full-pole-structure-mass-trace) | Cyclotomic expansion of the cleared mass trace | Ch 11 |
 | [prop:y-lambda-cyclotomic-factorization](#prop:y-lambda-cyclotomic-factorization) | Cyclotomic factorisation of $y_\lambda$ at $H_n(R, q)$ for small $n$ via Wenzl-bridge | Ch 11 |

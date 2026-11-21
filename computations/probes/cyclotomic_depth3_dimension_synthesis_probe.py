@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Probe: cyclotomic-depth3-dimension-synthesis
-(`prop:cyclotomic-depth3-dimension-synthesis`).
+(`conj:cyclotomic-depth3-dimension-synthesis`).
 
 Tests the dimension claim
 
@@ -176,7 +176,7 @@ def main() -> int:
             "(K−3)/2 dimension claim."
         )
         .set_content_block(
-            "prop:cyclotomic-depth3-dimension-synthesis")
+            "conj:cyclotomic-depth3-dimension-synthesis")
         .add_parameter("primes_tested", str(PRIMES))
         .add_parameter("mpmath_dps", 80)
         .add_parameter("pslq_maxcoeff", "10^12")
