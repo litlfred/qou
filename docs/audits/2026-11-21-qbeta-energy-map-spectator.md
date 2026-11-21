@@ -262,3 +262,37 @@ one reduction σ² → hσ + 1. With `E0ReductionWordCount` (E₀/m_e = the q⁻
 that need that reduction), this links the cell to the owner's GB proposal (2026-11-21: β-decay as
 the difference between the unreduced and reduced interaction word). That link is an observation,
 not a derivation. It is the next preregistered item.
+
+## 13. Owner: "Reevaluate lepton placement"
+
+Owner ruling recorded first: the cell is not assigned to an observable until the GB reduction is
+done (card "Neither yet").
+
+The "shared" placement (error-budget §10, "not one-sided yet") treats the lepton factor L as a
+spectator on both sides. That is not what β-decay does: in the final state the lepton is either
+**created** (it is absent from the initial state) or it **changes state** (ν → e⁻). Three
+placements, each with what the derived log map gives. Nothing here is chosen.
+
+**A. Shared spectator (current ruling).** L on both sides cancels (`common_factor_log_cell`), so the
+cell is E(n) − E(p), with the shape of m_n − m_p. `log_cell_bounds` gives cell < 2·m_e for every
+q > 1, and measured m_n − m_p is 2.53 m_e, so under the derived map this reading cannot hold at any
+q. The placement is consistent with the map only if the cell is not an observable on its own.
+
+**B. One-sided (pair created in the final state only).** E(n) = E(p) + E(e⁻) + E(ν̄) + Q_β, so
+Q_β = cell − E(e⁻) − E(ν̄). With E(e⁻) = m_e (CAL-1) and E(ν̄) not fixed by the corpus, this is an
+upper bound: Q_β ≤ (1.709469 − 1)·m_e = 0.362538 MeV. This number is computed after the comparison
+in §5 was printed, so it is not blind; it is reported, not proposed.
+
+**C. Active lepton strand (premise L, the 4-strand process word of
+`2026-11-21-beta-pair-creation-word-proposal.md`).** The lepton strand carries ν = u and e⁻ = d.
+In H = log_q K units: n ⊗ ν = (−1) + (+1) = 0 and p ⊗ e⁻ = (+1) + (−1) = 0. So the T³ weight is
+conserved, which is principle Q of that audit (Hecke elements commute with U_q). The nucleon's
++2 log q is cancelled exactly by the lepton's −2 log q, and the whole T³ log cell of this thread is
+zero for the full process. Whatever energy is released must then come from the non-weight part,
+the CC block of the process word, i.e. from the GB reduction itself. Premise L is not ruled
+(#8673).
+
+**Consequence for this thread.** The derived 2E₀·ln q is the nucleon half of a T³ bookkeeping that
+cancels in C, a cell with an excluded reading in A, and an input to a bound in B. In none of
+the three is it Q_β by itself. That moves the weight of the question onto the GB reduction, as the
+owner ruled.
