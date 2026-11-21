@@ -4349,3 +4349,9 @@ Method: Ariki–Koike seminormal representations of H₃^B for all 10 bipartitio
 - One loop (p, d at slot 0/1/2): tr(β·t_d)/tr(β) = y EXACTLY for every slot. A single blob only multiplies by y.
 - Two loops (n): slots (0,1) 0.106602, (1,2) 0.116568, (0,2) 0.106602, against y² = 0.111111. Slot-dependent, so the flip symmetry is broken, as expected.
 So B can separate p from n, but the split is set by the free blob data (Q, y), which nothing in the corpus fixes. Scope (a): B is a parametrised ingredient, not a derived split. Nothing scored. Symbolic (Q, y) run not done (timed out); scripts in session scratchpad blob/.
+
+2026-11-21 01:20Z — corpus search for the energy unit of the charge term (owner "go").
+- Only derived assignment found: PR #8518's own Lagrangian bridge (CategoricalLagrangianTwoTermBridge.lean, hadronicScale_mul_q_sq_hbar_eq_me): matter/charge term unit = E₀·ħ_q = m_e/q². With the 05:10Z rule: Δ_EM = −0.0305 MeV (smaller still). Not a new choice: it is the unit that bridge already states.
+- The same obstruction is already on record for ³H/³He: docs/audits/2026-06-03-em-linking-invariant.md names the missing object as "a categorical brane-separation / nuclear-charge-radius length scale" (3.2× factor = r_strong/r_charge). The nucleon EM gap is the same class.
+- Other corpus energy units (E₀, α_bind = 8G·m_e) exist but none is derived as the unit of a Coulomb term; choosing one by its result would be a fit. Not computed.
+- Status: OPEN. Needs a derived categorical length (or crossing-energy) scale for the nucleon. Not closable by trace or weighting choices.
