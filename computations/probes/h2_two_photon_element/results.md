@@ -99,6 +99,34 @@ braid word preserves total weight, so the insertion commutes with every word and
 part is `0` on every bond. It therefore assigns the same value to `V³` and to `σ₅²`, and to
 every bond of every writhe. It cannot constrain the writhe.
 
+## A selection with no purity or achirality premise (2026-11-21, later)
+
+Lean `gg_atom_bonds` (`H2BondSelectionRoutes.lean` §4, `decide`, no axioms): among the 155
+bonds of one to three photons, the bonds that are
+
+1. **γγ-produced** (only `V₄`, `V₅`; the 2026-09-08 rule that canonical words are built by γγ
+   pair production, `bondWord_gammaGamma_iff`),
+2. **atom-preserving** (no strand ends on the other side of the cut between the atoms), and
+3. **not split** across that cut after free reduction,
+
+are exactly `V₄³` and `V₅³`. Without condition 3 the list is `V₄V₅, V₄³, V₅³`
+(`gg_atom_bonds_with_split`). `V₄V₅` reduces to `σ₄σ₆⁻¹`, which has no crossing between the
+atoms.
+
+Where 2 and 3 come from: the binding is read as the connected part across the two atoms, the
+Möbius form of `def:virtual-subword`. That needs each atom to be a sublink of the bonded closure
+(condition 2: the atom's strands must close among themselves). `connected_eq_zero_of_split`
+gives connected part `0` on a split word, so a bond that binds is not split (condition 3).
+For `V³` the three-strand closure is the Borromean rings. Its Jones connected part is nonzero
+for `t ≠ 1` (`def:virtual-subword`), so it is not split along any partition of its strands,
+and `V³` binds.
+
+Compared with "pure + writhe 0": purity is replaced by atom preservation, which is weaker, and
+writhe 0 now comes from the γγ rule, which is a ruling rather than a reading. What is still a
+reading is "binding = connected part across the atoms". The Möbius form matches the binding
+sum, but `def:virtual-subword` says it has not established that they are the same object. The
+search also stays within three photons.
+
 ## Status of each step
 
 - γγ grammar for the bond: a proved invariant (writhe), applied under the 2026-09-08 rule that

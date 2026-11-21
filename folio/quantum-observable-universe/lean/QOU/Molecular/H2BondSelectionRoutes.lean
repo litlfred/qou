@@ -184,5 +184,46 @@ theorem pure_writhe_zero_bonds :
       [[.v4, .v4, .v4], [.v5, .v5, .v5]] := by
   decide
 
+/-! ## 4. Atom-preserving, non-split γγ bonds
+
+The binding of `H₂` is read as a connected part across its two atoms (`def:virtual-subword`,
+`connected_eq_zero_of_split`). That needs each atom to be a sublink of the bonded closure, i.e.
+the bond permutes no strand across the cut between local strands `1 | 2` (**atom-preserving**),
+and it needs the bonded word not to split along that cut. Among the γγ-produced bonds of one to
+three photons, those two conditions leave exactly `V₄³` and `V₅³` (`gg_atom_bonds`). Purity and
+achirality are not used. -/
+
+/-- `true` when the bond is γγ-produced (only `V₄`, `V₅`; see `bondWord_gammaGamma_iff`). -/
+def isGG (l : List BondLetter) : Bool := l.all fun x => !x.isSigma
+
+/-- `true` when no strand crosses the cut: the strands at local positions `0, 1` end there. -/
+def atomPreserving (l : List BondLetter) : Bool :=
+  ((finalPos (localWord l) [0, 1, 2, 3]).take 2).all (· < 2)
+
+/-- Free reduction (cancel adjacent `σᵢ^e σᵢ^{-e}`), by a stack. -/
+def freeReduce : List Letter → List Letter → List Letter
+  | [], acc => acc.reverse
+  | (i, e) :: w, (j, f) :: acc =>
+      if i = j ∧ e + f = 0 then freeReduce w acc else freeReduce w ((i, e) :: (j, f) :: acc)
+  | x :: w, [] => freeReduce w [x]
+
+/-- `true` when the freely reduced local word has no crossing across the cut (generator `1`),
+so the bonded word is a split union of the two atoms' strands. -/
+def splitAcross (l : List BondLetter) : Bool :=
+  (freeReduce (localWord l) []).all fun x => x.1 != 1
+
+/-- **The γγ bonds that keep both atoms and do not split are `V₄³` and `V₅³`.** `V₄V₅`
+is atom-preserving but reduces to `σ₄σ₆⁻¹`, a split word. -/
+theorem gg_atom_bonds :
+    allBonds.filter (fun l => isGG l && atomPreserving l && !splitAcross l) =
+      [[.v4, .v4, .v4], [.v5, .v5, .v5]] := by
+  decide
+
+/-- Without the split condition the list is `V₄V₅, V₄³, V₅³`. -/
+theorem gg_atom_bonds_with_split :
+    allBonds.filter (fun l => isGG l && atomPreserving l) =
+      [[.v4, .v5], [.v4, .v4, .v4], [.v5, .v5, .v5]] := by
+  decide
+
 end QOU.Molecular.H2BondSelection
 
