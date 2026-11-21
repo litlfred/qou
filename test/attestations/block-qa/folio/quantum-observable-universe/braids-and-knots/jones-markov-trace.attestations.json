@@ -302,6 +302,23 @@
         "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
         "severity": "major",
         "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-16 review: Lean file and declaration pointers removed from the prose. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: lean.ref is the structure JonesMarkovTrace (z free, nondeg vacuous, 2 sorries). The repair jonesMarkov_H3 is existence at n=3 only with z free. Not encoded: uniqueness, vanishing for rows>=3, the TL quotient, the Catalan count; the md states all n."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Re-read at 68ebfb21a05: #8889 adds cites only; the mathematics and the Lean are unchanged, so the 2026-11-21 verdict stands. lean.ref is the structure JonesMarkovTrace (z free, nondeg vacuous, 2 sorries); jonesMarkov_H3 is existence at n=3 with z free. Not encoded: uniqueness, vanishing for rows >= 3, the TL quotient, the Catalan count; the md states all n.",
+        "notes": "Pre-existing, not introduced by #8889.",
+        "severity": "major"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -955,6 +972,23 @@
         "reviewed_at": "2026-08-15T21:04:14.462Z",
         "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
         "evidence": "'not interchangeable' / 'not a defect convention D introduced; it is what convention D means' / 'forced rather than stipulated' — each guards a documented C-vs-D convention confusion (owner ruling 2026-08-09); load-bearing disambiguation, substantive."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation.",
+        "notes": "'The degeneracy is not a defect convention D introduced; it is what convention D means.' is a negation-contrast reframe inside a theorem block. The preceding sentence already states the radical/TL fact; this one can be deleted. Pre-existing, not introduced by #8889.",
+        "severity": "minor"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -972,6 +1006,21 @@
         "reviewed_at": "2026-08-15T21:04:14.507Z",
         "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
         "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no rhetorical-pivot construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
       }
     ],
     "trap-em-dash": [
@@ -989,6 +1038,21 @@
         "reviewed_at": "2026-08-15T21:04:14.549Z",
         "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
         "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no load-bearing em-dash construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
       }
     ],
     "trap-triples": [
@@ -1006,6 +1070,21 @@
         "reviewed_at": "2026-08-15T21:04:14.590Z",
         "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
         "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no compulsive-triple construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
       }
     ],
     "trap-closing-aphorism": [
@@ -1023,6 +1102,21 @@
         "reviewed_at": "2026-08-15T21:04:14.633Z",
         "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
         "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no closing-aphorism construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
       }
     ],
     "trap-meta-commentary": [
@@ -1040,6 +1134,21 @@
         "reviewed_at": "2026-08-15T21:04:14.686Z",
         "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
         "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no meta-commentary construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
       }
     ],
     "trap-thesis-restatement": [
@@ -1057,6 +1166,21 @@
         "reviewed_at": "2026-08-15T21:04:14.740Z",
         "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
         "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no thesis-restatement construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
       }
     ],
     "trap-performed-warmth": [
@@ -1074,6 +1198,21 @@
         "reviewed_at": "2026-08-15T21:04:14.803Z",
         "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
         "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no performed-warmth construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
       }
     ],
     "trap-superlative": [
@@ -1091,6 +1230,21 @@
         "reviewed_at": "2026-08-15T21:04:14.849Z",
         "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
         "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no superlative-inflation construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
       }
     ],
     "trap-nonspeakable": [
@@ -1108,6 +1262,21 @@
         "reviewed_at": "2026-08-15T21:04:14.892Z",
         "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
         "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no non-speakable syntax construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
       }
     ]
   }

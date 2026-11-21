@@ -35,6 +35,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Read of the added Webster-Williamson sentence at 68ebfb21a05.",
+        "notes": "The new sentence sits inside Proof Step 4 of the one-parameter convention-D Jones-Markov trace but points at a two-parameter geometric trace; no step of the proof uses it. It is a 'see also' and reads as support for the displayed character expansion. Suggest moving it to the Discussion or a remark, or stating that WW's trace specialises to tr_M (and at which parameter). Introduced by #8889; minor.",
+        "severity": "minor"
       }
     ],
     "da-definitional-ambiguity": [
@@ -243,6 +260,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Mass-theory chapter; the selection proposition fixes the trace convention used by the chapter's mass expressions. Unchanged by #8889."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -310,6 +342,23 @@
         "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
         "severity": "major",
         "evidence": "Full review 2026-11-21. lean.ref QOU.BraidsAndKnots.markovWeights_eq_jones_of_fibre_categorical (lean/QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean:214) genuinely encodes part (ii) at n=3: from the class MassTraceIsFibreCategorical (row-cap support + faithfulness fields, which mention neither q, z nor convention D, so not self-assuming), hN : N = 2, and the three Markov equations on 1, s0, s0s1, it DERIVES [2]^2 y_(2,1) = 1, y_(3) = 1 - 2 y_(2,1), z [2] = q^2 via markovWeights_eq_jones_of_threeRow_eq_zero (sorry-free, division-free, generic domain). This matches the Selection theorem's computational core and the md's own status line. What the ref does NOT encode: part (i) uniqueness of the Markov trace at fixed z on the whole tower (the Iwahori-basis induction); part (iii) that the radical of the trace form is exactly the Temperley-Lieb ideal I_n for all n (QBeta/TemperleyLiebTower.lean has only n=3,4 dimension counts and convention-D antisymmetriser lemmas); the Selection theorem conclusion tau = tr_M at every level on all of H_n (the Lean concludes only the level-3 weights and z); and the general-n closed form y_(n-k,k) = [n-2k+1]/[2]^n, which the md itself says is numerically verified for n <= 7 and not proved by induction. The md calls (i) and (iii) unconditional, but they have no Lean statement here. Convention D throughout; no ruling conflict; no empirical input in the claim."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Re-read at 68ebfb21a05: Lean ref markovWeights_eq_jones_of_fibre_categorical unchanged; it encodes part (ii) at n=3 (derives [2]^2 y_(2,1)=1, y_(3)=1-2y_(2,1), z[2]=q^2). Not encoded: (i) uniqueness at fixed z on the tower, (iii) radical = TL ideal for all n, tau = tr_M at every level, the general-n closed form, and now the added dim TL_n = Catalan(n) claim (TemperleyLiebTower.lean has n=3,4 dimension counts only).",
+        "notes": "Pre-existing warn major; #8889 adds one more uncited-in-Lean claim, but it is cited to Kim-Lee 2018 in the prose.",
+        "severity": "major"
       }
     ],
     "proof-no-decide-masking": [
@@ -519,6 +568,21 @@
         "reviewed_at": "2026-08-21T21:30:40.423Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Multiple denials, all substantive: 'What fixes z is not non-degeneracy but a prescribed degeneracy' (the criterion swap IS the block's thesis); 'It is (TL_n, tr_M), not (H_n, tr_M), that is a symmetric Frobenius algebra' (a real distinction, verified: radical = TL ideal); 'the row cap is not an extra input to the weight formula but a reading of it'."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of markov-trace-frobenius-selection.md at 68ebfb21a05. #8889 adds to Proof Step 4: 'whose dimension is Catalan(n) \\cite{kimlee2018}' and a sentence pointing to Webster-Williamson Cor. 13 for a two-parameter geometric trace whose character expansion uses Lusztig's Fourier transform. Checked: Kim-Lee 2018 Prop. 2.9 gives dim TL_n = C_n; the held WW copy (library/arxiv-0911.4494v2, sec. 5) discusses the character expansion via Lusztig's Fourier transform and mixed Poincare polynomials. Content-bearing 'not non-degeneracy' contrasts are the block's thesis, not reflex."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -536,6 +600,21 @@
         "reviewed_at": "2026-08-21T21:30:40.481Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "No setup-then-reframe; each numbered part states its claim first."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of markov-trace-frobenius-selection.md at 68ebfb21a05. #8889 adds to Proof Step 4: 'whose dimension is Catalan(n) \\cite{kimlee2018}' and a sentence pointing to Webster-Williamson Cor. 13 for a two-parameter geometric trace whose character expansion uses Lusztig's Fourier transform. Checked: Kim-Lee 2018 Prop. 2.9 gives dim TL_n = C_n; the held WW copy (library/arxiv-0911.4494v2, sec. 5) discusses the character expansion via Lusztig's Fourier transform and mixed Poincare polynomials. Content-bearing 'not non-degeneracy' contrasts are the block's thesis, not reflex."
       }
     ],
     "trap-em-dash": [
@@ -555,6 +634,23 @@
         "severity": "minor",
         "evidence": "21 spaced em-dashes in 1776 words (~1 per 85), the highest density in this batch. Individually most are true parentheticals ('— the first level at which the row cap says anything —', '— every other character is annihilated —', '(not the Jacobson radical — H_n is split semisimple at generic q)'), but several append afterthoughts a comma would carry: 'singles out nothing — and in particular does not fix z'; 'the cells in position (r+2,r), the first of which is (3,1)'.",
         "notes": "Proposed: convert the appending dashes (the '— and ...' continuations) to commas or full stops; keep the bracketing pairs. Structural, not applied."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of markov-trace-frobenius-selection.md at 68ebfb21a05. #8889 adds to Proof Step 4: 'whose dimension is Catalan(n) \\cite{kimlee2018}' and a sentence pointing to Webster-Williamson Cor. 13 for a two-parameter geometric trace whose character expansion uses Lusztig's Fourier transform. Checked: Kim-Lee 2018 Prop. 2.9 gives dim TL_n = C_n; the held WW copy (library/arxiv-0911.4494v2, sec. 5) discusses the character expansion via Lusztig's Fourier transform and mixed Poincare polynomials. Content-bearing 'not non-degeneracy' contrasts are the block's thesis, not reflex.",
+        "notes": "Appending dashes remain ('-- and in particular does not fix z', '-- every other character is annihilated --', '-- uniqueness is on the nose'). Pre-existing (2026-08-21 fail minor); the #8889 additions add none.",
+        "severity": "minor"
       }
     ],
     "trap-triples": [
@@ -572,6 +668,21 @@
         "reviewed_at": "2026-08-21T21:30:40.613Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "M1/M2/M3 is the definition of a Markov trace; parts (i)/(ii)/(iii) partition the result; the 'Dropping 1 / Dropping 2 / Dropping M1-M3' list enumerates the three real failure modes. No reflex triples."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of markov-trace-frobenius-selection.md at 68ebfb21a05. #8889 adds to Proof Step 4: 'whose dimension is Catalan(n) \\cite{kimlee2018}' and a sentence pointing to Webster-Williamson Cor. 13 for a two-parameter geometric trace whose character expansion uses Lusztig's Fourier transform. Checked: Kim-Lee 2018 Prop. 2.9 gives dim TL_n = C_n; the held WW copy (library/arxiv-0911.4494v2, sec. 5) discusses the character expansion via Lusztig's Fourier transform and mixed Poincare polynomials. Content-bearing 'not non-degeneracy' contrasts are the block's thesis, not reflex."
       }
     ],
     "trap-closing-aphorism": [
@@ -589,6 +700,21 @@
         "reviewed_at": "2026-08-21T21:30:40.675Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "The Discussion closes on 'Conditional-proved is not premise-established.' — aphoristic in form, but it names the repo's governing STRICT rule and discharges the block's own open antecedent (bean qou-n1dj), so it is terminology rather than manufactured punch. Block-final content is a data table."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of markov-trace-frobenius-selection.md at 68ebfb21a05. #8889 adds to Proof Step 4: 'whose dimension is Catalan(n) \\cite{kimlee2018}' and a sentence pointing to Webster-Williamson Cor. 13 for a two-parameter geometric trace whose character expansion uses Lusztig's Fourier transform. Checked: Kim-Lee 2018 Prop. 2.9 gives dim TL_n = C_n; the held WW copy (library/arxiv-0911.4494v2, sec. 5) discusses the character expansion via Lusztig's Fourier transform and mixed Poincare polynomials. Content-bearing 'not non-degeneracy' contrasts are the block's thesis, not reflex."
       }
     ],
     "trap-meta-commentary": [
@@ -606,6 +732,21 @@
         "reviewed_at": "2026-08-21T21:30:40.726Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Emphasis is placed, not narrated; the OPEN box and Status paragraph state scope directly."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of markov-trace-frobenius-selection.md at 68ebfb21a05. #8889 adds to Proof Step 4: 'whose dimension is Catalan(n) \\cite{kimlee2018}' and a sentence pointing to Webster-Williamson Cor. 13 for a two-parameter geometric trace whose character expansion uses Lusztig's Fourier transform. Checked: Kim-Lee 2018 Prop. 2.9 gives dim TL_n = C_n; the held WW copy (library/arxiv-0911.4494v2, sec. 5) discusses the character expansion via Lusztig's Fourier transform and mixed Poincare polynomials. Content-bearing 'not non-degeneracy' contrasts are the block's thesis, not reflex."
       }
     ],
     "trap-thesis-restatement": [
@@ -624,6 +765,23 @@
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "No block-final restatement (the block ends on the tr_M table).",
         "notes": "Out-of-criterion redundancy worth a consolidation pass: part (ii) and the later 'Selection theorem' section state the same result twice, and the load-bearing-hypotheses discussion appears twice near-verbatim ('Neither condition may be dropped: without the row cap z is free ... without faithfulness the trivial character y=(1,0,...,0) at z=q' vs 'Both hypotheses are load-bearing ... Dropping 1 leaves z free ... Dropping 2 admits the trivial character y=(1,0,0) at z=q'). Suggest the summary in (ii) point at the theorem rather than restate it."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of markov-trace-frobenius-selection.md at 68ebfb21a05. #8889 adds to Proof Step 4: 'whose dimension is Catalan(n) \\cite{kimlee2018}' and a sentence pointing to Webster-Williamson Cor. 13 for a two-parameter geometric trace whose character expansion uses Lusztig's Fourier transform. Checked: Kim-Lee 2018 Prop. 2.9 gives dim TL_n = C_n; the held WW copy (library/arxiv-0911.4494v2, sec. 5) discusses the character expansion via Lusztig's Fourier transform and mixed Poincare polynomials. Content-bearing 'not non-degeneracy' contrasts are the block's thesis, not reflex.",
+        "notes": "The Status paragraph and the Discussion both say (ii) is conditional on the open fibre-action premise; the Discussion's closing 'Conditional-proved is not premise-established.' restates it a third time. Pre-existing.",
+        "severity": "minor"
       }
     ],
     "trap-performed-warmth": [
@@ -641,6 +799,21 @@
         "reviewed_at": "2026-08-21T21:30:40.911Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Institutional register throughout."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of markov-trace-frobenius-selection.md at 68ebfb21a05. #8889 adds to Proof Step 4: 'whose dimension is Catalan(n) \\cite{kimlee2018}' and a sentence pointing to Webster-Williamson Cor. 13 for a two-parameter geometric trace whose character expansion uses Lusztig's Fourier transform. Checked: Kim-Lee 2018 Prop. 2.9 gives dim TL_n = C_n; the held WW copy (library/arxiv-0911.4494v2, sec. 5) discusses the character expansion via Lusztig's Fourier transform and mixed Poincare polynomials. Content-bearing 'not non-degeneracy' contrasts are the block's thesis, not reflex."
       }
     ],
     "trap-superlative": [
@@ -658,6 +831,21 @@
         "reviewed_at": "2026-08-21T21:30:40.967Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "'neither larger nor smaller', 'on the nose', 'exactly' are each discharged by the argument. Register note: 'on the nose' is colloquial for a proposition block."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of markov-trace-frobenius-selection.md at 68ebfb21a05. #8889 adds to Proof Step 4: 'whose dimension is Catalan(n) \\cite{kimlee2018}' and a sentence pointing to Webster-Williamson Cor. 13 for a two-parameter geometric trace whose character expansion uses Lusztig's Fourier transform. Checked: Kim-Lee 2018 Prop. 2.9 gives dim TL_n = C_n; the held WW copy (library/arxiv-0911.4494v2, sec. 5) discusses the character expansion via Lusztig's Fourier transform and mixed Poincare polynomials. Content-bearing 'not non-degeneracy' contrasts are the block's thesis, not reflex."
       }
     ],
     "trap-nonspeakable": [
@@ -675,6 +863,21 @@
         "reviewed_at": "2026-08-21T21:30:41.056Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Dense but speakable; the noun chains are defined objects (framing ratio, negative-crossing loop value, Temperley-Lieb ideal)."
+      },
+      {
+        "field_hash": {
+          "md": "0f185bfa6ce9",
+          "ts": "3d44738ab644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of markov-trace-frobenius-selection.md at 68ebfb21a05. #8889 adds to Proof Step 4: 'whose dimension is Catalan(n) \\cite{kimlee2018}' and a sentence pointing to Webster-Williamson Cor. 13 for a two-parameter geometric trace whose character expansion uses Lusztig's Fourier transform. Checked: Kim-Lee 2018 Prop. 2.9 gives dim TL_n = C_n; the held WW copy (library/arxiv-0911.4494v2, sec. 5) discusses the character expansion via Lusztig's Fourier transform and mixed Poincare polynomials. Content-bearing 'not non-degeneracy' contrasts are the block's thesis, not reflex."
       }
     ]
   }
