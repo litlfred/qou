@@ -6,7 +6,7 @@ prune (Option-E PROBE-4) said was missing?
 CONTEXT (bean qou-42u7; fresh-look qou-do3a). Δ_λ closure is blocked: the target
 carries a chirality sign sgn(w_0^{S_{λ'}}) that is MIXED across partitions, but
 KL multiplicities are non-negative (KL positivity), so a Σ_w n^w_λ X_w sum cannot
-supply it (PROBE-4 prune, Lean-proved PartitionOf5.deltaSign_mixed). The Nakayama
+supply it (PROBE-4 prune, Lean-proved QOU.BraidsAndKnots.deltaSign_mixed). The Nakayama
 route was refuted (gives +1); the ribbon/content grading q^{2(n(λ')-n(λ))} was
 pruned. The Masbaum cyclotomic coefficients C_{K,n}(q) ARE mixed-sign — a fresh
 candidate mixed-sign source. This probe tests, cheaply and decisively, whether
@@ -297,7 +297,7 @@ def main() -> int:
             "axis": "Δ_λ closure — cyclotomic mixed-sign KL-prune evasion test",
             "beans": ["qou-42u7", "qou-do3a", "qou-my68"],
             "relatedPrune": "Option-E PROBE-4 KL-positivity "
-                            "(PartitionOf5.deltaSign_mixed); Nakayama refutation "
+                            "(QOU.BraidsAndKnots.deltaSign_mixed); Nakayama refutation "
                             "(deltalambda-grho-nakayama-morphism)",
         },
     }

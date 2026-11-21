@@ -13,7 +13,7 @@ Input: the bias-corrected c_2..c_10 from #1824 probe 6.a
 `ck_bias_corrected_leading`), pinned inline with its source for reproducibility.
 
 Grounding: the Lean lemma `QOU.QBeta.pole_reciprocal_is_char_root` +
-`CFinite.recurrence_step` make "low-order recurrence ⇔ low-degree-rational F"
+`QOU.QBeta.recurrence_step` make "low-order recurrence ⇔ low-degree-rational F"
 rigorous; this probe is the contrapositive (no low-order recurrence ⇒ F not
 low-degree rational) on the cleanest c_k currently available.
 
@@ -98,7 +98,7 @@ def main() -> int:
     print(f"    NOT an extraction-noise artifact (resolves the Step-2 caveat).")
     print(f"  • ⇒ the Q_β kernel R is genuinely higher-order; F is not a low-degree")
     print(f"    rational. Per the Lean grounding (pole_reciprocal_is_char_root /")
-    print(f"    CFinite.recurrence_step), the keystone needs canonical c_11+ OR a")
+    print(f"    QOU.QBeta.recurrence_step), the keystone needs canonical c_11+ OR a")
     print(f"    categorical derivation of Q_A·cos α_eff's zero — not a low-order fit.")
     print()
 

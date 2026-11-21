@@ -19,7 +19,7 @@ That bound is a MAGNITUDE-channel bound. The fibre-saddle Φ_b is a pure phase
 (|Φ_b| = 1), so its magnitude derivative is identically zero and ALL variation
 lives in the phase (bar-odd / Im 𝔙 / decay) channel — on which the smooth-real
 magnitude bound is silent. This probe confirms that separation numerically and
-witnesses the Lean fact QOU.QBeta.IsSigmaUnitary.crossFactor (the cross-anchor
+witnesses the Lean fact QOU.QBeta.crossFactor (the cross-anchor
 connecting factor of two σ-unitaries is itself σ-unitary — a pure phase) with
 σ = complex conjugation.
 
@@ -83,7 +83,7 @@ def main() -> int:
         "validated Faddeev Φ_b (phi_b_evaluator.py), confirms the fibre-saddle "
         "object separates into a FLAT magnitude channel (d|Φ_b|/dz ≈ 0) and a "
         "VARYING phase channel (d arg Φ_b/dz ≠ 0), and witnesses "
-        "QOU.QBeta.IsSigmaUnitary.crossFactor (cross-point connecting factor of "
+        "QOU.QBeta.crossFactor (cross-point connecting factor of "
         "two σ-unitaries is σ-unitary) with σ = conjugation. Records the "
         "channel classification of the c_3 cross-anchor swing: PR #1821's "
         "dc_3/dq ≈ 4.66e6 impossibility is a MAGNITUDE-channel bound; the "
@@ -154,7 +154,7 @@ def main() -> int:
     wb.add_data("fibre_points", rows)
     wb.add_data("dz_step", mp.nstr(DZ, 6))
     wb.add_data("evaluator", "computations/qbeta/phi_b_evaluator.py (battery-gated)")
-    wb.add_data("lean_witnessed", "QOU.QBeta.IsSigmaUnitary.crossFactor "
+    wb.add_data("lean_witnessed", "QOU.QBeta.crossFactor "
                 "(FaddeevModularDouble.lean, sorry-free)")
     wb.add_data("channel_classification_of_c3_swing",
                 "phase (bar-odd / Im 𝔙 / decay); PR #1821 dc_3/dq≈4.66e6 is a "
@@ -183,7 +183,7 @@ def main() -> int:
     wb.add_assertion(
         "G3_crossfactor_sigma_unitary",
         computed=max_crossfactor_err, expected=0.0, tolerance=1e-20,
-        source="|Φ_b(z₂)·conj Φ_b(z₁)| = 1 — witnesses IsSigmaUnitary.crossFactor",
+        source="|Φ_b(z₂)·conj Φ_b(z₁)| = 1 — witnesses QOU.QBeta.crossFactor",
     )
 
     ok = (max_unimod_err < 1e-25 and max_mag_deriv < 1e-20

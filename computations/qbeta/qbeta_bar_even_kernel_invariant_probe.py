@@ -242,7 +242,7 @@ def main() -> int:
         print()
         print(f"  Combined: the §4(b) formalize-first gate is structurally codified.")
         print(f"  Any new F(q) candidate must clear the bar-even discriminant before")
-        print(f"  invoking PR #1839's CFinite.recurrence_step. This complements:")
+        print(f"  invoking PR #1839's QOU.QBeta.recurrence_step. This complements:")
         print(f"    - PR #1839's recurrence engine (kernel → next c_k)")
         print(f"    - PR #1786's c_2 = -1 seed (the bar-even prototype anchor)")
         print(f"    - refuted-class map §4 invariants (anchor-stable + q=1 shadow +")
@@ -284,7 +284,7 @@ def main() -> int:
                 "bar-symmetric (consistent with PR #1521 scalar Habiro "
                 "success); (6) N=2 leading t-Taylor coefficients up to "
                 "t^3 all vanish (bar-even prototype). Complements PR "
-                "#1839's CFinite.recurrence_step: this gates the input "
+                "#1839's QOU.QBeta.recurrence_step: this gates the input "
                 "kernel; that engine produces the next c_k from it."),
     )
 

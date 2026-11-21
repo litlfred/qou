@@ -6,7 +6,7 @@ per-partition magnitude.
 Context. The Option-E Δ_λ gate needs a per-partition magnitude |Δ_λ| = f^λ
 (= dim V_λ). PROBE 4 (Kashiwara-crystal / KL-weight) is already PRUNED on the
 *sign* (KL positivity cannot supply the mixed chirality sign; Lean-proved
-`PartitionOf5.deltaSign_mixed`). It was left open whether KL could at least
+`QOU.BraidsAndKnots.deltaSign_mixed`). It was left open whether KL could at least
 supply the *magnitude* via the left-cell Betti sum
     B_λ = Σ_{w ∈ Γ_λ} P_{e,w}(1)
 (sum of intersection-cohomology Betti numbers over a left cell Γ_λ of shape λ).

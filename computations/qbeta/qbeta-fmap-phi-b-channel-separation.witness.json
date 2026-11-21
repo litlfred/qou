@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T12:41:15.478792+00:00",
-  "commitSha": "829bbbc82d40d3c43faf327e0d9572fafd17b04d",
+  "computedAt": "2026-11-21T18:36:11.154841+00:00",
+  "commitSha": "cf9c86db5f7c58395baefaeb58e40f7ccaf8641e",
   "assertions": [
     {
       "name": "G1a_unimodular_magnitude",
@@ -34,15 +34,15 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-20",
-      "source": "|Φ_b(z₂)·conj Φ_b(z₁)| = 1 — witnesses IsSigmaUnitary.crossFactor"
+      "source": "|Φ_b(z₂)·conj Φ_b(z₁)| = 1 — witnesses QOU.QBeta.crossFactor"
     }
   ],
   "allPassed": true,
-  "durationMs": 4235,
+  "durationMs": 2321,
   "computation": "qbeta-fmap-phi-b-channel-separation",
   "scriptFile": "qbeta_fmap_phi_b_channel_separation_probe.py",
-  "scriptHash": "2b859d7059f2",
-  "scriptCommitSha": "829bbbc82d40d3c43faf327e0d9572fafd17b04d",
+  "scriptHash": "2ab70dad9b6d",
+  "scriptCommitSha": "b21207b146d997ef0d46e0d10f21b038afcaa775",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,13 +50,22 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
-  "description": "Fibre-side spec for the z→c_k f-map keystone (PR #3458). On the validated Faddeev Φ_b (phi_b_evaluator.py), confirms the fibre-saddle object separates into a FLAT magnitude channel (d|Φ_b|/dz ≈ 0) and a VARYING phase channel (d arg Φ_b/dz ≠ 0), and witnesses QOU.QBeta.IsSigmaUnitary.crossFactor (cross-point connecting factor of two σ-unitaries is σ-unitary) with σ = conjugation. Records the channel classification of the c_3 cross-anchor swing: PR #1821's dc_3/dq ≈ 4.66e6 impossibility is a MAGNITUDE-channel bound; the bar-odd c_3 source lives in the phase channel, which the bound does not touch. C14 anti-fitting: no comparison to c_k / Φ₁ / residue A / dc_3/dq / any physical constant; the 4.66e6 observable-q slope is a separate channel and is NOT reproduced here.",
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_fmap_phi_b_channel_separation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_fmap_phi_b_channel_separation_probe.py"
+  },
+  "description": "Fibre-side spec for the z→c_k f-map keystone (PR #3458). On the validated Faddeev Φ_b (phi_b_evaluator.py), confirms the fibre-saddle object separates into a FLAT magnitude channel (d|Φ_b|/dz ≈ 0) and a VARYING phase channel (d arg Φ_b/dz ≠ 0), and witnesses QOU.QBeta.crossFactor (cross-point connecting factor of two σ-unitaries is σ-unitary) with σ = conjugation. Records the channel classification of the c_3 cross-anchor swing: PR #1821's dc_3/dq ≈ 4.66e6 impossibility is a MAGNITUDE-channel bound; the bar-odd c_3 source lives in the phase channel, which the bound does not touch. C14 anti-fitting: no comparison to c_k / Φ₁ / residue A / dc_3/dq / any physical constant; the 4.66e6 observable-q slope is a separate channel and is NOT reproduced here.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "fibre_points": [
@@ -105,7 +114,7 @@
     ],
     "dz_step": "1.0e-6",
     "evaluator": "computations/qbeta/phi_b_evaluator.py (battery-gated)",
-    "lean_witnessed": "QOU.QBeta.IsSigmaUnitary.crossFactor (FaddeevModularDouble.lean, sorry-free)",
+    "lean_witnessed": "QOU.QBeta.crossFactor (FaddeevModularDouble.lean, sorry-free)",
     "channel_classification_of_c3_swing": "phase (bar-odd / Im 𝔙 / decay); PR #1821 dc_3/dq≈4.66e6 is a magnitude-channel bound, silent on the phase channel",
     "min_phase_derivative": "1.773672"
   }

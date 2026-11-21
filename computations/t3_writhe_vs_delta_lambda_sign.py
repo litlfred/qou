@@ -7,7 +7,7 @@ quark's canonical T(2,n)=sigma_1^{+-n} braid: up-type = +crossing (T3=+1/2),
 down-type = -crossing (T3=-1/2).  The per-QUARK datum is  sign(kappa) in {+1,-1}.
 
 The Delta_lambda mixed-sign target (Option-E deuteron closure, Lean-proved
-`PartitionOf5.deltaSign_mixed`, PROBE-4 prune 2026-06-16) is per-PARTITION:
+`QOU.BraidsAndKnots.deltaSign_mixed`, PROBE-4 prune 2026-06-16) is per-PARTITION:
     Delta_lambda = sgn(w0^{S_{lambda'}}) * dim(V_lambda),
     sgn(w0^{S_{lambda'}}) = prod_j sgn(w0^{S_{c_j}}) = prod_j (-1)^{C(c_j,2)},
 where c_j = parts of the conjugate lambda' = COLUMN heights of lambda.
