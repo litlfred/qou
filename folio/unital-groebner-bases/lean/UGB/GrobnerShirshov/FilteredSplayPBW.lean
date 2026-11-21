@@ -1,4 +1,5 @@
 import UGB.GrobnerShirshov.BlockSplayPBW
+import UGB.GrobnerShirshov.AlgOps
 import Mathlib.Algebra.MonoidAlgebra.Support
 
 set_option linter.unusedSectionVars false
@@ -630,5 +631,60 @@ theorem normalFormBasis [DecidableEq k] : NormalFormBasis ord F.quad.sys :=
   F.toBlockData.normalFormBasis (FilteredData.assocCondition F) M.rightDeriv M.leftDeriv M.jacobiCondition
 
 end Model
+
+/-! ## A weighted admissible order
+
+Compare words first by total weight, then by deg-lex in a rank. This is the
+order of [leitner2006] §1 (`x ≪ x'` refines the filtration). It satisfies the
+two order axioms of `FilteredData`/`BlockData`, and `swap_lt` whenever the rank
+increases with the block. -/
+
+/-- The weight-then-deg-lex order. -/
+noncomputable def weightedOrder (wt : G → ℕ) (rank : G → ℕ) (rank_inj : Function.Injective rank) :
+    AdmissibleOrder G where
+  lt a b := wsum wt a < wsum wt b ∨
+    (wsum wt a = wsum wt b ∧ (mkDegLexOrder rank rank_inj).lt a b)
+  trichotomy a b := by
+    rcases lt_trichotomy (wsum wt a) (wsum wt b) with h | h | h
+    · exact Or.inl (Or.inl h)
+    · rcases (mkDegLexOrder rank rank_inj).trichotomy a b with h' | h' | h'
+      · exact Or.inl (Or.inr ⟨h, h'⟩)
+      · exact Or.inr (Or.inl h')
+      · exact Or.inr (Or.inr (Or.inr ⟨h.symm, h'⟩))
+    · exact Or.inr (Or.inr (Or.inl h))
+  wf := by
+    refine Subrelation.wf (r := InvImage (Prod.Lex (· < ·) (mkDegLexOrder rank rank_inj).lt)
+      (fun a => (wsum wt a, a))) (fun {a b} h => ?_)
+      (InvImage.wf _ (WellFounded.prod_lex wellFounded_lt (mkDegLexOrder rank rank_inj).wf))
+    simp only [InvImage, Prod.lex_def]
+    exact h
+  left_compat a b c h := by
+    rcases h with h | ⟨h, h'⟩
+    · exact Or.inl (by simp; omega)
+    · exact Or.inr ⟨by simp; omega, (mkDegLexOrder rank rank_inj).left_compat a b c h'⟩
+  right_compat a b d h := by
+    rcases h with h | ⟨h, h'⟩
+    · exact Or.inl (by simp; omega)
+    · exact Or.inr ⟨by simp; omega, (mkDegLexOrder rank rank_inj).right_compat a b d h'⟩
+
+section WeightedOrder
+
+variable (wt : G → ℕ) (rank : G → ℕ) (rank_inj : Function.Injective rank)
+
+theorem weightedOrder_lt_of_wsum_lt (x y : List G) (h : wsum wt x < wsum wt y) :
+    (weightedOrder wt rank rank_inj).lt x y := Or.inl h
+
+theorem weightedOrder_lt_of_wt (x y : List G) (h : (x.map wt).sum ≤ (y.map wt).sum)
+    (hl : x.length < y.length) : (weightedOrder wt rank rank_inj).lt x y := by
+  change wsum wt x ≤ wsum wt y at h
+  rcases lt_or_eq_of_le h with h | h
+  · exact Or.inl h
+  · exact Or.inr ⟨h, Or.inl hl⟩
+
+theorem weightedOrder_swap_lt {a b : G} (h : rank b < rank a) :
+    (weightedOrder wt rank rank_inj).lt [b, a] [a, b] :=
+  Or.inr ⟨by simp; omega, Or.inr ⟨rfl, List.Lex.rel h⟩⟩
+
+end WeightedOrder
 
 end UGB.GrobnerShirshov.BlockSplay
