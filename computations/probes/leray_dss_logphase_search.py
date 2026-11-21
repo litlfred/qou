@@ -718,7 +718,9 @@ def arclength_run(sy, x0, pj, checkpoint, state=None, th1=arb(1) / 80, log=LOG,
             f"|A|={amp.str(10, radius=False)} res={rec['residual']} its={its} folds={len(state['folds'])} ({time.time()-t0:.0f}s)")
         y0, y1 = y1, y
         state['y0'] = _vec(y0); state['y1'] = _vec(y1)
-        g = arb(2) if its <= 3 else (arb(13) / 10 if its <= 6 else arb(7) / 10)
+        # a 60-digit corrector needs ~5 Newton + 1-2 frozen iterations even on easy steps, so the
+        # step only shrinks when the corrector is close to its iteration limit
+        g = arb(2) if its <= 5 else (arb(3) / 2 if its <= 7 else (arb(1) if its <= 9 else arb(7) / 10))
         ds = min(ds * g, dsmax); state['ds'] = s40(ds, 30)
         checkpoint(state)
         if rec['cls'] != 'periodic': return finish('collapsed_to_' + rec['cls'], y[:D])
