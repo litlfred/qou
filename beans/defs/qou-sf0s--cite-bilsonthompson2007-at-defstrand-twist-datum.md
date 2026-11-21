@@ -1,7 +1,7 @@
 ---
 # qou-sf0s
 title: Cite [bilsonthompson2007] at def:strand-twist-datum
-status: completed
+status: todo
 pr: 8397
 type: task
 priority: normal
@@ -39,4 +39,4 @@ Status stays in-progress until PR #8818 merges.
 
 ## 2026-11-21 — PR #8818 merged
 
-The cite-intake work above landed on main. Status set to completed.
+The cite-intake work above landed on main. The verdict was done-partial, so the residual named in the note stays open: status set to todo.

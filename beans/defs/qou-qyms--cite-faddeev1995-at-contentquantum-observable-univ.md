@@ -1,7 +1,7 @@
 ---
 # qou-qyms
 title: Cite [faddeev1995] at folio/quantum-observable-universe/lean/QOU/QBeta/FaddeevPhiFullUniqueness…
-status: completed
+status: todo
 type: task
 priority: normal
 tags:
@@ -28,4 +28,4 @@ Status stays in-progress until PR #8818 merges.
 
 ## 2026-11-21 — PR #8818 merged
 
-The cite-intake work above landed on main. Status set to completed.
+The cite-intake work above landed on main. The verdict was done-partial, so the residual named in the note stays open: status set to todo.

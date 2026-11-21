@@ -1,7 +1,7 @@
 ---
 # qou-2hc7
 title: 'CITE: Thurston GT3M is held as a 33-page Ch.1-2 excerpt — M — 113 citers, several at Ch.4 / §4.5 gluing equations'
-status: completed
+status: todo
 type: task
 priority: high
 tags:
@@ -76,4 +76,4 @@ Status stays in-progress until PR #8818 merges.
 
 ## 2026-11-21 — PR #8818 merged
 
-The cite-intake work above landed on main. Status set to completed.
+The cite-intake work above landed on main. The verdict was done-partial, so the residual named in the note stays open: status set to todo.
