@@ -185,7 +185,7 @@ theorem log_cell_bounds (q : ℝ) (hq : 1 < q) :
   · rw [lt_div_iff₀ hden]
     have : 1 - q⁻¹ = (q - 1) / q := by field_simp
     rw [this] at hlo
-    have h2 : 2 / q ^ 2 * (q * (q - 1)) = 2 * ((q - 1) / q) := by field_simp; ring
+    have h2 : 2 / q ^ 2 * (q * (q - 1)) = 2 * ((q - 1) / q) := by field_simp
     rw [h2]
     linarith
   · rw [div_lt_iff₀ hden]
@@ -206,7 +206,7 @@ theorem log_cell_tower_lt_two (q : ℝ) (hq : 1 < q) : 2 * e0Tower q * Real.log 
   rw [e]
   calc (2 * e0 q * Real.log q) * (q ^ 2 / (2 * q - 1))
       < 2 / q * (q ^ 2 / (2 * q - 1)) := mul_lt_mul_of_pos_right hb hr
-    _ = 2 * q / (2 * q - 1) := by field_simp; ring
+    _ = 2 * q / (2 * q - 1) := by field_simp
     _ ≤ 2 := by rw [div_le_iff₀ h21]; linarith
 
 /-! ## The scale as a temperature (pre-registration addendum 1)
@@ -239,7 +239,6 @@ theorem routeD_cell (q t D : ℝ) (hq : 1 < q) (ht : 0 < t) (hD : 0 < D) :
   simp only [add_zero, neg_one_mul] at this
   rw [← sub_div, this]
   field_simp
-  ring
 
 /-- **The two corpus temperatures disagree.** For `1 < q < 2` the dictionary's inverse temperature
 `ln q` is strictly below `def:quantum-temperature`'s `β_q = 1/ℏ_q = q/(q−1)`. -/

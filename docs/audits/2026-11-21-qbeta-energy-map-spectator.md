@@ -98,8 +98,8 @@ Two comparison-boundary facts (the arithmetic is in Lean; the measured numbers a
 | |c| = E₀ or E₀^full | **posited** (the E₀ block); per-log vs per-step reading open |
 | reading Q_β vs m_n − m_p | open; the D2 ruling was for the linear cell |
 
-The Lean file was written before a toolchain was available in this session; its compile status
-is recorded in the PR or commit that lands it.
+Lean: `SpectatorEnergyMap.lean` compiles with lean-direct (Lean 4.24.0, Mathlib imports only), exit 0,
+no `sorry`. All 19 theorems depend only on `propext`, `Classical.choice`, `Quot.sound`.
 
 ## 7. Open, framed for the owner
 
