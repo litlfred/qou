@@ -57,34 +57,43 @@ noncomputable def q_param : R_q := LaurentPolynomial.T 1
 /-- The formal parameter `q⁻¹` of the ground ring. -/
 noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
-/-- The electron: trefoil knot `T_{2,3}` in the lepton sector. -/
+/-- The electron: the braid word `σ₀σ₁σ₀ ∈ B₃` (owner ruling 2026-11-21), whose
+closure is the positive Hopf link `T_{2,2}`. Until 2026-11-21 this structure
+recorded the trefoil `T_{2,3}`; the trefoil braid `σ₀³ ∈ B₂` is the documented
+backup (`docs/audits/2026-11-21-electron-word-options-downstream.md`). -/
 structure Electron where
-  /-- Torus knot parameter p. -/
+  /-- Letters of the braid word `σ₀σ₁σ₀`, all positive. -/
+  braidLetters : List (Fin 2) := [0, 1, 0]
+  /-- Torus link parameter p: the Hopf link is `T_{2,2}`. -/
   torusP : ℕ := 2
-  /-- Torus knot parameter n. -/
-  torusN : ℕ := 3
-  /-- Crossing number of the trefoil. -/
-  crossing_number : ℕ := 3
-  /-- Seifert genus of the trefoil. -/
-  genus : ℕ := 1
-  /-- Hyperbolic volume (torus knot → non-hyperbolic). -/
+  /-- Torus link parameter n: the Hopf link is `T_{2,2}`. -/
+  torusN : ℕ := 2
+  /-- Crossing number of the Hopf link (the word has 3 letters; it is not minimal). -/
+  crossing_number : ℕ := 2
+  /-- Seifert genus of the Hopf link (its minimal Seifert surface is an annulus). -/
+  genus : ℕ := 0
+  /-- Hyperbolic volume (torus link → non-hyperbolic). -/
   volume : R_q := 0
   /-- Coulomb charge: −1 (from crossing chirality). -/
   charge : ℤ := -1
   /-- Orientation: +1 for particle (forward time). -/
   orientation : ℤ := 1
 
-/-- The positron: mirror trefoil `σ(T_{2,3})` with reversed crossings. -/
+/-- The positron: the conjugate word `σ₀⁻¹σ₁⁻¹σ₀⁻¹ ∈ B₃` with reversed crossings,
+whose closure is the negative Hopf link. Until 2026-11-21 this structure recorded the
+mirror trefoil. -/
 structure Positron where
-  /-- Torus knot parameter p (same as trefoil). -/
+  /-- Letters of the braid word `σ₀⁻¹σ₁⁻¹σ₀⁻¹` (every letter inverted). -/
+  braidLetters : List (Fin 2) := [0, 1, 0]
+  /-- Torus link parameter p (same as the electron's Hopf link). -/
   torusP : ℕ := 2
-  /-- Torus knot parameter n (same as trefoil). -/
-  torusN : ℕ := 3
-  /-- Crossing number (same as trefoil). -/
-  crossing_number : ℕ := 3
-  /-- Seifert genus (same as trefoil). -/
-  genus : ℕ := 1
-  /-- Hyperbolic volume (torus knot → non-hyperbolic). -/
+  /-- Torus link parameter n (same as the electron's Hopf link). -/
+  torusN : ℕ := 2
+  /-- Crossing number (same as the Hopf link). -/
+  crossing_number : ℕ := 2
+  /-- Seifert genus (same as the Hopf link). -/
+  genus : ℕ := 0
+  /-- Hyperbolic volume (torus link → non-hyperbolic). -/
   volume : R_q := 0
   /-- Coulomb charge: +1 (reversed crossing chirality). -/
   charge : ℤ := 1
