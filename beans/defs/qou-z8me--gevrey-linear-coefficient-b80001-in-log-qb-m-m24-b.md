@@ -68,3 +68,5 @@ At the probe q the closed form is 8.000104239513764 (the fit gave 8.00010424); a
 Probe pre-registered: docs/audits/2026-11-21-c1-gevrey-linear-coefficient.md; computations/probes/c1_gevrey_linear_coeff_probe.py (300 dps). P3 pass; P1/P2 fail their 1e-15 thresholds at q≈1.11 only (correction q^{-300} ≈ 2.5e-14 exceeds the threshold I set); fail criterion 1e-10 not met. Branch claude/alien-calculus-c1-gevrey-2026-11-21 (local commit 8ce0789da, PR pending owner card).
 
 Scope: positive solutions only; sign-changing / complex data not proved. Superseded-premise check (owner 2026-11-21): none — pure q-difference object, q free, no photon/convention/trace/fit input.
+
+2026-11-21: draft PR #8857 (issue #8854) carries the Lean proof, audit and probe.
