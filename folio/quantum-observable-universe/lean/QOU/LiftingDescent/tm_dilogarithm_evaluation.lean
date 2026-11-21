@@ -97,7 +97,7 @@ theorem tm_divisor_chart_evaluation [ctx : TmDivisorChartInputs] :
     ∀ i : ℕ, MI i = ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t :=
   ctx.chart_eval
 
-/-- **Exceptional-divisor summand = quantum dilogarithm**
+/-- **Exceptional-divisor summand = symmetric q-dilogarithm**
     ([`conj:topological-mass-dilogarithm`]).
 
 `‖MI∫_{E_i}‖ = negLi2q(z_i)` for every exceptional divisor `E_i`.
