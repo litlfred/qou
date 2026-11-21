@@ -128,6 +128,24 @@ def main() -> int:
           "factor changes the q -> 1 order of the cell from O(h) to O(1). A factor shared by "
           "both sides (f on n and p) cannot: it multiplies an O(h) quantity.")
 
+    # F6: the O(h) corrections of each lepton factor (the eigenphase thread's half of the
+    # split with #8868, which owns the q = 1 coefficient). Exact series in h = q - 1/q.
+    hh = sp.Symbol("hh", positive=True)
+    qh = (hh + sp.sqrt(hh ** 2 + 4)) / 2
+    hseries, ratio_q0 = {}, {}
+    for nm, fx in [("Markov", markov)] + [(f"b={b}", q ** (6 - 2 * b) / D2 ** 3)
+                                           for b in range(4)]:
+        ser = sp.series(sp.simplify(fx.subs(q, qh)), hh, 0, 4).removeO()
+        hseries[nm] = str(sp.expand(ser))
+        ratio_q0[nm] = mp.nstr(mpv(fx) / mp.mpf(str(f1[nm])), 20)
+    ok6 = sp.expand(sp.series(sp.simplify(markov.subs(q, qh)), hh, 0, 2).removeO()) == \
+        sp.Rational(1, 2) + sp.Rational(3, 4) * hh
+    check("F6_lepton_factor_O_h_corrections", ok6,
+          f"exact series in h to O(h^3): {hseries}. Ratio f(q0)/f(1) (the size of the O(h) "
+          f"tail at the proton pin): {ratio_q0}. The b=3 sector has no O(h) term. These are "
+          "kept regardless of size (owner 2026-11-21); which one applies waits on the q = 1 "
+          "coefficient of the interaction (#8868).")
+
     allp = all(ok for _, ok, _ in RESULTS)
     print(f"  {sum(ok for _, ok, _ in RESULTS)}/{len(RESULTS)} checks passed")
     wb = WitnessBuilder("qbeta-lepton-factor", engine="mpmath")
@@ -148,6 +166,8 @@ def main() -> int:
         "q_to_1": {"base": str(base1), "eps_p": str(ep1),
                    "f": {k: str(v) for k, v in f1.items()},
                    "one_sided_p": {k: str(v) for k, v in one_sided.items()}},
+        "h_series": hseries,
+        "ratio_f_q0_over_f_1": ratio_q0,
         "scope": "(a): disjoint electron only; linked words are in qbeta-lepton-strand.",
     })
     return 0 if allp else 1
