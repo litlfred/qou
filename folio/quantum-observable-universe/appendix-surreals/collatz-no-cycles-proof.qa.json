@@ -7,7 +7,7 @@
     "md": "folio/quantum-observable-universe/appendix-surreals/collatz-no-cycles-proof.md"
   },
   "source_hashes": {
-    "md": "82b2eeaa79c0",
+    "md": "c28ee754807f",
     "ts": "57ba68ef0347"
   },
   "criteria": {
@@ -44,6 +44,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "voice-emoji-content": [
@@ -79,6 +96,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "voice-first-person-work": [
@@ -114,6 +148,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "voice-time-stamped-notes": [
@@ -149,6 +200,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "voice-unicode-crash": [
@@ -184,6 +252,23 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "voice-editorializing": [
@@ -219,6 +304,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "voice-scholarly-default": [
@@ -284,6 +386,38 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). Scholarly third person throughout; numbered case analysis."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). Scholarly register throughout; the edited sentence is plain mathematical prose."
       }
     ],
     "voice-title-scholarly": [
@@ -384,6 +518,38 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). No filler, hedging stacks or stock phrases in the added text."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). No filler, hype or hedging stacks; the fix adds none."
       }
     ],
     "voice-author-notes-pollution": [
@@ -419,6 +585,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "voice-status-section": [
@@ -454,6 +637,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "framework-canonical": [
@@ -489,6 +689,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "wall-side-correct": [
@@ -525,6 +742,24 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -713,6 +948,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "canonical-witness-pinned": [
@@ -748,6 +1000,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -818,6 +1087,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -853,6 +1139,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "compute-witness-exists": [
@@ -995,6 +1298,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347",
+          "graph": "8706dc9d8381"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1031,6 +1352,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347",
+          "graph": "8706dc9d8381"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1214,6 +1554,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347",
+          "graph": "8706dc9d8381"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1289,6 +1647,25 @@
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1327,6 +1704,25 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1367,6 +1763,25 @@
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1405,6 +1820,25 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1462,6 +1896,21 @@
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). Proof of prop:collatz-no-cycles in appendix-surreals beside the other collatz blocks.",
         "notes": "The proof now carries two end marks: one after the balanced case and one after the affine classification, with Scope between them. Cosmetic."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). Belongs in appendix-surreals next to the collatz-no-cycles prop. Note (cosmetic, unchanged): two end-of-proof marks, one after the balanced case and one after the affine classification, with 'Scope' between them."
       }
     ],
     "da-false-claim": [
@@ -1522,6 +1971,36 @@
         "severity": "major",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). Case 3 (b = -1), last step: 'Then D = qP + 1 obeys (1+q)D' = [3]_q D, forcing qP = -1'. False. With S = qP the all-odd step is (1+q)S' = [3]_q S + q; for D = S + 1 this gives (1+q)D' = [3]_q S + 1 + 2q, which differs from [3]_q D = [3]_q S + 1 + q + q^2 by q^2 - q. The correct shift is D = P + q^{-2} as in case 1 (equivalently q^2 P + 1 = X*s + 1 with s = qP, which is what the Lean affine_zero call uses), forcing P = -q^{-2}, which contradicts b = -1. Conclusion of the case is still true (and Lean-verified), but the displayed derivation step is wrong.",
         "notes": "Fix: replace 'D = qP + 1' by 'D = q^2 P + 1' and 'forcing qP = -1' by 'forcing P = -q^{-2}, which has b = -2'."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). Case 3 all-odd step now reads 'D = P + q^{-2} obeys (1+q)D' = [3]_q D as in case 1, forcing P = -q^{-2}, which has ord_q = -2 != -1'. Checked: (1+q)(P'+q^-2) = [3]_q P + 1 + q^-2 + q^-1 = [3]_q (P + q^-2); iterating around a k-cycle gives ((1+q)^k - [3]_q^k) D = 0, so D = 0, contradicting b = -1. The earlier major finding (D = qP + 1, qP = -1) is resolved. Cases 1 and 2 and the balanced case re-checked: no false step found."
       }
     ],
     "da-vacuous": [
@@ -1564,6 +2043,21 @@
           "version": "v1"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1608,6 +2102,21 @@
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-overclaim": [
@@ -1651,6 +2160,21 @@
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-hidden-dof": [
@@ -1693,6 +2217,21 @@
           "version": "v1"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1767,6 +2306,36 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). Checked each step of cases 1-3 against the end-coefficient recurrences: even step beta' -> beta' - beta, odd step fixes beta' when b <= -2; q = 0 evaluation for b >= 0; q = -1 evaluation forcing c = 1; reversal of (1+q)S' = [3]S + q to (1+q)S~' = [3]S~ + q^{d+1} (both 1+q and [3]_q palindromic). Inferences follow, apart from the D-shift error recorded under da-false-claim."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). Each case concludes from the step before it; the case-3 conclusion now follows from the all-odd fixed-point argument shared with case 1."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1826,6 +2395,36 @@
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "severity": "minor",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). The prose case-3 shift D = qP + 1 does not match the Lean: classify_one_unit applies affine_zero to fun i => X * s i + 1 with s = q*P, i.e. q^2 P + 1. Same root cause as da-false-claim. Elsewhere the prose matches the Lean structure (core / all_even_zero / classify_zero / reverse_odd_one / cycle_classification / laurent_cycle_classification)."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). Prose shift D = P + q^{-2} agrees with the Lean: classify_one_unit applies affine_zero to X * s i + 1 with s = qP, i.e. q^2 P + 1 = q^2 (P + q^{-2}), a unit multiple of the prose D. Case 1 matches affine_zero (s i + X^(M-2)); the statement names cycle_classification and laurent_cycle_classification, both present."
       }
     ],
     "da-citation-misuse": [
@@ -1868,6 +2467,21 @@
           "version": "v1"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1912,6 +2526,21 @@
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-empirical-fragility": [
@@ -1954,6 +2583,21 @@
           "version": "v1"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1998,6 +2642,21 @@
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-reproducibility": [
@@ -2041,6 +2700,21 @@
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-referee-verdict": [
@@ -2083,6 +2757,21 @@
           "version": "v1"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -2149,6 +2838,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "cite-named-theorem": [
@@ -2184,6 +2890,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "voice-agent-speak": [
@@ -2219,6 +2942,23 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "voice-branch-jargon": [
@@ -2354,6 +3094,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "trap-negation-contrast": [
@@ -2405,6 +3163,21 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). Contrasts present ('affine, not linear', 'solvable, not impossible') are pre-existing and each states the positive fact alongside. New text: 'No positivity hypothesis and no real value of q is used' and 'says nothing about classical Collatz cycles' are scope statements, not rhetorical contrasts."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). No instance; the case-3 edit introduces none."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2454,6 +3227,21 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). No rhetorical pivot; the new paragraph proceeds case by case."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). No instance; the case-3 edit introduces none."
       }
     ],
     "trap-em-dash": [
@@ -2505,6 +3293,21 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). 5 spaced em-dashes in ~1116 words (0.45/100w), all in pre-existing text (When A = 1 gloss, Scope parenthetical, (a,a+1) family). The added affine-case text has none."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). No instance; the case-3 edit introduces none."
       }
     ],
     "trap-triples": [
@@ -2554,6 +3357,21 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). The only three-item list is the classification {0}, {-q^-2}, {q^-1, 1+q^-1}, which is the content of the theorem, and the three cases b<=-2, b>=0, b=-1, which are exhaustive."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). No instance; the case-3 edit introduces none."
       }
     ],
     "trap-closing-aphorism": [
@@ -2603,6 +3421,21 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). Ends on the open-directions list (divergence). No aphorism."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). No instance; the case-3 edit introduces none."
       }
     ],
     "trap-meta-commentary": [
@@ -2653,6 +3486,22 @@
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "severity": "minor",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). 'Excluding it needs a different argument, given next.' is a forward signpost about the text rather than mathematics; the bold heading that follows already does that job."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). Unchanged from the previous review: 'Excluding it needs a different argument, given next.' is a forward signpost; the bold heading that follows already does that job. The fix commit does not touch it.",
+        "severity": "minor"
       }
     ],
     "trap-thesis-restatement": [
@@ -2702,6 +3551,21 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). Open directions summarises which case is settled by which argument in one sentence; it does not restate a thesis."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). No instance; the case-3 edit introduces none."
       }
     ],
     "trap-performed-warmth": [
@@ -2751,6 +3615,21 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). None."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). No instance; the case-3 edit introduces none."
       }
     ],
     "trap-superlative": [
@@ -2800,6 +3679,21 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). 'The only periodic orbits' is the proved classification (Lean laurent_cycle_classification), not a superlative."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). No instance; the case-3 edit introduces none."
       }
     ],
     "trap-nonspeakable": [
@@ -2849,6 +3743,21 @@
         "reviewed_at": "2026-11-21T12:42:31.000Z",
         "reviewed_sha": "fb924525a134798769ca1923418933f7500df185",
         "evidence": "Full read of the proof at fb924525 (balanced case, Scope, the new affine-case classification with its three cases, Classical limit, (a,a+1) family, Open directions). Math is in $...$; identifiers in backticks; no unspeakable symbol runs."
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T13:13:25.000Z",
+        "reviewed_sha": "028690e2afa53f9d12bd2079aa56476edc204194",
+        "evidence": "Full re-read of the proof at 028690e2 after the case b=-1 fix (balanced case, Scope, affine-case classification cases 1-3, Classical limit, (a,a+1) family, Open directions). No instance; the case-3 edit introduces none."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2905,6 +3814,23 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "acronym-in-glossary": [
@@ -2924,6 +3850,23 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "foreshadows-point-forward": [
@@ -2944,6 +3887,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347",
+          "graph": "8706dc9d8381"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02"
       }
     ],
     "da-arity-conflation": [
@@ -2961,6 +3922,21 @@
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "block has no .lean sibling"
       }
     ],
     "dak-companion-present": [
@@ -2977,6 +3953,21 @@
           "version": "v1"
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
         "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
       }
     ],
@@ -3046,6 +4037,21 @@
         },
         "reviewed_tree": "98a06b58fe734cc798623c641c8ef559c792cde5",
         "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "c28ee754807f",
+          "ts": "57ba68ef0347"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3cfa9db113875107a0bfe28e3276179a8db5cb02",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
       }
     ],
     "id-unique": [
@@ -3087,6 +4093,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T12:42:31.000Z",
+  "updated_at": "2026-11-21T13:13:25.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
