@@ -631,3 +631,41 @@ relations `KE = q²EK`, `KF = q⁻²FK`, `[E,F] = (K − K⁻¹)/(q − q⁻¹)`
 **What would change this.** A non-zero own-sector constant needs a connection 1-form `𝒜` with a
 weight-zero horizontal component. The corpus leaves `𝒜` free, so supplying one is a modelling
 choice for the owner.
+
+## 21. Horizontal connection from the braid holonomy: μ ≠ 0, exact q⁻² split, no 12 (2026-11-21)
+
+Pre-registered in `PREREGISTRATION-holonomy-connection.md` (commit 9f63c356908, before the run).
+
+**Corpus basis.** `MassTraceIdentity.lean`: the discrete multiplicative integral of a cycle is the
+ordered product of its transports, and the mass trace is a functional of it. The canonical chain
+turns non-abelian Stokes into the Hecke relation, so the nucleon holonomy is `B₃ = (σ₀σ₁⁻¹)³`.
+Braid operators commute with U_q(sl₂), so they are weight-zero, which §20 showed is what `μ ≠ 0`
+needs. **Identification (mine):** `∇_hol = hol − 1` (lattice convention). States: the normalised
+eigenvectors of `B₃` itself, so no state is chosen against a target.
+
+**Results, exact.**
+- Spectrum of `B₃` is the **same** on `W_p` and `W_n`: `(t − 1)·(t² + c₁t + 1)` with
+  `c₁ = (q¹² − 3q¹⁰ + 3q⁸ − 4q⁶ + 3q⁴ − 3q² + 1)/q⁶`. The eigenvalue 1 is the symmetric branch
+  (`μ = 0`). The other two form the (2,1) block.
+- So `μ` is identical for proton and neutron on each branch: the flip-intertwiner condition (b)
+  holds automatically for this connection. With the K-weights, `q⁻¹·w·μ` gives
+  **neutron = q⁻² × proton on every branch, exactly**: the own-sector split of §10 is reproduced
+  with a non-zero constant.
+- The two (2,1) eigenvalues are a complex-conjugate pair at the muon pin:
+  `μ ≈ −0.0029070948 ± 0.0761953964 i`. Their sum is real:
+  `Σμ = −(q² − 1)⁴(q⁴ + q² + 1)/q⁶`, ≈ −0.0058141896 at the pin, and `0` at `q = 1`
+  (each `μ` vanishes to order `(q − 1)²`).
+- Electron reference (`X_e = σ₀σ₁σ₀`, same convention): eigenvalues `1, −1, q³`, so
+  `hol − 1 ∈ {0, −2, q³ − 1}` on both weight spaces.
+- The 12: no `μ`, no n/p ratio and no nucleon/electron ratio equals 12 identically
+  (`twelve_hits = []`). Scope-(a) negative.
+
+**What this changes.** This is the first connection in the thread that gives a non-zero own-sector
+constant and produces the q⁻² split, rather than assuming it. It rests on one identification
+(`∇ = hol − 1`) that the corpus does not rule. A single eigenstate gives a complex `μ` at the pin;
+only the block trace is real. Which of these (single state, or block trace) is the physical matter
+constant is open.
+
+**Side note (Lean, existing).** `massIntegrand_eq_id_of_frobeniusForm_eq_counit` needs
+`frobeniusForm = counit`. §17's `counit_eq_frobeniusForm_of_coev` supplies it whenever
+`coevaluation = η ≫ Δ`, so that hypothesis is now discharged from a structural one.
