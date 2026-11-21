@@ -56,7 +56,7 @@ no archimedean construct.  Bar involution is the literal map `q ↦ q⁻¹`.
 That `coloredJones41` agrees with the quantum-group / skein-theoretic
 colored Jones of 4₁ — the Habiro–Lê formula is taken as the definition here
 (it is the form the corpus's compute uses and the literature proves;
-Ref: [habiro2002], [nguyen-tran-2021]).  No claim about the AJ conjecture
+Ref: [habiro2000] §3, the 4₁ formula, also due to Lê; [nguyen-tran-2021]).  No claim about the AJ conjecture
 itself is made or needed.
 -/
 

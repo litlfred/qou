@@ -1,7 +1,7 @@
 **Conjecture.** Let $\beta$ be a braid on $n$ strands with $c = 3N$ crossings, encoding a reversible computation of $N$ Toffoli gates. Let $P_L(q)$ be the Skein polynomial of the braid closure $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$. Then:
 
 1. **(Quadratic level.)** There exists a root of unity $q_k = e^{2\pi i/(k+2)}$ with $k \geq 3$ and $k + 2 \leq c^2 - 1$ such that $P_L(q_k) \neq 0$. The minimal level $k$ grows quadratically with the crossing number: $k \sim c^2$. Evaluation at $q_k$ preserves all information of the computation without reduction modulo the cyclotomic ideal.
-2. **(Quantum universality.)** At $q_k$ with $k \geq 3$, the braiding representation $\rho_{q_k} \colon B_n \to \mathrm{End}(V^{\otimes n})$ is dense in $\mathrm{SU}(2^n)$. Every quantum circuit on $n$ qubits with $N$ gates can be approximated to precision $\epsilon$ by a braid $\beta$ with $c = O(N \cdot \mathrm{polylog}(1/\epsilon))$ crossings.
+2. **(Quantum universality.)** At $q_k$ with $k \geq 3$ and $k \neq 4$, the braiding representation $\rho_{q_k} \colon B_n \to \mathrm{End}(V^{\otimes n})$ is dense in $\mathrm{SU}(2^n)$ \cite{freedman2003}. (Level $k = 4$, i.e. $q_k = e^{2\pi i/6}$, is excluded in the source: there the image is not dense.) Every quantum circuit on $n$ qubits with $N$ gates can be approximated to precision $\epsilon$ by a braid $\beta$ with $c = O(N \cdot \mathrm{polylog}(1/\epsilon))$ crossings.
 3. **(Descent projects quantum to classical.)** The descent involution $\hat{\tau}$ decomposes the endomorphism algebra at the root-of-unity level into
 $$
   \mathrm{End}(V^{\otimes n}) = \mathcal{A}^{\mathrm{desc}} \oplus \mathcal{A}^{\mathrm{trans}}.

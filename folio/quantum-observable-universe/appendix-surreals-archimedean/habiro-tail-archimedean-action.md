@@ -15,11 +15,13 @@ $\rho_\infty$ face). Then:
    at $\mathrm{arcsinh}(1/2) = \ln\varphi$.
 
 The evaluation reduces to the golden-ratio Landen dilogarithm value
-$\mathrm{Li}_2(\varphi^{-2}) = \pi^{2}/15 - \ln^{2}\varphi$, itself derived from
+$\mathrm{Li}_2(\varphi^{-2}) = \pi^{2}/15 - \ln^{2}\varphi$, one of the classical
+closed-form values listed in \cite[\S1]{zagier-dilogarithm}. It follows from
 Euler reflection, duplication, and Landen's identity at the golden points
 $\psi+\psi^{2}=1$, $1+\psi=\varphi$, $\psi/(1+\psi)=\psi^{2}$ (with
-$\psi=\varphi^{-1}$). The analytic proofs of these $\mathbb{Q}(\sqrt5)$ dilogarithm
-relations are given in \cite{hakimoglu-brown2025}.
+$\psi=\varphi^{-1}$). Those three functional equations are recalled in
+\cite[\S1.1]{hakimoglu-brown2025}, whose own golden-ratio result is a different
+identity ($\pi^2/100$ as the real part of $\mathrm{Li}_2$ at a root of a quartic, \S6).
 
 **Two faces of the same quantum object.** The $4_1$ quantum dilogarithm admits two
 distinct archimedean evaluations, which do not coincide:
