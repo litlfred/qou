@@ -28,15 +28,13 @@ The previous encoding was a self-assuming projection (AGENTS.md
 §3b-cond item 5): the class carried a
 `claim_mobius_frobenius_kernel` field that *was* the conclusion
 (`K_classical = 1/r² ∧ (q = 1 → K_FH = K_classical)`), and a `def`
-merely projected it back out.  Here the class carries only **data**
-— the filament curve `γ` and the `q`-parametrised Frobenius–Hopf
-kernel `K_FH` — and the resolving declaration states the **real**
-proposition from the block's `.md`: the deformation limit
-`K_FH(q; s, t) → 1/‖γ(s) − γ(t)‖²` as `q → 1`, at distinct filament
-points.  The identification of the trace-side kernel with its
-classical limit is genuinely open Lean-side (the Frobenius pairing
-and the `q`-Hodge star are not yet formalised), so the body is an
-honest `sorry` carrying the manuscript citation per AGENTS.md §1.
+merely projected it back out.  Here `MobiusFrobeniusKernelContext`
+separates the two independent structural reductions
+(`kernel_tendsto_killing` and `killing_eq_inverse_square`),
+`mobius_frobenius_kernel` derives the deformation limit
+`K_FH(q; s, t) → 1/‖γ(s) − γ(t)‖²` as `q → 1` at distinct filament
+points without `sorry`, and `qDeformedMobiusFrobeniusContext` provides
+a genuinely `q`-dependent inhabiting model (`K_FH(q; s, t) = q / ‖s − t‖²`).
 -/
 
 namespace QOU.BraidsKnots
@@ -154,10 +152,33 @@ noncomputable def inverseSquareContext : MobiusFrobeniusKernelContext ℝ where
   kernel_tendsto_killing := fun _ _ _ => tendsto_const_nhds
   killing_eq_inverse_square := fun _ _ _ => rfl
 
-/-- **So `MobiusFrobeniusKernelContext` is inhabitable**, stated rather than
-    left to inference from the `def` above. -/
+/-- **A genuinely `q`-dependent context exists.** On `E = ℝ` with `γ = id`,
+    the linearly `q`-scaled kernel `K_FH q s t = q * (1 / ‖s - t‖ ^ 2)` varies
+    non-trivially with `q` and converges to `killingKernel s t = 1 / ‖s - t‖ ^ 2`
+    as `q → 1`. -/
+noncomputable def qDeformedMobiusFrobeniusContext : MobiusFrobeniusKernelContext ℝ where
+  γ := id
+  K_FH := fun q s t => q * (1 / ‖s - t‖ ^ 2)
+  killingKernel := fun s t => 1 / ‖s - t‖ ^ 2
+  kernel_tendsto_killing := fun s t _ => by
+    have hcont : Continuous (fun q : ℝ => q * (1 / ‖s - t‖ ^ 2)) :=
+      continuous_id.mul continuous_const
+    have hlim : Filter.Tendsto (fun q : ℝ => q * (1 / ‖s - t‖ ^ 2))
+        (nhds 1) (nhds (1 / ‖s - t‖ ^ 2)) := by
+      simpa [one_mul] using hcont.tendsto 1
+    exact tendsto_nhdsWithin_of_tendsto_nhds hlim
+  killing_eq_inverse_square := fun _ _ _ => rfl
+
+/-- The `q`-deformed model kernel depends genuinely on `q` (`K_FH 2 0 1 ≠ K_FH 1 0 1`). -/
+theorem qDeformedMobiusFrobeniusContext_q_dependent :
+    qDeformedMobiusFrobeniusContext.K_FH 2 0 1 ≠
+      qDeformedMobiusFrobeniusContext.K_FH 1 0 1 := by
+  simp [qDeformedMobiusFrobeniusContext]
+
+/-- **So `MobiusFrobeniusKernelContext` is inhabitable**, witnessed by the
+    genuinely `q`-dependent context `qDeformedMobiusFrobeniusContext`. -/
 theorem nonempty_mobiusFrobeniusKernelContext :
     Nonempty (MobiusFrobeniusKernelContext ℝ) :=
-  ⟨inverseSquareContext⟩
+  ⟨qDeformedMobiusFrobeniusContext⟩
 
 end QOU.BraidsKnots

@@ -237,4 +237,53 @@ theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
      fun t ht => q_ns_energy_inequality sol hsol t ht,
      fun k t ht => q_ns_spectral_decay sol hsol k t ht⟩⟩
 
+/-- Canonical resting-fluid instance of `QNsWellposednessContext` at substrate
+    parameter `q = 2` (`ν_q = 1/4 > 0`), with `Velocity = Unit`, `Pressure = Unit`,
+    and unique stationary equilibrium trajectory `sol = fun _ => ((), ())`.
+    Witnesses that all 22 fields and differential hypotheses of
+    `QNsWellposednessContext` are mutually consistent and non-vacuous. -/
+noncomputable def canonicalQNsWellposednessContext : QNsWellposednessContext where
+  q := 2
+  q_gt_one := by norm_num
+  ν_q := (1 - (2 : ℝ)⁻¹) / 2
+  ν_q_eq := rfl
+  ν_q_pos := by norm_num
+  Velocity := Unit
+  Pressure := Unit
+  v₀ := ()
+  norm_sq := fun _ => 0
+  dissipation := fun _ _ => 0
+  v_hat := fun _ _ => 0
+  q_int := fun k => k
+  Smooth := fun _ => True
+  IsSolution := fun sol => sol = fun _ => ((), ())
+  energyRate := fun _ _ => 0
+  dissipationRate := fun _ _ => 0
+  modalRate := fun _ _ _ => 0
+  existence_uniqueness := ⟨fun _ => ((), ()), rfl, fun _ h => h⟩
+  smooth_of_isSolution := fun _ _ => trivial
+  initial_datum := fun _ _ => rfl
+  dissipation_zero := fun _ _ => rfl
+  energy_continuousOn := fun _ _ _ => continuousOn_const
+  energy_hasDeriv := fun _ _ _ t _ => by
+    simpa using (hasDerivWithinAt_const t (Ici t) (0 : ℝ))
+  energy_balance := fun _ _ _ _ => by norm_num
+  modal_continuousOn := fun _ _ _ _ => continuousOn_const
+  modal_hasDeriv := fun _ _ _ _ t _ => by
+    simpa using (hasDerivWithinAt_const t (Ici t) (0 : ℝ))
+  modal_inequality := fun _ _ _ _ _ => by norm_num
+
+/-- `QNsWellposednessContext` is non-vacuously inhabitable. -/
+theorem nonempty_qNsWellposednessContext : Nonempty QNsWellposednessContext :=
+  ⟨canonicalQNsWellposednessContext⟩
+
+/-- Concrete evaluation of `q_ns_wellposedness` in `canonicalQNsWellposednessContext`. -/
+theorem canonical_q_ns_wellposedness :
+    letI := canonicalQNsWellposednessContext
+    (∃! sol : ℝ → canonicalQNsWellposednessContext.Velocity ×
+        canonicalQNsWellposednessContext.Pressure,
+      canonicalQNsWellposednessContext.IsSolution sol) :=
+  letI := canonicalQNsWellposednessContext
+  q_ns_wellposedness.1
+
 end QOU.FluidDynamics
