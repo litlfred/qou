@@ -81,3 +81,15 @@ Questions:
 
 Contamination: route T reproduces row L0, which I had computed. I found route T after seeing L0,
 by reading the corpus for a temperature; I did not search for it by its number.
+
+## Addendum 2 (owner card "Reconcile first"), written before the new Lean
+
+Hypothesis to test: the two temperatures are one Gibbs state in two energy units, not two
+physical temperatures. Both read the same trace weight y as a Boltzmann weight,
+y = e^{−β_D E_D} = e^{−β_q E_nat}, with β_D = ln q (dictionary, energies "relative to the weights",
+no unit stated in the block or its `.ts`) and β_q = 1/ℏ_q (`def:quantum-temperature`, natural
+units). If so, E_nat = (β_D/β_q)·E_D = ℏ_q·ln q·E_D, and the dictionary's unit in MeV is
+ℏ_q·ln q·m_e·c_q² = E₀·ln q. Then route D's cell (2 units) equals route T's cell (2E₀·ln q).
+Lean: the weight equality ⇔ the unit relation; the converted route-D cell = route-T cell.
+What would refute it: any corpus block that states T = 1/ln q in natural units (grep, before Lean).
+Grep result (done before writing this): no block states that.
