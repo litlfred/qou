@@ -25,11 +25,12 @@ Pure-Rust canonical compute core for the QOU paper's Iwahori-Hecke `H_3(q)` Gram
 |---|---|---|
 | `mpfr` | yes | `rug` (GMP+MPFR) — required for `tr_m_atomic_mpfr`, `seminormal_mpfr`, `dense_la_mpfr` |
 | `wasm-core` | no | Marker for the rug-free subset (used by `hecke-engine-wasm`) |
-| `clarabel-sdp` | no | Clarabel-rs LP/QP/SOCP solver (f64 backend; mutually exclusive with `clarabel-mpfr`) |
+| `clarabel-sdp` | no | Clarabel-rs LP/QP/SOCP/SDP solver (f64 backend; needs BLAS + gfortran) |
 | `clarabel-bigrational` | no | Clarabel with `BigRational` scalar (exact rational arithmetic) |
-| `clarabel-mpfr` | no | Clarabel with `MpfrFloat` scalar (mutually exclusive with `clarabel-sdp` and `clarabel-bigrational`) |
+| `clarabel-mpfr` | no | Clarabel with `MpfrFloat` scalar (mutually exclusive with `clarabel-bigrational`) |
+| `clarabel-mpfr-sdp` | no | `clarabel-mpfr` plus PSD cones at MPFR precision (50+ digits; fork rev 37f06c3+; needs gfortran) |
 
-The three `clarabel-*` features are **off by default in this crate** (so the
+The four `clarabel-*` features are **off by default in this crate** (so the
 `clarabel-sdp` bins build without a backend conflict and the WASM subset stays
 clarabel-free), but the **`pyhecke-native` wheel turns `clarabel-mpfr` on by
 default** via its `clarabel-lp` feature (2026-06-28). Any clarabel feature
