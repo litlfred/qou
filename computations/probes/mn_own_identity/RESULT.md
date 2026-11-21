@@ -147,3 +147,8 @@ n and p; the electron's does not (tr 𝒟_e(1)² = 4). So no ℒ term with ∇ =
 q-independent insertions gives an n − p that survives at q = 1 (scope b, invariant V³(1) = 1).
 The corpus quark-charge term (−⅓·tr V³ on n, 0 on p) does survive at q = 1, but it has degree 0
 in 𝒟 and is outside ℒ as written.
+
+**Static charge term (added 2026-11-21, LITERATURE-COMPARISON §31; Lean `StaticChargeTermNP`).**
+ℒ′ = 𝒟² + QPair·hol, linear map fixed on the electron: m_n − m_p = −54.33 keV (plain) /
+−48.91 keV (K-weighted) at the proton pin, limit −m_e/8 at q = 1. Pre-registered and held.
+Opposite sign to CODATA and about 4 % of its size (scope (a)).

@@ -947,3 +947,31 @@ central idempotents of H₃ (`mass-theory/three-parameters-wedderburn.md`).
 but not chosen. Every mass-sector pole is too weak. Every H₃-built degree-0 term is u ↔ d
 symmetric up to a factor h. What survives at q = 1 is the quark-charge insertion, which is §29's
 "Option 1" (a static charge term added to ℒ, with energy map fixed by CAL-1).
+
+## §31 ℒ plus the static quark-charge term, energy map fixed by CAL-1 (pre-registered ea8659cff5a)
+
+Probe `mn_static_charge_term_probe.py` (all 3 checks pass); Lean `StaticChargeTermNP.lean`
+(`delta_static`, `delta_static_one`; generic field, lean-direct exit 0, standard axioms).
+ℒ′ = 𝒟² + S, S = QPair·hol with unit coefficient; E = λ·T(ℒ′), λ = m_e/T(ℒ′_e); the electron's
+S is taken as 0 (it has no quark strands; a recorded assumption).
+
+**Derived exactly.** Δ_S = −⅓·tr V³ = −1 + h⁴[3]_q/3 (plain arm), and −1 at q = 1. This is the
+first n − p in this thread that survives at q = 1, and it does so because S has no 𝒟 factor.
+
+| arm | (E_n − E_p)/m_e at q₀ | E_n − E_p at q₀ | limit q → 1 |
+|---|---|---|---|
+| P, plain trace | −0.106322782241 | **−54.33 keV** | −1/8 |
+| K, Tr(K^{⊗3}·)/[2]³ | −0.095710585282 | **−48.91 keV** | −1/8 |
+
+Every pre-registered prediction held: neutron lighter in both arms, about 0.1·m_e, and the
+limit −1/8 in both arms.
+
+**Comparison (printed after).** CODATA m_n − m_p = +1293.33 keV. Both arms have the opposite
+sign and about 4 % of the magnitude. Scope (a): ℒ′ with unit coefficient on S and this electron
+convention does not give m_n − m_p. It does not exclude a different coefficient on S, since that
+coefficient is not derived, and choosing one to fit would be a fit.
+
+**What it does establish.** The n − p of ℒ′ at q₀ is dominated by S (|Δ_S| ≈ 1 against
+|Δ_D| ≈ 10⁻³), so the sign of any linear electron-calibrated ℒ′ prediction is set by the
+pair-charge sum, which is lower on the neutron. A positive m_n − m_p would need a q-surviving
+n − p of the opposite sign from somewhere other than QPair.
