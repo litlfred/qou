@@ -681,8 +681,10 @@ def pbwElement (k : Type v) [Field k] (m : PBWMonomial) : AlgElement SU2Gen k :=
 
     Nothing downstream is left resting on the false claim: `ugb_pbw_corollary`
     now takes normality as an explicit hypothesis rather than importing it from
-    here. Establishing it for the corrected shape is open, and is the genuine
-    remaining content of Bokut–Malcolmson Thm 3.2.
+    here. The corrected shape is proved in `QSerrePBW.lean`: the normal words
+    are exactly `E_-^c E_+^a K^n` (`n ∈ ℤ`, with `K^n = (K⁻¹)^(-n)` for
+    `n < 0`), and their classes are a `k`-basis of the quotient
+    (`qSerre_pbw_basis`), the content of Bokut–Malcolmson Thm 3.2.
 
     Reference: Bokut & Malcolmson, Israel J. Math. 96 (1996), Theorem 3.2. -/
 -- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (PBW monomials as GS normal forms — shape corrected)

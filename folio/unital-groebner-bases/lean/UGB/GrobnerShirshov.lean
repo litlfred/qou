@@ -6,6 +6,7 @@ import UGB.GrobnerShirshov.QSerreCriticalPairs
 import UGB.GrobnerShirshov.QSerreGS
 import UGB.GrobnerShirshov.Quotient
 import UGB.GrobnerShirshov.NormalFormBasisProof
+import UGB.GrobnerShirshov.QSerrePBW
 import UGB.GrobnerShirshov.Flatness
 import UGB.GrobnerShirshov.StrongMultiplicativity
 import UGB.GrobnerShirshov.JetOrder
@@ -30,6 +31,7 @@ provides the algebraic engine behind the QOU lifting mechanism.
 | `QSerreGS` | resolves all 8 and proves `qSerre_is_gs_basis` (formerly an axiom) |
 | `Quotient` | the quotient algebra `k⟨G⟩ / (Σ)` and `NormalFormBasis` |
 | `NormalFormBasisProof` | proof that a GS basis with unit leading coefficients gives `NormalFormBasis` (commutative `k`) |
+| `QSerrePBW` | PBW basis of `U_q(su(2))`: normal words are `E_-^c E_+^a K^n`, `(c,a,n) ∈ ℕ×ℕ×ℤ`, and are a `k`-basis (`qSerre_pbw_basis`) |
 | `Flatness` | Flat deformation from GS confluence |
 | `StrongMultiplicativity` | tensor-product presentation (Bokut–Chen); see `leitner2006` Def. 1.11 for strong multiplicativity |
 | `SplayPBW` | twisted splay rewriting system `ab → c·ba + π(a,b)`; its compositions are trivial iff the Jacobi condition holds; sorted words then form a basis |
