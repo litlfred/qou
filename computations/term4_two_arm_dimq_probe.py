@@ -17,6 +17,24 @@ Term 4 is the trace of the co-Casimir C = Σ p_λ / (dim_q(λ) τ(p_λ)), so its
 
 All values are reported in units of m_e, the unit in which the existing Term-4 shift probe
 reports. Which arm is the Term 4 of the mass formula is the open ruling on issue #8109.
+
+Production stays on the "production" arm (owner choice 2026-11-21). A switch to the sl₂ arm
+would have to touch these code paths, measured by grep on 2026-11-21:
+
+* canonical: ``sweeps/paper_six_term_isotope_sweep.term4_frobenius_codim`` (assembled at
+  ``paper_six_term_mass``), and the ``sigma_inv_dim_q_at_q0`` table in
+  ``probe-term4-conventions.witness.json`` written by ``probe_term4_conventions.py``;
+* direct callers of ``term4_frobenius_codim``: ``d_from_scratch.py``,
+  ``build_six_term_substrate_model_b.py``, ``probes/path_b_habiro_mass_probe.py``;
+* readers of the witness table: ``mass_formula_6term.py`` (``term_4_frobenius``, also called
+  by ``r5_full_canonical_knot_solver.py``), ``unified_low_isotope_predictor.py``,
+  ``rho_k_h3a_co_casimir.py``, ``categorical_q_decay_ba_low_isotopes.py``;
+* ``mass_formula_6term_mpfr_50dps.term_4_frobenius_mp``, called by
+  ``derive_m_p_hecke_full_tower_50dps.py``;
+* ``audits/delta_n2_placeholder_audit.py`` reads the swept ``term4_frobenius_codim`` rows.
+
+A per-A shift in Term 4 is not by itself a shift in a binding energy; each consumer
+combines Term 4 at several A.
 """
 import _path_bridge  # noqa: F401
 from mpmath import mp
