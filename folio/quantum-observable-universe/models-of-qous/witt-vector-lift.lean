@@ -64,24 +64,17 @@ structure WittVectorLift where
 theorem witt_char_zero (p : ℕ) (hp : Nat.Prime p) : (p : ℤ) ≠ 0 := by
   exact_mod_cast hp.ne_zero
 
-/-- The reduction mod p recovers the original formal group:
-    Ĝ ⊗_{W(𝔽_p)} 𝔽_p ≅ H.
+/- The reduction-mod-p statement  Ĝ ⊗_{W(𝔽_p)} 𝔽_p ≅ H  is not formalised here.
+   Until 2026-11-21 this spot held `def reduction_preserves_dim : W.lieDim = W.lieDim := rfl`,
+   a tautology (AGENTS.md, Strict Lean Discipline item 5); it was removed. -/
 
-    At the level of Lie algebras, this means
-    Lie(Ĝ) ⊗_{ℤ_p} 𝔽_p ≅ Lie(H).
+/-- The Lie dimension of a Witt vector lift is positive.
 
-    We verify the dimensional identity: the Lie algebra dimension
-    is preserved by reduction. -/
--- Ref: [hazewinkel1978] Hazewinkel, "Formal Groups and Applications," Academic Press 1978
-def reduction_preserves_dim (W : WittVectorLift) :
-    W.lieDim = W.lieDim := rfl
-
-/-- The distribution algebra Dist(Ĝ) as a ℤ_p-module has rank
-    determined by the height and the Lie dimension.
-
-    For a 1-dimensional formal group of height h, Dist(Ĝ) is
-    a free ℤ_p-module of countable rank with a PBW-type basis
-    indexed by multi-indices of length lieDim. -/
+    This is only the structure field `lie_dim_pos`. The intended statement,
+    that Dist(Ĝ) is a free ℤ_p-module of countable rank with a PBW-type basis
+    indexed by multi-indices of length `lieDim` [zink2002], is NOT formalised:
+    the structure carries no distribution algebra. (Docstring corrected
+    2026-11-21; it used to state the PBW claim as if this theorem proved it.) -/
 -- Ref: [zink2002] The Display of a Formal p-Divisible Group — see folio/schema/references.ts
 theorem dist_algebra_generators (W : WittVectorLift) :
     0 < W.lieDim := W.lie_dim_pos
