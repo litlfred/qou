@@ -51,10 +51,16 @@ export default proposition({
     "wedderburn-coupling",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The script `rho-k-markov-multiplicativity.witness.json` numerically verifies the\n\n (see `atomic-braid-mass-paper-formula.witness.json` and the `rho-k-pair-gen-extension.witness.json` table)." },
     {
       kind: "note",
       date: "2026-08-08",
       body: "The open $H_{3A}$ re-weighting correction mentioned in the prose (per-generator volumes currently carry the static $H_3$-weight convention) is scoped in `docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md` §7 Tier 2. That audit is a branch-local working note and is deliberately not cited from the published prose.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([binding scale](#conj:binding-scale-catalan))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): Per [atomic braid mass](#thm:wedderburn-mass-formula)," },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , [Catalan binding](#conj:binding-scale-catalan)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): from the [unified knot mass formula](#thm:knot-mass-formula-unified)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): from [Wedderburn mass](#thm:wedderburn-mass-formula)" },
   ],
 });

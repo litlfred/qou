@@ -325,6 +325,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e60ac80cec43",
+          "ts": "ba3857d17cf9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:36.258Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "unified-iterative-correction.md:36 'At A = 2 the AME2020 binding is +2.2246 MeV'; proof.md:4-5 'C_λ = m_e · H_q(λ)'; proof.md:27 'discharged by nothing here'",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -942,7 +958,7 @@
         "reviewed_at": "2026-08-25T12:34:05.810Z",
         "reviewed_sha": "56f847a9a8ff2f06493742f9fe8ead920278c1ba",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md:74: P4:date-ref: > **Provenance and scope (2026-08-25).** The witness named here is absent | folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md:75: P4:date-ref: > from the tree \u2014 added 2026-04-15 in commit `e2814e577f` under | folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md:87: P4:date-ref: > directive of 2026-08-25 is **no fitting**. The contrast is inside the same"
+        "evidence": "folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md:74: P4:date-ref: > **Provenance and scope (2026-08-25).** The witness named here is absent | folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md:75: P4:date-ref: > from the tree — added 2026-04-15 in commit `e2814e577f` under | folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md:87: P4:date-ref: > directive of 2026-08-25 is **no fitting**. The contrast is inside the same"
       }
     ],
     "voice-status-section": [
@@ -1356,7 +1372,7 @@
           "in_degree": 0,
           "cone_size": 17,
           "depth": 11,
-          "pagerank": 7.6e-05,
+          "pagerank": 0.000076,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1920,6 +1936,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-25T12:34:05.810Z",
+  "updated_at": "2026-11-15T21:57:36.258Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

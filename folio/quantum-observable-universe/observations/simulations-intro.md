@@ -1,5 +1,5 @@
-We supply interactive tools to test numerical predictions:
+To make every numerical computation in this chapter reproducible and inspectable, the following interactive simulators implement the archimedean evaluations directly in the browser:
 
-- **q-Deformed Double-Slit Simulator** and **Double-Slit Analytical Simulator** implement the two-mode interference patterns.
-- **Bring's Surface Simulator** and **Quantum Bring's Surface Simulator** expose the Bring-surface geometry.
-- **Beta-Decay Half-Life Simulator** tracks predicted half-lives against experimental data via $q$ variation.
+- **$q$-Deformed Double-Slit and Analytical Interference Simulators:** Compute the massive $q$-$\mathrm{sinc}^2$ and photonic Julia-set diffraction envelopes across varying slit geometries and deformation parameters $q$.
+- **Bring's Surface and Quantum Bring's Surface Simulators:** Visualize the genus-$4$ base curve, its twenty-four Weierstrass points, the $S_5$ automorphism orbits, and the exceptional-divisor colour tubes.
+- **Beta-Decay Half-Life Simulator:** Evaluates the branching $\mathcal{Q}_q$-values and log-half-lives across the nuclear chart as a function of the substrate modulus $q_0$.

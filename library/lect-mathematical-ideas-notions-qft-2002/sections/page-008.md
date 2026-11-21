@@ -1,0 +1,52 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-008
+section_title: "Page 8"
+pages: 8-8
+pdf_page: 8
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+8 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+proof of equation 8 (which we gave in the 1-dimensional case), we see that the
+calculation of A; reduces to calculation of integrals of the form
+
+P(x)e~ BO)? dar,
+V
+where P is a polynomial and B is a positive definite bilinear form (in fact, B(v, u) =
+(O,0y5)(c)). But such integrals can be exactly evaluated. Namely, it is sufficient
+to consider the case when P is a product of linear functions, in which case the
+answer is given by the following elementary formula, known to physicists as Wick’s
+theorem.
+
+For a positive integer k, consider the set {1,...,2k}. By a pairing o on this set
+we will mean its partition into k disjoint two-element subsets (pairs). A pairing
+can be visualized by drawing 2k points and connecting two points with an edge if
+they belong to the same pair (see Fig. 1). This will give k edges, which are not
+connected to each other.
+
+FIGURE 1. Pairings of the set {1,2,3,4}
+
+Let us denote the set of pairings on {1,...,2k} by Ix. It is clear that |II,| =
+ou For any o € II, we can think of o as a permutation of {1,...,2k}, such that
+o? = 1 and o has no fixed points. Namely, o maps any element i to the second
+
+element o(i) of the pair containing i.
+
+Theorem 3.1. Let B~! denote the inverse form on V*, and let (1,...,€m € V*.
+Then, if m is even, we have
+
+£1(2)... lm (ae BO )/27dx = (nyt? > JT] BG boc)
+v Vdet B o€l m2 1€{1,...,m}/o
+
+If m is odd, the integral is zero.
+
+Proof. If m is odd, the statement is obvious, because the integrand is an odd
+function. So consider the even case. Since both sides of the equation are symmetric
+polylinear forms in f,,...,£, it suffices to prove the result when ¢; = --- = ,, = &.
+Further, it is clear that the formula to be proved is stable under linear changes of

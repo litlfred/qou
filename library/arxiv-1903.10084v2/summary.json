@@ -1,0 +1,40 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1903.10084v2",
+ "source_sha256": "cc06a452ee7129a7",
+ "brief": "Probing the linear polarization of photons in ultraperipheral heavy ion collisions — 4 sections: Front matter; I Introduction; II Azimuthal asymmetries in di-lep",
+ "extended": "**Probing the linear polarization of photons in ultraperipheral heavy ion collisions**\n\n*Cong Li,1 Jian Zhou,1 and Ya-jin Zhou1*\n\n7 pp, 4 sections.\n\n**Outline.** Front matter; I Introduction; II Azimuthal asymmetries in di-lepton producti; Acknowledgments",
+ "tokens": {
+  "brief": 40,
+  "extended": 63
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-i-introduction",
+   "title": "I Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-ii-azimuthal-asymmetries-in-di-lepton-production",
+   "title": "II Azimuthal asymmetries in di-lepton production in UPCs",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-002-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "6-7"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

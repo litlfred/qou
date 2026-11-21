@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2104.14491v1
-doc_title: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Mo"
+doc_title: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Mos"
 section_id: sec-001-2-the-knots-we-study-and-the-questions-we-ask
 section_title: "The knots we study and the questions we ask"
 section_number: 2
 pages: 3-4
 source_pdf: 2104.14491v1.pdf
 source_sha256: 1aea658f17283df1
-doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.934
+latex_coverage_ratio: 0.933
+doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
 ---
 In this section we describe the simplest families of satellites knots and their relation to the coloured knot polynomials. We see at least two reasons to use the HOMFLY polynomial as a knot identifier. First, many statements look simpler in terms of knot invariants than in purely geometric terms (far from being a complete invariant, the HOMFLY polynomial is good enough for our purposes). Second, it is the properties of the HOMFLY polynomials that we wish to extend to the Khovanov case.
 

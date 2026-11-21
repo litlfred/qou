@@ -1,0 +1,55 @@
+Cluster Expansions: Necessary... Page 27 of 47 33
+
+4.2 Single-Type Hard-Core System in R4
+
+Consider a bounded convex shape S$ C R¢ which is non-empty, regular closed and balanced
+(recall: A set S C R¢ is called regular closed if and only if it equals the closure of its interior,
+ie., S° = S, and it is called balanced if and only if aS C S for all |a| < 1). We investigate
+the special case of the hard-core setup in the continuum from Sect. 2.3 where X consists of
+all translates x + S = {x + y | y € S}. Let us further assume that both the activity and
+the reference measure A are translationally invariant. Then we may identify X with R47, the
+reference measure 4 with the Lebesgue measure, and the activity function with a positive
+scalar, z(x) =z > 0.
+For an integrable function h : X > R we write
+
+[ h(Z)A(dZ) -[ h(x + S)dx.
+x R¢
+
+Write |S| for the Lebesgue volume of the shape S and define for Borel sets D c R¢
+
+V(D) := I. Tw+synp4a)dx. (4.6)
+
+Notice V ({y}) = |S|, which is positive and finite by our assumptions on S, and V(S) = |S@S|
+with A @® B := {a+b |a € A, b € B} the Minkowski sum. The latter identity holds
+since we assumed the set S to be balanced which implies {(x + S)NS 4 G9} =S@S.
+Moreover, notice that V—as a function on D, with the convention V(@) = 0—satisfies the
+measurability assumption from Theorem 2.6 by the same argument as formulated on p. 22
+for T.
+
+We refer to such systems as single-type hard-core systems in the continuum. In the language
+of stochastic geometry (see [28, Sects. 3,4]), the associated Gibbs measure is a hard-core
+germ-—grain model with deterministic grain S (the germs are the positions x).
+
+Theorem 4.2 Assume there exists a > 0 such that
+[SJeXVz < eS! — 4, (4.7)
+
+Then the activity expansions py(X1,..-, Xn3 Z) converge absolutely for alln € N and all
+
+Remark 4.2 Again, notice that while Theorem 4.2—just as its discrete analogue Theo-
+rem 4.1)—improves on the Kotecky-Preiss condition, it is in all the cases we considered
+as examples weaker than Fernandez—Procacci (e.g., for systems of hard spheres the bounds
+on the radius of convergence obtained in [9, 22] are slightly better). However, the advantage
+of our criterion is that an explicit bound is provided directly, with no need for numerical
+computation regardless of the dimension.
+
+Example 4.2 (Hard spheres) If S = Bpr(0) is the closed ball of radius R > 0 around the
+origin, condition (4.7) becomes
+
+2<sup exp(a|Br(0)|) — 1
+~ a0 |Br(O)| exp(@|Brr(0)|)”
+
+Carrying out the optimization over a yields the condition
+1 \2¢-1
+BeOlzs(I-57)
+
+D Springer

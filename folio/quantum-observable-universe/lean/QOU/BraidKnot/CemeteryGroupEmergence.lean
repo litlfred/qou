@@ -48,7 +48,7 @@ namespace CemeteryGroupEmergence
 
 /-- Unconditional structural corollary: any normal form whose crystal
     node is in the cemetery has `τ`-image zero. -/
--- Ref: [manuscript] braids-and-knots/cemetery-group-emergence
+-- Ref: [leitner2026] braids-and-knots/cemetery-group-emergence
 theorem tauImage_eq_zero_of_inCemetery
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q] [E : CemeteryGroupEmergence R q]
@@ -63,7 +63,7 @@ theorem tauImage_eq_zero_of_inCemetery
     image vanishes, *and* the value `R`-multiplied by anything stays
     zero — formalising the "kill switch" pruning property used by
     the GS reduction engine. -/
--- Ref: [manuscript] braids-and-knots/cemetery-group-emergence
+-- Ref: [leitner2026] braids-and-knots/cemetery-group-emergence
 theorem killSwitch_zero_mul
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q] [E : CemeteryGroupEmergence R q]
@@ -98,7 +98,7 @@ def canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] : CemeteryGroupEmergence R q where
   inCemetery v := ∃ T : C.NormalForm, C.nodeOf T = v
   tauImage _ := 0
-  -- Ref: [manuscript] conj:cemetery-group-emergence (§3b-cond conjectural class;
+  -- Ref: [leitner2026] conj:cemetery-group-emergence (§3b-cond conjectural class;
   --      discharged here by `tauImage := 0`, not by a `sorry` and not by the conjecture)
   monotone_under_extension _ _ := rfl
 

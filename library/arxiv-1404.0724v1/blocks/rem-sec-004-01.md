@@ -1,0 +1,1 @@
+The mapping class group can alternatively be deﬁned by replacing homeomor- phisms by diﬀeomorphism and isotopies by homotopies. The following is a list of possible deﬁnitions of Mod(S): Mod(S) ∼= Homeo+(S, ∂S)/Homeo0(S, ∂S) ∼= Diﬀ+(S, ∂S)/Diﬀ0(S, ∂S) ∼= π0(Homeo+(S, ∂S)) ∼= π0(Diﬀ+(S, ∂S)).

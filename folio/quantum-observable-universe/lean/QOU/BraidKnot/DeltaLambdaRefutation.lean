@@ -23,7 +23,7 @@ dead ansatz cannot be silently re-proposed and slip past review.
 
 The numbers are 12-figure truncations of the 50-dps witness
 `computations/rho-k-h3a-co-casimir.witness.json` (`allPassed: true`); the refutation
-holds with enormous margin (gap ≈ 4.498 m_e units vs tol 1), so 12 figures is far more
+holds with enormous margin (gap ≈ 4.526 m_e units vs tol 1), so 12 figures is far more
 than the inequality needs. Statements are decidable rational (in)equalities — sorry-free,
 `norm_num`-discharged over `ℚ`.
 
@@ -42,26 +42,27 @@ numbers become available.
 
 ## References
 
-- [manuscript] `computations/rho-k-h3a-co-casimir.witness.json` (50 dps, `allPassed: true`)
-- [manuscript] `docs/audits/2026-05-18-delta-lambda-gating-context.md` (Option B; the six failed ansätze)
+- [leitner2026] `computations/rho-k-h3a-co-casimir.witness.json` (50 dps, `allPassed: true`)
+- [leitner2026] `docs/audits/2026-05-18-delta-lambda-gating-context.md` (Option B; the six failed ansätze)
 -/
 
 namespace QOU.BraidKnot.DeltaLambdaRefutation
 
 /-- Frobenius co-Casimir predicted `Σ_λ y_λ χ^λ Δ_λ` at the deuteron (in `m_e` units).
 12-figure truncation of `/data/co_casimir_prediction/sum_contributions_signed`
-(50 dps value `0.14495922412654927…`).
--- Ref: [manuscript] computations/rho-k-h3a-co-casimir.witness.json -/
-def coCasimirSum : ℚ := 144959224127 / 1000000000000
+(50 dps value `0.17312047167782761…`; the witness was regenerated 2026-10-05 at the
+proton pin, and this figure was updated 2026-11-15 from the stale `0.144959224127`).
+-- Ref: [leitner2026] computations/rho-k-h3a-co-casimir.witness.json -/
+def coCasimirSum : ℚ := 173120471677 / 1000000000000
 
 /-- Empirical `−B_D/m_e` (in `m_e` units), the deuteron binding-density target.
-12-figure truncation of `/data/target_signed` (50 dps value `−4.35336728187014…`).
--- Ref: [manuscript] computations/rho-k-h3a-co-casimir.witness.json -/
-def targetSigned : ℚ := -4353367281870 / 1000000000000
+12-figure truncation of `/data/target_signed` (50 dps value `−4.35336749125644…`).
+-- Ref: [leitner2026] computations/rho-k-h3a-co-casimir.witness.json -/
+def targetSigned : ℚ := -4353367491256 / 1000000000000
 
 /-- Closure gap `|prediction − target|`, witness `/data/.../closure_gap_LHS_minus_RHS`
-(50 dps value `4.49832650599669…`). -/
-def closureGap : ℚ := 4498326505997 / 1000000000000
+(50 dps value `4.52648796293427…`). -/
+def closureGap : ℚ := 4526487962933 / 1000000000000
 
 /-- Viability tolerance: a candidate `Δ_λ` closure must land the deuteron
 binding-density sum within `1` `m_e` unit of the empirical target to be viable.
@@ -78,7 +79,7 @@ theorem coCasimir_closureGap_eq : |coCasimirSum - targetSigned| = closureGap := 
   exact abs_of_pos (by unfold closureGap; norm_num)
 
 /-- **Refutation (magnitude).** The Frobenius co-Casimir `Δ_λ` ansatz misses the
-deuteron binding-density target by more than the viability tolerance (gap ≈ 4.498
+deuteron binding-density target by more than the viability tolerance (gap ≈ 4.526
 `m_e` units > `tol = 1`). This is the machine-checked face of the witness's
 `closure_gap_LHS_minus_RHS`; it makes "the co-Casimir ansatz is refuted" a theorem,
 not a prose warning. -/
@@ -106,7 +107,7 @@ into a miss-shaped lemma they do not fit (which would misrepresent them).
 
 | # | ansatz | refutation mechanism | where |
 |---|--------|----------------------|-------|
-| B | Frobenius co-Casimir `1/dim_q(λ)` | clean numeric **miss + wrong sign** (gap ≈ 4.498 m_e; pred > 0, target < 0) | **this file** (`coCasimir_*`) |
+| B | Frobenius co-Casimir `1/dim_q(λ)` | clean numeric **miss + wrong sign** (gap ≈ 4.526 m_e; pred > 0, target < 0) | **this file** (`coCasimir_*`) |
 | C | Demazure-fibre `y_λ·D_w/D_{w₀}` | **tautological** — `Δ_λ ~ 10⁻⁵`, reproduces `M_LO`, vortex-blind | `2026-05-18-delta-lambda-gating-context.md` row C |
 | D-Plancherel | LP shadow price `min Σ\|Δ_λ\|·w_λ` | **under-determined** (not a miss) — reproduces Occam exactly, `L∞ = 1.9e-15`; shifts the freedom to the cost choice | gating-context row D-Plancherel |
 | D-Frobenius | LP alt cost | under-determined — picks a different singleton (`λ=[6]`, `Δ=−47.16`); same defect | gating-context row D-Frobenius |

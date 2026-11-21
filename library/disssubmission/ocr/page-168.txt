@@ -1,0 +1,51 @@
+160 Appendix B — Irreducible subgroups with bounded determinant
+
+where Zg(H) = ker(@) denotes the centralizer of H in G. By Step 2 this
+centralizer and hence also F is finite of bounded order. Furthermore, from
+the definitions one checks that the homomorphism
+
+nm: Hxo9F —G, (hf) > hf
+
+is an epimorphism and that ker(7) C Z(H) = F where Z(H) denotes the
+center of H. Note that by Schur’s lemma this center acts by a scalar on each
+isotypic component of V|#, in particular Z(H) is a finite group of bounded
+order in view of the bound for the determinant in step 1.
+
+Thus any irreducible algebraic subgroup G @ G/(V) with G° = H and
+with properties (a) — (c) is isomorphic to a quotient
+
+G & (HX@F)/K
+
+where F is a finite group of bounded order, acting on the group H via a
+homomorphism 9 : F — Aut(H) with image in the finite group s(Out(H)),
+and where K is a subgroup of the finite group Z(H) x F. Hence for the
+isomorphism type of G there are only finitely many possibilities.
+
+Finally, for (F,@,K) as above, any embedding (H x F)/K — GI(V)
+which extends the given embedding of H is determined uniquely by the
+homomorphism p : F —+ GI(V) it induces. We claim that under the given
+conditions there exist only finitely many such p. Indeed, if is any other
+such homomorphism, then for any f € F one computes that
+
+p(f) BUA) | € Zayyv(H) = [] C*-idy,
+i=t
+
+where the last equality holds by Schur’s lemma, and in view of the bound
+on the determinant in step | the centralizer Zgyy)(#) is finite. Oo
+
+In step 2 of the above proof we have used the following fact, where we
+reset our notations and replace G* by G for simplicity.
+
+LEMMA B.3. Let W be a finite-dimensional complex vector space, G
+an irreducible subgroup of Gl(W) whose group G/G° of components is
+abelian, and H — G a subgroup of finite index such that the restriction W|H
+is isotypic. Then in fact W|,, is irreducible.
+
+Proof. By dévissage for the finite abelian group G/H it will be enough
+to show this when G/H = Z/mZ is a finite cyclic group. Furthermore, by
+the assumption of being isotypic we can write
+
+W\y = UEC"
+
+for some irreducible representation U € Repc(H) and some n € N. We
+must show n = 1. Since G/ G? is abelian, the finite index subgroup H CG

@@ -1,0 +1,49 @@
+4.4. Degenerations of abelian varieties 81
+
+Hesse matrix
+
+e2
+(s.35 (7, 2) a,B=1,....g
+
+is non-zero. Then the heat equation
+
+av a8
+=—(T,z) = 2mi- (1+ dyg)- ————(,
+Wap (7,2) mi (1+ dog) Teadeg 9)
+implies for the gradient with respect to the variable t that (V-0)(t,z) #0
+as well. Hence, taking S to be a curve which passes through the point s in
+a sufficiently general tangent direction u, we obtain with notations as in the
+preceding paragraph that
+
+(OF /dw)(0,z) = (u-VzB)(t,z) # 0
+
+where F(w,z) = 0(h(w),z) is defined for w in some coordinate disk A Cc S
+by a suitable local lift h : A— # with h(0) = t. In particular, since the
+gradient of F does not vanish at the considered point, it follows that (t,z)
+defines a smooth point of the total space @s of our family. This shows that
+the inclusion in claim (b) is strict. O
+
+We will now use the above construction to obtain information about the
+Tannaka groups G(dg,) by varying the base point Tt € %,,(C). In order to
+apply the algebraic formalism of nearby cycles developed in section 4.3 we
+consider perverse sheaves with coefficients in A = Q; throughout, but the
+final result may as well be read in the category of analytic perverse sheaves
+with coefficients in A = C. Anyway all the occuring perverse sheaves will
+be of geometric origin in the sense of [10, sect. 6.2.4].
+
+In general it is not clear how to put the perverse sheaves dg, for the
+various points T € 2% ,(C) into a global family because there is no good
+relative notion of a perverse intersection cohomology sheaf. However, over
+the Zariski-open dense locus U C .% » of ppav’s with a smooth theta divisor
+this is no issue — the shifted constant sheaf Ag[g — 1] restricts to dg, on the
+fibre X; for each geometric point t in U. This being said, proposition 3.20
+shows that there are finitely many reductive algebraic groups G1,...,Gm
+over A and a constructible stratification
+
+m
+U= [| U; with G(do,) = Gi for all geometric points t in Uj.
+i=0
+The hypotheses of the proposition are satisfied because for each geometric
+point t in U the divisor ©, C X; is irreducible and symmetric. Indeed
+these two conditions precisely say that the perverse sheaf dg, is simple and
+isomorphic to its adjoint dual.

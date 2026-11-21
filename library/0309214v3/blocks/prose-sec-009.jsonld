@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/0309214v3/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Upper bounds for initial conditions",
-  "pageStart": 18,
-  "pageEnd": 19,
-  "text": "../sections/sec-009-52-upper-bounds-for-initial-conditions.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0309214v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0309214v3",
+  "title": "q--hypergeometric functions",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "text": "../sections/sec-009-24-q--hypergeometric-functions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0309214v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0309214v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,1 @@
+The discrete sine kernel was studied before (see [44, 45]), mainly as a model case for the continuous sine kernel. In particular, the asymptotics of Toeplitz determinants built from the discrete sine kernel was obtained by H. Widom [45] who was answering a question of F. Dyson. We thank S. Kerov for pointing out this reference.

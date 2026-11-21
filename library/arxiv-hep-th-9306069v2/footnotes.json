@@ -1,0 +1,672 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-hep-th-9306069v2",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "§",
+   "text": "This viewpoint has more recently also been put forward in the work of K. Schoutens, E. Verlinde, and H. Verlinde, in the context of a two-dimensional toy model [4]. ¶ The deﬁnition of the stretched horizon will be given in Section 3.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "ory,aviewpointwhichhasbeenmoststronglyadvocatedby’tHooft[3]."
+    }
+   ],
+   "block": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "†",
+   "text": "Note that the normalizations of the ﬁelds Ωand χ deﬁned here diﬀer by a factor of √ κ from those given in [23,24].",
+   "marks": [
+    {
+     "page": 15,
+     "context": "Wenextdeﬁnetheﬁelds"
+    }
+   ],
+   "block": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "‡",
+   "text": "The sharply deﬁned endpoint of the Hawking emission is presumably an artifact of the semi-classical approximation in this model. A more physical behavior would be for the outgoing ﬂux to die out gradually. We will return to this point in section 3.4.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "itisvacuum-like."
+    }
+   ],
+   "block": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-002"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "larus@dormouse.stanford.edu",
+   "block": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "‡",
+   "text": "john@dormouse.stanford.edu",
+   "block": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "4",
+   "text": "M∞",
+   "block": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-002"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "−g[e−2φ(R + 4(∇φ)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "−g[e−2φ(R + 4(∇φ)2+ 4λ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "(∇f"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(∇fi)"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "two-sphereisgovernedbythedilatonﬁeld,r(x"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "two-sphereisgovernedbythedilatonﬁeld,r(x0, x"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "two-sphereisgovernedbythedilatonﬁeld,r(x0, x1) = e−φ(x"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "two-sphereisgovernedbythedilatonﬁeld,r(x0, x1) = e−φ(x0,x"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2∇µ∇νφ −2gµν(∇2φ −(∇φ)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2∇µ∇νφ −2gµν(∇2φ −(∇φ)2+ 1) −e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "4R + ∇2φ −(∇φ)"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "∇2f"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "[∇µf"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "[∇µfi∇νf"
+  },
+  {
+   "page": 9,
+   "mark": "g",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "2gµν(∇f"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2gµν(∇fi)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(x+, x−) in whichthe line elementis ds"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(x+, x−) in whichthe line elementis ds2= −e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "±φ −4∂±φ∂±ρ −e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "4∂+φ∂−φ −2∂+∂−φ + e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2∂+∂−ρ −4∂+∂−φ + 4∂+φ∂−φ + e"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "∂+∂−f"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "(∂±f"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(∂±fi)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "beidentiﬁedastwo-dimensionalMinkowskispace,withlineelementds"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "e−2φ= e−2ρ= M"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "whichbecomesinﬁnitewhenM"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "black hole solution described by (2.15) with M"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−dt"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−dt2+ dσ"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "∂t)is"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "e−2φ[2∂+∂−ρ −4∂+φ∂−φ + e"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "∂+f"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "∂+fi∂−f"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "±ρ −(∂±ρ)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "∂+f"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "∂+fi∂−f"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "κ[(∂±Ω)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "κ[(∂±Ω)2 −(∂±χ)"
+  },
+  {
+   "page": 16,
+   "mark": "y",
+   "context": "E,"
+  },
+  {
+   "page": 16,
+   "mark": "y",
+   "context": "E).Thelinesegment"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "(dy+)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "dt"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "AS(t) = Ce"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": " second interesting feature of (3.8) is the dissipative term"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "S(∂t"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "S(∂tf)"
+  },
+  {
+   "page": 22,
+   "mark": "y",
+   "context": "edtheblackholesolution(2.39).Iftheincomingenergyislarge,then"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "h"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "\u0010P∞e"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "1 +κe−2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "P"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "κ"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "κe"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "Theincomingmatterarrivesatthestretchedhorizonatatimet"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "(1 −P∞e(t−σ))"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "t∗= t"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "∞e"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "∞e2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "2P"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "dt"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "4P∞exp[−(σS−t)])"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "dt"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "horizonattimet"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "horizonattimet0.However,wellbeforethis,attimet"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "t"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "4"
+  },
+  {
+   "page": 28,
+   "mark": "f",
+   "context": "volution,andeventuallyreturnstothestretchedhorizonatthetimet"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "κ"
+  },
+  {
+   "page": 28,
+   "mark": "t",
+   "context": "κ e"
+  },
+  {
+   "page": 28,
+   "mark": "f",
+   "context": "back atthe stretchedhorizon at timet"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "4,theincomingradiationwouldbemetby"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "4(t"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "anopportunitytoreﬂect.Ifalargetotalchargeoforder(t"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "(t"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "(tf−t∗)whichwouldtake"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "Ω= e"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "Ω= e"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "−d"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "dt"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "κ"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "κ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "κz(ω))"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "E"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "∂β"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "E"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(X−⟨X⟩)"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "T"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "T"
+  },
+  {
+   "page": 35,
+   "mark": "a",
+   "context": "4.Inthiscase(3.28)has"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "IfablackholeofareaA"
+  },
+  {
+   "page": 35,
+   "mark": "t",
+   "context": "2π,thenattime"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(A(t) −A"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(A(t) −A0)"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "(A(t) −A"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "(A(t) −A0)"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "24π"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "24π"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "UsingthestandardHawkingtemperatureTH∼M"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "dτ∼M"
+  },
+  {
+   "page": 39,
+   "mark": "3",
+   "context": "A∼M"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "Z≈1 + e−βE"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "≈E"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "≈E1 e−βE"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "dt∼M"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "M"
+  }
+ ]
+}

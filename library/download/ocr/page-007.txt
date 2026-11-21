@@ -1,0 +1,59 @@
+Concentration of empirical distribution functions 1391
+
+to assume that f is continuously differentiable and is constant near —oo and ++o0o. Replacing f’
+with f, we arrive at
+
+Elf root (Fn (x) — F(x)) dx sep dF (2.6)
+
+for any continuous, compactly supported function f on the line. In other words, the integral
+operator K f(x) = pre K(x, y) f(y) dy with a (positive definite) kernel
+
+K(x, y) =E(F, (x) — F(x) (Fn(y) — FQ)) = cov(Fn(x), Fn”)
+
+is continuous and defined on a dense subset of L*(R,dF(x)), taking values in L?(R, dx). It
+has the operator norm ||K || < Vv so it may be continuously extended to the space L?(R, dF)
+
+without a change of the norm. In the following, we will use a particular case of (2.6).
+
+Corollary 2.4. Under Pl(c?), whenever a < b, we have
+
+b
+[ (e9 - Fo9) x < FvFO- F(a).
+
+a
+
+E
+
+3. Proof of Theorem 1.1
+
+We shall now study the concentration properties of empirical measures F,, around their mean F
+based on Poincaré-type inequalities. In particular, we shall prove Theorem 1.1, which provides a
+bound on the mean of the Kantorovich—Rubinstein distance
+
++00
+Wi(Fa F=f LF) — Foae.
+—0o
+Note that it is homogeneous of order 1 with respect to the random vector (X1,..., Xn).
+
+We first need a general observation.
+
+Lemma 3.1. Given distribution functions F and G, for all real a < b and a natural number N,
+
+b N
+i] |F (x) — Ga) dx < >
+@ k=1
+
+where a, =a+ (b-a)¥.
+
+in (F(x) — G(x) dx| + 2b a).
+ak) N
+
+Proof. Let J denote the collection of those indices k such that in the kth subinterval A, =
+(ax—1, ax), the function g(x) = F(x) — G(x) does not change sign. Let J denote the collection
+of the remaining indices. Then, for k € J,
+
+i] |F(x) — G(x)| dx =
+Ak
+
+i] (F(x) — G(x) dx
+Ak

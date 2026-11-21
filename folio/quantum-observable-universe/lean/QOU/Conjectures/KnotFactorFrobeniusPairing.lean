@@ -27,7 +27,7 @@ LaTeX label: `conj:knot-factor-frobenius-pairing`
 
 ## References
 
-- [manuscript] §"Knot-factor Frobenius pairing"
+- [leitner2026] §"Knot-factor Frobenius pairing"
 - [jones1985] https://www.jstor.org/stable/2007074
 - [yekutieli2015]
 -/

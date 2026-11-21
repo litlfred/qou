@@ -5,17 +5,15 @@ export default proposition({
   title:
     "Explicit central primitive idempotents $e_\\lambda$ via Murphy elements",
   lean: {
-    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotent.explicit_central_idempotent_via_murphy",
+    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem",
     validation: "not_checked",
   },
   uses: [
     "prop:jucys-murphy-central-elements-qou",
     "prop:hecke-baer-star-generic",
-    // AGENTS.md §3b-cond item 4: the conditional dependency is now
-    // auditable from the manifest. The Lean theorem carries this as
-    // [ExplicitCentralIdempotentConjecture q] (item 2); this edge is
-    // what lets conjectural-propagation-audit.ts see the cone at all.
-    "conj:explicit-central-idempotent",
+    // Was conj:explicit-central-idempotent (conditional). Promoted to a
+    // theorem 2026-11-20 (owner ruling); this block is now unconditional.
+    "thm:explicit-central-idempotent-cross-checks",
     // conj:bring-figure-eight-depth-2-witness removed from uses[]
     // (2026-06-01 detangler Bucket-A): referenced only as numerical
     // corroboration ("verified numerically in (…)"), not a dependency
@@ -37,6 +35,18 @@ export default proposition({
     status: "verified",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Proposition (conditional on [`conj:explicit-central-idempotent`](#conj:explicit-central-idempotent)).**\n\nThe statement below is proved in Lean *conditionally* on the\nLagrange-interpolation cross-checks, which are axiomatised as the class\n`ExplicitCentralIdempotentConjecture q` and are **open**: no instance of\nthat class exists anywhere in the corpus. The four cross-checks\n(sum-to-identity, orthogonality, self-adjointness, bar-pairing) are the\nconjectural input; everything downstream of them is machine-checked.\n\n([`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou))\n\nIt is standard in implementations like SageMath's `IwahoriHeckeAlgebra` and the local `pyhecke-native` module." },
+    {
+      kind: "status",
+      date: "2026-11-20",
+      body:
+        "The idempotency this block proves conditionally is now proved unconditionally, at generic q, on the real Hecke " +
+        "algebra: `QOU.BraidKnot.ExplicitCentralIdempotentGeneral.centralIdem_idem`, together with centrality, " +
+        "orthogonality and sum-to-1 (`explicit_central_idempotent_cross_checks`). Sorry-free, in any characteristic. The " +
+        "block's `lean.ref` names `centralIdem_idem`. The conditional theorem over the scalar carrier " +
+        "`ExplicitCentralIdempotentConjecture`, and the carrier itself, were retired 2026-11-20 (owner); the relocated " +
+        "note above that calls this block conditional is historical.",
+    },
     {
       kind: "note",
       date: "2026-09-04",
@@ -82,5 +92,9 @@ export default proposition({
         "Still verified: **no instance of the class exists** anywhere, " +
         "correct per ss3b-tax for an unproved primary conjecture.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$](#prop:hoefsmit-seminormal-form))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Canonical q-deformed Wedderburn-block weight $\\tilde w_\\lambda$ and named scalings (BW, LP for all $\\lambda$)](#prop:wedderburn-weight-canonical))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This is numerically verified in [Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness)](#conj:bring-figure-eight-depth-2-witness)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Elementary symmetric polynomials in Jucys–Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block](#prop:jucys-murphy-central-elements-qou))" },
   ],
 });

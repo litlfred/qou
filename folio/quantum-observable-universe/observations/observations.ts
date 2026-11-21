@@ -41,8 +41,8 @@ export default chapter({
         "borromean-quark-table-data",
         "higgs-t28",
         "s5-equivariant-torus-knots",
-        "s5-equivariant-torus-knots-proof",
         "s5-equivariant-torus-knots-table-data",
+        "s5-equivariant-torus-knots-proof",
         "symmetry-preserving-leptons",
       ],
     }),
@@ -97,11 +97,11 @@ export default chapter({
       label: "sec:mass-predictions-method",
       blocks: [
         "mass-predictions-intro",
-        "stability-cubic-plot",
-        "stability-cubic-plot-table-data",
         "neutron-prediction-comparison",
         "neutron-prediction-comparison-interpretation",
         "neutron-prediction-comparison-table-data",
+        "stability-cubic-plot",
+        "stability-cubic-plot-table-data",
         "q-stability-ranges",
         "q-stability-ranges-table-data",
         "mass-ratio-predictions",
@@ -282,7 +282,6 @@ export default chapter({
         "gravity-emergent-data",
         "topological-defects",
         "topological-defects-data",
-        "ns-blowup-physical-evidence",
       ],
     }),
 
@@ -303,8 +302,8 @@ export default chapter({
         "hydrogen-knot-structure-table2-data",
         "hydrogen-knot-structure-table3-data",
         "sdp-regime-switch",
-        "sdp-regime-switch-interpretation",
         "sdp-regime-switch-table-data",
+        "sdp-regime-switch-interpretation",
       ],
     }),
 
@@ -318,6 +317,7 @@ export default chapter({
         "strangelet-intro",
 
         // — Why strange matter binds harder (and why it's not the ground state)
+        "crossing-energy-decomposition",
         "strangelet-crossing-energy",
         "strangelet-crossing-energy-proof",
         "strangelet-witten-stability",
@@ -390,12 +390,13 @@ export default chapter({
         "crystal-resonance-intro",
         "crystal-probe-q",
         "substrate-telescope",
+        "lattice-layout",
         "magnetic-friction",
         "crystal-resonance-data",
-        "lattice-layout",
         "crystal-resonance-planned",
         "crystal-resonance-experiments",
         "bec-vortex-data",
+        "ns-blowup-physical-evidence",
       ],
     }),
 
@@ -419,11 +420,11 @@ export default chapter({
         "fermion-boson-chart-localization",
         "complex-chirality-rotation",
         "trefoil-vortex-chirality-flip",
-        "crossing-energy-decomposition",
         "crossing-energy-pair-cancellation",
         "crossing-energy-interpretation",
         "time-reversal-energy-barrier",
         "virtual-particles-exceptional-divisor",
+        "virtual-subword",
         "vacuum-polarization-virtual-pairs",
         // Detangler R3 (2026-05-23): 6-row QFT-to-QOU dictionary
         // extracted from vacuum-polarization-virtual-pairs.md.

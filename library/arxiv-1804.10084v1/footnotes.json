@@ -1,0 +1,464 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1804.10084v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "Afunctionf: {0, 1}n→Risc-Lipschitz,ifeachvariablecanaﬀectthevalueadditivelybyatmostc.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "boundsforLipschitzfunctions"
+    }
+   ],
+   "block": "library/arxiv-1804.10084v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "generating functionF(z"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "generating functionF(z1, . . . , z"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "generating functionF(z1, . . . , zn) = E[Q"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "j=1"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "j=1zX"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "root(z1, . . . , zn) ∈C"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(P"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i=1X"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "i=1Xi= kforsomeconstant"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Pr[f(X1, . . . , Xn) ≥µ + t] ≤e−t"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Pr[f(X1, . . . , Xn) ≥µ + t] ≤e−t2/2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Pr[f(X1, . . . , Xn) ≤µ −t] ≤e−t"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Pr[f(X1, . . . , Xn) ≤µ −t] ≤e−t2/2"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "Iffismonotone,thentheboundcanbeimprovedtoe−2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Iffismonotone,thentheboundcanbeimprovedtoe−2t"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "achieved [13],butit might bepossibleto prove a boundof e−t"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ofµ = E[PX"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "Var[X"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i| XK= aK] −(E[X"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "i| XK= aK] −(E[Xi| XK= a"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "i| XK= aK] −(E[Xi| XK= ak])"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i| XK= aK] −(E[Xi| XK= ak])2= π"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i| XK= aK] −(E[Xi| XK= ak])2= πi(1 −π"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Var[Xi| XK= aK] = E[X"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "k+1| ≤2,andinthecaseofmonotone"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "f(XK= a"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "f(XK= ak, Xπ(k+1)= 0, XK= aL) −f(XK= a"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "f(XK= a"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "f(XK= ak, Xπ(k+1)= 1, XK= aL) −f(XK= a"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "a parameter λ ∈R, we estimate the exponential moment E[eλf(X"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "eter λ ∈R, we estimate the exponential moment E[eλf(X1,...,X"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "E[eλY"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "E[eλYn].Inductively,weprovethatE[eλ(Y"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "E[eλYn].Inductively,weprovethatE[eλ(Yk−Y"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "E[eλYn].Inductively,weprovethatE[eλ(Yk−Y0)]≤ekλ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ekλ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "E[eλ(Y"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "E[eλ(Yk+1−Y"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "E[eλ(Yk+1−Yk)| π([k]) = K, XK= aK] ≤eλ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "avariableisupper-boundedbyeλ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "samevalueofYk,wealsoobtainE[eλ(Y"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "samevalueofYk,wealsoobtainE[eλ(Yk+1−Y"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "samevalueofYk,wealsoobtainE[eλ(Yk+1−Yk)| Yk] ≤eλ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "nintervaloflength1andtheexponentialmomentisupper-boundedbyeλ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "E[eλ(Y"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "E[eλ(Yk+1−Y"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "E[eλ(Yk+1−Y0)] = EYk[EYk+1[eλ(Y"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "E[eλ(Yk+1−Y0)] = EYk[EYk+1[eλ(Yk+1−Y"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "E[eλ(Yk+1−Y0)] = EYk[EYk+1[eλ(Yk+1−Yk)| Yk]eλ(Y"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "E[eλ(Yk+1−Y0)] = EYk[EYk+1[eλ(Yk+1−Yk)| Yk]eλ(Yk−Y"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "E[eλ(Yk+1−Y0)] = EYk[EYk+1[eλ(Yk+1−Yk)| Yk]eλ(Yk−Y0)] ≤eλ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "1−Y0)] = EYk[EYk+1[eλ(Yk+1−Yk)| Yk]eλ(Yk−Y0)] ≤eλ2/2EYk[eλ(Y"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "0)] = EYk[EYk+1[eλ(Yk+1−Yk)| Yk]eλ(Yk−Y0)] ≤eλ2/2EYk[eλ(Yk−Y"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "k+1[eλ(Yk+1−Yk)| Yk]eλ(Yk−Y0)] ≤eλ2/2EYk[eλ(Yk−Y0)] ≤e(k+1)λ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Therefore,E[eλ(Y"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Therefore,E[eλ(Yn−Y"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Therefore,E[eλ(Yn−Y0)] ≤enλ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ore,E[eλ(Yn−Y0)] ≤enλ2/2.(Forfmonotone,theboundimprovestoenλ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "≤E[eλ(Y"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "≤E[eλ(Yn−Y"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "eλ(Y"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "eλ(Yn−Y"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "eλ(Yn−Y0)≥eλt"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "= enλ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "dependent,thentheprobabilitymeasureof(X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "dependent,thentheprobabilitymeasureof(X1, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "nt,thentheprobabilitymeasureof(X1, . . . , Xn)conditionedonP"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Rayleigh,foranyﬁxedk.TheprobabilitymeasureconditionedonP"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "stronglyRayleigh.ConditioningonP"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "hestochasticcoveringpropertyandhomogeneity,i.e.theconditionP"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "caseofconditioningonP"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i=1X"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "uniformly random in{0, 1}.X"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "uniformly random in{0, 1}.X1istheNANDfunctionof X"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "niformly random in{0, 1}.X1istheNANDfunctionof X2, . . . , X"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": " random in{0, 1}.X1istheNANDfunctionof X2, . . . , Xn,i.e.,X"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": " in{0, 1}.X1istheNANDfunctionof X2, . . . , Xn,i.e.,X1= 1 −Q"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i=2X"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "thatPr[X1= 1] = 1 −1/2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1X"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "IfX1=0(whichhappenswithprobability1/2"
+  }
+ ]
+}

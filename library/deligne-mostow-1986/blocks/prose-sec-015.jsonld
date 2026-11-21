@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/deligne-mostow-1986/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Stable points",
-  "pageStart": 33,
-  "pageEnd": 36,
-  "text": "../sections/sec-015-6-stable-points.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deligne-mostow-1986",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deligne-mostow-1986",
+  "title": "Tr^...^=.^(-2)^n^^ ^.^",
+  "pageStart": 72,
+  "pageEnd": 76,
+  "text": "../sections/sec-015-tr-2n.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
   "provenance": "ingested"
 }

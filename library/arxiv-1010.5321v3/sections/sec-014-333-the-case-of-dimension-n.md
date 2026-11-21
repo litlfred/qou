@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume"
+doc_title: "Formulas on hyperbolic volume ∗"
 section_id: sec-014-333-the-case-of-dimension-n
 section_title: "The case of dimension n"
 section_number: 3.3.3
 pages: 13-14
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.915
+latex_coverage_ratio: 0.987
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 The following lemma plays an important role in the $n$-dimensional case.
 

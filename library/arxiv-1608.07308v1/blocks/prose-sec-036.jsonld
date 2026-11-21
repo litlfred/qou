@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1608.07308v1/blocks/prose-sec-036",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Invertible objects in monoidal categories",
-  "pageStart": 42,
-  "pageEnd": 42,
-  "text": "../sections/sec-036-49-invertible-objects-in-monoidal-categories.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.07308v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.07308v1",
+  "title": "Categories over schemes",
+  "pageStart": 35,
+  "pageEnd": 36,
+  "text": "../sections/sec-036-43-categories-over-schemes.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.07308v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.07308v1/manifest.jsonld",
   "provenance": "ingested"
 }

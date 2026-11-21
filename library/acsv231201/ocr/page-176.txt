@@ -1,0 +1,42 @@
+158 Laurent series, amoebas, and convex geometry
+
+minimal if and only if
+Olthil, ..., wal) # Ofor all t € (0, 1).
+
+Remark 6.40. When f is a ratio of fixed analytic functions P and Q on D,
+Corollary 6.39 can be adapted to give an analogous test for minimality, once
+a notion of coprime germs of analytic functions is defined. Of course, compu-
+tation is generally harder when dealing with analytic functions because tech-
+niques for solving polynomial systems cannot be applied.
+
+Proof Proposition 6.38 and Corollary 6.36 imply that for a combinatorial
+expansion w is minimal if and only if
+
+(ciloshalt-o loeb, oo, ef lg btal+ UD log wal) €V
+for t € (0, 1) and, in the power series case, if and only if (dw Jp wees t{wal) EV
+for t € (0, 1). The stated conclusion then follows from Lemma 6.31. oO
+
+Perhaps surprisingly, even in the univariate case it is unknown whether de-
+termining combinatoriality of a rational function is decidable. In practice, most
+multivariate generating functions we encounter are combinatorial, although
+there are many examples with combinatorially interesting nonnegative coef-
+ficients on a diagonal and negative coefficients in off-diagonal terms. In some
+circumstances, the structure of the function under consideration can also help
+characterize minimality.
+
+Lemma 6.41. Let f(z) = P(z)/Q(z) be the ratio of coprime polynomials P
+and Q, where Q(z) = 1 - q(z) for a combinatorial polynomial q such that
+q(O) = 0. Then the following statements hold for the power series expansion of
+
+f.
+
+a) Every root of Q with positive coordinates is a minimal point of V.
+b) If z is a minimal point then so is (\zi|,.. - ,|zal).
+c) If q is aperiodic (meaning every element of Z4 can be written as an integer
+
+sum of the exponents appearing in q) then the only minimal points of f are
+the roots of Q with positive coordinates (and thus each is strictly minimal).
+
+Proof Part (b) follows from Proposition 6.38 applied to 1/Q(z). For the other
+parts, note that by assumption we can write g(z) = Dire drZ", where each
+qr = 0. Suppose that w is a root of Q and with positive coordinates and let z

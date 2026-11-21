@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 1.0
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 []{#dchcc label="dchcc"} Consider a base point $*\in M$. Choose also $u \in P_*$, the fibre of $P$ at $*$. To describe $F_{(\w,m,u)}$ on the set $\pi_1^1(M,*)$ of objects of $\Pc_2(M,*)$, we use theorem [\[E\]](#E){reference-type="ref" reference="E"}. Therefore we define: $$F_{(\w,m,u)}^1([\g])=F_{(\w,u)}^{{1}}([\g]), \textrm{ where } [\g] \in \pi_1^1(M,*).$$
 

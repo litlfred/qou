@@ -107,7 +107,7 @@ namespace QOU.BraidsKnots
 A definition rather than a data field with a `hbar_q_def` hypothesis: as a
 field an instance chooses `hbar_q` and the constraint merely records the
 choice, whereas here the manuscript's relation holds by construction. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-mass-from-linking.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/skein-mass-from-linking.md
 noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- **The claim of `lem:skein-mass-from-linking`**, as a proposition over
@@ -117,7 +117,7 @@ caller-supplied data:
 
 with `ℏ_q = hbarQ q`.  **Named, not asserted** — see the module docstring
 for why neither a projection nor a `sorry` is the honest form here. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-mass-from-linking.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/skein-mass-from-linking.md
 def skein_mass_from_linking
     (q mass Q mass_Hopf : ℝ) (n : ℕ) (Vol_K : ℕ → ℝ) : Prop :=
   mass = Q * mass_Hopf +
@@ -133,7 +133,7 @@ the hadron mass is pure linking energy, `𝔪(H) = Q(q) · 𝔪(L_Hopf)`.
 This is the one step the manuscript's proof actually derives, and it is the
 reason the decomposition is worth naming: it is a hypothesis something is
 proved *from*. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-mass-from-linking-proof.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/skein-mass-from-linking-proof.md
 theorem skein_mass_torus_constituents
     {q mass Q mass_Hopf : ℝ} {n : ℕ} {Vol_K : ℕ → ℝ}
     (hmain : skein_mass_from_linking q mass Q mass_Hopf n Vol_K)
@@ -149,7 +149,7 @@ At `mass = 1` with `Q = mass_Hopf = 0` and no constituents, it reads
 checked rather than asserted, and so a later attempt to "finish" this file
 by adding a `sorry` over free data fails against a standing
 counterexample. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-mass-from-linking.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/skein-mass-from-linking.md
 theorem not_skeinMassDecomposition_of_free_data :
     ¬ skein_mass_from_linking 2 1 0 0 0 (fun _ => 0) := by
   simp [skein_mass_from_linking]

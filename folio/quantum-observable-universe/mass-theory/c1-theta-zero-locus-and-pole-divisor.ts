@@ -9,8 +9,9 @@ export default proposition({
   title:
     "The connection matrix of the ramified binding operator is p-elliptic and " +
     "its poles are theta zeros; the q-theta vanishes exactly on −p^ℤ",
+  cites: ["sauloy2000"],
   uses: [
-    "conj:qdifference-kernel-prolongation-symbol",
+    // conj:qdifference-kernel-prolongation-symbol removed (qou-tm3c): the conjecture consumes this block's theta growth, not the reverse.
   ],
   authorNotes: [
     {
@@ -63,9 +64,9 @@ export default proposition({
         "NOTHING in the corpus consumes the pole divisor, χ, the closed form, or " +
         "α = t₂/T. The only C1 outputs with a downstream consumer are the " +
         "theta-growth q^{m²/4} and the isoclinicity obstruction, both cited by " +
-        "conj:qdifference-kernel-prolongation-symbol. This block therefore " +
-        "`uses[]` that conjecture — the arc's actual context — and does not " +
-        "pretend to feed anything else. It is a record of correct, expensive-to-" +
+        "conj:qdifference-kernel-prolongation-symbol. The dependency runs from " +
+        "that conjecture to this block, so this block does not list the " +
+        "conjecture in `uses[]` (qou-tm3c, 2026-11-20). It is a record of correct, expensive-to-" +
         "re-derive work, not a load-bearing step.",
       see: "computations/qbeta/c3_w2_c1_theta_zero_count.py",
     },

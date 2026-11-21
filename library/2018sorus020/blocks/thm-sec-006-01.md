@@ -1,0 +1,1 @@
+Let R be a k-algebra, and χ : B[Γ] →R an R-character. Assume that χ(∆α,β)is invertible for some α, β ∈Γ, and let A, B ∈SL2(R) such that Tr A = χ(Yα), Tr B = χ(Yβ), Tr AB = χ(Yαβ). Then there exists a unique representation ρ : Γ →SL2(R) whose character is χ and such that ρ(α) = A and ρ(β) = B. As a application of this theorem, one can deduce the following proposition, see [Mar15].

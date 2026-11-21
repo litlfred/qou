@@ -1,0 +1,413 @@
+---
+doc_id: huang-2021-chinese-phys-c-45-030002
+doc_title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures"
+section_id: page-318
+section_title: "Page 318"
+section_number: null
+pages: 318-318
+source_pdf: Huang_2021_Chinese_Phys._C_45_030002.pdf
+source_sha256: 1dd3329ed87476c8
+toc_source: undetermined
+doc_brief: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures — 343 sections: Page 1; Page 2; Page 3"
+---
+Chinese Physics C Vol. 45, No. 3 (2021) 030002
+Table I. Comparison of input data and adjusted values (continued, Explanation of Table on page 030002-30)
+Item
+Input value
+Adjusted value
+vi
+Dg
+Signf.
+Main inﬂ.
+Lab
+F
+Reference
+235U−C18 H18
+−96932.8
+3.8
+−96922.5
+1.2
+1.1
+U
+M20
+2.5
+73Br06
+C18 H20−235U
+112584.2
+4.8
+112572.5
+1.2
+−1.0
+U
+M20
+2.5
+73Br06
+235U(α)231Th
+4678
+2
+4678.1
+0.7
+0.0
+–
+Kum
+60Ba44
+∗
+4681
+3
+−1.0
+–
+60Vo07
+∗
+4675.5
+3.0
+0.9
+–
+64Sc27
+∗
+4677
+3
+0.4
+–
+66Ga03
+∗
+ave.
+4677.9
+1.3
+0.1
+1
+28
+21 231Th
+average
+235Np(α)231Pa
+5197.2
+2.0
+5193.8
+1.5
+−1.7
+1
+54
+42 231Pa
+Bka
+73Br12
+∗
+235Pu(α)231U
+5951.5
+20.
+3
+57Th10
+235Am(α)231Np
+6559
+100
+6576
+13
+0.2
+o
+JAa
+99Sa.D
+∗
+6576
+15
+−0.0
+o
+JAa
+04Sa05
+∗
+6576
+13
+7
+JAa
+04As12
+∗
+235Cm(α)231Pu
+7131.6
+20.0
+7280#
+100#
+7.4
+D
+GSa
+20Kh10
+∗
+233U(t,p)235U
+3668
+10
+3661.2
+2.0
+−0.7
+U
+67Ri.A
+∗
+234U(n,γ)235U
+5297.1
+0.5
+5297.50
+0.23
+0.8
+–
+72Ri08
+Z
+5297.4
+0.3
+0.3
+–
+77Ko15
+Z
+234U(d,p)235U
+3075
+7
+3072.93
+0.23
+−0.3
+U
+ANL
+70Br01
+235U(d,t)234U
+935
+15
+959.73
+0.23
+1.6
+U
+Kop
+68Bj05
+234U(n,γ)235U
+ave.
+5297.32
+0.26
+5297.50
+0.23
+0.7
+1
+81
+63 234U
+average
+235Th(β −)235Pa
+1470
+80
+1729
+19
+3.2
+B
+89Yu01
+235Pa(β −)235U
+1410
+50
+1370
+14
+−0.8
+U
+68Tr07
+235Np(ε)235U
+123.5
+2.
+124.3
+0.9
+0.4
+–
+58Gi05
+123.6
+1.
+0.7
+–
+72Mc25
+ave.
+123.6
+0.9
+0.8
+1
+91
+88 235Np
+average
+∗235U(α)231Th
+Eα=4596 4398 4372(all 2,Z) to ground state, (7/2−) at 205.310, 9/2−at 236.906
+Ens136
+∗∗
+∗235U(α)231Th
+Eα=4598.6(3,Z) , 4402.6(3,Z) to ground state, (7/2−) at 205.310 keV
+Ens136
+∗∗
+∗235U(α)231Th
+Eα=4595 4394 4364(all 3,Z) to ground state, (7/2−) at 205.310, 9/2−at 236.906
+Ens136
+∗∗
+∗235U(α)231Th
+Eα=4595.3, 4397.3, 4365.3(all 3,Z) to ground state, (7/2−) level at 205.310 keV
+Ens136
+∗∗
+∗
+and 9/2−at 236.906 keV
+Ens136
+∗∗
+∗235Np(α)231Pa
+Eα=5105.2(3), 5097.2(3), 5050.8(2,Z), 5024.8(2,Z), 4924.8(2,Z) to ground state,
+AHW
+∗∗
+∗
+1/2−at 9.206, 7/2−at 58.5699, 5/2+ at 84.2148, 5/2+ at 183.4962
+Ens136
+∗∗
+∗235Am(α)231Np
+Eα=6440(100) to level below 15 keV
+04As12 ∗∗
+∗235Am(α)231Np
+Eα=6457(14) to level below 15 keV
+04As12 ∗∗
+∗235Am(α)231Np
+Eα=6457(12) to level below 15 keV
+04As12 ∗∗
+∗235Cm(α)231Pu
+Trends from Mass Surface TMS suggest 235Cm 150 keV less bound
+GAu
+∗∗
+∗233U(t,p)235U
+Q =3335(10,Ri) to 5/2+ level at 332.845 keV
+Ens14b
+∗∗
+236Ac−u
+55037
+73
+54990
+40
+−0.7
+o
+GS3
+1.0
+10Ch19
+54988
+41
+2
+GS3
+1.0
+12Ch19
+236Th−u
+49665
+32
+49657
+15
+−0.2
+o
+GS3
+1.0
+08Ch.A
+49657
+15
+2
+GS3
+1.0
+12Ch19
+236Pa−u
+48666
+32
+48668
+15
+0.1
+o
+GS3
+1.0
+08Ch.A
+48668
+15
+2
+GS3
+1.0
+12Ch19
+236U(α)232Th
+4572.2
+3.
+4573.0
+0.9
+0.2
+o
+60Ko04
+Z
+4570.0
+3.1
+1.0
+–
+61Ko11
+Z
+4573.1
+1.0
+−0.2
+–
+Kum
+78Ba.C
+ave.
+4572.8
+1.0
+0.1
+1
+82
+83 232Th
+average
+236Pu(α)232U
+5867.15
+0.08
+5867.15
+0.08
+−0.0
+1
+100
+99 236Pu
+84Ry02
+Z
+236Am(α)232Np
+6256.2
+40.
+3
+JAa
+04Sa05
+236Cm(α)232Pu
+7074.1
+20.
+7067
+5
+−0.4
+U
+GSa
+10Kh06
+7066.9
+5.
+7
+JAa
+10As.A
+236Bk(α)232Am
+7447
+14
+7700#
+200#
+4.8
+D
+Bka
+20Po07
+∗
+236U(p,t)234U
+−3330
+15
+−3361.2
+0.3
+−2.1
+U
+ANL
+74Fr01
+235U(n,γ)236U
+6545
+2
+6545.52
+0.26
+0.3
+U
+70Ka22
+6545.1
+0.5
+0.8
+–
+74Ju.B
+Z
+6545.4
+0.5
+0.2
+–
+75We.A
+Z
+030002-317

@@ -1,0 +1,51 @@
+The Dilogarithm Function 59
+
+give only a sketch here, the more so because higher polylogarithms seem so far
+to play much less of a role in mathematical physics than the dilogarithm. (See,
+however, [35].) Nevertheless, the higher polylogarithm story is very pretty and
+it seemed a pity to omit it entirely.
+
+We describe the conjectures in Section A and some supporting examples
+in Section B. It turns out that the theory works better if one replaces the
+function D,,(z) defined in Chapter I by the slightly different function
+
+m1
+
+(log |z .
+Lm(2) = Rn( Bes (os EE Lin n(2))
+
+where ¥t,,, denotes Jt for m odd and &% for m even and By is the ith Bernoulli
+number. Thus £2(z) = D(z) = D(z), but £3(z) = D3(z) 2
+Like Dm, £m is a single-valued real-analytic function on PC) = \ {0,1, a
+but it is has the advantages of being continuous at the three singular points,
+of having clean functional equations (for instance, the logarithmic terms in
+the two functional equations for D3 given in §3 of Chapter I are absent when
+these are written in terms of £3), and of leading to a simpler formulation of
+the conjectures relating the polylogarithms to zeta values and to algebraic
+K-theory.
+
+A. Higher Bloch groups and higher K-groups. In Chapter I we defined
+the Bloch group B(F) of a field F (where we have changed the notation from
+the previous By, because we will have higher Bloch groups B,,(F’) as well)
+as A(F)/C(F), where A(F) is the set of all elements € = > n,{x;] € Z[F]
+satisfying O(€) := }>ni(xi) A (1 — 2) = 0 and C(F) the subgroup generated
+by the five-term relations V(«,y) and by its degenerations [a] + [1/2] and
+[z]+[1—2]. Because the elements of C(C) are in the kernel of the Bloch-Wigner
+dilogarithm D we have a map D: B(C) — R. The key statement is that for a
+number field F of degree rj +2rz over Q (rj real and 2r2 complex embeddings),
+the group B(F) has rank rz and the map Lf : B(F)/(torsion) > R’ induced
+by the values of D on the various conjugates of € € B(F) (there are only r2
+essentially different such values because D(z) = —D(x)) is an isomorphism
+onto a lattice whose covolume is essentially equal to ¢p(2).
+
+The conjectural picture for the mth polylogarithm, m > 3, is that we can
+introduce similarly defined higher Bloch groups Bm(F) = Am(F’)/Cm(F),
+where A,,(F) is a suitably defined subgroup of Z[F] and €,,(F) C Am(F)
+is the subgroup corresponding to the functional equations of the higher poly-
+logarithm function £,,, in such a way that the rank of B,,(F') is equal to
+rg or T1 + T2 (depending whether m is even or odd) and that the map
+Lime : Bm(F)/(torsion) + R' +)? induced by the values of Ln on the
+various conjugates of € € a is an isomorphism onto a lattice of finite co-
+volume. (Note that £(%) = (-1)™~!Ln(x), which is why there are only r2
+essentially different aan of Lin m is even, but r1 + rq if m is odd.) Again,
+this implies the existence of numerous Q-linear relations among the values of

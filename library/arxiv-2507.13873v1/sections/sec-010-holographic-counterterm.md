@@ -7,8 +7,10 @@ section_number: null
 pages: 29-31
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
-doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
+toc_source: outline
+doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
 ---
+Holographic counterterm
 The GHY boundary action with appropriate counter term is of the form
 −
 I
@@ -17,60 +19,66 @@ dτ
 √
 h
 
-ΦK−
+ΦK −
 Z Φ
 c
 V (Φ)dΦ
-1/2
-, (B.7)
-where the lower boundc of the counterterm integral is arbitrary and just corresponds to an
+1/2 
+,
+(B.7)
+where the lower bound c of the counterterm integral is arbitrary and just corresponds to an
 energy offset.12 We can motivate this counterterm explicitly by looking at the full on-shell
 Euclidean action
-SE =−1
+SE = −1
 2
 Z
 M
-d2x√g (ΦR +V (Φ))−
+d2x√g (ΦR + V (Φ)) −
 I
 ∂M
 dτ
 √
 h
 
-ΦK−
+ΦK −
 sZ Φ∂
 c
 V (Φ)dΦ
 
-. (B.8)
-UsingR =−V′(Φ) and denotingF (r) =
-Rr
-rh
-drV (r), the bulk on-shell action on the classical
+.
+(B.8)
+Using R = −V ′(Φ) and denoting F(r) =
+R r
+rh dr V (r), the bulk on-shell action on the classical
 solution in “Schwarzschild gauge” leads to the following expression
 Son-shell
-b =−β
+b
+= −β
 2
 Z r∂
 rh
-dr(−rF′′ +F′) =−β
-2 [−rF′ + 2F ]r∂
-rh (B.9)
-=−β
-2 [−r∂V (r∂) + 2F (r∂) +rhV (rh)]. (B.10)
+dr(−rF ′′ + F ′) = −β
+2 [−rF ′ + 2F]r∂
+rh
+(B.9)
+= −β
+2 [−r∂V (r∂) + 2F(r∂) + rhV (rh)].
+(B.10)
 The GHY boundary term + counterterm on the other hand gives:
 Son-shell
-∂ =−β
+∂
+= −β
 2
 "
-r∂V (r∂)− 2
+r∂V (r∂) −2
 p
-F (r∂)
+F(r∂)
 Z Φ
 c
 V (Φ)dΦ
 1/2#
-. (B.11)
+.
+(B.11)
 12This specific boundary term was used in the case of sinh dilaton gravity in [36] and for sine dilaton
 gravity in [59]. Here we compile the more general story. The argument follows largely the computation
 presented in [101] for the case of (deformations of) JT gravity.
@@ -78,38 +86,41 @@ presented in [101] for the case of (deformations of) JT gravity.
 The GHY term (in darkblue) cancels a corresponding divergent bulk contribution, and the
 total on-shell action reduces to
 Son-shell
-b +Son-shell
-∂ =−2πΦh−β
+b
++ Son-shell
+∂
+= −2πΦh −β
  
-F (r∂)−
+F(r∂) −
 p
-F (r∂)
+F(r∂)
 Z Φ
 c
 V (Φ)dΦ
 1/2!
-, (B.12)
-where we usedV (rh) = 4π/β to disentangle the entropy contribution and the energy term.
+,
+(B.12)
+where we used V (rh) = 4π/β to disentangle the entropy contribution and the energy term.
 The boundary counterterm is the unique option that only depends on the fields (and
 not on properties of a specific solution). The resulting final expression for the ADM energy
 is then suggestively written as
-EADM =−
+EADM = −
 Z Φ∂
 Φh
 V (Φ)dΦ +
 sZ Φ∂
 Φh
-V (Φ)dΦ×
+V (Φ)dΦ ×
 Z Φ∂
 c
-V (Φ)dΦ ≈ 1
+V (Φ)dΦ ≈1
 2
 Z Φh
 c
-V (Φ)dΦ, (B.13)
-under the assumption thatΦ∂ is such that
-R Φ∂
-V (Φ)dΦ→ +∞. The first term here comes
+V (Φ)dΦ,
+(B.13)
+under the assumption that Φ∂is such that
+R Φ∂V (Φ)dΦ →+∞. The first term here comes
 from the bulk on-shell term, and the second term coming from the boundary counterterm.
 This result is precisely the known expression for the ADM energy of a general dilaton gravity
 model.
@@ -121,8 +132,9 @@ dτ
 √
 h
 r
-cosh(2πb2Φ)− 1
-2π2b4 =
+cosh(2πb2Φ) −1
+2π2b4
+=
 I
 ∂M
 dτ
@@ -130,19 +142,21 @@ dτ
 h
 r
 cosh(2πb2Φ)
-2π2b4 =
+2π2b4
+=
 I
 ∂M
 dτ
 √
 h exp(πb2Φ)
-2πb2 ,
+2πb2
+,
 (B.14)
 which are equivalent since we have to take the leading term in the asymptotic expansion for
-Φ∂→ +∞.
-For the leftmost expression of (B.14) (which we used in the main text (3.1)), the−1
-corresponds to the choice of integration constantc = 0 above. This is done to precisely
-reproduce JT gravity in theb→ 0 limit.13
+Φ∂→+∞.
+For the leftmost expression of (B.14) (which we used in the main text (3.1)), the −1
+corresponds to the choice of integration constant c = 0 above. This is done to precisely
+reproduce JT gravity in the b →0 limit.13
 The rightmost form (B.14) on the other hand is natural when obtaining this system
 from the perspective of two Liouville actions, and can be readily shown to lead to the same
 on-shell energy expression:
@@ -150,9 +164,10 @@ EADM = 1
 2
 Z Φh
 c
-V (Φ)dΦ, (B.15)
+V (Φ)dΦ,
+(B.15)
 and hence the same physics as the other two ways of writing the boundary term.
-13There is an order of limits issue here, since to find JT we have to takeb→ 0 before taking Φ∂→ +∞,
+13There is an order of limits issue here, since to find JT we have to take b →0 before taking Φ∂→+∞,
 corresponding to the near-boundary UV region of sinh dilaton gravity deviating from the JT AdS2 spacetime
 as discussed in subsection 3.1.
 29
@@ -172,9 +187,10 @@ Z Φ∂
 c
 V (Φ)dΦ
 
-. (B.16)
+.
+(B.16)
 The on-shell energy computation would now instead be
-EADM =−
+EADM = −
 Z Φ∂
 Φh
 V (Φ)dΦ + 1
@@ -189,5 +205,6 @@ V (Φ)dΦ = 1
 2
 Z Φh
 c
-V (Φ)dΦ, (B.17)
+V (Φ)dΦ,
+(B.17)
 yielding indeed the same expression for the energy.

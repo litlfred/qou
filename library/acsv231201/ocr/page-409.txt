@@ -1,0 +1,56 @@
+12.3 Lagrange inversion 391
+
+around the origin in the y-plane. The difference between this integral and
+
+1 a vy)"
+sb bor =a a(Y) ¢
+equals
+
+= ce ec es eee es
+
+as claimed. ia)
+
+To estimate the right-hand side of (12.9) via multivariate asymptotic analy-
+sis, we consider the generating function
+
+co
+
+1 _ n n
+T=) » vo
+which generates the powers of v, so that
+n a ee
+[2"]f(z) = = [x"y"] ———.. (12.10)
+n 1- xy)
+
+This formula holds at the level of formal power series and, if v has a non-zero
+radius of convergence, at the level of analytic functions.
+
+Asymptotics for [z”] f(z) can be derived in terms of the power series coeffi-
+cients of v using (12.10). For example, it follows from Theorem VI.6 of [FS09]
+that
+
+1
+(14 ~ — — *V'090)", (12.11)
+
+y2av’(yo)/VV0)
+where yo is the least y > O such that the tangent line to v at (y, v(y)) passes
+through the origin. In our notation yo is the smallest positive solution to (v7; y) =
+1.
+For a fixed power k, the generalization
+
+k-1
+e1fof ~ £2
+
+n \2mnv’(yo)/vV0)
+
+can also be obtained with univariate methods. Using multivariate methods,
+
+v’(yo)"
+
+however, we may go further and derive bivariate asymptotics for [z"] f(z) as
+k,n > oo, holding uniformly as A = k/n varies over compact subsets of (0, 1).
+
+Proposition 12.8. Let v be analytic and nonvanishing at the origin, where its
+power series expansion is aperiodic with nonnegative coefficients, and of order
+at least 2 at infinity. Let f be the nonnegative series satisfying f(z) = zv(f(z))
+and define ys and a? by equations (12.5) and (12.6) above, respectively. Let

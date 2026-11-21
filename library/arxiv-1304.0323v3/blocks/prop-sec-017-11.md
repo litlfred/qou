@@ -1,0 +1,1 @@
+Forℓ≥ 0, let us denote by z theR(γa+ℓβa)-module endomorphism of Kℓ(a) given by the action of x1 on L◦(ℓ+1) a . Then we have (i) zℓ+1 = 0, (ii) Ker z = Imzℓ =R(αa,γa +ℓβa)u⊗(ℓ+1) a ≃K0(a)◦L◦ℓ a , (iii) Ker zℓ = Imz =R(αa,γa +ℓβa)R(ℓβa,βa)u⊗(ℓ+1) a ≃Kℓ−1(a)◦La.

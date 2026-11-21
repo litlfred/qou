@@ -1,0 +1,54 @@
+1.1 Generating functions and asymptotics 7
+
+positive multiples of a fixed non-zero vector, which can also be viewed as
+an element of (d — 1)-dimensional real projective space RP“~'. Often we will
+parametrize directions of interest by taking r — oo while fixing or bounding
+the normalized vector f := r/|r|, where, as introduced above,
+
+Ir] = Iril + [ra] + +++ + Iral-
+
+Sometimes we shall loosely refer to “the direction r”, by which we mean the
+direction parametrized by 7, or the ray determined by r.
+
+Definition 1.6. A multivariate asymptotic expansion
+
+co
+
+fr Y cig)
+
+j=0
+
+holds on a compact set of directions D ¢ RP“! if each cj € C, each gj =
+o(gj+i), and fr — an g(r) = O(gm) for each M as r > oo with # € D. This
+asymptotic expansion is a uniform asymptotic expansion on D if the implied
+constants can be chosen independently of the sequence r as long as f € D.
+
+Example 1.7. In Chapter 9 we shall derive the result
+
+r+s\ (rts) Ir+s
+5 r'ss 2ars
+
+for all r,s > 0 as (7,5) > o with r/(r + 5) and s/(r + s) remaining bounded
+and away from 0. This gives the first term of an asymptotic series which is
+uniform provided r/s and s/r are bounded away from 0, with all terms in the
+series varying smoothly with direction. Because of our restrictions on r/s, this
+asymptotic series can be expressed in terms of the asymptotic scale
+
+(r+ st [res
+
+Bir, 8) = (r+ sy,
+
+r’ss
+
+an asymptotic scale involving decreasing powers s~/ of s, or an asymptotic
+scale involving decreasing powers r~/ of r. Note that this multivariate asymp-
+totic approximation is not uniform for all real directions: for instance, if r = 0
+then ("*) = 1 forall s. 4
+
+s
+Remark. Throughout this book, we typically use f(z) and a, instead of F(z)
+
+and a, when dealing with the univariate case.
+
+As we will see in Chapter 3, the generating function f(z) for a univariate
+sequence {a, : n € N} leads, almost automatically, to asymptotic estimates for

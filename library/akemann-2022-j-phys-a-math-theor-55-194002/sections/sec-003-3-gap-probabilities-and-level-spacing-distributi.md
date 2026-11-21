@@ -8,6 +8,7 @@ pages: 11-14
 source_pdf: Akemann_2022_J._Phys._A__Math._Theor._55_194002.pdf
 source_sha256: 3753499c4b23f189
 toc_source: outline
+doc_brief: "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk — 20 sections: Front matter; Consecutive level spacings in the ; Introduction"
 ---
 Let us underscore that most of the ensuing discussion in the present section holds for arbitrary
 positive real spectra with a finite number of eigenvalues. Thus our particular choice of an

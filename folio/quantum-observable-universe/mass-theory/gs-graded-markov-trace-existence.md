@@ -9,8 +9,6 @@ $$
 
 **Categorical statement.** The Markov trace acts as a cyclic 0-cocycle on the Hochschild complex. It preserves the filtration, inducing a sequence of functionals on the associated graded pieces. 
 
-**Lean encoding.** In `gb-residue-spectral-sum.lean`, this is encoded as the abstract class field `gradedTrace : Fin levelBound → ℝ` on `GBResidueSpectralSum`. Each atomic instance supplies its per-level values. Constructing a fully verifiable `def` requires Mathlib infrastructure for filtered algebras and remains tracked downstream.
-
-**Conjectural status.** The claim is rigorous over any commutative ring $R$ where $\mathrm{tr}_M$ and $J^\bullet(q)$ exist. Promoting the formal Lean counterpart to a theorem requires formalising $\mathrm{ConfinementLevel}$, constructing $\mathrm{gr}^\ell H_n(R, q)$, and proving that $\mathrm{tr}_M$ preserves the filtration.
+**Conjectural status.** The claim is rigorous over any commutative ring $R$ where $\mathrm{tr}_M$ and $J^\bullet(q)$ exist. Proving it requires a precise definition of the confinement level, constructing $\mathrm{gr}^\ell H_n(R, q)$, and proving that $\mathrm{tr}_M$ preserves the filtration.
 
 **Empirical witness.** The formal derivation emits exact algebraic values for the proton, neutron, and deuteron atoms. These agree with the Habiro-side values to a relative tolerance of $10^{-9}$.

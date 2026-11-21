@@ -1,0 +1,41 @@
+CHAPTER 6
+
+Lattice Improvement in Lattice Effective Field
+Theory ~*
+
+6.1 Introduction
+
+Lattice simulations based on the framework of effective field theory (EFT) have been used in the study
+of nuclear forces [116, 138], nuclear structure [34, 35, 108, 129, 139, 140], as well as scattering and
+reactions [36, 133, 141]. It has also been applied to few-body [142, 143] and many-body [144-150]
+problems in ultracold atomic systems. One of the challenges common to all of these lattice calculations
+is the need to eliminate errors caused by the non-vanishing lattice spacing a. Lattice spacing errors or
+artifacts can grow in importance as the number of particles increases. This is especially true in cases
+where the particles form compact bound states. The problem of lattice errors in computing compact bound
+states has been studied in two-dimensional droplets of bosons with attractive zero range interactions
+[128]. In Chap. 5 lattice spacing errors were studied in light nuclei to understand deviations from a
+universal relation between the triton and alpha-particle binding energies called the Tjon line [24, 72].
+
+One practical approach to reducing lattice artifacts is to introduce a continuous-space regulator
+that renders the particle interactions ultraviolet finite. In that case one can take the lattice spacing
+to zero smoothly without any need to renormalize operator coefficients, see [38] and Chap. 4. This
+process does not remove errors produced by the continuous-space regulator, but it has the advantage
+of eliminating unphysical lattice artifacts such as rotational symmetry breaking. Another approach to
+removing lattice artifacts is accelerating the convergence to the continuum limit by including irrelevant
+higher-dimensional operators into the lattice action. This general technique is called lattice improvement
+and was first introduced by Symanzik [3, 4]. The key idea is to write the lattice action as
+
+S(a)=So+f\(@-S,+fl@-S.+--: (6.1)
+
+where the coefficient functions f;(a) vanish in the continuum limit a > oo and are tuned to cancel the
+dependence of the lattice Green’s functions on the lattice spacing, a, at momentum scales well below the
+lattice cutoff momentum, z/a. The coefficient functions are ordered so that f(a) vanishes more rapidly
+in the limit a > 0 with increasing i.
+
+Symanzik’s improvement program has been widely used in lattice quantum chromodynamics [151—
+154]. The improvement program has also been implemented to varying degrees in lattice effective field
+theory calculations. However, a systematic study of the size of lattice errors arising in systems with
+
+* The following chapter has been prepared for publication [137].
+
+69

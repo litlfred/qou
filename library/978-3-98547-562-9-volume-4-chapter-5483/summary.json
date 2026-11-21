@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "978-3-98547-562-9-volume-4-chapter-5483",
  "source_sha256": "5e39a312cf8ed9d9",
- "brief": "Floer cohomology , singularities, and birational geometry Mark McLean — We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including",
- "extended": "**Floer cohomology , singularities, and birational geometry Mark McLean**\n\n22 pp, 8 sections.\n\n**Abstract.** We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity theory and birational geometry. We will also state conjectures and open problems related to these results. We start out with a purely dynamical interpretation of the minimal discrepancy of an isolated singularity and explain how Floer theory fits into this story. Using similar ideas, we show how one can prove part of the cohomological McKay correspondence by computing a Floer cohomology group in two different ways. Finally, we illustrate how Hamiltonian Floer cohomology can be used to prove that birational Calabi–Y au manifolds have the same small quantum cohomology algebras, and we speculate how this might extend to orbifolds.\n\n**Outline.** 1 Introduction; 2 Minimal discrepancy of isolated singularitie; 3 Cohomological McKay correspondence; 4.1 Example; 4.2 Symplectic cohomology of compact subsets; 4.3 Idea of proof; 4.4 Further directions; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.3: Conjecture 2.2 is true in dimension 3.\n- Theorem 2.4: Let 02 A be normal and numerically Q-Gorenstein. Sup-\n- Theorem 3.3: Suppose that G acts freely away from 02 Cn and\n- Theorem 3.3: The proof of part ( 1) of Theorem 3.3 naturally identifies SH \u0003\n- Theorem 4.2: There exists a graded ƒ!; L!\n- Definition 2.7: Let Dz.ı/\u001a C be the closed disk of radius ı > 0 centered at z2 C. Define",
+ "brief": "Floer cohomology, singularities, and birational geometry — We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity",
+ "extended": "**Floer cohomology, singularities, and birational geometry**\n\n*Mark McLean*\n\n22 pp, 10 sections.\n\n**Abstract.** We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity theory and birational geometry. We will also state conjectures and open problems related to these results. We start out with a purely dynamical interpretation of the minimal discrepancy of an isolated singularity and explain how Floer theory fits into this story. Using similar ideas, we show how one can prove part of the cohomological McKay correspondence by computing a Floer cohomology group in two different ways. Finally, we illustrate how Hamiltonian Floer cohomology can be used to prove that birational Calabi–Yau manifolds have the same small quantum cohomology algebras, and we speculate how this might extend to orbifolds.\n\n**Outline.** Front matter; 1 Introduction; 2 Minimal discrepancy of isolated singularitie; 3 Cohomological McKay correspondence; 4 Quantum cohomology of birational Calabi–Yau ; 4.1 Example; 4.2 Symplectic cohomology of compact subsets; 4.3 Idea of proof; 4.4 Further directions; References",
  "tokens": {
   "brief": 49,
-  "extended": 390
+  "extended": 294
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -22,30 +27,35 @@
   {
    "id": "sec-002-3-cohomological-mckay-correspondence",
    "title": "Cohomological McKay correspondence",
-   "pages": "8-14"
+   "pages": "8-12"
   },
   {
-   "id": "sec-003-41-example",
+   "id": "sec-003-4-quantum-cohomology-of-birational-calabiyau-man",
+   "title": "Quantum cohomology of birational Calabi–Yau manifolds",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-004-41-example",
    "title": "Example",
    "pages": "14-14"
   },
   {
-   "id": "sec-004-42-symplectic-cohomology-of-compact-subsets",
+   "id": "sec-005-42-symplectic-cohomology-of-compact-subsets",
    "title": "Symplectic cohomology of compact subsets",
    "pages": "14-16"
   },
   {
-   "id": "sec-005-43-idea-of-proof",
+   "id": "sec-006-43-idea-of-proof",
    "title": "Idea of proof",
    "pages": "16-17"
   },
   {
-   "id": "sec-006-44-further-directions",
+   "id": "sec-007-44-further-directions",
    "title": "Further directions",
    "pages": "17-18"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "title": "References",
    "pages": "18-22"
   }
@@ -54,8 +64,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,0 +1,1 @@
+We can write an = an−1γn, where γn = 1 + sσn−1 + s2σn−1σn−2 + · · · + sn−1σn−1 · · · σ1. We have γn+1 = 1 + sσnγn, and also an immediate skein relation γ n+1 = γ n + sn , in Rn+1 n+1. The next lemma is proved in [13].

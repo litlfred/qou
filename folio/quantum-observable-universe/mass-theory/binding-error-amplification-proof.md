@@ -19,7 +19,7 @@ defect of two large, nearly equal masses. For the light nuclei
 
 A bound-state mass predicted to $0.1\%$ — already a demanding target for the
 per-knot mass formula
-[$\mathfrak{m}(K) = \mathfrak{m}_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$](#prop:binding-scale-catalan) —
+[$\mathfrak{m}(K) = \mathfrak{m}_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$](#conj:binding-scale-catalan) —
 therefore yields a binding energy wrong by tens of percent
 ($0.1\% \times 843 \approx 84\%$ for the deuteron). The amplification is
 worst for the lightest, most weakly bound nuclei.

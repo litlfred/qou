@@ -1,0 +1,1 @@
+Moreover, the space is discretized, such that a natural cutoﬀΛ arises by the lattice spacing a, Λ = π/a and exact methods as well as statistical methods known from Lattice QCD are used for the evaluation of binding energies, phase shifts, etc. for two-, few- and many-body problems.

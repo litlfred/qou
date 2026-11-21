@@ -1,0 +1,1 @@
+— Let C{x} be the ring of the germs of analytic func- tions in the neighborhood of x = 0. (1) We call (convergent) q-Borel transform the map Bq given by: Bq : xC {x} →C{ξ}, X n⩾0 anxn+1 7→ X n⩾0 an [n]!q ξn. (2) The (convergent) q-Laplace transform Lq is deﬁned by Lq = B−1 q : C{ξ} →xC {x} , X n⩾0 anξn 7→ X n⩾0 an[n]! qxn+1.

@@ -9,7 +9,7 @@ involution ($b\mapsto b^{-1}$ maps $q=e^{2\pi i b^2}$ to its S-dual
 $\tilde q$, not to $q^{-1}$), and it is the structure the compact
 q-dilogarithm lacks — not the bar parity, which the compact form also has.
 
-Conditional on the complex-volume conjecture `conj:binding-qbeta-complex-volume`,
+Conditional on the [complex-volume unification conjecture](#conj:binding-qbeta-complex-volume),
 the two parts are the two faces of the complex volume
 $\mathfrak V=\mathrm{Vol}+i\,\mathrm{CS}$:
 
@@ -19,7 +19,7 @@ $\mathfrak V=\mathrm{Vol}+i\,\mathrm{CS}$:
   **decay** ($\mathfrak Q_\beta$) face, carried on the root-of-unity
   (Faddeev) saddle.
 
-The mathematical statement of `prop:phi-b-bar-parity-decomposition` is
+The mathematical statement of the [bar-parity (sinh/cosh) decomposition](#prop:phi-b-bar-parity-decomposition) is
 **unconditional**; only this physical identification of the two parts invokes
 the conjecture.
 
@@ -32,5 +32,4 @@ real-$q$ and **anchor-stable**, bar-odd coefficients are root-of-unity and
 $c_2=-1$ (bar-even) is Taylor-exact, $c_3$ (bar-odd) swings $\approx 2.375\%$
 between the proton and muon anchors — so the ladder element factors as
 $F(q)=F_{\text{even}}(q)\cdot F_{\text{odd}}(q)$ with $F_{\text{odd}}$ the
-modular-double ($\Phi_b$) factor. (Scan:
-`computations/qbeta/qbeta_fmap_parity_stability_probe.py`.)
+modular-double ($\Phi_b$) factor.

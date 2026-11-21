@@ -1,0 +1,819 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2404.02087v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "2",
+   "text": "σ2r r",
+   "marks": [
+    {
+     "page": 7,
+     "context": "−sgn[Qb]ω"
+    },
+    {
+     "page": 7,
+     "context": "−r"
+    },
+    {
+     "page": 7,
+     "context": "−(z −zm)"
+    },
+    {
+     "page": 7,
+     "context": "2σ"
+    },
+    {
+     "page": 7,
+     "context": "2σ"
+    },
+    {
+     "page": 7,
+     "context": "(2π)3/2σ"
+    },
+    {
+     "page": 7,
+     "context": "R"
+    },
+    {
+     "page": 7,
+     "context": "v.vb= βbcisbeamvelocityandγb= (1 −β"
+    },
+    {
+     "page": 7,
+     "context": "1 −1/γ"
+    },
+    {
+     "page": 7,
+     "context": "Eb(r, z) = −sgn[Qb]ω"
+    },
+    {
+     "page": 7,
+     "context": "−r"
+    },
+    {
+     "page": 7,
+     "context": "σ"
+    },
+    {
+     "page": 7,
+     "context": "−(z −zm)"
+    }
+   ],
+   "block": "library/arxiv-2404.02087v1/blocks/prose-sec-010"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "323",
+   "text": "(2018) [10] Sahai, A. A., Golkowski, M., Katsouleas, T., Approaching [27] Asbury, M., How a Lab Incident Led to Better Eye PetaVolts per Meter Plasmonics Using Structured Semi- Surgery for Millions of People, American Association for conductors, IEEE Access, 11, pp. 476-493, (2023), doi: the Advancement of Science, 2022",
+   "block": "library/arxiv-2404.02087v1/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p010-2",
+   "page": 10,
+   "mark": "10",
+   "text": "1109/ACCESS.2022.3231481 [28] Fowler, R. H., Nordheim, L. W., Electron emission in in- [11] Sahai, A. A., Excitation of a nonlinear plasma ion wake tense electric fields, Proc. Roy. Soc. Lond. A 119, p.173- by intense energy sources with applications to the crunch-",
+   "block": "library/arxiv-2404.02087v1/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p010-3",
+   "page": 10,
+   "mark": "181",
+   "text": "(1928) in regime, Phys. Rev. Accel. Beams 20, 081004 (2017) [29] Sainadh, U.S., Xu, H., Wang, X. et al. Attosecond angular [12] Sahai, A. A. Chapter 8, On Certain Non-linear and Rel- streaking and tunnelling time in atomic hydrogen, Nature ativistic Effects in Plasma-based Particle Acceleration, 568, 75-77 (2019). Chap. 8, Ph.D. thesis, Duke University, 2015, 3719664 [30] Panofsky, W. K. H., Wenzel, W. A., Some Considera- [13] Sahai, A. A., Plasmonic nano-focusing of particle beams tions Concerning the Transverse Deflection of Charged by surface crunch-in plasmons excited in tapered tubes, Particles in Radio-Frequency Fields, Review of Scientific Proc. SPIE 11999, Ultrafast Phenomena and Nanopho- Instruments 27, 967 (1956) tonics XXVI, 1199903 (2022) [31] Arber, T. D., Bennett, K., K. Brady, K., Lawrence- [14] Sahai, A. A., Golkowski, A. A., et. al., PetaVolts per Douglas, A., Ramsay, M. G., et. al., Contempo- meter Plasmonics: introducing extreme nanoscience as a rary particle-in-cell approach to laser-plasma modelling, route towards scientific frontiers, Journal of Instrumen- Plasma Phys. Control. Fusion, 57, 113001 (2015) tation 18, P07019 (2023) [32] Towns, J., Cockerill, T., Dahan, M., Foster, I., Gaither, [15] Ginzburg, V. L., Nobel lecture: On superconductivity and K., et. al., XSEDE: Accelerating Scientific Discovery, superfluidity, Reviews of Modern Physics, 75, no. 3, p. Computing in Science & Engg. 16, pp. 62-74, (2014)",
+   "block": "library/arxiv-2404.02087v1/blocks/prose-sec-013"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "AakashA.Sahai"
+  },
+  {
+   "page": 1,
+   "mark": "24",
+   "context": "the gas which allows ultra-high densities, n0≃10"
+  },
+  {
+   "page": 1,
+   "mark": "24",
+   "context": "n0(10"
+  },
+  {
+   "page": 1,
+   "mark": "22",
+   "context": "∆w= 250nm and electron density:n0= 2×10"
+  },
+  {
+   "page": 1,
+   "mark": "21",
+   "context": "anddensity,nb0= 5 × 10"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "2me(3π"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "2me(3π2"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "2me(3π2n"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "2me(3π2n0)"
+  },
+  {
+   "page": 2,
+   "mark": "18",
+   "context": "gaswithdensities10"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Quantum correlation parameter:Γ = 8"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Quantum correlation parameter:Γ = 82"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "3π"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "3π2"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "3π2 d"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "3π2 d0"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "(4π"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "(4π3)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "3π"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "ensembleoverthereal-spaceR"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "2,"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "d3se−is"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "R"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "(2πℏ)"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "C→R"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "+ℏ"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "ℓϕW(r,"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "ℓ−kℓ, t)"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "ℓ−kℓ, t)fW(r,"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "c≃k"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "TF= k"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "3π"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "=(3π"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "=(3π2n0)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ℏ2k"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "F(2"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "F(2m"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "F(2me)−1,"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "F(2me)−1, r"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "10β"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "n0e"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2β"
+  },
+  {
+   "page": 5,
+   "mark": "19",
+   "context": "gassescanhardlybecompressedtone> 10"
+  },
+  {
+   "page": 5,
+   "mark": "24",
+   "context": "n0[10"
+  },
+  {
+   "page": 5,
+   "mark": "15",
+   "context": "n0[1024cm−3]×10"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "density,n0=F"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Q"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "Qn"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "\u0012mec"
+  },
+  {
+   "page": 5,
+   "mark": "24",
+   "context": "n0[10"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "R"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "p(n"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "−(z −z"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "(2π)"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "p(n"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "p(n0)"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "p(n0)m"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "−(z −z"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "p(n"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "p(n0)(r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "p(n0)(r2 −r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "−eElattice(r> rt) = −meω"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "presseddensityishigherinthequantumregimebyF"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "∂t"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Q(n"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q(n0)(r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "0−r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "−eEe(r) = meω"
+  },
+  {
+   "page": 8,
+   "mark": "13",
+   "context": "cβb= ∂tandusingEq."
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "+ω"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "p(n"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(r2−r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "byF"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "t)H(r −r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "t)H(r −rt) −F"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q(r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "0−r"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Q"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Qn"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "γec"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "γec2β"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "∂ξ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "∂ξ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "= −sgn[Qb]ω"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "p(n"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "r"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "re−(z−z"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "re−(z−zm)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "re−(z−zm)2/(2σ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "γec"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "γec2β"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "maximaofelectrontrajectory,r= rmwhere∂2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "∂t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "t+ 2"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "t+ 2n"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "t+ 2nb"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": ">n"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Q(n"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q(n0)(r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q(n0)(r2 −r"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "t)H(r −r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "t)H(r −rt) −(r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "0−r"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "= −meω"
+  },
+  {
+   "page": 9,
+   "mark": "z",
+   "context": "tainedusing∆pr=eEb σ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ω"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "p(n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "z",
+   "context": "rσ"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "2π.Usingthisγ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "c"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "nb0σ"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "(2π)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "= F"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "thelongitudinalposition,ξ"
+  },
+  {
+   "page": 9,
+   "mark": "22",
+   "context": "n0= 2 × 10"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "δQm(ξrc) = −en0π(r"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "m−r"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "t)dz= −en"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "t)dz= −enb"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "t)dz= −enb0σ"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "κ"
+  },
+  {
+   "page": 9,
+   "mark": "74",
+   "context": "κ5."
+  },
+  {
+   "page": 9,
+   "mark": "18",
+   "context": "withn0=10"
+  },
+  {
+   "page": 9,
+   "mark": "18",
+   "context": "withn0=1018cm−3,rt=12.5µm,nb0=10"
+  },
+  {
+   "page": 9,
+   "mark": "39",
+   "context": "κ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "(2π)"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "=−∂E"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "=−r∆E"
+  },
+  {
+   "page": 9,
+   "mark": "z",
+   "context": "∆ξ.E"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "∆ξ.Ezradiallyvariesover∆r≃r"
+  }
+ ]
+}

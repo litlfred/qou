@@ -1,0 +1,1 @@
+• A non-zero term aα with α < 0 gives a pole of ζD at −2α with Ress=−2α ζD(s) = 2 aα Γ(−α) (6.22) • The absence of log t terms gives regularity at 0 for ζD with ζD(0) = a0 . (6.23) CHAMSEDDINE, CONNES, AND MARCOLLI

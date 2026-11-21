@@ -644,7 +644,7 @@
           "in_degree": 0,
           "cone_size": 2,
           "depth": 2,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1118,6 +1118,37 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "34df3463662d",
+          "ts": "13cbf0911a08"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:05:34.993Z",
+        "reviewed_sha": "d452093fabf877690aeba624197ad015c6b9aa74",
+        "severity": "minor",
+        "evidence": "Parts 1-3 check (per-step change |c|(|h|(l-1)-2), -9/5 at c=1,h=1/5,l=2). The 'Substrate-internal' paragraph says E takes values in Z>=0[q^+-1] as a formal Laurent polynomial, but E is defined with absolute values of coefficients, which needs an ordered (archimedean) evaluation; this contradicts the statement's own archimedean-specialisation paragraph."
+      },
+      {
+        "field_hash": {
+          "md": "4e140f5071f2",
+          "ts": "13cbf0911a08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:44:09.352Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "evidence": "Part 3 arithmetic checked: |c||h|(l-1) + |c|(l-2) - |c|l = |c|(|h|(l-1) - 2); c=1, h=1/5, l=2 gives -9/5. Part 2 telescoping plus confluence gives path independence. E now correctly placed after the archimedean realization; h(q0) = q0 - 1/q0 ~ 0.209 matches the statement."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1971,6 +2002,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T03:12:46.601Z",
+  "updated_at": "2026-11-17T00:44:09.352Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

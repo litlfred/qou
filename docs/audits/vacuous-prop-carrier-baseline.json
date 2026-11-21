@@ -2,65 +2,65 @@
   "schema": "vacuous-prop-carrier-baseline/v1",
   "note": "Self-contained `class \u2026 : Prop where` carriers -- every field type mentioning nothing but numeric types, numerals and logical vocabulary. Such a carrier cannot say anything about the domain. This baseline DRAINS and never grows: silence a new entry and the gate stops meaning anything. The fix is to encode the carrier's real content so the shape filter no longer matches it.",
   "entries": {
-    "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean::QOU.FluidDynamics.QAubinLions": {
+    "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean::QOU.FluidDynamics.QAubinLions": {
       "verdict": "fixed-no-longer-vacuous",
       "note": "`\u2203 q_thresh : \u211d, q_thresh > 0` \u2014 witness 1. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence.",
       "superseded_note": "Re-encoded upstream: the class now takes qSeq/convergenceGap/energy/singularDim as PARAMETERS and constrains them, and the file carries its own negative controls -- `\u00ac QAubinLions (fun _ => 2) ...` at :114 and `... 2` at :120 -- which compile. A carrier with a refutation is not inhabitable with no hypotheses, so the `proved-vacuous` finding no longer holds.",
       "superseded_on": "2026-08-30"
     },
-    "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean::QOU.FluidDynamics.RegularityBreakdown": {
+    "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean::QOU.FluidDynamics.RegularityBreakdown": {
       "verdict": "fixed-no-longer-vacuous",
       "note": "`\u2203 Re_c : \u211d, Re_c > 0` \u2014 witness 1. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence.",
       "superseded_note": "Re-encoded upstream: parameterised over enstrophy/T/sheetDim/profile/period, with three negative controls at :150, :157 and :163 that compile. The `proved-vacuous` finding no longer holds.",
       "superseded_on": "2026-08-30"
     },
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.BlowupYekutieli": {
+    "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.BlowupYekutieli": {
       "verdict": "fixed-no-longer-vacuous",
       "note": "Proved vacuous by hand in docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean (exit 0, 0 errors). NOTE THE EVIDENCE CHANGED 2026-08-30: this entry previously cited the file's own 'canonical instance bundle' as proof -- the corpus inhabiting the carrier itself. That bundle was REMOVED (qou-rq9n) because it made every [C]-conditional theorem in the q-NS cone unconditional, so the citation would now point at nothing. The verdict is unchanged: inhabitability is a property of the FIELDS, not of whether the file ships an instance, and all five remain provable with no hypotheses. Removing the bundle closed the downstream hole; it did not give the carriers content.",
       "superseded_note": "REPLACED 2026-08-30 (bean `qou-88nf`). The rate existential `\u2200 T \u2265 0, \u2203 r, 0 \u2264 r \u2227 r \u2264 1 + T` -- which is what this entry recorded as vacuous, correctly -- is gone. The carrier now states the upstream obstruction claim `smooth \u2194 \u2200 n, obstruction n = 0`, parameterised over both, and is refuted by `\u00ac BlowupYekutieli (fun _ => 0) False` in docs/audits/2026-08-30-qns-carriers-are-refutable.lean. Note this is a REPLACEMENT: the two are different propositions that shared a name, not two strengths of one.",
       "superseded_on": "2026-08-30"
     },
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou": {
+    "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou": {
       "verdict": "proved-vacuous",
       "note": "Named for P vs NP. `strict_separation` is `\u2200 eps > 0, \u2203 s, 0 < s \u2227 s \u2264 eps` \u2014 witness `eps` itself; `noncompressible` is `\u2203 s0, 0 < s0` \u2014 witness 1. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence."
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ConditionalClasses.lean::QOU.BraidKnot.PLCorrectnessHypotheses": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/ConditionalClasses.lean::QOU.BraidKnot.PLCorrectnessHypotheses": {
       "verdict": "proved-vacuous",
       "note": "Field is `\u2200 q : \u211d, q > 1 \u2192 (0 : \u211d) \u2264 0` -- reflexivity of \u2264 on zero, with the `q > 1` hypothesis unused."
     },
-    "content/quantum-observable-universe/lean/QOU/Machinery/LambdaScaleAbsorbed.lean::QOU.Machinery.SeparateLambdaScale_Antipattern": {
+    "folio/quantum-observable-universe/lean/QOU/Machinery/LambdaScaleAbsorbed.lean::QOU.Machinery.SeparateLambdaScale_Antipattern": {
       "verdict": "uninhabitable-by-design",
       "note": "Single field `is_antipattern : False`. NOT vacuous \u2014 the honest opposite. It marks a construction the corpus forbids (the purged `\u03bb_scale`) and can only be USED, never proved. A carrier that cannot be inhabited says the most a carrier can. Verified in 2026-08-24-undecided-carrier-witnesses.lean."
     },
-    "content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean::QOU.Machinery.ResidueACompositeIdentification": {
+    "folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean::QOU.Machinery.ResidueACompositeIdentification": {
       "verdict": "proved-vacuous",
       "note": "Single field typed `: True`."
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapCyclotomicDirect": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapCyclotomicDirect": {
       "verdict": "proved-vacuous",
       "note": "As FMapFaddeevModular: `: True`, already flagged and exempt via @marker. Not a new finding."
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapFaddeevModular": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapFaddeevModular": {
       "verdict": "proved-vacuous",
       "note": "Single field `: True` -- but ALREADY DECLARED. lean-vacuity-axiom-audit.ts flags it as proof-claims-unencoded [EXEMPT(explicit @marker / opaque-tag opt-out)], sanctioned by AGENTS.md \u00a73b-tax for a genuinely-open opaque field. Not a new finding."
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapHexagonCharacter": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapHexagonCharacter": {
       "verdict": "proved-vacuous",
       "note": "As FMapFaddeevModular: `: True`, already flagged and exempt via @marker. Not a new finding."
     },
-    "content/quantum-observable-universe/mass-theory/feynman-classical-limit.lean::QOU.FeynmanClassicalLimit.ConditionalAudit.ClassicalLimitStpart": {
+    "folio/quantum-observable-universe/mass-theory/feynman-classical-limit.lean::QOU.FeynmanClassicalLimit.ConditionalAudit.ClassicalLimitStpart": {
       "verdict": "proved-vacuous",
       "note": "`\u2203 f : \u2115 \u2192 \u211d, \u2200 K, f K = 1` \u2014 witness `fun _ => 1`. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence."
     },
-    "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean::QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit.CrystalGraphRealization": {
+    "folio/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean::QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit.CrystalGraphRealization": {
       "verdict": "proved-vacuous",
       "note": "`\u2203 raise : \u2115 \u2192 \u2124, \u2200 i, raise i = 0` \u2014 witness `fun _ => 0`. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence."
     },
-    "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean::QOU.BraidKnot.WignerCoefficient.ConditionalAudit.QIntegerMassFormula": {
+    "folio/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean::QOU.BraidKnot.WignerCoefficient.ConditionalAudit.QIntegerMassFormula": {
       "verdict": "proved-vacuous",
       "note": "`\u2200 m_e \u2265 0, \u2200 _c, \u2203 r \u2265 0, \u2203 value, value = r * m_e` \u2014 witness r = 0. Proved vacuous by hand in docs/audits/2026-08-24-undecided-carrier-witnesses.lean (exit 0, no sorryAx). The generic list first reported it undecided because it only tried the witness 0; this needs 1 or a constant function. Tactic list since widened AND a real bug in it fixed: `first` advances only when the previous alternative FAILS, and `norm_num` rewriting `q > 0` to `0 < q` makes progress without closing, so `first` committed to it. Adding `done` to every alternative took the generic list from 8/23 to 12/23. This carrier is still among the ones it does not reach, so the hand proof remains the evidence."
     },
-    "content/quantum-observable-universe/nuclear-interactions/geom-universality.lean::QOU.BraidKnot.PLCorrectnessHypotheses": {
+    "folio/quantum-observable-universe/nuclear-interactions/geom-universality.lean::QOU.BraidKnot.PLCorrectnessHypotheses": {
       "verdict": "proved-vacuous",
       "note": "Second declaration of the same `0 \u2264 0` carrier, in a different file."
     }

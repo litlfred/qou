@@ -1,0 +1,1 @@
+Let E ⊆D(A) be a full triangulated subcategory that is closed under inﬁnite direct sums, and let L ∈D(A ⊗Bop). The following two conditions are equivalent. (i) The functor RHomA(L, −)|E : E →D(B) commutes with inﬁnite direct sums. (ii) L is a compact object relative to E on the A side.

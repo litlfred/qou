@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-physics-0203048v1/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Gauge invariance of the third-order invariant $H^{(3)}$",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-009-b-gauge-invariance-of-the-third-order-invariant.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-physics-0203048v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-physics-0203048v1/manifest.jsonld",
+  "provenance": "ingested"
+}

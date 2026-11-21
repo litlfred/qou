@@ -1,0 +1,1 @@
+Let F be a d-variate generating function satisfying the hypotheses of Lemma 12.35 and let M = H(0) denote the Hessian matrix of g at the origin. If M is nonsingular then there is a constant c such that

@@ -1,0 +1,1 @@
+Their paper appeared in 1970, at a time when the origin of the ∆I = 1 mass diﬀerences within the isospin multiplets was totally mysterious: evalua- tions of the Cottingham formula invariably led to the conclusion that the proton should be heavier than the neutron and hence unstable.

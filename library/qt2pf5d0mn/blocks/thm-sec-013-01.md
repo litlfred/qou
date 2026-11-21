@@ -1,1 +1,1 @@
-Given a coloring F = (g,f ), we have
+Given a coloring F = (g, f), we have Tr( O σ∈T 4 Zϵ(σ) F (σ)) = Tr( O σ∈T 4 Zϵ(σ) F (σ)′). As a consequence, the partition function ZD(M; T ) is independent on the choice of rep- resentatives for each triangle color.

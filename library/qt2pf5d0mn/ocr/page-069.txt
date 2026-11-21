@@ -1,0 +1,39 @@
+Section 4.2 Invariance under change of ordering
+
+2 s(2)
+
+/\ /\
+0 1 s(0) s(1)
+
+Figure 4.1: Reordering by a permutation s
+
+If the above conditions are satisfied, then it is clear that Zp(M;T) = Zp(M;T’). The
+first condition is satisfied trivially as will be seen later. The ®§ clearly depends on the
+reordering restricted to the 4-simplex o. It is natural to try to construct ®% for each
+reordering s; € Ss and assume 8°" = 5 05. Namely, we wish ®§ acts like a group
+action. Unfortunately, this turns out to be false. For instance, &¢ Of is not equal to
+the identity; it is, however, equal to the identity up to certain canonical isomorphisms.
+Thus in the following, we will actually first define an action ®§ for § € Fy and show that
+that if § and 8’ represent the same permutation in 55, then there is a canonical way to
+identity them. To define the action ©, we will need to consider in turn actions of F; on
+colors of i-simplices for i = 1, 2,3, 4.
+
+First we fix some notations. In general letters s,s’ are used to represent elements
+of S,, and 8,5’ elements of Fi,_;. We will still think of the generators §; of Fi,_1 as
+swapping i with i+1, although this is actually the role of p,(8;). By a colored k-simplex,
+k = 1,2,3,4, we mean an ordered k-simplex with a coloring on its sub 1-simplices and sub
+2-simplices (if any). Let S* be the set of all colored k-simplices, where two k-simplices
+
+are identified up to relative ordering of their vertices. For instance,
+
+St={, eo, @eG}
+
+2
+S={. a 5 1a,b,c€ G,A is simple in Cea}
+0 1
+
+a
+
+For k = 2,3,4, associated to each colored k-simplex o is an array o[0],--- ,o[k],
+
+60

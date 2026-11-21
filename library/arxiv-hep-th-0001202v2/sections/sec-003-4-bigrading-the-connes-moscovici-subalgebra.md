@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-003-4-bigrading-the-connes-moscovici-subalgebra
 section_title: "Bigrading the Connes-Moscovici subalgebra"
 section_number: 4
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 To compute Table 2 we proceeded as above, now using the coproduct [@CK] $$\begin{aligned}
 \Delta(\delta_n)&=&\delta_n\otimes e+e\otimes\delta_n+R_{n-1}\label{Dd}\\

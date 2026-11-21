@@ -1,0 +1,49 @@
+We note that this system of equations has exactly two solutions. By calculating a solution
+by Newton’s method from (w,t,u) = (0.3, 0.25, 0.25), we obtain (s — t)min = 0.301964... ,
+and from (w,t,u) = (0.5, 0.2, 0.2), we obtain (s — t)max = 0.462284... . Therefore, we
+obtain an estimate of s — t in A’ as
+
+0.3 < s—t < 047.
+
+To be precise (see Remark 4.1), we can rigorously verify the above estimate of the solutions
+of the above system of equations in a similar way as in Section A.3.
+
+We obtain the other bounds of A’ from the above bounds by the symmetry with respect
+to the exchange of ¢ and wu.
+
+5.3 Calculation of the critical value
+
+In this section, we calculate the concrete values of a critical point and the Hesse matrix
+of V.
+The differentials of V are presented by
+
+Hts, u) = —2 log(1— x) + log (1 - 7) +2nV/-1 (t- 5): (83)
+
+acc s,u) = 2 log(1—y) — log (1- ») —log (1- *) — InV/-1(s— ): (84)
+
+ov, 8,u) = —2 log(1— z) + log (1- *) + 2nV=1(u- 5): (85)
+
+Ou
+
+where a = e2"V—!t y = e2"V-15 and z = e2™V—!™,
+Lemma 5.1. V has a unique critical point (to, 89,9) in P~!(A'), where P : C3 > R? is
+the projection to the real parts of the entries.
+
+Proof. Any critical point of V is given by a solution of ov = 2V = 2V =0, and these
+: : 1s Ou
+equations are rewritten,
+
+(l-«)? = -o(1- 7),
+(iy? = ~~ Z)(1— 2),
+(1-2)? = -2(1- 4).
+
+From the first formula, we have that y = «?/(x?—a2+1). Hence, from the second formula,
+we have that z = x3/((a — 1)(«? + 1)). By substituting these into the third formula, we
+obtain
+
+a® — 25° + 524 — 6a? + 5a? —3a+1 = 0.
+
+Its solutions are given by
+
+x = 0.108378... + /—T- 0.818891... , 0.23185... + /-T- 1.65564... ,
+0.659772... + /—1 - 0.298454... .

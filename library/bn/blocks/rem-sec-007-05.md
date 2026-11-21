@@ -1,0 +1,1 @@
+In the case (n, d) = (3, 10), the projection to the rigid fac- tor Jac(X) →A ∼= C2/Z[ζ5] is not induced by a map p : X →Y with Jac(Y ) ∼= A. This can be established by showing there is no map from the (10, 10, 10, 10) orbifold to the (2, 5, 10) orbifold which lifts to the required Z/10 covering spaces. (It is, however, induced by a correspondence.)

@@ -1,0 +1,4654 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0405508v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "j",
+   "text": "+1,...,d′n)∈Ij",
+   "marks": [
+    {
+     "page": 11,
+     "context": "have already found a ﬁnite (non-empty) subset I"
+    },
+    {
+     "page": 11,
+     "context": "have already found a ﬁnite (non-empty) subset Ij⊆H"
+    }
+   ],
+   "block": "library/arxiv-math-0405508v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p023-1",
+   "page": 23,
+   "mark": "1",
+   "text": "···t′",
+   "marks": [
+    {
+     "page": 22,
+     "context": "the Iwahori-Hecke algebras of type B.Note also that, if α ∈B"
+    }
+   ],
+   "block": "library/arxiv-math-0405508v1/blocks/prose-sec-004"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p011-2",
+   "page": 11,
+   "mark": "j",
+   "text": ")∈R(hj)",
+   "block": "library/arxiv-math-0405508v1/blocks/prose-sec-002"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "s"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Thesymbolst, s"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Thesymbolst, s1, . . . , s"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "elementsof˜WncanberepresentedgeometricallybybraidsinS"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "i=s"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "i=si· · · s"
+  },
+  {
+   "page": 3,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "i= (q −1)"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i= (q −1)g"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "abasis{g"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "abasis{gw}labelledbytheelementsofW"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(i)Conjugation:ifα, β∈˜W"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(ii)Markovmoves:ifα ∈˜W"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(ii)Markovmoves:ifα ∈˜Wnthenα ∼αs"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(ii)Markovmoves:ifα ∈˜Wnthenα ∼αsn±1∈˜W"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "n=1H"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "groundringoverwhichthealgebraHisdeﬁned,andh∈H"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "InW"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "InWn,let t"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "InWn,let ti:= s"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "InWn,let ti:= si · · · s"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "InWn,let ti:= si · · · s1ts"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "InWn,let ti:= si · · · s1ts1 · · · s"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "s"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "si+1s"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "si+1si+2 · · ·s"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "t"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "tis"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "tisi+1 · · · s"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "inincreasinglength(forexample,tt"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "inincreasinglength(forexample,tt1s"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "inincreasinglength(forexample,tt1s2t"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "inincreasinglength(forexample,tt1s2t3s"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "inincreasinglength(forexample,tt1s2t3s4s"
+  },
+  {
+   "page": 4,
+   "mark": "8",
+   "context": "inincreasinglength(forexample,tt1s2t3s4s6s"
+  },
+  {
+   "page": 4,
+   "mark": "9",
+   "context": "inincreasinglength(forexample,tt1s2t3s4s6s8s"
+  },
+  {
+   "page": 4,
+   "mark": "10",
+   "context": "inincreasinglength(forexample,tt1s2t3s4s6s8s9s"
+  },
+  {
+   "page": 4,
+   "mark": "11",
+   "context": "inincreasinglength(forexample,tt1s2t3s4s6s8s9s10∈W"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i:=g"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "i:=gi · · ·g"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "theobviousliftingtog"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "theobviousliftingtogi · · · g"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "theobviousliftingtogi · · · g1tg"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "theobviousliftingtogi · · · g1tg1 · · · g"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "0"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "1"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "k−1) = y"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ifh=d"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ifh=d1 · · · d"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ifh=d1 · · · dn∈Hwithd"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ifh=d1 · · · dn∈Hwithdi∈{1, g"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "i−1},"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "i−1},aliftingof"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "representative,wedeﬁneatrace functionτonHbytheruleτ(h) = z"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "wherea(h)isthenumberofd"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "wherea(h)isthenumberofdiwhichareintheset{g"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "wherea(h)isthenumberofdiwhichareintheset{g1, . . . , g"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "productsinthegeneratorst, s"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "productsinthegeneratorst, s1, . . . , s"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "inthebraidgroup˜W"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "Byconvention,weletW"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Byconvention,weletW0= {1}.Then,foralln ≥1,thegroupW"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "parabolicsubgroupofW"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "parabolicsubgroupofWnobtainedbyremovingthenodewithlabels"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "[1], Chap. IV, §1.8).Hence, we have natural embeddings W"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "[1], Chap. IV, §1.8).Hence, we have natural embeddings W0⊂W"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "], Chap. IV, §1.8).Hence, we have natural embeddings W0⊂W1⊂W"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "t"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ti:= s"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ti:= sis"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "ti:= sisi−1 · · ·s"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "ti:= sisi−1 · · ·s1ts"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ti:= sisi−1 · · ·s1ts1 · · · s"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ti:= sisi−1 · · ·s1ts1 · · · si−1s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ti:= sisi−1 · · ·s1ts1 · · · si−1si∈W"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "forall0 ≤i ≤n −1,wheret"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "en the set of distinguished right coset representatives of W"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "et of distinguished right coset representatives of Wn−1 in W"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "sn−1s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "sn−1sn−2 · · · s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "sn−1s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "sn−1sn−2 · · · s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "sn−1sn−2 · · · sn−kt"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "(NotethatR"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(NotethatR1= {1, t}.)Theneachelementw∈W"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "intheformw=r"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "intheformw=r1 · · · r"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "intheformw=r1 · · · rnwithr"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "intheformw=r1 · · · rnwithri∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Finally, let D"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Finally, let Dn:= {1, s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Finally, let Dn:= {1, sn−1, t"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Finally, let Dn:= {1, sn−1, tn−1} ⊆R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Finally, let Dn:= {1, sn−1, tn−1} ⊆Rn.Then D"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "doublecosetrepresentativesofW"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "doublecosetrepresentativesofWn−1inW"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Each r∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "r∈Rncan now be written uniquely in the form r= dr′where d ∈D"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "andr′=1orr′=s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "andr′=1orr′=sn−2 · · · s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "andr′=1orr′=sn−2 · · · sn−korr′=s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "andr′=1orr′=sn−2 · · · sn−korr′=sn−2 · · · s"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "andr′=1orr′=sn−2 · · · sn−korr′=sn−2 · · · sn−kt"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "haver′∈R"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "thatwealsohavenaturalembeddings˜W"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "˜W"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "˜W"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "n˜W"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "∈˜W"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i:= s"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "i:= si"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i:= sis"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "i:= sisi−1 · · · s"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "i−1"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "imapsto"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "imapstot"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "canonicalsurjection˜W"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "canonicalsurjection˜Wn→W"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "n⊆˜W"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "jand"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "j+1"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "j+1s"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "j+1sj"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "j+1sjs"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "j+1sjsj−1 · · · s"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "j−1"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "j"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "j"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "j+1"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "n,jbe the set consisting of 1,"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n,jbe the set consisting of 1, s"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "n,j.As"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "n,0bythesymbol"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "i"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "j,i"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "m"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "ms"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "msiand"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "m"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "i"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "m= s"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "m= sm · · · s"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "m= sm · · · si+2"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "i+1"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i+1s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "i+1si· · · s"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "i"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "is"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "isi+1"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "i"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "m"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "(c)s"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "(c)sm−1 · · · s"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "m−k−1"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "m,m−1"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "m,m−1s"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "m,m−1sm−1· · · s"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "m,m−1sm−1· · · sm−k"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "m−k−1for"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "i"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "j"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "js"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "i+1"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i+1s"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "i+1si"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i+1sis"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1ts"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "1ts1"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1ts1t = ts"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "2.4.Consideranelementoftheformd"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2.4.Consideranelementoftheformd1 · · · d"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2.4.Consideranelementoftheformd1 · · · dn∈˜W"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "2.4.Consideranelementoftheformd1 · · · dn∈˜Wnwithd"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "apositiverespectivelynegativeblockoflengthm + 1 ≥0in˜W"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "s"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "si+1s"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "si+1si+2 · · · s"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "i"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "is"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "isi+1 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "d1 · · · d"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "d1 · · · dn= b(i"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "d1 · · · dn= b(i1, m"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "d1 · · · dn= b(i1, m1)b(i"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "d1 · · · dn= b(i1, m1)b(i2, m"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "d1 · · · dn= b(i1, m1)b(i2, m2)b(i"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "d1 · · · dn= b(i1, m1)b(i2, m2)b(i3, m"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "By[3],§2,eachconjugacyclassintheCoxetergroupW"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Lety=(s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Lety=(si+m+1 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Lety=(si+m+1 · · · si+1)(s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Lety=(si+m+1 · · · si+1)(si+m+2 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Lety=(si+m+1 · · · si+1)(si+m+2 · · · si+2) · · · (s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i+m+1 · · · si+1)(si+m+2 · · · si+2) · · · (si+m+k+1 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1si+2 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1si+2 · · · si+m)(s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1si+2 · · · si+m)(si+m+2s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1si+2 · · · si+m)(si+m+2si+m+3 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1si+2 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1si+2 · · · si+k)(s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1si+2 · · · si+k)(si+k+2s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1si+2 · · · si+k)(si+k+2si+k+3 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(si+1si+2 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "i+m+1"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i+m+1s"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "i+m+1si+m+2"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i+m+1si+m+2s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i+m+1si+m+2si+m+3 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "i"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "is"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "isi+1"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "isi+1s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "isi+1si+2· · · s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "isi+1si+2· · · si+k)(s"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "isi+1si+2· · · si+k)(si+k+2"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "isi+1si+2· · · si+k)(si+k+2s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "isi+1si+2· · · si+k)(si+k+2si+k+3· · · s"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "i"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "is"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "isi+1"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "isi+1s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "isi+1si+2 · · ·s"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "i+m+1"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i+m+1s"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "i+m+1si+m+2"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i+m+1si+m+2s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i+m+1si+m+2si+m+3 · · ·s"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "i"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "is"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "isi+1"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "isi+1s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "isi+1si+2 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "i+k+1,i"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i+k+1,is"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "i+k+1,isi+k+2"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i+k+1,isi+k+2s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i+k+1,isi+k+2si+k+3 · · · s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "(b)Wewritey= (s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "(b)Wewritey= (si+m+1 · · ·s"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "i+m+1"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "i+m+1y= y′−1"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "i+m+1"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "i+m+1y= y−1"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i+m+1y= y−1s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i+m+1y= y−1si+m+1· · · s"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "i+m+1y= y−1si+m+1· · · si+1"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "Now(s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "Now(si+1 · · · s"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "i+m+1.Sowecanwrite"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "i+m+1"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "i+m+1w"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "iv"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "ivawhere"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "ivawherew"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "ivawherewaand"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "ivawherewaandv"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "i+m+1"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "i+m+1y)(y−1"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "i+m+1y)(y−1w"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "i+m+1y)(y−1wa"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "iv"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "y= (s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "y= (si+m+1 · · ·s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "y= (si+m+1 · · ·si+m+k+1)(s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "y= (si+m+1 · · ·si+m+k+1)(si+m · · · s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "y= (si+m+1 · · ·si+m+k+1)(si+m · · · si+m+k) · · ·(s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "(si+m+1 · · ·si+m+k+1)(si+m · · · si+m+k) · · ·(si+1 · · · s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "andwritey=y′(s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "andwritey=y′(si+1 · · · s"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "i+1)"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "i+1)y′−1"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "iy′(s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "iy′(si+1· · · s"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "i+1"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "is"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "isi+1 · · · s"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "iw"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "iwbwhere"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "iwbwherew"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "iy)(y−1"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "iy)(y−1w"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "iy)(y−1wb"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "i+k+1,i"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "is"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "isi+1 · · · s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "isi+1 · · · si+k)(s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "isi+1 · · · si+k)(si+k+2 · · ·s"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "i+k+1,i"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i+k+1,i+1atallindicesbiggerthan"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i+k+1,i+1(s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i+k+1,i+1(si+1 · · · s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i+k+1,i+1(si+1 · · · si+k) = (s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i+k+1,i+1(si+1 · · · si+k) = (si+1 · · · s"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i+k+1,i+1(si+1 · · · si+k) = (si+1 · · · si+k)(s"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "i+k+1,i+1(si+1 · · · si+k) = (si+1 · · · si+k)(si+k+1"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "is"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "isi+1 · · ·s"
+  },
+  {
+   "page": 8,
+   "mark": "s",
+   "context": "isi+1 · · ·si+k"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "i+1"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "i+k+1,ithen"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "2s"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1s"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ctoring by the ideal generated by all elements of the form t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "s"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "i−(q −1)"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i−(q −1)s"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i−(q −1)si−q · 1for"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "i−(q −1)si−q · 1fori = 1, . . . , n −1.Wedenotetheimageof"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "canonical map A˜W"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "canonical map A˜Wn→H"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "canonical map A˜Wn→Hnagain by t, and the image of s"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "canonical map A˜Wn→Hnagain by t, and the image of siby g"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "the generators t, g"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "the generators t, g1, . . . , g"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "the generators t, g1, . . . , gn−1 of H"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "tothebraidrelationsforthegeneratorst, s"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "tothebraidrelationsforthegeneratorst, s1, . . . , s"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "tothebraidrelationsforthegeneratorst, s1, . . . , sn−1of˜W"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 9,
+   "mark": "g",
+   "context": "i= (q −1)"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i= (q −1)g"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Letw∈W"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "productofgeneratorst, s"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "productofgeneratorst, s1, . . . , s"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "generatorst, s1, . . . , sn−1.ThenthecorrespondingelementofH"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "intermsofthegeneratorst, g"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "intermsofthegeneratorst, g1, . . . , g"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "byg"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "bygw.Itisknownthatthesetofelements{g"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "bygw.Itisknownthatthesetofelements{gw|w∈W"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "ofH"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "TheembeddingsW"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "TheembeddingsW0⊂W"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "TheembeddingsW0⊂W1⊂W"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "dingsofalgebrasH"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "dingsofalgebrasH0⊂H"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "dingsofalgebrasH0⊂H1⊂H"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "= q−1g"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "= q−1gi + (q−1−1) · 1 ∈H"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "i,j∈˜W"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "i,j∈˜WnunderthemapA ˜W"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "i,j∈˜WnunderthemapA ˜Wn→H"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "n= {1, g"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Letw∈W"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Letw∈Wnandwritew=r"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Letw∈Wnandwritew=r1 · · · r"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Letw∈Wnandwritew=r1 · · · rnwithr"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Letw∈Wnandwritew=r1 · · · rnwithri∈R"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "expressionisreducedwealsohaveg"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "expressionisreducedwealsohavegw=g"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "expressionisreducedwealsohavegw=gr"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "expressionisreducedwealsohavegw=gr1 · · · g"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "expressionisreducedwealsohavegw=gr1 · · · gr"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "expressionisreducedwealsohavegw=gr1 · · · grn.Foreachr"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "j).Let"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "j).Letn"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "j).Letnw≥0bethetotalnumberofinversesintheterms"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "gw= q"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "gw= qn"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "n+ A-linearcombinationofelements"
+  },
+  {
+   "page": 10,
+   "mark": "v",
+   "context": "n+ A-linearcombinationofelementsg"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "n+ A-linearcombinationofelementsgvwith"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "thematrixperformingthebasechangetotheoldbasis{g"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "thematrixperformingthebasechangetotheoldbasis{gr"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "thematrixperformingthebasechangetotheoldbasis{gr1···r"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "thematrixperformingthebasechangetotheoldbasis{gr1···rn|r"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "thematrixperformingthebasechangetotheoldbasis{gr1···rn|ri∈R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "3.3.Let {C} be the set of conjugacy classes of W"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "blockshaveincreasinglength.WethendeﬁneanelementgC∈H"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "anexpressionwC=d"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "anexpressionwC=d1 · · ·d"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "anexpressionwC=d1 · · ·dn(withd"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "anexpressionwC=d1 · · ·dn(withdi∈D"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "anexpressionwC=d1 · · ·dn(withdi∈Di)andreplacingeachs"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "anexpressionwC=d1 · · ·dn(withdi∈Di)andreplacingeachsibyg"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "i.Asin(3.2)wehave(with"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "i.Asin(3.2)wehave(withnC:= n"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "g"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "gwC= q"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "gwC= qnCgC+ A-linearcombinationofelementsg"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "AtracefunctiononH"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "AtracefunctiononHnisanA-linearmapϕ:H"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ϕ(h′h)forallh, h′∈H"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ϕ(h′h)forallh, h′∈Hn.By[3],eachtracefunctiononH"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "validwhenwereplaceeachg"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Proposition3.4Foreachh∈H"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "1,"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "h"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "j"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "n"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j)∈R(h"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "j−1"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j−1h"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "j−1hj−1"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "j"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j+1,...,d′n)∈I"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "j)∈R(h"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "We can combine the index sets to a new set I"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "We can combine the index sets to a new set Ij−1⊆H"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "processuntilwearriveatj=1.ThenH"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Corollary3.5Leth∈H"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Corollary3.5Leth∈Hnandd"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "n+1, . . . , d"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "m ≥0).Then,foralltracefunctionsϕonH"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "n"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "ϕ(hd"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "ϕ(hdn+1 · · · d"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(3)τ(hg"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(3)τ(hgn) = zτ(h)foralln ≥1andh ∈H"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(a)Ifn ≥1,m ≥0andh ∈H"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "(b)Ifh = d"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(b)Ifh = d1 · · ·d"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "(b)Ifh = d1 · · ·dn∈Hwhered"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "iforall"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "τ(h) = z"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "0"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "wherea(h)isthenumberofd"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "wherea(h)isthenumberofdiwhichareintheset{g"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "wherea(h)isthenumberofdiwhichareintheset{g1, . . . , g"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "0"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "k−1| k= 1,"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "n"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "n+1and observe that"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "n+1= g"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "n+1= gn+1"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "n+1commutes with"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "n+1hg"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "n+1hgn"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "n+1hgng"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "n+1hgngn+1"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "NowhliesinH"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "NowhliesinHn,thatis,honlyinvolvesthegeneratorst, g"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "whliesinHn,thatis,honlyinvolvesthegeneratorst, g1, . . . , g"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "n+1.Using moreover the braid relation"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "n+1"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n+1g"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "n+1gn"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n+1gng"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n=g"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "n=gn"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "n−1"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "n,thelefthandterm"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n,thelefthandtermg"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "n,thelefthandtermgnwillcancelandthen"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n,thelefthandtermgnwillcancelandtheng"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "n−1"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n−1g"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "n−1gn+1"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "nhg"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "nhgn"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "n−1"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n−1g"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "n−1gn+1"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "nhg"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "nhgn"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n−1andobservethatthiselementliesinH"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n+m) = τ(h′g"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "n+m) = τ(h′gn+1"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "ncommutes with"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "n−1"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n+m) = τ(hg"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "n+m) = τ(hgn"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "whered"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "h = d"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "h = d1 · · · d"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "h = d1 · · · dn∈H"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "iforall"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "τ(h) = z"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "0"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Theorem4.3Letz, y"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Theorem4.3Letz, y1, y"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "0"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "1"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k−1) = y"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "τ(gC) = z"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "wheregC=d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "wheregC=d1 · · · d"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "wheregC=d1 · · · dnwithd"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "iandtheelements"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "iandtheelementsa=a(gC),"
+  },
+  {
+   "page": 15,
+   "mark": "w",
+   "context": "theA-subspaceofHgeneratedbyallelementsg"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "(*)Leth ∈H"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "n+i,"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "n+i,0(forsomen, m ≥1and"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "τ(hd"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "τ(hdn+1 · · · d"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "n+2"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "iwiththeinverses(ifany)ontherighthandsideof"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n+m)=τ(hd"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n+m)=τ(hdn+1 · · · d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n+2=d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n+m=d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n+1= T"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n+1= Tn+1,i:= g"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "n+1= Tn+1,i:= gn· · · g"
+  },
+  {
+   "page": 15,
+   "mark": "g",
+   "context": "n+1= Tn+1,i:= gn· · · gi+1"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 15,
+   "mark": "g",
+   "context": "i−1,0"
+  },
+  {
+   "page": 15,
+   "mark": "g",
+   "context": "i"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "i"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "he inversesare already ﬁxed at indices bigger than i.)Then T"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "is −1.We will show that τ(hT"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "is −1.We will show that τ(hTn+1,id"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "is −1.We will show that τ(hTn+1,idn+2 · · · d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "τ(hT"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "τ(hTn+1,i−1d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "τ(hTn+1,i−1dn+2 · · · d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "τ(hTn+1,i−1dn+2 · · · dn+m).Thisisdoneasfollows.InT"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "τ(hTn+1,i−1dn+2 · · · dn+m).Thisisdoneasfollows.InTn+1,iandT"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "by(q−1−1)g"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "by(q−1−1)gi + q−1· 1.ThenhT"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "by(q−1−1)gi + q−1· 1.ThenhTn+1,id"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "by(q−1−1)gi + q−1· 1.ThenhTn+1,idn+2 · · · d"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "by(q−1−1)gi + q−1· 1.ThenhTn+1,idn+2 · · · dn+m= (q−1−1)S"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "q−1S"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "q−1S2andhT"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "q−1S2andhTn+1,i−1d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "q−1S2andhTn+1,i−1dn+2 · · · d"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "q−1S2andhTn+1,i−1dn+2 · · · dn+m= (q−1−1)S"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "q−1S2andhTn+1,i−1dn+2 · · · dn+m= (q−1−1)S1 + q−1S"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 15,
+   "mark": "g",
+   "context": "i−1,0"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "i−1,0g"
+  },
+  {
+   "page": 15,
+   "mark": "g",
+   "context": "i−1,0gi"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "h(g"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "h(gn · · · g"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "h(gn · · · gi+1g"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "n)"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n)d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n)dn+2 · · · d"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 15,
+   "mark": "g",
+   "context": "i−1,0"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "i−1,0g"
+  },
+  {
+   "page": 15,
+   "mark": "g",
+   "context": "i−1,0gi"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "h(g"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "h(gn · · · g"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "n)"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n)d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n)dn+2 · · · d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "h(g"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "h(gn · · · g"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "h(gn · · · gi+1g"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 15,
+   "mark": "g",
+   "context": "i−1,0"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "n)"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n)d"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "n)dn+2· · · d"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "NotethatS"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "NotethatS2, S"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "notethatg"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "notethatgn · · · g"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "i−1,0(g"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i−1,0(gn · · ·g"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "i−1,0(gn · · ·gi+1"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i−1,0(gn · · ·gi+1g"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "i−1,0(gn · · ·gi+1gi"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "n)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n)d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n)dn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "n−1"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1g"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "n−1gn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1gng"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "n−1gngn−1 · · · g"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "n−1gngn−1 · · · gi)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1gngn−1 · · · gi)d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1gngn−1 · · · gi)dn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Nowg"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "Nowgn−1 · · · g"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "τ(S"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "τ(S2) = τ((g"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "τ(S2) = τ((gn−1 · · · g"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "n−1)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1)g"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "n−1)gn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1)gnd"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1)gndn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Wewritetheargumentofτash′g"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Wewritetheargumentofτash′gnd"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Wewritetheargumentofτash′gndn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Wewritetheargumentofτash′gndn+2 · · · dn+mwithh′∈H"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "τ(S"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "τ(S2) = τ(h′g"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "τ(S2) = τ(h′gnd"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "τ(S2) = τ(h′gndn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "τ(S2) = τ(h′gndn+2 · · · dn+m) = zτ(h′d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "τ(S2) = τ(h′gndn+2 · · · dn+m) = zτ(h′dn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "g"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "gn−1 · · · g"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "gn−1 · · · gicommuteswithd"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "gn−1 · · · gicommuteswithdn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "i−1,0"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "i−1,0d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "i−1,0dn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "τ(h(g"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "τ(h(gn · · · g"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "τ(h(gn · · · gi+1g"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "n)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "i−1,0"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "i−1,0d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "i−1,0dn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "n−1"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1g"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "n−1gn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1gng"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "n−1gngn−1· · · g"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "n−1gngn−1· · · gi)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "i−1,0"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "i−1,0d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "i−1,0dn+2· · · d"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "i−1,0and"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "i−1,0andd"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "i−1,0anddn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "i−1.ByLemma2.3(a),theelement"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "dn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Thenextfactor,t,onlycommuteswithd"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Thenextfactor,t,onlycommuteswithdn+2 · · · d"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "n−1"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1g"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "n−1gn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1gng"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "n−1gngn−1 · · · g"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "n−1gngn−1 · · · gi)"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "n−1gngn−1 · · · gi)x−1"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "n−1"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1g"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "n−1gn"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1gng"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "n−1gngn−1 · · · g"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "n−1gngn−1 · · · gi)"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "n−1gngn−1 · · · gi)x−1"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1gngn−1 · · · gi)x−1d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n−1gngn−1 · · · gi)x−1dn+2 · · · d"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "i−1,0"
+  },
+  {
+   "page": 17,
+   "mark": "g",
+   "context": "n−1"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n−1g"
+  },
+  {
+   "page": 17,
+   "mark": "g",
+   "context": "n−1gn"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n−1gng"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "n−1gngn−1 · · · g"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "n−1gngn−1 · · · gi)"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n−1gngn−1 · · · gi)d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n−1gngn−1 · · · gi)dn+2 · · ·d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Oncemore,weuseLemma2.3(a)toconcludethatg"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Oncemore,weuseLemma2.3(a)toconcludethatgn−1 · · · g"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "τ(S"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "τ(S3) = τ((g"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "τ(S3) = τ((gn−1 · · · g"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "i−1,0"
+  },
+  {
+   "page": 17,
+   "mark": "g",
+   "context": "n−1)"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n−1)g"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "n−1)gn"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n−1)gnd"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n−1)gndn+2 · · · d"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "i−1,0hd"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "i−1,0hdn+2 · · ·d"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "i−1,"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "i−1,0and"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "i−1,0andd"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "i−1,0anddn+2· · · d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "hence,thatτ(hT"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "hence,thatτ(hTn+1,id"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "hence,thatτ(hTn+1,idn+2 · · · d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "hence,thatτ(hTn+1,idn+2 · · · dn+m)=τ(hT"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "hence,thatτ(hTn+1,idn+2 · · · dn+m)=τ(hTn+1,i−1d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "hence,thatτ(hTn+1,idn+2 · · · dn+m)=τ(hTn+1,i−1dn+2 · · · d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "processwithT"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "n,forsome"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "As before,let d"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "icorrespondingto"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "τ(d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "τ(d1 · · ·d"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "n+m) = z"
+  },
+  {
+   "page": 17,
+   "mark": "y",
+   "context": "n+m) = za"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "n+m) = zay"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "wherea=a(d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "wherea=a(d1 · · · d"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "wherea=a(d1 · · · dn+m)andb=b(d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "wherea=a(d1 · · · dn+m)andb=b(d1 · · · d"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "ior"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iord"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "plainedin(2.4), (3.3),the elementd"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "plainedin(2.4), (3.3),the elementd1 · · · d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n+m∈H"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "n+m∈Hn(≤N−1)with"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "n+m) = τ(d"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n+m) = τ(d1 · · · d"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "n+m) = z"
+  },
+  {
+   "page": 17,
+   "mark": "y",
+   "context": "n+m) = za"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "n+m) = zay"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "Step3.Finally, let h ∈H"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "n+i,"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "n+2"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "n+m)=τ(hg"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "n+m)=τ(hgn"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "n+m)=τ(hgnd"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "n+m)=τ(hgndn+2· · · d"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "d"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "n+icorresponds to"
+  },
+  {
+   "page": 18,
+   "mark": "g",
+   "context": "n"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "ng"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "ngn"
+  },
+  {
+   "page": 18,
+   "mark": "g",
+   "context": "n"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "ng"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "ngn"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "rz"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "rzayb= rz"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "Leth ∈H"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "n+m,"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "n+m,0forsome"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "n+m) = τ(hd"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "n+m) = τ(hdn+1 · · · d"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "where,asbefore,d"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "icorrespondingto"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "For h ∈H"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "n) ∈I(h)wewrite"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "n) ∈I(h)wewriter(i) = r,"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "n) ∈I(h)wewriter(i) = r,a(i) = a(d"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "n) ∈I(h)wewriter(i) = r,a(i) = a(d1 · · · d"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "n) ∈I(h)wewriter(i) = r,a(i) = a(d1 · · · dn)and"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "b(d"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "b(d1 · · · d"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "r(i)z"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "k−1) = y"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "k−1) = ykforall"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "0"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "foralln ≥0andh ∈H"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "nwith"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "i,0forall"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "C"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Cn: H"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Cn: Hn ⊕H"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Cn: Hn ⊕Hn ⊕H"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Cn: Hn ⊕Hn ⊕Hn ⊗H"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Cn: Hn ⊕Hn ⊕Hn ⊗Hn−1H"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Cn: Hn ⊕Hn ⊕Hn ⊗Hn−1Hn−→H"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n+ cg"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "n+ cgn"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n)=yτ(b)andτ(cg"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "n)=yτ(b)andτ(cgn"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n)=yτ(b)andτ(cgnd)=zτ(cd)whereb, c, d∈H"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "iratherthan"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "iratherthant"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "First note that if we deﬁne u := ts"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "First note that if we deﬁne u := ts1t then the elementsu, s"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "that if we deﬁne u := ts1t then the elementsu, s1, . . . , s"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n⊂W"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "n⊂WnwhichistheﬁniteCoxetergroupoftypeD"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "s"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "ifweletQ=1.Indeed,denotingu:=tg"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "ifweletQ=1.Indeed,denotingu:=tg1t∈H"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "thatu"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Thus,theelementsu, g"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Thus,theelementsu, g1, . . . , g"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "n⊂H"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "n⊂HnwhichistheIwahori–HeckealgebraoftypeD"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "n.InanalogytoDeﬁnition4.1wesaythat"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "τ(hg"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "2k−1| k= 1,"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "i:= g"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "i:= gi · · · g"
+  },
+  {
+   "page": 20,
+   "mark": "g",
+   "context": "1"
+  },
+  {
+   "page": 20,
+   "mark": "t",
+   "context": "iplayananalogousroleastheelements"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "iforall"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "by ‘mixed’knots/linksin S"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "omponent(the core ofthe complementaryunknottedsolidtorus inS"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "linksinS"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "of˜Wn.Moreover,similarlytobraidequivalenceinS"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "n=1B"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "equivalent toβ"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "n=1B"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(i)Conjugation:Ifα, β∈B"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(ii)Markovmoves:Ifα ∈B"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "(ii)Markovmoves:Ifα ∈B1,nthenα ∼αs"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(ii)Markovmoves:Ifα ∈B1,nthenα ∼αsn±1∈B"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "thecanonicalquotientmapA˜W"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "thecanonicalquotientmapA˜Wn→H"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "atorsofH"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "atorsofHnbyt, g"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "atorsofHnbyt, g1, . . . , g"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n≥0H"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "0"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "1"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "y"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "ykforallk≥1.ThenabraidinB"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "expressioninthevariablesq, Q, z, y"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "expressioninthevariablesq, Q, z, y1, y"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "ressioninthevariablesq, Q, z, y1, y2, . . ..Foranelementα ∈B"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "αs"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "i"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "λ)"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "i’scanbeignoredintheestimationof"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "theknot,seenasaknotinS"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "LetL+, L−, L"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "Let also M+, M−, M"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "q) XL"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "Q) XM"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "elementsinthebasisofH"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "n,where"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "i,0(withinversesmixedup).Ifnow"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "i,0(withinversesmixedup).Ifnowbisthenumberof"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "nis"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "nisamixedlinkon"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "k−1) = y"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "n)=z"
+  },
+  {
+   "page": 24,
+   "mark": "y",
+   "context": "n)=za"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "n)=zay"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "n)=zaybwhere"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "xXL+−xXL−= rXL"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "s the known 2-variable invariant for oriented knots inside S"
+  },
+  {
+   "page": 24,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "1s"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "1s2andα′=ts"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "1s2andα′=ts2inB"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "1s2andα′=ts2inB1,"
+  },
+  {
+   "page": 24,
+   "mark": "s",
+   "context": "2"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "2s"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Using(4.4)wedirectlyﬁndthatτ◦π(α)=τ◦π(α′)=zy"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "1 −x"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "(c)For ageneralbraidα ∈B"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "(c)For ageneralbraidα ∈B1,n,weﬁrsthavetoconsideritsimageinH"
+  },
+  {
+   "page": 24,
+   "mark": "w",
+   "context": "witha"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "n,with"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Recallfrom[loc.cit.]thatforeachw∈W"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "C"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "ourgivenbraidα)thecoeﬃcientsa"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "allwsuchthata"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "τ(g"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "w∈W"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "n ≥2,weconsideronlythosewCwhicharenotalreadycontainedinB"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "τ(tt"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "τ(tt1) = ((q −1)(Q −1)y"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tt1) = ((q −1)(Q −1)y1 + (q −1)Q)z + qy"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(g1g2) = z"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tg1g2) = z"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "τ(tt"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tt1t"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tt1t2) = ((q −1)(Q"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "τ(tt1t2) = ((q −1)(Q2−Q + 1)y"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "τ(tt1t2) = ((q −1)(Q2−Q + 1)y1 + Q(q −1)(Q −1))(q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tt1t2) = ((q −1)(Q2−Q + 1)y1 + Q(q −1)(Q −1))(q3−1)z"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "+(Qy"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "+(Qy1 + (Q −1)y"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "+(Qy1 + (Q −1)y2)(q"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "+(Qy1 + (Q −1)y2)(q3−1)qz + q"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "+(Qy1 + (Q −1)y2)(q3−1)qz + q3y"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(g1g3) = z"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "τ(g1g2g3) = z"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tg1g3) = τ(tg2g3) = z"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "τ(tg1g2g3) = z"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tt1g2g3) = z"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "τ(tg"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tg1t"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "τ(tg1t2g"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "τ(tg1t2g3) = ((Q −1)y"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tg1t2g3) = ((Q −1)y1 + Q)(q −1)(q"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "τ(tg1t2g3) = ((Q −1)y1 + Q)(q −1)(q2+ 1)z"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tg1t2g3) = ((Q −1)y1 + Q)(q −1)(q2+ 1)z3+ q(q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tg1t2g3) = ((Q −1)y1 + Q)(q −1)(q2+ 1)z3+ q(q2−q + 1)y"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "τ(tg1t2g3) = ((Q −1)y1 + Q)(q −1)(q2+ 1)z3+ q(q2−q + 1)y2z"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "Letusnowconsidertheexampleofthebraidα∈B"
+  },
+  {
+   "page": 26,
+   "mark": "5",
+   "context": "Letusnowconsidertheexampleofthebraidα∈B1,"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "τ(α) = z"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "2"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "1tg"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "1tg1"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "2"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "2g"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "2g1"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "2"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "2t−2"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-9609174v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "87885f4d03661f26747d265ab45a37952535091439d3affc200cc844565c95e8",
+  "file": "9609174v2.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:hep-th/9609174v2 23 Sep 1996",
+  "authors": "G. Akemann\u2217, P. H. Damgaard\u2020, U. Magnea\u2021 and S. Nishigaki\u00a7",
+  "arxiv": {
+   "id": "hep-th/9609174",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "23 Sep 1996"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "Let {P (\u03b1) n (\u03bb)}n=0,1,\u00b7\u00b7\u00b7 be the set of polynomials orthogonal with respect to the measure d\u03bb \u03bb2\u03b1 e\u2212NV (\u03bb2), V (\u03bb2) = X k\u22651 gk 2k \u03bb2k, \u03b1 = 0, 1, \u00b7 \u00b7 \u00b7 over the range (\u2212\u221e, \u221e), whose moments are all \ufb01nite. If the polynomials can be normalized according to P (\u03b1) 2n (0) = P (\u03b1) 2n+1 \u2032(0) = 1, then, for \ufb01xed x = N \u03bb and t = 2n/N, the following limiting relations hold: lim N\u2192\u221eP (\u03b1) 2n ( x N )",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-005-31-asymptotics-of-orthogonal-polynomials.md (p. 11-14)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-005-31-asymptotics-of-orthogonal-polynomials.md",
+   "section_title": "Asymptotics of orthogonal polynomials",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-005-31-asymptotics-of-orthogonal-polynomials.md (p. 11-14)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-005-01",
+   "block_iri": "library/arxiv-hep-th-9609174v2/blocks/thm-sec-005-01",
+   "claim_id": "arxiv-hep-th-9609174v2#theorem:2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

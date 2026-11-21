@@ -1,0 +1,32 @@
+Problems on invariants of knots and 3-manifolds 423
+
+gave a problem whether Vassiliev invariants can distinguish all of knots or not.
+This problem is equivalent to the problem, whether the similarity index of any
+two different knots have finite similarity index. We will give a new criterion
+to calculate the similarity index of knots and, based on this, raise problems
+to calculate similarity index. For example, for two given knots, which knot
+invariants will give the best upper bound to calculate the similarity index of
+knots, along our above new result? As a partial problem, can we show that the
+triviality index of a non-trivial knot is finite by using our results?
+
+Polynomial invariants and Vassiliev invariants
+(M.-J. Jeong, C.-Y. Park)
+
+In 1993, J.S. Birman and X.-S. Lin [57] showed that, after a suitable change
+of variables, each coefficient of the Jones, HOMFLY and Kauffman polynomial
+is a Vassiliev invariant. So we can obtain various Vassiliev invariants from the
+derivatives of knot polynomials.
+
+In 2001, by using some specific kinds of tangles, we gave two operations ~ and
+* operations to get new polynomial invariants from a given Vassiliev invariant.
+These new polynomial invariants are also Vassiliev invariants. So we can obtain
+various Vassiliev invariants from the coefficients of these polynomial invariants.
+
+Let V, be the space of Vassiliev invariants of degrees <n. For An C Vp, let
+(An) be the set of Vassiliev invariants obtained from A, by using finite numbers
+of ~ and * operations repeatedly.
+
+Problem 2.28 (M.-J. Jeong, C.-Y. Park) Find a minimal finite subset A, of
+V, such that span(A,) = Vn.
+
+Geometry & Topology Monographs, Volume 4 (2002)

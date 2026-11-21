@@ -1,0 +1,38 @@
+16 Introduction
+
+Exercise 1.3. Prove or give a counterexample: if g is a continuous function
+and for each A we have a,; = g(a) + OG + sy") as r,s > co with r/s > A,
+then a,, ~ g(r/s) when r,s > 00 as A varies over a compact interval in R*.
+
+Exercise 1.4. (Laplace transform asymptotics) Let A be a smooth real function
+in a neighborhood of zero and define its Laplace transform by
+
+A(t) =| e A(x) dx.
+0
+
+Writing A(x) = Syps0 Cnx” with c, = A™(0)/n! and integrating term by term
+
+using
+0
+f Xe dx = nin!
+0
+
+» AM (Oye?! (1.7)
+
+n20
+
+suggests the series
+
+as a possible asymptotic expansion for A. Although the term-by-term integra-
+tion is completely unjustified, show that the series (1.7) is a valid asymptotic
+expansion of A in decreasing powers of t as T > oo.
+
+Exercise 1.5. Recall Stirling’s approximation from Example 1.4. Use a com-
+puter algebra system to experiment, for 1 < m < 5, with the mth order approx-
+imation for n = 1,...,50. For each such value of n, find the best value m at
+which to truncate the asymptotic series. For each n, what is the best relative
+error in the approximation to ! that we can obtain in this way?
+
+Exercise 1.6. Use a computer algebra system to experiment for 1 < m < 20
+with the error in the mth order Stirling approximation to n! when n = 1. After
+which value of m does the error become noticeably bad?

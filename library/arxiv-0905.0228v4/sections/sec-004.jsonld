@@ -9,14 +9,13 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Some well-known facts",
+  "title": "Appendix",
   "pageStart": 16,
-  "pageEnd": 17,
+  "pageEnd": 16,
   "contains": [
-    "library/arxiv-0905.0228v4/blocks/prose-sec-004",
-    "library/arxiv-0905.0228v4/blocks/prop-sec-004-01"
+    "library/arxiv-0905.0228v4/blocks/prose-sec-004"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0228v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0228v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0905.0228v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0905.0228v4/manifest.jsonld",
   "provenance": "ingested"
 }

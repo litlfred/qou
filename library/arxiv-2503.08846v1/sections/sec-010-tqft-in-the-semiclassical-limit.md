@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+TQFT in the Semiclassical Limit
 In Chern-Simons theory, the coupling constant k (also called the level of Chern-Simons theory) appears as
 a factor multiplying the Lagrangian, e.g. (79). Hence, it has a role similar to the inverse Planck constant.
 In particular, the limit k →∞localizes the path integral on classical configurations, computing the
@@ -47,4 +48,3 @@ The leading behavior of the dimension is that of the Hilbert space of n qubits, 
 classical limit and for large number n one can think of a line as the evolution of a single j = 1/2 particle,
 as in the matrix representation of section 2.4. The logarithm of the dimension becomes an almost linear
 function of the number of spins.
-4

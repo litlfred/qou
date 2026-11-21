@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1406.7337v4
-doc_title: "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu"
+doc_title: "Semi-Adequate Closed Braids and Volume"
 section_id: sec-002-21-preliminaries
 section_title: "Preliminaries"
 section_number: 2.1
 pages: 2-3
-source_pdf: 1406.7337v4 (1).pdf
+source_pdf: 1406.7337v4.pdf
 source_sha256: 5bae8237742733b9
-doc_brief: "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.992
+doc_brief: "Semi-Adequate Closed Braids and Volume — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of"
 ---
 \begin{figure}
 	\centering

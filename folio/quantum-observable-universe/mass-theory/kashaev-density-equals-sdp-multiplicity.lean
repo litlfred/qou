@@ -119,7 +119,7 @@ the author; this file records the tension rather than silently resolving it.
 hyperbolic volume are archimedean quantities compared against AME2020, so §7c's generic-`R`
 default does not apply.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.ts
 -/
 
 namespace QOU.Kashaev
@@ -138,7 +138,7 @@ is meant to be.
 `[KashaevDensityEqualsSdpMultiplicity Atom rhoF nuSdp bindingPred vol mE]` and are genuinely
 conditional on it.
 
--- Ref: [manuscript] conj:kashaev-density-equals-sdp-multiplicity -/
+-- Ref: [leitner2026] conj:kashaev-density-equals-sdp-multiplicity -/
 class KashaevDensityEqualsSdpMultiplicity
     (Atom : Type*) (rhoF : Atom → ℝ) (nuSdp : Atom → ℕ)
     (bindingPred vol : Atom → ℝ) (mE : ℝ) : Prop where

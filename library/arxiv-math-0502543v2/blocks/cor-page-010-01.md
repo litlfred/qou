@@ -1,0 +1,1 @@
+Let F1 and F2 be two planes intersecting at a dihedral angle α, with both F1 and F2 intersecting a third plane P, at angles whose cosines are smaller than ǫ. Let A be the angle between F1 ∩P and F2 ∩P. Then |α −A| < 2ǫ.

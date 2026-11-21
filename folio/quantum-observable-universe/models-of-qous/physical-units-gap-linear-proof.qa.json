@@ -666,7 +666,7 @@
           "in_degree": 0,
           "cone_size": 8,
           "depth": 6,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -907,6 +907,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d8d4b6004a68",
+          "ts": "065dbc5bad71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:07.048Z",
+        "reviewed_sha": "5d7f0ff2443bce339f18629dcc1e386fd754720f",
+        "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. Lean `crossingEnergyGap q = (q − q⁻¹)/2`, identity proved by `field_simp; ring`. Hand check: ½(q − q⁻¹)(q−1)²·q²/(q−1)² = ½q(q²−1) ✓; orders cubic → linear ✓. Proof's \"agreement with the first-order Reeb coupling\" is interpretation, harmless"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1523,6 +1538,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T06:26:12.752Z",
+  "updated_at": "2026-11-15T21:55:07.048Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

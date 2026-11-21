@@ -1,7 +1,7 @@
 Let $\mathbf{C}$ be a braided monoidal category, with braiding $\beta$. A **Frobenius--Hopf substrate** is a sextuple $(A, \mu, \eta, \Delta, \varepsilon, S)$ in $\mathbf{C}$ equipped with a Frobenius form $\lambda \colon A \to \mathbf{1}$ satisfying the following axioms:
 
 1. **Algebra structure:** The morphisms $\mu \colon A \otimes A \to A$ and $\eta \colon \mathbf{1} \to A$ make $A$ an associative unital algebra object in $\mathbf{C}$.
-2. **Coalgebra structure and antipode:** The morphisms $\Delta \colon A \to A \otimes A$ and $\varepsilon \colon A \to \mathbf{1}$ make $A$ a coassociative counital coalgebra object. The counit is multiplicative, $\varepsilon \circ \mu = u \circ (\varepsilon \otimes \varepsilon)$ with $u$ the canonical unit isomorphism.
+2. **Coalgebra structure and antipode:** The morphisms $\Delta \colon A \to A \otimes A$ and $\varepsilon \colon A \to \mathbf{1}$ make $A$ a coassociative counital coalgebra object. The counit is **not** required to be multiplicative: together with the Frobenius relation (axiom 3) and counitality, $\varepsilon(ab) = \varepsilon(a)\,\varepsilon(b)$ forces $x = \varepsilon(x)\cdot 1$ for every $x$, so $A$ would be spanned by its unit.
 
    The antipode $S \colon A \to A$ is an *involutive anti-automorphism of the whole structure*:
 

@@ -31,7 +31,7 @@ The Lean encoding records the matrix entries against an abstract
 `HoefsmitSeminormalContext` carrying the SYT data and the
 representation matrix.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
 -- Ref: [hoefsmit1974] P. Hoefsmit, Representations of Hecke algebras of finite groups with BN-pairs of classical type, PhD thesis 1974.
 -/
 
@@ -71,7 +71,7 @@ class HoefsmitSeminormalContext (n : ℕ) where
 
     `ρ_λ(σᵢ)_{s s'}` evaluates to `a_ρ` on the diagonal, `b` on the
     swap-i result (when valid), and `0` elsewhere. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
 -- Ref: [hoefsmit1974]
 theorem hoefsmit_seminormal_form
     {n : ℕ} [ctx : HoefsmitSeminormalContext n]
@@ -88,7 +88,7 @@ theorem hoefsmit_seminormal_form
   -- The `a_ρ` / `b` entries come from solving the Hecke quadratic
   -- `σ_i² = (q − q⁻¹)·σ_i + 1` block-diagonalised in the SYT basis.
   -- Concretisation requires Lean SYT infrastructure.
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
+  -- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
   -- Ref: [hoefsmit1974]
   -- `repMatrix_def` axiomatises this exact equation. The two sides differ only
   -- in the per-declaration `match`-helper Lean generates, so case-split the

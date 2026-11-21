@@ -13,7 +13,7 @@ scalar ratio $\Delta(\text{net}) / \Delta\text{tr}_M(q)$ has a pole at $q=1$
 of order $\mathcal{O}(w^{-1})$. Therefore, the f-map cannot be a simple scalar 
 multiplication; it must be a structured functor acting on the operator spectrum.
 
-## Scaffolded Pathways
+## Candidate pathways (none constructed; marker classes removed 2026-11-15)
 1. **Faddeev Recursion (Modular Limit)**: Bridges the trace via $\Phi_q$.
 2. **Hexagon Equations**: Extracts $c_k$ from the $V_{(2,1)}$ braiding eigenvalues.
 3. **Direct Cyclotomic Map**: Maps the integer coefficients $a_m \in \mathbb{Z}[u]$ 
@@ -22,46 +22,16 @@ multiplication; it must be a structured functor acting on the operator spectrum.
 
 namespace QOU.QBeta
 
-/-- 
-  **Pathway 1: Faddeev Modular Dilogarithm** (Option A)
-  
-  The f-map is constructed via the quantum dilogarithm $\Phi_q$.
-  This axiomatises that `qBetaFMap` is induced by the modular dual mapping 
-  $q \leftrightarrow \tilde{q}$ on the Teichmüller space representation of the Markov trace.
--/
-class FMapFaddeevModular : Prop where
-  /-- `@marker` — opaque tag for Pathway 1 (the explicit `Φ_q` operator
-      functor / modular-dual transformation `q ↔ q̃`). Genuinely-open: the
-      construction is not yet in place, so this is a tracked opaque
-      placeholder, not a fabricated content-bearing claim. -/
-  is_modular_dual : True
+/-! **Removed 2026-11-15: `FMapFaddeevModular`.** Its only field was `is_modular_dual : True`.
+The route (the f-map is induced by the modular dual `q ↔ q̃` of `Φ_q`) is not constructed, so there is nothing to state yet.
+Recorded in bean `qou-n2un`. -/
 
-/-- 
-  **Pathway 2: Hexagon Character Extraction** (Option B)
-  
-  The f-map extracts the $c_k$ ladder directly from the $V_{(2,1)}$ character difference.
-  Because $\chi_{(2,1)} = -\frac{(q^4+1)(q^2-1)}{4q^3}$, the Hexagon equations 
-  functorially project the eigenphase expansion onto the precision ladder.
--/
-class FMapHexagonCharacter : Prop where
-  /-- `@marker` — opaque tag for Pathway 2 (the Hexagon-eigenvalue
-      projection extracting `c_k` from the `V_{(2,1)}` braiding eigenvalues).
-      Genuinely-open: the projection is not yet constructed, so this is a
-      tracked opaque placeholder, not a fabricated content-bearing claim. -/
-  is_hexagon_derived : True
+/-! **Removed 2026-11-15: `FMapHexagonCharacter`.** Its only field was `is_hexagon_derived : True`.
+The route (the f-map is the hexagon projection of the `V_(2,1)` eigenvalues) is not constructed, so there is nothing to state yet.
+Recorded in bean `qou-n2un`. -/
 
-/-- 
-  **Pathway 3: Direct Cyclotomic Reconstruction** (Option C)
-  
-  The f-map acts directly on the integer Habiro coefficients $a_m \in \mathbb{Z}[u]$ 
-  to produce the $c_k$ coefficients by matching the $(q;q)_m$ poles with the 
-  $(1+c_k u^k)$ ladder expansion.
--/
-class FMapCyclotomicDirect : Prop where
-  /-- `@marker` — opaque tag for Pathway 3 (the direct cyclotomic
-      reconstruction / polynomial-matching algorithm `a_m → c_k`).
-      Genuinely-open: the algorithm is not yet constructed, so this is a
-      tracked opaque placeholder, not a fabricated content-bearing claim. -/
-  is_cyclotomic_reconstruction : True
+/-! **Removed 2026-11-15: `FMapCyclotomicDirect`.** Its only field was `is_cyclotomic_reconstruction : True`.
+The route (the f-map is the cyclotomic reconstruction `a_m → c_k`) is not constructed, so there is nothing to state yet.
+Recorded in bean `qou-n2un`. -/
 
 end QOU.QBeta

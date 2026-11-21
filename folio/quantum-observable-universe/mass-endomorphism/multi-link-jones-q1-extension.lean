@@ -35,7 +35,7 @@ LaTeX label: `rem:multi-link-jones-q1-extension`
 -- Sibling-chapter dependency: extended `Link` inductive +
 -- `jonesAtOne` cases for `trefoil`, `borromean`, `doubleHopf` from
 -- `braid-link-types.lean`.
--- Ref: [manuscript] rem:braid-link-types
+-- Ref: [leitner2026] rem:braid-link-types
 
 namespace QOU.BraidKnot
 
@@ -98,7 +98,7 @@ class MultiLinkJonesAtOne : Type where
       simple multi-link combination). -/
   c6_candidate : ℝ
 
--- Ref: [manuscript] rem:multi-link-jones-q1-extension
+-- Ref: [leitner2026] rem:multi-link-jones-q1-extension
 -- Ref: [jones1985] doi:10.2307/1971403
 -- Ref: [habiro2000] Habiro, "On the colored Jones polynomial of some simple links," RIMS Kokyuroku 1172 (2000)
 /-- **Probe-derived default candidate**: `c_5 = -J_Borromean = +8`

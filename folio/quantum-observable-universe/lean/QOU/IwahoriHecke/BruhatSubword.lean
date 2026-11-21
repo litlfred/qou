@@ -56,7 +56,7 @@ was the open half.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, Thm 2.2.2 (subword property)
 -- Ref: [humphreys1990] Reflection Groups and Coxeter Groups, §5.10
--- Ref: [manuscript] beans qou-06h7, qou-phir
+-- Ref: [leitner2026] beans qou-06h7, qou-phir
 -/
 
 namespace QOU.IwahoriHecke.BruhatSubword

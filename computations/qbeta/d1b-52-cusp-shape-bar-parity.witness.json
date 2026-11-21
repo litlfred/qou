@@ -1,8 +1,8 @@
 {
   "engine": "exact-cubic-and-polynomial-remainder-arithmetic",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T20:59:45.645468+00:00",
-  "commitSha": "f1c58515e8e8c4b4510c6fdad3d72dfbb44e5135",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:06:16.780055+00:00",
+  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
   "assertions": [
     {
       "name": "C1_two_of_three_shapes_coincide",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 88,
   "computation": "d1b-52-cusp-shape-bar-parity",
   "scriptFile": "d1b_52_cusp_shape_bar_parity_probe.py",
-  "scriptHash": "6ef0ca15f593",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7fdc711feba9",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,14 +74,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -182,5 +183,7 @@
       "wired": false,
       "fit": false
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "exact 5_2 gluing-equation algebra over Q-bar plus mpmath cusp shapes of the hyperbolic structure; neither depends on q, q0 is never read"
 }

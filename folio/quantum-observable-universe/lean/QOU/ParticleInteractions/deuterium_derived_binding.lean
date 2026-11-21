@@ -102,7 +102,7 @@ pair).
     manuscript sub-claims hold for that data.  It is *not* asserted
     (no `theorem … := ⟨ctx.claim_*⟩` self-assuming projection); a
     discharging instance is the open conditional claim. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/deuterium-derived-binding.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/deuterium-derived-binding.ts
 def deuterium_derived_binding (ctx : DeuteriumDerivedBindingContext) : Prop :=
     (ctx.NF_p_braid_word ≠ [] ∧ ctx.NF_n_braid_word ≠ []) ∧
     ctx.braid_length_B3 = 6 ∧
@@ -167,7 +167,7 @@ class BindingEndomorphismAnalogy where
     the Hopf inter-nucleon link being Seifert-fibred), so both
     prefactors equal `m_e · Vol(𝓑_3)`; for A≥3 they differ by the
     binding-link volume ratio. -/
--- Ref: [manuscript] docs/audits/2026-05-28-binding-endomorphism-analogy.md
+-- Ref: [leitner2026] docs/audits/2026-05-28-binding-endomorphism-analogy.md
 theorem mass_binding_share_prefactor [a : BindingEndomorphismAnalogy] :
     a.m_pred / (a.lw / a.hbar_q_sq) = a.m_e * a.Vol_B3
     ∧ a.B_pred / a.delta_tr = a.m_e * a.Vol_Kbind := by
@@ -180,7 +180,7 @@ theorem mass_binding_share_prefactor [a : BindingEndomorphismAnalogy] :
 /-- Deuteron specialization: when the binding link has Borromean
     volume (Vol(K_bind) = Vol(𝓑_3)), the two endomorphisms share the
     identical `m_e · Vol(𝓑_3)` prefactor. -/
--- Ref: [manuscript] docs/audits/2026-05-28-binding-endomorphism-analogy.md
+-- Ref: [leitner2026] docs/audits/2026-05-28-binding-endomorphism-analogy.md
 theorem mass_binding_prefactor_deuteron [a : BindingEndomorphismAnalogy]
     (h : a.Vol_Kbind = a.Vol_B3) :
     a.m_pred / (a.lw / a.hbar_q_sq) = a.B_pred / a.delta_tr := by

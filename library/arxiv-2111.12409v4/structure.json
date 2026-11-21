@@ -7,10 +7,11 @@
   "bytes": 326888,
   "pages": 21,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,22 +21,30 @@
    "stamp_date": "13 May 2023"
   },
   "doi": null,
-  "title": "On the generalisation of Roth\u2019s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1",
-  "authors_raw": null,
+  "title": "On the generalisation of Roth’s theorem",
+  "authors_raw": "Paolo Dolce",
   "title_lines": [
-   "On the generalisation of Roth\u2019s theorem",
-   "Paolo Dolce Francesco Zucconi",
-   "0 Introduction 1",
-   "0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1"
+   "On the generalisation of Roth’s theorem"
   ],
-  "abstract": "We present two generalisations of Roth\u2019s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmi c absolute values. We illustrate how tightening such assumptions makes our inequalities strong er. As special cases we recover Corvaja\u2019s results [Cor97] for \ufb01elds admitting a product formula, and Vojta\u2019s ones [ Voj21] for arithmetic function \ufb01elds. 0 Introduction 0.1 History The celebrated Roth\u2019s theorem proved in [ Rot55] asserts that the irrationality measure of a real algebraic number is 2. An equivalent, but more detailed stat ement is the following: Theorem 0.1 (Roth). Let \u03b1 be a real algebraic number and let \u03b5 > 0 be a real number. Then there exists a real constant C(\u03b1, \u03b5) > 0 such that for every pair of coprime integers (p, q) with q > C (\u03b1, \u03b5), it holds that: \u23d0\u23d0\u23d0\u23d0\u03b1 \u2212 p q \u23d0\u23d0\u23d0\u23d0 > q \u22122\u2212\u03b5 The above statement can be naturally generalised in di\ufb00eren t directions by considering a number \ufb01eld K instead of Q and the simultaneous approximation of the elements \u03b11, . . . , \u03b1n algebraic over K by an element of K with respect to di\ufb00erent valuations (see [ Lan83, Chapter 7]). Actually, the statement proved in [ Lan83, Chapter 7] holds for \ufb01elds that are more general than number \ufb01elds. At the moment we don\u2019t have an e\ufb00ective version of Roth\u2019s theorem (i.e. a bound for the constant C(\u03b1, \u03b5), see [ Cor95]), but we have a quantitative version (i.e. bounds, in terms of \u03b1 and \u03b5, on the number of good approximants see [ BvdP88], [ BvdP90], [ Eve97]). Let k be a \ufb01eld of characteristic 0 and let Vk be a set in bijection with a family of absolute values of k. The bijection is denoted by v \u21a6\u2192 | \u00b7 |v, for any v \u2208 V k and we don\u2019t put any restriction on the cardinality of Vk, therefore we recall that a sum over an uncountable set is de\ufb01 ned to be the supremum of the sums over all \ufb01nite subsets. The couple ( k, Vk) satis\ufb01es the product formula if for any element a \u2208 k\u00d7 the series \u2211 v\u2208Vk log |a|v converges absolutely and moreover \u2211 v\u2208",
+  "abstract": "We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmic absolute values. We illustrate how tightening such assumptions makes our inequalities stronger. As special cases we recover Corvaja’s results [Cor97] for ﬁelds admitting a product formula, and Vojta’s ones [Voj21] for arithmetic function ﬁelds. 0",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20230515211512-04'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20230515211512-04'00'"
+  },
+  "title_raw": "On the generalisation of Roth’s theorem",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On the generalisation of Roth’s theorem",
+   "outline": "0 Introduction",
+   "text": "On the generalisation of Roth’s theorem",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1"
  },
  "toc": [
   {
@@ -43,81 +52,319 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "History",
    "page": 1,
    "source": "outline",
-   "number": "0.1"
+   "number": "0.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Results in this paper",
    "page": 2,
    "source": "outline",
-   "number": "0.2"
+   "number": "0.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Adelic curves",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "The interpolating polynomial",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Integral estimates",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Roth's theorem for adelic curves (A)",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Roth's theorem for adelic curves (B)",
    "page": 17,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Appendices",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "A Construction of the interpolating polynomial",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "References",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 112,
+   "n_words": 15,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
@@ -125,8 +372,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 12,
+   "n_words": 1,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-01-history",
@@ -134,29 +383,35 @@
    "title": "History",
    "level": 2,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_end": 2,
+   "n_chars": 5901,
+   "n_words": 1184,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-002-02-results-in-this-paper",
    "number": "0.2",
    "title": "Results in this paper",
    "level": 2,
-   "page_start": 1,
-   "page_end": 3,
-   "n_chars": 6299,
-   "n_words": 1268
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6239,
+   "n_words": 1077,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-003-1-adelic-curves",
    "number": "1",
    "title": "Adelic curves",
    "level": 1,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 7,
-   "n_chars": 16650,
-   "n_words": 3413
+   "n_chars": 10696,
+   "n_words": 2132,
+   "label_start": "4",
+   "label_end": "7"
   },
   {
    "id": "sec-004-2-the-interpolating-polynomial",
@@ -165,8 +420,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3060,
-   "n_words": 814
+   "n_chars": 3001,
+   "n_words": 726,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-005-3-integral-estimates",
@@ -174,52 +431,92 @@
    "title": "Integral estimates",
    "level": 1,
    "page_start": 8,
-   "page_end": 19,
-   "n_chars": 26283,
-   "n_words": 6386
+   "page_end": 13,
+   "n_chars": 10891,
+   "n_words": 2642,
+   "label_start": "8",
+   "label_end": "13"
   },
   {
-   "id": "sec-006-appendices",
+   "id": "sec-006-4-roths-theorem-for-adelic-curves-a",
+   "number": "4",
+   "title": "Roth's theorem for adelic curves (A)",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 17,
+   "n_chars": 8911,
+   "n_words": 1976,
+   "label_start": "13",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-007-5-roths-theorem-for-adelic-curves-b",
+   "number": "5",
+   "title": "Roth's theorem for adelic curves (B)",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 5844,
+   "n_words": 1226,
+   "label_start": "17",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-008-appendices",
    "number": null,
    "title": "Appendices",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-007-a-construction-of-the-interpolating-polynomial",
+   "id": "sec-009-a-construction-of-the-interpolating-polynomial",
    "number": null,
    "title": "A Construction of the interpolating polynomial",
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 3046,
-   "n_words": 719
+   "n_chars": 3043,
+   "n_words": 677,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-008-references",
+   "id": "sec-010-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2178,
-   "n_words": 332
+   "n_chars": 2143,
+   "n_words": 301,
+   "label_start": "20",
+   "label_end": "21"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 9,
-  "chars_total": 57516,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 56793,
+  "furniture_lines_stripped": 21,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "roth_ad_curv_equi.tex",
    "tex_sections": 9,
-   "overlaid": 2,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -227,58 +524,85 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-01-history",
      "title": "History",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.855,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-02-results-in-this-paper",
      "title": "Results in this paper",
-     "prose_ratio": 0.403,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-003-1-adelic-curves",
      "title": "Adelic curves",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-2-the-interpolating-polynomial",
      "title": "The interpolating polynomial",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-3-integral-estimates",
      "title": "Integral estimates",
-     "prose_ratio": 0.486,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-006-appendices",
+     "id": "sec-006-4-roths-theorem-for-adelic-curves-a",
+     "title": "Roth's theorem for adelic curves (A)",
+     "prose_ratio": 0.8,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-5-roths-theorem-for-adelic-curves-b",
+     "title": "Roth's theorem for adelic curves (B)",
+     "prose_ratio": 0.822,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-appendices",
      "title": "Appendices",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-007-a-construction-of-the-interpolating-polynomial",
+     "id": "sec-009-a-construction-of-the-interpolating-polynomial",
      "title": "A Construction of the interpolating polynomial",
      "prose_ratio": 0.536,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-008-references",
+     "id": "sec-010-references",
      "title": "References",
      "result": "no matching \\section"
     }

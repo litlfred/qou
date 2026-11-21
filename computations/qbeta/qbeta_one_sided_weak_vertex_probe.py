@@ -36,6 +36,11 @@ import sympy as sp
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
+
+# the scored cell, read from the dashboard producer's witness, not typed.
+import json  # noqa: E402
+with open(os.path.join(HERE, "qbeta-gamma-gamma-qbeta-prediction.witness.json")) as _fh:
+    _SCORED_TR_CONV_D = json.load(_fh)["data"]["calibration"]["tr_conv_D"]
 for _p in ("computations", "computations/qbeta", "computations/substrate",
            "tools/qou-substrate/python"):
     sys.path.insert(0, os.path.join(ROOT, _p))
@@ -130,7 +135,7 @@ def main() -> int:
     print("\nBASE (must reproduce the scored cell)")
     t0 = report("base nuc11_interleaved", word(N_TAIL), word(P_TAIL))
     check("base_reproduces_tr_conv_D",
-          abs(t0 - mp.mpf("-0.1541948850472397056592555")) < mp.mpf("1e-24"),
+          abs(t0 - mp.mpf(_SCORED_TR_CONV_D)) < mp.mpf("1e-24"),
           mp.nstr(t0, 25))
 
     print("\nREPLACE the neutron's terminal d letter sigma_1^-1 (the only tail d)")

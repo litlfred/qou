@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/quaternioms/blocks/prop-sec-021-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "Complexity over H",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "text": "prop-sec-021-01.md",
+  "derivedFrom": "library/quaternioms/sections/sec-021",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "7",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [6–8] in sections/sec-021-complexity-landscape-and-feasibility.md",
+    "claim_id": "quaternioms#proposition:7",
+    "lean_status": "unformalized"
+  }
+}

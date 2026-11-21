@@ -1,14 +1,16 @@
 ---
 doc_id: on-the-garoufalidis-kashaev-state-integral-invariant
-doc_title: "On the Garoufalidis-Kashaev state-integral invariant"
+doc_title: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT"
 section_id: sec-007-structure-of-the-thesis
 section_title: "Structure of the Thesis"
 section_number: null
 pages: 13-14
 source_pdf: On the Garoufalidis-Kashaev State-Integral Invariant.pdf
 source_sha256: eda230da2a596783
-doc_brief: "On the Garoufalidis-Kashaev state-integral invariant — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES"
+toc_source: outline
+doc_brief: "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 67 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT"
 ---
+Structure of the Thesis
 The thesis is organized as follows:
 • Chapter 2 introduces locally compact abelian groups and Pontryagin duality,
 along with the Gaussian group structures used in the formulation of the integral.

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
   "title": "The building block of heat kernels of graphs",
   "pageStart": 7,
   "pageEnd": 8,
   "text": "../sections/sec-002-2-the-building-block-of-heat-kernels-of-graphs.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/chinta-2025-j-phys-a-math-theor-58-035203",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
   "provenance": "ingested"
 }

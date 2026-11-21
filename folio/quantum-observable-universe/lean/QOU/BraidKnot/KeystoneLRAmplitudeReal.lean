@@ -46,7 +46,7 @@ quantities, not extracted.
 **Honest scope.** Closes the bare-amplitude precondition only. No `c_k` value; no
 fit; nothing wired; L2 unchanged (2/7); the q₀-continuation gate stays open.
 
--- Ref: [manuscript] docs/audits/2026-07-18-lr-modulus-bare-amplitude-exact.md
+-- Ref: [leitner2026] docs/audits/2026-07-18-lr-modulus-bare-amplitude-exact.md
 -- Ref: [hikami2005brieskorn] https://doi.org/10.1142/S0129167X05003004
 -/
 import QOU.BraidKnot.KeystoneLRModulusFold

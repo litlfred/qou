@@ -1,0 +1,32 @@
+Chapter 1
+
+Introduction
+
+Paris, February 1809
+
+The court of Napoleon Bonaparte fills with the sound of a Haydn melody, as our performer
+teases a curious rotating glass cylinder with felt-covered rods. The performer is Ernst
+Chladni, the “father of acoustics”. Upon finishing his concert, he proceeds to demonstrate
+his experiments with acoustics to the emperor. These involve bowing a fixed plate at
+different frequencies, and observing how the patterns made by sand on the plate change as
+the frequency increases. The patterns that he recorded on a square plate were documented
+in his seminal work, Akusik.
+
+Whilst the music of the clavicylinder is of little interest to the contemporary math-
+ematician, the investigation of the patterns of sand on a vibrating plate, that is, the
+nodal lines of Dirichlet eigenfunctions, remains an interesting problem. Napoleon him-
+self remarked to Chladni that if one could apply some of the calculations involved in
+the mathematical formulation of acoustics to areas curved in more|than one direction, it
+“could be useful for applications to other subjects as well” [76].
+
+What do we understand by the term “curved in more than one direction”? Broadly
+speaking, the curvature of a surface S at a point p measures how much the surface differs
+from its tangent plane T,,S, that is, how far away it is from being “flat”. If the curvature
+is constant, then this measure takes the same value for every p € S. For a simple
+example of a surface of constant curvature, one can consider the sphere. There are
+several different notions of curvature; in this work we predominantly consider Gaussian
+curvature. The normal vector n forms a plane with each vector v in T,S?, with each
+direction v corresponding the direction of a curve on the surface. The principal curvatures
+k; are the (orthogonal) directions that give the maximum and minimum “bending” of S'
+
+at p. The Gaussian curvature is then defined at a point p as the product of the principal

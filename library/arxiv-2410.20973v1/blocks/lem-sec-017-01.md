@@ -1,0 +1,1 @@
+3. Suppose that Im(τ) > 0 and ε ∈R>0. Then as τ →i∞with ﬁxed argument and z is bounded away from the half lines C\Cθ and is bounded away from at least one of the lines Im((z + 1)τ) = 0 and Im((z + 1)τ) by ε with θ = arg(−1/τ) ∈(0, π) there exists a constant C ∈R>0 such that

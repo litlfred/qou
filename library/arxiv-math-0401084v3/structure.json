@@ -6,10 +6,12 @@
   "sha256": "f56bbd4cee4f3418d4741504d48a78a4a9ec5e1154d88bde650832c13192651d",
   "bytes": 224478,
   "pages": 17,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +23,26 @@
   "doi": null,
   "title": "Some limits of the colored Jones polynomials of the figure-eight knot",
   "authors_raw": "FIGURE-EIGHT KNOT AND ITS DEHN SURGERY SPACES",
-  "abstract": "W e calculate limits of the colored Jones polynomials of the \ufb01 gure- eight knot and conclude that in most cases they determine the volumes and the Chern\u2013Simons invariants of the three-manifolds obtain ed by Dehn surgeries along it.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220524025808-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "THE COLORED JONES POLYNOMIALS OF THE",
   "title_lines": [
    "THE COLORED JONES POLYNOMIALS OF THE"
-  ]
+  ],
+  "abstract": "We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons invariants of the three-manifolds obtained by Dehn surgeries along it.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20220524025808-04'00'"
+  },
+  "title_raw": "THE COLORED JONES POLYNOMIALS OF THE",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "THE COLORED JONES POLYNOMIALS OF THE FIGURE-EIGHT KNOT AND ITS DEHN SURGERY SPACES 1. Introduction Let K be a knot and J N ( K ; t ) be the colored Jones polynomial of K in the three-sphere S 3 corresponding to the N -dimensional representation of sl 2 ( C ) (see for example [4]). We normalize it so",
+   "outline": "1. Introduction",
+   "text": "THE COLORED JONES POLYNOMIALS OF THE",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "THE COLORED JONES POLYNOMIALS OF THE"
  },
  "toc": [
   {
@@ -40,46 +50,233 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Main result",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Limits of the colored Jones polynomials",
    "page": 4,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Proof of the main theorem",
    "page": 14,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Appendix. Optimistic limit",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "References",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 403,
+   "n_words": 60,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -87,8 +284,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3379,
-   "n_words": 594
+   "n_chars": 3343,
+   "n_words": 560,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-2-main-result",
@@ -97,8 +296,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 4100,
-   "n_words": 927
+   "n_chars": 4023,
+   "n_words": 850,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-002-3-limits-of-the-colored-jones-polynomials",
@@ -107,8 +308,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 14,
-   "n_chars": 15194,
-   "n_words": 4249
+   "n_chars": 14169,
+   "n_words": 3358,
+   "label_start": "4",
+   "label_end": "14"
   },
   {
    "id": "sec-003-4-proof-of-the-main-theorem",
@@ -117,8 +320,10 @@
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1435,
-   "n_words": 415
+   "n_chars": 1342,
+   "n_words": 331,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
    "id": "sec-004-appendix-optimistic-limit",
@@ -127,8 +332,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 2312,
-   "n_words": 563
+   "n_chars": 2175,
+   "n_words": 451,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
    "id": "sec-005-references",
@@ -137,16 +344,26 @@
    "level": 1,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 3957,
-   "n_words": 623
+   "n_chars": 3910,
+   "n_words": 576,
+   "label_start": "16",
+   "label_end": "17"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 30377,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 29365,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "dehn.tex",
@@ -159,42 +376,47 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.877,
+     "coverage_ratio": 0.901,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-main-result",
      "title": "Main result",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-limits-of-the-colored-jones-polynomials",
      "title": "Limits of the colored Jones polynomials",
-     "prose_ratio": 0.928,
-     "coverage_ratio": 0.974,
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-proof-of-the-main-theorem",
      "title": "Proof of the main theorem",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.887,
+     "prose_ratio": 0.871,
+     "coverage_ratio": 0.818,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-appendix-optimistic-limit",
      "title": "Appendix. Optimistic limit",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 0.88,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },

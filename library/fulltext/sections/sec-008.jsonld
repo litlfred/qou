@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Dilogarithm identities",
-  "pageStart": 31,
-  "pageEnd": 56,
+  "title": "Variants of the dilogarithm function",
+  "pageStart": 20,
+  "pageEnd": 31,
   "contains": [
-    "library/fulltext/blocks/prose-sec-008"
+    "library/fulltext/blocks/prose-sec-008",
+    "library/fulltext/blocks/prop-sec-008-01",
+    "library/fulltext/blocks/prop-sec-008-02",
+    "library/fulltext/blocks/prop-sec-008-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
   "provenance": "ingested"
 }

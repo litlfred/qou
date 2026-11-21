@@ -121,4 +121,9 @@ theorem qbeta_phase_leading_sq_eq_two (Φ₁ : ℝ) (hc2 : -(Φ₁ ^ 2 / 2) = -1
     Φ₁ ^ 2 = 2 := by
   linarith
 
+/-- Subtracting two from the squared leading phase coefficient yields zero when the quadratic coefficient is negative one. -/
+theorem qbeta_phase_leading_sq_sub_two_eq_zero (Φ₁ : ℝ) (hc2 : -(Φ₁ ^ 2 / 2) = -1) :
+    Φ₁ ^ 2 - 2 = 0 := by
+  rw [qbeta_phase_leading_sq_eq_two Φ₁ hc2, sub_self]
+
 end QOU.BraidKnot

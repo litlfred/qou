@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1304.2934v4/blocks/prose-sec-034",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Background: central limit theorem from location of zeros",
+  "title": "Mod-Gaussian convergence from a factorization of the probability generating function",
   "pageStart": 64,
   "pageEnd": 64,
-  "text": "../sections/sec-034-81-background-central-limit-theorem-from-locatio.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.2934v4",
+  "text": "../sections/sec-034-8-mod-gaussian-convergence-from-a-factorization.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.2934v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.2934v4/manifest.jsonld",
   "provenance": "ingested"
 }

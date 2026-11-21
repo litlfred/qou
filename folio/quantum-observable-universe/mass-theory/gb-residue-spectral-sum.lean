@@ -33,13 +33,24 @@ requires the Hecke-algebra + GS-filtration + Habiro-ring
 infrastructure (multi-week effort, deferred to the algebraic-
 substrate layer in `QOU.AlgebraicSubstrate`).  The class-based
 form below is sufficient to (a) drop the `opaque` axioms,
-(b) close the `sorry` in `spectral_sum_finite`, and (c) make the
-instance data explicit at the call site.
+(b) discharge the proof obligation in `spectral_sum_finite`, and
+(c) make the instance data explicit at the call site.
 
-Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
+Corrected 2026-09-04 (bean `qou-tmmt`): clause (b) said "close the
+unproved placeholder in `spectral_sum_finite`", which was accurate about
+the placeholder disappearing and misleading about what replaced it. What
+the class-based form actually produced was a statement with a free
+disjunct — `… = 0 ∨ ℓ < levelBound`, discharged by `Or.inr h` on the
+hypothesis itself — which held for every instance and asserted nothing.
+The statement is repaired below and (b) is now true for the first time.
+The word for an unproved placeholder is also removed from this sentence:
+the `wall-side-proof` checker matches it inside comments, and it was
+reporting this file as carrying one when the code has none.
+
+Ref: [leitner2026] Chapter 6, §Nuclear Binding and Beta Stability
 LaTeX label: `prop:gb-residue-spectral-sum`
--- Ref: [manuscript] prop:graded-markov-trace-from-gs-filtration
--- Ref: [manuscript] prop:residue-at-root
+-- Ref: [leitner2026] prop:graded-markov-trace-from-gs-filtration
+-- Ref: [leitner2026] prop:residue-at-root
 -/
 
 namespace QOU.BraidKnot
@@ -145,36 +156,80 @@ def gradedMarkovTrace (S : GBResidueSpectralSum R) (ℓ : Fin S.levelBound) : R 
     the cyclotomic projections collapse), the mass reduces to the
     descended Markov trace.
 
-    Ref: [manuscript] `prop:categorical-mass-markov`. -/
+    Ref: [leitner2026] `prop:categorical-mass-markov`. -/
 theorem classical_limit_descended (S : GBResidueSpectralSum R)
     (hres : ∀ ℓ : Fin S.levelBound, S.residue ℓ = 0) :
     S.mass = |S.descended| := by
   rw [S.spectral_decomposition]
   simp [hres]
 
-/-- Finiteness of the spectral sum: by construction, the residue
-    function is supported on the finite set `Fin levelBound`, so
-    the sum has only finitely many non-zero terms.
+/-- The residue extended to **every** level, by zero above the confinement
+    bound. This is the object the finiteness claim is about: `residue` alone is
+    a function on `Fin levelBound`, so "vanishes above the bound" cannot even be
+    stated for it. -/
+def GBResidueSpectralSum.residueAtLevel (S : GBResidueSpectralSum R) (l : ℕ) : R :=
+  if h : l < S.levelBound then S.residue ⟨l, h⟩ else 0
 
-    The previous statement
-    `∃ N, ∀ ℓ ≥ N, residueAtRoot ℓ ζ q = 0`
-    becomes a tautology in the class-based formulation: the
-    residue function `residue : Fin levelBound → R` has domain
-    of cardinality `levelBound`, and any `ℓ ≥ levelBound` falls
-    outside the domain.  Stated formally, the cumulative sum
-    truncates at `levelBound`.
+/-- **Finiteness of the spectral sum.** The extended residue vanishes at every
+    level at or above the confinement bound, so the sum has finitely many
+    non-zero terms.
 
-    Ref: [manuscript] `prop:confinement-level-unique`. -/
+    ## Restated 2026-09-04 (bean `qou-tmmt`) — the previous statement was vacuous
+
+    It read
+
+        ∃ N, ∀ ℓ ≥ N, ∀ (h : ℓ < S.levelBound),
+          S.residue ⟨ℓ, h⟩ = 0 ∨ ℓ < S.levelBound
+
+    and was proved by `exact Or.inr h` — **the right disjunct is the hypothesis
+    `h` itself**. So it held for every `S` and every `residue` whatsoever, with
+    any `N` at all, and asserted nothing about vanishing or finiteness. Its own
+    docstring recorded the cause: the block's actual claim,
+    `∃ N, ∀ ℓ ≥ N, residueAtRoot ℓ ζ q = 0`, was described as becoming "a
+    tautology in the class-based formulation", and the free disjunct was added
+    to make it provable rather than the statement being repaired.
+
+    It is not a tautology — it is a statement about a function on `ℕ`, and
+    `residue : Fin levelBound → R` is not one. With the zero-extension above,
+    the block's original claim goes through directly, and the extension is what
+    the prose meant by "strata above this give zero contribution".
+
+    ## What this does NOT establish
+
+    The vanishing proved here is of the **canonical zero-extension**, which is
+    what makes finiteness statable at all. It is not the conjectural claim, and
+    the library twin `QOU.BraidKnot.spectral_sum_finite` in
+    `lean/QOU/BraidKnot/GBResidueSpectralSum.lean` states that correctly: the
+    substantive content of `conj:gs-spectral-sum-finite` is that `levelBound`
+    *truly equals* the confinement level `ℓ(K, q₀)` of the underlying braid, so
+    that any **analytic** extension of `residue` to `ℕ` vanishes above the
+    cutoff. Nothing here bears on that. Extending by zero and then observing
+    that the extension is zero would be circular if offered as evidence for it.
+
+    Note also that the library twin carries the *same declaration name* in the
+    same namespace while proving a different statement — there,
+    `card (univ : Finset (Fin levelBound)) = levelBound`, the algebraic
+    finiteness. A content-block sibling is outside the Lake glob so the two do
+    not collide at build time, but `gs-spectral-sum-finite.ts` resolves its
+    `lean.ref` to the library one, not to this. Recorded in bean `qou-tmmt`.
+
+    Ref: [leitner2026] `prop:confinement-level-unique`. -/
 theorem spectral_sum_finite (S : GBResidueSpectralSum R) :
-    ∃ N : ℕ, ∀ ℓ ≥ N,
-      ∀ (h : ℓ < S.levelBound), S.residue ⟨ℓ, h⟩ = 0 ∨ ℓ < S.levelBound := by
-  -- Above any `N ≥ levelBound`, the second clause is vacuous (the
-  -- domain element ⟨ℓ, h⟩ requires ℓ < levelBound, contradicting
-  -- ℓ ≥ N ≥ levelBound).  We state the trivial form below.
-  refine ⟨S.levelBound, ?_⟩
-  intro ℓ _ h
-  -- The disjunct `ℓ < S.levelBound` is automatic from `h`.
-  exact Or.inr h
+    ∃ N : ℕ, ∀ l : ℕ, N ≤ l → S.residueAtLevel l = 0 := by
+  refine ⟨S.levelBound, fun l hl => ?_⟩
+  unfold GBResidueSpectralSum.residueAtLevel
+  rw [dif_neg (Nat.not_lt.mpr hl)]
+
+/-- The spectral sum may be taken over the extended residue on the initial
+    segment `Fin levelBound` without change — the extension agrees with
+    `residue` everywhere it is defined. -/
+theorem spectral_decomposition_extended (S : GBResidueSpectralSum R) :
+    S.mass = |S.descended| + ∑ l : Fin S.levelBound, S.residueAtLevel l.val := by
+  rw [S.spectral_decomposition]
+  congr 1
+  refine Finset.sum_congr rfl fun l _ => ?_
+  unfold GBResidueSpectralSum.residueAtLevel
+  rw [dif_pos l.isLt]
 
 /-! ## Constructing instances from crystal-basis data
 

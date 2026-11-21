@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2109.04664v4/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proofs of lemmas",
+  "pageStart": 16,
+  "pageEnd": 27,
+  "contains": [
+    "library/arxiv-2109.04664v4/blocks/prose-sec-007",
+    "library/arxiv-2109.04664v4/blocks/lem-sec-007-01",
+    "library/arxiv-2109.04664v4/blocks/lem-sec-007-02",
+    "library/arxiv-2109.04664v4/blocks/lem-sec-007-03",
+    "library/arxiv-2109.04664v4/blocks/rem-sec-007-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2109.04664v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2109.04664v4/manifest.jsonld",
+  "provenance": "ingested"
+}

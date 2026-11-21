@@ -58,7 +58,7 @@ Two distinct beans carry the ID `qou-rrgk` on `main`:
 the *drain* bean, so the germ bean is unreachable from the CLI by ID. Cite it by
 filename.
 
--- Ref: [manuscript] rem:two-observer-parallelogram
+-- Ref: [leitner2026] rem:two-observer-parallelogram
 -/
 
 namespace QOU.MassTheory.EmGermMomentVanishing

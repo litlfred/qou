@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Central limit theorem for spherical functions",
-  "pageStart": 18,
-  "pageEnd": 23,
+  "title": "Background from representation theory",
+  "pageStart": 16,
+  "pageEnd": 18,
   "contains": [
-    "library/arxiv-math-0508291v1/blocks/prose-sec-007"
+    "library/arxiv-math-0508291v1/blocks/prose-sec-007",
+    "library/arxiv-math-0508291v1/blocks/lem-sec-007-01",
+    "library/arxiv-math-0508291v1/blocks/lem-sec-007-02",
+    "library/arxiv-math-0508291v1/blocks/lem-sec-007-03",
+    "library/arxiv-math-0508291v1/blocks/lem-sec-007-04",
+    "library/arxiv-math-0508291v1/blocks/lem-sec-007-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508291v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508291v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508291v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508291v1/manifest.jsonld",
   "provenance": "ingested"
 }

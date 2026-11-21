@@ -1,250 +1,120 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "exploring-the-geometric-buchberger-algorithm-in-integer-prog",
  "source": {
   "file": "Exploring the Geometric Buchberger Algorithm in Integer Programming.pdf",
   "sha256": "73854bc5e3bcffb077c7b33c26ca1cb507db17677f21112024bea49d2484bef1",
   "bytes": 8595601,
+  "mtime": "2026-11-15T11:07:54Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "pages": 8,
   "text_source": "ocr",
-  "extractor": "pypdf",
-  "mtime": null,
-  "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "runContext": {
+   "sha256": "6ca0b42047cd3b2539c96dac449bfdea75078c148776bf81cc58642d0a735792"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": "10.1145/3666000.3669706",
-  "title": "Exploring the Geometric Buchberger Algorithm in Integer Programming Gabriel Mattos Langeloh gmlangeloh@inf.ufrgs.br",
-  "authors_raw": "Instituto de Informatica, Universidade Federal do Rio Grande do Sul",
-  "title_lines": [
-   "Exploring the Geometric Buchberger Algorithm in Integer",
-   "Programming",
-   "Gabriel Mattos Langeloh",
-   "gmlangeloh@inf.ufrgs.br"
-  ],
-  "abstract": "The Geometric Buchberger algorithm is a specialization of the clas- sical Buchberger algorithm to the case of toric ideals, with applica- tions in the solution of families of integer programming problems. In this paper, we investigate the performance of the Geometric Buchberger algorithm in a variety of combinatorial optimization problems with both integer and binary variables, introducing algo- rithmic improvements for the latter case in the form of an efficient criterion for detecting S-binomials that can be truncated away. Our experiments show that our implementation, available in the package IPGBs.jl, computes Gr\u00e9bner bases for toric ideals of combi- natorial optimization problems more efficiently than the previous state-of-the-art. ACM Reference Format: Gabriel Mattos Langeloh. 2024. Exploring the Geometric Buchberger Al- gorithm in Integer Programming. In International Symposium on Symbolic and Algebraic Computation (ISSAC \u00b024), July 16-19, 2024, Raleigh, NC, USA. ACM, New York, NY, USA, 8 pages. https://doi.org/10.1145/3666000.3669706",
+  "title": null,
   "docinfo": {
    "Title": "Exploring the Geometric Buchberger Algorithm in Integer Programming",
-   "Creator": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
    "Producer": "Skia/PDF m151",
+   "Creator": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
    "CreationDate": "D:20260831202659+00'00'"
-  }
+  },
+  "title_raw": null,
+  "title_source": "filename",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "Exploring the Geometric Buchberger Algorithm in Integer Programming",
+   "corroborated_by": [],
+   "browser_print": true
+  },
+  "title_prev": "Exploring the Geometric Buchberger Algorithm in Integer Programming Gabriel Mattos Langeloh gmlangeloh@inf.ufrgs.br"
  },
- "toc": [
-  {
-   "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "INTRODUCTION",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "BACKGROUND",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "THE BINARY CASE",
-   "page": 3,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "EXPERIMENTAL RESULTS",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 2,
-   "title": "Experimental setup",
-   "page": 4,
-   "source": "inferred",
-   "number": "4.1"
-  },
-  {
-   "level": 2,
-   "title": "Evaluating the binary case",
-   "page": 5,
-   "source": "inferred",
-   "number": "4.2"
-  },
-  {
-   "level": 2,
-   "title": "IPGBs performance",
-   "page": 6,
-   "source": "inferred",
-   "number": "4.3"
-  },
-  {
-   "level": 2,
-   "title": "Computing group relaxations",
-   "page": 6,
-   "source": "inferred",
-   "number": "4.4"
-  },
-  {
-   "level": 1,
-   "title": "CONCLUSION",
-   "page": 7,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgments",
-   "page": 7,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 7,
-   "source": "inferred",
-   "number": null
-  }
- ],
- "toc_source": "inferred",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "exploring-the-geometric-buchberger-algorithm-in-integer-prog",
+ "toc_source": "none",
+ "granularity": "page",
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "page-001",
    "number": null,
-   "title": "Abstract",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1059,
-   "n_words": 147
+   "n_chars": 5881,
+   "n_words": 860
   },
   {
-   "id": "sec-001-1-introduction",
-   "number": "1",
-   "title": "INTRODUCTION",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 4137,
-   "n_words": 619
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 6645,
+   "n_words": 1258
   },
   {
-   "id": "sec-002-2-background",
-   "number": "2",
-   "title": "BACKGROUND",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 3,
-   "n_chars": 11145,
-   "n_words": 1992
-  },
-  {
-   "id": "sec-003-3-the-binary-case",
-   "number": "3",
-   "title": "THE BINARY CASE",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
-   "page_end": 4,
-   "n_chars": 7730,
-   "n_words": 1428
+   "page_end": 3,
+   "n_chars": 6455,
+   "n_words": 1105
   },
   {
-   "id": "sec-004-4-experimental-results",
-   "number": "4",
-   "title": "EXPERIMENTAL RESULTS",
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 6459,
+   "n_words": 1154
   },
   {
-   "id": "sec-005-41-experimental-setup",
-   "number": "4.1",
-   "title": "Experimental setup",
-   "level": 2,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 4573,
-   "n_words": 755
-  },
-  {
-   "id": "sec-006-42-evaluating-the-binary-case",
-   "number": "4.2",
-   "title": "Evaluating the binary case",
-   "level": 2,
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
    "page_start": 5,
-   "page_end": 6,
-   "n_chars": 2273,
-   "n_words": 413
+   "page_end": 5,
+   "n_chars": 4640,
+   "n_words": 792
   },
   {
-   "id": "sec-007-43-ipgbs-performance",
-   "number": "4.3",
-   "title": "IPGBs performance",
-   "level": 2,
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 2214,
-   "n_words": 362
+   "n_chars": 4756,
+   "n_words": 795
   },
   {
-   "id": "sec-008-44-computing-group-relaxations",
-   "number": "4.4",
-   "title": "Computing group relaxations",
-   "level": 2,
-   "page_start": 6,
-   "page_end": 7,
-   "n_chars": 2742,
-   "n_words": 427
-  },
-  {
-   "id": "sec-009-5-conclusion",
-   "number": "5",
-   "title": "CONCLUSION",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 7,
-   "n_chars": 2423,
-   "n_words": 365
-  },
-  {
-   "id": "sec-010-acknowledgments",
+   "id": "page-007",
    "number": null,
-   "title": "Acknowledgments",
+   "title": "Page 7",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 332,
-   "n_words": 53
+   "n_chars": 7290,
+   "n_words": 1045
   },
   {
-   "id": "sec-011-references",
+   "id": "page-008",
    "number": null,
-   "title": "References",
+   "title": "Page 8",
    "level": 1,
-   "page_start": 7,
+   "page_start": 8,
    "page_end": 8,
-   "n_chars": 7962,
-   "n_words": 1004
+   "n_chars": 4926,
+   "n_words": 613
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": false,
-  "toc_entries": 12,
-  "sections": 12,
-  "chars_total": 46590
- }
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

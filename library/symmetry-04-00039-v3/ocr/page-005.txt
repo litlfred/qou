@@ -1,0 +1,28 @@
+Symmetry 2012, 4 43
+
+Figure 2. A Moebius strip (MS) and its boundary.
+
+/
+
+OD &
+
+We should point out that it is not only the MS border that is knotlike; we can also view an MS as a
+concatenation of (2, n) torus knots and we can illustrate that notion by letting the toroidal core radius, r,
+vary from zero up to some maximum value as we implement Equations 1-1. Figure 3 shows the result
+for the trefoil (NHT = 3) using a discrete number of radii (In this case three).
+
+Figure 3. An MS as a concatenation of torus knots.
+
+Thus, concatenation is one way to “frame” a knot in order to create an MS. Another approach to
+framing is to exploit Alexander’s theorem [8], which says that every knot or link can be represented as
+a braid with closure. In our case we are concerned with the simplest braids involving only two strands
+as shown in Figure 4 and closure means that the top and bottom ends of each braid in the column on
+the left are looped around and brought together as indexed left to right with the result shown in the
+next two columns (the right hand column being the usual portrayal).
+
+The figure illustrates a number of relationships: the result for n = —1 is the folded over unknot (no
+twist) with one crossover while n = —3 gives the trefoil with three crossovers (The minus sign means a
+twist to the left), for n = 0 we get a pair of unlinked loops while for n = —2, the two loops are linked
+together at two crossovers. These results are examples of two general rules: odd and even values of n
+
+yield knots and links, respectively, and the number of crossings correlates with knot/link parameter n.

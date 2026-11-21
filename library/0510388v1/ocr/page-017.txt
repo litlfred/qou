@@ -1,0 +1,32 @@
+6. Vector-valued Green's operators in R’, S? and H?.
+The vector Laplacian in R’, S’ and H’,
+
+AV =-V XV xXV + V(V eV),
+corresponds to the Laplacian on 1-forms,
+
+AB = (dd + dd),
+
+where 6 = +*d* , with * the Hodge star operator, in the following sense.
+Given the vector field V , if we define the 1-form |V by ({V)(W) = VeW,
+then we get A(|V) = |(AV). The symbol | reminds us of lowering indices
+
+in tensor notation.
+
+In R®, the vector Laplacian can be computed component-wise in rectangular
+coordinates.
+
+If V is a smooth compactly supported vector field in R*, then the Green's
+operator acting on V is given by the convolution formula
+
+Gr(V)(y) = Fes V(x) bo, y) dx,
+
+where o(a) = —1/(4nc) is the fundamental solution of the Laplacian. It has
+the following properties:
+
+(1) GrVv)=V.
+(2) Gr(V\(y) > Oasy > ow.
+
+In R’, S* and H’, a linear operator satisfying conditions (1) and (2) above
+will be referred to as a vector-valued Green's operator.
+
+17

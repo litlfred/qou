@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/huang-2021-chinese-phys-c-45-030002/sections/page-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 2",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "contains": [
+    "library/huang-2021-chinese-phys-c-45-030002/blocks/prose-page-002",
+    "library/huang-2021-chinese-phys-c-45-030002/blocks/rem-page-002-01",
+    "library/huang-2021-chinese-phys-c-45-030002/blocks/figure-img-p002-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/huang-2021-chinese-phys-c-45-030002/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/huang-2021-chinese-phys-c-45-030002/manifest.jsonld",
+  "provenance": "ingested"
+}

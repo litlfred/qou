@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-9511320v1/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Short Summary",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "contains": [
+    "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-010"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9511320v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9511320v1/manifest.jsonld",
+  "provenance": "ingested"
+}

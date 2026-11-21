@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1010.5321v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1010.5321v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1010.5321v3",
+  "title": "Formulas on hyperbolic volume ∗",
   "contains": [
+    "library/arxiv-1010.5321v3/sections/sec-front-matter",
     "library/arxiv-1010.5321v3/sections/sec-000",
     "library/arxiv-1010.5321v3/sections/sec-001",
     "library/arxiv-1010.5321v3/sections/sec-002",
@@ -29,7 +30,7 @@
     "library/arxiv-1010.5321v3/sections/sec-015"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -39,7 +40,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1010.5321v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1010.5321v3.pdf",
     "source_sha256": "c6bb20926b1f291fe66fc82b10be9d6a8b51f3b44034d4fd9d111bd4c3767a31",
     "pages": 16,

@@ -296,26 +296,23 @@ def q_laplacian_eigenvalue(partition):
     """q-Laplacian eigenvalue on the λ-block of the Wedderburn
     decomposition (prop:q-heat-kernel-peter-weyl, def:q-heat-equation).
 
-    From the Peter-Weyl spectral decomposition of the q-heat kernel
-    (merged PR #368, prop:q-heat-kernel-peter-weyl):
+        μ_λ(q) = Σ_{□ ∈ λ} [c(□)]_q × [c(□) + 1]_q
 
-        μ_λ(q) = ℏ_q² × Σ_{□ ∈ λ} [c(□)]_q × [c(□) + 1]_q
+    where c(□) = col − row is the content of cell □ and [k]_q is the
+    SYMMETRIC q-integer (q^k − q^−k)/(q − q^−1).  No ℏ_q² prefactor.
 
-    where c(□) = col − row is the content of cell □, [k]_q is the
-    symmetric q-integer, and ℏ_q = (q−1)/q is the quantum Planck
-    constant.  This is the eigenvalue of the pure-spin piece
-    (1 − q⁻¹)²Δ_ξ from the q-Laplacian three-term expansion
-    (rem:q-laplacian-expansion); the classical-core piece q⁻²Δ acts
-    on spatial modes and doesn't depend on λ, and Coriolis cross-terms
-    vanish on Hecke-representation spaces by Schur's lemma.
-
-    Derived via Jucys-Murphy q-Casimir (Ram's q-deformation):
-    L_i · T = [c(T,i)]_q · T on SYTs; the Casimir sum
-    Σ [c]_q[c+1]_q is the q-analogue of j(j+1) from the
-    SU_q(2) representation (def:q-angular-momentum).
-
-    Base-ring independent: formula is polynomial in q, q⁻¹ with
-    integer coefficients, valid over any ring where q − 1 invertible.
+    DERIVED (2026-11-16, issue #8091; docs/audits/
+    2026-11-16-binding-reeb-holonomy-laplacian.md).  This is the block
+    eigenvalue of the Reeb-holonomy Laplacian
+        (q − q⁻¹)⁻² Σ_k (q·L_k + q⁻¹·L_k⁻¹ − (q + q⁻¹)),
+    with L_k the relative full twist (Lean:
+    QOU.BraidKnot.Hecke.reebLaplacianB_smul_of_weight,
+    fullTwistB_succ_eq_mul_jmRawB; centrality
+    QOU.SchurWeyl.contentCasimir_comm_σ).  The Reeb part of Δ_q enters
+    with weight (q⁻¹ + ℏ_q)² = 1, not ℏ_q²: on a mode with no horizontal
+    derivative d_q and δ_q reduce to d and δ.  So the bare sum below is
+    the derived value; the paper's former ℏ_q² and Jackson integers were
+    corrected to match it.  No number changed in this function.
 
     PRECISION (2026-09-12, owner directive "excise float64"; bean
     `qou-oiz3`).  This accumulated `casimir_sum = 0.0` over the FLOAT64
@@ -330,13 +327,8 @@ def q_laplacian_eigenvalue(partition):
     lam = list(partition)
     if not lam:
         return _mp.mpf(0)
-    # Jucys-Murphy Casimir: Σ [c]_q[c+1]_q (bare, no ℏ_q² prefactor).
-    # The ℏ_q² = ((q−1)/q)² is the conversion factor to the SPIN piece
-    # of the q-Laplacian (Δ_ξ eigenvalue = ℏ_q² × JM Casimir).  For
-    # the Hecke algebra LP-dual problem, the bare JM Casimir is the
-    # correct spectral operator — it measures the TOTAL partition
-    # content including both spatial and spin pieces via the Jucys-Murphy
-    # representation of the centre of H_n(q).
+    # Reeb-holonomy Laplacian eigenvalue: Σ [c]_q[c+1]_q, symmetric integers,
+    # no ℏ_q² (derived; see the docstring).
     casimir_sum = _mp.mpf(0)
     for i, li in enumerate(lam):
         for j in range(li):
@@ -920,7 +912,7 @@ def _phi1_nuclear(Z, N):
     # The pn crossing is mediated by the shared electron.
     # Reference: prop:mass-endomorphism-tower
     if A == 2:
-        # V̂_e = w_sym × q³ + w_std × V_std + w_alt × (-1/q³)
+        # V̂_e = V_std, the convention-D Markov trace (was the w_sym/w_std/w_alt mixture)
         # For trefoil σ₁³ on 2 strands: 3 crossings, all (c=1, d=0) on gen 0.
         # V_std = z×M[0][0] + M[1][0] where M = T(1,0)³
         # T(1,0) = [[h, 1],[1, 0]] → T³ = specific matrix
@@ -932,7 +924,8 @@ def _phi1_nuclear(Z, N):
                   [_M[1][0]*_t[0][0]+_M[1][1]*_t[1][0],
                    _M[1][0]*_t[0][1]+_M[1][1]*_t[1][1]]]
         _V_std = z * _M[0][0] + _M[1][0]
-        _V_e = W_SYM * q0**3 + W_STD * _V_std + W_ALT * (-qi**3)
+        # Convention D (owner, 2026-11-18): the Markov trace of a*sigma+b is z*a+b.
+        _V_e = _V_std
         CATALAN_G = 0.915965594177219015054603514932
         _alpha = M_E_MEV * 8 * CATALAN_G
         return _alpha * abs(_V_e)

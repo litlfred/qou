@@ -1,0 +1,67 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-033
+section_title: "Page 33"
+pages: 33-33
+pdf_page: 33
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 171
+
+Denote by g=g(B) the Lie algebra with generators e,, f,, i=1,...,r, and
+heh; subject to the relations
+
+Le, f=: his
+(6.1.1) [hel=<hades Ch fl=—hafi
+[h, h’]=0
+
+for alli, j=1,...,7r,h, heb.
+
+We'll denote by n=n_ (resp., by n,) the Lie subalgebra of g generated
+by f (resp., e;), i=1, ..., r. These subalgebras are free [K, Theorem 9.2(b)]. We'll
+identify n with the Lie algebra studied in § 5. In particular, the decomposition
+
+n= @)n, is defined as in loc. cit. We have the natural decomposition g=
+AeNr
+
+n_ @®bh@n,. Put b=n@h,; it is a Lie subalgebra of g.
+
+6.2 Bilinear forms
+
+6.2.1 Lemma-definition. There is a unique bilinear form K(,) on g such that
+
+(i) K coincides with (,) on h; K is zero on n_ and n,; 6 and n_@®ny are
+orthogonal;
+(i) K(f, e)=Ke,, f=, ij=l,...,7
+(iii) K is g-invariant, i.e.
+K(Lx, y],2)=K(x, Dy, 2)
+for all x, y, zEg.
+This form is symmetric.
+
+Proof. The same as in [K, §2.2]. O
+
+Denote by t: gg the Lie algebra automorphism which is (— 1) on b, and
+maps f, to —e;, e; to —f; (“the Chevalley involution”). We have
+
+(6.2.2) K(tx, ty)=K(x, y)
+
+for all x, yeg.
+Define the bilinear form S on g by the rule
+
+(6.2.3) S(x, y)=K(cx, y).
+From (6.2.2) follows that S is symmetric. We have
+(6.2.4) S(Lx y], 2)=S(%, [ty, z).
+
+This follows from the invariance of K and (6.2.2).
+The subspaces n_, b, n, are pairwise orthogonal with respect to S. The
+restriction of S to n is uniquely determined by the properties
+
+(6.2.5) Sf, = — 915
+(6.2.6) S(Cfi x], y)=S(x, Le, y]).
+
+The subspaces n, cn, J€N’ are pairwise orthogonal with respect to S.

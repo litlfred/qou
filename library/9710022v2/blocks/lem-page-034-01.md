@@ -1,0 +1,1 @@
+The coefficients ARS (No, Ni) satisfy the relation: ; Z2IC B VA NP) (a, co, of |D ARD(No. 81) = (2 2A4j; 2 oe 119 AD(No, N1) (j on 2) Up “NO my | aoe lB oC m (119) where as usual No — Ni = 8, and & = @*'t', and we have denoted A(x) = RF(2)G(2)F(z)~', with G(x) € U,(sl(2))®? the element G(x) = qe hig e,

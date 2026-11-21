@@ -7,29 +7,49 @@
   "bytes": 573397,
   "pages": 46,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 9,
+    "reason": "162 of 393 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 34,
+    "reason": "18 of 343 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.2140/gt.2006.10.1239",
-  "title": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC\u00b8 OIS GU\u00c9RITAUD APPENDIX BY DA VIDFUTER",
-  "authors_raw": "We prove the hyperbolization theorem for punctured torus bundles and two-bridge",
+  "title": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction",
+  "authors_raw": "FRANC¸OIS GUÉRITAUD",
   "title_lines": [
    "On canonical triangulations of once-punctured",
-   "torus bundles and two-bridge link complements",
-   "FRANC\u00b8 OIS GU\u00c9RITAUD",
-   "APPENDIX BY DA VIDFUTER"
+   "torus bundles and two-bridge link complements"
   ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.4",
+   "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20181030203614Z"
-  }
+  },
+  "title_raw": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction",
+   "outline": "1 Introduction",
+   "text": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER"
  },
  "toc": [
   {
@@ -37,473 +57,1274 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1239"
   },
   {
    "level": 1,
    "title": "Conjugacy in SL(2,Z) and the Farey tesselation",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1241"
   },
   {
    "level": 1,
    "title": "The canonical triangulation",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1243"
   },
   {
    "level": 2,
    "title": "Diagonal exchanges",
    "page": 5,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1243"
   },
   {
    "level": 2,
    "title": "Tetrahedra",
    "page": 5,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1243"
   },
   {
    "level": 1,
    "title": "Combinatorics of the torus at infinity",
    "page": 6,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1244"
   },
   {
    "level": 1,
    "title": "Finding positive angles",
    "page": 10,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1248"
   },
   {
    "level": 1,
    "title": "Hyperbolic volume",
    "page": 12,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1250"
   },
   {
    "level": 2,
    "title": "Volume of an ideal tetrahedron",
    "page": 13,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1251"
   },
   {
    "level": 2,
    "title": "Critical volume and trivial holonomy",
    "page": 13,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1251"
   },
   {
    "level": 2,
    "title": "Behavior of the volume functional",
    "page": 17,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1255"
   },
   {
    "level": 1,
    "title": "Ruling out some degeneracies",
    "page": 19,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1257"
   },
   {
    "level": 1,
    "title": "A geometrical lemma",
    "page": 20,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1258"
   },
   {
    "level": 1,
    "title": "Ruling out all degeneracies",
    "page": 23,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1261"
   },
   {
    "level": 2,
    "title": "Case 1: RR|LR",
    "page": 23,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1261"
   },
   {
    "level": 2,
    "title": "Case 2: RR|LL",
    "page": 24,
    "source": "outline",
-   "number": "9.2"
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1262"
   },
   {
    "level": 1,
    "title": "A numerical example",
    "page": 25,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1263"
   },
   {
    "level": 1,
-   "title": "Once-punctured tori and 4\u2013punctured spheres",
+   "title": "Once-punctured tori and 4–punctured spheres",
    "page": 28,
    "source": "outline",
-   "number": "11"
+   "number": "11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1266"
   },
   {
    "level": 1,
    "title": "A Geometric triangulations of two-bridge link complements",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1267"
   },
   {
    "level": 2,
    "title": "A.1 Braids and two-bridge links",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1268"
   },
   {
    "level": 2,
    "title": "A.2 The ideal triangulation",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1269"
   },
   {
    "level": 2,
    "title": "A.3 Combinatorics at the cusp",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1272"
   },
   {
    "level": 2,
    "title": "A.4 Angle structures and volume",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1274"
   },
   {
    "level": 2,
    "title": "A.5 Flat tetrahedra never maximize volume",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1275"
   },
   {
    "level": 1,
    "title": "B Applications",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1278"
   },
   {
    "level": 2,
    "title": "B.1 Volume estimates for bundles",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1278"
   },
   {
    "level": 2,
    "title": "B.2 Volume estimates for links",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1279"
   },
   {
    "level": 2,
    "title": "B.3 Hyperbolic geodesics seen in the projection plane",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1282"
   },
   {
    "level": 1,
    "title": "Bibliography",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1282"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Four copies of ∆(e) in the cover (R2∖Z2) × R of T × R",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1244"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The link of the puncture",
+   "page": 8,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1246"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The tessellation A",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1247"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "On the bottom row in each case, ei is the horizontal edge",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1249"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The situation where Q ≥P + T cannot hold",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1259"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Level curves of z 7→arg(sin z)",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1266"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "(a) An alternating braid between two pillowcases, described by the word Ω= R3L2R (b) The corresponding two-bridge link K(Ω)",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1268"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "The letters R and L acting on strands of a braid",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1268"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "",
+   "page": 31,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "1269"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "The tetrahedron layer ∆1 = ∆(e1), made of two tetrahedra contained between 4–punctured spheres S1 and S2 (sides with identical arrows are identiﬁed)",
+   "page": 32,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1270"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Folding the pleated surface S1 produces the ﬁrst two crossings in the link",
+   "page": 33,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1271"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "Left: the link K(Ω) corresponding to Ω= R3L2R Right: a cusp view of the product region between S1 and Sc",
+   "page": 34,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1272"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "A cusp view of the folding that occurs at a clasp",
+   "page": 35,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1273"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "In a fan at the beginning of Ω, Q < P + T",
+   "page": 39,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1277"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "A ﬂype in a diagram of a two-bridge link. The shaded rectangle P is a pillowcase of the braid",
+   "page": 42,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1280"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "The construction of an augmented 2–bridge link L. When tw(D) = 2, L is the Borromean rings",
+   "page": 43,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "1281"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1239",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1240",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1241",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1242",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1243",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1244",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1245",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1246",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1247",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1248",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1249",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1250",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1251",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1252",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1253",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1254",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1255",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1256",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1257",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1258",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1259",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1260",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1261",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1262",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1263",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1264",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "1265",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "1266",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "1267",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "1268",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "1269",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "1270",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "1271",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "1272",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "1273",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "1274",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "1275",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "1276",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "1277",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "1278",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "1279",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "1280",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "1281",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "1282",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "1283",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "1284",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 539,
+   "n_words": 74,
+   "label_start": "1239",
+   "label_end": "1239"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 5,
-   "n_chars": 9159,
-   "n_words": 1578
+   "page_end": 3,
+   "n_chars": 5869,
+   "n_words": 939,
+   "label_start": "1239",
+   "label_end": "1241"
   },
   {
-   "id": "sec-001-3-the-canonical-triangulation",
+   "id": "sec-001-2-conjugacy-in-sl2z-and-the-farey-tesselation",
+   "number": "2",
+   "title": "Conjugacy in SL(2,Z) and the Farey tesselation",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3279,
+   "n_words": 656,
+   "label_start": "1241",
+   "label_end": "1243"
+  },
+  {
+   "id": "sec-002-3-the-canonical-triangulation",
    "number": "3",
    "title": "The canonical triangulation",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 27,
+   "n_words": 3,
+   "label_start": "1243",
+   "label_end": "1243"
   },
   {
-   "id": "sec-002-31-diagonal-exchanges",
+   "id": "sec-003-31-diagonal-exchanges",
    "number": "3.1",
    "title": "Diagonal exchanges",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1274,
-   "n_words": 220
+   "n_chars": 1294,
+   "n_words": 223,
+   "label_start": "1243",
+   "label_end": "1243"
   },
   {
-   "id": "sec-003-32-tetrahedra",
+   "id": "sec-004-32-tetrahedra",
    "number": "3.2",
    "title": "Tetrahedra",
    "level": 2,
    "page_start": 5,
-   "page_end": 10,
-   "n_chars": 8603,
-   "n_words": 1664
+   "page_end": 6,
+   "n_chars": 2798,
+   "n_words": 504,
+   "label_start": "1243",
+   "label_end": "1244"
   },
   {
-   "id": "sec-004-5-finding-positive-angles",
+   "id": "sec-005-4-combinatorics-of-the-torus-at-infinity",
+   "number": "4",
+   "title": "Combinatorics of the torus at infinity",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 5399,
+   "n_words": 967,
+   "label_start": "1244",
+   "label_end": "1248"
+  },
+  {
+   "id": "sec-006-5-finding-positive-angles",
    "number": "5",
    "title": "Finding positive angles",
    "level": 1,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4841,
-   "n_words": 947
+   "n_chars": 4840,
+   "n_words": 985,
+   "label_start": "1248",
+   "label_end": "1250"
   },
   {
-   "id": "sec-005-6-hyperbolic-volume",
+   "id": "sec-007-6-hyperbolic-volume",
    "number": "6",
    "title": "Hyperbolic volume",
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 443,
-   "n_words": 80
+   "n_chars": 461,
+   "n_words": 82,
+   "label_start": "1250",
+   "label_end": "1251"
   },
   {
-   "id": "sec-006-61-volume-of-an-ideal-tetrahedron",
+   "id": "sec-008-61-volume-of-an-ideal-tetrahedron",
    "number": "6.1",
    "title": "Volume of an ideal tetrahedron",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 660,
-   "n_words": 140
+   "n_chars": 702,
+   "n_words": 156,
+   "label_start": "1251",
+   "label_end": "1251"
   },
   {
-   "id": "sec-007-62-critical-volume-and-trivial-holonomy",
+   "id": "sec-009-62-critical-volume-and-trivial-holonomy",
    "number": "6.2",
    "title": "Critical volume and trivial holonomy",
    "level": 2,
    "page_start": 13,
    "page_end": 17,
-   "n_chars": 8516,
-   "n_words": 1606
+   "n_chars": 8605,
+   "n_words": 1662,
+   "label_start": "1251",
+   "label_end": "1255"
   },
   {
-   "id": "sec-008-63-behavior-of-the-volume-functional",
+   "id": "sec-010-63-behavior-of-the-volume-functional",
    "number": "6.3",
    "title": "Behavior of the volume functional",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 2706,
-   "n_words": 509
+   "n_chars": 2758,
+   "n_words": 534,
+   "label_start": "1255",
+   "label_end": "1257"
   },
   {
-   "id": "sec-009-7-ruling-out-some-degeneracies",
+   "id": "sec-011-7-ruling-out-some-degeneracies",
    "number": "7",
    "title": "Ruling out some degeneracies",
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 3038,
-   "n_words": 621
+   "n_chars": 3091,
+   "n_words": 651,
+   "label_start": "1257",
+   "label_end": "1258"
   },
   {
-   "id": "sec-010-8-a-geometrical-lemma",
+   "id": "sec-012-8-a-geometrical-lemma",
    "number": "8",
    "title": "A geometrical lemma",
    "level": 1,
    "page_start": 20,
    "page_end": 23,
-   "n_chars": 5050,
-   "n_words": 970
+   "n_chars": 5074,
+   "n_words": 998,
+   "label_start": "1258",
+   "label_end": "1261"
   },
   {
-   "id": "sec-011-9-ruling-out-all-degeneracies",
+   "id": "sec-013-9-ruling-out-all-degeneracies",
    "number": "9",
    "title": "Ruling out all degeneracies",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 943,
-   "n_words": 185
+   "n_chars": 986,
+   "n_words": 204,
+   "label_start": "1261",
+   "label_end": "1261"
   },
   {
-   "id": "sec-012-91-case-1-rrlr",
+   "id": "sec-014-91-case-1-rrlr",
    "number": "9.1",
    "title": "Case 1: RR|LR",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 1080,
-   "n_words": 283
+   "n_chars": 1121,
+   "n_words": 315,
+   "label_start": "1261",
+   "label_end": "1262"
   },
   {
-   "id": "sec-013-92-case-2-rrll",
+   "id": "sec-015-92-case-2-rrll",
    "number": "9.2",
    "title": "Case 2: RR|LL",
    "level": 2,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 1855,
-   "n_words": 396
+   "n_chars": 1893,
+   "n_words": 427,
+   "label_start": "1262",
+   "label_end": "1263"
   },
   {
-   "id": "sec-014-10-a-numerical-example",
+   "id": "sec-016-10-a-numerical-example",
    "number": "10",
    "title": "A numerical example",
    "level": 1,
    "page_start": 25,
    "page_end": 28,
-   "n_chars": 5211,
-   "n_words": 1065
+   "n_chars": 5232,
+   "n_words": 1082,
+   "label_start": "1263",
+   "label_end": "1266"
   },
   {
-   "id": "sec-015-11-once-punctured-tori-and-4punctured-spheres",
+   "id": "sec-017-11-once-punctured-tori-and-4punctured-spheres",
    "number": "11",
-   "title": "Once-punctured tori and 4\u2013punctured spheres",
+   "title": "Once-punctured tori and 4–punctured spheres",
    "level": 1,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 1928,
-   "n_words": 352
+   "n_chars": 1991,
+   "n_words": 376,
+   "label_start": "1266",
+   "label_end": "1267"
   },
   {
-   "id": "sec-016-a-geometric-triangulations-of-two-bridge-link-co",
+   "id": "sec-018-a-geometric-triangulations-of-two-bridge-link-co",
    "number": null,
    "title": "A Geometric triangulations of two-bridge link complements",
    "level": 1,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 1091,
-   "n_words": 166
+   "n_chars": 1135,
+   "n_words": 171,
+   "label_start": "1267",
+   "label_end": "1268"
   },
   {
-   "id": "sec-017-a1-braids-and-two-bridge-links",
+   "id": "sec-019-a1-braids-and-two-bridge-links",
    "number": null,
    "title": "A.1 Braids and two-bridge links",
    "level": 2,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 2874,
-   "n_words": 508
+   "n_chars": 2908,
+   "n_words": 520,
+   "label_start": "1268",
+   "label_end": "1269"
   },
   {
-   "id": "sec-018-a2-the-ideal-triangulation",
+   "id": "sec-020-a2-the-ideal-triangulation",
    "number": null,
    "title": "A.2 The ideal triangulation",
    "level": 2,
    "page_start": 31,
    "page_end": 34,
-   "n_chars": 4222,
-   "n_words": 739
+   "n_chars": 4243,
+   "n_words": 741,
+   "label_start": "1269",
+   "label_end": "1272"
   },
   {
-   "id": "sec-019-a3-combinatorics-at-the-cusp",
+   "id": "sec-021-a3-combinatorics-at-the-cusp",
    "number": null,
    "title": "A.3 Combinatorics at the cusp",
    "level": 2,
    "page_start": 34,
    "page_end": 36,
-   "n_chars": 4040,
-   "n_words": 754
+   "n_chars": 3935,
+   "n_words": 702,
+   "label_start": "1272",
+   "label_end": "1274"
   },
   {
-   "id": "sec-020-a4-angle-structures-and-volume",
+   "id": "sec-022-a4-angle-structures-and-volume",
    "number": null,
    "title": "A.4 Angle structures and volume",
    "level": 2,
    "page_start": 36,
    "page_end": 37,
-   "n_chars": 3600,
-   "n_words": 661
+   "n_chars": 3649,
+   "n_words": 686,
+   "label_start": "1274",
+   "label_end": "1275"
   },
   {
-   "id": "sec-021-a5-flat-tetrahedra-never-maximize-volume",
+   "id": "sec-023-a5-flat-tetrahedra-never-maximize-volume",
    "number": null,
    "title": "A.5 Flat tetrahedra never maximize volume",
    "level": 2,
    "page_start": 37,
    "page_end": 40,
-   "n_chars": 4770,
-   "n_words": 931
+   "n_chars": 4820,
+   "n_words": 954,
+   "label_start": "1275",
+   "label_end": "1278"
   },
   {
-   "id": "sec-022-b-applications",
+   "id": "sec-024-b-applications",
    "number": null,
    "title": "B Applications",
    "level": 1,
    "page_start": 40,
    "page_end": 40,
-   "n_chars": 216,
-   "n_words": 29
+   "n_chars": 229,
+   "n_words": 30,
+   "label_start": "1278",
+   "label_end": "1278"
   },
   {
-   "id": "sec-023-b1-volume-estimates-for-bundles",
+   "id": "sec-025-b1-volume-estimates-for-bundles",
    "number": null,
    "title": "B.1 Volume estimates for bundles",
    "level": 2,
    "page_start": 40,
    "page_end": 41,
-   "n_chars": 2489,
-   "n_words": 452
+   "n_chars": 2521,
+   "n_words": 459,
+   "label_start": "1278",
+   "label_end": "1279"
   },
   {
-   "id": "sec-024-b2-volume-estimates-for-links",
+   "id": "sec-026-b2-volume-estimates-for-links",
    "number": null,
    "title": "B.2 Volume estimates for links",
    "level": 2,
    "page_start": 41,
    "page_end": 44,
-   "n_chars": 5764,
-   "n_words": 1075
+   "n_chars": 5792,
+   "n_words": 1080,
+   "label_start": "1279",
+   "label_end": "1282"
   },
   {
-   "id": "sec-025-b3-hyperbolic-geodesics-seen-in-the-projection-p",
+   "id": "sec-027-b3-hyperbolic-geodesics-seen-in-the-projection-p",
    "number": null,
    "title": "B.3 Hyperbolic geodesics seen in the projection plane",
    "level": 2,
    "page_start": 44,
    "page_end": 46,
-   "n_chars": 5524,
-   "n_words": 854
+   "n_chars": 5562,
+   "n_words": 849,
+   "label_start": "1282",
+   "label_end": "1284"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 29,
-  "sections": 26,
-  "chars_total": 89897
+  "toc_inferred_entries": 0,
+  "figure_entries": 16,
+  "figure_sequence_gaps": [
+   "figure 2",
+   "figure 6",
+   "figure 7",
+   "figure 8",
+   "figure 10",
+   "figure 11"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 29,
+  "chars_total": 90753,
+  "furniture_lines_stripped": 0
  }
 }

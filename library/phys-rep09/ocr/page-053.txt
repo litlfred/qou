@@ -1,0 +1,78 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 203
+
+5.4. Magnus integrators for linear systems
+
+Since the Magnus series only converges locally, as we have pointed out before, when the length of the time-integration
+interval exceeds the bound provided by Theorem 9, and in the spirit of any numerical integration method, the usual
+procedure consists of dividing the time interval [to, t;] into N steps such that the Magnus series converges in each subinterval
+[tr—1. tn],n = 1,...,N, with ty = ty. In this way, the solution of (223) at the final time ty is represented by
+
+N
+¥ (tw) = | [ exp(2(ty, tn—1))Yo, (240)
+
+n=1
+
+and the series 92 (tn, ta_1) has to be appropriately truncated.
+
+Early steps in this approach were taken in [21,130], where second and fourth order numerical schemes were used for
+calculations of collisional inelasticity and potential scattering, respectively. Those authors were well aware that the resulting
+integration method “would become practical only when the advantage of being able to use bigger step sizes outweighs the
+disadvantage in having to evaluate the integrals involved in the Magnus series, and then doing the exponentiation” [130].
+Later on, by following a similar approach, Devries [131] designed a numerical procedure for determining a fourth order
+approximation to the propagator employed in the integration of the single channel Schrodinger equation, but it was in the
+pioneering work [37] where Iserles and Norsett carried out the first systematic study of the Magnus expansion with the
+aim of constructing numerical integration algorithms for linear problems. To design the new integrators, the explicit time
+dependency of each term 2; had to be analyzed, in particular its order of approximation in time to the exact solution.
+
+Generally speaking, the process of rendering the Magnus expansion, a practical numerical integration algorithm, involves
+three steps. First, the 2 series is truncated at an appropriate order. Second, the multivariate integrals in the truncated series
+Qirl = an Q; are replaced by conveniently chosen approximations. Third, the exponential of the matrix 2?! has to be
+computed. We now briefly consider the first two issues, whereas the general problem of evaluating the matrix exponential
+will be treated in Section 5.6.
+
+We have shown in Section 2.6 that the Magnus expansion is time symmetric. As a consequence of Eq. (66), if A(t) is
+analytic and one evaluates its Taylor series centered around the midpoint of a particular subinterval [t;, t, + h], then each
+term in 2; is an odd function of h, and thus 22,4; = @(h?s+3) fors > 1. Equivalently, 2!5-2] = @ + @(h?5+") and
+Qs = 2 + O(h?s+!), In other words, for achieving an integration method of order 2s (s > 1) only terms up to 25-2 in
+the 2 series are required [37,39]. For this reason, in general, only even order methods are considered.
+
+Once the series expansion is truncated up to an appropriate order, the multidimensional integrals involved have to be
+computed or at least conveniently approximated. Although, at first glance, this seems to be a quite difficult enterprise, it
+turns out that their very structure allows one to approximate all the multivariate integrals appearing in 2 just by evaluating
+A(t) at the nodes of a univariate quadrature [37].
+
+To illustrate how this task can be accomplished, let us expand the matrix A(t) around the midpoint, t1/2 = t, + h/2, of
+the subinterval [tn, thi],
+
+ee 1 A(t)
+A(t) = > qj (t — tip)’ , where qj = ja
+j=0 .
+
+; (241)
+
+t=t2
+
+and insert the series (241) into the recurrence defining the Magnus expansion (49)-(50). In this way one gets, explicitly, the
+expression of 2, up to order h® as
+
+1 1
+Q=h — ne n”
+1 dg + pet ao t Ol )
+
+-1 -1 1
+22 = W®—[a, bh ( —[ap, —I(n, on”
+2 D [ao, a4] + (= [do, a3] + Fa l™ a!) + O(n’)
+
+1 1
+23=1° (sepia do, a2] — 49h do, a) + 0(n’) (242)
+
+1
+24 = WF lao. do, do, 41] + O(N’),
+
+whereas 25 = O(h’), 25 = O(h’) and 2; = O(h*), Here we write for clarity [aj,,4i,,...,4i_,. i]
+[ai,, [ai,,[..-, [ai_,, ai,]...]]]. Notice that, as anticipated, only odd powers of h appear in £2 and, in particular, 22i+1
+O(h74+3) fori > 1.
+
+Let us denote a; = h'aj_,. Then [aj,, a), ... , &j_,, i] is an element of order h"'*”"*"!, In fact, the matrices {aj};>1 can be
+considered as the generators (with grade i) of a graded free Lie algebra £(a1, a2, ...) [62]. It turns out that it is possible to
+build methods of order p = 2s by considering only terms involving a1, ..., a; in 2. Then, these terms can be approximated

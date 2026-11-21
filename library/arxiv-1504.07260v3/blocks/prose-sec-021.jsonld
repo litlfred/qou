@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1504.07260v3/blocks/prose-sec-021",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The heterotic helicity supertrace",
-  "pageStart": 34,
-  "pageEnd": 36,
-  "text": "../sections/sec-021-54-the-heterotic-helicity-supertrace.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1504.07260v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1504.07260v3",
+  "title": "Helicity supertrace for type IIA CHL models",
+  "pageStart": 32,
+  "pageEnd": 33,
+  "text": "../sections/sec-021-52-helicity-supertrace-for-type-iia-chl-models.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1504.07260v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1504.07260v3/manifest.jsonld",
   "provenance": "ingested"
 }

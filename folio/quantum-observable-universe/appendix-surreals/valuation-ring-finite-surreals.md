@@ -14,7 +14,7 @@ $$
 
 The quotient $\mathcal{O} / \mathfrak{m} \xrightarrow{\sim} \mathbb{R}$ is canonically isomorphic to the real numbers, and the projection $\mathcal{O} \twoheadrightarrow \mathcal{O}/\mathfrak{m}$ is exactly $\mathrm{st}$.
 
-The appendix's functorial constructions (point-evaluation of schemes, categorical enrichments, surreal-coefficient sheaves) all need a set-sized coefficient ring to avoid proper-class pathologies. The valuation ring $\mathcal{O}$ is set-sized; the ambient $\mathbf{No}$ is a proper class. By restricting to $\mathcal{O}$ before point-evaluation, we stay inside standard set-theoretic foundations.
+The appendix's functorial constructions (point-evaluation of schemes, categorical enrichments, surreal-coefficient sheaves) all need a set-sized coefficient ring to avoid proper-class pathologies. The valuation ring $\mathcal{O}$ is set-sized; the ambient $\mathbf{No}$ is a proper class. Restricting to $\mathcal{O}$ before point-evaluation stays inside standard set-theoretic foundations.
 
 The infinite surreals $\mathbf{No} \setminus \mathcal{O}$ are not in the domain of $\mathrm{st}$. Any arithmetic involving $\omega, \omega^2, \omega^\omega$ must be restricted to $\mathcal{O}$ before projecting. This matches the archimedean-observability boundary already implicit in the main paper's treatment of physical observables.
 

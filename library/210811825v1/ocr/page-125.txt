@@ -1,0 +1,30 @@
+Vh ul, u2;
+
+real sigma — 0.00001;
+
+varf op(ul,u2)= int2d(Th)(dx(ul)*dx(u2)+ dy(ul)*dy(u2)— sigma+(4*ul*u2) /(1—x*2—-y*2)*2);
+varf b({ul] ,[u2]) = int2d (Th) ((4*ul*u2)/(1—x*2-y*2)*2);
+
+matrix OP= op(Vh,Vh, solver—Crout , factorize=1);
+matrix B=b(Vh,Vh, solver—CG, eps=le—20);
+
+real[int] ev(nev);
+Vh[int] eV(nev);
+
+int k-EigenValue(OP,B,sym-true , sigma=sigma , value=ev , vector=eV, tol=le—10,maxit=0,ncv=0);
+for (int i=0;i<k;i++) {
+
+ul=eV [i];
+
+real gg = int2d(Th)(dx(ul)*dx(ul) + dy(ul)*dy(ul)); real mm int2d(Th)(ulxul) ;
+
+ofstream Eva(fnm, append);
+
+Eva << ev[i] << "\n";
+
+9 10
+
+Side associations:
+2-5,4-7,6-9,8-11,10-1,12-3
+
+Figure C.2: Fundamental domain for the surface with order 24 automorphism group

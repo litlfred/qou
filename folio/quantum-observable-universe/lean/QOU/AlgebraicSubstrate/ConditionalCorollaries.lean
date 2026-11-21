@@ -15,7 +15,7 @@
   parameters, and each theorem below records what its own conclusion used to
   be.
 
-  Ref: [manuscript]
+  Ref: [leitner2026]
     - conj:q-aubin-lions
     - conj:ns-counterexample
     - conj:critical-exponent

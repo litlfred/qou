@@ -1,6 +1,6 @@
 ---
 doc_id: 18
-doc_title: "Mathematical Research Letters 3, 51–60 (1996)"
+doc_title: "Combinatorial scalar curvature and rigidity of ball packings"
 section_id: sec-004-4-the-space-of-conformal-simplices
 section_title: "The space of conformal simplices"
 section_number: 4
@@ -8,6 +8,7 @@ pages: 5-7
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
 toc_source: inferred
+doc_brief: "Combinatorial scalar curvature and rigidity of ball packings — 11 sections: Front matter; Introduction; Conformal simplices"
 ---
 In this section we will describe the space of Euclidean conformal sim-
 plices CT introduced in section 1. The ﬁrst observation is the following:

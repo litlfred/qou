@@ -1,0 +1,51 @@
+Invariants in Low-Dimensional Topology and Knot Theory 13
+
+twist). Specifically, a knot K may occur as the attaching circle of a 2-handle in
+the handlebody description of a 4-manifold. It was shown, for example, in another
+talk at this conference [2], that, for the simplest strong winding number one oper-
+ators P, the modification of the handlebody effected by Kk ~+ P(K) can alter the
+smooth structure on the 4-manifold without altering the homeomorphism type!
+We consider four different sets, denoted C, C*", C*?, and C = respectively. Here
+C is the (usual) set of smooth knot concordance classes. Here C‘?? is the (usual)
+set of topological knot concordance classes. C°” is the set where two knots
+are equivalent if they are smoothly concordant in S° x (0, 1] equipped with a pos-
+sibly exotic smooth structure. This has been called pseudo-concordance by some
+authors. If the smooth 4-dimensional Poincaré Conjecture is true then C°* = C.
+Finally, for a fixed non-zero integer n, let C = denote the set of equivalence classes
+of knots in S$? where two are equivalent if they cobound a smoothly embedded
+annulus in a smooth 4-manifold that is Z[4+]-homology cobordant to $° x [0,1].
+
+For odd n it seems to be unknown whether or not C = C*! For economy we will
+use the notation C* to denote either * = top, * = ex or * = 4, reserving the nota-
+tion C for the smooth knot concordance group. If kK = 0 = U in C (respectively:
+ce, CtP,C*) then K is called a (smooth) slice knot (respectively: pseudo-slice,
+topologically slice, Z[4]-slice).
+
+We are interested in whether or not such satellite operators are injective func-
+tions (beware they are not homomorphisms). Call an operator weakly injective
+if P(K) = P(0) implies K = 0 (here 0 is the class of the trivial knot U). It is a
+long-standing open problem as to whether or not the Whitehead double operator
+is weakly injective on C [7, Problem 1.38]. Considerable effort has been expended
+in providing evidence for this conjecture (see [6] for a survey and the most re-
+cent results). There has recently been speculation that many other “non-trivial”
+satellite operators are injective on C. In [4] large classes of winding number zero
+operators called “robust doubling operators” were introduced and evidence was
+presented for their injectivity. Yet no single “non-trivial” operator is known to be
+even weakly injective.
+
+Here we have more success for non-zero winding number operators, especially
+winding-number +1 operators. The winding number of P is the algebraic in-
+tersection number of P with a meridional disk of ST. Let 7 denote the oriented
+meridian of ST, {1} x OD. The condition that a pattern P has winding number
++1 is equivalent to the condition that 1 generates H)(S* — P(U)).
+
+Definition 1. The pattern P has strong winding number +1 if the meridian
+of the solid torus ST normally generates 71(S° — P(U)).
+
+The example in Figure 1 has strong winding number one. If P(U) is unknotted
+then strong winding number one is the same as ordinary winding number one. We
+show that strong winding number +1 patterns are plentiful. Our main theorem is:
+
+Theorem 1. Suppose P is a pattern with non-zero winding number n. Then
+a. P:C* + C% is an injective function.
+Suppose that P is a pattern with strong winding number +1. Then

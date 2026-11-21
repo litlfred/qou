@@ -1,0 +1,43 @@
+1960 Noelia Rizo, A. A. Schaeffer Fry and Carolina Vallejo
+
+f to be odd, then f? = 1 mod 8, and so f* + 1 = 2 mod 8 leaves as the only possibility n = 1 = f, that
+is, D = Cy, as wanted. These techniques do not totally suffice to prove the case where p = 3. We first
+need to show that we may assume ®(D) = 1. Indeed, write G=G/®(D), D=D/®(D) and let B bea
+block of G contained in B such that D is the defect group of B by [Navarro 1998, Theorem 9.9]. Then
+Irro(B)™ C Irro(B)™. By Lemma 1.2 we have that Irro(B)™ = Irr(B) is nonempty. Hence by Lemma 1.4,
+we have that p divides |Irro(B)”'| < |Irro(B)*'| = p, that forces |Irro(B)°'| = p. If ®(D) # 1 we can
+apply induction to obtain that D is cyclic, and thus D is cyclic. Hence we may assume that ®(D) = 1.
+Since D is p-elementary abelian, then Irro(B)*! = Irr(B) by the description of these sets in (1) and
+Lemma 1.2. By [Sambale 2014, Proposition 15.2], if p = 3 then |Irr(B)| = p implies | D| = p and the
+proof is finished. oO
+
+2. Reducing to simple groups
+
+The aim of this section is to reduce the statement of Theorem A to a problem on simple groups that we
+
+will solve in Section 3.
+
+2A. Preliminaries. We start these preliminaries with results concerning the action of Galois automor-
+phisms on characters belonging to principal blocks. Recall that x € Irr(Bo(G)) if, and only if,
+
+YS x@) £0,
+
+xeG?
+
+where G° is the subset of elements of G of order not divisible by p. Some properties of characters in the
+principal block are listed below.
+
+Lemma 2.1. Let G be a finite group, and let NaG.
+(a) We have that Irr(Bo(G/N)) € Irr(Bo(G)), with equality whenever N is a p'-group.
+(b) If Hj are finite groups and y; € Irr(Bo(Aj)), fori=1,...,t,theny, x---xy € Irr(Bo(M x-+ +x H;)).
+
+Proof. The first part of (a) and (b) follow directly from the definition of principal block [Navarro 1998,
+Definition 3.1]. The second part of (a) is [loc. cit., Theorem 9.9.(c)]. Oo
+
+We summarize below some results obtained in Section 1, here stated with respect to the principal block.
+The first part was first observed by G. Navarro (in private communication).
+
+Lemma 2.2. Let G be a finite group and let P be a Sylow p-subgroup of G.
+(a) If P is normal in G, then Irr,(Bo(G))*! = Irr(G/O»(G)®(P)).
+(b) If P is cyclic, then | < |Itrp(Bo(G))""| < p.
+(c) If P is nontrivial and p € {2, 3}, then |Irr,(Bo(G))*'| 4 0 is divisible by p.

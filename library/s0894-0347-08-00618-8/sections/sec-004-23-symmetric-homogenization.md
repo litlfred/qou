@@ -8,6 +8,7 @@ pages: 10-10
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8 — 24 sections: Front matter; Introduction; A plethora of negative dependence"
 ---
 tion procedure for arbitrary measures in Pn. This natural construction proves to
 be quite useful for studying strongly Rayleigh measures (§4.1).

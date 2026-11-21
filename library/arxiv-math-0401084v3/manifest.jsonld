@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0401084v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0401084v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "arxiv-math-0401084v3",
   "contains": [
+    "library/arxiv-math-0401084v3/sections/sec-front-matter",
     "library/arxiv-math-0401084v3/sections/sec-000",
     "library/arxiv-math-0401084v3/sections/sec-001",
     "library/arxiv-math-0401084v3/sections/sec-002",
@@ -19,7 +20,7 @@
     "library/arxiv-math-0401084v3/sections/sec-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [

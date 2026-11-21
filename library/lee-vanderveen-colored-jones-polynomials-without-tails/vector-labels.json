@@ -1,0 +1,3675 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "lee-vanderveen-colored-jones-polynomials-without-tails",
+  "pages": [
+    {
+      "page": 1,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1. The family of knots C(r, s, t, u) where r, s, t, u denote the number of cross- ings in each twist region. We have drawn the Manx knot C(5, −3, 5, −3). To make the diagram zero framed we drew 16 = r −s + t −u additional negative curls."
+      ],
+      "labels": [
+        {
+          "text": "COLORED JONES POLYNOMIALS WITHOUT TAILS",
+          "bbox": [
+            137.73,
+            90.01,
+            457.35,
+            100.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "CHRISTINE RUEY SHAN LEE AND ROLAND VAN DER VEEN",
+          "bbox": [
+            160.32,
+            121.42,
+            434.79,
+            130.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Abstract. We exhibit an inﬁnite family of knots with the property that the ﬁrst coeﬃcient of the",
+          "bbox": [
+            92.56,
+            147.53,
+            502.46,
+            158.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "n-colored Jones polynomial grows linearly with n. This shows that the concept of stability and tail",
+          "bbox": [
+            92.56,
+            160.45,
+            502.54,
+            169.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "seen in the colored Jones polynomials of alternating knots does not generalize naively.",
+          "bbox": [
+            92.56,
+            171.4,
+            439.6,
+            180.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "1. Introduction",
+          "bbox": [
+            253.6,
+            230.67,
+            341.64,
+            243.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The colored Jones polynomials are a well known knot invariant with many connections to other",
+          "bbox": [
+            68.65,
+            252.48,
+            538.17,
+            263.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "parts of mathematics [11, 16].",
+          "bbox": [
+            56.69,
+            265.43,
+            205.97,
+            276.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "It is the Reshetikhin-Turaev knot invariant corresponding to the",
+          "bbox": [
+            216.16,
+            265.43,
+            538.13,
+            276.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "n-dimensional representation of quantum sl2. Given a knot K and a natural number n ≥2 the n-",
+          "bbox": [
+            56.69,
+            278.24,
+            538.58,
+            290.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "colored Jones polynomial is a Laurent polynomial JK,n(v). Dasbach-Lin [6] observed that for any ﬁxed",
+          "bbox": [
+            56.69,
+            291.33,
+            538.38,
+            303.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "alternating knot the ﬁrst coeﬃcients seem to stabilize as n grows. The sequence of stabilized coeﬃcients",
+          "bbox": [
+            56.69,
+            304.28,
+            538.38,
+            315.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "was called the tail of the knot. Tails are deﬁned and studied in greater detail in [1, 4, 8, 2, 10, 12].",
+          "bbox": [
+            56.69,
+            317.23,
+            527.42,
+            328.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "For general knots similar behaviour was expected1 provided one allowed a certain periodicity. For",
+          "bbox": [
+            68.65,
+            326.09,
+            538.35,
+            341.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "example the leading coeﬃcient of most torus knots is (−1)n, and they are shown to have one or more",
+          "bbox": [
+            56.69,
+            341.61,
+            538.43,
+            354.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "tails [3, 8]; for an index b closed braid consisting of a positive full twist on b strands and ℓ≤b negative",
+          "bbox": [
+            56.69,
+            356.08,
+            538.54,
+            367.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "crossings, the work of [4] determines that up to b−ℓ+1 ﬁrst coeﬃcients of its colored Jones polynomial",
+          "bbox": [
+            56.69,
+            369.03,
+            538.36,
+            380.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "are stable, though it might still admit multiple tails.",
+          "bbox": [
+            56.69,
+            382.13,
+            306.91,
+            393.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In this note we introduce knots where the ﬁrst coeﬃcient of the colored Jones polynomial does not",
+          "bbox": [
+            68.65,
+            395.08,
+            538.14,
+            405.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "stabilize at all. Instead it grows without bound, proportional to n. Such knots can never have tails,",
+          "bbox": [
+            56.69,
+            408.03,
+            538.42,
+            418.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "so we propose to name such knots Manx knots for a breed of cats without tails. Possibly the simplest",
+          "bbox": [
+            56.69,
+            420.98,
+            538.14,
+            431.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Manx knot is the pretzel knot P(5, −3, 5). The inﬁnite family of Manx knots C(5, −3, 5, u) introduced",
+          "bbox": [
+            56.69,
+            433.79,
+            538.51,
+            444.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in this paper are the Montesinos knots shown in Figure 1.",
+          "bbox": [
+            56.69,
+            446.88,
+            333.33,
+            457.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We will ﬁrst give a quick, self-contained deﬁnition of the colored Jones polynomial that allows us",
+          "bbox": [
+            68.65,
+            459.84,
+            538.12,
+            470.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "to compute a formula for the polynomial of our examples of Manx knots. Next we will analyse the",
+          "bbox": [
+            56.69,
+            472.79,
+            538.17,
+            483.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "degree of the terms in our formula and observe the lack of tail in the main theorem, Theorem 3.1.",
+          "bbox": [
+            56.69,
+            485.74,
+            524.48,
+            496.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lee was partially supported by NSF Grant MSPRF-DMS 1502860. Van der Veen was supported by the Netherlands",
+          "bbox": [
+            68.65,
+            521.32,
+            538.26,
+            530.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "foundation for scientiﬁc research (NWO).",
+          "bbox": [
+            56.69,
+            532.28,
+            223.37,
+            541.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "1See for example Remark 1.7 of [7].",
+          "bbox": [
+            68.65,
+            541.49,
+            211.69,
+            553.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMR9"
+          ],
+          "sizes": [
+            7.97,
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 1. The family of knots C(r, s, t, u) where r, s, t, u denote the number of cross-",
+          "bbox": [
+            92.56,
+            746.26,
+            502.6,
+            759.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ings in each twist region. We have drawn the Manx knot C(5, −3, 5, −3). To make the",
+          "bbox": [
+            92.56,
+            761.46,
+            502.66,
+            772.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "diagram zero framed we drew 16 = r −s + t −u additional negative curls.",
+          "bbox": [
+            92.56,
+            774.41,
+            447.1,
+            785.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            295.52,
+            790.92,
+            299.75,
+            798.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 141,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Operations on Knotted Trivalent Graphs: framing change F e"
+      ],
+      "labels": [
+        {
+          "text": "2",
+          "bbox": [
+            56.69,
+            36.52,
+            60.93,
+            44.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "C. LEE AND R. VAN DER VEEN",
+          "bbox": [
+            232.29,
+            36.52,
+            362.89,
+            44.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2. Colored Jones polynomial",
+          "bbox": [
+            216.38,
+            55.75,
+            378.78,
+            69.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The colored Jones polynomial is usually considered as a knot invariant but from our point of view it",
+          "bbox": [
+            68.65,
+            77.56,
+            538.13,
+            88.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is more natural to consider its extension to knotted framed graphs. A good thing about this deﬁnition",
+          "bbox": [
+            56.69,
+            90.51,
+            538.12,
+            101.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of the colored Jones polynomial is that it is less dependent on knot diagrams and a little more eﬃcient",
+          "bbox": [
+            56.69,
+            103.46,
+            538.12,
+            114.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "for computations. The technical reason behind its success is that we diagonalize the R-matrix.",
+          "bbox": [
+            56.69,
+            116.41,
+            508.14,
+            127.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.1. Knotted trivalent graphs (KTG)",
+          "bbox": [
+            56.69,
+            136.03,
+            294.94,
+            146.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(1) A framed graph is a 1-dimensional simplicial complex Γ together with an embedding Γ →Σ",
+          "bbox": [
+            74.1,
+            151.28,
+            538.58,
+            162.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of Γ into a surface with boundary Σ as a spine.",
+          "bbox": [
+            93.02,
+            164.37,
+            318.99,
+            175.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(2) A coloring of Γ is a map σ : E(Γ) →N.",
+          "bbox": [
+            74.1,
+            174.94,
+            280.83,
+            188.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(3) A Knotted Trivalent Graph (KTG) is a trivalent framed graph embedded (as a surface) into",
+          "bbox": [
+            74.1,
+            190.27,
+            538.14,
+            201.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "R3, considered up to isotopy.",
+          "bbox": [
+            93.02,
+            200.84,
+            230.8,
+            214.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Framed knots and links are special cases of KTGs. We prefer the more general set of KTGs here",
+          "bbox": [
+            68.65,
+            222.85,
+            538.17,
+            233.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "because there are natural 3-dimensional operations that can be used to generate the whole theory",
+          "bbox": [
+            56.69,
+            235.8,
+            538.16,
+            246.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "from the tetrahedron.",
+          "bbox": [
+            56.69,
+            248.75,
+            160.0,
+            259.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 2. Operations on Knotted Trivalent Graphs: framing change F e",
+          "bbox": [
+            92.56,
+            428.99,
+            449.57,
+            442.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "±, unzip U e",
+          "bbox": [
+            444.13,
+            429.71,
+            502.21,
+            444.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and triangle move Aw applied to an edge e and vertex w shown in the middle.",
+          "bbox": [
+            92.56,
+            440.37,
+            466.49,
+            455.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "More precisely it was shown by D. Thurston [15] and [17] that the following three moves suﬃce to",
+          "bbox": [
+            68.65,
+            471.8,
+            538.16,
+            482.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "generate any KTG from the planar theta graph. The ﬁrst operation F e",
+          "bbox": [
+            56.69,
+            483.09,
+            393.57,
+            495.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "± cuts the surface Σ transversal",
+          "bbox": [
+            388.13,
+            484.75,
+            538.44,
+            498.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "to an edge, rotates one side by π and reglues. This is called framing change or connected sum with a",
+          "bbox": [
+            56.69,
+            497.7,
+            538.31,
+            508.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "M¨obius band. The second operation is called unzip, U e. It doubles a chosen edge along its framing,",
+          "bbox": [
+            56.69,
+            508.99,
+            538.41,
+            521.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "deletes its end-vertices and joins the result as shown. The ﬁnal move is called Aw and expands a",
+          "bbox": [
+            56.69,
+            519.65,
+            538.53,
+            534.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "vertex w into a triangle. All three moves are as shown in Figure 2.",
+          "bbox": [
+            56.69,
+            536.56,
+            375.33,
+            547.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁne [k] = v2k−v−2k",
+          "bbox": [
+            68.65,
+            547.6,
+            167.25,
+            561.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "and [k]! = [1][2] . . . [k] for k ∈N and [k]! = 0 if k /∈N. Let",
+          "bbox": [
+            172.71,
+            548.55,
+            447.22,
+            561.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "v2−v−2",
+          "bbox": [
+            134.34,
+            556.49,
+            163.3,
+            565.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            189.84,
+            569.96,
+            195.59,
+            580.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0015",
+          "bbox": [
+            289.61,
+            569.96,
+            295.35,
+            580.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "= [a1 + a2 + · · · + ar]!",
+          "bbox": [
+            298.39,
+            569.98,
+            404.22,
+            588.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a1 + a2 + · · · + ar",
+          "bbox": [
+            200.58,
+            570.75,
+            283.89,
+            583.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a1, a2, . . . , ar",
+          "bbox": [
+            212.4,
+            583.84,
+            272.07,
+            595.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "[a1]! . . . [ar]!",
+          "bbox": [
+            329.99,
+            584.98,
+            385.34,
+            596.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The building blocks of the Jones polynomial are the following Laurent polynomials. For each we",
+          "bbox": [
+            68.65,
+            601.31,
+            538.16,
+            612.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "explicitly state the term of maximal degree for later use.",
+          "bbox": [
+            56.69,
+            614.26,
+            326.65,
+            625.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "−a(a+2)",
+          "bbox": [
+            215.3,
+            630.51,
+            244.13,
+            636.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Ok = (−1)k[k + 1] = (−1)kv2k + lot",
+          "bbox": [
+            267.64,
+            630.76,
+            437.49,
+            646.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "f(a) = i−av",
+          "bbox": [
+            157.78,
+            632.95,
+            213.71,
+            646.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            227.89,
+            637.74,
+            231.54,
+            643.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "a+b+c",
+          "bbox": [
+            226.67,
+            652.03,
+            251.63,
+            660.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            179.24,
+            653.1,
+            184.99,
+            664.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0015",
+          "bbox": [
+            293.3,
+            653.1,
+            299.05,
+            664.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "va+b+c+ab+bc+ca−a2+b2+c2",
+          "bbox": [
+            360.75,
+            654.12,
+            476.29,
+            671.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a+b+c",
+          "bbox": [
+            153.9,
+            656.63,
+            175.73,
+            662.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "a+b+c",
+          "bbox": [
+            337.23,
+            656.63,
+            359.06,
+            662.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            237.03,
+            660.09,
+            241.27,
+            668.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "= (−1)",
+          "bbox": [
+            302.09,
+            660.5,
+            336.02,
+            671.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "θ(a, b, c) = O",
+          "bbox": [
+            90.76,
+            660.64,
+            152.39,
+            671.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "+ lot",
+          "bbox": [
+            480.91,
+            660.64,
+            504.51,
+            671.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            162.99,
+            663.12,
+            166.64,
+            669.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            346.31,
+            663.12,
+            349.97,
+            669.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            457.82,
+            663.12,
+            461.48,
+            669.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "−a+b+c",
+          "bbox": [
+            191.18,
+            665.64,
+            222.72,
+            673.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": ", a−b+c",
+          "bbox": [
+            223.92,
+            665.64,
+            254.92,
+            678.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ", a+b−c",
+          "bbox": [
+            256.12,
+            665.64,
+            287.12,
+            678.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            204.83,
+            673.8,
+            209.07,
+            681.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            240.33,
+            673.8,
+            244.56,
+            681.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            272.53,
+            673.8,
+            276.76,
+            681.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Oz",
+          "bbox": [
+            206.47,
+            683.29,
+            219.04,
+            695.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "−a+b+c",
+          "bbox": [
+            302.94,
+            683.3,
+            334.47,
+            691.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "a−b+c",
+          "bbox": [
+            378.18,
+            683.3,
+            403.13,
+            691.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "a+b−c",
+          "bbox": [
+            450.0,
+            683.3,
+            474.95,
+            691.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            232.86,
+            684.8,
+            238.61,
+            695.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0015 \u0014",
+          "bbox": [
+            275.93,
+            684.8,
+            289.25,
+            695.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0015 \u0014",
+          "bbox": [
+            348.17,
+            684.8,
+            361.49,
+            695.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0015 \u0014",
+          "bbox": [
+            419.81,
+            684.8,
+            433.13,
+            695.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0015",
+          "bbox": [
+            491.82,
+            684.8,
+            497.57,
+            695.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            254.5,
+            685.34,
+            259.57,
+            696.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            177.73,
+            689.81,
+            193.48,
+            700.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            316.6,
+            691.46,
+            320.83,
+            699.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            388.54,
+            691.46,
+            392.77,
+            699.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            460.37,
+            691.46,
+            464.6,
+            699.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "∆(a, b, c, α, β, γ) =",
+          "bbox": [
+            86.18,
+            692.33,
+            174.68,
+            703.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            500.61,
+            692.33,
+            509.09,
+            703.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a+b+c",
+          "bbox": [
+            244.79,
+            697.06,
+            269.75,
+            705.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "z −a+β+γ",
+          "bbox": [
+            294.25,
+            697.12,
+            341.52,
+            710.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "z −α+b+γ",
+          "bbox": [
+            366.48,
+            697.12,
+            413.15,
+            710.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "z −α+β+c",
+          "bbox": [
+            438.12,
+            697.12,
+            485.64,
+            710.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a+b+c",
+          "bbox": [
+            206.32,
+            699.14,
+            228.15,
+            705.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "O",
+          "bbox": [
+            196.5,
+            702.94,
+            204.81,
+            713.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            255.16,
+            705.11,
+            259.39,
+            713.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            215.41,
+            705.62,
+            219.06,
+            711.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            326.04,
+            705.81,
+            330.28,
+            713.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            397.98,
+            705.81,
+            402.22,
+            713.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            469.81,
+            705.81,
+            474.04,
+            713.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            183.47,
+            707.18,
+            187.41,
+            715.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": ") + lot",
+          "bbox": [
+            477.34,
+            717.76,
+            507.16,
+            733.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ",m−a+β+γ",
+          "bbox": [
+            265.79,
+            717.92,
+            307.01,
+            728.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": ",m−α+b+γ",
+          "bbox": [
+            350.47,
+            717.92,
+            391.25,
+            728.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": ",m−α+β+c",
+          "bbox": [
+            434.71,
+            717.92,
+            476.15,
+            728.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "+1)+g( −a+b+c",
+          "bbox": [
+            207.51,
+            718.17,
+            264.6,
+            728.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": ")+g( a−b+c",
+          "bbox": [
+            308.59,
+            718.17,
+            349.27,
+            728.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": ")+g( a+b−c",
+          "bbox": [
+            392.84,
+            718.17,
+            433.52,
+            728.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "(−1)m−a+b+c",
+          "bbox": [
+            88.11,
+            718.25,
+            147.64,
+            733.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "vg(m+1, a+b+c",
+          "bbox": [
+            149.33,
+            718.25,
+            206.31,
+            733.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            134.9,
+            724.73,
+            138.55,
+            730.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            193.57,
+            724.73,
+            197.22,
+            730.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            248.98,
+            724.73,
+            252.63,
+            730.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            293.58,
+            724.73,
+            297.23,
+            730.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            336.45,
+            724.73,
+            340.1,
+            730.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            378.04,
+            724.73,
+            381.69,
+            730.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            420.69,
+            724.73,
+            424.34,
+            730.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            462.42,
+            724.73,
+            466.07,
+            730.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "where g(n, k) = 2k(n −k) and 2m = a + b + c + α + β + γ −max(a + α, b + β, c + γ)",
+          "bbox": [
+            56.69,
+            737.68,
+            463.43,
+            748.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Our formulas agree with the integer normalization of [5]. The formula ∆is the quotient of the",
+          "bbox": [
+            68.65,
+            750.77,
+            538.15,
+            761.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "6j-symbol and a theta; it is in fact a Laurent polynomial. The summation range for ∆is ﬁnite as",
+          "bbox": [
+            56.69,
+            763.72,
+            538.18,
+            774.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "dictated by the binomials.",
+          "bbox": [
+            56.69,
+            776.67,
+            181.46,
+            787.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 48,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. Starting from a theta graph (left), we ﬁrst apply the A-move to both vertices, and again on one of the newly created vertices. Next change the framing on many edges. The numbers on each edge indicate the number of half twists present. Finally unzip the four edges (shown thickened) marked with r, s, t, u, respectively, to obtain the 0-framed diagram for the knot C(r, s, t, u)."
+      ],
+      "labels": [
+        {
+          "text": "COLORED JONES POLYNOMIALS WITHOUT TAILS",
+          "bbox": [
+            189.22,
+            36.52,
+            405.91,
+            44.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            534.2,
+            36.52,
+            538.43,
+            44.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "The colored Jones polynomial of any KTG can now be deﬁned by the following three equations.",
+          "bbox": [
+            68.65,
+            58.13,
+            527.45,
+            69.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "±(Γ), σ⟩= f(σ(e))±1⟨Γ, σ⟩",
+          "bbox": [
+            240.3,
+            73.72,
+            366.22,
+            88.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "⟨F e",
+          "bbox": [
+            229.04,
+            73.82,
+            245.74,
+            86.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(1)",
+          "bbox": [
+            56.69,
+            76.03,
+            70.61,
+            86.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Here F e",
+          "bbox": [
+            56.69,
+            92.27,
+            94.93,
+            104.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "±(Γ) means the result after applying framing change to edge e of the KTG Γ.",
+          "bbox": [
+            89.5,
+            93.93,
+            461.29,
+            106.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Oσ(e)",
+          "bbox": [
+            341.17,
+            111.68,
+            365.44,
+            124.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            292.6,
+            118.2,
+            308.35,
+            129.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "⟨U e(Γ), σ′⟩= ⟨Γ, σ⟩",
+          "bbox": [
+            198.34,
+            118.41,
+            290.77,
+            131.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(2)",
+          "bbox": [
+            56.69,
+            120.72,
+            70.61,
+            131.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "θ(σ(e), σ(b), σ(d))",
+          "bbox": [
+            311.37,
+            128.2,
+            395.72,
+            139.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "σ(e)",
+          "bbox": [
+            292.66,
+            136.81,
+            308.29,
+            144.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "The two colorings σ and σ′ agree on all edges except that U e(Γ) does not have edge e. The four edges",
+          "bbox": [
+            56.69,
+            147.97,
+            538.52,
+            162.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "in Γ adjacent to e must have the same colors as b and d in U e(Γ). Also, the summation is over all",
+          "bbox": [
+            56.69,
+            163.22,
+            538.42,
+            175.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "possible values of color of the missing edge σ(e). Most values yield zero because the factorials vanish.",
+          "bbox": [
+            56.69,
+            177.83,
+            538.31,
+            188.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The only values that may be non-zero are when σ(e) is between |σ′(b) −σ′(d)| and σ′(b) + σ′(d) and",
+          "bbox": [
+            56.69,
+            189.02,
+            538.55,
+            201.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "has the same parity. Finally,",
+          "bbox": [
+            56.69,
+            203.73,
+            193.21,
+            214.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "⟨Aw(Γ), σ′⟩= ⟨Γ, σ⟩∆(σ′(a), σ′(b), σ′(c), σ′(α), σ′(β), σ′(γ))",
+          "bbox": [
+            158.25,
+            219.32,
+            437.01,
+            232.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(3)",
+          "bbox": [
+            56.69,
+            221.63,
+            70.61,
+            232.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In this equation the colorings σ and σ′ again agree on all edges where it makes sense. The colors of",
+          "bbox": [
+            56.69,
+            235.58,
+            538.36,
+            250.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the six new edges are denoted a, α, b, β, c, γ as shown in Figure 2 and ∆is deﬁned above.",
+          "bbox": [
+            56.69,
+            252.49,
+            481.62,
+            263.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.2. As noted above a 0-framed knot K is a special case of a KTG with a single edge e.",
+          "bbox": [
+            56.69,
+            272.15,
+            538.57,
+            283.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In this case we denote its colored Jones polynomial by JK,n = ⟨K, σ⟩, where σ(e) = n −1.",
+          "bbox": [
+            56.69,
+            284.96,
+            486.67,
+            297.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We study the family of Montesinos knots C(r, s, t, u) shown in Figure 1. For technical reasons we",
+          "bbox": [
+            68.65,
+            304.77,
+            538.39,
+            315.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "restrict ourselves to s ≤−3 ≤3r, t, u all odd. And u < 0. A similar family was studied in [14].",
+          "bbox": [
+            56.69,
+            317.58,
+            507.4,
+            328.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A, A",
+          "bbox": [
+            142.38,
+            343.99,
+            158.09,
+            350.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "A, F",
+          "bbox": [
+            254.33,
+            343.99,
+            269.09,
+            350.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2(−r + s + t + u)",
+          "bbox": [
+            296.31,
+            362.88,
+            357.36,
+            369.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            319.3,
+            388.97,
+            324.01,
+            395.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−u",
+          "bbox": [
+            288.31,
+            392.88,
+            299.25,
+            399.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−u",
+          "bbox": [
+            348.29,
+            392.88,
+            359.22,
+            399.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            405.26,
+            403.87,
+            415.46,
+            410.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            452.24,
+            403.87,
+            462.44,
+            410.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−u −s",
+          "bbox": [
+            286.31,
+            410.86,
+            310.86,
+            417.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−u −s",
+          "bbox": [
+            335.29,
+            411.86,
+            359.84,
+            418.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            472.23,
+            423.95,
+            478.35,
+            430.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            271.32,
+            437.44,
+            275.02,
+            444.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            377.27,
+            437.44,
+            380.27,
+            444.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            331.29,
+            437.45,
+            335.05,
+            444.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            442.24,
+            448.94,
+            446.21,
+            455.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−r −s",
+          "bbox": [
+            287.31,
+            456.84,
+            311.07,
+            463.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−s −t",
+          "bbox": [
+            338.29,
+            456.84,
+            361.14,
+            463.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−r −t",
+          "bbox": [
+            309.31,
+            488.83,
+            332.31,
+            495.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 3.",
+          "bbox": [
+            92.56,
+            510.96,
+            144.77,
+            521.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Starting from a theta graph (left), we ﬁrst apply the A-move to both",
+          "bbox": [
+            158.54,
+            513.34,
+            502.66,
+            524.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "vertices, and again on one of the newly created vertices. Next change the framing on",
+          "bbox": [
+            92.56,
+            526.3,
+            502.34,
+            537.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "many edges. The numbers on each edge indicate the number of half twists present.",
+          "bbox": [
+            92.56,
+            539.25,
+            502.35,
+            550.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Finally unzip the four edges (shown thickened) marked with r, s, t, u, respectively, to",
+          "bbox": [
+            92.56,
+            552.2,
+            502.6,
+            563.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "obtain the 0-framed diagram for the knot C(r, s, t, u).",
+          "bbox": [
+            92.56,
+            565.15,
+            348.7,
+            576.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "To compute the colored Jones polynomial of K = C(r, s, t, u) we take the following steps (see also",
+          "bbox": [
+            68.65,
+            590.6,
+            538.41,
+            601.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "[13]). The ﬁrst step is to generate our knot K from the theta graph by KTG moves. One way to",
+          "bbox": [
+            56.69,
+            603.56,
+            538.39,
+            614.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "achieve this is shown in Figure 3. All edges should be thought of as bands with blackboard framing.",
+          "bbox": [
+            56.69,
+            616.51,
+            538.15,
+            627.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The numbers indicate half twists (not colors). Note that the unzip applied to a twisted edge produces",
+          "bbox": [
+            56.69,
+            629.46,
+            538.1,
+            640.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "two twisted bands that form a crossing as shown in the ﬁgure on the right. This is natural considering",
+          "bbox": [
+            56.69,
+            642.41,
+            538.13,
+            653.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "that the black lines stand for actual strips. Reading backwards and applying the above equations we",
+          "bbox": [
+            56.69,
+            655.36,
+            538.13,
+            666.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "may compute JK,n+1 as follows. The unzips yield four summations, the framing change multiplies",
+          "bbox": [
+            56.69,
+            668.31,
+            538.22,
+            680.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "everything by the factors f, the A moves produce the ∆terms and ﬁnally we are left with a single",
+          "bbox": [
+            56.69,
+            681.26,
+            538.31,
+            692.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "θ(2a, 2b, 2c). Note we have scaled the summation variables a, b, c, d to make them integers instead of",
+          "bbox": [
+            56.69,
+            694.22,
+            538.43,
+            705.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "even integers.",
+          "bbox": [
+            56.69,
+            707.17,
+            121.25,
+            718.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            336.82,
+            730.97,
+            352.57,
+            741.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "JC(r,s,t,u),n+1 = f(n)−2Wr(r,s,t)−2r−2s−2t+2u",
+          "bbox": [
+            116.8,
+            731.17,
+            316.64,
+            746.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "∆(2a, 2b, 2c, n, n, n)2×",
+          "bbox": [
+            372.26,
+            731.28,
+            478.47,
+            744.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a,b,c,d∈nP∩Z",
+          "bbox": [
+            318.95,
+            747.39,
+            370.44,
+            757.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "∆(2b, n, n, 2d, n, n)O2aO2bO2cO2df(2a)rf(2b)sf(2c)tf(2d)−uθ(2a, 2b, 2c)",
+          "bbox": [
+            125.86,
+            761.3,
+            468.21,
+            781.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "θ(2a, n, n)θ(2b, n, n)θ(2c, n, n)θ(2d, n, n)",
+          "bbox": [
+            247.54,
+            777.93,
+            437.0,
+            788.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

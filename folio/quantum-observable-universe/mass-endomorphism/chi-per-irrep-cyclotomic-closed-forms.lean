@@ -60,7 +60,7 @@ noncomputable def chi_V111_diff_closed (q : ℝ) : ℝ :=
 
 /-! ## Polynomial-form identities -/
 
--- Ref: [manuscript] rem:chi-per-irrep-cyclotomic-closed-forms §"V_(3)"
+-- Ref: [leitner2026] rem:chi-per-irrep-cyclotomic-closed-forms §"V_(3)"
 /-- V_(3) factored ↔ polynomial: `-(q^6 + q^4 - q^2 - 1)/(4q)`. -/
 theorem chi_V3_diff_polynomial_form (q : ℝ) (hq : q ≠ 0) :
     chi_V3_diff_closed q = -(q^6 + q^4 - q^2 - 1) / (4 * q) := by
@@ -68,7 +68,7 @@ theorem chi_V3_diff_polynomial_form (q : ℝ) (hq : q ≠ 0) :
   field_simp
   ring
 
--- Ref: [manuscript] rem:chi-per-irrep-cyclotomic-closed-forms §"V_(2,1)"
+-- Ref: [leitner2026] rem:chi-per-irrep-cyclotomic-closed-forms §"V_(2,1)"
 /-- V_(2,1) factored ↔ polynomial: `(-q^6 + q^4 - q^2 + 1)/(4q^3)`. -/
 theorem chi_V21_diff_polynomial_form (q : ℝ) (hq : q ≠ 0) :
     chi_V21_diff_closed q = (-q^6 + q^4 - q^2 + 1) / (4 * q^3) := by
@@ -76,7 +76,7 @@ theorem chi_V21_diff_polynomial_form (q : ℝ) (hq : q ≠ 0) :
   field_simp
   ring
 
--- Ref: [manuscript] rem:chi-per-irrep-cyclotomic-closed-forms §"V_(1,1,1)"
+-- Ref: [leitner2026] rem:chi-per-irrep-cyclotomic-closed-forms §"V_(1,1,1)"
 /-- V_(1,1,1) factored ↔ polynomial:
     `(-q^6 - q^4 + q^2 + 1) / (4 q^5)`. -/
 theorem chi_V111_diff_polynomial_form (q : ℝ) (hq : q ≠ 0) :
@@ -87,7 +87,7 @@ theorem chi_V111_diff_polynomial_form (q : ℝ) (hq : q ≠ 0) :
 
 /-! ## Conjugate-partition symmetry V_(3) ↔ V_(1,1,1) -/
 
--- Ref: [manuscript] rem:chi-per-irrep-cyclotomic-closed-forms §"q ↔ q⁻¹"
+-- Ref: [leitner2026] rem:chi-per-irrep-cyclotomic-closed-forms §"q ↔ q⁻¹"
 /-- The closed forms for V_(3) and V_(1,1,1) share the same numerator
     polynomial `-(q² + 1)²(q² − 1)`; they differ only by the
     denominator power (q vs q⁵). Equivalently:
@@ -103,7 +103,7 @@ The probe `probe_per_wedderburn_block_ck.py` reports the ε^k
 coefficients of each (χ_n − χ_p) at q = 1 + ε for k = 0..12.
 We cross-check the closed forms at q = 2 (ε = 1). -/
 
--- Ref: [manuscript] rem:chi-per-irrep-cyclotomic-closed-forms
+-- Ref: [leitner2026] rem:chi-per-irrep-cyclotomic-closed-forms
 /-- At q = 1: all three differences vanish (proton/neutron
     indistinguishable at the classical limit). -/
 theorem chi_V3_diff_at_one : chi_V3_diff_closed 1 = 0 := by
@@ -127,21 +127,21 @@ noncomputable def cyclotomic_4_factor (q : ℝ) : ℝ :=
 noncomputable def cyclotomic_8_factor (q : ℝ) : ℝ :=
   (q^4 + 1) * (q^2 - 1)
 
--- Ref: [manuscript] rem:chi-per-irrep-cyclotomic-closed-forms
+-- Ref: [leitner2026] rem:chi-per-irrep-cyclotomic-closed-forms
 /-- V_(3) closed form re-expressed via the cyclotomic factor. -/
 theorem chi_V3_diff_via_cyclotomic (q : ℝ) (hq : q ≠ 0) :
     chi_V3_diff_closed q = -cyclotomic_4_factor q / (4 * q) := by
   unfold chi_V3_diff_closed cyclotomic_4_factor
   ring
 
--- Ref: [manuscript] rem:chi-per-irrep-cyclotomic-closed-forms
+-- Ref: [leitner2026] rem:chi-per-irrep-cyclotomic-closed-forms
 /-- V_(2,1) closed form re-expressed via the cyclotomic factor. -/
 theorem chi_V21_diff_via_cyclotomic (q : ℝ) (hq : q ≠ 0) :
     chi_V21_diff_closed q = -cyclotomic_8_factor q / (4 * q^3) := by
   unfold chi_V21_diff_closed cyclotomic_8_factor
   ring
 
--- Ref: [manuscript] rem:chi-per-irrep-cyclotomic-closed-forms
+-- Ref: [leitner2026] rem:chi-per-irrep-cyclotomic-closed-forms
 /-- V_(1,1,1) closed form re-expressed via the cyclotomic factor. -/
 theorem chi_V111_diff_via_cyclotomic (q : ℝ) (hq : q ≠ 0) :
     chi_V111_diff_closed q = -cyclotomic_4_factor q / (4 * q^5) := by

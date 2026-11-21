@@ -8,7 +8,9 @@ pages: 4-5
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
 toc_source: inferred
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
+Standard relations of MPVs
 If the level N
 > 3 then there are many non-trivial linear relations in
 MPV(1, N) of weight one whose structure is clear to us. Multiplied by MPVs
@@ -37,4 +39,3 @@ MPVs) are consequences of RDS. When level N = 2 we believe that all lin-
 ear relations among the alternating Euler sums are consequences of RDS and
 RDT. Further, in this case, the RDT should correspond to the doubling and
 generalized doubling relations of [5].
-1.3

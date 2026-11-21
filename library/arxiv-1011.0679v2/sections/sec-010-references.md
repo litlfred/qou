@@ -8,6 +8,7 @@ pages: 21-22
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
 toc_source: outline
+doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
 ---
 [Art] J. Arthur, “On elliptic tempered characters”, Acta. Math. 171 (1993), 73–130
 [BeDe] J.N. Bernstein, P. Deligne, “Le “centre” de Bernstein”, pp. 1–32 in: Repr´esentations des

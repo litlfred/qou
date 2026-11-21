@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e1a296d09495",
+          "ts": "689434b24dce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:25.399Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "proof:30-34 'The canonical N = 3 correction is anchored, per the registry anchoring … at the value level for q ≠ 1 the coefficient remains a near-match' — c_3 → −2 is assumed, not derived; proof:15-24 c_2 = −1 restates the assumed N=2 factor",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1143,7 +1159,7 @@
           "in_degree": 0,
           "cone_size": 134,
           "depth": 48,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1431,7 +1447,7 @@
         "reviewed_at": "2026-08-15T10:31:00.318Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "6 stylistic spaced dashes in 419 words (1.43/100w) \u2014 restructure into sentences"
+        "evidence": "6 stylistic spaced dashes in 419 words (1.43/100w) — restructure into sentences"
       },
       {
         "field_hash": {
@@ -1715,6 +1731,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:40:04.290Z",
+  "updated_at": "2026-11-15T21:57:25.399Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2104.14491v1/sections/sec-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "C.1 Simplest knots",
+  "pageStart": 19,
+  "pageEnd": 19,
+  "contains": [
+    "library/arxiv-2104.14491v1/blocks/prose-sec-028"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.14491v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.14491v1/manifest.jsonld",
+  "provenance": "ingested"
+}

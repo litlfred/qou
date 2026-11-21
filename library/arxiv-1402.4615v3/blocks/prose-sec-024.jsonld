@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1402.4615v3/blocks/prose-sec-024",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Error term",
-  "pageStart": 45,
-  "pageEnd": 50,
-  "text": "../sections/sec-024-74-error-term.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1402.4615v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1402.4615v3",
+  "title": "Projection on functions on Young diagrams of size n",
+  "pageStart": 32,
+  "pageEnd": 33,
+  "text": "../sections/sec-024-42-projection-on-functions-on-young-diagrams-of.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1402.4615v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1402.4615v3/manifest.jsonld",
   "provenance": "ingested"
 }

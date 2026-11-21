@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Introduction. This manuscript is the third in a series of six papers",
-  "pageStart": 2,
-  "pageEnd": 5,
+  "title": "it",
+  "pageStart": 22,
+  "pageEnd": 32,
   "contains": [
-    "library/pjm-v161-n1-p02-p/blocks/prose-sec-001"
+    "library/pjm-v161-n1-p02-p/blocks/prose-sec-001",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-01",
+    "library/pjm-v161-n1-p02-p/blocks/prop-sec-001-02",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-03",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-04",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
   "provenance": "ingested"
 }

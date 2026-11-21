@@ -1,0 +1,49 @@
+4.1, this argument is not partially rigorous, since we do not estimate the error terms of
+such solutions. In order to complete their proofs, we show how to estimate such solutions
+rigorously in this appendix. We explain 1-, 2-, 3-variable cases in Sections A.1, A.2, A.3
+respectively.
+
+A.1 Estimate of solutions of (35)
+
+In this section, we explain how to estimate solutions in 1-variable case. We explain it for
+solutions of (35); we can estimate solutions in other 1-variable cases in similar ways.
+
+As mentioned in Section 3.2, there are exactly two solutions of (35) in 0 <t < 0.5. We
+put them to be tmin and tmax (such that tin < tmax). AS we mentioned in Remark 3.1,
+we give a rigorous proof of estimates of them in the following lemma.
+
+Lemma A.1. 0.03 < thin and tmax < 0.4.
+Proof. We put
+1
+P(t) = 2A(t)-—<, + 2A(z).
+
+Then, (35) is rewritten as P(t) = 0. Since
+1
+P(0.03) = —0.020344... < 0, P(e) = 0.142571... > 0, P(0.4) = —0.045188... < 0,
+
+we have that
+
+1
+0.03 < tmin < 6 < tmax < 0.4,
+
+as required. Oo
+
+A.2 Estimate of a solution of (36)
+
+In this section, we explain how to estimate a solution in 2-variable case. We explain it
+for a solution of (36); we can estimate solutions in other 2-variable cases in similar ways.
+
+As mentioned in Section 3.2, there are exactly two solutions of (36). We put Wmax to
+be w of the solution whose w is the larger one. As we mentioned in Remark 3.2, we give
+a rigorous proof of an estimate of Wmax in the following lemma.
+
+Lemma A.2. Wax < 0.94.
+
+Proof. The system of equations (36) is rewritten
+
+A(w — 2s) + A(s)— 12, = 0,
+2A'(w— 2s) = As).
+
+Since A’(t) = — log 2sin xt, the second equation is rewritten
+
+2sin? r(w — 2s) = sinrs.

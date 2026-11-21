@@ -2,45 +2,264 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0304010v1",
  "source_sha256": "fc2296c027b3feb0",
- "brief": "KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS — Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn.",
- "extended": "**KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS**\n\n*Vladimir Ivanov and Grigori Olshanski*\n\n49 pp, 5 sections.\n\n**Abstract.** Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn. That is, the weight Mn(λ ) of a diagram λ equals dim 2 λ/n !, where dim λ denotes the dimension of the irreducible representation of the symmetric group Sn indexed by λ . As n → ∞ , the boundary of the (appropriately rescaled) random shape λ concentrates near a curve Ω (Logan– Shepp 1977, Vershik–Kerov 1977). In 1993, Kerov announced a rema rkable theorem describing Gaussian ﬂuctuations around the limit shape Ω. Here we propose a re- construction of his proof. It is largely based on Kerov’s unpubli shed work notes, 1999.\n\n**Outline.** References; 2 (ω(x)−| x|). (2.1); 4.10 Thus, the degree of ⟨f⟩n does not exceed ; 2 (¯λ(x)− Ω( x)), x ∈ R. (7.1); 2 (p2\n\n**Extracted claims (proposals, not verified).**\n- Theorem 6.1: Choose a sequence {ξk}k=2,3,... of independent standard Gaussian random vari-\n- Theorem 6.1: can be generalized as follows:\n- Theorem 6.5: Let ρ range over the set of all partitions. We have\n- Theorem 8.6: As n → ∞, the random measures ˆλ concentrate near the Dirac mass at the\n- Theorem 7.1: , we will not repeat all the details.\n- Theorem 10.2: Fix an arbitrary A > 1. For any partition ρ and",
+ "brief": "Kerov's central limit theorem for the Plancherel measure on Young diagrams — Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn.",
+ "extended": "**Kerov's central limit theorem for the Plancherel measure on Young diagrams**\n\n*Vladimir Ivanov and Grigori Olshanski*\n\n49 pp, 49 sections.\n\n**Abstract.** Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn. That is, the weight Mn(λ) of a diagram λ equals dim2 λ/n!, where dim λ denotes the dimension of the irreducible representation of the symmetric group Sn indexed by λ. As n →∞, the boundary of the (appropriately rescaled) random shape λ concentrates near a curve Ω(Logan– Shepp 1977, Vershik–Kerov 1977). In 1993, Kerov announced a remarkable theorem describing Gaussian ﬂuctuations around the limit shape Ω. Here we propose a re- construction of his proof. It is largely based on Kerov’s unpublished work notes, 1999.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
  "tokens": {
   "brief": 47,
-  "extended": 347
+  "extended": 238
  },
  "sections": [
   {
-   "id": "sec-000-references",
-   "title": "References",
-   "pages": "1-9"
+   "id": "page-001",
+   "title": "Page 1",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-2-ωx-x-21",
-   "title": "(ω(x)−| x|). (2.1)",
-   "pages": "9-27"
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
   },
   {
-   "id": "sec-002-410-thus-the-degree-of-fn-does-not-exceed-1",
-   "title": "Thus, the degree of ⟨f⟩n does not exceed 1",
-   "pages": "27-33"
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
   },
   {
-   "id": "sec-003-2-λx-ω-x-x-r-71",
-   "title": "(¯λ(x)− Ω( x)), x ∈ R. (7.1)",
-   "pages": "33-40"
+   "id": "page-004",
+   "title": "Page 4",
+   "pages": "4-4"
   },
   {
-   "id": "sec-004-2-p2",
-   "title": "(p2",
-   "pages": "40-49"
+   "id": "page-005",
+   "title": "Page 5",
+   "pages": "5-5"
+  },
+  {
+   "id": "page-006",
+   "title": "Page 6",
+   "pages": "6-6"
+  },
+  {
+   "id": "page-007",
+   "title": "Page 7",
+   "pages": "7-7"
+  },
+  {
+   "id": "page-008",
+   "title": "Page 8",
+   "pages": "8-8"
+  },
+  {
+   "id": "page-009",
+   "title": "Page 9",
+   "pages": "9-9"
+  },
+  {
+   "id": "page-010",
+   "title": "Page 10",
+   "pages": "10-10"
+  },
+  {
+   "id": "page-011",
+   "title": "Page 11",
+   "pages": "11-11"
+  },
+  {
+   "id": "page-012",
+   "title": "Page 12",
+   "pages": "12-12"
+  },
+  {
+   "id": "page-013",
+   "title": "Page 13",
+   "pages": "13-13"
+  },
+  {
+   "id": "page-014",
+   "title": "Page 14",
+   "pages": "14-14"
+  },
+  {
+   "id": "page-015",
+   "title": "Page 15",
+   "pages": "15-15"
+  },
+  {
+   "id": "page-016",
+   "title": "Page 16",
+   "pages": "16-16"
+  },
+  {
+   "id": "page-017",
+   "title": "Page 17",
+   "pages": "17-17"
+  },
+  {
+   "id": "page-018",
+   "title": "Page 18",
+   "pages": "18-18"
+  },
+  {
+   "id": "page-019",
+   "title": "Page 19",
+   "pages": "19-19"
+  },
+  {
+   "id": "page-020",
+   "title": "Page 20",
+   "pages": "20-20"
+  },
+  {
+   "id": "page-021",
+   "title": "Page 21",
+   "pages": "21-21"
+  },
+  {
+   "id": "page-022",
+   "title": "Page 22",
+   "pages": "22-22"
+  },
+  {
+   "id": "page-023",
+   "title": "Page 23",
+   "pages": "23-23"
+  },
+  {
+   "id": "page-024",
+   "title": "Page 24",
+   "pages": "24-24"
+  },
+  {
+   "id": "page-025",
+   "title": "Page 25",
+   "pages": "25-25"
+  },
+  {
+   "id": "page-026",
+   "title": "Page 26",
+   "pages": "26-26"
+  },
+  {
+   "id": "page-027",
+   "title": "Page 27",
+   "pages": "27-27"
+  },
+  {
+   "id": "page-028",
+   "title": "Page 28",
+   "pages": "28-28"
+  },
+  {
+   "id": "page-029",
+   "title": "Page 29",
+   "pages": "29-29"
+  },
+  {
+   "id": "page-030",
+   "title": "Page 30",
+   "pages": "30-30"
+  },
+  {
+   "id": "page-031",
+   "title": "Page 31",
+   "pages": "31-31"
+  },
+  {
+   "id": "page-032",
+   "title": "Page 32",
+   "pages": "32-32"
+  },
+  {
+   "id": "page-033",
+   "title": "Page 33",
+   "pages": "33-33"
+  },
+  {
+   "id": "page-034",
+   "title": "Page 34",
+   "pages": "34-34"
+  },
+  {
+   "id": "page-035",
+   "title": "Page 35",
+   "pages": "35-35"
+  },
+  {
+   "id": "page-036",
+   "title": "Page 36",
+   "pages": "36-36"
+  },
+  {
+   "id": "page-037",
+   "title": "Page 37",
+   "pages": "37-37"
+  },
+  {
+   "id": "page-038",
+   "title": "Page 38",
+   "pages": "38-38"
+  },
+  {
+   "id": "page-039",
+   "title": "Page 39",
+   "pages": "39-39"
+  },
+  {
+   "id": "page-040",
+   "title": "Page 40",
+   "pages": "40-40"
+  },
+  {
+   "id": "page-041",
+   "title": "Page 41",
+   "pages": "41-41"
+  },
+  {
+   "id": "page-042",
+   "title": "Page 42",
+   "pages": "42-42"
+  },
+  {
+   "id": "page-043",
+   "title": "Page 43",
+   "pages": "43-43"
+  },
+  {
+   "id": "page-044",
+   "title": "Page 44",
+   "pages": "44-44"
+  },
+  {
+   "id": "page-045",
+   "title": "Page 45",
+   "pages": "45-45"
+  },
+  {
+   "id": "page-046",
+   "title": "Page 46",
+   "pages": "46-46"
+  },
+  {
+   "id": "page-047",
+   "title": "Page 47",
+   "pages": "47-47"
+  },
+  {
+   "id": "page-048",
+   "title": "Page 48",
+   "pages": "48-48"
+  },
+  {
+   "id": "page-049",
+   "title": "Page 49",
+   "pages": "49-49"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

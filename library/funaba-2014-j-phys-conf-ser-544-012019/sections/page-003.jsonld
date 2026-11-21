@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/funaba-2014-j-phys-conf-ser-544-012019/sections/page-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 3",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "contains": [
+    "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-003",
+    "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/thm-page-003-01",
+    "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/cor-page-003-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/funaba-2014-j-phys-conf-ser-544-012019/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/funaba-2014-j-phys-conf-ser-544-012019/manifest.jsonld",
+  "provenance": "ingested"
+}

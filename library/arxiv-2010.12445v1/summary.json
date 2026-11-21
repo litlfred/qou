@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2010.12445v1",
  "source_sha256": "16e9ca22ecc1f296",
- "brief": "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect",
- "extended": "**STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI**\n\n28 pp, 11 sections.\n\n**Abstract.** Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect (X ), we are going to introduce the stack of ﬁber functors Fib X ,C with source C, which comes equipped with a map PC : X → FibX ,C and a functor G : C → Vect(FibX ,C). If C generates QCoh (X ) and X is an fpqc stack with quasi-aﬃne diagonal, we show that PC : X → FibX ,C is an equivalence, as it happens by Tannaka’s reconstructio n when X is an aﬃne gerbe over a ﬁeld. In general, under mild assumption o n C, e.g. C = Vect(X ), we show that Fib X ,C is a quasi-compact fpqc stack with aﬃne diagonal and that the image G(C) generates QCoh (FibX ,C).\n\n**Outline.** Introduction; Notation; Acknowledgments; 1 Preliminaries; 1.2 Generalized frame bundles; 2 Pseudo-affine stacks; 3 Tannaka Reconstruction; 5 The stack of fiber functors; 5.1 Proof of Theorem 5.1; 5.2 Comparing vector bundles; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A (3.2, 3.3). Let X be a quasi-compact stack over R for the fpqc topology with quasi-\n- Theorem 1.2: ], where R is a Dedekind domain, and [ Sch13, Theorem 1.3.2] for general rings R),\n- Theorem: B (5.1). Let X be a quasi-compact ﬁbered category over R and C ⊆ VectX be a full\n- Theorem 1.6: Let X be a quasi-compact ﬁbered category over R and D ⊆ Vect(X ) be a full\n- Theorem 2.7: A quasi-compact ﬂat monomorphism of algebraic stacks is quas i-aﬃne.\n- Theorem 3.2: Let X be a quasi-compact fpqc stack over R with quasi-aﬃne diagonal, A be an",
+ "brief": "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are",
+ "extended": "**STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION**\n\n*FABIO TONINI*\n\n28 pp, 15 sections.\n\n**Abstract.** Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are going to introduce the stack of ﬁber functors FibX,C with source C, which comes equipped with a map PC : X →FibX,C and a functor G : C →Vect(FibX,C). If C generates QCoh(X) and X is an fpqc stack with quasi-aﬃne diagonal, we show that PC : X →FibX,C is an equivalence, as it happens by Tannaka’s reconstruction when X is an aﬃne gerbe over a ﬁeld. In general, under mild assumption on C, e.g. C = Vect(X), we show that FibX,C is a quasi-compact fpqc stack with aﬃne diagonal and that the image G(C) generates QCoh(FibX,C).\n\n**Outline.** Front matter; Introduction; Notation; Acknowledgments; 1 Preliminaries; 1.1 Monoidal functors and their sheafification; 1.2 Generalized frame bundles; 2 Pseudo-affine stacks; 3 Tannaka Reconstruction; 4 Pseudo-Affine sheaves revisited; 5 The stack of fiber functors; 5.1 Proof of Theorem 5.1; 5.2 Comparing vector bundles; 5.3 The case C={OX}; References",
  "tokens": {
-  "brief": 49,
-  "extended": 410
+  "brief": 48,
+  "extended": 285
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -27,40 +32,55 @@
   {
    "id": "sec-003-1-preliminaries",
    "title": "Preliminaries",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-11-monoidal-functors-and-their-sheafification",
+   "title": "Monoidal functors and their sheafification",
    "pages": "4-6"
   },
   {
-   "id": "sec-004-12-generalized-frame-bundles",
+   "id": "sec-005-12-generalized-frame-bundles",
    "title": "Generalized frame bundles",
    "pages": "6-10"
   },
   {
-   "id": "sec-005-2-pseudo-affine-stacks",
+   "id": "sec-006-2-pseudo-affine-stacks",
    "title": "Pseudo-affine stacks",
    "pages": "10-14"
   },
   {
-   "id": "sec-006-3-tannaka-reconstruction",
+   "id": "sec-007-3-tannaka-reconstruction",
    "title": "Tannaka Reconstruction",
-   "pages": "14-18"
+   "pages": "14-17"
   },
   {
-   "id": "sec-007-5-the-stack-of-fiber-functors",
+   "id": "sec-008-4-pseudo-affine-sheaves-revisited",
+   "title": "Pseudo-Affine sheaves revisited",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-009-5-the-stack-of-fiber-functors",
    "title": "The stack of fiber functors",
    "pages": "18-20"
   },
   {
-   "id": "sec-008-51-proof-of-theorem-51",
+   "id": "sec-010-51-proof-of-theorem-51",
    "title": "Proof of Theorem 5.1",
    "pages": "20-23"
   },
   {
-   "id": "sec-009-52-comparing-vector-bundles",
+   "id": "sec-011-52-comparing-vector-bundles",
    "title": "Comparing vector bundles",
-   "pages": "23-27"
+   "pages": "23-25"
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-012-53-the-case-cox",
+   "title": "The case C={OX}",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-013-references",
    "title": "References",
    "pages": "27-28"
   }
@@ -69,8 +89,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

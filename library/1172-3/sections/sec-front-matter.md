@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1172-3.pdf
 source_sha256: e9c32f59e9db7970
 toc_source: inferred
+doc_brief: "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS — 4 sections: Front matter; RESULTS; THE KAUFFMAN BRACKET SKEIN MODULE"
 ---
 ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE
 LINKS
@@ -37,7 +38,6 @@ This work was partially supported by Research Fellowships of the Japan Society f
 of Science for Young Scientists.
 数理解析研究所講究録
 1172 巻2000 年34-43
-34
 KAZUO HABIRO
 2. KAUFPMAN BRACKET SKEIN MODULES
 Let us recall the deﬁnition of the Kauﬀman bracket skein module

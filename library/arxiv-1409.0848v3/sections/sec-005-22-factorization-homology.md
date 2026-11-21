@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
 latex_coverage_ratio: 0.972
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 The following is the main definition and object of interest in the present paper, that of factorization homology with coefficients in a disk algebra.
 

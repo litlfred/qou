@@ -8,6 +8,7 @@ pages: 2-2
 source_pdf: 0006111v2.pdf
 source_sha256: e024febd3d0886a3
 toc_source: undetermined
+doc_brief: "arXiv:hep-th/0006111v2 14 Jul 2003 — 6 sections: Page 1; Page 2; Page 3"
 ---
 where the integrals are over complex, real, and quaternion real (N + ν) × N matrices W for β = 2, 1, 4, respectively.
 These chiral random matrix ensembles provide exactly equivalent descriptions of the eﬀective ﬁeld theory partition

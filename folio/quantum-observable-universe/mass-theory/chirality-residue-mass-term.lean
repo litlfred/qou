@@ -16,7 +16,7 @@ The chirality cells are exactly those Wedderburn blocks satisfying
 `D_q²(λ) = 0` in the q-Dirac cell scanner — the gauge-invariant
 background per `prop:confinement-categorical`.
 
--- Ref: [manuscript] prop:chirality-residue-mass-term
+-- Ref: [leitner2026] prop:chirality-residue-mass-term
 -/
 
 namespace QOU.WedderburnMass
@@ -46,7 +46,7 @@ theorem mass_tower_split_by_predicate
     ∑ lam ∈ parts.filter P, alpha (lam.length - 1) * m_lambda lam
     + ∑ lam ∈ parts.filter (fun lam => ¬ P lam), alpha (lam.length - 1) * m_lambda lam
     := by
-  -- Ref: [manuscript] prop:chirality-residue-mass-term, Step 1.
+  -- Ref: [leitner2026] prop:chirality-residue-mass-term, Step 1.
   -- Structural refinement; no analytic content beyond the unified
   -- mass formula proposition.
   simpa using

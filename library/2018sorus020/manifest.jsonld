@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -60,10 +60,12 @@
     "library/2018sorus020/sections/sec-045",
     "library/2018sorus020/sections/sec-046",
     "library/2018sorus020/sections/sec-047",
-    "library/2018sorus020/sections/sec-048"
+    "library/2018sorus020/sections/sec-048",
+    "library/2018sorus020/sections/sec-049",
+    "library/2018sorus020/sections/sec-050"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "2018sorus020",
     "title_source": "pdf-info",

@@ -1,0 +1,627 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2201.05665v1",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "2",
+   "text": "β PN",
+   "marks": [
+    {
+     "page": 2,
+     "context": "ln Px= −x"
+    },
+    {
+     "page": 3,
+     "context": "ln Px= −x"
+    },
+    {
+     "page": 3,
+     "context": "x+a"
+    },
+    {
+     "page": 3,
+     "context": "x"
+    },
+    {
+     "page": 3,
+     "context": "ln Px= −x"
+    },
+    {
+     "page": 3,
+     "context": "dxln Px= c1x + c"
+    }
+   ],
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p003-3",
+   "page": 3,
+   "mark": "1",
+   "text": "Anexplicitformulaforc2(x),intermsoftheRiemanntheta-function,wasobtainedlaterin[DIZ].",
+   "marks": [
+    {
+     "page": 3,
+     "context": "4 ln x + c0 +a"
+    },
+    {
+     "page": 3,
+     "context": "dxln Px= c"
+    },
+    {
+     "page": 3,
+     "context": "whichwasdescribeduptothesolutionofaJacobiinversionproblem"
+    }
+   ],
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "2",
+   "text": "A similar representation for the sine-kernel determinant (involving, this time, a special solution of the ﬁfth Painlev´e equation) was given earlier in [JMMS].",
+   "marks": [
+    {
+     "page": 4,
+     "context": "(s −t)u"
+    },
+    {
+     "page": 4,
+     "context": "astings-McLeod solution to the second Painlev´e transcendent"
+    }
+   ],
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "3",
+   "text": "HastingsandMcLeodderived(3.9)usingtheinversescatteringtransformwhichwasaprecursorofthe Riemann-Hilbert method.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "3s"
+    },
+    {
+     "page": 4,
+     "context": "utt= tu + 2u"
+    },
+    {
+     "page": 4,
+     "context": "3t"
+    },
+    {
+     "page": 5,
+     "context": "ptoticbehaviorofu(t)att = −∞,whichisdescribed[HaMc]asfollows"
+    },
+    {
+     "page": 5,
+     "context": "ln F2(t) =t"
+    }
+   ],
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p005-2",
+   "page": 5,
+   "mark": "4",
+   "text": "Thisconjecturewasindependentlyprovedin[DIK]and[BBD].Also,in[BBD]similarasymptoticresults were established for the other two Tracy-Widom distributions.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "whereζ(s)istheRiemannzeta-function"
+    }
+   ],
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p005-3",
+   "page": 5,
+   "mark": "5",
+   "text": "ItshouldbenotedthattheHastings-McLeodsolutionisveryunstable;indeed,asmallchangeinthe pre-exponential numerical factor in the normalization condition (3.7) yields a completely diﬀerent type of behavior of u(x) for negative x, including the appearance of singularities (e.g. see again [FIKN] ). Herein lies the importance of the knowledge of the behavior (3.9) in order to adjust the numerical procedure appropriately. Said diﬀerently, knowledge of the connection formulae makes it possible to transform an unstable ODE initial value problem into a stable ODE boundary value problem.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "forthenumericalevaluation"
+    }
+   ],
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p005-4",
+   "page": 5,
+   "mark": "6",
+   "text": "Anintegraloperatorwithkernel(3.12)isaspecialcaseofaso-called“integrableFredholmoperator”,i.e. an integral operator whose kernel is of the form Pm",
+   "marks": [
+    {
+     "page": 5,
+     "context": "nyapplicationsrelatedtorandommatricesandstatisticalmechanics"
+    }
+   ],
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "7",
+   "text": "TheLax-integrabilityoftheTracy-Widomsystemassociatedwiththekernel(3.12)wasprovenin[Pal], where this system was identiﬁed as a special case of isomonodromy deformation equations and the Fredholm determinant det(1 −K) was identiﬁed as the corresponding τ-function.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "senseofLax"
+    }
+   ],
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "8",
+   "text": "Thismethoddatesbackto1931workofHansBethe[Bet]instudyingtheHeisenbergXXXspinchain [Hei].",
+   "marks": [
+    {
+     "page": 11,
+     "context": "hain and exploiting the ideas of the coordinate Bethe Ansatz"
+    }
+   ],
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-006"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p003-2",
+   "page": 3,
+   "mark": "j",
+   "text": "=1λ2",
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p005-5",
+   "page": 5,
+   "mark": "j",
+   "text": "=1fj(z)hj(z′) z, z′ ∈C, K(z, z′) = , (3.13) z −z′",
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "2",
+   "text": "m",
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "235",
+   "text": "(1997). [DKMVZ1] P. A. Deift, T. Kriecherbauer, K. D. T-R. McLaughlin, S. Venakides, X. Zhou, Uniform asymp- totics for polynomials orthogonal with respect to varying exponential weights and applications to universality questions in random matrix theory, Comm. Pure Appl. Math. 52, 1335 – 1425 (1999). [DKMVZ2] P. A. Deift, T. Kriecherbauer, K. T-R. McLaughlin, S. Venakides, X. Zhou, Strong asymptotics of orthogonal polynomials with respect to exponential weights. Comm. Pure Appl. Math. 52, 149 – 1552 (1999). [dCM] J. des Cloizeaux and M. L. Mehta, Asymptotic behavior of spacing distributions for the eigenvalues of random matrices, J. Math. Phys., 14, 1648–1650 (1973). [DBT] T. A. Driscoll, F. Bornemann, and L. N. Trefethen, The chebop system for automatic solution of diﬀerential equations, BIT, 48 , 701–723 (2008). [Dys1] F. Dyson, Statistical theory of the energy levels of complex systems, parts I, II, III, J. Math. Phys. 3,",
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p015-2",
+   "page": 15,
+   "mark": "140",
+   "text": "– 156 (1962). [Dys2] F. Dyson, Fredholm determinants and inverse scattering problems, Commun. Math. Phys. 47, 171-183 (1976). [Erd] L. Erdos, Universality of Wigner random matrices: a survey of recent results Uspekhi Mat. Nauk 66, Issue 3(399), 67–198 (2011). [Ehr] T. Ehrhardt, Dyson’s constant in the asymptotics of the Fredholm determinant of the sine kernel. Comm. Math. Phys. 262, 317 – 341 (2006).",
+   "block": "library/arxiv-2201.05665v1/blocks/prose-sec-007"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=0(a"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=0(ak, b"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "k=0(ak, bk)be"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "k=0(ak, bk)beaunionof"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=0J"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "Ksine(z, z′) =sin"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "π,xb"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "4 ln"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "4 ln x + c"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "4 ln"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "4 ln x + c"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "dxln P"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "π,"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "dxln P"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "dxln Px= c1"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2N)2"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2N)21/2N"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "3"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "2√π"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "2√πt−1/4"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "3"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "F1(t) = F"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "F"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "8 ln(−t) + c"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "andφ(z),ψ(z)areC"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "P"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "j,i=1"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "j,i=1cijφ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "j,i=1cijφj(z)φ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "antisymmetricandφj(z)areC"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "Nβ"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j=1V (λ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=1V (λ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(λj−λk)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ZN∼e−N"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "ZN∼e−N2F"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "∼−N"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 8,
+   "mark": "g",
+   "context": "N2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "standsforthepartitionfunctionofGUE(V (λ) = λ"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "ortantcriticalphenomenonistheevenquarticpotentialV (λ) = t4λ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "criticalphenomenonistheevenquarticpotentialV (λ) = t4λ4+ t2λ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "4t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "4t2 λ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(t −1)N"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(t −1)2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(t −1)22/3N"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ZGauss= F"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N(t) = e−N"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "N(t) = e−N2"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "N(t) = e−N2e"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "N(t) = e−N2e0(t)+e"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "χ"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "χ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "0≤s1≤···≤sN−1≤t(B"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "0≤s1≤···≤sN−1≤t(B1(0, s"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "0≤s1≤···≤sN−1≤t(B1(0, s1) + B"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "0≤s1≤···≤sN−1≤t(B1(0, s1) + B2(s"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "0≤s1≤···≤sN−1≤t(B1(0, s1) + B2(s1, s"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "dtP"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "dtPy(x;"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "dtPy(x; t) = ∆p,qP"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "dtPy(x; t) = ∆p,qPy(x;"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "ξ"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "ξx−y−1eϵ(ξ)"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "eϵ(ξ"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "eϵ(ξj)"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "(1 −ξ)"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "(1 −ξ)j−iξ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "(1 −ξ)j−iξx"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "(1 −ξ)j−iξxi−y"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "(1 −ξ)j−iξxi−yj−1eϵ(ξ)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "0 < σ< ρ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "= F"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "c2t"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "= F"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "= F1(s)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "σ= ρ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "c2t"
+  }
+ ]
+}

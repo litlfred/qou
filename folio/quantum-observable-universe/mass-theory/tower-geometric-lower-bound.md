@@ -5,12 +5,6 @@ $$
   \tfrac{1}{30}\,\bigl(\sqrt{2}\bigr)^{k} \;\leq\; w_{\mathrm{std}}(k) \qquad (k \geq 3).
 $$
 
-**Why the statement carries a threshold.** Below $k = 3$ the weight is exactly zero, not small: no Young diagram of fewer than three cells contains $(2,1)$, and the skew count $f^{\lambda/\mu}$ is defined to vanish off containment. So $k \geq 3$ is the whole range on which any positive lower bound is possible, and a bound asserted for *every* $k$ — as this block previously asserted — is false rather than open.
+**Why the statement carries a threshold.** Below $k = 3$ the weight is exactly zero, not small: no Young diagram of fewer than three cells contains $(2,1)$, and the skew count $f^{\lambda/\mu}$ is defined to vanish off containment. So $k \geq 3$ is the whole range on which any positive lower bound is possible, and a bound asserted for *every* $k$ is false rather than open.
 
 **The geometric form is a weaker shadow of what is proved.** The underlying result is the square bound $k!/(81 \cdot 2^{k}) \leq w_{\mathrm{std}}(k)^{2}$, valid for $k \geq 3$, which is genuinely super-exponential since $k!/2^{k}$ outgrows every geometric sequence. The constants $r = \sqrt{2}$ and $c = 1/30$ above are one convenient pair extracted from it, chosen so that the threshold falls at $k = 3$; the measured growth is far stronger, with successive ratios rising $1.38 \to 2.88$ over $k \leq 10$.
-
-## Lean structure
-
-[`QOU.Mass.WStd.wStd_geometric_from_three`](../lean/QOU/Mass/WStdSuperExponential.lean) proves the displayed bound **sorry-free**, and [`QOU.Mass.WStd.wStd_eq_zero_of_lt_three`](../lean/QOU/Mass/WStdSuperExponential.lean) the vanishing below it. Both route through the skew branching rule and the up-operator identity of Young's lattice — finite combinatorics on `YoungDiagram`, with no appeal to the Robinson–Schensted correspondence or to the hook-length formula as a general theorem.
-
-The hypothesis-carrying class `QOU.Mass.LevelSelection.TowerGeometricLowerBound` takes the threshold as a parameter $k_{0}$, and [`QOU.Mass.WStd.towerGeometricLowerBound_wStd`](../lean/QOU/Mass/WStdSuperExponential.lean) inhabits it at $k_{0} = 3$. That the threshold is necessary is itself proved: [`QOU.Mass.WStd.not_towerGeometricLowerBound_wStd_of_lt_three`](../lean/QOU/Mass/WStdSuperExponential.lean) refutes every $k_{0} < 3$, for all $r$ and $c$. `#print axioms` on each reports only `propext / Classical.choice / Quot.sound`.

@@ -1,0 +1,46 @@
+8.2 Computing critical points 227
+
+encodes the points where V is not a smooth manifold. In particular, if a Grobner
+basis of the ideal J = (0, O.,,..., @.,) contains the element 1 then ‘W, = 0, so
+Y is everywhere a smooth manifold and a Whitney stratification of V is just
+Y itself.
+
+Remark 8.7. The algebraic Sard Theorem [BPR03, Theorem 5.56] states that
+Y is generically a manifold, which is unsurprising as (8.1) contains d + 1
+polynomial equations in d variables; see also [Mel21, Section 5.3] for an ele-
+mentary derivation in our context.
+
+If W, is nonempty, then it is an algebraic set whose dimension is smaller
+than the dimension of V. The singularities of W,, in turn, form an algebraic
+set W of dimension smaller than the dimension of W,. Thus, we can obtain
+a nesting of structures
+
+V=W2W12W22-:-2W,=0
+
+such that each difference W, \ W,,, is a smooth manifold. The polynomials
+defining the algebraic set W;,,; can be computed recursively from the poly-
+nomials defining W, using algorithms for ideal dimension and prime decom-
+position, and the Jacobian Criterion [Eis95, Corollary 16.20] for singularity.
+Since VV is the union of all consecutive differences W, \ W,41, this gives a
+partition of V into smooth manifolds.
+
+Although conceptually simple, this approach does not, in general, compute
+a Whitney stratification of V. Thankfully, there is a Whitney stratification of
+the same form. In the early 1980s, Teissier [Tei82, Proposition V1.3.2] proved
+the existence of the canonical Whitney stratification of V, defined by a nested
+sequence of algebraic sets
+
+V =Fo2Fi 2F22°:+°2Fm=0 (8.2)
+
+such that the set of all connected components of F; \ Fx+1 for all k form
+a Whitney stratification of V and every Whitney stratification of V is a re-
+finement of this canonical stratification. Older algorithms to compute Whitney
+stratifications use quantifier elimination and cylindrical algebraic decomposi-
+tion [Ran98; MR91], while recent work [DJ21; HN22] gives more practical
+algorithms! based around Grébner basis computations.
+
+Remark 8.8. All combinatorially interesting multivariate generating functions
+that the authors have encountered in the literature have Whitney stratifications
+that can be computed directly by hand. Often, this is because V is either a
+
+' Helmer and Nanda [HN22] give Macaulay2 implementations at

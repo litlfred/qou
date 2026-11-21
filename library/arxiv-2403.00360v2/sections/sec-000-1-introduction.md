@@ -4,13 +4,14 @@ doc_title: "CAUSAL FERMION SYSTEMS AND OCTONIONS"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-3
+pages: 2-3
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
-doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.995
-latex_coverage_ratio: 0.984
+latex_prose_ratio: 0.93
+latex_coverage_ratio: 1.0
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 []{#secintro label="secintro"} This article is part of a series of papers comparing the structures and ideas of different approaches to fundamental physics that was started with [@eth-cfs; @mmt-cfs] and will be continued in [@cfstdqg; @tracedynamics]. Each of these papers contains an introduction to the theories under consideration including an overview of their accomplishments. These overviews serve as a starting point for a reader familiar with one of the approaches to engage with the other approach. The papers proceed with a detailed comparison of these two theories. Ultimately, the goal is to motivate the community to establish an extensive collection of such articles as a sort of "Rosetta stone" for approaches to fundamental physics. The hope is that such a set of dictionaries facilitates the exchange of ideas across approaches and thereby catalyzes progress in the foundations of physics. This addresses a distinctly different goal from overview articles such as [@loll2022quantum; @Mielczarek_2018; @deBoer:2824341] or [@addazi2022quantum] that try to cover the development across many approaches simultaneously. By focusing on two sets of ideas at a time, a greater level of depth can be achieved and more specific issues can be addressed.
 

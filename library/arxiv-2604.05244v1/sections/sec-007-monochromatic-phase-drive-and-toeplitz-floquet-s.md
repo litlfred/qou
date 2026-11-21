@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.995
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 []{#sec:toeplitz label="sec:toeplitz"} We now specialize to the model that leads most naturally to Bessel functions. Consider a static scatterer with scattering matrix $\mathcal U^{\alpha\beta}(E)$, driven by a monochromatic, spatially uniform AC potential $$V(t) = V_{\rm ac}\cos(\Omega t).$$ The corresponding gauge phase is $$\phi(t) = \frac{e}{\hbar}\int^t V(t')\,dt' = A\sin(\Omega t),
   \qquad A := \frac{eV_{\rm ac}}{\hbar\Omega}.$$ The time-dependent phase factor is therefore $$e^{i\phi(t)} = e^{iA\sin(\Omega t)} = \sum_{k\in\mathbb Z} J_k(A)e^{ik\Omega t},

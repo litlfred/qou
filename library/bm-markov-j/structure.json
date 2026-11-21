@@ -1,161 +1,37 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "bm-markov-j",
  "source": {
   "file": "bm-markov-j.pdf",
   "sha256": "ffc46b9daf7dc8587b80f368ce98844401d688e77a32759c4d18a6446ca6079a",
   "bytes": 1563866,
+  "mtime": "2026-11-15T11:07:54Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "pages": 16,
   "text_source": "ocr",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
-  "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "runContext": {
+   "sha256": "513c6885a117df7690b3a37b7025d524f4ade0f4943d0b36e9ac0cb6424fb823"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
-  "title": "Journal of Knot Theory and Its Ramifications, Vol. 11, No. 3 (2002) 295-310 \u00a9 World Scientific Publishing Company",
-  "authors_raw": "ON MARKOV\u2019S THEOREM",
-  "title_lines": [
-   "Journal of Knot Theory and Its Ramifications, Vol. 11, No. 3 (2002) 295-310",
-   "\u00a9 World Scientific Publishing Company"
-  ],
-  "abstract": null,
+  "title": "On Markov's Theorem",
   "docinfo": {
    "Producer": "DigiPath",
    "Creator": "DigiPath",
    "CreationDate": "D:20020516105815+08'00'"
   },
-  "title_raw": "Journal of Knot Theory and Its Ramifications, Vol. 11, No. 3 (2002) 295-310 \u00a9 World Scientific Publishing Company",
-  "title_source": "text",
+  "title_raw": null,
+  "title_source": "filename",
   "title_verified": false,
   "title_evidence": {
-   "text": "Journal of Knot Theory and Its Ramifications, Vol. 11, No. 3 (2002) 295-310 \u00a9 World Scientific Publishing Company",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Journal of Knot Theory and Its Ramifications, Vol. 11, No. 3 (2002) 295-310 © World Scientific Publishing Company"
  },
- "toc": [],
- "toc_source": "undetermined",
- "toc_undetermined_reason": "8 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "bm-markov-j",
+ "toc_source": "none",
  "granularity": "page",
- "structure_note": "No outline, and no inferred contents could be trusted (8 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed): one section per page.",
- "figures": [],
- "pages": [
-  {
-   "physical": 1,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 2,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 3,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 4,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 5,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 6,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 7,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 8,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 9,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 10,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 11,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 12,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 13,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 14,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 15,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 16,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  }
- ],
  "sections": [
   {
    "id": "page-001",
@@ -165,9 +41,7 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 2047,
-   "n_words": 352,
-   "label_start": null,
-   "label_end": null
+   "n_words": 352
   },
   {
    "id": "page-002",
@@ -177,9 +51,7 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 1930,
-   "n_words": 348,
-   "label_start": null,
-   "label_end": null
+   "n_words": 348
   },
   {
    "id": "page-003",
@@ -189,9 +61,7 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 2882,
-   "n_words": 538,
-   "label_start": null,
-   "label_end": null
+   "n_words": 538
   },
   {
    "id": "page-004",
@@ -201,9 +71,7 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 1710,
-   "n_words": 331,
-   "label_start": null,
-   "label_end": null
+   "n_words": 331
   },
   {
    "id": "page-005",
@@ -213,9 +81,7 @@
    "page_start": 5,
    "page_end": 5,
    "n_chars": 2190,
-   "n_words": 401,
-   "label_start": null,
-   "label_end": null
+   "n_words": 401
   },
   {
    "id": "page-006",
@@ -225,9 +91,7 @@
    "page_start": 6,
    "page_end": 6,
    "n_chars": 1303,
-   "n_words": 242,
-   "label_start": null,
-   "label_end": null
+   "n_words": 242
   },
   {
    "id": "page-007",
@@ -237,9 +101,7 @@
    "page_start": 7,
    "page_end": 7,
    "n_chars": 1474,
-   "n_words": 275,
-   "label_start": null,
-   "label_end": null
+   "n_words": 275
   },
   {
    "id": "page-008",
@@ -249,9 +111,7 @@
    "page_start": 8,
    "page_end": 8,
    "n_chars": 1370,
-   "n_words": 254,
-   "label_start": null,
-   "label_end": null
+   "n_words": 254
   },
   {
    "id": "page-009",
@@ -261,9 +121,7 @@
    "page_start": 9,
    "page_end": 9,
    "n_chars": 2568,
-   "n_words": 493,
-   "label_start": null,
-   "label_end": null
+   "n_words": 493
   },
   {
    "id": "page-010",
@@ -273,9 +131,7 @@
    "page_start": 10,
    "page_end": 10,
    "n_chars": 2092,
-   "n_words": 413,
-   "label_start": null,
-   "label_end": null
+   "n_words": 413
   },
   {
    "id": "page-011",
@@ -285,9 +141,7 @@
    "page_start": 11,
    "page_end": 11,
    "n_chars": 1919,
-   "n_words": 365,
-   "label_start": null,
-   "label_end": null
+   "n_words": 365
   },
   {
    "id": "page-012",
@@ -297,9 +151,7 @@
    "page_start": 12,
    "page_end": 12,
    "n_chars": 2708,
-   "n_words": 512,
-   "label_start": null,
-   "label_end": null
+   "n_words": 512
   },
   {
    "id": "page-013",
@@ -309,9 +161,7 @@
    "page_start": 13,
    "page_end": 13,
    "n_chars": 1661,
-   "n_words": 337,
-   "label_start": null,
-   "label_end": null
+   "n_words": 337
   },
   {
    "id": "page-014",
@@ -321,9 +171,7 @@
    "page_start": 14,
    "page_end": 14,
    "n_chars": 2662,
-   "n_words": 546,
-   "label_start": null,
-   "label_end": null
+   "n_words": 546
   },
   {
    "id": "page-015",
@@ -333,9 +181,7 @@
    "page_start": 15,
    "page_end": 15,
    "n_chars": 1339,
-   "n_words": 250,
-   "label_start": null,
-   "label_end": null
+   "n_words": 250
   },
   {
    "id": "page-016",
@@ -345,26 +191,8 @@
    "page_start": 16,
    "page_end": 16,
    "n_chars": 1367,
-   "n_words": 223,
-   "label_start": null,
-   "label_end": null
+   "n_words": 223
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": false,
-  "toc_entries": 0,
-  "toc_inferred_entries": 8,
-  "toc_inferred_mean_confidence": 0.0,
-  "toc_inferred_empty_share": 0.0,
-  "toc_inferred_method": "regex",
-  "figure_entries": 0,
-  "figure_sequence_gaps": [],
-  "page_label_conflicts": {
-   "count": 0,
-   "items": []
-  },
-  "sections": 16,
-  "chars_total": 31222
- }
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

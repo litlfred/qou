@@ -30,6 +30,9 @@ export default conjecture({
     status: "verified",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): This is a\nformalize-first scaffold, not a derivation" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): No instance of the class is exhibited." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean class [`QOU.MassTheory.ComplexMassConstituent`](complex-mass-constituent-functional.lean)\ncarries this as two content fields, the winding-tower law and the light-doublet\nanchor, and the conditional theorem `charm_block_determined` shows the\ncharm block equals $\\mathrm{contRatio}(5)$ times the up block." },
     {
       kind: "caveat",
       date: "2026-08-02",

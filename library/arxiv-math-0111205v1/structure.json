@@ -8,7 +8,7 @@
   "pages": 62,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,12 +22,12 @@
   },
   "doi": null,
   "title": "arXiv:math/0111205v1 [math.CT] 19 Nov 2001",
-  "authors_raw": "Michael M\u00fcger\u2217",
+  "authors_raw": "Michael Müger∗",
   "title_lines": [
    "From Subfactors to Categories and Topology II",
    "The Quantum Double of Tensor Categories and Subfactors"
   ],
-  "abstract": "For every tensor category C there is a braided tensor category Z(C), the \u2018center\u2019 of C. It is well known to be related to Drinfel\u2019d\u2019s notion of the quantum double of a \ufb01nite dimensional Hopf algebra H by an equivalence Z(H \u2212mod) \u2297\u2243br D(H) \u2212mod of braided tensor categories. In the Hopf algebra situation, whenever D(H) \u2212mod is semisimple (which is the case i\ufb00D(H) is semisimple i\ufb00H is semisimple and cosemisimple i\ufb00S2 = id and charF \u2224dim H) it is modular in the sense of Turaev, i.e. its S-matrix is invertible. (This was proven by Etingof and Gelaki in characteristic zero. We give a fairly general proof in the appendix.) The present paper is concerned with a generalization of this and other results to the quantum double (center) of more general tensor categories. We consider F-linear tensor categories C with simple unit and \ufb01nitely many isomor- phism classes of simple objects. We assume that C is either a \u2217-category (i.e. F = C and there is a positive \u2217-operation on the morphisms) or semisimple and spherical over an al- gebraically closed \ufb01eld F. In the latter case we assume dim C \u2261P i d(Xi)2\u0338 = 0, where the summation runs over the isomorphism classes of simple objects. We prove that Z(C) (i) is a semisimple spherical (or \u2217-) category and (ii) is weakly monoidally Morita equivalent (in the sense of math.CT/0111204) to C \u2297F Cop. This implies dim Z(C) = (dim C)2. (iii) We analyze the simple objects of Z(C) in terms of certain \ufb01nite dimensional algebras, of which Ocneanu\u2019s tube algebra is the smallest. We prove the conjecture of Gelfand and Kazhdan according to which the number of simple objects of Z(C) coincides with the dimension of the state space HS1\u00d7S1 of the torus in the triangulation TQFT built from C. (iv) We prove that Z(C) is modular and we compute \u2206\u00b1(Z(C)) \u2261P i \u03b8(Xi)\u00b11d(Xi)2 = dim C. (v) Finally, if C is already modular then Z(C) \u2297\u2243br C \u2297F \u02dcC \u2297\u2243C \u2297F Cop, where \u02dcC is the tensor category C with the braiding \u02dccX,Y = c\u22121 Y,X. \u2217Supported by EU through the TMR Networks",
+  "abstract": "For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C. It is well known to be related to Drinfel’d’s notion of the quantum double of a ﬁnite dimensional Hopf algebra H by an equivalence Z(H −mod) ⊗≃br D(H) −mod of braided tensor categories. In the Hopf algebra situation, whenever D(H) −mod is semisimple (which is the case iﬀD(H) is semisimple iﬀH is semisimple and cosemisimple iﬀS2 = id and charF ∤dim H) it is modular in the sense of Turaev, i.e. its S-matrix is invertible. (This was proven by Etingof and Gelaki in characteristic zero. We give a fairly general proof in the appendix.) The present paper is concerned with a generalization of this and other results to the quantum double (center) of more general tensor categories. We consider F-linear tensor categories C with simple unit and ﬁnitely many isomor- phism classes of simple objects. We assume that C is either a ∗-category (i.e. F = C and there is a positive ∗-operation on the morphisms) or semisimple and spherical over an al- gebraically closed ﬁeld F. In the latter case we assume dim C ≡P i d(Xi)2̸ = 0, where the summation runs over the isomorphism classes of simple objects. We prove that Z(C) (i) is a semisimple spherical (or ∗-) category and (ii) is weakly monoidally Morita equivalent (in the sense of math.CT/0111204) to C ⊗F Cop. This implies dim Z(C) = (dim C)2. (iii) We analyze the simple objects of Z(C) in terms of certain ﬁnite dimensional algebras, of which Ocneanu’s tube algebra is the smallest. We prove the conjecture of Gelfand and Kazhdan according to which the number of simple objects of Z(C) coincides with the dimension of the state space HS1×S1 of the torus in the triangulation TQFT built from C. (iv) We prove that Z(C) is modular and we compute ∆±(Z(C)) ≡P i θ(Xi)±1d(Xi)2 = dim C. (v) Finally, if C is already modular then Z(C) ⊗≃br C ⊗F ˜C ⊗≃C ⊗F Cop, where ˜C is the tensor category C with the braiding ˜cX,Y = c−1 Y,X. ∗Supported by EU through the TMR Networks",
   "docinfo": {
    "Title": "arXiv:math/0111205v1  [math.CT]  19 Nov 2001",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -919,8 +919,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2390,
-   "n_words": 407,
+   "n_chars": 2388,
+   "n_words": 406,
    "label_start": "1",
    "label_end": "2"
   },
@@ -931,7 +931,7 @@
    "level": 1,
    "page_start": 2,
    "page_end": 5,
-   "n_chars": 11590,
+   "n_chars": 11601,
    "n_words": 1999,
    "label_start": "2",
    "label_end": "5"
@@ -942,130 +942,250 @@
    "title": "Preliminaries",
    "level": 1,
    "page_start": 5,
+   "page_end": 5,
+   "n_chars": 13,
+   "n_words": 1,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-002-21-some-definitions-and-notations",
+   "number": "2.1",
+   "title": "Some definitions and notations",
+   "level": 2,
+   "page_start": 5,
    "page_end": 6,
-   "n_chars": 1366,
-   "n_words": 252,
+   "n_chars": 1358,
+   "n_words": 250,
    "label_start": "5",
    "label_end": "6"
   },
   {
-   "id": "sec-002-22-frobenius-algebras-and-2-categories",
+   "id": "sec-003-22-frobenius-algebras-and-2-categories",
    "number": "2.2",
    "title": "Frobenius algebras and 2-categories",
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 3504,
-   "n_words": 703,
+   "n_chars": 3538,
+   "n_words": 706,
    "label_start": "6",
    "label_end": "8"
   },
   {
-   "id": "sec-003-3-the-quantum-double-of-a-tensor-category",
+   "id": "sec-004-3-the-quantum-double-of-a-tensor-category",
    "number": "3",
    "title": "The Quantum Double of a Tensor Category",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 3,
-   "n_words": 1,
+   "n_chars": 39,
+   "n_words": 7,
    "label_start": "8",
    "label_end": "8"
   },
   {
-   "id": "sec-004-31-on-half-braidings",
+   "id": "sec-005-31-on-half-braidings",
    "number": "3.1",
    "title": "On half braidings",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2729,
-   "n_words": 581,
+   "n_chars": 2743,
+   "n_words": 583,
    "label_start": "8",
    "label_end": "9"
   },
   {
-   "id": "sec-005-32-elementary-properties-of-the-quantum-double",
+   "id": "sec-006-32-elementary-properties-of-the-quantum-double",
    "number": "3.2",
    "title": "Elementary properties of the quantum double",
    "level": 2,
    "page_start": 9,
-   "page_end": 29,
-   "n_chars": 31517,
-   "n_words": 6757,
+   "page_end": 13,
+   "n_chars": 5375,
+   "n_words": 1126,
    "label_start": "9",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-007-33-semisimplicity-of-2z-12c",
+   "number": "3.3",
+   "title": "Semisimplicity of $\\2Z_1(\\2C)$",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 4110,
+   "n_words": 989,
+   "label_start": "13",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-008-4-weak-morita-equivalence-of-2z-12c-and-2cboxtim",
+   "number": "4",
+   "title": "Weak Morita equivalence of $\\2Z_1(\\2C)$ and $\\2C\\boxtimes\\2C^{\\mbox{\\scriptsize op}}$",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 6635,
+   "n_words": 1313,
+   "label_start": "16",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-009-42-a-fully-faithful-tensor-functor-f-2z-12cright",
+   "number": "4.2",
+   "title": "A fully faithful tensor functor $F: \\2Z_1(\\2C)\\rightarrow\\2B$",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 25,
+   "n_chars": 7569,
+   "n_words": 1720,
+   "label_start": "18",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-010-43-f-is-essentially-surjective",
+   "number": "4.3",
+   "title": "$F$ is essentially surjective",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 7729,
+   "n_words": 1591,
+   "label_start": "25",
    "label_end": "29"
   },
   {
-   "id": "sec-006-5-modularity-of-the-quantum-double",
+   "id": "sec-011-5-modularity-of-the-quantum-double",
    "number": "5",
    "title": "Modularity of the Quantum Double",
    "level": 1,
    "page_start": 29,
-   "page_end": 39,
-   "n_chars": 13084,
-   "n_words": 2761,
+   "page_end": 30,
+   "n_chars": 39,
+   "n_words": 7,
    "label_start": "29",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-012-51-the-tube-algebra",
+   "number": "5.1",
+   "title": "The `Tube algebra'",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 6852,
+   "n_words": 1454,
+   "label_start": "30",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-013-52-invertibility-of-the-s-matrix",
+   "number": "5.2",
+   "title": "Invertibility of the $S$-matrix",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 39,
+   "n_chars": 6171,
+   "n_words": 1297,
+   "label_start": "34",
    "label_end": "39"
   },
   {
-   "id": "sec-007-53-computation-of-the-gauss-sums",
+   "id": "sec-014-53-computation-of-the-gauss-sums",
    "number": "5.3",
    "title": "Computation of the Gauss sums",
    "level": 2,
    "page_start": 39,
-   "page_end": 44,
-   "n_chars": 7555,
-   "n_words": 1584,
+   "page_end": 41,
+   "n_chars": 3353,
+   "n_words": 757,
    "label_start": "39",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-015-6-the-quantum-double-of-a--category",
+   "number": "6",
+   "title": "The quantum double of a $*$-category",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 44,
+   "n_chars": 4194,
+   "n_words": 825,
+   "label_start": "41",
    "label_end": "44"
   },
   {
-   "id": "sec-008-7-the-quantum-double-of-a-braided-category",
+   "id": "sec-016-7-the-quantum-double-of-a-braided-category",
    "number": "7",
    "title": "The quantum double of a braided category",
    "level": 1,
    "page_start": 44,
    "page_end": 49,
-   "n_chars": 10802,
-   "n_words": 2085,
+   "n_chars": 10841,
+   "n_words": 2091,
    "label_start": "44",
    "label_end": "49"
   },
   {
-   "id": "sec-009-8-applications",
+   "id": "sec-017-8-applications",
    "number": "8",
    "title": "Applications",
    "level": 1,
    "page_start": 49,
+   "page_end": 49,
+   "n_chars": 16,
+   "n_words": 2,
+   "label_start": "49",
+   "label_end": "49"
+  },
+  {
+   "id": "sec-018-81-an-adjoint-for-the-forgetful-functor-2z-12cri",
+   "number": "8.1",
+   "title": "An adjoint for the forgetful functor $\\2Z_1(\\2C)\\rightarrow\\2C$",
+   "level": 2,
+   "page_start": 49,
    "page_end": 50,
-   "n_chars": 1815,
-   "n_words": 353,
+   "n_chars": 1761,
+   "n_words": 343,
    "label_start": "49",
    "label_end": "50"
   },
   {
-   "id": "sec-010-82-invariants-of-3-manifolds",
+   "id": "sec-019-82-invariants-of-3-manifolds",
    "number": "8.2",
    "title": "Invariants of 3-manifolds",
    "level": 2,
    "page_start": 50,
    "page_end": 52,
-   "n_chars": 4553,
-   "n_words": 803,
+   "n_chars": 4575,
+   "n_words": 805,
    "label_start": "50",
    "label_end": "52"
   },
   {
-   "id": "sec-011-83-subfactor-theory-the-longo-rehren-subfactor",
+   "id": "sec-020-83-subfactor-theory-the-longo-rehren-subfactor",
    "number": "8.3",
    "title": "Subfactor theory: The Longo-Rehren subfactor",
    "level": 2,
    "page_start": 52,
-   "page_end": 62,
-   "n_chars": 22320,
-   "n_words": 3796,
+   "page_end": 54,
+   "n_chars": 6779,
+   "n_words": 1176,
    "label_start": "52",
+   "label_end": "54"
+  },
+  {
+   "id": "sec-021-a-on-quantum-doubles-of-finite-dimensional-hopf",
+   "number": "A",
+   "title": "On Quantum Doubles of Finite Dimensional Hopf Algebras",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 62,
+   "n_chars": 15544,
+   "n_words": 2619,
+   "label_start": "54",
    "label_end": "62"
   }
  ],
@@ -1075,7 +1195,7 @@
   "toc_entries": 23,
   "toc_inferred_entries": 23,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.083,
+  "toc_inferred_empty_share": 0.182,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -1083,13 +1203,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 13,
-  "chars_total": 113228,
+  "sections": 23,
+  "chars_total": 113223,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 22,
-   "overlaid": 11,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1105,20 +1226,26 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.998,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-some-definitions-and-notations",
+     "title": "Some definitions and notations",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.963,
+     "coverage_ratio": 0.938,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-22-frobenius-algebras-and-2-categories",
+     "id": "sec-003-22-frobenius-algebras-and-2-categories",
      "title": "Frobenius algebras and 2-categories",
      "prose_ratio": 0.979,
      "coverage_ratio": 0.972,
@@ -1126,13 +1253,13 @@
      "converter": "latex"
     },
     {
-     "id": "sec-003-3-the-quantum-double-of-a-tensor-category",
+     "id": "sec-004-3-the-quantum-double-of-a-tensor-category",
      "title": "The Quantum Double of a Tensor Category",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-004-31-on-half-braidings",
+     "id": "sec-005-31-on-half-braidings",
      "title": "On half braidings",
      "prose_ratio": 0.988,
      "coverage_ratio": 0.912,
@@ -1140,47 +1267,109 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-32-elementary-properties-of-the-quantum-double",
+     "id": "sec-006-32-elementary-properties-of-the-quantum-double",
      "title": "Elementary properties of the quantum double",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.95,
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-5-modularity-of-the-quantum-double",
+     "id": "sec-007-33-semisimplicity-of-2z-12c",
+     "title": "Semisimplicity of $\\2Z_1(\\2C)$",
+     "prose_ratio": 0.69,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-4-weak-morita-equivalence-of-2z-12c-and-2cboxtim",
+     "title": "Weak Morita equivalence of $\\2Z_1(\\2C)$ and $\\2C\\boxtimes\\2C^{\\mbox{\\scriptsize op}}$",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.698,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-42-a-fully-faithful-tensor-functor-f-2z-12cright",
+     "title": "A fully faithful tensor functor $F: \\2Z_1(\\2C)\\rightarrow\\2B$",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.894,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-43-f-is-essentially-surjective",
+     "title": "$F$ is essentially surjective",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-5-modularity-of-the-quantum-double",
      "title": "Modularity of the Quantum Double",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.936,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-012-51-the-tube-algebra",
+     "title": "The `Tube algebra'",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.903,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-53-computation-of-the-gauss-sums",
+     "id": "sec-013-52-invertibility-of-the-s-matrix",
+     "title": "Invertibility of the $S$-matrix",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-53-computation-of-the-gauss-sums",
      "title": "Computation of the Gauss sums",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.947,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-7-the-quantum-double-of-a-braided-category",
+     "id": "sec-015-6-the-quantum-double-of-a--category",
+     "title": "The quantum double of a $*$-category",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-7-the-quantum-double-of-a-braided-category",
      "title": "The quantum double of a braided category",
      "prose_ratio": 0.983,
-     "coverage_ratio": 0.957,
+     "coverage_ratio": 0.954,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-8-applications",
+     "id": "sec-017-8-applications",
      "title": "Applications",
-     "prose_ratio": 0.972,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-018-81-an-adjoint-for-the-forgetful-functor-2z-12cri",
+     "title": "An adjoint for the forgetful functor $\\2Z_1(\\2C)\\rightarrow\\2C$",
+     "prose_ratio": 0.986,
      "coverage_ratio": 0.921,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-82-invariants-of-3-manifolds",
+     "id": "sec-019-82-invariants-of-3-manifolds",
      "title": "Invariants of 3-manifolds",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.99,
@@ -1188,12 +1377,17 @@
      "converter": "latex"
     },
     {
-     "id": "sec-011-83-subfactor-theory-the-longo-rehren-subfactor",
+     "id": "sec-020-83-subfactor-theory-the-longo-rehren-subfactor",
      "title": "Subfactor theory: The Longo-Rehren subfactor",
      "prose_ratio": 0.997,
-     "coverage_ratio": 0.51,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
+    },
+    {
+     "id": "sec-021-a-on-quantum-doubles-of-finite-dimensional-hopf",
+     "title": "On Quantum Doubles of Finite Dimensional Hopf Algebras",
+     "result": "no matching \\section"
     }
    ]
   }

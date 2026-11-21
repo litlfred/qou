@@ -1,0 +1,47 @@
+74 Chapter 4 — The Tannaka group of the theta divisor
+
+Proof. Since © is smooth, the irreducible representation V = @(dg) is
+of dimension dimc(V) = 7(do) = g! by the Gauss-Bonnet formula, and we
+have noted above that V is a symplectic resp. orthogonal representation if g
+is even resp. odd. This proves the lemma with the full orthogonal group in
+place of the special orthogonal group. It remains to show that det(V) is the
+trivial character of G(dg). If not, the character det(V) would by part (b) of
+proposition 1.6 correspond to a skyscraper sheaf 6, supported in a 2-torsion
+point x € X(C) \ {0}. For monodromy reasons it is impossible to select such
+a 2-torsion point naturally on every ppav on an Zariski-open dense subset
+of the moduli space .2%. So we can finish the proof by a specialization
+argument, using that the Tannaka group defines a constructible stratification
+of the moduli space (see the remarks preceding proposition 4.12 below) and
+that by theorem 3.15 it only becomes smaller on closed subsets. Oo
+
+4.3. Local monodromy
+
+To find sufficiently large lower bounds on the Tannaka group of the theta
+divisor on a general ppav, we will study degenerations of ppav’s in terms of
+the nearby cycles functor. For this purpose we gather in the present section
+some general facts about the monodromy filtration that allow to get hold on
+the nearby cycles in concrete geometric situations. Throughout we work in
+the following algebraic setting.
+
+Let S be the spectrum of a strictly Henselian discrete valuation ring (in
+our applications in proposition 4.12 it will be the strict Henselization of a
+smooth complex algebraic curve in the moduli space of ppav’s). We denote
+by s the unique closed point of S and fix a geometric point 7) above the
+generic point 7 of S. For a separated S-scheme of finite type
+
+f: YS
+we consider as in section 3.5 the functor of nearby cycles
+
+WY: P(¥)) = Perv(Yn,A) —> P(¥;) = Perv(Ys, A)
+
+on perverse sheaves with coefficients in A = Q, for some fixed prime /
+which is invertible on S. Here we consider perverse sheaves on Xp and
+not just perverse sheaves on the geometric fibre X7 since we want to keep
+track of the monodromy operation. By construction [32, exp. XIII], for any
+perverse sheaf 5 € P(Y,) the local monodromy group G = Gal(#/7) acts
+naturally on the nearby cycles ‘¥(5) € P(Y;). Since we are working over a
+strictly Henselian base, this group coincides with the inertia group.
+
+If p > 0 denotes the residue characteristic of the point s, the inertia
+group sits in an exact sequence 1 + P > G— ]]-z,Zp(1) — 1 where the
+pro-p-group P is the wild inertia group and where /’ runs through the set

@@ -8,9 +8,15 @@
   "pages": 111,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 35,
+    "reason": "22 of 345 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -33,7 +39,7 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "Few-Body Systems in Lattice Effective Field Theory",
-   "heading": "Few-Body Systems in Lattice E \ufb00 ective Field Theory",
+   "heading": "Few-Body Systems in Lattice E ﬀ ective Field Theory",
    "outline": "Introduction and Motivation",
    "text": "Few-Body Systems in",
    "corroborated_by": [
@@ -227,7 +233,7 @@
   },
   {
    "level": 3,
-   "title": "L\u00fcscher's effective range expansion in the finite volume",
+   "title": "Lüscher's effective range expansion in the finite volume",
    "page": 32,
    "source": "outline",
    "number": null,
@@ -675,7 +681,7 @@
   {
    "kind": "figure",
    "number": "1.2",
-   "title": "Fermi\u2019s beta decay. Left: Exact picture. Right: E\ufb00ective picture for q2 \u226am2",
+   "title": "Fermi’s beta decay. Left: Exact picture. Right: Eﬀective picture for q2 ≪m2",
    "page": 10,
    "confidence": 0.9,
    "evidence": [
@@ -688,7 +694,7 @@
   {
    "kind": "figure",
    "number": "2.1",
-   "title": "Chiral expansion of two-and three-body forces up to N2LO. Solid dots, \ufb01lled circles and squares denote vertices with \u2206i = 0, 1 and 2 according to Eq. (2.13). Figure taken from [52]",
+   "title": "Chiral expansion of two-and three-body forces up to N2LO. Solid dots, ﬁlled circles and squares denote vertices with ∆i = 0, 1 and 2 according to Eq. (2.13). Figure taken from [52]",
    "page": 18,
    "confidence": 0.9,
    "evidence": [
@@ -701,7 +707,7 @@
   {
    "kind": "figure",
    "number": "2.2",
-   "title": "The original Tjon line. The dots are various predictions for di\ufb00erent local potentials. Reprinted from [24] with permission from Elsevier",
+   "title": "The original Tjon line. The dots are various predictions for diﬀerent local potentials. Reprinted from [24] with permission from Elsevier",
    "page": 26,
    "confidence": 0.9,
    "evidence": [
@@ -714,7 +720,7 @@
   {
    "kind": "figure",
    "number": "2.3",
-   "title": "Generally, all of them are reproducing the Tjon line, but depending on the method, they also give a width or only give results for a speci\ufb01c pair of the triton and the helium-4 binding energy",
+   "title": "Generally, all of them are reproducing the Tjon line, but depending on the method, they also give a width or only give results for a speciﬁc pair of the triton and the helium-4 binding energy",
    "page": 26,
    "confidence": 0.9,
    "evidence": [
@@ -752,7 +758,7 @@
   {
    "kind": "table",
    "number": "3.2",
-   "title": "Irreducible representations for angular momentum j \u22646 [79]",
+   "title": "Irreducible representations for angular momentum j ≤6 [79]",
    "page": 30,
    "confidence": 0.8,
    "evidence": [
@@ -764,7 +770,7 @@
   {
    "kind": "table",
    "number": "3.3",
-   "title": "Radial projection and binning for the \ufb01rst radii. The second line gives the value of the radii and the third line gives the counting of points with the respective radius",
+   "title": "Radial projection and binning for the ﬁrst radii. The second line gives the value of the radii and the third line gives the counting of points with the respective radius",
    "page": 34,
    "confidence": 0.8,
    "evidence": [
@@ -776,7 +782,7 @@
   {
    "kind": "figure",
    "number": "3.2",
-   "title": "Schematic sketch of the radial wall and spherical projection method. Left \ufb01gure: The spherical wall is introduced at |\u20d7RW|. In the case of radial projection, the wave function is measured at all lattice points\u20d7r with |\u20d7RI| < |\u20d7r | < |\u20d7RO|. Right \ufb01gure: All lattice nodes and operators with the same r",
+   "title": "Schematic sketch of the radial wall and spherical projection method. Left ﬁgure: The spherical wall is introduced at |⃗RW|. In the case of radial projection, the wave function is measured at all lattice points⃗r with |⃗RI| < |⃗r | < |⃗RO|. Right ﬁgure: All lattice nodes and operators with the same r",
    "page": 35,
    "confidence": 0.9,
    "evidence": [
@@ -814,7 +820,7 @@
   {
    "kind": "table",
    "number": "4.1",
-   "title": "The \u03c9i are the coe\ufb03cients for the lattice discretization of the Laplacian and the dispersion relation",
+   "title": "The ωi are the coeﬃcients for the lattice discretization of the Laplacian and the dispersion relation",
    "page": 46,
    "confidence": 0.8,
    "evidence": [
@@ -838,7 +844,7 @@
   {
    "kind": "figure",
    "number": "4.1",
-   "title": "Low-energy coupling constants and the smearing parameter b in the pionless EFT for a lattice size of L = 34, 36, 38 and two di\ufb00erent stretching factors",
+   "title": "Low-energy coupling constants and the smearing parameter b in the pionless EFT for a lattice size of L = 34, 36, 38 and two diﬀerent stretching factors",
    "page": 50,
    "confidence": 0.9,
    "evidence": [
@@ -851,7 +857,7 @@
   {
    "kind": "figure",
    "number": "4.2",
-   "title": "Lattice space dependence of various parameters. Upper panel: The \ufb01nite-volume deuteron bound",
+   "title": "Lattice space dependence of various parameters. Upper panel: The ﬁnite-volume deuteron bound",
    "page": 53,
    "confidence": 0.9,
    "evidence": [
@@ -889,7 +895,7 @@
   {
    "kind": "table",
    "number": "5.1",
-   "title": "Summary of \ufb01t results with perturbatively improved OPE (in units of a) for the perturbative NLO+NNLO",
+   "title": "Summary of ﬁt results with perturbatively improved OPE (in units of a) for the perturbative NLO+NNLO",
    "page": 63,
    "confidence": 0.8,
    "evidence": [
@@ -938,7 +944,7 @@
   {
    "kind": "figure",
    "number": "5.5",
-   "title": "In\ufb01nite volume extrapolation for the triton and a lattice spacing of a = 1.32 fm. The triangles are included in the \ufb01t while the circles are not due to higher order \ufb01nite volume e\ufb00ects",
+   "title": "Inﬁnite volume extrapolation for the triton and a lattice spacing of a = 1.32 fm. The triangles are included in the ﬁt while the circles are not due to higher order ﬁnite volume eﬀects",
    "page": 68,
    "confidence": 0.9,
    "evidence": [
@@ -951,7 +957,7 @@
   {
    "kind": "table",
    "number": "5.2",
-   "title": "Triton binding energy predictions at LO, N2LO, N2LO+EM, N2LO+EM+3NF and the \ufb01t parameter cD",
+   "title": "Triton binding energy predictions at LO, N2LO, N2LO+EM, N2LO+EM+3NF and the ﬁt parameter cD",
    "page": 69,
    "confidence": 0.8,
    "evidence": [
@@ -963,7 +969,7 @@
   {
    "kind": "figure",
    "number": "5.6",
-   "title": "4He time extrapolation for lattice spacing of a = 1.97 fm. The triangles are included in the \ufb01t while the circles are excluded due to statistics. See Sec. 3.7 for details",
+   "title": "4He time extrapolation for lattice spacing of a = 1.97 fm. The triangles are included in the ﬁt while the circles are excluded due to statistics. See Sec. 3.7 for details",
    "page": 71,
    "confidence": 0.9,
    "evidence": [
@@ -976,7 +982,7 @@
   {
    "kind": "table",
    "number": "5.3",
-   "title": "4He benchmark calculation for a = 1.97 fm and L = 4. The \ufb01rst bracket of Monte Carlo error are statistical ones, while the latter ones and the Lanczos ones are errors due to uncertainties of the LECs",
+   "title": "4He benchmark calculation for a = 1.97 fm and L = 4. The ﬁrst bracket of Monte Carlo error are statistical ones, while the latter ones and the Lanczos ones are errors due to uncertainties of the LECs",
    "page": 71,
    "confidence": 0.8,
    "evidence": [
@@ -988,7 +994,7 @@
   {
    "kind": "figure",
    "number": "5.7",
-   "title": "4He time extrapolation for lattice spacing of a = 1.64 fm. The triangles are included in the \ufb01t while the circles are excluded due to statistics. See Sec. 3.7 for details",
+   "title": "4He time extrapolation for lattice spacing of a = 1.64 fm. The triangles are included in the ﬁt while the circles are excluded due to statistics. See Sec. 3.7 for details",
    "page": 72,
    "confidence": 0.7,
    "evidence": [
@@ -1000,7 +1006,7 @@
   {
    "kind": "figure",
    "number": "5.8",
-   "title": "4He time extrapolation for lattice spacing of a = 1.32 fm. The triangles are included in the \ufb01t while the circles are excluded due to statistics. See Sec. 3.7 for details",
+   "title": "4He time extrapolation for lattice spacing of a = 1.32 fm. The triangles are included in the ﬁt while the circles are excluded due to statistics. See Sec. 3.7 for details",
    "page": 72,
    "confidence": 0.7,
    "evidence": [
@@ -1012,7 +1018,7 @@
   {
    "kind": "table",
    "number": "5.4",
-   "title": "4He binding energy prediction at LO, N2LO, N2LO+EM, N2LO+EM+3N. The \ufb01rst brackets give the statistical error while the latter ones give the errors due to uncertainties of the LECs. All binding energies are given in MeV",
+   "title": "4He binding energy prediction at LO, N2LO, N2LO+EM, N2LO+EM+3N. The ﬁrst brackets give the statistical error while the latter ones give the errors due to uncertainties of the LECs. All binding energies are given in MeV",
    "page": 73,
    "confidence": 0.8,
    "evidence": [
@@ -1037,7 +1043,7 @@
   {
    "kind": "figure",
    "number": "6.1",
-   "title": "One-loop diagram I2 involving two bosons in the initial and the \ufb01nal state",
+   "title": "One-loop diagram I2 involving two bosons in the initial and the ﬁnal state",
    "page": 77,
    "confidence": 0.9,
    "evidence": [
@@ -1050,7 +1056,7 @@
   {
    "kind": "figure",
    "number": "6.2",
-   "title": "One-loop diagram I3 involving three bosons in the initial and the \ufb01nal state",
+   "title": "One-loop diagram I3 involving three bosons in the initial and the ﬁnal state",
    "page": 78,
    "confidence": 0.9,
    "evidence": [
@@ -1063,7 +1069,7 @@
   {
    "kind": "figure",
    "number": "6.3",
-   "title": "One-loop form factor diagram I\u2032",
+   "title": "One-loop form factor diagram I′",
    "page": 78,
    "confidence": 0.9,
    "evidence": [
@@ -1076,7 +1082,7 @@
   {
    "kind": "table",
    "number": "6.1",
-   "title": "Continuum observables and lattice error exponents bO as de\ufb01ned in Eq. (6.21)",
+   "title": "Continuum observables and lattice error exponents bO as deﬁned in Eq. (6.21)",
    "page": 80,
    "confidence": 0.8,
    "evidence": [
@@ -1100,7 +1106,7 @@
   {
    "kind": "figure",
    "number": "6.4",
-   "title": "Bound-state energies and root-mean-square radius versus lattice spacing for up to \ufb01ve bosons at LO. The vertical lines give the upper limits of the \ufb01t range",
+   "title": "Bound-state energies and root-mean-square radius versus lattice spacing for up to ﬁve bosons at LO. The vertical lines give the upper limits of the ﬁt range",
    "page": 82,
    "confidence": 0.9,
    "evidence": [
@@ -1113,7 +1119,7 @@
   {
    "kind": "figure",
    "number": "6.5",
-   "title": "Bound-state energies and root-mean-square radius versus lattice spacing for up to \ufb01ve bosons at NLO and N2LO. The vertical lines give the upper limits of the \ufb01t range",
+   "title": "Bound-state energies and root-mean-square radius versus lattice spacing for up to ﬁve bosons at NLO and N2LO. The vertical lines give the upper limits of the ﬁt range",
    "page": 82,
    "confidence": 0.9,
    "evidence": [
@@ -1126,7 +1132,7 @@
   {
    "kind": "figure",
    "number": "6.6",
-   "title": "E\ufb00ective mass in the two-boson sector at LO and NLO. The vertical lines gives the upper limits of the \ufb01t range",
+   "title": "Eﬀective mass in the two-boson sector at LO and NLO. The vertical lines gives the upper limits of the ﬁt range",
    "page": 83,
    "confidence": 0.9,
    "evidence": [
@@ -2361,22 +2367,22 @@
    "title": "Lattice QCD",
    "level": 2,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 71,
-   "n_words": 10,
+   "page_end": 9,
+   "n_chars": 1498,
+   "n_words": 232,
    "label_start": "2",
-   "label_end": "2"
+   "label_end": "3"
   },
   {
    "id": "sec-003-effective-theory",
    "number": null,
    "title": "Effective Theory",
    "level": 2,
-   "page_start": 8,
+   "page_start": 9,
    "page_end": 11,
-   "n_chars": 8800,
-   "n_words": 1501,
-   "label_start": "2",
+   "n_chars": 7457,
+   "n_words": 1293,
+   "label_start": "3",
    "label_end": "5"
   },
   {
@@ -2397,22 +2403,22 @@
    "title": "Quantum Monte Carlo methods - status and open challenges",
    "level": 2,
    "page_start": 11,
-   "page_end": 14,
-   "n_chars": 7764,
-   "n_words": 1307,
+   "page_end": 15,
+   "n_chars": 8275,
+   "n_words": 1383,
    "label_start": "5",
-   "label_end": "8"
+   "label_end": "9"
   },
   {
    "id": "sec-006-theory",
    "number": null,
    "title": "Theory",
    "level": 1,
-   "page_start": 14,
+   "page_start": 15,
    "page_end": 15,
-   "n_chars": 416,
-   "n_words": 62,
-   "label_start": "8",
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "9",
    "label_end": "9"
   },
   {
@@ -2505,14 +2511,26 @@
    "title": "Effective theory on the lattice",
    "level": 2,
    "page_start": 27,
-   "page_end": 30,
-   "n_chars": 9235,
-   "n_words": 1618,
+   "page_end": 29,
+   "n_chars": 5131,
+   "n_words": 891,
    "label_start": "21",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-015-the-reduced-symmetry-of-so3z",
+   "number": null,
+   "title": "The reduced symmetry of SO(3,Z)",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 4066,
+   "n_words": 720,
+   "label_start": "23",
    "label_end": "24"
   },
   {
-   "id": "sec-015-bound-states-on-the-lattice",
+   "id": "sec-016-bound-states-on-the-lattice",
    "number": null,
    "title": "Bound states on the lattice",
    "level": 2,
@@ -2524,31 +2542,43 @@
    "label_end": "26"
   },
   {
-   "id": "sec-016-scattering-on-the-lattice",
+   "id": "sec-017-scattering-on-the-lattice",
    "number": null,
    "title": "Scattering on the lattice",
    "level": 2,
    "page_start": 32,
    "page_end": 32,
-   "n_chars": 1009,
-   "n_words": 222,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": "26",
    "label_end": "26"
   },
   {
-   "id": "sec-017-spherical-wall-and-radial-projection",
+   "id": "sec-018-lüschers-effective-range-expansion-in-the-finite",
+   "number": null,
+   "title": "Lüscher's effective range expansion in the finite volume",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 947,
+   "n_words": 213,
+   "label_start": "26",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-019-spherical-wall-and-radial-projection",
    "number": null,
    "title": "Spherical wall and radial projection",
    "level": 3,
    "page_start": 32,
    "page_end": 36,
-   "n_chars": 8517,
-   "n_words": 1611,
+   "n_chars": 8451,
+   "n_words": 1554,
    "label_start": "26",
    "label_end": "30"
   },
   {
-   "id": "sec-018-exact-methods",
+   "id": "sec-020-exact-methods",
    "number": null,
    "title": "Exact methods",
    "level": 2,
@@ -2560,7 +2590,7 @@
    "label_end": "31"
   },
   {
-   "id": "sec-019-the-auxiliary-field-partition-function",
+   "id": "sec-021-the-auxiliary-field-partition-function",
    "number": null,
    "title": "The auxiliary field partition function",
    "level": 2,
@@ -2572,7 +2602,7 @@
    "label_end": "33"
   },
   {
-   "id": "sec-020-hybrid-monte-carlo-algorithm-for-nuclear-lattice",
+   "id": "sec-022-hybrid-monte-carlo-algorithm-for-nuclear-lattice",
    "number": null,
    "title": "Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory",
    "level": 2,
@@ -2584,43 +2614,43 @@
    "label_end": "36"
   },
   {
-   "id": "sec-021-the-sign-problem",
+   "id": "sec-023-the-sign-problem",
    "number": null,
    "title": "The sign problem",
    "level": 2,
    "page_start": 42,
    "page_end": 45,
-   "n_chars": 2212,
-   "n_words": 397,
+   "n_chars": 2145,
+   "n_words": 389,
    "label_start": "36",
    "label_end": "39"
   },
   {
-   "id": "sec-022-introduction",
+   "id": "sec-024-regularization-methods-for-nuclear-lattice-effec",
+   "number": null,
+   "title": "Regularization Methods for Nuclear Lattice Effective Field Theory",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 23,
+   "n_words": 3,
+   "label_start": "39",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-025-introduction",
    "number": null,
    "title": "Introduction",
    "level": 2,
    "page_start": 45,
    "page_end": 46,
-   "n_chars": 2797,
-   "n_words": 448,
+   "n_chars": 4264,
+   "n_words": 678,
    "label_start": "39",
    "label_end": "40"
   },
   {
-   "id": "sec-023-regularization-methods-for-nuclear-lattice-effec",
-   "number": null,
-   "title": "Regularization Methods for Nuclear Lattice Effective Field Theory",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 46,
-   "n_chars": 1391,
-   "n_words": 220,
-   "label_start": "40",
-   "label_end": "40"
-  },
-  {
-   "id": "sec-024-the-lattice-hamiltonian",
+   "id": "sec-026-the-lattice-hamiltonian",
    "number": null,
    "title": "The lattice Hamiltonian",
    "level": 2,
@@ -2632,7 +2662,7 @@
    "label_end": "43"
   },
   {
-   "id": "sec-025-the-pionless-theory",
+   "id": "sec-027-the-pionless-theory",
    "number": null,
    "title": "The pionless theory",
    "level": 2,
@@ -2644,7 +2674,7 @@
    "label_end": "45"
   },
   {
-   "id": "sec-026-the-pionful-theory",
+   "id": "sec-028-the-pionful-theory",
    "number": null,
    "title": "The pionful theory",
    "level": 2,
@@ -2656,7 +2686,7 @@
    "label_end": "47"
   },
   {
-   "id": "sec-027-conclusion-and-outlook",
+   "id": "sec-029-conclusion-and-outlook",
    "number": null,
    "title": "Conclusion and Outlook",
    "level": 2,
@@ -2668,7 +2698,7 @@
    "label_end": "49"
   },
   {
-   "id": "sec-028-the-tjon-band-in-nuclear-lattice-effective-field",
+   "id": "sec-030-the-tjon-band-in-nuclear-lattice-effective-field",
    "number": null,
    "title": "The Tjon band in Nuclear Lattice Effective Field Theory",
    "level": 1,
@@ -2680,7 +2710,7 @@
    "label_end": "49"
   },
   {
-   "id": "sec-029-introduction",
+   "id": "sec-031-introduction",
    "number": null,
    "title": "Introduction",
    "level": 2,
@@ -2692,7 +2722,7 @@
    "label_end": "51"
   },
   {
-   "id": "sec-030-two-body-sector",
+   "id": "sec-032-two-body-sector",
    "number": null,
    "title": "Two-body-sector",
    "level": 2,
@@ -2704,7 +2734,7 @@
    "label_end": "51"
   },
   {
-   "id": "sec-031-theoretical-framework",
+   "id": "sec-033-theoretical-framework",
    "number": null,
    "title": "Theoretical framework",
    "level": 3,
@@ -2716,7 +2746,7 @@
    "label_end": "57"
   },
   {
-   "id": "sec-032-results",
+   "id": "sec-034-results",
    "number": null,
    "title": "Results",
    "level": 3,
@@ -2728,7 +2758,7 @@
    "label_end": "59"
   },
   {
-   "id": "sec-033-three-body-sector",
+   "id": "sec-035-three-body-sector",
    "number": null,
    "title": "Three-body sector",
    "level": 2,
@@ -2740,7 +2770,7 @@
    "label_end": "59"
   },
   {
-   "id": "sec-034-theoretical-framework",
+   "id": "sec-036-theoretical-framework",
    "number": null,
    "title": "Theoretical framework",
    "level": 3,
@@ -2752,7 +2782,7 @@
    "label_end": "62"
   },
   {
-   "id": "sec-035-results",
+   "id": "sec-037-results",
    "number": null,
    "title": "Results",
    "level": 3,
@@ -2764,7 +2794,7 @@
    "label_end": "63"
   },
   {
-   "id": "sec-036-four-body-sector",
+   "id": "sec-038-four-body-sector",
    "number": null,
    "title": "Four-body sector",
    "level": 2,
@@ -2776,43 +2806,43 @@
    "label_end": "63"
   },
   {
-   "id": "sec-037-theoretical-framework",
+   "id": "sec-039-theoretical-framework",
    "number": null,
    "title": "Theoretical framework",
    "level": 3,
    "page_start": 69,
    "page_end": 70,
-   "n_chars": 1381,
-   "n_words": 236,
+   "n_chars": 3075,
+   "n_words": 537,
    "label_start": "63",
    "label_end": "64"
   },
   {
-   "id": "sec-038-the-tjon-band",
-   "number": null,
-   "title": "The Tjon band",
-   "level": 2,
-   "page_start": 70,
-   "page_end": 70,
-   "n_chars": 1628,
-   "n_words": 290,
-   "label_start": "64",
-   "label_end": "64"
-  },
-  {
-   "id": "sec-039-results",
+   "id": "sec-040-results",
    "number": null,
    "title": "Results",
    "level": 3,
    "page_start": 70,
    "page_end": 71,
-   "n_chars": 2612,
-   "n_words": 477,
+   "n_chars": 1657,
+   "n_words": 289,
    "label_start": "64",
    "label_end": "65"
   },
   {
-   "id": "sec-040-theoretical-framework",
+   "id": "sec-041-the-tjon-band",
+   "number": null,
+   "title": "The Tjon band",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 71,
+   "n_chars": 936,
+   "n_words": 184,
+   "label_start": "65",
+   "label_end": "65"
+  },
+  {
+   "id": "sec-042-theoretical-framework",
    "number": null,
    "title": "Theoretical framework",
    "level": 3,
@@ -2824,7 +2854,7 @@
    "label_end": "67"
   },
   {
-   "id": "sec-041-results",
+   "id": "sec-043-results",
    "number": null,
    "title": "Results",
    "level": 3,
@@ -2836,7 +2866,7 @@
    "label_end": "68"
   },
   {
-   "id": "sec-042-conclusion",
+   "id": "sec-044-conclusion",
    "number": null,
    "title": "Conclusion",
    "level": 2,
@@ -2848,7 +2878,7 @@
    "label_end": "69"
   },
   {
-   "id": "sec-043-lattice-improvement-in-lattice-effective-field-t",
+   "id": "sec-045-lattice-improvement-in-lattice-effective-field-t",
    "number": null,
    "title": "Lattice Improvement in Lattice Effective Field Theory",
    "level": 1,
@@ -2860,7 +2890,7 @@
    "label_end": "69"
   },
   {
-   "id": "sec-044-introduction",
+   "id": "sec-046-introduction",
    "number": null,
    "title": "Introduction",
    "level": 2,
@@ -2872,7 +2902,7 @@
    "label_end": "70"
   },
   {
-   "id": "sec-045-bosons-in-one-dimension",
+   "id": "sec-047-bosons-in-one-dimension",
    "number": null,
    "title": "Bosons in one dimension",
    "level": 2,
@@ -2884,7 +2914,7 @@
    "label_end": "72"
   },
   {
-   "id": "sec-046-lattice-implementation",
+   "id": "sec-048-lattice-implementation",
    "number": null,
    "title": "Lattice implementation",
    "level": 2,
@@ -2896,7 +2926,7 @@
    "label_end": "73"
   },
   {
-   "id": "sec-047-results",
+   "id": "sec-049-results",
    "number": null,
    "title": "Results",
    "level": 2,
@@ -2908,7 +2938,7 @@
    "label_end": "75"
   },
   {
-   "id": "sec-048-summary-and-outlook",
+   "id": "sec-050-summary-and-outlook",
    "number": null,
    "title": "Summary and outlook",
    "level": 2,
@@ -2920,7 +2950,7 @@
    "label_end": "79"
   },
   {
-   "id": "sec-049-conclusions-and-perspectives",
+   "id": "sec-051-conclusions-and-perspectives",
    "number": null,
    "title": "Conclusions and Perspectives",
    "level": 1,
@@ -2932,7 +2962,7 @@
    "label_end": "83"
   },
   {
-   "id": "sec-050-special-functions-and-algebras",
+   "id": "sec-052-special-functions-and-algebras",
    "number": null,
    "title": "Special functions and algebras",
    "level": 1,
@@ -2944,7 +2974,7 @@
    "label_end": "83"
   },
   {
-   "id": "sec-051-partial-wave-decomposition",
+   "id": "sec-053-partial-wave-decomposition",
    "number": null,
    "title": "Partial wave decomposition",
    "level": 2,
@@ -2956,7 +2986,7 @@
    "label_end": "84"
   },
   {
-   "id": "sec-052-pauli-matrices-and-spin-algebra",
+   "id": "sec-054-pauli-matrices-and-spin-algebra",
    "number": null,
    "title": "Pauli matrices and spin algebra",
    "level": 2,
@@ -2968,7 +2998,7 @@
    "label_end": "85"
   },
   {
-   "id": "sec-053-anticommutator-and-grassmann-algebra",
+   "id": "sec-055-anticommutator-and-grassmann-algebra",
    "number": null,
    "title": "Anticommutator and Grassmann algebra",
    "level": 2,
@@ -2980,7 +3010,7 @@
    "label_end": "87"
   },
   {
-   "id": "sec-054-density-and-current-operators",
+   "id": "sec-056-density-and-current-operators",
    "number": null,
    "title": "Density and current operators",
    "level": 1,
@@ -2992,7 +3022,7 @@
    "label_end": "89"
   },
   {
-   "id": "sec-055-uncertainty-analysis",
+   "id": "sec-057-uncertainty-analysis",
    "number": null,
    "title": "Uncertainty analysis",
    "level": 1,
@@ -3004,7 +3034,7 @@
    "label_end": "91"
   },
   {
-   "id": "sec-056-loop-integrals",
+   "id": "sec-058-loop-integrals",
    "number": null,
    "title": "Loop integrals",
    "level": 1,
@@ -3016,7 +3046,7 @@
    "label_end": "93"
   },
   {
-   "id": "sec-057-non-perturbative-calculation-of-lattice-artifact",
+   "id": "sec-059-non-perturbative-calculation-of-lattice-artifact",
    "number": null,
    "title": "Non-perturbative calculation of lattice artifacts in the two-boson sector",
    "level": 1,
@@ -3028,7 +3058,7 @@
    "label_end": "97"
   },
   {
-   "id": "sec-058-bibliography",
+   "id": "sec-060-bibliography",
    "number": null,
    "title": "Bibliography",
    "level": 1,
@@ -3067,7 +3097,8 @@
     "items": []
    }
   },
-  "sections": 60,
-  "chars_total": 237636
+  "sections": 62,
+  "chars_total": 237728,
+  "furniture_lines_stripped": 0
  }
 }

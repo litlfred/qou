@@ -1,0 +1,1 @@
+(a) We have T−1 n = Tn −α0. (b) The elements Tn, T−1 n satisfy Tn ∈spanA⟨tw, w ∈W(Bn)\W(Bn−1)⟩ and T−1 n ∈spanA⟨t−1 w , w ∈W(Bn)\W(Bn−1)⟩. (c) The element (jB n)−1Tn satisﬁes (jB n)−1Tn −1 ∈spanA⟨t−1 w , w ∈W(Bn)\W(Bn−1)⟩. The property in Theorem 3.2.1 (B) follows from the more general property (compare [5, Proposition 4.5]).

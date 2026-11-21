@@ -1,0 +1,33 @@
+Canonical triangulations 1245
+
+Figure 2
+
+The torus at infinity of the manifold V,, is the boundary of V,,, namely a topological
+torus. The links of the vertices of the tetrahedra A; provide a tessellation A of the torus
+at infinity into topological triangles. In this section we investigate the combinatorics of
+
+A.
+
+Each vertex of A corresponds to an edge of V,, shared by a few consecutive tetrahedra
+A,;. This edge in turn corresponds to a Farey vertex shared by a few consecutive Farey
+triangles. The union of all the Farey triangles adjacent to a given vertex v forms a fan.
+If v arises as a vertex of triangles visited by the oriented line D, one of the following
+two things must happen right after D enters the fan: either D makes a Right, then
+a number of Lefts (possibly 0), then a Right and leaves the fan; or the same is true,
+exchanging Right and Left.
+
+Therefore, the vertices of A correspond exactly to the subwords of 22 of the form RL*R
+or LR*L (where * > 0). Each such subword actually corresponds to two vertices of A,
+because the edges of the tetrahedra A; have two ends.
+
+Moreover, each tetrahedron Aj, having four vertices, contributes exactly four triangles
+to A. By looking at a vertex (puncture) of the cover (R?>\Z?) x R of T x R with
+embedded Aj, one checks (Figure 3) that each of the four triangles has exactly one vertex
+not shared with any of the other three: we call this vertex the apex and the opposite
+edge the base. The four bases form a broken line of four segments which is a closed
+curve running around the puncture, and the four apices point alternatively up and down
+in the R-factor. Such chains of four triangles must be stacked on top of one another
+while respecting the previously described combinatorics of the vertices. The result is
+shown in Figure 4, where the underlying word 2 was chosen to be ... R*L*R*L*...
+
+Geometry & Topology 10 (2006)

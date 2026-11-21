@@ -13,4 +13,12 @@ export default example({
   ],
   foreshadows: ["rem:euler-characteristic-of-the-regular-representation"],
   cites: ["fulton-harris1991", "kassel1995"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the three identities are `su2Character_one`, `su2Character_mul_q_sub` and `su2Character_fundamental`.",
+    },
+  ],
 });

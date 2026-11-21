@@ -1,0 +1,41 @@
+Canonical triangulations 1267
+
+One can show that up to isotopy, any orientation-preserving diffeomorphism ys of S
+lifts toa map yr: R— R such that yr(x) = Mx+v for some M € SL2(Z) and v € 2.
+Moreover, (--M) and (v mod 2Z?) are unique. So we may define the eigenvalues of
+ys (up to sign) as those of M. Observe finally that yr induces orientation-preserving
+diffeomorphisms y’: T’ > T’ and pr: T > T.
+
+There are obvious coverings T’ — T and T’ — S, of degrees 4 and 2 respectively.
+Given an ideal triangulation tr of T (corresponding to a Farey triangle), we can
+lift rr to an ideal triangulation r’ of T’. Observe that o acts on 7’ as a properly
+discontinuous involution fixing 7’, hence 7’ descends to a triangulation 7s of S. It is
+easy to see that Ts has the combinatorics of a tetrahedron. If rr and Th are separated
+by a diagonal exchange (see Section 3.1 for a definition), then Ts and the corresponding
+td are separated by two diagonal exchanges on opposite edges. Mutatis mutandis, the
+construction of Section 3 provides ideal (topological) triangulations of T’ x R and
+S x R, as well as of their quotients V,, and V,,. There are coverings V,. — Vy, and
+Vr — Vo, (of degrees 2 and 4 respectively), and all these manifolds are hyperbolic
+when ys has distinct real eigenvalues.
+
+A Geometric triangulations of two-bridge link
+complements
+
+DAVID FUTER
+
+This appendix applies Guéritaud’s techniques to find geometric triangulations for the
+hyperbolic two-bridge knot and link complements. These ideal triangulations are, in
+essence, the monodromy triangulations of 4—punctured sphere bundles, closed off in a
+slightly different way. They were constructed and studied in great detail by Sakuma and
+Weeks [23]. Akiyoshi, Sakuma, Wada and Yamashita have announced a proof that these
+triangulations are, in fact, geometrically canonical [5], which is a stronger statement
+than our result.
+
+We will begin by reviewing two-bridge links and these ideal triangulations. We will
+then explain how the methods of the preceding paper give linear angle structures for
+these triangulations and prove that the volume function is maximized in the interior of
+the space of angle structures. Finally, we will prove two corollaries of this argument: a
+two-sided bound on the volume of the link complement and a result about arcs in the
+plane being hyperbolic geodesics.
+
+Geometry & Topology 10 (2006)

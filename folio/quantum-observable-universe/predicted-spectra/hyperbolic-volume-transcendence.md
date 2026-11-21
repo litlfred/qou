@@ -1,4 +1,4 @@
-The [topological mass formula](#prop:topological-mass-formula) assigns mass
+The [topological mass formula](#conj:topological-mass-formula) assigns mass
 $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$. Here $q$ denotes the
 [substrate parameter](#def:substrate-parameter). Three non-zero
 hyperbolic volumes drive the Descartes universe mass spectrum:
@@ -54,28 +54,9 @@ $$
 $$
 
 represent recognised open problems in transcendental
-number theory. These include [single-volume irrationality](#conj:single-volume-irrationality)
-(no hyperbolic 3-manifold volume is known to be irrational), [Borel--Zagier](#conj:borel-zagier-qou-volumes), and the Kontsevich--Zagier and Grothendieck period conjectures. The framework specifies only the choice of the three knots $4_1, 5_2, \mathcal{B}_3$. The mathematical hardness is entirely external.
-
-The framework approaches the conjecture via two complementary, partial reductions. The deeper statement remains open. The sharper reduction is the
-[jet-order reduction](#conj:three-knot-jet-order-independence). It
-replaces Grothendieck-period machinery with a finite
-per-order Gröbner--Shirshov independence computation. The skein engine
-executes this computation natively. This pairs with a single QOU-native surreal bridge lemma. This reduction converts an external problem into an incremental
-research target natively structured on the framework's jet-order filtration. The second reduction is the [transcendence shadow](#rem:yekutieli-transcendence-shadow). It
-reduces algebraic independence to the non-collapse of the brane tower
-and Nesterenko-type arithmetic control of the quantum dilogarithm.
-Both paths relocate the difficulty. The Lean
-formalisation proves the structural half: the tower
-decomposition, Chern--Simons faithfulness, and the downstream
-implications (algebraic independence $\Rightarrow$ Borel--Zagier
-$\Rightarrow$ irrationality). The transcendence core is
-axiomatised as the Lean class `HyperbolicVolumeIndependence`. Following
-the conditional-class convention, the downstream results remain conditionally rigorous.
+number theory. The framework specifies only the choice of the three knots $4_1, 5_2, \mathcal{B}_3$. The mathematical hardness is entirely external.
 
 The conjecture serves as an ideal statement. It guarantees the predicted spectrum arises from no
-algebraic coincidence. As the [formal-chain
-remark](#rem:formal-chain-transcendence) records, the mass predictions
+algebraic coincidence. The mass predictions
 and the categorical derivation live entirely over $\mathbb{Z}[q, q^{-1}]$. They function independently of whether the volumes are transcendental, algebraic, or
-rational. The framework operates strictly on the proved numerical
-[distinctness](#prf:knot-volumes-verification) of the three volumes. This distinctness suffices for all mass predictions.
+rational.

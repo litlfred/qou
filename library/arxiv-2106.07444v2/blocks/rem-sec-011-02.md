@@ -1,0 +1,1 @@
+9.2. In [Ma, Thm. 4.3] and the remark below it, Marberg claims that in types E7 and E8, the identity in part (2) only holds up to precomposition with a certain involution described in [BL]. Cross-referencing against the tables in [C, §13.9] and [L84-1, Ch. 4] shows that this claim is incorrect. Recall the character decomposition (32) of the symmetrizing trace τq. Using

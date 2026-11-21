@@ -1,0 +1,80 @@
+unfolding poincare-distance-formula’-def
+by simp
+
+have *«: poincare-distance-formula’ (to-complex ?d) (to-complex ?c) = (sqrt 17) / 3
+unfolding poincare-distance-formula’-def
+
+proof (subst cmod-d, subst cmod-c, subst cmod-d-c)
+have (sqrt 17 * 152)? # 512?
+
+by simp
+
+hence sqrt 17 * 15 # 51
+by force
+
+hence sqrt 17 « 15 — 51 #0
+by simp
+
+have (5 * sqrt 172)? 4 172°
+
+by simp
+
+hence 5 * sqrt 17 4 17
+by force
+
+hence ?cmod-d « ?cmod-c 4 0
+by simp
+
+hence 1 + 2 « (?cmod-de / (?cmod-d * ?cmod-c)) = (?cmod-d * ?cmod-c + 2 « ?emod-dc) / (?cmod-d * ?cmod-c)
+using add-frac-num|of ?cmod-d * ?cmod-c 2 * ?cmod-dc 1]
+by (simp add: field-simps)
+
+also have ... = (64 * (85 — sqrt 17 « 17)) / (64 * (sqrt 17 * 15 — 51))
+by (simp add: field-simps)
+
+also have ... = (85 — sqrt 17 * 17) / (sqrt 17 * 15 — 51)
+by (rule mult-divide-mult-cancel-left, simp)
+
+also have ... = sqrt 17 / 3
+by (subst frac-eq-eq, fact, simp, simp add: field-simps)
+
+finally
+
+show 1 + 2 « (?cemod-dc / (?cmod-d * ?cmod-c)) = sqrt 17 / 3
+qed
+
+have sqrt 17 > 3
+proof —
+have (sqrt 172)? > 3?
+by simp
+thus ?thesis
+by (rule power2-le-imp-le, simp)
+qed
+thus poincare-between ?b ?d ?c
+unfolding poincare-between-sum-distances|OF «?b € unit-disc» «?d € unit-disc» «?c € unit-disc»]
+unfolding poincare-distance-formula[OF «?b € unit-disc» «?d € unit-disc»]
+unfolding poincare-distance-formula[OF «?d € unit-discy «?c € unit-disc»]
+unfolding poincare-distance-formula[OF «?b € unit-disc» «?c € unit-disc»]
+unfolding poincare-distance-formula-def
+apply (subst *, subst rx, subst **, subst arcosh-double)
+apply (simp-all add: cmod-def power2-eq-square)
+done
+
+show poincare-between ?a ?d ?t
+proof (subst poincare-between-Quv[OF «?d © unit-discy «?t € unit-discy «?d # ?a])
+show ?t 4 0n
+proof (rule ccontr)
+assume 7— ?thesis
+hence 1/2 + i/2 =0
+by simp
+hence Re (1/2 + i/2) = 0
+by simp
+thus False
+by simp
+qed
+next
+have 192? < (5 * sqrt 172)?
+by simp
+hence 19 < 5 * sqrt 17
+
+146

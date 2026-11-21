@@ -1,0 +1,66 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-119
+section_title: "Page 119"
+section_number: null
+pages: 119-119
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 491
+
+sO.
+
+images of 759(3)(M) and 7; 6 (uM ) coincide in Z,[¢] in the above diagram for
+
+any odd prime power r. See [355] for their numerical examples.
+
+Habiro [166] showed?” that there exists an Ry-valued invariant I*!?(M) of an
+integral homology 3-sphere M whose images in Q[[q—1]] and Z[¢] in the above
+diagram are equal to r°°@)(M) and uO M ) respectively for any positive
+integer r. (Here we set UO) (M1) = 1 for r= 1,2.) This gives another proof
+of the above mentioned conjecture of Lawrence for integral homology 3-spheres.
+This also implies that 75°)(M) can be presented by
+
+S08) (AM) = > Xy(a— (G2 = 1) (a" =) (45)
+
+n=0
+
+with some X,, € Z[q,q7'] (in the above sense) such that
+
+rSUO(M) = YI (C=C = 1) (GP=
+
+O<n<r
+
+Note that the presentation (45) is not unique.
+
+(K. Habiro) Let g be a finite dimensional simple complex Lie algebra. Let
+d € {1,2,3} be such that d = 1 in the ADE cases, d = 2 in the BCF cases
+and d = 3 in the G2 case. If M is a closed 3-manifold and if ¢ is a root of
+unity of order r divisible by d, then the quantum g invariant 7e(M ) € Q{¢] of
+M at ¢ is defined.
+
+Conjecture 7.29 (K. Habiro, T. Le) For each g as above, there is a (unique)
+invariant I8(M) € R, of an integral homology 3-sphere M such that for each
+root of unity ¢ of order r divisible by d we have
+
+19(M)|,_¢ = 78(M).
+
+Remark When (r,det(aj;)) = 1, where (ais) is the Cartan matrix of the
+Lie algebra g, the projective g-invariant Te 8(M) can be defined [247]. Then
+Habiro and Le also conjecture that [%(M/) _ ce = 7c °(M), if n det (aij)) = 1.
+Note that for an integral homology 3-sphere, Te §(M) = ) when both are
+
+defined (i.e. when r is divisible by d and (r, det(a,;)) = = . this is the case,
+then we have
+
+i(19(M)) = 73(M)
+
+2THence, 79°)(M) is as powerful as the set of 7e¥Q)(M) for any integer r > 3, and as
+powerful as the set of 78°) (M) for any odd r > 3, for any integral homology 3-sphere M.
+Further, the LMO invariant dominates 722) (My) for any integer r > 3.
+
+Geometry & Topology Monographs, Volume 4 (2002)

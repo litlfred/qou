@@ -1,0 +1,6991 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1211.1812v5",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Inprinciplewemayﬁndmorethatasuitablebaseforthepurposesofalgebraicquantumﬁeldtheory;butthe superselection structure turns out to be independent of the base up to isomorphism, see [35, Theorem 2.23].",
+   "marks": [
+    {
+     "page": 1,
+     "context": "CurrentalgebrasonS"
+    },
+    {
+     "page": 2,
+     "context": "settingofgeneralrelativity"
+    }
+   ],
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "2",
+   "text": "Thisapproachhasbeenobjectof(unpublished)workbyJ.Roberts,G.Ruzziandtheauthor.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "•Finally we deﬁne the setΣ"
+    },
+    {
+     "page": 6,
+     "context": "inplaceofaposet"
+    },
+    {
+     "page": 6,
+     "context": "allyconstant,andacharacteristicclassζdeﬁningthe2k-formζ(P)∈Z"
+    },
+    {
+     "page": 6,
+     "context": "forany2k-cyclec ∈Z"
+    },
+    {
+     "page": 6,
+     "context": "ζ↑(P) : C"
+    },
+    {
+     "page": 6,
+     "context": "whereC"
+    },
+    {
+     "page": 6,
+     "context": "∀ℓ∈C"
+    }
+   ],
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "3",
+   "text": "Hereweshouldusethetermprecosheaf,neverthelessweprefertomaintainthetraditionalterminology.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "Anet"
+    }
+   ],
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "4",
+   "text": "Thatis,HisisomorphictotheconstantHilbertnetbundleH0=(H0, U0)∆,H0",
+   "marks": [
+    {
+     "page": 8,
+     "context": "(π, U)canberegardedasamorphismπ:A→BH.WhenHistrivial"
+    }
+   ],
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "a",
+   "text": "≡H∗,U0",
+   "marks": [
+    {
+     "page": 7,
+     "context": "Anet3ofC*-algebrasover∆isgivenbyafamilyA = {A"
+    },
+    {
+     "page": 7,
+     "context": "a′a: A"
+    },
+    {
+     "page": 7,
+     "context": "a′a: Aa→A"
+    },
+    {
+     "page": 7,
+     "context": "ν"
+    },
+    {
+     "page": 7,
+     "context": "νa: A"
+    },
+    {
+     "page": 7,
+     "context": "ν"
+    },
+    {
+     "page": 7,
+     "context": "a′a◦ν"
+    },
+    {
+     "page": 7,
+     "context": "HwithA"
+    },
+    {
+     "page": 7,
+     "context": "bundle;pickingafamilyνof*-isomorphismsν"
+    },
+    {
+     "page": 7,
+     "context": "bundle;pickingafamilyνof*-isomorphismsνa: A"
+    },
+    {
+     "page": 7,
+     "context": "a′a:= ν"
+    },
+    {
+     "page": 8,
+     "context": "netbundles.Intheﬁrstcasewehavegroupisomorphismsı"
+    },
+    {
+     "page": 8,
+     "context": "netbundles.Intheﬁrstcasewehavegroupisomorphismsıa′a:G"
+    },
+    {
+     "page": 8,
+     "context": "netbundles.Intheﬁrstcasewehavegroupisomorphismsıa′a:Ga→G"
+    },
+    {
+     "page": 8,
+     "context": "roupnetbundleG=(G, ı)∆,whilstinthesecondcasewehaveunitariesU"
+    },
+    {
+     "page": 8,
+     "context": "etbundleG=(G, ı)∆,whilstinthesecondcasewehaveunitariesUa′a:H"
+    },
+    {
+     "page": 8,
+     "context": "undleG=(G, ı)∆,whilstinthesecondcasewehaveunitariesUa′a:Ha→H"
+    },
+    {
+     "page": 8,
+     "context": "apair(π, U),whereH= {H"
+    },
+    {
+     "page": 8,
+     "context": "apair(π, U),whereH= {Ha}a∈∆isafamilyofHilbertspaces,U= {U"
+    },
+    {
+     "page": 8,
+     "context": "air(π, U),whereH= {Ha}a∈∆isafamilyofHilbertspaces,U= {Ua′a:H"
+    },
+    {
+     "page": 8,
+     "context": "(π, U),whereH= {Ha}a∈∆isafamilyofHilbertspaces,U= {Ua′a:Ha→H"
+    },
+    {
+     "page": 8,
+     "context": "family of unitary operators andπ"
+    },
+    {
+     "page": 8,
+     "context": "family of unitary operators andπa: A"
+    },
+    {
+     "page": 8,
+     "context": "family of unitary operators andπa: Aa→BH"
+    },
+    {
+     "page": 8,
+     "context": "adU"
+    },
+    {
+     "page": 8,
+     "context": "adUa′a ◦π"
+    },
+    {
+     "page": 8,
+     "context": "adUa′a ◦πa= π"
+    },
+    {
+     "page": 8,
+     "context": "Givena, o ∈∆andT∈BH"
+    },
+    {
+     "page": 8,
+     "context": "p∈BH"
+    }
+   ],
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p017-2",
+   "page": 17,
+   "mark": "e",
+   "text": "≡yz",
+   "marks": [
+    {
+     "page": 16,
+     "context": "C1⊆(ιa, ιa)=∩e<aR"
+    },
+    {
+     "page": 16,
+     "context": "C1⊆(ιa, ιa)=∩e<aRe⊆∩e<a:x∈eR"
+    },
+    {
+     "page": 16,
+     "context": "ǫ(zρ, wσ)"
+    },
+    {
+     "page": 16,
+     "context": "ǫ(zρ, wσ)e:= wσ(poe)∗σo(zρ(po′e))∗· zρ(po′e)ρ"
+    },
+    {
+     "page": 16,
+     "context": "(s ⊗t)"
+    },
+    {
+     "page": 16,
+     "context": "(s ⊗t)e · ǫ(zρ, wσ)"
+    },
+    {
+     "page": 16,
+     "context": "σ′)"
+    },
+    {
+     "page": 16,
+     "context": "σ′)e · (t ⊗s)"
+    },
+    {
+     "page": 16,
+     "context": "ǫ(zρ, wσ)"
+    },
+    {
+     "page": 16,
+     "context": "ǫ(zρ, wσ)e · ǫ(wσ, zρ)"
+    },
+    {
+     "page": 16,
+     "context": "ǫ((z ⊗w)ρ◦σ, vτ)"
+    },
+    {
+     "page": 16,
+     "context": "ǫ((z ⊗w)ρ◦σ, vτ)e=ǫ(zρ, vτ)"
+    },
+    {
+     "page": 16,
+     "context": "ǫ((z ⊗w)ρ◦σ, vτ)e=ǫ(zρ, vτ)e · ρ"
+    },
+    {
+     "page": 16,
+     "context": "ǫ((z ⊗w)ρ◦σ, vτ)e=ǫ(zρ, vτ)e · ρe(ǫ(wσ, vτ)"
+    },
+    {
+     "page": 16,
+     "context": "ǫ(zρ, wσ)"
+    },
+    {
+     "page": 16,
+     "context": "ǫ(zρ, wσ)e∈R"
+    },
+    {
+     "page": 16,
+     "context": "ytoprovetheabovepropertywouldbethefollowing.Ingeneral,ift∈(ρ"
+    },
+    {
+     "page": 16,
+     "context": "rovetheabovepropertywouldbethefollowing.Ingeneral,ift∈(ρe, σ"
+    },
+    {
+     "page": 16,
+     "context": "tt′= tρ"
+    },
+    {
+     "page": 16,
+     "context": "tt′= tρe(t′) = σ"
+    },
+    {
+     "page": 16,
+     "context": "andthis,by(punctured)Haagduality,suﬃcestoconcludethatt∈R"
+    },
+    {
+     "page": 16,
+     "context": "wecanverifythatǫ(zρ, wσ)"
+    },
+    {
+     "page": 16,
+     "context": "wecanverifythatǫ(zρ, wσ)e∈(σ"
+    },
+    {
+     "page": 16,
+     "context": "wecanverifythatǫ(zρ, wσ)e∈(σeρ"
+    },
+    {
+     "page": 16,
+     "context": "wecanverifythatǫ(zρ, wσ)e∈(σeρe, ρ"
+    },
+    {
+     "page": 16,
+     "context": "wecanverifythatǫ(zρ, wσ)e∈(σeρe, ρeσ"
+    },
+    {
+     "page": 16,
+     "context": "R|∆a=({R"
+    },
+    {
+     "page": 16,
+     "context": "R"
+    },
+    {
+     "page": 16,
+     "context": "isproperforanye<a.Thuswecanconcludeonlythatǫ(zρ, wσ)"
+    },
+    {
+     "page": 16,
+     "context": "e,"
+    },
+    {
+     "page": 17,
+     "context": "(raa′z:= z|Σ1(∆a),raa′ρ := {ρ"
+    },
+    {
+     "page": 17,
+     "context": "raa′t := {t"
+    },
+    {
+     "page": 17,
+     "context": "∥t"
+    },
+    {
+     "page": 17,
+     "context": "∥te∥2= ∥z(p)t"
+    },
+    {
+     "page": 17,
+     "context": "e′t"
+    },
+    {
+     "page": 17,
+     "context": "e′te′∥= ∥t"
+    },
+    {
+     "page": 17,
+     "context": "e′t"
+    },
+    {
+     "page": 17,
+     "context": "∆a′)wehavethatpoe,po′earepathsalsoin∆a′,so,sinceanyǫ(zρ, wσ)"
+    }
+   ],
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p017-3",
+   "page": 17,
+   "mark": "x",
+   "text": "(e)|Ra,∀e∈∆a . a Moreover, it is proved that",
+   "marks": [
+    {
+     "page": 16,
+     "context": "C1⊆(ιa, ιa)=∩e<aRe⊆∩e<a:"
+    }
+   ],
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "6",
+   "text": "Thatis[πa(Ra), πo(Ro)]net= 0foranyo ⊥a,inthesenseof(2.10).",
+   "marks": [
+    {
+     "page": 21,
+     "context": "5.Acausal"
+    }
+   ],
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "7",
+   "text": "Withsymmetricwemeanthatif ∈λ then the same is true for the conjugate representation ̺, whilst the term separating indicates that for any g̸ = g′ ∈G0 there is (g′). ∈λ such that (g)̸ =",
+   "marks": [
+    {
+     "page": 26,
+     "context": "compact and metrizable.Letλbe a symmetric and separating set"
+    }
+   ],
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "8",
+   "text": "Inthereference[12]theanalogueoftheﬁeldψisdenotedbyψ+ ,whilstthenotationψisusedfortheDirac ﬁeld evaluated on cospinors.",
+   "marks": [
+    {
+     "page": 35,
+     "context": "These"
+    }
+   ],
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-015"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p008-3",
+   "page": 8,
+   "mark": "a",
+   "text": "′a≡1H∗.",
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "5",
+   "text": "Inthisreferenceanx∈Mischosenwitha⊥{x},andwehavethenotation a",
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p017-4",
+   "page": 17,
+   "mark": "e",
+   "text": "isindependentofx.",
+   "block": "library/arxiv-1211.1812v5/blocks/prose-sec-007"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "o",
+   "context": "spacetime,theoneofdoublecones,and,foranyo∈∆dc,aC*-algebraA"
+  },
+  {
+   "page": 2,
+   "mark": "o",
+   "context": "o′o: A"
+  },
+  {
+   "page": 2,
+   "mark": "o",
+   "context": "o′o: Ao→A"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "zzisuperselectionstructureyieldsasymmetrictensorC*-categoryZ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "tors),containsthesetZ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "dual group ofZ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "InoneofourmainresultsweprovethatZ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "also gives new light on the structure ofZ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "uenceofabstractresultsforgenericpresheaves([39]),wehavethatZ"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "canbecharacterized asaTannaka-typedual"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "G"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "χ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "χz: π"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "χz: π1(M) →NG"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "χz: π1(M) →NGz/G"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "bχ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "bχz: π"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "bχz: π1(M) →NG"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "χ"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "χz=bχ"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "χz=bχz modG"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "(2.6))thatvanishwhenz∈Z"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "3weapplyourresulttoconformalcurrentalgebras,wherethecasesG=Z"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "weapplyourresulttoconformalcurrentalgebras,wherethecasesG=Z2"
+  },
+  {
+   "page": 4,
+   "mark": "o",
+   "context": "gerbeoveraposet,deﬁnedasapairF=(F, i)whereF:={F"
+  },
+  {
+   "page": 4,
+   "mark": "o",
+   "context": "with*-monomorphismsi"
+  },
+  {
+   "page": 4,
+   "mark": "o",
+   "context": "with*-monomorphismsio′o:F"
+  },
+  {
+   "page": 4,
+   "mark": "o",
+   "context": "with*-monomorphismsio′o:Fo→F"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "fromAandZ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "(see§5).Inthissetting,weexpectthatsomeinvariantofZ"
+  },
+  {
+   "page": 5,
+   "mark": "o",
+   "context": "ndedoperators onH .Inthesequel,familiesof HilbertspacesH= {H"
+  },
+  {
+   "page": 5,
+   "mark": "o",
+   "context": "andweshallwriteBH={BH"
+  },
+  {
+   "page": 5,
+   "mark": "o",
+   "context": "GivenaHilbertspaceHandafamilyR={R"
+  },
+  {
+   "page": 5,
+   "mark": "o",
+   "context": "smallestC*-subalgebraofBHcontaining∪oR"
+  },
+  {
+   "page": 5,
+   "mark": "o",
+   "context": "smallestC*-subalgebraofBHcontaining∪oRobyC∗{R"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "•Σ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "•Σ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "c = (∂0c, ∂1c, ∂2c ∈Σ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "p := b"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "p := bn ∗. . . ∗b"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "∂0b"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "∂0bk= ∂1b"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "b"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "b"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "b"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "bk| := |b"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "suchthatpωω= bω:= (ω, ω; ω) ∈Σ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "1∗b"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1∗bn∗. . . b"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "π"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "π1(∆)≃π"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "pairsb=(b"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "pairsb=(b1, b"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "χ : π"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "π"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "p ∈π"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "llyconstant,andacharacteristicclassζdeﬁningthe2k-formζ(P)∈Z2"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "deRham(M),"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "forany2k-cyclec ∈Z2"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "ζ↑(P) : C2"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "whereC2"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "∀ℓ∈C2"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "where∂: C"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "where∂: C2"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "where∂: C2k(M) →Z"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "where∂: C2k(M) →Z2"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ζ↑(χ) := [ζ↑(Pχ)] ∈H"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "ζ↑(χ) := [ζ↑(Pχ)] ∈H2"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "thattheChernclassesc"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "thattheChernclassesck(P)∈Z"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "thattheChernclassesck(P)∈Z2"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "deRham(M),"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "χ : π"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "k(χ) ∈H"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "k(χ) ∈H2"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "a′a,∀a⊆a′.Forany"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "a′a,∀a⊆a′.Foranyb∈Σ"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "a′a,∀a⊆a′.Foranyb∈Σ1(∆)wedeﬁneb:=∂0"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "a′a,∀a⊆a′.Foranyb∈Σ1(∆)wedeﬁneb:=∂0b |b|◦|b| ∂1"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "χ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "χp:= b"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "χp:= bn◦. . . ◦b"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "∀p = b"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "∀p = bn ∗. . . ∗b"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "Themapχ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "χ : π"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "p : o →a,p = b"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "p : o →a,p = bn ∗. . . ∗b"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "onΩ;(2)b"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "onΩ;(2)bi∈Σ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "(Ω),∀i = 1, . . . , n.WedenotethesetofpathstrivializedbyHbyπ"
+  },
+  {
+   "page": 8,
+   "mark": "o",
+   "context": "Givena, o ∈∆andT∈BHa ,T′∈BH"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "±:=T· U"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "p± U"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "∀p : o →a,p ∈π"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "whereU"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "whereUp:= U"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "whereUp:= Ub"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "whereUp:= Ubn · · · U"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "whereUp:= Ubn · · · Ub"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "whereUp:= Ubn · · · Ub1 ,p = b"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "whereUp:= Ubn · · · Ub1 ,p = bn ∗. . .∗b"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "hereUp:= Ubn · · · Ub1 ,p = bn ∗. . .∗b1(recall that we setU"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "= Ubn · · · Ub1 ,p = bn ∗. . .∗b1(recall that we setUb:= U∂0"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "· Ub1 ,p = bn ∗. . .∗b1(recall that we setUb:= U∂0b|b|U|b|∂1"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": " = bn ∗. . .∗b1(recall that we setUb:= U∂0b|b|U|b|∂1b ,∀b ∈Σ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "p ∈π"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "e′V"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "V"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "Ve: H"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "Ve: He→H′,e ∈Ω,suchthatU"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "aV|b"
+  },
+  {
+   "page": 8,
+   "mark": "o",
+   "context": "|b1|V"
+  },
+  {
+   "page": 8,
+   "mark": "o",
+   "context": "aV"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "haveU"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "haveUp=1foranyp∈π"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "netbundle,U"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "•ifΩ⊆∆is such thatπ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "•ifΩ⊆∆is such thatπ1(Ω) = 0andpis made of 1-simplices inΣ"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "onAisgivenbyafamilyofstronglycontinuousactionsα"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "onAisgivenbyafamilyofstronglycontinuousactionsαo: G"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "onAisgivenbyafamilyofstronglycontinuousactionsαo: Go→autA"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "∀g∈G"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "{α"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "{αo′(ı"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "{αo′(ıo′o(g))} ◦o′o= o′o ◦α"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "ν"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "νa ◦α"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "a(g) ◦ν"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "∀a ∈∆,g∈G"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "thateachα"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "thateachαo(g),o∈∆,g∈G"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "thateachαo(g),o∈∆,g∈Go ,isaunitaryoperatoronH"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "{T"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "a′a: T"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "a′a: Ta→T"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "llusethenotationT⊗=(T, )∆.WesaythatT⊗issimplewhenevereveryT"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "C*-categories.WheneveryT"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "C*-categories.WheneveryTa,a ∈∆,hassymmetryξ"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "C*-categories.WheneveryTa,a ∈∆,hassymmetryξaanda′a(ξ"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "categories.WheneveryTa,a ∈∆,hassymmetryξaanda′a(ξa;ρ,σ) = ξ"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "a ⊆a′,ρ, σ∈objT"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "R"
+  },
+  {
+   "page": 10,
+   "mark": "o",
+   "context": "Ra:=C∗{R"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "(notethatR"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "(notethatRa⊆R"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "(notethatRa⊆Ra)and,givenρ, σ∈endR"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "(notethatRa⊆Ra)and,givenρ, σ∈endRa,thespace(ρ, σ)⊆R"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "\u001aobjT"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "\u001aobjTa:={ρ ∈endR"
+  },
+  {
+   "page": 10,
+   "mark": "o",
+   "context": "\u001aobjTa:={ρ ∈endRa: ρ(R"
+  },
+  {
+   "page": 10,
+   "mark": "o",
+   "context": "\u001aobjTa:={ρ ∈endRa: ρ(Ro) ⊆R"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "arrT"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "arrTa:={(ρ, σ)"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "arrTa:={(ρ, σ)a:= R"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "arrTa:={(ρ, σ)a:= Ra ∩(ρ, σ),∀ρ, σ∈objT"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "R"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "Ra′⊆R"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "R"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "Ra⊆R"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "andbydeﬁnitionanyρ ∈objT"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "ndbydeﬁnitionanyρ ∈objTarestrictstoanendomorphisma′aρ ∈objT"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "a′a: (ρ, σ)"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "a′a: (ρ, σ)a→(a′aρ, a′aσ)"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "ρ, σ∈objT"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "structure,soT⊗isatensornet.NotethattheidentityofT"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "atensornet.NotethattheidentityofTaistheidentityautomorphismι"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "endR"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "endRa,so(ι"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "endRa,so(ιa, ι"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "endRa,so(ιa, ιa)"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "endRa,so(ιa, ιa)a= R"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "endRa,so(ιa, ιa)a= Ra ∩(R"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "raa′: T"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "raa′: Ta′→T"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "raa′◦r"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "η"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "ηa: T"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "η"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "aa′◦η"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "simplewhenever everyT"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "pbun↑(∆, T⊗,ǫ)↔hom(π"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "naturalG-actionontheCuntzalgebraO"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "hom(π"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "hom(π"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "= {̺a∈objT"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "t = {t"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "t = {ta∈(̺a, ς"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "Wedenoteitby"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "WedenoteitbyeT⊗,ξ .Itiseasilyveriﬁedthat"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "thatT⊗,ξisaDR-presheafwhenever"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "∈obj"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "a.Any"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "a.Anyraa′ ,"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "⊗,ξcoincide,thatis"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "suchthat:(1)C⊗,ϑisafullpresheaf;(2)anyC"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "theoneofﬁnite-dimensionalHilbertspaces;(3)anyI"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "embedding"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "∈obj"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "a):={t"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "a):={ta:"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": ", ς∈obj"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "(̺, ς)≥a:={t = {t"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "(̺, ς)≥a:={t = {to∈(̺o, ς"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "(̺, ς)≥a:={t = {to∈(̺o, ςo)}o⊇a:roo′(t"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "(̺, ς)≥a:={t = {to∈(̺o, ςo)}o⊇a:roo′(to′) = t"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "β"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "∈obj"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "β"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "βb̺∈pbun↑(∆,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "χ̺: π"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "bealiftbχ̺: π"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "u̺: Σ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": ",∀c ∈Σ"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "al)liftsofχρareinone-to-onecorrespondencewithpairs(v, g),v:Σ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "g: Σ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "∀b ∈Σ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "isacocycle,i.e.dz(c) = 1,∀c ∈Σ"
+  },
+  {
+   "page": 13,
+   "mark": "o",
+   "context": "1.Einsteincausality:R"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "eforany"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "3.Outerregularity:R"
+  },
+  {
+   "page": 13,
+   "mark": "o",
+   "context": "3.Outerregularity:Ra= ∩a<oR"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "4.Borchers property:for anya ∈∆,e < aand projectionE∈R"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "rty:for anya ∈∆,e < aand projectionE∈Rethere is an isometryV"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": ":for anya ∈∆,e < aand projectionE∈Rethere is an isometryVa∈R"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "5.Punctured Haag duality:ifx ∈M ,thenwe haveR"
+  },
+  {
+   "page": 13,
+   "mark": "o",
+   "context": "o:"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "WenowdeﬁnetheC∗-categoryZ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "dz(c) := z(∂0c)z(∂2c)z(∂1c)∗= 1,∀c ∈Σ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "z:= {z(b) ∈UR|b|}b∈Σ"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "(z, z′):={t = {t"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "(z, z′):={t = {ta∈R"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "(z, z′):={t = {ta∈Ra}a∈∆:t∂0"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "(z, z′):={t = {ta∈Ra}a∈∆:t∂0bz(b) = z′(b)t∂1"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "(z, z′):={t = {ta∈Ra}a∈∆:t∂0bz(b) = z′(b)t∂1b,∀b ∈Σ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "z(p) := z(b"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "z(p) := z(bn) · · · z(b"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "p = b"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "p = bn ∗. . . ∗b"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Inparticular,wehavetheidentitycocycleι(b):=1,∀b∈Σ"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "ta≡t"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "ta≡t0 ,∀a ∈∆,witht"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "ta≡t0 ,∀a ∈∆,witht0∈∩aR"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "∩a∋x R"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "As argued in [9, §4],Z"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "aﬀectedbythetopologyofM :foranyz∈objZ"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "aﬀectedbythetopologyofM :foranyz∈objZ1(R)wedeﬁneH"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "a:= H ,"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "U"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "a′a:= z(a, a′;"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "a′a:= z(a, a′; a′) : H"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "a→H"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "U"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "a′′a′U"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "a′a= U"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "ThisdeﬁnestheHilbertnetbundleH"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "ThisdeﬁnestheHilbertnetbundleHz:=(H"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "ThisdeﬁnestheHilbertnetbundleHz:=(Hz, U"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "BH"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "BHz= (BH"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "BHz= (BHz, adU"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "π"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "πz: R →BH"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "π"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "∀a ∈∆,t ∈R"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "(see [9, AppendixA]).WhenH"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "MinkowskispacetimeZ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "TheconjugationstructureonZ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "cocycle¯z∈objZ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "cocycle¯z∈objZ1(R)is said to bea conjugateofz∈objZ"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "¯r∗⊗1"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "¯r∗⊗1z · 1"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "¯r∗⊗1z · 1z ⊗r=1"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ion).Inaccordwiththediscussionof[9,§5.3],thefullsubcategoryZ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "cordwiththediscussionof[9,§5.3],thefullsubcategoryZ1,•(R)ofZ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "TherestofthesectionisdevotedtotheproofthatZ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "symmetrictensorpresheaf.ThisautomaticallygivestoZ"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "locR"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "locRa⊆endR"
+  },
+  {
+   "page": 14,
+   "mark": "o",
+   "context": "ρ(R"
+  },
+  {
+   "page": 14,
+   "mark": "o",
+   "context": "ρ(Ro) ⊆R"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "ρ ∈endR"
+  },
+  {
+   "page": 14,
+   "mark": "o",
+   "context": "ρ = idR"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "uelweshallkeepinevidencethelocalizationregione ∈∆abywritingρ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "τ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "τe:= ρ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "τe:= ρe ◦σ"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "τe:= ρe ◦σe∈locR"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "τe:= ρe ◦σe∈locRa,∀ρ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "τe:= ρe ◦σe∈locRa,∀ρe, σ"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "τe:= ρe ◦σe∈locRa,∀ρe, σe∈locR"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "WenowconsiderthecategoryZ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "z= {z(b) ∈UR|b|}b∈Σ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "ρ = {ρ"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "ρ = {ρe∈locR"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "∀c ∈Σ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "∀b ∈Σ"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "∀b ∈Σ1(∆a),t ∈R"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "z(b) · ρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "z(b) · ρ∂1b(t) = ρ∂0"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": ",§25-28]orthefriendly[13])andimpliesthatzuniquelydeterminesρ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "onR"
+  },
+  {
+   "page": 15,
+   "mark": "o",
+   "context": "z(p)∗ρ"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "z(p)∗ρo(T′)z(p),∀T′∈R"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "∀T∈R"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ThearrowsofZ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "(zρ, wσ):={t = {t"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "(zρ, wσ):={t = {te∈R"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "(zρ, wσ):={t = {te∈Re}e∈∆a:t∂0"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "(zρ, wσ):={t = {te∈Re}e∈∆a:t∂0bz(b) = w(b)t∂1"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "(zρ, wσ):={t = {te∈Re}e∈∆a:t∂0bz(b) = w(b)t∂1b,∀b ∈Σ"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "p : e →o,p = b"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "p : e →o,p = bn ∗. . . ∗b"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "∀T∈R"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "∀t ∈(zρ, wσ),e < a,T∈R"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "WedeﬁnethetensorproductonZ"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "c(R)<a.Tothisend,given"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "c(R)<a.Tothisend,givenzρ, wσ,"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "σ′∈objZ"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ρ′),"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "\u001a{z ⊗w}ρ◦σ(b) := zρ(b)ρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "∀e < a,b ∈Σ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "(t ⊗s)"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "(t ⊗s)e:= t"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "(t ⊗s)e:= teρ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "(t ⊗s)e:= teρe(s"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Thefactthattheabove-deﬁnedrelationsyieldatensorproductonZ"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "zρ(b)ρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "zρ(b)ρ∂1b(wσ(b))∈R|b|foranyb∈Σ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "c ∈Σ"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "zρ(∂0c)ρ∂10"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "zρ(∂0c)ρ∂10c(wσ(∂0c)) · zρ(∂2c)ρ∂12"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "ndthecocyclerelationsofz, w.Passingtothe”charges”,foranyt ∈R"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "zρ(b)ρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "zρ(b)ρ∂1b(wσ(b)) · {ρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "zρ(b)ρ∂1b(wσ(b)) · {ρ∂1b ◦σ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "=zρ(b) · ρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "=zρ(b) · ρ∂1b(wσ(b)σ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "=zρ(b) · ρ∂1b(wσ(b)σ∂1b(t))=ρ∂0"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "=zρ(b) · ρ∂1b(wσ(b)σ∂1b(t))=ρ∂0b(σ∂0"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "= {ρ∂0"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "= {ρ∂0b ◦σ∂0"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "= {ρ∂0b ◦σ∂0b}(t) · zρ(b)ρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "so(3.4(2))isfulﬁlledforz ⊗wand(z ⊗w)ρ◦σ∈objZ"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "c(R)<a .Toverifythat"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "t∂0"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "t∂0bρ∂0"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "t∂0bρ∂0b(s∂0"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "t∂0bρ∂0b(s∂0b) · zρ(b)ρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "t∂0"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "t∂0bzρ(b) · ρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "t∂0bzρ(b) · ρ∂1b(s∂0"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "ρ′(b)"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "ρ′(b)t∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "ρ′(b)t∂1bρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "σ′(b))ρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "σ′(b))ρ∂1b(s∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "σ′(b)) · t∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "σ′(b)) · t∂1bρ∂1"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "σ′(b)) · t∂1bρ∂1b(s∂1"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "Remark3.1.Letι"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Remark3.1.Letιa∈objZ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "c(R)<abethepairdeﬁnedbytheidentitycocycleofZ"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "theconstantfamilywithelementtheidentityidR"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "theconstantfamilywithelementtheidentityidRa∈autR"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "theconstantfamilywithelementtheidentityidRa∈autRa .Clearlyι"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "tensorproductofZ"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "C1⊆(ι"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "C1⊆(ιa, ι"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "=∩a∋xR"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "ality(*)weusedthefactthat{a ∈∆: x ∈a}isdownwarddirected.So(ι"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "y(*)weusedthefactthat{a ∈∆: x ∈a}isdownwarddirected.So(ιa, ι"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "C1andZ"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "c(R)<ahas"
+  },
+  {
+   "page": 16,
+   "mark": "o",
+   "context": "ǫ(zρ, wσ)e:= wσ(poe)∗σ"
+  },
+  {
+   "page": 16,
+   "mark": "o",
+   "context": "ǫ(zρ, wσ)e:= wσ(poe)∗σo(zρ(p"
+  },
+  {
+   "page": 16,
+   "mark": "o",
+   "context": "ǫ(zρ, wσ)e:= wσ(poe)∗σo(zρ(po′e))∗· zρ(p"
+  },
+  {
+   "page": 16,
+   "mark": "o",
+   "context": "wherepoe: e →o,p"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "e<a,iswell-deﬁnedasanelementofUH∩R"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "ǫ(zρ, wσ)∂0"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "ǫ(zρ, wσ)∂0b · (z ⊗w)ρ◦σ(b)=(w ⊗z)σ◦ρ(b) · ǫ(zρ, wσ)∂1"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "ǫ(ι"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "ǫ(ιa, zρ)e=ǫ(zρ, ι"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "σ′, vτ∈objZ"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "c(R)<a ,"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "ρ′),"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "σ′),"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "σ′),b ∈Σ"
+  },
+  {
+   "page": 16,
+   "mark": "o",
+   "context": "tt′= tρe(t′) = σe(t′)t = t′t,∀o ⊥e, t′∈R"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "R"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "isproperforanye<a.Thuswecanconcludeonlythatǫ(zρ, wσ)e∈R"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "WenowdeﬁneapresheafstructureonthefamilyZ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "c(R)<:={Z"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "raa′: Z"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "c(R)<a′→Z"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "(raa′z:= z|Σ"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "whichobviouslyfulﬁllthepresheafrelationsraa′′= raa′◦r"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Lemma3.2.ThepairZ⊗:= (Z"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "c(R)<, r)∆deﬁnes"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "wherezρ, wσ∈objZ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "f.Weassumea⊂a′,otherwisethereisnothingtoprove.Letzρ, wσ∈objZ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "nt by(3.8).Passing tothe”symmetry”, weconsidera ⊆a′,zρ, wσ∈Z"
+  },
+  {
+   "page": 17,
+   "mark": "o",
+   "context": "shouldbedeﬁned,according to(3.9),usingpathspoe,p"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "andΣ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "andΣ1(∆a)⊆Σ"
+  },
+  {
+   "page": 17,
+   "mark": "o",
+   "context": "andΣ1(∆a)⊆Σ1(∆a′)wehavethatpoe,p"
+  },
+  {
+   "page": 17,
+   "mark": "o",
+   "context": "e ∈∆a′,isindependentonthechoiceofpoe ,p"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Lemma3.3.Z"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Proof.Ifz∈objZ"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "Proof.Ifz∈objZ1(R)thenwedeﬁnethefamilyz"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "Proof.Ifz∈objZ1(R)thenwedeﬁnethefamilyza:=z|Σ"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "e(t):={ad"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "e(t):={adz(p)}(t),∀t ∈R"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "edoesnot dependon thechoice of"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "e∈locR"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "∀a ∈∆,t ∈R"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "∀a ∈∆,t ∈Ra,b ∈Σ"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "∂0"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "za̺:=(z"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "e}e<a)∈objZ"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "e|R"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "e|Ra:=ad"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "e|Ra:=adz(p′)|R"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "andweconcludethat{za̺}aisasectionofZ.Ift∈(z, w)thendeﬁningt"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "e:=t"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "anarrowt"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "anarrowtaofZ"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "c(R)<aand"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "c(R)<aandasection"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "c(R)<aandasectione"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "c(R)<aandasectionet:={t"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "c(R)<aandasectionet:={ta},soZ"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "c(R)<aandasectionet:={ta},soZ1(R)is"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "c(R)<aandasectionet:={ta},soZ1(R)isasubcategoryof"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "(ez, e̺) ∈obj"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "(ez, e̺)={(ez"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(ez, e̺)={(eza, e̺a) ∈objZ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Since anya ∈∆has proper closure inM , for anyb ∈Σ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "per closure inM , for anyb ∈Σ1(∆)there isa ∈∆such that|b| ∈Σ"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "andwedeﬁnez(b):=ez"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "choiceofa>|b|;moreovergivenc∈Σ"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "choiceofa>|b|;moreovergivenc∈Σ2(∆)wehavedz(c)=dez"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "z∈objZ"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "z∈objZ1(R).If"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "z∈objZ1(R).Ifet := {et"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "z∈objZ1(R).Ifet := {eta}isanarrowof"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "e < aandwesett"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "e < aandwesette:=et"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "e,soreasoningasabovewehavethat"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "e,soreasoningasabovewehavethatt := {t"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "e,soreasoningasabovewehavethatt := {te}isanarrowofZ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "concludethatZ"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "presheafand"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "presheafandeS = Z"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "Proof.BydeﬁnitionwehaveS=(S, r)∆,whereeachS"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "objS"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "objSa:={za̺,z∈objZ"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ByRem.2.1wealreadyknowthat"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ByRem.2.1wealreadyknowthateS=Z"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "ǫ(za̺, w"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ς)"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "ς)e:=wς(poe)∗ς"
+  },
+  {
+   "page": 18,
+   "mark": "o",
+   "context": "o(z̺(p"
+  },
+  {
+   "page": 18,
+   "mark": "o",
+   "context": "o(z̺(po′e))∗· z̺(p"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ς)"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ς)e∈R"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ς)e∈Reforany"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "fulﬁlsthesymmetryrelations,soweonlyhavetoprovethatǫ(za̺, w"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "Now,thepointisthatǫ(za̺, w"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "e, ς"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "e, ς"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "ω⊥{x}Rωforany"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "ǫ(za̺, w"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ς)"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "e◦ς"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "e}(t)={ς"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "e}(t) · ǫ(za̺, w"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ς)"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ς)"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "ς)e· t′=t′ · ǫ(za̺, w"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "ǫ(za̺, w"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ς)"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "andweconclude,bypuncturedHaagduality,thatǫ(za̺, w"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ς)"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "ς)e∈R"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "denotethefullsubcategoryofS"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "denotethefullsubcategoryofSawithobjectsza̺,z∈Z"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "By theprevious Lemmata, and since by [9,§5.3] we have thatZ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "symmetrictensorpresheafsuchthatZ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "aDR-presheafwithcategoryofsectionsZ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Letz∈objZ"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "deﬁned in (2.15).By deﬁnition, the ﬁbreβbz"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "deﬁnition, the ﬁbreβbza,a ∈∆, has objects the tensor powersz"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "a)={t = (t"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "a)={t = (te∈R"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "a)={t = (te∈Re,"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "a)={t = (te∈Re,e ∈∪a′⊇a∆a′):"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "a)={t = (te∈Re,e ∈∪a′⊇a∆a′):z"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "a)={t = (te∈Re,e ∈∪a′⊇a∆a′):zm(b)"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "a)={t = (te∈Re,e ∈∪a′⊇a∆a′):zm(b)t∂1"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "a)={t = (te∈Re,e ∈∪a′⊇a∆a′):zm(b)t∂1b= t∂0"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "a)={t = (te∈Re,e ∈∪a′⊇a∆a′):zm(b)t∂1b= t∂0b"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "a)={t = (te∈Re,e ∈∪a′⊇a∆a′):zm(b)t∂1b= t∂0bz"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "a)={t = (te∈Re,e ∈∪a′⊇a∆a′):zm(b)t∂1b= t∂0bzn(b) ,∀b ∈Σ"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "β(z"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "a, z"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Asimplerwaytodescribeβ(z"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "a, z"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "a)isthefollowing:sinceany"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "a′∈∆suchthata∈∆a′;thusforanyt∈β(z"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "a, z"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "a)wecanpick"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "a)wecanpickt"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "a)wecanpickta∈R"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "te=z"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "te=zm(p) ta z"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "wherep:a→eisapathmadeof1-simplicesinΣ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "restrictionfunctorstaketheformr"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "aa′(t"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "aa′(ta′) = t"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "aa′(ta′) = ta ,"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "r"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "a′a(t"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "a′a(ta)=t"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "a′a(ta)=ta′=z"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "a′a(ta)=ta′=zm(b"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "a′a(ta)=ta′=zm(ba′a)"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "a′a(ta)=ta′=zm(ba′a) t"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "a′a(ta)=ta′=zm(ba′a) ta"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "a′a(ta)=ta′=zm(ba′a) ta z"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "a′a(ta)=ta′=zm(ba′a) ta zn(b"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "b"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ba′a:= (a′, a; a′) ∈Σ"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "z(p)}(t"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "z(p)}(ta)=z"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "z(p)}(ta)=zm(p)"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "z(p)}(ta)=zm(p) t"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "z(p)}(ta)=zm(p) ta"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "z(p)}(ta)=zm(p) taz"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "p : a →a,t"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "p : a →a,ta∈β(z"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "a, z"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "z: π"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "z: π1(∆) →autβ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "z: π1(∆) →autβb"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "z: π1(∆) →autβbz"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Letnowinparticularz∈objZ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "G"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "Gz⊆U(d)andaholonomyrepresentationχ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Gz⊆U(d)andaholonomyrepresentationχz:π"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "Gz⊆U(d)andaholonomyrepresentationχz:π1(∆)→QG"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "Gz⊆U(d)andaholonomyrepresentationχz:π1(∆)→QGz:=NG"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "Gz⊆U(d)andaholonomyrepresentationχz:π1(∆)→QGz:=NGz/G"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "β"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "βb"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "G"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "GzissuchthatthereisasymmetrictensorisomorphismF:βbz"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "GzissuchthatthereisasymmetrictensorisomorphismF:βbza→bπG"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "atthereisasymmetrictensorisomorphismF:βbza→bπGz .RegardingQG"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "anautomorphismgroupofbπG"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "χ"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "z.Itcanbeeasilyveriﬁedthat"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "z.Itcanbeeasilyveriﬁedthatdisthestatisticaldimensionof"
+  },
+  {
+   "page": 19,
+   "mark": "§",
+   "context": "Itcanbeeasilyveriﬁedthatdisthestatisticaldimensionofz(see[9,"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "yieldsafullembeddingofsymmetrictensorC*-categoriesZ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "compact group net bundle, and induces liftsbχ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "compact group net bundle, and induces liftsbχz: π"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "compact group net bundle, and induces liftsbχz: π1(∆) →NG"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "ompact group net bundle, and induces liftsbχz: π1(∆) →NGz ,χ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "ct group net bundle, and induces liftsbχz: π1(∆) →NGz ,χz=bχ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "up net bundle, and induces liftsbχz: π1(∆) →NGz ,χz=bχz modG"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "deﬁnedbysectorsz∈objZ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "LetnowZ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "trivialsectors,thatis,ofthosez∈objZ"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "alsectors,thatis,ofthosez∈objZ1(R)suchthatthereisafamilyψ={ψ"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "∂0"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "∂0bψ∂1"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "∂0bψ∂1b ,"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "∂0bψ∂1b ,b ∈Σ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "∂0bψ∂1b ,b ∈Σ1(∆).Then"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "∂0bψ∂1b ,b ∈Σ1(∆).Thenz"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "∂0bψ∂1b ,b ∈Σ1(∆).Thenzn(p) = 1forany"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "∂0bψ∂1b ,b ∈Σ1(∆).Thenzn(p) = 1foranyp :"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "∂0bψ∂1b ,b ∈Σ1(∆).Thenzn(p) = 1foranyp : a →aand"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "t(R).Thus when"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "t(R).Thus whenz∈objZ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "z(p)is the identity functor for any"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "z(p)is the identity functor for anyz∈objZ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "zandχ"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "zandχzaretrivial,andthereisatleastonelift"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "zandχzaretrivial,andthereisatleastoneliftbχ"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "aretrivial,andthereisatleastoneliftbχz ,thetrivialone.Wehave"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "(R)֒→HilbG"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "(R)֒→HilbGt(∆),whereG"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "the trivial net bundle with ﬁbre the Doplicher-Roberts dualG"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ofZ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "(R).But,by theresults in [39],we may also haveZ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "By Theorem 2.4, any sectorz∈objZ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "By Theorem 2.4, any sectorz∈objZ1,•(R)deﬁnes the 1–cochainu"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Theorem 2.4, any sectorz∈objZ1,•(R)deﬁnes the 1–cochainuz: Σ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "2.4, any sectorz∈objZ1,•(R)deﬁnes the 1–cochainuz: Σ1(∆) →NG"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "thatclassiﬁesliftsbχ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "thatclassiﬁesliftsbχz: π"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "thatclassiﬁesliftsbχz: π1(∆) →NG"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "thatclassiﬁesliftsbχz: π1(∆) →NGz ,q ◦bχ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "thatclassiﬁesliftsbχz: π1(∆) →NGz ,q ◦bχz= χ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "thatclassiﬁesliftsbχz: π1(∆) →NGz ,q ◦bχz= χz .Thecochainu"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "LetP"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "LetPz→Mdenote the locally constant, principalQG"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "byχ"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "byχz .By(2.5),wehavecharacteristicclassesζ↑(z):=[ζ↑(P"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "byχz .By(2.5),wehavecharacteristicclassesζ↑(z):=[ζ↑(Pz)]∈H"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "byχz .By(2.5),wehavecharacteristicclassesζ↑(z):=[ζ↑(Pz)]∈H2"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "G"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Gzistrivial for anyz∈objZ"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "Gzistrivial for anyz∈objZ1,•(R).ThenNG"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "Gzistrivial for anyz∈objZ1,•(R).ThenNGz= QG"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "Gzistrivial for anyz∈objZ1,•(R).ThenNGz= QGz= U(d)andχ"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "k(χ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "k(χz) ∈H"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "k(χz) ∈H2"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "ccs(z) := d +P"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "(k−1)!c"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "potentialisdescribedbyaclassinH"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "potentialisdescribedbyaclassinH1(M, R/Z),theholonomyofz∈objZ"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "the ﬁrst Chern classc"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "the ﬁrst Chern classc1(z) ∈H"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "ﬁeldyieldsanetsuchthatthatG"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "ﬁeldyieldsanetsuchthatthatGzistrivialforanyz∈objZ"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "IntheprevioussectionweprovedthatthesuperselectionstructureZ"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "sedin[4]inthecaseofmassivebosonﬁeldsontheEinsteinspacetime(S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "β"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "β"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "βa′◦a′a= a′a ◦β"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "β"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "βa: F"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "βa: Fa→F"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": ":={t ∈F"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": ":={t ∈Fa: β"
+  },
+  {
+   "page": 20,
+   "mark": "t",
+   "context": "a,"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "a,t 7→t±:= 1/2(t ± β"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "F"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "representation(π, U)ofFisnormalwheneverforanya, o∈∆witha⊥o,t"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "resentation(π, U)ofFisnormalwheneverforanya, o∈∆witha⊥o,t1∈F"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 20,
+   "mark": "o",
+   "context": "t2∈F"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "2)]net= [π"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "2)]net= [π"
+  },
+  {
+   "page": 20,
+   "mark": "o",
+   "context": "1) ,π"
+  },
+  {
+   "page": 20,
+   "mark": "o",
+   "context": "1) ,π"
+  },
+  {
+   "page": 20,
+   "mark": "o",
+   "context": "1) ,π"
+  },
+  {
+   "page": 20,
+   "mark": "o",
+   "context": "1) ,π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "γ∈ZG∗,γ"
+  },
+  {
+   "page": 21,
+   "mark": "g",
+   "context": "α"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "χ : π"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "ı"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "Byhomotopyinvariancethefamilyıfulﬁlsı"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "Byhomotopyinvariancethefamilyıfulﬁlsıa′′a′ı"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "Byhomotopyinvariancethefamilyıfulﬁlsıa′′a′ıa′a=ı"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "G"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "Ga≡G∗,ˆı"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "Ga≡G∗,ˆıa′a(g) := ı"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "Point2.WedeﬁneF"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "∀a ⊆a′,t ∈F"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "a′a: F"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "a′a: Fa→F"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "Sinceı"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "Sinceıa′′a′ı"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "Sinceıa′′a′ıa′a= ı"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "G"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "Ga≡G∗andF"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "Ga≡G∗andFa=F∗,aforanya∈∆wedeﬁneα"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "a∈autF"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "a∈autFaasin(4.2).Tocheckthatαis"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "gaugeaction(2.11)mustbefulﬁlled,sowecompute,foranya ∈∆,g∈G"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "eaction(2.11)mustbefulﬁlled,sowecompute,foranya ∈∆,g∈Ga,t ∈F"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "◦a′a(t)=ı"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "a′a· ı"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "a′a· ı"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "a′a· ıa′a"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "a′a=ı"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "a′a=a′a ◦α"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "and this yields the desired equalities.Note thatR"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "desired equalities.Note thatRa= R∗,afor anya ∈∆, becauseG∗≡G"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "4.WesetH"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "4.WesetHa:=H∗,π"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "4.WesetHa:=H∗,πa(t):=t,andU"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "4.WesetHa:=H∗,πa(t):=t,andUa′a:=ı"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "4.WesetHa:=H∗,πa(t):=t,andUa′a:=ıa′aforanya⊆a′∈∆,t∈F"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "clearlyarepresentation,thatisnormalsince,foranyo ⊥a,t ∈F"
+  },
+  {
+   "page": 22,
+   "mark": "o",
+   "context": "arlyarepresentation,thatisnormalsince,foranyo ⊥a,t ∈Fa ,t′∈F"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "π"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "πa(t) · U"
+  },
+  {
+   "page": 22,
+   "mark": "o",
+   "context": "πa(t) · Upπ"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "πa(t) · Upπo(t′)U"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "πa(t) · Upπo(t′)Up=t · ı"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "SinceFisgradedbyγ∈G∗wehaveR"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "H= {H"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "H= {Ha}.WeassumethatthereisanetbundleofZ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "is,wehaveafamilyG={G"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "is,wehaveafamilyG={Ga⊂UH"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "is,wehaveafamilyG={Ga⊂UHa},andcentral,period2elementsγ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "is,wehaveafamilyG={Ga⊂UHa},andcentral,period2elementsγa∈G"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "thatadU"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "thatadUa′a(G"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "thatadUa′a(Ga)=G"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "thatadUa′a(Ga)=Ga′ ,adU"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "thatadUa′a(Ga)=Ga′ ,adUa′a(γ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "thatadUa′a(Ga)=Ga′ ,adUa′a(γa)=γ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "everthereisaunitaryfamilyν= {ν"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "everthereisaunitaryfamilyν= {νa: H"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "everthereisaunitaryfamilyν= {νa: H1,a→H"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "adν"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "adνa′◦1,a′a= 2,a′a ◦adν"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "a∈G"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "foranya ⊆a′,g∈G"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "χ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "χ2(p) = ν"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "χ2(p) = νa · χ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "Proof.SinceχtakesvaluesinG∗wehaveı"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "Proof.SinceχtakesvaluesinG∗wehaveıa′a(t)=tforanya⊆a′andt∈R"
+  },
+  {
+   "page": 23,
+   "mark": "z",
+   "context": "Thisisjustiﬁedbythefactthatthesamehappensforimagesπ"
+  },
+  {
+   "page": 23,
+   "mark": "z",
+   "context": "observablenetundertheactionofsectorsπ"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "observablenetundertheactionofsectorsπz,z∈objZ"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "superselectionstructureZ"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "must be extracted fromZ"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "freeDiracﬁeldψ∗interactingwitha(classical)closed1–formA ∈Z"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "ζA: π"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "r,sinceanydiamondo∈∆issimplyconnectedthereisalocalprimitiveφ"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "suchthatA|o= dφ"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "Λ"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "Λo′′o′+ Λ"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "Λo′′o′+ Λo′o=Λ"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "φ"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "φo′|o −φ"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "φo′|o −φo=Λ"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Letnowb ∈Σ"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "dφ|b|=φ|b|(β(1)) −φ|b|(β(0))=φ∂0"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "dφ|b|=φ|b|(β(1)) −φ|b|(β(0))=φ∂0b(β(1)) −φ∂1"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "dφ|b|=φ|b|(β(1)) −φ|b|(β(0))=φ∂0b(β(1)) −φ∂1b(β(0)) + Λ"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "whereΛ"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "whereΛb:=Λ|b|∂0"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "whereΛb:=Λ|b|∂0b −Λ|b|∂1"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "whereΛb:=Λ|b|∂0b −Λ|b|∂1b .NotethatthefamilyΛ={Λ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "reconstructedasfollows.Leta∈∆andp:a→a,p=b"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "reconstructedasfollows.Leta∈∆andp:a→a,p=bn ∗. . . ∗b"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "(2.3)wehaveahomotopyclass[p]∈π"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": ")wehaveahomotopyclass[p]∈π1(M)containingaloopℓ:[0, 1]→M ,ℓ=β"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "motopyclass[p]∈π1(M)containingaloopℓ:[0, 1]→M ,ℓ=βn∗. . . ∗β"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "whereeach curveβ"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "k ,k= 1, . . . , n,fulﬁlstheabove properties withrespect tob"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "k= 1, . . . , n,fulﬁlstheabove properties withrespect tobk∈Σ"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "Λ"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "o(M, DM)of spinorssupportedwithin"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "e2πiφ"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "c(M, DM)→BH∗inthesenseof[12].Forany"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "ψ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "ψo(s):=ψ∗(e"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "ψo(s):=ψ∗(e2πiφ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ψ∗(x)→e"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "ψ∗(x)→e2πiφ"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "F"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "Fo:={ψ"
+  },
+  {
+   "page": 24,
+   "mark": "z",
+   "context": "Weconsiderglobalgaugetransformationsα"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "Weconsiderglobalgaugetransformationsαz(ψ"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "Weconsiderglobalgaugetransformationsαz(ψo(s)):=zψ"
+  },
+  {
+   "page": 24,
+   "mark": "z",
+   "context": "o(M, DM),"
+  },
+  {
+   "page": 24,
+   "mark": "z",
+   "context": "and setG∗:= {V"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "R∗= (R, ∗)∆,R"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "R∗= (R, ∗)∆,Ro= F"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "∗,"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "o′o(ψo(s)):=ψo′(s)=ψ∗(e"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "o′o(ψo(s)):=ψo′(s)=ψ∗(e2πi(φ"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "o′o(ψo(s)):=ψo′(s)=ψ∗(e2πi(φo+Λ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "o′o(ψo(s)):=ψo′(s)=ψ∗(e2πi(φo+Λo′o)s)=e"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "o′o(ψo(s)):=ψo′(s)=ψ∗(e2πi(φo+Λo′o)s)=e2πiΛ"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "Byuniversality,anyo′oextendstoa*-monomorphismo′o:F"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "Byuniversality,anyo′oextendstoa*-monomorphismo′o:Fo→F"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "H"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "U"
+  },
+  {
+   "page": 24,
+   "mark": "o",
+   "context": "∀o ⊆o′,t ∈F"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "ℓ∈[p] ∈π"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "A·ψ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "ℓ∈[p] ∈π"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "Thus,ifv"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "ψ"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "ψa(s)v"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "ψa(s)v0 ,U"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "ψa(s)v0 ,Upψ"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "ψa(s)v0 ,Upψa(s)v"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "ψa(s)v0 ,Upψa(s)v0∈H∗(weusethenotation inwhichψ"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "To give an example we parametrizeR"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "To give an example we parametrizeR4by the coordinatesx"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "To give an example we parametrizeR4by the coordinatesx0, x"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": " give an example we parametrizeR4by the coordinatesx0, x1, x"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "e an example we parametrizeR4by the coordinatesx0, x1, x2, x"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "e parametrizeR4by the coordinatesx0, x1, x2, x3and deﬁneM= R"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "π"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "π1(∆) ≃π"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "π1(∆) ≃π1(M) ≃Z(notethatMishomotopictoS"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "WeconsideravectorpotentialA′∈Ω"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "WeconsideravectorpotentialA′∈Ω1(R"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "WeconsideravectorpotentialA′∈Ω1(R4)suchthatF:=dA′∈Ω"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "WeconsideravectorpotentialA′∈Ω1(R4)suchthatF:=dA′∈Ω2(R"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "F∈Ω"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "F∈Ω2(R"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "AsaﬁnalstepwedeﬁneA ∈Ω"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "CurrentalgebrasonS"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "WenowapplyLemma4.1tocurrentalgebras onS"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Thebase∆ofS"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "parametrizeS"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "o:={ q∈C∞(S"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "o:={ q∈C∞(S1, C):supp(q) ⊆o ,zq(z) ∈R, ∀z∈S"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "V"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "2πi"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Hereeveryq∈V"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "oisinterpretedas"
+  },
+  {
+   "page": 25,
+   "mark": "o",
+   "context": "oisinterpretedasachargedistributionsupportedwithin"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "AﬁeldnetF"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "∗= (F"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "F"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "o={φ"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "o={φq∈UH∗:"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "o={φq∈UH∗:q∈V"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "see[6,Eq.4.93]andthefollowingremarks.ThenetF"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "∗isbosonicinthesensethat[φ"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "∗isbosonicinthesensethat[φq, φ"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "wheneverφ"
+  },
+  {
+   "page": 25,
+   "mark": "o",
+   "context": "wheneverφq∈F"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "wheneverφq∈Fo ,φ"
+  },
+  {
+   "page": 25,
+   "mark": "e",
+   "context": "wheneverφq∈Fo ,φq′∈F"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "groupG∗≃Z"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "groupG∗≃Z2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "V=e"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "V=e2πi(2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "V"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "V2"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "operatoronH∗aﬃliatedwiththevonNeumannalgebrageneratedbyF"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "∀o ∈∆,q∈V"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "χ : Z ≃π"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "χ : Z ≃π1(S"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "untwistednetR"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "∗=(R"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "∗=(Rn, )∆generatedbyoperatorsinF"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "is,indeed,acentralelementofthevonNeumannalgebra⃗R"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "ralelementofthevonNeumannalgebra⃗Rn⊂BH∗generatedbythefamilyR"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "see[6,Eq.4.90].Anyφqdeﬁnesalocalizedautomorphismof⃗R"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "γ"
+  },
+  {
+   "page": 25,
+   "mark": "e",
+   "context": "γq(t) = t ,∀t ∈R"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "PassingtothetwistednetF"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "PassingtothetwistednetFnwehavearepresentationπ:F"
+  },
+  {
+   "page": 25,
+   "mark": "o",
+   "context": "HilbertnetbundlewithﬁbresH"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "πo: F"
+  },
+  {
+   "page": 25,
+   "mark": "o",
+   "context": "adU"
+  },
+  {
+   "page": 25,
+   "mark": "o",
+   "context": "adUo′o ◦π"
+  },
+  {
+   "page": 25,
+   "mark": "o",
+   "context": "adUo′o ◦πo=π"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "adUo′o ◦πo=πo′|F"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "here anyπois the inclusion mapF"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "∀φ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "∀φq∈F"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "automorphismγ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "⊂L"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "⊂L2(G"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "G"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "G"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "λ:= ⊕̺(γ)=±1"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "λ,J"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "∀f∈D+,g∈G"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "G"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "λ"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "(withﬁbreC"
+  },
+  {
+   "page": 27,
+   "mark": "s",
+   "context": "λM):"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "G"
+  },
+  {
+   "page": 27,
+   "mark": "g",
+   "context": "s"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "∀s ∈D−,g∈G"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "continuous representationτ: G"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "continuous representationτ: G0→UH∗, and a normal(τ(G"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "∗andF∗,a,"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "NλG"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "(G"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "(G0),∀g∈G"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "NotethatNλG"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "NotethatNλG0actsbyadjointactiononG"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "∀V∈NλG"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "Moreover,anyV∈NλG"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "χ : π"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "χ : π1(M) →NλG"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "Proof.WiththenotationofthepreviousLemmawedeﬁneG∗:= τ(G"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "valuesinNτ(γ)G∗,infactinsuchacasewewouldhavethemorphismτ◦χ:π"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "V∈NλG"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "Theveriﬁcationsthatτ(NλG"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "localﬁeldalgebrasF"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "aembedsinendR"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "aembedsinendRa(whichhas"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "aembedsinendRa(whichhasanon-simpleunitbecausethecentreofR"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "ﬁeldnetFshouldbeselectedbyapropersetofinvariantsofZ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "containasubnetFt,theoneassociatedwiththesubcategoryZ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "(R)ofZ"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "thatFewster’sgaugegroupistheDoplicher-RobertsdualofZ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "N1(∆) := { b = (b"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "N2(∆) := { c = (c"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "N2(∆) := { c = (c0⊆c"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "by[33,§2.2],thereareinclusionsN"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "by[33,§2.2],thereareinclusionsN1(∆)⊆Σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "by[33,§2.2],thereareinclusionsN1(∆)⊆Σ1(∆),N"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "by[33,§2.2],thereareinclusionsN1(∆)⊆Σ1(∆),N2(∆)⊆Σ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "i : Σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "δ: Σ"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "adδ"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "adδc ◦i∂1"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "adδc ◦i∂1c= i∂0"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "adδc ◦i∂1c= i∂0c ◦i∂2"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "adδc ◦i∂1c= i∂0c ◦i∂2c,∀c ∈Σ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "sectorz∈objZ"
+  },
+  {
+   "page": 29,
+   "mark": "z",
+   "context": "sectorz∈objZ1,•(R)deﬁnes a gerbeˇG"
+  },
+  {
+   "page": 29,
+   "mark": "z",
+   "context": "sectorz∈objZ1,•(R)deﬁnes a gerbeˇGz= (i"
+  },
+  {
+   "page": 29,
+   "mark": "z",
+   "context": "sectorz∈objZ1,•(R)deﬁnes a gerbeˇGz= (iz, δ"
+  },
+  {
+   "page": 29,
+   "mark": "z",
+   "context": "1,•(R)deﬁnes a gerbeˇGz= (iz, δz)∆, by means of the cochainu"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "R)deﬁnes a gerbeˇGz= (iz, δz)∆, by means of the cochainuz: Σ"
+  },
+  {
+   "page": 29,
+   "mark": "z",
+   "context": " a gerbeˇGz= (iz, δz)∆, by means of the cochainuz: Σ1(∆) →NG"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "b ∈Σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "b ∈Σ1(∆),c ∈Σ"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "AˇG-C*-gerbeˇFisgivenbyafamilyofC*-dynamicalsystemsα"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "G-C*-gerbeˇFisgivenbyafamilyofC*-dynamicalsystemsαa: G →autF"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "*-monomorphismsa′a: F"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "*-monomorphismsa′a: Fa→F"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "|c|c"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "|c|c1◦c"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "|c|c1◦c1"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "|c|c1◦c1c"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "|c|c1◦c1c0= α|c|(δ"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "|c|c1◦c1c0= α|c|(δc) ◦|c|c"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "|b|b"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "|b|b0◦α"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "|b|b0◦αb"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "|b|b0◦αb0(g) = α|b|(i"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "|b|b0◦αb0(g) = α|b|(ib(g)) ◦|b|b"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "foranyb∈N"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "foranyb∈N1(∆),c∈N"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "a,"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "a,a∈∆,is"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "χ : π"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "χ : π1(M) →NλG"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "χ : π1(M) →NλG0/G"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "b:= χ(pω ∂0"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "b:= χ(pω ∂0b ∗b ∗p∂1b ω) ∈N λG"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "b:= χ(pω ∂0b ∗b ∗p∂1b ω) ∈N λG0/G"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "∀b ∈Σ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "c ∈Σ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "arefulﬁlled(see[35,§2.2]).Foranyb ∈Σ"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "arefulﬁlled(see[35,§2.2]).Foranyb ∈Σ1(b)wepickaV"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "arefulﬁlled(see[35,§2.2]).Foranyb ∈Σ1(b)wepickaVb∈NλG"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "fulﬁlled(see[35,§2.2]).Foranyb ∈Σ1(b)wepickaVb∈NλG0suchthatV"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "ed(see[35,§2.2]).Foranyb ∈Σ1(b)wepickaVb∈NλG0suchthatVb modG"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "∂1"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "∂1c∈G"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "c ∈Σ"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "Wedeﬁneı"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "Wedeﬁneıb:=adV"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "Wedeﬁneıb:=adVb ,∀b∈Σ"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "RecallingtheinclusionN"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "RecallingtheinclusionN1(∆) ⊂Σ"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "∀a ⊆a′∈∆,t ∈F"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "a′a: F"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "a′a: Fa→F"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "α"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "αa: G"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "αa: G0→autF"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "a ∈∆,g∈G"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "|c|c"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "|c|c1 ◦c"
+  },
+  {
+   "page": 30,
+   "mark": "c",
+   "context": "|c|c1 ◦c1"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "|c|c1 ◦c1c"
+  },
+  {
+   "page": 30,
+   "mark": "c",
+   "context": "|c|c1 ◦c1c0= α|c|(δ"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "|c|c1 ◦c1c0= α|c|(δc) ◦|c|c"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "∀c ∈N"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "|b|b"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "|b|b0◦α"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "|b|b0◦αb"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "|b|b0◦αb0(g)={adτ(V"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "|b|b0◦αb0(g)={adτ(Vb)} ◦adτ(g)=adτ(V"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "|b|b0◦αb0(g)={adτ(Vb)} ◦adτ(g)=adτ(Vbg)=adτ(ı"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "|b|b0◦αb0(g)={adτ(Vb)} ◦adτ(g)=adτ(Vbg)=adτ(ıb(g) V"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "|b|b0◦αb0(g)={adτ(Vb)} ◦adτ(g)=adτ(Vbg)=adτ(ıb(g) Vb)=α|b|(ı"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "={adτ(Vb)} ◦adτ(g)=adτ(Vbg)=adτ(ıb(g) Vb)=α|b|(ıb(g)) ◦|b|b"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "U"
+  },
+  {
+   "page": 30,
+   "mark": "v",
+   "context": "c)"
+  },
+  {
+   "page": 30,
+   "mark": "v",
+   "context": "c)v= τ(V(a,a′′))"
+  },
+  {
+   "page": 30,
+   "mark": "c",
+   "context": "(a,a′′)δ"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "(a,a′′)δcV(a,a′′)∈G"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "H"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "π"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "πa: R"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "H"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "SinceeachR"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "SinceeachRaispointwiseG"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "π"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "U"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "π"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "foranyt ∈R"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "senseof(4.1))wenotethatforanyo ⊥a,t"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "senseof(4.1))wenotethatforanyo ⊥a,t1∈R"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "senseof(4.1))wenotethatforanyo ⊥a,t1∈Ra ,t"
+  },
+  {
+   "page": 30,
+   "mark": "o",
+   "context": "senseof(4.1))wenotethatforanyo ⊥a,t1∈Ra ,t0∈R"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "[π"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "[πa(t"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "[πa(t1) ,adU"
+  },
+  {
+   "page": 30,
+   "mark": "o",
+   "context": "[πa(t1) ,adUp ◦π"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "[πa(t1) ,adUp ◦πo(t"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "[πa(t1) ,adUp ◦πo(t0)]=[t"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "[πa(t1) ,adUp ◦πo(t0)]=[t1 ,adτ(V"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "[πa(t1) ,adUp ◦πo(t0)]=[t1 ,adτ(Vp)(t"
+  },
+  {
+   "page": 30,
+   "mark": "o",
+   "context": "andthelastcommutatoriszerobecause{adτ(V )}R"
+  },
+  {
+   "page": 30,
+   "mark": "o",
+   "context": "andthelastcommutatoriszerobecause{adτ(V )}Ro⊆R"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "andthelastcommutatoriszerobecause{adτ(V )}Ro⊆RoforanyV∈NλG"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "thatτ(NλG"
+  },
+  {
+   "page": 30,
+   "mark": "0",
+   "context": "ItiseasilyveriﬁedthatχhasalifttoNλG"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "ilyveriﬁedthatχhasalifttoNλG0if,andonlyif,thereisachoiceof{V"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "bythepresheafstructureofZ"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "c(R)<aandpathsp, p′:"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "LemmaA.1.Foranya∈∆,cocyclezρ∈objZ"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "p′ishomotopictothetrivialloopb"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "p′ishomotopictothetrivialloopbo:o→o,b"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "π"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "π1(∆)= π"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "dependenceofo, o′.Tothisend,wehavetoverifythatdeﬁningǫ(z, w)"
+  },
+  {
+   "page": 31,
+   "mark": "w",
+   "context": "ωe"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "oωσ"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "oωσo(z"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "oωσo(zo′ ¯ω′z¯ω′e)∗· z"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "oωσo(zo′ ¯ω′z¯ω′e)∗· zo′ ¯ω′z¯ω′eρ"
+  },
+  {
+   "page": 31,
+   "mark": "w",
+   "context": "oωσo(zo′ ¯ω′z¯ω′e)∗· zo′ ¯ω′z¯ω′eρe(woω"
+  },
+  {
+   "page": 31,
+   "mark": "w",
+   "context": "ωe"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "oωσ"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o′¯ω′z"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "o′¯ω′zo′ ¯ω′z¯ω′eρ"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "o′¯ω′zo′ ¯ω′z¯ω′eρe(woω)ρ"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o′¯ω′z"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "o′¯ω′zo′ ¯ω′z¯ω′eρ"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "o′¯ω′zo′ ¯ω′z¯ω′eρe(woω)ρ"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "ωeσω(z¯ω′e)∗· ρ¯ω′(woω)∗z¯ω′eρ"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "ωeσω(z¯ω′e)∗· ρ¯ω′(woω)∗z¯ω′eρe(woω)ρ"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "ωeσω(z¯ω′e)∗· z¯ω′eρ"
+  },
+  {
+   "page": 31,
+   "mark": "w",
+   "context": "oω"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "oωwoω)ρ"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "ωeσω(z¯ω′e)∗· z¯ω′eρ"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": " the sequel, to be concise, we shall writez≡zρ, wσ≡w, v≡vτ∈Z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂0"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂0bσ"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂0bσo(z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂0bσo(zo′∂0"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂0bσo(zo′∂0b)∗· z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂0bσo(zo′∂0b)∗· zo′∂0"
+  },
+  {
+   "page": 31,
+   "mark": "z",
+   "context": "o∂0bσo(zo′∂0b)∗· zo′∂0b"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂0bσo(zo′∂0b)∗· zo′∂0bz(b)ρ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂0bσo(zo′∂0b)∗· zo′∂0bz(b)ρ∂1b(wo∂0"
+  },
+  {
+   "page": 31,
+   "mark": "w",
+   "context": "o∂0bσo(zo′∂0b)∗· zo′∂0bz(b)ρ∂1b(wo∂0b"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "ǫ(z, w)∂0"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "ǫ(z, w)∂0b · z(b)ρ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "w(b)σ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "w(b)σ∂1b(z(b)) · σ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂0"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂0bσ"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂0bσo(z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂0bσo(zo′∂0"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂0bσo(zo′∂0b)∗· z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂0bσo(zo′∂0b)∗· zo′∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂0bσo(zo′∂0b)∗· zo′∂1bρ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂0bσo(zo′∂0b)∗· zo′∂1bρ∂1b(wo∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "w(b)σ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "w(b)σ∂1b(z(b)) · σ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂1bσ"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂1bσo(z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(zo′∂0"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂1bσo(zo′∂0b)∗· z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(zo′∂0b)∗· zo′∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(zo′∂0b)∗· zo′∂1bρ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(zo′∂0b)∗· zo′∂1bρ∂1b(wo∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "w(b)σ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂1bσ"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂1bσo(z(b))∗σ"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂1bσo(z(b))∗σo(z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(z(b))∗σo(zo′∂0"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂1bσo(z(b))∗σo(zo′∂0b)∗· z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(z(b))∗σo(zo′∂0b)∗· zo′∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(z(b))∗σo(zo′∂0b)∗· zo′∂1bρ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(z(b))∗σo(zo′∂0b)∗· zo′∂1bρ∂1b(wo∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "w(b)σ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂1bσ"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂1bσo(z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(zo′∂1"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "o∂1bσo(zo′∂1b)∗· z"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(zo′∂1b)∗· zo′∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(zo′∂1b)∗· zo′∂1bρ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "o∂1bσo(zo′∂1b)∗· zo′∂1bρ∂1b(wo∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "w(b)σ∂1"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "w(b)σ∂1b(z(b)) · ǫ(z, w)∂1"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "s"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "seσ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "seσe(t"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(zo′e)∗· z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeσo(zo′e)∗· zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "s"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "seσ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "seσe(t"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "seσe(te) · ǫ(z, w)"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "e(t"
+  },
+  {
+   "page": 32,
+   "mark": "s",
+   "context": "e(te)"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "e(te)s"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(zo′e)∗· z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeσo(zo′e)∗· zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "e(t"
+  },
+  {
+   "page": 32,
+   "mark": "w",
+   "context": "e(te)"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oe· s"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oe· soσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oe· soσo(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oe· soσo(zo′e)∗· z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oe· soσo(zo′e)∗· zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o(t"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(zo′e)∗s"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(zo′e)∗so· z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o(zo′e)∗so· zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o(t"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "o(te"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o′e) · ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o′e) · ρo′(s"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "o′e) · ρo′(so)"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o′e) · ρo′(so)z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o′e) · ρo′(so)zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(t"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(to′) · z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o(to′) · zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(to′) · zo′eρe(s"
+  },
+  {
+   "page": 32,
+   "mark": "w",
+   "context": "o(to′) · zo′eρe(so"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(z′o′e)∗t"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(z′o′e)∗to′· z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o(z′o′e)∗to′· zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(z′o′e)∗to′· zo′eρe(s"
+  },
+  {
+   "page": 32,
+   "mark": "w",
+   "context": "o(z′o′e)∗to′· zo′eρe(so"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(z′o′e)∗· t"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o(z′o′e)∗· to′z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o(z′o′e)∗· to′zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oe) · ρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oe) · ρe(s"
+  },
+  {
+   "page": 32,
+   "mark": "t",
+   "context": "o′e"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o′et"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o′eteρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oe) · ρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oe) · ρe(s"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oe) · t"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oe) · teρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oe) · teρe(s"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "ǫ(z′, w′)"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "ǫ(z′, w′)e · t"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "ǫ(z′, w′)e · teρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "ǫ(z′, w′)e · teρe(s"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(zo′e)∗· z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeσo(zo′e)∗· zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeρo(w"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeρo(wo′e)∗· w"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeρo(wo′e)∗· wo′eσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(zo′e)∗· z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeσo(zo′e)∗· zo′e· ρ"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "oeσo(zo′e)∗· zo′e· ρe(woe)"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o′eρo′(woe)∗· woeσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o′eρo′(woe)∗· woeσe(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(zo′e)∗· z"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "oeσo(zo′e)∗· zo′e"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o′e· ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o′e· ρo′(woe)ρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "o′e· ρo′(woe)ρo′(woe)∗· woeσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "o′e· ρo′(woe)ρo′(woe)∗· woeσe(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeσo(zo′e)∗· woeσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeσo(zo′e)∗· woeσe(z"
+  },
+  {
+   "page": 32,
+   "mark": "w",
+   "context": "oe"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oewoeσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oewoeσe(z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oewoeσe(zo′e)∗σ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oewoeσe(zo′e)∗σe(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "The second point implies, using Lemma A.1, thatw"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "The second point implies, using Lemma A.1, thatwo′e= w(b"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "point implies, using Lemma A.1, thatwo′e= w(b0) ∈Rω , whereb"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "sing Lemma A.1, thatwo′e= w(b0) ∈Rω , whereb0= (o′, e; ω) ∈Σ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "ρo′(w"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "ρo′(wo′e) ∈Rω,τ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "ρo′(wo′e) ∈Rω,τo(w"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "ρo′(wo′e) ∈Rω,τo(wo′e) = w"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "τ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "τo ◦ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "τo ◦ρo′(w"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "τo ◦ρo′(wo′e)=ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "τo ◦ρo′(wo′e)=ρo′(w"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "τo ◦ρo′(wo′e)=ρo′(wo′e)=ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "τo ◦ρo′(wo′e)=ρo′(wo′e)=ρo′◦τ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "τo ◦ρo′(wo′e)=ρo′(wo′e)=ρo′◦τo(w"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′eρe(w"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′eρe(wo′e))∗· z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′eρe(wo′e))∗· zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′eρe(wo′e))∗· zo′eρe(w"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′eρe(wo′e))∗· zo′eρe(wo′e) · {ρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′eρe(wo′e))∗· zo′eρe(wo′e) · {ρe◦σ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "ǫ((z ⊗w), v)"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(ρo′(w"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "oeτo(ρo′(wo′e)"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(ρo′(wo′e)z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(ρo′(wo′e)zo′e)∗· z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(ρo′(wo′e)zo′e)∗· zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(ρo′(wo′e)zo′e)∗· zo′eρe(w"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(ρo′(wo′e)zo′e)∗· zo′eρe(wo′e) · {ρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(ρo′(wo′e)zo′e)∗· zo′eρe(wo′e) · {ρe◦σ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′e)∗· {ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′e)∗· {ρo′◦τ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′e)∗· {ρo′◦τo}(w"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′e)∗· {ρo′◦τo}(wo′e))∗z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′e)∗· {ρo′◦τo}(wo′e))∗zo′e· ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′e)∗· {ρo′◦τo}(wo′e))∗zo′e· ρe(w"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′e)∗· {ρo′◦τo}(wo′e))∗zo′e· ρe(wo′eσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′e)∗· z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′e)∗· zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′e)∗· zo′eρe(τ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′e)∗· zo′eρe(τo(w"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′e)∗· zo′eρe(τo(wo′e))∗· ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′e)∗· zo′eρe(τo(wo′e))∗· ρe(w"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′e)∗· zo′eρe(τo(wo′e))∗· ρe(wo′eσ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(z"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(zo′e)∗z"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′e)∗zo′eρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(zo′e)∗zo′eρe(voe) · ρ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτ"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(w"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "oeτo(wo′e)∗w"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "oeτo(wo′e)∗wo′eσ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "ǫ(z, v)"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "ǫ(z, v)e · ρ"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "ǫ(z, v)e · ρe(ǫ(w, v)"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "ρ"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "ρ0 ,ρ"
+  },
+  {
+   "page": 33,
+   "mark": "f",
+   "context": "∈λ{Eµ(̺)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "WenowconsidertheHilbertspaceL"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "h,˜h ∈L"
+  },
+  {
+   "page": 33,
+   "mark": "f",
+   "context": "1Eµ"
+  },
+  {
+   "page": 33,
+   "mark": "f",
+   "context": "0Eµ"
+  },
+  {
+   "page": 33,
+   "mark": "f",
+   "context": "0Eµ"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "c(M, DM ∗),"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "S"
+  },
+  {
+   "page": 34,
+   "mark": "h",
+   "context": "v, s 7→¯vs := (v"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "v, s 7→¯vs := (vhγ"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "hk"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "hks"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "hksk)"
+  },
+  {
+   "page": 34,
+   "mark": "h",
+   "context": "s 7→s+:= (s"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "s 7→s+:= (shβhk)"
+  },
+  {
+   "page": 34,
+   "mark": "§",
+   "context": "c(Σ, DΣ)([12,"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "types = s"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "types = s1 ⊗s"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "λΣ),"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "λΣ),s"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "c(Σ, DΣ),"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "c(Σ, DΣ),s"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "1, ¯n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "We denote the corresponding completion byL"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "canberegardedasalinearfunctionalonL"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "to generic vectors inL"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Σ)embeds in the conjugate spaceL"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "WenowdenotethefermionicFockspaceofL"
+  },
+  {
+   "page": 35,
+   "mark": "a",
+   "context": "Σ.Itcarries"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "h ∈L"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "λΣ),ϕ ∈L"
+  },
+  {
+   "page": 35,
+   "mark": "s",
+   "context": "∗sinceρλSµ"
+  },
+  {
+   "page": 35,
+   "mark": "s",
+   "context": "∗sinceρλSµshascompactsupportforany"
+  }
+ ]
+}

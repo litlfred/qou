@@ -3,60 +3,45 @@
  "doc_id": "arxiv-math-0004133v1",
  "source_sha256": "687de8249639c7f2",
  "brief": "From Finite Sets to Feynman Diagrams — ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms.",
- "extended": "**From Finite Sets to Feynman Diagrams**\n\n*John C. Baez and James Dolan*\n\n30 pp, 10 sections.\n\n**Abstract.** ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms. We describe some of the ways a thoroughgoing emphasi s on categoriﬁcation can simplify and unify mathematics. We beg in with elementary arithmetic, where the category of ﬁnite sets ser ves as a categoriﬁed version of the set of natural numbers, with disj oint union and Cartesian product playing the role of addition and multi plication. We sketch how categorifying the integers leads naturally to the inﬁ- nite loop space Ω ∞S∞, and how categorifying the positive rationals leads naturally to a notion of the ‘homotopy cardinality’ of a tame space. Then we show how categorifying formal power series le ads to Joyal’s esp` eces des structures, or ‘structure types’. We also describe a useful generalization of structure types called ‘stuﬀ typ es’.\n\n**Outline.** Abstract; 1 Introduction; 2 Equality and Isomorphism; X Note that Π 1(X) is far more informative tha; 3 Natural Numbers and Finite Sets; 2 In general,; 4 Power Series and Structure Types; 5 Feynman Diagrams and Stuﬀ Operators; Acknowledgements; References",
+ "extended": "**From Finite Sets to Feynman Diagrams**\n\n*John C. Baez and James Dolan*\n\n30 pp, 7 sections.\n\n**Abstract.** ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms. We describe some of the ways a thoroughgoing emphasis on categoriﬁcation can simplify and unify mathematics. We begin with elementary arithmetic, where the category of ﬁnite sets serves as a categoriﬁed version of the set of natural numbers, with disjoint union and Cartesian product playing the role of addition and multiplication. We sketch how categorifying the integers leads naturally to the inﬁ- nite loop space Ω∞S∞, and how categorifying the positive rationals leads naturally to a notion of the ‘homotopy cardinality’ of a tame space. Then we show how categorifying formal power series leads to Joyal’s esp`eces des structures, or ‘structure types’. We also describe a useful generalization of structure types called ‘stuﬀtypes’.\n\n**Outline.** Front matter; 1 Introduction; 2 Equality and Isomorphism; 3 Natural Numbers and Finite Sets; 4 Power Series and Structure Types; 5 Feynman Diagrams and Stuff Operators; Acknowledgements",
  "tokens": {
   "brief": 28,
-  "extended": 300
+  "extended": 280
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-3"
   },
   {
-   "id": "sec-002-2-equality-and-isomorphism",
+   "id": "sec-001-2-equality-and-isomorphism",
    "title": "Equality and Isomorphism",
-   "pages": "3-5"
+   "pages": "3-7"
   },
   {
-   "id": "sec-003-x-note-that-π-1x-is-far-more-informative-than-π",
-   "title": "Note that Π 1(X) is far more informative than Π 0(X), because it records",
-   "pages": "5-7"
-  },
-  {
-   "id": "sec-004-3-natural-numbers-and-finite-sets",
+   "id": "sec-002-3-natural-numbers-and-finite-sets",
    "title": "Natural Numbers and Finite Sets",
-   "pages": "7-14"
+   "pages": "7-17"
   },
   {
-   "id": "sec-005-2-in-general",
-   "title": "In general,",
-   "pages": "14-17"
-  },
-  {
-   "id": "sec-006-4-power-series-and-structure-types",
+   "id": "sec-003-4-power-series-and-structure-types",
    "title": "Power Series and Structure Types",
    "pages": "17-22"
   },
   {
-   "id": "sec-007-5-feynman-diagrams-and-stuﬀ-operators",
-   "title": "Feynman Diagrams and Stuﬀ Operators",
+   "id": "sec-004-5-feynman-diagrams-and-stuff-operators",
+   "title": "Feynman Diagrams and Stuff Operators",
    "pages": "22-28"
   },
   {
-   "id": "sec-008-acknowledgements",
+   "id": "sec-005-acknowledgements",
    "title": "Acknowledgements",
-   "pages": "28-28"
-  },
-  {
-   "id": "sec-009-references",
-   "title": "References",
    "pages": "28-30"
   }
  ],

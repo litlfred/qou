@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Topological Quantum Field Theory
 Theories whose description does not explicitly or implicitly use the spacetime metric are called topolog-
 ical [15, 20]. Metric independence means that observables of such theories do not depend on distances.
 This imposes powerful constraints on the theory, one of which is vanishing Hamiltonian.
@@ -169,4 +170,3 @@ the TQFT. However, if, in the last example, the TQFT is two-dimensional, and the
 then the trace is indeed a torus.
 In the following sections we will give explicit examples of TQFT, which will allow to compute all the
 data of the linear algebra exactly, preserving the general topological interpretation.
-3.2

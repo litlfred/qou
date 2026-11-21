@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hopf-link-symmetric-decomposition-van-der-waals-reading",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hopf-link-symmetric-decomposition-van-der-waals-reading",
+  "kind": "remark",
+  "title": "Hopf-element split at $q_0$ and the van der Waals reading",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hopf-link-symmetric-decomposition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hopf-link-symmetric-decomposition",
+  "tags": [
+    "hopf-link",
+    "van-der-waals",
+    "comparison-with-measurement"
+  ],
+  "text": "hopf-link-symmetric-decomposition-van-der-waals-reading.md",
+  "provenance": "authored"
+}

@@ -1,1 +1,1 @@
-Let C be a tensor category with right duality (ρ
+Let C be a tensor category with right duality (ρ ∨ , bρ, dρ). A natural isomorphism η ∈ (1, 1) of the identity functor of C is called compatible with duality if ηρ∨ = (ηρ) ∨ . If ρ is simple then ηρ is a nonzero scalar multiple of 1ρ. It is easy to see that the property of being compatible with duality for an isomorphism η ∈ (1, 1) does not depend on the choice of the right duality. We recall the definition of braided symmetry, ribbon (or premodular) and modular category category.

@@ -8,7 +8,7 @@ $$
 
 ## Significance
 
-The antisymmetric-to-symmetric ratio equals $\tanh(\ln q)$ **on a positive braid closure** — that is, at $n_- = 0$; for mixed crossing signs it acquires the multiplicity factor $\tfrac{n_+ + n_-}{n_+ - n_-}$ and is not a constant of the framework ([decomposition](#prop:crossing-energy-decomposition), item 4). This proposition confirms that on that locus the analytic and the algebraic forms coincide identically over real $q > 0$. The identity below is independent of that scoping: it is a statement about $\tanh$, and holds for every real $q > 0$ whatever the crossing counts. This removes any ambiguity regarding whether the framework employs a "classical-$\tanh$" or a "$q$-deformed $\tanh_q$" realization at the substrate anchor.
+The antisymmetric-to-symmetric ratio equals $\tanh(\ln q)$ **on a positive braid closure** — that is, at $n_- = 0$. This proposition confirms that on that locus the analytic and the algebraic forms coincide identically over real $q > 0$. The identity below is independent of that scoping: it is a statement about $\tanh$, and holds for every real $q > 0$ whatever the crossing counts. This removes any ambiguity regarding whether the framework employs a "classical-$\tanh$" or a "$q$-deformed $\tanh_q$" realization at the substrate anchor.
 
 The forms match because $\exp(\ln q) = q$ for $q > 0$. Therefore,
 

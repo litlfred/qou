@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/lem-sec-092-04",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 265,
+  "pageEnd": 273,
+  "text": "lem-sec-092-04.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-092",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "13.3.6",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-092-133-residue-complexes.md (p. 265-273)",
+    "claim_id": "arxiv-1610.09640v4#lemma:13.3.6",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,72 @@
+by (smt sin-gt-zero sin-le-zero sin-pi-minus sin-0-iff-canon sin-ge-zero)+
+
+have sin y * sind < 0
+using <p * 0 < 0» phi-sin theta-sin
+by (simp add: mult-less-0-iff)
+
+have sin (yp — 0) # 0
+proof (rule ccontr)
+assume 7— ?thesis
+hence sin (py — J) = 0
+by simp
+have — 2% pix p-Vy-—V< 2x pi
+using «yp = Arg z’) « = Arg y’> Arg-bounded|[of z'| Arg-bounded[of y'] «p 4 pi» «8 # pir
+by auto
+hence yp —-0=-piVp-V=0Vp-V=pi
+using «sin (p — ¥) = 0»
+by (smt sin-0-iff-canon sin-periodic-pi2)
+moreover
+{
+assume y — J = — pi
+hence y = #3 — pi
+by simp
+hence False
+using nondeg-yz
+using <y’ = cor ry * cis 0» (z' = cor rz * cis yp (rz > 0» «ry > O>
+by auto
+
+}
+
+moreover
+{
+assume y — J = 0
+hence y = 3
+by simp
+hence False
+using <y’ = cor ry * cis 0» (z' = cor rz * cis yp (rz > 0» «ry > O>
+using nondeg-yz
+by auto
+
+}
+
+moreover
+{
+assume y — J = pi
+hence y = 0 + pi
+by simp
+hence False
+using <y’ = cor ry * cis J) <z' = cor rz * cis yy «rz > 0» «ry > O»
+using nondeg-yz
+by auto
+}
+ultimately
+show False
+by auto
+qed
+
+have u ¢ circline-set z-axis
+proof—
+have — is-real u’
+using * polar in-disc
+using «p 4 0) «(p = Arg u (yp # pir phi-sin(1) phi-sin(2)
+by (metis is-real-arg2)
+moreover
+have u #4 oop
+using in-disc
+by auto
+ultimately
+show ?thesis
+using * of-complez-inj[of u’|
+unfolding circline-set-x-axis
+
+131

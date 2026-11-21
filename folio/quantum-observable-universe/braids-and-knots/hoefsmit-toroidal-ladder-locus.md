@@ -39,9 +39,7 @@ order $\tfrac{1}{2}$ are the unique solution.
 Because the $q$-bracket identity $[d-1]_q[d+1]_q = [d]_q^2 - 1$ holds for
 all $q$, the same forcing computation runs verbatim at the $q$-deformed
 level (the coefficient matching gives $q^{2\alpha + 1} = 1$); the
-half-integer shift survives $q$-deformation. The $q$-layer verification is
-recorded in the computational witness
-`computations/substrate/hoefsmit-toroidal-ladder-probe.witness.json`.
+half-integer shift survives $q$-deformation. The $q$-layer statement has been verified by direct computation.
 
 The physical reading: the two windings $(\mu, \nu)$ of a toroidal harmonic
 $P^\mu_{\nu-1/2}(\cosh\eta)\, e^{i\mu\theta} e^{i\nu\varphi}$ are the two

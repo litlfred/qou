@@ -1,0 +1,45 @@
+1.1.6 The augmented variety
+
+In this subsection we define a two-fold cover of the character variety when I is the
+fundamental group of a 3-manifold with boundary a single torus, which has been
+previously considered by several authors, see for instance [DG16]. Both the definition
+and the motivation arise from the following example. This augmented variety will
+
+be used in Chapter 2.
+
+Example 1.1.20 (The character variety X(0M) = X(Z?)). Let x € X(0M) be
+a k-character, it is the character of a semi-simple representation p : Z? + SLo(k).
+Since Z? is abelian, it can be written p(y) = Gy A149) ), and y(Y¥,) = A(y)+A71(y)
+for some \ € H!(0M,k*). Moreover, there is an involution o of H'(0M,k*) that
+sends to A7!, and clearly what we have just described is a morphism X(0M) 3
+H1(0M,k*)/o ~ (k*)?/o that turns out to be an isomorphism.
+
+On the functions algebra side, there is a map from B[Z?] into the algebra C[Z?] =
+k[Z,,y € Z*|/(Z,Z5 — Zs), the latter being isomorphic to kLX,X~!,Y,Y~'], that
+sends Y, +> Z,+Z,-1. Its image lies in the a-invariant part C[Z7]? ~ k[X+X7!,Y+
+YUXY+(XY)"1], foro: Z, + Z,-1 and we get an isomorphism B[Z*| ~ C[Z?|’.
+The double cover we are going to define is H'(0M, k*) in this example, it corresponds
+
+to a choice of an eigenvalue function Z, for y € OM a boundary curve.
+
+Definition 1.1.21. We define the augmented representation variety R(M) to be the
+subvariety of R(M) x H'(0M, k*) given by the pairs {(p, A), p : m(M) > SLo(k), A:
+m1 (OM) — k*, A(y) + A(y) 71 = Tr p(y) Vy € m1 (OM)}.
+
+Again SLo(k) acts on R(M), trivially on the second factor, thus we define the aug-
+mented character variety to be the quotient X(M) = R(M)//SLo(k).
+
+The advantage of this two-fold covering is the following : on one hand the functions
+of X(M) are trace functions, on the other hand on X(M) we have at our disposal,
+for any 7 € 7(0M), two eigenvalue functions Z,+: that maps the pair (p, A) to an
+eigenvalue A(y) for p(y).
+
+The following definition provides a direct description of the algebraic quotient.
+
+Definition 1.1.22. Denote by BIT] = BIL] @pp~my C[m(OM)] and we define the
+
+augmented character variety as the fibered product :
+X(M) = X(M) x x@my H'(OM, k*)
+that is, X(M) = Spec BIT].
+
+23

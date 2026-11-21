@@ -249,6 +249,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7d497d470c64",
+          "ts": "f83a47be4458"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:10.756Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] On main the key identity is an unconditional `axiom descartes_elliptic_curve_axiom` (∀ q > 0) and the theorem returns it. I checked the axiom's content with exact sympy: the shift X = x − (z+1)/3 gives p(z) = (2z²+z+2)/3, r(z) = (20z³+15z²+15z+20)/27; with z = s − s⁻¹ both the s-forms and the q-forms in the md agree identically, and s³r factors as 5(s²+s−1)(4s⁴−s³−4s²+s+4)/27. So the axiom is true and provable. A separate error in the Lean docstrings: \"r(q) = 0 (cusp)\" at q = 1/φ² is wrong. There z = −1 and p = 1 ≠ 0, so the curve is y² = x³ + x (smooth, j = 1728), not cuspidal. The md also calls the zero set of a cubic in X a \"curve\"; the y² is introduced only by the Weierstrass form"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1152,7 +1167,7 @@
           "in_degree": 0,
           "cone_size": 37,
           "depth": 19,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1701,6 +1716,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:00:10.756Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

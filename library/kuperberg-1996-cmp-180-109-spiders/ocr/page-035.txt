@@ -1,0 +1,42 @@
+Spiders for Rank 2 Lie Algebras 143
+
+or, in the G2 case, they make an “H” with only one type 2 strand:
+
+In each of these exceptional cases, the operation indicated is the H-move.
+
+The operation of cutting along a minimal path is slightly more complicated than
+before, because the path might cut diagonally across a vertex in the B) spider or
+contain a type 1 edge in the G2 spider. The operation is defined by first introducing a
+type 2 edge, as is sometimes also necessary for an H-move, by reversing the contrac-
+tion operation of Fig. (7). A core is defined in the same way for all three rank 2 spi-
+ders. The stair-step construction is essentially the same as before. Each square is an
+H-web, with the result that sewing together two cores with stair steps in between re-
+sults in many internal type 2 strands, which are removed by the operation of Fig. (7).
+
+The biggest difference between the three rank 2 cases is in the statement and
+proof of the analogues of Lemma 6.8. We wish to check that, if s € {1,2} and c
+and d are arbitrary clasps of weight 2 and y, then
+
+|B([s]ed)| = dim Inv(V; @ V(A) ® V(u)) . (7)
+
+For this purpose, one would like to argue that an element of B([s]cd) has no hyper-
+bolic faces. As before, it is convenient to consider segregated clasps, where here a
+clasp is segregated if it is of the form 11...122...2, as well as reverse segregated
+clasps of the form 22...211...1. In the By case, it is easy to enumerate the elements
+of B([1]cd) if c is segregated and d is reverse segregated, as well as the elements
+of B([2]cd) if c is reverse segregated and d is segregated. A web w in such a basis
+web set cannot have negative curvature, and after removing bare strands, it is either
+empty or the shape of its boundary is one of the following (possibly with c and d
+
+switched):
+c a eG
+g d d
+
+In the G2 case, the computation is again simpler if one of c and d is segregated and
+the other is reverse segregated. No webs in B([1]cd) have any negative curvature,
+but a web in B([2]cd) might have one negatively curved face, namely one with
+three type 2 strands and one type 1 strand incident to it:
+
+———
+
+Cc

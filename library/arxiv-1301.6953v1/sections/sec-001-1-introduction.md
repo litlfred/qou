@@ -1,31 +1,15 @@
 ---
 doc_id: arxiv-1301.6953v1
-doc_title: "LU TP 13-03 Januray 2013"
+doc_title: "Chiral Perturbation Theory and Mesons"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-5
+pages: 2-5
 source_pdf: 1301.6953v1.pdf
 source_sha256: 8c9231d0832df3b6
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory and Mesons — 7 sections: Front matter; Chiral Perturbation Theory; Introduction"
 ---
-four disparate areas where some progress has been made in recent years are discussed. These
-are the last ﬁt of the order p4 low-energy-constants Lr
-i to data, hard pion ChPT, the recent two-
-loop work on EFT for QCD like theories and the high order leading logarithm calculations in the
-massive O(N) nonlinear sigma model.
-dedicated to Ximo Prades 1963-2010
-To be published in the proceedings of:
-The 7th International Workshop on Chiral Dynamics,
-August 6 -10, 2012
-Jefferson Lab, Newport News, Virginia, USA
-∗Speaker.
-c
-⃝Copyright owned by the author(s) under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike Licence.
-http://pos.sissa.it/
-Chiral Perturbation Theory and Mesons
-Johan Bijnens
-1. Introduction
 This talk is dedicated to my friend and collaborator Ximo Prades who died since the previous
 Chiral Dynamics in Berne in 2009. For those of you who like to know more I recommend looking
 up the slides from my talk at the symposium in Granada in his memory [1]. We have been very
@@ -63,7 +47,6 @@ menta are counted the same in the standard counting.
 Range of validity: The breakdown scale is when effects that are not included become important.
 For mesonic ChPT these are clearly the meson resonances in the relevant channels. Mρ is
 thus clearly the end of the range.
-2
 Chiral Perturbation Theory and Mesons
 Johan Bijnens
 Figure 1:
@@ -111,7 +94,6 @@ quenched
 • Which interactions to include beyond the strong one
 • Which particles included as non Goldstone Bosons
 • My general belief: if it involves soft pions (or soft K,η) some version of ChPT exists.
-3
 Chiral Perturbation Theory and Mesons
 Johan Bijnens
 2 ﬂavour
@@ -232,7 +214,6 @@ are not necessarily the same. The chiral logarithm is the log(2B ˆm) term. The 
 by the relation between the bare and renormalized couplings and the renormalized couplings do
 depend on the renormalization scale µ and the scheme used.
 1It is not a gauge symmetry since no kinetic terms for the external ﬁelds are included.
-4
 Chiral Perturbation Theory and Mesons
 Johan Bijnens
 In two-ﬂavour ChPT [14] one uses conventionally the quantities ¯li = 32π2

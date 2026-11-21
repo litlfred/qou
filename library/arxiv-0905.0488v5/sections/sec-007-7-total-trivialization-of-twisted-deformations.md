@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0905.0488v5
-doc_title: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI"
+doc_title: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES"
 section_id: sec-007-7-total-trivialization-of-twisted-deformations
 section_title: "Total Trivialization of Twisted Deformations"
 section_number: 7
 pages: 33-36
 source_pdf: 0905.0488v5.pdf
 source_sha256: fcf8dee7cd3849b9
-doc_brief: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI — Let X be a smooth algebraic variety over a ﬁeldK containing the real numbers."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 0.974
+doc_brief: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES — Let X be a smooth algebraic variety over a ﬁeld K containing the real numbers. We introduce the notion of twisted associative (resp."
 ---
 \label{sec:tttf}
 

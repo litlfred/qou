@@ -13,9 +13,12 @@
   "pageStart": 4,
   "pageEnd": 8,
   "contains": [
-    "library/cspaper/blocks/prose-sec-001"
+    "library/cspaper/blocks/prose-sec-001",
+    "library/cspaper/blocks/lem-sec-001-01",
+    "library/cspaper/blocks/prop-sec-001-02",
+    "library/cspaper/blocks/rem-sec-001-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cspaper",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cspaper",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cspaper/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cspaper/manifest.jsonld",
   "provenance": "ingested"
 }

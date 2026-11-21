@@ -262,6 +262,39 @@
         "severity": "minor",
         "evidence": "No issues detected.",
         "notes": "Looks consistent with standard mathematical/proof structures."
+      },
+      {
+        "field_hash": {
+          "md": "b0e5339c2fc5",
+          "ts": "6645cc03ed61"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:34.291Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "critical",
+        "evidence": "em-spectral-completeness.md:33-39 'w₊ = (dim_q V₊)²/[2]_q!, w₋ = (dim_q V₋)²/[2]_q! satisfy w₊ + w₋ = 1'; counterexample q=2: (441/16+1)/(5/2) = 457/40; proof.md:28-29 cites prop:wedderburn-trace-identity (Σ d_λ y_λ = 1), which does not give this",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "379fc501b605",
+          "ts": "6645cc03ed61"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:12:07.098Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "severity": "minor",
+        "evidence": "'Simple summands' is not well defined over a general ring R (needs a field / semisimplicity hypothesis). The eigenvalue normalisation q^{1/2}, -q^{-1/2} depends on the cited proposition's convention and is not restated."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1197,7 +1230,7 @@
           "in_degree": 0,
           "cone_size": 14,
           "depth": 9,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1759,6 +1792,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:42:56.024Z",
+  "updated_at": "2026-11-16T07:12:07.098Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

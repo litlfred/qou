@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "5s032x",
  "source_sha256": "17761383781f7bdc",
- "brief": "The standard model symmetry and qubit entanglement — quantum description.",
- "extended": "**The standard model symmetry and qubit entanglement**\n\n*Research at the intersection of quantum gravity and quantum information theory has seen sig-*\n\n20 pp, 9 sections.\n\n**Abstract.** quantum description. Indeed, the links appear so deep that Susskind has proposed to generalize ER =EPR , the conjecture that quantum entanglement is equivalent to wormholes in spacetime [6], to GR = QM, proposing that ‘where there is quantum mechanics, there is also gravity’ [7]. Hence, a quantum system does not merely come equipped with a geometry, but that geometry is dynamical, approximating general relativistic spacetimes in a classical limit. The origin of this idea can be traced to work of Jacobson, who has shown that Einstein’s equations can be recovered from thermodynamics in the presence of black hole horizons [8] (see also [9, 10]). These arguments rely essentially on the area law-scaling of the Bekenstein-Hawking entropy of black holes [11].\n\n**Outline.** The Standard Model Symmetry and Qubit Entangle; Abstract; The Complex Case: Single Qubits; The Bloch Sphere and the Complex Hopf Fibratio; Spin(3) and the Complex Hopf Fibration; Two Qubits and the Quaternionic Hopf Fibration; The Octonionic Case: Three Qubits; Three Qubits and the Octonionic Hopf Fibration; Conclusion",
+ "brief": "The Standard Model Symmetry and Qubit Entanglement — quantum description.",
+ "extended": "**The Standard Model Symmetry and Qubit Entanglement**\n\n*Jochen Szangolies∗*\n\n20 pp, 17 sections.\n\n**Abstract.** quantum description. Indeed, the links appear so deep that Susskind has proposed to generalize ER = EPR, the conjecture that quantum entanglement is equivalent to wormholes in spacetime [6], to GR = QM, proposing that ‘where there is quantum mechanics, there is also gravity’ [7]. Hence, a quantum system does not merely come equipped with a geometry, but that geometry is dynamical, approximating general relativistic spacetimes in a classical limit. The origin of this idea can be traced to work of Jacobson, who has shown that Einstein’s equations can be recovered from thermodynamics in the presence of black hole horizons [8] (see also [9, 10]). These arguments rely essentially on the area law-scaling of the Bekenstein-Hawking entropy of black holes [11].\n\n**Outline.** The Standard Model Symmetry and Qubit Entangle; Introduction: The `Quantum First'-Program; Abstract; The Complex Case: Single Qubits; SL(2,C) and 3+1-Dimensional Spacetime; The Bloch Sphere and the Complex Hopf Fibratio; Spin(3) and the Complex Hopf Fibration; The Quaternionic Case: Two Qubits; SL(2,H) and 5+1-Dimensional Spacetime; Two Qubits and the Quaternionic Hopf Fibration; Spin(5) and SU(2)U(1)/Z2; The Octonionic Case: Three Qubits; `SL(2,O)' and 9+1-Dimensional Spacetime; Three Qubits and the Octonionic Hopf Fibration; Spin(9) and SU(3)SU(2)U(1)/Z6; Entanglement and Massive Particles; Conclusion",
  "tokens": {
   "brief": 18,
-  "extended": 320
+  "extended": 375
  },
  "sections": [
   {
@@ -15,42 +15,82 @@
    "pages": "1-1"
   },
   {
-   "id": "sec-001-abstract",
+   "id": "sec-001-introduction-the-quantum-first-program",
+   "title": "Introduction: The `Quantum First'-Program",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-abstract",
    "title": "Abstract",
    "pages": "1-5"
   },
   {
-   "id": "sec-002-the-complex-case-single-qubits",
+   "id": "sec-003-the-complex-case-single-qubits",
    "title": "The Complex Case: Single Qubits",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-004-sl2c-and-31-dimensional-spacetime",
+   "title": "SL(2,C) and 3+1-Dimensional Spacetime",
    "pages": "5-6"
   },
   {
-   "id": "sec-003-the-bloch-sphere-and-the-complex-hopf-fibration",
+   "id": "sec-005-the-bloch-sphere-and-the-complex-hopf-fibration",
    "title": "The Bloch Sphere and the Complex Hopf Fibration",
    "pages": "6-7"
   },
   {
-   "id": "sec-004-spin3-and-the-complex-hopf-fibration",
+   "id": "sec-006-spin3-and-the-complex-hopf-fibration",
    "title": "Spin(3) and the Complex Hopf Fibration",
-   "pages": "7-9"
+   "pages": "7-7"
   },
   {
-   "id": "sec-005-two-qubits-and-the-quaternionic-hopf-fibration",
+   "id": "sec-007-the-quaternionic-case-two-qubits",
+   "title": "The Quaternionic Case: Two Qubits",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-sl2h-and-51-dimensional-spacetime",
+   "title": "SL(2,H) and 5+1-Dimensional Spacetime",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-009-two-qubits-and-the-quaternionic-hopf-fibration",
    "title": "Two Qubits and the Quaternionic Hopf Fibration",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-010-spin5-and-su2u1z2",
+   "title": "Spin(5) and SU(2)U(1)/Z2",
    "pages": "9-10"
   },
   {
-   "id": "sec-006-the-octonionic-case-three-qubits",
+   "id": "sec-011-the-octonionic-case-three-qubits",
    "title": "The Octonionic Case: Three Qubits",
    "pages": "10-12"
   },
   {
-   "id": "sec-007-three-qubits-and-the-octonionic-hopf-fibration",
-   "title": "Three Qubits and the Octonionic Hopf Fibration",
-   "pages": "12-16"
+   "id": "sec-012-sl2o-and-91-dimensional-spacetime",
+   "title": "`SL(2,O)' and 9+1-Dimensional Spacetime",
+   "pages": "12-12"
   },
   {
-   "id": "sec-008-conclusion",
+   "id": "sec-013-three-qubits-and-the-octonionic-hopf-fibration",
+   "title": "Three Qubits and the Octonionic Hopf Fibration",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-014-spin9-and-su3su2u1z6",
+   "title": "Spin(9) and SU(3)SU(2)U(1)/Z6",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-015-entanglement-and-massive-particles",
+   "title": "Entanglement and Massive Particles",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-016-conclusion",
    "title": "Conclusion",
    "pages": "16-20"
   }

@@ -1,4 +1,4 @@
-The Planck step $t_P(q) = q/(q-1)$ ([discrete Planck step](#rem:discrete-planck-step)) is a rational function of $q$. Both $t_P(q)$ and the iteration $f_q(z) = z^2 + c(q)$ realise over any field. We record the finite-field and $p$-adic incarnations of the Planck dynamics.
+The Planck step $t_P(q) = q/(q-1)$ ([discrete Planck step](#rem:discrete-planck-step)) is a rational function of $q$. Both $t_P(q)$ and the iteration $f_q(z) = z^2 + c(q)$ realise over any field. One records the finite-field and $p$-adic incarnations of the Planck dynamics.
 
 **Finite-field dynamics.**
 Over $k = \mathbb{F}_\pp$ with $q \in \mathbb{F}_\pp^\times$, the iteration $f_q \colon \mathbb{F}_\pp \to \mathbb{F}_\pp$ acts on a finite set. Every orbit is eventually periodic. This orbit structure encodes the Planck dynamics of the finite-field QOU:

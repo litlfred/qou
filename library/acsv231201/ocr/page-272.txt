@@ -1,0 +1,50 @@
+254 Smooth point asymptotics
+
+combined with the Cauchy integral formula, implies that the series coefficients
+of interest can be represented by an iterated integral
+
+(4 yf Lf F(z, pt" ‘aie yr if rg > 0
+2ni Tew) Lc, Zp Za
+
+ap =
+
+(4 yf Lf F(z’, oreo ai yr = if rg <0
+2ni} Jrwe) Io Zi++* Zd-1
+
+(9.10)
+In either case, the key observation is that the inner integral is exponentially
+smaller than p~"’ away from w?®. Indeed, if rz > 0 under our assumptions then
+for each fixed z° # w® the function f(t) = F(z°, 1?) has radius of convergence
+greater than p and the inner integral is O((o + €)""“) for some ¢ > 0; by continu-
+ity of the radius of convergence, a single ¢ > 0 may be chosen for all compact
+subsets of T(w°) not containing w°. Similarly, if ry < 0 then the inner integral
+is O((9 + €)") for some € € (—p, 0). Thus,
+
+lw" (ap - D| > 0 (9.11)
+
+exponentially quickly, where / is any integral in (9.10) with T(w°) replaced by
+any neighborhood of w® in T(w°). We now take the neighborhood defining J
+to be the set V’ on which the properties (i)—(iii) for the parametrization g hold,
+and compare the inner integral in (9.10) to one pushed ‘beyond’ the singular
+set. Note that in general we cannot do this without first ‘cutting out’ the small
+neighborhood NV.
+
+Assume that rq > 0 and compare
+
+d
+=(% Ly F(z°, pt aie yn
+2ni CQ Zee Zid *Zd-1
+to the integral
+r=( ) Ly. F(z°, tt" aie yr =
+2ni Zo t+ Zq-1
+
+with the inner contour C; replaced by C2. Because the points on C2 have larger
+modulus than p,
+
+jw"l'| > 0 (9.12)
+exponentially quickly. Furthermore, our assumption of strict minimality im-
+
+plies that the common inner integrand of / and /’ has a unique pole in the
+annulus p — 6 < |t| <p + 6, occurring at t = g(z°). If
+
+V(z°) = Res(F(z*, Nr"! ; t= g(z°)) (9.13)

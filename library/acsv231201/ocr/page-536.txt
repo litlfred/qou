@@ -1,0 +1,43 @@
+518 Stratification and stratified Morse theory
+
+A result of Whitney implies that if (X \ Y, Y) is a decomposition of X into
+two smooth manifolds satisfying (D.1.1) then some Whitney stratification of
+X refines this, and is a stratification of the pair (X, Y); see, for instance, [LT 10,
+Proposition 2.1]. Proposition D.4 extends to the following.
+
+Proposition D.11. if V. is a complex algebraic variety in C4 with stratifica-
+tion {Sq : a € I} then adding the stratum M = CAV, produces a stratification
+of the pair (Ci, Vx). o
+
+D.2 Critical points and the fundamental lemma
+
+We now extend the geometric concepts discussed in previous appendices to
+stratified spaces.
+
+Critical points for stratified spaces
+
+Fix a Whitney stratification {Sg : a € J} of a closed subset X of a smooth
+manifold M C R" and let f = hlx be the restriction to X of a smooth function
+h:MOR.
+
+Definition D.12 (stratified critical points and Morse functions). Any point p €
+X is contained in a unique stratum S = S(p), and we say that p is a critical
+point of the height function h on the stratified space X if p is a critical point
+of h|s(p) (in other words, if the restriction of the differential of h to the tangent
+space T,S(p) is zero). We call h a Morse function if
+
+(1) the restriction Als, is a Morse function for each a € J, meaning that its
+critical points are nondegenerate (i.e., its Hessian is nonsingular at each
+critical point), and
+
+(2) whenever p € Sq is a critical point of h|s, and T is a limit of tangent planes
+Tp,(Sg) a8 p; > p ina stratum Sg with B > a, then either T = T,(Sq) or
+T contains a tangent vector on which dh(p) does not vanish.
+
+This generalization of Morse functions to stratified spaces appears in [Pig79,
+Section 3]; see also [Laz73]. In many contexts it is assumed that Morse func-
+tions have distinct critical values — in which case we say we have a Morse
+function with distinct critical values — or are proper — in which case we say
+we have a proper Morse function. Figure D.3 shows two height functions, one
+failing condition (2) in Definition D.12 and one satisfying it: on the left, the
+limit of tangent lines at the cusp is horizontal, and is therefore annihilated by

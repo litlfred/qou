@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2409.09372v4
-doc_title: "MARKOV TRACES ON DEGENERATE CYCLOTOMIC HECKE ALGEBRAS DEKE ZHAO Dedicated to Professor Yingbo Zhang on the occasion of her 80th birthday"
+doc_title: "Markov traces on degenerate cyclotomic Hecke algebras"
 section_id: sec-001-2-inductive-basis
 section_title: "Inductive basis"
 section_number: 2
-pages: 3-6
+pages: 4-6
 source_pdf: 2409.09372v4.pdf
 source_sha256: b7eed67ec102ab3d
-doc_brief: "MARKOV TRACES ON DEGENERATE CYCLOTOMIC HECKE ALGEBRAS DEKE ZHAO Dedicated to Professor Yingbo Zhang on the occasion of her 80th birthday — LetH n(u) be the degenerate cyclotomic Hecke algebra with"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.842
+doc_brief: "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}."
 ---
 []{#Sec:Inductive-basis label="Sec:Inductive-basis"}
 

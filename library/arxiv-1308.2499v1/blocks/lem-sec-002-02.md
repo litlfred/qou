@@ -1,0 +1,1 @@
+Let α ∈(0, 1). For µ > 0 we let Mµ denote the set of all pairs (γ1, γ2) of curves γi ∈C1 ia([−1, 1], Rn) satisfying (i) |γ1(0) −γ2(0)| = 1, (ii) γ′ 1(0) ⊥(γ1(0) −γ2(0)) ⊥γ′ 2(0), (iii) ∥γ′ i∥C0,α ≤µ, i = 1, 2. Then there is a c = c(α, µ) > 0 such that intM(p,q)(γ1, γ2) ≥c for all (γ1, γ2) ∈Mµ.

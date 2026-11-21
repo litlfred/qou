@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1203.6551v1/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
-  "pageStart": 13,
-  "pageEnd": 15,
-  "text": "../sections/sec-001-5-higher-order-terms-in-the-neumann-zagier-asymp.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.6551v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1203.6551v1",
+  "title": "Hyperbolic Dehn fillings determined by their volumes",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-2-hyperbolic-dehn-fillings-determined-by-their-v.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.6551v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.6551v1/manifest.jsonld",
   "provenance": "ingested"
 }

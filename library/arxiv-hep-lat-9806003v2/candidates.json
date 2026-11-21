@@ -1,0 +1,130 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-lat-9806003v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "e34739e703aae6db3d32504857979dd7c1ebf459e63f9f644369ea32822db5fb",
+  "file": "9806003v2.pdf"
+ },
+ "provenance": {
+  "title": "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra",
+  "authors": "T. Guhr1, J.-Z. Ma1, S. Meyer2 and T. Wilke1",
+  "arxiv": {
+   "id": "hep-lat/9806003",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "2 Dec 1998"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "proposition": 4
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 4
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3,
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "It is possible to calculate spectral correlators analytically in the microscopic limit \\cite{verbaar93,forr93,nagao95}, and to compare the predictions of chRMT with complete spectra of the lattice QCD Dirac operator on reasonably large lattices.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-hep-lat-9806003v2/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-hep-lat-9806003v2#prop-sec-000-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "The ensemble averaged staircase $\\overline{N}(\\lambda)$ for the lattice QCD Dirac operator is shown in Fig.~\\ref{stair}.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-004-311-ensemble-unfolding.md (p. 3-4)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-004-311-ensemble-unfolding.md",
+   "section_title": "Ensemble unfolding",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-004-311-ensemble-unfolding.md (p. 3-4)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/arxiv-hep-lat-9806003v2/blocks/prop-sec-004-01",
+   "claim_id": "arxiv-hep-lat-9806003v2#prop-sec-004-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Therefore one should not be tempted to conclude that the saturation seen in Figs.~\\ref{deviate1},\\ref{poly_cut} is the analogue of ``saturation of fluctuation measures'' which was observed in the energy level statistics for classically chaotic systems and was interpreted by Berry in terms of shortest periodic orbits \\cite{berry85}.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-011-4-summary-and-discussion.md (p. 10-12)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-011-4-summary-and-discussion.md",
+   "section_title": "Summary and discussion",
+   "pages": "10-12",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-011-4-summary-and-discussion.md (p. 10-12)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-011-01",
+   "block_iri": "library/arxiv-hep-lat-9806003v2/blocks/prop-sec-011-01",
+   "claim_id": "arxiv-hep-lat-9806003v2#prop-sec-011-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "arXiv:hep-lat/9806003v2 2 Dec 1998 Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra T.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-front-matter.md (p. 1-1)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-front-matter.md (p. 1-1)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-front-matter-01",
+   "block_iri": "library/arxiv-hep-lat-9806003v2/blocks/prop-sec-front-matter-01",
+   "claim_id": "arxiv-hep-lat-9806003v2#prop-sec-front-matter-01"
+  }
+ ]
+}

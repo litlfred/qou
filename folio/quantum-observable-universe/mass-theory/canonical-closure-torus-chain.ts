@@ -37,4 +37,7 @@ export default proposition({
     "lean-formalised",
     "draft",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## What is formalised, what is checked, what is cited\n\n`QOU.Mass.TorusKnotPages` carries the algebra: the Seifert form\nof $T(2,n)$ is unimodular for every odd $n$; the continuant of $V - X V^{\\mathsf T}$\nsatisfies $(X+1) D_{2g} = X^{2g+1} + 1$, so the Alexander polynomial is\n$(X^n+1)/(X+1)$ and divides $X^{2n}-1$; the floor $2A+1 \\le b \\le 3A$ is\nbookkeeping from $\\mu = A+1$ and $A$ knotted components.\nThe chain form and its exponents are verified exactly for $A \\le 12$, and the\nsymbolic predictions -- components, knot types, linking, and that $W'_A$ closes\nto the same link (Jones polynomial and per-component Jones) -- for $A \\le 4$,\nby `the_canonical_closure_is_a_chain_of_torus_links_probe.py`; the\ncomputational instance at $A \\le 6$ via Reidemeister simplification and\nVogel's algorithm is `the_curvature_floor_is_sharp_probe.py`. Not formalised:\nthe two topological facts above, Milnor's theorem, and the identification of\nthe components from their Jones polynomials." },
+  ],
 });

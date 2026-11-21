@@ -2,45 +2,60 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0801.0083v4",
  "source_sha256": "8e38b9e56d246709",
- "brief": "CENTRAL EXTENSIONS OF GERBES AMNON YEKUTIELI — W e introduce the notion of central extension of gerbes on a to po- logical space X.",
- "extended": "**CENTRAL EXTENSIONS OF GERBES AMNON YEKUTIELI**\n\n36 pp, 7 sections.\n\n**Abstract.** W e introduce the notion of central extension of gerbes on a to po- logical space X. W e show that there are obstruction classes to lifting objec ts and isomorphisms in a central extension. W e also discuss pro nilpotent gerbes. These results are used in the paper [Ye] to study twisted defo rmation quanti- zation on algebraic varieties.\n\n**Outline.** 0 Introduction; 2 Prestacks on a Topological Space; 3 Extensions of Gerbes; 4 Obstruction Classes; 5 Sufficient Conditions for Existence of Obstr; 6 Pronilpotent Gerbes; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.13: Let G be a gerbe on X, and let N be a normal subgroupoid of G.\n- Theorem 4.6: Consider a central extension\n- Theorem 4.17: Consider a central extension of\n- Theorem 5.11: Consider the central extension of gerbes (5.8). If there are enough\n- Theorem 6.10: Let G be a gerbe on the topological space X, and let {N p}p∈N be\n- Proposition 3.7: Given a morphism of gerbes F : G → H, there is a unique",
+ "brief": "CENTRAL EXTENSIONS OF GERBES — We introduce the notion of central extension of gerbes on a topo- logical space X.",
+ "extended": "**CENTRAL EXTENSIONS OF GERBES**\n\n*AMNON YEKUTIELI*\n\n36 pp, 10 sections.\n\n**Abstract.** We introduce the notion of central extension of gerbes on a topo- logical space X. We show that there are obstruction classes to lifting objects and isomorphisms in a central extension. We also discuss pronilpotent gerbes. These results are used in the paper [Ye] to study twisted deformation quanti- zation on algebraic varieties.\n\n**Outline.** Front matter; 0 Introduction; 1 Recalling some Facts on 2-Categories; 2 Prestacks on a Topological Space; 3 Extensions of Gerbes; 4 Obstruction Classes; 5 Sufficient Conditions for Existence of Obstr; 6 Pronilpotent Gerbes; 7 Fake Global Objects of Gerbes; References",
  "tokens": {
-  "brief": 32,
-  "extended": 269
+  "brief": 28,
+  "extended": 175
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-0-introduction",
    "title": "Introduction",
-   "pages": "1-8"
+   "pages": "1-3"
   },
   {
-   "id": "sec-001-2-prestacks-on-a-topological-space",
+   "id": "sec-001-1-recalling-some-facts-on-2-categories",
+   "title": "Recalling some Facts on 2-Categories",
+   "pages": "3-8"
+  },
+  {
+   "id": "sec-002-2-prestacks-on-a-topological-space",
    "title": "Prestacks on a Topological Space",
-   "pages": "8-11"
+   "pages": "8-12"
   },
   {
-   "id": "sec-002-3-extensions-of-gerbes",
+   "id": "sec-003-3-extensions-of-gerbes",
    "title": "Extensions of Gerbes",
-   "pages": "11-19"
+   "pages": "12-19"
   },
   {
-   "id": "sec-003-4-obstruction-classes",
+   "id": "sec-004-4-obstruction-classes",
    "title": "Obstruction Classes",
    "pages": "19-25"
   },
   {
-   "id": "sec-004-5-sufficient-conditions-for-existence-of-obstruc",
+   "id": "sec-005-5-sufficient-conditions-for-existence-of-obstruc",
    "title": "Sufficient Conditions for Existence of Obstruction Classes",
    "pages": "25-29"
   },
   {
-   "id": "sec-005-6-pronilpotent-gerbes",
+   "id": "sec-006-6-pronilpotent-gerbes",
    "title": "Pronilpotent Gerbes",
-   "pages": "29-36"
+   "pages": "29-33"
   },
   {
-   "id": "sec-006-references",
+   "id": "sec-007-7-fake-global-objects-of-gerbes",
+   "title": "Fake Global Objects of Gerbes",
+   "pages": "33-36"
+  },
+  {
+   "id": "sec-008-references",
    "title": "References",
    "pages": "36-36"
   }
@@ -49,8 +64,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

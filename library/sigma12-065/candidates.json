@@ -3,92 +3,210 @@
  "doc_id": "sigma12-065",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a6e0e0da5cc5ff9ba0c45ce6a7c91f31d338292154ab4cba7ddf59777e1e5dc6",
   "file": "sigma12-065.pdf"
  },
  "provenance": {
-  "title": null,
-  "authors": null,
+  "title": "Bring's Curve: its Period Matrix and the Vector of Riemann Constants",
+  "authors": "SIGMA 8 (2012), 065, 20 pages",
   "arxiv": null,
   "doi": "10.3842/SIGMA.2012.065"
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
+  "candidates": 8,
   "by_kind": {
-   "theorem": 3,
+   "theorem": 4,
    "lemma": 1,
    "remark": 2,
    "corollary": 1
   },
-  "formalization_candidates": 5
+  "formalization_candidates": 6,
+  "by_domain": {
+   "math": 8
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 6,
+   "explanatory": 2
+  },
+  "by_evidence_location": {
+   "elsewhere": 2,
+   "in-paper": 6
+  },
+  "by_lean_status": {
+   "proved-here": 2,
+   "doc-cited-in-lean-unlinked-claim": 4
+  },
+  "needs_lean_proof": 4
  },
  "candidates": [
   {
    "kind": "theorem",
    "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "With A = \uf8eb \uf8ed j \u2212i\u221a2 + j i\u221a2 + j \u2212j \u2212j \uf8f6 \uf8f8then D(Ax) = \u2212960(9+4 \u221a 5)C(x) and hence D(x) = 0 \u21d0\u21d2C(A\u22121x) = 0. This may be directly verified. The choice of the matrix A follows upon consideration of the conjugacy classes of automorphisms of both models (see [15] for further details). We observe that the antiholomorphic involution [\u00afx, \u00afy, \u00afz] 7\u2192[\u00afx\u2217, \u00afy\u2217, \u00afz\u2217] (where \u2217is complex conjugation) is a symmetry of C though it is orientation-reversing and so not a conformal auto- morphism. This involution endows C with a real structure. The fixed point set of such a real structure is either empty or the disjoint union of simple closed curves, known as ov",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [15] in sections/sec-003-22-the-hulekcraig-sextic.md",
+   "external_refs": [
+    "[15]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-003-22-the-hulekcraig-sextic.md",
+   "section_title": "The Hulek\u2013Craig sextic",
+   "pages": "3-3",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [15] in sections/sec-003-22-the-hulekcraig-sextic.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-003-01",
+   "block_iri": "library/sigma12-065/blocks/thm-sec-003-01",
+   "claim_id": "sigma12-065#theorem:1",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringHauptmodulGate.lean:hauptmodul_sextic_root",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TrBIntegerTracePrune.lean:trace_intMatrix_eq_intCast"
+   ],
+   "needs_lean_proof": false
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
    "number": "2",
    "name": null,
-   "statement": "The homology cycles \u03b11 and \u03b12 for the Hulek\u2013Craig branched cover reproduce the",
-   "section_file": "sections/sec-006-43-understanding-the-isomorphism-f.md",
-   "section_title": "Understanding the isomorphism f",
-   "pages": "9-15",
+   "statement": "The homology cycles \u03b11 and \u03b12 for the Hulek\u2013Craig branched cover reproduce the cycles of Riera and Rodr\u00b4\u0131guez and their corresponding period matrix \u03c4 = \u03c40 \uf8eb \uf8ec \uf8ec \uf8ed \u22121 \u22121 \u22121 \u22121 \uf8f6 \uf8f7 \uf8f7 \uf8f8, where \u03c40 is de\ufb01ned by (4.3). We also note that the action on the homology basis \u03b11,...,8 associated with the antiinvolution of the real structure is given by S\u2032 := \uf8eb \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ed \u22121 \u22121 \u22121 \u22121 \u22121 \u22121 \u22121 \uf8f6 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f8 . It is algorithmic to show that S := TS\u2032T \u22121 = \uf8eb \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ed \u22121 \u22121 \u22121 \u22121 \uf8f6 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f7 \uf8f8 , where T is the symplectic transformation (with respect to the canonical symplectic form) T = \uf8eb \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ec \uf8ed \u22121 \u22121 ",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-012-44-riera-and-rodr\u00edguez-basis-algebraically.md (p. 12-15)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-012-44-riera-and-rodr\u00edguez-basis-algebraically.md",
+   "section_title": "Riera and Rodr\u00edguez basis algebraically",
+   "pages": "12-15",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-012-44-riera-and-rodr\u00edguez-basis-algebraically.md (p. 12-15)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-012-01",
+   "block_iri": "library/sigma12-065/blocks/thm-sec-012-01",
+   "claim_id": "sigma12-065#theorem:2",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringEllipticFactor.lean:std_S4_fixed_is_one_dimensional"
+   ],
+   "needs_lean_proof": false
   },
   {
    "kind": "lemma",
    "source_kind": "lemma",
    "number": "1",
    "name": null,
-   "statement": "Suppose the automorphism \u03c3 has order N > 1. If L\u2212 Id is invertible and Q is",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
+   "statement": "Suppose the automorphism \u03c3 has order N > 1. If L \u2212Id is invertible and Q is a \ufb01xed point of \u03c3 then KQ is a 2N-torsion point.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-015-52-symmetries-and-the-vector-of-riemann-constant.md (p. 16-17)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-015-52-symmetries-and-the-vector-of-riemann-constant.md",
    "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
+   "pages": "16-17",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-015-52-symmetries-and-the-vector-of-riemann-constant.md (p. 16-17)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-015-01",
+   "block_iri": "library/sigma12-065/blocks/lem-sec-015-01",
+   "claim_id": "sigma12-065#lemma:1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringEllipticFactor.lean:std_S4_fixed_is_one_dimensional",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringHauptmodulGate.lean:hauptmodul_sextic_root",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TrBIntegerTracePrune.lean:trace_intMatrix_eq_intCast"
+   ],
+   "needs_lean_proof": true
   },
   {
    "kind": "remark",
    "source_kind": "remark",
    "number": "1",
    "name": null,
-   "statement": "We have the map\u03c0 :C\u2192C /\u27e8\u03c3\u27e9. Any holomorphic differential on C/\u27e8\u03c3\u27e9 pulls back",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
+   "statement": "We have the map \u03c0 : C \u2192C/\u27e8\u03c3\u27e9. Any holomorphic differential on C/\u27e8\u03c3\u27e9pulls back to an invariant differential on C, and so the assumption that L \u2212Id is invertible is equivalent to C/\u27e8\u03c3\u27e9\u223c= P1.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-015-52-symmetries-and-the-vector-of-riemann-constant.md (p. 16-17)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-015-52-symmetries-and-the-vector-of-riemann-constant.md",
    "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
+   "pages": "16-17",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "rem-sec-015-02",
+   "block_iri": "library/sigma12-065/blocks/rem-sec-015-02",
+   "claim_id": "sigma12-065#remark:1"
   },
   {
    "kind": "corollary",
    "source_kind": "corollary",
    "number": "1",
    "name": null,
-   "statement": "Assuming the conditions of Lemma 1 and that \u03c8 \u2208 Aut(C), then",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
+   "statement": "Assuming the conditions of Lemma 1 and that \u03c8 \u2208Aut(C), then R \u03c8(Q) Q \u03c9 is a 2N(g \u22121)-torsion point. Although these simple results do not necessarily give the best bound on the order of the torsion point for the vectors involved, we see that, given a suitable symmetry and fixed point, we have that KQ is a torsion point: 2KQA = n\u03a0 [L \u2212Id]\u22121 = n(M \u2212Id)\u22121\u03a0 = n",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-015-52-symmetries-and-the-vector-of-riemann-constant.md (p. 16-17)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-015-52-symmetries-and-the-vector-of-riemann-constant.md",
    "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
+   "pages": "16-17",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-015-52-symmetries-and-the-vector-of-riemann-constant.md (p. 16-17)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-015-03",
+   "block_iri": "library/sigma12-065/blocks/cor-sec-015-03",
+   "claim_id": "sigma12-065#corollary:1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringEllipticFactor.lean:std_S4_fixed_is_one_dimensional",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringHauptmodulGate.lean:hauptmodul_sextic_root",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TrBIntegerTracePrune.lean:trace_intMatrix_eq_intCast"
+   ],
+   "needs_lean_proof": true
   },
   {
    "kind": "theorem",
    "source_kind": "theorem",
    "number": "3",
    "name": null,
-   "statement": "For the Riera and Rodr\u00b4 \u0131guez homology basis of Bring\u2019s curve we have that the",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
-   "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
+   "statement": "For the Riera and Rodr\u00b4\u0131guez homology basis of Bring\u2019s curve we have that the vector of Riemann constants is KQ = 1 \u00003 \u22122 \u22123 \u0001 + Im(\u03c40) \u00001 \u22122 \u22122 \u0001 i, where \u03c40 is de\ufb01ned by (4.3). The transformation of theta characteristics g \u00b7 (a, b) = (a, b)g\u22121 + 1 \u0000diag \u0000CDT \u0001 , diag \u0000ABT \u0001\u0001 for any g = \u0012 A B C D \u0013 \u2208Sp(2g, Z) and characteristic (a, b) \u2208Q2g together with the explicit representations of the symmetries yields",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-016-53-application-to-brings-curve.md (p. 17-19)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-016-53-application-to-brings-curve.md",
+   "section_title": "Application to Bring's curve",
+   "pages": "17-19",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-016-53-application-to-brings-curve.md (p. 17-19)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-016-01",
+   "block_iri": "library/sigma12-065/blocks/thm-sec-016-01",
+   "claim_id": "sigma12-065#theorem:3",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringEllipticFactor.lean:std_S4_fixed_is_one_dimensional",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringHauptmodulGate.lean:hauptmodul_sextic_root",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TrBIntegerTracePrune.lean:trace_intMatrix_eq_intCast"
+   ],
+   "needs_lean_proof": true
   },
   {
    "kind": "theorem",
@@ -96,25 +214,52 @@
    "number": "4",
    "name": null,
    "statement": "Bring\u2019s curve has a unique invariant spin-structure.",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
-   "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-016-53-application-to-brings-curve.md (p. 17-19)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-016-53-application-to-brings-curve.md",
+   "section_title": "Application to Bring's curve",
+   "pages": "17-19",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-016-53-application-to-brings-curve.md (p. 17-19)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-016-02",
+   "block_iri": "library/sigma12-065/blocks/thm-sec-016-02",
+   "claim_id": "sigma12-065#theorem:4",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringEllipticFactor.lean:std_S4_fixed_is_one_dimensional",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringHauptmodulGate.lean:hauptmodul_sextic_root",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TrBIntegerTracePrune.lean:trace_intMatrix_eq_intCast"
+   ],
+   "needs_lean_proof": true
   },
   {
    "kind": "remark",
    "source_kind": "remark",
    "number": "2",
    "name": null,
-   "statement": "Klein\u2019s curve has a unique invariant spin structure [14] and we have shown elsewhere",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
-   "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
+   "statement": "Klein\u2019s curve has a unique invariant spin structure [14] and we have shown elsewhere that the vector of Riemann constants is the Abel image of this. To show the analogous result for Bring\u2019s curve requires a better understanding of this spin-structure. Acknowledgements We are grateful to Maurice Craig for helpful email exchanges and also to an anonymous referee for careful reading and suggested improvements to the paper.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [14] in sections/sec-016-53-application-to-brings-curve.md",
+   "external_refs": [
+    "[14]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-016-53-application-to-brings-curve.md",
+   "section_title": "Application to Bring's curve",
+   "pages": "17-19",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "rem-sec-016-03",
+   "block_iri": "library/sigma12-065/blocks/rem-sec-016-03",
+   "claim_id": "sigma12-065#remark:2"
   }
  ]
 }

@@ -2,17 +2,22 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/thm-hoefsmit-ew-cell-content",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
   "label": "thm:hoefsmit-ew-cell-content",
   "kind": "theorem",
-  "title": "Hoefsmit cell-content identification of the EW triplet inside $\\mathrm{End}_R(V^{\\otimes 6})$ (categorical existence)",
+  "title": "Hoefsmit cell content of the far-commuting triple $(\\sigma_1, \\sigma_3, \\sigma_5)$: disjoint strand pairs and eight pure-pattern idempotents",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-braid-group",
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form"
+  ],
   "tags": [
     "hoefsmit",
     "cell-content",
@@ -26,7 +31,7 @@
     "closure-tier-b",
     "phase-2-sprint-5-discharge"
   ],
-  "leanRef": "qou:QOU.IwahoriHecke.Hoefsmit.HoefsmitSeminormalBasis",
+  "leanRef": "qou:QOU.BraidsAndKnots.hoefsmit_ew_cell_content",
   "text": "hoefsmit-ew-cell-content.md",
   "leanSource": "hoefsmit-ew-cell-content.lean",
   "provenance": "authored"

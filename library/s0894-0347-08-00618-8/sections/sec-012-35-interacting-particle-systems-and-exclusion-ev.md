@@ -8,6 +8,7 @@ pages: 20-21
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8 — 24 sections: Front matter; Introduction; A plethora of negative dependence"
 ---
 process is one of the main models considered in the area of Probability Theory
 known as Interacting Particle Systems. The idea is that particles move in continuous

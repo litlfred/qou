@@ -9,17 +9,21 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The Translation Functor",
-  "pageStart": 79,
-  "pageEnd": 82,
+  "title": "The Long Exact Cohomology Sequence",
+  "pageStart": 66,
+  "pageEnd": 71,
   "contains": [
     "library/arxiv-1610.09640v4/blocks/prose-sec-032",
-    "library/arxiv-1610.09640v4/blocks/thm-sec-032-01",
-    "library/arxiv-1610.09640v4/blocks/cor-sec-032-02",
-    "library/arxiv-1610.09640v4/blocks/prop-sec-032-03",
-    "library/arxiv-1610.09640v4/blocks/remark-sec-032-04"
+    "library/arxiv-1610.09640v4/blocks/lem-sec-032-01",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-032-02",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-032-03",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-032-04",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-032-05",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-032-06",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-032-07",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-032-08"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "provenance": "ingested"
 }

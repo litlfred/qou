@@ -237,6 +237,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "72d91219e2e6",
+          "ts": "8c312e3e84f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:27.540Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔P: the statement claims the recurrence and the closed form \"for all A ≥ 2\" (md:9-12). The prf's induction takes its step from an observation, \"The per-new-nucleon increment is invariant in 6 transitions … (witness §1)\" (prf:3-5); ts:9 says it is \"Verified at A = 2..6\". The inductive step (+18 / +21 for every (Z, N)) is the very claim being proved, so this is finite verification extrapolated to all A (circular step). The \"+1\" is attributed to \"the single mixed (p, n) interface\" (prf:14-16). That leaves N=0 or Z=0 nuclei (no mixed interface) unexplained, yet the proton A=1 also gets 18·1+0+1 = 19 (prf:49-50). Unproved extras in the statement: \"The leading coefficient at u=0 evaluates exactly to −1/12 for the proton\" (md:15) and \"eliminating the need to explicitly compute … heavier isotopes\" (md:15). Also \"The linear additive shifts hold across the full evaluated nucleus table\" (md:15) is computational evidence stated as part of the proposition. The deuteron order-40 argument (prf:63-67, unique maximum) is sound for that one case only.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1156,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1508,7 +1524,7 @@
         },
         "reviewed_at": "2026-08-21T21:55:58.971Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Closes on what the cancellation count enumerates \u2014 technical."
+        "evidence": "Closes on what the cancellation count enumerates — technical."
       }
     ],
     "trap-meta-commentary": [
@@ -1644,7 +1660,7 @@
         },
         "reviewed_at": "2026-08-21T21:55:59.193Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "'rigorously' is the one strength word and it is attached to a specific argument (unique maximum implies no cancellation) \u2014 see the note for whether that argument's numbers hold."
+        "evidence": "'rigorously' is the one strength word and it is attached to a specific argument (unique maximum implies no cancellation) — see the note for whether that argument's numbers hold."
       }
     ],
     "trap-nonspeakable": [
@@ -1679,7 +1695,7 @@
         "reviewed_at": "2026-08-21T21:55:59.291Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Bulleted; the prose sentences are short.",
-        "notes": "RIGOR \u2014 TWO DEFECTS, the first MAJOR. (1) THE TWO WITNESSES THIS BLOCK CITES AS 'CATEGORICAL VERIFICATION' ARE BOTH RECORDED FAILING IN THE COMMITTED TREE, and the block reports their numbers as confirmations. Checked against git show HEAD (not the working tree), so this is not a local re-run artefact. PROTON: the block says the proton witness 'reports ord_{u=0}(tr_M(B_p)) = 19, matching 18*1 + 21*0 + 1 exactly'. computations/per-irrep-pole-proton-h3.witness.json contains {'name': 'full_tr_M_u_pole_eq_shift_NF_proton', 'computed': 18, 'expected': 19, 'passed': false} and 'allPassed': false. The computed value is 18, i.e. exactly the '+1' short. DEUTERON: the block says 'The per-term maximum is uniquely 40 at lambda = (4,1,1) (next-highest 39 at (4,2)); since the maximum is unique, lower-order terms cannot cancel it, so ord_{u=0}(tr_M(beta_D)) = 40 = 18*1 + 21*1 + 1 rigorously.' computations/per-irrep-pole-deuteron-h6.witness.json contains {'name': 'deuteron_full_tr_M_u_pole_eq_shift_NF', 'computed': 38, 'expected': 40, 'passed': false}, and its data.per_term_u_pole_orders give (4,2) -> 38, (3,3) -> 34, (5,1) -> 22, (6) -> 2, (4,1,1) -> 0, (3,2,1) -> 0. So EVERY number in that sentence disagrees with the witness: the maximising partition is (4,2), not (4,1,1); the maximum is 38, not 40; the runner-up is 34 at (3,3), not 39 at (4,2); and (4,1,1) \u2014 the partition the block names as the unique maximiser \u2014 has order 0, the joint minimum. Only the uniqueness itself survives ('deuteron_per_term_max_unique' passes), so the structural argument is sound but lands on 38, which is not 18+21+1. The parent .ts nonetheless carries computation.status: 'verified'. Proposed: treat the closed form as EMPIRICAL until the symbolic route is reconciled \u2014 note that the one witness that does pass, per-nucleon-shift-derivation.witness.json, labels its own assertions 'empirical from EMPIRICAL_SHIFT table (w3-w4 audit)', so nothing currently derives 18Z + 21N + 1; then either fix the two Path-A scripts or restate the block as reporting a 1-unit (proton) and 2-unit (deuteron) discrepancy, which is itself the interesting datum. (2) SWEEP DAMAGE, four sites in this one block: 'the canonical formalism' stands in for a script name at 'Each new generator's DP-max contribution to the q=0 pole is 1 (the canonical formalism)', at 'per the D(u) convention from the canonical formalism', and twice as the sole content of the 'Proton (A = 1, H_3): the canonical formalism' and 'Deuteron (A = 2, H_6): the canonical formalism' lines \u2014 where, from the witness filenames that follow, the intended names are per_irrep_pole_proton_h3.py and per_irrep_pole_deuteron_h6.py. Same token-substitution class already logged in this chapter's sidecars. (3) MINOR, scope: the parent states the closed form 'for all A >= 2', yet this proof verifies it at the proton, A = 1."
+        "notes": "RIGOR — TWO DEFECTS, the first MAJOR. (1) THE TWO WITNESSES THIS BLOCK CITES AS 'CATEGORICAL VERIFICATION' ARE BOTH RECORDED FAILING IN THE COMMITTED TREE, and the block reports their numbers as confirmations. Checked against git show HEAD (not the working tree), so this is not a local re-run artefact. PROTON: the block says the proton witness 'reports ord_{u=0}(tr_M(B_p)) = 19, matching 18*1 + 21*0 + 1 exactly'. computations/per-irrep-pole-proton-h3.witness.json contains {'name': 'full_tr_M_u_pole_eq_shift_NF_proton', 'computed': 18, 'expected': 19, 'passed': false} and 'allPassed': false. The computed value is 18, i.e. exactly the '+1' short. DEUTERON: the block says 'The per-term maximum is uniquely 40 at lambda = (4,1,1) (next-highest 39 at (4,2)); since the maximum is unique, lower-order terms cannot cancel it, so ord_{u=0}(tr_M(beta_D)) = 40 = 18*1 + 21*1 + 1 rigorously.' computations/per-irrep-pole-deuteron-h6.witness.json contains {'name': 'deuteron_full_tr_M_u_pole_eq_shift_NF', 'computed': 38, 'expected': 40, 'passed': false}, and its data.per_term_u_pole_orders give (4,2) -> 38, (3,3) -> 34, (5,1) -> 22, (6) -> 2, (4,1,1) -> 0, (3,2,1) -> 0. So EVERY number in that sentence disagrees with the witness: the maximising partition is (4,2), not (4,1,1); the maximum is 38, not 40; the runner-up is 34 at (3,3), not 39 at (4,2); and (4,1,1) — the partition the block names as the unique maximiser — has order 0, the joint minimum. Only the uniqueness itself survives ('deuteron_per_term_max_unique' passes), so the structural argument is sound but lands on 38, which is not 18+21+1. The parent .ts nonetheless carries computation.status: 'verified'. Proposed: treat the closed form as EMPIRICAL until the symbolic route is reconciled — note that the one witness that does pass, per-nucleon-shift-derivation.witness.json, labels its own assertions 'empirical from EMPIRICAL_SHIFT table (w3-w4 audit)', so nothing currently derives 18Z + 21N + 1; then either fix the two Path-A scripts or restate the block as reporting a 1-unit (proton) and 2-unit (deuteron) discrepancy, which is itself the interesting datum. (2) SWEEP DAMAGE, four sites in this one block: 'the canonical formalism' stands in for a script name at 'Each new generator's DP-max contribution to the q=0 pole is 1 (the canonical formalism)', at 'per the D(u) convention from the canonical formalism', and twice as the sole content of the 'Proton (A = 1, H_3): the canonical formalism' and 'Deuteron (A = 2, H_6): the canonical formalism' lines — where, from the witness filenames that follow, the intended names are per_irrep_pole_proton_h3.py and per_irrep_pole_deuteron_h6.py. Same token-substitution class already logged in this chapter's sidecars. (3) MINOR, scope: the parent states the closed form 'for all A >= 2', yet this proof verifies it at the proton, A = 1."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1702,6 +1718,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:55:59.291Z",
+  "updated_at": "2026-11-15T21:57:27.540Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

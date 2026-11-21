@@ -69,6 +69,6 @@ theorem kummer_vanishes_of_chi_zero (h : octx.chi_A = 0) (n : ℕ) :
 
 end SkeinResolutionObstruction
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.ts
 
 end QOU

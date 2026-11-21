@@ -1,0 +1,67 @@
+moreover
+
+have b inversion a
+proof (rule ccontr)
+assume *: — ?thesis
+have inversion il = il inversion i2 = i2
+using i112
+unfolding unit-circle-set-def
+by auto
+hence cross-ratio (inversion a) il a i2 = cross-ratio a il (inversion a) i2
+using * cross-ratio-inversion|of il a i2 b] <a 4 ily (a # 12> cil F 12) «b F il
+using four-points-on-circline-iff-cross-ratio-reallof b i1 a i2]
+using i12 distinct-b conjugate-id-iff [of cross-ratio b i1 a i2]
+using 712 a <b € circline-set H»
+by auto
+hence cross-ratio (inversion a) i1 a i2 # of-complex 2
+using cross-ratio-commute-13|of inversion a il a i2]
+using reciprocal-id-iff
+using of-complez-inj
+by force
+thus False
+using * cr2
+by simp
+qed
+
+ultimately
+show ?thesis
+using assms <b # il) (b # i2) (b # ay
+by auto
+qed
+
+Now we can prove the statement.
+
+lemma ex-is-poincare-line-points:
+assumes is-poincare-line H
+shows 3 uv. u € unit-disc A v € unit-disc Au 4 v A {u, v} C circline-set H
+proof—
+obtain uv w where *:uZAvv4wuF w {u, v, w} C circline-set H
+using assms is-poincare-line-iff [of H]
+using circline-type-neg-card-gt3|of H|
+by auto
+
+have — {u, v, w} C unit-circle-set
+using unique-circline-set{of uv w] *
+by (metis assms insert-subset not-is-poincare-line-unit-circle unit-circle-set-def )
+
+hence H # unit-circle
+unfolding unit-circle-set-def
+using *
+by auto
+
+show ?thesis
+proof (cases (u € unit-disc A v € unit-disc) V
+(u € unit-disc A w € unit-disc) V
+(v € unit-disc \ w € unit-disc))
+case True
+thus ?thesis
+using *
+by auto
+next
+case False
+
+have 5 ab. a #6 A a F inversion b A a € circline-set H A b € circline-set H \ a € unit-circle-set A b ¢
+unit-circle-set
+proof (cases (u € unit-circle-set \ v € unit-circle-set) V
+(u € unit-circle-set \ w € unit-circle-set) V
+(uv € unit-circle-set \ w € unit-circle-set))

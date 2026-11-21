@@ -1,0 +1,1 @@
+(63) The term with 3/2y makes the diﬀerence between the unsubtracted and subtracted dispersion integral over V1: it removes the leading term in the behaviour of f1 when Q2 is held ﬁxed and ν tends to ∞, so that the integral over ν converges, despite the growth of V1 gen- erated by Reggeon exchange.

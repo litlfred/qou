@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1211.1812v5/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "A Symmetry and fields in globally hyperbolic manifolds.",
+  "pageStart": 30,
+  "pageEnd": 37,
+  "text": "../sections/sec-015-a-symmetry-and-fields-in-globally-hyperbolic-man.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1211.1812v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1211.1812v5/manifest.jsonld",
+  "provenance": "ingested"
+}

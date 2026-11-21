@@ -1,0 +1,71 @@
+next
+show ?rl > ?r2
+using disc
+using *
+by (subst divide-right-mono, simp-all)
+qed
+ultimately
+show poincare-distance (of-complex x) w < poincare-distance (of-complex x) On + poincare-distance 0; w
+using <of-complex x € unit-discy «w © unit-discr w
+using poincare-distance-formula
+by simp
+qed
+next
+show v € unit-disc u € unit-disc
+by fact+
+next
+fix Muv
+assume *: unit-disc-fir M u € unit-disc v € unit-disc
+assume *: ?P (moebius-pt M u) (moebius-pt M v)
+show ?P uv
+proof safe
+fix w
+assume w € unit-disc
+thus ?P’ vuw
+by (metis « «* unit-disc-fix-discl unit-disc-fix-preserve-poincare-distance)
+qed
+qed
+thus ?thesis
+using assms
+by auto
+qed
+
+end
+
+theory Poincare-Circles
+imports Poincare-Distance
+
+begin
+
+6 H-circles in the Poincaré model
+
+Circles consist of points that are at the same distance from the center.
+
+definition poincare-circle :: compler-homo = real = complex-homo set where
+poincare-circle zr = {z’. z' € unit-disc A poincare-distance z z' = r}
+
+Each h-circle in the Poincaré model is represented by an Euclidean circle in the model — the center and radius
+of that euclidean circle are determined by the following formulas.
+
+definition poincare-circle-euclidean :: compler-homo => real => euclidean-circle where
+poincare-circle-euclidean zr =
+(let R = (cosh r — 1) / 2;
+z' = to-complezx z;
+cz = 1 — (emod z')?;
+k=cz*R+1
+in (z' / k, cz * sqrt(R * (R + 1)) / k))
+
+That Euclidean circle has a positive radius and is always fully within the disc.
+
+lemma poincare-circle-in-disc:
+assumes r > 0 and z € unit-disc and (ze, re) = poincare-circle-euclidean zr
+shows cmod ze < 1 re > 0V « € circle ze re. cmod x < 1
+proof—
+let ?R = (cosh r — 1) / 2
+let ?z’ = to-complex z
+let 2cz = 1 — (cmod ?z')?
+let ?k = ?cz * PR+ 1
+let ?2ze = ?z' / ?k
+let ?re = ?cz * sqrt(?R * (?R + 1)) / ?k
+
+67

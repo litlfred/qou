@@ -1,0 +1,47 @@
+216 Overview of analytic methods for multivariate GFs
+
+in proving Theorem 7.44 comes from establishing the following result, which
+requires bounding elements of a vector field. Although general stratified spaces
+do not come equipped with Riemannian metrics, we deal only with spaces
+embedded in C’? = R* and the norm of any vector or covector refers to the
+norm inherited from this embedding.
+
+Lemma 7.45 ([BMP22, Lemma 2]). Suppose a < bare real numbers such that
+hp has no CVAL in the interval [a, b] and one affine critical value in c € [a,b],
+not at either endpoint. Then there is a vector field v on C4 0 h;! [a, b] with the
+following properties.
+
+(i) v is smooth on strata and continuous on C4;
+
+(ii) v is tangent to strata;
+(iii) v is a controlled vector field in the sense of [Mat70, Section 9];
+(iv) v is bounded;
+
+(v) v has unit downward speed, meaning dh;(v) = -1.
+
+The first, relatively easy, step in establishing Lemma 7.45 is to show that
+|dhp| is bounded away from zero except near critical points.
+
+Lemma 7.46 ([BMP22, Lemma 1]). Suppose h is a Morse function on a strat-
+ified space V. © C4, with no CVAI in [a,b]. Then, excluding an arbitrarily
+small neighborhood N of critical points, the differential dh has its magnitude
+bounded away from zero, meaning |dh| > 5(N) > 0.
+
+Proof It suffices to prove the result when dh is restricted to an arbitrary
+stratum S. Let S ja) denote the elements of S with height in [a,b] and let
+L = R¢ x (R/2aR)4 denote the logarithmic parametrizing space for C4 via
+the exponential map exp : £L — C%. In this parametrization, hp becomes
+h = hp © exp. This parametrization is useful because dh is the constant vec-
+tor * (formally, dh = an rjdx; + Ody; is a constant with respect to the
+embedding in L£ obtained from the embedding in C4, pulled back via exp).
+We use tildes to denote inverse images under this parametrization, meaning
+critical = exp”![critical] is the inverse image of the set of critical points
+of the Morse function h.
+
+Assume towards a contradiction that the norm of the tangential differential is
+not bounded from below on Stab) \N, where WN is a neighborhood of critical
+in L£, and let &, be a sequence in Sab} \ N for which \dhs(#,)I goes to zero.
+This sequence has no limit points whose height lies outside of [a,b] and no
+limit points in critical yas: There are also no affine limit points outside of
+critical, because if « > y with y in a substratum S, then Idhy, (yl <
+lim infa, \dhs(a)| since the projection of the differential onto a substratum is

@@ -1,0 +1,1 @@
+85, 22607 Hamburg, Germany 5Regionales Rechenzentrum, Universität Hamburg, 20146 Hamburg, Germany (Received 4 February 2025; accepted 29 April 2025; published 20 May 2025) The Compton amplitude subtraction function is an essential component in work concerning both the proton radius puzzle and the proton-neutron mass difference.

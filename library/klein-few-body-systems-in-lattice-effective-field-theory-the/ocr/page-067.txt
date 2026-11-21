@@ -1,0 +1,66 @@
+5.3 Three-body sector
+
+Lattice spacing a = 1.32 fm Lattice spacing a = 1.64 fm Lattice spacing a = 1.97 fm
+100 100 T T T 100
+Nijmegen PWA —
+= gob 4+ g9 - Lattice LO+Coul s+ 4 zy 80 F 4
+
+8 $ Lattice N2LO+Coul b= $
+
+Ey > 2 60
+3 3 3
+
+o 3S Zs 40
+B a a
+
+ws ws S 20
+
+0
+
+0 50 100 +150 =—.200 0 50 100 150 200 0 50 100 150 200
+Pc [MeV] Pc [MeV] Pc [MeV]
+
+Figure 5.4: LO (squares) and NNLO (circles) (both including Coulomb) proton-proton 'So phase shift for a =
+1.97 fm, a = 1.64 fm and a = 1.32 fm. The NPWA is given by the solid line.
+
+3N.__ WBN a > o>
+Vopexx = Dix » IGs,s, (#4, - is) Gs, 3, (fy — 743) €F 1.54.53, bly
+
+13,8, 89.931, 4,
+Th sfty,S 9,838 5 (5.55)
+
+x? Pst, (4) Ps, (Ay) Pg, (3) : | >
+
+where the coefficients are
+
+DN = ~3Cp 3N _ _©D_ 9A
+contact aN ? OPE 4FA QF,”
+c 2 ~2c, Mg’,
+pw - & JA 3N _ 1 AnIA
+¢  F4F? mp gp”
+nu nT nu nu
+2
+C4 Y,
+Dye 4-4 (5.56)
+2F4F,
+
+with A = 700 MeV as the reference scale. There are two new dimensionless parameters cp and cz, which
+must be determined using at least two three-body observables. While we use the well-measured triton
+binding energy as one parameter, it was summarized in Ref. [115] that cp and cz could be disentangled
+by additionally including of nucleon-deuteron scattering, triton beta decays or some other observable in
+the analysis. As this is beyond the scope of this work, we keep the correlation between cp and cz and we
+fix cp = —0.79 as it was shown to be of O(1). Hence, we use cz as the only fit parameter and fix it with
+
+the triton binding energy of ER = —8.4820(1) MeV. In the subsequent part of this chapter we also have a
+look on systematic errors due to this particular choice of cp. Of course, there are better ways of fixing cp
+by now, but for the sake of consistency we have to use the same method that was employed in earlier
+NLEFT calculations
+
+As we are interested in the binding energy of the system, we have to calculate the ground state at large
+enough volume or do an infinite volume extrapolation for a three-particle system. Using a box volume of
+V x (10- 1.97 fm) ~ (12- 1.64 fm)° ~ (20 fm)° for the two coarsest lattices is enough for neglecting the
+finite volume effects and it is still calculable with in a reasonable amount of computational resources.
+Unfortunately, this volume is not computable with the given resources anymore for a lattice spacing of
+a = 1.32 fm as the problem scales « L®. Finite volume binding energy corrections for three particles
+
+61

@@ -1,0 +1,67 @@
+lift-definition calc-perpendicular-to-x-azis-clmat :: complet-homo-coords => circline-mat is calc-perpendicular-to-a-axis-cmat
+by (auto simp add: hermitean-def mat-adj-def mat-cnj-def Let-def split: if-split-asm)
+
+lift-definition calc-perpendicular-to-x-axis :: complex-homo => circline is calc-perpendicular-to-x-axis-clmat
+proof (transfer)
+fix zw
+assume z # vec-zero w # vec-zero
+obtain z1 22 wl w2 where zw: z = (21, 22) w = (wl, w2)
+by (cases z, cases w, auto)
+assume z %y w
+then obtain k where *: k 4 0 wl = kxz1 w2 = kxz2
+using zw
+by auto
+have wi * cnj w2 + w2 * cnj wl = (k * cnj k) * (21 * cnj 22 + 22 * cnj 21)
+using *
+by (auto simp add: field-simps)
+moreover
+have wi * cnj wl + w2 * cnj w2 = (k * cnj k) * (21 * cnj 21 + 22 * cnj 22)
+using *
+by (auto simp add: field-simps)
+ultimately
+show circline-eq-cmat (calc-perpendicular-to-x-axis-cmat z) (calc-perpendicular-to-x-axis-cmat w)
+using zw *
+apply (auto simp add: Let-def)
+apply (rule-tac c=Re (k * cnj k) in ezl, auto simp add: complex.expand field-simps)
+done
+qed
+
+lemma calc-perpendicular-to-x-azis:
+assumes z # of-complex 1 z # of-complex (—1)
+shows z € circline-set (calc-perpendicular-to-a-axis z) \
+is-poincare-line (calc-perpendicular-to-z-axis z) A
+perpendicular-to-x-axis (calc-perpendicular-to-x-axis z)
+using assms
+unfolding circline-set-def perpendicular-def
+proof (simp, transfer, transfer)
+fix z :: complex-vec
+obtain z/ 22 where z: z = (z1, 22)
+by (cases z, auto)
+assume **: 4 z %, of-complez-cvec 1 7 z %y of-complex-cvec (— 1)
+show on-circline-cmat-cvec (calc-perpendicular-to-«-axis-cmat z) z A
+is-poincare-line-cmat (calc-perpendicular-to-x-axis-cmat z) \
+perpendicular-to-x-axis-cmat (calc-perpendicular-to-x-axis-cmat 2)
+proof (cases z1*cnj 22 + z2xcnj z1 = 0)
+case True
+thus ?thesis
+using z
+by (simp add: vec-cnj-def hermitean-def mat-adj-def mat-cnj-def mult.commute)
+next
+case False
+hence 22 4 0
+using z
+by auto
+hence Re (z2 * cnj 22) 4 0
+using <z2 # 0>
+by (auto simp add: complex.expand)
+
+have z1 4 —22 A 21 # 22
+proof (rule ccontr)
+assume — thesis
+hence z %y of-complez-cvec 1 V z %y of-complex-cvec (—1)
+using z (22 # 0»
+by auto
+thus False
+using **
+
+120

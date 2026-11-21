@@ -1,0 +1,6403 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "978-3-98547-562-9-volume-4-chapter-5483",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 19,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1 Cell decomposition from Morse function f ."
+      ],
+      "labels": [
+        {
+          "text": "1. Introduction",
+          "bbox": [
+            93.54,
+            34.32,
+            180.34,
+            46.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Objects in algebraic geometry provide a rich source of symplectic and contact man-",
+          "bbox": [
+            93.54,
+            47.42,
+            422.36,
+            60.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ifolds. Smooth projective varieties X \u001a CP N , for instance, have symplectic structures !X",
+          "bbox": [
+            59.53,
+            57.75,
+            421.17,
+            74.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "given by restricting the standard Fubini–Study form on CP N . Links of isolated singularities",
+          "bbox": [
+            59.53,
+            71.69,
+            422.36,
+            88.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "admit natural contact structures, given by a complex hyperplane distribution.",
+          "bbox": [
+            59.53,
+            89.26,
+            364.89,
+            102.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "What can such structures tell us about the underlying algebraic variety? Typically,",
+          "bbox": [
+            93.54,
+            103.21,
+            422.37,
+            116.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a large amount of data is lost when one forgets everything except the symplectic or contact",
+          "bbox": [
+            59.53,
+            117.15,
+            422.36,
+            130.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "structure. For instance, if we have a smooth family of projective varieties in CP N , a Moser",
+          "bbox": [
+            59.53,
+            127.49,
+            422.36,
+            144.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "argument tells us that they are all symplectomorphic. On the other hand, many properties",
+          "bbox": [
+            59.53,
+            145.05,
+            422.36,
+            158.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "are retained such as uniruledness, which is the property that a rational curve passes through",
+          "bbox": [
+            59.53,
+            158.85,
+            422.36,
+            172.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "every point. This was shown by Kollár and Ruan in [47, Proposition G].",
+          "bbox": [
+            59.53,
+            172.94,
+            340.53,
+            186.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "An important tool in symplectic geometry which can help us understand this ques-",
+          "bbox": [
+            93.54,
+            186.89,
+            422.37,
+            200.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tion better is Floer (co)homology. In order to understand what Floer (co)homology is, it is",
+          "bbox": [
+            59.53,
+            200.69,
+            422.36,
+            214.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "best to first understand its finite-dimensional counterpart, namely Morse homology. Let us",
+          "bbox": [
+            59.53,
+            214.64,
+            422.36,
+            228.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "suppose that we have a generic Morse function f on a closed Riemannian manifold M. Such",
+          "bbox": [
+            59.53,
+            228.74,
+            422.36,
+            242.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a function naturally decomposes M into cells, one for each critical point (Figure 1). Hence",
+          "bbox": [
+            59.53,
+            242.68,
+            422.35,
+            255.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "one can use f to compute the cellular homology of M. The underlying chain complex is",
+          "bbox": [
+            59.53,
+            256.63,
+            422.35,
+            269.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "generated as a Z-module by critical points of f and the differential is a matrix with respect",
+          "bbox": [
+            59.53,
+            270.58,
+            422.35,
+            283.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to this basis of critical points whose .p;q/-entry is the number (counted with sign) of gradi-",
+          "bbox": [
+            59.53,
+            284.53,
+            422.35,
+            297.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ent flowlines of f connecting p and q. The homology of this chain complex is called Morse",
+          "bbox": [
+            59.53,
+            298.32,
+            422.36,
+            311.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "homology.",
+          "bbox": [
+            59.53,
+            312.27,
+            101.31,
+            325.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Floer homology is an infinite-dimensional version of Morse homology. There are",
+          "bbox": [
+            93.54,
+            326.37,
+            422.36,
+            339.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "many different kinds of Floer homology groups. For instance, the infinite-dimensional ver-",
+          "bbox": [
+            59.53,
+            340.32,
+            422.37,
+            353.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sion of the manifold M above could be the free loopspace C 1.S1; X/ of a symplectic",
+          "bbox": [
+            59.53,
+            354.19,
+            422.36,
+            367.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "manifold .X; !/ with ! D d\u0012 satisfying an additional “convexity” condition at infinity. The",
+          "bbox": [
+            59.53,
+            368.21,
+            422.36,
+            381.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "infinite-dimensional version of the Morse function f could be an action functional",
+          "bbox": [
+            59.53,
+            382.16,
+            388.92,
+            395.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Z 2\u0019",
+          "bbox": [
+            279.52,
+            397.26,
+            298.23,
+            412.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            234.62,
+            402.15,
+            239.88,
+            412.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A W C 1.S1; X/ ! R;",
+          "bbox": [
+            84.31,
+            405.35,
+            175.74,
+            418.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2MST",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "S1 \r\u0003\u0012 \u0000",
+          "bbox": [
+            239.88,
+            405.35,
+            277.31,
+            426.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1.1)",
+          "bbox": [
+            403.27,
+            405.93,
+            422.36,
+            419.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A.\r/ WD \u0000",
+          "bbox": [
+            187.37,
+            406.47,
+            232.95,
+            418.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2MST",
+            "MT2SYT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "#; \r.e2\u0019i#/",
+          "bbox": [
+            314.73,
+            406.73,
+            361.26,
+            418.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            310.72,
+            407.69,
+            314.73,
+            417.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            361.26,
+            407.69,
+            365.28,
+            417.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "H",
+          "bbox": [
+            300.98,
+            408.76,
+            309.42,
+            418.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d#",
+          "bbox": [
+            365.28,
+            408.76,
+            377.64,
+            418.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            284.79,
+            419.75,
+            288.87,
+            426.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where H W R=Z \u0002 X ! R is a time-dependent Hamiltonian, which also has a particular",
+          "bbox": [
+            59.53,
+            428.02,
+            422.36,
+            441.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "form near infinity. The generators of the chain complex for this Floer cohomology group as",
+          "bbox": [
+            59.53,
+            441.96,
+            422.36,
+            455.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            234.33,
+            498.75,
+            239.32,
+            508.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            319.37,
+            498.75,
+            324.35,
+            508.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            279.69,
+            527.09,
+            284.67,
+            537.06
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0-cell [ 1-cell [",
+          "bbox": [
+            89.8,
+            529.91,
+            157.07,
+            543.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f",
+          "bbox": [
+            377.43,
+            534.74,
+            382.97,
+            544.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0-cell [",
+          "bbox": [
+            175.28,
+            535.58,
+            207.66,
+            548.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2-cell [ 2-cell '",
+          "bbox": [
+            89.25,
+            541.25,
+            157.63,
+            554.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1-cell '",
+          "bbox": [
+            174.72,
+            546.92,
+            208.22,
+            560.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "' 0-cell",
+          "bbox": [
+            353.16,
+            566.76,
+            386.94,
+            580.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            279.69,
+            572.45,
+            284.67,
+            582.41
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1",
+          "bbox": [
+            59.53,
+            594.83,
+            92.2,
+            603.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Cell decomposition from Morse function f .",
+          "bbox": [
+            59.53,
+            604.14,
+            200.47,
+            614.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2617",
+          "bbox": [
+            59.53,
+            637.94,
+            73.48,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Floer cohomology, singularities and birational geometry",
+          "bbox": [
+            93.54,
+            637.94,
+            289.72,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 7,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2 Floer differential."
+      ],
+      "labels": [
+        {
+          "text": "\u0000",
+          "bbox": [
+            170.22,
+            58.85,
+            180.78,
+            68.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "‘gradient flowline’",
+          "bbox": [
+            204.18,
+            59.96,
+            277.71,
+            73.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            297.39,
+            73.03,
+            308.72,
+            82.99
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2",
+          "bbox": [
+            59.53,
+            119.87,
+            92.43,
+            128.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Floer differential.",
+          "bbox": [
+            59.53,
+            129.18,
+            115.22,
+            139.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "a Z-module are 1-periodic orbits of H, which are the critical points of A. The differential is",
+          "bbox": [
+            59.53,
+            182.17,
+            422.36,
+            195.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIT",
+            "MT2MST",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a matrix whose .\r\u0000; \rC/-entry is the number of cylinders mapping to X connecting \r\u0000 and",
+          "bbox": [
+            59.53,
+            196.12,
+            422.36,
+            210.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "C satisfying a certain PDE which represents the “gradient flowlines” of A (Figure 2). See",
+          "bbox": [
+            59.53,
+            210.06,
+            422.36,
+            224.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2MST",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "[40] for a survey of some of these ideas.",
+          "bbox": [
+            59.53,
+            224.01,
+            216.79,
+            237.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In this article we will demonstrate how certain Floer (co)homology groups can be",
+          "bbox": [
+            93.54,
+            237.96,
+            422.36,
+            251.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "used to understand the following things:",
+          "bbox": [
+            59.53,
+            251.91,
+            218.86,
+            265.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1) The minimal discrepancy of isolated singularities (Section 2);",
+          "bbox": [
+            93.54,
+            272.83,
+            356.34,
+            286.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2) The Cohomological McKay correspondence (Section 3);",
+          "bbox": [
+            93.54,
+            293.75,
+            336.14,
+            307.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3) Quantum cohomology of birational Calabi–Yau manifolds (Section 4).",
+          "bbox": [
+            93.54,
+            314.67,
+            391.0,
+            327.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2. Minimal discrepancy of isolated singularities",
+          "bbox": [
+            93.54,
+            357.37,
+            372.39,
+            369.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let A \u001a CN be an irreducible affine variety of complex dimension n with at most",
+          "bbox": [
+            93.54,
+            366.85,
+            422.37,
+            383.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "one singularity at 0 2 CN . In other words, A \u001a CN is cut out by a finite number of polynomial",
+          "bbox": [
+            59.53,
+            380.79,
+            422.36,
+            397.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "equations whose Jacobian matrix has constant rank along A \u0000 0. The link of A at 0 is the",
+          "bbox": [
+            59.53,
+            398.21,
+            422.36,
+            411.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "manifold given by the intersection of A with the \"-sphere S\" WD ¹jzj D \"º \u001a CN where \" > 0",
+          "bbox": [
+            59.53,
+            408.69,
+            422.35,
+            425.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is any sufficiently small number. The link admits a contact structure \u0018A WD TLA \\ iTLA",
+          "bbox": [
+            59.53,
+            426.25,
+            421.86,
+            439.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            260.96,
+            432.35,
+            269.86,
+            442.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "where i W T CN ! T CN is multiplication by i D",
+          "bbox": [
+            59.53,
+            436.58,
+            258.19,
+            453.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u00001 so long as \" > 0 is small enough.",
+          "bbox": [
+            269.86,
+            440.2,
+            416.94,
+            453.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let us give two examples of such links. The first example is the smooth case,",
+          "bbox": [
+            93.54,
+            454.15,
+            422.36,
+            467.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A D Cn. Here the link .LCn; \u0018Cn/ is contactomorphic to the .2n \u0000 1/-dimensional sphere",
+          "bbox": [
+            59.53,
+            468.1,
+            422.36,
+            481.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "S2n\u00001 with contact structure ker.Pn",
+          "bbox": [
+            59.53,
+            478.43,
+            206.42,
+            495.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "kD1 xkdyk \u0000 ykdxk/ where x1 C iy1;: : :;xn C iyn are",
+          "bbox": [
+            202.0,
+            482.04,
+            422.36,
+            497.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the standard complex coordinates on Cn. The second example is the nondegenerate hyper-",
+          "bbox": [
+            59.53,
+            495.99,
+            422.37,
+            509.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "k D 0º inside CnC1 whose link is contactomorphic to the",
+          "bbox": [
+            193.09,
+            506.32,
+            422.36,
+            525.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "surface singularity A D ¹PnC1",
+          "bbox": [
+            59.53,
+            508.68,
+            186.18,
+            523.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "kD1 z2",
+          "bbox": [
+            171.34,
+            511.21,
+            197.67,
+            525.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "unit cotangent bundle of the n-sphere.",
+          "bbox": [
+            59.53,
+            523.89,
+            210.95,
+            537.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Suppose that A0 \u001a CN 0 is another irreducible affine variety with at most one singu-",
+          "bbox": [
+            93.54,
+            531.69,
+            422.36,
+            551.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "larity at 0. If there are neighborhoods U \u001a A, U 0 \u001a A0 of 0 together with a homeomorphism",
+          "bbox": [
+            59.53,
+            548.17,
+            422.36,
+            565.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "W U ! U 0 sending 0 2 A to 0 2 A0 so that \u001e is a biholomorphism from U \u0000 0 to U 0 \u0000 0,",
+          "bbox": [
+            59.53,
+            562.11,
+            422.36,
+            579.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "then the links .LA; \u0018A/ and .LA0; \u0018A0/ are contactomorphic ([56]).",
+          "bbox": [
+            59.53,
+            579.68,
+            317.91,
+            593.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2618",
+          "bbox": [
+            59.53,
+            637.94,
+            73.65,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "M. McLean",
+          "bbox": [
+            93.54,
+            637.94,
+            125.59,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3 Full contact homology differential."
+      ],
+      "labels": [
+        {
+          "text": "Number of such holomorphic curves",
+          "bbox": [
+            72.35,
+            47.29,
+            218.14,
+            60.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in the symplectization is",
+          "bbox": [
+            96.68,
+            61.45,
+            193.81,
+            74.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the \r1 \u0001 \r2 \u0001 \r3 coefficient of @.\r/.",
+          "bbox": [
+            70.63,
+            75.82,
+            205.68,
+            90.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            204.23,
+            112.79,
+            213.32,
+            123.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            268.01,
+            112.79,
+            277.1,
+            123.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            324.7,
+            112.79,
+            333.79,
+            123.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            403.64,
+            115.06,
+            411.26,
+            125.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0002",
+          "bbox": [
+            396.93,
+            125.81,
+            403.8,
+            135.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            374.98,
+            136.2,
+            381.78,
+            146.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3",
+          "bbox": [
+            59.53,
+            156.28,
+            92.7,
+            164.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Full contact homology differential.",
+          "bbox": [
+            59.53,
+            165.59,
+            170.49,
+            176.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "“wrap” around the divisors .Ei/i2S. One can explicitly compute all of their Conley–Zehnder",
+          "bbox": [
+            59.53,
+            214.3,
+            422.37,
+            227.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "indices, giving our result (see [34, Theorem 5.23]).",
+          "bbox": [
+            59.53,
+            228.25,
+            254.32,
+            241.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In the paper [34], we used pseudoholomorphic curve techniques to give the lower",
+          "bbox": [
+            93.54,
+            242.2,
+            422.37,
+            255.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "bound for md.A;0/ (see [34, Sections 6,7]). However, this lower bound conjecturally can also",
+          "bbox": [
+            59.53,
+            256.15,
+            422.36,
+            269.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "be proven using a Floer homology group, called full contact homology. We will give a brief",
+          "bbox": [
+            59.53,
+            269.94,
+            422.36,
+            283.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sketch of this idea in the case where md.A; 0/ \u0015 0.",
+          "bbox": [
+            59.53,
+            284.04,
+            262.58,
+            297.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Very roughly, full contact homology CH\u0003.C; \u0018/ of a .2n \u0000 1/-contact manifold",
+          "bbox": [
+            93.54,
+            297.84,
+            422.37,
+            311.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ".C;\u0018/ is defined in the following way (see [2,14,24,42]). The chain complex is the free super-",
+          "bbox": [
+            59.53,
+            311.94,
+            422.37,
+            325.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "commutative algebra over Q generated by Reeb orbits of a generic compatible contact form",
+          "bbox": [
+            59.53,
+            325.88,
+            422.36,
+            339.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0015 and graded by Conley–Zehnder index plus .n \u0000 3/. We now put an appropriate translation-",
+          "bbox": [
+            59.53,
+            339.83,
+            422.36,
+            353.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "invariant almost-complex structure on the symplectization .R \u0002 C; d.et\u0015// of .C; \u0018/. The",
+          "bbox": [
+            59.53,
+            353.78,
+            422.36,
+            367.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "differential is the unique Q-linear differential on this algebra satisfying the Leibniz rule and",
+          "bbox": [
+            59.53,
+            367.73,
+            422.36,
+            381.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "whose .\r; Qk",
+          "bbox": [
+            59.53,
+            381.68,
+            114.98,
+            401.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "iD1 \ri/ coefficient is a count of genus-zero holomorphic curves in R \u0002 C up",
+          "bbox": [
+            110.75,
+            381.68,
+            422.36,
+            397.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to translation “limiting” to the corresponding Reeb orbits \r, .\ri/k",
+          "bbox": [
+            59.53,
+            395.62,
+            326.82,
+            409.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "iD1 of \u0015 (Figure 3). Full",
+          "bbox": [
+            322.59,
+            395.62,
+            422.36,
+            412.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "contact homology does not depend on the choice of a compatible contact form.",
+          "bbox": [
+            59.53,
+            409.57,
+            373.78,
+            422.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We have the following conjectural spectral sequence computing CH\u0003.LA; \u0018A/. To",
+          "bbox": [
+            93.54,
+            423.52,
+            422.37,
+            436.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "set up this spectral sequence, we need some preliminary definitions. For each I \u001a S, let",
+          "bbox": [
+            59.53,
+            437.47,
+            422.35,
+            450.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i2I Ei where .Ei/i2S are the irreducible exceptional divisors of our resolution as",
+          "bbox": [
+            97.73,
+            451.41,
+            422.36,
+            467.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "EI WD T",
+          "bbox": [
+            59.53,
+            451.96,
+            97.73,
+            471.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I be its normal bundle in QA for each I \u001a S.",
+          "bbox": [
+            253.64,
+            463.74,
+            422.36,
+            481.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I¨I 0 EI 0 and let NEo",
+          "bbox": [
+            175.24,
+            464.84,
+            258.75,
+            480.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYAS",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "above. Define Eo",
+          "bbox": [
+            59.53,
+            465.36,
+            127.65,
+            478.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I WD EI \u0000 S",
+          "bbox": [
+            122.53,
+            465.91,
+            175.63,
+            485.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "For each tuple .ki/i2I of integers, there is a U.1/ action on NEo",
+          "bbox": [
+            59.53,
+            479.31,
+            324.25,
+            494.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I preserving the fibers so",
+          "bbox": [
+            319.13,
+            479.31,
+            422.36,
+            495.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that ˇ 2 U.1/ sends a point .xi/i2I 2 NEo",
+          "bbox": [
+            59.53,
+            493.26,
+            233.7,
+            506.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I / to .ˇki xi/i2I.",
+          "bbox": [
+            354.18,
+            493.26,
+            422.36,
+            509.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I D L",
+          "bbox": [
+            228.58,
+            493.81,
+            259.18,
+            513.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i2S\u0000I..TEI\u0000ijEo",
+          "bbox": [
+            259.18,
+            493.81,
+            330.39,
+            507.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I /=TEo",
+          "bbox": [
+            326.15,
+            494.53,
+            359.3,
+            510.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I by this action. Suppose our resolution QA admits",
+          "bbox": [
+            228.93,
+            506.22,
+            422.36,
+            524.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Let NE=.ki /i2I",
+          "bbox": [
+            59.53,
+            507.8,
+            116.19,
+            521.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "be the quotient of NEo",
+          "bbox": [
+            119.96,
+            507.85,
+            210.38,
+            521.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I \u0000 Eo",
+          "bbox": [
+            205.27,
+            508.39,
+            234.05,
+            522.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I",
+          "bbox": [
+            89.58,
+            515.99,
+            93.33,
+            522.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "a Kähler form ! with an integral lift. Then one can construct a line bundle with curvature",
+          "bbox": [
+            59.53,
+            521.79,
+            422.37,
+            535.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a positive multiple of \u00002\u0019i! together with a meromorphic section s so that the divisor",
+          "bbox": [
+            59.53,
+            535.74,
+            422.35,
+            549.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "associated to s is equal to \u0000 P",
+          "bbox": [
+            59.53,
+            549.69,
+            182.79,
+            569.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i2S wiEi for some positive integers .wi/i2S.",
+          "bbox": [
+            182.79,
+            549.69,
+            361.76,
+            565.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Conjecture 2.6. Define",
+          "bbox": [
+            59.53,
+            569.98,
+            155.43,
+            584.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "old-TeXGyreTermes-Bold",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "NE=.ki /",
+          "bbox": [
+            301.02,
+            591.17,
+            333.28,
+            604.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2.3)",
+          "bbox": [
+            403.27,
+            591.21,
+            422.36,
+            604.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            187.86,
+            591.53,
+            202.91,
+            601.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Ap;q \u0011",
+          "bbox": [
+            123.43,
+            591.76,
+            153.09,
+            604.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "I.ki /i2I I Q",
+          "bbox": [
+            315.76,
+            591.76,
+            354.45,
+            609.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            297.0,
+            592.98,
+            301.02,
+            602.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            354.45,
+            592.98,
+            358.46,
+            602.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "HpCq\u00002 P",
+          "bbox": [
+            236.57,
+            594.05,
+            278.19,
+            610.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i ki ai",
+          "bbox": [
+            278.19,
+            597.99,
+            295.46,
+            606.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.48,
+            6.97
+          ]
+        },
+        {
+          "text": "¹.ki /2NS",
+          "bbox": [
+            155.85,
+            608.51,
+            187.03,
+            618.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            5.48,
+            6.97
+          ]
+        },
+        {
+          "text": "\u00150WP",
+          "bbox": [
+            182.84,
+            608.67,
+            200.51,
+            618.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            5.48,
+            6.97
+          ]
+        },
+        {
+          "text": "i ki wi Dpº",
+          "bbox": [
+            200.51,
+            608.67,
+            234.91,
+            618.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            5.48,
+            6.97
+          ]
+        },
+        {
+          "text": "2621",
+          "bbox": [
+            59.53,
+            637.94,
+            73.84,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Floer cohomology, singularities and birational geometry",
+          "bbox": [
+            93.54,
+            637.94,
+            289.72,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4 Arc space PSS map."
+      ],
+      "labels": [
+        {
+          "text": "If the answer to this problem is yes, then we get a natural basis of H \u0003.Y IƒK/ by ele-",
+          "bbox": [
+            93.54,
+            33.39,
+            422.35,
+            46.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ments of Conj.G/. Another issue is that we require that the characteristic of K does not divide",
+          "bbox": [
+            59.53,
+            47.42,
+            422.35,
+            60.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "jGj. We do not know how to show that the spectral sequence computing SH\u0003",
+          "bbox": [
+            59.53,
+            60.86,
+            374.13,
+            74.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "S1;C.Y I ƒK/",
+          "bbox": [
+            369.69,
+            61.91,
+            422.36,
+            76.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "degenerates when the characteristic of K divides jGj.",
+          "bbox": [
+            59.53,
+            75.31,
+            271.79,
+            88.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Open Problem 3.6. What does the spectral sequence look like for SH\u0003",
+          "bbox": [
+            59.53,
+            95.6,
+            349.59,
+            110.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYS",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Bold"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "S1;C.Y I ƒK/ when",
+          "bbox": [
+            345.14,
+            96.23,
+            422.36,
+            111.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the characteristic K divides jGj?",
+          "bbox": [
+            59.53,
+            110.18,
+            189.6,
+            123.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Our work [37] was partly inspired by [27, Section 6], which tries to understand the",
+          "bbox": [
+            93.54,
+            131.1,
+            422.36,
+            144.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "cohomological McKay correspondence using arc spaces. Recall in Definition 2.7 that, for",
+          "bbox": [
+            59.53,
+            145.05,
+            422.37,
+            158.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "an isolated singularity A, we defined the short arc space Arco.A/. Consider the subspace",
+          "bbox": [
+            59.53,
+            158.85,
+            422.36,
+            172.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ShArc.A/ \u001a Arco.A/ of those arcs u W D ! Cn=G satisfying u\u00001.0/ D ¹0º. Kollár and",
+          "bbox": [
+            59.53,
+            172.87,
+            422.36,
+            186.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Némethi in [27, Corollary 32] show that the “irreducible components” of ShArc.Cn=G/ are",
+          "bbox": [
+            59.53,
+            186.89,
+            422.36,
+            200.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in natural 1–1 correspondence with Conj.G/. This correspondence is given by the boundary",
+          "bbox": [
+            59.53,
+            200.84,
+            422.35,
+            214.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of each short arc u W D ! Cn=G, viewed as an element of",
+          "bbox": [
+            59.53,
+            214.79,
+            293.27,
+            228.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "L.Cn \u0000 0/=G",
+          "bbox": [
+            147.17,
+            229.1,
+            205.15,
+            245.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2MST",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "S2n\u00001",
+          "bbox": [
+            250.49,
+            232.09,
+            275.86,
+            245.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "D Conj.G/:",
+          "bbox": [
+            300.71,
+            232.67,
+            349.5,
+            245.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3.2)",
+          "bbox": [
+            403.27,
+            232.67,
+            422.36,
+            245.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D \u00190",
+          "bbox": [
+            212.53,
+            233.21,
+            233.89,
+            246.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            143.15,
+            234.43,
+            147.17,
+            244.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            205.75,
+            234.43,
+            209.77,
+            244.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            234.39,
+            234.43,
+            238.41,
+            244.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            246.48,
+            234.43,
+            250.49,
+            244.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001\u0001",
+          "bbox": [
+            289.92,
+            234.43,
+            297.95,
+            244.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u00190",
+          "bbox": [
+            132.39,
+            235.5,
+            142.65,
+            246.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=G",
+          "bbox": [
+            276.36,
+            235.5,
+            289.32,
+            245.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            238.41,
+            235.59,
+            246.48,
+            245.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MST"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\"",
+          "bbox": [
+            256.44,
+            240.26,
+            259.92,
+            247.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "One way of connecting ShArc.Cn=G/ with SH\u0003.Y I ƒK/ might be through the PSS map",
+          "bbox": [
+            59.53,
+            250.04,
+            422.36,
+            263.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(see [43]). The PSS map is a natural map from SH\u0003",
+          "bbox": [
+            59.53,
+            263.99,
+            271.23,
+            277.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "MT2SYS",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "C.Y I ƒK/ to H\u0003.ShArc.Cn=G/I ƒK/",
+          "bbox": [
+            266.79,
+            264.49,
+            422.36,
+            277.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "given by sending an orbit \r to a “cycle” swept out by the moduli space of maps u W C ! Y",
+          "bbox": [
+            59.53,
+            278.44,
+            420.37,
+            291.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "so that u.re2\u0019i#/ converges to \r.#/ as r ! 1 and where the “cycle” is swept out by 0",
+          "bbox": [
+            59.53,
+            292.39,
+            422.36,
+            305.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(Figure 4).",
+          "bbox": [
+            59.53,
+            306.34,
+            101.99,
+            319.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Cycle of arcs",
+          "bbox": [
+            144.46,
+            389.37,
+            196.68,
+            402.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            286.71,
+            403.51,
+            292.53,
+            413.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "swept by maps u.",
+          "bbox": [
+            138.69,
+            403.54,
+            208.11,
+            416.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4",
+          "bbox": [
+            59.53,
+            480.55,
+            92.85,
+            488.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Arc space PSS map.",
+          "bbox": [
+            59.53,
+            489.86,
+            124.16,
+            500.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "The Floer-theoretic methods used to prove Theorem 3.3 work very well if G acts",
+          "bbox": [
+            93.54,
+            521.64,
+            422.36,
+            534.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "freely away from 0.",
+          "bbox": [
+            59.53,
+            535.58,
+            137.0,
+            548.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Open Problem 3.7. Is there a way of using the Floer-theoretic methods above to deal with",
+          "bbox": [
+            59.53,
+            555.88,
+            422.35,
+            570.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the case where G does not necessarily act freely away from 0?",
+          "bbox": [
+            59.53,
+            570.45,
+            307.52,
+            583.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The ideas of Section 4 below might be of use when we are dealing with this problem",
+          "bbox": [
+            93.54,
+            591.38,
+            422.36,
+            604.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(see Open Problem 4.7 below).",
+          "bbox": [
+            59.53,
+            605.32,
+            183.13,
+            618.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2626",
+          "bbox": [
+            59.53,
+            637.94,
+            74.26,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "M. McLean",
+          "bbox": [
+            93.54,
+            637.94,
+            125.59,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "rotation": 0,
+      "drawings": 30,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5 Terms in small quantum product. Cycles Poincaré dual to their respective cohomology classes are illustrated."
+      ],
+      "labels": [
+        {
+          "text": "Ai",
+          "bbox": [
+            406.36,
+            42.62,
+            415.91,
+            53.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Ai",
+          "bbox": [
+            164.0,
+            56.09,
+            173.55,
+            66.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            363.47,
+            56.83,
+            368.45,
+            66.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            325.86,
+            80.46,
+            336.03,
+            90.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Al",
+          "bbox": [
+            110.1,
+            82.91,
+            119.81,
+            93.67
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Al0",
+          "bbox": [
+            278.69,
+            82.91,
+            290.65,
+            93.67
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "OAl",
+          "bbox": [
+            163.96,
+            85.21,
+            173.66,
+            100.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Aj",
+          "bbox": [
+            379.06,
+            109.29,
+            389.01,
+            119.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            344.62,
+            113.39,
+            349.6,
+            123.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "OAl0",
+          "bbox": [
+            297.54,
+            120.22,
+            309.5,
+            135.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ˇ D 0",
+          "bbox": [
+            175.59,
+            139.86,
+            200.86,
+            152.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˇ ¤ 0",
+          "bbox": [
+            364.1,
+            145.33,
+            389.36,
+            157.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Aj",
+          "bbox": [
+            136.7,
+            149.68,
+            146.64,
+            160.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5",
+          "bbox": [
+            59.53,
+            178.14,
+            92.63,
+            186.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Terms in small quantum product. Cycles Poincaré dual to their respective cohomology classes are illustrated.",
+          "bbox": [
+            59.53,
+            187.45,
+            406.04,
+            198.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Conjecture 4.1 (Morrison [38] and Ruan [48]). Any two birational Calabi–Yau manifolds",
+          "bbox": [
+            59.53,
+            239.81,
+            422.37,
+            254.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Bold",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "have isomorphic (small or big) quantum cohomology rings up to analytic continuation.",
+          "bbox": [
+            59.53,
+            254.24,
+            406.76,
+            267.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This conjecture was proven in dimension 3 in [32]. It was shown in [29–31] that if",
+          "bbox": [
+            93.54,
+            275.31,
+            422.36,
+            288.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "both Calabi–Yau manifolds are related by a sequence of birational transformations called",
+          "bbox": [
+            59.53,
+            289.26,
+            422.36,
+            302.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ordinary flops then the conjecture above is true for big quantum cohomology (and hence",
+          "bbox": [
+            59.53,
+            303.06,
+            422.35,
+            316.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "also for small quantum cohomology). Wang in [60, Section 4.3, Conjecture IV] conjectured",
+          "bbox": [
+            59.53,
+            317.15,
+            422.36,
+            330.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that all such Calabi–Yau manifolds, after deformation, are related by these operations, and",
+          "bbox": [
+            59.53,
+            331.1,
+            422.36,
+            344.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "so this would imply Conjecture 4.1. The method of proof in the papers [29–32] above is",
+          "bbox": [
+            59.53,
+            345.05,
+            422.36,
+            358.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "given by degenerating the Calabi–Yau manifold in a particular way and looking at Gromov–",
+          "bbox": [
+            59.53,
+            359.0,
+            422.37,
+            372.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Witten invariants on this degeneration. We will describe a completely different approach to",
+          "bbox": [
+            59.53,
+            372.94,
+            422.36,
+            386.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Conjecture 4.1 above using Floer theory, and in particular a modified version of symplectic",
+          "bbox": [
+            59.53,
+            386.89,
+            422.36,
+            400.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cohomology.",
+          "bbox": [
+            59.53,
+            400.84,
+            111.08,
+            414.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let X and LX be birational Calabi–Yau manifolds and let ! and L! be Kähler forms",
+          "bbox": [
+            93.54,
+            413.16,
+            422.36,
+            428.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on X and LX, respectively, admitting integral lifts. We get two Novikov rings ƒ!",
+          "bbox": [
+            59.53,
+            427.11,
+            385.7,
+            442.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K and ƒ L!",
+          "bbox": [
+            380.63,
+            428.63,
+            420.78,
+            445.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            415.71,
+            436.96,
+            421.86,
+            443.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "defined as in equation (4.1). By [26, Lemma 4.2], there are natural identifications H2.XI Z/ Š",
+          "bbox": [
+            59.53,
+            442.68,
+            422.36,
+            456.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "H2. OXI Z/, due to the fact that the region in which the birational transform is not an isomor-",
+          "bbox": [
+            59.53,
+            455.01,
+            422.37,
+            470.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "phism has complex codimension \u0015 2. Hence from now on, we will not distinguish between",
+          "bbox": [
+            59.53,
+            470.58,
+            422.37,
+            483.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "these groups, and so we can define the intersection of both Novikov rings ƒ!; L!",
+          "bbox": [
+            59.53,
+            483.28,
+            364.56,
+            497.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K \\ ƒ L!",
+          "bbox": [
+            387.99,
+            484.42,
+            418.29,
+            499.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K.",
+          "bbox": [
+            413.22,
+            484.53,
+            422.36,
+            499.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "WD ƒ!",
+          "bbox": [
+            367.25,
+            485.07,
+            393.06,
+            497.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            351.62,
+            492.75,
+            357.77,
+            499.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "More explicitly,",
+          "bbox": [
+            59.53,
+            498.47,
+            122.48,
+            511.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˇˇˇˇ ai 2 K; ˇi 2 H2.XIZ/; min",
+          "bbox": [
+            143.13,
+            517.42,
+            263.66,
+            545.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "²X",
+          "bbox": [
+            98.82,
+            517.96,
+            119.04,
+            532.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "³",
+          "bbox": [
+            389.7,
+            517.96,
+            395.59,
+            527.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ƒ!; L!",
+          "bbox": [
+            64.51,
+            520.84,
+            85.38,
+            534.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "! 1 as i ! 1",
+          "bbox": [
+            325.93,
+            522.09,
+            389.7,
+            535.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ": (4.3)",
+          "bbox": [
+            395.59,
+            522.09,
+            422.36,
+            535.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            88.39,
+            522.63,
+            96.72,
+            532.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!.ˇi/; L!.ˇi/",
+          "bbox": [
+            267.68,
+            522.63,
+            319.81,
+            535.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "aitˇi",
+          "bbox": [
+            120.6,
+            522.89,
+            139.59,
+            535.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            5.48,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            263.66,
+            523.85,
+            267.68,
+            533.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            319.81,
+            523.85,
+            323.83,
+            533.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            72.44,
+            530.31,
+            78.59,
+            537.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "i2N",
+          "bbox": [
+            104.71,
+            537.98,
+            118.79,
+            546.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "The following theorem essentially proves Conjecture 4.1 for small quantum cohomology",
+          "bbox": [
+            59.53,
+            549.33,
+            422.35,
+            562.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "algebras.",
+          "bbox": [
+            59.53,
+            563.28,
+            94.97,
+            576.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2628",
+          "bbox": [
+            59.53,
+            637.94,
+            74.27,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "M. McLean",
+          "bbox": [
+            93.54,
+            637.94,
+            125.59,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "rotation": 0,
+      "drawings": 6,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6 Capped Floer trajectory."
+      ],
+      "labels": [
+        {
+          "text": "A\u0000",
+          "bbox": [
+            128.02,
+            57.5,
+            140.77,
+            67.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "u",
+          "bbox": [
+            230.95,
+            71.34,
+            236.77,
+            81.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "AC",
+          "bbox": [
+            340.23,
+            99.76,
+            353.76,
+            109.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            171.64,
+            112.79,
+            182.19,
+            122.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            284.64,
+            126.97,
+            295.97,
+            136.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 6",
+          "bbox": [
+            59.53,
+            156.88,
+            92.68,
+            165.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Capped Floer trajectory.",
+          "bbox": [
+            59.53,
+            166.19,
+            136.58,
+            176.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where HF\u0003",
+          "bbox": [
+            59.53,
+            218.82,
+            103.87,
+            232.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Œa;b.H/ is a Hamiltonian Floer cohomology group which is defined in the same",
+          "bbox": [
+            99.43,
+            219.18,
+            422.36,
+            234.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "way as in Section 3, with a few differences:",
+          "bbox": [
+            59.53,
+            233.13,
+            231.7,
+            246.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1) The chain complex is freely generated over K by pairs .\r; A/, called capped",
+          "bbox": [
+            93.54,
+            253.9,
+            422.36,
+            267.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "orbits of action in Œa; b, where \r W R=Z ! M is a 1-periodic orbit of H and",
+          "bbox": [
+            110.14,
+            267.85,
+            422.36,
+            281.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A 2 H2.M; \rI Z/ is a homology cycle with boundary \r (called a capping);",
+          "bbox": [
+            110.14,
+            281.8,
+            409.81,
+            295.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2) The action of .\r; A/ is \u0000",
+          "bbox": [
+            93.54,
+            302.72,
+            209.04,
+            316.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R=Z H.\r.t//dt;",
+          "bbox": [
+            245.6,
+            302.87,
+            309.67,
+            319.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A ! \u0000",
+          "bbox": [
+            214.49,
+            303.42,
+            238.83,
+            319.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            210.7,
+            304.66,
+            215.26,
+            314.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            241.04,
+            304.66,
+            245.6,
+            314.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3) The differential only counts cylinders u connecting .\r\u0000; A\u0000/ and .\rC; AC/, so",
+          "bbox": [
+            93.54,
+            323.79,
+            422.36,
+            337.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that when one caps off each end of u by A\u0000 and AC, respectively, one gets a",
+          "bbox": [
+            110.14,
+            337.74,
+            422.36,
+            352.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "null-homologous sphere (Figure 6).",
+          "bbox": [
+            110.14,
+            351.69,
+            251.67,
+            365.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Also the limits are taken with respect to the ordering \u0014.",
+          "bbox": [
+            59.53,
+            372.61,
+            281.49,
+            385.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The group SH\u0003.K \u001a M/ naturally has a ƒ!",
+          "bbox": [
+            93.54,
+            393.02,
+            271.24,
+            406.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K-module structure induced by the nat-",
+          "bbox": [
+            266.17,
+            393.53,
+            422.36,
+            408.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ural H2.XI Z/-action on capped orbits given by adding these classes to the cappings A.",
+          "bbox": [
+            59.53,
+            407.48,
+            422.36,
+            420.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It also has a natural “pair of pants” product (see [43]) making it a ƒ!",
+          "bbox": [
+            59.53,
+            421.42,
+            343.04,
+            434.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K algebra. The maps",
+          "bbox": [
+            337.97,
+            421.42,
+            422.36,
+            438.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "HF\u0003.H1/ ! HF\u0003.H2/ with H1 \u0014 H2 in equation (4.6) above are defined by counting cylin-",
+          "bbox": [
+            59.53,
+            435.01,
+            422.37,
+            450.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ders in a similar way to the differential. As demonstrated in [57], one should really take the",
+          "bbox": [
+            59.53,
+            449.32,
+            422.36,
+            462.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "direct and inverse limits in equation (4.6) at the chain level in some appropriate homotopy-",
+          "bbox": [
+            59.53,
+            463.27,
+            422.37,
+            476.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "theoretic sense before taking homology, but we will not do this here for simplicity.",
+          "bbox": [
+            59.53,
+            477.21,
+            387.16,
+            490.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Symplectic cohomology seems to be quite useful when K is a Liouville subdomain",
+          "bbox": [
+            93.54,
+            491.01,
+            422.36,
+            504.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of .M;!/. A Liouville subdomain is a codimension-0 submanifold K \u001a M satisfying !jK D",
+          "bbox": [
+            59.53,
+            504.96,
+            422.36,
+            518.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "d\u0012 for some 1-form \u0012 with the property that the !-dual X\u0012 of \u0012 points outwards along @K.",
+          "bbox": [
+            59.53,
+            519.06,
+            422.36,
+            534.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "One should think of the last condition as a “convexity” condition. Symplectic cohomology",
+          "bbox": [
+            59.53,
+            533.01,
+            422.36,
+            546.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "satisfies the following properties:",
+          "bbox": [
+            59.53,
+            546.95,
+            191.58,
+            560.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1) If c1.M/ D 0 and K is a Liouville subdomain satisfying a certain “index bound-",
+          "bbox": [
+            93.54,
+            567.87,
+            422.36,
+            581.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "edness” property then SH\u0003.K \u001a M/ only depends on the isotopy class of K. In",
+          "bbox": [
+            110.14,
+            581.32,
+            422.36,
+            595.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "other words, if we have a smooth family of index-bounded Liouville domains",
+          "bbox": [
+            110.14,
+            595.77,
+            422.36,
+            609.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2630",
+          "bbox": [
+            59.53,
+            637.94,
+            74.39,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "M. McLean",
+          "bbox": [
+            93.54,
+            637.94,
+            125.59,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7 Floer trajectories avoiding VX and V OX."
+      ],
+      "labels": [
+        {
+          "text": "V LX",
+          "bbox": [
+            276.97,
+            42.71,
+            288.76,
+            55.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "VX",
+          "bbox": [
+            93.1,
+            57.9,
+            104.13,
+            68.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "LA",
+          "bbox": [
+            243.01,
+            109.42,
+            250.27,
+            123.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "LA",
+          "bbox": [
+            407.42,
+            112.26,
+            414.67,
+            126.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D1",
+          "bbox": [
+            274.12,
+            114.6,
+            286.64,
+            125.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "D0",
+          "bbox": [
+            310.97,
+            114.6,
+            323.49,
+            125.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            67.26,
+            115.34,
+            74.47,
+            125.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u00001.D0/",
+          "bbox": [
+            123.26,
+            134.84,
+            160.2,
+            148.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Identical Floer trajectories.",
+          "bbox": [
+            207.0,
+            176.66,
+            314.58,
+            189.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 7",
+          "bbox": [
+            59.53,
+            202.92,
+            92.28,
+            211.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Floer trajectories avoiding VX and V OX.",
+          "bbox": [
+            59.53,
+            212.23,
+            183.64,
+            225.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "4.4. Further directions",
+          "bbox": [
+            93.54,
+            256.87,
+            189.18,
+            271.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "old-TeXGyreTermes-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "One of the problems with Theorem 4.2 is that the isomorphisms are not explicit.",
+          "bbox": [
+            93.54,
+            271.45,
+            422.37,
+            284.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let  \u001a X \u0002 LX be the closure of the graph of the birational isomorphism \u001e. Then we have",
+          "bbox": [
+            59.53,
+            283.77,
+            422.37,
+            298.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a push–pull map",
+          "bbox": [
+            59.53,
+            299.35,
+            125.39,
+            312.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "‰ W H \u0003.XI K/ ! H \u0003. LXI K/;",
+          "bbox": [
+            88.08,
+            318.21,
+            215.12,
+            333.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": " \\ pr\u0003",
+          "bbox": [
+            319.66,
+            319.25,
+            352.05,
+            333.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "‰.˛/ WD PD",
+          "bbox": [
+            226.74,
+            319.83,
+            283.84,
+            333.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ".pr LX/\u0003",
+          "bbox": [
+            287.85,
+            319.83,
+            315.15,
+            335.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(4.10)",
+          "bbox": [
+            398.29,
+            319.83,
+            422.36,
+            333.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            283.83,
+            321.6,
+            287.85,
+            331.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            315.64,
+            321.6,
+            319.66,
+            331.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001\u0001",
+          "bbox": [
+            361.7,
+            321.6,
+            369.73,
+            331.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X ˛",
+          "bbox": [
+            346.83,
+            322.67,
+            361.31,
+            335.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where prX and pr LX are the natural projection maps from X \u0002 LX to X and LX, respectively,",
+          "bbox": [
+            59.53,
+            338.69,
+            422.37,
+            357.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and PD is Poincaré duality.",
+          "bbox": [
+            59.53,
+            354.26,
+            167.28,
+            367.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Conjecture 4.4 ([60, Section 4.3, Conjecture I]). If K D Q, then we can identify the quantum",
+          "bbox": [
+            59.53,
+            374.56,
+            422.36,
+            389.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "MT2HRBT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Bold",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "cohomology groups of X and LX using the equivalence ‰.",
+          "bbox": [
+            59.53,
+            387.51,
+            295.24,
+            402.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Since the regions VX and V LX where \u001e and its inverse are ill-defined have complex",
+          "bbox": [
+            93.54,
+            410.06,
+            422.36,
+            426.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "codimension 2, it should be possible to show that the above conjecture is true if we restrict",
+          "bbox": [
+            59.53,
+            424.0,
+            422.35,
+            437.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X/ and H \u0003. LXIƒ!",
+          "bbox": [
+            215.4,
+            436.33,
+            288.45,
+            453.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ourselves to the subalgebra of H \u0003.XIƒ!",
+          "bbox": [
+            59.53,
+            437.87,
+            221.25,
+            451.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "LX/ generated by elements of degree",
+          "bbox": [
+            283.38,
+            437.95,
+            422.36,
+            455.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "0, 1, 2 and 2n \u0000 2, 2n \u0000 1, and 2n. Motivated by the fact that symplectic cohomology could,",
+          "bbox": [
+            59.53,
+            451.9,
+            422.36,
+            465.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in principle, be computed by relative Gromov–Witten invariants ([49, Remark 8.3], [13, 19]),",
+          "bbox": [
+            59.53,
+            465.85,
+            422.36,
+            479.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "it would be interesting to investigate (over any field K) whether the equivalences (4.4) can",
+          "bbox": [
+            59.53,
+            479.79,
+            422.36,
+            493.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2HRBT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "be realized in some way by counts of curves in X \u0002 LX. This leads us to the following very",
+          "bbox": [
+            59.53,
+            492.12,
+            422.36,
+            507.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "difficult open problem:",
+          "bbox": [
+            59.53,
+            507.69,
+            150.79,
+            521.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Open Problem 4.5. Can one produce a purely algebraic proof of Theorem 4.2 using relative",
+          "bbox": [
+            59.53,
+            527.98,
+            422.37,
+            542.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Gromov–Witten invariants motivated by themes in [13] or [19]?",
+          "bbox": [
+            59.53,
+            542.56,
+            308.66,
+            555.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Trying to understand what is going on in dimension 3 could be of use here. There",
+          "bbox": [
+            93.54,
+            563.48,
+            422.36,
+            576.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "should be a version of symplectic cohomology of M \u001a M which is defined using bulk",
+          "bbox": [
+            59.53,
+            577.28,
+            422.36,
+            590.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deformed Hamiltonian Floer cohomology (see [18, 54]). This is naturally isomorphic to",
+          "bbox": [
+            59.53,
+            591.23,
+            422.36,
+            604.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut",
+            "TeXGyreTermes-Regular",
+            "old-TeXGyreTermes-Italic"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "big quantum cohomology. However, the methods of Section 4.3 do not work using this",
+          "bbox": [
+            59.53,
+            605.32,
+            422.35,
+            618.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeXGyreTermes-Regular"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2632",
+          "bbox": [
+            59.53,
+            637.94,
+            74.27,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "M. McLean",
+          "bbox": [
+            93.54,
+            637.94,
+            125.59,
+            645.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Institut"
+          ],
+          "sizes": [
+            5.98
+          ]
+        }
+      ]
+    }
+  ]
+}

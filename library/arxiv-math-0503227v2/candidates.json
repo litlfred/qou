@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0503227v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "4e83adfdef82710343324fc2e1ddd94b3ec5a1b2165a96ddd0a5848abc192f59",
+  "file": "0503227v2.pdf"
+ },
+ "provenance": {
+  "title": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios",
+  "authors": "By Jason Fulman",
+  "arxiv": {
+   "id": "math/0503227",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "8 Aug 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

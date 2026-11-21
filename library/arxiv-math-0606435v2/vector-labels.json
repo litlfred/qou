@@ -1,0 +1,4697 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-0606435v2",
+  "pages": [
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 24,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2",
+        "Figure 3"
+      ],
+      "labels": [
+        {
+          "text": "5",
+          "bbox": [
+            520.44,
+            73.51,
+            525.42,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Alexander and Jones polynomial. They relate to and partly extend estimates of Jones in [J]. In particular, we will",
+          "bbox": [
+            57.72,
+            108.31,
+            525.49,
+            121.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "see that the Alexander polynomial provides conditions for every given braid index. Some properties of the skein",
+          "bbox": [
+            57.72,
+            120.31,
+            525.42,
+            133.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "polynomial, and a relation to Mahler measure are also discussed.",
+          "bbox": [
+            57.72,
+            132.19,
+            315.93,
+            145.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the case of a 4-braid, one can go further and (almost) identify the Eigenvalues of the Burau matrix from the",
+          "bbox": [
+            57.72,
+            148.99,
+            525.46,
+            162.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Alexander and Jones polynomial (of its closure). Using this, a criterion for braid index 4 is derived. We show",
+          "bbox": [
+            57.72,
+            160.87,
+            525.59,
+            174.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "examples exhibiting the efﬁciency of this test, including such where not only the Morton-Williams-Franks inequality",
+          "bbox": [
+            57.72,
+            172.87,
+            525.66,
+            186.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "itself, but also its 2-cable version fails (and so our test seems the only practicable option).",
+          "bbox": [
+            57.72,
+            184.75,
+            414.21,
+            198.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the appendix we collect some work of Hirasawa, Ishiwata and Murasugi, which completes the proof of several of",
+          "bbox": [
+            57.72,
+            201.43,
+            525.56,
+            214.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "our results.",
+          "bbox": [
+            57.72,
+            213.43,
+            102.09,
+            226.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.",
+          "bbox": [
+            57.72,
+            242.66,
+            68.51,
+            262.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Preliminaries, basic deﬁnitions and conventions",
+          "bbox": [
+            87.24,
+            242.66,
+            377.58,
+            262.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Basic concepts that appear throughout the paper are summarized. ‘W.l.o.g.’ will abbreviate ‘without loss of generality’;",
+          "bbox": [
+            57.72,
+            277.39,
+            525.73,
+            290.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "‘r.h.s.’ will stand for ‘right hand-side’.",
+          "bbox": [
+            57.72,
+            289.27,
+            210.93,
+            302.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.1.",
+          "bbox": [
+            57.72,
+            320.4,
+            75.71,
+            336.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Links and link diagrams",
+          "bbox": [
+            91.32,
+            320.4,
+            216.57,
+            336.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Links are represented by diagrams; we assume diagrams are oriented (though sometimes orientation is not relevant).",
+          "bbox": [
+            57.72,
+            345.79,
+            521.25,
+            359.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A crossing p in a link diagram D is called reducible (or nugatory) if it looks like on the left of ﬁgure 2. D is called",
+          "bbox": [
+            57.72,
+            362.47,
+            525.54,
+            375.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "reducible if it has a reducible crossing, else it is called reduced. The reducing of the reducible crossing p is the move",
+          "bbox": [
+            57.72,
+            374.47,
+            525.7,
+            387.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "depicted on ﬁgure 2. Each diagram D can be (made) reduced by a ﬁnite number of these moves.",
+          "bbox": [
+            57.72,
+            386.47,
+            440.37,
+            399.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1)",
+          "bbox": [
+            57.72,
+            421.75,
+            69.44,
+            435.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            336.18,
+            423.43,
+            342.27,
+            435.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Q",
+          "bbox": [
+            245.59,
+            423.55,
+            252.79,
+            435.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Q",
+          "bbox": [
+            369.72,
+            423.55,
+            376.91,
+            435.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            201.83,
+            423.85,
+            207.92,
+            436.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−→",
+          "bbox": [
+            283.56,
+            424.77,
+            299.64,
+            441.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            224.88,
+            429.64,
+            229.86,
+            441.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2",
+          "bbox": [
+            274.2,
+            466.93,
+            309.07,
+            479.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "We assume in the following all diagrams reduced, unless otherwise stated.",
+          "bbox": [
+            57.72,
+            489.43,
+            353.37,
+            502.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The diagram on the right of ﬁgure 3 is called connected sum A#B of the diagrams A and B. If a diagram D can be",
+          "bbox": [
+            57.72,
+            506.11,
+            525.46,
+            519.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "represented as the connected sum of diagrams A and B, such that both A and B have at least one crossing, then D",
+          "bbox": [
+            57.72,
+            518.11,
+            525.47,
+            531.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is called disconnected (or composite), else it is called connected (or prime). K is prime if whenever D = A#B is a",
+          "bbox": [
+            57.72,
+            529.99,
+            525.46,
+            543.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "composite diagram of K, one of A and B represent an unknotted arc (but not both; the unknot is not considered to be",
+          "bbox": [
+            57.72,
+            541.99,
+            525.46,
+            555.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "prime per convention).",
+          "bbox": [
+            57.72,
+            553.99,
+            148.65,
+            567.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "By c(D) we denote the number of crossings of D, n(D) the number of components of D (or K, 1 if K is a knot), and",
+          "bbox": [
+            57.72,
+            570.67,
+            525.54,
+            583.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "s(D) the number of Seifert circles of D. The crossing number c(K) of a knot or link K is the minimal crossing number",
+          "bbox": [
+            57.72,
+            582.55,
+            525.68,
+            595.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of all diagrams D of K. !D is the mirror image of D, and !K is the mirror image of K. Clearly g(!D) = g(D) and",
+          "bbox": [
+            57.72,
+            594.55,
+            525.54,
+            607.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "g(!K) = g(K).",
+          "bbox": [
+            57.72,
+            606.55,
+            115.53,
+            619.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "#",
+          "bbox": [
+            238.56,
+            652.03,
+            243.54,
+            665.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            276.18,
+            653.77,
+            282.27,
+            665.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            377.22,
+            653.77,
+            383.31,
+            665.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            199.98,
+            653.89,
+            206.07,
+            666.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            343.14,
+            653.89,
+            349.23,
+            666.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            308.76,
+            655.05,
+            316.51,
+            665.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3",
+          "bbox": [
+            274.2,
+            695.89,
+            309.07,
+            708.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "The Seifert graph Γ(D) of a diagram D is deﬁned to be the graph whose vertices are the Seifert circles of D and whose",
+          "bbox": [
+            57.72,
+            718.03,
+            525.58,
+            731.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "edges are the crossings. The reduced Seifert graph Γ′(D) is deﬁned by removing multiple copies of an edge between",
+          "bbox": [
+            57.72,
+            730.03,
+            525.54,
+            744.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "two vertices in Γ(D), so that a simple edge remains. (See [MP, MP2] for example.)",
+          "bbox": [
+            57.72,
+            741.91,
+            389.6,
+            755.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 42,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: The A- and B-corners of a crossing, and its both splittings. The corner A (resp. B) is the one passed by the overcrossing strand when rotated counterclockwise (resp. clockwise) towards the undercrossing strand. A type A (resp. B) splitting is obtained by connecting the A (resp. B) corners of the crossing. It is useful to put a “trace” of each splitted crossing as an arc connecting the loops at the splitted spot."
+      ],
+      "labels": [
+        {
+          "text": "2.3",
+          "bbox": [
+            57.25,
+            73.51,
+            72.01,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Semiadequacy",
+          "bbox": [
+            79.69,
+            73.51,
+            140.17,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            520.44,
+            73.51,
+            525.42,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The Kauffman polynomial [Ka] F is usually deﬁned via a regular isotopy invariant Λ(a,z) of unoriented links. We",
+          "bbox": [
+            57.72,
+            108.31,
+            525.34,
+            121.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "use here a slightly different convention for the variables in F, differing from [Ka, Th2] by the interchange of a and",
+          "bbox": [
+            57.72,
+            120.31,
+            525.54,
+            133.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a−1. Thus in particular we have for a link diagram D the relation F(D)(a,z) = aw(D)Λ(D)(a,z), where Λ(D) is the",
+          "bbox": [
+            57.72,
+            131.32,
+            525.46,
+            146.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "writhe-unnormalized version of the polynomial, given in our convention by the properties",
+          "bbox": [
+            57.72,
+            144.19,
+            415.0,
+            157.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            199.56,
+            164.05,
+            204.12,
+            200.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            219.24,
+            164.05,
+            223.8,
+            200.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            246.12,
+            164.05,
+            250.68,
+            200.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            265.68,
+            164.05,
+            270.24,
+            200.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            293.76,
+            164.05,
+            298.32,
+            200.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            307.68,
+            164.05,
+            312.24,
+            200.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            327.36,
+            164.05,
+            331.92,
+            200.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            354.24,
+            164.05,
+            358.8,
+            200.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001 \u0001",
+          "bbox": [
+            373.8,
+            164.05,
+            385.44,
+            200.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(6)",
+          "bbox": [
+            57.72,
+            168.79,
+            69.44,
+            182.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Λ",
+          "bbox": [
+            192.72,
+            169.22,
+            199.55,
+            182.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+ Λ",
+          "bbox": [
+            227.64,
+            169.22,
+            246.11,
+            182.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Symbol"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Λ",
+          "bbox": [
+            300.84,
+            169.22,
+            307.67,
+            182.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "+ Λ",
+          "bbox": [
+            335.76,
+            169.22,
+            354.23,
+            182.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Symbol"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= z",
+          "bbox": [
+            275.04,
+            169.81,
+            291.28,
+            181.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            386.64,
+            171.81,
+            389.41,
+            181.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            208.44,
+            189.61,
+            213.0,
+            226.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            229.08,
+            189.61,
+            233.64,
+            226.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            270.0,
+            189.61,
+            274.56,
+            226.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            282.6,
+            189.61,
+            287.16,
+            226.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            307.8,
+            189.61,
+            312.36,
+            226.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            328.56,
+            189.61,
+            333.12,
+            226.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            359.52,
+            189.61,
+            364.08,
+            226.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            372.12,
+            189.61,
+            376.68,
+            226.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= a−1 Λ",
+          "bbox": [
+            235.92,
+            191.3,
+            269.99,
+            208.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "(7)",
+          "bbox": [
+            57.72,
+            194.47,
+            69.44,
+            207.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ";",
+          "bbox": [
+            287.16,
+            194.47,
+            289.93,
+            207.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Λ",
+          "bbox": [
+            201.6,
+            194.9,
+            208.43,
+            207.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Λ",
+          "bbox": [
+            300.96,
+            194.9,
+            307.79,
+            207.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= a Λ",
+          "bbox": [
+            335.28,
+            194.9,
+            359.51,
+            207.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Symbol",
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            377.76,
+            197.49,
+            380.53,
+            207.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000⃝",
+          "bbox": [
+            271.68,
+            214.93,
+            291.67,
+            251.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96,
+            14.35
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            292.8,
+            214.93,
+            297.36,
+            251.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(8)",
+          "bbox": [
+            57.72,
+            219.67,
+            69.44,
+            232.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= 1.",
+          "bbox": [
+            299.52,
+            219.67,
+            318.37,
+            232.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Λ",
+          "bbox": [
+            264.84,
+            220.1,
+            271.67,
+            233.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The Brandt-Lickorish-Millett-Ho polynomial [BLM] Q is given by Q(z) = F(1,z).",
+          "bbox": [
+            57.72,
+            249.19,
+            386.13,
+            262.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.3.",
+          "bbox": [
+            57.72,
+            284.52,
+            75.71,
+            301.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Semiadequacy",
+          "bbox": [
+            91.32,
+            284.52,
+            164.86,
+            301.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "An alternative description of V is given by the Kauffman bracket in [Ka2]. We do not need this description directly,",
+          "bbox": [
+            57.72,
+            312.19,
+            525.69,
+            325.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "but for self-containedness is it useful to recall the related concept of semiadequacy that was popularized in [LT].",
+          "bbox": [
+            57.72,
+            324.19,
+            504.69,
+            337.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let D be an unoriented link diagram. A state is a choice of splittings of type A or B for any single crossing (see ﬁgure",
+          "bbox": [
+            57.72,
+            342.67,
+            525.58,
+            355.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4), Let the A-state of D be the state where all crossings are A-spliced; similarly deﬁne the B-state.",
+          "bbox": [
+            57.72,
+            354.55,
+            446.01,
+            367.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We call a diagram A-(semi)adequate if in the A-state no crossing trace (one of the dotted lines in ﬁgure 4) connects a",
+          "bbox": [
+            57.72,
+            373.03,
+            525.46,
+            386.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "loop with itself. Similarly we deﬁne B-(semi)adequate. A diagram is semiadequate if it is A- or B-semiadequate,",
+          "bbox": [
+            57.72,
+            385.03,
+            525.81,
+            398.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and adequate if it is simultaneously A- and B-semiadequate. A link is adequate/semiadequate if it has an ade-",
+          "bbox": [
+            57.72,
+            397.03,
+            525.56,
+            410.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "quate/semiadequate diagram. (Here A-adequate and B-adequate is what is called +adequate resp. −adequate in [Th].)",
+          "bbox": [
+            57.72,
+            408.91,
+            525.56,
+            428.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            186.78,
+            448.28,
+            193.43,
+            461.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            389.76,
+            448.28,
+            396.41,
+            461.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            170.6,
+            461.89,
+            177.8,
+            475.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            202.36,
+            461.89,
+            209.55,
+            475.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            272.12,
+            461.89,
+            279.32,
+            475.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            303.88,
+            461.89,
+            311.07,
+            475.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            186.78,
+            475.5,
+            193.43,
+            488.79
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            389.82,
+            475.5,
+            396.46,
+            488.79
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4: The A- and B-corners of a crossing, and its both splittings. The corner A (resp.",
+          "bbox": [
+            114.48,
+            510.56,
+            468.81,
+            522.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica",
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "B) is the one passed by the overcrossing strand when rotated counterclockwise (resp.",
+          "bbox": [
+            114.48,
+            522.44,
+            468.81,
+            534.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "clockwise) towards the undercrossing strand. A type A (resp. B) splitting is obtained by",
+          "bbox": [
+            114.48,
+            534.44,
+            468.88,
+            546.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "connecting the A (resp. B) corners of the crossing. It is useful to put a “trace” of each",
+          "bbox": [
+            114.48,
+            546.32,
+            468.79,
+            558.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "splitted crossing as an arc connecting the loops at the splitted spot.",
+          "bbox": [
+            114.48,
+            558.32,
+            380.61,
+            570.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "We also need a part of the semiadequacy formulas for the Jones polynomial. As in [St4], for an non-negative integer",
+          "bbox": [
+            57.72,
+            582.31,
+            525.68,
+            595.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i, we write Vi for [V]mindegV+i and ¯Vi = [V]maxdegV−i. (These are the i + 1-st and i + 1-st last coefﬁcient of V in its",
+          "bbox": [
+            57.72,
+            592.27,
+            525.39,
+            613.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "coefﬁcient list.) For an A- (resp. B-) semiadequate diagram, in [St4], and independently in [DL], formulas were",
+          "bbox": [
+            57.72,
+            606.19,
+            525.58,
+            619.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "obtained for V1,2 (resp. ¯V1,2).",
+          "bbox": [
+            57.72,
+            616.15,
+            172.53,
+            632.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "From the A-state A(D) of a diagram D we deﬁne two graphs. The ﬁrst graph, we call it",
+          "bbox": [
+            57.72,
+            636.31,
+            412.09,
+            649.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the A-graph G(A) = G(A(D)) has vertices for each loop in A(D), and an edge between",
+          "bbox": [
+            57.72,
+            648.31,
+            412.14,
+            661.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "each pair of loops that are connected by a trace of at least one crossing in D. If there are",
+          "bbox": [
+            57.72,
+            660.31,
+            412.18,
+            673.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "at least two such traces, we call the edge multiple.",
+          "bbox": [
+            57.72,
+            672.19,
+            256.65,
+            685.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let △(D) = △(A(D)) be the number of cycles of length 3 (triangles) in G(A(D)).",
+          "bbox": [
+            57.72,
+            689.11,
+            385.89,
+            709.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The second graph, we call it the intertwining graph IG(A) = IG(A(D)), has vertices for",
+          "bbox": [
+            57.72,
+            706.15,
+            412.16,
+            719.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "each multiple edge in A(D), and an edge in IG(A) is drawn between each pair of vertices",
+          "bbox": [
+            57.72,
+            718.03,
+            412.23,
+            731.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in IG(A), whose corresponding multiple traces in A(D) contain traces of the form shown",
+          "bbox": [
+            57.72,
+            730.03,
+            412.14,
+            743.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on the right.",
+          "bbox": [
+            57.72,
+            741.91,
+            106.29,
+            755.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 21,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5: The standard diagram of the knot 62 and its Gauß diagram."
+      ],
+      "labels": [
+        {
+          "text": "10",
+          "bbox": [
+            72.12,
+            73.51,
+            82.14,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            334.33,
+            73.51,
+            341.53,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Preliminaries, basic deﬁnitions and conventions",
+          "bbox": [
+            349.33,
+            73.51,
+            542.03,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "These inequalities were later improved in [MP2] in a way that allows to settle the braid index problem for many links",
+          "bbox": [
+            72.12,
+            108.31,
+            539.92,
+            121.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(see §6 or also [Oh]).",
+          "bbox": [
+            72.12,
+            120.31,
+            156.57,
+            140.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the special case of 3-braids (and with the special meaning of σ3 as described above), Xu [Xu] gives a normal form",
+          "bbox": [
+            72.12,
+            136.75,
+            539.95,
+            151.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "of a conjugacy class in σ1,2,3. By Xu’s algorithm, each β ∈B3 can be written in one of the two forms",
+          "bbox": [
+            72.12,
+            148.75,
+            473.91,
+            168.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "(A) [21]kR or L−1[21]−k (k ≥0), or",
+          "bbox": [
+            78.24,
+            168.55,
+            220.64,
+            192.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "(B) L−1R,",
+          "bbox": [
+            78.84,
+            190.72,
+            121.17,
+            205.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "where L and R are positive words in σ1,2,3 with (cyclically) non-decreasing indices (i.e. each σi is followed by σi or",
+          "bbox": [
+            72.12,
+            215.11,
+            539.96,
+            229.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "σi mod 3+1, with ‘mod’ taken with values between 0 and 2). Since the form B must be cyclically reduced, we may",
+          "bbox": [
+            72.12,
+            227.11,
+            539.94,
+            241.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "assume that L and R do not start or end with the same letter. This form is the shortest word in σ1,2,3 of a conjugacy",
+          "bbox": [
+            72.12,
+            238.99,
+            540.18,
+            253.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "class. By Bennequin’s aforementioned result, the braided surface is then a minimal genus (or Bennequin) surface.",
+          "bbox": [
+            72.12,
+            250.99,
+            525.33,
+            264.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.6.",
+          "bbox": [
+            72.12,
+            281.76,
+            90.11,
+            298.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Gauß sum invariants",
+          "bbox": [
+            105.72,
+            281.76,
+            212.73,
+            298.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We recall brieﬂy the deﬁnition of Gauß sum invariants. They were introduced ﬁrst in [Fi] for braids, and later [Fi2, PV]",
+          "bbox": [
+            72.12,
+            306.91,
+            539.84,
+            320.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for knots. It is known that all they give formulas for Vassiliev invariants.",
+          "bbox": [
+            72.12,
+            318.91,
+            360.69,
+            332.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.2 ([Fi2]) A Gauß diagram of a knot diagram is an oriented circle with arrows connecting points on",
+          "bbox": [
+            72.12,
+            344.11,
+            539.94,
+            358.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "it mapped to a crossing and oriented from the preimage of the undercrossing (underpass) to the preimage of the",
+          "bbox": [
+            72.12,
+            356.11,
+            539.86,
+            369.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "overcrossing (overpass).",
+          "bbox": [
+            72.12,
+            368.11,
+            169.29,
+            381.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We will call a pair of crossings whose arrows intersect in the Gauß diagram a linked pair.",
+          "bbox": [
+            72.12,
+            393.31,
+            426.81,
+            406.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Example 2.1 As an example, ﬁgure 5 shows the knot 62 in its commonly known projection and the corresponding",
+          "bbox": [
+            72.12,
+            418.51,
+            540.3,
+            433.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "Gauß diagram.",
+          "bbox": [
+            72.12,
+            430.51,
+            131.61,
+            443.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            370.63,
+            465.73,
+            375.61,
+            479.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            227.39,
+            491.25,
+            232.37,
+            504.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            252.93,
+            491.25,
+            257.91,
+            504.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            421.76,
+            495.21,
+            426.74,
+            508.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            319.62,
+            495.27,
+            324.61,
+            508.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            233.06,
+            511.32,
+            238.05,
+            524.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            255.77,
+            533.97,
+            260.75,
+            547.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            216.04,
+            550.73,
+            221.02,
+            564.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            319.56,
+            554.18,
+            324.55,
+            567.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            421.76,
+            554.18,
+            426.74,
+            567.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            238.74,
+            564.89,
+            243.72,
+            578.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            370.63,
+            583.73,
+            375.61,
+            597.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5: The standard diagram of the knot 62 and its Gauß diagram.",
+          "bbox": [
+            168.84,
+            612.8,
+            443.25,
+            626.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica",
+            "Helvetica-Bold",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.97,
+            8.97
+          ]
+        },
+        {
+          "text": "The simplest (non-trivial) Vassiliev knot invariant is the Casson invariant v2, with v2 = ∆′′(1)/2 = −V ′′(1)/6, for",
+          "bbox": [
+            72.12,
+            635.23,
+            539.96,
+            655.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "which Polyak-Viro [PV, PV2] gave the simple Gauß sum formula",
+          "bbox": [
+            72.12,
+            647.11,
+            334.3,
+            660.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(14)",
+          "bbox": [
+            72.12,
+            682.51,
+            88.88,
+            695.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "v2 =",
+          "bbox": [
+            271.8,
+            683.53,
+            291.43,
+            696.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            337.44,
+            685.53,
+            340.21,
+            695.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Here the point on the circle corresponds to a point on the knot diagram, to be placed arbitrarily except on a crossing.",
+          "bbox": [
+            74.76,
+            718.03,
+            539.97,
+            731.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(The expression does not alter with the position of the basepoint; we will hence have, and need, the freedom to place",
+          "bbox": [
+            72.12,
+            730.03,
+            539.98,
+            743.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "it conveniently.)",
+          "bbox": [
+            72.12,
+            741.91,
+            136.76,
+            755.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 40,
+      "rotation": 0,
+      "drawings": 120,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6: The reduced Seifert graphs of the alternating diagrams of special alternating links of braid index 4. Simple edges have their multiplicity (1) attached, and the other edges (of multiplicity one or more) are unlabelled. In the ﬁrst graph, exceptionally, all edges have multiplicity at least 2."
+      ],
+      "labels": [
+        {
+          "text": "40",
+          "bbox": [
+            72.12,
+            73.51,
+            82.14,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            361.57,
+            73.51,
+            368.77,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Studying alternating links by braid index",
+          "bbox": [
+            376.57,
+            73.51,
+            541.81,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            447.6,
+            116.01,
+            452.08,
+            127.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            264.68,
+            129.7,
+            269.17,
+            141.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            242.52,
+            144.18,
+            247.0,
+            156.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            282.51,
+            147.59,
+            286.99,
+            159.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            352.26,
+            147.59,
+            356.74,
+            159.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            377.88,
+            147.59,
+            382.36,
+            159.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            422.04,
+            151.79,
+            426.52,
+            163.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "(all multiplicities ≥2)",
+          "bbox": [
+            131.1,
+            152.5,
+            193.42,
+            166.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 6: The reduced Seifert graphs of the alternating diagrams of special alternating",
+          "bbox": [
+            128.88,
+            184.16,
+            483.67,
+            196.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica",
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "links of braid index 4. Simple edges have their multiplicity (1) attached, and the other",
+          "bbox": [
+            128.88,
+            196.16,
+            483.35,
+            208.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "edges (of multiplicity one or more) are unlabelled. In the ﬁrst graph, exceptionally, all",
+          "bbox": [
+            128.88,
+            208.16,
+            483.31,
+            220.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "edges have multiplicity at least 2.",
+          "bbox": [
+            128.88,
+            220.04,
+            260.01,
+            232.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Let L(p,q,r,s) be the corresponding link and P(p,q,r,s) its skein polynomial. Look ﬁrst at p = 0, q,r,s ≥2. Then",
+          "bbox": [
+            72.12,
+            252.19,
+            539.94,
+            272.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L(p,q,r,s) a connected sum of two (2,n)-torus links, and a closed alternating 3-braid. So MWF(L(p,q,r,s)) = 5.",
+          "bbox": [
+            72.12,
+            264.19,
+            539.97,
+            277.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Now since the case p = 1, q,r,s ≥2 has MWF(L(1,q,r,s)) ≤b(L(1,q,r,s)) = 4, the skein relation (3) easily shows",
+          "bbox": [
+            72.12,
+            276.19,
+            539.91,
+            296.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that the maximal degree coefﬁcient maxcf vP(p,q,r,s) of v in P (which is a polynomial in z) for p = 2 is inherited from",
+          "bbox": [
+            72.12,
+            288.07,
+            539.95,
+            301.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "p = 0. Then further applications of (3) show that the z-degree of maxcfvP(p,q,r,s) increases with p, so in particular",
+          "bbox": [
+            72.84,
+            300.07,
+            540.08,
+            313.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "this term never vanishes, and so MWF(L(p,q,r,s)) = 5.",
+          "bbox": [
+            72.12,
+            311.95,
+            295.77,
+            325.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Now consider the special diagrams. For them one considers the Seifert graph, and needs to write down all bipartite",
+          "bbox": [
+            72.12,
+            330.67,
+            539.98,
+            343.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "planar graphs on at most 6 vertices, which have no cut vertex. Since the diagram D is special, the placement of",
+          "bbox": [
+            72.12,
+            342.55,
+            539.96,
+            355.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "multiple copies of an edge give diagrams equivalent up to ﬂypes, so it is enough to consider simple graphs (the",
+          "bbox": [
+            72.12,
+            354.55,
+            539.98,
+            367.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "reduced Seifert graph), and have the multiplicities of an edge written as its label. The graphs can be easily compiled",
+          "bbox": [
+            72.12,
+            366.43,
+            540.06,
+            379.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "using the observation that they must contain a cycle of length 4 or 6; see ﬁgure 6. By direct inspection we see that",
+          "bbox": [
+            72.12,
+            378.43,
+            539.89,
+            391.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the edge multiplicities must be as speciﬁed in the ﬁgure. (In fact if an edge is multiple it turns out irrelevant what its",
+          "bbox": [
+            72.12,
+            390.43,
+            539.8,
+            403.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "multiplicity is, so in this case we just omit the label.) We rule out the remaining multiplicities by a skein theoretic",
+          "bbox": [
+            72.12,
+            402.31,
+            539.98,
+            415.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "calculation, similar to the one explained for case 3b.",
+          "bbox": [
+            72.12,
+            414.31,
+            280.17,
+            427.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let w.l.o.g. (up to mirroring) D be positive. For each edge e in Γ(D) of variable multiplicity ≥i (where i = 1,2)",
+          "bbox": [
+            72.12,
+            432.91,
+            539.96,
+            452.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we calculate the skein polynomial of the diagram that corresponds to Γ for multiplicities i and i + 1 of e. That is, if",
+          "bbox": [
+            72.12,
+            444.91,
+            539.84,
+            458.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Γ(D) has l edges of variable multiplicity, we have 2l polynomials to calculate. Then we check for each such set of 2l",
+          "bbox": [
+            72.12,
+            453.19,
+            539.05,
+            470.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "polynomials that Q = Pv9−χ(D) is non-zero, and maxdegz P−maxdegz Q as well as maxcf zQ is constant within this set",
+          "bbox": [
+            72.12,
+            468.79,
+            539.89,
+            488.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            5.98,
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "of 2l polynomials. Then by (3) this property is inherited to diagrams D whose Γ(D) have edges of higher multiplicity,",
+          "bbox": [
+            72.12,
+            478.27,
+            540.09,
+            495.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "and in particular MWF ≥5.",
+          "bbox": [
+            72.12,
+            493.87,
+            184.29,
+            513.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "There is one more graph,",
+          "bbox": [
+            72.12,
+            512.47,
+            172.29,
+            525.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "not included in ﬁgure 6. In that case (by the method we just explained we verify that) MWF ≥5 for all non-zero edge",
+          "bbox": [
+            72.12,
+            568.63,
+            539.98,
+            588.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "multiplicities.",
+          "bbox": [
+            72.12,
+            580.51,
+            127.29,
+            593.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "✷",
+          "bbox": [
+            532.44,
+            581.04,
+            539.88,
+            591.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LASY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In [MP2], Murasugi-Przytycki deﬁne a certain quantity ind(D), assigned to a link diagram D, called index. (We omit",
+          "bbox": [
+            72.12,
+            599.11,
+            540.01,
+            612.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "here the detailed discussion; one can consult also [Oh] or [St5].) Their motivation was to give an upper estimate",
+          "bbox": [
+            72.12,
+            611.11,
+            518.02,
+            624.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(43)",
+          "bbox": [
+            72.12,
+            634.15,
+            88.88,
+            647.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "b(L) ≤s(D)−ind(D)",
+          "bbox": [
+            262.32,
+            634.15,
+            349.71,
+            654.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for the braid index of the underlying link L. Their origin of (43) consists in an appropriate move (see ﬁgure 8.2",
+          "bbox": [
+            75.6,
+            657.19,
+            539.94,
+            670.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in [MP]) which reduces the number of Seifert circles of the diagram. Murasugi-Przytycki conjectured that for an",
+          "bbox": [
+            72.12,
+            669.19,
+            539.82,
+            682.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "alternating diagram D, the inequality (43) is exact. This conjecture is also conﬁrmed for alternating links up to braid",
+          "bbox": [
+            72.12,
+            681.07,
+            539.94,
+            694.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "index 4.",
+          "bbox": [
+            72.12,
+            693.07,
+            104.13,
+            706.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Based on the Murasugi-Przytycki procedure, we can re-enter the Bennequin surface topic.",
+          "bbox": [
+            72.12,
+            711.67,
+            431.01,
+            724.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Corollary 6.4 Alternating links of braid index at most 4 carry a Bennequin surface on a minimal string braid.",
+          "bbox": [
+            72.12,
+            741.91,
+            510.45,
+            755.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 63,
+      "rotation": 0,
+      "drawings": 32,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 10"
+      ],
+      "labels": [
+        {
+          "text": "A.2",
+          "bbox": [
+            57.25,
+            73.51,
+            74.17,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A-decomposition (joint with Hirasawa-Ishiwata)",
+          "bbox": [
+            82.32,
+            73.51,
+            276.75,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "63",
+          "bbox": [
+            515.52,
+            73.51,
+            525.54,
+            86.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In ﬁgure 8, we perform the move (a) →(b), sliding B along N. The last surface F′, in ﬁgure 8 (b), is Murasugi sum of",
+          "bbox": [
+            57.72,
+            108.31,
+            525.56,
+            128.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "a ﬁbre surface spanning the (2,2,−2)-pretzel link and ˜F, where ˜F consists of k −1 copies of F′",
+          "bbox": [
+            57.72,
+            118.27,
+            442.91,
+            140.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "0 and the band N. By",
+          "bbox": [
+            439.2,
+            120.31,
+            525.42,
+            136.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "induction on k, we see that F′ is a ﬁbre surface, and hence ˆβ is a ﬁbred link.",
+          "bbox": [
+            57.72,
+            130.27,
+            359.49,
+            147.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "✷",
+          "bbox": [
+            518.04,
+            134.4,
+            525.48,
+            144.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LASY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A.2.",
+          "bbox": [
+            57.72,
+            164.04,
+            78.35,
+            180.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A-decomposition (joint with Hirasawa-Ishiwata)",
+          "bbox": [
+            93.96,
+            164.04,
+            339.62,
+            180.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold",
+            "Times-Italic"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "For the proof of theorem 1.2 we introduce the A-decomposition due to T. Kobayashi [Ko].",
+          "bbox": [
+            57.72,
+            188.71,
+            416.13,
+            202.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A sutured manifold in the sense of Gabai [Ga3] can be understood as a pair (L,H) consisting of a closed 3-dimensional",
+          "bbox": [
+            57.72,
+            204.67,
+            525.85,
+            217.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "submanifold H of R3 with boundary S = ∂H a connected surface, and a set of oriented loops L ⊂H. We require that",
+          "bbox": [
+            57.72,
+            212.95,
+            525.49,
+            236.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "one can orient the connected components of S \\ L so that the induced orientations on L coincide from both sides of L",
+          "bbox": [
+            57.72,
+            228.55,
+            525.38,
+            248.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(in particular a connected component of S\\L never bounds to itself along a loop of L), and are given by the orientation",
+          "bbox": [
+            57.72,
+            240.43,
+            525.66,
+            260.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of L.",
+          "bbox": [
+            57.72,
+            252.43,
+            76.53,
+            265.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let F be a connected Seifert surface of a(n oriented) link L = ∂F. We embed F as F ×{0.5} into the bicolar H = F ×I",
+          "bbox": [
+            57.72,
+            268.39,
+            525.08,
+            288.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(with I = [0,1]). Then (L,H) becomes a sutured manifold. We call it canonical sutured manifold C(F) of F.",
+          "bbox": [
+            57.72,
+            280.39,
+            489.81,
+            293.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We describe some basic operations on sutured manifolds (L,H).",
+          "bbox": [
+            57.72,
+            296.35,
+            313.53,
+            309.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A decomposition disk D is a disk with P = ∂D ⊂∂H, properly embedded in the complement of H (i.e. D ∩H = P).",
+          "bbox": [
+            57.72,
+            312.31,
+            525.57,
+            332.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We require that D is not parallel to S = ∂H, and satisﬁes P∩F̸ = ∅. We assume also that the intersection of P and F",
+          "bbox": [
+            57.72,
+            324.19,
+            524.61,
+            344.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is transversal, so that it is a collection of points.",
+          "bbox": [
+            57.72,
+            336.19,
+            247.29,
+            349.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Since L = ∂F is separating on S, the intersection D∩L = P∩F is an even number of points, and the orientation of L",
+          "bbox": [
+            57.72,
+            352.15,
+            525.38,
+            372.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "at the intersection points is alternating (with respect to the orientation of the loop P). See ﬁgure 10 (a).",
+          "bbox": [
+            57.72,
+            364.03,
+            466.29,
+            377.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            294.72,
+            399.03,
+            301.91,
+            411.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            406.92,
+            399.03,
+            414.11,
+            411.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            195.41,
+            410.36,
+            200.95,
+            422.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            332.32,
+            421.69,
+            337.86,
+            433.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            290.14,
+            434.77,
+            295.12,
+            446.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            183.24,
+            435.85,
+            190.43,
+            448.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−→",
+          "bbox": [
+            353.52,
+            437.13,
+            369.48,
+            454.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            332.32,
+            450.01,
+            337.86,
+            462.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(b)",
+          "bbox": [
+            348.0,
+            485.05,
+            360.75,
+            497.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(a)",
+          "bbox": [
+            180.48,
+            492.97,
+            193.24,
+            505.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 10",
+          "bbox": [
+            271.68,
+            523.93,
+            311.59,
+            536.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica-Bold"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Then L ∩P separates P into a collection of intervals or arcs. Let a be such an arc. An A-operation on D along a is a",
+          "bbox": [
+            57.72,
+            545.71,
+            525.46,
+            565.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "transformation of (L,H) into a sutured manifold (L′,H), where L′ is obtained by splicing L along a. See ﬁgure 10 (b).",
+          "bbox": [
+            57.72,
+            553.99,
+            525.57,
+            571.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "A product decomposition along D is a similar operation, due to Gabai [Ga3], and can be described as an A-operation if",
+          "bbox": [
+            57.72,
+            573.67,
+            525.44,
+            586.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|L∩D| = 2 (in which case which of the two arcs is chosen is irrelevant), followed by a subsequent gluing of a D2 ×I",
+          "bbox": [
+            57.72,
+            584.68,
+            525.08,
+            605.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "into H along a neighborhood N(P) ≃S1 ×I of P on S.",
+          "bbox": [
+            57.72,
+            596.68,
+            274.29,
+            617.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition A.2 We deﬁne a sutured manifold (L,H) to be A-decomposable as follows:",
+          "bbox": [
+            57.72,
+            620.95,
+            403.45,
+            634.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Bold",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S3 \\ H is also one). If L is a collection of trivial",
+          "bbox": [
+            332.64,
+            644.2,
+            525.61,
+            664.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "1) Assume H is a standardly embedded handlebody (i.e. so that",
+          "bbox": [
+            69.36,
+            644.35,
+            329.77,
+            657.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "loops on ∂H, and all loops bound disjoint disks in ∂H, then (L,H) is A-decomposable.",
+          "bbox": [
+            82.68,
+            656.23,
+            427.05,
+            669.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2) If (L′,H′) is obtained from (L,H) by a product decomposition (along some decomposition disk D), and (L′,H′)",
+          "bbox": [
+            69.36,
+            675.19,
+            525.52,
+            689.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "is A-decomposable, then so is (L,H).",
+          "bbox": [
+            82.68,
+            687.19,
+            230.73,
+            700.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3) Let D be a decomposition disk of H with |L ∩D| = 2n and choose among the 2n arcs on P = ∂D a collection",
+          "bbox": [
+            69.36,
+            706.15,
+            525.54,
+            726.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of n cyclically consecutive arcs a1,...,an. (Consecutive is to mean that, taken with their boundary in L ∩P,",
+          "bbox": [
+            82.68,
+            718.03,
+            525.45,
+            738.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "their union is a single interval in P, and not several such intervals.) Let (Li,H) be obtained from (L,H) by",
+          "bbox": [
+            82.68,
+            730.03,
+            525.54,
+            743.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "A-decomposition on D along ai for i = 1,...,n. Then if all (Li,H) are A-decomposable, so is (L,H).",
+          "bbox": [
+            82.68,
+            741.91,
+            481.89,
+            756.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -165,13 +165,30 @@ noncomputable def CategoricalReeb.fromWeightDecomposition
 
     Formalising this requires Lie algebra infrastructure (infinitesimal
     generators of compact group actions on categorical objects) which
-    is not available in Mathlib as of 2026-03. -/
+    is not available in Mathlib as of 2026-03.
+
+    **Was an axiom; now proved (2026-11-15), but only because the
+    statement is weak.** The fields do not exclude `ξ = θ = d = ι_ξ = 0`,
+    so the zero Reeb structure on `wd.forms` witnesses it. The intended
+    content (`ξ` is the torus generator) is not recorded by the structure
+    and is open in Lean (bean `qou-n2un`). -/
 -- Ref: [witten1988] Witten, "Topological quantum field theory," Comm. Math. Phys. 117 (1988)
-axiom categorical_reeb_exists
+theorem categorical_reeb_exists
     {C : Type u} [Category.{v} C] [MonoidalCategory C] [Preadditive C]
-    (mt : MaximalTorus C) (wd : WeightDecomposition C)
+    (_mt : MaximalTorus C) (wd : WeightDecomposition C)
     (A : C) :
     ∃ (reeb : CategoricalReeb C),
-      reeb.forms = wd.forms ∧ HEq reeb.proj_V wd.proj_V
+      reeb.forms = wd.forms ∧ HEq reeb.proj_V wd.proj_V :=
+  ⟨{ A := A
+     forms := wd.forms
+     xi := 0
+     theta := 0
+     proj_V := wd.proj_V
+     d := 0
+     contract_xi := 0
+     vertical_generator := by simp
+     normalisation := by simp
+     proj_V_idem := wd.proj_V_idem
+     kernel_horizontal := by simp }, rfl, HEq.rfl⟩
 
 end QOU

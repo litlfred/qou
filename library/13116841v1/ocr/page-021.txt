@@ -1,0 +1,46 @@
+21
+
+group case U4,(su(2)) in a direct manner. When A = 0, some observables have a clear geometrical meaning. We have
+for example the quantum version of the angle, the length... We now explore the generalization of these geometric
+operators in 3 dimensions, in the Euclidian case with A < 0.
+
+For simplicity we are going to focus on the three-leg intertwiner. When A = 0, we know that it encodes the quantum
+state of a triangle. Let us recall quickly the main geometric features of a triangle, either flat or hyperbolic.
+
+Classically a flat triangle can be described by the normals 7i;, i = a,b,c to its edges, such that |7;| = ¢; is the
+edge length. To have a triangle, the normals need to sum up to zero, this is the closure constraint. All the geometric
+information of the triangle can then be expressed in terms of these normals, as recalled in the table below.
+
+Ne A—
+
+FIG. 1: The hyperbolic triangle is represented in the Poincaré disc. The (outgoing) normals fi; are defined in the tangent plane
+at the vertex of the triangle, as the orthogonal vectors to the tangent vectors t;.
+
+Let us consider now an hyperbolic triangle. Its edges are geodesics in the 2d hyperboloid of radius R. Unlike the flat
+triangle, an hyperbolic triangle can be characterized by its three angles 6; or the three lengths ¢; of its edges. The
+hyperbolic cosine laws relate the edge lengths and the angles (see the table below). The area A of the triangle is given
+in terms of the angles.
+
+A= (1 — (04 + 9 + 9.))R?. (97)
+
+In order to make easier the limit to the flat case, we can encode all this information in terms of the normals. Note
+however that due to the curvature, we have a different tangent space at each point of the edge. The tangent vectors
+and their normal are therefore not living in the same vector space for different points. In the curved case, we shall
+consider the normals 7; at each vertex of the triangle. As a direct consequence, the closure constraint in the curved
+case is subtler than in the flat case. We postpone the study of this constraint to a detailed analysis of the relevant
+phase space in [49]. We recall in the following table the main geometric features of the flat and hyperbolic triangles,
+in terms of the normals. We use the notation s = 3 (la + ly +e).
+
+: T
+Flat case, A = 0 Hyperbolic case, A < 0, R = |A|~?
+Closure constraint: Yi = 0 To be determined
+. a) sy) hi
+Edge length: \ri| = & |7i;| = sinh &
+. an 2-8-8 a —cosh 44 +cosh 48 cosh 45
+Cosine law: C08 Og = fy he = — “a cos Og = —hy- Ne = sh ie Teo! eed
+2bybe sinh 48 sinh S¢
+7 + st * s—l 7 s—£
+. sinh( 547) sinh(“542) sinh(=37*) sinh(*34¢)
+Area: A? = 1 (s(s — €,)(s — &)(8 — be sin? A, — San 2h 2h 2h
+4 (s( ad oll e)) 2R cosh? £4 cosh? 44 cosh? 4
+

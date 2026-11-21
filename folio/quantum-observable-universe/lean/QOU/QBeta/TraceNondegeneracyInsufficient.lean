@@ -47,6 +47,47 @@ form's nondegeneracy, and in the Hecke setting that is exactly
 the classical Schur-element product formula. `n = 2` is done; no fabricated
 instance may stand in for the general value.
 
+## 🛑 The paragraph above is SUPERSEDED in its second half — corrected 2026-09-27
+
+The counterexample, and the first sentence it supports, **stand untouched**:
+nondegeneracy of a trace does not imply semisimplicity, and the class's own
+hypothesis is not what discharges it. That is this file's result and it is
+unaffected.
+
+What is stale is the *next* step — "something must supply the regular trace
+form's nondegeneracy, and that is the Gram determinant". **For
+`IsSemisimpleRing` at the Hecke carrier, nothing need supply it.**
+`QOU.SchurWeyl.isSemisimpleRing_hecke_generic` gives `IsSemisimpleRing (Hecke K q
+q⁻¹ n)` at **every** `n`, over any `CharZero` field, under `q ≠ 0` and
+`NotRootOfUnity q` alone. It is sorry-free and routes through `heckeWedderburn`
+— a Wedderburn block decomposition — **not** through any trace form and not
+through a Gram determinant. Verified rather than read off a docstring: both
+declarations check `[propext, Classical.choice, Quot.sound]`, no `sorryAx`.
+
+So the conclusion of `semisimple_ascend` is available outright at that carrier,
+which makes an instance there **vacuous** rather than hard —
+`QOU.Machinery.HeckeRank.wenzlTowerStep_vacuous_of_isSemisimpleRing` states that
+in general, and `WtraceRadicalSemisimple.isSemisimpleRing_traceQuot_of_hecke`
+supplies the hypothesis at the `wtrace` quotient.
+
+**The sharper reason not to chase this instance: nothing consumes the class.**
+Measured 2026-09-27 over the whole Lean tree — 27 occurrences of
+`WenzlTowerStep`, being 1 class definition, 2 discharge targets and 24 prose
+mentions, with **zero** instance-hypothesis positions (`grep -rn
+'\[WenzlTowerStep'` returns nothing). This file is one of five that name such an
+instance as an outstanding blocker; an instance cannot unblock a consumer that
+does not exist.
+
+**What this does NOT say.** The Gram determinant may well remain the binding
+constraint for other things — in particular for the ideal equality
+`⟨U_i U_j U_i − v²·U_i⟩ = rad(tr_M)`, which is the live frontier (beans
+`qou-jb7k`, `qou-0cyu`) and is a different question from semisimplicity. The
+claim corrected here is only that the Gram determinant is not what stands between
+this corpus and `IsSemisimpleRing` of a Hecke algebra. And the genuine ascent
+question — does semisimplicity ascend along a nondegenerate Markov trace at a
+carrier where the conclusion is *not* already known — is untouched and open
+(`qou-s7z2`).
+
 ## What this does and does not say
 
 **Scope (b), a structural exclusion**, in the sense of AGENTS.md's refutation

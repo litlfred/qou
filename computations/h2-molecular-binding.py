@@ -246,7 +246,7 @@ E_mol_scale = E_MOL                           # molecular energy unit
 # bare H₂ molecular braid σ_1·σ_2·σ_3 ∈ B_4 via the canonical
 # δ_q-decoration library, and verify the (3,1)+(2,1,1) force-carrier
 # channels carry the dominant non-trivial weight per
-# prop:force-carrier-intertwining-correspondence.
+# conj:force-carrier-intertwining-correspondence.
 try:
     from hecke_wedderburn import wedderburn_decompose, force_carrier_channel
     _bare_dec = wedderburn_decompose([1, 2, 3], 4)

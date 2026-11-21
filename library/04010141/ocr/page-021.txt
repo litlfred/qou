@@ -1,0 +1,47 @@
+Cellular algebras and diagram algebras 161
+
+which suffices for our purpose, since we shall be discussing composition
+factors. Let G = GL,(C) and 6 = Lie(G). The standard modules are
+parametrised by the set P of equivalence classes of pairs (s, N) modulo
+G, where s € G is semisimple, N € 6 is nilpotent and s.N = q*N
+(where G acts on 6 through the adjoint representation).
+
+Let us explain a key property of this correspondence. The algebra
+H2(q) has a subalgebra (4.6(iv)) U(n) = C[X#,..., X*4], which may
+be thought of as the group algebra C(Z"), where Z” = (Xj,..., Xn).
+Any one-dimensional representation x of U(n) therefore corresponds to
+a character of Z” and hence to the sequence (x(Xj),...,x(Xn)). Let
+(s,N) € P, so that N corresponds to a partition \ = Or <2 <
+«++ < 2g), where 0; = n and s = diag(s;,...,8,) where s;41 = q7 73;
+whenever i,i + 1 lie in the same “block” of N. Thus the sequence of
+eigenvalues of s consists of £ subsequences of size Ai, A2,...,Ae, which
+we call blocks, and each block is of the form a,aq~?,aq~*,... for some
+a€C™%. If M,,n is the corresponding standard module, its dimension is
+K= wo and there is a filtration
+
+(5.6) 0CM,CM2c::-C Mxk=Mz,n
+
+where dim M; = i, each term M; is a U(n)-submodule of M,,n, and
+the characters of U(n) on the K quotients M;/Mj-1 (i = 1,2,...,K)
+are given by the K sequences (x1,-..,Xn) obtained by permuting the
+sequence (s1,...,$,) while keeping each block in its original order.
+
+5.3. Lifting cell modules to standard modules
+
+To state our main result, it is convenient to note that that there is an
+involution 1: H@(q) > H@(q) which takes T; to -T71 (i =1,...,n—1)
+and X; to Xj? (j =1,...,n); this follows by noting that the images of
+the T; and Xj; under z satisfy the the relations 4.6(iv). The surjection
+Gq : H2(q) > T2(q) is defined by (cf. 5.4)
+
+(5.7) 9a = Wa Ob.
+Theorem 5.8 (([18], (9.9)). Let He(q) be the affine Hecke algebra
+of GLn(C) and let '(H2(q)) be the Grothendieck group of finite dimen-
+
+sional H(q)-modules. Let W;,z(n) be a cell module for the diagram
+algebra T,2(q). Then, with 0, as in 5.7, we have
+
+(5.9) (82,Wi,2(m)] = [Ms,n]
+
+where [V] denotes the class in T(H4(q)) of an H@(q)-module V and
+M,,n is the Kazhdan-Lusztig standard module of He(q) corresponding

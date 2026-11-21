@@ -1,6 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Basic
 import QOU.Common.MagicNumbers
+import Mathlib.Combinatorics.Young.YoungDiagram
 
 
 /-!
@@ -53,7 +54,20 @@ refer to `QOU.Interactions.LRFusion.DoubleMagicConjecture`, a **different**
 class of the same name in the library tree (repaired separately 2026-08-31),
 and to a docstring cross-reference to it.
 
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+## 2026-11-20 — partitions and conjugation are now Mathlib's
+
+`Partition`, `conj` and `conj_conj` were instance fields of `LRFusionData`, so
+`Partition := fun _ => Unit`, `conj := id`, `lr := 1` inhabited the
+conjecture at every double-magic pair (bean `qou-dx7g`). `Partition n` is now
+`{μ : YoungDiagram // μ.card = n}` and `conj` is `YoungDiagram.transpose`, so
+the saturated-shell partitions must be genuine self-conjugate Young diagrams
+(`not_doubleMagicConjecture_two_two`: none exists at `Z = N = 2`). **Still
+free:** the LR coefficient `lr` — neither Mathlib nor the corpus defines
+Littlewood–Richardson coefficients, so it is constrained only by `lr_conj`,
+and an instance may still set `lr` to the Kronecker delta at a self-conjugate
+`ν`. Encoding the rigidity claim needs `lr` defined (LR tableaux count).
+
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 -- Ref: [ariki1996] Ariki, "On the decomposition numbers of the Hecke algebra of G(m, 1, n)," J. Math. Kyoto Univ. 36 (1996)
 -- Ref: [ram1991]     title: — see folio/schema/references.ts
 -- Ref: [geckpfeiffer2000] Geck & Pfeiffer, "Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras," LMS Monographs 21, OUP 2000
@@ -68,20 +82,68 @@ abbrev magicSet : Finset ℕ := QOU.Common.magicSet
 /-- Both `Z` and `N` are saturated. -/
 def DoubleMagic (Z N : ℕ) : Prop := Z ∈ magicSet ∧ N ∈ magicSet
 
+/-- **Partitions of `n`**, as Mathlib Young diagrams with `n` cells
+    (tied to Mathlib 2026-11-20, bean `qou-dx7g`; until then the carrier was
+    an instance field `Partition : ℕ → Type*`, so `Partition := fun _ => Unit`
+    inhabited the conjecture at every double-magic `(Z, N)`). -/
+def Partition (n : ℕ) : Type := {μ : YoungDiagram // μ.card = n}
+
+/-- Transposing a Young diagram preserves its number of cells. -/
+theorem card_transpose (μ : YoungDiagram) : μ.transpose.card = μ.card := by
+  simp [YoungDiagram.card, YoungDiagram.transpose]
+
+/-- **Conjugation** `λ ↦ λ'`: Mathlib's `YoungDiagram.transpose`. -/
+def conj {n : ℕ} (l : Partition n) : Partition n :=
+  ⟨l.1.transpose, (card_transpose l.1).trans l.2⟩
+
+/-- Conjugation is an involution, `λ'' = λ`. -/
+theorem conj_conj {n : ℕ} (l : Partition n) : conj (conj l) = l :=
+  Subtype.ext (YoungDiagram.transpose_transpose l.1)
+
+/-- **Self-conjugacy**, `λ' = λ`, for genuine Young diagrams. -/
+def SelfConjugate {n : ℕ} (l : Partition n) : Prop := conj l = l
+
+/-- **No partition of `2` is self-conjugate** (`(2)' = (1,1)`): the
+    double-magic pair `Z = N = 2` therefore has **no** instance of the
+    conjecture below, whereas the pre-2026-11-20 carrier (with `Partition`
+    a free field) admitted the one-point model there. -/
+theorem not_selfConjugate_two (l : Partition 2) : ¬ SelfConjugate l := by
+  intro hl
+  obtain ⟨μ, hc⟩ := l
+  have hT : μ.transpose = μ := congrArg Subtype.val hl
+  have hsym : ∀ c : ℕ × ℕ, c ∈ μ → c.swap ∈ μ := fun c hc' => by
+    rw [← hT] at hc'; exact YoungDiagram.mem_transpose.mp hc'
+  have hcard : μ.cells.card = 2 := hc
+  obtain ⟨x, hx, hx0⟩ := Finset.exists_mem_ne (by omega : 1 < μ.cells.card) ((0 : ℕ), (0 : ℕ))
+  have hx' : x ∈ μ := (YoungDiagram.mem_cells _).mp hx
+  have h10 : ((1 : ℕ), (0 : ℕ)) ∈ μ ∧ ((0 : ℕ), (1 : ℕ)) ∈ μ := by
+    by_cases h1 : 1 ≤ x.1
+    · have a : ((1 : ℕ), (0 : ℕ)) ∈ μ := μ.up_left_mem h1 (Nat.zero_le _) hx'
+      exact ⟨a, hsym _ a⟩
+    · have h2 : 1 ≤ x.2 := by
+        rcases x with ⟨i, j⟩; simp at h1 hx0 ⊢; omega
+      have a : ((0 : ℕ), (1 : ℕ)) ∈ μ := μ.up_left_mem (Nat.zero_le _) h2 hx'
+      exact ⟨hsym _ a, a⟩
+  have h00 : ((0 : ℕ), (0 : ℕ)) ∈ μ := μ.up_left_mem (Nat.zero_le _) le_rfl h10.1
+  have hsub : ({(0, 0), (1, 0), (0, 1)} : Finset (ℕ × ℕ)) ⊆ μ.cells := by
+    intro c hc'
+    simp only [Finset.mem_insert, Finset.mem_singleton] at hc'
+    rcases hc' with rfl | rfl | rfl
+    · exact (YoungDiagram.mem_cells _).mpr h00
+    · exact (YoungDiagram.mem_cells _).mpr h10.1
+    · exact (YoungDiagram.mem_cells _).mpr h10.2
+  have := Finset.card_le_card hsub
+  rw [hcard] at this
+  simp at this
+
 /-- Abstract data of an LR-fusion outcome at level `Z + N`.
 
-    Concretely the QOU substrate instantiates `Specht λ` as the
-    `H_{|λ|}(q)`-module structure on the Specht module of the
-    partition `λ`, and `lrFusion λ μ ν` records the LR-coefficient
-    `c^ν_{λ μ}`. The conjecture below asks for collapse to a unique
-    `ν` with multiplicity one. -/
+    `lrFusion λ μ ν` records the LR-coefficient `c^ν_{λ μ}` of genuine
+    partitions.  **Still free** (GAP): neither Mathlib nor the corpus defines
+    Littlewood–Richardson coefficients, so `lr` is instance data constrained
+    only by the conjugation symmetry `lr_conj`.  `Specht` is an uninterpreted
+    label for the Specht module and is used by nothing. -/
 class LRFusionData (Z N : ℕ) where
-  /-- Abstract carrier for partitions of a given size. -/
-  Partition : ℕ → Type*
-  /-- Conjugation (transpose) of a Young diagram, `λ ↦ λ'`. -/
-  conj : ∀ {n : ℕ}, Partition n → Partition n
-  /-- Conjugation is an involution, `λ'' = λ`. -/
-  conj_conj : ∀ {n : ℕ} (l : Partition n), conj (conj l) = l
   /-- The Specht module attached to a partition (abstract carrier). -/
   Specht : ∀ {n : ℕ}, Partition n → Type*
   /-- The LR coefficient `c^ν_{λ μ}` as a natural number. -/
@@ -96,16 +158,6 @@ class LRFusionData (Z N : ℕ) where
   lr_conj : ∀ (l : Partition Z) (m : Partition N) (n : Partition (Z + N)),
     lr (conj l) (conj m) (conj n) = lr l m n
 
-/-- **Self-conjugacy**, `λ' = λ`.
-
-    A *definition* over `conj`, not a free predicate field. As a field an
-    instance could take `SelfConjugate := fun _ => True` and discharge every
-    self-conjugacy hypothesis of the conjecture with `trivial`; here the
-    hypotheses constrain the partition. -/
-def LRFusionData.SelfConjugate {Z N : ℕ} (d : LRFusionData Z N) {n : ℕ}
-    (l : d.Partition n) : Prop :=
-  d.conj l = l
-
 /-- The conjecture, encoded as a class.
 
     A `DoubleMagicConjecture Z N` instance asserts that, when both
@@ -113,16 +165,14 @@ def LRFusionData.SelfConjugate {Z N : ℕ} (d : LRFusionData Z N) {n : ℕ}
     partition at each level is self-conjugate, the LR product
     collapses to a unique self-conjugate fused partition with
     multiplicity one. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion
 class DoubleMagicConjecture (Z N : ℕ) extends LRFusionData Z N where
   /-- Precondition: both `Z` and `N` are magic numbers. -/
   doubleMagic : DoubleMagic Z N
   /-- The unique saturated-shell partition at level `Z` (provided by
       the categorical-neutrality conjecture upstream). -/
   lambdaZ : Partition Z
-  /-- It is self-conjugate, `λ' = λ`.  Written as the equation rather than
-      via `LRFusionData.SelfConjugate`, which needs a `LRFusionData` term this
-      class body does not yet have; the two are definitionally equal. -/
+  /-- It is self-conjugate, `λ' = λ` (Young-diagram transpose). -/
   lambdaZ_selfConj : conj lambdaZ = lambdaZ
   /-- The unique saturated-shell partition at level `N`. -/
   muN : Partition N
@@ -139,14 +189,21 @@ class DoubleMagicConjecture (Z N : ℕ) extends LRFusionData Z N where
   /-- LR-rigidity off the fused partition: multiplicity zero. -/
   lr_vanishes_off : ∀ ν : Partition (Z + N), ν ≠ nuZN → lr lambdaZ muN ν = 0
 
+/-- **The one-point model is gone.**  At `Z = N = 2` (both magic) no
+    instance exists, because no Young diagram with two cells is
+    self-conjugate.  Before 2026-11-20 `Partition := fun _ => Unit`
+    inhabited the conjecture here (triage `qou-dx7g`, rank 51). -/
+theorem not_doubleMagicConjecture_two_two (c : DoubleMagicConjecture 2 2) : False :=
+  not_selfConjugate_two c.lambdaZ c.lambdaZ_selfConj
+
 open scoped Classical in
 /-- Conditional theorem: under the double-magic conjecture, the LR
     product is concentrated at the unique fused self-conjugate
     partition. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 theorem lr_concentrated
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
-    (ν : c.Partition (Z + N)) :
+    (ν : Partition (Z + N)) :
     c.lr c.lambdaZ c.muN ν = if ν = c.nuZN then 1 else 0 := by
   by_cases h : ν = c.nuZN
   · simp [h, c.lr_unique_at_nu]
@@ -155,10 +212,10 @@ theorem lr_concentrated
 /-- Conditional theorem: under the double-magic conjecture, the
     fused partition `ν_{ZN}` is the unique partition with non-zero
     LR coefficient. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 theorem nu_unique
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
-    (ν : c.Partition (Z + N)) (hν : c.lr c.lambdaZ c.muN ν ≠ 0) :
+    (ν : Partition (Z + N)) (hν : c.lr c.lambdaZ c.muN ν ≠ 0) :
     ν = c.nuZN := by
   by_contra h
   exact hν (c.lr_vanishes_off ν h)
@@ -166,10 +223,10 @@ theorem nu_unique
 /-- Biconditional characterisation of `ν_{ZN}`: under the
     conjecture, `ν` equals the fused partition iff the LR
     coefficient is non-zero (equivalently, equal to 1). -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 theorem nu_iff_lr_nonzero
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
-    (ν : c.Partition (Z + N)) :
+    (ν : Partition (Z + N)) :
     ν = c.nuZN ↔ c.lr c.lambdaZ c.muN ν ≠ 0 := by
   refine ⟨?_, nu_unique Z N ν⟩
   intro h
@@ -181,10 +238,10 @@ open scoped Classical in
     coefficient at any `ν` is exactly `1` if `ν = ν_{ZN}` and `0`
     otherwise. The two cases together fully characterise the LR
     product as a Kronecker delta. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 theorem lr_kronecker
     (Z N : ℕ) [c : DoubleMagicConjecture Z N]
-    (ν : c.Partition (Z + N)) :
+    (ν : Partition (Z + N)) :
     c.lr c.lambdaZ c.muN ν = if ν = c.nuZN then 1 else 0 :=
   lr_concentrated Z N ν
 
@@ -200,13 +257,13 @@ theorem lr_kronecker
     saturated-shell hypotheses, so `c^{ν'}_{λ μ} = c^{ν}_{λ μ} = 1 ≠ 0`. LR
     rigidity off the fused partition then forces `ν' = ν_{ZN}` — which is
     self-conjugacy. -/
--- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+-- Ref: [leitner2026] conj:diagrammatic-double-magic-lr-fusion §"Statement"
 -- Ref: [geckpfeiffer2000] Geck & Pfeiffer, LMS Monographs 21, OUP 2000
 theorem nu_selfConjugate
     (Z N : ℕ) [c : DoubleMagicConjecture Z N] :
-    LRFusionData.SelfConjugate c.toLRFusionData c.nuZN := by
+    SelfConjugate c.nuZN := by
   have hsym := c.lr_conj c.lambdaZ c.muN c.nuZN
   rw [c.lambdaZ_selfConj, c.muN_selfConj, c.lr_unique_at_nu] at hsym
-  exact nu_unique Z N (c.conj c.nuZN) (by rw [hsym]; exact one_ne_zero)
+  exact nu_unique Z N (conj c.nuZN) (by rw [hsym]; exact one_ne_zero)
 
 end QOU.LRFusion

@@ -3,44 +3,84 @@
  "doc_id": "arxiv-q-alg-9707006v1",
  "source_sha256": "b9513be9294f56d9",
  "brief": "Drinfeld twist for quantum su(2) in the adjoint representation — We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2).",
- "extended": "**Drinfeld twist for quantum su(2) in the adjoint representation**\n\n*Chryssomalis Chryssomalakos*\n\n11 pp, 7 sections.\n\n**Abstract.** We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2). We also discuss, as applications, the computation of the universal R-matrix in this representation and the problem of symmetrization of identical-particle states with quantum su(2) symmetry. ∗e-mail address: chryss@stp.dias.ie\n\n**Outline.** Front matter; 10 Burlington Road; Abstract; Introduction; Preliminaries; References; Appendix",
+ "extended": "**Drinfeld twist for quantum su(2) in the adjoint representation**\n\n*Chryssomalis Chryssomalakos∗*\n\n11 pp, 15 sections.\n\n**Abstract.** We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2). We also discuss, as applications, the computation of the universal R-matrix in this representation and the problem of symmetrization of identical-particle states with quantum su(2) symmetry. ∗e-mail address: chryss@stp.dias.ie\n\n**Outline.** Front matter; 1 Introduction; 2 Quantum su(2) in the adjoint representation; 2.1 The factorized basis; 2.2 The reduced basis; 3 The Drinfeld-Kohno theorem; 4 Adjoint representation of the twist; 4.1 Preliminaries; 4.2 Explicit computation of Fq; 5 Applications; 4.3 The representation of the coproduct of F; 5.1 The universal R-matrix in the adjoint repr; 5.2 Quantum symmetrization; References; Appendix",
  "tokens": {
   "brief": 48,
-  "extended": 149
+  "extended": 227
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-000-10-burlington-road",
-   "title": "Burlington Road",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-abstract",
-   "title": "Abstract",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "2-5"
+   "pages": "2-2"
   },
   {
-   "id": "sec-003-preliminaries",
+   "id": "sec-001-2-quantum-su2-in-the-adjoint-representation",
+   "title": "Quantum su(2) in the adjoint representation",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-21-the-factorized-basis",
+   "title": "The factorized basis",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-22-the-reduced-basis",
+   "title": "The reduced basis",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-3-the-drinfeld-kohno-theorem",
+   "title": "The Drinfeld-Kohno theorem",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-4-adjoint-representation-of-the-twist",
+   "title": "Adjoint representation of the twist",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-006-41-preliminaries",
    "title": "Preliminaries",
-   "pages": "5-10"
+   "pages": "5-6"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-007-42-explicit-computation-of-fq",
+   "title": "Explicit computation of Fq",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-008-5-applications",
+   "title": "Applications",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-43-the-representation-of-the-coproduct-of-f",
+   "title": "The representation of the coproduct of F",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-010-51-the-universal-r-matrix-in-the-adjoint-represe",
+   "title": "The universal R-matrix in the adjoint representation",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-011-52-quantum-symmetrization",
+   "title": "Quantum symmetrization",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-012-references",
    "title": "References",
    "pages": "10-11"
   },
   {
-   "id": "sec-005-appendix",
+   "id": "sec-013-appendix",
    "title": "Appendix",
    "pages": "11-11"
   }

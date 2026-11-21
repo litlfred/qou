@@ -1,0 +1,33 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "1172-2",
+ "status": "determined",
+ "body_size": 10.7,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "*",
+   "text": "住友財団より援助 \\dagger 日本学術振興会特別研究員 $(\\mathrm{P}\\mathrm{D})$ , 風樹会より援助",
+   "block": "library/1172-2/blocks/prose-sec-front-matter"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "年代の終わりにCheegerとM\\\"ullerによって、独立に、この"
+  },
+  {
+   "page": 22,
+   "mark": "56",
+   "context": "[6]M.Gromov:Volumeandboundedcohomology,Publ.Math.IHES"
+  },
+  {
+   "page": 23,
+   "mark": "70",
+   "context": "ofsurfaces,DukeMath.J."
+  }
+ ]
+}

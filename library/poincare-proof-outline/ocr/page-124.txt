@@ -1,0 +1,67 @@
+by simp
+qed
+next
+fix Muvw
+assume 1: unit-disc-fiz M u € unit-disc v € unit-disc w € unit-disc
+assume 2: ?P (moebius-pt M u) (moebius-pt M v) (moebius-pt M w)
+show ?Puvw
+using 1 2
+by auto
+next
+fix uvw
+assume 1: u € unit-disc v € unit-disc w € unit-disc
+assume 2: ?P (conjugate u) (conjugate v) (conjugate w)
+show ?Puvw
+
+using 1 2
+by (auto simp add: conjugate-inj)
+qed
+
+thus ?thesis
+using True
+by simp
+qed
+
+end
+
+10 Poincaré disc model types
+
+In this section we introduce datatypes that represent objects in the Poincaré disc model. The types are defined
+as subtypes (e.g., the h-points are defined as elements of CP! that lie within the unit disc). The functions on
+those types are defined by lifting the functions defined on the carrier type (e.g., h-distance is defined by lifting
+the distance function defined for elements of CP).
+
+theory Poincare
+imports Poincare-Lines Poincare-Between Poincare-Distance Poincare-Circles
+begin
+10.1 H-points
+typedef p-point = {z. z € unit-disc}
+using zero-in-unit-disc
+by (rule-tac c=0;, in el, simp)
+setup-lifting type-definition-p-point
+Point zero
+
+lift-definition p-zero :: p-point is On
+by (rule zero-in-unit-disc)
+
+Constructing h-points from complex numbers
+
+lift-definition p-of-complex :: complex = p-point is X z. if cmod z < 1 then of-complex z else 0,
+by auto
+
+10.2 H-lines
+
+typedef p-line = {H. is-poincare-line H}
+by (rule-tac r=2-azis in exI, simp)
+
+setup-lifting type-definition-p-line
+
+lift-definition p-incident :: p-line = p-point = bool is on-circline
+done
+
+Set of h-points on an h-line
+
+definition p-points :: p-line = p-point set where
+p-points | = {p. p-incident | p}
+
+124

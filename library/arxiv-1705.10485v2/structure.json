@@ -8,7 +8,7 @@
   "pages": 53,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:20Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,24 +21,24 @@
    "stamp_date": "20 Feb 2018"
   },
   "doi": null,
-  "title": "Mod-\u03c6 convergence, II: Estimates on the speed of convergence",
-  "authors_raw": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+  "title": "Mod-φ convergence, II: Estimates on the speed of convergence",
+  "authors_raw": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
   "title_lines": [
-   "Mod-\u03c6 convergence, II: Estimates on the speed of",
+   "Mod-φ convergence, II: Estimates on the speed of",
    "convergence"
   ],
-  "abstract": "In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-\u03c6 convergence. Namely, we de\ufb01ne a notion of zone of control, closely related to mod-\u03c6 convergence, and we prove estimates of Berry\u2013Esseen type under this hypothesis. Applications include: \u2022 the winding number of a planar Brownian motion; \u2022 classical approximations of stable laws by compound Poisson laws; \u2022 examples stemming from determinantal point processes (characteristic polynomials of random matri- ces and zeroes of random analytic functions); \u2022 sums of variables with an underlying dependency graph (for which we recover a result of Rinott, obtained by Stein\u2019s method); \u2022 the magnetization in the d-dimensional Ising model; \u2022 and functionals of Markov chains.",
+  "abstract": "In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ convergence. Namely, we deﬁne a notion of zone of control, closely related to mod-φ convergence, and we prove estimates of Berry–Esseen type under this hypothesis. Applications include: • the winding number of a planar Brownian motion; • classical approximations of stable laws by compound Poisson laws; • examples stemming from determinantal point processes (characteristic polynomials of random matri- ces and zeroes of random analytic functions); • sums of variables with an underlying dependency graph (for which we recover a result of Rinott, obtained by Stein’s method); • the magnetization in the d-dimensional Ising model; • and functionals of Markov chains.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.17",
    "Creator": "TeX",
    "CreationDate": "D:20181005104522Z"
   },
-  "title_raw": "Mod-\u03c6 convergence, II: Estimates on the speed of convergence",
+  "title_raw": "Mod-φ convergence, II: Estimates on the speed of convergence",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
-   "heading": "Mod- \u03c6 convergence, II: Estimates on the speed of convergence",
-   "text": "Mod-\u03c6 convergence, II: Estimates on the speed of convergence",
+   "heading": "Mod- φ convergence, II: Estimates on the speed of convergence",
+   "text": "Mod-φ convergence, II: Estimates on the speed of convergence",
    "corroborated_by": [
     "text"
    ],
@@ -391,7 +391,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "For all a, \u03b5, fa,\u03b5 is an approximation of the Heaviside function 1(\u2212\u221e,a], and one has the following properties: Proposition 18. The function fa,\u03b5 is a smooth test distribution in T1(R) whose derivative \u2202fa,\u03b5 has its",
+   "title": "For all a, ε, fa,ε is an approximation of the Heaviside function 1(−∞,a], and one has the following properties: Proposition 18. The function fa,ε is a smooth test distribution in T1(R) whose derivative ∂fa,ε has its",
    "page": 14,
    "confidence": 0.8,
    "evidence": [
@@ -899,62 +899,74 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-11-mod-phi-convergence",
+   "number": "1.1",
+   "title": "Mod-$\\phi$ convergence",
+   "level": 2,
+   "page_start": 1,
    "page_end": 2,
-   "n_chars": 3763,
-   "n_words": 637,
+   "n_chars": 3741,
+   "n_words": 634,
    "label_start": "1",
    "label_end": "2"
   },
   {
-   "id": "sec-001-12-results-and-outline-of-the-paper",
+   "id": "sec-002-12-results-and-outline-of-the-paper",
    "number": "1.2",
    "title": "Results and outline of the paper",
    "level": 2,
    "page_start": 2,
    "page_end": 5,
-   "n_chars": 9190,
-   "n_words": 1549,
+   "n_chars": 9188,
+   "n_words": 1548,
    "label_start": "2",
    "label_end": "5"
   },
   {
-   "id": "sec-002-13-stable-distributions-and-mod-stable-convergen",
+   "id": "sec-003-13-stable-distributions-and-mod-stable-convergen",
    "number": "1.3",
    "title": "Stable distributions and mod-stable convergence",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2036,
-   "n_words": 406,
+   "n_chars": 2088,
+   "n_words": 412,
    "label_start": "5",
    "label_end": "6"
   },
   {
-   "id": "sec-003-2-speed-of-convergence-estimates",
+   "id": "sec-004-2-speed-of-convergence-estimates",
    "number": "2",
    "title": "Speed of convergence estimates",
    "level": 1,
    "page_start": 6,
-   "page_end": 6,
-   "n_chars": 0,
-   "n_words": 0,
+   "page_end": 7,
+   "n_chars": 2498,
+   "n_words": 438,
    "label_start": "6",
-   "label_end": "6"
+   "label_end": "7"
   },
   {
-   "id": "sec-004-21-the-notion-of-zone-of-control",
+   "id": "sec-005-21-the-notion-of-zone-of-control",
    "number": "2.1",
    "title": "The notion of zone of control",
    "level": 2,
-   "page_start": 6,
+   "page_start": 7,
    "page_end": 8,
-   "n_chars": 5645,
-   "n_words": 1008,
-   "label_start": "6",
+   "n_chars": 3213,
+   "n_words": 582,
+   "label_start": "7",
    "label_end": "8"
   },
   {
-   "id": "sec-005-22-spaces-of-test-functions",
+   "id": "sec-006-22-spaces-of-test-functions",
    "number": "2.2",
    "title": "Spaces of test functions",
    "level": 2,
@@ -966,7 +978,7 @@
    "label_end": "12"
   },
   {
-   "id": "sec-006-23-estimates-for-test-functions",
+   "id": "sec-007-23-estimates-for-test-functions",
    "number": "2.3",
    "title": "Estimates for test functions",
    "level": 2,
@@ -978,7 +990,7 @@
    "label_end": "14"
   },
   {
-   "id": "sec-007-24-smoothing-techniques",
+   "id": "sec-008-24-smoothing-techniques",
    "number": "2.4",
    "title": "Smoothing techniques",
    "level": 2,
@@ -990,7 +1002,7 @@
    "label_end": "17"
   },
   {
-   "id": "sec-008-25-bounds-on-the-kolmogorov-distance",
+   "id": "sec-009-25-bounds-on-the-kolmogorov-distance",
    "number": "2.5",
    "title": "Bounds on the Kolmogorov distance",
    "level": 2,
@@ -1002,7 +1014,7 @@
    "label_end": "18"
   },
   {
-   "id": "sec-009-3-examples-with-an-explicit-fourier-transform",
+   "id": "sec-010-3-examples-with-an-explicit-fourier-transform",
    "number": "3",
    "title": "Examples with an explicit Fourier transform",
    "level": 1,
@@ -1014,7 +1026,7 @@
    "label_end": "18"
   },
   {
-   "id": "sec-010-31-sums-of-independent-random-variables",
+   "id": "sec-011-31-sums-of-independent-random-variables",
    "number": "3.1",
    "title": "Sums of independent random variables",
    "level": 2,
@@ -1026,7 +1038,7 @@
    "label_end": "20"
   },
   {
-   "id": "sec-011-32-winding-number-of-a-planar-brownian-motion",
+   "id": "sec-012-32-winding-number-of-a-planar-brownian-motion",
    "number": "3.2",
    "title": "Winding number of a planar Brownian motion",
    "level": 2,
@@ -1038,19 +1050,31 @@
    "label_end": "21"
   },
   {
-   "id": "sec-012-33-approximation-of-a-stable-law-by-compound-poi",
+   "id": "sec-013-33-approximation-of-a-stable-law-by-compound-poi",
    "number": "3.3",
    "title": "Approximation of a stable law by compound Poisson laws",
    "level": 2,
    "page_start": 21,
-   "page_end": 26,
-   "n_chars": 8428,
-   "n_words": 1809,
+   "page_end": 24,
+   "n_chars": 4510,
+   "n_words": 1040,
    "label_start": "21",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-014-34-convergence-of-ornstein--uhlenbeck-processes",
+   "number": "3.4",
+   "title": "Convergence of Ornstein--Uhlenbeck processes to stable laws",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 3854,
+   "n_words": 761,
+   "label_start": "24",
    "label_end": "26"
   },
   {
-   "id": "sec-013-35-logarithms-of-characteristic-polynomials-of-r",
+   "id": "sec-015-35-logarithms-of-characteristic-polynomials-of-r",
    "number": "3.5",
    "title": "Logarithms of characteristic polynomials of random matrices",
    "level": 2,
@@ -1062,7 +1086,7 @@
    "label_end": "28"
   },
   {
-   "id": "sec-014-4-cumulants-and-dependency-graphs",
+   "id": "sec-016-4-cumulants-and-dependency-graphs",
    "number": "4",
    "title": "Cumulants and dependency graphs",
    "level": 1,
@@ -1074,7 +1098,7 @@
    "label_end": "28"
   },
   {
-   "id": "sec-015-41-cumulants-zone-of-control-and-kolmogorov-boun",
+   "id": "sec-017-41-cumulants-zone-of-control-and-kolmogorov-boun",
    "number": "4.1",
    "title": "Cumulants, zone of control and Kolmogorov bound",
    "level": 2,
@@ -1086,7 +1110,7 @@
    "label_end": "31"
   },
   {
-   "id": "sec-016-42-dependency-graphs",
+   "id": "sec-018-42-dependency-graphs",
    "number": "4.2",
    "title": "Dependency graphs",
    "level": 2,
@@ -1098,7 +1122,7 @@
    "label_end": "35"
   },
   {
-   "id": "sec-017-43-unbounded-random-variables-and-truncation-met",
+   "id": "sec-019-43-unbounded-random-variables-and-truncation-met",
    "number": "4.3",
    "title": "Unbounded random variables and truncation methods",
    "level": 2,
@@ -1110,7 +1134,7 @@
    "label_end": "40"
   },
   {
-   "id": "sec-018-5-ising-model-and-markov-chains",
+   "id": "sec-020-5-ising-model-and-markov-chains",
    "number": "5",
    "title": "Ising model and Markov chains",
    "level": 1,
@@ -1122,31 +1146,31 @@
    "label_end": "40"
   },
   {
-   "id": "sec-019-51-weighted-graphs-and-spanning-trees",
+   "id": "sec-021-51-weighted-graphs-and-spanning-trees",
    "number": "5.1",
    "title": "Weighted graphs and spanning trees",
    "level": 2,
    "page_start": 40,
    "page_end": 41,
-   "n_chars": 1545,
-   "n_words": 324,
+   "n_chars": 1542,
+   "n_words": 323,
    "label_start": "40",
    "label_end": "41"
   },
   {
-   "id": "sec-020-52-uniform-weighted-dependency-graphs",
+   "id": "sec-022-52-uniform-weighted-dependency-graphs",
    "number": "5.2",
    "title": "Uniform weighted dependency graphs",
    "level": 2,
    "page_start": 41,
    "page_end": 42,
-   "n_chars": 4247,
-   "n_words": 818,
+   "n_chars": 4286,
+   "n_words": 823,
    "label_start": "41",
    "label_end": "42"
   },
   {
-   "id": "sec-021-53-magnetization-of-the-ising-model",
+   "id": "sec-023-53-magnetization-of-the-ising-model",
    "number": "5.3",
    "title": "Magnetization of the Ising model",
    "level": 2,
@@ -1158,7 +1182,7 @@
    "label_end": "44"
   },
   {
-   "id": "sec-022-54-functionals-of-markov-chains",
+   "id": "sec-024-54-functionals-of-markov-chains",
    "number": "5.4",
    "title": "Functionals of Markov chains",
    "level": 2,
@@ -1170,7 +1194,7 @@
    "label_end": "49"
   },
   {
-   "id": "sec-023-55-the-case-of-linear-functionals-of-the-empiric",
+   "id": "sec-025-55-the-case-of-linear-functionals-of-the-empiric",
    "number": "5.5",
    "title": "The case of linear functionals of the empirical measure",
    "level": 2,
@@ -1188,7 +1212,7 @@
   "toc_entries": 26,
   "toc_inferred_entries": 26,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.125,
+  "toc_inferred_empty_share": 0.115,
   "toc_inferred_method": "latex",
   "figure_entries": 1,
   "figure_sequence_gaps": [
@@ -1200,13 +1224,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 25,
-  "chars_total": 124118,
+  "sections": 27,
+  "chars_total": 124184,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "speed_wide.tex",
    "tex_sections": 26,
-   "overlaid": 20,
+   "overlaid": 22,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1221,13 +1246,19 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-mod-phi-convergence",
+     "title": "Mod-$\\phi$ convergence",
      "prose_ratio": 0.976,
      "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-12-results-and-outline-of-the-paper",
+     "id": "sec-002-12-results-and-outline-of-the-paper",
      "title": "Results and outline of the paper",
      "prose_ratio": 0.975,
      "coverage_ratio": 0.987,
@@ -1235,7 +1266,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-13-stable-distributions-and-mod-stable-convergen",
+     "id": "sec-003-13-stable-distributions-and-mod-stable-convergen",
      "title": "Stable distributions and mod-stable convergence",
      "prose_ratio": 0.771,
      "coverage_ratio": 0.936,
@@ -1243,21 +1274,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-2-speed-of-convergence-estimates",
+     "id": "sec-004-2-speed-of-convergence-estimates",
      "title": "Speed of convergence estimates",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-004-21-the-notion-of-zone-of-control",
-     "title": "The notion of zone of control",
-     "prose_ratio": 0.947,
-     "coverage_ratio": 0.573,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-22-spaces-of-test-functions",
+     "id": "sec-005-21-the-notion-of-zone-of-control",
+     "title": "The notion of zone of control",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-22-spaces-of-test-functions",
      "title": "Spaces of test functions",
      "prose_ratio": 0.946,
      "coverage_ratio": 0.981,
@@ -1265,7 +1298,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-23-estimates-for-test-functions",
+     "id": "sec-007-23-estimates-for-test-functions",
      "title": "Estimates for test functions",
      "prose_ratio": 0.928,
      "coverage_ratio": 0.887,
@@ -1273,7 +1306,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-24-smoothing-techniques",
+     "id": "sec-008-24-smoothing-techniques",
      "title": "Smoothing techniques",
      "prose_ratio": 0.886,
      "coverage_ratio": 0.949,
@@ -1281,7 +1314,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-25-bounds-on-the-kolmogorov-distance",
+     "id": "sec-009-25-bounds-on-the-kolmogorov-distance",
      "title": "Bounds on the Kolmogorov distance",
      "prose_ratio": 0.958,
      "coverage_ratio": 0.947,
@@ -1289,13 +1322,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-3-examples-with-an-explicit-fourier-transform",
+     "id": "sec-010-3-examples-with-an-explicit-fourier-transform",
      "title": "Examples with an explicit Fourier transform",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-010-31-sums-of-independent-random-variables",
+     "id": "sec-011-31-sums-of-independent-random-variables",
      "title": "Sums of independent random variables",
      "prose_ratio": 0.969,
      "coverage_ratio": 0.955,
@@ -1303,7 +1336,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-32-winding-number-of-a-planar-brownian-motion",
+     "id": "sec-012-32-winding-number-of-a-planar-brownian-motion",
      "title": "Winding number of a planar Brownian motion",
      "prose_ratio": 0.964,
      "coverage_ratio": 0.988,
@@ -1311,15 +1344,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-33-approximation-of-a-stable-law-by-compound-poi",
+     "id": "sec-013-33-approximation-of-a-stable-law-by-compound-poi",
      "title": "Approximation of a stable law by compound Poisson laws",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-35-logarithms-of-characteristic-polynomials-of-r",
+     "id": "sec-014-34-convergence-of-ornstein--uhlenbeck-processes",
+     "title": "Convergence of Ornstein--Uhlenbeck processes to stable laws",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-35-logarithms-of-characteristic-polynomials-of-r",
      "title": "Logarithms of characteristic polynomials of random matrices",
      "prose_ratio": 0.958,
      "coverage_ratio": 0.946,
@@ -1327,13 +1368,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-4-cumulants-and-dependency-graphs",
+     "id": "sec-016-4-cumulants-and-dependency-graphs",
      "title": "Cumulants and dependency graphs",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-015-41-cumulants-zone-of-control-and-kolmogorov-boun",
+     "id": "sec-017-41-cumulants-zone-of-control-and-kolmogorov-boun",
      "title": "Cumulants, zone of control and Kolmogorov bound",
      "prose_ratio": 0.979,
      "coverage_ratio": 0.964,
@@ -1341,7 +1382,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-42-dependency-graphs",
+     "id": "sec-018-42-dependency-graphs",
      "title": "Dependency graphs",
      "prose_ratio": 0.908,
      "coverage_ratio": 0.984,
@@ -1349,7 +1390,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-43-unbounded-random-variables-and-truncation-met",
+     "id": "sec-019-43-unbounded-random-variables-and-truncation-met",
      "title": "Unbounded random variables and truncation methods",
      "prose_ratio": 0.92,
      "coverage_ratio": 0.957,
@@ -1357,7 +1398,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-5-ising-model-and-markov-chains",
+     "id": "sec-020-5-ising-model-and-markov-chains",
      "title": "Ising model and Markov chains",
      "prose_ratio": 0.949,
      "coverage_ratio": 1.0,
@@ -1365,7 +1406,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-51-weighted-graphs-and-spanning-trees",
+     "id": "sec-021-51-weighted-graphs-and-spanning-trees",
      "title": "Weighted graphs and spanning trees",
      "prose_ratio": 0.822,
      "coverage_ratio": 0.952,
@@ -1373,15 +1414,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-52-uniform-weighted-dependency-graphs",
+     "id": "sec-022-52-uniform-weighted-dependency-graphs",
      "title": "Uniform weighted dependency graphs",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.964,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-53-magnetization-of-the-ising-model",
+     "id": "sec-023-53-magnetization-of-the-ising-model",
      "title": "Magnetization of the Ising model",
      "prose_ratio": 0.974,
      "coverage_ratio": 0.969,
@@ -1389,7 +1430,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-54-functionals-of-markov-chains",
+     "id": "sec-024-54-functionals-of-markov-chains",
      "title": "Functionals of Markov chains",
      "prose_ratio": 0.954,
      "coverage_ratio": 0.975,
@@ -1397,11 +1438,11 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-55-the-case-of-linear-functionals-of-the-empiric",
+     "id": "sec-025-55-the-case-of-linear-functionals-of-the-empiric",
      "title": "The case of linear functionals of the empirical measure",
      "prose_ratio": 0.948,
      "coverage_ratio": 0.486,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

@@ -7,11 +7,17 @@
   "bytes": 1410829,
   "pages": 47,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 15,
+    "reason": "12 of 485 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -26,13 +32,21 @@
   "title_lines": [
    "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR"
   ],
-  "abstract": "Categori\ufb01cation is a process of lifting structures to a high er categorical level. The original structure can then be recovered by means of the so-called \u201cde categori\ufb01cation\u201d functor. Algebras are typically categori\ufb01ed to additive categories with additio nal structure and decategori\ufb01cation is usually given by the (split) Grothendieck group. In this article we s tudy an alternative decategori\ufb01cation functor given by the trace or the zeroth Hochschild\u2013Mitchel l homology. W e show that this form of decategori\ufb01cation endows any 2-representation of the cate gori\ufb01ed quantum sln with an action of the current algebra U(sln[t]) on its center.",
+  "abstract": "Categoriﬁcation is a process of lifting structures to a higher categorical level. The original structure can then be recovered by means of the so-called “decategoriﬁcation” functor. Algebras are typically categoriﬁed to additive categories with additional structure and decategoriﬁcation is usually given by the (split) Grothendieck group. In this article we study an alternative decategoriﬁcation functor given by the trace or the zeroth Hochschild–Mitchell homology. We show that this form of decategoriﬁcation endows any 2-representation of the categoriﬁed quantum sln with an action of the current algebra U(sln[t]) on its center.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
-   "CreationDate": "D:20140903202756-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20140903202756-04'00'"
+  },
+  "title_raw": "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR 1. Introduction 1.1. What is categoriﬁcation? Categoriﬁcation is perhaps best explained by deﬁning decategoriﬁcation. Quite broadly, decategoriﬁcation is a rigorously deﬁned procedure for forgetting information and reducing the complexity of a given",
+   "outline": "1. Introduction",
+   "text": "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,213 +55,649 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "What is categorification?",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The Grothendieck group",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The trace decategorification map",
    "page": 3,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Comparing Grothendieck group and trace",
    "page": 3,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Quantum group categorifications",
    "page": 4,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Traces of categorified quantum groups",
    "page": 5,
    "source": "outline",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Elementary notions of trace",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Traces of linear maps",
    "page": 7,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Hochschild homology and the trace of a ring",
    "page": 9,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Trace of a linear category",
    "page": 13,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Hochschild\u2013Mitchell homology and the trace",
+   "title": "Hochschild–Mitchell homology and the trace",
    "page": 13,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The trace and direct sums",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The trace and idempotent completions",
    "page": 15,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The trace and categories of complexes",
    "page": 16,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The trace and split Grothendieck groups",
    "page": 17,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The trace of a graded linear category",
    "page": 18,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Hochschild\u2013Mitchell homology of strongly upper triangular categories",
+   "title": "Hochschild–Mitchell homology of strongly upper triangular categories",
    "page": 19,
    "source": "outline",
-   "number": "3.7"
+   "number": "3.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Categorified quantum groups",
    "page": 21,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Quantum sln",
    "page": 21,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The 2-category UQ(sln)",
    "page": 22,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Symmetric functions and bubbles",
    "page": 27,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Kar, K0 and Tr for 2-categories",
    "page": 29,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Two categorifications of Lusztig's integral form A(sl2)",
    "page": 30,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Two categorifications of A(sln)",
    "page": 30,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Graded traces of categorified quantum groups",
    "page": 32,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The trace of 2-category U(sl2) and the current algebra of sl2",
    "page": 32,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The current algebra for sln",
    "page": 35,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Action on center of objects in",
    "page": 43,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "An example of a diagram representing a 2-morphism in U(g) from E2",
+   "page": 4,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -256,8 +706,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 812,
-   "n_words": 125
+   "n_chars": 799,
+   "n_words": 112,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-000-1-introduction",
@@ -265,222 +717,368 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 2752,
-   "n_words": 475
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-12-the-grothendieck-group",
+   "id": "sec-001-11-what-is-categorification",
+   "number": "1.1",
+   "title": "What is categorification?",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2578,
+   "n_words": 440,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-12-the-grothendieck-group",
    "number": "1.2",
    "title": "The Grothendieck group",
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 4598,
-   "n_words": 852
+   "n_chars": 2801,
+   "n_words": 478,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-14-comparing-grothendieck-group-and-trace",
+   "id": "sec-003-13-the-trace-decategorification-map",
+   "number": "1.3",
+   "title": "The trace decategorification map",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1546,
+   "n_words": 299,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-14-comparing-grothendieck-group-and-trace",
    "number": "1.4",
    "title": "Comparing Grothendieck group and trace",
    "level": 2,
    "page_start": 3,
-   "page_end": 7,
-   "n_chars": 12778,
-   "n_words": 2151
+   "page_end": 4,
+   "n_chars": 1613,
+   "n_words": 247,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-2-elementary-notions-of-trace",
+   "id": "sec-005-15-quantum-group-categorifications",
+   "number": "1.5",
+   "title": "Quantum group categorifications",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3707,
+   "n_words": 654,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-16-traces-of-categorified-quantum-groups",
+   "number": "1.6",
+   "title": "Traces of categorified quantum groups",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 6939,
+   "n_words": 1140,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-2-elementary-notions-of-trace",
    "number": "2",
    "title": "Elementary notions of trace",
    "level": 1,
    "page_start": 7,
-   "page_end": 9,
-   "n_chars": 4997,
-   "n_words": 1004
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-22-hochschild-homology-and-the-trace-of-a-ring",
+   "id": "sec-008-21-traces-of-linear-maps",
+   "number": "2.1",
+   "title": "Traces of linear maps",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4821,
+   "n_words": 946,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-22-hochschild-homology-and-the-trace-of-a-ring",
    "number": "2.2",
    "title": "Hochschild homology and the trace of a ring",
    "level": 2,
    "page_start": 9,
    "page_end": 13,
-   "n_chars": 5009,
-   "n_words": 957
+   "n_chars": 4932,
+   "n_words": 952,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-3-trace-of-a-linear-category",
+   "id": "sec-010-3-trace-of-a-linear-category",
    "number": "3",
    "title": "Trace of a linear category",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 995,
-   "n_words": 190
+   "n_chars": 986,
+   "n_words": 185,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-31-hochschildmitchell-homology-and-the-trace",
+   "id": "sec-011-31-hochschildmitchell-homology-and-the-trace",
    "number": "3.1",
-   "title": "Hochschild\u2013Mitchell homology and the trace",
+   "title": "Hochschild–Mitchell homology and the trace",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1781,
-   "n_words": 362
+   "n_chars": 1753,
+   "n_words": 334,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-32-the-trace-and-direct-sums",
+   "id": "sec-012-32-the-trace-and-direct-sums",
    "number": "3.2",
    "title": "The trace and direct sums",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 2142,
-   "n_words": 437
+   "n_chars": 2065,
+   "n_words": 394,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-33-the-trace-and-idempotent-completions",
+   "id": "sec-013-33-the-trace-and-idempotent-completions",
    "number": "3.3",
    "title": "The trace and idempotent completions",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3162,
-   "n_words": 630
+   "n_chars": 3037,
+   "n_words": 556,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-34-the-trace-and-categories-of-complexes",
+   "id": "sec-014-34-the-trace-and-categories-of-complexes",
    "number": "3.4",
    "title": "The trace and categories of complexes",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1567,
-   "n_words": 292
+   "n_chars": 1539,
+   "n_words": 268,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-35-the-trace-and-split-grothendieck-groups",
+   "id": "sec-015-35-the-trace-and-split-grothendieck-groups",
    "number": "3.5",
    "title": "The trace and split Grothendieck groups",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 4446,
-   "n_words": 821
+   "n_chars": 4487,
+   "n_words": 804,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-36-the-trace-of-a-graded-linear-category",
+   "id": "sec-016-36-the-trace-of-a-graded-linear-category",
    "number": "3.6",
    "title": "The trace of a graded linear category",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 3710,
-   "n_words": 711
+   "n_chars": 3623,
+   "n_words": 650,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-37-hochschildmitchell-homology-of-strongly-upper",
+   "id": "sec-017-37-hochschildmitchell-homology-of-strongly-upper",
    "number": "3.7",
-   "title": "Hochschild\u2013Mitchell homology of strongly upper triangular categories",
+   "title": "Hochschild–Mitchell homology of strongly upper triangular categories",
    "level": 2,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 5248,
-   "n_words": 960
+   "n_chars": 5171,
+   "n_words": 913,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-4-categorified-quantum-groups",
+   "id": "sec-018-4-categorified-quantum-groups",
    "number": "4",
    "title": "Categorified quantum groups",
    "level": 1,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 129,
-   "n_words": 26
+   "n_chars": 127,
+   "n_words": 24,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-41-quantum-sln",
+   "id": "sec-019-41-quantum-sln",
    "number": "4.1",
    "title": "Quantum sln",
    "level": 2,
    "page_start": 21,
    "page_end": 22,
    "n_chars": 2309,
-   "n_words": 527
+   "n_words": 539,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-42-the-2-category-uqsln",
+   "id": "sec-020-42-the-2-category-uqsln",
    "number": "4.2",
    "title": "The 2-category UQ(sln)",
    "level": 2,
    "page_start": 22,
    "page_end": 27,
-   "n_chars": 9587,
-   "n_words": 1814
+   "n_chars": 7821,
+   "n_words": 2061,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-43-symmetric-functions-and-bubbles",
+   "id": "sec-021-43-symmetric-functions-and-bubbles",
    "number": "4.3",
    "title": "Symmetric functions and bubbles",
    "level": 2,
    "page_start": 27,
-   "page_end": 32,
-   "n_chars": 12236,
-   "n_words": 2239
+   "page_end": 29,
+   "n_chars": 3284,
+   "n_words": 733,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-5-graded-traces-of-categorified-quantum-groups",
+   "id": "sec-022-44-kar-k0-and-tr-for-2-categories",
+   "number": "4.4",
+   "title": "Kar, K0 and Tr for 2-categories",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 2315,
+   "n_words": 399,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-45-two-categorifications-of-lusztigs-integral-fo",
+   "number": "4.5",
+   "title": "Two categorifications of Lusztig's integral form A(sl2)",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 6195,
+   "n_words": 1106,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-024-5-graded-traces-of-categorified-quantum-groups",
    "number": "5",
    "title": "Graded traces of categorified quantum groups",
    "level": 1,
    "page_start": 32,
-   "page_end": 35,
-   "n_chars": 5586,
-   "n_words": 1086
+   "page_end": 32,
+   "n_chars": 689,
+   "n_words": 114,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-52-the-current-algebra-for-sln",
+   "id": "sec-025-51-the-trace-of-2-category-usl2-and-the-current",
+   "number": "5.1",
+   "title": "The trace of 2-category U(sl2) and the current algebra of sl2",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 35,
+   "n_chars": 4446,
+   "n_words": 948,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-026-52-the-current-algebra-for-sln",
    "number": "5.2",
    "title": "The current algebra for sln",
    "level": 2,
    "page_start": 35,
    "page_end": 43,
-   "n_chars": 10359,
-   "n_words": 1746
+   "n_chars": 7260,
+   "n_words": 1999,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-6-action-on-center-of-objects-in",
+   "id": "sec-027-6-action-on-center-of-objects-in",
    "number": "6",
    "title": "Action on center of objects in",
    "level": 1,
    "page_start": 43,
    "page_end": 45,
-   "n_chars": 5532,
-   "n_words": 1019
+   "n_chars": 5312,
+   "n_words": 969,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-020-references",
+   "id": "sec-028-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 45,
    "page_end": 47,
-   "n_chars": 9261,
-   "n_words": 1345
+   "n_chars": 9154,
+   "n_words": 1238,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 30,
-  "sections": 22,
-  "chars_total": 108996,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 30,
+  "chars_total": 101309,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 50,
-   "overlaid": 17,
+   "overlaid": 22,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -495,45 +1093,81 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.888,
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-what-is-categorification",
+     "title": "What is categorification?",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.918,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-12-the-grothendieck-group",
+     "id": "sec-002-12-the-grothendieck-group",
      "title": "The Grothendieck group",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.981,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-002-14-comparing-grothendieck-group-and-trace",
-     "title": "Comparing Grothendieck group and trace",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.98,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-003-2-elementary-notions-of-trace",
-     "title": "Elementary notions of trace",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.625,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-22-hochschild-homology-and-the-trace-of-a-ring",
+     "id": "sec-003-13-the-trace-decategorification-map",
+     "title": "The trace decategorification map",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-14-comparing-grothendieck-group-and-trace",
+     "title": "Comparing Grothendieck group and trace",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-15-quantum-group-categorifications",
+     "title": "Quantum group categorifications",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-16-traces-of-categorified-quantum-groups",
+     "title": "Traces of categorified quantum groups",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-2-elementary-notions-of-trace",
+     "title": "Elementary notions of trace",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-21-traces-of-linear-maps",
+     "title": "Traces of linear maps",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-22-hochschild-homology-and-the-trace-of-a-ring",
      "title": "Hochschild homology and the trace of a ring",
      "prose_ratio": 0.935,
-     "coverage_ratio": 0.9,
+     "coverage_ratio": 0.907,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-3-trace-of-a-linear-category",
+     "id": "sec-010-3-trace-of-a-linear-category",
      "title": "Trace of a linear category",
      "prose_ratio": 0.982,
      "coverage_ratio": 1.0,
@@ -541,15 +1175,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-31-hochschildmitchell-homology-and-the-trace",
-     "title": "Hochschild\u2013Mitchell homology and the trace",
+     "id": "sec-011-31-hochschildmitchell-homology-and-the-trace",
+     "title": "Hochschild–Mitchell homology and the trace",
      "prose_ratio": 0.971,
-     "coverage_ratio": 0.902,
+     "coverage_ratio": 0.877,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-32-the-trace-and-direct-sums",
+     "id": "sec-012-32-the-trace-and-direct-sums",
      "title": "The trace and direct sums",
      "prose_ratio": 0.947,
      "coverage_ratio": 0.978,
@@ -557,15 +1191,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-008-33-the-trace-and-idempotent-completions",
+     "id": "sec-013-33-the-trace-and-idempotent-completions",
      "title": "The trace and idempotent completions",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.944,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-34-the-trace-and-categories-of-complexes",
+     "id": "sec-014-34-the-trace-and-categories-of-complexes",
      "title": "The trace and categories of complexes",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.971,
@@ -573,79 +1207,100 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-35-the-trace-and-split-grothendieck-groups",
+     "id": "sec-015-35-the-trace-and-split-grothendieck-groups",
      "title": "The trace and split Grothendieck groups",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.914,
+     "coverage_ratio": 0.925,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-36-the-trace-of-a-graded-linear-category",
+     "id": "sec-016-36-the-trace-of-a-graded-linear-category",
      "title": "The trace of a graded linear category",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.957,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-37-hochschildmitchell-homology-of-strongly-upper",
-     "title": "Hochschild\u2013Mitchell homology of strongly upper triangular categories",
+     "id": "sec-017-37-hochschildmitchell-homology-of-strongly-upper",
+     "title": "Hochschild–Mitchell homology of strongly upper triangular categories",
      "prose_ratio": 0.96,
-     "coverage_ratio": 0.939,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-4-categorified-quantum-groups",
+     "id": "sec-018-4-categorified-quantum-groups",
      "title": "Categorified quantum groups",
      "prose_ratio": 0.047,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-014-41-quantum-sln",
+     "id": "sec-019-41-quantum-sln",
      "title": "Quantum sln",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-015-42-the-2-category-uqsln",
+     "id": "sec-020-42-the-2-category-uqsln",
      "title": "The 2-category UQ(sln)",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-016-43-symmetric-functions-and-bubbles",
+     "id": "sec-021-43-symmetric-functions-and-bubbles",
      "title": "Symmetric functions and bubbles",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.974,
+     "prose_ratio": 0.681,
+     "coverage_ratio": 0.915,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-5-graded-traces-of-categorified-quantum-groups",
+     "id": "sec-022-44-kar-k0-and-tr-for-2-categories",
+     "title": "Kar, K0 and Tr for 2-categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-45-two-categorifications-of-lusztigs-integral-fo",
+     "title": "Two categorifications of Lusztig's integral form A(sl2)",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-5-graded-traces-of-categorified-quantum-groups",
      "title": "Graded traces of categorified quantum groups",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.721,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-018-52-the-current-algebra-for-sln",
-     "title": "The current algebra for sln",
-     "prose_ratio": 0.935,
-     "coverage_ratio": 0.891,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-019-6-action-on-center-of-objects-in",
-     "title": "Action on center of objects in",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-020-references",
+     "id": "sec-025-51-the-trace-of-2-category-usl2-and-the-current",
+     "title": "The trace of 2-category U(sl2) and the current algebra of sl2",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.923,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-52-the-current-algebra-for-sln",
+     "title": "The current algebra for sln",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-6-action-on-center-of-objects-in",
+     "title": "Action on center of objects in",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-references",
      "title": "References",
      "result": "no matching \\section"
     }

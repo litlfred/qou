@@ -2,27 +2,32 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0904.1556v2",
  "source_sha256": "a1a43786d817f085",
- "brief": "The Algebra of Grand Unified Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today.",
- "extended": "**The Algebra of Grand Unified Theories**\n\n*John Baez and John Huerta*\n\n73 pp, 20 sections.\n\n**Abstract.** The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today. It may seem complicated and arbitrary, but it has hidden patterns that are revealed by the relations hip between three ‘grand uniﬁed theories’: theories that unify forces and par ticles by extend- ing the Standard Model symmetry group U(1) × SU(2) × SU(3) to a larger group. These three are Georgi and Glashow’s SU(5) theory, Ge orgi’s theory based on the group Spin(10), and the Pati–Salam model based o n the group SU(2) × SU(2) × SU(4). In this expository account for mathematicians, we ex - plain only the portion of these theories that involves ﬁnite -dimensional group representations. This allows us to reduce the prerequisite s to a bare minimum while still giving a taste of the profound puzzles that physi cists are struggling to solve.\n\n**Outline.** 1 Introduction; 2 The Standard Model; 1.1 Guide to Further Reading; 2.1 Isospin and SU(2); 2.2 The Fundamental Fermions; 2.2.1 Quarks; 2.2.2 Leptons; 2.3 The Fundamental Forces; 2.3.1 Isospin and SU(2), Redux; 2.3.2 Hypercharge and U(1); 2.3.3 Electroweak Symmetry Breaking; 2.3.4 Color and SU(3); 2.4 The Standard Model Representation; 2.5 Generations; 3.1 The SU(5) GUT; 3.2 The Spin(10) Theory; 3.3 The Pati–Salam Model; 3.4 The Route to Spin(10) via Pati–Salam\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The following square commutes:\n- Theorem 2: There exists a Lie group homomorphism ψ that makes this triangle\n- Theorem 3: The following square commutes:\n- Theorem 4: There exists an isomorphism of Lie groups\n- Theorem 5: Takingθ =αβ and h =kℓ, the following square commutes:\n- Theorem 6: The following square commutes:",
+ "brief": "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepted theory of elementary particles we have today.",
+ "extended": "**The Algebra of Grand Uniﬁed Theories**\n\n*John Baez and John Huerta*\n\n73 pp, 22 sections.\n\n**Abstract.** The Standard Model is the best tested and most widely accepted theory of elementary particles we have today. It may seem complicated and arbitrary, but it has hidden patterns that are revealed by the relationship between three ‘grand uniﬁed theories’: theories that unify forces and particles by extend- ing the Standard Model symmetry group U(1) × SU(2) × SU(3) to a larger group. These three are Georgi and Glashow’s SU(5) theory, Georgi’s theory based on the group Spin(10), and the Pati–Salam model based on the group SU(2)×SU(2)×SU(4). In this expository account for mathematicians, we ex- plain only the portion of these theories that involves ﬁnite-dimensional group representations. This allows us to reduce the prerequisites to a bare minimum while still giving a taste of the profound puzzles that physicists are struggling to solve.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Guide to Further Reading; 2 The Standard Model; 2.1 Isospin and SU(2); 2.2 The Fundamental Fermions; 2.2.1 Quarks; 2.2.2 Leptons; 2.3 The Fundamental Forces; 2.3.1 Isospin and SU(2), Redux; 2.3.2 Hypercharge and U(1); 2.3.3 Electroweak Symmetry Breaking; 2.3.4 Color and SU(3); 2.4 The Standard Model Representation; 2.5 Generations; 3 Grand Unified Theories; 3.1 The SU(5) GUT; 3.2 The Spin(10) Theory",
  "tokens": {
-  "brief": 37,
-  "extended": 455
+  "brief": 36,
+  "extended": 350
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-4"
   },
   {
-   "id": "sec-001-2-the-standard-model",
-   "title": "The Standard Model",
-   "pages": "4-4"
+   "id": "sec-001-11-guide-to-further-reading",
+   "title": "Guide to Further Reading",
+   "pages": "4-5"
   },
   {
-   "id": "sec-002-11-guide-to-further-reading",
-   "title": "Guide to Further Reading",
-   "pages": "4-6"
+   "id": "sec-002-2-the-standard-model",
+   "title": "The Standard Model",
+   "pages": "5-6"
   },
   {
    "id": "sec-003-21-isospin-and-su2",
@@ -77,35 +82,40 @@
   {
    "id": "sec-013-25-generations",
    "title": "Generations",
-   "pages": "30-32"
+   "pages": "30-31"
   },
   {
-   "id": "sec-014-31-the-su5-gut",
+   "id": "sec-014-3-grand-unified-theories",
+   "title": "Grand Unified Theories",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-015-31-the-su5-gut",
    "title": "The SU(5) GUT",
    "pages": "32-42"
   },
   {
-   "id": "sec-015-32-the-spin10-theory",
+   "id": "sec-016-32-the-spin10-theory",
    "title": "The Spin(10) Theory",
    "pages": "42-48"
   },
   {
-   "id": "sec-016-33-the-patisalam-model",
+   "id": "sec-017-33-the-patisalam-model",
    "title": "The Pati–Salam Model",
    "pages": "48-55"
   },
   {
-   "id": "sec-017-34-the-route-to-spin10-via-patisalam",
+   "id": "sec-018-34-the-route-to-spin10-via-patisalam",
    "title": "The Route to Spin(10) via Pati–Salam",
    "pages": "55-62"
   },
   {
-   "id": "sec-018-35-the-question-of-compatibility",
+   "id": "sec-019-35-the-question-of-compatibility",
    "title": "The Question of Compatibility",
    "pages": "62-65"
   },
   {
-   "id": "sec-019-4-conclusion",
+   "id": "sec-020-4-conclusion",
    "title": "Conclusion",
    "pages": "65-73"
   }
@@ -114,8 +124,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

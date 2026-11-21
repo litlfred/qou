@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0310279v5",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "0310279v5",
+  "title": "Stabilization in the braid groups I: MTWS",
   "contains": [
+    "library/0310279v5/sections/sec-front-matter",
     "library/0310279v5/sections/sec-000",
     "library/0310279v5/sections/sec-001",
     "library/0310279v5/sections/sec-002",
@@ -40,13 +41,25 @@
     "library/0310279v5/sections/sec-026",
     "library/0310279v5/sections/sec-027",
     "library/0310279v5/sections/sec-028",
-    "library/0310279v5/sections/sec-029"
+    "library/0310279v5/sections/sec-029",
+    "library/0310279v5/sections/sec-030",
+    "library/0310279v5/sections/sec-031",
+    "library/0310279v5/sections/sec-032",
+    "library/0310279v5/sections/sec-033",
+    "library/0310279v5/sections/sec-034",
+    "library/0310279v5/sections/sec-035",
+    "library/0310279v5/sections/sec-036",
+    "library/0310279v5/sections/sec-037",
+    "library/0310279v5/sections/sec-038",
+    "library/0310279v5/sections/sec-039"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "0310279v5",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0310279v5.pdf",
     "source_sha256": "a1d472d37291a3331a74fb16e387bbfdbf13a41e7a8120582c1e38ad01728c9b",
     "pages": 128,

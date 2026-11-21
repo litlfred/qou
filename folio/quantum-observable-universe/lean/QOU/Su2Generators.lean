@@ -39,7 +39,7 @@ structure Su2Generators (G : Type*) [Group G] where
   /-- Dihedral relation `βαβ⁻¹ = α⁻¹`. -/
   dihedral : β * α * β⁻¹ = α⁻¹
 
--- Ref: [manuscript] quantum-observable-universe/brings-surface/su2-generators.ts
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/su2-generators.ts
 
 /-- The commutator relation `[β,α] = βαβ⁻¹α⁻¹ = α⁻²` follows from the
     dihedral relation (manuscript). -/

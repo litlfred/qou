@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2111.06645v3/blocks/prose-sec-032",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Denominators and integrality properties",
-  "pageStart": 65,
-  "pageEnd": 71,
-  "text": "../sections/sec-032-92-denominators-and-integrality-properties.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.06645v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.06645v3",
+  "title": "The q-holonomic module of formal power series",
+  "pageStart": 57,
+  "pageEnd": 58,
+  "text": "../sections/sec-032-74-the-q-holonomic-module-of-formal-power-series.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
   "provenance": "ingested"
 }

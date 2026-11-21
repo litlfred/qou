@@ -65,6 +65,7 @@ that its tolerance should be +/- 0.0052, not zero.
 
 Exact mpmath at 50 dps; no float64; emits no witness.
 """
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import pathlib
 import sys
@@ -91,7 +92,7 @@ def QN2(q):
     hb = (q - 1) / q
     b = mp.sqrt(q**4 + q**2 + 1) / (q**2 + 1)
     z = mp.sqrt(q) / (q + 1)
-    QA = abs(((q - 1 / q) / 2 * h - h) * ME / (q * (q - 1)))
+    QA = abs(_qbeta_e0.order_zero_scaled(((q - 1 / q) / 2 * h - h) * ME, q))
     return QA * mp.cos((z - 1) * h / 2 - b * hb**2 / 2) * (1 - b**2 * hb**4)
 
 

@@ -2,122 +2,42 @@
  "_schema": "library-summary/v1",
  "doc_id": "eps-hep2019-615",
  "source_sha256": "b5fb4982d65e9fcd",
- "brief": "PoS(EPS-HEP2019)615 — 22 sections: Introduction; Three generations from complex sed; (−e5 + ie4), α2≡ 1",
- "extended": "**PoS(EPS-HEP2019)615**\n\n*Sedenions, the Clifford algebra C𝓁(8), and three*\n\n6 pp, 22 sections.\n\n**Outline.** 1 Introduction; 2 Three generations from complex sedenions; 2 (−e5 + ie4), α2≡ 1; 2 (−e3 + ie1), α3≡ 1; 2 (−e6 + ie2), (2.2); 2 (e5 + ie4), α†; 2 (e3 + ie1), α†; 2 (e6 + ie2), (2.3); 2 (−ea + ie15−a) where a∈ 5,7,13,1,4,6,12, tog; 2 (ea + ie15−a), satisfying; 2 (−e5 + ie10), β1 = 1; 2 (−e7 + ie8), γ1 = 1; 2 (−e13 + ie2), (2.7); 2 (−e1 + ie14), (2.8); 2 (−e4 + ie11), β3 = 1; 2 (−e6 + ie9), γ3 = 1; 2 (−e12 + ie3), (2.9); 2.1 Spinorial degrees of freedom",
+ "brief": "PoS(EPS-HEP2019)615 — 6 sections: Page 1; Page 2; Page 3",
+ "extended": "**PoS(EPS-HEP2019)615**\n\n*Sedenions, the Clifford algebra Cℓ(8), and three*\n\n6 pp, 6 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6",
  "tokens": {
-  "brief": 25,
-  "extended": 141
+  "brief": 14,
+  "extended": 38
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
+   "id": "page-001",
+   "title": "Page 1",
+   "pages": "1-1"
+  },
+  {
+   "id": "page-002",
+   "title": "Page 2",
    "pages": "2-2"
   },
   {
-   "id": "sec-001-2-three-generations-from-complex-sedenions",
-   "title": "Three generations from complex sedenions",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-002-2-e5-ie4-α2-1",
-   "title": "(−e5 + ie4), α2≡ 1",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-2-e3-ie1-α3-1",
-   "title": "(−e3 + ie1), α3≡ 1",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-004-2-e6-ie2-22",
-   "title": "(−e6 + ie2), (2.2)",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-005-2-e5-ie4-α",
-   "title": "(e5 + ie4), α†",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-006-2-e3-ie1-α",
-   "title": "(e3 + ie1), α†",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-007-2-e6-ie2-23",
-   "title": "(e6 + ie2), (2.3)",
-   "pages": "2-3"
-  },
-  {
-   "id": "sec-008-2-ea-ie15a-where-a-571314612-together-with-seven",
-   "title": "(−ea + ie15−a) where a∈ 5,7,13,1,4,6,12, together with seven nilpotent",
+   "id": "page-003",
+   "title": "Page 3",
    "pages": "3-3"
   },
   {
-   "id": "sec-009-2-ea-ie15a-satisfying",
-   "title": "(ea + ie15−a), satisfying",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-010-2-e5-ie10-β1-1",
-   "title": "(−e5 + ie10), β1 = 1",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-011-2-e7-ie8-γ1-1",
-   "title": "(−e7 + ie8), γ1 = 1",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-012-2-e13-ie2-27",
-   "title": "(−e13 + ie2), (2.7)",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-013-2-e1-ie14-28",
-   "title": "(−e1 + ie14), (2.8)",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-014-2-e4-ie11-β3-1",
-   "title": "(−e4 + ie11), β3 = 1",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-015-2-e6-ie9-γ3-1",
-   "title": "(−e6 + ie9), γ3 = 1",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-016-2-e12-ie3-29",
-   "title": "(−e12 + ie3), (2.9)",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-017-21-spinorial-degrees-of-freedom",
-   "title": "Spinorial degrees of freedom",
+   "id": "page-004",
+   "title": "Page 4",
    "pages": "4-4"
   },
   {
-   "id": "sec-018-3-the-intersectionality-of-three-generations-as",
-   "title": "The intersectionality of three generations as a basis for CKM mixing",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-019-4-three-generations-from-the-triality-of-c𝓁8",
-   "title": "Three generations from the triality of C𝓁(8)",
+   "id": "page-005",
+   "title": "Page 5",
    "pages": "5-5"
   },
   {
-   "id": "sec-020-5-discussion",
-   "title": "Discussion",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-021-references",
-   "title": "References",
-   "pages": "5-6"
+   "id": "page-006",
+   "title": "Page 6",
+   "pages": "6-6"
   }
  ],
  "provenance": {

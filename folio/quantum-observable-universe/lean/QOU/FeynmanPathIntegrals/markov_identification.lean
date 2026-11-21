@@ -94,7 +94,7 @@ supplies.  The in-repo RSK infrastructure
 (`QOU.Mathlib.RSK_substrate_proved`) proves the classical Burnside identity
 for symmetric groups, **not** this branching.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/feynman-markov-identification.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/feynman-markov-identification.md
 -/
 
 namespace QOU.FeynmanPathIntegrals
@@ -111,7 +111,7 @@ True by definition of `amplitudeEigenbasis`, and recorded as such — `rfl`
 consults nothing about braids, Hecke algebras or Specht modules. Stating it
 separately is what keeps clause (i) from being mistaken for evidence about
 clause (ii). -/
--- Ref: [manuscript] lem:feynman-markov-identification (definition of the eigenbasis amplitude)
+-- Ref: [leitner2026] lem:feynman-markov-identification (definition of the eigenbasis amplitude)
 theorem amplitudeEigenbasis_eq_sum (nPart : ℕ) (w trS : ℕ → ℝ) :
     amplitudeEigenbasis nPart w trS
       = (Finset.range nPart).sum (fun l => w l * trS l) := rfl
@@ -127,7 +127,7 @@ partial traces.
 projection nor a `sorry` is the honest form here, and for what the identity
 would need in order to be derived. It is *derived* at convention D in
 `MarkovIdentificationInstance.markovTrace_branching_of_markovTrace`. -/
--- Ref: [manuscript] lem:feynman-markov-identification (Wenzl-bridge branching of tr_M)
+-- Ref: [leitner2026] lem:feynman-markov-identification (Wenzl-bridge branching of tr_M)
 def markovTrace_branching (nPartitions : ℕ)
     (markovWeight spechtPartialTrace : ℕ → ℝ) (markovTrace : ℝ) : Prop :=
   markovTrace = (Finset.range nPartitions).sum
@@ -139,7 +139,7 @@ trace** ([`lem:feynman-markov-identification`]) — **derived**.
 Takes the branching identity as an explicit hypothesis and concludes the
 lemma. This is the implication the file exists to record, and it could not be
 stated while the identity was a class field the instance chose. -/
--- Ref: [manuscript] lem:feynman-markov-identification
+-- Ref: [leitner2026] lem:feynman-markov-identification
 theorem markov_identification {nPartitions : ℕ}
     {markovWeight spechtPartialTrace : ℕ → ℝ} {markovTrace : ℝ}
     (h : markovTrace_branching nPartitions markovWeight spechtPartialTrace

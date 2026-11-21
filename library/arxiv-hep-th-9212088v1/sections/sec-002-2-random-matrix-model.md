@@ -8,6 +8,7 @@ pages: 3-6
 source_pdf: 9212088v1.pdf
 source_sha256: ecb2c02ec6fe11bd
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9212088v1 14 Dec 1992 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga."
 ---
 was inspired by the semiclassical approximation to the QCD partition function where
 instantons are the main degrees of freedom [10, 11, 12]. Therefore, it is natural to check
@@ -49,7 +50,6 @@ we have ν = N+ −N−exact zero modes. At ﬁnite separation of instantons and
 instantons the remaining modes are no longer exact zero modes of the Dirac equation and
 give rise to nonzero overlap matrix elements T of the Dirac operator [15].
 A model describing the zero mode part of the QCD partition function with N zero
-3
 modes or almost zero modes in the Euclidean volume V is deﬁned by
 Z(θ) =
 X
@@ -111,7 +111,6 @@ where the order of the limits should be taken as indicated in the formula. In ge
 approached from above is denoted by −Σ. By writing the determinant as the product
 2If µ(N) ∼δ(N −N) the parity of N+ −N−is the same as the parity of N = N+ + N−, and the
 partition function has the additional symmetry Z(θ = 0) = Z(θ = π).
-4
 Q′(λ2
 n + m2
 f) one obtains the Banks-Casher formula [6] for Σ
@@ -186,4 +185,3 @@ N ),
 as opposed to the continuum spectral density deﬁned by in eq. (2.6). In this limit, the
 spectral density function near zero is enlarged proportional to the size (given by N) of
 the system. Note that ρS(x) depends on Nmf.
-5

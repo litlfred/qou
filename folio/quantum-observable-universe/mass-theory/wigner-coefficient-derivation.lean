@@ -4,7 +4,7 @@
   The isospin Casimir traced over H₅(q) gives Σ dim_q(λ)² = [5]_q!
   by the Wedderburn-Artin trace identity.
 
-  Ref: [manuscript] §5.7, prop:wigner-coefficient-derivation
+  Ref: [leitner2026] §5.7, prop:wigner-coefficient-derivation
 -/
 
 import QOU.Torsion.HeckeMassElement
@@ -35,7 +35,7 @@ noncomputable def wignerCoefficient (k : ℕ) (q m_e : ℝ) : ℝ :=
     or a structure-tightening refactor.
 
     See the theorem docstring below for the cited reference. -/
--- Ref: [manuscript] Ch. mass-theory, prop:wigner-coefficient-derivation ([5]_q!·m_e near-match to 68.9 MeV at q_0)
+-- Ref: [leitner2026] Ch. mass-theory, prop:wigner-coefficient-derivation ([5]_q!·m_e near-match to 68.9 MeV at q_0)
 axiom wigner_coefficient_axiom (q₀ m_e : ℝ)
     (hq : q₀ = 1.109978595554181)
     (hme : m_e = 0.51099895069) :
@@ -66,7 +66,7 @@ namespace QOU.BraidKnot.WignerCoefficient.ConditionalAudit
     Concrete content (shape of the claim): for every empirical
     coefficient `c` (indexed by `ℕ`) there is a non-negative
     `q`-rational ratio `r` with `c = r · m_e`. -/
--- Ref: [manuscript] conj:q-integer-mass-formula
+-- Ref: [leitner2026] conj:q-integer-mass-formula
 class QIntegerMassFormula : Prop where
   /-- Each liquid-drop coefficient is `m_e` scaled by a non-negative
       substrate-derived `q`-rational ratio (existence of the ratio

@@ -1,0 +1,24 @@
+Comment.
+
+If we use the fundamental solution $0 of the Laplacian as our kernel, think of V
+as a current flow and B(V, #0) as its magnetic field, we get
+
+V XB(V, 0) = ACV, 0) — GV, bo),
+which is Maxwell's equation,
+
+V XB = V+ OE/Ct.
+
+Now we turn to the Laplacians of our convolutions.
+LEMMA 2. A(V,o) = ACV, 6) BV, >) = BV, 9)
+g(V,o) = g(V, 9) G(V,) = G(V, 9).
+Proof.
+The arguments are straightforward, using the formula for the vector Laplacian,
+the information from Lemma 1, and the fact that Laplacian and gradient commute.
+We write it out for the first formula, and leave the other three to the reader.
+A(V,o) = —V xV xA(V, 6) + V(V © ACV, ))
+=—V x(-B(V, 6)) + Va(V, 6)
+= A(V, ) — G(V, >) + GV, >)
+
+= A(V, 6).
+
+26

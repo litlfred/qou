@@ -29,7 +29,7 @@ LaTeX label: `conj:homological-shell-condensation`
   Nonabelian multiplicative integration
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [mathas1999] https://doi.org/10.1090/ulect/015
-- [manuscript] lifting-and-descent / homological-shell-condensation
+- [leitner2026] lifting-and-descent / homological-shell-condensation
 -/
 
 namespace QOU.LiftingDescent.HomologicalCondensation
@@ -100,7 +100,7 @@ def InfinityVanishesAtPositiveQ (n : ℕ) : Prop :=
     this ladder. Two routes for closing it are documented in the
     associated `.md` (combinatorial enumeration of complete-intersection
     BB-strata; Yekutieli MC-equation reduction). -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 class ShellCondensationConjecture where
   /-- Both directions of the iff. -/
@@ -109,7 +109,7 @@ class ShellCondensationConjecture where
 
 /-- Re-export, forward direction: at magic `n`, the spectral
     sequence collapses with the `q > 0` part of `E_∞` vanishing. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem condensation_at_magic
     [C : ShellCondensationConjecture]
     {n : ℕ} (hn : n ∈ magicLadder) :
@@ -118,7 +118,7 @@ theorem condensation_at_magic
 
 /-- Re-export, reverse direction: if the spectral sequence collapses
     with `E_∞^{p, >0}(n) = 0`, then `n` lies on the magic ladder. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem magic_at_condensation
     [C : ShellCondensationConjecture]
     {n : ℕ} (hn : InfinityVanishesAtPositiveQ n) :
@@ -129,7 +129,7 @@ theorem magic_at_condensation
 
 /-- At `n = 28` (Nickel-28 shell), the spectral sequence collapses
     with `E_∞^{p, >0} = 0`. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem condensation_at_28 [ShellCondensationConjecture] :
     InfinityVanishesAtPositiveQ 28 :=
   condensation_at_magic twentyeight_mem_magicLadder
@@ -158,7 +158,7 @@ class IsKnownNotCondensed (n : ℕ) : Prop where
 
     Both edge cases are *vacuously condensed* without being magic;
     the conjecture is only meaningful for `n ≥ 2`. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem shellCondensation_iff_perN_axioms_at
     (h_in : ∀ n, n ∈ magicLadder → IsKnownCondensed n)
     (h_out : ∀ n, 2 ≤ n → n ∉ magicLadder → IsKnownNotCondensed n) :
@@ -177,13 +177,13 @@ theorem shellCondensation_iff_perN_axioms_at
     the same vanishing holds purely from the conjectural
     homological condensation. This is the algebraic-geometry bypass
     of the matrix-evaluation barrier. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem condensation_at_82 [ShellCondensationConjecture] :
     InfinityVanishesAtPositiveQ 82 :=
   condensation_at_magic eightytwo_mem_magicLadder
 
 /-- At `n = 126` (the heaviest known shell closure), likewise. -/
--- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [leitner2026] conj:homological-shell-condensation
 theorem condensation_at_126 [ShellCondensationConjecture] :
     InfinityVanishesAtPositiveQ 126 :=
   condensation_at_magic onetwentysix_mem_magicLadder

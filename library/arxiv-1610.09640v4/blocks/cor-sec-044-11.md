@@ -1,0 +1,1 @@
+Let K and L be triangulated categories, let F : K →L be a triangulated functor, and let K′ be the kernel of F, i.e. K′ ⊆K is the full subcategory on the objects M ∈K such that F(M) = 0. Then K′ is a saturated full triangulated subcategory of K. Exercise 5.3.24. Prove Proposition 5.3.21, Proposition 5.3.22 and Corollary 5.3.23. We end this subsection with two remarks.

@@ -1,13 +1,15 @@
 ---
 doc_id: 67-6-1860
-doc_title: "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982"
+doc_title: "Quaternionic Weinberg-Salam Theory"
 section_id: page-004
 section_title: "Page 4"
-section_number: null
 pages: 4-4
+pdf_page: 4
 source_pdf: 67-6-1860.pdf
 source_sha256: e2e5d45edd369762
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Quaternionic Weinberg-Salam Theory — 17 sections: Page 1; Page 2; Page 3"
 ---
 Quaternionic Weinberg-Salam Theory 1863
 
@@ -56,4 +58,4 @@ or Pr = Vor, brEQV)=Qze. (12b)
 
 We have introduced the notations Qze as in Ref. 7). It is convenient to de-
 
-9z0z Ainr 90 uo ysanB Aq 79Z2881/0981/9/29/810111e/d}d/wios'dno-o1wapese//:sd}jy Wo. pepeojumMoq
+9z0z Ainr 06 uo ysanB Aq 79Z2881/0981/9/29/810111e/d}d/wios'dno-o1wapese//:sd}jy Wo. pepeojumMoq

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-0707.2003v2
-doc_title: "A geometric model for Hochschild homology of Soergel bimodules Introduction"
+doc_title: "A geometric model for Hochschild homology of Soergel bimodules"
 section_id: sec-001-acknowledgments
 section_title: "Acknowledgments"
 section_number: null
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.989
+doc_brief: "A geometric model for Hochschild homology of Soergel bimodules — An important step in the calculation of the triply graded link homology theory of Khovanov and Rozansky is the determination of the"
 ---
 []{#sec:acknowledgments label="sec:acknowledgments"}
 

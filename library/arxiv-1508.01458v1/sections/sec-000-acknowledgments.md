@@ -8,6 +8,7 @@ pages: 5-5
 source_pdf: 1508.01458v1.pdf
 source_sha256: 37cfb89f419c9eab
 toc_source: inferred
+doc_brief: "Knotty inﬂation and the dimensionality of spacetime — 2 sections: Front matter; Acknowledgments"
 ---
 AB is supported by STFC. The work of TWK
 was

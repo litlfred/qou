@@ -1,0 +1,53 @@
+21 Page 2 of 19 Algorithmica (2026) 88:21
+
+designing approximation algorithms by solving a linear or semidefinite program and
+applying some dependent randomized rounding algorithm [12]. For this setting, [13]
+showed that the Chernoff-Hoeffding bounds can be shown under the weak notion of
+negative cylinder dependence: this and other standard notions of negative dependence
+are defined in Section 2.1.
+
+For some applications in combinatorial optimization, algorithmic game theory,
+and machine learning, one needs to consider the more general class of submod-
+ular functions f of the random variables, rather than simple linear combinations.
+When the binary random variables X;,..., X» are independent, it was shown that
+f(X1, ..., Xp) still satisfies Chernoff bounds exactly [2]. When there is dependence
+between the random variables, the results are much weaker. The only known results
+are for random variables that are output by specific dependent-rounding algorithms,
+known as swap rounding and pipage rounding [2, 3]. These results showed that a
+Chernoff-like lower-tail bound also holds for submodular functions for their specific
+dependent rounding procedure. As noted in the work of [14], it is not clear how to
+generalize either of these proofs to any general notion of negative dependence.
+
+We introduce a new notion of negative dependence, called 1-negative association,
+which is weaker than negative association and negative regression but stronger than
+negative cylinder dependence, i.e., every distribution satisfying negative association or
+negative regression also satisfies 1-negative association, which in turn implies negative
+cylinder dependence.
+
+Definition 1 A collection of random variables Xj, ..., Xn is said to satisfy 1-negative
+association if for any two monotone functions f and g, where g depends on a single
+random variable X; and f depends on the remaining random variables {X j} jetnj\{i};
+we have E[ fg] < E[fJE[g].
+
+Importantly, while in general it is weaker than the notion of weak negative regres-
+sion introduced by [1], 1-negative association is equivalent to it when the variables
+X1,..., X» are binary. Further details are provided in Section 3.1.
+
+Our main result is that the Chernoff-like bound shown in [2, 3] also hold under
+1-negative association (see Section 3.2). In particular, this implies the following:
+
+Theorem 1.1 Let X,,..., X, be binary random variables with mean x), ... , Xp Satis-
+fying negative association (or negative regression). Let f be a non-negative monotone
+submodular function with marginal values in (0, 1] and let F be the multilinear exten-
+sion of f. If we let wo = F(x1,...,Xn), then for any 6 € (0, 1) we have
+
+Pr[ f(X1,-.., Xn) < (1 — 8) + Mo] < exp(—98"/2).
+
+A few remarks are in order. First, we highlight that the concentration in the above
+theorem is with respect to the value of the multilinear extension F (x1, ..., x»), rather
+than the true expected value E[ f(X1, ..., Xn)]. In general, the true expected value can
+be greater than the value of multilinear extension [1]. Nevertheless, this suffices for
+applications relating to submodular maximization, and is the same type of concentra-
+tion result shown in previous work. Second, recall that negative cylinder dependence
+
+aN Springer

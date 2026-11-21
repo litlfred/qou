@@ -47,7 +47,7 @@ namespace ConfinementGradingCorrespondence
 
 /-- Unconditional consequence: the confinement filtration is upper-
     bounded by the KLR top degree. -/
--- Ref: [manuscript] braids-and-knots/confinement-grading-correspondence
+-- Ref: [leitner2026] braids-and-knots/confinement-grading-correspondence
 theorem confLevel_le_klrTopDegree
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q]
@@ -61,7 +61,7 @@ theorem confLevel_le_klrTopDegree
     `confLevel_le_klrTopDegree` this packages `filtrations_agree` as
     a two-sided ≤ pair, the form most often used in proofs about the
     GS shadow-price filtration. -/
--- Ref: [manuscript] braids-and-knots/confinement-grading-correspondence
+-- Ref: [leitner2026] braids-and-knots/confinement-grading-correspondence
 theorem klrTopDegree_le_confLevel
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q]
@@ -94,7 +94,7 @@ def canonical (R : Type u) [CommRing R] (q : R)
     ConfinementGradingCorrespondence R q where
   confLevel _ := 0
   klrTopDegree _ := 0
-  -- Ref: [manuscript] conj:confinement-grading-correspondence (§3b-cond conjectural-class instance; sorry = the conjecture)
+  -- Ref: [leitner2026] conj:confinement-grading-correspondence (§3b-cond conjectural-class instance; sorry = the conjecture)
   filtrations_agree _ := rfl
 
 end ConfinementGradingCorrespondence

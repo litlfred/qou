@@ -1,1 +1,1 @@
-We may assume that the k clasp arcs are transverse to ﬁbers of H, and
+Destabilizations which are predicated on the existence of a valence 1 vertex reduce the number of singularities (resp. vertices) in the foliation of F by 1 (resp. 1). Proof Clear. See Figure 22(a). Before we can describe our exchange moves, a new concept is needed. We observe that, intuitively, b–arcs in the foliation of F arise when there are ‘pockets’ in the surface, and we are now interested in the case when a ‘pocket is empty’ and so can be removed.

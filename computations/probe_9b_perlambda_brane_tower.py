@@ -94,6 +94,8 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     classical_dim,
     partitions_of,
 )
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 # AME2020 totals (MeV) — comparison target only (same list as
 # borromean_binding_recompute.py).
@@ -104,8 +106,8 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
 # has no business arriving pre-rounded.  Strings also make the ordering
 # against `set_compute_dps()` (line below) irrelevant for them rather than
 # merely harmless.
-ISO = [("2H", 1, 1, "2.224573"), ("3H", 1, 2, "8.481821"),
-       ("3He", 2, 1, "7.718058"), ("4He", 2, 2, "28.295673"),
+ISO = [("2H", 1, 1, _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)), ("3H", 1, 2, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+       ("3He", 2, 1, _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)), ("4He", 2, 2, _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)),
        ("6Li", 3, 3, "31.994564"), ("7Li", 3, 4, "39.244533"),
        ("12C", 6, 6, "92.161728"), ("16O", 8, 8, "127.619"),
        ("56Fe", 26, 30, "492.254")]

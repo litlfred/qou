@@ -1,0 +1,107 @@
+{
+ "producer": "computations/probes/lepton_strand_chirality_probe.py",
+ "bean": "qou-g0jn",
+ "arithmetic": "exact (sympy over Q(q)); no floats",
+ "q0_anchor": "none (symbolic in q)",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "probe never reads q0: every quantity is exact over Q(q) (sympy), with q a free symbol; its import cone (w_braid_reconcile_probe) evaluates nothing at a substrate pin",
+ "assumption": "leptons = second copy of doublet V (nu = K=q vector)",
+ "Q3a_transfer": {
+  "commutant_dim": 2,
+  "W_minus_K_eigenvalue": "q**(-2)",
+  "basis": [
+   {
+    "generator": "x12",
+    "acts_on_W_minus_as_scalar": true,
+    "scalar": "-1/q**2",
+    "matrix": [
+     [
+      "1 - 1/q**2",
+      "0",
+      "0",
+      "q**(-2)"
+     ],
+     [
+      "0",
+      "-1/q**2",
+      "0",
+      "0"
+     ],
+     [
+      "0",
+      "0",
+      "-1/q**2",
+      "0"
+     ],
+     [
+      "1",
+      "0",
+      "0",
+      "0"
+     ]
+    ]
+   },
+   {
+    "generator": "x15",
+    "acts_on_W_minus_as_scalar": true,
+    "scalar": "1",
+    "matrix": [
+     [
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     [
+      "0",
+      "1",
+      "0",
+      "0"
+     ],
+     [
+      "0",
+      "0",
+      "1",
+      "0"
+     ],
+     [
+      "0",
+      "0",
+      "0",
+      "1"
+     ]
+    ]
+   }
+  ]
+ },
+ "Q3b_chain_amplitudes": [
+  {
+   "quark_vertex": "L",
+   "lepton_vertex": "L",
+   "amplitude": "c*q**2/(q**2 + 1)**2",
+   "abs_sq": "c**2*q**4/(q**2 + 1)**4"
+  },
+  {
+   "quark_vertex": "L",
+   "lepton_vertex": "R",
+   "amplitude": "-c*q**2/(q**2 + 1)**2",
+   "abs_sq": "c**2*q**4/(q**2 + 1)**4"
+  },
+  {
+   "quark_vertex": "R",
+   "lepton_vertex": "L",
+   "amplitude": "-c*q**2/(q**2 + 1)**2",
+   "abs_sq": "c**2*q**4/(q**2 + 1)**4"
+  },
+  {
+   "quark_vertex": "R",
+   "lepton_vertex": "R",
+   "amplitude": "c*q**2/(q**2 + 1)**2",
+   "abs_sq": "c**2*q**4/(q**2 + 1)**4"
+  }
+ ],
+ "checks": {
+  "Q3a_dim2_scalar_on_W_minus": true,
+  "Q3b_same_magnitude_all_four": true
+ }
+}

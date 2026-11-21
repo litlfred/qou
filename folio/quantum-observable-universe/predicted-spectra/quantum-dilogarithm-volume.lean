@@ -17,7 +17,7 @@ LaTeX label: `prop:quantum-dilogarithm-volume`
 
 ## References
 
-- [manuscript] §5/quantum-dilogarithm-volume
+- [leitner2026] §5/quantum-dilogarithm-volume
 - [turaev2010] https://doi.org/10.1515/9783110221848
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
@@ -54,7 +54,7 @@ noncomputable def bindingEnergy (q : ℝ) (markovFactors : List ℝ) : ℝ :=
     Φ_q = 0 (no binding).  At q > 1, crossing asymmetry
     creates nonzero Φ_q and the nucleus is bound. -/
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
--- Ref: [manuscript] §5/quantum-dilogarithm-volume
+-- Ref: [leitner2026] §5/quantum-dilogarithm-volume
 -- Dropped the unused hypotheses `hq : 1 < q`, `parentFactors daughterFactors`
 -- and `h_parent_len` (2026-08-22; vacuity ledger,
 -- `proof-no-unused-hypothesis-rfl`).  The equation is the definitional
@@ -73,7 +73,7 @@ theorem quantum_dilogarithm_volume
 /-- The Q-value for beta decay is the difference in quantum
     dilogarithm volumes between parent and daughter, normalised
     by ℏ_q². -/
--- Ref: [manuscript] §5/quantum-dilogarithm-volume
+-- Ref: [leitner2026] §5/quantum-dilogarithm-volume
 theorem beta_decay_qvalue
     (q : ℝ) (hq : 1 < q)
     (parentFactors daughterFactors : List ℝ)
@@ -81,13 +81,13 @@ theorem beta_decay_qvalue
       (quantumDilogarithmVolume parentFactors -
        quantumDilogarithmVolume daughterFactors) / (hbarQ q) ^ 2 := by
   unfold bindingEnergy
-  -- Ref: [manuscript] §5/quantum-dilogarithm-volume
+  -- Ref: [leitner2026] §5/quantum-dilogarithm-volume
   -- a/c - b/c = (a - b)/c
   simp [sub_div]
 
 /-- At q = 1 (classical limit), ℏ_q = 0, reflecting that the
     classical regime has no binding energy (degenerate configurations). -/
--- Ref: [manuscript] §5/quantum-dilogarithm-volume
+-- Ref: [leitner2026] §5/quantum-dilogarithm-volume
 theorem classical_limit_no_binding : hbarQ 1 = 0 := by
   unfold hbarQ
   norm_num

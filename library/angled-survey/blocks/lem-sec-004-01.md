@@ -1,0 +1,1 @@
+The Lobachevsky function L(x) is well deﬁned and continuous on R (even though the deﬁning integral is improper), and periodic with period π. Furthermore, if T is a hyperbolic ideal tetrahedron with dihedral angles α, β, γ, its volume satisﬁes vol(T) = L(α) + L(β) + L(γ).

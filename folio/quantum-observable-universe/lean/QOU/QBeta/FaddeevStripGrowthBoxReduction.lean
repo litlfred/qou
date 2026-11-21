@@ -34,7 +34,7 @@ tractable form. No fit; nothing wired; §7c: the reduction is over `ℂ` (the ar
 strip is genuinely `ℂ`-analytic, so `ℝ`/`ℂ` here is correct, not gratuitous). Uses
 only on-`main` `DoublyPeriodicLiouville`. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-31-faddeev-stripgrowth-box-reduction.md
+-- Ref: [leitner2026] docs/audits/2026-07-31-faddeev-stripgrowth-box-reduction.md
 -/
 import Mathlib.LinearAlgebra.Basis.Defs
 import Mathlib.LinearAlgebra.Basis.Basic

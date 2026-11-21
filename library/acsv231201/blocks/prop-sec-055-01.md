@@ -1,0 +1,1 @@
+The point p ∈V is a multiple point if and only if there is a factorization Q(z) = n Y j=1 Q j(z)m j (10.24) in Op with ∇Q j(p) , 0 and Q j(p) = 0. The point p is a transverse multiple point with n divisors if and only if in addition the gradient vectors ∇Q j for 1 ≤j ≤n are linearly independent.

@@ -1,0 +1,53 @@
+6.3 Convex cones and exponential bounds 151
+
+c) Every open convex cone is the intersection of all open half-spaces that con-
+tain it.
+
+d) After a translation by x, the tangent cone to B at x is the interior of the
+intersection of all halfspaces that contain B and have a on their boundary.
+
+e) If a is an interior point of B then normal,(B) = {0}.
+
+f) The normal cone is the dual cone to the negative of the tangent cone,
+
+normal,(B) = (— tan,(B))* .
+The result we need comes from the following correspondence.
+
+Proposition 6.27. Let f be a Laurent polynomial and let x be a point in a
+component B of amoeba(f)°. Then the recession cone of B equals the normal
+cone of N ¢ at v(x).
+
+Proof Lets € Z4 \ {0}. By definition, the ray {a + ts : t > O} stays in B
+
+if and only if all zeros of f(piw*',..., paw*@) lie inside |w| = 1 for all p €
+Relog™!(a), and Lemma 6.14 implies this occurs if and only if s - v(a) equals
+the total number of zeros of ag(w) = f(e“'w"!,...,e*!w*) in the complex plane
+
+minus the order of the pole of as(w) at the origin. Since as(w) has degree
+MaXney (S$ - 7), it follows that
+
+s is in the recession cone of B
+
+if and only if{a+ts:t>0}c Bforallae B
+
+if and only if s - v(a) = max(s-7) foralla eB
+neN 5
+
+if and only if s € normal py (Ny),
+
+proving the desired equivalence. ia)
+
+Exercise 6.9. Prove that the order of any bounded component of amoeba(f)°
+is an interior point of Ny, then prove that the recession cone of a component
+of amoeba(f)* has nonempty interior if and only if its order is a vertex of Ny.
+
+Proposition 6.27 allows us to read off properties of the components of the
+complement amoeba(f)° directly from the Newton polytope of f. It also has
+strong implications for the asymptotic behavior of sequences with multivariate
+rational generating functions.
+
+Corollary 6.28. Assume the hypotheses of Proposition 6.24 and let x € B. If
+the ray {v(a) +t? : t > 0} does not intersect Ng then ay, = 0 for all but finitely
+many n.
+
+Proof See Exercise 6.17. ia)

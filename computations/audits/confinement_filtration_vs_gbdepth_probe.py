@@ -32,7 +32,13 @@ minimum `1/[k]_q!` is *"attained by the trivial 1-dimensional (k) AND (1^k)
 representations"*, which needs `dim_q = 1` for BOTH -- true only without the
 `q^{n(λ)}` prefactor.  §0 measures that the identity DISCRIMINATES (FAKE
 holds at n = 2..5, SYM fails at all four), and it rejected my first pass,
-which used SYM alone.  Related: bean `qou-oots`.
+which used SYM alone.
+
+Related but NOT the same question: bean `qou-oots` ruled the Phi_k WEIGHT
+FAMILY (Molien, owner 2026-09-05, re-affirmed 09-08).  That fixes the
+canonical Phi_k weight as a fake-degree object; it does NOT settle which
+convention `E` uses inside `def:knot-operator-energy`, whose own text pins
+SYM.  See the block comment above §1.
 
 RESULT.  `E` and `gbDepth` induce **different** groupings of the partitions,
 under BOTH conventions, symbolically over `ℚ(q)` and numerically at `q₀`:
@@ -176,8 +182,29 @@ def f_lambda(lam) -> int:
 #           identity AGENTS.md states is Lean-proved sorry-free.
 #
 # That the two differ is not news -- AGENTS.md's own notation register flags
-# the weight families as a live collision, and bean `qou-oots` records that
-# whether dim_q^2 is even the right numerator is OPEN.
+# the weight families as a live collision.
+#
+# 🛑 CORRECTING MYSELF (2026-09-14, hours after this file landed).  The line
+# above used to continue "...and bean `qou-oots` records that whether dim_q^2
+# is even the right numerator is OPEN."  That is FALSE and it was not my
+# measurement -- I copied it from AGENTS.md, which had gone stale.  The owner
+# RULED on it 2026-09-05 ('molien. do the two arm reporting') and re-affirmed
+# it 2026-09-08: Molien `f^lam q^{-kappa} dim_q/[n]_q!` is the canonical Phi_k
+# weight; `dim_q^2/D^2` is a LABELLED comparison arm.  Both AGENTS.md and this
+# comment were fixed in the same commit; they were the only two live carriers.
+#
+# AND THE TWO QUESTIONS ARE NOT THE SAME ONE -- do not collapse them:
+#
+#   * `qou-oots` ruled the WEIGHT FAMILY for Phi_k (Molien vs dim_q^2/D^2).
+#   * THIS probe's two conventions are how dim_q ITSELF is computed, inside
+#     `def:knot-operator-energy`'s `E(lam,q)` -- a different object from the
+#     Phi_k weight.  The ruling does NOT settle it, which is why both arms
+#     are carried below and every result is reported under each.
+#
+# What the ruling DOES reach is §0: the Molien identity holds under FAKE
+# alone, so the canonical Phi_k weight is a fake-degree object.  That does not
+# transfer to `E`, whose own block text pins SYM (see above).  The tension
+# inside `def:knot-operator-energy` is untouched by the ruling and stays open.
 # ---------------------------------------------------------------------------
 
 def qint_sym(m):

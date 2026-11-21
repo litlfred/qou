@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:06:42.221121+00:00",
-  "commitSha": "766a531446726071965fd29785f076e1780bc036",
+  "computedAt": "2026-09-19T08:49:06.477835+00:00",
+  "commitSha": "dbc2d2fae512f1a1216704b5c5dc5863e4437173",
   "assertions": [
     {
       "name": "factorisation_h_equals_hbar_q_times_q_plus_1",
@@ -15,7 +15,7 @@
     },
     {
       "name": "log_decomposition_identity",
-      "computed": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
+      "computed": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "hecke-log-decomposition-probe",
   "scriptFile": "hecke_log_decomposition_probe.py",
   "scriptHash": "347e8dea4691",
-  "scriptCommitSha": "a791fb0f6b4f9310091a31bc03a3dbd8bfa64438",
+  "scriptCommitSha": "eb491d0440b6a56bd393d9c7b3d268b428ff5f86",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -56,7 +56,7 @@
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "max_factorisation_residue": 9.055679078826712e-72,
-    "max_log_form_residue": 1.8111358157653425e-71
+    "max_log_form_residue": 3.622271631530685e-71
   },
   "data": {
     "per_q_value_results": [
@@ -66,7 +66,7 @@
         "h": 0.2090602987956393,
         "hbar_q": 0.09908171604425851,
         "factorisation_residue": "2.263919769706678091877279822721947945170632799534784547395653722483875e-72",
-        "log_form_residue": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71"
+        "log_form_residue": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71"
       },
       {
         "label": "q = 1.5",

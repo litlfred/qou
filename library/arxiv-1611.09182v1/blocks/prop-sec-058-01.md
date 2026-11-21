@@ -1,0 +1,1 @@
+That is, our Dirac spinor, ΨD = ΨL + ΨR was found to be an irreducible representation of Cl(2)⊗CCl(2), and our generation of quarks and leptons of Chapter 6 was found to be an irreducible representation of Cl(6) ⊗C Cl(2).

@@ -1,0 +1,69 @@
+using assms
+
+using poincare-distance-formula[OF assms(1) assms(2)]
+using poincare-distance-formula[OF assms(2) assms(1)]
+by (simp add: mult.commute norm-minus-commute)
+
+lemma poincare-distance-formula'-ge-1:
+assumes u € unit-disc and v € unit-disc
+shows 1 < poincare-distance-formula’ (to-complex u) (to-complez v)
+using unit-disc-cmod-square-lt-1|OF assms(1)| unit-disc-cmod-square-lt-1[OF assms(2)]
+by auto
+
+poincare-distance is non-negative.
+
+lemma poincare-distance-ge0:
+assumes u € unit-disc and v € unit-disc
+shows poincare-distance uv > 0
+using poincare-distance-formula'-ge-1 assms by (simp add: poincare-distance-formula)
+
+lemma cosh-dist:
+assumes u € unit-disc and v € unit-disc
+shows cosh-dist uv = poincare-distance-formula’ (to-complex u) (to-complez v)
+using poincare-distance-formula[OF assms| poincare-distance-formula'-ge-1[OF assms]
+by simp
+
+poincare-distance is zero only if the two points are equal.
+
+lemma poincare-distance-eq-0-iff :
+assumes u € unit-disc and v € unit-disc
+shows poincare-distance uv = 0 +> u=v
+using assms
+apply auto
+using poincare-distance-formula'-ge-1[OF assms]
+using unit-disc-cmod-square-lt-1|OF assms(1)| unit-disc-cmod-square-lt-1[OF assms(2)]
+apply (simp add: poincare-distance-formula)
+by (simp add: unit-disc-to-complex-inj)
+
+Conjugate preserve poincare-distance-formula.
+
+lemma conjugate-preserve-poincare-distance [simp]:
+assumes u € unit-disc and v € unit-disc
+shows poincare-distance (conjugate u) (conjugate v) = poincare-distance u v
+proof—
+obtain u’ v' where «: u = of-complex u' v = of-complex v'
+using assms inf-or-of-complez|of u] inf-or-of-complez|of v]
+by auto
+
+have **: conjugate u € unit-disc conjugate v € unit-disc
+using * assms
+by auto
+
+show ?thesis
+using *
+using poincare-distance-formula|OF assms]
+using poincare-distance-formula[OF x]
+by (metis complez-cnj-diff complex-mod-cnj conjugate-of-complex poincare-distance-def poincare-distance-formula'-def
+poincare-distance-formula-def to-complex-of-complex)
+qed
+
+5.2 Existence and uniqueness of points with a given distance
+
+lemma ez-2-azis-poincare-distance-negative’:
+fixes d :: real
+assumes d > 0
+shows let z = (1 — exp d) / (1 + exp d)
+in is-realz \ Rez< 0A Rez>-1A
+of-complex z € unit-disc \ of-complex z € circline-set x-axis A
+poincare-distance 0, (of-complex z) = d
+proof—

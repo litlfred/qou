@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0309426v2
-doc_title: "arXiv:math/0309426v2 [math.RT] 1 Jul 2004"
+doc_title: "ELEMENTARY DIVISORS OF SPECHT MODULES"
 section_id: sec-005-6-the-elementary-divisors-for-hook-partitions
 section_title: "The elementary divisors for hook partitions"
 section_number: 6
@@ -10,7 +10,8 @@ source_sha256: f2aa01164d9f243c
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.967
+latex_coverage_ratio: 0.928
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 9 sections: Front matter; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 Throughout this section we fix an integer $k$, with $0\le k<n$, and
 consider the Specht module $S(\lambda)$, where $\lambda=(n-k,1^k)$. We

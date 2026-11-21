@@ -1,0 +1,1 @@
+Let M be an abelian category with enough injectives. The following are equivalent for M ∈M : (i) M is an injective object of M. (ii) Extp M(N, M) = 0 for every N ∈M and every p ≥1. (iii) Ext1 M(N, M) = 0 for every N ∈M.

@@ -68,7 +68,7 @@ def jones_hopf_at_q1 : R := -2
 
 The leading-order term of `chi_V3_diff` in (q − 1) is `-2·(q-1)` plus
 higher orders. -/
--- Ref: [manuscript] prop:q-beta-c3-hopf-three-fold-markov (Fact 3)
+-- Ref: [leitner2026] prop:q-beta-c3-hopf-three-fold-markov (Fact 3)
 theorem chi_V3_diff_value_at_1 : chi_V3_diff (1 : Rˣ) = (0 : R) := by
   unfold chi_V3_diff; simp
 

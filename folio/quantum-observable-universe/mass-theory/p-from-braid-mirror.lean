@@ -85,7 +85,7 @@ Deliberately generic. The writhe is `ℤ`-valued and the `q`-datum is an arbitra
 `Q` — no ordering, no `Real`, nothing archimedean is needed to say what `P` does, so per
 §7c this stays over type variables rather than specialising.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/p-from-braid-mirror.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/p-from-braid-mirror.ts
 -/
 
 namespace QOU.BraidsAndKnots
@@ -103,7 +103,7 @@ The `fixes_q` field is what separates this from the bar-involution: bar sends
 **No instance is provided.** Downstream results consume this as
 `[PFromBraidMirror P w qOf]` and are genuinely conditional on it.
 
--- Ref: [manuscript] conj:p-from-braid-mirror -/
+-- Ref: [leitner2026] conj:p-from-braid-mirror -/
 class PFromBraidMirror {B : Type*} {Q : Type*}
     (P : B → B) (w : B → ℤ) (qOf : B → Q) : Prop where
   /-- `P` is an involution: `P² = id`. -/

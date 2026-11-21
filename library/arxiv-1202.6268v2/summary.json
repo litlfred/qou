@@ -3,21 +3,26 @@
  "doc_id": "arxiv-1202.6268v2",
  "source_sha256": "209af6ae25439050",
  "brief": "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that",
- "extended": "**THE QUANTUM CONTENT OF THE GLUING EQUATIONS**\n\n*TUDOR DIMOFTE AND STA VROS GAROUF ALIDIS*\n\n53 pp, 41 sections.\n\n**Abstract.** The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that describe the complete hyperbolic structure of M and its deformations. Given a Neumann-Zagier datum (comprising the shapes together with the gluing equations in a partic ular canonical form) we deﬁne a formal power series with coeﬃcients in the invariant trace ﬁ eld of M that should (a) agree with the asymptotic expansion of the Kashaev invariant to all orders, and (b) contain the nonabelian Reidemeister-Ray-Singer torsion of M as its ﬁrst subleading “1-loop” term. As a case study, we prove topological invariance of the 1-loop part of the constructed series and extend it into a formal power series of rational functions on th e PSL(2 , C) character variety of M .\n\n**Outline.** 1 Introduction; 1.1 The Kashaev invariant and perturbative Che; 1.2 The Neumann-Zagier datum; 1.3 The 1-loop invariant; 1.4 Expectations; 1.5 The higher-loop invariants; 1.6 Feynman diagrams; 1.7 The 2-loop invariant; 1.8 The 3-loop invariant; 1.9 Generalizations; Acknowledgment; 2 Mechanics of triangulations; 2.1 Ideal tetrahedra; 2.2 The gluing matrices; 2.3 The Neumann-Zagier matrices; 2.5 The shape solutions to the gluing equation; 3 Topological invariance of our torsion; 3.2 Independence of a choice of quad type\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.3: τT is independent of the quad type of T , the chosen edge of T , the choice of\n- Theorem 1.4: τT is constant on every component of Xρ0 connected by 2–3 moves.\n- Theorem: s 1.3 and 1.4 is still missing. We hope to address this in future work.\n- Theorem 4.1: The formula for τT (ρ) is independent of the choice of enhanced Neumann-\n- Proposition: B.1. Fix a regular ideal triangulation T of a one-cusped hyperbolic manifold\n- Proposition: B.1 has the following concrete corollary.",
+ "extended": "**THE QUANTUM CONTENT OF THE GLUING EQUATIONS**\n\n*TUDOR DIMOFTE AND STAVROS GAROUFALIDIS*\n\n53 pp, 50 sections.\n\n**Abstract.** The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that describe the complete hyperbolic structure of M and its deformations. Given a Neumann-Zagier datum (comprising the shapes together with the gluing equations in a particular canonical form) we deﬁne a formal power series with coeﬃcients in the invariant trace ﬁeld of M that should (a) agree with the asymptotic expansion of the Kashaev invariant to all orders, and (b) contain the nonabelian Reidemeister-Ray-Singer torsion of M as its ﬁrst subleading “1-loop” term. As a case study, we prove topological invariance of the 1-loop part of the constructed series and extend it into a formal power series of rational functions on the PSL(2, C) character variety of M.\n\n**Outline.** Front matter; 1.1 The Kashaev invariant and perturbative Che; 1 Introduction; 1.2 The Neumann-Zagier datum; 1.3 The 1-loop invariant; 1.4 Expectations; 1.5 The higher-loop invariants; 1.6 Feynman diagrams; 1.7 The 2-loop invariant; 1.8 The 3-loop invariant; 1.9 Generalizations; Acknowledgment; 2 Mechanics of triangulations; 2.1 Ideal tetrahedra; 2.2 The gluing matrices; 2.3 The Neumann-Zagier matrices; 2.4 Combinatorial flattenings; 2.5 The shape solutions to the gluing equation",
  "tokens": {
   "brief": 47,
-  "extended": 505
+  "extended": 358
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-11-the-kashaev-invariant-and-perturbative-chern",
+   "id": "sec-000-11-the-kashaev-invariant-and-perturbative-chern",
    "title": "The Kashaev invariant and perturbative Chern-Simons theory",
-   "pages": "1-4"
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
   },
   {
    "id": "sec-002-12-the-neumann-zagier-datum",
@@ -37,12 +42,12 @@
   {
    "id": "sec-005-15-the-higher-loop-invariants",
    "title": "The higher-loop invariants",
-   "pages": "6-7"
+   "pages": "6-8"
   },
   {
    "id": "sec-006-16-feynman-diagrams",
    "title": "Feynman diagrams",
-   "pages": "7-8"
+   "pages": "8-8"
   },
   {
    "id": "sec-007-17-the-2-loop-invariant",
@@ -82,135 +87,175 @@
   {
    "id": "sec-014-23-the-neumann-zagier-matrices",
    "title": "The Neumann-Zagier matrices",
-   "pages": "12-14"
+   "pages": "12-13"
   },
   {
-   "id": "sec-015-25-the-shape-solutions-to-the-gluing-equations",
+   "id": "sec-015-24-combinatorial-flattenings",
+   "title": "Combinatorial flattenings",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-016-25-the-shape-solutions-to-the-gluing-equations",
    "title": "The shape solutions to the gluing equations",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-017-26-example-41",
+   "title": "Example: 41",
    "pages": "14-15"
   },
   {
-   "id": "sec-016-3-topological-invariance-of-our-torsion",
+   "id": "sec-018-3-topological-invariance-of-our-torsion",
    "title": "Topological invariance of our torsion",
    "pages": "15-16"
   },
   {
-   "id": "sec-017-32-independence-of-a-choice-of-quad-type",
+   "id": "sec-019-31-example-41-continued",
+   "title": "Example: 41 continued",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-020-32-independence-of-a-choice-of-quad-type",
    "title": "Independence of a choice of quad type",
    "pages": "16-17"
   },
   {
-   "id": "sec-018-33-independence-of-a-choice-of-edge",
+   "id": "sec-021-33-independence-of-a-choice-of-edge",
    "title": "Independence of a choice of edge",
    "pages": "17-18"
   },
   {
-   "id": "sec-019-34-independence-of-a-choice-of-meridian-path",
+   "id": "sec-022-34-independence-of-a-choice-of-meridian-path",
    "title": "Independence of a choice of meridian path",
    "pages": "18-19"
   },
   {
-   "id": "sec-020-36-invariance-under-23-moves",
+   "id": "sec-023-35-independence-of-a-choice-of-flattening",
+   "title": "Independence of a choice of flattening",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-024-36-invariance-under-23-moves",
    "title": "Invariance under 2–3 moves",
    "pages": "19-22"
   },
   {
-   "id": "sec-021-4-torsion-on-the-character-variety",
+   "id": "sec-025-4-torsion-on-the-character-variety",
    "title": "Torsion on the character variety",
    "pages": "22-23"
   },
   {
-   "id": "sec-022-42-the-epstein-penner-cell-decomposition-and-its",
+   "id": "sec-026-41-a-review-of--regular-ideal-triangulations",
+   "title": "A review of -regular ideal triangulations",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-027-42-the-epstein-penner-cell-decomposition-and-its",
    "title": "The Epstein-Penner cell decomposition and its triangulations",
    "pages": "23-24"
   },
   {
-   "id": "sec-023-43-neumann-zagier-datum-and-the-geometric-compon",
+   "id": "sec-028-43-neumann-zagier-datum-and-the-geometric-compon",
    "title": "Neumann-Zagier datum and the geometric component",
    "pages": "24-25"
   },
   {
-   "id": "sec-024-44-flattening-compatible-with-a-longitude",
+   "id": "sec-029-44-flattening-compatible-with-a-longitude",
    "title": "Flattening compatible with a longitude",
    "pages": "25-26"
   },
   {
-   "id": "sec-025-45-invariance-of-the-generalized-torsion",
+   "id": "sec-030-45-invariance-of-the-generalized-torsion",
    "title": "Invariance of the generalized torsion",
-   "pages": "26-29"
+   "pages": "26-27"
   },
   {
-   "id": "sec-026-5-the-state-integral-and-higher-loops",
+   "id": "sec-031-46-example-41-continued",
+   "title": "Example: 41 continued",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-032-5-the-state-integral-and-higher-loops",
    "title": "The state integral and higher loops",
    "pages": "29-30"
   },
   {
-   "id": "sec-027-51-critical-points",
+   "id": "sec-033-51-critical-points",
    "title": "Critical points",
    "pages": "30-32"
   },
   {
-   "id": "sec-028-52-volume",
+   "id": "sec-034-52-volume",
    "title": "Volume",
    "pages": "32-33"
   },
   {
-   "id": "sec-029-53-torsion-revisited",
+   "id": "sec-035-53-torsion-revisited",
    "title": "Torsion revisited",
    "pages": "33-33"
   },
   {
-   "id": "sec-030-54-feynman-diagrams-and-higher-loops",
+   "id": "sec-036-54-feynman-diagrams-and-higher-loops",
    "title": "Feynman diagrams and higher loops",
    "pages": "33-35"
   },
   {
-   "id": "sec-031-55-n-loop-invariants-on-the-character-variety",
+   "id": "sec-037-55-n-loop-invariants-on-the-character-variety",
    "title": "n-loop invariants on the character variety",
    "pages": "35-37"
   },
   {
-   "id": "sec-032-appendix-a-symplectic-properties-of-a-and-b",
+   "id": "sec-038-56-example-41-completed",
+   "title": "Example: 41 completed",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-039-appendix-a-symplectic-properties-of-a-and-b",
    "title": "Appendix A. Symplectic properties of A and B",
    "pages": "37-39"
   },
   {
-   "id": "sec-033-appendix-b-the-shape-parameters-are-rational-fun",
+   "id": "sec-040-appendix-b-the-shape-parameters-are-rational-fun",
    "title": "Appendix B. The shape parameters are rational functions on the character variety",
    "pages": "39-40"
   },
   {
-   "id": "sec-034-appendix-c-deriving-the-state-integral",
+   "id": "sec-041-appendix-c-deriving-the-state-integral",
    "title": "Appendix C. Deriving the state integral",
    "pages": "40-40"
   },
   {
-   "id": "sec-035-c1-symplectic-gluing",
+   "id": "sec-042-c1-symplectic-gluing",
    "title": "C.1. Symplectic gluing",
    "pages": "40-41"
   },
   {
-   "id": "sec-036-c2-quantization",
+   "id": "sec-043-c2-quantization",
    "title": "C.2. Quantization",
    "pages": "41-42"
   },
   {
-   "id": "sec-037-c3-quantum-reduction",
+   "id": "sec-044-c3-quantum-reduction",
    "title": "C.3. Quantum reduction",
    "pages": "42-44"
   },
   {
-   "id": "sec-038-c5-normalization-and-invariance",
+   "id": "sec-045-c4-introducing-a-flattening",
+   "title": "C.4. Introducing a flattening",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-046-c5-normalization-and-invariance",
    "title": "C.5. Normalization and invariance",
    "pages": "44-46"
   },
   {
-   "id": "sec-039-appendix-d-computer-implementation-and-computati",
+   "id": "sec-047-appendix-d-computer-implementation-and-computati",
    "title": "Appendix D. Computer implementation and computations",
    "pages": "46-47"
   },
   {
-   "id": "sec-040-references",
+   "id": "sec-048-references",
    "title": "References",
    "pages": "47-53"
   }
@@ -219,8 +264,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

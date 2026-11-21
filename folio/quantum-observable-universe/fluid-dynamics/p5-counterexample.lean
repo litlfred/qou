@@ -30,7 +30,7 @@ explicit `[Instance]` hypothesis to retain
 
 ## References
 
-- [manuscript] §Counter-example to Navier–Stokes regularity via q → 1 degeneration, `conj:ns-counterexample`
+- [leitner2026] §Counter-example to Navier–Stokes regularity via q → 1 degeneration, `conj:ns-counterexample`
 -/
 
 namespace QOU.FluidDynamics
@@ -58,7 +58,7 @@ class NSCounterexample where
       tends to $0$ as $t \to T^{*-}$ and so exhibits no finite-time
       singularity at all (verified counterexample:
       `docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.lean`). -/
-  -- Ref: [manuscript] fluid-dynamics/p5-counterexample
+  -- Ref: [leitner2026] fluid-dynamics/p5-counterexample
   ns_counterexample_holds :
     ∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
       ∃ t x : ℝ, singularityTime - ε < t ∧ t < singularityTime ∧

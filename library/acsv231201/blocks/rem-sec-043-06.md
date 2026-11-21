@@ -1,0 +1,1 @@
+Given z ∈V let L(z) denote the logarithmic normal space to the stratum S containing z, given by the span of the logarithmic gradients of the functions locally deﬁning S at z. Then z ∈critical(r) if and only if r ∈L(z), and this deﬁnes a binary relation on (V, Rd). We end this section with some examples in low dimensions. Eﬀective computations and ACSV

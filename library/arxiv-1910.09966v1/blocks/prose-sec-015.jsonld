@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1910.09966v1/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Fermions and Number Theory",
-  "pageStart": 29,
-  "pageEnd": 31,
-  "text": "../sections/sec-015-7-fermions-and-number-theory.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1910.09966v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1910.09966v1",
+  "title": "Electric Charge as a Frame of the Knot Complement",
+  "pageStart": 24,
+  "pageEnd": 26,
+  "text": "../sections/sec-015-52-electric-charge-as-a-frame-of-the-knot-comple.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1910.09966v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1910.09966v1/manifest.jsonld",
   "provenance": "ingested"
 }

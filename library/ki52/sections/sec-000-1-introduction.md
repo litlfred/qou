@@ -8,7 +8,10 @@ pages: 1-5
 source_pdf: ki52.pdf
 source_sha256: 35ad4ee5a00d4a18
 toc_source: inferred
+doc_brief: "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot — We give a presentation of the asymptotic expansion of the Kas haev invariant of the52 knot."
+duplicate_of: "104171-qt-83"
 ---
+Introduction
 In [16, 17] Kashaev deﬁned the Kashaev invariant ⟨L ⟩N ∈C of a link L for N = 2, 3, · · ·
 by using the quantum dilogarithm. In [18] he conjectured that, for any hyperbolic link L,
 2π · lim
@@ -271,6 +274,7 @@ mation formula, and show Proposition 4.6. In Section 5, we give a proof of Theor
 4
 by using the Poisson summation formula (Proposition 4.6) and the saddle point method
 (Proposition 3.5).
+
 The author would like to thank Yoshiyuki Yokota for many helpful comments on the
 volume conjecture and the calculation of the Kashaev invariant, and Takashi Kumagai
 for many helpful comments on the calculation of the saddle point method and the Pois-
@@ -278,4 +282,3 @@ son summation formula. The author would also like to thank Tudor Dimofte, Stavro
 Garoufalidis, Rinat Kashaev, Hitoshi Murakami, Toshie Takata and Dylan Thurston for
 many helpful comments. He would also like to thank the referees for careful reading of
 the manuscript.
-2

@@ -7,27 +7,36 @@
   "bytes": 344011,
   "pages": 12,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "FPSAC 2011, Reykjav\u00edk, Iceland DMTCS proc. AO, 2011, 317\u2013328 Dual combinatorics of zonal polynomials",
-  "authors_raw": "Valentin F\u00e9ray1 and Piotr \u015aniady2,3",
+  "title": "FPSAC 2011, Reykjavík, Iceland",
+  "authors_raw": "DMTCS proc. AO, 2011, 317–328",
   "title_lines": [
-   "FPSAC 2011, Reykjav\u00edk, Iceland DMTCS proc. AO, 2011, 317\u2013328",
-   "Dual combinatorics of zonal polynomials"
+   "FPSAC 2011, Reykjavík, Iceland"
   ],
-  "abstract": "In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle. We deduce from it formulas for zonal characters, which are de\ufb01ned as suitably normalized coef\ufb01cients in the expansion of zonal polynomials in terms of power-sum symmetric functions. These formulas are analogs of recent developments on irreducible character values of symmetric groups. The existence of such formulas could have been predicted from the work of M. Lassalle who formulated two positivity conjectures for Jack characters, which we prove in the special case of zonal polynomials. R\u00e9sum\u00e9. Dans cet article, nous \u00e9tablissons une nouvelle formule combinatoire pour les polyn\u00f4mes zonaux en fonction des fonctions puissance. La preuve utilise le principe de l\u2019involution changeant les signes. Nous en d\u00e9duisons des formules pour les caract\u00e8res zonaux, qui sont d\u00e9\ufb01nis comme les coef\ufb01cients des polyn\u00f4mes zonaux \u00e9crits sur la base des fonctions puissance, normalis\u00e9s de mani\u00e8re appropri\u00e9e. Ces formules sont des analogues de d\u00e9veloppements r\u00e9cents sur les caract\u00e8res du groupe sym\u00e9trique. L\u2019existence de telles formules aurait pu \u00eatre pr\u00e9dite \u00e0 partir des travaux de M. Lassalle, qui a propos\u00e9 deux conjectures de positivit\u00e9 sur les caract\u00e8res de Jack, que nous prouvons dans le cas particulier des polyn\u00f4mes zonaux.",
+  "abstract": "In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle. We deduce from it formulas for zonal characters, which are deﬁned as suitably normalized coefﬁcients in the expansion of zonal polynomials in terms of power-sum symmetric functions. These formulas are analogs of recent developments on irreducible character values of symmetric groups. The existence of such formulas could have been predicted from the work of M. Lassalle who formulated two positivity conjectures for Jack characters, which we prove in the special case of zonal polynomials. Résumé. Dans cet article, nous établissons une nouvelle formule combinatoire pour les polynômes zonaux en fonction des fonctions puissance. La preuve utilise le principe de l’involution changeant les signes. Nous en déduisons des formules pour les caractères zonaux, qui sont déﬁnis comme les coefﬁcients des polynômes zonaux écrits sur la base des fonctions puissance, normalisés de manière appropriée. Ces formules sont des analogues de développements récents sur les caractères du groupe symétrique. L’existence de telles formules aurait pu être prédite à partir des travaux de M. Lassalle, qui a proposé deux conjectures de positivité sur les caractères de Jack, que nous prouvons dans le cas particulier des polynômes zonaux.",
   "docinfo": {
-   "Author": "",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.10",
+   "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20110611110800+02'00'"
-  }
+  },
+  "title_raw": "FPSAC 2011, Reykjavík, Iceland",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Dual combinatorics of zonal polynomials",
+   "outline": "Introduction",
+   "text": "FPSAC 2011, Reykjavík, Iceland",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials"
  },
  "toc": [
   {
@@ -35,163 +44,351 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "317"
   },
   {
    "level": 1,
    "title": "Notations",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "318"
   },
   {
    "level": 2,
    "title": "Symmetric functions",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "318"
   },
   {
    "level": 2,
    "title": "Jack symmetric functions and zonal polynomials",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "319"
   },
   {
    "level": 2,
    "title": "Pair partitions",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "319"
   },
   {
    "level": 1,
    "title": "The main result",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "320"
   },
   {
    "level": 2,
    "title": "Zonal polynomials in terms of pair-partition",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "320"
   },
   {
    "level": 2,
    "title": "Application",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "321"
   },
   {
    "level": 2,
    "title": "Combinatorial interpretation",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "321"
   },
   {
    "level": 2,
    "title": "Links between pair-partitions and zonal characters",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "321"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 3",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "322"
   },
   {
    "level": 2,
    "title": "Combinatorial lemmas",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "322"
   },
   {
    "level": 2,
    "title": "Triangularity",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "323"
   },
   {
    "level": 2,
    "title": "Orthogonality",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "324"
   },
   {
    "level": 2,
    "title": "Normalization",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "325"
   },
   {
    "level": 1,
    "title": "Combinatorial formulas for zonal characters",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "325"
   },
   {
    "level": 2,
    "title": "Via numbers of embeddings",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "325"
   },
   {
    "level": 2,
    "title": "In terms of Stanley's coordinates",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "326"
   },
   {
    "level": 2,
    "title": "In terms of free cumulants",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "326"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "327"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "317",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "318",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "319",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "320",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "321",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "322",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "323",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "324",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "325",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "326",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "327",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "328",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2003,
+   "n_words": 292,
+   "label_start": "317",
+   "label_end": "317"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 698,
-   "n_words": 110
+   "page_end": 2,
+   "n_chars": 1763,
+   "n_words": 285,
+   "label_start": "317",
+   "label_end": "318"
   },
   {
    "id": "sec-001-symmetric-functions",
    "number": null,
    "title": "Symmetric functions",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 2,
-   "n_chars": 1827,
-   "n_words": 294
+   "n_chars": 784,
+   "n_words": 128,
+   "label_start": "318",
+   "label_end": "318"
   },
   {
    "id": "sec-002-notations",
@@ -200,8 +397,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1440,
-   "n_words": 247
+   "n_chars": 1468,
+   "n_words": 266,
+   "label_start": "318",
+   "label_end": "319"
   },
   {
    "id": "sec-003-jack-symmetric-functions-and-zonal-polynomials",
@@ -210,8 +409,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1886,
-   "n_words": 307
+   "n_chars": 1959,
+   "n_words": 339,
+   "label_start": "319",
+   "label_end": "319"
   },
   {
    "id": "sec-004-pair-partitions",
@@ -220,8 +421,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 1738,
-   "n_words": 314
+   "n_chars": 1784,
+   "n_words": 343,
+   "label_start": "319",
+   "label_end": "320"
   },
   {
    "id": "sec-005-the-main-result",
@@ -230,8 +433,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 15,
+   "n_words": 3,
+   "label_start": "320",
+   "label_end": "320"
   },
   {
    "id": "sec-006-zonal-polynomials-in-terms-of-pair-partition",
@@ -240,8 +445,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2141,
-   "n_words": 397
+   "n_chars": 2226,
+   "n_words": 440,
+   "label_start": "320",
+   "label_end": "321"
   },
   {
    "id": "sec-007-application",
@@ -250,8 +457,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 984,
-   "n_words": 156
+   "n_chars": 1003,
+   "n_words": 164,
+   "label_start": "321",
+   "label_end": "321"
   },
   {
    "id": "sec-008-combinatorial-interpretation",
@@ -260,8 +469,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 574,
-   "n_words": 93
+   "n_chars": 602,
+   "n_words": 94,
+   "label_start": "321",
+   "label_end": "321"
   },
   {
    "id": "sec-009-links-between-pair-partitions-and-zonal-characte",
@@ -270,8 +481,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 485,
-   "n_words": 75
+   "n_chars": 536,
+   "n_words": 81,
+   "label_start": "321",
+   "label_end": "322"
   },
   {
    "id": "sec-010-proof-of-theorem-3",
@@ -280,8 +493,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 321,
-   "n_words": 67
+   "n_chars": 340,
+   "n_words": 71,
+   "label_start": "322",
+   "label_end": "322"
   },
   {
    "id": "sec-011-combinatorial-lemmas",
@@ -289,76 +504,122 @@
    "title": "Combinatorial lemmas",
    "level": 2,
    "page_start": 6,
-   "page_end": 8,
-   "n_chars": 5478,
-   "n_words": 1038
+   "page_end": 7,
+   "n_chars": 3920,
+   "n_words": 805,
+   "label_start": "322",
+   "label_end": "323"
   },
   {
-   "id": "sec-012-orthogonality",
+   "id": "sec-012-triangularity",
+   "number": null,
+   "title": "Triangularity",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1673,
+   "n_words": 333,
+   "label_start": "323",
+   "label_end": "324"
+  },
+  {
+   "id": "sec-013-orthogonality",
    "number": null,
    "title": "Orthogonality",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2423,
-   "n_words": 395
+   "n_chars": 2529,
+   "n_words": 488,
+   "label_start": "324",
+   "label_end": "325"
   },
   {
-   "id": "sec-013-normalization",
+   "id": "sec-014-normalization",
    "number": null,
    "title": "Normalization",
    "level": 2,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 393,
-   "n_words": 80
+   "n_chars": 408,
+   "n_words": 82,
+   "label_start": "325",
+   "label_end": "325"
   },
   {
-   "id": "sec-014-combinatorial-formulas-for-zonal-characters",
+   "id": "sec-015-combinatorial-formulas-for-zonal-characters",
    "number": null,
    "title": "Combinatorial formulas for zonal characters",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 375,
-   "n_words": 61
+   "n_chars": 419,
+   "n_words": 66,
+   "label_start": "325",
+   "label_end": "325"
   },
   {
-   "id": "sec-015-via-numbers-of-embeddings",
+   "id": "sec-016-via-numbers-of-embeddings",
    "number": null,
    "title": "Via numbers of embeddings",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1971,
-   "n_words": 355
+   "n_chars": 850,
+   "n_words": 165,
+   "label_start": "325",
+   "label_end": "326"
   },
   {
-   "id": "sec-016-in-terms-of-free-cumulants",
+   "id": "sec-017-in-terms-of-stanleys-coordinates",
+   "number": null,
+   "title": "In terms of Stanley's coordinates",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1152,
+   "n_words": 229,
+   "label_start": "326",
+   "label_end": "326"
+  },
+  {
+   "id": "sec-018-in-terms-of-free-cumulants",
    "number": null,
    "title": "In terms of free cumulants",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2426,
-   "n_words": 423
+   "n_chars": 2502,
+   "n_words": 477,
+   "label_start": "326",
+   "label_end": "327"
   },
   {
-   "id": "sec-017-conclusion",
+   "id": "sec-019-conclusion",
    "number": null,
    "title": "Conclusion",
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 4120,
-   "n_words": 599
+   "n_chars": 4125,
+   "n_words": 594,
+   "label_start": "327",
+   "label_end": "328"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 20,
-  "sections": 18,
-  "chars_total": 29280
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 21,
+  "chars_total": 32061,
+  "furniture_lines_stripped": 0
  }
 }

@@ -6,31 +6,63 @@
   "sha256": "f75313b507f971721997956a33bae9227281f588db750c74f9d429406b88c80c",
   "bytes": 479592,
   "pages": 12,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 5,
+    "reason": "22 of 859 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 9,
+    "reason": "43 of 1121 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 10,
+    "reason": "24 of 933 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 11,
+    "reason": "38 of 699 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1088/2399-6528/ac438d",
-  "title": "On the derivation of a nonlinear generalized Langevin equation",
-  "authors_raw": "View the article online for updates and enhancements",
-  "abstract": null,
-  "docinfo": {
-   "Creator": "IOPP",
-   "Title": "On the derivation of a Nonlinear Generalized Langevin Equation",
-   "CreationDate": "D:20220107045937-08'00'",
-   "Author": "Loris Di Cairano",
-   "Producer": "iText® 5.5.13.5 ©2000-2026 iText Group NV (IOP Publishing Ltd; licensed version)"
-  },
+  "title": "On the derivation of a Nonlinear Generalized Langevin Equation",
+  "authors_raw": "Langevin Equation",
   "title_lines": [
    "Communications",
    "PAPER • OPEN ACCESS",
-   "On the derivation of a Nonlinear Generalized",
-   "Langevin Equation",
-   "To cite this article: Loris Di Cairano 2022 J. Phys. Commun. 6 015002"
+   "On the derivation of a Nonlinear Generalized"
   ],
-  "title_prev": "Communications PAPER • OPEN ACCESS On the derivation of a Nonlinear Generalized Langevin Equation To cite this article: Loris Di Cairano 2022 J. Phys. Commun. 6 015002"
+  "abstract": null,
+  "docinfo": {
+   "Title": "On the derivation of a Nonlinear Generalized Langevin Equation",
+   "Author": "Loris Di Cairano",
+   "Producer": "iText® 5.5.13.5 ©2000-2026 iText Group NV (IOP Publishing Ltd; licensed version)",
+   "Creator": "IOPP",
+   "CreationDate": "D:20220107045937-08'00'"
+  },
+  "title_raw": "Communications PAPER • OPEN ACCESS On the derivation of a Nonlinear Generalized",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "On the derivation of a Nonlinear Generalized Langevin Equation",
+   "heading": "On the derivation of a Nonlinear Generalized Langevin Equation",
+   "outline": "1. Introduction",
+   "text": "Communications PAPER • OPEN ACCESS On the derivation of a Nonlinear Generalized",
+   "corroborated_by": [
+    "heading",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "On the derivation of a nonlinear generalized Langevin equation"
  },
  "toc": [
   {
@@ -38,102 +70,268 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "State-of-art",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Introduction to the problem",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 3,
    "title": "Criticism",
    "page": 4,
    "source": "outline",
-   "number": "1.2.1"
+   "number": "1.2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Notation",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Formal derivation of a nonlinear GLE",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "General setting: study of the equilibrium map",
    "page": 6,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "Examples of a possible equilibrium map.",
    "page": 7,
    "source": "outline",
-   "number": "2.1.1"
+   "number": "2.1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Generalization of the equilibrium map",
    "page": 8,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Alternative derivation",
    "page": 8,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 11,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Data availability statement",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "References",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2470,
+   "n_words": 352,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -142,7 +340,9 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-state-of-art",
@@ -151,8 +351,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 4898,
-   "n_words": 779
+   "n_chars": 4939,
+   "n_words": 820,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-002-12-introduction-to-the-problem",
@@ -161,8 +363,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2509,
-   "n_words": 594
+   "n_chars": 2567,
+   "n_words": 690,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-003-121-criticism",
@@ -171,8 +375,10 @@
    "level": 3,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 5227,
-   "n_words": 1041
+   "n_chars": 5117,
+   "n_words": 933,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-004-13-notation",
@@ -181,8 +387,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3853,
-   "n_words": 767
+   "n_chars": 3859,
+   "n_words": 807,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-005-2-formal-derivation-of-a-nonlinear-gle",
@@ -191,8 +399,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 590,
-   "n_words": 98
+   "n_chars": 595,
+   "n_words": 103,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-006-21-general-setting-study-of-the-equilibrium-map",
@@ -201,8 +411,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1899,
-   "n_words": 361
+   "n_chars": 1940,
+   "n_words": 440,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-007-211-examples-of-a-possible-equilibrium-map",
@@ -211,8 +423,10 @@
    "level": 3,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2961,
-   "n_words": 650
+   "n_chars": 3056,
+   "n_words": 784,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-008-22-generalization-of-the-equilibrium-map",
@@ -221,8 +435,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 1174,
-   "n_words": 255
+   "n_chars": 1223,
+   "n_words": 307,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-009-23-alternative-derivation",
@@ -231,8 +447,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 9542,
-   "n_words": 2190
+   "n_chars": 8879,
+   "n_words": 1584,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
    "id": "sec-010-3-conclusion",
@@ -241,8 +459,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1462,
-   "n_words": 232
+   "n_chars": 1423,
+   "n_words": 226,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
    "id": "sec-011-acknowledgments",
@@ -251,8 +471,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 388,
-   "n_words": 57
+   "n_chars": 389,
+   "n_words": 58,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
    "id": "sec-012-data-availability-statement",
@@ -261,8 +483,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 171,
-   "n_words": 21
+   "n_chars": 174,
+   "n_words": 24,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
    "id": "sec-013-references",
@@ -271,15 +495,36 @@
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 2479,
-   "n_words": 449
+   "n_chars": 2466,
+   "n_words": 475,
+   "label_start": "11",
+   "label_end": "11"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
-  "sections": 14,
-  "chars_total": 37153
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 10,
+   "items": [
+    "p3: pdf-labels 3, printed 2",
+    "p4: pdf-labels 4, printed 3",
+    "p5: pdf-labels 5, printed 4",
+    "p6: pdf-labels 6, printed 5",
+    "p7: pdf-labels 7, printed 6",
+    "p8: pdf-labels 8, printed 7",
+    "p9: pdf-labels 9, printed 8",
+    "p10: pdf-labels 10, printed 9",
+    "p11: pdf-labels 11, printed 10",
+    "p12: pdf-labels 12, printed 11"
+   ]
+  },
+  "sections": 15,
+  "chars_total": 39097,
+  "furniture_lines_stripped": 22
  }
 }

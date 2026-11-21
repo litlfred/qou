@@ -1,6 +1,4 @@
-In the unified six-term formula ([unified knot mass](#thm:knot-mass-formula-unified)), $|\mathrm{tr}_M(\rho(\beta))|$ forms **Term 1** ($E_\infty^{0,*}$, vortex-specific). The brane tower $\sum \Phi_q(z_i)$ supplies **Terms 2–3** ($E_\infty^{1,*}$ and $E_\infty^{2,*}$). In the archimedean realisation, these three terms together evaluate to $\mathrm{Vol}(K)/\hbar_q^2$ ([topological decomposition](#thm:topological-mass)). Terms 4–6 (Frobenius co-Casimir, chirality, jet prefix) form separate structural pieces handled elsewhere. This conjecture concerns only the tower piece.
-
-We define the **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ ([Hecke mass element](#def:hecke-mass-element)) categorically: it is the fibre functor image of the mass integrand $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. Its Markov trace gives the full categorical mass ([mass via Markov trace](#prop:hecke-mass-trace)). The open problem consists of computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly—expressing its NF decomposition in the basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific braid words.
+The **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ is defined categorically: it is the fibre functor image of the mass integrand $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. The open problem consists of computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly—expressing its NF decomposition in the basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific braid words.
 
 ## Scope: convenience target, not load-bearing
 
@@ -18,9 +16,9 @@ The scope of this conjecture is as follows:
     \Bigr).
   $$
 
-  This follows from [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified) and [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream result that relies on the mass tower routes through this infinite series.
+  This follows from [Unified mass formula: tower + Frobenius co-Casimir correction](#thm:knot-mass-formula-unified) and [Proton--electron mass endomorphism tower (convention D, $\mathrm{Li}_2^q$)](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream result that relies on the mass tower routes through this infinite series.
 
-- **Convenience target** (the conjectural content here): We conjecture the existence of a single element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$—a finite-rank Hecke element—whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
+- **Convenience target** (the conjectural content here): One conjectures the existence of a single element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$—a finite-rank Hecke element—whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
 
 If this conjecture fails (no closed-form $\Phi_{\mathrm{mass}}$ exists in finite-rank $H_n(R, q)$), the algebraic mass formula remains valid as the infinite series. Compute scripts attempting to materialise $\Phi_{\mathrm{mass}}$ as a single element must truncate explicitly. Scripts that evaluate the infinite sum at $q_0$ (the dominant case) remain unaffected.
 
@@ -28,7 +26,7 @@ The scope of a failure is therefore exactly this: the tower formula remains corr
 
 ## Statement
 
-**Conjecture (explicit mass endomorphism).** *The Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$ ([Hecke mass element](#def:hecke-mass-element)) admits a closed-form NF decomposition in $H_n(R, q)$ expressible in terms of the braid word $\beta$, the substrate parameter $q$, and the quantum dilogarithm $\Phi_q$. Specifically, the transient component satisfies:*
+**Conjecture (explicit mass endomorphism).** *The Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$ admits a closed-form NF decomposition in $H_n(R, q)$ expressible in terms of the braid word $\beta$, the substrate parameter $q$, and the quantum dilogarithm $\Phi_q$. Specifically, the transient component satisfies:*
 
 $$
   \mathrm{tr}_M\!\bigl(\Phi^{\mathrm{trans}}(\beta)\bigr)
@@ -57,9 +55,9 @@ The tower converges in $\sim 20$ terms. This rate is consistent with $t_P = 1/\h
 
 ## Established results
 
-**Step 1 (Categorical $\to$ Markov, proved).** We have $\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$. This is [categorical mass as Markov trace](#prop:categorical-mass-markov). The Nakayama automorphism is $S^2 = \mathrm{id}$, so the mass reduces to the Markov trace of the braid word.
+**Step 1 (Categorical $\to$ Markov, proved).** One has $\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$. This is [categorical mass as Markov trace](#prop:categorical-mass-markov). The Nakayama automorphism is $S^2 = \mathrm{id}$, so the mass reduces to the Markov trace of the braid word.
 
-**Step 2 (Tower sum $\to$ Vol, archimedean).** We have $\mathfrak{m}(\varrho)|_{\text{full tower}} = \mathrm{Vol}(K)/\hbar_q^2$. This is the [archimedean mass formula](#prop:topological-mass-formula). The descended trace gives $\mathrm{Vol}(K)$, each transient trace gives $\Phi_q(z_i)$, and their sum is $\mathrm{Vol}(K)/\hbar_q^2$.
+**Step 2 (Tower sum $\to$ Vol, archimedean).** Then $\mathfrak{m}(\varrho)|_{\text{full tower}} = \mathrm{Vol}(K)/\hbar_q^2$. This is the [archimedean mass formula](#conj:topological-mass-formula). The descended trace gives $\mathrm{Vol}(K)$, each transient trace gives $\Phi_q(z_i)$, and their sum is $\mathrm{Vol}(K)/\hbar_q^2$.
 
 **Step 3 (Markov trace $\neq$ Vol, the gap).** The Jones--Markov trace $\mathrm{tr}_M(\rho(\beta))$ is the Jones polynomial $J(K; q)$—a Laurent polynomial in $q^{1/2}$. The hyperbolic volume $\mathrm{Vol}(K)$ is a transcendental number. They are different knot invariants: $J(\text{trefoil}; q) = -q^{-4} + q^{-3} + q^{-1}$ while $\mathrm{Vol}(\text{trefoil}) = 0$.
 
@@ -75,7 +73,7 @@ $$
 
 where $J_N$ is the $N$-colored Jones polynomial. This limit involves evaluating at roots of unity ($q = e^{2\pi i/N}$, not generic $q$), the $N$-dimensional representation (not the fundamental), and an asymptotic limit ($N \to \infty$). Each step departs from the Hecke algebra at generic $q$.
 
-The Habiro ring ([Habiro ring](#def:habiro-ring)) partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume ([algebraic quantum volume](#def:algebraic-quantum-volume)) $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element. We evaluate directly at the substrate parameter, rather than passing through roots of unity.
+The Habiro ring ([Habiro ring](#def:habiro-ring)) partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume ([algebraic quantum volume](#def:algebraic-quantum-volume)) $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element. One evaluates directly at the substrate parameter, rather than passing through roots of unity.
 
 ## Encoding requirements for $\Phi_{\mathrm{mass}}$
 
@@ -108,24 +106,15 @@ The conjecture regarding a "closed-form expression in $H_n(R, q)$" asks a questi
 
 *Two partial mitigations are documented, though neither universally closes the gap:*
 
-1. *The [$z$-Habiro completion](#def:z-habiro-ring)—analogous to the $q$-Habiro completion but in the $z$-variable. The cyclotomic denominator structure in $z$, parallel to $(q; q)_n$ in $q$, is*
+1. *Magic-shell structural term. Add a separate $\Delta_{\text{shell}}(Z, N)$ contribution to the binding formula distinguishing closed-shell stabilization from the brane-tower transient.*
 
-  $$
-      P_n(q, z) \;=\; \prod_{k=1}^{n} \bigl(1 - q^{-k} z\bigr)
-      \;=\; (z q^{-1};\, q^{-1})_n,
-  $$
-
-  *whose zero locus is exactly the first $n$ poles of $\Phi_q$. The completion $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z = \varprojlim_n \mathbb{Z}[q^{\pm 1}][z] / (P_n(q, z))$ has cyclotomic projections $\pi_n^{(z)}$ acting as structural truncations at depth $n$, replacing Yekutieli's ad-hoc cutoff with a quotient by a structural ideal. The [conjecture that the brane tower lives in this ring](#conj:brane-tower-z-habiro) has two independent claims: (a) the algebraic Cauchy-limit (the partial sums converge in the $z$-Habiro topology), and (b) the existence of a canonical level-selection rule $n_\star(\mathfrak{H})$ derivable from substrate data.*
-
-2. *Magic-shell structural term. Add a separate $\Delta_{\text{shell}}(Z, N)$ contribution to the binding formula distinguishing closed-shell stabilization from the brane-tower transient.*
-
-3. *Markov-trace audit on ${}^3\mathrm{He}$. Verify $|\mathrm{tr}_M(\beta_{{}^3\mathrm{He}})|$ at $q_0$ against the canonical reducer to confirm the structural gap is real and not a Markov-trace mis-count.*
+2. *Markov-trace audit on ${}^3\mathrm{He}$. Verify $|\mathrm{tr}_M(\beta_{{}^3\mathrm{He}})|$ at $q_0$ against the canonical reducer to confirm the structural gap is real and not a Markov-trace mis-count.*
 
 The brane tower contribution remains not computable in closed form for $|\hat{V}|\approx 1$ under the original conjecture. The descended Markov trace plus Frobenius co-Casimir alone empirically reproduces the binding within $\sim 30\%$ for low isotopes.
 
 ## Descended vs transient mass (computed)
 
-The Hecke mass element splits as $\Phi_{\mathrm{mass}} = \Phi^{\mathrm{desc}} + \Phi^{\mathrm{trans}}$ ([Hecke mass element](#def:hecke-mass-element)). At $q_0$, the transient (tower) component dominates overwhelmingly:
+The Hecke mass element splits as $\Phi_{\mathrm{mass}} = \Phi^{\mathrm{desc}} + \Phi^{\mathrm{trans}}$. At $q_0$, the transient (tower) component dominates overwhelmingly:
 
 | Particle | $\mathrm{tr}_M(\Phi^{\mathrm{desc}})$ | $\mathrm{tr}_M(\Phi^{\mathrm{trans}})$ | Ratio trans/desc |
 |:---:|:---:|:---:|:---:|
@@ -136,7 +125,7 @@ The single-level (descended) Markov trace contributes less than $0.5\%$ of the t
 
 ## Computational verification (single-level)
 
-We tested three single-level approaches for the proton ($uud$) and neutron ($udd$) Borromean braids:
+One tested three single-level approaches for the proton ($uud$) and neutron ($udd$) Borromean braids:
 
 | Method | Proton | Neutron | Ratio $n/p$ | CODATA |
 |:---|:---:|:---:|:---:|:---:|
@@ -153,14 +142,3 @@ The proton mass $938.272$ MeV in this paper derives from the pair Skein formula 
 **(a) Figure-eight $4_1$ as Higgs coupling.** The figure-eight knot $4_1 = (\sigma_0\sigma_1^{-1})^2$ is the gluon unit squared. Its NF is $h^2\gamma + h^3\sigma_0 - h\sigma_1 - h^2 L_+ + L_-$ with zero electron content. As a mass operator, the pairing $\mathrm{tr}_M(e^- \cdot 4_1) = hz^2 + z = \mathrm{tr}_M(e^-)$ does not produce the correct mass ratios. The figure-eight encodes the mass mechanism (amphichiral, hyperbolic, $\mathrm{Vol} = 2.0299$) but acts as the identity on the trefoil in $H_3(R, q)$.
 
 **(b) Tower-accumulated operator.** The mass endomorphism may equal the product $\Phi_{\mathrm{mass}} = \prod_{n=0}^{N} (1 + \Phi_q(z_n))$ of Hecke elements at each brane level, composed via the comultiplication. This forms an element of $H_n(R, q)$ growing with $N$—a categorically defined object, but not a fixed element independent of the knot.
-
-**(c) Spectral decomposition via RJ weights.** The Rosso--Jones inner product ([RJ canonical inner product](#prop:rj-canonical-inner-product)) decomposes the Markov trace over irreps: $\mathrm{tr}_M = \sum_\lambda d_\lambda(q) \cdot \mathrm{tr}_\lambda$. A mass endomorphism could reweight the irreps: $\Phi_{\mathrm{mass}} = \sum_\lambda w_\lambda(q) \cdot e_\lambda$, where $w_\lambda$ encodes the volume information. The Volume Conjecture then states that the weights $w_\lambda$ grow exponentially with $\lambda$, recovering $\mathrm{Vol}(K)$ in the limit.
-
-## Relation to knot operator selection
-
-The multi-channel decomposition ([knot operator selection](#prop:knot-operator-selection)) showed that interactions decompose over irreps of $H_n(R, q)$ weighted by quantum dimensions. The mass endomorphism conjecture asserts that mass is a specific reweighting of the same decomposition—using weights that produce $\mathrm{Vol}(K)$ instead of $J(K; q)$.
-
-If the conjecture holds:
-- The operator selection framework (Frobenius dual, Gram matrix, demand/supply) applies to mass, with $\Phi_{\mathrm{mass}}$ replacing the identity.
-- The Higgs field provides the dominant contribution to $\Phi_{\mathrm{mass}}$ for leptons (it supplies the volume that the trefoil lacks).
-- The graviton is the residual of $\Phi_{\mathrm{mass}}$ after subtracting the Higgs contribution.

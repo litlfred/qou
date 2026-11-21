@@ -45,7 +45,7 @@ verified per-file by `lean`-direct. It contains **no `sorry`** (grep-confirmed).
 > session has since verified it `lean`-direct (restored `lake-cache` oleans + `LEAN_PATH`):
 > **exit 0, sorry-free — the claim is now machine-checked.**
 
--- Ref: [manuscript] docs/audits/2026-07-19-deltalambda-kernel-sign-structural-narrowing.md
+-- Ref: [leitner2026] docs/audits/2026-07-19-deltalambda-kernel-sign-structural-narrowing.md
 -/
 
 namespace QOU.BraidsAndKnots.YoungDiagramTranspose

@@ -7,10 +7,11 @@
   "bytes": 3374335,
   "pages": 27,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "22 Jun 2022"
   },
   "doi": null,
-  "title": "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM",
-  "authors_raw": null,
+  "title": "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS",
+  "authors_raw": "BARBARA NIMERSHIEM",
   "title_lines": [
-   "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS",
-   "BARBARA NIMERSHIEM"
+   "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS"
   ],
-  "abstract": "We construct topological triangulations for complements of ( \u22122, 3,n )-pretzel knots and links with n\u2265 7. Following a procedure outlined by Futer and Gu\u00b4 eritaud, we use a theorem of Casson and Rivin to prove the constructed triangulations are geometric. Futer, Kalfagianni, and Purcell have shown (indirectly) that such braids are hyperbolic. The new result here is a direct proof.",
+  "abstract": "We construct topological triangulations for complements of (−2, 3, n)-pretzel knots and links with n ≥7. Following a procedure outlined by Futer and Gu´eritaud, we use a theorem of Casson and Rivin to prove the constructed triangulations are geometric. Futer, Kalfagianni, and Purcell have shown (indirectly) that such braids are hyperbolic. The new result here is a direct proof.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20220624003641Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20220624003641Z"
+  },
+  "title_raw": "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS 1. Introduction A knot or link in S 3 is hyperbolic if its complement admits a complete hyperbolic structure. A braid on n strands, which is represented by a word in the braid group, w ∈ B n , is hyperbolic if its braid closure, L w , is. H",
+   "outline": "1. Introduction",
+   "text": "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM"
  },
  "toc": [
   {
@@ -41,158 +50,726 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Organization",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Ideal triangulations",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Forming a three-stranded full twist",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "A foundational ideal triangulation",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Adding layers to extend to p=2 and 3",
    "page": 7,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "An ideal triangulation for any p",
    "page": 10,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Equivalence classes of edges in the triangulation",
    "page": 10,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Angle structures and the Casson-Rivin program",
    "page": 11,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Angle structures",
    "page": 11,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Volumes of angle structures",
    "page": 13,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "The Casson-Rivin program",
    "page": 15,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Symmetries of angle structures",
    "page": 16,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "The space of positive angle structures is nonempty",
    "page": 16,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "The triangulations are veering",
    "page": 16,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Coordinates for the space of positive angle structures",
    "page": 17,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "A symmetry of the space of angle structures",
    "page": 18,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "The maximal volume occurs at a positive angle structure",
    "page": 20,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Extending the construction",
    "page": 23,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "Appendix A. Visualizing triangulations of 2-bridge link complements",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "References",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The generators of B3, the braid group on three strands. Let Lp be the braid closure of C2σp",
+   "page": 1,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The closure of C2σp",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Forming a full twist C",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "A triangulation of the complement of the closure of C2σ1σ−1",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Face pairings for ˆτ1, an initial triangulation of X1. t′",
+   "page": 6,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A 3-2 move eliminates the 24 edge of m2, which is also the 23 edge in",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "A 2-0 move eliminates t′",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "A triangulation of the complement of the closure of C2σ3",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Face pairings for ˆτ3, an initial triangulation of X3. t′",
+   "page": 8,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Face pairings for τ3, a triangulation of X3. t′",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Face pairings for τ2, a triangulation of X2. w′",
+   "page": 10,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "Face pairings for τp, a triangulation of Xp for p > 1. w′",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "The tetradedra of τp with [w′",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "A tetrahedron in a veering triangulation",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "The (−(p+6), 2, −3)-pretzel is also the closure of the braid σ3",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "The actions of R and of L on strands between pillowcases. Left side is Figure 14 in [9, Appendix]. Right side is version with vertical strands",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "The link K(Ω) where Ω= R3L2R. Compare left side to left side of Figure 18 in [9, Appendix]. Also similar to the top of Figure II.3.3 in [18]",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "The layer ∆1. Compare ﬁrst ﬁgure to Figure 15 in [9, Appendix] and last ﬁgure to Figure 16 in [9, Appendix]",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "Forming a clasp. Compare to Figure 17 [9, Appendix] and Figure II.2.7 in [18]",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 469,
+   "n_words": 70,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -201,7 +778,9 @@
    "page_start": 1,
    "page_end": 2,
    "n_chars": 3752,
-   "n_words": 632
+   "n_words": 632,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-organization",
@@ -211,7 +790,9 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 442,
-   "n_words": 76
+   "n_words": 76,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-002-acknowledgments",
@@ -221,7 +802,9 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 1069,
-   "n_words": 169
+   "n_words": 169,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-003-2-ideal-triangulations",
@@ -230,8 +813,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2394,
-   "n_words": 438
+   "n_chars": 2396,
+   "n_words": 440,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-004-21-forming-a-three-stranded-full-twist",
@@ -240,8 +825,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3381,
-   "n_words": 645
+   "n_chars": 3391,
+   "n_words": 655,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-005-22-a-foundational-ideal-triangulation",
@@ -249,162 +836,212 @@
    "title": "A foundational ideal triangulation",
    "level": 2,
    "page_start": 4,
-   "page_end": 10,
-   "n_chars": 15500,
-   "n_words": 3093
+   "page_end": 7,
+   "n_chars": 7118,
+   "n_words": 1429,
+   "label_start": "4",
+   "label_end": "7"
   },
   {
-   "id": "sec-006-24-an-ideal-triangulation-for-any-p",
+   "id": "sec-006-23-adding-layers-to-extend-to-p2-and-3",
+   "number": "2.3",
+   "title": "Adding layers to extend to p=2 and 3",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 8304,
+   "n_words": 1659,
+   "label_start": "7",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-007-24-an-ideal-triangulation-for-any-p",
    "number": "2.4",
    "title": "An ideal triangulation for any p",
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 1596,
-   "n_words": 310
+   "n_chars": 1606,
+   "n_words": 320,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-007-25-equivalence-classes-of-edges-in-the-triangula",
+   "id": "sec-008-25-equivalence-classes-of-edges-in-the-triangula",
    "number": "2.5",
    "title": "Equivalence classes of edges in the triangulation",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2371,
-   "n_words": 457
+   "n_chars": 2396,
+   "n_words": 482,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-008-3-angle-structures-and-the-casson-rivin-program",
+   "id": "sec-009-3-angle-structures-and-the-casson-rivin-program",
    "number": "3",
    "title": "Angle structures and the Casson-Rivin program",
    "level": 1,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 5487,
-   "n_words": 1024
+   "n_chars": 5496,
+   "n_words": 1033,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
-   "id": "sec-009-32-volumes-of-angle-structures",
+   "id": "sec-010-32-volumes-of-angle-structures",
    "number": "3.2",
    "title": "Volumes of angle structures",
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 6049,
-   "n_words": 1184
+   "n_chars": 6110,
+   "n_words": 1249,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-010-33-the-casson-rivin-program",
+   "id": "sec-011-33-the-casson-rivin-program",
    "number": "3.3",
    "title": "The Casson-Rivin program",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1808,
-   "n_words": 306
+   "n_chars": 1812,
+   "n_words": 310,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-011-34-symmetries-of-angle-structures",
+   "id": "sec-012-34-symmetries-of-angle-structures",
    "number": "3.4",
    "title": "Symmetries of angle structures",
    "level": 2,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 863,
-   "n_words": 161
+   "n_chars": 868,
+   "n_words": 166,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-012-4-the-space-of-positive-angle-structures-is-none",
+   "id": "sec-013-4-the-space-of-positive-angle-structures-is-none",
    "number": "4",
    "title": "The space of positive angle structures is nonempty",
    "level": 1,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 548,
-   "n_words": 94
+   "n_chars": 549,
+   "n_words": 95,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-013-41-the-triangulations-are-veering",
+   "id": "sec-014-41-the-triangulations-are-veering",
    "number": "4.1",
    "title": "The triangulations are veering",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 3728,
-   "n_words": 634
+   "n_chars": 3747,
+   "n_words": 653,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-014-42-coordinates-for-the-space-of-positive-angle-s",
+   "id": "sec-015-42-coordinates-for-the-space-of-positive-angle-s",
    "number": "4.2",
    "title": "Coordinates for the space of positive angle structures",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 2075,
-   "n_words": 382
+   "n_chars": 2163,
+   "n_words": 470,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-015-43-a-symmetry-of-the-space-of-angle-structures",
+   "id": "sec-016-43-a-symmetry-of-the-space-of-angle-structures",
    "number": "4.3",
    "title": "A symmetry of the space of angle structures",
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 3991,
-   "n_words": 765
+   "n_chars": 4064,
+   "n_words": 838,
+   "label_start": "18",
+   "label_end": "20"
   },
   {
-   "id": "sec-016-5-the-maximal-volume-occurs-at-a-positive-angle",
+   "id": "sec-017-5-the-maximal-volume-occurs-at-a-positive-angle",
    "number": "5",
    "title": "The maximal volume occurs at a positive angle structure",
    "level": 1,
    "page_start": 20,
    "page_end": 23,
-   "n_chars": 9327,
-   "n_words": 1751
+   "n_chars": 9411,
+   "n_words": 1837,
+   "label_start": "20",
+   "label_end": "23"
   },
   {
-   "id": "sec-017-6-extending-the-construction",
+   "id": "sec-018-6-extending-the-construction",
    "number": "6",
    "title": "Extending the construction",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 1198,
-   "n_words": 206
+   "n_chars": 1227,
+   "n_words": 209,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-018-appendix-a-visualizing-triangulations-of-2-bridg",
+   "id": "sec-019-appendix-a-visualizing-triangulations-of-2-bridg",
    "number": null,
    "title": "Appendix A. Visualizing triangulations of 2-bridge link complements",
    "level": 1,
    "page_start": 23,
    "page_end": 26,
-   "n_chars": 7373,
-   "n_words": 1426
+   "n_chars": 7389,
+   "n_words": 1442,
+   "label_start": "23",
+   "label_end": "26"
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-020-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 3406,
-   "n_words": 494
+   "n_chars": 3388,
+   "n_words": 476,
+   "label_start": "26",
+   "label_end": "27"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 22,
-  "sections": 20,
-  "chars_total": 76358,
+  "toc_inferred_entries": 0,
+  "figure_entries": 19,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 22,
+  "chars_total": 77167,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "3BraidsRev1.tex",
    "tex_sections": 20,
-   "overlaid": 18,
+   "overlaid": 19,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -412,10 +1049,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.655,
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -439,7 +1081,7 @@
      "id": "sec-003-2-ideal-triangulations",
      "title": "Ideal triangulations",
      "prose_ratio": 0.951,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -454,21 +1096,29 @@
     {
      "id": "sec-005-22-a-foundational-ideal-triangulation",
      "title": "A foundational ideal triangulation",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-24-an-ideal-triangulation-for-any-p",
+     "id": "sec-006-23-adding-layers-to-extend-to-p2-and-3",
+     "title": "Adding layers to extend to p=2 and 3",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-24-an-ideal-triangulation-for-any-p",
      "title": "An ideal triangulation for any p",
      "prose_ratio": 0.788,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-25-equivalence-classes-of-edges-in-the-triangula",
+     "id": "sec-008-25-equivalence-classes-of-edges-in-the-triangula",
      "title": "Equivalence classes of edges in the triangulation",
      "prose_ratio": 0.942,
      "coverage_ratio": 0.932,
@@ -476,31 +1126,31 @@
      "converter": "latex"
     },
     {
-     "id": "sec-008-3-angle-structures-and-the-casson-rivin-program",
+     "id": "sec-009-3-angle-structures-and-the-casson-rivin-program",
      "title": "Angle structures and the Casson-Rivin program",
      "prose_ratio": 0.965,
-     "coverage_ratio": 0.89,
+     "coverage_ratio": 0.9,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-32-volumes-of-angle-structures",
+     "id": "sec-010-32-volumes-of-angle-structures",
      "title": "Volumes of angle structures",
      "prose_ratio": 0.95,
-     "coverage_ratio": 0.932,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-33-the-casson-rivin-program",
+     "id": "sec-011-33-the-casson-rivin-program",
      "title": "The Casson-Rivin program",
      "prose_ratio": 0.936,
-     "coverage_ratio": 0.835,
+     "coverage_ratio": 0.843,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-34-symmetries-of-angle-structures",
+     "id": "sec-012-34-symmetries-of-angle-structures",
      "title": "Symmetries of angle structures",
      "prose_ratio": 0.809,
      "coverage_ratio": 1.0,
@@ -508,60 +1158,60 @@
      "converter": "latex"
     },
     {
-     "id": "sec-012-4-the-space-of-positive-angle-structures-is-none",
+     "id": "sec-013-4-the-space-of-positive-angle-structures-is-none",
      "title": "The space of positive angle structures is nonempty",
      "prose_ratio": 0.927,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-41-the-triangulations-are-veering",
+     "id": "sec-014-41-the-triangulations-are-veering",
      "title": "The triangulations are veering",
      "prose_ratio": 0.957,
-     "coverage_ratio": 0.951,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-014-42-coordinates-for-the-space-of-positive-angle-s",
-     "title": "Coordinates for the space of positive angle structures",
-     "prose_ratio": 0.917,
      "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-43-a-symmetry-of-the-space-of-angle-structures",
+     "id": "sec-015-42-coordinates-for-the-space-of-positive-angle-s",
+     "title": "Coordinates for the space of positive angle structures",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-43-a-symmetry-of-the-space-of-angle-structures",
      "title": "A symmetry of the space of angle structures",
      "prose_ratio": 0.952,
-     "coverage_ratio": 0.907,
+     "coverage_ratio": 0.945,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-016-5-the-maximal-volume-occurs-at-a-positive-angle",
+     "id": "sec-017-5-the-maximal-volume-occurs-at-a-positive-angle",
      "title": "The maximal volume occurs at a positive angle structure",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-6-extending-the-construction",
+     "id": "sec-018-6-extending-the-construction",
      "title": "Extending the construction",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.941,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-appendix-a-visualizing-triangulations-of-2-bridg",
+     "id": "sec-019-appendix-a-visualizing-triangulations-of-2-bridg",
      "title": "Appendix A. Visualizing triangulations of 2-bridge link complements",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-019-references",
+     "id": "sec-020-references",
      "title": "References",
      "result": "no matching \\section"
     }

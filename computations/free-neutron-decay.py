@@ -559,6 +559,57 @@ witness = {
     },
 }
 
+from codata_constants import M_E_MEV as _ME_FND, Q_BETA_MEV as _QB_CODATA_FND  # noqa: E402
+_me_fnd = _mp.mpf(str(_ME_FND))
+_qb_codata_fnd = _mp.mpf(str(_QB_CODATA_FND))
+_q2_fnd = q0_mp ** 2
+_tr_conn_p_fnd = -2 * ((_q2_fnd - 1) ** 4) * (_q2_fnd ** 2 + _q2_fnd + 1) / (27 * (_q2_fnd ** 3))
+_tr_conn_n_fnd = ((_q2_fnd - 1) ** 4) * (2 * (_q2_fnd ** 2) - _q2_fnd + 2) / (27 * (_q2_fnd ** 3))
+_tr_conn_diff_fnd = _tr_conn_n_fnd - _tr_conn_p_fnd
+_dm_qed_conn_fnd = -_me_fnd * _tr_conn_diff_fnd
+_dm_qed_conn_knkp_fnd = -_me_fnd * ((_tr_conn_n_fnd / q0_mp) - (q0_mp * _tr_conn_p_fnd))
+_dm_qed_conn_kp3_fnd = -_me_fnd * (_tr_conn_n_fnd - (q0_mp * _tr_conn_p_fnd))
+_dm_qed_conn_q_fnd = -_me_fnd * q0_mp * _tr_conn_diff_fnd
+_qa_fnd = _me_fnd * abs(_q2_fnd - 2 * q0_mp - 1) * (q0_mp + 1) / (2 * (q0_mp ** 3))
+_h_fnd = q0_mp - 1 / q0_mp
+_z_fnd = (q0_mp ** 3) / (_q2_fnd + 1)
+_hbar_fnd = (q0_mp - 1) / q0_mp
+_alpha_fnd = (_z_fnd - 1) * _h_fnd / 2
+_b_fnd = _mp.sqrt(1 - _q2_fnd / ((_q2_fnd + 1) ** 2))
+_qn1_fnd = _qa_fnd * _mp.cos(_alpha_fnd - _b_fnd * (_hbar_fnd ** 2) / 2)
+_qn2_fnd = _qn1_fnd * (1 - (_b_fnd ** 2) * (_hbar_fnd ** 4))
+import two_term_qtrace_weighting as _ttq_fnd  # noqa: E402
+_dm_qed_conn_derived_fnd = _ttq_fnd.delta_m_qed_conn_mev(q0_mp, _me_fnd, "derived", "adjacent")
+_dm_qed_scored_fnd = _ttq_fnd.delta_m_qed_conn_mev(q0_mp, _me_fnd)  # ruled all-pairs: 0 on V³
+_qn2_two_term_plain_fnd = _qn2_fnd + _dm_qed_conn_fnd
+_qn2_two_term_adj_fnd = _qn2_fnd + _dm_qed_conn_derived_fnd
+_qn2_two_term_fnd = _qn2_fnd + _dm_qed_scored_fnd
+_err_qn2_ppm = (_qn2_fnd - _qb_codata_fnd) / _qb_codata_fnd * _mp.mpf(10) ** 6
+_err_qn2_two_term_ppm = (_qn2_two_term_fnd - _qb_codata_fnd) / _qb_codata_fnd * _mp.mpf(10) ** 6
+_err_red_pct = (1 - abs(_err_qn2_two_term_ppm) / abs(_err_qn2_ppm)) * _mp.mpf(100)
+
+witness["two_term_borromean_qed_dressing"] = {
+    "lean_ref": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
+    "tr_conn_p_V3": str(_tr_conn_p_fnd),
+    "tr_conn_n_V3": str(_tr_conn_n_fnd),
+    "Delta_tr_conn_V3": str(_tr_conn_diff_fnd),
+    "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); Delta_m_QED_conn_MeV (plain), _KnKp, _Kp3, _q are historical",
+    "scored_insertion": "covariant all-pairs (owner 2026-11-20 16:44): connected part 0 on V³, so Q_N2_two_term = Q_N2",
+    "Delta_m_QED_scored_MeV": str(_dm_qed_scored_fnd),
+    "Delta_m_QED_conn_derived_adjacent_MeV": str(_dm_qed_conn_derived_fnd),
+    "Q_N2_two_term_derived_adjacent_MeV": str(_qn2_two_term_adj_fnd),
+    "Q_N2_two_term_plain_MeV": str(_qn2_two_term_plain_fnd),
+    "Delta_m_QED_conn_MeV": str(_dm_qed_conn_fnd),
+    "Delta_m_QED_conn_KnKp_MeV": str(_dm_qed_conn_knkp_fnd),
+    "Delta_m_QED_conn_Kp3_MeV": str(_dm_qed_conn_kp3_fnd),
+    "Delta_m_QED_conn_q_MeV": str(_dm_qed_conn_q_fnd),
+    "Q_N2_MeV": str(_qn2_fnd),
+    "Q_N2_two_term_MeV": str(_qn2_two_term_fnd),
+    "Q_N2_vs_CODATA_ppm": str(_err_qn2_ppm),
+    "Q_N2_two_term_vs_CODATA_ppm": str(_err_qn2_two_term_ppm),
+    "error_reduction_pct": str(_err_red_pct),
+}
+
 # Write beside THIS FILE, not into the caller's cwd. As a bare relative path
 # a run from the repo root -- how producers are normally invoked -- created an
 # untracked orphan at ./free-neutron-decay.witness.json and left the tracked

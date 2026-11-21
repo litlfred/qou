@@ -1,0 +1,61 @@
+O
+
+Dirichlet boundary. It is well known that the first Dirichlet eigenvalue of a connected
+domain is simple (has multiplicity one) and strictly positive (see, for example, [27]), so
+there will only be one corresponding function whose Rayleigh quotient, when evaluated
+over Q, gives this eigenvalue. Therefore, we only need to consider a two dimensional
+
+subspace of Wo? to get an upper bound on the second positive eigenvalue of Q.
+
+The test function we would like to work with is
+
+alt, y) = (Y GY, GY Ga, Ga" (0-2).
+
+2 3! 5! 7! 9! 11!
+
+Here the 1 — = factor is to represent the behaviour of an eigenfunction of 2 observed
+
+in a numerical plot. We started with 1 —x?, and found experimentally that reducing the
+
+size of the x? coefficient gave a better bound. Note that the first term in the product is
+lly
+“20
+functions using trigonometric functions as an obvious choice (again experimenting to find
+
+clearly an approximation of sin ( ). We initially constructed an orthonormal set of test
+an “optimal” coefficient; although we couldn’t produce accurate enough bounds with these
+alone, we found that by modifying them with a factor derived from our numerical insight,
+we were able to produce good enough bounds. We use the Taylor series approximation
+so that we can evaluate (yy), 2) (integrating a polynomial function is much easier with
+respect to the hyperbolic metric over this domain). Fortunately, the approximation gives
+a slightly better bound than the function itself.
+
+We use the Gram-Schmidt procedure on y2 and y; to construct a function 2 that is
+
+orthogonal to y,, by subtracting a “projection” of y, from yo:
+
+Po(x = L,Y _ (Pi 2) x, 4
+p2(x, y) = goa, y) el? pila, y)
+
+Let us consider the inner product in the numerator of the projection. As we have alluded,
+
+we may integrate it explicitly with respect to y:
+
+q = Sart[3 +2 Sqrt[2] — 2 Sart[4 + 3 Sart [2]]];
+u[x_, y_] = (y — 1 — Sqrt[1 — 22 x°2]) (y — Sart [q*2 — x~2]);
+v[x_, y_] = (11 y/2 -— ((11 y/2)73)/3! + ((11 y/2)75)/
+5! — ((11 y/2)*7)/7! + ((11 y/2)79)/9! -— ((11 y/2)711)/11!) GQ -
+x*2/100);
+
+Integrate [(u[x, y] v[x, yl)/y72, {y, Sart[ac2 — x72],
+Sqrt[Csc[Pi/8]~2 — (x + Cot[Pi/8])~2]}]
+We define a function p(x), x € [0, Qi 1], as the output of this integral and once again
+use Simpson’s rule to approximate it. Similar computations to before show us that we
+
+need n = 146 for our desired degree of accuracy, and we proceed in the same vein:
+
+ple J=Tntegrate [(ulx, y] v[x, yl)/y*2) (y. Sart[a~2 = x~2])
+Sqrt [Csc[Pi/8]~2 — (x + Cot[Pi/8])~2]}];
+P = ((27(1/4) — 1)/(3 146)) Total[{p[0], p[2>(1/4) — 1],
+
+61

@@ -2,37 +2,42 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2412.04241v2",
  "source_sha256": "308d1dd1c42bd979",
- "brief": "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K).",
- "extended": "**THE HABIRO RING OF A NUMBER FIELD**\n\n*STAVROS GAROUFALIDIS, PETER SCHOLZE, CAMPBELL WHEELER, AND DON ZAGIER*\n\n73 pp, 35 sections.\n\n**Abstract.** We introduce the Habiro ring of a number field K and modules over it graded by K3(K). Elements of these modules are collections of power series at each complex root of unity that arithmetically glue with each other after applying a Frobenius endomorphism, and after dividing at each prime by a collection of series that depends solely on an element of the Bloch group. The main theorems of this paper concern number fields, their algebraic K-theory and its regulator maps (Borel, p-adic and ´ etale), whereas the explicit collections of series are defined by a careful algebraic analysis of the infinite Pochhammer symbol at roots of unity. The origin of the above mentioned power series comes from perturbative Chern–Simons theory and by expansions of the admissible series of Kontsevich–Soibelman, both ultimately related to the infinite Pochhammer symbol.\n\n**Outline.** 1 Introduction; 1.1 Prologue; 1.2 Integrality and congruence experiments; 1.3 The original Habiro ring; 1.4 The Habiro ring of a number field; 1.5 Modules over the Habiro ring of K indexed ; 1.6 Admissible series and formal Gaussian inte; 1.7 The main theorems; 1.8 The relation with perturbative Chern–Simon; 1.9 Future extensions; 2 Two complementary collections of power serie; 2.1 The infinite Pochhammer symbol; 2.2 Admissible series; 2.3 Admissibility of q-hypergeometric series; 2.4 Level m admissible series; 2.5 Formal Gaussian integration; 2.6 Algebraicity via WKB; 2.7 Synthesis\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let K be a number field, and ∆ a number divisible by its discriminant and\n- Theorem 2: We haveHR,0 =HR. In general, multiplication gives a canonical isomorphism\n- Theorem 3: For every symmetric matrix A with integer entries we have:\n- Theorem 4: Fix a symmetric matrix A with integer entries, a positive integer m and an\n- Theorem 5: Fix a symmetric matrix A with integer entries and a non-degenerate solution\n- Theorem 6: [16, 36] Suppose that A is an integral symmetric N×N matrix. Then the",
+ "brief": "The Habiro ring of a number field — We introduce the Habiro ring of a number field K and modules over it graded by K3(K).",
+ "extended": "**The Habiro ring of a number field**\n\n*STAVROS GAROUFALIDIS, PETER SCHOLZE, CAMPBELL WHEELER, AND DON ZAGIER*\n\n73 pp, 37 sections.\n\n**Abstract.** We introduce the Habiro ring of a number field K and modules over it graded by K3(K). Elements of these modules are collections of power series at each complex root of unity that arithmetically glue with each other after applying a Frobenius endomorphism, and after dividing at each prime by a collection of series that depends solely on an element of the Bloch group. The main theorems of this paper concern number fields, their algebraic K-theory and its regulator maps (Borel, p-adic and ´etale), whereas the explicit collections of series are defined by a careful algebraic analysis of the infinite Pochhammer symbol at roots of unity. The origin of the above mentioned power series comes from perturbative Chern–Simons theory and by expansions of the admissible series of Kontsevich–Soibelman, both ultimately related to the infinite Pochhammer symbol.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Prologue; 1.2 Integrality and congruence experiments; 1.3 The original Habiro ring; 1.4 The Habiro ring of a number field; 1.5 Modules over the Habiro ring of K indexed ; 1.6 Admissible series and formal Gaussian inte; 1.7 The main theorems; 1.8 The relation with perturbative Chern–Simon; 1.9 Future extensions; 2 Two complementary collections of power serie; 2.1 The infinite Pochhammer symbol; 2.2 Admissible series; 2.3 Admissibility of q-hypergeometric series; 2.4 Level m admissible series; 2.5 Formal Gaussian integration; 2.6 Algebraicity via WKB",
  "tokens": {
   "brief": 30,
-  "extended": 541
+  "extended": 401
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-001-11-prologue",
    "title": "Prologue",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-002-12-integrality-and-congruence-experiments",
    "title": "Integrality and congruence experiments",
-   "pages": "1-4"
+   "pages": "2-4"
   },
   {
    "id": "sec-003-13-the-original-habiro-ring",
    "title": "The original Habiro ring",
-   "pages": "4-5"
+   "pages": "4-6"
   },
   {
    "id": "sec-004-14-the-habiro-ring-of-a-number-field",
    "title": "The Habiro ring of a number field",
-   "pages": "5-8"
+   "pages": "6-8"
   },
   {
    "id": "sec-005-15-modules-over-the-habiro-ring-of-k-indexed-by",
@@ -142,45 +147,50 @@
   {
    "id": "sec-026-44-some-p-adic-computations",
    "title": "Some p-adic computations",
-   "pages": "52-57"
+   "pages": "52-55"
   },
   {
-   "id": "sec-027-47-a-note-on-modularity",
+   "id": "sec-027-46-the-pair-of-the-5-2-and-the--237-pretzel-knot",
+   "title": "The pair of the 5_2 and the (-2,3,7)-pretzel knots",
+   "pages": "55-57"
+  },
+  {
+   "id": "sec-028-47-a-note-on-modularity",
    "title": "A note on modularity",
    "pages": "57-58"
   },
   {
-   "id": "sec-028-5-alternative-approach-habiro-rings-via-congruen",
+   "id": "sec-029-5-alternative-approach-habiro-rings-via-congruen",
    "title": "Alternative approach: Habiro rings via congruences",
    "pages": "58-59"
   },
   {
-   "id": "sec-029-51-functions-near-roots-of-unity-and-the-naive-h",
+   "id": "sec-030-51-functions-near-roots-of-unity-and-the-naive-h",
    "title": "Functions near roots of unity and the naive Habiro ring",
-   "pages": "59-63"
+   "pages": "59-64"
   },
   {
-   "id": "sec-030-52-the-habiro-ring-of-a-number-field",
+   "id": "sec-031-52-the-habiro-ring-of-a-number-field",
    "title": "The Habiro ring of a number field",
-   "pages": "63-65"
+   "pages": "64-65"
   },
   {
-   "id": "sec-031-53-examples",
+   "id": "sec-032-53-examples",
    "title": "Examples",
    "pages": "65-68"
   },
   {
-   "id": "sec-032-54-some-wilder-habiro-like-elements",
+   "id": "sec-033-54-some-wilder-habiro-like-elements",
    "title": "Some wilder Habiro-like elements",
    "pages": "68-71"
   },
   {
-   "id": "sec-033-acknowledgements",
+   "id": "sec-034-acknowledgements",
    "title": "Acknowledgements",
    "pages": "71-71"
   },
   {
-   "id": "sec-034-references",
+   "id": "sec-035-references",
    "title": "References",
    "pages": "71-73"
   }
@@ -189,8 +199,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

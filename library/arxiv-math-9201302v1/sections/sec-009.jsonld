@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9201302v1/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Questions open to the author",
+  "pageStart": 14,
+  "pageEnd": 17,
+  "contains": [
+    "library/arxiv-math-9201302v1/blocks/prose-sec-009",
+    "library/arxiv-math-9201302v1/blocks/thm-sec-009-01",
+    "library/arxiv-math-9201302v1/blocks/conj-sec-009-02",
+    "library/arxiv-math-9201302v1/blocks/conj-sec-009-03",
+    "library/arxiv-math-9201302v1/blocks/conj-sec-009-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9201302v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9201302v1/manifest.jsonld",
+  "provenance": "ingested"
+}

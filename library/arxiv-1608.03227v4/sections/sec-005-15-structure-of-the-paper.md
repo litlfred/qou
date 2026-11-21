@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1608.03227v4
-doc_title: "January 30, 2018"
+doc_title: "Knot homology and sheaves on the Hilbert scheme of points on the plane"
 section_id: sec-005-15-structure-of-the-paper
 section_title: "Structure of the paper"
 section_number: 1.5
 pages: 7-8
 source_pdf: 1608.03227v4.pdf
 source_sha256: c71128e9a6c35343
-doc_brief: "January 30, 2018 — For each braid β ∈ Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗ × C∗ - equivariant sheaves on the non-commutative nested Hilbert scheme Hilb f ree 1,n ."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
-latex_coverage_ratio: 0.995
+latex_coverage_ratio: 0.994
+doc_brief: "Knot homology and sheaves on the Hilbert scheme of points on the plane — For each braid β ∈Brn we construct a 2-periodic complex Sβ of quasi-coherent C∗× C∗- equivariant sheaves on the"
 ---
 In the section [\[sec:notations\]](#sec:notations){reference-type="ref" reference="sec:notations"} we collect most of notations used in the paper, we also state and prove some key properties of the matrix factorizations. In section [\[sec: eq push\]](#sec: eq push){reference-type="ref" reference="sec: eq push"} we state and prove the results about matrix factorizations that are needed for the main body of the paper. In section [\[sec:convolution\]](#sec:convolution){reference-type="ref" reference="sec:convolution"} we introduce our main tool: the convolution algebra on the space of matrix factorizations with the potential. In this section we show that the convolution is associative and discuss generalizations of the construction. The section [\[sec: Knor\]](#sec: Knor){reference-type="ref" reference="sec: Knor"} is devoted to the study of Knorrer functor which intertwines the convolution algebras on the smaller space $\calXr_2(G_n)$ with the convolution algebra on the bigger space $\calX_2(G_n)$.
 

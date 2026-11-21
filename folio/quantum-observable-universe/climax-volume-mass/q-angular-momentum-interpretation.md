@@ -23,7 +23,7 @@ $$
 | $5_1$ (cinquefoil) | $2$ | $\frac{1}{2}$ | $0.7507$ | $0.75$ |
 | $\mathcal{B}_3$ (Borromean) | $3$ | $\frac{1}{2}$ | $0.7507$ | $0.75$ |
 
-All single-component knots in $B_2$ carry spin $j = \tfrac{1}{2}$. The nuclear spin depends on coupling: $A$ nucleons (each $j = 1/2$) couple to total $J$ via $q$-Clebsch--Gordan coefficients. The parity of $A$ (modulo 2) determines the $J$ parity ([nuclear spin parity](#prop:nuclear-spin-parity)).
+All single-component knots in $B_2$ carry spin $j = \tfrac{1}{2}$. The nuclear spin depends on coupling: $A$ nucleons (each $j = 1/2$) couple to total $J$ via $q$-Clebsch--Gordan coefficients.
 
 **Nuclear $q$-angular momentum.**
 

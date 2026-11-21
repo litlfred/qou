@@ -1,0 +1,429 @@
+---
+doc_id: huang-2021-chinese-phys-c-45-030002
+doc_title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures"
+section_id: page-137
+section_title: "Page 137"
+section_number: null
+pages: 137-137
+source_pdf: Huang_2021_Chinese_Phys._C_45_030002.pdf
+source_sha256: 1dd3329ed87476c8
+toc_source: undetermined
+doc_brief: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures — 343 sections: Page 1; Page 2; Page 3"
+---
+Chinese Physics C Vol. 45, No. 3 (2021) 030002
+Table I. Comparison of input data and adjusted values (continued, Explanation of Table on page 030002-30)
+Item
+Input value
+Adjusted value
+vi
+Dg
+Signf.
+Main inﬂ.
+Lab
+F
+Reference
+92Rb(β −)92Sr
+8080
+160
+8095
+6
+0.1
+U
+Trs
+78Wo15
+8091
+15
+0.3
+o
+Gsn
+80Bl.A
+8111
+15
+−1.1
+o
+Gsn
+80De02
+8080
+30
+0.5
+–
+McG
+83Ia02
+8095
+25
+−0.0
+o
+Bwg
+87Gr.A
+8096
+16
+−0.1
+–
+Bwg
+92Gr.A
+8107
+15
+−0.8
+–
+Gsn
+92Pr03
+ave.
+8099
+10
+−0.4
+1
+39
+32 92Rb
+average
+92Sr(β −)92Y
+1929
+50
+1949
+9
+0.4
+U
+57He39
+∗
+1930
+30
+0.6
+–
+Trs
+78Wo15
+∗
+1920
+20
+1.5
+–
+McG
+83Ia02
+ave.
+1923
+17
+1.6
+1
+32
+29 92Y
+average
+92Y(β −)92Zr
+3640
+20
+3643
+9
+0.1
+–
+62Bu16
+3630
+15
+0.8
+–
+McG
+83Ia02
+ave.
+3634
+12
+0.7
+1
+58
+58 92Y
+average
+92Nb(β +)92Zr
+2005
+6
+2005.7
+1.8
+0.1
+U
+59We30
+∗
+2008
+6
+−0.4
+U
+62Bu16
+∗
+92Zr(p,n)92Nb
+−2790.7
+2.3
+−2788.1
+1.8
+1.1
+–
+Kyu
+74Ku01
+−2792
+5
+0.8
+–
+75Ke12
+ave.
+−2790.9
+2.1
+1.4
+1
+73
+73 92Nb
+average
+92Tc(β +)92Mo
+7880
+100
+7883
+3
+0.0
+U
+64Va05
+92Mo(p,n)92Tc
+−8672
+50
+−8665
+3
+0.1
+U
+Tal
+66Mo06
+∗
+92Mo(3He,t)92Tc
+−7882
+30
+−7901
+3
+−0.6
+U
+ChR
+73Ha02
+92Pd(ε)92Rh
+8220
+345
+3
+19Pa16
+∗
+∗92Nb−u
+M −A=–86422(34) keV for mixture gs+m at 135.5 keV
+Nub211 ∗∗
+∗92Sr(β −)92Y
+Eβ−=545(50) 546(30) respectively, to 1+ level at 1383.91 keV
+Ens12a
+∗∗
+∗92Nb(β +)92Zr
+p+ =56(6)×10−5, 60(6)×10−5 respectively, to 2+ level at 934.51 keV
+Ens12a
+∗∗
+∗
+recalculated Qβ+=2140(6) 2143(6) respectively, from 92Nbm at 135.5 keV
+AHW
+∗∗
+∗92Mo(p,n)92Tc
+T=9040(50) to (4+) level at 270.09 keV
+Ens12a
+∗∗
+∗92Pd(ε)92Rh
+Qε=8170(330) keV decays to the daughter excited state at 50#(100#) keV
+HWJ202 ∗∗
+93Br−u
+−56866
+322
+−56780
+460
+0.2
+o
+GT1
+1.5
+04Ma.A
+−56780
+185
+2
+GT3
+2.5
+16Kn03
+93Rb−u
+−78036
+21
+−77961
+8
+1.4
+U
+Pb1
+2.5
+89Al33
+−77868
+100
+−0.4
+U
+GT2
+2.5
+08Kn.A
+−77940
+130
+−0.2
+U
+TG2
+1.0
+20Gr.1
+93Sr−u
+−87010
+420
+−85976
+8
+2.5
+U
+TG2
+1.0
+20Gr.1
+C7 H9−93Nb
+164046.9
+3.5
+164052.1
+1.6
+0.6
+U
+M15
+2.5
+63Ri07
+93Mo−u
+−93194
+30
+−93191.23
+0.19
+0.1
+U
+GS2
+1.0
+05Li24
+∗
+93Tc−u
+−89729
+31
+−89754.9
+1.1
+−0.8
+U
+GS2
+1.0
+05Li24
+93Tc−C7 H9
+−160189.5
+7.7
+−160180.1
+1.1
+1.2
+U
+CP1
+1.0
+11Fa10
+−160170
+22
+−0.5
+U
+CP1
+1.0
+11Fa10
+−160189.4
+8.5
+1.1
+U
+CP1
+1.0
+11Fa10
+93Tc.989−C7 H8
+−151270
+190
+−151367.8
+1.1
+−0.5
+U
+CP1
+1.0
+11Fa10
+93Ru−C7 H9
+−153318.2
+6.4
+−153320.8
+2.2
+−0.4
+–
+CP1
+1.0
+11Fa10
+−153307
+23
+−0.6
+U
+CP1
+1.0
+11Fa10
+−153324.0
+4.8
+0.7
+–
+CP1
+1.0
+11Fa10
+−153321.9
+3.5
+0.3
+–
+CP1
+1.0
+11Fa10
+93Ru−u
+−82853
+47
+−82895.6
+2.2
+−0.9
+U
+GR1
+1.0
+19An10
+93Ru−C7 H9
+ave.
+−153321.9
+2.6
+−153320.8
+2.2
+0.4
+1
+73
+73 93Ru
+average
+93Rh−C7 H9
+−144485
+25
+−144512.5
+2.8
+−1.1
+o
+CP1
+1.0
+08Fa11
+−144485
+26
+−1.1
+U
+CP1
+1.0
+11Fa10
+−144527.7
+5.3
+2.9
+U
+CP1
+1.0
+08Fa11
+−144527.7
+5.2
+2.9
+U
+CP1
+1.0
+11Fa10
+−144512.9
+3.8
+0.1
+1
+55
+55 93Rh
+CP1
+1.0
+11Fa10
+030002-136

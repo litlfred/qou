@@ -1,0 +1,1 @@
+Let Ωbe the right half plane {(x, y) ∈R2 : x > 0}. Let ∆D = ∂2 x + (1 + x)∂2 y together with Dirichlet boundary conditions on ∂Ω. Let s > and f ∈Hs D(Ω), where the latter space is the completion of C∞ c (Ω) with respect to the norm ∥f∥2 Hs D(Ω) = ∥f∥2 L2(Ω) +

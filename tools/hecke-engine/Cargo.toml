@@ -144,6 +144,14 @@ path = "src/bin/v9.rs"
 # Uses rug directly.
 required-features = ["mpfr"]
 
+# Convention-D Markov trace of the v9 nuclear element via two-row
+# seminormal irreps, diagonal-only DFS over the GT tableau tree (MPFR).
+# Port of computations/probes/markov_trace_two_row_tower_probe.py.
+[[bin]]
+name = "hecke-tower-trace"
+path = "src/bin/tower_trace.rs"
+required-features = ["mpfr"]
+
 # CRT modular engine — u64 arithmetic, no BigInt (v10)
 [[bin]]
 name = "hecke-crt"

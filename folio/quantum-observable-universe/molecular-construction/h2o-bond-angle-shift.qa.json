@@ -92,6 +92,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e2fb3ac1d029",
+          "ts": "921728783033",
+          "lean": "3b980752109e",
+          "lean_statement": "de2f430016ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:02.545Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "notes": "pass with caveat: Lean is faithful with `b = 2as` (every b is so representable since a>0); identity checked: E(θ) − E(θ₀−s) = a(θ−θ₀+s)². Uniqueness of the minimiser not stated. The statement also asserts \"for water b>0\" and the \"109.5° → 104.5°\" reduction; the proof never touches either (Lean docstring: \"the magnitude s = b/(2a) is the compute/experimental input\")"
       }
     ],
     "proof-statement-integrity": [
@@ -2497,6 +2514,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:00:50.213Z",
+  "updated_at": "2026-11-15T21:56:02.545Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

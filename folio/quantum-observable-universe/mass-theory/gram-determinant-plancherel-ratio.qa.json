@@ -48,6 +48,41 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5c2d5e50b5a2",
+          "ts": "7fd47da78c24",
+          "lean": "1807231cf6e4",
+          "lean_statement": "12d2df3ed7c9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:26.883Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the ref (lean:90-94) is `∃ κ : ℝ, κ = gramKappa … := ⟨_, rfl⟩`, which is vacuous, as its own docstring says (lean:54-60). No term denotes the CS Gram ratio, `CharacterDecomposition` holds arbitrary ℝ data (l.31-35), and the sibling `gram_kappa_numerical_value` is `sorry` with an abstract predicate (l.158-164). The ℝ is gratuitous where the md works over R = ℤ[q^{±1/2},(q−q⁻¹)⁻¹]. S↔P: **the statement's premise is false.** md:8-12 writes β = Σ_λ χ_λ(β)·e_λ. For a central β the coefficient is χ_λ(β)/d_λ, and a non-central β has no such expansion. Counterexample: β = 1 ∈ H₃ gives Σ d_λ e_λ = 1 + e_{(2,1)} ≠ 1. Also β_w = T_{3,5} = (σ₁σ₂)⁵ = Δ²(σ₁σ₂)² is not central in H₃. β_s ∈ H₂ and β_w ∈ H₃ live in different algebras, so \"∏_{λ⊢n} … c_λ^{(s)} c_λ^{(w)}\" has no common n. An exponent in R makes \"∈ R\" (md:35) meaningless. The prf (prf:1-17) asserts a block-diagonal Gram formula and says the 2-knot determinant \"projects onto the rank-2 sublattice … Substituting and taking the ratio yields the displayed formula\", which is not a derivation.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "244ac24e854e",
+          "ts": "7a652b50b730",
+          "lean": "7029a75adb1f",
+          "lean_statement": "12d2df3ed7c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:30.515Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Conjecture block: statement-to-Lean equivalence is not applicable; the Lean carrier is a conjecture class, not a proof."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2119,6 +2154,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T16:24:28.861Z",
+  "updated_at": "2026-11-16T07:13:30.515Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,11 +1,12 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-10-11T07:31:04.054182+00:00",
+  "computedAt": "2026-11-15T21:27:44.215110+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_xbot_join_probe.py"
   },
   "bean": "qou-as81",
   "anchor": "physical_proton",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "description": "Per-sum upper bound on the bottom edge, Xbot(s) <= h(mu) + mu s, with h(mu) the certified integer maximum of the L-natural-concave G - mu sum u.  With the exact top value per sum, the join over the L-natural cut's window peaks at e_inf, so e_inf is the join's maximum without G1.",
   "params": {

@@ -29,7 +29,7 @@ an equation between morphisms `A ⊗ A → A ⊗ A`.  The abstract
 context carries `A`, `⊗`, `μ`, `Δ_μ`, and the composition; the
 relation is a single equation between `A ⊗ A → A ⊗ A` maps.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-relation.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-universes/frobenius-relation.md
 -/
 
 namespace QOU
@@ -58,7 +58,7 @@ class FrobeniusRelationContext where
 /-- **Frobenius relation** ([`prop:frobenius-relation`]).
 
     `(μ ⊗ id) ∘ (id ⊗ Δ_μ) = Δ_μ ∘ μ` as morphisms `A ⊗ A → A ⊗ A`. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-relation.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-universes/frobenius-relation.md
 -- Ref: [kock2004] Frobenius algebras and 2D TQFTs.
 theorem frobenius_relation [ctx : FrobeniusRelationContext] (x : ctx.TensorAA) :
     ctx.μ_tensor_id (ctx.id_tensor_Δμ x) = ctx.Δ_μ (ctx.μ x) :=

@@ -1,0 +1,46 @@
+3.1. Vanishing theorems revisited 45
+
+Let B be an arbitrary variety over the field k, and let f: Y —> Bbea
+torsor under the torus T. By remark 4.8 (a) in loc. cit. there exists an étale
+covering B’ —+ B (not necessarily finite) over which our torsor admits a
+trivialization.
+
+Y xpB' Tx,B
+
+OO
+
+Let us denote by i: ¥, = f-!(b) —> ¥ the fibre over some chosen geometric
+point b € B(k). In what follows we fix a base point y € Y,(k) and denote the
+group of all continuous characters of the tame fundamental group 7} (Yp,y)
+as above by II(¥,), and similarly for II(Y). Since Y, is isomorphic to the
+torus 7, the character group II(¥;,) can be identified with the set of closed
+points of a scheme as explained above. In particular, it makes sense to speak
+about its irreducible components.
+
+LEMMA 3.2. In the above setting, for every perverse sheaf P € P(Y)
+there exists a subset U C T1(Yp) which meets every irreducible component
+and has the property that the forget support morphism
+
+Rfi(Py) —> Rfe(Py)
+is an isomorphism for all characters % € T1(Y) with pull-back i*(y%) € U.
+
+Proof. Let g : B’ —+ B be an étale covering which trivializes the given
+torsor in the sense that the pull-back Y’ = Y x, B’ is isomorphic over B’
+to the trivial torsor T x; B’. Choosing a geometric point b’ € B’(k) with
+image g(b’) = b, we have a commutative diagram
+
+rae
+Yp u y’ 8 Y
+| y |
+SB
+
+pI
+Spec(k) B!
+
+; a
+
+where the two squares are Cartesian. Since g is an étale covering, the forget
+
+support morphism Rf\(Py) —> Rf,(P,) is an isomorphism iff its pull-back
+under g* is an isomorphism. For the pull-back P’ = g’*(P) and y' = g*(x)
+

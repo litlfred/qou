@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/ex-yekutieli-lifting-su2",
@@ -12,7 +13,7 @@
   ],
   "label": "ex:yekutieli-lifting-su2",
   "kind": "example",
-  "title": "Categorical lifting for $\\mathrm{SU}(2)$: perpetual obstruction",
+  "title": "Categorical lifting for $\\mathrm{SU}(2)$: the band $\\mathcal{O}^{\\times}$ gives no obstruction",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting",
     "papers/quantum-observable-universe/blocks/ex-quantum-characteristic-classes-su2"

@@ -1,0 +1,1 @@
+The function Y0 given in Proposition 6 can be written in the form Y0(p) = (1 −p)β−1a1(p) + a2(p) (β̸ = 1) Y0(p) = ln(1 −p)a1(p) + a2(p) (β = 1) (2.30) for p in the region (Dǫ + 1) ∩D (Dǫ + 1 := {1 + z : z ∈Dǫ}) where a1, a2 are analytic functions in Dǫ + 1 and (a1)j = 0 for j > 1.

@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1610.09640v4/blocks/prop-sec-061-02",
@@ -12,10 +12,20 @@
     "doco:Section"
   ],
   "kind": "proposition",
-  "pageStart": 181,
-  "pageEnd": 182,
+  "pageStart": 145,
+  "pageEnd": 147,
   "text": "prop-sec-061-02.md",
   "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-061",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "8.2.6",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-061-82-functor-categories.md (p. 145-147)",
+    "claim_id": "arxiv-1610.09640v4#proposition:8.2.6",
+    "lean_status": "unformalized"
+  }
 }

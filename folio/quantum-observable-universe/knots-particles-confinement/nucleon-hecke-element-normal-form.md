@@ -22,5 +22,3 @@ $$
 $$
 
 evaluated at the substrate parameter $q_0$.
-
-**Witness**: `breit-wheeler-nucleon-nf.witness.json`.

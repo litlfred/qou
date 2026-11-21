@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0610241v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The moduli space of Dirac operators and the Yukawa parameters",
+  "pageStart": 15,
+  "pageEnd": 18,
+  "contains": [
+    "library/arxiv-hep-th-0610241v1/blocks/prose-sec-007",
+    "library/arxiv-hep-th-0610241v1/blocks/prop-sec-007-01",
+    "library/arxiv-hep-th-0610241v1/blocks/rem-sec-007-02",
+    "library/arxiv-hep-th-0610241v1/blocks/lem-sec-007-03",
+    "library/arxiv-hep-th-0610241v1/blocks/lem-sec-007-04",
+    "library/arxiv-hep-th-0610241v1/blocks/rem-sec-007-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0610241v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0610241v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,56 @@
+298 — Walter D. Neumann and Alan W. Reid
+
+Denote
+
+x—1l
+
+c+l
+
+Since a is a biholomorphic map a: U > A = {z € C: 0 < Imz < 7}, we may show
+instead that 60a~1:a + (p,q) has non-vanishing Jacobian away from a(i) = 7i/2. In
+other words, we must show that 0a/Op and Oa/0q are linearly independent over R for
+a# 7i/2. The defining equation for p and q is
+
+a(x) = loga, b(x) = log
+
+p(a — b) + q(4a — 2x) = 2ri.
+Implicit differentiation of this equation with respect to p and q gives
+
+Oa Ob
+
+ap? P Gq + 49) =b-a
+Oa Ob .
+Ig? 8a + 4q) = 2ni — 4a,
+
+so we must show that b — a and 27% — 4a are linearly independent over IR. However
+the map boa™!: a(x) + b(x) is conjugate by log to the order 4 Mobius transformation
+x + (%—1)/(x+1) andit is thus easy to see that if one divides A into four “quadrants”
+by the vertical and horizontal lines through 7i/2, then a + b rotates each quadrant
+clockwise into the next. It follows that the line from 6 to a never points in the same
+direction as the line from the center 7i/2 of rotation to a (unless a = wi/2). That is,
+b—a and mi/2—a are independent over R, as was to be shown. oO
+
+We now restrict to the case that (p,q) ¢ N and p € Z and q € 3Z. Recall that W
+covers the orbifolds W’ and W” of Figs. 6 and 7 with covering groups Cz and C2 x C2.
+W (p,q) thus branched covers W'(p,2q) and W"’(p, 2q) in the notation of Sect. 5, and
+these are hyperbolic orbifolds under our assumptions on p and q.
+
+Note that (p,q) > (p+2q, 2q) transforms the domain N into the square with vertices
+(+2, +2), so part (ii) of Theorem 5.1 is proven. We next compute some arithmetic
+invariants of our orbifolds.
+
+Theorem 6.2. Denote z = x — x! (so tT = —4/z — 2 and Q(z) = Q(r)). The
+invariant trace fields and trace fields for W(p,q), W'(p,2q), and W"(p,2q) are as
+follows:
+
+k(mW (p,q) = Q(z) \ ez
+Q(tr(m Wp, @))) = QVvz) :
+
+k(m1W"(p, 2q)) = k(mW"(p, 2q)) = Q(z) \ ly
+Q(tr(m1W'(p, 2q))) = Q(tr(mW" (p, 2q))) = Q(VZ, 4) ;
+
+2
+In particular, the cusp field equals the invariant trace field for all these examples.
+
+Remark. By Corollary 2.3 it follows that Q(z) = Q(./z) if q € Z and p is odd. In
+the examples we have checked, Q(z) 4 Q(./z) otherwise.

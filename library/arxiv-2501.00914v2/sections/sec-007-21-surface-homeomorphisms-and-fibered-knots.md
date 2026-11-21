@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2501.00914v2
-doc_title: "L-SPACES AND KNOT TRACES"
+doc_title: "L-spaces and knot traces"
 section_id: sec-007-21-surface-homeomorphisms-and-fibered-knots
 section_title: "Surface homeomorphisms and fibered knots"
 section_number: 2.1
 pages: 5-8
 source_pdf: 2501.00914v2.pdf
 source_sha256: d94bd6edf8544d4a
-doc_brief: "L-SPACES AND KNOT TRACES — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.945
-latex_coverage_ratio: 0.841
+latex_coverage_ratio: 0.979
+doc_brief: "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries."
 ---
 Let $h:\Sigma\to\Sigma$ be a homeomorphism of a compact oriented surface  with possibly empty boundary. By Thurston's classification \cite{thurston-diffeomorphisms}, $h$ is  isotopic rel boundary to a map $\varphi:\Sigma\to\Sigma$ such that
 \begin{itemize}

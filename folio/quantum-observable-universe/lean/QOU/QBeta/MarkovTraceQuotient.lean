@@ -265,7 +265,17 @@ What this does **not** do: it does not produce a `WenzlTowerStep` instance at
 the Markov trace. That additionally needs the tower inclusion `Hn →ₐ Hn1` shown
 to descend compatibly with the two radicals, which is brick 3 and is not
 automatic — the radicals at consecutive ranks are different ideals in different
-algebras, and nothing here relates them. -/
+algebras, and nothing here relates them.
+
+🛑 Measured 2026-09-27: **nothing in the corpus consumes `WenzlTowerStep`** — 27
+occurrences, of which 1 class definition, 2 discharge targets and 24 prose mentions,
+and **zero** instance-hypothesis positions. So an instance unblocks no consumer, and
+at a Hecke carrier its conclusion is free outright
+(`isSemisimpleRing_hecke_generic`; see
+`QOU.Machinery.HeckeRank.wenzlTowerStep_vacuous_of_isSemisimpleRing`). The sentence
+above is kept as the record of what this file did not do; read it as naming an open
+question, not a live blocker. Bean `qou-s7z2`.
+-/
 theorem heckeBraidedPresentationOfRank_quot
     (q : R) (n : ℕ) (σ : ℕ → A)
     [inst : QOU.Machinery.HeckeTower.HeckeBraidedPresentationOfRank q n A σ] :

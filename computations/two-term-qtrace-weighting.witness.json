@@ -1,0 +1,128 @@
+{
+  "computation": "two-term-qtrace-weighting",
+  "description": "Two-term charge insertion on the nucleon weight spaces under the DERIVED weighting t(W) = Tr_W(K^{⊗3} X V³)/[2]_q³ (convention D's Markov trace = U_q(sl2) quantum trace). Closes the #8518 weighting menu. Insertion (adjacent vs all-pairs), raw vs connected and the overall sign are NOT fixed by the corpus and are reported side by side.",
+  "script": "computations/two_term_qtrace_weighting.py",
+  "lean_module": "QOU.BraidsAndKnots.NucleonWeightSpaceQTrace",
+  "lean_theorems": [
+    "qtrace_crossing_eq_zD",
+    "deltaT_adjacent_raw_eq",
+    "deltaT_adjacent_connected_eq",
+    "deltaT_allPairs_raw_eq",
+    "knkp_eq_qdim_div_three_mul_deltaT_connected",
+    "deltaT_allPairs_connected_eq_zero"
+  ],
+  "bean": "qou-99qc",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357873607281",
+  "m_e_MeV": "0.510998950690000000000000000000",
+  "dps": 70,
+  "symbolic": {
+    "check_weighting": "Tr(K⊗K Ř)/[2]_q² = q³/(q²+1) = z_D (asserted symbolically)",
+    "tr_V3": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**6",
+    "Delta_t_adjacent_raw": "(2*q**14 - 2*q**12 - 9*q**10 + 20*q**8 - 26*q**6 + 18*q**4 - 13*q**2 + 4)/(9*q**4*(q**2 + 1)**3)",
+    "Delta_t_adjacent_raw_q1_limit": "-1/12",
+    "Delta_t_adjacent_connected": "(q - 1)**4*(q + 1)**4*(q**2 + 2)*(2*q**4 + 1)/(9*q**4*(q**2 + 1)**3)",
+    "Delta_t_all_pairs_raw": "(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(3*q**4*(q**2 + 1)**3)",
+    "Delta_t_all_pairs_raw_q1_limit": "-1/8",
+    "Delta_t_all_pairs_connected": "0",
+    "t_p_adjacent": "-2*(q - 1)**4*(q + 1)**4*(q**2 - q + 1)*(q**2 + q + 1)/(9*q**2*(q**2 + 1)**3)",
+    "t_n_adjacent_raw": "(4*q**12 - 15*q**10 + 24*q**8 - 32*q**6 + 24*q**4 - 15*q**2 + 4)/(9*q**4*(q**2 + 1)**3)",
+    "menu_vs_derived_connected": {
+      "KnKp_over_derived": "(q**2 + 1)**3/(3*q**3)",
+      "KnKp_minus_[2]^3/3_times_derived_raw": "-2*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(27*q**7)",
+      "proportional_to_derived_connected": {
+        "plain": false,
+        "KnKp": true,
+        "Kp3": false,
+        "q": false
+      }
+    },
+    "proton_derived_over_plain": "3*q**4/(q**2 + 1)**3"
+  },
+  "preregistered_rule": {
+    "rule": "Delta_EM := +m_e·[t(W_n) − t(W_p)], adjacent Q12+Q23, raw, derived weight",
+    "preregistered_at": "2026-11-19T05:10Z",
+    "Delta_t": "-0.07347050486282370855754274204775792519846",
+    "Delta_EM_MeV": "-0.0375433508915674574633587146712",
+    "Delta_EM_all_pairs_MeV": "-0.0565058627887970393970933845337",
+    "lattice_comparison_only": "EM part of m_n − m_p ≈ −0.6 to −1.0 MeV (not a target)"
+  },
+  "canonical_scored": {
+    "ruling": "OWNER 2026-11-20 16:44: score option 2 (covariant all-pairs, derived weighting)",
+    "insertion": "all_pairs",
+    "M_p_QED_conn_MeV": "0.0",
+    "Delta_m_QED_conn_MeV": "0.0",
+    "consequence": "two-term rows equal the one-term rows on V³",
+    "static_word_independent_part_not_scored_MeV": "-0.0565058627887970393970933845337"
+  },
+  "by_insertion": {
+    "adjacent_raw": {
+      "t_W_p": "-0.0001763687716875391780572452588956552861891",
+      "t_W_n": "-0.07364687363451124773559998730665358048465",
+      "Delta_t": "-0.07347050486282370855754274204775792519846",
+      "Delta_EM_preregistered_sign_keV": "-37.5433508915674574633587146712",
+      "Delta_EM_compute_sign_keV": "37.5433508915674574633587146712",
+      "M_p_preregistered_sign_keV": "-0.0901242572668167005355174000477",
+      "M_p_compute_sign_keV": "0.0901242572668167005355174000477"
+    },
+    "adjacent_connected": {
+      "t_W_p": "-0.0001763687716875391780572452588956552861891",
+      "t_W_n": "0.00007260297432507323524583319040164587532935",
+      "Delta_t": "0.0002489717460126124133030784492973011615185",
+      "Delta_EM_preregistered_sign_keV": "0.127224300963902134703541684538",
+      "Delta_EM_compute_sign_keV": "-0.127224300963902134703541684538",
+      "M_p_preregistered_sign_keV": "-0.0901242572668167005355174000477",
+      "M_p_compute_sign_keV": "0.0901242572668167005355174000477"
+    },
+    "all_pairs_raw": {
+      "t_W_p": "0.0",
+      "t_W_n": "-0.1105792149132544814562687307455828395400",
+      "Delta_t": "-0.1105792149132544814562687307455828395400",
+      "Delta_EM_preregistered_sign_keV": "-56.5058627887970393970933845337",
+      "Delta_EM_compute_sign_keV": "56.5058627887970393970933845337",
+      "M_p_preregistered_sign_keV": "0.0",
+      "M_p_compute_sign_keV": "0.0"
+    },
+    "all_pairs_connected": {
+      "t_W_p": "0.0",
+      "t_W_n": "0.0",
+      "Delta_t": "0.0",
+      "Delta_EM_preregistered_sign_keV": "0.0",
+      "Delta_EM_compute_sign_keV": "0.0",
+      "M_p_preregistered_sign_keV": "0.0",
+      "M_p_compute_sign_keV": "0.0"
+    }
+  },
+  "connected_adjacent_Delta_m_by_weighting": {
+    "derived": {
+      "Delta_m_QED_conn_keV": "-0.127224300963902134703541684538",
+      "label": "derived weighting, ADJACENT insertion: labelled comparison (option 1)"
+    },
+    "plain": {
+      "Delta_m_QED_conn_keV": "-0.331696044605178847674802546956",
+      "label": "historical comparison"
+    },
+    "KnKp": {
+      "Delta_m_QED_conn_keV": "-0.344840456101401187346408988575",
+      "label": "historical comparison"
+    },
+    "Kp3": {
+      "Delta_m_QED_conn_keV": "-0.355899833473500132102974854558",
+      "label": "historical comparison"
+    },
+    "q": {
+      "Delta_m_QED_conn_keV": "-0.368175505495095209068872905874",
+      "label": "historical comparison"
+    }
+  },
+  "connected_adjacent_M_p_by_weighting_keV": {
+    "derived": "0.0901242572668167005355174000477",
+    "plain": "0.220077293803982939852293904394",
+    "Kp": "0.244281082672304224280466211996"
+  },
+  "not_fixed_by_corpus_before_ruling": [
+    "insertion: adjacent Q12+Q23 (pre-registered, not braid-covariant #8552) vs all-pairs",
+    "raw (pre-registered) vs connected (the compute's scored object)",
+    "overall sign: +m_e·t (pre-registered) vs −m_e·t (compute connected rows, selected)"
+  ]
+}

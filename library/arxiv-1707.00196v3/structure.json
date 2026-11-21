@@ -8,7 +8,7 @@
   "pages": 36,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T16:28:27Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,13 +20,13 @@
    "stamp_date": "5 Aug 2019"
   },
   "doi": null,
-  "title": "Yang-Baxter representations of the in\ufb01nite symmetric group",
+  "title": "Yang-Baxter representations of the inﬁnite symmetric group",
   "authors_raw": "Gandalf Lechner, Ulrich Pennig, Simon Wood",
   "title_lines": [
    "Yang-Baxter representations of the",
    "infinite symmetric group"
   ],
-  "abstract": "Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) de\ufb01nes an extremal character and a representation of the in\ufb01nite sym- metric group S\u221e. We give a complete classi\ufb01cation of all such Yang-Baxter characters and determine which extremal characters of S\u221eare of Yang-Baxter form. Calling two involutive R-matrices equivalent if they have the same character and the same dimension, we show that equivalence classes can be parameterized by pairs of Young diagrams, and construct an explicit normal form R-matrix for each class. Using operator-algebraic techniques (subfactors), we prove that two R-matrices are equivalent if and only if they have similar partial traces. Furthermore, we describe the algebraic structure of the set of equivalence classes of all involutive R-matrices, and discuss several families of examples. These include unitary Yang-Baxter representations of the Temperley-Lieb alge- bra at loop parameter \u03b4 = 2, which can be completely classi\ufb01ed in terms of their trace and dimension. Mathematics Subject Classi\ufb01cation: 16T25, 20C32, 46L37",
+  "abstract": "Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) deﬁnes an extremal character and a representation of the inﬁnite sym- metric group S∞. We give a complete classiﬁcation of all such Yang-Baxter characters and determine which extremal characters of S∞are of Yang-Baxter form. Calling two involutive R-matrices equivalent if they have the same character and the same dimension, we show that equivalence classes can be parameterized by pairs of Young diagrams, and construct an explicit normal form R-matrix for each class. Using operator-algebraic techniques (subfactors), we prove that two R-matrices are equivalent if and only if they have similar partial traces. Furthermore, we describe the algebraic structure of the set of equivalence classes of all involutive R-matrices, and discuss several families of examples. These include unitary Yang-Baxter representations of the Temperley-Lieb alge- bra at loop parameter δ = 2, which can be completely classiﬁed in terms of their trace and dimension. The Yang-Baxter equation is an algebraic equation that plays a striking role in a remarkable number of seemingly disparate ﬁelds: Statistical mechanics [3], quantum mechanics [4], braid groups, knot theory [5, 6], integrable quantum ﬁeld theory [7], quasitriangular Hopf algebras [8], and von Neumann algebras [9], to name but a few. In its most basic form, the (quantum) Yang-Baxter equation is an equation for an endomorphism R ∈End(V ⊗V ) on the tensor square of a vector space V , namely (R ⊗idV )(idV ⊗R)(R ⊗idV ) = (idV ⊗R)(R ⊗idV )(idV ⊗R) (1.1) as an equation in End(V ⊗V ⊗V ). Several variations of this equation exist (see, for example, [8, 10, 11]), but we shall only consider the form (1.1). As a nonlinear system of (dim V )6 equations for (dim V )4 unknowns, the Yang- Baxter equation is notoriously hard to solve in general. One rich source of solutions to (1.1) is the theory of quantum groups, pioneered by Drinfeld [12] and Jimbo [13], which connects ",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
@@ -36,7 +36,7 @@
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
-   "heading": "Yang-Baxter representations of the in\ufb01nite symmetric group",
+   "heading": "Yang-Baxter representations of the inﬁnite symmetric group",
    "outline": "1 Introduction",
    "text": "Yang-Baxter representations of the infinite symmetric group",
    "corroborated_by": [
@@ -51,109 +51,495 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "R-matrices and characters of S",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Extremality and Thoma's parameterization",
    "page": 6,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Faithfulness",
    "page": 8,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Yang-Baxter subfactors",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "The structure of R0",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Normal forms of involutive R-matrices",
    "page": 15,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Parameterization by pairs of Young diagrams",
    "page": 20,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Yang-Baxter representations",
    "page": 22,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "R-matrices and K-theory",
    "page": 22,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "R-matrices, K-theory and symmetric functions",
    "page": 25,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "R-matrices and product states",
    "page": 28,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 30,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "R-matrices of diagonal type",
    "page": 30,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Temperley-Lieb R-matrices",
    "page": 32,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   }
  ],
  "toc_source": "outline",
  "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The Young lattice for the class of R-matrices associated to the pair (∅,",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -162,8 +548,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1295,
-   "n_words": 186
+   "n_chars": 238,
+   "n_words": 28,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-000-1-introduction",
@@ -172,8 +560,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 12414,
-   "n_words": 2133
+   "n_chars": 13480,
+   "n_words": 2290,
+   "label_start": "1",
+   "label_end": "5"
   },
   {
    "id": "sec-001-2-r-matrices-and-characters-of-s",
@@ -181,129 +571,167 @@
    "title": "R-matrices and characters of S",
    "level": 1,
    "page_start": 5,
-   "page_end": 8,
-   "n_chars": 6395,
-   "n_words": 1232
+   "page_end": 6,
+   "n_chars": 1635,
+   "n_words": 290,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-002-22-faithfulness",
+   "id": "sec-002-21-extremality-and-thomas-parameterization",
+   "number": "2.1",
+   "title": "Extremality and Thoma's parameterization",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4746,
+   "n_words": 942,
+   "label_start": "6",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-003-22-faithfulness",
    "number": "2.2",
    "title": "Faithfulness",
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 2226,
-   "n_words": 426
+   "n_chars": 2237,
+   "n_words": 426,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-003-3-yang-baxter-subfactors",
+   "id": "sec-004-3-yang-baxter-subfactors",
    "number": "3",
    "title": "Yang-Baxter subfactors",
    "level": 1,
    "page_start": 8,
    "page_end": 15,
-   "n_chars": 16243,
-   "n_words": 3231
+   "n_chars": 16264,
+   "n_words": 3232,
+   "label_start": "8",
+   "label_end": "15"
   },
   {
-   "id": "sec-004-4-the-structure-of-r0",
+   "id": "sec-005-4-the-structure-of-r0",
    "number": "4",
    "title": "The structure of R0",
    "level": 1,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 3,
-   "n_words": 1
+   "n_chars": 21,
+   "n_words": 4,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-005-41-normal-forms-of-involutive-r-matrices",
+   "id": "sec-006-41-normal-forms-of-involutive-r-matrices",
    "number": "4.1",
    "title": "Normal forms of involutive R-matrices",
    "level": 2,
    "page_start": 15,
    "page_end": 20,
-   "n_chars": 11923,
-   "n_words": 2411
+   "n_chars": 11957,
+   "n_words": 2415,
+   "label_start": "15",
+   "label_end": "20"
   },
   {
-   "id": "sec-006-42-parameterization-by-pairs-of-young-diagrams",
+   "id": "sec-007-42-parameterization-by-pairs-of-young-diagrams",
    "number": "4.2",
    "title": "Parameterization by pairs of Young diagrams",
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 5703,
-   "n_words": 1113
+   "n_chars": 5745,
+   "n_words": 1118,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-007-5-yang-baxter-representations",
+   "id": "sec-008-5-yang-baxter-representations",
    "number": "5",
    "title": "Yang-Baxter representations",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 282,
-   "n_words": 50
+   "n_chars": 306,
+   "n_words": 51,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-008-51-r-matrices-and-k-theory",
+   "id": "sec-009-51-r-matrices-and-k-theory",
    "number": "5.1",
    "title": "R-matrices and K-theory",
    "level": 2,
    "page_start": 22,
    "page_end": 25,
-   "n_chars": 6508,
-   "n_words": 1178
+   "n_chars": 6528,
+   "n_words": 1180,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
-   "id": "sec-009-52-r-matrices-k-theory-and-symmetric-functions",
+   "id": "sec-010-52-r-matrices-k-theory-and-symmetric-functions",
    "number": "5.2",
    "title": "R-matrices, K-theory and symmetric functions",
    "level": 2,
    "page_start": 25,
    "page_end": 28,
-   "n_chars": 7868,
-   "n_words": 1589
+   "n_chars": 7909,
+   "n_words": 1593,
+   "label_start": "25",
+   "label_end": "28"
   },
   {
-   "id": "sec-010-53-r-matrices-and-product-states",
+   "id": "sec-011-53-r-matrices-and-product-states",
    "number": "5.3",
    "title": "R-matrices and product states",
    "level": 2,
    "page_start": 28,
    "page_end": 30,
-   "n_chars": 3902,
-   "n_words": 789
+   "n_chars": 3930,
+   "n_words": 792,
+   "label_start": "28",
+   "label_end": "30"
   },
   {
-   "id": "sec-011-6-examples",
+   "id": "sec-012-6-examples",
    "number": "6",
    "title": "Examples",
    "level": 1,
    "page_start": 30,
    "page_end": 30,
-   "n_chars": 77,
-   "n_words": 12
+   "n_chars": 82,
+   "n_words": 12,
+   "label_start": "30",
+   "label_end": "30"
   },
   {
-   "id": "sec-012-61-r-matrices-of-diagonal-type",
+   "id": "sec-013-61-r-matrices-of-diagonal-type",
    "number": "6.1",
    "title": "R-matrices of diagonal type",
    "level": 2,
    "page_start": 30,
    "page_end": 32,
-   "n_chars": 2240,
-   "n_words": 472
+   "n_chars": 2264,
+   "n_words": 475,
+   "label_start": "30",
+   "label_end": "32"
   },
   {
-   "id": "sec-013-62-temperley-lieb-r-matrices",
+   "id": "sec-014-62-temperley-lieb-r-matrices",
    "number": "6.2",
    "title": "Temperley-Lieb R-matrices",
    "level": 2,
    "page_start": 32,
    "page_end": 36,
-   "n_chars": 12448,
-   "n_words": 1995
+   "n_chars": 12474,
+   "n_words": 1997,
+   "label_start": "32",
+   "label_end": "36"
   }
  ],
  "diagnostics": {
@@ -311,7 +739,17 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "toc_inferred_entries": 0,
-  "sections": 15,
-  "chars_total": 89527
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 89816,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   1
+  ]
  }
 }

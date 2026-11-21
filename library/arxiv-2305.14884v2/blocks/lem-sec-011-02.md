@@ -1,1 +1,1 @@
-With the notation used in the previous proof of Proposition 6.4 we have
+With the notation used in the previous proof of Proposition 6.4 we have Q11 = 0 and the following equalities: ~B−1~A =     Q22 Q12 + 1 Q12 + Q22 Q∗ Q12 + 1 0 Q12 Q∗ Q12 + Q22 Q12 2Q12 + Q22 Q∗ 1 + Q∗ Q∗ t Q∗ t Q∗ t + Q∗ t Q∗    , (123) ~B−1~ν =     (B−1ν )2 (B−1ν )1 (B−1ν )1 + (B−1ν )2 (B−1ν )∗    , (124) ~ft~B−1~ν = ftB−1ν. (125)

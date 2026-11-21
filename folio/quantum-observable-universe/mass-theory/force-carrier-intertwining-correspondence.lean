@@ -3,7 +3,7 @@ The force-carrier intertwining correspondence:
   T_{p,q} (genus-4 torus knot) acting on an n-strand braid lands on
   Wedderburn channel λ = (p, 1, ..., 1) of H_n(q).
 
-LaTeX label: `prop:force-carrier-intertwining-correspondence`
+LaTeX label: `conj:force-carrier-intertwining-correspondence`
 Computational evidence:
   computations/delta-q-decoration.witness.json
 -/
@@ -42,7 +42,7 @@ arithmetic content that the conjectural Wedderburn-channel selection
 `T_{p,q} ↦ V_{(p, 1^{n-p})}` requires; the categorical selection
 itself is downstream of `conj:e-hartree-categorical-derivation`.
 
--- Ref: [manuscript] §round-18 of conj:e-hartree-categorical-derivation
+-- Ref: [leitner2026] §round-18 of conj:e-hartree-categorical-derivation
 -/
 
 /-- The intertwining-pattern shape of `T_{p,q}` on `n` strands is the

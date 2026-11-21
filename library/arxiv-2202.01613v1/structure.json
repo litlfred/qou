@@ -1,0 +1,421 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2202.01613v1",
+ "source": {
+  "file": "2202.01613v1.pdf",
+  "sha256": "b8768b78fe84c86a3a56443af4d193c7856be4264004dc4f84d3e9c22e738dc3",
+  "bytes": 1027891,
+  "pages": 12,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:23:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2202.01613",
+   "version": "1",
+   "primary_class": "hep-lat",
+   "stamp_date": "3 Feb 2022"
+  },
+  "doi": null,
+  "title": "The neutron-proton mass difference",
+  "authors_raw": "Rome, Italy",
+  "title_lines": [
+   "The neutron-proton mass difference",
+   "Simone Romiti𝑎,𝑏,∗",
+   "𝑎Dipartimento di Matematica e Fisica, Università degli Studi Roma Tre"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20220204013546Z"
+  },
+  "title_raw": "The neutron-proton mass difference Simone Romiti𝑎,𝑏,∗ 𝑎Dipartimento di Matematica e Fisica, Università degli Studi Roma Tre",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The neutron-proton mass diﬀerence",
+   "outline": "1 Introduction",
+   "text": "The neutron-proton mass difference Simone Romiti𝑎,𝑏,∗ 𝑎Dipartimento di Matematica e Fisica, Università degli Studi Roma Tre",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "The neutron-proton mass difference",
+   "basis": "Printed title on page 1 (S. Romiti); the extracted title used the ff ligature",
+   "extracted_title": "The neutron-proton mass diﬀerence",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "QCD+QED at LO",
+   "page": 2,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "LIBEs in the hadronic spectrum",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Counterterms and separation between QCD and QED",
+   "page": 5,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 1,
+   "title": "Details of simulation and analysis",
+   "page": 7,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "Nucleons spectrum",
+   "page": 8,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 1,
+   "title": "Summary and outlook",
+   "page": 9,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 10,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "EMC corrections for the 𝐾+ and Ω−obtained from the 1st of the 2 simulated values of 𝑎𝑚𝑠, for the A40.XX ensembles. The blue points are the EMC corrections in lattice units at ﬁnite volume. The green points are the values after the correction of the universal QED FVEs. The green band is a ﬁt of the l",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Parameters of the ensembles used in this work. The space-time volume is reported in the format",
+   "page": 7,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Extrapolation of (𝑀𝑛+ 𝑀𝑝)/2 (left panel) and 𝑀𝑛−𝑀𝑝(right panel). Grey points are the values at ﬁnite volume. The colored points and lines correspond to the limit 𝐿→∞. The red curves are",
+   "page": 9,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The same as ﬁg. (2) but for (𝑀𝑛−𝑀𝑝)(𝑄𝐶𝐷) and (𝑀𝑛−𝑀𝑝)(𝑄𝐸𝐷)",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1180,
+   "n_words": 167,
+   "label_start": null,
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-2-qcdqed-at-lo",
+   "number": "2",
+   "title": "QCD+QED at LO",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 13,
+   "n_words": 2,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5687,
+   "n_words": 987,
+   "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-21-libes-in-the-hadronic-spectrum",
+   "number": "2.1",
+   "title": "LIBEs in the hadronic spectrum",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2558,
+   "n_words": 550,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-3-counterterms-and-separation-between-qcd-and-qe",
+   "number": "3",
+   "title": "Counterterms and separation between QCD and QED",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 5960,
+   "n_words": 1087,
+   "label_start": "5",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-004-4-details-of-simulation-and-analysis",
+   "number": "4",
+   "title": "Details of simulation and analysis",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2618,
+   "n_words": 458,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-005-5-nucleons-spectrum",
+   "number": "5",
+   "title": "Nucleons spectrum",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2481,
+   "n_words": 464,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-006-6-summary-and-outlook",
+   "number": "6",
+   "title": "Summary and outlook",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1783,
+   "n_words": 331,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-007-7-acknowledgements",
+   "number": "7",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4713,
+   "n_words": 725,
+   "label_start": "10",
+   "label_end": "12"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 26993,
+  "furniture_lines_stripped": 0
+ }
+}

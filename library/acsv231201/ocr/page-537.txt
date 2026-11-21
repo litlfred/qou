@@ -1,0 +1,42 @@
+D.2 Critical points and the fundamental lemma 519
+
+Figure D.3 A non-Morse function (left) and a Morse function (right).
+
+dh. A standard perturbation argument shows that coinciding critical values do
+not affect topology.
+
+The stratified version of the Fundamental Morse Lemma (Lemma C.27) is
+the following.
+
+Theorem D.13 (Stratified Morse Lemma [GM88, Theorem SMT part A]). Let
+X ¢ C! be a stratified space with proper Morse function h and let a < b be
+real numbers such that the interval [a,b] contains no critical values of h. If
+h-\({a, b]) is compact, then the inclusion X<q > X<p is a homotopy equiva-
+lence.
+
+Oo
+
+Tangent vector fields
+
+The argument behind Theorem D.13 is worth understanding for readers who
+have made it this far into the appendices. Both Theorem D.13 and Theorem D.9
+will be derived from Thom’s Isotopy Lemma, stated as Lemma D.16 below.
+For non-experts, the geometric intuition behind Theorem D.13 is not apparent,
+and it can be instructive to pursue a line of reasoning that sometimes fails but
+more closely parallels classical Morse theory.
+
+Proposition D.14. In the following cases, the local product structure in Theo-
+rem D.9 is induced by a diffeomorphism.
+
+When Z is a smooth algebraic hypersurface.
+When Z is the simplex or the complexification of a simplex.
+When Z is a hyperplane arrangement.
+
+KRWNS
+
+When Z is the product of two spaces on which the local product is induced
+by a diffeomorphism.
+
+Proof 1n Cases 2 and 3, diffeomorphisms can be explicit constructed. Case 1
+follows from the smooth implicit function theorem, while Case 4 follows from
+taking a product diffeomorphism. ia)

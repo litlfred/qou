@@ -2,212 +2,82 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-ph-9511320v1",
  "source_sha256": "4336112cecabdfdf",
- "brief": "TK 95 31 CHIRAL LAGRANGIANS FOR BARYONS COUPLED TO MASSIVE SPIN–1 FIELDS ⋆ — We analyze the eﬀective low–energy ﬁeld theory of Goldstone b osons and baryons chirally coupled to massive spin–1 ﬁelds.",
- "extended": "**TK 95 31 CHIRAL LAGRANGIANS FOR BARYONS COUPLED TO MASSIVE SPIN–1 FIELDS ⋆**\n\n*B. Borasoy a 1 , Ulf-G. Meißner a 2*\n\n26 pp, 40 sections.\n\n**Abstract.** We analyze the eﬀective low–energy ﬁeld theory of Goldstone b osons and baryons chirally coupled to massive spin–1 ﬁelds. We use the electro magnetic baryon form factors to demonstrate the formal equivalence between the v ector and the tensor ﬁeld formulation for the spin–1 ﬁelds. We also discuss the origin of the so–called Weinberg term in pion–nucleon scattering and the role of ρ–meson exchange. Chirally coupled vector mesons do not give rise to this two–pion nucleon seagu ll interaction but rather to higher order corrections. Some problems of the for mal equivalence arising in higher orders and related to loops are touched upon.\n\n**Outline.** Abstract; 1 Introduction; 3 We are not considering the decuplet states a; 4 We are grateful to Harry Lee for reminding u; 2 Eﬀective Lagrangian of Goldstones, Baryons a; 2.1 Addition of Spin–1 Fields: Tensor Field Fo; 4 M 2; 4 Tr; 2.2 Addition of Spin–1 Fields: Vector Field Fo; 2.3 Equivalence for Spin–1 Pole Contributions; 3 Electromagnetic Form Factors for the Baryon ; 3.1 Basic Deﬁnitions; 2 FV f µν; 2 FV Q (∂µ Aν − ∂ν Aµ ) , (40); 1 (t) + i σµν kν; 2 (t)]{λa, u(p)}; 2 (t)][λa, u(p)]; 2 (t) = F −",
+ "brief": "Chiral Lagrangians for Baryons Coupled to Massive Spin-1 Fields — We analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons chirally coupled to massive spin–1 ﬁelds.",
+ "extended": "**Chiral Lagrangians for Baryons Coupled to Massive Spin-1 Fields**\n\n*B. Borasoy a 1 , Ulf-G. Meißner a 2*\n\n26 pp, 14 sections.\n\n**Abstract.** We analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons chirally coupled to massive spin–1 ﬁelds. We use the electromagnetic baryon form factors to demonstrate the formal equivalence between the vector and the tensor ﬁeld formulation for the spin–1 ﬁelds. We also discuss the origin of the so–called Weinberg term in pion–nucleon scattering and the role of ρ–meson exchange. Chirally coupled vector mesons do not give rise to this two–pion nucleon seagull interaction but rather to higher order corrections. Some problems of the formal equivalence arising in higher orders and related to loops are touched upon.\n\n**Outline.** Front matter; 1 Introduction; 2 Effective Lagrangian of Goldstones, Baryons ; 2.1 Addition of Spin--1 Fields: Tensor Field F; 2.2 Addition of Spin--1 Fields: Vector Field F; 2.3 Equivalence for Spin--1 Pole Contributions; 3 Electromagnetic Form Factors for the Baryon ; 3.1 Basic Definitions; 3.2 Vector Meson Contribution to the Electroma; 4 Vector Meson Contribution to Pion--Nucleon S; 5 Loops with massive particles; 6 Short Summary; A Construction Principles; B On the Equivalence from Dual Transformations",
  "tokens": {
-  "brief": 49,
-  "extended": 328
+  "brief": 46,
+  "extended": 325
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-2"
+   "pages": "1-5"
   },
   {
-   "id": "sec-002-3-we-are-not-considering-the-decuplet-states-as",
-   "title": "We are not considering the decuplet states as dynamical degr ees of freedom in",
-   "pages": "2-4"
-  },
-  {
-   "id": "sec-003-4-we-are-grateful-to-harry-lee-for-reminding-us",
-   "title": "We are grateful to Harry Lee for reminding us of this problem. Of course, it",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-004-2-eﬀective-lagrangian-of-goldstones-baryons-and",
-   "title": "Eﬀective Lagrangian of Goldstones, Baryons and Spin–1 Fie lds",
+   "id": "sec-001-2-effective-lagrangian-of-goldstones-baryons-and",
+   "title": "Effective Lagrangian of Goldstones, Baryons and Spin--1 Fields",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-21-addition-of-spin1-fields-tensor-field-formula",
-   "title": "Addition of Spin–1 Fields: Tensor Field Formulation",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-006-4-m-2",
-   "title": "M 2",
+   "id": "sec-002-21-addition-of-spin--1-fields-tensor-field-formu",
+   "title": "Addition of Spin--1 Fields: Tensor Field Formulation",
    "pages": "6-8"
   },
   {
-   "id": "sec-007-4-tr",
-   "title": "Tr",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-008-22-addition-of-spin1-fields-vector-field-formula",
-   "title": "Addition of Spin–1 Fields: Vector Field Formulation",
+   "id": "sec-003-22-addition-of-spin--1-fields-vector-field-formu",
+   "title": "Addition of Spin--1 Fields: Vector Field Formulation",
    "pages": "8-11"
   },
   {
-   "id": "sec-009-23-equivalence-for-spin1-pole-contributions",
-   "title": "Equivalence for Spin–1 Pole Contributions",
+   "id": "sec-004-23-equivalence-for-spin--1-pole-contributions",
+   "title": "Equivalence for Spin--1 Pole Contributions",
    "pages": "11-12"
   },
   {
-   "id": "sec-010-3-electromagnetic-form-factors-for-the-baryon-oc",
+   "id": "sec-005-3-electromagnetic-form-factors-for-the-baryon-oc",
    "title": "Electromagnetic Form Factors for the Baryon Octet",
    "pages": "12-12"
   },
   {
-   "id": "sec-011-31-basic-deﬁnitions",
-   "title": "Basic Deﬁnitions",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-012-2-fv-f-µν",
-   "title": "FV f µν",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-013-2-fv-q-µ-aν-ν-aµ-40",
-   "title": "FV Q (∂µ Aν − ∂ν Aµ ) , (40)",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-014-1-t-i-σµν-kν",
-   "title": "(t) + i σµν kν",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-015-2-tλa-up",
-   "title": "(t)]{λa, u(p)}",
+   "id": "sec-006-31-basic-definitions",
+   "title": "Basic Definitions",
    "pages": "12-13"
   },
   {
-   "id": "sec-016-2-tλa-up",
-   "title": "(t)][λa, u(p)]",
-   "pages": "13-13"
+   "id": "sec-007-32-vector-meson-contribution-to-the-electromagne",
+   "title": "Vector Meson Contribution to the Electromagnetic Form Factors",
+   "pages": "13-15"
   },
   {
-   "id": "sec-017-2-t-f",
-   "title": "(t) = F −",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-018-2-t-13f",
-   "title": "(t) + (1/3)F +",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-019-32-vector-meson-contribution-to-the-electromagne",
-   "title": "Vector Meson Contribution to the Electromagnetic Form F actors",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-020-1-t-fv",
-   "title": "(t) = FV",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-021-2-fv-td",
-   "title": "FV TD",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-022-2-t-fv-4",
-   "title": "(t) = FV 4",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-023-1-t-1-fv",
-   "title": "(t) = 1 + FV",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-024-2-fv-tf",
-   "title": "FV TF",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-025-1-0-0-and-f",
-   "title": "(0) = 0 and F ±",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-026-2-0-0-this-in-particular",
-   "title": "(0) ⁄= 0. This in particular",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-027-5-throughout-we-do-not-diﬀerentiate-between-the",
-   "title": "Throughout, we do not diﬀerentiate between the physical (ave rage) octet baryon",
-   "pages": "13-14"
-  },
-  {
-   "id": "sec-028-1-t",
-   "title": "(t) = −",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-029-2-t-4",
-   "title": "(t) = −4",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-030-1-t-1",
-   "title": "(t) = 1 −",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-031-2-0-0-this-would-imply-that-there-is-no-vector-m",
-   "title": "(0) = 0. This would imply that there is no vector meson induced con-",
-   "pages": "14-15"
-  },
-  {
-   "id": "sec-032-4-vector-meson-contribution-to-pionnucleon-scatt",
-   "title": "Vector Meson Contribution to Pion–Nucleon Scattering",
-   "pages": "15-15"
-  },
-  {
-   "id": "sec-033-2-q-q-sd-sf-t",
-   "title": "(q /+ q /′) [SD + SF ] + t",
-   "pages": "15-15"
-  },
-  {
-   "id": "sec-034-8-q-q-td-tf",
-   "title": "(q /+ q /′) [TD + TF ]",
+   "id": "sec-008-4-vector-meson-contribution-to-pion--nucleon-sca",
+   "title": "Vector Meson Contribution to Pion--Nucleon Scattering",
    "pages": "15-16"
   },
   {
-   "id": "sec-035-2-q-q-gd-gf-m",
-   "title": "(q /+ q /′) [GD + GF ] + m",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-036-5-loops-with-massive-particles",
+   "id": "sec-009-5-loops-with-massive-particles",
    "title": "Loops with massive particles",
    "pages": "16-18"
   },
   {
-   "id": "sec-037-6-short-summary",
+   "id": "sec-010-6-short-summary",
    "title": "Short Summary",
-   "pages": "18-23"
+   "pages": "18-19"
   },
   {
-   "id": "sec-038-7-the-sign-in-the-exponential-is-derived-from-zu",
-   "title": "The sign in the exponential is derived from Z[uµ , f +",
-   "pages": "23-25"
+   "id": "sec-011-a-construction-principles",
+   "title": "Construction Principles",
+   "pages": "19-22"
   },
   {
-   "id": "sec-039-references",
-   "title": "References",
-   "pages": "25-26"
+   "id": "sec-012-b-on-the-equivalence-from-dual-transformations",
+   "title": "On the Equivalence from Dual Transformations",
+   "pages": "22-26"
   }
  ],
  "provenance": {

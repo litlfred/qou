@@ -1,6 +1,8 @@
 *Proof.*
 
-We establish three claims.
+**Scope of the dual-lift argument.** Step 1 below contains an open gap: in the dual matrix inequality $u_0 I + \sum_\lambda u_\lambda \pi_\lambda - T \preceq 0$ with $u_\lambda \ge 0$, increasing a newly introduced multiplier $u_\lambda$ adds a positive semidefinite term and tightens the inequality rather than relaxing it. The least restrictive choice on a new block is $u_\lambda = 0$, for which the dual lift is feasible only when $u_0 I \preceq T_{\mathrm{new}}$ on that block—a domination bound not established here. Consequently, claim 1 of the proposition (and the monotonicity clause of claim 2 that rests on it) remains conditional on that block-domination bound, while step 3 compares the shell gap against the Archimedean quantity $\alpha \cdot m_e \cdot c_q^2$ across the evaluation wall.
+
+One establishes three claims.
 
 **1. SDP-relaxation monotonicity.**
 At each step $Z - 1 \to Z$, the dressing morphism $\mathrm{dress}_{S_Z}$ induces a cabling embedding $\iota: H_{A + Z - 1}(q) \hookrightarrow H_{A + Z}(q)$. Three structural changes follow in the [confinement SDP](#prop:confinement-sdp):
@@ -28,9 +30,3 @@ For $Z \in \mathcal{Z}_{\mathrm{noble}}$, the orbital parametrisation of the ele
 
 **3. Terminality.**
 An outgoing dressing $\mathrm{dress}_{S'}: P^{(Z)} \to P'$ with $Z \in \mathcal{Z}_{\mathrm{noble}}$ extends the active support by opening a block of principal shell $n + 1$. Because the $n$-th shell is fully closed, no dual variable in shell $n$ can slack. The extension is feasible only if every dual variable in shell $n$ increases; every currently tight block must break to admit the new one. The energetic cost of breaking $\mu(S_Z, q) \ge 2$ tight blocks is at least $\mu \cdot \Delta E_{\mathrm{shell}}(q)$. For $q$ in the generic locus, $\mu \cdot \Delta E_{\mathrm{shell}}(q) > \alpha \cdot m_e \cdot c_q^2$. No electromagnetic-mediated dressing clears the barrier, making $P^{(Z)}$ terminal within the $\mathrm{dress}$ sub-diagram. $\square$
-
-**Corollary (chemical inertness).**
-Categorical terminality of noble-gas $P^{(Z)}$ structurally forces chemical inertness. No covalent dressing morphism $\mathrm{dress}_{S_{\mathrm{bond}}}: P^{(Z)} \to P_{\mathrm{molecule}}$ is feasible at room-temperature $q$ without breaking a closed shell. Noble gas compounds require $q$ far from the generic locus to clear the terminality barrier.
-
-**Corollary (ionisation energy peaks).**
-The first-ionisation energy $I_1(Z)$ is the Markov-trace gap from $P^{(Z)}$ to $P^{(Z-1)} + e^-$. This matches the marginal stability gain $\Delta\sigma_F(Z)$. By [confinement-topological](#prop:confinement-topological) and the dual shadow-price structure, $I_1$ peaks at shell closures and dips at shell openings. Identifying these closures with empirical noble-gas peaks is conditional on the open shell-capacity derivation; the bare categorical operator does not place the closures at the noble gases without the Madelung structure.

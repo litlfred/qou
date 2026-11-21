@@ -13,7 +13,7 @@ Consequence: the mass formula has at most quadratic terms in the
 per-generator spectral coordinates (descended + single + pair).
 
 Ref: [kassel1995] Kassel, "Quantum Groups" (Springer GTM 155)
-Ref: [manuscript] prop:mass-endomorphism-tower — |S| ≤ 2 truncation
+Ref: [leitner2026] prop:mass-endomorphism-tower — |S| ≤ 2 truncation
 -/
 
 namespace QOU.BraidKnot
@@ -58,7 +58,7 @@ theorem non_adjacent_commute {R : Type*} [Monoid R] (σ : ℕ → R)
       pair + singleton, both already counted.
 
     This is the mass-formula uniqueness constraint C2. -/
--- Ref: [manuscript] prop:mass-endomorphism-tower, paragraph on |S| ≤ 2
+-- Ref: [leitner2026] prop:mass-endomorphism-tower, paragraph on |S| ≤ 2
 -- Ref: [kassel1995] Chapter III, Theorem 1.1 (braid relations)
 theorem blowup_truncation_adjacent_triple {R : Type*} [Monoid R] (σ : ℕ → R)
     [BraidRelation R σ] (i : ℕ) :

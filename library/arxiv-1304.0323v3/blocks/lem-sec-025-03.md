@@ -1,1 +1,1 @@
-A.6.3. Let k be a ﬁeld and let C be a k-linear abelian category. Assume that
+6.3. Let k be a ﬁeld and let C be a k-linear abelian category. Assume that (a) any object of C has ﬁnite length, (b) dim k HomC(S,S )<∞ for any simple object S inC. Then we have dimk HomC(X,Y )<∞ for all X,Y ∈C . SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 75

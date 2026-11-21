@@ -51,7 +51,7 @@ must carry it.
 Nothing in this file's Lean depends on the value: the strict bound test below is
 stated for an abstract channel value `f`.
 
--- Ref: [manuscript] docs/audits/2026-06-20-chirality-forces-complete-graph-topology.md ;
+-- Ref: [leitner2026] docs/audits/2026-06-20-chirality-forces-complete-graph-topology.md ;
    docs/audits/2026-06-17-hecke-channel-chirality-binding.md
 -/
 import Mathlib.Tactic
@@ -83,5 +83,13 @@ theorem pauliEigenvalue_neg {q : ℝ} (hq : 0 < q) : pauliEigenvalue q < 0 := by
 theorem pauli_channel_unbound {q : ℝ} (hq : 0 < q) : ¬ Binds (pauliEigenvalue q) := by
   rintro ⟨hpos, -⟩
   linarith [pauliEigenvalue_neg hq]
+
+/-- Product identity `pauliEigenvalue q * q = -1` for nonzero `q` and unit-anchor
+evaluation `pauliEigenvalue 1 = -1`. -/
+theorem pauliEigenvalue_mul_q_and_at_one {q : ℝ} (hq : q ≠ 0) :
+    pauliEigenvalue q * q = -1 ∧ pauliEigenvalue 1 = -1 := by
+  dsimp [pauliEigenvalue]
+  refine ⟨?_, by norm_num⟩
+  rw [neg_mul, inv_mul_cancel₀ hq]
 
 end QOU.Hecke.PauliChannelBinding

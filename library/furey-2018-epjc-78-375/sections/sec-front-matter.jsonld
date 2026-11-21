@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/furey-2018-epjc-78-375/sections/sec-front-matter",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "contains": [
+    "library/furey-2018-epjc-78-375/blocks/prose-sec-front-matter",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-1",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-2",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-3",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-4",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-5",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-6",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-7",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-8",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-9",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-10",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-11",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-12",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-13",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-14",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-15",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-16",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-17",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-18",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-19",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-20",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-21",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-22",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-23",
+    "library/furey-2018-epjc-78-375/blocks/figure-img-p001-24"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/furey-2018-epjc-78-375/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/furey-2018-epjc-78-375/manifest.jsonld",
+  "provenance": "ingested"
+}

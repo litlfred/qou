@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0610105v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0610105v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-nucl-th-0610105v2",
+  "title": "Universal Properties of the Four-Body System with Large Scattering Length",
   "contains": [
+    "library/arxiv-nucl-th-0610105v2/sections/sec-front-matter",
     "library/arxiv-nucl-th-0610105v2/sections/sec-000",
     "library/arxiv-nucl-th-0610105v2/sections/sec-001",
     "library/arxiv-nucl-th-0610105v2/sections/sec-002",
@@ -18,10 +19,12 @@
     "library/arxiv-nucl-th-0610105v2/sections/sec-004",
     "library/arxiv-nucl-th-0610105v2/sections/sec-005",
     "library/arxiv-nucl-th-0610105v2/sections/sec-006",
-    "library/arxiv-nucl-th-0610105v2/sections/sec-007"
+    "library/arxiv-nucl-th-0610105v2/sections/sec-007",
+    "library/arxiv-nucl-th-0610105v2/sections/sec-008",
+    "library/arxiv-nucl-th-0610105v2/sections/sec-009"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -36,7 +39,9 @@
   },
   "meta": {
     "doc_id": "arxiv-nucl-th-0610105v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0610105v2.pdf",
     "source_sha256": "5f3bd6d31a419d4d5368b1a25d578c46d67ad6aa626a2cbeb5b49eb411bcda90",
     "pages": 14,

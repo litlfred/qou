@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-9905032v2/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Edge of the spectrum: convergence to the Airy ensemble",
-  "pageStart": 24,
-  "pageEnd": 24,
-  "text": "../sections/sec-012-4-edge-of-the-spectrum-convergence-to-the-airy-e.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9905032v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9905032v2",
+  "title": "Correlation functions in the bulk of the spectrum",
+  "pageStart": 18,
+  "pageEnd": 18,
+  "text": "../sections/sec-012-3-correlation-functions-in-the-bulk-of-the-spect.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9905032v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9905032v2/manifest.jsonld",
   "provenance": "ingested"
 }

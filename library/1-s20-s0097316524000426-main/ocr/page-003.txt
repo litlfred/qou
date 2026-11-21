@@ -1,0 +1,44 @@
+O.X.M. Yao / Journal of Combinatorial Theory, Series A 206 (2024) 105903 3
+
+At the end of their paper [4], Ballantine and Merca presented the following two con-
+jectures on b¢(n):
+
+Conjecture 1.1. Forn > 0 andk > 1,
+
+(-1)* an— Do (-1)/be(n — (37 — 1)/2) | > 0 (1.5)
+
+with strict inequality if n > k(3k + 1)/2, where ap is defined by
+(-1I)™, if n=3m(3m-—-1), me Z,
+Qn =
+. 0, otherwise.
+
+Conjecture 1.2. Forn > 0 andk > 1,
+
+k
+
+(-1)""! | an -— S (—1)’be(n — 9(37 — 1)/2) ] > 0 (1.6)
+jak
+
+with strict inequality if n > (k + 1)(3k + 2)/2.
+
+The purpose of this paper is to prove a general result which implies Conjecture 1.1 by
+using a formula on the number of partitions into parts not exceeding 3 given by Cayley.
+We omit the proof of Conjecture 1.2 since (1.6) is a weaker version of (1.5). In fact, we
+will prove the following theorem.
+
+Theorem 1.3. For k > 1,define
+
+co co
+u(n, kg” = (-1)5q +6IR+I)/2(q _ rite,
+» eere )(1 — 93) ya
+
+Then v(n,k) is positive for all nonnegative integers n and positive integers k with (n,k) #
+(11,1). In particular, v(11, 1) = 0.
+
+From Theorem 1.3, we obtain the following corollary.
+Corollary 1.4. Conjecture 1.1 is true.
+2. Proofs of Theorem 1.3 and Corollary 1.4
+In order to prove Conjecture 1.1, we need a formula of p3(n) due to Cayley [5], where
+
+p3(n) denotes the number of partitions of n into parts not exceeding 3. The generating
+function of p3(n) is

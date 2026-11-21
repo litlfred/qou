@@ -2,62 +2,42 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-gr-qc-0407051v2",
  "source_sha256": "2de07e909b17c5a5",
- "brief": "Black hole entropy from Quantum Geometry — Quantum Geometry (the modern Loop Quantum Gravity using gra phs and spin-networks instead of the loops) provides microscopic d egrees of freedom that",
- "extended": "**Black hole entropy from Quantum Geometry**\n\n*Marcin Domagala 1 and Jerzy Lewandowski 1,2,3*\n\n14 pp, 10 sections.\n\n**Abstract.** Quantum Geometry (the modern Loop Quantum Gravity using gra phs and spin-networks instead of the loops) provides microscopic d egrees of freedom that account for the black-hole entropy. However, the proce dure for state counting used in the literature contains an error and the num ber of the rel- evant horizon states is underestimated. In our paper a corre ct method of counting is presented. Our results lead to a revision of the l iterature of the subject. It turns out that the contribution of spins greater then 1/2 to the entropy is not negligible. Hence, the value of the Barbero-I mmirzi parameter involved in the spectra of all the geometric and physical ope rators in this theory is diﬀerent than previously derived. Also, the conje ctured relation be- tween Quantum Geometry and the black hole quasi-normal mode s should be understood again. Pacs 04.60Pp, 04.60.Ds, 04.60.Nc, 03.65.Sq 1\n\n**Outline.** 2 Physics Department, 104 Davey, Penn State, U; Abstract; I INTRODUCTION AND RESUL TS; II THE HORIZON QUANTUM ST A TES; 2 N, m i ∈ {−j1, ..., ji} (7); III THE COMBINA TORIC FORMULA TION OF THE PROB; 2 Z,; IV THE ENTROPY CALCULA TIONS; V THE SPIN PROBABILITY DISTRIBUTION; References",
+ "brief": "Black hole entropy from quantum geometry — Quantum Geometry (the modern Loop Quantum Gravity using graphs and spin-networks instead of the loops) provides microscopic degrees of freedom that account",
+ "extended": "**Black hole entropy from quantum geometry**\n\n*Marcin Domagala1 and Jerzy Lewandowski1,2,3*\n\n14 pp, 6 sections.\n\n**Abstract.** Quantum Geometry (the modern Loop Quantum Gravity using graphs and spin-networks instead of the loops) provides microscopic degrees of freedom that account for the black-hole entropy. However, the procedure for state counting used in the literature contains an error and the number of the rel- evant horizon states is underestimated. In our paper a correct method of counting is presented. Our results lead to a revision of the literature of the subject. It turns out that the contribution of spins greater then 1/2 to the entropy is not negligible. Hence, the value of the Barbero-Immirzi parameter involved in the spectra of all the geometric and physical operators in this theory is diﬀerent than previously derived. Also, the conjectured relation be- tween Quantum Geometry and the black hole quasi-normal modes should be understood again. Pacs 04.60Pp, 04.60.Ds, 04.60.Nc, 03.65.Sq 1\n\n**Outline.** Front matter; 1 Introduction and results; 2 The horizon quantum states; 3 The combinatoric formulation of the problem; 4 The entropy calculations; 5 The spin probability distribution",
  "tokens": {
-  "brief": 48,
-  "extended": 331
+  "brief": 49,
+  "extended": 303
  },
  "sections": [
   {
-   "id": "sec-000-2-physics-department-104-davey-penn-state-univer",
-   "title": "Physics Department, 104 Davey, Penn State, University Pa rk, PA 16802, USA",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-i-introduction-and-resul-ts",
-   "title": "INTRODUCTION AND RESUL TS",
+   "id": "sec-000-1-introduction-and-results",
+   "title": "Introduction and results",
    "pages": "2-4"
   },
   {
-   "id": "sec-003-ii-the-horizon-quantum-st-a-tes",
-   "title": "THE HORIZON QUANTUM ST A TES",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-004-2-n-m-i-j1-ji-7",
-   "title": "N, m i ∈ {−j1, ..., ji} (7)",
+   "id": "sec-001-2-the-horizon-quantum-states",
+   "title": "The horizon quantum states",
    "pages": "4-7"
   },
   {
-   "id": "sec-005-iii-the-combina-toric-formula-tion-of-the-proble",
-   "title": "THE COMBINA TORIC FORMULA TION OF THE PROBLEM",
+   "id": "sec-002-3-the-combinatoric-formulation-of-the-problem",
+   "title": "The combinatoric formulation of the problem",
    "pages": "7-9"
   },
   {
-   "id": "sec-006-2-z",
-   "title": "Z,",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-007-iv-the-entropy-calcula-tions",
-   "title": "THE ENTROPY CALCULA TIONS",
+   "id": "sec-003-4-the-entropy-calculations",
+   "title": "The entropy calculations",
    "pages": "9-12"
   },
   {
-   "id": "sec-008-v-the-spin-probability-distribution",
-   "title": "THE SPIN PROBABILITY DISTRIBUTION",
+   "id": "sec-004-5-the-spin-probability-distribution",
+   "title": "The spin probability distribution",
    "pages": "12-14"
-  },
-  {
-   "id": "sec-009-references",
-   "title": "References",
-   "pages": "14-14"
   }
  ],
  "provenance": {

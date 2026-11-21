@@ -1,0 +1,75 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-068
+section_title: "Page 68"
+pages: 68-68
+pdf_page: 68
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+68 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+involving both odd and even variables, e.g. x£)£ (the so called “Yukawa term”).
+We will consider the integral
+
+A=] & (v0).--€n (Yo) At (01) ---Ap (ore 5()/*dw.
+Vv
+(where vo,v; are the even and odd components of v). Then this integral has an
+expansion in fi written in terms of Feynman diagrams. Since v has both odd and
+even part, these diagrams will contain “odd” and “even” edges (which could be
+depicted by straight and wiggly lines respectively). More precisely, let us write
+
+r
+
+r
+B,(v,0,..,0) = YS (") Bsp—s (U1, +25 U5 V0, +5 VO);
+
+s=0
+
+where B, ,_s has homogeneity degree s with respect to v; and r—s with respect to
+vo (i.e. it will be nonzero only for even s). Then to each term B,_, we assign an
+(s,r — s)-valent flower, i.e. a flower with s odd and r — s even outgoing edges, and
+for the set of odd outgoing edges, it has been specified which orderings are even.
+Then, given an arrangement of flowers, for every pairing o of outgoing edges, we
+can define an amplitude F, by contracting the tensors —B,,_, (and being careful
+with the signs). It is easy to check that all pairings giving the same graph will
+contribute to I(h) with the same sign, and this we have almost the same formula
+as in the bosonic case:
+
+a
+
+_ dim Vo /2 7, Se ¥Yoadim Vy Pf(—
+1(h) = (2x) Vo/?n 2 Ca ay
+
+=e Bo
+
+where the summation is taken over graphs with n even and p odd outgoing edges.
+
+Remark. More precisely, we can define the sign ¢, of a pairing o as follows:
+label outgoing edges by 1,..., starting from the fisrt flower, then second, etc., so
+that the labeling is even on each flower. Then write the labels in a sequence,
+enumerating (in any order) the pairs defined by o (the element with the smaller of
+the two labels goes first). The sign €, is by definition the sign of this ordering (as a
+permutation of 1,...). Then Fp is F, for any pairing o yielding I’ which is positive,
+ie. such that ¢, = 1. For negative pairing, Fr = —F;,.
+
+In most (but not all) situations considered in physics, the action is quadratic
+in the fermionic variables, ie. S(v) = Sp(vo) — Sp(vo)(v1, v1), where Sp(vo) is a
+skew-symmetric bilinear form on IIV,. In this case, using fermionic Wick’s theorem,
+we can perform exact integration with respect to v,, and reduce I(h) to a purely
+bosonic integral. For example, if we have only é; and no \;, we have
+
+I(h) = | &:(v0).Ln (woe (/"P£(S¢(up))dvo.
+Vo
+In this situation, all vertices which have odd outgoing edges, will have only two of
+them, and therefore in any Feynman diagram with even outgoing edges, odd lines
+form nonintersecting simple curves, called fermionic loops (in fact, the last formula
+is nothing but the result of regarding these lopps as a new kind of vertices — convince
+yourself of this). In this case, there is the following simple way of assigning signs to
+Feynman diagrams. For each vertex with two odd outgoing edges, we orient the first
+edge inward and the second one outward. We allow only connections (pairings) that
+preserve orientations (so the fermionic loops become oriented). Then the sign is

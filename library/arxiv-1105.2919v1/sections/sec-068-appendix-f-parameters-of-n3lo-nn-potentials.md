@@ -1,0 +1,1039 @@
+---
+doc_id: arxiv-1105.2919v1
+doc_title: "Chiral eﬀective ﬁeld theory and nuclear forces"
+section_id: sec-068-appendix-f-parameters-of-n3lo-nn-potentials
+section_title: "Appendix F Parameters of N3LO NN potentials"
+section_number: null
+pages: 85-93
+source_pdf: 1105.2919v1.pdf
+source_sha256: 6d94496f2093ddd0
+toc_source: outline
+doc_brief: "Chiral eﬀective ﬁeld theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist."
+---
+This appendix provides detailed information on parameters involved in the Idaho N3LO NN poten-
+tials [68]. The πN LECs were shown already in Table 2 (column ‘NN potential’). In Table F.1, the LECs
+are listed, which are associated with the contact terms, Eqs. (4.38), (4.40), and (4.43), and, in Table F.2,
+the contact LECs are given in terms of partial-wave parameters. Notice that through Eqs. (4.39), (4.42),
+and (E.2) there is a one-to-one correspondence between these two representations of the contact LECs. The
+partial wave parameters appear one order of magnitude larger, because they are multiplied by (4π) in the
+partial-wave decomposition. The partial-wave contact parameters of the J¨ulich N3LO potentials can be
+found in Ref. [171]. There are similarities between the parameter sets.
+At this point, one may raise the question of the naturalness of the LECs. LECs may be perceived as
+natural if they are roughly of the following sizes:
+CS,T
+∼
+1
+f 2π
+≈0.01
+104
+GeV2 ,
+(F.1)
+Ci
+∼
+1
+f 2π Λ2 ≈0.05
+104
+GeV4 ,
+(F.2)
+85
+Table F.2: Partial-wave LECs for two N3LO ﬁts by the Idaho group [68] using Λ = 500 MeV and 600 MeV in the regulator
+function f(p′, p), Eq. (4.63). The eCi of the zero-order partial-wave counterterms given in Eq. (4.39) are in units of 104 GeV−2;
+the Ci, Eq. (4.41), in 104 GeV−4; and the Di, b
+Di, Eq. (E.1), in 104 GeV−6. The last column lists the exponent n of the
+regulator function, which is applied to the corresponding partial-wave counterterm.
+Partial-wave LEC
+Λ = 500 MeV
+Λ = 600 MeV
+n
+eCpp
+1S0
+-0.145286
+-0.151165
+3
+eCnn
+1S0
+-0.146285
+-0.151467
+3
+eCnp
+1S0
+-0.147167
+-0.151745
+3
+C1S0
+2.380
+2.200
+2
+bD1S0
+-2.545
+-4.890
+2
+D1S0
+-16.00
+-5.84
+2
+C3P0
+1.487
+1.548
+2
+D3P0
+0.245
+-0.215
+3
+C1P1
+0.656
+0.790
+2
+D1P1
+5.25
+4.40
+2
+C3P1
+-0.630
+-0.488
+2
+D3P1
+2.35
+3.24
+4
+eC3S1
+-0.118972496
+-0.116210
+3
+C3S1
+0.760
+0.775
+2
+bD3S1
+7.00
+4.8004
+2
+D3S1
+6.55
+10.8654
+2
+D3D1
+-2.80
+-2.35
+2
+C3S1−3D1
+0.826
+0.796
+2
+bD3S1−3D1
+2.25
+2.86
+2
+D3S1−3D1
+6.61
+5.58
+2
+D1D2
+-1.770
+-1.764
+4
+D3D2
+-1.46
+-1.27
+2
+C3P2
+-0.538
+-0.548
+2
+D3P2
+2.295
+2.554
+2
+D3P2−3F2
+-0.465
+-0.525
+4
+D3D3
+5.66
+6.26
+2, 3a
+a f(p′, p) = 0.5{exp[−(p′/Λ)4 −(p/Λ)4] + exp[−(p′/Λ)6 −(p/Λ)6]} is applied.
+Di
+∼
+1
+f 2π Λ4 ≈0.2
+104
+GeV6 ,
+(F.3)
+where we used Λ = 0.5 GeV for the numerical estimates. Comparison with Table F.1 reveals that the values
+of the contact LECs that result from a ﬁt to the NN data are in general natural, indeed. Exceptions are
+D2 and D10 which are an order of magnitude too large.
+The charge-dependent LO contact parameters eCpp
+1S0, eCnn
+1S0, and eCnp
+1S0 of Table F.2 can be analyzed as
+follows. Based upon the isospin-symmetric Lagrangian Eq. (2.61) and the isospin violating ones, Eqs. (4.80)
+and (4.81), the charge-dependent non-derivative contact parameters in the 1S0 state are given by
+eCpp
+=
+eCsym + eCCIB + eCCSB ,
+(F.4)
+eCnn
+=
+eCsym + eCCIB −eCCSB ,
+(F.5)
+eCnp
+=
+eCsym −eCCIB ,
+(F.6)
+where eCsym is the same as eC1S0 of Eq. (4.39). The charge-symmetric and the CSB and CIB contributions
+86
+can then be obtained from
+eCsym
+=
+1
+2
+1
+2
+
+eCpp + eCnn
+
++ eCnp
+
+,
+(F.7)
+eCCSB
+=
+1
+2
+
+eCpp −eCnn
+
+,
+(F.8)
+eCCIB
+=
+1
+2
+1
+2
+
+eCpp + eCnn
+
+−eCnp
+
+.
+(F.9)
+Using the numbers from the Λ = 500 MeV ﬁt listed in Table F.2, the following values are produced:
+eCsym
+=
+−0.1465
+104
+GeV2 ,
+(F.10)
+eCCSB
+=
+0.0005
+104
+GeV2 ,
+(F.11)
+eCCIB
+=
+0.0007
+104
+GeV2 .
+(F.12)
+Note that these are partial-wave parameters, which carry a factor of (4π) as compared to the parameters
+of, e.g., Eq. (F.1). As discussed in Section 4.6.2, the Idaho N3LO potential [68] does not include explicitly
+the CIB eﬀect from the pion-mass splitting in the NLO 2PE. Thus, the above value for eCCIB is not the pure
+contact contribution since it includes a simulation of this omitted (small) eﬀect (causing ∆aCIB ≈−0.5
+fm). Moreover, also the CSB eﬀect from nucleon-mass diﬀerence in the NLO 2PE is not calculated explicitly
+and, thus, eﬀectively contained in eCCSB. The exact size of this eﬀect when evaluated in ChPT at NLO is
+not known, but could be a large fraction of the total CSB [179].
+The regulator function f(p′, p), Eq. (4.63), has two parameters, namely, the ‘cutoﬀ’ Λ and the power
+parameter n. Fits were made for Λ = 500 MeV and 600 MeV [denoted by N3LO(500) and N3LO(600)]. The
+parameter n has to be chosen such that the higher powers generated by the multiplication with the regulator
+[cf. Eq. (4.64)] are beyond the order at which we are working, which is ν = 4. In short, the requirement is
+2n + νi > 4 ,
+(F.13)
+where νi denotes the order of a speciﬁc contribution to the potential. Thus, n ≥3 for LO contributions,
+n ≥2 for NLO contributions, etc.. In the case of the Idaho N3LO potentials, n = 4 is used for the 1PE and
+n = 2 for all 2PE contributions (which are NLO or higher). For the contact contributions, n is chosen in a
+partial-wave dependent way and in accordance with Eq. (F.13), see Table F.2.
+Phase shifts of NN scattering as produced by the Idaho N3LO(500) potential [68] are shown in Tables F.3-
+F.6 up to laboratory energies of 300 MeV.
+87
+Table F.3: pp phase shifts (in degrees) by the Idaho N3LO(500) potential [68].
+Tlab (MeV)
+1S0
+3P0
+3P1
+1D2
+3P2
+3F2
+ϵ2
+3F3
+1G4
+3F4
+1
+32.76
+0.13
+-0.08
+0.00
+0.01
+0.00
+0.00
+0.00
+0.00
+0.00
+5
+54.71
+1.58
+-0.90
+0.04
+0.21
+0.00
+-0.05
+0.00
+0.00
+0.00
+10
+55.01
+3.73
+-2.05
+0.17
+0.64
+0.01
+-0.20
+-0.03
+0.00
+0.00
+25
+48.37
+8.57
+-4.91
+0.70
+2.47
+0.10
+-0.80
+-0.23
+0.04
+0.02
+50
+38.75
+11.47
+-8.31
+1.70
+5.87
+0.33
+-1.65
+-0.69
+0.15
+0.10
+100
+25.74
+9.30
+-13.39
+3.68
+11.11
+0.80
+-2.54
+-1.48
+0.41
+0.42
+150
+16.66
+4.34
+-17.63
+5.28
+14.01
+1.22
+-2.83
+-1.96
+0.66
+0.87
+200
+8.73
+-0.87
+-21.48
+6.59
+15.67
+1.56
+-2.76
+-2.16
+0.88
+1.37
+250
+0.51
+-5.78
+-25.43
+7.95
+16.85
+1.81
+-2.35
+-2.11
+1.05
+1.83
+300
+-8.53
+-10.43
+-29.54
+9.16
+17.73
+1.94
+-1.67
+-1.83
+1.14
+2.17
+Table F.4: nn phase shifts (in degrees) by the Idaho N3LO(500) potential [68].
+Tlab (MeV)
+1S0
+3P0
+3P1
+1D2
+3P2
+3F2
+ϵ2
+3F3
+1G4
+3F4
+1
+57.51
+0.21
+-0.12
+0.00
+0.02
+0.00
+0.00
+0.00
+0.00
+0.00
+5
+60.86
+1.85
+-1.04
+0.05
+0.26
+0.00
+-0.06
+-0.01
+0.00
+0.00
+10
+57.62
+4.10
+-2.25
+0.18
+0.73
+0.01
+-0.22
+-0.04
+0.00
+0.00
+25
+48.89
+8.92
+-5.15
+0.73
+2.66
+0.11
+-0.82
+-0.24
+0.04
+0.02
+50
+38.67
+11.60
+-8.57
+1.76
+6.16
+0.34
+-1.68
+-0.71
+0.16
+0.11
+100
+25.48
+9.16
+-13.66
+3.75
+11.42
+0.81
+-2.55
+-1.50
+0.42
+0.43
+150
+16.34
+4.08
+-17.89
+5.33
+14.31
+1.23
+-2.82
+-1.98
+0.67
+0.88
+200
+8.31
+-1.18
+-21.69
+6.63
+15.99
+1.58
+-2.74
+-2.17
+0.89
+1.39
+250
+-0.06
+-6.11
+-25.56
+7.97
+17.19
+1.83
+-2.31
+-2.11
+1.06
+1.86
+300
+-9.24
+-10.79
+-29.44
+9.13
+18.07
+1.95
+-1.63
+-1.82
+1.15
+2.19
+Table F.5: I = 1 np phase shifts (in degrees) by the Idaho N3LO(500) potential [68].
+Tlab (MeV)
+1S0
+3P0
+3P1
+1D2
+3P2
+3F2
+ϵ2
+3F3
+1G4
+3F4
+1
+61.95
+0.18
+-0.11
+0.00
+0.02
+0.00
+0.00
+0.00
+0.00
+0.00
+5
+63.34
+1.63
+-0.94
+0.04
+0.25
+0.00
+-0.05
+0.00
+0.00
+0.00
+10
+59.55
+3.66
+-2.06
+0.16
+0.70
+0.01
+-0.18
+-0.03
+0.00
+0.00
+25
+50.28
+8.16
+-4.86
+0.68
+2.56
+0.09
+-0.74
+-0.20
+0.03
+0.02
+50
+39.82
+10.75
+-8.25
+1.71
+5.98
+0.30
+-1.57
+-0.62
+0.14
+0.09
+100
+26.51
+8.37
+-13.35
+3.75
+11.17
+0.75
+-2.46
+-1.38
+0.39
+0.39
+150
+17.35
+3.36
+-17.58
+5.37
+14.05
+1.15
+-2.76
+-1.84
+0.64
+0.84
+200
+9.29
+-1.86
+-21.39
+6.68
+15.72
+1.49
+-2.70
+-2.03
+0.87
+1.33
+250
+0.89
+-6.76
+-25.26
+8.04
+16.92
+1.74
+-2.29
+-1.98
+1.04
+1.80
+300
+-8.31
+-11.40
+-29.17
+9.19
+17.81
+1.87
+-1.63
+-1.70
+1.14
+2.13
+88
+Table F.6: I = 0 np phase shifts (in degrees) by the Idaho N3LO(500) potential [68].
+Tlab (MeV)
+1P1
+3S1
+3D1
+ϵ1
+3D2
+1F3
+3D3
+3G3
+ϵ3
+3G4
+1
+-0.19
+147.76
+-0.01
+0.11
+0.01
+0.00
+0.00
+0.00
+0.00
+0.00
+5
+-1.55
+118.18
+-0.19
+0.67
+0.22
+-0.01
+0.00
+0.00
+0.01
+0.00
+10
+-3.19
+102.58
+-0.68
+1.15
+0.85
+-0.07
+0.00
+0.00
+0.08
+0.01
+25
+-6.67
+80.45
+-2.81
+1.76
+3.72
+-0.43
+-0.03
+-0.05
+0.55
+0.17
+50
+-10.03
+62.28
+-6.41
+2.05
+8.99
+-1.16
+0.05
+-0.26
+1.61
+0.72
+100
+-14.05
+42.31
+-11.94
+2.32
+17.56
+-2.35
+0.89
+-0.95
+3.50
+2.14
+150
+-17.49
+29.79
+-15.83
+2.67
+22.68
+-3.22
+2.32
+-1.77
+4.83
+3.51
+200
+-21.43
+20.63
+-19.01
+3.16
+24.71
+-3.86
+3.66
+-2.56
+5.66
+4.62
+250
+-26.08
+13.33
+-21.94
+3.72
+24.29
+-4.27
+4.51
+-3.19
+6.02
+5.35
+300
+-31.28
+7.24
+-24.48
+4.02
+22.00
+-4.41
+5.35
+-3.53
+5.91
+5.57
+References
+[1] H. Yukawa, Proc. Phys. Math. Soc. Japan 17 (1935) 48.
+[2] Prog. Theor. Phys. (Kyoto), Supplement 3 (1956).
+[3] M. Taketani, S. Machida, and S. Onuma, Prog. Theor. Phys. (Kyoto) 7 (1952) 45.
+[4] K. A. Brueckner and K. M. Watson, Phys. Rev. 90 (1953) 699; 92 (1953) 1023.
+[5] A. R. Erwin et al., Phys. Rev. Lett. 6 (1961) 628; B. C. Magli´c et al., ibid. 7 (1961) 178.
+[6] Prog. Theor. Phys. (Kyoto), Supplement 39 (1967).
+[7] R. A. Bryan and B. L. Scott, Phys. Rev. 135 (1964) B434; 177 (1969) 1435.
+[8] K. Erkelenz, Phys. Rep. 13C (1974) 191.
+[9] K. Holinde and R. Machleidt, Nucl. Phys. A247 (1975) 495; A256 (1976) 479, 497.
+[10] M. M. Nagels, T. A. Rijken, and J. J. de Swart, Phys. Rev. D 17 (1978) 768.
+[11] R. Machleidt, Adv. Nucl. Phys. 19 (1989) 189.
+[12] V. G. J. Stoks, R. A. M. Klomp, C. P. F. Terheggen, and J. J. de Swart, Phys. Rev. C 49 (1994) 2950.
+[13] R. Machleidt, Phys. Rev. C 63 (2001) 024001.
+[14] F. Gross and A. Stadler, Phys. Rev. C 78 (2008) 014005.
+[15] A. D. Jackson, D. O. Riska, and B. Verwest, Nucl. Phys. A249 (1975) 397.
+[16] G. E. Brown and A. D. Jackson, The Nucleon-Nucleon Interaction (North-Holland, Amsterdam, 1976).
+[17] R. Vinh Mau, in: Mesons in Nuclei, Vol. I, edited by M. Rho and D. H. Wilkinson (North-Holland, Amsterdam, 1979),
+p. 151.
+[18] M. Lacombe, B. Loiseau, J. M. Richard, R. Vinh Mau, J. Cˆot´e, P. Pires, and R. de Tourreil, Phys. Rev. C 21 (1980) 861.
+[19] M. H. Partovi and E. L. Lomon, Phys. Rev. D 2 (1970) 1999; 5 (1972) 1192.
+[20] R. Machleidt, K. Holinde, and Ch. Elster, Phys. Rep. 149 (1987) 1.
+[21] C. E. de Tar, Nucl. Phys. A335 (1980) 203.
+[22] M. Harvey, Nucl. Phys. A352 (1981) 301, 326.
+[23] M. Oka and K. Yazaki, Prog. Theor. Phys. 66 (1981) 551, 577.
+[24] A. Faessler, F. Fernandez, G. Luebeck, and K. Shimizu, Nucl. Phys. A402 (1983) 555.
+[25] A. W. Thomas, Adv. Nucl. Phys. 13 (1983) 1.
+[26] F. Myhrer and J. Wroldsen, Rev. Mod. Phys. 60 (1988) 629.
+[27] S. Takeuchi, K. Shimizu, and K. Yazaki, Nucl. Phys. A504 (1989) 777.
+[28] T. Barnes, S. Capstick, M. D. Kovarik, and E. S. Swanson, Phys. Rev. C 48 (1993) 539.
+[29] D. R. Entem, F. Fernandez, and A. Valcarce, Phys. Rev. C 62 (2000) 034002.
+[30] G. H. Wu, J. L. Ping, L. J. Teng, F. Wang, and T. Goldman, Nucl. Phys. A673 (2000) 279.
+[31] C. Downum, J. Stone, T. Barnes, E. Swanson, and I. Vidana, Nucleon-Nucleon Interactions from the Quark Model,
+arXiv:1001.3320 [nucl-th].
+[32] S. Weinberg, Physica 96A (1979) 327.
+[33] J. Schwinger, Ann. Phys. (N.Y.) 2 (1957) 407.
+[34] M. Gell-Mann and M. Levy, Nuovo Cimento 16 (1960) 705.
+[35] T. Ericson and W. Weise, Pions and Nuclei (Clarendon Press, Oxford, 1988).
+[36] S. Weinberg, Phys. Rev. Lett. 18 (1967) 188.
+[37] S. Weinberg, Phys. Rev. Lett. 17 (1966) 616.
+[38] Y. Tomozawa, Nuovo Cimento A 46 (1966) 707.
+[39] S. Weinberg, Phys. Rev. 166 (1968) 1568.
+[40] S. Coleman, J. Wess, and B. Zumino, Phys. Rev. 177 (1969) 2239; C. G. Callan, S. Coleman, J. Wess, and B. Zumino,
+ibid. 177 (1969) 2247.
+[41] G. E. Brown, A. M. Green, and W J. Gerace, Nucl. Phys. A115 (1968) 435.
+89
+[42] G. E. Brown, Comments Nucl. Part. Phys. 4 (1970) 140.
+[43] G. E. Brown, in: Mesons in Nuclei, Vol. I, edited by M. Rho and D. H. Wilkinson (North-Holland, Amsterdam, 1979)
+p. 330.
+[44] J. Fleischer and J. A. Tjon, Phys. Rev. D 21 (1980) 87.
+[45] R. Brockmann and R. Machleidt, Phys. Lett. 149B (1984) 283; Phys. Rev. C 42 (1990) 1965.
+[46] F. Gross, J. W. van Orden, and K. Holinde, Phys. Rev. C 45 (1992) 2094.
+[47] S. Weinberg, Eﬀective Field Theory, Past and Future, arXiv:0908:1964 [hep-th].
+[48] J. Gasser and H. Leutwyler, Ann. Phys. 158 (1984) 142; Nucl. Phys. B250 (1985) 465.
+[49] J. Gasser, M. E. Sainio, and A. ˇSvarc, Nucl. Phys. B307 (1986) 779.
+[50] S. Weinberg, Phys. Lett. B 251 (1990) 288.
+[51] S. Weinberg, Nucl. Phys. B363 (1991) 3.
+[52] S. Weinberg, Phys. Lett. B 295 (1992) 114.
+[53] C. Ord´o˜nez, L. Ray, and U. van Kolck, Phys. Rev. Lett. 72 (1994) 1982.
+[54] C. Ord´o˜nez, L. Ray, and U. van Kolck, Phys. Rev. C 53 (1996) 2086.
+[55] N. Kaiser, R. Brockmann, and W. Weise, Nucl. Phys. A625 (1997) 758.
+[56] N. Kaiser, S. Gerstend¨orfer, and W. Weise, Nucl. Phys. A637 (1998) 395.
+[57] N. Kaiser, Phys. Rev. C 61 (2000) 014003.
+[58] N. Kaiser, Phys. Rev. C 62 (2000) 024001.
+[59] N. Kaiser, Phys. Rev. C 63 (2001) 044010.
+[60] N. Kaiser, Phys. Rev. C 64 (2001) 057001.
+[61] N. Kaiser, Phys. Rev. C 65 (2002) 017001.
+[62] C. A. da Rocha and M. R. Robilotta, Phys. Rev. C 49 (1994) 1818; 52 (1995) 531; M. R. Robilotta, Nucl. Phys. A595
+(1995) 171; M. R. Robilotta and C. A. da Rocha, Nucl. Phys. A615 (1997) 391; J.-L. Ballot, C. A. da Rocha, and M. R.
+Robilotta, Phys. Rev. C 57 (1998) 1574.
+[63] R. Higa and M. R. Robilotta, Phys. Rev. C 68 (2003) 024004.
+[64] E. Epelbaum, W. Gl¨ockle, and U.-G. Meißner, Nucl. Phys. A637 (1998) 107.
+[65] E. Epelbaum, W. Gl¨ockle, and U.-G. Meißner, Nucl. Phys. A671 (2000) 295.
+[66] D. R. Entem and R. Machleidt, Phys. Lett. B 524 (2002) 93.
+[67] D. R. Entem and R. Machleidt, Phys. Rev. C 66 (2002) 014002.
+[68] D. R. Entem and R. Machleidt, Phys. Rev. C 68 (2003) 041001.
+[69] R. Machleidt and D. R. Entem, J. Phys. G: Nucl. Phys. 31 (2005) S1235.
+[70] U. van Kolck, Phys. Rev. C 49 (1994) 2932.
+[71] E. Epelbaum, A. Nogga, W. Gl¨ockle, H. Kamada, U.-G. Meißner, and H. Witala, Phys. Rev. C 66 (2002) 064001.
+[72] S. Ishikawa and M. R. Robilotta, Phys. Rev. C 76 (2007) 014006.
+[73] V. Bernard, E. Epelbaum, H. Krebs, and U.-G. Meißner, Phys. Rev. C 77 (2008) 064004.
+[74] A. Deltuva and A. C. Fonseca, Phys. Rev. Lett. 98 (2007) 162502; Phys. Rev. C 76, (2007) 021001; arXiv:1005.1308
+[nucl-th].
+[75] L. Coraggio, A. Covello, A. Gargano, N. Itaco, T. T. S. Kuo, D. R. Entem, and R. Machleidt, Phys. Rev. C 66 (2002)
+021303.
+[76] L. Coraggio, A. Covello, A. Gargano, N. Itaco, T. T. S. Kuo, and R. Machleidt, Phys. Rev. C 71 (2005) 014307.
+[77] L. Coraggio, A. Covello, A. Gargano, and N. Itaco, Phys. Rev. C 81 (2010) 064303.
+[78] P. Navr´atil and E. Caurier, Phys. Rev. C 69 (2004) 014311.
+[79] C. Forssen, P. Navratil, W. E. Ormand, and E. Caurier, Phys. Rev. C 71 (2005) 044312.
+[80] K. Kowalski, D. J. Dean, M. Hjorth-Jensen, T. Papenbrock, and P. Piecuch, Phys. Rev. Lett. 92 (2004) 132501.
+[81] D.J. Dean and M. Hjorth-Jensen, Phys. Rev. C 69 (2004) 054320.
+[82] M. Wloch, D. J. Dean, J. R. Gour, M. Hjorth-Jensen, K. Kowalski, T. Papenbrock, and P. Piecuch, Phys. Rev. Lett. 94
+(2005) 21250.
+[83] D. J. Dean, J. R. Gour, G. Hagen, M. Hjorth-Jensen, K. Kowalski, T. Papenbrock, P. Piecuch, and M. Wloch, Nucl.
+Phys. 752 (2005) 299.
+[84] J. R. Gour, P. Piecuch, M. Hjorth-Jensen, M. Wloch, D.J. Dean, Phys. Rev. C 74 (2006) 024310.
+[85] G. Hagen, T. Papenbrock, D. J. Dean, and M. Hjorth-Jensen, Phys. Rev. Lett. 101 (2008) 092502.
+[86] G. Hagen, T. Papenbrock, D. J. Dean, and M. Hjorth-Jensen, Phys. Rev. C 82 (2010) 034330.
+[87] S. Fujii, R. Okamoto, and K. Suzuki, Phys. Rev. C 69 (2004) 034328.
+[88] S. Fujii, R. Okamoto, and K. Suzuki, Phys. Rev. Lett. 103 (2009) 182501.
+[89] K. Ermisch et al., Phys. Rev. C 71 (2005) 064004.
+[90] S. Kistryn et al., Phys. Rev. C 72 (2005) 044006.
+[91] H. Witala, J. Golak, R. Skibinski, W. Gl¨ockle, A. Nogga, E. Epelbaum, H. Kamada, A. Kievsky, and M. Viviani, Phys.
+Rev. C 73 (2006) 044004.
+[92] J. Ley et al., Phys. Rev. C 73 (2006) 064001.
+[93] E. Stephan et al., Phys. Rev. C 76 (2007) 057001.
+[94] N. Kalantar-Nayestanaki and E. Epelbaum, The three-nucleon system as a laboratory for nuclear physics: the need for
+3N forces, Nucl. Phys. News 17 (2007) 22, arXiv:nucl-th/0703089, and references therein.
+[95] L. C. Marcucci, A. Kievsky, L. Girlanda, S. Rosati, and M. Viviani, Phys. Rev. C 80 (2009) 034003.
+[96] A. Kievsky, M. Viviani, L. Girlanda, and L. E. Marcucci, Phys. Rev. C 81 (2010) 044003.
+[97] M. Viviani, L. Giarlanda, A. Kievsky, L. E. Marcucci, and S. Rosati, arXiv:1004.1306 [nucl-th].
+90
+[98] A. Nogga, P. Navratil, B. R. Barrett, and J. P. Vary, Phys. Rev. C 73 (2006) 064002.
+[99] P. Navratil, V. G. Gueorguiev, J. P. Vary, W. E. Ormand, and A. Nogga, Phys. Rev. Lett. 99 (2007) 042501.
+[100] G. Hagen, T. Papenbrock, D. J. Dean, A. Schwenk, A. Nogga, M. Wloch, and P. Piecuch, Phys. Rev. C 76 (2007) 034302.
+[101] T. Otsuka, T. Susuki, J. D. Holt, A. Schwenk, and Y. Akaishi, Phys. Rev. Lett. 105 (2010) 032501.
+[102] S. K. Bogner, A. Schwenk, R. J. Furnstahl, and A. Nogga, Nucl. Phys. A763 (2005) 59; S.K. Bogner, R. J. Furnstahl,
+A. Nogga, and A. Schwenk, Nuclear matter from chiral low-momentum interactions, arXiv:0903.3366 [nucl-th].
+[103] K. Hebeler and A. Schwenk, Phys. Rev. C 82 (2010) 014314.
+[104] R. Machleidt and I. Slaus, J. Phys. G: Nucl. Part. Phys. 27 (2001) R69.
+[105] U. van Kolck, Prog. Part. Nucl. Phys. 43 (1999) 337.
+[106] P. F. Bedaque and U. van Kolck, Ann. Rev. Nucl. Part. Sci. 52 (2002) 339.
+[107] E. Epelbaum, Prog. Part. Nucl. Phys. 57 (2006) 654.
+[108] E. Epelbaum, H.-W. Hammer, and U.-G. Meißner, Rev. Mod. Phys. 81 (2009) 1773.
+[109] S. R. Beane, P. F. Bedaque, K. Orginos, and M. J. Savage, Phys. Rev. Lett. 97 (2006) 012001.
+[110] N Ishii, S. Aoki, and T. Hatsuda, Phys. Rev. Lett. 99 (2007) 022001.
+[111] T. Inoue, N. Ishii, S. Aoki, T. Doi, T. Hatsuda, Y. Ikeda, K. Murano, H. Nemura, and K. Sasaki, Baryon-Baryon
+Interactions in the Flavor SU(3) Limit from Full QCD Simulations on the Lattice, arXiv:1007.3559 [hep-lat].
+[112] A concise and pedagogical introduction into low-energy QCD is contained in: W. Weise, The QCD vacuum and its
+hadronic excitations, arXiv:nucl-th/0504087.
+[113] S. Scherer, Adv. Nucl. Phys. 27 (2003) 277.
+[114] S. Scherer and M. R. Schindler, arXiv:hep-ph/0505265.
+[115] K. Nakamura et al. (Particle Data Group), J. Phys. G: Nucl. Part. Phys. 37 (2010) 075021.
+[116] J. Goldstone, Nuovo Cim. 19 (1961) 154.
+[117] J. Goldstone, A. Salam, and S. Weinberg, Phys. Rev. 127 (1962) 965.
+[118] V. Bernard, N. Kaiser, J. Kambor, and U.-G. Meißner, Nucl. Phys. B388 (1992) 315.
+[119] V. Bernard, N. Kaiser, and U.-G. Meißner, Int. J. Mod. Phys. E 4 (1995) 193.
+[120] E. Jenkins and A. V. Manohar, Phys. Lett. B 255 (1991) 558.
+[121] H. Georgi, Phys. Lett B 240 (1990) 447.
+[122] N. Fettes, U.-G. Meißner, M. Mojˇziˇs, and S. Steininger, Ann. Phys. (N.Y.) 283 (2000) 273; 288 (2001) 249.
+[123] N. Fettes, U.-G. Meißner, and S. Steiniger, Nucl. Phys. A640 (1998) 199.
+[124] E. Epelbaum, Ph.D. thesis (University of Bochum, 2000), unpublished.
+[125] L. Girlanda, S. Pastore, R. Schiavilla, and M. Viviani, Phys. Rev. C 81 (2010) 034005.
+[126] J. L. Friar, Few-Body Systems 22 (1997) 161.
+[127] S. N. Yang and W. Gl¨ockle, Phys. Rev. C 33 (1986) 1774.
+[128] S. A. Coon and J. L. Friar, Phys. Rev. C 34 (1986) 1060.
+[129] E. Epelbaum, U.-G. Meißner, and W. Gl¨ockle, Nucl. Phys. A714 (2003) 535.
+[130] J. Liu al., Phys. Rev. Lett. 105 (2010) 181803.
+[131] R. A. Arndt, R. L. Workman, and M. M. Pavan, Phys. Rev. C 49 (1994) 2729.
+[132] V. Stoks, R. Timmermans, and J. J. de Swart, Phys. Rev. C 47 (1993) 512.
+[133] R. Blankenbecler and R. Sugar, Phys. Rev. 142 (1966) 1051.
+[134] K. G. Richardson, Chiral Symmetry and the Nucleon-Nucleon Interaction, Ph.D thesis (University of Manchester, 1999),
+arXiv:hep-ph/0008118.
+[135] M. C. Birse and J. A. McGovern, Phys. Rev. C 70 (2004) 054002.
+[136] R. Higa, arXiv:nucl-th/0411046.
+[137] G. Q. Li and R. Machleidt, Phys. Rev. C 58 (1998) 3153.
+[138] P. B¨uttiker and U.-G. Meißner, Nucl. Phys. A668 (2000) 97.
+[139] V. G. J. Stoks, R. A. M. Klomp, M. C. M. Rentmeester, and J. J. de Swart, Phys. Rev. C 48 (1993) 792.
+[140] R. A. Arndt, I. I. Strakovsky, and R. L. Workman, SAID, Scattering Analysis Interactive Dial-in computer facility, George
+Washington University (formerly Virginia Polytechnic Institute), solution SM99 (Summer 1999); for more information
+see, e. g., R. A. Arndt, I. I. Strakovsky, and R. L. Workman, Phys. Rev. C 50 (1994) 2731.
+[141] In fact, preliminary calculations, which take an important class of diagrams of order ﬁve into account, indicate that the
+N4LO contribution may prevailingly be repulsive (N. Kaiser, private communication).
+[142] K. Erkelenz, R. Alzetta, and K. Holinde, Nucl. Phys. A176 (1971) 413; note that there is an error in equation (4.22) of
+this paper where it should read
+−W J
+LS = 2qq′ J −1
+2J −1
+h
+AJ−2,(0)
+LS
+−AJ(0)
+LS
+i
+and
++W J
+LS = 2qq′ J + 2
+2J + 3
+h
+AJ+2,(0)
+LS
+−AJ(0)
+LS
+i
+.
+[143] E. E. Salpeter and H. A. Bethe, Phys. Rev. 84, 1232 (1951).
+[144] R. Machleidt, in: Computational Nuclear Physics 2 – Nuclear Reactions, edited by K. Langanke, J.A. Maruhn, and S.E.
+Koonin (Springer, New York, 1993) p. 1.
+[145] D. B. Kaplan, M. J. Savage, and M. B. Wise, Nucl. Phys. B478 (1996) 629; Phys. Lett. B 424 (1998) 390; Nucl. Phys.
+B534 (1998) 329,
+[146] S. Fleming, T. Mehen, and I. W. Stewart, Nucl. Phys. A677 (2000) 313; Phys. Rev. C 61 (2000) 044005.
+[147] D. R. Phillips, S. R. Beane, and T. D. Cohen, Ann. Phys. (N.Y.) 263 (1998) 255.
+91
+[148] T. Frederico, V. S. Timoteo, and L. Tomio, Nucl. Phys. A653 (1999) 209.
+[149] M. C. Birse, Phys. Rev. C 74 (2006) 014003; Phys. Rev. C 76 (2007) 034002.
+[150] S. R. Beane, P. F. Bedaque, M. J. Savage, and U. van Kolck, Nucl. Phys. A700 (2002) 377.
+[151] M. Pavon Valderrama and E. Ruiz Arriola, Phys. Rev. C 72 (2005) 054002.
+[152] A. Nogga, R. G. E. Timmermans, and U. van Kolck, Phys. Rev. C 72 (2005) 054006.
+[153] M. Pavon Valderrama and E. Ruiz Arriola, Phys. Rev. C 74 (2006) 054001.
+[154] M. Pavon Valderrama and E. Ruiz Arriola, Phys. Rev. C 74 (2006) 064004; Erratum: Phys. Rev. C 75 (2007) 059905.
+[155] E. Epelbaum and U.-G. Meißner, On the renormalization of the one-pion exchange potential and the consistency of
+Weinberg’s power counting, arXiv:nucl-th/0609037.
+[156] M. Pavon Valderrama and E. Ruiz Arriola, Ann. Phys. (N.Y.) 323 (2008) 1037.
+[157] D. R. Entem, E. Ruiz Arriola, M. Pav´on Valderrama, and R. Machleidt, Phys. Rev. C 77 (2008) 044006.
+[158] C.-J. Yang, Ch. Elster, and D. R. Phillips, Phys. Rev. C 77 (2008) 014002; 80 (2009) 034002, 044002.
+[159] B. Long and U. van Kolck, Ann. Phys. (N.Y) 323 (2008) 1304.
+[160] S. R. Beane, D. B. Kaplan, and A. Vuorinen, Phys. Rev. C 80 (2009) 011001.
+[161] M. Pavon Valderrama, A. Nogga, E. Ruiz Arriola, and D. R. Phillips, Eur. Phys. J. A 36 (2008) 315.
+[162] R. Machleidt and D. R. Entem, J. Phys. G: Nucl. Phys. 37 (2010) 064041.
+[163] M. P. Valderrama, Phys. Rev. C 83 (2011) 024003.
+[164] R. Machleidt, P. Liu, D. R. Entem, and E. Ruiz Arriola, Phys. Rev. C 81 (2010) 024001.
+[165] B. H. Brandow, Rev. Mod. Phys. 39 (1967) 771.
+[166] B. D. Day, Rev. Mod. Phys. 39 (1967) 719.
+[167] H. A. Bethe, Ann. Rev. Nucl. Sci. 21 (1971) 93.
+[168] B. D. Day and R. B. Wiringa, Phys. Rev. C 32 (1985) 1057.
+[169] E. Epelbaum and J. Gegelia, Eur. Phys. J. A41 (2009) 341.
+[170] G. P. Lepage, How to Renormalize the Schr¨odinger Equation, nucl-th/9706029.
+[171] E. Epelbaum, W. Gl¨ockle, and U.-G. Meißner, Nucl. Phys. A747 (2005) 362.
+[172] E. Epelbaum, W. Gl¨ockle, and U.-G. Meißner, Eur. Phys. J. A19 (2004) 401.
+[173] The 1999 NN data base is deﬁned in Ref. [13].
+[174] R. B. Wiringa, V. G. J. Stoks, and R. Schiavilla, Phys. Rev. C 51 (1995) 38.
+[175] R. Machleidt, F. Sammarruca, and Y. Song, Phys. Rev. C 53 (1996) 1483.
+[176] J. R. Bergervoet, P. C. van Campen, W. A. van der Sanden, and J. J. de Swart, Phys. Rev. C 38 (1988) 15.
+[177] E. M. Henley and G. A. Miller, in: Mesons in Nuclei, Vol. I, M. Rho and D. H. Wilkinson, eds. (North-Holland,
+Amsterdam, 1979) p. 406.
+[178] G. A. Miller, M. K. Nefkens, and I. Slaus, Phys. Rep. 194 (1990) 1.
+[179] G. Q. Li and R. Machleidt, Phys. Rev. C 58 (1998) 1393.
+[180] A. Gardestig, J. Phys. G: Nucl. Part. Phys. 36 (2009) 053001.
+[181] D. E. Gonz´alez Trotter et al., Phys. Rev. C 73 (2006) 034001.
+[182] Q. Chen et al., Phys. Rev. C 77 (2008) 054002.
+[183] U. L. van Kolck, Soft physics: Applications of eﬀective chiral Lagrangians to nuclear physics and quark models, Ph.D.
+thesis (University of Texas, Austin, USA, 1993).
+[184] U. van Kolck, Few-Body Systems, Suppl. 9 (1995) 444.
+[185] U. van Kolck, J. L. Friar, and T. Goldman, Phys. Lett. B 371 (1996) 169.
+[186] E. Epelbaum and U.-G. Meißner, Phys. Rev. C 72 (2005) 044001.
+[187] J. Friar and U. van Kolck, Phys. Rev. C 60 (1999) 034006.
+[188] M. Walzl, U.-G. Meißner, and E. Epelbaum, Nucl. Phys. A693 (2001) 663.
+[189] J. L. Friar, U. van Kolck, G. L. Payne, and S. A. Coon, Phys. Rev. C 68 (2003) 024003; and references to earlier work
+therein.
+[190] J. L. Friar, U. van Kolck, M. C. M. Rentmeester, and R. G. E. Timmermans, Phys. Rev. C 70 (2004) 044001.
+[191] U. van Kolck, M. C. M. Rentmeester, J. L. Friar, T. Goldman, and J. J. de Swart, Phys. Rev. Lett. 80 (1998) 4386.
+[192] N. Kaiser, Phys. Rev. C 73 (2006) 044001.
+[193] N. Kaiser, Phys. Rev. C 73 (2006) 064003.
+[194] N. Kaiser, Phys. Rev. C 74 (2006) 067001.
+[195] G. J. M. Austin and J. J. de Swart, Phys. Rev. Lett. 50 (1983) 2039.
+[196] W. A. van der Sanden, A. H. Emmen, and J. J. de Swart, Report No. THEF-NYM-83.11, Nijmegen (1983), unpublished;
+quoted in Ref. [176].
+[197] A. Huber, Th. Udem, B. Gross, J. Reichert, M. Kourogi, K. Pachucki, M. Weitz, and T. W. Hansch, Phys. Rev. Lett.
+80 (1998) 468.
+[198] W. Gl¨ockle, H. Witala, D. H¨uber, H. Kamada, and J. Golak, Phys. Rep. 274 (1996) 107.
+[199] D. R. Entem, R. Machleidt, and H. Witala, Phys. Rev. C 65 (2002) 064005, and references to earlier work therein.
+[200] E. Caurier, P. Navratil, W. E. Ormand, and J. P. Vary, Phys. Rev. C 66 (2002) 024314.
+[201] E. Epelbaum, U.-G. Meißner, and J. E. Palomar, Phys. Rev. C 71 (2005) 024001.
+[202] J.-I. Fujita and H. Miyazawa, Prog. Theor. Phys. 17 (1957) 360.
+[203] S. A. Coon, M. D. Scadron, P. C. McNamee, B. R. Barrett, D. W. E. Blatt. and B. H. J. McKeller, Nucl. Phys. A317
+(1979) 242.
+[204] H. T. Coelho, T. K. Das, and M. R. Robilotta, Phys. Rev. C 28 (1983) 1812; M. R. Robilotta and H. T. Coelho, Nucl.
+Phys. A460 (1986) 645.
+92
+[205] J. L. Friar, D. H¨uber, and U. van Kolck, Phys. Rev. C 59 (1999) 53.
+[206] S. A. Coon and H. K. Han, Few-Body Syst. 30 (2001) 131.
+[207] A. G˚ardestig and D. R. Philips, Phys. Rev. Lett. 96 (2006) 232301.
+[208] C. Hanhart, U. van Kolck, and G. A. Miller, Phys. Rev. C 85 (2000) 2905.
+[209] D. Gazit, S. Quaglioni, and P. Navr´atil, Phys. Rev. Lett. 103 (2009) 102502.
+[210] S. X. Nakamura, Phys. Rev. C 77 (2008) 054001.
+[211] B. M. Fisher, C. R. Brune, H. J. Karwowski, D. S. Leonard, E. J. Ludwig, T. C. Black, M. Viviani, A. Kievsky, and S.
+Rosati, Phys. Rev. C 74 (2006) 034001.
+[212] M. R. Robilotta, Phys. Rev. C 74 (2006) 044002.
+[213] N. Fettes and U.-G. Meißner, Nucl. Phys. A676 (2000) 311.
+[214] E. Epelbaum, Eur. Phys. J. A34 (2007) 197.
+[215] E. Epelbaum, Phys. Lett. B 639 (2006) 456.
+[216] D. Rozpedzik, J. Golak, R. Skibinski, H. Witala, W. Gl¨ockle, E. Epelbaum, A. Nogga, and H. Kamada, Acta Phys.
+Polon. B37 (2006) 2889; arXiv:nucl-th/0606017.
+[217] K. Holinde and R. Machleidt, Nucl. Phys. A280 (1977) 429.
+[218] T. R. Hemmert, B. R. Holstein, and J. Kambor, J. Phys. G 24 (1998) 1831.
+[219] V. Bernard, N. Kaiser, and U.-G. Meißner, Nucl. Phys. A615 (1997) 483.
+[220] C. Ord´o˜nez and U. van Kolck, Phys. Lett. B 291 (1992) 459.
+[221] H. Krebs, E. Epelbaum, and U.-G. Meißner, Eur. Phys. J. A32 (2007) 127.
+[222] E. Epelbaum, H. Krebs, and U.-G. Meißner, Nucl. Phys. A806 (2008) 65.
+[223] N. Fettes and U.-G. Meißner, Nucl. Phys. A679 (2001) 629.
+[224] S. C. Pieper, V. R. Pandharipande, R. B. Wiringa, and J. Carlson, Phys. Rev. C 64 (2001) 014001.
+[225] S. Weinberg, The Quantum Theory of Fields, Vol. I (Cambridge University Press, Cambridge and New York, 1995).
+[226] I. S. Gerstein, R. Jackiw, B. W. Lee, and S. Weinberg, Phys. Rev. D 3 (1971) 2486.
+[227] G. ’t Hooft and M. Veltman, Nucl. Phys. B44 (1972) 189.
+[228] J. C. Collins, Renormalization (Cambridge University Press, Cambridge, 1984).
+[229] F. Mandl and G. Shaw, Quantum Field Theory, Revised Edition (Wiley, New York, 1984).
+[230] R. P. Feynman, Phys. Rev. 76 (1949) 769.
+[231] G. ’t Hooft, Nucl. Phys. B61 (1973) 455.
+[232] M. Abramovitz and I. A. Stegun, Handbook of Mathematical Functions (Dover, New York, 1970).
+93

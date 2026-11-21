@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1103.4815v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1103.4815v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1103.4815v3",
+  "title": "Four Equivalent Versions of Non-Abelian Gerbes",
   "contains": [
+    "library/arxiv-1103.4815v3/sections/sec-front-matter",
     "library/arxiv-1103.4815v3/sections/sec-000",
     "library/arxiv-1103.4815v3/sections/sec-001",
     "library/arxiv-1103.4815v3/sections/sec-002",
@@ -28,10 +29,13 @@
     "library/arxiv-1103.4815v3/sections/sec-014",
     "library/arxiv-1103.4815v3/sections/sec-015",
     "library/arxiv-1103.4815v3/sections/sec-016",
-    "library/arxiv-1103.4815v3/sections/sec-017"
+    "library/arxiv-1103.4815v3/sections/sec-017",
+    "library/arxiv-1103.4815v3/sections/sec-018",
+    "library/arxiv-1103.4815v3/sections/sec-019",
+    "library/arxiv-1103.4815v3/sections/sec-020"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -41,7 +45,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1103.4815v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1103.4815v3.pdf",
     "source_sha256": "28647b02ea1441e38e2dd7192885b9b64840b290b7f43aafeb1c48e27206ed23",
     "pages": 65,

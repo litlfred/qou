@@ -14,7 +14,7 @@ algorithm "digests global entanglement into local coefficients"
 normal-form length by a fixed increment" placing the n-nucleon cluster at
 "jet vertical degree n" (`bond-order-eq-jet-degree-proof`), and the associated
 graded gr_n IS the n-nucleon cluster contribution (`prop:gb-spectral-sequence`
-E_2 collapse, `prop:jet-prefix-gb-filtration`). So the negative below is about
+E_2 collapse, `conj:jet-prefix-gb-filtration`). So the negative below is about
 MAGNITUDES AT A POINT and says nothing about the graded structure -- which
 this probe never looked at. The object to measure is the symbolic NF over
 Q(q, sqrt q), `hecke_core_symbolic.build_atom_nf_sym`, and its q-degree /

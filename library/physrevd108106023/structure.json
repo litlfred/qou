@@ -8,9 +8,15 @@
   "pages": 11,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:26Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 10,
+    "reason": "435 letters among 1120 non-space characters other than digits: mojibake"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -88,7 +94,7 @@
   },
   {
    "level": 2,
-   "title": "Colored HOMFLY-PT polynomials for a class of double twist knots K\u00f0p; \u2212m\u00de",
+   "title": "Colored HOMFLY-PT polynomials for a class of double twist knots Kðp; −mÞ",
    "page": 4,
    "source": "inferred",
    "number": "A",
@@ -283,73 +289,85 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 771,
-   "n_words": 113,
+   "n_chars": 927,
+   "n_words": 132,
    "label_start": "1",
    "label_end": "1"
   },
   {
-   "id": "sec-000-a-reverse-engineering-of-melvin-morton-rozansky",
-   "number": "A",
-   "title": "Reverse engineering of Melvin-Morton-Rozansky (MMR) expansion",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 51,
-   "n_words": 5,
-   "label_start": "1",
-   "label_end": "1"
-  },
-  {
-   "id": "sec-001-i-introduction",
+   "id": "sec-000-i-introduction",
    "number": "I",
    "title": "INTRODUCTION",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4795,
-   "n_words": 798,
+   "n_chars": 6292,
+   "n_words": 1061,
    "label_start": "1",
    "label_end": "2"
+  },
+  {
+   "id": "sec-001-a-reverse-engineering-of-melvin-morton-rozansky",
+   "number": "A",
+   "title": "Reverse engineering of Melvin-Morton-Rozansky (MMR) expansion",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1524,
+   "n_words": 296,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-ii-double-twist-knots",
    "number": "II",
    "title": "DOUBLE TWIST KNOTS",
    "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 5570,
-   "n_words": 1017,
-   "label_start": "2",
-   "label_end": "3"
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2534,
+   "n_words": 459,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-iii-knot-quiver-correspondence",
+   "id": "sec-003-a-colored-homfly-pt-polynomials-for-a-class-of-d",
+   "number": "A",
+   "title": "Colored HOMFLY-PT polynomials for a class of double twist knots Kðp; −mÞ",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2617,
+   "n_words": 707,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-iii-knot-quiver-correspondence",
    "number": "III",
    "title": "KNOT-QUIVER CORRESPONDENCE",
    "level": 1,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 7,
-   "n_chars": 12364,
-   "n_words": 3380,
-   "label_start": "3",
+   "n_chars": 9315,
+   "n_words": 2604,
+   "label_start": "4",
    "label_end": "7"
   },
   {
-   "id": "sec-004-iv-conclusion-and-discussion",
+   "id": "sec-005-iv-conclusion-and-discussion",
    "number": "IV",
    "title": "CONCLUSION AND DISCUSSION",
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3197,
-   "n_words": 536,
+   "n_chars": 3106,
+   "n_words": 523,
    "label_start": "7",
    "label_end": "8"
   },
   {
-   "id": "sec-005-acknowledgments",
+   "id": "sec-006-acknowledgments",
    "number": null,
    "title": "ACKNOWLEDGMENTS",
    "level": 1,
@@ -361,14 +379,14 @@
    "label_end": "8"
   },
   {
-   "id": "sec-006-appendix-quiver-matrix",
+   "id": "sec-007-appendix-quiver-matrix",
    "number": null,
    "title": "APPENDIX: QUIVER MATRIX",
    "level": 1,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 10099,
-   "n_words": 3044,
+   "n_chars": 9559,
+   "n_words": 2283,
    "label_start": "8",
    "label_end": "11"
   }
@@ -387,7 +405,11 @@
    "count": 0,
    "items": []
   },
-  "sections": 8,
-  "chars_total": 37852
+  "sections": 9,
+  "chars_total": 36879,
+  "furniture_lines_stripped": 30,
+  "pages_read_in_print_order": [
+   3
+  ]
  }
 }

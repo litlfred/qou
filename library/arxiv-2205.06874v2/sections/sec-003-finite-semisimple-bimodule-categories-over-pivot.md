@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-003-finite-semisimple-bimodule-categories-over-pivot
 section_title: "Finite semisimple (bi)module categories over pivotal fusion categories"
 section_number: null
 pages: 9-9
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
-latex_coverage_ratio: 0.853
+latex_coverage_ratio: 0.982
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 \label{subsec:semisimple}
 We focus on {\em finite semisimple} $(\mac,\mad)$-bimodule categories  over {\em fusion categories} $\mac$, $\mad$ and on $(\mac,\mad)$-bimodule functors and  natural transformations between them. In this case

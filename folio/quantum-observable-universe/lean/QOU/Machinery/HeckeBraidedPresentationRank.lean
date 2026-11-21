@@ -364,4 +364,63 @@ theorem wenzlTowerStep_regTrace {rank : ℕ}
     obtain ⟨z, hz⟩ := hnd x hne
     exact hz (hx z)
 
+/-! ## The class is FREE wherever its conclusion holds — and NOTHING consumes it
+
+Two instances above discharge `WenzlTowerStep`: one by discarding both hypotheses
+(rank 3), one from nondegeneracy alone for the algebra trace (any rank). This
+section records the general shape of the first, and a measurement that reframes
+what the class is worth.
+
+**Measured on this corpus, 2026-09-27.** `WenzlTowerStep` occurs **27** times in
+the Lean tree: **1** class definition, **2** discharge targets (the two above),
+and **24** prose mentions. It occurs in **no instance-hypothesis position** —
+`grep -rn '\[WenzlTowerStep' content/ --include=*.lean` returns nothing — and
+`semisimple_ascend` is never projected outside this file. **No declaration in the
+corpus depends on the class.**
+
+That is worth stating because five files name "a `WenzlTowerStep` instance at the
+Markov trace" as an outstanding blocker (`HeckeColimitRadicalDescent`,
+`TraceNondegeneracyInsufficient`, `TLTowerRadicalDescent`, `MarkovTraceQuotient`,
+`HeckeH4Semisimple`). Nothing there is wrong about the class's *content*; but an
+instance cannot unblock a consumer that does not exist, so effort spent obtaining
+one buys nothing until something is written that actually takes `[WenzlTowerStep
+…]` as a hypothesis.
+
+**And at the Hecke carrier the conclusion is now free outright.**
+`QOU.SchurWeyl.isSemisimpleRing_hecke_generic` gives `IsSemisimpleRing (Hecke K q
+q⁻¹ n)` for every `n` over any `CharZero` field, under `q ≠ 0` and
+`NotRootOfUnity q` only — sorry-free, and it routes through `heckeWedderburn`,
+**not** through any Gram determinant (both check `[propext, Classical.choice,
+Quot.sound]`). So at that carrier the theorem below applies and the class carries
+no information at all.
+
+🛑 **This is not a proof of the Wenzl ascent and must never be cited as one.** It
+is the opposite: a witness that the class is contentless whenever its conclusion
+is independently available. The genuine ascent question — does semisimplicity
+ascend along a *nondegenerate Markov trace*, at a carrier where the conclusion is
+NOT already known — is untouched here and stays open (bean `qou-s7z2`).
+
+-- Ref: [leitner2026] beans qou-s7z2, qou-0cyu.
+-/
+
+/-- **`WenzlTowerStep` is free wherever its conclusion already holds.**
+
+Given `IsSemisimpleRing Hn1` the field is discharged by ignoring both hypotheses,
+at any rank and any carrier. `wenzlTowerStep_H2_H3_trivial` is the `rank = 3`
+special case of this; `wenzlTowerStep_regTrace` is the contrasting one, where the
+nondegeneracy hypothesis genuinely does the work.
+
+🛑 **Do not cite this as the Wenzl ascent.** It proves that the class says nothing
+once its conclusion is known, per AGENTS.md §3b-cond rule 5 — the reason no
+instance of it was created at the `wtrace` quotient carrier, where
+`WtraceRadicalSemisimple.isSemisimpleRing_traceQuot_of_hecke` makes the conclusion
+unconditional. -/
+theorem wenzlTowerStep_vacuous_of_isSemisimpleRing {rank : ℕ}
+    {Hn Hn1 : Type*} [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
+    (q : R) (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
+    (ι : Hn →ₐ[R] Hn1) (trn1 : Hn1 → R)
+    (hss : IsSemisimpleRing Hn1) :
+    WenzlTowerStep R q rank Hn Hn1 σn1 ι trn1 where
+  semisimple_ascend _ _ := hss
+
 end QOU.Machinery.HeckeRank

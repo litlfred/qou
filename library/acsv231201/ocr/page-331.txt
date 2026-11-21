@@ -1,0 +1,49 @@
+10.3 Main results on coefficient asymptotics 313
+
+If w is a circuit and )) jew ajC;(z) = 0 then dividing by [] jew €)(z)”’ yields a
+linear relation among elements of S g of total degree 1 — Lye mj,
+
+aj aj
+-- _. (10.15)
+Tliew €(2)"- 2d Tliew &(z)"-°"
+JH
+
+Such relations allow for a reduction to the transverse case above.
+
+Algorithm 4: Decomposition into transverse hyperplane arrangements.
+
+Input: Rational or meromorphic function F(z) = P(z)/Q(z) whose
+singular variety is the hyperplane arrangement defined by the
+vanishing of Q(z) = [Tj €)(z)"".
+
+Output: Rational or meromorphic functions F,..., F's; such that
+
+F(z) = F\(z) +--+: + F(z) and the singular variety of each F;
+is a transverse hyperplane arrangement contained in the
+singular variety of F.
+Set S = F(z).
+While there is a summand s(z) of S with a broken circuit {€),,...,€),,}:
+Apply (10.15) to s(z) with jz > jx; such that {€;,,..., €),} is
+dependent, and replace
+s(z) in S by the result
+Return S
+
+Example 10.32. Let Q = €)(x, y)€2(x, y)€3(x, y) = (3-2x-y)(3-x-2y)(2-—x-
+y). The variety V consists of three concurrent lines, as shown in Example 10.30
+and Figure 10.12. By examination we find that 2¢) (x, y) +2¢2(x, y)-—6¢3(x, y) =
+0. Dividing through by 6Q gives
+1 _ 1/3 + 1/3
+A@yhy) &0.y)60.y)  b0,y)G0.y)”
+
+Starting with any fraction F(x, y) = g(x, y)/€1(x, y)“t2(x, yyPbs(x, y)*, this rela-
+tion may be used in Algorithm 4 to reduce factors €;f2€3 in the denominator
+until there are none remaining, resulting in a sum
+
+F(xy) = > e (x,y) + y fi)
+
+abate UO VEC, yyrPred EA Coes yW Ea, yr”
+
+Whereas F(x, y) had a non-transverse multiple point at (1, 1), each summand
+now has a transverse multiple point at (1, 1). 4
+
+Theorem 10.33. Let Q(z) = Mint Ezy be a product of real linear functions

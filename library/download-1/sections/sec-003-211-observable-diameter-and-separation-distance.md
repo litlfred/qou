@@ -8,7 +8,9 @@ pages: 4-5
 source_pdf: Download (1).pdf
 source_sha256: bbb001c909958e8a
 toc_source: inferred
+doc_brief: "Central and L p -concentration of 1-Lipschitz maps into R -trees — In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
+Observable diameter and separation distance.
 Let Y be a metric space and  a Borel measure on Y such that m :¼
 ðY Þ < þ1. We deﬁne for any  > 0
 diamð; m  Þ :¼ inffdiam Y0 j Y0  Y is a Borel subset such that ðY0Þ  m  g
@@ -52,4 +54,3 @@ n¼1 of mm-
 spaces satisﬁes that
 ObsDiamRðXn; Þ ! 0 as n ! 1
 for any  > 0 if and only if SepðXn; ; Þ ! 0 as n ! 1 for any  > 0.
-2.1.2

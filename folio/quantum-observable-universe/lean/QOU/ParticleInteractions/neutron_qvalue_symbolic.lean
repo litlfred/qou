@@ -26,7 +26,7 @@ Given these inputs, the symbolic difference `Δ(net) = (h² − 2h)/2` and the
 closed form `Q_β = m_e·(2−h)·h / (2q(q−1))` are **derived by algebra** —
 this is a rigorous §3b-cond conditional, not a self-projection.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
 -/
 
 namespace QOU.ParticleInteractions
@@ -80,7 +80,7 @@ theorem borromeanQuark_denom_ne_zero [inst : BorromeanQuark] :
 /-- **Symbolic `Δ(net)` (derived).**  The NF difference
     `net(n) − net(p) = (h² − 2h)/2` follows from the conjectural single-wrap
     NF nets by ring algebra — not a projection of a class field. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
 theorem neutron_delta_net [inst : BorromeanQuark] :
     inst.net_n - inst.net_p = (inst.h ^ 2 - 2 * inst.h) / 2 := by
   rw [inst.proton_net, inst.neutron_net]; ring
@@ -95,7 +95,7 @@ theorem neutron_delta_net [inst : BorromeanQuark] :
     The proof *derives* this from `qvalue_ansatz` by substituting the NF nets
     (via `neutron_delta_net`) and clearing the denominator — it is NOT a
     read-back of a stored conclusion. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md
 theorem neutron_qvalue_symbolic [inst : BorromeanQuark] :
     inst.Q_β = inst.m_e * (2 - inst.h) * inst.h / (2 * inst.q * (inst.q - 1)) := by
   have hden : inst.q * (inst.q - 1) ≠ 0 := borromeanQuark_denom_ne_zero
@@ -110,5 +110,29 @@ theorem neutron_qvalue_symbolic [inst : BorromeanQuark] :
     rw [hdelta, abs_of_nonpos hneg]; ring
   rw [inst.qvalue_ansatz, habs]
   field_simp
+
+/-- In the substrate regime `0 < h < 2`, the quadratic factor `h * (2 - h)` is strictly positive. -/
+theorem borromeanQuark_h_quad_pos [inst : BorromeanQuark] :
+    0 < inst.h * (2 - inst.h) := by
+  have hh0 : 0 < inst.h := inst.h_pos
+  have hh2 : 0 < 2 - inst.h := by linarith [inst.h_lt_two]
+  exact mul_pos hh0 hh2
+
+/-- Under `[BorromeanQuark]`, the neutron single-wrap NF net is strictly smaller than the proton's. -/
+theorem neutron_net_lt_proton_net [inst : BorromeanQuark] :
+    inst.net_n < inst.net_p := by
+  have hdelta := neutron_delta_net (inst := inst)
+  have hquad := borromeanQuark_h_quad_pos (inst := inst)
+  linarith
+
+/-- Under `[BorromeanQuark]` and `0 < m_e`, the derived neutron decay `Q`-value is strictly positive. -/
+theorem neutron_qvalue_pos [inst : BorromeanQuark] (hme : 0 < inst.m_e) :
+    0 < inst.Q_β := by
+  rw [neutron_qvalue_symbolic]
+  have hq : 0 < inst.q := by linarith [inst.q_gt_one]
+  have hq1 : 0 < inst.q - 1 := by linarith [inst.q_gt_one]
+  have h2h : 0 < 2 - inst.h := by linarith [inst.h_lt_two]
+  have hh : 0 < inst.h := inst.h_pos
+  positivity
 
 end QOU.ParticleInteractions

@@ -1,5 +1,5 @@
 [Yekutieli lifting](#prop:yekutieli-lifting) establishes that the constructed
-brane tower satisfies the Quantum lifting condition.  We prove each
+brane tower satisfies the Quantum lifting condition.  One proves each
 structural property in turn.
 
 *Item (1): :refterm[Descent]{#descent} terminates.*
@@ -13,20 +13,27 @@ reduces the Krull dimension of the centre, so after at most $d_0$ steps
 the base becomes a discrete (Artinian) scheme.
 
 *Item (2): $\kappa_0$ equals the Euler class.*
-The first obstruction $\kappa_0 \in H^2(\mathcal{S}, \mathcal{B})$
-is the connecting-homomorphism image of $[A_0]$ under the central extension
-$1 \to \mathcal{B} \to \mathfrak{G}_1 \to \mathfrak{G}_0 \to 1$.  In the
-archimedean realisation, this identifies with the Euler class $e$ of the
-Reeb $\mathrm{U}(1)$-bundle via the Gysin sequence; the trace map sends
-$\kappa_0$ to $\chi(A) = \mathrm{tr}(\mathrm{id}_A)$.
+On a manifold the sheaf $\underline{\mathbb{R}}$ of smooth real functions is fine, so $H^k(\mathcal{S}, \underline{\mathbb{R}}) = 0$ for $k \geq 1$. Every $\underline{\mathbb{R}}$-torsor is therefore trivial. The connecting map of $1 \to \underline{\mathbb{Z}} \to \underline{\mathbb{R}} \to \underline{\mathrm{U}(1)} \to 1$ is an isomorphism $\delta \colon H^1(\mathcal{S}, \underline{\mathrm{U}(1)}) \to H^2(\mathcal{S}, \mathbb{Z})$, and it sends the class of $\xi$ to $c_1(\xi)$. So $\xi$ lifts along $\underline{\mathbb{R}} \to \underline{\mathrm{U}(1)}$ exactly when $c_1(\xi) = 0$, and the obstruction is $\kappa_0 = c_1(\xi)$. For an oriented circle bundle, $c_1 = e$. When $\xi$ is the unit tangent bundle, $e(\xi)[\mathcal{S}] = \chi(\mathcal{S})$ by Poincaré--Hopf. This is the torsor instance of the lifting theorem for central extensions of gerbes (Yekutieli 2010, Example "torsors" and Theorem 4.17). On Bring's surface, $\kappa_0 = -6$.
 
-*Item (3): Perpetual obstruction.*
-The class $\kappa_0$ lies in the image of
-$H^2(\mathcal{S}, \underline{R}) \to H^2(\mathcal{S}, \mathcal{B})$
-(constant/topological), while jet corrections at level $n$ lie in the
-image of $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) \to H^2(\mathcal{S}, \mathcal{B})$
-(analytic/algebraic).  When $\kappa_0$ is non-torsion, these images are
-complementary, so corrections cannot cancel $\kappa_0$.
+*Item (3): Kummer persistence.*
+Taking $n$-th powers is a surjection of sheaves $\underline{\mathrm{U}(1)} \to \underline{\mathrm{U}(1)}$, since $n$-th roots exist locally. Its kernel is the constant sheaf $\mu_n$. The long exact sequence contains
+$$
+  H^1(\mathcal{S}, \underline{\mathrm{U}(1)})
+   \xrightarrow{\;n\;}
+  H^1(\mathcal{S}, \underline{\mathrm{U}(1)})
+   \longrightarrow
+  H^2(\mathcal{S}, \mu_n)
+   \longrightarrow
+  H^2(\mathcal{S}, \underline{\mathrm{U}(1)}).
+$$
+By item (2), $H^1(\mathcal{S}, \underline{\mathrm{U}(1)}) \cong H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$. Similarly $H^2(\mathcal{S}, \underline{\mathrm{U}(1)}) \cong H^3(\mathcal{S}, \mathbb{Z}) = 0$ for a surface. So $H^2(\mathcal{S}, \mu_n) \cong \mathbb{Z}/n$. The obstruction to an $n$-th root of $\xi$ is the image of $c_1(\xi) = \chi(\mathcal{S})$, namely $\chi(\mathcal{S}) \bmod n$. It vanishes exactly when $n \mid \chi(\mathcal{S})$. For $\chi(\mathcal{S}) \neq 0$ that happens for finitely many $n$. On Bring's surface those are $n \in \{1, 2, 3, 6\}$; the case $n = 2$ is a spin structure.
+
+*Retracted claim.* Earlier versions of this theorem asserted a *perpetual obstruction*: $\kappa_n \neq 0$ at every level of the jet-prolongation tower, because $\kappa_0$ and the jet corrections were said to live in complementary subgroups of $H^2(\mathcal{S}, \mathcal{B})$. That claim does not hold on a closed surface such as Bring's.
+- The corrections lie in the image of $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$.
+- $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement.
+- The archimedean band $\mathcal{O}^{\times}$ has $H^2(\mathcal{S}, \mathcal{O}^{\times}) = 0$.
+
+The persistence statement that does hold is item (3), in the Kummer tower rather than the jet tower. In the jet tower, the holomorphic extension classes of the tangent bundle are non-zero at every level except $n = 3$; see the [remark on jet-tower splitting](#rem:jet-tower-splitting-bring).
 
 *Item (4): Riemann--Hurwitz.*
 The branched covering $\pi \colon S \to \mathbb{P}(V)$ of degree $d$ has
@@ -40,3 +47,6 @@ base is a point.  The QOU data reduces to the fiber: the Frobenius--Hopf
 algebra $A$ at parameter $q(p)$, with the involution
 $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$ of
 [fibre adjoint involution](#prop:fiber-adjoint-involution).  $\square$
+
+*Item (6): Lifting criterion.*
+This is proved for a central extension of presheaves of groups that is exact and central on every section group, and a cocycle with a local lift on overlaps. The obstruction is a 2-cocycle. Its class does not depend on the local lift, and it is compatible with refinement of the cover.

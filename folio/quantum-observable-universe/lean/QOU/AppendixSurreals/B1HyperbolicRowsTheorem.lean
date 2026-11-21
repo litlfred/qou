@@ -60,16 +60,16 @@ inductive HyperbolicRow
   deriving DecidableEq, Fintype
 
 /-- **Bloch–Suslin regulator condition** — an external open input. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
 opaque BlochSuslinRegulator : Prop
 
 /-- **van der Veen et al.'s Volume-Conjecture extensions** — an external open
     input. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
 opaque VanDerVeenVolumeConjecture : Prop
 
 /-- **B1 holds at a given hyperbolic row.** -/
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
 opaque B1HoldsAt : HyperbolicRow → Prop
 
 /-- **Conjecture (`conj:b1-hyperbolic-rows-theorem`), per-row form.**
@@ -79,7 +79,7 @@ opaque B1HoldsAt : HyperbolicRow → Prop
     This is where the conjectural content lives. It is falsifiable: it says
     something about the named `B1HoldsAt` at each named row, rather than
     about an arbitrary numeral. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
 axiom b1_holds_at_row :
     BlochSuslinRegulator → VanDerVeenVolumeConjecture →
       ∀ r : HyperbolicRow, B1HoldsAt r

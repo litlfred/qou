@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-121",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Graded Rigid NC DC",
+  "pageStart": 429,
+  "pageEnd": 435,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-121",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-121-01",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-121-02",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-121-03",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-121-04",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-121-05",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-121-06",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-121-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -20,8 +20,8 @@
   above.  That is what puts the whole interval inside `[π/6, 5π/6]` and lets
   `half_le_sin` apply unchanged.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevPeakValue.lean
-  -- Ref: [manuscript] QOU/Knot/KashaevTailBound.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevPeakValue.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevTailBound.lean
 -/
 import QOU.Knot.KashaevPeakValue
 import QOU.Knot.KashaevArgmax

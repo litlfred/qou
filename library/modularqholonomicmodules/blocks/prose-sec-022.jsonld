@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/modularqholonomicmodules/blocks/prose-sec-022",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Residues",
-  "pageStart": 43,
-  "pageEnd": 45,
-  "text": "../sections/sec-022-53-residues.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "title": "A q-difference equation of the 41 knot",
+  "pageStart": 37,
+  "pageEnd": 40,
+  "text": "../sections/sec-022-5-a-q-difference-equation-of-the-41-knot.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
   "provenance": "ingested"
 }

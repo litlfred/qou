@@ -1,1 +1,1 @@
-Under the conditions (3) (with the condition (30) included) and (31), for λ ∈ C∗\∪ 1≤l≤n−1
+Under the conditions (3) (with the condition (30) included) and (31), for λ ∈C∗\∪1≤l≤n−1 [−(1 −q)/qνl; q], the fundamental solution F (∞) q (z, λ; Enn, An−1) of (33) is given by F (∞) q (z, λ; Enn, An−1) = H(∞) q (z, λ; Enn, An−1) · zδ(n−1) q (An−1)eq Å Ennq−δ(n−1) q (An−1)z ã , (35) with H(∞) q (z, λ; Enn, An−1)ij = L[λ;q] q;1 ◦ˆBq;1( ˆHq (z; Enn, An−1)ij). The entries are for 1 ≤i ≤n, 1 ≤j ≤n−1: H(∞) q (z, λ; Enn, An−1)ij = dq;ij · nfn−2

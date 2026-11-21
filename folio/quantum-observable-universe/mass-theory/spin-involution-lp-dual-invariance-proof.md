@@ -49,7 +49,7 @@ $$
   = \tau(\sigma(\beta)^* \sigma(\beta) \cdot x),
 $$
 
-where we used $\sigma(\beta^*\beta) = \sigma(\beta)^* \sigma(\beta)$
+using $\sigma(\beta^*\beta) = \sigma(\beta)^* \sigma(\beta)$
 (anti-multiplicativity preserves the involutive form $a^*a$
 when $\sigma$ is a $*$-involution; for the Hecke / Markov case
 this is the bar involution). Hence $\sigma$ is a bijection
@@ -61,14 +61,14 @@ By Steps 2–4, $\mathrm{LP}(\beta)$ and $\mathrm{LP}(\sigma(\beta))$
 have feasible sets in $\sigma$-bijection and the same
 $\sigma$-invariant cost; their primal optima coincide. By
 strong duality (which holds for Frobenius algebras structurally
-— see [`prop:frobenius-self-duality-forces-lp-dual-extraction`](#prop:frobenius-self-duality-forces-lp-dual-extraction)),
+— see [Frobenius self-duality of $(H_n(R,q),\tau)$ forces $\tau$-extraction to produce LP-dual variables](#prop:frobenius-self-duality-forces-lp-dual-extraction)),
 the dual optima coincide. In particular,
 
 $$
   y_0^*\bigl(\sigma(\beta)\bigr) = y_0^*(\beta). \qquad\square
 $$
 
-**Corollary (QOU instance — isospin invariance).**
+**Corollary (QOU instance — isospin invariance; NOT established).**
 *For $A = H_n(R, q)$ with $\tau$ the Markov trace and $\sigma = S$
 the Hopf antipode, the per-atom canonical braid recipe
 satisfies $S(\mathcal{B}_K(Z, N)) \sim \mathcal{B}_K(N, Z)$ (Markov-
@@ -81,24 +81,25 @@ $$
   y_0^*(Z, N) = y_0^*(N, Z).
 $$
 
-*Proof.* For $A = H_n(R, q)$, $S$ is an involutive
-anti-homomorphism (Kassel 1995, §VIII.4) and $\tau$ is
-$S$-invariant (Kassel 1995, §XII.2). The central elements
-$P_\ell$ are $S$-invariant by direct calculation
-($S$ permutes the JM elements as
-$S(J_k) = q^{2(1-k)} J_k$, so symmetric polynomials in the
-$J_k$ are scaled by an overall power of $q$ that vanishes from
-the trace; alternatively, $P_\ell$ acts on $V_\lambda$ as
-$c_\ell(\lambda)$, and on $V_{\lambda^T}$ as
-$c_\ell(\lambda^T) = c_\ell(\lambda)|_{q \to q^{-1}}$, which is
-the $q^{-2\ell|\lambda|/n}$-rescaled value — a constant on each
-isotypic block, hence absorbed by trace normalisation).
-Wedderburn strata defined by partition height
-($\mathrm{ht}(\lambda) \le k$) or by self-conjugate selection
-are $S$-stable. Apply the proposition. $\square$
+*Status.* The argument that stood here fails at its first step.
+It asserted that $\tau$ is $S$-invariant for the antipode
+$S(\sigma_i) = \sigma_i^{-1}$. Under convention D,
+$\tau(\sigma_i) = z = q^3/(q^2+1)$, while
+$\tau(\sigma_i^{-1}) = \tau(\sigma_i) - (q - q^{-1}) = 1/\bigl(q(q^2+1)\bigr)$;
+at $q_0$ these are $0.6127$ and $0.4036$. Moreover $\sigma_i \mapsto
+\sigma_i^{-1}$ does not preserve the Hecke relation over $R$: the
+image satisfies $(\sigma_i^{-1} - q^{-1})(\sigma_i^{-1} + q) = 0$, the
+relation at $q^{-1}$. It is an algebra map only together with
+$q \mapsto q^{-1}$, i.e. the bar involution, and $\tau$ is
+bar-*equivariant*, $\tau(\bar x) = \overline{\tau(x)}$, not invariant.
+So the hypothesis $\tau \circ \sigma = \tau$ of the proposition is not
+met by the Markov trace with this $\sigma$, and $y_0^*(Z, N) =
+y_0^*(N, Z)$ does not follow. The $R$-linear anti-automorphism
+$T_w \mapsto T_{w^{-1}}$ does preserve $\tau$, but it fixes every
+generator and so does not exchange $Z$ and $N$.
 
 **Empirical confirmation.**
-[`alpha-5-lp-dual-crystal.witness.json`](computations/alpha/alpha-5-lp-dual-crystal.witness.json)
+[The $\alpha_5$ LP-dual crystal computation](../../../computations/alpha/alpha-5-lp-dual-crystal.witness.json)
 verifies $y_0^*(T) = y_0^*({}^3\mathrm{He})$ to machine
 precision (= 570.6762 at $q_0$, = 26.8242 in ht=6 stratum, and
 exactly equal across the entire $q$-sweep).
@@ -125,14 +126,15 @@ algebraic volumes $\hat V_i$ at intra-positions take the same values
 $0.989$ and $0.971$ at $q_0$ regardless of whether the underlying
 nucleon is a proton or a neutron — proton/neutron distinction enters
 only through the inter-nucleon crossings, which are outside the
-intra-shell sub-braid). The spin involution $\sigma = S$ swaps
-proton-shell and neutron-shell strand-labellings while preserving
-the Hecke-algebra structure, so $S(\sigma_{pp}) = \sigma_{nn}$ as
-elements of $H_n(R, q)$. Apply the proposition with $c = 1$ (trivial
-central operator). $\square$
+intra-shell sub-braid). The two words differ by an index shift
+$\sigma_i \mapsto \sigma_{i+k}$, and the Markov trace is invariant
+under that shift (it is determined by the Markov property, which the
+shift respects). Hence the traces agree. The antipode $S$ plays no
+role, and could not: it sends $\sigma_i$ to $\sigma_i^{-1}$, not to
+another positive generator. $\square$
 
 **Empirical confirmation (Markov-trace level).**
-[`canonical evaluation-phiq-pair-knot-markov-trace.witness.json`](../../../computations/canonical evaluation-phiq-pair-knot-markov-trace.witness.json)
+[The pair-knot Markov-trace computation](../../../computations/canonical evaluation-phiq-pair-knot-markov-trace.witness.json)
 computes
 $\mathrm{tr}_M(\sigma_{pp})$ and $\mathrm{tr}_M(\sigma_{nn})$ via
 Hoefsmit seminormal at $q_0$ for $T$ ($n=9$ with $N=2$ shell) and
@@ -158,7 +160,7 @@ Markov trace does.
 
 **Operator-level signature.** The
 the canonical formalism
-(per [`prop:operator-selection-lp`](#prop:operator-selection-lp))
+(per [Knot operator selection as linear program with LP duality](#prop:operator-selection-lp))
 confirms that $\sigma_{pp}, \sigma_{nn}$ are in the active set
 EXACTLY at magic-shell atoms ($Z=2$ activates $\sigma_{pp}$, $N=2$
 activates $\sigma_{nn}$, doubly magic ${}^{4}$He activates both) — see

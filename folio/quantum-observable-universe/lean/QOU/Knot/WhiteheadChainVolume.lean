@@ -33,7 +33,7 @@ Third volume-conjecture instance, following the 4₁ (E-bricks) and Borromean
   primitive.  The identification of `P_M` with the diagrammatic invariant
   via Lemma 1 is the cited input (same epistemic tier as the Borromean
   carrier's GL2011/Habiro identification).
-  -- Ref: [manuscript] docs/audits/2026-08-02-whitehead-chain-positive-sum-route.md
+  -- Ref: [leitner2026] docs/audits/2026-08-02-whitehead-chain-positive-sum-route.md
 
 * **Target** (brick W5, separate): `(2π/(2M+1)) log P_M → 4·Cl₂(π/2) = 4G
   = 8Λ(π/4) = Vol(W_{a,2,1,0})` (volume by vdV's octahedral decomposition,

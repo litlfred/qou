@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-049",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Arithmetic triangle groups. Review of Takeuchi's list.",
-  "pageStart": 186,
-  "pageEnd": 192,
-  "text": "../sections/sec-049-174-arithmetic-triangle-groups-review-of-takeuch.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203194v1",
+  "title": "The uniformization theorem.",
+  "pageStart": 101,
+  "pageEnd": 103,
+  "text": "../sections/sec-049-122-the-uniformization-theorem.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"
 }

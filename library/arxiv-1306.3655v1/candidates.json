@@ -3,6 +3,7 @@
  "doc_id": "arxiv-1306.3655v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "45dd8bd55687ecce543089bb5f7c438a83971069dbb221f8438ab993387c2a5e",
   "file": "1306.3655v1.pdf"
@@ -22,23 +23,46 @@
  "summary": {
   "candidates": 1,
   "by_kind": {
-   "lemma": 1
+   "conjecture": 1
   },
-  "formalization_candidates": 1
+  "formalization_candidates": 0,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "conjectural": 1
+  },
+  "by_evidence_location": {
+   "none": 1
+  }
  },
  "candidates": [
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": null,
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "4.2",
    "name": null,
-   "statement": "[\\[uniqueness1\\]](#uniqueness1){reference-type=\"ref\" reference=\"uniqueness1\"} allows us to prove the following formula.",
-   "section_file": "sections/sec-001-21-the-general-construction.md",
-   "section_title": "The general construction",
-   "pages": "2-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "We conjecture that when n is even, the highest power of t+1 which divides pn(t) is 2, while when n is odd, the highest power on t + 1 which divides pn(t) is 1. One also conjectures positiveness and unimodality on the coe\ufb03cients of these polynomials. Additional conjecture is as follows. Denote p2k+1(t) = (t+1)\u00b7q2k+1(t), then q2k+1(\u22121) = \u22122. References [1] G. James and A. Kerber, The Representation Theory of the Symmetric Group, Ency- clopedia of Math. Vol. 16, Addison-Wesley Publishing Company. [2] I. G. Macdonald, Symmetric Functions and Hall Polynomials, Second Edition (1995). [3] A. Regev, Lie superalgebras and some characters of Sn, to app",
+   "claim_domain": "math",
+   "evidence_kind": "conjectural",
+   "evidence_location": "none",
+   "evidence_locator": "Open conjecture stated in sections/sec-007-41-the-polynomials-pnt.md",
+   "external_refs": [
+    "[1]",
+    "[2]",
+    "[3]",
+    "Edition (1995)"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-007-41-the-polynomials-pnt.md",
+   "section_title": "The polynomials p,n(t)",
+   "pages": "10-11",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "conj-sec-007-01",
+   "block_iri": "library/arxiv-1306.3655v1/blocks/conj-sec-007-01",
+   "claim_id": "arxiv-1306.3655v1#conjecture:4.2"
   }
  ]
 }

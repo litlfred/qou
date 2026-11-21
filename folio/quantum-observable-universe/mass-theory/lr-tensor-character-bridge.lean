@@ -20,15 +20,28 @@
   downstream of the conditional `prop:hecke-branching-trace-decomposition`
   (which Mathlib cannot yet discharge — no Hoefsmit seminormal basis,
   no Hecke-character infrastructure), so it follows the same
-  class-axiomatisation pattern as its parent: the class
-  `LRTensorCharacterBridge` carries the **genuine bridge identity** as a
-  Prop-valued field over abstract carrier data (the LHS tensor character,
-  the per-factor characters, the finite index of LR partition-tuples, and
-  the iterated LR coefficient), and the downstream theorem
-  `lr_tensor_character_bridge` **derives** that identity from the class —
-  it is the §3b-cond conditional restatement, not a `: True` / `1 = 1`
-  placeholder.  A trivial model proves the axiomatisation is consistent
-  (no `sorry` introduced).
+  class-axiomatisation pattern as its parent.
+
+  Re-encoded 2026-09-04 (bean `qou-tmmt`) — §3b-cond item 5.  The class
+  used to carry the bridge identity itself as its `bridge` field, and the
+  theorem was `h.bridge ν β`.  The header defended that as "not a
+  `: True` / `1 = 1` placeholder", which is true and is not what item 5
+  asks: the class must axiomatise the *hypotheses*, and a field that is
+  the corollary's own conclusion is a self-assuming projection however
+  substantive it looks.
+
+  What the old field folded together is that the character is a sum over
+  the **multiplicity space** and that the Littlewood–Richardson coefficient
+  is the *size* of that space.  Those are different claims, and only the
+  first is a hypothesis: semisimple decomposition of `V_ν` restricted along
+  the parabolic chain gives one copy of `V_{λ_1} ⊗ ⋯ ⊗ V_{λ_k}` per LR
+  tableau, so the character is the sum over copies.  That `c^ν_{λ_1,…,λ_k}`
+  then appears as a *coefficient* is arithmetic — summing a constant over a
+  finite index set — and is now proved rather than assumed.
+
+  So the class carries a sum over `Σ p, Fin (iteratedLR ν (tupleOf p))`,
+  and `lr_tensor_character_bridge` derives the weighted form.  The trivial
+  model still inhabits it, so no `sorry` is introduced.
 
   Refs:
     - prop:hecke-branching-trace-decomposition (general two-factor
@@ -49,6 +62,9 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.List.Basic
 import Mathlib.Algebra.Ring.Defs
+import Mathlib.Data.Fintype.Sigma
+import Mathlib.Data.Fintype.BigOperators
+import Mathlib.Data.Fintype.Card
 
 namespace QOU.BraidsAndKnots
 
@@ -118,20 +134,31 @@ class LRTensorCharacterBridge
   tensorChar : Partition → TensorBraid → R
   /-- Finite index set of LR partition-tuples `(λ_1, …, λ_k)` feeding `ν`. -/
   tupleIndex : Partition → TensorBraid → Type*
-  /-- Each tuple-index set is finite. -/
-  tupleFintype : ∀ (ν : Partition) (β : TensorBraid), Fintype (tupleIndex ν β)
+  /-- Each tuple-index set is finite. Declared as an instance binder so the
+      sigma-indexed multiplicity sum below elaborates. -/
+  [tupleFintype : ∀ (ν : Partition) (β : TensorBraid), Fintype (tupleIndex ν β)]
   /-- The partition-tuple `[λ_1, …, λ_k]` named by an index `p`. -/
   tupleOf : (ν : Partition) → (β : TensorBraid) → tupleIndex ν β → List Partition
   /-- Per-tuple product of per-factor characters `Π_i χ^{λ_i}_{H_{n_i}}(β_i)`. -/
   factorChar : (ν : Partition) → (β : TensorBraid) → tupleIndex ν β → R
-  /-- **The LR comultiplication bridge** (the substantive claim of
-      `cor:lr-tensor-character-bridge`): the tensor character equals the
-      iterated-LR-weighted sum of the per-factor character products. -/
-  bridge :
+  /-- **The hypothesis: the character is a sum over the multiplicity
+      space.**  Restricting `V_ν` along the parabolic chain
+      `H_{n_1} ⊗ ⋯ ⊗ H_{n_k} ↪ H_n` decomposes it into one copy of
+      `V_{λ_1} ⊗ ⋯ ⊗ V_{λ_k}` per Littlewood–Richardson tableau, so the
+      character is the sum of the per-factor character products over those
+      copies — indexed here by a tuple together with which of its
+      `c^ν_{λ_1,…,λ_k}` copies is meant.
+
+      This is the conjectural content, inherited from
+      `prop:hecke-branching-trace-decomposition`.  It does **not** state
+      the corollary's identity: that the LR coefficient appears as a
+      numerical weight is derived in `lr_tensor_character_bridge` from the
+      fact that it is the number of copies. -/
+  tensorChar_eq_multiplicitySum :
     ∀ (ν : Partition) (β : TensorBraid),
       tensorChar ν β =
-        @Finset.sum (tupleIndex ν β) R _ (@Finset.univ _ (tupleFintype ν β))
-          (fun p => (Nat.cast (iteratedLR ν (tupleOf ν β p)) : R) * factorChar ν β p)
+        ∑ q : (Σ p : tupleIndex ν β, Fin (iteratedLR ν (tupleOf ν β p))),
+          factorChar ν β q.1
 
 attribute [instance] LRTensorCharacterBridge.tupleFintype
 
@@ -144,9 +171,12 @@ attribute [instance] LRTensorCharacterBridge.tupleFintype
       χ^ν_{H_n}(β_1 ⊗ … ⊗ β_k)
         = Σ_{(λ_1, …, λ_k)} c^ν_{λ_1,…,λ_k} · Π_i χ^{λ_i}_{H_{n_i}}(β_i).
 
-    Derived from the class field `bridge` — a genuine conditional
-    theorem, not a placeholder. -/
--- Ref: [manuscript] cor:lr-tensor-character-bridge
+    **Derived, not assumed.**  The class supplies the sum over the
+    multiplicity space; the LR coefficient reaches the statement as a
+    coefficient because summing a constant over `Fin c` gives `c • x`.
+    The corollary's content is exactly that step: `c^ν_{λ_1,…,λ_k}` is a
+    *count* of copies, not a weight put in by hand. -/
+-- Ref: [leitner2026] cor:lr-tensor-character-bridge
 -- Ref: [wenzl1988] Wenzl, Invent. Math. 92 (1988) — semisimplicity of H_n(q)
 -- Ref: [ram1991] Ram, Invent. Math. 106 (1991) — Frobenius character formula
 theorem lr_tensor_character_bridge
@@ -155,8 +185,11 @@ theorem lr_tensor_character_bridge
     (ν : Partition) (β : TensorBraid) :
     h.tensorChar ν β =
       ∑ p : h.tupleIndex ν β,
-        (iteratedLR ν (h.tupleOf ν β p) : R) * h.factorChar ν β p :=
-  h.bridge ν β
+        (iteratedLR ν (h.tupleOf ν β p) : R) * h.factorChar ν β p := by
+  rw [h.tensorChar_eq_multiplicitySum ν β, Fintype.sum_sigma]
+  refine Finset.sum_congr rfl fun p _ => ?_
+  dsimp only
+  rw [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul]
 
 /-- The class axiomatisation is **consistent** (no `sorry` introduced):
     a trivial model with an empty tuple index, where both sides are `0`,
@@ -169,7 +202,7 @@ def LRTensorCharacterBridge.trivialModel
   tupleFintype := fun _ _ => inferInstanceAs (Fintype PEmpty)
   tupleOf := fun _ _ p => p.elim
   factorChar := fun _ _ p => p.elim
-  bridge := by
+  tensorChar_eq_multiplicitySum := by
     intro ν β
     simp
 

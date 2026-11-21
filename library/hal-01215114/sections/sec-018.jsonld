@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/hal-01215114/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "In terms of free cumulants",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "contains": [
+    "library/hal-01215114/blocks/prose-sec-018"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hal-01215114/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hal-01215114/manifest.jsonld",
+  "provenance": "ingested"
+}

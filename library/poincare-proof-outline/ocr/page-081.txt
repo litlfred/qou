@@ -1,0 +1,68 @@
+using of-real-eq-iff
+by fastforce
+thus rz « ry < 0
+using <k < 0) «rz # 0» «ry # O»
+by (smt divisors-zero mult-nonneg-nonpos mult-nonpos-nonpos zero-less-mult-pos2)
+next
+assume rz * ry < 0
+hence rz = (ra/ry)*ry rz / ry < 0
+using (rz # 0) «ry # 0»
+by (auto simp add: divide-less-0-iff algebra-split-simps)
+thus 4k<0. cor rx = cor k * cor ry
+using (rz # 0) «ry # 0»
+by (rule-tac c=rx / ry in exI, simp)
+qed
+thus ?thesis
+using assms
+using poincare-between-u0v[OF assms(1—4)]
+by auto
+qed
+
+lemma poincare-between-x-axis-Ouv:
+fixes xy :: real
+assumes —1 < x and x < 1 andz# 0
+assumes —1 < y and y < 1 andy #4 0
+shows poincare-between 0), (of-complex x) (of-complex y) <—>
+(c<O0ANy<ONyK<2z)V(ze>OANYyY>OALK y) (is ?lhs <> ?rhs)
+proof (cases z = y)
+case True
+thus ?thesis
+using assms
+unfolding poincare-between-def
+by auto
+next
+case False
+let 2x = of-complex x and ?y = of-complex y
+
+have ?x € unit-disc ?y € unit-disc
+using assms
+by auto
+
+have distinct: distinct [On, ?x, ?y, inversion ?z]
+using (x # 0) <y # 0) (x A y» Pa E unit-discy «?y € unit-discy
+using inversion-noteq-unit-disc|of 2x ?y]
+using inversion-noteq-unit-disc|of ?x ?x]
+using inversion-noteq-unit-disc|of 2x On]
+using of-complez-inj[of x y]
+by (metis distinct-length-2-or-more distinct-singleton of-complex-zero-iff of-real-eq-0-iff of-real-eq-iff zero-in-unit-disc)
+
+let ?cr = cross-ratio On ?x fy (inversion ?x)
+have Re (to-complex ?cr) = x? « (xxy — 1) / (x * (y — 2))
+using (x # 0) «a F y>
+unfolding inversion-def
+by simp (transfer, transfer, auto simp add: vec-cnj-def power2-eq-square field-simps split: if-split-asm)
+moreover
+{
+fix a b:: real
+assume b # 0
+hence a < 0 <> b? * a < (0::real)
+by (metis mult.commute mult-eq-0-iff mult-neg-pos mult-pos-pos not-less-iff-gr-or-eq not-real-square-gt-zero power2-eq-square)
+}
+hence 2x? « (xky — 1) < 0
+using assms
+by (smt minus-mult-minus mult-le-cancel-left1 )
+moreover
+have x * (y — z) > 0 <> ?rhs
+using («x 4 0) y# Oo xn Fy
+
+81

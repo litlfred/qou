@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2507.12454v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "156fd9080847b4e75e8a4f4b16558161b49cc0fdbcf7149ff9f35fa90819c152",
+  "file": "2507.12454v1.pdf"
+ },
+ "provenance": {
+  "title": "Cohomology rings of character varieties",
+  "authors": "ANTON MELLIT",
+  "arxiv": {
+   "id": "2507.12454",
+   "version": "1",
+   "primary_class": "math.AG",
+   "stamp_date": "16 Jul 2025"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

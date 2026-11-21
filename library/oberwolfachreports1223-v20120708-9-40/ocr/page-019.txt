@@ -1,0 +1,60 @@
+Invariants in Low-Dimensional Topology and Knot Theory 19
+
+[3] A. Juhdsz, P. Ozsvéth, and Z. Szabé, Naturality and mapping class groups in Heegaard
+Floer homology, in preparation.
+
+Free Knots and Parity in Low-Dimensional Topology
+VASSILY OLEGOVICH MANTUROV
+
+The main objective of my talk is the concept of parity. Assume for some topo-
+logical theory objects are encoded by diagrams modulo moves. Assume further
+that diagrams have some combinatorial data (crossings, vertices, singularities, etc)
+such that there is a natural rule of decorating this combinatorial data with ele-
+ments from some finite set (usually, {0,1}) in such a way that if two diagrams
+are connected by one move then their combinatorial data is transformed in a good
+way.
+
+Then this allows one to do the following.
+
+(1) Construct functorial mappings between objects.
+
+(2) Reduce problems about objects to questions about their representatives.
+(3) Prove minimality theorems.
+
+(4) Refine many well-known invariants.
+
+(5) Localize the non-triviality: a non-triviality of an object can follow from
+the existence of odd data.
+
+5
+
+Our main domain is virtual knot theory [1] with its closed relatives: free knots,
+flat knots, graph-links etc [3, 4, 5, 7, 9]. We do not distinguish between virtual
+knot diagrams that differ by a detour move.
+
+By a parity for the knot theory K we mean a rule for associating 0 or 1 with
+every (classical) crossing of every diagram K from the theory K in a way such
+that:
+
+(1) For every Reidemeister move K — K’ the corresponding crossings have
+the same parity;
+
+(2) For each of the three Reidemeister moves the sum of parities of crossings
+taking part in this move is zero modulo two.
+
+A flat knot is an equivalence class of virtual knots modulo crossing switches.
+A free knot is an equivalence class of virtual knots modulo crossing switches and
+virtualizations.
+
+The main example of parity is the Gaussian parity, i.e., the parity for virtual
+knots (free knots, flat knots) which associates with every classical crossing 0 if and
+only if the corresponding chord of the Gauss diagram is eve ; linked with
+evenly many chords [2]. Nevertheless, many results work for arbitrary parity.
+
+One of the striking examples [3] is the parity bracket |-| which takes free knots to
+Z2-linear combinations of framed 4-graphs modulo the second Reidemeister moves.
+In the case when all crossings are odd, the bracket allows one to reduce questions
+about free knots to questions about their representatives.
+
+‘We mention the following results based on parity.
+

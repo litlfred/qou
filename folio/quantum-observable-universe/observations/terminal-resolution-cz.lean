@@ -30,7 +30,7 @@ LaTeX label: `ex:terminal-resolution-cz`
 ## References
 
 - CODATA 2018 recommended values
-- [manuscript] §11 Example: Terminal resolution in ℂ[z]
+- [leitner2026] §11 Example: Terminal resolution in ℂ[z]
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -44,7 +44,7 @@ namespace QOU.Examples
     constant, and mass predictions evaluated over the polynomial ring.
 
     LaTeX: `\label{ex:terminal-resolution-cz}` -/
--- Ref: CODATA 2018, [manuscript] §11
+-- Ref: CODATA 2018, [leitner2026] §11
 structure CZTerminalResolution where
   /-- The substrate parameter q₀. -/
   q₀ : ℝ
@@ -72,7 +72,7 @@ structure CZTerminalResolution where
   neutron_match : |neutron_mass - 939.565| < 0.001
 
 /-- The ℂ[z] terminal resolution at q₀ = 1.1097. -/
--- Ref: CODATA 2018, [manuscript] §11
+-- Ref: CODATA 2018, [leitner2026] §11
 noncomputable def czTerminalResolution : CZTerminalResolution where
   q₀ := 1.1097
   q_val := by norm_num

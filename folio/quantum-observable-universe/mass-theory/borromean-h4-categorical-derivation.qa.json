@@ -1287,6 +1287,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1",
+          "lean": "6704c58a135f",
+          "lean_statement": "0f66eb2f8a70"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:24.003Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "borromean-h4-categorical-derivation.lean:81 `def chiTwoOneBorromean : ℝ[X] := 2 - 3 * X ^ 4 - X ^ 6` and :90 `def yTwoOne (q : ℝ) := 1 / (qInt2 q) ^ 2` take the claimed values as definitions; :106 'What is still NOT proved here is the composition — that this product IS h⁴(tr_M(β_Bor))'",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2780,6 +2798,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:01:34.915Z",
+  "updated_at": "2026-11-15T21:57:24.003Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,16 +1,18 @@
 **Categorical-chain convergence: per-knot finite truncation + inter-knot linking-number locality.**
 
-The categorical-derivation precision ladder $\mathfrak{Q}_\beta^{\text{cat}}$ from [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) is formally an **infinite product** in the Habiro ring (cyclotomic-Pochhammer completion of $\mathbb{Z}[q]$). For any **single isolated knot**, this product reduces to a **finite truncation** at sub-CODATA precision through two convergence mechanisms.
+The categorical-derivation precision ladder $\mathfrak{Q}_\beta^{\text{cat}}$ from [$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder) is formally an **infinite product** in the Habiro ring (cyclotomic-Pochhammer completion of $\mathbb{Z}[q]$). For any **single isolated knot**, this product reduces to a **finite truncation** at sub-CODATA precision through two convergence mechanisms.
 
 ## Mechanism 1: Per-knot c(K) brane-tower bound
 
-Per `conj:archimedean-remainder-exponential-decay`, the truncation residual at depth $N$ satisfies:
+Per the [exponential decay of the archimedean brane-tower truncation remainder](#conj:archimedean-remainder-exponential-decay), the truncation residual at depth $N$ satisfies:
 
 $$
   \lvert R_N \rvert \;\le\; \frac{\hbar_q^{2(N+1)}}{1 - \hbar_q^2},
 $$
 
-where $\hbar_q = (q-1)/q$. At the substrate $q_0 \approx 1.110$, $\hbar_q^2 \approx 9.8 \times 10^{-3}$, meaning each new rung tightens the prediction by approximately $100\times$ (see [Table](#tbl:categorical-chain-convergence-mechanisms-table-data)). For free-neutron $\beta$-decay, truncation at $N = 3$ suffices for 1 ppb precision. Physical predictions rely on this finite truncation, not the formal infinite product.
+where $\hbar_q = (q-1)/q$. At the substrate $q_0 \approx 1.110$, $\hbar_q^2 \approx 9.8 \times 10^{-3}$, meaning each new rung tightens the prediction by approximately $100\times$ (see [Table](#tbl:categorical-chain-convergence-mechanisms-table-data)).
+
+The truncation depth this gives for free-neutron $\beta$-decay is recorded in [this remark](#rem:categorical-chain-convergence-mechanisms-neutron-truncation).
 
 ## Mechanism 2: Inter-knot linking-number locality
 

@@ -3,21 +3,21 @@ import { chapter, section } from "../../schema/builders";
 /**
  * Chapter 11: Nuclear Interactions and Binding.
  *
- * Computational engine: Gröbner–Shirshov reduction, LP/SDP optimization,
- * beta decay transfer matrices, atomic braid mass formulas, branching
- * Q-values. Consumes particle definitions from Ch 9 (Knots, Particles,
- * and Confinement).
- *
- * Split from the former particle-interactions chapter (Phase 1,
- * eightfold-way-chapter-2026-08-03).
+ * Computational many-body nuclear engine:
+ *   1. Gröbner–Shirshov normal-form reduction in H_A(q)
+ *   2. Confinement LP/SDP operator selection
+ *   3. Nucleon–nucleon isospin selection, Wigner SU(4), and mirror symmetry
+ *   4. Transfer matrices and beta-decay transitions
+ *   5. Composite atomic braid and Wedderburn binding
+ *   6. Branching Q-values, pair production, and beta-stability closure
  */
 export default chapter({
   title: "Nuclear Interactions and Binding",
   label: "chap:nuclear-interactions",
   sections: [
-    // ── §1. The Gröbner–Shirshov reduction engine ────────────────
+    // ── §1. Gröbner–Shirshov normal-form reduction ───────────────
     section({
-      title: "The Gröbner–Shirshov reduction engine",
+      title: "The Gröbner–Shirshov Reduction Engine",
       label: "sec:groebner-engine",
       blocks: [
         "particle-interactions-intro",
@@ -37,26 +37,19 @@ export default chapter({
         "box-braid-irreducibility-interpretation",
         "generator-volume-decomposition",
         "generator-volume-decomposition-proof",
-        // thm:markov-trace-factorization moved earlier to
-        // braids-and-knots/sec:phi-q-markov-schur-weyl-tower per
-        // detangler P31 (2026-05-22). Acceptance note: the move
-        // emits 1 new H2 forward edge back to
-        // prop:generator-volume-decomposition (this section),
-        // accepted as wontfix:architectural per
-        // docs/coordination/2026-05-19-detangler-architectural-acceptances.md §5.
       ],
     }),
 
-    // ── §2. Confinement operator selection ────────────────────────
+    // ── §2. Confinement LP/SDP operator selection ────────────────
     section({
-      title: "Confinement operator selection",
+      title: "Confinement Operator Selection",
       label: "sec:confinement-selection",
       blocks: [
         "confinement-selection-intro",
       ],
       subsections: [
         section({
-          title: "Operator selection by LP",
+          title: "Operator selection by linear programming",
           label: "sec:confinement-selection-lp",
           blocks: [
             "confinement-lp",
@@ -68,15 +61,12 @@ export default chapter({
             "confinement-operator-selection-table1-data",
             "confinement-frobenius-reciprocity",
             "confinement-frobenius-reciprocity-interpretation",
-            // prop:confinement-sdp moved earlier to
-            // braids-and-knots/sec:alpha-k-procedure per detangler P33.
-            // New H2 → confinement-lp accepted §5.
             "confinement-sdp-spectral-gap",
             "confinement-sdp-multi-operator",
           ],
         }),
         section({
-          title: "Which constraints survive",
+          title: "Semidefinite selection and dual stability",
           label: "sec:confinement-selection-confinement-sdp-vs",
           blocks: [
             "confinement-selection-confinement-sdp-vs-intro",
@@ -94,19 +84,41 @@ export default chapter({
             "n-equals-1-vacuous-magic",
             "n-equals-1-vacuous-magic-context",
             "n-equals-1-vacuous-magic-proof",
-            // prop:operator-selection-lp moved earlier to
-            // braids-and-knots/sec:hoefsmit-convergence-atomic per
-            // detangler P28. New H2 → confinement-lp accepted §5.
             "q-beta-cos-resummation",
+            "q-beta-cos-resummation-comparison",
             "q-beta-cos-resummation-table-data",
           ],
         }),
       ],
     }),
 
-    // ── §3. Nuclear binding and magic numbers ────────────────────
+    // ── §3. Nucleon–nucleon isospin, Wigner SU(4), and magic numbers ──
     section({
-      title: "Nuclear binding and magic numbers",
+      title: "Isospin Selection, Wigner $SU(4)$ Supermultiplets, and the Interface Band",
+      label: "sec:nn-isospin-interface",
+      blocks: [
+        "nn-isospin-interface-intro",
+        "isospin-singlet-binds-more",
+        "content-keyed-interface-refuted",
+        "isospin-singlet-binds-more-two-nucleon-reading",
+        "isospin-singlet-binds-more-proof",
+        "markov-stabilisation-needs-a-fresh-generator",
+        "binding-functional-is-the-log",
+        "nucleon-pair-isospin-channel",
+        "isospin-selection-class-inhabited",
+        "branching-identity-isospin-weights",
+        "interface-band-between-isospin-weights",
+        "interface-never-realises-isospin-weight",
+        "colour-tube-floor-overshoots-deuteron",
+        "spin-from-so3-fiber",
+        "wigner-su4-from-spin-isospin",
+        "alpha-wigner-supermultiplet-context",
+        "weinberg-angle-categorical",
+      ],
+    }),
+
+    section({
+      title: "Nuclear Binding Regimes and Magic Numbers",
       label: "sec:nuclear-binding",
       blocks: [
         "nuclear-binding-intro",
@@ -118,39 +130,8 @@ export default chapter({
       ],
     }),
 
-    // ── §3b. The NN channel: isospin selection and the interface band ──
-    // Decision 7 homes all three nuclear Lean results here — isospin
-    // selection, the band separation, the colour-tube floor — because they
-    // are one connected argument and none of them had any exposition.
-    // Reading order: select the channel → refute the alternative → define
-    // the map → state the branching → measure the gap → close the
-    // colour-tube route. Placement AFTER §3 is the least disruptive
-    // insertion; siting it right after §2 sec:confinement-selection (also
-    // operator selection, and upstream of §3's (Z,N) magic-number work) is
-    // arguably the better read and is left as an owner call. Decision 4
-    // forbids CHAPTER moves, not section ordering inside a chapter.
     section({
-      title: "Isospin selection and the interface band",
-      label: "sec:nn-isospin-interface",
-      blocks: [
-        "nn-isospin-interface-intro",
-        "isospin-singlet-binds-more",
-        "isospin-singlet-binds-more-proof",
-        "content-keyed-interface-refuted",
-        "markov-stabilisation-needs-a-fresh-generator",
-        "binding-functional-is-the-log",
-        "nucleon-pair-isospin-channel",
-        "isospin-selection-class-inhabited",
-        "branching-identity-isospin-weights",
-        "interface-band-between-isospin-weights",
-        "interface-never-realises-isospin-weight",
-        "colour-tube-floor-overshoots-deuteron",
-      ],
-    }),
-
-    // ── §4. Derived atom examples ────────────────────────────────
-    section({
-      title: "Derived atom examples",
+      title: "Derived Light-Atom Normal Forms",
       label: "sec:derived-atoms",
       blocks: [
         "derived-atoms-intro",
@@ -164,9 +145,9 @@ export default chapter({
       ],
     }),
 
-    // ── §5. Typed Garside element and Gram-weighted Q-value ──────
+    // ── §4. Transfer matrices and beta-decay transitions ─────────
     section({
-      title: "Typed Garside element and Gram-weighted $\\\\mathcal{Q}_q$-value",
+      title: "Typed Garside Element and Gram-Weighted $\\mathcal{Q}_q$-Value",
       label: "sec:garside-gram",
       blocks: [
         "garside-gram-intro",
@@ -177,9 +158,8 @@ export default chapter({
       ],
     }),
 
-    // ── §6. Transfer matrices and beta decay ─────────────────────
     section({
-      title: "Transfer matrices and beta decay",
+      title: "Transfer Matrices and Beta-Decay Transitions",
       label: "sec:transfer-beta-decay",
       blocks: [
         "transfer-beta-decay-intro",
@@ -191,16 +171,11 @@ export default chapter({
         "qbeta-counit-transition",
         "qbeta-trace-counit-convergence",
         "delta-pre-archimedean",
-        // Merged from the former auto-split "Transfer matrices and beta
-        // decay : vs" (small base, strongly-related continuation — the
-        // spectral Q_beta route to the same observable; reorg policy:
-        // strongly-related -> merge). The transition block below opens
-        // the spectral-bridge half.
         "transfer-beta-decay-q-beta-spectral-intro",
         "q-beta-spectral-bridge",
+        "q-beta-spectral-bridge-table-data",
         "q-beta-spectral-bridge-proof",
         "archimedean-remainder-exponential-decay",
-        "q-beta-spectral-bridge-table-data",
         "q-beta-form-a-n1-symbolic-table-data",
         "silver-ratio-beta-decay-null",
         "silver-ratio-beta-decay-null-interpretation",
@@ -212,19 +187,14 @@ export default chapter({
       ],
     }),
 
-    // ── §7. Atomic braid and Wedderburn mass formula: foundations ─
+    // ── §5. Composite atomic braid and Wedderburn binding ────────
     section({
-      title: "Atomic braid and Wedderburn mass formula: foundations",
+      title: "Composite Atomic Braid and Wedderburn Binding Foundations",
       label: "sec:atomic-braid-mass-foundations",
       blocks: [
         "atomic-braid-mass-intro",
-        // def:atomic-braid moved earlier to
-        // braids-and-knots/sec:skein-particle-generation per
-        // detangler P32.
         "atomic-lp-stability",
         "atomic-lp-stability-dressing",
-        // wedderburn-mass-formula is referenced from braids-and-knots.ts
-        // (its canonical home as thm:wedderburn-mass-formula).
         "universal-ilp-algorithm",
         "gram-matrix-h3-symbolic",
         "gram-matrix-h3-symbolic-eval-role",
@@ -236,14 +206,16 @@ export default chapter({
       ],
     }),
 
-    // ── §8. Atomic braid mass: crossing-graded, locality, CPT ────
     section({
-      title: "Atomic braid mass: crossing-graded, locality, CPT",
+      title: "Atomic Braid Mass: Crossing-Graded Locality and CPT Closure",
       label: "sec:atomic-braid-mass-crossing-locality-cpt",
       blocks: [
         "atomic-braid-mass-crossing-locality-cpt-intro",
         "q-holonomy-locality-derivation",
         "cpt-orbit-closure-density",
+        "cpt-d6-d7-d8-closure",
+        "t-from-trace-cyclicity",
+        "type-b-folding-cpt",
         "bar-involution-invariance",
         "bar-involution-invariance-proof",
         "bar-involution-invariance-significance",
@@ -252,9 +224,9 @@ export default chapter({
       ],
     }),
 
-    // ── §9. Branching Q-value derivation ─────────────────────────
+    // ── §6. Branching Q-values and beta-stability closure ────────
     section({
-      title: "Branching Q-value derivation",
+      title: "Branching $Q$-Value Factorisation",
       label: "sec:branching-qvalue",
       blocks: [
         "branching-qvalue-intro",
@@ -273,9 +245,8 @@ export default chapter({
       ],
     }),
 
-    // ── §10. Pair production and anyon collapse ───────────────────
     section({
-      title: "Pair production and anyon collapse",
+      title: "Pair Production and Anyon Collapse",
       label: "sec:pair-production-anyon",
       blocks: [
         "intro-pair-production-anyon",
@@ -288,9 +259,8 @@ export default chapter({
       ],
     }),
 
-    // ── §11. Beta stability closure ──────────────────────────────
     section({
-      title: "Beta stability closure",
+      title: "Beta-Stability Closure",
       label: "sec:beta-stability-closure",
       blocks: [
         "intro-beta-stability-closure",
@@ -301,9 +271,8 @@ export default chapter({
       ],
     }),
 
-    // ── §12. Varying Euler characteristic and the mirror bundle ──
     section({
-      title: "Varying Euler Characteristic and the Mirror Bundle",
+      title: "Varying Euler Characteristic, Mirror Bundle, and Geometric Universality",
       label: "sec:varying-euler-mirror",
       blocks: [
         "varying-euler-intro",
@@ -317,27 +286,9 @@ export default chapter({
         "weight-identification-consequences",
         "descent-mirror-intro",
         "e-minus-one",
-      ],
-    }),
-
-    // ── §13. Reconnected computational blocks ────────────────────
-    // Non-definitional blocks from the former orphan-reconnect section.
-    // Symmetry identifications (CPT, spin, Weinberg angle, Wigner
-    // supermultiplet) that consume particle definitions from Ch 9.
-    section({
-      title: "Symmetry identifications and geometric universality",
-      label: "sec:symmetry-identifications",
-      blocks: [
         "particle-interactions-orphan-reconnect-intro",
         "geom-universality",
         "q-zero-stokes-region-identification",
-        "cpt-d6-d7-d8-closure",
-        "t-from-trace-cyclicity",
-        "spin-from-so3-fiber",
-        "type-b-folding-cpt",
-        "weinberg-angle-categorical",
-        "wigner-su4-from-spin-isospin",
-        "alpha-wigner-supermultiplet-context",
         "outro-particle-interactions",
       ],
     }),

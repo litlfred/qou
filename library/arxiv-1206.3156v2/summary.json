@@ -1,0 +1,112 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1206.3156v2",
+ "source_sha256": "384b83fa69f21305",
+ "brief": "Isospin breaking in octet baryon mass splittings — Using an SU(3) ﬂavour symmetry breaking expansion in the quark mass, we determine the QCD component of the nucleon, Sigma and Xi mass splittings of",
+ "extended": "**Isospin breaking in octet baryon mass splittings**\n\n*December 20, 2012*\n\n31 pp, 18 sections.\n\n**Abstract.** Using an SU(3) ﬂavour symmetry breaking expansion in the quark mass, we determine the QCD component of the nucleon, Sigma and Xi mass splittings of the baryon octet due to up-down (and strange) quark mass diﬀerences in terms of the kaon mass splitting. Provided the average quark mass is kept constant, the expansion coeﬃcients in our procedure can be determined from computationally cheaper simulations with mass degen- erate sea quarks and partially quenched valence quarks. Both the linear and quadratic terms in the SU(3) ﬂavour symmetry breaking expansion are considered; it is found that the quadratic terms only change the result by a few percent, indicating that the expansion is highly convergent.\n\n**Outline.** Front matter; 1 Introduction; 2 Octet Baryons; 3 Determining the expansion coefficients; 3.1 Partially quenched octet baryons; 3.2 Numerical results; 4 Octet pseudoscalar mesons; 4.1 PQ pseudoscalar meson flavour expansions; 4.2 Determination of the coefficients; 4.3 Pseudoscalar meson isospin splittings; 5 Physical values of the quark masses; 6 Comparison with `fan' plots; 7 Results and discussion; 7.1 Baryon octet mass splittings; 7.2 Physical values of the mass splittings; 7.3 Conclusions; A Systematic errors; B Tables\n\n**Extracted claims (proposals, not verified).**\n- Proposition: (30)3, X∗ π = 0.4116 GeV, (47) (of course this is very close to the experimental value of Xexp π = 0.4126 GeV).\n- Proposition: (58) This is to be compared with the experimental result given in eq.\n- Proposition: Despite the fact that QED eﬀects are treated slightly diﬀerently in each work, good agreement amongst the various determinations and with the experimental result is found.\n- Proposition: The vertical dashed line is the experimental result given in eq.\n- Proposition: Acknowledgements The numerical conﬁguration generation was performed using the BQCD lattice QCD program [25] on the IBM BlueGeneL at EPCC (Edinburgh, UK), the Blue- GeneL and P at\n- Proposition: SFB/TR 55 (Hadron Physics from Lattice QCD) and by the EU Grants No.",
+ "tokens": {
+  "brief": 49,
+  "extended": 541
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-2-octet-baryons",
+   "title": "Octet Baryons",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-002-3-determining-the-expansion-coefficients",
+   "title": "Determining the expansion coefficients",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-31-partially-quenched-octet-baryons",
+   "title": "Partially quenched octet baryons",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-004-32-numerical-results",
+   "title": "Numerical results",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-005-4-octet-pseudoscalar-mesons",
+   "title": "Octet pseudoscalar mesons",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-006-41-pq-pseudoscalar-meson-flavour-expansions",
+   "title": "PQ pseudoscalar meson flavour expansions",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-007-42-determination-of-the-coefficients",
+   "title": "Determination of the coefficients",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-008-43-pseudoscalar-meson-isospin-splittings",
+   "title": "Pseudoscalar meson isospin splittings",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-009-5-physical-values-of-the-quark-masses",
+   "title": "Physical values of the quark masses",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-010-6-comparison-with-fan-plots",
+   "title": "Comparison with `fan' plots",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-011-7-results-and-discussion",
+   "title": "Results and discussion",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-012-71-baryon-octet-mass-splittings",
+   "title": "Baryon octet mass splittings",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-013-72-physical-values-of-the-mass-splittings",
+   "title": "Physical values of the mass splittings",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-014-73-conclusions",
+   "title": "Conclusions",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-015-a-systematic-errors",
+   "title": "A Systematic errors",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-016-b-tables",
+   "title": "B Tables",
+   "pages": "27-31"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

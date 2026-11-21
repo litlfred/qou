@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1502.02882v2
-doc_title: "Fusion categories via string diagrams Bruce Bartlett"
+doc_title: "Fusion categories via string diagrams"
 section_id: sec-003-22-conventions-for-fusion-categories
 section_title: "Conventions for fusion categories"
 section_number: 2.2
 pages: 5-7
 source_pdf: 1502.02882v2.pdf
 source_sha256: 43641c6f3aed63dd
-doc_brief: "Fusion categories via string diagrams Bruce Bartlett — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.935
-latex_coverage_ratio: 0.951
+latex_coverage_ratio: 0.98
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 A fusion category is a rigid semisimple linear monoidal category with finitely many isomorphism classes of simple objects and whose unit object is simple \cite{e06-2vect}. In a fusion category, the associators feature explicitly in the graphical calculus as follows. Suppose we fix a representative set of simple objects $X_i$, $i \in I$, and choose trivalent bases
 \begin{equation} \label{basis_choice}

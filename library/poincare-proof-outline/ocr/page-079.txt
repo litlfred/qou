@@ -1,0 +1,76 @@
+hence H = poincare-line u v
+using assms distinct
+using unique-circline-set[of u v inversion v|
+using poincare-line[of u v] poincare-line-inversion|of u v]
+unfolding circline-set-def
+by auto
+thus ?thesis
+using * assms False
+unfolding poincare-collinear-def
+by (rule-tac «=poincare-line u v in erl) simp
+qed
+
+lemma poincare-between-poincare-line-uvz:
+assumes u # v and wu € unit-disc and v € unit-disc and
+z € unit-disc and poincare-between u v z
+shows z € circline-set (poincare-line u v)
+using assms
+using poincare-between-poincare-collinear|of u v 2]
+using unique-poincare-line|OF assms(1—3)|
+unfolding poincare-collinear-def
+by auto
+
+lemma poincare-between-poincare-line-uzv:
+
+assumes u # v and wu € unit-disc and v € unit-disc and
+z € unit-disc poincare-between u zv
+
+shows z € circline-set (poincare-line u v)
+
+using assms
+
+using poincare-between-poincare-collinear[of u z v]
+
+using unique-poincare-line|OF assms(1—3)|
+
+unfolding poincare-collinear-def
+
+by auto
+
+7.1.4  H-betweeness on Euclidean segments
+
+If the three points lie on an h-line that is a Euclidean line (e.g., if it contains zero), h-betweenness can be
+characterized much simpler than in the definition.
+
+lemma poincare-between-x-axis-u0v:
+assumes is-real u’ and u’ # 0 and uv’ 4 0
+shows poincare-between (of-complez u') On (of-complex v') <—+ is-real v' \ Re u' * Re v' < 0
+proof—
+have Re u' 4 0
+using <is-real uy «u' 4 0»
+using complex-eq-if-Re-eq
+by auto
+have nz: of-complez u' # On of-complex v' # On
+by (simp-all add: (u' 4 0) «v' 4 0»)
+hence 0;, 4 of-complex v'
+by metis
+
+let ?cr = cross-ratio (of-complex u') On (of-complex v') oon
+have is-real (to-complex ?cr) A Re (to-complex ?cr) < 0 <—+ is-real v' A Re u' * Re v' < 0
+using cross-ratio-Oinf[of v' u'] «v' # 0» <u! # O» cis-real uy
+by (metis Re-complex-div-lt-0 Re-mult-real complex-cnj-divide divide-cancel-left eq-cnj-iff-real to-complex-of-complex)
+thus ?thesis
+unfolding poincare-between-def inversion-zero
+using <of-complex u' # On) ‘On # of-complex v'
+by simp
+qed
+
+lemma poincare-between-u0v:
+assumes u € unit-disc and v € unit-disc and u # 0, and v On
+shows poincare-between u 0, v ++ (A k < 0. to-complex u = cor k * to-complex v) (is ?P u v)
+proof (cases u = v)
+case True
+thus ?thesis
+using assms
+
+79

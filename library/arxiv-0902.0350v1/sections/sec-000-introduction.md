@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0902.0350v1
-doc_title: "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE"
+doc_title: "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
-pages: 1-3
+pages: 2-3
 source_pdf: 0902.0350v1.pdf
 source_sha256: 4591687132c93973
-doc_brief: "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.994
 latex_coverage_ratio: 1.0
+doc_brief: "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the"
 ---
 In 2006, {\it Discrete and Computational Geometry} devoted an issue to the
 proof of the Kepler conjecture on sphere packings, which asserts that no

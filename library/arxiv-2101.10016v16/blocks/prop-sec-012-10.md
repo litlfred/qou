@@ -1,0 +1,1 @@
+Let C be a C ∗ -category with finite dimensional morphism spaces and F : C → Vec a faithful functor. Then F factors through F = HG where G : C → Hilb is a faithful ∗-functor and H : Hilb → Vec the forgetful functor. Any other ∗-functor G ′ with the same properties is of the form Gt for a unique positive invertible t ∈ Nat0(G).

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9806163v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A Homomorphism of $H_n(q,-q^{r_1+m})$ onto a reduced algebra of $H_{n+f}(q)$",
+  "pageStart": 10,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-math-9806163v1/blocks/prose-sec-007"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9806163v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9806163v1/manifest.jsonld",
+  "provenance": "ingested"
+}

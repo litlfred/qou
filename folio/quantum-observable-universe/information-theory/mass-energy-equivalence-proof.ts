@@ -1,7 +1,9 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:mass-energy-equivalence",
-  title: "Proof of mass energy equivalence",
-  uses: ["thm:mass-energy-equivalence"],
+export default remark({
+  interprets: "def:mass-energy",
+  label: "rem:mass-energy-not-crossing-energy",
+  title: "Energy is not crossing energy",
+  uses: ["def:mass-energy", "def:crossing-energy", "def:mass-identity"],
+  cites: ["reshetikhin1991"],
 });

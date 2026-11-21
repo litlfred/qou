@@ -9,16 +9,13 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Schur elements and the a-function",
-  "pageStart": 28,
-  "pageEnd": 29,
+  "title": "Hecke algebras for complex reflection groups",
+  "pageStart": 26,
+  "pageEnd": 28,
   "contains": [
-    "library/hdr/blocks/prose-sec-010",
-    "library/hdr/blocks/thm-sec-010-01",
-    "library/hdr/blocks/remark-sec-010-02",
-    "library/hdr/blocks/example-sec-010-03"
+    "library/hdr/blocks/prose-sec-010"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
   "provenance": "ingested"
 }

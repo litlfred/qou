@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/furey-2018-epjc-78-375/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "From SU(5) ladder symmetry to SU(3)CtimesSU(2)LtimesU(1)Y / mathbbZ6",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "contains": [
+    "library/furey-2018-epjc-78-375/blocks/prose-sec-024"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/furey-2018-epjc-78-375/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/furey-2018-epjc-78-375/manifest.jsonld",
+  "provenance": "ingested"
+}

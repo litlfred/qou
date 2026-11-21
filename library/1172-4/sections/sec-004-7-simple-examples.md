@@ -1,6 +1,6 @@
 ---
 doc_id: 1172-4
-doc_title: "Notes on Construction of the Knot Invariant from $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$ Dilogarithm Function 東京大学大学院裡掌野研究科物裡学專攻"
+doc_title: "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function"
 section_id: sec-004-7-simple-examples
 section_title: "Simple Examples"
 section_number: 7
@@ -8,11 +8,12 @@ pages: 19-22
 source_pdf: 1172-4.pdf
 source_sha256: ffc47732ce0138e9
 toc_source: inferred
+doc_brief: "Hikami, Notes on construction of the knot invariant from the quantum dilogarithm function (RIMS Kôkyûroku) — knot invariants built from Faddeev's quantum dilogarithm."
 ---
+Simple Examples
 7.1
 Figure-Eight Knot
 The ﬁgure-eight knot is;
-62
 This knot is represented as
 $\sigma_{12^{-}12}\sigma\sigma\sigma^{-1}1$ by use of the braid generators. We then asso-
 ciate the tetrahedra for each
@@ -46,7 +47,6 @@ $\lim_{\gammaarrow 0}(2\mathrm{i}\gamma\log z(41))=2.02988\mathrm{i}$ .
 One sees that the imaginary part is nothing but the hyperbolic
 $\mathrm{v}o$lume of the complement
 of knot $4_{1}[13,39]$ .
-63
 7.2
 $5_{2}$ Knot
 The
@@ -73,7 +73,6 @@ One ﬁnds again the imaginary part coincides with the hyperbolic
 $\mathrm{v}o$lume of the
 $\mathrm{c}o$mple-
 ment of knot $5_{2}[13,39]$ .
-64
 8
 Concluding Remarks
 In this note we have studied an invariant which are deﬁned from the quantum dilog-

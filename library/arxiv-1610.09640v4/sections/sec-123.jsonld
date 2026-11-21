@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-123",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Twisted Calabi-Yau Rings",
+  "pageStart": 440,
+  "pageEnd": 447,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-123",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-123-01",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-123-02",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-123-03",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-123-04",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-123-05",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-123-06",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-123-07",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-123-08",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-123-09"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -4,16 +4,12 @@ doc_title: "On the monodromy of the Hitchin connection"
 section_id: sec-000-on-the-monodromy-of-the-hitchin-connection
 section_title: "ON THE MONODROMY OF THE HITCHIN CONNECTION"
 section_number: null
-pages: 1-14
+pages: 2-14
 source_pdf: MonodromyHitchinY.pdf
 source_sha256: 1c9288ddbb5bc2d8
 toc_source: inferred
+doc_brief: "On the monodromy of the Hitchin connection — 2 sections: Front matter; ON THE MONODROMY OF THE HITCHIN CO"
 ---
-Yves Laszlo, Christian Pauly, Christoph Sorger
-To cite this version:
-Yves Laszlo, Christian Pauly, Christoph Sorger. On the monodromy of the Hitchin connection. Journal of
-Geometry and Physics, 2013, 64, pp.64-78. ⟨10.1016/j.geomphys.2012.11.003⟩. ⟨hal-00465731⟩
-ON THE MONODROMY OF THE HITCHIN CONNECTION
 YVES LASZLO, CHRISTIAN PAULY, AND CHRISTOPH SORGER
 Abstract. We show that the image of the monodromy representation of the Hitchin con-
 nection on the sheaf of generalized SL(2)-theta functions over a family of complex smooth

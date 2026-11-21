@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1901.08945v2
-doc_title: "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES"
+doc_title: "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties"
 section_id: sec-001-2-torsion-pairs-and-decompositions-of-derived-ca
 section_title: "Torsion pairs and decompositions of derived categories"
 section_number: 2
 pages: 5-13
 source_pdf: 1901.08945v2.pdf
 source_sha256: df222d76e597057f
-doc_brief: "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes accordi ng to the char- acters of"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.995
-latex_coverage_ratio: 0.98
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.974
+doc_brief: "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group"
 ---
 []{#sec:torsion-pairs-decomp label="sec:torsion-pairs-decomp"}
 

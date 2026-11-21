@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/reshetikhin-turaev/blocks/prose-sec-013",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Remark. If(A, R, w) is a ribbon Hopf algebra then w e A C A, so that v = Ew for",
-  "pageStart": 8,
-  "pageEnd": 8,
-  "text": "../sections/sec-013-35-remark-ifa-r-w-is-a-ribbon-hopf-algebra-then.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
+  "title": "N. Yu. Reshetikhin and V. G. Turaev sional for [Jl-Jfl <-_J<Ja +J2 and are equal to zero for other j. In other words vJ~@vJ2=",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "text": "../sections/sec-013-24-n-yu-reshetikhin-and-v-g-turaev-sional-for-jl.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
   "provenance": "ingested"
 }

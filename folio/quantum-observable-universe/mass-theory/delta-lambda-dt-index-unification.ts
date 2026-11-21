@@ -35,4 +35,8 @@ export default proposition({
     "value-proved",
     "magnitude-open",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ### Consumers\n\nThe per-isotope binding algorithm consumes $\\Delta_\\lambda$ through\n[$\\Delta_\\lambda$ per-partition value (PROVED $(-1)^{n(\\lambda)}\\dim V_\\lambda$); many-body magnitude open](#alg:delta-lambda-closure), which computes the value above and\nhands it to Step 9b." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ### Lean\n\n`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional` proves the conjunction of both legs.\nThe value leg is `dtEulerG_eq_deltaLambdaG`; the chirality leg is\n`parity_eq_w0_sign_general`, which discharges $(\\dagger)$ via\n`aStat_eq_sumChoose2_conjugate`." },
+  ],
 });

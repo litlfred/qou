@@ -39,6 +39,6 @@ structure ReebBundle (M : Type*) (q : ℝ) where
 -- ExceptionalDivisor structure (Ch 6 §2)".  That structure exists —
 -- `QOU/ArchimedeanUniverse.lean` — and is now imported, so `base` is typed by it
 -- rather than by an auto-bound variable.
--- Ref: [manuscript] Ch 6 §2
+-- Ref: [leitner2026] Ch 6 §2
 
 end QOU

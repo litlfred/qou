@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1204.5807v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "4bf4f73b0c152b1953f56eca70071426b28e2f05568e23cf03d50bb6ea80ce0a",
+  "file": "1204.5807v1.pdf"
+ },
+ "provenance": {
+  "title": "FROM HOPF ALGEBRAS TO TENSOR CATEGORIES",
+  "authors": "N. ANDRUSKIEWITSCH, I. ANGIONO, A. GARC\u00cdA IGLESIAS",
+  "arxiv": {
+   "id": "1204.5807",
+   "version": "1",
+   "primary_class": "math.QA",
+   "stamp_date": "26 Apr 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

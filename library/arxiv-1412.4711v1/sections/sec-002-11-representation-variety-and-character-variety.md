@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1412.4711v1
-doc_title: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT"
+doc_title: "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT"
 section_id: sec-002-11-representation-variety-and-character-variety
 section_title: "Representation variety and character variety"
 section_number: 1.1
 pages: 3-4
 source_pdf: 1412.4711v1.pdf
 source_sha256: 4fb1d6ee062cca8c
-doc_brief: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
 latex_coverage_ratio: 0.94
+doc_brief: "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
 ---
 We begin by the most classical representation variety and character variety.
 

@@ -8,7 +8,7 @@
   "pages": 32,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -38,7 +38,7 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "Equivariant Satake category and Kostant-Whittaker reduction",
-   "heading": "EQUIVARIANT SATAKE CATEGORY AND KOSTANT-WHITTAKER REDUCTION Contents Introduction Notation and statements of the results Notation Asymptotic \u02c7 g -modules Kostant functor \u03ba \u210f Equivariant cohomology of Gr G Equivariant homology and quantum Toda lattice Quasiclassical limit Equivalences Topology Proof",
+   "heading": "EQUIVARIANT SATAKE CATEGORY AND KOSTANT-WHITTAKER REDUCTION Contents Introduction Notation and statements of the results Notation Asymptotic ˇ g -modules Kostant functor κ ℏ Equivariant cohomology of Gr G Equivariant homology and quantum Toda lattice Quasiclassical limit Equivalences Topology Proof",
    "text": "EQUIVARIANT SATAKE CATEGORY AND",
    "corroborated_by": [
     "text",
@@ -91,7 +91,7 @@
   },
   {
    "level": 2,
-   "title": "Asymptotic \u02c7g-modules",
+   "title": "Asymptotic ˇg-modules",
    "page": 4,
    "source": "inferred",
    "number": "2.2",
@@ -105,7 +105,7 @@
   },
   {
    "level": 2,
-   "title": "Kostant functor \u03ba\u210f",
+   "title": "Kostant functor κℏ",
    "page": 4,
    "source": "inferred",
    "number": "2.3",
@@ -188,7 +188,7 @@
   },
   {
    "level": 2,
-   "title": "Canonical filtration on H\u2022 T\u00d7Gm(GrG, F)",
+   "title": "Canonical filtration on H• T×Gm(GrG, F)",
    "page": 9,
    "source": "inferred",
    "number": "3.2",
@@ -257,7 +257,7 @@
   },
   {
    "level": 2,
-   "title": "Some properties of the Kostant functor \u03ba\u210f",
+   "title": "Some properties of the Kostant functor κℏ",
    "page": 14,
    "source": "inferred",
    "number": "4.1",
@@ -271,7 +271,7 @@
   },
   {
    "level": 2,
-   "title": "De-symmetrized Kostant functor \u03ba\u210f",
+   "title": "De-symmetrized Kostant functor κℏ",
    "page": 15,
    "source": "inferred",
    "number": "4.2",
@@ -285,7 +285,7 @@
   },
   {
    "level": 2,
-   "title": "Canonical filtration on \u03c6(V )",
+   "title": "Canonical filtration on φ(V )",
    "page": 16,
    "source": "inferred",
    "number": "4.3",
@@ -340,7 +340,7 @@
   },
   {
    "level": 2,
-   "title": "Quasiclassical limit of \u03d5(V )",
+   "title": "Quasiclassical limit of ϕ(V )",
    "page": 19,
    "source": "inferred",
    "number": "4.7",
@@ -367,20 +367,20 @@
   },
   {
    "level": 2,
-   "title": "Generic splitting of the canonical filtration on equivariant cohomology for G = PGL(2)",
+   "title": "G = PGL(2)",
    "page": 20,
    "source": "inferred",
-   "number": "5.2",
-   "confidence": 0.55,
+   "number": null,
+   "confidence": 0.75,
    "evidence": [
     "contents",
-    "number"
+    "body"
    ],
    "page_label": "20"
   },
   {
    "level": 2,
-   "title": "Kostant functor for \u02c7G = SL(2)",
+   "title": "Kostant functor for ˇG = SL(2)",
    "page": 20,
    "source": "inferred",
    "number": "5.3",
@@ -394,7 +394,7 @@
   },
   {
    "level": 2,
-   "title": "Generic splitting of the canonical filtration on Kostant functor for \u02c7G = SL(2)",
+   "title": "Generic splitting of the canonical filtration on Kostant functor for ˇG = SL(2)",
    "page": 21,
    "source": "inferred",
    "number": "5.4",
@@ -676,22 +676,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 149,
-   "n_words": 19,
+   "page_end": 2,
+   "n_chars": 2540,
+   "n_words": 392,
    "label_start": null,
-   "label_end": null
+   "label_end": "2"
   },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 6525,
-   "n_words": 1019,
-   "label_start": null,
+   "n_chars": 4131,
+   "n_words": 645,
+   "label_start": "2",
    "label_end": "3"
   },
   {
@@ -707,9 +707,9 @@
    "label_end": "4"
   },
   {
-   "id": "sec-002-22-asymptotic-\u02c7g-modules",
+   "id": "sec-002-22-asymptotic-ˇg-modules",
    "number": "2.2",
-   "title": "Asymptotic \u02c7g-modules",
+   "title": "Asymptotic ˇg-modules",
    "level": 2,
    "page_start": 4,
    "page_end": 4,
@@ -719,19 +719,31 @@
    "label_end": "4"
   },
   {
-   "id": "sec-003-23-kostant-functor-\u03ba\u210f",
+   "id": "sec-003-23-kostant-functor-κℏ",
    "number": "2.3",
-   "title": "Kostant functor \u03ba\u210f",
+   "title": "Kostant functor κℏ",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 3598,
-   "n_words": 642,
+   "n_chars": 2209,
+   "n_words": 415,
    "label_start": "4",
    "label_end": "5"
   },
   {
-   "id": "sec-004-25-equivariant-homology-and-quantum-toda-lattice",
+   "id": "sec-004-24-equivariant-cohomology-of-grg",
+   "number": "2.4",
+   "title": "Equivariant cohomology of GrG",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1371,
+   "n_words": 225,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-005-25-equivariant-homology-and-quantum-toda-lattice",
    "number": "2.5",
    "title": "Equivariant homology and quantum Toda lattice",
    "level": 2,
@@ -743,7 +755,7 @@
    "label_end": "6"
   },
   {
-   "id": "sec-005-26-quasiclassical-limit",
+   "id": "sec-006-26-quasiclassical-limit",
    "number": "2.6",
    "title": "Quasiclassical limit",
    "level": 2,
@@ -755,7 +767,7 @@
    "label_end": "7"
   },
   {
-   "id": "sec-006-27-equivalences",
+   "id": "sec-007-27-equivalences",
    "number": "2.7",
    "title": "Equivalences",
    "level": 2,
@@ -767,7 +779,7 @@
    "label_end": "8"
   },
   {
-   "id": "sec-007-3-topology",
+   "id": "sec-008-3-topology",
    "number": "3",
    "title": "Topology",
    "level": 1,
@@ -779,7 +791,7 @@
    "label_end": "10"
   },
   {
-   "id": "sec-008-33-levi-equivariant-cohomology",
+   "id": "sec-009-33-levi-equivariant-cohomology",
    "number": "3.3",
    "title": "Levi-equivariant cohomology",
    "level": 2,
@@ -791,7 +803,7 @@
    "label_end": "11"
   },
   {
-   "id": "sec-009-34-transitivity-for-a-pair-of-levi-subgroups",
+   "id": "sec-010-34-transitivity-for-a-pair-of-levi-subgroups",
    "number": "3.4",
    "title": "Transitivity for a pair of Levi subgroups",
    "level": 2,
@@ -803,7 +815,7 @@
    "label_end": "11"
   },
   {
-   "id": "sec-010-35-tensor-structure-on-equivariant-cohomology",
+   "id": "sec-011-35-tensor-structure-on-equivariant-cohomology",
    "number": "3.5",
    "title": "Tensor structure on equivariant cohomology",
    "level": 2,
@@ -815,7 +827,7 @@
    "label_end": "14"
   },
   {
-   "id": "sec-011-4-algebra",
+   "id": "sec-012-4-algebra",
    "number": "4",
    "title": "Algebra",
    "level": 1,
@@ -827,9 +839,9 @@
    "label_end": "14"
   },
   {
-   "id": "sec-012-41-some-properties-of-the-kostant-functor-\u03ba\u210f",
+   "id": "sec-013-41-some-properties-of-the-kostant-functor-κℏ",
    "number": "4.1",
-   "title": "Some properties of the Kostant functor \u03ba\u210f",
+   "title": "Some properties of the Kostant functor κℏ",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
@@ -839,9 +851,9 @@
    "label_end": "15"
   },
   {
-   "id": "sec-013-42-de-symmetrized-kostant-functor-\u03ba\u210f",
+   "id": "sec-014-42-de-symmetrized-kostant-functor-κℏ",
    "number": "4.2",
-   "title": "De-symmetrized Kostant functor \u03ba\u210f",
+   "title": "De-symmetrized Kostant functor κℏ",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
@@ -851,9 +863,9 @@
    "label_end": "16"
   },
   {
-   "id": "sec-014-43-canonical-filtration-on-\u03c6v",
+   "id": "sec-015-43-canonical-filtration-on-φv",
    "number": "4.3",
-   "title": "Canonical filtration on \u03c6(V )",
+   "title": "Canonical filtration on φ(V )",
    "level": 2,
    "page_start": 16,
    "page_end": 16,
@@ -863,7 +875,7 @@
    "label_end": "16"
   },
   {
-   "id": "sec-015-44-whittaker-modules-for-levi-subalgebras",
+   "id": "sec-016-44-whittaker-modules-for-levi-subalgebras",
    "number": "4.4",
    "title": "Whittaker modules for Levi subalgebras",
    "level": 2,
@@ -875,7 +887,7 @@
    "label_end": "17"
   },
   {
-   "id": "sec-016-45-transitivity-for-a-pair-of-levi-subgroups",
+   "id": "sec-017-45-transitivity-for-a-pair-of-levi-subgroups",
    "number": "4.5",
    "title": "Transitivity for a pair of Levi subgroups",
    "level": 2,
@@ -887,21 +899,45 @@
    "label_end": "19"
   },
   {
-   "id": "sec-017-47-quasiclassical-limit-of-\u03d5v",
+   "id": "sec-018-47-quasiclassical-limit-of-ϕv",
    "number": "4.7",
-   "title": "Quasiclassical limit of \u03d5(V )",
+   "title": "Quasiclassical limit of ϕ(V )",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1429,
+   "n_words": 266,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-019-51-equivariant-cohomology-for-g-pgl2",
+   "number": "5.1",
+   "title": "Equivariant cohomology for G = PGL(2)",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 5131,
-   "n_words": 1033,
+   "n_chars": 1679,
+   "n_words": 329,
    "label_start": "19",
    "label_end": "20"
   },
   {
-   "id": "sec-018-53-kostant-functor-for-\u02c7g-sl2",
+   "id": "sec-020-g-pgl2",
+   "number": null,
+   "title": "G = PGL(2)",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1989,
+   "n_words": 433,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-021-53-kostant-functor-for-ˇg-sl2",
    "number": "5.3",
-   "title": "Kostant functor for \u02c7G = SL(2)",
+   "title": "Kostant functor for ˇG = SL(2)",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
@@ -911,9 +947,9 @@
    "label_end": "21"
   },
   {
-   "id": "sec-019-52-generic-splitting-of-the-canonical-filtration",
-   "number": "5.2",
-   "title": "Generic splitting of the canonical filtration on equivariant cohomology for G = PGL(2)",
+   "id": "sec-022-54-generic-splitting-of-the-canonical-filtration",
+   "number": "5.4",
+   "title": "Generic splitting of the canonical filtration on Kostant functor for ˇG = SL(2)",
    "level": 2,
    "page_start": 21,
    "page_end": 32,
@@ -928,8 +964,8 @@
   "likely_scanned": false,
   "toc_entries": 26,
   "toc_inferred_entries": 26,
-  "toc_inferred_mean_confidence": 0.748,
-  "toc_inferred_empty_share": 0.05,
+  "toc_inferred_mean_confidence": 0.756,
+  "toc_inferred_empty_share": 0.043,
   "toc_inferred_method": "contents",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -939,14 +975,13 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 6,
+    "count": 5,
     "items": [
      "Notation",
      "Equivariant cohomology of GrG",
-     "Canonical filtration on H\u2022 T\u00d7Gm(GrG, F)",
+     "Canonical filtration on H• T×Gm(GrG, F)",
      "Tensor structure on Kostant functor",
-     "Equivariant cohomology for G = PGL(2)",
-     "Generic splitting of the canonical filtration on equivariant cohomology for G = PGL(2)"
+     "Equivariant cohomology for G = PGL(2)"
     ]
    },
    "found_not_listed": {
@@ -958,13 +993,14 @@
     "items": []
    }
   },
-  "sections": 21,
-  "chars_total": 88513,
+  "sections": 24,
+  "chars_total": 88458,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "qsatake_final_corrected.tex",
    "tex_sections": 35,
-   "overlaid": 15,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -980,7 +1016,7 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.991,
-     "coverage_ratio": 0.833,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -993,23 +1029,31 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-22-asymptotic-\u02c7g-modules",
-     "title": "Asymptotic \u02c7g-modules",
+     "id": "sec-002-22-asymptotic-ˇg-modules",
+     "title": "Asymptotic ˇg-modules",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-23-kostant-functor-\u03ba\u210f",
-     "title": "Kostant functor \u03ba\u210f",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.92,
+     "id": "sec-003-23-kostant-functor-κℏ",
+     "title": "Kostant functor κℏ",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.935,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-25-equivariant-homology-and-quantum-toda-lattice",
+     "id": "sec-004-24-equivariant-cohomology-of-grg",
+     "title": "Equivariant cohomology of GrG",
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-25-equivariant-homology-and-quantum-toda-lattice",
      "title": "Equivariant homology and quantum Toda lattice",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.933,
@@ -1017,7 +1061,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-26-quasiclassical-limit",
+     "id": "sec-006-26-quasiclassical-limit",
      "title": "Quasiclassical limit",
      "prose_ratio": 0.95,
      "coverage_ratio": 0.951,
@@ -1025,7 +1069,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-27-equivalences",
+     "id": "sec-007-27-equivalences",
      "title": "Equivalences",
      "prose_ratio": 0.973,
      "coverage_ratio": 0.941,
@@ -1033,7 +1077,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-3-topology",
+     "id": "sec-008-3-topology",
      "title": "Topology",
      "prose_ratio": 0.993,
      "coverage_ratio": 0.691,
@@ -1041,7 +1085,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-33-levi-equivariant-cohomology",
+     "id": "sec-009-33-levi-equivariant-cohomology",
      "title": "Levi-equivariant cohomology",
      "prose_ratio": 0.984,
      "coverage_ratio": 0.926,
@@ -1049,7 +1093,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-34-transitivity-for-a-pair-of-levi-subgroups",
+     "id": "sec-010-34-transitivity-for-a-pair-of-levi-subgroups",
      "title": "Transitivity for a pair of Levi subgroups",
      "prose_ratio": 0.966,
      "coverage_ratio": 0.968,
@@ -1057,7 +1101,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-35-tensor-structure-on-equivariant-cohomology",
+     "id": "sec-011-35-tensor-structure-on-equivariant-cohomology",
      "title": "Tensor structure on equivariant cohomology",
      "prose_ratio": 0.965,
      "coverage_ratio": 0.934,
@@ -1065,64 +1109,75 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-4-algebra",
+     "id": "sec-012-4-algebra",
      "title": "Algebra",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-41-some-properties-of-the-kostant-functor-\u03ba\u210f",
-     "title": "Some properties of the Kostant functor \u03ba\u210f",
+     "id": "sec-013-41-some-properties-of-the-kostant-functor-κℏ",
+     "title": "Some properties of the Kostant functor κℏ",
      "prose_ratio": 0.981,
      "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-42-de-symmetrized-kostant-functor-\u03ba\u210f",
-     "title": "De-symmetrized Kostant functor \u03ba\u210f",
+     "id": "sec-014-42-de-symmetrized-kostant-functor-κℏ",
+     "title": "De-symmetrized Kostant functor κℏ",
      "prose_ratio": 0.823,
      "coverage_ratio": 0.928,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-43-canonical-filtration-on-\u03c6v",
-     "title": "Canonical filtration on \u03c6(V )",
+     "id": "sec-015-43-canonical-filtration-on-φv",
+     "title": "Canonical filtration on φ(V )",
      "prose_ratio": 0.277,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-015-44-whittaker-modules-for-levi-subalgebras",
+     "id": "sec-016-44-whittaker-modules-for-levi-subalgebras",
      "title": "Whittaker modules for Levi subalgebras",
      "prose_ratio": 0.534,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-016-45-transitivity-for-a-pair-of-levi-subgroups",
+     "id": "sec-017-45-transitivity-for-a-pair-of-levi-subgroups",
      "title": "Transitivity for a pair of Levi subgroups",
      "prose_ratio": 0.966,
      "coverage_ratio": 0.303,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-017-47-quasiclassical-limit-of-\u03d5v",
-     "title": "Quasiclassical limit of \u03d5(V )",
-     "prose_ratio": 0.954,
-     "coverage_ratio": 0.706,
+     "id": "sec-018-47-quasiclassical-limit-of-ϕv",
+     "title": "Quasiclassical limit of ϕ(V )",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-53-kostant-functor-for-\u02c7g-sl2",
-     "title": "Kostant functor for \u02c7G = SL(2)",
+     "id": "sec-019-51-equivariant-cohomology-for-g-pgl2",
+     "title": "Equivariant cohomology for G = PGL(2)",
+     "prose_ratio": 0.463,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-g-pgl2",
+     "title": "G = PGL(2)",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-019-52-generic-splitting-of-the-canonical-filtration",
-     "title": "Generic splitting of the canonical filtration on equivariant cohomology for G = PGL(2)",
-     "prose_ratio": 0.928,
-     "coverage_ratio": 0.835,
+     "id": "sec-021-53-kostant-functor-for-ˇg-sl2",
+     "title": "Kostant functor for ˇG = SL(2)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-54-generic-splitting-of-the-canonical-filtration",
+     "title": "Generic splitting of the canonical filtration on Kostant functor for ˇG = SL(2)",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.83,
      "result": "overlaid",
      "converter": "pandoc"
     }

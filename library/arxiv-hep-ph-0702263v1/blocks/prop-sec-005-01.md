@@ -1,0 +1,1 @@
+Since 1993, when Eurodaphne got started, substantial progress has been made in the understanding of low-energy constants, both from phenomenology and from theory (lattice QCD and large-$N_c$ approaches).

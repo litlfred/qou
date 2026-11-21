@@ -154,7 +154,7 @@ def main() -> int:
     )
 
     b.add_data("the_dropped_qualifier", {
-        "source": "library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:216-217",
+        "source": "library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md:216-217",
         "sentence_as_held": q["sentence"],
         "corpus_records_that_drop_it": ["qou-a9li", "qou-b5yi",
                                         "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md (this tranche, corrected)"],
@@ -244,7 +244,7 @@ def main() -> int:
             "reads no q0 anywhere. Inputs are integer linking numbers of the "
             "canonical atom-word closure (permutation and crossing-sign "
             "arithmetic, exact integers) and a literal text search of "
-            "library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md. No "
+            "library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md. No "
             "substrate pin is evaluated on any path, so no q0Value exists."
         ),
     })

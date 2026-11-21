@@ -1,0 +1,47 @@
+300 Multiple point asymptotics
+
+tions P, Q),...,Q, at z = p with the gradients of the Q; linearly independent
+at z = p. As in the remark following Theorem C.24, we assume the factors of
+the denominator have been normalized so that each Viog Q; is real and P/Q has
+been normalized so that Q(0) = 1. Following Section C.2.3 of Appendix C, we
+parametrize S near p using d—k coordinates 7 = {7,...,7g_,} so that, writing
+Ze = (Zn,5+++5Zny,), there exist analytic functions ¢)(z,) for i ¢ 7 with z € S
+near p if and only if z; = ¢(z,,) for all i ¢ 7. The map
+
+W(z) = (Qi(2),. +, Oe(Z), Ze, — Pry +9 Zan ~ Prat) (10.4)
+
+is a bi-analytic change of coordinates taking a neighborhood of p in S to a
+neighborhood of the origin in {0}x C¢*. If 7, c C* x {0} denotes the product of
+circles of radius ¢ in each of the first k coordinates then, when ¢ is sufficiently
+small, the cycle 7 = ~!(T,) is a generator for the normal Morse data. Our
+asymptotic formulae involve the augmented lognormal matrix Ty(p) whose
+first k rows are the log-gradients of Q),...,Q, at p and whose last d — k rows
+consist of the vectors Z7,@z,,.- +5 Zmy_,€ny, (See Definition C.16 in Appendix C).
+
+Exercise 10.4. Let Q(x, y) = 19-20x—20y+5x?+ 14xy+5y?-2x7y-2xy? 4°?
+be the lemniscate function from Example 10.4. What are ¥, ['y, and det Ty at
+a point (a, b) € V? How do these change as (a, b) moves in‘ V?
+
+The simplest case occurs for a complete intersection, because there is only
+a normal integral and no tangential integral.
+
+Theorem 10.12 (complete intersection asymptotics). Let F have the form (10.3),
+with k = d and Q(p) = 0 for all j < k; in this case m is empty and the map
+Y defined by (10.4) coordinatizes C4 near p by (Qi,..., Qa). Define the cy-
+cle T = ¥'(T,) and the augmented lognormal matrix T'y(p) as above. If
+P(p) # 0, then
+
+1
+—— | F(ajz"ldz=p'P(r,p), 10.5
+Cane { (Ze dz = pT P(r,p) (10.5)
+where P(r, p) is a polynomial in r of degree \m| — d with leading term
+
+Cpr"! Pp) =lym=1
+~ ——— — (TT .
+PO.P)~ Gert daty@ vt’
+for Tyr = DL Pye! and (m - Y! = TL,(m; - D!. When all
+poles are simple (m = 1), the matrix Ty is the d x d matrix of log gradients
+and
+P(p)
+
+P,P) = det Py(p) °

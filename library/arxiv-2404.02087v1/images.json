@@ -1,0 +1,51 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "arxiv-2404.02087v1",
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.075298,
+        "imagesOnPage": 1,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.056859,
+        "imagesOnPage": 1,
+        "page": 3
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.03639,
+        "imagesOnPage": 1,
+        "page": 7
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    }
+  ]
+}

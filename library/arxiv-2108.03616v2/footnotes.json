@@ -1,0 +1,4937 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2108.03616v2",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "1",
+   "text": "Thestatementinthepaperisslightlymoregeneral,fork-adicsubspaceswithk> 2;theproofisessentially the same.",
+   "marks": [
+    {
+     "page": 21,
+     "context": "holds."
+    },
+    {
+     "page": 21,
+     "context": "pγ"
+    },
+    {
+     "page": 21,
+     "context": "\u0012pγ"
+    },
+    {
+     "page": 21,
+     "context": "= pγ"
+    },
+    {
+     "page": 21,
+     "context": "containstwoshortercyclesC"
+    },
+    {
+     "page": 21,
+     "context": "containstwoshortercyclesC1, C2suchthatγ(C"
+    },
+    {
+     "page": 21,
+     "context": "γ(C"
+    }
+   ],
+   "block": "library/arxiv-2108.03616v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p030-1",
+   "page": 30,
+   "mark": "2",
+   "text": "Simplexmaycontaindegeneratepivotswhenthebasicsolutionremainsthesame;wedonotcounttheseas augmentation steps.",
+   "marks": [
+    {
+     "page": 29,
+     "context": "LP of the form LP(A, b, c, u) has circuit diameter bound O(m"
+    },
+    {
+     "page": 29,
+     "context": "iterations,leadingtotheoverallboundO(m"
+    },
+    {
+     "page": 29,
+     "context": ") with upper bounds u, the above argument yields a bound O(n"
+    },
+    {
+     "page": 29,
+     "context": "leadstoacircuitdiameterboundofO(m"
+    },
+    {
+     "page": 30,
+     "context": "specialelementaryvectorscorrespondingtoedgesofthepolyhedron."
+    }
+   ],
+   "block": "library/arxiv-2108.03616v2/blocks/prose-sec-020"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "ForalinearspaceW⊂R"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "circuitsintheassociatedlinearmatroidM(W).WeletF(W) ⊆WandCW⊆2"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "Wewillneedsomesimpledeﬁnitions.Thelinearspaces{0}andR"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "subspaces;allothersubspacesarenontrivial.AlinearsubspaceofR"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "astheimageofarationalmatrix.Foranintegervectorv∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "commonmultipleoftheentries|v"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "ition1.1(Circuitimbalances).Foranon-triviallinearsubspaceW⊆R"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "A ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "Foraprimenumberp ∈P,thep-adicvaluationforZisthefunctionν"
+  },
+  {
+   "page": 5,
+   "mark": "v",
+   "context": "max{v∈N : p"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Wedenotethesupportofavectorx∈R"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Wedenotethesupportofavectorx∈Rnbysupp(x)={i∈[n]:x"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Forvectorsv, w∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Forvectorsv, w∈Rnwedenotebymin{v, w}thevectorz∈R"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Forvectorsv, w∈Rnwedenotebymin{v, w}thevectorz∈Rnwithz"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "orvectorsv, w∈Rnwedenotebymin{v, w}thevectorz∈Rnwithzi=min{v"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ctorsv, w∈Rnwedenotebymin{v, w}thevectorz∈Rnwithzi=min{vi, w"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Further,weusethenotationv+=max{v, 0"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "max{−v, 0"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ethat bothv+and v−are nonnegativevectors.Fortwovectorsx, y∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "WeletI"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "WeletIn∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "WeletIn∈Rn×ndenotethen-dimensionalidentitymatrix.WeletD"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "positive deﬁnite n×n diagonal matrices.For a vector v∈R"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "matrix whose i-th diagonal entry is v"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "matrix whose i-th diagonal entry is vi and for a matrix A ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "se i-th diagonal entry is vi and for a matrix A ∈Rm×n, let A"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "-th diagonal entry is vi and for a matrix A ∈Rm×n, let A1, A"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": " entry is vi and for a matrix A ∈Rm×n, let A1, A2, . . . , A"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "try is vi and for a matrix A ∈Rm×n, let A1, A2, . . . , An∈R"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "thecolumnvectors,andA"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "thecolumnvectors,andA1, A"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "thecolumnvectors,andA1, A2, . . . , A"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "thecolumnvectors,andA1, A2, . . . , Am∈R"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Wewilluseℓ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Wewilluseℓ1, ℓ"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "∥v∥,wealwaysmeanthe2-norm∥v∥2.Further,foramatrixA∈R"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ℓ2→ℓ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ForanindexsubsetI⊆[n],weuseπI:R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "I= {x ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "I= {x ∈Rn:"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "πI(x) = xI,andforasubsetS⊆R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "πI(x) = xI,andforasubsetS⊆Rn,πI(S) = {xI:x ∈S}.WeletR"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ForasubspaceW⊆R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ForasubspaceW⊆Rn,weletWI= πI(W∩R"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "AssumewearegivenamatrixA ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ForasubspaceW⊆R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ForasubspaceW⊆Rn,wedeﬁnebyΠW :R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ForasubspaceW⊆Rn,wedeﬁnebyΠW :Rn→R"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ForasetofvectorsV= {v"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "vectorsinV .ForamatrixA∈R"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "vectorsinV .ForamatrixA∈Rm×n,span(A)⊆R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ofA.AcircuitbasisofasubspaceW⊆R"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "standardprimalanddualformforA ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "standardprimalanddualformforA ∈Rm×n,b ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "standardprimalanddualformforA ∈Rm×n,b ∈Rm,c ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "formulation.ForA,bandcasabove,letW=ker(A) ⊆R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "formulation.ForA,bandcasabove,letW=ker(A) ⊆Rnandd ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Wesaythatthevectory∈R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Wesaythatthevectory∈Rnconformstox∈R"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "xiy"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "xiyi>0whenevery"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "xiyi>0wheneveryi̸=0.GivenasubspaceW⊆R"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "g"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "where h ≤n and g"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "where h ≤n and g1, g"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "where h ≤n and g1, g2, . . . , g"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Lemma2.1.ForeverysubspaceW⊆R"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "correspondtoinequalitiesoftheformy"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "correspondtoinequalitiesoftheformyk≥0,y"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "correspondtoinequalitiesoftheformyk≥0,yk≤0,ory"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "ForalinearsubspaceW⊆R"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "Assumerk(W)=mandW=ker(A)forA∈R"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "Proposition3.1.ForeverymatrixA ∈R"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "BA∥max: ABnon-singular"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "BAforanynon-singular"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "j≤n,thejthcolumnofA′corresponds toanelementaryvectorgwhere g"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "hcolumnofA′corresponds toanelementaryvectorgwhere gj= 1,andg"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "ForanintegermatrixA ∈Z"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "Proposition3.2.ForeveryintegermatrixA ∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "InPropositions3.18and3.19,weshowthatforanymatrixA ∈Q"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "˜A ∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "A≤( ˙κA)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Toseeanexamplewhere∆AcanbemuchlargerthanκA,letA ∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "edgesetof"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "3node-disjointtriangles.ThenAHis"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "[Hel57,HT56]introduced the Dantzigproperty.A matrix A ∈R"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "BA is a 0, ±1-matrix for every nonsingular"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "Lemma3.3.LetA=(I"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "Lemma3.3.LetA=(Im|A′)∈R"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "i ∈[k + 1, m],i.e.,thelastm −kunitvectorsfromI"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "i ∈[k + 1, m],i.e.,thelastm −kunitvectorsfromIm.Thus,AB∈R"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "BA.Notethattheﬁrst"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "ndKotnyekdeﬁnek-regularmatricesasfollows:arationalmatrixA′∈R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Theorem3.4(Cederbaum,1957).LetW⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "show(i)⇒(iii).Letrk(W)=n −m,andconsideranyA∈R"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "is,A = (I"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "is,A = (Im|A′)forsomeA′∈R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "P⊆R"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Theorem3.5(Hoﬀman and Kruskal, 1956).An integer matrixA ∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "ifandonlyifforeveryb ∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ifandonlyifforeveryb ∈Zm,thepolyhedron{x ∈R"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Lemma3.6.LetA∈R"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Lemma3.6.LetA∈Rm×nbeoftheformA=(A′|I"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Lemma3.6.LetA∈Rm×nbeoftheformA=(A′|Im)forA′=R"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "b ∈R"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Pb= {x ∈R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "b= {x′∈R"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "b=πI(P"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "bistheprojectionofP"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "b,there exists a unique vertex"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "b,there exists a unique vertex x of Psuch that"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "b.Further,if"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "b.Further,ifb∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "b.Further,ifb∈Zm,thenP"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "b.Further,ifb∈Zm,thenPbis"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "bis"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Corollary3.7.LetW⊆R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ary3.7.LetW⊆Rnbealinearspace.Then,κW=1ifandonlyifforeveryd∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "thepolyhedron{x ∈R"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "representWinabasisformasW=ker(A)forA=(A′|I"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "representWinabasisformasW=ker(A)forA=(A′|Im),whereA′∈R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Further,notethatthesystem{x∈R"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "Further,notethatthesystem{x∈Rn:x∈W+ d, x≥0}coincideswithP"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ther,notethatthesystem{x∈Rn:x∈W+ d, x≥0}coincideswithPb={x∈R"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "(A′|I"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "Notethatb=Adisintegerwheneverd∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "vectorinb∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "thisway,sinceAcontainsanidentitymatrix.AccordingtoLemma3.6,P"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "b={x∈R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Theorem3.8.LetW⊆R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "foreveryd ∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "foreveryd ∈Zn,thepolyhedron{x ∈R"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "Proof.Letdim(W) = n−m, andlet us represent W= ker(A) forA ∈R"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "BAis"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "BAis1/˙κW-integral.Thus,if"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "BAis1/˙κW-integral.Thus,ifd ∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "BAis1/˙κW-integral.Thus,ifd ∈Znthen"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Let us now show the conversedirection.Assume {x ∈R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "for every d ∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "ℓ)"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "WecanrepresentW= ker(A)inabasisformasA = (I"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "WecanrepresentW= ker(A)inabasisformasA = (Im|A′).Letg∈R"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "g"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "gj= −Ajℓforj∈Bandg"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "ℓ)"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Letuspickanintegert∈N,t≥∥g∥∞,anddeﬁned∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "Letuspickanintegert∈N,t≥∥g∥∞,anddeﬁned∈Znbyd"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "andd"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "Bisobtainedasx"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "Bisobtainedasxj=t + g"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "Bisobtainedasxj=t + gjforj∈Bandx"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "ℓ)"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "ℓ)gC,whereeither"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "ℓ)gC,whereeithergC∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "ℓ)gC,whereeithergC∈Znwithlcm(gC)=1and"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "ℓ∤k,or"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "Corollary3.9.LetA = (A′|I"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "Corollary3.9.LetA = (A′|Im) ∈R"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "b ∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "b ∈Zm,thepolyhedron{x′∈R"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "Theorem3.10.LetA∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "Theorem3.10.LetA∈Zm×nsuchthatforeachcolumnj∈[n],P"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "BAfor"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Deﬁnition3.11(PairwiseCircuitImbalances).ForaspaceW⊆R"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "lcm(p, q) : p, q∈N, gcd(p, q) = 1,"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ijthepairwiseimbalancebetween"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "ijthepairwiseimbalancebetweeniand"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "ijfor"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "Lemma3.12.ConsideramatrixA∈R"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "Lemma3.12.ConsideramatrixA∈Rm×ninbasisformforB⊆[n],i.e.,AB=I"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(ii)ForanytworowsA"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "(ii)ForanytworowsAi, A"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ForanytworowsAi, Aj,i, j∈B,i̸=j,andk∈[n] \\ B,thevectorh=AjkA"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "tworowsAi, Aj,i, j∈B,i̸=j,andk∈[n] \\ B,thevectorh=AjkAi−AikA"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "g∈W⊥musthavesupp(g) ∩B̸=∅,andifsupp(g) ∩B={i}theng=g"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "g∈W⊥musthavesupp(g) ∩B̸=∅,andifsupp(g) ∩B={i}theng=giA"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "implythateachA"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "implythateachAiissupportminimalinW⊥,thatis,A"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "g= g"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "g= giA"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "g= giAior g= g"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "g= giAior g= gjA"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "g= giAior g= gjAj, a contradiction since h"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Bypart(i),wehaveg=g"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Bypart(i),wehaveg=giA"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Bypart(i),wehaveg=giAi+ g"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Bypart(i),wehaveg=giAi+ gjA"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Bypart(i),wehaveg=giAi+ gjAj;andsinceh"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Bypart(i),wehaveg=giAi+ gjAj;andsincehk=0itfollowsthatg"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Bypart(i),wehaveg=giAi+ gjAj;andsincehk=0itfollowsthatgi/g"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "F(W⊥)suchthat|h"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F(W⊥)suchthat|hi/h"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F(W⊥)suchthat|hi/hj| = |g"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "F(W⊥)suchthat|hi/hj| = |gj/g"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i ∈supp(h)fulﬁllsg"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i ∈supp(h)fulﬁllsgih"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "i ∈supp(h)fulﬁllsgihi + g"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "i ∈supp(h)fulﬁllsgihi + gjh"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i ∈supp(h)fulﬁllsgihi + gjhj= ⟨g, h⟩= 0,soj∈supp(h)and|h"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "i ∈supp(h)fulﬁllsgihi + gjhj= ⟨g, h⟩= 0,soj∈supp(h)and|hi/h"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "p(h)fulﬁllsgihi + gjhj= ⟨g, h⟩= 0,soj∈supp(h)and|hi/hj| = |g"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": ")fulﬁllsgihi + gjhj= ⟨g, h⟩= 0,soj∈supp(h)and|hi/hj| = |gj/g"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "LetA∈R"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "LetA∈Rm×nbeamatrixinbasisformforBwithker(A)=W,andleth=AjkA"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "∈Rm×nbeamatrixinbasisformforBwithker(A)=W,andleth=AjkAi−AikA"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "g, A"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Bytheconstruction,|h"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Bytheconstruction,|hi/h"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "g, A"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "{k}impliesg"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "{k}impliesgi= −g"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "= 0impliesg"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "= 0impliesgj= −g"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Proposition3.14([DHNV20]).ForanylinearsubspaceW⊆R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Proposition3.15.ForanyrationallinearsubspaceW⊆R"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ν"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ν"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ν"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Lemma3.16.ForanylinearsubspaceW⊆R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Proposition3.17.ForanylinearsubspaceW⊆R"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "oposition3.1alreadytellsusthatanyrationalmatrixoftheformA=(I"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "A ∈R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Proposition3.18.LetW⊆R"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "anchoredspace.ThenthereexistsanintegermatrixA ∈Z"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "(iii)˙∆Aisanintegerdivisorof( ˙κW)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Proof.Let¯A ∈Q"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "wecanconvert˜AintoA=(D|A′)∈Z"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "wecanconvert˜AintoA=(D|A′)∈Zm×nwhereD∈D"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Z"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "( ˙κW )"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "snottheidentitymatrix,thenweshowthatAcanbebroughttotheform(I"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "gerA′′byperformingfurtherbasisexchanges.Letusassumethatgcd(A"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "allrowsA"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "allrowsAi,i ∈[m].ByLemma3.13,A"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "A"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "jj= Djjfor"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "jj= Djjforj∈[m],"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "jj= Djjforj∈[m],j̸=i.Hence,repeatingthisprocedureatmost"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "thematrixtotheintegerform(I"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Proposition3.19.LetW⊆R"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "integermatrixA ∈Z"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "( ˙κW )"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "(iii)˙∆Aisanintegerdivisorof( ˙κW)"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "formA=(I"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "sition3.1,allentriesofAare1/˙κWintegral.ByLemma3.13,therowsA"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i ∈[m].WecanwriteA"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i ∈[m].WecanwriteAi= g"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i ∈[m].WecanwriteAi= gi/d"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i ∈[m].WecanwriteAi= gi/diforsomeg"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "i ∈[m].WecanwriteAi= gi/diforsomegi∈F(W⊥) ∩Z"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i ∈[m].WecanwriteAi= gi/diforsomegi∈F(W⊥) ∩Zmandd"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "].WecanwriteAi= gi/diforsomegi∈F(W⊥) ∩Zmanddi∈Qsuchthatgcd(g"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "foreachi ∈[m].Bythedeﬁnitionof˙κA,theentriesofeachg"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "itfollowsthatd"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "itfollowsthatdi∈Zandd"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "itfollowsthatdi∈Zanddi|˙κA.LetD∈D"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "thatdi∈Zanddi|˙κA.LetD∈DmbethediagonalmatrixwithentriesDii=d"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "B=[m].Then,inthebasisform(I"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "foranysubmatrixM∈Q"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "(I"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "|≤det(I"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "¯A = DA,allsubdeterminantswillbe≤det(D) ≤( ˙κA)"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "toapproximatebetterthanc"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "ifwestartwithanarbitrarybasis,then˙∆A|( ˙κW)"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "ifwestartwithanarbitrarybasis,then˙∆A|( ˙κW)2"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "atmost( ˙κW )"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Forthismatrix˙κA=5850=2 × 3"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Forthismatrix˙κA=5850=2 × 32× 5"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "rthismatrix˙κA=5850=2 × 32× 52× 13holds,andthereexistsno˜A∈Z"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Theorem3.21.LetW⊆R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Lemma3.22.LetW⊆R"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "ijandlet"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "ijandletg∈F(W)suchthat{i, j} ⊂supp(g)and|g"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "ijandletg∈F(W)suchthat{i, j} ⊂supp(g)and|gj/g"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "k∈supp(g),then|g"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "k∈supp(g),then|gj/g"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k∈supp(g),then|gj/gi| = |g"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "k∈supp(g),then|gj/gi| = |gk/g"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "k∈supp(g),then|gj/gi| = |gk/gi| · |g"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k∈supp(g),then|gj/gi| = |gk/gi| · |gj/g"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "ek/∈supp(g),andpickh ∈F(W)suchthat{i, k}⊂supp(h)andlet˜h = h"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "upp(g),andpickh ∈F(W)suchthat{i, k}⊂supp(h)andlet˜h = hjg −g"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "suchahexistsbyProposition2.2.Then˜h"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "suchahexistsbyProposition2.2.Then˜hj=0and˜h"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "If˜h"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "If˜hi= 0thenh"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "If˜hi= 0thenhjg"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "If˜hi= 0thenhjgi= g"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "If˜hi= 0thenhjgi= gjh"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "If˜hi= 0thenhjgi= gjhiandso{i, j, k}⊂supp(h)withh"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "If˜hi= 0thenhjgi= gjhiandso{i, j, k}⊂supp(h)withhj/h"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "If˜hi= 0thenhjgi= gjhiandso{i, j, k}⊂supp(h)withhj/hi= g"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "If˜hi= 0thenhjgi= gjhiandso{i, j, k}⊂supp(h)withhj/hi= gj/g"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "statementas |h"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "statementas |hj/h"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "statementas |hj/hi| = |h"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "statementas |hj/hi| = |hk/h"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "statementas |hj/hi| = |hk/hi| · |h"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "statementas |hj/hi| = |hk/hi| · |hj/h"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "statementas |hj/hi| = |hk/hi| · |hj/hk|.Otherwise,˜h"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "tas |hj/hi| = |hk/hi| · |hj/hk|.Otherwise,˜hi̸= 0 andh′:= ˜h"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "hj/hi| = |hk/hi| · |hj/hk|.Otherwise,˜hi̸= 0 andh′:= ˜hig −g"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "i= 0,{j, k} ⊂supp(h′).Now,usingthat˜h"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "i= 0,{j, k} ⊂supp(h′).Now,usingthat˜hj= 0and"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "i= 0,{j, k} ⊂supp(h′).Now,usingthat˜hj= 0andg"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "˜h"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "˜hig"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "˜higj−g"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "˜higj−gi˜h"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "˜h"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "˜hig"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "˜higk −g"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "˜higk −gi˜h"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "p(h).Wemusthavei∈supp(ℓ),sincesupp(ℓ) \\ supp(g)̸=∅.Then˜h:=h"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": ".Wemusthavei∈supp(ℓ),sincesupp(ℓ) \\ supp(g)̸=∅.Then˜h:=hiℓ−ℓ"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "˜h̸ = 0,˜h"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "ijand C∈CWsuch that i, j∈Cand for"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "ijand C∈CWsuch that i, j∈Cand for g= gC, |g"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "ijand C∈CWsuch that i, j∈Cand for g= gC, |gj/g"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "ijand C∈CWsuch that i, j∈Cand for g= gC, |gj/gi| = δ.If"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "|g"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "|gj/g"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "|gj/gi| =|g"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "|gj/gi| =|gk/g"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "|gj/gi| =|gk/gi| · |g"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "|gj/gi| =|gk/gi| · |gj/g"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "thatℓ∈supp(˜g);notealsothat˜g"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "thatℓ∈supp(˜g);notealsothat˜gk= g"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ijtriviallyholds,since"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "supp(g) ∩B,j∈supp(h) ∩Bandk∈supp(g) ∩supp(h).Then|h"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "supp(g) ∩B,j∈supp(h) ∩Bandk∈supp(g) ∩supp(h).Then|hj/h"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "upp(g) ∩B,j∈supp(h) ∩Bandk∈supp(g) ∩supp(h).Then|hj/hk| · |g"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "(g) ∩B,j∈supp(h) ∩Bandk∈supp(g) ∩supp(h).Then|hj/hk| · |gk/g"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "ForafullrowrankmatrixA ∈R"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": ": D∈D"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "D"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "forsome0̸ = p ∈R"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "forsome0̸ = p ∈RnandD∈D"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "W= ker(A).Hence, we can also write¯χWfor a subspace W⊆R"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "some matrix A ∈R"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "ForafullrowrankmatrixA ∈R"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "BA∥: ABis"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "BA∥: ABisanon-singular"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "Theorem4.2([DHNV20,DNV20]).ForamatrixA ∈R"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "1 + κ"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "I(p) = arg min {∥z∥:"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "orthogonal to W ∩R"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Proposition4.4([DHNV20,O’L90,Ste89]).ForalinearsubspaceW⊆R"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Proposition4.5([DNV20]).ForalinearsubspaceW⊆R"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "k=1"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "k=1g"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "I(p),andtake"
+  },
+  {
+   "page": 16,
+   "mark": "z",
+   "context": "I(p),andtakeaconformaldecomposition"
+  },
+  {
+   "page": 16,
+   "mark": "h",
+   "context": "I(p),andtakeaconformaldecompositionz=P"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "k∈[h],letC"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "k∈[h],letCk= supp(g"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "acontradictionthatoneofthem,sayC"
+  },
+  {
+   "page": 16,
+   "mark": "h",
+   "context": "acontradictionthatoneofthem,sayC1isdisjointfrom I,andletz′=P"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "k=2"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "k=2g"
+  },
+  {
+   "page": 16,
+   "mark": "z",
+   "context": "k=2gk.Then,"
+  },
+  {
+   "page": 16,
+   "mark": "z",
+   "context": "I=zI=p.Thus,"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "I=zI=p.Thus,z′alsolifts"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "I(p)astheminimum-normliftof"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "BythedeﬁnitionofκW ,∥g"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "BythedeﬁnitionofκW ,∥gk∥∞≤κW ∥g"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "I∥1foreach"
+  },
+  {
+   "page": 16,
+   "mark": "h",
+   "context": "p = zI=P"
+  },
+  {
+   "page": 16,
+   "mark": "h",
+   "context": "I,moreover,conformityguaranteesthat∥p∥1= P"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "k=1"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "k=1g"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "k=1∥g"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "∥g"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "∥g"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "LetussetI= ([n] \\ C) ∪{i},anddeﬁne p"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "LetussetI= ([n] \\ C) ∪{i},anddeﬁne pk= 0ifk∈[n] \\ Candp"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "i.Then"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Deﬁnition4.6.LetV⊆R"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "setoflinearlyindependentvectors{v"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i∈I|λ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i∈I|λi| · ∥v"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ForamatrixM∈R"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "ForamatrixM∈Rm×n,weletδMdenotethevalueassociatedwiththerowsM"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "matrixM∈Rm×n,weletδMdenotethevalueassociatedwiththerowsM1, M"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": ",weletδMdenotethevalueassociatedwiththerowsM1, M2, . . . , M"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "Thiscanbeequivalentlycharacterizedasfollows:forasubset{v"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "quivalentlycharacterizedasfollows:forasubset{vi:i ∈I} ⊆Vandv"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "v"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "vj/∈W= span({v"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "vj/∈W= span({vi:i ∈I}),thesineoftheanglebetweenthevectorv"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "P= {x ∈R"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "forA∈R"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "forA∈Rm×n,b∈R"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "O(n"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Alog(n∆A))forintegerconstraintmatricesA ∈Z"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "A).Theygave"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "boundO(mn"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "boundO(mn2/δ"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "theseboundstoO(n"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "pointx∈R"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "pointx∈Rn,theoraclereturnsx∈Poraviolatedinequality⟨a"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "pointx∈Rn,theoraclereturnsx∈Poraviolatedinequality⟨ai, x⟩≤b"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Ax≤b.TheiralgorithmﬁndsexactprimalanddualsolutionsusingO(n"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "(i)LetA∈R"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "∥a"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "(ii)LetA ∈R"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "(ii)LetA ∈Rm×nbeinbasisformA = (I"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(ii)LetA ∈Rm×nbeinbasisformA = (Im|A′).Then,1/δA⊤≤mκ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "BA,itholdsthat"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Then,thecolumns{g"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "−g"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "−gia"
+  },
+  {
+   "page": 17,
+   "mark": "g",
+   "context": "j∈J"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "j∈Jg"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "j∈Jgj"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "j∈Jgja"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "|g"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "|gi| · ∥a"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "j∈J|g"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "j∈J|gj| · ∥a"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "andusingthatallcolumnshaveunitnorm,weget|g"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "andusingthatallcolumnshaveunitnorm,weget|gj/g"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "LetA=(I"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "LetA=(Im|A′)inbasisform,andletα=max"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "LetA=(Im|A′)inbasisform,andletα=maxi∈[n] ∥A"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Takeanyset{A"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "thoutlossofgenerality,assume|I|=m,i.e.,Iisabasis,byallowingλ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "i∈Iλ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "i∈IλiA"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "I"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "mκA.Hence,|λ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Then,part(ii)followssince∥A"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "P= {x ∈R"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "forA ∈R"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "forA ∈Rm×nandb ∈R"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "forA ∈Rm×nandb ∈Rm.Then,thediameterofPisatmostO((n −m)"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "ssume that Bis the set of the last m columns.Hence,A = (A′|I"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "Bis the set of the last m columns.Hence,A = (A′|Im) for A′∈R"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "P′= {x′∈R"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "inotherwords,P′={x′∈R"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "\u0000−I"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "polyhedrahavethesamediameter.Thus,[DH16]givesaboundO((n −m)"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "O((n−m)"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "⊤+n)).We claim that κC⊤= κA.Indeed, the kernels of A = (A′|I"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "C⊤=(−I"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "that| det(AB)|≤( ˙κW)"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "RecallthatD"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "ForeveryD∈D"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "W= inf {κDW:D∈D"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "Asanexample,letW⊆R"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Theorem5.1([DHNV20]).ThereisanO(n"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Theorem5.1([DHNV20]).ThereisanO(n2m"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "Theorem5.1([DHNV20]).ThereisanO(n2m2+n"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "A ∈R"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "A)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "andaD∈D"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "A)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "A)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "A)2isnotboundedas"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "D∈Dandletd∈R"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "coordinateofeveryw∈Wbyd"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "W)"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "Wbytaking"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "LetHbeacycleinG,thatis,asequenceofindicesi"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "LetHbeacycleinG,thatis,asequenceofindicesi1, i"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "LetHbeacycleinG,thatis,asequenceofindicesi1, i2, . . . , i"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "tHbeacycleinG,thatis,asequenceofindicesi1, i2, . . . , ik, i"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ycleinG,thatis,asequenceofindicesi1, i2, . . . , ik, ik+1= i"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "Weusethenotationκ(H)=κW (H)=Q"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "(κ(H))"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Theorem5.2([DHNV20]).ForasubspaceW⊆R"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "κW (H)"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "κijd"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "κijdj/d"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "log κij+ z"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "log κij+ zj−z"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "z∈R"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "W)"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "W)2impliesthatforanyelementaryvector"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "W)"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": ".Thereexistsastronglypolynomialalgorithm,thatgivenamatrixA∈R"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "(a)AdiagonalmatrixD∈D"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "A> 1,alongwith"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "thenithasauniquesolutionduptoscalarmultiplication.WedeﬁneD∈D"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "BADis"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "suchthat|¯g"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "suchthat|¯gj|̸=|¯g"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "gi|forthecorrespondingelementaryvector¯g∈F(AD).Notethatˆκijd"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "forthecorrespondingelementaryvector¯g∈F(AD).Notethatˆκijdj=d"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "solutiond"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "solutiondito(11)suchthatd ∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "solutiondito(11)suchthatd ∈Znandgcd(d) = 1.Weclaimthatd"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "k= lcm(d).Foreachpairi, j∈[n],d"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "k= lcm(d).Foreachpairi, j∈[n],dj/d"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "p ∈P,ν"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "p ∈P,νp(k) ≤ν"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "LetW⊆R"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Proposition5.4.LetW⊆R"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Proof.(i)⇔(ii):ConsideranyrescalingD∈D"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Proof.(i)⇔(ii):ConsideranyrescalingD∈Dnwithdiagonalentriesd"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "=d"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "ij.Hence,ifκDW=1forsomeD∈D"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "W=1orWhas"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "W=1orWhasaminorW ′suchthatC(W ′)∼=C(U"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "2)whereU"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "W′⊂R"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "the congruenceC(W′)∼= C(U"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "pγ"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "pγ"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "pγ"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "forγ"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "forγi∈N ∪{0}andi∈[4].Further,byC(W′)∼=C(U"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "pγ"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "= pγ1+γ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "= pγ1+γ4−pγ"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "= pγ1+γ4−pγ2+γ"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "pγ"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "pγ"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "AlternativeProofofTheorem5.5.Let A ∈R"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "ertiesinProposition3.18inbasisformA=(I"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "k∈[m]E"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "k∈[m]Ek(G)whereE"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "γ :E(G) →R+wherefore ∈E"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "containstwoshortercyclesC1, C"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "containstwoshortercyclesC1, C2suchthatγ(C1)γ(C"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "γ(C1)̸=1orγ(C"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "AI,JofAwhereI:={i∈[m]:E"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "L ∈D"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "L ∈Dn,R ∈D"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "j∈JRjj| det( ˜AI,J)|=2"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "inalwork[Hof52]hasanalyzedproximityofLPsolutions.GivenP={x∈R"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "Ax≤b},x"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Ax≤b},x0∈R"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "x0∈Rn,andnorms∥.∥αand∥.∥β,weareinterestedintheminimumof∥x −x"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "overx∈P.HoﬀmanshowedthatthiscanbeboundedasHα,β(A)∥(Ax"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Inthissection,weshowaHoﬀman-boundH∞,"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "∥x −d∥1isminimal.LetD= {i ∈[n] :d"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "∥x −d∥1isminimal.LetD= {i ∈[n] :di< 0 = x"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "k=1"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "k=1g"
+  },
+  {
+   "page": 22,
+   "mark": "t",
+   "context": "k=1gkforsome"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "k=1gkforsomet∈[n].Weclaimthatsupp(g"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "k=1gkforsomet∈[n].Weclaimthatsupp(gk) ∩D̸=∅forall"
+  },
+  {
+   "page": 22,
+   "mark": "t",
+   "context": "x −d=P"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "supp(g"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "supp(gk)∩D = ∅, then x′= x−εg"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "Consideranyindexi/∈D.Foreveryelementaryvectorg"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "Consideranyindexi/∈D.Foreveryelementaryvectorgkwithi∈supp(g"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "anindexj∈Dsuchthat|g"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "i| ≤κW |g"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "g"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "g"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "g"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "|d"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "|x"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "|xi −d"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "enextprovideproximityresultsforoptimization.Forvectorsd, c∈R"
+  },
+  {
+   "page": 23,
+   "mark": "c",
+   "context": "1.Consequently,if"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "1.Consequently,ifc≥0and"
+  },
+  {
+   "page": 23,
+   "mark": "g",
+   "context": "i=1"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "i=1g"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "i=1gkforsome"
+  },
+  {
+   "page": 23,
+   "mark": "t",
+   "context": "Takeaconformalcircuitdecompositionx−d=P"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "di<0=x"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "asimilarargumentasintheproofofLemma6.1,wecanshowthatforeachg"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "supp(g"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "supp(gk) ∩D̸= ∅,org"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "g"
+  },
+  {
+   "page": 23,
+   "mark": "c",
+   "context": "i<0and"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i<0andc"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i<0andci>0,implying"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "requiresthatforsomei∈supp(g"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "requiresthatforsomei∈supp(gk),g"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Lemma6.3.LetW⊆R"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Lemma6.3.LetW⊆Rnbeasubspaceandc, d∈R"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Theorem6.4.LetW⊆R"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Theorem6.4.LetW⊆Rnbeasubspaceandc, d∈R"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "R := {i ∈[n] :˜x"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "R> 0,implying"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "Notethatanyy∈R"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "Notethatanyy∈Rminducesafeasibledualsolutionwiths"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "Notethatanyy∈Rminducesafeasibledualsolutionwithsi=(c"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "Notethatanyy∈Rminducesafeasibledualsolutionwithsi=(ci−⟨a"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "tanyy∈Rminducesafeasibledualsolutionwithsi=(ci−⟨ai, y⟩)+andt"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "(⟨a"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "(⟨ai, y⟩−c"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "(⟨ai, y⟩−ci)+fori∈[n].Aprimalfeasiblesolutionxandy∈R"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "onlyif⟨a"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "onlyif⟨ai, y⟩≤c"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "onlyif⟨ai, y⟩≤ciifx"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "onlyif⟨ai, y⟩≤ciifxi< u"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "onlyif⟨ai, y⟩≤ciifxi< uiand⟨a"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "onlyif⟨ai, y⟩≤ciifxi< uiand⟨ai, y⟩≥c"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "onlyif⟨ai, y⟩≤ciifxi< uiand⟨ai, y⟩≥ciifx"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "a"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "R"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "a"
+  },
+  {
+   "page": 24,
+   "mark": "u",
+   "context": "R"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "i= 0forevery"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "i= 0foreveryi ∈R"
+  },
+  {
+   "page": 24,
+   "mark": "x",
+   "context": "i= 0foreveryi ∈R0and"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "i= u"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "i= uiforevery"
+  },
+  {
+   "page": 24,
+   "mark": "u",
+   "context": "i= uiforeveryi ∈R"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "A=κA.Let¯d∈R"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "A=κA.Let¯d∈R2"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "With¯c=(c, 0"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "Point Methodthat solves LP(A, b, c) within O(n"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "Point Methodthat solves LP(A, b, c) within O(n3."
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Recently,[DHNV20]improvedtheVavasis–YeboundtoO(n"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "Recently,[DHNV20]improvedtheVavasis–YeboundtoO(n2."
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "AdeﬁnedinSection"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "˜x ∈R"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "letI⊆[n]denotethesetof‘large’coordinatesof˜x,i.e.,where˜x"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "theremustexistafeasiblesolutionx∈W+ d,x≥0suchthatx"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "J(p)introducedinSection4.1:for"
+  },
+  {
+   "page": 25,
+   "mark": "z",
+   "context": "J(p)introducedinSection4.1:forp∈πJ(W),"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "2ifd ∈Wthenreturn0"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "3˜x ←APX-LP(W, d, 0"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "4I←{i :˜x"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "forarbitrarycostvectorc ∈R"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "\u0010x"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "\u0010xi + ∆x"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "\u0010s"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "\u0010si + ∆s"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "ﬁnitely, but has an iteration bound of O(n"
+  },
+  {
+   "page": 26,
+   "mark": "5",
+   "context": "ﬁnitely, but has an iteration bound of O(n3."
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "accordingtothex"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "accordingtothexivalues:weorderthevariablesasx"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "accordingtothexivalues:weorderthevariablesasx1≥x"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "accordingtothexivalues:weorderthevariablesasx1≥x2≥. . .≥x"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "wheneverthereisabiggapbetweenconsecutivevariables,i.e.xi>O(n"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010x"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010xi + ∆x"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010x"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010xi + ∆x"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010s"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010si + ∆s"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010s"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010si + ∆s"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "VY algorithm already achieves O(n"
+  },
+  {
+   "page": 27,
+   "mark": "5",
+   "context": "VY algorithm already achieves O(n3."
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "invariant,aswellasanimprovedanalysisofO(n"
+  },
+  {
+   "page": 27,
+   "mark": "5",
+   "context": "invariant,aswellasanimprovedanalysisofO(n2."
+  },
+  {
+   "page": 27,
+   "mark": "s",
+   "context": "N=0and"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "much.Bythatwemeanthatthereisavectorz∈RBsuchthat|z"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "much.Bythatwemeanthatthereisavectorz∈RBsuchthat|zi/x"
+  },
+  {
+   "page": 27,
+   "mark": "x",
+   "context": "Section4.1.LetW"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "Section4.1.LetWx=diag(x)−1W={(w"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "Section4.1.LetWx=diag(x)−1W={(wi/x"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "Section4.1.LetWx=diag(x)−1W={(wi/xi)"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010 z"
+  },
+  {
+   "page": 27,
+   "mark": "x",
+   "context": "LW"
+  },
+  {
+   "page": 27,
+   "mark": "x",
+   "context": "\u0011\r\r\r ≤∥LW"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010 z"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "\u0010∆x"
+  },
+  {
+   "page": 27,
+   "mark": "x",
+   "context": "≤nκW"
+  },
+  {
+   "page": 27,
+   "mark": "x",
+   "context": "imbalancesin the rescaledspace W"
+  },
+  {
+   "page": 27,
+   "mark": "x",
+   "context": "esin the rescaledspace Wx:Fori ∈Bandj∈Nwe are interestedinκW"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "oftheelementsxi.Thisguaranteesthatκjixj/xiissmallsincexi>O(n"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "theyproveaboundO(n"
+  },
+  {
+   "page": 28,
+   "mark": "5",
+   "context": "theyproveaboundO(n3."
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "allotherLPswithobjectivecinthehyperplanearrangementin{x∈R"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "thehyperplanesx"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "perplanesxi= 0;i.e.,allLPswheresomenonnegativityconstraintsx"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "n LP in standard equality form with upper bounds, where A ∈R"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "tandard equality form with upper bounds, where A ∈Rm×n, b ∈R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": " equality form with upper bounds, where A ∈Rm×n, b ∈Rm, u ∈R"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "polynomialHirschconjecture;inTheorem4.8showsaboundO((n −m)"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "thediameterof{x ∈R"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "thediameterof{x ∈Rn:Ax = b, x ≥0}forA ∈R"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "t iterate x(t), consider a conformal circuit decomposition h"
+  },
+  {
+   "page": 29,
+   "mark": "k",
+   "context": "t), consider a conformal circuit decomposition h1, . . . , h"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "N∥1ismaximized.Weﬁndthenextiterate"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "andselectacircuith"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "andselectacircuithi, i∈[k]suchthat∥h"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "x(t)+ αh"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "Nonetheless,itcanbeshownthatwewillnotovershooth"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "ecanshowthatthesteplengthwillbeα∈[1, n].Further,thechoiceofh"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "TheanalysisfocusesontheindexsetsL"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "N∥1}andR"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i}.Forevery"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "i}.Foreveryi∈L"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "i}.Foreveryi∈Lt,"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i}.Foreveryi∈Lt,x"
+  },
+  {
+   "page": 29,
+   "mark": "t",
+   "context": "N∥1isdecreasing,onceanindexentersL"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i̸=x"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "i̸=xiand"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "i∈{0, u"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "i∈{0, ui}}.Since"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "i∈{0, ui}}.Sinceabasicsolution"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "equaltothelowerorupperbound,atthispointthereare≤2mvariablesx"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "solutionx(t)ifandonlyif⟨c, g⟩<0,g"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "=0andg"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "i∈V"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i∈Vb"
+  },
+  {
+   "page": 30,
+   "mark": "x",
+   "context": "i∈Vbi=0.Theobjectiveistoﬁndtheminimumcostﬂow"
+  },
+  {
+   "page": 30,
+   "mark": "x",
+   "context": "wherefor(i, j)∈E"
+  },
+  {
+   "page": 31,
+   "mark": "x",
+   "context": "eepest-descentdirectionamounts to ﬁnding a residual cycleC⊆E"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "minimizesc(C)/d(C),whered"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "minimizesc(C)/d(C),wherede=1/u"
+  },
+  {
+   "page": 31,
+   "mark": "x",
+   "context": "minimizesc(C)/d(C),wherede=1/ueforeveryresidualarce∈E"
+  },
+  {
+   "page": 31,
+   "mark": "x",
+   "context": "descent direction within a factor |E"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "(b)Forgivenε>0,onecanﬁndanε-optimalsolutionin"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "(b)Forgivenε>0,onecanﬁndanε-optimalsolutionin2"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "(b)Forgivenε>0,onecanﬁndanε-optimalsolutionin2n"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "basicsolutionsare1/k-integralforsomek∈Zandcostfunctionisc ∈Z"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "Normalizingsuchthatg"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Foranintegercostfunctionc∈Z"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "ifi ∈[n] \\ B, y"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "ifi ∈[n] \\ B, y"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "ifi ∈[n] \\ B, yi= u"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "stfunction,Theorem8.2(c)andProposition8.3yieldaboundO((n −m)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "unction,Theorem8.2(c)andProposition8.3yieldaboundO((n −m)2¯κ"
+  },
+  {
+   "page": 32,
+   "mark": "m",
+   "context": "heorem8.4.FortheproblemLP(A, b, c, u)withconstraintmatrixA∈R"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "descentalgorithmterminateswithinO(n"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "ThisimprovesontheaboveboundO((n −m)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "ThisimprovesontheaboveboundO((n −m)2¯κ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "thatκA≤¯κ"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "achievesalog κAdependence;therunningtimeisboundedasO(n"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "nessusingO(n"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "+,welet"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "+,welet1/x ∈(R ∪{∞})"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "geometricdecreaseinthe objectivevalue.Foravectorx ∈R"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "thevectorwwithw"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "thevectorwwithwi= 1/x"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "thevectorwwithwi= 1/xi(inparticular,w"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "thevectorwwithwi= 1/xi(inparticular,wi= ∞ifx"
+  },
+  {
+   "page": 33,
+   "mark": "x",
+   "context": "i= 0inanyoptimalsolution"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "ﬂowg,theminimumnonzerovalueof|g"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "y∈R"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "y∈Rm,theyareprimalanddualoptimalsolutionsifandonlyif⟨a"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "∈Rm,theyareprimalanddualoptimalsolutionsifandonlyif⟨ai, y⟩≤c"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "theyareprimalanddualoptimalsolutionsifandonlyif⟨ai, y⟩≤ciifx"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "yareprimalanddualoptimalsolutionsifandonlyif⟨ai, y⟩≤ciifxi<u"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "⟨a"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "⟨ai, y⟩≥c"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "⟨ai, y⟩≥ciifx"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "R"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Rm×(2"
+  },
+  {
+   "page": 34,
+   "mark": "x",
+   "context": "A= κA.Fora feasiblesolution"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "∈R"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "∈R2"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "N(x) = {i ∈[n] : x"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "N(x) = {i ∈[n] : xi< u"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "N(x) = {i ∈[n] : xi< ui} ∪{n + j: j∈[n] : x"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "⟨1"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "⟨12"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Wecanmapasolutionz∈R"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Wecanmapasolutionz∈R2"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Wecanmapasolutionz∈R2ntog∈R"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Wecanmapasolutionz∈R2ntog∈Rnbysettingg"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Wecanmapasolutionz∈R2ntog∈Rnbysettinggi=z"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Wecanmapasolutionz∈R2ntog∈Rnbysettinggi=zi −z"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "⟨¯a"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "⟨¯ai, y⟩≤¯c"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "z"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "zj> 0.Byprimal-dualslackness,⟨a"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "zj> 0.Byprimal-dualslackness,⟨aj, y⟩= c"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "⟨¯a"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "⟨¯ai, y⟩= ⟨−a"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "⟨¯ai, y⟩= ⟨−aj, y⟩= −c"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "⟨¯ai, y⟩= ⟨−aj, y⟩= −cj−ε < −c"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "⟨¯ai, y⟩= ⟨−aj, y⟩= −cj−ε < −cj=¯c"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "T:= {i ∈N: ⟨¯a"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "T:= {i ∈N: ⟨¯ai, y⟩>¯c"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "thatis,ifi∈[n]then⟨a"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "thatis,ifi∈[n]then⟨ai, y⟩>c"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "thatis,ifi∈[n]then⟨ai, y⟩>ci,andifi∈[n+1, 2n],i=n +j,then⟨a"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": ",ifi∈[n]then⟨ai, y⟩>ci,andifi∈[n+1, 2n],i=n +j,then⟨aj, y⟩<c"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "rx(t).Bycomplementaryslackness,everyi ∈supp(z(t))musthave⟨¯a"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "complementaryslackness,everyi ∈supp(z(t))musthave⟨¯ai, y⟩=¯c"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "n+j.Bythechoiceof"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "wemayonlyincreasex"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "Consequently,everyindexienteringN(x(r+1))has⟨¯a"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "Consequently,everyindexienteringN(x(r+1))has⟨¯ai, y⟩<¯c"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "z"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "zi= (1 −z"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "Intheﬁrst inequality,weusethat⟨¯a"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "Intheﬁrst inequality,weusethat⟨¯ai, y⟩−¯c"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "ality,weusethat⟨¯ai, y⟩−¯ci≤εbythefeasibilityof(y, ε),and⟨¯a"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "usethat⟨¯ai, y⟩−¯ci≤εbythefeasibilityof(y, ε),and⟨¯aj, y⟩−¯c"
+  },
+  {
+   "page": 35,
+   "mark": "z",
+   "context": "i"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "iz"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "particular|supp(z)| ≤m,andz"
+  },
+  {
+   "page": 35,
+   "mark": "z",
+   "context": "A"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "Az"
+  },
+  {
+   "page": 35,
+   "mark": "z",
+   "context": "Azj= κA"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "Azj= κAz"
+  },
+  {
+   "page": 35,
+   "mark": "z",
+   "context": "Azj= κAzj.Consequently,"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "Azj= κAzj.Consequently,z"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "forj∈[n],x"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "forj∈[n],xj=u"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "forj∈[n],xj=uj,andforj∈[n + 1, 2n],j=i + n,x"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "Claim8.9.1.Thereexistsaj∈supp(z)suchthat⟨¯a"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "Claim8.9.1.Thereexistsaj∈supp(z)suchthat⟨¯aj, y′⟩>¯c"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "Proof.Fora contradiction,assume that ⟨¯a"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "Proof.Fora contradiction,assume that ⟨¯aj, y′⟩−¯c"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "Letusdeﬁnethecostc′∈R"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "⟨¯a"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "i< u"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "max{c"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "max{ci, ⟨¯a"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "i= u"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "min{c"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "min{ci, ⟨¯a"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "x ∈Z"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "andaconformalcircuitdecompositionw=P"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 36,
+   "mark": "g",
+   "context": "i=1λi"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "i=1λigC"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "i=1λigCiforsome"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "i=1λigCiforsomek≤nandcircuitsC"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "i=1λigCiforsomek≤nandcircuitsC1, . . . , C"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "≤0foralli ∈[k]asotherwisex∗−λ"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "≤0foralli ∈[k]asotherwisex∗−λigC"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "c, gC"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "andλ"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "andλ1, . . . , λ"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "λ"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "λi≤1foralli ∈[k]asotherwiseˆx −gC"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "∥gC"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "allg∈ker(A) ∩Z"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "allg∈ker(A) ∩Znsuchthatthereexistsnoh∈(ker(A) ∩Z"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "conformaland|h"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "conformaland|hi| ≤|g"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "divisorequaltoonebelongtotheGraverbasis:{g∈F(W) ∩Z"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "g∈G(A)andg=P"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "i=1λi"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "i=1λigC"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "i=1λigCibe"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "i=1λigCibeaconformalcircuitdecompositionwhere"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "λ"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "λi< 1foralli ∈[k]asotherwiseh"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "λ"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "λi∥gC"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "Theorem9.4.LetA ∈Z"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Theorem9.4.LetA ∈Zm×n.Theng"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "Theorem9.4.LetA ∈Zm×n.Theng1(A) ≤(2m∥A∥max + 1)"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "LetW⊆R"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "setg"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "setg1= αgforthelargestvalueα> 0suchthatz −g"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "apply this procedure to z −g"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "s procedure to z −g1to obtain the other elementary vectors g"
+  },
+  {
+   "page": 37,
+   "mark": "h",
+   "context": "to z −g1to obtain the other elementary vectors g2, . . . , g"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "Proposition10.1.LetW⊆R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "Proposition10.1.LetW⊆RnbealinearspacewithκW= 1,andletz∈W∩Z"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "k=1"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "k=1g"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "k=1gk,wehave"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "k=1gk,wehaveg"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "k=1gk,wehavegk∈F(W) ∩Z"
+  },
+  {
+   "page": 37,
+   "mark": "h",
+   "context": "everymaximalconformalcircuitdecompositionz=P"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "Conjecture10.1.1.LetW⊆R"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "re10.1.1.LetW⊆Rnbearationallinearsubspace.Then,foreveryz∈W∩Z"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "k=1"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "k=1g"
+  },
+  {
+   "page": 37,
+   "mark": "h",
+   "context": "k=1gk,"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "k=1gk,h≤nsuchthateach"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "k=1gk,h≤nsuchthateachg"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "k=1gk,h≤nsuchthateachgkis"
+  },
+  {
+   "page": 37,
+   "mark": "h",
+   "context": "thereexistsaconformalcircuitdecompositionz=P"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "Proposition10.2.LetW⊆R"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "z∈W∩Z"
+  },
+  {
+   "page": 38,
+   "mark": "h",
+   "context": "z∈W∩Zn,andeverymaximalconformalcircuitdecompositionz=P"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "k=1"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "k=1g"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "k=1gk,wehavethat"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "k=1gk,wehavethatg"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "Proof.AssumeκDW=1forsomeD∈D"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "k=1"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "k=1g"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "diagonalentriesd"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "diagonalentriesdi=Dii∈Zandd"
+  },
+  {
+   "page": 38,
+   "mark": "h",
+   "context": "diagonalentriesdi=Dii∈Zanddi| ˙κW.Letz=P"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "k=1Dg"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "k=1Dgkisalso"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "decompositionofz∈W∩Z"
+  },
+  {
+   "page": 38,
+   "mark": "h",
+   "context": "decompositionofz∈W∩Zn.Clearly,Dz=P"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "decompositionofDz∈DW∩Z"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "decompositionofDz∈DW∩Zn.ByProposition10.1,Dg"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "decompositionofDz∈DW∩Zn.ByProposition10.1,Dgk∈F(DW) ∩Z"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "compositionofDz∈DW∩Zn.ByProposition10.1,Dgk∈F(DW) ∩Zn.Sinced"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "thisimpliesthatg"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "Proposition10.3.LetW⊆R"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "position10.3.LetW⊆RnbearationallinearsubspacewithκW=2αforα∈Z"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "z∈W∩Z"
+  },
+  {
+   "page": 38,
+   "mark": "h",
+   "context": "z∈W∩Znhasamaximalconformalcircuitdecompositionz=P"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "k=1"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "k=1g"
+  },
+  {
+   "page": 38,
+   "mark": "h",
+   "context": "k=1gkwith"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "g"
+  },
+  {
+   "page": 38,
+   "mark": "h",
+   "context": "etuswritethemaximalconformalcircuitdecompositionintheformz=P"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "k=1λ"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "k=1λk"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "k=1λkg"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "suchthatlcm(g"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "suchthatlcm(gk)=1,andallentriesg"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "i∈{±1, ±2, ±4, . . . , ±2α}for"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "i∈{±1, ±2, ±4, . . . , ±2α}fork∈[h],"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "j}.Hence,λ"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "j}.Hence,λ1is"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "j}.Hence,λ1is1/2α-integral.Consequently,bothλ"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "j}.Hence,λ1is1/2α-integral.Consequently,bothλ1"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "j}.Hence,λ1is1/2α-integral.Consequently,bothλ1g"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "j}.Hence,λ1is1/2α-integral.Consequently,bothλ1g1andλ"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "j}.Hence,λ1is1/2α-integral.Consequently,bothλ1g1andλ2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "j}.Hence,λ1is1/2α-integral.Consequently,bothλ1g1andλ2g"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "j}.Hence,λ1is1/2α-integral.Consequently,bothλ1g1andλ2g2=z−λ"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "j}.Hence,λ1is1/2α-integral.Consequently,bothλ1g1andλ2g2=z−λ1"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "}.Hence,λ1is1/2α-integral.Consequently,bothλ1g1andλ2g2=z−λ1g"
+  },
+  {
+   "page": 38,
+   "mark": "j",
+   "context": "min"
+  },
+  {
+   "page": 38,
+   "mark": "j",
+   "context": "minj{z"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "minj{zj/g"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "Ifh=3,thenλ1g"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Ifh=3,thenλ1g1is1/2α-integralasabove.Italsofollowsthatλ2g"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "3,thenλ1g1is1/2α-integralasabove.Italsofollowsthatλ2g2andλ3g"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "Assumeforacontradictionβ>α.Letµ"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "Assumeforacontradictionβ>α.Letµk=2βλ"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "Assumeforacontradictionβ>α.Letµk=2βλkfork=1, 2, 3.Thus,µ"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "ssumeforacontradictionβ>α.Letµk=2βλkfork=1, 2, 3.Thus,µk∈Z,µ"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "assume that µ"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "assume that µ3 is odd.There exists an i ∈[n] such that |g"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "i| = 1.Then, 2β"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "i| = 1.Then, 2βz"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "i| = 1.Then, 2βzi= µ"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "i| = 1.Then, 2βzi= µ1"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "i| = 1.Then, 2βzi= µ1g"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "i+µ"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "i+µ2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "i+µ2g"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "i+µ"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "i+µ3"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "i+µ3g"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "Letustakeanyj∈[n]suchthatg"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "j=0.Then,"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "j=0.Then,2β"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "j=0.Then,2βz"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "j=0.Then,2βzi=µ"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "j=0.Then,2βzi=µ2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "j=0.Then,2βzi=µ2g"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "j+ µ"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "j+ µ3"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "j+ µ3g"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "j.Notingthat|g"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "|g"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "j|arepowers of2,bothatmost"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "j|arepowers of2,bothatmost2α,itfollowsthat|g"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "j| = |g"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "j|;byconformity,wehave"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "j|;byconformity,wehaveg"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "j= g"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Consequently,supp(g"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "Consequently,supp(g2−g"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "Consequently,supp(g2−g3)⊆supp(g"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Consequently,supp(g2−g3)⊆supp(g1).Clearly,g"
+  },
+  {
+   "page": 38,
+   "mark": "3",
+   "context": "Consequently,supp(g2−g3)⊆supp(g1).Clearly,g2−g"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "j.Thiscontradictsthefactthat"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "j.Thiscontradictsthefactthatg"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "zj= λ1g"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "Forthismatrix˙κA=5850=2 × 3"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "Forthismatrix˙κA=5850=2 × 32× 5"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "rthismatrix˙κA=5850=2 × 32× 52× 13holds,andthereexistsno˜A∈Z"
+  },
+  {
+   "page": 44,
+   "mark": "11",
+   "context": "theform˜A = BAwhereBisa2 × 2invertiblematrix.SinceA"
+  }
+ ]
+}

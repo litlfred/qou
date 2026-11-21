@@ -14,8 +14,9 @@ import { lemma } from "../../schema/builders";
  * the change in Σ content², and `2n − 1 = n² − (n − 1)²` matches the change
  * in the `+ n²` term.
  *
- * This is an ALTERNATIVE route to `lem:piece-a-hook-content-identity`.  The
- * route Lean takes is arm-leg / β-set, not this one.
+ * This is an ALTERNATIVE route to `lem:piece-a-hook-content-identity`; that
+ * block's Lean proof takes the arm-leg / β-set route. This identity itself is
+ * proved in `QOU/BraidKnot/PieceACornerRemoval.lean`.
  */
 export default lemma({
   label: "lem:piece-a-corner-removal-obligation",
@@ -31,6 +32,9 @@ export default lemma({
     "induction",
     "combinatorial-lemma",
   ],
+  lean: {
+    ref: "qou:QOU.BraidKnot.PieceACornerRemoval.corner_removal",
+  },
   computation: {
     engine: "python",
     script: "computations/probes/piece_a_corner_removal_probe.py",
@@ -40,18 +44,17 @@ export default lemma({
   },
   authorNotes: [
     {
-      kind: "caveat",
-      date: "2026-08-24",
+      kind: "status",
+      date: "2026-11-15",
       body:
-        "**No Lean backing, deliberately unclaimed.** The draft this block " +
-        "was promoted from named seven Lean declarations — `colLen_corner`, " +
-        "`hook_r_j`, `hook_i_s`, `sum_hook_r`, `sum_hook_s`, " +
-        "`sz_decomposition`, `corner_removal_obligation` — and **none of the " +
-        "seven exists anywhere in the repository**. Rather than carry a " +
-        "dangling `lean.ref`, the block states the mathematics and cites the " +
-        "exhaustive probe instead: all five steps and the assembled " +
-        "obligation are checked on every corner of every partition of " +
-        "$n \\le 16$ (2,455 corners).",
+        "**Proved in Lean, sorry-free:** " +
+        "`QOU.BraidKnot.PieceACornerRemoval.corner_removal`, over `ℤ`, for any " +
+        "Young diagram and any removable corner. The proof splits the cells " +
+        "by the corner's column (`card_cells_split`) and uses " +
+        "`colLen_corner` (column `s` has `r + 1` cells). This replaces the " +
+        "2026-08-24 caveat, which recorded that the seven declarations an " +
+        "earlier draft named never existed. The exhaustive probe " +
+        "($n \\le 16$, 2,455 corners) stays as an independent check.",
     },
   ],
 });

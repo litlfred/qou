@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0907.4143v1",
  "source_sha256": "a2090d1e574b27db",
- "brief": "Soft and Supersoft X-ray Sources in Symbiotic Stars1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak",
- "extended": "**Soft and Supersoft X-ray Sources in Symbiotic Stars1**\n\n*Chunhua Zhua,b, Guoliang Lüb, Zhaojun Wanga,b and*\n\n14 pp, 9 sections.\n\n**Abstract.** Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak thermonuclear runaways or steady hydrogen burning symbiotic stars, we investigate the Galactic soft and supersoft X-ray sources in symbiotic stars by means of population synthesis. The Galactic occurrence rates of soft X-ray sources and supersoft X-ray sources are from ∼2 to 20 yr−1, and ∼2 to 17 yr−1, respectively. The numbers of X-ray sources in symbiotic stars range from 2390 to 6120. We simulate the distribution of X-ray sources over orbital periods, masses and mass-accretion rates of white dwarfs. The agreement with observations is reasonable.\n\n**Outline.** Introduction; The model; Symbiotic stars; X-ray sources; Results; Basic parameters of the Monte Carlo simulation; Population of X-ray sources; Properties of X-ray sources; Conclusions",
+ "brief": "Soft and Supersoft X-ray Sources in Symbiotic Stars 1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak",
+ "extended": "**Soft and Supersoft X-ray Sources in Symbiotic Stars 1**\n\n*Chunhua Zhua,b, Guoliang Lüb, Zhaojun Wanga,b and*\n\n14 pp, 10 sections.\n\n**Abstract.** Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak thermonuclear runaways or steady hydrogen burning symbiotic stars, we investigate the Galactic soft and supersoft X-ray sources in symbiotic stars by means of population synthesis. The Galactic occurrence rates of soft X-ray sources and supersoft X-ray sources are from ∼2 to 20 yr−1, and ∼2 to 17 yr−1, respectively. The numbers of X-ray sources in symbiotic stars range from 2390 to 6120. We simulate the distribution of X-ray sources over orbital periods, masses and mass-accretion rates of white dwarfs. The agreement with observations is reasonable.\n\n**Outline.** Front matter; Introduction; The model; Symbiotic stars; X-ray sources; Basic parameters of the Monte Carlo simulation; Results; Population of X-ray sources; Properties of X-ray sources; Conclusions",
  "tokens": {
   "brief": 47,
-  "extended": 258
+  "extended": 262
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -30,14 +35,14 @@
    "pages": "4-5"
   },
   {
-   "id": "sec-004-results",
-   "title": "Results",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-005-basic-parameters-of-the-monte-carlo-simulation",
+   "id": "sec-004-basic-parameters-of-the-monte-carlo-simulation",
    "title": "Basic parameters of the Monte Carlo simulation",
    "pages": "5-6"
+  },
+  {
+   "id": "sec-005-results",
+   "title": "Results",
+   "pages": "6-6"
   },
   {
    "id": "sec-006-population-of-x-ray-sources",

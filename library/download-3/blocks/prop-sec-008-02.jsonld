@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/download-3/blocks/prop-sec-008-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 13,
+  "pageEnd": 17,
+  "text": "prop-sec-008-02.md",
+  "derivedFrom": "library/download-3/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.2.3",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-008-cgχ4.md (p. 13-17)",
+    "claim_id": "download-3#proposition:2.2.3",
+    "lean_status": "unformalized"
+  }
+}

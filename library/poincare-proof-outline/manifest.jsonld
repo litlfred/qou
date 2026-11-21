@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/poincare-proof-outline",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Poincaré Disc Model",
+  "title": "Formalization of the Poincare disc model of hyperbolic geometry",
   "contains": [
     "library/poincare-proof-outline/sections/sec-front-matter",
     "library/poincare-proof-outline/sections/sec-000",
@@ -81,7 +81,7 @@
     "library/poincare-proof-outline/sections/sec-066"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "poincare-proof-outline",
     "title_source": "corroborated",

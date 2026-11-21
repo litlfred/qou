@@ -1,0 +1,42 @@
+166 Laurent series, amoebas, and convex geometry
+
+defined by
+a(2t) :0<r<1/2
+BQt-1) :1/2<t<1-
+
+If a(t) = (ai (t), a2(t)) and B(t) = (bi (1), b2(t)) then the Hadamard loop a © B :
+[0,1] — C? obtained by coordinatewise product is defined by (a © B)(t) =
+(abil), a2(t)b2(0)).
+
+a) Prove that a@£ is homotopic to [a#u] © [u#B], where u is the constant curve
+u(t) = (1, 1).
+
+b) Prove that [a#u] © [u#B] = [a © ul#[u © Bf].
+
+c) Fix a,b € Zand let pj, p2 : [0,1] — C? be the curves p;(t) = (e?"", 1) and
+p2(t) = (1,e*"). Prove that the image of w = e?*" under the map (w“, w?)
+is homotopic to pi#p2.
+
+(a#B)(Y) = |
+
+Exercise 6.17. Use Propositions 6.27 and 6.24 to prove Corollary 6.28.
+
+Exercise 6.18. Let P be a d-dimensional polytope with integer vertices and let
+F(Z) = mer Cm2™ where Cm = exp(—Alm?).
+
+(a) Show that if 2 > 0 is sufficiently large then there is some a = a(m) € R¢
+such that
+Cm exp(m + x) > » Cm: exp(m’ - x).
+
+m/’eP
+m' em
+
+(b) Conclude that (m2) is not in amoeba(f).
+
+(c) Show that each 2(m) is in a separate component of amoeba(f)° as m
+varies over P, establishing that for every polytope with integer coordinates
+there is a polynomial whose amoeba complement has a component for
+every integer point of the polytope.
+
+Exercise 6.19. Prove that if 2 is sufficiently large in Exercise 6.18 then the
+boundary 6 amoeba(f) equals the contour C(f). (Be warned this is difficult.)

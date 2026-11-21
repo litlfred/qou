@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0805.1447v2/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Braid Foliation",
-  "pageStart": 8,
-  "pageEnd": 10,
-  "text": "../sections/sec-003-3-braid-foliation.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0805.1447v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0805.1447v2",
+  "title": "The geometric meaning of Dehornoy ordering and Dehornoy floor",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-003-22-the-geometric-meaning-of-dehornoy-ordering-an.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0805.1447v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0805.1447v2/manifest.jsonld",
   "provenance": "ingested"
 }

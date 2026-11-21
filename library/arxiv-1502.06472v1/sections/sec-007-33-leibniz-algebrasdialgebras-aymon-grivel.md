@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1502.06472v1
-doc_title: "Gröbner-Shirshov bases and PBW theorems∗ L. A. Bokut†"
+doc_title: "Gröbner-Shirshov bases and PBW theorems"
 section_id: sec-007-33-leibniz-algebrasdialgebras-aymon-grivel
 section_title: "Leibniz algebras–dialgebras (Aymon, Grivel)"
 section_number: 3.3
@@ -10,7 +10,8 @@ source_sha256: 381cd869fcc06f08
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.944
-latex_coverage_ratio: 0.944
+latex_coverage_ratio: 0.857
+doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
 ---
 Dialgebra: $a\dashv(b\vdash c)=a\dashv b\dashv c,\ (a\dashv b)\vdash
 c=a\vdash b\vdash c,\ a\vdash(b\dashv c)=(a\vdash b)\dashv c$ and $\vdash,\dashv$ associative.

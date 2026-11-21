@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-024-moves-between-triangulated-pl-manifolds
 section_title: "Moves between triangulated PL manifolds"
 section_number: null
 pages: 39-41
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
-latex_coverage_ratio: 0.904
+latex_coverage_ratio: 0.984
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 \label{subsec:PLsubsec}
 

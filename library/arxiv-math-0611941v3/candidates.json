@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0611941v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "bf6f2d55c7adee5154d88e2f923c5598f9cf7f0439d1eb0be1c51706d3be1426",
+  "file": "0611941v3.pdf"
+ },
+ "provenance": {
+  "title": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR",
+  "authors": "MEINOLF GECK",
+  "arxiv": {
+   "id": "math/0611941",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "19 Mar 2007"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

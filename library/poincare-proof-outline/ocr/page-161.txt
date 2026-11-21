@@ -1,0 +1,73 @@
+hence MM: ?M «1 € unit-disc \ ?M x2€ unit-disc A — poincare-collinear {?M u, ?M x1, ?M 22}
+using *
+by auto
+show ?P u xl x2 (is Jal€unit-disc. Ja2€unit-disc. ?P' al a2 u xl x2)
+proof—
+obtain Mai Ma2 where MM: Mai € unit-disc Ma2 € unit-disc ?P' Mal Ma2 (?M u) (?M a1) (?M 22)
+using **[rule-format, OF MM]
+by blast
+hence MM’: V a'€unit-disc. poincare-in-angle a’ Mal (?M u) Ma2 —+ poincare-ray-meets-line (?M u) a’ (?M
+x1) (?M x2)
+by auto
+obtain al a2 where a: al € unit-disc a2 € unit-disc ?M al = Mal ?M a2 = Ma2
+using uf
+by (metis «Mal € unit-disc» «Ma2 € unit-disc> image-iff unit-disc-fiz-iff)
+
+have Y a’Eunit-disc. poincare-in-angle a’ al u a2 —+ poincare-ray-meets-line u a’ x1 «2
+proof safe
+
+fix a’
+
+assume a’ € unit-disc poincare-in-angle a' al u a2
+
+thus poincare-ray-meets-line u a’ x1 x2
+
+using MM(1—2) MM "[rule-format, of ?M a‘) * uf a zx
+
+by (meson unit-disc-fix-discl unit-disc-fix-preserves-poincare-in-angle unit-disc-fix-preserves-poincare-ray-meets-line)
+qed
+
+hence ?P‘ al a2 ual x2
+using MM «x uf cra
+by auto
+
+thus ?thesis
+using (al € unit-disc) «a2 € unit-disc»
+by blast
+qed
+qed
+next
+show 7Q 0;
+proof safe
+fix x1 x2
+assume z1 € unit-disc 72 € unit-disc
+assume 7— poincare-collinear {0n, 21, 22}
+show ?P 0; x1 «2
+proof—
+let ?la = poincare-line x1 x2
+
+have «1 4 x2
+using (zl © unit-disc» (x2 € unit-disc><— poincare-collinear {On, 21, x2}>
+using poincare-collinear3-between
+by auto
+
+have Iz: is-poincare-line ?lx
+using is-poincare-line-poincare-line[OF «x1 # x2)]
+by simp
+
+obtain i1 i2 where ideal-points ?lx = {i1, i2}
+by (meson «x1 4 x2) is-poincare-line-poincare-line obtain-ideal-points)
+
+let ?li = poincare-line il i2
+let ?i1 = to-complex il
+let ?i2 = to-complex i2
+
+have il € unit-circle-set i2 € unit-circle-set
+using Ix <ideal-points ?lz = {i1, i2}»
+unfolding unit-circle-set-def
+by (metis ideal-points-on-unit-circle insertI1, metis ideal-points-on-unit-circle insertI1 insertI2)
+
+have il # i2
+using <ideal-points ?lx = {i1, i2}) «a1 € unit-discy (a1 # 22) (a2 € unit-disc» ideal-points-different(1)
+
+161

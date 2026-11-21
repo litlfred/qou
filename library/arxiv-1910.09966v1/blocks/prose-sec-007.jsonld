@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1910.09966v1/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Fermions as Knot Complements",
-  "pageStart": 16,
-  "pageEnd": 18,
-  "text": "../sections/sec-007-43-fermions-as-knot-complements.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1910.09966v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1910.09966v1",
+  "title": "From K3 Surfaces to Octonions, 3-Braids and Particles",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "../sections/sec-007-4-from-k3-surfaces-to-octonions-3-braids-and-par.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1910.09966v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1910.09966v1/manifest.jsonld",
   "provenance": "ingested"
 }

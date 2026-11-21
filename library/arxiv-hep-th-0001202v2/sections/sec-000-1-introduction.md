@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.989
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 In this paper we bigrade the Hopf algebra of undecorated rooted trees, and both of its closed Hopf subalgebras, taking account of Hochschild cohomology.
 

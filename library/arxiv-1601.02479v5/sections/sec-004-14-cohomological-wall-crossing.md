@@ -4,13 +4,14 @@ doc_title: "Cohomological Donaldson-Thomas theory of a quiver with potential and
 section_id: sec-004-14-cohomological-wall-crossing
 section_title: "Cohomological wall-crossing"
 section_number: 1.4
-pages: 8-9
+pages: 8-8
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
-doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.941
-latex_coverage_ratio: 0.988
+latex_prose_ratio: 0.906
+latex_coverage_ratio: 0.99
+doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and"
 ---
 Our second main result is a (relative) cohomological lift of the following incarnation of the wall crossing formula, with $\int$ denoting the Kontsevich--Soibelman integration map: $$\label{WCI}
 \int[\mathfrak{M}^{\mathcal{S}},\upphi_{\mathop{\mathrm{Tr}}(W)}]=\prod_{\infty\xrightarrow{\upmu}-\infty}\int[\mathfrak{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\upmu},\upphi_{\mathop{\mathrm{Tr}}(W)}].$$ This is an identity in the completed motivic quantum torus of finite-dimensional modules of the Jacobi algebra for the pair $(Q,W)$. Instead of defining any of the terms in ([\[WCI\]](#WCI){reference-type="ref" reference="WCI"}) we refer the reader to [@JoyceMF] and [@KS1] for more details on motivic Hall algebras and integration maps in the general theory of motivic Donaldson--Thomas invariants, or [@DaMe4] for the specific case of the motivic Hall algebra of representations of a Jacobi algebra.
@@ -27,10 +28,3 @@ We define $$\begin{aligned}
 :::
 
 Note that in general, the individual terms in the tensor products on the right hand sides of ([\[gthmd\]](#gthmd){reference-type="ref" reference="gthmd"}) and ([\[gthmad\]](#gthmad){reference-type="ref" reference="gthmad"}) will depend on the stability condition, while the terms on the left hand side do not. The fact that very different sheaves can give rise to the same tensor product is explained by the fact that in contrast with the product $\boxtimes_{\oplus}$, the product $\boxtimes^{\mathop{\mathrm{tw}}}_{\oplus}$ is not symmetric; this is the categorification of the fact that the quantum torus utilized in [@KS1] as the target of the integration map from the motivic Hall algebra is generally not commutative.
-
-## The perverse filtration
-
-An advantage of considering constructions relative to the base $\mathcal{M}_{\upmu}^{\upzeta\mathop{\mathrm{-ss}}}$ instead of $\Uplambda_{\upmu}^{\upzeta}$ is that it leads naturally to the introduction of the perverse filtration on $\mathop{\mathrm{H}}(\mathcal{A}_{W,\upmu}^{\upzeta,\mathcal{S}})$.
-
-Let $\mathbf{f}\in\mathbb{N}^{Q_0}$ be a framing vector, and let $\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\colon \mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\rightarrow\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$, be the forgetful map to the coarse moduli space of $\upzeta$-semistable $Q$-representations from the fine moduli space of $\mathbf{f}$-framed $\upzeta$-semistable representations, and let $\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}\colon \mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}\rightarrow \mathbb{C}$ be the induced function. We show that for fixed $n$, and sufficiently large framing vector $\mathbf{f}$, there is a natural isomorphism $$\label{basapp}
-\mathop{\mathrm{H}}^n(\mathcal{A}_{W,\mathop{\mathrm{\mathbf{d}}}}^{\upzeta,\mathcal{S}})\cong\mathbb{L}^{\mathbf{f}\cdot\mathop{\mathrm{\mathbf{d}}}-(\mathop{\mathrm{\mathbf{d}}},\mathop{\mathrm{\mathbf{d}}})/2}\otimes \mathop{\mathrm{H}}_c^n(\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}},\mathcal{S}}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}},\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}})^{\vee},$$ in words, we can approximate the restricted vanishing cycle cohomology on the *stack* $\mathfrak{M}(Q)_{\mathop{\mathrm{\mathbf{d}}}}^{\upzeta\mathop{\mathrm{-ss}}}$ by considering restricted vanishing cycle compactly supported cohomology on the moduli *scheme* $\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$. This may remind the reader of Totaro's construction [@To99] for calculating equivariant intersection theory, and indeed, in a sense that will become precise in Section [\[cohaDT\]](#cohaDT){reference-type="ref" reference="cohaDT"}, our setup is a relative compactification of Totaro's construction, over the base $\mathcal{M}^{\upzeta\mathop{\mathrm{-ss}}}_{\mathop{\mathrm{\mathbf{d}}}}$. In particular, since the maps $\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}$ are proper, we can use the decomposition theorem along with fundamental properties of the vanishing cycles functor to deduce that $$\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\cong\mathop{\mathrm{\mathcal{H}}}\left(\uppi\hspace{0.05em}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}},*}\upphi^{\mathop{\mathrm{mon}}}_{\mathcal{T}r(W)_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}^{\upzeta}}\mathbb{Q}_{\mathcal{M}^{\upzeta}_{\mathbf{f},\mathop{\mathrm{\mathbf{d}}}}}\right)$$ which in turn implies that the hypercohomology of the right hand side (and hence the left hand side) of ([\[basapp\]](#basapp){reference-type="ref" reference="basapp"}) carries a well-behaved perverse filtration.

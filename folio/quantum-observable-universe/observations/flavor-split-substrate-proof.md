@@ -2,7 +2,7 @@
 
 *Step 1 (Pair-Skein difference, exact).*
 
-We apply [`lem:pair-skein-mass-formula`](pair-skein-mass-formula.md) to the Borromean baryon braids of the proton ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$) and neutron ($\mathfrak{u}\mathfrak{d}\mathfrak{d}$). This gives the exact relation:
+Apply [Pair Skein mass and crossing-by-crossing recursion](pair-skein-mass-formula.md) to the Borromean baryon braids of the proton ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$) and neutron ($\mathfrak{u}\mathfrak{d}\mathfrak{d}$). This gives the exact relation:
 
 $$
   m_n - m_p
@@ -40,7 +40,7 @@ This is the minimal substrate-atom combination satisfying three conditions:
 (b) Leading order $(q-1)^3$ at the classical limit.
 (c) Numerical agreement to $-0.67\%$ at $q = q_0$.
 
-**Note (2026-10-10, scope of Step 2).** Equation (2) is a fitted ansatz, not a derived one. Condition (c) chooses the form because it agrees with experiment, which is selection against the target. Conditions (a) and (b) do not single it out:
+**Scope of Step 2.** Equation (2) is a phenomenological ansatz rather than a derived identity: Condition (c) chooses the form because it agrees with experiment, which is selection against the target. Conditions (a) and (b) do not single it out:
 
 - (b) holds: the right-hand side is $4(q-1)^3 + O((q-1)^4)$.
 - (a) does not hold as stated. Writing $f(q) = h_q^2\,\hbar_q/\sqrt{q}$, one finds $f(q^{-1}) = -q^2 f(q)$, so $f$ is antisymmetric under $q \mapsto q^{-1}$ only up to the factor $q^2$ (checked symbolically).

@@ -1,0 +1,52 @@
+R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392 19
+
+Combining the last two displays with equation (29), we have
+
+E [tn VnT(A.(w))| < e/Bne FO V/18,
+
+By a similar argument, the same bound holds with w; replaced by u;. Together with
+equations (23) and (28) this gives
+
+Wilt, TrteoV) SE (svne" + 2V/Bne 9/8) ; Wte>1.
+
+log(2n)
+
+Choosing t = aah
+
+finally gives
+
+Wil(tev, TteoV) < de Bn 1/28)
+
+completing the proof of Proposition 15.
+
+It remains to justify the existence and uniqueness of the solutions of the stochastic
+differential equation (21)-(22). We first note that a, : R" — R” is C.-smooth and
+Lipschitz. Remark also that we can write U; = U(uz, wz) where
+
+_y\ 2
+U(u,w) =I, — 2 (2-*) .
+
+jw —ul
+
+Observe that for all 6 > 0, the coefficients of U(v,w) are C..-smooth and Lipschitz
+on the set As := {(u,v) € R” x R";|u — v| > 6}. Consider the stopping times ™ =
+inf {t; (uw, w) ¢ A1/,}- By a standard existence theorem [10, Chapter 4] there exists a
+unique strong solution up to Tx for all k. By continuity we have 7 = limg—,o0 T,, Meaning
+that there exists a solution up to time 7. For t > 7 we can simply consider the solution of
+the equation (21) with initial condition w,. This establishes the existence and uniqueness
+of a strong solution for any t > 0.
+
+4. Proof of Fact 4
+
+Let p: [—1,1]" — R be the harmonic extension of oe and write g(x) := log p(tanh(z))
+where, throughout this section, for « € [—1,1]", tanh(x) := (tanh(1),...,tanh(x,)). A
+calculation gives
+
+g(z) = tog f Il (1 + tanh(2;)y;) dv(y)
+Cn i€[n]
+
+=-— S log cosh(x;) + L[v](x).
+
+i€[n]
+
+Therefore,

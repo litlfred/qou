@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1309.0865v1/blocks/prose-sec-018",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Soergel bimodules and standard bimodules",
-  "pageStart": 24,
-  "pageEnd": 29,
-  "text": "../sections/sec-018-34-soergel-bimodules-and-standard-bimodules.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1309.0865v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1309.0865v1",
+  "title": "Technicalities",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "text": "../sections/sec-018-32-technicalities.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.0865v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.0865v1/manifest.jsonld",
   "provenance": "ingested"
 }

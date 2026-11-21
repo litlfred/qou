@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
@@ -8,6 +8,7 @@ pages: 9-15
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 The geometry of a smooth complex projective curve C with Jacobian
 variety Jac(C) is governed, after the choice of a base point on the curve, by

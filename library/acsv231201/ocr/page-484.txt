@@ -1,0 +1,47 @@
+466 Algebraic topology
+
+the large amount of freedom involved means the collection of chains on a man-
+ifold is huge (not having a countable basis) even though the homology groups
+are finite dimensional. Because of this we introduce new types of spaces with
+more structure.
+
+e A cell complex or CW-complex X is a Hausdorff space defined using a spe-
+cific inductive procedure. Let X° be a discrete collection of points and for
+any n > 0 let X” be the quotient space, with quotient topology, defined by the
+disjoint union X"~! Lig A” of X"~! with a collection of standard n-simplices
+
+A”, where we identify each x € 0A” with some ¢o(x) € X""! using gluing
+maps by : 0A, > X"-!. The set X” is the n-skeleton of X, and contains its
+k-cells AK for k < n. We consider finite dimensional cell complexes, mean-
+ing X = X” for some natural number n and the smallest such n is called the
+dimension of the cell complex X. Each simplex A’, corresponds to a map
+a”: A" — X defined by embedding A” into X”~! UL, A” and then taking the
+quotient by the gluing maps.
+
+e A A-complex is a cell complex X where the gluing map ¢q for any simplex
+Av maps each (n— 1)-dimensional face F of A? homeomorphically to one of
+the (n — 1)-simplices in X, preserving the ordering of vertices and agreeing
+with the previously defined gluing map ¢f on OF. A A-complex X may be
+viewed as a collection of maps 7» : A”* — X such that the restriction of
+Gq to the interior of A” is injective, each point of X lies in exactly one such
+restriction, and the restriction of a, to a face of A” is another one of the
+maps og : A“! — X in the collection defining X.
+
+e A simplicial complex is a A-complex where each gluing map is injective
+(so that distinct faces in the boundary of each simplex are glued to distinct
+lower-dimensional simplices) and each n-simplex is uniquely determined by
+its vertices. A simplicial complex X may be viewed as a set of simplices such
+that every face of a simplex in X is also in X and the nonempty intersection
+of any two simplices A,, Az € X is a face of both A; and Ao.
+
+We say that a space S is represented by a cell complex, A-complex, or
+simplicial complex X if S and X are homeomorphic. The representation of a
+space by a simplicial complex is called a triangulation of the space. Figure B.1
+shows some examples representing a sphere and a circle.
+
+The CW approximation theorem [Hat02, Proposition 4.13] states that any
+Hausdorff space X can be approximated by a cell complex X meaning, among
+other things, that X and X have the same singular homology groups. We are
+most interested in algebraic varieties, or their complements, which are exam-
+ples of semi-algebraic sets and can therefore be triangulated [BPR03, Theo-
+rem 5.43].

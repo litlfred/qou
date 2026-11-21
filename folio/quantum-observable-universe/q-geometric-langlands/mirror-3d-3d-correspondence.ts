@@ -26,4 +26,10 @@ export default conjecture({
     "axiom-class",
     "open-problem",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "The middle row of the dictionary previously read $m_p \\leftrightarrow Z_{T[\\mathcal{B}_3]}(q_0)$; it was retired under the absolute-mass excision ruling of 2026-08-11.",
+    },
+  ],
 });

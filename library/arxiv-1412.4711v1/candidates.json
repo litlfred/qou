@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1412.4711v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "4fb1d6ee062cca8ca97ebab1608c56fd4f1fa21980d6cedd0178b98fb73fb719",
+  "file": "1412.4711v1.pdf"
+ },
+ "provenance": {
+  "title": "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT",
+  "authors": "E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF",
+  "arxiv": {
+   "id": "1412.4711",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "15 Dec 2014"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

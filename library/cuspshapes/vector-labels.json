@@ -1,0 +1,5035 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "cuspshapes",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 30,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The (1; 2)-compression body"
+      ],
+      "labels": [
+        {
+          "text": "CUSP SHAPE AND TUNNEL NUMBER",
+          "bbox": [
+            225.86,
+            66.22,
+            386.16,
+            74.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            499.79,
+            66.22,
+            504.03,
+            74.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "∼=",
+          "bbox": [
+            301.39,
+            104.77,
+            309.88,
+            119.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "γ1",
+          "bbox": [
+            404.47,
+            126.31,
+            414.35,
+            138.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 1. The (1; 2)-compression body",
+          "bbox": [
+            209.95,
+            154.43,
+            402.06,
+            167.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "horoball neighborhood of the cusp. In this paper we use an algebraic limit argument",
+          "bbox": [
+            108.0,
+            185.75,
+            504.37,
+            196.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "to give cusp shapes, bounding the similarity structure of the cusp torus, but not its",
+          "bbox": [
+            108.0,
+            198.65,
+            504.06,
+            209.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.86
+          ]
+        },
+        {
+          "text": "scale. Unfortunately, our method of proof does not give any information on cusp",
+          "bbox": [
+            108.0,
+            211.48,
+            504.08,
+            222.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "area; a geometric limit argument would be required. Thus while the shortest slope",
+          "bbox": [
+            108.0,
+            224.5,
+            504.02,
+            235.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.94
+          ]
+        },
+        {
+          "text": "of the torus must have length at least one, and therefore long narrow tori have at",
+          "bbox": [
+            108.0,
+            237.39,
+            504.35,
+            248.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "most one exceptional Dehn ﬁlling, we cannot determine whether fatter tori are large",
+          "bbox": [
+            108.0,
+            250.5,
+            504.03,
+            261.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "or small, with long or short slope lengths. The following are still unknown.",
+          "bbox": [
+            108.0,
+            263.37,
+            466.36,
+            274.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Question 1.3. Are there families of tunnel number n manifolds with no short slopes",
+          "bbox": [
+            108.0,
+            283.2,
+            504.02,
+            294.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "and no exceptional Dehn ﬁllings? What are the cluster points of the areas of the",
+          "bbox": [
+            108.0,
+            296.06,
+            504.05,
+            307.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "maximal cusps of tunnel number n manifolds?",
+          "bbox": [
+            108.0,
+            309.1,
+            329.01,
+            320.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "To prove Theorem 1.1, we consider geometric structures on compression bodies,",
+          "bbox": [
+            119.96,
+            328.87,
+            505.51,
+            339.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.97
+          ]
+        },
+        {
+          "text": "similar to work in [11], [8], and [24]. Given any framed Euclidean similarity structure",
+          "bbox": [
+            108.0,
+            341.88,
+            504.05,
+            352.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "on a torus, we ﬁrst ﬁnd hyperbolic structures on compression bodies with that cusp",
+          "bbox": [
+            108.0,
+            354.88,
+            504.04,
+            365.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.84
+          ]
+        },
+        {
+          "text": "shape [T], then show these lead to maximally pinched structures with cusp shape",
+          "bbox": [
+            108.0,
+            367.69,
+            504.03,
+            378.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "approaching [T]. By gluing maximally pinched compression bodies to maximally",
+          "bbox": [
+            108.0,
+            380.65,
+            504.44,
+            391.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "pinched handlebodies and Dehn ﬁlling, we obtain our main results.",
+          "bbox": [
+            108.0,
+            393.68,
+            428.16,
+            404.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1.1. Acknowledgements. The authors thank Ken Baker for helpful conversations,",
+          "bbox": [
+            108.0,
+            414.5,
+            505.56,
+            425.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "and the referee for suggestions to improve the paper.",
+          "bbox": [
+            108.0,
+            427.45,
+            360.48,
+            438.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2. Hyperbolic structures on compression bodies",
+          "bbox": [
+            170.86,
+            449.07,
+            441.15,
+            462.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Let S be a closed, orientable (possibly disconnected) surface with genus at least 1,",
+          "bbox": [
+            119.96,
+            470.88,
+            505.53,
+            481.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "and let I denote the interval [0, 1].",
+          "bbox": [
+            108.0,
+            483.83,
+            272.47,
+            494.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.1. A compression body C is either a handlebody, or the result of",
+          "bbox": [
+            108.0,
+            503.57,
+            504.03,
+            514.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "attaching 1-handles to S × I along S × {1} such that the result is connected. The",
+          "bbox": [
+            108.0,
+            516.46,
+            504.0,
+            527.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91,
+            10.99
+          ]
+        },
+        {
+          "text": "negative boundary is S ×{0} and is denoted ∂−C; if C is a handlebody then ∂−C = ∅.",
+          "bbox": [
+            107.3,
+            529.42,
+            506.12,
+            541.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "The positive boundary is ∂C∖∂−C and is denoted ∂+C.",
+          "bbox": [
+            107.61,
+            540.12,
+            374.41,
+            554.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The compression bodies that we study here are those for which ∂−C is a torus",
+          "bbox": [
+            119.96,
+            562.25,
+            504.0,
+            574.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "and ∂+C is a genus (n + 1) surface, with n ≥1 an integer. We call this the (1; n + 1)-",
+          "bbox": [
+            108.0,
+            575.14,
+            505.82,
+            587.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "compression body and denote it by C(1; n + 1) or just C when there is no confusion.",
+          "bbox": [
+            108.0,
+            588.24,
+            506.14,
+            599.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "The numbers 1 and n + 1 refer to the genera of the boundary components. Thus",
+          "bbox": [
+            107.61,
+            601.1,
+            504.04,
+            612.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "C(1; n + 1) is obtained by attaching n 1-handles to T2 × I. See Figure 1.",
+          "bbox": [
+            108.0,
+            610.04,
+            456.73,
+            625.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The fundamental group of C(1; 2) is π1(C(1; 2)) = (Z × Z) ∗Z, because C(1; 2)",
+          "bbox": [
+            119.96,
+            624.71,
+            505.28,
+            638.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "deformation retracts to the union of a torus and an arc γ1 at the core of the 1-handle;",
+          "bbox": [
+            108.0,
+            640.04,
+            505.53,
+            652.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "see Figure 1. This arc is called the core tunnel of C(1; 2). We will denote the",
+          "bbox": [
+            108.0,
+            652.91,
+            504.01,
+            663.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "generators of the Z × Z factor by α and β, and the generator of the free Z by γ1.",
+          "bbox": [
+            108.0,
+            663.56,
+            495.42,
+            677.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "More generally, for the (1; n + 1)-compression body, the fundamental group is",
+          "bbox": [
+            119.96,
+            678.9,
+            491.11,
+            689.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "π1(C(1; n + 1)) = (Z × Z) ∗Z ∗· · · ∗Z,",
+          "bbox": [
+            213.87,
+            694.69,
+            398.13,
+            708.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Isometric spheres for some powers of ρ(γ1) and ρ(γ−1",
+        "Figure 2 shows some isometric spheres of the hyperbolic structure of Lemma 2.5. The following extends the example to C(1; n + 1)."
+      ],
+      "labels": [
+        {
+          "text": "CUSP SHAPE AND TUNNEL NUMBER",
+          "bbox": [
+            225.86,
+            66.22,
+            386.16,
+            74.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            499.79,
+            66.22,
+            504.03,
+            74.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "γ−1",
+          "bbox": [
+            336.25,
+            86.78,
+            353.32,
+            100.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "γ1",
+          "bbox": [
+            255.68,
+            89.31,
+            265.56,
+            101.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            341.9,
+            94.6,
+            346.13,
+            102.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "γ−2",
+          "bbox": [
+            343.05,
+            112.02,
+            360.12,
+            125.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "γ2",
+          "bbox": [
+            257.07,
+            112.68,
+            267.55,
+            125.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            262.71,
+            119.56,
+            266.95,
+            127.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            348.7,
+            119.84,
+            352.93,
+            127.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 2. Isometric spheres for some powers of ρ(γ1) and ρ(γ−1",
+          "bbox": [
+            143.87,
+            168.2,
+            461.73,
+            182.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "1 ),",
+          "bbox": [
+            450.31,
+            170.61,
+            469.65,
+            184.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.02
+          ]
+        },
+        {
+          "text": "for Γ as in Lemma 2.5. Note we have labeled the sphere I(ρ(γ1))",
+          "bbox": [
+            143.87,
+            183.56,
+            469.41,
+            195.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "simply by γ1 above, and similarly for other group elements.",
+          "bbox": [
+            143.87,
+            196.6,
+            427.91,
+            209.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "can be seen by the Poincar´e polyhedron theorem (e.g. [24, Theorem 2.25]): vertical",
+          "bbox": [
+            108.0,
+            228.31,
+            504.0,
+            239.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.89,
+            10.91
+          ]
+        },
+        {
+          "text": "planes are glued isometrically to vertical planes, I(ρ(γ1)) is glued isometrically to",
+          "bbox": [
+            108.0,
+            241.18,
+            504.0,
+            253.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "I(ρ(γ−1",
+          "bbox": [
+            108.0,
+            252.32,
+            145.02,
+            265.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "1 )).",
+          "bbox": [
+            133.59,
+            254.63,
+            157.27,
+            268.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.02
+          ]
+        },
+        {
+          "text": "Thus the object obtained by these face pairings is a manifold with",
+          "bbox": [
+            166.22,
+            254.63,
+            504.05,
+            265.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "discrete fundamental group isomorphic to the face pairing group, isomorphic to",
+          "bbox": [
+            108.0,
+            267.58,
+            504.06,
+            278.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "⟨ρ(α), ρ(β), ρ(γ1)⟩∼= π1(C).",
+          "bbox": [
+            108.0,
+            277.47,
+            238.29,
+            292.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Finally, to see that it gives a hyperbolic structure on C(1; 2), we need to show",
+          "bbox": [
+            119.96,
+            293.48,
+            504.39,
+            304.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "that the interior of C(1; 2) is homeomorphic to H3/ρ(π1(C)). This can be seen as",
+          "bbox": [
+            108.0,
+            304.13,
+            503.99,
+            318.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "follows. The quotient of H3 by ρ(⟨α, β⟩) is homeomorphic to T 2 × R. Remove the",
+          "bbox": [
+            108.0,
+            315.37,
+            503.99,
+            330.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "open half-spaces cut out by I(ρ(γ1)) and I(ρ(γ−1",
+          "bbox": [
+            108.0,
+            330.52,
+            336.09,
+            344.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "1 )) and glue these to each other. The",
+          "bbox": [
+            324.67,
+            333.0,
+            504.01,
+            346.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8
+          ]
+        },
+        {
+          "text": "result is homeomorphic to attaching a 1-handle. Thus the space is homeomorphic to",
+          "bbox": [
+            108.0,
+            345.95,
+            504.02,
+            356.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            495.51,
+            356.43,
+            504.0,
+            367.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the interior of C.",
+          "bbox": [
+            108.0,
+            358.82,
+            189.37,
+            369.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 2 shows some isometric spheres of the hyperbolic structure of Lemma 2.5.",
+          "bbox": [
+            119.96,
+            381.27,
+            506.12,
+            392.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.9
+          ]
+        },
+        {
+          "text": "The following extends the example to C(1; n + 1).",
+          "bbox": [
+            119.96,
+            394.21,
+            358.78,
+            405.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 2.6. Fix an integer n ≥1. Deﬁne ρ(γ1) as in Lemma 2.5. Let",
+          "bbox": [
+            108.0,
+            415.02,
+            449.62,
+            427.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            296.47,
+            434.37,
+            304.5,
+            445.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            325.38,
+            434.37,
+            333.4,
+            445.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            304.5,
+            435.29,
+            309.96,
+            446.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            319.92,
+            435.29,
+            325.37,
+            446.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A =",
+          "bbox": [
+            273.75,
+            441.9,
+            293.45,
+            452.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            335.22,
+            441.9,
+            338.26,
+            452.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            304.5,
+            448.24,
+            309.96,
+            459.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            319.92,
+            448.24,
+            325.37,
+            459.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Let ρ(γ2) = Aρ(γ1)A−1, and inductively deﬁne ρ(γi+1) = Aρ(γi)A−1. Finally, let a",
+          "bbox": [
+            107.41,
+            467.79,
+            504.0,
+            481.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.95
+          ]
+        },
+        {
+          "text": "and b be complex numbers that are linearly independent over R, with |a| > 5 and",
+          "bbox": [
+            107.16,
+            480.13,
+            503.68,
+            493.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "|b| > 5 chosen suﬃciently large so that the set of isometric spheres {I(ρ(γ±1",
+          "bbox": [
+            108.0,
+            493.56,
+            477.52,
+            506.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "j ))} is",
+          "bbox": [
+            466.09,
+            495.82,
+            504.01,
+            510.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "disjoint from the translates of that set under ρ(α) and ρ(β). Then ρ gives a complete",
+          "bbox": [
+            107.16,
+            509.94,
+            504.0,
+            520.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "hyperbolic structure on C(1; n + 1).",
+          "bbox": [
+            107.44,
+            522.89,
+            275.7,
+            533.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Proof. Let H be a horosphere centered at ∞in H3. Note that using Lemma 2.3,",
+          "bbox": [
+            108.0,
+            541.46,
+            493.59,
+            554.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "I(Aρ(γ1)A−1) = {x ∈H3 : d(x, H) = d(x, Aρ(γ−1",
+          "bbox": [
+            161.35,
+            559.49,
+            395.44,
+            575.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1 )A−1H)}",
+          "bbox": [
+            384.01,
+            561.68,
+            439.33,
+            578.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "= {x ∈H3 : d(x, H) = d(x, Aρ(γ−1",
+          "bbox": [
+            230.7,
+            577.83,
+            395.44,
+            593.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1 )H)}",
+          "bbox": [
+            384.01,
+            582.19,
+            419.83,
+            596.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "= {x ∈H3 : d(A−1x, H) = d(A−1x, ρ(γ−1",
+          "bbox": [
+            230.7,
+            596.17,
+            426.26,
+            611.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1 )H)}",
+          "bbox": [
+            414.83,
+            600.54,
+            450.65,
+            614.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "= A{y ∈H3 : d(y, H) = d(y, ρ(γ−1",
+          "bbox": [
+            230.7,
+            614.52,
+            393.95,
+            629.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1 )H)}",
+          "bbox": [
+            382.53,
+            618.88,
+            418.35,
+            633.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "= AI(ρ(γ1)).",
+          "bbox": [
+            230.7,
+            635.82,
+            292.08,
+            647.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The above calculation shows that the isometric sphere of the element Aρ(γ1)A−1 is",
+          "bbox": [
+            107.61,
+            653.55,
+            504.0,
+            669.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.89,
+            10.91
+          ]
+        },
+        {
+          "text": "obtained from that of ρ(γ1) by horizontal translation by 5. Similarly, for any integer",
+          "bbox": [
+            108.0,
+            670.44,
+            504.29,
+            682.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "1)A−1 are obtained from the corresponding spheres",
+          "bbox": [
+            259.89,
+            679.73,
+            504.02,
+            696.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.87,
+            10.91
+          ]
+        },
+        {
+          "text": "k, the isometric spheres of Aρ(γk",
+          "bbox": [
+            108.0,
+            682.0,
+            264.9,
+            694.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.87,
+            10.91
+          ]
+        },
+        {
+          "text": "of ρ(γk",
+          "bbox": [
+            108.0,
+            695.41,
+            141.77,
+            708.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "1) by horizontal translation by 5. Thus, the conﬁguration of spheres ρ(γk",
+          "bbox": [
+            136.75,
+            695.41,
+            500.24,
+            710.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "1)",
+          "bbox": [
+            495.22,
+            696.99,
+            505.28,
+            710.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.02
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. Left: A fundamental region for a maximally pinched structure on C(1; 2). Right: A fundamental region for its convex core."
+      ],
+      "labels": [
+        {
+          "text": "8",
+          "bbox": [
+            108.0,
+            66.22,
+            112.23,
+            74.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "VINH DANG AND JESSICA S. PURCELL",
+          "bbox": [
+            224.23,
+            66.22,
+            387.8,
+            74.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "βγ1",
+          "bbox": [
+            173.92,
+            90.68,
+            190.55,
+            102.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "γ−1",
+          "bbox": [
+            231.26,
+            141.32,
+            248.33,
+            154.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "γ1",
+          "bbox": [
+            193.1,
+            143.21,
+            202.98,
+            155.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "αγ1",
+          "bbox": [
+            267.93,
+            143.69,
+            284.83,
+            155.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            236.91,
+            149.14,
+            241.14,
+            157.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 3. Left: A fundamental region for a maximally pinched",
+          "bbox": [
+            143.87,
+            167.02,
+            468.18,
+            180.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "structure on C(1; 2). Right: A fundamental region for its convex core.",
+          "bbox": [
+            143.87,
+            182.46,
+            470.29,
+            193.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 3.9. Let [T] be any point in the Teichm¨uller space of the torus. For any",
+          "bbox": [
+            108.0,
+            211.63,
+            503.93,
+            222.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "ϵ > 0, there exists a maximally pinched structure ρ′ on C(1; n + 1) such that the cusp",
+          "bbox": [
+            108.0,
+            220.79,
+            503.99,
+            235.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "shape of ρ′ is ϵ/2-close to [T].",
+          "bbox": [
+            107.42,
+            233.65,
+            250.25,
+            248.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Proof. Let ρ be a pinched structure on C with cusp shape [T] as in Lemma 3.8. By",
+          "bbox": [
+            108.0,
+            257.57,
+            504.4,
+            268.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.85,
+            10.91
+          ]
+        },
+        {
+          "text": "Theorem 3.7, maximally pinched structures are dense on the boundary ∂MP(C, T) of",
+          "bbox": [
+            107.61,
+            270.52,
+            504.01,
+            281.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "the space MP(C, T). Therefore, the fact that ρ ∈∂MP(C) implies that there exists",
+          "bbox": [
+            108.0,
+            283.33,
+            503.99,
+            294.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.82,
+            10.91
+          ]
+        },
+        {
+          "text": "a sequence {ρn} of maximally pinched structures on C which converges algebraically",
+          "bbox": [
+            108.0,
+            296.28,
+            504.41,
+            308.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "to ρ. Thus, there exists a maximally pinched structure ρ′ that is ϵ/2-close to ρ. In",
+          "bbox": [
+            108.0,
+            305.38,
+            504.01,
+            320.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.95
+          ]
+        },
+        {
+          "text": "particular, ρ′(α) and ρ′(β) are ϵ/2-close to ρ(α) and ρ(β) because the convergence is",
+          "bbox": [
+            108.0,
+            320.56,
+            503.99,
+            333.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "algebraic. As a result, ρ′ gives C a cusp shape that is ϵ/2-close to [T].",
+          "bbox": [
+            108.0,
+            331.32,
+            442.67,
+            346.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            495.52,
+            332.89,
+            504.0,
+            343.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lemma 3.9 is only an existence result, and unfortunately gives no explicit structure",
+          "bbox": [
+            119.96,
+            355.5,
+            504.04,
+            366.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "or examples to work with. Finding examples of maximally pinched structures is",
+          "bbox": [
+            108.0,
+            368.28,
+            504.04,
+            379.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "non-trivial. To ﬁnd such a structure on C(1; 2), a choice of three appropriate curves",
+          "bbox": [
+            108.0,
+            381.32,
+            504.02,
+            392.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.82,
+            10.91
+          ]
+        },
+        {
+          "text": "on ∂+C(1; 2) must be pinched, which amounts to ﬁnding values of ρ(α), ρ(β) and",
+          "bbox": [
+            108.0,
+            394.18,
+            504.01,
+            406.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "ρ(γ1) for which certain products of generators have trace ±2, namely those products",
+          "bbox": [
+            108.0,
+            407.08,
+            504.01,
+            419.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "that represent the boundary curves. For example, one maximally pinched structure",
+          "bbox": [
+            108.0,
+            420.2,
+            504.06,
+            431.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.87
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            261.5,
+            424.02,
+            270.59,
+            434.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with cusp shape [T] = [−1/4 + i",
+          "bbox": [
+            107.61,
+            433.04,
+            261.5,
+            444.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3/4] is given by the representation",
+          "bbox": [
+            270.59,
+            433.19,
+            434.73,
+            444.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            331.31,
+            443.09,
+            340.4,
+            454.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            186.91,
+            450.92,
+            194.94,
+            461.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            215.81,
+            450.92,
+            223.84,
+            461.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            276.83,
+            450.92,
+            284.86,
+            461.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            345.86,
+            450.92,
+            353.89,
+            461.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            410.52,
+            450.92,
+            418.54,
+            461.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            447.9,
+            450.92,
+            455.93,
+            461.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            433.96,
+            451.7,
+            447.9,
+            462.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            194.94,
+            451.84,
+            200.39,
+            462.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            210.35,
+            451.84,
+            215.81,
+            462.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            418.55,
+            451.84,
+            424.0,
+            462.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "−1 + i",
+          "bbox": [
+            300.28,
+            452.12,
+            331.32,
+            463.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            284.86,
+            452.26,
+            290.32,
+            463.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            340.4,
+            452.26,
+            345.86,
+            463.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ρ(α) =",
+          "bbox": [
+            151.22,
+            458.45,
+            183.88,
+            469.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            225.66,
+            458.45,
+            228.69,
+            469.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ρ(β) =",
+          "bbox": [
+            241.42,
+            458.45,
+            273.81,
+            469.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            355.71,
+            458.45,
+            358.74,
+            469.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ρ(γ1) =",
+          "bbox": [
+            371.47,
+            458.45,
+            407.49,
+            470.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            457.75,
+            458.45,
+            460.78,
+            469.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            194.94,
+            464.79,
+            200.39,
+            475.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            210.35,
+            464.79,
+            215.81,
+            475.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            418.54,
+            464.79,
+            424.0,
+            475.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            438.2,
+            464.79,
+            443.66,
+            475.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            284.86,
+            465.21,
+            290.32,
+            476.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            320.34,
+            465.21,
+            325.79,
+            476.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This maximally pinched structure has a fundamental region in H3 lying over the",
+          "bbox": [
+            107.61,
+            480.59,
+            504.01,
+            495.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "parallelogram and hemispheres on C shown on the left of Figure 3; the group elements",
+          "bbox": [
+            108.0,
+            495.2,
+            504.02,
+            508.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "labeling the circles in that ﬁgure are short for isometric spheres I(ρ(γ1)), I(ρ(γ−1",
+          "bbox": [
+            108.0,
+            508.15,
+            493.65,
+            522.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.84,
+            10.91
+          ]
+        },
+        {
+          "text": "1 )),",
+          "bbox": [
+            482.23,
+            510.6,
+            505.52,
+            524.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.84
+          ]
+        },
+        {
+          "text": "etc. To obtain a fundamental region for the convex core, cut out four additional",
+          "bbox": [
+            108.0,
+            523.41,
+            504.08,
+            534.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "hemispheres that are “dual,” enclosing each curvilinear triangle in the original",
+          "bbox": [
+            108.0,
+            536.36,
+            504.05,
+            547.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "fundamental region as shown on the right of Figure 3. Note that face identiﬁcations",
+          "bbox": [
+            108.0,
+            549.46,
+            504.07,
+            560.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.83
+          ]
+        },
+        {
+          "text": "glue boundaries of those curvilinear triangles in such a way that the convex core has",
+          "bbox": [
+            108.0,
+            562.43,
+            504.04,
+            573.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "boundary consisting of two totally geodesic 3-punctured spheres. Note also that this",
+          "bbox": [
+            108.0,
+            575.38,
+            504.03,
+            586.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "example has particularly simple geometry. There are (countably inﬁnitely many)",
+          "bbox": [
+            108.0,
+            588.16,
+            505.32,
+            599.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "more complicated structures, with varied cusp shapes. More discussion can be found",
+          "bbox": [
+            108.0,
+            601.29,
+            504.02,
+            612.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "in [13, Section 4.3]; see also [21].",
+          "bbox": [
+            108.0,
+            614.15,
+            262.68,
+            625.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4. Pinched handlebodies",
+          "bbox": [
+            238.4,
+            636.41,
+            373.58,
+            649.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We will glue the compression bodies of the previous section to carefully constructed",
+          "bbox": [
+            119.96,
+            658.31,
+            504.03,
+            669.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "handlebodies, obtaining manifolds with a Heegaard splitting of genus n + 1. To",
+          "bbox": [
+            108.0,
+            671.09,
+            504.0,
+            682.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "ensure there is not a Heegaard splitting of lower genus, we will use techniques",
+          "bbox": [
+            108.0,
+            684.04,
+            504.02,
+            695.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "of [8] to bound the Hempel distance of the splitting. In this section we review the",
+          "bbox": [
+            108.0,
+            697.01,
+            504.03,
+            708.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            10.99
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 4. The augmented minimally twisted 3-chain link La"
+      ],
+      "labels": [
+        {
+          "text": "12",
+          "bbox": [
+            108.0,
+            66.22,
+            116.46,
+            74.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "VINH DANG AND JESSICA S. PURCELL",
+          "bbox": [
+            224.23,
+            66.22,
+            387.79,
+            74.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 4. The augmented minimally twisted 3-chain link La",
+          "bbox": [
+            143.87,
+            182.53,
+            426.38,
+            195.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "3 is shown",
+          "bbox": [
+            421.88,
+            184.89,
+            468.13,
+            198.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8
+          ]
+        },
+        {
+          "text": "on the left. It is hyperbolic, with each chain link component having",
+          "bbox": [
+            143.87,
+            197.74,
+            468.19,
+            208.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.93
+          ]
+        },
+        {
+          "text": "the cusp shape of a 1 × 2 rectangle, up to scale. One such cusp is",
+          "bbox": [
+            143.87,
+            210.56,
+            468.13,
+            221.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "shown on the right.",
+          "bbox": [
+            143.87,
+            223.66,
+            236.7,
+            234.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "slope length at least 1, and all other slope lengths at least R −ϵ > 7 −ϵ > 6. By the",
+          "bbox": [
+            108.0,
+            251.6,
+            504.01,
+            262.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            495.51,
+            262.3,
+            504.0,
+            273.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "6-Theorem [2, 23], there can be at most one exceptional Dehn ﬁlling of MR.",
+          "bbox": [
+            108.0,
+            264.69,
+            471.24,
+            276.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "6. Exceptional fillings",
+          "bbox": [
+            241.4,
+            286.04,
+            370.59,
+            299.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Recall that Berge knots have tunnel number one. Corollary 5.1 contrasts with the",
+          "bbox": [
+            119.95,
+            307.93,
+            504.04,
+            318.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "following proposition concerning Berge knots, which follows from work of Baker [3].",
+          "bbox": [
+            108.0,
+            320.8,
+            506.09,
+            331.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.89,
+            10.91
+          ]
+        },
+        {
+          "text": "Proposition 6.1. Let [T0] denote the Euclidean similarity structure on the torus that",
+          "bbox": [
+            108.0,
+            340.57,
+            503.99,
+            352.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "includes the 1 × 2 rectangle. Let U denote a neighborhood of [T0]. Then there exists",
+          "bbox": [
+            107.3,
+            353.38,
+            504.01,
+            365.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.87,
+            10.91
+          ]
+        },
+        {
+          "text": "a sequence of hyperbolic Berge knots, all with cusp shape lying in the neighborhood U",
+          "bbox": [
+            107.16,
+            366.47,
+            502.81,
+            377.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "of [T0]. Moreover, maximal cusps for these Berge knots limit to a 2 × 4 rectangle.",
+          "bbox": [
+            107.13,
+            379.28,
+            496.27,
+            391.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Proof. Baker showed that large volume Berge knots are obtained by Dehn ﬁlling the",
+          "bbox": [
+            108.0,
+            399.19,
+            504.03,
+            410.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "complement of a minimally twisted (2n + 1)-chain link L2n+1 [3]. For V large, any",
+          "bbox": [
+            108.0,
+            412.12,
+            504.42,
+            424.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.94
+          ]
+        },
+        {
+          "text": "Berge knot with volume at least V is obtained by such a Dehn ﬁlling. Thus for ﬁxed",
+          "bbox": [
+            108.0,
+            425.09,
+            504.06,
+            436.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "n > 0, there is a sequence of such knots converging geometrically to S3∖L2n+1, and",
+          "bbox": [
+            108.0,
+            435.66,
+            504.01,
+            449.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.83,
+            10.91
+          ]
+        },
+        {
+          "text": "so the cusp shapes of this sequence of knots converge to a cusp shape of S3∖L2n+1.",
+          "bbox": [
+            108.0,
+            448.61,
+            506.05,
+            462.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.88,
+            10.91
+          ]
+        },
+        {
+          "text": "We show that as n →∞, cusp shapes of S3∖L2n+1 approach [T0]. By symmetry,",
+          "bbox": [
+            119.95,
+            461.56,
+            505.52,
+            476.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.87,
+            10.91
+          ]
+        },
+        {
+          "text": "cusp shapes of all cusps of S3∖L2n+1 are identical, so we need only show that one",
+          "bbox": [
+            108.0,
+            474.52,
+            504.02,
+            489.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.97
+          ]
+        },
+        {
+          "text": "cusp shape approaches this similarity structure.",
+          "bbox": [
+            108.0,
+            489.85,
+            335.78,
+            500.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The minimally twisted (2n + 1)-chain link is obtained by Dehn ﬁlling a link",
+          "bbox": [
+            119.95,
+            502.72,
+            504.36,
+            513.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "obtained by the following procedure. First, augment the minimally twisted 3-chain",
+          "bbox": [
+            108.0,
+            515.75,
+            504.07,
+            526.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "link; the complement is a hyperbolic manifold with four cusps, three of which have",
+          "bbox": [
+            108.0,
+            528.7,
+            504.06,
+            539.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "shape [T0]. Denote the link by La",
+          "bbox": [
+            108.0,
+            540.0,
+            268.77,
+            553.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.92
+          ]
+        },
+        {
+          "text": "3. See Figure 4, obtained from SnapPy [12]. Next,",
+          "bbox": [
+            264.27,
+            541.65,
+            505.52,
+            554.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.92
+          ]
+        },
+        {
+          "text": "take the augmented minimally twisted 2-chain link, denoted La",
+          "bbox": [
+            108.0,
+            552.95,
+            410.31,
+            565.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.9,
+            10.91
+          ]
+        },
+        {
+          "text": "2, shown in Figure 5.",
+          "bbox": [
+            405.81,
+            554.61,
+            506.14,
+            567.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.9
+          ]
+        },
+        {
+          "text": "This is a hyperbolic manifold with three cusps, two of which have shape [T0].",
+          "bbox": [
+            107.61,
+            567.56,
+            476.36,
+            579.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We will take belted sums, as in Adams [1]. Recall that belted sum cuts two",
+          "bbox": [
+            119.95,
+            580.43,
+            504.0,
+            591.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "manifolds along embedded 3-punctured spheres and reglues by isometry of the 3-",
+          "bbox": [
+            108.0,
+            593.38,
+            505.86,
+            604.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "punctured spheres. Take the belted sum of S3∖La",
+          "bbox": [
+            108.0,
+            604.03,
+            361.04,
+            617.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "3 and S3∖La",
+          "bbox": [
+            356.55,
+            604.03,
+            421.09,
+            620.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "2, summing along",
+          "bbox": [
+            416.6,
+            606.33,
+            504.01,
+            619.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.02
+          ]
+        },
+        {
+          "text": "the augmentation component of each. The result will be the augmented minimally",
+          "bbox": [
+            108.0,
+            619.34,
+            504.43,
+            630.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.94
+          ]
+        },
+        {
+          "text": "twisted 5-chain link La",
+          "bbox": [
+            108.0,
+            630.66,
+            217.92,
+            643.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.95
+          ]
+        },
+        {
+          "text": "5. For both La",
+          "bbox": [
+            213.42,
+            630.66,
+            283.86,
+            645.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.95
+          ]
+        },
+        {
+          "text": "3 and La",
+          "bbox": [
+            279.37,
+            630.66,
+            321.25,
+            646.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.95
+          ]
+        },
+        {
+          "text": "2, the 3-punctured sphere we cut along",
+          "bbox": [
+            316.76,
+            632.28,
+            504.02,
+            645.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.95
+          ]
+        },
+        {
+          "text": "meets the cusp under consideration exactly twice in a curve perpendicular to the",
+          "bbox": [
+            108.0,
+            645.18,
+            504.03,
+            656.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "cusp, with the two curves spaced equidistantly along the cusp. In Figure 4, the",
+          "bbox": [
+            108.0,
+            658.14,
+            504.04,
+            669.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "3-punctured sphere corresponds to the two curves running vertically across the cusp",
+          "bbox": [
+            107.73,
+            671.24,
+            504.04,
+            682.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.82
+          ]
+        },
+        {
+          "text": "over the horoball colored cyan. Note they are equidistantly spaced and perpendicular",
+          "bbox": [
+            108.0,
+            684.21,
+            504.28,
+            695.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "to the boundary. In Figure 5, the 3-punctured sphere runs over the green horoball.",
+          "bbox": [
+            108.0,
+            697.05,
+            506.2,
+            707.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.94
+          ]
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "rotation": 0,
+      "drawings": 3,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 5. The augmented minimally twisted 2-chain link La",
+        "Figure 6. The cusp of a chain component of the minimally twisted 5-chain link is obtained by taking half of that of La 3 and half of that of La"
+      ],
+      "labels": [
+        {
+          "text": "CUSP SHAPE AND TUNNEL NUMBER",
+          "bbox": [
+            225.86,
+            66.22,
+            386.16,
+            74.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "13",
+          "bbox": [
+            495.55,
+            66.22,
+            504.02,
+            74.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 5. The augmented minimally twisted 2-chain link La",
+          "bbox": [
+            143.87,
+            182.52,
+            434.17,
+            195.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.81,
+            10.91
+          ]
+        },
+        {
+          "text": "2 on the",
+          "bbox": [
+            429.68,
+            184.88,
+            468.13,
+            198.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.81
+          ]
+        },
+        {
+          "text": "left. It is hyperbolic. Its two cusps coming from the chain, not the",
+          "bbox": [
+            143.87,
+            197.67,
+            468.16,
+            208.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "augmentation component, have cusp shape [T0].",
+          "bbox": [
+            143.87,
+            210.7,
+            372.37,
+            222.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 6. The cusp of a chain component of the minimally twisted",
+          "bbox": [
+            143.87,
+            353.5,
+            468.16,
+            366.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.87
+          ]
+        },
+        {
+          "text": "5-chain link is obtained by taking half of that of La",
+          "bbox": [
+            143.87,
+            367.13,
+            389.3,
+            379.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.9,
+            10.91
+          ]
+        },
+        {
+          "text": "3 and half of that",
+          "bbox": [
+            384.81,
+            368.8,
+            468.46,
+            382.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.9
+          ]
+        },
+        {
+          "text": "of La",
+          "bbox": [
+            143.87,
+            380.08,
+            168.21,
+            392.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2.",
+          "bbox": [
+            163.71,
+            381.74,
+            171.74,
+            394.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "When we perform the belted sum, we cut along these curves and reassemble, gluing",
+          "bbox": [
+            107.44,
+            412.19,
+            504.01,
+            423.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.85
+          ]
+        },
+        {
+          "text": "half of a cusp of La",
+          "bbox": [
+            108.0,
+            423.43,
+            198.18,
+            436.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "3 to half of a cusp of La",
+          "bbox": [
+            193.68,
+            423.43,
+            305.29,
+            438.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "2 to obtain a cusp of La",
+          "bbox": [
+            300.79,
+            423.43,
+            412.5,
+            438.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "5, shown in Figure 6.",
+          "bbox": [
+            408.0,
+            425.18,
+            506.14,
+            438.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8
+          ]
+        },
+        {
+          "text": "Because the cut happened halfway along each, along 3-punctured spheres meeting",
+          "bbox": [
+            108.0,
+            438.0,
+            504.03,
+            448.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.97
+          ]
+        },
+        {
+          "text": "full-sized horospheres, the cusp shape is still [T0].",
+          "bbox": [
+            108.0,
+            451.0,
+            343.23,
+            462.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The cusp of the augmentation component under the belted sum is similarly",
+          "bbox": [
+            119.95,
+            463.86,
+            504.44,
+            474.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.02
+          ]
+        },
+        {
+          "text": "changed, now by stacking the cusps corresponding to the augmentation components",
+          "bbox": [
+            108.0,
+            476.96,
+            504.04,
+            487.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.83
+          ]
+        },
+        {
+          "text": "of La",
+          "bbox": [
+            108.0,
+            488.19,
+            132.39,
+            500.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.94
+          ]
+        },
+        {
+          "text": "3 and La",
+          "bbox": [
+            127.89,
+            488.19,
+            169.74,
+            503.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.94
+          ]
+        },
+        {
+          "text": "2 along 3-punctured spheres. We do not need to know the geometry of",
+          "bbox": [
+            165.24,
+            489.83,
+            504.03,
+            503.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.94
+          ]
+        },
+        {
+          "text": "this cusp precisely, except that the length of the meridian of the cusp has increased.",
+          "bbox": [
+            108.0,
+            502.85,
+            506.13,
+            513.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.85
+          ]
+        },
+        {
+          "text": "Now to obtain the augmented minimally twisted (2n + 1)-chain link La",
+          "bbox": [
+            119.95,
+            514.09,
+            453.97,
+            526.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "2n+1, induc-",
+          "bbox": [
+            449.48,
+            515.84,
+            505.83,
+            528.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8
+          ]
+        },
+        {
+          "text": "tively take the belt sum of La",
+          "bbox": [
+            108.0,
+            527.04,
+            251.42,
+            539.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.98
+          ]
+        },
+        {
+          "text": "2n−1 with La",
+          "bbox": [
+            246.93,
+            527.04,
+            308.31,
+            542.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.98
+          ]
+        },
+        {
+          "text": "2. As in the case of La",
+          "bbox": [
+            303.81,
+            527.04,
+            412.68,
+            541.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.98
+          ]
+        },
+        {
+          "text": "5, the cusp shape of",
+          "bbox": [
+            408.19,
+            528.65,
+            504.01,
+            541.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.98
+          ]
+        },
+        {
+          "text": "the chain link component is obtained by cutting cusps of La",
+          "bbox": [
+            108.0,
+            540.0,
+            395.04,
+            552.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2n−1 and La",
+          "bbox": [
+            390.54,
+            540.0,
+            448.02,
+            555.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2 in half and",
+          "bbox": [
+            443.52,
+            541.66,
+            504.03,
+            555.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "assembling half of each into the new cusp. Hence its shape is still [T0]. The cusp",
+          "bbox": [
+            108.0,
+            554.52,
+            504.0,
+            566.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "of the augmentation component is obtained by stacking the cusp corresponding to",
+          "bbox": [
+            108.0,
+            567.52,
+            504.05,
+            578.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.96
+          ]
+        },
+        {
+          "text": "the augmentation components of La",
+          "bbox": [
+            108.0,
+            578.85,
+            283.39,
+            591.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "2n−1 and La",
+          "bbox": [
+            278.89,
+            578.85,
+            336.95,
+            594.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "2; this is equivalent to stacking one",
+          "bbox": [
+            332.45,
+            580.43,
+            504.01,
+            593.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.02
+          ]
+        },
+        {
+          "text": "copy of the cusp of La",
+          "bbox": [
+            108.0,
+            591.8,
+            212.16,
+            604.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "3 and n −1 copies of the cusp of La",
+          "bbox": [
+            207.67,
+            591.8,
+            376.45,
+            607.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "2. Thus the meridian length",
+          "bbox": [
+            371.96,
+            593.55,
+            504.03,
+            606.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8
+          ]
+        },
+        {
+          "text": "grows linearly with n.",
+          "bbox": [
+            108.0,
+            606.41,
+            212.25,
+            617.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Note that Dehn ﬁlling the meridian of the augmentation component of La",
+          "bbox": [
+            119.95,
+            617.7,
+            487.8,
+            630.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "2n+1",
+          "bbox": [
+            483.31,
+            624.59,
+            503.5,
+            632.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "gives the minimally twisted chain link L2n+1. Since the length of the meridian grows",
+          "bbox": [
+            108.0,
+            632.32,
+            504.03,
+            644.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.8,
+            10.91
+          ]
+        },
+        {
+          "text": "linearly with n, by the hyperbolic Dehn ﬁlling theorem for n large enough, the cusp",
+          "bbox": [
+            108.0,
+            645.27,
+            504.01,
+            656.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.84,
+            10.91
+          ]
+        },
+        {
+          "text": "shape of L2n+1 will lie in the neighborhood U of [T0]. Take a sequence of ﬁlling",
+          "bbox": [
+            108.0,
+            658.14,
+            504.01,
+            670.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "slopes on the other cusps of L2n+1 that have high length and yield a Berge knot.",
+          "bbox": [
+            108.0,
+            671.09,
+            506.16,
+            683.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            11.02
+          ]
+        },
+        {
+          "text": "Again the hyperbolic Dehn ﬁlling theorem implies that the cusp shape of the Berge",
+          "bbox": [
+            107.6,
+            684.16,
+            504.04,
+            695.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.87
+          ]
+        },
+        {
+          "text": "knot lies in U.",
+          "bbox": [
+            108.0,
+            697.07,
+            176.4,
+            707.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

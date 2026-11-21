@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Higher polylogarithms",
-  "pageStart": 56,
-  "pageEnd": 61,
+  "title": "Dilogarithm identities",
+  "pageStart": 31,
+  "pageEnd": 39,
   "contains": [
-    "library/fulltext/blocks/prose-sec-009"
+    "library/fulltext/blocks/prose-sec-009",
+    "library/fulltext/blocks/prop-sec-009-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
   "provenance": "ingested"
 }

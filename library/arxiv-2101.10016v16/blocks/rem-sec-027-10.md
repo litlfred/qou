@@ -1,0 +1,1 @@
+We may interpret the trivial twist E as follows. It is non-trivial precisely when R is not selfadjoint. This follows from the equation Ω = Ω∗. The subclass of Hermitian coboundary wqh for which R is already selfadjoint will be considered more closely in the next section.

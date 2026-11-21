@@ -1,0 +1,1 @@
+The modular group σt(x) = ∇itx∇−it is given by σt(A) = e2πbQtA, (4.39) σt(B) = B. (4.40) or in other words σt′(f) = f(s, t)e2πQt′s (4.41) With this expression of the modular group, it is now easy to see the following:

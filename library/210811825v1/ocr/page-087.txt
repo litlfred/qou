@@ -1,0 +1,56 @@
+Lemma 3.15 The ipiialsepeeseniation does not appear in Ey.
+
+Proof: To prove this, we will consider the first positive Neumann eigenvalue of the
+(2, 3, 8) triangle. Proposition 3.14 implies that there will be a nodal line within the
+triangle that separates it into two domains. The line can intersect two of the boundary
+lines, one boundary line twice, or be contained entirely in the triangle. In the case where
+it is contained entirely, it already bounds a Dirichlet region in the triangle; by domain
+monotonicity it will certainly have a first eigenvalue larger than that of the (2, 3, 8)
+triangle with Dirichlet boundary conditions. In the case where it intersects one boundary
+twice, when we extend the eigenfunction to the entire surface, the nodal line will bound
+a Dirichlet region over two (2, 3, 8) triangles, and so will have a first eigenvalue larger
+than that of a hyperbolic disk of area 12.
+
+In the case where the nodal line intersects two edges of the triangle, we can quickly
+convince ourselves that the largest possible domain it can bound occurs when it intersects
+the two largest edges; when we extend such a nodal line to the surface, it will be contained
+
+in one of 6 small octagons, each of area 22, which tessellate the surface. By domain
+
+3
+monotonicity, this Dirichlet region will have an eigenvalue larger than that of the on
+
+octagon. Using Faber-Krahn, we see that such an octagon Qo satisfies
+
+Ai(Qo) > Vix
+
+> Vz > 6.
+
+Hence the trivial representation does not appear in the first eigenspace. Oo
+The final thing we must show is that yg only appears once in the first eigenspace, that
+
+is, we know that the dimension of the first eigenspace is a multiple of 3, but it remains
+to prove that it is exactly 3. To do this, we prove that the multiplicity is strictly less
+
+than 6. We use the upper bound on the first eigenvalue (from Section 3.3) to} create a
+
+bound on the multiplicity using Selberg’s trace formula (see Theorem 2.47). Considering
+
+the spectral side of the formula, we have
+h(to) + mh(ti) < So h(t),
+j
+
+where m is the multiplicity that we wish to bound. Rearranging this gives
+Ys h(t) — hlto)
+h(ti) ’
+and we will choose a function h(t) such that
+Daj (ts) = (to) day (ty) — hi(to)
+h(t) ( 116469 4 /4 ,
+
+m<
+
+m<
+
+28089
+
+77

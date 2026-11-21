@@ -69,7 +69,7 @@ end HeckeCharacter
     asserted: `mesonMassRatio` raises `(9/5)` to this constant, so the
     exponent *is* the constituent count by construction rather than by a
     tautology claiming so. -/
--- Ref: [manuscript] prop:meson-kaon-pion-hecke-seifert §proof
+-- Ref: [leitner2026] prop:meson-kaon-pion-hecke-seifert §proof
 def quarkConstituentCount : ℕ := 2
 
 section SeifertEuler
@@ -82,7 +82,7 @@ noncomputable def seifertEuler (n : ℕ) : R :=
 
 /-- Seifert volume ratio V_S(T(2,5)) / V_S(T(2,3)) = 9/5, over any field
     in which 2, 3, 5 are invertible. -/
--- Ref: [manuscript] prop:meson-kaon-pion-hecke-seifert §2
+-- Ref: [leitner2026] prop:meson-kaon-pion-hecke-seifert §2
 theorem seifert_ratio_T25_T23
     (h2 : (2 : R) ≠ 0) (h3 : (3 : R) ≠ 0) (h5 : (5 : R) ≠ 0) :
     (seifertEuler 5 : R) / seifertEuler 3 = 9 / 5 := by

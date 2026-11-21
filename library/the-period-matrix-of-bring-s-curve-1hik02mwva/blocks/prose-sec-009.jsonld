@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "We may now complete dw to a basis of differentials on B us-",
-  "pageStart": 7,
-  "pageEnd": 9,
-  "text": "../sections/sec-009-we-may-now-complete-dw-to-a-basis-of-differentia.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/the-period-matrix-of-bring-s-curve-1hik02mwva",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/the-period-matrix-of-bring-s-curve-1hik02mwva",
+  "title": "so that \\ 2niq",
+  "pageStart": 20,
+  "pageEnd": 22,
+  "text": "../sections/sec-009-5-so-that-2niq.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
   "provenance": "ingested"
 }

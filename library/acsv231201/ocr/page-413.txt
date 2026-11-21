@@ -1,0 +1,60 @@
+12.4 Transfer matrices 395
+
+x“ run through the k possible steps (a, b) of the walk. It is shown in [BP0O7] that
+when k = 2 there is no loss of generality in taking U to be the real matrix
+
+c
+
+U. =
+V1-¢?
+
+and taking the entries of M to be | and x, meaning that the walk either stays
+where it is or moves one to the right. The universal spacetime generating func-
+
+tion for a two-dimensional quantum walk is therefore given by
+
+_ Pcl y) _ P(x, y)
+O(x,y) 1 —cy + exy— xy?’
+
+F.(x,y)
+
+where the numerator P, depends on initial chiralities (one of k hidden states
+of the walk) and plays no special role. For example, if k = 2 and starting and
+ending chiralities are both in state 2 then P.(x, y) = 1 - cy. 4
+
+Theorem 12.12 (Spacetime asymptotics for one-dimensional quantum walk).
+There is a real phase function p(r, s) such that
+
+2 AVI -c?
+p(s) = =
+T(1-A)s ¥-(l - c?) - 4a + 42?)
+
+uniformly as A = *
+
+[1 - c)/2,(1 + c)/2]. Conversely, if A varies over a compact subset of the
+
+cos?(p(r, s)) + O(s3?)
+varies over any compact subset of the interior of J. =
+
+complement of J. then p(r, 8) > 0 exponentially.
+
+The variation of probabilities in the feasible region for c = 1/2 is illustrated
+in Figure 12.2. Qualitatively similar results hold for the other starting and end-
+ing chiralities, and for combinations of chiralities.
+
+Proof The denominator Q = 1 — c(1 — x)y — xy’ is quadratic in y and linear
+in x, so the critical point equations can be solved explicitly in radicals. Fur-
+thermore, Q satisfies the strong torality hypothesis (Definition 9.20) so that
+Corollary 9.21 applies. The intersection V; of V with the unit torus is a topo-
+logical circle x = (cy — 1)/(cy — y?) winding twice around the torus in the x
+direction and once in the y direction. The logarithmic Gauss map is a smooth
+map on this circle with two extreme values, (1—c)/2 and (1+c)/2, and no other
+critical points. Therefore, for each 2 in the interior of J, there are precisely two
+points (x;, 1) and (x2, y2) in V; with Viog Q(x;, yj) || (A, 1) and an application
+of (9.7) implies
+
+2
+l-cy; _, —yjQy(Xj,¥j)
+(r,s) = Jers iy +0(s3?),
+p » Vin i sQ(xj, yj) ()
+

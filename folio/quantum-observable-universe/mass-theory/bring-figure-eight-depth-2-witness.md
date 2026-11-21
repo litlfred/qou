@@ -3,11 +3,11 @@
 
 *The hyperbolic volume of the figure-8 knot $4_1$ embedded in
 Bring's genus-4 surface
-([`rem:figure-8-archimedean-illustration`](#rem:figure-8-archimedean-illustration))
+([Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy](#rem:figure-8-archimedean-illustration))
 equals the standard-part of $2\,\mathrm{Im}\,\mathrm{Li}_2^q$ at the
 regular-ideal-tetrahedron shape parameter $z = e^{i\pi/3}$ — the
 depth-2 grouplike value predicted by
-[`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence):*
+[GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence):*
 
 $$
   \mathrm{Vol}(S^3 \setminus 4_1)
@@ -21,8 +21,8 @@ $$
 
 Computed via `exact algebraic structures.polylog` at `mp.dps = 50` (formalism
 the canonical formalism,
-witness
-[`gb-depth-period-bring-fig8.witness.json`](https://github.com/litlfred/qou/blob/main/computations/gb-depth-period-bring-fig8.witness.json)):
+computation record
+[GB-depth period on Bring for the figure-eight](https://github.com/litlfred/qou/blob/main/computations/gb-depth-period-bring-fig8.witness.json)):
 
 $$
   2\,\mathrm{Cl}_2(\pi/3)
@@ -51,7 +51,7 @@ match, by construction of the Bloch–Wigner regulator
 
 The figure-8 knot is the canonical knot-theoretic witness for
 Bring's surface in this paper
-([`def:brings-coordinate-ring`](#def:brings-coordinate-ring)). Its
+([Non-commutative coordinate ring of Bring's curve](#def:brings-coordinate-ring)). Its
 4-strand braid word $\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1}$
 realises inside the genus-4 handlebody, and amphichirality
 $4_1 \cong 4_1^{\,\mathrm{mirror}}$ pins it as a *mass invariant*
@@ -63,7 +63,7 @@ the paper are consistent with the depth-2 reading:
   $2g/(4\pi(g-1))|_{g=4} = 2/(3\pi)$ share a single provenance — the
   unique archimedean shadow of pentagon-coherent substrate data on
   Bring's surface (cf.
-  [`rem:figure-8-archimedean-illustration`](#rem:figure-8-archimedean-illustration)).
+  [Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy](#rem:figure-8-archimedean-illustration)).
 - Both factor through the Bloch–Wigner dilogarithm at a Bring shape
   parameter — exactly the depth-2 grouplike of $\mathcal{H}_q$.
 ### Cross-reference: deeper-depth Bring instances (open)
@@ -86,4 +86,4 @@ requires either (a) a trilog $\mathrm{Li}_3$ at an algebraic argument,
 volume $\mathrm{CS} + i\,\mathrm{Vol} \in \mathbb{C}/\pi^2\mathbb{Z}$),
 or (c) a multiple zeta value such as $\zeta(3)$. The Bring-natural
 choice is (a) at the primitive 5th root of unity $\zeta_5$ — see
-[`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness).
+[Bring trilog at $\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)](#conj:bring-trilog-depth-3-witness).

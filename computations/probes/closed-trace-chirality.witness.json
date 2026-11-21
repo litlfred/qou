@@ -1,0 +1,122 @@
+{
+ "producer": "computations/probes/closed_trace_chirality_probe.py",
+ "bean": "qou-g0jn",
+ "arithmetic": "exact (sympy over Q(q)); no floats",
+ "q0_anchor": "none (symbolic in q)",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact sympy arithmetic over Q(q) with q a free symbol; no substrate q0 is read or substituted",
+ "rows": [
+  {
+   "word": "V^3 = (s1 s2^-1)^3",
+   "T_corpus": [
+    [
+     "(q - 1)*(q + 1)*(4*q**8 - 29*q**6 + 9*q**4 - 7*q**2 - 1)/(q**6*(q**2 + 1))",
+     "0"
+    ],
+    [
+     "0",
+     "(q - 1)*(q + 1)*(6*q**12 - 6*q**10 - 13*q**8 + 17*q**6 - 21*q**4 + q**2 - 8)/(q**4*(q**2 + 1))"
+    ]
+   ],
+   "T_mirror": [
+    [
+     "(q - 1)*(q + 1)*(4*q**10 + 7*q**8 + 15*q**6 - 13*q**4 + 17*q**2 - 6)/(q**6*(q**2 + 1))",
+     "0"
+    ],
+    [
+     "0",
+     "(q - 1)*(q + 1)*(5*q**12 - q**10 - 3*q**8 + 25*q**6 - 8*q**4 + 12*q**2 - 6)/(q**6*(q**2 + 1))"
+    ]
+   ],
+   "T_corpus_scalar": false,
+   "T_mirror_scalar": false,
+   "emission_corpus": "(q - 1)*(q + 1)*(6*q**12 - 6*q**10 - 13*q**8 + 17*q**6 - 21*q**4 + q**2 - 8)/(q**4*(q**2 + 1))",
+   "emission_mirror": "(q - 1)*(q + 1)*(5*q**12 - q**10 - 3*q**8 + 25*q**6 - 8*q**4 + 12*q**2 - 6)/(q**6*(q**2 + 1))",
+   "abs_ratio_sq_corpus_over_mirror": "q**4*(6*q**12 - 6*q**10 - 13*q**8 + 17*q**6 - 21*q**4 + q**2 - 8)**2/(5*q**12 - q**10 - 3*q**8 + 25*q**6 - 8*q**4 + 12*q**2 - 6)**2"
+  },
+  {
+   "word": "s1 s2^-1",
+   "T_corpus": [
+    [
+     "-(q - 1)*(q + 1)*(q**4 + 2*q**2 - 1)/(q**2*(q**2 + 1))",
+     "0"
+    ],
+    [
+     "0",
+     "(q - 1)*(q + 1)*(2*q**8 + 2*q**6 - 3*q**4 - 2*q**2 - 1)/(q**4*(q**2 + 1))"
+    ]
+   ],
+   "T_mirror": [
+    [
+     "(q - 1)*(q + 1)*(q**6 + 2*q**4 + q**2 - 2)/(q**2*(q**2 + 1))",
+     "0"
+    ],
+    [
+     "0",
+     "(q - 1)*(q + 1)*(q**4 + 2*q**2 - 1)/(q**2*(q**2 + 1))"
+    ]
+   ],
+   "T_corpus_scalar": false,
+   "T_mirror_scalar": false,
+   "emission_corpus": "(q - 1)*(q + 1)*(2*q**8 + 2*q**6 - 3*q**4 - 2*q**2 - 1)/(q**4*(q**2 + 1))",
+   "emission_mirror": "(q - 1)*(q + 1)*(q**4 + 2*q**2 - 1)/(q**2*(q**2 + 1))",
+   "abs_ratio_sq_corpus_over_mirror": "(2*q**8 + 2*q**6 - 3*q**4 - 2*q**2 - 1)**2/(q**4*(q**4 + 2*q**2 - 1)**2)"
+  },
+  {
+   "word": "s1^4",
+   "T_corpus": [
+    [
+     "-4*(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)",
+     "0"
+    ],
+    [
+     "0",
+     "-4*(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)"
+    ]
+   ],
+   "T_mirror": [
+    [
+     "4*(q - 1)*(q + 1)/q**4",
+     "0"
+    ],
+    [
+     "0",
+     "4*(q - 1)*(q + 1)/q**4"
+    ]
+   ],
+   "T_corpus_scalar": true,
+   "T_mirror_scalar": true,
+   "emission_corpus": "-4*(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)",
+   "emission_mirror": "4*(q - 1)*(q + 1)/q**4",
+   "abs_ratio_sq_corpus_over_mirror": "q**8*(q**2 - q + 1)**2*(q**2 + q + 1)**2"
+  },
+  {
+   "word": "(s1 s2)^5",
+   "T_corpus": [
+    [
+     "-(q - 1)*(q + 1)*(10*q**16 + 20*q**14 + 20*q**12 - 10*q**10 - 10*q**8 + 20*q**6 - 13*q**4 - 10*q**2 + 3)/(q**4*(q**2 + 1))",
+     "0"
+    ],
+    [
+     "0",
+     "-(q - 1)*(q + 1)*(30*q**10 + 20*q**8 - 20*q**6 + 3*q**4 - 3)/(q**2*(q**2 + 1))"
+    ]
+   ],
+   "T_mirror": [
+    [
+     "(q - 1)*(q + 1)*(3*q**4 - 10*q**2 - 3)/(q**2*(q**2 + 1))",
+     "0"
+    ],
+    [
+     "0",
+     "-(q - 1)*(q + 1)*(3*q**4 + 7)/(q**2 + 1)"
+    ]
+   ],
+   "T_corpus_scalar": false,
+   "T_mirror_scalar": false,
+   "emission_corpus": "-(q - 1)*(q + 1)*(30*q**10 + 20*q**8 - 20*q**6 + 3*q**4 - 3)/(q**2*(q**2 + 1))",
+   "emission_mirror": "-(q - 1)*(q + 1)*(3*q**4 + 7)/(q**2 + 1)",
+   "abs_ratio_sq_corpus_over_mirror": "(30*q**10 + 20*q**8 - 20*q**6 + 3*q**4 - 3)**2/(q**4*(3*q**4 + 7)**2)"
+  }
+ ]
+}

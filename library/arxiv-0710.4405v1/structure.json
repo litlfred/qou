@@ -6,10 +6,12 @@
   "sha256": "af6234179a1345327e0796c811992b8caa632733fe5b96ec8a74307125ba53de",
   "bytes": 124013,
   "pages": 8,
-  "math_source": "text-layer",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,16 +21,28 @@
    "stamp_date": "24 Oct 2007"
   },
   "doi": null,
-  "title": "Instituto de F\u00b4 \u0131sica Corpuscular, IFIC, CSIC-Universitat de Val`encia",
-  "authors_raw": "Apt. Correus 22085, E-46071 Val` encia, Spain",
+  "title": "Chiral Low-Energy Constants : Status and Prospects ∗",
+  "authors_raw": "J. Portolés",
+  "title_lines": [
+   "Chiral Low-Energy Constants : Status and Prospects ∗"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211115133955-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20211115133955-05'00'"
+  },
+  "title_raw": "Chiral Low-Energy Constants : Status and Prospects ∗",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Chiral Low-Energy Constants : Status and Prospects ∗ J. Portol´es 1. Introduction Chiral symmetry of massless Quantum Chromodynamics has turned to be a key tool in order to deal with the low-energy domain of strong interactions (typically E ∼ M π ) where hadron dynamics is not appropriately describe",
+   "outline": "Introduction",
+   "text": "Chiral Low-Energy Constants : Status and Prospects ∗",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Instituto de F´ ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia"
  },
  "toc": [
   {
@@ -36,91 +50,206 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Tools : Large-NC and QCD asymptotic constraints",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Status and Prospects",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "O(p4)",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "O(p6)",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 754,
+   "n_words": 109,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 5,
-   "n_chars": 8962,
-   "n_words": 1541
+   "page_end": 3,
+   "n_chars": 4013,
+   "n_words": 692,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-status-and-prospects",
+   "id": "sec-001-tools-large-nc-and-qcd-asymptotic-constraints",
+   "number": null,
+   "title": "Tools : Large-NC and QCD asymptotic constraints",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4776,
+   "n_words": 787,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-status-and-prospects",
    "number": null,
    "title": "Status and Prospects",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 94,
-   "n_words": 16
+   "n_chars": 117,
+   "n_words": 19,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-op4",
+   "id": "sec-003-op4",
    "number": null,
    "title": "O(p4)",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 594,
-   "n_words": 105
+   "n_chars": 584,
+   "n_words": 95,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-op6",
+   "id": "sec-004-op6",
    "number": null,
    "title": "O(p6)",
    "level": 2,
    "page_start": 5,
    "page_end": 8,
-   "n_chars": 6565,
-   "n_words": 1145
+   "n_chars": 6515,
+   "n_words": 1104,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 4,
-  "chars_total": 16215,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 16759,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ustron07.tex",
    "tex_sections": 6,
-   "overlaid": 0,
+   "overlaid": 2,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -128,24 +257,39 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.576,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-001-status-and-prospects",
+     "id": "sec-001-tools-large-nc-and-qcd-asymptotic-constraints",
+     "title": "Tools : Large-NC and QCD asymptotic constraints",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-status-and-prospects",
      "title": "Status and Prospects",
      "prose_ratio": 0.037,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-002-op4",
+     "id": "sec-003-op4",
      "title": "O(p4)",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-op6",
+     "id": "sec-004-op6",
      "title": "O(p6)",
      "result": "no matching \\section"
     }

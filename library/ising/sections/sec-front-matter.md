@@ -8,6 +8,7 @@ pages: 1-8
 source_pdf: ising.pdf
 source_sha256: 9f84d7209731d299
 toc_source: inferred
+doc_brief: "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL — Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems."
 ---
 WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL
 JEHANNE DOUSSE AND VALENTIN F´ERAY

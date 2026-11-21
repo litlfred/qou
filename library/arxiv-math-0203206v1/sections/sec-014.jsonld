@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203206v1/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Conjugates and Antipodes: Discrete Quantum Groups",
+  "pageStart": 32,
+  "pageEnd": 36,
+  "contains": [
+    "library/arxiv-math-0203206v1/blocks/prose-sec-014"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203206v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203206v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,53 @@
+5.3. Integral cohomology 107
+
+is an isomorphism for k < n— 1 and an epimorphism for k = n— 1. Applying
+this first to the ample divisor © C X and then to the ample divisor Y C ©,
+we in particular obtain that
+
+H"(Y,Z) = H"(X,Z) and H,(Y,Z) = H,(X,Z) for n<2.
+
+In particular, the weak Lefschetz theorem for cohomology implies that the
+groups H"(Y,Z) have the claimed form for n < 2. Similarly, for n > 2
+the corresponding statement follows from the weak Lefschetz theorem for
+homology because H"(Y,Z) = H4_,(Y,Z) by Poincaré duality. For any n
+we furthermore have an exact sequence
+
+0 — Ext(An-1(Y,Z),Z) —> H"(Y,Z) —> Hom(H,(Y,Z),Z) — 0
+— ————<$— SS
+torsion group torsion-free
+
+by the universal coefficient theorem. Putting n = 2 and using that by the
+
+weak Lefschetz theorem the group H)(Y,Z) = Hi(X,Z) is torsion-free so
+that Ext(H,(Y,Z),Z) = 0, we obtain that
+
+H?(Y,Z) = Hom(H)(Y,Z),Z)
+
+is a free abelian group. The rank of this group is equal to h?(Y) = 86 by
+lemma 5.8. Altogether it then follows that the integral cohomology groups
+of Y are those given in the table.
+
+It remains to show that g* : H?(Y+,Z) —+ H?(Y,Z) is an epimorphism
+onto the o-invariants whose kernel is the torsion subgroup, and to determine
+the groups H”(Y*,Z). In the computation of these cohomology groups we
+can in fact restrict our attention to degrees n < 2. Indeed, Poincaré duality
+says that
+
+H,(Y*,Z) = H+ "(y*,Z)
+for all n, hence by the universal coefficient theorem we have (non-canonical)
+isomorphisms
+
+H"(Y*,Z) = Ay—1(¥*,Z)tor B Hn (Y*,Z) free
+= HP (Y*Z) tor DHE "(YT Z) fice
+
+where the subscripts tor and free refer to the maximal torsion subgroup and
+the maximal free abelian subgroup, respectively. So for the computation of
+the groups H"(Y*, Z) it suffices to deal with degrees n < 2. This being said,
+we can argue as follows.
+
+Recall from topology [18, ex. VII.4(b)] that for every regular covering
+map W —+ Wt = W/T between connected, locally pathwise connected
+topological spaces with Galois group [ = Aut(W/W7~), one has a spectral
+sequence
+
+ED’ = H?(T,H4(W,Z)) => H?*4(Wt,Z)

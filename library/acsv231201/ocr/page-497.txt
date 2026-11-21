@@ -1,0 +1,35 @@
+B.4 Topology of complex manifolds 479
+
+(2) Give a basis for each space Zo, Bo, Z,, By, Z2, and By.
+
+(3) Compute the homology of the Mobius strip with coefficients in C from this
+cell complex.
+
+(4) What changes, if anything, if you use coefficients in Z instead of coeffi-
+cients in C?
+
+Exercise B.10. Let X = C, = C\ {0} be the punctured plane, the simplest case
+of the complement of a hyperplane arrangement. To establish the complex de
+Rham Theorem for H'(X) we need to show that holomorphic 1-forms w and
+6 map to the same element of the dual of H;(X) if and only if they differ by a
+coboundary df.
+
+(1) Use Theorem B.18 to prove the forward implication.
+
+(2) Compute the homology of X by verifying that the embedding of S! into X
+is a homotopy equivalence.
+
+(3) Let w be any holomorphic 1-form on X. Use Stokes’s Theorem to show
+that tL w = 0 for any C homologous to zero in H;(X).
+
+(4) Let y be the unit circle oriented, say, counterclockwise, and let 7 = w —
+cdz/z, where c = (2zi)"! fe. Show that fon = 0 for every C € Z,(X).
+Hint: Use part 2.
+
+(5) Show that f, w= f @ implies w—6 = df for some holomorphic function f.
+Hint: You can construct f by integrating from an arbitrary fixed basepoint.
+
+Exercise B.11. Let X be the complex curve {(x,y) € C? : x? +? = 1}. By
+the Andreotti-Frankel Theorem, it is homotopy equivalent to a cell complex
+of (real) dimension 1. Demonstrate this by finding a deformation retract of X
+onto a one-dimensional manifold.

@@ -2,567 +2,1012 @@
  "_schema": "library-summary/v1",
  "doc_id": "m4-24",
  "source_sha256": "cf7c5e29b818e647",
- "brief": "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 111 sections: Introduction; Polynomial invariants of knots; The Jones polynomial",
- "extended": "**Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface**\n\n*The workshop and seminars on \\Invariants of knots and 3-manifolds\" was held at*\n\n200 pp, 111 sections.\n\n**Outline.** 0 Introduction; 1 Polynomial invariants of knots; 1.1 The Jones polynomial; 1.1.1 Does the Jones polynomial distinguish th; 1.1.2 Characterization and interpretation of t; 1.1.3 Numerical experiments; 1.1.4 Categori; 1.2 The HOMFLY, Q, and Kau; 1.3 The volume conjecture; 12 (N−3+ 1; 2 Finite type invariants of knots; 2.1 Torsion and Vassiliev invariants; 2.2 Do Vassiliev invariants distinguish knots?; 2.3 Can Vassiliev invariants detect other inva; 2.4 Vassiliev invariants and crossing numbers; 2.5 Dimensions of spaces of Vassiliev invarian; 2.6 Milnor invariants; 2.7 Finite type invariants of virtual knots",
+ "brief": "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3",
+ "extended": "**Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface**\n\n*The workshop and seminars on “Invariants of knots and 3-manifolds” was held at*\n\n200 pp, 200 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
  "tokens": {
-  "brief": 39,
-  "extended": 203
+  "brief": 28,
+  "extended": 87
  },
  "sections": [
   {
-   "id": "sec-000-0-introduction",
-   "title": "Introduction",
-   "pages": "5-8"
+   "id": "page-001",
+   "title": "Page 1",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-1-polynomial-invariants-of-knots",
-   "title": "Polynomial invariants of knots",
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
+  },
+  {
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
+  },
+  {
+   "id": "page-004",
+   "title": "Page 4",
+   "pages": "4-4"
+  },
+  {
+   "id": "page-005",
+   "title": "Page 5",
+   "pages": "5-5"
+  },
+  {
+   "id": "page-006",
+   "title": "Page 6",
+   "pages": "6-6"
+  },
+  {
+   "id": "page-007",
+   "title": "Page 7",
+   "pages": "7-7"
+  },
+  {
+   "id": "page-008",
+   "title": "Page 8",
    "pages": "8-8"
   },
   {
-   "id": "sec-002-11-the-jones-polynomial",
-   "title": "The Jones polynomial",
-   "pages": "8-9"
+   "id": "page-009",
+   "title": "Page 9",
+   "pages": "9-9"
   },
   {
-   "id": "sec-003-111-does-the-jones-polynomial-distinguish-the-tr",
-   "title": "Does the Jones polynomial distinguish the trivial knot?",
-   "pages": "9-10"
+   "id": "page-010",
+   "title": "Page 10",
+   "pages": "10-10"
   },
   {
-   "id": "sec-004-112-characterization-and-interpretation-of-the-j",
-   "title": "Characterization and interpretation of the Jones polynomial",
-   "pages": "10-14"
+   "id": "page-011",
+   "title": "Page 11",
+   "pages": "11-11"
   },
   {
-   "id": "sec-005-113-numerical-experiments",
-   "title": "Numerical experiments",
-   "pages": "14-16"
+   "id": "page-012",
+   "title": "Page 12",
+   "pages": "12-12"
   },
   {
-   "id": "sec-006-114-categori",
-   "title": "Categori",
-   "pages": "16-18"
+   "id": "page-013",
+   "title": "Page 13",
+   "pages": "13-13"
   },
   {
-   "id": "sec-007-12-the-homfly-q-and-kau",
-   "title": "The HOMFLY, Q, and Kau",
-   "pages": "18-21"
+   "id": "page-014",
+   "title": "Page 14",
+   "pages": "14-14"
   },
   {
-   "id": "sec-008-13-the-volume-conjecture",
-   "title": "The volume conjecture",
-   "pages": "21-25"
+   "id": "page-015",
+   "title": "Page 15",
+   "pages": "15-15"
   },
   {
-   "id": "sec-009-12-n3-1",
-   "title": "(N−3+ 1",
-   "pages": "25-26"
+   "id": "page-016",
+   "title": "Page 16",
+   "pages": "16-16"
   },
   {
-   "id": "sec-010-2-finite-type-invariants-of-knots",
-   "title": "Finite type invariants of knots",
-   "pages": "26-27"
+   "id": "page-017",
+   "title": "Page 17",
+   "pages": "17-17"
   },
   {
-   "id": "sec-011-21-torsion-and-vassiliev-invariants",
-   "title": "Torsion and Vassiliev invariants",
-   "pages": "27-29"
+   "id": "page-018",
+   "title": "Page 18",
+   "pages": "18-18"
   },
   {
-   "id": "sec-012-22-do-vassiliev-invariants-distinguish-knots",
-   "title": "Do Vassiliev invariants distinguish knots?",
-   "pages": "29-30"
+   "id": "page-019",
+   "title": "Page 19",
+   "pages": "19-19"
   },
   {
-   "id": "sec-013-23-can-vassiliev-invariants-detect-other-invaria",
-   "title": "Can Vassiliev invariants detect other invariants?",
-   "pages": "30-31"
+   "id": "page-020",
+   "title": "Page 20",
+   "pages": "20-20"
   },
   {
-   "id": "sec-014-24-vassiliev-invariants-and-crossing-numbers",
-   "title": "Vassiliev invariants and crossing numbers",
-   "pages": "31-33"
+   "id": "page-021",
+   "title": "Page 21",
+   "pages": "21-21"
   },
   {
-   "id": "sec-015-25-dimensions-of-spaces-of-vassiliev-invariants",
-   "title": "Dimensions of spaces of Vassiliev invariants",
-   "pages": "33-36"
+   "id": "page-022",
+   "title": "Page 22",
+   "pages": "22-22"
   },
   {
-   "id": "sec-016-26-milnor-invariants",
-   "title": "Milnor invariants",
-   "pages": "36-37"
+   "id": "page-023",
+   "title": "Page 23",
+   "pages": "23-23"
   },
   {
-   "id": "sec-017-27-finite-type-invariants-of-virtual-knots",
-   "title": "Finite type invariants of virtual knots",
-   "pages": "37-40"
+   "id": "page-024",
+   "title": "Page 24",
+   "pages": "24-24"
   },
   {
-   "id": "sec-018-28-finite-type-invariants-derived-from-local-mov",
-   "title": "Finite type invariants derived from local moves",
-   "pages": "40-43"
+   "id": "page-025",
+   "title": "Page 25",
+   "pages": "25-25"
   },
   {
-   "id": "sec-019-29-loop",
-   "title": "Loop",
-   "pages": "43-46"
+   "id": "page-026",
+   "title": "Page 26",
+   "pages": "26-26"
   },
   {
-   "id": "sec-020-210-goussarov-habiro-theory-for-knots",
-   "title": "Goussarov-Habiro theory for knots",
-   "pages": "46-50"
+   "id": "page-027",
+   "title": "Page 27",
+   "pages": "27-27"
   },
   {
-   "id": "sec-021-211-other-problems",
-   "title": "Other problems",
-   "pages": "50-52"
+   "id": "page-028",
+   "title": "Page 28",
+   "pages": "28-28"
   },
   {
-   "id": "sec-022-3-the-kontsevich-invariant",
-   "title": "The Kontsevich invariant",
+   "id": "page-029",
+   "title": "Page 29",
+   "pages": "29-29"
+  },
+  {
+   "id": "page-030",
+   "title": "Page 30",
+   "pages": "30-30"
+  },
+  {
+   "id": "page-031",
+   "title": "Page 31",
+   "pages": "31-31"
+  },
+  {
+   "id": "page-032",
+   "title": "Page 32",
+   "pages": "32-32"
+  },
+  {
+   "id": "page-033",
+   "title": "Page 33",
+   "pages": "33-33"
+  },
+  {
+   "id": "page-034",
+   "title": "Page 34",
+   "pages": "34-34"
+  },
+  {
+   "id": "page-035",
+   "title": "Page 35",
+   "pages": "35-35"
+  },
+  {
+   "id": "page-036",
+   "title": "Page 36",
+   "pages": "36-36"
+  },
+  {
+   "id": "page-037",
+   "title": "Page 37",
+   "pages": "37-37"
+  },
+  {
+   "id": "page-038",
+   "title": "Page 38",
+   "pages": "38-38"
+  },
+  {
+   "id": "page-039",
+   "title": "Page 39",
+   "pages": "39-39"
+  },
+  {
+   "id": "page-040",
+   "title": "Page 40",
+   "pages": "40-40"
+  },
+  {
+   "id": "page-041",
+   "title": "Page 41",
+   "pages": "41-41"
+  },
+  {
+   "id": "page-042",
+   "title": "Page 42",
+   "pages": "42-42"
+  },
+  {
+   "id": "page-043",
+   "title": "Page 43",
+   "pages": "43-43"
+  },
+  {
+   "id": "page-044",
+   "title": "Page 44",
+   "pages": "44-44"
+  },
+  {
+   "id": "page-045",
+   "title": "Page 45",
+   "pages": "45-45"
+  },
+  {
+   "id": "page-046",
+   "title": "Page 46",
+   "pages": "46-46"
+  },
+  {
+   "id": "page-047",
+   "title": "Page 47",
+   "pages": "47-47"
+  },
+  {
+   "id": "page-048",
+   "title": "Page 48",
+   "pages": "48-48"
+  },
+  {
+   "id": "page-049",
+   "title": "Page 49",
+   "pages": "49-49"
+  },
+  {
+   "id": "page-050",
+   "title": "Page 50",
+   "pages": "50-50"
+  },
+  {
+   "id": "page-051",
+   "title": "Page 51",
+   "pages": "51-51"
+  },
+  {
+   "id": "page-052",
+   "title": "Page 52",
    "pages": "52-52"
   },
   {
-   "id": "sec-023-31-calculation-of-the-kontsevich-invariant",
-   "title": "Calculation of the Kontsevich invariant",
-   "pages": "52-53"
-  },
-  {
-   "id": "sec-024-32-does-the-kontsevich-invariant-distinguish-kno",
-   "title": "Does the Kontsevich invariant distinguish knots?",
+   "id": "page-053",
+   "title": "Page 53",
    "pages": "53-53"
   },
   {
-   "id": "sec-025-33-characterization-and-interpretation-of-the-ko",
-   "title": "Characterization and interpretation of the Kontsevich in-",
-   "pages": "53-54"
+   "id": "page-054",
+   "title": "Page 54",
+   "pages": "54-54"
   },
   {
-   "id": "sec-026-34-the-kontsevich-invariant-in-a",
-   "title": "The Kontsevich invariant in a",
-   "pages": "54-55"
+   "id": "page-055",
+   "title": "Page 55",
+   "pages": "55-55"
   },
   {
-   "id": "sec-027-35-the-kontsevich-invariant-in-arrow-diagrams",
-   "title": "The Kontsevich invariant in arrow diagrams",
-   "pages": "55-57"
+   "id": "page-056",
+   "title": "Page 56",
+   "pages": "56-56"
   },
   {
-   "id": "sec-028-36-the-chern-simons-series-of-con",
-   "title": "The Chern-Simons series of con",
-   "pages": "57-60"
+   "id": "page-057",
+   "title": "Page 57",
+   "pages": "57-57"
   },
   {
-   "id": "sec-029-37-associators",
-   "title": "Associators",
-   "pages": "60-63"
+   "id": "page-058",
+   "title": "Page 58",
+   "pages": "58-58"
   },
   {
-   "id": "sec-030-38-graph-cohomology",
-   "title": "Graph cohomology",
-   "pages": "63-65"
+   "id": "page-059",
+   "title": "Page 59",
+   "pages": "59-59"
   },
   {
-   "id": "sec-031-39-the-loop-expansion-of-the-kontsevich-invarian",
-   "title": "The loop expansion of the Kontsevich invariant",
-   "pages": "65-69"
+   "id": "page-060",
+   "title": "Page 60",
+   "pages": "60-60"
   },
   {
-   "id": "sec-032-2-s4-takes-a-polynomial-py1y-2y-3y-4t-o",
-   "title": "S4 takes a polynomial p(y1;y 2;y 3;y 4)t o",
-   "pages": "69-71"
+   "id": "page-061",
+   "title": "Page 61",
+   "pages": "61-61"
   },
   {
-   "id": "sec-033-310-the-kontsevich-invariant-of-links-in-0-1",
-   "title": "The Kontsevich invariant of links in \u0006\u0002 [0; 1]",
-   "pages": "71-73"
+   "id": "page-062",
+   "title": "Page 62",
+   "pages": "62-62"
   },
   {
-   "id": "sec-034-4-skein-modules",
-   "title": "Skein modules",
-   "pages": "73-74"
+   "id": "page-063",
+   "title": "Page 63",
+   "pages": "63-63"
   },
   {
-   "id": "sec-035-41-the-kau",
-   "title": "The Kau",
-   "pages": "74-75"
+   "id": "page-064",
+   "title": "Page 64",
+   "pages": "64-64"
   },
   {
-   "id": "sec-036-43-the-kau",
-   "title": "The Kau",
+   "id": "page-065",
+   "title": "Page 65",
+   "pages": "65-65"
+  },
+  {
+   "id": "page-066",
+   "title": "Page 66",
+   "pages": "66-66"
+  },
+  {
+   "id": "page-067",
+   "title": "Page 67",
+   "pages": "67-67"
+  },
+  {
+   "id": "page-068",
+   "title": "Page 68",
+   "pages": "68-68"
+  },
+  {
+   "id": "page-069",
+   "title": "Page 69",
+   "pages": "69-69"
+  },
+  {
+   "id": "page-070",
+   "title": "Page 70",
+   "pages": "70-70"
+  },
+  {
+   "id": "page-071",
+   "title": "Page 71",
+   "pages": "71-71"
+  },
+  {
+   "id": "page-072",
+   "title": "Page 72",
+   "pages": "72-72"
+  },
+  {
+   "id": "page-073",
+   "title": "Page 73",
+   "pages": "73-73"
+  },
+  {
+   "id": "page-074",
+   "title": "Page 74",
+   "pages": "74-74"
+  },
+  {
+   "id": "page-075",
+   "title": "Page 75",
    "pages": "75-75"
   },
   {
-   "id": "sec-037-42-the-homﬂypt-skein-module",
-   "title": "The Homﬂypt skein module",
-   "pages": "75-77"
+   "id": "page-076",
+   "title": "Page 76",
+   "pages": "76-76"
   },
   {
-   "id": "sec-038-44-the-q-homotopy-skein-module",
-   "title": "The q-homotopy skein module",
-   "pages": "77-78"
+   "id": "page-077",
+   "title": "Page 77",
+   "pages": "77-77"
   },
   {
-   "id": "sec-039-45-the-41-skein-module",
-   "title": "The (4;1) skein module",
-   "pages": "78-81"
+   "id": "page-078",
+   "title": "Page 78",
+   "pages": "78-78"
   },
   {
-   "id": "sec-040-46-other-problems",
-   "title": "Other problems",
-   "pages": "81-83"
+   "id": "page-079",
+   "title": "Page 79",
+   "pages": "79-79"
   },
   {
-   "id": "sec-041-5-quandles",
-   "title": "Quandles",
+   "id": "page-080",
+   "title": "Page 80",
+   "pages": "80-80"
+  },
+  {
+   "id": "page-081",
+   "title": "Page 81",
+   "pages": "81-81"
+  },
+  {
+   "id": "page-082",
+   "title": "Page 82",
+   "pages": "82-82"
+  },
+  {
+   "id": "page-083",
+   "title": "Page 83",
    "pages": "83-83"
   },
   {
-   "id": "sec-042-51-classi",
-   "title": "Classi",
-   "pages": "83-86"
+   "id": "page-084",
+   "title": "Page 84",
+   "pages": "84-84"
   },
   {
-   "id": "sec-043-52-representations-of-knot-quandles",
-   "title": "Representations of knot quandles",
-   "pages": "86-87"
+   "id": "page-085",
+   "title": "Page 85",
+   "pages": "85-85"
   },
   {
-   "id": "sec-044-53-cohomology-of-quandles",
-   "title": "(Co)homology of quandles",
+   "id": "page-086",
+   "title": "Page 86",
+   "pages": "86-86"
+  },
+  {
+   "id": "page-087",
+   "title": "Page 87",
    "pages": "87-87"
   },
   {
-   "id": "sec-045-3-x",
-   "title": "(X)",
-   "pages": "87-87"
-  },
-  {
-   "id": "sec-046-2-xa",
-   "title": "(X);A",
-   "pages": "87-87"
-  },
-  {
-   "id": "sec-047-1-x-is-free-abelian-see-82-here-hq",
-   "title": "(X) is free abelian (see [82]). Here, HQ",
-   "pages": "87-87"
-  },
-  {
-   "id": "sec-048-2-x-denotes-the-second-homol",
-   "title": "(X) denotes the second homol-",
-   "pages": "87-88"
-  },
-  {
-   "id": "sec-049-2-x-hq",
-   "title": "(X) HQ",
+   "id": "page-088",
+   "title": "Page 88",
    "pages": "88-88"
   },
   {
-   "id": "sec-050-2-x-for-each-connected-quandle-x-more-gener",
-   "title": "(X) for each connected quandle X . More gener-",
-   "pages": "88-88"
+   "id": "page-089",
+   "title": "Page 89",
+   "pages": "89-89"
   },
   {
-   "id": "sec-051-54-quandle-cocycle-invariant",
-   "title": "Quandle cocycle invariant",
-   "pages": "88-89"
+   "id": "page-090",
+   "title": "Page 90",
+   "pages": "90-90"
   },
   {
-   "id": "sec-052-2-r4-z2-z2z2-t-h-e",
-   "title": "(R4)= Z2\b (Z=2Z)2 .T h e",
-   "pages": "89-92"
+   "id": "page-091",
+   "title": "Page 91",
+   "pages": "91-91"
   },
   {
-   "id": "sec-053-2-a1-x1a2a2",
-   "title": "(a1 +x1a2−a2)+",
+   "id": "page-092",
+   "title": "Page 92",
    "pages": "92-92"
   },
   {
-   "id": "sec-054-55-quantum-quandles",
-   "title": "Quantum quandles",
-   "pages": "92-92"
+   "id": "page-093",
+   "title": "Page 93",
+   "pages": "93-93"
   },
   {
-   "id": "sec-055-56-rack-cohomology",
-   "title": "Rack (co)homology",
-   "pages": "92-93"
-  },
-  {
-   "id": "sec-056-3-rpzpz-for-p-prime-this",
-   "title": "(Rp)\u0018=Z=pZ for p prime. This",
-   "pages": "93-94"
-  },
-  {
-   "id": "sec-057-6-braid-group-representations",
-   "title": "Braid group representations",
+   "id": "page-094",
+   "title": "Page 94",
    "pages": "94-94"
   },
   {
-   "id": "sec-058-61-the-temperley-lieb-algebra",
-   "title": "The Temperley-Lieb algebra",
-   "pages": "94-94"
+   "id": "page-095",
+   "title": "Page 95",
+   "pages": "95-95"
   },
   {
-   "id": "sec-059-2-ct-h-e-temperley-lieb-algebra-tln",
-   "title": "C,t h e Temperley-Lieb algebra TLn(",
-   "pages": "94-95"
+   "id": "page-096",
+   "title": "Page 96",
+   "pages": "96-96"
   },
   {
-   "id": "sec-060-62-the-burau-representation",
-   "title": "The Burau representation",
-   "pages": "95-96"
+   "id": "page-097",
+   "title": "Page 97",
+   "pages": "97-97"
   },
   {
-   "id": "sec-061-63-the-hecke-and-bmw-algebras",
-   "title": "The Hecke and BMW algebras",
-   "pages": "96-97"
+   "id": "page-098",
+   "title": "Page 98",
+   "pages": "98-98"
   },
   {
-   "id": "sec-062-64-other-problems",
-   "title": "Other problems",
-   "pages": "97-99"
-  },
-  {
-   "id": "sec-063-7-quantum-and-perturbative-invariants-of-3-mani",
-   "title": "Quantum and perturbative invariants of 3-mani-",
+   "id": "page-099",
+   "title": "Page 99",
    "pages": "99-99"
   },
   {
-   "id": "sec-064-71-witten-reshetikhin-turaev-invariants-and-quan",
-   "title": "Witten-Reshetikhin-Turaev invariants and quantum invari-",
-   "pages": "99-99"
-  },
-  {
-   "id": "sec-065-3-m",
-   "title": "(M)",
-   "pages": "99-100"
-  },
-  {
-   "id": "sec-066-3-m-is-an-invariant-determined-by-the-cohomology",
-   "title": "(M) is an invariant determined by the cohomology ring and the",
+   "id": "page-100",
+   "title": "Page 100",
    "pages": "100-100"
   },
   {
-   "id": "sec-067-3-m",
-   "title": "(M)=",
-   "pages": "100-102"
+   "id": "page-101",
+   "title": "Page 101",
+   "pages": "101-101"
   },
   {
-   "id": "sec-068-72-the-asymptotic-expansion-conjecture",
-   "title": "The asymptotic expansion conjecture",
-   "pages": "102-109"
+   "id": "page-102",
+   "title": "Page 102",
+   "pages": "102-102"
   },
   {
-   "id": "sec-069-73-the-volume-conjecture",
-   "title": "The volume conjecture",
-   "pages": "109-113"
+   "id": "page-103",
+   "title": "Page 103",
+   "pages": "103-103"
   },
   {
-   "id": "sec-070-74-quantum-hyperbolic-invariants-of-3-manifolds",
-   "title": "Quantum hyperbolic invariants of 3-manifolds",
-   "pages": "113-114"
+   "id": "page-104",
+   "title": "Page 104",
+   "pages": "104-104"
   },
   {
-   "id": "sec-071-2-h1w-c-leads-to-two-ﬂat-b-bundles",
-   "title": "H1(W ;C) leads to two ﬂat B-bundles \u001a",
-   "pages": "114-116"
+   "id": "page-105",
+   "title": "Page 105",
+   "pages": "105-105"
   },
   {
-   "id": "sec-072-75-perturbative-invariants",
-   "title": "Perturbative invariants",
-   "pages": "116-121"
+   "id": "page-106",
+   "title": "Page 106",
+   "pages": "106-106"
   },
   {
-   "id": "sec-073-8-topological-quantum",
-   "title": "Topological quantum",
-   "pages": "121-122"
+   "id": "page-107",
+   "title": "Page 107",
+   "pages": "107-107"
   },
   {
-   "id": "sec-074-81-classi",
-   "title": "Classi",
-   "pages": "122-123"
+   "id": "page-108",
+   "title": "Page 108",
+   "pages": "108-108"
   },
   {
-   "id": "sec-075-82-spin-tqfts",
-   "title": "Spin TQFT’s",
-   "pages": "123-124"
+   "id": "page-109",
+   "title": "Page 109",
+   "pages": "109-109"
   },
   {
-   "id": "sec-076-83-homotopy-qfts",
-   "title": "Homotopy QFT’s",
+   "id": "page-110",
+   "title": "Page 110",
+   "pages": "110-110"
+  },
+  {
+   "id": "page-111",
+   "title": "Page 111",
+   "pages": "111-111"
+  },
+  {
+   "id": "page-112",
+   "title": "Page 112",
+   "pages": "112-112"
+  },
+  {
+   "id": "page-113",
+   "title": "Page 113",
+   "pages": "113-113"
+  },
+  {
+   "id": "page-114",
+   "title": "Page 114",
+   "pages": "114-114"
+  },
+  {
+   "id": "page-115",
+   "title": "Page 115",
+   "pages": "115-115"
+  },
+  {
+   "id": "page-116",
+   "title": "Page 116",
+   "pages": "116-116"
+  },
+  {
+   "id": "page-117",
+   "title": "Page 117",
+   "pages": "117-117"
+  },
+  {
+   "id": "page-118",
+   "title": "Page 118",
+   "pages": "118-118"
+  },
+  {
+   "id": "page-119",
+   "title": "Page 119",
+   "pages": "119-119"
+  },
+  {
+   "id": "page-120",
+   "title": "Page 120",
+   "pages": "120-120"
+  },
+  {
+   "id": "page-121",
+   "title": "Page 121",
+   "pages": "121-121"
+  },
+  {
+   "id": "page-122",
+   "title": "Page 122",
+   "pages": "122-122"
+  },
+  {
+   "id": "page-123",
+   "title": "Page 123",
+   "pages": "123-123"
+  },
+  {
+   "id": "page-124",
+   "title": "Page 124",
    "pages": "124-124"
   },
   {
-   "id": "sec-077-v-turaev-389-390-introduced-and-developed-hqft-h",
-   "title": "Turaev [389, 390] introduced and developed HQFT (homotopy QFT) with",
-   "pages": "124-124"
+   "id": "page-125",
+   "title": "Page 125",
+   "pages": "125-125"
   },
   {
-   "id": "sec-078-84-geometric-construction-of-tqfts",
-   "title": "Geometric construction of TQFT’s",
-   "pages": "124-126"
+   "id": "page-126",
+   "title": "Page 126",
+   "pages": "126-126"
   },
   {
-   "id": "sec-079-85-half-projective-and-homological-tqfts",
-   "title": "Half-projective and homological TQFT’s",
-   "pages": "126-128"
+   "id": "page-127",
+   "title": "Page 127",
+   "pages": "127-127"
   },
   {
-   "id": "sec-080-2-pp3",
-   "title": "Pp−3",
-   "pages": "128-134"
+   "id": "page-128",
+   "title": "Page 128",
+   "pages": "128-128"
   },
   {
-   "id": "sec-081-9-the-state-sum-invariants-of-3-manifolds-derive",
-   "title": "The state-sum invariants of 3-manifolds derived",
+   "id": "page-129",
+   "title": "Page 129",
+   "pages": "129-129"
+  },
+  {
+   "id": "page-130",
+   "title": "Page 130",
+   "pages": "130-130"
+  },
+  {
+   "id": "page-131",
+   "title": "Page 131",
+   "pages": "131-131"
+  },
+  {
+   "id": "page-132",
+   "title": "Page 132",
+   "pages": "132-132"
+  },
+  {
+   "id": "page-133",
+   "title": "Page 133",
+   "pages": "133-133"
+  },
+  {
+   "id": "page-134",
+   "title": "Page 134",
    "pages": "134-134"
   },
   {
-   "id": "sec-082-91-monoidal-categories-6j-symbols-and-subfactors",
-   "title": "Monoidal categories, 6j-symbols, and subfactors",
-   "pages": "134-136"
+   "id": "page-135",
+   "title": "Page 135",
+   "pages": "135-135"
   },
   {
-   "id": "sec-083-92-turaev-viro-invariants-and-the-state-sum-inva",
-   "title": "Turaev-Viro invariants and the state-sum invariants de-",
-   "pages": "136-139"
+   "id": "page-136",
+   "title": "Page 136",
+   "pages": "136-136"
   },
   {
-   "id": "sec-084-93-the-state-sum-invariants-derived-from-ribbon",
-   "title": "The state-sum invariants derived from ribbon categories",
-   "pages": "139-140"
+   "id": "page-137",
+   "title": "Page 137",
+   "pages": "137-137"
   },
   {
-   "id": "sec-085-94-turaev-viro-ocneanu-invariants",
-   "title": "Turaev-Viro-Ocneanu invariants",
-   "pages": "140-142"
+   "id": "page-138",
+   "title": "Page 138",
+   "pages": "138-138"
   },
   {
-   "id": "sec-086-10-casson-invariant-and",
-   "title": "Casson invariant and",
+   "id": "page-139",
+   "title": "Page 139",
+   "pages": "139-139"
+  },
+  {
+   "id": "page-140",
+   "title": "Page 140",
+   "pages": "140-140"
+  },
+  {
+   "id": "page-141",
+   "title": "Page 141",
+   "pages": "141-141"
+  },
+  {
+   "id": "page-142",
+   "title": "Page 142",
    "pages": "142-142"
   },
   {
-   "id": "sec-087-101-casson-and-rokhlin-invariants",
-   "title": "Casson and Rokhlin invariants",
-   "pages": "142-145"
+   "id": "page-143",
+   "title": "Page 143",
+   "pages": "143-143"
   },
   {
-   "id": "sec-088-102-finite-type-invariants",
-   "title": "Finite type invariants",
-   "pages": "145-146"
+   "id": "page-144",
+   "title": "Page 144",
+   "pages": "144-144"
   },
   {
-   "id": "sec-089-1021-torsion-and",
-   "title": "Torsion and",
+   "id": "page-145",
+   "title": "Page 145",
+   "pages": "145-145"
+  },
+  {
+   "id": "page-146",
+   "title": "Page 146",
    "pages": "146-146"
   },
   {
-   "id": "sec-090-1022-do",
-   "title": "Do",
-   "pages": "146-146"
+   "id": "page-147",
+   "title": "Page 147",
+   "pages": "147-147"
   },
   {
-   "id": "sec-091-1023-dimensions-of-spaces-of",
-   "title": "Dimensions of spaces of",
-   "pages": "146-147"
+   "id": "page-148",
+   "title": "Page 148",
+   "pages": "148-148"
   },
   {
-   "id": "sec-092-1024-vogels-algebra",
-   "title": "Vogel’s algebra",
-   "pages": "147-150"
+   "id": "page-149",
+   "title": "Page 149",
+   "pages": "149-149"
   },
   {
-   "id": "sec-093-1025-other-problems",
-   "title": "Other problems",
-   "pages": "150-151"
+   "id": "page-150",
+   "title": "Page 150",
+   "pages": "150-150"
   },
   {
-   "id": "sec-094-103-goussarov-habiro-theory",
-   "title": "Goussarov-Habiro theory",
+   "id": "page-151",
+   "title": "Page 151",
    "pages": "151-151"
   },
   {
-   "id": "sec-095-1031-goussarov-habiro-theory-for-3-manifolds",
-   "title": "Goussarov-Habiro theory for 3-manifolds",
-   "pages": "151-153"
+   "id": "page-152",
+   "title": "Page 152",
+   "pages": "152-152"
   },
   {
-   "id": "sec-096-1032-goussarov-habiro-theory-for-spin-and-spin-c",
-   "title": "Goussarov-Habiro theory for spin and spin c 3-manifolds",
-   "pages": "153-155"
+   "id": "page-153",
+   "title": "Page 153",
+   "pages": "153-153"
   },
   {
-   "id": "sec-097-11-the-lmo-invariant",
-   "title": "The LMO invariant",
+   "id": "page-154",
+   "title": "Page 154",
+   "pages": "154-154"
+  },
+  {
+   "id": "page-155",
+   "title": "Page 155",
    "pages": "155-155"
   },
   {
-   "id": "sec-098-115-re",
-   "title": "Re",
-   "pages": "155-155"
-  },
-  {
-   "id": "sec-099-111-calculation-of-the-lmo-invariant",
-   "title": "Calculation of the LMO invariant",
-   "pages": "155-155"
-  },
-  {
-   "id": "sec-100-112-does-the-lmo-invariant-distinguish-integral",
-   "title": "Does the LMO invariant distinguish integral homology 3-",
-   "pages": "155-156"
-  },
-  {
-   "id": "sec-101-113-characterization-of-the-image-of-the-lmo-inv",
-   "title": "Characterization of the image of the LMO invariant",
+   "id": "page-156",
+   "title": "Page 156",
    "pages": "156-156"
   },
   {
-   "id": "sec-102-114-variations-of-the-lmo-invariant",
-   "title": "Variations of the LMO invariant",
-   "pages": "156-157"
+   "id": "page-157",
+   "title": "Page 157",
+   "pages": "157-157"
   },
   {
-   "id": "sec-103-116-other-problems",
-   "title": "Other problems",
-   "pages": "157-158"
+   "id": "page-158",
+   "title": "Page 158",
+   "pages": "158-158"
   },
   {
-   "id": "sec-104-121-pseudo-legendrian-knot-invariants",
-   "title": "(Pseudo) Legendrian knot invariants",
-   "pages": "158-159"
+   "id": "page-159",
+   "title": "Page 159",
+   "pages": "159-159"
   },
   {
-   "id": "sec-105-122-knots-and",
-   "title": "Knots and",
-   "pages": "159-160"
+   "id": "page-160",
+   "title": "Page 160",
+   "pages": "160-160"
   },
   {
-   "id": "sec-106-123-the-numbers-of-3--5-colorings-and-some-local",
-   "title": "The numbers of 3-, 5-colorings and some local moves",
-   "pages": "160-161"
+   "id": "page-161",
+   "title": "Page 161",
+   "pages": "161-161"
   },
   {
-   "id": "sec-107-124-knotted-trivalent-graphs",
-   "title": "Knotted trivalent graphs",
-   "pages": "161-165"
+   "id": "page-162",
+   "title": "Page 162",
+   "pages": "162-162"
   },
   {
-   "id": "sec-108-125-quantum-groups",
-   "title": "Quantum groups",
-   "pages": "165-166"
+   "id": "page-163",
+   "title": "Page 163",
+   "pages": "163-163"
   },
   {
-   "id": "sec-109-126-other-problems",
-   "title": "Other problems",
-   "pages": "166-171"
+   "id": "page-164",
+   "title": "Page 164",
+   "pages": "164-164"
   },
   {
-   "id": "sec-110-references",
-   "title": "References",
-   "pages": "171-200"
+   "id": "page-165",
+   "title": "Page 165",
+   "pages": "165-165"
+  },
+  {
+   "id": "page-166",
+   "title": "Page 166",
+   "pages": "166-166"
+  },
+  {
+   "id": "page-167",
+   "title": "Page 167",
+   "pages": "167-167"
+  },
+  {
+   "id": "page-168",
+   "title": "Page 168",
+   "pages": "168-168"
+  },
+  {
+   "id": "page-169",
+   "title": "Page 169",
+   "pages": "169-169"
+  },
+  {
+   "id": "page-170",
+   "title": "Page 170",
+   "pages": "170-170"
+  },
+  {
+   "id": "page-171",
+   "title": "Page 171",
+   "pages": "171-171"
+  },
+  {
+   "id": "page-172",
+   "title": "Page 172",
+   "pages": "172-172"
+  },
+  {
+   "id": "page-173",
+   "title": "Page 173",
+   "pages": "173-173"
+  },
+  {
+   "id": "page-174",
+   "title": "Page 174",
+   "pages": "174-174"
+  },
+  {
+   "id": "page-175",
+   "title": "Page 175",
+   "pages": "175-175"
+  },
+  {
+   "id": "page-176",
+   "title": "Page 176",
+   "pages": "176-176"
+  },
+  {
+   "id": "page-177",
+   "title": "Page 177",
+   "pages": "177-177"
+  },
+  {
+   "id": "page-178",
+   "title": "Page 178",
+   "pages": "178-178"
+  },
+  {
+   "id": "page-179",
+   "title": "Page 179",
+   "pages": "179-179"
+  },
+  {
+   "id": "page-180",
+   "title": "Page 180",
+   "pages": "180-180"
+  },
+  {
+   "id": "page-181",
+   "title": "Page 181",
+   "pages": "181-181"
+  },
+  {
+   "id": "page-182",
+   "title": "Page 182",
+   "pages": "182-182"
+  },
+  {
+   "id": "page-183",
+   "title": "Page 183",
+   "pages": "183-183"
+  },
+  {
+   "id": "page-184",
+   "title": "Page 184",
+   "pages": "184-184"
+  },
+  {
+   "id": "page-185",
+   "title": "Page 185",
+   "pages": "185-185"
+  },
+  {
+   "id": "page-186",
+   "title": "Page 186",
+   "pages": "186-186"
+  },
+  {
+   "id": "page-187",
+   "title": "Page 187",
+   "pages": "187-187"
+  },
+  {
+   "id": "page-188",
+   "title": "Page 188",
+   "pages": "188-188"
+  },
+  {
+   "id": "page-189",
+   "title": "Page 189",
+   "pages": "189-189"
+  },
+  {
+   "id": "page-190",
+   "title": "Page 190",
+   "pages": "190-190"
+  },
+  {
+   "id": "page-191",
+   "title": "Page 191",
+   "pages": "191-191"
+  },
+  {
+   "id": "page-192",
+   "title": "Page 192",
+   "pages": "192-192"
+  },
+  {
+   "id": "page-193",
+   "title": "Page 193",
+   "pages": "193-193"
+  },
+  {
+   "id": "page-194",
+   "title": "Page 194",
+   "pages": "194-194"
+  },
+  {
+   "id": "page-195",
+   "title": "Page 195",
+   "pages": "195-195"
+  },
+  {
+   "id": "page-196",
+   "title": "Page 196",
+   "pages": "196-196"
+  },
+  {
+   "id": "page-197",
+   "title": "Page 197",
+   "pages": "197-197"
+  },
+  {
+   "id": "page-198",
+   "title": "Page 198",
+   "pages": "198-198"
+  },
+  {
+   "id": "page-199",
+   "title": "Page 199",
+   "pages": "199-199"
+  },
+  {
+   "id": "page-200",
+   "title": "Page 200",
+   "pages": "200-200"
   }
  ],
  "provenance": {

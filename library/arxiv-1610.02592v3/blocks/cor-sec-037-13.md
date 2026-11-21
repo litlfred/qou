@@ -1,1 +1,0 @@
-Handlebodies are irreducible.

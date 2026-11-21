@@ -1,0 +1,62 @@
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 57
+
+and we have
+
+(W(t), AY) = (0), A4(0)).
+The two sides of this equation represent two pictures of quantum mechanics: Heisen-
+berg’s (observables change, states don’t), and Schrédinger’s (states change, observ-
+ables don’t). The equation expresses the equivalence of the two pictures.
+
+8.3. Feynman-Kac formula. Let us consider a 1-duimensional particle with po-
+tential U(q) = mq? + D0j53.9)9'/j!. Let us assume that U > 0 and U(q) + co
+as |q| > oo. In this case, the operator H= -E + U(q) is positive definite,
+and its spectrum is discrete. In particular, we have unique lowest eigenvector 2,
+which is given by a positive function with norm 1. The correlation functions in the
+Hamiltonian setting are defined by the formula
+
+GAP” (tr, stn) = (Q,a(t1).--4(tn)Q).
+
+Remark 1. The vecor 1 is called the ground, or vacuum state, since it has
+lowest energy, and physicists often shift the Hamiltonian by a constant, so that the
+energy of this state is zero (i.e. there is no matter).
+
+Remark 2. Physicists usually write the inner product (v, Aw) as < v|Alw >.
+In particular, 2 is written as < 0| or |0 >.
+
+Theorem 8.3. (Feynman-Kac formula) If t; >... > tn then the function GHa™
+admits an asymptotic expansion in h (near h = 0), which coincides with the path
+integral correlation function GY constructed above. Equivalently, the Wick rotated
+function GH™(—it,, ..., -itn) equals GP.
+
+This theorem plays a central role in quantum mechanics, and we will prove it
+below. Before we do so, let us formulate an analog of this theorem for “quantum
+mechanics on the circle”.
+
+Let Gn,r(t1,-..,tn) denote the correlation function on the circle of length L (for
+O<tyr <..<t) < LZ), and let Z, be the partition function on the circle of length
+L, defined from path integrals. Also, let
+
+zHam — Tr(eLH/hy,
+
+and
+
+_ Tr(q(—itn)...q(—ity Je“ L/")
+
+in, L(t1, .++5tn =
+Gngt (th ) Tr(e~ L/h)
+
+Theorem 8.4. (Feynman-Kac formula on the circle) The functions ZH, Gram
+admit asymptotic expansions in h, which coincide with the functions Zr, and Gn t
+computed from path integrals.
+
+Note that Theorem 8.3 is obtained from Theorem 8.4 by sending L to infinity.
+Thus, it is sufficient to prove Theorem 8.4.
+
+Remark. As we mentioned before, the function GP can be defined by means
+of Wiener integral, and the equality G¥@™ (—it,, ..., -itn) = GF (t1,...,tn) actually
+holds for numerical values of h, and not only in the sense of power series expansions.
+The same applies to the equalities Z##™ = Z,, gam = Gy, 1. However, these results
+is technically more complicated and are beyond the scope of these notes.
+
+Example. Consider the case of the quadratic potential. By renormalizing vari-
+ables, we can assume that h = m = 1, so U = q’/2. In this case we know that

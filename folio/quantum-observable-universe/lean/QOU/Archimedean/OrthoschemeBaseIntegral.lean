@@ -73,7 +73,7 @@
 
   -- Ref: [milnor1982] Appendix (the orthoscheme computation, value `Λ(a)/2`)
   -- Ref: [thurston1978] Ch. 7 (computation of volume)
-  -- Ref: [manuscript] beans qou-w3eg (H4-4), qou-5gai (H4), qou-idvt (T1/T2)
+  -- Ref: [leitner2026] beans qou-w3eg (H4-4), qou-5gai (H4), qou-idvt (T1/T2)
 -/
 
 import QOU.Archimedean.LobachevskyDerivative

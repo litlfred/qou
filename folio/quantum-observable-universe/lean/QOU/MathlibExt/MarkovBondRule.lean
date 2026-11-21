@@ -73,7 +73,7 @@ convention-**C** parameter `1/(√q + 1/√q)` and must **not** be used as the b
 for these statements (bean `qou-um5h`).
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] docs/audits/2026-08-19-bar-involution-is-isospin-conjugation.md
+-- Ref: [leitner2026] docs/audits/2026-08-19-bar-involution-is-isospin-conjugation.md
 -/
 
 namespace QOU.MathlibExt.MarkovBondRule

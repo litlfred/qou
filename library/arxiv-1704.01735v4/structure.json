@@ -8,7 +8,7 @@
   "pages": 39,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:20Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -25,7 +25,7 @@
   "title_lines": [
    "Modular curves, invariant theory and E8"
   ],
-  "abstract": "The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2, 13). This gives a di\ufb00erent construction of the E8 root lattice. It also gives an explicit construction of the modular curve X(13).",
+  "abstract": "The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2, 13). This gives a diﬀerent construction of the E8 root lattice. It also gives an explicit construction of the modular curve X(13).",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
    "Creator": "LaTeX with hyperref package",
@@ -131,7 +131,7 @@
   },
   {
    "level": 2,
-   "title": "Bring\u2019s curve and Fricke\u2019s octavic curve: from the icosahedron to E8",
+   "title": "Bring’s curve and Fricke’s octavic curve: from the icosahedron to E8",
    "page": 12,
    "source": "inferred",
    "number": "2.3",
@@ -159,7 +159,7 @@
   },
   {
    "level": 1,
-   "title": "A di\ufb00erent construction: from the modular curve",
+   "title": "A diﬀerent construction: from the modular curve",
    "page": 30,
    "source": "inferred",
    "number": "4",
@@ -173,7 +173,7 @@
   },
   {
    "level": 2,
-   "title": "Bring\u2019s curve and Fricke\u2019s octavic curve: from X(13) to E8",
+   "title": "Bring’s curve and Fricke’s octavic curve: from X(13) to E8",
    "page": 33,
    "source": "inferred",
    "number": "4.3",
@@ -523,8 +523,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 2,
-   "n_words": 1,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": null,
    "label_end": null
   },
@@ -535,8 +535,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 8,
-   "n_chars": 12720,
-   "n_words": 2692,
+   "n_chars": 12733,
+   "n_words": 2693,
    "label_start": null,
    "label_end": null
   },
@@ -579,7 +579,7 @@
   {
    "id": "sec-006-23-brings-curve-and-frickes-octavic-curve-from-t",
    "number": "2.3",
-   "title": "Bring\u2019s curve and Fricke\u2019s octavic curve: from the icosahedron to E8",
+   "title": "Bring’s curve and Fricke’s octavic curve: from the icosahedron to E8",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
@@ -601,9 +601,9 @@
    "label_end": null
   },
   {
-   "id": "sec-008-4-a-di\ufb00erent-construction-from-the-modular-curve",
+   "id": "sec-008-4-a-diﬀerent-construction-from-the-modular-curve",
    "number": "4",
-   "title": "A di\ufb00erent construction: from the modular curve",
+   "title": "A diﬀerent construction: from the modular curve",
    "level": 1,
    "page_start": 30,
    "page_end": 33,
@@ -615,7 +615,7 @@
   {
    "id": "sec-009-43-brings-curve-and-frickes-octavic-curve-from-x",
    "number": "4.3",
-   "title": "Bring\u2019s curve and Fricke\u2019s octavic curve: from X(13) to E8",
+   "title": "Bring’s curve and Fricke’s octavic curve: from X(13) to E8",
    "level": 2,
    "page_start": 33,
    "page_end": 35,
@@ -664,6 +664,7 @@
    "items": []
   },
   "sections": 13,
-  "chars_total": 59564
+  "chars_total": 59575,
+  "furniture_lines_stripped": 0
  }
 }

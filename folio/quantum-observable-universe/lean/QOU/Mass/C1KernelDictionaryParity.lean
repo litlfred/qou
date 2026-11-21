@@ -50,9 +50,9 @@ but which differs from it by lower-order terms is not excluded.
 
 ## References
 
-- [manuscript] mass-theory/qdifference-kernel-prolongation-symbol
-- [manuscript] mass-theory/c1-ggm-bar-parity-faces
-- [manuscript] docs/audits/2026-09-04-c1-kernel-cannot-carry-door-v-residual.md
+- [leitner2026] mass-theory/qdifference-kernel-prolongation-symbol
+- [leitner2026] mass-theory/c1-ggm-bar-parity-faces
+- [leitner2026] docs/audits/2026-09-04-c1-kernel-cannot-carry-door-v-residual.md
 
 LaTeX label: (library module — no content block)
 -/

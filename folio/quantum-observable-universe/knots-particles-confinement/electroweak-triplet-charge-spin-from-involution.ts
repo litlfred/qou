@@ -3,7 +3,7 @@ import { theorem } from "../../schema/builders";
 export default theorem({
   label: "thm:ew-triplet-charge-spin-from-involution",
   title:
-    "Charge and spin of the electroweak triplet are forced by the spin-involution sector selection",
+    "Sector label and charge of the electroweak triplet computed through the spin involution",
   lean: {
     ref: "qou:QOU.ParticleInteractions.ew_charge_spin_forced",
     validation: "not_checked",
@@ -18,10 +18,42 @@ export default theorem({
     "thm:hoefsmit-ew-cell-content",
     "prop:self-dual-higgs-real-volume",
     "prop:vdw-pskew-isolation",
-    "def:coulomb-charge",
-    "rem:chirality-trefoil-electron-positron",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "T₃ and mixing tested against the skew charge (sorry-free, same Lean " +
+        "sibling). `ewT3Double_not_affine_in_charge`: the table is not λ·Q + μ. " +
+        "`t3OfSkew_values`: Q/Q(W⁺) gives 1, −1, 0 on W⁺, W⁻, H and ≠ 0 on Z. " +
+        "`sgnT3Double_values` / `_vs_table`: the def:spin-involution rule with " +
+        "the sign read off Q (ordered field, a > 1) gives Z ↦ 1, disagreeing " +
+        "with the table only at Z; H ↦ 0 follows from H ∈ A₊. " +
+        "`mixing_neutral_both_iff` / `mixing_cannot_neutralise_model`: a " +
+        "rotation with c² + s² = 1 preserves x² + y², so linear mixing cannot " +
+        "make Z and γ both neutral when Q(W³) ≠ 0; the previous sentence " +
+        "attributing Z neutrality to mixing is withdrawn. The ewT3Double values " +
+        "±1 read as 2·T₃ are doublet values, not the triplet T₃ = ±1 of the .md.",
+    },
+    {
+      kind: "refined-framing",
+      date: "2026-11-20",
+      body:
+        "Self-assuming projection removed (owner-authorised QA fix). The old " +
+        "`ew_charge_spin_forced` returned the class fields `wPlus_t3` … " +
+        "`higgs_t3` as its T₃ conjuncts, and defined spin directly from " +
+        "`isSinglet`, so σ was never used. `EWSectorSelection` now carries " +
+        "inputs only (sectors, carrier eigenvalues, W⁻ = σ-image of W⁺, " +
+        "a² ≠ 1); `spinDouble` is computed from whether `swap₂` fixes the " +
+        "sector vector and `ewCharge` is its skew. T₃ is no longer in the " +
+        "class or the theorem: it is the recorded table `ewT3Double`. " +
+        "`z_not_neutral_by_parity` records that σ-parity makes Z charged. " +
+        "`def:coulomb-charge` and `rem:chirality-trefoil-electron-positron` " +
+        "were dropped from uses[]: only the Task 1/1′ side lemmas use them, " +
+        "not the theorem. The earlier notes below describe the pre-fix " +
+        "statement where they say charge is 'derived'.",
+    },
     {
       kind: "note",
       date: "2026-07-05",
@@ -115,6 +147,7 @@ export default theorem({
         "RELOCATES the postulate, does not close it. Whole file lean-direct " +
         "exit 0 (no warnings) on lake-cache/qou-v4-24-0.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  is the [$P_{\\mathrm{skew}}$ functional](#prop:vdw-pskew-isolation)" },
   ],
   tags: [
     "electroweak",

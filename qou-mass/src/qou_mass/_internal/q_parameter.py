@@ -165,8 +165,41 @@ if _anchor in ("ideal", "muon", "canonical"):
     def log_q(x, _LN_Q=LN_Q):
         return _math.log(x) / _LN_Q
 
-    def q_int(n, _Q=Q, _QI=Q_INV, _HA=HA):
-        return (_Q**n - _QI**n) / _HA
+    # EXACT as of 2026-09-19 (bean `qou-oiz3`). This used to close over
+    # the muon binary64 globals as default arguments:
+    #     def q_int(n, _Q=Q, _QI=Q_INV, _HA=HA):
+    #         return (_Q**n - _QI**n) / _HA
+    # which is the SECOND float64 definition of [n]_q in the corpus and
+    # the one no grep of `qou_substrate` can reach. Fixing only
+    # constants.py would have left the whole muon layer on float64.
+    #
+    # It resolves the muon `q_at` from module globals at CALL time, so
+    # it picks up the rebind ~60 lines below (the 70-digit muon witness
+    # string) rather than qou_substrate's proton Newton solve. Cache is
+    # keyed on the working precision and built inside an explicit
+    # precision context, so it cannot inherit an ambient `mp.dps`.
+    _Q_INT_MUON_CACHE: dict = {}
+    _Q_INT_DPS_FLOOR = 50
+
+    def q_int(n):
+        """Quantum integer [n]_q at the IDEAL/MUON anchor, exact mpmath
+        at ``max(mp.dps, 50)``. Returns an ``mpf``."""
+        import mpmath as _m
+        d = max(_m.mp.dps, _Q_INT_DPS_FLOOR)
+        key = (n, d)
+        val = _Q_INT_MUON_CACHE.get(key)
+        if val is None:
+            prev = _m.mp.dps
+            try:
+                _m.mp.dps = max(prev, d + 10)
+                qq = q_at(d + 10)          # muon-rebound below
+                v = (qq ** n - qq ** (-n)) / (qq - 1 / qq)
+                _m.mp.dps = max(prev, d)
+                val = +v
+            finally:
+                _m.mp.dps = prev
+            _Q_INT_MUON_CACHE[key] = val
+        return val
 
     def q_int_err(n, _Q=Q, _QI=Q_INV, _HA=HA, _QE=Q_ERR):
         num_deriv = n * (_Q**(n - 1) + _QI**(n + 1))
@@ -200,16 +233,28 @@ if _anchor in ("ideal", "muon", "canonical"):
         # 70-digit q is read in full and only the compute working precision is
         # pinned at 50. Producers that need more raise it via set_compute_dps().
         _mp.mp.dps = max(_mp.mp.dps, 50)
-        Q_MP         = _mp.mpf(_d["q"])
-        Q_INV_MP     = _mp.mpf(1) / Q_MP
-        HBAR_Q_MP    = _mp.mpf(1) - Q_INV_MP
-        HBAR_Q_SQ_MP = HBAR_Q_MP ** 2
-        HA_MP        = Q_MP - Q_INV_MP
-        E_CROSS_MP   = HA_MP / 2
-        S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
-        TWO_Q_MP     = Q_MP + Q_INV_MP
-        TANH_LN_Q_MP = HA_MP / TWO_Q_MP
-        LN_Q_MP      = _mp.log(Q_MP)
+        # ── the _MP family is built at 70, not at the 50 above ──────
+        # (2026-09-19, bean `qou-5eg1`).  The global floor on the line
+        # above is the owner's 2026-07-06 ruling and is UNCHANGED; what
+        # was wrong is that these module-level constants were then
+        # ROUNDED to it.  `_d["q"]` carries 70 significant digits, and a
+        # producer that later calls `set_compute_dps()` (70) cannot
+        # recover what was thrown away at import.  Building them inside
+        # an explicit 70-dps context is the mirror of `_DPS_DEFAULT`
+        # 50 -> 70 in `qou_substrate/constants.py`; leaving one side at
+        # 50 would put the proton and muon layers at different
+        # precisions, which is the layer-straddle AGENTS.md forbids.
+        with _mp.workdps(max(_mp.mp.dps, 70)):
+            Q_MP         = _mp.mpf(_d["q"])
+            Q_INV_MP     = _mp.mpf(1) / Q_MP
+            HBAR_Q_MP    = _mp.mpf(1) - Q_INV_MP
+            HBAR_Q_SQ_MP = HBAR_Q_MP ** 2
+            HA_MP        = Q_MP - Q_INV_MP
+            E_CROSS_MP   = HA_MP / 2
+            S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
+            TWO_Q_MP     = Q_MP + Q_INV_MP
+            TANH_LN_Q_MP = HA_MP / TWO_Q_MP
+            LN_Q_MP      = _mp.log(Q_MP)
 
         # ── q_at / q_str re-bound to the canonical MUON source ──
         # The imported `q_at`/`q_str` (from `import *`) Newton-solve the PROTON

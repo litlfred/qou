@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 The writhing number Wr(K) of a smooth curve K in 3-space, deﬁned by the formula
 Wr~K!5~1/4p!E
@@ -25,8 +26,6 @@ of the extent to which the ﬁeld lines wrap and coil around one another.
 877
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 Clearly, helicity for vector ﬁelds is the analogue of writhing number for knots.
 The helicity of V is closely related to its image under the Biot–Savart operator,
 H~V!5~1/4p!E

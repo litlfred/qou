@@ -1,0 +1,98 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-181
+section_title: "Page 181"
+section_number: null
+pages: 181-181
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 553,
+
+[182]
+
+[183]
+
+[184]
+
+[185]
+
+[186]
+
+[187]
+[188]
+
+[189]
+
+[190]
+(191)
+[192]
+
+[193]
+
+[194]
+[195]
+[196]
+[197]
+
+[198]
+
+MIzumi, The structure of sectors associated with Longo—Rehren inclusions I:
+General theory, from: “Subfactors: Proceedings of the Taniguchi Symposium,
+Katata”, (H Araki, et al, editors), World Scientific, River Edge, NJ (1994)
+
+F Jaeger, DL Vertigan, DJ A Welsh, On the computational complexity of
+the Jones and Tutte polynomials, Math. Proc. Cambridge Philos. Soc. 108 (1990)
+35-53
+
+LC Jeffrey, Chern-Simons—Witten invariants of lens spaces and torus bundles,
+and the semiclassical approximation, Comm. Math. Phys. 147 (1992) 563-604
+
+D Jelsovsky, M Saito, Maple programs for computing quandle cohomology and
+cocycle knot invariants, available from http://www.math.usf.edu/~saito/
+maple.html
+
+VFR Jones, A polynomial invariant for knots via von Neumann algebras, Bull.
+AMS 12 (1985) 103-111
+
+VER Jones, Planar algebras I, preprint, arXiv:math.QA/9909027
+VFR Jones, Ten problems, Mathematics: frontiers and perspectives, Amer.
+Math. Soc. Providence, RI (2000) 79-91
+
+VFRJones, DP ORolfsen, A theorem regarding 4—braids and the V = 1
+problem, from: “Proceedings of the Conference on Quantum Topology (Man-
+hattan, KS 1993)”, World Scientific, River Edge, NJ (1994) 127-135
+
+D Joyce, A classifying invariant of knots, the knot quandle, J. Pure Appl. Al-
+gebra 23 (1982) 37-65
+
+U Kaiser, Presentations of homotopy skein modules of oriented 3-manifolds, J.
+
+Knot Theory Ramifications 10 (2001) 461-491
+
+T Kanenobu, Infinitely many knots with the same polynomial invariant, Proc.
+Amer. Math. Soc. 97 (1986) 158-162
+
+J Kania-Bartoszyriska, JH Przytycki, AS Sikora, Estimating the size of
+skein homologies, Knots in Hellas 98 (Delphi), Ser. Knots Everything 24, World
+Scientific, River Edge, NJ (2000) 138-142
+
+MKapranov, Rozansky—Witten invariants via Atiyah classes, Compositio
+Math. 115 (1999) 71-113
+
+RM Kashaev, Quantum dilogarithm as a 6j-symbol, Mod. Phys. Lett. A 9
+(1994) 3757-3768
+
+RM Kashaev, A link invariant from quantum dilogarithm, Mod. Phys. Lett.
+A 10 (1995) 1409-1418
+
+RM Kashaev, The algebraic nature of quantum dilogarithm, Geometry and
+integrable models (Dubna 1994) 32-51, World Scientific, River Edge, NJ (1996)
+
+RM Kashaev, The hyperbolic volume of knots from the quantum dilogarithm,
+Lett. Math. Phys. 39 (1997) 269-275
+
+Geometry & Topology Monographs, Volume 4 (2002)

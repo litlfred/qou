@@ -55,8 +55,8 @@ This is the symbolic realisation of the **arm-leg / co-arm-co-leg** decompositio
 
 ## References
 
-- [manuscript] `docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md` §"Proof of (A)"
-- [manuscript] `docs/coordination/s5-so3-keystone.md` (Identity I is the one carried RT input)
+- [leitner2026] `docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md` §"Proof of (A)"
+- [leitner2026] `docs/coordination/s5-so3-keystone.md` (Identity I is the one carried RT input)
 -/
 
 open Finset
@@ -578,7 +578,7 @@ theorem two_sum_armleg (μ : YoungDiagram) :
 /-- **The heart (sorry-free).** The six statistic sums combine to `Σ content² + n²`, proved by
 combining the fiberwise reflections `Σ arm² = Σ(col)²`, `Σ leg² = Σ(row)²`, `Σ arm = Σ col`,
 `Σ leg = Σ row` with the cross-term closed form `two_sum_armleg`.
--- Ref: [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)" -/
+-- Ref: [leitner2026] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)" -/
 theorem statistics_combine (μ : YoungDiagram) :
     (∑ c ∈ μ.cells, (arm μ c) ^ 2) + (∑ c ∈ μ.cells, (leg μ c) ^ 2)
         + (∑ _c ∈ μ.cells, (1 : ℤ)) + 2 * (∑ c ∈ μ.cells, arm μ c * leg μ c)

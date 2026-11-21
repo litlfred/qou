@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0710.4310v2/blocks/prose-sec-035",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Appendix: Technical Lemmas",
-  "pageStart": 43,
-  "pageEnd": 46,
-  "text": "../sections/sec-035-appendix-technical-lemmas.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0710.4310v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0710.4310v2",
+  "title": "Associating 2-holonomies to embedded spheres",
+  "pageStart": 41,
+  "pageEnd": 43,
+  "text": "../sections/sec-035-associating-2-holonomies-to-embedded-spheres.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0710.4310v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0710.4310v2/manifest.jsonld",
   "provenance": "ingested"
 }

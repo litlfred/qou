@@ -1,0 +1,248 @@
+{
+  "check_dps": 70,
+  "description": "Convention-D Markov trace of the v9 nuclear element, sum over two-row shapes of [n-2k+1]_q/[2]_q^n times the Young-seminormal character, computed by a depth-first walk over the Gelfand-Tsetlin tableau tree carrying one MPFR row vector per node (diagonal of the tower product only); divided by 2^pn like the v9 certificate field tr_markov_d. Rust port of computations/probes/markov_trace_two_row_tower_probe.py.",
+  "dps": 80,
+  "min_two_precision_agreement_digits": "77.61",
+  "mpfr_bits": {
+    "check": 265,
+    "main": 298
+  },
+  "producer": "tools/hecke-engine/src/bin/tower_trace.rs",
+  "producer_binary": "hecke-tower-trace (cargo build --release --bin hecke-tower-trace --features mpfr)",
+  "python_reference": {
+    "file": "../../computations/probes/markov-trace-two-row-tower.witness.json",
+    "min_agreement_digits": "exact",
+    "rows_compared": 0,
+    "rows_in_reference": 63
+  },
+  "python_reference_producer": "computations/probes/markov_trace_two_row_tower_probe.py",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "q0_anchor": "proton",
+  "rows": [
+    {
+      "a": 10,
+      "isotope": "10f",
+      "n": 1,
+      "pn": 9,
+      "tr_markov_d": "0.546104627398649791562444812900256438691088577859311548225781",
+      "two_precision_agreement_digits": "78.84",
+      "z": 9
+    },
+    {
+      "a": 11,
+      "isotope": "11f",
+      "n": 2,
+      "pn": 18,
+      "tr_markov_d": "0.132994696170444370999994206764740988891480892401506032163686",
+      "two_precision_agreement_digits": "78.7",
+      "z": 9
+    },
+    {
+      "a": 12,
+      "isotope": "12f",
+      "n": 3,
+      "pn": 27,
+      "tr_markov_d": "0.0656613404992307598281982862955410405939630690994804816028745",
+      "two_precision_agreement_digits": "79.65",
+      "z": 9
+    },
+    {
+      "a": 13,
+      "isotope": "13f",
+      "n": 4,
+      "pn": 36,
+      "tr_markov_d": "0.0257846823777244518701223253777346424553573498811146381425571",
+      "two_precision_agreement_digits": "79.95",
+      "z": 9
+    },
+    {
+      "a": 14,
+      "isotope": "14f",
+      "n": 5,
+      "pn": 45,
+      "tr_markov_d": "0.00483978557831630641222529479582588582372882887242946687141007",
+      "two_precision_agreement_digits": "78.46",
+      "z": 9
+    },
+    {
+      "a": 15,
+      "isotope": "15f",
+      "n": 6,
+      "pn": 54,
+      "tr_markov_d": "0.00984946655002255257906967543781212390975321301334396757891272",
+      "two_precision_agreement_digits": "78.6",
+      "z": 9
+    },
+    {
+      "a": 16,
+      "isotope": "16f",
+      "n": 7,
+      "pn": 63,
+      "tr_markov_d": "0.00134203592411985832367419872716064254370602595063769454009169",
+      "two_precision_agreement_digits": "78.47",
+      "z": 9
+    },
+    {
+      "a": 17,
+      "isotope": "17f",
+      "n": 8,
+      "pn": 72,
+      "tr_markov_d": "0.0007057528462659637398280947425152468357116275882133088259512",
+      "two_precision_agreement_digits": "78.5",
+      "z": 9
+    },
+    {
+      "a": 18,
+      "isotope": "18f",
+      "n": 9,
+      "pn": 81,
+      "tr_markov_d": "-0.00000838339050971060125873300434438127364492550143199707852688413",
+      "two_precision_agreement_digits": "77.61",
+      "z": 9
+    },
+    {
+      "a": 19,
+      "isotope": "19f",
+      "n": 10,
+      "pn": 90,
+      "tr_markov_d": "0.0000445571132742366303398408904292610857578602489531211737921857",
+      "two_precision_agreement_digits": "78.17",
+      "z": 9
+    },
+    {
+      "a": 11,
+      "isotope": "11ne",
+      "n": 1,
+      "pn": 10,
+      "tr_markov_d": "0.495762077054865048854332076929170536079553994573040374170782",
+      "two_precision_agreement_digits": "78.4",
+      "z": 10
+    },
+    {
+      "a": 12,
+      "isotope": "12ne",
+      "n": 2,
+      "pn": 20,
+      "tr_markov_d": "0.203951275859593283824569665230575155097247825017623405474867",
+      "two_precision_agreement_digits": "78.6",
+      "z": 10
+    },
+    {
+      "a": 13,
+      "isotope": "13ne",
+      "n": 3,
+      "pn": 30,
+      "tr_markov_d": "0.110524672234345673498006148249282105852022101554531555035588",
+      "two_precision_agreement_digits": "78.73",
+      "z": 10
+    },
+    {
+      "a": 14,
+      "isotope": "14ne",
+      "n": 4,
+      "pn": 40,
+      "tr_markov_d": "0.0270790484726315382113203811017244993874685544583661872218159",
+      "two_precision_agreement_digits": "79.21",
+      "z": 10
+    },
+    {
+      "a": 15,
+      "isotope": "15ne",
+      "n": 5,
+      "pn": 50,
+      "tr_markov_d": "0.0324929749699415347176224968716961776073622219249216097704813",
+      "two_precision_agreement_digits": "78.8",
+      "z": 10
+    },
+    {
+      "a": 16,
+      "isotope": "16ne",
+      "n": 6,
+      "pn": 60,
+      "tr_markov_d": "0.00509169754879890342876952451286557380440997109592896919742305",
+      "two_precision_agreement_digits": "78.49",
+      "z": 10
+    },
+    {
+      "a": 17,
+      "isotope": "17ne",
+      "n": 7,
+      "pn": 70,
+      "tr_markov_d": "0.00337354152761259730589981643401597037869351030642070744132756",
+      "two_precision_agreement_digits": "78.98",
+      "z": 10
+    },
+    {
+      "a": 18,
+      "isotope": "18ne",
+      "n": 8,
+      "pn": 80,
+      "tr_markov_d": "0.0000671526814849918437999420835315221727933518710103129660971972",
+      "two_precision_agreement_digits": "78.39",
+      "z": 10
+    },
+    {
+      "a": 19,
+      "isotope": "19ne",
+      "n": 9,
+      "pn": 90,
+      "tr_markov_d": "0.000148746379488971517025899906709594433874517048612230079245926",
+      "two_precision_agreement_digits": "78.44",
+      "z": 10
+    },
+    {
+      "a": 20,
+      "isotope": "20ne",
+      "n": 10,
+      "pn": 100,
+      "tr_markov_d": "-0.000011219721096034424946933842473114592150773236230395731838316",
+      "two_precision_agreement_digits": "77.93",
+      "z": 10
+    },
+    {
+      "a": 21,
+      "isotope": "21ne",
+      "n": 11,
+      "pn": 110,
+      "tr_markov_d": "-0.00000111369018222330944886508394912425428840338079162183931220578",
+      "two_precision_agreement_digits": "77.9",
+      "z": 10
+    }
+  ],
+  "self_checks": [
+    {
+      "dps": 80,
+      "nmax": 8,
+      "worst_residual": "7.8545e-90"
+    },
+    {
+      "dps": 70,
+      "nmax": 8,
+      "worst_residual": "2.6988e-79"
+    }
+  ],
+  "timings": [
+    {
+      "a_max": 19,
+      "n_max": 10,
+      "seconds_check_dps": "746.527",
+      "seconds_main_dps": "798.708",
+      "z": 9
+    },
+    {
+      "a_max": 20,
+      "n_max": 10,
+      "seconds_check_dps": "3333.500",
+      "seconds_main_dps": "3510.530",
+      "z": 10
+    },
+    {
+      "a_max": 21,
+      "n_max": 11,
+      "seconds_check_dps": "8298.840",
+      "seconds_main_dps": "9437.720",
+      "z": 10
+    }
+  ],
+  "z": "q^3/(q^2+1)"
+}

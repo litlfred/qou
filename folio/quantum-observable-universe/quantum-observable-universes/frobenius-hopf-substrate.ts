@@ -177,5 +177,26 @@ export default definition({
         "reading it off a field. Audit: " +
         "`docs/audits/2026-09-15-antipode-anti-automorphism-package.md`.",
     },
+    {
+      kind: "status",
+      date: "2026-10-13",
+      body:
+        "**Axiom 2 no longer asks for a multiplicative counit** (owner decision, " +
+        "bean `qou-aj49`). The sentence " +
+        "$\\varepsilon \\circ \\mu = u \\circ (\\varepsilon \\otimes \\varepsilon)$ " +
+        "is removed. Reason, proved sorry-free: the right Frobenius relation, the " +
+        "right counit law and a multiplicative counit force " +
+        "$x = \\varepsilon(x) \\cdot 1$ for every $x$, over any commutative ring " +
+        "and **with no antipode** (`MultiplicativeCounitCollapse.eq_counit_smul_one`, " +
+        "`surjective_algebraMap`). So the definition as previously written had " +
+        "only models spanned by the unit. **Consequence for the note above:** the " +
+        "$k[G]$ probe (`frobenius_hopf_intermediate_axioms_probe.py`) uses " +
+        "$\\varepsilon = \\delta_e$, which is not multiplicative, and never " +
+        "tested multiplicativity; its 7/7 held only with the removed sentence " +
+        "ignored. With the sentence removed, its claim applies to the definition " +
+        "as now stated, for the axioms the probe checks. The Lean carriers " +
+        "(`FrobeniusHopfData`, `FrobeniusHopfSubstrate`) never had this field, " +
+        "so no proof changes.",
+    },
   ],
 });

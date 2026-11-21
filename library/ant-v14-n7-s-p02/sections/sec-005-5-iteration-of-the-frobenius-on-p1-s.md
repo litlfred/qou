@@ -8,6 +8,7 @@ pages: 31-34
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
 toc_source: inferred
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values — 10 sections: Front matter; Introduction; Preliminaries"
 ---
 ξ B(ξ, 1)
 In the previous sections, we considered the Frobenius of πun,crys

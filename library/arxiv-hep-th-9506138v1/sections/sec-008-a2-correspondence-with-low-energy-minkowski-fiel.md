@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9506138v1
-doc_title: "arXiv:hep-th/9506138v1 21 Jun 1995"
+doc_title: "Black Hole Complementarity vs. Locality"
 section_id: sec-008-a2-correspondence-with-low-energy-minkowski-fiel
 section_title: "Correspondence with Low Energy Minkowski Field Theory"
 section_number: A.2
@@ -8,6 +8,7 @@ pages: 19-22
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
 toc_source: inferred
+doc_brief: "Black Hole Complementarity vs. Locality — 18 sections: Front matter; Introduction; The Nice-Slice Argument"
 ---
 Local quantum ﬁeld theory in Minkowski space provides a very good description of
 the low-energy world we observe, and any uniﬁed theory should reproduce the structure of
@@ -15,7 +16,6 @@ local Minkowski ﬁeld theory for kinematic situations appropriate to low-energy
 observers. This structure includes the requirement that the commutator of gauge-invariant
 local ﬁelds must vanish at spacelike separation. In this section, we show that the low-energy
 ﬁelds obtained from light-front string ﬁeld theory satisfy this requirement.
-18
 Consider a Minkowski observer, whose measuring apparatus is sensitive to frequencies
 of order E ≪1/
 √
@@ -130,7 +130,6 @@ r
 (A.18)
 where⃗P = α1⃗p2 −α2⃗p1 is cyclically symmetric. We can now substitute this expression
 into equation (A.17).
-19
 Since the test functions restrict the allowed momenta to be of order E ≪1/
 √
 α′,
@@ -222,4 +221,3 @@ of low-energy ﬁelds, it would have indicated a catastrophic breakdown in the l
 predictions of the theory, and the commutator (and perhaps the theory itself) could not
 be taken seriously. As it stands, the theory avoids introducing any additional nonlocality
 at low energy, and we can proceed to study the predictions it makes for higher energy.
-20

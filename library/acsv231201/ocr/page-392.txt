@@ -1,0 +1,51 @@
+374 Cone point asymptotics
+
+Theorem 11.48. Let K be the cone over the region bounded by the outer dual
+curve q*. Then, uniformly over closed cones disjoint from the closure of K, the
+coefficients of the fortress generating function decay exponentially. A normal-
+ized vector (r/t, s/t, 1) is in the region of exponential decay if q* is positive
+there and it is not in the inner area which is separated from the outer circle by
+any circle lying between them (such as ?? + 5? = 1/4). ia)
+
+Product of a cone and a plane
+The Fourier transforms for the Aztec Diamond and the cube grove probability
+generating functions, which involve the product of a function with a cone point
+singularity and a smooth hyperplane, are explicitly computable. The compu-
+tation, contained in [BP11], is too long to include here, but the result can be
+understood intuitively as follows.
+
+The Fourier transform of a linear function is a Heaviside function, the delta
+function of a ray {té& : t > 0}. The Fourier transform of a product is the con-
+volution of the transforms of the factors, whence the Fourier transform of a
+product L£ - L, where L is linear, is given by
+
+[ £e —ta)dt.
+0
+
+When £ is supported on a cone (e.g., by the Paley-Wiener Theorem) and for
+any r the integrand vanishes for sufficiently large rt, this leads to a simple in-
+tegral. Formalizing this intuition involves a lot of checking that certain lim-
+its commute and appears daunting. Instead, the integral was computed in a
+roundabout but rigorous manner in [BP 11, Section 4.14.2], leading to inverse
+trigonometric functions.
+
+Theorem 11.49 ({BP11, Theorem 4.1-4.2]). Let {a,.s.} be the series coeffi-
+cients for
+
+2/2
+l-yzd -(xt 2x7 ty +y7!)/2 + 2)
+
+A(x, y, 2) = (
+
+corresponding to the amoeba complement component B containing the nega-
+tive z-axis. These coefficients satisfy
+
+. 1
+ars ~ A+ pry arctan
+Te
+
+Vi? — 2r? — 22?
+t-2s
+
+uniformly over compact subsets of the interior of the disconnected set which
+is the teardrop-shaped region in Figure 11.4, taken to exclude the dashed line.

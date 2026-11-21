@@ -101,7 +101,7 @@
   archimedean — no ordering, no `Real.sqrt` — so the substrate→archimedean wall
   is not crossed.
 
-  -- Ref: [manuscript] bean `qou-cds1`; `docs/audits/2026-08-25-qbeta-ck-ladder-convention-d-eigenphase-window.md`
+  -- Ref: [leitner2026] bean `qou-cds1`; `docs/audits/2026-08-25-qbeta-ck-ladder-convention-d-eigenphase-window.md`
 -/
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.FieldSimp

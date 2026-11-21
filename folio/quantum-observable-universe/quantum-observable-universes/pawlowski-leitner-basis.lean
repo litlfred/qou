@@ -14,7 +14,7 @@ Authoritative source: `folio/quantum-observable-universe/lean/QOU/Representation
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-- [manuscript] §1, Proposition: Pawlowski–Leitner basis
+- [leitner2026] §1, Proposition: Pawlowski–Leitner basis
 -/
 
 namespace QOU

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0408210v3
-doc_title: "arXiv:math/0408210v3 [math.QA] 7 May 2005"
+doc_title: "A simple algebraic proof of the algebraic index theorem"
 section_id: sec-004-23-fedosov-deformation-quantization-with-twisted
 section_title: "Fedosov deformation quantization with twisted coefficients."
 section_number: 2.3
@@ -10,7 +10,8 @@ source_sha256: 16d5ccb83a86954f
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.981
-latex_coverage_ratio: 0.981
+latex_coverage_ratio: 0.973
+doc_brief: "A simple algebraic proof of the algebraic index theorem — In math.QA/0311303 B. Feigin, G. Felder, and B."
 ---
 Let ${\cal M}$ be a symplectic manifold of dimension $2n$. We denote by ${\omega}={\omega}_{ij}(x)dx^i dx^j$ the corresponding symplectic form and by $$\overline{\omega}= {\omega}^{ij}(x)\frac{{\partial}}{{\partial}x^i}\wedge \frac{{\partial}}{{\partial}x^j}$$ the corresponding Poisson tensor. Here $x^i$ denote local coordinates and the indices $i,j$ run from $1$ from $2n$ . For a vector bundle $V$ of rank $N$ over ${\cal M}$ we will denote by $End(V)$ the bundle of endomorphisms of $V$ and by $End_V= {\Gamma}({\cal M}, End(V))$ the algebra of global sections of $End(V)$ .
 

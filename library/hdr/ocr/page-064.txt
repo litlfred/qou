@@ -1,0 +1,63 @@
+Let now L be an oriented link with / components. The value of Og on L at variables (q,Ap) can be
+computed diagrammatically by applying the following procedure:
+
+Step 1. Apply the skein relation on crossings linking different components until the link L is
+decomposed into disjoint unions of knots. More specifically, we obtain that O,(Z) is written as
+a linear combination of values of Og on disjoint unions of knots with up to | components. For
+k=1,...,l, let N(L), denote the set of all disjoint unions of k knots appearing in this linear
+combination. We thus have
+
+OL) = >> DO (a) Ou(@)
+
+k=1GEN(L)x
+
+Ay,
+
+for some c(@) € Qlq*!, VXd
+
+Step 2. Apply (6.29), which yields
+£
+OL) = IED” S) (@) P@),
+
+k=1 GEN (L)
+
+where D = Z/dZ. We thus obtain that O4(L) is a linear combination of Homflypt polynomials
+of disjoint unions of knots obtained by the special skein relation Theorem 6.16].
+
+Step 3. Apply the skein relation (6.28) of the Homflypt polynomial to obtain the value of P on @ at
+variables (q, Ap), for all disjoint unions of knots @ € N(L),, k =1,...,1.
+
+Finally, observing that in the above procedure, the rational number Ep = 1/d could be taken to be a
+parameter, we have constructed a new 3-variable skein link invariant © generalising both the invariants
+OQ and the Homflypt polynomial [CJKL] Theorems 8.1]:
+
+Theorem 6.37 Let q, , E be indeterminates overC. There exists a unique isotopy invariant of classical
+oriented links © : L > C[q*!/?, A*1, E*"] defined by the following rules:
+
+1. For a disjoint union L of k knots, with k > 1, it holds that:
+
+O(L) = E'-¥ P(L).
+
+2. On crossings involving different components the following skein relation holds:
+
+a O(Ly) — Vad O(L-) = (a"!? = a") O(Lo),
+
+where Li, L_, Lo is a Conway triple.
+
+The invariant © specialises to the invariant O04 for E = Ep and \ = Ap, where D = Z/dZ (recall
+that ©; = P). It also distinguishes the six pairs of links of Table |6.1| Hence, we conclude the following
+Theorem 8.2]:
+
+Theorem 6.38 The invariant O(q, A, E) is stronger than the Homflypt polynomial.
+
+Remark 6.39 The invariants {Ou}aen and © are topologically equivalent to the Homflypt polynomial
+on knots. Since there is at least one pair of knots distinguished by the Homflypt polynomial but not
+by the Kauffman polynomial, the invariants {Ou}aen« and © are not topologically equivalent to the
+Kauffman polynomial.
+
+Remark 6.40 An appendix was recently added to [CJKTL]; it contains a closed formula, obtained by
+Lickorish, for the 3-variable invariant ©. For a given link L, this formula expresses O(L) as a non-
+trivial mixture of linking numbers and Homflypt polynomials of all sublinks of L. The same result was
+independently proved in |PdAWa|.
+
+61

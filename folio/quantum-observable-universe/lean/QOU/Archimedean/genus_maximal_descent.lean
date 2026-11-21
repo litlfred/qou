@@ -44,7 +44,7 @@ bound `|Aut(Σ_g)| ≤ 84(g − 1) = 252`.
 
 `χ`, the categorical Euler characteristic, and the Riemann–Roch identity
 are the genuine inputs; the genus value is computed, not assumed. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-maximal-descent.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/genus-maximal-descent.ts
 theorem genus_maximal_descent {χ : ℤ} {g aut_order : ℕ}
     (hrr : χ = 2 * (1 - (g : ℤ))) (hdescartes : χ = -6)
     (hhurwitz : aut_order ≤ 84 * (g - 1)) :

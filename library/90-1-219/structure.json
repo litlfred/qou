@@ -7,50 +7,318 @@
   "bytes": 1727173,
   "pages": 18,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Progress of Theoretical Physics, Vol. 90, No.1, July 1993",
+  "title": "Quaternions and non-commutative geometry",
   "authors_raw": "Quaternions and Non-Commutative Geometry",
   "title_lines": [
    "Progress of Theoretical Physics, Vol. 90, No.1, July 1993"
   ],
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20001121162306+09'00'",
+   "Producer": "Adobe Acrobat 9.0 Paper Capture Plug-in; modified using iTextSharp.LGPLv2.Core 3.7.4.0",
    "Creator": "Acrobat 4.0 Import Plug-in for Macintosh",
-   "Producer": "Adobe Acrobat 9.0 Paper Capture Plug-in; modified using iTextSharp.LGPLv2.Core 3.7.4.0"
-  }
+   "CreationDate": "D:20001121162306+09'00'"
+  },
+  "title_raw": "Progress of Theoretical Physics, Vol. 90, No.1, July 1993",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "the product 8 and the matrix derivative d m. The most intriguing point of Ref. 3) is a clear prediction on the gauge and Higgs boson masses: the ratio is 12 in a toy model",
+   "text": "Progress of Theoretical Physics, Vol. 90, No.1, July 1993",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Progress of Theoretical Physics, Vol. 90, No.1, July 1993"
  },
  "toc": [
   {
+   "level": 2,
+   "title": "Quaternionic formulation of the Dirac theory",
+   "page": 3,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "221"
+  },
+  {
+   "level": 2,
+   "title": "TST-",
+   "page": 5,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "223"
+  },
+  {
+   "level": 3,
+   "title": "Bosonic sector",
+   "page": 7,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "225"
+  },
+  {
+   "level": 3,
+   "title": "XX8(dX')",
+   "page": 9,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "227"
+  },
+  {
+   "level": 4,
+   "title": "§ 4. Bosonic sector of Weinberg-Salam theory",
+   "page": 12,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "230"
+  },
+  {
    "level": 1,
+   "title": "Bw=1/4.",
+   "page": 15,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "233"
+  },
+  {
+   "level": 2,
+   "title": "Discussion",
+   "page": 15,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "233"
+  },
+  {
+   "level": 2,
    "title": "Acknowledgements",
    "page": 16,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "234"
   },
   {
-   "level": 1,
+   "level": 2,
    "title": "Appendix",
    "page": 16,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 18,
-   "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "234"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "219",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "220",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "221",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "222",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "223",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "224",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "225",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "226",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "227",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "228",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "229",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "230",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "231",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "232",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "233",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "234",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "235",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "236",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -58,46 +326,181 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 16,
-   "n_chars": 38669,
-   "n_words": 6495
+   "page_end": 3,
+   "n_chars": 8254,
+   "n_words": 1341,
+   "label_start": "219",
+   "label_end": "221"
   },
   {
-   "id": "sec-000-acknowledgements",
+   "id": "sec-000-quaternionic-formulation-of-the-dirac-theory",
+   "number": null,
+   "title": "Quaternionic formulation of the Dirac theory",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4243,
+   "n_words": 685,
+   "label_start": "221",
+   "label_end": "223"
+  },
+  {
+   "id": "sec-001-tst",
+   "number": null,
+   "title": "TST-",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4465,
+   "n_words": 755,
+   "label_start": "223",
+   "label_end": "225"
+  },
+  {
+   "id": "sec-002-bosonic-sector",
+   "number": null,
+   "title": "Bosonic sector",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3312,
+   "n_words": 533,
+   "label_start": "225",
+   "label_end": "227"
+  },
+  {
+   "id": "sec-003-xx8dx",
+   "number": null,
+   "title": "XX8(dX')",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 8227,
+   "n_words": 1388,
+   "label_start": "227",
+   "label_end": "230"
+  },
+  {
+   "id": "sec-004-4-bosonic-sector-of-weinberg-salam-theory",
+   "number": null,
+   "title": "§ 4. Bosonic sector of Weinberg-Salam theory",
+   "level": 4,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 7279,
+   "n_words": 1230,
+   "label_start": "230",
+   "label_end": "233"
+  },
+  {
+   "id": "sec-005-2-bw14",
+   "number": "2",
+   "title": "Bw=1/4.",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 4,
+   "n_words": 2,
+   "label_start": "233",
+   "label_end": "233"
+  },
+  {
+   "id": "sec-006-discussion",
+   "number": null,
+   "title": "Discussion",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2665,
+   "n_words": 442,
+   "label_start": "233",
+   "label_end": "234"
+  },
+  {
+   "id": "sec-007-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
-   "level": 1,
+   "level": 2,
    "page_start": 16,
    "page_end": 16,
    "n_chars": 442,
-   "n_words": 71
+   "n_words": 71,
+   "label_start": "234",
+   "label_end": "234"
   },
   {
-   "id": "sec-001-appendix",
+   "id": "sec-008-appendix",
    "number": null,
    "title": "Appendix",
-   "level": 1,
+   "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 2621,
-   "n_words": 441
-  },
-  {
-   "id": "sec-002-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 1443,
-   "n_words": 243
+   "n_chars": 4085,
+   "n_words": 675,
+   "label_start": "234",
+   "label_end": "236"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 3,
-  "sections": 4,
-  "chars_total": 43175
+  "toc_entries": 9,
+  "toc_inferred_entries": 16,
+  "toc_inferred_mean_confidence": 0.637,
+  "toc_inferred_empty_share": 0.25,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 42976,
+  "furniture_lines_stripped": 18,
+  "headings_tidied": [
+   {
+    "title": "da'+bd'",
+    "page": 2,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "ae'+eb' )",
+    "page": 2,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "=.1.(-ltz",
+    "page": 13,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "It'",
+    "page": 13,
+    "action": "dropped",
+    "why": "a single short word"
+   },
+   {
+    "title": "-ihi(P+Z)i",
+    "page": 16,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "- zb'(P- Z)i",
+    "page": 16,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "_(-ibi(P+Z)i",
+    "page": 16,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

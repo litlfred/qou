@@ -385,7 +385,7 @@ elementary content form: for every `k`, `Σ_{λ⊢k} (f^λ)³ (Σ_□c(□)² �
 open input of the Δ_λ super-exponential growth bound (`WstdSuperExpBound.lean`, via the reduction
 `DeltaLambdaDReduction.D_of_T3_nonpos`). It is a Biane–Śniady / Kerov-CLT character-ratio
 anti-correlation; verified `k ≤ 30` computationally. Not proved.
--- Ref: [manuscript] docs/audits/2026-07-18-deltalambda-covariance-kernel-frontier.md -/
+-- Ref: [leitner2026] docs/audits/2026-07-18-deltalambda-covariance-kernel-frontier.md -/
 class CovarianceKernelConjecture : Prop where
   /-- The covariance kernel value is non-positive for all k. -/
   nonpos : ∀ k : ℕ, kernelValue k ≤ 0
@@ -395,7 +395,7 @@ elementary content form: for every `k`, `Σ_{λ⊢k} (f^λ)³ (Σ_□c(□)² �
 open input of the Δ_λ super-exponential growth bound (`WstdSuperExpBound.lean`, via the reduction
 `DeltaLambdaDReduction.D_of_T3_nonpos`). It is a Biane–Śniady / Kerov-CLT character-ratio
 anti-correlation; verified `k ≤ 30` computationally. Not proved.
--- Ref: [manuscript] docs/audits/2026-07-18-deltalambda-covariance-kernel-frontier.md -/
+-- Ref: [leitner2026] docs/audits/2026-07-18-deltalambda-covariance-kernel-frontier.md -/
 theorem covariance_kernel_conjecture (k : ℕ) [hi : CovarianceKernelConjecture] : kernelValue k ≤ 0 :=
   hi.nonpos k
 

@@ -8,7 +8,7 @@ THE CORRECTION (owner, and it is right)
 
 Step 21 concluded "no phase can hide in the jet tower" from the fact that every
 tower quantity it examined is REAL at real q: w_sym(k), w_alt(k), and the
-Plancherel traces Sum_lam W_lam chi^lam(O), since chi^lam(T_w) lies in Z[q,q^-1]
+W-weighted traces Sum_lam W_lam chi^lam(O), since chi^lam(T_w) lies in Z[q,q^-1]
 (Geck-Pfeiffer). True, and beside the point.
 
 What the ladder needs is an ELLIPTIC GENERATOR: traceless part with det > 0, i.e.
@@ -279,7 +279,7 @@ def main() -> int:
             "coincidence is flagged and not pursued: theta sits 0.012 % from |c_3(muon)| at "
             "the SUPERSEDED CODATA-2018 anchor, with no mechanism and a documented precedent "
             "for the trap. Lean: QOU/QBeta/TraceRealSpectrumComplex.lean, sorry-free."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": all_passed,
         "parameters": {

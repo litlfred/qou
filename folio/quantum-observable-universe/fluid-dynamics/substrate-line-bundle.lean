@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 
--- Ref: [manuscript] Ch. 7, §substrate-line-bundle
+-- Ref: [leitner2026] Ch. 7, §substrate-line-bundle
 -- Substrate line bundle L_θ
 
 /-- The **substrate line bundle** L_θ associated to the substrate

@@ -1,0 +1,35 @@
+2
+
+Generating functions
+
+This chapter provides a crash course on generating functions and their uses
+in enumeration. For a more lengthy introduction, we recommend [Wil06] —
+other standard references include [FS09, Chapters I-III], [vVLW01, Chapter 14],
+[Sta97, Section 1.1], and the comprehensive treatment in [GJ04].
+
+Throughout this book, we use the notation [n] := {1,...,n} and write 6; for
+the vector of length d with a 1 in its jth coordinate and a 0 elsewhere.
+
+2.1 Power series
+
+Generating functions impose an algebraic structure on arrays of complex num-
+bers, analogous to (and thus most easily expressed using the same notation
+as) convergent power series. To that end, let z = (z1,...,zy) be a vector of
+indeterminates and consider the set of formal expressions
+
+Cllz]] = Cllz,...,za]] := {> pz" : dy € C forall r € nh .
+ren?
+
+If F(z) = Dy frz” € C[z] then f is called a formal power series, the co-
+efficient of z” in F is [z"]|F(z) := fy, and we also single out the constant
+coefficient F(0) := [2°]F(z) = fo. The set C[[z]] becomes the ring of formal
+power series by defining addition term-wise
+
+[2" (F(z) + G(z)) = [2 F(2) + [2"1G()
+and multiplication by convolution
+
+[2"1F(2)G(z) =)" 12 1F(@)- fz" 1G),
+
+sent
+
+17

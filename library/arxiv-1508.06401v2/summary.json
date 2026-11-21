@@ -1,0 +1,47 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1508.06401v2",
+ "source_sha256": "354f6e4ea835af6d",
+ "brief": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED — Lattice QCD simulations are now reaching a precision where isospin breaking eﬀects become important.",
+ "extended": "**Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED**\n\n*R. Horsleya, Y. Nakamurab, H. Perltc, D. Pleiterd, P. E. L. Rakowe*\n\n14 pp, 5 sections.\n\n**Abstract.** Lattice QCD simulations are now reaching a precision where isospin breaking eﬀects become important. Previously, we have developed a program to systematically investigate the pattern of ﬂavor symmetry beaking within QCD and successfully applied it to meson and baryon masses involving up, down and strange quarks. In this Letter we extend the calculations to QCD + QED and present our ﬁrst results on isospin splittings in the pseu- doscalar meson and baryon octets. In particular, we obtain the nucleon mass diﬀerence of Mn −Mp = 1.35(18)(8) MeV and the electromagnetic contribution to the pion splitting Mπ+ −Mπ0 = 4.60(20) MeV. Further we report ﬁrst determination of the separation between strong and electromagnetic contributions in the MS scheme. 1\n\n**Outline.** Front matter; 1 Introduction and general strategy; 2 Lattice matters; 3 Results; 4 Conclusion and outlook\n\n**Extracted claims (proposals, not verified).**\n- Proposition: In [4, 5] we have outlined a program to systematically investigate the pattern of ﬂavor sym- metry breaking in three-ﬂavor lattice QCD for Wilson-type fermions.\n- Proposition: The region of no fusion is to the left, the region where all hydrogen is converted to helium stars is to the right.\n- Proposition: To accommodate the lower numbers from the Cottingham formula, the result of pure QCD [16] (fourth column of Table 1) would have to be smaller by a factor up to two as well.\n- Proposition: Conclusion and outlook We have outlined a program to systematically investigate the ﬂavor structure of hadrons in a full QCD + QED lattice simulation.\n- Proposition: Finally, future simulations will also naturally be required on lattices with diﬀerent lattice spacings to allow for a continuum extrapolation.\n- Proposition: arXiv:1508.06401v2 [hep-lat] 15 Jul 2016 Isospin splittings of meson and baryon masses from three-ﬂavor lattice QCD + QED R.",
+ "tokens": {
+  "brief": 46,
+  "extended": 518
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-introduction-and-general-strategy",
+   "title": "Introduction and general strategy",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-2-lattice-matters",
+   "title": "Lattice matters",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-002-3-results",
+   "title": "Results",
+   "pages": "7-13"
+  },
+  {
+   "id": "sec-003-4-conclusion-and-outlook",
+   "title": "Conclusion and outlook",
+   "pages": "13-14"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -63,7 +63,9 @@ def main():
             v3, v21 = G_.at_q0(c3), G_.at_q0(c21)
             rows.append({"gluon": g, "tail": list(t), "chi3_q0": G_.s(v3, 12), "chi21_q0": G_.s(v21, 12),
                          "pass": bool(v3 >= 0 and v21 >= 0), "_c21": c21})
-    out = {"checks": [list(c) for c in CHECKS], "gluons": {}}
+    out = {"checks": [list(c) for c in CHECKS], "gluons": {},
+           "q0Anchor": "proton", "q0Value": G_.Q_50_DIGIT_STR,
+           "q0AnchorReason": "the chi readouts are evaluated at gg_gluon_segment_probe.Q0, the proton pin"}
     census = {tuple(["s0", "a0", "a1"]): "TAIL_p", tuple(["a0", "a0", "s1i"]): "TAIL_n"}
     for g in GLUONS:
         R = [r for r in rows if r["gluon"] == g]

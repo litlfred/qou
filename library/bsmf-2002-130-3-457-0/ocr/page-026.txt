@@ -1,0 +1,53 @@
+482 BAO (X.) & BONAHON (F.)
+
+1) For every closed curve 7 embedded in I and passing through the edges
+€1, €2, ---, €n of T, ean Oe, < 2m with equality allowed only when ¥ is the
+boundary of a face of S? —T.
+
+2) For every arc y embedded in I’, passing through the edges ej, e€2, ...,
+e,, of ’, and joining two distinct vertices which are in the closure of the same
+component of S? —T but such that + is not contained in the boundary of that
+component, )77", Oe, <7.
+
+PROPOSITION 21. — The map 0: Pr > Kr is proper.
+
+Proof. — Since Kr is locally compact and Pr is metrizable, it suffices to prove
+the following: If P,, € Pr, n € N, is a sequence such that O(P,) converges to
+some 0° € Kp, then there is a subsequence P,,, k € N, which converges to a
+polyhedron Px € Pr.
+
+Consider such a sequence P, € Pr, n € N. As usual, we use the same
+symbol P, € Pr to denote a hyperideal polyhedron representing the class
+P, € Pr, and we let PP'°i be the projective polyhedron associated to the
+polyhedron P,,. Let x” = ®(P,,) € (RP*)" be the vertex set of PPT. Pick
+three consecutive vertices v1, v2, v3 € V on the boundary of a face f of the
+model polyhedron Pye, After modifying P,, by an element of PO(3,1) if
+necessary, we can arrange that the corresponding vertices x}, and x}, of PProj
+sit on the closure of the axis R x {0} C R® in RP? while the vertex xy, is in
+the closure of the plane {0} x R? in RP’. By compactness of RP®, we can also
+assume after passing to a subsequence that x” converges to x© € (RP*)".
+
+For each face f € F, the corresponding face f” of PP is contained in a
+projective plane IT} of RP?. After passing to a subsequence, we can assume
+that the plane IT converges to a plane Ij for each f € F. By construction,
+the limit plane ny meets the closure of H® in RP?. In particular, either it
+meets H® or it is tangent to the sphere at infinity 0.,.H®.
+
+Similarly, for an edge e € E joining two vertices v, v’ € V, let e” be the
+corresponding edge of PP'°). Among the two line segments joining the vertices
+x” and x”, of PP?°) in RP%, e” is also the one that meets H?. As n tends to oo,
+e” converges to a line segment e°° which joins x>° to x3? and which meets the
+closure of H? (after passing to a subsequence if by any chance 1% = x°°).
+
+Note that the limit edge e°° could conceivably be reduced to a single point.
+We first prove that this does not happen.
+
+LEMMA 22. — There is no edge e € E such that the corresponding limit edge
+e® is reduced to a single point.
+
+Proof of Lemma 22. — Suppose otherwise, and that there is a point p € RP®
+such that E, = {e € E;e° = p} is non-empty. Note that p must be on the
+sphere at infinity 0..H?. Indeed, it must be in the closure of HI? since each e”
+meets H?, but cannot be in H® since the end points of e” are outside H°.
+
+TOME 130 ~ 2002 — N° 3

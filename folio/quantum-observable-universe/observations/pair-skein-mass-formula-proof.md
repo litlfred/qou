@@ -14,5 +14,5 @@ $$
   + \mathcal{S}_{q_1 q_3}(q)
   + \mathcal{S}_{q_2 q_3}(q).
 $$
-The denominator $q^{1/2}+q^{-1/2}$ is not derived above. It is the reciprocal of the excised convention-C Markov weight $\sqrt q/(q+1)$, so the argument holds in the convention-C frame only. The Lean module names it `skeinNormaliserC` for the same reason.
+The denominator $q^{1/2}+q^{-1/2}$ is not derived above. It is the reciprocal of the excised convention-C Markov weight $\sqrt q/(q+1)$, so the argument holds in the convention-C frame only.
 $\square$

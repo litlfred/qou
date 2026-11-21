@@ -1,0 +1,34 @@
+CHAPTER 1. INTRODUCTION
+
+duals. However, as explained later, his definition is too restrictive and excluded many
+interesting examples. Therefore, the question of what should be a ‘good’ definition of
+spherical fusion 2-categories is still open.
+
+Here we will not try to define spherical 2-categories. Rather, we consider a special
+class, but still more general than those studied in literature along this line, of ‘properly
+defined spherical 2-categories’. The main result of this thesis is a state-sum construction
+of 4-manifold invariants out of a G-crossed braided spherical fusion category (G-BSFC)
+Cé for G a finite group. G-crossed braided (spherical) fusion categories were studied
+in [33] [34] [3536] [36] and also have applications in condensed matter physics [37]. Roughly
+speaking, a G-BSFC is a G-graded spherical fusion category with a G-action and a G-
+crossed braiding which satisfy certain compatible conditions. Note that a G-BSFC is
+in general not a braided tensor category. Our construction is a state-sum model and a
+natural generalization of the Tuaev-Viro invariant from (2 + 1) to (3+ 1). Although in
+this thesis, we only describe the invariants for closed 4-manifolds, it is straight forward
+to extend it to 3-manifolds and produce a (3 + 1)-TQFT.
+
+It can be shown that out of a G-BSFC one can construct a monoidal 2-category with
+some extra structures (See Section 2.3). One might claim that these extra structures
+make it into a ‘spherical fusion 2-category’. However, they violate some conditions in
+the definition of a spherical 2-category given in [32]. This suggests that the definition
+of spherical 2-categories might need to be revised. Also it means that our result is not
+included in [32].
+
+The invariant from a G-BSFC generalizes most known categorical invariants in liter-
+ature. If G is the trivial group, then CZ is just a ribbon fusion category and the invariant
+we get is just the Crane-Yetter invariant. If CG is obtained from a crossed module (See
+Section [3.3.2), then we get the Yetter’s invariant from homotopy 2-types, a special case
+
+of which is the untwisted Dijkgraaf-Witten invariant. Our invariant also includes some
+
+4

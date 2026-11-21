@@ -84,7 +84,7 @@ Refs:
 - [matsumoto1964] DOI 10.1090/S0002-9904-1964-11211-9
 - [humphreys1990] §7.4 (Iwahori-Hecke basis)
 - [bourbaki1968] Ch IV §1 (braid + Hecke relations)
-- [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md; bean qou-k4oq
+- [leitner2026] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md; bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.Tw

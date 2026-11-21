@@ -1,0 +1,1 @@
+3 Suppose we have g ∈C2[0, x0] such that g ≥0 on [0, x0], g > 0 on (0, x0), and  −g′′(x) g(x) − λ cos2(x)  ≥0 (G.2) on [0, x0]. Then f ∈C2[0, x0] that is a solution to Equation (G.1), that is, f solves −f ′′(x) − λ cos2(x)f(x) = 0, f(0) = 0, f ′(0) = 1, has no zero in (0, x0).

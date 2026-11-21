@@ -1,0 +1,57 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-145
+section_title: "Page 145"
+section_number: null
+pages: 145-145
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 517
+
+Question 10.5 (M. Polyak) Is there a “Rokhlin invariant” of a pair (M, a)
+of a closed 3-manifold M and a spin® structure a on M? (See Question 10.21.)
+
+Problem 10.6 (M. Polyak) By presenting 3-manifolds by surgery along
+framed links in S°, we can regard an invariant of 3-manifolds as an invari-
+ant of framed links. Establish a Gauss diagram formula for the link invariant
+derived from each finite type invariant of 3-manifolds.
+
+Remark (M. Polyak) The first step is to find a Gauss diagram formula for the
+Casson invariant. The Casson-Walker invariant as an invariant of 2-component
+links is studied in [223].
+
+If we would obtain a Gauss diagram formula for the Casson-Walker-Lescop
+invariant, then a spin refinement of it (of Problem 10.4) would be obtained by
+decorating the Gauss diagram formula by characteristic sublinks, noting that
+the spin structures on the 3-manifold obtained by surgery along a framed link
+L can be presented by characteristic sublinks of L (see [221]).
+
+10.2 Finite type invariants
+
+A link in an integral homology 3-sphere is called algebraically-split if the link-
+ing number of any pair of its components vanishes, and is called boundary if all
+its components bound disjoint surfaces. A framed link is called unit-framed if
+the framings of its components are +1. Let M be the set of (homeomorphism
+classes of) oriented integral homology 3-spheres, and let R be a commutative
+ring with 1. For an algebraically-split unit-framed link L in an integral homol-
+ogy 3-sphere M, we put
+
+[M,L] = S> (-1)*" My € RM,
+L'CL
+where the sum runs over all sublinks L’ of L, and #L’ denotes the number of
+components of L’, and M7, denotes the 3-manifold obtained from M by surgery
+along L'. Let F38(RM) [318] (resp. F?(RM) [135]) denote the submodule of
+RM spanned by [M,Z] such that M is an integral homology 3-sphere and L
+is a unit-framed algebraically-split link L with d components in M (resp. a
+unit-framed boundary link L in M). Let FY (RM) [137] denote the submodule
+of RM spanned by [M,G] such that M is an integral homology 3-sphere and
+G is a collection of d disjoint Y-graphs (see Figure 11) in M, where [M, G]
+is defined similarly as [M, L] (see [137]).84 A homomorphism v : RM — R is
+
+4 £¥ (RM) can alternatively be defined by using blinks [140]; see [137].
+
+Geometry & Topology Monographs, Volume 4 (2002)

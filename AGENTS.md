@@ -9,6 +9,45 @@ When the user asks you to perform a task (e.g., "run prepare-merge", "set up lea
 
 **Required Action:** Before executing any multi-step task or slash command, run `ls .claude/skills/local/` and `view_file` on the relevant `.md` file. Follow its instructions exactly. NEVER guess.
 
+## 🟥 THE PHOTON IS `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹` (owner ruling 2026-11-20) — STRICT
+
+**The fourth term is the chiral vertex `σ₀σ₁⁻¹`. The form with `σ₀σ₁` (`L₊`) as the
+fourth term is OLD AND WRONG.** Verbatim, owner 2026-11-20: *"1 + φ₀σ₀ + φ₁σ₁ +
+φ₀₁σ₀σ₁ is old and wrong. 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁^-1 is correct"*, and earlier the
+same day: *"That was already decided. Why did it get changed back to the wrong form?"*
+
+    γ(φ₀, φ₁, φ₀₁) = 1 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁⁻¹      ∈ H₃(R, q)
+
+- **This is a ruling, not a working assumption.** It was first recorded on
+  2026-11-18 as "a working assumption, not a ruling to edit def:photon"; that
+  classification was the recording agent's, and it is why the wrong form kept
+  coming back (bean `qou-99qc`, entry 2026-11-20T14:50:40Z).
+- **`def:photon` (`predicted-spectra/photon.md`) and `QOU/Photon.lean` state the
+  correct form as of PR #8583 (merged 2026-11-20).** Copies of the old `σ₀σ₁` form
+  survive in older branches, beans, audits and probes: do not copy from them, and do
+  not quote, compute, formalise or propose anything on the `σ₀σ₁` form. Do not call
+  the correct form "switched", "γ′" or "the qou-99qc variant" — it is simply *the
+  photon*.
+- **Every agent repeats this to its subagents.** A subagent does not see this file
+  if it was edited mid-session (see §Subagents); put the photon form in the
+  subagent's prompt whenever photons are in scope.
+- Worked consequence: the Borromean core factors as
+  `V³ = (σ₀σ₁⁻¹)³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)`, `h = q − q⁻¹`
+  (`borromeanV3A_eq_switched_photon_product` and its `B` twin, sorry-free).
+
+## 🟥 OWNER RULINGS LIVE IN THE REPO — NO PROJECT MEMORY (owner directive 2026-11-21) — STRICT
+
+Verbatim: *"No use of PROJECT MEMORY allowed. It all needs to be in repo."*
+Every owner ruling and working instruction is recorded in
+[`docs/coordination/owner-rulings.md`](docs/coordination/owner-rulings.md).
+Read it at session start. When the owner rules on something, add a dated row
+there (verbatim words where available) in the same session, and pass the
+ruling to every running subagent. Do not store rulings or preferences in
+chat-app / project memory. Current headline rulings: the photon form above;
+**the electron is σ₀σ₁σ₀ ∈ B₃ with Hopf-link closure (trefoil σ₀³ ∈ B₂ kept as
+backup)**; the up quark is an unknot strand; Q_β from γγ pair production;
+two-term Lagrangian trace on the scoreboard and all β-decay routes.
+
 ## User accessibility
 
 The repo owner is physically disabled and types with difficulty.
@@ -577,6 +616,27 @@ and [`.claude/skills/local/bean-coordination.md`](.claude/skills/local/bean-coor
 The plan is the agent's source of truth for "what next" — not the
 user's last message, not the most recently mentioned file.
 
+> **🟧 BEANS ARE BRANCH-MOUNTED, NOT ON MAIN (owner ruling 2026-10-10,
+> re-confirmed 2026-11-15; issue #7642).** `beans/` (`beans.json` + `defs/`)
+> lives on the branch `cat/cat-harness/beans`, declared in `qou.json` as
+> `source: {kind: branch, keyedBy: tip}`, and is gitignored on main. The
+> SessionStart hook (`scripts/mount-fsh-guts.sh`) installs a light subset of
+> the platform if it is absent (`scripts/mount-platform-lite.sh`: about 20 s,
+> 165 MB, against 1.7 GB for the full setup) and mounts `beans/` with
+> `state:mount`. Note `branch-store.ts push` has no `--dry-run`: an unknown
+> flag is ignored and the push happens. There is **no read-only
+> fallback** (owner, 2026-11-15). By hand:
+> `./scripts/mount-platform-lite.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts`.
+> The `beans` CLI works on the mount unchanged, because `.beans.yml` still says
+> `path: beans/defs`. **A bean edit is no longer a commit in your PR.** Push it
+> back with `bun folio-assistant/cat-harness-tools/scripts/branch-store.ts push
+> --id beans`. That is a splice with `expect`; it never forces, and two writers
+> of one file get `conflict`, so re-read and retry. The CLI never pushes, so an
+> edit you have not pushed is lost when the container goes. If the mount
+> failed, an empty `beans list` means the work plan is **unreachable**, not
+> that there is no work. Every `beans/defs/...` path below names a file in the
+> mount.
+
 > **Migration note (2026-06-19).** Beans **supersede** the older
 > `TodoWrite`-tool / `todos/*.json` work-plan mechanism. Wherever this
 > document still says *"TodoWrite list"* / *"todo list"* below, read it
@@ -587,7 +647,12 @@ user's last message, not the most recently mentioned file.
 > the Folio-Assistant Infrastructure Migration — the `miga` epic.)
 
 > **A bean is an APPEND-ONLY ledger, and concurrent appends collide on
-> essentially every landing (measured 2026-09-13).** `main` takes **169
+> essentially every landing (measured 2026-09-13).** *(Since the beans
+> branch mount (issue #7642), beans are no longer merged through PRs, so the
+> merge-time collision below no longer happens on `main`. A concurrent write
+> now surfaces as `conflict` from `branch-store.ts push --id beans`. The record
+> below is kept as history, and `bean-append-merge.py` is only for a branch
+> cut before the mount.)* `main` takes **169
 > commits / 24 h**; `beans/defs/qou-brng--…` is touched by **9** of them and
 > `beans/defs/qou-zlra--…` by **6**, so a branch that appends to `qou-brng`
 > goes un-mergeable roughly **every 2.7 h**. In the #7237 / #7245 /
@@ -1758,6 +1823,29 @@ corpus — run the **corpus-grep checklist**:
    corpus_search  query: "<topic>", direction: "in"   # what depends on it
    ```
 
+   **If the MCP server is not connected, use the CLI. Never skip this step.**
+   `bun scripts/corpus-search.ts "<topic>" [--direction in|out] [--hops N]
+   [--limit N] [--search-text] [--provenance authored|ingested]` calls the same
+   function the MCP tool calls, over the same roots. It runs on the light
+   platform that the SessionStart hook installs.
+
+   The MCP server does not start by itself: call `mcp__paper-assistant__start`
+   first, then RefreshMcpTools (see §"MCP servers start on demand").
+
+   The MCP route reported "paper-assistant: Connection closed" in every
+   session from at least 2026-10-12 to 2026-11-20 (bean `qou-q261`). Two causes:
+   - `.mcp.json` named `folio-assistant/cat-harness/src/index.ts`, which the
+     platform restructure removed. The launcher is now
+     `scripts/paper-assistant-mcp.sh`.
+   - The MCP server needs the full platform (`scripts/setup-folio-assistant.sh`).
+     The light one has no `@modelcontextprotocol/sdk`.
+
+   A run that reports step 0 as "unavailable" has skipped it; the CLI was
+   available. The default `--limit` is 20 seeds. At that limit, "Plancherel" returned 20
+   authored seeds and 0 ingested; at `--limit 200` it returned 49 ingested
+   (measured 2026-11-20). Raise `--limit` before reading "no ingested hits" as
+   "not held".
+
    Read three things in its answer. **`why`** says whether a hit MATCHED
    or was REACHED, and by which edge — a `~` prefix means the edge ran
    backwards, so that node depends on the seed rather than the reverse.
@@ -1920,7 +2008,10 @@ corpus — run the **corpus-grep checklist**:
    lists that document's extracted theorems and definitions if you want
    the claims rather than the prose.
 
-6. **The beans** — `grep -rl <topic> beans/defs/`. The work-plan tracker is a
+6. **The beans** — `grep -rl <topic> beans/defs/`, **on the mount**
+   (`beans/` is mounted from `cat/cat-harness/beans`; if `beans/defs` is
+   missing, run `state-mount` first, or this path is an empty grep that reads
+   as a clean bill). The work-plan tracker is a
    corpus in its own right (tens of thousands of files) and it is where a
    prior agent's *conclusion* most often sits before it reaches an audit
    doc or a content block. It is **not** covered by paths 1–5: `beans/`
@@ -2918,6 +3009,14 @@ discipline review will catch it. Full framing:
 >   bonds: `−1.2277` MeV (³H) vs AME `+1.8081`, `−0.7973` MeV (³He) vs
 >   `+1.0443`. Audit: `docs/audits/2026-09-12-ursell-partition-function-for-b3.md`,
 >   beans `qou-rwhv` / `qou-rraz`.
+>
+>   🛑 **Those two magnitudes, and the chain bonds `μ_e` they come from, are on a
+>   SUPERSEDED word (owner, 2026-11-15).** The γγ rule now covers the nuclear bond
+>   letters, so the single-crossing interface letters `g_{3k+2} + d_k` of
+>   `atom_braid_word_3A` are not canonical. The figures stay as records; the Lean
+>   theorems above take generic bond weights and still stand. Redo waits on a
+>   γγ-selected word per nucleus (#7876). Record:
+>   `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`.
 >
 >   🛑 **"A bond factor above 1" is NECESSARY, NOT SUFFICIENT — do not read the
 >   sentence above as "find an attractive letter and the sign follows"** (owner
@@ -4336,7 +4435,7 @@ sorry
   `folio/references/<key>.json` file, loaded by `folio/schema/references.ts`.
   (`references.bib` is auto-generated from `references.ts` — the `export-bibtex`
   shortcut was dropped in the miga migration, pending re-wiring).
-- If no published reference exists, use `[manuscript]` and cite chapter/section.
+- If no published reference exists, use `[leitner2026]` (the self-citation) and cite chapter/section. The legacy `[manuscript]` key was renamed to `leitner2026` at every site on owner ruling 2026-11-15.
 - A `sorry` without `-- Ref:` is always a review failure.
 
 ### 1a. No audit-dodging / sorry-workarounds (STRICT, 2026-06-23)
@@ -5117,7 +5216,7 @@ rules of thumb:
 - `$\gamma$` = photon (never vortex; vortex is `$\varrho$`)
 - `$H_q$` alone = **forbidden** (collision); use `$\mathcal{H}_q$` (shuffle) / `$\hat{H}_q$` (Hamiltonian) / `$H_n(q)$` (Hecke) / `$H_q(\lambda)$` (hook-length)
 - `$E$` alone = **not used**; use `$\mathcal{S}_p$` (fibre), `$\mathfrak{E}$` (energy), `$\mathcal{E}_q$` (elliptic curve), or `$E_{\mathfrak{H}}$` (crossing energy with hadron subscript)
-- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator — against the Molien identity — is **open**, bean `qou-oots`. 🛑 **That identity is NOT `$\sum_\lambda f^\lambda \dim_q(\lambda)$`, and it is NOT proved for all `$n$` — this clause said both until 2026-10-11 and was wrong twice.** The Lean is [`QOU/MathlibExt/MolienFakeDegree.lean`](folio/quantum-observable-universe/lean/QOU/MathlibExt/MolienFakeDegree.lean) (sorry-free; the only `sorry` in it is the word inside a docstring), and it states `$\sum_{\lambda \vdash n} f^\lambda \, q^{-\kappa_\lambda} \dim_q(\lambda) = [n]_q!$` — **with a per-partition `$q^{-\kappa_\lambda}$` factor** that the old wording dropped. At `$n=3$` the theorem writes those weights out as `$q^{-3}, 1, q^{3}$` on `$[3], [2,1], [1^3]$`. Verified symbolically against `computations/substrate/young_qdim.py`: **with** the factor `LHS − RHS` simplifies to **0**; **without** it, as the old clause stated, the ratio is **8/15 at `$q=2$`**. And the scope is `$n = 2, 3, 4$` — three separate explicit theorems (`molien_qanalogue_n2/_n3/_n4`), not a `Finset.sum`; the general-`$n$` case is **open**, needing *"the graded decomposition of the coinvariant algebra (Chevalley/Steinberg) plus an induction over `Finset`-many partitions"*, tracked as bean `qou-3quc`. The same file also **proves the contrast** — `sum_qDim_sq_ne_qFactorial_n3_at_two`: `$\sum_\lambda \dim_q(\lambda)^2 \neq [n]_q!$`, which is the `$\sum_\lambda w_\lambda(q) \neq 1$` defect above, proved rather than merely measured (`$22/35$` at `$n=3, q=2$`; bean `qou-zmw4`). Register: [`notation-collisions.md`](folio/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md) **Mechanical check (2026-09-13):** [`computations/audits/y_lambda_conflation_audit.py`](computations/audits/y_lambda_conflation_audit.py), wired blocking into `scripts/precision-gates.sh`. It flags the name `y_lambda` attached to the quantum Plancherel measure `$d_q(\lambda)^2/[n]_q!$` — in prose, in an AST assignment, in a producer's own name, and (as a draining ratchet) in a witness column that declares no `weight_family`. It exists because this rule lived only in prose and was broken in four probes at once, and there it was **not cosmetic**: re-weighting the Magnus $\Omega_2$ probes' own committed traces with the real Wenzl bridge FLIPS the sign of $P_\text{total}$ at $A=3$ and $A=4$ (Plancherel $-,+,+$ over $A=2,3,4$; Wenzl $-,-,-$), so the programme's target $A$-dependent sign change is present under one name and absent under the other — bean `qou-za3q`, decision 1 still OPEN.
+- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers need a **self-normalised** family and must **declare which one they used**. **🛑 For Φ_k that family is NOT `$d_q^2/D^2$`, and the choice is NOT open.** This line read *"Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator … is **open**, bean `qou-oots`"* until 2026-11-15 (correction written 2026-09-14 on PR #7402, ported to the current layout on this date). **The owner RULED on it 2026-09-05** — verbatim *'molien. do the two arm reporting'* — and **re-affirmed it 2026-09-08**: the canonical **Φ_k** weight is **Molien** `$f^\lambda q^{-\kappa}\dim_q(\lambda)/[n]_q!$`, and `$d_q^2/D^2$` is kept as a **labelled comparison arm** — not a fallback, and not what an undecided consumer should reach for. **The arms disagree materially:** under Molien the Frobenius-reciprocity mechanism gains **+21.4 %** over its own baseline with best knot `$5_2$`, where `$d_q^2/D^2$` gives **+1.7 %** with best knot `$6_1$` (bean `qou-oots`). **Scope — do not widen it:** the ruling is about **Φ_k**; outside it the family is a **declared choice**, never an implicit `$d_q^2/D^2$`. **The `$\dim_q$` convention is dragged along:** the Molien identity holds under the **fake-degree** convention and **fails** under the symmetric one (measured `$n = 2..5$`, [`confinement_filtration_vs_gbdepth_probe.py`](computations/audits/confinement_filtration_vs_gbdepth_probe.py) §0), so `$\dim_q$` alone is ambiguous. Ruling record: bean `qou-oots`; [`2026-09-08-l2-1ppq-research-program-gaps.md`](docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md) row D2, which records that listing the choice as open *"was written as open by mistake"*. **What is still open in `qou-oots` is the α_EM-axis triage, not the choice.** The identity's own status: 🛑 **That identity is NOT `$\sum_\lambda f^\lambda \dim_q(\lambda)$` — this clause said so until 2026-10-11. It IS now proved for every `$n$`** (`QOU.MathlibExt.NormalizedSumUnconditional.molienSum_eq_qFactorial`, general `$n$`, `$1 < q$`, no `sorryAx`; via `MolienFakeDegreeGeneralN`). The scope paragraph below describes the earlier explicit-`$n$` file and is kept as history. The Lean is [`QOU/MathlibExt/MolienFakeDegree.lean`](folio/quantum-observable-universe/lean/QOU/MathlibExt/MolienFakeDegree.lean) (sorry-free; the only `sorry` in it is the word inside a docstring), and it states `$\sum_{\lambda \vdash n} f^\lambda \, q^{-\kappa_\lambda} \dim_q(\lambda) = [n]_q!$` — **with a per-partition `$q^{-\kappa_\lambda}$` factor** that the old wording dropped. At `$n=3$` the theorem writes those weights out as `$q^{-3}, 1, q^{3}$` on `$[3], [2,1], [1^3]$`. Verified symbolically against `computations/substrate/young_qdim.py`: **with** the factor `LHS − RHS` simplifies to **0**; **without** it, as the old clause stated, the ratio is **8/15 at `$q=2$`**. And the scope is `$n = 2, 3, 4$` — three separate explicit theorems (`molien_qanalogue_n2/_n3/_n4`), not a `Finset.sum`; the general-`$n$` case was then **open** (closed since by `molienSum_eq_qFactorial`), needing *"the graded decomposition of the coinvariant algebra (Chevalley/Steinberg) plus an induction over `Finset`-many partitions"*, tracked as bean `qou-3quc`. The same file also **proves the contrast** — `sum_qDim_sq_ne_qFactorial_n3_at_two`: `$\sum_\lambda \dim_q(\lambda)^2 \neq [n]_q!$`, which is the `$\sum_\lambda w_\lambda(q) \neq 1$` defect above, proved rather than merely measured (`$22/35$` at `$n=3, q=2$`; bean `qou-zmw4`). Register: [`notation-collisions.md`](folio/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md) **Mechanical check (2026-09-13):** [`computations/audits/y_lambda_conflation_audit.py`](computations/audits/y_lambda_conflation_audit.py), wired blocking into `scripts/precision-gates.sh`. It flags the name `y_lambda` attached to the quantum Plancherel measure `$d_q(\lambda)^2/[n]_q!$` — in prose, in an AST assignment, in a producer's own name, and (as a draining ratchet) in a witness column that declares no `weight_family`. It exists because this rule lived only in prose and was broken in four probes at once, and there it was **not cosmetic**: re-weighting the Magnus $\Omega_2$ probes' own committed traces with the real Wenzl bridge FLIPS the sign of $P_\text{total}$ at $A=3$ and $A=4$ (Plancherel $-,+,+$ over $A=2,3,4$; Wenzl $-,-,-$), so the programme's target $A$-dependent sign change is present under one name and absent under the other — bean `qou-za3q`, decision 1 still OPEN.
 - `$q = 1.1097$` (or any specific numerical value) **must not appear** outside the introduction and Chapter 7
 
 ### 7ab. Observed / derived values — approximation convention (STRICT)
@@ -5529,7 +5628,35 @@ $$
 `` ```tex `` blocks is not escaped (it's a column separator in matrices
 and alignments). Only `&` in prose text causes LaTeX errors.
 
-## Lean MCP server (lean-lsp-mcp)
+## MCP servers start on demand (owner directive, 2026-11-20)
+
+Owner, verbatim: *"MCP should only start up if an agent needs the tools. The
+agent should look at the process and what it needs and then make a decision."*
+
+Every server in `.mcp.json` runs through
+[`scripts/mcp-lazy.py`](scripts/mcp-lazy.py). At session start it connects in
+under 0.1 s and exposes **one** tool, `start`; the real server is not running.
+Its description says what the server provides, when it is worth starting, what
+it costs, and the cheaper route that needs no MCP. The commands and those texts
+live in [`scripts/mcp-lazy.json`](scripts/mcp-lazy.json).
+
+**Decide before you start one.** Look at the task. If it needs the tools, call
+`mcp__<server>__start` (pass a one-line `reason`), then call `RefreshMcpTools`
+to load the real tools. If a cheaper route covers it, use that instead:
+
+| server | provides | cheaper route without MCP |
+|---|---|---|
+| `paper-assistant` | `corpus_search` and the platform tools (~74) | `bun scripts/corpus-search.ts "<topic>"` |
+| `lean-lsp` | goal states, diagnostics, Mathlib search | `lean -DautoImplicit=false -s 65536 <file>` (lean-direct) |
+| `paper-search-mcp` | external paper search and PDF download | `library/INDEX.md` and `library/*/sections` |
+| `openalex-paper-search` | OpenAlex author and work metadata | `folio/references/` for cited works |
+
+Why. Measured 2026-11-20 on a fresh container: all four eager servers hit the
+30 s connect timeout at session start. Run by hand, two of them could never
+start: `paper-search-mcp` was unpinned and broke on mcp 2.x (now pinned
+`mcp<2`), and `alex-mcp` needs `OPENALEX_MAILTO`, which is not set here. A
+failed `start` now returns the backend's stderr tail as the tool result.
+
 
 The [lean-lsp-mcp](https://github.com/oOo0oOo/lean-lsp-mcp) server is
 configured via `.mcp.json`. It provides Claude Code with:

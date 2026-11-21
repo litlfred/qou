@@ -1,0 +1,51 @@
+284 Smooth point asymptotics
+
+Proposition C.8 in Appendix C implies
+
+Poexp
+
+Res(F(¢) d¢) = HO exp)/du, duy
+
+Av+ A duast
+
+and the partial derivative in the direction of the gradient is the square of the
+magnitude of the gradient. Thus,
+
+Pw)
+
+Res(F(¢) d¢\(¢,) =
+es(F(C) dCy(Cx) Vine OCR
+
+dA, (9.25)
+
+where dA = du = duz A--- A dug is equal to the oriented holomorphic (d—- 1)-
+area form for logV as it is immersed in C“.
+Let A = |r| and ¢(¢) = # - ¢ so that (9.24) becomes
+
+d
+tty = (4) f exp(-Ag(¢)) Res(F(¢) dC), (9.26)
+
+and let 7 denote the quadratic part of h. By Proposition 9.42 (or Corollary 9.43)
+and the subsequent discussion, we see that the curvature K of log V at the point
+¢. with respect to the unit normal f is given by ||7]|.
+
+To proceed, we describe a logspace intersection cycle ©. One way to con-
+struct & is to pick a point x’ in the component of amoeba(Q)° giving the series
+expansion under consideration, and a point 2” in a component of amoeba(Q)°
+on which the height function h is unbounded, and take the intersection cycle
+of log V with a homotopy H obtained by taking a straight line from a’ to 7”
+and mapping by Relog™!. A convenient choice is to make the segment aa”
+parallel to *. The real tangent space to H is then the sum of the imaginary
+d-space and the real 1-space in direction *. The tangent space to log V is the
+sum of the real (d — 1)-space orthogonal to 7 and the imaginary (d — 1)-space
+orthogonal to 7. The tangent space to & is the intersection of these, which is
+the imaginary (d — 1)-space orthogonal to 7 — in other words, just Im P.
+
+Because & is contained in the linear space ImP + C - #, we see that locally
+there is a unique analytic function a : ImP — C- # such that ¢ + a(¢) € G.
+Comparing to our parametrization above, we see that a = h, so the quadratic
+part of @ is therefore equal to 7. Because our multivariate integral formulae
+are in terms of real parametrizations, we reparametrize ImP by ¢ = iy and
+dé = if dy. In these coordinates, locally
+
+& ={iy+h(iy): y € ReP}. (9.27)

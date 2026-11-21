@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2508.03145v1/blocks/prose-sec-005",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The Tannakian duality theorem",
-  "pageStart": 23,
-  "pageEnd": 29,
-  "text": "../sections/sec-005-the-tannakian-duality-theorem.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2508.03145v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2508.03145v1",
+  "title": "Tannakian -categories and Tannakian gerbes",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "text": "../sections/sec-005-tannakian--categories-and-tannakian-gerbes.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2508.03145v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2508.03145v1/manifest.jsonld",
   "provenance": "ingested"
 }

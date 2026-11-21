@@ -1,6 +1,6 @@
 ---
 doc_id: fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma
-doc_title: "M. FUJJI"
+doc_title: "On totally geodesic boundaries of hyperbolic 3-manifolds"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf
 source_sha256: d3d3bf68955ad775
 toc_source: inferred
+doc_brief: "On totally geodesic boundaries of hyperbolic 3-manifolds — 3 sections: Front matter; An ideal tetrahedral decomposition; UdC"
 ---
 M. FUJJI
 KODAI MATH. J.

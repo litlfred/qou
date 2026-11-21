@@ -41,7 +41,7 @@ The golden ratio threshold divides the $(q, \chi)$ parameter space into three re
 | Classical band | $1/\varphi^2 < q < 1$ | smooth | intact but sub-classical | symmetric nuclei ($n = p$) |
 | Physical | $q > 1$ | smooth, $\Delta < 0$ | one real component | full nuclear chart |
 
-Our universe sits at $q = q_0$, well above the golden threshold. The distance from the degeneration,
+The observed universe sits at $q = q_0$, well above the golden threshold. The distance from the degeneration,
 
 $$
   q_0 - q_{\mathrm{gold}}
@@ -59,4 +59,4 @@ The appearance of $\varphi$ in the Descartes universe connects to its role in re
 * **Fibonacci phyllotaxis**: The golden angle $2\pi/\varphi^2 \approx 137.5^\circ$ optimises packing on surfaces, reflecting the same algebraic constraint $(s^2 + s - 1 = 0)$ that governs the chiral degeneration.
 * **$E_8$ and the icosahedron**: The golden ratio arises in the McKay correspondence for the icosahedral group (order $60$), which is $A_5 \cong S_5/\mathbb{Z}_2$ (the quotient of the symmetry group of Bring's surface by its centre).
 
-The golden ratio is not an input to the QOU framework. It emerges strictly from the $S_5$ symmetry of the quintic and the requirement $\chi(A) = -6$.
+The golden ratio is not an input to the QOU framework. It emerges strictly from the $S_5$ symmetry of the quintic and the requirement $\chi_{\mathrm{eu}}(M_0) = -6$.

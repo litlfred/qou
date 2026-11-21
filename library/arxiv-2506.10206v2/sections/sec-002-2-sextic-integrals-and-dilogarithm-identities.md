@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.932
 latex_coverage_ratio: 0.994
+doc_brief: "Analytic Dilogarithm Identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
 ---
 []{#sectionsextic label="sectionsextic"} One of the main tools to be applied in this paper is given by the functional equations involved in Theorem [\[maintheorem\]](#maintheorem){reference-type="ref" reference="maintheorem"} below. For our derivation of this Theorem, we require the integral identities such that $$\label{integrandforsum1}
  \int_{0}^{h} \frac{(1 - y)^c y^d}{1 + g^2 (1 - y)^a y^b} \, dg = (1 - y)^{c - \frac{a}{2}} y^{d - \frac{b}{2}} 

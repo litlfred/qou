@@ -1,0 +1,68 @@
+thus ?lhs
+using ‘Re (to-complex ?x) > 0> assms
+proof (transfer, transfer)
+fix H
+assume hh: hermitean H \ H # mat-zero
+obtain A B C D where *: H = (A, B, C, D)
+by (cases H, auto)
+assume 0) < Re (to-complex-cvec (calc-x-axis-intersection-cmat-cvec H)) intersects-t-axis-cmat H is-poincare-line-cmat
+ve
+hence **: A 4 0.0 < Re ((cor (sgn (Re B)) * cor (sqrt ((Re B)? — (Re A)”)) — cor (Re B)) / A) A= D is-real
+A (Re B)? > (Re A)?
+using * hh hermitean-elems
+by (auto split: if-split-asm)
+
+have Re A # 0
+using complez.expand[of A 0] «A # 0» <is-real A>
+by auto
+
+have Re ((cor (sgn (Re B)) * cor (sqrt ((Re B)? — (Re D)”)) — cor (Re B)) / D) = (sgn (Re B) * sqrt ((Re B)?
+— (Re D)?) — Re B) / Re D
+using <is-real A) «A = Dy
+by (metis (no-types, lifting) Re-complez-of-real complex-of-real-Re of-real-diff of-real-divide of-real-mult)
+
+thus intersects-x-axis-positive-cmat H
+using * *« (Re A # 0»
+using calc-intersect-x-axis-positive-lemmal|of Re A Re B|
+by simp
+qed
+qed
+
+lemma intersects-x-axis-positive-iff:
+assumes is-poincare-line H and H # s-azis
+shows intersects-z-axis-positive H —
+(A 2. « € unit-disc A x € circline-set H ( positive-x-axis) (is ?lhs > ?rhs)
+proof
+assume ?/hs
+thus ?rhs
+using intersects-x-axis-positive-iff [OF assms(1)]
+by auto
+next
+assume ?rhs
+then obtain z where zx € unit-disc x € circline-set H \ positive-a-axis
+by auto
+thus ?lhs
+using unique-calc-z-azis-intersection[OF assms, of 2]
+using intersects-x-axis-positive-iff [OF assms(1)]
+unfolding positive-x-azis-def
+by auto
+qed
+
+8.6 Check if an h-line intersects the positive part of the y-axis
+
+definition intersects-y-axis-positive-cmat :: complex-mat = bool where
+[simp]: intersects-y-axis-positive-cmat H = (let (A, B, C, D) = Hin Re A# 0A ImB/ Re A < -1)
+
+lift-definition intersects-y-azis-positive-clmat :: circline-mat = bool is intersects-y-axis-positive-cmat
+done
+
+lift-definition intersects-y-azis-positive :: circline = bool is intersects-y-axis-positive-clmat
+proof (transfer)
+fix H1 H2
+assume hh: hermitean H1 A H1 4 mat-zero and hermitean H2 \ H2 4 mat-zero
+obtain Ai B1 C1 D1 A2 B2 C2 D2 where *: H1 = (A1, B1, C1, D1) H2 = (A2, B2, C2, D2)
+by (cases H1, cases H2, auto)
+assume circline-eq-cmat H1 H2
+then obtain k where k 4 0 \ H2 = cork *sm H1
+
+108

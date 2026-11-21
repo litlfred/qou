@@ -8,36 +8,43 @@
   "pages": 10,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:17Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 10,
+    "reason": "23 of 358 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Mathematical Research Letters 3, 51\u201360 (1996)",
+  "title": "Combinatorial scalar curvature and rigidity of ball packings",
   "authors_raw": "COMBINATORIAL SCALAR CURVATURE",
   "title_lines": [
-   "Mathematical Research Letters 3, 51\u201360 (1996)"
+   "Mathematical Research Letters 3, 51–60 (1996)"
   ],
   "abstract": null,
   "docinfo": {
    "Title": "rivin.tex.12/15/95",
    "Author": "sbaouend",
    "Producer": "Acrobat Distiller 4.05 for Macintosh",
-   "Creator": "Textures\u00a8: LaserWriter 8 8.7.1",
+   "Creator": "Textures¨: LaserWriter 8 8.7.1",
    "CreationDate": "D:20040816144401"
   },
-  "title_raw": "Mathematical Research Letters 3, 51\u201360 (1996)",
+  "title_raw": "Mathematical Research Letters 3, 51–60 (1996)",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
    "metadata": "rivin.tex.12/15/95",
-   "heading": "Mathematical Research Letters 3 , 51\u201360 (1996) COMBINATORIAL SCALAR CURVATURE AND RIGIDITY OF BALL PACKINGS Daryl Cooper and Igor Rivin Introduction Let M 3 be a triangulated three-dimensional manifold. In this paper we de\ufb01ne a combinatorial analogue of scalar curvature for M 3 , and also a combinat",
-   "text": "Mathematical Research Letters 3, 51\u201360 (1996)",
+   "heading": "Mathematical Research Letters 3 , 51–60 (1996) COMBINATORIAL SCALAR CURVATURE AND RIGIDITY OF BALL PACKINGS Daryl Cooper and Igor Rivin Introduction Let M 3 be a triangulated three-dimensional manifold. In this paper we deﬁne a combinatorial analogue of scalar curvature for M 3 , and also a combinat",
+   "text": "Mathematical Research Letters 3, 51–60 (1996)",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Mathematical Research Letters 3, 51–60 (1996)"
  },
  "toc": [
   {
@@ -318,8 +325,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1148,
-   "n_words": 243,
+   "n_chars": 1145,
+   "n_words": 242,
    "label_start": "54",
    "label_end": "55"
   },
@@ -330,8 +337,8 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1385,
-   "n_words": 279,
+   "n_chars": 1419,
+   "n_words": 283,
    "label_start": "55",
    "label_end": "55"
   },
@@ -378,7 +385,7 @@
    "level": 1,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1817,
+   "n_chars": 1822,
    "n_words": 320,
    "label_start": "59",
    "label_end": "60"
@@ -402,8 +409,8 @@
    "level": 1,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 1090,
-   "n_words": 223,
+   "n_chars": 1015,
+   "n_words": 141,
    "label_start": "60",
    "label_end": "60"
   }
@@ -423,6 +430,7 @@
    "items": []
   },
   "sections": 11,
-  "chars_total": 19906
+  "chars_total": 19867,
+  "furniture_lines_stripped": 0
  }
 }

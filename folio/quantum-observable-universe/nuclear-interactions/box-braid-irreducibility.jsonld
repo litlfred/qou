@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-box-braid-irreducibility",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:box-braid-irreducibility",
@@ -15,7 +16,6 @@
   "title": "The $\\gamma\\gamma \\to \\nu\\nu^{\\sigma}$ box braid is irreducible",
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-virtual-particles-exceptional-divisor",
-    "papers/quantum-observable-universe/blocks/rem-electron-immortality",
     "papers/quantum-observable-universe/blocks/ex-photon-wavefront"
   ],
   "tags": [

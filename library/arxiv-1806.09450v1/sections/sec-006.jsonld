@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1806.09450v1/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
+  "pageStart": 12,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-1806.09450v1/blocks/prose-sec-006",
+    "library/arxiv-1806.09450v1/blocks/figure-img-p014-1",
+    "library/arxiv-1806.09450v1/blocks/figure-img-p014-2",
+    "library/arxiv-1806.09450v1/blocks/figure-img-p014-3",
+    "library/arxiv-1806.09450v1/blocks/figure-img-p014-4",
+    "library/arxiv-1806.09450v1/blocks/figure-img-p014-5",
+    "library/arxiv-1806.09450v1/blocks/figure-img-p014-6",
+    "library/arxiv-1806.09450v1/blocks/figure-img-p014-7"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
+  "provenance": "ingested"
+}

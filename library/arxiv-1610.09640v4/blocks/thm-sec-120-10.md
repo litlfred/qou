@@ -1,0 +1,1 @@
+Let ˜A be a noetherian connected graded ring, let ˜c ∈˜A be a homogeneous central element of degree 1, and let A := ˜A/(˜c −1). Then: (1) The ring A is noetherian. (2) There is an isomorphism Aen ⊗L ˜ Aen ˜A ∼= A ⊕A[1] in D(Aen). (3) The bimodule A is a derived pseudo-ﬁnite complex over the ring Aen.

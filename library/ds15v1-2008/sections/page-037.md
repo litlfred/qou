@@ -1,0 +1,109 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-037
+section_title: "Page 37"
+pages: 37-37
+pdf_page: 37
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+5.3 False Theta Series Identities of Order 3
+
+2
+
+om
+
+Rogers [37, p. 333 (4)]; F. 26
+AG Pn (Rogers [ (4)]: F. 26)
+
+. ico (-1) grin)
+v(—¢, —¢) = a (Rogers [37, p. 333 (4)]; F. 22; F. 28)
+n=0 Gq )nt1
+
+jr grr) /2(
+
+= Gant
+3nt
+
+ES G@)an+1
+
+co
+
+-y
+
+= (2; enti
+
+jr grr) Pq )3 n(1 _ g"*?)
+
+s
+
+5.4 False Theta Series Identities of Order 4
+
+iad (—1)"qr*D/?2(—@)n
+U(—¢°,-4°) = }) —— _
+( ) d (4; P)n41
+(Rogers [37, p. 333 (5)])
+; iad yng) P(- ?; ?)n
+w(- 6 _¢@? _— (=
+Ca) = 0G Dan
+
+(Rogers [37, p. 333 (5)])
+& —1)r n(n+1)/2 n(—G; 2 n
+w(-9,-«) = 74 y"q . (@n(=4: ¥")
+n=0 (q Q)2n+1
+(Ramanujan [9, p. 257, Eq. (11.5.3); F. 37)
+7 (1g? (Qn =a Pn
+V(-q', -@) =
+( dX (q Q)2n+1
+(Ramanujan [9, p. 257, Eq. (11.5.4)]; F. 35)
+
+& np 2n(n+1)
+
+v(q",q) = 3 (=1)"q —__ Jon
+
+(Ramanujan [9, p. 257, Eq. (11.5.5)])
+
+5.5 False Theta Series Identities of Order 5
+
+oo q” (n+1)/2
+= yo (Rogers [37, p. 333 (3)]; F. 45)
+n=0 “nt
+oo q” (n+3) /2
+= yo (Rogers [37, p. 333 (3)]; F. 43)
+2 ytd
+
+n=0
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15
+
+(Dyson [13, p. 9, Eq. (7.8)])
+
+(Dyson [13, p. 9, Eq. (7.9)])
+
+(5.3.1)
+
+(5.3.2)
+
+(5.3.3)
+
+(5.3.4)
+
+(5.4.1)
+
+(5.4.2)
+
+(5.4.3)
+
+(5.4.4)
+
+(5.4.5)
+
+(5.5.1)
+
+(5.5.2)
+
+37

@@ -8,12 +8,11 @@ pages: 10-12
 source_pdf: FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf
 source_sha256: aa2f1eb73610a81b
 toc_source: inferred
+doc_brief: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established"
 ---
 Gaussian Kernels
 We next validated the real and quaternion Gaussian kernels
 for the problem of nonlinear channel equalisation.
-5746
-IEEE TRANSACTIONS ON INFORMATION THEORY, VOL. 60, NO. 9, SEPTEMBER 2014
 1) Channel Model: The transmission channel was modelled
 as a linear (moving average) ﬁlter with a memoryless nonlin-
 earity stage corrupted by noise:
@@ -106,8 +105,6 @@ ridge regression algorithms, but also to the standard, real-
 valued, Gaussian kernel.
 The unbounded nature of the quaternion-valued Gaussian
 kernel allowed for the extrapolation of the nonlinear behaviour
-TOBAR AND MANDIC: QUATERNION REPRODUCING KERNEL HILBERT SPACES
-5747
 Fig. 10.
 Validation MSE of ridge regression algorithms for channel
 equalisation.

@@ -54,7 +54,7 @@ convention D is the same field with `q ≠ 0`, `q² + 1 ≠ 0`. The Markov-trace
 statement is over the `MarkovTrace` structure with `CommRing R`.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403 — the normalised trace and the two Markov moves.
--- Ref: [manuscript] docs/audits/2026-09-04-binding-law-options-decision-frame.md §3
+-- Ref: [leitner2026] docs/audits/2026-09-04-binding-law-options-decision-frame.md §3
 -/
 
 namespace QOU.MathlibExt.ForcedLinkNormalisation

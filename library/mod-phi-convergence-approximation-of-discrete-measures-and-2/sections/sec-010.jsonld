@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The local distance",
+  "pageStart": 24,
+  "pageEnd": 27,
+  "contains": [
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-010",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prop-sec-010-01",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-010-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2509.04267v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "9843b9dd71d1ec7453c4c83a98a954871870e6ba7425e9cc155b09298751596e",
+  "file": "2509.04267v3.pdf"
+ },
+ "provenance": {
+  "title": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology",
+  "authors": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+  "arxiv": {
+   "id": "2509.04267",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "14 Nov 2025"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

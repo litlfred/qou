@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0309426v2
-doc_title: "arXiv:math/0309426v2 [math.RT] 1 Jul 2004"
+doc_title: "ELEMENTARY DIVISORS OF SPECHT MODULES"
 section_id: sec-002-3-specht-modules
 section_title: "Specht modules"
 section_number: 3
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.758
+doc_brief: "ELEMENTARY DIVISORS OF SPECHT MODULES — 9 sections: Front matter; Introduction and statement of main; The Hecke algebra and permutation"
 ---
 We recall some well-known facts due to Dipper and
 James~\cite{DJ:reps}.

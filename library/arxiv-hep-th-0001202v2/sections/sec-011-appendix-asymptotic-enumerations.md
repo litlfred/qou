@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-011-appendix-asymptotic-enumerations
 section_title: "Appendix: asymptotic enumerations"
 section_number: null
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 0.523
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 Here we consider inequalities inferred from Tables 3 and 4 and show that they persist at large weights, thanks to the upper bound $c<3$ on the Otter constant [@Otter].
 

@@ -1,0 +1,1 @@
+If M is a closed hyperbolic 3-manifold which admits a hyperbolic structure, then Mostow’s Rigidity Theorem [62] implies that CC(M) consists of two points (one for each ori- entation on M), IHP LECTURES ON HYPERBOLIC 3-MANIFOLDS

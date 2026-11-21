@@ -22,5 +22,5 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["thm:wedderburn-mass-formula"],
-  cites: ["thurston1978"],
+  cites: ["francaviglia2003", "thurston1978"],
 });

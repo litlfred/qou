@@ -1,0 +1,1 @@
+Let (E, th(−)) be an SL-oriented motivic spectrum and let q : V →X be a rank r vector bundle on X ∈SmB with an isomorphism θ : det V →OX. Then sending x ∈Ea,b Z (X) to q∗(x) ∪thV,θ deﬁnes an isomorphism ϑV,θ : Ea,b Z (X) →Ea+2r,b+r Z (Th(V )) natural in (X, V, θ).

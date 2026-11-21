@@ -1,0 +1,39 @@
+20 Chapter 1 — Vanishing theorems on abelian varieties
+
+If x € /(P), then H*(X,P,) is not concentrated in degree zero, so (x) is
+non-zero in some degree d with |d| > g. But Q is a clean perverse sheaf and
+as such it does not contain the constant perverse sheaf, hence
+
+H“(X,Qy) =0 for |d|>g
+
+by the adjunction property in [10, prop. 4.2.5]. So it follows from the above
+that H°(X,(Ny)y) # 0 for some index v and hence that 7 € .7(Ny) by
+part (a). Conversely, x € (Ny) implies by proposition 1.6(a) that the
+hypercohomology H*(X,(Ny),) is non-zero in more than one cohomology
+degree; then by (x) the same holds for H*(X, Py), so x € -/(P). Altogether
+this shows
+
+SP) = (Ny).
+veZ
+and part (b) of our claim follows by applying part (a) to the Ny € E(X).
+
+(c) First we claim that a local system Ly is of geometric origin iff 7
+is a torsion character. For the non-trivial direction note that if Ly is of
+geometric origin, then X has a model X4 over a subring A C C of finite type
+over Z such that Ly descends to a local system on X4, corresponding to a
+continuous character
+
+ya: ™(X4) —+ G.
+
+Take a closed point of Spec(A) with finite residue field x. Let V C C be
+a strictly Henselian ring with A C V whose residue field is an algebraic
+closure K of K. For Xy = X4 x, V the inclusion of the special fibre X¢
+induces an epimorphism 7 (Xz) — 7 (Xv) by [51, exp. X, 1.6]. In view of
+the commutative diagram
+
+QO
+it then suffices to show that the pull-back 7 : 1(X~) —> Q, is a torsion
+character. But since x is a finite field, this follows by a consideration of the
+
+eigenvalues of the Frobenius operator as in [28, 1.3.4(i)]. This proves our
+claim that Ly is of geometric origin iff 7 is a torsion character.

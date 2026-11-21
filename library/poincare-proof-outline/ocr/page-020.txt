@@ -1,0 +1,69 @@
+using **
+by (simp add: field-simps)
+
+let ?k = kz * cnj kz
+
+have ?k # 0 is-real ?k
+using **
+using eq-cnj-iff-reallof ?k|
+by auto
+thus ?thesis
+using (zal * cnj za2 # 0) <zb1 * cnj zb2 F 0»
+using (7 (?den zal za2 wal wa2 4 0)» <?den zb1 zb2 whl wh2 = 0» **
+by (rule-tac c=Re (kz * cnj kz) in exI, auto simp add: complex.expand)
+next
+case False
+hence zb1 * cnj zb2 = 0
+using **
+by (simp add: field-simps)
+show ?thesis
+proof (cases wal * cnj wa2 # 0)
+case True
+hence wh1«cnj wb2 4 0
+using **
+
+by (simp add: field-simps)
+let ?k = kw * cnj kw
+
+have ?k # 0 is-real ?k
+using **
+using eq-cnj-iff-reallof ?k]
+by auto
+
+thus ?thesis
+using (> (zal * cnj za2 # 0)»
+using (wal * cnj wa2 # 0» «whl * cnj wh2 4 0»
+using (- (?den zal za2 wal wa2 # 0)» «?den zb1 zb2 wbh1 wh2 = 0) **
+by (rule-tac c=Re (kw * cnj kw) in ex!)
+(auto simp add: complex.expand)
+next
+case False
+hence wh1 * cnj wb2 = 0
+using **
+by (simp add: field-simps)
+thus ?thesis
+using (7 (zal * cnj za2 4 0)» <zb1 * cnj zb2 = 0»
+using (7 (wal * cnj wa2 # 0)» «whl * cnj wb2 = 0»
+using (- (?den zal za2 wal wa2 # 0)» «?den zb1 zb2 wbh1 wh2 = 0) **
+by simp
+qed
+qed
+qed
+thus ?thesis
+using *[symmetric]
+by simp
+qed
+qed
+
+4.2.1 Correctness of the construction
+
+For finite points, our definition matches the classic algebraic definition for points in C (given in ordinary, not
+homogenous coordinates).
+
+lemma poincare-line-non-homogenous:
+assumes u # Oop, v # On UF VU F inversion Vv
+shows let u’ = to-compler u; vu’ = to-complex v;
+A =i x (u’ * enj vu! — vu’ * enj u’);
+B=i x (v0! * ((emod u')? + 1) — u! * ((emod v')? + 1))
+
+20

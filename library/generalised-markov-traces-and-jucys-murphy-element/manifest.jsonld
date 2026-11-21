@@ -5,22 +5,27 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/generalised-markov-traces-and-jucys-murphy-element",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/generalised-markov-traces-and-jucys-murphy-element/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "generalised-markov-traces-and-jucys-murphy-element",
   "contains": [
+    "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-front-matter",
     "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-000",
     "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-001",
     "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-002",
     "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-003",
     "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-004",
     "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-005",
-    "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-006"
+    "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-006",
+    "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-007",
+    "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-008",
+    "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-009",
+    "library/generalised-markov-traces-and-jucys-murphy-element/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "generalised-markov-traces-and-jucys-murphy-element",
     "title_source": "slug",
@@ -29,8 +34,8 @@
     "pages": 10,
     "arxiv": null,
     "doi": "10.1017/S0017089526101050",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

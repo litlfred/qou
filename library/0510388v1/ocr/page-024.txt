@@ -1,0 +1,27 @@
+9. The calculus of vector convolutions in R°.
+
+Let a = |x—y| denote the distance between the points x and y in R’, and
+let (a) be some unspecified function of a. As usual, we'll write (x, y) in
+place of (a(x, y)) for simplicity.
+
+Let V bea smooth vector field defined on R? and having compact support.
+
+Keeping the function unspecified, we define vector fields A(V, ) and
+B(V, >), ascalar function g(V, ) and another vector field G(V, )) as follows.
+
+A(V, o)(y) = Ses VOX) OC, y) dx
+
+B(V, o)(y) = Fes VX) XVyo(x, y) dx
+
+&(V, o)(y) = Jes VOX) © Vy o(x y) dx
+
+G(V, )(y) = Vyg(V. o)(y) = Vy Js V(x) © Vy (x, y) dx.
+If we use the fundamental solution @o(a) = —1/(4ma) of the scalar Laplacian as
+the kernel in the above convolutions, then A(V, 0) gives the Green's operator, and
+if we think of V as acurrent flow, then B(V, $0) is the resulting magnetic field,
+— A(V, 0) is its vector potential, and —G(V, 0) is the rate of change OE/Ot of
+
+the electric field, caused by the accumulation and dissipation of charge by the
+current flow V.
+
+24

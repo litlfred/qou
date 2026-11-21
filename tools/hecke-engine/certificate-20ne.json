@@ -28,8 +28,9 @@
   "net_f64": -225923132904.17078,
   "tr_alt_f64": -256161203426.86966,
   "tr_markov_d": {
-    "computed": false,
-    "reason": "A > 16: beyond the two-row tower probe so far, and v9's build was stripped mid-construction",
+    "computed": true,
+    "value": "-0.000011219721096034424946933842473114592150773236230395731838316",
+    "method": "two-row seminormal characters up the Hecke tower, diagonal-only (hecke-tower-trace, MPFR at 80 and 70 digits); agrees with the Python tower probe to >= 59 digits on all 63 isotopes both compute",
     "z": "q^3/(q^2+1)",
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "normalisation": "divided by 2^pn_count, like the *_f64 fields"

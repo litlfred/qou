@@ -8,6 +8,7 @@ pages: 14-21
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
 toc_source: inferred
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values — 10 sections: Front matter; Introduction; Preliminaries"
 ---
 We prove (0-3) in Section 2A, and we prove (0-4) in Section 2B.
 2A. The ﬁxed point equation of the harmonic Frobenius of integrals at (1, 0).
@@ -547,145 +548,93 @@ Remark 2B.3. The proof of Corollary 2B.2 indicates that the equations of Corolla
 with the depth ﬁltration and the bounds on valuations of pMZVµN’s, which are two parameters in our
 computation. This can be viewed as a prerequisite for the next paragraphs in which we show a kind of
 compatibility between the iteration of the Frobenius and our computation of pMZVµN’s.
-1730
-David Jarossay
+1730 David Jarossay
+
 2B2. The iteration of the harmonic Frobenius. As in Section 2A2, we move from discussing the Frobenius
-at (1, 0), in Section 2A2, to discussing the harmonic Frobenius. We ﬁrst describe how the map iter
-∫1,0
-a,λ
-depends on its parameters λ and a.
-Deﬁnition 2B.4. For any d ∈N∗, let τ∗,⩽d : K⟨⟨e0∪µN ⟩⟩→K⟨⟨e0∪µN ⟩⟩be the map which sends f =
-P
-w word f [w]w to P
-w word, depth(w)⩽d f [w]w.
-Proposition 2B.5. Let 3, ˜3, a be three formal variables. There exists a map
-iter∫1,0(3, ˜3, a) : Ad ˜51,0(K)(e1) →K⟨⟨e0∪µN ⟩⟩[ ˜3, a](3),
-(2-2)
-such that, for any f ∈Ad ˜51,0(K)(e1), word w, a ∈N∗such that a > depth(w) and λ ∈K \ {0} which is
+at (1, 0), in Section 2A2, to discussing the harmonic Frobenius. We first describe how the map iter! "
+
+depends on its parameters A and a.
+
+Definition 2B.4. For any d € N*, let t,,.<a : K (@oupy)) > K(eoupy) be the map which sends f =
+
+Vw word flwlw to Vw word, depth(w)<d flwlw.
+
+Proposition 2B.5. Let A, A, a be three formal variables. There exists a map
+iter!9(A, A,a): Ady, jc (€1) > K (eoupyLA, al(A), (2-2)
+
+such that, for any f € Ada, (xy (1) word w,a € N* such that a > depth(w) and i € K \ {0} which is
 not a root of unity, we have
-iter
-∫1,0
-a,λ ( f )[w] = iter∫1,0(λ, λa, a)( f )[w].
-Proof. With the assumptions of the statement, let d = depth(w); knowing that g[∅] = 1, dualizing the
+
+JC Pw] = iter!9(A, 0", a)( fw]
+
+iter,
+Proof. With the assumptions of the statement, let d = depth(w); knowing that g[@] = 1, dualizing the
 multiplication of the a factors in (1-17) gives
-iter
-∫1,0
-a,λ (g)[w] =
-X
-0⩽d′⩽d
-X
-0⩽i1<···<id′⩽a−1
-X
-wi1̸ =∅,...,wid′̸ =∅
-wi1···wid′ =w
-g(λi1−1e0, (λi1−1 Adg(ξ)i1−1(eξ))ξ)[wi1]×· · ·
-× g(λid′−1e0, (λi1−1 Adg(ξ)id′ −1(eξ))ξ)[wid′].
-(2-3)
-We have assumed that a > d; let us thus separate the indices i j ⩽d and i j > d:
-X
-0⩽d′⩽d
-X
-0⩽i1<···<id′⩽a−1
-=
-X
-0⩽d′′⩽d′⩽d
-X
-0⩽i1<···<id′′⩽d
-X
-d<id′′+1<···<id′⩽a−1
-.
-This yields an expression of (2-3), as a K-linear combination indexed by {(d′′, d′) | 0 ⩽d′′ ⩽d′ ⩽d} ×
-{deconcatenations of w in d′ nonempty subwords} which is independent of a but depends polynomially
-of λ, and with coefﬁcients as well independent of a and polynomial functions of λ, of the numbers
-X
-d<id′′<···<id′⩽a−1
-g(λi1−1e0, (λid′′−1 Adg(ξ)id′′ −1(eξ))ξ)[wid′′]×· · ·×g(λid′−1e0, (λid′′−1 Adg(ξ)id′′ −1(eξ))ξ)[wid′].
+
+weal ii— ii—
+iter,') (g)[w => > > grileg, (All VAd jeirt(e))e Ewa] X--+
+O<d'<d 0<i, <+++<igr<a—1 Wi, AB,..., Win ~D
+Wi Wi yy =W
+
+x gM Ne, EAM iy t(Ce))e)[Wi (2-3)
+
+We have assumed that a > d; let us thus separate the indices i; < d and i; > d:
+
+~ bw = yy yD
+
+O<d'<d 0<ij <--<ig<a-1_ 0d" <d!<d 0<ij <-<ign<d d<igny) <-<iy <a-1
+
+This yields an expression of (2-3), as a K-linear combination indexed by {(d",d')|0<d” <d'<d}x
+{deconcatenations of w in d’ nonempty subwords} which is independent of a but depends polynomially
+of 4, and with coefficients as well independent of a and polynomial functions of A, of the numbers
+
+DS Ae, A Ad giant (Ce) Wig] Xx (AE He0, (24! AD seigrt (Ce) EM Wigr]-
+d<iyn<+-<iy<a-1
+
 (2-4)
-Let ϵ(ξ) = g(ξ) −1 and ˜ϵ(ξ) = g(ξ)−1 −1. For 0 ⩽i j ⩽a −1, we have (where τ∗,⩽d is deﬁned in
-Deﬁnition 2B.4)
-τ∗,⩽d(Adg(ξ)i j −1(eξ)) =
-X
-m j,m′
-j∈N
-m j⩽i j,m′
-j⩽i j,m j+m′
-j+1⩽d
- i j
-m j
- i j
-m′
-j
-
-˜ϵ
-m′
-j
-ξ eξϵ
-m j
-ξ .
-When i j > d, the collection of conditions {m j, m′
-j ∈N, m j ⩽i j, m′
-j ⩽i j, m j +m′
-j +1 ⩽d} is equivalent
-to {m j, m′
-j ∈N, m j +m′
-j +1 ⩽d}; thus, dualizing in (2-4) each factor g(λi j−1e0, (λi j−1 Adg(ξ)i j −1(eξ))ξ)
-tells us that (2-4) is a linear combination, independent of a and λ, of sums
-X
-d<id′′<···<id′⩽a−1
-d′
-Y
-j=d′′
- i j
-m j
- i j
-m′
-j
-
-λi j weight j,
+Let «® = g® — 1 and € = gO! — 1. For 0 <ij <a—1, we have (where t,,<q is defined in
+Definition 2B.4)
+
+ij ij \.m’ m
+Ty, <a (Ad, ayi;-1(€)) = » (in Gin EE ‘eges"!
+
+mj wn! jen
+When i; > d, the collection of conditions hy Sli nce weunie x if m’, <ij,mj +m’, +1 < d} is equivalent
+to {mj,m’, ¢N, mj +m, +1 <d); thus, dualizing in (2-4) each factor g(A'i—!e, (AUT! Ad .ij-1 (€e))e)
+
+tells us that (2-4) is a linear combination, independent of a and i, of sums
+
+EEL n Nn)
+
+d<ign <-<iy'<a—1 j=d"
 Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1731
-where weight j ∈N∗arises as the weight of a certain quotient sequence of wi j, and
-  i j
-m j
-  i j
-m′
-j
-
-are polynomials
-of i j.
-Finally, any function of a of the form P
-L⩽I1<···<Iδ⩽a−1
-Qδ
-j=1 Pj(I j)λI jC j with L, δ ∈N∗, C1, . . . , Cδ ∈
-N∗and P1, . . . , Pδ ∈K[T ] polynomials, depends on a as a polynomial function of (a, λa): one can
-reduce this statement to L = 0 by splitting an iterated sum over 0 ⩽I1 < · · · < Iδ ⩽a −1 at L and by
-induction on δ, then use, again by induction on δ that, for all deg j ∈N∗, we have
-deg j
-X
-I j=0
-I δ′
-j λC j I j =
-
-λC j
-d
-d(3C j)
-lλC j deg j −1
-3C j −1
-
-.
-□
-Let us now deﬁne the map of iteration of the harmonic Frobenius of integrals at (1, 0), by using the
-above iteration map and the summation map S of Deﬁnition 2A.2.
-Deﬁnition 2B.6. Let iter
-∫1,0
-har (a, λ) = S ◦iter∫1,0(λ, λa, a) : Ad ˜51,0(K)(e1) →K⟨⟨e0∪µN ⟩⟩
-∫1,0
-har .
-We can now deduce from Section 2B1, and the previous proposition a second description of the iterated
+
+where weight; € N* arises as the weight of a certain quotient sequence of w,,, and (i) ij Ble ') are polynomials
+
+of i;.
+Finally, any function of a of the form 7) <j, <...<;<a—1 T= Panic with L,5€N*,Cy,...,C3€
+N* and P;,..., Ps € K[T] polynomials, depends on a as a polynomial function of (a, A“): one can
+
+reduce this statement to L = 0 by splitting an iterated sum over 0 < I; <--+ < Is <a—1 at L and by
+induction on 4, then use, again by induction on 6 that, for all deg je N*, we have
+
+I ;
+f= yo 4) (RES 1), Oo
+d(AC/) AG —1
+
+Let us now define the map of iteration of the harmonic Frobenius of integrals at (1, 0), by using the
+
+above iteration map and the summation map S of Definition 2A.2.
+
+JSi,o
+
+Definition 2B.6. Let iter," (a, 4) = So iter/.9(A, A“,a): Adar, y¢x) (€1) > K (eouny ht?
+
+har
+
+We can now deduce from Section 2B 1, and the previous proposition a second description of the iterated
 harmonic Frobenius as a function of its number of iterations; this is (0-4).
-By Proposition 2B.1, we have 8q,˜α = iter
-∫1,0
-˜α/˜α0,q;˜α0(8q,˜α0), thus by Proposition 2B.5, we have 8q,˜α =
-iter∫1,0(q ˜α0, q ˜α, ˜α/˜α0)(8q,˜α0), whence S8q,˜α = S iter∫1,0(q ˜α0, q ˜α, ˜α/˜α0)(8q,˜α0). By Deﬁnition 2B.6, this
-amounts to S8q,˜α = iter
-∫1,0
-har (˜α/˜α0, q ˜α)(8q,˜α0). Finally, by (1-19), we have S8q,˜α = harq,˜α. Whence (0-4).
+By Proposition 2B.1, we have ®y ¢ = =iters'? 4 fa (Pq.c0)> thus by Proposition 2B.5, we have Oy 4 =
+
+iter!.0(q®, g, &/&p)(®q,a,), whence S®,y g = S iter! (q®, q*, &/&o)(®q,a,)- By Definition 2B.6, this
+amounts to S®, ¢ = = iter)!" (@/Q0, g 8) (by, ay)- Finally, by (1-19), we have S®, 4 = harg ¢. Whence (0-4).

@@ -55,7 +55,7 @@ Generic `[Field K] [LinearOrder K] [IsStrictOrderedRing K]` — deliberately NOT
 archimedean construct is used. `ℝ` remains an instance (degenerate case).
 
 ## References
-- [manuscript] fluid-dynamics/regularity-breakdown (Obstruction 1: `[k]_1 = k`),
+- [leitner2026] fluid-dynamics/regularity-breakdown (Obstruction 1: `[k]_1 = k`),
   p2-critical-exponent; appendix-surreals/surreal-blowup-calculus,
   standard-part-classical-limits; QOU/FluidDynamics/qou_ns_surreal_bridge
 -/
@@ -224,7 +224,7 @@ theorem pow_one_sub_infinitesimal {ε : K} (hε : Infinitesimal ε) (j : ℕ) :
 /-- **S2.** `[k]_{1−ε} − k` is infinitesimal for every fixed `k`: at an
     infinitesimally-perturbed substrate the q-integer eigenvalues sit
     infinitesimally close to their classical values. -/
--- Ref: [manuscript] fluid-dynamics/regularity-breakdown (Obstruction 1)
+-- Ref: [leitner2026] fluid-dynamics/regularity-breakdown (Obstruction 1)
 theorem qInt_one_sub_infinitesimal {ε : K} (hε : Infinitesimal ε) (k : ℕ) :
     Infinitesimal (qInt (1 - ε) k - (k : K)) := by
   have key : qInt (1 - ε) k - (k : K) = ∑ j ∈ range k, ((1 - ε) ^ j - 1) := by
@@ -254,8 +254,8 @@ def enstrophyN (q : K) (a : ℕ → K) (N : ℕ) : K :=
     `q → 1⁺` the active-mode count `N_eff ~ log_q Re` diverges, and whether the
     standard part commutes with that limit is precisely the open
     `classical_regular_iff_finite` hypothesis — NOT proved here. -/
--- Ref: [manuscript] fluid-dynamics/p2-critical-exponent, regularity-breakdown;
--- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus
+-- Ref: [leitner2026] fluid-dynamics/p2-critical-exponent, regularity-breakdown;
+-- Ref: [leitner2026] appendix-surreals/surreal-blowup-calculus
 theorem enstrophy_perturbation_infinitesimal {ε : K} (hε : Infinitesimal ε)
     (a : ℕ → K) (ha : ∀ k, IsFinite (a k)) (N : ℕ) :
     Infinitesimal (enstrophyN (1 - ε) a N - enstrophyN 1 a N) := by
@@ -301,8 +301,8 @@ theorem enstrophy_perturbation_infinitesimal {ε : K} (hε : Infinitesimal ε)
     Proof: from `|Ω_tot| < m`, pick `N` with `Ω_N(1) > m + 1`; by the
     finite-mode theorem `Ω_N(1−ε)` is within an infinitesimal (hence within
     `1`) of `Ω_N(1)`, so `Ω_tot ≥ Ω_N(1−ε) > m ≥ Ω_tot` — contradiction. -/
--- Ref: [manuscript] fluid-dynamics/regularity-breakdown (enstrophy blow-up);
--- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus
+-- Ref: [leitner2026] fluid-dynamics/regularity-breakdown (enstrophy blow-up);
+-- Ref: [leitner2026] appendix-surreals/surreal-blowup-calculus
 theorem classical_unbounded_implies_surreal_infinite
     {ε : K} (hε : Infinitesimal ε) (a : ℕ → K) (ha : ∀ k, IsFinite (a k))
     (Ω_tot : K)
@@ -342,8 +342,8 @@ theorem classical_unbounded_implies_surreal_infinite
 
     Proof: `Ω_tot ≤ Ω_N(1−ε) + c`, and by the finite-mode theorem
     `Ω_N(1−ε) < Ω_N(1) + 1 < B + 1`, so `0 ≤ Ω_tot < B + 1 + c`. -/
--- Ref: [manuscript] fluid-dynamics/regularity-breakdown, q-ns-wellposedness;
--- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus
+-- Ref: [leitner2026] fluid-dynamics/regularity-breakdown, q-ns-wellposedness;
+-- Ref: [leitner2026] appendix-surreals/surreal-blowup-calculus
 theorem surreal_finite_of_classical_bounded
     {ε : K} (hε : Infinitesimal ε) (a : ℕ → K) (ha : ∀ k, IsFinite (a k))
     (Ω_tot : K) (hnn : 0 ≤ Ω_tot)
@@ -378,7 +378,7 @@ substrate point `q = 1 − ε` of the surreal bridge lies in this band
     `q_gold < q < 1` (`q_gold = s²`, `s` the positive root of `s² + s = 1`,
     i.e. `s = 1/φ`): the elliptic fiber is smooth and the confinement window's
     hypotheses apply at the infinitesimally-perturbed substrate. -/
--- Ref: [manuscript] observations/golden-ratio-degeneration, deconfinement-golden-threshold
+-- Ref: [leitner2026] observations/golden-ratio-degeneration, deconfinement-golden-threshold
 theorem golden_window_mem {ε s : K} (hε : Infinitesimal ε) (hε0 : 0 < ε)
     (hs0 : 0 < s) (hgold : s ^ 2 + s = 1) :
     s ^ 2 < 1 - ε ∧ 1 - ε < 1 := by
@@ -417,7 +417,7 @@ theorem eps_mul_qInt (ε : K) (k : ℕ) :
     exhaustion: at the infinitesimally-perturbed substrate the spectral tower
     retains one-sided UV control that the classical point `q = 1` has lost
     (`conj:regularity-breakdown` Obstruction 1). -/
--- Ref: [manuscript] fluid-dynamics/regularity-breakdown (Obstruction 1)
+-- Ref: [leitner2026] fluid-dynamics/regularity-breakdown (Obstruction 1)
 theorem qInt_le_inv {ε : K} (h0 : 0 < ε) (h1 : ε ≤ 1) (k : ℕ) :
     qInt (1 - ε) k ≤ ε⁻¹ := by
   have hpow : (0 : K) ≤ (1 - ε) ^ k := pow_nonneg (by linarith) k
@@ -455,7 +455,7 @@ theorem enstrophyN_mono (q : K) (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k)
     classical point `q = 1` does not have. Whether the QOU's amplitude tail
     mass is `O(ε²)` past `N_eff` remains the open spectral question; it is not
     asserted. -/
--- Ref: [manuscript] fluid-dynamics/leray-profile (finite truncation), regularity-breakdown
+-- Ref: [leitner2026] fluid-dynamics/leray-profile (finite truncation), regularity-breakdown
 theorem uv_exhaustion_of_uniform_tail {ε : K} (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k)
     (Ω_tot : K)
     (hlub : ∀ b : K, (∀ M, enstrophyN (1 - ε) a M ≤ b) → Ω_tot ≤ b)
@@ -476,7 +476,7 @@ theorem uv_exhaustion_of_uniform_tail {ε : K} (a : ℕ → K) (ha0 : ∀ k, 0 �
     converse half assembled from `uv_exhaustion_of_uniform_tail` +
     `surreal_finite_of_classical_bounded`. The open remainder of the whole
     bridge is now the single **uniform tail bound** hypothesis. -/
--- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus
+-- Ref: [leitner2026] appendix-surreals/surreal-blowup-calculus
 theorem surreal_finite_of_uniform_tail {ε : K} (hε : Infinitesimal ε)
     (a : ℕ → K) (ha : ∀ k, IsFinite (a k)) (ha0 : ∀ k, 0 ≤ a k)
     (Ω_tot : K) (hnn : 0 ≤ Ω_tot)
@@ -540,8 +540,8 @@ theorem enstrophyN_le_classical {ε : K} (h0 : 0 ≤ ε) (h1 : ε ≤ 1)
     open content of the whole bridge is now confined to the **super-classical
     approach** `q = 1 + ε` (`[k]_{1+ε} ≥ k`), where the tail question is
     genuine. -/
--- Ref: [manuscript] fluid-dynamics/regularity-breakdown, q-ns-wellposedness;
--- Ref: [manuscript] observations/golden-ratio-degeneration
+-- Ref: [leitner2026] fluid-dynamics/regularity-breakdown, q-ns-wellposedness;
+-- Ref: [leitner2026] observations/golden-ratio-degeneration
 theorem surreal_finite_of_classical_bounded_subclassical {ε : K}
     (h0 : 0 ≤ ε) (h1 : ε ≤ 1)
     (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k)
@@ -595,7 +595,7 @@ theorem enstrophyN_ge_classical {ε : K} (h0 : 0 ≤ ε)
     enstrophy dominates every truncation and the classical enstrophy is
     unbounded, the surreal observable at `q = 1 + ε` is infinite — immediate
     from the reversed domination; no infinitesimality of `ε` needed. -/
--- Ref: [manuscript] fluid-dynamics/regularity-breakdown (enstrophy blow-up)
+-- Ref: [leitner2026] fluid-dynamics/regularity-breakdown (enstrophy blow-up)
 theorem superclassical_infinite_of_classical_unbounded {ε : K} (h0 : 0 ≤ ε)
     (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k) (Ω_tot : K)
     (hdom : ∀ N, enstrophyN (1 + ε) a N ≤ Ω_tot)
@@ -624,8 +624,8 @@ def FiniteOfGrade (ε : K) (n : ℕ) (x : K) : Prop := IsFinite (ε ^ n * x)
     thereby the gap **grade 1 vs grade 0**: whether the flow saturates the
     closure's `ε⁻¹` cap (blow-up, `α = 1`) or stays at grade 0 (regular) — the
     `α` question of `p2-critical-exponent`, not decided here. -/
--- Ref: [manuscript] fluid-dynamics/p2-critical-exponent, regularity-breakdown;
--- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus (§7ab ord_ω)
+-- Ref: [leitner2026] fluid-dynamics/p2-critical-exponent, regularity-breakdown;
+-- Ref: [leitner2026] appendix-surreals/surreal-blowup-calculus (§7ab ord_ω)
 theorem enstrophy_grade_one_of_dissipation_closure {ε D Ω : K}
     (hD : IsFinite D) (hεf : IsFinite ε)
     (hclosure : ε * Ω = 2 * (1 + ε) * D) :
@@ -642,14 +642,15 @@ theorem enstrophy_grade_one_of_dissipation_closure {ε D Ω : K}
 Within the ω-grade-1 cap (`enstrophy_grade_one_of_dissipation_closure`), the
 remaining open content of the super-classical side is classified exhaustively
 by **one surreal-valued criterion: is `ε · Ω` infinitesimal?** The trichotomy
-below is the enstrophy-grade mirror of the Levi growth trichotomy
-(`levi_growth_trichotomy`). -/
+below is the enstrophy-grade analogue of the growth-exponent trichotomy in
+`levi_growth_trichotomy` (that file no longer carries Levi data: re-scoped
+2026-10-13, `conj:levi-degeneracy`). -/
 
 /-- **Saturation forces blow-up.** If `ε · Ω` is *not* infinitesimal (the flow
     saturates the grade-1 cap, `α = 1`), then `Ω` is not a finite surreal —
     the QOU-internal q-NS observable blows up. Contrapositive of
     `Infinitesimal.mul_finite`. -/
--- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
+-- Ref: [leitner2026] fluid-dynamics/p2-critical-exponent
 theorem saturated_implies_infinite {ε Ω : K} (hε : Infinitesimal ε)
     (hsat : ¬ Infinitesimal (ε * Ω)) : ¬ IsFinite Ω :=
   fun hfin => hsat (hε.mul_finite hfin)
@@ -672,8 +673,8 @@ theorem saturated_implies_infinite {ε Ω : K} (hε : Infinitesimal ε)
     blow-up (`saturated_implies_infinite`). Which regime the QOU's flow
     realises is the open critical-exponent content (`p2-critical-exponent`);
     not decided here. -/
--- Ref: [manuscript] fluid-dynamics/p2-critical-exponent, regularity-breakdown;
--- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus (§7ab ord_ω)
+-- Ref: [leitner2026] fluid-dynamics/p2-critical-exponent, regularity-breakdown;
+-- Ref: [leitner2026] appendix-surreals/surreal-blowup-calculus (§7ab ord_ω)
 theorem grade_trichotomy {ε Ω : K} (hε : Infinitesimal ε) :
     (IsFinite Ω ∧ Infinitesimal (ε * Ω))
     ∨ (¬ IsFinite Ω ∧ ¬ Infinitesimal (ε * Ω))
@@ -735,8 +736,8 @@ theorem sum_sq_half_pow_le (M : ℕ) :
     `q → 1⁺` (Gevrey persistence, the analytic core of
     `thm:q-ns-wellposedness`) is the remaining open content; not decided
     here. -/
--- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness, p2-critical-exponent;
--- Ref: [manuscript] appendix-surreals/surreal-blowup-calculus
+-- Ref: [leitner2026] fluid-dynamics/q-ns-wellposedness, p2-critical-exponent;
+-- Ref: [leitner2026] appendix-surreals/surreal-blowup-calculus
 theorem gevrey_grade_zero {q r : K} (hq : 1 ≤ q) (hr : 0 ≤ r)
     (hdamp : q ^ 2 * r ≤ 1 / 2)
     (a : ℕ → K) (C : ℕ) (ha : ∀ k, 0 ≤ a k ∧ a k ≤ (C : K) * r ^ k)
@@ -807,7 +808,7 @@ open. -/
     non-negative, the total dominates the truncations, and the tower reaches
     grade-1 cascade depth (`hcascade`), then `Ω_tot` is **not** finite of
     ω-grade 1. -/
--- Ref: [manuscript] fluid-dynamics/p2-critical-exponent (cascade depth)
+-- Ref: [leitner2026] fluid-dynamics/p2-critical-exponent (cascade depth)
 theorem deep_cascade_not_grade_one {ε : K} (hε0 : 0 ≤ ε)
     (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k) (Ω_tot : K)
     (hdom : ∀ N, enstrophyN (1 + ε) a N ≤ Ω_tot)
@@ -830,7 +831,7 @@ theorem deep_cascade_not_grade_one {ε : K} (hε0 : 0 ≤ ε)
     Kolmogorov-type cascade are mutually exclusive ingredients. Which one the
     QOU's actual flow realises is the open content (`p2-critical-exponent`);
     neither is asserted. -/
--- Ref: [manuscript] fluid-dynamics/p2-critical-exponent, regularity-breakdown
+-- Ref: [leitner2026] fluid-dynamics/p2-critical-exponent, regularity-breakdown
 theorem closure_excludes_deep_cascade {ε : K} (hε0 : 0 ≤ ε)
     (hεf : IsFinite ε) {D : K} (hD : IsFinite D)
     (a : ℕ → K) (ha0 : ∀ k, 0 ≤ a k) (Ω_tot : K)
@@ -879,7 +880,7 @@ theorem IsFinite.pow {x : K} (h : IsFinite x) (n : ℕ) : IsFinite (x ^ n) := by
     `Λ_q ~ ε^{-1}` is NOT finite, so this theorem applies exactly when the
     q-damping improves the naive rate — that improvement is the Gevrey-
     persistence question, not decided here. -/
--- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness, p2-critical-exponent
+-- Ref: [leitner2026] fluid-dynamics/q-ns-wellposedness, p2-critical-exponent
 theorem gronwall_finite_horizon {G : K} (hG0 : 0 ≤ G) (hGf : IsFinite G)
     (Ω : ℕ → K) (hstep : ∀ n, Ω (n + 1) ≤ G * Ω n) (hnn : ∀ n, 0 ≤ Ω n)
     (h0 : IsFinite (Ω 0)) (n : ℕ) : IsFinite (Ω n) := by
@@ -908,7 +909,7 @@ finite `G` is the open GP3 content — not decided here. -/
     `Λ ≤ ν·[k]_q²`, its per-step factor is at most `1`: the mode is
     non-growing. On the super-classical side `[k]_q` grows exponentially, so
     every `Λ` is cleared at a finite mode index. -/
--- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness (UV damping), p2-critical-exponent
+-- Ref: [leitner2026] fluid-dynamics/q-ns-wellposedness (UV damping), p2-critical-exponent
 theorem damping_threshold {q ν Λ δ : K} (hδ : 0 ≤ δ) (k : ℕ)
     (hthresh : Λ ≤ ν * (qInt q k) ^ 2) :
     1 + δ * Λ - δ * (ν * (qInt q k) ^ 2) ≤ 1 := by
@@ -926,7 +927,7 @@ theorem le_initial_of_step {H : ℕ → K} (hH : ∀ n, H (n + 1) ≤ H n) :
 /-- **Split Gronwall.** Low-mode block growing at factor `G`, high-mode block
     non-increasing (above the damping threshold): the total obeys
     `L n + H n ≤ G^n·L 0 + H 0`. -/
--- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
+-- Ref: [leitner2026] fluid-dynamics/p2-critical-exponent
 theorem split_gronwall {G : K} (hG : 0 ≤ G) (L H : ℕ → K)
     (hL : ∀ n, L (n + 1) ≤ G * L n) (hH : ∀ n, H (n + 1) ≤ H n) (n : ℕ) :
     L n + H n ≤ G ^ n * L 0 + H 0 := by
@@ -938,7 +939,7 @@ theorem split_gronwall {G : K} (hG : 0 ≤ G) (L H : ℕ → K)
     blocks, and the high modes damped, the total enstrophy is finite at every
     step. Gevrey persistence thereby reduces to the finiteness of the low-mode
     effective rate — the open GP3 content. -/
--- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness, p2-critical-exponent
+-- Ref: [leitner2026] fluid-dynamics/q-ns-wellposedness, p2-critical-exponent
 theorem split_persistence {G : K} (hG0 : 0 ≤ G) (hGf : IsFinite G)
     (L H : ℕ → K) (hL : ∀ n, L (n + 1) ≤ G * L n) (hH : ∀ n, H (n + 1) ≤ H n)
     (hLnn : ∀ n, 0 ≤ L n) (hHnn : ∀ n, 0 ≤ H n)
@@ -972,7 +973,7 @@ must be; it is named and not asserted. -/
     obeys the quadratic step `Ω_{n+1} ≤ Ω_n + δcΩ_n²` and the horizon satisfies
     `N·δ·c·Ω₀ ≤ 1/4`, then `Ω_n ≤ 2Ω₀` for every `n ≤ N`. No hypothesis on `ε`:
     the local theory is uniform in the substrate deformation. -/
--- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness (local theory), p2-critical-exponent
+-- Ref: [leitner2026] fluid-dynamics/q-ns-wellposedness (local theory), p2-critical-exponent
 theorem local_bootstrap {δ c : K} (hδ : 0 ≤ δ) (hc : 0 ≤ c)
     (Ω : ℕ → K) (hnn : ∀ n, 0 ≤ Ω n)
     (hstep : ∀ n, Ω (n + 1) ≤ Ω n + δ * c * (Ω n) ^ 2)
@@ -1019,7 +1020,7 @@ theorem local_bootstrap {δ c : K} (hδ : 0 ≤ δ) (hc : 0 ≤ c)
     horizon — the in-QOU discrete local well-posedness statement, uniform in
     `ε`. Global continuation beyond the horizon is the (named, open) remainder
     of the epic. -/
--- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness
+-- Ref: [leitner2026] fluid-dynamics/q-ns-wellposedness
 theorem local_persistence {δ c : K} (hδ : 0 ≤ δ) (hc : 0 ≤ c)
     (Ω : ℕ → K) (hnn : ∀ n, 0 ≤ Ω n)
     (hstep : ∀ n, Ω (n + 1) ≤ Ω n + δ * c * (Ω n) ^ 2)
@@ -1055,7 +1056,7 @@ low-mode block; named, not asserted. -/
     `c·Ω₀ ≤ ν·μ`, the enstrophy never increases: `Ω_n ≤ Ω₀` for **every** `n`.
     No horizon, no `ε` hypothesis — the discrete in-QOU small-data global
     regularity statement. -/
--- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness, regularity-breakdown
+-- Ref: [leitner2026] fluid-dynamics/q-ns-wellposedness, regularity-breakdown
 theorem global_persistence_subthreshold {δ c ν μ : K}
     (hδ : 0 ≤ δ) (hc : 0 ≤ c)
     (Ω : ℕ → K) (hnn : ∀ n, 0 ≤ Ω n)
@@ -1078,7 +1079,7 @@ theorem global_persistence_subthreshold {δ c ν μ : K}
 
 /-- **Small-data global finiteness.** Sub-threshold finite data stays finite at
     every step, globally. -/
--- Ref: [manuscript] fluid-dynamics/q-ns-wellposedness
+-- Ref: [leitner2026] fluid-dynamics/q-ns-wellposedness
 theorem global_finiteness_subthreshold {δ c ν μ : K}
     (hδ : 0 ≤ δ) (hc : 0 ≤ c)
     (Ω : ℕ → K) (hnn : ∀ n, 0 ≤ Ω n)
@@ -1108,7 +1109,7 @@ in-QOU residue of the millennium problem); not asserted. -/
 /-- **Discrete Riccati lower growth.** `Ω_{n+1} ≥ Ω_n + δc'Ω_n²` with `δc' ≥ 0`
     ⇒ the sequence is non-decreasing and `Ω_n ≥ Ω₀ + n·δc'Ω₀²`: linear growth
     at the initial production rate, forever. -/
--- Ref: [manuscript] fluid-dynamics/hyperbolic-overlap-saturation, townsend-biot-savart-strain
+-- Ref: [leitner2026] fluid-dynamics/hyperbolic-overlap-saturation, townsend-biot-savart-strain
 theorem riccati_lower_growth {δ c' : K} (hδ : 0 ≤ δ) (hc : 0 ≤ c')
     (Ω : ℕ → K) (hnn : ∀ n, 0 ≤ Ω n)
     (hstep : ∀ n, Ω n + δ * c' * (Ω n) ^ 2 ≤ Ω (n + 1)) :
@@ -1151,7 +1152,7 @@ excluded by the hypothesis. Scope (a): model-level. -/
 /-- **The race inequality.** If the overlap-crossing equation `(1−u)³ = x²`
     holds with `x ≠ 0` (positive core size), then `u < 1`: overlap engages
     strictly before the singular time. -/
--- Ref: [manuscript] fluid-dynamics/hyperbolic-overlap-saturation, townsend-biot-savart-strain
+-- Ref: [leitner2026] fluid-dynamics/hyperbolic-overlap-saturation, townsend-biot-savart-strain
 theorem overlap_race_strict {u x : K} (hx : x ≠ 0)
     (hcross : (1 - u) ^ 3 = x ^ 2) : u < 1 := by
   have hx2 : 0 < x ^ 2 := by positivity

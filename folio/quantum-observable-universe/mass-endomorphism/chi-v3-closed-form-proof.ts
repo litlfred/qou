@@ -25,6 +25,7 @@ export default remark({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## Lean theorems exported\n\nSee [Table 1](#tbl:chi-v3-closed-form-proof-table-data). All theorems close unconditionally under `field_simp + ring` after unfolding." },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",

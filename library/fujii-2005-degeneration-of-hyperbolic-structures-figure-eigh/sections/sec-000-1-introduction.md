@@ -1,6 +1,6 @@
 ---
 doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
-doc_title: "Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve"
+doc_title: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -8,7 +8,9 @@ pages: 1-2
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
 toc_source: inferred
+doc_brief: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Front matter; Introduction; Deformation of hyperbolic structur"
 ---
+Introduction
 In this paper, we consider a hyperbolic structure on a manifold to be a
 Riemannian metric of constant sectional curvature −1 which is not necessarily
 complete. A hyperbolic 3-manifold is an orientable 3-manifold with a hyperbolic
@@ -47,4 +49,3 @@ correspondence between the closed 3-manifolds mentioned above (except the
 PSL2(R)-manifolds) and some points of ﬁnite order on the elliptic curve E.
 In particular, the Haken manifolds mentioned above correspond exactly to the
 rational points of E, which form a cyclic group of order four.
-2.

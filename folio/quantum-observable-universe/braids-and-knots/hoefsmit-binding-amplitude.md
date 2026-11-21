@@ -4,8 +4,4 @@ $$
   \qquad
   1 - b^2 = \frac{1}{[2]_q^2}.
 $$
-The pion decay $\pi \to \mu + \nu$ de-entangles the meson into $V_{(2)} \oplus V_{(1,1)}$. It releases a fraction $1 - b^2 = 1/[2]_q^2$ of the pion's rest energy:
-$$
-  E_{\mathrm{bind}} = \frac{m_\pi}{[2]_q^2}.
-$$
-The residual energy $m_\pi \cdot b^2$ flows into the de-entangled lepton channel $V_{(2)}$. These identities are exact in $q$, independent of the substrate parameter.
+These identities hold exactly for every $q$ with $q^4 \neq 1$, the condition under which the seminormal entries $a_{\pm 2} = h/(1 - q^{\mp 4})$ are defined; they do not depend on the substrate parameter. Stated in terms of $[2]_q$ alone, the identity needs only $[2]_q \neq 0$.

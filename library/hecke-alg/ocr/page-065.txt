@@ -1,0 +1,67 @@
+60 5. THE JANTZEN-SCHAPER THEOREM
+
+Next assume that p = 1+ 49; then F = C and gq = —1, soe = 2. Therefore,
+Vp ([2]q) = vp([4]q) = 1 and vp([3]q) = 0. Consequently,
+
+2) 24) 5)
+So WE) Re WER 4 WR? — WL.
+
+i>d
+Further applications of the sum formula shows that wh = re), we Ye re »
+
+2 2) 5 , . 2)
+and we yey ret _ rt ) +12. The composition factors of we * are
+completely determined here because the multiplicities given by the sum formula
+
+are Q or 1. Combining these facts shows that }°,. we” Send 1") + ape »,
+
+consequently, d(3,2)(3,12) = | and dig.2)(22,1) is either 1 or 2.
+Next consider the Specht module Sa: as before we have
+
+2 5 24)
+
+YS) 3 pla SP? + (vo (Bla) — vp (Ale) SP? + rp (Fala).
+
+i>od
+Suppose once more that p = 1+ q. A calculation similar to the above shows that
+a) we 2p? » Therefore, 5G) = Det) by counting dimensions;
+hence, d(s,2)(22,1) = | by Proposition 4.1 9(iii).
+
+At this point we have calculated all but the last two rows of the decomposition
+matrix of .%¢_1(d,5) where d > 5. Two further applications of the sum formula
+give the remaining entries; the full matrix is as follows.
+
+eof
+21°). 1
+eat. . 1
+30° )1 . 1 4
+3.2 J. 2. 1
+41]. 12... 1
+5 1... d.. it
+
+By Proposition 4.19, the submatrix of bold faced entries is the decomposition matrix
+of .H0,-1.
+
+Notice that difference between these calculations for Weyl and Specht modules
+arises because Df = 0 whenever the partition j is not e-restricted (in particular,
+the partition (3,2) is not 2-restricted).
+
+3. The blocks of .Y(d,n) and #
+
+Throughout this section we assume that d > n. In this case, we use the sum
+formula (5.31) to classify the blocks of the q-Schur algebras .(d, n) and, from this,
+classify the blocks of .#. In order to classify the blocks we first define the e-core
+of a partition.
+
+Recall the definition of rim hook from the previous section. We call a rim hook
+Ri, an e-rim hook if it is a rim hook of length e; that is if Ry =e.
+
+Let \ be a partition of n. If the diagram of A contains an e-rim hook let A! be
+the partition of n—e obtained by unwrapping this rim hook. Similarly, let \? be the
+partition obtained from A! by unwrapping an e-rim hook, if possible. Continuing
+
+in this way we obtain a sequence of partitions \ = A°, \!,... , A” with w > 0 and
+such that the diagram of \® contains no e-rim hook and the partition \' is obtained
+from \'-! by unwrapping an e-rim hook for i = 1,...,w. The partition A” is the
+
+e-core of A; it is a partition of n— we.

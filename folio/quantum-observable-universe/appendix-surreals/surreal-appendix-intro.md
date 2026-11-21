@@ -5,7 +5,7 @@ real-closed field containing every ordered-field extension of
 $\mathbb{R}$, including the hyperreals $^{*}\mathbb{R}$, the ordinals
 $\mathrm{Ord}$, and all Hahn series $\mathbb{R}((t^{G}))$ \cite{conway1976,ehrlich2012}.
 
-**Nothing in this appendix alters this paper.** We develop and prove the Quantum Observable Universe over $\mathbb{R}$. This appendix offers an *ambient* field into which the archimedean content embeds and from which we recover it via standard-part. Our claims are either **remarks** interpreting existing blocks, **conjectures** pending further development, or **definitions** of new auxiliary structures.
+**Nothing in this appendix alters this paper.** The Quantum Observable Universe is developed and proved over $\mathbb{R}$. This appendix offers an *ambient* field into which the archimedean content embeds and from which it is recovered via standard-part. The claims here are either **remarks** interpreting existing blocks, **conjectures** pending further development, or **definitions** of new auxiliary structures.
 
 ## Motivation for the surreal lift
 
@@ -25,10 +25,6 @@ Four distinct uses motivate the lift:
    $\alpha$. The Hecke generator $\sigma$ has two eigenvalues
    ($q$ and $-q^{-1}$), so a braid word decorated with eigenspace
    choices produces a sign sequence and therefore a surreal number.
-   The Hoefsmit seminormal form ([Hoefsmit seminormal
-   form](#prop:hoefsmit-seminormal-form)) turns out to *be* the
-   surreal $\{L \mid R\}$ construction in disguise
-   ([Hoefsmit is surreal construction](#prop:hoefsmit-is-surreal-construction)).
 
 3. **Named values for blow-ups and singularities.** The Möbius
    energy integral, renormalisation scales, and hyperbolic-volume
@@ -47,11 +43,10 @@ Four distinct uses motivate the lift:
 ## Lossiness of the lift
 
 A first-pass survey suggests that replacing $\mathbb{R}$ with
-$\mathbf{No}$ must cost us Lebesgue measure, Hilbert-space
+$\mathbf{No}$ must give up Lebesgue measure, Hilbert-space
 completions, and hyperbolic geometry. But
 an honest survey of the QOU development shows most of these
-are *never actually used* in a load-bearing way (see
-[analytic obstructions](#rem:analytic-obstructions)):
+are *never actually used* in a load-bearing way:
 
 - **Lebesgue measure** enters only the Möbius energy integral
   (one block). Everywhere else, "integrals" are categorical
@@ -75,13 +70,10 @@ comparison. This paper's mass-formula pipeline — Hoefsmit $\to$ Markov trace $
 
 This appendix does **not**:
 
-- claim a physical interpretation of non-archimedean values (we
-  work purely mathematically);
+- claim a physical interpretation of non-archimedean values (the
+  work is purely mathematical);
 - replace any main-text proof (this paper's results stand on their own over $\mathbb{R}$);
-- solve the Kashaev volume conjecture (though it offers a
-  reformulation that separates the algebraic from the
-  transcendental parts — see [Kashaev surreal
-  reformulation](#conj:kashaev-surreal));
+- solve the Kashaev volume conjecture;
 - construct a canonical Lebesgue-like measure on $\mathbf{No}$
   (it has none; the appendix sidesteps this rather than
   solving it).

@@ -1,0 +1,1 @@
+Let L be the subspace of H,(X) generated over the complex numbers by {{yj] : j < m} and let L* denote the dual space to L. Then {ly] : J < mj is a basis for L* and the signed intersection number #(y;,y!) is a nonsingular pairing whose representing matrix M is upper triangular.

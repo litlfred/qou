@@ -1,0 +1,49 @@
+1.2 New multivariate methods 11
+
+convergent series expansion
+
+P(z) r
+F(z) = O@ 7 Dire .
+
+Although this introduction has focused on power series expansions, we will
+develop the theory for convergent Laurent expansions, allowing the index r to
+range over Z. The set ‘V of singularities of F, which is crucial to the asymp-
+totic analysis, is known as its singular variety. For instance, if P and Q are
+coprime polynomials then the singular variety is the algebraic set V = {z €
+C4: Q(z) = 0}.
+
+We now briefly describe the ACSV approach to computing multivariate
+asymptotics. A more detailed overview is provided in Chapter 7.
+
+(i) Use the multidimensional Cauchy integral (1.5) to express a, as an inte-
+gral over a d-dimensional torus (product of circles) T in C4.
+
+(ii) Observe that T may be replaced by any cycle homologous to [T] in
+Ha(M), where M is the domain of analyticity of the integrand.
+
+(iii) Deform the cycle T to lower the modulus of the integrand as much as
+possible. Morse-theoretic arguments imply that local maxima are char-
+acterized by the set critical(r) of critical points of V, which depend
+only on the direction # of r as r — oo and are saddle points for the
+magnitude of the integrand.
+
+(iv) Use algebraic methods to encode the elements of critical(r) by a finite
+collection of equalities and inequalities (defined by polynomials when F
+is rational).
+
+(v) Use topological methods to find certain minimax cycles C(w) near each
+critical point w, termed quasi-local cycles, such that the homology class
+[T] can be represented by a sum }),,, NwC(w) with each ny € Z.
+
+(vi) Refine the set of critical points to the set contrib(r) of contributing
+points that maximize the modulus of the Cauchy integrand among the
+critical points w with ny # 0. In the vast majority of cases for which we
+have explicit asymptotic results, it is the case that ny, € {0, +1}.
+
+(vii) Asymptotically approximate integrals over the C(w) as w ranges over
+the set of contributing points, using a combination of residue and saddle
+point techniques.
+
+When successful, this approach leads to an asymptotic representation of the
+coefficients a,. that is uniform as r varies on the interior of finitely many cones
+that partition R“. As # varies over compact subsets in the interior of such cones,

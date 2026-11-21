@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:ring-closure-barrier",
+  interprets: "conj:ring-closure-barrier",
   label: "rem:ring-closure-superstability",
   title:
     "Topological reorganisation, super-stability, and the spring analogy",
@@ -13,5 +13,5 @@ export default remark({
     "activation-energy",
     "threading",
   ],
-  uses: ["prop:ring-closure-barrier", "def:molecular-hopf-ring"],
+  uses: ["conj:ring-closure-barrier", "def:molecular-hopf-ring"],
 });

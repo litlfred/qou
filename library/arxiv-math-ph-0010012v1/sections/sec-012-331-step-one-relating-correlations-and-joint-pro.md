@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 0.963
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 Following an idea due originally to Kac and Rice in the case of real polynomials of one variable, we express the correlation measures in terms of the joint probability distribution of the random variables $s(z^1),\dots,s(z^n),
 \nabla s(z^1),\dots,\nabla s(z^n)$. This JPD is defined by $$\widetilde{\mathbf D}_{z}^N:=

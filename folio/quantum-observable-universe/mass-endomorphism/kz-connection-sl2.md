@@ -16,7 +16,7 @@ $$
 
 where $s_{ij}$ permutes tensor factors $i$ and $j$. The residues are therefore images of the elements $(i\,j) - \tfrac{1}{2}$ of the group algebra $R[S_n]$, and the statements below hold over any commutative ring $R$.
 
-A logarithmic connection $\omega = \sum_{i<j} M_{ij}\, d\log(z_i - z_j)$ is **flat** if $d\omega - \omega \wedge \omega = 0$. Since $d\omega = 0$, and the forms $d\log(z_i - z_j)$ satisfy the Arnold relation, flatness is equivalent to the **infinitesimal pure braid relations** [kohno1987]. For three points both directions of this equivalence are proved in the Lean sibling, using the Arnold relation $\omega_{12}\wedge\omega_{23}+\omega_{23}\wedge\omega_{31}+\omega_{31}\wedge\omega_{12}=0$:
+A logarithmic connection $\omega = \sum_{i<j} M_{ij}\, d\log(z_i - z_j)$ is **flat** if $d\omega - \omega \wedge \omega = 0$. Since $d\omega = 0$, and the forms $d\log(z_i - z_j)$ satisfy the Arnold relation, flatness is equivalent to the **infinitesimal pure braid relations** [kohno1987]. For three points both directions of this equivalence are proved, using the Arnold relation $\omega_{12}\wedge\omega_{23}+\omega_{23}\wedge\omega_{31}+\omega_{31}\wedge\omega_{12}=0$:
 
 $$
   [M_{ij}, M_{kl}] = 0 \quad \text{if } \{i,j\} \cap \{k,l\} = \varnothing,

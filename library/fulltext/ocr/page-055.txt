@@ -1,0 +1,55 @@
+The Dilogarithm Function 57
+
+(V5 — 1)/2, and no other zeros. Since P(Q1, 3) = P(Q2,1) = P(Q3,2) = 0
+and since ®(Q) = &(1—Q), we know that there really are zeros of the specified
+multiplicities at Q1, Q2 and Q3. It follows that they are the only zeros in this
+interval and hence that f4,0,c can only be modular for the three values given
+in Table 1.
+
+To prove the full theorem we proceed in the same way, but since we now
+have two variables A and B to determine we must use at least two coefficients
+c;(A, B). The functions c2(A, B) and c3(A, B) are polynomials in B of degree 3
+and 4, respectively, whose coefficients are known elements of Q(A, Q). For fixed
+A €R?* the condition that the two polynomials c2(A, -) and c3(A, -) have a
+common zero is that their resultant vanishes. From the explicit formulas for c2
+and c3 we find that this resultant has the form R(A, Q)/(A+Q—AQ)*° where
+R(A, Q) is a (very complicated) polynomial in A and Q with rational coeffi-
+cients. Now a graphical representation of the function Y(Q) = R(So a , Q)
+on the interval (0,1) (which we can unfortunately not show here since this
+function varies by many orders of magnitude in this range and hence has to
+be looked at at several different scales on appropriate subintervals) shows that
+it has nine zeros (counting multiplicities), namely:
+
+a simple zero at Qo = 0.196003534545184447085746160093577 - - -
+a double zero at Qi = 0.3819660--- = (3 — 5)/2
+
+a triple zero at Q2 = 0.5000000--- = 1/2
+a double zero at Q; = 0.6180339--- = (V5 — 1)/2
+a simple zero at Q4 = 0.803996465454815552914253--- = 1—Qp
+
+and no other zeros. Since W(1—Q) = —W(Q) and since we know from Table 1
+that Y(Q) has to have at least a double zero at Q = Q, and at Q = Q3
+and a triple one at Q = Qo, we deduce that the numerically found zeros at
+these places are really there and correspond to the known cases of modularity.
+As to the new value Qo and Q4 = 1 — Qo and the corresponding A-values
+Ao = 0.133871736816761609695060406707385 --- and Ay = Ap!, we find that
+indeed c2(Ao, B) and c3(Ao, B) have a (simple) common root at B = Bo =
+—0.397053221675466369..., as they must since their resultant vanishes. But
+for the pair (Ap, By) we find numerically
+
+c-1(Ao, Bo)/7?_ = 0.1277279468293881629887898 - - -
+which is (apparently) not a rational number,
+
+exp(co(Ao, Bo)) = 3.4660299497719132664077586 - - -
+which is (apparently) not algebraic,
+
+c1(Ao, Bo) = 0.4917635587907976876492549 - - -
+which is (apparently) not rational, and finally
+
+c4(Ao, Bo) = 0.0175273497972616555765902 - - -
+which is (definitely) not zero. It follows that the function f 4, 8,c,(Ao,Bo) (2)
+is not modular and thus that the list given in Table 1 is complete. O
+
+This analysis was quite tedious and would become prohibitively so for
+
+r > 2 (although the method applies in principle) because we would need

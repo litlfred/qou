@@ -1,0 +1,282 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2111.13842v1",
+ "source": {
+  "file": "2111.13842.pdf",
+  "sha256": "3b1f744b3cd5102058f75f192d709ce0131c215c56c7f4df7ec46ce63d3044a3",
+  "bytes": 16868078,
+  "pages": 7,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T10:16:05Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2111.13842",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "27 Nov 2021"
+  },
+  "doi": null,
+  "title": "Signatures of linear Breit-Wheeler pair production in polarized \u03b3\u03b3 collisions",
+  "authors_raw": "Qian Zhao,1 Liang Tang,2 Feng Wan,1 Bo-Chao Liu,1 Ruo-Yu Liu,3 Rui-Zhi Yang,4 Jin-Qing Yu,5, \u2217",
+  "title_lines": [
+   "Signatures of linear Breit-Wheeler pair production in polarized \u03b3\u03b3 collisions"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20211130015942Z"
+  },
+  "title_raw": "Signatures of linear Breit-Wheeler pair production in polarized \u03b3\u03b3 collisions",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Signatures of linear Breit-Wheeler pair production in polarized \u03b3\u03b3 collisions",
+   "outline": "Signatures of linear Breit-Wheeler pair production in polarized collisions",
+   "text": "Signatures of linear Breit-Wheeler pair production in polarized \u03b3\u03b3 collisions",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 100% of them starting on page(s) 5, 6 of 7 \u2014 a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 100% of them starting on page(s) 5, 6 of 7 \u2014 a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Scenario of the LBW pair production in a colliding setup of polarized \u03b3-photon beams in x \u2212z plane in the laboratory frame. The pair spectra are presented in the plane of polar angle \u03b8 and kinematic energy Ek. The lower sketches show the helicity transfer of the LBW process in the center of mass (c",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "(a) \u03c3tot vs the c.m. energy \u03b5 for di\ufb00erent collision schemes. The black-solid, red-dashed and blue-dash-dotted lines in (a) and (b)",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "(a) and (b): Distributions of |\u03b6+| of produced positrons for the",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "(a) and (b): Distributions of the positron helicity \u03bb+ with",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 5769,
+   "n_words": 827,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 5160,
+   "n_words": 904,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 4506,
+   "n_words": 763,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 5046,
+   "n_words": 817,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 6340,
+   "n_words": 1022,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 7176,
+   "n_words": 1152,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2711,
+   "n_words": 450,
+   "label_start": "7",
+   "label_end": "7"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 36708,
+  "furniture_lines_stripped": 6,
+  "outline_rejected": "1 of 3 outline entries name a heading the pages print (< 50%), e.g. \"Signatures of linear Breit-Wheeler pair production in polarized collisions\""
+ }
+}

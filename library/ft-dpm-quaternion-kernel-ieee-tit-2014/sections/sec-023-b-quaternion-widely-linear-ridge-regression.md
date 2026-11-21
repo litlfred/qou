@@ -8,6 +8,7 @@ pages: 12-13
 source_pdf: FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf
 source_sha256: aa2f1eb73610a81b
 toc_source: inferred
+doc_brief: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established"
 ---
 Strictly-linear models assume that the minimum mean
 square estimator (MMSE) E{x|s} of a vector x given an
@@ -29,8 +30,6 @@ we can express the widely-linear estimator in the form [51]:
 ˆx = As + Bsi + Cs j + Dsk = Wsa,
 7We have maintained the notation s and x for consistency with the nonlinear
 channel equalisation simulation.
-5748
-IEEE TRANSACTIONS ON INFORMATION THEORY, VOL. 60, NO. 9, SEPTEMBER 2014
 where
 W = [A, B, C, D],
 sa =

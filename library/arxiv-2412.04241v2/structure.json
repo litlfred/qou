@@ -6,10 +6,12 @@
   "sha256": "308d1dd1c42bd979e5d5c31d9d95215a1808f604031b49c0ce2a1eb767273de9",
   "bytes": 998346,
   "pages": 73,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,18 +21,34 @@
    "stamp_date": "27 Aug 2025"
   },
   "doi": null,
-  "title": "THE HABIRO RING OF A NUMBER FIELD",
+  "title": "The Habiro ring of a number field",
   "authors_raw": "STAVROS GAROUFALIDIS, PETER SCHOLZE, CAMPBELL WHEELER, AND DON ZAGIER",
-  "abstract": "We introduce the Habiro ring of a number field K and modules over it graded by K3(K). Elements of these modules are collections of power series at each complex root of unity that arithmetically glue with each other after applying a Frobenius endomorphism, and after dividing at each prime by a collection of series that depends solely on an element of the Bloch group. The main theorems of this paper concern number fields, their algebraic K-theory and its regulator maps (Borel, p-adic and \u00b4 etale), whereas the explicit collections of series are defined by a careful algebraic analysis of the infinite Pochhammer symbol at roots of unity. The origin of the above mentioned power series comes from perturbative Chern\u2013Simons theory and by expansions of the admissible series of Kontsevich\u2013Soibelman, both ultimately related to the infinite Pochhammer symbol. This link suggests that some Donaldson-Thomas invariants have arithmetic meaning and that some elements of the Habiro ring of a number field have enumerative meaning.",
-  "docinfo": {
-   "Author": "Stavros Garoufalidis; Peter Scholze; Campbell Wheeler; Don Zagier",
-   "Creator": "arXiv GenPDF (tex2pdf:)",
-   "Producer": "pikepdf 8.15.1",
-   "Title": "The Habiro ring of a number field"
-  },
   "title_lines": [
    "THE HABIRO RING OF A NUMBER FIELD"
-  ]
+  ],
+  "abstract": "We introduce the Habiro ring of a number field K and modules over it graded by K3(K). Elements of these modules are collections of power series at each complex root of unity that arithmetically glue with each other after applying a Frobenius endomorphism, and after dividing at each prime by a collection of series that depends solely on an element of the Bloch group. The main theorems of this paper concern number fields, their algebraic K-theory and its regulator maps (Borel, p-adic and ´etale), whereas the explicit collections of series are defined by a careful algebraic analysis of the infinite Pochhammer symbol at roots of unity. The origin of the above mentioned power series comes from perturbative Chern–Simons theory and by expansions of the admissible series of Kontsevich–Soibelman, both ultimately related to the infinite Pochhammer symbol. This link suggests that some Donaldson-Thomas invariants have arithmetic meaning and that some elements of the Habiro ring of a number field have enumerative meaning.",
+  "docinfo": {
+   "Title": "The Habiro ring of a number field",
+   "Author": "Stavros Garoufalidis; Peter Scholze; Campbell Wheeler; Don Zagier",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:)"
+  },
+  "title_raw": "THE HABIRO RING OF A NUMBER FIELD",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "The Habiro ring of a number field",
+   "heading": "THE HABIRO RING OF A NUMBER FIELD",
+   "outline": "1. Introduction",
+   "text": "THE HABIRO RING OF A NUMBER FIELD",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "THE HABIRO RING OF A NUMBER FIELD"
  },
  "toc": [
   {
@@ -38,292 +56,1098 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Prologue",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Integrality and congruence experiments",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "The original Habiro ring",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The Habiro ring of a number field",
    "page": 6,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Modules over the Habiro ring of K indexed by K_3(K)",
    "page": 8,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Admissible series and formal Gaussian integration",
    "page": 11,
    "source": "outline",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "The main theorems",
    "page": 13,
    "source": "outline",
-   "number": "1.7"
+   "number": "1.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
-   "title": "The relation with perturbative Chern\u2013Simons theory",
+   "title": "The relation with perturbative Chern–Simons theory",
    "page": 15,
    "source": "outline",
-   "number": "1.8"
+   "number": "1.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Future extensions",
    "page": 17,
    "source": "outline",
-   "number": "1.9"
+   "number": "1.9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Two complementary collections of power series at roots of unity",
    "page": 17,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "The infinite Pochhammer symbol",
    "page": 18,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Admissible series",
    "page": 20,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Admissibility of q-hypergeometric series",
    "page": 22,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Level m admissible series",
    "page": 25,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "Formal Gaussian integration",
    "page": 28,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Algebraicity via WKB",
    "page": 33,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Synthesis",
    "page": 35,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "Integrality and gluing of p-adic series",
    "page": 37,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "Bloch group and p-adic dilogarithm",
    "page": 37,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "Explicit sections of the p-completed Habiro ring",
    "page": 39,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "Proof of the main theorems",
    "page": 43,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 1,
    "title": "Examples and computations",
    "page": 45,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "Symmetrisation and a residue formula",
    "page": 45,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "A rank one admissible series",
    "page": 48,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "Torsion in the Bloch group from admissible series",
    "page": 51,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 2,
    "title": "Some p-adic computations",
    "page": 52,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "The 4_1 knot",
    "page": 54,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "The pair of the 5_2 and the (-2,3,7)-pretzel knots",
    "page": 55,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "55"
   },
   {
    "level": 2,
    "title": "A note on modularity",
    "page": 57,
    "source": "outline",
-   "number": "4.7"
+   "number": "4.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 1,
    "title": "Alternative approach: Habiro rings via congruences",
    "page": 58,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 2,
    "title": "Functions near roots of unity and the naive Habiro ring",
    "page": 59,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 2,
    "title": "The Habiro ring of a number field",
    "page": 64,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 2,
    "title": "Examples",
    "page": 65,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 2,
    "title": "Some wilder Habiro-like elements",
    "page": 68,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 71,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "71"
   },
   {
    "level": 1,
    "title": "References",
    "page": 71,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "71"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3010,
+   "n_words": 473,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 15,
+   "n_words": 2,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-prologue",
    "number": "1.1",
    "title": "Prologue",
    "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1425,
+   "n_words": 226,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-002-12-integrality-and-congruence-experiments",
    "number": "1.2",
    "title": "Integrality and congruence experiments",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 7181,
-   "n_words": 1173
+   "n_chars": 3780,
+   "n_words": 637,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-003-13-the-original-habiro-ring",
@@ -331,19 +1155,23 @@
    "title": "The original Habiro ring",
    "level": 2,
    "page_start": 4,
-   "page_end": 5,
-   "n_chars": 2428,
-   "n_words": 442
+   "page_end": 6,
+   "n_chars": 6916,
+   "n_words": 1263,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-004-14-the-habiro-ring-of-a-number-field",
    "number": "1.4",
    "title": "The Habiro ring of a number field",
    "level": 2,
-   "page_start": 5,
+   "page_start": 6,
    "page_end": 8,
-   "n_chars": 9516,
-   "n_words": 1674
+   "n_chars": 5068,
+   "n_words": 935,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
    "id": "sec-005-15-modules-over-the-habiro-ring-of-k-indexed-by",
@@ -352,8 +1180,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 10938,
-   "n_words": 1906
+   "n_chars": 11023,
+   "n_words": 1991,
+   "label_start": "8",
+   "label_end": "11"
   },
   {
    "id": "sec-006-16-admissible-series-and-formal-gaussian-integra",
@@ -362,8 +1192,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 5156,
-   "n_words": 887
+   "n_chars": 5196,
+   "n_words": 927,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
    "id": "sec-007-17-the-main-theorems",
@@ -372,18 +1204,22 @@
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 6481,
-   "n_words": 1161
+   "n_chars": 6551,
+   "n_words": 1231,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
    "id": "sec-008-18-the-relation-with-perturbative-chernsimons-th",
    "number": "1.8",
-   "title": "The relation with perturbative Chern\u2013Simons theory",
+   "title": "The relation with perturbative Chern–Simons theory",
    "level": 2,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 4083,
-   "n_words": 675
+   "n_chars": 4084,
+   "n_words": 676,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
    "id": "sec-009-19-future-extensions",
@@ -392,8 +1228,10 @@
    "level": 2,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 2584,
-   "n_words": 472
+   "n_chars": 2586,
+   "n_words": 474,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
    "id": "sec-010-2-two-complementary-collections-of-power-series",
@@ -402,8 +1240,10 @@
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1194,
-   "n_words": 192
+   "n_chars": 1193,
+   "n_words": 191,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
    "id": "sec-011-21-the-infinite-pochhammer-symbol",
@@ -412,8 +1252,10 @@
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 3127,
-   "n_words": 612
+   "n_chars": 3165,
+   "n_words": 650,
+   "label_start": "18",
+   "label_end": "20"
   },
   {
    "id": "sec-012-22-admissible-series",
@@ -422,8 +1264,10 @@
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 6181,
-   "n_words": 1189
+   "n_chars": 6218,
+   "n_words": 1226,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
    "id": "sec-013-23-admissibility-of-q-hypergeometric-series",
@@ -432,8 +1276,10 @@
    "level": 2,
    "page_start": 22,
    "page_end": 25,
-   "n_chars": 6017,
-   "n_words": 1106
+   "n_chars": 6090,
+   "n_words": 1179,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
    "id": "sec-014-24-level-m-admissible-series",
@@ -442,8 +1288,10 @@
    "level": 2,
    "page_start": 25,
    "page_end": 28,
-   "n_chars": 5841,
-   "n_words": 1126
+   "n_chars": 5889,
+   "n_words": 1174,
+   "label_start": "25",
+   "label_end": "28"
   },
   {
    "id": "sec-015-25-formal-gaussian-integration",
@@ -452,8 +1300,10 @@
    "level": 2,
    "page_start": 28,
    "page_end": 33,
-   "n_chars": 8433,
-   "n_words": 1589
+   "n_chars": 8557,
+   "n_words": 1715,
+   "label_start": "28",
+   "label_end": "33"
   },
   {
    "id": "sec-016-26-algebraicity-via-wkb",
@@ -462,8 +1312,10 @@
    "level": 2,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 3729,
-   "n_words": 719
+   "n_chars": 3874,
+   "n_words": 790,
+   "label_start": "33",
+   "label_end": "35"
   },
   {
    "id": "sec-017-27-synthesis",
@@ -472,8 +1324,10 @@
    "level": 2,
    "page_start": 35,
    "page_end": 37,
-   "n_chars": 4724,
-   "n_words": 873
+   "n_chars": 4734,
+   "n_words": 883,
+   "label_start": "35",
+   "label_end": "37"
   },
   {
    "id": "sec-018-3-integrality-and-gluing-of-p-adic-series",
@@ -483,7 +1337,9 @@
    "page_start": 37,
    "page_end": 37,
    "n_chars": 568,
-   "n_words": 95
+   "n_words": 95,
+   "label_start": "37",
+   "label_end": "37"
   },
   {
    "id": "sec-019-31-bloch-group-and-p-adic-dilogarithm",
@@ -492,8 +1348,10 @@
    "level": 2,
    "page_start": 37,
    "page_end": 39,
-   "n_chars": 5576,
-   "n_words": 1004
+   "n_chars": 5610,
+   "n_words": 1038,
+   "label_start": "37",
+   "label_end": "39"
   },
   {
    "id": "sec-020-32-explicit-sections-of-the-p-completed-habiro-r",
@@ -502,8 +1360,10 @@
    "level": 2,
    "page_start": 39,
    "page_end": 43,
-   "n_chars": 7300,
-   "n_words": 1355
+   "n_chars": 7353,
+   "n_words": 1408,
+   "label_start": "39",
+   "label_end": "43"
   },
   {
    "id": "sec-021-33-proof-of-the-main-theorems",
@@ -512,8 +1372,10 @@
    "level": 2,
    "page_start": 43,
    "page_end": 45,
-   "n_chars": 6089,
-   "n_words": 1095
+   "n_chars": 6127,
+   "n_words": 1133,
+   "label_start": "43",
+   "label_end": "45"
   },
   {
    "id": "sec-022-4-examples-and-computations",
@@ -523,7 +1385,9 @@
    "page_start": 45,
    "page_end": 45,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "45",
+   "label_end": "45"
   },
   {
    "id": "sec-023-41-symmetrisation-and-a-residue-formula",
@@ -532,8 +1396,10 @@
    "level": 2,
    "page_start": 45,
    "page_end": 48,
-   "n_chars": 5539,
-   "n_words": 1044
+   "n_chars": 5623,
+   "n_words": 1128,
+   "label_start": "45",
+   "label_end": "48"
   },
   {
    "id": "sec-024-42-a-rank-one-admissible-series",
@@ -542,8 +1408,10 @@
    "level": 2,
    "page_start": 48,
    "page_end": 51,
-   "n_chars": 6186,
-   "n_words": 1247
+   "n_chars": 6215,
+   "n_words": 1276,
+   "label_start": "48",
+   "label_end": "51"
   },
   {
    "id": "sec-025-43-torsion-in-the-bloch-group-from-admissible-se",
@@ -552,8 +1420,10 @@
    "level": 2,
    "page_start": 51,
    "page_end": 52,
-   "n_chars": 3162,
-   "n_words": 597
+   "n_chars": 3194,
+   "n_words": 629,
+   "label_start": "51",
+   "label_end": "52"
   },
   {
    "id": "sec-026-44-some-p-adic-computations",
@@ -561,102 +1431,157 @@
    "title": "Some p-adic computations",
    "level": 2,
    "page_start": 52,
-   "page_end": 57,
-   "n_chars": 10829,
-   "n_words": 2138
+   "page_end": 55,
+   "n_chars": 5224,
+   "n_words": 1112,
+   "label_start": "52",
+   "label_end": "55"
   },
   {
-   "id": "sec-027-47-a-note-on-modularity",
+   "id": "sec-027-46-the-pair-of-the-5-2-and-the--237-pretzel-knot",
+   "number": "4.6",
+   "title": "The pair of the 5_2 and the (-2,3,7)-pretzel knots",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 57,
+   "n_chars": 5695,
+   "n_words": 1187,
+   "label_start": "55",
+   "label_end": "57"
+  },
+  {
+   "id": "sec-028-47-a-note-on-modularity",
    "number": "4.7",
    "title": "A note on modularity",
    "level": 2,
    "page_start": 57,
    "page_end": 58,
-   "n_chars": 2435,
-   "n_words": 509
+   "n_chars": 2459,
+   "n_words": 533,
+   "label_start": "57",
+   "label_end": "58"
   },
   {
-   "id": "sec-028-5-alternative-approach-habiro-rings-via-congruen",
+   "id": "sec-029-5-alternative-approach-habiro-rings-via-congruen",
    "number": "5",
    "title": "Alternative approach: Habiro rings via congruences",
    "level": 1,
    "page_start": 58,
    "page_end": 59,
-   "n_chars": 1444,
-   "n_words": 254
+   "n_chars": 1446,
+   "n_words": 256,
+   "label_start": "58",
+   "label_end": "59"
   },
   {
-   "id": "sec-029-51-functions-near-roots-of-unity-and-the-naive-h",
+   "id": "sec-030-51-functions-near-roots-of-unity-and-the-naive-h",
    "number": "5.1",
    "title": "Functions near roots of unity and the naive Habiro ring",
    "level": 2,
    "page_start": 59,
-   "page_end": 63,
-   "n_chars": 8315,
-   "n_words": 1566
+   "page_end": 64,
+   "n_chars": 11161,
+   "n_words": 2384,
+   "label_start": "59",
+   "label_end": "64"
   },
   {
-   "id": "sec-030-52-the-habiro-ring-of-a-number-field",
+   "id": "sec-031-52-the-habiro-ring-of-a-number-field",
    "number": "5.2",
    "title": "The Habiro ring of a number field",
    "level": 2,
-   "page_start": 63,
+   "page_start": 64,
    "page_end": 65,
-   "n_chars": 6655,
-   "n_words": 1237
+   "n_chars": 4132,
+   "n_words": 785,
+   "label_start": "64",
+   "label_end": "65"
   },
   {
-   "id": "sec-031-53-examples",
+   "id": "sec-032-53-examples",
    "number": "5.3",
    "title": "Examples",
    "level": 2,
    "page_start": 65,
    "page_end": 68,
-   "n_chars": 4695,
-   "n_words": 917
+   "n_chars": 4918,
+   "n_words": 1143,
+   "label_start": "65",
+   "label_end": "68"
   },
   {
-   "id": "sec-032-54-some-wilder-habiro-like-elements",
+   "id": "sec-033-54-some-wilder-habiro-like-elements",
    "number": "5.4",
    "title": "Some wilder Habiro-like elements",
    "level": 2,
    "page_start": 68,
    "page_end": 71,
-   "n_chars": 4378,
-   "n_words": 855
+   "n_chars": 4424,
+   "n_words": 901,
+   "label_start": "68",
+   "label_end": "71"
   },
   {
-   "id": "sec-033-acknowledgements",
+   "id": "sec-034-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 71,
    "page_end": 71,
    "n_chars": 512,
-   "n_words": 73
+   "n_words": 73,
+   "label_start": "71",
+   "label_end": "71"
   },
   {
-   "id": "sec-034-references",
+   "id": "sec-035-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 71,
    "page_end": 73,
-   "n_chars": 8421,
-   "n_words": 1150
+   "n_chars": 8387,
+   "n_words": 1116,
+   "label_start": "71",
+   "label_end": "73"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 37,
-  "sections": 35,
-  "chars_total": 169717,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "Prologue",
+     "Synthesis"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 37,
+  "chars_total": 172422,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "text131.tex",
    "tex_sections": 36,
-   "overlaid": 18,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -664,36 +1589,46 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-001-11-prologue",
      "title": "Prologue",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.944,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-12-integrality-and-congruence-experiments",
      "title": "Integrality and congruence experiments",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.638,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-13-the-original-habiro-ring",
      "title": "The original Habiro ring",
-     "prose_ratio": 0.463,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-14-the-habiro-ring-of-a-number-field",
      "title": "The Habiro ring of a number field",
-     "prose_ratio": 0.562,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.48,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-15-modules-over-the-habiro-ring-of-k-indexed-by",
@@ -704,7 +1639,7 @@
      "id": "sec-006-16-admissible-series-and-formal-gaussian-integra",
      "title": "Admissible series and formal Gaussian integration",
      "prose_ratio": 0.96,
-     "coverage_ratio": 0.919,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -712,15 +1647,15 @@
      "id": "sec-007-17-the-main-theorems",
      "title": "The main theorems",
      "prose_ratio": 0.933,
-     "coverage_ratio": 0.924,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-18-the-relation-with-perturbative-chernsimons-th",
-     "title": "The relation with perturbative Chern\u2013Simons theory",
+     "title": "The relation with perturbative Chern–Simons theory",
      "prose_ratio": 0.957,
-     "coverage_ratio": 0.95,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -728,7 +1663,7 @@
      "id": "sec-009-19-future-extensions",
      "title": "Future extensions",
      "prose_ratio": 0.929,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -736,7 +1671,7 @@
      "id": "sec-010-2-two-complementary-collections-of-power-series",
      "title": "Two complementary collections of power series at roots of unity",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.903,
+     "coverage_ratio": 0.925,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -744,7 +1679,7 @@
      "id": "sec-011-21-the-infinite-pochhammer-symbol",
      "title": "The infinite Pochhammer symbol",
      "prose_ratio": 0.926,
-     "coverage_ratio": 0.88,
+     "coverage_ratio": 0.91,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -752,7 +1687,7 @@
      "id": "sec-012-22-admissible-series",
      "title": "Admissible series",
      "prose_ratio": 0.527,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-013-23-admissibility-of-q-hypergeometric-series",
@@ -768,15 +1703,15 @@
      "id": "sec-015-25-formal-gaussian-integration",
      "title": "Formal Gaussian integration",
      "prose_ratio": 0.9,
-     "coverage_ratio": 0.866,
+     "coverage_ratio": 0.907,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-016-26-algebraicity-via-wkb",
      "title": "Algebraicity via WKB",
-     "prose_ratio": 0.875,
-     "coverage_ratio": 0.869,
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.885,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -784,7 +1719,7 @@
      "id": "sec-017-27-synthesis",
      "title": "Synthesis",
      "prose_ratio": 0.369,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-018-3-integrality-and-gluing-of-p-adic-series",
@@ -805,7 +1740,7 @@
      "id": "sec-021-33-proof-of-the-main-theorems",
      "title": "Proof of the main theorems",
      "prose_ratio": 0.905,
-     "coverage_ratio": 0.933,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -813,13 +1748,13 @@
      "id": "sec-022-4-examples-and-computations",
      "title": "Examples and computations",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-023-41-symmetrisation-and-a-residue-formula",
      "title": "Symmetrisation and a residue formula",
      "prose_ratio": 0.92,
-     "coverage_ratio": 0.904,
+     "coverage_ratio": 0.915,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -827,7 +1762,7 @@
      "id": "sec-024-42-a-rank-one-admissible-series",
      "title": "A rank one admissible series",
      "prose_ratio": 0.856,
-     "coverage_ratio": 0.922,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -835,7 +1770,7 @@
      "id": "sec-025-43-torsion-in-the-bloch-group-from-admissible-se",
      "title": "Torsion in the Bloch group from admissible series",
      "prose_ratio": 0.391,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-026-44-some-p-adic-computations",
@@ -843,61 +1778,66 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-027-47-a-note-on-modularity",
+     "id": "sec-027-46-the-pair-of-the-5-2-and-the--237-pretzel-knot",
+     "title": "The pair of the 5_2 and the (-2,3,7)-pretzel knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-47-a-note-on-modularity",
      "title": "A note on modularity",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.918,
+     "coverage_ratio": 0.936,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-028-5-alternative-approach-habiro-rings-via-congruen",
+     "id": "sec-029-5-alternative-approach-habiro-rings-via-congruen",
      "title": "Alternative approach: Habiro rings via congruences",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.978,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-029-51-functions-near-roots-of-unity-and-the-naive-h",
-     "title": "Functions near roots of unity and the naive Habiro ring",
-     "prose_ratio": 0.635,
-     "coverage_ratio": 0.9,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-030-52-the-habiro-ring-of-a-number-field",
-     "title": "The Habiro ring of a number field",
-     "prose_ratio": 0.284,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-031-53-examples",
-     "title": "Examples",
-     "prose_ratio": 0.921,
-     "coverage_ratio": 0.929,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-032-54-some-wilder-habiro-like-elements",
-     "title": "Some wilder Habiro-like elements",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.906,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-033-acknowledgements",
-     "title": "Acknowledgements",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-034-references",
+     "id": "sec-030-51-functions-near-roots-of-unity-and-the-naive-h",
+     "title": "Functions near roots of unity and the naive Habiro ring",
+     "prose_ratio": 0.734,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-52-the-habiro-ring-of-a-number-field",
+     "title": "The Habiro ring of a number field",
+     "prose_ratio": 0.23,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-032-53-examples",
+     "title": "Examples",
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-033-54-some-wilder-habiro-like-elements",
+     "title": "Some wilder Habiro-like elements",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-references",
      "title": "References",
      "result": "no matching \\section"
     }

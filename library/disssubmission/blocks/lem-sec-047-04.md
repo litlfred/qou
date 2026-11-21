@@ -1,0 +1,1 @@
+4. Let G be a complex reductive group whose group G/G0 of connected components is abelian, and let V ∈RepC(G) be an irreducible representation. If the restriction V|G0 is reducible, then for some non-trivial character χ : G −→C∗there exists an isomorphism V ∼= V ⊗C χ.

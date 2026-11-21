@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1002.0168v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "c95d5d193d57b0976305756d8463f66c33bb7ccb277b957acf9c56d91ccb2a95",
+  "file": "1002.0168v2.pdf"
+ },
+ "provenance": {
+  "title": "Non-cyclotomic fusion categories Introduction",
+  "authors": "Scott Morrison",
+  "arxiv": {
+   "id": "1002.0168",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "2 May 2010"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

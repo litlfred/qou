@@ -1,0 +1,56 @@
+1388 J. Leake
+
+(ii) One of the following holds:
+
+(a) Symb(T) is (H™ x H'!)-stable.
+(b) Symb(T) is (H™ x H")-stable.
+(c) T has image of dimension at most two, and is of the form
+
+T:prrqg-Wilp) +r: yop)
+
+where q,r € Viz(@) are weakly real stable such that q « r, and Wy, W2 are real
+linear functionals.
+
+Proof Apply the complex characterization (Theorem 6.2) to conditions (ii)(a) and (ii)(b) of
+Lemma 7.3 above. Oo
+
+7.4 Ray and interval stability
+
+We now apply the above results to projectively convex regions of the form H4 U J°, where
+J Cc Ris some connected set. From this, we obtain a classification of operators which both
+preserve strong J-rootedness and weak real-rootedness (a polynomial p € V(n) is J-rooted
+if all its roots lie in J). This of course does not completely solve the open problem of providing
+a classification of interval- and ray-stability preserving operators (see, e.g., [3]). However, it
+does seem to be the natural corollary obtained by applying proof methods similar to that of
+{1}.
+
+That said, we now proceed to prove the main result of this subsection, Theorem 7.8. We
+first start with a short-hand definition in order to simplify the proof.
+
+Definition 7.5 Fix 4, € Nj and a linear operator T ¢ Hom(V(A), V(a)) such that T
+restricts to a real linear operator and preserves weak real-stability. We say T is degenerate if
+it satisfies condition (ii)(c) of Corollary 7.4.
+
+We now prove two lemmas. The first is straightforward, but rather interesting in its own
+right.
+
+Lemma 7.6 Fix a closed bounded interval J C Randa subspace W C V(n) consisting of
+weakly real-rooted polynomials. Let S C W denote the subset of top-degree monic J -rooted
+polynomials. There exist p,q € S such that p < q and S is the convex hull of p and q.
+
+Proof Lemma 4.12 implies W is of dimension at most two, and so then Lemma 4.13 implies
+the relation < is a total order on S. Applying the root ordering property of Lemma 4.13, the
+closedness of S implies there are p,q € S such that p< q andp <r <q forallre S.
+Basic sign arguments and the fact that S is contained in the span of {p,q} then imply S is
+the the convex hull of {p, q}. ia
+
+The second lemma is perhaps less straightforward in terms of proof, but follows from
+the following intuitive idea: an open ball in some complex subspace of polynomials yields,
+roughly speaking, an open ball of zeros.
+
+Lemma 7.7 Fix n,m € No and a linear operator T € Hom(V(n), V(m)) which restricts
+to a real linear operator and preserves weak real-rootedness. If there exist some H,4.-stable
+Po € V(n) and some (xo : yo) € R such that T(po)(xo, yo) = 9, then one of the following
+holds:
+
+D Springer

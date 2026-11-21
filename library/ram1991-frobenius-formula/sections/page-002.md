@@ -1,0 +1,63 @@
+---
+doc_id: ram1991-frobenius-formula
+doc_title: "A Frobenius formula for the characters of the Hecke algebras"
+section_id: page-002
+section_title: "Page 2"
+pages: 2-2
+pdf_page: 2
+source_pdf: ram1991-frobenius-formula.pdf
+source_sha256: 26b2fc85338d9150
+text_source: ocr
+granularity: page
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — 28 sections: Page 1; Page 2; Page 3"
+---
+462 A. Ram
+
+In 1986, Jimbo [Ji] recognized that there exists a similar duality between the
+quantum group U,(gl(n)) and the Hecke algebras of type A. Guided by this
+observation, we develop a “Frobenius” formula and a combinatorial rule for
+computing the characters of the Hecke algebras. The presentation given in this
+paper allows one to avoid the quantum group completely. The derivation of the
+combinatorial rule shows that there are connections, apparently unexplored,
+between characters of Hecke algebras, Hall-Littlewood symmetric functions, and
+Kronecker products of symmetric group representations. The combinatorial rule
+which is derived in this paper is essentially a q-analogue of the Murnaghan-
+Nakayama rule, in the sense that when one specializes q = 1 it trivially reduces to
+the classical rule for the symmetric group.
+
+The paper is organized as follows. In the first section we develop the needed
+notation and give the necessary basic facts about the symmetric group and the
+Hecke algebra. In Sect. 2 we give a brief description of the duality between the
+quantum group and the Hecke algebra and the motivation behind our approach to
+the characters of the Hecke algebra. In Sect. 3 we show that the irreducible
+characters of the Hecke algebra are determined by traces arising from a certain
+action of the Hecke algebra on tensor space. In Sect. 4 we show that these traces
+are, up to a scalar multiple, Hall-Littlewood symmetric functions and give
+a Frobenius type formula for the characters of the Hecke algebra. In Sect. 5 we use
+the Frobenius formula to derive formulas for the irreducible characters of the
+Hecke algebra. In Sect. 6 we develop a connection between the characters of the
+Hecke algebra and Kronecker products of symmetric group representations and
+derive a combinatorial rule for computing characters of the Hecke algebras.
+Section 7 gives a brief summary of work of King and Wybourne and of Vershik and
+Kerov on the characters of the Hecke algebra. In the final section we give explicit
+formulas for some special cases and tables of characters.
+
+Acknowledgements. I would like to thank H. Wenzl for teaching me about quantum groups and
+for explaining to me how the calculation I wanted to do could actually be done. I would like to
+thank A. Garsia for showing me how to do computations via J-ring notation and for all the
+support (both grant support and otherwise) and encouragement he has given me. I don’t think
+I would have pushed this all the way through without it. I would also like to thank M. Haiman
+and S.T. Whitehead for enlightening discussions.
+
+1 The symmetric group, S,, and the Hecke algebra, H,
+Notation
+
+We shall adopt the notations in [Mac] for partitions and symmetric functions. In
+particular, if A =(A,,42,...), 4; 24. 2... is a partition, then [(4) denotes the
+length (number of parts) of A, |A|, the weight (sum of the parts) of 4. If |A| =f we
+write Af. Often we shall use the notation (1"'2”...) for a partition, so that
+m, denotes the number of parts equal to i in the partition. m, shall denote the
+monomial symmetric function, h, the homogeneous symmetric function, s, the
+Schur function, and p, the power symmetric function associated to the partition 4.
+If F is a symmetric function then F|,, shall denote the coefficient of s, in an
+expansion of F in terms of Schur functions.

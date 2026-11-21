@@ -55,7 +55,7 @@ replaced by the dimension count of step 3.
 * Convention D (`z = q³/(q²+1)`) for `wtrace`, as in `TraceQuotGeneric`.
 * At a root of unity nothing is claimed.
 
--- Ref: [jimbo1986]; [manuscript] bean qou-cf3m
+-- Ref: [jimbo1986]; [leitner2026] bean qou-cf3m
 -/
 
 namespace QOU.SchurWeyl.JimboKernelGeneric

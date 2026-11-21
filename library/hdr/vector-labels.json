@@ -1,0 +1,2793 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "hdr",
+  "pages": [
+    {
+      "page": 60,
+      "rotation": 0,
+      "drawings": 6214,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6.1: The framed links in the skein relation in open braid form."
+      ],
+      "labels": [
+        {
+          "text": "Remark 6.26 In [JuLa2], the old quadratic relation (6.5) was used. Using the natural surjection of",
+          "bbox": [
+            72.0,
+            74.18,
+            523.35,
+            84.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R[Fn] onto Yd,n(q) given by σi 7→gi and tj 7→tj, and normalising and re-scaling the specialised trace,",
+          "bbox": [
+            72.0,
+            86.0,
+            523.29,
+            98.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "invariants Γd,D(q, z) for oriented framed links were deﬁned in [JuLa2, Theorem 8].",
+          "bbox": [
+            72.0,
+            98.09,
+            431.21,
+            108.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In [JuLa2, Proposition 7] a skein relation is found for the invariant Γd,D, involving the braiding and",
+          "bbox": [
+            86.94,
+            110.04,
+            523.32,
+            120.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the framing generators. It reads:",
+          "bbox": [
+            72.0,
+            122.0,
+            214.48,
+            131.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d−1",
+          "bbox": [
+            297.35,
+            142.98,
+            311.7,
+            150.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "d−1",
+          "bbox": [
+            401.05,
+            142.98,
+            415.4,
+            150.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "λDΓd,D(L−) = 1 −q−1",
+          "bbox": [
+            193.08,
+            145.08,
+            293.98,
+            163.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Γd,D(Ls) + 1 −q−1",
+          "bbox": [
+            313.38,
+            145.08,
+            397.67,
+            163.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            115.47,
+            146.45,
+            120.46,
+            156.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            297.33,
+            150.89,
+            311.72,
+            160.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            401.02,
+            150.89,
+            415.41,
+            160.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            183.12,
+            151.12,
+            193.08,
+            161.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√λD",
+          "bbox": [
+            107.29,
+            152.76,
+            127.92,
+            171.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "d√λD",
+          "bbox": [
+            368.58,
+            152.76,
+            394.39,
+            171.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Γd,D(L+) −",
+          "bbox": [
+            129.83,
+            153.06,
+            180.91,
+            163.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Γd,D(Ls×)",
+          "bbox": [
+            417.08,
+            153.19,
+            462.06,
+            163.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(6.26)",
+          "bbox": [
+            497.81,
+            153.19,
+            523.28,
+            163.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            275.55,
+            160.02,
+            280.74,
+            169.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "s=0",
+          "bbox": [
+            297.6,
+            167.16,
+            311.46,
+            174.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "s=0",
+          "bbox": [
+            401.3,
+            167.16,
+            415.15,
+            174.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where the links L+, L−, Ls and Ls× are illustrated in Figure 6.1.",
+          "bbox": [
+            72.0,
+            183.69,
+            357.84,
+            195.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            170.12,
+            235.5,
+            175.75,
+            245.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            249.82,
+            235.5,
+            255.46,
+            245.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            329.52,
+            235.5,
+            335.16,
+            245.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            409.22,
+            235.5,
+            414.86,
+            245.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d −s",
+          "bbox": [
+            334.5,
+            255.27,
+            350.18,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "d −s",
+          "bbox": [
+            414.2,
+            255.27,
+            429.88,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            160.15,
+            255.33,
+            163.55,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            175.1,
+            255.33,
+            178.49,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            196.02,
+            255.33,
+            199.42,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            239.86,
+            255.33,
+            243.25,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            254.81,
+            255.33,
+            258.2,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            274.73,
+            255.33,
+            278.13,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            317.56,
+            255.33,
+            320.9,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            355.42,
+            255.33,
+            358.81,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            399.26,
+            255.33,
+            402.59,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            435.12,
+            255.33,
+            438.51,
+            260.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "\\",
+          "bbox": [
+            338.13,
+            282.43,
+            353.21,
+            287.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "\\",
+          "bbox": [
+            419.23,
+            282.43,
+            434.32,
+            287.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "\\",
+          "bbox": [
+            252.91,
+            283.64,
+            268.0,
+            288.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "1td−s",
+          "bbox": [
+            339.37,
+            284.6,
+            358.48,
+            294.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "1td−s",
+          "bbox": [
+            416.49,
+            284.6,
+            435.61,
+            294.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "βts",
+          "bbox": [
+            332.36,
+            285.5,
+            342.7,
+            292.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "βts",
+          "bbox": [
+            409.49,
+            285.5,
+            419.83,
+            292.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "βσ1−1",
+          "bbox": [
+            249.74,
+            285.68,
+            270.67,
+            293.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "L+ =",
+          "bbox": [
+            155.17,
+            287.21,
+            172.71,
+            293.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "βσ1",
+          "bbox": [
+            174.74,
+            287.21,
+            186.39,
+            293.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "L−=",
+          "bbox": [
+            229.89,
+            287.21,
+            247.7,
+            293.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "Ls =",
+          "bbox": [
+            314.57,
+            287.21,
+            330.33,
+            293.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "Ls× =",
+          "bbox": [
+            386.31,
+            287.21,
+            407.46,
+            293.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "σ1",
+          "bbox": [
+            436.11,
+            287.21,
+            443.56,
+            293.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            176.75,
+            289.42,
+            184.88,
+            294.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX7"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            346.06,
+            289.68,
+            349.46,
+            294.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            423.19,
+            289.68,
+            426.58,
+            294.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "Figure 6.1: The framed links in the skein relation in open braid form.",
+          "bbox": [
+            145.65,
+            310.22,
+            449.69,
+            320.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Analogously, with the new quadratic relations, the invariant Φd,D satisﬁes the following skein relation:",
+          "bbox": [
+            86.94,
+            346.03,
+            523.29,
+            357.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "qλDΦd,D(L−) = q1/2 −q−1/2",
+          "bbox": [
+            250.09,
+            367.65,
+            377.16,
+            388.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "d−1",
+          "bbox": [
+            380.53,
+            367.92,
+            394.88,
+            374.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            169.11,
+            371.39,
+            174.09,
+            381.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            380.51,
+            375.83,
+            394.9,
+            385.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            240.12,
+            376.29,
+            250.09,
+            386.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√qλD",
+          "bbox": [
+            158.53,
+            377.7,
+            183.96,
+            396.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Φd,D(L+) −",
+          "bbox": [
+            185.87,
+            378.0,
+            237.91,
+            388.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Φd,D(Ls)",
+          "bbox": [
+            396.56,
+            378.13,
+            436.28,
+            388.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(6.27)",
+          "bbox": [
+            497.81,
+            378.13,
+            523.28,
+            388.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            348.53,
+            384.96,
+            353.72,
+            394.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "s=0",
+          "bbox": [
+            380.78,
+            392.1,
+            394.63,
+            399.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where the links L+, L−and Ls are illustrated in Figure 6.1. The fact that the skein relation for Φd,D",
+          "bbox": [
+            72.0,
+            408.64,
+            522.56,
+            420.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is very diﬀerent from the skein relation for Γd,D is an indication that the two invariants may not be",
+          "bbox": [
+            72.0,
+            420.59,
+            523.31,
+            432.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "topologically equivalent. We also have computational data that seem to support this claim [Ai].",
+          "bbox": [
+            72.0,
+            432.55,
+            490.18,
+            442.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6.4.2",
+          "bbox": [
+            72.0,
+            458.88,
+            99.68,
+            470.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Invariants from Yokonuma–Hecke algebras for classical knots and links",
+          "bbox": [
+            113.13,
+            458.88,
+            523.49,
+            470.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let L denote the set of oriented classical links. By the Alexander Theorem, we have L = ∪n{bα | α ∈Bn}.",
+          "bbox": [
+            72.0,
+            478.7,
+            523.28,
+            495.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The classical braid group Bn injects into the framed braid group Fn ∼= Zn ⋊Bn, whereby elements of Bn",
+          "bbox": [
+            72.0,
+            484.99,
+            522.78,
+            502.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "are viewed as framed braids with all framings equal to zero. So, by the classical Markov braid equivalence,",
+          "bbox": [
+            72.0,
+            502.74,
+            523.33,
+            512.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "comprising conjugation in the groups Bn and positive and negative stabilisations and destabilisations,",
+          "bbox": [
+            72.0,
+            514.69,
+            523.31,
+            526.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and by treating the tj’s as formal generators, Φd,D(q, z) becomes an isotopy invariant of oriented classical",
+          "bbox": [
+            72.0,
+            526.65,
+            523.29,
+            537.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "links when restricted to L (see also [JuLa3]). This invariant of classical links will be denoted by Θd,D(q, z).",
+          "bbox": [
+            72.0,
+            538.47,
+            523.28,
+            549.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Accordingly, for any classical braid α ∈Bn, we have",
+          "bbox": [
+            72.0,
+            550.43,
+            299.69,
+            561.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "λD)ϵ(α) trd,D(α) ,",
+          "bbox": [
+            303.89,
+            569.36,
+            379.46,
+            584.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            293.93,
+            571.42,
+            303.89,
+            581.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Θd,D(bα) := Λn−1",
+          "bbox": [
+            215.82,
+            571.46,
+            289.56,
+            590.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            290.06,
+            573.48,
+            293.93,
+            583.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            274.44,
+            578.74,
+            280.95,
+            585.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where λD and ΛD are given by (6.25), and ϵ(α) is the sum of the exponents of the braiding generators",
+          "bbox": [
+            72.0,
+            595.39,
+            523.3,
+            606.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σi in the word α.",
+          "bbox": [
+            72.0,
+            607.35,
+            146.95,
+            618.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 6.27 Following Remark 6.24, the above construction yields 2d −1 seemingly distinct isotopy",
+          "bbox": [
+            72.0,
+            625.52,
+            523.29,
+            639.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "invariants for classical links. However, we shall see soon that, for classical links, we only obtain one",
+          "bbox": [
+            72.0,
+            641.22,
+            523.31,
+            651.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "invariant for every d ∈N∗.",
+          "bbox": [
+            72.0,
+            651.0,
+            187.29,
+            663.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The invariants Θd,D(q, z) need to be compared with known invariants of classical links, especially with",
+          "bbox": [
+            86.94,
+            675.1,
+            523.31,
+            685.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the Homﬂypt polynomial. The Homﬂypt (or 2-variable Jones) polynomial P(q, z) is a 2-variable isotopy",
+          "bbox": [
+            72.0,
+            687.05,
+            523.28,
+            697.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "invariant of oriented classical links that was constructed from the Iwahori–Hecke algebras Hn(q) after",
+          "bbox": [
+            72.0,
+            698.88,
+            523.28,
+            709.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "normalising and re-scaling the Ocneanu trace [Jo3]. Here we deﬁne P(q, z) via the invariants Θd,D(q, z),",
+          "bbox": [
+            72.0,
+            710.96,
+            523.28,
+            721.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "57",
+          "bbox": [
+            292.66,
+            762.1,
+            302.62,
+            772.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 63,
+      "rotation": 0,
+      "drawings": 4720,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6.2: The links in the special skein relation in open braid form."
+      ],
+      "labels": [
+        {
+          "text": "For the second part, as mentioned earlier, a computer program has been developed on Mathematica,",
+          "bbox": [
+            86.94,
+            74.18,
+            523.31,
+            84.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "which calculates the specialised trace trd,D (and thus the invariants Θd) by using only the ﬁve rules of",
+          "bbox": [
+            72.0,
+            86.13,
+            523.31,
+            97.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 6.30 and the new quadratic relation. Now, out of 4.188 links (with up to 11 crossings), there",
+          "bbox": [
+            72.0,
+            98.09,
+            523.33,
+            108.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "are 89 pairs of P-equivalent links which do not diﬀer only by orientation, that is, they are diﬀerent links",
+          "bbox": [
+            72.0,
+            110.04,
+            523.35,
+            120.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "if considered as unoriented links. Using the data from LinkInfo [ChaLi], we computed the invariants Θd",
+          "bbox": [
+            72.0,
+            122.0,
+            522.78,
+            132.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "on all of them. Out of these 89 P-equivalent pairs of links, 83 are still Θd-equivalent for generic d, yet",
+          "bbox": [
+            72.0,
+            133.95,
+            523.27,
+            144.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "we found that the following six pairs of 3-component P-equivalent links are not Θd-equivalent for every",
+          "bbox": [
+            72.0,
+            145.91,
+            523.29,
+            156.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "d > 1:",
+          "bbox": [
+            72.0,
+            157.86,
+            98.22,
+            167.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L11n358{0, 1}",
+          "bbox": [
+            227.98,
+            180.57,
+            290.0,
+            190.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L11n418{0, 0}",
+          "bbox": [
+            301.95,
+            180.57,
+            363.98,
+            190.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L11a467{0, 1}",
+          "bbox": [
+            228.34,
+            195.31,
+            289.64,
+            205.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L11a527{0, 0}",
+          "bbox": [
+            302.31,
+            195.31,
+            363.62,
+            205.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L11n325{1, 1}",
+          "bbox": [
+            227.98,
+            210.06,
+            290.0,
+            220.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L11n424{0, 0}",
+          "bbox": [
+            301.95,
+            210.06,
+            363.98,
+            220.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L10n79{1, 1}",
+          "bbox": [
+            230.47,
+            224.8,
+            287.51,
+            234.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L10n95{1, 0}",
+          "bbox": [
+            304.45,
+            224.8,
+            361.48,
+            234.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L11a404{1, 1}",
+          "bbox": [
+            228.34,
+            239.55,
+            289.64,
+            249.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L11a428{0, 1}",
+          "bbox": [
+            302.31,
+            239.55,
+            363.62,
+            249.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L10n76{1, 1}",
+          "bbox": [
+            230.47,
+            254.29,
+            287.51,
+            264.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L11n425{1, 0}",
+          "bbox": [
+            301.95,
+            254.29,
+            363.98,
+            264.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Table 6.1: Six P-equivalent pairs of 3-component links which are not Θd-equivalent.",
+          "bbox": [
+            114.37,
+            277.0,
+            480.92,
+            287.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Further, in [CJKL, Theorem 7.3], we have proved diagrammatically that the invariants Θd, for d > 1,",
+          "bbox": [
+            86.94,
+            301.9,
+            523.28,
+            312.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "distinguish the pair of P-equivalent links L11n358{0, 1} and L11n418{0, 0}1, using another remarkable",
+          "bbox": [
+            72.0,
+            312.58,
+            523.29,
+            323.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "property of the invariants Θd, namely [CJKL, Theorem 6.19]:",
+          "bbox": [
+            72.0,
+            325.81,
+            340.55,
+            336.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 6.35 The invariants Θd can be completely deﬁned via the Homﬂypt skein relation.",
+          "bbox": [
+            72.0,
+            345.36,
+            479.73,
+            356.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The above result derives from the fact that the invariants Θd satisfy a special skein relation [CJKL,",
+          "bbox": [
+            86.94,
+            364.92,
+            523.29,
+            376.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 6.8], which can only be applied on crossings involving two diﬀerent components (and thus,",
+          "bbox": [
+            72.0,
+            376.87,
+            523.36,
+            386.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "it cannot be applied, for example, on knots). Consider the standard Conway triple L+, L−, L0, as in the",
+          "bbox": [
+            72.0,
+            388.83,
+            523.28,
+            399.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "following ﬁgure, where diﬀerent colours represent diﬀerent components:",
+          "bbox": [
+            72.0,
+            400.78,
+            383.16,
+            410.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            209.97,
+            451.64,
+            215.61,
+            461.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            289.67,
+            451.64,
+            295.31,
+            461.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            369.37,
+            451.64,
+            375.01,
+            461.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\\",
+          "bbox": [
+            292.76,
+            499.78,
+            307.85,
+            504.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "βσ1−1",
+          "bbox": [
+            289.59,
+            501.82,
+            310.52,
+            509.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "L+ =",
+          "bbox": [
+            195.02,
+            503.35,
+            212.56,
+            509.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "βσ1",
+          "bbox": [
+            214.59,
+            503.35,
+            226.24,
+            509.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "L−=",
+          "bbox": [
+            269.74,
+            503.35,
+            287.55,
+            509.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "L0 = b",
+          "bbox": [
+            354.43,
+            503.35,
+            376.49,
+            511.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX7",
+            "CMMI5",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            372.27,
+            503.35,
+            376.21,
+            508.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            216.6,
+            505.56,
+            224.73,
+            510.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX7"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "Figure 6.2: The links in the special skein relation in open braid form.",
+          "bbox": [
+            146.19,
+            526.36,
+            449.13,
+            536.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Then the skein relation (6.27) for the framed link invariants Φd,D becomes:",
+          "bbox": [
+            86.94,
+            561.22,
+            415.05,
+            572.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            172.97,
+            579.09,
+            177.95,
+            589.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "qλDΦd,D(L−) = (q1/2 −q−1/2) Φd,D(L0) ,",
+          "bbox": [
+            253.94,
+            581.58,
+            434.09,
+            596.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            243.98,
+            583.99,
+            253.94,
+            593.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√qλD",
+          "bbox": [
+            162.38,
+            585.4,
+            187.82,
+            603.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Φd,D(L+) −",
+          "bbox": [
+            189.72,
+            585.7,
+            241.77,
+            596.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "which in turn yields the following skein relation for the invariants Θd:",
+          "bbox": [
+            72.0,
+            610.6,
+            376.36,
+            621.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            185.78,
+            627.55,
+            190.76,
+            637.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "qλDΘd(L−) = (q1/2 −q−1/2) Θd(L0) ,",
+          "bbox": [
+            258.21,
+            630.05,
+            421.28,
+            645.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            248.25,
+            632.45,
+            258.21,
+            642.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√qλD",
+          "bbox": [
+            175.2,
+            633.87,
+            200.63,
+            652.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Θd(L+) −",
+          "bbox": [
+            202.54,
+            634.16,
+            246.04,
+            645.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(6.30)",
+          "bbox": [
+            497.82,
+            634.29,
+            523.28,
+            644.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "where D = Z/dZ. Note that this is exactly the skein relation (6.28) of the Homﬂypt polynomial P(q, λD).",
+          "bbox": [
+            72.0,
+            657.45,
+            523.28,
+            670.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 6.36 With the old quadratic relations for the Yokonuma–Hecke algebra, we would not have",
+          "bbox": [
+            72.0,
+            679.17,
+            523.33,
+            689.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "been able to derive the special skein relation (6.30). The reason is that the skein relation (6.26) for the",
+          "bbox": [
+            72.0,
+            691.13,
+            523.32,
+            701.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "invariants Γd,D contains also diagrams Ls× of L+ with framings which cannot be collected together (to",
+          "bbox": [
+            72.0,
+            703.08,
+            523.3,
+            714.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "form L0) since they belong to diﬀerent components.",
+          "bbox": [
+            72.0,
+            715.04,
+            298.45,
+            725.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1Similar diagrammatic proofs can be given for the remaining ﬁve pairs.",
+          "bbox": [
+            83.09,
+            732.52,
+            347.45,
+            741.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6",
+            "CMR8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "60",
+          "bbox": [
+            292.66,
+            762.1,
+            302.62,
+            772.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

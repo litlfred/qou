@@ -12,6 +12,11 @@ volumes (see docs/audits/2026-07-11-quark-volume-provenance.md):
     ~474 ppm q shift vs a ppb-level pin) and is NOT a single clean Habiro term
     — a genuine additive higher-order term on top of the exact leading piece.
 
+CONVENTION NOTE (2026-11-15): (b) was written for the retired convention-C
+z = 4993/10000, whose residual was +0.63 %. Both the engine and the closed form
+now use convention D, z = q^3/(q^2+1), where the residual is about -18.5 %;
+the (b) narrative describes the C-frame number and has not been redone for D.
+
 Run: `cd computations && PYTHONPATH=. python3 probes/np_splitting_residual_probe.py`
 """
 from __future__ import annotations
@@ -49,7 +54,8 @@ def _logabs(fr: Fraction):
 def _closed_forms():
     q = sp.symbols("q", positive=True)
     h = q - 1 / q
-    z = sp.Rational(4993, 10000)
+    # Convention D (owner ruling 2026-11-15), matching HeckeRational.z.
+    z = q ** 3 / (q ** 2 + 1)
 
     def T(c, d):
         return sp.Matrix([[c * h + d, c], [c, d]])

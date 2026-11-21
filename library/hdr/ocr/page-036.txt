@@ -1,0 +1,61 @@
+er=0.
+
+Remark 4.6 Note that, according to Theorem [3-10] the Rouquier families do not depend on the actual
+values of the r;’s and r, but only on the essential hyperplanes to which they belong. Therefore, as long
+as r #0, we can always restrict to the case r = 1.
+
+It is obvious from the form of the Schur elements that the Rouquier families associated with no
+essential hyperplane are all trivial. We now have the following two results about the Rouquier families
+associated with the essential hyperplanes described above [Ch3] Propositions 3.15, 3.16, 3.17]:
+
+Proposition 4.7 Let A, € P(l,n). The following are equivalent :
+(1) E* and E* are in the same Rouquier family associated with the essential hyperplane kr-+r,—r;, = 0.
+
+(2) ® = p for alli ¢ {s,t} and Conte (, 0s), = Conte ys) (0) with respect to the weight system
+(0,k).
+
+(3) NO = pO for alli ¢ {s,t} and Conte,ais), oy = Conte (5) 4) with respect to the weight system
+(ms,mz1).
+
+(4) 1 = p for all i ¢ {s,t} and BQO) BLO HO) are in the same Rouquier family of the
+cyclotomic Ariki-Koike algebra of type Biya) obtained via the specialisation :
+
+qreu’,Qor u™,Qi 4 -u"
+
+Proposition 4.8 Let A, € P(l,n). Then E* and E* are in the same Rouquier family associated with
+the essential hyperplane r = 0 if and only if |\| = |u| for alli =0,...,1-1.
+
+Using the above results, we managed to prove that the functions a and A are constant on Rouquier
+families (for r # 0, this was already a known consequence of Proposition [4.5). We also created the
+program RBAK.g, available on my webpage [Ch-web]|, which allows the computation of the Rouquier
+families for any cyclotomic Ariki-Koike algebra on GAP3.
+
+Finally, the results above allowed for the correct determination of the Rouquier families of the cyclo-
+tomic Hecke algebras associated with the complex reflection groups G(I,p,n), with the use of Clifford
+theory, in the cases where n > 2, or n = 2 and p is odd [Ch5].
+
+4.4 Decomposition maps and canonical basic sets
+
+A few of the results in this section have been briefly discussed in They are repeated here for reasons
+of completeness.
+
+4.4.1 Classical setting
+
+We now consider the specialised Ariki-Koike algebra with relations
+(8—G2)(8—62)(8-G) =0, (te -G)(ti+1I)=0 fori=1..n—1, (44)
+
+where (so,..., 81-1) € Z! and e € Zyo.
+
+Geck and Jacon J ‘ have shown that, for a suitable choice of m, the correspond-
+ing function a™ := a"), where r can be any positive integer, yields a canonical basic set for the above
+specialised Ariki-Koike algebra. This canonical basic set consists of the so-called “Uglov [-partitions”
+Definition 3.2]. However, this does not work the other way round: not all cyclotomic Ariki-Koike
+algebras admit canonical basic sets. For a study about which values of m yield canonical basic sets, see
+[Ger].
+
+The key result in the determination of the decomposition matrix for Ariki-Koike algebras has been
+Ariki’s proof of the Lascoux-Leclerc-Thibon Conjecture ; which relates this matrix to
+the canonical basis matrix of the irreducible highest weight module of highest weight determined by
+(80,..-, 87-1) as a submodule of the Fock space in affine type A. The latter depends on a parameter
+
+33

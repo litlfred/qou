@@ -1,0 +1,1 @@
+A simplex T is conformal if and only if there exists a unique sphere sT which is tangent to all of the edges of T. Furthermore, the point of tangency of sT with the edge eij is at distance ri from vi.

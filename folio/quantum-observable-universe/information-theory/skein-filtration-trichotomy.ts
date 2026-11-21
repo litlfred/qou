@@ -24,4 +24,7 @@ export default remark({
     "unification",
     "information-theory",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Two consequences of the shared filtration are machine-checked in [`SkeinCounterfactual`](../lean/QOU/Information/SkeinCounterfactual.lean). The two legs: — `qCollatzSystem`, whose complexity measure is a caller-supplied parameter, and `vortexReductionSystem`, on which … The hitting-time descent measure ([`SkeinCounterfactual`](../lean/QOU/Information/SkeinCounterfactual.lean)). The $v_{[2]}$ refutation ([`collatz_vtwo_obstruction`](../lean/QOU/AppendixSurreals/collatz_vtwo_obstruction.lean))." },
+  ],
 });

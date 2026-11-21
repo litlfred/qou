@@ -1,0 +1,52 @@
+C.2 Residue forms and the residue integral theorem 489
+
+Lemma C.11 (Gelfand-Shilov reduction). [f w is a holomorphic d-form on
+M with smooth poles of order k > 2 on V and the representation w =
+P(z)/Q(z)' dz holds on a domain D then
+
+wae yy
+
+~ Ok ol
+
+me a
+-q{/——* —},—
+(= Ta oH
+for some holomorphic forms and 6, where 6; = @ + d/(k — 1). Thus, any
+
+d-form on M with smooth poles of order k is cohomologous to a d-form on M
+with smooth poles of order k — 1.
+
+Proof See [AY83, Lemma 17.1]. oO
+
+If w is any d-form on M with smooth poles then Lemma C.11 implies w
+is cohomologous to a d-form w’ on M with smooth simple poles, and we
+define the residue class [Res(w)] of w to be the class [Res(w’)] € H4'(V.).
+To simplify notation we usually write Res(w) for the class [Res(w)]. As our
+integrals of residues depend only on their cohomology classes, there is no harm
+in this abuse of notation. This inductive definition gives the following corollary
+of Theorem C.9.
+
+Corollary C.12. Suppose the assumptions of Theorem C.9 hold, except that w
+can have smooth poles of any order on V. If a and B are d-cycles in M whose
+projections to Ha(C4) are equal then the identity
+
+fo- fo=2mi f Res(w)
+a IB INTla$:V]
+
+Just as for smooth poles, there is an explicit formula for the residue of a
+form with higher order poles. We state the following theorem for the types of
+integrands that arise in our asymptotic analyses.
+
+still holds.
+
+Lemma C.13. Let dz; denote the (d—1)-form dz, A+++ A dzp-1 A dZk41 A+++ A
+dzg. Wherever the functions P(z)z~" and Q(z) are analytic and the partial
+derivative Q.,(Z) does not vanish,
+
+Res (= aot a:| =z "®,,(z) (C.2.4)
+
+for a polynomial
+
+aif —e \ -@-1) P(2) _
+(2) = [Ao (; "ie Gee t Olt ‘J dz
+

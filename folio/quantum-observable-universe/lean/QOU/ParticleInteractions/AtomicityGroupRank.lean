@@ -60,8 +60,8 @@ To lift `rank 𝔤 ≤ 1` (Lie) to `rank G ≤ 1` (group) one needs precisely
 `RankGroupEqRankLie` (the open theorem `rank G = rank Lie(G)`), then proves the
 downstream implication. It does **not** construct algebraic-group rank theory.
 
--- Ref: [manuscript] conj:binding-manybody-eq-jet-filtration (atomicity); def:tannaka-dual
--- Ref: [manuscript] rank G = rank Lie(G): Milne, *Algebraic Groups*, CUP 2017, §17
+-- Ref: [leitner2026] conj:binding-manybody-eq-jet-filtration (atomicity); def:tannaka-dual
+-- Ref: [leitner2026] rank G = rank Lie(G): Milne, *Algebraic Groups*, CUP 2017, §17
 --       (maximal tori); Springer, *Linear Algebraic Groups*, 2nd ed., §6–§7 (tori,
 --       Cartan subgroups, and their Lie algebras) — standard, not in Mathlib.
 -/
@@ -109,7 +109,7 @@ requires the maximal-torus / Lie-functor theory Mathlib lacks.
 downstream result depending on it is a *rigorous conditional* (proved modulo this class),
 never an unconditional claim.
 
--- Ref: [manuscript] rank G = rank Lie(G); see file docstring for standard references. -/
+-- Ref: [leitner2026] rank G = rank Lie(G); see file docstring for standard references. -/
 class RankGroupEqRankLie (R L G : Type*) [CommRing R] [Nontrivial R] [LieRing L]
     [LieAlgebra R L] [Module.Finite R L] [Module.Free R L]
     [AlgebraicGroupRank G] : Prop where

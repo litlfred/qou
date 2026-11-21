@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-018",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Other applications",
-  "pageStart": 41,
-  "pageEnd": 42,
-  "text": "../sections/sec-018-33-other-applications.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0012035v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0012035v3",
+  "title": "Three-dimensional topological quantum field theory",
+  "pageStart": 38,
+  "pageEnd": 41,
+  "text": "../sections/sec-018-32-three-dimensional-topological-quantum-field-t.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0012035v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0012035v3/manifest.jsonld",
   "provenance": "ingested"
 }

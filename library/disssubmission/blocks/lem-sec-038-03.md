@@ -1,0 +1,1 @@
+Let u0 ∈U(C). Then there is a non-empty Zariski-open subset S′ ⊆S with the following property: For all points u ∈f −1(S′(C)), any identiﬁcation Lu0 ∼= Lu of the stalks gives rise to an embedding of the monodromy groups such that the following diagram commutes. G(u0)  ∃ /_ _ _ _ _ _ _  _  G(u)  _  AutC(Lu0) ∼= / AutC(Lu)

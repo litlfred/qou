@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.979
 latex_coverage_ratio: 0.986
+doc_brief: "arXiv:math/0203003v2 [math.QA] 24 Apr 2002 — 8 sections: Front matter; Introduction; Representations of Quantum Dynamic"
 ---
 To prove the theorem stated in the introduction, it remains to identify the category $\text{\bf Rep}_{\text{f}}(R_V)$ for $V$ being the vector representation of $U_q({\widehat{\mathfrak{s}}l}_n)$ with the category of representations of Felder's elliptic quantum group. To construct such an identification is the goal of this section. It is achieved by using the fact that the corresponding dynamical R-matrices are gauge equivalent [@Mou01].
 

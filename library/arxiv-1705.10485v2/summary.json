@@ -3,321 +3,146 @@
  "doc_id": "arxiv-1705.10485v2",
  "source_sha256": "b33759def53c6a43",
  "brief": "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ",
- "extended": "**Mod-φ convergence, II: Estimates on the speed of convergence**\n\n*Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali*\n\n53 pp, 62 sections.\n\n**Abstract.** In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ convergence. Namely, we deﬁne a notion ofzone of control, closely related to mod-φ convergence, and we prove estimates of Berry–Esseen type under this hypothesis. Applications include: • the winding number of a planar Brownian motion; • classical approximations of stable laws by compound Poisson laws; • examples stemming from determinantal point processes (characteristic polynomials of random matri- ces and zeroes of random analytic functions); • sums of variables with an underlying dependency graph (for which we recover a result of Rinott, obtained by Stein’s method); • the magnetization in thed-dimensional Ising model; • and functionals of Markov chains.\n\n**Outline.** 1.1 Mod-φ convergence; 2 Valentin Féray, Pierre-Loïc Méliot, and Ashk; 1 Introduction; 1.2 Results and outline of the paper; 4 Valentin Féray, Pierre-Loïc Méliot, and Ashk; 1.3 Stable distributions and mod-stable conver; 6 Valentin Féray, Pierre-Loïc Méliot, and Ashk; 2 Speed of convergence estimates; 2.1 The notion of zone of control; 8 Valentin Féray, Pierre-Loïc Méliot, and Ashk; 2.2 Spaces of test functions; 0 (R); 0 (R) of; 10 Valentin Féray, Pierre-Loïc Méliot, and Ash; 12 Valentin Féray, Pierre-Loïc Méliot, and Ash; 2.3 Estimates for test functions; 14 Valentin Féray, Pierre-Loïc Méliot, and Ash; 2.4 Smoothing techniques",
+ "extended": "**Mod-φ convergence, II: Estimates on the speed of convergence**\n\n*Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali*\n\n53 pp, 27 sections.\n\n**Abstract.** In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ convergence. Namely, we deﬁne a notion of zone of control, closely related to mod-φ convergence, and we prove estimates of Berry–Esseen type under this hypothesis. Applications include: • the winding number of a planar Brownian motion; • classical approximations of stable laws by compound Poisson laws; • examples stemming from determinantal point processes (characteristic polynomials of random matri- ces and zeroes of random analytic functions); • sums of variables with an underlying dependency graph (for which we recover a result of Rinott, obtained by Stein’s method); • the magnetization in the d-dimensional Ising model; • and functionals of Markov chains.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Mod-$\\phi$ convergence; 1.2 Results and outline of the paper; 1.3 Stable distributions and mod-stable conver; 2 Speed of convergence estimates; 2.1 The notion of zone of control; 2.2 Spaces of test functions; 2.3 Estimates for test functions; 2.4 Smoothing techniques; 2.5 Bounds on the Kolmogorov distance; 3 Examples with an explicit Fourier transform; 3.1 Sums of independent random variables; 3.2 Winding number of a planar Brownian motion; 3.3 Approximation of a stable law by compound ; 3.4 Convergence of Ornstein--Uhlenbeck process; 3.5 Logarithms of characteristic polynomials o; 4 Cumulants and dependency graphs",
  "tokens": {
   "brief": 49,
-  "extended": 403
+  "extended": 408
  },
  "sections": [
   {
-   "id": "sec-000-11-mod-φ-convergence",
-   "title": "Mod-φ convergence",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-2-valentin-féray-pierre-loïc-méliot-and-ashkan-n",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-mod-phi-convergence",
+   "title": "Mod-$\\phi$ convergence",
    "pages": "1-2"
   },
   {
-   "id": "sec-003-12-results-and-outline-of-the-paper",
+   "id": "sec-002-12-results-and-outline-of-the-paper",
    "title": "Results and outline of the paper",
-   "pages": "2-4"
+   "pages": "2-5"
   },
   {
-   "id": "sec-004-4-valentin-féray-pierre-loïc-méliot-and-ashkan-n",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-005-13-stable-distributions-and-mod-stable-convergen",
+   "id": "sec-003-13-stable-distributions-and-mod-stable-convergen",
    "title": "Stable distributions and mod-stable convergence",
    "pages": "5-6"
   },
   {
-   "id": "sec-006-6-valentin-féray-pierre-loïc-méliot-and-ashkan-n",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-007-2-speed-of-convergence-estimates",
+   "id": "sec-004-2-speed-of-convergence-estimates",
    "title": "Speed of convergence estimates",
-   "pages": "6-6"
+   "pages": "6-7"
   },
   {
-   "id": "sec-008-21-the-notion-of-zone-of-control",
+   "id": "sec-005-21-the-notion-of-zone-of-control",
    "title": "The notion of zone of control",
-   "pages": "6-8"
+   "pages": "7-8"
   },
   {
-   "id": "sec-009-8-valentin-féray-pierre-loïc-méliot-and-ashkan-n",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-010-22-spaces-of-test-functions",
+   "id": "sec-006-22-spaces-of-test-functions",
    "title": "Spaces of test functions",
-   "pages": "8-9"
+   "pages": "8-12"
   },
   {
-   "id": "sec-011-0-r",
-   "title": "(R)",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-012-0-r-of",
-   "title": "(R) of",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-013-10-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "10-12"
-  },
-  {
-   "id": "sec-014-12-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-015-23-estimates-for-test-functions",
+   "id": "sec-007-23-estimates-for-test-functions",
    "title": "Estimates for test functions",
    "pages": "12-14"
   },
   {
-   "id": "sec-016-14-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-017-24-smoothing-techniques",
+   "id": "sec-008-24-smoothing-techniques",
    "title": "Smoothing techniques",
-   "pages": "14-14"
+   "pages": "14-17"
   },
   {
-   "id": "sec-018-1-the-kernelρ-is-non-negative-with",
-   "title": "The kernelρ is non-negative, with",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-019-3-the-functionsρ-and-ˆρ-are-even-and",
-   "title": "The functionsρ and ˆρ are even, and",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-020-2-2ξ-finallysincx-min1-1",
-   "title": "(2−|ξ|)+. Finally,sinc(x)≤ min(1, 1",
-   "pages": "14-15"
-  },
-  {
-   "id": "sec-021-2-one-hasf1x-1f1x-and-for-allk-0",
-   "title": "One hasf1(x) = 1−f1(−x), and for allK≥ 0,",
-   "pages": "15-16"
-  },
-  {
-   "id": "sec-022-16-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "16-17"
-  },
-  {
-   "id": "sec-023-25-bounds-on-the-kolmogorov-distance",
+   "id": "sec-009-25-bounds-on-the-kolmogorov-distance",
    "title": "Bounds on the Kolmogorov distance",
-   "pages": "17-17"
-  },
-  {
-   "id": "sec-024-3-then-there-exists-a-constantcαcvkk-1-such-that",
-   "title": "Then, there exists a constantC(α,c,v,K,K 1) such that",
    "pages": "17-18"
   },
   {
-   "id": "sec-025-18-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-026-2-mod-gaussian-convergence-andv-w-3-the-maximal",
-   "title": "(mod-Gaussian convergence), andv = w = 3. The maximal value",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-027-2-k1-1",
-   "title": "K1 + 1",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-028-3-examples-with-an-explicit-fourier-transform",
+   "id": "sec-010-3-examples-with-an-explicit-fourier-transform",
    "title": "Examples with an explicit Fourier transform",
    "pages": "18-18"
   },
   {
-   "id": "sec-029-31-sums-of-independent-random-variables",
+   "id": "sec-011-31-sums-of-independent-random-variables",
    "title": "Sums of independent random variables",
    "pages": "18-20"
   },
   {
-   "id": "sec-030-20-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-031-2-therefore",
-   "title": "Therefore,",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-032-32-winding-number-of-a-planar-brownian-motion",
+   "id": "sec-012-32-winding-number-of-a-planar-brownian-motion",
    "title": "Winding number of a planar Brownian motion",
    "pages": "20-21"
   },
   {
-   "id": "sec-033-14-v-féra-y-p--l-méliot-and-a-nikeghbali",
-   "title": "V . FÉRA Y, P .-L. MÉLIOT, AND A. NIKEGHBALI",
-   "pages": "21-21"
-  },
-  {
-   "id": "sec-034-33-approximation-of-a-stable-law-by-compound-poi",
+   "id": "sec-013-33-approximation-of-a-stable-law-by-compound-poi",
    "title": "Approximation of a stable law by compound Poisson laws",
-   "pages": "21-22"
+   "pages": "21-24"
   },
   {
-   "id": "sec-035-22-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "22-24"
-  },
-  {
-   "id": "sec-036-24-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-037-34-convergence-of-ornsteinuhlenbeck-processes-to",
-   "title": "Convergence of Ornstein–Uhlenbeck processes to stable laws",
+   "id": "sec-014-34-convergence-of-ornstein--uhlenbeck-processes",
+   "title": "Convergence of Ornstein--Uhlenbeck processes to stable laws",
    "pages": "24-26"
   },
   {
-   "id": "sec-038-26-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "26-26"
-  },
-  {
-   "id": "sec-039-35-logarithms-of-characteristic-polynomials-of-r",
+   "id": "sec-015-35-logarithms-of-characteristic-polynomials-of-r",
    "title": "Logarithms of characteristic polynomials of random matrices",
    "pages": "26-28"
   },
   {
-   "id": "sec-040-28-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "28-28"
-  },
-  {
-   "id": "sec-041-4-cumulants-and-dependency-graphs",
+   "id": "sec-016-4-cumulants-and-dependency-graphs",
    "title": "Cumulants and dependency graphs",
    "pages": "28-28"
   },
   {
-   "id": "sec-042-41-cumulants-zone-of-control-and-kolmogorov-boun",
+   "id": "sec-017-41-cumulants-zone-of-control-and-kolmogorov-boun",
    "title": "Cumulants, zone of control and Kolmogorov bound",
-   "pages": "28-30"
+   "pages": "28-31"
   },
   {
-   "id": "sec-043-30-valentin-féray-pierre-loïc-méliot-and-ashkan",
-   "title": "Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali",
-   "pages": "30-31"
-  },
-  {
-   "id": "sec-044-42-dependency-graphs",
+   "id": "sec-018-42-dependency-graphs",
    "title": "Dependency graphs",
    "pages": "31-35"
   },
   {
-   "id": "sec-045-1-ifdn-onn12ε-for-ε-0-thenyn-snnn",
-   "title": "IfDn =O((Nn)1/2−ε) for ε> 0, thenYn = Sn√Nn",
-   "pages": "35-35"
-  },
-  {
-   "id": "sec-046-43-unbounded-random-variables-and-truncation-met",
+   "id": "sec-019-43-unbounded-random-variables-and-truncation-met",
    "title": "Unbounded random variables and truncation methods",
-   "pages": "35-37"
+   "pages": "35-40"
   },
   {
-   "id": "sec-047-0-otherwise-using-hölder-and-bienaymé-chebyshev",
-   "title": "Otherwise, using Hölder and Bienaymé-Chebyshev inequalities,",
-   "pages": "37-39"
-  },
-  {
-   "id": "sec-048-2-d",
-   "title": "( D",
-   "pages": "39-40"
-  },
-  {
-   "id": "sec-049-5-ising-model-and-markov-chains",
+   "id": "sec-020-5-ising-model-and-markov-chains",
    "title": "Ising model and Markov chains",
    "pages": "40-40"
   },
   {
-   "id": "sec-050-51-weighted-graphs-and-spanning-trees",
+   "id": "sec-021-51-weighted-graphs-and-spanning-trees",
    "title": "Weighted graphs and spanning trees",
    "pages": "40-41"
   },
   {
-   "id": "sec-051-52-uniform-weighted-dependency-graphs",
+   "id": "sec-022-52-uniform-weighted-dependency-graphs",
    "title": "Uniform weighted dependency graphs",
    "pages": "41-42"
   },
   {
-   "id": "sec-052-53-magnetization-of-the-ising-model",
+   "id": "sec-023-53-magnetization-of-the-ising-model",
    "title": "Magnetization of the Ising model",
    "pages": "42-44"
   },
   {
-   "id": "sec-053-54-functionals-of-markov-chains",
+   "id": "sec-024-54-functionals-of-markov-chains",
    "title": "Functionals of Markov chains",
-   "pages": "44-44"
+   "pages": "44-49"
   },
   {
-   "id": "sec-054-2-kr-θp-trt1",
-   "title": "Kr (θP )tr−t1,",
-   "pages": "44-46"
-  },
-  {
-   "id": "sec-055-2-θp-trt1",
-   "title": "(θP )tr−t1",
-   "pages": "46-46"
-  },
-  {
-   "id": "sec-056-2-θp-trt1",
-   "title": "(θP )tr−t1. ⊓ ⊔",
-   "pages": "46-48"
-  },
-  {
-   "id": "sec-057-1-when-varsn",
-   "title": "When Var(Sn)",
-   "pages": "48-49"
-  },
-  {
-   "id": "sec-058-2-this-convergence-in-law-happens-as-soon-asvars",
-   "title": "This convergence in law happens as soon asVar(Sn)",
-   "pages": "49-49"
-  },
-  {
-   "id": "sec-059-55-the-case-of-linear-functionals-of-the-empiric",
+   "id": "sec-025-55-the-case-of-linear-functionals-of-the-empiric",
    "title": "The case of linear functionals of the empirical measure",
-   "pages": "49-50"
-  },
-  {
-   "id": "sec-060-5-setf1-1-f2-1-and-f3-0",
-   "title": "Setf(1) = 1, f(2) =−1 and f(3) = 0;",
-   "pages": "50-52"
-  },
-  {
-   "id": "sec-061-references",
-   "title": "References",
-   "pages": "52-53"
+   "pages": "49-53"
   }
  ],
  "provenance": {

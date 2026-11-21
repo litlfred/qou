@@ -2,77 +2,82 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0110009v3",
  "source_sha256": "bb0c97f2de33b0dd",
- "brief": "New upper bounds on sphere packings I — We develop an analogue for sphere packing of the linear progr amming bounds for error-correcting codes, and use it to prove upper bounds for the density of",
- "extended": "**New upper bounds on sphere packings I**\n\n*By Henry Cohn and Noam Elkies **\n\n26 pp, 13 sections.\n\n**Abstract.** We develop an analogue for sphere packing of the linear progr amming bounds for error-correcting codes, and use it to prove upper bounds for the density of sphere packings, which are the best bounds known a t least for di- mensions 4 through 36. We conjecture that our approach can be used to solve the sphere packing problem in dimensions 8 and 24.\n\n**Outline.** Abstract; 1 Introduction; 2 Lattices, Fourier transforms, and Poisson su; 3 Principal theorems; 4 Homogeneous spaces; 5 Conditions for a sharp bound; 6 Stationary points; 7 Numerical results; 8 Uniqueness; Acknowledgements; References; 2 These two; 2 Lattices, F ourier transforms, and Poisson s",
+ "brief": "arXiv:math/0110009v3 [math.MG] 3 Sep 2003 — We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of",
+ "extended": "**arXiv:math/0110009v3 [math.MG] 3 Sep 2003**\n\n*By Henry Cohn and Noam Elkies**\n\n26 pp, 14 sections.\n\n**Abstract.** We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of sphere packings, which are the best bounds known at least for di- mensions 4 through 36. We conjecture that our approach can be used to solve the sphere packing problem in dimensions 8 and 24.\n\n**Outline.** Front matter; Abstract; Contents; 1 Introduction; 2 Lattices, Fourier transforms, and Poisson su; 3 Principal theorems; 4 Homogeneous spaces; 5 Conditions for a sharp bound; 6 Stationary points; 7 Numerical results; 8 Uniqueness; Appendix A Technicalities about density; Appendix B Other convex bodies; Appendix C Numerical data",
  "tokens": {
-  "brief": 48,
-  "extended": 193
+  "brief": 49,
+  "extended": 201
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-abstract",
    "title": "Abstract",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-001-contents",
+   "title": "Contents",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "1-4"
   },
   {
-   "id": "sec-002-2-lattices-fourier-transforms-and-poisson-summat",
+   "id": "sec-003-2-lattices-fourier-transforms-and-poisson-summat",
    "title": "Lattices, Fourier transforms, and Poisson summation",
-   "pages": "1-1"
+   "pages": "4-6"
   },
   {
-   "id": "sec-003-3-principal-theorems",
+   "id": "sec-004-3-principal-theorems",
    "title": "Principal theorems",
-   "pages": "1-1"
+   "pages": "6-8"
   },
   {
-   "id": "sec-004-4-homogeneous-spaces",
+   "id": "sec-005-4-homogeneous-spaces",
    "title": "Homogeneous spaces",
-   "pages": "1-1"
+   "pages": "8-10"
   },
   {
-   "id": "sec-005-5-conditions-for-a-sharp-bound",
+   "id": "sec-006-5-conditions-for-a-sharp-bound",
    "title": "Conditions for a sharp bound",
-   "pages": "1-1"
+   "pages": "10-12"
   },
   {
-   "id": "sec-006-6-stationary-points",
+   "id": "sec-007-6-stationary-points",
    "title": "Stationary points",
-   "pages": "1-1"
+   "pages": "12-15"
   },
   {
-   "id": "sec-007-7-numerical-results",
+   "id": "sec-008-7-numerical-results",
    "title": "Numerical results",
-   "pages": "1-1"
+   "pages": "15-18"
   },
   {
-   "id": "sec-008-8-uniqueness",
+   "id": "sec-009-8-uniqueness",
    "title": "Uniqueness",
-   "pages": "1-1"
+   "pages": "18-20"
   },
   {
-   "id": "sec-009-acknowledgements",
-   "title": "Acknowledgements",
-   "pages": "1-1"
+   "id": "sec-010-appendix-a-technicalities-about-density",
+   "title": "Technicalities about density",
+   "pages": "20-21"
   },
   {
-   "id": "sec-010-references",
-   "title": "References",
-   "pages": "1-3"
+   "id": "sec-011-appendix-b-other-convex-bodies",
+   "title": "Other convex bodies",
+   "pages": "21-22"
   },
   {
-   "id": "sec-011-2-these-two",
-   "title": "These two",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-012-2-lattices-f-ourier-transforms-and-poisson-summa",
-   "title": "Lattices, F ourier transforms, and Poisson summation",
-   "pages": "4-26"
+   "id": "sec-012-appendix-c-numerical-data",
+   "title": "Numerical data",
+   "pages": "22-26"
   }
  ],
  "provenance": {

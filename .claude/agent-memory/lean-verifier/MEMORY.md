@@ -22,6 +22,17 @@ import closure. Measured: 2540 fresh / 190 changed / 253 no-olean of 2983;
 dirty closure 628; only **76** fell in the blocks' cone (rebuilt green in 3.5 min).
 Driver: `scripts/lean-blocks-baseline/` (L3, bean `qou-1f1w`).
 
+## TRAP — after a cache restore, `lean-direct-cone.sh` WITHOUT `-B` calls stale oleans "up-to-date" (2026-10-12)
+
+Measured: on a fresh `lake-cache/qou-v4-24-0` restore, the cone tool reported all 21 modules of
+#7612 `up-to-date` (313/313), yet `lean` on `QOU/Hecke/MarkovBondLetterColimit.lean` failed with
+7 type errors — the restored `SchurWeyl/MarkovTraceInstance.olean` predated `e0adbb6c347`
+(`ocneanuMarkovTrace` generalised from ℝ to any field). `scripts/lean_freshness.py` trusts the
+restored olean. **Verify a PR against current main with `-B`** (forced rebuild of the QOU cone;
+187 modules, 643 s, 4 jobs) or at least compile each changed file directly — a green
+"up-to-date" after a restore is evidence about the cache, not the source. A PR (#7750) merged on
+the unforced check before this was caught; the `-B` rebuild later confirmed it. (Stream 4, #7735.)
+
 ## TRAP — cache tarball stores `content/…` paths; the tree is `folio/…` (2026-10-05)
 
 Extract with `tar xzf - --transform 's,^content/,folio/,'`, or the 2703 QOU oleans
@@ -818,3 +829,5 @@ locations, warn on a running build).
 **First move in a fresh session: `pgrep -f 'lake build'`.** Full detail, and why
 §17's union mirror is still the stronger tool than ranking:
 `verification-harness.md` §17a.
+
+- **TRAP (2026-10-12, PR #7747): a partial extra olean root SHADOWS the full one.** Lean resolves a module by the FIRST `LEAN_PATH` root that contains its top-level directory (`Mathlib/`), not the first that contains the file. So prepending a scratch dir holding only 2 newly built Mathlib oleans made every other Mathlib import fail with "object file … does not exist". **Fix:** `cp -al` the whole `.lake/packages/mathlib/.lake/build/lib/lean/Mathlib` into the scratch root, unlink each target before writing it with `lean -o`, then build into it. Also: the root `.lake/packages/mathlib` holds oleans only, with no `.lean` sources; sources are in `folio/quantum-observable-universe/lean/.lake/packages/mathlib` (same rev, f897ebc). A module that no QOU file imported (e.g. `GroupTheory.GroupExtension.Defs`, `GroupTheory.SemidirectProduct`) is ABSENT from the cache and must be built this way.

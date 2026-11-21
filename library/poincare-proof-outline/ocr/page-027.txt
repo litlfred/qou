@@ -1,0 +1,69 @@
+qed
+qed
+
+Our construction (in homogenous coordinates) always yields an h-line that contain two starting points (this
+also holds for all degenerate cases except when points are the same).
+
+lemma poincare-line [simp]:
+assumes z 4 w
+shows on-circline (poincare-line z w) z
+on-circline (poincare-line z w) w
+proof—
+have on-circline (poincare-line z w) z A on-circline (poincare-line z w) w
+using assms
+proof (transfer, transfer)
+fix zw
+assume vz: z # vec-zero w # vec-zero
+obtain z/ 22 wl w2 where
+zw: (21, 22) = z (wl, w2)=w
+by (cases z, cases w, auto)
+
+let ?den = z1x*cnj 22*cnj wl*xw2 — wlxcnj w2x*cnj z1*22
+have «: cor (Re (i * ?den)) =i * ?den
+proof —
+have cnj ?den = —?den
+by auto
+hence is-imag ?den
+using eq-minus-cnj-iff-imag|of ?den]
+by simp
+thus ?thesis
+using complez-of-real-Re{of i * ?den]
+by simp
+qed
+show on-circline-cmat-cvec (poincare-line-cvec-cmat zw) z A
+on-circline-cmat-cvec (poincare-line-cvec-cmat z w) w
+unfolding poincare-line-cvec-cmat-def mk-poincare-line-cmat-def
+apply (subst zw[symmetric])+
+unfolding Let-def prod.case
+apply (subst *)+
+by (auto simp add: vec-cnj-def field-simps)
+qed
+thus on-circline (poincare-line z w) z on-circline (poincare-line z w) w
+by auto
+qed
+
+lemma poincare-line-circline-set [simp]:
+assumes z 4 w
+shows z € circline-set (poincare-line z w)
+w € circline-set (poincare-line z w)
+using assms
+by (auto simp add: circline-set-def)
+
+When the points are different, the constructed line matrix always has a negative determinant
+
+lemma poincare-line-type:
+assumes z 4 w
+shows circline-type (poincare-line z w) = —1
+proof—
+have 3 a b.a#bA {a, b} C circline-set (poincare-line z w)
+using poincare-line[of z w] assms
+unfolding circline-set-def
+by (rule-tac =z in exl, rule-tac c=w in eal, simp)
+thus ?thesis
+using circline-type|of poincare-line z w]
+using circline-type-pos-card-eq0 [of poincare-line z w]
+using circline-type-zero-card-eq1 [of poincare-line z w]
+by auto
+qed
+
+27

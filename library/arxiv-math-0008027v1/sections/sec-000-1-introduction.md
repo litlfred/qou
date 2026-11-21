@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 0.889
+doc_brief: "arXiv:math/0008027v1 [math.GT] 3 Aug 2000 — I follow Y."
 ---
 []{#sec:introduction label="sec:introduction"} In [@Kashaev:MODPLA95] R. Kashaev introduced a link invariant by using the quantum dilogarithm and after some concrete calculations for the knots $4_1$, $5_2$, and $6_1$, he conjectured in [@Kashaev:LETMP97] the asymptotic behavior of his invariant determines the hyperbolic volume for hyperbolic links. More precisely his conjecture is as follows. For an integer $N\ge2$ let $\langle{L}\rangle_N$ be the Kashaev invariant of a link $L$.
 

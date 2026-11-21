@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/s10955-022-02992-6/blocks/prose-sec-017",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "A Proof of Lemma 2.5",
+  "pageStart": 41,
+  "pageEnd": 46,
+  "text": "../sections/sec-017-a-proof-of-lemma-25.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "provenance": "ingested"
+}

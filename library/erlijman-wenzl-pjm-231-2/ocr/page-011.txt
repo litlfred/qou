@@ -1,0 +1,52 @@
+SUBFACTORS FROM BRAIDED C* TENSOR CATEGORIES 369
+
+in the last section. For normalized rigidity morphisms, we can now define the
+dimension of a simple object X to be equal to the scalar
+
+dim(X) = ixix = dxdy.
+
+Of course, we would like the dimension to be additive with respect to a decomposi-
+tion X = @ W;, with the W; being simple objects. To do so, we define morphisms
+o; : Wi > X such that $6; = 5;; lw, and >); 61% = 1x, and we define
+
+(2-1) ix=) @@d)iw,, dx=>_ dw,GF® $9).
+
+where the ¢; are the analogous morphisms for the decomposition of the dual X¥ =
+> @; W;. Then it is easy to check that these morphisms satisfy the rigidity axiom,
+and they are normalized if the ¢; are so. Moreover, one also checks that these
+morphisms yield the desired additivity property of the dimension function.
+
+Additionally, the dimension function should be multiplicative with respect to
+the tensor product. If X @ Y is a tensor product of simple objects X and Y, we
+obtain normalized rigidity morphisms
+
+ixgy = (lx @iy @ly)ix, dxey =dy(1y @dx @ 1x).
+
+It can be shown that these rigidity morphisms define the same dimension as the one
+
+we obtain from the decomposition X@Y =@, W;, with W, simple and with rigidity
+
+morphisms as defined in the last paragraph. It will be convenient to represent the
+rigidity morphisms ix and dy, by the following pictures:
+
+1
+
+dx —-~ xX x
+
+f \ ,
+
+X X ~ __“ix
+
+1
+Figure 1. Rigidity morphisms.
+
+In a * tensor category we define the categorical trace of an endomorphism f €
+End(X) by
+(2-2) Trx(f) =ix 0 (f ® 1x) oix € End(4).
+
+If Z=@_m;X;, where X; is a simple object, and m; is the multiplicity of X; in Z,
+we can write an element f € End(Z) in the form f = @ fj, where f; € End(m;X;)
+can be viewed as an m; x m; matrix. Defining rigidity morphisms iz, dz with
+respect to this decomposition, and using (2-1), one checks easily that
+
+Trz(f) = )_ dim(X;) Tr(fi),

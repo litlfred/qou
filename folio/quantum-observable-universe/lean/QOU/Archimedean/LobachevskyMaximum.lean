@@ -53,7 +53,7 @@
 
   -- Ref: [milnor1982] Hyperbolic geometry: the first 150 years (the regular
   --      ideal simplex maximises volume)
-  -- Ref: [manuscript] beans qou-idvt (T4), qou-7y3g
+  -- Ref: [leitner2026] beans qou-idvt (T4), qou-7y3g
 -/
 
 import QOU.Archimedean.IdealTetrahedronVolumeConcavity

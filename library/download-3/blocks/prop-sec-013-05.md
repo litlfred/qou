@@ -1,0 +1,1 @@
+Let g be a continuous <L[[h]]- linear automorphism of the algebra A Λ(R 2π)o. Then there exists an element φ = φ0 + f ί φ ] ^ ---- in A*(IR 2' 7)0 such that: i) φo E {*!,...,*„, cι,...,ς, 7} 2; ii) g ( f ) = ev φ / - e~τ* for any / E A Λ(R 2/7)0.

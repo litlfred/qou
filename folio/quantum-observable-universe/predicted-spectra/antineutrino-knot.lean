@@ -13,7 +13,7 @@ carried by orientation (framing).
 LaTeX label: `def:antineutrino-knot`
 
 ## References
-- [manuscript] §6/antineutrino-knot
+- [leitner2026] §6/antineutrino-knot
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -28,7 +28,7 @@ namespace QOU.Archimedean
 noncomputable section
 
 /-- The unknot is amphichiral: mirror ≅ original as unoriented knots. -/
--- Ref: [manuscript] §6/antineutrino-knot
+-- Ref: [leitner2026] §6/antineutrino-knot
 theorem unknot_amphichiral :
     ({} : Antineutrino).volume = (0 : R_q) ∧
     ({} : Antineutrino).crossing_number = 0 ∧

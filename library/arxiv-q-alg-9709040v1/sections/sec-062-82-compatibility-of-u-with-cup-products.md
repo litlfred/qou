@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-062-82-compatibility-of-u-with-cup-products
 section_title: "Compatibility of U with cup-products"
 section_number: 8.2
@@ -8,6 +8,7 @@ pages: 37-37
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Theorem. The quasi-isomorphism U constructed in section 6 maps the cup-product for Tpoly(X) to the
 cup-product for Dpoly(X).

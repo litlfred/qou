@@ -1,0 +1,1 @@
+The functors P →P and P ,→D are exact functors between semisimple abelian categories. The image of a simple object P ∈P inside P is either simple or isomorphic to zero, and if Λ is algebraically closed, then the latter case occurs if and only if χ(P) = 0.

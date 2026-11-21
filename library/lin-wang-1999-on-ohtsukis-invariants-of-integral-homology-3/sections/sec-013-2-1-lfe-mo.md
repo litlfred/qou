@@ -1,0 +1,93 @@
+---
+doc_id: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3
+doc_title: "On Ohtsuki's invariants of integral homology 3-spheres"
+section_id: sec-013-2-1-lfe-mo
+section_title: "'~,~1 (:l')fe m=o"
+section_number: 2
+pages: 17-18
+source_pdf: lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf
+source_sha256: 3fb38d4cfd20d4fb
+toc_source: inferred
+doc_brief: "On Ohtsuki's invariants of integral homology 3-spheres — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres"
+---
+"~,~1 (:l')fe m=o 
+i 
+_~-'~fz2 22ti! q2+ 
+~ 89 
+l=l 
+r-__~3 
+2 
+
+9 ~ 
+gl,m(q- 1)re+l--i--1 T O((q- 
+1)'~A-i;Z(r)). 
+rn~0 
+By changing the order of summations in the third term, and combining the sum with l = 2l' in 
+the new order of summations with the fourth term, we get 
+(~.f) q~ (q + 1) i Fi,o([2l)(q 
+l) -i 
+Sr,f,i(q) =.--'::'-- 
+i 
++ ~ 
+f' (Z//~)..' q~+89189 (q + 1) i F,,t([2])(q- 1) -i-1+' 
+l=1 
+• 
+i 
++ ~ 
+~ 
+ft+t' (-2)t (/) 
+q~+89189 
+2P 
+(q+ i)iFiJ([21) 
+/'=1 /=2U+1 
+r-3 
+-'5-- 
+
+9 ~ 
+gl',m(q -- 1) m-l'-i-l+l 
+m=O 
+i 
++(q-/-1)s 
+/=1 
+r-3 
+2 
+E 
+m~0 
+= (-f) q~ (q + 1) i 
+221 
+i.~..~+L_l 
+__q~-~ 
+~ 
+(q+ O'&~([21) 
+i! 
+gz,m(q - 1) re+l-i-1 + O((q - 1):-~-i; Z(r)) 
+t~,o(N)(q- i) -~ 
+310 
+Xiaosong Lin et al. 
+i 
++ E ft (--2) t q~+89189 (q + 1)i Fi,l([2l)(q- 1) -i-1+1 
+--T-., 
+I=1 
+i 
+i! 
+2l' 
+q~+~-2-5(q+l)iFi't([2]) 
+1'=1 1=21'+ 1 
+" E 
+gl',,.(q-- 1) ,"-l'-i-l+l 
+,"=0 
+t 
+2 
+"4- E(-f) ft 221 q89 (q + 1) i Fi,2t([2]) 
+l=1 
+r-3 
+2 
+" E 
+gl,,"(q -- 1)m+l-i-} - O((q -- 1)r'~-i; ~,(r)). 
+,.=0 
+Using the fact that g0,," = 50,., we see that the first term is the case l = 0 of the fourth, and 
+the second is l' -- 0 of the third. Combining these four terms into two terms, and picking out 
+the coefficient of (q - 1),. in the expansion above, we obtain 
+i! 
+21' 
+boetI,"(t

@@ -1,0 +1,46 @@
+258 Smooth point asymptotics
+
+Definition 9.23 (finite criticality). We say Q is finitely critical on the torus
+T(w) (in the direction #) if the intersection of Vg with T(w) contains finitely
+many critical points of Q in the direction 7.
+
+Exercise 9.7. For which directions 7 (if any) does the function Q(x, y) = (1 +
+x)(1 + y) satisfy finite criticality on the unit torus T(1, 1)?
+
+Suppose that p is a minimal point of V that is critical in direction * and
+lies in the exponential torus T.(a) = Relog!() defined by some a € OB,
+where B is a component of the complement of amoeba(Q). Further assume
+that T.(a) MV contains only finitely many critical points pj,...,Dm-
+
+Proposition 9.24 (stratified flow). For x’ € B arbitrarily close to x, the torus
+T.(a’) may be deformed in M so that it remains fixed in a neighborhood of
+each critical point p; but moves to a height less than —f - x outside of a larger
+neighborhood of each.
+
+Proof This is a consequence of Theorem 11.5, which uses cones of hyperbol-
+icity to create a deformation based on Theorem 11.1. In the case that the points
+Pi.--+»Pm are all smooth points, the cones and vectors can be constructed by
+the simpler and more explicit Theorem 11.9 and Corollary 11.10. a
+
+We remark that because Q is hyperbolic at all minimal points (see Proposi-
+tion 11.26), the vector flow used in the proof of Proposition 9.24 can also be
+used to construct the general homotopy equivalence (C.3.1), giving the rela-
+tive homology attachment groups up to points of height just below the minimal
+points. An important practical consequence is the following principle, stating
+that local integral formulae may be summed when finite criticality holds. It
+follows immediately from the deformation in Proposition 9.24.
+
+Theorem 9.25 (finite criticality implies sum of local contributions). Suppose
+that w is a minimal point satisfying finite criticality, with all critical points on
+T(w) enumerated pj, ...,Pm- If each of the p; are nondegenerate contributing
+points and the Cauchy integral over a quasi-local cycle maximized near pj has
+asymptotic expansion Dy (r) then
+
+ap % )\ Dp (0) + E(r) (9.17)
+
+j=l
+where E(r) grows exponentially slower than the common value of the \p;"l- Oo
+Theorem 9.25 holds for general rational functions, not just those with smooth
+
+denominators, for more general definitions of contributing points that are dis-
+cussed in later chapters.

@@ -1,13 +1,14 @@
 ---
 doc_id: arxiv-2206.14086v3
-doc_title: "KPZ limit theorems Jinho Baik∗"
+doc_title: "KPZ limit theorems"
 section_id: sec-001-21-tasep
 section_title: "TASEP"
 section_number: 2.1
 pages: 2-2
 source_pdf: 2206.14086v3.pdf
 source_sha256: b6c27f820f963079
-doc_brief: "KPZ limit theorems Jinho Baik∗ — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
+toc_source: outline
+doc_brief: "KPZ limit theorems — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds."
 ---
 random matrix theory was completely unexpected at that time. Soon after, Johansson [53] proved a similar
 result for another model, giving yet another example of a KPZ limit theorem.
@@ -28,4 +29,3 @@ on universality in Section 9.
 The research on the KPZ universality has been developing rapidly and extensively over the last two
 decades. Hence, what is discussed in this article is only a small selection of the activities. The reader may
 beneﬁt from other excellent survey articles such as [32,34,72] to see other aspects.
-2

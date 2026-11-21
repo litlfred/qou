@@ -2,26 +2,26 @@
  "_schema": "library-summary/v1",
  "doc_id": "72-4-841",
  "source_sha256": "c852d7d7dcc2662c",
- "brief": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice Kei-ichi KONDO — 3 sections: EJ; Appendix; References",
- "extended": "**Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice Kei-ichi KONDO**\n\n*Department of Physics, Nagoya University, Nagoya 464*\n\n12 pp, 3 sections.\n\n**Outline.** 6 EJ; Appendix; References",
+ "brief": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice — 3 sections: Front matter; § 3. Reflection positivity; Appendix",
+ "extended": "**Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice**\n\n*Kei-ichi KONDO*\n\n12 pp, 3 sections.\n\n**Outline.** Front matter; § 3. Reflection positivity; Appendix",
  "tokens": {
-  "brief": 39,
-  "extended": 60
+  "brief": 42,
+  "extended": 52
  },
  "sections": [
   {
-   "id": "sec-000-6-ej",
-   "title": "EJ",
-   "pages": "5-12"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-000-3-reflection-positivity",
+   "title": "§ 3. Reflection positivity",
+   "pages": "6-12"
   },
   {
    "id": "sec-001-appendix",
    "title": "Appendix",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-002-references",
-   "title": "References",
    "pages": "12-12"
   }
  ],

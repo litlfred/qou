@@ -31,14 +31,39 @@ NEVER solved from the rho ratios.  We ALSO run a coherence scan over a hypotheti
 FREE m purely to show the hypothesis fails independent of the pin -- that scan is a
 falsification test, not a fit (nothing from it is promoted or wired).
 
-FINDING (honest negative, scope-(a) with a scope-(b) sub-result):
-  1. The corpus's DERIVED parameter-free bond magnitude g_reeb = 1/sqrt(5+(q0-1)^2/q0)
-     and the naive z = 1/[2]_v are BOTH BAR-EVEN (m(q^{-1}) = m(q)).  Hence
-     b_A(q) = b_A(q^{-1}) IDENTICALLY for every A, so bar-even symmetrization is a
-     STRUCTURAL NO-OP on the actual construction.  There is no bar-odd part to remove;
-     the overshoot (#3952: 4He 2.6-10.6x) is a genuine bar-EVEN magnitude problem, not
-     a bar-parity contamination.  This is consistent with (not a re-derivation of) the
-     2026-06-25 scope-(b) pruning: binding lives entirely in the bar-even sector.
+FINDING (honest negative, scope-(a) with a scope-(b) sub-result, evaluated in BOTH
+C-frame and canonical D-frame per owner ruling Q-WXHI-2 = 1 / bean qou-pmkh):
+  1. C-FRAME / REEB BASELINE: The corpus's DERIVED parameter-free bond magnitude
+     g_reeb = 1/sqrt(5+(q0-1)^2/q0) and the historical C-frame z_C = 1/[2]_v are BOTH
+     BAR-EVEN (m(q^{-1}) = m(q)).  Hence b_A(q) = b_A(q^{-1}) IDENTICALLY for every A
+     at those magnitudes, so bar-even symmetrization is a STRUCTURAL NO-OP there.
+  1b. CANONICAL CONVENTION-D BAR-PARITY DECOMPOSITION (bean qou-pmkh, Q-WXHI-2 = 1):
+     Under canonical Convention D, z_D(q) = q^3/(q^2+1) is bar-NEITHER: under the
+     bar involution q -> q^{-1},
+         bar(z_D) = q^{-3}/(q^{-2}+1) = 1/(q^3+q) = z_D - h,   where h = q - q^{-1}.
+     Thus bar(z_D) - z_D = -h != 0, and z_D decomposes uniquely into a bar-even part
+     and a bar-odd part:
+         z_D = z_D^{even} + z_D^{odd},
+         z_D^{even} = (z_D + bar(z_D))/2 = (q^4+1)/(2 q (q^2+1)) = z_D - h/2 = 0.508157887748645594,
+         z_D^{odd}  = (z_D - bar(z_D))/2 = +h/2                  = (q^2-1)/(2 q) = 0.104530149397819694.
+     Evaluating Vector 3 across all three D-frame bar-parity routes:
+       - Route D1 (bar-even magnitude m = z_D^{even} = z_D - h/2 = 0.508158):
+           WRITHE excluded (z_D^{even} = 0.508158 > 1/sqrt(5) = 0.447214 => det(I+mS) < 0 at A=4);
+           ISO gives rho3 = 2.40342 (-36.96%), rho4 = 4.02653 (-69.10%).
+       - Route D2 (direct cumulant bar-symmetrization b_A^{D,even} = 1/2 (b_A(z_D) + b_A(z_D - h))):
+           Non-trivial (bar(z_D) = z_D - h != z_D, so NOT a syntactic no-op).
+           On WRITHE, the unbarred branch z_D = 0.612688 > 1/sqrt(5) is above the A=4
+           ceiling (det < 0, complex branch cut), while the barred branch alone
+           bar(z_D) = z_D - h = 0.403628 < 1/sqrt(5) is physical and gives
+           rho3 = 2.48536 (-34.82%), rho4 = 10.476 (-19.61%).
+           On ISO (where det_iso > 0 at both z_D and z_D - h), b_A^{D,even}/b_2^{D,even}
+           gives rho3 = 2.37349 (-37.75%), rho4 = 3.94745 (-69.71%).
+       - Route D3 (bar-odd piece m = z_D^{odd} = h/2 = 0.104530 < 1/3 < 1/sqrt(5),
+         symmetrized via 1/2 (b_A(h/2) + b_A(-h/2))):
+           WRITHE gives rho3 = 3.03383 (-20.43%), rho4 = 6.11363 (-53.09%);
+           ISO    gives rho3 = 3.03383 (-20.43%), rho4 = 6.21100 (-52.34%).
+     Every D-frame bar-parity route misses the isospin-corrected strong targets
+     {3.8128, 13.0316} by 19.6%--69.7%.
   2. STEELMAN (grant a hypothetical FREE bar-odd m, m(q^{-1}) = -m(q)).  Even then:
      - A=4 WRITHE det (1-5m^2)(1-m^2) is a function of m^2 (symmetric spectrum) => b_4
        is bar-even ANYWAY => symmetrization is STILL a no-op at the DOMINANT A=4 wall
@@ -182,6 +207,47 @@ def main() -> int:
     g_bar_even = abs(g_reeb - g_bar) < mp.mpf(10) ** -40
     z_bar_even = abs(z_naive - z_bar) < mp.mpf(10) ** -40
 
+    # ---- 0b. CANONICAL CONVENTION-D BAR-PARITY DECOMPOSITION (bean qou-pmkh) -
+    # Under canonical Convention D (owner ruling Q-WXHI-2 = 1),
+    #   z_D(q) = q^3 / (q^2 + 1),   bar(z_D) = q^{-3} / (q^{-2} + 1) = 1 / (q^3 + q).
+    # Exact rational identity over Q(q):
+    #   bar(z_D) - z_D = 1/(q^3+q) - q^3/(q^2+1) = (1 - q^4)/(q(q^2+1)) = -(q^2 - 1)/q = -h,
+    # where h = q - q^{-1}.  Therefore bar(z_D) = z_D - h, and z_D decomposes uniquely into
+    # its bar-even and bar-odd components under q <-> q^{-1}:
+    #   z_D^{even} = (z_D + bar(z_D)) / 2 = (q^4 + 1) / (2 q (q^2 + 1)) = z_D - h / 2,
+    #   z_D^{odd}  = (z_D - bar(z_D)) / 2 = +h / 2 = (q^2 - 1) / (2 q).
+    h_q0 = q0 - 1 / q0
+    h_bar = (1 / q0) - q0
+    z_D = q0 ** 3 / (q0 ** 2 + 1)
+    z_D_bar = (1 / q0) ** 3 / ((1 / q0) ** 2 + 1)
+    z_D_bar_closed = 1 / (q0 ** 3 + q0)
+    z_D_shift_residual = abs(z_D_bar - (z_D - h_q0))
+    z_D_bar_closed_residual = abs(z_D_bar - z_D_bar_closed)
+    z_D_bar_equals_z_D_minus_h = (
+        z_D_shift_residual < mp.mpf(10) ** -50
+        and z_D_bar_closed_residual < mp.mpf(10) ** -50
+    )
+    z_D_is_bar_even = abs(z_D - z_D_bar) < mp.mpf(10) ** -40   # False: |bar(z_D)-z_D| = h
+    z_D_even = (z_D + z_D_bar) / 2
+    z_D_even_closed = (q0 ** 4 + 1) / (2 * q0 * (q0 ** 2 + 1))
+    z_D_even_bar_closed = ((1 / q0) ** 4 + 1) / (2 * (1 / q0) * ((1 / q0) ** 2 + 1))
+    z_D_even_bar_residual = abs(z_D_even_closed - z_D_even_bar_closed)
+    z_D_even_shift_residual = abs(z_D_even - (z_D - h_q0 / 2))
+    z_D_even_bar_invariant = (
+        z_D_even_bar_residual < mp.mpf(10) ** -50
+        and z_D_even_shift_residual < mp.mpf(10) ** -50
+    )
+    z_D_odd = (z_D - z_D_bar) / 2
+    z_D_odd_bar = (z_D_bar - z_D) / 2
+    z_D_odd_half_h_residual = abs(z_D_odd - h_q0 / 2)
+    z_D_odd_anti_inv_residual = abs(z_D_odd_bar + z_D_odd)
+    z_D_odd_equals_half_h = (
+        z_D_odd_half_h_residual < mp.mpf(10) ** -50
+        and z_D_odd_anti_inv_residual < mp.mpf(10) ** -50
+        and abs(h_bar + h_q0) < mp.mpf(10) ** -50
+    )
+    z_D_recon_residual = abs((z_D_even + z_D_odd) - z_D)
+
     # ---- 1. algebraic preflight: mp.det vs closed form -----------------------
     preflight = all(
         abs(det_writhe(_WORD[A], m) - det_writhe_closed(A, m)) < mp.mpf(10) ** -45
@@ -239,6 +305,113 @@ def main() -> int:
             "bar_even_is_noop": True,   # m bar-even => b(q)=b(q^-1) identically
         }
         forward[name] = entry
+
+    # ---- 3b. CANONICAL CONVENTION-D BAR-PARITY FORWARD ROUTES (bean qou-pmkh) -
+    # Route D1: evaluate at the bar-even part of z_D, m = z_D^{even} = z_D - h/2.
+    b2_d1_iso, b3_d1_iso, b4_d1_iso = rho_row(b_iso, 2, z_D_even)
+    r3_d1_iso = b3_d1_iso / b2_d1_iso
+    r4_d1_iso = b4_d1_iso / b2_d1_iso
+    route_d1 = {
+        "m": mp.nstr(z_D_even, 18),
+        "formula": "z_D^{even} = (z_D + bar(z_D))/2 = (q^4+1)/(2 q (q^2+1)) = z_D - h/2",
+        "below_ceiling": bool(z_D_even < ceiling),
+        "writhe": {
+            "excluded": "z_D^{even} = 0.508158 >= 1/sqrt(5) = 0.447214 => det(I+mS) < 0 (unphysical) at A=4",
+            "det_A4": mp.nstr(det_writhe(_WORD[4], z_D_even), 12),
+        },
+        "iso": {
+            "rho3": mp.nstr(r3_d1_iso, 6),
+            "rho4": mp.nstr(r4_d1_iso, 6),
+            "rho3_err_pct": mp.nstr((r3_d1_iso / T3 - 1) * 100, 4),
+            "rho4_err_pct": mp.nstr((r4_d1_iso / T4 - 1) * 100, 4),
+            "bar_even_is_noop": True,   # z_D^{even} is bar-invariant by construction
+        },
+    }
+
+    # Route D2: symmetrize the cumulant directly across q <-> q^{-1} at m(q) = z_D(q),
+    # i.e. b_A^{D,even} = 1/2 (b_A(z_D) + b_A(bar(z_D))) = 1/2 (b_A(z_D) + b_A(z_D - h)).
+    # Because bar(z_D) = z_D - h != z_D, this is NOT a syntactic no-op.
+    b2_d2_iso = (b_iso(2, z_D) + b_iso(2, z_D_bar)) / 2
+    b3_d2_iso = (b_iso(3, z_D) + b_iso(3, z_D_bar)) / 2
+    b4_d2_iso = (b_iso(4, z_D) + b_iso(4, z_D_bar)) / 2
+    r3_d2_iso = b3_d2_iso / b2_d2_iso
+    r4_d2_iso = b4_d2_iso / b2_d2_iso
+    # On WRITHE, z_D = 0.612688 > 1/sqrt(5) has det_writhe(A=4, z_D) < 0 (unphysical),
+    # whereas the barred point bar(z_D) = z_D - h = 0.403628 < 1/sqrt(5) is physical.
+    b2_dbar_w, b3_dbar_w, b4_dbar_w = rho_row(b_writhe, 2, z_D_bar)
+    r3_dbar_w = b3_dbar_w / b2_dbar_w
+    r4_dbar_w = b4_dbar_w / b2_dbar_w
+    route_d2 = {
+        "m_unbarred_z_D": mp.nstr(z_D, 18),
+        "m_barred_z_D_minus_h": mp.nstr(z_D_bar, 18),
+        "formula": "b_A^{D,even} = 1/2 (b_A(z_D) + b_A(z_D - h))",
+        "bar_even_is_noop": False,
+        "writhe": {
+            "unbarred_z_D_below_ceiling": bool(z_D < ceiling),
+            "barred_z_D_minus_h_below_ceiling": bool(z_D_bar < ceiling),
+            "det_A4_at_z_D": mp.nstr(det_writhe(_WORD[4], z_D), 12),
+            "det_A4_at_z_D_minus_h": mp.nstr(det_writhe(_WORD[4], z_D_bar), 12),
+            "excluded_full_average": "unbarred branch z_D = 0.612688 > 1/sqrt(5) has det_A4 < 0 (unphysical)",
+            "barred_branch_only_z_D_minus_h": {
+                "rho3": mp.nstr(r3_dbar_w, 6),
+                "rho4": mp.nstr(r4_dbar_w, 6),
+                "rho3_err_pct": mp.nstr((r3_dbar_w / T3 - 1) * 100, 4),
+                "rho4_err_pct": mp.nstr((r4_dbar_w / T4 - 1) * 100, 4),
+            },
+        },
+        "iso": {
+            "all_dets_positive": bool(
+                all(det_iso(A, z_D) > 0 and det_iso(A, z_D_bar) > 0 for A in (2, 3, 4))
+            ),
+            "rho3": mp.nstr(r3_d2_iso, 6),
+            "rho4": mp.nstr(r4_d2_iso, 6),
+            "rho3_err_pct": mp.nstr((r3_d2_iso / T3 - 1) * 100, 4),
+            "rho4_err_pct": mp.nstr((r4_d2_iso / T4 - 1) * 100, 4),
+        },
+    }
+
+    # Route D3: evaluate bar_even(bfun, A, m) at the bar-odd piece m = z_D^{odd} = +h/2,
+    # which satisfies bar(z_D^{odd}) = -z_D^{odd} and 0 < h/2 = 0.104530 < 1/3 < 1/sqrt(5).
+    b2_d3_w, b3_d3_w, b4_d3_w = rho_row(b_writhe, 2, z_D_odd, use_bar_even=True)
+    r3_d3_w = mp.re(b3_d3_w / b2_d3_w)
+    r4_d3_w = mp.re(b4_d3_w / b2_d3_w)
+    b2_d3_iso, b3_d3_iso, b4_d3_iso = rho_row(b_iso, 2, z_D_odd, use_bar_even=True)
+    r3_d3_iso = mp.re(b3_d3_iso / b2_d3_iso)
+    r4_d3_iso = mp.re(b4_d3_iso / b2_d3_iso)
+    route_d3 = {
+        "m": mp.nstr(z_D_odd, 18),
+        "formula": "z_D^{odd} = (z_D - bar(z_D))/2 = +h/2 = (q^2-1)/(2q); symmetrized via 1/2(b_A(h/2)+b_A(-h/2))",
+        "below_ceiling": bool(z_D_odd < ceiling),
+        "below_iso_pole_one_third": bool(z_D_odd < mp.mpf(1) / 3),
+        "writhe": {
+            "rho3": mp.nstr(r3_d3_w, 6),
+            "rho4": mp.nstr(r4_d3_w, 6),
+            "rho3_err_pct": mp.nstr((r3_d3_w / T3 - 1) * 100, 4),
+            "rho4_err_pct": mp.nstr((r4_d3_w / T4 - 1) * 100, 4),
+        },
+        "iso": {
+            "rho3": mp.nstr(r3_d3_iso, 6),
+            "rho4": mp.nstr(r4_d3_iso, 6),
+            "rho3_err_pct": mp.nstr((r3_d3_iso / T3 - 1) * 100, 4),
+            "rho4_err_pct": mp.nstr((r4_d3_iso / T4 - 1) * 100, 4),
+        },
+    }
+
+    forward["z_D_even_route_D1"] = route_d1
+    forward["z_D_cumulant_sym_route_D2"] = route_d2
+    forward["z_D_odd_half_h_route_D3"] = route_d3
+
+    d_frame_candidates = [
+        ("D1_z_D_even_iso", r3_d1_iso, r4_d1_iso),
+        ("D2_z_D_cumulant_sym_iso", r3_d2_iso, r4_d2_iso),
+        ("D2_z_D_minus_h_writhe", r3_dbar_w, r4_dbar_w),
+        ("D3_z_D_odd_half_h_writhe", r3_d3_w, r4_d3_w),
+        ("D3_z_D_odd_half_h_iso", r3_d3_iso, r4_d3_iso),
+    ]
+    d_frame_lands_both_count = sum(
+        1 for _, r3c, r4c in d_frame_candidates
+        if abs(r3c / T3 - 1) <= mp.mpf("0.05") and abs(r4c / T4 - 1) <= mp.mpf("0.05")
+    )
 
     # ---- 4. STEELMAN coherence scan: hypothetical FREE m (falsification only) --
     def bisect(f, a, b):
@@ -356,8 +529,36 @@ def main() -> int:
         "bar_parity_of_parameter_free_magnitude": {
             "g_reeb": mp.nstr(g_reeb, 18), "g_reeb_bar_even": bool(g_bar_even),
             "z_naive": mp.nstr(z_naive, 18), "z_naive_bar_even": bool(z_bar_even),
-            "consequence": "m(q^-1)=m(q) => b_A(q)=b_A(q^-1) for every A => bar-even "
-                           "symmetrization is a STRUCTURAL NO-OP on the actual construction.",
+            "consequence": "m(q^-1)=m(q) => b_A(q)=b_A(q^-1) for every A at g_reeb and z_C => bar-even "
+                           "symmetrization is a STRUCTURAL NO-OP on those bar-even magnitudes.",
+        },
+        "d_frame_bar_parity_decomposition": {
+            "convention": "D",
+            "bean": "qou-pmkh",
+            "ruling": "Q-WXHI-2 = 1",
+            "z_D": mp.nstr(z_D, 18),
+            "z_D_bar": mp.nstr(z_D_bar, 18),
+            "h": mp.nstr(h_q0, 18),
+            "z_D_is_bar_even": bool(z_D_is_bar_even),
+            "z_D_bar_equals_z_D_minus_h": bool(z_D_bar_equals_z_D_minus_h),
+            "z_D_shift_residual": mp.nstr(z_D_shift_residual, 6),
+            "z_D_even": mp.nstr(z_D_even, 18),
+            "z_D_even_formula": "(z_D + bar(z_D))/2 = (q^4+1)/(2 q (q^2+1)) = z_D - h/2",
+            "z_D_even_bar_invariant": bool(z_D_even_bar_invariant),
+            "z_D_odd": mp.nstr(z_D_odd, 18),
+            "z_D_odd_formula": "(z_D - bar(z_D))/2 = +h/2 = (q^2-1)/(2q)",
+            "z_D_odd_equals_half_h": bool(z_D_odd_equals_half_h),
+            "z_D_reconstruction_residual": mp.nstr(z_D_recon_residual, 6),
+            "d_frame_routes_examined": [c[0] for c in d_frame_candidates],
+            "d_frame_lands_both_count": d_frame_lands_both_count,
+            "reading": (
+                "Under canonical Convention D, z_D = q^3/(q^2+1) is bar-NEITHER: "
+                "bar(z_D) = 1/(q^3+q) = z_D - h, so z_D = z_D^{even} + z_D^{odd} with "
+                "z_D^{even} = z_D - h/2 = 0.508158 and z_D^{odd} = +h/2 = 0.104530. "
+                "Across all three D-frame routes (D1: m = z_D^{even}; D2: 1/2(b_A(z_D)+b_A(z_D-h)); "
+                "D3: m = z_D^{odd} = h/2 symmetrized), 0 of 5 physical evaluations land both "
+                "strong targets {3.8128, 13.0316} within 5%."
+            ),
         },
         "algebraic_preflight": {
             "writhe_det_matches_closed_form": bool(preflight),
@@ -382,22 +583,28 @@ def main() -> int:
         "steelman_coherence_scan_free_m": steelman,
         "verdict": {
             "classification": "HONEST NEGATIVE (scope-(a)) with a scope-(b) sub-result.",
-            "scope_b_subresult": "The parameter-free bond magnitude is bar-even (proved here) "
+            "scope_b_subresult": "The parameter-free bond magnitude g_reeb (and C-frame z_C) is bar-even "
                                  "AND the A=4 writhe cumulant det is even in m (Lean "
                                  "B4CumulantBarEven.lean) => bar-even symmetrization is a "
-                                 "structural no-op at the dominant A=4 magnitude wall.",
-            "scope_a_negative": "No single parameter-free (or even free) m reproduces BOTH "
-                                "isospin-corrected strong ratios {3.81, 13.03}: WRITHE rho4=13.03 "
-                                "forces rho3=2.466 (-35.3%); WRITHE rho3=3.81 has no root at all "
-                                "(rho3_writhe caps at 2.91 < 3.81 over the whole window); ISO raw "
-                                "rho4 caps at ~6; ISO bar-even DOES reach rho4=13.03 at m=0.31900 "
-                                "while still physical (all dets > 0), but rho3_even there is 3.435 "
-                                "(-9.9%). Bar-even symmetrization does NOT tame "
-                                "the overshoot (#3952) because the construction is already in "
-                                "the bar-even sector -- there is no bar-odd part to isolate.",
+                                 "structural no-op at the dominant A=4 magnitude wall; under canonical "
+                                 "Convention D, bar(z_D) = 1/(q^3+q) = z_D - h decomposes z_D into "
+                                 "z_D^{even} = z_D - h/2 and z_D^{odd} = +h/2 (bean qou-pmkh).",
+            "scope_a_negative": "No single parameter-free (C-frame, D-frame bar-decomposed, or even free) m "
+                                "reproduces BOTH isospin-corrected strong ratios {3.81, 13.03}: under D, "
+                                "Route D1 (z_D^{even}=0.508158) is above the WRITHE ceiling and gives ISO "
+                                "rho3=2.40342 (-36.96%), rho4=4.02653 (-69.10%); Route D2 (1/2(b_A(z_D)+b_A(z_D-h))) "
+                                "gives ISO rho3=2.37349 (-37.75%), rho4=3.94745 (-69.71%) and WRITHE barred-branch "
+                                "rho3=2.48536 (-34.82%), rho4=10.476 (-19.61%); Route D3 (z_D^{odd}=h/2=0.104530) "
+                                "gives WRITHE rho3=3.03383 (-20.43%), rho4=6.11363 (-53.09%) and ISO rho3=3.03383 "
+                                "(-20.43%), rho4=6.21100 (-52.34%). In the free-m "
+                                "steelman scan, WRITHE rho4=13.03 forces rho3=2.466 (-35.3%); WRITHE rho3=3.81 "
+                                "has no root at all (rho3_writhe caps at 2.91 < 3.81); ISO raw rho4 caps at ~6; "
+                                "ISO bar-even reaches rho4=13.03 at m=0.31900 (all dets > 0), where rho3_even "
+                                "is 3.435 (-9.9%).",
             "consistency": "Consistent with (not a re-derivation of) the 2026-06-25 scope-(b) "
                            "pruning that 4He binding must be bar-even; here the b_A cumulant is "
-                           "shown to be ALREADY bar-even, so the overshoot is a genuine bar-even "
+                           "shown to be ALREADY bar-even at g_reeb/z_C and non-rescuing across all three "
+                           "Convention-D bar(z_D) = z_D - h routes, so the overshoot is a genuine bar-even "
                            "magnitude problem. Nothing wired, no fit, no AME inversion.",
         },
     }
@@ -405,17 +612,20 @@ def main() -> int:
     payload = {
         "computation": "deltalambda-bareven-b4-magnitude",
         "description": ("Vector-3 forward test: bar-even symmetrization of the b_A=-ln det(I+mG) "
-                        "cumulant does NOT crack the isospin-even strong binding magnitude. The "
-                        "parameter-free magnitude (g_reeb, z_naive) is bar-even => symmetrization "
-                        "is a structural no-op; steelmanned with a free bar-odd m no single m "
+                        "cumulant does NOT crack the isospin-even strong binding magnitude. "
+                        "Evaluated in both C-frame (g_reeb, z_naive bar-even => structural no-op) "
+                        "and canonical Convention D via bar(z_D) = 1/(q^3+q) = z_D - h "
+                        "(z_D = z_D^{even} + h/2, routes D1/D2/D3, bean qou-pmkh / Q-WXHI-2 = 1), "
+                        "plus a free-m steelman coherence scan: no parameter-free or free m "
                         "lands both isospin-corrected strong targets {3.81, 13.03}. Honest "
                         "negative, scope-(a) + scope-(b) sub-result. No fit, audit-only."),
-        "tier": "structural (exact det closed forms + bar-parity argument; no fit, no AME inversion)",
+        "tier": "structural (exact det closed forms + C/D bar-parity argument; no fit, no AME inversion)",
         "result": result,
         "context": {
             "axis": "Delta_lambda magnitude wall -- Vector 3 (bar-even symmetrized b_A cumulant)",
             "attack_vector_map": "docs/audits/2026-07-18-deltalambda-attack-vector-map.md",
             "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+            "markov_convention_d_decomposition": "bar(z_D) = 1/(q^3+q) = z_D - h; z_D^{even} = z_D - h/2, z_D^{odd} = +h/2 (bean qou-pmkh, Q-WXHI-2 = 1)",
             "q0": Q0_STR,   # record the pin used, so a reader need not infer it
             "no_fit": True,
         },
@@ -428,16 +638,28 @@ def main() -> int:
     wb.set_content_block("rem:ohtsuki-tower-bar-parity")
     wb.add_assertion("g_reeb_bar_even", computed=str(bool(g_bar_even)), expected="True")
     wb.add_assertion("z_naive_bar_even", computed=str(bool(z_bar_even)), expected="True")
+    wb.add_assertion("z_D_bar_equals_z_D_minus_h", computed=str(bool(z_D_bar_equals_z_D_minus_h)), expected="True")
+    wb.add_assertion("z_D_even_bar_invariant", computed=str(bool(z_D_even_bar_invariant)), expected="True")
+    wb.add_assertion("z_D_odd_equals_half_h", computed=str(bool(z_D_odd_equals_half_h)), expected="True")
     wb.add_assertion("writhe_det_matches_closed_form", computed=str(bool(preflight)), expected="True")
     wb.add_assertion("A4_writhe_det_even_in_m", computed=str(bool(a4_writhe_even)), expected="True")
-    wb.add_assertion("rho_strong_3_is_3p81", computed=rho_strong_3, expected=3.8128, tolerance=1e-3)
-    wb.add_assertion("rho_strong_4_is_13p03", computed=rho_strong_4, expected=13.032, tolerance=2e-2)
+    wb.add_assertion("rho_strong_3_is_3p81", computed=rho_strong_3, expected=mp.mpf("3.8128"), tolerance=1e-3)
+    wb.add_assertion("rho_strong_4_is_13p03", computed=rho_strong_4, expected=mp.mpf("13.032"), tolerance=2e-2)
     # The coherence gate FAILS: forcing WRITHE rho4=13.03 leaves rho3 >5% off target.
     _r3f = mp.mpf(steelman.get("writhe_fix_rho4", {}).get("rho3_forced", "0"))
     wb.add_assertion(
         "writhe_forced_rho3_misses_target_gt5pct",
         computed=str(bool(abs(_r3f / T3 - 1) > mp.mpf("0.05"))), expected="True")
     wb.add_assertion("iso_raw_rho4_cannot_reach_13", computed=str(float(iso_rho4_at_0) < 13.0), expected="True")
+    wb.add_assertion(
+        "d_frame_routes_land_both_targets",
+        computed=d_frame_lands_both_count, expected=0, tolerance=0, unit="D-frame routes",
+        source=("Coherence count over all 5 physical Convention-D bar(z_D) = z_D - h "
+                f"evaluations ({', '.join(c[0] for c in d_frame_candidates)}): "
+                "Route D1 (z_D^{even} = z_D - h/2 = 0.508158, ISO), Route D2 "
+                "(1/2(b_A(z_D)+b_A(z_D-h)), ISO and WRITHE barred branch z_D-h), and "
+                "Route D3 (z_D^{odd} = h/2 = 0.104530, WRITHE and ISO). Every route "
+                "misses the strong targets {3.8128, 13.0316} by >20% against the 5% gate."))
     # Was computed="False"/expected="False" -- passes by construction, and would
     # have stayed green at the value that refutes the probe (qou-26f2).  Now the
     # COUNT of m values that land both isospin-corrected strong targets within
@@ -463,7 +685,8 @@ def main() -> int:
     print("parameter-free magnitude bar-parity:")
     print(f"   g_reeb  = {mp.nstr(g_reeb,10)}  bar-even={bool(g_bar_even)}")
     print(f"   z_naive = {mp.nstr(z_naive,10)}  bar-even={bool(z_bar_even)}")
-    print("   => b_A(q)=b_A(q^-1) identically => bar-even symmetrization is a NO-OP.")
+    print(f"   z_D     = {mp.nstr(z_D,10)}  bar(z_D)=z_D-h={mp.nstr(z_D_bar,10)}  "
+          f"z_D_even={mp.nstr(z_D_even,10)}  z_D_odd=h/2={mp.nstr(z_D_odd,10)}")
     print(f"algebraic preflight (mp.det vs closed form): {preflight};  A4 writhe det even in m: {a4_writhe_even}")
     print("isospin-corrected STRONG targets (from #3990 E_C):")
     print(f"   rho_strong(3) = {mp.nstr(rho_strong_3,6)}  (=B(3H)/BD; 3H Coulomb-free)")
@@ -476,7 +699,7 @@ def main() -> int:
     print("steelman coherence scan (free m, falsification only):")
     for k, val in steelman.items():
         print(f"   {k}: {val}")
-    print("VERDICT: HONEST NEGATIVE (scope-(a)) + scope-(b) no-op sub-result. Not wired, no fit.")
+    print("VERDICT: HONEST NEGATIVE (scope-(a)) + scope-(b) sub-result (C-frame + D-frame bar(z_D)=z_D-h). Not wired, no fit.")
     print("witness ->", out)
     return 0
 

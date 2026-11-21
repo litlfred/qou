@@ -73,7 +73,8 @@ _D_PN_WEIGHTED = _pn_weighted_d()
 # tags above are the same 60-dps arithmetic; measured agreement is ~1e-60, so
 # 1e-40 separates "same template" from "different template" (the nearest two,
 # -h/2 and the colour-weighted pn shift, are 7.2e-5 apart).
-_TAG_TOL = mp.mpf("1e-40")
+with mp.workdps(60):
+    _TAG_TOL = mp.mpf("1e-40")
 
 
 def all_partitions(n: int):
@@ -153,8 +154,8 @@ def chi_lambda_atom_braid(lambda_shape, atom_word, q_value=Q_50_DIGIT_STR,
             total += coeff * val
         else:
             # Empty word = identity element; χ_λ(1) = dim V_λ
-            from hecke_characters import hook_length_dim_lambda
-            total += coeff * mp.mpf(hook_length_dim_lambda(lambda_shape))
+            from hecke_characters import specht_dim
+            total += coeff * mp.mpf(specht_dim(lambda_shape))
     return total
 
 
@@ -218,7 +219,12 @@ def main() -> int:
 
         observed_active_count = len(active)
 
-        match = (observed_active_count <= predicted_active)
+        # A bound "observed <= predicted" is vacuously true when nothing was
+        # computed. Measured 2026-11-15 in a container without pyhecke_native:
+        # every partition raised NotImplementedError, observed = 0, and the
+        # assertion PASSED. A partition that errored is not a zero; the bound
+        # holds only if every chi was actually evaluated.
+        match = (not chi_errors) and (observed_active_count <= predicted_active)
 
         result = {
             "Z": Z, "N": N, "A": A, "n_0": n0,

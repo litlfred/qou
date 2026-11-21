@@ -1,5 +1,5 @@
 *Proof.*
-We verify each $S$-eigenvalue in turn.
+Each $S$-eigenvalue is checked in turn.
 
 **Coefficients.** The action $q \mapsto q^{-1}$ extends to the
 underlying field of fractions and acts on each coefficient:
@@ -83,9 +83,8 @@ The sign $\varepsilon$ cancels, so only homogeneity matters, not the parity of
 $n$. The identity holds in the field of rational functions and so at every
 evaluation point where both characters are nonzero. Taking
 $\log\lvert\cdot\rvert$ and summing over $i$ gives
-$\Phi_3(S(\beta)) = -\Phi_3(\beta)$, eigenvalue $-1$. (Lean, sorry-free over a
-generic field: `chi_swap`, `barHom_hmul`, `primitives_barHom`,
-`chiRatio_inverts`.)
+$\Phi_3(S(\beta)) = -\Phi_3(\beta)$, eigenvalue $-1$. (The argument holds over a
+generic field.)
 
 *Scope.* The argument is for chains of bar-homogeneous factors, which
 includes every chain of the three primitives (and the nucleon and electron
@@ -98,8 +97,7 @@ sign change in general. Example: $X = \sigma + 1$ is not homogeneous, and the
 product of the two ratios is
 $-(q+1)^2/(q-1)^2 \neq \pm 1$, so $\Phi_3 + \Phi_3 \circ S$ picks up
 $2\log\lvert (q_0+1)/(q_0-1) \rvert \neq 0$ from this factor.
-Numerically, `computations/probes/frobenius_s_parity_convention_d_probe.py`
-finds $\lvert\Phi_3 + \Phi_3 \circ S\rvert \lesssim 10^{-51}$ at the proton
+Numerically, one finds $\lvert\Phi_3 + \Phi_3 \circ S\rvert \lesssim 10^{-51}$ at the proton
 pin (mpmath, 50 digits) on all seven of its chains.
 
 **Functional $\Phi_1$.** Because the canonical Markov trace commutes with
@@ -121,8 +119,7 @@ $$
 The chirality term is the unique $S$-odd channel only when $\Phi_1^{-}$
 vanishes. It does not vanish in general: on the proton chain $uud$ at the
 proton pin, $\Phi_1^{-} \approx 0.0526$ against
-$h_{\mathrm{A}}^2 \Phi_3 \approx 0.00912$, a ratio $\approx 5.77$
-(`computations/probes/frobenius_s_parity_convention_d_probe.py`).
+$h_{\mathrm{A}}^2 \Phi_3 \approx 0.00912$, a ratio $\approx 5.77$.
 
 Since $S$ maps the proton braid (uud) to a braid with quark content (ddu),
 the $S$-odd part of the mass is the structural carrier of the

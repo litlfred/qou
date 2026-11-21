@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0707.2052v1/blocks/prose-sec-019",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Open-closed TQFTs and the Cardy Condition",
-  "pageStart": 25,
-  "pageEnd": 26,
-  "text": "../sections/sec-019-open-closed-tqfts-and-the-cardy-condition.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2052v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.2052v1",
+  "title": "The Chern character as a map on K-theory.",
+  "pageStart": 22,
+  "pageEnd": 24,
+  "text": "../sections/sec-019-the-chern-character-as-a-map-on-k-theory.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2052v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2052v1/manifest.jsonld",
   "provenance": "ingested"
 }

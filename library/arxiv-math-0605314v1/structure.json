@@ -8,7 +8,7 @@
   "pages": 66,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,13 +21,13 @@
    "stamp_date": "11 May 2006"
   },
   "doi": null,
-  "title": "arXiv:math/0605314v1 [math.GT] 11 May 2006",
+  "title": "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres",
   "authors_raw": "KAZUO HABIRO",
   "title_lines": [
    "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT",
    "FOR INTEGRAL HOMOLOGY SPHERES"
   ],
-  "abstract": "We construct an invariant JM of integral homology spheres M with values in a completion d Z[q] of the polynomial ring Z[q] such that the evaluation at each root of unity \u03b6 gives the the SU(2) Witten-Reshetikhin- Turaev invariant \u03c4\u03b6(M) of M at \u03b6. Thus JM uni\ufb01es all the SU(2) Witten- Reshetikhin-Turaev invariants of M. As a consequence, \u03c4\u03b6(M) is an algebraic integer. Moreover, it follows that \u03c4\u03b6(M) as a function on \u03b6 behaves like an \u201canalytic function\u201d de\ufb01ned on the set of roots of unity. That is, the \u03c4\u03b6(M) for all roots of unity are determined by a \u201cTaylor expansion\u201d at any root of unity, and also by the values at in\ufb01nitely many roots of unity of prime power orders. In particular, \u03c4\u03b6(M) for all roots of unity are determined by the Ohtsuki series, which can be regarded as the Taylor expansion at q = 1.",
+  "abstract": "We construct an invariant JM of integral homology spheres M with values in a completion d Z[q] of the polynomial ring Z[q] such that the evaluation at each root of unity ζ gives the the SU(2) Witten-Reshetikhin- Turaev invariant τζ(M) of M at ζ. Thus JM uniﬁes all the SU(2) Witten- Reshetikhin-Turaev invariants of M. As a consequence, τζ(M) is an algebraic integer. Moreover, it follows that τζ(M) as a function on ζ behaves like an “analytic function” deﬁned on the set of roots of unity. That is, the τζ(M) for all roots of unity are determined by a “Taylor expansion” at any root of unity, and also by the values at inﬁnitely many roots of unity of prime power orders. In particular, τζ(M) for all roots of unity are determined by the Ohtsuki series, which can be regarded as the Taylor expansion at q = 1.",
   "docinfo": {
    "Title": "arXiv:math/0605314v1  [math.GT]  11 May 2006",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -39,13 +39,14 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/0605314v1 [math.GT] 11 May 2006",
-   "heading": "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT FOR INTEGRAL HOMOLOGY SPHERES 1. Introduction In this paper we construct an invariant of integral homology spheres which uni\ufb01es the SU (2) Witten-Reshetikhin-Turaev invariants at all roots of unity, which we announced in a previous paper [17]. 1.1. The W",
+   "heading": "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT FOR INTEGRAL HOMOLOGY SPHERES 1. Introduction In this paper we construct an invariant of integral homology spheres which uniﬁes the SU (2) Witten-Reshetikhin-Turaev invariants at all roots of unity, which we announced in a previous paper [17]. 1.1. The W",
    "text": "A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT FOR INTEGRAL HOMOLOGY SPHERES",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0605314v1 [math.GT] 11 May 2006"
  },
  "toc": [
   {
@@ -119,19 +120,6 @@
    "page": 7,
    "source": "inferred",
    "number": "2",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
-   "title": "$q$-integers",
-   "page": 7,
-   "source": "inferred",
-   "number": "2.1",
    "confidence": 1.0,
    "evidence": [
     "latex",
@@ -1174,7 +1162,7 @@
   {
    "kind": "figure",
    "number": "4.1",
-   "title": "(a) A 3-component bottom tangle T = T1 \u222aT2 \u222aT3",
+   "title": "(a) A 3-component bottom tangle T = T1 ∪T2 ∪T3",
    "page": 15,
    "confidence": 0.9,
    "evidence": [
@@ -1213,7 +1201,7 @@
   {
    "kind": "figure",
    "number": "4.4",
-   "title": "The Borromean tangle B \u2208BT0",
+   "title": "The Borromean tangle B ∈BT0",
    "page": 16,
    "confidence": 0.9,
    "evidence": [
@@ -1226,7 +1214,7 @@
   {
    "kind": "figure",
    "number": "6.1",
-   "title": "The bottom tangle c+ \u2208BT2",
+   "title": "The bottom tangle c+ ∈BT2",
    "page": 22,
    "confidence": 0.9,
    "evidence": [
@@ -1265,7 +1253,7 @@
   {
    "kind": "figure",
    "number": "10.1",
-   "title": "A Fenn-Rourke move. Fenn-Rourke moves, where a Fenn-Rourke move is either surgery on a unknotted, \u00b11-framed component, or the inverse operation. See Figure 10.1",
+   "title": "A Fenn-Rourke move. Fenn-Rourke moves, where a Fenn-Rourke move is either surgery on a unknotted, ±1-framed component, or the inverse operation. See Figure 10.1",
    "page": 35,
    "confidence": 0.9,
    "evidence": [
@@ -1771,26 +1759,86 @@
    "title": "The WRT invariant for integral homology spheres",
    "level": 2,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 7882,
-   "n_words": 1451,
+   "page_end": 2,
+   "n_chars": 2528,
+   "n_words": 458,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-002-14-organization-of-the-paper",
+   "id": "sec-002-12-the-ring-zqh-of-analytic-functions-on-the-set",
+   "number": "1.2",
+   "title": "The ring $\\Zqh$ of analytic functions on the set of roots of unity",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3025,
+   "n_words": 585,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-13-a-unified-wrt-invariant-j-m-with-values-in-zq",
+   "number": "1.3",
+   "title": "A unified WRT invariant $J_M$ with values in $\\Zqh$",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2218,
+   "n_words": 386,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-14-organization-of-the-paper",
    "number": "1.4",
    "title": "Organization of the paper",
    "level": 2,
    "page_start": 4,
-   "page_end": 9,
-   "n_chars": 13621,
-   "n_words": 2619,
+   "page_end": 7,
+   "n_chars": 9584,
+   "n_words": 1780,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-003-24-adjoint-action",
+   "id": "sec-005-2-the-algebra-u-hsl-2-and-its-subalgebras",
+   "number": "2",
+   "title": "The algebra $U_h(sl_2)$ and its subalgebras",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1172,
+   "n_words": 235,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-22-the-quantized-enveloping-algebra-u-h",
+   "number": "2.2",
+   "title": "The quantized enveloping algebra $U_h$",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 954,
+   "n_words": 192,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-23-the-subalgebras-uq-and-uqv-of-u-h",
+   "number": "2.3",
+   "title": "The subalgebras $\\Uq$ and $\\Uqv$ of $U_h$",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1762,
+   "n_words": 386,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-24-adjoint-action",
    "number": "2.4",
    "title": "Adjoint action",
    "level": 2,
@@ -1802,91 +1850,175 @@
    "label_end": null
   },
   {
-   "id": "sec-004-25-filtrations-and-completions",
+   "id": "sec-009-25-filtrations-and-completions",
    "number": "2.5",
    "title": "Filtrations and completions",
    "level": 2,
    "page_start": 9,
-   "page_end": 14,
-   "n_chars": 9304,
-   "n_words": 1920,
+   "page_end": 10,
+   "n_chars": 2328,
+   "n_words": 479,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-005-41-bottom-tangles",
-   "number": "4.1",
-   "title": "Bottom tangles",
+   "id": "sec-010-26-the-hopf-algebra-structure-for-tuq",
+   "number": "2.6",
+   "title": "The Hopf algebra structure for $\\tUq$",
    "level": 2,
-   "page_start": 14,
-   "page_end": 18,
-   "n_chars": 7626,
-   "n_words": 1539,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 647,
+   "n_words": 126,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-5-colored-jones-polynomials",
+   "id": "sec-011-3-braided-hopf-algebra-structure-for-tuqv",
+   "number": "3",
+   "title": "Braided Hopf algebra structure for $\\tUqv$",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 3338,
+   "n_words": 701,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-32-braided-hopf-algebra-structure-for-u-h",
+   "number": "3.2",
+   "title": "Braided Hopf algebra structure for $U_h$",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2827,
+   "n_words": 588,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-4-universal-sl-2-invariant-of-bottom-tangles",
+   "number": "4",
+   "title": "Universal $sl_2$ invariant of bottom tangles",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3265,
+   "n_words": 639,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-43-universal-sl-2-invariant-of-algebraically-spl",
+   "number": "4.3",
+   "title": "Universal $sl_2$-invariant of algebraically-split, $0$-framed bottom tangles",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2852,
+   "n_words": 591,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-44-universal-sl-2-invariant-of-bottom-knots",
+   "number": "4.4",
+   "title": "Universal $sl_2$ invariant of bottom knots",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1359,
+   "n_words": 287,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-5-colored-jones-polynomials",
    "number": "5",
    "title": "Colored Jones polynomials",
    "level": 1,
    "page_start": 18,
-   "page_end": 19,
-   "n_chars": 1450,
-   "n_words": 282,
+   "page_end": 20,
+   "n_chars": 3596,
+   "n_words": 724,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-007-52-colored-jones-polynomials",
+   "id": "sec-017-52-colored-jones-polynomials",
    "number": "5.2",
    "title": "Colored Jones polynomials",
    "level": 2,
-   "page_start": 19,
+   "page_start": 20,
    "page_end": 20,
-   "n_chars": 2088,
-   "n_words": 430,
+   "n_chars": 12,
+   "n_words": 2,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-008-53-quantum-trace-and-the-colored-jones-polynomia",
+   "id": "sec-018-53-quantum-trace-and-the-colored-jones-polynomia",
    "number": "5.3",
    "title": "Quantum trace and the colored Jones polynomial",
    "level": 2,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 635,
-   "n_words": 142,
+   "n_chars": 134,
+   "n_words": 30,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-009-54-representation-rings",
+   "id": "sec-019-51-finite-dimensional-representations-of-u-h",
+   "number": "5.1",
+   "title": "Finite-dimensional representations of $U_h$",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 903,
+   "n_words": 194,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-020-54-representation-rings",
    "number": "5.4",
    "title": "Representation rings",
    "level": 2,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 955,
-   "n_words": 193,
+   "n_chars": 492,
+   "n_words": 99,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-010-6-knots",
+   "id": "sec-021-6-knots",
    "number": "6",
    "title": "Knots",
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 1052,
-   "n_words": 217,
+   "n_chars": 201,
+   "n_words": 32,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-011-62-the-reduced-jones-polynomials-of-knots",
+   "id": "sec-022-61-the-elements-p-n-and-p-n",
+   "number": "6.1",
+   "title": "The elements $P_n$ and $P''_n$",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 820,
+   "n_words": 178,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-62-the-reduced-jones-polynomials-of-knots",
    "number": "6.2",
    "title": "The reduced Jones polynomials of knots",
    "level": 2,
@@ -1898,7 +2030,7 @@
    "label_end": null
   },
   {
-   "id": "sec-012-63-proof-of-proposition",
+   "id": "sec-024-63-proof-of-proposition",
    "number": "6.3",
    "title": "Proof of Proposition",
    "level": 2,
@@ -1910,7 +2042,7 @@
    "label_end": null
   },
   {
-   "id": "sec-013-634-proof-of-proposition",
+   "id": "sec-025-634-proof-of-proposition",
    "number": "6.3.4",
    "title": "Proof of Proposition",
    "level": 3,
@@ -1922,7 +2054,7 @@
    "label_end": null
   },
   {
-   "id": "sec-014-7-remarks-on-knot-invariants",
+   "id": "sec-026-7-remarks-on-knot-invariants",
    "number": "7",
    "title": "Remarks on knot invariants",
    "level": 1,
@@ -1934,31 +2066,55 @@
    "label_end": null
   },
   {
-   "id": "sec-015-71-the-two-variable-colored-jones-invariant",
+   "id": "sec-027-71-the-two-variable-colored-jones-invariant",
    "number": "7.1",
    "title": "The two-variable colored Jones invariant",
    "level": 2,
    "page_start": 24,
-   "page_end": 28,
-   "n_chars": 6532,
-   "n_words": 1207,
+   "page_end": 26,
+   "n_chars": 2408,
+   "n_words": 474,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-016-8-algebraically-split-links",
+   "id": "sec-028-72-melvin-morton-expansions-and-rozanskys-ration",
+   "number": "7.2",
+   "title": "Melvin-Morton expansions and Rozansky's rationality theorem",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 4050,
+   "n_words": 725,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-029-8-algebraically-split-links",
    "number": "8",
    "title": "Algebraically-split links",
    "level": 1,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 2470,
-   "n_words": 545,
+   "n_chars": 1367,
+   "n_words": 305,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-017-83-proof-of-theorem",
+   "id": "sec-030-82-integrality-for-algebraically-split-0-framed",
+   "number": "8.2",
+   "title": "Integrality for algebraically-split, $0$-framed links",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1024,
+   "n_words": 231,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-031-83-proof-of-theorem",
    "number": "8.3",
    "title": "Proof of Theorem",
    "level": 2,
@@ -1970,7 +2126,7 @@
    "label_end": null
   },
   {
-   "id": "sec-018-84-proof-of-lemma",
+   "id": "sec-032-84-proof-of-lemma",
    "number": "8.4",
    "title": "Proof of Lemma",
    "level": 2,
@@ -1982,7 +2138,7 @@
    "label_end": null
   },
   {
-   "id": "sec-019-85-remarks-on-boundary-links-and-boundary-bottom",
+   "id": "sec-033-85-remarks-on-boundary-links-and-boundary-bottom",
    "number": "8.5",
    "title": "Remarks on boundary links and boundary bottom tangles",
    "level": 2,
@@ -1994,7 +2150,7 @@
    "label_end": null
   },
   {
-   "id": "sec-020-9-twists",
+   "id": "sec-034-9-twists",
    "number": "9",
    "title": "Twists",
    "level": 1,
@@ -2006,19 +2162,31 @@
    "label_end": null
   },
   {
-   "id": "sec-021-92-twisting-theorem",
+   "id": "sec-035-92-twisting-theorem",
    "number": "9.2",
    "title": "Twisting theorem",
    "level": 2,
    "page_start": 34,
    "page_end": 34,
-   "n_chars": 1403,
-   "n_words": 275,
+   "n_chars": 1294,
+   "n_words": 255,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-022-101-admissible-framed-links-and-the-hoste-moves",
+   "id": "sec-036-10-the-invariant-j-m",
+   "number": "10",
+   "title": "The invariant $J_M$",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 87,
+   "n_words": 16,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-037-101-admissible-framed-links-and-the-hoste-moves",
    "number": "10.1",
    "title": "Admissible framed links and the Hoste moves",
    "level": 2,
@@ -2030,7 +2198,7 @@
    "label_end": null
   },
   {
-   "id": "sec-023-103-some-remarks",
+   "id": "sec-038-103-some-remarks",
    "number": "10.3",
    "title": "Some remarks",
    "level": 2,
@@ -2042,7 +2210,7 @@
    "label_end": null
   },
   {
-   "id": "sec-024-11-specializations-at-roots-of-unity",
+   "id": "sec-039-11-specializations-at-roots-of-unity",
    "number": "11",
    "title": "Specializations at roots of unity",
    "level": 1,
@@ -2054,7 +2222,7 @@
    "label_end": null
   },
   {
-   "id": "sec-025-112-wrt-invariants-of-integral-homology-spheres",
+   "id": "sec-040-112-wrt-invariants-of-integral-homology-spheres",
    "number": "11.2",
    "title": "WRT invariants of integral homology spheres",
    "level": 2,
@@ -2066,7 +2234,7 @@
    "label_end": null
   },
   {
-   "id": "sec-026-113-proof-of-theorem",
+   "id": "sec-041-113-proof-of-theorem",
    "number": "11.3",
    "title": "Proof of Theorem",
    "level": 2,
@@ -2078,67 +2246,91 @@
    "label_end": null
   },
   {
-   "id": "sec-027-114-an-alternative-proof-of-theorem",
+   "id": "sec-042-114-an-alternative-proof-of-theorem",
    "number": "11.4",
    "title": "An alternative proof of Theorem",
    "level": 2,
    "page_start": 38,
-   "page_end": 39,
-   "n_chars": 750,
-   "n_words": 135,
+   "page_end": 38,
+   "n_chars": 541,
+   "n_words": 104,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-028-121-connected-sum-and-orientation-reversal",
+   "id": "sec-043-12-some-properties-of-j-m",
+   "number": "12",
+   "title": "Some properties of $J_M$",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 179,
+   "n_words": 25,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-044-121-connected-sum-and-orientation-reversal",
    "number": "12.1",
    "title": "Connected sum and orientation reversal",
    "level": 2,
    "page_start": 39,
-   "page_end": 40,
-   "n_chars": 4665,
-   "n_words": 922,
+   "page_end": 39,
+   "n_chars": 896,
+   "n_words": 159,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-029-123-power-series-invariants",
+   "id": "sec-045-122-on-determination-of-j-m-by-infinitely-many-w",
+   "number": "12.2",
+   "title": "On determination of $J_M$ by infinitely many WRT invariants",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 3743,
+   "n_words": 757,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-046-123-power-series-invariants",
    "number": "12.3",
    "title": "Power series invariants",
    "level": 2,
    "page_start": 40,
-   "page_end": 40,
-   "n_chars": 0,
-   "n_words": 0,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-030-1232-the-ohtsuki-series",
-   "number": "12.3.2",
-   "title": "The Ohtsuki series",
-   "level": 3,
-   "page_start": 40,
    "page_end": 41,
-   "n_chars": 74,
-   "n_words": 9,
+   "n_chars": 152,
+   "n_words": 20,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-031-1231-derivatives-and-power-series-expansions",
+   "id": "sec-047-1231-derivatives-and-power-series-expansions",
    "number": "12.3.1",
    "title": "Derivatives and power series expansions",
    "level": 3,
    "page_start": 41,
-   "page_end": 42,
-   "n_chars": 2166,
-   "n_words": 416,
+   "page_end": 41,
+   "n_chars": 777,
+   "n_words": 147,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-032-1233-expansions-at-roots-of-unity",
+   "id": "sec-048-1232-the-ohtsuki-series",
+   "number": "12.3.2",
+   "title": "The Ohtsuki series",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 1381,
+   "n_words": 267,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-049-1233-expansions-at-roots-of-unity",
    "number": "12.3.3",
    "title": "Expansions at roots of unity",
    "level": 3,
@@ -2150,7 +2342,7 @@
    "label_end": null
   },
   {
-   "id": "sec-033-1234-relations-between-two-power-series-expansio",
+   "id": "sec-050-1234-relations-between-two-power-series-expansio",
    "number": "12.3.4",
    "title": "Relations between two power series expansions at different roots of unity",
    "level": 3,
@@ -2162,43 +2354,67 @@
    "label_end": null
   },
   {
-   "id": "sec-034-124-divisibility-properties-and-applications-to",
+   "id": "sec-051-124-divisibility-properties-and-applications-to",
    "number": "12.4",
    "title": "Divisibility properties and applications to power series invariants",
    "level": 2,
    "page_start": 43,
-   "page_end": 44,
-   "n_chars": 1968,
-   "n_words": 393,
+   "page_end": 43,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-035-1242-divisibility-results",
+   "id": "sec-052-1241-divisibility-in-the-ring-zqh",
+   "number": "12.4.1",
+   "title": "Divisibility in the ring $\\Zqh$",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 875,
+   "n_words": 173,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-053-1242-divisibility-results",
    "number": "12.4.2",
    "title": "Divisibility results",
    "level": 3,
    "page_start": 44,
    "page_end": 45,
-   "n_chars": 1073,
-   "n_words": 201,
+   "n_chars": 2128,
+   "n_words": 414,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-036-1243-applications-to-the-ohtsuki-series",
+   "id": "sec-054-1243-applications-to-the-ohtsuki-series",
    "number": "12.4.3",
    "title": "Applications to the Ohtsuki series",
    "level": 3,
    "page_start": 45,
-   "page_end": 48,
-   "n_chars": 5658,
-   "n_words": 1141,
+   "page_end": 47,
+   "n_chars": 5294,
+   "n_words": 1074,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-037-131-formal-evaluations-in-rings",
+   "id": "sec-055-13-the-p-adic-and-the-mod-p-wrt-functions",
+   "number": "13",
+   "title": "The $p$-adic and the mod $p$ WRT functions",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 401,
+   "n_words": 70,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-056-131-formal-evaluations-in-rings",
    "number": "13.1",
    "title": "Formal evaluations in rings",
    "level": 2,
@@ -2210,7 +2426,7 @@
    "label_end": null
   },
   {
-   "id": "sec-038-132-evaluations-at-complex-numbers",
+   "id": "sec-057-132-evaluations-at-complex-numbers",
    "number": "13.2",
    "title": "Evaluations at complex numbers",
    "level": 2,
@@ -2222,7 +2438,7 @@
    "label_end": null
   },
   {
-   "id": "sec-039-14-examples",
+   "id": "sec-058-14-examples",
    "number": "14",
    "title": "Examples",
    "level": 1,
@@ -2234,7 +2450,7 @@
    "label_end": null
   },
   {
-   "id": "sec-040-141-borromean-rings",
+   "id": "sec-059-141-borromean-rings",
    "number": "14.1",
    "title": "Borromean rings",
    "level": 2,
@@ -2246,7 +2462,7 @@
    "label_end": null
   },
   {
-   "id": "sec-041-142-powers-of-the-ribbon-element-and-the-twist-e",
+   "id": "sec-060-142-powers-of-the-ribbon-element-and-the-twist-e",
    "number": "14.2",
    "title": "Powers of the ribbon element and the twist element",
    "level": 2,
@@ -2258,7 +2474,7 @@
    "label_end": null
   },
   {
-   "id": "sec-042-143-surgeries-along-the-borromean-rings",
+   "id": "sec-061-143-surgeries-along-the-borromean-rings",
    "number": "14.3",
    "title": "Surgeries along the Borromean rings",
    "level": 2,
@@ -2270,7 +2486,7 @@
    "label_end": null
   },
   {
-   "id": "sec-043-15-knots-in-integral-homology-spheres",
+   "id": "sec-062-15-knots-in-integral-homology-spheres",
    "number": "15",
    "title": "Knots in integral homology spheres",
    "level": 1,
@@ -2282,31 +2498,43 @@
    "label_end": null
   },
   {
-   "id": "sec-044-151-bottom-knots-with-links",
+   "id": "sec-063-151-bottom-knots-with-links",
    "number": "15.1",
    "title": "Bottom knots with links",
    "level": 2,
    "page_start": 57,
-   "page_end": 61,
-   "n_chars": 9996,
-   "n_words": 1994,
+   "page_end": 59,
+   "n_chars": 3942,
+   "n_words": 839,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-045-163-rational-homology-spheres",
-   "number": "16.3",
-   "title": "Rational homology spheres",
+   "id": "sec-064-153-surgery-along-a-knot-with-framing-1m",
+   "number": "15.3",
+   "title": "Surgery along a knot with framing $1/m$",
    "level": 2,
-   "page_start": 61,
-   "page_end": 61,
-   "n_chars": 140,
-   "n_words": 23,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 1544,
+   "n_words": 325,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-046-16-concluding-remarks",
+   "id": "sec-065-154-cyclotomic-finite-type-invariants-of-integra",
+   "number": "15.4",
+   "title": "Cyclotomic finite type invariants of integral homology spheres",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 61,
+   "n_chars": 4579,
+   "n_words": 843,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-066-16-concluding-remarks",
    "number": "16",
    "title": "Concluding remarks",
    "level": 1,
@@ -2318,7 +2546,7 @@
    "label_end": null
   },
   {
-   "id": "sec-047-161-the-wrt-invariants-as-limiting-values-of-hol",
+   "id": "sec-067-161-the-wrt-invariants-as-limiting-values-of-hol",
    "number": "16.1",
    "title": "The WRT invariants as limiting values of holomorphic functions",
    "level": 2,
@@ -2330,19 +2558,31 @@
    "label_end": null
   },
   {
-   "id": "sec-048-162-generalizations-to-simple-lie-algebra",
+   "id": "sec-068-162-generalizations-to-simple-lie-algebra",
    "number": "16.2",
    "title": "Generalizations to simple Lie algebra",
    "level": 2,
    "page_start": 62,
-   "page_end": 63,
-   "n_chars": 2126,
-   "n_words": 382,
+   "page_end": 62,
+   "n_chars": 426,
+   "n_words": 78,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-049-164-bottom-tangles-in-homology-handlebodies",
+   "id": "sec-069-163-rational-homology-spheres",
+   "number": "16.3",
+   "title": "Rational homology spheres",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 1625,
+   "n_words": 293,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-070-164-bottom-tangles-in-homology-handlebodies",
    "number": "16.4",
    "title": "Bottom tangles in homology handlebodies",
    "level": 2,
@@ -2357,10 +2597,10 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 87,
+  "toc_entries": 86,
   "toc_inferred_entries": 87,
   "toc_inferred_mean_confidence": 0.931,
-  "toc_inferred_empty_share": 0.02,
+  "toc_inferred_empty_share": 0.042,
   "toc_inferred_method": "latex",
   "figure_entries": 8,
   "figure_sequence_gaps": [],
@@ -2368,13 +2608,27 @@
    "count": 0,
    "items": []
   },
-  "sections": 51,
-  "chars_total": 144635,
+  "sections": 72,
+  "chars_total": 143731,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "$q$-integers",
+    "page": 7,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
+  "pages_read_in_print_order": [
+   11,
+   20,
+   44
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
    "tex_sections": 87,
-   "overlaid": 38,
+   "overlaid": 57,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -2397,21 +2651,61 @@
     {
      "id": "sec-001-11-the-wrt-invariant-for-integral-homology-spher",
      "title": "The WRT invariant for integral homology spheres",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.954,
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.904,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-14-organization-of-the-paper",
+     "id": "sec-002-12-the-ring-zqh-of-analytic-functions-on-the-set",
+     "title": "The ring $\\Zqh$ of analytic functions on the set of roots of unity",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-a-unified-wrt-invariant-j-m-with-values-in-zq",
+     "title": "A unified WRT invariant $J_M$ with values in $\\Zqh$",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-14-organization-of-the-paper",
      "title": "Organization of the paper",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-24-adjoint-action",
+     "id": "sec-005-2-the-algebra-u-hsl-2-and-its-subalgebras",
+     "title": "The algebra $U_h(sl_2)$ and its subalgebras",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-22-the-quantized-enveloping-algebra-u-h",
+     "title": "The quantized enveloping algebra $U_h$",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-23-the-subalgebras-uq-and-uqv-of-u-h",
+     "title": "The subalgebras $\\Uq$ and $\\Uqv$ of $U_h$",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.86,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-24-adjoint-action",
      "title": "Adjoint action",
      "prose_ratio": 0.917,
      "coverage_ratio": 0.957,
@@ -2419,61 +2713,108 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-25-filtrations-and-completions",
+     "id": "sec-009-25-filtrations-and-completions",
      "title": "Filtrations and completions",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.946,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.937,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-41-bottom-tangles",
-     "title": "Bottom tangles",
-     "prose_ratio": 0.908,
-     "coverage_ratio": 0.952,
+     "id": "sec-010-26-the-hopf-algebra-structure-for-tuq",
+     "title": "The Hopf algebra structure for $\\tUq$",
+     "prose_ratio": 0.469,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-3-braided-hopf-algebra-structure-for-tuqv",
+     "title": "Braided Hopf algebra structure for $\\tUqv$",
+     "prose_ratio": 0.648,
+     "coverage_ratio": 0.832,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-5-colored-jones-polynomials",
+     "id": "sec-012-32-braided-hopf-algebra-structure-for-u-h",
+     "title": "Braided Hopf algebra structure for $U_h$",
+     "prose_ratio": 0.672,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-4-universal-sl-2-invariant-of-bottom-tangles",
+     "title": "Universal $sl_2$ invariant of bottom tangles",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-43-universal-sl-2-invariant-of-algebraically-spl",
+     "title": "Universal $sl_2$-invariant of algebraically-split, $0$-framed bottom tangles",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-44-universal-sl-2-invariant-of-bottom-knots",
+     "title": "Universal $sl_2$ invariant of bottom knots",
+     "prose_ratio": 0.658,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-5-colored-jones-polynomials",
      "title": "Colored Jones polynomials",
-     "prose_ratio": 0.508,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.093,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-007-52-colored-jones-polynomials",
+     "id": "sec-017-52-colored-jones-polynomials",
      "title": "Colored Jones polynomials",
-     "prose_ratio": 0.805,
-     "coverage_ratio": 0.97,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-008-53-quantum-trace-and-the-colored-jones-polynomia",
+     "id": "sec-018-53-quantum-trace-and-the-colored-jones-polynomia",
      "title": "Quantum trace and the colored Jones polynomial",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.966,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.172,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-009-54-representation-rings",
+     "id": "sec-019-51-finite-dimensional-representations-of-u-h",
+     "title": "Finite-dimensional representations of $U_h$",
+     "prose_ratio": 0.216,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-54-representation-rings",
      "title": "Representation rings",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.918,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.532,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-010-6-knots",
+     "id": "sec-021-6-knots",
      "title": "Knots",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.93,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.765,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-62-the-reduced-jones-polynomials-of-knots",
+     "id": "sec-022-61-the-elements-p-n-and-p-n",
+     "title": "The elements $P_n$ and $P''_n$",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-62-the-reduced-jones-polynomials-of-knots",
      "title": "The reduced Jones polynomials of knots",
      "prose_ratio": 0.877,
      "coverage_ratio": 0.912,
@@ -2481,7 +2822,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-63-proof-of-proposition",
+     "id": "sec-024-63-proof-of-proposition",
      "title": "Proof of Proposition",
      "prose_ratio": 0.892,
      "coverage_ratio": 0.943,
@@ -2489,13 +2830,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-634-proof-of-proposition",
+     "id": "sec-025-634-proof-of-proposition",
      "title": "Proof of Proposition",
      "prose_ratio": 0.032,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-014-7-remarks-on-knot-invariants",
+     "id": "sec-026-7-remarks-on-knot-invariants",
      "title": "Remarks on knot invariants",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -2503,34 +2844,50 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-71-the-two-variable-colored-jones-invariant",
+     "id": "sec-027-71-the-two-variable-colored-jones-invariant",
      "title": "The two-variable colored Jones invariant",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.965,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-8-algebraically-split-links",
+     "id": "sec-028-72-melvin-morton-expansions-and-rozanskys-ration",
+     "title": "Melvin-Morton expansions and Rozansky's rationality theorem",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-8-algebraically-split-links",
      "title": "Algebraically-split links",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.912,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.881,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-83-proof-of-theorem",
+     "id": "sec-030-82-integrality-for-algebraically-split-0-framed",
+     "title": "Integrality for algebraically-split, $0$-framed links",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-031-83-proof-of-theorem",
      "title": "Proof of Theorem",
      "prose_ratio": 0.494,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-018-84-proof-of-lemma",
+     "id": "sec-032-84-proof-of-lemma",
      "title": "Proof of Lemma",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-019-85-remarks-on-boundary-links-and-boundary-bottom",
+     "id": "sec-033-85-remarks-on-boundary-links-and-boundary-bottom",
      "title": "Remarks on boundary links and boundary bottom tangles",
      "prose_ratio": 0.976,
      "coverage_ratio": 0.969,
@@ -2538,7 +2895,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-9-twists",
+     "id": "sec-034-9-twists",
      "title": "Twists",
      "prose_ratio": 0.973,
      "coverage_ratio": 0.89,
@@ -2546,15 +2903,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-92-twisting-theorem",
+     "id": "sec-035-92-twisting-theorem",
      "title": "Twisting theorem",
-     "prose_ratio": 0.962,
+     "prose_ratio": 0.959,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-101-admissible-framed-links-and-the-hoste-moves",
+     "id": "sec-036-10-the-invariant-j-m",
+     "title": "The invariant $J_M$",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-037-101-admissible-framed-links-and-the-hoste-moves",
      "title": "Admissible framed links and the Hoste moves",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.962,
@@ -2562,7 +2927,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-103-some-remarks",
+     "id": "sec-038-103-some-remarks",
      "title": "Some remarks",
      "prose_ratio": 0.85,
      "coverage_ratio": 0.946,
@@ -2570,7 +2935,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-11-specializations-at-roots-of-unity",
+     "id": "sec-039-11-specializations-at-roots-of-unity",
      "title": "Specializations at roots of unity",
      "prose_ratio": 0.973,
      "coverage_ratio": 0.973,
@@ -2578,54 +2943,75 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-112-wrt-invariants-of-integral-homology-spheres",
+     "id": "sec-040-112-wrt-invariants-of-integral-homology-spheres",
      "title": "WRT invariants of integral homology spheres",
      "prose_ratio": 0.298,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-026-113-proof-of-theorem",
+     "id": "sec-041-113-proof-of-theorem",
      "title": "Proof of Theorem",
      "prose_ratio": 0.386,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-027-114-an-alternative-proof-of-theorem",
+     "id": "sec-042-114-an-alternative-proof-of-theorem",
      "title": "An alternative proof of Theorem",
-     "prose_ratio": 0.898,
-     "coverage_ratio": 0.909,
+     "prose_ratio": 0.756,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-028-121-connected-sum-and-orientation-reversal",
+     "id": "sec-043-12-some-properties-of-j-m",
+     "title": "Some properties of $J_M$",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.688,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-044-121-connected-sum-and-orientation-reversal",
      "title": "Connected sum and orientation reversal",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.93,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-029-123-power-series-invariants",
+     "id": "sec-045-122-on-determination-of-j-m-by-infinitely-many-w",
+     "title": "On determination of $J_M$ by infinitely many WRT invariants",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-046-123-power-series-invariants",
      "title": "Power series invariants",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.667,
+     "coverage_ratio": 0.545,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-030-1232-the-ohtsuki-series",
-     "title": "The Ohtsuki series",
-     "prose_ratio": 0.018,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-031-1231-derivatives-and-power-series-expansions",
+     "id": "sec-047-1231-derivatives-and-power-series-expansions",
      "title": "Derivatives and power series expansions",
-     "prose_ratio": 0.897,
-     "coverage_ratio": 0.429,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-032-1233-expansions-at-roots-of-unity",
+     "id": "sec-048-1232-the-ohtsuki-series",
+     "title": "The Ohtsuki series",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-049-1233-expansions-at-roots-of-unity",
      "title": "Expansions at roots of unity",
      "prose_ratio": 0.924,
      "coverage_ratio": 1.0,
@@ -2633,7 +3019,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-033-1234-relations-between-two-power-series-expansio",
+     "id": "sec-050-1234-relations-between-two-power-series-expansio",
      "title": "Relations between two power series expansions at different roots of unity",
      "prose_ratio": 0.959,
      "coverage_ratio": 0.932,
@@ -2641,31 +3027,44 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-034-124-divisibility-properties-and-applications-to",
+     "id": "sec-051-124-divisibility-properties-and-applications-to",
      "title": "Divisibility properties and applications to power series invariants",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.963,
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-052-1241-divisibility-in-the-ring-zqh",
+     "title": "Divisibility in the ring $\\Zqh$",
+     "prose_ratio": 0.625,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-035-1242-divisibility-results",
+     "id": "sec-053-1242-divisibility-results",
      "title": "Divisibility results",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.889,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "coverage_ratio": 0.425,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-036-1243-applications-to-the-ohtsuki-series",
+     "id": "sec-054-1243-applications-to-the-ohtsuki-series",
      "title": "Applications to the Ohtsuki series",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.954,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.94,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-037-131-formal-evaluations-in-rings",
+     "id": "sec-055-13-the-p-adic-and-the-mod-p-wrt-functions",
+     "title": "The $p$-adic and the mod $p$ WRT functions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-056-131-formal-evaluations-in-rings",
      "title": "Formal evaluations in rings",
      "prose_ratio": 0.762,
      "coverage_ratio": 1.0,
@@ -2673,7 +3072,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-038-132-evaluations-at-complex-numbers",
+     "id": "sec-057-132-evaluations-at-complex-numbers",
      "title": "Evaluations at complex numbers",
      "prose_ratio": 0.984,
      "coverage_ratio": 0.969,
@@ -2681,7 +3080,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-039-14-examples",
+     "id": "sec-058-14-examples",
      "title": "Examples",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -2689,7 +3088,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-040-141-borromean-rings",
+     "id": "sec-059-141-borromean-rings",
      "title": "Borromean rings",
      "prose_ratio": 0.934,
      "coverage_ratio": 0.921,
@@ -2697,7 +3096,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-041-142-powers-of-the-ribbon-element-and-the-twist-e",
+     "id": "sec-060-142-powers-of-the-ribbon-element-and-the-twist-e",
      "title": "Powers of the ribbon element and the twist element",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.836,
@@ -2705,7 +3104,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-042-143-surgeries-along-the-borromean-rings",
+     "id": "sec-061-143-surgeries-along-the-borromean-rings",
      "title": "Surgeries along the Borromean rings",
      "prose_ratio": 0.909,
      "coverage_ratio": 0.886,
@@ -2713,7 +3112,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-043-15-knots-in-integral-homology-spheres",
+     "id": "sec-062-15-knots-in-integral-homology-spheres",
      "title": "Knots in integral homology spheres",
      "prose_ratio": 0.963,
      "coverage_ratio": 1.0,
@@ -2721,21 +3120,31 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-044-151-bottom-knots-with-links",
+     "id": "sec-063-151-bottom-knots-with-links",
      "title": "Bottom knots with links",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-045-163-rational-homology-spheres",
-     "title": "Rational homology spheres",
-     "prose_ratio": 0.068,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-064-153-surgery-along-a-knot-with-framing-1m",
+     "title": "Surgery along a knot with framing $1/m$",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-046-16-concluding-remarks",
+     "id": "sec-065-154-cyclotomic-finite-type-invariants-of-integra",
+     "title": "Cyclotomic finite type invariants of integral homology spheres",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-066-16-concluding-remarks",
      "title": "Concluding remarks",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -2743,7 +3152,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-047-161-the-wrt-invariants-as-limiting-values-of-hol",
+     "id": "sec-067-161-the-wrt-invariants-as-limiting-values-of-hol",
      "title": "The WRT invariants as limiting values of holomorphic functions",
      "prose_ratio": 0.959,
      "coverage_ratio": 0.983,
@@ -2751,18 +3160,27 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-048-162-generalizations-to-simple-lie-algebra",
+     "id": "sec-068-162-generalizations-to-simple-lie-algebra",
      "title": "Generalizations to simple Lie algebra",
-     "prose_ratio": 0.879,
-     "coverage_ratio": 0.311,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.848,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-049-164-bottom-tangles-in-homology-handlebodies",
+     "id": "sec-069-163-rational-homology-spheres",
+     "title": "Rational homology spheres",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-070-164-bottom-tangles-in-homology-handlebodies",
      "title": "Bottom tangles in homology handlebodies",
      "prose_ratio": 0.991,
      "coverage_ratio": 0.318,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

@@ -5,7 +5,8 @@ Companion to `QOU.MassTheory.Mu4RhoFCluster` (#4354), which proved the **pairwis
 product** ρ_F cluster route cannot supply the positive residual moment
 `μ₃ = +0.4708` (`mu3_ne_pairwise_3body_cluster`; the multiplicative
 `c(1 − ∏ fᵢ)`, `fᵢ ∈ [0,1]`, has non-positive beyond-pairwise 3-body content, and
-`markovParam_le_half` forecloses the only escape `fᵢ > 1`).  The standing OPEN door
+`markovZD_lt_one_iff` forecloses the only escape `fᵢ > 1` at `q₀ ≈ 1.110`, where
+`z = q³/(q²+1) < 1`).  The standing OPEN door
 that wall leaves is a **genuine non-multiplicative 3-body operator** — the connected
 (Ursell) part of the *joint* block-trace, which does not factor into pairwise
 factors.

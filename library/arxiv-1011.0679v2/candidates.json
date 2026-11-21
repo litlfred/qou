@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1011.0679v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "6fa4bbcf4e908373559c4ee603c5ee3f929a25d722feb3c9ad3774cc344a5363",
+  "file": "1011.0679v2.pdf"
+ },
+ "provenance": {
+  "title": "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS",
+  "authors": "ERIC OPDAM AND MAARTEN SOLLEVELD",
+  "arxiv": {
+   "id": "1011.0679",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "17 Nov 2010"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

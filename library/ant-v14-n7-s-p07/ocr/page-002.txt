@@ -1,0 +1,47 @@
+1896 Jordan S. Ellenberg, Wanlin Li and Mark Shusterman
+
+Section 1]) that there are only finitely many p for which p~ is algebraic, so hg; = 0 for any q not divisible
+by these p (as Zc(s) is a rational function in g~*). Hence, it suffices to work with one characteristic at a
+time, as we do in the theorem above. For s = 7 since the upper bound in Corollary 2.6 holds for any @
+when q is a perfect square, we can conclude limy_.oo hq,s = 0 ranging over g which is an even power of
+a prime.
+
+Additional motivation for Theorem 1.2 comes from the ability to write Zc(s) as a rational function in
+q_*, with the numerator being a quadratic Dirichlet L-function. Interpreted in this language of Dirichlet
+characters, Theorem 1.2 improves (for all sufficiently large g) upon [Bui and Florea 2018, Corollary 2.1]
+(they give a lower bound of more than 94.27% nonvanishing at 5 = 3): Regarding the analogous vanishing
+problem for quadratic Dirichlet L-functions over Z, we refer to the work of Soundararajan [20001].!
+
+As we explain in the last section, our theorem can be rephrased as an upper bound for the number of
+quadratic twists of a constant abelian variety which have positive rank.
+
+Corollary 1.4 (Corollary 3.3). Let A be a constant abelian variety defined over Fq(x). For each
+f € Fgm[x], denote by Ay the quadratic twist of A ® Fgm(x) by f. Let Rum be the set {f €
+Fgm[x], squarefree, of degn: Af has positive rank}. Then,
+
+wo. R
+lim lim sup [Ro m|_ =0.
+MFO nso gmat)
+
+Motivated by [Bui and Florea 2018, Corollary 2.2] and the analogous results over Z of Conrey, Ghosh
+and Gonek [Conrey et al. 1998], we bound the multiplicity of the zeros of Zc, and obtain further
+information on nonvanishing at s = 3
+Theorem 1.5. Let C be a hyperelliptic curve of genus at least 2 over Fy and S be the set of Weierstrass
+points of C. The Frobenius acts on S by permuting the 2g +2 Weierstrass points via some permutation 7.
+
+Suppose that either
+¢ gis evenand m is a (2g+2)-cycle; or
+e x is the product of two disjoint cycles of odd length.
+Then:
+(1) The point s = 5 is not a zero of Zc.
+
+(2) All zeros of Zc are of multiplicity at most 2. Moreover, if x is the product of two disjoint cycles of
+coprime lengths, all zeros of Zc are simple.
+
+In the language of Dirichlet characters, this implies in particular the nonvanishing (at the central point)
+in the case of prime conductor of degree not divisible by 4 and therefore gives an explicit set of size on
+order X/ log X of Dirichlet characters of conductor at most X which have L-functions nonvanishing at
+the critical point. See the statement below.
+
+'Results in [Bui and Florea 2018] and [Soundararajan 2000] were stated at point s = 3 but the methods can be extended to
+prove the statement for any point on the critical line.

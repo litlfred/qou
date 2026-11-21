@@ -1,0 +1,148 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1108.0687v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "66ba88e13a429a0a3d01f1a7a2b0a8c5fdfd52b816427d94d0b95d09b6791499",
+  "file": "1108.0687v3.pdf"
+ },
+ "provenance": {
+  "title": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures",
+  "authors": "Robin Pemantle1, 2 and Yuval Peres3",
+  "arxiv": {
+   "id": "1108.0687",
+   "version": "3",
+   "primary_class": "math.PR",
+   "stamp_date": "28 Jul 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "lemma": 4
+  },
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "both": 1,
+   "in-paper": 3
+  },
+  "by_lean_status": {
+   "unformalized": 4
+  },
+  "needs_lean_proof": 4
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "The variable N is distributed as the sum of independent Bernoullis.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-008-43-proof-of-theorem.md (p. 11-14) citing [BBL09]",
+   "external_refs": [
+    "[BBL09]"
+   ],
+   "proof_excerpt": "In the de\ufb01nition of the strong Rayleigh property, setting the variables z1, . . . , zn equal produces a univariate polynomial with no roots in the upper half plane. As pointed out at the beginning of Section 3 of [BBL09], such a polynomial with real coe\ufb03cients must have all its r",
+   "section_file": "sections/sec-008-43-proof-of-theorem.md",
+   "section_title": "Proof of Theorem ??",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-008-43-proof-of-theorem.md (p. 11-14) citing [BBL09]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-008-01",
+   "block_iri": "library/arxiv-1108.0687v3/blocks/lem-sec-008-01",
+   "claim_id": "arxiv-1108.0687v3#lemma:4.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.2",
+   "name": null,
+   "statement": "The variable N satis\ufb01es Ee\u03bb(N\u2212\u00b5) \u2264exp \u0002 \u00b5(e\u03bb \u22121 \u2212\u03bb) \u0003 and consequently for any a > 0, P \u0010 N \u2265\u00b5 + a \u0011 \u2264exp \u0012 \u2212 (a/2)2 2(\u00b5 + a/2) \u0013 .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-43-proof-of-theorem.md (p. 11-14)",
+   "external_refs": [],
+   "proof_excerpt": "By Lemma 4.1 N is distributed as the sum of independent Bernoullis, which implies the \ufb01rst inequality; this implies the second inequality by (4.14).",
+   "section_file": "sections/sec-008-43-proof-of-theorem.md",
+   "section_title": "Proof of Theorem ??",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-43-proof-of-theorem.md (p. 11-14)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-008-02",
+   "block_iri": "library/arxiv-1108.0687v3/blocks/lem-sec-008-02",
+   "claim_id": "arxiv-1108.0687v3#lemma:4.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.3",
+   "name": null,
+   "statement": "The function \u03c6 is Lipschitz-1.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-43-proof-of-theorem.md (p. 11-14)",
+   "external_refs": [],
+   "proof_excerpt": "By Proposition 2.3 in the case of strong Rayleigh measures on Bn we know that Pk+1 \u22b2Pk. By de\ufb01nition of the stochastic covering relation, (\u03c6(k + 1), \u03c6(k)) may be written as E(f(\u03b7), f(\u03be)) where d(\u03b7, \u03be) = 1 almost surely. The conclusion then follows from the fact that f is Lipschit",
+   "section_file": "sections/sec-008-43-proof-of-theorem.md",
+   "section_title": "Proof of Theorem ??",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-43-proof-of-theorem.md (p. 11-14)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-008-03",
+   "block_iri": "library/arxiv-1108.0687v3/blocks/lem-sec-008-03",
+   "claim_id": "arxiv-1108.0687v3#lemma:4.3",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.4",
+   "name": null,
+   "statement": "The random variable \u03c6(N) satis\ufb01es the concentration inequality Ee\u03bb(\u03c6(N)\u2212E\u03c6(N)) \u2264e\u00b5(e\u03bb\u22121\u2212\u03bb) . Consequently, the upper tails of \u03c6(N) obey the bound P(\u03c6(N) \u2212E\u03c6(N) > t) \u2264e\u2212 t2 2(t+\u00b5) .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-43-proof-of-theorem.md (p. 11-14)",
+   "external_refs": [],
+   "proof_excerpt": "Pursuant to Lemma 4.1, let {Yj} be a \ufb01nite or countably in\ufb01nite collection of independent Bernoulli variables whose sum has the same law as N; we may therefore prove the statements with N replaced by P j Yj. Write \u03c6(P j Yj) \u2212E\u03c6(P j Yj) as the \ufb01nal term of a martingale {M\u2113} where ",
+   "section_file": "sections/sec-008-43-proof-of-theorem.md",
+   "section_title": "Proof of Theorem ??",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-43-proof-of-theorem.md (p. 11-14)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-008-04",
+   "block_iri": "library/arxiv-1108.0687v3/blocks/lem-sec-008-04",
+   "claim_id": "arxiv-1108.0687v3#lemma:4.4",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

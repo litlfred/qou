@@ -1,0 +1,66 @@
+4.3 Ideal points of h-lines
+
+Ideal points of an h-line are points where the h-line intersects the unit disc.
+
+4.3.1 Calculation of ideal points
+
+We decided to define ideal points constructively, i.e., we calculate the coordinates of ideal points for a given
+h-line explicitly. Namely, if the h-line is determined by A and B, the two intersection points are
+
+ee (-A+i- ViBP - a) .
+
+definition calc-ideal-point1-cvec :: complex = complex = complez-vec where
+[simp]: calc-ideal-point1-cvec A B =
+(let diser = Re ((emod B)? — (Re A)*) in
+(Bx(—A — ixsqrt(discr)), (emod B)*))
+
+definition calc-ideal-point2-cvec :: complex = complex = compler-vec where
+[simp]: calc-ideal-point2-cvec A B =
+(let diser = Re ((emod B)? — (Re A)*) in
+(Bx(—A + iksgrt(discr)), (emod B)*))
+
+definition calc-ideal-points-cmat-cvec :: complex-mat = complez-vec set where
+[simp]: calc-ideal-points-cmat-cvec H =
+(if is-poincare-line-cmat H then
+let (A, B, C, D) = H
+in {calc-ideal-point1-cvec A B, calc-ideal-point2-cvec A B}
+else
+
+{(-1, 1), @, DY)
+
+lift-definition calc-ideal-points-clmat-hcoords :: circline-mat = complet-homo-coords set is calc-ideal-points-cmat-cvec
+by (auto simp add: Let-def split: if-split-asm)
+
+lift-definition calc-ideal-points :: circline = complex-homo set is calc-ideal-points-clmat-hcoords
+proof transfer
+fix H1 H2
+assume hh: hermitean H1 A H1 4 mat-zero hermitean H2 \ H2 # mat-zero
+obtain Ai B1 C1 D1 A2 B2 C2 D2 where *: H1 = (A1, B1, C1, D1) H2 = (A2, B2, C2, D2)
+by (cases H1, cases H2, auto)
+assume circline-eq-cmat H1 H2
+then obtain k where k: k # 0 H2 = cork *sm H1
+by auto
+thus rel-set (~,) (calc-ideal-points-cmat-cvec H1) (calc-ideal-points-cmat-cvec H2)
+proof (cases is-poincare-line-cmat H1)
+case True
+hence is-poincare-line-cmat H2
+using k * hermitean-mult-real[of H1 k] hh
+by (auto simp add: power2-eq-square norm-mult)
+have ««: sqrt (\k| * cmod B1 * (|\k| * cmod B1) — k * Re D1 * (k * Re D1)) =
+|k| * sqrt(emod B1 * cmod B1 — Re D1 * Re D1)
+proof —
+have |k| * cmod B1 * (|k| * cmod B1) — k * Re D1 * (k * Re D1) =
+k? * (cmod B1 * cmod B1 — Re D1 * Re D1)
+by (simp add: power2-eq-square field-simps)
+thus ?thesis
+by (simp add: real-sqrt-mult)
+qed
+show ?thesis
+using <is-poincare-line-cmat H1» <is-poincare-line-cmat H2>
+using * k
+apply (simp add: Let-def)
+apply safe
+apply (simp add: power2-eq-square rel-set-def norm-mult)
+apply safe
+apply (cases k > 0)
+apply (rule-tac r=(cor k)? in ezl)

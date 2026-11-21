@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "We certainly have At(M) = 0. Therefore, A2/3 - Ac mod 2. This raises the",
-  "pageStart": 13,
-  "pageEnd": 13,
-  "text": "../sections/sec-015-9-we-certainly-have-atm-0-therefore-a23---ac-mod.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
+  "title": "Let M be an oriented integral homology 3-sphere. Then )~,~(M) E Z(~+U.",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "../sections/sec-015-63-let-m-be-an-oriented-integral-homology-3-sphe.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
   "provenance": "ingested"
 }

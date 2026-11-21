@@ -61,6 +61,7 @@ Bean qou-4u60.
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
@@ -94,7 +95,7 @@ def main() -> int:
 
     def gate(q, lam):
         """SU(4) occupancy binding E₀(q)·ln(1/W_λ(q)) — both factors q-dependent."""
-        return (me / (q * (q - 1))) * math.log(1.0 / mbd.W_lambda_float(q, lam))
+        return (_qbeta_e0.order_zero_scaled(me, q)) * math.log(1.0 / mbd.W_lambda_float(q, lam))
 
     def magic(A):
         """Magic-A whole-nucleus volume form 2·m_e·A·8G — constant in q."""

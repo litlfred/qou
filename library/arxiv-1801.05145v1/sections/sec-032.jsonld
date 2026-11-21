@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1801.05145v1/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Admissible seeds in the monoidal category $\\shc_w$",
+  "pageStart": 85,
+  "pageEnd": 91,
+  "contains": [
+    "library/arxiv-1801.05145v1/blocks/prose-sec-032",
+    "library/arxiv-1801.05145v1/blocks/thm-sec-032-01",
+    "library/arxiv-1801.05145v1/blocks/thm-sec-032-02",
+    "library/arxiv-1801.05145v1/blocks/lem-sec-032-03",
+    "library/arxiv-1801.05145v1/blocks/lem-sec-032-04",
+    "library/arxiv-1801.05145v1/blocks/prop-sec-032-05",
+    "library/arxiv-1801.05145v1/blocks/thm-sec-032-06",
+    "library/arxiv-1801.05145v1/blocks/thm-sec-032-07",
+    "library/arxiv-1801.05145v1/blocks/cor-sec-032-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1801.05145v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1801.05145v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/ant-v14-n7-s/blocks/lem-sec-093-06",
@@ -16,6 +16,16 @@
   "pageEnd": 133,
   "text": "lem-sec-093-06.md",
   "derivedFrom": "library/ant-v14-n7-s/sections/sec-093",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.3",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-093-3-modular-curves.md (p. 127-133)",
+    "claim_id": "ant-v14-n7-s#lemma:6.3",
+    "lean_status": "unformalized"
+  }
 }

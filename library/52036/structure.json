@@ -1,189 +1,135 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "52036",
  "source": {
   "file": "52036.pdf",
   "sha256": "ab02866e1f7191b73633f6d84afd95a9668ac1eb4be5c6220ae4e14238a00d0c",
   "bytes": 389779,
-  "pages": 9,
-  "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "pages": 9,
+  "text_source": "ocr",
+  "runContext": {
+   "sha256": "a3815779d7279f0ff3c67ef5fe1d99db8b0fbcc588035d034022524fffa439ff"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
-  "title": "Torus Knots Extremizing the M \u00f6bius Energy",
-  "authors_raw": "Denise Kim and Rob Kusner",
-  "title_lines": [
-   "Torus Knots Extremizing the M \u00f6bius Energy"
-  ],
-  "abstract": null,
+  "title": "Torus Knots Extremizing the Möbius Energy",
   "docinfo": {
+   "Title": "kusner.dvi",
    "Producer": "GPL Ghostscript 9.53.3",
-   "CreationDate": "D:20250905150915+02'00'",
    "Creator": "dvips 5.58 Copyright 1986, 1994 Radical Eye Software",
-   "Title": "kusner.dvi"
-  }
+   "CreationDate": "D:20250905150915+02'00'"
+  },
+  "title_raw": null,
+  "title_source": "filename",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "kusner.dvi",
+   "heading": "Torus Knots Extremizing the M¨obius Energy",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Torus Knots Extremizing the M öbius Energy",
+  "title_lines": [
+   "Torus Knots Extremizing the Möbius Energy"
+  ],
+  "authors_raw": "Denise Kim and Rob Kusner"
  },
- "toc": [
-  {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "M \u00a8obius Invariance",
-   "page": 1,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Torus Knots and Symmetric Criticality",
-   "page": 1,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Torus Links",
-   "page": 1,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Discretization and Computer Experiments",
-   "page": 1,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Further Experiments",
-   "page": 1,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgements",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  }
- ],
- "toc_source": "inferred",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "52036",
+ "toc_source": "none",
+ "granularity": "page",
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 78,
-   "n_words": 13
+   "n_chars": 2120,
+   "n_words": 343
   },
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-001-2-m-obius-invariance",
-   "number": "2",
-   "title": "M \u00a8obius Invariance",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-002-3-torus-knots-and-symmetric-criticality",
-   "number": "3",
-   "title": "Torus Knots and Symmetric Criticality",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-4-torus-links",
-   "number": "4",
-   "title": "Torus Links",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-004-5-discretization-and-computer-experiments",
-   "number": "5",
-   "title": "Discretization and Computer Experiments",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-005-6-further-experiments",
-   "number": "6",
-   "title": "Further Experiments",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-006-acknowledgements",
+   "id": "page-002",
    "number": null,
-   "title": "Acknowledgements",
+   "title": "Page 2",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 3606,
+   "n_words": 636
   },
   {
-   "id": "sec-007-references",
+   "id": "page-003",
    "number": null,
-   "title": "References",
+   "title": "Page 3",
    "level": 1,
-   "page_start": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3036,
+   "n_words": 572
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2360,
+   "n_words": 478
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2908,
+   "n_words": 564
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2444,
+   "n_words": 439
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2952,
+   "n_words": 528
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 3739,
+   "n_words": 609
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
    "page_end": 9,
-   "n_chars": 29335,
-   "n_words": 6566
+   "n_chars": 435,
+   "n_words": 55
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": false,
-  "toc_entries": 8,
-  "sections": 9,
-  "chars_total": 29413
- }
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

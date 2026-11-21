@@ -1,0 +1,59 @@
+30 3. THE MODULAR REPRESENTATION THEORY OF #
+
+3.33 Proposition Suppose that R is a field and that e > n. Suppose that X is a
+partition of n and let t be a standard \-tableau.
+(i) There erist a, € R such that fy = m_+ Soagmy.
+sbt
+
+(ii) Ifs > t thenm,F, =0.
+(ili) Fork=1,....n, file = [resilk)] gfe.
+(iv) Ifs €Std(r) then fiFs = daft.
+Proof. Let N = |Std(A)| and for any s € Std(A) let ff = msFN. We will first
+prove analogues of (i)—(iv) for f{ and then show that f, = f¢.
+
+We know from Theorem 3.30 that miLy = [resi(k)]qme+ Do yp_4smMs, for some
+bs € R. Therefore, ff = me+ > oyy¢4a™Ms for some ay € R. Call this statement (i)’.
+
+Next suppose that 5 is a standard A-tableau such that 5 > t. By Lemma 3.32(i)
+we can find an integer k such that [resi(k)]q Z [ress(A)Jg. Then (Lx — [ress(k)]q)
+is a factor of Fy so m, Fy = ops CoM for some c, € R by Theorem 3.30. Now if
+cy # 0 then v & t and, as before, we can find k’ such that [resy(k’)]q # [rese(k’)]q:
+therefore, ms F? = do, ¢,.m, where c/,, # 0 only if there exists » with v! DvD t.
+Continuing in this way shows that m,F/’ = 0 whenever sp t.
+
+Next we claim that (iii)’ holds; that is, f{£, = [resi(A)],f{ for all k with
+1<k<n. This now follows because by the last paragraph and Theorem 3.30
+
+SL, = m FR Ly = mL FN = ([resi(k)]Jgmi + ST bem) FY = [resi(k) oft.
+bt
+
+Using (iii)’ and the definitions we discover that f{ is fixed by every factor of Fi;
+thus, f(F, = f{. Furthermore, ifs # t then by Lemma 3.32(i) there exists an integer
+k such that [res,(k)]g # [rese(k)]g- However, (iii)/ shows that (LZ, — res;(k)) kills
+f{, so f(F, = 0 because (Le - res;(k)) is a factor of F,. Therefore, f{ Fs = dstf{;
+call this statement (iv)’.
+
+Finally we can show that f; = f{. Suppose that s§ is a standard A-tableau
+such that s > t; then by (i)’ there exist d, € R such that my = fP+ Vian, dof.
+Therefore, using (iv)’,
+
+ms Fy = (ff + dof) Fi = bsfi-
+vps
+
+In particular, f, = meF, = f{ and we have proved all that we set out to prove (note
+that the previous line includes (ii)). Oo
+
+We can now prove the g-analogue of Young’s seminormal form for #.
+
+3.34 Theorem (Dipper—James) Suppose that R is a field and that e > n. Let
+A be a partition of n.
+
+(i) {fe | €€ Std(A) } ts an orthogonal basis of S*.
+
+(ii) Lets be a standard \-tableau, t = 5(1,i+ 1) and p = res,(4) — res,(i). Then
+
+ats, ift andi+1 are in the same row of s,
+in = —fe, ifi andi+ 1 are in the same column of s.
+“— pyle tte ift € Std(A) and sp t,
+
+pla + ef, if CE Std(A) and to ».

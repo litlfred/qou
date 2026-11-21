@@ -1,0 +1,3175 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1308.2499v1",
+  "pages": [
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 46,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: The range of intM(p,q). Above the green line, the integrand is not suﬃciently singular to penalize self-intersections, thus intM(p,q) is not a knot energy. On the other hand, below the red line, for q > 1, the integrand is so singular, that the integral is either equal to zero or inﬁnite, so there are no ﬁnite-energy C1-knots at all. The hatched area reveals the strange behavior that there are no ﬁnite-energy C3-knots while it takes ﬁnite values on polygons."
+      ],
+      "labels": [
+        {
+          "text": "and its non-degenerate part (leading to a non-degenerate equation) is",
+          "bbox": [
+            124.8,
+            126.56,
+            398.13,
+            138.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0010 7",
+          "bbox": [
+            268.43,
+            142.95,
+            276.66,
+            158.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "txex"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3, 8",
+          "bbox": [
+            273.17,
+            148.27,
+            286.69,
+            164.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            287.88,
+            148.27,
+            291.43,
+            158.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q = 2.",
+          "bbox": [
+            317.17,
+            149.44,
+            341.49,
+            161.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(0.7)",
+          "bbox": [
+            449.42,
+            149.44,
+            468.51,
+            161.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p ∈",
+          "bbox": [
+            252.57,
+            150.01,
+            265.66,
+            168.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            293.09,
+            150.86,
+            295.58,
+            160.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            283.2,
+            155.64,
+            286.69,
+            164.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "These areas are visualized in Figure 1.",
+          "bbox": [
+            124.8,
+            171.31,
+            277.8,
+            183.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q",
+          "bbox": [
+            206.91,
+            191.4,
+            211.89,
+            201.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p = 2",
+          "bbox": [
+            354.88,
+            197.43,
+            376.42,
+            208.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3q + 1",
+          "bbox": [
+            372.93,
+            198.66,
+            398.34,
+            211.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Energy",
+          "bbox": [
+            251.8,
+            219.75,
+            280.39,
+            229.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p = q",
+          "bbox": [
+            354.88,
+            225.64,
+            376.71,
+            235.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            201.42,
+            228.25,
+            206.4,
+            238.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "decrease",
+          "bbox": [
+            248.95,
+            234.72,
+            283.24,
+            244.68
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p = q + 2",
+          "bbox": [
+            354.88,
+            244.68,
+            392.16,
+            256.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            388.67,
+            252.04,
+            392.16,
+            259.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            201.42,
+            256.59,
+            206.4,
+            266.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            201.42,
+            284.87,
+            206.4,
+            294.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            201.42,
+            313.29,
+            206.4,
+            323.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            201.42,
+            341.63,
+            206.4,
+            351.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            383.23,
+            367.74,
+            388.21,
+            377.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            201.42,
+            376.31,
+            206.4,
+            386.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            235.26,
+            376.31,
+            240.24,
+            386.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            263.6,
+            376.31,
+            268.58,
+            386.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            291.95,
+            376.31,
+            296.93,
+            386.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            320.3,
+            376.31,
+            325.28,
+            386.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            348.64,
+            376.45,
+            353.62,
+            386.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1: The range of intM(p,q). Above the green line, the integrand is not suﬃciently",
+          "bbox": [
+            124.8,
+            399.97,
+            468.51,
+            413.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "singular to penalize self-intersections, thus intM(p,q) is not a knot energy. On the other",
+          "bbox": [
+            124.8,
+            409.16,
+            468.51,
+            425.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "hand, below the red line, for q > 1, the integrand is so singular, that the integral is either",
+          "bbox": [
+            124.8,
+            425.22,
+            468.51,
+            437.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "equal to zero or inﬁnite, so there are no ﬁnite-energy C1-knots at all. The hatched area",
+          "bbox": [
+            124.8,
+            436.33,
+            468.52,
+            449.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "reveals the strange behavior that there are no ﬁnite-energy C3-knots while it takes ﬁnite",
+          "bbox": [
+            124.8,
+            448.28,
+            468.52,
+            461.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "values on polygons.",
+          "bbox": [
+            124.8,
+            461.09,
+            203.97,
+            473.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In [3], a characterization of curves with ﬁnite Mp energy was given in terms of function",
+          "bbox": [
+            124.8,
+            484.98,
+            468.51,
+            498.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rsfs10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "spaces. Using this technique we infer",
+          "bbox": [
+            124.8,
+            496.94,
+            273.7,
+            508.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 1 (Classiﬁcation of ﬁnite-energy curves).",
+          "bbox": [
+            127.35,
+            523.16,
+            338.82,
+            533.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Consider the sub-critical case (0.6) and let γ ∈C1(R/Z, Rn) be an injective curve",
+          "bbox": [
+            127.35,
+            532.7,
+            465.97,
+            552.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "parametrized by arc-length. Then intM(p,q)(γ) < ∞if and only if γ ∈W(3p−2)/q−1,q.",
+          "bbox": [
+            127.34,
+            544.17,
+            465.97,
+            564.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Moreover, one then has, for constants C, β > 0 depending on p, q only,",
+          "bbox": [
+            127.35,
+            557.47,
+            407.39,
+            569.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "intM(p,q)(γ) + intM(p,q)(γ)β\u0011",
+          "bbox": [
+            281.87,
+            578.03,
+            391.59,
+            591.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txex"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            278.32,
+            578.22,
+            281.87,
+            588.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(0.8)",
+          "bbox": [
+            446.88,
+            579.39,
+            465.97,
+            591.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∥γ∥W(3p−2)/q−1,q ≤C",
+          "bbox": [
+            197.57,
+            579.96,
+            276.19,
+            599.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            393.25,
+            580.81,
+            395.74,
+            590.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We will use the last theorem to show",
+          "bbox": [
+            124.8,
+            611.96,
+            271.24,
+            623.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 2 (Existence of minimizers within knot classes).",
+          "bbox": [
+            127.35,
+            638.18,
+            368.46,
+            648.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the sub-critical case (0.6), there is a minimizer of intM(p,q) among all injective,",
+          "bbox": [
+            127.35,
+            646.07,
+            465.97,
+            660.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "regular curves γ ∈C1(R/Z, Rn) in any knot class.",
+          "bbox": [
+            127.35,
+            659.69,
+            324.68,
+            679.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "To shorten notation we use the abbreviation",
+          "bbox": [
+            124.8,
+            690.49,
+            298.63,
+            702.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "△v,w• := •(u + v) −•(u + w)",
+          "bbox": [
+            241.24,
+            712.36,
+            352.08,
+            730.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(0.9)",
+          "bbox": [
+            449.42,
+            712.36,
+            468.51,
+            724.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            294.17,
+            742.25,
+            299.15,
+            754.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 15,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: The range of integration D"
+      ],
+      "labels": [
+        {
+          "text": "Now let Wk,ϱ(R/Z, Rn), k ∈N, denote the usual Sobolev space (recall W0,ϱ := Lϱ) and",
+          "bbox": [
+            124.8,
+            122.94,
+            465.55,
+            145.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            263.94,
+            147.15,
+            267.36,
+            157.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "o",
+          "bbox": [
+            404.59,
+            147.15,
+            408.02,
+            157.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∥f∥Wk+s,ϱ < ∞",
+          "bbox": [
+            342.12,
+            147.39,
+            403.4,
+            166.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Wk+s,ϱ(R/Z, Rn) :=",
+          "bbox": [
+            185.29,
+            147.56,
+            261.17,
+            160.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "f ∈Wk,ϱ(R/Z, Rn)",
+          "bbox": [
+            268.86,
+            147.56,
+            340.46,
+            166.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            416.29,
+            171.43,
+            419.71,
+            181.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f (k−1)i",
+          "bbox": [
+            421.2,
+            171.43,
+            445.12,
+            184.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "which we equip, depending on the situation, either with the norm ∥f∥Wk,ϱ+",
+          "bbox": [
+            124.8,
+            172.6,
+            416.29,
+            191.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "W1+s,ϱ",
+          "bbox": [
+            445.12,
+            178.19,
+            467.65,
+            188.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            196.0,
+            180.54,
+            200.86,
+            190.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txexa"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f (k−1)\u0015",
+          "bbox": [
+            202.36,
+            180.54,
+            227.72,
+            200.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txexa",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "or with ∥f∥Wk,ϱ +",
+          "bbox": [
+            124.8,
+            188.55,
+            193.79,
+            207.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "W1+s,ϱ respectively.",
+          "bbox": [
+            227.72,
+            188.55,
+            303.32,
+            204.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Without further notice we will frequently use the embedding",
+          "bbox": [
+            124.8,
+            204.79,
+            366.24,
+            216.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Wk+s,ϱ(R/Z, Rn) ,→Ck,s−1/ϱ(R/Z, Rn),",
+          "bbox": [
+            147.35,
+            224.2,
+            299.18,
+            244.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s ∈(ϱ−1, 1).",
+          "bbox": [
+            375.49,
+            224.2,
+            421.89,
+            244.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ϱ ∈(1, ∞),",
+          "bbox": [
+            320.77,
+            225.55,
+            363.37,
+            244.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(0.13)",
+          "bbox": [
+            444.44,
+            225.55,
+            468.51,
+            237.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We will denote by Cia resp. Wia injective (embedded) curves parametrized by arc-",
+          "bbox": [
+            124.8,
+            246.31,
+            468.51,
+            261.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "length. As usual, a curve is said to be regular if there is some c > 0 such that |γ′| ≥c",
+          "bbox": [
+            124.8,
+            257.81,
+            468.51,
+            276.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a.e. Constants may change from line to line.",
+          "bbox": [
+            124.8,
+            270.22,
+            300.83,
+            282.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            124.8,
+            306.11,
+            131.98,
+            320.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Classiﬁcation of ﬁnite-energy curves",
+          "bbox": [
+            146.32,
+            306.11,
+            367.84,
+            320.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Before we begin the discussion of the ﬁrst variation, let us rewrite the integral Menger",
+          "bbox": [
+            124.8,
+            334.48,
+            468.51,
+            346.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "curvature using the symmetry and a suitable covering of the domain of integration",
+          "bbox": [
+            124.8,
+            346.43,
+            468.51,
+            358.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(R/Z)3 by domains, on which it is easier to estimate the terms that will appear. The",
+          "bbox": [
+            124.8,
+            354.77,
+            468.51,
+            370.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "general idea here is quite similar to [3] and Hermes [17], but we will show that it is",
+          "bbox": [
+            124.8,
+            370.34,
+            468.51,
+            382.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "actually enough to integrate over a certain subdomain of (R/Z)3.",
+          "bbox": [
+            124.8,
+            381.44,
+            381.75,
+            394.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "To this end we deﬁne the range of integration",
+          "bbox": [
+            124.8,
+            398.54,
+            305.36,
+            410.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            204.69,
+            419.13,
+            208.11,
+            429.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "o",
+          "bbox": [
+            403.13,
+            419.13,
+            406.56,
+            429.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(v, w) ∈(−1",
+          "bbox": [
+            209.31,
+            419.14,
+            255.46,
+            438.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2, 0) × (0, 1",
+          "bbox": [
+            251.97,
+            419.14,
+            297.0,
+            438.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "w ≤1 + 2v, v ≥−1 + 2w",
+          "bbox": [
+            303.17,
+            419.38,
+            403.13,
+            438.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi",
+            "rtxr",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D :=",
+          "bbox": [
+            182.85,
+            420.31,
+            201.92,
+            432.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2)",
+          "bbox": [
+            293.51,
+            420.31,
+            301.51,
+            434.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1.1)",
+          "bbox": [
+            449.42,
+            420.31,
+            468.51,
+            432.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            408.22,
+            421.73,
+            410.71,
+            431.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "which is depicted in Figure 2.",
+          "bbox": [
+            124.8,
+            441.07,
+            243.24,
+            453.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "w",
+          "bbox": [
+            346.9,
+            460.36,
+            353.14,
+            470.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            342.04,
+            481.43,
+            347.02,
+            491.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            323.87,
+            571.98,
+            331.06,
+            581.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            367.19,
+            593.19,
+            371.11,
+            603.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "-1",
+          "bbox": [
+            232.48,
+            601.15,
+            240.78,
+            611.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            342.04,
+            601.15,
+            347.02,
+            611.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2: The range of integration D",
+          "bbox": [
+            223.82,
+            626.15,
+            369.5,
+            638.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(R/Z)3\u0011",
+          "bbox": [
+            335.66,
+            658.78,
+            366.95,
+            671.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi",
+            "txex",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Lemma 1.1 (Domain decomposition). Let f ∈L1 \u0010",
+          "bbox": [
+            127.35,
+            658.93,
+            335.66,
+            678.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "be symmetric in all com-",
+          "bbox": [
+            369.05,
+            661.69,
+            465.97,
+            671.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ponents, i.e. f = f ◦σ for all permutations σ ∈S3. Then",
+          "bbox": [
+            127.34,
+            672.63,
+            356.7,
+            690.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txmia",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "$",
+          "bbox": [
+            146.52,
+            686.3,
+            165.01,
+            696.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txexa"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "$",
+          "bbox": [
+            299.68,
+            686.3,
+            318.17,
+            696.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txexa"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(R/Z)3 f(u1, u2, u3) du1 du2 du3 = 6",
+          "bbox": [
+            165.01,
+            698.62,
+            298.02,
+            718.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsyb"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "f(u, u + v, u + w) dw dv du.",
+          "bbox": [
+            343.46,
+            698.62,
+            446.79,
+            710.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R/Z×D",
+          "bbox": [
+            318.17,
+            709.63,
+            339.81,
+            723.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            294.17,
+            742.25,
+            299.15,
+            754.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 21,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: A pair of curves (γ1, γ2) ∈Mµ deﬁned in Lemma 2.2. Note that the arcs γ1, γ2 cannot intersect each other."
+      ],
+      "labels": [
+        {
+          "text": "γ1(0)",
+          "bbox": [
+            305.55,
+            137.35,
+            331.83,
+            154.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi"
+          ],
+          "sizes": [
+            10.33,
+            12.39
+          ]
+        },
+        {
+          "text": "γ′",
+          "bbox": [
+            323.55,
+            175.85,
+            333.71,
+            194.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            10.33,
+            12.39
+          ]
+        },
+        {
+          "text": "1(0)",
+          "bbox": [
+            329.97,
+            177.85,
+            349.83,
+            197.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.33,
+            12.39
+          ]
+        },
+        {
+          "text": "γ′",
+          "bbox": [
+            229.05,
+            202.85,
+            239.21,
+            221.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            10.33,
+            12.39
+          ]
+        },
+        {
+          "text": "2(0)",
+          "bbox": [
+            235.47,
+            204.85,
+            255.33,
+            224.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            10.33,
+            12.39
+          ]
+        },
+        {
+          "text": "γ2(0)",
+          "bbox": [
+            269.55,
+            218.35,
+            295.83,
+            235.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi"
+          ],
+          "sizes": [
+            10.33,
+            12.39
+          ]
+        },
+        {
+          "text": "Figure 3: A pair of curves (γ1, γ2) ∈Mµ deﬁned in Lemma 2.2. Note that the arcs γ1,",
+          "bbox": [
+            124.8,
+            245.13,
+            468.51,
+            263.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ2 cannot intersect each other.",
+          "bbox": [
+            124.8,
+            257.08,
+            244.89,
+            270.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "satisﬁes the bi-Lipschitz estimate",
+          "bbox": [
+            127.35,
+            290.73,
+            258.65,
+            300.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for all u, v ∈R/Z.",
+          "bbox": [
+            335.03,
+            310.29,
+            405.7,
+            329.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|u −v| ≤C(M, p, q) |γ(u) −γ(v)|",
+          "bbox": [
+            187.62,
+            311.05,
+            313.45,
+            329.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2.2)",
+          "bbox": [
+            446.88,
+            311.05,
+            465.97,
+            323.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The proof is based on the following lemma. To be able to state it, we set for two",
+          "bbox": [
+            124.8,
+            337.8,
+            468.51,
+            349.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "arc-length parametrized curves γi : Ii →R, i = 1, 2, I1, I2 open intervals,",
+          "bbox": [
+            124.8,
+            349.0,
+            413.08,
+            369.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "intM(p,q)(γ1, γ2) := intM(p,q)(γ1) + intM(p,q)(γ2) +",
+          "bbox": [
+            156.91,
+            366.24,
+            352.79,
+            380.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "$",
+          "bbox": [
+            250.44,
+            379.85,
+            268.93,
+            389.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txexa"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "γ′",
+          "bbox": [
+            285.35,
+            383.04,
+            295.37,
+            401.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ′",
+          "bbox": [
+            316.38,
+            383.04,
+            326.4,
+            401.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ′",
+          "bbox": [
+            347.41,
+            383.04,
+            357.43,
+            401.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1(u1)",
+          "bbox": [
+            292.82,
+            383.97,
+            312.41,
+            398.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1(u2)",
+          "bbox": [
+            323.85,
+            383.97,
+            343.44,
+            398.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(u3)",
+          "bbox": [
+            354.88,
+            383.97,
+            374.47,
+            398.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R(p,q)(γ1(u1), γ1(u2), γ2(u3)) du1 du2 du3",
+          "bbox": [
+            276.24,
+            392.17,
+            433.41,
+            411.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            241.89,
+            393.4,
+            248.23,
+            403.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "I2",
+          "bbox": [
+            251.98,
+            410.2,
+            257.15,
+            418.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "1×I2",
+          "bbox": [
+            254.3,
+            411.22,
+            267.07,
+            423.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "$",
+          "bbox": [
+            250.44,
+            420.16,
+            268.93,
+            430.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "txexa"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "γ′",
+          "bbox": [
+            285.35,
+            423.35,
+            295.37,
+            441.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ′",
+          "bbox": [
+            316.38,
+            423.35,
+            326.4,
+            441.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "γ′",
+          "bbox": [
+            347.41,
+            423.35,
+            357.43,
+            441.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi",
+            "txex",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1(u1)",
+          "bbox": [
+            292.82,
+            424.28,
+            312.41,
+            438.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(u2)",
+          "bbox": [
+            323.85,
+            424.28,
+            343.44,
+            438.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(u3)",
+          "bbox": [
+            354.88,
+            424.28,
+            374.47,
+            438.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R(p,q)(γ1(u1), γ2(u2), γ2(u3)) du1 du2 du3.",
+          "bbox": [
+            276.24,
+            432.48,
+            436.4,
+            452.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            241.89,
+            433.71,
+            248.23,
+            443.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "I1×I2",
+          "bbox": [
+            251.98,
+            450.51,
+            267.07,
+            464.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "txsy"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            264.22,
+            455.41,
+            266.71,
+            461.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "Lemma 2.2. Let α ∈(0, 1). For µ > 0 we let Mµ denote the set of all pairs (γ1, γ2) of",
+          "bbox": [
+            127.35,
+            469.43,
+            465.97,
+            488.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "curves γi ∈C1",
+          "bbox": [
+            127.34,
+            480.53,
+            184.66,
+            501.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ia([−1, 1], Rn) satisfying",
+          "bbox": [
+            180.96,
+            480.63,
+            275.68,
+            500.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(i) |γ1(0) −γ2(0)| = 1,",
+          "bbox": [
+            137.87,
+            505.6,
+            227.87,
+            524.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(ii) γ′",
+          "bbox": [
+            135.1,
+            525.08,
+            159.96,
+            537.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1(0) ⊥(γ1(0) −γ2(0)) ⊥γ′",
+          "bbox": [
+            157.41,
+            525.08,
+            264.9,
+            544.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(0),",
+          "bbox": [
+            262.35,
+            525.53,
+            280.45,
+            539.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(iii) ∥γ′",
+          "bbox": [
+            132.33,
+            545.0,
+            163.95,
+            564.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i = 1, 2.",
+          "bbox": [
+            223.03,
+            545.45,
+            254.27,
+            557.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i∥C0,α ≤µ,",
+          "bbox": [
+            161.4,
+            545.85,
+            200.61,
+            564.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Then there is a c = c(α, µ) > 0 such that",
+          "bbox": [
+            127.34,
+            569.67,
+            287.15,
+            581.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "intM(p,q)(γ1, γ2) ≥c",
+          "bbox": [
+            205.83,
+            590.23,
+            284.96,
+            610.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for all (γ1, γ2) ∈Mµ.",
+          "bbox": [
+            304.89,
+            591.58,
+            387.48,
+            610.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. It is easy to see that intM(p,q)(γ1, γ2) is zero if and only if both γ1 and γ2 are",
+          "bbox": [
+            124.8,
+            627.27,
+            468.51,
+            642.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "part of one single straight line. We will show that intM(p,q)(·, ·) attains its minimum on",
+          "bbox": [
+            124.8,
+            639.23,
+            468.51,
+            659.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Mµ. As Mµ does not contain straight lines by (i), (ii), this minimum is strictly positive",
+          "bbox": [
+            125.3,
+            652.53,
+            468.51,
+            666.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "which thus proves the lemma.",
+          "bbox": [
+            124.8,
+            664.48,
+            243.77,
+            676.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let (γ(n)",
+          "bbox": [
+            124.8,
+            678.74,
+            157.31,
+            692.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 , γ(n)",
+          "bbox": [
+            149.05,
+            678.74,
+            175.38,
+            695.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 ) be a minimizing sequence in Mµ, i.e. we have",
+          "bbox": [
+            167.12,
+            680.73,
+            363.42,
+            696.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n→∞intM(p,q)(γ(n)",
+          "bbox": [
+            213.0,
+            698.41,
+            281.32,
+            722.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 , γ(n)",
+          "bbox": [
+            273.05,
+            698.41,
+            299.39,
+            715.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Mµ intM(p,q)(·, ·).",
+          "bbox": [
+            316.54,
+            699.05,
+            380.32,
+            719.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            214.43,
+            700.4,
+            227.72,
+            712.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2 ) = inf",
+          "bbox": [
+            291.13,
+            700.4,
+            326.14,
+            715.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            291.68,
+            742.25,
+            301.64,
+            754.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

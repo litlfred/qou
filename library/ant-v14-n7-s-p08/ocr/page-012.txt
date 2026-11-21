@@ -1,0 +1,53 @@
+1922 Lillian B. Pierce and Junyan Xu
+
+Gj;,; and Gj; are nonassociate when (i, j) 4 (i’, j’). Thus as i and j vary the G;,; are all pairwise
+nonassociate over k*, so that F remains d-th power-free over k°.
+
+Finally, if F is a perfect d-th power over k then it also is over k*. In the other direction, if F is a perfect
+d-th power over k’, then in the factorization above, all a; must be multiples of d, so that F factors over k
+as F =cG4 with G = Ft... Fal? o
+
+3B. Translation invariance conditions. It is natural to impose on F that it be appropriately nondegener-
+ate, in the sense that it cannot be made independent of one or more variables. Indeed, if there exists a
+linear change of coordinates x > x A with A € GL,(Z) such that F(x A) € Z[x2,..., Xn] then we would
+not expect |S(F'; N, H)| to obey bounds of the full n-dimensional strength that we will obtain. We will
+require several equivalent formulations for the condition that F' is nondegenerate in this sense.
+
+We recall six equivalent statements about a polynomial F € Z[x1,..., Xn] having the property that it
+can be made independent of one of the indeterminates by a linear change of coordinates over Z.
+
+Lemma 3.2 [Xu 2018, Lemma 3.20]. Let F € Z[x,,..., Xn] and let x = (x1, ...,X,) be the row vector
+
+of indeterminates. Then the following are equivalent:
+
+(1) F is invariant under some nontrivial translation in Q", i.e., there exists 0 4 m € Q" such that
+F(x) = F(x+m).
+
+(2) F is invariant under some nontrivial translation in Z", i.e., there exists 0 #4 m € Z" such that
+F(x) = F(x+m).
+
+(3) F can be made independent of one of the indeterminates by a linear change of coordinates, i.e., there
+exists A € GL,(Z) such that F(x A) € Z[x2,..., Xp].
+
+(4) When viewed as a morphism AZ > Al, F factors through a linear map A, > Ay, ie., there exists
+an integral n x (n— 1) matrix B and f € Z[x2,..., Xn] such that F(x) = f (xB).
+
+(5) For almost all prime numbers q (all but finitely many), the reduction of F modulo q is invariant
+
+under some nontrivial translation in Fi.
+
+(6) For infinitely many prime numbers q, the reduction of F modulo q is invariant under some nontrivial
+
+translation in Fr.
+We now also require an analogue of this over a field k.
+
+Lemma 3.3. Let k be a perfect field. Let F € k[x,,...,X,] and suppose that deg F < chark if k is
+of positive characteristic. Let x be the row vector (x\,...,Xn) of indeterminates. Then the following
+
+are equivalent:
+
+(1) F is invariant under some nontrivial translation in k", i.e., there exists 0 4 m € k" such that
+F(x) = F(x+m).
+
+(2) F is invariant under some nontrivial translation in k", i.e., there exists 0 4m € k" such that
+F(x) = F(x+m).

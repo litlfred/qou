@@ -1,0 +1,68 @@
+We estimate the solution (t;, $1, ui), as follows. Since
+P(0.7586) = 0.000307098... > 0, P(0.7587) = —0.000200034... < 0,
+we have that
+0.7586 < t; < 0.7587.
+
+In this range, arcsin (2 sin? nt) is monotonically decreasing. Hence,
+f (0.7586) < s; < f(0.7587).
+Further, since
+
+f (0.7586) = 0.363692... > 0.3636, f (0.7587) = 0.364407... < 0.3645,
+
+we have that
+0.3636 < s,; < 0.3645.
+
+is monotonically increasing with respect to t and s respectively.
+
+sin 7s
+
+In these ranges, =
+> sin at
+
+Hence,
+
+1 .
+< uw < —arcsin
+T
+
+1 aresin ( sin 7 0.3636 )
+
+T 2 sin 7 0.7586
+Therefore, we obtain that
+
+( sin 7 0.3645 )
+2sin 7 0.7587/°
+
+sin 7 0.3645
+2 sin 7 0.7587
+
+as required. Oo
+
+1
+(25+ U)max = 211+ < 2 - 0.3645 + —aresin ( ) = 0.959440... < 0.97,
+Tv
+
+B- Curvature of the boundary of the domain {ReV > sn}
+
+In Sections 3.2, 4.2 and 5.2, we estimated the maximal and minimal values of some linear
+function L(t, s,u) on the domain {(t,s,u) | ReV(t,s,u) > s,}. This domain is a convex
+domain whose boundary is a smooth closed surface. These maximal and minimal values
+are obtained when the plane L(t,s,u) = c (where c is a constant) is tangent to this
+domain. In order to show that there are exactly two such planes,°? we show that Gaussian
+curvature of the boundary surface of this domain is positive in this section. We explain
+2-, 3-variable cases in Sections B.1 and B.2 respectively.
+
+B.1 Curvature of the boundary of a convex domain in a plane
+
+In this section, we consider 2-variable case.
+
+Let F(x, z) be a smooth concave function whose maximal value is positive. Then, the
+domain
+
+{(v,2) € R’ | F(x, 2) > 0} (95)
+
+is a convex domain and its boundary is a smooth curve. The aim of this section is to
+show the following lemma.
+
+5We use this fact, when we show that the system of equations presenting such tangent points has exactly two solutions
+in Sections 3.2, 4.2, 5.2 and Appendix A.

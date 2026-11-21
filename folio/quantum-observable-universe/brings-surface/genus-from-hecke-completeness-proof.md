@@ -11,10 +11,10 @@ A torus knot $T_{r,s}$ with $\gcd(r,s) = 1$ has Seifert genus $(r-1)(s-1)/2$, so
 
 Since $N(3) = 4 < 5 \leq 6 = N(4)$ and $N$ is non-decreasing, $g = 4$ is the least genus at which $N(g) \geq 5$. $\square$
 
-**What this proof does not establish.** An earlier version closed instead with *"at $g = 4$: $6$ evaluations span $5$ irreps (verified numerically: the $6 \times 5$ matrix has rank $5$ for all $q > 1$), therefore $g_{\min} = 4$."* That step is false, and no value of $q$ can repair it. A torus knot $T_{r,s}$ is the closure of a braid word on $r$ strands, so a row with $r_i = 2$ is supported in the two $H_2(q)$ columns and a row with $r_i = 3$ in the three $H_3(q)$ columns. The character matrix is therefore block-diagonal, and rank is additive over the blocks. At $g = 4$ the four $r = 2$ rows contribute at most $2$ (there are only two such columns) and the two $r = 3$ rows contribute at most $2$ (there are only two such rows), so
+**What this proof does not establish.** It does not show that at $g = 4$ the six torus-knot evaluations span the five irreducibles, and no value of $q$ can make that true. A torus knot $T_{r,s}$ is the closure of a braid word on $r$ strands, so a row with $r_i = 2$ is supported in the two $H_2(q)$ columns and a row with $r_i = 3$ in the three $H_3(q)$ columns. The character matrix is therefore block-diagonal, and rank is additive over the blocks. At $g = 4$ the four $r = 2$ rows contribute at most $2$ (there are only two such columns) and the two $r = 3$ rows contribute at most $2$ (there are only two such rows), so
 
 $$
 \mathrm{rank}(M) \leq 2 + 2 = 4 < 5
 $$
 
-independently of $q$. See [the block-rank remark](#rem:torus-evaluation-block-rank).
+independently of $q$.

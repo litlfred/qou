@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 1.0
+doc_brief: "Integer Polynomial Optimization in Fixed Dimension — 5 sections: Front matter; Introduction; Computational Complexity Bounds"
 ---
 []{#bounds label="bounds"}
 

@@ -1,1 +1,1 @@
-Let a = (a) be a principal ideal inA.
+Let V be a free DG K-module, and let W := V ∗. (1) If V ∼= L s∈S Tps(K) for some indexing set S and some collection of inte- gers {ps}s∈S, then W ∼= Q s∈S T−ps(K∗). (2) As an object of the abelian category Gstr(K), W is injective. In item (1) the isomorphisms can be considered either in Cstr(K) or in Gstr(K); it doesn’t matter, because V and W have zero diﬀerentials. However, item (2) is true only in the category Gstr(K).

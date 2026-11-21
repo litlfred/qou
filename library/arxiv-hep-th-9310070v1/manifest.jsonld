@@ -5,20 +5,24 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9310070v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9310070v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-9310070v1",
+  "title": "Quantum dilogarithm",
   "contains": [
-    "library/arxiv-hep-th-9310070v1/sections/sec-000",
-    "library/arxiv-hep-th-9310070v1/sections/sec-001",
-    "library/arxiv-hep-th-9310070v1/sections/sec-002",
-    "library/arxiv-hep-th-9310070v1/sections/sec-003",
-    "library/arxiv-hep-th-9310070v1/sections/sec-004"
+    "library/arxiv-hep-th-9310070v1/sections/page-001",
+    "library/arxiv-hep-th-9310070v1/sections/page-002",
+    "library/arxiv-hep-th-9310070v1/sections/page-003",
+    "library/arxiv-hep-th-9310070v1/sections/page-004",
+    "library/arxiv-hep-th-9310070v1/sections/page-005",
+    "library/arxiv-hep-th-9310070v1/sections/page-006",
+    "library/arxiv-hep-th-9310070v1/sections/page-007",
+    "library/arxiv-hep-th-9310070v1/sections/page-008",
+    "library/arxiv-hep-th-9310070v1/sections/page-009"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -28,7 +32,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-9310070v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9310070v1.pdf",
     "source_sha256": "b979ebf2f47a465388a723997e70cc863ce0a1ecc5f8a049d195b24014ff08b6",
     "pages": 9,

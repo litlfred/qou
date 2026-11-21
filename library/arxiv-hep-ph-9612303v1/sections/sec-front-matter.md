@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9612303v1
-doc_title: "arXiv:hep-ph/9612303v1 9 Dec 1996"
+doc_title: "The q-deformed quark model : quantum isospin and q-hadrons"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 9612303v1.pdf
 source_sha256: 5311d7faf2b3e005
 toc_source: inferred
+doc_brief: "Klein-Kreisler & Ruiz-Altaba, The q-deformed quark model: quantum isospin and q-hadrons (1996) — treats SU(2) isospin as a quantum group and builds π-meson and nucleon wavefunctions from a q-quark…"
 ---
 arXiv:hep-ph/9612303v1  9 Dec 1996
 Preprint IFUNAM

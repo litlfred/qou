@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/9305356/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Motivation and Basic Ingredients",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "contains": [
+    "library/9305356/blocks/prose-sec-001"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/9305356/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/9305356/manifest.jsonld",
+  "provenance": "ingested"
+}

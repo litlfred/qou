@@ -1,0 +1,4478 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "quaternioms",
+  "pages": [
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1. Fano plane representation of octonion multiplication triples. Each oriented line encodes an associative copy of H inside O."
+      ],
+      "labels": [
+        {
+          "text": "Quantum Rep. 2025, 7, 55",
+          "bbox": [
+            35.41,
+            34.29,
+            121.54,
+            43.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "7 of 40",
+          "bbox": [
+            536.33,
+            36.28,
+            559.28,
+            45.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 1. Fano plane representation of octonion multiplication triples. Each oriented line encodes an",
+          "bbox": [
+            166.39,
+            224.61,
+            559.28,
+            235.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.92
+          ]
+        },
+        {
+          "text": "associative copy of H inside O.",
+          "bbox": [
+            166.39,
+            236.48,
+            288.47,
+            248.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97,
+            9.34
+          ]
+        },
+        {
+          "text": "2.5. Geometric and Group-Theoretic Side Notes",
+          "bbox": [
+            166.39,
+            259.69,
+            357.11,
+            269.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The unit spheres of the normed division algebras, S0 ⊂R, S1 ⊂C, S3 ⊂H, and",
+          "bbox": [
+            187.65,
+            272.52,
+            559.27,
+            293.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "S7 ⊂O, are parallelizable and admit Hopf ﬁbrations that often guide intuition about",
+          "bbox": [
+            166.52,
+            286.45,
+            559.28,
+            307.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "state spaces and control: S3 →S2 for qubits, and S7 →S4 in the quaternionic setting.",
+          "bbox": [
+            166.39,
+            299.11,
+            561.02,
+            321.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "Automorphism groups also play a role: Aut(H) ∼= SO(3) acts by conjugation on imag-",
+          "bbox": [
+            166.0,
+            315.12,
+            560.93,
+            335.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "inary quaternions, while Aut(O) ∼= G2 preserves the octonionic product and underlies",
+          "bbox": [
+            166.39,
+            329.05,
+            559.27,
+            349.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "the idea of G2-invariant codes used to detect associator “syndromes” in the octonionic",
+          "bbox": [
+            166.39,
+            344.51,
+            559.28,
+            357.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.06
+          ]
+        },
+        {
+          "text": "mitigation strategies.",
+          "bbox": [
+            166.39,
+            358.44,
+            258.97,
+            370.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Associativity (present in H, absent in O) is the decisive structural property for scalable",
+          "bbox": [
+            187.65,
+            371.31,
+            559.28,
+            384.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86,
+            10.38
+          ]
+        },
+        {
+          "text": "composition: It guarantees a canonical tensor product, a well-deﬁned adjoint, and path-",
+          "bbox": [
+            166.39,
+            386.3,
+            560.93,
+            398.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "independent unitary evolution. Where associativity fails, one must either conﬁne to",
+          "bbox": [
+            166.39,
+            400.22,
+            559.27,
+            412.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "associative subalgebras or compensate dynamically/syntactically for associator terms,",
+          "bbox": [
+            166.39,
+            414.15,
+            560.52,
+            426.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "as developed later.",
+          "bbox": [
+            166.39,
+            428.08,
+            248.62,
+            439.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.6. Quaternionic Formalism",
+          "bbox": [
+            166.39,
+            453.38,
+            283.97,
+            463.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Many of the structural ingredients of this subsection are standard in the literature",
+          "bbox": [
+            187.75,
+            468.56,
+            559.28,
+            480.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.94
+          ]
+        },
+        {
+          "text": "on quaternionic quantum mechanics and quaternionic quantum computing. In par-",
+          "bbox": [
+            166.39,
+            482.49,
+            560.94,
+            494.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "ticular, our use of right H-modules and adjoints follows the foundational treatments",
+          "bbox": [
+            166.39,
+            495.35,
+            559.27,
+            508.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "in [3,4], while the existence of simulations of quaternionic circuits and channels by",
+          "bbox": [
+            166.39,
+            510.34,
+            559.66,
+            522.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06
+          ]
+        },
+        {
+          "text": "complex ones builds on [6–8]. Our contribution here is to package these ingredients into",
+          "bbox": [
+            166.39,
+            524.27,
+            559.28,
+            536.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86,
+            9.96
+          ]
+        },
+        {
+          "text": "a self-contained circuit model tailored to quantum information, and to connect them",
+          "bbox": [
+            166.39,
+            538.2,
+            559.27,
+            550.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "explicitly to the complexity-theoretic results of Section 3.",
+          "bbox": [
+            166.39,
+            552.12,
+            425.74,
+            563.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "State space and inner product on right H-modules.",
+          "bbox": [
+            187.65,
+            564.99,
+            410.74,
+            577.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "We model an n-quaternionic qubit register by a ﬁnite-dimensional right H-Hilbert",
+          "bbox": [
+            187.65,
+            578.92,
+            559.28,
+            591.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "module (H(n)",
+          "bbox": [
+            166.39,
+            592.84,
+            227.06,
+            614.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "H , ⟨·, ·⟩). Single-quaternionic qubit pure states are as follows:",
+          "bbox": [
+            216.17,
+            595.11,
+            487.99,
+            614.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "∥q1∥2 + ∥q2∥2 = 1,",
+          "bbox": [
+            396.51,
+            617.79,
+            478.52,
+            639.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "qi ∈H,",
+          "bbox": [
+            353.97,
+            619.58,
+            384.76,
+            641.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "|φ⟩= q1|0⟩+ q2|1⟩,",
+          "bbox": [
+            247.27,
+            620.64,
+            332.26,
+            639.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "PazoMath-Italic",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "with quaternion-valued inner product (anti-linear in the ﬁrst slot, right-linear in the second):",
+          "bbox": [
+            165.98,
+            646.18,
+            560.52,
+            658.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "P(ψ|φ) = ∥⟨ψ, φ⟩∥2 ∈R≥0.",
+          "bbox": [
+            360.75,
+            668.86,
+            479.32,
+            690.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "PazoMath-Italic",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "⟨φ, ψ⟩= q1p1 + q2p2,",
+          "bbox": [
+            246.47,
+            671.71,
+            338.84,
+            690.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "PazoMath-Italic",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "(1)",
+          "bbox": [
+            548.65,
+            671.71,
+            560.27,
+            683.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Mixed states are positive trace-class R-linear functionals ρ on H(n)",
+          "bbox": [
+            166.39,
+            696.54,
+            449.13,
+            717.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "PazoMath-Italic",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            7.89,
+            9.86,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "H normalized by Tr(ρ) = 1,",
+          "bbox": [
+            438.23,
+            698.82,
+            560.52,
+            714.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "PazoMath-Italic",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.89,
+            9.86,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "with Born’s rule computed from (1).",
+          "bbox": [
+            165.98,
+            712.75,
+            324.65,
+            724.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "States versus operations.",
+          "bbox": [
+            187.65,
+            726.67,
+            296.34,
+            738.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In what follows we use the term “quaternionic state” to refer to a vector in a right",
+          "bbox": [
+            187.65,
+            740.6,
+            559.27,
+            752.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "H-module (with components in H) and “quaternionic operation” to refer to a right-H-",
+          "bbox": [
+            166.39,
+            753.47,
+            560.93,
+            766.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06,
+            10.38
+          ]
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "rotation": 0,
+      "drawings": 28,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Schematic quaternionic-to-complex embedding of a circuit on n quaternionic qubits into a complex circuit on n + 1 qubits. The dashed arrows indicate the embedding of quaternionic states into complex states, while the lower circuit is implemented with standard complex quantum gates."
+      ],
+      "labels": [
+        {
+          "text": "Quantum Rep. 2025, 7, 55",
+          "bbox": [
+            35.41,
+            34.29,
+            121.54,
+            43.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "12 of 40",
+          "bbox": [
+            532.34,
+            36.28,
+            559.28,
+            45.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Quaternionic circuit",
+          "bbox": [
+            260.73,
+            74.76,
+            340.1,
+            85.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "|ψ⟩H ∈Hn",
+          "bbox": [
+            123.28,
+            79.68,
+            165.61,
+            99.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "MSBM10",
+            "PazoMath-Italic",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            6.97,
+            7.27,
+            8.97,
+            9.34
+          ]
+        },
+        {
+          "text": "UH|ψ⟩H",
+          "bbox": [
+            433.08,
+            81.38,
+            464.45,
+            97.36
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10",
+            "MSBM10",
+            "PazoMath-Italic",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.27,
+            8.97,
+            9.34
+          ]
+        },
+        {
+          "text": "H",
+          "bbox": [
+            161.57,
+            84.23,
+            167.22,
+            91.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            7.27
+          ]
+        },
+        {
+          "text": "UH",
+          "bbox": [
+            293.89,
+            87.28,
+            306.4,
+            96.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.27,
+            8.97
+          ]
+        },
+        {
+          "text": "state",
+          "bbox": [
+            110.1,
+            108.17,
+            128.52,
+            118.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "state",
+          "bbox": [
+            466.47,
+            108.72,
+            484.9,
+            119.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "embedding",
+          "bbox": [
+            96.69,
+            119.13,
+            141.93,
+            129.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "embedding",
+          "bbox": [
+            453.07,
+            119.68,
+            498.3,
+            130.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Embedded complex circuit",
+          "bbox": [
+            249.74,
+            143.99,
+            356.21,
+            154.67
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "|Ψ⟩∈Hn+1",
+          "bbox": [
+            122.0,
+            147.91,
+            168.5,
+            167.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "PazoMath",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            7.27,
+            8.97,
+            9.34
+          ]
+        },
+        {
+          "text": "UC|Ψ⟩",
+          "bbox": [
+            436.92,
+            149.83,
+            463.05,
+            166.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "MSBM10",
+            "PazoMath",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.27,
+            8.97,
+            9.34
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            155.06,
+            154.2,
+            160.31,
+            161.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            7.27
+          ]
+        },
+        {
+          "text": "UC",
+          "bbox": [
+            296.65,
+            156.51,
+            308.76,
+            165.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.27,
+            8.97
+          ]
+        },
+        {
+          "text": "UC simulates UH via the quaternionic-to-complex embedding described in this subsection.",
+          "bbox": [
+            123.79,
+            182.9,
+            482.13,
+            195.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.27,
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 2. Schematic quaternionic-to-complex embedding of a circuit on n quaternionic qubits into a",
+          "bbox": [
+            166.39,
+            205.7,
+            559.28,
+            216.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.96,
+            8.97
+          ]
+        },
+        {
+          "text": "complex circuit on n + 1 qubits. The dashed arrows indicate the embedding of quaternionic states",
+          "bbox": [
+            166.39,
+            218.52,
+            559.27,
+            229.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97,
+            9.03,
+            9.34
+          ]
+        },
+        {
+          "text": "into complex states, while the lower circuit is implemented with standard complex quantum gates.",
+          "bbox": [
+            166.39,
+            231.34,
+            557.36,
+            242.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Consider a simple example: a single quaternionic Hadamard gate:",
+          "bbox": [
+            187.65,
+            254.19,
+            478.68,
+            266.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            397.47,
+            278.54,
+            405.35,
+            308.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            351.96,
+            280.29,
+            356.94,
+            292.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            370.72,
+            280.36,
+            375.7,
+            292.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            389.02,
+            280.36,
+            394.0,
+            292.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            405.48,
+            287.03,
+            407.97,
+            298.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            347.64,
+            288.01,
+            356.29,
+            305.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.38
+          ]
+        },
+        {
+          "text": "HH =",
+          "bbox": [
+            318.21,
+            288.29,
+            343.42,
+            300.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            356.41,
+            295.35,
+            361.39,
+            307.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−j",
+          "bbox": [
+            385.79,
+            295.55,
+            397.22,
+            313.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "j",
+          "bbox": [
+            372.0,
+            296.02,
+            374.77,
+            306.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We ﬁrst rewrite HH in the form A + Bj, separating the “real” and “j” parts:",
+          "bbox": [
+            165.89,
+            319.29,
+            494.13,
+            333.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            303.37,
+            338.12,
+            312.02,
+            355.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.38
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            338.48,
+            338.12,
+            347.13,
+            355.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.38
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            352.36,
+            343.64,
+            360.24,
+            373.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            459.94,
+            343.64,
+            467.82,
+            373.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1/",
+          "bbox": [
+            291.98,
+            345.46,
+            303.12,
+            357.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            312.14,
+            345.46,
+            317.12,
+            357.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1/",
+          "bbox": [
+            327.09,
+            345.46,
+            338.22,
+            357.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            347.25,
+            345.46,
+            352.23,
+            357.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            401.33,
+            345.46,
+            406.31,
+            357.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            440.59,
+            345.46,
+            445.57,
+            357.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            402.64,
+            352.05,
+            411.29,
+            369.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.38
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            446.06,
+            352.05,
+            454.71,
+            369.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.38
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            467.95,
+            352.13,
+            470.44,
+            364.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "HH =",
+          "bbox": [
+            255.73,
+            353.39,
+            280.95,
+            365.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "+ j",
+          "bbox": [
+            365.19,
+            353.39,
+            381.33,
+            363.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            302.06,
+            359.39,
+            307.04,
+            371.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            337.17,
+            359.39,
+            342.15,
+            371.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1/",
+          "bbox": [
+            391.25,
+            359.39,
+            402.38,
+            371.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            411.41,
+            359.39,
+            416.39,
+            371.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1/",
+          "bbox": [
+            426.48,
+            359.39,
+            445.81,
+            378.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            454.84,
+            359.39,
+            459.82,
+            371.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Thus",
+          "bbox": [
+            166.08,
+            384.39,
+            188.22,
+            396.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            338.09,
+            394.54,
+            345.97,
+            424.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            443.33,
+            394.54,
+            451.21,
+            424.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            299.29,
+            396.28,
+            304.27,
+            408.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            396.2,
+            396.28,
+            401.18,
+            408.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            318.04,
+            396.36,
+            323.02,
+            408.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            332.98,
+            396.36,
+            337.96,
+            408.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            414.96,
+            396.36,
+            419.94,
+            408.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            434.06,
+            396.36,
+            439.04,
+            408.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            346.09,
+            403.03,
+            348.58,
+            414.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            451.33,
+            403.03,
+            453.82,
+            414.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            294.96,
+            404.01,
+            303.61,
+            421.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.38
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            391.88,
+            404.01,
+            400.53,
+            421.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.38
+          ]
+        },
+        {
+          "text": "A =",
+          "bbox": [
+            272.47,
+            404.29,
+            290.75,
+            414.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "B =",
+          "bbox": [
+            370.49,
+            404.29,
+            387.66,
+            414.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            318.04,
+            410.29,
+            323.02,
+            422.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            332.98,
+            410.29,
+            337.96,
+            422.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            414.96,
+            410.29,
+            419.94,
+            422.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            430.03,
+            410.29,
+            443.2,
+            429.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            303.73,
+            411.35,
+            308.71,
+            423.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            400.65,
+            411.35,
+            405.63,
+            423.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "so that HH = A + Bj with A, B real matrices. The embedding deﬁned in Equation (A1) lifts",
+          "bbox": [
+            166.39,
+            430.65,
+            559.28,
+            444.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.89,
+            9.86,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "this to a 4 × 4 complex matrix via the block form:",
+          "bbox": [
+            166.39,
+            444.57,
+            382.38,
+            463.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            394.95,
+            468.92,
+            402.83,
+            498.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            366.15,
+            472.48,
+            373.34,
+            482.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            387.92,
+            472.48,
+            394.0,
+            482.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            402.95,
+            477.42,
+            405.44,
+            489.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "HC =",
+          "bbox": [
+            320.73,
+            478.68,
+            348.28,
+            491.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "¯A",
+          "bbox": [
+            387.51,
+            482.33,
+            394.7,
+            496.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−¯B",
+          "bbox": [
+            362.19,
+            482.46,
+            376.8,
+            503.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "and, since A and B are real, ¯A = A and ¯B = B. Writing out the blocks explicitly gives",
+          "bbox": [
+            166.39,
+            508.35,
+            559.28,
+            522.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "the following:",
+          "bbox": [
+            166.39,
+            524.63,
+            227.73,
+            536.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            354.75,
+            538.18,
+            359.73,
+            550.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            373.86,
+            538.18,
+            378.84,
+            550.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            388.8,
+            538.18,
+            393.78,
+            550.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            407.9,
+            538.18,
+            412.88,
+            550.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            341.75,
+            538.34,
+            350.46,
+            568.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            417.16,
+            538.34,
+            425.88,
+            568.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            331.0,
+            552.04,
+            335.98,
+            563.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            354.75,
+            552.11,
+            359.73,
+            563.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            373.86,
+            552.11,
+            378.84,
+            563.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            388.8,
+            552.11,
+            393.78,
+            563.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            403.86,
+            552.11,
+            417.04,
+            571.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            341.75,
+            555.87,
+            350.46,
+            585.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            417.16,
+            555.87,
+            425.88,
+            585.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            417.16,
+            558.78,
+            428.5,
+            604.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(7)",
+          "bbox": [
+            548.65,
+            558.78,
+            560.27,
+            570.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            326.67,
+            559.76,
+            335.32,
+            577.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.38
+          ]
+        },
+        {
+          "text": "HC =",
+          "bbox": [
+            297.68,
+            560.04,
+            322.46,
+            572.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            341.75,
+            561.85,
+            350.46,
+            591.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            417.16,
+            561.85,
+            425.88,
+            591.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            354.75,
+            566.04,
+            359.73,
+            577.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            373.86,
+            566.04,
+            378.84,
+            577.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            388.8,
+            566.04,
+            393.78,
+            577.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            407.9,
+            566.04,
+            412.88,
+            577.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            335.45,
+            567.1,
+            340.43,
+            578.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            341.75,
+            567.83,
+            350.46,
+            597.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            417.16,
+            567.83,
+            425.88,
+            597.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            341.75,
+            574.19,
+            350.46,
+            604.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            350.71,
+            579.97,
+            363.89,
+            598.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            373.85,
+            579.97,
+            378.83,
+            591.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            388.79,
+            579.97,
+            393.78,
+            591.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            407.89,
+            579.97,
+            412.87,
+            591.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "It is straightforward to check that H†",
+          "bbox": [
+            166.39,
+            599.53,
+            328.21,
+            612.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96
+          ]
+        },
+        {
+          "text": "CHC = I4, so HC is unitary.",
+          "bbox": [
+            323.81,
+            600.98,
+            443.65,
+            614.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "This 4 × 4 complex unitary would then be compiled into a sequence of standard",
+          "bbox": [
+            187.65,
+            614.9,
+            559.28,
+            633.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "quantum gates (e.g., CNOTs, single-qubit rotations) on a 2-qubit register.",
+          "bbox": [
+            166.12,
+            628.83,
+            485.62,
+            640.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Practical Implications for Quaternionic Simulation:",
+          "bbox": [
+            187.65,
+            644.53,
+            420.89,
+            654.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "•",
+          "bbox": [
+            166.39,
+            659.68,
+            172.43,
+            671.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Resource Overhead: Each logical quaternionic qubit requires two physical complex",
+          "bbox": [
+            188.02,
+            659.68,
+            559.54,
+            671.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.01
+          ]
+        },
+        {
+          "text": "qubits. An algorithm operating on N quaternionic qubits would thus require 2N",
+          "bbox": [
+            187.74,
+            673.6,
+            558.84,
+            685.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06
+          ]
+        },
+        {
+          "text": "complex qubits (or N + 1 for the optimized ancilla method [6]). This linear overhead",
+          "bbox": [
+            188.02,
+            687.53,
+            559.27,
+            699.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "makes simulation feasible for moderate N.",
+          "bbox": [
+            188.02,
+            701.46,
+            375.23,
+            713.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "•",
+          "bbox": [
+            166.39,
+            715.39,
+            172.43,
+            727.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Gate Depth and Fidelity: Each quaternionic gate translates to a ﬁxed number of stan-",
+          "bbox": [
+            188.02,
+            715.39,
+            560.93,
+            727.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.9
+          ]
+        },
+        {
+          "text": "dard complex gates. While this increases the overall circuit depth, it’s a constant factor",
+          "bbox": [
+            188.02,
+            729.31,
+            559.48,
+            741.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "overhead per logical gate, meaning total error accumulation remains manageable",
+          "bbox": [
+            188.02,
+            743.24,
+            559.27,
+            755.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "within fault-tolerance thresholds for complex systems.",
+          "bbox": [
+            187.6,
+            757.17,
+            426.96,
+            769.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 3. Process ﬁdelity vs. time under CDD2-like ASD sequences: Associative-constrained (S) vs. associative-agnostic (A). Short-time gains are consistent with Theorem 4. Adapted from [72]."
+      ],
+      "labels": [
+        {
+          "text": "Quantum Rep. 2025, 7, 55",
+          "bbox": [
+            35.41,
+            34.29,
+            121.54,
+            43.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "14 of 40",
+          "bbox": [
+            532.34,
+            36.28,
+            559.28,
+            45.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "H ∼= spanR{1, ei, ej, ek}.",
+          "bbox": [
+            311.8,
+            71.24,
+            413.87,
+            91.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "Implement all gates within this sector using the quaternionic toolset of Section 2.6; switching",
+          "bbox": [
+            166.39,
+            98.32,
+            559.27,
+            110.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "sectors is effected by explicit sector-change pulses that map one quaternionic copy to another",
+          "bbox": [
+            166.39,
+            112.24,
+            559.47,
+            124.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "(compiled as products of associative factors).",
+          "bbox": [
+            166.07,
+            126.17,
+            363.37,
+            138.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Trade-offs: Sector switches add depth and calibration overhead; strict conﬁnement",
+          "bbox": [
+            187.65,
+            140.1,
+            559.27,
+            151.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "limits reachable unitaries unless multiple sectors are orchestrated.",
+          "bbox": [
+            166.39,
+            154.03,
+            455.84,
+            165.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(M2) G2-invariant coding.",
+          "bbox": [
+            187.65,
+            167.96,
+            301.42,
+            180.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96
+          ]
+        },
+        {
+          "text": "Goal: Detect excursions that activate associators by encoding into subspaces stabilized",
+          "bbox": [
+            187.65,
+            181.88,
+            559.28,
+            193.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.88
+          ]
+        },
+        {
+          "text": "by Aut(O) ∼= G2.",
+          "bbox": [
+            166.39,
+            194.27,
+            241.48,
+            214.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "Construction: Pick stabilizers whose action commutes with the chosen associative",
+          "bbox": [
+            187.65,
+            209.74,
+            559.27,
+            221.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "sector; design syndrome measurements whose nontrivial outcomes ﬂag associator-inducing",
+          "bbox": [
+            166.39,
+            223.67,
+            559.27,
+            235.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "components. Logical operations are compiled to respect G2-invariance.",
+          "bbox": [
+            166.39,
+            237.59,
+            478.02,
+            250.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96
+          ]
+        },
+        {
+          "text": "Trade-offs: Detection̸ = full correction; tensor non-canonicity persists, so large-scale",
+          "bbox": [
+            187.65,
+            251.52,
+            559.27,
+            270.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "composition still rides on (M1)/(M4).",
+          "bbox": [
+            166.39,
+            265.45,
+            330.89,
+            277.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(M3) Associator-suppressing dynamical decoupling (ASD).",
+          "bbox": [
+            187.65,
+            279.38,
+            447.86,
+            291.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Goal: Cancel coherent associator contributions in U(t) order-by-order.",
+          "bbox": [
+            187.65,
+            293.3,
+            493.78,
+            305.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "Cycle: Within a ﬁxed H ⊂O, apply a symmetric cycle as follows:",
+          "bbox": [
+            187.65,
+            306.17,
+            473.91,
+            326.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "U†",
+          "bbox": [
+            397.68,
+            330.82,
+            409.74,
+            344.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96
+          ]
+        },
+        {
+          "text": "z U†",
+          "bbox": [
+            405.4,
+            330.82,
+            424.01,
+            347.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96
+          ]
+        },
+        {
+          "text": "y U†",
+          "bbox": [
+            419.67,
+            330.82,
+            438.28,
+            347.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96
+          ]
+        },
+        {
+          "text": "free evol. ∆t",
+          "bbox": [
+            333.67,
+            332.77,
+            387.52,
+            344.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "PazoMath",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            443.69,
+            332.77,
+            446.18,
+            344.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            279.62,
+            333.24,
+            284.18,
+            363.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            323.72,
+            333.24,
+            328.29,
+            363.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            393.03,
+            333.24,
+            397.59,
+            363.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            439.0,
+            333.24,
+            443.56,
+            363.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Ux Uy Uz",
+          "bbox": [
+            284.27,
+            334.5,
+            323.01,
+            346.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.57,
+            9.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            434.08,
+            338.72,
+            437.86,
+            346.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.57
+          ]
+        },
+        {
+          "text": "with Uα fast H-rotations and timing chosen so ﬁrst nontrivial associator terms average to",
+          "bbox": [
+            165.98,
+            357.24,
+            559.28,
+            371.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "PazoMath-Italic",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.01,
+            10.38
+          ]
+        },
+        {
+          "text": "(near) zero over the cycle (Algorithm A1 in Appendix C).",
+          "bbox": [
+            166.07,
+            372.23,
+            417.55,
+            384.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Performance characterization: Short-time process ﬁdelity improves relative to associative-",
+          "bbox": [
+            187.65,
+            386.16,
+            560.93,
+            398.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "agnostic baselines; residual higher-order terms and ﬁnite-width pulses limit asymptotics.",
+          "bbox": [
+            166.39,
+            400.08,
+            561.02,
+            411.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "(Representative summaries appear in Figures 3 and 4 of the main text.)",
+          "bbox": [
+            166.07,
+            414.01,
+            477.11,
+            425.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(M4) Seven-factor algebraic synthesis.",
+          "bbox": [
+            187.65,
+            427.94,
+            354.19,
+            439.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Goal: Compile a target transformation U as a product of gates, each conﬁned to an",
+          "bbox": [
+            187.65,
+            441.87,
+            559.27,
+            453.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06
+          ]
+        },
+        {
+          "text": "associative subalgebra, thereby making parenthesization explicit and controllable.",
+          "bbox": [
+            166.39,
+            455.79,
+            526.62,
+            467.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Ansatz:",
+          "bbox": [
+            187.65,
+            471.46,
+            218.92,
+            481.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Uℓ∈exp(hℓ), hℓ⊂O associative,",
+          "bbox": [
+            338.76,
+            485.23,
+            489.58,
+            505.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "EUFM10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "U ≈U1U2 · · · U7,",
+          "bbox": [
+            236.06,
+            486.29,
+            317.21,
+            507.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "with the hℓselected (e.g., via Fano-plane guided heuristics) to minimize cumulative associ-",
+          "bbox": [
+            165.98,
+            511.82,
+            560.93,
+            523.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "EUFM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.89,
+            9.9,
+            9.96
+          ]
+        },
+        {
+          "text": "ator growth. Each Uℓcompiles with the quaternionic pipeline of Section 2.6.",
+          "bbox": [
+            166.39,
+            525.75,
+            500.24,
+            537.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.89,
+            9.96
+          ]
+        },
+        {
+          "text": "Trade-offs: Increased depth and error accumulation across factors; well-suited as a",
+          "bbox": [
+            187.65,
+            539.68,
+            559.27,
+            551.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "simulation/veriﬁcation tool rather than a native octonionic architecture.",
+          "bbox": [
+            166.39,
+            553.61,
+            483.32,
+            565.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3. Process ﬁdelity vs. time under CDD2-like ASD sequences: Associative-constrained (S) vs.",
+          "bbox": [
+            166.39,
+            734.04,
+            560.84,
+            745.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.01
+          ]
+        },
+        {
+          "text": "associative-agnostic (A). Short-time gains are consistent with Theorem 4. Adapted from [72].",
+          "bbox": [
+            166.39,
+            746.86,
+            532.38,
+            757.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Figure 4. Process-ﬁdelity decay as a function of total control time T (a) and control amplitude α (b) under associator-affected dynamics. ASD attenuates leading decay slopes at small T for moderate α. Adapted from [73]."
+      ],
+      "labels": [
+        {
+          "text": "Quantum Rep. 2025, 7, 55",
+          "bbox": [
+            35.41,
+            34.29,
+            121.54,
+            43.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "15 of 40",
+          "bbox": [
+            532.34,
+            36.28,
+            559.28,
+            45.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 4. Process-ﬁdelity decay as a function of total control time T (a) and control amplitude α",
+          "bbox": [
+            166.39,
+            218.26,
+            559.16,
+            228.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "PazoMath-Italic",
+            "URWPalladioL-Bold",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97,
+            9.06
+          ]
+        },
+        {
+          "text": "(b) under associator-affected dynamics. ASD attenuates leading decay slopes at small T for moderate",
+          "bbox": [
+            166.1,
+            231.08,
+            559.28,
+            241.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.88,
+            8.97
+          ]
+        },
+        {
+          "text": "α. Adapted from [73].",
+          "bbox": [
+            166.51,
+            243.91,
+            252.24,
+            254.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "PazoMath-Italic",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Resource and ﬁdelity accounting.",
+          "bbox": [
+            187.65,
+            266.75,
+            334.56,
+            278.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For each strategy, we track: (i) depth overhead ∆D vs. complex/quaternionic baselines;",
+          "bbox": [
+            187.65,
+            280.68,
+            560.52,
+            292.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "PazoMath",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.95,
+            9.96
+          ]
+        },
+        {
+          "text": "(ii) width/ancilla usage (notably for G2 syndromes); (iii) calibration load (sector switches, ASD",
+          "bbox": [
+            166.07,
+            294.61,
+            559.27,
+            308.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.86,
+            9.96
+          ]
+        },
+        {
+          "text": "pulses); (iv) ﬁdelity impact modeled at the process level (SPAM-corrected) using the same",
+          "bbox": [
+            166.1,
+            308.54,
+            559.27,
+            320.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.99
+          ]
+        },
+        {
+          "text": "ﬁgures of merit as in the quaternionic embedding. These metrics are reported alongside",
+          "bbox": [
+            166.39,
+            322.46,
+            559.27,
+            334.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "the Results to separate structural limits from control imperfections.",
+          "bbox": [
+            166.39,
+            336.39,
+            460.87,
+            348.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Summary of methodology. Over H, we adopt a fully associative, hardware-aligned",
+          "bbox": [
+            187.65,
+            349.26,
+            559.28,
+            362.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "pipeline via the embedding (A1) with standard universal sets and compilation. Over O,",
+          "bbox": [
+            166.09,
+            363.18,
+            560.52,
+            376.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "we do not posit a native scalable calculus; instead, we formalize where associativity is",
+          "bbox": [
+            165.97,
+            378.17,
+            559.28,
+            390.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "required and deploy (M1)–(M4) to operate within associative islands or to cancel/structure",
+          "bbox": [
+            166.39,
+            392.1,
+            559.27,
+            403.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "associator effects, making explicit the cost in depth, width, and calibration.",
+          "bbox": [
+            166.39,
+            406.03,
+            494.74,
+            417.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3. Results",
+          "bbox": [
+            166.39,
+            432.23,
+            219.56,
+            444.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In this section, we collect the main formal and algorithmic results for the quaternionic",
+          "bbox": [
+            187.65,
+            448.83,
+            559.27,
+            460.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.88
+          ]
+        },
+        {
+          "text": "(H) and octonionic (O) models established in the thesis-derived framework. Statements",
+          "bbox": [
+            166.07,
+            461.69,
+            559.27,
+            474.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "are given without proofs (all proofs or proof sketches are deferred to the Appendices",
+          "bbox": [
+            166.39,
+            476.68,
+            559.27,
+            488.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "indicated), and each result is accompanied by a short explanatory remark highlighting its",
+          "bbox": [
+            166.39,
+            490.61,
+            559.27,
+            502.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.97
+          ]
+        },
+        {
+          "text": "computational signiﬁcance. Throughout, the contrast between associativity (present in H)",
+          "bbox": [
+            166.39,
+            503.48,
+            560.27,
+            516.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "and non-associativity (in O) is the central structural theme [1,2,4,5].",
+          "bbox": [
+            166.39,
+            517.4,
+            461.81,
+            530.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "3.1. Quaternionic Model: Structural, Universality, and Simulation Results",
+          "bbox": [
+            166.39,
+            543.76,
+            469.27,
+            553.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We begin by securing the structural backbone over H: A well-deﬁned multipartite",
+          "bbox": [
+            187.65,
+            557.88,
+            559.27,
+            570.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "composition. This provides the substrate on which universality and simulation statements",
+          "bbox": [
+            166.39,
+            572.87,
+            559.27,
+            584.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.91
+          ]
+        },
+        {
+          "text": "are built.",
+          "bbox": [
+            166.39,
+            586.8,
+            205.45,
+            598.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 1 (Canonical tensor structure over H). Let (Hi, ⟨·, ·⟩i), i = 1, 2, 3, be right H-Hilbert",
+          "bbox": [
+            166.07,
+            611.62,
+            559.28,
+            631.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Bold",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.86,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "modules. Then",
+          "bbox": [
+            166.39,
+            628.34,
+            225.67,
+            638.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(H1 ⊗H2) ⊗H3 ∼= H1 ⊗(H2 ⊗H3)",
+          "bbox": [
+            280.46,
+            639.0,
+            445.21,
+            661.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            10.38
+          ]
+        },
+        {
+          "text": "canonically and isometrically, with inner product on simple tensors ⟨u1 ⊗u2, v1 ⊗v2⟩:=",
+          "bbox": [
+            166.39,
+            661.43,
+            559.15,
+            682.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "⟨u1, v1⟩1 ⟨u2, v2⟩2. Proof: Appendix A. Signiﬁcance: Guarantees parenthesization-independent",
+          "bbox": [
+            166.52,
+            675.36,
+            559.27,
+            696.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.03,
+            10.38
+          ]
+        },
+        {
+          "text": "multipartite composition and entanglement over H.",
+          "bbox": [
+            166.39,
+            688.22,
+            373.35,
+            701.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "With a canonical tensor product in place, we can lift the standard “single-qubit +",
+          "bbox": [
+            187.65,
+            715.17,
+            560.78,
+            727.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "entangler” recipe to the quaternionic setting.",
+          "bbox": [
+            166.39,
+            729.1,
+            363.42,
+            740.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

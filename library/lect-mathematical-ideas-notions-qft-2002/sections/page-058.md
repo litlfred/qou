@@ -1,0 +1,84 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-058
+section_title: "Page 58"
+pages: 58-58
+pdf_page: 58
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+58 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+ZL = Tamh(L]y" On the other hand, A is the Hamiltonian of the quantum har-
+
+monic oscillator: 3 3
+~ 1d qd
+A=--— 424.
+2 dq? + 2
+The eigenvectors of this operator are well known: they are H;,(x)e , where Hy,
+are the Hermite polynomials (k > 0), and the eigenvalues are k + 1/2 (see Theorem
+
+4.10). Hence,
+
+a? /2
+
+. 1
+‘Hi — ,-L/2 —3L/2 _
+ZHam — e“E/2 4 3h / += aap
+
+as expected from the Feynman-Kac formula. (This shows the significance of the
+choice C = 1/2 in the normalization of Z;).
+
+=Z,
+
+8.4. Proof of the Feynman-Kac formula in the free case. Consider again
+
+the quadratic Hamiltonian H= 2122 + £. Note that it can be written in the
+form
+H =ala+1/2,
+
+where a = wat), at = wl at9): The operators a, at define a representation
+
+of the Heisenberg algebra on H:
+[a,at] = 1.
+Thus the eigenvectors of H are (at)"Q (where 2 = e-0/2) is the lowest eigenvector),
+and the eigenvalues n + 4 (as we already saw before in Theorem 4.10).
+Remark. The operators a and at are called the annihilation and creation oper-
+ators, since aQ = 0, while all eigenvectors of H can be “created” from Q by action
+
+of powers of at.
+Now, we have
+
+1
+0)=q= lata).
+a0) =4 va! )
+Since [ata, a] = —a, [ata, at] = at, we have
+1; . 1 j .
+q(t) =_ aoa + al)e—itala =_ vue tat etal)
+This shows that
+, th) -L(alath
+Ham (ith, ..., itn) = gon UT (eal + e Bale Me st9))
+n, yey ttn) =
+
+Tr(eW La a+3))
+
+Now we can easily prove Theorem 8.4. Indeed, let us move the terms e“!at and
+e~'1@ around the trace (using the cyclic property of the trace). This will yield,
+after a short calculation,
+
+n
+1
+GRA" (t1, tn) = > 5 9n—2,L (te, wy bya, ty pay ey tr) (
+j=
+
+n
+> Gn—2,7 (to, 0s tj—1stjtis-stn)Gr(t — ty).
+j=
+
+This implies the theorem by induction.
+Note that in the quadratic case there is no formal expansions and the Feynman-
+Kac formula holds as an equality between usual functions.

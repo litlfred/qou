@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-018-101-baryon-electric-dipole-moments
 section_title: "Baryon electric dipole moments"
 section_number: 10.1
@@ -8,6 +8,7 @@ pages: 45-46
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 It is completely straightforward to extend the previous analysis to the baryon
 sector (Pich and de Rafael 1991b). One simply writes the matrix eU(φ) in terms of the
@@ -98,8 +99,6 @@ m2
 K
 
 (10.24)
-46
-A Pich
 in agreement with the old Current Algebra result (Crewther et al 1979, Di Vecchia
 1980). Taking into account the uncertainty associated with the unknown contribution
 from higher-order local terms in the baryon Lagrangian, one ﬁnally gets (Pich and de

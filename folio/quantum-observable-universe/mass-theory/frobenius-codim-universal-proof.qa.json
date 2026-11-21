@@ -237,6 +237,38 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8e1bb9385e47",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:24.591Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "critical",
+        "evidence": "CRITICAL: md:7 divides by τ(p_λ), but under convention D tr_M(p_{(1³)}) = y_{(1³)}·χ = 0 (thm:jones-markov-trace; borromean proof:139 'y_{(1³)} = 0 identically'), so C undefined for H_3; proof:74 'At n = 3: = 2 + 1/[2]_q' uses that block. proof:24-29 uniqueness false (dim Z(A) = p(n) ≥ 2); proof:161 'τ(p_λ) → d_λ/|G|' should be d_λ²/|G|; proof:167-168 'matching proton residual to 0.14% at q₀'",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "37bbd2b8f3c1",
+          "ts": "94a7a0c164a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:12:07.713Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Follows."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1141,7 +1173,7 @@
           "in_degree": 0,
           "cone_size": 174,
           "depth": 44,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1359,7 +1391,7 @@
         "reviewed_at": "2026-08-15T10:31:00.663Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "3 negation-contrast construction(s): \", not ad-hoc.\"; \", not a choice.\" \u2014 state the positive claim directly"
+        "evidence": "3 negation-contrast construction(s): \", not ad-hoc.\"; \", not a choice.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1375,8 +1407,8 @@
         "reviewed_at": "2026-08-21T15:45:30.962Z",
         "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
         "severity": "major",
-        "evidence": "Four assert-by-denial constructions clustered in the uniqueness subsection ('forced by the structure, not ad-hoc'; 'intrinsic to a ribbon-category / rigid-monoidal structure, not a choice'; 'purely categorical \u2014 no arbitrary choices'), i.e. the same quality asserted three times by denying its opposite under a header that already says 'categorical + forced'.",
-        "notes": "FIXED (3 deletions, prose only): 'therefore **forced by the structure**, not ad-hoc.' -> 'therefore **forced by the structure**.'; '...rigid-monoidal structure, not a choice.' -> '...rigid-monoidal structure.'; the closing sentence 'So the element is required (unique) and its construction is purely categorical \u2014 no arbitrary choices.' deleted (also a thesis restatement). PASSED AS SUBSTANTIVE: 'Mass differences ... come entirely from the descended |tr_M| and brane-tower pieces, not from the Frobenius correction' and 'the bottleneck ... is the size of the explicit dim_q table rather than the proof scheme' \u2014 both are the block's actual content."
+        "evidence": "Four assert-by-denial constructions clustered in the uniqueness subsection ('forced by the structure, not ad-hoc'; 'intrinsic to a ribbon-category / rigid-monoidal structure, not a choice'; 'purely categorical — no arbitrary choices'), i.e. the same quality asserted three times by denying its opposite under a header that already says 'categorical + forced'.",
+        "notes": "FIXED (3 deletions, prose only): 'therefore **forced by the structure**, not ad-hoc.' -> 'therefore **forced by the structure**.'; '...rigid-monoidal structure, not a choice.' -> '...rigid-monoidal structure.'; the closing sentence 'So the element is required (unique) and its construction is purely categorical — no arbitrary choices.' deleted (also a thesis restatement). PASSED AS SUBSTANTIVE: 'Mass differences ... come entirely from the descended |tr_M| and brane-tower pieces, not from the Frobenius correction' and 'the bottleneck ... is the size of the explicit dim_q table rather than the proof scheme' — both are the block's actual content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1447,7 +1479,7 @@
         "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
         "severity": "minor",
         "evidence": "11 em-dashes in 1274 words (~1 per 116). Legitimate appositives dominate, but one was an outright punctuation defect and 3-4 append afterthoughts where a semicolon or full stop belongs.",
-        "notes": "FIXED: 'Vortex-dependent corrections (e.g. chirality factors ...' had an unclosed '(e.g.' whose closing paren had been replaced by a dangling em-dash, splitting subject from verb ('corrections ... \u2014 are separate structural terms'); changed '(e.g.' -> '\u2014 e.g.' so the dash pair closes and parens balance (129/129 verified). PROPOSED (not applied, inside italic statement text): '...matching $\\tau(z)$ ... forces $c_\\lambda = ...$ \u2014 this **is** the definition' -> '; this is the definition'; 'two eigenvalues $(q,-q^{-1})$ \u2014 the source of all q-deformation structure' -> ', the source of the q-deformation structure'."
+        "notes": "FIXED: 'Vortex-dependent corrections (e.g. chirality factors ...' had an unclosed '(e.g.' whose closing paren had been replaced by a dangling em-dash, splitting subject from verb ('corrections ... — are separate structural terms'); changed '(e.g.' -> '— e.g.' so the dash pair closes and parens balance (129/129 verified). PROPOSED (not applied, inside italic statement text): '...matching $\\tau(z)$ ... forces $c_\\lambda = ...$ — this **is** the definition' -> '; this is the definition'; 'two eigenvalues $(q,-q^{-1})$ — the source of all q-deformation structure' -> ', the source of the q-deformation structure'."
       }
     ],
     "trap-triples": [
@@ -1481,7 +1513,7 @@
         },
         "reviewed_at": "2026-08-21T15:45:31.081Z",
         "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
-        "evidence": "Five three-item groupings (three senses / three tiers / three specialisations / three consistency checks / three proof-scheme steps). Each enumerates genuinely distinct content \u2014 the three senses are the monoidal-morphism origin, the quantum-trace origin and the TQFT cobordism correspondence \u2014 so none is a reflex list.",
+        "evidence": "Five three-item groupings (three senses / three tiers / three specialisations / three consistency checks / three proof-scheme steps). Each enumerates genuinely distinct content — the three senses are the monoidal-morphism origin, the quantum-trace origin and the TQFT cobordism correspondence — so none is a reflex list.",
         "notes": "Density note: five triples in one block is at the edge; if any is padded it is 'categorical in three distinct senses', where senses 1 and 3 both reduce to 'built by universal constructions'."
       }
     ],
@@ -1517,7 +1549,7 @@
         "reviewed_at": "2026-08-21T15:45:31.118Z",
         "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
         "evidence": "Block ends on a technical scope sentence about extending the scheme beyond n=8, not a quotable closer.",
-        "notes": "The closing sentence is damaged by token substitution ('the the formal derivation formalism') \u2014 reported under trap-nonspeakable notes and in the anomaly list."
+        "notes": "The closing sentence is damaged by token substitution ('the the formal derivation formalism') — reported under trap-nonspeakable notes and in the anomaly list."
       }
     ],
     "trap-meta-commentary": [
@@ -1552,7 +1584,7 @@
         "reviewed_at": "2026-08-21T15:45:31.155Z",
         "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
         "severity": "major",
-        "evidence": "'Critically, $\\tau(C_{\\dim_q}^{(A)})$ is **independent of the specific vortex**' \u2014 narrates the emphasis instead of placing it; the bolded phrase and the dedicated subsection heading already carry it.",
+        "evidence": "'Critically, $\\tau(C_{\\dim_q}^{(A)})$ is **independent of the specific vortex**' — narrates the emphasis instead of placing it; the bolded phrase and the dedicated subsection heading already carry it.",
         "notes": "FIXED: 'Critically, $\\tau(...)$ is' -> '$\\tau(...)$ is'."
       }
     ],
@@ -1588,7 +1620,7 @@
         "reviewed_at": "2026-08-21T15:45:31.193Z",
         "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
         "severity": "major",
-        "evidence": "Subsection-final 'So the element is required (unique) and its construction is purely categorical \u2014 no arbitrary choices.' restates verbatim what the preceding paragraph ('forced by the structure') and the three-sense list had just established.",
+        "evidence": "Subsection-final 'So the element is required (unique) and its construction is purely categorical — no arbitrary choices.' restates verbatim what the preceding paragraph ('forced by the structure') and the three-sense list had just established.",
         "notes": "FIXED: sentence deleted."
       }
     ],
@@ -1659,7 +1691,7 @@
         "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
         "severity": "minor",
         "evidence": "'the source of all $q$-deformation structure in the paper' is an unqualified maximal claim about the whole document, asserted in passing inside an appositive; 'Critically' (fixed under meta-commentary) was a second de-hedged intensifier.",
-        "notes": "PROPOSED (not applied \u2014 scope claim, meaning at stake): 'the source of all $q$-deformation structure in the paper' -> 'the origin of the $q$-deformation used throughout'."
+        "notes": "PROPOSED (not applied — scope claim, meaning at stake): 'the source of all $q$-deformation structure in the paper' -> 'the origin of the $q$-deformation used throughout'."
       }
     ],
     "trap-nonspeakable": [
@@ -1694,7 +1726,7 @@
         "reviewed_at": "2026-08-21T15:45:31.304Z",
         "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
         "evidence": "The Lean-mechanics paragraph is identifier-dense ('a Fin.sum_univ_* decomposition lemma extending Mathlib's Fin.sum_univ_eight to p(n) summands via a sequence of Fin.sum_univ_castSucc peels') but the density is genuine technical content, not noun-stacking for the eye.",
-        "notes": "Two sentences in that paragraph are unreadable for a different reason \u2014 token substitution has eaten the script name: 'The generator ... is / the canonical formalism;' and 'by extending the / the formal derivation formalism.' The generator is computations/phase5/phase5_n8_dim_q_table.py (it writes phase5-n8-dim-q-table.json and .lean). Not fixed inline: restoring a script name is content restoration, not a trap fix."
+        "notes": "Two sentences in that paragraph are unreadable for a different reason — token substitution has eaten the script name: 'The generator ... is / the canonical formalism;' and 'by extending the / the formal derivation formalism.' The generator is computations/phase5/phase5_n8_dim_q_table.py (it writes phase5-n8-dim-q-table.json and .lean). Not fixed inline: restoring a script name is content restoration, not a trap fix."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1717,6 +1749,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:45:31.304Z",
+  "updated_at": "2026-11-16T07:12:07.713Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

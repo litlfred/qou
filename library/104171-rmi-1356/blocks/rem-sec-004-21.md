@@ -1,0 +1,1 @@
+For g D 1 there is such an effective criterion to get admissible parameters, see Theorem 3.2 in [20] and [68]. It would be interesting to have such a criterion for g > 1. The key players to calculate dimK Brd;b g;n.c/ are again the blob numbers BNg;d defined in (4.9):

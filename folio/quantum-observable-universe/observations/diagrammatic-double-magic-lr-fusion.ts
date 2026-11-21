@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "prop:homological-shell-condensation",
+    "conj:homological-shell-condensation",
     "conj:magic-numbers-from-q",
   ],
   computation: {

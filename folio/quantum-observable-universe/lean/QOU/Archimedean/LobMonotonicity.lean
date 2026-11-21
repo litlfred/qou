@@ -20,7 +20,7 @@
   Archimedean (ℝ): ordering, `sin`, `log` — §7c.
 
   -- Ref: [milnor1982] Hyperbolic geometry: the first 150 years
-  -- Ref: [manuscript] bean qou-52ch
+  -- Ref: [leitner2026] bean qou-52ch
 -/
 
 import QOU.Knot.RivinConcavity

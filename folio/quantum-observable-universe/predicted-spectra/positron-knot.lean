@@ -14,7 +14,7 @@ LaTeX label: `def:positron-knot`
 
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] Ch. 5, §positron-knot
+- [leitner2026] Ch. 5, §positron-knot
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -34,12 +34,12 @@ theorem positron_is_mirror_torus_knot :
     ({} : Positron).torusP = 2 ∧ ({} : Positron).torusN = 3 := ⟨rfl, rfl⟩
 
 /-- The positron has opposite charge to the electron. -/
--- Ref: [manuscript] Ch. 5, §positron-knot
+-- Ref: [leitner2026] Ch. 5, §positron-knot
 theorem positron_charge_opposite_electron :
     ({} : Positron).charge + ({} : Electron).charge = 0 := by decide
 
 /-- The positron has reversed orientation (antiparticle). -/
--- Ref: [manuscript] Ch. 5, §positron-knot
+-- Ref: [leitner2026] Ch. 5, §positron-knot
 theorem positron_reversed_orientation :
     ({} : Positron).orientation = -({} : Electron).orientation := by decide
 

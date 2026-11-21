@@ -3,21 +3,170 @@
  "doc_id": "np-b250-1985-465",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "8568b8322e8204276ac6f6f043dcbde0fe90b015e740515dd6651a0f1dda3b94",
   "file": "NP_B250_1985_465.pdf"
  },
  "provenance": {
-  "title": "Nuclear Physics B250 (1985) 465-516 North-Holland Publishing Company CHIRAL PERTURBATION THEORY: EXPANSIONS IN THE MASS OF THE STRANGE QUARK* J. GASSER lnstitut f~r Theoretische Physik der Universitiit Bern, 3012 Bern, Switzerland",
-  "authors": null,
+  "title": "Chiral Perturbation Theory: Expansions in the Mass of the Strange Quark",
+  "authors": "North-Holland Publishing Company",
   "arxiv": null,
   "doi": null
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 6,
+  "by_kind": {
+   "proposition": 6
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 6
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3,
+   "empirical-measurement": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 5,
+   "both": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "9 and 10 we calculate the first nonleading term in the quark mass expansion of the order parameter (01#q]0) and of the masses and coupling constants in the pseudoscalar octet.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-5)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-5)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/np-b250-1985-465/blocks/prop-sec-000-01",
+   "claim_id": "np-b250-1985-465#prop-sec-000-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "(10.12) Eliminating the constants K6 and K7 in (10.7) we obtain the following sum rule expressing F, in terms of F~ and FK: /'FK\\4/3f M 2 , 2 ] +~(3M:ln',~2-M-~lnM~-~.K,~+O(At2) (10.13) F,= F,,~-TJ ]1 96zr Fo\\ MK M~/ With the experimental value [33] F--K-K = 1,22 ~- 0.01, (10.14) F. .I.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper result in sections/sec-022-j-gasser-h-leutwvler-chiral-perturbation-theo.md combined with [33]",
+   "external_refs": [
+    "[33]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-022-j-gasser-h-leutwvler-chiral-perturbation-theo.md",
+   "section_title": "Gasser, H. Leutwvler / Chiral perturbation theo~",
+   "pages": "28-29",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: both \u2014 In-paper result in sections/sec-022-j-gasser-h-leutwvler-chiral-perturbation-theo.md combined with [33]). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-022-01",
+   "block_iri": "library/np-b250-1985-465/blocks/prop-sec-022-01",
+   "claim_id": "np-b250-1985-465#prop-sec-022-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "M2\u00f7-M2o+M2-+O(e2A~) (10.19) Next, in order only to use independent information, we determine the ratio R = (m~-rfi):(m~-mu) from isospin breaking in the baryon mass spectrum and from p-o) mixing.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-023-mk--mkqcd.md (p. 29-29)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-023-mk--mkqcd.md",
+   "section_title": "(MK\u00b0--MK')QCD",
+   "pages": "29-29",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-023-mk--mkqcd.md (p. 29-29)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-023-01",
+   "block_iri": "library/np-b250-1985-465/blocks/prop-sec-023-01",
+   "claim_id": "np-b250-1985-465#prop-sec-023-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "MK-M,-M,,In +O(M 2) \\ FK'/QCD m~ - fit 64r;2 F (10.22) With the experimental value for FK : F~ given above this sum rule predicts that the isospin breaking is very small: FK\u00b0 =1.004.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-024-mk-m-min.md (p. 29-30)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-024-mk-m-min.md",
+   "section_title": "MK-M,-M,,In",
+   "pages": "29-30",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-024-mk-m-min.md (p. 29-30)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-024-01",
+   "block_iri": "library/np-b250-1985-465/blocks/prop-sec-024-01",
+   "claim_id": "np-b250-1985-465#prop-sec-024-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The measured value of FK: F,, the observed deviation from the Gell-Mann-Okubo formula and the relation (l 0.18) between (ME,,- M~. ):(M~ - M~) and the quark mass ratio (rod - rnu): (m~-r~) (on which we have independent information from isospin breaking in the baryon spectrum and from ,oto mixing) provide three further constraints on these low-energy constants.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-033-14-values-of-the-low-energy-constants.md (p. 42-43)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-033-14-values-of-the-low-energy-constants.md",
+   "section_title": "Values of the low-energy constants",
+   "pages": "42-43",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-033-14-values-of-the-low-energy-constants.md (p. 42-43)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-033-01",
+   "block_iri": "library/np-b250-1985-465/blocks/prop-sec-033-01",
+   "claim_id": "np-b250-1985-465#prop-sec-033-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "We calculate the first non-leading term in the quark mass expansion of the order parameters (0[t~u[0), (0[dd]0), (ol.~slO), and of the masses and decay constants in the pseudoscalar octet.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-front-matter.md (p. 1-1)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-1",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-front-matter.md (p. 1-1)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-front-matter-01",
+   "block_iri": "library/np-b250-1985-465/blocks/prop-sec-front-matter-01",
+   "claim_id": "np-b250-1985-465#prop-sec-front-matter-01"
+  }
+ ]
 }

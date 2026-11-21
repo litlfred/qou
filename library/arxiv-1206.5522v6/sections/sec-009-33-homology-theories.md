@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.966
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 We now give our second main definition of this paper, that of a homology theory. First, note that taking products of manifolds defines a functor $\mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_{n-1}^B\times\mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_1^{\sf or} \rightarrow\mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_n^B$, where $\mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_1^{\sf or}$ is oriented 1-manifolds and $$\mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_{n-1}^B : = \mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_{n-1}\underset{\mathop{\mathrm{\mathsf{Spaces}}}_{/{\sf BTop(n)}}}\times\mathop{\mathrm{\mathsf{Spaces}}}_{/B}$$ is the $\mathop{\mathrm{\infty}}$-category of $(n-1)$-manifolds with a $B$-framing on the product of their tangent bundle product with a trivial line bundle. Consequently, any $B$-framed $n$-manifold of the form $M_0\times\mathbb R$, where $M_0$ is an $(n-1)$-manifold, can be given the structure of a $\mathop{\mathrm{{\mathcal D}\sf isk}}_1^{\sf or}$-algebra in $\mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_n^B$, since $\mathbb R$ has the structure of a $\mathop{\mathrm{{\mathcal D}\sf isk}}_1^{\sf or}$-algebra in $\mathop{\mathrm{{\mathcal M}\mathsf{fld}}}_1^{\sf or}$.
 

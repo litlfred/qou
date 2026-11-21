@@ -1,0 +1,1 @@
+Let V be an object of grRep(St)q such that F(V ) admits an ambidextrous trace tF (V ) : EndRep(St)(F(V ))→F. Then the map t : EndgrRep(St)q(V )→F given by g↦→ tF (V )(F(g)) deﬁnes an ambidextrous trace on V .

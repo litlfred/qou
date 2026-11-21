@@ -7,10 +7,11 @@ section_number: 6.1
 pages: 26-27
 source_pdf: 1501.01574v3.pdf
 source_sha256: 8af5d6264a0ad5e0
-doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polyn omial and the boundary slopes of knots under the operation of cabling."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.81
 latex_coverage_ratio: 1.0
+doc_brief: "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL — We study the behavior of the degree of the colored Jones polynomial and the boundary slopes of knots under the operation of cabling."
 ---
 The quantity  $Q(n,k_1,k_2)$ is closely related
 to the degree $\delta_K(n)$. According to \cite{GV}  for the 2-fusion knot $K=K(m_1,m_2)$, with $m_2 \notin \{-1, 0\}$, we have the following possibilities:

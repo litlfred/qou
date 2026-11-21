@@ -1,0 +1,182 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1012.4090v1",
+  "figures": [
+    {
+      "id": "vfig-p003",
+      "file": "figures/vfig-p003.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 3
+      },
+      "page": 3,
+      "rotation": 0,
+      "captionLabels": [
+        "1",
+        "2"
+      ],
+      "region": [
+        306.6,
+        81.22,
+        530.6,
+        249.3
+      ],
+      "assembly": {
+        "drawings": 129,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              306.6,
+              81.22,
+              530.6,
+              249.3
+            ],
+            "drawings": 129,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "0",
+              "0.1",
+              "0.2",
+              "0.3",
+              "0.4",
+              "0.5",
+              "0.6",
+              "0.7",
+              "0.8",
+              "0.9",
+              "1",
+              "0.5",
+              "0.6",
+              "0.7",
+              "0.8",
+              "0.9",
+              "1",
+              "1.1",
+              "α",
+              "EN",
+              "Normalized energy of crystal solutions",
+              "Bound",
+              "V+AV+V+AV",
+              "2V+2AV",
+              "Multi−sheet"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              306.6,
+              81.22,
+              530.6,
+              249.3
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "0.1",
+              "0.2",
+              "0.3",
+              "0.4",
+              "0.5",
+              "0.6",
+              "0.7",
+              "0.8",
+              "0.9",
+              "1",
+              "0.5",
+              "0.6",
+              "0.7",
+              "0.8",
+              "0.9",
+              "1",
+              "1.1",
+              "α",
+              "EN",
+              "Normalized energy of crystal solutions"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              338.19,
+              202.26,
+              387.35,
+              228.34
+            ],
+            "parent": "b0",
+            "labels": [
+              "Bound",
+              "V+AV+V+AV",
+              "2V+2AV",
+              "Multi−sheet"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 12,
+        "connectors": [],
+        "between": [],
+        "outside": 88
+      }
+    },
+    {
+      "id": "vfig-p004",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 4
+      },
+      "page": 4,
+      "rotation": 0,
+      "captionLabels": [
+        "3",
+        "4"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 2,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              488.71,
+              595.33,
+              499.98,
+              595.33
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              504.41,
+              595.33,
+              515.68,
+              595.33
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    }
+  ]
+}

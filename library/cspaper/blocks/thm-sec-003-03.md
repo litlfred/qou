@@ -1,0 +1,1 @@
+The homology groups Hi(J) are H5(J) = 0, H4(J) = Z/2, H1(J) = Z/2, H3(J) = H ⊕H1(K; Z/2), H2(J) = H1(K; Z/2), where H = Ker(H1(∂K0; Z) →H1(K0; Z/2)). The isomorphism H3(J)/{Torsion} →H is an isometry for the form on H3(J) = Ker β∗/ Im β and the intersection form on H ⊆H1(∂K0) = ` H1(LV ).

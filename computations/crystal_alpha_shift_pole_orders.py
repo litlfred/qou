@@ -91,7 +91,8 @@ def main() -> int:
     ten = q_integer(10, q0)
     chain = q0 * nine * ten
     print(f"\n  AXKIA chain check: q · [9]_q · [10]_q at q_0 = {chain:.6f}")
-    print(f"  Expected (CODATA α_EM⁻¹):  137.035999084")
+    from qou_substrate.codata import codata as _codata
+    print(f"  Expected (CODATA α_EM⁻¹):  {_codata('inverse fine-structure constant').value_str}")
 
     out = (WitnessBuilder("crystal-alpha-shift-pole-orders", engine="python")
         .set_audit_only("docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md")

@@ -1,0 +1,33 @@
+10.3 Main results on coefficient asymptotics 307
+
+y y
+
+Figure 10.11 When a saddle crosses p the linking torus changes by Tp.
+
+torus” around the origin (see Figure 10.10), then proving inductively that the
+coefficient of every contributing point is 1. See [BMP23] fora full proof. oO
+
+Example 10.24. Figure 10.11 shows three critical points a,b, and p on two
+crossing lines. As the direction 7 varies from a slope of 3 on the left of the
+figure to a slope of 2/5 on the right of the figure, the critical point b crosses
+p. As illustrated in the figure, on the left-hand side T(e, €) = Ta + Tp while on
+the right side T(e,€) = Ta + Ty + Tp. Varying # farther to a slope of 1/5, the
+critical point a crosses p, whereupon the coefficient of tT, becomes zero again
+and T(é,€) = T, + Tp, this time with a and b both to the right of p. 4
+
+Combining Theorems 10.15 and 10.23 gives coefficient asymptotics for func-
+tions whose denominators consist of transversely intersecting linear divisors.
+
+Theorem 10.25 (transverse hyperplane arrangement asymptotics). Let Q(z) =
+ITj=1 €(2)" for positive integers mj and real linear functions €; defining a
+transverse hyperplane arrangement, normalized so that Q(0) = | (as is the
+case when each €(z) = 1- bY .z). Let Y,. dpz” be a convergent power series
+expansion for F(z) = P(z)/Q(z) and f be a generic direction. Then
+
+dp ® » O,(r), (10.10)
+
+where ©, is an infinite asymptotic expansion when o lies in a stratum of di-
+mension at least one, and a finite expansion (an exponential times a polynomial
+in r) when o lies in a complete intersection. These expansions are computed
+(up to sign) in Theorems 10.12 and 10.15, and have the following leading
+terms.

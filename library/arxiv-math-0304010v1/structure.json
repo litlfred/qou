@@ -8,7 +8,7 @@
   "pages": 49,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,37 +20,38 @@
    "stamp_date": "1 Apr 2003"
   },
   "doi": null,
-  "title": "arXiv:math/0304010v1 [math.CO] 1 Apr 2003",
+  "title": "Kerov's central limit theorem for the Plancherel measure on Young diagrams",
   "authors_raw": "Vladimir Ivanov and Grigori Olshanski",
   "title_lines": [
-   "KEROV\u2019S CENTRAL LIMIT THEOREM FOR THE",
+   "KEROV’S CENTRAL LIMIT THEOREM FOR THE",
    "PLANCHEREL MEASURE ON YOUNG DIAGRAMS"
   ],
-  "abstract": "Consider random Young diagrams with \ufb01xed number n of boxes, dis- tributed according to the Plancherel measure Mn. That is, the weight Mn(\u03bb) of a diagram \u03bb equals dim2 \u03bb/n!, where dim \u03bb denotes the dimension of the irreducible representation of the symmetric group Sn indexed by \u03bb. As n \u2192\u221e, the boundary of the (appropriately rescaled) random shape \u03bb concentrates near a curve \u2126(Logan\u2013 Shepp 1977, Vershik\u2013Kerov 1977). In 1993, Kerov announced a remarkable theorem describing Gaussian \ufb02uctuations around the limit shape \u2126. Here we propose a re- construction of his proof. It is largely based on Kerov\u2019s unpublished work notes, 1999.",
+  "abstract": "Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn. That is, the weight Mn(λ) of a diagram λ equals dim2 λ/n!, where dim λ denotes the dimension of the irreducible representation of the symmetric group Sn indexed by λ. As n →∞, the boundary of the (appropriately rescaled) random shape λ concentrates near a curve Ω(Logan– Shepp 1977, Vershik–Kerov 1977). In 1993, Kerov announced a remarkable theorem describing Gaussian ﬂuctuations around the limit shape Ω. Here we propose a re- construction of his proof. It is largely based on Kerov’s unpublished work notes, 1999.",
   "docinfo": {
    "Title": "arXiv:math/0304010v1  [math.CO]  1 Apr 2003",
    "Producer": "GPL Ghostscript 10.01.2",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20241126162936-05'00'"
   },
-  "title_raw": "KEROV\u2019S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS",
+  "title_raw": "KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/0304010v1 [math.CO] 1 Apr 2003",
-   "heading": "KEROV\u2019S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS Vladimir Ivanov and Grigori Olshanski Contents \u00a7 0. Introduction \u00a7 1. The algebra of polynomial functions on the set of Young diagrams \u00a7 2. Continual diagrams and their moments \u00a7 3. The elements p # \u03c1 } and \ufb01ltrations in A \u00a7",
-   "text": "KEROV\u2019S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS",
+   "heading": "KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS Vladimir Ivanov and Grigori Olshanski Contents § 0. Introduction § 1. The algebra of polynomial functions on the set of Young diagrams § 2. Continual diagrams and their moments § 3. The elements p # ρ } and ﬁltrations in A §",
+   "text": "KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0304010v1 [math.CO] 1 Apr 2003"
  },
  "toc": [],
  "toc_source": "undetermined",
- "toc_undetermined_reason": "7 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed",
+ "toc_undetermined_reason": "7 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
  "granularity": "page",
- "structure_note": "No outline, and no inferred contents could be trusted (7 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed): one section per page.",
+ "structure_note": "No outline, and no inferred contents could be trusted (7 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
  "figures": [],
  "pages": [
   {
@@ -503,8 +504,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1889,
-   "n_words": 284,
+   "n_chars": 1887,
+   "n_words": 283,
    "label_start": "1",
    "label_end": "1"
   },
@@ -971,8 +972,8 @@
    "level": 1,
    "page_start": 40,
    "page_end": 40,
-   "n_chars": 1783,
-   "n_words": 371,
+   "n_chars": 1775,
+   "n_words": 368,
    "label_start": "40",
    "label_end": "40"
   },
@@ -1100,6 +1101,7 @@
    "items": []
   },
   "sections": 49,
-  "chars_total": 100137
+  "chars_total": 100127,
+  "furniture_lines_stripped": 4
  }
 }

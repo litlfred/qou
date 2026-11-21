@@ -7,6 +7,9 @@ fills the field from `computations/probes/markov-trace-two-row-tower.witness.jso
 and records the method. The pn count is checked against the certificate's own
 `pn_count` where it has one, so a value cannot land on the wrong normalisation.
 
+Rows the Python probe lacks (A = 17..20) come from the Rust port's witness,
+markov-trace-two-row-tower-rust.witness.json.
+
 Usage: attach_tower_trace.py [--check]
 """
 import json
@@ -16,11 +19,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 CERTS = ROOT / "tools/hecke-engine"
 WIT = ROOT / "computations/probes/markov-trace-two-row-tower.witness.json"
+RUST_WIT = ROOT / "computations/probes/markov-trace-two-row-tower-rust.witness.json"
 Q0 = "1.1099785827513808075916690956107688798744991218736"
 V9_METHOD = "v9: Ocneanu recursion on the strip-free T_w expansion"
 TOWER_METHOD = ("two-row seminormal characters up the Hecke tower "
                 "(computations/probes/markov_trace_two_row_tower_probe.py); "
                 "agrees with the v9 method to 60 digits on the 12 nuclei both compute")
+RUST_METHOD = ("two-row seminormal characters up the Hecke tower, diagonal-only "
+               "(hecke-tower-trace, MPFR at 80 and 70 digits); agrees with the "
+               "Python tower probe to >= 59 digits on all 63 isotopes both compute")
 
 
 ORDER = ["computed", "value", "exact_z_t", "reason", "method", "z", "q0", "normalisation"]
@@ -62,7 +69,11 @@ def main():
     check = "--check" in sys.argv
     w = json.load(open(WIT))
     assert w["q0"] == Q0
-    rows = {(r["z"], r["n"]): r for r in w["rows"]}
+    rows = {(r["z"], r["n"]): {**r, "method": TOWER_METHOD} for r in w["rows"]}
+    rw = json.load(open(RUST_WIT))
+    assert rw["q0"] == Q0 and rw["q0_anchor"] == "proton"
+    for r in rw["rows"]:
+        rows.setdefault((r["z"], r["n"]), {**r, "method": RUST_METHOD})
     changed = []
     for f in sorted(CERTS.glob("certificate-*.json")):
         d = json.load(open(f))
@@ -78,9 +89,9 @@ def main():
             r = rows[key]
             if "pn_count" in d:
                 assert d["pn_count"] == r["pn"], (f.name, d["pn_count"], r["pn"])
-            t = {**base(), "computed": True, "value": r["tr_markov_d"], "method": TOWER_METHOD}
-        elif iso["a"] > 16:
-            t = {**base(), "reason": "A > 16: beyond the two-row tower probe so far, "
+            t = {**base(), "computed": True, "value": r["tr_markov_d"], "method": r["method"]}
+        elif iso["a"] > 20:
+            t = {**base(), "reason": "A > 20: beyond the two-row tower computations so far, "
                                      "and v9's build was stripped mid-construction"}
         else:
             continue

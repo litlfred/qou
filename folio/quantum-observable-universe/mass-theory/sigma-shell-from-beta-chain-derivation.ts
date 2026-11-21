@@ -26,6 +26,11 @@ export default conjecture({
     "scope-b-excluded",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, general $n$)" },
+    {
+      kind: "caveat",
+      body: "This block previously reported 12 % agreement with B(D)/(2m_p); that figure was computed in convention C, on the superseded grouped deuteron word.",
+    },
     {
       kind: "status",
       date: "2026-11-15",
@@ -35,7 +40,9 @@ export default conjecture({
         "every staircase $\\lambda_{\\mathrm{shell}} \\vdash 3A_{\\mathrm{magic}}$ with " +
         "$A_{\\mathrm{magic}} \\ge 2$ has at least three rows, and the Ocneanu weight of every " +
         "such partition vanishes at that $z$ " +
-        "(`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, sorry-free, general $n$). " +
+        "(`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, sorry-free, general $n$; " +
+        "stated for this closed form over any field as " +
+        "`QOU.BraidKnot.sigma_shell_staircase_vanishes_conventionD` in the Lean sibling). " +
         "So $y_{(3,2,1)}(q_0) = 0$ and $y_{\\mathrm{target}}(2) = 0$ against the benchmark " +
         "$B(D)/(2m_p) \\approx 0.0012$ (witness `sigma-shell-from-beta-chain`, re-run 2026-11-15 " +
         "on the canonical deuteron trace). This is a **scope-(b) exclusion** of the staircase " +

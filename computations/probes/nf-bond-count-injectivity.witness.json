@@ -1,0 +1,3032 @@
+{
+  "engine": "python+fractions",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:21:07.482578+00:00",
+  "commitSha": "f1be230920b1bdc1f6a9070fd8fc7d187c5c2345",
+  "assertions": [
+    {
+      "name": "control_reproduces_canonical_builder",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "configurations_swept",
+      "computed": "222",
+      "expected": "222",
+      "passed": true
+    },
+    {
+      "name": "shape_is_many_to_one_on_this_sample",
+      "computed": "107 shapes / 222 configs",
+      "expected": "107 shapes / 222 configs",
+      "passed": true
+    },
+    {
+      "name": "normal_forms_distinct_on_this_sample",
+      "computed": "222 normal forms / 222 configs",
+      "expected": "222 normal forms / 222 configs",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17901,
+  "computation": "nf-bond-count-injectivity",
+  "scriptFile": "nf_bond_count_injectivity_probe.py",
+  "scriptHash": "3dbf74a9e518",
+  "scriptCommitSha": "b75db90fcd6d8cb206c7ee967d8b10beb63b9467",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nf_bond_count_injectivity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nf_bond_count_injectivity_probe.py"
+  },
+  "probe": "nf_bond_count_injectivity",
+  "question": "does the Groebner-Shirshov reduction into the H_3 quotient destroy the inter-nucleon coordination information, blocking the substrate-derived-k route named in be017ea57b (guard qou-brng)?",
+  "answer": "the GS reduction to H_3 does NOT destroy the coordination information -- the bond count is recoverable from the normal form; only the 4-number grade shape loses it",
+  "scope": "scope-(a) positive: no normal-form collision found among the configurations swept. NOT a proof that the map (Z, N, bond count) -> normal form is injective in general. The companion negative (the 4-number SHAPE is many-to-one) is established by exhibited collisions and is not sample-limited.",
+  "why_this_probe_exists": "the merged jet-shape probe (30c5628b56) found 115 shape collisions; the tempting inference that the reduction destroyed the bond information is FALSE -- shape is four integers, the normal form is six Laurent polynomials",
+  "control_keep_all_reproduces_canonical_builder": true,
+  "control_configurations": 24,
+  "max_ZN": 4,
+  "configurations_swept": 222,
+  "shape_collisions": 115,
+  "distinct_shapes": 107,
+  "normal_form_collisions": 0,
+  "distinct_normal_forms": 222,
+  "worked_example": {
+    "a": [
+      1,
+      3,
+      3
+    ],
+    "b": [
+      1,
+      3,
+      1
+    ],
+    "same_shape": true,
+    "same_normal_form": false,
+    "coefficients_differing": 261
+  },
+  "configurations": [
+    {
+      "Z": 0,
+      "N": 2,
+      "bonds_kept": 0,
+      "bonds_total": 1,
+      "terms": 105
+    },
+    {
+      "Z": 0,
+      "N": 2,
+      "bonds_kept": 1,
+      "bonds_total": 1,
+      "terms": 97
+    },
+    {
+      "Z": 0,
+      "N": 3,
+      "bonds_kept": 0,
+      "bonds_total": 3,
+      "terms": 168
+    },
+    {
+      "Z": 0,
+      "N": 3,
+      "bonds_kept": 1,
+      "bonds_total": 3,
+      "terms": 169
+    },
+    {
+      "Z": 0,
+      "N": 3,
+      "bonds_kept": 2,
+      "bonds_total": 3,
+      "terms": 165
+    },
+    {
+      "Z": 0,
+      "N": 3,
+      "bonds_kept": 3,
+      "bonds_total": 3,
+      "terms": 167
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "bonds_kept": 0,
+      "bonds_total": 6,
+      "terms": 237
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "bonds_kept": 1,
+      "bonds_total": 6,
+      "terms": 235
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "bonds_kept": 2,
+      "bonds_total": 6,
+      "terms": 225
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "bonds_kept": 3,
+      "bonds_total": 6,
+      "terms": 227
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "bonds_kept": 4,
+      "bonds_total": 6,
+      "terms": 221
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "bonds_kept": 5,
+      "bonds_total": 6,
+      "terms": 223
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "bonds_kept": 6,
+      "bonds_total": 6,
+      "terms": 227
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "bonds_kept": 0,
+      "bonds_total": 1,
+      "terms": 125
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "bonds_kept": 1,
+      "bonds_total": 1,
+      "terms": 130
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "bonds_kept": 0,
+      "bonds_total": 3,
+      "terms": 189
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "bonds_kept": 1,
+      "bonds_total": 3,
+      "terms": 195
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "bonds_kept": 2,
+      "bonds_total": 3,
+      "terms": 203
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "bonds_kept": 3,
+      "bonds_total": 3,
+      "terms": 195
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "bonds_kept": 0,
+      "bonds_total": 6,
+      "terms": 257
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "bonds_kept": 1,
+      "bonds_total": 6,
+      "terms": 263
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "bonds_kept": 2,
+      "bonds_total": 6,
+      "terms": 269
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "bonds_kept": 3,
+      "bonds_total": 6,
+      "terms": 263
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "bonds_kept": 4,
+      "bonds_total": 6,
+      "terms": 267
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "bonds_kept": 5,
+      "bonds_total": 6,
+      "terms": 259
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "bonds_kept": 6,
+      "bonds_total": 6,
+      "terms": 257
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 0,
+      "bonds_total": 10,
+      "terms": 323
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 1,
+      "bonds_total": 10,
+      "terms": 329
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 2,
+      "bonds_total": 10,
+      "terms": 335
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 3,
+      "bonds_total": 10,
+      "terms": 329
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 4,
+      "bonds_total": 10,
+      "terms": 335
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 5,
+      "bonds_total": 10,
+      "terms": 327
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 6,
+      "bonds_total": 10,
+      "terms": 323
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 7,
+      "bonds_total": 10,
+      "terms": 323
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 8,
+      "bonds_total": 10,
+      "terms": 323
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 9,
+      "bonds_total": 10,
+      "terms": 315
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "bonds_kept": 10,
+      "bonds_total": 10,
+      "terms": 315
+    },
+    {
+      "Z": 2,
+      "N": 0,
+      "bonds_kept": 0,
+      "bonds_total": 1,
+      "terms": 133
+    },
+    {
+      "Z": 2,
+      "N": 0,
+      "bonds_kept": 1,
+      "bonds_total": 1,
+      "terms": 139
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "bonds_kept": 0,
+      "bonds_total": 3,
+      "terms": 199
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "bonds_kept": 1,
+      "bonds_total": 3,
+      "terms": 205
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "bonds_kept": 2,
+      "bonds_total": 3,
+      "terms": 211
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "bonds_kept": 3,
+      "bonds_total": 3,
+      "terms": 217
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "bonds_kept": 0,
+      "bonds_total": 6,
+      "terms": 265
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "bonds_kept": 1,
+      "bonds_total": 6,
+      "terms": 271
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "bonds_kept": 2,
+      "bonds_total": 6,
+      "terms": 277
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "bonds_kept": 3,
+      "bonds_total": 6,
+      "terms": 283
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "bonds_kept": 4,
+      "bonds_total": 6,
+      "terms": 289
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "bonds_kept": 5,
+      "bonds_total": 6,
+      "terms": 283
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "bonds_kept": 6,
+      "bonds_total": 6,
+      "terms": 285
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 0,
+      "bonds_total": 10,
+      "terms": 331
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 1,
+      "bonds_total": 10,
+      "terms": 337
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 2,
+      "bonds_total": 10,
+      "terms": 343
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 3,
+      "bonds_total": 10,
+      "terms": 349
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 4,
+      "bonds_total": 10,
+      "terms": 355
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 5,
+      "bonds_total": 10,
+      "terms": 349
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 6,
+      "bonds_total": 10,
+      "terms": 355
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 7,
+      "bonds_total": 10,
+      "terms": 359
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 8,
+      "bonds_total": 10,
+      "terms": 355
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 9,
+      "bonds_total": 10,
+      "terms": 361
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "bonds_kept": 10,
+      "bonds_total": 10,
+      "terms": 353
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 0,
+      "bonds_total": 15,
+      "terms": 397
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 1,
+      "bonds_total": 15,
+      "terms": 403
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 2,
+      "bonds_total": 15,
+      "terms": 409
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 3,
+      "bonds_total": 15,
+      "terms": 415
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 4,
+      "bonds_total": 15,
+      "terms": 421
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 5,
+      "bonds_total": 15,
+      "terms": 415
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 6,
+      "bonds_total": 15,
+      "terms": 421
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 7,
+      "bonds_total": 15,
+      "terms": 427
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 8,
+      "bonds_total": 15,
+      "terms": 421
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 9,
+      "bonds_total": 15,
+      "terms": 425
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 10,
+      "bonds_total": 15,
+      "terms": 421
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 11,
+      "bonds_total": 15,
+      "terms": 427
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 12,
+      "bonds_total": 15,
+      "terms": 421
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 13,
+      "bonds_total": 15,
+      "terms": 425
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 14,
+      "bonds_total": 15,
+      "terms": 413
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "bonds_kept": 15,
+      "bonds_total": 15,
+      "terms": 383
+    },
+    {
+      "Z": 3,
+      "N": 0,
+      "bonds_kept": 0,
+      "bonds_total": 3,
+      "terms": 205
+    },
+    {
+      "Z": 3,
+      "N": 0,
+      "bonds_kept": 1,
+      "bonds_total": 3,
+      "terms": 211
+    },
+    {
+      "Z": 3,
+      "N": 0,
+      "bonds_kept": 2,
+      "bonds_total": 3,
+      "terms": 217
+    },
+    {
+      "Z": 3,
+      "N": 0,
+      "bonds_kept": 3,
+      "bonds_total": 3,
+      "terms": 223
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "bonds_kept": 0,
+      "bonds_total": 6,
+      "terms": 271
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "bonds_kept": 1,
+      "bonds_total": 6,
+      "terms": 277
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "bonds_kept": 2,
+      "bonds_total": 6,
+      "terms": 283
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "bonds_kept": 3,
+      "bonds_total": 6,
+      "terms": 289
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "bonds_kept": 4,
+      "bonds_total": 6,
+      "terms": 295
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "bonds_kept": 5,
+      "bonds_total": 6,
+      "terms": 301
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "bonds_kept": 6,
+      "bonds_total": 6,
+      "terms": 307
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 0,
+      "bonds_total": 10,
+      "terms": 337
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 1,
+      "bonds_total": 10,
+      "terms": 343
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 2,
+      "bonds_total": 10,
+      "terms": 349
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 3,
+      "bonds_total": 10,
+      "terms": 355
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 4,
+      "bonds_total": 10,
+      "terms": 361
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 5,
+      "bonds_total": 10,
+      "terms": 355
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 6,
+      "bonds_total": 10,
+      "terms": 361
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 7,
+      "bonds_total": 10,
+      "terms": 367
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 8,
+      "bonds_total": 10,
+      "terms": 373
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 9,
+      "bonds_total": 10,
+      "terms": 379
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "bonds_kept": 10,
+      "bonds_total": 10,
+      "terms": 385
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 0,
+      "bonds_total": 15,
+      "terms": 403
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 1,
+      "bonds_total": 15,
+      "terms": 409
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 2,
+      "bonds_total": 15,
+      "terms": 415
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 3,
+      "bonds_total": 15,
+      "terms": 421
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 4,
+      "bonds_total": 15,
+      "terms": 427
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 5,
+      "bonds_total": 15,
+      "terms": 421
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 6,
+      "bonds_total": 15,
+      "terms": 427
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 7,
+      "bonds_total": 15,
+      "terms": 433
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 8,
+      "bonds_total": 15,
+      "terms": 439
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 9,
+      "bonds_total": 15,
+      "terms": 445
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 10,
+      "bonds_total": 15,
+      "terms": 451
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 11,
+      "bonds_total": 15,
+      "terms": 457
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 12,
+      "bonds_total": 15,
+      "terms": 451
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 13,
+      "bonds_total": 15,
+      "terms": 457
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 14,
+      "bonds_total": 15,
+      "terms": 451
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "bonds_kept": 15,
+      "bonds_total": 15,
+      "terms": 457
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 0,
+      "bonds_total": 21,
+      "terms": 469
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 1,
+      "bonds_total": 21,
+      "terms": 475
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 2,
+      "bonds_total": 21,
+      "terms": 481
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 3,
+      "bonds_total": 21,
+      "terms": 487
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 4,
+      "bonds_total": 21,
+      "terms": 493
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 5,
+      "bonds_total": 21,
+      "terms": 487
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 6,
+      "bonds_total": 21,
+      "terms": 493
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 7,
+      "bonds_total": 21,
+      "terms": 499
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 8,
+      "bonds_total": 21,
+      "terms": 505
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 9,
+      "bonds_total": 21,
+      "terms": 511
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 10,
+      "bonds_total": 21,
+      "terms": 517
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 11,
+      "bonds_total": 21,
+      "terms": 523
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 12,
+      "bonds_total": 21,
+      "terms": 517
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 13,
+      "bonds_total": 21,
+      "terms": 523
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 14,
+      "bonds_total": 21,
+      "terms": 517
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 15,
+      "bonds_total": 21,
+      "terms": 523
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 16,
+      "bonds_total": 21,
+      "terms": 529
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 17,
+      "bonds_total": 21,
+      "terms": 523
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 18,
+      "bonds_total": 21,
+      "terms": 529
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 19,
+      "bonds_total": 21,
+      "terms": 523
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 20,
+      "bonds_total": 21,
+      "terms": 529
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "bonds_kept": 21,
+      "bonds_total": 21,
+      "terms": 523
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "bonds_kept": 0,
+      "bonds_total": 6,
+      "terms": 277
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "bonds_kept": 1,
+      "bonds_total": 6,
+      "terms": 283
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "bonds_kept": 2,
+      "bonds_total": 6,
+      "terms": 289
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "bonds_kept": 3,
+      "bonds_total": 6,
+      "terms": 295
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "bonds_kept": 4,
+      "bonds_total": 6,
+      "terms": 301
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "bonds_kept": 5,
+      "bonds_total": 6,
+      "terms": 307
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "bonds_kept": 6,
+      "bonds_total": 6,
+      "terms": 313
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 0,
+      "bonds_total": 10,
+      "terms": 343
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 1,
+      "bonds_total": 10,
+      "terms": 349
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 2,
+      "bonds_total": 10,
+      "terms": 355
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 3,
+      "bonds_total": 10,
+      "terms": 361
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 4,
+      "bonds_total": 10,
+      "terms": 367
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 5,
+      "bonds_total": 10,
+      "terms": 373
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 6,
+      "bonds_total": 10,
+      "terms": 379
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 7,
+      "bonds_total": 10,
+      "terms": 385
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 8,
+      "bonds_total": 10,
+      "terms": 391
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 9,
+      "bonds_total": 10,
+      "terms": 397
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "bonds_kept": 10,
+      "bonds_total": 10,
+      "terms": 403
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 0,
+      "bonds_total": 15,
+      "terms": 409
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 1,
+      "bonds_total": 15,
+      "terms": 415
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 2,
+      "bonds_total": 15,
+      "terms": 421
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 3,
+      "bonds_total": 15,
+      "terms": 427
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 4,
+      "bonds_total": 15,
+      "terms": 433
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 5,
+      "bonds_total": 15,
+      "terms": 427
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 6,
+      "bonds_total": 15,
+      "terms": 433
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 7,
+      "bonds_total": 15,
+      "terms": 439
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 8,
+      "bonds_total": 15,
+      "terms": 445
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 9,
+      "bonds_total": 15,
+      "terms": 451
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 10,
+      "bonds_total": 15,
+      "terms": 457
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 11,
+      "bonds_total": 15,
+      "terms": 463
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 12,
+      "bonds_total": 15,
+      "terms": 469
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 13,
+      "bonds_total": 15,
+      "terms": 475
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 14,
+      "bonds_total": 15,
+      "terms": 481
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "bonds_kept": 15,
+      "bonds_total": 15,
+      "terms": 487
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 0,
+      "bonds_total": 21,
+      "terms": 475
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 1,
+      "bonds_total": 21,
+      "terms": 481
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 2,
+      "bonds_total": 21,
+      "terms": 487
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 3,
+      "bonds_total": 21,
+      "terms": 493
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 4,
+      "bonds_total": 21,
+      "terms": 499
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 5,
+      "bonds_total": 21,
+      "terms": 493
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 6,
+      "bonds_total": 21,
+      "terms": 499
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 7,
+      "bonds_total": 21,
+      "terms": 505
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 8,
+      "bonds_total": 21,
+      "terms": 511
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 9,
+      "bonds_total": 21,
+      "terms": 517
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 10,
+      "bonds_total": 21,
+      "terms": 523
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 11,
+      "bonds_total": 21,
+      "terms": 529
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 12,
+      "bonds_total": 21,
+      "terms": 523
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 13,
+      "bonds_total": 21,
+      "terms": 529
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 14,
+      "bonds_total": 21,
+      "terms": 523
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 15,
+      "bonds_total": 21,
+      "terms": 529
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 16,
+      "bonds_total": 21,
+      "terms": 535
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 17,
+      "bonds_total": 21,
+      "terms": 541
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 18,
+      "bonds_total": 21,
+      "terms": 547
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 19,
+      "bonds_total": 21,
+      "terms": 553
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 20,
+      "bonds_total": 21,
+      "terms": 559
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "bonds_kept": 21,
+      "bonds_total": 21,
+      "terms": 565
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 0,
+      "bonds_total": 28,
+      "terms": 541
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 1,
+      "bonds_total": 28,
+      "terms": 547
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 2,
+      "bonds_total": 28,
+      "terms": 553
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 3,
+      "bonds_total": 28,
+      "terms": 559
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 4,
+      "bonds_total": 28,
+      "terms": 565
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 5,
+      "bonds_total": 28,
+      "terms": 559
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 6,
+      "bonds_total": 28,
+      "terms": 565
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 7,
+      "bonds_total": 28,
+      "terms": 571
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 8,
+      "bonds_total": 28,
+      "terms": 577
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 9,
+      "bonds_total": 28,
+      "terms": 583
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 10,
+      "bonds_total": 28,
+      "terms": 589
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 11,
+      "bonds_total": 28,
+      "terms": 595
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 12,
+      "bonds_total": 28,
+      "terms": 589
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 13,
+      "bonds_total": 28,
+      "terms": 595
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 14,
+      "bonds_total": 28,
+      "terms": 589
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 15,
+      "bonds_total": 28,
+      "terms": 595
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 16,
+      "bonds_total": 28,
+      "terms": 601
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 17,
+      "bonds_total": 28,
+      "terms": 607
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 18,
+      "bonds_total": 28,
+      "terms": 613
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 19,
+      "bonds_total": 28,
+      "terms": 619
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 20,
+      "bonds_total": 28,
+      "terms": 625
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 21,
+      "bonds_total": 28,
+      "terms": 631
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 22,
+      "bonds_total": 28,
+      "terms": 637
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 23,
+      "bonds_total": 28,
+      "terms": 631
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 24,
+      "bonds_total": 28,
+      "terms": 637
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 25,
+      "bonds_total": 28,
+      "terms": 631
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 26,
+      "bonds_total": 28,
+      "terms": 637
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 27,
+      "bonds_total": 28,
+      "terms": 631
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "bonds_kept": 28,
+      "bonds_total": 28,
+      "terms": 617
+    }
+  ],
+  "shape_collision_list": [
+    {
+      "config": [
+        1,
+        3,
+        3
+      ],
+      "collides_with": [
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "config": [
+        1,
+        4,
+        3
+      ],
+      "collides_with": [
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "config": [
+        1,
+        4,
+        4
+      ],
+      "collides_with": [
+        1,
+        4,
+        2
+      ]
+    },
+    {
+      "config": [
+        1,
+        4,
+        6
+      ],
+      "collides_with": [
+        1,
+        4,
+        0
+      ]
+    },
+    {
+      "config": [
+        1,
+        4,
+        8
+      ],
+      "collides_with": [
+        1,
+        4,
+        0
+      ]
+    },
+    {
+      "config": [
+        2,
+        2,
+        5
+      ],
+      "collides_with": [
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "config": [
+        2,
+        3,
+        5
+      ],
+      "collides_with": [
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "config": [
+        2,
+        3,
+        6
+      ],
+      "collides_with": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "config": [
+        2,
+        3,
+        8
+      ],
+      "collides_with": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "config": [
+        2,
+        4,
+        5
+      ],
+      "collides_with": [
+        2,
+        4,
+        3
+      ]
+    },
+    {
+      "config": [
+        2,
+        4,
+        6
+      ],
+      "collides_with": [
+        2,
+        4,
+        4
+      ]
+    },
+    {
+      "config": [
+        2,
+        4,
+        8
+      ],
+      "collides_with": [
+        2,
+        4,
+        4
+      ]
+    },
+    {
+      "config": [
+        2,
+        4,
+        10
+      ],
+      "collides_with": [
+        2,
+        4,
+        4
+      ]
+    },
+    {
+      "config": [
+        2,
+        4,
+        11
+      ],
+      "collides_with": [
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "config": [
+        2,
+        4,
+        12
+      ],
+      "collides_with": [
+        2,
+        4,
+        4
+      ]
+    },
+    {
+      "config": [
+        3,
+        0,
+        0
+      ],
+      "collides_with": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "config": [
+        3,
+        0,
+        1
+      ],
+      "collides_with": [
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "config": [
+        3,
+        0,
+        2
+      ],
+      "collides_with": [
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "config": [
+        3,
+        0,
+        3
+      ],
+      "collides_with": [
+        0,
+        4,
+        5
+      ]
+    },
+    {
+      "config": [
+        3,
+        1,
+        0
+      ],
+      "collides_with": [
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "config": [
+        3,
+        1,
+        1
+      ],
+      "collides_with": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "config": [
+        3,
+        1,
+        2
+      ],
+      "collides_with": [
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "config": [
+        3,
+        1,
+        3
+      ],
+      "collides_with": [
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "config": [
+        3,
+        2,
+        0
+      ],
+      "collides_with": [
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "config": [
+        3,
+        2,
+        1
+      ],
+      "collides_with": [
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "config": [
+        3,
+        2,
+        2
+      ],
+      "collides_with": [
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "config": [
+        3,
+        2,
+        3
+      ],
+      "collides_with": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "config": [
+        3,
+        2,
+        4
+      ],
+      "collides_with": [
+        2,
+        3,
+        9
+      ]
+    },
+    {
+      "config": [
+        3,
+        2,
+        5
+      ],
+      "collides_with": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "config": [
+        3,
+        2,
+        6
+      ],
+      "collides_with": [
+        2,
+        3,
+        9
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        0
+      ],
+      "collides_with": [
+        2,
+        4,
+        1
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        1
+      ],
+      "collides_with": [
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        2
+      ],
+      "collides_with": [
+        2,
+        4,
+        3
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        3
+      ],
+      "collides_with": [
+        2,
+        4,
+        4
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        4
+      ],
+      "collides_with": [
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        5
+      ],
+      "collides_with": [
+        2,
+        4,
+        4
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        6
+      ],
+      "collides_with": [
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        12
+      ],
+      "collides_with": [
+        3,
+        3,
+        10
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        13
+      ],
+      "collides_with": [
+        3,
+        3,
+        11
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        14
+      ],
+      "collides_with": [
+        3,
+        3,
+        10
+      ]
+    },
+    {
+      "config": [
+        3,
+        3,
+        15
+      ],
+      "collides_with": [
+        3,
+        3,
+        11
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        5
+      ],
+      "collides_with": [
+        3,
+        4,
+        3
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        6
+      ],
+      "collides_with": [
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        12
+      ],
+      "collides_with": [
+        3,
+        4,
+        10
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        13
+      ],
+      "collides_with": [
+        3,
+        4,
+        11
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        14
+      ],
+      "collides_with": [
+        3,
+        4,
+        10
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        15
+      ],
+      "collides_with": [
+        3,
+        4,
+        11
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        17
+      ],
+      "collides_with": [
+        3,
+        4,
+        11
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        18
+      ],
+      "collides_with": [
+        3,
+        4,
+        16
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        19
+      ],
+      "collides_with": [
+        3,
+        4,
+        11
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        20
+      ],
+      "collides_with": [
+        3,
+        4,
+        16
+      ]
+    },
+    {
+      "config": [
+        3,
+        4,
+        21
+      ],
+      "collides_with": [
+        3,
+        4,
+        11
+      ]
+    },
+    {
+      "config": [
+        4,
+        0,
+        0
+      ],
+      "collides_with": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "config": [
+        4,
+        0,
+        1
+      ],
+      "collides_with": [
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "config": [
+        4,
+        0,
+        2
+      ],
+      "collides_with": [
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "config": [
+        4,
+        0,
+        3
+      ],
+      "collides_with": [
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "config": [
+        4,
+        0,
+        4
+      ],
+      "collides_with": [
+        3,
+        1,
+        5
+      ]
+    },
+    {
+      "config": [
+        4,
+        0,
+        5
+      ],
+      "collides_with": [
+        3,
+        1,
+        6
+      ]
+    },
+    {
+      "config": [
+        4,
+        1,
+        0
+      ],
+      "collides_with": [
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "config": [
+        4,
+        1,
+        1
+      ],
+      "collides_with": [
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "config": [
+        4,
+        1,
+        2
+      ],
+      "collides_with": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "config": [
+        4,
+        1,
+        3
+      ],
+      "collides_with": [
+        2,
+        3,
+        9
+      ]
+    },
+    {
+      "config": [
+        4,
+        1,
+        4
+      ],
+      "collides_with": [
+        3,
+        2,
+        7
+      ]
+    },
+    {
+      "config": [
+        4,
+        1,
+        5
+      ],
+      "collides_with": [
+        3,
+        2,
+        8
+      ]
+    },
+    {
+      "config": [
+        4,
+        1,
+        6
+      ],
+      "collides_with": [
+        3,
+        2,
+        9
+      ]
+    },
+    {
+      "config": [
+        4,
+        1,
+        7
+      ],
+      "collides_with": [
+        3,
+        2,
+        10
+      ]
+    },
+    {
+      "config": [
+        4,
+        1,
+        9
+      ],
+      "collides_with": [
+        2,
+        4,
+        0
+      ]
+    },
+    {
+      "config": [
+        4,
+        1,
+        10
+      ],
+      "collides_with": [
+        2,
+        4,
+        1
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        0
+      ],
+      "collides_with": [
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        1
+      ],
+      "collides_with": [
+        2,
+        4,
+        3
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        2
+      ],
+      "collides_with": [
+        2,
+        4,
+        4
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        3
+      ],
+      "collides_with": [
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        4
+      ],
+      "collides_with": [
+        3,
+        3,
+        7
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        5
+      ],
+      "collides_with": [
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        6
+      ],
+      "collides_with": [
+        3,
+        3,
+        7
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        7
+      ],
+      "collides_with": [
+        3,
+        3,
+        8
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        8
+      ],
+      "collides_with": [
+        3,
+        3,
+        9
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        9
+      ],
+      "collides_with": [
+        3,
+        3,
+        10
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        10
+      ],
+      "collides_with": [
+        3,
+        3,
+        11
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        12
+      ],
+      "collides_with": [
+        3,
+        4,
+        0
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        13
+      ],
+      "collides_with": [
+        3,
+        4,
+        1
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        14
+      ],
+      "collides_with": [
+        3,
+        4,
+        2
+      ]
+    },
+    {
+      "config": [
+        4,
+        2,
+        15
+      ],
+      "collides_with": [
+        3,
+        4,
+        3
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        0
+      ],
+      "collides_with": [
+        3,
+        4,
+        1
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        1
+      ],
+      "collides_with": [
+        3,
+        4,
+        2
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        2
+      ],
+      "collides_with": [
+        3,
+        4,
+        3
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        3
+      ],
+      "collides_with": [
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        4
+      ],
+      "collides_with": [
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        5
+      ],
+      "collides_with": [
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        6
+      ],
+      "collides_with": [
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        7
+      ],
+      "collides_with": [
+        3,
+        4,
+        8
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        8
+      ],
+      "collides_with": [
+        3,
+        4,
+        9
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        9
+      ],
+      "collides_with": [
+        3,
+        4,
+        10
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        10
+      ],
+      "collides_with": [
+        3,
+        4,
+        11
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        11
+      ],
+      "collides_with": [
+        3,
+        4,
+        16
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        12
+      ],
+      "collides_with": [
+        3,
+        4,
+        11
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        13
+      ],
+      "collides_with": [
+        3,
+        4,
+        16
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        14
+      ],
+      "collides_with": [
+        3,
+        4,
+        11
+      ]
+    },
+    {
+      "config": [
+        4,
+        3,
+        15
+      ],
+      "collides_with": [
+        3,
+        4,
+        16
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        0
+      ],
+      "collides_with": [
+        4,
+        3,
+        17
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        1
+      ],
+      "collides_with": [
+        4,
+        3,
+        18
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        2
+      ],
+      "collides_with": [
+        4,
+        3,
+        19
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        3
+      ],
+      "collides_with": [
+        4,
+        3,
+        20
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        4
+      ],
+      "collides_with": [
+        4,
+        3,
+        21
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        5
+      ],
+      "collides_with": [
+        4,
+        3,
+        20
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        6
+      ],
+      "collides_with": [
+        4,
+        3,
+        21
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        12
+      ],
+      "collides_with": [
+        4,
+        4,
+        10
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        13
+      ],
+      "collides_with": [
+        4,
+        4,
+        11
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        14
+      ],
+      "collides_with": [
+        4,
+        4,
+        10
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        15
+      ],
+      "collides_with": [
+        4,
+        4,
+        11
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        23
+      ],
+      "collides_with": [
+        4,
+        4,
+        21
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        24
+      ],
+      "collides_with": [
+        4,
+        4,
+        22
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        25
+      ],
+      "collides_with": [
+        4,
+        4,
+        21
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        26
+      ],
+      "collides_with": [
+        4,
+        4,
+        22
+      ]
+    },
+    {
+      "config": [
+        4,
+        4,
+        27
+      ],
+      "collides_with": [
+        4,
+        4,
+        21
+      ]
+    }
+  ],
+  "normal_form_collision_list": [],
+  "arithmetic": "exact over Q (fractions.Fraction); comparison is exact dict equality; no float, no evaluation at any numerical q",
+  "auditOnly": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "exact Laurent-polynomial normal forms over Q (fractions.Fraction) compared by dict equality; nothing is evaluated at any numerical q"
+}

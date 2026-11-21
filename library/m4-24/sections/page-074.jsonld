@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/m4-24/sections/page-074",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 74",
+  "pageStart": 74,
+  "pageEnd": 74,
+  "contains": [
+    "library/m4-24/blocks/prose-page-074",
+    "library/m4-24/blocks/conj-page-074-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/m4-24/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/m4-24/manifest.jsonld",
+  "provenance": "ingested"
+}

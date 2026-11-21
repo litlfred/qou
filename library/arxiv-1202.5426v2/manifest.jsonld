@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.5426v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.5426v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1202.5426v2",
+  "title": "Hard analysis meets critical knots",
   "contains": [
     "library/arxiv-1202.5426v2/sections/sec-front-matter",
     "library/arxiv-1202.5426v2/sections/sec-000",
@@ -18,7 +18,7 @@
     "library/arxiv-1202.5426v2/sections/sec-003"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -28,7 +28,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1202.5426v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1202.5426v2.pdf",
     "source_sha256": "6c7668ad72e33b4b7c03629d765b9014d4c1e6474d867ece48d1d2eeb7a997d6",
     "pages": 49,
@@ -39,8 +41,8 @@
       "stamp_date": "23 Jul 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

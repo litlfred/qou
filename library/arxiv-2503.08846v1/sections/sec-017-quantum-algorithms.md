@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Quantum Algorithms
 As another set of applications of the topological visualization of quantum mechanics let us consider
 a pair of basic quantum algorithms. Quantum algorithms exploiting quantum correlations should be
 the most natural target for such a study. The example of the EPR pair puzzles us with the apparent
@@ -123,4 +124,3 @@ basis by a local action on Bell state |Φ+⟩. In order to construct state |ψ�
 by an inverse of the corresponding unitary matrix.
 According to [33] the diagrammatic interpretation of this sort was introduced independently in [107],
 using the TQFT methods, and in [25,108], in the discussion of a more general categorical approach.
-5.2

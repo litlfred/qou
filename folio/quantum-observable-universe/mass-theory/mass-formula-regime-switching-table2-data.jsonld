@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/tbl-mass-formula-regime-switching-table2-data",
@@ -12,9 +13,9 @@
   ],
   "label": "tbl:mass-formula-regime-switching-table2-data",
   "kind": "table",
-  "title": "Table 2 from prop:mass-formula-regime-switching",
+  "title": "Table 2 from conj:mass-formula-regime-switching",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-mass-formula-regime-switching"
+    "papers/quantum-observable-universe/blocks/conj-mass-formula-regime-switching"
   ],
   "tags": [
     "extracted-table"

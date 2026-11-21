@@ -64,7 +64,7 @@ archimedean content.
 -- for a circle bundle over a closed orientable surface it yields
 -- `b₁(total) = 2g` when the Euler number is nonzero and `2g + 1` when it
 -- vanishes).
--- Ref: [manuscript] `rem:brings-qou-4tuple` item 1 (the CR manifold `M_S` as
+-- Ref: [leitner2026] `rem:brings-qou-4tuple` item 1 (the CR manifold `M_S` as
 -- the unit circle bundle in `T*S`), `def:reeb-bundle` (the Hopf/coset circle
 -- bundle over the exceptional divisor), and the Descartes condition
 -- `χ(𝒮) = −6` (`prop:archimedean-condition`).

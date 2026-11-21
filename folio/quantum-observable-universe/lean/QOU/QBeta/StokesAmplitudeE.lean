@@ -83,7 +83,7 @@ live only in the Python witness / audit.
 
 - [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (Thm 3.3.5 dimension formula;
   §5.5.2 / Thm 5.5.7 q-Stokes matrices unipotent, identity on `gr M₀`).
-- [manuscript] `QOU.MathlibExt.RSZIsoformalInterface` (`rszIsoformalDim`, `rszIsoformalDim_one`);
+- [leitner2026] `QOU.MathlibExt.RSZIsoformalInterface` (`rszIsoformalDim`, `rszIsoformalDim_one`);
   `QOU.QBeta.A3AntiSelfAdjointLift` (`amplitude_nonzero`, `evenFaceCorrection`, `crossTerm`);
   the retraction `docs/audits/2026-08-08-c1-infinity-has-no-stokes-multiplier.md` (PR #4790);
   the global-Birkhoff successor `docs/audits/2026-08-01-branch-selection-birkhoff-connection-matrix.md`;
@@ -122,7 +122,8 @@ theorem stokesAmplitude_eq_zero_of_dim_zero {R : Type*} [CommRing R] {d : ℕ}
     (coeff v : Fin d → R) (hd : d = 0) :
     stokesAmplitude d coeff v = 0 := by
   subst hd
-  simp [stokesAmplitude]
+  dsimp [stokesAmplitude]
+  simp
 
 /-- **C1's `∞` supplies zero local moduli (sorry-free).**  The pure-isoclinic single edge
     `(r, d) = (2, 1)` at C1's `∞` (after the forced ramified pullback, `k = 1`) has
@@ -220,5 +221,16 @@ class GlobalBirkhoffSuppliesAmplitude {R : Type*} [Field R] [LinearOrder R]
   /-- and it drives the even-face correction to the physical lift `κ > 1` (unreachable by the
       self-adjoint branching Schur complement, `A3OffBlockDerivation.magnitudeFactor_le_one`). -/
   gives_lift : evenFaceCorrection A (crossTerm B (Csa + E) D) = κ ∧ 1 < κ
+
+/-- Linearity of `stokesAmplitude d coeff` in the coordinate vector `v`:
+`stokesAmplitude d coeff (v + w) = stokesAmplitude d coeff v + stokesAmplitude d coeff w`. -/
+theorem stokesAmplitude_add_right {R : Type*} [CommRing R] (d : ℕ)
+    (coeff v w : Fin d → R) :
+    stokesAmplitude d coeff (fun i => v i + w i) =
+      stokesAmplitude d coeff v + stokesAmplitude d coeff w := by
+  dsimp [stokesAmplitude]
+  rw [← Finset.sum_add_distrib]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  ring
 
 end QOU.QBeta.StokesAmplitudeE

@@ -1,1 +1,0 @@
-Suppose that K = Q(α)/(α3−α2 + 1). Let

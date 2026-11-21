@@ -8,6 +8,7 @@ pages: 34-35
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
 toc_source: inferred
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 9.1.
 One of the original motivating questions for this work was the question: does
@@ -25,8 +26,6 @@ Proof. Clearly (1) is equivalent to (3). A hyperbolic knot complement (even in a
 homology sphere) has a homologically determined longitude, which must be preserved
 up to sign by any isometry. Since the orientable isometry group must act effectively on the
 cusp torus, it can only be cyclic or Z/2 extended by a cyclic group, so the quotient has a
-Arithmetic of Hyperbolic Manifolds
-307
 non-rigid cusp. Thus (2) implies (1). If a knot complement covers an orbifold with a non-
 rigid cusp then the covering must be normal by Lemma 4 of [R2], so (1) implies (2).
 We now describe a pair of knot complements, constructed by Aitchison and Rubinstein

@@ -1,0 +1,481 @@
+{
+  "computation": "five-two-disc-neg23-cyclotomic-asymmetry",
+  "scriptFile": "five_two_disc_neg23_cyclotomic_asymmetry_probe.py",
+  "computedAt": "2026-11-15T22:37:32.830986+00:00",
+  "bean": "qou-dq2q",
+  "absorbed_beans": [
+    "qou-ynff",
+    "qou-5gh6",
+    "qou-7lim",
+    "qou-ized"
+  ],
+  "epic": "qou-avtq",
+  "engine": "sympy exact polynomial algebra + 60-dps mpmath",
+  "free_parameters": 0,
+  "inputs": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "proton (experimental pin, resolved)",
+    "trace_field_polynomial_x": "x^3 - 2*x^2 + 3*x - 1",
+    "canonical_polynomial_z": "z^3 - z^2 + 1",
+    "isomorphism_x_of_z": "1 - z^2",
+    "isomorphism_z_of_x": "-x^2 + x - 1 = x / (x - 1)",
+    "alexander_polynomial_5_2": "2*t^2 - 3*t + 2",
+    "arithmetic": "Exact Q[x]/(x^3-2x^2+3x-1) + mpmath at 60 dps (no float64)"
+  },
+  "results": {
+    "field_comparison_disc_neg23_vs_retired_qsqrt7": {
+      "disc_K_5_2_x": -23,
+      "disc_K_5_2_z": -23,
+      "quadratic_resolvent": "Q(sqrt(-23))",
+      "class_number_Q_sqrt_neg23": 3,
+      "minimal_poly_ring_of_integers_neg23": "w^2 - w + 6 = 0 (norm 6 = 2*3)",
+      "retired_alexander_disc": -7,
+      "retired_field": "Q(sqrt(-7))",
+      "class_number_Q_sqrt_neg7": 1,
+      "disc_product_neg23_times_neg7": 161,
+      "q_sqrt_neg7_in_K_5_2": false,
+      "q_sqrt_neg7_equals_resolvent": false
+    },
+    "closed_form_resolvent_odd_projection": {
+      "xi0_real_root": "0.430159709001946734088600041880431351160202560871059779455269",
+      "xi1_geom_root_re": "0.784920145499026632955699979059784324419898719564470110272366",
+      "xi1_geom_root_im": "1.30714127868204548049235257351376542873800608780260851404024",
+      "inv_P_prime_xi0_formula": "(10*xi_0^2 - 17*xi_0 + 18) / 23",
+      "xi1_minus_xi2_formula": "((10*xi_0^2 - 17*xi_0 + 18) / 23) * sqrt(-23)",
+      "general_sigma1_minus_sigma2_formula": "(((18*b + 26*c) - (17*b + 22*c)*xi_0 + (10*b + 17*c)*xi_0^2) / 23) * sqrt(-23)",
+      "one_loop_P1_closed_form": "(11 * (-10 + 7*xi_0 - 8*xi_0^2) / (4 * 23^2)) * sqrt(-23)",
+      "gswz_orders_1_to_3": [
+        {
+          "order_k": 1,
+          "a_k": "-227/1058",
+          "b_k": "209/2116",
+          "c_k": "-121/1058",
+          "resolvent_coeff_d0": "-55/1058",
+          "resolvent_coeff_d1_xi0": "77/2116",
+          "resolvent_coeff_d2_xi0_sq": "-22/529",
+          "im_sigma1_minus_sigma2": "-0.211145755877585639047065102692076759943736925751358816559712",
+          "closed_vs_direct_residual": "1.94469227433160678348252001680628882518445380272536472909410e-62"
+        },
+        {
+          "order_k": 2,
+          "a_k": "3175/48668",
+          "b_k": "-5667/97336",
+          "c_k": "12643/389344",
+          "resolvent_coeff_d0": "-39653/4477456",
+          "resolvent_coeff_d1_xi0": "53605/4477456",
+          "resolvent_coeff_d2_xi0_sq": "-11749/8954912",
+          "im_sigma1_minus_sigma2": "-0.0189385427971874720488225364748405817173560098408819309485670",
+          "closed_vs_direct_residual": "1.21543267145725423967657501050393051574028362670335295568381e-62"
+        },
+        {
+          "order_k": 3,
+          "a_k": "-54886503/4119259520",
+          "b_k": "28547587/4119259520",
+          "c_k": "-3544387/1235777856",
+          "resolvent_coeff_d0": "13478893/6178889280",
+          "resolvent_coeff_d1_xi0": "-29398339/12357778560",
+          "resolvent_coeff_d2_xi0_sq": "551917/617888928",
+          "im_sigma1_minus_sigma2": "0.00634681366974099114739609925686977729164534179817883417246833",
+          "closed_vs_direct_residual": "6.07716335728627119838287505251965257870141813351676477841906e-64"
+        }
+      ]
+    },
+    "closed_form_masbaum_cyclotomic_asymmetry": {
+      "C_5_2_1_laurent_a": {
+        "8": -1,
+        "4": -1
+      },
+      "E_1_factorization": "-(q + q^{-1})*(q^3 + q^{-3}) / 2",
+      "O_1_factorization": "-(q + q^{-1})*(q^3 - q^{-3}) / 2",
+      "rho_1_exact_rational_identity": "(q^3 - q^{-3}) / (q^3 + q^{-3}) = tanh(3*ln(q))",
+      "rho_1_at_q0": "0.303183968018654917933423377169431711024694780421580876805568",
+      "rho_1_sq_at_q0": "0.0919205184635367680838873245914805900321827070932617070636825",
+      "leading_habiro_diff_datum_at_q0": "-0.0139433051778290749899286806138283166083247052602431186920778",
+      "profile_n_1_to_6": [
+        {
+          "n": 1,
+          "E_n_at_q0_inv": "-2.11022063766344912248021662649695072561622415111161630889880",
+          "O_n_at_q0_inv": "0.639785066321660746336698069814959098854237781318702228803360",
+          "rho_n_O_over_E": "-0.303183968018654917933423377169431711024694780421580876805568",
+          "habiro_term_odd_at_q0": "-0.00697165258891453749496434030691415830416235263012155934603892",
+          "habiro_odd_partial_sum": "-0.00697165258891453749496434030691415830416235263012155934603892"
+        },
+        {
+          "n": 2,
+          "E_n_at_q0_inv": "5.52131102073573673766916790632342504525015775082954164745512",
+          "O_n_at_q0_inv": "-3.69473482064094095590379768568012520040089882962084591448244",
+          "rho_n_O_over_E": "-0.669177086160345082246286083403560504137861448564929184800806",
+          "habiro_term_odd_at_q0": "-0.00175965709785652676806541199004025382742349242152311829457083",
+          "habiro_odd_partial_sum": "-0.00873130968677106426302975229695441213158584505164467764060975"
+        },
+        {
+          "n": 3,
+          "E_n_at_q0_inv": "-19.9752539456752294484473152273868983732506269313049174048937",
+          "O_n_at_q0_inv": "18.0445337449718783858853190548274947430480613478635767424973",
+          "rho_n_O_over_E": "-0.903344397725598659289089248770943523102320509815145780640975",
+          "habiro_term_odd_at_q0": "-0.000848953366455414498846292077410291353022059904295418205135146",
+          "habiro_odd_partial_sum": "-0.00958026305322647876187604437436470348460790495594009584574490"
+        },
+        {
+          "n": 4,
+          "E_n_at_q0_inv": "98.4466519100465250397119321031316393245279905391198593940758",
+          "O_n_at_q0_inv": "-96.6989047681184126113408383943310963330415588526170835455448",
+          "rho_n_O_over_E": "-0.982246758949963294306549614706154732596283671040868833905575",
+          "habiro_term_odd_at_q0": "-0.000804048884303440203783848187992510404947548864226121907010968",
+          "habiro_odd_partial_sum": "-0.0103843119375299189656598925623572138895554538201662177527559"
+        },
+        {
+          "n": 5,
+          "E_n_at_q0_inv": "-630.727999639920700309968610771118892462763069551457036415325",
+          "O_n_at_q0_inv": "629.365358223115281440688249947822869203828643700661923885682",
+          "rho_n_O_over_E": "-0.997839573607667102631144563889123929755245430477214212742417",
+          "habiro_term_odd_at_q0": "-0.00145693268400314874182289147509036705306257002596114548374032",
+          "habiro_odd_partial_sum": "-0.0118412446215330677074827840374475809426180238461273632364962"
+        },
+        {
+          "n": 6,
+          "E_n_at_q0_inv": "5176.61405167134262068357927920554569192695953206640032900899",
+          "O_n_at_q0_inv": "-5175.69443531321018850536617018875424986875099044627643533711",
+          "rho_n_O_over_E": "-0.999822351763343160360042825684781436814052099715060518206407",
+          "habiro_term_odd_at_q0": "-0.00485125243514618244933431615371038272103541152996453385112470",
+          "habiro_odd_partial_sum": "-0.0166924970566792501568171001911579636636534353760918970876209"
+        }
+      ]
+    },
+    "zero_parameter_target_comparison": {
+      "any_parameter_free_match_within_1pct": false,
+      "comparisons": [
+        {
+          "candidate": "masbaum_rho1_tanh_3lnq0",
+          "candidate_val": "0.303183968018654917933423377169431711024694780421580876805568",
+          "target": "S_muon",
+          "target_val": "0.00968298000000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "30.3110187172394157514962725493011150518430049862316019247760",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_rho1_tanh_3lnq0",
+          "candidate_val": "0.303183968018654917933423377169431711024694780421580876805568",
+          "target": "S_proton",
+          "target_val": "-0.0394593600000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "6.68344869300097411446671657040133724988684004052728875495111",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_rho1_tanh_3lnq0",
+          "candidate_val": "0.303183968018654917933423377169431711024694780421580876805568",
+          "target": "Im_Vb",
+          "target_val": "0.0585499951473000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "4.17820654392720433217707668531394947647647147598555095338430",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_rho1_tanh_3lnq0",
+          "candidate_val": "0.303183968018654917933423377169431711024694780421580876805568",
+          "target": "X_req_A3",
+          "target_val": "0.764973976802600249855439542506195794962292100341331384212894",
+          "abs_rel_gap": "0.603667605418568593218964775594630430181414015749698823710042",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_rho1_tanh_3lnq0",
+          "candidate_val": "0.303183968018654917933423377169431711024694780421580876805568",
+          "target": "X_req_sq_A3",
+          "target_val": "0.585185185185185185185185185185185185185185185185185185185185",
+          "abs_rel_gap": "0.481900814145336532645415747875021759641344362570716223180359",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_rho1_sq",
+          "candidate_val": "0.0919205184635367680838873245914805900321827070932617070636825",
+          "target": "S_muon",
+          "target_val": "0.00968298000000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "8.49299889739902055812232645234014632191564033936471076710707",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_rho1_sq",
+          "candidate_val": "0.0919205184635367680838873245914805900321827070932617070636825",
+          "target": "S_proton",
+          "target_val": "-0.0394593600000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "1.32949846281178326470290761409917925765097830003481321196498",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_rho1_sq",
+          "candidate_val": "0.0919205184635367680838873245914805900321827070932617070636825",
+          "target": "Im_Vb",
+          "target_val": "0.0585499951473000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "0.569949207208015130695514078865956627583440371774941061928932",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_rho1_sq",
+          "candidate_val": "0.0919205184635367680838873245914805900321827070932617070636825",
+          "target": "X_req_A3",
+          "target_val": "0.764973976802600249855439542506195794962292100341331384212894",
+          "abs_rel_gap": "0.879838371956466378677029858650468683070728525207908277278780",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_rho1_sq",
+          "candidate_val": "0.0919205184635367680838873245914805900321827070932617070636825",
+          "target": "X_req_sq_A3",
+          "target_val": "0.585185185185185185185185185185185185185185185185185185185185",
+          "abs_rel_gap": "0.842920633005348560869306470634811649945004234714046449954467",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_leading_habiro_odd_term_O1_poch1",
+          "candidate_val": "-0.00697165258891453749496434030691415830416235263012155934603892",
+          "target": "S_muon",
+          "target_val": "0.00968298000000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "0.280009605626105032235495652483619887249343422157067416638378",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_leading_habiro_odd_term_O1_poch1",
+          "candidate_val": "-0.00697165258891453749496434030691415830416235263012155934603892",
+          "target": "S_proton",
+          "target_val": "-0.0394593600000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "0.823320687691981382998499207617301489325666898040881571671742",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_leading_habiro_odd_term_O1_poch1",
+          "candidate_val": "-0.00697165258891453749496434030691415830416235263012155934603892",
+          "target": "Im_Vb",
+          "target_val": "0.0585499951473000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "0.880928212352959839286829578143189334778693975242471294843749",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_leading_habiro_odd_term_O1_poch1",
+          "candidate_val": "-0.00697165258891453749496434030691415830416235263012155934603892",
+          "target": "X_req_A3",
+          "target_val": "0.764973976802600249855439542506195794962292100341331384212894",
+          "abs_rel_gap": "0.990886418622951985487323658850442287693879897975997424369976",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_leading_habiro_odd_term_O1_poch1",
+          "candidate_val": "-0.00697165258891453749496434030691415830416235263012155934603892",
+          "target": "X_req_sq_A3",
+          "target_val": "0.585185185185185185185185185185185185185185185185185185185185",
+          "abs_rel_gap": "0.988086416461981486559238152640083400366304840442197335294744",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_leading_habiro_diff_2_O1_poch1",
+          "candidate_val": "-0.0139433051778290749899286806138283166083247052602431186920778",
+          "target": "S_muon",
+          "target_val": "0.00968298000000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "0.439980788747789935529008695032760225501313155685865166723244",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_leading_habiro_diff_2_O1_poch1",
+          "candidate_val": "-0.0139433051778290749899286806138283166083247052602431186920778",
+          "target": "S_proton",
+          "target_val": "-0.0394593600000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "0.646641375383962765996998415234602978651333796081763143343485",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_leading_habiro_diff_2_O1_poch1",
+          "candidate_val": "-0.0139433051778290749899286806138283166083247052602431186920778",
+          "target": "Im_Vb",
+          "target_val": "0.0585499951473000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "0.761856424705919678573659156286378669557387950484942589687499",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_leading_habiro_diff_2_O1_poch1",
+          "candidate_val": "-0.0139433051778290749899286806138283166083247052602431186920778",
+          "target": "X_req_A3",
+          "target_val": "0.764973976802600249855439542506195794962292100341331384212894",
+          "abs_rel_gap": "0.981772837245903970974647317700884575387759795951994848739952",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "masbaum_leading_habiro_diff_2_O1_poch1",
+          "candidate_val": "-0.0139433051778290749899286806138283166083247052602431186920778",
+          "target": "X_req_sq_A3",
+          "target_val": "0.585185185185185185185185185185185185185185185185185185185185",
+          "abs_rel_gap": "0.976172832923962973118476305280166800732609680884394670589487",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_im_sigma1_minus_sigma2",
+          "candidate_val": "-0.211145755877585639047065102692076759943736925751358816559712",
+          "target": "S_muon",
+          "target_val": "0.00968298000000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "20.8058651239169800048192914466493538088209338190679745863063",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_im_sigma1_minus_sigma2",
+          "candidate_val": "-0.211145755877585639047065102692076759943736925751358816559712",
+          "target": "S_proton",
+          "target_val": "-0.0394593600000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "4.35096757467900237223982098777265419266143510060373043454613",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_im_sigma1_minus_sigma2",
+          "candidate_val": "-0.211145755877585639047065102692076759943736925751358816559712",
+          "target": "Im_Vb",
+          "target_val": "0.0585499951473000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "2.60624719688507961351478980692224177617932695161022569835447",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_im_sigma1_minus_sigma2",
+          "candidate_val": "-0.211145755877585639047065102692076759943736925751358816559712",
+          "target": "X_req_A3",
+          "target_val": "0.764973976802600249855439542506195794962292100341331384212894",
+          "abs_rel_gap": "0.723983086640251412395493467591025750641423599314559274065052",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_im_sigma1_minus_sigma2",
+          "candidate_val": "-0.211145755877585639047065102692076759943736925751358816559712",
+          "target": "X_req_sq_A3",
+          "target_val": "0.585185185185185185185185185185185185185185185185185185185185",
+          "abs_rel_gap": "0.639181303247163781375268495399615663387285000298310883094163",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_times_ln_q0",
+          "candidate_val": "-0.0220311002606767063854104520996821796069213385494957477400375",
+          "target": "S_muon",
+          "target_val": "0.00968298000000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "1.27523967421978630394883105197802531936669687942097863881135",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_times_ln_q0",
+          "candidate_val": "-0.0220311002606767063854104520996821796069213385494957477400375",
+          "target": "S_proton",
+          "target_val": "-0.0394593600000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "0.441676188851600573719126410066403012949998718947906206790037",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_times_ln_q0",
+          "candidate_val": "-0.0220311002606767063854104520996821796069213385494957477400375",
+          "target": "Im_Vb",
+          "target_val": "0.0585499951473000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "0.623721569826762690229220406074392569603475387963949913452131",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_times_ln_q0",
+          "candidate_val": "-0.0220311002606767063854104520996821796069213385494957477400375",
+          "target": "X_req_A3",
+          "target_val": "0.764973976802600249855439542506195794962292100341331384212894",
+          "abs_rel_gap": "0.971200196439673423802714087700535111928347569354499310660257",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_times_ln_q0",
+          "candidate_val": "-0.0220311002606767063854104520996821796069213385494957477400375",
+          "target": "X_req_sq_A3",
+          "target_val": "0.585185185185185185185185185185185185185185185185185185185185",
+          "abs_rel_gap": "0.962351917276058792885690999576492477886906573364785747532847",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_times_2pi_ln_q0",
+          "candidate_val": "-0.138425485458884239116566728395931749934772200105110877189165",
+          "target": "S_muon",
+          "target_val": "0.00968298000000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "13.2957524913698302709048999787185091712233424116450593917539",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_times_2pi_ln_q0",
+          "candidate_val": "-0.138425485458884239116566728395931749934772200105110877189165",
+          "target": "S_proton",
+          "target_val": "-0.0394593600000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "2.50805196685613347800285479531172705119323273629148767717381",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_times_2pi_ln_q0",
+          "candidate_val": "-0.138425485458884239116566728395931749934772200105110877189165",
+          "target": "Im_Vb",
+          "target_val": "0.0585499951473000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "1.36422710387308464699375909244315111586083040210012928198911",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_times_2pi_ln_q0",
+          "candidate_val": "-0.138425485458884239116566728395931749934772200105110877189165",
+          "target": "X_req_A3",
+          "target_val": "0.764973976802600249855439542506195794962292100341331384212894",
+          "abs_rel_gap": "0.819045497420097713058057842219626453639202296855703976368863",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "gswz_disc23_1loop_times_2pi_ln_q0",
+          "candidate_val": "-0.138425485458884239116566728395931749934772200105110877189165",
+          "target": "X_req_sq_A3",
+          "target_val": "0.585185185185185185185185185185185185185185185185185185185185",
+          "abs_rel_gap": "0.763450119785450983788145464133534351377288012478607994676743",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "resolvent_saddle_im_xi1_minus_xi2",
+          "candidate_val": "2.61428255736409096098470514702753085747601217560521702808048",
+          "target": "S_muon",
+          "target_val": "0.00968298000000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "268.987396169783574992895280897774327477286142861517531594662",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "resolvent_saddle_im_xi1_minus_xi2",
+          "candidate_val": "2.61428255736409096098470514702753085747601217560521702808048",
+          "target": "S_proton",
+          "target_val": "-0.0394593600000000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "65.2525331724612604204605737910480772489977580884539695545107",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "resolvent_saddle_im_xi1_minus_xi2",
+          "candidate_val": "2.61428255736409096098470514702753085747601217560521702808048",
+          "target": "Im_Vb",
+          "target_val": "0.0585499951473000000000000000000000000000000000000000000000000",
+          "abs_rel_gap": "43.6504316659135901992072469123917668529383293400349755161093",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "resolvent_saddle_im_xi1_minus_xi2",
+          "candidate_val": "2.61428255736409096098470514702753085747601217560521702808048",
+          "target": "X_req_A3",
+          "target_val": "0.764973976802600249855439542506195794962292100341331384212894",
+          "abs_rel_gap": "2.41747907332892250292077380717147841252149202948610227439519",
+          "matches_within_1pct": false
+        },
+        {
+          "candidate": "resolvent_saddle_im_xi1_minus_xi2",
+          "candidate_val": "2.61428255736409096098470514702753085747601217560521702808048",
+          "target": "X_req_sq_A3",
+          "target_val": "0.585185185185185185185185185185185185185185185185185185185185",
+          "abs_rel_gap": "3.46744487650825670548019233985717298429445118616081390874512",
+          "matches_within_1pct": false
+        }
+      ]
+    }
+  },
+  "verdict": "CLOSED-FORM DISC -23 & MASBAUM CYCLOTOMIC-ASYMMETRY ODD DATA DERIVED (scope-(a)/(b), zero free parameters, no parameter-free target match): (1) The 5_2 trace field K_{5_2} = Q(xi)/(xi^3 - 2*xi^2 + 3*xi - 1) ~ Q(z)/(z^3 - z^2 + 1) (via xi = 1 - z^2, z = -xi^2 + xi - 2) has disc -23 and quadratic resolvent Q(sqrt(-23)) (h(-23) = 3), disjoint from the retired Alexander-layer field Q(sqrt(-7)) (disc -7, h(-7) = 1). (2) Using the exact Bezout inverse 1/P'(xi_0) = (10*xi_0^2 - 17*xi_0 + 18)/23, every K_{5_2}-element alpha = a + b*xi + c*xi^2 has the closed-form bar-odd resolvent projection sigma_1(alpha) - sigma_2(alpha) = (((18*b + 26*c) - (17*b + 22*c)*xi_0 + (10*b + 17*c)*xi_0^2)/23)*sqrt(-23). At 1-loop (k=1), a factor of 23 cancels in the numerator, giving Delta_odd(P_1) = 11*(-10 + 7*xi_0 - 8*xi_0^2)/(4*23^2)*sqrt(-23) ~ -0.21114576*i. (3) On the Masbaum cyclotomic-coefficient side, C_{5_2,1}(q) = -(q^2 + q^4) has exact normalized bar-odd asymmetry ratio rho_1(q) = O_1(q^{-1})/E_1(q^{-1}) = (q^3 - q^{-3})/(q^3 + q^{-3}) = tanh(3*ln(q)) (~ 0.303185 at q_0), which is identically the H_3 bare content asymmetry x(c=3). (4) Neither the disc -23 resolvent odd datum nor the Masbaum cyclotomic asymmetry matches S_muon, S_proton, Im_Vb, or X_req without fitting.",
+  "lean": "QOU.QBeta.FiveTwoSumRuleIntegrand",
+  "wired": false,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptHash": "c22a9bf63ee3",
+  "scriptCommitSha": "unknown",
+  "commitSha": "86da82a3b9a5b39d716f2807cb043df6e5855837",
+  "durationMs": 0,
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

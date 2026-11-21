@@ -48,7 +48,7 @@ give a trivial power downstairs.
 
 -- Ref: [bourbaki1968] Groupes et algèbres de Lie, Ch. V §4 (the dihedral case of the geometric rep)
 -- Ref: [humphreys1990] Reflection Groups and Coxeter Groups, §5.3–5.4
--- Ref: [manuscript] bean qou-1u90
+-- Ref: [leitner2026] bean qou-1u90
 -/
 
 namespace QOU.Machinery.CoxeterDihedralOrder

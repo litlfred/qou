@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "University of Copenhagen",
+  "title": "Introduction",
   "pageStart": 1,
-  "pageEnd": 1,
+  "pageEnd": 6,
   "contains": [
-    "library/download-3/blocks/prose-sec-000"
+    "library/download-3/blocks/prose-sec-000",
+    "library/download-3/blocks/thm-sec-000-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download-3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/download-3",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
   "provenance": "ingested"
 }

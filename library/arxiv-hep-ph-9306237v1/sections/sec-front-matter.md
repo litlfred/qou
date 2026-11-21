@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9306237v1
-doc_title: "arXiv:hep-ph/9306237v1 7 Jun 1993"
+doc_title: "Chiral Perturbation to One Loop Including the rho Meson"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-11
 source_pdf: 9306237v1.pdf
 source_sha256: 6fea847208a60505
 toc_source: inferred
+doc_brief: "Chiral Perturbation to One Loop Including the rho Meson — We formulate the chiral perturbation theory at the one loop level in the ef- fective lagrangian including the ρ meson as a dynamical gauge"
 ---
 arXiv:hep-ph/9306237v1  7 Jun 1993
 KEK-TH-349
@@ -42,7 +43,6 @@ The eﬀective lagrangian (chiral lagrangian) written in terms of the Nambu-Gold
 (NG) boson ﬁeld with the lowest order of derivatives is O(E2) (≡O(∂2)), which repro-
 duces results of the low energy theorems. Taking account of the O(E4) terms and the
 ∗E-mail address: tanabash@theory.kek.jp
-1
 one loop corrections, we can extract further information from the chiral symmetry[1, 2]
 than those from the low energy theorems.
 It is evident, however, that the ChPT cannot be applied at the scale of the mass of
@@ -88,7 +88,6 @@ LξR.
 1 Although the low energy theorem of HLS holds only at the oﬀ-shell of the ρ meson and is not
 directly related to the physical amplitudes, the phenomenological success indicates that the low energy
 theorem is smoothly extrapolated to the on-shell of the ρ meson.
-2
 Arbitrariness in this decomposition can be regarded as a local symmetry (hidden local
 symmetry, HLS):
 ξL,R →h(x)ξL,R,
@@ -152,7 +151,6 @@ to show that
 ˆαµ⊥,
 ˆαµ∥
 (6)
-3
 are the only operators in this class at the lowest order (O(E)). In addition to the
 covariant derivatives of Eq.(6), there exist operators in higher orders, e.g.,
 Vµν,
@@ -236,7 +234,6 @@ Lx
 ρtr(ˆαµ∥ˆαµ
 ∥) + x3tr(VµνV µν) + x4m2
 ρtr(ˆχ + ˆχ†),
-4
 Ly
 4 = y1tr((ˆαµ⊥ˆαµ
 ⊥)2) + y2tr(ˆαµ⊥ˆαν⊥ˆαµ
@@ -353,7 +350,6 @@ LGF = −1
 µ + mρua
 S)2,
 (16)
-5
 with ¯Dµ being the “covariant derivative” on the background ﬁeld:
 ¯Dabµvb
 µT a ≡∂µva
@@ -425,7 +421,6 @@ d4xd4z
 ∗(z)tr(Vµν(x + z)V µν(x)) · · ·,
 2 Renormalization scale independent quadratic divergences can be renormalized by the redeﬁnition
 of parameters in the O(E2) lagrangian.
-6
 with ˜f 2
 ∗, ˜a∗and 1/˜g2
 ∗being Fourier transform of *-functions f 2
@@ -521,7 +516,6 @@ LGL = F 2
 +L10tr(U†LµνURµν) + H1tr(LµνLµν + RµνRµν) + H2tr(X†X),
 with X = 2B(s + ip) and F being the NG boson decay constant in the chiral limit.
 In the following, we focus our attention on the parameters L9,10. It is convenient to
-7
 introduce the *-functions corresponding to the parameters L9,10 and H1. In the chiral
 limit, we ﬁnd
 F 2
@@ -647,7 +641,6 @@ m2ρ
 )
 #
 ,
-8
 (25a)
 z∗
 2(p2) = zr
@@ -776,7 +769,6 @@ in (24) and obtain:
 2(0) + z∗
 3(0)) = (−0.6 ± 0.3) · 10−3,
 (26a)
-9
 1
 8(2z∗
 3(0) + z∗
@@ -836,4 +828,3 @@ discussions.
 He thanks also K. Hagiwara, M. Harada, M. Kobayashi, T. Kugo, S.
 Matsumoto, V.A. Miransky, A.I. Sanda, M. Tanaka and T.N. Truong for enlightening
 discussions.
-10

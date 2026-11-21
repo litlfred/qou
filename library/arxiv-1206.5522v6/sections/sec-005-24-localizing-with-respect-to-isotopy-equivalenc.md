@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.97
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 Here we explain that the $\infty$-category $\mathop{\mathrm{{\mathcal D}\sf isk}}^B_{n/M}$ is a localization of its un-topologized version $\mathop{\mathrm{{\sf Disk}}}^B_{n/M}$ on the collection of those inclusions of finite disjoint unions of disks $U\subset V$ in $M$ that are isotopic to an isomorphism. This comparison plays a fundamental role in recognizing certain colimit expressions in this theory, for instance those that support the pushforward formula of §[\[sec.push\]](#sec.push){reference-type="ref" reference="sec.push"}.
 

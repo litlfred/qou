@@ -1,0 +1,1576 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-hep-th-9609174v2",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "†",
+   "text": "WeavoidaproliferationofnewsymbolsbyemployingthesameP(α) (λ) and h(α) in both conventions. n n",
+   "marks": [
+    {
+     "page": 4,
+     "context": "W"
+    },
+    {
+     "page": 4,
+     "context": "W7→V"
+    },
+    {
+     "page": 4,
+     "context": "e−NtrV (W"
+    },
+    {
+     "page": 4,
+     "context": "W"
+    },
+    {
+     "page": 4,
+     "context": "H= W"
+    },
+    {
+     "page": 5,
+     "context": "(0)̸=0,andnormalizethepolynomialsaccordingly."
+    }
+   ],
+   "block": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "2",
+   "text": "n+1",
+   "marks": [
+    {
+     "page": 10,
+     "context": "= |z1| · · · |zs| σN(z"
+    },
+    {
+     "page": 10,
+     "context": "1, · · · , z"
+    },
+    {
+     "page": 10,
+     "context": "ively.Thereforealltheformulaefortheirmicroscopiclimits(xa= N"
+    },
+    {
+     "page": 10,
+     "context": "N"
+    },
+    {
+     "page": 10,
+     "context": "N"
+    },
+    {
+     "page": 10,
+     "context": "N) = |ζ1| · · · |ζs| σS(ζ"
+    },
+    {
+     "page": 10,
+     "context": "1, · · · , ζ"
+    },
+    {
+     "page": 10,
+     "context": "= |z|KN(z"
+    },
+    {
+     "page": 10,
+     "context": "= |z|KN(z2, z"
+    },
+    {
+     "page": 10,
+     "context": "ρS(ζ) = (πρ(0))"
+    },
+    {
+     "page": 10,
+     "context": "J"
+    },
+    {
+     "page": 11,
+     "context": "dM det"
+    },
+    {
+     "page": 11,
+     "context": "dM det2αM e−NtrV (M"
+    },
+    {
+     "page": 11,
+     "context": "V (M"
+    },
+    {
+     "page": 11,
+     "context": "2kM"
+    },
+    {
+     "page": 11,
+     "context": "e−NV (λ"
+    },
+    {
+     "page": 11,
+     "context": "dλiλ"
+    },
+    {
+     "page": 11,
+     "context": "dλ λ"
+    },
+    {
+     "page": 11,
+     "context": "dλ λ2αe−NV (λ"
+    },
+    {
+     "page": 11,
+     "context": "dλ λ"
+    },
+    {
+     "page": 11,
+     "context": "dλ λ2αe−NV (λ"
+    },
+    {
+     "page": 11,
+     "context": "V (λ"
+    },
+    {
+     "page": 11,
+     "context": "2kλ"
+    }
+   ],
+   "block": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p011-2",
+   "page": 11,
+   "mark": "‡",
+   "text": "Theorem2canberegardedasanextensionofTheorem1forhalf-integerα.",
+   "marks": [
+    {
+     "page": 11,
+     "context": "Weshallprovethefollowingtheorem"
+    }
+   ],
+   "block": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "2",
+   "text": "n",
+   "marks": [
+    {
+     "page": 13,
+     "context": "d"
+    },
+    {
+     "page": 13,
+     "context": "du"
+    },
+    {
+     "page": 13,
+     "context": "du2+ x"
+    },
+    {
+     "page": 13,
+     "context": "N→∞P"
+    },
+    {
+     "page": 13,
+     "context": "˜P"
+    },
+    {
+     "page": 13,
+     "context": "˜P2n+1(λ) ≡P"
+    },
+    {
+     "page": 13,
+     "context": "˜P2n+1(λ) ≡P2n+2(λ) −P"
+    },
+    {
+     "page": 13,
+     "context": "areoddpolynomialsoforder2n + 1,andareorthogonaltoλ"
+    },
+    {
+     "page": 13,
+     "context": "dλ e−NV (λ) ˜P2n+1(λ) λ"
+    },
+    {
+     "page": 13,
+     "context": "dλ e−NV (λ)(P"
+    },
+    {
+     "page": 13,
+     "context": "dλ e−NV (λ)(P2n+2(λ) −P"
+    },
+    {
+     "page": 13,
+     "context": "dλ e−NV (λ)(P2n+2(λ) −P2n(λ)) λ"
+    },
+    {
+     "page": 13,
+     "context": "∂tP"
+    },
+    {
+     "page": 13,
+     "context": "Undertheassumptionthat˜P"
+    },
+    {
+     "page": 13,
+     "context": "Undertheassumptionthat˜P2n+1′(0)̸=0,changeofnormalizationtoP"
+    },
+    {
+     "page": 13,
+     "context": "N→∞N P"
+    },
+    {
+     "page": 14,
+     "context": "orthogonalwithrespecttothemeasuredλ λ"
+    },
+    {
+     "page": 14,
+     "context": "orthogonalwithrespecttothemeasuredλ λ2αe−NV (λ"
+    },
+    {
+     "page": 14,
+     "context": "λ"
+    },
+    {
+     "page": 14,
+     "context": "dλ λ2(α+1)e−NV (λ"
+    },
+    {
+     "page": 14,
+     "context": "2(V (λ"
+    },
+    {
+     "page": 14,
+     "context": "2(V (λ2)+V (µ"
+    },
+    {
+     "page": 14,
+     "context": "2(V (λ"
+    },
+    {
+     "page": 14,
+     "context": "2(V (λ2)+V (µ"
+    }
+   ],
+   "block": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-005"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p014-2",
+   "page": 14,
+   "mark": "2",
+   "text": "n",
+   "block": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-005"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "G.Akemann∗,P.H.Damgaard"
+  },
+  {
+   "page": 1,
+   "mark": "‡",
+   "context": "G.Akemann∗,P.H.Damgaard†,U.Magnea"
+  },
+  {
+   "page": 1,
+   "mark": "§",
+   "context": "G.Akemann∗,P.H.Damgaard†,U.Magnea‡andS.Nishigaki"
+  },
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "e-mailaddresses:∗akemann@itp.uni-hannover.de,"
+  },
+  {
+   "page": 1,
+   "mark": "‡",
+   "context": "e-mailaddresses:∗akemann@itp.uni-hannover.de,†phdamg,"
+  },
+  {
+   "page": 1,
+   "mark": "§",
+   "context": "mailaddresses:∗akemann@itp.uni-hannover.de,†phdamg,‡umagnea,"
+  },
+  {
+   "page": 2,
+   "mark": "5",
+   "context": "{iD/, γ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "aroundzero:±λ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "aroundzero:±λn.Thecorrespondingeigenfunctionsare,forλ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "aroundzero:±λn.Thecorrespondingeigenfunctionsare,forλn̸=0,φ"
+  },
+  {
+   "page": 2,
+   "mark": "5",
+   "context": "ndzero:±λn.Thecorrespondingeigenfunctionsare,forλn̸=0,φnandγ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "zero:±λn.Thecorrespondingeigenfunctionsare,forλn̸=0,φnandγ5φ"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "conventionalSU(N"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "conventionalSU(Nf)L×SU(N"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "conventionalSU(Nf)L×SU(Nf)R→SU(N"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "⟨δ(λ −λ"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "BytheBanks-Casherrelation∗[1](takingherethelimitV"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "λ2+ m"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "m→0"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "m→02"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "V"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "W"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "e−Ntr V (W"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "dW detN"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "dimensionalSU(N"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "caseisconsideredtoberelevantforthree-dimensionalSU(N"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "dM detN"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2tr V (M"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "V (M"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "kM"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "kM2"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "N"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "elhasthesameglobalsymmetriesasaEuclideanfour-dimensionalSU(N"
+  },
+  {
+   "page": 4,
+   "mark": "5",
+   "context": "{M, γ"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "dW detN"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "ij"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "e−NV (z"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "dz"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "i"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "iz"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ie−NV (λ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ijλ"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "where wehavesetα = N"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "H= W†Wwhoseeigenvaluesareλ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(λ) = λ"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "sothattheVandermonde determinantdetij λ"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "i−1(λ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "nλ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "(whichistakentoinﬁnity),andN"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "(λ)}n=0,"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "kλ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "(0) = 1,then,forﬁxedx = N"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "Z"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "r(t)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Westartwiththecaseα=0.TherecursionrelationforP"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "h"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "andp"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Pn+1(λ) −P"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Pn+1(λ) −Pn(λ) −h"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "r"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "rn≡−p"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "−r"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "(P"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "(Pn(λ) −P"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "tructure of the coeﬃcients is dictatedby a comparison of O(λ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "f the coeﬃcients is dictatedby a comparison of O(λ0) and O(λ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "sides.Thesetsofunknowns{h"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "sides.Thesetsofunknowns{hn},{r"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "dλ"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "dλ"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "N"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(ˆλ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "N)"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "r(t)"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "r(t)"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "h"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "hd"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "dt"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "= −h(t)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "wheretheargumentNinP(n, N, λ)≡P"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "t=n/Nandx=N"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "Z"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "du"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "duu"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "arepolynomialsofordern.Theyareorthogonaltoλ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(λ) λ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "λ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "u"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "u2α+1"
+  },
+  {
+   "page": 8,
+   "mark": "u",
+   "context": "du"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "duu"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "duu2α+1"
+  },
+  {
+   "page": 8,
+   "mark": "†",
+   "context": "valueproblemforthepositive-deﬁnitehermitianmatrixH= W"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2(V (λ)+V (µ))"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2(V (λ)+V (µ))"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(0)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "h(t) +higherordersin"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N2α+1 (α!)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 9,
+   "mark": "y",
+   "context": "N2 ,"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "a2−z"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "z2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "z2k−2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "H= W"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "σN(λ"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "σN(λ1, · · · , λ"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "Ntr δ(λ"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "1≤a,b≤sKN(λ"
+  },
+  {
+   "page": 10,
+   "mark": "b",
+   "context": "1≤a,b≤sKN(λa, λ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "= |z"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "= |z1| · · · |z"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "ρN(z"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "ρN(z1, · · · , z"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "2Ntr δ(z"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "N"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Ns σN( x"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "N2 , · · · ,"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "N2 , · · · ,x"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "σS(x"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "σS(x1, · · · , x"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "N→∞ρN(ζ"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "N , · · · ,ζ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "N) = |ζ"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "N) = |ζ1| · · · |ζ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "ρS(ζ"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "ρS(ζ1, · · · , ζ"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "2kM2"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "sameglobalsymmetrieswithaEuclideanthree-dimensionalSU(N"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "i,jλ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "(λ)}n=0,"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "2kλ2"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "n(λ) = λ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "P"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "P2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "P2n(0)→P"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "P2n(0)→P2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "P"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "P2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "P2n+1′(0)→P"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "P2n+1′(0)→P2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−r"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "−r2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−r2n+1 (P"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "−r2n+1 (P2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−r2n+1 (P2n+2(λ) −P"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "−r2n+1 (P2n+2(λ) −P2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−r2n+1 (P2n+2(λ) −P2n(λ)) + r"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "−r2n+1 (P2n+2(λ) −P2n(λ)) + r2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−r2n+1 (P2n+2(λ) −P2n(λ)) + r2n (P"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "−r2n+1 (P2n+2(λ) −P2n(λ)) + r2n (P2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−r2n+1 (P2n+2(λ) −P2n(λ)) + r2n (P2n(λ) −P"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "−r2n+1 (P2n+2(λ) −P2n(λ)) + r2n (P2n(λ) −P2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(ˆλ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(ˆλ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(ˆλ2)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(ˆλ2)2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(ˆλ2)2n+1,"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "(ˆλ2)2n+1,2"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(ˆλ2)2n+1,2m+1intermsofther"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(ˆλ2)2n+1,2m+1intermsofthern’s.Thecoeﬃcients{r"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "dλ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "e−N V (λ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "= 2N(ˆλ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "= 2N(ˆλ2V′(ˆλ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "+ higherordersin"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "r(t)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(P(2n, N, λ) ≡P"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(P(2n, N, λ) ≡P2"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "4r(t)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "4r(t)d"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "dt"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "dt2+ 2d"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "r(t)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "N2λ"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "Z"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "N→∞P2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "˜P2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "˜P2n+1(λ) ≡P2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "˜P2n+1(λ) ≡P2n+2(λ) −P2"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "areoddpolynomialsoforder2n + 1,andareorthogonaltoλ2"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "dλ e−NV (λ) ˜P2n+1(λ) λ2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "dλ e−NV (λ)(P2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "dλ e−NV (λ)(P2n+2(λ) −P2"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "dλ e−NV (λ)(P2n+2(λ) −P2n(λ)) λ2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "∂tP2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Undertheassumptionthat˜P2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "ndertheassumptionthat˜P2n+1′(0)̸=0,changeofnormalizationtoP2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "N→∞N P2"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "2(u(t)"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "2(u(t)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2(V (λ2)+V (µ2))"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2(V (λ2)+V (µ2))"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "r(t) + higherordersin"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 15,
+   "mark": "u",
+   "context": "dt"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "dtu(t)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "u(1)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2)2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2)2 2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2)2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2)2 2"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "2(u(1)"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "2(u(1)"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "2(u(1)"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "2(u(1)"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "N ,"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ρN(λ"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ρN(λ1, · · · , λ"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "Ntr δ(λ"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "1≤a,b≤sKN(λ"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "1≤a,b≤sKN(λa, λ"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "N"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Ns ρN(x"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "N , · · · , x"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ρS(x"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ρS(x1, · · · , x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "J"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2+ J"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "D¯ψ"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "D¯ψfDψ"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "D¯ψfDψf e−S[A]−R¯ψ"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "D¯ψfDψf e−S[A]−R¯ψf (iD/+m"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "D¯ψfDψf e−S[A]−R¯ψf (iD/+mf )ψ"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "(Gauge)"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "fdet(iD/ + m"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "fdet(M+ m"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "RdM e−NΣ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "RdM e−NΣ2 tr M"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "SU(Nf )"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "SU(Nf )dU"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "SU(Nf )dU eNΣ tr mU"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "fdet(M+ m"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": ", however,based on the global symmetry breaking pattern SU(N"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": ",based on the global symmetry breaking pattern SU(Nf)L ×SU(N"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "≡Mitself(b).SinceV"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "unitaryensemble(GUE)withV (M)=Σ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "unitaryensemble(GUE)withV (M)=Σ2tr M"
+  }
+ ]
+}

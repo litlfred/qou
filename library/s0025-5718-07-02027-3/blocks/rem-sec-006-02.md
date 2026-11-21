@@ -1,0 +1,1 @@
+Proposition 6.1 implies that gn(v) converges for |v| < p1/(p−1), as stated in Theorem 2.7(3) and Proposition 4.3. The bound seems to have the right behaviour, and only the constant c(n, p) may possibly be improved.

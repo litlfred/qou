@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/amc-2730/blocks/thm-sec-003-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 10,
+  "pageEnd": 14,
+  "text": "thm-sec-003-01.md",
+  "derivedFrom": "library/amc-2730/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/amc-2730/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.1",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-003-representing-knots-as-braids.md (p. 10-14)",
+    "claim_id": "amc-2730#theorem:4.1",
+    "lean_status": "unformalized"
+  }
+}

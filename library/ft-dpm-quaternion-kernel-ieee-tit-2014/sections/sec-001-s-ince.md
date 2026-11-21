@@ -8,7 +8,9 @@ pages: 1-2
 source_pdf: FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf
 source_sha256: aa2f1eb73610a81b
 toc_source: inferred
+doc_brief: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established"
 ---
+INCE
 their
 introduction
 in
@@ -91,3 +93,15 @@ oretical and practical differences between real, vector and
 quaternion RKHS. To this end, we ﬁrst revisit the quaternion
 0018-9448 © 2014 IEEE. Translations and content mining are permitted for academic research only. Personal use is also permitted,
 but republication/redistribution requires IEEE permission. See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.
+ring and quaternion left Hilbert spaces in order to deﬁne the
+quaternion RKHS (QRKHS). Quaternion versions of the Riesz
+representation [10] and Moore-Aronszajn [11] theorems are
+next presented (and compared to their real-valued counter-
+parts) to introduce a unique relationship between QRKHSs and
+positive deﬁnite kernels. This equips us with a theoretical basis
+for quaternion kernel estimation, whereby the feature space has
+a corresponding quaternion-valued reproducing kernel.
+We also show that the so-introduced QRKHS serves as a
+feature space of kernel regression algorithms within the kernel
+ridge regression setting. Applications in 3D body sensor track-
+ing and nonlinear channel equalisation support the approach.

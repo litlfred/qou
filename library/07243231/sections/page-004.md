@@ -8,6 +8,7 @@ pages: 4-4
 source_pdf: 07243231.pdf
 source_sha256: e3880af88c7d91a3
 toc_source: none
+doc_brief: "Elias, Ben; Makisumi, Shotaro; Thiel, Ulrich; Williamson, Geordie — 5 sections: Page 1; Page 2; Page 3"
 ---
 Part V Special Topics
 This part oﬀers a sampling of more advanced topics, ranging over cell theory and Hecke algebra repre-
@@ -63,5 +64,3 @@ Given a generalized Cartan matrix and an associated realization over Z, one obta
 a realization of the Weyl group over a ﬁeld of any characteristic p. The resulting diagrammatic Hecke
 category yields a basis of the Hecke algebra called the p-canonical basis, a positive characteristic analogue
 Edited by FIZ Karlsruhe, the European Mathematical Society and the Heidelberg Academy of Sciences and Humanities
-© 2023 FIZ Karlsruhe GmbH
-Page 4

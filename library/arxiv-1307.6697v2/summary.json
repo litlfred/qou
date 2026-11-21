@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1307.6697v2",
  "source_sha256": "a3afaefdaebe0292",
- "brief": "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL",
- "extended": "**REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS**\n\n*INTO PGL (3, C): EXACT COMPUTATIONS IN LOW COMPLEXITY*\n\n28 pp, 9 sections.\n\n**Abstract.** In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL (2,C),PGL(3,R) and PU(2,1)). The representations are obtained by gluing decorated tet rahedra of ﬂags as in [10, 2]. W e list complete computations (giving 0-dimensional or 1 -dimensional solution sets (for unipotent boundary holonomy) for the ﬁrst complet e hyperbolic non-compact manifolds with ﬁnite volume which are obtained gluing less t han three tetrahedra with a description of the computer methods used to ﬁnd them. The me thods we use work for non-unipotent boundary holonomy as shown in some examples.\n\n**Outline.** 1 Introduction; 2 Three geometric structures on three manifold; 3 Flag tetrahedra; 4 Ideal triangulations by flag tetrahedra; 5 Holonomy of a decoration; 6 Computational steps; 7 An example: the figure-eight knot; 8 Description of the unipotent solutions for t; References",
+ "brief": "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representations of the funda- mental group of a 3-manifold into PGL(3, C) (in particular in PGL(2",
+ "extended": "**REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS**\n\n*INTO PGL(3, C): EXACT COMPUTATIONS IN LOW COMPLEXITY*\n\n28 pp, 10 sections.\n\n**Abstract.** In this paper we are interested in computing representations of the funda- mental group of a 3-manifold into PGL(3, C) (in particular in PGL(2, C), PGL(3, R) and PU(2, 1)). The representations are obtained by gluing decorated tetrahedra of ﬂags as in [10, 2]. We list complete computations (giving 0-dimensional or 1-dimensional solution sets (for unipotent boundary holonomy) for the ﬁrst complete hyperbolic non-compact manifolds with ﬁnite volume which are obtained gluing less than three tetrahedra with a description of the computer methods used to ﬁnd them. The methods we use work for non-unipotent boundary holonomy as shown in some examples.\n\n**Outline.** Front matter; 1 Introduction; 2 Three geometric structures on three manifold; 3 Flag tetrahedra; 4 Ideal triangulations by flag tetrahedra; 5 Holonomy of a decoration; 6 Computational steps; 7 An example: the figure-eight knot; 8 Description of the unipotent solutions for t; References",
  "tokens": {
   "brief": 49,
-  "extended": 272
+  "extended": 275
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",

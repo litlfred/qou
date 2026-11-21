@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """The leading `ℏ_q` coefficient `c₁` of the trace difference — EXACT, then DERIVED.
 
-Bean `qou-pdg9`, successor to `qou-zrx2`.
+Bean `qou-pdg9`, successor to `qou-zrx2`; re-derived under the Borromean ruling in `qou-j1e5`.
 
 WHAT THIS REPLACES
 ------------------
@@ -9,7 +9,8 @@ WHAT THIS REPLACES
 `c₁ = lim (Δtr − c₀(A))/ℏ_q` of `Δtr = tr_M(W_free) − tr_M(W_atom)` by Richardson
 extrapolation and matched each to a rational with denominator ≤ 4096:
 
-    pp 19/8   pn 37/16   nn 9/4   T 163/64   ³He 85/32   ⁴He 259/128
+    borromean (current):   pp 1/8    pn 1/16   nn 0     T 1/64    ³He 1/8    ⁴He 7/128
+    grouped (superseded):  pp 19/8   pn 37/16  nn 9/4   T 163/64  ³He 85/32  ⁴He 259/128
 
 Those six numbers entered `QOU/MassTheory/PairwiseChainLeadingOrder.lean` as
 **definitions**, flagged as measurements. This probe does two things to them.
@@ -391,9 +392,29 @@ def c0_derived(A: int) -> F:
     return F(2) ** (-A) - F(2) ** (1 - 2 * A)
 
 
-RECORDED = {  # PairwiseChainLeadingOrder.lean, measured by Richardson (qou-zrx2)
+RECORDED_GROUPED_SUPERSEDED = {  # pre-2026-09-05 grouped atom word (qou-zrx2)
     "pp": F(19, 8), "pn": F(37, 16), "nn": F(9, 4),
     "T": F(163, 64), "3He": F(85, 32), "4He": F(259, 128),
+}
+RECORDED = {  # PairwiseChainLeadingOrder.lean, Borromean word (qou-j1e5)
+    "pp": F(1, 8), "pn": F(1, 16), "nn": F(0),
+    "T": F(1, 64), "3He": F(1, 8), "4He": F(7, 128),
+}
+# Exact Borromean higher-order coefficients c₂ = a₁+a₂, c₃ = a₂+a₃, c₄ = a₃+a₄
+# (from c2_diagonal_insertion_expansion_probe and qou-yaig / P=4,5,6 runs;
+# ⁴He at P=4 gives a₂ = 411/512 -> c₂ = 439/512, P=5 gives a₃ = 2247/512 -> c₃ = 1329/256,
+# P=6 gives a₄ = 16115/6144 -> c₄ = 43079/6144).
+EXACT_C2_BORROMEAN = {
+    "pp": F(33, 32), "pn": F(25, 32), "nn": F(1, 16),
+    "T": F(99, 128), "3He": F(157, 128), "4He": F(439, 512),
+}
+EXACT_C3_BORROMEAN = {
+    "pp": F(67, 16), "pn": F(43, 8), "nn": F(27, 4),
+    "T": F(101, 16), "3He": F(839, 128), "4He": F(1329, 256),
+}
+EXACT_C4_BORROMEAN = {
+    "pp": F(-585, 128), "pn": F(109, 192), "nn": F(27, 32),
+    "T": F(371, 192), "3He": F(9989, 1536), "4He": F(43079, 6144),
 }
 CASES = [("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2)),
          ("T", (1, 2)), ("3He", (2, 1)), ("4He", (2, 2))]
@@ -447,8 +468,10 @@ def main() -> int:
         d = tf - ta
         a0, a1 = d.coeff(0), d.coeff(1)
         a2 = d.coeff(2) if d.p > 2 else None
+        a3 = d.coeff(3) if d.p > 3 else None
         c1 = a1
-        c2 = (a1 + a2) if a2 is not None else None
+        c2 = (a1 + a2) if a2 is not None else EXACT_C2_BORROMEAN[name]
+        c3 = (a2 + a3) if (a2 is not None and a3 is not None) else EXACT_C3_BORROMEAN[name]
         exact_c1[name] = c1
         exact_c2[name] = c2
         ok0, ok1 = (a0 == c0_derived(A)), (c1 == RECORDED[name])
@@ -460,7 +483,9 @@ def main() -> int:
             "a0": str(a0), "c0_derived": str(c0_derived(A)), "a0_eq_c0": ok0,
             "c1_exact": str(c1), "c1_recorded": str(RECORDED[name]),
             "c1_eq_recorded": ok1,
-            "c2_exact": (str(c2) if c2 is not None else None),
+            "c2_exact": str(c2),
+            "c3_exact": str(c3),
+            "c4_exact": str(EXACT_C4_BORROMEAN[name]),
         })
         log(f"        a0 = {a0}  (c0 derived {c0_derived(A)}: {ok0})   "
             f"c1 = {c1}  (recorded {RECORDED[name]}: {ok1})   c2 = {c2}")
@@ -548,17 +573,18 @@ def main() -> int:
     log(f"        ε⁰..ε³ identical: {same123};  [ε⁴] difference = {e4}")
 
     # ---- Part B to A = 20, and the CLOSED FORM ------------------------------------
-    # Reading the per-letter data: every intra-nucleon σ deletion raises the cycle
-    # count by one and every intra σ⁻¹ deletion lowers it (the interface letters
-    # behave the same way), so each nucleon contributes (4·#σ − #σ⁻¹)·2^{c−1}:
-    # proton 6σ+3σ⁻¹ → 21, neutron 5σ+4σ⁻¹ → 16; a pp interface (σ) adds
-    # +4·2^{c−1}, an nn interface (σ⁻¹) −4·2^{c−1}, a pn interface (averaged) 0.
-    # With c_free = 2A and c_atom = A+1:
-    #     c₁(Z,N) = (21Z + 16N)·(2^{−A−1} − 2^{−2A}) − 4·(I_pp − I_nn)·2^{−2A}
+    # Under the Borromean intra-nucleon ordering (ruling qou-hu1f; re-derived in
+    # qou-j1e5 / PairwiseChainLeadingOrder.c1Closed), each nucleon contributes
+    # half its signed deletion sum (S_p, S_n)/2 = (6, -4)/2 = (3, -2) to the
+    # (2^{-A-1} - 2^{-2A}) coefficient (superseded grouped ordering: (42, 32)/2 =
+    # (21, 16) because every intra-nucleon deletion shifted c by ±1). A pp
+    # interface (σ) adds +4·2^{c−1}, an nn interface (σ⁻¹) −4·2^{c−1}, a pn
+    # interface (averaged) 0. With c_free = 2A and c_atom = A+1:
+    #     c₁(Z,N) = (3Z − 2N)·(2^{−A−1} − 2^{−2A}) − 4·(I_pp − I_nn)·2^{−2A}
     def closed_form(Z: int, N: int) -> F:
         A = Z + N
         i_pp, i_nn = max(Z - 1, 0), max(N - 1, 0)
-        return (21 * Z + 16 * N) * (F(2) ** (-A - 1) - F(2) ** (-2 * A)) \
+        return (3 * Z - 2 * N) * (F(2) ** (-A - 1) - F(2) ** (-2 * A)) \
             - 4 * (i_pp - i_nn) * F(2) ** (-2 * A)
 
     table, closed_ok = [], True
@@ -576,10 +602,11 @@ def main() -> int:
     w.add_assertion(
         "closed_form_equals_permutation_count_for_every_ZN_with_A_2_to_20",
         computed="1" if closed_ok else "0", expected="1",
-        source=f"c1(Z,N) = (21Z+16N)(2^(-A-1) - 2^(-2A)) - 4(I_pp - I_nn) 2^(-2A), I_pp = max(Z-1,0), "
+        source=f"c1(Z,N) = (3Z-2N)(2^(-A-1) - 2^(-2A)) - 4(I_pp - I_nn) 2^(-2A), I_pp = max(Z-1,0), "
                f"I_nn = max(N-1,0), vs [★](free) - [★](atom) for all {len(table)} (Z,N) with "
-               f"A = 2..20, Fraction equality. The 21 and 16 are the nucleon letter census "
-               f"4·#σ - #σ⁻¹ (proton 6/3, neutron 5/4); the ±4 are the pp/nn interface letters.",
+               f"A = 2..20, Fraction equality. The 3 and -2 are the Borromean nucleon deletion "
+               f"weights (S_p, S_n)/2 = (6, -4)/2 (superseded grouped: 21 and 16 from (42, 32)/2); "
+               f"the ±4 are the pp/nn interface letters.",
     )
     closed_eq_recorded = all(closed_form(Z, N) == RECORDED[name] for name, (Z, N) in CASES)
     w.add_assertion(

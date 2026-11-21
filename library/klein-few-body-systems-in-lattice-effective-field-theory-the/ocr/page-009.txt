@@ -1,0 +1,50 @@
+1.3 Effective Theory
+
+we give a very short introduction with a focus on the questions which will arise throughout this thesis. A
+thorough introduction can be found in [2].
+Starting point is the partition function,
+
+Z= [ oaovo¥ exp{-S-|¥,¥,A] - SglA]}, (1.5)
+
+where A is the gauge field, and ¥ the fermion field. S , and S¢ are the fermion and gauge actions. Any
+correlation function of two operators O,, O> can be calculated by taking its average,
+
+(03(06, (0) = 7 [ PADvD¥d, [v.¥,4] 0, [¥,¥, A]exp{-s,-[¥,¥,4]-SGIAl}. (1.6)
+
+where the imaginary time f = it has been introduced already for the Euclidean rotation. While the
+Eqs. (1.5) and (1.6) are only formal expression, the respective discretized version is solvable numerically.
+Therefore, we put the system in a box of size Na x Na x Na xX Nrar, where a is the spatial lattice spacing
+and a, the temporal lattice spacing. N, N; are the number of nodes in spatial and temporal directions.
+For the discretization, one defines all fields and operators on the lattice points and substitutes continuous
+derivatives by finite differences. Then one uses Monte Carlo methods to calculate any observables from
+their respective correlation function. In such an approach, we have three main sources of artifacts. Firstly,
+one has to do infinite time extrapolations for observables, where one mostly expects an exponential
+decay and which gives a certain uncertainty. Secondly, the volume B may cause an error if it is not
+large enough. Thirdly, the lattice spacing a itself produces a lattice artifact which makes an extrapolation
+to the continuum necessary or to improve the disctretization scheme. In a very simple lattice QCD
+calculation the lattice spacing error is linear, but one can use a different discretization scheme or include
+more operators in order to push this error to higher order. Symanzik’s improvement program gives a
+clear strategy to do this [3, 4]. Note that additionally, the quark mass plays an important role for the
+efficiency of the algorithm, as one may be forced to do calculations at larger quark/ pion mass M,, and to
+finally extrapolate to the physical point. Nowadays, lattice calculations use parameters in the range of
+a ~ 0.05 — 0.15 fm, L ~ 2-4 fm and M, ~ 134 — 450 MeV. Lattice QCD is mainly successful in the
+description of two-meson or two-baryon physics and in the near future, it may work in the three-body
+sector as well [5-8].
+
+1.3 Effective Theory
+
+Effective theory played a role in particle physics already long before the discovery of quarks and the
+full formulation of the standard model. For example, Fermi’s theory of the beta decay [9], n > pe ¥,,
+where a neutron decays into a proton, an electron and a neutrino can be understood as an effective theory
+of the standard model. In a modern language, the process is mediated by a W-boson with a mass of
+my = 80 GeV as shown in Fig. 1.2. As long as we remain in the low-energy regime in which G« mays
+the propagator can be replaced by a contact interaction that is equivalent to Fermi’s contact interaction.
+
+In the low-energy limit of quantum chromodynamics a similar approach can be employed. Due to
+the strong coupling resulting in quark confinement, the quarks always form colorless objects, namely
+hadrons and it is impossible to observe single quarks or gluons. This means that quarks and gluons are
+not a suitable set of degrees of freedom, so we could formulate our theory with a new set of degrees of
+freedom. Naturally, hadrons are such a suitable set of degrees of freedom as they are observable at the
+low-energy scale.
+
+For the construction of the new Lagrangian, only the symmetries of QCD must be preserved, which

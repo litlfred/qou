@@ -1,6 +1,6 @@
 ---
 doc_id: kondev-2021-chinese-phys-c-45-030001
-doc_title: "The NUBASE2020 evaluation of nuclear physics properties *"
+doc_title: "The NUBASE2020 evaluation of nuclear physics properties"
 section_id: sec-005-25-decay-modes-and-their-intensities
 section_title: "Decay modes and their intensities"
 section_number: 2.5
@@ -8,7 +8,9 @@ pages: 11-13
 source_pdf: Kondev_2021_Chinese_Phys._C_45_030001.pdf
 source_sha256: 29b14ce8a7c0ecac
 toc_source: inferred
+doc_brief: "The NUBASE2020 evaluation of nuclear physics properties — 119 sections: Front matter; Introduction; Isomers"
 ---
+Decay modes and their intensities
 Figure 6 displays the main ground-state decay modes for
 all nuclei included in Table I.
 The most important policy in assembling the informa-
@@ -169,4 +171,3 @@ well as the recent compilation of Batchelder [18], were con-
 sulted. Similarly, data on β-delayed neutron emission prob-
 abilities that were recommended by a recent IAEA Coordi-
 nated Research Project [19] were also consulted.
-2.6

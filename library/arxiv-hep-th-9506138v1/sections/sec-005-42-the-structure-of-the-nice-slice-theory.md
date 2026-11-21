@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9506138v1
-doc_title: "arXiv:hep-th/9506138v1 21 Jun 1995"
+doc_title: "Black Hole Complementarity vs. Locality"
 section_id: sec-005-42-the-structure-of-the-nice-slice-theory
 section_title: "The Structure of the Nice Slice Theory"
 section_number: 4.2
@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
 toc_source: inferred
+doc_brief: "Black Hole Complementarity vs. Locality — 18 sections: Front matter; Introduction; The Nice-Slice Argument"
 ---
 The comparison of the commutators of low-energy nice-slice ﬁelds in quantum ﬁeld
 theory and in string theory has provided evidence that the assumption of locality of the
@@ -42,7 +43,6 @@ into a product of a space of states inside the horizon with a space of states ou
 horizon, and the argument for information loss breaks down.
 It should be noted, of course, that we have in no way proved the conjecture of black
 hole complementarity. We have simply showed that the usual argument for information
-14
 loss is no argument at all in light-front string theory. It is expected that information only
 begins to come out of an evaporating black hole when the black hole area has reduced to
 half its original value, at a time of order G2M 3 [8]. Our perturbative calculation, however,

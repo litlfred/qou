@@ -4,10 +4,11 @@ doc_title: "A Unitary Matrix Model for q-deformed Plancherel Growth"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
-pages: 1-1
+pages: 1-2
 source_pdf: 2105.09342v1.pdf
 source_sha256: 57ae12327da7b9a1
 toc_source: outline
+doc_brief: "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure."
 ---
 A Unitary Matrix Model for q-deformed Plancherel Growth
 Suvankar Duttaa, Debangshu Mukherjeeb, Neetua, Sanhita Parihara
@@ -32,3 +33,53 @@ Keywords:
 Unitary matrix model, q-deformation of Plancherel growth.
 Contents
 1
+Introduction
+2
+2
+q-deformed Plancherel growth
+4
+3
+A unitary matrix model for q-deformed Plancherel growth
+7
+3.1
+Solution class 1: No-gap solution
+. . . . . . . . . . . . . . . . . . . . . . . .
+10
+3.2
+q-deformed automodel class
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+3.3
+The unitary matrix model from the droplet picture
+. . . . . . . . . . . . . .
+12
+4
+Asymptotic analysis of q-deformed Plancherel growth of second kind
+15
+Email addresses: suvankar@iiserb.ac.in (Suvankar Dutta), debangshu0@gmail.com (Debangshu
+Mukherjee), neetuj@iiserb.ac.in (Neetu), sanhita18@iiserb.ac.in (Sanhita Parihar)
+arXiv:2105.09342v1  [hep-th]  19 May 2021
+5
+The Hilbert space
+17
+5.1
+Moments of Young diagrams and conserved charges . . . . . . . . . . . . . .
+18
+6
+Conclusion
+19
+Appendix A
+q analog of GWW phase transition
+20
+Appendix B
+Explicit computation of the partition function
+22
+Appendix C
+Calculation of automodel density for the second class `a la
+Strahov
+23
+Appendix C.1
+Computing Hconst(h), Hλ(h) and Hseries(h) . . . . . . . . . . . .
+25
+Appendix D
+Droplet quantisation

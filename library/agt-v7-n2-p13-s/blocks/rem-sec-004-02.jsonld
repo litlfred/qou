@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/agt-v7-n2-p13-s/blocks/rem-sec-004-02",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "text": "rem-sec-004-02.md",
+  "derivedFrom": "library/agt-v7-n2-p13-s/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.9",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-004-23-qhg-universal-functor.md (p. 16-18)",
+    "claim_id": "agt-v7-n2-p13-s#remark:2.9"
+  }
+}

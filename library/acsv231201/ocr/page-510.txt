@@ -1,0 +1,49 @@
+492 Residue forms and classical Morse theory
+
+with k sheets, the factor N is homotopy equivalent to a k-torus and we can
+represent the homology of W using a product of k circles around p. To make
+this explicit, we note that the map ¥ : D — C@ defined by
+
+(Zz) = (Q1(2),.--, Qe(%), 2m, — Pars e+ +s Za ~ Prue) (C.2.6)
+
+is a bi-analytic change of coordinates taking DM S to a neighborhood of the
+origin in {0} x Cl, Let T, C C* x {0} denote the product of circles of radius
+e in each of the first k coordinates. If ¢ is sufficiently small then T, c ‘Y(D)
+and the cycle T = ¥~'(T,) will be a generator for H,(N). We give D the local
+product structure that ¥~! induces from the product structure on C4.
+
+Definition C.16. If f is a differentiable function then the logarithmic gradient
+of f at z is
+
+(Viog PZ) = C1 fa (2)s- ++ Za fes(2)) «
+For each z € S, the augmented lognormal matrix is the d x d matrix
+
+(Viog Q1)(2)
+
+(Viog Qx)(Z)
+
+T =
+W@) Zn Em
+
+nan ena
+where e; denotes the jth elementary basis vector. Equivalently, ty = JyD
+where D is the diagonal matrix with entries z),...,zq and Jy is the Jacobian
+matrix of the map V.
+
+Remark. The definition of Py depends on the choice of factorization, each
+factor being determined only up to a complex multiple. Suitable normalizations
+are assumed later in the definition of the torus J following (10.3) and the
+determination of the orientation in the proof of Theorem 10.25.
+
+Theorem C.17 (iterated residues). Under the setup discussed above, let w be
+the holomorphic d-form w = —22— dz on MOD and write Sp = SAD =
+
+-1 O(2)
+Vin AVEND.
+
+(i) Iterated residue is well defined. The restriction to Sp of any d-form @
+on D satisfying
+
+dQ, \-+-AdQi AO = Pdz (C.2.7)
+
+is independent of the particular solution 0.

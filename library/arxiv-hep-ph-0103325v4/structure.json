@@ -8,7 +8,7 @@
   "pages": 8,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,11 +21,11 @@
    "stamp_date": "16 Oct 2002"
   },
   "doi": null,
-  "title": "arXiv:hep-ph/0103325v4 16 Oct 2002",
+  "title": "Quantum algebras in phenomenological description of particle properties",
   "authors_raw": "Quantum and q-deformed algebras find their application not only in mathematical physics and field theoretical",
   "title_lines": [
    "Quantum algebras in phenomenological description of particle properties",
-   "A.M. Gavrilika \u2217",
+   "A.M. Gavrilika ∗",
    "aBogolyubov Institute for Theoretical Physics",
    "03143, Kiev, Ukraine"
   ],
@@ -36,18 +36,19 @@
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20220523171210-04'00'"
   },
-  "title_raw": "Quantum algebras in phenomenological description of particle properties A.M. Gavrilika \u2217 aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine",
+  "title_raw": "Quantum algebras in phenomenological description of particle properties A.M. Gavrilika ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:hep-ph/0103325v4 16 Oct 2002",
    "heading": "Quantum algebras in phenomenological description of particle properties",
-   "text": "Quantum algebras in phenomenological description of particle properties A.M. Gavrilika \u2217 aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine",
+   "text": "Quantum algebras in phenomenological description of particle properties A.M. Gavrilika ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-ph/0103325v4 16 Oct 2002"
  },
  "toc": [
   {
@@ -275,33 +276,105 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 11947,
-   "n_words": 2101,
+   "page_end": 1,
+   "n_chars": 1421,
+   "n_words": 226,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-001-6-using-the-hopf-algebra-structure",
+   "id": "sec-001-2-vector-mesons-q-deformation-vs-mixing",
+   "number": "2",
+   "title": "Vector mesons: $q$-deformation vs mixing",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4573,
+   "n_words": 812,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-octet-baryon-mass-sum-rules-best-candidates-fr",
+   "number": "3",
+   "title": "Octet baryon mass sum rules: best candidates from $q$-deformation",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2572,
+   "n_words": 504,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-4-mass-sum-rules-for-decuplet-baryons-the-q-anal",
+   "number": "4",
+   "title": "Mass sum rules for decuplet baryons: the $q$-analog matches empirical masses",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1639,
+   "n_words": 287,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-5-highly-nonlinear-su3-breaking-effects-in-baryo",
+   "number": "5",
+   "title": "Highly nonlinear $SU(3)$-breaking effects in baryon masses",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1572,
+   "n_words": 246,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-6-using-the-hopf-algebra-structure",
    "number": "6",
    "title": "Using the Hopf-algebra structure",
    "level": 1,
    "page_start": 4,
-   "page_end": 8,
-   "n_chars": 12643,
-   "n_words": 2261,
+   "page_end": 6,
+   "n_chars": 5678,
+   "n_words": 1074,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-002-10-outlook",
+   "id": "sec-006-8-mass-relations-from-anyonic-realization-of-u-q",
+   "number": "8",
+   "title": "Mass relations from anyonic realization of $U_q(su_N)$",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2667,
+   "n_words": 438,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-9-algebras-of-q-oscillators-q-bose-gas-and-two-p",
+   "number": "9",
+   "title": "Algebras of $q$-oscillators, $q$-Bose gas and two-pion (two-kaon) correlations",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4209,
+   "n_words": 736,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-10-outlook",
    "number": "10",
    "title": "Outlook",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 3748,
-   "n_words": 632,
+   "n_chars": 3760,
+   "n_words": 634,
    "label_start": null,
    "label_end": null
   }
@@ -320,13 +393,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 4,
-  "chars_total": 29292,
+  "sections": 10,
+  "chars_total": 29045,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "kharkiv4.tex",
    "tex_sections": 10,
-   "overlaid": 3,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -341,24 +415,72 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-6-using-the-hopf-algebra-structure",
+     "id": "sec-001-2-vector-mesons-q-deformation-vs-mixing",
+     "title": "Vector mesons: $q$-deformation vs mixing",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-octet-baryon-mass-sum-rules-best-candidates-fr",
+     "title": "Octet baryon mass sum rules: best candidates from $q$-deformation",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-mass-sum-rules-for-decuplet-baryons-the-q-anal",
+     "title": "Mass sum rules for decuplet baryons: the $q$-analog matches empirical masses",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-highly-nonlinear-su3-breaking-effects-in-baryo",
+     "title": "Highly nonlinear $SU(3)$-breaking effects in baryon masses",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-using-the-hopf-algebra-structure",
      "title": "Using the Hopf-algebra structure",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-10-outlook",
+     "id": "sec-006-8-mass-relations-from-anyonic-realization-of-u-q",
+     "title": "Mass relations from anyonic realization of $U_q(su_N)$",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-9-algebras-of-q-oscillators-q-bose-gas-and-two-p",
+     "title": "Algebras of $q$-oscillators, $q$-Bose gas and two-pion (two-kaon) correlations",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-10-outlook",
      "title": "Outlook",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.514,
+     "coverage_ratio": 0.511,
      "result": "overlaid",
      "converter": "latex"
     }

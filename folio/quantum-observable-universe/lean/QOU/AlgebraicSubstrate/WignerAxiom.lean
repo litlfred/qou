@@ -72,7 +72,7 @@ class of the tangent bundle of the base.
 (W1) the obstruction space is one-dimensional; (W2) the Euler class is a
 non-zero element of the image of `realise`.  No instance is provided. -/
 -- Ref: [wigner1960] https://doi.org/10.1002/cpa.3160130102
--- Ref: [manuscript] stochastic-mechanics/wigner-axiom
+-- Ref: [leitner2026] stochastic-mechanics/wigner-axiom
 class WignerAxiom (k : Type*) [Field k]
     (Obs : Type*) [AddCommGroup Obs] [Module k Obs]
     (H : Type*) [AddCommGroup H] [Module k H]

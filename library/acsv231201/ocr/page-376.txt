@@ -1,0 +1,35 @@
+358 Cone point asymptotics
+
+Figure 11.2 Left: A variety V = Vg. Right: The corresponding variety log V =
+Vy.
+
+that a direction 7? in the interior of normal,(B) is a non-obstructed direction
+if for any y € Vz the cone K?5(y) contains a vector v with # - v > 0.
+
+Note that obstruction is a property of the homogenization q.
+
+Lemma 11.31. Suppose that ?.,, is a non-obstructed direction in the interior of
+normal,(B). Then there is a 1-homogeneous vector field n on R4, vanishing
+and continuous at the origin and smooth elsewhere, such that n(y) € K%3(y)
+and ® - n(y) = \#llyl for all y € R4 and all # in a neighborhood of ?..
+
+Proof It suffices to define 7 smoothly on the set of unit vectors, then extend
+by ny) = Any): this extension will be smooth away from the origin and
+continuous at the origin, and if # - 7(y) is positive on the unit ball then the
+inequality in the conclusion of the lemma follows.
+
+By the definition of non-obstruction, there is always a v depending on y
+with v € K?8(y) and v- # > 0. Because of the strict inequality and semi-
+continuity of the cones, this same vector v works for nearby f’ and nearby y’.
+One may therefore cover the unit ball with finitely many open sets on which v
+may be taken to be a constant. Construct 7 from these by a partition of unity,
+noting that convex combinations preserve both v- # > 0 and v € K74(y). a
+
+We finish step (i) of our outline by finding a projective deformation with
+the required properties. To accomplish step (ii) we then piece these together
+for finitely many values of yo and form a single deformation. We introduce
+a parameter ¢ that shrinks the entire deformation so that we can later keep a
+piece of it close to the origin.
+
+Lemma 11.32. Let A be a hyperbolic homogeneous polynomial with cone of
+hyperbolicity K. Let ?, be a fixed non-obstructed direction in the interior of the

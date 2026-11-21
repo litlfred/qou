@@ -8,6 +8,7 @@ pages: 15-17
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
 toc_source: inferred
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Front matter; Introduction; Some algebraic lemmas"
 ---
 In this section we prove a result which may be of use in numerically approximating the value of the
 Archimedean part of the Arakelov–Zhang pairing ⟨x2 + c, x2⟩.

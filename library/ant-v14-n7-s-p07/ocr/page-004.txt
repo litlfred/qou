@@ -1,0 +1,47 @@
+1898 Jordan S. Ellenberg, Wanlin Li and Mark Shusterman
+
+is nonvanishing mod 2 at s = 5 For the similar Theorem 1.7, the € is again the order of the Dirichlet
+character in question.
+
+2. Main theorem and proof
+
+2A. Setup and notations. Throughout the paper, F, is a finite field of odd characteristic p. Let Qn,q be
+the set of squarefree polynomials over Fy of degree n. For each f € Qn,q, write J for the Jacobian of
+the hyperelliptic curve
+
+y= f(x)
+
+and P(x) € Z[x] for the characteristic polynomial of geometric Frobenius acting on the ¢-adic Tate
+module of J;. Let £ be a prime not equal to the characteristic of F, and let a be an element of (Z/£Z)*.
+The elements R of J [el(Fa) which satisfy
+
+Frob, -R =aR
+
+form a finite-dimensional vector space over Z/€Z and we denote by ma(f) the number of nonzero
+elements of this vector space. Note that m (/f) is just the number of F,-rational nontrivial £-torsion points
+of J. Let Orn be the set of squarefree polynomials f over F, of degree n such that ma(f) is greater
+than 0.
+
+Let a be a q-Weil number of weight | with minimal polynomial g,(x) € Z[x]. Namely, it is an
+algebraic integer whose absolute values under all complex embeddings equal ,/q. Let Qj, be the subset
+of Qn.q defined by {f € Qn.g | Pr(a!) = 0}. With notation introduced as above, if g_(a) = 0 mod £,
+
+ie
+then |O% ,| <|Q%|.
+
+2B. Rational points on twisted Hurwitz spaces over finite fields. Our main tool will be the following
+result about the average size of the subspace of Jac(C)[€] (Fy) on which Frobenius acts by some specified
+scalar a, as C ranges over hyperelliptic curves over F,. More precisely, we study the variation as we range
+over y? = f(x) with f ranging over squarefree polynomials in Fg [x]; this amounts to the same, since each
+isomorphism class of hyperelliptic curves is represented in this form the same number of times (assuming,
+of course, that the isomorphism classes are weighted inversely to the number of automorphisms they
+possess.)
+
+Proposition 2.1. Let a € (Z/£Z)*. With notation as in Section 2A, there exist constants Ce, Ne, Q¢ only
+depending on € such that
+
+foralln > Ny and q > Qe.
+
+Remark 2.2. While this paper was in proof, we learned that Proposition 2.1 follows from the proof of
+Theorem 1.1 of [Lipnowski and Tsimerman 2019], which is in fact more general, and the arguments used
+are essentially the same as those here. We have left the proof of Proposition 2.1 in the present paper

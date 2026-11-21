@@ -1,0 +1,2204 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1611.03697v5",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "2",
+   "text": ") log(w)+(−w+ 1",
+   "marks": [
+    {
+     "page": 25,
+     "context": "whereB"
+    }
+   ],
+   "block": "library/arxiv-1611.03697v5/blocks/prose-sec-031"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "2",
+   "text": "z2 log(z)−3",
+   "marks": [
+    {
+     "page": 27,
+     "context": "4w"
+    },
+    {
+     "page": 27,
+     "context": "w"
+    },
+    {
+     "page": 27,
+     "context": "deﬁningthefactorww"
+    },
+    {
+     "page": 28,
+     "context": "Ω(γ) · B"
+    }
+   ],
+   "block": "library/arxiv-1611.03697v5/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p032-1",
+   "page": 32,
+   "mark": "1",
+   "text": "ThiscalculationwasworkedoutjointlywithK.Iwaki.",
+   "marks": [
+    {
+     "page": 32,
+     "context": "of (2πit)2g−2in the asymptotic expansion of the τ-function."
+    }
+   ],
+   "block": "library/arxiv-1611.03697v5/blocks/prose-sec-037"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "2",
+   "text": "If the quadratic diﬀerential qhas a double pole at a point p ∈Sone should assume that this projective structure (represented in [20] by the term Q2(z)) also has a pole of a particular form [20, Assumption 2.5].",
+   "marks": [
+    {
+     "page": 35,
+     "context": "theRiemannsurfaceS."
+    },
+    {
+     "page": 35,
+     "context": "ℏ"
+    },
+    {
+     "page": 35,
+     "context": "ℏ2d"
+    },
+    {
+     "page": 35,
+     "context": "dz"
+    },
+    {
+     "page": 35,
+     "context": "togetherwiththeinitialconditionT0(z)"
+    },
+    {
+     "page": 35,
+     "context": "ℏ"
+    }
+   ],
+   "block": "library/arxiv-1611.03697v5/blocks/prose-sec-038"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p025-2",
+   "page": 25,
+   "mark": "2",
+   "text": ")",
+   "block": "library/arxiv-1611.03697v5/blocks/prose-sec-031"
+  },
+  {
+   "id": "fn-p028-2",
+   "page": 28,
+   "mark": "2",
+   "text": "( z",
+   "block": "library/arxiv-1611.03697v5/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p028-3",
+   "page": 28,
+   "mark": "t",
+   "text": ")2−1",
+   "block": "library/arxiv-1611.03697v5/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p028-4",
+   "page": 28,
+   "mark": "t",
+   "text": "2 ( 1",
+   "block": "library/arxiv-1611.03697v5/blocks/prose-sec-033"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "T+= HomZ(Γ, C∗)∼= (C∗)"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "T−= {g :Γ →C∗: g(γ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "T−= {g :Γ →C∗: g(γ1 + γ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "T−= {g :Γ →C∗: g(γ1 + γ2) = (−1)⟨γ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "T−= {g :Γ →C∗: g(γ1 + γ2) = (−1)⟨γ1,γ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "T−= {g :Γ →C∗: g(γ1 + γ2) = (−1)⟨γ1,γ2⟩g(γ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "T−= {g :Γ →C∗: g(γ1 + γ2) = (−1)⟨γ1,γ2⟩g(γ1) · g(γ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "Choosingabase-pointg"
+  },
+  {
+   "page": 5,
+   "mark": "g",
+   "context": "θ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "θg"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "f7→f· g"
+  },
+  {
+   "page": 5,
+   "mark": "g",
+   "context": "Wecanusetheidentiﬁcationθ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "isindependentofthechoiceofbase-pointg"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "xγ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "xγ1· xγ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "xγ1· xγ2= (−1)⟨γ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "xγ1· xγ2= (−1)⟨γ1,γ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "xγ1· xγ2= (−1)⟨γ1,γ2⟩· xγ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "xγ1· xγ2= (−1)⟨γ1,γ2⟩· xγ1+γ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(a)uncoupled,ifforanytwoactiveclassesγ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(a)uncoupled,ifforanytwoactiveclassesγ1, γ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(a)uncoupled,ifforanytwoactiveclassesγ1, γ2∈Γonehas⟨γ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(a)uncoupled,ifforanytwoactiveclassesγ1, γ2∈Γonehas⟨γ1, γ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(b)generic,ifforanytwoactiveclassesγ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(b)generic,ifforanytwoactiveclassesγ1, γ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "R>0 · Z(γ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "R>0 · Z(γ1) = R>0 · Z(γ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "R>0 · Z(γ1) = R>0 · Z(γ2)=⇒⟨γ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "R>0 · Z(γ1) = R>0 · Z(γ2)=⇒⟨γ1, γ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "= ⟨γ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "= ⟨γ1, γ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "= ⟨γ1, γ2⟩+ λ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "= ⟨γ1, γ2⟩+ λ1(γ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "= ⟨γ1, γ2⟩+ λ1(γ2) −λ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "= ⟨γ1, γ2⟩+ λ1(γ2) −λ2(γ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Γ = Ze"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Γ = Ze1 ⊕Ze"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "⟨e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "⟨e1, e"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "andarespeciﬁedbyacentralchargeZ :Γ→CsatisfyingIm Z(e"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Ifν> 0thentheonlynonzeroBPSinvariantsareΩ(±e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Ifν> 0thentheonlynonzeroBPSinvariantsareΩ(±e1) = Ω(±e"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Ω(e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Ω(e1 + e"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "Ω(e1 + e2) = (−1)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Ω(±e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Ω(±e1) = Ω(±e"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Ω(±e1) = Ω(±e2) = Ω(±(e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Ω(±e1) = Ω(±e2) = Ω(±(e1 + e"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Ω(±(me"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Ω(±(me1 + ne"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Ω(±(e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Ω(±(e1 + e"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "e"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "2π · w"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "oupledassumptionimpliesthattheactiveclassesγ∈ΓspanasubgroupΓ"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "ofabasisofthequotientΓ/Γ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ofabasisofthequotientΓ/Γa,togiveabasis(γ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ofabasisofthequotientΓ/Γa,togiveabasis(γ1, · · ·, γ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "deﬁnedbymakingarbitrarychoicesξ(γ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ofBPSstructures(Γ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ofBPSstructures(Γp, Z"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ofBPSstructures(Γp, Zp, Ω"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "(b)Givenacovariantlyconstantfamilyofelementsγ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "(b)Givenacovariantlyconstantfamilyofelementsγp∈Γ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "acovariantlyconstantfamilyofelementsγp∈Γp,thecentralchargesZ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "variantlyconstantfamilyofelementsγp∈Γp,thecentralchargesZp(γ"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "S"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "Sp(ℓ) ∈Aut(T"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "(Z(e"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(Z(e1), Z(e"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(Z(e1), Z(e2)) ∈h"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "π:M→HomZ(Γ, C)∼= C"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "p 7→Z"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "isomorphism.Inthatcase,ifwechooseabasis(γ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "isomorphism.Inthatcase,ifwechooseabasis(γ1, · · ·, γ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "m.Inthatcase,ifwechooseabasis(γ1, · · ·, γn)⊂Γ,thefunctionsz"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "hatcase,ifwechooseabasis(γ1, · · ·, γn)⊂Γ,thefunctionszi=Z(γ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "(γ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(γ1, · · ·, γ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "whichweviewasafunctionoftheco-ordinates(z"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "whichweviewasafunctionoftheco-ordinates(z1, · · ·, z"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "whichweviewasafunctionoftheco-ordinates(z1, · · ·, zn)∈C"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "2πi·∂log Yγ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "whereǫij= ⟨γ"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "whereǫij= ⟨γi, γ"
+  },
+  {
+   "page": 13,
+   "mark": "w",
+   "context": "4"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4w"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "Υ(w) =e−ζ′(−1)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "\u00132"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Ω(γ) · B"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "Ω(γ) · B2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "{ωC= B + iω∈H"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "B2g B2g−2 (2πt)"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "B2g B2g−2 (2πt)2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "GV(0, β)B"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "GV(0, β)B2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "GV(0, β)B2g (2πt)"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "GV(0, β)B2g (2πt)2"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "2g (2g −2)!Li"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "2g (2g −2)!Li3−2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2g (2g −2)!Li3−2g(e"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "m = (m"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "m = (m1, · · ·, m"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "m"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "ℏ2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "ℏ2d"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "dz"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "dz2"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "dz2y(z; ℏ) = q(z)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "S<H(∆) = Sℓ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "S<H(∆) = Sℓ1◦Sℓ"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "S<H(∆) = Sℓ1◦Sℓ2◦· · · ◦Sℓ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "corresponding totheﬁnitelymany raysℓ"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "H"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "X"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "Xr :H"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "Xr,γ :H"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "functionX"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "functionXr :H"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "forallt ∈H"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "forallt ∈Hr−∩H"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "ast →0inthehalf-planeH"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "fort ∈H"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "at if an active class γ∈Γ satisﬁes Z(γ) ∈∆, and we take t ∈H"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "t if an active class γ∈Γ satisﬁes Z(γ) ∈∆, and we take t ∈Hr"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": " an active class γ∈Γ satisﬁes Z(γ) ∈∆, and we take t ∈Hr1 ∩H"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "an active class γ∈Γ satisﬁes Z(γ) ∈∆, and we take t ∈Hr1 ∩Hr"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "Condition(RH2)thenimpliesthatX"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "Condition(RH2)thenimpliesthatXr"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "Condition(RH2)thenimpliesthatXri(t)∈U∆(R)whenevert∈H"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Condition(RH2)thenimpliesthatXri(t)∈U∆(R)whenevert∈Hr"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "Condition(RH2)thenimpliesthatXri(t)∈U∆(R)whenevert∈Hr1∩H"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Condition(RH2)thenimpliesthatXri(t)∈U∆(R)whenevert∈Hr1∩Hr"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "(1 −X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "Xr+,β(t) = X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "ItwillbeusefultoconsiderthemapsY"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "ItwillbeusefultoconsiderthemapsYr :H"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "exp(Z/t) · X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "exp(Z/t) · Xr(t) = Y"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "Yr,γ(t) = yγ(Y"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "sectorcontainingnoactiverays,thenthetwofunctionsX"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "sectorcontainingnoactiverays,thenthetwofunctionsXr"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "sectorcontainingnoactiverays,thenthetwofunctionsXri :H"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "sectorcontainingnoactiverays,thenthetwofunctionsXri :Hr"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "gluetogethertogiveaholomorphicfunctiononH"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "gluetogethertogiveaholomorphicfunctiononHr"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "gluetogethertogiveaholomorphicfunctiononHr1∪H"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "gluetogethertogiveaholomorphicfunctiononHr1∪Hr"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "r⊂C∗isnotalimitofactiverays,thenthecorrespondingfunctionX"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "neighbourhoodoftheclosureofH"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "ontheintersectionofH"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Tσ= {g :Γ →{±1} : g(γ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Tσ= {g :Γ →{±1} : g(γ1 + γ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Tσ= {g :Γ →{±1} : g(γ1 + γ2) = (−1)⟨γ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Tσ= {g :Γ →{±1} : g(γ1 + γ2) = (−1)⟨γ1,γ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Tσ= {g :Γ →{±1} : g(γ1 + γ2) = (−1)⟨γ1,γ2⟩g(γ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Tσ= {g :Γ →{±1} : g(γ1 + γ2) = (−1)⟨γ1,γ2⟩g(γ1) · g(γ"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Z(γ)∈Cbyaﬁxedscalarλ∈C∗.ItisthenclearthatifX"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "allt ∈H"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "SincewecancoverC∗bythehalf-planesH"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "SincewecancoverC∗bythehalf-planesHr"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "coverC∗bythehalf-planesHrideﬁnedbyﬁnitelymanynon-activeraysr"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "to a meromorphic function CP"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "to a meromorphic function CP1→CP"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "r,β(t):H"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "r,β(t))−1 :H"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "forallnon-activeraysr⊂C∗,andallt ∈H"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "p 7→Z"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "(Dπ)"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "(Dπ)p:T"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "intp∈Misanisomorphism.WecanthereforeidentifythetangentspaceT"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Moreexplicitly,wecanchooseabasis(γ"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Moreexplicitly,wecanchooseabasis(γ1, · · ·, γ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "z"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "zi(p) = Z"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "zi(p) = Zp(γ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "asco-ordinatesonM.Thedualofthemap(23)identiﬁesγ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "rdinatesonM.Thedualofthemap(23)identiﬁesγi∈Γwiththeelementdz"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "{z"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "{zi, z"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "ǫij= ⟨γ"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "ǫij= ⟨γi, γ"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Y"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "Yr= Y"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "mann-Hilbert problems associated to the BPS structures (Γ, Z"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "-Hilbert problems associated to the BPS structures (Γ, Zp, Ω"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "weassumethatY"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "wheretherayr⊂C∗isactiveintheBPSstructure(Γ, Z"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "wheretherayr⊂C∗isactiveintheBPSstructure(Γ, Zp, Ω"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "·dY"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "t ∈C∗.Aτ-functionforthefamilyofsolutionsY"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "τ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "τr= τ"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "hatV (t)istheHamiltonianvectorﬁeldofthefunction(2πi) · log τ"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "2πi·∂log Yr,γ"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "Y"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "Yr(t) = Yr,γ∨(t):H"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "ItfollowsfromRemark4.5thatthefunctionsY"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "condition(i)notethatift∈Hℓ+thentliesinthedomainsofdeﬁnitionH"
+  },
+  {
+   "page": 24,
+   "mark": "w",
+   "context": "e"
+  },
+  {
+   "page": 24,
+   "mark": "w",
+   "context": "2π · w"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "w"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "2) log"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "2g(2g −1)"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "2g(2g −1)w"
+  },
+  {
+   "page": 25,
+   "mark": "g",
+   "context": "2g(2g −1)w1−2"
+  },
+  {
+   "page": 25,
+   "mark": "g",
+   "context": "whereB2"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "uctistakenovertheﬁnitelymanyactiveclassesγ∈ΓforwhichZ(γ) ∈iH"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "rayℓ.Thenℓ⊂iH"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "rayℓ.Thenℓ⊂iHr+whereas−ℓ⊂iH"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "rayℓ.Thenℓ⊂iHr+whereas−ℓ⊂iHr−.Assumethatt∈H"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "rayℓ.Thenℓ⊂iHr+whereas−ℓ⊂iHr−.Assumethatt∈Hr−∩H"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "\u00132"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "Ω(γ)⟨β, γ⟩B"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "Ω(γ)⟨β, γ⟩B2"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "validast→0inthehalf-planeH"
+  },
+  {
+   "page": 27,
+   "mark": "w",
+   "context": "4"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "Υ(w) =e−ζ′(−1)"
+  },
+  {
+   "page": 27,
+   "mark": "w",
+   "context": "deﬁningthefactorw"
+  },
+  {
+   "page": 27,
+   "mark": "w",
+   "context": "2g(2g −2)"
+  },
+  {
+   "page": 27,
+   "mark": "g",
+   "context": "2g(2g −2)w−(2"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "dwlog Υ(w) = w"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "2−w + w"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "2+ w"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "abasis(γ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "abasis(γ1, · · ·, γ"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "abasis(γ1, · · ·, γn) ⊂Γ,andusingthelocalco-ordinatesz"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "abasis(γ1, · · ·, γn) ⊂Γ,andusingthelocalco-ordinateszi= Z(γ"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "Ω(γ)ǫij"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "Ω(γ)ǫij m"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "wherewewroteǫij= ⟨γ"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "wherewewroteǫij= ⟨γi, γ"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "i"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "im"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "imi(γ)γ"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "=∂log Yr,γ"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "Ω(γ)⟨γ, γ"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "w"
+  },
+  {
+   "page": 28,
+   "mark": "j",
+   "context": "\u0011Ω(γ)⟨γ"
+  },
+  {
+   "page": 28,
+   "mark": "g",
+   "context": "\u00132"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "log τ"
+  },
+  {
+   "page": 28,
+   "mark": "g",
+   "context": "Ω(γ) · B2"
+  },
+  {
+   "page": 28,
+   "mark": "r",
+   "context": "validast →0inthehalf-planeH"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "GW(g, β) · xβ· λ"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "GW(g, β) · xβ· λ2"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "genus g Gromov-Witten invariant for stable maps of class β∈H"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "(−1)"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "(−1)g−1· B"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "(−1)g−1· B2"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "(−1)g−1· B2g · B"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "(−1)g−1· B2g · B2"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "F"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "F0(x, λ) = a"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "F0(x, λ) = a0(x)λ−2+ a"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "4g · (2g −2) · (2g −2)!λ"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "4g · (2g −2) · (2g −2)!λ2"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "\u0011\u00112"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "(−1)"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "(−1)g−1B"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "(−1)g−1B2"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "s"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "2g(2g −2)!· s"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "2g(2g −2)!· s2"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "wecanwritethecoeﬃcientofλ"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "wecanwritethecoeﬃcientofλ2"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "GV(0, β) ·(−1)"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "GV(0, β) ·(−1)g−1B"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "GV(0, β) ·(−1)g−1B2"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "2g(2g −2)!· Li"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "2g(2g −2)!· Li3−2"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ch(E) = (β, n) ∈Γ = H"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "(−1)idimC Ext"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "X(E"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "X(E1, E"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "whereωC=B + iω∈H"
+  },
+  {
+   "page": 31,
+   "mark": "b",
+   "context": "derivedcategoryD"
+  },
+  {
+   "page": 32,
+   "mark": "b",
+   "context": "involveconstructingstabilityconditionsonD"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "Ω(γ) · B"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "Ω(γ) · B2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "Z(γ)"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "Z(γ)2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "of (2πit)"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "of (2πit)2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "k2"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "k2g−2=χ(X)(−1)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "k2g−2=χ(X)(−1)g−1B"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "k2g−2=χ(X)(−1)g−1B2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "k2g−2=χ(X)(−1)g−1B2g B"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "k2g−2=χ(X)(−1)g−1B2g B2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2g(2g −2)(2π)"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "2g(2g −2)(2π)2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "(vβ−k)"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "(vβ−k)2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2g(2g −2)(2π)"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "2g(2g −2)(2π)2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "(z −k)"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "(z −k)2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "(z −k)2g−2=(2πi)"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "(z −k)2g−2=(2πi)2"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "(2g −3)!Li"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "(2g −3)!Li3−2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "(2g −3)!Li3−2g(e"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "(−1)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "(−1)g−1B"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "(−1)g−1B2"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "GV(0, β) · Li"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "GV(0, β) · Li3−2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "GV(0, β) · Li3−2g(e"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "m = {m"
+  },
+  {
+   "page": 33,
+   "mark": "k",
+   "context": "m = {m1, · · ·, m"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "k≥1,m"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "ItdeﬁnesadeRhamcohomologyclassinH"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "π:Quad(g, m) →HomZ(Γ, C)∼= C"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "jectsisomorphictoP"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "ℏ2"
+  },
+  {
+   "page": 35,
+   "mark": "y",
+   "context": "dz2"
+  },
+  {
+   "page": 35,
+   "mark": "z",
+   "context": "\u0010 Z"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "\u0010 Zz"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "T"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "Tk(z) · ℏ"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "ℏ2"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "(Γ, Z, Ω)beaBPSstructure.Givenabasis(γ"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "(Γ, Z, Ω)beaBPSstructure.Givenabasis(γ1, · · ·, γ"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "diγ"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "diγiwithd"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "C[[T]] = C[[y"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "C[[T]] = C[[y1, · · ·, y"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "γ"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "|Z(γ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "|Z(γ1 + γ"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "|Z(γ1 + γ2)| ≥min(|Z(γ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "|Z(γ1 + γ2)| ≥min(|Z(γ1)|, |Z(γ"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "wheneverγ"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "wheneverγi∈ΓsatisfyZ(γ"
+  },
+  {
+   "page": 40,
+   "mark": "p",
+   "context": "BPSstructures(Γ"
+  },
+  {
+   "page": 40,
+   "mark": "p",
+   "context": "BPSstructures(Γp, Z"
+  },
+  {
+   "page": 40,
+   "mark": "p",
+   "context": "BPSstructures(Γp, Zp, Ω"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "γ"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "γp∈Γ"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "γp∈Γp,thecentralchargesZ"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "γp∈Γp,thecentralchargesZp(γ"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "∥· ∥p:Γ"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "Ω"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "Ωp(γ"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "Ωp(γp)̸ = 0forsomep ∈F=⇒|Z"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "Ωp(γp)̸ = 0forsomep ∈F=⇒|Zp(γ"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "N>0,andaconvexsector∆⊂C∗.WecantrivialisethelocalsystemΓ"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "ntractibleopensubsetU⊂M.AframedvariationofBPSstructures(Γ, Z"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "ctibleopensubsetU⊂M.AframedvariationofBPSstructures(Γ, Zp, Ω"
+  },
+  {
+   "page": 41,
+   "mark": "n",
+   "context": "π:M→HomZ(Γ, C)∼= C"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "p 7→Z"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "onof the BPS(or equivalentlyDT) invariants:if one knowsthe Ω"
+  },
+  {
+   "page": 42,
+   "mark": "p",
+   "context": "wall-crossingformulais satisﬁedifallelementsS"
+  },
+  {
+   "page": 42,
+   "mark": "p",
+   "context": "structures(Γ, Z"
+  },
+  {
+   "page": 42,
+   "mark": "p",
+   "context": "structures(Γ, Zp, Ω"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "collectionofcodimensiononerealsubmanifoldsW"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "k1< k"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "k1 · ∥γ∥< |Z(γ)| < k"
+  },
+  {
+   "page": 43,
+   "mark": "p",
+   "context": "x"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 43,
+   "mark": "x",
+   "context": "e2"
+  },
+  {
+   "page": 44,
+   "mark": "p",
+   "context": "S"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "Sp∥γ∥p· (e"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "R2≥R"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "R2≥R1=⇒U∆(R"
+  },
+  {
+   "page": 44,
+   "mark": "1",
+   "context": "R2≥R1=⇒U∆(R2) ⊆U∆(R"
+  },
+  {
+   "page": 45,
+   "mark": "i",
+   "context": "f :U∆(R)→T,wheretwosuchmapsf"
+  },
+  {
+   "page": 45,
+   "mark": "i",
+   "context": "f :U∆(R)→T,wheretwosuchmapsfi :U∆(R"
+  },
+  {
+   "page": 46,
+   "mark": "x",
+   "context": "dtlog"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "Toprovetheclaim,letusdeﬁnet"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "φ:[0, t"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "for0≤t<t"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "henceextendstoaﬂowφ:[0, t"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "φ(t"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "in(53)wehave∥γ∥> H/k"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "Suppose given a sequence of invertible ∆-bounded map germs f"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "◦f"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "min(m, n) →∞.Thentheholomorphicmapsf"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "e−d·∥β∥|xβ(f"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "e−d·∥β∥|xβ(fm(ξ))| ≤|xβ(f"
+  },
+  {
+   "page": 48,
+   "mark": "d",
+   "context": "e−d·∥β∥|xβ(fm(ξ))| ≤|xβ(fn(ξ))| ≤e"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "e−d·∥β∥|xβ(fm(ξ))| ≤|xβ(fn(ξ))| ≤ed·∥β∥|xβ(f"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "Proof.LetusconsidertwoﬁnitecompositionsP"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "Proof.LetusconsidertwoﬁnitecompositionsP1andP"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "S(∆)≤H"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "S(∆)≤H2= S(∆)≤H"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "S(∆)≤H2= S(∆)≤H1◦X(H"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "S(∆)≤H2= S(∆)≤H1◦X(H1, H"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "whereX(H"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "whereX(H1, H"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "whereX(H1, H2)hasnormatmost2ǫ · e−H"
+  },
+  {
+   "page": 48,
+   "mark": "j",
+   "context": "namelytheHamiltonianvectorﬁeldofthefunctionDT(ℓ"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "Ω(γ) ·x"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "Ω(γ) ·x"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "n"
+  }
+ ]
+}

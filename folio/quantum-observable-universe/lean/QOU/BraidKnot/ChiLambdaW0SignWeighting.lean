@@ -27,7 +27,7 @@ character theory alone — it depends on the Wenzl-bridge Markov-trace
 values — and remains open in the manuscript; only the `k = 5, 6`
 witnessed instances are discharged here.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.md
 -/
 
 namespace QOU.BraidKnot
@@ -55,7 +55,7 @@ def S_w0 (c3 c21 c111 : ℝ) : ℝ :=
 /-- **Long-element weighting identity.**
 Since `χ_{(2,1)}(w₀) = 0`, the weighted sum collapses to
 `S_k^{(w₀)} = c_k^{(3)} − c_k^{(1,1,1)}`. -/
--- Ref: [manuscript] prop:chi-lambda-w0-sign-weighting (S_k^{(w₀)} = c_k^{(3)} − c_k^{(1,1,1)})
+-- Ref: [leitner2026] prop:chi-lambda-w0-sign-weighting (S_k^{(w₀)} = c_k^{(3)} − c_k^{(1,1,1)})
 theorem S_w0_collapse (c3 c21 c111 : ℝ) :
     S_w0 c3 c21 c111 = c3 - c111 := by
   unfold S_w0 chiV3_w0 chiV21_w0 chiV111_w0
@@ -76,13 +76,13 @@ noncomputable def c6_V111 : ℝ := 955 / 2
 
 /-- **Witnessed sign at `k = 5`.**  `S₅^{(w₀)} = 1/4 − 533/2 < 0`,
 matching the empirical `c₅ ≈ −395.41 < 0`. -/
--- Ref: [manuscript] prop:chi-lambda-w0-sign-weighting (sign agreement at k = 5)
+-- Ref: [leitner2026] prop:chi-lambda-w0-sign-weighting (sign agreement at k = 5)
 theorem S_w0_k5_neg : S_w0 c5_V3 0 c5_V111 < 0 := by
   rw [S_w0_collapse]; unfold c5_V3 c5_V111; norm_num
 
 /-- **Witnessed sign at `k = 6`.**  `S₆^{(w₀)} = 1/4 − 955/2 < 0`,
 matching the empirical `c₆ ≈ −45485 < 0`. -/
--- Ref: [manuscript] prop:chi-lambda-w0-sign-weighting (sign agreement at k = 6)
+-- Ref: [leitner2026] prop:chi-lambda-w0-sign-weighting (sign agreement at k = 6)
 theorem S_w0_k6_neg : S_w0 c6_V3 0 c6_V111 < 0 := by
   rw [S_w0_collapse]; unfold c6_V3 c6_V111; norm_num
 

@@ -1,0 +1,35 @@
+21
+
+CHAPTER III
+
+SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA
+
+IIL1. Schur-Wey! Duality
+
+We review the classical notion of Schur-Weyl duality between the general linear groups
+and the symmetric group. Then, we generalize this in two directions, giving a duality theorem
+between the quantum group associated to the Lie superaigebra gI(m|n) and the Iwahori-Hecke
+
+algebra Ha.
+
+Itf.1.1. Classical Schur-Weyl Duality
+
+Fix the ground field C. Let Par(d) denote the set of all integer partitions of d. To the
+partition A = (Ai, A2,...) with Ay > Ag > +++ > 0, associate its Young diagram, that is, the left-
+justified diagram with A, boxes on the first row, Ag boxes on the second row, etc. Let $(A) denote
+the irreducible CSg-module, called the Specht module associated to \ € Par(d).
+
+Let A! (n,d) denote the set of all \ € Par(d) whose Young diagram has d boxes in at most
+n rows. The irreducible (polynomial) highest weight GL(n)-module of highest weight » will be
+denoted V(A), where we fix the standard choice of maximal torus and Borel subalgebra consisting
+of diagonal matrices and upper triangular matrices, respectively.
+
+Let C” = V(1,0,...,0) denote the natural n-dimensional vector representation of the
+
+group GL(n), and consider the tensor space
+
+C2 @--.-@Cr (III.1)
+
+with d tensor factors. This is a left GZ(n)-module via the diagonal action:
+
+9+ (1 B+ @La) = (G21) @ + @(g- Ta). (HII.2)

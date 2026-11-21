@@ -1,0 +1,32 @@
+16. Explicit formula for parallel transport in s>.
+
+Let x and y be any pair of distinct, non-antipodal points in S° c R*,
+equivalently, any pair of linearly independent unit vectors in R*. Then there
+is a unique element M € SO(4) that maps x to y and leaves fixed the
+two-dimensional subspace of R* consisting of all vectors orthogonal to both
+x and y. For ve R’, this mapping is given by
+
+<x+y,v> 4 1+2<x,y> 1
+
+M(v) = v ~ 1+<x,y> x 1+ <x,y> “T+ <xy> yiv)y.
+
+Direct calculation shows that M € SO(4), and is therefore the desired isometry.
+
+If v € T,S*, then <v,x> = 0 and the formula for M(v) simplifies to
+
+<y,V>
+
+M(v) =v — a <Ky>
+
+(x + y).
+
+In this case, M(v) is the result of parallel transport of v from x to y, so we
+will write
+
+<y,V>
+
+Py xv = M(v) =V— T+<xy>
+
+(x + y).
+
+39

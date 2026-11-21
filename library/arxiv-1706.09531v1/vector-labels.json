@@ -1,0 +1,754 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1706.09531v1",
+  "pages": [
+    {
+      "page": 21,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1: Evolution of the three gauge couplings αi with momentum Q: Standard Model (left panel) and Minimal Supersymmetric Standard Model (right panel)"
+      ],
+      "labels": [
+        {
+          "text": "Figure 1: Evolution of the three gauge couplings αi with momentum Q: Standard Model (left",
+          "bbox": [
+            72.0,
+            235.65,
+            540.04,
+            248.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "panel) and Minimal Supersymmetric Standard Model (right panel)",
+          "bbox": [
+            72.0,
+            249.2,
+            391.65,
+            260.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "I will discuss the empirical veriﬁcation of the ﬁrst two features and the consequent im-",
+          "bbox": [
+            89.56,
+            282.85,
+            540.01,
+            294.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "plications in this and the next section. The third feature — proton decay — which now",
+          "bbox": [
+            72.0,
+            297.3,
+            540.02,
+            309.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "constitutes the missing piece of evidence for grand uniﬁcation is discussed in Sec. 7.",
+          "bbox": [
+            72.0,
+            311.74,
+            501.42,
+            323.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It has been known for some time that the precision measurements of the standard model",
+          "bbox": [
+            89.56,
+            333.39,
+            540.03,
+            345.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "coupling constants (in particular sin2θW) at LEP put severe constraints on the idea of",
+          "bbox": [
+            72.0,
+            346.61,
+            540.02,
+            360.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "grand uniﬁcation.",
+          "bbox": [
+            72.0,
+            362.28,
+            164.17,
+            374.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Owing to these constraints, the non-supersymmetric minimal SU(5),",
+          "bbox": [
+            174.64,
+            362.28,
+            540.01,
+            374.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and for similar reasons, the one-step breaking minimal non-supersymmetric SO(10)-model",
+          "bbox": [
+            72.0,
+            376.73,
+            540.01,
+            388.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "as well, are now excluded[80]. For example, minimal non-supersymmetric SU(5) predicts:",
+          "bbox": [
+            72.0,
+            391.17,
+            540.01,
+            403.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "LEP =",
+          "bbox": [
+            532.48,
+            399.81,
+            564.37,
+            417.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "sin2 θW(mZ)) |MS= 0.214±0.004, where as current experimental data show: sin2 θW(mZ)expt",
+          "bbox": [
+            72.0,
+            400.84,
+            531.99,
+            420.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0.23153 ± 0.00016[81]. The disagreement with respect to sin2 θW is reﬂected most clearly by",
+          "bbox": [
+            72.0,
+            415.28,
+            540.0,
+            433.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the fact that the three gauge couplings (g1, g2 and g3), extrapolated from below, fail to meet",
+          "bbox": [
+            72.0,
+            434.51,
+            540.03,
+            448.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "by a fairly wide margin in the context of minimal non-supersymmetric SU(5) (see left panel",
+          "bbox": [
+            72.0,
+            448.96,
+            540.01,
+            460.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of Fig. 1).",
+          "bbox": [
+            72.0,
+            463.4,
+            122.91,
+            475.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "But the situation changes radically if one assumes that the standard model is replaced",
+          "bbox": [
+            89.56,
+            485.05,
+            540.04,
+            497.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "by the minimal supersymmetric standard model (MSSM), above a threshold of about 1 TeV,",
+          "bbox": [
+            72.0,
+            499.49,
+            540.06,
+            511.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "which is motivated independently by requiring naturalness in the understanding of the Higgs",
+          "bbox": [
+            72.0,
+            513.94,
+            540.05,
+            525.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "mass[21]. Furthermore, subject to the assumption of R-parity or matter-parity conservation,",
+          "bbox": [
+            72.0,
+            528.39,
+            540.08,
+            540.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "which serves to avoid dangerous d=4 proton-decay operators, low-energy supersymmetry",
+          "bbox": [
+            72.0,
+            542.83,
+            540.07,
+            554.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "provides the lightest supersymmetric particle (LSP) as a natural candidate for the cold dark",
+          "bbox": [
+            72.0,
+            557.28,
+            540.06,
+            569.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "matter. With low-energy supersymmetry, the three gauge couplings are found to meet [19]",
+          "bbox": [
+            72.0,
+            571.72,
+            540.06,
+            583.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to a very good approximation (See Fig. 1, right panel) at a scale given by",
+          "bbox": [
+            72.0,
+            586.17,
+            449.84,
+            598.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "MU ≈2 × 1016 GeV (MSSM or SUSY SU(5))",
+          "bbox": [
+            178.58,
+            607.38,
+            413.51,
+            625.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(7)",
+          "bbox": [
+            525.06,
+            612.32,
+            540.01,
+            624.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This dramatic meeting of the three gauge couplings, or equivalently the excellent agree-",
+          "bbox": [
+            89.56,
+            645.67,
+            540.04,
+            657.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ment of the MSSM-based prediction of sin2 θW(mZ)Th = 0.2315 ± 0.003[19,80] with the",
+          "bbox": [
+            72.0,
+            655.34,
+            540.04,
+            676.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "observed value given above, provides a strong support for the ideas of both grand uniﬁcation",
+          "bbox": [
+            72.0,
+            674.56,
+            540.08,
+            686.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and low-energy supersymmetry, as being relevant to physics at short distances.",
+          "bbox": [
+            72.0,
+            689.01,
+            476.74,
+            700.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The simplest interpretation of the observed meeting of the three gauge couplings at",
+          "bbox": [
+            89.56,
+            710.66,
+            540.04,
+            722.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "19",
+          "bbox": [
+            300.15,
+            740.54,
+            311.86,
+            752.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 44,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 3,
+      "captionCandidates": [
+        "Figure 2: d = 6 proton decay operator",
+        "Figure 3: The standard d = 5 proton decay operator. The eHc ( eH′",
+        "Figure 4: The “new” d = 5 operators related to the Majorana masses of the RH neutrinos. Note that the vertex at the upper right utilizes the coupling in Eq. (9) which assigns Majorana masses to νR’s, while the lower right vertex utilizes the gij couplings in Eq. (7) which are needed to generate CKM mixings."
+      ],
+      "labels": [
+        {
+          "text": "Figure 2: d = 6 proton decay operator",
+          "bbox": [
+            212.72,
+            230.14,
+            395.67,
+            241.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 3: The standard d = 5 proton decay operator. The eHc ( eH′",
+          "bbox": [
+            72.0,
+            432.82,
+            394.68,
+            452.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            9.96,
+            10.91
+          ]
+        },
+        {
+          "text": "c) are color triplet(anti-triplet)",
+          "bbox": [
+            391.49,
+            434.59,
+            540.03,
+            447.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Higgsinos belonging to 5H(5H) of SU(5) or 10H of SO(10).",
+          "bbox": [
+            72.0,
+            448.14,
+            355.53,
+            460.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 4: The “new” d = 5 operators related to the Majorana masses of the RH neutrinos. Note",
+          "bbox": [
+            72.0,
+            652.46,
+            540.02,
+            663.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "that the vertex at the upper right utilizes the coupling in Eq. (9) which assigns Majorana masses to",
+          "bbox": [
+            72.0,
+            666.0,
+            540.05,
+            676.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "νR’s, while the lower right vertex utilizes the gij couplings in Eq. (7) which are needed to generate",
+          "bbox": [
+            72.0,
+            679.55,
+            540.03,
+            692.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "CKM mixings.",
+          "bbox": [
+            72.0,
+            693.1,
+            141.76,
+            704.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "42",
+          "bbox": [
+            300.15,
+            740.54,
+            311.86,
+            752.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

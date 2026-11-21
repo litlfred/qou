@@ -2,127 +2,172 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1112.5179v1",
  "source_sha256": "b58af08336c40994",
- "brief": "3-Manifolds and 3d Indices — We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories.",
- "extended": "**3-Manifolds and 3d Indices**\n\n79 pp, 23 sections.\n\n**Abstract.** We identify a large classR of three-dimensionalN = 2 superconformal ﬁeld the- ories. This class includes the eﬀective theories TM of M5-branes wrapped on 3-manifolds M, discussed in previous work by the authors, and more generally comprises theories that admit a UV description as abelian Chern-Simons-matter theories with (possibly non-perturbative) superpotential. Mathematically, class R might be viewed as an extreme quantum general- ization of the Bloch group; in particular, the equivalence relation among theories in class R is a quantum-ﬁeld-theoretic “2–3 move.” We proceed to study the supersymmetric index of theories in classR, uncovering its physical and mathematical properties, including relations to algebras of line operators and to 4d indices.\n\n**Outline.** 1 Introduction; 2 Actions on the 3d index; 2.3 Adding a superpotential; 2.4 A discrete symmetry; 2.5 An operator algebra; 3 The tetrahedron index; 3.2 Triality; 4 The index of TM; 4.1 Gluing rules; 4.2 The bipyramid; 4.3 Some knot complements; 4.5 Quantum Lagrangian operators; 4.6 Tentacles and vacua; 4.7 Mutation invariance from gauge theory; 5 The index from four dimensions and line oper; 5.1 Line operator algebra; 5.2 Boundary conditions for hypermultiplets; 5.3 Non-abelian line defects",
+ "brief": "3-Manifolds and 3d Indices — We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories.",
+ "extended": "**3-Manifolds and 3d Indices**\n\n79 pp, 32 sections.\n\n**Abstract.** We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories. This class includes the eﬀective theories TM of M5-branes wrapped on 3-manifolds M, discussed in previous work by the authors, and more generally comprises theories that admit a UV description as abelian Chern-Simons-matter theories with (possibly non-perturbative) superpotential. Mathematically, class R might be viewed as an extreme quantum general- ization of the Bloch group; in particular, the equivalence relation among theories in class R is a quantum-ﬁeld-theoretic “2–3 move.” We proceed to study the supersymmetric index of theories in class R, uncovering its physical and mathematical properties, including relations to algebras of line operators and to 4d indices.\n\n**Outline.** Front matter; 1 Introduction; 2 Actions on the 3d index; 2.1 The Sp(2N,Z) action; 2.2 Affine shifts; 2.3 Adding a superpotential; 2.4 A discrete symmetry; 2.5 An operator algebra; 3 The tetrahedron index; 3.1 Parity and symmetry; 3.2 Triality; 3.3 Difference equations; 4 The index of TM; 4.1 Gluing rules; 4.2 The bipyramid; 4.3 Some knot complements; 4.4 Mapping tori and T[SU(2)]; 4.5 Quantum Lagrangian operators",
  "tokens": {
   "brief": 28,
-  "extended": 334
+  "extended": 315
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "2-7"
+   "pages": "3-7"
   },
   {
    "id": "sec-001-2-actions-on-the-3d-index",
    "title": "Actions on the 3d index",
-   "pages": "7-11"
+   "pages": "7-8"
   },
   {
-   "id": "sec-002-23-adding-a-superpotential",
+   "id": "sec-002-21-the-sp2nz-action",
+   "title": "The Sp(2N,Z) action",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-003-22-affine-shifts",
+   "title": "Affine shifts",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-004-23-adding-a-superpotential",
    "title": "Adding a superpotential",
    "pages": "11-12"
   },
   {
-   "id": "sec-003-24-a-discrete-symmetry",
+   "id": "sec-005-24-a-discrete-symmetry",
    "title": "A discrete symmetry",
    "pages": "12-13"
   },
   {
-   "id": "sec-004-25-an-operator-algebra",
+   "id": "sec-006-25-an-operator-algebra",
    "title": "An operator algebra",
    "pages": "13-16"
   },
   {
-   "id": "sec-005-3-the-tetrahedron-index",
+   "id": "sec-007-3-the-tetrahedron-index",
    "title": "The tetrahedron index",
-   "pages": "16-18"
+   "pages": "16-17"
   },
   {
-   "id": "sec-006-32-triality",
+   "id": "sec-008-31-parity-and-symmetry",
+   "title": "Parity and symmetry",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-009-32-triality",
    "title": "Triality",
-   "pages": "18-21"
+   "pages": "18-19"
   },
   {
-   "id": "sec-007-4-the-index-of-tm",
+   "id": "sec-010-33-difference-equations",
+   "title": "Difference equations",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-011-4-the-index-of-tm",
    "title": "The index of TM",
-   "pages": "21-21"
+   "pages": "21-22"
   },
   {
-   "id": "sec-008-41-gluing-rules",
+   "id": "sec-012-41-gluing-rules",
    "title": "Gluing rules",
-   "pages": "21-25"
+   "pages": "22-25"
   },
   {
-   "id": "sec-009-42-the-bipyramid",
+   "id": "sec-013-42-the-bipyramid",
    "title": "The bipyramid",
    "pages": "25-28"
   },
   {
-   "id": "sec-010-43-some-knot-complements",
+   "id": "sec-014-43-some-knot-complements",
    "title": "Some knot complements",
-   "pages": "28-34"
+   "pages": "28-31"
   },
   {
-   "id": "sec-011-45-quantum-lagrangian-operators",
+   "id": "sec-015-44-mapping-tori-and-tsu2",
+   "title": "Mapping tori and T[SU(2)]",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-016-45-quantum-lagrangian-operators",
    "title": "Quantum Lagrangian operators",
    "pages": "34-37"
   },
   {
-   "id": "sec-012-46-tentacles-and-vacua",
+   "id": "sec-017-46-tentacles-and-vacua",
    "title": "Tentacles and vacua",
    "pages": "37-42"
   },
   {
-   "id": "sec-013-47-mutation-invariance-from-gauge-theory",
+   "id": "sec-018-47-mutation-invariance-from-gauge-theory",
    "title": "Mutation invariance from gauge theory",
    "pages": "42-46"
   },
   {
-   "id": "sec-014-5-the-index-from-four-dimensions-and-line-operat",
+   "id": "sec-019-5-the-index-from-four-dimensions-and-line-operat",
    "title": "The index from four dimensions and line operators",
    "pages": "46-50"
   },
   {
-   "id": "sec-015-51-line-operator-algebra",
+   "id": "sec-020-51-line-operator-algebra",
    "title": "Line operator algebra",
    "pages": "50-51"
   },
   {
-   "id": "sec-016-52-boundary-conditions-for-hypermultiplets",
+   "id": "sec-021-52-boundary-conditions-for-hypermultiplets",
    "title": "Boundary conditions for hypermultiplets",
    "pages": "51-52"
   },
   {
-   "id": "sec-017-53-non-abelian-line-defects",
+   "id": "sec-022-53-non-abelian-line-defects",
    "title": "Non-abelian line defects",
-   "pages": "52-62"
+   "pages": "52-56"
   },
   {
-   "id": "sec-018-62-symplectic-action",
+   "id": "sec-023-6-the-index-as-sl2c-chern-simons-theory",
+   "title": "The index as SL(2,C) Chern-Simons theory",
+   "pages": "56-58"
+  },
+  {
+   "id": "sec-024-61-quantization-at-k0",
+   "title": "Quantization at k=0",
+   "pages": "58-62"
+  },
+  {
+   "id": "sec-025-62-symplectic-action",
    "title": "Symplectic action",
    "pages": "62-65"
   },
   {
-   "id": "sec-019-63-chern-simons-theory-from-6d",
+   "id": "sec-026-63-chern-simons-theory-from-6d",
    "title": "Chern-Simons theory from 6d",
    "pages": "65-68"
   },
   {
-   "id": "sec-020-a-proof-of-triality-for-the-tetrahedron-index",
+   "id": "sec-027-a-proof-of-triality-for-the-tetrahedron-index",
    "title": "A Proof of triality for the tetrahedron index",
    "pages": "68-70"
   },
   {
-   "id": "sec-021-b-figure-eight-index-from-six-tetrahedra",
+   "id": "sec-028-b-figure-eight-index-from-six-tetrahedra",
    "title": "B Figure-eight index from six tetrahedra",
    "pages": "70-71"
   },
   {
-   "id": "sec-022-c-quantum-lagrangian-calculations",
+   "id": "sec-029-c-quantum-lagrangian-calculations",
    "title": "C Quantum Lagrangian calculations",
-   "pages": "71-79"
+   "pages": "71-73"
+  },
+  {
+   "id": "sec-030-d-tentacles-and-difference-equations",
+   "title": "D Tentacles and difference equations",
+   "pages": "73-79"
   }
  ],
  "provenance": {

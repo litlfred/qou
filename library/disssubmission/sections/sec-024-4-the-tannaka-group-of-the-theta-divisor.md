@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-024-4-the-tannaka-group-of-the-theta-divisor
 section_title: "The Tannaka group of the theta divisor"
 section_number: 4
@@ -8,6 +8,7 @@ pages: 77-81
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 The geometric relevance of the constructions in the previous chapters
 is illustrated by the following example. Let X be a principally polarized

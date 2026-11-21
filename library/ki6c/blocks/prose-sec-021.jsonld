@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/ki6c/blocks/prose-sec-021",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Estimate of solutions of (35)",
-  "pageStart": 56,
+  "title": "A Estimate of solutions of systems of equations",
+  "pageStart": 55,
   "pageEnd": 56,
-  "text": "../sections/sec-021-estimate-of-solutions-of-35.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki6c",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki6c",
+  "text": "../sections/sec-021-a-estimate-of-solutions-of-systems-of-equations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
   "provenance": "ingested"
 }

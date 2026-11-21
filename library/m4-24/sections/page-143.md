@@ -1,0 +1,54 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-143
+section_title: "Page 143"
+section_number: null
+pages: 143-143
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 515
+
+(C. Lescop) In 1984, Casson defined his invariant of integral homology 3-
+spheres as an integer that “counts” the SU(2)-representations of their funda-
+mental group in an appropriate way (see [3, 159]). Cappell, Lee and Miller [76]
+showed that the Casson way of counting SU(2)-representations of the 7 works
+for any compact Lie group and provides other invariants of integral homology
+spheres.
+
+Question 10.3 (C. Lescop) Are the Cappell-Lee-Miller Casson-type SU(n)-
+invariants of finite type? If so, what are their degrees and their weight systems?
+
+Problem 10.4 (M. Polyak) Define an invariant of a pair (M,c) of a closed
+3-manifold M and a spin structure 0 on M such that
+
+Aown(M) = D> ACM, @)
+
+for any closed 3-manifold M , where the sum runs over all spin structures 0 on
+M.
+
+Note that the set of spin structures on M is a torsor over H!(M;Z/2Z) in
+the sense that differences of spin structures can be detected by cohomology
+classes in H!(M; Z/2Z), while the set of spin® structures on M is a torsor over
+H'(M;Z) in a similar sense.
+
+Remark It is shown [326] that there exists an invariant 4 of a rational ho-
+mology 3-sphere M associated with a spin® structure a on M such that
+
+Hi(M,Z)|Acw(M) = Aaa)
+
+for any rational homology 3-sphere M , where the sum runs over all spin® struc-
+tures a on M. It is conjectured [326] that @ is equal to Seiberg-Witten invariant
+for all rational homology 3-spheres.
+
+Remark (M. Polyak) The Casson invariant is a lift of The Rokhlin invariant.
+We expect that \(M,o) of Problem 10.4 should be a lift of «(M,o). How is
+YX, H(M,o) € Z/16Z related to Acwi(M)?
+
+It is known that this sum vanishes in Z/16Z when b;(M) > 3, while it is known
+[251] that Acwi(JZ) = 0 when b)(M) > 3.
+
+Geometry & Topology Monographs, Volume 4 (2002)

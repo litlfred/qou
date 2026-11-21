@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1801.04409v4/blocks/prose-sec-016",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Semisimplification of Tilt(GL(n)) when char(k)=2",
-  "pageStart": 29,
-  "pageEnd": 31,
-  "text": "../sections/sec-016-8-semisimplification-of-tiltgln-when-chark2.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1801.04409v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1801.04409v4",
+  "title": "Generic q",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "text": "../sections/sec-016-51-generic-q.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1801.04409v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1801.04409v4/manifest.jsonld",
   "provenance": "ingested"
 }

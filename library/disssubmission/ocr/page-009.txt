@@ -1,0 +1,40 @@
+Introduction
+
+The geometry of a smooth complex projective curve C with Jacobian
+variety Jac(C) is governed, after the choice of a base point on the curve, by
+the Abel-Jacobi morphism. In particular, the latter defines for each n € N
+a morphism C” = C x --- x C —+ Jac(C) whose fibres correspond to linear
+series of divisors on the curve, and the loci where the fibre dimension jumps
+are the subvarieties W,. C Jac(C) of special divisors that have been studied
+extensively in classical Brill-Noether theory [6].
+
+For smooth complex projective varieties Y of higher dimension one still
+has the Albanese morphism
+
+far YT =Yx-+-x¥ —+ X = Alb(Y),
+
+but here the situation is much harder to describe in general. For example, the
+image f|(Y) <> X can have any dimension between zero and dim(X), and
+there is no obvious substitute for Brill-Noether theory in general. In some
+sense, the first three chapters of this thesis provide a possible framework for
+such a substitute. More specifically, the properties of f, we are interested
+in (such as the loci on X where the fibre dimension jumps) can be studied
+via the higher direct images
+
+R'fi.(Cyn) for i>0,
+
+which are constructible sheaves in the sense that there exists a stratification
+of X into finitely many locally closed subvarieties over which they restrict
+to locally constant sheaves. In general the geometry of these higher direct
+image sheaves is rather involved, as we will see in a particular example in
+chapter 5. However, we propose a simple description of such direct images
+in terms of the representation theory of a reductive algebraic group that can
+be attached to Y via the Tannakian formalism [33].
+
+The basis for this Tannakian description will be a vanishing theorem for
+constructible sheaves on abelian varieties which can be seen as an analog
+of the Artin-Grothendieck affine vanishing theorem [7, exp. XIV, cor. 3.2]
+and contains as a special case the generic vanishing theorems of Green and
+Lazarsfeld [47]. For any character y : 1(X,0) —> C* of the fundamental
+group, let us denote by Ly the corresponding local system on X. Then in
+chapters 1 and 2 which are based on joint work with R. Weissauer [68],

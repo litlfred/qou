@@ -1,0 +1,47 @@
+74 Univariate asymptotics
+
+for the integral in (3.11), which can be relaxed to
+
+I= { (i + ce) dt
+1 n
+
+because cos(€) > 0. The integrand of J, monotonically decreases as n in-
+creases, and is finite for any positive n larger than the real part of a, so the
+decreasing limit is
+
+.
+J = lim J, = f et) dt,
+1
+
+noo
+
+which is finite as 0 < € < 2/2. We have now bounded all four integrals by
+multiples of n~°~', so the proof of statement (i) in the theorem is complete.
+The proof of statement (ii) is contained in this argument too. When | f(z)| <
+Kg(z) then the integral over y; is bounded above by 6Kn=*~!, the integral over
+y3 is o(n~*~!), and the integrals over y2 and y4 are bounded by JKn~°~!. Fur-
+thermore, the contributions to each of these four integrals from parts of y at
+distance greater than any fixed 6 > 0 from 1 are o(n7*"!). If f(z) = o(g(z)) at
+z = | then for any € > 0 there is a 6 such that |f(z)| < elg(z)| when |1 — z| < 6.
+It follows that a, < (2J + 6 + o(1))en-*"!. This is true for every ¢ > 0, whence
+a, = o(n-™!)~ oO
+
+Example 3.16 (Catalan asymptotics). Let a, = (?) be the nth Catalan
+number, whose generating function
+
+oo
+
+1-yi-& !-
+FO =D) anc" = _
+
+n=0
+
+was described in Example 2.14 of Chapter 2. The function f(z) has an algebraic
+singularity at z = 1/4, near which the asymptotic expansion for f begins
+
+3/2 2
+fi)=2-4 2 -248(1-2}-16(2-4 ol(3-4].
+
+Note that f(z)/ ¥1/4 — zis not analytic in any disk of radius 1/4+, since both
+integral and half-integral powers appear in f, but f is analytic in a A-domain.
+Since the integral powers of (1 —z) do not contribute to asymptotic behavior as

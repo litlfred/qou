@@ -8,6 +8,7 @@ pages: 19-29
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
 toc_source: inferred
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 6.1.
 In [T] Thurston describes how to obtain the complement W of the Whitehead link
@@ -21,8 +22,6 @@ octahedra one obtains incomplete hyperbolic structures on W , whose metric compl
 are hyperbolic Dehn surgeries and generalized Dehn surgeries on the Whitehead link.
 We refer the reader to [T] and [NZ] for details on generalized hyperbolic Dehn
 surgery. The essential point is that a generalized Dehn surgery on W is parameterized by
-292
-Walter D. Neumann and Alan W. Reid
 B´
 A´
 C´
@@ -55,164 +54,67 @@ Figure 11
 By cutting off the ends of W one obtains a compact manifold-with-boundary W
 which can be obtained by identifying truncated tetrahedra as in Fig. 12. The two boundary
 tori of W are triangulated as in Fig. 13, where the vertices are labeled according to the
-Arithmetic of Hyperbolic Manifolds
-293
-α
-δ
-e
-b
-z
-ν
-µ
-g
-d
-x
-γ
-ε
-c
-f
-y
-β
-ρ
+Arithmetic of Hyperbolic Manifolds 293
+
+g d
+
+v
 h
+N/
+()6
+<\
 a
-w
+f c
 Figure 12
-2
-2
-3
-1
-3
-3
-1
-3
-f
-g
-e
-h
+3 3 3 3
+b y
+Cc a Qa 6
+2 4
 d
-c
-a
-b
-4
-4
-3
-1
-3
-3
-1
-3
-δ
-µ
-ε
-ρ
-ν
-α
-β
-γ
+1 1 1 1
+h p
+g e u €
+2 4
+f to)
+3 3 3 3
 Figure 13
-edges of the triangulation of W . Careful inspection shows that the standard topological
+
+edges of the triangulation of W. Careful inspection shows that the standard topological
 meridian and longitude of each component of the Whitehead link are as indicated in
 Fig. 14, where we have also included labels for the complex parameters of the four
 tetrahedra.
-A note on orientations. In the discussion of Dehn surgery on the ﬁgure eight knot
+
+A note on orientations. In the discussion of Dehn surgery on the figure eight knot
 complement in [T], and also throughout [NZ], a non-standard orientation convention
 was used for the longitude/meridian pair at a cusp, due to the cusp torus being viewed
 from inside the manifold rather than outside (this pair is drawn with standard orientation
-294
-Walter D. Neumann and Alan W. Reid
-y´´
-x´
-y´´
-x´
-z´´
-y´
-z´´
-w´ y´´
-z´
-x´´
-y´
-w´´
-x´
-w´´
-z´ x´´
-w´
-x´´
-y´
-x´´
-w´
-y´´
-z´
-z´´
-w´
-z
-w
-x
-y
-w
-z
-y
-x
-m1
-l1
-z´´
-x´
-z´´
-x´
-y´´
-z´
-y´´
-w´ z´´
-y´
-x´´
-z´
-w´´
-x´
-w´´
-y´ x´´
-w´
-x´´
-z´
-x´´
-w´
-z´´
-y´
-y´´
-w´
-y
-w
-x
-z
-w
-y
-z
-x
-m2
-l2
+294 — Walter D. Neumann and Alan W. Reid
+
 Figure 14
-in Fig. 18 of [NZ], but this was inconsistent with the text). Thus (p, q) Dehn surgery
-in those discussions would be (p, −q) Dehn surgery in the convention which we follow
+
+in Fig. 18 of [NZ], but this was inconsistent with the text). Thus (p,q) Dehn surgery
+in those discussions would be (p,—q) Dehn surgery in the convention which we follow
 here, affecting some signs in some formulae.
+
 We can read off from Fig. 14 the consistency relations (see [NZ] or [T]) at the four
 edges:
-log w′′ + log z′ + log x′′ + log w′ + log x′′ + log y′ + log w′′ + log x′ = 2πi
-log w + log x + log y + log z = 2πi
-log z′′ + log w′ + log y′′ + log z′ + log y′′ + log x′ + log z′′ + log y′ = 2πi
-log w + log x + log z + log y = 2πi.
+
+log w” + log z’ + log” + logw’ + log2” + logy’ + logw” + log x’ = 27i
+log w + log x + logy + log z = 27
+
+log z” + log w’ + logy” + log z’ + logy” + log a’ + log z” + logy! = 27i
+log w + logx + log z+ logy = 277.
+
 Here log denotes the standard branch of natural log on the complex plane split along
-(−∞, 0]. Since x′ = x−1
-x
-and x′′ =
-1
-1−x and similarly for w, y, z, these simplify to
+
+(—00, 0]. Since x’ = — and x” = — and similarly for w, y, z, these simplify to
 the two relations:
-log w + log x + log y + log z = 2πi
-(6.1a)
-log(1 −w) + log(1 −x) −log(1 −y) −log(1 −z) = 0
-(6.1b)
-Similarly, we can read off the parameters u1, v1, u2, v2, which describe the
-Arithmetic of Hyperbolic Manifolds
-295
+
+log w + log a + logy + log z = 277i (6.1a)
+
+log(1 — w) + log(1 — x) — log(1 — y) — log(1 — z) =0 (6.16)
+
+Similarly, we can read off the parameters ui, v1, U2, v2, which describe the
 holonomy of the meridians and longitudes m1, l1, m2, l2, at the two cusps. They are
 u1 = log y′′ + log z′ + log z′′ + log w′ −πi
 v1 = log y′′ + log y + log x + log x′ + log w′′ + log z′ + log x′′
@@ -257,8 +159,6 @@ for W(∞; p, q). The formulae (6.2) simplify to
 u = log x + log(x + 1) −log(x −1)
 v = 4 log x −2πi
 (6.4)
-296
-Walter D. Neumann and Alan W. Reid
 and the real Dehn surgery parameter (p, q) is determined by the equation
 pu + qv = 2πi.
 (6.5)
@@ -295,8 +195,6 @@ We denote the cusp parameter for W(p, q) by
 τ(W(p, q)). (We make this choice of basis for consistency with [T] and [NZ], as well
 as because of Theorem 6.3 below, which says this τ is often an algebraic integer; the
 seemingly “more natural” choice l, m replaces τ by −τ −1.)
-Arithmetic of Hyperbolic Manifolds
-297
 Our next theorem says that τ(W(p, q)) determines W(p, q). To state it we need some
 notation. Let N denote the closed parallelogram in R2 with vertices ±(−4, 1), ±(0, 1)
 (Fig. 16).
@@ -333,8 +231,6 @@ shows that φ takes the boundary R ∪{∞} of U homeomorphically to the boundar
 of N (speciﬁcally, the intervals [−∞, −1], [−1, 0], [0, 1], [1, ∞] go to the segments
 [(4, −1), (0, 1)], [(0, 1), (−4, 1)], [(−4, 1), (0, −1)], [(0, −1), (4, −1)] respectively). It
 therefore sufﬁces to show that φ has non-vanishing Jacobian at all x ∈U −{i}.
-298
-Walter D. Neumann and Alan W. Reid
 Denote
 a(x) = log x,
 b(x) = log x −1
@@ -381,8 +277,6 @@ q ∈1
 In particular, the cusp ﬁeld equals the invariant trace ﬁeld for all these examples.
 Remark. By Corollary 2.3 it follows that Q(z) = Q(√z) if q ∈Z and p is odd. In
 the examples we have checked, Q(z)̸ = Q(√z) otherwise.
-Arithmetic of Hyperbolic Manifolds
-299
 a5
 a0
 a3
@@ -451,8 +345,6 @@ c, d in SL2C by dividing each by the square root of its determinant, namely √z
 Their traces then evidently generate Q(√z), so Q(tr π1W(p, q)) contains Q(√z). On
 the other hand our representation of π1W(p, q) then has image in PSL2Q(√z), so
 Q(tr π1W(p, q)) is at most Q(√z).
-300
-Walter D. Neumann and Alan W. Reid
 The additional generator β of π1W ′(p, 2q) is represented by the matrix ( 0 i
 i 0) ∈
 PSL2Q(√z, i), so Q(tr π1W ′(p, 2q)) ⊆Q(√z, i). But a and βb have traces 1/√z
@@ -507,7 +399,5 @@ Thus Φ(1) fails to divide 4 if and only if r is an odd prime power, in which ca
 An interesting example is W(0, 3) (or W(12, −3), which is commensurable with
 it). The invariant trace ﬁeld k(π1W(0, 3)) is Q(√−3), but π1W(0, 3) has non-integral
 traces, so it cannot be commensurable with PSL2O3. However its volume turns out to be
-Arithmetic of Hyperbolic Manifolds
-301
 20 times the volume of H3/PSL2O3 —this is 10/3 times the volume of a regular ideal
 tetrahedron.

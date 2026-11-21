@@ -1,0 +1,40 @@
+CHAPTER 3
+
+Nuclear Lattice Effective Field Theory
+
+In NLEFT, the degrees of freedom are nucleons and pions rather than quarks and gluons as in lattice
+QCD. Hence, we have to discretize the previous Hamiltonians in all spatial dimensions. If one uses
+Monte Carlo methods and the infinite time extrapolation, then one also has to discretize it in its temporal
+dimension. In the following we explain how to put the system in a discrete box of finite volume and how
+we could use finite volume effects to extract physical information in the infinite volume. Moreover, we
+explain the Monte Carlo methods and discuss limits of this method like the sign problem.
+
+3.1 Effective theory on the lattice
+
+As already mentioned, we have to discretize all operators so that they are defined on the lattice and the
+explicit form of discretization for any operator will be given explicitly in the subsequent chapters. Here
+we want to examine some specific problems, namely the smearing of nucleon-nucleon contact interactions
+and the discretization of the one-pion-exchange potential, which puts the link between lattice spacing,
+discretization and the validity of effective field theory in a focus. We start with the smearing of the contact
+interactions. From an effective field theory point of view we can construct only momentum-independent
+zero-range interactions at leading order. However, such a contribution leads to a clustering instability and
+a strongly overbound 4He state. These effects are reduced by a Gaussian smearing in momentum space
+[32]. For example the simplest contact interaction for a two-body system without spin is smeared as
+
+Vint = » :a' (#)a(#)a' (#) a(#) :-— Sr (#- a’): ai @)a(a)a'(a’)a(a’):, GB.)
+
+nt aa’
+
+where : : means normal ordering of the creation and annihilation operators. The smearing function
+f(i— it’) is defined as
+
+(o_o 1 C) (> (o_o
+f(#-7)=—) = -(#-7')), (3.2)
+(i n ) Ph 4 exp z exp i (i n )
+
+with normalization constant fy,
+
+_ 1 Gq"
+fo= B Dev(oF). (3.3)
+
+21

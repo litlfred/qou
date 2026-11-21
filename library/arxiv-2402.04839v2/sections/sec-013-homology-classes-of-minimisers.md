@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2402.04839v2
-doc_title: "On a volume invariant of 3–manifolds"
+doc_title: "On a volume invariant of 3-manifolds"
 section_id: sec-013-homology-classes-of-minimisers
 section_title: "Homology classes of minimisers"
 section_number: null
 pages: 15-16
 source_pdf: 2402.04839v2.pdf
 source_sha256: daf09811c350a2ad
-doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.929
-latex_coverage_ratio: 0.871
+latex_coverage_ratio: 0.991
+doc_brief: "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…"
 ---
 \label{sec:Homology classes of minimisers}
 

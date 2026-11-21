@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-006-5-scalar-valued-greens-operators-in-r3-s3-and-h3
 section_title: "Scalar-valued Green's operators in R3 , S3 and H3 ."
 section_number: 5
@@ -8,6 +8,7 @@ pages: 15-17
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 The scalar Laplacian on any Riemannian manifold is given by  ∆f  =  ∇ ∙ ∇f  . 
  
@@ -43,7 +44,6 @@ solution of the Laplacian, that is,
 ϕ0(α)  =  (—1/4π) (coth α  —  1)                          in  H3 . 
  
  
-16 
  
  
  
@@ -76,13 +76,4 @@ zero to itself.
  
 ∙  In  H3 ,  it is not clear to us how to characterize the scalar-valued Green's operator. 
 Even strengthening (2) to require that  Gr(f)(y)  goes to zero exponentially fast at 
-infinity is not quite enough. 
- 
- 
- 
- 
- 
- 
- 
- 
-17
+infinity is not quite enough.

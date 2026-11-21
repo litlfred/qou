@@ -2,295 +2,410 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1608.07308v1",
  "source_sha256": "bcc3b6f1a91a55c6",
- "brief": "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOV ANOV-ROZANSKY HOMOLOGY — We construct a categoriﬁcation of the maximal commutative subalgebra of the type A Hecke algebra.",
- "extended": "**FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOV ANOV-ROZANSKY HOMOLOGY**\n\n*EUGENE GORSKY, ANDREI NEGUT, , AND JACOB RASMUSSEN*\n\n77 pp, 57 sections.\n\n**Abstract.** We construct a categoriﬁcation of the maximal commutative subalgebra of the type A Hecke algebra. Speciﬁcally, we propose a monoidal functor from the (symmetric) monoidal category of coherent sheaves on the ﬂag Hilbert scheme to the (non-symmetric) monoidal cat- egory of Soergel bimodules. The adjoint of this functor allows one to match the Hochschild homology of any braid with the Euler characteristic of a sheaf on the ﬂag Hilbert scheme. The categoriﬁed Jones-Wenzl projectors studied by Abel, Elias and Hogancamp are idempotents in the category of Soergel bimodules, and they correspond to the renormalized Koszul complexes of the torus ﬁxed points on the ﬂag Hilbert scheme. As a consequence, we conjecture that the endomorphism algebras of the categoriﬁed projectors correspond to the dg algebras of functions on afﬁne charts of the ﬂag Hilbert schemes.\n\n**Outline.** 1.1.; 1.2.; 1.3.; 1.4.; 1.5.; 1.6.; 1.7.; 1.8.; 1.9.; 1.10.; 1.11.; Acknowledgments; 2.2 The matrix presentation; 2.3 DG schemes; 2.4 Explicit matrices; 2.5 Projective tower construction; 2.7 The dg scheme; 2.8 Serre duality\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.6: An object F∈C is diagonalizable in the sense of [23] if and only if there is a\n- Theorem 1.7: The full twist FTn is diagonalizable in SBimn, and its eigenvalues agree\n- Theorem 2.6: The mapsπ of (2.24) can be written as projectivizations:\n- Theorem 3.10: Conjecture 3.9 implies Conjecture 1.1.\n- Theorem 7.10: ([23]) LetF be a diagonalizable object, with eigenmapsαi and eigenvaluesλi\n- Theorem 2.6: describes the map π : FHilbn+1→ FHilbn as the projectivization of H0(En).",
+ "brief": "Flag Hilbert schemes, colored projectors and Khovanov–Rozansky homology — We construct a categoriﬁcation of the maximal commutative subalgebra of the type A Hecke algebra.",
+ "extended": "**Flag Hilbert schemes, colored projectors and Khovanov–Rozansky homology**\n\n*KHOVANOV-ROZANSKY HOMOLOGY*\n\n77 pp, 80 sections.\n\n**Abstract.** We construct a categoriﬁcation of the maximal commutative subalgebra of the type A Hecke algebra. Speciﬁcally, we propose a monoidal functor from the (symmetric) monoidal category of coherent sheaves on the ﬂag Hilbert scheme to the (non-symmetric) monoidal cat- egory of Soergel bimodules. The adjoint of this functor allows one to match the Hochschild homology of any braid with the Euler characteristic of a sheaf on the ﬂag Hilbert scheme. The categoriﬁed Jones-Wenzl projectors studied by Abel, Elias and Hogancamp are idempotents in the category of Soergel bimodules, and they correspond to the renormalized Koszul complexes of the torus ﬁxed points on the ﬂag Hilbert scheme. As a consequence, we conjecture that the endomorphism algebras of the categoriﬁed projectors correspond to the dg algebras of functions on afﬁne charts of the ﬂag Hilbert schemes.\n\n**Outline.** Front matter; 1 Introduction; 1.1.; 1.2.; 1.3.; 1.4.; 1.5.; 1.6.; 1.7.; 1.8.; 1.9.; 1.10.; 1.11.; Acknowledgments; 2 The flag Hilbert scheme; 2.1 Definition; 2.2 The matrix presentation; 2.3 DG schemes",
  "tokens": {
-  "brief": 43,
-  "extended": 451
+  "brief": 42,
+  "extended": 305
  },
  "sections": [
   {
-   "id": "sec-000-11",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11",
    "title": "1.1.",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-12",
+   "id": "sec-002-12",
    "title": "1.2.",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-13",
+   "id": "sec-003-13",
    "title": "1.3.",
    "pages": "2-4"
   },
   {
-   "id": "sec-003-14",
+   "id": "sec-004-14",
    "title": "1.4.",
    "pages": "4-4"
   },
   {
-   "id": "sec-004-15",
+   "id": "sec-005-15",
    "title": "1.5.",
    "pages": "4-5"
   },
   {
-   "id": "sec-005-16",
+   "id": "sec-006-16",
    "title": "1.6.",
    "pages": "5-7"
   },
   {
-   "id": "sec-006-17",
+   "id": "sec-007-17",
    "title": "1.7.",
    "pages": "7-7"
   },
   {
-   "id": "sec-007-18",
+   "id": "sec-008-18",
    "title": "1.8.",
    "pages": "7-8"
   },
   {
-   "id": "sec-008-19",
+   "id": "sec-009-19",
    "title": "1.9.",
-   "pages": "8-8"
+   "pages": "8-9"
   },
   {
-   "id": "sec-009-110",
+   "id": "sec-010-110",
    "title": "1.10.",
-   "pages": "8-8"
+   "pages": "9-9"
   },
   {
-   "id": "sec-010-111",
+   "id": "sec-011-111",
    "title": "1.11.",
-   "pages": "8-10"
+   "pages": "9-10"
   },
   {
-   "id": "sec-011-acknowledgments",
+   "id": "sec-012-acknowledgments",
    "title": "Acknowledgments",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-013-2-the-flag-hilbert-scheme",
+   "title": "The flag Hilbert scheme",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-014-21-definition",
+   "title": "Definition",
    "pages": "10-11"
   },
   {
-   "id": "sec-012-22-the-matrix-presentation",
+   "id": "sec-015-22-the-matrix-presentation",
    "title": "The matrix presentation",
    "pages": "11-12"
   },
   {
-   "id": "sec-013-23-dg-schemes",
+   "id": "sec-016-23-dg-schemes",
    "title": "DG schemes",
    "pages": "12-13"
   },
   {
-   "id": "sec-014-24-explicit-matrices",
+   "id": "sec-017-24-explicit-matrices",
    "title": "Explicit matrices",
    "pages": "13-15"
   },
   {
-   "id": "sec-015-25-projective-tower-construction",
+   "id": "sec-018-25-projective-tower-construction",
    "title": "Projective tower construction",
    "pages": "15-18"
   },
   {
-   "id": "sec-016-27-the-dg-scheme",
+   "id": "sec-019-27-the-dg-scheme",
    "title": "The dg scheme",
    "pages": "18-19"
   },
   {
-   "id": "sec-017-28-serre-duality",
+   "id": "sec-020-28-serre-duality",
    "title": "Serre duality",
    "pages": "19-19"
   },
   {
-   "id": "sec-018-31-the-hecke-algebra",
-   "title": "The Hecke algebra",
+   "id": "sec-021-3-the-hecke-algebra-and-soergel-category",
+   "title": "The Hecke algebra and Soergel category",
    "pages": "19-20"
   },
   {
-   "id": "sec-019-32-the-braid-group",
+   "id": "sec-022-32-the-braid-group",
    "title": "The braid group",
    "pages": "20-21"
   },
   {
-   "id": "sec-020-33-soergel-bimodules",
+   "id": "sec-023-33-soergel-bimodules",
    "title": "Soergel bimodules",
    "pages": "21-22"
   },
   {
-   "id": "sec-021-34-from-rouquier-complexes-to-khovanov-rozansky",
+   "id": "sec-024-34-from-rouquier-complexes-to-khovanov-rozansky",
    "title": "From Rouquier complexes to Khovanov-Rozansky homology",
    "pages": "22-23"
   },
   {
-   "id": "sec-022-35-the-trace-functor",
+   "id": "sec-025-35-the-trace-functor",
    "title": "The trace functor",
    "pages": "23-24"
   },
   {
-   "id": "sec-023-36-the-main-conjectures",
+   "id": "sec-026-36-the-main-conjectures",
    "title": "The main conjectures",
    "pages": "24-26"
   },
   {
-   "id": "sec-024-37",
+   "id": "sec-027-37",
    "title": "3.7.",
    "pages": "26-26"
   },
   {
-   "id": "sec-025-38-en-as-an-explicit-braid",
+   "id": "sec-028-38-en-as-an-explicit-braid",
    "title": "En as an explicit braid",
    "pages": "26-27"
   },
   {
-   "id": "sec-026-39-geometric-markov-invariance",
+   "id": "sec-029-39-geometric-markov-invariance",
    "title": "Geometric Markov invariance",
    "pages": "27-30"
   },
   {
-   "id": "sec-027-310-correspondences",
+   "id": "sec-030-310-correspondences",
    "title": "Correspondences",
    "pages": "30-30"
   },
   {
-   "id": "sec-028-311-mirror-braids",
+   "id": "sec-031-311-mirror-braids",
    "title": "Mirror braids",
    "pages": "30-31"
   },
   {
-   "id": "sec-029-312-some-remarks-on-support",
+   "id": "sec-032-312-some-remarks-on-support",
    "title": "Some remarks on support",
    "pages": "31-32"
   },
   {
-   "id": "sec-030-41-motivation-maps-to-projective-space",
+   "id": "sec-033-4-categories-and-schemes",
+   "title": "Categories and schemes",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-034-41-motivation-maps-to-projective-space",
    "title": "Motivation: maps to projective space",
    "pages": "32-34"
   },
   {
-   "id": "sec-031-42-notations-for-categories",
+   "id": "sec-035-42-notations-for-categories",
    "title": "Notations for categories",
    "pages": "34-35"
   },
   {
-   "id": "sec-032-43-categories-over-schemes",
+   "id": "sec-036-43-categories-over-schemes",
    "title": "Categories over schemes",
-   "pages": "35-37"
+   "pages": "35-36"
   },
   {
-   "id": "sec-033-45-the-projective-case",
+   "id": "sec-037-44-the-affine-case",
+   "title": "The affine case",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-038-45-the-projective-case",
    "title": "The projective case",
    "pages": "37-38"
   },
   {
-   "id": "sec-034-46-the-relative-case",
+   "id": "sec-039-46-the-relative-case",
    "title": "The relative case",
    "pages": "38-40"
   },
   {
-   "id": "sec-035-47-projective-dimension-one",
+   "id": "sec-040-47-projective-dimension-one",
    "title": "Projective dimension one",
-   "pages": "40-42"
+   "pages": "40-41"
   },
   {
-   "id": "sec-036-49-invertible-objects-in-monoidal-categories",
+   "id": "sec-041-48-deducing-conjecture-from-conjecture",
+   "title": "Deducing Conjecture ?? from Conjecture ??",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-042-49-invertible-objects-in-monoidal-categories",
    "title": "Invertible objects in monoidal categories",
    "pages": "42-42"
   },
   {
-   "id": "sec-037-51-the-geometry-of-fhilb2",
+   "id": "sec-043-5-example-the-case-of-two-strands",
+   "title": "Example: the case of two strands",
+   "pages": "42-42"
+  },
+  {
+   "id": "sec-044-51-the-geometry-of-fhilb2",
    "title": "The geometry of FHilb2",
    "pages": "42-43"
   },
   {
-   "id": "sec-038-52-cohomology-of-sheaves-on-fhilb2",
+   "id": "sec-045-52-cohomology-of-sheaves-on-fhilb2",
    "title": "Cohomology of sheaves on FHilb2",
-   "pages": "43-45"
+   "pages": "43-44"
   },
   {
-   "id": "sec-039-54-proj-construction",
+   "id": "sec-046-53-soergel-bimodules-for-n2",
+   "title": "Soergel bimodules for n=2",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-047-54-proj-construction",
    "title": "Proj construction",
    "pages": "45-47"
   },
   {
-   "id": "sec-040-55-sheaves-for-two-strand-braids",
+   "id": "sec-048-55-sheaves-for-two-strand-braids",
    "title": "Sheaves for two-strand braids",
-   "pages": "47-49"
+   "pages": "47-48"
   },
   {
-   "id": "sec-041-62-torus-braids",
+   "id": "sec-049-6-example-the-case-of-three-strands",
+   "title": "Example: the case of three strands",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-050-61-the-geometry-of-fhilb3",
+   "title": "The geometry of FHilb3",
+   "pages": "48-49"
+  },
+  {
+   "id": "sec-051-62-torus-braids",
    "title": "Torus braids",
    "pages": "49-50"
   },
   {
-   "id": "sec-042-63-the-longest-word",
+   "id": "sec-052-63-the-longest-word",
    "title": "The longest word",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-053-64-the-figure-eight-knot",
+   "title": "The figure eight knot",
    "pages": "50-52"
   },
   {
-   "id": "sec-043-71-categories-over-equivariant-schemes",
+   "id": "sec-054-7-categorical-idempotents-and-equivariant-locali",
+   "title": "Categorical idempotents and equivariant localization",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-055-71-categories-over-equivariant-schemes",
    "title": "Categories over equivariant schemes",
    "pages": "52-53"
   },
   {
-   "id": "sec-044-72-categorical-diagonalization",
+   "id": "sec-056-72-categorical-diagonalization",
    "title": "Categorical diagonalization",
    "pages": "53-53"
   },
   {
-   "id": "sec-045-73-eigenobjects",
+   "id": "sec-057-73-eigenobjects",
    "title": "Eigenobjects",
-   "pages": "53-57"
+   "pages": "53-54"
   },
   {
-   "id": "sec-046-75-the-relative-case",
+   "id": "sec-058-74-the-geometric-realization-over-a-fixed-base",
+   "title": "The geometric realization over a fixed base",
+   "pages": "54-57"
+  },
+  {
+   "id": "sec-059-75-the-relative-case",
    "title": "The relative case",
-   "pages": "57-62"
+   "pages": "57-58"
   },
   {
-   "id": "sec-047-85-explicit-local-coordinates",
+   "id": "sec-060-8-local-charts-and-fixed-points-of-fhilbn",
+   "title": "Local charts and fixed points of FHilbn",
+   "pages": "58-58"
+  },
+  {
+   "id": "sec-061-81-affine-charts-for-hilbert-schemes",
+   "title": "Affine charts for Hilbert schemes",
+   "pages": "58-59"
+  },
+  {
+   "id": "sec-062-82-affine-charts-for-flag-hilbert-schemes",
+   "title": "Affine charts for flag Hilbert schemes",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-063-83-defining-the-charts",
+   "title": "Defining the charts",
+   "pages": "59-61"
+  },
+  {
+   "id": "sec-064-84-the-special-coefficients",
+   "title": "The special coefficients",
+   "pages": "61-62"
+  },
+  {
+   "id": "sec-065-85-explicit-local-coordinates",
    "title": "Explicit local coordinates",
    "pages": "62-64"
   },
   {
-   "id": "sec-048-86-examples",
+   "id": "sec-066-86-examples",
    "title": "Examples",
    "pages": "64-66"
   },
   {
-   "id": "sec-049-87-poincare-series",
+   "id": "sec-067-87-poincare-series",
    "title": "Poincare series",
    "pages": "66-67"
   },
   {
-   "id": "sec-050-91-spectral-sequence-for-gln-homology",
+   "id": "sec-068-9-differentials-and-gln-homology",
+   "title": "Differentials and glN homology",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-069-91-spectral-sequence-for-gln-homology",
    "title": "Spectral sequence for glN homology",
    "pages": "67-68"
   },
   {
-   "id": "sec-051-92-sections-and-schemes",
+   "id": "sec-070-92-sections-and-schemes",
    "title": "Sections and schemes",
    "pages": "68-69"
   },
   {
-   "id": "sec-052-93-the-commutative-tower",
+   "id": "sec-071-93-the-commutative-tower",
    "title": "The commutative tower",
-   "pages": "69-71"
+   "pages": "69-70"
   },
   {
-   "id": "sec-053-101-dg-algebras",
+   "id": "sec-072-94-differentials-in-affine-charts",
+   "title": "Differentials in affine charts",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-073-10-appendix",
+   "title": "Appendix",
+   "pages": "71-71"
+  },
+  {
+   "id": "sec-074-101-dg-algebras",
    "title": "Dg algebras",
    "pages": "71-72"
   },
   {
-   "id": "sec-054-102-symmetric-and-exterior-algebras",
+   "id": "sec-075-102-symmetric-and-exterior-algebras",
    "title": "Symmetric and exterior algebras",
-   "pages": "72-74"
+   "pages": "72-73"
   },
   {
-   "id": "sec-055-104-projective-dg-bundles",
+   "id": "sec-076-103-affine-dg-schemes",
+   "title": "Affine dg schemes",
+   "pages": "73-74"
+  },
+  {
+   "id": "sec-077-104-projective-dg-bundles",
    "title": "Projective dg bundles",
    "pages": "74-75"
   },
   {
-   "id": "sec-056-references",
+   "id": "sec-078-references",
    "title": "References",
    "pages": "75-77"
   }
@@ -299,8 +414,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

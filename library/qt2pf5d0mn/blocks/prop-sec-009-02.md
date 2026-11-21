@@ -1,1 +1,1 @@
-LetD =D(H,G,ρ,a ) be the G-BSFC obtained from a crossed mod-
+Let D = D(H, G, ρ, a) be the G-BSFC obtained from a crossed mod- ule, then ZD(M; T ) = |H||T 0|−|T 1| |G||T 0| #(H, G, ρ, a) = YC(H,G,ρ,a)(M), (3.7) where #(H, G, ρ, a) is the number of admissible colorings.

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.952
 latex_coverage_ratio: 0.868
+doc_brief: "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity — We prove the analyticity of smooth critical points for O’Hara’s knot energies Eα,p, with p = 1 and 2"
 ---
 []{#sec:fractionalsobolevspaces label="sec:fractionalsobolevspaces"}
 

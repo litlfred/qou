@@ -1,0 +1,2832 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "s0025-5718-07-02027-3",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Thereisatechnicalcondition,satisﬁedforalmostallprimes,thatweignorehereforthesake of exposition. See the introduction of [5], in particular Theorem 1.10.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "k∼=K"
+    },
+    {
+     "page": 2,
+     "context": "cregulatoronthe partofthe K-groupsgiven byZagier’sconjecture"
+    },
+    {
+     "page": 2,
+     "context": "WeconsidertheprojectivelineX=P"
+    }
+   ],
+   "block": "library/s0025-5718-07-02027-3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "2",
+   "text": "n−1pn",
+   "marks": [
+    {
+     "page": 9,
+     "context": "(1 + log(z)T+ log"
+    },
+    {
+     "page": 9,
+     "context": "(1 + log(z)T+ log2(z)T"
+    },
+    {
+     "page": 9,
+     "context": "2(t) = 1 −t/2 + t"
+    },
+    {
+     "page": 10,
+     "context": "(n −1)! (1 + t)E"
+    },
+    {
+     "page": 10,
+     "context": "2(t)isinQp[[t]]by(5.9),H"
+    },
+    {
+     "page": 10,
+     "context": "2(t)andH"
+    },
+    {
+     "page": 10,
+     "context": "2(t)andH2(0)=0,soH"
+    },
+    {
+     "page": 10,
+     "context": "2(t)andH2(0)=0,soH2(t)=H"
+    },
+    {
+     "page": 10,
+     "context": "2(t)andH2(0)=0,soH2(t)=H2(0) +H"
+    }
+   ],
+   "block": "library/s0025-5718-07-02027-3/blocks/prose-sec-005"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "k∼=K1(O"
+  },
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "kisdeﬁnedasthedeterminantof"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "k"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "i=0"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i=0b"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i=0bi(z −a)"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i=−∞b"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i=−∞bi(z −a)"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "i=−∞bi(z −a)ithatconvergeonA(a, s, r).For"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "p→C"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "givenbytheusualpowerserieslog(1 + z) = z −z"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "givenbytheusualpowerserieslog(1 + z) = z −z2/2 + z"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "pandtherefore"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "pandthereforez"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "reducesto 1forsomepositiven.Then log(z"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "termined by the power series given above, and log(z) = log(z"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "Ingeneral,ifbvp(z) = aforintegersaandbwithbpositive,thenvp(z"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "eneral,ifbvp(z) = aforintegersaandbwithbpositive,thenvp(zb/p"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "andlog(z) = a log(p)/b + log(z"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "andlog(z) = a log(p)/b + log(zb/p"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "og-typefunctionsonA(a, s, r)tobepolynomials\u0002fi · (log(z −a))"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "withrespecttolog(z −a)ifa̸ = ∞andpolynomials\u0002fi · (log z)"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "dLin+1(z) = Lin(z)"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "dLin+1(z) = Lin(z)d"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "dLin+1(z) = Lin(z)"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "dLin+1(z) = Lin(z)d"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "cn−1 +c"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "(n −1)! log"
+  },
+  {
+   "page": 3,
+   "mark": "z",
+   "context": "(n −1)! logn−1"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Ua,consistingof those points in P"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "n(z) = Li"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "p"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "pn Li"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "pn Lin(z"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "apriorideﬁnedforzinCpwithz"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "z"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "1 −z"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "n(z)d"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Lin: P"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "onP"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "onP1(Cp) \\ {zinCpwithz"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "thatC(z) −C(z"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "thatC(z) −C(zp)/p"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "thatC(z) −C(zp)/pn= 0.Becausezandz"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "thatC(z) −C(zp)/pn= 0.Becausezandzp"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "(2)ThepartofP"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "n(z)exceptfor"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "n(z)exceptfor0and∞,i.e.,the"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "(1)Form ≥1andzinCpwithz"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "Lin(z"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Lin(zm) = m"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "ζ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(2)Lin(z) + (−1)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "n!log"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "t"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "k"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "n(z)in(2.5)weseethatonU"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "′z"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "k"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "collecttermsz"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "collecttermszk/k"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "k"
+  },
+  {
+   "page": 5,
+   "mark": "v",
+   "context": "knforwhich"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "knforwhichv"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "n(z"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "n(zp"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Lin(z) + (−1)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n! log"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "rootofunityζoforderdividingp"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "Proof.FortheresiduediscUbthereduction¯bsatisﬁes¯b"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "Proof.FortheresiduediscUbthereduction¯bsatisﬁes¯bp"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "¯btoauniquesolutionofx"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "¯btoauniquesolutionofxp"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "Proposition4.2.Supposethatζ̸= 1isa(p"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "n(ζ"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "n(ζp"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n(ζ) + p"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "n(ζ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n(ζp) + · · · + p"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "completeness,werecalltheeasyproof.ForanyzinCpwithz"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "completeness,werecalltheeasyproof.ForanyzinCpwithzp"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "n(z"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "n(zp"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "p−rn(Lin(z"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "p−rn(Lin(zp"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "p−rn(Lin(zpr) −p−nLin(z"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "p−rn(Lin(zpr) −p−nLin(zp"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "p−rn(Lin(zpr) −p−nLin(zpr+1)) = Lin(z) −p−nkLin(z"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "p−rn(Lin(zpr) −p−nLin(zpr+1)) = Lin(z) −p−nkLin(zp"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "sincethesecond sumis telescopic.Setting z= ζandk= fwehaveζ"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "sincethesecond sumis telescopic.Setting z= ζandk= fwehaveζp"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "n(ζ"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "n(ζp"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n(ζpr) = (1 −p−nf)Li"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n(ζpr) = (1 −p−nf)Lin(ζ) = p−nf(pnf−1)Li"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "n(ζ"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "n(ζp"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "p"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n(z)=g"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "n(z)=gn(1/(1 −z))for"
+  },
+  {
+   "page": 7,
+   "mark": "g",
+   "context": "n(z)=gn(1/(1 −z))forapowerseries"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n(z)=gn(1/(1 −z))forapowerseriesg"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Q[[v]],convergentforvinCpwith|v| < p"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "(v −1)"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "v"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "vp−(v −1)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n+1(v) = −g"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "v −v"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "v −v2= −g"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(1 + v + v"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n(z)=g"
+  },
+  {
+   "page": 7,
+   "mark": "g",
+   "context": "n(z)=gn(1/(1 −z))with"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n(z)=gn(1/(1 −z))withg"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "n(z)=gn(1/(1 −z))withgn(v)"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "seriesthatconvergeswhen|v|<p"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n(1−u) for"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "(1 −u)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n+1(u) = −f"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "1 −(1 −u)"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "(v −1)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n+1(v) = −g"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "v −v"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "v −v2= −g"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(1+v+v"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "v"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "vp−(v −1)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n(∞)=0forall"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "denominator v"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "denominator vp−(v−1)"
+  },
+  {
+   "page": 7,
+   "mark": "f",
+   "context": "Proposition4.4.Letζ̸=1bea(p"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(1 −ζ)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "= ζ−1Fn,ζ(t)(1 −ζ−1t + ζ−2t"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "n(ζ)isinQ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n(ζ)isinQp(ζ)thesameholdsforLi"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n(z) and Li"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "z"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "whereµzisthemeasureonZpsuchthatµz(a + p"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "1−zpkfor"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "1−zpkfora=1, . . . , p"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "thenLin(ζ)isinp"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "n(ζ) is in Q"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "n(ζ) is in Z"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "Corollary4.10.Ifζisarootofunityoforderp"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "p,then|Lin(ζ)| ≤p(k−1)"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "sinceLin(ζ) = p−nLin(ζ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n −1 log(z)Li"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "togetherwiththeidentitieslog(z"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "En(z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "En(zm) = m"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "ζ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "En(z"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "En(z2) = 2"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n(z) = (n −2)E"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "weseethatEn(1)isdeterminedbytheEn(ζ)whereζ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(n −1)! log"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "(n −1)! logn−1(z)Li"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(n −1)! log"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "(n −1)! logn−j(z)E"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(n −1)! Lin(z)T"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(n −1)! En(z)T"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(n −1)! En(z)T"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(n −1)! Lin(z)T"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Proposition5.8.Forn ≥1setGn(t) = log"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(n −1)! log"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "(n −1)! logn−j(1 + t)E"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n(t) =H"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "+G"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Hn(0) = 2"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Hn(0) = 2n−1Lin(−1)/(1 −2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Hn(0) =2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "1 −2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "1 −2n (H"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "1 −2n (Hn(−2) −H"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "n(t)for"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(n −j)log"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "j −1 log"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "j −1 logn−j(1 + t)E"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "+log"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "+ (n −2)log"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "n −1E"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(n −1)! [(n −j) + (j −1)]log"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Ej(1 + t) +log"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "As for the constant terms, we see from (5.4) that En(1) = 2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "ThereforeHn(0) = En(1) = 2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "ThereforeHn(0) = En(1) = 2n−1En(−1)/(1 −2"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "n(−1)isinQ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "n(−1)isinQpfor"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "2(t)isinQ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "thatEn(z)+(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "thatEn(z)+(−1)nEn(1/z)=log"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "p"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "p"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ln(p)+ (n −1) log"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "gn(v) = an,1v + an,2v"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "p −1−log"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "i"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ib"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "ibi"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ibiz"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ibiziconvergingontheclosedunitdisc,wehavethatmax |b"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "(v −1)"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(pf(v))"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "v"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "vp−(v −1)"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "vp−(v −1)p= v −1 + (v −1)"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "wherev"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "wherevp−(v −1)"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Thenanytermcontributingtov"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "containing(pf(v))"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "n+1(v) = −g"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(1 + v + v"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "= −an,1 −(an,1 + an,2)v −(an,1 + an,2 + an,3)v"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "j≥k+1{v"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "j≥k+1{vp(an,j) −v"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "possiblevaluesofjn.Supposethatk + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "possiblevaluesofjn.Supposethatk + pl≤jn<k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "p −1≥k + p"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "i=0"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "i=0v"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i=0vp(j"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "i=0vp(ji)fromabovewhen"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "i=0vp(ji)fromabovewhenk≤j"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "i=0vp(ji)fromabovewhenk≤j0< · · · < j"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "i=0vp(ji)fromabovewhenk≤j0< · · · < jn−1< k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "Clearly,amongthep"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "Clearly,amongthepl+1consecutiveintegersk, . . . , k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "integerdivisiblebyp"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "integerdivisiblebypl+1,anditsvaluationisboundedbylogp(k+p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "remainingintegersinthisrangearenotdivisiblebyp"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "vp(ji) ≤(n −1)l + logp(k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "\u0011k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "−(n −1)l −logp(k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "\u0011k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "−(n −1)l −logp(k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "\u0007k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "=ln(p) · p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "−(n −1)l −logp(k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "ln(p) · p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "k + p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "n >ln(p) · p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "whichimpliesthatl < logp(n(p −1)/ ln(p)),p"
+  },
+  {
+   "page": 12,
+   "mark": "l",
+   "context": "esthatl < logp(n(p −1)/ ln(p)),pl/(p −1) > (n −1)/ ln(p)andp"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "ln(p)−(n −1) log"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "p −1−log"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Remark6.6.Proposition6.1impliesthatgn(v)convergesfor|v|<p"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "inProposition4.4.Itisclearfrom(3.1)thatthecoeﬃcientoft"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "Proposition6.7.Letζ̸= 1bea(p"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Fn,ζ(t) = an,0 + an,1t + an,2t"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "in Qp(ζ)[[t]].Then an,0is in p"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Proof.ByCorollary4.9an,0=Lin(ζ)liesinp"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "(1−ζ)−t.Becauseζdoesnotreduceto"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "(1−ζ)−t.Becauseζdoesnotreduceto1byassumption(1 −ζ) −tis"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "(−ζ)"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "tion 5.8.For this we need a lemma concerning the Gn(t) = log"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Gn(t) = an,1t + an,2t"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "Gn(t) = an,1t + an,2t2+ an,3t"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "n(t) = G"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "n(t) = Gn−1(t)/(1 + t)sothat,for"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "kan,k= ((−1)"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "kan,k= ((−1)k−2an−1,1 + (−1)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Hn(t) = bn,0 + bn,1t + bn,2t"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "p∤m>1{v"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "p∤m>1{vp(m"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Now m"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "Now mn−1−1 will be divisible by p"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "exponentof(Z/p"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k≥1(−t)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "k≥1(−t)k/k"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "kbn,k= ((−1)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "kbn,k= ((−1)k−1bn−1,0 + (−1)"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "IfzinUζ,whereζ̸=1isa(p"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Propositions 5.6 and 5.8 to write Lin(z) = Hn(z −1)−log"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "andifweknowthat|z| < p−N′≤1,then|Lin(z)| < maxm≥0{pmn−N′p"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Remark7.6.(1)Forn≥2wehaveLin(1)=2"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Remark7.6.(1)Forn≥2wehaveLin(1)=2n−1Lin(−1)/(1 −2"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Lin(z) = Hn(z −1) −log"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Hn(t) −Hn(0) −log"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "k≥1{kN ′ −n log"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "witht′=t"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "witht′=te/p"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "k≥1{ke−1 −log"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "k≥1{ke−1 −logp(k)}} −v"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "ln(p)(1 −ln(c) + ln(C) + ln(ln(p))) > c log"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "(1) If zis in U0, then we ﬁnd M≥0 such that p"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "For each m = 0, . . . , Mwe ﬁnd tslm≥1 such that kp"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "′ bk˜zkp"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "roximationof zuptoprecisionN + nMandbkisanapproximationof1/k"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "(2) If zis in U∞, then we calculate (−1)"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "(2) If zis in U∞, then we calculate (−1)n−1Lin(1/z)−log"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "precision max{N +nM +2vp(z), vp(z)} where Mis such that −p"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "forallm>M.Wecancalculatelog"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "m≥0{(N ′ −v"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "m≥0{(N ′ −vp(z))"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "m≥0{(N ′ −vp(z))p"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "(3)IfzliesinUζwithζ̸= 1inFarootofunityoforderdividingp"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "p −1−log"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "p −1−logp(k) > N−m + c(m, p) + (n −m) log"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "m(ζ"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "m(ζp"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "on1/(1 −˜ζ"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "on1/(1 −˜ζp"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "m(ζ"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "m(ζp"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Hm(t) = bm,0 + bm,1t + bm,2t"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "2m−1(1 −2"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "k=1˜bm,k(−2)"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "k=1˜bm,k(−2)kif"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "Hm(0) = 2"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "Hm(0) = 2m−1p"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "Hm(0) = 2m−1pmgm(1/2)/((1 −2"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "Hm(0) = 2m−1pmgm(1/2)/((1 −2m−1)(p"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "p −1−log"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "p −1−logp(k) > N −m + c(m, p) + v"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "p −1−logp(k) > N −m + c(m, p) + vp(1 −2"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "p −1−logp(k) > N −m + c(m, p) + vp(1 −2m−1) + (n −m) log"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "m=2,...,n{N −m + v"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "m=2,...,n{N −m + vp(1 −2"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "m=2,...,n{N −m + vp(1 −2m−1) + (n −m) log"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "m=2,...,n{N −m + vp(1 −2m−1) + (n −m) logp(hsl −1) + m⌊log"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "(d)Wecomputelog"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "oflog"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "m≥0{N ′p"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "m≥0{(N ′′ −v"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "m≥0{(N ′′ −vp(1 −z))"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "m≥0{(N ′′ −vp(1 −z))p"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "p"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "N + nM,andform = 0, . . . , Mwechoosetslm> 0suchthatkp"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "′˜zkp"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "k"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "oximationofLin(z)uptoprecisionN.Moreover,wecanreplaceeach1/k"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "n(z"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "n(zp"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "n(zpm)if"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "n(zpm)ifp"
+  },
+  {
+   "page": 19,
+   "mark": "v",
+   "context": "n(zpm)ifpm"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "n(zpm)ifpmv"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "n(zpm)ifpmvp(z)−mn>Nforall"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "m=0"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "n(z"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "n(zp"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "n(zpm)uptoprecisionNfor"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "k=1"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "k=1zkp"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "k=1zkpm/k"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "biggerthanN,i.e.,wherekp"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "Finally,foreachtermp−mnzkp"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Finally,foreachtermp−mnzkpm/k"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "approximation˜zsatisfying vp(z −˜z) > N +mn and 1/k"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "satisfyingvp(1/k"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "followsfromtheidentityzkp"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "followsfromtheidentityzkpm/k"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "followsfromtheidentityzkpm/kn−bk˜zkp"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "followsfromtheidentityzkpm/kn−bk˜zkpm= (zkp"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "followsfromtheidentityzkpm/kn−bk˜zkpm= (zkpm−˜zkp"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "followsfromtheidentityzkpm/kn−bk˜zkpm= (zkpm−˜zkpm)/k"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "followsfromtheidentityzkpm/kn−bk˜zkpm= (zkpm−˜zkpm)/kn+ (1/k"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "omtheidentityzkpm/kn−bk˜zkpm= (zkpm−˜zkpm)/kn+ (1/kn−bk)˜zkp"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "sincevp(k"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "sincevp(kn)=0,andvp(z)>0impliesthatvp(zkp"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "sincevp(kn)=0,andvp(z)>0impliesthatvp(zkpm−˜zkp"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "vp(˜zkp"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "In(2)weusethefactthatLin(z)=(−1)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "In(2)weusethefactthatLin(z)=(−1)n−1Lin(1/z) −log"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "ingthatweknowzuptopositiverelativeprecision.Theterm−log"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "theny"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "|(y + ε)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "|(y + ε)n−y"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "|(y + ε)n−yn| = |ε| · |y"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "|(y + ε)n−yn| = |ε| · |yn−1+ εy"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "|(y + ε)n−yn| = |ε| · |yn−1+ εyn−2+ · · · + ε"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "|(y + ε)n−yn| = |ε| · |yn−1+ εyn−2+ · · · + εn−2y + ε"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "pup to precision N ′> v"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "log(z)uptoprecisionminm≥0{(N′−vp(z))p"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "p,| log(z)| ≤p−Vandweknow"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "m≥0{(N ′ −v"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "m≥0{(N ′ −vp(z))"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "m≥0{(N ′ −vp(z))p"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "thenwecancomputelog"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Proof.It suﬃces to calculate log"
+  },
+  {
+   "page": 20,
+   "mark": "m",
+   "context": "zuptoprecisionN′> vp(z)satisfyingminm≥0{(N′−vp(z))p"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "p−1−log"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "p−1−logp(k)−c(n, p) > N ′for all"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "n(ζ)uptoprecisionN ′>0for"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "n(ζ)=g"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "n(ζ)=gn(1/(1 −ζ)),and"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "an,1v + an,2v"
+  },
+  {
+   "page": 20,
+   "mark": "f",
+   "context": "ForthepowerseriesFn,ζ(t)insteadofgn(v),whereζ̸=1isa(p"
+  },
+  {
+   "page": 20,
+   "mark": "f",
+   "context": "n7.18.Assume that zlies in the residue disc Uζfor ζ̸= 1 a (p"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Fn,ζ(t) = an,0 + an,1t + an,2t"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "suchthatvp(an,k(z−ζ)"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "j=0(−˜ζ)"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "j=0(−˜ζ)j−k˜am,jfor"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "j=0(−˜ζ)j−k˜am,jfork=1,"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "(−˜ζ)"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "(−˜ζ)j−k˜am,j−(−ζ)"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "˜ζ"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "˜ζj−k(˜am,j−am,j) + (˜ζ"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "˜ζj−k(˜am,j−am,j) + (˜ζj−k−ζ"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "Sincevp(˜ζ"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "Sincevp(˜ζj−k) ≥0andvp(˜ζ"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "Sincevp(˜ζj−k) ≥0andvp(˜ζj−k−ζ"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "Nowweconsiderthetermsan,j(z−ζ)"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "˜an,j(˜z −˜ζ)"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "an,j(z −ζ)"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "an,j(z −ζ)j−˜an,j(˜z −˜ζ)"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "an,j(z −ζ)j−˜an,j(˜z −˜ζ)j= (an,j−˜an,j)(z −ζ)"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "n,j(z −ζ)j−˜an,j(˜z −˜ζ)j= (an,j−˜an,j)(z −ζ)j+ ˜an,j((z −ζ)"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "−˜an,j(˜z −˜ζ)j= (an,j−˜an,j)(z −ζ)j+ ˜an,j((z −ζ)j−(˜z −˜ζ)"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "m(ζ"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "m(ζp"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "m(ζpj)=g"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "m(ζpj)=gm(1/(1 −ζ"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "m(ζpj)=gm(1/(1 −ζp"
+  },
+  {
+   "page": 22,
+   "mark": "v",
+   "context": "mbyProposition7.16:"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "mbyProposition7.16:v"
+  },
+  {
+   "page": 22,
+   "mark": "v",
+   "context": "msoaccordingtoRemark7.2(4)wehave"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "msoaccordingtoRemark7.2(4)wehavev"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "msoaccordingtoRemark7.2(4)wehavevp(1/(1 −˜ζ"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "msoaccordingtoRemark7.2(4)wehavevp(1/(1 −˜ζp"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "msoaccordingtoRemark7.2(4)wehavevp(1/(1 −˜ζpj) −1/(1 −ζ"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "msoaccordingtoRemark7.2(4)wehavevp(1/(1 −˜ζpj) −1/(1 −ζp"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "mfor all"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "the diﬀerence between what we calculate in (d) and gm(1/(1−ζ"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "he diﬀerence between what we calculate in (d) and gm(1/(1−ζp"
+  },
+  {
+   "page": 22,
+   "mark": "v",
+   "context": "mbyProposition6.1since"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "mbyProposition6.1sincev"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "mbyProposition6.1sincevp(1/(1 −˜ζ"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "mbyProposition6.1sincevp(1/(1 −˜ζp"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "mbyProposition6.1sincevp(1/(1 −˜ζpj) −1/(1 −ζ"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "mbyProposition6.1sincevp(1/(1 −˜ζpj) −1/(1 −ζp"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "mfor"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "variouscontributionstoLim(ζ"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "variouscontributionstoLim(ζp"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "term−log"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "necessarywemayalwaysassumethelatter.Forz̸= 1inU1weletα = log"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "and compute log"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Hn(t) = bn,0 + bn,1t + bn,2t"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "asinPropositions5.8and6.11.Lethsl′> 0besuchthatvp(bn,k(z −1)"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "n(t) = G"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "n(t) = Gn−1(t)/(1 + t)and(5.10),usingG"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "m(−1)/((1 −2"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "m(−1)/((1 −2m−1)(p"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "Whenp̸=2wehaveHm(0)=2"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "Whenp̸=2wehaveHm(0)=2m−1p"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "N+ (n −m) logp(hsl′−1) + vp(1 −2"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "m= N−m + v"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "m= N−m + vp(1 −2"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "2m−1(1 −2"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "Proof.We know from (5.11) that Hm(0) = 2"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "oof.We know from (5.11) that Hm(0) = 2m−1(Hm(−2)−Hm(0))/(1−2"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "˜bm,k(−2)"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "of unity η.Then y= 1+x with vp(x) ≥1/e and, for m ≥0, y"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "of unity η.Then y= 1+x with vp(x) ≥1/e and, for m ≥0, yp"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "nity η.Then y= 1+x with vp(x) ≥1/e and, for m ≥0, ypm= (1+x)"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "ity η.Then y= 1+x with vp(x) ≥1/e and, for m ≥0, ypm= (1+x)p"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "vp(x′) ≥min{m + 1/e, (m −1) + p/e, . . . , 1 + p"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "vp(x′) ≥min{m + 1/e, (m −1) + p/e, . . . , 1 + pm−1/e, p"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "isatleast1/(p−1),i.e.,suchthatp"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "isatleast1/(p−1),i.e.,suchthatpm≥e/(p−1),thenvp(p"
+  },
+  {
+   "page": 24,
+   "mark": "c",
+   "context": "beingO∼(x)meansbeingO(x ln"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "O∼(N"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "O∼(N2f(fnp+ne ln(p)+e"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "ﬁxedprecisionkmeansworkinginZ/p"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "RecallthatinMontgomeryarithmeticonerepresentsanumberxinZ/p"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "so called Montgomery representative xM:= Rx(modp"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "omery representative xM:= Rx(modpk), where R is a power of 2"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "ith t the length of a computer word in bits, such that R > p"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": " a computer word in bits, such that R > pk.Operations in Z/p"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "dividingbyp"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "toliftthistoaninverseofumodulop"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "ofthesameoperationinZwithintegerswhichareofsizeatmostp"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "hastobedoneonlyattheveryend.Thelatterinvolvesadivisionbyp"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "zisinitiallyrepresentedasapolynomialofdegreeefwithZ/p"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "observethatdivisionwithremainderbyp"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "aprecomputedR′/p"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "aprecomputedR′/pk,whereR′,againapowerof2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "possibleRx(sayR′=R"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "ofR′/p"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "inQp.ItisdoneintimeO∼(n · pN· N ln(p)) = O∼(npN"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "(d1)Weﬁnd˜ζinFunrbyusingNewton’smethodtosolvex"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "(d1)Weﬁnd˜ζinFunrbyusingNewton’smethodtosolvexp"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "about ln(N) steps, each consisting of about ln(p"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "isO∼(ln(N) · f ln(p) · Nf ln(p)) = O∼(Nf"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "isO∼(ln(N) · f ln(p) · Nf ln(p)) = O∼(Nf2ln"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "O∼(np(Nf)"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "O∼(nf"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "O∼(n · Ne · Nf ln(p)) = O∼(nfeN"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "ofOF ,soittakestimeO∼(Ne · Nfe ln(p)) = O∼(f(Ne)"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "pandz.InallcasesweusedF= Qp(ζ, π)withζ̸= 1aprimitive(p"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "−log"
+  },
+  {
+   "page": 28,
+   "mark": "8",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "8",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "8",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "8",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "8",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "8",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "8",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "8",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "anyrootofunityoforderdividingp"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "thep"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "Lin(ζ"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "Lin(ζp"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "Lin(ζpf) = p"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "andsinceζ"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "andsinceζp"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "proofof(5.11)becauseallηζlieinUζ.However,sincethisinvolvesp"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "as in Algorithm 7.10(3)(g) in a ﬁeld of degree p"
+  },
+  {
+   "page": 29,
+   "mark": "f",
+   "context": "as in Algorithm 7.10(3)(g) in a ﬁeld of degree pf−p"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "[11]C.Ko¸candT.Acar.MontgomerymultiplicationinGF(2"
+  }
+ ]
+}

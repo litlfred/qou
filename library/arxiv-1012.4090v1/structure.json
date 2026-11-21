@@ -7,10 +7,11 @@
   "bytes": 482015,
   "pages": 5,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,17 +22,27 @@
   },
   "doi": null,
   "title": "Generalized Skyrme Crystals",
-  "authors_raw": "J. Silva Lobo a,\u2217, R. S. Ward a",
+  "authors_raw": "J. Silva Loboa,∗, R. S. Warda",
   "title_lines": [
    "Generalized Skyrme Crystals"
   ],
-  "abstract": "This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the \ufb01eld takes values in the squashed 3-sphere. The family includes the standard Skyrme model (round 3-sphere), and the Skyrme- Faddeev case (maximal squashing). In the round case, the lowest-energy crystal is the well-known cubic lattice of half-skyrmions; but in the squashed case the minimal-energy crystal structures turn out to be di\ufb00erent. We describe some of the solutions that arise, including arrays of vortices and multi-sheeted structures.",
+  "abstract": "This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere. The family includes the standard Skyrme model (round 3-sphere), and the Skyrme- Faddeev case (maximal squashing). In the round case, the lowest-energy crystal is the well-known cubic lattice of half-skyrmions; but in the squashed case the minimal-energy crystal structures turn out to be diﬀerent. We describe some of the solutions that arise, including arrays of vortices and multi-sheeted structures.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20220421190243Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.10",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20220421190243Z"
+  },
+  "title_raw": "Generalized Skyrme Crystals",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Generalized Skyrme Crystals",
+   "outline": "1 Introduction",
+   "text": "Generalized Skyrme Crystals",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,32 +51,156 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Generalized Skyrme System",
    "page": 1,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Crystals in the Generalized Skyrme Family",
    "page": 2,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 5,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The V+AV+V+AV solution. Optimal values of L1 = L2, and L3; and the energy density for α = 0.3, 0.6, 0.9",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Normalized energy EN of crystalline solutions, versus α",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The 2V+2AV solution:",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The “multi-sheet” solution:",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 760,
+   "n_words": 109,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -73,8 +208,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 2932,
-   "n_words": 517
+   "n_chars": 2934,
+   "n_words": 519,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-the-generalized-skyrme-system",
@@ -82,32 +219,56 @@
    "title": "The Generalized Skyrme System",
    "level": 1,
    "page_start": 1,
-   "page_end": 5,
-   "n_chars": 15419,
-   "n_words": 2851
+   "page_end": 2,
+   "n_chars": 3703,
+   "n_words": 712,
+   "label_start": null,
+   "label_end": "2"
   },
   {
-   "id": "sec-002-4-conclusions",
+   "id": "sec-002-3-crystals-in-the-generalized-skyrme-family",
+   "number": "3",
+   "title": "Crystals in the Generalized Skyrme Family",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 11746,
+   "n_words": 2208,
+   "label_start": "2",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-4-conclusions",
    "number": "4",
    "title": "Conclusions",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 2895,
-   "n_words": 481
+   "n_chars": 2890,
+   "n_words": 476,
+   "label_start": "5",
+   "label_end": "5"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
-  "sections": 3,
-  "chars_total": 21246,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 22033,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paperplb.tex",
    "tex_sections": 4,
-   "overlaid": 3,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -115,26 +276,39 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-the-generalized-skyrme-system",
      "title": "The Generalized Skyrme System",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.965,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-4-conclusions",
-     "title": "Conclusions",
-     "prose_ratio": 0.989,
+     "id": "sec-002-3-crystals-in-the-generalized-skyrme-family",
+     "title": "Crystals in the Generalized Skyrme Family",
+     "prose_ratio": 0.981,
      "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.572,
      "result": "overlaid",
      "converter": "pandoc"
     }

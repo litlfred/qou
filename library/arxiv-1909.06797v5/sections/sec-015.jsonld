@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1909.06797v5/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix A.1 Eigenvalue analysis",
+  "pageStart": 26,
+  "pageEnd": 27,
+  "contains": [
+    "library/arxiv-1909.06797v5/blocks/prose-sec-015"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06797v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06797v5/manifest.jsonld",
+  "provenance": "ingested"
+}

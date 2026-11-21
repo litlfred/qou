@@ -1,0 +1,59 @@
+4004 JOHN W. BARRETT AND BRUCE W. WESTBURY
+
+Proof. In the formula
+
+@Hom(s, a) ® Hom(a, x) © End(x)
+
+aed
+first consider x to be an element of J. Then by counting dimensions, one has that
+End(x) = F
+
+Now consider the same formula with x any simple object. Again by counting di-
+
+mensions, only one of the terms on the left is non-zero. For this a € J, Hom(a, a) =
+Hom(a,x) © F. Thus there are elements f € Hom(x,a), g € Hom(a, x) such that
+fg = %d,. From this it follows that gf € End(a) is an idempotent and is not zero.
+But End(a) & F, and so gf = ida. This shows that x is isomorphic to a € J.
+
+Definition 2.12. A semisimple spherical category is called finite if the set of iso-
+morphism classes of simple objects is finite.
+
+Definition 2.13. The dimension K of a finite semisimple spherical category is
+defined by the formula
+K= S dim; (a)
+
+aed
+for some choice J of one object in each isomorphism class of simple objects. The
+dimension is independent of this choice.
+
+Lemma 2.14. For each pair of objects (a,b) in a semisimple spherical category,
+
+dim, (a) dimg(b) = So dim, (c) ) dim Hom(c, a ® b).
+ced
+
+Proof. The left-hand side is equal to tr lag». The lemma follows from the applica-
+tion of the semisimple condition of Definition 2.10 with « = y = a® b, and some
+linear algebra.
+
+3. SYMMETRIES OF SIMPLICIAL INVARIANTS
+
+In this section, we define the data for a state sum model given a strict non-
+degenerate spherical category C. Then we show that the simplicial invariant of
+labelled manifolds has the property that it depends only on the isomorphism class
+of the labelling of each edge. Then it is shown that the invariant depends only on
+the underlying combinatorial structure of the simplicial complex.
+
+The data for a state sum model is constructed as follows. The label set I is the
+set of simple objects in the category. For each ordered triple (a,b,c) of labels, the
+vector space H(a, b,c) is defined to be Hom(b, a ® c) (see Figure 2).
+
+For the partition function of the tetrahedron A labelled by eo; = a, eo2 = 8,
+€12 =C, €23 = d, €13 = e, €03 = f, first define a linear functional on the space
+
+Hom(d ® c,e) ® Hom(f,d@ b) ® Hom(e @ a, f) ®@ Hom(b, c ® a).
+The linear functional is defined to be
+a®887@6 trz(B(1 @ 6)(a @1)7)
+(Figure 3). This linear functional determines a unique linear map
+
+{i ’ | : Hom(f,d@ b) ® Hom(b,c @ a) > Hom(e,d ® c) ® Hom(f,e @ a)
+: +

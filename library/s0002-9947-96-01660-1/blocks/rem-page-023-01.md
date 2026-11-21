@@ -1,0 +1,1 @@
+If A is a Hopf algebra, there may exist more than one element w such that (A, w) is a spherical Hopf algebra. However, if w1 is one such element, then w2 = gw1 is another such element if and only if g satisﬁes the conditions: 1. g is central, 2. g is group-like, 3. g is an involution.

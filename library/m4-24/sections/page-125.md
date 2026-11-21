@@ -1,0 +1,57 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-125
+section_title: "Page 125"
+section_number: null
+pages: 125-125
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 497
+
+Remark In physics such a vector is obtained by applying an infinite dimen-
+sional formal analogue of the geometric invariant theory and the symplectic
+quotient to the Chern-Simons path integral; see [17]. It is a problem to justify
+this argument in some mathematical sense.
+
+Here is a concrete problem which may be of interest in studying the relationship
+between V(X) and H°(My, £®*). The group JO) (5) of N-torsion points on
+the Jacobian J(©) acts on My by tensoring. This gives an action of a central
+extension €(©) of J™)(5) on H°(My, £°*).
+
+Problem 8.9 (G. Masbaum) Study this action of the finite group E(X) on
+H®(My, £2"), and describe the induced decompositions of this vector space
+according to the characters of E(X%). Also relate these decompositions to de-
+compositions of V(X“) for the TQFT (V,Z) derived from the quantum group
+U,(slz) at a (k + .N)-th root of unity.
+
+Remark This was done for N = 2 in [7].
+
+Remark The group J) (3) is isomorphic to H!(=;Z/N) and the extension
+€(X) is described using the Weil pairing, which corresponds to the intersection
+form on Hj(X;Z/N). For N = 2, an action of €(X) on the vector space
+V(X) is described in [60, Section 7], and it was shown in [7] that V(X) and
+H®(My, £%*) are isomorphic as representations of €(©); here the torsion points
+on the Jacobian J(X) correspond to simple closed curves on the surface ¥.
+For example, if k = 2 mod 4, one obtains decompositions indexed by spin
+structures (theta-characteristics) on /. For N > 3, the action of €(X) and the
+spin decompositions of V(X) were constructed in [59].
+
+Let IN, denote the mapping class group of a closed surface 4, of genus g, and
+let Mt, denote its central extension (see [18, 275]) arising in the category of
+extended 3-cobordisms.
+
+Problem 8.10 Fora given TQFT (V, Z), determine whether the image of My
+in End(V(Xq)) is finite.
+
+Remark Using physical arguments, Bantay [24] (see also references therein)
+showed that for every CFT the image of 9, in End(V(S x9 1)) is finite. This
+had been rigorously proved by Gilmer [144] for the SU(2) case.
+
+In higher genus, it is known [132, 274] that the image of IN, (g > 2) is infinite
+in general.
+
+Geometry & Topology Monographs, Volume 4 (2002)

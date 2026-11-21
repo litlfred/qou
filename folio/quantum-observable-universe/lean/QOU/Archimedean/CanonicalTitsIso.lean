@@ -28,7 +28,7 @@ Tits-deformation / Geck–Pfeiffer content (the seminormal rep of `H₅(q)` defo
 to Young's orthogonal S₅ rep at `q=1`). No `CanonicalTitsStarIso` / `TauRhoHodgeLift`
 instance is registered; `1/(8π)` stays a phase-4 identification; nothing is wired.
 
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [serre1977] Linear Representations of Finite Groups (Tits deformation)
 -/
 import QOU.Archimedean.TauS5EquivarianceReduction

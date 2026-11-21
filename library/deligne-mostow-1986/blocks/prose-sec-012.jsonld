@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/deligne-mostow-1986/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "(AJ / \\tc z-z{m{s)) •",
-  "pageStart": 24,
-  "pageEnd": 25,
-  "text": "../sections/sec-012-7-aj-tc-z-zms.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deligne-mostow-1986",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deligne-mostow-1986",
+  "title": "PU(V),/N = U(V\")",
+  "pageStart": 62,
+  "pageEnd": 64,
+  "text": "../sections/sec-012-puvn-uv.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
   "provenance": "ingested"
 }

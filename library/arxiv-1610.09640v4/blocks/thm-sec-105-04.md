@@ -1,1 +1,1 @@
-Under Setup 18.4.1, let ˜R∈D( ˜Aen, gr) be a graded rigid NC
+Assume Setup 15.4.12. (1) If B is a regular graded ring of graded global dimension n −1, then A is a regular graded ring of graded global dimension n. (2) Moreover, if B is an AS regular graded ring of dimension n −1, then A is an AS regular graded of dimension n.

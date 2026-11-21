@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-034-31-finding-an-explicit-formula-for-ψ
 section_title: "Finding an explicit formula for Ψ ."
 section_number: 31
@@ -8,6 +8,7 @@ pages: 69-71
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 The core issue is to solve the equation 
  
@@ -37,7 +38,6 @@ of integration.  Dividing through by  sin2α ,  we get
 F '  =  —(π — α)3 / 3 sin2α  —  (π — α)2 / sin α  +  (2(π — α) cos α  +  2 sin α) / sin2α . 
  
  
-70 
  
  
  
@@ -79,7 +79,6 @@ This function  F(α)  satisfies the equation
 ∆F(α)  =  (π — α)2 / (1  +  cos α) . 
  
  
-71 
  
  
  

@@ -14,8 +14,6 @@ values appear only in the witness file for comparison at $q_0$.
 **Notation.**  $h = q - q^{-1}$ (Hecke amplitude).  The NF basis
 is $\{\ \gamma,\ \sigma_0,\ \sigma_1,\ L_+,\ L_-,\ e^-\ \}$.
 
-**Witness**: `knot-operator-table.witness.json`.
-
 ---
 
 ## Table L.1: NF basis multiplication table ($T_{1,0}$ — identity operator)
@@ -85,6 +83,3 @@ unconditionally produces the electron channel for all incoming
 pairs**.  Higher operators ($T_{2,5}$, etc.) also open all
 channels but at higher crossing energy cost ($h^2$ vs $1$
 for the photon-photon pair).
-
-**Witness**: `knot-operator-table.witness.json`,
-`gram-matrix-dual.witness.json`.

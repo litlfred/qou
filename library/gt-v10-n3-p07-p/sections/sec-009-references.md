@@ -8,6 +8,8 @@ pages: 27-28
 source_pdf: gt-v10-n3-p07-p.pdf
 source_sha256: 1f226aac77351a69
 toc_source: inferred
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots — 10 sections: Front matter; Introduction and description of re; The MTWS and transversal isotopies"
+duplicate_of: "0310280v4"
 ---
 [1]
 V I Arnol’d, Topological invariants of plane curves and caustics, University Lecture

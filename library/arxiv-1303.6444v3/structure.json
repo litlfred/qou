@@ -7,11 +7,11 @@
   "bytes": 464221,
   "pages": 14,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -26,13 +26,21 @@
   "title_lines": [
    "VIRIAL EXPANSION BOUNDS"
   ],
-  "abstract": "In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle (1969). This technique is generalised to more recent cluster expansion bounds by Poghosyan and Ueltschi (2009), which are related to the work of Procacci (2007) and the tree-graph identity, detailed by Brydges (1986). The bounds achieved by Lebowitz and Penrose can also be sharpened by doing the actual optimisation and achieving ex- pressions in terms of the Lambert W-function. The di\ufb00erent bound from the cluster expansion shows some improvements for bounds on the convergence of the virial expan- sion in the case of positive potentials, which are allowed to have a hard core.",
+  "abstract": "In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle (1969). This technique is generalised to more recent cluster expansion bounds by Poghosyan and Ueltschi (2009), which are related to the work of Procacci (2007) and the tree-graph identity, detailed by Brydges (1986). The bounds achieved by Lebowitz and Penrose can also be sharpened by doing the actual optimisation and achieving ex- pressions in terms of the Lambert W-function. The diﬀerent bound from the cluster expansion shows some improvements for bounds on the convergence of the virial expan- sion in the case of positive potentials, which are allowed to have a hard core.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210917045905Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210917045905Z"
+  },
+  "title_raw": "VIRIAL EXPANSION BOUNDS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "VIRIAL EXPANSION BOUNDS 1. Introduction In this article, further bounds on the virial coeﬃcients and consequently the radius of convergence of the virial expansion are developed in a similar way to how they are achieved in the paper by Lebowitz and Penrose [Leb64], that is via cluster expansion boun",
+   "outline": "1. Introduction",
+   "text": "VIRIAL EXPANSION BOUNDS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,101 +49,285 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Background to the Paper",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Main Results",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Obtaining the Relationship",
    "page": 4,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "General Derivation: Derivation for Theorem 2.1",
    "page": 5,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Derivation of Corollary 2.2 and comparisons with previous results",
    "page": 7,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Derivation of Corollary 2.2",
    "page": 7,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Morais-Procacci Bound",
    "page": 7,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Lebowitz-Penrose",
    "page": 8,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Comparison of the Bounds",
    "page": 10,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Alternative Bound: Corollary 2.3",
    "page": 11,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Comparison of the Separate Bound: Proposition 2.4",
    "page": 12,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix A. Lagrange Inversion",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Comparison of the Optimised Bound (r1) (5.28) with the Lebowitz-Penrose Bound (r2) (5.29)",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Quotient of the Optimised Bound (r1) (5.28) and Lebowitz Penrose Bound (r2) (5.29)",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Quotient",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -145,7 +337,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 803,
-   "n_words": 128
+   "n_words": 128,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-000-1-introduction",
@@ -155,7 +349,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 725,
-   "n_words": 117
+   "n_words": 117,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-11-background-to-the-paper",
@@ -164,8 +360,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1453,
-   "n_words": 214
+   "n_chars": 1452,
+   "n_words": 213,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-2-main-results",
@@ -174,8 +372,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 4785,
-   "n_words": 898
+   "n_chars": 4815,
+   "n_words": 931,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-3-obtaining-the-relationship",
@@ -184,8 +384,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 886,
-   "n_words": 171
+   "n_chars": 888,
+   "n_words": 173,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-4-general-derivation-derivation-for-theorem-21",
@@ -194,8 +396,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 3556,
-   "n_words": 673
+   "n_chars": 3596,
+   "n_words": 713,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-5-derivation-of-corollary-22-and-comparisons-wit",
@@ -204,8 +408,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 609,
-   "n_words": 114
+   "n_chars": 615,
+   "n_words": 120,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-52-morais-procacci-bound",
@@ -214,8 +420,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1969,
-   "n_words": 339
+   "n_chars": 1990,
+   "n_words": 360,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-53-lebowitz-penrose",
@@ -224,8 +432,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 1977,
-   "n_words": 438
+   "n_chars": 2007,
+   "n_words": 466,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-54-comparison-of-the-bounds",
@@ -235,7 +445,9 @@
    "page_start": 10,
    "page_end": 11,
    "n_chars": 1057,
-   "n_words": 198
+   "n_words": 198,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-6-the-alternative-bound-corollary-23",
@@ -244,8 +456,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 746,
-   "n_words": 147
+   "n_chars": 753,
+   "n_words": 154,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-7-comparison-of-the-separate-bound-proposition-2",
@@ -254,8 +468,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1490,
-   "n_words": 288
+   "n_chars": 1494,
+   "n_words": 292,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-011-appendix-a-lagrange-inversion",
@@ -264,8 +480,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1040,
-   "n_words": 197
+   "n_chars": 1042,
+   "n_words": 199,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-012-references",
@@ -274,16 +492,26 @@
    "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 2449,
-   "n_words": 376
+   "n_chars": 2430,
+   "n_words": 357,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 14,
-  "chars_total": 23545,
+  "chars_total": 23667,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "virialpaper2v4.tex",
@@ -319,24 +547,24 @@
     {
      "id": "sec-002-2-main-results",
      "title": "Main Results",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-3-obtaining-the-relationship",
      "title": "Obtaining the Relationship",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.971,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-4-general-derivation-derivation-for-theorem-21",
      "title": "General Derivation: Derivation for Theorem 2.1",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -344,7 +572,7 @@
      "id": "sec-005-5-derivation-of-corollary-22-and-comparisons-wit",
      "title": "Derivation of Corollary 2.2 and comparisons with previous results",
      "prose_ratio": 0.871,
-     "coverage_ratio": 0.931,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -352,7 +580,7 @@
      "id": "sec-006-52-morais-procacci-bound",
      "title": "Morais-Procacci Bound",
      "prose_ratio": 0.906,
-     "coverage_ratio": 0.963,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -368,7 +596,7 @@
      "id": "sec-008-54-comparison-of-the-bounds",
      "title": "Comparison of the Bounds",
      "prose_ratio": 0.531,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-009-6-the-alternative-bound-corollary-23",
@@ -378,8 +606,8 @@
     {
      "id": "sec-010-7-comparison-of-the-separate-bound-proposition-2",
      "title": "Comparison of the Separate Bound: Proposition 2.4",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.867,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },

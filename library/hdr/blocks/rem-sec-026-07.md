@@ -1,0 +1,1 @@
+Equation (6.22) hints towards an isomorphism between the cyclotomic Yokonuma–Hecke algebra Y(d, l, n) and a direct sum of matrix algebras over tensor products of Ariki–Koike algebras; this isomorphism was recently described by Poulain d’Andecy in [PdA] and by Rostam in [Ros].

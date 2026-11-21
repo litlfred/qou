@@ -37,7 +37,23 @@ structure QuantumCharacteristicClasses where
 /-! ## §4  Direct Limit Algebra -/
 
 /-- **Direct Limit Algebra**: `𝒜_∞ = lim→ Γ(J¹ E_n, SU_{q_n}(2))`.
-    LaTeX: `\label{def:direct-limit-algebra}` -/
+    LaTeX: `\label{def:direct-limit-algebra}`
+
+    **Repaired 2026-11-20 (bean `qou-dx7g`).**  The invariance of the Haar and
+    limit states was encoded as *constancy* (`haarState n a = haarState n b`),
+    which is not invariance under the quantum gauge group but the statement
+    that the state ignores its argument; and `prop:vacuum-state`'s uniqueness
+    was proved from that constancy.  Now:
+
+    * invariance is invariance under the gauge action — the sets `gaugeAt n`
+      and `gauge` of transformations through which `G_q = Aut^⊗(τ)` acts by
+      conjugation (`prop:vacuum-state` md);
+    * `embed_surjective` records the defining property of a direct limit —
+      every element of `𝒜_∞` comes from a finite level — which is what
+      uniqueness actually rests on.
+
+    **Residual.**  `G_q` is not constructed here, so `gaugeAt`/`gauge` are data;
+    the identity-only gauge set satisfies the invariance fields. -/
 structure DirectLimitAlgebra where
   tower : RecursiveBraneTower
   substrateAt : (n : ℕ) → ArchimedeanSubstrateField (tower.level n).M
@@ -47,28 +63,42 @@ structure DirectLimitAlgebra where
   embed : (n : ℕ) → sectionAlgebra n → limitAlgebra
   embed_compat : ∀ (n : ℕ) (a : sectionAlgebra n),
     embed (n + 1) (transitionMap n a) = embed n a
+  /-- **Direct limit**: every element of `𝒜_∞` is embedded from some level. -/
+  embed_surjective : ∀ a : limitAlgebra, ∃ (n : ℕ) (x : sectionAlgebra n), embed n x = a
   one : limitAlgebra
+  /-- The gauge action at level `n` (conjugation by `G_q`). -/
+  gaugeAt : (n : ℕ) → Set (sectionAlgebra n → sectionAlgebra n)
+  /-- The gauge action on `𝒜_∞`. -/
+  gauge : Set (limitAlgebra → limitAlgebra)
   haarState : (n : ℕ) → sectionAlgebra n → ℝ
   haarState_compat : ∀ (n : ℕ) (a : sectionAlgebra n),
     haarState (n + 1) (transitionMap n a) = haarState n a
-  haarState_invariant : ∀ (n : ℕ) (a b : sectionAlgebra n),
-    haarState n a = haarState n b
+  /-- The Haar state at each level is gauge-invariant. -/
+  haarState_invariant : ∀ (n : ℕ), ∀ g ∈ gaugeAt n, ∀ a : sectionAlgebra n,
+    haarState n (g a) = haarState n a
   limitState : limitAlgebra → ℝ
   limitState_extends : ∀ (n : ℕ) (a : sectionAlgebra n),
     limitState (embed n a) = haarState n a
-  limitState_invariant : ∀ (a b : limitAlgebra),
-    limitState a = limitState b
+  /-- The limit state is gauge-invariant. -/
+  limitState_invariant : ∀ g ∈ gauge, ∀ a : limitAlgebra,
+    limitState (g a) = limitState a
 
 /-! ## §5  Vacuum State -/
 
 /-- **Proposition (Existence and Uniqueness of the Vacuum State).**
-    LaTeX: `\label{prop:vacuum-state}` -/
+    LaTeX: `\label{prop:vacuum-state}`
+
+    A vacuum state is a gauge-invariant state on `𝒜_∞` extending the Haar
+    states.  Until 2026-11-20 `invariant` read `state a = state b` for all
+    `a b` (constancy), bean `qou-dx7g`. -/
 structure VacuumState (dla : DirectLimitAlgebra) where
   state : dla.limitAlgebra → ℝ
-  invariant : ∀ (a b : dla.limitAlgebra), state a = state b
+  /-- Gauge invariance: `φ(g · a) = φ(a)` for every `g` in the gauge action. -/
+  invariant : ∀ g ∈ dla.gauge, ∀ a : dla.limitAlgebra, state (g a) = state a
   extends_haar : ∀ (n : ℕ) (a : dla.sectionAlgebra n),
     state (dla.embed n a) = dla.haarState n a
 
+/-- **Existence**: the limit state is a vacuum state. -/
 theorem vacuum_state_exists (dla : DirectLimitAlgebra) :
     Nonempty (VacuumState dla) :=
   ⟨⟨dla.limitState, dla.limitState_invariant, dla.limitState_extends⟩⟩
@@ -76,24 +106,20 @@ theorem vacuum_state_exists (dla : DirectLimitAlgebra) :
 /-- **Uniqueness of the vacuum state**: any two vacuum states on the
     same direct limit algebra agree on all elements.
 
-    **Proof strategy:** Both states are constant (by `invariant`), and
-    they agree on embedded elements (by `extends_haar` + Haar uniqueness).
-    So they are equal everywhere.
-
-    This is the categorical analogue of the Schur uniqueness in
-    `QOU.Torsion.invariant_functional_unique` (vacuum-state.lean). -/
--- Ref: [manuscript] §3, Proposition: Vacuum state (uniqueness)
+    **Proof (2026-11-20, bean `qou-dx7g`).**  Every element of `𝒜_∞` is
+    embedded from a finite level (`embed_surjective`), and on embedded
+    elements both states equal the Haar state (`extends_haar`).  The previous
+    proof used the constancy that `invariant` then encoded; the level-`n`
+    witness arguments `n`, `a₀` it needed are kept for signature stability
+    and are unused. -/
+-- Ref: [leitner2026] §3, Proposition: Vacuum state (uniqueness)
 theorem vacuum_state_state_eq (dla : DirectLimitAlgebra)
     (v₁ v₂ : VacuumState dla)
-    (n : ℕ) (a₀ : dla.sectionAlgebra n) :
+    (_n : ℕ) (_a₀ : dla.sectionAlgebra _n) :
     ∀ (a : dla.limitAlgebra), v₁.state a = v₂.state a := by
   intro a
-  -- v₁ is constant, so v₁.state a = v₁.state (embed n a₀)
-  rw [v₁.invariant a (dla.embed n a₀)]
-  -- v₂ is constant, so v₂.state a = v₂.state (embed n a₀)
-  rw [v₂.invariant a (dla.embed n a₀)]
-  -- Both extend the Haar state: vᵢ.state (embed n a₀) = haarState n a₀
-  rw [v₁.extends_haar n a₀, v₂.extends_haar n a₀]
+  obtain ⟨m, x, rfl⟩ := dla.embed_surjective a
+  rw [v₁.extends_haar m x, v₂.extends_haar m x]
 
 /-- The vacuum state value is determined by the Haar state at level 0. -/
 theorem vacuum_state_value_eq_haar (dla : DirectLimitAlgebra)

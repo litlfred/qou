@@ -1,0 +1,110 @@
+KNOT-QUIVER CORRESPONDENCE FOR DOUBLE TWIST KNOTS
+
+PHYS. REV. D 108, 106023 (2023)
+
+-3 -3 -2 -2 0 0
+
+-2 -1 -2 -2 -2 -2 3-2 -1 -l 141
+-3 -2 -4 -4 -5 -5 - -2 -1 -1 -1 00
+U= > =
+-3 -2 -4 -3 -4 -4 2 -l -l 0 11
+3-2 -5 -4 -6 -6 o 1 0 111
+—3 -2 -5 -4 -6 -5 o 1 0 112
+-2 -2 -2 -2 -1 -1 -2 -2 -3 -3 -3 -3
+-l1 -1 -1 -1 0 0 -1 -1 -2 -2 -2 -2
+-4 -4 -3 -3 -1 -1 7 -2 -2 -4 -4 -5 -5
+R= » R= .
+3-3 -2 -2 0 0 -1 -1 -3 -3 -4 -4
+-5 -5 -3 -3 -1 -1 -2 -2 -4 -6
+-4 -4 2-20 0 -1 -1 33 -5
+-1 -1 -3 -3 -4 -4 3-3 -2 20 0
+0 0 -2 -2 -3 -3 -2 -2 -1 -1 11
+-1 -1 -2 -2 -2 -2 7 -1 -1 -1 -1 0 0
+T= : T=
+
+0 0 -1 -1 -1 =I 0 0 0 0 11
+
+F,=(-1, -1, -1 -1 -1 -1), F,=(0, 0, 0 0 0 0),
+and Fo = (0). We have verified that our conjecture (9) is
+true for p = 4, 5. The linear term and phase factor in the
+proposition (8) for p = 3, 4 are as follows:
+E@.-3) = —2d) — d3 — 4dy — 3ds — 6dg — Sdz — 3dg
+— 2dy — diy + diy + 2d)3 + dis — 2di6
+— diz — Adjg — 3dy9 — dy) + dap + 2dy
++ 3dy4 + 4do5 + 2dy5 + 3dy7 + dy — 2d39
+— dx, + d3z + 2d33 + 3d34 + 4d35
++ Sd + 6d37,
+(4,-3) = 2@,-3) + 4d3g + Sd39 + 2dgg + 3d4, + daz
++ 3da4 + 4dgs + 5dyg + 6d4z + Tdyg + 8dyg,
+AG.-3) = 43 + ds + dz + dg + dig + diz + d\5
++ diz + dig + dy + dy + doa + dx
++ dy + ds) + dy + d3q + do,
+Mas) = Ags) + d39 + day + dag + dag + dag + dag.
+
+ie]
+
+Probably, there is a closed-form expression for 2, 3 and
+A,,-3 for any p. We are not able to infer the closed form
+from the above data.
+
+Ideally, it would be beneficial to find the set of matrices
+X, for any m as well as the closed form for 2, _,, and A, _n-
+The size of the quiver matrix (4mp + 1) x (4mp + 1)
+makes the computations difficult.
+
+IV. CONCLUSION AND DISCUSSION
+
+Double twist knots K(p,—m) depend on two full twist
+parameters p,m€Z, belong to the arborescent family
+(see Fig. 1). Finding a quiver with matrix (9) associated
+to each of the double twist knots was attempted using
+reverse engineering of Melvin-Morton-Rozansky expan-
+sion. We observed the Alexander polynomial form to be
+A(X) = 1 — pmX, almost similar to twist knots K(p, -1)
+studied in Ref. [1]. Comparing the structure of twist knot
+quiver, we put forth a proposition (8) for colored Jones in a
+quiver presentation as well as conjectured (9) the structure
+of the quiver matrix C*(?-”) for any double twist knot
+K(p,—m). We have explicitly worked out some double
+twist knots to validate our proposition and the conjecture
+for m= 1, 2, 3. Our detailed methodology shows the
+complexity of the equations to deduce a concise form for
+3,,-3 and A, _3.
+
+We did attempt rewriting the superpolynomial for double
+twist knots K(p, —m) [15] in the quiver representation form
+using the g-multinomial identities [1]. Unfortunately, we
+face computational difficulty even in determining the
+powers of A dependence. That is., 7), 2, ... in the motivic
+series (1). We are working on an alternative method
+involving homological diagrams to obtain r-colored
+HOMELY-PT in quiver representation [23]. We hope to
+report these results soon [23].
+
+It will be worth investigating whether our conjectured
+form for the block structure in C*(’-”) has any connec-
+tions to (i) the tangle operations and (ii) the holomorphic
+discs on the knot conormal. Probably, this could be another
+way to tackle quiver representation form for r-colored
+HOMELY-PT.
+
+Three-manifold invariants F(x = q", q) for knot comple-
+ments S°\KC can be deduced from the coefficients of the
+MMR expansions for the r-colored Jones polynomial [24].
+Subsequently, this invariant was refined in Ref. [25]. Similar
+to the knot-quiver correspondence, a motivic series for the
+Fx(x,q) invariant was conjectured in Ref. [26]. Such a
+conjecture has been validated for the torus knots of
+type (2,2p+1) [26], the double twist knots of type
+K(p,m), K(p +4,—m) [27]. The large color behavior of
+colored Jones polynomial was the starting point to tackle
+F(x, q) for positive braid knots in Ref. [27]. Further, the
+refined version of these three-manifold invariant for the knot
+complements of positive braids is discussed in Ref. [28]. We
+still face a stumbling block in achieving a quiver form for
+these double twist knots of type K(p,m), K(p + 4,—m) and
+the motivic series F’x(p—~m)(X, q). We probably need a radical
+approach to obtain such a motivic series form. We will report
+on these aspects and their refined version in the future.
+
+106023-7

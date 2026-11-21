@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2111.06645v3/blocks/prose-sec-022",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Ideal triangulations and the Neumann–Zagier equations",
-  "pageStart": 47,
-  "pageEnd": 49,
-  "text": "../sections/sec-022-62-ideal-triangulations-and-the-neumannzagier-eq.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.06645v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.06645v3",
+  "title": "The non-hyperbolic case",
+  "pageStart": 42,
+  "pageEnd": 43,
+  "text": "../sections/sec-022-55-the-non-hyperbolic-case.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
   "provenance": "ingested"
 }

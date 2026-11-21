@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.01282v2
-doc_title: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres"
+doc_title: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES"
 section_id: sec-005-23-periodic-maps-determined-by-the-linking-matri
 section_title: "Periodic maps determined by the linking matrix"
 section_number: 2.3
 pages: 5-6
 source_pdf: 2205.01282v2.pdf
 source_sha256: 00f656afa60db838
-doc_brief: "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.881
-latex_coverage_ratio: 0.889
+latex_coverage_ratio: 0.973
+doc_brief: "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds."
 ---
 []{#subsec:char label="subsec:char"}
 

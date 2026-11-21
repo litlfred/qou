@@ -67,8 +67,19 @@ Borromean case carries information. Measured here, per triple:
   * triples touching a linked pair have `Delta = 2` (uniform branch, one bit
     of `mubar` survives) or `Delta = 1` (mixed branch, no information).
 
-So the Milnor route is **not obstructed** -- it is partially available, and the
-availability starts exactly at `A = 4`. For `A <= 3` (`mu <= 4`) a path has no
+So the Milnor route looked **not obstructed** -- partially available, starting
+exactly at `A = 4`.
+
+**SUPERSEDED 2026-08-31 by `milnor_defined_triples_are_split_probe.py`.** The
+`Delta = 0` triples are exactly the mutually non-adjacent ones, and between
+non-adjacent components this closure has **zero crossings** -- their strand
+blocks are pairwise disjoint intervals with no interacting letter, so each such
+triple is a **split** 3-component sublink and its `mubar` is **identically
+zero**. Definedness and triviality coincide. Read the "partially available"
+conclusion below as refuted: the route is closed, and the Magnus expansion
+would return zero on exactly the triples where it is meaningful. What follows
+is retained because the indeterminacy split is still correct and is what makes
+the collapse legible. For `A <= 3` (`mu <= 4`) a path has no
 mutually non-adjacent triple at all, so **no genuine integer `mubar` exists**;
 the A=3 mirror pair and the deuteron are outside its reach.
 

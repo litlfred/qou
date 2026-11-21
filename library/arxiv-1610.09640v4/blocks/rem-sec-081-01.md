@@ -1,0 +1,1 @@
+We should say a few explanatory words on the change in Deﬁni- tion 12.1.6, that conﬂicts with earlier deﬁnitions. Recall that in Deﬁnitions 7.3.3 and 7.3.4 we made a distinction between (12.1.9) D⋆(A, M) = K⋆(A, M)S⋆(A,M), Derived Categories | Amnon Yekutieli |

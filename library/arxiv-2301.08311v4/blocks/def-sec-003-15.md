@@ -1,1 +1,1 @@
-We call a broken strip u∈M Br(Γ, M[l], L[l],K ) regular
+Given combinatorial type Γ of a broken strip where each outside piece stable, we define the stabilized type Γst by forgetting all the inner and neck pieces that are not stable along with the puncture nodes that connected the unstable piece to a stable piece. If removing such a puncture node renders an otherwise stable piece into an unstable piece, we forget that as well in Γst.

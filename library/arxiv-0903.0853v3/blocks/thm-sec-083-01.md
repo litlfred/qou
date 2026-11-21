@@ -1,0 +1,1 @@
+— In (7.4), we have L = (zσq −1)(z2σq −1) and the series ˆY is (1, 1/2)-summable by the following process: ˆf = X n≥0 anzn Bq,1 −→ ϕ := X n≥0 anq−n(n−1)/2ξn A∗ q;1,1/2 −→ f ∗ L∗ q;1/2 −→f ∗ (1,1/2). For a basic introduction to this method and explanation of the notations above, see [19], which contains further references to this work.

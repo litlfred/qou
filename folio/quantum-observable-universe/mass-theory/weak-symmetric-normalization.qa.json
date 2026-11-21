@@ -48,6 +48,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "28a68f448c00",
+          "ts": "f52b19192eae",
+          "lean": "cfefee898781",
+          "lean_statement": "0cbf1e983489"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:28.215Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the ref `weak_symmetric_normalization` (sibling-only) is a `noncomputable def … : R := ⅟(3 : R) * (q^4 + q^6 + q^8)` (lean:106-111). The claimed value is taken as a definition; the \"theorems\" are its unfolding and `ring` (lean:114-133). The class hypotheses are `True` carriers: `EWSpectralCompletenessHolds … := True` (lean:51-54) and `EWLinkTripletIdentified … := True` (lean:62-63). Nothing connects N_sym to a Plancherel-weighted character product (md:1), a Hecke algebra or a trace. The md says the formulation is superseded (\"the direct cell-content trace now supersedes this Plancherel-weighted formulation\", md:13), and the ts marks it DEMOTED and \"**Open** as a formal proposition\" (ts:34, 42). Yet the md still states it as a proposition. The ts also records the upstream N_sym(q₀) = 213.11 \"pinned from CODATA G_F\" as a CAL-3 violation (ts:38). No proof block.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1239,7 +1257,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "critical",
-        "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner \u2014 demote to conjecture or add CAL-4 banner"
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner — demote to conjecture or add CAL-4 banner"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1470,7 +1488,7 @@
           "in_degree": 0,
           "cone_size": 231,
           "depth": 51,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 657,
           "edge_span_mean": 333.5,
           "worst_target": ""
@@ -2124,6 +2142,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T06:38:29.745Z",
+  "updated_at": "2026-11-15T21:57:28.215Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

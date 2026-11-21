@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1706.09531v1/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Preliminaries",
+  "pageStart": 43,
+  "pageEnd": 50,
+  "contains": [
+    "library/arxiv-1706.09531v1/blocks/prose-sec-019",
+    "library/arxiv-1706.09531v1/blocks/prop-sec-019-01",
+    "library/arxiv-1706.09531v1/blocks/prop-sec-019-02",
+    "library/arxiv-1706.09531v1/blocks/figure-img-p044-1",
+    "library/arxiv-1706.09531v1/blocks/figure-img-p044-2",
+    "library/arxiv-1706.09531v1/blocks/figure-img-p044-3"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.09531v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.09531v1/manifest.jsonld",
+  "provenance": "ingested"
+}

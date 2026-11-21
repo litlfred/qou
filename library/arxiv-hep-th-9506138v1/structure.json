@@ -8,7 +8,7 @@
   "pages": 28,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,8 +20,8 @@
    "stamp_date": "21 Jun 1995"
   },
   "doi": null,
-  "title": "arXiv:hep-th/9506138v1 21 Jun 1995",
-  "authors_raw": "L\u00e1rus Thorlacius,b and John Uglumc",
+  "title": "Black Hole Complementarity vs. Locality",
+  "authors_raw": "Lárus Thorlacius,b and John Uglumc",
   "title_lines": [
    "Black Hole Complementarity vs. Locality",
    "David A. Lowe,a Joseph Polchinski,b Leonard Susskind,c"
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/9506138v1 21 Jun 1995"
  },
  "toc": [
   {
@@ -137,7 +138,7 @@
    "title": "The Commutator of Open Bosonic String Fields",
    "page": 16,
    "source": "inferred",
-   "number": "A",
+   "number": "Appendix A",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -193,7 +194,7 @@
    "title": "The Magnitude of the Commutator",
    "page": 22,
    "source": "inferred",
-   "number": "B",
+   "number": "Appendix B",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -598,22 +599,22 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 4,
-   "n_chars": 7087,
-   "n_words": 1118,
+   "page_end": 5,
+   "n_chars": 8320,
+   "n_words": 1317,
    "label_start": "1",
-   "label_end": "3"
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-the-nice-slice-argument",
    "number": "2",
    "title": "The Nice-Slice Argument",
    "level": 1,
-   "page_start": 4,
+   "page_start": 5,
    "page_end": 8,
-   "n_chars": 8802,
-   "n_words": 1515,
-   "label_start": "3",
+   "n_chars": 7620,
+   "n_words": 1322,
+   "label_start": "4",
    "label_end": "7"
   },
   {
@@ -623,8 +624,8 @@
    "level": 1,
    "page_start": 8,
    "page_end": 13,
-   "n_chars": 9491,
-   "n_words": 1610,
+   "n_chars": 9479,
+   "n_words": 1605,
    "label_start": "7",
    "label_end": "12"
   },
@@ -647,8 +648,8 @@
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 4638,
-   "n_words": 740,
+   "n_chars": 4632,
+   "n_words": 738,
    "label_start": "12",
    "label_end": "14"
   },
@@ -659,14 +660,14 @@
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3888,
-   "n_words": 637,
+   "n_chars": 3885,
+   "n_words": 636,
    "label_start": "14",
    "label_end": "15"
   },
   {
-   "id": "sec-006-a-the-commutator-of-open-bosonic-string-fields",
-   "number": "A",
+   "id": "sec-006-appendix-a-the-commutator-of-open-bosonic-string",
+   "number": "Appendix A",
    "title": "The Commutator of Open Bosonic String Fields",
    "level": 1,
    "page_start": 16,
@@ -683,8 +684,8 @@
    "level": 2,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 6020,
-   "n_words": 1095,
+   "n_chars": 6011,
+   "n_words": 1092,
    "label_start": "15",
    "label_end": "18"
   },
@@ -695,8 +696,8 @@
    "level": 2,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 4934,
-   "n_words": 887,
+   "n_chars": 4925,
+   "n_words": 884,
    "label_start": "18",
    "label_end": "21"
   },
@@ -713,8 +714,8 @@
    "label_end": "21"
   },
   {
-   "id": "sec-010-b-the-magnitude-of-the-commutator",
-   "number": "B",
+   "id": "sec-010-appendix-b-the-magnitude-of-the-commutator",
+   "number": "Appendix B",
    "title": "The Magnitude of the Commutator",
    "level": 1,
    "page_start": 22,
@@ -731,8 +732,8 @@
    "level": 2,
    "page_start": 22,
    "page_end": 25,
-   "n_chars": 5059,
-   "n_words": 964,
+   "n_chars": 5050,
+   "n_words": 961,
    "label_start": "21",
    "label_end": "24"
   },
@@ -743,8 +744,8 @@
    "level": 2,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 2091,
-   "n_words": 375,
+   "n_chars": 2088,
+   "n_words": 374,
    "label_start": "24",
    "label_end": "25"
   },
@@ -755,8 +756,8 @@
    "level": 2,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 897,
-   "n_words": 150,
+   "n_chars": 894,
+   "n_words": 149,
    "label_start": "25",
    "label_end": "26"
   },
@@ -767,8 +768,8 @@
    "level": 2,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 1373,
-   "n_words": 292,
+   "n_chars": 1370,
+   "n_words": 291,
    "label_start": "26",
    "label_end": "27"
   },
@@ -791,8 +792,8 @@
    "level": 2,
    "page_start": 28,
    "page_end": 28,
-   "n_chars": 938,
-   "n_words": 159,
+   "n_chars": 935,
+   "n_words": 158,
    "label_start": "27",
    "label_end": "27"
   }
@@ -812,6 +813,7 @@
    "items": []
   },
   "sections": 18,
-  "chars_total": 59955
+  "chars_total": 59946,
+  "furniture_lines_stripped": 27
  }
 }

@@ -1,0 +1,49 @@
+26 Chapter 2 — Proof of the vanishing theorem(s)
+
+by Gabber’s decomposition theorem into a sum of a perverse sheaf and a
+complex N, which is isomorphic to zero in the quotient category D. From
+the Kiinneth isomorphism
+
+H°(X,P") = (H*(X,P))°"
+we will then deduce in lemma 2.11 the vanishing in theorem 1.1 for any
+character ¥ with the property that H*(X, (N,)y) =0 for some r > g. Indeed
+the vanishing theorem is closely connected to the Tannakian property of the
+above categories — for the rigid symmetric abelian subcategory C = (P)
+generated inside D by a semisimple perverse sheaf P, we will see later on
+that the functor
+
+@: C —>+ Vecty, K +> H°(X,K;)
+is a fibre functor for any character 7 with the property in theorem 1.1. As
+
+a first step in this direction, we will show in the next section that the twist
+functor K ++ Ky is a tensor functor ACU.
+
+2.2. Character twists and convolution
+
+In this section we show that twisting by a character x defines a tensor
+functor ACU in the sense of [86, chapt. I, sect. 4.2.4] on the symmetric
+monoidal category D?(X,A) with respect to convolution. Recall that this
+means that we have natural isomorphisms (K * L)y = Ky * Ly for all K,L
+in D>(X,A), compatible with the associativity, commutativity and unity
+constraints. This observation will be crucial for lemma 2.11 below, but
+its proof is rather formal and may be skipped at a first reading.
+
+PROPOSITION 2.1. For any character x, the auto-equivalence K + Ky
+of the category DP (X,A) defines a tensor functor ACU which is compatible
+with degree shifts and perverse truncations.
+
+Proof. The functor K ++ Ky preserves semi-perversity, so it is t-exact
+with respect to the perverse f-structure since D(K,) = D(K),-1. It remains
+to check tensor functoriality. Clearly 1, = 1.
+
+Depending on the context, put R = Z;, R = Z or R = Z/nZ, including
+the case where p = char(k) divides n. We claim that in all these cases
+the group law a: X x X —> X induces on the first cohomology groups the
+diagonal morphism
+
+a®: H'(X,R) — H!(X x X,R) = H!(X,R)@H!(X,R), x (x,x).
+For R = Z; or R = Z this follows from the formula preceding lemma 15.2
+in [75]. For a finite coefficient ring R = Z/nZ with p {n we have R & Ly,
+since the ground field k is algebraically closed; then our claim follows from
+the identification H!(X, Un) & Pic?(X){n] in [74, cor. IIL.4.18], since for
+coherent line bundles Y € Pic®(X) one has a*(L) © pr} (L) ® pr3;(L)

@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cd2018-045/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting",
+  "contains": [
+    "library/cd2018-045/sections/page-001",
+    "library/cd2018-045/sections/page-002",
+    "library/cd2018-045/sections/page-003",
+    "library/cd2018-045/sections/page-004",
+    "library/cd2018-045/sections/page-005",
+    "library/cd2018-045/sections/page-006",
+    "library/cd2018-045/sections/page-007",
+    "library/cd2018-045/sections/page-008",
+    "library/cd2018-045/sections/page-009",
+    "library/cd2018-045/sections/page-010"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "cd2018-045",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting",
+      "basis": "Printed title on page 1 (A. Walker-Loud, PoS(CD2018)045); the extracted title was the proceedings identifier",
+      "extracted_title": "PoS(CD2018)045",
+      "corrected_on": "2026-11-18",
+      "extracted": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting"
+    },
+    "source_file": "CD2018_045.pdf",
+    "source_sha256": "5e17341a413ac93a6adfedb932426979c501085fd908a1dc6421f8b78dac07a9",
+    "pages": 10,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

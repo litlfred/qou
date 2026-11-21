@@ -51,7 +51,7 @@ class NsKummerSpecialisationContext where
     unbounded — *proved* outright from `χ(A) ≠ 0` via `Int.le_of_dvd`
     (a divisor of `χ(A)` is at most `|χ(A)|`); (iii) restates
     `kappa_iff_dvd`. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts
 theorem ns_kummer_specialisation [ctx : NsKummerSpecialisationContext] :
     (∀ n : ℕ, 1 ≤ n → ¬ ((n : ℤ) ∣ ctx.chi_A) → ¬ ctx.kappa_vanishes n) ∧
     (∀ N : ℕ, ∃ n : ℕ, N < n ∧ ¬ ((n : ℤ) ∣ ctx.chi_A)) ∧

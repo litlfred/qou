@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/hal-01215114/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
   "title": "Links between pair-partitions and zonal characters",
   "pageStart": 5,
   "pageEnd": 6,
   "text": "../sections/sec-009-links-between-pair-partitions-and-zonal-characte.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hal-01215114",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hal-01215114",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hal-01215114/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hal-01215114/manifest.jsonld",
   "provenance": "ingested"
 }

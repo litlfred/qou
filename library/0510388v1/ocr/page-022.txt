@@ -1,0 +1,26 @@
+B. PROOFS ON S? IN LEFT-TRANSLATION FORMAT
+
+8. Proof scheme for Theorem 3, formula (1).
+
+When working on S? in left-translation format, our first order of business will
+be to derive formula (1) of Theorem 3 for the vector-valued Green's operator.
+
+It is natural to hope, by analogy with R’, that
+
+ACV, boy) = Jigs Lyxt V(X) o(x, y) dx
+
+will be the Green's operator on S* when po is the fundamental solution of the
+scalar Laplacian.
+
+It doesn't turn out this way, but the fundamental solution of the Laplacian is not
+the only possible kernel function, and A(V, ) is not the only way of convolving
+a vector field with a kernel to get another vector field.
+Consider the convolutions
+
+A(V, oy) = Ss Ly V(x) p(x, y) dx
+
+BV, oy) = Ss Ly V(x) xVy o(x, y) dx
+
+GV, o)(y) = Vy Ss3 Ly V(x) bd Vy o(x, y) dx :
+
+22

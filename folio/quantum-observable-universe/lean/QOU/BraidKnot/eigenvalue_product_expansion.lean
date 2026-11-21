@@ -17,7 +17,7 @@ symmetric-channel eigenvalue product of the nuclear braid in the
 The Lean encoding records the closed form as a real-valued
 function of `(Z, N, q)`.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.md
 -/
 
 namespace QOU.BraidKnot
@@ -41,7 +41,7 @@ noncomputable def lambdaSym (q : ℝ) (Z N : ℕ) : ℝ :=
 
 /-- **Closed form of the symmetric-channel eigenvalue product**
     ([`prop:eigenvalue-product-expansion`]). -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.md
 theorem eigenvalue_product_expansion (q : ℝ) (Z N : ℕ) :
     lambdaSym q Z N
       = q ^ (((Z : ℝ) - N) * (((Z + N) : ℝ) - 1) / 2)
@@ -55,7 +55,7 @@ theorem eigenvalue_product_expansion (q : ℝ) (Z N : ℕ) :
 /-- **Boundary value at `Z = N`** (isospin-symmetric).
     For `Z = N`, the `q^{(Z−N)(A−1)/2}` factor is `q^0 = 1`, so
     `Λ_sym(Z, Z) = ([2]_q/2)^{Z²}`. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.md
 theorem lambdaSym_at_isospin_symmetric (q : ℝ) (Z : ℕ) (_h_q_pos : 0 < q) :
     lambdaSym q Z Z = (qInt2 q / 2) ^ (Z * Z) := by
   simp only [lambdaSym]

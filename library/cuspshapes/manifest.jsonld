@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "cuspshapes",
   "contains": [
+    "library/cuspshapes/sections/sec-front-matter",
     "library/cuspshapes/sections/sec-000",
     "library/cuspshapes/sections/sec-001",
     "library/cuspshapes/sections/sec-002",
@@ -18,10 +19,11 @@
     "library/cuspshapes/sections/sec-004",
     "library/cuspshapes/sections/sec-005",
     "library/cuspshapes/sections/sec-006",
-    "library/cuspshapes/sections/sec-007"
+    "library/cuspshapes/sections/sec-007",
+    "library/cuspshapes/sections/sec-008"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "cuspshapes",
     "title_source": "slug",

@@ -7,7 +7,6 @@ Every algebraic invariant taking values in $\mathbb{R}$, $\mathbb{Q}_p$, or the 
 
 **Relation to existing blocks.**
 - The [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate) is the algebraic-place realization. It forms a finite-type structure on $\mathcal{S}_{\mathrm{mot}}$.
-- The [adelic substrate](#def:adelic-substrate) is the place-decomposition $\mathbb{A} = \mathbb{R} \times \prod_p' \mathbb{Q}_p$ indexing the realization tower. The adelic decomposition of a motivic class is the restricted product $\rho_{\mathrm{tot}}([X]) = (\rho_v([X]))_v$.
-- The [arc space](#def:arc-space) $\mathcal{L}(X)$ provides the measurable space for motivic integration into $\widehat{\mathcal{M}}$. We derive the Kontsevich–Denef–Loeser motivic measure \cite{kontsevich1995, denef-loeser2001} from this space.
+- The [arc space](#def:arc-space) $\mathcal{L}(X)$ provides the measurable space for motivic integration into $\widehat{\mathcal{M}}$. One derives the Kontsevich–Denef–Loeser motivic measure \cite{kontsevich1995, denef-loeser2001} from this space.
 
 **Out of scope.** Mixed motives, Bloch–Kato exact sequences, and full motivic Galois groups are not axiomatized here. The realization tower is presented purely as the family $\{\rho_v\}$ of place-indexed evaluations; the categorical relationships among the $\rho_v$ remain implicit.

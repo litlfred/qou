@@ -47,8 +47,8 @@ uses the order structure and `Nat.floor`. `ℝ` is correct here — this block l
 on the archimedean side of the substrate wall.
 
 ## References
-- [manuscript] lifting-and-descent/p3-blowup-yekutieli (`prop:blowup-yekutieli`)
-- [manuscript] fluid-dynamics/ns-obstruction-tower, regularity-breakdown
+- [leitner2026] lifting-and-descent/p3-blowup-yekutieli (`prop:blowup-yekutieli`)
+- [leitner2026] fluid-dynamics/ns-obstruction-tower, regularity-breakdown
 - Yekutieli, *Nonabelian multiplicative integration on surfaces* / the lifting
   framework (DOI 10.1007/s00029-010-0029-8, `yekutieli2010`)
 -/
@@ -81,7 +81,7 @@ noncomputable def obstructionLevel [ctx : YekutieliObstructionLevel] : ℕ :=
 
 /-- **Lifting fails at `n*`.** The obstruction class `κ_{n*}` does not vanish,
     because `s < ⌊s⌋ + 1 = n*`. -/
--- Ref: [manuscript] lifting-and-descent/p3-blowup-yekutieli
+-- Ref: [leitner2026] lifting-and-descent/p3-blowup-yekutieli
 theorem yekutieli_obstruction_at_level [ctx : YekutieliObstructionLevel] :
     ctx.obstruction obstructionLevel := by
   rw [ctx.obstruction_iff_exceeds]
@@ -90,7 +90,7 @@ theorem yekutieli_obstruction_at_level [ctx : YekutieliObstructionLevel] :
 
 /-- **Every level below `n*` lifts cleanly.** For `n < n* = ⌊s⌋ + 1`, i.e.
     `n ≤ ⌊s⌋ ≤ s`, the obstruction class vanishes (`¬ (s < n)`). -/
--- Ref: [manuscript] lifting-and-descent/p3-blowup-yekutieli
+-- Ref: [leitner2026] lifting-and-descent/p3-blowup-yekutieli
 theorem yekutieli_no_obstruction_below [ctx : YekutieliObstructionLevel]
     (n : ℕ) (hn : n < obstructionLevel) : ¬ ctx.obstruction n := by
   rw [ctx.obstruction_iff_exceeds]
@@ -103,7 +103,7 @@ theorem yekutieli_no_obstruction_below [ctx : YekutieliObstructionLevel]
 /-- **`n*` is the least failing level.** It is nonzero at `n*` and vanishes at
     every smaller level — the manuscript's `n* = ⌊s*⌋ + 1` is exactly the
     minimal brane-tower level at which the classical velocity ceases to lift. -/
--- Ref: [manuscript] lifting-and-descent/p3-blowup-yekutieli, regularity-breakdown
+-- Ref: [leitner2026] lifting-and-descent/p3-blowup-yekutieli, regularity-breakdown
 theorem yekutieli_obstruction_level_least [ctx : YekutieliObstructionLevel] :
     ctx.obstruction obstructionLevel ∧
       ∀ n : ℕ, n < obstructionLevel → ¬ ctx.obstruction n :=

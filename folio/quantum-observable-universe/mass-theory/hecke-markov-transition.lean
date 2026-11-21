@@ -106,8 +106,10 @@ theorem SpectralIdempotentData.p_minus_pos (d : SpectralIdempotentData) :
 /-- **Boltzmann ratio**: p₊/p₋ = q².
 
     The ratio of transition probabilities equals q², the Boltzmann
-    weight for a single crossing.  This identifies q² as the
-    fugacity of the Mallows measure. -/
+    weight for a single crossing.  Note that `K_i = p₊·id + p₋·s_i` is
+    doubly stochastic (`s_i` is a permutation matrix), so its stationary law
+    is the uniform measure, not the Mallows measure: q² here is a one-step
+    ratio, not the fugacity of a stationary distribution. -/
 -- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
 theorem SpectralIdempotentData.boltzmann_ratio (d : SpectralIdempotentData) :
     d.p_plus / d.p_minus = d.q ^ 2 := by
@@ -172,9 +174,14 @@ noncomputable def MarkovTransitionStep.vertexVolume (s : MarkovTransitionStep) :
       tr_M(ρ(β)) = ∏_{i=0}^{n−2} V̂_i
 
     Each V̂_i depends only on the local crossing data (a_i, b_i),
-    not on the other generators.  This is the direct consequence of
-    memorylessness: each step is conditionally independent given the
-    Markov property. -/
+    not on the other generators.  This holds for words that use each
+    generator once (one step per generator, as indexed by `Fin (n-1)`
+    here).  It fails when a generator repeats: tr_M(σ₁σ₂σ₁) = h z² + z,
+    not z³ (corrected 2026-11-16).  The product is a definition here
+    (`MarkovChainFactorization.totalTrace`); its identification with
+    the Markov trace of the grouped word is not proved in this file.
+    (Until 2026-11-16 `totalTrace` was a free field and the product
+    formula a structure field, so the structure assumed the formula.) -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -187,19 +194,18 @@ structure MarkovChainFactorization where
   n_ge : n ≥ 2
   /-- The transition steps, one per generator. -/
   steps : Fin (n - 1) → MarkovTransitionStep
-  /-- The total Markov trace value. -/
-  totalTrace : ℝ
-  /-- **Factorization**: the trace is the product of vertex volumes. -/
-  factorization : totalTrace =
-    Finset.univ.prod (fun i => (steps i).vertexVolume)
 
-/-- The total trace is nonzero when all vertex volumes are nonzero. -/
+/-- The product of the vertex volumes, `∏ᵢ V̂ᵢ`. -/
+noncomputable def MarkovChainFactorization.totalTrace
+    (mcf : MarkovChainFactorization) : ℝ :=
+  Finset.univ.prod (fun i => (mcf.steps i).vertexVolume)
+
+/-- The product is nonzero when all vertex volumes are nonzero. -/
 theorem MarkovChainFactorization.trace_ne_zero
     (mcf : MarkovChainFactorization)
     (h : ∀ i, (mcf.steps i).vertexVolume ≠ 0) :
-    mcf.totalTrace ≠ 0 := by
-  rw [mcf.factorization]
-  exact Finset.prod_ne_zero_iff.mpr (fun i _ => h i)
+    mcf.totalTrace ≠ 0 :=
+  Finset.prod_ne_zero_iff.mpr (fun i _ => h i)
 
 /-! ## Connecting spectral data to transition steps -/
 
@@ -243,37 +249,23 @@ theorem eigenvalue_expectation (d : SpectralIdempotentData) :
 
     The axiom below marks the inductive step that references the Markov
     trace machinery (an external proof). -/
-/-- **External axiom (Jones 1987 Theorem 5.1; Diaconis-Ram 2000):
-    Markov-trace factorisation via per-vertex volumes.**
-
-    Recursive application of the Markov property (stabilisation +
-    cyclicity) gives the totalTrace as a product of per-vertex
-    volumes.  Pending the full Mathlib port of the Markov trace
-    machinery in markov-trace-product.lean. -/
+/-- **The former axiom `markov_chain_factorization_axiom` was false**
+    (removed 2026-11-15, with its wrapper `markov_chain_factorization_exists`).
+    It quantified `totalTrace : ℝ` universally, so it asserted that every
+    real number equals the product of vertex volumes. The intended statement
+    needs `totalTrace` to be the Markov trace of the braid, which this file
+    does not define; recorded as open in bean `qou-n2un`. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
--- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
-axiom markov_chain_factorization_axiom :
-    ∀ (n : ℕ) (_hn : n ≥ 2)
+theorem not_markov_chain_factorization_unconstrained :
+    ¬ ∀ (n : ℕ) (_hn : n ≥ 2)
       (steps : Fin (n - 1) → MarkovTransitionStep)
       (totalTrace : ℝ)
       (_h_markov : ∀ i, (steps i).z = (steps ⟨0, by omega⟩).z),
-        totalTrace = Finset.univ.prod (fun i => (steps i).vertexVolume)
-
--- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
--- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
-theorem markov_chain_factorization_exists
-    (n : ℕ) (hn : n ≥ 2)
-    (steps : Fin (n - 1) → MarkovTransitionStep)
-    (totalTrace : ℝ)
-    (h_markov : ∀ i, (steps i).z = (steps ⟨0, by omega⟩).z) :
-    totalTrace =
-      Finset.univ.prod (fun i => (steps i).vertexVolume) :=
-  markov_chain_factorization_axiom n hn steps totalTrace h_markov
+        totalTrace = Finset.univ.prod (fun i => (steps i).vertexVolume) := by
+  intro h
+  let st : MarkovTransitionStep := ⟨0, 0, 1, one_ne_zero⟩
+  have := h 2 le_rfl (fun _ => st)
+    ((Finset.univ.prod (fun _ : Fin (2 - 1) => st.vertexVolume)) + 1) (fun _ => rfl)
+  linarith
 
 end QOU.Braiding

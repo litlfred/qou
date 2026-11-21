@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2507.13840v2/blocks/prose-sec-027",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Depth-dependent bound on the PT negativity and the CCNR negativity",
+  "pageStart": 35,
+  "pageEnd": 35,
+  "text": "../sections/sec-027-depth-dependent-bound-on-the-pt-negativity-and-t.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "provenance": "ingested"
+}

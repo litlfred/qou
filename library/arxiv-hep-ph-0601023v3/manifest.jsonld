@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0601023v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-0601023v3",
+  "title": "Proton Stability in Grand Unified Theories, in Strings and in Branes",
   "contains": [
     "library/arxiv-hep-ph-0601023v3/sections/sec-front-matter",
     "library/arxiv-hep-ph-0601023v3/sections/sec-000",
@@ -45,10 +45,37 @@
     "library/arxiv-hep-ph-0601023v3/sections/sec-030",
     "library/arxiv-hep-ph-0601023v3/sections/sec-031",
     "library/arxiv-hep-ph-0601023v3/sections/sec-032",
-    "library/arxiv-hep-ph-0601023v3/sections/sec-033"
+    "library/arxiv-hep-ph-0601023v3/sections/sec-033",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-034",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-035",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-036",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-037",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-038",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-039",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-040",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-041",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-042",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-043",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-044",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-045",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-046",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-047",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-048",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-049",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-050",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-051",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-052",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-053",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-054",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-055",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-056",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-057",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-058",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-059",
+    "library/arxiv-hep-ph-0601023v3/sections/sec-060"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -63,7 +90,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-0601023v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0601023v3.pdf",
     "source_sha256": "875ab040b50487a16a60aa5340395bbc110ab3551b601df3419ab433759e699d",
     "pages": 258,

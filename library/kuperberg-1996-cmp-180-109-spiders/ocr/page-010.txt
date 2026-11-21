@@ -1,0 +1,28 @@
+118 G Kuperberg
+
+string of points is called an external clasp. The clasped web space W(n,...,nx)
+is a vector subspace of the web space W,,, defined as the span of those basis webs
+of with no U-turns between two endpoints in the same clasp. The set of such basis
+webs is denoted B(m,...,7;). For example, the web
+
+is not a basis web of W(2,3,4,5), which instead has basis
+
+YP Ye <p
+
+Like a web with closed loops, a clasped web with U-turns has a meaning as a web,
+but not a basis web. If there are any U-turns, the clasped web is defined to be the
+zero web. Thus, W(nj,...,7,) is also a quotient space of W,,.
+
+Theorem 2.3. Let N = (nj,...,,%) be a multi-index, with
+Vu = Vn, @ ++: OVy
+
+When q = 1, there is a family of vector space isomorphisms
+oy : W(N) > Inv(Vw)
+
+that send join to tensor product, stitch to contraction, and rotation to cyclic per-
+mutation of tensor factors up to sign.
+
+Rotation and join of clasped webs are defined in the same way as for unclasped
+webs, but stitch is more complicated. Given a clasped web with two adjacent external
+clasps of the same size, the stitch of the web is obtained by identifying the two
+clasps and introducing an internal clasp, usually depicted as a box:

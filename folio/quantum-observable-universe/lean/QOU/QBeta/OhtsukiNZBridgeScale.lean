@@ -52,7 +52,7 @@ No numerical `S`, no `c_k`, no instance wired.
 
 - [neumann-zagier1985] Neumann & Zagier, Topology 24 (1985). https://doi.org/10.1016/0040-9383(85)90004-7
 - [andersen-hansen2006] https://doi.org/10.1142/S0218216506004555 (the κ-tower)
-- [manuscript] docs/coordination/2026-08-02-c3-odd-aomega-unification.md (the single open question).
+- [leitner2026] docs/coordination/2026-08-02-c3-odd-aomega-unification.md (the single open question).
 -/
 
 namespace QOU.QBeta.OhtsukiNZBridgeScale
@@ -106,5 +106,12 @@ theorem conventions_scale_ratio_two :
   rw [kappaFull_eq_two_mul_kappaCV]
   have h : kappaCV ≠ 0 := kappaCV_pos.ne'
   field_simp
+
+/-- Sign-inversion invariance of the order-`b^2` matching condition: `OrderTwoMatch κA (-c)`
+holds if and only if `OrderTwoMatch κA c` holds. -/
+theorem orderTwoMatch_neg (κA : ℝ) (c : ℂ) :
+    OrderTwoMatch κA (-c) ↔ OrderTwoMatch κA c := by
+  dsimp [OrderTwoMatch]
+  rw [neg_sq]
 
 end QOU.QBeta.OhtsukiNZBridgeScale

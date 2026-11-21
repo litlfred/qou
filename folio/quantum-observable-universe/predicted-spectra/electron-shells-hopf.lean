@@ -9,7 +9,7 @@ closed sub-Hopf link at linking level `n` admits exactly `2n²`
 trefoils; the noble gases are the atoms whose electron cloud
 is a union of such closed sub-links.
 
--- Ref: [manuscript]
+-- Ref: [leitner2026]
 Per `AGENTS.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim. Algebraic tier only — the numerical
 photon-energy and selection-rule matches belong to a future
@@ -17,8 +17,8 @@ Archimedean tier (per gemini review on #721).
 
 ## References
 
-- `[manuscript]` `conj:electron-shells-hopf`
-- `[manuscript]` `prop:torus-hopf-stability`
+- `[leitner2026]` `conj:electron-shells-hopf`
+- `[leitner2026]` `prop:torus-hopf-stability`
 -/
 
 namespace QOU.ElectronShellsHopf

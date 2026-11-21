@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Braid complex",
-  "pageStart": 67,
-  "pageEnd": 68,
+  "title": "Convolution",
+  "pageStart": 61,
+  "pageEnd": 66,
   "contains": [
-    "library/arxiv-1608.03227v4/blocks/prose-sec-058"
+    "library/arxiv-1608.03227v4/blocks/prose-sec-058",
+    "library/arxiv-1608.03227v4/blocks/lem-sec-058-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.03227v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.03227v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.03227v4/manifest.jsonld",
   "provenance": "ingested"
 }

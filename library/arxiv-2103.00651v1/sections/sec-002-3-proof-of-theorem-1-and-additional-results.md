@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2103.00651v1
-doc_title: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu"
+doc_title: "On Concentration Inequalities for Vector-Valued Lipschitz Functions"
 section_id: sec-002-3-proof-of-theorem-1-and-additional-results
 section_title: "Proof of Theorem 1 and Additional Results"
 section_number: 3
 pages: 3-5
 source_pdf: 2103.00651v1.pdf
 source_sha256: c5505d3e4891168e
-doc_brief: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu — We derive two upper bounds for the probability of deviation of a vect or-valued"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.939
+doc_brief: "On Concentration Inequalities for Vector-Valued Lipschitz Functions — We derive two upper bounds for the probability of deviation of a vector-valued Lipschitz function of a collection of random"
 ---
 []{#sec:ProofMain label="sec:ProofMain"}
 

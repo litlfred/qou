@@ -2,66 +2,76 @@
  "_schema": "library-summary/v1",
  "doc_id": "funaba-2014-j-phys-conf-ser-544-012019",
  "source_sha256": "c95b283a122d67e4",
- "brief": "Conference Series — 11 sections: Front matter; Introduction and main result; Computation of the energy of a tor",
- "extended": "**Conference Series**\n\n*OPEN ACCESS*\n\n13 pp, 11 sections.\n\n**Outline.** Front matter; 1 Introduction and main result; 2 Computation of the energy of a torus; 1 Using symmetry, we have only to compute inte; 16 I11− π cosα; 8 I12− π sinα; 8 I13 + π(R + cosα); 16 I14− π cosα; 8 I15− π sinα; 3 Application as another motivation; References",
+ "brief": "Conference Series — 13 sections: Page 1; Page 2; Page 3",
+ "extended": "**Conference Series**\n\n*OPEN ACCESS*\n\n13 pp, 13 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13",
  "tokens": {
-  "brief": 27,
-  "extended": 84
+  "brief": 13,
+  "extended": 44
  },
  "sections": [
   {
-   "id": "sec-front-matter",
-   "title": "Front matter",
-   "pages": "1-2"
+   "id": "page-001",
+   "title": "Page 1",
+   "pages": "1-1"
   },
   {
-   "id": "sec-000-1-introduction-and-main-result",
-   "title": "Introduction and main result",
-   "pages": "2-4"
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
   },
   {
-   "id": "sec-001-2-computation-of-the-energy-of-a-torus",
-   "title": "Computation of the energy of a torus",
-   "pages": "4-5"
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
   },
   {
-   "id": "sec-002-1-using-symmetry-we-have-only-to-compute-integra",
-   "title": "Using symmetry, we have only to compute integrals over the following four regions",
-   "pages": "5-8"
+   "id": "page-004",
+   "title": "Page 4",
+   "pages": "4-4"
   },
   {
-   "id": "sec-003-16-i11-π-cosα",
-   "title": "I11− π cosα",
+   "id": "page-005",
+   "title": "Page 5",
+   "pages": "5-5"
+  },
+  {
+   "id": "page-006",
+   "title": "Page 6",
+   "pages": "6-6"
+  },
+  {
+   "id": "page-007",
+   "title": "Page 7",
+   "pages": "7-7"
+  },
+  {
+   "id": "page-008",
+   "title": "Page 8",
    "pages": "8-8"
   },
   {
-   "id": "sec-004-8-i12-π-sinα",
-   "title": "I12− π sinα",
-   "pages": "8-8"
+   "id": "page-009",
+   "title": "Page 9",
+   "pages": "9-9"
   },
   {
-   "id": "sec-005-8-i13-πr-cosα",
-   "title": "I13 + π(R + cosα)",
-   "pages": "8-8"
+   "id": "page-010",
+   "title": "Page 10",
+   "pages": "10-10"
   },
   {
-   "id": "sec-006-16-i14-π-cosα",
-   "title": "I14− π cosα",
-   "pages": "8-8"
+   "id": "page-011",
+   "title": "Page 11",
+   "pages": "11-11"
   },
   {
-   "id": "sec-007-8-i15-π-sinα",
-   "title": "I15− π sinα",
-   "pages": "8-12"
+   "id": "page-012",
+   "title": "Page 12",
+   "pages": "12-12"
   },
   {
-   "id": "sec-008-3-application-as-another-motivation",
-   "title": "Application as another motivation",
-   "pages": "12-13"
-  },
-  {
-   "id": "sec-009-references",
-   "title": "References",
+   "id": "page-013",
+   "title": "Page 13",
    "pages": "13-13"
   }
  ],

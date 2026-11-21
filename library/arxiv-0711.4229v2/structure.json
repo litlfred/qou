@@ -1,0 +1,341 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0711.4229v2",
+ "source": {
+  "file": "0711.4229v2.pdf",
+  "sha256": "2e6cc61069016627af179cdde2a109e8d6d1fbd58c8085b8c3d69a8f5eec5c22",
+  "bytes": 332213,
+  "pages": 15,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0711.4229",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "25 Sep 2013"
+  },
+  "doi": null,
+  "title": "MODIFIED QUANTUM DIMENSIONS AND RE-NORMALIZED LINK INVARIANTS",
+  "authors_raw": "NATHAN GEER, BERTRAND PATUREAU-MIRAND, AND VLADIMIR TURAEV",
+  "title_lines": [
+   "MODIFIED QUANTUM DIMENSIONS AND RE-NORMALIZED LINK",
+   "INVARIANTS"
+  ],
+  "abstract": "In this paper we give a re-normalization of the Reshetikhin-Turaev quantum invariants of links, by modi\ufb01ed quantum dimensions. In the case of simple Lie algebras these modi\ufb01ed quantum dimensions are proportional to the usual quantum dimensions. More interestingly we will give two examples where the usual quantum dimensions vanish but the modi\ufb01ed quantum dimensions are non-zero and lead to non-trivial link invariants. The \ufb01rst of these examples is a class of invariants arising from Lie superalgebras previously de\ufb01ned by the \ufb01rst two authors. These link invariants are multivariable and generalize the multivariable Alexander polynomial. The second example, is a hierarchy of link invariants arising from nilpotent representations of quantized sl(2) at a root of unity. These invariants contain Kashaev\u2019s quantum dilogarithm invariants of knots.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181113220826-05'00'"
+  },
+  "title_raw": "MODIFIED QUANTUM DIMENSIONS AND RE-NORMALIZED LINK INVARIANTS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "MODIFIED QUANTUM DIMENSIONS AND RE-NORMALIZED LINK INVARIANTS MSC: 81R50, 57M27 , 18D10, 17B Key words: knot, Lie algebra, tensor category, quantum group 1. Introduction One obstruction to applications of quantum link invariants associated with a ribbon category C stems from the fact that certain si",
+   "outline": "1. Introduction",
+   "text": "MODIFIED QUANTUM DIMENSIONS AND RE-NORMALIZED LINK INVARIANTS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Ribbon Ab-categories",
+   "page": 2,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The invariant F' of closed ribbon graphs",
+   "page": 2,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The quasi-functor F'",
+   "page": 5,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Properties of dJ and F'",
+   "page": 8,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 11,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 15,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1114,
+   "n_words": 159,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3777,
+   "n_words": 651,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-2-ribbon-ab-categories",
+   "number": "2",
+   "title": "Ribbon Ab-categories",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1557,
+   "n_words": 317,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-the-invariant-f-of-closed-ribbon-graphs",
+   "number": "3",
+   "title": "The invariant F' of closed ribbon graphs",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 4942,
+   "n_words": 1098,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-4-the-quasi-functor-f",
+   "number": "4",
+   "title": "The quasi-functor F'",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5869,
+   "n_words": 1310,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-5-properties-of-dj-and-f",
+   "number": "5",
+   "title": "Properties of dJ and F'",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 7009,
+   "n_words": 1511,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-6-examples",
+   "number": "6",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 15,
+   "n_chars": 12918,
+   "n_words": 2507,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1593,
+   "n_words": 237,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 38779,
+  "furniture_lines_stripped": 0
+ }
+}

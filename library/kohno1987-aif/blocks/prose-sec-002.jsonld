@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/kohno1987-aif/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Description of the monodromy by means",
-  "pageStart": 6,
-  "pageEnd": 10,
-  "text": "../sections/sec-002-12-description-of-the-monodromy-by-means.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kohno1987-aif",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kohno1987-aif",
+  "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING FROM CLASSICAL YANG-BAXTER EQUATIONS",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "../sections/sec-002-1-monodromy-of-integrable-connections-arising-fr.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
   "provenance": "ingested"
 }

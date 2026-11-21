@@ -44,7 +44,7 @@
 
   -- Ref: [milnor1982] https://doi.org/10.1090/S0273-0979-1982-14958-8
   -- Ref: [thurston1978] Ch. 7
-  -- Ref: [manuscript] beans qou-w3eg (H4-5 obtuse, step 1a), qou-idvt
+  -- Ref: [leitner2026] beans qou-w3eg (H4-5 obtuse, step 1a), qou-idvt
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv

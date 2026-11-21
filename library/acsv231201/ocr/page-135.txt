@@ -1,0 +1,53 @@
+5.1 Overview 117
+
+Theorem 5.3 (minimum of Re{¢} is not strict but there are finitely many criti-
+cal points). Let V be a smooth complex (d — k)-dimensional algebraic variety
+and suppose that
+
+(i) X = A? x M** is a stratified space of dimension p + d — k in CP*4-*,
+where A? © R? is the standard p-simplex and M4" CV C C4 is a
+smooth (d — k)-dimensional analytic submanifold of V,
+
+(ti) the closure of X is represented by an analytic (p + d — k)-chain C,
+
+(iti) @ : X > Cis an analytic map with minycx Re @(x) = 0, and
+(iv) 1 = A(z) dz is a holomorphic (p + d — k)-form on X.
+
+Assume that the set G of critical points of ¢ on C is finite and that the subset
+G’ CG where Re ¢ vanishes are all in strata of dimension p + d — k. Suppose
+also that
+
+(v) det H(q) # 0 for all q € G’, where H is the Hessian matrix for ¢ in some
+local coordinates near q,
+(vi) the imaginary part (and thus all) of $(q) is zero for all q € G’,
+
+(vii) the boundary OC is supported on strata of dimension at most p+d—k-—1,
+with its simplices o ; analytic orientation preserving maps having disjoint
+interiors, and
+
+(viii) the elements of G’ lie in the interiors of distinct simplices oj.
+
+Then the integral
+
+(a= f e) n
+Cc
+
+has an asymptotic expansion
+(a) x » cea B/E (5.6)
+=0
+
+as A > 0, with leading term
+
+A(q)
+= (20/4? ———.. 5.7
+¢o = (2m) > Ge Hp (7)
+
+The sign for the square root of the determinant is computed by choosing a
+parametrization Y for X near q by a neighborhood of the origin in R?*4*
+and then multiplying the principal square roots of the eigenvalues of @ in these
+coordinates with the Jacobian determinant det d'Y(q).
+
+Without the assumption that the imaginary part of 6(q) vanishes for q € G’
+the formula (5.7) holds when each summand is multiplied by the term e~**®
+with modulus 1, making co = co(A) dependent on A but having bounded modu-
+lus.

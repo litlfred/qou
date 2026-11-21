@@ -1,0 +1,1 @@
+Let A and B be graded rings. (1) If P ∈M(A ⊗B, gr) is projective, then it is projective in M(A, gr). (2) If P ∈M(A ⊗B, gr) is ﬂat, then it is ﬂat in M(A, gr). (3) If I ∈M(A ⊗B, gr) is injective, then it is injective in M(A, gr).

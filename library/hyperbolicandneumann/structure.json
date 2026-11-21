@@ -6,7 +6,9 @@
   "sha256": "3d66fe4c64bdc62b68748987311a0a57ea3f68cb257ba9c9e7b57866287bb7b1",
   "bytes": 383318,
   "pages": 19,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -15,18 +17,25 @@
   "doi": null,
   "title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
   "authors_raw": "AND THE WORK OF WALTER NEUMANN",
+  "title_lines": [
+   "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "pdfTeX-1.40.21",
-   "Author": "",
-   "Title": "",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20230323105459+01'00'"
   },
-  "title_prev": "HYPERBOLIC3-MANIFOLDS, THE BLOCH GROUP",
-  "title_lines": [
-   "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP"
-  ]
+  "title_raw": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN Walter Neumann—henceforth simply Walter—has made huge contributions to topology, singularity theory, and number theory. His work on the combinatorics of triangulations of 3-manifolds and its interactions with algebraic K -theory",
+   "outline": "1. Ideal triangulations and the gluing equations",
+   "text": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -34,53 +43,261 @@
    "title": "Ideal triangulations and the gluing equations",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Volumes and Dehn surgeries",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "The Bloch group and the extended Bloch group",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Symplectic properties",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Quantization",
    "page": 10,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Connections to number theory",
    "page": 12,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "References",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 116,
+   "n_words": 17,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-ideal-triangulations-and-the-gluing-equations",
    "number": "1",
@@ -88,8 +305,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 8510,
-   "n_words": 1496
+   "n_chars": 8583,
+   "n_words": 1528,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-volumes-and-dehn-surgeries",
@@ -98,8 +317,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 7,
-   "n_chars": 10642,
-   "n_words": 2042
+   "n_chars": 10706,
+   "n_words": 2106,
+   "label_start": "3",
+   "label_end": "7"
   },
   {
    "id": "sec-002-3-the-bloch-group-and-the-extended-bloch-group",
@@ -108,8 +329,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 7317,
-   "n_words": 1330
+   "n_chars": 7357,
+   "n_words": 1369,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
    "id": "sec-003-4-symplectic-properties",
@@ -117,19 +340,23 @@
    "title": "Symplectic properties",
    "level": 1,
    "page_start": 9,
-   "page_end": 9,
-   "n_chars": 274,
-   "n_words": 48
+   "page_end": 10,
+   "n_chars": 3495,
+   "n_words": 659,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
    "id": "sec-004-5-quantization",
    "number": "5",
    "title": "Quantization",
    "level": 1,
-   "page_start": 9,
+   "page_start": 10,
    "page_end": 12,
-   "n_chars": 11653,
-   "n_words": 1954
+   "n_chars": 8526,
+   "n_words": 1371,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
    "id": "sec-005-6-connections-to-number-theory",
@@ -138,8 +365,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 17,
-   "n_chars": 16553,
-   "n_words": 2920
+   "n_chars": 16614,
+   "n_words": 2981,
+   "label_start": "12",
+   "label_end": "17"
   },
   {
    "id": "sec-006-references",
@@ -148,16 +377,26 @@
    "level": 1,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 6458,
-   "n_words": 892
+   "n_chars": 6431,
+   "n_words": 865,
+   "label_start": "17",
+   "label_end": "19"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 61407
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 61828,
+  "furniture_lines_stripped": 0
  },
  "duplicate_of": "arxiv-2304.12545v1",
  "duplicate_note": "Same work as library/arxiv-2304.12545v1/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."

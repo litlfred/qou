@@ -28,7 +28,7 @@ machinery is not yet in Lean, so the substantive equalities are stated
 faithfully here and discharged by `sorry`; only the definitional construction
 counts (`3` pair productions, `4`-term photon content) are proved.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/four-term-pair-nucleon.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/four-term-pair-nucleon.md
 -/
 
 namespace QOU.ParticleInteractions
@@ -38,7 +38,8 @@ namespace QOU.ParticleInteractions
 def nucleonPairCount : ℕ := 3
 
 /-- The number of color terms in the full photon content
-    `γ = 𝟙 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` (definitional). -/
+    `γ = 𝟙 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` (definitional; `def:photon`, last term the
+    chiral vertex by owner ruling 2026-11-18). -/
 def photonColorTerms : ℕ := 4
 
 /-- The proton NF net coefficient at the substrate `q₀` (witness-pinned

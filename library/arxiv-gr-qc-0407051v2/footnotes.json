@@ -1,0 +1,837 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-gr-qc-0407051v2",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Thisprojectwasapartofthediplomathesisofoneoftheauthors[14].",
+   "marks": [
+    {
+     "page": 1,
+     "context": "MarcinDomagala"
+    },
+    {
+     "page": 1,
+     "context": "MarcinDomagala1andJerzyLewandowski"
+    },
+    {
+     "page": 2,
+     "context": "work"
+    }
+   ],
+   "block": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "There are two subtleties,which may be intriguing for the reader.The ﬁrst one is that classically the ﬂux of a vector ﬁeld normal to a surface is the same as the area of the surface. In our quantum case however, the vector ﬁeld is a quantum operator itself, in fact it is one of the SU(2) spin operators. The area, on the other hand, is given by the total SU(2) spin operator. The second subtlety is, that S′ contained in the horizon is assigned the area and ﬂux by the bulk geometry.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "S′istheﬂuxˆES′ofthevectorﬁeldnormaltoS."
+    },
+    {
+     "page": 5,
+     "context": "=8πγℓ"
+    },
+    {
+     "page": 5,
+     "context": "=8πγℓ"
+    },
+    {
+     "page": 5,
+     "context": "S=8πγℓ"
+    },
+    {
+     "page": 5,
+     "context": "a=4πγℓ"
+    }
+   ],
+   "block": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "3",
+   "text": "Assuming just inequality instead of considering an interval [a−δa, a+δa] simpliﬁes the calculation. Knowing the result for all a one can always consider the interval. The result, at least in our case, is the same.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "Ssatisﬁesthefollowinginequality"
+    }
+   ],
+   "block": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "4",
+   "text": "ThisissuehasbeenraisedrecentlybyJohnBaez.",
+   "marks": [
+    {
+     "page": 12,
+     "context": "puncture"
+    }
+   ],
+   "block": "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-003"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "MarcinDomagala1andJerzyLewandowski1,"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "MarcinDomagala1andJerzyLewandowski1,2,"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "4πγℓ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "4πγℓ"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "2 ln"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "4ℓ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "P= {p"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "P= {p1, ..., p"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "andalabelingofelementsofPbynumbersj= (j"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "andalabelingofelementsofPbynumbersj= (j1, ..., j"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "andalabelingofelementsofPbynumbersj= (j1, ..., jn),andm = m"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "lingofelementsofPbynumbersj= (j1, ..., jn),andm = m1, ..., m"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "j"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "m"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "mi∈{−j"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "mi∈{−j1, ..., j"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "j"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "p"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "p"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "whereonlythosepointsp"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "a"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "P=(p"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "P=(p1, ..., p"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "b"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "bi∈Z"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "often called punctures, and for every pi, the U(1) element e"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "ften called punctures, and for every pi, the U(1) element ei"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "P= (p"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "P= (p1, ..., p"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "P={p"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "P={p1, ..., p"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "b"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "bi= −2m"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "sequenceb = (b"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "sequenceb = (b1, ..., b"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "enceb = (b1, ..., bn)deﬁnedin(15)a1-dimensionalHilbertspaceH"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "H"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "˜H"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "H"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "sequencessuchthat(7,15,19)issatisﬁed,andnoneofthespacesH"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "map,thateachofthesubspacesH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "a=4πγℓ"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "umbernoftheentriescanbearbitrary)whichcorrespondtosubspacesH"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "suchthattheareaoperatoreigenvaluea"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "a"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "S=8πγℓ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "j"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "ji(j"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "quences:asequence(j1, ..., jn)consistingofnon-zeroelementsof"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "b"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "bi= −2m"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "andm"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "andmi∈{−j"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "andmi∈{−ji, −j"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "andmi∈{−ji, −ji + 1, ..., j"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "8πγℓ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "|m"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "|mi|(|m"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "a=4πγℓ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "Pl"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Plk≥8πγℓ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "|m"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "|mi|(|m"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "> 8πγℓ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "|m"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "|mi|≥8πγℓ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "m"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "=4πγℓ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "Pl"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "|m"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "(m1, ..., mn)ofelementsof"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "of"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "|m"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "|mi|(|m"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "8πγℓ"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "Pl"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "Plk,and"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "thata=4πγℓ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "kofalltheﬁnitesequences(m"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "kofalltheﬁnitesequences(m1, ..., m"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ofnon-zeroelementsof"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "n ∈N,0̸ = m"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n ∈N,0̸ = m1, ..., m"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "|m"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": ":={(m"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": ":={(m1, ..., m"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "kplus"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "(m1, ..., mn,"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "2),(m"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "2),(m1, ..., m"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "k.Inthesameway,forarbitrarynatural"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "k−l⇒(m"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "k−l⇒(m1, ..., m"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "(m"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(m1, ..., m"
+  },
+  {
+   "page": 9,
+   "mark": "l",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Obviously,ifweconsiderall0 < l≤k,andallthesequences(m"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "viously,ifweconsiderall0 < l≤k,andallthesequences(m1, ..., m"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "resulting(m"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "resulting(m1, ..., m"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "k.Also,fortwodiﬀerent"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(m"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(m1, ..., m"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "2l)̸=(m"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "2l)̸=(m1, ..., m"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "=3"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "N(a) ≤3"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "|m"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "|mi|(|m"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "|mi|(|mi| + 1)≤|m"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "kequalto"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "n ∈N,0̸ = m"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "n ∈N,0̸ = m1, ..., m"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "(|m"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": ":={(m"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": ":={(m1, ..., m"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "k"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "3"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "32"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "32k +(−1)"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "kof"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "k"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "ke−δ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "4πγℓ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "4πγℓ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "thej"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "thejilabelsin(23)suchthatj"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "thejilabelsin(23)suchthatj1≤...≤j"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "thenumberofsequencescomesonlyfromthesequences(m"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "thenumberofsequencescomesonlyfromthesequences(m1, ..., m"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "3γℓ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "|m"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "oftheentropyS(a)withtheBekenstein-Hawkingentropya / 4ℓ"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "2 ln"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "4ℓ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "4ℓ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "am=8πγℓ"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "e,that the answercould make no probabilisticsense,if the lim"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "|m"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "|mi|(|m"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "|mi|(|mi| + 1)≤a −a"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "m"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "8πγℓ"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "k(asbefore,see[11]for"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "m"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "a−am N(a −a"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "P(m)=e−S(a"
+  }
+ ]
+}

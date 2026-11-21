@@ -1,0 +1,1 @@
+Given M, N ∈D(Aen), consider the complex L := RHomAen,out(A, M ⊗N) ∈D(Aen,in) = D(Aen). Let a, a′, a′′ ∈Cent(A) be elements such that chmD N,A(a) = chmD N,Aop(a′) in EndD(Aen)(N) and chmD M,A(a′) = chmD M,Aop(a′′) in EndD(Aen)(M). Then chmD L,A(a) = chmD L,Aop(a′′) in EndD(Aen)(L).

@@ -1,0 +1,44 @@
+Skein-theoretical derivation of some formulas of Habiro 545
+3 Graphical calculus and a formula for w?
+
+Let us write w =w + and put
+co
+wP = > CnpRn - (23)
+n=0
+
+Note that the coefficients cn,» are well-defined (because Ry divides Rn+1 and
+therefore the coefficients C*,, in the product expansion R,Rm = ve ck mk
+
+nym
+are zero if n or m is bigger than k.) We have
+
+(w?,2) = (t?(e)) (24)
+
+for every even x. (This follows from (6) since circling with w? is the same as
+circling with p parallel copies of w.) Of course, ¢n,1 = Cn,+ and Cp—1 = Cn,—
+(it follows from the uniqueness of w_ that w_ = w~!). The aim of this section
+is to give a formula for the coefficients cp, (see Theorem 3.2 below).
+
+We use the extension of the Kauffman bracket to admissibly colored banded
+trivalent graphs as in [MV]. (Such graphs are sometimes called spin networks;
+for more background see e.g. [KL] and references therein.) A color is just an
+integer > 0. A triple of colors (a,b,c) is admissible if a+ b+c = 0 (mod 2)
+and ja— b| <c < a+b. Let D be a planar diagram of a banded trivalent
+graph. An admissible coloring of D is an assignment of colors to the edges
+of D so that at each vertex, the three colors meeting there form an admissible
+triple. The Kauffman bracket of D is defined to be the bracket of the expansion
+of D obtained as follows. The expansion of an edge colored n consists of n
+parallel strands with a copy of the Jones-Wenzl idempotent fn inserted. (The
+idempotent f;, is characterized by the fact that xf, = fra = 0 for every element
+x of the standard basis of the Temperley-Lieb algebra other than the identity
+element; here, the standard basis consists of the (n,n)-tangle diagrams without
+crossings and without closed loops.) The expansion of a vertex is defined as in
+Fig. 2, where the internal colors i,j,k are defined by
+
+i=(b+c-—a)/2, j =(c+a—b)/2, k=(a+b-c)/2. (25)
+
+We have the fusion equation
+
+bo » at c) >_< (26)
+
+Algebraic & Geometric Topology, Volume 3 (2003)

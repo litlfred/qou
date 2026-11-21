@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1601.02479v5/blocks/prose-sec-019",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The cohomological wall crossing isomorphism — Theorem B",
-  "pageStart": 40,
-  "pageEnd": 43,
-  "text": "../sections/sec-019-43-the-cohomological-wall-crossing-isomorphism-t.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1601.02479v5",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1601.02479v5",
+  "title": "The integrality isomorphism — Theorem A",
+  "pageStart": 37,
+  "pageEnd": 40,
+  "text": "../sections/sec-019-42-the-integrality-isomorphism-theorem-a.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1601.02479v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1601.02479v5/manifest.jsonld",
   "provenance": "ingested"
 }

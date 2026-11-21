@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-018",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Seifert circles. Then 3 = 3' only if the algebraic crossing numbers",
-  "pageStart": 85,
-  "pageEnd": 87,
-  "text": "../sections/sec-018-3-seifert-circles-then-3-3-only-if-the-algebraic.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "title": "(resp. b^ (page 48)",
+  "pageStart": 48,
+  "pageEnd": 48,
+  "text": "../sections/sec-018-resp-b-page-48.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,1114 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0305423v3",
+ "status": "determined",
+ "pages_unread": [
+  15
+ ],
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p012-2",
+   "page": 12,
+   "mark": "2",
+   "text": "n dim(λ)",
+   "marks": [
+    {
+     "page": 11,
+     "context": "NextweshalluseStein’smethodtocomputeEλ(W∗)"
+    },
+    {
+     "page": 11,
+     "context": "notationmeans theexpectedvalueof(W∗)"
+    },
+    {
+     "page": 11,
+     "context": "n) +2(n −1)(n −2)"
+    },
+    {
+     "page": 11,
+     "context": "Eλ((W∗)"
+    },
+    {
+     "page": 11,
+     "context": "+(n −1)(n −2)(n −3)"
+    },
+    {
+     "page": 11,
+     "context": "(n −1)"
+    },
+    {
+     "page": 11,
+     "context": "Eλ(W∗)"
+    },
+    {
+     "page": 11,
+     "context": "(n −1)"
+    },
+    {
+     "page": 11,
+     "context": "|parents(µ, λ)|χµ(12)"
+    },
+    {
+     "page": 11,
+     "context": "(n −1)"
+    },
+    {
+     "page": 11,
+     "context": "χµ(12)"
+    },
+    {
+     "page": 11,
+     "context": "(n −1)"
+    },
+    {
+     "page": 11,
+     "context": "χµ(12)"
+    },
+    {
+     "page": 11,
+     "context": "χµ(12)"
+    },
+    {
+     "page": 12,
+     "context": "Proof.SinceWhasmean0,V ar(W) = E(W"
+    },
+    {
+     "page": 12,
+     "context": "E(W"
+    },
+    {
+     "page": 12,
+     "context": "E(W2) = E(W∗)"
+    },
+    {
+     "page": 12,
+     "context": "E(W2) = E(W∗)2= E(Eλ(W∗)"
+    },
+    {
+     "page": 12,
+     "context": "ThequantityEλ(W∗)"
+    },
+    {
+     "page": 12,
+     "context": "Eλ(W∗−W)"
+    },
+    {
+     "page": 12,
+     "context": "E[EW(W∗−W)"
+    },
+    {
+     "page": 12,
+     "context": "E[EW(W∗−W)2]2≤E[Eλ(W∗−W)"
+    },
+    {
+     "page": 12,
+     "context": "EW(W∗−W)"
+    },
+    {
+     "page": 12,
+     "context": "=3n"
+    },
+    {
+     "page": 12,
+     "context": "Eλ(W∗−W)"
+    },
+    {
+     "page": 12,
+     "context": "Eλ(W∗−W)"
+    },
+    {
+     "page": 12,
+     "context": "Eλ(W∗−W)2= W"
+    },
+    {
+     "page": 12,
+     "context": "Eλ(W∗−W)2= W2−2WEλW∗+ Eλ(W∗)"
+    },
+    {
+     "page": 12,
+     "context": "n + 1−1)W"
+    },
+    {
+     "page": 12,
+     "context": "n + 1−1)W 2 + Eλ(W ∗)"
+    },
+    {
+     "page": 12,
+     "context": "4Eλ(W ∗−W)"
+    },
+    {
+     "page": 12,
+     "context": "(2)B=(n−1)(n−2)(n−3)"
+    }
+   ],
+   "block": "library/arxiv-math-0305423v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "2",
+   "text": "log( 1",
+   "marks": [
+    {
+     "page": 16,
+     "context": "Lemma 3.1.Being linearly independent, they are a basis for ℓ"
+    },
+    {
+     "page": 17,
+     "context": "andhencecorrespondstothecasek=1below.Asusual,π(λ)=dim(λ)"
+    },
+    {
+     "page": 17,
+     "context": "−1|2π(λ) ≤n! (β)"
+    }
+   ],
+   "block": "library/arxiv-math-0305423v3/blocks/prose-sec-004"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "8",
+   "text": "n dim(λ)",
+   "block": "library/arxiv-math-0305423v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "138",
+   "text": "(1998), 126-181. [BOO] Borodin, A., Okounkov, A., and Olshanski, G., Asymptotics of Plancherel mea- sures for symmetric groups, J. Amer. Math. Soc. 13 (2000), 481-515. [BO] Borodin, A. and Olshanski, G., Harmonic functions on multiplicative graphs and interpolation polynomials, Electron. J. Combin. 7 (2000), Research paper 28, 39 pages (electronic). [De] Deift, P., Integrable systems and combinatorial theory, Notices Amer. Math. Soc.",
+   "block": "library/arxiv-math-0305423v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p018-2",
+   "page": 18,
+   "mark": "47",
+   "text": "(2000), 631-640. [DFP] Diaconis, P., Fill, J., and Pitman, J., Analysis of top to random shuﬄes, Combin. Probab. Comput. 1 (1992), 135-155. [DSa] Diaconis, P. and Saloﬀ-Coste, L., Comparison techniques for random walk on ﬁnite groups, Ann. Probab. 21 (1993), 2131-2156. [DSh] Diaconis, P. and Shahshahani, M., Generating a random permutation with random transpositions, Z. Wahr. Verw. Gebiete 57 (1981), 159-179.",
+   "block": "library/arxiv-math-0305423v3/blocks/prose-sec-004"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "h",
+   "context": "x∈λ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "x∈λh(x)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "(6∗4∗3∗2)"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "terizedbyλ.Thentherandomvariable"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "dim(λ)eachoccurringwithmultiplicitydim(λ)"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "Theorem1.2.Forn ≥2andallrealx"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "Zx"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "e−x"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "dim(λ)≤x"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "w"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "w1, w"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "w1, w2,P(W=w"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "w1, w2,P(W=w1, W∗=w"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "w1, w2,P(W=w1, W∗=w2)isequaltoP(W=w"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "w1, w2,P(W=w1, W∗=w2)isequaltoP(W=w2, W∗=w"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "Zx"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "e−x"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "|P(W≤x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2τ EW (W ∗−W)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2τEW (W ∗−W)"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "large(roughly"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "large(roughlyn"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "representationoftypeλofS"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "veryclosetodim(λ)"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "veryclosetodim(λ)n"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "isanorientedgradedgraphΓ = ∪n≥0Γ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "(1)Γ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "aset{M"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "aset{Mn}ofprobabilitydistributionsM"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "aset{Mn}ofprobabilitydistributionsMnonΓ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Theformulaallowingonetomovebetweenthedeﬁnitionsisφ(λ) =M"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "thePascallattice(verticesofΓ"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "x"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "the Plancherel measure, the family of measures {M"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Proposition2.1.Supposethatthefamilyofmeasures{M"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "withprobabilitydim(λ)M"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "dim(Λ)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Λ∈Γ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "dim(τ)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "M"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "τ∈Γ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Mn(λ)dim(λ)M"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "λ∈Γ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "λ∈Γ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Notethatthetransitionprobabilitiessumto1becausethemeasures{M"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "arecoherent.Part2issimilarandalsousesthefactthat{M"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "λ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "λ1!···λ"
+  },
+  {
+   "page": 7,
+   "mark": "l",
+   "context": "λ1!···λl!where"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "chancerm"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "n+1.Thenremove"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "box from a row of Λ of length s with probabilitysm"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "|C(g)|ifh, gareconjugateandis"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "classesC"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "classesC1, · · ·, C"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "classesC1, · · ·, Cr.LetC"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Thenthenumberofm-tuples(g"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "Thenthenumberofm-tuples(g1, · · ·, g"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "Thenthenumberofm-tuples(g1, · · ·, gm)∈G"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Thenthenumberofm-tuples(g1, · · ·, gm)∈Gmsuchthatg"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "Thenthenumberofm-tuples(g1, · · ·, gm)∈Gmsuchthatgj∈C"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Thenthenumberofm-tuples(g1, · · ·, gm)∈Gmsuchthatgj∈Ci"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "g"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "g1 · · · g"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "Q"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "j=1|C"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "j=1|Ci"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "dim(χ)"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "dim(χ)m−1 χ(C"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "dim(χ)m−1 χ(Ci"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "dim(χ)m−1 χ(Ci1) · · · χ(C"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "dim(χ)m−1 χ(Ci1) · · · χ(Ci"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ResS"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "(IndS"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "(χ))[g] = χ(g)(n"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "(χ))[g] = χ(g)(n1(g) + 1) · · · (n"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "IndS"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Sn−k(ResS"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Sn−k(χ))[g]= χ(g)(n"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Sn−k(χ))[g]= χ(g)(n1(g)) · · · (n"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "thattheinducedcharacteratg∈S"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "χ(g)|CentS"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "= χ(g)(n"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "= χ(g)(n1(g) + 1) · · · (n"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "|CentS"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "j"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "jj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "jjn"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "jjnj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "jjnjn"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "jjn"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "χµ(g)χλ(g)(n"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "χµ(g)χλ(g)(n1(g) + 1) · · · (n"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "g∈S"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "χµ(g)χλ(g)(n"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "χµ(g)χλ(g)(n1(g)) · · · (n"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "g∈S"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ResS"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "(IndS"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "g∈S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "tthePlancherelmeasurechoosesapartitionλwithprobabilitydim(λ)"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "\u0012λ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "iisthelengthofcolumn"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "isequaltothemultiplicityofχµinResS"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(IndS"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(n + 1)dim(λ)ResS"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(IndS"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "g∈S"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "χλ(g)(n1(g) + 1)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "g∈S"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "=3"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "=3n2 −5"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "4n"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "n+1)(n−1)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "need to compute the Plancherel measure averageof (A+B +C +D)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Since A"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Since A2is constant, the average of A"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "averagesofB"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "averagesofB2,C"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "(n−1)(n−2)(n−3)"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "and3(n−1)(n−2)"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "8n"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "4n"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "averageofD"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "+ 2e−2"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "2)"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "\u0012λ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "n2max(λ"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "b−λ"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "|W∗−W| ≤4"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "1> 2"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "1>2"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "noccursisatmost2e−2"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "nisatmoste−2"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "1> 2"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "noccursisatmost2e−2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2τ EW (W ∗−W)"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "andthefactthate−2"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "2)"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "(4"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "n)"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Plancherelmeasureπ.Weconsiderthespaceofrealvaluedfunctionsℓ"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Mult.µinIndS"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Sn−kResS"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "χµ(C) · Mult.µinIndS"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Sn−kResS"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n(n −1) · · · (n −k + 1)dim(λ)IndS"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Sn−kResS"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(n"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(n1(C))(n"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(n1(C))(n1(C) −1) · · · (n"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "anorthonormalbasiswitheigenvalues(n"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "anorthonormalbasiswitheigenvalues(n1(C)+1)(n"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "anorthonormalbasiswitheigenvalues(n1(C)+1)(n1(C)+2)···(n"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "|J(k)"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "n! (β)"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "2||J(k)"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "Thusforr>nlog(n)+2"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "||J(k)"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "and that"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "n! (β)"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "reader that IndS"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n![Mult.λin⊗rIndS"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "−1|2π(λ) ≤n! (β)2"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "dim(λ) ((n) · · · (n −k + 1))"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "J(k)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "\u0012(n"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "\u0012(n1(C)) · · · (n"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(n"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(n1(g) · · · (n"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "(n1(g) · · · (n1(g) −k + 1))"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "(n · · · (n −k + 1))"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "g∈S"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "(n(n −1) · · · (n −k + 1))"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "(n(n −1) · · · (n −k + 1))r [Mult.λin⊗r IndS"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "n![Mult.λin⊗rIndS"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "J(k)"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "dim(λ) ((n) · · · (n −k + 1))"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "J(k)"
+  }
+ ]
+}

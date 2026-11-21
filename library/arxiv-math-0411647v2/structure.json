@@ -6,10 +6,12 @@
   "sha256": "d79f96b416cb28dad86af46aeb687d211e679a99b83fe0b3c5285a6335553225",
   "bytes": 592480,
   "pages": 60,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +22,28 @@
   },
   "doi": null,
   "title": "Asymptotics of characters of symmetric groups, genus expansion and free probability",
-  "authors_raw": "GENUS EXPANSION AND FREE PROBABILITY",
-  "abstract": "The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many conjugacy classes. Similarly, a product of the mo- ments of the Jucys\u2013Murphy element involves many conjugacy c lasses with complicated coef\ufb01cients. In this article we consider a combinato- rial setup which allows us to manipulate such products easil y: to each conjugacy class we associate a two-dimensional surface and the asymp- totic properties of the conjugacy class depend only on the ge nus of the resulting surface. This construction closely resembles th e genus expan- sion from the random matrix theory. As the main application w e study irreducible representations of symmetric groups Sq for large q. We \ufb01nd the asymptotic behavior of characters when the corresponding Young di- agram rescaled by a factor q\u2212 1/2 converge to a prescribed shape. The character formula (known as the Kerov polynomial) can be vie wed as a power series, the terms of which correspond to two-dimensional surfaces with prescribed genus and we compute explicitly the \ufb01rst twoterms, thus we prove a conjecture of Biane. 1. I NTRODUCTION 1.1. Irreducible representations of large symmetric groups. Irreducible representations of symmetric groups are in the one-to-one c orrespondence with Young diagrams and due to algorithms such as Murnaghan\u2013Nakayama rule or Robinson\u2013Littlewood rule the essential questions concerning repre- sentations and characters of symmetric groups can be answer ed by a com- binatorial study of the corresponding Young diagrams [Ful9 7]. However, when one studies the asymptotic properties of large symmetr ic groups, the work with Young tableaux becomes cumbersome and one is in the need to \ufb01nd another object which would encode the same information i n a more convenient way. Alternatively, one can state the above problem as follows: a typical partition of a large number q (or equivalently, a Young diagram with q boxes) is a collection of",
+  "authors_raw": "PIOTR ŚNIADY",
+  "title_lines": [
+   "GENUS EXPANSION AND FREE PROBABILITY",
+   "arXiv:math/0411647v2 [math.CO] 21 Oct 2005"
+  ],
+  "abstract": "The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many conjugacy classes. Similarly, a product of the mo- ments of the Jucys–Murphy element involves many conjugacy classes with complicated coefﬁcients. In this article we consider a combinato- rial setup which allows us to manipulate such products easily: to each conjugacy class we associate a two-dimensional surface and the asymp- totic properties of the conjugacy class depend only on the genus of the resulting surface. This construction closely resembles the genus expan- sion from the random matrix theory. As the main application we study irreducible representations of symmetric groups Sq for large q. We ﬁnd the asymptotic behavior of characters when the corresponding Young di- agram rescaled by a factor q−1/2 converge to a prescribed shape. The character formula (known as the Kerov polynomial) can be viewed as a power series, the terms of which correspond to two-dimensional surfaces with prescribed genus and we compute explicitly the ﬁrst two terms, thus we prove a conjecture of Biane. 1.1. Irreducible representations of large symmetric groups. Irreducible representations of symmetric groups are in the one-to-one correspondence with Young diagrams and due to algorithms such as Murnaghan–Nakayama rule or Robinson–Littlewood rule the essential questions concerning repre- sentations and characters of symmetric groups can be answered by a com- binatorial study of the corresponding Young diagrams [Ful97]. However, when one studies the asymptotic properties of large symmetric groups, the work with Young tableaux becomes cumbersome and one is in the need to ﬁnd another object which would encode the same information in a more convenient way. Alternatively, one can state the above problem as follows: a typical partition of a large number q (or equivalently, a Young diagram with q boxes) is a collection of at least √q numbers, hence ",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210902211750-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20210902211750-04'00'"
   },
-  "title_lines": [
-   "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS"
-  ],
-  "title_prev": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS"
+  "title_raw": "GENUS EXPANSION AND FREE PROBABILITY arXiv:math/0411647v2 [math.CO] 21 Oct 2005",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS, GENUS EXPANSION AND FREE PROBABILITY 1. I NTRODUCTION 1.1. Irreducible representations of large symmetric groups. Irreducible representations of symmetric groups are in the one-to-one correspondence with Young diagrams and due to algorithms such as Murn",
+   "outline": "1. Introduction",
+   "text": "GENUS EXPANSION AND FREE PROBABILITY arXiv:math/0411647v2 [math.CO] 21 Oct 2005",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "GENUS EXPANSION AND FREE PROBABILITY arXiv:math/0411647v2 [math.CO] 21 Oct 2005"
  },
  "toc": [
   {
@@ -40,226 +51,1085 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Irreducible representations of large symmetric groups",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The main technical problem: convolution in Sq",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Free probability and free cumulants",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Applications: Fluctuations of random Young diagrams",
    "page": 6,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Overview of the article",
    "page": 6,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Symmetric group",
    "page": 7,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Partitions",
    "page": 13,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The first main result: Calculus of partitions",
    "page": 17,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Partition--indexed conjugacy class indicator",
    "page": 17,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Multiplication of partitions",
    "page": 22,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Map  is a homomorphism",
+   "title": "Map is a homomorphism",
    "page": 24,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Free cumulants of partitions",
    "page": 26,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Free cumulants",
    "page": 26,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Free cumulants of partitions and of the Jucys--Murphy element",
    "page": 27,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "First--order asymptotics of free cumulants",
    "page": 31,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Higher order expansion for free cumulants",
    "page": 33,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The second main result: the second--order expansion of free cumulants and characters",
    "page": 37,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Higher order expansion of characters",
    "page": 42,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proofs of technical results",
    "page": 42,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Admissible and pushing sequences",
    "page": 42,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Pushing partitions",
    "page": 46,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Final remarks",
    "page": 53,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Connection with the work of Biane",
    "page": 53,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Ramified coverings and pushing partitions",
    "page": 53,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Connection with orthogonal polynomials and Wick product",
    "page": 57,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 57,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 58,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "2.1",
+   "title": "Young diagram associated with a partition 8 =",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2.2",
+   "title": "Generalized Young diagram associated with a",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2.4",
+   "title": "Fat partition πfat corresponding to the partition",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2.5",
+   "title": "Graphical representation of a non–crossing",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2.6",
+   "title": "Fat partition πfat for a non–crossing partition",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2.7",
+   "title": "Graphical representation of r(ρ) where ρ is",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2.8",
+   "title": "Partition π from Figure 2.5 in a solid line and",
+   "page": 17,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.1",
+   "title": "",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.2",
+   "title": "A version of Figure 3.1 in which all lines wind",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.3",
+   "title": "A version of Figure 3.1 in which all lines of",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.4",
+   "title": "The ﬁrst collection of discs for partition π",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.5",
+   "title": "Graphical representation of example (3.7)",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.6",
+   "title": "Figure 3.5 after inﬂating small holes. 3.3. Map Σ is a homomorphism. Since the map Σ = ΦP",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4.1",
+   "title": "Example of an evercrossing partition Theorem 4.5. If a partition π is not evercrossing then Iπ = 0",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4.2",
+   "title": "Example of an evercrossing partition with the",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4.3",
+   "title": "Partition from Figure 4.1 after the ﬁrst step of",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4.4",
+   "title": "Partition from Figure 4.1 after the second step",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4.5",
+   "title": "Elementary operation of step 2 of the simpli-",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4.6",
+   "title": "The elementary operation of step 3 of the sim-",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4.7",
+   "title": "The outcome of the step 3 of the simplifying",
+   "page": 35,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4.8",
+   "title": "General pattern of evercrossing partitions with",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4.9",
+   "title": "General pattern of evercrossing partitions with",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4.10",
+   "title": "The only two possible outcomes of the sim-",
+   "page": 39,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6.1",
+   "title": "Two homotopic loops on a sphere. a loop around points 1, 2, . . ., n hence the monodromy around 0 is a prod-",
+   "page": 54,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6.2",
+   "title": "A loop on a sphere",
+   "page": 55,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6.3",
+   "title": "Shape of the special sheet (the white region)",
+   "page": 55,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-11-irreducible-representations-of-large-symmetri",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 95,
+   "n_words": 12,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1204,
+   "n_words": 187,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-11-irreducible-representations-of-large-symmetri",
    "number": "1.1",
    "title": "Irreducible representations of large symmetric groups",
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3314,
-   "n_words": 561
-  },
-  {
-   "id": "sec-001-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 52,
-   "n_words": 10
+   "n_chars": 3421,
+   "n_words": 565,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-12-the-main-technical-problem-convolution-in-sq",
@@ -268,8 +1138,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 3771,
-   "n_words": 679
+   "n_chars": 3714,
+   "n_words": 625,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-13-free-probability-and-free-cumulants",
@@ -278,8 +1150,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 4836,
-   "n_words": 859
+   "n_chars": 4768,
+   "n_words": 791,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-14-applications-fluctuations-of-random-young-dia",
@@ -288,151 +1162,303 @@
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 77,
-   "n_words": 15
+   "n_chars": 570,
+   "n_words": 95,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-21-symmetric-group",
-   "number": "2.1",
-   "title": "Symmetric group",
-   "level": 2,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 424,
-   "n_words": 74
-  },
-  {
-   "id": "sec-006-15-overview-of-the-article",
+   "id": "sec-005-15-overview-of-the-article",
    "number": "1.5",
    "title": "Overview of the article",
    "level": 2,
    "page_start": 6,
-   "page_end": 13,
-   "n_chars": 15754,
-   "n_words": 3210
+   "page_end": 7,
+   "n_chars": 1601,
+   "n_words": 251,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-22-partitions",
+   "id": "sec-006-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-21-symmetric-group",
+   "number": "2.1",
+   "title": "Symmetric group",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 13,
+   "n_chars": 11437,
+   "n_words": 2156,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-22-partitions",
    "number": "2.2",
    "title": "Partitions",
    "level": 2,
    "page_start": 13,
-   "page_end": 22,
-   "n_chars": 12878,
-   "n_words": 2833
+   "page_end": 17,
+   "n_chars": 6881,
+   "n_words": 1381,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-32-multiplication-of-partitions",
+   "id": "sec-009-3-the-first-main-result-calculus-of-partitions",
+   "number": "3",
+   "title": "The first main result: Calculus of partitions",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-31-partition--indexed-conjugacy-class-indicator",
+   "number": "3.1",
+   "title": "Partition--indexed conjugacy class indicator",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 22,
+   "n_chars": 7844,
+   "n_words": 1578,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-32-multiplication-of-partitions",
    "number": "3.2",
    "title": "Multiplication of partitions",
    "level": 2,
    "page_start": 22,
    "page_end": 26,
-   "n_chars": 7691,
-   "n_words": 1751
+   "n_chars": 7414,
+   "n_words": 1497,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-41-free-cumulants",
-   "number": "4.1",
-   "title": "Free cumulants",
-   "level": 2,
-   "page_start": 26,
-   "page_end": 27,
-   "n_chars": 2932,
-   "n_words": 559
-  },
-  {
-   "id": "sec-010-4-free-cumulants-of-partitions",
+   "id": "sec-012-4-free-cumulants-of-partitions",
    "number": "4",
    "title": "Free cumulants of partitions",
    "level": 1,
-   "page_start": 27,
-   "page_end": 33,
-   "n_chars": 9679,
-   "n_words": 2066
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1383,
+   "n_words": 266,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-44-higher-order-expansion-for-free-cumulants",
+   "id": "sec-013-42-free-cumulants-of-partitions-and-of-the-jucys",
+   "number": "4.2",
+   "title": "Free cumulants of partitions and of the Jucys--Murphy element",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 31,
+   "n_chars": 7203,
+   "n_words": 1376,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-43-first--order-asymptotics-of-free-cumulants",
+   "number": "4.3",
+   "title": "First--order asymptotics of free cumulants",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 3813,
+   "n_words": 759,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-44-higher-order-expansion-for-free-cumulants",
    "number": "4.4",
    "title": "Higher order expansion for free cumulants",
    "level": 2,
    "page_start": 33,
-   "page_end": 42,
-   "n_chars": 16409,
-   "n_words": 3248
+   "page_end": 37,
+   "n_chars": 8326,
+   "n_words": 1504,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-46-higher-order-expansion-of-characters",
+   "id": "sec-016-45-the-second-main-result-the-second--order-expa",
+   "number": "4.5",
+   "title": "The second main result: the second--order expansion of free cumulants and characters",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 42,
+   "n_chars": 6874,
+   "n_words": 1384,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-017-46-higher-order-expansion-of-characters",
    "number": "4.6",
    "title": "Higher order expansion of characters",
    "level": 2,
    "page_start": 42,
    "page_end": 42,
-   "n_chars": 987,
-   "n_words": 169
+   "n_chars": 947,
+   "n_words": 155,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-51-admissible-and-pushing-sequences",
+   "id": "sec-018-5-proofs-of-technical-results",
+   "number": "5",
+   "title": "Proofs of technical results",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-019-51-admissible-and-pushing-sequences",
    "number": "5.1",
    "title": "Admissible and pushing sequences",
    "level": 2,
    "page_start": 42,
    "page_end": 46,
-   "n_chars": 8302,
-   "n_words": 1964
+   "n_chars": 7999,
+   "n_words": 1661,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-52-pushing-partitions",
+   "id": "sec-020-52-pushing-partitions",
    "number": "5.2",
    "title": "Pushing partitions",
    "level": 2,
    "page_start": 46,
    "page_end": 53,
-   "n_chars": 14863,
-   "n_words": 3321
+   "n_chars": 14448,
+   "n_words": 2920,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-61-connection-with-the-work-of-biane",
+   "id": "sec-021-6-final-remarks",
+   "number": "6",
+   "title": "Final remarks",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-61-connection-with-the-work-of-biane",
    "number": "6.1",
    "title": "Connection with the work of Biane",
    "level": 2,
    "page_start": 53,
-   "page_end": 57,
-   "n_chars": 8365,
-   "n_words": 1674
+   "page_end": 53,
+   "n_chars": 1129,
+   "n_words": 232,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-63-connection-with-orthogonal-polynomials-and-wi",
+   "id": "sec-023-62-ramified-coverings-and-pushing-partitions",
+   "number": "6.2",
+   "title": "Ramified coverings and pushing partitions",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 57,
+   "n_chars": 7068,
+   "n_words": 1316,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-024-63-connection-with-orthogonal-polynomials-and-wi",
    "number": "6.3",
    "title": "Connection with orthogonal polynomials and Wick product",
    "level": 2,
    "page_start": 57,
-   "page_end": 58,
-   "n_chars": 2079,
-   "n_words": 345
+   "page_end": 57,
+   "n_chars": 1337,
+   "n_words": 227,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-025-7-acknowledgments",
+   "number": "7",
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 58,
+   "n_chars": 700,
+   "n_words": 94,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-026-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 58,
    "page_end": 60,
-   "n_chars": 6654,
-   "n_words": 939
+   "n_chars": 6602,
+   "n_words": 887,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 29,
-  "sections": 18,
-  "chars_total": 119067,
+  "toc_inferred_entries": 0,
+  "figure_entries": 26,
+  "figure_sequence_gaps": [
+   "figure 2.3"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 28,
+  "chars_total": 116778,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   1,
+   17,
+   27,
+   31
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "pushreps03.tex",
    "tex_sections": 82,
-   "overlaid": 11,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -440,24 +1466,29 @@
    },
    "sections": [
     {
-     "id": "sec-000-11-irreducible-representations-of-large-symmetri",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-irreducible-representations-of-large-symmetri",
      "title": "Irreducible representations of large symmetric groups",
-     "prose_ratio": 0.938,
+     "prose_ratio": 0.964,
      "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-1-introduction",
-     "title": "Introduction",
-     "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
      "id": "sec-002-12-the-main-technical-problem-convolution-in-sq",
      "title": "The main technical problem: convolution in Sq",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -472,100 +1503,171 @@
     {
      "id": "sec-004-14-applications-fluctuations-of-random-young-dia",
      "title": "Applications: Fluctuations of random Young diagrams",
-     "prose_ratio": 0.159,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-005-21-symmetric-group",
-     "title": "Symmetric group",
-     "prose_ratio": 0.072,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-006-15-overview-of-the-article",
-     "title": "Overview of the article",
-     "prose_ratio": 0.837,
-     "coverage_ratio": 0.304,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
-    },
-    {
-     "id": "sec-007-22-partitions",
-     "title": "Partitions",
-     "prose_ratio": 0.897,
-     "coverage_ratio": 0.981,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-008-32-multiplication-of-partitions",
-     "title": "Multiplication of partitions",
-     "prose_ratio": 0.937,
-     "coverage_ratio": 0.973,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-009-41-free-cumulants",
-     "title": "Free cumulants",
-     "prose_ratio": 0.433,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-010-4-free-cumulants-of-partitions",
-     "title": "Free cumulants of partitions",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-011-44-higher-order-expansion-for-free-cumulants",
-     "title": "Higher order expansion for free cumulants",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.986,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-012-46-higher-order-expansion-of-characters",
-     "title": "Higher order expansion of characters",
-     "prose_ratio": 0.825,
+     "prose_ratio": 0.932,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-51-admissible-and-pushing-sequences",
-     "title": "Admissible and pushing sequences",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.974,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-014-52-pushing-partitions",
-     "title": "Pushing partitions",
-     "prose_ratio": 0.907,
-     "coverage_ratio": 0.974,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-015-61-connection-with-the-work-of-biane",
-     "title": "Connection with the work of Biane",
-     "prose_ratio": 0.964,
+     "id": "sec-005-15-overview-of-the-article",
+     "title": "Overview of the article",
+     "prose_ratio": 0.919,
      "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-63-connection-with-orthogonal-polynomials-and-wi",
-     "title": "Connection with orthogonal polynomials and Wick product",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 0.979,
+     "id": "sec-006-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-21-symmetric-group",
+     "title": "Symmetric group",
+     "prose_ratio": 0.859,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-references",
+     "id": "sec-008-22-partitions",
+     "title": "Partitions",
+     "prose_ratio": 0.838,
+     "coverage_ratio": 0.673,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-3-the-first-main-result-calculus-of-partitions",
+     "title": "The first main result: Calculus of partitions",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-31-partition--indexed-conjugacy-class-indicator",
+     "title": "Partition--indexed conjugacy class indicator",
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-32-multiplication-of-partitions",
+     "title": "Multiplication of partitions",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-4-free-cumulants-of-partitions",
+     "title": "Free cumulants of partitions",
+     "prose_ratio": 0.453,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-42-free-cumulants-of-partitions-and-of-the-jucys",
+     "title": "Free cumulants of partitions and of the Jucys--Murphy element",
+     "prose_ratio": 0.863,
+     "coverage_ratio": 0.72,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-43-first--order-asymptotics-of-free-cumulants",
+     "title": "First--order asymptotics of free cumulants",
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.85,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-44-higher-order-expansion-for-free-cumulants",
+     "title": "Higher order expansion for free cumulants",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-45-the-second-main-result-the-second--order-expa",
+     "title": "The second main result: the second--order expansion of free cumulants and characters",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-46-higher-order-expansion-of-characters",
+     "title": "Higher order expansion of characters",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-5-proofs-of-technical-results",
+     "title": "Proofs of technical results",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-51-admissible-and-pushing-sequences",
+     "title": "Admissible and pushing sequences",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-52-pushing-partitions",
+     "title": "Pushing partitions",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-6-final-remarks",
+     "title": "Final remarks",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-61-connection-with-the-work-of-biane",
+     "title": "Connection with the work of Biane",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-62-ramified-coverings-and-pushing-partitions",
+     "title": "Ramified coverings and pushing partitions",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-63-connection-with-orthogonal-polynomials-and-wi",
+     "title": "Connection with orthogonal polynomials and Wick product",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-7-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-references",
      "title": "References",
      "result": "no matching \\section"
     }

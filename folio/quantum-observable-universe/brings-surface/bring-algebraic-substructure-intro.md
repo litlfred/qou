@@ -1,1 +1,1 @@
-This section develops the algebraic substructure of Bring's surface. The construction proceeds from the $\mathrm{SU}(2)$ generators.
+Before constructing the global projective curve $\Sigma_4 \subset \mathbb{P}^4$, its local algebraic building blocks are isolated: the $\mathrm{SU}(2)$ Lie-algebra generators on the spinor fibre, the hyperelliptic quintic projection $y^2 = x^5 - x$, and the cyclic $\mathbb{Z}/5\mathbb{Z}$ sheet automorphism whose eigenvalues supply the fifth-root-of-unity Lagrange resolvent weights.

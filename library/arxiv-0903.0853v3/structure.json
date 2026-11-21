@@ -8,7 +8,7 @@
   "pages": 176,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,7 +21,7 @@
    "stamp_date": "30 Jan 2012"
   },
   "doi": null,
-  "title": "Jean-Pierre Ramis",
+  "title": "Local analytic classification of q-difference equations",
   "authors_raw": "Jacques Sauloy",
   "title_lines": [
    "Jean-Pierre Ramis"
@@ -42,7 +42,8 @@
    "text": "Jean-Pierre Ramis",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Jean-Pierre Ramis"
  },
  "toc": [
   {
@@ -163,19 +164,6 @@
    "page_label": "8"
   },
   {
-   "level": 2,
-   "title": "$q$-Gevrey levels",
-   "page": 15,
-   "source": "inferred",
-   "number": "3.2",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
    "level": 1,
    "title": "Acknowledgements",
    "page": 16,
@@ -259,19 +247,6 @@
    "page": 19,
    "source": "inferred",
    "number": "4.1.4",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 2,
-   "title": "$q$-difference modules",
-   "page": 19,
-   "source": "inferred",
-   "number": "4.2",
    "confidence": 1.0,
    "evidence": [
     "latex",
@@ -605,75 +580,10 @@
   },
   {
    "level": 2,
-   "title": "$q$-Gevrey extension spaces",
-   "page": 48,
-   "source": "inferred",
-   "number": "10.1",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "42"
-  },
-  {
-   "level": 3,
-   "title": "$q$-Gevrey extensions for arbitrary slopes",
-   "page": 48,
-   "source": "inferred",
-   "number": "10.1.1",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "42"
-  },
-  {
-   "level": 3,
-   "title": "$q$-Gevrey extensions for integral slopes",
-   "page": 48,
-   "source": "inferred",
-   "number": "10.1.2",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "42"
-  },
-  {
-   "level": 2,
    "title": "Isoformal $q$-Gevrey classification",
    "page": 49,
    "source": "inferred",
    "number": "10.2",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 3,
-   "title": "$q$-Gevrey classification for arbitrary slopes",
-   "page": 49,
-   "source": "inferred",
-   "number": "10.2.1",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 3,
-   "title": "$q$-Gevrey classification for integral slopes",
-   "page": 49,
-   "source": "inferred",
-   "number": "10.2.2",
    "confidence": 1.0,
    "evidence": [
     "latex",
@@ -700,19 +610,6 @@
    "page": 51,
    "source": "inferred",
    "number": "11",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "45"
-  },
-  {
-   "level": 2,
-   "title": "$q$-Asymptotics",
-   "page": 51,
-   "source": "inferred",
-   "number": "11.1",
    "confidence": 1.0,
    "evidence": [
     "latex",
@@ -913,19 +810,6 @@
    "page_label": null
   },
   {
-   "level": 1,
-   "title": "$q$-Gevrey theorem of Borel-Ritt and flat functions",
-   "page": 89,
-   "source": "inferred",
-   "number": "17",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "83"
-  },
-  {
    "level": 2,
    "title": "From a $q$-Gevrey power series to an entire function",
    "page": 89,
@@ -1081,19 +965,6 @@
    "page_label": null
   },
   {
-   "level": 2,
-   "title": "$q$-Gevrey interpolation",
-   "page": 110,
-   "source": "inferred",
-   "number": "20.3",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
    "level": 1,
    "title": "D'evissage $q$-Gevrey",
    "page": 110,
@@ -1104,7 +975,7 @@
     "latex",
     "body"
    ],
-   "page_label": null
+   "page_label": "104"
   },
   {
    "level": 2,
@@ -1117,7 +988,7 @@
     "latex",
     "body"
    ],
-   "page_label": null
+   "page_label": "104"
   },
   {
    "level": 2,
@@ -1475,19 +1346,6 @@
    "page": 132,
    "source": "inferred",
    "number": "25.3",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": null
-  },
-  {
-   "level": 3,
-   "title": "$q$-Borel transformation",
-   "page": 132,
-   "source": "inferred",
-   "number": "25.3.1",
    "confidence": 1.0,
    "evidence": [
     "latex",
@@ -2708,10 +2566,12 @@
   },
   {
    "physical": 110,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
+   "label": "104",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
   },
   {
    "physical": 111,
@@ -3215,22 +3075,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 6,
-   "n_chars": 5759,
-   "n_words": 1460,
+   "page_end": 7,
+   "n_chars": 6917,
+   "n_words": 1903,
    "label_start": null,
-   "label_end": null
+   "label_end": "1"
   },
   {
    "id": "sec-000-1-the-problem",
    "number": "1",
    "title": "The problem",
    "level": 1,
-   "page_start": 6,
+   "page_start": 7,
    "page_end": 7,
-   "n_chars": 1065,
-   "n_words": 405,
-   "label_start": null,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "1",
    "label_end": "1"
   },
   {
@@ -3239,14 +3099,26 @@
    "title": "The generalized Riemann problem and the allied problems",
    "level": 2,
    "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1177,
+   "n_words": 185,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-002-12-the-birkhoff-guenther-program",
+   "number": "1.2",
+   "title": "The Birkhoff-Guenther program",
+   "level": 2,
+   "page_start": 7,
    "page_end": 8,
-   "n_chars": 2482,
-   "n_words": 391,
+   "n_chars": 1238,
+   "n_words": 196,
    "label_start": "1",
    "label_end": null
   },
   {
-   "id": "sec-002-13-what-this-paper-could-contain-but-does-not",
+   "id": "sec-003-13-what-this-paper-could-contain-but-does-not",
    "number": "1.3",
    "title": "What this paper could contain but does not",
    "level": 2,
@@ -3258,7 +3130,7 @@
    "label_end": null
   },
   {
-   "id": "sec-003-131-about-the-asumption-that-the-slopes-are-inte",
+   "id": "sec-004-131-about-the-asumption-that-the-slopes-are-inte",
    "number": "1.3.1",
    "title": "About the asumption that the slopes are integral",
    "level": 3,
@@ -3270,7 +3142,7 @@
    "label_end": "4"
   },
   {
-   "id": "sec-004-2-contents-of-the-paper",
+   "id": "sec-005-2-contents-of-the-paper",
    "number": "2",
    "title": "Contents of the paper",
    "level": 1,
@@ -3282,7 +3154,7 @@
    "label_end": null
   },
   {
-   "id": "sec-005-21-about-the-wealth-of-summation-processes",
+   "id": "sec-006-21-about-the-wealth-of-summation-processes",
    "number": "2.1",
    "title": "About the wealth of summation processes",
    "level": 2,
@@ -3294,7 +3166,7 @@
    "label_end": "8"
   },
   {
-   "id": "sec-006-3-general-notations",
+   "id": "sec-007-3-general-notations",
    "number": "3",
    "title": "General notations",
    "level": 1,
@@ -3306,7 +3178,7 @@
    "label_end": "8"
   },
   {
-   "id": "sec-007-31-theta-functions",
+   "id": "sec-008-31-theta-functions",
    "number": "3.1",
    "title": "Theta Functions",
    "level": 2,
@@ -3318,19 +3190,43 @@
    "label_end": "10"
   },
   {
-   "id": "sec-008-acknowledgements",
+   "id": "sec-009-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 16,
-   "page_end": 18,
-   "n_chars": 3637,
-   "n_words": 658,
+   "page_end": 17,
+   "n_chars": 1242,
+   "n_words": 203,
    "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-010-4-the-category-of-q-difference-modules",
+   "number": "4",
+   "title": "The category of $q$-difference modules",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 51,
+   "n_words": 8,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-011-41-some-general-facts-about-difference-modules",
+   "number": "4.1",
+   "title": "Some general facts about difference modules",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2234,
+   "n_words": 430,
+   "label_start": "11",
    "label_end": null
   },
   {
-   "id": "sec-009-411-unity",
+   "id": "sec-012-411-unity",
    "number": "4.1.1",
    "title": "Unity",
    "level": 3,
@@ -3342,79 +3238,67 @@
    "label_end": null
   },
   {
-   "id": "sec-010-412-internal-hom",
+   "id": "sec-013-412-internal-hom",
    "number": "4.1.2",
    "title": "Internal Hom",
    "level": 3,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 370,
-   "n_words": 76,
+   "n_chars": 367,
+   "n_words": 75,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-011-413-tensor-product",
+   "id": "sec-014-413-tensor-product",
    "number": "4.1.3",
    "title": "Tensor product",
    "level": 3,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 421,
-   "n_words": 84,
+   "n_chars": 479,
+   "n_words": 98,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-012-414-extension-of-scalars",
+   "id": "sec-015-414-extension-of-scalars",
    "number": "4.1.4",
    "title": "Extension of scalars",
    "level": 3,
    "page_start": 19,
-   "page_end": 19,
-   "n_chars": 325,
-   "n_words": 71,
+   "page_end": 20,
+   "n_chars": 2297,
+   "n_words": 416,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-013-421-the-functor-of-solutions",
+   "id": "sec-016-421-the-functor-of-solutions",
    "number": "4.2.1",
    "title": "The functor of solutions",
    "level": 3,
-   "page_start": 19,
+   "page_start": 20,
    "page_end": 22,
-   "n_chars": 5356,
-   "n_words": 1006,
+   "n_chars": 3351,
+   "n_words": 655,
    "label_start": null,
    "label_end": "16"
   },
   {
-   "id": "sec-014-51-the-newton-polygon",
-   "number": "5.1",
-   "title": "The Newton polygon",
-   "level": 2,
+   "id": "sec-017-5-the-newton-polygon-and-the-slope-filtration",
+   "number": "5",
+   "title": "The Newton polygon and the slope filtration",
+   "level": 1,
    "page_start": 22,
-   "page_end": 23,
-   "n_chars": 2083,
-   "n_words": 392,
+   "page_end": 24,
+   "n_chars": 4245,
+   "n_words": 836,
    "label_start": "16",
    "label_end": null
   },
   {
-   "id": "sec-015-5-the-newton-polygon-and-the-slope-filtration",
-   "number": "5",
-   "title": "The Newton polygon and the slope filtration",
-   "level": 1,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 2112,
-   "n_words": 436,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-016-52-pure-modules",
+   "id": "sec-018-52-pure-modules",
    "number": "5.2",
    "title": "Pure modules",
    "level": 2,
@@ -3426,7 +3310,7 @@
    "label_end": null
   },
   {
-   "id": "sec-017-521-pure-modules-with-integral-slopes",
+   "id": "sec-019-521-pure-modules-with-integral-slopes",
    "number": "5.2.1",
    "title": "Pure modules with integral slopes",
    "level": 3,
@@ -3438,7 +3322,7 @@
    "label_end": null
   },
   {
-   "id": "sec-018-53-the-slope-filtration",
+   "id": "sec-020-53-the-slope-filtration",
    "number": "5.3",
    "title": "The slope filtration",
    "level": 2,
@@ -3450,7 +3334,7 @@
    "label_end": null
   },
   {
-   "id": "sec-019-522-pure-modules-of-arbitrary-slopes",
+   "id": "sec-021-522-pure-modules-of-arbitrary-slopes",
    "number": "5.2.2",
    "title": "Pure modules of arbitrary slopes",
    "level": 3,
@@ -3462,7 +3346,7 @@
    "label_end": null
   },
   {
-   "id": "sec-020-531-formal-case",
+   "id": "sec-022-531-formal-case",
    "number": "5.3.1",
    "title": "Formal case",
    "level": 3,
@@ -3474,19 +3358,31 @@
    "label_end": "21"
   },
   {
-   "id": "sec-021-6-application-to-the-analytic-isoformal-classifi",
+   "id": "sec-023-6-application-to-the-analytic-isoformal-classifi",
    "number": "6",
    "title": "Application to the analytic isoformal classification",
    "level": 1,
    "page_start": 27,
-   "page_end": 31,
-   "n_chars": 8258,
-   "n_words": 1563,
+   "page_end": 28,
+   "n_chars": 2469,
+   "n_words": 467,
    "label_start": "21",
    "label_end": null
   },
   {
-   "id": "sec-022-62-the-case-of-two-slopes",
+   "id": "sec-024-61-a-prototypal-example-and-the-q-borel-transfor",
+   "number": "6.1",
+   "title": "A prototypal example and the $q$-Borel transformation",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 31,
+   "n_chars": 5723,
+   "n_words": 1086,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-025-62-the-case-of-two-slopes",
    "number": "6.2",
    "title": "The case of two slopes",
    "level": 2,
@@ -3498,19 +3394,43 @@
    "label_end": null
   },
   {
-   "id": "sec-023-63-matricial-description",
+   "id": "sec-026-63-matricial-description",
    "number": "6.3",
    "title": "Matricial description",
    "level": 2,
    "page_start": 32,
-   "page_end": 38,
-   "n_chars": 10019,
-   "n_words": 2097,
+   "page_end": 35,
+   "n_chars": 3340,
+   "n_words": 749,
    "label_start": null,
+   "label_end": "29"
+  },
+  {
+   "id": "sec-027-7-isoformal-analytic-classes-of-analytic-q-diffe",
+   "number": "7",
+   "title": "Isoformal analytic classes of analytic $q$-difference modules",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 125,
+   "n_words": 22,
+   "label_start": "29",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-028-71-extension-classes-of-analytic-q-difference-mo",
+   "number": "7.1",
+   "title": "Extension classes of analytic $q$-difference modules",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 38,
+   "n_chars": 6423,
+   "n_words": 1309,
+   "label_start": "29",
    "label_end": "32"
   },
   {
-   "id": "sec-024-8-index-theorems-and-irregularity",
+   "id": "sec-029-8-index-theorems-and-irregularity",
    "number": "8",
    "title": "Index theorems and irregularity",
    "level": 1,
@@ -3522,31 +3442,127 @@
    "label_end": null
   },
   {
-   "id": "sec-025-82-the-index-in-the-general-case",
+   "id": "sec-030-82-the-index-in-the-general-case",
    "number": "8.2",
    "title": "The index in the general case",
    "level": 2,
    "page_start": 40,
+   "page_end": 42,
+   "n_chars": 3086,
+   "n_words": 587,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-031-9-explicit-description-of-mathcalfp-1ldotsp-k-in",
+   "number": "9",
+   "title": "Explicit description of ${\\mathcal{F}}(P_{1},\\ldots,P_{k})$ in the case of integral slopes",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 1335,
+   "n_words": 358,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-032-91-analytic-classification-with-2-integral-slope",
+   "number": "9.1",
+   "title": "Analytic classification with $2$ integral slopes",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 4254,
+   "n_words": 826,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-033-92-the-birkhoff-guenther-normal-form",
+   "number": "9.2",
+   "title": "The Birkhoff-Guenther normal form",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 2994,
+   "n_words": 558,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-034-93-computational-consequences-of-the-birkhoff-gu",
+   "number": "9.3",
+   "title": "Computational consequences of the Birkhoff-Guenther normal form",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 1258,
+   "n_words": 229,
+   "label_start": null,
+   "label_end": "42"
+  },
+  {
+   "id": "sec-035-10-interpolation-by-q-gevrey-classes",
+   "number": "10",
+   "title": "Interpolation by $q$-Gevrey classes",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 1580,
+   "n_words": 294,
+   "label_start": "42",
+   "label_end": null
+  },
+  {
+   "id": "sec-036-102-isoformal-q-gevrey-classification",
+   "number": "10.2",
+   "title": "Isoformal $q$-Gevrey classification",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 958,
+   "n_words": 173,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-037-103-another-kind-of-q-gevrey-interpolation",
+   "number": "10.3",
+   "title": "Another kind of $q$-Gevrey interpolation",
+   "level": 2,
+   "page_start": 49,
    "page_end": 51,
-   "n_chars": 16695,
-   "n_words": 3236,
+   "n_chars": 801,
+   "n_words": 147,
    "label_start": null,
    "label_end": "45"
   },
   {
-   "id": "sec-026-11-asymptotics",
+   "id": "sec-038-11-asymptotics",
    "number": "11",
    "title": "Asymptotics",
    "level": 1,
    "page_start": 51,
-   "page_end": 58,
-   "n_chars": 12295,
-   "n_words": 2525,
+   "page_end": 53,
+   "n_chars": 3185,
+   "n_words": 620,
    "label_start": "45",
+   "label_end": null
+  },
+  {
+   "id": "sec-039-112-asymptotic-expansions-and-mathcal-cinfty-fun",
+   "number": "11.2",
+   "title": "Asymptotic expansions and ${\\mathcal C}^{\\infty}$ functions in Whitney sense",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 58,
+   "n_chars": 9092,
+   "n_words": 1903,
+   "label_start": null,
    "label_end": "52"
   },
   {
-   "id": "sec-027-12-existence-of-asymptotic-solutions",
+   "id": "sec-040-12-existence-of-asymptotic-solutions",
    "number": "12",
    "title": "Existence of asymptotic solutions",
    "level": 1,
@@ -3558,7 +3574,7 @@
    "label_end": "56"
   },
   {
-   "id": "sec-028-13-the-fundamental-isomorphism",
+   "id": "sec-041-13-the-fundamental-isomorphism",
    "number": "13",
    "title": "The fundamental isomorphism",
    "level": 1,
@@ -3570,55 +3586,79 @@
    "label_end": null
   },
   {
-   "id": "sec-029-132-geometric-interpretation-of-the-elements-of",
+   "id": "sec-042-132-geometric-interpretation-of-the-elements-of",
    "number": "13.2",
    "title": "Geometric interpretation of the elements of $H^1({\\mathbf{E}_{q}};\\Lambda_I)$",
    "level": 2,
    "page_start": 65,
    "page_end": 70,
-   "n_chars": 11002,
-   "n_words": 2179,
+   "n_chars": 10716,
+   "n_words": 2135,
    "label_start": null,
    "label_end": "64"
   },
   {
-   "id": "sec-030-141-the-second-main-theorem",
+   "id": "sec-043-14-the-isoformal-classification-by-the-cohomolog",
+   "number": "14",
+   "title": "The isoformal classification by the cohomology of the Stokes sheaf",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 220,
+   "n_words": 34,
+   "label_start": "64",
+   "label_end": "64"
+  },
+  {
+   "id": "sec-044-141-the-second-main-theorem",
    "number": "14.1",
    "title": "The second main theorem",
    "level": 2,
    "page_start": 70,
-   "page_end": 71,
-   "n_chars": 918,
-   "n_words": 165,
-   "label_start": "64",
-   "label_end": null
-  },
-  {
-   "id": "sec-031-14-the-isoformal-classification-by-the-cohomolog",
-   "number": "14",
-   "title": "The isoformal classification by the cohomology of the Stokes sheaf",
-   "level": 1,
-   "page_start": 71,
    "page_end": 73,
-   "n_chars": 3513,
-   "n_words": 679,
-   "label_start": null,
+   "n_chars": 4504,
+   "n_words": 855,
+   "label_start": "64",
    "label_end": "67"
   },
   {
-   "id": "sec-032-15-some-preparatory-notations-and-results",
+   "id": "sec-045-15-some-preparatory-notations-and-results",
    "number": "15",
    "title": "Some preparatory notations and results",
    "level": 1,
    "page_start": 73,
-   "page_end": 79,
-   "n_chars": 8215,
-   "n_words": 1721,
+   "page_end": 73,
+   "n_chars": 109,
+   "n_words": 18,
    "label_start": "67",
+   "label_end": "67"
+  },
+  {
+   "id": "sec-046-151-divisors-and-sectors-on-the-elliptic-curve-m",
+   "number": "15.1",
+   "title": "Divisors and sectors on the elliptic curve ${\\mathbf{E}_{q}} = {\\mathbf C}^*/q^{\\mathbf Z}$",
+   "level": 2,
+   "page_start": 73,
+   "page_end": 77,
+   "n_chars": 5469,
+   "n_words": 1165,
+   "label_start": "67",
+   "label_end": null
+  },
+  {
+   "id": "sec-047-152-jacobi-theta-function-q-exponential-growth-a",
+   "number": "15.2",
+   "title": "Jacobi Theta function, $q$-exponential growth and $q$-Gevrey series",
+   "level": 2,
+   "page_start": 77,
+   "page_end": 79,
+   "n_chars": 2503,
+   "n_words": 517,
+   "label_start": null,
    "label_end": "73"
   },
   {
-   "id": "sec-033-16-asymptotics-relative-to-a-divisor",
+   "id": "sec-048-16-asymptotics-relative-to-a-divisor",
    "number": "16",
    "title": "Asymptotics relative to a divisor",
    "level": 1,
@@ -3630,7 +3670,7 @@
    "label_end": null
   },
   {
-   "id": "sec-034-161-asymptotics-and-residues-i",
+   "id": "sec-049-161-asymptotics-and-residues-i",
    "number": "16.1",
    "title": "Asymptotics and residues (I)",
    "level": 2,
@@ -3642,19 +3682,43 @@
    "label_end": null
   },
   {
-   "id": "sec-035-162-asymptotics-and-residues-ii",
+   "id": "sec-050-162-asymptotics-and-residues-ii",
    "number": "16.2",
    "title": "Asymptotics and residues (II)",
    "level": 2,
    "page_start": 85,
+   "page_end": 89,
+   "n_chars": 7242,
+   "n_words": 1426,
+   "label_start": null,
+   "label_end": "83"
+  },
+  {
+   "id": "sec-051-171-from-a-q-gevrey-power-series-to-an-entire-fu",
+   "number": "17.1",
+   "title": "From a $q$-Gevrey power series to an entire function",
+   "level": 2,
+   "page_start": 89,
+   "page_end": 92,
+   "n_chars": 3147,
+   "n_words": 598,
+   "label_start": "83",
+   "label_end": null
+  },
+  {
+   "id": "sec-052-172-the-q-gevrey-theorem-of-borel-ritt",
+   "number": "17.2",
+   "title": "The $q$-Gevrey theorem of Borel-Ritt",
+   "level": 2,
+   "page_start": 92,
    "page_end": 94,
-   "n_chars": 13451,
-   "n_words": 2622,
+   "n_chars": 2927,
+   "n_words": 574,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-036-173-flat-functions-with-respect-to-a-divisor",
+   "id": "sec-053-173-flat-functions-with-respect-to-a-divisor",
    "number": "17.3",
    "title": "Flat functions with respect to a divisor",
    "level": 2,
@@ -3666,7 +3730,7 @@
    "label_end": "89"
   },
   {
-   "id": "sec-037-18-relative-divisors-and-multisummable-functions",
+   "id": "sec-054-18-relative-divisors-and-multisummable-functions",
    "number": "18",
    "title": "Relative divisors and multisummable functions",
    "level": 1,
@@ -3678,19 +3742,43 @@
    "label_end": "89"
   },
   {
-   "id": "sec-038-181-relative-divisors-and-two-levels-asymptotics",
+   "id": "sec-055-181-relative-divisors-and-two-levels-asymptotics",
    "number": "18.1",
    "title": "Relative divisors and two levels asymptotics",
    "level": 2,
    "page_start": 95,
-   "page_end": 100,
-   "n_chars": 8440,
-   "n_words": 1687,
+   "page_end": 96,
+   "n_chars": 2346,
+   "n_words": 498,
    "label_start": "89",
    "label_end": null
   },
   {
-   "id": "sec-039-191-summability-of-formal-solutions",
+   "id": "sec-056-182-multisummable-functions",
+   "number": "18.2",
+   "title": "Multisummable functions",
+   "level": 2,
+   "page_start": 96,
+   "page_end": 99,
+   "n_chars": 3548,
+   "n_words": 747,
+   "label_start": null,
+   "label_end": "93"
+  },
+  {
+   "id": "sec-057-19-analytic-classification-of-linear-q-differenc",
+   "number": "19",
+   "title": "Analytic classification of linear $q$-difference equations",
+   "level": 1,
+   "page_start": 99,
+   "page_end": 100,
+   "n_chars": 2428,
+   "n_words": 428,
+   "label_start": "93",
+   "label_end": null
+  },
+  {
+   "id": "sec-058-191-summability-of-formal-solutions",
    "number": "19.1",
    "title": "Summability of formal solutions",
    "level": 2,
@@ -3702,7 +3790,7 @@
    "label_end": "99"
   },
   {
-   "id": "sec-040-20-privileged-cocycles",
+   "id": "sec-059-20-privileged-cocycles",
    "number": "20",
    "title": "Privileged cocycles",
    "level": 1,
@@ -3714,19 +3802,31 @@
    "label_end": null
   },
   {
-   "id": "sec-041-202-privileged-cocycles",
+   "id": "sec-060-202-privileged-cocycles",
    "number": "20.2",
    "title": "Privileged cocycles",
    "level": 2,
    "page_start": 107,
    "page_end": 110,
-   "n_chars": 7396,
-   "n_words": 1392,
+   "n_chars": 7326,
+   "n_words": 1382,
    "label_start": null,
-   "label_end": null
+   "label_end": "104"
   },
   {
-   "id": "sec-042-211-the-abelian-case-of-two-slopes",
+   "id": "sec-061-21-devissage-q-gevrey",
+   "number": "21",
+   "title": "D'evissage $q$-Gevrey",
+   "level": 1,
+   "page_start": 110,
+   "page_end": 110,
+   "n_chars": 44,
+   "n_words": 7,
+   "label_start": "104",
+   "label_end": "104"
+  },
+  {
+   "id": "sec-062-211-the-abelian-case-of-two-slopes",
    "number": "21.1",
    "title": "The abelian case of two slopes",
    "level": 2,
@@ -3734,11 +3834,11 @@
    "page_end": 111,
    "n_chars": 1727,
    "n_words": 318,
-   "label_start": null,
+   "label_start": "104",
    "label_end": null
   },
   {
-   "id": "sec-043-212-a-sequence-of-central-extensions",
+   "id": "sec-063-212-a-sequence-of-central-extensions",
    "number": "21.2",
    "title": "A sequence of central extensions",
    "level": 2,
@@ -3750,19 +3850,31 @@
    "label_end": null
   },
   {
-   "id": "sec-044-213-explicit-computation",
+   "id": "sec-064-213-explicit-computation",
    "number": "21.3",
    "title": "Explicit computation",
    "level": 2,
    "page_start": 112,
    "page_end": 114,
-   "n_chars": 3806,
-   "n_words": 742,
+   "n_chars": 3752,
+   "n_words": 735,
    "label_start": null,
    "label_end": "108"
   },
   {
-   "id": "sec-045-221-the-general-construction",
+   "id": "sec-065-22-vector-bundles-associated-to-q-difference-mod",
+   "number": "22",
+   "title": "Vector bundles associated to $q$-difference modules",
+   "level": 1,
+   "page_start": 114,
+   "page_end": 114,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "108",
+   "label_end": "108"
+  },
+  {
+   "id": "sec-066-221-the-general-construction",
    "number": "22.1",
    "title": "The general construction",
    "level": 2,
@@ -3774,7 +3886,7 @@
    "label_end": null
   },
   {
-   "id": "sec-046-222-sheaf-theoretical-interpretation-of-irregula",
+   "id": "sec-067-222-sheaf-theoretical-interpretation-of-irregula",
    "number": "22.2",
    "title": "Sheaf theoretical interpretation of irregularity",
    "level": 2,
@@ -3786,43 +3898,103 @@
    "label_end": "112"
   },
   {
-   "id": "sec-047-2221-notations",
+   "id": "sec-068-2221-notations",
    "number": "22.2.1",
    "title": "Notations",
    "level": 3,
    "page_start": 118,
+   "page_end": 118,
+   "n_chars": 1070,
+   "n_words": 223,
+   "label_start": "112",
+   "label_end": "112"
+  },
+  {
+   "id": "sec-069-23-the-q-euler-equation-and-confluent-basic-hype",
+   "number": "23",
+   "title": "The $q$-Euler equation and confluent basic hypergeometric series",
+   "level": 1,
+   "page_start": 118,
    "page_end": 119,
-   "n_chars": 1898,
-   "n_words": 392,
+   "n_chars": 717,
+   "n_words": 152,
    "label_start": "112",
    "label_end": null
   },
   {
-   "id": "sec-048-2311-formal-solution",
+   "id": "sec-070-231-a-digest-on-the-q-euler-equation",
+   "number": "23.1",
+   "title": "A digest on the $q$-Euler equation",
+   "level": 2,
+   "page_start": 119,
+   "page_end": 119,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-071-2311-formal-solution",
    "number": "23.1.1",
    "title": "Formal solution",
    "level": 3,
    "page_start": 119,
-   "page_end": 122,
-   "n_chars": 5284,
-   "n_words": 1029,
+   "page_end": 119,
+   "n_chars": 215,
+   "n_words": 45,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-049-233-some-special-cases",
+   "id": "sec-072-2312-birkhoff-guenther-normal-form",
+   "number": "23.1.2",
+   "title": "Birkhoff-Guenther normal form",
+   "level": 3,
+   "page_start": 119,
+   "page_end": 121,
+   "n_chars": 2755,
+   "n_words": 513,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-073-232-some-confluent-basic-hypergeometric-function",
+   "number": "23.2",
+   "title": "Some confluent basic hypergeometric functions",
+   "level": 2,
+   "page_start": 121,
+   "page_end": 122,
+   "n_chars": 2176,
+   "n_words": 450,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-074-233-some-special-cases",
    "number": "23.3",
    "title": "Some special cases",
    "level": 2,
    "page_start": 122,
-   "page_end": 125,
-   "n_chars": 3317,
-   "n_words": 627,
+   "page_end": 124,
+   "n_chars": 2751,
+   "n_words": 518,
    "label_start": null,
+   "label_end": "118"
+  },
+  {
+   "id": "sec-075-24-the-symmetric-square-of-the-q-euler-equation",
+   "number": "24",
+   "title": "The symmetric square of the $q$-Euler equation",
+   "level": 1,
+   "page_start": 124,
+   "page_end": 125,
+   "n_chars": 515,
+   "n_words": 101,
+   "label_start": "118",
    "label_end": null
   },
   {
-   "id": "sec-050-241-algebraic-aspects",
+   "id": "sec-076-241-algebraic-aspects",
    "number": "24.1",
    "title": "Algebraic aspects",
    "level": 2,
@@ -3834,7 +4006,7 @@
    "label_end": null
   },
   {
-   "id": "sec-051-2411-newton-polygon-of-a-symmetric-square",
+   "id": "sec-077-2411-newton-polygon-of-a-symmetric-square",
    "number": "24.1.1",
    "title": "Newton polygon of a symmetric square",
    "level": 3,
@@ -3846,7 +4018,7 @@
    "label_end": null
   },
   {
-   "id": "sec-052-2412-algebraic-summation-of-the-square-of-the-ts",
+   "id": "sec-078-2412-algebraic-summation-of-the-square-of-the-ts",
    "number": "24.1.2",
    "title": "Algebraic summation of the square of the Tshakaloff series",
    "level": 3,
@@ -3858,31 +4030,55 @@
    "label_end": null
   },
   {
-   "id": "sec-053-242-analytic-aspects",
+   "id": "sec-079-242-analytic-aspects",
    "number": "24.2",
    "title": "Analytic aspects",
    "level": 2,
    "page_start": 127,
-   "page_end": 128,
-   "n_chars": 1029,
-   "n_words": 186,
+   "page_end": 127,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-054-2422-multisummability",
+   "id": "sec-080-2421-the-square-of-the-tshakaloff-series-is-not",
+   "number": "24.2.1",
+   "title": "The square of the Tshakaloff series is not summable with one level",
+   "level": 3,
+   "page_start": 127,
+   "page_end": 128,
+   "n_chars": 954,
+   "n_words": 174,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-081-2422-multisummability",
    "number": "24.2.2",
    "title": "Multisummability",
    "level": 3,
    "page_start": 128,
    "page_end": 129,
-   "n_chars": 1413,
-   "n_words": 270,
+   "n_chars": 1092,
+   "n_words": 207,
    "label_start": null,
    "label_end": "123"
   },
   {
-   "id": "sec-055-2423-possibility-of-a-multisummation-process",
+   "id": "sec-082-25-from-the-mock-theta-functions-to-the-q-euler",
+   "number": "25",
+   "title": "From the Mock Theta functions to the $q$-Euler equation",
+   "level": 1,
+   "page_start": 129,
+   "page_end": 129,
+   "n_chars": 261,
+   "n_words": 53,
+   "label_start": "123",
+   "label_end": "123"
+  },
+  {
+   "id": "sec-083-2423-possibility-of-a-multisummation-process",
    "number": "24.2.3",
    "title": "Possibility of a multisummation process",
    "level": 3,
@@ -3894,7 +4090,7 @@
    "label_end": null
   },
   {
-   "id": "sec-056-252-back-to-the-the-mock-theta-function",
+   "id": "sec-084-252-back-to-the-the-mock-theta-function",
    "number": "25.2",
    "title": "Back to the the Mock Theta function",
    "level": 2,
@@ -3906,19 +4102,31 @@
    "label_end": "127"
   },
   {
-   "id": "sec-057-26-from-class-numbers-of-quadratic-forms-to-the",
+   "id": "sec-085-26-from-class-numbers-of-quadratic-forms-to-the",
    "number": "26",
    "title": "From class numbers of quadratic forms to the $q$-Euler equation",
    "level": 1,
    "page_start": 133,
    "page_end": 133,
-   "n_chars": 254,
-   "n_words": 52,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": "127",
    "label_end": "127"
   },
   {
-   "id": "sec-058-2533-privileged-cocycles",
+   "id": "sec-086-2532-birkhoff-guenther-normal-form",
+   "number": "25.3.2",
+   "title": "Birkhoff-Guenther normal form",
+   "level": 3,
+   "page_start": 133,
+   "page_end": 133,
+   "n_chars": 250,
+   "n_words": 51,
+   "label_start": "127",
+   "label_end": "127"
+  },
+  {
+   "id": "sec-087-2533-privileged-cocycles",
    "number": "25.3.3",
    "title": "Privileged cocycles",
    "level": 3,
@@ -3930,7 +4138,7 @@
    "label_end": null
   },
   {
-   "id": "sec-059-261-the-generating-series-for-the-class-numbers",
+   "id": "sec-088-261-the-generating-series-for-the-class-numbers",
    "number": "26.1",
    "title": "The generating series for the class numbers",
    "level": 2,
@@ -3942,7 +4150,7 @@
    "label_end": null
   },
   {
-   "id": "sec-060-262-modular-relations",
+   "id": "sec-089-262-modular-relations",
    "number": "26.2",
    "title": "Modular relations",
    "level": 2,
@@ -3954,7 +4162,7 @@
    "label_end": null
   },
   {
-   "id": "sec-061-263-related-other-examples",
+   "id": "sec-090-263-related-other-examples",
    "number": "26.3",
    "title": "Related other examples",
    "level": 2,
@@ -3966,7 +4174,7 @@
    "label_end": "131"
   },
   {
-   "id": "sec-062-a-general-setting-of-the-problem",
+   "id": "sec-091-a-general-setting-of-the-problem",
    "number": "A",
    "title": "General setting of the problem",
    "level": 1,
@@ -3978,7 +4186,7 @@
    "label_end": null
   },
   {
-   "id": "sec-063-a2-the-devissage",
+   "id": "sec-092-a2-the-devissage",
    "number": "A.2",
    "title": "The devissage",
    "level": 2,
@@ -3990,19 +4198,43 @@
    "label_end": "135"
   },
   {
-   "id": "sec-064-b-difference-modules-over-difference-rings",
+   "id": "sec-093-b-difference-modules-over-difference-rings",
    "number": "B",
    "title": "Difference modules over difference rings",
    "level": 1,
    "page_start": 141,
-   "page_end": 145,
-   "n_chars": 9999,
-   "n_words": 1817,
+   "page_end": 141,
+   "n_chars": 1949,
+   "n_words": 334,
+   "label_start": "135",
+   "label_end": "135"
+  },
+  {
+   "id": "sec-094-b1-difference-rings-difference-operators",
+   "number": "B.1",
+   "title": "Difference rings, difference operators",
+   "level": 2,
+   "page_start": 141,
+   "page_end": 142,
+   "n_chars": 2156,
+   "n_words": 402,
    "label_start": "135",
    "label_end": null
   },
   {
-   "id": "sec-065-b4-tensor-products",
+   "id": "sec-095-b2-difference-modules-over-difference-rings",
+   "number": "B.2",
+   "title": "Difference modules over difference rings",
+   "level": 2,
+   "page_start": 142,
+   "page_end": 145,
+   "n_chars": 5778,
+   "n_words": 1065,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-096-b4-tensor-products",
    "number": "B.4",
    "title": "Tensor products",
    "level": 2,
@@ -4014,55 +4246,103 @@
    "label_end": null
   },
   {
-   "id": "sec-066-b6-duality",
+   "id": "sec-097-b6-duality",
    "number": "B.6",
    "title": "Duality",
    "level": 2,
    "page_start": 147,
-   "page_end": 149,
-   "n_chars": 3826,
-   "n_words": 729,
+   "page_end": 148,
+   "n_chars": 1417,
+   "n_words": 269,
    "label_start": null,
-   "label_end": null
+   "label_end": "142"
   },
   {
-   "id": "sec-067-c-finitely-filtered-difference-modules",
+   "id": "sec-098-c-finitely-filtered-difference-modules",
    "number": "C",
    "title": "Finitely filtered difference modules",
    "level": 1,
+   "page_start": 148,
+   "page_end": 148,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "142",
+   "label_end": "142"
+  },
+  {
+   "id": "sec-099-c1-isograded-classification-of-difference-module",
+   "number": "C.1",
+   "title": "Isograded classification of difference modules",
+   "level": 2,
+   "page_start": 148,
+   "page_end": 148,
+   "n_chars": 1674,
+   "n_words": 323,
+   "label_start": "142",
+   "label_end": "142"
+  },
+  {
+   "id": "sec-100-c2-matricial-description-of-difference-modules",
+   "number": "C.2",
+   "title": "Matricial description of difference modules",
+   "level": 2,
+   "page_start": 148,
+   "page_end": 149,
+   "n_chars": 1511,
+   "n_words": 279,
+   "label_start": "142",
+   "label_end": null
+  },
+  {
+   "id": "sec-101-c3-matricial-description-of-filtered-difference",
+   "number": "C.3",
+   "title": "Matricial description of filtered difference modules",
+   "level": 2,
    "page_start": 149,
    "page_end": 151,
-   "n_chars": 3764,
-   "n_words": 781,
+   "n_chars": 2804,
+   "n_words": 613,
    "label_start": null,
    "label_end": "145"
   },
   {
-   "id": "sec-068-d-extensions-of-difference-modules",
+   "id": "sec-102-d-extensions-of-difference-modules",
    "number": "D",
    "title": "Extensions of difference modules",
    "level": 1,
    "page_start": 151,
    "page_end": 155,
-   "n_chars": 7301,
-   "n_words": 1465,
+   "n_chars": 7297,
+   "n_words": 1464,
    "label_start": "145",
    "label_end": null
   },
   {
-   "id": "sec-069-d1-the-complex-of-solutions",
+   "id": "sec-103-d1-the-complex-of-solutions",
    "number": "D.1",
    "title": "The complex of solutions",
    "level": 2,
    "page_start": 155,
+   "page_end": 155,
+   "n_chars": 1380,
+   "n_words": 265,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-104-d2-matricial-description-of-extensions-of-differ",
+   "number": "D.2",
+   "title": "Matricial description of extensions of difference modules",
+   "level": 2,
+   "page_start": 155,
    "page_end": 156,
-   "n_chars": 2536,
-   "n_words": 494,
+   "n_chars": 1158,
+   "n_words": 231,
    "label_start": null,
    "label_end": "150"
   },
   {
-   "id": "sec-070-e-extension-of-scalars",
+   "id": "sec-105-e-extension-of-scalars",
    "number": "E",
    "title": "Extension of scalars",
    "level": 1,
@@ -4074,19 +4354,31 @@
    "label_end": "152"
   },
   {
-   "id": "sec-071-f-our-moduli-space",
+   "id": "sec-106-f-our-moduli-space",
    "number": "F",
    "title": "Our moduli space",
    "level": 1,
    "page_start": 158,
-   "page_end": 160,
-   "n_chars": 4117,
-   "n_words": 865,
+   "page_end": 159,
+   "n_chars": 1883,
+   "n_words": 387,
    "label_start": "152",
    "label_end": null
   },
   {
-   "id": "sec-072-f2-end-of-the-proof-of-theorem",
+   "id": "sec-107-f1-structure-of-the-fibers",
+   "number": "F.1",
+   "title": "Structure of the fibers",
+   "level": 2,
+   "page_start": 159,
+   "page_end": 160,
+   "n_chars": 2161,
+   "n_words": 464,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-108-f2-end-of-the-proof-of-theorem",
    "number": "F.2",
    "title": "End of the proof of theorem",
    "level": 2,
@@ -4098,7 +4390,7 @@
    "label_end": "155"
   },
   {
-   "id": "sec-073-g-extension-classes-of-difference-modules",
+   "id": "sec-109-g-extension-classes-of-difference-modules",
    "number": "G",
    "title": "Extension classes of difference modules",
    "level": 1,
@@ -4110,7 +4402,7 @@
    "label_end": "157"
   },
   {
-   "id": "sec-074-h-the-cohomological-equation",
+   "id": "sec-110-h-the-cohomological-equation",
    "number": "H",
    "title": "The cohomological equation",
    "level": 1,
@@ -4122,7 +4414,7 @@
    "label_end": "157"
   },
   {
-   "id": "sec-075-h1-some-inhomogeneous-equations",
+   "id": "sec-111-h1-some-inhomogeneous-equations",
    "number": "H.1",
    "title": "Some inhomogeneous equations",
    "level": 2,
@@ -4134,7 +4426,7 @@
    "label_end": null
   },
   {
-   "id": "sec-076-h2-a-homotopy",
+   "id": "sec-112-h2-a-homotopy",
    "number": "H.2",
    "title": "A homotopy",
    "level": 2,
@@ -4149,10 +4441,10 @@
  "diagnostics": {
   "pages_without_text": 5,
   "likely_scanned": false,
-  "toc_entries": 143,
+  "toc_entries": 132,
   "toc_inferred_entries": 143,
   "toc_inferred_mean_confidence": 0.979,
-  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_empty_share": 0.076,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -4162,17 +4454,15 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 1,
-    "items": [
-     "D\u00b4evissage q-Gevrey"
-    ]
+    "count": 0,
+    "items": []
    },
    "found_not_listed": {
     "count": 3,
     "items": [
-     "1 The function g(\u2113) has q-exponential growth of order k both at 0 and in\ufb01nity.",
-     "1 Each function Ai,j has q-exponential growth of order (at most) \u03bd at in\ufb01nity.",
-     "3 The matrices B1 and B2 give rise to analytically equivalent q-di\ufb00erence modules."
+     "1 The function g(ℓ) has q-exponential growth of order k both at 0 and inﬁnity.",
+     "1 Each function Ai,j has q-exponential growth of order (at most) ν at inﬁnity.",
+     "3 The matrices B1 and B2 give rise to analytically equivalent q-diﬀerence modules."
     ]
    },
    "page_mismatch": {
@@ -4180,13 +4470,82 @@
     "items": []
    }
   },
-  "sections": 78,
-  "chars_total": 311220,
+  "sections": 114,
+  "chars_total": 309290,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "$q$-Gevrey levels",
+    "page": 15,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-difference modules",
+    "page": 19,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-Gevrey extension spaces",
+    "page": 48,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-Gevrey extensions for arbitrary slopes",
+    "page": 48,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-Gevrey extensions for integral slopes",
+    "page": 48,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-Gevrey classification for arbitrary slopes",
+    "page": 49,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-Gevrey classification for integral slopes",
+    "page": 49,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-Asymptotics",
+    "page": 51,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-Gevrey theorem of Borel-Ritt and flat functions",
+    "page": 89,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-Gevrey interpolation",
+    "page": 110,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$q$-Borel transformation",
+    "page": 132,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "smfcal.tex",
    "tex_sections": 118,
-   "overlaid": 47,
+   "overlaid": 74,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -4202,18 +4561,26 @@
      "id": "sec-000-1-the-problem",
      "title": "The problem",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-11-the-generalized-riemann-problem-and-the-allie",
      "title": "The generalized Riemann problem and the allied problems",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.938,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-13-what-this-paper-could-contain-but-does-not",
+     "id": "sec-002-12-the-birkhoff-guenther-program",
+     "title": "The Birkhoff-Guenther program",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-what-this-paper-could-contain-but-does-not",
      "title": "What this paper could contain but does not",
      "prose_ratio": 0.964,
      "coverage_ratio": 1.0,
@@ -4221,7 +4588,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-131-about-the-asumption-that-the-slopes-are-inte",
+     "id": "sec-004-131-about-the-asumption-that-the-slopes-are-inte",
      "title": "About the asumption that the slopes are integral",
      "prose_ratio": 0.782,
      "coverage_ratio": 0.967,
@@ -4229,7 +4596,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-2-contents-of-the-paper",
+     "id": "sec-005-2-contents-of-the-paper",
      "title": "Contents of the paper",
      "prose_ratio": 0.926,
      "coverage_ratio": 0.977,
@@ -4237,7 +4604,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-21-about-the-wealth-of-summation-processes",
+     "id": "sec-006-21-about-the-wealth-of-summation-processes",
      "title": "About the wealth of summation processes",
      "prose_ratio": 0.938,
      "coverage_ratio": 0.991,
@@ -4245,7 +4612,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-3-general-notations",
+     "id": "sec-007-3-general-notations",
      "title": "General notations",
      "prose_ratio": 0.906,
      "coverage_ratio": 1.0,
@@ -4253,7 +4620,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-31-theta-functions",
+     "id": "sec-008-31-theta-functions",
      "title": "Theta Functions",
      "prose_ratio": 0.897,
      "coverage_ratio": 0.919,
@@ -4261,15 +4628,29 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-acknowledgements",
+     "id": "sec-009-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.956,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-411-unity",
+     "id": "sec-010-4-the-category-of-q-difference-modules",
+     "title": "The category of $q$-difference modules",
+     "prose_ratio": 0.571,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-41-some-general-facts-about-difference-modules",
+     "title": "Some general facts about difference modules",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-411-unity",
      "title": "Unity",
      "prose_ratio": 0.85,
      "coverage_ratio": 0.971,
@@ -4277,7 +4658,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-412-internal-hom",
+     "id": "sec-013-412-internal-hom",
      "title": "Internal Hom",
      "prose_ratio": 0.929,
      "coverage_ratio": 0.867,
@@ -4285,41 +4666,39 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-413-tensor-product",
+     "id": "sec-014-413-tensor-product",
      "title": "Tensor product",
-     "prose_ratio": 0.931,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-414-extension-of-scalars",
+     "title": "Extension of scalars",
+     "prose_ratio": 0.922,
      "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-414-extension-of-scalars",
-     "title": "Extension of scalars",
-     "prose_ratio": 0.174,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-013-421-the-functor-of-solutions",
+     "id": "sec-016-421-the-functor-of-solutions",
      "title": "The functor of solutions",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.719,
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-51-the-newton-polygon",
-     "title": "The Newton polygon",
-     "prose_ratio": 0.58,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-015-5-the-newton-polygon-and-the-slope-filtration",
+     "id": "sec-017-5-the-newton-polygon-and-the-slope-filtration",
      "title": "The Newton polygon and the slope filtration",
-     "prose_ratio": 0.367,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-016-52-pure-modules",
+     "id": "sec-018-52-pure-modules",
      "title": "Pure modules",
      "prose_ratio": 0.897,
      "coverage_ratio": 0.964,
@@ -4327,19 +4706,19 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-521-pure-modules-with-integral-slopes",
+     "id": "sec-019-521-pure-modules-with-integral-slopes",
      "title": "Pure modules with integral slopes",
      "prose_ratio": 0.529,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-018-53-the-slope-filtration",
+     "id": "sec-020-53-the-slope-filtration",
      "title": "The slope filtration",
      "prose_ratio": 0.186,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-019-522-pure-modules-of-arbitrary-slopes",
+     "id": "sec-021-522-pure-modules-of-arbitrary-slopes",
      "title": "Pure modules of arbitrary slopes",
      "prose_ratio": 0.986,
      "coverage_ratio": 0.716,
@@ -4347,7 +4726,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-531-formal-case",
+     "id": "sec-022-531-formal-case",
      "title": "Formal case",
      "prose_ratio": 0.83,
      "coverage_ratio": 0.962,
@@ -4355,15 +4734,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-6-application-to-the-analytic-isoformal-classifi",
+     "id": "sec-023-6-application-to-the-analytic-isoformal-classifi",
      "title": "Application to the analytic isoformal classification",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.936,
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.822,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-62-the-case-of-two-slopes",
+     "id": "sec-024-61-a-prototypal-example-and-the-q-borel-transfor",
+     "title": "A prototypal example and the $q$-Borel transformation",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-62-the-case-of-two-slopes",
      "title": "The case of two slopes",
      "prose_ratio": 0.891,
      "coverage_ratio": 0.964,
@@ -4371,14 +4758,29 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-63-matricial-description",
+     "id": "sec-026-63-matricial-description",
      "title": "Matricial description",
-     "prose_ratio": 0.909,
-     "coverage_ratio": 0.469,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-024-8-index-theorems-and-irregularity",
+     "id": "sec-027-7-isoformal-analytic-classes-of-analytic-q-diffe",
+     "title": "Isoformal analytic classes of analytic $q$-difference modules",
+     "prose_ratio": 0.391,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-71-extension-classes-of-analytic-q-difference-mo",
+     "title": "Extension classes of analytic $q$-difference modules",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-8-index-theorems-and-irregularity",
      "title": "Index theorems and irregularity",
      "prose_ratio": 0.948,
      "coverage_ratio": 0.952,
@@ -4386,23 +4788,87 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-82-the-index-in-the-general-case",
+     "id": "sec-030-82-the-index-in-the-general-case",
      "title": "The index in the general case",
-     "prose_ratio": 0.916,
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-031-9-explicit-description-of-mathcalfp-1ldotsp-k-in",
+     "title": "Explicit description of ${\\mathcal{F}}(P_{1},\\ldots,P_{k})$ in the case of integral slopes",
+     "prose_ratio": 0.833,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-032-91-analytic-classification-with-2-integral-slope",
+     "title": "Analytic classification with $2$ integral slopes",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-033-92-the-birkhoff-guenther-normal-form",
+     "title": "The Birkhoff-Guenther normal form",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-034-93-computational-consequences-of-the-birkhoff-gu",
+     "title": "Computational consequences of the Birkhoff-Guenther normal form",
+     "prose_ratio": 0.893,
+     "coverage_ratio": 0.875,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-035-10-interpolation-by-q-gevrey-classes",
+     "title": "Interpolation by $q$-Gevrey classes",
+     "prose_ratio": 0.878,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-036-102-isoformal-q-gevrey-classification",
+     "title": "Isoformal $q$-Gevrey classification",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-037-103-another-kind-of-q-gevrey-interpolation",
+     "title": "Another kind of $q$-Gevrey interpolation",
+     "prose_ratio": 0.913,
      "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-11-asymptotics",
+     "id": "sec-038-11-asymptotics",
      "title": "Asymptotics",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 0.761,
+     "coverage_ratio": 0.945,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-12-existence-of-asymptotic-solutions",
+     "id": "sec-039-112-asymptotic-expansions-and-mathcal-cinfty-fun",
+     "title": "Asymptotic expansions and ${\\mathcal C}^{\\infty}$ functions in Whitney sense",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.874,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-040-12-existence-of-asymptotic-solutions",
      "title": "Existence of asymptotic solutions",
      "prose_ratio": 0.923,
      "coverage_ratio": 0.972,
@@ -4410,7 +4876,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-028-13-the-fundamental-isomorphism",
+     "id": "sec-041-13-the-fundamental-isomorphism",
      "title": "The fundamental isomorphism",
      "prose_ratio": 0.936,
      "coverage_ratio": 0.929,
@@ -4418,35 +4884,55 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-029-132-geometric-interpretation-of-the-elements-of",
+     "id": "sec-042-132-geometric-interpretation-of-the-elements-of",
      "title": "Geometric interpretation of the elements of $H^1({\\mathbf{E}_{q}};\\Lambda_I)$",
      "prose_ratio": 0.989,
-     "coverage_ratio": 0.941,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-030-141-the-second-main-theorem",
-     "title": "The second main theorem",
-     "prose_ratio": 0.266,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-031-14-the-isoformal-classification-by-the-cohomolog",
+     "id": "sec-043-14-the-isoformal-classification-by-the-cohomolog",
      "title": "The isoformal classification by the cohomology of the Stokes sheaf",
-     "prose_ratio": 0.208,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-032-15-some-preparatory-notations-and-results",
-     "title": "Some preparatory notations and results",
-     "prose_ratio": 0.911,
-     "coverage_ratio": 0.907,
+     "prose_ratio": 0.875,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-033-16-asymptotics-relative-to-a-divisor",
+     "id": "sec-044-141-the-second-main-theorem",
+     "title": "The second main theorem",
+     "prose_ratio": 0.853,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-045-15-some-preparatory-notations-and-results",
+     "title": "Some preparatory notations and results",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-046-151-divisors-and-sectors-on-the-elliptic-curve-m",
+     "title": "Divisors and sectors on the elliptic curve ${\\mathbf{E}_{q}} = {\\mathbf C}^*/q^{\\mathbf Z}$",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.871,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-047-152-jacobi-theta-function-q-exponential-growth-a",
+     "title": "Jacobi Theta function, $q$-exponential growth and $q$-Gevrey series",
+     "prose_ratio": 0.828,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-048-16-asymptotics-relative-to-a-divisor",
      "title": "Asymptotics relative to a divisor",
      "prose_ratio": 0.923,
      "coverage_ratio": 0.811,
@@ -4454,7 +4940,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-034-161-asymptotics-and-residues-i",
+     "id": "sec-049-161-asymptotics-and-residues-i",
      "title": "Asymptotics and residues (I)",
      "prose_ratio": 0.917,
      "coverage_ratio": 0.972,
@@ -4462,15 +4948,31 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-035-162-asymptotics-and-residues-ii",
+     "id": "sec-050-162-asymptotics-and-residues-ii",
      "title": "Asymptotics and residues (II)",
-     "prose_ratio": 0.924,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-036-173-flat-functions-with-respect-to-a-divisor",
+     "id": "sec-051-171-from-a-q-gevrey-power-series-to-an-entire-fu",
+     "title": "From a $q$-Gevrey power series to an entire function",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.879,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-052-172-the-q-gevrey-theorem-of-borel-ritt",
+     "title": "The $q$-Gevrey theorem of Borel-Ritt",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-053-173-flat-functions-with-respect-to-a-divisor",
      "title": "Flat functions with respect to a divisor",
      "prose_ratio": 0.831,
      "coverage_ratio": 0.985,
@@ -4478,7 +4980,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-037-18-relative-divisors-and-multisummable-functions",
+     "id": "sec-054-18-relative-divisors-and-multisummable-functions",
      "title": "Relative divisors and multisummable functions",
      "prose_ratio": 0.933,
      "coverage_ratio": 0.915,
@@ -4486,15 +4988,31 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-038-181-relative-divisors-and-two-levels-asymptotics",
+     "id": "sec-055-181-relative-divisors-and-two-levels-asymptotics",
      "title": "Relative divisors and two levels asymptotics",
-     "prose_ratio": 0.914,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-039-191-summability-of-formal-solutions",
+     "id": "sec-056-182-multisummable-functions",
+     "title": "Multisummable functions",
+     "prose_ratio": 0.8,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-057-19-analytic-classification-of-linear-q-differenc",
+     "title": "Analytic classification of linear $q$-difference equations",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.771,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-058-191-summability-of-formal-solutions",
      "title": "Summability of formal solutions",
      "prose_ratio": 0.924,
      "coverage_ratio": 0.983,
@@ -4502,21 +5020,29 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-040-20-privileged-cocycles",
+     "id": "sec-059-20-privileged-cocycles",
      "title": "Privileged cocycles",
-     "prose_ratio": 0.432,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.436,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-041-202-privileged-cocycles",
+     "id": "sec-060-202-privileged-cocycles",
      "title": "Privileged cocycles",
-     "prose_ratio": 0.765,
-     "coverage_ratio": 0.949,
+     "prose_ratio": 0.763,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-042-211-the-abelian-case-of-two-slopes",
+     "id": "sec-061-21-devissage-q-gevrey",
+     "title": "D'evissage $q$-Gevrey",
+     "prose_ratio": 0.625,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-062-211-the-abelian-case-of-two-slopes",
      "title": "The abelian case of two slopes",
      "prose_ratio": 0.898,
      "coverage_ratio": 0.978,
@@ -4524,7 +5050,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-043-212-a-sequence-of-central-extensions",
+     "id": "sec-063-212-a-sequence-of-central-extensions",
      "title": "A sequence of central extensions",
      "prose_ratio": 0.952,
      "coverage_ratio": 0.959,
@@ -4532,15 +5058,21 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-044-213-explicit-computation",
+     "id": "sec-064-213-explicit-computation",
      "title": "Explicit computation",
-     "prose_ratio": 0.876,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-045-221-the-general-construction",
+     "id": "sec-065-22-vector-bundles-associated-to-q-difference-mod",
+     "title": "Vector bundles associated to $q$-difference modules",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-066-221-the-general-construction",
      "title": "The general construction",
      "prose_ratio": 0.975,
      "coverage_ratio": 0.967,
@@ -4548,7 +5080,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-046-222-sheaf-theoretical-interpretation-of-irregula",
+     "id": "sec-067-222-sheaf-theoretical-interpretation-of-irregula",
      "title": "Sheaf theoretical interpretation of irregularity",
      "prose_ratio": 0.929,
      "coverage_ratio": 0.988,
@@ -4556,37 +5088,75 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-047-2221-notations",
+     "id": "sec-068-2221-notations",
      "title": "Notations",
-     "prose_ratio": 0.905,
+     "prose_ratio": 0.839,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-048-2311-formal-solution",
+     "id": "sec-069-23-the-q-euler-equation-and-confluent-basic-hype",
+     "title": "The $q$-Euler equation and confluent basic hypergeometric series",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-070-231-a-digest-on-the-q-euler-equation",
+     "title": "A digest on the $q$-Euler equation",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-071-2311-formal-solution",
      "title": "Formal solution",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.941,
+     "prose_ratio": 0.8,
+     "coverage_ratio": 0.75,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-049-233-some-special-cases",
+     "id": "sec-072-2312-birkhoff-guenther-normal-form",
+     "title": "Birkhoff-Guenther normal form",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.908,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-073-232-some-confluent-basic-hypergeometric-function",
+     "title": "Some confluent basic hypergeometric functions",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-074-233-some-special-cases",
      "title": "Some special cases",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.958,
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.921,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-050-241-algebraic-aspects",
+     "id": "sec-075-24-the-symmetric-square-of-the-q-euler-equation",
+     "title": "The symmetric square of the $q$-Euler equation",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-076-241-algebraic-aspects",
      "title": "Algebraic aspects",
      "prose_ratio": 0.5,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-051-2411-newton-polygon-of-a-symmetric-square",
+     "id": "sec-077-2411-newton-polygon-of-a-symmetric-square",
      "title": "Newton polygon of a symmetric square",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.946,
@@ -4594,7 +5164,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-052-2412-algebraic-summation-of-the-square-of-the-ts",
+     "id": "sec-078-2412-algebraic-summation-of-the-square-of-the-ts",
      "title": "Algebraic summation of the square of the Tshakaloff series",
      "prose_ratio": 0.963,
      "coverage_ratio": 1.0,
@@ -4602,49 +5172,66 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-053-242-analytic-aspects",
+     "id": "sec-079-242-analytic-aspects",
      "title": "Analytic aspects",
-     "prose_ratio": 0.96,
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-080-2421-the-square-of-the-tshakaloff-series-is-not",
+     "title": "The square of the Tshakaloff series is not summable with one level",
+     "prose_ratio": 1.0,
      "coverage_ratio": 0.904,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-054-2422-multisummability",
+     "id": "sec-081-2422-multisummability",
      "title": "Multisummability",
-     "prose_ratio": 0.929,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.875,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-055-2423-possibility-of-a-multisummation-process",
+     "id": "sec-082-25-from-the-mock-theta-functions-to-the-q-euler",
+     "title": "From the Mock Theta functions to the $q$-Euler equation",
+     "prose_ratio": 0.032,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-083-2423-possibility-of-a-multisummation-process",
      "title": "Possibility of a multisummation process",
-     "prose_ratio": 0.927,
-     "coverage_ratio": 0.976,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.222,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-056-252-back-to-the-the-mock-theta-function",
+     "id": "sec-084-252-back-to-the-the-mock-theta-function",
      "title": "Back to the the Mock Theta function",
      "prose_ratio": 0.59,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-057-26-from-class-numbers-of-quadratic-forms-to-the",
+     "id": "sec-085-26-from-class-numbers-of-quadratic-forms-to-the",
      "title": "From class numbers of quadratic forms to the $q$-Euler equation",
-     "prose_ratio": 0.07,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-058-2533-privileged-cocycles",
+     "id": "sec-086-2532-birkhoff-guenther-normal-form",
+     "title": "Birkhoff-Guenther normal form",
+     "prose_ratio": 0.091,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-087-2533-privileged-cocycles",
      "title": "Privileged cocycles",
-     "prose_ratio": 0.159,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.161,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-059-261-the-generating-series-for-the-class-numbers",
+     "id": "sec-088-261-the-generating-series-for-the-class-numbers",
      "title": "The generating series for the class numbers",
      "prose_ratio": 0.882,
      "coverage_ratio": 0.977,
@@ -4652,7 +5239,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-060-262-modular-relations",
+     "id": "sec-089-262-modular-relations",
      "title": "Modular relations",
      "prose_ratio": 0.897,
      "coverage_ratio": 0.895,
@@ -4660,88 +5247,123 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-061-263-related-other-examples",
+     "id": "sec-090-263-related-other-examples",
      "title": "Related other examples",
      "prose_ratio": 0.84,
      "coverage_ratio": 0.316,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-062-a-general-setting-of-the-problem",
+     "id": "sec-091-a-general-setting-of-the-problem",
      "title": "General setting of the problem",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-063-a2-the-devissage",
+     "id": "sec-092-a2-the-devissage",
      "title": "The devissage",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-064-b-difference-modules-over-difference-rings",
+     "id": "sec-093-b-difference-modules-over-difference-rings",
      "title": "Difference modules over difference rings",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-065-b4-tensor-products",
+     "id": "sec-094-b1-difference-rings-difference-operators",
+     "title": "Difference rings, difference operators",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-095-b2-difference-modules-over-difference-rings",
+     "title": "Difference modules over difference rings",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-096-b4-tensor-products",
      "title": "Tensor products",
      "prose_ratio": 0.621,
      "coverage_ratio": 0.214,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-066-b6-duality",
+     "id": "sec-097-b6-duality",
      "title": "Duality",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-067-c-finitely-filtered-difference-modules",
+     "id": "sec-098-c-finitely-filtered-difference-modules",
      "title": "Finitely filtered difference modules",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-068-d-extensions-of-difference-modules",
+     "id": "sec-099-c1-isograded-classification-of-difference-module",
+     "title": "Isograded classification of difference modules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-100-c2-matricial-description-of-difference-modules",
+     "title": "Matricial description of difference modules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-101-c3-matricial-description-of-filtered-difference",
+     "title": "Matricial description of filtered difference modules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-102-d-extensions-of-difference-modules",
      "title": "Extensions of difference modules",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-069-d1-the-complex-of-solutions",
+     "id": "sec-103-d1-the-complex-of-solutions",
      "title": "The complex of solutions",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-070-e-extension-of-scalars",
-     "title": "Extension of scalars",
-     "prose_ratio": 0.296,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-104-d2-matricial-description-of-extensions-of-differ",
+     "title": "Matricial description of extensions of difference modules",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-071-f-our-moduli-space",
+     "id": "sec-105-e-extension-of-scalars",
+     "title": "Extension of scalars",
+     "prose_ratio": 0.296,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-106-f-our-moduli-space",
      "title": "Our moduli space",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-072-f2-end-of-the-proof-of-theorem",
+     "id": "sec-107-f1-structure-of-the-fibers",
+     "title": "Structure of the fibers",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-108-f2-end-of-the-proof-of-theorem",
      "title": "End of the proof of theorem",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-073-g-extension-classes-of-difference-modules",
+     "id": "sec-109-g-extension-classes-of-difference-modules",
      "title": "Extension classes of difference modules",
      "prose_ratio": 0.342,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-074-h-the-cohomological-equation",
+     "id": "sec-110-h-the-cohomological-equation",
      "title": "The cohomological equation",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-075-h1-some-inhomogeneous-equations",
+     "id": "sec-111-h1-some-inhomogeneous-equations",
      "title": "Some inhomogeneous equations",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-076-h2-a-homotopy",
+     "id": "sec-112-h2-a-homotopy",
      "title": "A homotopy",
      "result": "no matching \\section"
     }

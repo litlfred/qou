@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1302.0342v1/sections/page-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 4",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-1302.0342v1/blocks/prose-page-004",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-1",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-2",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-4",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-7",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-10",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-13",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-14",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-16",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-17",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-19",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-21",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-22",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-23",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-24",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-25",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-26",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-27",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-28",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-29",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-30",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-31",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-32",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-33",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-34",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-35",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-36",
+    "library/arxiv-1302.0342v1/blocks/figure-img-p004-37"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1302.0342v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1302.0342v1/manifest.jsonld",
+  "provenance": "ingested"
+}

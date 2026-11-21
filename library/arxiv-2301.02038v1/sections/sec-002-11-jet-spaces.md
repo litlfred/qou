@@ -4,13 +4,14 @@ doc_title: "Vinogradov's Cohomological Geometry of Partial Differential Equation
 section_id: sec-002-11-jet-spaces
 section_title: "jet spaces"
 section_number: 1.1
-pages: 3-6
+pages: 4-6
 source_pdf: 2301.02038v1.pdf
 source_sha256: 27b303939826ab39
-doc_brief: "Vinogradov's Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-li"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.995
-latex_coverage_ratio: 0.814
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.941
+doc_brief: "Vinogradov's Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly"
 ---
 Let $n,m$ be non-negative integers, and let $P$ be a manifold of dimension $n + m$. We begin providing an intrinsic definition of \emph{derivatives} of an $n$-dimensional submanifold $N \subseteq P$. In the following, $n$ should be interpreted as the number of \emph{independent variables}, $m$ as the number of \emph{dependent variables}, and $P$ as the space parameterizing both independent and dependent variables. In other words, in this theory, dependent and independent variables can be mixed and swapped. Around every point $p \in N$ there are coordinates $(x^i, u^\alpha)$ on $P$, $i = 1, \ldots, n$, $\alpha = 1,\ldots, m$, \emph{adapted} to $N$ in the sense that, in these coordinates, $N$ looks like the \emph{graph of a map}:
 \begin{equation}\label{eq:N_loc}

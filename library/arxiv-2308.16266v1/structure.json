@@ -7,8 +7,8 @@
   "bytes": 472632,
   "pages": 7,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -21,17 +21,28 @@
   },
   "doi": null,
   "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
-  "authors_raw": "Alex Gnech, 1, 2 Bryce Fore, 3 and Alessandro Lovato 2, 3, 4",
+  "authors_raw": "Alex Gnech,1, 2 Bryce Fore,3 and Alessandro Lovato2, 3, 4",
   "title_lines": [
    "Distilling the essential elements of nuclear binding via neural-network quantum states"
   ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20230901004222Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.25",
-   "Title": ""
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20230901004222Z"
+  },
+  "title_raw": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+   "outline": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+   "text": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+   "corroborated_by": [
+    "outline",
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,31 +51,156 @@
    "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "References",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Appendix: Wigner-Eckart",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "VMC-NQS energy per particle (upper panel) and charge radii (lower panel) of selected nuclei with up to A = 20 nucleons as obtained from the LO EFT Hamiltonian “o” of Ref. [30] with R3 = 1.1 fm compared with experimental data",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Total angular momentum, its projection on the zaxis, and the magnetic moment of 7Li while projecting the NQS onto the state with J, Jz = 3/2, 3/2. The magnetic field Bz = 2.5 MeV is switched off after 2500 iterations as indicated by the vertical green line. The orange dashed lines represent the targ",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Magnetic moments of selected A ≤20 nuclei obtained from VMC-NQS calculations compared with experimental data",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-000-distilling-the-essential-elements-of-nuclear-bin",
@@ -73,8 +209,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 7,
-   "n_chars": 32525,
-   "n_words": 4986
+   "n_chars": 32548,
+   "n_words": 5016,
+   "label_start": "1",
+   "label_end": "7"
   },
   {
    "id": "sec-001-appendix-wigner-eckart",
@@ -83,15 +221,25 @@
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 1524,
-   "n_words": 257
+   "n_chars": 1565,
+   "n_words": 298,
+   "label_start": "7",
+   "label_end": "7"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 2,
-  "chars_total": 34049
+  "chars_total": 34113,
+  "furniture_lines_stripped": 6
  }
 }

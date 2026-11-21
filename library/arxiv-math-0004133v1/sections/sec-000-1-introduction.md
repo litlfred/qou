@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0004133v1
-doc_title: "arXiv:math/0004133v1 [math.QA] 20 Apr 2000"
+doc_title: "From Finite Sets to Feynman Diagrams"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -10,7 +10,8 @@ source_sha256: 687de8249639c7f2
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.996
+doc_brief: "From Finite Sets to Feynman Diagrams — ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms."
 ---
 Prediction is hard, especially when it comes to the future, but barring some unforeseen catastrophe, we can expect the amount of mathematics produced in the 21st century to dwarf that of all the centuries that came before. By the very nature of its subject matter, mathematics is capable of limitless expansion. Thanks to rapid improvements in technology, our computational power is in a phase of exponential growth. Even if this growth slows, we have barely begun to exploit our new abilities. Thus the interesting question is not whether the 21st century will see an unprecedented explosion of new mathematics. It is whether anyone will ever understand more than the tiniest fraction of this new mathematics --- or even the mathematics we already have.
 

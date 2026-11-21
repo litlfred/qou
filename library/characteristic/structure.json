@@ -8,7 +8,7 @@
   "pages": 13,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,7 +20,7 @@
   "title_lines": [
    "ON THE CHARACTERISTIC AND DEFORMATION VARIETIES OF A KNOT"
   ],
-  "abstract": "The colored Jones function of a knot is a sequence of Laurent polynomials in one variable, whose nth term is the Jones polynomial of the knot colored with the n-dimensional irreducible representation of sl2. It was recently shown by TTQ Le and the author that the colored Jones function of a knot is q-holonomic, i.e., that it satis\ufb01es a nontrivial linear recursion relation with appropriate coe\ufb03cients. Using holonomicity, we introduce a geometric invariant of a knot: the characteristic variety, an a\ufb03ne 1-dimensional variety in \u00002. We then compare it with the character variety of SL2( \u0000 ) representations, viewed from the boundary. The comparison is stated as a conjecture which we verify (by a direct computation) in the case of the trefoil and \ufb01gure eight knots. We also propose a geometric relation between the peripheral subgroup of the knot group, and basic operators that act on the colored Jones function. We also de\ufb01ne a noncommutative version (the so-called noncommutative A-polynomial) of the characteristic variety of a knot. Holonomicity works well for higher rank groups and goes beyond hyperbolic geometry, as we explain in the last chapter.",
+  "abstract": "The colored Jones function of a knot is a sequence of Laurent polynomials in one variable, whose nth term is the Jones polynomial of the knot colored with the n-dimensional irreducible representation of sl2. It was recently shown by TTQ Le and the author that the colored Jones function of a knot is q-holonomic, i.e., that it satisﬁes a nontrivial linear recursion relation with appropriate coeﬃcients. Using holonomicity, we introduce a geometric invariant of a knot: the characteristic variety, an aﬃne 1-dimensional variety in \u00002. We then compare it with the character variety of SL2( \u0000 ) representations, viewed from the boundary. The comparison is stated as a conjecture which we verify (by a direct computation) in the case of the trefoil and ﬁgure eight knots. We also propose a geometric relation between the peripheral subgroup of the knot group, and basic operators that act on the colored Jones function. We also deﬁne a noncommutative version (the so-called noncommutative A-polynomial) of the characteristic variety of a knot. Holonomicity works well for higher rank groups and goes beyond hyperbolic geometry, as we explain in the last chapter.",
   "docinfo": {
    "Producer": "GNU Ghostscript 7.07"
   },
@@ -377,45 +377,45 @@
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 873,
-   "n_words": 141,
+   "n_chars": 1071,
+   "n_words": 170,
    "label_start": "1",
    "label_end": "1"
   },
   {
-   "id": "sec-001-12-the-characteristic-variety-of-a-knot",
-   "number": "1.2",
-   "title": "The characteristic variety of a knot",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 130,
-   "n_words": 21,
-   "label_start": "1",
-   "label_end": "1"
-  },
-  {
-   "id": "sec-002-1-introduction",
+   "id": "sec-001-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 94,
-   "n_words": 19,
+   "page_end": 2,
+   "n_chars": 2055,
+   "n_words": 353,
    "label_start": "1",
-   "label_end": "1"
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-12-the-characteristic-variety-of-a-knot",
+   "number": "1.2",
+   "title": "The characteristic variety of a knot",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1586,
+   "n_words": 311,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-003-13-the-deformation-variety-of-a-knot",
    "number": "1.3",
    "title": "The deformation variety of a knot",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 4788,
-   "n_words": 866,
-   "label_start": "1",
+   "n_chars": 1096,
+   "n_words": 194,
+   "label_start": "2",
    "label_end": "3"
   },
   {
@@ -461,25 +461,13 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 4234,
-   "n_words": 803,
+   "n_chars": 4707,
+   "n_words": 880,
    "label_start": "4",
    "label_end": "5"
   },
   {
-   "id": "sec-008-31-the-colored-jones-function-and-the-a-polynomi",
-   "number": "3.1",
-   "title": "The colored Jones function and the A-polynomial of the 31 and 41 knots",
-   "level": 2,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 364,
-   "n_words": 60,
-   "label_start": "5",
-   "label_end": "5"
-  },
-  {
-   "id": "sec-009-23-computing-the-aq-polynomial-of-a-knot",
+   "id": "sec-008-23-computing-the-aq-polynomial-of-a-knot",
    "number": "2.3",
    "title": "Computing the Aq polynomial of a knot",
    "level": 2,
@@ -491,14 +479,26 @@
    "label_end": "6"
   },
   {
-   "id": "sec-010-3-proof-of-the-conjecture-for-the-trefoil-and-fi",
+   "id": "sec-009-3-proof-of-the-conjecture-for-the-trefoil-and-fi",
    "number": "3",
    "title": "Proof of the conjecture for the Trefoil and Figure 8 knots",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1311,
-   "n_words": 259,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-010-31-the-colored-jones-function-and-the-a-polynomi",
+   "number": "3.1",
+   "title": "The colored Jones function and the A-polynomial of the 31 and 41 knots",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1216,
+   "n_words": 241,
    "label_start": "6",
    "label_end": "6"
   },
@@ -545,7 +545,7 @@
   "toc_entries": 14,
   "toc_inferred_entries": 14,
   "toc_inferred_mean_confidence": 0.743,
-  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_empty_share": 0.071,
   "toc_inferred_method": "contents",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -572,6 +572,7 @@
    }
   },
   "sections": 15,
-  "chars_total": 35532
+  "chars_total": 35469,
+  "furniture_lines_stripped": 0
  }
 }

@@ -2,20 +2,18 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-borel-partial-resolution",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:borel-partial-resolution",
   "kind": "proposition",
   "title": "Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions",
-  "uses": [
-    "papers/quantum-observable-universe/blocks/rem-k-theory-period-rosetta"
-  ],
   "cites": [
     "references/bloch2000",
     "references/suslin1991"

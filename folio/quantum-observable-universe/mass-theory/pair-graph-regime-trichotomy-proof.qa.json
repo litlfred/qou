@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "60d3214b863d",
+          "ts": "1f9d688bad92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.688Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "evidence": "Case split on the three regimes is exhaustive and each case follows from the pair-count identity."
+      }
+    ]
+  },
+  "updated_at": "2026-11-17T00:43:10.688Z"
+}

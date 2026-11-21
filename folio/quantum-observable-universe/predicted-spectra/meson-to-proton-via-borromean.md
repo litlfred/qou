@@ -91,7 +91,3 @@ The parameter $\mathfrak{E}_0$ dictates the energy budget. Each normal form coef
 
 **Full derivation.**
 Minimum action principles derive the confinement operator $\mathcal{B}_3$. Nucleon normal forms remain independent of photon polarization. The beta decay channel emerges as the $e^- < 0$ coefficient in the confined normal form.
-
-Witness: `meson-nucleon-nf.witness.json`,
-`beta-decay-energy-scale.witness.json`,
-`confinement-operator-selection.witness.json`.

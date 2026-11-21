@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-quant-ph-0606114v3/sections/sec-030",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "dim(V ) = 1",
+  "pageStart": 66,
+  "pageEnd": 68,
+  "contains": [
+    "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-030"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-quant-ph-0606114v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-quant-ph-0606114v3/manifest.jsonld",
+  "provenance": "ingested"
+}

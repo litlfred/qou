@@ -13,10 +13,30 @@ collection died on the very first import:
 
     ModuleNotFoundError: No module named '_path_bridge'
 
-That took out **59 of the 86 test files** — they were not failing, they
-were never being collected, which is the quieter and worse failure. Adding
-this file fixes all of them at once: pytest imports `conftest.py` before
-any test module, so the insertion below happens first.
+They were not failing, they were never being collected, which is the quieter
+and worse failure. Adding this file fixes them at once: pytest imports
+`conftest.py` before any test module, so the insertion below happens first.
+
+**The population, re-measured 2026-10-12 — and this docstring's own figure
+was wrong by a naming convention.** It read *"59 of the 86 test files"*, and
+a 2026-08-19 triage (PR #5330) "corrected" that to *"47 test files repo-wide,
+24 under `computations/`"*. Both counted only `test_*.py`. This tree uses
+**both** conventions, and `*_test.py` is the larger half here:
+
+    repo-wide   test_*.py  60   *_test.py  42   combined  102
+    computations/                                combined   64
+
+So every figure ever quoted for this file undercounts, and the "correction"
+undercut it further. Measure with
+`find . \( -name 'test_*.py' -o -name '*_test.py' \)`.
+
+**What a run actually gives, measured 2026-10-12 — the first one on record.**
+`python3 -m pytest computations/ --collect-only` collects **100 tests** and
+reports **9 collection errors**, none of them a corpus defect: 7 need
+`pyhecke_native` (not on PyPI, built with maturin, so absent in a default
+container), 1 needs `snappy`, and 1 — `ptolemy/test_guard_rejects_spurious.py`
+— opens a data file at import time that has never existed in this repo. See
+`docs/audits/2026-10-12-first-pytest-run.md`.
 
 Kept deliberately minimal — path setup only, no fixtures — so it does not
 become a place where test behaviour hides.

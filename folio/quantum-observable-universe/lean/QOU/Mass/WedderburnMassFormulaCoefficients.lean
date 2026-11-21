@@ -36,8 +36,8 @@
   Base ring: a generic `Field R` (§7c).  Nothing here is archimedean — no
   ordering, no `Real.sqrt`, no substrate value of `q` is used or needed.
 
-  -- Ref: [manuscript] AGENTS.md §7a (Hecke–Skein convention)
-  -- Ref: [manuscript] docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md
+  -- Ref: [leitner2026] AGENTS.md §7a (Hecke–Skein convention)
+  -- Ref: [leitner2026] docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md
 -/
 
 import QOU.MathlibExt.QIntegerCanonical
@@ -96,5 +96,38 @@ theorem coeffs_inconsistent_of_ne (q b₂ b₃ : R) (hq : q ≠ 0) (hqq : q - q�
     ¬ (b₂ = -2 * qIntBal q 3 ∧ b₃ = (q - q⁻¹) ^ 2) := by
   rintro ⟨h₂, h₃⟩
   exact hne (beta3_of_beta2 q b₂ b₃ hq hqq h₂ h₃)
+
+/-- Number of distinct extremal irreps `{[n], [n-1,1], [1^n]}` of `H_n(q)`
+    for `n ≥ 1`. -/
+def extremalIrrepCount (n : ℕ) : ℕ :=
+  if n ≤ 1 then 1 else if n = 2 then 2 else 3
+
+/-- Partition count `p(n)` on the low-strand window `n ∈ {1, 2, 3, 4}`:
+    `p(1) = 1`, `p(2) = 2`, `p(3) = 3`, `p(4) = 5` (adding `[2,2]` and `[2,1,1]`). -/
+def partitionCountLow (n : ℕ) : ℕ :=
+  if n ≤ 1 then 1 else if n = 2 then 2 else if n = 3 then 3 else 5
+
+/-- **Domain constraint (`qou-1jw9`).** On the low-strand window `1 ≤ n ≤ 4`,
+    the three extremal partition blocks `(n), (n-1,1), (1^n)` exhaust all
+    irreducible representations of `H_n(q)` if and only if `n ≤ 3`. -/
+theorem extremal_exhausts_iff_n_le_three (n : ℕ) (hn1 : 1 ≤ n) (hn4 : n ≤ 4) :
+    extremalIrrepCount n = partitionCountLow n ↔ n ≤ 3 := by
+  have h : n = 1 ∨ n = 2 ∨ n = 3 ∨ n = 4 := by omega
+  rcases h with rfl | rfl | rfl | rfl <;> decide
+
+/-- At `n = 4`, exactly `2` partitions (`(2,2)` and `(2,1,1)`) lie outside the
+    three extremal partition blocks. -/
+theorem non_extremal_irreps_at_n_eq_four :
+    partitionCountLow 4 - extremalIrrepCount 4 = 2 := rfl
+
+/-- Number of inter-nucleon bridges in the adjacent-chain topology `M_1 … M_{A-1}`. -/
+def adjacentChainPairCount (A : ℕ) : ℕ := A - 1
+
+/-- **Adjacent-chain vs all-pairs growth constraint (`qou-1jw9`).** For every
+    multi-nucleon system with `A ≥ 3`, `2(A - 1) < A(A - 1)`. -/
+theorem adjacentChain_twice_lt_allPairs_twice (A : ℕ) (hA : A ≥ 3) :
+    2 * adjacentChainPairCount A < A * (A - 1) := by
+  unfold adjacentChainPairCount
+  exact Nat.mul_lt_mul_of_pos_right (by omega) (by omega)
 
 end QOU.Mass.WedderburnMassFormulaCoefficients

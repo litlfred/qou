@@ -1,0 +1,52 @@
+Before calculating 2s + u, we show that the domain (56) is convex. Since the function
+—2A(t) + A(t—s) + 2A(s) and A(u) are concave functions whose Hesse matrices are
+negative definite, the function —2A(t) + A(t—s) + 2A(s) + A(z) is also such a function
+on {(t, 5,U) | 05<t<10<s5<05,0<u< 0.5}. Hence, the domain is a convex
+domain and its boundary is a smooth closed surface whose Gaussian curvature is positive
+everywhere (see Lemma B.2).
+
+We calculate the maximal value (25+ )max of 25-++u. We consider the plane 2s ++u = c
+for a constant c. The maximal value (25 + u)max is obtained when this plane is tangent
+to the domain (56); we note that there are exactly two such tangent points. Putting
+2w' = 2s +u, such tangent points are given by the following equations,
+
+—2A(t) + A(t— w' + fu) + 2A(w' — fu) + A(u) = s,,
+
+2
+
+7) , 1 yl
+
+a! —2A(t) + A(t—w! + 5") +2A(w! — 5") +A(u)) = 0, (58)
+a)
+
+1 1
+5a ( —2A(t) + A(t— w! + 5") +2A(w! — 5") +A(u)) = 0.
+We note that this system of equations has exactly two solutions. By calculating a solution
+of them by Newton’s method from (¢, w’, uw) = (0.75, 0.5, 0.25), we obtain (25 + u)max =
+0.958506... . Therefore, we obtain an estimate of 2s + u in A’ as
+
+2s+u < 0.97.
+
+Remark 4.1. To be precise, the above argument is not partially rigorous, since we do
+not estimate the error term of the numerical solution of Newton’s method, though the
+above argument is practically useful, since we can guess that such an error term would
+be sufficiently small for the above purpose. In order to complete the above argument, we
+give a rigorous proof of an estimate of a solution of (58) in Lemma A.3.
+
+4.3. Calculation of the critical value
+
+In this section, we calculate the concrete values of a critical point and the Hesse matrix
+of V.
+
+The differentials of V are presented by
+
+ov, s,u) = 2 log(1— 2) — log (1- *) — InJ/-1(t- 5): (59)
+ovis, u) = —2 log(1— y) + log (1- *) + 2nV/—1(2s+u-1), (60)
+2 Vt s.u) = —log(1— 2) + 2nV-1(s+u- 5): (61)
+
+where x = e?7™V¥—1! y = e?™V—-18 and z = e7V—1u,
+
+Lemma 4.2. V has a unique critical point (to, 89,9) in P~!(A'), where P : C3 4 R? is
+the projection to the real parts of the entries.
+
+33

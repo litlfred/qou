@@ -2,17 +2,22 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1312.6411v4",
  "source_sha256": "ceac22eb8ffe87e6",
- "brief": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — We consider commutative DG rings (better known as nonpositive stronglycommutativeassociativeunitalDGalgebras).",
- "extended": "**DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI**\n\n52 pp, 11 sections.\n\n**Abstract.** We consider commutative DG rings (better known as nonpositive stronglycommutativeassociativeunitalDGalgebras). ForsuchaDGring Awede- ﬁnethenotionsof perfect,tilting,dualizing,Cohen-MacaulayandrigidDG A-modules. Geometricallyperfect DGmodulesaredeﬁnedbyalocalconditionon Spec ¯A,where ¯A is the commutative ringH0(A). Algebraically perfectDG modules are those that can be obtained fromA by ﬁnitely many shifts, direct summands and cones. Tilt- ingDGmodulesarethosethathaveinversesw.r.t.thederivedtensorproduct;their isomorphismclassesformthederivedPicardgroup DPic(A). DualizingDGmod- ules are a generalization of Grothendieck’s original deﬁnition (and hereA has to be cohomologically pseudo-noetherian). Cohen-Macaulay DG modules are the duals (w.r.t. a given dualizing DG module) of ﬁnite¯A-modules.\n\n**Outline.** 0 Introduction; 1 DG Modules and their Resolutions; 2 Cohomological Dimension; 3 Reduction and Lifting; 4 Localization of Commutative DG Rings; 5 Perfect DG Modules; 6 Tilting DG Modules; 7 Dualizing DG Modules; 8 Cohen-Macaulay DG Modules; 9 Rigid DG Modules; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.2: Let A be a commutative DG ring, and letP be a DG A-module. The\n- Theorem 0.3: Let A be a commutative DG ring, and letP be a DG A-module. The\n- Theorem 0.4: Let A be a commutative DG ring. The canonical group homomorphism\n- Theorem 0.5: Let A be a tractable commutative DG ring. Then:\n- Theorem 0.7: Let AbeacohomologicallyboundedtractablecommutativeDGring. If ¯Ais\n- Theorem 0.8: Let f : A→ B be a homomorphism between tractable commutative DG",
+ "brief": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS — We consider commutative DG rings (better known as nonpositive strongly commutative associative unital DG algebras).",
+ "extended": "**DUALITY AND TILTING FOR COMMUTATIVE DG RINGS**\n\n*AMNON YEKUTIELI*\n\n52 pp, 12 sections.\n\n**Abstract.** We consider commutative DG rings (better known as nonpositive strongly commutative associative unital DG algebras). For such a DG ring A we de- ﬁne the notions of perfect, tilting, dualizing, Cohen-Macaulay and rigid DG A-modules. Geometrically perfect DG modules are deﬁned by a local condition on Spec ¯A, where ¯A is the commutative ring H0(A). Algebraically perfect DG modules are those that can be obtained from A by ﬁnitely many shifts, direct summands and cones. Tilt- ing DG modules are those that have inverses w.r.t. the derived tensor product; their isomorphism classes form the derived Picard group DPic(A). Dualizing DG mod- ules are a generalization of Grothendieck’s original deﬁnition (and here A has to be cohomologically pseudo-noetherian). Cohen-Macaulay DG modules are the duals (w.r.t. a given dualizing DG module) of ﬁnite ¯A-modules.\n\n**Outline.** Front matter; 0 Introduction; 1 DG Modules and their Resolutions; 2 Cohomological Dimension; 3 Reduction and Lifting; 4 Localization of Commutative DG Rings; 5 Perfect DG Modules; 6 Tilting DG Modules; 7 Dualizing DG Modules; 8 Cohen-Macaulay DG Modules; 9 Rigid DG Modules; References",
  "tokens": {
-  "brief": 43,
-  "extended": 423
+  "brief": 40,
+  "extended": 315
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-0-introduction",
    "title": "Introduction",
-   "pages": "1-7"
+   "pages": "2-7"
   },
   {
    "id": "sec-001-1-dg-modules-and-their-resolutions",
@@ -69,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

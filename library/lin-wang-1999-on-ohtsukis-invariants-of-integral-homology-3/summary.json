@@ -3,144 +3,118 @@
  "doc_id": "lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
  "source_sha256": "3fb38d4cfd20d4fb",
  "brief": "On Ohtsuki's invariants of integral homology 3-spheres — We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres",
- "extended": "**On Ohtsuki's invariants of integral homology 3-spheres**\n\n*Sinica, English Series*\n\n24 pp, 25 sections.\n\n**Abstract.** We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres extracted from Reshetikhin-Turaev SU(2) quantum invari- ants. Several interesting consequences will follow from our computation of A2. One of them says that A2 is always an integer divisible by 3. It seems interesting to compare this result with the fact shown by Murakami that )u is 6 times the Casson invariant. Other consequences include some general criteria for distinguishing homology 3-spheres obtained from surgery on knots by using the Jones polynomial.\n\n**Outline.** 9 Using; 1 Introduction; 2 Fermat Functions and Their Residues; 1 For rational numbers a and/3, af +/3g is a F; 2.1 To see Formula (2.5) for m > 1, we only ne; 9 (-\u000189 -l); 3 Fermat Limits and Ohtsuki's Invariants; 9 For R = Z or Z(r), O((q - 1)k;R) stands for ; 1 (H. Murakami) Tr(M) e Z[q];; 2 (T. Ohtsuki) f-limTr(M) = ~--~,~--0 An(t- 1); 4 Invariants of Links; 1 It will be useful to note that X(L; t), O(L;; 5 The Second Invariant A2; 2 A2(M) e 3Z[\u000189; 9 Then; 9 We certainly have At(M) = 0. Therefore, A2/3; 6 The Formula for A n; 9 So the only non-trivial contribution\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: A2(M) E 3Z for all integral homology 3-spheres M.\n- Theorem 1.2: Let K* be the mirror image of K. If v3(g) r 0, then $3,1/,~ ~ 3 Sg.,1/n as\n- Theorem 3.1: Let M be an oriented homology 3-sphere, and Tr(M) be the quantum SU(2)\n- Theorem 4.1: Let n be an ASL link. Then 1 r E 6Z. 2 r E 3Z.\n- Theorem 5.1: Let L be a unit framed ASL and S3L be the homology 3-sphere obtained from\n- Theorem 5.2: Let n be an integer, and S3Kj/n be the homology 3-sphere obtained from 1/n-",
+ "extended": "**On Ohtsuki's invariants of integral homology 3-spheres**\n\n*Acta Mathematica*\n\n24 pp, 20 sections.\n\n**Abstract.** We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres extracted from Reshetikhin-Turaev SU(2) quantum invari- ants. Several interesting consequences will follow from our computation of A2. One of them says that A2 is always an integer divisible by 3. It seems interesting to compare this result with the fact shown by Murakami that )u is 6 times the Casson invariant. Other consequences include some general criteria for distinguishing homology 3-spheres obtained from surgery on knots by using the Jones polynomial.\n\n**Outline.** Front matter; 2.2 Suppose that f and g are Fermat functions.; 1 For rational numbers a and/3, af +/3g is a F; Dk(r)-- (~=~)!; 3 (H. Murakami) Ao = 1, and A1 = 6)~c, where ); 4 Invariants of Links; (#LWi)!; 4.1 Let n be an ASL link. Then 1; 1 Ifv2(K) # O, then S3,1/,~ and S3K,1/m are di; 9 -f~ ~ hl~,q,~(q-l) ~; Coe~ ~; The knot invariant 0,~ induced by ~,~ is defin; With respect to l(r) = r@, we have f-lim (z~-!; 9 L r----2 +q-/~f'F~j([2])(-2)tq-\u000189163 (:l)fV; 2 \"~,~1 (:l')fe m=o; 2 (t+ l)iFi,t(t~ +t-\u000189; 6.3 Let M be an oriented integral homology 3-s; II 2 II",
  "tokens": {
   "brief": 48,
-  "extended": 460
+  "extended": 323
  },
  "sections": [
   {
-   "id": "sec-000-9-using",
-   "title": "Using",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-1-introduction",
-   "title": "Introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-3"
   },
   {
-   "id": "sec-002-2-fermat-functions-and-their-residues",
-   "title": "Fermat Functions and Their Residues",
+   "id": "sec-000-22-suppose-that-f-and-g-are-fermat-functions-the",
+   "title": "Suppose that f and g are Fermat functions. Then",
    "pages": "3-3"
   },
   {
-   "id": "sec-003-1-for-rational-numbers-a-and3-af-3g-is-a-fermat",
+   "id": "sec-001-1-for-rational-numbers-a-and3-af-3g-is-a-fermat",
    "title": "For rational numbers a and/3, af +/3g is a Fermat function whose residue is o~Res(f) +",
-   "pages": "3-6"
+   "pages": "3-4"
   },
   {
-   "id": "sec-004-21-to-see-formula-25-for-m-1-we-only-need-to-not",
-   "title": "To see Formula (2.5) for m > 1, we only need to notice that",
-   "pages": "6-6"
+   "id": "sec-002-dkr",
+   "title": "Dk(r)-- (~=~)!",
+   "pages": "4-7"
   },
   {
-   "id": "sec-005-9--89--l",
-   "title": "(-\u000189 -l)",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-006-3-fermat-limits-and-ohtsukis-invariants",
-   "title": "Fermat Limits and Ohtsuki's Invariants",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-007-9-for-r-z-or-zr-oq---1kr-stands-for-a-complex-nu",
-   "title": "For R = Z or Z(r), O((q - 1)k;R) stands for a complex number of the form u(q - 1) k",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-008-1-h-murakami-trm-e-zq",
-   "title": "(H. Murakami) Tr(M) e Z[q];",
+   "id": "sec-003-3-h-murakami-ao-1-and-a1-6c-where-c-is-the-casso",
+   "title": "(H. Murakami) Ao = 1, and A1 = 6)~c, where )~c is the Casson invariant.",
    "pages": "7-7"
   },
   {
-   "id": "sec-009-2-t-ohtsuki-f-limtrm-----0-ant--1-n-andn-e-2n2",
-   "title": "(T. Ohtsuki) f-limTr(M) = ~--~,~--0 An(t- 1) n, and/~n E ~(2n+2)~\"",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-010-4-invariants-of-links",
+   "id": "sec-004-4-invariants-of-links",
    "title": "Invariants of Links",
-   "pages": "7-7"
+   "pages": "7-8"
   },
   {
-   "id": "sec-011-1-it-will-be-useful-to-note-that-xl-t-ol-t-e-zt",
-   "title": "It will be useful to note that X(L; t), O(L; t) E Z[t, t -1, t--~]-",
-   "pages": "7-10"
+   "id": "sec-005-lwi",
+   "title": "(#LWi)!",
+   "pages": "8-9"
   },
   {
-   "id": "sec-012-5-the-second-invariant-a2",
-   "title": "The Second Invariant A2",
-   "pages": "10-11"
+   "id": "sec-006-41-let-n-be-an-asl-link-then-1",
+   "title": "Let n be an ASL link. Then 1",
+   "pages": "9-12"
   },
   {
-   "id": "sec-013-2-a2m-e-3z89",
-   "title": "A2(M) e 3Z[\u000189",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-014-9-then",
-   "title": "Then",
+   "id": "sec-007-1-ifv2k-o-then-s31-and-s3k1m-are-distinct-as-uno",
+   "title": "Ifv2(K) # O, then S3,1/,~ and S3K,1/m are distinct as unoriented 3-manifolds.",
    "pages": "12-13"
   },
   {
-   "id": "sec-015-9-we-certainly-have-atm-0-therefore-a23---ac-mod",
-   "title": "We certainly have At(M) = 0. Therefore, A2/3 - Ac mod 2. This raises the",
-   "pages": "13-13"
+   "id": "sec-008-9--f-hlqq-l",
+   "title": "-f~ ~ hl~,q,~(q-l) ~",
+   "pages": "13-14"
   },
   {
-   "id": "sec-016-6-the-formula-for-a-n",
-   "title": "The Formula for A n",
-   "pages": "13-15"
+   "id": "sec-009-coe",
+   "title": "Coe~ ~",
+   "pages": "14-14"
   },
   {
-   "id": "sec-017-9-so-the-only-non-trivial-contribution",
-   "title": "So the only non-trivial contribution",
-   "pages": "15-16"
+   "id": "sec-010-the-knot-invariant-0-induced-by-is-defined-to-be",
+   "title": "The knot invariant 0,~ induced by ~,~ is defined to be",
+   "pages": "14-15"
   },
   {
-   "id": "sec-018-9-q--1-ra-m-oq---1-l-tz",
-   "title": "(q- 1) r~a-'+m +O((q-- 1)'-l-t;Z(.))",
-   "pages": "16-17"
+   "id": "sec-011-with-respect-to-lr-r-we-have-f-lim-z-g2q-mo-gzm",
+   "title": "With respect to l(r) = r@, we have f-lim (z~-!)!'G2'(q) = ~m=o+~ gz,m( -- 1) m'",
+   "pages": "15-17"
   },
   {
-   "id": "sec-019-9-l-r----2",
-   "title": "L r----2",
+   "id": "sec-012-9-l-r----2-q-ffj2-2tq-89163-lfv",
+   "title": "L r----2 +q-/~f'F~j([2])(-2)tq-\u000189163 (:l)fV",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-013-2-1-lfe-mo",
+   "title": "\"~,~1 (:l')fe m=o",
    "pages": "17-18"
   },
   {
-   "id": "sec-020-9-e-glmt--1m-t--i-llt--1",
-   "title": "E gl',m'(t- 1)m'-t'--i-l+l;t- 1)",
+   "id": "sec-014-2-t-lifitt-t-89",
+   "title": "(t+ l)iFi,t(t~ +t-\u000189",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-015-63-let-m-be-an-oriented-integral-homology-3-sphe",
+   "title": "Let M be an oriented integral homology 3-sphere. Then )~,~(M) E Z(~+U.",
    "pages": "18-19"
   },
   {
-   "id": "sec-021-61-using-the-values-of-v00-and-vflo-we-get",
-   "title": "Using the values of v/,0,0, and vf,l,o, we get",
+   "id": "sec-016-ii-2-ii",
+   "title": "II 2 II",
    "pages": "19-19"
   },
   {
-   "id": "sec-022-7-integrality-of-k",
-   "title": "Integrality of ,k,~",
-   "pages": "19-22"
+   "id": "sec-017-71-let-m-be-a-homology-3-sphere-then-2m-e-3z",
+   "title": "Let M be a homology 3-sphere. Then )~2(M) E 3Z.",
+   "pages": "19-19"
   },
   {
-   "id": "sec-023-8-epilogue",
-   "title": "Epilogue",
-   "pages": "22-23"
-  },
-  {
-   "id": "sec-024-references",
-   "title": "References",
-   "pages": "23-24"
+   "id": "sec-018-e-zrz-stabilizes-an-a-fixed-integer-for-all-suff",
+   "title": "Z/rZ stabilizes an a fixed integer for all sufficiently large",
+   "pages": "19-24"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

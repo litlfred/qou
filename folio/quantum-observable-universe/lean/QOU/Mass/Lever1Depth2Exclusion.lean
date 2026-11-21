@@ -24,7 +24,7 @@ depth-2 model* (a window-independent `τ`). It does **not** exclude a `q`-family
 monodromy `B` — that object (the abelianised `λ_SW` holonomy on the color `E_q`) is the open,
 owner-gated keystone target and is untouched here. The file formalizes the audit's finding that
 "`θ_binding = 0.7815` is a 3-point seed-fit artifact, not a derived constant-`τ` rate."
-Ref: [manuscript] docs/audits/2026-06-24-lever1-lw-depth2-recurrence-falsified.md
+Ref: [leitner2026] docs/audits/2026-06-24-lever1-lw-depth2-recurrence-falsified.md
 -/
 
 namespace QOU.Mass.Lever1Depth2
@@ -89,5 +89,13 @@ theorem depth2_no_fixed_tau :
   have hτ : τ = 21 / 8 := by linarith
   rw [hτ] at hnext
   norm_num at hnext
+
+/-- Explicit rational residual at `c = 4` under the seed-forced trace parameter
+`τ = 21/8`: `lw(4) - ((21/8) * lw(3) - lw(2)) = -7/240`. -/
+theorem lwCl_depth2_residual_at_seed_tau :
+    lwCl 4 - ((21 / 8 : ℚ) * lwCl 3 - lwCl 2) = -7 / 240 := by
+  obtain ⟨_, e2, e3, e4⟩ := lwCl_values
+  rw [e2, e3, e4]
+  norm_num
 
 end QOU.Mass.Lever1Depth2

@@ -1,0 +1,1 @@
+The same computation shows that the element ρl(σ1σ−1 2 ) ∈GL(2, C) also has inﬁnite order if l̸ = 1, 2, 4 and 8. This implies that the orientation chosen for both loops σ1 and σ2 around 0 and 1 is irrelevant. On the other hand, it is immediately seen that the elements ρl(σ1), ρl(σ2) and ρl(σ1σ2) have ﬁnite order for any level l. YVES LASZLO, CHRISTIAN PAULY, AND CHRISTOPH SORGER

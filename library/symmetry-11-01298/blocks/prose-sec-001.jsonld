@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/symmetry-11-01298/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
   "title": "Preliminaries: Branched Coverings of 3- and 4-Manifolds",
   "pageStart": 3,
   "pageEnd": 3,
   "text": "../sections/sec-001-preliminaries-branched-coverings-of-3--and-4-man.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/symmetry-11-01298",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/symmetry-11-01298",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-005-13-description-of-quantizations
 section_title: "Description of quantizations"
 section_number: 1.3
@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Theorem. The set of gauge equivalence classes of star products on a smooth manifold X can be naturally
 identiﬁed with the set of equivalence classes of Poisson structures depending formally on ¯h:

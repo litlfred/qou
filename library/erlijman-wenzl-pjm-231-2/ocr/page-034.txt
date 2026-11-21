@@ -1,0 +1,46 @@
+392 JULIANA ERLIJMAN AND HANS WENZL
+
+If X,, is an object in J, then so is X,,. It follows that the tensor product of simple
+objects X,@ X,, isin F for X, € J only if also X,, is in J. One deduces from this
+and the last two formulas that
+
+Four = Pa(Qiz} Xx, @ Xp:)((Qiay P(X, @ Xp,)) ® Ly, | @Xy,,,) f+
+= Oi ps (Ki, ® Xp) fv
+
+This proves the claim by induction on r. O
+
+5D.. It can be shown under fairly weak conditions that the category J is equivalent
+to the representation category of a finite group G, see the papers [Bruguiéres 2000]
+and [Miiger 2000]. In the following, we shall require in addition that J is equivalent
+to the representation category of a finite abelian group G, for any choice of %. In
+this case, every simple object in the subcategory J is invertible. Moreover, we
+can and will label the simple objects of J by the elements of G in such a way that
+X,@X} =X gh for any g,h € G. Then we get a G-action on the index set A defined
+by X¢., = Xg@ Xj. We shall also need the subgroup G{ of G* consisting of all
+s-tuples (g1, g2,..., 9s) Which satisfy g1g2--- g, = 1. The just defined G-action
+extends to an action of Gj} on A® in the obvious way.
+
+Proposition 5.7. Under the above assumptions we have
+(a) Hom(M;, Mj) £0 only if there exists a g € G} such that 4 = gad.
+(b) dim End(M;) < |Stabg:A\.
+
+Proof. We use notations as in Lemma 5.6. By our assumptions, we have pg (X 4,8
+X,,,) = 0 unless we can find an element g; € G such that X, C Xj, ® X,;. This
+implies gj.A; = wi, and hence fi = gd for some g € G*. Moreover, we have a
+nonzero morphism from 1 to ®X ¢, if and only if |] g; = 1. This shows that g € Gi},
+by Lemma 5.6.
+
+By the discussion in the previous paragraph, the dimension of
+
+Hom(1, @;pg(Xi, ® Xi,))
+
+is equal to the cardinality of all s-tuples g = (g;) of elements of G for which ga =)
+and whose product [] g; is equal to 1. These are exactly the elements of StabgsA.
+The claim now follows from the fact that the map f +> f is injective; indeed, it is
+easy to construct a left-inverse by multiplying f by a suitable combination of N’s
+and U’s to get back f. O
+
+Theorem 5.8. /f the S-matrix for the category ©’ is invertible, the dual principal
+graph for the inclusion N C M coincides with its principal graph. In particular,
+each MM bimodule M;,, with he= (A;) such that each i; labels a simple object in
+€’ is irreducible.

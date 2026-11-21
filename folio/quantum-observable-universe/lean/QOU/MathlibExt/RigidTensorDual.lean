@@ -46,7 +46,7 @@ bare shape is what `whisker_exchange` matches, and the compound forms hide it.  
 exchange fires the two snakes are contiguous and `coevaluation_evaluation''` /
 `evaluation_coevaluation''` finish the job.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 
 namespace QOU.MathlibExt

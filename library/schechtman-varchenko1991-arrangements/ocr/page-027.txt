@@ -1,34 +1,69 @@
 Arrangements of hyperplanes and Lie algebra homology 165
-5.4 For a Lie algebra g and a g-module M we'll denote by C.(g, M) the standard
+
+5.4 For a Lie algebra g and a g-module M we’ll denote by C,(g, M) the standard
 chain complex of g with coefficients in M. So,
-(5.4.1) Cp(g, M)= APg @ M;
-(5.4.2)d(gp ^... ^g1@m)= Z (-1)i-1 gp^... ^g: ^... ^g1@gi m
-i= 1
-+ Z (-1)i+jigp^...^g;...^gi^...^g1
-1≤i<j≤p
- [gj, gil @m.
+
+(5.4.1) C,(9,M)=A’g @M;
+
+Mr
+
+(5.4.2)d(g,A ...Ag;@m)=
+
+(1! pA... ABA. N81 @gim
+
+v
+
+1
+
++
+
+Yo (HD gp A ABA ABA AR
+
+1si<jsp
+A [8,8] @m.
+
 In notations of 5.3, we have the weight decompositions
-(5.4.3) C.(n,(Un)@")三  C.(n,(Un)@n)a
-aeNr
-5.5 Let a=(ki, ..., k,)eINr, N -|aj. Put
-(5.5.1) Ea=Ek, X... ×Ekr
-We consider Za as a subgroup of Zjal, with Zk, acting by permutations
--1 j1
-on 2 kp+1, Z kp+2, ., Z kp)-[N]. So, Za acts on F(%la), (%/al),
-p= 1 p=1 p=1
-(z)N'"g= N'"% nd p ("g)n3("z "... "Iz)= z XIH '0
-The aim of this s is to construct canonical isomorphisms
-(5.5.2) T= Y(a,p,n): C,(n,(Un)@m) →gN-P(n; N)
-defined for all p if n≥1, and for p≥1 if n =0. These isomorphisms will be
-compatible with differentials in C. and gf:
+
+(5.4.3) Cn, (Un)®")= ® Cn, (Un)®"),
+
+AeNr
+5.5 Let A=(k,, ..., k,)EIN’, N=|A|. Put
+(5.5.1) DZ, Xe X Dy.
+We consider 2, asa subgroup of 2\,,, with 2,, acting by permutations
+
+j=l j-i Jj
+on {y kptl, ¥ ky +2,..., ¥ ibe tn, So, 2, acts on F'(@,)), L(G),
+p=1 p=1 p=1
+etc. Fix z=(z,, ..., z,)€U(@,) and put @,,y=@n; n(Z)-
+
+The aim of this § is to construct canonical isomorphisms
+
+(5.5.2) P=. o,.m° Cp(n,(Un)®") > FX-?(6,,y)
+
+defined for all p if n21, and for p21 if n=0. These isomorphisms will be
+compatible with differentials in C, and ¥’.
+
 We'll construct (5.5.2) after some preliminaries on the geometry of the ar-
-rangement  n; N.
-5.6 Edges and flags of &n; N. For a non-empty subset J = (ji, ..., j,} [NJ put
-(5.6.1) Lj=Hjjz Hizj...Hj
-So, if p= 1, then L, =CN. For ie[n] put
-(5.6.2) L,= Hi,nHi,O...nH, ebr,n.
-Put Li - CN.
-Given non-intersecting subsets Ji, ..., J,; I1, ..., In C[N], put
-(5.6.3)
-It is clear that edges of the shape (5.6.3) exhaust all edges of 6n;N. It is
+rangement @,, y-
+5.6 Edges and flags of @,,n- For a non-empty subset J = {j,, ...,j,}< [N] put
+(5.6.1) L,=H
+
+jp OA OOF, 15,
+
+So, if p=1, then L; =. For ie[n] put
+
+e@Ex.
+
+(5.6.2) Ly = Hi, 0H}, 0... Hi, €62y-
+Put 1,=C".
+
+Given non-intersecting subsets J,, ..., J,;
+
+I,,...,1,<[N], put
+
+Cs
+S63 Lincantnonca(()tn)o(( 24)
+k= 1 i=1
+
+It is clear that edges of the shape (5.6.3) exhaust all edges of @,,y. It is
 convenient to picture an edge (5.6.3) as a graph of the following sort.

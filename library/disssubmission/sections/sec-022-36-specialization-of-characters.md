@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-022-36-specialization-of-characters
 section_title: "Specialization of characters"
 section_number: 3.6
@@ -8,6 +8,7 @@ pages: 66-69
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 Let X −→S be a semiabelian scheme as above. Since we assumed the
 prime number l to be invertible on S, we know from [17] that the (tame)

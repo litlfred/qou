@@ -632,7 +632,7 @@
           "in_degree": 0,
           "cone_size": 180,
           "depth": 46,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -984,6 +984,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:08.200Z",
+        "reviewed_sha": "696fcb0c271b0c732b90ecb27ea781f532908e27",
+        "severity": "minor",
+        "evidence": "Correct but vacuous: braids act by conjugation, which is trivial on central e_(2,2), so commutativity is automatic. Step 2 writes bar(e_λ) = e_λ′ (wrong in general, see next row; harmless here since (2,2)′ = (2,2)). \"D(z̄) = −D(z) for z on the unit circle\" holds for all z. τ_arch(Li₂^{q⁻¹}) = Li₂ silently takes q → 1",
+        "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1702,6 +1719,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:36:31.254Z",
+  "updated_at": "2026-11-15T21:55:08.200Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

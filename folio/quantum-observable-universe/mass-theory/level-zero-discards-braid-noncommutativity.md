@@ -43,5 +43,4 @@ non-extremal block exists at $n = 3$, the discrepancy is attributable to the
 Level-0 reduction alone. It bounds the magnitude of that one approximation and
 excludes no ingredient of the construction. The evaluation, together with
 checks of the Step 2 readouts and of the commutativity of $R[\sigma]$ against
-the non-commutativity of $H_3(q)$, is carried out in
-`computations/probes/level0_reduction_is_not_an_exactness_claim_probe.py`.
+the non-commutativity of $H_3(q)$, has been carried out exactly.

@@ -88,8 +88,20 @@ def _traced_volume_q0(gi, ordering):
     return _z_q0 * M10 + M11
 
 
+
+VHAT_WEIGHTS_LABEL = (
+    "pre-convention-D mixture (q-Plancherel W_sym/W_std/W_alt), kept by owner "
+    "ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; "
+    "convention-D z*a+b gives m_p/m_e = inf (PR #8590)"
+)
+
 def _v_full_all_q0(ordering):
     """Per-generator Wedderburn-weighted V̂_i^full at the true q0 (mpmath)."""
+    # OWNER RULING 2026-11-20 (PR #8590): this V-hat deliberately keeps the
+    # pre-convention-D W_sym/W_std/W_alt (q-Plancherel) mixture. The 11-18 ruling
+    # moved pyhecke.atom to the convention-D Markov trace z*a+b, but here that puts
+    # the proton V-hat (1.2824) past the Phi_q pole at q0 and m_p/m_e = inf
+    # (qou-2tuv). Kept, labelled, until the pole is resolved. No number moves.
     n2 = _Q0 ** 2 + 2 + _QI0 ** 2
     den = n2 + 2
     w_sym, w_std, w_alt = mp.mpf(1) / den, n2 / den, mp.mpf(1) / den
@@ -291,6 +303,7 @@ def _save_witness(results):
     w.set_content_block("rem:hadron-level-knot-table")
     w.add_parameter("q", Q)
     w.add_parameter("basis", NF_NAMES)
+    w.add_parameter("vhat_weights", VHAT_WEIGHTS_LABEL)
     w.add_parameter("z_markov", _z)
     w.add_parameter("z_squared", _Z2)
     w.add_parameter("n_atoms_expected", len(ATOMS))

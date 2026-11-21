@@ -1,0 +1,48 @@
+11.1 Results on cones and deformations 341
+
+the fortress generating function, and the GKZ symmetric rational function,
+whose coefficients exhibit a Jacuna phenomenon.
+
+11.1 Results on cones and deformations
+
+Let Q be a Laurent polynomial in d variables defining a variety V and set
+M = C4\ V. In order to work with polynomial amoebas, it is convenient to
+define and manipulate cones in logarithmic space. To that end, define the flat
+torus Tax = (R/(2aR))4, let g(a) = (Q 0 exp)(x) = O(e",...,e%), and recall
+the notation T.(x) = {exp(a + iy): y € That} for any x € R?.
+
+Exercise 11.2. Is the map exp : R¢ + iT > C4 a diffeomorphism?
+
+Let B be a component of the complement of amoeba(Q), fix a direction
+#,, and suppose that —#, - @ is minimized on B at a unique point «,, nec-
+essarily on the boundary dB. Recall from Definition 6.26 and Exercise 6.8
+the open geometric tangent cone tan,,(B) to B at a point a, with closed dual
+cone normal,.(B) = (— tan,(B))*. These cones are projective: they are cones
+over the origin, closed under multiplication by positive real constants. The fol-
+lowing result is a combination of [BP11, Corollary 2.15 (i), Corollary 2.16,
+Proposition 2.22, Theorem 5.4].
+
+Theorem 11.1. Under the setup above, there exists a bundle Z of convex pro-
+jective cones {Z(y) : y € That} with the following properties.
+
+(i) For all y € Taa the cone Z(y) contains tang, (B).
+
+(ii) Let V be a smooth non-vanishing section of Z, so that V: Tra > R\ {0}
+is smooth and Vy) € Z(y) for all y. If x € B then there exists ane > 0
+such that the set
+
+{exp (a + 6[tV(y) + (1 — 1(a - x,)] + iy) :y € Taa,0<t<10<6< e}
+(11.1)
+
+is disjoint from V.
+
+(iii) For each y € Tra let N(y) = (-Z(y))* be the outward dual cone to
+Z(y), and let ? be any real unit vector. If ? € N(y) then exp(a.. + iy) is
+a stratified critical point for he. If ? ¢ N(y) then there is some vector
+v € Z(y) such that? -v = 1.
+
+(iv) The cones Z(y) vary lower-semicontinuously in y. In particular, if y, >
+y in Taa then Z(y) C lim inf Z(y,).
+
+Remark 11.2. The cones Z(y) will typically be open cones, such as inter-
+sections of open halfspaces. We will see below that we can choose Z(y) to

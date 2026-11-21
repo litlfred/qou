@@ -1,0 +1,1 @@
+Let A, B and C be graded K-rings. (1) For M ∈D(A ⊗Bop, gr) and N ∈D(A ⊗Cop, gr) there is a morphism θM,N : RHomA(M, N) →RHomAop(N ∗, M ∗) in D(B ⊗Cop, gr), that is functorial in M and N. (2) If M ∈Ddwf(A ⊗Bop, gr) and N ∈Ddwf(A ⊗Cop, gr) then θM,N is an isomorphism.

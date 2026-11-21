@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2507.13840v2/sections/sec-033",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "PT and realignment moments in translation-invariant MPS",
+  "pageStart": 40,
+  "pageEnd": 41,
+  "contains": [
+    "library/arxiv-2507.13840v2/blocks/prose-sec-033"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "provenance": "ingested"
+}

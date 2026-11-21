@@ -1,6 +1,7 @@
 import QOU.Basic
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Monoidal.Types.Basic
 
 
 /-!
@@ -15,7 +16,7 @@ LaTeX: `\label{prop:categorical-reeb-unique}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-reeb-unique
+- [leitner2026] §2-quantum-observable-universes/categorical-reeb-unique
 - [witten1988] Topological Quantum Field Theory,
   https://doi.org/10.1007/BF01223371
 -/
@@ -57,35 +58,43 @@ structure CategoricalReeb (C : Type u) [Category.{v} C]
   /-- **Kernel (horizontal)**: `ι_ξ ≫ d ≫ π_V = ι_ξ ≫ d`. -/
   kernel_horizontal : contract_xi ≫ d ≫ proj_V = contract_xi ≫ d
 
-/-- **External axiom (§3b-cond pattern): CategoricalReeb.unique.**
+/-! **The former axiom `CategoricalReeb.unique_axiom` was false** (removed
+    2026-11-15, with its wrapper `CategoricalReeb.unique`).
 
-    Two `CategoricalReeb` structures on the same `C` with equal
-    Frobenius–Hopf object (`A`), equal 1-forms object (`forms`), and
-    equal vertical projection (`proj_V`) coincide on the Reeb
-    derivation `ξ` and its dual 1-form `θ_A`.
+    The fields above do not determine `ξ` from `A`, `forms` and `π_V`:
+    `d` and `ι_ξ` are free. In `Type` take `A = forms = Bool`,
+    `π_V = d = id` and `ι_ξ = ξ`; every field holds for *any*
+    `ξ : Bool → Bool` (`θ` lands in `PUnit`, so normalisation is
+    automatic). With `ξ = id` and `ξ = not` the conclusion fails.
+    `not_unique_unconstrained` below proves this.
 
-    The argument: ξ is the infinitesimal generator of the T-action on
-    the vertical summand, uniquely determined by the normalisation
-    θ_A(ξ) = id; then θ_A is fixed by the Maurer–Cartan relation.  The
-    full categorical pin-down requires Lie-algebra infrastructure not
-    yet in Mathlib, so the result is recorded as an external axiom. -/
--- Ref: [witten1988] Witten, "Topological quantum field theory," Comm. Math. Phys. 117 (1988)
-axiom CategoricalReeb.unique_axiom {C : Type u} [Category.{v} C]
-    [MonoidalCategory C]
-    (r₁ r₂ : CategoricalReeb C)
-    (h_A : r₁.A = r₂.A)
-    (h_forms : r₁.forms = r₂.forms)
-    (h_projV : HEq r₁.proj_V r₂.proj_V) :
-    HEq r₁.xi r₂.xi ∧ HEq r₁.theta r₂.theta
+    The manuscript argument pins `ξ` through the torus action, which these
+    fields do not record. The repaired statement is open in Lean
+    (bean `qou-n2un`). -/
 
-theorem CategoricalReeb.unique
-    {C : Type u} [Category.{v} C]
-    [MonoidalCategory C]
-    (r₁ r₂ : CategoricalReeb C)
-    (h_A : r₁.A = r₂.A)
-    (h_forms : r₁.forms = r₂.forms)
-    (h_projV : HEq r₁.proj_V r₂.proj_V) :
-    HEq r₁.xi r₂.xi ∧ HEq r₁.theta r₂.theta :=
-  CategoricalReeb.unique_axiom r₁ r₂ h_A h_forms h_projV
+/-- A Reeb structure on `Bool` in `Type` with any endomorphism as `ξ`. -/
+def CategoricalReeb.boolReeb (f : Bool → Bool) : CategoricalReeb (Type) where
+  A := Bool
+  forms := Bool
+  xi := f
+  theta := fun _ => PUnit.unit
+  proj_V := id
+  d := id
+  contract_xi := f
+  vertical_generator := rfl
+  normalisation := rfl
+  proj_V_idem := rfl
+  kernel_horizontal := rfl
+
+/-- **The former axiom is false.** -/
+theorem CategoricalReeb.not_unique_unconstrained :
+    ¬ ∀ (r₁ r₂ : CategoricalReeb (Type)) (_h_A : r₁.A = r₂.A)
+        (_h_forms : r₁.forms = r₂.forms) (_h_projV : HEq r₁.proj_V r₂.proj_V),
+        HEq r₁.xi r₂.xi ∧ HEq r₁.theta r₂.theta := by
+  intro h
+  have h1 := (h (CategoricalReeb.boolReeb id) (CategoricalReeb.boolReeb not)
+    rfl rfl HEq.rfl).1
+  have h2 : (id : Bool → Bool) = not := eq_of_heq h1
+  exact absurd (congrFun h2 true) (by decide)
 
 end QOU

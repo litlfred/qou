@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-017-gluing-identities-for-polygon-diagrams
 section_title: "Gluing identities for polygon diagrams"
 section_number: null
 pages: 26-28
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
-latex_coverage_ratio: 0.907
+latex_coverage_ratio: 0.955
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 We consider the pivotal 2-category $\Bimod^\theta(\mac,\mad)$ for spherical fusion categories $\mac,\mad$.
 We fix sets  $I_\mac$, $I_\mad$  and $I_\mam$ of representatives of the isomorphism classes of simple objects in $\mac$, $\mad$ and in each bimodule category  

@@ -1,0 +1,1 @@
+Note that the state integral (137) is absolutely convergent and its contour of integration can be pushed either upwards or downwards. Doing so, the integral factorises in two diﬀerent ways, one giving the U-cocycle and another giving the V -cocycle. This explains the equality of the two cocycles from ﬁrst principles.

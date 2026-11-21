@@ -1,0 +1,1 @@
+1) The discrete part A(0,1) of the inner ﬂuctuations of the metric is pa- rameterized by an arbitrary quaternion valued function H ∈C∞(M, H) , H = ϕ1 + ϕ2 j , ϕj ∈C∞(M, C) 2) The role of H in the coupling of the ↑-part is related to its role in the coupling of the ↓-part by the replacement H 7→˜H = j H.

@@ -1,10 +1,12 @@
 **Conjecture (the q-difference kernel is the prolongation symbol).**
 
 The $q$-difference kernel $R(q,x)$ of the binding generating function
-([`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)) **is
+([The binding generating function's q-difference equation gives a depth-d recurrence](#prop:binding-genfun-qdifference)) **is
 the symbol of the jet-prolongation operator** $J^{n}E\to J^{n+1}E$ of the
 Seiberg--Witten connection
-([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)).
+([Abelianisation of the MI integral on exceptional divisors](#prop:mi-sw-abelianisation)).
+
+For jet spaces, their prolongations and the Cartan distribution, see \cite[\S1.1--1.2]{pugliese2023}. For linear $q$-difference modules, fundamental solution matrices at $0$ and $\infty$, the $q$-Borel and $q$-Laplace transforms and the resulting connection matrices, see \cite[\S2.2--2.3]{garoufalidis-wheeler-modular}.
 
 Its carrier is the rank-$2$ $q$-difference module $\mathcal{K}$ of the
 **binding $q$-lift recurrence**
@@ -31,9 +33,6 @@ $\tfrac12$.
 > the Newton polygon is a module invariant and its slope multiset is preserved
 > by every gauge transformation ([rsz2013] Thm 2.2.1(i), Thm 2.2.4), no
 > isomorphism of $q$-difference modules $\mathcal{K}\cong\mathcal{G}$ exists.
-> The surviving — and genuinely non-trivial — relationship between the two is
-> stated separately as
-> [`conj:c1-ggm-bar-parity-faces`](#conj:c1-ggm-bar-parity-faces).
 
 Two consequences follow:
 
@@ -44,12 +43,12 @@ Two consequences follow:
    beyond low order), and it is the same fibre-level / root-of-unity
    singularity structure that governs the $\mathfrak{Q}_\beta$ ladder.
 2. **It closes the binding program.** Given $R$, the recurrence of
-   [`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)
+   [The binding generating function's q-difference equation gives a depth-d recurrence](#prop:binding-genfun-qdifference)
    determines every body term from the deuteron base case (fixing the
    $\rho\cdot A$ growth law), which is precisely the per-term mass identity. Feeding it into
-   [`thm:binding-closure-conditional`](#thm:binding-closure-conditional)
+   [Binding closure, conditional on the per-term mass identity](#thm:binding-closure-conditional)
    discharges its one conditional input, promoting
-   [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)
+   [Binding many-body series equals the jet-order filtration: $B(K)=\sum_n m_e\,a_D^{(n)}$](#conj:binding-manybody-eq-jet-filtration)
    from conditional to unconditional.
 
 This conjecture is therefore the **single remaining input** to the binding
@@ -59,7 +58,7 @@ with the prolongation symbol remains. It is stated here as a precise,
 falsifiable structural claim — to be *derived* from the prolonged connection's
 local monodromy, not fitted numerically.
 
-> **Scope note (2026-08-26) — $\mathcal{K}$ is irreducible, so consequence 2 is
+> **Scope of Consequence 2 — $\mathcal{K}$ is irreducible, so the rank-1 claim is
 > wrong by exactly one initial condition.** The pure-isoclinic slope-$\tfrac12$
 > statement above has a consequence the conjecture did not draw. A rank-1
 > $q$-difference module over $\mathbb{Q}(q)(x)$ has *integer* slope, and Newton
@@ -71,8 +70,7 @@ local monodromy, not fitted numerically.
 > associated $q$-Riccati $(q^2x-1)a(qx)a(x) - (q-1)a(x) - (q-1) = 0$ has no
 > solution in $K(x)$, because the three terms of its cleared form have degrees
 > $1+2p$, $p+u$, $2u$ and the odd/even parity of the outer two forces the
-> maximum to be attained exactly once. Sorry-free in
-> [`QOU.Mass.BindingScalarKernelParityExclusion`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean);
+> maximum to be attained exactly once. This is
 > corroborated by the van der Put--Reversat classification
 > \cite{vanderput-reversat2007,vanderput2006} of pure modules of non-integral
 > slope $d/r$ — the normal form $E(r,d,b)$ in Bugeaud's notation
@@ -87,7 +85,7 @@ local monodromy, not fitted numerically.
 >    the symbol is structurally fixed rather than fitted is untouched; only its
 >    *shape* changes. This is the natural reading of the Dirac-type
 >    $\tau$-image asserted in
->    [`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference),
+>    [The binding generating function's q-difference equation gives a depth-d recurrence](#prop:binding-genfun-qdifference),
 >    since a Dirac operator is first-order on a two-component object.
 > 2. **Consequence 2 is falsified as stated.** "Given $R$, the recurrence
 >    determines every body term from the deuteron base case" is wrong by exactly
@@ -100,10 +98,10 @@ local monodromy, not fitted numerically.
 > structural input, but it must be sought as a rank-$2$ symbol, and the closure
 > it would deliver needs a second base case.
 
-> **Scope note (2026-09-03) — what the prolongation operator must look like on
+> **Structure of the prolongation operator on
 > the ramified chart, before it is constructed.** The classical lift
 > $d/dz$ is excluded
-> ([`prop:sw-classical-jet-exactness`](#prop:sw-classical-jet-exactness)), and
+> ([The classical-jet prolongation of $\lambda_{\mathrm{SW}}$ is exact for $n \ge 1$](#prop:sw-classical-jet-exactness)), and
 > the residue that a period needs vanishes for it *locally*, at every branch
 > point, because at $z = z_c + t^2$ the operator $d/dz = (1/2t)\,d/dt$ reads the
 > $t^{-2}$ residue slot from the constant term with multiplier $(-2)+2 = 0$.
@@ -113,7 +111,7 @@ local monodromy, not fitted numerically.
 > (shift $k$, multiplier $c$), which *is* its symbol on the punctured $t$-disk,
 > and symbols compose by adding shifts and multiplying multipliers along the
 > shift. Two exact facts then constrain any single-shift candidate $D_q$
-> (`QOU.Mathlib.RamifiedShiftCalculus`, sorry-free over a generic commutative
+> (over a generic commutative
 > ring):
 >
 > 1. **Residue.** If $D_q$ annihilates constants, $c(-k) = 0$ — as every
@@ -127,9 +125,8 @@ local monodromy, not fitted numerically.
 >    connection-matrix datum the previous note already places the symbol in.
 > 2. **Parity.** An even shift commutes with the covering monodromy
 >    $t \mapsto -t$; an odd shift anti-commutes, so its jet tower's monodromy
->    eigenvalue alternates as $(-1)^n$ — the Door-v residual of
->    [`conj:c1-ggm-bar-parity-faces`](#conj:c1-ggm-bar-parity-faces). Carrying
->    that residual needs an **odd** shift.
+>    eigenvalue alternates as $(-1)^n$. Carrying
+>    that alternation needs an **odd** shift.
 >
 > So $D_q$ must have an odd shift and a non-derivative component. Both
 > conditions are derived from the local geometry of $\Sigma$ and the two
@@ -145,7 +142,7 @@ local monodromy, not fitted numerically.
 > $1$ and $2$ — classical $d/dt + (1/t)\,d/dt$, or Jackson $[e+1]_q$ with
 > $[e+2]_q$ — **do** reach the residue slot: at level $n+2$ it is
 > $c_1(-2)\,c_2(-1)$ times the $t^{1}$ coefficient of the level-$n$ jet, weight
-> $-1$ in both cases (`QOU.Mathlib.RamifiedShiftCalculusSum`, sorry-free). The
+> $-1$ in both cases. The
 > non-derivative clause is therefore a single-shift statement. What restores it
 > for sums is the residual: an operator with even part $E$ and odd part $O$
 > satisfies $\mathrm{mono}(Df) = E(\mathrm{mono}\,f) - O(\mathrm{mono}\,f)$, and
@@ -154,11 +151,10 @@ local monodromy, not fitted numerically.
 > residue again. For derivative-like sums of shifts $\le 2$ the residue and the
 > residual are mutually exclusive **level by level**: alternation demanded from
 > a level $n_0$ on kills the residue from level $n_0+2$ on and leaves levels
-> $2,\dots,n_0+1$ alive (`twoOp_residual_from_level_kills_residue_beyond`). The
+> $2,\dots,n_0+1$ alive. The
 > distinction matters, because the Door-v alternation of the carrier
-> $\mathcal{G}$ in [`conj:c1-ggm-bar-parity-faces`](#conj:c1-ggm-bar-parity-faces)
-> cannot hold at every level — while $2-q^{m+1}>0$ no solution flips at two
-> consecutive pairs (`QOU.Mass.GGMAlternationOnset`), so at the substrate value
+> $\mathcal{G}$ cannot hold at every level — while $2-q^{m+1}>0$ no solution flips at two
+> consecutive pairs, so at the substrate value
 > the alternation is absent for $m \le 5$ and persistent only from
 > $m \approx 11$ on. The conclusion above therefore stands for sums only
 > *above* that window; at the low body orders a mixed-shift $D_q$ built from
@@ -168,7 +164,7 @@ local monodromy, not fitted numerically.
 > **The kernel is a recurrence across jet levels, and on that axis it forces
 > the non-derivative clause too.** In $L_{\mathcal{K}}$ the variable is
 > $x = q^{m}$ with $m$ the body order, which
-> [`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum) identifies with
+> [The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum) identifies with
 > the jet degree; so $\sigma$ is the step from one jet level to the next, and
 > $L_{\mathcal{K}}$ is the second-order recurrence that the level-indexed
 > residues $r_{n} = (D_{q}^{n}X)_{t^{-2}}$ of the prolongation tower must
@@ -186,8 +182,8 @@ local monodromy, not fitted numerically.
 > $[m+4]_{q}\,s_{m+2} = s_{m+1} + s_{m}$ on the tower's $t^{1}$-coefficients
 > $s_{m} = (D_{q}^{m}X)_{t^{1}}$, since $r_{m+2} = c_{1}(-2)c_{2}(-1)\,s_{m}$;
 > each level's constraint reaches one new seed coefficient and none of them
-> reads the branch value $a_{0}$ (`QOU.Mass.C1KernelLevelReading`,
-> sorry-free, $q$ not a root of unity). On the actual seed — the branch-point
+> reads the branch value $a_{0}$ (for
+> $q$ not a root of unity). On the actual seed — the branch-point
 > expansion of the colour cubic at its simple ramification point — neither
 > the Jackson nor the $q$-derivative tower, in either $q$-integer convention
 > and on either sheet, satisfies that recurrence at any tested $q$: the
@@ -199,7 +195,7 @@ local monodromy, not fitted numerically.
 > and the two-term derivative-only class, respectively. The weights cannot be
 > supplied by a $q$-connection on the base either: the colour cubic is
 > irreducible over $K(z)$ for every field $K$ of characteristic zero
-> (`QOU.Mass.ColorCubicIrreducible`, sorry-free), so no sheet is a rational
+>, so no sheet is a rational
 > function of $z$; each sheet is algebraic, hence D-finite; and a rational
 > rank-$3$ $q$-difference system in $z \mapsto \lambda z$ with the sheets as
 > solutions would make a sheet $q$-holonomic, which together with D-finiteness
@@ -210,7 +206,7 @@ local monodromy, not fitted numerically.
 > $z = z_{c} + t^{2}$, the sheets are power series algebraic over $K(t)$ and so
 > still D-finite; and they are still not rational, because $t^{2} = z - z_{c}$
 > makes $K(t)/K(z)$ quadratic while an irreducible cubic has no root of degree
-> at most two (`QOU.Mass.IrreducibleCubicNoQuadraticRoot`, sorry-free). The
+> at most two. The
 > same theorem therefore excludes the local $q$-dilation as well, and what
 > survives is an operator whose coefficients are not rational in a coordinate,
 > or one defined on the curve rather than on a coordinate line.
@@ -223,17 +219,17 @@ local monodromy, not fitted numerically.
 > stands as mathematics about those $t$-operators: neither can be written as a
 > sum of derivative-like terms, because each carries a zeroth-order term
 > $-(q-1)$ that does not annihilate the constant seed
-> (`QOU.Mass.C1KernelAsShiftSum`), and neither can carry the $(-1)^{m}$
+>, and neither can carry the $(-1)^{m}$
 > alternation of the preceding note on a nonzero tower — on the double cover
 > because a monodromy-commuting operator transports the character unchanged,
 > under the unit shift because the even part would have to annihilate both a
 > jet and its odd image, and those two recurrences differ by
-> $q^{e+1}(q-1)Y_{e+2}$ (`QOU.Mass.C1KernelDictionaryParity`). Read on the
+> $q^{e+1}(q-1)Y_{e+2}$. Read on the
 > correct axis those facts say nothing about $D_{q}$, and the
 > "$\sigma \leftrightarrow t$-shift dictionary" they posed as wall W2 is not a
 > question the conjecture asks.
 
-> **Scope note (2026-09-05) — an operator on the curve does not evade the
+> **Branch-locus obstruction on the curve — an operator on $\Sigma$ does not evade the
 > exclusion either, when its base map is a dilation.** The two preceding
 > exclusions constrain the *coefficient field*, so an operator living on
 > $\Sigma$ rather than on a coordinate line is not reached by them. It is
@@ -245,7 +241,7 @@ local monodromy, not fitted numerically.
 > which is squarefree with $D(0) = 16 \neq 0$. Equal root multisets means
 > $D(\lambda z) = c\,D(z)$, and then two coefficients settle it: the constant
 > term gives $16 = 16c$, so $c = 1$, and the linear term gives $24\lambda = 24$,
-> so $\lambda = 1$ (`QOU.Mass.DilationBranchLocusRigidity`, sorry-free, generic
+> so $\lambda = 1$ (over a generic
 > characteristic-zero field). **Only the identity dilation lifts to $\Sigma$**,
 > for every $\lambda$ and at every $q$ — scope (b), the invariant being the
 > sextic's own coefficients rather than a cited analytic theorem, so this

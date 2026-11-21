@@ -1,0 +1,39 @@
+Definition 2.7 (Self-adjoint operator) A is self-adjoint if it is densely defined, A* =
+A and D(A) = D(A*). A symmetric operator A is essentially self-adjoint if its closure A
+
+is self-adjoint.
+
+We now consider sesquilinear forms. The aim is to establish a one to one corre-
+spondence between these forms and self-adjoint operators; this will allow us to create
+
+self-adjoint extensions of densely defined, symmetric, non-negative operators.
+Definition 2.8 (Sesquilinear form) A sesquilinear form in H is a map
+q: Dx DQ,
+
+where D(q) CH, such that
+(u,v) > q(u, v)
+
+is linear in the second entry and semi-linear in the first. The mapping
+Dig) > C
+wr alu] == q(uu)
+is called the quadratic form associated to q. q is semi-bounded below if
+glu] > allel?
+for some aE R. ¢ is called elliptic if
+Iglu] = ellell?
+
+for some c > 0. Finally, q is closed if it is semi-bounded below and D(q) is a complete
+
+Hilbert space with respect to the norm
+Well = a(u, u) + (la + 1)|full?.
+
+Example 2.9 For our study of the Dirichlet Laplacian, we will introduce a sesquilinear
+form Q9, such that
+
+D(Q5) = D(P5)
+and for @€ Wo”,
+Q5le] = (¢, Ae) = ||Vel?.
+Definition 2.10 (Adjoint of a sesquilinear form) The adjoint q* of q is defined as
+DY) =D],
+T(¢,%) = aw, 4).
+
+q is symmetric if q* = q.

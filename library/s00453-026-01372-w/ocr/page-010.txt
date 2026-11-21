@@ -1,0 +1,52 @@
+21 Page 10 of 19 Algorithmica (2026) 88:21
+
+Now, we can follow the proof of the standard Chernoff bound:
+
+Pri f(X1,.--, Xn) < (1 —5)- wo] = Prlexp(a- f(X1,---, Xn)) = exp(A(1 — 8) - 40)]
+< EfexpQ- f(X1,.-., Xn))]
+exp(A(1 — 8) - wo)
+. Efexp(a - SF pees X*))]
+exp(A(1 — 8) - uo)
+< expl(exp() — 1 - Hol
+exp(A(1 — 5) - wo)
+
+The first equality follows since exp(A - x) is a monotone function, the first inequality
+follows by Markov’s inequality, the second inequality follows by Corollary 3.2, and
+the final inequality follows Equation 3.
+
+Finally, we can choose A such that exp(A) = 1 — 6, which gives
+
+Pr[ f (Xt... Xn) = UL — dug) < XP PHO)
+
+2
+Ss G50 < exp(—po - 6°/2),
+
+where we used (1 — 5)!~§ < exp(—6é + 67/2) for 5 € (0, 1] in the final inequality. 0
+
+3.3 Concentration of read-k families
+
+In this subsection, we illustrate an application of our proof technique to give concen-
+tration for a read-k family of supermodular functions. Read-k families arise naturally
+in problems such as subgraph counting in random graphs, and can be seen as a comple-
+mentary weak dependence notion to that of low-degree polynomials [29]. Our work
+gives the first concentration results for these problems under negative dependence.
+
+Let’s consider this notion of weak dependence defined in [4]. Let Y,,..., Y, be
+random variables and assume that they can be factored as functions of random variables
+X1,...,Xm. We say that Yj,..., Y, are a read-k family of X1,..., Xm if for each
+variable X;, there are at most k variables among Yj, ..., Y, that are influenced by X;.
+Formally, we have the following.
+
+Definition 4 Let X;,..., Xm be random variables. For each j € [n], let Pj C [m]
+and let fj : {0, Pi — [0, 1] be functions of Xp,. We say that Y; = Si(XP;) are a
+read-k family if |{j : i € P;}| < k for eachi € [m] (i.e., each variable X; influences
+at most & functions).
+
+When X),..., Xm are independent, [4] showed that we have
+Prl jai Sj(Xp,) = (p + ©)n] < exp(—D(p + €llp) - n/k) (4)
+Prl jai fi(Xp,) < (p — ©)n] < exp(—D(p — ell p) -n/k), (5)
+
+where p = (1/n) Vi=1 EY] and D(.||-) is the Kullback-Leibler divergence.
+Notably, while Gavinsky et al. do not require random variables X;,..., Xm to be
+
+aN Springer

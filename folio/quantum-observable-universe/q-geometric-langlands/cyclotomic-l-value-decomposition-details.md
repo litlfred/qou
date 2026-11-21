@@ -1,9 +1,6 @@
-This note records the numerical verification, the $N = 5$ instance, the analytic-number-theory bridge, the Catalan-constant $(n=2)$ instance, and cross-references for [`prop:cyclotomic-l-value-decomposition`](#prop:cyclotomic-l-value-decomposition).
+This note records the numerical verification, the $N = 5$ instance, the analytic-number-theory bridge, the Catalan-constant $(n=2)$ instance, and cross-references for [Cyclotomic depth-$n$ generators decompose into Dirichlet $L$-values: $\beta(3) = \pi^3/32$ as a corollary](#prop:cyclotomic-l-value-decomposition).
 
 ### Numerical verification at 50 dps
-
-[`cl_n_l_value_decomposition.py`](https://github.com/litlfred/qou/blob/main/computations/cl_n_l_value_decomposition.py),
-[witness](https://github.com/litlfred/qou/blob/main/computations/cl-n-l-value-decomposition.witness.json):
 
 | Quantity | Value (50 dps) |
 |---|---|
@@ -30,10 +27,10 @@ The graded-Mikusiński framework's depth-$n$ cyclotomic content
 **IS** the Dirichlet $L$-value content at integer $n$, up to
 $\mathbb{Q}(\zeta_K)$-linear combinations.  Three consequences follow:
 
-1. **Classical L-value identities are theorems of our framework**:
+1. **Classical L-value identities are theorems of the framework**:
    $\beta(3) = \pi^3/32$, $\beta(5) = 5\pi^5/1536$,
    etc., all follow from Theorem A as instances.
-2. **Conversely**: any new theorem we prove about cyclotomic depth-$n$
+2. **Conversely**: any new theorem proved about cyclotomic depth-$n$
    structure (e.g., Theorem D dimension) gives a corresponding
    statement about Dirichlet L-values.
 3. **Beilinson's conjecture at $\mathbb{Q}(\zeta_K)$ depth $n$** is
@@ -54,10 +51,5 @@ dim 1 = $\mathrm{Cl}_2(2\pi/3)$ (Gieseking).
 
 ### Cross-references
 
-- Theorem A: [`prop:jonquiere-cyclotomic-tate-rationality`](#prop:jonquiere-cyclotomic-tate-rationality)
-- Theorem G: [`prop:cyclotomic-dimension-synthesis-all-depths`](#prop:cyclotomic-dimension-synthesis-all-depths)
-- Bloch–Suslin (depth-2 theorem):
-  [`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin)
-- Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
-- K-theory $\leftrightarrow$ depth filtration: [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)
-- Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)
+- Theorem A: [General Jonquière Tate-rationality](#prop:jonquiere-cyclotomic-tate-rationality)
+- Theorem G: [Cyclotomic dimension synthesis at every depth: $(K - 3)/2$ for $n$ odd, $(K - 1)/2$ for $n$ even](#prop:cyclotomic-dimension-synthesis-all-depths)

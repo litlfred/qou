@@ -14,7 +14,7 @@ $$
   \;=\;
   \frac{q^3}{q^2+1},
 $$
-giving $z_{\mathrm{m}} \approx 0.6127$ at the proton-pinned $q_0$. This is convention D of the trace-convention registry. Until 2026-10-10 this paragraph defined $z_{\mathrm{m}}$ as $z_{\mathrm{C}} = 1/(q^{1/2} + q^{-1/2}) \approx 0.499$, the convention-C parameter excised for the mass channels; $z_{\mathrm{C}}$ is kept below where the comparison needs it.
+giving $z_{\mathrm{m}} \approx 0.6127$ at the proton-pinned $q_0$. This is convention D of the trace-convention registry, replacing the excised convention-C parameter $z_{\mathrm{C}} = 1/(q^{1/2} + q^{-1/2}) \approx 0.499$ across all mass and binding channels; $z_{\mathrm{C}}$ is retained below solely for explicit comparison.
 
 **Relation.** The Jones normalisation is tied to the convention-C parameter, not to $z_{\mathrm{m}}$:
 $$
@@ -49,9 +49,9 @@ $$
   \frac{z_{\mathrm{m}}\,q^{c(x)} - z_{-}\,q^{-c(x)}}{q^{h(x)} - q^{-h(x)}},
 $$
 
-with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ — the Ocneanu weight formula at framing ratio $a^2 = z_{\mathrm{m}}/z_{-}$, verified exactly for every $\lambda \vdash n \leq 5$ ([witness](computations/markov-trace-weights-wenzl.witness.json)). The single-cell case recovers $\mathrm{tr}_M(1) = (z_{\mathrm{m}} - z_{-})/(q - q^{-1}) = 1$.
+with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ — the Ocneanu weight formula at framing ratio $a^2 = z_{\mathrm{m}}/z_{-}$, verified exactly for every $\lambda \vdash n \leq 5$ ([witness](../../../computations/markov-trace-weights-wenzl.witness.json)). The single-cell case recovers $\mathrm{tr}_M(1) = (z_{\mathrm{m}} - z_{-})/(q - q^{-1}) = 1$.
 
-**Convention.** The parameter $z_{\mathrm{m}} = q^3/(q^2+1)$ is **convention D** of the [trace-convention registry](docs/coordination/trace-convention-registry.md), registered for the **mass** and **binding** channels in both their definitional and production layers, following the owner ruling of 2026-08-09 that excised convention C, $z_{\mathrm{C}} = \sqrt{q}/(1+q)$ (there named the full-Hecke Ocneanu/Wenzl $z$-trace), for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$. The values this block quoted until 2026-10-10 ($z_{\mathrm{m}} \approx 0.499$, $z_{-} \approx 0.290$) were convention-C values.
+**Convention.** The parameter $z_{\mathrm{m}} = q^3/(q^2+1)$ is **convention D** of the [trace-convention registry](../../../docs/coordination/trace-convention-registry.md), registered for the **mass** and **binding** channels in both their definitional and production layers, whereas convention C ($z_{\mathrm{C}} = \sqrt{q}/(1+q)$, the full-Hecke Ocneanu/Wenzl $z$-trace) is excised for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$.
 
 **A structural separation between the two conventions.** The justification on record for the convention-D ruling is empirical — the $195.8$ ppm and $-197$ ppm figures above. There is also a structural one, and it involves no anchor, no measurement and no ppm figure. Using $\hbar_\times = q - q^{-1}$ and $[2]_q^2 - \hbar_\times^2 = 4$, the two loop values of convention D satisfy
 
@@ -80,7 +80,7 @@ $$
 
 and the two are bridged by $z_{\mathrm{D}}(q) = q^2\,z_{\mathrm{C}}(q^2)$.
 
-All of the above is sorry-free in `QOU.Information.markovZNeg_eq`, `markov_loop_value_product`, `markov_framing_ratio_eq`, `markovZ_eq_qsq_div_qDimTwo` and `qDimTwo_sq_sub_hbar_sq`, with the symbolic cross-check in [`markov_loop_value_product_and_framing_ratio.py`](https://github.com/litlfred/qou/blob/main/computations/probes/markov_loop_value_product_and_framing_ratio.py) (13/13). It was found while chasing the algebraic relation between $z$ and $\hbar_\times$ out of the Toffoli LP arc, where it first appeared only as an obstruction.
+All of the above is proved, and independently confirmed by exact symbolic computation. It was found while chasing the algebraic relation between $z$ and $\hbar_\times$ out of the Toffoli LP arc, where it first appeared only as an obstruction.
 
 **The framing ratio classifies the convention: D is the $\mathfrak{sl}_2$ point.** The monomial above is doing real work in the weight formula below. When $a = q^N$ — that is, $z = q^{2N}z_-$ — every numerator of that product collapses,
 
@@ -102,10 +102,8 @@ Two consequences. First, the registered $w_{(3)} = [4]_q/[2]_q^3$ and $w_{(2,1)}
 
 So the convention-D ruling has a classification behind it, not only the empirical figures above: D is the $\mathfrak{sl}_2$ point of the Ocneanu family, C is off the family entirely, and no anchor or measurement enters the argument.
 
-> **Prior art, credited late (2026-09-03).** The classification above was already in Lean before this section was written, and the pull request that added it (#6370) did not cite any of it. `QOU.QBeta.WenzlWeight.wenzlLevel_conventionD` and `level_eq_two_of_conventionD` (PR #5242) prove that D is Wenzl level `r = 2`; `QOU.SchurWeyl.OcneanuWeight` (PR #5575) proves the `z_D` row cap from the general-`n` cell product and records that `z_D` is the `k = 2` member of `z = q^{2k+1}/(1 + q^2 + \cdots + q^{2k})` — the family `z_N` above with `N = k`, the quantum integer written as its geometric sum — while C is in no member; `QOU.SchurWeyl.WenzlWeightLevelR.wenzlMarkovParam` is the family itself, of which the `markovZAt` theorems cited below are the Hecke-normalised copy `z_N = z_W/q`; and `QOU.SchurWeyl.OcneanuWeightWenzl.ocneanuWeight_conventionD_eq_schurPrincipal` is the hook-content identification at every partition. What this section adds beyond those is the framing-ratio *mechanism* — the monomial `a = q^N` collapsing each numerator into a quantum integer — and the log-derivative argument that C is in no member for any real exponent, not only for no integer one. The `n = 3` values are tied to the Markov-derived weights `HeckeMarkov3.markovWeight0/1/2` in `QOU.BraidKnot.QBetaCanonicalMarkovWeightsDerived`.
+> **Notation warning.** The $w_\lambda$ of this block is the **Ocneanu/Markov** weight — the $y_\lambda$ of the production trace. It is *not* the $w_\lambda(q) = \dim_q(\lambda)^2/[n]_q!$ of the [canonical $q$-deformed Wedderburn-block weight](../mass-theory/wedderburn-weight-canonical.md), which is built from the Frame–Robinson–Thrall hook-*length* dimension rather than the hook-*content* one. At $n = 3$ the two differ on every partition and differ already at $q = 1$ — $(1/6, 2/3, 1/6)$ against $(1/2, 1/4, 0)$ — so the notation register's rule that the partition-weight families are distinct at $q \neq 1$ applies here at $q = 1$ as well.
 
-> **Notation warning.** The $w_\lambda$ of this block is the **Ocneanu/Markov** weight — the $y_\lambda$ of the production trace. It is *not* the $w_\lambda(q) = \dim_q(\lambda)^2/[n]_q!$ of [`wedderburn-weight-canonical`](../mass-theory/wedderburn-weight-canonical.md), which is built from the Frame–Robinson–Thrall hook-*length* dimension rather than the hook-*content* one. At $n = 3$ the two differ on every partition and differ already at $q = 1$ — $(1/6, 2/3, 1/6)$ against $(1/2, 1/4, 0)$ — so the notation register's rule that the partition-weight families are distinct at $q \neq 1$ applies here at $q = 1$ as well.
-
-Sorry-free in `QOU.Information.markovZAt_framing`, `markovZAt_two_eq_markovZ`, `ocneanu_numerator_collapse` and `qIntSym_two`; measurement in [`ocneanu_weights_are_sl_n_quantum_dimensions.py`](https://github.com/litlfred/qou/blob/main/computations/probes/ocneanu_weights_are_sl_n_quantum_dimensions.py) (13/13).
+This classification is proved. It is also proved independently that D is Wenzl level $r = 2$, and that the $z_D$ row cap follows from the general-$n$ cell product.
 
 The weight formula itself is **frame-general** — it is the Ocneanu weight at framing ratio $a^2 = z/z_{-}$ for whatever admissible pair $(z, z_{-})$ is supplied, with $z_{-} = z - (q - q^{-1})$. Fed $z_{\mathrm{D}}$ it reproduces the registered convention-D weights exactly, $w_{(3)} = [4]_q/[2]_q^3$, $w_{(2,1)} = 1/[2]_q^2$ and $w_{(1^3)} = 0$; and the normalisation $\sum_{\lambda} (\dim V_\lambda)\, w_\lambda = 1$ holds identically under both conventions.

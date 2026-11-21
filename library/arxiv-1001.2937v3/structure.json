@@ -8,7 +8,7 @@
   "pages": 4,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -63,7 +63,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The microscopic spectrum of D5 for \u02c6m = 3, \u03bd = 0",
+   "title": "The microscopic spectrum of D5 for ˆm = 3, ν = 0",
    "page": 2,
    "confidence": 0.9,
    "evidence": [
@@ -76,7 +76,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "The microscopic spectrum of D5 for \u02c6m = 3, \u03bd = 2",
+   "title": "The microscopic spectrum of D5 for ˆm = 3, ν = 2",
    "page": 3,
    "confidence": 0.9,
    "evidence": [
@@ -89,7 +89,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "The real eigenvalues, \u03b6i, of DW repel each other and the |\u03bd| = 4 real modes are clearly visible. We have",
+   "title": "The real eigenvalues, ζi, of DW repel each other and the |ν| = 4 real modes are clearly visible. We have",
    "page": 3,
    "confidence": 0.9,
    "evidence": [
@@ -156,8 +156,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 18882,
-   "n_words": 3352,
+   "n_chars": 18876,
+   "n_words": 3349,
    "label_start": null,
    "label_end": "4"
   }
@@ -177,6 +177,7 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 18922
+  "chars_total": 18916,
+  "furniture_lines_stripped": 3
  }
 }

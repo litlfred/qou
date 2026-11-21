@@ -47,7 +47,7 @@ strands, i.e. maximal shared history, while disjoint strands give the free produ
 
 §7c: over `ℝ` because `Real.arccos` and `Real.log` are archimedean.
 
--- Ref: [manuscript] prop:figure-eight-reeb-rotation; def:ew-interface-knot;
+-- Ref: [leitner2026] prop:figure-eight-reeb-rotation; def:ew-interface-knot;
    rem:light-cone-affine; conj:reeb-linking-cwf-normalization
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse

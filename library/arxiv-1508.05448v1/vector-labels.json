@@ -1,0 +1,948 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1508.05448v1",
+  "pages": [
+    {
+      "page": 58,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4.1: Some analogous elements in random matrix and spin glass theory. (Proofs may diﬀer considerably.)"
+      ],
+      "labels": [
+        {
+          "text": "49",
+          "bbox": [
+            510.29,
+            38.81,
+            522.01,
+            50.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "mixed matrix moments.",
+          "bbox": [
+            90.0,
+            92.61,
+            212.01,
+            104.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Our motivation in considering this problem is the following. There is a rough anal-",
+          "bbox": [
+            107.56,
+            117.41,
+            522.06,
+            129.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ogy between mean-ﬁeld spin glasses and random matrices, as far as the mathematical",
+          "bbox": [
+            90.0,
+            139.08,
+            522.04,
+            151.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "methods are concerned. We indicate this in the table in Figure 4.1. We will give more",
+          "bbox": [
+            90.0,
+            160.75,
+            522.02,
+            172.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "details and references in a later discussion, but we would like to point out some of",
+          "bbox": [
+            90.0,
+            182.42,
+            522.03,
+            194.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the analogies now. This analogy leads to a method to calculate moments, but there",
+          "bbox": [
+            90.0,
+            204.09,
+            522.07,
+            216.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is still the question about how to relate the moments to the spectral information for",
+          "bbox": [
+            90.0,
+            225.75,
+            522.06,
+            237.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the matrix.",
+          "bbox": [
+            90.0,
+            247.42,
+            147.56,
+            259.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Spin Glasses",
+          "bbox": [
+            415.51,
+            279.04,
+            473.54,
+            288.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Random Matrices",
+          "bbox": [
+            162.08,
+            279.91,
+            245.09,
+            288.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMBX9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "expectations of moments",
+          "bbox": [
+            153.61,
+            300.3,
+            253.57,
+            309.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "expectations of products of overlaps",
+          "bbox": [
+            371.98,
+            300.3,
+            517.08,
+            309.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "stochastic stability equations: Ghirlanda-Guerra identities",
+          "bbox": [
+            298.71,
+            314.47,
+            533.71,
+            323.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "recurrence relation for moments",
+          "bbox": [
+            139.25,
+            315.34,
+            267.94,
+            324.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "formula for Stieltjes transform of limiting law",
+          "bbox": [
+            111.72,
+            328.64,
+            295.5,
+            337.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "proof of Parisi’s ultrametric ansatz",
+          "bbox": [
+            374.21,
+            328.64,
+            514.88,
+            337.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 4.1: Some analogous elements in random matrix and spin glass theory. (Proofs may diﬀer",
+          "bbox": [
+            90.0,
+            369.23,
+            522.05,
+            379.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "considerably.)",
+          "bbox": [
+            90.0,
+            381.18,
+            149.88,
+            391.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Although the main subject of this subject is random matrices, we will give a very",
+          "bbox": [
+            107.56,
+            432.63,
+            522.02,
+            444.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "brief introduction to spin glasses, just to motivate our analogy. Spin glasses are phys-",
+          "bbox": [
+            90.0,
+            454.3,
+            522.06,
+            466.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ical objects. We will not say much about the physics behind them, as the subject of",
+          "bbox": [
+            90.0,
+            475.97,
+            522.01,
+            487.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "this paper is mathematics. However, we will give a quote from Daniel Mattis’s book",
+          "bbox": [
+            90.0,
+            497.64,
+            522.05,
+            509.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[Mattis, 2004] in his discussion of dilute magnetic alloys. He says :",
+          "bbox": [
+            90.0,
+            519.31,
+            431.0,
+            531.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "”If the impurity atom does possess a magnetic moment this polarizes the conduction",
+          "bbox": [
+            90.0,
+            562.64,
+            522.01,
+            574.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "electrons in its vicinity by means of the exchange interaction and thereby inﬂuences",
+          "bbox": [
+            90.0,
+            584.31,
+            522.01,
+            596.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the spin orientation of a second magnetic atom at some distance. Owing to quantum",
+          "bbox": [
+            90.0,
+            605.98,
+            522.0,
+            617.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "oscillations in the conduction electrons spin polarization the resulting eﬀective inter-",
+          "bbox": [
+            90.0,
+            627.65,
+            522.03,
+            639.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "action between two magnetic impurities at some distance apart can be ferromagnetic",
+          "bbox": [
+            90.0,
+            649.32,
+            522.03,
+            661.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(tending to align their spins) or antiferromagnetic (tending to align them in opposite",
+          "bbox": [
+            90.0,
+            670.99,
+            522.03,
+            682.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "directions). Thus a given magnetic impurity is subject to a variety of ferromagnetic",
+          "bbox": [
+            90.0,
+            692.66,
+            522.03,
+            704.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 117,
+      "rotation": 0,
+      "drawings": 3,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5.4: An example of a decomposition of [0, 1]2 into four rectangles R11, R12, R21, R22."
+      ],
+      "labels": [
+        {
+          "text": "108",
+          "bbox": [
+            504.44,
+            38.81,
+            522.02,
+            50.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "R21",
+          "bbox": [
+            268.71,
+            125.34,
+            286.09,
+            138.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "R22",
+          "bbox": [
+            325.41,
+            125.34,
+            342.78,
+            138.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "R11",
+          "bbox": [
+            268.71,
+            182.03,
+            286.09,
+            194.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "R12",
+          "bbox": [
+            325.41,
+            182.03,
+            342.78,
+            194.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 5.4: An example of a decomposition of [0, 1]2 into four rectangles R11, R12, R21, R22.",
+          "bbox": [
+            106.65,
+            235.62,
+            505.35,
+            250.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "quence in a Mallows random permutation. This work is ongoing, but an important",
+          "bbox": [
+            90.0,
+            286.1,
+            522.07,
+            298.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "step is discussed in this section. A random permutation (Mallows or otherwise), can",
+          "bbox": [
+            90.0,
+            307.77,
+            522.03,
+            319.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "be viewed as a set of points in a rectangle, in the following way:",
+          "bbox": [
+            90.0,
+            329.43,
+            418.31,
+            341.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Consider n points (xi, yi) in the rectangle [0, 1] × [0, 1] in R2 with all coordinates",
+          "bbox": [
+            107.56,
+            350.75,
+            522.02,
+            367.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "distinct. The set of points speciﬁes a permutation π ∈Sn by the rule: ”The point with",
+          "bbox": [
+            90.0,
+            376.6,
+            522.01,
+            390.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the ith smallest y coordinate has the π(i)th smallest x-coordinate”. Hence, given a",
+          "bbox": [
+            90.0,
+            398.43,
+            522.01,
+            410.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "set of points in a box, we can obtain a permutation from these points. Depending on",
+          "bbox": [
+            90.0,
+            420.09,
+            522.06,
+            432.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "how the points are distributed in the box, we can obtain permutations with diﬀerent",
+          "bbox": [
+            90.0,
+            441.76,
+            522.04,
+            453.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "distributions. As an example, if the points are uniformly distributed in the box, we",
+          "bbox": [
+            90.0,
+            463.43,
+            522.04,
+            475.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "obtain a uniform random permutation.",
+          "bbox": [
+            90.0,
+            485.1,
+            289.38,
+            497.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "To begin to bound the ﬂuctuation of a Mallows random permutation, we assume",
+          "bbox": [
+            107.56,
+            510.75,
+            522.06,
+            522.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "that we have n points in the unit square distributed so that they give a Mallows ran-",
+          "bbox": [
+            90.0,
+            532.42,
+            522.04,
+            544.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dom permutation. We then divide the square into a large number of small subsquares.",
+          "bbox": [
+            90.0,
+            554.09,
+            522.05,
+            566.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "If the size of each subsquare is small enough, the points in the subsquare will be ap-",
+          "bbox": [
+            90.0,
+            575.76,
+            522.0,
+            587.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "proximately uniformly distributed. We then hope to couple our model to a model of",
+          "bbox": [
+            90.0,
+            597.43,
+            522.06,
+            609.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Deuschel and Zeitouni [Deuschel and Zeitouni, 1999] to bound the ﬂuctuations.",
+          "bbox": [
+            90.0,
+            619.1,
+            496.68,
+            631.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This argument will not be presented here. For now, we will simply look at the di-",
+          "bbox": [
+            107.56,
+            644.75,
+            522.02,
+            656.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "vision of the unit square into four subrectangles to illustrate the use of the q-Stirling’s",
+          "bbox": [
+            90.0,
+            666.42,
+            522.0,
+            678.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "formula. Suppose that we divide the unit square into four rectanges, which we refer",
+          "bbox": [
+            90.0,
+            688.09,
+            522.03,
+            700.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

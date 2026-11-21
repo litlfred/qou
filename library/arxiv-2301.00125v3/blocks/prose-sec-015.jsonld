@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2301.00125v3/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "I Elliptic integrals and linear fractional transformations",
-  "pageStart": 31,
-  "pageEnd": 35,
-  "text": "../sections/sec-015-i-elliptic-integrals-and-linear-fractional-trans.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.00125v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.00125v3",
+  "title": "E Pochhamer identities for -1/2 and negative integers",
+  "pageStart": 24,
+  "pageEnd": 25,
+  "text": "../sections/sec-015-e-pochhamer-identities-for--12-and-negative-inte.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.00125v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.00125v3/manifest.jsonld",
   "provenance": "ingested"
 }

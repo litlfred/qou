@@ -1,0 +1,1 @@
+Let F ∈Skk(U ∗ F,1(n)), χ a Dirichlet character of conductor m, and a ∈OF/mOF. Then the function Ra,χF = X t∈(Z/m)× χ(t)κ∗ at/m(F) is in Skk(U ∗ F,1(m2n)), and its Fourier–Whittaker coefﬁcients for ζ ∈D−1 are given by W f (ζ, Ra,χF) = G(χ) χ(trF/Q aζ) W f (ζ, F), where G(χ) := P t∈(Z/m)× χ(t)e2πit/m is the Gauss sum of χ.

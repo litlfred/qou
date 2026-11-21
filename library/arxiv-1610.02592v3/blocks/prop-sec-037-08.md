@@ -1,1 +1,0 @@
-Everycompactthree-dimensionalsubmanifold M⊂S3

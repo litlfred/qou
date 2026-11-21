@@ -1,0 +1,56 @@
+Chapter 4 Regularization Methods for Nuclear Lattice Effective Field Theory
+
+and we can entirely focus on the remaining dependence on the lattice spacing.
+
+In what follows, we will first display the necessary formalism to calculate the neutron-proton system
+to lowest order on the lattice. It is important to already improve the free Hamiltonian so as to be as close
+as possible to the free non-relativistic dispersion relation. At very low energies, one can consider the
+theory with contact interactions only, the so-called pionless theory. As we will show, the smearing of the
+contact interactions can be used as a regulator, leading to regulator-independent results for a broad range
+of values of the lattice spacing a. Matters are different in the pionful theory, which to LO consists of two
+four-nucleon contact interaction and the long-ranged static one-pion-exchange potential (OPEP). As will
+be shown, combining the smearing of the contact interactions with a position-space regularization of
+the OPEP will again lead to results largely independent of a for the physically sensible range of lattice
+spacing. Hence, one could use this modified leading-order approach to improve the current auxiliary
+field Monte Carlo simulations in Nuclear Lattice EFT. In principle, now it is possible to consider the
+continuum limit a — 0, however, we refrain from doing that here, as it is sufficient to demonstrate lattice
+spacing independence for a physically relevant range of a.
+
+4.2 The lattice Hamiltonian
+
+To set the stage and to introduce our notations, we first discuss the free Hamiltonian. Its discretized form
+reads
+
+(4.1)
+
+Hie = Fp YD foot (44, 0+ Ye pk
+
+Nitij i
+x wy [a} (i) aj, ;(7 + kl) + a}, @@)a,,;(#-K)]} .
+
+‘+
+ij? a;
+respectively, ny = = (m, + m,,)/2 denotes the nucleon mass and ?is a unit vector in spatial direction. The
+
+Here, a; j are the fermionic annihilation and creation operators with spin and isospin indices i, j,
+
+summation is over all lattice points 7 on the L} lattice. We use a stretched O(a")-improved action and its
+coefficients w, are summarized in Tab. 4.1, see e.g. Refs. [109, 110]. m indicates the number of hopping
+points beyond next-neighbor interaction used in the Laplacian discretization in each spatial direction
+and we use m = 4 throughout this chapter. The stretching factor N is introduced to minimize the errors
+arising from the discretized dispersion relations on the lattice especially for large momenta where the
+discretization does not approximate the continuum relation E = p *1(2m y) anymore. While there is some
+arbitrariness on the exact choice of N depending on the values of the respective momentum, N = 3.5 is a
+sensible choice.
+
+oa’) O@’)
+Wy | N- 5 + 2 00 0
+w,| N- i + 3 O71 4
+W, | N- + + x 05 i
+w; | N- ao + a 03 0
+
+Table 4.1: The w; are the coefficients for the lattice discretization of the Laplacian and the dispersion relation
+whereas the 0; appear in the momentum components of the one-pion-exchange potential. Both depend on the
+stretching factor NV.
+
+40

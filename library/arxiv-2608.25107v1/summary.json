@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2608.25107v1",
  "source_sha256": "6dca8b99a1f32db4",
- "brief": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples César Jesús-Valls1,∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland — 17 sections: ADoNIS: A Differe",
- "extended": "**ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples César Jesús-Valls1,∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland**\n\n*Neutrino interaction generators are central to precision oscillation analyses, but conventional imple-*\n\n22 pp, 17 sections.\n\n**Outline.** ADoNIS: A Differentiable generatOr of Neutrino; Introduction; Differentiable programming in particle physics; Differentiability by reweighting; Nuclear ground-state reweighting; Hard-scattering amplitudes; Intranuclear cascade; Channel normalisations; Differentiable events and observables; Gradients and higher-order derivatives; Validation; Gradient information; Computational cost; Unfolding; Conclusions; Acknowledgments; Additional validation distributions",
+ "brief": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples — 19 sections: ADoNIS: A Differentiable generatOr; Introduction; Differentiable programming in part",
+ "extended": "**ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples**\n\n*César Jesús-Valls1, ∗*\n\n22 pp, 19 sections.\n\n**Outline.** ADoNIS: A Differentiable generatOr of Neutrino; Introduction; Differentiable programming in particle physics; A Differentiable Neutrino Event Generator; Differentiability by reweighting; Nuclear ground-state reweighting; Hard-scattering amplitudes; Intranuclear cascade; Channel normalisations; Differentiable events and observables; Gradients and higher-order derivatives; Validation; Gradient information; Parameter Inference and Uncertainty Quantifica; Computational cost; Unfolding; Conclusions; Acknowledgments",
  "tokens": {
-  "brief": 50,
-  "extended": 193
+  "brief": 41,
+  "extended": 161
  },
  "sections": [
   {
@@ -22,75 +22,85 @@
   {
    "id": "sec-002-differentiable-programming-in-particle-physics",
    "title": "Differentiable programming in particle physics",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-a-differentiable-neutrino-event-generator",
+   "title": "A Differentiable Neutrino Event Generator",
    "pages": "2-3"
   },
   {
-   "id": "sec-003-differentiability-by-reweighting",
+   "id": "sec-004-differentiability-by-reweighting",
    "title": "Differentiability by reweighting",
    "pages": "3-4"
   },
   {
-   "id": "sec-004-nuclear-ground-state-reweighting",
+   "id": "sec-005-nuclear-ground-state-reweighting",
    "title": "Nuclear ground-state reweighting",
    "pages": "4-4"
   },
   {
-   "id": "sec-005-hard-scattering-amplitudes",
+   "id": "sec-006-hard-scattering-amplitudes",
    "title": "Hard-scattering amplitudes",
    "pages": "4-6"
   },
   {
-   "id": "sec-006-intranuclear-cascade",
+   "id": "sec-007-intranuclear-cascade",
    "title": "Intranuclear cascade",
    "pages": "6-6"
   },
   {
-   "id": "sec-007-channel-normalisations",
+   "id": "sec-008-channel-normalisations",
    "title": "Channel normalisations",
    "pages": "6-7"
   },
   {
-   "id": "sec-008-differentiable-events-and-observables",
+   "id": "sec-009-differentiable-events-and-observables",
    "title": "Differentiable events and observables",
    "pages": "7-7"
   },
   {
-   "id": "sec-009-gradients-and-higher-order-derivatives",
+   "id": "sec-010-gradients-and-higher-order-derivatives",
    "title": "Gradients and higher-order derivatives",
    "pages": "7-7"
   },
   {
-   "id": "sec-010-validation",
+   "id": "sec-011-validation",
    "title": "Validation",
    "pages": "7-8"
   },
   {
-   "id": "sec-011-gradient-information",
+   "id": "sec-012-gradient-information",
    "title": "Gradient information",
-   "pages": "8-14"
+   "pages": "8-10"
   },
   {
-   "id": "sec-012-computational-cost",
+   "id": "sec-013-parameter-inference-and-uncertainty-quantificati",
+   "title": "Parameter Inference and Uncertainty Quantification",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-014-computational-cost",
    "title": "Computational cost",
    "pages": "14-15"
   },
   {
-   "id": "sec-013-unfolding",
+   "id": "sec-015-unfolding",
    "title": "Unfolding",
    "pages": "15-17"
   },
   {
-   "id": "sec-014-conclusions",
+   "id": "sec-016-conclusions",
    "title": "Conclusions",
    "pages": "17-17"
   },
   {
-   "id": "sec-015-acknowledgments",
+   "id": "sec-017-acknowledgments",
    "title": "Acknowledgments",
    "pages": "17-22"
   },
   {
-   "id": "sec-016-additional-validation-distributions",
+   "id": "sec-018-additional-validation-distributions",
    "title": "Additional validation distributions",
    "pages": "22-22"
   }

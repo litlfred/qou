@@ -16,7 +16,7 @@ rather than via shell-model fitting.
 ## Conditional content via the categorical-neutrality conjecture
 
 Conditional on
-[`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md),
+[Categorical neutrality of saturated shells: full-twist identity action on $\Phi_n$ at magic $n$](categorical-neutrality-saturated-shells.md),
 the full-twist $\Delta_n^2$ acts as the identity on $\Phi_n$ at
 $n \in \mathfrak{M}$. The categorical neutrality forces the
 Wedderburn support of $\Phi_n$ onto self-conjugate partitions. Pairing
@@ -65,7 +65,7 @@ This remains conjectural. The supporting evidence comprises:
 1. Numerical verification at $n \in \{2, 8, 20\}$ via the
  matrix-evaluation programme.
 2. Conditional equivalence with
- [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
+ [Categorical neutrality of saturated shells: full-twist identity action on $\Phi_n$ at magic $n$](categorical-neutrality-saturated-shells.md)
  under Yekutieli rigidity (the Hecke-side conjecture is stated
  independently).
 3. Phenomenological agreement: the seven values

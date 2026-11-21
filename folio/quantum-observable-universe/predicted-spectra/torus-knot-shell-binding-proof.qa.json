@@ -551,7 +551,7 @@
           "in_degree": 0,
           "cone_size": 3,
           "depth": 3,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 3,
           "edge_span_mean": 2,
           "worst_target": ""
@@ -890,7 +890,7 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not in algebraic structure.\" \u2014 state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not in algebraic structure.\" — state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1232,12 +1232,30 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.328Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of prop:torus-knot-shell-binding row) Ref resolves to the library `QOU/Archimedean/torus_knot_shell_binding.lean:104` (the sibling `.lean` has no declaration of that name). It is `Φ⁰ = id` (rfl) ∧ the defining recurrence of `torusCD` (rfl) ∧ `magicNumber k` = a hard-coded table (decide): claimed values taken as definitions, while the docstring says it \"derives the magic numbers\" (its own HONESTY NOTE contradicts this). Sibling and library disagree on the recurrence: sibling `chebyshev_crossing` has c_{n+1} = c(q−q⁻¹) + c + d (:69), library has c_{n+1} = s·c + d; sibling also carries unconditional `axiom IsNormalForm` / `division_terminates_unique` forward declarations. Statement/proof: magic-number recovery is honestly labelled \"proposed / key open problem\" (md:9-15, prf:25), but the statement still asserts the gap \"scales as \\ | λ₊/λ₋\\ | = q^{2n_s}\" next to 1.409/0.095 = 14.8; at q₀ ≈ 1.10998, q₀^{2n_s} is 1.52 (n_s=2) or 2.30 (n_s=4), so the block's own example does not exhibit the stated scaling, and no derivation is given. Proof (ii) \"the new nucleon's generators act on strands disjoint from the closed shell's\" conflicts with the construction, where the new nucleon crosses every earlier nucleon j<k. Experimental magic numbers inside the proposition (md:9-12)"
+      }
     ]
   },
   "source_hashes": {
     "md": "37ea4bb1082f",
     "ts": "c23203e86c69"
   },
-  "updated_at": "2026-08-22T06:33:40.236Z",
+  "updated_at": "2026-11-15T21:56:04.328Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

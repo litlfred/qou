@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1901.08945v2
-doc_title: "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES"
+doc_title: "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-5
 source_pdf: 1901.08945v2.pdf
 source_sha256: df222d76e597057f
-doc_brief: "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes accordi ng to the char- acters of"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.977
+latex_prose_ratio: 0.986
+latex_coverage_ratio: 0.958
+doc_brief: "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group"
 ---
 The concept of a *twisted sheaf* goes back to Giraud and his formal treatment of the Brauer group in terms of *gerbes* [@giraud1971 Section V.4]. During the last two decades, twisted sheaves and their derived categories have gained a renewed interest, starting with the thesis of Căldăraru [@caldararu2000], who studied moduli problems for semi-stable sheaves on varieties, and the work by de Jong [@dejong2004] and Lieblich [@lieblich2004; @lieblich2015] on the period--index problem for the Brauer group. For a survey on later developments, we refer to Lieblich [@lieblich2017 Section 4].
 

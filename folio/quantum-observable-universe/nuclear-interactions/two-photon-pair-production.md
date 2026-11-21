@@ -1,7 +1,7 @@
 **Remark (concrete example: $\gamma\gamma \to e^- e^+$ in the symmetric crystal).**
 *In the topological ansatz, the photon $\gamma$ is the empty knot $\varnothing$. This identity element on $n$ strands carries no crossings. It is distinct from the unknot $0_1$ representing the neutrino. The two-photon state $\gamma\gamma$ corresponds to the identity element $T_e \in H_n(R, q)$ on $n = 2$ strands. It has zero crossings, zero graded Hecke energy, and strict bar-invariance. Applying $T_e \mapsto \overline{T_e}$ swaps over- and under-crossings, of which there are none, returning $T_e$ unchanged. The state sits at the highest-weight node of the trivial component of $\mathrm{Cryst}^{\mathrm{sym}}(\mathfrak{so}_{2n+1})$.*
 
-*We place this state at the high-energy boundary of a heavy nucleus. This fixed external boundary condition supplies energy to the crystal traversal. The intense local energy density forces the system to step down the crystal graph to absorb energy. However, symmetric-crystal pair production forbids a unimodal lowering step $\gamma\gamma \xrightarrow{\tilde f_i} v$ landing on a single chiral descendant. The only admissible step is the paired operator:*
+*This state is placed at the high-energy boundary of a heavy nucleus. This fixed external boundary condition supplies energy to the crystal traversal. The intense local energy density forces the system to step down the crystal graph to absorb energy. However, symmetric-crystal pair production forbids a unimodal lowering step $\gamma\gamma \xrightarrow{\tilde f_i} v$ landing on a single chiral descendant. The only admissible step is the paired operator:*
 
 $$
   \gamma\gamma

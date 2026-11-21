@@ -1,0 +1,63 @@
+70 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+the Wick formula. That is, for distinct ¢;,
+
+< W(t1)...W(ten) >= (2n — 1)!!(¢/2)"sign(c),
+where o is the permutation that orders ¢; in the decreasing order. If at least two
+points coincide, the correlation function is zero.
+
+Thus we see that the correlation functions are invariant under Diff;(R). In other
+words, using physical terminology, we have a topological quantum field theory.
+
+Note that the correlation functions in the Euclidian setting for this model are
+the same as in the Minkowski setting, since they are (piecewise) constant in t;. In
+particular, they don’t decay at infinity, and hence our theory does not have the
+clustering property.
+
+We have considered the theory of a massless fermionic field. Consider now the
+massive case. This means, we want to add to the Lagrangian a quadratic term in
+w which does not contain derivatives. If we have only one field w, the only choice
+for such term is ~?, which is zero. So in the massive case we must have at least
+two fields. Let us therefore consider the theory of two fermionic fields 71,2 with
+Lagrangian
+
+1. .
+L= 5 (bit + Pato — mii ¥2),
+
+where m > 0 is a mass parameter. The Green’s function for this model satisfies the
+differential equation
+
+G' —- MG =i6,
+m
+0
+solution of this equation that satisfies the antisymmetry condition GT (—t) = —G(t)
+(which we will impose as in the massless case) has the form
+
+G(t) = ~(sosign(t)T +aMe,
+
+where I is the identity matrix, and a is a number. Furthermore, it is natural to
+require that the theory at hand satisfies the clustering property (after being Wick-
+rotated). This means, G(—it) decays at infinity for real t. It is easy to compute
+that this condition is satisfied for only one value of a, namely a = 1/2m. For this
+value of a, the solution has the form G(t) = #iPze~*™ for +t > 0, where Px is
+the projector to the eigenspace of M with eigenvalue tim (and G(0) = 0).
+
+Remark. It is easy to generalize this analysis to the case when ~w takes values
+in a positive definite inner product space V, and M : V — V is a skewsymmetric
+operator, since such a situation is a direct sum of the situations considered above.
+
+In the case when M is nondegenerate, one can define the corresponding theory
+with interactions, i.e. with higher than quadratic terms in 7. Namely, one defines
+the correlators as sums of amplitudes of appropriate Feynman diagrams. We leave
+it to the reader to work out this definition, by analogy with the finite dimensional
+case which we have discussed above.
+
+where M = CS ) (and G is a 2 by 2 matrix valued function). The general
+
+10.3. Super Hilbert spaces. The space of states of a quantum system is a Hilbert
+space. As we plan to do Hamiltonian quantum mechanics for fermions, we must
+define a superanalog of this notion.
+
+Recall that a sesquilinear form on a complex vector space is a form (,) which
+is additive in each variable, and satisfies the conditions (ax,y) = a(a,y), (vw, ay) =
+a(z,y) foraeC.

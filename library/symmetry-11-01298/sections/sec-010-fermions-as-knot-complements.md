@@ -7,15 +7,16 @@ section_number: null
 pages: 12-13
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
+toc_source: outline
 doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 duplicate_of: "arxiv-1910.09966v1"
 ---
 In this section, we will discuss the topological reasons for the identiﬁcation of knot complements
-with fermions. In our paper [ 31], we obtained a relation between an embedded 3-manifold and a
+with fermions. In our paper [31], we obtained a relation between an embedded 3-manifold and a
 spinor in the spacetime. The main idea can be simply described by the following line of argumentation.
-Let ι : Σ ↪→ M be an embedding of the 3-manifold Σ into the 4-manifold M with the normal vector ⃗N
-so that a small neighborhood Uϵ of ι(Σ)⊂ M looks like Uϵ = ι(Σ)× [0, ϵ]. Every 3-manifold admits
-a spin structure with a SPIN BUNDLE , i.e., a principal Spin (3) = SU(2) bundle (spin bundle) as a
+Let ι : Σ ,→M be an embedding of the 3-manifold Σ into the 4-manifold M with the normal vector⃗N
+so that a small neighborhood Uϵ of ι(Σ) ⊂M looks like Uϵ = ι(Σ) × [0, ϵ]. Every 3-manifold admits
+a spin structure with a SPIN BUNDLE, i.e., a principal Spin(3) = SU(2) bundle (spin bundle) as a
 lift of the frame bundle (principal SO(3) bundle associated with the tangent bundle). Furthermore,
 there is a (complex) vector bundle associated with the spin bundle (by a representation of the spin
 group), called SPINOR BUNDLE SΣ. Now, we meet the usual deﬁnition in physics: a section in the
@@ -27,38 +28,43 @@ M where one sub-bundle, say S+
 M, can be related to the spinor bundle SΣ
 of the 3-manifold. Then, the spinor bundles are related by SΣ = ι∗S+
 M with the same relation φ = ι∗Φ
-for the spinors (φ∈ Γ(SΣ) and Φ∈ Γ(S+
-M)). Let∇M
-X ,∇Σ
+for the spinors (φ ∈Γ(SΣ) and Φ ∈Γ(S+
+M)). Let ∇M
+X , ∇Σ
 X be the covariant derivatives in the spinor
 bundles along a vector ﬁeld X as section of the bundle TΣ. Then, we have the formula
 ∇M
-X (Φ) =∇Σ
-Xφ− 1
-2 (∇X ⃗N)· ⃗N· φ (11)
-with the embedding φ↦→
-(
+X (Φ) = ∇Σ
+Xφ −1
+2(∇X⃗N) ·⃗N · φ
+(11)
+with the embedding φ 7→
+ 
 0
 φ
-)
+!
 = Φ of the spinor spaces from the relation φ = ι∗Φ. Here, we
 remark that, of course, there are two possible embeddings. For later use, we will use the left-handed
-version. The expression ∇X ⃗N is the second fundamental form of the embedding where the trace
-tr(∇X ⃗N) = 2H is related to the mean curvature H. Then, from (11), one obtains the following relation
+version. The expression ∇X⃗N is the second fundamental form of the embedding where the trace
+tr(∇X⃗N) = 2H is related to the mean curvature H. Then, from (11), one obtains the following relation
 between the corresponding Dirac operators
-DMΦ = DΣφ− Hφ (12)
+DMΦ = DΣφ −Hφ
+(12)
 with the Dirac operator DΣ on the 3-manifold Σ. In [32], we extend the spinor representation of an
 immersed surface into the 3-space to the immersion of a 3-manifold into a 4-manifold according to the
 work in [51]. Then, the spinor φ deﬁnes directly the embedding (via an integral representation) of the
 3-manifold. Then, the restricted spinor Φ|Σ = φ is parallel transported along the normal vector and
 Φ is constant along the normal direction (reﬂecting the product structure of Uϵ). However, then the
 spinor Φ has to fulﬁll
-DMΦ = 0 (13)
+DMΦ = 0
+(13)
 in Uϵ i.e., Φ is a parallel spinor. Finally, we get
-DΣφ = Hφ (14)
-with the extra condition|φ|2 = const. (see [51] for the explicit construction of the spinor with|φ|2 =
+DΣφ = Hφ
+(14)
+with the extra condition |φ|2 = const. (see [51] for the explicit construction of the spinor with |φ|2 =
 const. from the restriction of Φ). The idea of the paper [31] was the usage of the Einstein–Hilbert action
-Symmetry 2019, 11, 1298 13 of 26
+Symmetry 2019, 11, 1298
+13 of 26
 for a spacetime with boundary Σ. The boundary term is the integral of the mean curvature for the
 boundary; see [52,53]. Then by the relation (14) we will obtain
 ˆ
@@ -70,29 +76,32 @@ h d3x =
 Σ
 ¯φ DΣφ
 √
-hd3x (15)
-using|φ|2 = const. As shown in [31], the extension of the spinor φ to the 4-dimensional spinor Φ by
+hd3x
+(15)
+using |φ|2 = const. As shown in [31], the extension of the spinor φ to the 4-dimensional spinor Φ by
 using the embedding
 Φ =
-(
+ 
 0
 φ
-)
+!
 (16)
 can be only seen as embedding, if (and only if) the 4-dimensional Dirac equation
-DMΦ = 0 (17)
+DMΦ = 0
+(17)
 on M is fulﬁlled (using relation (12)). This Dirac equation is obtained by varying the action
 δ
 ˆ
 M
-¯ΦDMΦ√g d4x = 0. (18)
+¯ΦDMΦ√g d4x = 0.
+(18)
 In [31], we went a step further and discussed the topology of the 3-manifold leading to a fermion. On
 general grounds, one can show that a fermion is given by a knot complement admitting a hyperbolic
 structure. However, for hyperbolic manifolds (of dimension greater than 2), one has the important
 property of Mostow rigidity where geometric expressions like the volume are topological invariants.
 This rigidity is a property which we should expect for fermions. The usual matter is seen as dust matter
 (incompressible p = 0). The scaling behavior of the energy density ρ for dust matter is determined by
-the time-dependent scaling parameter a to be ρ∼ a−3. Thus, if one represents matter by very small
+the time-dependent scaling parameter a to be ρ ∼a−3. Thus, if one represents matter by very small
 regions in the space equipped with a geometric structure, then this scaling can be generated by an
 invariance of these small regions with respect to a rescaling. Mostow rigidity now singles out the
 hyperbolic geometry (and the hyperbolic 3-manifold as the corresponding small region) to have the

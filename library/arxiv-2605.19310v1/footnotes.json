@@ -1,0 +1,635 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2605.19310v1",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "c",
+   "context": "(log log N)"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "m= Z"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "x∈Zm"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "x∈Zmf(x)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "t∈ZmR(t)"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "theotherhand,Λ(1[N], 1[N], 1[N]) ≳N"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "theotherhand,Λ(1[N], 1[N], 1[N]) ≳N2,since[N]contains≳N"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "|Λ(g1, g2, g3)|4≲m"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "1≤i≤3E(g"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "mwith"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "≲m"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "|T|2≲mE(F)"
+  },
+  {
+   "page": 4,
+   "mark": "5",
+   "context": "≲m"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "≲m5/2E(F)"
+  },
+  {
+   "page": 4,
+   "mark": "5",
+   "context": "|Λ(u, u, u) −Λ(v, v, v)|4≲m"
+  },
+  {
+   "page": 4,
+   "mark": "5",
+   "context": "Eachtermisboundedbym"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Eachtermisboundedbym5/4E(f)"
+  },
+  {
+   "page": 4,
+   "mark": "12",
+   "context": "E(f) ≳α"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "E(f) ≳α12m"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Λ(v, v, v)=α"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Λ(v, v, v)=α3Λ(1[N], 1[N], 1[N])≳α"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Λ(v, v, v)=α3Λ(1[N], 1[N], 1[N])≳α3N"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Λ(v, v, v)| ≳α"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Λ(v, v, v)| ≳α3N"
+  },
+  {
+   "page": 4,
+   "mark": "12",
+   "context": "Λ(v, v, v)| ≳α3N2.Lemma 4 therefore gives α"
+  },
+  {
+   "page": 4,
+   "mark": "8",
+   "context": "Λ(v, v, v)| ≳α3N2.Lemma 4 therefore gives α12N"
+  },
+  {
+   "page": 4,
+   "mark": "5",
+   "context": "Λ(v, v, v)| ≳α3N2.Lemma 4 therefore gives α12N8≲m"
+  },
+  {
+   "page": 4,
+   "mark": "12",
+   "context": "thisgivesE(f) ≳α"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "thisgivesE(f) ≳α12m"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Vd≤αℓm"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Finally,ifE(f) ≥βm"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Finally,ifE(f) ≥βm3andℓ≲βm/α"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "V"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "d≳βℓ"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "d≳βℓ3"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "d≳βℓ3m"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "x∈Zm"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "x∈Zmf(x)"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "d∈Z"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "d∈ZmV"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "V"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "d∈ZmR(hd)"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "h̸=0,multiplicationbyhisabijectiononZ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "V"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "(ℓ−|h|)"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "(ℓ−|h|)2E(f) ≳ℓ"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "(ℓ−|h|)2E(f) ≳ℓ3E(f) ≥βℓ"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "(ℓ−|h|)2E(f) ≳ℓ3E(f) ≥βℓ3m"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "x∈Zm"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "x∈Zmf(x)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "x∈Zmf(x)2≤αℓ"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "x∈Zmf(x)2≤αℓ2"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "x∈Zmf(x)2≤αℓ2m,soV"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "thereforeV"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "thereforeV0= ℓ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "0≤α"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "0≤α2ℓ"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "0≤α2ℓ4"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "0≤α2ℓ4m"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ℓ≲βm/α"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "smaller than a fixed fraction of βℓ"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "smaller than a fixed fraction of βℓ3m"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "Lemma7(Densemodularprogression).AssumeE(f)≥βm"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "β≲α"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "α"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "mV"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "βℓ"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "βℓ3m"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "V"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Vd≤Mαℓm"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "αℓ"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "x∈Zm|S"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "x∈ZmS"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "x∈Zm"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "x∈Zm|S"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "x∈Zm|Sd(x)|,andhencesome"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "x∈Zm|Sd(x)|,andhencesomex∈Z"
+  },
+  {
+   "page": 6,
+   "mark": "d",
+   "context": "ofS"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "x∈Z"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "i=0"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "i=0f(x + id)≥ηℓforsome"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "theoriginalaverageoffisatleastη,oneblock"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "Itremainstointersect"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "[N]modulomareseparatedbygapsoflengthm −N>3m/4,while"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "travelsdistance<m/10.Thus"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "meet[N]again.Hencethetermsof"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "subprogression;callitP.Sincef=0outside[N],passingfrom"
+  },
+  {
+   "page": 7,
+   "mark": "16",
+   "context": "|P| ≳α"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "|P| ≳α16N"
+  },
+  {
+   "page": 7,
+   "mark": "11",
+   "context": "≥α + cα"
+  },
+  {
+   "page": 7,
+   "mark": "12",
+   "context": "Proof.ByLemma5,E(f) ≳α"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "Proof.ByLemma5,E(f) ≳α12m"
+  },
+  {
+   "page": 7,
+   "mark": "12",
+   "context": "Proof.ByLemma5,E(f) ≳α12m3.Putβ∼α"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Proof.ByLemma5,E(f) ≳α12m3.Putβ∼α12andchooseℓ∼βm/α"
+  },
+  {
+   "page": 7,
+   "mark": "10",
+   "context": "α"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "mand"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "mand x ∈Z"
+  },
+  {
+   "page": 7,
+   "mark": "f",
+   "context": "i=0"
+  },
+  {
+   "page": 7,
+   "mark": "11",
+   "context": "i=0f(x+id) ≳α"
+  },
+  {
+   "page": 7,
+   "mark": "11",
+   "context": "Setη∼α"
+  },
+  {
+   "page": 7,
+   "mark": "11",
+   "context": "arithmeticprogressionP⊂[N]withdensityincrement≳α"
+  },
+  {
+   "page": 7,
+   "mark": "11",
+   "context": "ℓ≳α"
+  },
+  {
+   "page": 7,
+   "mark": "5",
+   "context": "ℓ≳α11α"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "ℓ≳α11α5m"
+  },
+  {
+   "page": 7,
+   "mark": "16",
+   "context": "ℓ≳α11α5m1/2≳α"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "ℓ≳α11α5m1/2≳α16N"
+  },
+  {
+   "page": 8,
+   "mark": "11",
+   "context": "ducesanew3AP-freesetwithdensityincreasedbyatleastcα"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "0N"
+  },
+  {
+   "page": 8,
+   "mark": "16",
+   "context": "atleastcα"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "(log log N)"
+  },
+  {
+   "page": 8,
+   "mark": "11",
+   "context": "anbeappliedJtimes,theneachstepincreasesthedensitybyatleastcα"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "jN"
+  },
+  {
+   "page": 8,
+   "mark": "11",
+   "context": "αj+1≥αj+ cα"
+  },
+  {
+   "page": 8,
+   "mark": "16",
+   "context": "Nj+1≥cα"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "2 log N"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "(log log N)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ofthestepshaveasimpleFourierinterpretation.Lete(x)=e"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "x∈Z"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "x∈Zm"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "x∈Zmf(x)"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "x∈Zmf(x)e(−ξx).Onethenhas"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "x∈Zmf(x)e(−ξx).OnethenhasbR(ξ)=| b"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "R(t)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "iscalledinthemodernGowers-styleliteraturetheU"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "small3-termprogressioncounttoalargeU"
+  }
+ ]
+}

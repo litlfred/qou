@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.988
 latex_coverage_ratio: 0.92
+doc_brief: "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology — Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants."
 ---
 Let us consider a finite dimensional vector space $V$ along with the transposition map $R=\tau : V\otimes V \rightarrow V\otimes V$, which is a YBO on $V$.
 

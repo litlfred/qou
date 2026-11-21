@@ -8,6 +8,7 @@ pages: 8-13
 source_pdf: 0203160v3.pdf
 source_sha256: a84f478d72d40af2
 toc_source: inferred
+doc_brief: "arXiv:math/0203160v3 [math.QA] 28 Oct 2002 — We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on"
 ---
 We would like to thank Yu. Manin for his interest in our work, and for informa-
 tion that our results could be useful in number theory (Yu. Manin has explained
@@ -59,307 +60,228 @@ arXiv:hep–th/0011261.
 [18] A. Schwarz. Theta–functions on noncommutative tori. Lett. Math. Phys.,
 58(1):81–90, 2001.
 9
-4
-Appendix
-Our candidate function h(z, ∆) for the map (1) is given by :
-h(z, ∆) =
-X
-q∈Z
-
-f((n + m θ)z −n + m θ
-m
-q +
-l(n + m θ)
-m(n l + m k)∆, −q + a ∆)
-·g((n + m θ)z + k −l θ
-l
-q −
-k −l θ
-n l + m k ∆, q)
-
-For reference, let us recall all the actions we will need. If f(x, µ) ∈En,m(θ),
-and g(y, ν) ∈E′
-k,l(θ), then:
-U1 f(x, µ) = f(x −n + m θ
-m
-, µ −1)
-U2 f(x, µ) = e2 π i(x−µ n/m) f(x, µ)
-U1 g(y, ν) = g(y −k −l θ
-l
-, ν −1)
-U2 g(y, ν) = e2 π i(y−ν k/l) g(y, ν)
-Z1 f(x, µ) = f(x −1
-m, µ −a)
-Z2 f(x, µ) = e2 π i(x/(n+m θ)−µ/m) f(x, µ)
-Let us start by checking the identiﬁcations. Replacing f with U1 f in the deﬁ-
-nition of h we obtain:
-X
-q∈Z
-
-f((n + m θ)z −n + m θ
-m
-q +
-l(n + m θ)
-m(n l + m k)∆−n + m θ
-m
-, −q + a ∆−1)
-·g((n + m θ)z + k −l θ
-l
-q −
-k −l θ
-n l + m k∆, q)
-
-Letting q →q −1 gives:
-=
-X
-q∈Z
-
-f((n + m θ)z −n + m θ
-m
-q +
-l(n + m θ)
-m(n l + m k)∆, −q + a ∆)
-·g((n + m θ)z + k −l θ
-l
-q −
-k −l θ
-n l + m k∆−k −l θ
-l
-, q −1)
-
-This means that the map (1) is compatible with the identiﬁcation
-(U1 f) ⊗g ∼f ⊗(U1 g)
-Similarly, replacing f with U2 f in (1) we get:
-10
-X
-q∈Z
-exp
-
-2 π i
-
-(n + m θ)z −n + m θ
-m
-q +
-l(n + m θ)
-m(n l + m k)∆−n(−q + a ∆)
-m
-
-f · g
-=
-X
-q∈Z
-exp
-
-2 π i
-
-(n + m θ)z −θ q +
-l(n + m θ)
-m(n l + m k)∆−a n ∆
-m
-
-f · g
-using the relation a n = 1 + b m gives:
-=
-X
-q∈Z
-exp
-
-2 π i
-
-(n + m θ)z + k −l θ
-l
-q +
-k −l θ
-n l + m k ∆−k
-l q
-
-f · g
-This means that the map (1) is compatible with the identiﬁcation
-(U2 f) ⊗g ∼f ⊗(U2 g)
-So the map (1) that was deﬁned originally as a map of the tensor product
-En,m ⊗C E′
-k,l descends to a map of En,m ⊗Tθ E′
-k,l.
-Next, we need to check that the new product module is in fact E′
-a k+b l,n l+m k(θ′).
-That is, we ﬁrst need to show that the shift ∆→∆+ n l + m k leaves h(z, ∆)
-invariant; therefore we can consider ∆as an element of Zn l+m k:
-h(z, ∆+ n l + m k) =
-X
-q∈Z
-
-f((n + m θ)z −n + m θ
-m
-q +
-l(n + m θ)
-m(n l + m k)(∆+ n l + m k), −q + a (∆+ n l + m k))
-·g((n + m θ)z + k −l θ
-l
-q −
-k −l θ
-n l + m k(∆+ n l + m k), q)
-
-Let q →q + l. Then the extra terms in the ﬁrst argument of f are:
-−n + m θ
-m
-l +
-l(n + m θ)
-m(n l + m k)(n l + m k) = 0
-The extra terms in the second argument of f are:
-−l + a n l + a m k ≡−l −a n l
-(mod m)
-≡l (a n −1)
-(mod m)
-≡l b m
-(mod m)
-≡0
-(mod m)
-Similarly, the extra terms in the arguments of g are respectively:
-11
-(k −l θ) −(k −l θ) = 0
-and
-l ≡0
-(mod l)
-It follows that:
-h(z, ∆+ n l + m k) = h(z, ∆)
-as required. Finally we need to check that the action of the endomorphism
-algebra generators Z1, Z2 on h(z, ∆) induced by the action of Z1 and Z2 on f
-describe the standard module E′
-a k+b l,n l+m k(θ′):
-Z1 h(z, ∆)
-=
-X
-q∈Z
-
-f((n + m θ)z −n + m θ
-m
-q +
-l(n + m θ)
-m(n l + m k)∆−1
-m, −q + a ∆−a)
-·g((n + m θ)z + k −l θ
-l
-q −
-k −l θ
-n l + m k∆, q)
-
-=
-X
-q∈Z
-
-f((n + m θ) (z + α) −n + m θ
-m
-q +
-l(n + m θ)
-m(n l + m k)(∆−1), −q + a (∆−1))
-·g((n + m θ)(z + β) + k −l θ
-l
-q −
-k −l θ
-n l + m k (∆−1), q)
-
-where
-α =
+4 Appendix
+
+Our candidate function h(z, A) for the map (il) is given by :
+
+n+m0 i(n +m)
+m(nl+mk)
+k-10 k-10
+
+T nltme
+
+h(z, A) = 3° [Fc m0)z —
+
+qeZ
+
+A,-q+aA)
+
+-g((n + m)z +
+
+)
+
+For reference, let us recall all the actions we will need. If f(z, j) € Enjm(),
+and g(y,v) € Ej, ,(@), then:
+
+Uy f(w,n) = f(x — n+mé
+
+Us f(a, p) = PHM) F(x, 1)
+k-10
+i
+Us gly,v) = OV /) gy, v)
+
 1
-n + m θ
- l(n + m θ)
-m(n l + m k) −1
+Zi f(x, mu) = f(w@-—,p—a)
 m
-
-= −
-k −l θ
-(n + m θ)(n l + m k)
-= β
-and can be rewritten in a simpler way using the relation a n −b m = 1:
-= −a k + b l
-n l + m k + b + a θ
-n + m θ
-= −a k + b l
-n l + m k + ˆθ
+
+Zo f(a, p) = 27MM mm )—H/m) Fa, 11)
+
+sw 1)
+
+Ui gy.v) =9(y - an)
+
+Let us start by checking the identifications. Replacing f with U; f in the defi-
+nition of h we obtain:
+
+1 8 8
+3 [Fn may EG (n+ m6) a-—™ --qtaA~—1)
+
+‘a m m(nl + mk)
+
+k-10 k-10
+
+g((n+m@)z+ i I~ 7 Tomk
+
+A.«)|
+
+Letting g > q— 1 gives:
+
+n+mé Un +m)
+
+=X [Hore mae- | mnlemhy 2+)
+k—-1l0é k-10 k—-10
+g((n + m8)z + >—4a ~ A 4-0)
+
+This means that the map ([l}) is compatible with the identification
+
+(if)®g~ fetig)
+
+Similarly, replacing f with U2 f in (i) we get:
+
+10
+Sew [px (n+ mo): - vet a ~ eee) fg
+
+qeZ
+=Srexp [pei (rma): oq4 SRE 9 a12)) fea
+<a m(nl+mk) m
+
+using the relation an = 1 + bm gives:
+
+. k-10 k-10 k
+“Lew [pi (n+ moje oy Aa a Er] f-g
+
+This means that the map ({l) is compatible with the identification
+(2 f)@g~ f® Urg)
+
+So the map (i) that was defined originally as a map of the tensor product
+Enm ®c Ej,; descends to a map of Enm @r, Ej, 1.
+
+Next, we need to check that the new product module is in fact E’, kb lyn ltm (9).
+That is, we first need to show that the shift A > A+nl+mk leaves h(z, A)
+invariant; therefore we can consider A as an element of Zn j+mk:
+
+h(z,A+nl+mk) =
+
+D [eve moye
+
+qeZ
+
+n+mé (n+ m6)
+
+mod minlembky Sth + mk), —a+a(A+nl+mk))
+
+k-10 k-10
+
+‘g((n+m)z+ 74 giA t+ nl+ mk), q)
+
+~ nl+m
+Let q > q+l. Then the extra terms in the first argument of f are:
+
+name, in +m)
+m m(nl+mk)
+
+(nl+mk) =0
+
+The extra terms in the second argument of f are:
+
+—-l+anl+amk=-l—anl (mod m)
+=I(an—1) (mod m)
+=lbm (mod m)
+=0 (mod m)
+
+Similarly, the extra terms in the arguments of g are respectively:
+
+11
+(k —16) —(k —10) =0
+
+and
+1=0 (mod 1)
+
+It follows that:
+
+h(z, A+nl+mk) = h(z,A)
+
+as required. Finally we need to check that the action of the endomorphism
+algebra generators Z,, Z2 on h(z, A) induced by the action of Z; and Z on f
+describe the standard module E% j..5;.n Leme(O ):
+
+Z,h(z,A)
+=Solf ((n+m@)z names, Un+ m9) A-+,-q+aA~-a)
+m m(nl + mk) m
+qeZ
+k-10 k-10
+i 91~ tmk~ |
+
+-g((n+mO)z +
+= n+mo Un+mé)
+=¥ [Hot mayce ray - 7 Tater mye Nee
+
+k-10
+
+“g((n +m0)(z + 8) + 717 —-
+
+(A- 1).0|
+
+where
+
+1 Un +m) 1
+n+mé as - ~)
+k-10
+
+(n+ m0)(nl+ mk)
+
+=6
+and can be rewritten in a simpler way using the relation an — bm = 1:
+
+ak+bl 4 b+ad0
+nl+mk n+mé@
+
+__ak+bl |»
+nl+mk
 Therefore:
-Z1 h(z, ∆) = Z1 h(z −a k + b l
-n l + m k + ˆθ, ∆−1)
+ak+bl_ »
+h(z, A) = Z h(z— alamnt@A-Y
+
 12
-as required for E′
-a k+b l,n l+m k(θ′). Similarly:
-Z2 h(z, ∆)
-=
-X
-q∈Z
-exp
-
-2 π i
-
-z −q
-m +
-l
-m(n l + m k)∆−1
-m(−q + a ∆)
-
-f · g
-=
-X
-q∈Z
-exp
-
-2 π i
-
-z + l(1 −a n) −a m k
-m(n l + m k)
-∆
-
-f · g
-substituting −b m in for 1 −a n gives:
-=
-X
-q∈Z
-exp
-
-2 π i
-
-z −a k + b l
-n l + m k∆
-
-f · g
-= exp
-
-2 π i
-
-z −a k + b l
-n l + m k∆
-
-h(z, ∆)
+as required for EY gs 51.n time). Similarly:
+
+Zah(z,A)
+-Ler vni(2- 44 a 2-94 0a) fg
+=o exp ai (24 Coen aa) fo
+
+qeZ
+substituting —bm in for 1 — an gives:
+
+. ak+bl .
+= So exp ani(2- Ea) Pg
+
+qeZ
+
+=exp)2mi (2-2 ay] mee.)
+
+nl+mk
+
 also as required.
-Our considerations prove that the formula (1) speciﬁes a map from En,m(θ)⊗
-Tθ
-E′
-k,l(θ) into E′
-a,k+b l,n l+m k(θ′) and this map is compatible with the structure
-of Tθ′ right modules on these objects. It is easy to check that this map is an
+Our considerations prove that the formula specifies a map from Ep, m(8)@
+To
+
+Ejx,(0) into Ef pi yimteme(6’) and this map is compatible with the structure
+of Tg right modules on these objects. It is easy to check that this map is an
 isomorphism (either directly or using the general result about tensor products
 of modules over noncommutative tori).
+
 One can use also the technique suggested in [17]; the latter approach has the
-advantage that it gives a regular way to obtain (1). Namely we can start with
-the description of the linear space that is dual to the tensor product En,m(θ) ⊗
-Tθ
-E′
-k,l(θ). We notice that a continuous linear functional on the tensor product of
-En,m(θ) and E′
-k,l(θ) over C is speciﬁed by a generalized function (a distribution)
-ϕ(x, µ, y, ν) where x, y ∈R, µ ∈Zm, ν ∈Zl; it transforms f ⊗g into:
-X
-µ∈Zm
-X
-ν∈Zl
-Z
-f(x, µ) g(y, ν) ϕ(x, µ, y, ν) d x d y
-This functional descends to the tensor product over Tθ if:
-ϕ(x, µ, y, ν) · e2 π i(x−µ n/m) = ϕ(x, µ, y, ν) · e2 π i(y−ν k/l)
+advantage that it gives a regular way to obtain (fl). Namely we can start with
+the description of the linear space that is dual to the tensor product Eym(0) ®
+
+To
+Ej, (9). We notice that a continuous linear functional on the tensor product of
+
+En.m(0) and Ey, (8) over C is specified by a generalized function (a distribution)
+y(a, u,y,v) where z,y ER, € Zm,v € Zi; it transforms f ® g into:
+
+> Y [Hema oenyraedy
+
+HEZm VEZ,
+This functional descends to the tensor product over Ty if:
+p(x, p.yv) er HMI) = ola, py, v) eV BID
 and
-ϕ(x + n
-m + θ, µ + 1, y, ν) = ϕ(x, µ, y + k
-l −θ, ν + 1)
-Solving this system of equations for ϕ, we arrive at a description of the space
+n k
+vat +O.n+ Lyv) = ola, wy +7 — Ou +1)
+m
+Solving this system of equations for y, we arrive at a description of the space
+
 that is dual to the tensor product we are interested in. Using this description,
-it is easy to obtain (1).
+it is easy to obtain ().
+
 13

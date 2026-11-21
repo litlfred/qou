@@ -1,0 +1,61 @@
+A representation theoretic explanation... 1377
+
+annulus or open strip in C. Therefore we may slightly shrink U; and By to get closed circular
+regions U; and B; such that U,U B, = CP! and ULM B, = dU; = 9By, where 4B, denotes
+the boundary of B,. We can then further remove portions of the respective boundaries of U;
+and B; to get projectively convex regions U,/ and By such that U;/U By’ = CP! and UM By
+is exactly two points. Since Uj! C Ux and B/ C By, we have that p is (U// x: -- x Uj/)-stable
+and q is (Bi’ x --- x By’)-stable. Therefore (i) implies D*(p ®q) 0, and this implies (ii).
+
+(iii). Same argument as (ii).
+
+(iv). Let p,q € V(n) be such that p is Cj-stable and g is B,-stable. Defining Bi =
+ce! \C, © Bj, we further have that q is Bj-stable. So WLOG we may assume that By = Bi.
+Note that this implies C7 = 0B); that is, the boundaries coincide. If C; is a circular region
+then so is By, and therefore D" (p ® q) # 0 by (ii) or (iii). This implies (iv) in this case.
+
+Otherwise by Proposition 4.5, we have that C} = C? U yi where C? is an open circular
+regionand @ ¢ y; C dC/. Analogously we have Bj = BPUY with @ ¢ yw C ABP = ACP.
+Lemma 5.6 then implies there exist P) and ;, which are open portions of the boundary of
+C?, such that y) C Ty, wy © WY, p is (CP UT))-stable, and q is (BP U 1)-stable. Since
+I; UY, = dC), we then further can find closed subsets YY Cc Ty and wy C W, such that
+Pr, UW, = aCf and I’ W' is exactly two points. Therefore D"(p @ q) 4 0 by (i), and this
+implies (iv). o
+
+Notice that (ii) and (iii) in this result do not allow for mixed open and closed stability
+regions. That is, all of the C, must be open and all of the By closed, or vice versa. We show
+that this particular point cannot be ignored, using the following example.
+
+Example 5.8 Let 4 = (1,1, 1), denote E := cP!\D, and consider the polynomial p :=
+X1X2X3 — yi y2y3 = Hmg, (x1x2x3 — 1). First, it is easy to see that D*(p ® p) = 0. Also, p
+is D°-stable and E>-stable, but it is not D*-stable nor E°-stable (zero at (xx, yx) = (1, 1) for
+k € [3]). That is, the fact that D*(p ® p) = 0 does not contradict (ii) or (iii) of the previous
+theorem.
+
+On the other hand, p is both (D x D x D)-stable and (E x E x E)-stable. This shows
+that (D x D x D, E x E x E) is nota Grace pair. That is, mixed open and closed stability
+regions cannot be included in (ii) and (iii) of the previous theorem.
+
+As for whether or not the two-point intersection condition can be removed from (i) seems
+to be a more subtle point. It would be quite nice if this condition could be removed, but it is
+unclear whether or not it is possible.
+
+5.2 Evaluation symbols
+
+One way to interpret the stability properties of a given polynomial is via the stability-
+preservation properties of a particular type of linear operator: the evaluation map. That is,
+the map which evaluates a polynomial p(x, y) at (a,b) 4 (0, 0) preserves strong {(a : b)}-
+stability, where {(a : b)} is a subset of CP! consisting of a single point. Further, given 4 € No
+and (a, b) = (a1, b,.-..dm. bm) € C2" (with (aj, bj) # 0 for all j), we can define the
+corresponding evaluation map as an element of Hom(V (A), V(0)) since V(O) = C. This
+allows us to obtain symbols for evaluation maps, and these play an important role in our
+
+linear operator characterization.
+
+Definition 5.9 Fix 4 ¢ Nj and (a,b) = (a1, 1, .
+(0, 0) for all 7 € [m]. Let evap) : VA) > V(O)
+
+am, bm) € C2" such that (a;,bj) #
+= C be the evaluation operator which
+
+D Springer

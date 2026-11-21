@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "mod-phi-convergence-approximation-of-discrete-measures-and-2",
  "source_sha256": "c563cc999000e75d",
- "brief": "ANNALES DE L’INSTITUT FOURIER Université Grenoble Alpes Les Annales de l’institut Fourier sont membres du Centre Mersenne pour l’édition scientifique ouverte www.centre-mersenne.org — 2 sections: Intr",
- "extended": "**ANNALES DE L’INSTITUT FOURIER Université Grenoble Alpes Les Annales de l’institut Fourier sont membres du Centre Mersenne pour l’édition scientifique ouverte www.centre-mersenne.org**\n\n*Reda C/h.sc/h.sc/a.sc/i.sc/b.sc/i.sc, F/r.sc/e.sc/d.sc/d.sc/y.sc D/e.sc/l.sc/b.sc/a.sc/e.sc/n.sc*\n\n84 pp, 2 sections.\n\n**Outline.** 1 Introduction; 1.1 Poisson approximation of lattice-valued ra",
+ "brief": "ANNALES DE L’INSTITUT FOURIER — 27 sections: Front matter; Introduction; Poisson approximation of lattice-v",
+ "extended": "**ANNALES DE L’INSTITUT FOURIER**\n\n*L’INSTITUT FOURIER*\n\n84 pp, 27 sections.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Poisson approximation of lattice-valued ra; 1.2 Infinitely divisible distributions and dis; 1.3 Mod-phi convergent sequences of random var; 1.4 The Wiener algebra and the general scheme ; 1.5 Outline of the paper; 2 Concentration inequalities in the Wiener alg; 2.1 Deconvolution residues in the Wiener algeb; 2.2 Estimates of norms in the Wiener algebra; 3 Asymptotics of distances for a general schem; 3.1 The local distance; 3.2 The Kolmogorov distance; 3.3 The total variation distance; 3.4 Derived scheme of approximation with const; 4 One-dimensional applications; 4.1 Poisson approximation of a sum of independ; 4.2 Poisson approximation schemes and formal a",
  "tokens": {
-  "brief": 50,
-  "extended": 95
+  "brief": 26,
+  "extended": 197
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,7 +22,127 @@
   {
    "id": "sec-001-11-poisson-approximation-of-lattice-valued-rando",
    "title": "Poisson approximation of lattice-valued random variables",
-   "pages": "3-84"
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-12-infinitely-divisible-distributions-and-distan",
+   "title": "Infinitely divisible distributions and distances between probability measures",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-003-13-mod-phi-convergent-sequences-of-random-variab",
+   "title": "Mod-phi convergent sequences of random variables",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-004-14-the-wiener-algebra-and-the-general-scheme-of",
+   "title": "The Wiener algebra and the general scheme of approximation",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-005-15-outline-of-the-paper",
+   "title": "Outline of the paper",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-006-2-concentration-inequalities-in-the-wiener-algeb",
+   "title": "Concentration inequalities in the Wiener algebra",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-007-21-deconvolution-residues-in-the-wiener-algebra",
+   "title": "Deconvolution residues in the Wiener algebra",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-008-22-estimates-of-norms-in-the-wiener-algebra",
+   "title": "Estimates of norms in the Wiener algebra",
+   "pages": "18-23"
+  },
+  {
+   "id": "sec-009-3-asymptotics-of-distances-for-a-general-scheme",
+   "title": "Asymptotics of distances for a general scheme of approximation",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-010-31-the-local-distance",
+   "title": "The local distance",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-011-32-the-kolmogorov-distance",
+   "title": "The Kolmogorov distance",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-012-33-the-total-variation-distance",
+   "title": "The total variation distance",
+   "pages": "29-35"
+  },
+  {
+   "id": "sec-013-34-derived-scheme-of-approximation-with-constant",
+   "title": "Derived scheme of approximation with constant residue",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-014-4-one-dimensional-applications",
+   "title": "One-dimensional applications",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-015-41-poisson-approximation-of-a-sum-of-independent",
+   "title": "Poisson approximation of a sum of independent Bernoulli variables",
+   "pages": "38-41"
+  },
+  {
+   "id": "sec-016-42-poisson-approximation-schemes-and-formal-alph",
+   "title": "Poisson approximation schemes and formal alphabets",
+   "pages": "41-45"
+  },
+  {
+   "id": "sec-017-43-number-of-disjoint-cycles-of-a-random-permuta",
+   "title": "Number of disjoint cycles of a random permutation",
+   "pages": "45-48"
+  },
+  {
+   "id": "sec-018-44-mod-poisson-convergence-and-algebraico-logari",
+   "title": "Mod-Poisson convergence and algebraico-logarithmic singularities",
+   "pages": "48-56"
+  },
+  {
+   "id": "sec-019-45-number-of-distinct-prime-divisors-of-a-random",
+   "title": "Number of distinct prime divisors of a random integer",
+   "pages": "56-58"
+  },
+  {
+   "id": "sec-020-5-the-multi-dimensional-case",
+   "title": "The multi-dimensional case",
+   "pages": "58-60"
+  },
+  {
+   "id": "sec-021-51-the-multi-dimensional-wiener-algebra",
+   "title": "The multi-dimensional Wiener algebra",
+   "pages": "60-69"
+  },
+  {
+   "id": "sec-022-52-asymptotics-of-distances-in-the-multi-dimensi",
+   "title": "Asymptotics of distances in the multi-dimensional setting",
+   "pages": "69-72"
+  },
+  {
+   "id": "sec-023-53-cycle-type-of-random-coloured-permutations",
+   "title": "Cycle-type of random coloured permutations",
+   "pages": "72-78"
+  },
+  {
+   "id": "sec-024-54-distinct-prime-divisors-counted-according-to",
+   "title": "Distinct prime divisors counted according to their residue classes",
+   "pages": "78-82"
+  },
+  {
+   "id": "sec-025-bibliography",
+   "title": "Bibliography",
+   "pages": "82-84"
   }
  ],
  "provenance": {

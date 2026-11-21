@@ -8,7 +8,7 @@
   "pages": 46,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,15 +21,15 @@
    "stamp_date": "16 Jan 2002"
   },
   "doi": null,
-  "title": "arXiv:math-ph/0012035v3 16 Jan 2002",
+  "title": "Non-Abelian Stokes theorem in action",
   "authors_raw": null,
   "title_lines": [
    "Non-Abelian Stokes theorem in action",
    "Bogus law Broda1",
    "Department of Theoretical Physics",
-   "University of L\u00f3d\u017a",
+   "University of Lódź",
    "Pomorska 149/153",
-   "PL 90\u2013236 L\u00f3d\u017a",
+   "PL 90–236 Lódź",
    "Poland"
   ],
   "abstract": "In this short review main issues related to the non-Abelian Stokes theorem have been addressed. The two principal approaches to the non- Abelian Stokes theorem, operator and two variants (coherent-state and holomorphic) of the path-integral one, have been formulated in their sim- plest possible forms. A recent generalization for a knotted loop as well as a suggestion concerning higher-degree forms have been also included. Non- perturbative applications of the non-Abelian Stokes theorem, to (semi-)to- pological gauge theories, have been presented.",
@@ -39,18 +39,19 @@
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20181022003545-04'00'"
   },
-  "title_raw": "Non-Abelian Stokes theorem in action Bogus law Broda1 Department of Theoretical Physics University of L\u00f3d\u017a Pomorska 149/153 PL 90\u2013236 L\u00f3d\u017a Poland",
+  "title_raw": "Non-Abelian Stokes theorem in action Bogus law Broda1 Department of Theoretical Physics University of Lódź Pomorska 149/153 PL 90–236 Lódź Poland",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math-ph/0012035v3 16 Jan 2002",
    "heading": "Non-Abelian Stokes theorem in action",
-   "text": "Non-Abelian Stokes theorem in action Bogus law Broda1 Department of Theoretical Physics University of L\u00f3d\u017a Pomorska 149/153 PL 90\u2013236 L\u00f3d\u017a Poland",
+   "text": "Non-Abelian Stokes theorem in action Bogus law Broda1 Department of Theoretical Physics University of Lódź Pomorska 149/153 PL 90–236 Lódź Poland",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math-ph/0012035v3 16 Jan 2002"
  },
  "toc": [
   {
@@ -394,7 +395,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "The parametrized loop C as a boundary of the \u201cbig\u201d square S with the coordinates {(0, 0), (1, 0), (1, 1), (0, 1)}",
+   "title": "The parametrized loop C as a boundary of the “big” square S with the coordinates {(0, 0), (1, 0), (1, 1), (0, 1)}",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -407,7 +408,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "Approaching the \u201csmall\u201d plaquette inside the \u201cbig\u201d square",
+   "title": "Approaching the “small” plaquette inside the “big” square",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -444,7 +445,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "C1 and C2, where a part of C1, forming a small loop \u2113(\u2113= \u2202N), is wrapped round C2",
+   "title": "C1 and C2, where a part of C1, forming a small loop ℓ(ℓ= ∂N), is wrapped round C2",
    "page": 41,
    "confidence": 0.7,
    "evidence": [
@@ -786,56 +787,56 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 36,
-   "n_words": 4,
+   "n_chars": 748,
+   "n_words": 106,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-000-11-abelian-stokes-theorem",
-   "number": "1.1",
-   "title": "Abelian Stokes theorem",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 676,
-   "n_words": 98,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 3380,
-   "n_words": 588,
+   "page_end": 2,
+   "n_chars": 1426,
+   "n_words": 217,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-002-2-non-abelian-stokes-theorem",
-   "number": "2",
-   "title": "Non-Abelian Stokes theorem",
-   "level": 1,
-   "page_start": 3,
+   "id": "sec-001-11-abelian-stokes-theorem",
+   "number": "1.1",
+   "title": "Abelian Stokes theorem",
+   "level": 2,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 97,
-   "n_words": 18,
+   "n_chars": 2065,
+   "n_words": 389,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-003-12-historical-remarks",
+   "id": "sec-002-12-historical-remarks",
    "number": "1.2",
    "title": "Historical remarks",
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 1037,
-   "n_words": 167,
+   "n_chars": 351,
+   "n_words": 59,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-2-non-abelian-stokes-theorem",
+   "number": "2",
+   "title": "Non-Abelian Stokes theorem",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 629,
+   "n_words": 98,
    "label_start": null,
    "label_end": null
   },
@@ -846,7 +847,7 @@
    "level": 2,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 5867,
+   "n_chars": 5872,
    "n_words": 1057,
    "label_start": null,
    "label_end": null
@@ -858,8 +859,8 @@
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 1533,
-   "n_words": 280,
+   "n_chars": 1546,
+   "n_words": 281,
    "label_start": null,
    "label_end": null
   },
@@ -870,8 +871,8 @@
    "level": 3,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1508,
-   "n_words": 281,
+   "n_chars": 1520,
+   "n_words": 283,
    "label_start": null,
    "label_end": null
   },
@@ -882,7 +883,7 @@
    "level": 3,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 1198,
+   "n_chars": 1201,
    "n_words": 276,
    "label_start": null,
    "label_end": null
@@ -894,7 +895,7 @@
    "level": 3,
    "page_start": 11,
    "page_end": 16,
-   "n_chars": 4113,
+   "n_chars": 4117,
    "n_words": 1042,
    "label_start": null,
    "label_end": null
@@ -905,9 +906,9 @@
    "title": "Path-integral formalism",
    "level": 2,
    "page_start": 16,
-   "page_end": 16,
-   "n_chars": 77,
-   "n_words": 13,
+   "page_end": 17,
+   "n_chars": 2091,
+   "n_words": 336,
    "label_start": null,
    "label_end": null
   },
@@ -916,10 +917,10 @@
    "number": "2.2.1",
    "title": "Coherent-state approach",
    "level": 3,
-   "page_start": 16,
+   "page_start": 17,
    "page_end": 21,
-   "n_chars": 6157,
-   "n_words": 1181,
+   "n_chars": 4232,
+   "n_words": 867,
    "label_start": null,
    "label_end": null
   },
@@ -929,9 +930,9 @@
    "title": "Holomorphic approach",
    "level": 3,
    "page_start": 21,
-   "page_end": 27,
-   "n_chars": 7164,
-   "n_words": 1346,
+   "page_end": 28,
+   "n_chars": 9036,
+   "n_words": 1753,
    "label_start": null,
    "label_end": null
   },
@@ -940,10 +941,10 @@
    "number": "2.2.3",
    "title": "Measure",
    "level": 3,
-   "page_start": 27,
+   "page_start": 28,
    "page_end": 30,
-   "n_chars": 3915,
-   "n_words": 802,
+   "n_chars": 2133,
+   "n_words": 411,
    "label_start": null,
    "label_end": null
   },
@@ -954,7 +955,7 @@
    "level": 2,
    "page_start": 30,
    "page_end": 30,
-   "n_chars": 5,
+   "n_chars": 15,
    "n_words": 1,
    "label_start": null,
    "label_end": null
@@ -966,7 +967,7 @@
    "level": 3,
    "page_start": 30,
    "page_end": 33,
-   "n_chars": 3321,
+   "n_chars": 3324,
    "n_words": 615,
    "label_start": null,
    "label_end": null
@@ -978,8 +979,8 @@
    "level": 3,
    "page_start": 33,
    "page_end": 34,
-   "n_chars": 2248,
-   "n_words": 361,
+   "n_chars": 2271,
+   "n_words": 362,
    "label_start": null,
    "label_end": null
   },
@@ -990,7 +991,7 @@
    "level": 1,
    "page_start": 34,
    "page_end": 35,
-   "n_chars": 2716,
+   "n_chars": 2725,
    "n_words": 402,
    "label_start": null,
    "label_end": null
@@ -1001,33 +1002,45 @@
    "title": "Two-dimensional Yang-Mills theory",
    "level": 2,
    "page_start": 35,
-   "page_end": 41,
-   "n_chars": 10377,
-   "n_words": 1869,
+   "page_end": 38,
+   "n_chars": 5691,
+   "n_words": 1058,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-018-33-other-applications",
+   "id": "sec-018-32-three-dimensional-topological-quantum-field-t",
+   "number": "3.2",
+   "title": "Three-dimensional topological quantum field theory",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 4711,
+   "n_words": 812,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-019-33-other-applications",
    "number": "3.3",
    "title": "Other applications",
    "level": 2,
    "page_start": 41,
    "page_end": 42,
-   "n_chars": 865,
-   "n_words": 129,
+   "n_chars": 882,
+   "n_words": 130,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-019-4-summary",
+   "id": "sec-020-4-summary",
    "number": "4",
    "title": "Summary",
    "level": 1,
    "page_start": 42,
    "page_end": 46,
-   "n_chars": 7132,
-   "n_words": 1091,
+   "n_chars": 7140,
+   "n_words": 1092,
    "label_start": null,
    "label_end": null
   }
@@ -1038,7 +1051,7 @@
   "toc_entries": 21,
   "toc_inferred_entries": 21,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.05,
+  "toc_inferred_empty_share": 0.048,
   "toc_inferred_method": "latex",
   "figure_entries": 10,
   "figure_sequence_gaps": [],
@@ -1046,13 +1059,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 21,
-  "chars_total": 63422,
+  "sections": 22,
+  "chars_total": 63726,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "NASTiA.tex",
    "tex_sections": 21,
-   "overlaid": 14,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1065,52 +1079,52 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-11-abelian-stokes-theorem",
-     "title": "Abelian Stokes theorem",
-     "prose_ratio": 0.102,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.537,
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-2-non-abelian-stokes-theorem",
-     "title": "Non-Abelian Stokes theorem",
-     "prose_ratio": 0.028,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-001-11-abelian-stokes-theorem",
+     "title": "Abelian Stokes theorem",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-003-12-historical-remarks",
+     "id": "sec-002-12-historical-remarks",
      "title": "Historical remarks",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.379,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-2-non-abelian-stokes-theorem",
+     "title": "Non-Abelian Stokes theorem",
+     "prose_ratio": 0.108,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-004-13-contents",
      "title": "Contents",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.296,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.295,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-005-21-operator-formalism",
      "title": "Operator formalism",
      "prose_ratio": 0.978,
-     "coverage_ratio": 0.977,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-006-211-calculus-of-paths",
      "title": "Calculus of paths",
-     "prose_ratio": 0.953,
+     "prose_ratio": 0.965,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
@@ -1134,22 +1148,24 @@
     {
      "id": "sec-009-22-path-integral-formalism",
      "title": "Path-integral formalism",
-     "prose_ratio": 0.083,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.982,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-010-221-coherent-state-approach",
      "title": "Coherent-state approach",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.65,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-011-222-holomorphic-approach",
      "title": "Holomorphic approach",
-     "prose_ratio": 0.829,
-     "coverage_ratio": 0.924,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.931,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1157,7 +1173,7 @@
      "id": "sec-012-223-measure",
      "title": "Measure",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.647,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1165,13 +1181,13 @@
      "id": "sec-013-23-generalizations",
      "title": "Generalizations",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-014-231-topology",
      "title": "Topology",
      "prose_ratio": 0.993,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1194,25 +1210,33 @@
     {
      "id": "sec-017-31-two-dimensional-yang-mills-theory",
      "title": "Two-dimensional Yang-Mills theory",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-33-other-applications",
+     "id": "sec-018-32-three-dimensional-topological-quantum-field-t",
+     "title": "Three-dimensional topological quantum field theory",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-33-other-applications",
      "title": "Other applications",
      "prose_ratio": 0.984,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-4-summary",
+     "id": "sec-020-4-summary",
      "title": "Summary",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.287,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.286,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

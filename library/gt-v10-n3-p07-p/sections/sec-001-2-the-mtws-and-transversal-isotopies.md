@@ -8,6 +8,8 @@ pages: 4-4
 source_pdf: gt-v10-n3-p07-p.pdf
 source_sha256: 1f226aac77351a69
 toc_source: inferred
+doc_brief: "Stabilization in the braid groups II: Transversal simplicity of knots — 10 sections: Front matter; Introduction and description of re; The MTWS and transversal isotopies"
+duplicate_of: "0310280v4"
 ---
 The goal of this section is to prove Theorem 2, a special and limited version of Theorem
 1, the main result in [6]. Theorem 1 is valid in the topological setting, whereas Theorem

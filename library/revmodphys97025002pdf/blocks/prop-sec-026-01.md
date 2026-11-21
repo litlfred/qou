@@ -1,0 +1,1 @@
+Missing entries are for states for which no experimental measurement is included. n S P D 1 2.984 128 556 2 2.811 769 893 −0.030 016 709 3 2.767 663 612 4 2.749 811 840 −0.041 954 895 −0.006 740 939 6 2.735 664 207 −0.008 147 204 8 2.730 267 261 −0.008 785 043 12 −0.009 342 954 TABLE VI.

@@ -15,7 +15,7 @@ to establish that Li₂^q is the unique antiderivative of -ln_q(1-z)/z
 with Li₂^q(0) = 0.
 
 Ref: [kirillov1995] Kirillov, "Dilogarithm identities"
-Ref: [manuscript] prop:mass-endomorphism-tower — Li₂^q subproof
+Ref: [leitner2026] prop:mass-endomorphism-tower — Li₂^q subproof
 -/
 
 namespace QOU.BraidKnot
@@ -48,7 +48,7 @@ theorem li2q_deriv_term (q : ℝ) (z : ℝ) (n : ℕ) (hn : n ≥ 1)
     = z ^ (n - 1) / symQInt q n := by
   field_simp
 
--- Ref: [manuscript] prop:mass-endomorphism-tower lines 306-316
+-- Ref: [leitner2026] prop:mass-endomorphism-tower lines 306-316
 /-- **The Briggs–Klein integral identity** (named conditional conjecture).
     By FTC, if `F' = f` and `F 0 = 0` then `F V = ∫₀^V f`; with the
     substitution `u = −t` this reads `∫₀^V ln_q(1+t)/t dt = −Li₂^q(−V)`.
@@ -65,7 +65,7 @@ def briggs_klein_is_neg_li2q
   ∫ t in (0:ℝ)..V, bkIntegrand t = -li2qAntideriv (-V)
 
 -- Ref: [kirillov1995] Proposition 2.3
--- Ref: [manuscript] docs/audits/2026-05-27-mass-formula-uniqueness-argument.md §Step 3
+-- Ref: [leitner2026] docs/audits/2026-05-27-mass-formula-uniqueness-argument.md §Step 3
 /-- **THEOREM (antiderivative uniqueness from FTC — derived).**
     Two continuous functions `F, G` on `[0, V]` that are both right-derivatives
     of the *same* `f` on `[0, V)` and agree at the left endpoint `0` agree at

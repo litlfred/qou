@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.938
 latex_coverage_ratio: 0.866
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another"
+duplicate_of: "fd58d8e182edda805fed0946606c5ab82f81"
 ---
 \bigskip
 

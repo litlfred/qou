@@ -7,167 +7,667 @@
   "bytes": 3426098,
   "pages": 40,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Co_ Math. Phys. 172, 223-262 (1995) Communications I\u03a0 Mathematical Physics\u00a9 Springer-Verlag 1995 Algebraic Index Theorem",
-  "authors_raw": "Ryszard Nest1, Boris Tsygan2'*",
+  "title": "Algebraic index theorem",
+  "authors_raw": "Ryszard Nest",
   "title_lines": [
-   "Co_ Math. Phys. 172, 223-262 (1995) Communications I\u03a0",
+   "Co_ Math. Phys. 172, 223-262 (1995)",
+   "Communications IΠ",
    "Mathematical",
-   "Physics\u00a9 Springer-Verlag 1995",
+   "Physics",
+   "© Springer-Verlag 1995",
    "Algebraic Index Theorem"
   ],
   "abstract": "We prove the Atiyah-Singer index theorem where the algebra of pseudo- differential operators is replaced by an arbitrary deformation quantization of the algebra of functions on a symplectic manifold.",
   "docinfo": {
-   "CreationDate": "D:20040927134601Z",
-   "Title": "",
    "Creator": "ABBYY FineReader",
-   "Author": "",
-   "Producer": ""
-  }
+   "CreationDate": "D:20040927134601Z"
+  },
+  "title_raw": "Co_ Math. Phys. 172, 223-262 (1995) Communications IΠ Mathematical Physics © Springer-Verlag 1995 Algebraic Index Theorem",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Mathematical Physics Algebraic Index Theorem",
+   "text": "Co_ Math. Phys. 172, 223-262 (1995) Communications IΠ Mathematical Physics © Springer-Verlag 1995 Algebraic Index Theorem",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Co_ Math. Phys. 172, 223-262 (1995) Communications IΠ Mathematical Physics © Springer-Verlag 1995 Algebraic Index Theorem"
  },
  "toc": [
-  {
-   "level": 1,
-   "title": "University of Copenhagen",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
   {
    "level": 1,
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.8,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Cyclic (Co)homology and Lie Algebra (Co)homology in the Differential",
+   "title": "&(A)-^ CCf",
+   "page": 6,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "228"
+  },
+  {
+   "level": 1,
+   "title": "The Algebraic Index Theorem",
+   "page": 7,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "229"
+  },
+  {
+   "level": 2,
+   "title": "Tr(/*0)=",
+   "page": 7,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "229"
+  },
+  {
+   "level": 1,
+   "title": "Characteristic Map Associated to a Trace",
    "page": 8,
    "source": "inferred",
-   "number": "2.7"
+   "number": "2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "230"
   },
   {
    "level": 2,
-   "title": "The Characteristic Map. Suppose that A is a unital associative algebra (TL-",
-   "page": 12,
+   "title": "CCm(A)=",
+   "page": 9,
    "source": "inferred",
-   "number": "2.2"
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "numbered-style"
+   ],
+   "page_label": "231"
   },
   {
-   "level": 2,
-   "title": "Poincare Duality. Suppose now that A is a unital algebra over k, AQ is an ideal",
-   "page": 14,
+   "level": 3,
+   "title": "CC*(A\\",
+   "page": 10,
    "source": "inferred",
-   "number": "2.3"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "232"
   },
   {
-   "level": 2,
-   "title": "Examples. Let A\u2014A\u00a7+A\\ be a Z^ -graded algebra. Let F G A\\ such that",
-   "page": 16,
+   "level": 3,
+   "title": "ΛA,;)",
+   "page": 11,
    "source": "inferred",
-   "number": "2.4"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "233"
+  },
+  {
+   "level": 1,
+   "title": "C.(gχ4) \"",
+   "page": 13,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "235"
   },
   {
    "level": 2,
-   "title": "The Cech-cyclic Complexes and the Characteristic Maps. Let, as in",
+   "title": "x[F,a2]...[F,an]e-",
    "page": 17,
    "source": "inferred",
-   "number": "3.1"
+   "number": "11",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "239"
+  },
+  {
+   "level": 3,
+   "title": "In the same fashion we get the morphism 2τ ' C*(M, CC*_2(A:)) -^ CC^*( given by {ct/o...^}",
+   "page": 18,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "240"
+  },
+  {
+   "level": 3,
+   "title": "C^MCC^A^ft-",
+   "page": 19,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "241"
   },
   {
    "level": 2,
    "title": "Local Computation of^2n~\\-",
    "page": 19,
    "source": "inferred",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "241"
   },
   {
-   "level": 2,
-   "title": "Computation of Jf 2/7-1 ^^^ ^^ Fundamental Class. Consider the spectral",
-   "page": 19,
-   "source": "inferred",
-   "number": "3.3"
-  },
-  {
-   "level": 2,
-   "title": "Boundary Operator at the Fundamental Class. Recalls that we had defined",
+   "level": 1,
+   "title": "Algebraic Index Theorem for Formal Deformations",
    "page": 20,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "242"
+  },
+  {
+   "level": 1,
+   "title": "An Application",
+   "page": 33,
+   "source": "inferred",
+   "number": "7",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "255"
+  },
+  {
+   "level": 1,
+   "title": "G C°(M, CC0(^A/))",
+   "page": 33,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "255"
   },
   {
    "level": 2,
-   "title": "Proof of the Main Theorem. First of all note the following fact which follows",
-   "page": 20,
+   "title": "Σ(-\\γtdfr",
+   "page": 33,
    "source": "inferred",
-   "number": "4.2"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "255"
   },
   {
-   "level": 2,
-   "title": "The Space of \"Nonlinear Frames.\" In this subsection, we will replace the",
-   "page": 23,
+   "level": 1,
+   "title": "Operations on the Cyclic Complex",
+   "page": 34,
    "source": "inferred",
-   "number": "5.1"
+   "number": "Appendix 1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "256"
   },
   {
-   "level": 2,
-   "title": "Lie Algebra Cohomology, Cohomology of M/Sp(2n) and Characteristic",
-   "page": 24,
+   "level": 1,
+   "title": "Cyclic Homology of Deformations",
+   "page": 37,
    "source": "inferred",
-   "number": "5.2"
-  },
-  {
-   "level": 2,
-   "title": "Fundamental Class in Lie Algebra Cohomology. Consider the double com-",
-   "page": 25,
-   "source": "inferred",
-   "number": "5.5"
-  },
-  {
-   "level": 2,
-   "title": "Reduction to Lie Algebra Cohomology. Our aim is to reduce the computation",
-   "page": 26,
-   "source": "inferred",
-   "number": "6.1"
-  },
-  {
-   "level": 2,
-   "title": "Computation of d\u03a9^ Reduction to One- Dimensional Case. First of all,",
-   "page": 27,
-   "source": "inferred",
-   "number": "6.2"
-  },
-  {
-   "level": 2,
-   "title": "Proof for n = 1. First, compute \u03b0\u03a9i restricted to the subalgebra C (x\u03be \u2014 ^) =",
-   "page": 29,
-   "source": "inferred",
-   "number": "6.3"
-  },
-  {
-   "level": 2,
-   "title": "One-Dimensional Families. Let IR+ = {/ G IR \u03bb > 0}. Let Af\u03b1(M x IR+) be",
-   "page": 31,
-   "source": "inferred",
-   "number": "6.5"
+   "number": "Appendix 2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "259"
   },
   {
    "level": 1,
    "title": "References",
    "page": 39,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.8,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "261"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "224",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "225",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "226",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "227",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "228",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "229",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "230",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "231",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "232",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "233",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "234",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "235",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "236",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "237",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "238",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "239",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "240",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "241",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "242",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "243",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "244",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "245",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "246",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "247",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "248",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "249",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "250",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "251",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "252",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "253",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "254",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "255",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "256",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "257",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "258",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "259",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "260",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "261",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "262",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -176,205 +676,314 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 151,
-   "n_words": 19
+   "n_chars": 558,
+   "n_words": 79,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-000-1-university-of-copenhagen",
-   "number": "1",
-   "title": "University of Copenhagen",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 375,
-   "n_words": 53
-  },
-  {
-   "id": "sec-001-introduction",
+   "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
+   "page_end": 6,
+   "n_chars": 13103,
+   "n_words": 2462,
+   "label_start": null,
+   "label_end": "228"
+  },
+  {
+   "id": "sec-001-a--ccf",
+   "number": null,
+   "title": "&(A)-^ CCf",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2427,
+   "n_words": 429,
+   "label_start": "228",
+   "label_end": "229"
+  },
+  {
+   "id": "sec-002-1-the-algebraic-index-theorem",
+   "number": "1",
+   "title": "The Algebraic Index Theorem",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1048,
+   "n_words": 202,
+   "label_start": "229",
+   "label_end": "229"
+  },
+  {
+   "id": "sec-003-tr0",
+   "number": null,
+   "title": "Tr(/*0)=",
+   "level": 2,
+   "page_start": 7,
    "page_end": 8,
-   "n_chars": 18726,
-   "n_words": 3380
+   "n_chars": 2241,
+   "n_words": 417,
+   "label_start": "229",
+   "label_end": "230"
   },
   {
-   "id": "sec-002-27-cyclic-cohomology-and-lie-algebra-cohomology",
-   "number": "2.7",
-   "title": "Cyclic (Co)homology and Lie Algebra (Co)homology in the Differential",
-   "level": 2,
+   "id": "sec-004-2-characteristic-map-associated-to-a-trace",
+   "number": "2",
+   "title": "Characteristic Map Associated to a Trace",
+   "level": 1,
    "page_start": 8,
-   "page_end": 12,
-   "n_chars": 6262,
-   "n_words": 1276
+   "page_end": 9,
+   "n_chars": 1575,
+   "n_words": 364,
+   "label_start": "230",
+   "label_end": "231"
   },
   {
-   "id": "sec-003-22-the-characteristic-map-suppose-that-a-is-a-un",
-   "number": "2.2",
-   "title": "The Characteristic Map. Suppose that A is a unital associative algebra (TL-",
+   "id": "sec-005-ccma",
+   "number": null,
+   "title": "CCm(A)=",
    "level": 2,
-   "page_start": 12,
-   "page_end": 14,
-   "n_chars": 1178,
-   "n_words": 243
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 284,
+   "n_words": 53,
+   "label_start": "231",
+   "label_end": "232"
   },
   {
-   "id": "sec-004-23-poincare-duality-suppose-now-that-a-is-a-unit",
-   "number": "2.3",
-   "title": "Poincare Duality. Suppose now that A is a unital algebra over k, AQ is an ideal",
-   "level": 2,
-   "page_start": 14,
-   "page_end": 16,
-   "n_chars": 3827,
-   "n_words": 715
+   "id": "sec-006-cca",
+   "number": null,
+   "title": "CC*(A\\",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2064,
+   "n_words": 392,
+   "label_start": "232",
+   "label_end": "233"
   },
   {
-   "id": "sec-005-24-examples-let-aaa-be-a-z--graded-algebra-let-f",
-   "number": "2.4",
-   "title": "Examples. Let A\u2014A\u00a7+A\\ be a Z^ -graded algebra. Let F G A\\ such that",
-   "level": 2,
-   "page_start": 16,
+   "id": "sec-007-λa",
+   "number": null,
+   "title": "ΛA,;)",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 3000,
+   "n_words": 634,
+   "label_start": "233",
+   "label_end": "235"
+  },
+  {
+   "id": "sec-008-cgχ4",
+   "number": null,
+   "title": "C.(gχ4) \"",
+   "level": 1,
+   "page_start": 13,
    "page_end": 17,
-   "n_chars": 1561,
-   "n_words": 305
+   "n_chars": 6121,
+   "n_words": 1264,
+   "label_start": "235",
+   "label_end": "239"
   },
   {
-   "id": "sec-006-31-the-cech-cyclic-complexes-and-the-characteris",
-   "number": "3.1",
-   "title": "The Cech-cyclic Complexes and the Characteristic Maps. Let, as in",
+   "id": "sec-009-11-xfa2fane",
+   "number": "11",
+   "title": "x[F,a2]...[F,an]e-",
    "level": 2,
    "page_start": 17,
-   "page_end": 19,
-   "n_chars": 2859,
-   "n_words": 508
+   "page_end": 18,
+   "n_chars": 2409,
+   "n_words": 439,
+   "label_start": "239",
+   "label_end": "240"
   },
   {
-   "id": "sec-007-32-local-computation-of2n",
+   "id": "sec-010-1-in-the-same-fashion-we-get-the-morphism-2τ-cm",
+   "number": "1",
+   "title": "In the same fashion we get the morphism 2τ ' C*(M, CC*_2(A:)) -^ CC^*( given by {ct/o...^}",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 654,
+   "n_words": 122,
+   "label_start": "240",
+   "label_end": "241"
+  },
+  {
+   "id": "sec-011-cmccaft",
+   "number": null,
+   "title": "C^MCC^A^ft-",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 251,
+   "n_words": 49,
+   "label_start": "241",
+   "label_end": "241"
+  },
+  {
+   "id": "sec-012-32-local-computation-of2n",
    "number": "3.2",
    "title": "Local Computation of^2n~\\-",
    "level": 2,
    "page_start": 19,
-   "page_end": 19,
-   "n_chars": 1555,
-   "n_words": 282
-  },
-  {
-   "id": "sec-008-33-computation-of-jf-27-1-fundamental-class-cons",
-   "number": "3.3",
-   "title": "Computation of Jf 2/7-1 ^^^ ^^ Fundamental Class. Consider the spectral",
-   "level": 2,
-   "page_start": 19,
    "page_end": 20,
-   "n_chars": 801,
-   "n_words": 147
+   "n_chars": 2431,
+   "n_words": 478,
+   "label_start": "241",
+   "label_end": "242"
   },
   {
-   "id": "sec-009-41-boundary-operator-at-the-fundamental-class-re",
-   "number": "4.1",
-   "title": "Boundary Operator at the Fundamental Class. Recalls that we had defined",
-   "level": 2,
+   "id": "sec-013-4-algebraic-index-theorem-for-formal-deformation",
+   "number": "4",
+   "title": "Algebraic Index Theorem for Formal Deformations",
+   "level": 1,
    "page_start": 20,
-   "page_end": 20,
-   "n_chars": 412,
-   "n_words": 69
+   "page_end": 33,
+   "n_chars": 22425,
+   "n_words": 4419,
+   "label_start": "242",
+   "label_end": "255"
   },
   {
-   "id": "sec-010-42-proof-of-the-main-theorem-first-of-all-note-t",
-   "number": "4.2",
-   "title": "Proof of the Main Theorem. First of all note the following fact which follows",
-   "level": 2,
-   "page_start": 20,
-   "page_end": 23,
-   "n_chars": 2679,
-   "n_words": 546
+   "id": "sec-014-7-an-application",
+   "number": "7",
+   "title": "An Application",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 389,
+   "n_words": 68,
+   "label_start": "255",
+   "label_end": "255"
   },
   {
-   "id": "sec-011-51-the-space-of-nonlinear-frames-in-this-subsect",
-   "number": "5.1",
-   "title": "The Space of \"Nonlinear Frames.\" In this subsection, we will replace the",
-   "level": 2,
-   "page_start": 23,
-   "page_end": 24,
-   "n_chars": 3200,
-   "n_words": 585
+   "id": "sec-015-1-g-cm-cc0a",
+   "number": "1",
+   "title": "G C°(M, CC0(^A/))",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 451,
+   "n_words": 78,
+   "label_start": "255",
+   "label_end": "255"
   },
   {
-   "id": "sec-012-52-lie-algebra-cohomology-cohomology-of-msp2n-an",
-   "number": "5.2",
-   "title": "Lie Algebra Cohomology, Cohomology of M/Sp(2n) and Characteristic",
+   "id": "sec-016-σ-γtdfr",
+   "number": null,
+   "title": "Σ(-\\γtdfr",
    "level": 2,
-   "page_start": 24,
-   "page_end": 25,
-   "n_chars": 2933,
-   "n_words": 578
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 1102,
+   "n_words": 267,
+   "label_start": "255",
+   "label_end": "256"
   },
   {
-   "id": "sec-013-55-fundamental-class-in-lie-algebra-cohomology-c",
-   "number": "5.5",
-   "title": "Fundamental Class in Lie Algebra Cohomology. Consider the double com-",
-   "level": 2,
-   "page_start": 25,
-   "page_end": 26,
-   "n_chars": 499,
-   "n_words": 101
+   "id": "sec-017-appendix-1-operations-on-the-cyclic-complex",
+   "number": "Appendix 1",
+   "title": "Operations on the Cyclic Complex",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 6691,
+   "n_words": 1396,
+   "label_start": "256",
+   "label_end": "259"
   },
   {
-   "id": "sec-014-61-reduction-to-lie-algebra-cohomology-our-aim-i",
-   "number": "6.1",
-   "title": "Reduction to Lie Algebra Cohomology. Our aim is to reduce the computation",
-   "level": 2,
-   "page_start": 26,
-   "page_end": 27,
-   "n_chars": 2524,
-   "n_words": 439
-  },
-  {
-   "id": "sec-015-62-computation-of-d\u03c9-reduction-to-one--dimension",
-   "number": "6.2",
-   "title": "Computation of d\u03a9^ Reduction to One- Dimensional Case. First of all,",
-   "level": 2,
-   "page_start": 27,
-   "page_end": 29,
-   "n_chars": 4366,
-   "n_words": 775
-  },
-  {
-   "id": "sec-016-63-proof-for-n-1-first-compute-\u03b0\u03c9i-restricted-to",
-   "number": "6.3",
-   "title": "Proof for n = 1. First, compute \u03b0\u03a9i restricted to the subalgebra C (x\u03be \u2014 ^) =",
-   "level": 2,
-   "page_start": 29,
-   "page_end": 31,
-   "n_chars": 2864,
-   "n_words": 533
-  },
-  {
-   "id": "sec-017-65-one-dimensional-families-let-ir-g-ir-\u03bb-0-let",
-   "number": "6.5",
-   "title": "One-Dimensional Families. Let IR+ = {/ G IR \u03bb > 0}. Let Af\u03b1(M x IR+) be",
-   "level": 2,
-   "page_start": 31,
+   "id": "sec-018-appendix-2-cyclic-homology-of-deformations",
+   "number": "Appendix 2",
+   "title": "Cyclic Homology of Deformations",
+   "level": 1,
+   "page_start": 37,
    "page_end": 39,
-   "n_chars": 12906,
-   "n_words": 2522
+   "n_chars": 2637,
+   "n_words": 517,
+   "label_start": "259",
+   "label_end": "261"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-019-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 3190,
-   "n_words": 473
+   "n_chars": 3218,
+   "n_words": 473,
+   "label_start": "261",
+   "label_end": "262"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 19,
-  "sections": 20,
-  "chars_total": 72868
+  "toc_entries": 20,
+  "toc_inferred_entries": 25,
+  "toc_inferred_mean_confidence": 0.74,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 21,
+  "chars_total": 75079,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "CC%",
+    "page": 9,
+    "action": "dropped",
+    "why": "a single short word"
+   },
+   {
+    "title": "x[F,a2]...[F,an]e-",
+    "page": 17,
+    "action": "rejoined",
+    "as": "x[F,a2]...[F,an]e-",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "{ct/o...^}",
+    "page": 18,
+    "action": "rejoined",
+    "as": "In the same fashion we get the morphism 2τ ' C*(M, CC*_2(A:)) -^ CC^*( given by {ct/o...^}",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "l(M,~CC2n-\\+ι)\\",
+    "page": 20,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "en",
+    "page": 21,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "exists",
+    "page": 37,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "an",
+    "page": 39,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

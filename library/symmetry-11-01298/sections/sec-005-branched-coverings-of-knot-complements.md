@@ -7,28 +7,29 @@ section_number: null
 pages: 5-5
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
+toc_source: outline
 doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 duplicate_of: "arxiv-1910.09966v1"
 ---
 Now, we will describe the case of a 3-manifold (the knot complement) with boundary a torus T2.
 First, we will change the 2-fold covering of the torus to a 3-fold covering by adding a trivial sheet. For
-that purpose, we consider the 2-fold branched covering T2→ S2 and add a 2-sphere T2#S2→ S2#S2
+that purpose, we consider the 2-fold branched covering T2 →S2 and add a 2-sphere T2#S2 →S2#S2
 which changes nothing (S#S2 is diffeomorphic to S for every surface S). However, at the same time,
 we will obtain a 3-fold covering (see Figure 4).
 Figure 4. 3-fold covering torus.
-For a 3-manifold Σ with boundary T2, one has to consider a branched covering Σ → S3\
+For a 3-manifold Σ with boundary T2, one has to consider a branched covering Σ →S3 \
 D3(3-sphere with one puncture or p punctures for p boundary components). For the construction of
 the covering, one needs another representation of a 3-manifold, the Heegard decomposition. There, one
 considers two handle bodies Hg, H′
-g of genus g, i.e., the sum of g copies of the solid torus D2× S1. The
-gluing Hg∪φ H′
-g of these handle bodies along the boundary using a diffeomorphismφ : ∂Hg→ ∂H′
+g of genus g, i.e., the sum of g copies of the solid torus D2 × S1. The
+gluing Hg ∪φ H′
+g of these handle bodies along the boundary using a diffeomorphism φ : ∂Hg →∂H′
 g(to
 be precise: φ is an element of the mapping class group) produces every compact, closed 3-manifold.
-For the 3-sphere, one obtains a decomposition H1∪ H′
+For the 3-sphere, one obtains a decomposition H1 ∪H′
 1 using two solid tori where the meridian of H1
 is mapped to the longitude of H′
-1 and vice versa. Hg can be obtained by a branched covering Hg→ D3
+1 and vice versa. Hg can be obtained by a branched covering Hg →D3
 with a branching set g + 2 arcs (see Figure 5).
 Figure 5. Covering of the handle body.
 The diffeomorphism φ is represented by a braid connecting the two handle bodies where the

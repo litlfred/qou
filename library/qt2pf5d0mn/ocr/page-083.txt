@@ -1,0 +1,35 @@
+Section 4.4 Invariance under Pachner Moves
+
+hh | I,
+
+k=4 | 02345 01245 01234 | 12345 01345 01235
+k=3)] 0124 0234 0245 | 0135 1235 1345
+k=2| 024 135
+
+Table 4.1: Comparison of T and 7’ for 3-3 move
+
+pachner move. The typical pachner moves for n = 4 are as follows:
+
+(02345)(01245)(01234) £3 — (12345)(01345)(01235)
+
+(02345)(01245)(01234)(12345) © — (01345)(01235)
+
+(02345) (01245) (01234)(12345)(01345) £15 (01235)
+
+4.4 Invariance under Pachner Moves
+
+We prove that the partition function Zp(M;7) defined in Section is invariant
+under pachner moves. Since in Section it has been shown that Zp(M;7) does not
+depend on the ordering of the vertices, we only need to consider typical pachner moves
+of types 3-3, 2-4, and 1-5. Let 7,7’ be two ordered triangulations whose vertices are
+ordered in such a way that they only differ by a typical pachner move. In each of the
+cases, let I, = T* \ (T’)* be the set of k-simplices which belong to T but not 7’, and
+similarly let [, = (T’)* \ T*. Tables and [4.3] list the differences between T and
+T' corresponding to each typical pachner move 3-3, 2-4, and 1-5, respectively. Without
+loss of generality, assume the 4-simplices 02345, 01245, 01234 in JT are positive, while
+12345, 01345, 01235 in T’ are positive. Thus if any of 12345, 01345, 01235 are in 7, they
+must be negative.
+
+By a complete set of representatives we mean a set of objects which contains exactly
+
+74

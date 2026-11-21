@@ -1225,6 +1225,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9",
+          "lean": "f441744aadcc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:13.827Z",
+        "reviewed_sha": "2ddd93430a21609842c768a1e983ab7fda5cf639",
+        "severity": "major",
+        "evidence": "Lean is equality of structures with the same data, not the (1)–(3) characterisation. The formula contradicts condition (1). On ℝ³ with Θ = dz − y dx, ξ = ∂_z and π_V = Θ∧ι_ξ, the 0-form f = z is horizontal. Yet d_q f = q⁻¹dz + (1−q⁻¹)Θ ≠ q⁻¹dz. The formula post-composes π_V, but the proof pre-composes it (d∘π_V); the two differ.",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2386,6 +2404,6 @@
       }
     ]
   },
-  "updated_at": "2026-10-10T12:00:00.000Z",
+  "updated_at": "2026-11-15T21:55:13.827Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -8,16 +8,14 @@ pages: 16-23
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
 toc_source: inferred
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+duplicate_of: "arxiv-2304.12545v1"
 ---
 The paper [1] and its sequel [2] suggested or led to several interesting develop‐
 ments in pure number theory as well as in topology. In this final section we de‐
 scribe of a few of these.
 Values of Dedekind zeta functions and higher Bloch groups
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-16/27
 An important subclass of hyperbolic manifolds 
  are the arithmetic
 ones, where  is either the Bianchi group 
@@ -90,10 +88,6 @@ the modular generalization of the Volume Conjecture discussed below led to the
 definition of certain power series 
  associated to a hyperbolic knot and a
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-17/27
 number 
  that can be computed numerically in any given case. Extensive
 numerical computations for simple knots and simple rational numbers  sugges‐
@@ -149,10 +143,6 @@ one direction of a conjecture by the mathematical physicist Werner Nahm that
 had predicted an extremely surprising connection between the Bloch group and
 the modularity of certain -hypergeometric series. The simplest case of such a
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-18/27
 “Nahm sum” is the infinite series
 where
 is the so-called quantum factorial. This function is known to be modular (in  ,
@@ -191,10 +181,6 @@ the element
 . This is a direct con‐
 sequence of the symmetry of  , because
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-19/27
 (This is the same argument as was used in Section 4 for the corresponding state‐
 ment for the Neumann–Zagier equations, and applies more generally to all half-
 symplectic matrices, as discussed below.) The “only if” direction of Nahm’s con‐
@@ -229,10 +215,6 @@ where
 , respectively, 
 is defined as
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-20/27
 for any completion 
 of 
  to a full symplectic matrix, and  is any choice of
@@ -305,10 +287,6 @@ ing
 –
 –
 –
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-21/27
 This gives us a new abelian group that maps to the extended Bloch group, namely
 the set of all pairs 
  as above modulo these equivalence relations, with addi‐
@@ -349,10 +327,6 @@ In [e33], this modularity conjecture was verified experimentally for a few knots
 many terms and to a high degree of precision, and was also successively refined in
 several different directions, the final statement being the existence of a whole mat‐
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-22/27
 rix 
  of 
 -valued functions on 

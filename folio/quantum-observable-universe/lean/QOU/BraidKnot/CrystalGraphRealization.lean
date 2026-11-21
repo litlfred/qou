@@ -64,7 +64,7 @@ namespace CrystalGraphRealization
 /-- Unconditional structural lemma: applying any raising operator to
     `nodeOf T` returns `none`, i.e. `nodeOf T` is highest-weight.
     Direct consequence of `crystal_realises`. -/
--- Ref: [manuscript] braids-and-knots/crystal-graph-realization
+-- Ref: [leitner2026] braids-and-knots/crystal-graph-realization
 theorem nodeOf_highest_weight
     {R : Type u} [CommRing R] {q : R} [C : CrystalGraphRealization R q]
     (T : C.NormalForm) (i : ℕ) :
@@ -83,7 +83,7 @@ def IsHighestWeight {R : Type u} [CommRing R] {q : R}
 /-- Unconditional packaged form: the crystal node attached to any GS
     normal form is a Kashiwara highest-weight vector.  This is the
     clean, downstream-usable restatement of `crystal_realises`. -/
--- Ref: [manuscript] braids-and-knots/crystal-graph-realization
+-- Ref: [leitner2026] braids-and-knots/crystal-graph-realization
 theorem nodeOf_isHighestWeight
     {R : Type u} [CommRing R] {q : R} [C : CrystalGraphRealization R q]
     (T : C.NormalForm) :
@@ -118,7 +118,7 @@ found by instance synthesis. Same disposition as `triv_hecke` /
 `triv_wedderburn` (PR #5581) and `skeletonRealisation` (PR #5621).
 `QOU/MassEndomorphism/VolumeBridge.lean` is the instance-free design this
 follows. -/
--- Ref: [manuscript] braids-and-knots/crystal-graph-realization
+-- Ref: [leitner2026] braids-and-knots/crystal-graph-realization
 def canonical (R : Type u) [CommRing R] (q : R) :
     CrystalGraphRealization R q where
   NormalForm := PUnit

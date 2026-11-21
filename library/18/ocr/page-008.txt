@@ -1,0 +1,52 @@
+58 DARYL COOPER AND IGOR RIVIN
+
+one hand, the growth rate of a small ball centered at v in M? and, on the
+other hand, the growth rate of the volume of an Euclidean ball of the same
+radius.
+
+Just as in the previous section we use the notation e;; for the edge joining
+adjacent vertices uv; and v; of T, li; for the length of that edge, and a;; for
+the total cone angle at that edge.
+
+We say that a singular Euclidean structure on (M*,T) is conformal, if
+there exists a function r : V(T) — R*, such that (denoting r(v;) by ri),
+ly =r; +1,;. Note that a conformal structure always exists, since we can
+make all simplices regular and of the same size. The term “conformal”
+can be justified — we think of a general conformal structure as obtained by
+rescaling the “metric” of this regular one.
+
+Let C C R'Y 7)! be the set of those r which correspond to all the simplices
+of T being geometric and non-degenerate — it’s clear that C is an open set
+in R'Y()|, As before, we will think of geometric invariants of (M°,T) as
+functions on C.
+
+Let S = vev(7) Spry. It is clear that S = Verer Sr, where S'p is the
+function defined in section 1. It is then immediate that S is weakly concave
+on C, and if in addition we restrict our attention to the slice C1 of C given
+by the condition
+
+(5.1) Yori =1,
+
+then Sr is strictly concave.
+Now, the proof of Theorem 1.4 goes through unchanged to show
+
+G
+
+Theorem 5.1. A conformal structure on (M?,T) cannot be deformed (ex-
+cept by rescaling) while keeping the solid angles at the vertices of T fixed;
+that is, the set of conformal structures with prescribed solid angles is a
+discrete subset of Cy.
+
+Note. The proof actually shows something a bit stronger than Theorem 5.1
+
+— we need only keep the differences between the solid angles fixed.
+
+Remark 5.2. By the results in section 3 everything in this section, with the
+exception of the preceding Note, translates essentially verbatim to the case
+of hyperbolic conformal structures on M? (those where the simplices of T
+are hyperbolic confromal simplices).
+
+6. Applications to ball packing
+
+Consider the special case of the situation in the previous section where
+the metric on (M,T) is in fact non-singular Euclidean or hyperbolic in the

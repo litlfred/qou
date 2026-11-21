@@ -18,4 +18,7 @@ export default conjecture({
     "observation-frame",
     "pipeline",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): and `rem:baryon-period-ratio`).**" },
+  ],
 });

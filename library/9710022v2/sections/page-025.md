@@ -1,0 +1,52 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-025
+section_title: "Page 25"
+pages: 25-25
+pdf_page: 25
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+Proof: Let h be the linear form defined by (98). We have:
+
+. I _ N B
+km & EX Et, BF & RYRPS*(kL) @ Et,
+
+A ) I MAN mM
+
+B
+=> (-1)774[dal6r01 @ Eb
+A
+
+d 3B bdv
+
+_ A -oayo-op, [dalldc], _
+
+= oy (1) droldc}i @ Et
+
+By Cy I Cc
+= S> Ebdro[dc]l @ 1, = ACK @EX)1
+
+o
+
+Using this integral we can define on Fun.-(SL,(2,C)r) an hermitian form defined by (a, b) =
+h(a*b), Va, b € Funce(SLq(2, C)g). As a result Funee(SLq(2, C)g) is equiped with a norm || ||72
+defined by |la||;2 = (a, a) ?. We will denote by L?(SL,(2,C)m) the completion of Funce($Lq(2,C)r)
+with respect to this norm.
+
+One puzzling aspect of the construction of Fun.(SLq(2,C)p) is that we know from general
+arguments that this multiplier Hopf algebra should correspond to the quantum analog of the
+compact supported functions on SL(2,C)g, but the precise limit q > 1 is not so easy to under-
+
+I
+stand. Although we precisely know what are the classical limit of the elements k, it is not at all
+
+I
+obvious what is the limit, if any, of the elements FE. In particular we would like to understand
+in which sense the formula of h gives, in the classical limit, the well known left and right invari-
+ant Haar measure of SL(2,C)g. In the rest of this part we will explain how to understand the
+classical limit of the expressions (97).

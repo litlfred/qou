@@ -1,0 +1,51 @@
+12 R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392
+
+3. Proof of Theorem 2
+3.1. Estimating the variance in terms of the transportation distance between tilts
+
+Fix a test function y : C, + R. Define M, = f yd. Observe that by part 2 of
+Proposition 10, M; is a martingale. We first claim that
+
+Var,[y] = E[M], + EVar,,[y], (16)
+
+where [M], denotes the quadratic variation of M;.
+
+Indeed, by part 3 of Proposition 10, we have that Mo. := limi. M; exists almost
+surely and has the law y,v. Consequently, Var, [y|F:] = Var[M..|F;] almost surely, for
+all t. By Itd’s isometry, we have
+
+Vary [y] = E[M]; + EVar[Moo|Fi] = E[M]: + EVary, [y].
+
+We will carry on by bounding each of the terms on the right hand side separately, for a
+suitable chosen value of t. We begin with the first term, for which we calculate
+
+dM, a f oats [eens [eto a;,dB;)v;,(c2).
+Therefore, we can estimate
+2
+d{M]. = / vle)(a —a,)dyy| dt
+
+2
+
+< sup [ere —a,,0)d%| dt
+|0|=1,ZELip(C, ey
+
+2
+= sup / P(x) — [ee (x — az, O)d%| dt
+|0|=1,GELip(C,.)
+Cn Cn
+2
+1
+= sup / P(x) — [om limsup,_,94.— (exp ((# — a,,€0)) — 1) dy] dt
+[0|=1,9€Lip(Cn) .
+Cn Cr
+2
+. 1 x
+= sup limsup,_,94 = Pla [eu exp ((a,€0)) di} dt
+|0|=1,8€Lip(Cn) 7
+
+Cn
+2
+
+= sup limsup._,94— oun ( P(x) - | ea 1% | dteg%\ dt
+|0|=1,GELip(C,.)
+

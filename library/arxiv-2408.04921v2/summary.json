@@ -2,42 +2,58 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2408.04921v2",
  "source_sha256": "dcfe112640a8adda",
- "brief": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING — 5 sections: Introduction; Irreducible characters of Ck ≀ Sn; X ij",
- "extended": "**IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING**\n\n*HUIMIN GAO AND NAIHUAN JING*\n\n24 pp, 5 sections.\n\n**Outline.** 1 Introduction; 2 Irreducible characters of Ck ≀ Sn; 1 X ij; 3 Two Iterative Formulas; 4 Further examples",
+ "brief": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP — The paper studies how to compute irreducible characters of the generalized symmetric group Ck ≀Sn by iterative algorithms.",
+ "extended": "**IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP**\n\n*HUIMIN GAO AND NAIHUAN JING*\n\n24 pp, 8 sections.\n\n**Abstract.** The paper studies how to compute irreducible characters of the generalized symmetric group Ck ≀Sn by iterative algorithms. Af- ter reproving the Ariki-Koike version of the Murnaghan-Nakayama rule by vertex algebraic methods, we formulate a new iterative formula for characters of the generalized symmetric group. As applications, we ﬁnd a numerical relation between the character values of Ck≀Sn and modular characters of Skn.\n\n**Outline.** Front matter; 1 Introduction; 2 Irreducible characters of CkSn; 3 Two Iterative Formulas; 4 Further examples; References; Appendix A. The source code for Theorem 3.5; Appendix B. Theorem 3.9",
  "tokens": {
-  "brief": 38,
-  "extended": 65
+  "brief": 45,
+  "extended": 189
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-4"
   },
   {
-   "id": "sec-001-irreducible-characters-of-ck-sn",
-   "title": "Irreducible characters of Ck ≀ Sn",
-   "pages": "4-6"
+   "id": "sec-001-2-irreducible-characters-of-cksn",
+   "title": "Irreducible characters of CkSn",
+   "pages": "4-7"
   },
   {
-   "id": "sec-002-x-ij",
-   "title": "X ij",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-003-two-iterative-formulas",
+   "id": "sec-002-3-two-iterative-formulas",
    "title": "Two Iterative Formulas",
    "pages": "7-13"
   },
   {
-   "id": "sec-004-further-examples",
+   "id": "sec-003-4-further-examples",
    "title": "Further examples",
-   "pages": "13-24"
+   "pages": "13-20"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-005-appendix-a-the-source-code-for-theorem-35",
+   "title": "Appendix A. The source code for Theorem 3.5",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-006-appendix-b-theorem-39",
+   "title": "Appendix B. Theorem 3.9",
+   "pages": "22-24"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
+   "abstract",
    "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."

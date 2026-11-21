@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1304.0323v3/blocks/lem-sec-025-03",
@@ -16,6 +16,16 @@
   "pageEnd": 75,
   "text": "lem-sec-025-03.md",
   "derivedFrom": "library/arxiv-1304.0323v3/sections/sec-025",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.0323v3",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.0323v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "A",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-025-a6-localization-of-tensor-categories.md (p. 72-75)",
+    "claim_id": "arxiv-1304.0323v3#lemma:A",
+    "lean_status": "unformalized"
+  }
 }

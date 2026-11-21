@@ -1,0 +1,1 @@
+If BR G has the resolution property then the functors ModG A −→QAddG A, QRingsG A −→QPMonG A, QAlgG A −→QMonG A which maps M to the functor (−⊗R M)G : LocG R −→Mod A are well deﬁned, fully faithful and have essential image the subcategory of functors which are left exact on short exact sequences in LocG R. In particular they are equivalences if G is a linearly reductive group.

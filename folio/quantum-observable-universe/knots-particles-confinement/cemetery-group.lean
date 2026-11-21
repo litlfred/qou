@@ -42,14 +42,22 @@ structure CemeteryGroup (R : Type u) [CommRing R] where
   /-- Predicate: a state index `i` lies in the cemetery group iff its
       KLR lift has vanishing graded Euler characteristic. -/
   inCemetery : ℕ → Prop
+  /-- The trivial state (zero index) is by convention not in the cemetery
+      group: it is the unit of the algebra. Carried as a field since
+      2026-11-15; it was previously an axiom quantified over every
+      `CemeteryGroup`, which made it false (see below). -/
+  -- Ref: [leitner2026] Ch. particle-interactions, def:cemetery-group (unit/zero-index state excluded from cemetery group)
+  zero_not_in_cemetery : ¬ inCemetery 0
 
 namespace CemeteryGroup
 
-/-- The trivial state (zero index) is by convention not in the cemetery
-    group: it is the unit of the algebra. -/
--- Ref: [manuscript] Ch. particle-interactions, def:cemetery-group (unit/zero-index state excluded from cemetery group)
-axiom zero_not_in_cemetery {R : Type u} [CommRing R] (Z : CemeteryGroup R) :
-    ¬ Z.inCemetery 0
+/-- **The former axiom `zero_not_in_cemetery` was false** (removed
+    2026-11-15). Stated over every `CemeteryGroup`, it ignored that
+    `inCemetery` was a free field: the structure with `inCemetery := fun _ =>
+    True` refutes it. The convention is now the field of the same name. -/
+theorem not_forall_zero_not_in_cemetery_unconstrained :
+    ¬ ∀ (P : ℕ → Prop), ¬ P 0 :=
+  fun h => h (fun _ => True) trivial
 
 end CemeteryGroup
 

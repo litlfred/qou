@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2306.13098v2
-doc_title: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions"
+doc_title: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions"
 section_id: sec-001-normed-division-algebras
 section_title: "Normed division algebras"
 section_number: null
 pages: 3-5
 source_pdf: 2306.13098v2.pdf
 source_sha256: edeb214d587bfca4
-doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.965
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 0.891
+doc_brief: "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the"
 ---
 []{#sec:normeddivisionalgebras label="sec:normeddivisionalgebras"}
 

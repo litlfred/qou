@@ -3,231 +3,151 @@
  "doc_id": "arxiv-1108.4389v1",
  "source_sha256": "d3ac77510654d828",
  "brief": "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories.",
- "extended": "**Gauge Theories Labelled by Three-Manifolds**\n\n*Tudor Dimofte1 and Davide Gaiotto 1 and Sergei Gukov 2,3*\n\n58 pp, 44 sections.\n\n**Abstract.** We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories. Under this duality, standard operations on triangulated 3-manifolds and various invariants thereof (classical as well as quantum) ﬁnd a natural interpretation in ﬁeld theory. For example, independence of the SL(2) Chern-Simons partition function on the choice of triangulation translates to a statement that S3 b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 ﬁeld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions and duality walls in four-dimensional N = 2 SCFTs, thus making the whole construction functorial with respect to cobordisms and gluing. CALT-68-2847 arXiv:1108.4389v1 [hep-th] 22 Aug 2011\n\n**Outline.** 1 Institute for Advanced Study, Einstein Dr., ; 2 California Institute of Technology, Pasadena; 3 Max-Planck-Institut f¨ ur Mathematik, Vivats; 1 Introduction; 2 Geometry of 3-manifolds; 2.1 Building blocks; 2.2 Gluing; 2.3 Geodesic boundaries; 11 Its boundary is a 5-punctures sphere C. Her; 2.4 Torus cusps; 2.5 Changing the triangulation; 3 Operations on 3d abelian theories; 3.1 An Sp(2N, Z) action on 3d CFTs with U(1)N ; 3.1.1 Generalities; 0 U−1t; 3.1.2 Adding supersymmetry; 3.2 A Z2 action on 3d N = 2 theories with a ch; 3.3 Useful N = 2 mirror symmetries",
+ "extended": "**Gauge Theories Labelled by Three-Manifolds**\n\n*Tudor Dimofte1 and Davide Gaiotto1 and Sergei Gukov2,3*\n\n58 pp, 28 sections.\n\n**Abstract.** We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories. Under this duality, standard operations on triangulated 3-manifolds and various invariants thereof (classical as well as quantum) ﬁnd a natural interpretation in ﬁeld theory. For example, independence of the SL(2) Chern-Simons partition function on the choice of triangulation translates to a statement that S3 b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 ﬁeld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions and duality walls in four-dimensional N = 2 SCFTs, thus making the whole construction functorial with respect to cobordisms and gluing. CALT-68-2847 arXiv:1108.4389v1 [hep-th] 22 Aug 2011\n\n**Outline.** Front matter; 1 Introduction; 2 Geometry of 3-manifolds; 2.1 Building blocks; 2.2 Gluing; 2.3 Geodesic boundaries; 2.4 Torus cusps; 2.5 Changing the triangulation; 3 Operations on 3d abelian theories; 3.1 An $Sp(2N,{\\mathbb Z})$ action on 3d CFTs ; 3.1.1 Generalities; 3.1.2 Adding supersymmetry; 3.2 A ${\\mathbb Z}_2$ action on 3d $\\mathcal{N; 3.3 Useful $\\mathcal{N}=2$ mirror symmetries; 4 Construction of $T_M$; 4.1 Definition; 4.2 The bipyramid and the 2--3 move; 4.3 The flip",
  "tokens": {
   "brief": 42,
-  "extended": 386
+  "extended": 364
  },
  "sections": [
   {
-   "id": "sec-000-1-institute-for-advanced-study-einstein-dr-princ",
-   "title": "Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA",
-   "pages": "1-1"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
   },
   {
-   "id": "sec-001-2-california-institute-of-technology-pasadena-ca",
-   "title": "California Institute of Technology, Pasadena, CA 91125, USA",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-3-max-planck-institut-f-ur-mathematik-vivatsgass",
-   "title": "Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany",
-   "pages": "1-2"
-  },
-  {
-   "id": "sec-003-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "2-8"
+   "pages": "3-8"
   },
   {
-   "id": "sec-004-2-geometry-of-3-manifolds",
+   "id": "sec-001-2-geometry-of-3-manifolds",
    "title": "Geometry of 3-manifolds",
-   "pages": "8-8"
+   "pages": "8-9"
   },
   {
-   "id": "sec-005-21-building-blocks",
+   "id": "sec-002-21-building-blocks",
    "title": "Building blocks",
-   "pages": "8-11"
+   "pages": "9-11"
   },
   {
-   "id": "sec-006-22-gluing",
+   "id": "sec-003-22-gluing",
    "title": "Gluing",
    "pages": "11-13"
   },
   {
-   "id": "sec-007-23-geodesic-boundaries",
+   "id": "sec-004-23-geodesic-boundaries",
    "title": "Geodesic boundaries",
-   "pages": "13-15"
+   "pages": "13-17"
   },
   {
-   "id": "sec-008-11-its-boundary-is-a-5-punctures-sphere-c-here-w",
-   "title": "Its boundary is a 5-punctures sphere C. Here, we form the bipyramid from three ideal",
-   "pages": "15-17"
-  },
-  {
-   "id": "sec-009-24-torus-cusps",
+   "id": "sec-005-24-torus-cusps",
    "title": "Torus cusps",
    "pages": "17-19"
   },
   {
-   "id": "sec-010-25-changing-the-triangulation",
+   "id": "sec-006-25-changing-the-triangulation",
    "title": "Changing the triangulation",
    "pages": "19-20"
   },
   {
-   "id": "sec-011-3-operations-on-3d-abelian-theories",
+   "id": "sec-007-3-operations-on-3d-abelian-theories",
    "title": "Operations on 3d abelian theories",
    "pages": "20-21"
   },
   {
-   "id": "sec-012-31-an-sp2n-z-action-on-3d-cfts-with-u1n-ﬂavor-sy",
-   "title": "An Sp(2N, Z) action on 3d CFTs with U(1)N ﬂavor symmetry",
+   "id": "sec-008-31-an-sp2nmathbb-z-action-on-3d-cfts-with-u1n-fl",
+   "title": "An $Sp(2N,{\\mathbb Z})$ action on 3d CFTs with $U(1)^N$ flavor symmetry",
    "pages": "21-21"
   },
   {
-   "id": "sec-013-311-generalities",
+   "id": "sec-009-311-generalities",
    "title": "Generalities",
    "pages": "21-23"
   },
   {
-   "id": "sec-014-0-u1t",
-   "title": "U−1t",
-   "pages": "23-23"
-  },
-  {
-   "id": "sec-015-312-adding-supersymmetry",
+   "id": "sec-010-312-adding-supersymmetry",
    "title": "Adding supersymmetry",
    "pages": "23-24"
   },
   {
-   "id": "sec-016-32-a-z2-action-on-3d-n-2-theories-with-a-chiral",
-   "title": "A Z2 action on 3d N = 2 theories with a chiral operator",
+   "id": "sec-011-32-a-mathbb-z-2-action-on-3d-mathcaln2-theories",
+   "title": "A ${\\mathbb Z}_2$ action on 3d $\\mathcal{N}=2$ theories with a chiral operator",
    "pages": "24-25"
   },
   {
-   "id": "sec-017-33-useful-n-2-mirror-symmetries",
-   "title": "Useful N = 2 mirror symmetries",
-   "pages": "25-27"
+   "id": "sec-012-33-useful-mathcaln2-mirror-symmetries",
+   "title": "Useful $\\mathcal{N}=2$ mirror symmetries",
+   "pages": "25-30"
   },
   {
-   "id": "sec-018-2-we-want-to-show-that-stt-1",
-   "title": "We want to show that ST◦T 1",
-   "pages": "27-29"
-  },
-  {
-   "id": "sec-019-2-chern-simons-interaction",
-   "title": "Chern-Simons interaction",
-   "pages": "29-29"
-  },
-  {
-   "id": "sec-020-2-the-chain-of-equivalences-326",
-   "title": "The chain of equivalences ( 3.26)",
-   "pages": "29-30"
-  },
-  {
-   "id": "sec-021-4-construction-of-tm",
-   "title": "Construction of TM",
+   "id": "sec-013-4-construction-of-t-m",
+   "title": "Construction of $T_M$",
    "pages": "30-30"
   },
   {
-   "id": "sec-022-41-deﬁnition",
-   "title": "Deﬁnition",
-   "pages": "30-30"
+   "id": "sec-014-41-definition",
+   "title": "Definition",
+   "pages": "30-33"
   },
   {
-   "id": "sec-023-2-chern-simons-term-turned-on-we-will-say-from-n",
-   "title": "Chern-Simons term turned on. We will say from now on",
-   "pages": "30-31"
-  },
-  {
-   "id": "sec-024-2-this-deﬁnition",
-   "title": "This deﬁnition",
-   "pages": "31-33"
-  },
-  {
-   "id": "sec-025-42-the-bipyramid-and-the-23-move",
-   "title": "The bipyramid and the 2–3 move",
+   "id": "sec-015-42-the-bipyramid-and-the-2--3-move",
+   "title": "The bipyramid and the 2--3 move",
    "pages": "33-36"
   },
   {
-   "id": "sec-026-43-the-ﬂip",
-   "title": "The ﬂip",
+   "id": "sec-016-43-the-flip",
+   "title": "The flip",
    "pages": "36-37"
   },
   {
-   "id": "sec-027-44-tm-as-a-boundary-condition",
-   "title": "TM as a boundary condition",
+   "id": "sec-017-44-t-m-as-a-boundary-condition",
+   "title": "$T_M$ as a boundary condition",
    "pages": "37-37"
   },
   {
-   "id": "sec-028-45-the-octahedron",
+   "id": "sec-018-45-the-octahedron",
    "title": "The octahedron",
    "pages": "37-39"
   },
   {
-   "id": "sec-029-46-figure-eight-knot",
+   "id": "sec-019-46-figure-eight-knot",
    "title": "Figure-eight knot",
-   "pages": "39-41"
+   "pages": "39-42"
   },
   {
-   "id": "sec-030-5-moduli-space-on-r2-s1",
-   "title": "Moduli space on R2× S1",
-   "pages": "41-42"
-  },
-  {
-   "id": "sec-031-51-the-tetrahedron",
+   "id": "sec-020-51-the-tetrahedron",
    "title": "The tetrahedron",
-   "pages": "42-42"
-  },
-  {
-   "id": "sec-032-2-on-a-circle-of-ﬁnite-radius-β-this-theory-has",
-   "title": "On a circle of ﬁnite radius β, this theory has the eﬀective twisted superpotential",
    "pages": "42-44"
   },
   {
-   "id": "sec-033-52-the-bipyramid",
+   "id": "sec-021-52-the-bipyramid",
    "title": "The bipyramid",
-   "pages": "44-46"
+   "pages": "44-45"
   },
   {
-   "id": "sec-034-2-ro-with",
-   "title": "RO, with",
-   "pages": "46-47"
+   "id": "sec-022-6-s3-b-partition-functions",
+   "title": "$S^3_b$ partition functions",
+   "pages": "45-47"
   },
   {
-   "id": "sec-035-61-chirals-and-tetrahedra",
+   "id": "sec-023-61-chirals-and-tetrahedra",
    "title": "Chirals and tetrahedra",
-   "pages": "47-47"
-  },
-  {
-   "id": "sec-036-2-rz-and-ﬁnd-a-partition-function-18-5",
-   "title": "RZ, and ﬁnd a partition function 18 [5]",
-   "pages": "47-47"
-  },
-  {
-   "id": "sec-037-2-chern-simons",
-   "title": "Chern-Simons",
    "pages": "47-48"
   },
   {
-   "id": "sec-038-62-gluing-and-bipyramids",
+   "id": "sec-024-62-gluing-and-bipyramids",
    "title": "Gluing and bipyramids",
    "pages": "48-50"
   },
   {
-   "id": "sec-039-63-figure-eight-knot",
+   "id": "sec-025-63-figure-eight-knot",
    "title": "Figure-eight knot",
-   "pages": "50-51"
+   "pages": "50-52"
   },
   {
-   "id": "sec-040-64-relation-to-moduli-spaces-on-r2s1",
-   "title": "Relation to moduli spaces on R2×S1",
-   "pages": "51-52"
-  },
-  {
-   "id": "sec-041-7-line-operators-and-qdiﬀerence-equations",
-   "title": "Line operators and q–diﬀerence equations",
-   "pages": "52-55"
-  },
-  {
-   "id": "sec-042-acknowledgments",
-   "title": "Acknowledgments",
-   "pages": "55-55"
-  },
-  {
-   "id": "sec-043-references",
-   "title": "References",
-   "pages": "55-58"
+   "id": "sec-026-7-line-operators-and-q--difference-equations",
+   "title": "Line operators and $q$--difference equations",
+   "pages": "52-58"
   }
  ],
  "provenance": {

@@ -11,7 +11,7 @@ A stable nucleus N(p,n) = p𝔭 ⋈ n𝔫 where (p,n) satisfies
 LaTeX label: `def:stable-nucleus`
 
 ## References
-- [manuscript] §3/stable-nucleus
+- [leitner2026] §3/stable-nucleus
 
 **Ground ring**: `ℝ` (archimedean realisation). The beta-stability
 condition is genuinely archimedean — it uses the strict order
@@ -25,7 +25,7 @@ evaluation `q ↦ q₀`.
 namespace QOU.Torsion
 
 /-- A stable nucleus: multi-nucleon Hopf link on the beta-stability line. -/
--- Ref: [manuscript] §3/stable-nucleus
+-- Ref: [leitner2026] §3/stable-nucleus
 structure StableNucleus where
   /-- Number of protons. -/
   p : ℕ

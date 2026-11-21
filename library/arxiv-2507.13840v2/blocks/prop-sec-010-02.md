@@ -1,0 +1,1 @@
+(Pseudoentanglement of mixed states). Pseudoentangled state ensembles with entropy S2 = O(log n) can have a pseudoentan- glement gap of at most f(n) = Θ(n) vs g(n) = ω(log n), where entanglement is measured by both PT negativity E(ρ) and fidelity of separability DF(ρ).

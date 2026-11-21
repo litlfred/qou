@@ -5,7 +5,7 @@ internal A=2 (deuteron) braid in the Iwahori–Hecke algebra H_6(q).
 
 **Trace conventions (per docs/audits/2026-05-17-dual-tr-m-discrepancy.md):**
 This script's HISTORICAL output (the rational function in q reported
-since 2026-05-05) is the **q-Plancherel trace** (regular Hopf integral),
+since 2026-05-05) is the **q-Plancherel measure trace** (weights dim_q²/[n]_q!),
 NOT the canonical Markov trace. As of 2026-05-17 the script computes
 BOTH:
 
@@ -111,8 +111,16 @@ def main() -> int:
     # If absent, fall back to direct computation with conjugate-pairing.
     chi_cache_path = _pb.witness_path("chi-deuteron-h6.witness.json", HERE)
     cached_chi: dict[tuple, sp.Expr] = {}
+    from canonical_braid_crossings import word_fingerprint  # noqa: E402
     if chi_cache_path.exists():
         cache_doc = json.loads(chi_cache_path.read_text())
+        # Serve the cache only if it was built from THIS ordered word. A
+        # multiset match is not enough (bean qou-4383): chi-deuteron-h6 kept
+        # the superseded intra ordering's characters with a matching multiset.
+        if cache_doc.get("word_fingerprint") != word_fingerprint(deut):
+            print("  chi-deuteron-h6 cache was built from a different word "
+                  "(word_fingerprint mismatch or untagged) — recomputing")
+            cache_doc = {}
         for entry in cache_doc.get("chi_lambda_symbolic", []):
             shape_tup = tuple(entry["partition"])
             cached_chi[shape_tup] = sp.sympify(entry["chi_q_symbolic"], locals={"q": Q})
@@ -133,15 +141,15 @@ def main() -> int:
             chi = chi_lambda_symbolic(shape, deut)
             source = "computed"
         dt = time.time() - t0
-        chi_q0 = float(sp.N(chi.subs(Q, Q0_CANONICAL), 30))
+        chi_q0 = sp.N(chi.subs(Q, Q0_CANONICAL), 30)
         chi_per_lam[shape] = {
             "f_lambda": f,
-            "chi_at_q0": chi_q0,
+            "chi_at_q0": str(chi_q0),
             "compute_seconds": round(dt, 3),
             "derived_from_conjugate": False,
             "source": source,
         }
-        print(f"  {str(shape):<22} f={f:>2}  {dt:6.3f}s  χ(q0)={chi_q0:+.4f}  ({source})")
+        print(f"  {str(shape):<22} f={f:>2}  {dt:6.3f}s  χ(q0)={float(chi_q0):+.4f}  ({source})")
         processed.add(shape)
 
         conj = conjugate_partition(shape)
@@ -154,17 +162,17 @@ def main() -> int:
                 chi_conj_expr = sp.cancel(chi.subs(Q, 1 / Q))
                 source_c = "derived q→q⁻¹"
             dt_conj = time.time() - t1
-            chi_conj_q0 = float(sp.N(chi_conj_expr.subs(Q, Q0_CANONICAL), 30))
+            chi_conj_q0 = sp.N(chi_conj_expr.subs(Q, Q0_CANONICAL), 30)
             f_conj = next(ff for ff, sh in parts if sh == conj)
             chi_per_lam[conj] = {
                 "f_lambda": f_conj,
-                "chi_at_q0": chi_conj_q0,
+                "chi_at_q0": str(chi_conj_q0),
                 "compute_seconds": round(dt_conj, 3),
                 "derived_from_conjugate": (source_c == "derived q→q⁻¹"),
                 "conjugate_source": str(shape),
                 "source": source_c,
             }
-            print(f"  {str(conj):<22} f={f_conj:>2}  {dt_conj:6.3f}s  χ(q0)={chi_conj_q0:+.4f}  ({source_c})")
+            print(f"  {str(conj):<22} f={f_conj:>2}  {dt_conj:6.3f}s  χ(q0)={float(chi_conj_q0):+.4f}  ({source_c})")
             processed.add(conj)
 
     print()
@@ -181,7 +189,7 @@ def main() -> int:
     # value at q_0 and (optionally) the rational form for documentation.
     free = list(trM.free_symbols)
     q_used = free[0] if len(free) == 1 else Q
-    val_q0 = float(sp.N(trM.subs(q_used, Q0_CANONICAL), 30))
+    val_q0 = sp.N(trM.subs(q_used, Q0_CANONICAL), 30)
     # Substitute r = q^(1/2) to recover a polynomial-in-r form for the
     # downstream pole-order analysis. r=q^(1/2) gives q=r².
     # Use the hoefsmit Q symbol for pole_order_at_zero (it Poly's on Q internally);
@@ -214,7 +222,7 @@ def main() -> int:
         "r_coord_note": "r = q^(1/2), the Wenzl Markov-parameter convention",
         "pole_order_at_q0_in_r": (int(pole) if pole is not None else None),
         "leading_coefficient_in_r": str(leading) if leading is not None else None,
-        "value_at_q0": val_q0,
+        "value_at_q0": str(val_q0),
         "per_partition": {str(k): v for k, v in chi_per_lam.items()},
         "total_compute_seconds": round(dt_total, 2),
         "generated_at": datetime.now(timezone.utc).isoformat(),

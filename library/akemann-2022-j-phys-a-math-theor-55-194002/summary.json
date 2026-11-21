@@ -2,120 +2,110 @@
  "_schema": "library-summary/v1",
  "doc_id": "akemann-2022-j-phys-a-math-theor-55-194002",
  "source_sha256": "3753499c4b23f189",
- "brief": "Mathematical and Theoretical PAPER • OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022",
- "extended": "**Mathematical and Theoretical PAPER • OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002**\n\n35 pp, 22 sections.\n\n**Outline.** 1 Faculty of Physics, Bielefeld University, Po; 2 School of Mathematics and Statistics, Univer; Abstract; 1 Introduction; 2 Transition from Bessel- and Airy- to the sin; 4 (2ν + 1); 3 (ζ −η); 3 (ζη)−1; 3 Gap probabilities and level spacing distribu; 4 Analysis at finite matrix dimension; 4.1 Orthogonal polynomials and partition funct; 4.2 Partition function of shifted masses; 4.3 Hard edge kth spacing distribution at fini; 5 Asymptotic analysis at the hard edge; 5.1 The large-n limit at fixed k, Nf and ν; 5.2 Comparison to the bulk spacing distributio; 4 Left: comparison between hard edge level spa; 5.3 Asymptotics to the Airy statistics (ν ≫1)",
+ "brief": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk — 20 sections: Front matter; Consecutive level spacings in the ; Introduction",
+ "extended": "**Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk**\n\n35 pp, 20 sections.\n\n**Outline.** Front matter; Consecutive level spacings in the chiral Gauss; 1 Introduction; 2 Transition from Bessel- and Airy- to the sin; 3 Gap probabilities and level spacing distribu; 4 Analysis at finite matrix dimension; 4.1 Orthogonal polynomials and partition funct; 4.2 Partition function of shifted masses; 4.3 Hard edge kth spacing distribution at fini; 5 Asymptotic analysis at the hard edge; 5.1 The large- limit at fixed and; 5.2 Comparison to the bulk spacing distributio; 5.3 Asymptotics to the Airy statistics; 6 Comparison to data from lattice QCD; 7 Conclusion; Acknowledgments; Data availability statement; Appendix A. The spacing distribution in the bu",
  "tokens": {
-  "brief": 49,
-  "extended": 231
+  "brief": 46,
+  "extended": 201
  },
  "sections": [
   {
-   "id": "sec-000-1-faculty-of-physics-bielefeld-university-postfa",
-   "title": "Faculty of Physics, Bielefeld University, Postfach 100131, D-33501 Bielefeld,",
-   "pages": "2-2"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-2-school-of-mathematics-and-statistics-universit",
-   "title": "School of Mathematics and Statistics, University of Melbourne, 813 Swanston",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-002-abstract",
-   "title": "Abstract",
+   "id": "sec-000-consecutive-level-spacings-in-the-chiral-gaussia",
+   "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
    "pages": "2-3"
   },
   {
-   "id": "sec-003-1-introduction",
+   "id": "sec-001-1-introduction",
    "title": "Introduction",
    "pages": "3-5"
   },
   {
-   "id": "sec-004-2-transition-from-bessel--and-airy--to-the-sine",
+   "id": "sec-002-2-transition-from-bessel--and-airy--to-the-sine",
    "title": "Transition from Bessel- and Airy- to the sine-kernel",
-   "pages": "5-6"
+   "pages": "5-11"
   },
   {
-   "id": "sec-005-4-2ν-1",
-   "title": "(2ν + 1)",
-   "pages": "6-8"
-  },
-  {
-   "id": "sec-006-3-ζ-η",
-   "title": "(ζ −η)",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-007-3-ζη1",
-   "title": "(ζη)−1",
-   "pages": "9-11"
-  },
-  {
-   "id": "sec-008-3-gap-probabilities-and-level-spacing-distributi",
+   "id": "sec-003-3-gap-probabilities-and-level-spacing-distributi",
    "title": "Gap probabilities and level spacing distributions",
    "pages": "11-14"
   },
   {
-   "id": "sec-009-4-analysis-at-finite-matrix-dimension",
+   "id": "sec-004-4-analysis-at-finite-matrix-dimension",
    "title": "Analysis at finite matrix dimension",
    "pages": "14-14"
   },
   {
-   "id": "sec-010-41-orthogonal-polynomials-and-partition-function",
+   "id": "sec-005-41-orthogonal-polynomials-and-partition-function",
    "title": "Orthogonal polynomials and partition function",
    "pages": "14-16"
   },
   {
-   "id": "sec-011-42-partition-function-of-shifted-masses",
+   "id": "sec-006-42-partition-function-of-shifted-masses",
    "title": "Partition function of shifted masses",
    "pages": "16-20"
   },
   {
-   "id": "sec-012-43-hard-edge-kth-spacing-distribution-at-finite",
-   "title": "Hard edge kth spacing distribution at finite-n",
+   "id": "sec-007-43-hard-edge-kth-spacing-distribution-at-finite",
+   "title": "Hard edge kth spacing distribution at finite-",
    "pages": "20-21"
   },
   {
-   "id": "sec-013-5-asymptotic-analysis-at-the-hard-edge",
+   "id": "sec-008-5-asymptotic-analysis-at-the-hard-edge",
    "title": "Asymptotic analysis at the hard edge",
    "pages": "21-21"
   },
   {
-   "id": "sec-014-51-the-large-n-limit-at-fixed-k-nf-and-ν",
-   "title": "The large-n limit at fixed k, Nf and ν",
+   "id": "sec-009-51-the-large--limit-at-fixed-and",
+   "title": "The large- limit at fixed and",
    "pages": "21-24"
   },
   {
-   "id": "sec-015-52-comparison-to-the-bulk-spacing-distribution",
+   "id": "sec-010-52-comparison-to-the-bulk-spacing-distribution",
    "title": "Comparison to the bulk spacing distribution",
    "pages": "24-27"
   },
   {
-   "id": "sec-016-4-left-comparison-between-hard-edge-level-spacin",
-   "title": "Left: comparison between hard edge level spacings for increasing",
-   "pages": "27-27"
-  },
-  {
-   "id": "sec-017-53-asymptotics-to-the-airy-statistics-ν-1",
-   "title": "Asymptotics to the Airy statistics (ν ≫1)",
+   "id": "sec-011-53-asymptotics-to-the-airy-statistics",
+   "title": "Asymptotics to the Airy statistics",
    "pages": "27-30"
   },
   {
-   "id": "sec-018-6-comparison-to-data-from-lattice-qcd",
+   "id": "sec-012-6-comparison-to-data-from-lattice-qcd",
    "title": "Comparison to data from lattice QCD",
    "pages": "30-32"
   },
   {
-   "id": "sec-019-7-conclusion",
+   "id": "sec-013-7-conclusion",
    "title": "Conclusion",
    "pages": "32-33"
   },
   {
-   "id": "sec-020-acknowledgments",
+   "id": "sec-014-acknowledgments",
    "title": "Acknowledgments",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-015-data-availability-statement",
+   "title": "Data availability statement",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-016-appendix-a-the-spacing-distribution-in-the-bulk",
+   "title": "Appendix A. The spacing distribution in the bulk",
    "pages": "33-34"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-017-orcid-ids",
+   "title": "ORCID iDs",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-018-references",
    "title": "References",
    "pages": "34-35"
   }

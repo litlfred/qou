@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hyperbolicandneumann",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hyperbolicandneumann/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "hyperbolicandneumann",
   "contains": [
+    "library/hyperbolicandneumann/sections/sec-front-matter",
     "library/hyperbolicandneumann/sections/sec-000",
     "library/hyperbolicandneumann/sections/sec-001",
     "library/hyperbolicandneumann/sections/sec-002",
@@ -20,7 +21,7 @@
     "library/hyperbolicandneumann/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "hyperbolicandneumann",
     "title_source": "slug",

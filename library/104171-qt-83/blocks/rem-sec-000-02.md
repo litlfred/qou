@@ -1,0 +1,1 @@
+The author has written the ﬁrst version of this paper in August 2011. In February 2012, [2] was uploaded in the arXiv, in which Dimofte and Garoufalidis deﬁne a formal power series from an ideal tetrahedral decomposition of a knot complement, which is expected to be equal to the asymptotic expansion of the Kashaev invariant of the knot.

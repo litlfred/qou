@@ -45,7 +45,7 @@ family satisfying the antecedent. **No instance is provided here; that is the
 honest open state** (§3b-tax: this is a *primary* conjecture, taking no other
 conjecture class as a hypothesis).
 
-Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/adelic-critical-line-persistence.md
+Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/adelic-critical-line-persistence.md
 -/
 
 namespace QOU.BraidKnot

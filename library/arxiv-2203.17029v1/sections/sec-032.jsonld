@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2203.17029v1/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "References",
+  "pageStart": 63,
+  "pageEnd": 65,
+  "contains": [
+    "library/arxiv-2203.17029v1/blocks/prose-sec-032"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2203.17029v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2203.17029v1/manifest.jsonld",
+  "provenance": "ingested"
+}

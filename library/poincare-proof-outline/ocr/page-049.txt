@@ -1,0 +1,70 @@
+then obtain cr where *: cross-ratio u il v i2 = of-complex cr cr # 0 is-real cr Re cr > 0
+using inf-or-of-complez|of cross-ratio u il v i2]
+by (smt to-complex-of-complex zero-complex.simps(1))
+thus ?thesis
+using *
+using assms cross-ratio-commute-13 [of v il u i2]
+unfolding poincare-distance-I{OF assms] calc-poincare-distance-def cosh-def
+by (cases Re cr > 1)
+(auto simp add: In-div[of 0] exp-minus field-simps Re-divide power2-eq-square complex. expand)
+qed
+
+definition poincare-distance-formula' :: complet = complex = real where
+[simp]: poincare-distance-formula’ uv = 1 + 2 * ((emod (u — v))? / ((1 — (emod u)?) * (1 — (emod v)?)))
+
+Next we show that the following formula expresses h-distance between any two h-points (note that the ideal
+points do not figure anymore).
+
+definition poincare-distance-formula :: complex = complex = real where
+[simp]: poincare-distance-formula uv = arcosh (poincare-distance-formula’ u v)
+
+lemma blaschke-preserve-distance-formula [simp]:
+assumes of-complex k € unit-disc u € unit-disc v € unit-disc
+shows poincare-distance-formula (to-complex (moebius-pt (blaschke k) u)) (to-complex (moebius-pt (blaschke k) v)) =
+poincare-distance-formula (to-complez u) (to-complex v)
+proof (cases k = 0)
+case True
+thus ?thesis
+by simp
+next
+case False
+obtain u’ v’ where «: u’ = to-complex u v' = to-complex v
+by auto
+
+have cmod u' < 1 cmod v' < 1 cmodk < 1
+using assms *
+using inf-or-of-complez[of u] inf-or-of-complez|of v]
+by auto
+
+obtain nu du nv dv d kk ddu ddv where
+xe nu =u’ —kdu=1— enjk eu’ nv =v'—kdv=1—-cnjkx*v'
+d=u'—v' ddu=1 — u'xcnj u! ddv = 1 — v'xenj uv! kk = 1 — keenjk
+by auto
+
+have d: nuxdv — nvxdu = dxkk
+by (subst *«)+ (simp add: field-simps)
+have ddu: duxcnj du — nuxcnj nu = dduxkk
+by (subst *«)+ (simp add: field-simps)
+have ddv: dvxcnj dv — nvxcnj nv = dduxkk
+by (subst *«)+ (simp add: field-simps)
+
+have du # 0
+proof (rule ccontr)
+assume — ?thesis
+hence cmod (1 — enjk * u') = 0
+using (du = 1 — cnjk * uy
+by auto
+hence cmod (cnj k *« u') = 1
+by auto
+thus False
+using (cmod k < 1> «cmod u' < 1>
+using mult-strict-mono|of cmod k 1 cmod u’ 1]
+by (simp add: norm-mult)
+qed
+
+have dv 4 0
+
+proof (rule ccontr)
+assume — ?thesis
+
+49

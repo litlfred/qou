@@ -33,7 +33,7 @@ magnitude relations `|Δ_λ| = |Δ_{λ'}|` (over-determined), and RELOCATES the
 residual gap to two categoricity questions (sign / orbit-magnitude), both open.
 
 ## References
-- [manuscript] quantum-observable-universe/mass-theory/stokes-descent-ward-filtration
+- [leitner2026] quantum-observable-universe/mass-theory/stokes-descent-ward-filtration
 - [seiberg1994] https://doi.org/10.1016/0550-3213(94)90124-4
 -/
 

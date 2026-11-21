@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2507.13840v2/blocks/prose-sec-004",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Relationship between PT negativity, CCNR negativity, and robustness of entanglement",
-  "pageStart": 34,
-  "pageEnd": 35,
-  "text": "../sections/sec-004-relationship-between-pt-negativity-ccnr-negativi.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.13840v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.13840v2",
+  "title": "From the realignment moments",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-004-32-from-the-realignment-moments.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
   "provenance": "ingested"
 }

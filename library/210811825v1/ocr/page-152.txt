@@ -1,0 +1,58 @@
+the m variable gives the restriction of the eigenfunction to the mth \
+Fourier node *)
+efunc0 [\[Rho]_] =
+Re[ Evaluate [
+Sinh [\[Rho]] Hypergeometric2F1[(3/2 + I Sart[\[Lambda] — 1/4])/
+2, (2 — (1/2 + I Sart [\[Lambda] — 1/4]))/2,
+3/2, —Sinh[\[Rho]]~2] ]];
+efuncl [\[Rho]_, m_] =
+Re[ Evaluate [
+Sinh [\[Rho]] Cosh[\[Rho]]*(2 Pi I m/
+ell) Hypergeometric2F1[(3/2 + I Sart [\[Lambda] — 1/4])/2 +
+Im Pifell, (2 — (1/2 + I Saqrt[\[Lambda] — 1/4]))/2 +
+Pi Im /ell, 3/2, —Sinh[\[Rho]]*2] ]];
+
+(« Nodal Line as a function of t. *)
+\ [Rho] zero [
+t_] := (\[Rho] /.
+FindRoot [
+efunc0[\[Rho]] — (0.038 Sin[2 Pi (t)/ell — Pi/2]) efuncl[\[Rho],
+1] — (0.0002 Cos[2 2 Pi (t)/ell]) efuncl[\[Rho], 2], {\[Rho],
+0.5, 1.9}]);
+nodal = Plot[{\[Rho] zero[t]}, {t, 0, ell }];
+
+(* Parametric plot of boundary of annulus «)
+xl = Cos[2 Pi t/ell];
+yl = Sin[2 Pi t/ell];
+x2 = 4.61158 Cos[2 Pi t/ell];
+61158 Sin[2 Pi t/ell];
+.0986840182524393 + 0.4550896306919397 Cos[2 Pi t/ell];
+.4550896306919397 Sin[2 Pi t/ell];
+.0986840182524393 + 0.4550896306919397 Cos[2 Pi t/ell];
+.4550896306919397 Sin[2 Pi t/ell];
+.5537741953480246 + 1.3820929243421862 Cos[2 Pi t/ell];
+-3820929243421862 Sin[2 Pi t/ell];
+.066671210777469 + 2.0986830534021754 Cos[2 Pi t/ell];
+y5 = 2.0986830534021754 Sin[2 Pi t/ell];
+boundary =
+ParametricPlot [{{Log[Sqrt[y172 + x1>2]],
+ArcSinh[xl/yl]}, {Log[Sqrt[y272 + x2>2]],
+ArcSinh[x2/y2]}, {Log[Sqrt[y3*2 + x3>2]],
+ArcSinh [x3/y3]}, {Log[Sart[y4*2 + x4~2]],
+ArcSinh [x4/y4]}, {Log[Saqrt[y5*2 + x5~2]], ArcSinh[x5/y5]}}, {t,
+0.0001, ell}, AspectRatio > Automatic, PlotRange —> All];
+
+y4 =
+
+wo
+|
+arnNnorFrorRA
+
+x5 =
+
+(* Superimpose nodal line plot onto boundary of annulus *)
+
+\
+Show[nodal, boundary, PlotRange —> {{0, 1.6}, {1, 2.3}}]
+
+142

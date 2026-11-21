@@ -1,1 +1,1 @@
-(i) The closed real 1-form η(l, m) = log |l| d arg m − log |m| d arg l is exact on Yh;
+(i) The closed real 1-form η(l, m) = log |l| d arg m −log |m| d arg l is exact on Yh; (ii) For any loop γ with initial point t0 = χ0 in Yh 4π2 Z γ (log |m|d log |l| + arg ld arg m) = k N , where k is some integer and N is the order of the symbol {l, m} in K2(C(Y )).

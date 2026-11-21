@@ -135,7 +135,8 @@ def _pn_color_weighted(h_val: float) -> float:
         # by 7e-5, eight orders above that window, so double is ample. No
         # physical quantity is computed here -- only which of four letter
         # types a junction is.
-        delta = float(flavor_split_leading(mp.mpf(Q_50_DIGIT_STR)))  # float64-ok: letter-type tag, 1e-9 window, no physics
+        with mp.workdps(50):
+            delta = float(flavor_split_leading(mp.mpf(Q_50_DIGIT_STR)))  # float64-ok: letter-type tag, 1e-9 window, no physics
     except Exception:
         return -h_val / 2
     return -h_val * (1 - delta / 2) / 2

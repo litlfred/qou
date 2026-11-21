@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2108.03616v2/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Optimizing circuit imbalances",
-  "pageStart": 18,
-  "pageEnd": 24,
-  "text": "../sections/sec-009-5-optimizing-circuit-imbalances.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2108.03616v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2108.03616v2",
+  "title": "The condition number chi bar and the lifting operator",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-009-41-the-condition-number-chi-bar-and-the-lifting.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2108.03616v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2108.03616v2/manifest.jsonld",
   "provenance": "ingested"
 }

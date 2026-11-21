@@ -4,13 +4,14 @@ doc_title: "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND 
 section_id: sec-002-21-simplicial-sets
 section_title: "Simplicial sets"
 section_number: 2.1
-pages: 6-8
+pages: 7-8
 source_pdf: 1011.6483v3.pdf
 source_sha256: 7a425e51860c37a4
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.62
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.934
+doc_brief: "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS — We study the higher Hochschild chain functor, factorization alge- bras and their relationship with"
 ---
 []{#S:Delta label="S:Delta"} Denote by $\Delta$ the category whose objects are the ordered sets $[k]=\{0,1,\dots,k\}$, and morphisms $f:[k]\to [l]$ are non-decreasing maps $f(i)\geq f(j)$ for $i>j$. In particular, we have the morphisms $\delta_i:[k-1]\to[k], i=0,\dots, k$, which are injections that miss $i$ and we have surjections $\sigma_j:[k+1]\to [k], i=0,\dots,k$, which send $j$ and $j+1$ to $j$.
 

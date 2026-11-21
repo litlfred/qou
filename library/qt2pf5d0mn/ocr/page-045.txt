@@ -1,0 +1,31 @@
+Section 3.1 Partition Function
+
+the partition function Zo (a) is defined as follows. Note that the boundary map is given
+by:
+0(01234) = (1234) — (0234) + (0134) — (0124) + (0123).
+
+If e(o) = +, we first define the functional 7£(012340) : V5(0234) @ Vt (0124) @
+Vp (1234) ® V; (0134) ® V; (0123) > C by the picture shown in Figure [3.1] (Left). The
+meaning of the picture is interpreted in the following way. Given an element ¢o ® ¢1 ®
+o2 ® 63 ® da, each ¢; is to be inserted in the corresponding box, and the resulting
+graph represents a morphism in Hom(1,1), which is a scalar multiple of Jdy. Then
+Zi (01234)(oo ® 1 ® b2 ® $3 ® 4) is defined to be that scalar. Note that the label 934
+to the left top corner of the box containing V; (0123) in the picture means the action of
+G34 on the space V;; (0123). It is direct to figure out the object labels on each edge of the
+picture and check that all the compositions of morphisms make sense.
+
+Using the non-degenerate pairing ( , ), this defines a linear map 7 (01234):
+Z7 (01234) : Vt (0234) @ Vt (0124) —> V,t (1234) @ Vz (0134) @ V7 (0123),
+
+such that (Zj5(01234)(6y ® 61), $2 ® 3 ® 4) = Zh (01234) (by @ 1 @ b2 ® 6g ® 44).
+Note that the domain of Z(01234) corresponds to the negative boundaries, and the
+codomain corresponds to the positive boundaries. Thus we can think of Z74(01234) as a
+map from negative boundaries to positive boundaries.
+Similarly, if e(7) = —, consider instead the functional 7; (01234) : Vp (0234) @
+Vp (0124) @ Vt (1234) @ Vt (0134) @ V2 (0123) > C by the picture shown in Figure [3.1]
+(Right), which is obtained by reflecting the picture in Figure [3.1] (Left) along a horizon
+
+line. In the same way we get a linear map:
+
+Zp (01234) : Vt (1234) @ VF (0134) @ Vz (0123) —> VF (0234) @ Vz (0124),
+36

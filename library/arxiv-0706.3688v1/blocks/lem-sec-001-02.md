@@ -1,0 +1,1 @@
+Assume conditions (2.2) and (1), (2), then one of the following cases holds • The center Z(AC) is reduced to C. • One has Z(AC) = C ⊕C and Je1J−1 = e2 where ej ∈Z(AC) are the minimal projections of Z(AC).

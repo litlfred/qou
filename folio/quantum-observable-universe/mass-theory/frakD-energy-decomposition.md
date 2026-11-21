@@ -21,7 +21,7 @@ $B({}^2\mathrm{H}) = 5g \cdot E_{\text{unit}}$ through this split makes the
 "$E_{\text{unit}} \in P_{\mathrm{skew}}$" reinterpretation precise: *if* the
 unit is a bar-odd energy, then it is its own emitted part with
 zero retained part — a purely decay-channel energy
-(`frakD_is_pure_emitted`). This keeps $E_{\text{unit}}$ inside the three
+. This keeps $E_{\text{unit}}$ inside the three
 calibrations (the bar-skew channel $P_{\mathrm{skew}}^{\beta}$ is the CAL-2 datum), rather than a
 fourth calibration.
 

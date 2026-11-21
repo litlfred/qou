@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1707.06608v1
-doc_title: "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential"
+doc_title: "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential"
 section_id: sec-002-3-initial-approximation
 section_title: "Initial approximation"
 section_number: 3
 pages: 5-6
 source_pdf: 1707.06608v1.pdf
 source_sha256: 7b7db6dce87dc81e
-doc_brief: "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admittingS1 vacuum."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.992
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.996
+doc_brief: "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum."
 ---
 The peculiarity of the Faddeev-Skyrme model is that the Hopf index is not a winding number, the boundary conditions are identical for configurations in all topological sectors. As usual, the energy minimization scheme needs an appropriate initial configuration in a given sector. The most effective approach here is related with the generalization of the rational map approximation, suggested by Sutcliffe [@Sutcliffe:2007ui]. This construction can be nicely described in terms of a degree one map $\mathbb{R}^3 \mapsto S^3 \in \mathbb{C}^2$. One can consider the complex variables which parameterize the sphere $S^3$ [@Sutcliffe:2007ui] $$\left(Z_1,Z_0 \right) = \left(\sin f(r) \sin \theta e^{i\varphi};~~ \cos f(r) + i \sin f(r) \cos \theta \right)
 \label{rational-Hopf}$$ where $f(r)$ is a monotonically decreasing function with the boundary values $f(0)=\pi$ and $f(\infty)=0$. Clearly, the coordinates $Z_1,Z_0$ are restricted to the unit sphere $S^3$, $|Z_1|^2 + |Z_2|^2=1$. Then a torus knot on the domain space can be described as the intersection of a curve $Q(Z_1,Z_0)$ with a unit sphere $S^3$.

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/amc-2730/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Simple walks on (3,n) torus braids",
+  "pageStart": 18,
+  "pageEnd": 21,
+  "contains": [
+    "library/amc-2730/blocks/prose-sec-006",
+    "library/amc-2730/blocks/prop-sec-006-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/amc-2730/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/amc-2730/manifest.jsonld",
+  "provenance": "ingested"
+}

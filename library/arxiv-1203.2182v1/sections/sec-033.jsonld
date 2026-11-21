@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1203.2182v1/sections/sec-033",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Another expression for $P_n(T^{2,2p+1};q,t)$",
+  "pageStart": 71,
+  "pageEnd": 72,
+  "contains": [
+    "library/arxiv-1203.2182v1/blocks/prose-sec-033"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.2182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.2182v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,13 +1,14 @@
 ---
 doc_id: arxiv-2605.22763v1
-doc_title: "Advancing mathematics research with AI-driven formal proof search"
+doc_title: "Advancing Mathematics Research with AI-Driven Formal Proof Search"
 section_id: sec-011-selection-of-erdős-and-oeis-problems
 section_title: "Selection of Erdős and OEIS Problems"
 section_number: null
 pages: 26-27
 source_pdf: 2605.22763v1.pdf
 source_sha256: 1fe6b92bb5eb0b45
-doc_brief: "Advancing mathematics research with AI-driven formal proof search — 14 sections: Introduction; AlphaProof Nexus; Systematic Evaluation on Open Prob"
+toc_source: outline
+doc_brief: "Advancing Mathematics Research with AI-Driven Formal Proof Search — 29 sections: Front matter; Introduction; AlphaProof Nexus"
 ---
 For the Erdős evaluation, we ran our agent on all Lean statements of Erdős problems available
 in the Formal Conjectures repository [23] as of early February 2026 – 353 problems in total.

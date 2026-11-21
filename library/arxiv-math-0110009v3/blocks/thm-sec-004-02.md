@@ -1,0 +1,1 @@
+Suppose f : Rn →R is an admissible function satisfying the following three conditions: (1) f(0) = bf(0) > 0, (2) f(x) ≤0 for |x| ≥r, and (3) bf(t) ≥0 for all t. Then the center density of sphere packings in Rn is bounded above by (r/2)n. HENRY COHN AND NOAM ELKIES

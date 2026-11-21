@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1907.03683v4/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proof of Theorem 3.1",
-  "pageStart": 13,
-  "pageEnd": 17,
-  "text": "../sections/sec-012-33-proof-of-theorem-31.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.03683v4",
+  "title": "Discrete orthogonal polynomial ensembles and determinantal point processes",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "../sections/sec-012-23-discrete-orthogonal-polynomial-ensembles-and.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
   "provenance": "ingested"
 }

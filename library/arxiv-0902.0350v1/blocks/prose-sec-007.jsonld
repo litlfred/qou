@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0902.0350v1/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Verifying linear programs",
-  "pageStart": 19,
-  "pageEnd": 22,
-  "text": "../sections/sec-007-7-verifying-linear-programs.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0902.0350v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0902.0350v1",
+  "title": "Tame graph enumeration",
+  "pageStart": 16,
+  "pageEnd": 19,
+  "text": "../sections/sec-007-6-tame-graph-enumeration.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0902.0350v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0902.0350v1/manifest.jsonld",
   "provenance": "ingested"
 }

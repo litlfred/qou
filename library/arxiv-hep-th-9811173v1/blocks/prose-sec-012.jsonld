@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Dedekind zeta value from an 18-crossing Feynman knot",
-  "pageStart": 25,
-  "pageEnd": 26,
-  "text": "../sections/sec-012-57-dedekind-zeta-value-from-an-18-crossing-feynm.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9811173v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9811173v1",
+  "title": "Link $6^3_1$ at $D=-7$",
+  "pageStart": 11,
+  "pageEnd": 11,
+  "text": "../sections/sec-012-45-link-63-1-at-d-7.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9811173v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9811173v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1511.05628v1/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Topological invariance",
-  "pageStart": 11,
-  "pageEnd": 12,
-  "text": "../sections/sec-008-28-topological-invariance.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.05628v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.05628v1",
+  "title": "The 2-loop invariant in detail",
+  "pageStart": 9,
+  "pageEnd": 11,
+  "text": "../sections/sec-008-25-the-2-loop-invariant-in-detail.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1511.05628v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1511.05628v1/manifest.jsonld",
   "provenance": "ingested"
 }

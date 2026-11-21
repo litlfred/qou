@@ -1,0 +1,730 @@
+{
+ "computation": "plancherel-density-u-probe",
+ "description": "Density u=(tr_M\u2297id)\u0394(1) induced by the Frobenius coproduct with counit \u03b5 (a: tr_M, b: corpus \u03c4_P, b\u03ba: canonical trace) on H_n(q), convention D; compared with the refuted co-Casimir \u0394_\u03bb=1/dim_q. Exact Q(q) arithmetic; q0 = proton pin.",
+ "q0_anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
+ "trace_checks": [
+  {
+   "n": 2,
+   "markov_D": true,
+   "canonical_bkappa": true,
+   "canonical_b": false,
+   "tau_P_b_of_1": "2*q/(q**2 + 1)",
+   "tau_P_b_of_1_at_q0": "0.99458109120983111199"
+  },
+  {
+   "n": 3,
+   "markov_D": true,
+   "canonical_bkappa": true,
+   "canonical_b": false,
+   "tau_P_b_of_1": "2*q**2/((q**2 + 1)*(q**2 - q + 1))",
+   "tau_P_b_of_1_at_q0": "0.98386009885416114868"
+  },
+  {
+   "n": 4,
+   "markov_D": true,
+   "canonical_bkappa": true,
+   "canonical_b": false,
+   "tau_P_b_of_1": "8*q**4/((q**2 + 1)**2*(q**4 + 1))",
+   "tau_P_b_of_1_at_q0": "0.96803693491974548665"
+  }
+ ],
+ "coproduct_checks": {
+  "n2_a_trM": true,
+  "n2_b": true,
+  "n2_bkappa": true,
+  "n3_a_trM": false,
+  "n3_b": true,
+  "n3_bkappa": true
+ },
+ "tables": {
+  "2": [
+   {
+    "lambda": [
+     2
+    ],
+    "d_lambda": 1,
+    "kappa": 1,
+    "n_lambda": 0,
+    "dim_q": "1",
+    "y_D": "(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+    "u_b": "(q**2 - q + 1)*(q**2 + q + 1)/(q*(q**2 + 1))",
+    "u_bkappa": "(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)",
+    "ratio_u_b_over_cocasimir": "(q**2 - q + 1)*(q**2 + q + 1)/(q*(q**2 + 1))",
+    "signed_target_value": 1,
+    "at_q0": {
+     "dim_q": "1.0",
+     "y_D": "0.752702113251965",
+     "cocasimir": "1.0",
+     "u_b": "1.51360632110221",
+     "u_bkappa": "1.68007059914056"
+    }
+   },
+   {
+    "lambda": [
+     1,
+     1
+    ],
+    "d_lambda": 1,
+    "kappa": -1,
+    "n_lambda": 1,
+    "dim_q": "1",
+    "y_D": "q**2/(q**2 + 1)**2",
+    "u_b": "q/(q**2 + 1)",
+    "u_bkappa": "1/(q**2 + 1)",
+    "ratio_u_b_over_cocasimir": "q/(q**2 + 1)",
+    "signed_target_value": -1,
+    "at_q0": {
+     "dim_q": "1.0",
+     "y_D": "0.247297886748035",
+     "cocasimir": "1.0",
+     "u_b": "0.497290545604916",
+     "u_bkappa": "0.448018144973795"
+    }
+   }
+  ],
+  "3": [
+   {
+    "lambda": [
+     3
+    ],
+    "d_lambda": 1,
+    "kappa": 3,
+    "n_lambda": 0,
+    "dim_q": "1",
+    "y_D": "(q**4 + 1)/(q**2 + 1)**2",
+    "u_b": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**3*(q**2 + 1))",
+    "u_bkappa": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**3*(q**2 + 1))",
+    "signed_target_value": 1,
+    "at_q0": {
+     "dim_q": "1.0",
+     "y_D": "0.505404226503931",
+     "cocasimir": "1.0",
+     "u_b": "3.09336663571065",
+     "u_bkappa": "4.23033922503023"
+    }
+   },
+   {
+    "lambda": [
+     2,
+     1
+    ],
+    "d_lambda": 2,
+    "kappa": 0,
+    "n_lambda": 1,
+    "dim_q": "(q**2 + 1)/q",
+    "y_D": "q**2/(q**2 + 1)**2",
+    "u_b": "(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+    "u_bkappa": "(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+    "ratio_u_b_over_cocasimir": "(q**2 - q + 1)*(q**2 + q + 1)/(q*(q**2 + 1))",
+    "signed_target_value": -2,
+    "at_q0": {
+     "dim_q": "2.01089686670712",
+     "y_D": "0.247297886748035",
+     "cocasimir": "0.497290545604916",
+     "u_b": "0.752702113251965",
+     "u_bkappa": "0.752702113251965"
+    }
+   },
+   {
+    "lambda": [
+     1,
+     1,
+     1
+    ],
+    "d_lambda": 1,
+    "kappa": -3,
+    "n_lambda": 3,
+    "dim_q": "1",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": -1,
+    "at_q0": {
+     "dim_q": "1.0",
+     "y_D": "0.0",
+     "cocasimir": "1.0",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   }
+  ],
+  "4": [
+   {
+    "lambda": [
+     4
+    ],
+    "d_lambda": 1,
+    "kappa": 6,
+    "n_lambda": 0,
+    "dim_q": "1",
+    "y_D": "(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**2 + 1)**4",
+    "u_b": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**6*(q**2 + 1)**2)",
+    "u_bkappa": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**2 + 1)**2",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**6*(q**2 + 1)**2)",
+    "signed_target_value": 1,
+    "at_q0": {
+     "dim_q": "1.0",
+     "y_D": "0.31926258454594",
+     "cocasimir": "1.0",
+     "u_b": "8.03061516089923",
+     "u_bkappa": "15.0188406274952"
+    }
+   },
+   {
+    "lambda": [
+     3,
+     1
+    ],
+    "d_lambda": 3,
+    "kappa": 2,
+    "n_lambda": 1,
+    "dim_q": "(q**2 - q + 1)*(q**2 + q + 1)/q**2",
+    "y_D": "q**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**4",
+    "u_b": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2*(q**2 + 1)**2)",
+    "u_bkappa": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**4*(q**2 + 1)**2)",
+    "signed_target_value": -3,
+    "at_q0": {
+     "dim_q": "3.04370620853252",
+     "y_D": "0.186141641957991",
+     "cocasimir": "0.328546821370823",
+     "u_b": "1.53830198202859",
+     "u_bkappa": "1.89526873220792"
+    }
+   },
+   {
+    "lambda": [
+     2,
+     2
+    ],
+    "d_lambda": 2,
+    "kappa": 0,
+    "n_lambda": 2,
+    "dim_q": "(q**4 + 1)/q**2",
+    "y_D": "q**4/(q**2 + 1)**4",
+    "u_b": "(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+    "u_bkappa": "(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2*(q**2 + 1)**2)",
+    "signed_target_value": 2,
+    "at_q0": {
+     "dim_q": "2.04370620853252",
+     "y_D": "0.0611562447900437",
+     "cocasimir": "0.489307120477971",
+     "u_b": "0.752702113251965",
+     "u_bkappa": "0.752702113251965"
+    }
+   },
+   {
+    "lambda": [
+     2,
+     1,
+     1
+    ],
+    "d_lambda": 3,
+    "kappa": -2,
+    "n_lambda": 3,
+    "dim_q": "(q**2 - q + 1)*(q**2 + q + 1)/q**2",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": -3,
+    "at_q0": {
+     "dim_q": "3.04370620853252",
+     "y_D": "0.0",
+     "cocasimir": "0.328546821370823",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   },
+   {
+    "lambda": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "d_lambda": 1,
+    "kappa": -6,
+    "n_lambda": 6,
+    "dim_q": "1",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": 1,
+    "at_q0": {
+     "dim_q": "1.0",
+     "y_D": "0.0",
+     "cocasimir": "1.0",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   }
+  ],
+  "5": [
+   {
+    "lambda": [
+     5
+    ],
+    "d_lambda": 1,
+    "kappa": 10,
+    "n_lambda": 0,
+    "dim_q": "1",
+    "y_D": "(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)/(q**2 + 1)**4",
+    "u_b": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**10*(q**2 + 1)**2)",
+    "u_bkappa": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**2 + 1)**2",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**10*(q**2 + 1)**2)",
+    "signed_target_value": 1,
+    "at_q0": {
+     "dim_q": "1.0",
+     "y_D": "0.194277187377993",
+     "cocasimir": "1.0",
+     "u_b": "25.5111367895592",
+     "u_bkappa": "72.4228818320529"
+    }
+   },
+   {
+    "lambda": [
+     4,
+     1
+    ],
+    "d_lambda": 4,
+    "kappa": 5,
+    "n_lambda": 1,
+    "dim_q": "(q**2 + 1)*(q**4 + 1)/q**3",
+    "y_D": "q**2*(q**4 + 1)/(q**2 + 1)**4",
+    "u_b": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**5*(q**2 + 1)**3)",
+    "u_bkappa": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**2 + 1)**3",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**8*(q**2 + 1)**2)",
+    "signed_target_value": -4,
+    "at_q0": {
+     "dim_q": "4.10968241120794",
+     "y_D": "0.124985397167947",
+     "cocasimir": "0.24332780491086",
+     "u_b": "3.99354899490669",
+     "u_bkappa": "6.72871311758747"
+    }
+   },
+   {
+    "lambda": [
+     3,
+     2
+    ],
+    "d_lambda": 5,
+    "kappa": 2,
+    "n_lambda": 2,
+    "dim_q": "(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/q**4",
+    "y_D": "q**4/(q**2 + 1)**4",
+    "u_b": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2*(q**2 + 1)**2)",
+    "u_bkappa": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**6*(q**2 + 1)**2)",
+    "signed_target_value": 5,
+    "at_q0": {
+     "dim_q": "5.2204412753269",
+     "y_D": "0.0611562447900437",
+     "cocasimir": "0.191554688054102",
+     "u_b": "1.53830198202859",
+     "u_bkappa": "1.89526873220792"
+    }
+   },
+   {
+    "lambda": [
+     3,
+     1,
+     1
+    ],
+    "d_lambda": 6,
+    "kappa": 0,
+    "n_lambda": 3,
+    "dim_q": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/q**4",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": -6,
+    "at_q0": {
+     "dim_q": "6.2204412753269",
+     "y_D": "0.0",
+     "cocasimir": "0.160760299107148",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   },
+   {
+    "lambda": [
+     2,
+     2,
+     1
+    ],
+    "d_lambda": 5,
+    "kappa": -2,
+    "n_lambda": 4,
+    "dim_q": "(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/q**4",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": 5,
+    "at_q0": {
+     "dim_q": "5.2204412753269",
+     "y_D": "0.0",
+     "cocasimir": "0.191554688054102",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   },
+   {
+    "lambda": [
+     2,
+     1,
+     1,
+     1
+    ],
+    "d_lambda": 4,
+    "kappa": -5,
+    "n_lambda": 6,
+    "dim_q": "(q**2 + 1)*(q**4 + 1)/q**3",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": 4,
+    "at_q0": {
+     "dim_q": "4.10968241120794",
+     "y_D": "0.0",
+     "cocasimir": "0.24332780491086",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   },
+   {
+    "lambda": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "d_lambda": 1,
+    "kappa": -10,
+    "n_lambda": 10,
+    "dim_q": "1",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": 1,
+    "at_q0": {
+     "dim_q": "1.0",
+     "y_D": "0.0",
+     "cocasimir": "1.0",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   }
+  ],
+  "6": [
+   {
+    "lambda": [
+     6
+    ],
+    "d_lambda": 1,
+    "kappa": 15,
+    "n_lambda": 0,
+    "dim_q": "1",
+    "y_D": "(q**6 - q**5 + q**4 - q**3 + q**2 - q + 1)*(q**6 + q**5 + q**4 + q**3 + q**2 + q + 1)/(q**2 + 1)**6",
+    "u_b": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)*(q**6 - q**5 + q**4 - q**3 + q**2 - q + 1)*(q**6 + q**5 + q**4 + q**3 + q**2 + q + 1)/(q**15*(q**2 + 1)**3)",
+    "u_bkappa": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)*(q**6 - q**5 + q**4 - q**3 + q**2 - q + 1)*(q**6 + q**5 + q**4 + q**3 + q**2 + q + 1)/(q**2 + 1)**3",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)*(q**6 - q**5 + q**4 - q**3 + q**2 - q + 1)*(q**6 + q**5 + q**4 + q**3 + q**2 + q + 1)/(q**15*(q**2 + 1)**3)",
+    "signed_target_value": 1,
+    "at_q0": {
+     "dim_q": "1.0",
+     "y_D": "0.115324224902066",
+     "cocasimir": "1.0",
+     "u_b": "96.7384986257455",
+     "u_bkappa": "462.72006147356"
+    }
+   },
+   {
+    "lambda": [
+     5,
+     1
+    ],
+    "d_lambda": 5,
+    "kappa": 9,
+    "n_lambda": 1,
+    "dim_q": "(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/q**4",
+    "y_D": "q**2*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**2 + 1)**6",
+    "u_b": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**9*(q**2 + 1)**3)",
+    "u_bkappa": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**2 + 1)**3",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)**2*(q**4 + q**3 + q**2 + q + 1)**2/(q**13*(q**2 + 1)**3)",
+    "signed_target_value": -5,
+    "at_q0": {
+     "dim_q": "5.2204412753269",
+     "y_D": "0.0789529624759267",
+     "cocasimir": "0.191554688054102",
+     "u_b": "12.6864471330815",
+     "u_bkappa": "32.4467651720527"
+    }
+   },
+   {
+    "lambda": [
+     4,
+     2
+    ],
+    "d_lambda": 9,
+    "kappa": 5,
+    "n_lambda": 2,
+    "dim_q": "(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)/q**6",
+    "y_D": "q**4*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**6",
+    "u_b": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**5*(q**2 + 1)**3)",
+    "u_bkappa": "(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**2 + 1)**3",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)*(q**2 - q + 1)**3*(q**2 + q + 1)**3*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**11*(q**2 + 1)**3)",
+    "signed_target_value": 9,
+    "at_q0": {
+     "dim_q": "9.66904824566502",
+     "y_D": "0.0460324346920204",
+     "cocasimir": "0.10342279556298",
+     "u_b": "3.99354899490669",
+     "u_bkappa": "6.72871311758747"
+    }
+   },
+   {
+    "lambda": [
+     4,
+     1,
+     1
+    ],
+    "d_lambda": 10,
+    "kappa": 3,
+    "n_lambda": 3,
+    "dim_q": "(q**4 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/q**6",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": -10,
+    "at_q0": {
+     "dim_q": "10.669048245665",
+     "y_D": "0.0",
+     "cocasimir": "0.0937290728258084",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   },
+   {
+    "lambda": [
+     3,
+     3
+    ],
+    "d_lambda": 5,
+    "kappa": 3,
+    "n_lambda": 3,
+    "dim_q": "(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/q**6",
+    "y_D": "q**6/(q**2 + 1)**6",
+    "u_b": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**3*(q**2 + 1)**3)",
+    "u_bkappa": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**2 + 1)**3",
+    "ratio_u_b_over_cocasimir": "(q**4 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**9*(q**2 + 1)**3)",
+    "signed_target_value": -5,
+    "at_q0": {
+     "dim_q": "5.44860697033812",
+     "y_D": "0.0151238100980233",
+     "cocasimir": "0.183533149930604",
+     "u_b": "2.32838360376253",
+     "u_bkappa": "3.18418527445293"
+    }
+   },
+   {
+    "lambda": [
+     3,
+     2,
+     1
+    ],
+    "d_lambda": 16,
+    "kappa": 0,
+    "n_lambda": 4,
+    "dim_q": "(q**2 + 1)**3*(q**4 + 1)*(q**4 - q**2 + 1)/q**7",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": 16,
+    "at_q0": {
+     "dim_q": "17.344673276747",
+     "y_D": "0.0",
+     "cocasimir": "0.0576545884747592",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   },
+   {
+    "lambda": [
+     3,
+     1,
+     1,
+     1
+    ],
+    "d_lambda": 10,
+    "kappa": -3,
+    "n_lambda": 6,
+    "dim_q": "(q**4 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/q**6",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": 10,
+    "at_q0": {
+     "dim_q": "10.669048245665",
+     "y_D": "0.0",
+     "cocasimir": "0.0937290728258084",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   },
+   {
+    "lambda": [
+     2,
+     2,
+     2
+    ],
+    "d_lambda": 5,
+    "kappa": -3,
+    "n_lambda": 6,
+    "dim_q": "(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/q**6",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": 5,
+    "at_q0": {
+     "dim_q": "5.44860697033812",
+     "y_D": "0.0",
+     "cocasimir": "0.183533149930604",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   },
+   {
+    "lambda": [
+     2,
+     2,
+     1,
+     1
+    ],
+    "d_lambda": 9,
+    "kappa": -5,
+    "n_lambda": 7,
+    "dim_q": "(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)/q**6",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": -9,
+    "at_q0": {
+     "dim_q": "9.66904824566502",
+     "y_D": "0.0",
+     "cocasimir": "0.10342279556298",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   },
+   {
+    "lambda": [
+     2,
+     1,
+     1,
+     1,
+     1
+    ],
+    "d_lambda": 5,
+    "kappa": -9,
+    "n_lambda": 10,
+    "dim_q": "(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/q**4",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": 5,
+    "at_q0": {
+     "dim_q": "5.2204412753269",
+     "y_D": "0.0",
+     "cocasimir": "0.191554688054102",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   },
+   {
+    "lambda": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "d_lambda": 1,
+    "kappa": -15,
+    "n_lambda": 15,
+    "dim_q": "1",
+    "y_D": "0",
+    "u_b": "0",
+    "u_bkappa": "0",
+    "ratio_u_b_over_cocasimir": "0",
+    "signed_target_value": -1,
+    "at_q0": {
+     "dim_q": "1.0",
+     "y_D": "0.0",
+     "cocasimir": "1.0",
+     "u_b": "0.0",
+     "u_bkappa": "0.0"
+    }
+   }
+  ]
+ },
+ "deuteron_test": {
+  "target_signed": "-4.35336749125644275987857606299",
+  "tol": "1",
+  "results": {
+   "cocasimir": {
+    "sum": "0.17312047167782761792",
+    "gap": "4.5264879629342703778",
+    "refuted_by_tol": true,
+    "wrong_sign": true
+   },
+   "u_b": {
+    "sum": "16.804605751612048435",
+    "gap": "21.157973242868491194",
+    "refuted_by_tol": true,
+    "wrong_sign": true
+   },
+   "u_bkappa": {
+    "sum": "81.627546509288749206",
+    "gap": "85.980914000545191966",
+    "refuted_by_tol": true,
+    "wrong_sign": true
+   },
+   "signed_value_(-1)^n f": {
+    "sum": "0.53158040874586910817",
+    "gap": "4.884947900002311868",
+    "refuted_by_tol": true,
+    "wrong_sign": true
+   }
+  },
+  "chi_source": "rho-k-h3a-co-casimir.witness.json"
+ },
+ "assertions_pass": 39,
+ "assertions_fail": 0,
+ "allPassed": true,
+ "scriptFile": "plancherel_density_u_probe.py",
+ "scriptHash": "48cbb3171a26",
+ "scriptCommitSha": "616e4ee24ed09769eb93704e83dd34ae59d71974",
+ "commitSha": "a060adae919a3eb204994a4bfbb31dd05eb30ab1",
+ "engine": "python",
+ "computedAt": "2026-11-15T12:11:50.153271+00:00",
+ "durationMs": 0,
+ "q0Anchor": "proton"
+}

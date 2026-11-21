@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-036",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "C.2. Quantization",
-  "pageStart": 41,
-  "pageEnd": 42,
-  "text": "../sections/sec-036-c2-quantization.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.6268v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.6268v2",
+  "title": "Feynman diagrams and higher loops",
+  "pageStart": 33,
+  "pageEnd": 35,
+  "text": "../sections/sec-036-54-feynman-diagrams-and-higher-loops.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.6268v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.6268v2/manifest.jsonld",
   "provenance": "ingested"
 }

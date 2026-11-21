@@ -7,10 +7,11 @@ section_number: 2
 pages: 2-7
 source_pdf: 1012.4941v2.pdf
 source_sha256: 1932a359f3bafb83
-doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linea r and integer programming problems."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.998
-latex_coverage_ratio: 0.981
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.989
+doc_brief: "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linear and integer programming problems."
 ---
 []{#sec:LP label="sec:LP"} The purpose of this section is to introduce the notation and to collect basic facts for future reference. The results of this section up to and including Corollary [\[cor:opt_sol_in_fix\]](#cor:opt_sol_in_fix){reference-type="ref" reference="cor:opt_sol_in_fix"} can be found in the literature which is why we skip some of the proofs.
 

@@ -1,0 +1,44 @@
+2320 Stavros Garoufalidis and Rinat Kashaev
+
+(where the left hand-side is the bra-ket notation for the entries of a matrix)
+and proved that it satisfies the Yang-Baxter equation
+
+(24) ri2(x;m1, m2)ri3(xy; mi, m3)r2,3(y; m2, m3)
+
+= 12,3(y; ma, m3)r13(zy; m1, M3)r1,9(z; M1, M2)
+
+where, along with continuous spectral parameters x and y, the integers mj,
+mz, mg play the role of discrete spectral parameters. Here, 12, 71,3 and r23
+denote the N-cyclotomic matrices in Matys(C(x)) obtained by interpreting r
+as an endomorphism of an N-dimensional space V®?, equipped with a basis,
+and 1; as the corresponding endomorphisms of V®3, acting nontrivially on
+the i,j copies of V in V® and trivially on the remaining copy.
+
+Aside from being a solution to the Yang-Baxter equation with a spectral
+parameter, a somehow surprising fact is that r(x;m,n) is regular (i.e. it has a
+finite limit) at « = 1. This follows from the existence of the gauge conjugating
+matrix h(y,m) € Matn(C(y)) defined by
+
+(25) (i h(y,m)|7) = CFP" (y Iw.
+
+The entries of the matrix h(y,m) are, in fact, polynomials in y, it satisfies
+the multiplicative property
+
+(26) h(x, m)h(y,m) = h(xy,m)
+
+and it enters the important gauge symmetry transformation formulae for the
+r-matrix (23):
+
+(27) ha(y,m + 1)r(a;m,n)hi(y!, m +1)
+=r(ay;m,n) = ho(y~', 0)r(a;m,n)ho(y, 0).
+
+Here, hi and hg denote matrices in Maty2(C(y)) obtained by interpreting h
+as an endomorphism of an N dimensional space V with a basis, and hj; as
+corresponding endomorphisms of V®? obtained by acting on the j-th copy of
+V in V®? by h and on the remaining copy of V by identity.
+
+The above gauge symmetry transformation formulae, together with the
+fact that h(y,m) has polynomial entries in y, imply easily that r(a;m,n) is
+regular at x = 1. An additional calculation shows that
+
+(28) (i, §]r(L; m,n) [hy 0) = Vig-mie-na(S)oh ro

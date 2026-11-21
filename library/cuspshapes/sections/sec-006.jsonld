@@ -9,15 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Exceptional fillings",
-  "pageStart": 12,
-  "pageEnd": 14,
+  "title": "Cusp shapes of tunnel number n manifolds",
+  "pageStart": 10,
+  "pageEnd": 12,
   "contains": [
     "library/cuspshapes/blocks/prose-sec-006",
-    "library/cuspshapes/blocks/prop-sec-006-01",
-    "library/cuspshapes/blocks/remark-sec-006-02"
+    "library/cuspshapes/blocks/thm-sec-006-01",
+    "library/cuspshapes/blocks/cor-sec-006-02",
+    "library/cuspshapes/blocks/figure-img-p012-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -40,4 +40,7 @@ export default remark({
     "rem:meson-mass-splitting",
   ],
   cites: ["gellmann1962"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): This is a\ntheorem, machine-checked in\n`QOU/Eightfold/DecupletEqualSpacing.lean`: the three\n\n(`octet_casimir_not_function_of_hypercharge`, derived from the octet weight\ndata rather than asserted)" },
+  ],
 });

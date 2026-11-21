@@ -6,11 +6,15 @@
   "sha256": "782034b674f958af57632cf8cab5c42015ed7cd01702930740b8d541141c0051",
   "bytes": 36934,
   "pages": 4,
-  "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "ocr",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T17:27:08Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "runContext": {
+   "sha256": "291b8b7bf86d94b535ba0b4919e4b119b2bfe98fb1fe45abfc889f81ebb14ad3"
+  },
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,23 +24,29 @@
    "stamp_date": "18 Jun 2010"
   },
   "doi": null,
-  "title": "A table of boundary slopes of Montesinos knots Nathan M. Dunfield1 Revised version of June 2010 email: nathan@dunfield.info",
-  "authors_raw": null,
+  "title": "A table of boundary slopes of Montesinos knots",
+  "authors_raw": "Nathan M. Dunfield1",
   "title_lines": [
    "A table of boundary slopes of",
-   "Montesinos knots",
-   "Nathan M. Dunfield1",
-   "Revised version of June 2010",
-   "email: nathan@dunfield.info"
+   "Montesinos knots"
   ],
-  "abstract": "This note corrects errors in Hatcher and Oertel\u2019s table of boundary slopes of Montesinos knots which have projec- tions with 10 or fewer crossings.",
+  "abstract": "This note corrects errors in Hatcher and Oertel’s table of boundary slopes of Montesinos knots which have projec- tions with 10 or fewer crossings.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211116121228-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20211116121228-05'00'"
+  },
+  "title_raw": "A table of boundary slopes of Montesinos knots Nathan M. Dunfield! Revised version of June 2010 email: nathan@dunfield.info",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "A table of boundary slopes of Montesinos knots Abstract Introduction Revised table",
+   "outline": "1 Introduction",
+   "text": "A table of boundary slopes of Montesinos knots Nathan M. Dunfield! Revised version of June 2010 email: nathan@dunfield.info",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "A table of boundary slopes of Montesinos knots Nathan M. Dunfield! Revised version of June 2010 email: nathan@dunfield.info"
  },
  "toc": [
   {
@@ -44,32 +54,88 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Revised table",
    "page": 1,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preparing the table",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Getting the program",
    "page": 4,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 331,
+   "n_words": 49,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -77,8 +143,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1082,
-   "n_words": 180
+   "n_chars": 1083,
+   "n_words": 179,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-revised-table",
@@ -87,8 +155,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 10323,
-   "n_words": 2768
+   "n_chars": 9886,
+   "n_words": 2200,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-preparing-the-table",
@@ -98,7 +168,9 @@
    "page_start": 3,
    "page_end": 4,
    "n_chars": 2110,
-   "n_words": 363
+   "n_words": 359,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-4-getting-the-program",
@@ -107,16 +179,26 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 606,
-   "n_words": 88
+   "n_chars": 609,
+   "n_words": 88,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 14121,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 14019,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "boundary_slopes.tex",
@@ -129,34 +211,39 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.922,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-revised-table",
      "title": "Revised table",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.893,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-preparing-the-table",
      "title": "Preparing the table",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-getting-the-program",
      "title": "Getting the program",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.604,
      "result": "overlaid",
      "converter": "pandoc"
     }

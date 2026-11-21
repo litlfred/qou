@@ -12,7 +12,7 @@ curve E_q, defined via the classical Laurent series on ℂ/Λ_q.
 LaTeX label: `def:weierstrass-projection`
 
 ## References
-- [manuscript] §5/weierstrass-projection
+- [leitner2026] §5/weierstrass-projection
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -45,7 +45,7 @@ opaque coeffEmbed : R_q → ℂ
     §5/weierstrass-projection): the Weierstrass projection ℘_q
     associated to the Descartes elliptic curve.  Axiomatised pending
     a complex Weierstrass-℘ formalisation in Mathlib. -/
--- Ref: [manuscript] §5/weierstrass-projection
+-- Ref: [leitner2026] §5/weierstrass-projection
 opaque weierstrassProjection : R_q → R_q → ℂ → ℂ
 
 /-- **Derivative `℘'_q` of the Weierstrass projection.**  Opaque for the
@@ -53,7 +53,7 @@ opaque weierstrassProjection : R_q → R_q → ℂ → ℂ
     Weierstrass-℘ in Mathlib to differentiate, so `℘'` enters as its own
     named primitive and the differential equation below is what ties the
     two together. -/
--- Ref: [manuscript] §5/weierstrass-projection
+-- Ref: [leitner2026] §5/weierstrass-projection
 opaque weierstrassProjectionDeriv : R_q → R_q → ℂ → ℂ
 
 /-- **External axiom (Lang, Elliptic Functions Thm VI.3.6):** the
@@ -82,7 +82,7 @@ opaque weierstrassProjectionDeriv : R_q → R_q → ℂ → ℂ
     `weierstrassProjection` and `weierstrassProjectionDeriv`, which is
     what makes it a genuine (and genuinely unproved) external input.
     Bean `qou-t7zg`. -/
--- Ref: [manuscript] §5/weierstrass-projection
+-- Ref: [leitner2026] §5/weierstrass-projection
 -- Ref: [lang2002algebra] https://doi.org/10.1007/978-0-387-09494-6 Theorem VI.3.6
 axiom weierstrass_diff_eq_axiom :
     ∀ (g2 g3 : R_q) (z : ℂ),

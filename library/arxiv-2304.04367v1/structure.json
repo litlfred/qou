@@ -1,0 +1,552 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2304.04367v1",
+ "source": {
+  "file": "2304.04367.pdf",
+  "sha256": "63fc9a4a5f6b6b71cc542a312f4a01ea1285c88bf6f6957fd47cb918b117c65f",
+  "bytes": 7309101,
+  "pages": 12,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T10:16:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2304.04367",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "10 Apr 2023"
+  },
+  "doi": null,
+  "title": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+  "authors_raw": "Qian Zhao,1 Yan-Xi Wu,1, 2 Mamutjan Ababekri,1 Zhong-Peng Li,1 Liang Tang,3, \u2217and Jian-Xing Li1, \u2020",
+  "title_lines": [
+   "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20230411004121Z"
+  },
+  "title_raw": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+   "outline": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+   "text": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+   "corroborated_by": [
+    "outline",
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "I Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "II Methods of theory and numerical simulation",
+   "page": 2,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 3,
+   "title": "A Calculation of completely spin-dependent LBW cross section",
+   "page": 2,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 3,
+   "title": "B Constructing polarized LBW process with MC sampling",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "III Theoretical and numerical analysis of polarization effects in LBW process",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 3,
+   "title": "A Analytical calculation of pair polarization from angle-dependent cross section",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 3,
+   "title": "B Angle dependence of LBW pairs induced by linear polarization of photon from numerical simulation",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "IV Discussion",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "V CONCLUSION",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "VI ACKNOWLEDGEMENT",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "A The expressions of the total cross section and spin-summarized differential cross section",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "B The expressions of the coefficients in Eq. (10)",
+   "page": 8,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 10,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Coordinate system of the LBW process in the c.m. frame. pe",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "(a) and (b) Distributions of d \u00af\u03c3\u03b3\u03b3/dtd\u03d5 with \u03b3(1)",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "In the scenario of \u03b3(1)",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Distributions of the total polarization |\u03b6|, longitudinal polarization \u03b6\u2225, and transverse polarization \u03b6\u22a5, calculated from Eq. (20) with",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "(a) and (b) Distributions of produced number density Npair of",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "MC simulation for collision scenario with a LP photon beam and a CP photon beam: (a) and (b) Distributions of statistical polarization Ptot in \u03b5 \u2212\u03d5 plane and \u03b5 \u2212\u03b8s plane, respectively. (c) and (d) Statistical variations of total polarization Ptot of LBW pairs, with longitudinal component P\u2225and trans",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-000-angle-dependent-pair-production-in-the-polarized",
+   "number": null,
+   "title": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1897,
+   "n_words": 267,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-i-introduction",
+   "number": null,
+   "title": "I Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4921,
+   "n_words": 727,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-ii-methods-of-theory-and-numerical-simulation",
+   "number": null,
+   "title": "II Methods of theory and numerical simulation",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 897,
+   "n_words": 131,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-003-a-calculation-of-completely-spin-dependent-lbw-c",
+   "number": null,
+   "title": "A Calculation of completely spin-dependent LBW cross section",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4640,
+   "n_words": 925,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-004-b-constructing-polarized-lbw-process-with-mc-sam",
+   "number": null,
+   "title": "B Constructing polarized LBW process with MC sampling",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 6418,
+   "n_words": 1210,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-005-iii-theoretical-and-numerical-analysis-of-polari",
+   "number": null,
+   "title": "III Theoretical and numerical analysis of polarization effects in LBW process",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 38,
+   "n_words": 6,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-006-a-analytical-calculation-of-pair-polarization-fr",
+   "number": null,
+   "title": "A Analytical calculation of pair polarization from angle-dependent cross section",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5238,
+   "n_words": 909,
+   "label_start": "4",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-007-b-angle-dependence-of-lbw-pairs-induced-by-linea",
+   "number": null,
+   "title": "B Angle dependence of LBW pairs induced by linear polarization of photon from numerical simulation",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 7771,
+   "n_words": 1217,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-008-vi-acknowledgement",
+   "number": null,
+   "title": "VI ACKNOWLEDGEMENT",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 349,
+   "n_words": 53,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-009-a-the-expressions-of-the-total-cross-section-and",
+   "number": null,
+   "title": "A The expressions of the total cross section and spin-summarized differential cross section",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1683,
+   "n_words": 404,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-010-b-the-expressions-of-the-coefficients-in-eq-10",
+   "number": null,
+   "title": "B The expressions of the coefficients in Eq. (10)",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 15408,
+   "n_words": 3210,
+   "label_start": "8",
+   "label_end": "12"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 49260,
+  "furniture_lines_stripped": 11
+ }
+}

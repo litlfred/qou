@@ -1,0 +1,60 @@
+1374 J. Leake
+
+(a) IfK = C, then dim(W) < 1.
+(b) If[K=R, then dim(W) < 2.
+
+By applying appropriate Mébius transformations, note that (a) of the above lemma
+can be generalized to (C; x --- x Cj)-stable polynomials for any open circular regions
+Clee Cn € CPI.
+
+We now state the last result of this section, which refines the Hermite-Biehler theorem
+for top-degree monic polynomials in Vg(n). This refinement comes through the notion of
+interlacing polynomials and is much closer to the original statement of the classical Hermite-
+Biehler theorem (e.g., see Theorem 6.3.4 in [15]).
+
+Lemma 4.13 For top-degree monic p,q € Vr(n), p < q if and only if the roots of p and q
+(denoted in increasing order by (ax : 1) and (fx : 1), respectively) interlace on the real line
+in the following way:
+
+a < Bi Sa < By S++ SO < By
+
+Further, if these equivalent conditions hold, then < gives a total order on the top-degree
+monic elements of the span of p and q in Vp(n). This order is equivalently defined via the
+order of the kth largest roots, for any k € [n] such that a, # Bx.
+
+Proof The fact that p < q is equivalent to interlacing roots is the classical univariate Hermite-
+Biehler theorem. That q has larger roots than p can be obtained by the fact that the (n — 1)st
+derivative of g + ip must be 71,-stable. Since both polynomials are top-degree monic, this
+(n — 1)st derivative will be a complex linear combination of two linear terms. This complex
+linear combination is given as follows, where s, and s, denote the respective sums of the
+roots of g and p:
+
+an" (q(x, y) + ip(x, y)) = (nlx —(n— 1)! sgy) Fi! x — (n= D!- spy)
+=masa(x— tie )
+ma+o(s nd ai?
+
+sq tisp
+
+nddiy © H_. We further compute:
+
+Since this polynomial is #1,-stable, it must be that
+
+a ~ Sg ti8p — (Sq Fisp\L—i) _ Sq + Sp +i(Sp — Sq)
+~~ n+i) 2n 7 2n
+
+Therefore s, > s,, which is the same as saying that the sum of the roots of q is larger than
+that of p. Since we already know that the roots of g and p interlace, this implies that g has
+larger roots than p.
+
+As for the total ordering property, let r and s be two polynomials in the real span of p
+and q. Any real linear combination of these polynomials is then a real linear combination of
+p and q (and hence is real-rooted), and Hermite—Biehler implies either r < s ors <r. By
+the above interlacing condition, it is straightforward to see that this total order is given by
+looking at the order of the kth roots, for any k € [n]. Oo
+
+5 Grace’s theorem
+
+We now prove the multivariate homogeneous Grace’s theorem for some specific projectively
+convex regions and then derive a few important corollaries. These corollaries will be almost
+
+D Springer

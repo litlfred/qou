@@ -12,7 +12,7 @@ LaTeX label: `def:su2-generators`
 
 ## References
 
-- [manuscript] Chapter 4, §SU(2)–SO(3)
+- [leitner2026] Chapter 4, §SU(2)–SO(3)
 -/
 
 namespace QOU
@@ -23,7 +23,7 @@ namespace QOU
     - α³ = β² = center element (−I in SU(2))
     - βαβ⁻¹ = α⁻¹ (dihedral relation)
     - [β, α] = α⁻² (commutator) -/
--- Ref: [manuscript] Chapter 4
+-- Ref: [leitner2026] Chapter 4
 structure Dic3Data where
   /-- The group carrier. -/
   G : Type*
@@ -46,11 +46,11 @@ structure Dic3Data where
 attribute [instance] Dic3Data.grp
 
 /-- Dic₃ has order 12. -/
--- Ref: [manuscript] Chapter 4
+-- Ref: [leitner2026] Chapter 4
 theorem dic3_order : 2 * 2 * 3 = 12 := by norm_num
 
 /-- The commutator [β, α] = βαβ⁻¹α⁻¹ = α⁻¹α⁻¹ = α⁻². -/
--- Ref: [manuscript] Chapter 4
+-- Ref: [leitner2026] Chapter 4
 theorem commutator_eq (d : Dic3Data) :
     d.beta * d.alpha * d.beta⁻¹ * d.alpha⁻¹ = d.alpha⁻¹ * d.alpha⁻¹ := by
   rw [d.dihedral]

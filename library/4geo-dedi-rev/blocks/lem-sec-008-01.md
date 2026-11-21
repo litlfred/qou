@@ -1,0 +1,1 @@
+For any edge e of λj, the (exponential) shear-bend coordinate of e deﬁned by any pleated surface Fw| ˜S (ie. any lift ( ˜S, ˜λj) of (S, λj) to ˜ Mφ, and any pseudo-developing map Fw| ˜S : ˜S →H3), coincides with the parameter xj(e) := −W + j (e).

@@ -8,7 +8,7 @@
   "pages": 17,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,8 +21,8 @@
    "stamp_date": "5 Oct 1999"
   },
   "doi": null,
-  "title": "arXiv:math/9910019v1 [math.CO] 5 Oct 1999",
-  "authors_raw": "Jinho Baik\u2217and",
+  "title": "Symmetrized random permutations",
+  "authors_raw": "Jinho Baik∗and",
   "title_lines": [
    "Symmetrized random permutations"
   ],
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/9910019v1 [math.CO] 5 Oct 1999"
  },
  "toc": [
   {
@@ -111,19 +112,6 @@
     "body"
    ],
    "page_label": "9"
-  },
-  {
-   "level": 2,
-   "title": "$\\beta$-Plancherel measure on the set of Young diagrams",
-   "page": 10,
-   "source": "inferred",
-   "number": "4.2",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "10"
   },
   {
    "level": 2,
@@ -345,8 +333,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 126,
-   "n_words": 17,
+   "n_chars": 124,
+   "n_words": 16,
    "label_start": "1",
    "label_end": "1"
   },
@@ -357,7 +345,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 7109,
+   "n_chars": 7120,
    "n_words": 1360,
    "label_start": "1",
    "label_end": "4"
@@ -369,8 +357,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 5676,
-   "n_words": 1218,
+   "n_chars": 5709,
+   "n_words": 1220,
    "label_start": "4",
    "label_end": "7"
   },
@@ -381,8 +369,8 @@
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 4817,
-   "n_words": 942,
+   "n_chars": 4828,
+   "n_words": 943,
    "label_start": "7",
    "label_end": "9"
   },
@@ -393,8 +381,8 @@
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 3,
-   "n_words": 1,
+   "n_chars": 31,
+   "n_words": 4,
    "label_start": "9",
    "label_end": "9"
   },
@@ -405,8 +393,8 @@
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 5186,
-   "n_words": 991,
+   "n_chars": 5231,
+   "n_words": 996,
    "label_start": "9",
    "label_end": "11"
   },
@@ -416,20 +404,32 @@
    "title": "Random turn vicious walker model",
    "level": 2,
    "page_start": 11,
-   "page_end": 17,
-   "n_chars": 11193,
-   "n_words": 1968,
+   "page_end": 12,
+   "n_chars": 2182,
+   "n_words": 421,
    "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-006-44-symmetrized-versions-of-johanssons-model",
+   "number": "4.4",
+   "title": "Symmetrized versions of Johansson's model",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 9001,
+   "n_words": 1547,
+   "label_start": "12",
    "label_end": "17"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 8,
+  "toc_entries": 7,
   "toc_inferred_entries": 8,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.167,
+  "toc_inferred_empty_share": 0.125,
   "toc_inferred_method": "latex",
   "figure_entries": 2,
   "figure_sequence_gaps": [],
@@ -437,8 +437,17 @@
    "count": 0,
    "items": []
   },
-  "sections": 7,
-  "chars_total": 34110,
+  "sections": 8,
+  "chars_total": 34226,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "$\\beta$-Plancherel measure on the set of Young diagrams",
+    "page": 10,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper4.tex",
@@ -458,8 +467,8 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.956,
-     "coverage_ratio": 0.963,
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -475,15 +484,16 @@
      "id": "sec-002-3-main-results",
      "title": "Main Results",
      "prose_ratio": 0.983,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-4-applications-and-related-topics",
      "title": "Applications and related topics",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-004-41-random-involutions-and-random-signed-involuti",
@@ -496,10 +506,17 @@
     {
      "id": "sec-005-43-random-turn-vicious-walker-model",
      "title": "Random turn vicious walker model",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.567,
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
+    },
+    {
+     "id": "sec-006-44-symmetrized-versions-of-johanssons-model",
+     "title": "Symmetrized versions of Johansson's model",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.419,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

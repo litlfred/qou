@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0905.0591v3/blocks/prose-sec-016",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Ribbon knots and doubly slice knots",
-  "pageStart": 16,
-  "pageEnd": 17,
-  "text": "../sections/sec-016-53-ribbon-knots-and-doubly-slice-knots.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0591v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0591v3",
+  "title": "Twisted Alexander polynomials of zero–surgeries",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "text": "../sections/sec-016-51-twisted-alexander-polynomials-of-zerosurgerie.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0905.0591v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0905.0591v3/manifest.jsonld",
   "provenance": "ingested"
 }

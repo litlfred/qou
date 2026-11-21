@@ -1,20 +1,12 @@
-The [core-Levi equivalence](#prop:core-levi-form) translates the Navier--Stokes millennium problem strictly into the contact geometry of the underlying brane:
+The [core Levi form](#prop:core-levi-form) reduces the Levi datum of the vorticity plane field $\ker\varTheta = \xi^\perp$ to one scalar, $\xi\cdot\mathrm{curl}\,\xi$, where $\xi = \omega/|\omega|$ is the vorticity direction on the three-dimensional flow domain. Its bearing on the Navier--Stokes problem is narrower than a single equivalence.
 
-$$
-  \text{NS blows up}
-  \Longleftrightarrow
-  \text{Levi form non-degenerate at collision}
-  \Longleftrightarrow
-  \kappa(t) = O(1).
-$$
+**What the scalar measures.** Where $\xi\cdot\mathrm{curl}\,\xi \neq 0$, neighbouring vortex lines twist about one another and $\ker\varTheta$ is a contact structure. Where $\xi\cdot\mathrm{curl}\,\xi = 0$ on an open set, the planes orthogonal to the vortex lines are integrable there: locally the vortex lines are the normals of a family of surfaces. The scalar is a property of the line field $[\xi]$, not of the cross-sectional shape of a vortex core. A straight anti-parallel pair has $\xi\cdot\mathrm{curl}\,\xi = 0$ for every core shape.
 
-**Interpretation of each outcome.**
+**Withdrawn reading.** This remark formerly displayed the chain "Navier--Stokes blows up if and only if the Levi form is non-degenerate at collision, if and only if the core aspect ratio $\kappa(t)$ stays $O(1)$". Both equivalences are withdrawn; see [Levi degeneracy conjecture](#conj:levi-degeneracy). The first is the former branch (A). The smooth Beltrami solution $u = e^{-\nu t}(\sin z, \cos z, 0)$ on $\mathbb{T}^3$ refutes it: its Levi scalar is $1$ everywhere and its vorticity stays bounded. The second identified the core aspect ratio with a Levi condition number, which does not exist in dimension $3$. The interpretation of each outcome, and the root-of-unity bound on the core aspect ratio read as a bound on Levi data, are withdrawn with them.
 
-If the Levi form **remains non-degenerate** ($\kappa = O(1)$): Vorticity mechanically concentrates into tight tubular cores. The absolute lower bound $\|\omega\|_\infty \geq c/(T^*-t)$ holds, triggering BKM divergence and breaking NS regularity. The [counter-example](#conj:ns-counterexample) successfully executes. The contact structure rigorously defies integrability; the vortex holds as a valid topological defect, producing an unavoidable physical singularity.
+**What survives.** Two statements remain, of different status.
 
-If the Levi form **degenerates** (driving $\kappa \to 0$ or $\infty$): Vorticity dissipates into a thin sheet. The structural lower bound fails, leaving NS potentially regular. The contact structure has partially succumbed to integrability exactly at the collision locus, successfully forming a 2-dimensional integral submanifold. Local observability collapses, and the vortex structure devolves into a diffuse smear smoothly absorbed by classical viscosity.
+1. *Open.* Branch (B) of [Levi degeneracy conjecture](#conj:levi-degeneracy): if $\xi\cdot\mathrm{curl}\,\xi$ vanishes on the high-vorticity set, the solution does not blow up. No standard result supports it.
+2. *Cited.* The contrapositive of the Beirão da Veiga--Berselli criterion \cite{beiraodaveiga2002}: blow-up forces the line field $[\xi]$ to lose $\tfrac{1}{2}$-Hölder control on the high-vorticity set. Neither the vanishing nor the non-vanishing of $\xi\cdot\mathrm{curl}\,\xi$ supplies that control, because the scalar is one component of $\nabla\xi$.
 
-**The root-of-unity constraint.**
-Evaluating at $q = e^{i\pi/\kappa}$, the explicit [truncation](#prop:root-of-unity-truncation) back to $(\kappa-1)/2$ modes restricts the core aspect ratio beneath $1 + C(\kappa-1)$. Sending $\kappa \to \infty$ ($q \to 1$) diverges this bound, but restricts the divergence exclusively to a linear rate. Biot--Savart stretching propels collision dynamics at $\sim 1/(T^*-t)$. The terminal outcome depends entirely on whether the representation-theoretic bound $O(\kappa)$ outpaces the dynamical rate $O(1/(T^*-t))$.
-
-The contact-geometric test: **does a finite-dimensional approximation over $\mathrm{SU}_q(2)$ preserve Levi form non-degeneracy in the infinite-dimensional limit?**
+The contact-geometric question the chapter can still pose is therefore about twist of the vortex lines on the high-vorticity set, not about the shape of colliding cores.

@@ -5,18 +5,18 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0605041v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0605041v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-ph-0605041v2",
+  "title": "Cluster expansion for abstract polymer models. New bounds from an old approach",
   "contains": [
     "library/arxiv-math-ph-0605041v2/sections/sec-front-matter",
     "library/arxiv-math-ph-0605041v2/sections/sec-000",
     "library/arxiv-math-ph-0605041v2/sections/sec-001"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -31,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-ph-0605041v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0605041v2.pdf",
     "source_sha256": "12cccb408b6810f1808f8ccde3f418f37020a2edd4b4bc5b86217d5ceccb0b3a",
     "pages": 16,

@@ -5,8 +5,7 @@ $$
   \;=\;
   \chi^{(2,1)}(\sigma_1^5)
   \;\times\;
-  \biggl(\frac{V_S(T(2,5))}{V_S(T(2,3))}\biggr)^{\!2}
-  \;\approx\; 3.536.
+  \biggl(\frac{V_S(T(2,5))}{V_S(T(2,3))}\biggr)^{\!2}.
 $$
 
-The ratio requires exactly three inputs: the standard representation character of $\sigma_1^5$, the Seifert volumes of the constituent torus knots, and the two-body composition exponent $2$. The exact algebraic evaluation matches the experimental ratio to 290 ppm.
+The value at $q_0$ and its comparison with the measured ratio are recorded in [the comparison remark](#rem:meson-kaon-pion-hecke-seifert-comparison).

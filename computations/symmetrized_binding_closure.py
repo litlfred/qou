@@ -54,7 +54,8 @@ from b_over_a_v5_unified import AME_BA_MEV  # noqa: E402
 # masses are the appropriate canonical source per the three-calibration discipline.
 Q_BETA_MEV = (mp.mpf(M_N_MEV_VALIDATION) - mp.mpf(M_P_MEV_VALIDATION)
               - mp.mpf(M_E_MEV))
-E0_MEV = M_E_MEV / (Q_MP * (Q_MP - 1))
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0_MEV = _qbeta_e0.canonical(q=Q_MP, m_e=M_E_MEV)  # tower-summed E_0, canonical (owner ruling 2026-11-20, #8590); was order-zero m_e/(q(q-1))
 AME_4HE = mp.mpf(AME_BA_MEV[(2, 2)])     # ⁴He total binding, AME 2020 (canonical dict)
 
 

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bsmf-2002-130-3-457-0",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bsmf-2002-130-3-457-0/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,11 +20,10 @@
     "library/bsmf-2002-130-3-457-0/sections/sec-005",
     "library/bsmf-2002-130-3-457-0/sections/sec-006",
     "library/bsmf-2002-130-3-457-0/sections/sec-007",
-    "library/bsmf-2002-130-3-457-0/sections/sec-008",
-    "library/bsmf-2002-130-3-457-0/sections/sec-009"
+    "library/bsmf-2002-130-3-457-0/sections/sec-008"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "bsmf-2002-130-3-457-0",
     "title_source": "pdf-info",

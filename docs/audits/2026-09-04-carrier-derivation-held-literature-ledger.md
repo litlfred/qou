@@ -79,7 +79,7 @@ route with a genuine acquisition gap.
 
 **Primary, held:** [`library/arxiv-0808.1533v1`](../../library/arxiv-0808.1533v1/) —
 Komendarczyk. The link bound is stated at
-[`sections/sec-001-energy-bound.md:203-216`](../../library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md);
+[`sections/sec-001-energy-bound.md:203-216`](../../library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md);
 verified verbatim this session at line 211 (`ac(Lk, L)|Flux(Xk)|`).
 
 ```
@@ -109,7 +109,7 @@ mattered, and is corrected below the rule. Do not restore it.** It read:
 ---
 
 **What the source actually says**, read this session at
-[`sec-001-energy-bound.md:216-217`](../../library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md):
+[`sec-001-energy-bound.md:216-217`](../../library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md):
 
 > *"the asymptotic crossing numbers `ac(Lk, L)` **for borromean links** can be estimated
 > below by a smallest genus among surfaces in `ℝ³ ∖ {L₁ ∪ … ∪ L̂_k ∪ … ∪ L_n}` with a single
@@ -324,7 +324,7 @@ Gresnigt, *Three generations of colored fermions with S₃ family symmetry* —
 
 | work | link | held copy |
 |---|---|---|
-| Komendarczyk, *On the third order helicity of magnetic fields on invariant domains in S³* — **eq. (43), the link bound** | [arXiv:0808.1533](https://arxiv.org/abs/0808.1533) | [`v1/sec-001-energy-bound.md`](../../library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md) (line 211; the Borromean qualifier at 216) · [`v3`](../../library/arxiv-0808.1533v3/) is the indexed copy |
+| Komendarczyk, *On the third order helicity of magnetic fields on invariant domains in S³* — **eq. (43), the link bound** | [arXiv:0808.1533](https://arxiv.org/abs/0808.1533) | [`v1/sec-001-energy-bound.md`](../../library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md) (line 211; the Borromean qualifier at 216) · [`v3`](../../library/arxiv-0808.1533v3/) is the indexed copy |
 | Khesin, *Geometry of higher helicities*, Moscow Math. J. **3** (2003) 989–1011 | **no DOI/URL registered** | [`library/helicity03mmj/`](../../library/helicity03mmj/) |
 | Moffatt & Ricca, *Helicity and the Calugareanu invariant* (1992) | **no DOI/URL registered** | [`library/procrsoclondona92/`](../../library/procrsoclondona92/) — **96 % of its text is in `ocr/`**, 19 pages against a 1-section stub |
 

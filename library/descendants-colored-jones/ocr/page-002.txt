@@ -1,0 +1,42 @@
+2308 Stavros Garoufalidis and Rinat Kashaev
+
+3.4 An example 2329
+3.5 A conjecture 2330
+Acknowledgements 2330
+References 2330
+
+1. Introduction
+
+The Jones polynomial [Jon87] is a fascinating polynomial invariant of knots
+with deep connections to the topology and geometry in dimension 3. Its dis-
+covery in 1984, apart from revolutionizing Knot Theory, lead to a new area
+of research, Quantum Topology, with applications and challenges that we will
+not attempt to summarize here. The Jones polynomial and its colored ver-
+sions (a sequence of polynomials, one for every irreducible finite dimensional
+representation of the Lie algebra sl2) are versatile invariants with numerous
+interpretations, among them as partition functions of a 3-dimensional Chern—
+Simons gauge theory [Wit89]. This sequence of Laurent polynomials with inte-
+ger coefficients (the so-called colored Jones polynomials of a knot), introduced
+by Kirillov-Reshetikhin [KR89] and Turaev [Tur88], is not a random sequence
+of polynomials. Indeed, it was shown in [GL05] that it is g-holonomic, i.e.,
+that it satisfies a nontrivial recursion relation with coefficients in Z[{q, q”].
+Moreover, a canonically chosen recursion is a knot invariant (the so-called A-
+polynomial of a knot) which is conjectured to determine the SL2(C)-character
+variety of the knot, viewed from the boundary [Gar04]. The colored Jones
+polynomial of a knot has appeared in equivalent forms in several occasions,
+such as the sequence of Habiro polynomials of a knot [Hab02, Hab08] and the
+sl2 Akutsu-Deguchi-Ohtsuki invariants [ADO92] which only recently were
+shown to be equivalent to the colored Jones polynomials [Wil].
+
+An unexpected connection of the colored Jones polynomials and hyper-
+bolic geometry [Thu77] arose from the Volume Conjecture [Kas97] for the
+Kashaev invariant of a knot whose exponential growth rate is conjectured
+to be the suitably normalized Volume of a hyperbolic knot. This conjecture,
+combined with the identification of the Kashaev invariant with an evaluation
+of the colored Jones polynomials by Murakami-~Murakami [MMO01], linked the
+Jones polynomials with hyperbolic geometry.
+
+In this paper we discuss two equivalent reformulations (or rather, realiza-
+tions) of the colored Jones polynomials of a knot: one is a sequence DJ (™)(q)
+of elements of the Habiro ring defined in Equation (6) below and shown to
+be equivalent to the colored Jones polynomial of a knot in Proposition 2.2.

@@ -1,0 +1,50 @@
+5.4 Four-body sector
+
+Table 5.2: Triton binding energy predictions at LO, N2LO, N2LO+EM, N2LO+EM+3NF and the fit parameter cp.
+The energy errors in brackets are due to the uncertainties of the LECs. The * denotes the triton binding energy as
+an input parameter.
+
+a=1.97fm | a=1.64fm | a= 1.32 fm
+Exo [MeV] -7.80 -8.29 -8.74
+Eyoro [MeV] ~7,846(4) -8.11(2) -7.95(2)
+EXEM [MeV] ~7.68(2) -7.91(3) -7.71(2)
+EXEMSSN* [MeV] —8.48(3) —8.48(3) —8.48(2)
+Ce 0.5309(2) | 0.3854(3) | 1.0386(5)
+
+becomes less bound as a is decreased from a = 1.64 fm to a = 1.32 fm even though the 3 Po prediction is
+stronger. The reason is that the difference between the 3Po phase shifts is relatively small and the 's 9 as
+well as the 7 P, phase shifts become smaller and finally have a larger effect on the three-particle binding
+energy. The fit value for c, is of natural size and its pattern is consistent with the missing attraction at
+N2LO+EM.
+
+5.4 Four-body sector
+
+5.4.1 Theoretical framework
+
+In the four-body system, we do not have any new operator as our system should be describable by the
+2NFs and 3NFs only. As the four-body system scales with L?, an exact calculation at sufficient large
+lattices is not practical anymore, and hence we have to use Monte Carlo methods. More precisely, we
+use auxiliary field Monte Carlo with the hybrid Monte Carlo algorithm [33]. In the following we will
+define the LO auxiliary field transfer matrix which we will minimize afterwards. All other contributions
+are calculated perturbatively. For an increased convergence we prepare our trial states using a SU(4)
+symmetric Hamiltonian
+
+1 > > > >
+Ao = Afree + 700 » feu (41 — 72) p (1) pi), (5.59)
+Ay ity
+
+with fgui4)(#) — #) a Gaussian smearing function. This operator is used to efficiently create trial states
+which are close to realistic nuclei,
+
+We) = exp (—tyHo) |Yo) (5.60)
+
+where |W) is the antisymmetrized free-particle solution for “He in a finite volume. The correlation
+function at Euklidean time tf is defined as
+
+Zaye O = (Wye | eXP-tALo) | Wye) > (5.61)
+
+where Ho = Afree + Ayo contact + Hope is the full LO Hamiltonian according to Eqs. (5.1,5.3,5.7), and
+|Wa,,,) is the antisymmetrized wave function of the nucleons given by Eq. (5.61). The above-mentioned
+expression can be calculated using auxiliary field Monte Carlo methods for different time steps and the
+
+63

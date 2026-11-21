@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/acsv231201/sections/sec-089",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Residue forms and the residue integral theorem",
+  "pageStart": 503,
+  "pageEnd": 517,
+  "contains": [
+    "library/acsv231201/blocks/prose-sec-089",
+    "library/acsv231201/blocks/cor-sec-089-01",
+    "library/acsv231201/blocks/cor-sec-089-02",
+    "library/acsv231201/blocks/prop-sec-089-03",
+    "library/acsv231201/blocks/rem-sec-089-04",
+    "library/acsv231201/blocks/prop-sec-089-05",
+    "library/acsv231201/blocks/thm-sec-089-06",
+    "library/acsv231201/blocks/thm-sec-089-07",
+    "library/acsv231201/blocks/lem-sec-089-08",
+    "library/acsv231201/blocks/cor-sec-089-09",
+    "library/acsv231201/blocks/lem-sec-089-10",
+    "library/acsv231201/blocks/rem-sec-089-11",
+    "library/acsv231201/blocks/thm-sec-089-12",
+    "library/acsv231201/blocks/rem-sec-089-13",
+    "library/acsv231201/blocks/cor-sec-089-14",
+    "library/acsv231201/blocks/ex-sec-089-15",
+    "library/acsv231201/blocks/ex-sec-089-16",
+    "library/acsv231201/blocks/cor-sec-089-17",
+    "library/acsv231201/blocks/thm-sec-089-18",
+    "library/acsv231201/blocks/rem-sec-089-19",
+    "library/acsv231201/blocks/ex-sec-089-20"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested"
+}

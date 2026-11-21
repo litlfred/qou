@@ -20,7 +20,7 @@ The point stabilizer $S_4$ preserves the *local Fano structure*
 at the fixed point: the 3 lines through that point, encoding the 3
 octonion multiplication triples involving the corresponding imaginary
 unit.  Computationally verified
-(`s4_fano_action.py`):
+:
 
 - $S_4$ acts transitively on the 3 lines through the fixed point,
 - $S_4$ acts transitively on the 4 lines not through the fixed point,
@@ -49,17 +49,15 @@ automorphism group.  That $S_4$ embeds in $\mathrm{PSL}(2,7)$ as a point
 stabilizer shows the enhancement is *available*, not that it
 *occurs*: nothing here rules out the normalization being a genus-3
 curve whose automorphism group is exactly $S_4$, or any other group
-containing $S_4$.  An earlier draft called the enhancement "the unique
-maximal option" and treated maximality as selection; that inference is
-withdrawn.
+containing $S_4$.  Maximality of the enhancement does not select it.
 
 **The $S_4$ bridge cannot select the Klein quartic.**
 A stronger negative than the Hurwitz error: the $S_4$ datum has no
 separating power at all.  The Fermat quartic $x^4 + y^4 + z^4 = 0$ is a
 genus-3 curve whose automorphism group $(\mathbb{Z}/4)^2 \rtimes S_3$ of
 order $96$ *also* contains $S_4$ --- exhibited as $V_4 \rtimes S_3$
-and machine-verified in exact $\mathbb{Z}[i]$ arithmetic
-(`s4_genus3_competitor_fermat.py`: element-order profile
+and verified by exact computation in $\mathbb{Z}[i]$ arithmetic
+(element-order profile
 $\{1{:}1,\, 2{:}9,\, 3{:}8,\, 4{:}6\}$, $V_4$ normal, $S_3$ inducing the
 full symmetric action on $V_4 \setminus \{1\}$).  So even a fully correct
 argument that the normalization has genus $3$ and inherits $S_4$ stops
@@ -81,7 +79,7 @@ $\{2,\, -2,\, -1\}$, with Fermat the single member $t = 0$.  The
 fibres of $t \mapsto [C_t]$ in moduli are finite, so
 infinitely many pairwise non-isomorphic genus-3 curves carry a faithful
 $S_4$ action.  All of this is machine-verified in exact rational
-arithmetic (`s4_genus3_pencil_infinite_family.py`), and only
+arithmetic, and only
 *finiteness* of the automorphism group is used --- the sharp Hurwitz
 bound is deliberately avoided here, for the reason given above.  The
 $S_4$ bridge therefore fails not only to choose between two
@@ -115,7 +113,7 @@ the line through $p$ is an invariant $1$-dimensional subspace of
 $\mathbb{C}^3$.  But the $3$-dimensional representation of $S_4$ is absolutely
 irreducible, and so is its restriction to $A_4$ --- each verified two
 independent ways, by commutant dimension and by character norm
-(`s4_marked_pair_obstruction.py`).  An absolutely irreducible
+.  An absolutely irreducible
 representation has no invariant line over any extension field, so no such
 pair exists: $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$ at
 all.
@@ -141,7 +139,7 @@ the argument does not touch at all is the Bring surface: it constrains the
 target, not the source.
 
 **Status:** the $S_4$ bridge mechanism is computationally verified
-(`s4_bridge_verification.py`, `s4_fano_action.py`) --- that
+ --- that
 is, $S_4$ does act on the local Fano data as claimed.  The genus degeneration
 step is a different matter, and it is no longer unproved but excluded: as shown
 above, under its own three premises it is *excluded*.  A pinch of the
@@ -152,7 +150,7 @@ target, a multi-node or separating pinch, or a non-faithful $S_4$ --- and
 saying which.
 
 **$\mathrm{PSL}(2,7)$ representation theory.**
-Computationally verified (`psl27_irrep_verification.py`):
+Computationally verified:
 the group $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3, \mathbb{F}_2)$ has
 6 conjugacy classes and 6 irreducible representations of dimensions
 

@@ -1,0 +1,48 @@
+---
+doc_id: arxiv-1312.3086v1
+doc_title: "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities"
+section_id: sec-004-32-error-detection-and-prevention
+section_title: "Error detection and prevention"
+section_number: 3.2
+pages: 5-6
+source_pdf: 1312.3086v1.pdf
+source_sha256: ff328e7c7cbdc70c
+toc_source: inferred
+text_source: latex
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 0.993
+doc_brief: "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities — 10 sections: Front matter; Introduction; The model"
+---
+So far, we did not take into account errors and losses. Fiber loss and spontaneous emission from the Rydberg level may corrupt the state in quite the same way since they both represent the loss of an excitation. We now investigate the influence of such errors on the different steps of our scheme.
+
+If a photon loss occurs during the transfer through the fiber or if a Rydberg excited atom spontaneously decays to the reservoir state during one of the steps in Table [\[EntanglementGeneration\]](#EntanglementGeneration){reference-type="ref" reference="EntanglementGeneration"}, an excitation is missing either in $\left(R_{k}\right)$ or $\left(L_{k+1}\right)$ at the end of the entanglement generation procedure. To diagnose whether this is the case, we merely need to test the occupancy of both subspaces $\left\{ \left|0_{R}\right\rangle _{k},\left|1_{R}\right\rangle _{k}\right\}$ and $\left\{ \left|0_{L}\right\rangle _{k+1},\left|1_{L}\right\rangle _{k+1}\right\}$ at the end of the entanglement procedure in the same spirit as in [@BPSM08]. To this end, one first prepares auxiliary subnodes $\left(A_{k}\right)$ and $\left(A_{k+1}\right)$ in the state $\left|\bar{0}_{A}\right\rangle$, before applying to each pair of subnodes $\left(A_{k},R_{k}\right)$ and $\left(L_{k+1},A_{k+1}\right)$ the sequence of pulses given in Table [1](#Diagnosis){reference-type="ref" reference="Diagnosis"}. At the end of this sequence, the states of the subnodes $\left(R_{k}\right)$ and $\left(L_{k+1}\right)$ are unchanged, while the auxiliary subnode $\left(A_{k}\right)$, respectively $\left(A_{k+1}\right)$, is either in state $\left|\bar{1}_{A}\right\rangle$ if the subnode $\left(R_{k}\right)$ -- respectively $\left(L_{k+1}\right)$, is singly occupied, or in the state $\left|N_{r_{A}}=1\right\rangle$ if the subnode $\left(R_{k}\right)$ -- respectively $\left(L_{k+1}\right)$, contains no excitation. One therefore merely needs to selectively ionize $\left|r_{A}\right\rangle$ in both ensembles $\left(k\right)$ and $\left(k+1\right)$. *Case (A)* If an ion is observed, subnodes $\left(R_{k}\right)$ and $\left(L_{k+1}\right)$ were not correctly entangled, they must therefore be reset through state selective ionization, and the whole procedure in Table [\[EntanglementGeneration\]](#EntanglementGeneration){reference-type="ref" reference="EntanglementGeneration"} must be repeated. *Case (B)* If no ion is observed then one selectively ionizes the state $\left|1_{A}\right\rangle$ in both ensembles $\left(k\right)$ and $\left(k+1\right)$: *Case (B1)* if an ion is observed, as expected, the entanglement generation procedure was indeed correctly performed and the scheme can continue ; *Case (B2)* if no ion is observed, then most probably an ion detection failed and, to be sure, the whole procedure for entangling subnodes $\left(R_{k}\right)$ and $\left(L_{k+1}\right)$ must be repeated again, as in the case (A).
+
+In quite the same way, if a Rydberg atom decays during the entanglement swapping procedure, an atomic excitation will miss in one of the subnodes $\left(R_{k},L_{k}\right)_{k=2,\ldots,N-1}$ and the subsequent series of measurements will therefore fail. In that case, entanglement generation and swapping should be repeated again after resetting the subnodes through state selective ionizations.
+
+As seen above, errors can be detected and their effects avoided through diagnosis and repetition of the erroneous steps. The cost is, however, an increase of the average time required to run the whole protocol, which will now be estimated.
+
+Let us first focus on the entanglement generation procedure. As said in Sec. [\[SecII\]](#SecII){reference-type="ref" reference="SecII"}, the success probability for a photon transfer along a fiber of length $L_{0}$ is $\eta_{t}=\exp\left(-L_{0}/L_{\textrm{att}}\right)$ where $L_{\textrm{att}}\sim22$ km. For $L_{0}=100$ km, $\eta_{t}\simeq1.1\%$. On the other hand the probability for one Rydberg excited atom to spontaneously decay during the entanglement generation procedure between two neighboring subnodes $\left(R_{k},L_{k+1}\right)$ (including the error diagnosis) is roughly given by $n_{r}\times\frac{\pi}{\Omega}\times\Gamma$ where $n_{r}=23$ is the number of (second-order) $\pi$ pulses involving Rydberg states, $\Omega$ is the typical value for their Rabi frequency -- note that these pulses can be either "classical-classical" *i.e.* driven by two laser beams or "quantum-classical" *i.e.* they involve a cavity photon in which case the expression of the associated Rabi frequency comprises the coupling strength $g_{\pm}$, and $\Gamma$ is the emission rate of the Ryberg level. Taking for the parameters the typical values $\Omega=2\pi\times1$MHz and $\Gamma=1$kHz, one obtains $1-n_{r}\pi\Gamma/\Omega\approx99\%$. Moreover, four ion detections must be successfully performed (giving either a positive or negative result) during the diagnosis on the two subnodes $\left(A_{k}\right)$ and $\left(A_{k+1}\right)$. The probability of this event is given by $\eta_{\textrm{ion}}^{4}\approx96\%$ for the ion detection efficiency $\eta_{\textrm{ion}}\approx99\%$. Finally, the probability for successfully entangling a pair of two neighboring subnodes $\left(R_{k},L_{k+1}\right)$ is therefore given by $P_{0}=\eta_{t}\times\left(1-n_{r}\pi\Gamma/\Omega\right)\times\eta_{\textrm{ion}}^{4}\approx1\%$. Note that the photon transfer is mainly responsible for this low probability, *i.e.* $P_{0}\approx\exp\left(-L_{0}/L_{\textrm{att}}\right)$; it is also the longest step of the entanglement generation procedure since it takes $L_{0}/c=0.5$ms for $L_{0}=100$km and $c=2\times10^{8}$m.s$^{-1}$, while each pulse takes no more than $\sim1\mu$s, typically, and the duration of an elementary entanglement generation step is roughly given by $L_{0}/c$. In average, a pair of neighboring subnodes $\left(R_{k},L_{k+1}\right)$ will be correctly entangled after $1/P_{0}$ repetitions of the entanglement generation procedure. For the $N$-node chain to be correctly entangled, the entanglement generation procedure must be repeated on average a certain number of times $\bar{n}\left(P_{0},N\right)$, whose expression is calculated in Appendix. For $P_{0}\sim1\%$ and $N=10$ -- *i.e.* for a total length $L\simeq1000$km, one obtains $\bar{n}\left(P_{0},N\right)\simeq455$.
+
+The same analysis can be achieved for the entanglement swapping step. The success probability of this step is readily found to be $P_{1}\left(N\right)=\left[\left(1-4\pi\Gamma/\Omega\right)\eta_{\textrm{ion}}^{4}\right]^{N-2}$. In average, to correctly entangle two remote nodes, $1/P_{1}\left(N\right)$ repetitions of the whole protocol will therefore be necessary. For $N=10$, $\eta_{\textrm{ion}}\simeq99\%$, $\Omega=2\pi\times1$MHz and $\Gamma=1$kHz, one gets $P_{1}\left(N\right)\simeq71.3\%$.
+
+Finally, since the time necessary for photon transfer, $L_{0}/c$, dominates by several orders of magnitude all the other steps, the average time taken by our protocol can be estimated by $T\sim\frac{L_{0}}{c}\times\frac{\bar{n}\left(P_{0},N\right)}{P_{1}\left(N\right)}$ that is $T\sim0.32$s for the previous set of parameters, to be compared to the average time it would take via direct transmission through the lossy optical fiber $\left(1/\chi_{r}\right)\times\left(1/\exp^{-L/L_{att}}\right)\sim5.5\times10^{9}$s, where $\chi_{r}$ is the repetition rate of the source of photons which we took equal to $10$ Ghz for our estimation.
+
+To conclude this section, let us point out that other errors can affect our protocol. First, Rydberg levels can be multiply excited due to the finite value of $\Delta_{dd}$. They constitute losses for our protocol, just as spontaneous emission, and are therefore already dealt with by the scheme. Their probability is $\left(\frac{\Omega}{\Delta_{dd}}\right)^{2}\lesssim1\%$ and only very weakly modifies $P_{0}$ and $P_{1}$.
+
+Secondly, uncertainty in the number of atoms in the sample may lead to inaccuracies in the Rabi frequencies. It was, however, noted in [@ZMHZ10], that such errors can be made as low as $1\%$ ; moreover, as suggested in [@BPSM08], they can also be dealt with by composite pulse techniques. We shall not consider them here.
+
+::: centering
+::: {#Diagnosis}
+  *i*) $\pi$ pulse : $\left|1_{L,R}\right\rangle \leftrightarrow\left|r_{+}\right\rangle$
+  --------------------------------------------------------------------------------------------
+  *ii*)$\pi$ pulse : $\left|0_{A}\right\rangle \leftrightarrow\left|r_{A}\right\rangle$
+  *iii*) $\pi$ pulse : $\left|r_{A}\right\rangle \leftrightarrow\left|1_{A}\right\rangle$
+  *iv*) $\pi$ pulse : $\left|r_{+}\right\rangle \leftrightarrow\left|1_{L,R}\right\rangle$
+  *v*) $\pi$ pulse : $\left|0_{L,R}\right\rangle \leftrightarrow\left|r_{-}\right\rangle$
+  *vi*) $\pi$ pulse : $\left|0_{A}\right\rangle \leftrightarrow\left|r_{A}\right\rangle$
+  *vii*) $\pi$ pulse : $\left|r_{A}\right\rangle \leftrightarrow\left|1_{A}\right\rangle$
+  *viii*) $\pi$ pulse : $\left|r_{-}\right\rangle \leftrightarrow\left|0_{L,R}\right\rangle$
+
+  : Pulse sequence for diagnosing errors occurring during entanglement generation procedure.
+:::
+:::

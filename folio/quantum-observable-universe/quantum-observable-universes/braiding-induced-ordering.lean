@@ -1,29 +1,36 @@
-import Mathlib.Data.Real.Basic
 import Mathlib.Order.WellFounded
 import Mathlib.Data.List.Lex
 import Mathlib.Data.Fin.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Logic.Relation
 
 
 /-!
-# QOU.braiding_induced_ordering — The braiding induces a well-ordering
+# QOU.braiding_induced_ordering — degree-lex ordering on braid words
 
-The non-symmetric braiding c_{V,V} on C determines a canonical
-admissible well-ordering ≺_c on the monomial basis B of the
-Hecke algebra H_n(q). This is a proposition derived from the
-categorical structure, not an axiom.
+Fix a total order on the letters `σ₁, …, σ_{n-1}` (here: the natural order
+on `Fin n`, applied to an alphabet of any finite size). The degree-lexicographic
+order `DegLex` on all words of the free monoid on those letters is
+well-founded (`degLex_wellOrdered`) and compatible with concatenation
+(`degLex_admissible`). The lean.ref of `prop:braiding-induced-ordering` is
+`braiding_induced_ordering_holds`.
+
+No braiding hypothesis enters: well-foundedness holds for any braiding, and the
+non-symmetry `c_{V,V}^2 ≠ id` is not used on words. The braiding only fixes
+which letters are read as positive crossings. The order on the letters is a
+choice, so the order is not canonical.
 
 LaTeX label: `prop:braiding-induced-ordering`
 
 ## References
-- [manuscript] §2/braiding-induced-ordering
+- [leitner2026] §2/braiding-induced-ordering
 -/
 
 namespace QOU
 
 /-- The degree-lex relation on `List α`: first compare lengths,
     then compare lexicographically at equal length. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 def DegLex {α : Type*} [LT α] (w w' : List α) : Prop :=
   w.length < w'.length ∨
   (w.length = w'.length ∧ List.Lex (· < ·) w w')
@@ -95,7 +102,7 @@ theorem encode_lt_of_lex {n : ℕ} {w w' : List (Fin n)}
     (see `encode_lt_of_lex`), so the route could not be repaired by fixing a
     name — the second component has to be replaced by something that really
     is well-founded, which is what `encode` provides. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 theorem degLex_wellOrdered (n : ℕ) :
     WellFounded (DegLex (α := Fin n)) := by
   have hwf : WellFounded
@@ -112,7 +119,7 @@ theorem degLex_wellOrdered (n : ℕ) :
 
 /-- Admissibility (length component): concatenation preserves
     the length ordering. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 theorem degLex_admissible_length {α : Type*} [LT α]
     (u v w w' : List α) (h : w.length < w'.length) :
     (u ++ w ++ v).length < (u ++ w' ++ v).length := by
@@ -130,7 +137,7 @@ theorem degLex_admissible_length {α : Type*} [LT α]
     the `Lex.nil` constructor forces `w = []` and `w' ≠ []`, which
     contradicts `hlen`.  The remaining two constructors carry the suffix
     through unchanged. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 theorem lex_append_suffix {α : Type*} {R : α → α → Prop} :
     ∀ {w w' : List α}, List.Lex R w w' → w.length = w'.length →
       ∀ v : List α, List.Lex R (w ++ v) (w' ++ v)
@@ -141,7 +148,7 @@ theorem lex_append_suffix {α : Type*} {R : α → α → Prop} :
 
 /-- Admissibility (lex component): concatenation with a common
     prefix and a common suffix preserves the lex ordering. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 theorem degLex_admissible_lex {α : Type*} [LT α]
     (u v w w' : List α) (h : List.Lex (· < ·) w w')
     (hlen : w.length = w'.length) :
@@ -156,8 +163,8 @@ theorem degLex_admissible_lex {α : Type*} [LT α]
 
 /-- Full admissibility: DegLex is preserved under concatenation
     with common prefix and suffix. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
--- Ref: [manuscript] unital-groebner-bases/admissible-system
+-- Ref: [leitner2026] §2/braiding-induced-ordering
+-- Ref: [leitner2026] unital-groebner-bases/admissible-system
 theorem degLex_admissible {n : ℕ} (u v w w' : List (Fin n))
     (h : DegLex w w') :
     DegLex (u ++ w ++ v) (u ++ w' ++ v) := by
@@ -168,9 +175,64 @@ theorem degLex_admissible {n : ℕ} (u v w w' : List (Fin n))
     exact ⟨by simp [List.length_append]; omega,
            degLex_admissible_lex u v w w' h_lex h_eq⟩
 
-/-- Top-level alias matching the manifest declaration. -/
--- Ref: [manuscript] §2/braiding-induced-ordering
+/-- **No closed `≺_c`-chains.** No word returns to itself through a finite
+    chain of strict `DegLex` steps. This is the fact used by
+    `rem:no-goedel-closed-chains`: it follows from well-foundedness alone.
+    The general statement is `QOU.Chronology.not_closedChainAt_of_wellFounded`
+    in the library; it is repeated here so this file stays self-contained. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem degLex_no_closedChain (n : ℕ) (w : List (Fin n)) :
+    ¬ Relation.TransGen (DegLex (α := Fin n)) w w := by
+  have h' : WellFounded (Relation.TransGen (DegLex (α := Fin n))) :=
+    (degLex_wellOrdered n).transGen
+  exact h'.induction (C := fun x => ¬ Relation.TransGen DegLex x x) w
+    (fun x ih hx => ih x hx hx)
+
+/-- **No total chronology for `≺_c`.** It is false that every word reaches
+    every word (itself included) by a finite `DegLex` chain. This is the
+    order-theoretic form of excluding a Gödel-type universe, where
+    `I⁺(p) = M` for every event `p`. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem degLex_not_totalChronology (n : ℕ) :
+    ¬ ∀ w w' : List (Fin n), Relation.TransGen (DegLex (α := Fin n)) w w' :=
+  fun h => degLex_no_closedChain n [] (h [] [])
+
+/-- **One tick is a `≺_c`-step.** Applying one more crossing to a word
+    (appending a letter) moves strictly up in `DegLex`. So the
+    crossing-application order on words is contained in `≺_c`, and every chain
+    of ticks is a chain of `≺_c`-steps. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem degLex_append_singleton {n : ℕ} (w : List (Fin n)) (i : Fin n) :
+    DegLex w (w ++ [i]) :=
+  Or.inl (by simp)
+
+/-- One tick on words: append one generator. -/
+def WordTick {n : ℕ} (w w' : List (Fin n)) : Prop := ∃ i, w' = w ++ [i]
+
+/-- **No word lies on a closed chain of ticks**, for any braiding: every tick
+    is a `DegLex` step, and `DegLex` has no closed chains. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem word_no_closedChainAt (n : ℕ) (w : List (Fin n)) :
+    ¬ Relation.TransGen (WordTick (n := n)) w w := fun h =>
+  degLex_no_closedChain n w
+    (Relation.TransGen.mono (fun a b hab => by
+      obtain ⟨i, rfl⟩ := hab
+      exact degLex_append_singleton a i) h)
+
+/-- The statement of `prop:braiding-induced-ordering`: for every finite
+    alphabet `Fin n`, `DegLex` on words is well-founded. -/
+-- Ref: [leitner2026] §2/braiding-induced-ordering
 def braiding_induced_ordering : Prop :=
   ∀ n : ℕ, WellFounded (DegLex (α := Fin n))
+
+/-- **`prop:braiding-induced-ordering`, proved.** `DegLex` on the free monoid
+    on any finite alphabet is well-founded and compatible with concatenation.
+    No braiding hypothesis is used. -/
+-- Ref: [leitner2026] §2/braiding-induced-ordering
+theorem braiding_induced_ordering_holds :
+    braiding_induced_ordering ∧
+      ∀ (n : ℕ) (u v w w' : List (Fin n)),
+        DegLex w w' → DegLex (u ++ w ++ v) (u ++ w' ++ v) :=
+  ⟨degLex_wellOrdered, fun _ u v w w' h => degLex_admissible u v w w' h⟩
 
 end QOU

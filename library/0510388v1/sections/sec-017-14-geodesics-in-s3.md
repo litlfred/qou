@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-017-14-geodesics-in-s3
 section_title: "Geodesics in S3 ."
 section_number: 14
@@ -8,6 +8,7 @@ pages: 36-38
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 If  x , y  ∊  R4 ,  we will write  < x , y >  for the standard Euclidean inner product 
  
@@ -36,7 +37,6 @@ their inner product  < x , y >  is equal to the cosine of the distance (along  S
 from   x  to  y . 
  
  
-37 
  
  
  
@@ -70,8 +70,4 @@ the distance in  S3  from  x  to  y ,  we deduce that
                                                
 We note that 
  
-Pxy ∇y α(x, y)  =  —  ∇x α(x, y) . 
- 
- 
- 
-38
+Pxy ∇y α(x, y)  =  —  ∇x α(x, y) .

@@ -1,0 +1,72 @@
+by auto
+qed
+
+let ?A = z1xcnj 22 + z2*cnj zl and ?B = —(z1*cnj z1 + 22x«cnj 22)
+have Re(zl*cnj z1 + 22*cnj z2) > 0
+
+by auto
+hence Re ?B < 0
+
+by (smt uminus-complex.simps(1))
+
+hence abs (Re ?B) = — Re ?B
+by auto
+also have ... = (Re 12)? + (Im 12)? + (Re 22)? + (Im 22)?
+
+by (simp add: power2-eq-square|symmetric])
+also have ... > abs (Re ?A)
+proof (cases Re ?A > 0)
+case False
+have (Re z1 + Re 22)? + (Im zl + Im 22)? > 0
+using (zl 4 —22 A zl # 22)
+by (metis add.commute add.inverse-unique complez-neq-0 plus-complex.code plus-complez.simps)
+thus ?thesis
+using False
+by (simp add: power2-sum power2-eq-square field-simps)
+next
+case True
+have (Re z1 — Re 22)? + (Im z1 — Im z2)? > 0
+using (zl 4 —22 A zl # 22)
+by (meson complex-eq-iff right-minus-eq sum-power2-gt-zero-iff )
+thus ?thesis
+using True
+by (simp add: power2-sum power2-eq-square field-simps)
+qed
+finally
+have abs (Re ?B) > abs (Re ?A)
+
+moreover
+have cmod ?B = abs (Re ?B) cmod ?A = abs (Re ?A)
+by (simp-all add: cmod-eq-Re)
+ultimately
+have (cmod ?B)? > (cmod ?A)?
+by (smt power2-le-imp-le)
+thus ?thesis
+using z False
+by (simp-all add: Let-def hermitean-def mat-adj-def mat-cnj-def cmod-eq-Re vec-cnj-def field-simps)
+qed
+qed
+
+lemma ex-perpendicular:
+assumes is-poincare-line H z € unit-disc
+shows 4 H’. is-poincare-line H' \ perpendicular H H' A z € circline-set H' (is ?P’ H z)
+proof—
+have V z. z € unit-disc —> ?P' H z (is ?P H)
+proof (rule wlog-line-z-azis)
+show ?P x-axis
+proof safe
+fix z
+assume z € unit-disc
+then have z # of-complex 1 z # of-complex (—1)
+by auto
+thus ?P’ z-axis z
+using <z € unit-discy
+using calc-perpendicular-to-x-axis|of z| perpendicular-to-x-axis
+by (rule-tac x = calc-perpendicular-to-x-axis z in exI, auto)
+qed
+next
+fix M
+assume unit-disc-fix M
+assume *: ?P (moebius-circline M H)
+
+121

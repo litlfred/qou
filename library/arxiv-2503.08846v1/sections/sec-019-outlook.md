@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Outlook
 Hopefully the present notes convincingly demonstrate the potential and functionality of topology and, in
 particular, knot theory in the discussion of quantum mechanics. We have shown that states and operators
 can be thought as of topological spaces, equipped with a set of basic operations, such as braiding. The
@@ -37,4 +38,3 @@ products in spaces with a connected boundaries and associated large Hilbert spac
 The above are some obvious technical challenges of the present approach. In the following two sections
 a more general set of questions will be outlined, in application to which the topological paradigm can be
 further explored.
-6.1

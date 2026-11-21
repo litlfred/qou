@@ -1,0 +1,48 @@
+153
+
+induces an interior automorphism int(g) = (g~! (—)g,Adi(g)) of G and
+that Z C G is the subgroup of all g € G with int(g) = idg.
+
+By a super representation of an algebraic super group G over A we mean
+an algebraic homomorphism py : G > GI(V) for a super vector space V of
+finite dimension over A. By definition, a homomorphism between super
+representations Py and Pw is a homomorphism V — W of super vector
+spaces which preserves the gradings and intertwines py with pw. One can
+show that the category Rep, (G) of all super representations of G over A is
+an abelian A-linear rigid symmetric monoidal category with respect to the
+super tensor product. We also have Schur’s lemma:
+
+LemMMa A.1. For an irreducible super representation py :G — G\(V),
+every endomorphism of py has the form A -idy with some scalar A € A.
+
+Proof. The proof works as in the classical case. Note that by definition
+we only consider endomorphisms which preserve the grading; otherwise
+Schur’s lemma would have to be modified, see [92, prop. 2, p. 46]. O
+
+In particular, the super center Z(G) must act on any irreducible super
+representation of G by a character 7 : Z(G) — A* (recall that Z(G) is a
+classical commutative algebraic group and that each of its elements defines
+an endomorphism of any given super representation of G).
+
+An algebraic super group G = (G, gi, Q) is called reductive if the abelian
+category Rep,(G) is semisimple. The reductive algebraic super groups
+have been classified in [108]. Every classical reductive algebraic group
+G is also reductive when viewed as the super group G = (G,0,0). Another
+example of reductive super groups is given by the orthosymplectic super
+groups Spo, (2r,1) for r € N which can be defined as follows: Let J be a
+non-degenerate antisymmetric 2r x 2r matrix J = (Ji) over A. In terms of
+the classical symplectic group Sp,(2r,J) = {g € Gl,(2r) | 9‘Jg = J} we
+then put
+
+Spo, (27,1) = (Spa(2r,J), A",Q),
+where A?" is equipped with the standard action of Sp,(2r,/) and where the
+quadratic map Q : A?” — Lie(Sp,(2r,J)) is defined by O(v) x. = D7, viviJix
+in the standard coordinates. In particular, we have a natural representation
+of the super group Spo, (2r, 1) on the super vector space V = Vo @V, with
+even part Vp = A?" and odd part V; = A. On the odd part of the super Lie
+algebra this representation is given by
+
+is (17 v) 6 (wH wv) € Homa(Vi,Vo) 6 Homa (Vo, V1).
+
+Of course a different choice of the non-degenerate antisymmetric matrix J
+will result in an isomorphic super group Spo, (27, 1).

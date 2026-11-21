@@ -7,10 +7,11 @@ section_number: 1.3
 pages: 7-8
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
-doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.907
-latex_coverage_ratio: 0.947
+latex_coverage_ratio: 0.955
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 \lbl{sub.plan}
 

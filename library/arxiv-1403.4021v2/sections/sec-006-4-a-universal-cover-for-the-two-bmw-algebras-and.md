@@ -7,10 +7,11 @@ section_number: 4
 pages: 13-19
 source_pdf: 1403.4021v2.pdf
 source_sha256: 046d02411e0dc086
-doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.975
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.954
+doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
 ---
 We still denote $R = \Q[a,b,c,(abc)^{-1}]$, $S = R[(b+c)^{-1}]$. In all what follows, $\Q$ could be replaced by $\Z[\frac{1}{2}]$
 without damage ; however the invertibility of $2$ is crucial at several steps.

@@ -271,7 +271,8 @@ def main() -> int:
         wb.add_caveat(
             "Says nothing about the signature reading; this block already settled "
             "that and withdrew its earlier indefinite/Lorentzian claim in 748ba9b1.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": (
+            "comparison by design: evaluates the published Gram D-eigenvalue at every registered pin (proton, live CODATA-2022 muon, retired CODATA-2018 muon) to show none of them produces it")})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 

@@ -1,0 +1,39 @@
+curvatures, that is,
+K = ky (p)ka(p).
+
+Figure 1.1: Principal directions at a point p on S?
+
+n
+
+When dealing with surfaces of constant Gaussian curvature, there are three main
+cases: when KX is positive, when it is negative, and when it is zero. We call these surfaces
+spherical, flat or hyperbolic. Having positive Gaussian curvature means that the principal
+curvatures at p curve “in the same way”, so the area around p resembles a cap. Conversely,
+negative curvature implies that the principal curvatures curve in different directions, so
+p is both a maximum and a minimum. Every point on a hyperbolic surface resembles
+a saddle, or indeed, a Pringle. Hitherto, we have alluded to the notion of surfaces, but
+have not said precisely what we mean. We take this opportunity to formally introduce
+
+the setting for the analysis in this work.
+
+Definition 1.1 (Riemann surface) A Riemann surface is a two (real) dimensional,
+orientable Riemannian manifold. The prefix “Riemannian” indicates that a smooth man-
+ifold has a Riemannian metric, that is, a smooth family of inner products g,(-, +) such
+that
+
+Jp: T,M x T,M > R
+
+depends smoothly onpe M.
+
+If X and Y are C® vector fields on M, then their inner product with respect to the
+Riemannian metric is a C™ real valued function on M. The Riemannian metric gives us
+a consistent way of measuring angles on the surface, and thus endows the surface with a
+conformal structure.
+
+The property of being orientable means that one can make a consistent choice of
+
+normal vector on the surface, that is, we can_move_a normal vector along a closed loop
+
+continuously, without it changing sign. Fig 7 s the Mobius strip, which is an
+
+example of a manifold that is not orientable. To see this, move the outward pointing

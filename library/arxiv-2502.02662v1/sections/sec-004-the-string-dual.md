@@ -7,10 +7,11 @@ section_number: null
 pages: 6-8
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
-doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
-latex_coverage_ratio: 0.948
+latex_coverage_ratio: 0.969
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 []{#StringDual label="StringDual"} In this subsection, we discuss the string dual to the extended Hurwitz theory [@OP1]. See also [@Benizri:2024mpx]. Firstly, we describe the string theory, which is a theory of two-dimensional gravity coupled to two-dimensional matter. The matter theory is a $\mathcal{N}=(2,2)$ supersymmetric sigma model with world-sheet $\Sigma$ and a two-dimensional, closed target space $X$ of genus $G$. The $A$-twist of the sigma model is a topological field theory whose operators are in one-to-one correspondence with the de Rham cohomology of the target space. We denote the observable associated with the volume form on $X$ by $\omega$. The topological matter model was fully solved in [@Witten:1989ig]. Consider next the topological string theory obtained by coupling the model on $X$ to topological gravity [@Witten:1989ig; @Dijkgraaf:1990qw]. Its observables are given by the gravitational descendants of the observables of the $X$ model. We will focus on the stationary sector, namely on the half infinite tower of descendants of the volume form. We denote the corresponding operators $\tau_k$ where $k \in \mathbb{N}$ labels the gravitational descendant.
 

@@ -72,7 +72,7 @@ def main() -> int:
         "then the +0.18% residual vs CODATA is recorded here for "
         "L2 dashboard visibility and audit-trail purposes."
     )
-    w.set_content_block("prop:three-calibration-inputs")
+    w.set_content_block("def:three-calibration-discipline")
     w.set_audit_only(
         "docs/audits/2026-05-24-q-beta-droppability-cohomology.md"
     )

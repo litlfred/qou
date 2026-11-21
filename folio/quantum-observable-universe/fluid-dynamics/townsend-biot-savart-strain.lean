@@ -36,15 +36,19 @@ What this file rigorously establishes:
    (C_1 - \nu\tau^2)$.
 3. Near collision the numerator scales as $\tau^2\ln\tau$ (which
    tends to $0$) while the denominator tends to a positive
-   constant; therefore $\kappa^2 \to 0$ — the
-   "first-order branch (B)" claim in `conj:levi-degeneracy`.
+   constant; therefore $\kappa^2 \to 0$: the core flattens.
 
-(3) uses `Real.log` and an asymptotic fact about $\tau^2 \log \tau$;
-the asymptotic limit is left as a Lean `sorry` with a citation to
-Townsend, since carrying it out cleanly requires the
-`Filter`/`Tendsto` toolkit and a `Real.log`-asymptotic auxiliary
-that is currently not on this Lean toolchain.  The closed-form
-identity (2) is fully verified.
+**Re-scoped 2026-10-13 (owner Q1, `Θ = f·ξ♭`).**  `κ²` is the squared core
+aspect ratio of the Townsend covariance.  It used to be read as a squared Levi
+condition number, and `κ² → 0` as the "first-order branch (B)" of
+`conj:levi-degeneracy`.  Both readings are withdrawn: in dimension 3 the Levi
+datum of `ker Θ = ξ^⊥` is the single scalar `ξ·curl ξ`, which vanishes for a
+straight pair whatever the core shape.  The mathematics below is unchanged.
+
+(3) uses `Real.log` and the asymptotic fact `τ² log τ → 0`; it is proved,
+sorry-free, as `kappa_squared_tends_to_zero` (this paragraph previously said it
+was a `sorry`, which had been stale since the 2026-08-10 repair recorded in that
+theorem's docstring).  The closed-form identity (2) is fully verified.
 
 LaTeX label: `rem:townsend-biot-savart-strain`
 -/
@@ -116,7 +120,7 @@ theorem denominator_pos_near_zero
       rwa [mul_div_cancel₀ C₁ (ne_of_gt hν)] at hmul
     linarith
 
-/-- **First-order branch (B) limit.**  Under the singular Biot–Savart strain,
+/-- **First-order flattening limit.**  Under the singular Biot–Savart strain,
     the squared core aspect ratio vanishes at the collision:
     `κ²(τ) → 0` as `τ → 0⁺`.
 

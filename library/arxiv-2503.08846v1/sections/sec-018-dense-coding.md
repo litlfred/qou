@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Dense Coding
 Superdense, or, simply, dense coding is a protocol closely related to quantum teleportation.
 It uses
 entanglement properties in a very similar way, allowing to use a quantum channel to simultaneously
@@ -125,4 +126,3 @@ the lines around. Second, the operator, of the type appearing in (172) would not
 for a similar reason. Figure 5 illustrates the fact that concatenating the operator and its Hermitian
 conjugate will not in general produce the identity due to a topological defect.
 These comments complement a more naive version of this topological protocol considered in [102].
-6

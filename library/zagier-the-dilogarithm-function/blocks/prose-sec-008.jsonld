@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/zagier-the-dilogarithm-function/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Dilogarithm identities",
-  "pageStart": 31,
-  "pageEnd": 56,
-  "text": "../sections/sec-008-2-dilogarithm-identities.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
+  "title": "Variants of the dilogarithm function",
+  "pageStart": 20,
+  "pageEnd": 31,
+  "text": "../sections/sec-008-1-variants-of-the-dilogarithm-function.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function/manifest.jsonld",
   "provenance": "ingested"
 }

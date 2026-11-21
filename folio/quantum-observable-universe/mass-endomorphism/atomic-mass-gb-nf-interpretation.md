@@ -63,7 +63,7 @@ $$
 **The LO piece is no longer an ansatz.** It constitutes the categorical
 consequence of \[Wenzl 1988] Markov multiplicativity for disjoint
 braids ($\mathrm{tr}_M(\mathcal{B}_p \otimes \mathcal{B}_n) = \mathrm{tr}_M(\mathcal{B}_p) \mathrm{tr}_M(\mathcal{B}_n)$,
-verified to $3.2 \times 10^{-14}$ in `rho-k-markov-multiplicativity.witness.json`)
+verified numerically to $3.2 \times 10^{-14}$)
 plus free-constituent mass additivity:
 
 $$
@@ -76,7 +76,7 @@ The single-gen binding correction $\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\
 (where $\overline{\,\cdot\,}$ forms the Hecke bar-involution $q \leftrightarrow q^{-1}$;
 at the archimedean specialization with real $q_0$ and real $\hat V_i$,
 this equals $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$)
-with $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan))
+with $\alpha = m_e \cdot 8G$ ([binding scale](#conj:binding-scale-catalan))
 takes $\rho_K$ to $0.18\%$ mean accuracy across $Z = 1..20$
 ([atomic braid mass](#sec:atomic-braid-mass-foundations)). The pair-gen and
 higher pieces require the proper Wedderburn-coupling structure
@@ -128,10 +128,10 @@ factors through the Gröbner–Shirshov quotient — renders the
 applicable. The trace depends only on the braid class modulo the
 PBW relations.
 
-## Witnesses
+## Numerical evidence
 
-* `rho-k-codata-vs-six-term.witness.json` — $\rho_K^{\mathrm{CODATA}}$ vs $\rho_K^{6\text{-term}}$ table for $A = 1, 2, 3$.
-* `rho-k-scaling-structure.witness.json` — leading-order ansatz $\rho_K \approx (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}})/(m_e \cdot |\!\mathrm{tr}_M\!|)$ ($0.14\%$ mean residual); mirror-pair analysis.
-* `atomic-tr-m-mpfr-50dps.witness.json` — canonical $\lvert\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$ at $50$ decimal-place precision.
-* `atom-mass-atomic-braid.witness.json` — (constituent) form $m_e$-scaled mass renderings.
-* `paper-six-term-isotope-sweep.witness.json` — (six-term spectral) $m_e$-scaled mass renderings across all five tower modes.
+* The $\rho_K^{\mathrm{CODATA}}$ vs $\rho_K^{6\text{-term}}$ table for $A = 1, 2, 3$.
+* The leading-order ansatz $\rho_K \approx (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}})/(m_e \cdot |\!\mathrm{tr}_M\!|)$ ($0.14\%$ mean residual); mirror-pair analysis.
+* The canonical $\lvert\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$ at $50$ decimal-place precision.
+* The (constituent) form $m_e$-scaled mass renderings.
+* The (six-term spectral) $m_e$-scaled mass renderings across all five tower modes.

@@ -16,8 +16,30 @@ Composing them gives
 
     Σ_{k ≤ ⌊n/2⌋} (dim S^{(n−k,k)})² = catalan n                (`dimHLF_two_row_sq_sum`)
 
-a statement about *actual standard-Young-tableau counts*, not about binomial
-coefficients. That is the form the Wedderburn accounting needs.
+the form the Wedderburn accounting needs — a statement about two-row Specht dimensions rather
+than about binomial coefficients.
+
+### 🛑 Read `dimHLF` as the FORMULA, and note what makes it a count
+
+`dimHLF l := (sz l).factorial / prodHooks l` is the hook length **formula**, a quotient of
+factorials; `numStandardYoungTableaux μ := Nat.card (StandardYoungTableau μ)` is the genuine
+**count**.  The two are equal for every shape only by Frame–Robinson–Thrall, which is **absent
+from Mathlib** and proved in this corpus only for `n ≤ 4` (by `decide`) plus `n = 5` — so at
+general `n` nothing in *this* file, on its own, is about tableau counts.
+
+For the **two-row** shapes appearing here they are nonetheless equal at general `n`:
+
+    QOU.SchurWeyl.TwoRowSYTBallot.numSYT_twoRow_eq_dimHLF (m k) (h : k ≤ m) :
+      (numStandardYoungTableaux (twoRow m k h) : ℤ) = (dimHLF [m, k] : ℕ)
+
+sorry-free, no Frame–Robinson–Thrall — both sides were already identified with the same ballot
+number, `dimHLF` by `dimHLF_two_row_eq_ballot` below and the count by `numSYT_twoRow_eq_ballot`.
+**Cite that theorem** whenever the sum above is to be read as a statement about counts.
+
+This paragraph previously asserted the counts reading flatly, which over-claimed: at the time it
+was written the tie to any tableau count at general `n` did not exist in the corpus.  The theorem
+it now cites supplies exactly that tie, so the reading is available — but it is a *composition*,
+not something this file proves.
 
 ## Why this is the load-bearing step for `corank(n) = n! − catalan n`
 

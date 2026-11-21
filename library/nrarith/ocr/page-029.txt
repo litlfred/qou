@@ -1,0 +1,49 @@
+Arithmetic of Hyperbolic Manifolds 301
+
+20 times the volume of H?/PSL203—this is 10/3 times the volume of a regular ideal
+tetrahedron.
+
+7. Arithmeticity of chain links
+
+Proof of part (iii) of Theorem 5.1. Recall that C(p,s) is a cover of W’(p,s) and if
+W'(p, s) is hyperbolic, then it is double branched covered by W (p,q) with s = 2g. We
+claim that the geodesic y(p,s) added by hyperbolic Dehn filling W’ to form W'(p, s)
+has length
+
+lo(y(p, s)) = -< Re(u) = 5 Re(v), d= gcd(p, s), (7.1)
+
+where u and v are as in equations (6.4) and (6.5). Indeed, if ¢(7(p, s)) is the complex
+length of the added geodesic then, by equation (6.5) and by [Th] or [NZ], we have
+equations
+
+pu+ 85 = 201
+v
+plu + s'5 = l(p,8)),
+
+where p’ and s’ are integers satisfying ps’ — sp’ = d. Multiplying the first of these two
+equations by s’ and the second by s and subtracting gives du = 27is’ — sl(y(p,s)),
+from which the first equality of (7.1) follows by taking real part; the second equality
+follows similarly.
+
+The computations that we now describe were computer-aided, so we omit some details.
+We wish to find the (p,s) for which £9(y(p, s)) > 0.431277313 (cf. Corollary 4.7). We
+use equations (7.1). First, by plotting level curves in the (p + s,s)-plane for Re(w)
+and Re(v) one finds that the conditions | Re(w)| > 0.43 and | Re(v)/2| > 0.43 force
+(p+.s,s) to lie in a bounded domain (which lies entirely within the circle of radius 15).
+It is then quick to verify that the (p,s) for which £0(7(p,s)) > 0.431277313 are those
+with (|p + s|,|s|) or (|s|,|p + s|) in {(n,0): 3 <n < 144U{(n,n):3<n<
+7} U{(3, 1), (3,2), (4,2)}. Thus, only in these cases might W’(p, s) be arithmetic.
+
+The table of Theorem 4.6 of possible short geodesic lengths in cusped arithmetic
+orbifolds now eliminates all cases but those of part (iii) of Theorem 5.1, namely (|p +
+s|,|s|) or (|s|,|p + s|) equal to one of (3,0), (3,1), (3,2), (3,3), (4,0), (4,2),
+(4,4), (6,0). (We could also have eliminated all but these and (6,6) by the observation
+that a cusped arithmetic orbifold can have torsion only of order 2, 3, 4, or 6, since the
+trace of the square of the torsion element must be in some O4q.)
+
+To show that the above cases do give arithmetic orbifolds we use the characterization
+of arithmeticity in Proposition 4.4. We must thus verify that in these cases the invariant
+trace field k(71W'(p, s)) is Q(,/—d) with d respectively 7, 1, 3, 1, 3, 7, 2, 15,
+and that W’(p, s) has integral traces. By Theorem 6.2 and the proof of Theorem 6.3
+we must check that z and 4/z lie in the appropriate Oy. This is evident from Table 2,
+which includes also the non-arithmetic case (6,6). oO

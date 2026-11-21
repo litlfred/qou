@@ -23,6 +23,12 @@ export default conjecture({
     status: "verified",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean status.** There is no Lean formalization of this instance. The\nmodule `QOU.LiftingDescent.MotivicPerpetualObstructionFromTrace`\n(prime-ideal collapse, $C = a_0(-1) + 2 a_1(-1)$) proves statements\nabout the perpetual obstruction and constructs no\n`MotivicGaloisCharacter`; it is a different result." },
+    {
+      kind: "status",
+      date: "2026-08-23",
+      body: "There is no Lean formalization of this\ninstance. The co-located `.lean` file — which contained a bare `axiom`\nlaundering the perpetual obstruction into the `MotivicGaloisCharacter`\nclass — was deleted on 2026-08-12 and has no replacement. The\n`lean.ref` this block carried until today,\n`QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar`, named a module\nand a declaration that exist nowhere in the Lake tree.\n\nWhat does exist is\n`lean/QOU/LiftingDescent/MotivicPerpetualObstructionFromTrace.lean`\n(Route A: prime-ideal-collapse, $C = a_0(-1) + 2 a_1(-1)$),\nand it is a *different* result: it proves statements about the\nobstruction, and constructs no `MotivicGaloisCharacter`. The 2026-08-12\nnote here read as though it were the replacement. The block was a definition until 2026-08-23 and was restated as a conjecture because the per-prime coherence is neither proved nor formalised.",
+    },
     {
       kind: "note",
       date: "2026-08-23",

@@ -9,15 +9,13 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Homology",
-  "pageStart": 42,
-  "pageEnd": 45,
+  "title": "Groups",
+  "pageStart": 34,
+  "pageEnd": 40,
   "contains": [
-    "library/arxiv-1610.02592v3/blocks/prose-sec-006",
-    "library/arxiv-1610.02592v3/blocks/thm-sec-006-01",
-    "library/arxiv-1610.02592v3/blocks/cor-sec-006-02"
+    "library/arxiv-1610.02592v3/blocks/prose-sec-006"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.02592v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.02592v3",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
   "provenance": "ingested"
 }

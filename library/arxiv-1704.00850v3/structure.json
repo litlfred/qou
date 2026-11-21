@@ -7,10 +7,11 @@
   "bytes": 445459,
   "pages": 34,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,13 +26,23 @@
   "title_lines": [
    "Estimating the spectral gap of a trace-class Markov operator"
   ],
-  "abstract": "The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding Markov operator. However, calculating (and even approximating) the spectral gaps of practical Monte Carlo Markov chains in statistics has proven to be an extremely dif\ufb01cult and often insurmountable task, especially when these chains move on continuous state spaces. In this paper, a method for accurate estimation of the spectral gap is developed for general state space Markov chains whose operators are non-negative and trace-class. The method is based on the fact that the second largest eigenvalue (and hence the spectral gap) of such operators can be bounded above and below by simple functions of the power sums of the eigenvalues. These power sums often have nice integral representations. A classical Monte Carlo method is proposed to estimate these integrals, and a simple suf\ufb01cient condition for \ufb01nite variance is provided. This leads to asymptotically valid con\ufb01dence intervals for the second largest eigenvalue (and the spectral gap) of the Markov operator. In contrast with previously existing techniques, our method is not based on a near-stationary version of the Markov chain, which, paradoxically, cannot be obtained in a principled manner without bounds on the spectral gap. On the other hand, it can be quite expensive from a computational standpoint. The ef\ufb01ciency of the method is studied both theoretically and empirically.",
+  "abstract": "The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding Markov operator. However, calculating (and even approximating) the spectral gaps of practical Monte Carlo Markov chains in statistics has proven to be an extremely difﬁcult and often insurmountable task, especially when these chains move on continuous state spaces. In this paper, a method for accurate estimation of the spectral gap is developed for general state space Markov chains whose operators are non-negative and trace-class. The method is based on the fact that the second largest eigenvalue (and hence the spectral gap) of such operators can be bounded above and below by simple functions of the power sums of the eigenvalues. These power sums often have nice integral representations. A classical Monte Carlo method is proposed to estimate these integrals, and a simple sufﬁcient condition for ﬁnite variance is provided. This leads to asymptotically valid conﬁdence intervals for the second largest eigenvalue (and the spectral gap) of the Markov operator. In contrast with previously existing techniques, our method is not based on a near-stationary version of the Markov chain, which, paradoxically, cannot be obtained in a principled manner without bounds on the spectral gap. On the other hand, it can be quite expensive from a computational standpoint. The efﬁciency of the method is studied both theoretically and empirically.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20190408003555Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20190408003555Z"
+  },
+  "title_raw": "Estimating the spectral gap of a trace-class Markov operator",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Estimating the spectral gap of a trace-class Markov operator",
+   "outline": "1 Introduction",
+   "text": "Estimating the spectral gap of a trace-class Markov operator",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,107 +51,597 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Markov operators",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Power sums of eigenvalues",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Data augmentation operators and an integral representation of sk",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Classical Monte Carlo",
    "page": 9,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Efficiency of the algorithm",
    "page": 15,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 17,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Gaussian chain",
    "page": 17,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Bayesian probit regression",
    "page": 19,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Bayesian linear regression model with non-Gaussian errors",
    "page": 23,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "A Proof of Theorem 2",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "B Proof of Proposition 9",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "algorithm",
+   "number": "1",
+   "title": "Drawing (U∗, V ∗) ∼η(·, ·) when a(·, ·) = p(k)(·, ·)",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "algorithm",
+   "number": "1S",
+   "title": "Drawing (U∗, V ∗) ∼η(·, ·) when a(·, ·) = ˜p(k)(·, ·) 1. Draw V ∗from ω(·)",
+   "page": 12,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "algorithm",
+   "number": "2",
+   "title": "Drawing (U∗, V ∗) ∼ζ(·, ·) when a(·, ·) = p(k)(·, ·)",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "algorithm",
+   "number": "2S",
+   "title": "Drawing (U∗, V ∗) ∼ζ(·, ·) when a(·, ·) = ˜p(k)(·, ·). 1. Draw U∗from ψ(·)",
+   "page": 14,
+   "confidence": 0.5,
+   "evidence": [],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Spectral gap estimation for the Gaussian chain for different λs",
+   "page": 18,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "",
+   "page": 18,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Estimated power sums of eigenvalues for the AC chain",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Spectral gap estimation for the AC chain",
+   "page": 22,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "2a",
+   "title": "Increasing n, which is the dimension of SV , apparently does not undermine the method. Now we consider a sequence of datasets where n is ﬁxed and p grows. Let n = 200, and let X be a 200×p matrix whose ijth element is pj(i), with {pj(·)}p",
+   "page": 22,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Estimated power sums of eigenvalues for the Haar PX-DA version of the AC chain",
+   "page": 22,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Spectral gap estimation for the DA chain for Bayesian linear model",
+   "page": 25,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1652,
+   "n_words": 257,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 3213,
-   "n_words": 502
+   "page_end": 4,
+   "n_chars": 6887,
+   "n_words": 1129,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-markov-operators",
    "number": "2",
    "title": "Markov operators",
    "level": 1,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 6050,
-   "n_words": 1025
+   "n_chars": 2553,
+   "n_words": 494,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-002-3-power-sums-of-eigenvalues",
@@ -149,8 +650,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 2879,
-   "n_words": 558
+   "n_chars": 2989,
+   "n_words": 648,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
    "id": "sec-003-4-data-augmentation-operators-and-an-integral-re",
@@ -159,8 +662,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 4895,
-   "n_words": 870
+   "n_chars": 5052,
+   "n_words": 973,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
    "id": "sec-004-5-classical-monte-carlo",
@@ -168,82 +673,116 @@
    "title": "Classical Monte Carlo",
    "level": 1,
    "page_start": 9,
-   "page_end": 17,
-   "n_chars": 12370,
-   "n_words": 2217
+   "page_end": 15,
+   "n_chars": 9828,
+   "n_words": 2016,
+   "label_start": "9",
+   "label_end": "15"
   },
   {
-   "id": "sec-005-7-examples",
+   "id": "sec-005-6-efficiency-of-the-algorithm",
+   "number": "6",
+   "title": "Efficiency of the algorithm",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 2954,
+   "n_words": 630,
+   "label_start": "15",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-006-7-examples",
    "number": "7",
    "title": "Examples",
    "level": 1,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 343,
-   "n_words": 55
+   "n_chars": 354,
+   "n_words": 58,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-006-71-gaussian-chain",
+   "id": "sec-007-71-gaussian-chain",
    "number": "7.1",
    "title": "Gaussian chain",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 3770,
-   "n_words": 742
+   "n_chars": 3819,
+   "n_words": 782,
+   "label_start": "17",
+   "label_end": "19"
   },
   {
-   "id": "sec-007-72-bayesian-probit-regression",
+   "id": "sec-008-72-bayesian-probit-regression",
    "number": "7.2",
    "title": "Bayesian probit regression",
    "level": 2,
    "page_start": 19,
    "page_end": 23,
-   "n_chars": 7965,
-   "n_words": 1483
+   "n_chars": 8063,
+   "n_words": 1570,
+   "label_start": "19",
+   "label_end": "23"
   },
   {
-   "id": "sec-008-73-bayesian-linear-regression-model-with-non-gau",
+   "id": "sec-009-73-bayesian-linear-regression-model-with-non-gau",
    "number": "7.3",
    "title": "Bayesian linear regression model with non-Gaussian errors",
    "level": 2,
    "page_start": 23,
    "page_end": 26,
-   "n_chars": 6801,
-   "n_words": 1265
+   "n_chars": 7017,
+   "n_words": 1439,
+   "label_start": "23",
+   "label_end": "26"
   },
   {
-   "id": "sec-009-a-proof-of-theorem-2",
+   "id": "sec-010-a-proof-of-theorem-2",
    "number": null,
    "title": "A Proof of Theorem 2",
    "level": 1,
    "page_start": 26,
    "page_end": 30,
-   "n_chars": 5731,
-   "n_words": 1013
+   "n_chars": 5939,
+   "n_words": 1228,
+   "label_start": "26",
+   "label_end": "30"
   },
   {
-   "id": "sec-010-b-proof-of-proposition-9",
+   "id": "sec-011-b-proof-of-proposition-9",
    "number": null,
    "title": "B Proof of Proposition 9",
    "level": 1,
    "page_start": 30,
    "page_end": 34,
-   "n_chars": 6486,
-   "n_words": 1066
+   "n_chars": 6461,
+   "n_words": 1032,
+   "label_start": "30",
+   "label_end": "34"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 12,
-  "sections": 11,
-  "chars_total": 60503,
+  "toc_inferred_entries": 0,
+  "figure_entries": 11,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 63568,
+  "furniture_lines_stripped": 34,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "eigsums-r3.tex",
    "tex_sections": 10,
-   "overlaid": 7,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -251,44 +790,60 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.547,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-2-markov-operators",
      "title": "Markov operators",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.441,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-3-power-sums-of-eigenvalues",
      "title": "Power sums of eigenvalues",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-data-augmentation-operators-and-an-integral-re",
      "title": "Data augmentation operators and an integral representation of sk",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.914,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-5-classical-monte-carlo",
      "title": "Classical Monte Carlo",
-     "prose_ratio": 0.794,
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-6-efficiency-of-the-algorithm",
+     "title": "Efficiency of the algorithm",
+     "prose_ratio": 0.992,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-7-examples",
+     "id": "sec-006-7-examples",
      "title": "Examples",
      "prose_ratio": 0.906,
      "coverage_ratio": 1.0,
@@ -296,36 +851,36 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-71-gaussian-chain",
+     "id": "sec-007-71-gaussian-chain",
      "title": "Gaussian chain",
      "prose_ratio": 0.946,
-     "coverage_ratio": 0.929,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-72-bayesian-probit-regression",
+     "id": "sec-008-72-bayesian-probit-regression",
      "title": "Bayesian probit regression",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.886,
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-73-bayesian-linear-regression-model-with-non-gau",
+     "id": "sec-009-73-bayesian-linear-regression-model-with-non-gau",
      "title": "Bayesian linear regression model with non-Gaussian errors",
      "prose_ratio": 0.953,
-     "coverage_ratio": 0.886,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-a-proof-of-theorem-2",
+     "id": "sec-010-a-proof-of-theorem-2",
      "title": "A Proof of Theorem 2",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-010-b-proof-of-proposition-9",
+     "id": "sec-011-b-proof-of-proposition-9",
      "title": "B Proof of Proposition 9",
      "result": "no matching \\section"
     }

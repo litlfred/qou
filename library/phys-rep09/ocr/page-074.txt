@@ -1,0 +1,66 @@
+224 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+6.1.1.1. The implicit midpoint rule. The approximation to the solution of (320) provided by this scheme is implicitly defined
+by
+Was — Vi 1
+i tna) 5 Unt + Yad, (321)
+where tn41/2 = (tn + t,). Here, and in the sequel, for clarity, we have denoted by At the time step size and t, = nAt.
+Alternatively,
+. . 1+ 3z
+Vn41 = 1(-iAtH (th41/2)) Wn, with r(z) = To
+~ 2
+Observe that, as r is nothing but the Cayley transform, the numerical propagator is unitary and consequently the Euclidean
+norm of the discrete wave function is preserved along the evolution: || Wn+1|| = || Wnll. This is a crucial qualitative feature
+the method shares with the exact solution, contrarily to other standard numerical integrators, such as explicit Runge-Kutta
+methods. From a purely numerical point of view, the algorithm is stable for any step size At.
+Another useful property of this numerical scheme is time-symmetry: exchanging in (322) n byn+ 1 and At by —At we
+get the same numerical method again. Equivalently, r(—z) = r(z)~', exactly as the exponential e”.
+With respect to accuracy, it is not difficult to show that, if H(t) is bounded and sufficiently smooth, the error verifies
+
+Yn — W(tn)l| = O(At?) (323)
+
+uniformly for nAt in a time interval [0, t;]. In other words, the implicit midpoint rule is a second-order method. It happens,
+however, that the constant in the term @(At?) depends on bounds of H’ and H” and on the norm of the third derivative of
+the solution y. Since, in general, the wave function is highly oscillatory in time, this time derivative can become large, and
+so the use of very small time steps is mandatory.
+
+. (322)
+Z
+
+6.1.1.2. The exponential midpoint rule. Another possibility to get approximate solutions of (320) consists of replacing r(z)
+by exp(z) in (322):
+
+Wn = exp(—iAt H(tny1/2)) Wn. (324)
+
+Now, instead of solving systems of linear equations as previously, one has to compute the exponential of a large matrix times
+a vector at each integration step. In this respect, the techniques reviewed in Section 5.6 can be efficiently implemented. The
+exponential midpoint rule (324) also provides a unitary propagator and it is time-symmetric. In addition, the error satisfies
+the same condition (323), but now the constant in the @(At’) term is independent of the time derivatives of w under certain
+assumptions on the commutator [H(t), H(s)] [183]. As a consequence, much larger time steps can be taken to achieve the
+same accuracy as with the implicit midpoint rule.
+
+6.1.1.3. Integrators based on the Magnus expansion. The method (324) is a particular instance of a second order Magnus
+method when the integral Ie H(s)ds is replaced by the midpoint quadrature rule. In fact, we have already used it in (274).
+Obviously, if higher order approximations are considered, the accuracy can be enhanced a great deal. This claim has to
+be conveniently justified, however, since the order of the numerical methods based on Magnus has been deduced when
+|| AtH(t)|| = 0 and is obtained by studying the remainder of the truncated Magnus series. In the Schrédinger equation, on
+the other hand, one has to cope with discretizations of unbounded operators, so in principle it is not evident how the previous
+results on the order of accuracy apply in this context. In [183], Hochbruck and Lubich analyze, in detail, the application of
+the fourth-order Magnus integrator (254) to Eq. (320), showing that it works extremely well even with step sizes for which
+
+the corresponding || AtH(t)|| is large. In particular, the scheme retains fourth order of accuracy in At independently of the
+norm of H(t) when H(t) = T + V(t), T is a discretization of — 3 ed (with maximum eigenvalue Emax ~ (Ax)~?) and V(t) is
+sufficiently smooth under the time step restriction At.\/Emax < Const. This is so even when there is no guarantee that the
+Magnus series converges at all.
+
+6.1.1.4. Symplectic perspective. The evolution operator corresponding to (317) is not only unitary, but also symplectic with
+canonical coordinates and momenta Re(y) and Im(w), respectively. If we carry out a discretization in space, this symplectic
+structure is inherited by the corresponding Eq. (319). It makes sense, then, to write c = q + ip and consider the equations
+satisfied by q, p € R“, namely
+
+q=H@®p, p= —H(t)q, (325)
+
+which can be interpreted as the canonical equations corresponding to the Hamiltonian [184]
+HC, qs P) = p'H(t)p + q'H(t)q. (326)
+Denoting z = (q, p)', it is clear that
+z' = (A(t) + B(t)) z

@@ -1,1 +1,1 @@
-Let λ, µ∈P (l,n ) and assume that r⁄= 0. If Eλ and Eµ are in the same Rouquier
+Let Hm,r n be the cyclotomic Ariki–Koike algebra deﬁned above, and let λ ∈P(d, n). The a-value of Eλ is a(m,r)(λ) = r  N(λ) − X 0⩽s⩽l−1 X (i,j)∈[λ(s)] X 0⩽t⩽l−1,t̸=s min(hλ(s),λ(t) i,j + ms −mt, 0)  .

@@ -8,9 +8,7 @@ throughout this chapter.*
 > $A_{n-1}$, so $n = 3$ puts $A_2$ here by definition. Nothing about the
 > substrate is derived from it. In particular this is **not** the
 > $A_2 = \mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)_{\mathrm{f}}$, which is the
-> Schur--Weyl partner acting on the fibre $V$ and requires $\dim V = 3$
-> ([Proposition](#prop:schur-weyl-eightfold), where the framework
-> supplies $\dim V = 2$). Items 1--3 below are the standard
+> Schur--Weyl partner acting on the fibre $V$ and requires $\dim V = 3$. Items 1--3 below are the standard
 > braid/Coxeter dictionary, recorded for reference; item 4 and the
 > weight-lattice paragraph are what the chapter actually uses.
 
@@ -30,11 +28,9 @@ $$
 braid relation $T_1 T_2 T_1 = T_2 T_1 T_2$ has length $m_{12} = 3$, and
 $a_{ij} = -2\cos(\pi/m_{ij})$ gives $a_{12} = a_{21} = -1$, with
 $a_{ii} = 2$ by normalisation.  For $|i - j| > 1$ the generators commute
-($m_{ij} = 2$) and $a_{ij} = 0$.  Earlier drafts wrote this as a
-counting formula $a_{ij} = 2\delta_{ij} - |\{T_iT_jT_i = T_jT_iT_j\}|$;
-that formula is a re-encoding of the presentation, not an independent
-derivation of the Cartan data, and is withdrawn to avoid suggesting
-otherwise.*
+($m_{ij} = 2$) and $a_{ij} = 0$.  A counting formula of the shape
+$a_{ij} = 2\delta_{ij} - |\{T_iT_jT_i = T_jT_iT_j\}|$ would only re-encode
+the presentation; it is not an independent derivation of the Cartan data.*
 
 3. *The six roots of $A_2$ are the elements $\{\pm\alpha_1,
    \pm\alpha_2, \pm(\alpha_1 + \alpha_2)\}$, where $\alpha_1, \alpha_2$

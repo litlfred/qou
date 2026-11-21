@@ -1,0 +1,58 @@
+Cluster Expansions: Necessary... Page 17 0f 47 33
+
+G with vertices | n-+k and edge set given by the union of £),..., Eg and of the edge
+sets of Go, G1,..., G; is in Dy n+x, its graph weight is
+
+w(G; x1, .-6,Xnpk) = W(Go; x1, -- “TT Il oe (x) jev;)-
+l=1 ‘i, jjeEe
+Summation over Go yields the factor Thei<jenC + f (xj, x;)). Summation over the con-
+nected graphs Gy yields oN |(xy,)- Finally, summation over the edge sets Ey yields the factor
+Theien jey dl + f Qi. xj) - 1. ia]
+
+3.2 Kirkwood-Salsburg Equations: Proof of Theorem 2.1
+
+To prove our main result, Theorem 2.1, we will show that the activity expansions p satisfy the
+Kirkwood-Salsburg inequalities and, moreover, that equality holds for non-negative interac-
+tions. To do so, we will need to establish a recursive formula for the coefficients Wn n44 of
+Pn given in terms of multi-rooted graphs.
+
+Lemma 3.5 Letn € N, k € No and (x1,...,X,) € X". Abbreviate s = s(x). For L C [k],
+let € denote the cardinality of L. Then for all (y,,..., ye) € X*,
+
+Wrntk Ls 0-25 Xns Vises YE) = Tisign(1 + £05, 40) Yrcte(Mier f(s, 91)
+
+XWin 4 en—14k (X54, 0s X). ieLs (Vj) jelk\L)-
+
+Furthermore, ifn > 2,
+
+Vann (1,.+-, Xn) = Il (1+ fs. x1) Wn-tn—1 (5,26 Xp)
+
+The lemma is proven in [14, Lemma 4.1] and holds true as well for pair potentials that may
+take negative values. The index set L corresponds to the non-root vertices adjacent to the
+selected vertex s. Similar recurrent relation are well-known from the literature and have been
+employed in the context of both activity and density (virial) expansions for a long time (see,
+e.g., [20, Eq. 5]).
+
+We now want to translate the recurrence relation for coefficients Wp n+ from Lemma 3.5
+into integral equations for partial sums and series. For a non-negative activity function, we
+set
+
+a
+Bn (X1, 00 Xni I= cts) 266) Yo & ff [Mae te oon READ.
+k=0 ~
+
+Notice that py (x1,..., Xn} Z) is absolutely convergent if and only if py (x1, ..., Xn3 Z) < ©,
+and, in the case of non-negative potentials,
+Pn (1, +++ ni Z) = (— 1)" bn (X1, --- 5 Xni —Z)
+
+holds due to the alternating-sign property from Corollary 3.3.
+Let Sy(z) = (Sw.n(-s Z))nen be the vector of partial sums given by
+N=n
+
+~ 1
+Swany... ¥n3 2) = eC) +++ 20%) Do al | Wonk (Xt, «225 Sn Y)
+kay ot
+
+ak(dy)
+
+D Springer

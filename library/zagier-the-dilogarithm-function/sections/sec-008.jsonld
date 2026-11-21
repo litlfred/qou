@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Dilogarithm identities",
-  "pageStart": 31,
-  "pageEnd": 56,
+  "title": "Variants of the dilogarithm function",
+  "pageStart": 20,
+  "pageEnd": 31,
   "contains": [
-    "library/zagier-the-dilogarithm-function/blocks/prose-sec-008"
+    "library/zagier-the-dilogarithm-function/blocks/prose-sec-008",
+    "library/zagier-the-dilogarithm-function/blocks/prop-sec-008-01",
+    "library/zagier-the-dilogarithm-function/blocks/prop-sec-008-02",
+    "library/zagier-the-dilogarithm-function/blocks/prop-sec-008-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zagier-the-dilogarithm-function",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,86 +1,123 @@
-[[ spread 13, left page ]]
 852 V. G. DRINFEL'D
-y = Omoddeg n) . We can use it to construct a complete graded Lie algebra
-si ()n  ()   (g onsodod as) os g l  ()
-is the reason for the notations grt, GRT. It is not hard to prove the inclusion
-grgt,(k) C grti(k) : (5.19) follows from the fact that y(α, β)-eβ w(α, β)eβ +
-e"y(a, y)e-? -y(α, y) - O, where (0, w) E gt(k), eee" - 1. This in turn
-follows from the analogues fact about GT;(k): if (1, f) e GT,(k), then
-X+ - f(XI, X2)-X2f(XI, X2) · f(XI, X3)-X3f(XI, X3)
- Xif(X2, XI)X2f(X3, X2)X,f(X1, X3)
-= f(X2, X)f(X3, X2)(X1, X3)  1
-for X,XX3  1, where X2. X,XX-1 - X-IX,X. However it is not
-necessary for (5.19) to be verified (see Proposition 5.7).
-2) The connection between GT,(k) and GRT,(k) can also be explained
-in the following way: if {g,1 is a family of elements of Fr,(A, B) such that
-(1, Je) E GTi(k) for & + O, where f(X, Y) = g(e-1lnX, ε-1 in Y), then
-go E GRT(k).
-3) GRT,(k), as well as GT(k), has a categorical interpretation. Let C be
-In tuov,w = idy ln ty,w + (cu,y id)(idy ln tu, w)(cu,v id),
-where c is the commutativity isomorphism (of course, one must first have
-formulated conditions on C and t sufficient for the latter equality to be
-meaningful; typical example: C is the category of h-adically complete Ug-
-modules, and ty, w is the operator in V& W corresponding to eht e Ug& Ug.
-where g and t are as in sl). Suppose meaningful all expresions of the form
-g(ln tu,v idw, iduln ty,w), where g(A, B) E Fr,(A, B). Then if g E
-GRT,(k) and we take g(ln tu,y &idw , idy @ ln ty,w) as a new associativity
-isomorphism (U  V)  W  U & (V  W) without changing c and t, we
-obtain a structure of the same type as the original.
-The formula (A, B) = Φ(g(A, B)Ag(A, B)-1, B) · g(A, B), where 'Φ E
-Mu(k) and g e GRT(k), defines a right action of GRT;(k) on M,(k). This
-gives GRT;(k) a right action on M(k) = [(μ, Φ)  Φ E M,(k)). The formulas
-(A, B) = Φ(c-IA, c-lB) and μ = c-iμ, where c e k*, define an action of
-k* on M(k). As a result, we obtain a right action of GRT(k) on M(k). It
-commutes with the left action of GT(k) .
-PRoPosITIoN 5.5. The action of GRT(k) on M(k) is free and transitive. The
-same is true for the action of GRT,(k) on M,(k) .
-ProoF: It suffices to prove the second statement. If , @ E M,(k) then there
-exists exactly one gEFr;(A, B) such that (A, B) = Φ(g(A, B)Ag(A, B)-1, B)
-× g(A, B); namely,
-g(A, B) = X(可(A, B)A(A, B)-1, B) ·可(A, B), (5.22)
-where X E Fr,(A, B) is inverse to $ with respect to the operation (5.16),
-i.e., x(θ(A, B)Ap(A, B)-1, B) · Φ(A, B) = 1. Arguing as in the proof of
 
-[[ spread 13, right page ]]
+REMARKS. 1) gt,(k) has the filtration whose nth term is {(0
+y= Omod degn}. We can use it to construct a complete ended Dis ai
+srgt,(*). It will be shown (see Proposition 5.6) that Bigt, (k) = grt,(k). This
+is the reason for the notations grt, GRT. It is not hard to prove the inclusion
+Gist, (k) C get, (Kk): (5.19) follows from the fact that y(a, B)-eP w(a, Bye? +
+e’w(a, ye” — w(a, y) = 0, where (0, y) € gt,(k), e*efe” = 1. This in turn
+follows from the analogues fact about GT,(k): if (1, f) € GT,(k), then
+
+-1 -
+Xyf(Kys XXX, X)- (XX) X F(X, X)
+= X\ F(X; X)XAS(X;, X)XGA(X, > X;)
+= SX, X)S(Xy, X)I(X,, X,) = 1
+for X,X,X, = 1, where ¥, = X,X,X7! = x7! it i
+147%, : 9 = X, X,X,. However it
+necessary for (5.19) to be verified (see Proposition 5.7). > mus net
+_ 2) The connection between GT,(k) and GRT,(k) can also be explained
+in the following way: if {g,} is a family of elements of Fr,(A, B) such that
+(1, f,) € GT,(k) for e #0, where f(X, Y) = ge (en Xx, e7!
+me BRE (X,Y) = g,( nX,e InY), then
+3) GRT,(k), as well as GT(k), has a categorical interpretation. Let C be
+a tensored category, and suppose given automorphisms Ty w € Aut(V @W),
+functorial in V, We C, with cy yty y = Ty vey y and
+
+Intygy yw =idy@lnty y +(cy yp @id)(id, @lnty y(cy » Bid),
+
+where c is the commutativity isomorphism (of course, one mu
+
+co! , st first have
+formulated conditions on C and 7 sufficient for the latter equality to be
+meaningful; typical example: C is the category of h-adically complete Ug-
+modules, and Ty w is the operator in V@W corresponding to e"eU g@Ug,
+where g and t are as in §1). Suppose meaningful all expresions of the form
+g(Inty » @idy, id, @Int, y), where g(A, B) € Fr,(A, B). Then if g ¢
+GRT (k) and we take g(Int, » @idy, id, @In Ty yw) as a new associativity
+isomorphism (U@V)@W 5 U®(V ®W) without changing c and 1, we
+obtain a structure of the same type as the original.
+
+The formula 9(4, B) = 9(g(A, B)Ag(A, B)7!, B)
+’ »8 , , B)- g(A, B), where g €
+
+M,(k) and gé GRT  (k) , defines a right action of GRT,(k) on M,(k). This
+gives GRT (x) a right action on M(k) = {(u, 9) |ge€ M,,(k)}. The formulas
+~ = -1 ~ ~
+(A, B) = (cA, c'B) and fi =c™'y, where c € k* , define an action of
+k* on M (k). As a result, we obtain a right action of GRT(k) on M(k). It
+commutes with the left action of GT(k). —
+
+PROPOSITION 5.5. The action of GRT(k) on M(k) is free and transiti
+> nsitive. TI
+same is true for the action of GRT,(k) on M,(k). isn sive, The
+
+PRooF. It suffices to prove the second statement. If 9, 7 € M,(k) then there
+exists exactly one gé€Fr,(A,B) such that 9(A, B) = A,B)A a
+
+x e( B); aameke ) = 9(g(A, B)Ag(A,B)™, B)
+
+g(A, B) = x(G(A, B)AG(A, B)”', B)-(A, B), (5.22)
+
+where x € Fr,(4, B) is inverse to g with respect to the operation (5.16)
+
+. -1 ;
+
+ie, 4(9(A, B)Ap(A, B)”, B)- o(A, B) = 1. Arguing as in the proof of
+
 QUASITRIANGULAR QUASI-HOPF ALGEBRAS 853
-Proposition 5.1, we find that (O, f) E GT(k) , where f(X , Y) - x(ln X , ln Y) .
-Equation (5.22) says that g is the result of the action of (O, f) on Φ, and
-therefore g E M,(k), i.e., g satisfies (5.12), (5.13), and (5.15). We now use
+
+Proposition 5.1, we find that (0, f) € GI(k), where f(X, Y) = z(InX, InY).
+Equation (5.22) says that g is the result of the action of (0, f) on @, and
+therefore g € M,(k), ie. g satisfies (5.12), (5.13), and (5.15). We now use
 the equality
-+ f(X , X)"1 in X3 - f(X, X)  0, (5.23)
-where X, X,X, - 1 , proved by the substitution (5.4). Finally, making a substi-
-tution like (5.4) in (5.23) with Φ replaced by Φ, and using (5.22), we obtain
-(5.14).
+
+inX, + Xi? f(x, X,)7' WX, ((X,, XX,”
++ f(X,, Xj) nX,- f(X,, X5) =0, (5.23)
+
+where X,X,X, = 1, proved by the substitution (5.4). Finally, making a substi-
+tution like (5.4) in (5.23) with g replaced by @, and using (5.22), we obtain
+(5.14). @
+
 From Propositions 5.1 and 5.5 follows
-PRoPosITION 5.6. Every Φ E M(k) determines an isomorphism S.: GRT(k)
-, GT(k), which is characterized by the fact that say y E GRT(k) acts on Φ on
+
+PROPOSITION 5.6. Every 9 € M(k) determines an isomorphism s,: GRT(k)
+
+“ GT(k), which is characterized by the fact that say » € GRT(k) acts on g on
 the right the same way s,(y) acts on the left. The diagram
-GRT(k)  GT(k)
-k*
-is commutative, so that s,(GRT,(k)) = GT,(k). The splitting of the sequence
-(5.8) that corresponds to p e M,(k) is defined by the homomorphism sao i: k* -
-GT(k), where i is the canonical imbedding k* -→ GRT(k) . Finally, grgt (k) =
-grt,(k), and if o e Mi(k), then s, induces the identity mapping grt;(k) -
-grgt (k) .
-PROPOsITION 5.7. (5.17), (5.18), and (5.20) imply (5.19)
-PRooF. Denote the left-hand side of (5.19) by s(B, C). Then s(B, C) =
+
+GRT(k) 3 GT(k)
+\ L
+kt
+is commutative, so that 5,(GRT, (é)) = GT,(k). The splitting of the sequence
+(5.8) that corresponds to g €M,(k) is defined by the homomorphism 8,01: k* 5
+
+GT(k), where i is the canonical imbedding k* = GRT(k). Finally, gigt,(k) =
+gtt,(k), and if 9 € M,(k), then s, induces the identity mapping gtt,(k) +
+
+argt, (Kk).
+PROPOSITION 5.7. (5.17), (5.18), and (5.20) imply (5.19).
+
+Proor. Denote the left-hand side of (5.19) by s(B, C). Then s(B, C) =
 s(C, B). Furthermore,
-s(Yi, Y2) = s(YI, Y2 + Y3) +s(YI + Y2, Y3) - S(Y2, Y3) =- 0, (5.24)
+
+s(¥%,.%) =9(¥,, ¥, + ¥3) +5(¥, + Ys %) - 9%, ¥) =0, (5.24)
+
 where the Y, are generators of the free Lie algebra. Indeed, denote the left-hand
-side of (5.24) by u(Yi . Y2, Y3). Then it follows from (5.17) and (5.18) that
-u(X14, X24, x34) =[1424+34 u1234]-[X14+24, u1248]+[14, 1423],
-1234
-where u = {left-hand side of (5.20)} -- {right-hand side of (5.20)}. There-
+side of (5.24) by u(Y,, ¥,, ¥,). Then it follows from (5.17) and (5.18) that
+u(x", x4, x34) = pity x2 34) 4x4, wy ipyl4 p23),
+where j1!7* = {left-hand side of (5.20)} — {right-hand side of (5.20)}. There-
 fore (5.17), (5.18), and (5.20) imply (5.24). It remains to prove that if a sym-
 metric Lie polynomial s(B, C) satisfies (5.24), then s = 0. It is well known
-that if s(x , y) is an ordinary (commutative) polynomial in two sets of variables
-x =(x(), .., x(n) and y=(y(1), ,(m) such that s(y, x) = s(x, y) and
-(5.24) holds, then s is of the form f(x+y)- f(x)- f(y) . This can be seen (see
+that if s(x, y) is an ordinary (commutative) polynomial in two sets of variables
+x= (x), x) and p=, y) such that s(y, x)= s(x, y) and
+(5.24) holds, then s is of the form f(x+y)—/f(x)—f(y) . This can be seen (see
 the proof of Proposition 2.2 of [1]) by representing the space of homogeneous
-polynomials s(x, y) of degree n in the form Vm s. Wm, where Vm is the
-space of polynomials in X; = (x(l) .lin.
-ear in each x, , and Wm is an appropriate Sm-module"The same argument goes
-through in the Lie case (for .V we must take the space of all Lie polynomials
+polynomials s(x, y) of degree n in the form V,, @s W,,, where V,, is the
+
+space of polynomials in x, = (xi, bees x), wa My = (x, sees xl), lin-
+
+ear in each x,, and W,, is an appropriate S$, -module. The same argument goes
+through in the Lie case (for .V,, we must take the space of all Lie polynomials
 in m variables, linear in each variable); but now f(x) is a Lie polynomial in
-X, i.e., f(x) =cx, cE k. Therefore s = O.
+x,ie, f(x) =cx, cek. Therefore s=0. @
 

@@ -1,0 +1,57 @@
+300 Walter D. Neumann and Alan W. Reid
+
+The additional generator 3 of 7;W’(p,2q) is represented by the matrix (00) €
+
+PSL2Q(VZ, i), so Q(tr mW’ (p, 2g)) C Q(z, i). But a and (3b have traces 1//z
+and i,/z, so the trace field contains \/z and i. The same argument applies to
+7™W"(p,2q), since the additional involution needed to generate 7,W’(p, 2q) is the
+180° rotation about the axis aga2, which is
+
+y- (;, 0 ) € PSL2Q( V2.1).
+
+i
+(Remark: 7 does not respect the octahedron after Dehn surgery.) Oo
+
+Theorem 6.3. Suppose (p,q) € Zx $Z isnotin N. t = 7(W(p,q)) isnot an algebraic
+integer if and only if p = 0 and |q| is an odd prime power. 7;W’(p, 2q) fails to have
+integral traces if and only if p = 0 or —4gq and |q| is an odd prime power.
+
+Proof. Since r = —4/z—2, the integrality of 7 is equivalent to that of 4/z. Moreover,
+
+to check if tr,W’(p,2q) consists of algebraic integers, it suffices to check a set of
+
+generators and their pairwise products (cf. [Mag, p. 148]). Using the generators in the
+
+above proof one obtains traces 2/,/z, \/z + 2/,/z, multiples of these by i, and rational
+
+integral linear combinations of 1, z, and 4/z. So tr7,W/(p,q) consists of algebraic
+
+integers if and only if z and 4/z (and hence also their square roots) are algebraic integers.
+By (6.4) and (6.5), satisfies the equation
+
+(eB) 1 =1, (6.7)
+
+which multiplies out to a monic polynomial with rational integer coefficients and constant
+term +1 unless p+4q = 0. Thus x is a unit, whence z = a — x~! is an algebraic
+integer, if p+ 4q # 0. On the other hand, if x satisfies equations (6.4) and (6.5) for
+(p,q) then one checks that (1 — 7)/(1 + %) satisfies (6.4) and (6.5) for (p + 4q, —q).
+But replacing a by (1 —z)/(1+) replaces z = x—2~! by 4/z. Thus 4/Z7—and
+hence also 4/z—is an algebraic integer if p 4 0.
+
+To complete the proof it suffices to show that when p = 0, z is an algebraic
+integer divisor of 4 if and only if |g| is not an odd prime power. (Recall, that since
+qe 3Z, 2q is an arbitrary integer.) Assume p = 0. Then (6.4) and (6.5) imply that
+x/i = exp(27i/4q), so z/i = exp(27i/4q) + exp(—2mi/4q). Now z will be a divisor
+of 4 if and only if ¢ := (z/i)exp(27i/4q) is. But ¢ divides 4 if and only if its
+norm divides 4. The norm of ¢ = exp(27i/2q) + 1 is ®(1), where © is the minimal
+polynomial for — exp(27i/2q). Now, —exp(277/2q) is a primitive r-th root of unity
+with r = |4q|, |g|, or |2q|, according as 2q is an odd integer, twice an odd integer, or
+divisible by 4. Thus ® is the r-th cyclotomic polynomial, and it is known that ®(1) = 1
+unless r is the power of a prime, in which case ®(1) equals this prime (cf. e.g., [W]).
+Thus ®(1) fails to divide 4 if and only if r is an odd prime power, in which case g = +r.
+
+o
+
+An interesting example is W(0,3) (or W(12,—3), which is commensurable with
+it). The invariant trace field k(71W(0, 3)) is Q(/—3), but 7,W (0,3) has non-integral
+traces, so it cannot be commensurable with PSL203. However its volume turns out to be

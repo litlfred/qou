@@ -7,8 +7,8 @@
   "bytes": 564142,
   "pages": 6,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -21,60 +21,228 @@
   },
   "doi": null,
   "title": "Dilute neutron star matter from neural-network quantum states",
-  "authors_raw": "Bryce Fore,1 Jane M. Kim, 2 Giuseppe Carleo, 3 Morten Hjorth-Jensen, 2, 4 and Alessandro Lovato 5, 6, 7",
+  "authors_raw": "Bryce Fore,1 Jane M. Kim,2 Giuseppe Carleo,3 Morten Hjorth-Jensen,2, 4 and Alessandro Lovato5, 6, 7",
   "title_lines": [
    "Dilute neutron star matter from neural-network quantum states"
   ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20221209012853Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": ""
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20221209012853Z"
+  },
+  "title_raw": "Dilute neutron star matter from neural-network quantum states",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Dilute neutron star matter from neural-network quantum states",
+   "outline": "Dilute neutron star matter from neural-network quantum states",
+   "text": "Dilute neutron star matter from neural-network quantum states",
+   "corroborated_by": [
+    "outline",
+    "text"
+   ],
+   "browser_print": false
   }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "1 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (1 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "Dilute neutron star matter from neural-network quantum states",
-   "page": 1,
-   "source": "outline",
-   "number": null
+   "kind": "figure",
+   "number": "1",
+   "title": "NQS training data in neutron matter at ρ = 0.04",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
   },
   {
-   "level": 2,
-   "title": "Abstract",
-   "page": 1,
-   "source": "outline",
-   "number": null
+   "kind": "figure",
+   "number": "2",
+   "title": "Low-density neutron-matter /πEFT equation of state as obtained with the hidden-nucleon NQS (solid green circles) compared with FHNC/SOC calculations with the AV18+UIX Hamiltonian (red triangles) and the non-interacting Fermi Gas (solid blue line)",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
   },
   {
-   "level": 2,
-   "title": "References",
-   "page": 4,
-   "source": "outline",
-   "number": null
+   "kind": "figure",
+   "number": "3",
+   "title": "Spin-singlet and triplet two-body distribution func-",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
   }
  ],
- "toc_source": "outline",
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-dilute-neutron-star-matter-from-neural-network-q",
+   "id": "page-001",
    "number": null,
-   "title": "Dilute neutron star matter from neural-network quantum states",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 5456,
+   "n_words": 785,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 4851,
+   "n_words": 778,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3738,
+   "n_words": 596,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 5759,
+   "n_words": 844,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 6431,
+   "n_words": 931,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
    "page_end": 6,
-   "n_chars": 26342,
-   "n_words": 3958
+   "n_chars": 149,
+   "n_words": 22,
+   "label_start": "6",
+   "label_end": "6"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 3,
-  "sections": 1,
-  "chars_total": 26342
+  "toc_entries": 0,
+  "toc_inferred_entries": 1,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 26384,
+  "furniture_lines_stripped": 5,
+  "outline_rejected": "1 of 3 outline entries name a heading the pages print (< 50%), e.g. \"Dilute neutron star matter from neural-network quantum states\""
  }
 }

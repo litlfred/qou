@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0006183v1
-doc_title: "arXiv:hep-th/0006183v1 23 Jun 2000"
+doc_title: "Fine-tuning and the Wilson renormalization group"
 section_id: sec-001-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 0006183v1.pdf
 source_sha256: 2c9c4d97ce4f71a3
 toc_source: inferred
+doc_brief: "Fine-tuning and the Wilson renormalization group — We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge"
 ---
 The Wilsonian renormalization group (RG) provides the most physical framework to study
 general properties of quantum ﬁeld theories. In this formulation [1, 2] quantum ﬂuctuations
@@ -48,4 +49,3 @@ bare action at one-loop order by solving the ﬁne-tuning at Λ = Λ0. Technical
 calculation are given in the appendix. In section 5 we present some concluding remarks
 and hints for the generalization of this computation to higher loops.
 1
-2

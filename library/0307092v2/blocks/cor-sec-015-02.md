@@ -1,0 +1,1 @@
+If we deﬁne groups analogous to bP(C) and bB(C) using ﬂat- tened simplices modulo the lifted ﬁve term relation, but ignoring orderings of vertices, we obtain the quotients bP(C)/C6 and bB(C)/C6, where C6 is the unique cyclic subgroup of order 6. Geometry & Topology, Volume 8 (2004) Walter D Neumann

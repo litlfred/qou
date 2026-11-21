@@ -9,7 +9,7 @@ the canonical Hecke element `T_w(K)` of knot/nucleus `K`.
 
 ## Mathematical content
 
-Per `prop:atom-knot-mass-derivation` in the manuscript:
+Per `conj:atom-knot-mass-derivation` in the manuscript:
 
     M(K) = ρ(K) · m_e · |tr_M(T_w(K))|     (cat units)
 
@@ -45,7 +45,7 @@ real `T_w` values awaits the Hoefsmit-machinery port.
 
 ## References
 
-- `prop:atom-knot-mass-derivation` (the formula)
+- `conj:atom-knot-mass-derivation` (the formula)
 - `conj:rho-prefactor-structural` (ρ from Wedderburn)
 - `QOU.HeckeAlgebra.Common.markovTrace` (axiomatised tr_M)
 - `def:m-e-codata` (m_e MeV calibration)

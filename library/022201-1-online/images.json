@@ -1,0 +1,135 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "022201-1-online",
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.107419,
+        "imagesOnPage": 4,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.197727,
+        "imagesOnPage": 4,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 9.7e-05,
+        "imagesOnPage": 4,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 1,
+          "coverage": 9.7e-05,
+          "imagesOnPage": 4
+        },
+        {
+          "page": 1,
+          "coverage": 9.7e-05,
+          "imagesOnPage": 4
+        }
+      ]
+    },
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.000692,
+        "imagesOnPage": 5,
+        "page": 2
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p002-2",
+      "file": "images/img-p002-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.000407,
+        "imagesOnPage": 5,
+        "page": 2
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p002-3",
+      "file": "images/img-p002-3.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.00073,
+        "imagesOnPage": 5,
+        "page": 2
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p002-4",
+      "file": "images/img-p002-4.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.000234,
+        "imagesOnPage": 5,
+        "page": 2
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 2,
+          "coverage": 0.000234,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 2,
+          "coverage": 0.000234,
+          "imagesOnPage": 5
+        }
+      ]
+    }
+  ]
+}

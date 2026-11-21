@@ -36,7 +36,7 @@ multiplicity theorem (`mult_λ = dim(λ)`, giving the `dim(λ)²` block ranks) i
 increment toward fully discharging the bundle.
 
 ## References
-- [manuscript] content/.../BraidKnot/RegularRepBlockTrace.lean (`SnWedderburnSpectralData`, side 2)
+- [leitner2026] content/.../BraidKnot/RegularRepBlockTrace.lean (`SnWedderburnSpectralData`, side 2)
 - [vershik2005] Vershik–Okounkov, "A new approach to the representation theory of the symmetric
   groups II" https://doi.org/10.1007/s10958-005-0421-7
 -/

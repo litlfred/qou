@@ -1,0 +1,61 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4fc4863e69f2",
+          "ts": "b3c6ab749b72",
+          "lean": "9106b39c0010",
+          "lean_statement": "60e4c3869541"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.940Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "severity": "minor",
+        "evidence": "Item 2 states equality #(F^delta_k) = F^{delta o t}_k but map_mem_F_comp proves only inclusion; the stability iff is proved only in the 'if' direction (map_mem_F_of_perm); the item 3 dimension count and a=0 <=> (1^n) are not formalised; the # input is a hypothesis h_phi. The statement flags none of this."
+      },
+      {
+        "field_hash": {
+          "md": "4fc4863e69f2",
+          "ts": "b3c6ab749b72",
+          "lean": "9106b39c0010",
+          "lean_statement": "60e4c3869541"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:11:32.869Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "major",
+        "evidence": "Re-graded 2026-11-17 (was warn). Statement claims more than the Lean proves: item 2 states #(F^delta_k) = F^{delta o t}_k, Lean map_mem_F_comp proves only inclusion; the stability iff is proved in the 'if' direction only (map_mem_F_of_perm); the item 3 count and a=0 <=> (1^n) are unformalised; the # input is hypothesis h_phi. Fix: narrow the statement or prove the reverse inclusion."
+      },
+      {
+        "field_hash": {
+          "md": "57a21c0e0eb5",
+          "ts": "b3c6ab749b72",
+          "lean": "7a434cc757af",
+          "lean_statement": "7b00d345e584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-17",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-18T04:05:49.755Z",
+        "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
+        "evidence": "Item 2 now proved as equality (map_F_eq) and iff (map_F_stable_iff); item 3 count flagged as unformalised in the text. lean-direct -DautoImplicit=false exit 0."
+      }
+    ]
+  },
+  "updated_at": "2026-11-18T04:05:49.755Z"
+}

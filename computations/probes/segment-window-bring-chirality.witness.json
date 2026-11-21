@@ -1,0 +1,463 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-10-12T18:55:29.060706+00:00",
+  "commitSha": "b6892addb6ec505452c3c1184a1c1c55e20c5c8d",
+  "assertions": [
+    {
+      "name": "convention_D_support_at_n9_is_the_two_row_blocks",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "y-lambda-at-q0 n=9"
+    },
+    {
+      "name": "t_word_reproduces_committed_atom_characters_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-t"
+    },
+    {
+      "name": "3he_word_reproduces_committed_atom_characters_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "atom-chi-rust-3he"
+    },
+    {
+      "name": "windows_k<=3_cannot_separate_T_from_3He",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean window_cannot_separate"
+    },
+    {
+      "name": "window_k=4_separates_T_from_3He",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "first window reaching the bond at generator 5"
+    },
+    {
+      "name": "bring_C5_rotation_at_p1_eq_zeta^(-1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean rotExp_eq_neg; tangent line = Jacobian kernel mod p"
+    },
+    {
+      "name": "bring_C5_rotation_at_p2_eq_zeta^(-2)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean rotExp_eq_neg; tangent line = Jacobian kernel mod p"
+    },
+    {
+      "name": "bring_C5_rotation_at_p3_eq_zeta^(-3)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean rotExp_eq_neg; tangent line = Jacobian kernel mod p"
+    },
+    {
+      "name": "bring_C5_rotation_at_p4_eq_zeta^(-4)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean rotExp_eq_neg; tangent line = Jacobian kernel mod p"
+    },
+    {
+      "name": "conjugate_fixed_points_carry_conjugate_rotations",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean rotExp_neg"
+    },
+    {
+      "name": "no_C5_rotation_is_real_(chirality_never_neutral)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean rotExp_ne_rotExp_neg"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "segment-window-bring-chirality",
+  "scriptFile": "segment_window_bring_chirality_probe.py",
+  "scriptHash": "e9dc97d1e8f7",
+  "scriptCommitSha": "54d31d0d097e9eb6e1685b20e3f9d67b18bf5b02",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "cd378682bfd642d0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/segment_window_bring_chirality_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/segment_window_bring_chirality_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0_anchor_reason": "q0 read from the committed y-lambda-at-q0 witness string; atom words validated against committed characters",
+  "description": "PROBE (bean qou-jfx8): (W) the k-segment collision window on the production T and 3He words — k <= 3 cannot separate them, k = 4 (first window reaching the bond) does; (B) the C5 rotations at the fixed points of a 5-cycle on Bring's curve are zeta^(-j), conjugate in conjugate pairs, never real. Nothing fitted, selected or wired.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "window": {
+    "1": {
+      "worst_sep": "0.0",
+      "rows": [
+        {
+          "x": [],
+          "phi_T": "1.0",
+          "phi_3He": "1.0",
+          "sep": "0.0"
+        }
+      ]
+    },
+    "2": {
+      "worst_sep": "2.1169957669828611532e-51",
+      "rows": [
+        {
+          "x": [],
+          "phi_T": "1.0",
+          "phi_3He": "1.0",
+          "sep": "0.0"
+        },
+        {
+          "x": [
+            7
+          ],
+          "phi_T": "2.400198730274060486778726",
+          "phi_3He": "2.400198730274060486778726",
+          "sep": "2.1169958e-51"
+        }
+      ]
+    },
+    "3": {
+      "worst_sep": "1.0287736736529449064e-50",
+      "rows": [
+        {
+          "x": [],
+          "phi_T": "1.0",
+          "phi_3He": "1.0",
+          "sep": "0.0"
+        },
+        {
+          "x": [
+            7
+          ],
+          "phi_T": "2.400198730274060486778726",
+          "phi_3He": "2.400198730274060486778726",
+          "sep": "2.1169958e-51"
+        },
+        {
+          "x": [
+            6
+          ],
+          "phi_T": "0.8114758867476934843485149",
+          "phi_3He": "0.8114758867476934843485149",
+          "sep": "5.7609079e-51"
+        },
+        {
+          "x": [
+            6,
+            7
+          ],
+          "phi_T": "1.820016499063799925918414",
+          "phi_3He": "1.820016499063799925918414",
+          "sep": "7.9028665e-51"
+        },
+        {
+          "x": [
+            7,
+            6
+          ],
+          "phi_T": "1.440666917516924947754705",
+          "phi_3He": "1.440666917516924947754705",
+          "sep": "1.0109848e-50"
+        },
+        {
+          "x": [
+            6,
+            7,
+            6
+          ],
+          "phi_T": "1.029889000601834774024176",
+          "phi_3He": "1.029889000601834774024176",
+          "sep": "1.0287737e-50"
+        }
+      ]
+    },
+    "4": {
+      "worst_sep": "0.92123284920792386458",
+      "rows": [
+        {
+          "x": [],
+          "phi_T": "1.0",
+          "phi_3He": "1.0",
+          "sep": "0.0"
+        },
+        {
+          "x": [
+            7
+          ],
+          "phi_T": "2.400198730274060486778726",
+          "phi_3He": "2.400198730274060486778726",
+          "sep": "2.1169958e-51"
+        },
+        {
+          "x": [
+            6
+          ],
+          "phi_T": "0.8114758867476934843485149",
+          "phi_3He": "0.8114758867476934843485149",
+          "sep": "5.7609079e-51"
+        },
+        {
+          "x": [
+            6,
+            7
+          ],
+          "phi_T": "1.820016499063799925918414",
+          "phi_3He": "1.820016499063799925918414",
+          "sep": "7.9028665e-51"
+        },
+        {
+          "x": [
+            7,
+            6
+          ],
+          "phi_T": "1.440666917516924947754705",
+          "phi_3He": "1.440666917516924947754705",
+          "sep": "1.0109848e-50"
+        },
+        {
+          "x": [
+            6,
+            7,
+            6
+          ],
+          "phi_T": "1.029889000601834774024176",
+          "phi_3He": "1.029889000601834774024176",
+          "sep": "1.0287737e-50"
+        },
+        {
+          "x": [
+            5
+          ],
+          "phi_T": "2.477530419702765995558393",
+          "phi_3He": "2.093715180744308887567501",
+          "sep": "0.38381524"
+        },
+        {
+          "x": [
+            7,
+            5
+          ],
+          "phi_T": "5.946565367585939112859282",
+          "phi_3He": "5.025332518378015248278023",
+          "sep": "0.92123285"
+        },
+        {
+          "x": [
+            5,
+            6
+          ],
+          "phi_T": "1.51795324981834593754711",
+          "phi_3He": "1.30786164607178177184274",
+          "sep": "0.2100916"
+        },
+        {
+          "x": [
+            5,
+            6,
+            7
+          ],
+          "phi_T": "3.643389462829377656553798",
+          "phi_3He": "3.12302638192309102990574",
+          "sep": "0.52036308"
+        },
+        {
+          "x": [
+            5,
+            7,
+            6
+          ],
+          "phi_T": "3.643389462829377656553798",
+          "phi_3He": "3.075189915354130192669817",
+          "sep": "0.56819955"
+        },
+        {
+          "x": [
+            5,
+            6,
+            7,
+            6
+          ],
+          "phi_T": "2.279641339546339451634313",
+          "phi_3He": "1.940323969693161982335682",
+          "sep": "0.33931737"
+        },
+        {
+          "x": [
+            6,
+            5
+          ],
+          "phi_T": "2.010456194272687244983419",
+          "phi_3He": "1.698999382891595392720605",
+          "sep": "0.31145681"
+        },
+        {
+          "x": [
+            6,
+            7,
+            5
+          ],
+          "phi_T": "4.50914624079149504509009",
+          "phi_3He": "3.810596173294988149150934",
+          "sep": "0.69855007"
+        },
+        {
+          "x": [
+            5,
+            6,
+            5
+          ],
+          "phi_T": "1.231782459437885363160373",
+          "phi_3He": "1.125755395883630940080512",
+          "sep": "0.10602706"
+        },
+        {
+          "x": [
+            5,
+            6,
+            7,
+            5
+          ],
+          "phi_T": "2.76269995947690366411139",
+          "phi_3He": "2.544739663241410364391555",
+          "sep": "0.2179603"
+        },
+        {
+          "x": [
+            6,
+            5,
+            7,
+            6
+          ],
+          "phi_T": "2.76269995947690366411139",
+          "phi_3He": "2.323961179335184280911979",
+          "sep": "0.43873878"
+        },
+        {
+          "x": [
+            5,
+            6,
+            5,
+            7,
+            6
+          ],
+          "phi_T": "1.809353338448827471795822",
+          "phi_3He": "1.645779322699819430307182",
+          "sep": "0.16357402"
+        },
+        {
+          "x": [
+            7,
+            6,
+            5
+          ],
+          "phi_T": "3.569296112807597225959092",
+          "phi_3He": "3.016346195601294860767057",
+          "sep": "0.55294992"
+        },
+        {
+          "x": [
+            6,
+            7,
+            6,
+            5
+          ],
+          "phi_T": "2.551581327908325928679475",
+          "phi_3He": "2.156294235041646138582245",
+          "sep": "0.39528709"
+        },
+        {
+          "x": [
+            5,
+            7,
+            6,
+            5
+          ],
+          "phi_T": "2.186865029350595156241904",
+          "phi_3He": "2.077420328216562170349676",
+          "sep": "0.1094447"
+        },
+        {
+          "x": [
+            5,
+            6,
+            7,
+            6,
+            5
+          ],
+          "phi_T": "1.563323355415723530358144",
+          "phi_3He": "1.45809358495489371152795",
+          "sep": "0.10522977"
+        },
+        {
+          "x": [
+            6,
+            5,
+            7,
+            6,
+            5
+          ],
+          "phi_T": "1.563323355415723530358144",
+          "phi_3He": "1.498222823933307420893233",
+          "sep": "0.065100531"
+        },
+        {
+          "x": [
+            5,
+            6,
+            5,
+            7,
+            6,
+            5
+          ],
+          "phi_T": "2.513693877148007755684209",
+          "phi_3He": "2.190299260474405436290857",
+          "sep": "0.32339462"
+        }
+      ]
+    }
+  },
+  "bring_c5_rotations": {
+    "1": {
+      "re": "0.309016994374947424102293417183",
+      "im": "-0.951056516295153572116439333379"
+    },
+    "2": {
+      "re": "-0.809016994374947424102293417183",
+      "im": "-0.587785252292473129168705954639"
+    },
+    "3": {
+      "re": "-0.809016994374947424102293417183",
+      "im": "0.587785252292473129168705954639"
+    },
+    "4": {
+      "re": "0.309016994374947424102293417183",
+      "im": "0.951056516295153572116439333379"
+    }
+  }
+}

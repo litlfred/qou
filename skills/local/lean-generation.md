@@ -353,7 +353,7 @@ trivial model in one commit — `HeckeAnyonicSubstrate`,
     and the identity braid action.  Proves the class axiomatisation
     is consistent.  Provided as a `def` (not `instance`) so it does
     not pollute typeclass resolution. -/
--- Ref: [manuscript] braids-and-knots/hecke-anyonic-substrate
+-- Ref: [leitner2026] braids-and-knots/hecke-anyonic-substrate
 def trivialModel (R : Type u) [CommRing R] (q : R) :
     HeckeAnyonicSubstrate R q where
   NormalForm := PUnit

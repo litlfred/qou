@@ -7,8 +7,10 @@ section_number: 2
 pages: 8-9
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
+toc_source: outline
 doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
+The Firewall Argument
 We begin with a somewhat reorganized presentation of the original argument of [1].
 Their argument rests on some basic assumptions about the quantum description of
 a black hole from the points of view of an external observer Charlie and an infalling

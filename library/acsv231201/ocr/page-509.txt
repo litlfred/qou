@@ -1,0 +1,50 @@
+C.2 Residue forms and the residue integral theorem 491
+
+Definition C.14. If V c C4 is an analytic hypersurface then we call w € V
+a transverse multiple point of V if there exists a neighborhood D of w in C4
+such that DNV = DN (Vo, U---UVgQ,) for smooth analytic hypersurfaces
+{Vo, : 1 < j < k} defined by analytic functions Q;(z) whose gradients at
+z = w are linearly independent. When this collection of analytic functions is
+understood and m € Né then we write Q(z)" = Q(z)" ++» Qx(z)"*. If every
+point of V is a transverse multiple point then we call V a transverse analytic
+hypersurface.
+
+Example C.15. Every smooth analytic hypersurface is a transverse analytic
+hypersurface. 4
+
+Fix a transverse analytic hypersurface V and let w be a d-form on M =
+C4 \ V. We say that w has a transverse pole (or transverse multiple point) of
+order m € N‘ at w € V if
+
+e there exists a neighborhood D of w in C4 and analytic functions Q),..., Ox
+on D such that DN V = DN (Vo, U---UVo,) and the gradients of the Q;
+are linearly independent at w (in particular, they are all non-zero),
+
+e there exists an analytic function P on D such that w = P(z)/Q(z)'"dz
+when z € DN M, and
+
+e there is no possible choice of Q and P such that these properties hold with
+any coordinate of m decreased.
+
+A transverse multiple point of order 1 is called a transverse simple pole (or
+transverse simple point). The final item in this definition implies that the nu-
+merator P and denominator factors Q, in the local representation of w are co-
+prime in the ring of germs of analytic functions, ensuring that m is the correct
+notion of order (no unwanted cancellation can occur).
+
+Let p be a transverse simple pole of the d-form w, with the local represen-
+tation
+
+w= __P@) __ 4,
+O1(z) +++ Ox(Z)
+
+in some neighborhood of p. To simplify notation we write V; = Vg, and let
+S= Ne V; be the stratum of V containing p. Because the gradients of the
+Q; are linearly independent at p, there exist coordinates 7 = {m,...,7a-x}
+that locally analytically parametrize S near p. In particular, writing z, =
+(Z,5+++Zny,) there exists a neighborhood D of p in C4 and analytic func-
+tions ¢;(z,) on D for i ¢ m such that z € D lies in S if and only if z; = f(z7)
+for alli ¢ 7.
+
+As detailed later in these appendices, if D is sufficiently small then MN D
+has a local product structure N x S. Because p is a transverse multiple point

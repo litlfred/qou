@@ -2,127 +2,22 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-ph-9306237v1",
  "source_sha256": "6fea847208a60505",
- "brief": "KEK preprint 92-169 — We formulate the chiral perturbation theory at the one loop l evel in the ef- fective lagrangian including the ρ meson as a dynamical gauge boson of a hidden local",
- "extended": "**KEK preprint 92-169**\n\n*April, 1993*\n\n14 pp, 23 sections.\n\n**Abstract.** We formulate the chiral perturbation theory at the one loop l evel in the ef- fective lagrangian including the ρ meson as a dynamical gauge boson of a hidden local symmetry(HLS). The size of radiative correction to th e phenomenological parameter a of HLS is estimated to be about 10%. The complete list of O(E4) terms is given and the one loop counter terms are determined e xplicitly in the N ﬂavor model. We also obtain matching conditions to the conve ntional chiral per- turbation of Gasser and Leutwyler in the chiral limit in a ren ormalization scale independent manner. We ﬁnd that Gasser–Leutwyler’s estima tes for L9, 10 are saturated by ρ and its one loop contributions without introducing non-min imal couplings of π -ρ system, suggesting the absence of the tree level a1 meson con- tributions.\n\n**Outline.** Abstract; 2 ( ¯Dabµ vb; 4 B2(1, 0; −p2; 8 B4(1, 1; −p2; 1 (p2) = H r; 1 (p2) = − 1; 1 (p2) = z∗; 9 (2 − a)2 + 1; 2 (z∗; 8 (2z∗; References; 12 (5 − 4a + a2) − N; 6 (1 + 2a − a2) − N; 6 (2 + 3a − 3a2) − N; 6 (1 + 2a2 − a3) − N; 6 (2 − a)(5 − 3a) − N; 6 (1 + 4a − 4a2 + a3) − N; 6 (7 − 11a + 5a2) N",
+ "brief": "Chiral Perturbation to One Loop Including the rho Meson — We formulate the chiral perturbation theory at the one loop level in the ef- fective lagrangian including the ρ meson as a dynamical gauge",
+ "extended": "**Chiral Perturbation to One Loop Including the rho Meson**\n\n*April, 1993*\n\n14 pp, 2 sections.\n\n**Abstract.** We formulate the chiral perturbation theory at the one loop level in the ef- fective lagrangian including the ρ meson as a dynamical gauge boson of a hidden local symmetry(HLS). The size of radiative correction to the phenomenological parameter a of HLS is estimated to be about 10%. The complete list of O(E4) terms is given and the one loop counter terms are determined explicitly in the N ﬂavor model. We also obtain matching conditions to the conventional chiral per- turbation of Gasser and Leutwyler in the chiral limit in a renormalization scale independent manner. We ﬁnd that Gasser–Leutwyler’s estimates for L9,10 are saturated by ρ and its one loop contributions without introducing non-minimal couplings of π-ρ system, suggesting the absence of the tree level a1 meson con- tributions.\n\n**Outline.** Front matter; References",
  "tokens": {
-  "brief": 46,
-  "extended": 298
+  "brief": 49,
+  "extended": 236
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
-   "pages": "1-5"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-11"
   },
   {
-   "id": "sec-001-2-dabµ-vb",
-   "title": "( ¯Dabµ vb",
-   "pages": "5-7"
-  },
-  {
-   "id": "sec-002-4-b21-0-p2",
-   "title": "B2(1, 0; −p2",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-003-8-b41-1-p2",
-   "title": "B4(1, 1; −p2",
-   "pages": "7-8"
-  },
-  {
-   "id": "sec-004-1-p2-h-r",
-   "title": "(p2) = H r",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-005-1-p2-1",
-   "title": "(p2) = − 1",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-006-1-p2-z",
-   "title": "(p2) = z∗",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-007-9-2-a2-1",
-   "title": "(2 − a)2 + 1",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-008-2-z",
-   "title": "(z∗",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-009-8-2z",
-   "title": "(2z∗",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-010-references",
+   "id": "sec-000-references",
    "title": "References",
-   "pages": "11-13"
-  },
-  {
-   "id": "sec-011-12-5-4a-a2-n",
-   "title": "(5 − 4a + a2) − N",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-012-6-1-2a-a2-n",
-   "title": "(1 + 2a − a2) − N",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-013-6-2-3a-3a2-n",
-   "title": "(2 + 3a − 3a2) − N",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-014-6-1-2a2-a3-n",
-   "title": "(1 + 2a2 − a3) − N",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-015-6-2-a5-3a-n",
-   "title": "(2 − a)(5 − 3a) − N",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-016-6-1-4a-4a2-a3-n",
-   "title": "(1 + 4a − 4a2 + a3) − N",
-   "pages": "13-14"
-  },
-  {
-   "id": "sec-017-6-7-11a-5a2-n",
-   "title": "(7 − 11a + 5a2) N",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-018-12-10-14a-5a2-n",
-   "title": "(10 − 14a + 5a2) N",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-019-12-1-2a2-2a3-a4-n",
-   "title": "(1 − 2a2 + 2a3 + a4) N",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-020-24-1-4a2-4a3-a4-n",
-   "title": "(1 + 4a2 − 4a3 + a4) N",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-021-6-1-4a-5a2-2a3-n",
-   "title": "(1 + 4a − 5a2 + 2a3) N",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-022-6-1-10a-13a2-6a3-n",
-   "title": "(−1 + 10a − 13a2 + 6a3) N",
-   "pages": "14-14"
+   "pages": "11-14"
   }
  ],
  "provenance": {

@@ -66,7 +66,13 @@ semisimple, and the ideal equality above is still open for `n ≥ 4`. General `n
 needs the planar diagram basis, which is what everything in this arc keeps
 arriving at from a different side.
 
--- Ref: [jones1985] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+--   (Annals 126(2) 335-388, "Hecke algebra representations of braid groups and link
+--   polynomials" — the TL-quotient + Markov-trace construction this file is about.
+--   The key read `jones1985` until 2026-09-27 while carrying jones1987's DOI; the DOI
+--   was the correct half. `jones1985` is the Bull. AMS 12(1) 103-111 von Neumann paper,
+--   DOI 10.1090/S0273-0979-1985-15304-2 — a different paper, and one that IS ingested
+--   (`library/s0273-0979-1985-15304-2/`), whereas jones1987 carries no `library:` field.
 -/
 
 namespace QOU.MathlibExt.TemperleyLiebWedderburn

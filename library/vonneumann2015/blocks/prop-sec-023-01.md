@@ -1,0 +1,1 @@
+If M is as above the || −||-unit ball of M is a complete metric space for || −||2 and the topology deﬁned by || −||2 on the unit ball is the same as the strong (and ultrastrong and *-strong) topology.

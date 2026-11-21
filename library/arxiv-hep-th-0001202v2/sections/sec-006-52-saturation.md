@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-006-52-saturation
 section_title: "Saturation"
 section_number: 5.2
@@ -10,7 +10,8 @@ source_sha256: b2e3e22ea3d51c0b
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.979
+latex_coverage_ratio: 0.976
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 We now seek to prove that $H_{k}(x)=[H_1(x)]^k$ in the case that ${\cal H}={\cal H}_R$ is the Hopf algebra of undecorated rooted trees.
 

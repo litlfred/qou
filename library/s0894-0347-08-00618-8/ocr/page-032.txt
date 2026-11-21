@@ -1,0 +1,57 @@
+552 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+In that paper, one of us conjectured that the distribution of 7 at time ¢ with
+deterministic initial configuration 7 is negatively associated. Even the special case
+P"(m = 1 on A,m = 0 on B) > P"(m =1 on A)P"(m% = 0 on B),
+
+(19) A,BCS,ANB=06
+
+remained open (note that in (19), one of the events is increasing while the other is
+decreasing). Surprisingly, despite the similarity between { d (19), neither the
+proof of in [2], nor a somewhat different one given in extends to prove
+(19). We are now able to prove this conjecture; see Theorem [5.2] below. The latter
+is actually a consequence of a yet stronger property for finite symmetric exclusion
+processes that we will now establish.
+
+Proposition 5.1. Suppose that S is finite and the initial distribution no of a sym-
+metric exclusion process on {0,1}5 is strongly Rayleigh. Then so is the distribution
+of m for allt > 0.
+
+Proof. First, we observe that it suffices to prove the statement in case qj; # 0 for
+only one pair i, 7. To see this, suppose T; (t) and T(t) are semigroups for finite state
+Markov chains on the same state space with generators £; and £2 respectively, and
+let T(t) be the semigroup with generator £; + Lo. The Trotter product formula
+(see p. 33]) gives
+
+T(t) = lim [Ti (t/n)To(¢/n)| "
+
+It follows that if a closed set of probability measures M on the state space has the
+property that ~ © M implies T;(t) € M for i = 1,2 and t > 0, then p © M
+implies uT(t) € M for t > 0. Now write the generator of the symmetric exclusion
+process as the following sum, corresponding to transitions at individual pairs of
+
+sites:
+L=S Lis,
+aj
+where
+1
+LijF(n) = 3 dil E(t,3(M) — F(n)).
+
+Repeated application of the preceding observation with M = the set of probability
+measures on {0, 1}5 with stable generating polynomials, implies that the statement
+of the proposition is correct for the process with generator L if it is correct for the
+process with generator £;; for each i,j.
+
+In the case of a single non-zero q;,;, the generating polynomial of the distribution
+of is given by af(z) + (1 — a) f(7;,;(2)), where a = P(Nj,;(t) is even) and f is
+the generating polynomial for the initial distribution. Therefore, the result follows
+
+from Theorem [4.20} Oo
+
+Recall from 2:4] that if S is a countably infinite set, a probability measure on
+{0,1}5 is strongly Rayleigh if every projection onto a finite subset of 9 is strongly
+Rayleigh. Note that this property is preserved by weak convergence of measures.
+
+Theorem 5.2. Suppose that S is countable and the initial distribution no of a
+symmetric exclusion process on {0,1}% is strongly Rayleigh. Then the distribution
+of m is strongly Rayleigh, and hence CNA+, for all t > 0.

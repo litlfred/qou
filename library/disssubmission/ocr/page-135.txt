@@ -1,0 +1,50 @@
+5.8. The difference morphism 127
+
+where T € Perv(X,C) is some negligible perverse sheaf. In fact t = dy by
+part (a) of the proposition. Furthermore ?5¢ = dp is a skyscraper sheaf,
+hence for U C X sufficiently small we have
+
+Ve 2% 04 )lu = 4 (5420 de) ~ do (Coyxcy)
+
+where the first isomorphism is due to lemma 5.21 and where the last one
+comes from the proof of lemma 5.25 for n = 2. Oo
+
+5.8. The difference morphism
+
+Motivated by the previous section, let C be a smooth complex projective
+curve of genus g = 2n with n € N, and put
+
+Cr = (Cx-++xC)/Gp.
+
+We want to study the difference morphism d, : C, x C, —> X = JC from
+above. To begin with, we claim that this morphism is generically finite and
+has generic degree
+
+N = deg(d,) = (7”) .
+Indeed, by birationality of the Abel-Jacobi map C, — W, it suffices to check
+that the difference morphism g, : W, x W, — X is generically finite of the
+given degree. Note that the fibre of g, over a point x € X(C) is isomorphic
+to the intersection Z = W, MN (W, +x). Now a Bertini-type argument and the
+Poincaré formula [13, sect. 11.2.1] for the fundamental classes
+
+[Wi] = [Wat+x] = 4,-[O]" € H"(X,Z)
+
+nt
+show that for a sufficiently general point x € X (C) the intersection Z is finite
+of cardinality
+Z| = degy ((WnJU[W, +4]) = fy) = N.
+So over some Zariski-open dense subset U C X the morphisms g, and d,
+restrict to a finite étale cover of degree N as claimed.
+
+Now pick x € U(C), and consider the monodromy action of 7(U,x)
+on the N distinct points of the fibre d,'(x). Labelling these points in any
+chosen order, we get a homomorphism
+
+7 (U,x) —_ Gn
+
+to the symmetric group, and we define the monodromy group G(d,) to
+be the image of this homomorphism. A different choice of the labelling
+only changes this subgroup by an inner automorphism of G,. Our goal is
+to determine the monodromy group G(d,) for a general curve C of even
+genus g = 2n. For this we will study a degeneration into a hyperelliptic
+curve, where we have the following situation.

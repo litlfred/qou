@@ -1,6 +1,6 @@
 ---
 doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
-doc_title: "Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve"
+doc_title: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve"
 section_id: sec-002-3-a-birational-map-from-the-deformation-curve-c
 section_title: "A birational map from the deformation curve C to an elliptic curve in Weierstrass form"
 section_number: 3
@@ -8,7 +8,9 @@ pages: 6-7
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
 toc_source: inferred
+doc_brief: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Front matter; Introduction; Deformation of hyperbolic structur"
 ---
+A birational map from the deformation curve C to an elliptic
 curve in Weierstrass form
 Let V be the projective completion of the complex aﬃne plane curve C.
 Then V = {(x0 : x1 : x2) ∈CP2 | x1(x1 −x0)x2(x2 −x0) = x4
@@ -65,4 +67,3 @@ curve C is transformed to two non-singular points A1 and A3 (resp., B2 and B4)
 on E. The four points A1, B2, A3 and B4 on E form the Mordell-Weil group
 E(Q). In fact, we have A1 = (0, −1), 2A1 = B2 = (−1, 0), 3A1 = A3 = (0, 0)
 and 4A1 = B4 = O.
-4.

@@ -1,0 +1,25 @@
+10
+
+Multiple point asymptotics
+
+The asymptotic behavior of the coefficients a,. of a convergent Laurent expan-
+sion F(z) = Yinezedp2" in a domain D c C4 is determined by certain con-
+tributing points of the singular set V of F. In Chapter 9 we derived asymptotics
+in the presence of smooth contributing points, where V is locally a manifold.
+In this chapter we derive asymptotics for the simplest non-smooth geometry,
+where VV locally decomposes as a union of smooth sets (see Figure 10.1).
+
+Definition 10.1 (multiple points). A point p € ‘V is said to be a multiple point
+of V (or F) if there exist complex manifolds V;,...,V,, such that
+
+UNV =(UNYV))U---U(UNV,)
+for every sufficiently small neighborhood U of p in C4.
+
+A taxonomy of multiple points, with examples, is described in Section 10.1
+below. Combinatorial applications of generating functions whose asymptotics
+are controlled by multiple points include multi-server queues (Example 10.28),
+lattice points in polytopes (Example 12.28), binomial sums (Examples 10.11
+
+Figure 10.1 A singular variety containing multiple points.
+
+291

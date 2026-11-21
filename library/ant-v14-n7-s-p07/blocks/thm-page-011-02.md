@@ -1,0 +1,1 @@
+For any squarefree polynomial f ∈Qn,q, let L(s, χ f ) be the Dirichlet L-function associ- ated to the quadratic character χ f as was deﬁned in Section 2A. Then for any s̸ = 0, lim sup n→∞ |{ f ∈Qn,q | L(s, χ f ) = 0}| |Qn,q| ≪q−1/276 where the limit is taken over all powers q of a ﬁxed odd prime number p.

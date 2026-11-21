@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/acsv231201/blocks/lem-sec-091-04",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 523,
+  "pageEnd": 531,
+  "text": "lem-sec-091-04.md",
+  "derivedFrom": "library/acsv231201/sections/sec-091",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "C",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-091-description-at-the-level-of-homology.md (p. 523-531)",
+    "claim_id": "acsv231201#lemma:C",
+    "lean_status": "unformalized"
+  }
+}

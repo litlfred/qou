@@ -1,0 +1,47 @@
+35
+
+Let (i,....4a) be the residue sequence of T and define a,(T), b,(T) € C(v) to be
+
+v-v7l
+
+| — ytir-irgi)?
+
+a,(T) = b,(T) = 07! +a,(T). (IV.2)
+
+Define actions of the generators H),...,Ha— of Ha on S(A) by
+
+Hyay = ap(T)ae + be(T)ts15 (1v.3)
+
+where we interpret 25,7 = 0 if s,T is not a standard tableau.
+
+Theorem IV.1.1 (Semi-normal representations). This action extends to make S(A) into a well-
+defined Hg-module. Furthermore, the modules {S(A) | 4 € Par(d)} constitute a complete set of
+
+pairwise non-isomorphic irreducible modules for Ha.
+
+IV.1.2. Sign Sequences and Hook Partitions
+
+For 0 < €<d-—1, let \¢ be the hook partition (d — ¢,14). We refer to ¢ as leg length.
+
+Lemma IV.1.2, Standard tableaux of shape A» are in bijection with sign sequences € = (€,...,€a) €
+
+{+}¢ such that 2; = + and @ entries equal —.
+
+Proof. Beginning with a standard Ay-tableau, define € = (€),...,€4) by
+4, if r appears on the first row
+Ep = (IV.4)
+-, otherwise
+
+Notice that the box labeled 1 has to be in the corner of the hook, so ¢; = +. Also, @ numbers are
+on the leg of the hook, so there are # entries equal to ~.
+
+For the inverse, starting with a sign sequence ¢ = (€),...,€q) with ¢) = + and @ other
+entries equal to —, construct a standard tableau recursively, as follows. Place 1 in the corner of
+the diagram. Now, for each r > 1, suppose that the numbers 1,...,7—1 have been placed. Either
+add r to the end of the first row or at the bottom of the first column, according to whether e, is
+
++ or —, respectively. 0
+
+Using this bijection, we can adapt the semi-normal representation to the combinatorics of
+
+sign sequences.

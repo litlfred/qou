@@ -1,0 +1,62 @@
+530 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+Definition 2.10. A measure pp € PB, is called strongly Rayleigh if its generating
+polynomial g,, € Pn is (real) stable. For convenience, we will sometimes refer to a
+real stable polynomial f € P, as a strongly Rayleigh polynomial.
+
+Remark 2.5. As we explain in §3.IJand {4] a strongly Rayleigh measure is necessarily
+Rayleigh. The terminology adopted is motivated by the fact that the equivalent
+condition for real stability for multi-affine polynomials in Theorem [4_]Jis a natural
+strengthening of the definition of a Rayleigh polynomial/measure (Definition [2.5).
+The term is taken from [20], where a matroid was defined to be strongly Rayleigh
+if holds for its bases-generating polynomial. However, it was not known then
+that condition is equivalent to stability.
+
+A simple albeit important example of strongly Rayleigh measure is the following.
+
+Definition 2.11. A product measure on 2!" is a measure ps € Bp with generating
+polynomial g, of the form
+
+n
+Gu(Z.---32n) = [Giz t1-a), O<a<Lie ln.
+i=l
+
+One says that pis deterministic or non-random if it is a point mass on ll ie., if
+there exists SC [n] such that gq; = 1 if i € S and q; = 0 for j € [n] \ S.
+
+In §3] we show that the class of strongly Rayleigh measures contains numerous
+other important examples of measures appearing in matrix theory, combinatorics,
+probability theory, and particle systems, and in {4] we study this class in detail.
+
+2.3. Symmetric homogenization. We will now define a symmetric homogeniza-
+tion procedure for arbitrary measures in ‘f,,. This natural construction proves to
+be quite useful for studying strongly Rayleigh measures ({4.1).
+
+Definition 2.12. Given a measure ys € P,, define a new measure jisn € Bon called
+the symmetric homogenization of ju by
+
+n \-l. _
+an(S) = {ns Mlel)(\scim) £151 =n,
+0 otherwise.
+
+Note that the generating polynomial of jus, may be written as
+
+-1
+s
+) 2° €n—|s|(Znt1)+++122n)s
+
+n
+Gyugn (2150069 Zs Frys Zn) = > W(3)(
+
+SCin]
+
+where z = (z1,...,2n) and where ex, 0 < k <n, denotes the k-th elementary sym-
+metric function. Clearly, g,,,, is symmetric in the variables z,41,..., Zan and [ish
+projects to ji, that is, gu,,(21,--+,2ns1,...,1) = gu(z1,....2n). It is not difficult
+to show that g,,,, is actually the unique polynomial in P2, of total degree n that
+is symmetric in z,41,--.,2an and satisfies the latter identity. Therefore, ji.) is
+canonically determined by the aforementioned conditions.
+
+2.4. Measures on countably infinite sets. In 5] we will need to extend some
+of the notions of negative dependence to probability measures on 2”, where E is a
+countably infinite set. This is canonically done as follows.

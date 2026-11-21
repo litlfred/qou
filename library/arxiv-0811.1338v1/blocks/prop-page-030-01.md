@@ -1,0 +1,1 @@
+Parametrizing the near-threshold cross sec- tion for this reaction as σ = αη +O(η3), where η denotes the outgoing pion momentum in units of its mass, the pion S-wave contribution at LO and NLO was found to be αLO = 131 µb and αNLO = 220 µb, respectively (341).

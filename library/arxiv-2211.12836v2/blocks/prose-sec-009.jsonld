@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2211.12836v2/blocks/prose-sec-009",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Integrable PM-graph, Fourier transform and Verlinde formula",
-  "pageStart": 18,
-  "pageEnd": 21,
-  "text": "../sections/sec-009-33-integrable-pm-graph-fourier-transform-and-ver.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2211.12836v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2211.12836v2",
+  "title": "Family of random walks and h-transform",
+  "pageStart": 15,
+  "pageEnd": 17,
+  "text": "../sections/sec-009-31-family-of-random-walks-and-h-transform.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.12836v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.12836v2/manifest.jsonld",
   "provenance": "ingested"
 }

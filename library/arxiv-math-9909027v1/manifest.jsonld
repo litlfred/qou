@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9909027v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9909027v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9909027v1",
+  "title": "Planar Algebras, I",
   "contains": [
     "library/arxiv-math-9909027v1/sections/sec-front-matter",
     "library/arxiv-math-9909027v1/sections/sec-000",
@@ -31,7 +31,7 @@
     "library/arxiv-math-9909027v1/sections/sec-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -41,7 +41,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9909027v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9909027v1.pdf",
     "source_sha256": "e6cd544cdc141d3b7307b26452bc7b7ebe56768300982208f377fca04b6062e8",
     "pages": 122,

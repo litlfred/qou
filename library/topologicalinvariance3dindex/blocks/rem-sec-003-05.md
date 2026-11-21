@@ -1,0 +1,1 @@
+In a later paper we will extend this work in the following ways: • extend the domain of the 3D index IT([ϖ]) to [ϖ] ∈H1(∂M; 1 2Z) such that 2[ϖ] ∈ Ker(H1(∂M; Z) →H1(M; Z/2Z)), • give a de nition of the 3D index using singular normal surfaces in M.

@@ -1,0 +1,1 @@
+Every regular subfactor N ⊂M of type II1 with ﬁnite Jones index has integer valued index and the index is given by [M : N] = |G| dimC(N ′ ∩M), where G denotes the generalized Weyl group of the inclusion N ⊂M.

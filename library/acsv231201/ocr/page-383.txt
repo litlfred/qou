@@ -1,0 +1,50 @@
+11.3 Evaluating asymptotics 365
+
+conclusion (iv) of Lemma 11.32 that there is a 6 > 0 for which Re{r - y} > 4r|
+
+on S. Thus,
+<[ ([cewmeas) ea
+0 Ss
+
+00
+<[ Cle tllrl Bt! ay
+0
+
+lz" |
+
+f exp(-r - 2’)6(z’) dz’
+C5(w)
+
+= Or)“,
+
+proving (i).
+
+The chains c5(w) are all homotopic in M. Thus, for any fixed r the integral
+in (ii) is independent of 6. We have seen that 8+d > 0 implies absolute integra-
+bility on c(w). The same estimates imply that the integral over the intersection
+of ¢s(w) with an é-neighborhood of w goes to zero as € > 0 uniformly in
+6. This implies convergence of the integrals in (ii) to the integral in (i), and
+because the integrals in (ii) are all the same, they are all equal to the integral
+in (i), proving the second conclusion. The third conclusion follows from the
+first with ¢ = Wq and from the estimate g(z’) = O(|z’|)? on Gs(w), which is a
+consequence of Lemma 11.36 with g = f. The fourth conclusion follows from
+the second and Corollary 11.35. ia)
+
+11.3.1 Fourier transforms
+
+Our results up to this point hold for an arbitrary product Q(z) = Nye Q(z)"
+of powers of Laurent polynomials. We now specialize to k = 1 and let Q be
+a polynomial whose leading term is a Lorentzian quadratic. The summands in
+Corollary 11.35 are evidently Fourier transforms which, as we will shortly see,
+are classically known. Recall that the standard Lorentzian quadratic S(y) =
+yt - Yin yj (discussed in Example 11.22 above) is in fact equivalent to any
+other Lorentzian quadratic q in the sense that there is a real linear map M
+such that g = S o M~!. The Fourier transform of a Lorentzian quadratic is
+known [Rie49; ABG70; BP11], as is the transform of any power S~* as long
+as sis not 0 or d/2—1. In the formula that follows, S* denotes the dual quadratic
+which has an identical formula rj — Yin 5, and q*(r) = S*(M*r) where M* is
+the adjoint of the linear map M. Note that what we call the Fourier transform,
+while standard, is called the inverse Fourier transform in [ABG70; BP11].
+
+Proposition 11.38 (Fourier transform of a Lorentzian quadratic). Let s be any
+real number for which neither s nor 5 + 1 — d/2 is a non-positive integer. The

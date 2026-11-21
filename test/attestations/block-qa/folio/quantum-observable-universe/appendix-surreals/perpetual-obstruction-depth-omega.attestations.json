@@ -1,0 +1,731 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/appendix-surreals/perpetual-obstruction-depth-omega",
+    "path": "folio/quantum-observable-universe/appendix-surreals/perpetual-obstruction-depth-omega"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "45cdc60a60ce",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "45cdc60a60ce",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:39.632Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-false-claim.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/perpetual-obstruction-depth-omega.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-circular.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/perpetual-obstruction-depth-omega.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-hidden-dof.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/perpetual-obstruction-depth-omega.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-non-sequitur.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/perpetual-obstruction-depth-omega.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-lean-narrative-divergence.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-citation-misuse.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/perpetual-obstruction-depth-omega.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/perpetual-obstruction-depth-omega.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-empirical-fragility.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/perpetual-obstruction-depth-omega.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-physical-implausibility.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/appendix-surreals/perpetual-obstruction-depth-omega.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-reproducibility.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "52fd781cb23b",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Ensured references to 'the main paper' and 'the QOU paper' were changed to 'this paper'. Maintained consistency and economy of language.",
+        "reviewed_at": "2026-07-06T22:46:20Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets milnor-brevity.",
+        "reviewed_at": "2026-07-07T23:32:15.327056+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Beautifully restricts the depth-omega perpetuity argument to the surreal field without overclaiming an archimedean impact.",
+        "reviewed_at": "2026-07-08T09:08:19.000Z",
+        "reviewed_sha": "6024fec595e4088cbfc919abe68c9b93ec16ecb5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "85a8fbc998a6",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:08.589Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "'a re-grading, not a new theorem'; 'the narrowing — not an archimedean obligation'",
+        "notes": "pass-with-note: status scoping, factual"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "85a8fbc998a6",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:08.628Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "No setup-then-reframe pivot"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "85a8fbc998a6",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:08.668Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "Em-dash use absent or parenthetical/ranges only; low density"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "85a8fbc998a6",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:08.709Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "No reflex three-item lists; enumerations substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "85a8fbc998a6",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:08.752Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "Final line is technical/bookkeeping, not a quotable closer"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "85a8fbc998a6",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:08.793Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "No narration of own emphasis"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "85a8fbc998a6",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:08.833Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "No block-final restatement of established content"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "85a8fbc998a6",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:08.874Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "No personal register"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "85a8fbc998a6",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:08.913Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "'cleanest service' ranking removed",
+        "notes": "fixed: 'This is the cleanest service the surreal field renders the framework: an obstruction...' -> 'The surreal field thereby gives an obstruction... an explicit home...'"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "85a8fbc998a6",
+          "ts": "49b5e1009eb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:08.953Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "Prose parses aloud; no noun-chain stalls"
+      }
+    ]
+  }
+}

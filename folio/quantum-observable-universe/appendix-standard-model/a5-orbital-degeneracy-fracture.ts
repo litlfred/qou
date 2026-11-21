@@ -13,6 +13,11 @@ export default remark({
   ],
   uses: ["conj:sm-gauge-truncation"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The branching arithmetic is pinned in the witness `a5-so3-branching.witness.json`." },
+    {
+      kind: "refined-framing",
+      body: "An earlier version of this block rested its stated value on a falsifiability claim (differing from SO(3) \"at some resolution\"); the claim was withdrawn.",
+    },
     {
       kind: "note",
       date: "2026-08-01",

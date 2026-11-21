@@ -33,7 +33,7 @@ analysis — and both are proved here, sorry-free:
 dilogarithm, which Mathlib lacks entirely. This file is foundations, and does
 not advance the sum rule by itself.
 
--- Ref: [manuscript] bean qou-0yqu; library/arxiv-2304.12545v1/2304.12545v1.pdf §3
+-- Ref: [leitner2026] bean qou-0yqu; library/arxiv-2304.12545v1/2304.12545v1.pdf §3
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 

@@ -108,6 +108,21 @@
       ],
       "description": "Deprecated and retired material, kept and addressable, deliberately absent from the rendered site (platform kind `fsh-guts`, holds: context). Kept on its own branch, `cat/cat-harness/fsh-guts`, not on main: `bun run state:mount` (from folio-assistant/) puts it at `fsh-guts/`, and `state:push` splices edits back. Holds the parked renderers and workflows from the migration (bean qou-6u3n) and older scratch. A file is a graph node only if it declares `$schema: folio-fsh-guts/v1`; the rest is kept bytes, which this declaration makes discoverable rather than claiming they are nodes. Also holds the three former `_deprecated/` trees under `fsh-guts/deprecated/` (computations, docs/audits, qou-mass data).",
       "_comment": "Declared 2026-10-04, story TOOLS T2 (bean qou-4r5m), as a plain path. Moved to the platform's `source: {kind: branch}` form 2026-10-10 on owner instruction (\"_deprecated is now branch cat/cat-harness/fsh-guts ... migrate if not\", then option 2, full cut-over), bean qou-6u3n. Same shape as the platform's own fsh-guts declaration in folio-assistant.json."
+    },
+    {
+      "id": "beans",
+      "path": "beans/",
+      "scope": "repository",
+      "source": {
+        "kind": "branch",
+        "branch": "cat/cat-harness/beans",
+        "keyedBy": "tip"
+      },
+      "graphTypologies": [
+        "beans"
+      ],
+      "description": "The bean work-plan (beans/beans.json + beans/defs/, the layout the `beans` CLI reads through .beans.yml). Kept on its own branch, `cat/cat-harness/beans`, not on main (owner, 2026-10-10, re-confirmed 2026-11-15; issue #7642). The session-start hook installs the platform if it is absent and mounts it at `beans/` (`state:mount`); there is no read-only fallback (owner, 2026-11-15). An edit is pushed back with `bun folio-assistant/cat-harness-tools/scripts/branch-store.ts push --id beans`, a splice with `expect` that never forces, so a bean edit is no longer a commit in a PR.",
+      "_comment": "Same shape as the platform's own beans declaration (`scope: repository`, which dependents do not inherit, so qou declares its own) and as qou's fsh-guts entry above. The branch name is the owner's choice over the documented folio convention `cat/qou/beans`; the declaration names it explicitly, so no tool needs to compose it."
     }
   ],
   "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9 (platform main), which reads this file through readDeclaration. The 2026-09-26 note that it was inert applied to the old pin df28d02."

@@ -1,0 +1,52 @@
+1936 Lillian B. Pierce and Junyan Xu
+
+are differences of partial sums over a box, which are themselves partial sums of the same kind, so that the
+Menshov—Rademacher device is a useful tool.
+
+However a typical Menshov—Rademacher argument would not immediately apply in our case, since we
+cannot save a power of ||k|| but typically only a power of kmin, the shortest side of the box. We see this
+phenomenon is already present in Lemma 6.1, since we have assumed an ordering kj < kz <--+<ky for the
+side-lengths of the box. Even if we assume in the beginning that we have such an ordering, certain internal
+steps in the Menshov-Rademacher argument do not preserve such an ordering, and thus arranging the argu-
+ment so that we may apply Lemma 6.1 will require delicate considerations of permutations of the variables.
+
+Our main result in this section is the following:
+
+Proposition 6.2. If 1 < K, < Kz <---< Kn <q, then
+
+n
+
+DE max) SCF mW” Knr.p,0 KI og Kn" Sg By js KY (6-3)
+imite2q imo
+
+with the implicit constant dependent on n,r, D, A but independent of q, x, K, and with
+
+1 if i <0.
+6; oe _
+
+By (i: K) = Bi Pia lena, (6-4)
+(Ky ++ Knj)Or-) if j =n, n even,
+
+(Ki Kay)" Kans)" if jn, n odd.
+
+Note that B,.p(n; K)~! loses one power in decay compared to B,, .(n; K)~'. In contrast, in the one-
+dimensional case, no decay is lost when passing from the nonmaximal estimate to the maximal estimate;
+this minor loss will not affect our final outcome, and we explain why it arises below.
+
+6C. A dyadic decomposition. It suffices to prove Proposition 6.2 for K = (K1,..., Kn) where each K;
+is a power of 2, say K; = 2", in which case we naturally have t) < t2 < -- - < t,, under the hypotheses of the
+proposition. We fix m and suppose that S(F'; m, k) assumes its maximum for k < K at k = (ki,..., kn),
+and for each i we decompose
+kj = So 2-4,
+5:€D;
+where D; is a set of distinct nonnegative integers 5; < t;. Let 6 = (51, ..., 5,) denote a tuple with 6; € Dj
+for each i. Let t = (t1,..., f)) and define the notation 2‘ = (2-81... 2"—5n), Given a tuple v, we
+define 24-8 o v = (2!81y), ..., 2"—%ny,). Furthermore let Vin,s be an n-tuple defined such that the i-th
+
+entry is (Ving)i = 2"~* Um_,i, Where
+Um,6,i = > bie < 2,
+e €Dj ,€; <6;
+Then we may express
+
+S(F;m,k)= Y) S(F;m+Ving, 2).
+§,5;€D;

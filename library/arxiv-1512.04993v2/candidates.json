@@ -3,6 +3,7 @@
  "doc_id": "arxiv-1512.04993v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b8047bc3d3815406ddc69a4c17fe8d9f80a16c0dc235e5dbeb242259e451d8d3",
   "file": "1512.04993v2.pdf"
@@ -20,9 +21,43 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "It was observed that black hole interiors grow in time long after local equilibrium is reached \\cite{hartmanmaldacena}.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 4-7)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 4-7)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-1512.04993v2/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-1512.04993v2#prop-sec-000-01"
+  }
+ ]
 }

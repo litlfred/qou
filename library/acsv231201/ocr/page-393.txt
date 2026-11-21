@@ -1,0 +1,44 @@
+11.4 Examples and consequences 375
+
+Here, the arctangent is taken in [0,2] so that it varies continuously as s/t
+increases through 1/2.
+Let {b,,;,} be the series coefficients of
+
+22
+(l-zd +xyz— (et yt+z4 xy + xz + yz)/3)
+
+B(x, y,2) =
+
+corresponding to the amoeba complement component B containing the nega-
+tive diagonal. These coefficients satisfy
+
+V2(rstrt+ st)—(P +92 +P)
+rt+s-t
+
+1
+bys ~ — arctan
+qT
+
+uniformly over compact subsets of the interior of the region shown in Fig-
+ure 11.7 in symmetrized coordinates. Again, the arctangent is taken in [0,7]
+and the solid vertical line is excluded from the region. ia)
+
+y=0,x=2
+
+Figure 11.7 The dual cone in symmetrized coordinates.
+
+Exercise 11.8. Use the same intuition to recompute asymptotics for the power
+series expansion of the multiple point at (1,1, 1) in the generating function
+See The Fourier transforms of the factors are delta functions in the
+directions of the rays in the respective directions (1,0), (0, 1), and (1, 1). The
+convolution of the first two is 1 on the positive quadrant and 0 elsewhere. Up
+to a constant multiple, what do you get when you convolve this with the third
+
+delta function? Check your answer against Example 10.47.
+
+Presence of a lacuna
+Given the dimension d of the space and the power s of the Lorentzian quadratic
+S, the Fourier transforms yn m(1r) of S~*~” in the expansion of (11.17) are well
+known; see for example [BP11, Theorem 6.4]. When s = d/2 — 1, this Fourier
+transform is not a function but rather a distribution (generalized function in the
+terminology of [GS16]) which vanishes on the inside of the normal cone N as

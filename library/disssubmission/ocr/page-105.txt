@@ -1,0 +1,53 @@
+5.1. Intersections of theta divisors 97
+
+So the orthocomplement from above admits a decomposition V = V6 V_
+into the eigenspaces
+
+Vic = H87(Y,Q)* and Ve = H8*(X,Q)+ C HF (¥,Q)*
+
+where now | denotes the orthocomplement inside the €-eigenspace. Since
+the restriction morphism in the weak Lefschetz theorem is a morphism of
+Hodge structures, V_ and V,. are Hodge substructures of H8~?(Y,Q). To
+compute their Hodge numbers one can use the Hirzebruch-Riemann-Roch
+theorem together with the following result, where [@] € H?(X,Q) denotes
+the fundamental class of the theta divisor.
+
+LEMMA 5.5. In terms of the restriction @ = [®]|y € H*(Y,Q), the Chern
+classes of Y are given by
+
+ci(¥) = (-1)'- (i+1)-0! € H*(¥,Q).
+In particular, the variety Y is of general type with canonical class Ky = 28.
+
+Proof. By definition we have Y = @, for some point x € X(C). The
+embedding Y > © gives an adjunction sequence
+
+0— Ry —_ Tely —_ Ox(@x)ly — 0
+
+where .Y and .% are the tangent bundles to Y resp. © (note that this makes
+sense also if the theta divisor has isolated singularities, provided that x is
+chosen in such a way that Y does not meet the singularities). By restriction
+of the adjunction sequence for the embedding © — X we also get an exact
+sequence
+
+0— Joly — Fly — Ox(O)|y — 0.
+Since the tangent bundle .% is trivial, it follows from these two adjunction
+sequences that the Chern polynomial c;(Y) = 1+c¢1(Y)-t+02(¥)-t? ++
+satisfies
+
+1 = ¢(Y)-(1+6t)?
+
+since the Chern polynomial is multiplicative in short exact sequences. From
+this identity our claim about the Chern classes follows by a comparison of
+coefficients. By definition the canonical sheaf @y is the top exterior power
+of the cotangent bundle .%*, so for the canonical class we get
+
+Ky = c1(@y) = c1(A8~?(.F})) = a(Fy) = —c1(Y) = 20
+where in the third equality we have used that by the splitting principle the
+first Chern class of a bundle coincides with the first Chern class of any of
+its exterior powers [40, rem. 3.2.3(c)]. In particular, the canonical class Ky
+
+is ample and therefore also big in the sense of [71, sect. 2.2], so the smooth
+variety Y is of general type. Oo
+
+With notations as in the above lemma, to compute intersection numbers
+between powers of Chern classes we only need to determine the image of

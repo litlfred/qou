@@ -47,6 +47,12 @@
  * "measured … <date>". Measured on chapters 1–2 (2026-10-11): those
  * checkers flagged 0 of the passages this audit finds.
  *
+ * Not covered here: prose about the Lean formalisation, backticked Lean or
+ * repository identifiers, first/second person, and reading-order
+ * anachronisms. Those are the four leak classes of epic `qou-d4kh` and live
+ * in `voice-leak-audit.ts` (the exemption above for naming a Lean
+ * declaration is the reason they needed a separate audit).
+ *
  * High-recall / agent-confirmed: a hit is a candidate, not a verdict.
  * Fenced code, inline math and the link-target half of markdown links are
  * stripped before matching.

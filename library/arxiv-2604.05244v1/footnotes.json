@@ -1,0 +1,1104 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2604.05244v1",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "1",
+   "text": "ThestandardOlverprefactorusestheordernratherthantheargumentA,i.e.,(n/2)1/3ratherthan(A/2)1/3; since n = A + O(A1/3) in the transition region, the two differ by a relative O(A−2/3) that is absorbed in the error term.",
+   "marks": [
+    {
+     "page": 13,
+     "context": "isatleaste−cξ."
+    },
+    {
+     "page": 14,
+     "context": "ei[A"
+    }
+   ],
+   "block": "library/arxiv-2604.05244v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "2",
+   "text": "ForV<0,thesymmetrySI(V )=SI(−V )—whichfollowsfromJ2 −n = J2",
+   "marks": [
+    {
+     "page": 20,
+     "context": "|cedge|2/L"
+    },
+    {
+     "page": 20,
+     "context": "rapidlybeyond.(b)Normalizeddetectionresponse|cdet|2/L"
+    },
+    {
+     "page": 20,
+     "context": "transmissionT ,thetime-averagedcurrentunderACdriveisI(V )=(e"
+    },
+    {
+     "page": 20,
+     "context": "nJ"
+    },
+    {
+     "page": 20,
+     "context": "nnJ"
+    },
+    {
+     "page": 20,
+     "context": "SI(V ) =2e"
+    },
+    {
+     "page": 20,
+     "context": "J"
+    },
+    {
+     "page": 21,
+     "context": "J"
+    },
+    {
+     "page": 21,
+     "context": "lopediscontinuitiesx=ℓ∈Z,dSI/dVhasajumpofheight4e3T (1 −T )J"
+    },
+    {
+     "page": 21,
+     "context": "tegerx),thenegative-signtermsareexactlythosewithn≤−νV ,sobyJ"
+    },
+    {
+     "page": 21,
+     "context": "−n=J"
+    },
+    {
+     "page": 21,
+     "context": "J"
+    },
+    {
+     "page": 21,
+     "context": "n≥νJ"
+    },
+    {
+     "page": 21,
+     "context": "Theslopeapproachesahigh-biasplateauat2e3T (1 −T )/h."
+    },
+    {
+     "page": 21,
+     "context": "turning-pointasymptotics[20,21]givethepointwiseestimateκ"
+    },
+    {
+     "page": 21,
+     "context": "AJ"
+    },
+    {
+     "page": 21,
+     "context": "ℓ(A) →Ai"
+    },
+    {
+     "page": 21,
+     "context": "n≥νVJ"
+    },
+    {
+     "page": 21,
+     "context": "singleweightJ"
+    },
+    {
+     "page": 21,
+     "context": "(ν+1, ν+1) = J"
+    }
+   ],
+   "block": "library/arxiv-2604.05244v1/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p021-3",
+   "page": 21,
+   "mark": "3",
+   "text": "ThetransportdefinitionνV= ⌈eV/ℏΩ⌉andtheedge-scalingdefinitionνA(s) = ⌊A + sκA⌋differbyatmostone lattice spacing, hence by O(κ−1 A ) in the rescaled variable s; this is negligible in the A →∞limit.",
+   "marks": [
+    {
+     "page": 21,
+     "context": "dV=2e"
+    },
+    {
+     "page": 21,
+     "context": "Attheslopediscontinuitiesx=ℓ∈Z,dSI/dVhasajumpofheight4e"
+    },
+    {
+     "page": 21,
+     "context": "dV=2e"
+    },
+    {
+     "page": 21,
+     "context": "dV=2e"
+    },
+    {
+     "page": 21,
+     "context": "Theslopeapproachesahigh-biasplateauat2e"
+    },
+    {
+     "page": 21,
+     "context": "∆I(V ) :=2e"
+    },
+    {
+     "page": 21,
+     "context": "dV=4e"
+    },
+    {
+     "page": 21,
+     "context": "the upper end of the plateau structure, νV= νA(s) = ⌊A+sκA⌋."
+    },
+    {
+     "page": 21,
+     "context": "κA ∆I(V )−→4e"
+    },
+    {
+     "page": 21,
+     "context": "4e"
+    }
+   ],
+   "block": "library/arxiv-2604.05244v1/blocks/prose-sec-018"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p021-2",
+   "page": 21,
+   "mark": "n",
+   "text": "—givesdSI/dV=−dSI/dV |−V,so the deficit at −V is the same as at V .",
+   "block": "library/arxiv-2604.05244v1/blocks/prose-sec-018"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "regimetheedgeofthiskernelconverges,ontheA"
+  },
+  {
+   "page": 1,
+   "mark": "t",
+   "context": ".TienandGordon[7]showedthatamonochromaticphasedriveeiA sin Ω"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "onlythroughatime-dependentgaugephaseeiA sin Ω"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "¯fα(E"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "β|Uαβ|2"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "β|Uαβ|2fβ(E"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "β|Uαβ|2fβ(Em)is"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "5.Zerotemperature.Moreprecisely,kBTel≪ℏΩκA=ℏΩ(A/2)"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "regionhaswidth∼A"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "nentially decaying, and in the transition region of width ∼A"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "diagonalKAi(s, s)=Ai′(s)"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "diagonalKAi(s, s)=Ai′(s)2−sAi(s)"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "diagonalKAi(s, s)=Ai′(s)2−sAi(s)2,nottoAi"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "individualBesselweightsJ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "regionofwidth∼A"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "t"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "bye−iω"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "bye−iω0"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "Z"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "Zt"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "dt e−iω"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "dt e−iω0"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "Kphys(t; ω0, t0) := h(t0 −t) W(t) e−iω"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "Kphys(t; ω0, t0) := h(t0 −t) W(t) e−iω0"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Snm = U(E)J"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "eiAsinΩ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "J"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "Jn −m(A)J"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "Jn −m(A)Jp −m(A) ¯f(E"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "reducestocdet(∆ω)=e−i∆ω(t"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "{aαm(E), a"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "{bαn(E), b"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "nm(E)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "⟨a"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "βm(E)"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "βm(E)aβ′m′(E′)⟩= 2π δ(E −E′) δββ′ δmm′ fβ(E"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "np(E) := ⟨b"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "nm(E)"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "nm(E) fβ(E"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "αn(E)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "productS∗NST=JNJT(equivalently,SNS"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "2πℏ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "2πℏe"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "2πℏei(n−p)Ω"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "np(E)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "np(E) b"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "αn(E)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "ixed central energy E; it excludes anomalous terms (b b or b"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "ed central energy E; it excludes anomalous terms (b b or b†b"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "thephasee"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "thephaseei(n−p)Ω"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "0(ω"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "0(ω0;"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "0(ω0; t"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "np(E)"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "rivationisaone-linesubstitution:thetimeintegraloverKphys · e"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "nisaone-linesubstitution:thetimeintegraloverKphys · ei(n−p)Ω"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "(n−p)Ω)bydefinition(2.3),and⟨b"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "αn"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "= e−i(k−(n−p))Ω(t"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "R t"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "t0−L"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "= e−i(k−(n−p))Ω(t"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "ontheselectedblockvanishes,sothegate-positionphasee"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "ontheselectedblockvanishes,sothegate-positionphaseei·0·(t"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "Z"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "eiϕ(t)= eiA sin(Ω"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "Jk(A)eikΩ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "nm(E) = Uαβ(E)J"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "nm=Uαβ(E) F"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "nm=Uαβ(E) Fn−m,whereF"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "nm=Uαβ(E) Fn−m,whereFk=(2π)−1 R"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "k|F"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Hencethesidebandmatrix[Jn−m(A)]n,m∈Zisunitaryonℓ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "β|Uαβ|2= f(E"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "¯fα(E"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "¯fα(Em) = f(E"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "isidempotent(K"
+  },
+  {
+   "page": 11,
+   "mark": "†",
+   "context": ".Inparticular,ifNν=b"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "ν"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "detectordoeswhenitintegratesoverE—themarginaloccupancies"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "F,"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "F,"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "F+ AwithweightR.Whenthebiaswindow"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "muchlargerthantheedgewidthκA= O(A"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ntiallydecayingtailfor|ν|≫A,andaturning-pointregionofwidth∼A"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "Note that"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "region(ξ= O(1))thisbehavesase−cξ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "asA →∞,locallyuniformlyin(s, t) ∈R"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "κ"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "AKAi(s, s)→0ateachfixed"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ei[A1 sin θ+A"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "4ζ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2ζ"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "3γ"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "JustastheAirykernelarisesfromthefoldnormalformζ"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "4ζ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "2ζ"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "4η"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "2η"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(2πi)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "withscaleκA=(A/2)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "8πs"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "3"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "3s"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "soalog-linearplotins"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "robed.Whatmattersforthediagnosticisthatthetailisnote−const·s"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "log-linearplotins"
+  },
+  {
+   "page": 16,
+   "mark": "18",
+   "context": "A⟨NνA(s)NνA(t)⟩c→−|KAi(s, t)|2[23,"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "A⟨NνA(s)NνA(t)⟩c→−|KAi(s, t)|2[23,18],withthesame"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "A⟨NνA(s)NνA(t)⟩c→−|KAi(s, t)|2[23,18],withthesamee−4"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "A⟨NνA(s)NνA(t)⟩c→−|KAi(s, t)|2[23,18],withthesamee−4s"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "(s)NνA(t)⟩c→−|KAi(s, t)|2[23,18],withthesamee−4s3/2/3tail.At"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "correlatorscalesasκ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "density vanishes as ρ(x) ∼(x −xedge)"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "Atafold,thenormalformofthephaseiscubic(ζ"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "function.Atacusp,thenormalformisquartic(ζ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "function.Atacusp,thenormalformisquartic(ζ4/4 −γζ"
+  },
+  {
+   "page": 18,
+   "mark": "†",
+   "context": "b"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "n(E)"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "n(E)b"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "exhibits a photon-assisted step structure with heights ∝J"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "k(A)approachesAi"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "(A)approachesAi2(s)atthesidebandedge.Thisroutedoesnotapplyto"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "κ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "AJ"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "8πs"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "8πs e−4"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "8πs e−4s"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "versus s"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "SI(V ) =2"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "dV=2"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "dV=2"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "dV=2"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "∆I(V ) :=2"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "dV=4"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "κA ∆I(V )−→4"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "A)universalAiryshapeover"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": ")universalAiryshapeoveravoltagewindow∆Vedge∼(ℏΩ/e)κA∼(ℏΩ/e)A"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "10"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Ai"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Ai"
+  },
+  {
+   "page": 22,
+   "mark": "s",
+   "context": "3"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Figure 6:Comparison of Ai"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(s) (dashed) and the Airy-kernel diagonal KAi(s, s) = Ai′(s)"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "hed) and the Airy-kernel diagonal KAi(s, s) = Ai′(s)2−sAi(s)"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(solid),relatedby−∂sKAi(s, s)=Ai"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(solid),relatedby−∂sKAi(s, s)=Ai2(s).(a)Linearscale:Ai"
+  },
+  {
+   "page": 22,
+   "mark": "s",
+   "context": "3"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "3s"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Ai"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Ai2versuss−1forKAi);thepointwiseenvelopeAi"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Ai"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Ai2(v) dv.Theplateaudeficit(9.5)measuresKAi(s, s),notAi"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "whichinthescalinglimitbecomes−∂sKAi(s, s)=Ai"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "sAi"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "y(theone-pointfunctionoftheAirydeterminantalprocess),whileAi"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "alock-inmeasurementofd"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "alock-inmeasurementofd2SI/dV"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ℓ(A)) probes the discrete derivative (9.8) and hence the Ai"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "with weights J"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "theBesselweightsJ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "n≥νVJ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "nJ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "n(A)near"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "J"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "AAi"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "TheAiryedgeoccupies∆nedge∼κA∼A"
+  },
+  {
+   "page": 24,
+   "mark": "7",
+   "context": "0Ai(s+u) Ai(t+u) du.Figure"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "kBTel≪ℏΩκA= ℏΩ(A/2)"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "quencyΩ/2π= 10 GHzandA = 50,onehashf/kB≈0.48 Kandκ50= (50/2)"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Ai(s, s) = KAi(s, s) −π"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "3θ"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "3θ2Ai(s)Ai′(s) + O(θ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "totheAirykernelontheA"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "A"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Ce−c(u−M)foru≥M+ 1,so|ϕA(u; s)ϕA(u; t)|≤C"
+  },
+  {
+   "page": 27,
+   "mark": "c",
+   "context": "Ce−c(u−M)foru≥M+ 1,so|ϕA(u; s)ϕA(u; t)|≤C2e−2"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "trary,theconvergenceislocallyuniformonR"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "fL(Em)[1 −fR(Em)] J"
+  }
+ ]
+}

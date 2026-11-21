@@ -6,7 +6,7 @@ the torus link `T(2, 8)` — the unique genus-3 link on Bring's
 surface whose Seifert surface spans all three exceptional
 divisors `D_r ∪ D_g ∪ D_b` simultaneously.
 
--- Ref: [manuscript]
+-- Ref: [leitner2026]
 Per `AGENTS.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim. This is the **algebraic/topological** tier;
 the numerical Higgs mass evaluation (crossing energy of T(2,8)
@@ -15,10 +15,10 @@ per gemini review on #721 (algebraic vs. numerical separation).
 
 ## References
 
-- `[manuscript]` `conj:higgs-t28`
-- `[manuscript]` `def:brings-surface`
-- `[manuscript]` `def:exceptional-divisor`
-- `[manuscript]` `conj:borromean-quark`
+- `[leitner2026]` `conj:higgs-t28`
+- `[leitner2026]` `def:brings-surface`
+- `[leitner2026]` `def:exceptional-divisor`
+- `[leitner2026]` `conj:borromean-quark`
 -/
 
 namespace QOU.HiggsT28
@@ -44,13 +44,13 @@ class HiggsAsT28 : Prop where
   spans_three : T28SpansAllThreeDivisorsHolds
   uniqueness : T28UniquenessHolds
 
--- Ref: [manuscript] conj:higgs-t28
+-- Ref: [leitner2026] conj:higgs-t28
 instance higgs_t28_conjecture : HiggsAsT28 where
   -- Witness: computations/none
   t28_genus := sorry
-  -- Ref: [manuscript]
+  -- Ref: [leitner2026]
   spans_three := sorry
-  -- Ref: [manuscript]
+  -- Ref: [leitner2026]
   uniqueness := sorry
 
 end QOU.HiggsT28

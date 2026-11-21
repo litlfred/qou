@@ -8,6 +8,7 @@ pages: 5-6
 source_pdf: bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf
 source_sha256: 2bc66a26d3901a29
 toc_source: inferred
+doc_brief: "The non-Riemannian nature of perceptual color space — 7 sections: Front matter; Experiment; Analysis"
 ---
 Regression. The best-fit regression line produces the coefficients
 in Table 1. The coefficient of interest is significantly negative
@@ -71,13 +72,6 @@ test minus 50%. The negative slope of the lines indicates that participants’
 responses tend toward chance with increasing average diﬀerence in the triad,
 despite the diﬀerence of diﬀerences remaining constant. A 95% CI around
 each line is shown in gray.
-PNAS
-2022
-Vol. 119
-No. 18
-e2119753119
-https://doi.org/10.1073/pnas.2119753119
-5 of 10
 Downloaded from https://www.pnas.org by 136.47.145.179 on May 11, 2026 from IP address 136.47.145.179.
 values to perceived strengths ψ and then, use the difference in ψ
 to estimate the difference scaling function f.

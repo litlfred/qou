@@ -1,5 +1,5 @@
-**Proposition (additive Bring-surface zero-mode form for $1/\alpha_{EM}$, conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit) and Bloch-Suslin pentagon-uniqueness [`suslin1991`]).**
-*Let $g = 4$ denote the genus of Bring's surface. This is the unique Riemann surface supporting the genus-$4$ torus knots $T_{2,9}$ and $T_{3,5}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). Assume the upstream typeclasses `QOU.QPochhammer.ArchimedeanLimit`, `QOU.Archimedean.BlochSuslinUniqueness`, and `QOU.Archimedean.BringZeroModeBlochClass` are inhabited ([`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness)). Then*
+**Proposition (additive Bring-surface zero-mode form for $1/\alpha_{EM}$, conditional on [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit) and Bloch-Suslin pentagon-uniqueness [`suslin1991`]).**
+*Let $g = 4$ denote the genus of Bring's surface. This is the unique Riemann surface supporting the genus-$4$ torus knots $T_{2,9}$ and $T_{3,5}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). Assume the archimedean dilogarithm limit, Bloch-Suslin pentagon uniqueness, and the existence of a Bloch-group class on Bring's surface realising the zero-mode constant ([Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)](#prop:archimedean-functor-uniqueness)). Then*
 
 $$
   \frac{1}{\alpha_{EM}}
@@ -51,46 +51,12 @@ $$
 
 The $g = 4$ structure of Bring's surface appears in both main terms. The tree-level coefficient $[9]_q[10]_q$ derives from the unique pair of genus-$4$ torus knots $\{T_{2,9}, T_{3,5}\}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). The infrared shift $2g/(4\pi(g-1))$ emerges from the Hodge data of the same Bring's surface. This double appearance of $g = 4$ is structurally consistent. It matches the expectations for a categorical-Lagrangian quantum field theory with a UV completion on Bring's curve.
 
-> **Conditional theorem.** Lean axiomatises the upstream conjectures as typeclasses [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean), [`QOU.Archimedean.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean), and [`QOU.Archimedean.BringZeroModeBlochClass`](em-coupling-bring-zero-mode.lean). The Lean theorem [`QOU.Archimedean.bring_zero_mode_additive_form`](em-coupling-bring-zero-mode.lean) takes `BringZeroModeBlochClass` as an instance and concludes unconditionally. The algebraic identity $2g/(4\pi(g-1)) = 2/(3\pi)$ at $g=4$ closes via `field_simp; ring`. The remaining structural input is the explicit Bloch-group class realising $2/(3\pi)$ on Bring's surface.
+> **Conditional theorem.** The upstream conjectures (the archimedean dilogarithm limit, Bloch-Suslin pentagon uniqueness, and the Bring zero-mode Bloch class) are taken as hypotheses. Given the Bring zero-mode Bloch class as a hypothesis, the additive form follows with no further assumption. The algebraic identity $2g/(4\pi(g-1)) = 2/(3\pi)$ at $g=4$ is elementary. The remaining structural input is the explicit Bloch-group class realising $2/(3\pi)$ on Bring's surface.
 
 | Form | Type | Residual at $q_0$ | Structural status |
 |------|------|-------------------|-------------------|
 | Bare $q[9]_q[10]_q$ | multiplicative tree | $-1.55\times 10^{-3}$ | Derived |
-| [`rem:em-coupling-chern-simons`](#rem:em-coupling-chern-simons) | multiplicative + Gram-det $\kappa$ | $-4\times 10^{-7}$ | $\kappa$ unproved (Lean `sorry`) |
+| [Conjectured Chern-Simons correction form](#rem:em-coupling-chern-simons) | multiplicative + Gram-det $\kappa$ | $-4\times 10^{-7}$ | $\kappa$ unproved |
 | **This conjecture (additive Bring zero-mode)** | $q[9]_q[10]_q + 2g/(4\pi(g-1))$ | $-4.2\times 10^{-6}$ | **Geometrically clean; one Bring-genus-4 quantity in each term** |
 
 The additive form provides the cleanest structure. It avoids fitted coefficients. Every factor maps to a known geometric or topological invariant of Bring's surface.
-
-## Witness
-
-See `alpha-em-correction-derivation-attempts.witness.json` for the full attempt log.
-
-> **Refreshed to the live muon pin, 2026-09-05** (`qou-i229`, owner-approved).
-> Producer:
-> [`retired_q0_refresh_to_live_muon_pin_probe.py`](computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py)
-> (5/5).
->
-> | figure | was | now |
-> |---|---|---|
-> | $q_0$ (prose) | $1.109978595554181$ | $1.109978595642739$ |
-> | $q\cdot[9]_q\cdot[10]_q$ | $136.823219654$ | $136.823219729$ |
-> | Sum | $137.035426245$ | $137.035426320$ |
->
-> The old pin was the **CODATA-2018 vintage of the muon anchor**; commit
-> `df13e845cee` labelled it correctly in 2026-08-21 but did not refresh it. The
-> shift is $8.0 \times 10^{-11}$ relative in $q_0$.
->
-> **Deliberately unchanged**: $2/(3\pi) = 0.212206591$ is a pure constant, and
-> CODATA-2022 $1/\alpha = 137.035999177(21)$ is an experimental input. Neither
-> is $q_0$-derived and a refresh that moved them would be a different and wrong
-> change.
->
-> **No stated conclusion moves.** The relative residual is
-> $-4.180 \times 10^{-6}$ before the refresh and $-4.180 \times 10^{-6}$ after
-> (the quoted $-4.2\times10^{-6}$ is unchanged at its stated precision), and the
-> second-order figure moves from $+5.67\times10^{-8}$ to $+5.73\times10^{-8}$
-> against a quoted $+5.7 \times 10^{-8}$ — also unchanged as stated.
->
-> The published $136.823219654$ was a **truncation** of $136.823219654561$, not
-> an error; it is the rendering that defeats a half-ulp matcher, and it is why
-> `scripts/witness-block-agreement.py` flagged this row against its own producer.

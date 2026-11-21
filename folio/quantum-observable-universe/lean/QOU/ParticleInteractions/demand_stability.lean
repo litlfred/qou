@@ -64,7 +64,7 @@ The derived atom $\mathcal{A}(Z, N)$ is:*
 1.
 
     The Lean encoding below states the manuscript claim conditional on the `PeriodicTableDemandConjecture` hypothesis class. It derives the required inequalities by extracting them from the hypothesis. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/demand-stability.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/demand-stability.ts
 theorem demand_stability (ctx : DemandStabilityContext R) [hc : PeriodicTableDemandConjecture ctx] :
     (ctx.dem_mag ctx.Z ctx.N ≤ ctx.dem_mag (ctx.Z + 1) (ctx.N - 1) ∧
      ctx.dem_mag ctx.Z ctx.N ≤ ctx.dem_mag (ctx.Z - 1) (ctx.N + 1)) ∧

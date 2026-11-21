@@ -1,13 +1,29 @@
-[`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
-verified the bridge map $d_{\mathrm{II}}$ at all partitions of $n \leq 4$.
-*This proposition extends the verification to **all** partitions of
-any $n$ via a structural bar-eigenspace argument.*
+*This conjecture extends the bridge map $d_{\mathrm{II}}$ to **all** partitions of any $n$.
+It is conditional: it rests on
+[Two-filtration bridge: iterated-integral depth $\leftrightarrow$ partition-cellular GB-depth via $e_\lambda$](#conj:two-filtration-bridge), which defines
+$d_{\mathrm{II}}$, and on an unproved matching of the transposing involution
+$\#$ on $H_n(q)$ with orientation reversal on periods. The bar involution
+itself fixes every $e_\lambda$ and does not separate $\lambda$ from
+$\lambda'$.*
+
+*What is proved.* [Cell-depth filtration of $Z(H_n(q))$](#prop:cellular-depth-filtration),
+item 4, is the provable core: under two named hypotheses (H-match: $\#$ is
+intertwined with orientation reversal by a realisation map $\Phi$; H-parity:
+orientation reversal acts on depth-$d$ periods by $(-1)^d$), odd-depth
+components vanish on self-conjugate cells and are antisymmetric under
+$\lambda\leftrightarrow\lambda'$. It does not give the values $2$ and $3$,
+which need a further non-vanishing. Note also that the "otherwise" branch of the
+definition of $d_{\mathrm{II}}$ in
+[Two-filtration bridge: iterated-integral depth $\leftrightarrow$ partition-cellular GB-depth via $e_\lambda$](#conj:two-filtration-bridge) is empty, since every
+partition is either self-conjugate or half of the pair $\{\lambda,\lambda'\}$.
+So the boxed formula below restates that definition; the content of this
+conjecture is the existence of a realisation for which it is non-degenerate.
 
 ### Statement
 
 For every partition $\lambda$ (of any $n \geq 1$), the iterated-
 integral depth predicted by the two-filtration bridge conjecture
-([`conj:two-filtration-bridge`](#conj:two-filtration-bridge))
+([Two-filtration bridge: iterated-integral depth $\leftrightarrow$ partition-cellular GB-depth via $e_\lambda$](#conj:two-filtration-bridge))
 depends only on the **bar-class** of $\lambda$:
 
 $$
@@ -22,30 +38,23 @@ $$
 $$
 ### Corollaries
 
-**Generalisation**: the small-cases bridge verification
-at $n \leq 4$ extends to all $n$ via the bar-eigenspace argument.
+**Scope**: the small-cases table at $n \leq 4$ is a comparison (the
+cell-to-knot assignment there is chosen, not derived), so it does not
+"extend" to all $n$; the general-$n$ content is item 4 of
+[Cell-depth filtration of $Z(H_n(q))$](#prop:cellular-depth-filtration).
 
 **Corollary for the depth correspondence**:
-- For each self-conjugate cell, its depth-2 row is theorem-level
- (combining Bloch–Suslin + per-knot VC where available).
+- For each self-conjugate cell, its depth-2 row is conditional on the
+ bridge conjecture (with Bloch–Suslin and the per-knot volume conjecture
+ where available).
 - For each chiral pair, its depth-3 row is conditional on the CS
  computation per knot.
 
-**Combined with
-[`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general)
-+
-[`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form)**:
-the depth-3 content over $\mathbb{Q}(\zeta_N)$ for every prime $N$ is
-controlled by $\lfloor (N - 1)/2 \rfloor - 1$ genuinely-new real
-numbers, all pairing with chiral-pair cells in the appropriate
-$H_n(q)$.
-
 ### Cross-references
 
-- Bridge conjecture: [`conj:two-filtration-bridge`](#conj:two-filtration-bridge)
-- Small-cases verification: [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
-- Chirality structure: [`rem:chirality-period-pairing`](#rem:chirality-period-pairing)
-- Joint action discharge: [`prop:joint-galois-braid-discharged`](#prop:joint-galois-braid-discharged)
+- Proved core: [Cell-depth filtration of $Z(H_n(q))$](#prop:cellular-depth-filtration)
+- Bridge conjecture: [Two-filtration bridge: iterated-integral depth $\leftrightarrow$ partition-cellular GB-depth via $e_\lambda$](#conj:two-filtration-bridge)
+- Chirality structure: [Chirality structure on Goncharov period classes via the bar involution](#rem:chirality-period-pairing)
 - Hecke-Baer-* and bar action on $e_\lambda$:
- [`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic),
- [`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)
+ [Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$](#prop:hecke-baer-star-generic),
+ [Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent)

@@ -10,7 +10,7 @@ source_sha256: 778e60219862e371
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
-latex_coverage_ratio: 0.975
+latex_coverage_ratio: 0.969
 doc_brief: "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS"
 ---
 []{#subsec:MN label="subsec:MN"} We first recall the following result of Asai on the decomposition of Lusztig induction as given in [@FS86 (3.1), (3.2)]. We restate it in terms of the restriction functors ${\,{}^*R_{\mathbf{L}}^{\mathbf{G}}}$ instead of the induction functors ${R_{\mathbf{L}}^{\mathbf{G}}}$ as in the cited reference. This is a summary of results from [@As1 2.8], [@As2 1.5] and [@As3 2.2.3]. Note that there is a sign missing in the formula [@FS86 (3.2)] in the case $D_n$ as can be seen by considering the trivial character.

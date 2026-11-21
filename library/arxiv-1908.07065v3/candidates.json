@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1908.07065v3",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "c43e413aed71aef141585a5ccace94def4cd6e215f3467c5393633b38fcae402",
   "file": "1908.07065v3.pdf"
  },
  "provenance": {
-  "title": "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg\u2013Witten curve",
-  "authors": "Alba Grassia, Jie Gu b and Marcos Mari\u02dc nob",
+  "title": "Non-perturbative approaches to the quantum Seiberg\u2013Witten curve",
+  "authors": "Alba Grassia, Jie Gub and Marcos Mari\u00f1ob",
   "arxiv": {
    "id": "1908.07065",
    "version": "3",
@@ -20,9 +21,65 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 2,
+  "by_kind": {
+   "proposition": 2
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 2
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "It was observed by many authors \\cite{Lukyanov:2011wd, PCL, nok} that the movable poles of Painlev\\'e $\\rm III_3$ are somehow related to Mathieu functions.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-015-6-on-the-modified-mathieu-operator-and-painlev\u00e9.md (p. 36-37)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-015-6-on-the-modified-mathieu-operator-and-painlev\u00e9.md",
+   "section_title": "On the modified Mathieu operator and Painlev\u00e9 III3",
+   "pages": "36-37",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-015-6-on-the-modified-mathieu-operator-and-painlev\u00e9.md (p. 36-37)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-015-01",
+   "block_iri": "library/arxiv-1908.07065v3/blocks/prop-sec-015-01",
+   "claim_id": "arxiv-1908.07065v3#prop-sec-015-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "In particular in \\cite{ sciarappa2}, based on \\cite{bgt}, it was observed that the zeros of the Painlev\\'e $\\rm III_3$ $\\tau$ function compute the spectrum of modified Mathieu (with a suitable dictionary).",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-015-6-on-the-modified-mathieu-operator-and-painlev\u00e9.md (p. 36-37)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-015-6-on-the-modified-mathieu-operator-and-painlev\u00e9.md",
+   "section_title": "On the modified Mathieu operator and Painlev\u00e9 III3",
+   "pages": "36-37",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-015-6-on-the-modified-mathieu-operator-and-painlev\u00e9.md (p. 36-37)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-015-02",
+   "block_iri": "library/arxiv-1908.07065v3/blocks/prop-sec-015-02",
+   "claim_id": "arxiv-1908.07065v3#prop-sec-015-02"
+  }
+ ]
 }

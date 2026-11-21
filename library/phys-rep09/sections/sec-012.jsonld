@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "An improved radius of convergence",
-  "pageStart": 18,
-  "pageEnd": 19,
+  "title": "On the existence of Ω (t)",
+  "pageStart": 16,
+  "pageEnd": 17,
   "contains": [
-    "library/phys-rep09/blocks/prose-sec-012"
+    "library/phys-rep09/blocks/prose-sec-012",
+    "library/phys-rep09/blocks/thm-sec-012-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
   "provenance": "ingested"
 }

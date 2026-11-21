@@ -1,0 +1,47 @@
+468 T. Ohtsuki (Editor)
+
+Problem 6.2 Is the Burau representation of By faithful?
+
+Remark The Burau representation of B, is known to be faithful for n < 3
+and not faithful for n > 5 [51].
+
+The representation of By in TLy is faithful if and only if the Burau represen-
+tation of By is faithful.
+
+Remark The Burau representation of By, is faithful if and only if a certain
+pair of three-by-three matrices generate a free group. The matrices given in [56]
+contain a misprint, but their description as words in the generators is correct.
+
+The Burau representation of By is faithful if and only if a certain intersection
+pairing detects intersection of arcs in the four-times punctured disk [51].
+
+Cooper and Long have explicitly calculated the kernel of the Burau represen-
+tation modulo the primes 2, 3 and 5 [95].
+
+Problem 6.3 (S.J. Bigelow) Is the action of Bg on ve faithful?
+
+Remark The Burau representation of Bg is unfaithful [269]. Thus the rep-
+resentation of Bg in TLe¢ is faithful if and only if the action of Bg on ve is
+faithful.
+
+No approach to this problem is known except for a brute force computer search.
+However such a search might find an example more easily than any of the more
+subtle approaches to the Burau representation of By.
+
+Remark We could also ask whether the action of Bs; on V/ is faithful. A
+computer search of this representation would be easier because the matrices
+involved are smaller (five-by-five instead of nine-by-nine). On the other hand,
+this representation is more likely to be faithful, since if the representation of
+Be in TLe¢ is faithful then so is the representation of Bs in TLs.
+
+6.3. The Hecke and BMW algebras
+
+We now introduce two algebras which can be defined in a similar way to the
+Temperley-Lieb algebra. The Hecke algebra is the set of formal linear combina-
+tions of braids modulo the relation:
+
+«K ox = (A? — A7?)
+
+Geometry & Topology Monographs, Volume 4 (2002)
+
+A

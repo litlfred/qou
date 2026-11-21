@@ -72,9 +72,9 @@
 
   -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds,
   --      Topology 24 (1985) 307-332, eqs (52), (65)-(66), (68)
-  -- Ref: [manuscript] computations/qbeta/qbeta_neumann_zagier_cusp_modulus_probe.py
-  -- Ref: [manuscript] QOU/QBeta/CuspShapeBarParity.lean  (the hexagonal lattice)
-  -- Ref: [manuscript] .beans/qou-yh67 (the NZ-1/2 binary, OPEN)
+  -- Ref: [leitner2026] computations/qbeta/qbeta_neumann_zagier_cusp_modulus_probe.py
+  -- Ref: [leitner2026] QOU/QBeta/CuspShapeBarParity.lean  (the hexagonal lattice)
+  -- Ref: [leitner2026] .beans/qou-yh67 (the NZ-1/2 binary, OPEN)
 -/
 import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic.Ring

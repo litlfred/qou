@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1412.4229v4/blocks/prose-sec-004",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Pairs of DG Modules, Compound Resolutions, and Rectangles",
-  "pageStart": 26,
-  "pageEnd": 32,
-  "text": "../sections/sec-004-5-pairs-of-dg-modules-compound-resolutions-and-r.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1412.4229v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1412.4229v4",
+  "title": "DG Ring Homotopies",
+  "pageStart": 23,
+  "pageEnd": 26,
+  "text": "../sections/sec-004-4-dg-ring-homotopies.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1412.4229v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1412.4229v4/manifest.jsonld",
   "provenance": "ingested"
 }

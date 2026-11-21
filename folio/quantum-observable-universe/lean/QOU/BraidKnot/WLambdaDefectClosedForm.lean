@@ -132,7 +132,7 @@ General `n` is fully proved sorry-free: Identity I unconditional
 (`two_sum_dim_sq_hooks_general`), Piece A (`QOU.BraidKnot.PieceA.pieceA`,
 `PieceAGeneral.lean`), Piece B (`identityB_via_wedderburn_unconditional`,
 `IdentityBWedderburn.lean`).
-Ref: [manuscript] docs/audits/2026-08-25-ov-general-n-chain-is-closed.md
+Ref: [leitner2026] docs/audits/2026-08-25-ov-general-n-chain-is-closed.md
 -/
 
 /-- Multiset of hook lengths of a partition `l` (descending row lengths). Cell
@@ -271,6 +271,6 @@ Plancherel mean of `Σ_□ h(□)²`. The open `M₁` problem is a second-order 
 no covariance. See `docs/workplans/2026-08-28-M1-arc-revised-workplan.md`; the
 same caveat applies to `secondMomentKernel_eq_zero`, which is a first-moment
 identity despite its name.
-Ref: [manuscript] docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md -/
+Ref: [leitner2026] docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md -/
 
 end QOU.BraidKnot.WLambdaDefect

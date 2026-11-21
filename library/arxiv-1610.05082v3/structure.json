@@ -7,10 +7,11 @@
   "bytes": 564934,
   "pages": 24,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,17 +22,25 @@
   },
   "doi": null,
   "title": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL",
-  "authors_raw": "JEHANNE DOUSSE AND VALENTIN F\u00c9RAY",
+  "authors_raw": "JEHANNE DOUSSE AND VALENTIN FÉRAY",
   "title_lines": [
    "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL"
   ],
   "abstract": "Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems. In this paper, we prove that spins in the d-dimensional Ising model display such a weighted dependency structure. We use this to obtain various central limit theorems for the number of occurrences of local and global patterns in a growing box.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181120173117Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181120173117Z"
+  },
+  "title_raw": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL 1. Introduction and statement of results 1.1. Cumulants in the Ising model. The Ising model is a mathematical model of ferro-magnetism in statistical physics. It was introduced in 1920 by Wilhelm Lenz who gave it as a problem to his Ph.D. student Ernst",
+   "outline": "1. Introduction and statement of results",
+   "text": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,186 +49,499 @@
    "title": "Introduction and statement of results",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Cumulants in the Ising model",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Weighted dependency graphs",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Central limit theorems",
    "page": 3,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Outline of the paper",
    "page": 5,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "The Ising model",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Joint cumulants",
    "page": 6,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Spanning trees of maximal weight and tree lengths",
    "page": 6,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Weighted dependency graphs",
    "page": 7,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Cluster expansions and bounds on joint cumulants",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "At very high temperature, without magnetic field",
    "page": 8,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "At very low temperature, without magnetic field",
    "page": 12,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "With a strong magnetic field",
    "page": 16,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Weighted dependency graphs and central limit theorems",
    "page": 16,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Weighted dependency graph for the i's and central limit theorem for the magnetization",
    "page": 16,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Central limit theorem for occurrences of given patterns",
    "page": 19,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "References",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   }
  ],
  "toc_source": "outline",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [
   {
-   "id": "sec-000-12-weighted-dependency-graphs",
-   "number": "1.2",
-   "title": "Weighted dependency graphs",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 414,
-   "n_words": 67
+   "kind": "figure",
+   "number": "1",
+   "title": "The two tree lengths on an example Proposition 2.2. For all A = {x1, . . . , xn} ﬁnite subset of Zd, we have",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "id": "sec-001-1-introduction-and-statement-of-results",
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 460,
+   "n_words": 73,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction-and-statement-of-results",
    "number": "1",
    "title": "Introduction and statement of results",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-002-11-cumulants-in-the-ising-model",
+   "id": "sec-001-11-cumulants-in-the-ising-model",
    "number": "1.1",
    "title": "Cumulants in the Ising model",
    "level": 2,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4361,
-   "n_words": 746
+   "n_chars": 5351,
+   "n_words": 945,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-12-weighted-dependency-graphs",
+   "number": "1.2",
+   "title": "Weighted dependency graphs",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1726,
+   "n_words": 318,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-003-13-central-limit-theorems",
    "number": "1.3",
    "title": "Central limit theorems",
    "level": 2,
-   "page_start": 2,
-   "page_end": 4,
-   "n_chars": 6932,
-   "n_words": 1249
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 7611,
+   "n_words": 1432,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
    "id": "sec-004-21-the-ising-model",
    "number": "2.1",
    "title": "The Ising model",
    "level": 2,
-   "page_start": 4,
+   "page_start": 5,
    "page_end": 5,
-   "n_chars": 3224,
-   "n_words": 570
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-005-14-outline-of-the-paper",
@@ -228,28 +550,34 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 670,
+   "n_words": 113,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-006-22-joint-cumulants",
-   "number": "2.2",
-   "title": "Joint cumulants",
-   "level": 2,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 466,
-   "n_words": 78
-  },
-  {
-   "id": "sec-007-2-preliminaries",
+   "id": "sec-006-2-preliminaries",
    "number": "2",
    "title": "Preliminaries",
    "level": 1,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3977,
-   "n_words": 705
+   "n_chars": 2921,
+   "n_words": 547,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-007-22-joint-cumulants",
+   "number": "2.2",
+   "title": "Joint cumulants",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1012,
+   "n_words": 196,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-008-23-spanning-trees-of-maximal-weight-and-tree-len",
@@ -258,8 +586,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1537,
-   "n_words": 309
+   "n_chars": 1546,
+   "n_words": 318,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-009-24-weighted-dependency-graphs",
@@ -268,8 +598,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2095,
-   "n_words": 404
+   "n_chars": 2113,
+   "n_words": 426,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-010-3-cluster-expansions-and-bounds-on-joint-cumulan",
@@ -277,62 +609,128 @@
    "title": "Cluster expansions and bounds on joint cumulants",
    "level": 1,
    "page_start": 8,
-   "page_end": 16,
-   "n_chars": 20796,
-   "n_words": 3887
+   "page_end": 8,
+   "n_chars": 1199,
+   "n_words": 202,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-011-4-weighted-dependency-graphs-and-central-limit-t",
+   "id": "sec-011-31-at-very-high-temperature-without-magnetic-fie",
+   "number": "3.1",
+   "title": "At very high temperature, without magnetic field",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 9532,
+   "n_words": 1920,
+   "label_start": "8",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-012-32-at-very-low-temperature-without-magnetic-fiel",
+   "number": "3.2",
+   "title": "At very low temperature, without magnetic field",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 7895,
+   "n_words": 1612,
+   "label_start": "12",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-013-41-weighted-dependency-graph-for-the-is-and-cent",
+   "number": "4.1",
+   "title": "Weighted dependency graph for the i's and central limit theorem for the magnetization",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 34,
+   "n_words": 5,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-014-33-with-a-strong-magnetic-field",
+   "number": "3.3",
+   "title": "With a strong magnetic field",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2224,
+   "n_words": 418,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-015-4-weighted-dependency-graphs-and-central-limit-t",
    "number": "4",
    "title": "Weighted dependency graphs and central limit theorems",
    "level": 1,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 5646,
-   "n_words": 1076
+   "n_chars": 5725,
+   "n_words": 1162,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
-   "id": "sec-012-42-central-limit-theorem-for-occurrences-of-give",
+   "id": "sec-016-42-central-limit-theorem-for-occurrences-of-give",
    "number": "4.2",
    "title": "Central limit theorem for occurrences of given patterns",
    "level": 2,
    "page_start": 19,
    "page_end": 23,
-   "n_chars": 10512,
-   "n_words": 1960
+   "n_chars": 10731,
+   "n_words": 2190,
+   "label_start": "19",
+   "label_end": "23"
   },
   {
-   "id": "sec-013-acknowledgements",
+   "id": "sec-017-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 156,
-   "n_words": 26
+   "n_chars": 155,
+   "n_words": 25,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-014-references",
+   "id": "sec-018-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 4677,
-   "n_words": 732
+   "n_chars": 4638,
+   "n_words": 693,
+   "label_start": "23",
+   "label_end": "24"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 19,
-  "sections": 15,
-  "chars_total": 64793,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 20,
+  "chars_total": 65543,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ising.tex",
    "tex_sections": 27,
-   "overlaid": 5,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -340,94 +738,133 @@
    },
    "sections": [
     {
-     "id": "sec-000-12-weighted-dependency-graphs",
-     "title": "Weighted dependency graphs",
-     "prose_ratio": 0.134,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-introduction-and-statement-of-results",
+     "id": "sec-000-1-introduction-and-statement-of-results",
      "title": "Introduction and statement of results",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-002-11-cumulants-in-the-ising-model",
+     "id": "sec-001-11-cumulants-in-the-ising-model",
      "title": "Cumulants in the Ising model",
-     "prose_ratio": 0.853,
-     "coverage_ratio": 0.911,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.93,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
+     "id": "sec-002-12-weighted-dependency-graphs",
+     "title": "Weighted dependency graphs",
+     "prose_ratio": 0.48,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
      "id": "sec-003-13-central-limit-theorems",
      "title": "Central limit theorems",
-     "prose_ratio": 0.605,
-     "coverage_ratio": 0.475,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.716,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-21-the-ising-model",
      "title": "The Ising model",
-     "prose_ratio": 0.31,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-14-outline-of-the-paper",
      "title": "Outline of the paper",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-006-22-joint-cumulants",
-     "title": "Joint cumulants",
-     "prose_ratio": 0.079,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-007-2-preliminaries",
+     "id": "sec-006-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-22-joint-cumulants",
+     "title": "Joint cumulants",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-008-23-spanning-trees-of-maximal-weight-and-tree-len",
      "title": "Spanning trees of maximal weight and tree lengths",
      "prose_ratio": 0.522,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-009-24-weighted-dependency-graphs",
      "title": "Weighted dependency graphs",
      "prose_ratio": 0.248,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-010-3-cluster-expansions-and-bounds-on-joint-cumulan",
      "title": "Cluster expansions and bounds on joint cumulants",
-     "prose_ratio": 0.996,
+     "prose_ratio": 0.944,
      "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-4-weighted-dependency-graphs-and-central-limit-t",
-     "title": "Weighted dependency graphs and central limit theorems",
-     "prose_ratio": 0.934,
-     "coverage_ratio": 0.933,
+     "id": "sec-011-31-at-very-high-temperature-without-magnetic-fie",
+     "title": "At very high temperature, without magnetic field",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-42-central-limit-theorem-for-occurrences-of-give",
+     "id": "sec-012-32-at-very-low-temperature-without-magnetic-fiel",
+     "title": "At very low temperature, without magnetic field",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-41-weighted-dependency-graph-for-the-is-and-cent",
+     "title": "Weighted dependency graph for the i's and central limit theorem for the magnetization",
+     "prose_ratio": 0.005,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-33-with-a-strong-magnetic-field",
+     "title": "With a strong magnetic field",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-4-weighted-dependency-graphs-and-central-limit-t",
+     "title": "Weighted dependency graphs and central limit theorems",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.242,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-016-42-central-limit-theorem-for-occurrences-of-give",
      "title": "Central limit theorem for occurrences of given patterns",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.925,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-acknowledgements",
+     "id": "sec-017-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 0.929,
      "coverage_ratio": 1.0,
@@ -435,7 +872,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-references",
+     "id": "sec-018-references",
      "title": "References",
      "result": "no matching \\section"
     }
