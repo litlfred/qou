@@ -35,8 +35,12 @@ What is formalised, by paper reference:
   `J = 0`, so `U` is the algebra itself (`commutatorIntegrationEquiv`).
 
 Not formalised here: that `U` is the distribution algebra of a formal group (the content of
-Thm. 3.7), strong multiplicativity (Def. 1.11, which needs the symmetrised product
-`· : T ⊗ T → T` through `S X`), the PBW theorem 1.9 and the main Theorem 3.7.
+Thm. 3.7) and strong multiplicativity (Def. 1.11, which needs the symmetrised product
+`· : T ⊗ T → T` through `S X`). Elsewhere: the PBW theorem in the form Thm. 3.7 uses is
+`UGB.GrobnerShirshov.BlockSplay.Model.normalFormBasis` (package `ugb`), the descent of the
+coproduct is `CoproductDescent.lean`, and the formal group law given a PBW basis is
+`PBWAssembly.lean`. Identifying UGB's presented algebra with `IntegrationQuotient` is not
+yet done.
 -/
 
 namespace QOU.FormalGroups
