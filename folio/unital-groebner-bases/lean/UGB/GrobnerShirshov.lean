@@ -25,7 +25,7 @@ provides the algebraic engine behind the QOU lifting mechanism.
 | `QSerreCriticalPairs` | reduces `qSerre_is_gs_basis` to its 8 genuine critical pairs |
 | `Quotient` | the quotient algebra `k⟨G⟩ / (Σ)` and `NormalFormBasis` |
 | `Flatness` | Flat deformation from GS confluence |
-| `StrongMultiplicativity` | Frobenius preservation under deformation |
+| `StrongMultiplicativity` | tensor-product presentation (Bokut–Chen); see `leitner2006` Def. 1.11 for strong multiplicativity |
 | `JetOrder` | Jet-stratified reduction: ordering extension + complexity |
 
 ## How the pieces fit together
@@ -36,7 +36,7 @@ Basic.lean
   ├─ CompositionLemma.lean    (diamond lemma: GS ⟹ confluence)
   │    └─ NormalForms.lean     (PBW bases for U_q and Dist(G))
   │         └─ Flatness.lean   (Dist(G) is flat over Dist(H))
-  │              └─ StrongMultiplicativity.lean  (Δ(xy) = Δ(x)·Δ(y))
+  │              └─ StrongMultiplicativity.lean  (tensor-product presentation)
   └─ JetOrder.lean            (jet-stratified reduction algorithm)
        ├─ imports: Basic, AlgOps, CompositionLemma, Flatness
        └─ uses: filtration + Hilbert function from Flatness
