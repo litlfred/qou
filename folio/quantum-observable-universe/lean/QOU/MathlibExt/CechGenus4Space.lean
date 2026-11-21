@@ -1,4 +1,4 @@
-import QOU.MathlibExt.CechGenus4Nerve
+import QOU.MathlibExt.CechGenus4Degree
 import QOU.MathlibExt.CechNerveValues
 import Mathlib.Analysis.Convex.PathConnected
 
@@ -137,9 +137,6 @@ theorem stars_cover (x : Space face) : ∃ v, x ∈ star face v := by
 end Realize
 
 /-! ### The genus-4 instance -/
-
-/-- The three vertices of face `f`. -/
-def face4 (f : Fin 50) : Finset (Fin 19) := {fA f, fB f, fC f}
 
 /-- The genus-4 surface: realisation of the 50-face triangulation. -/
 abbrev Surf := Space face4
