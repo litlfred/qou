@@ -541,3 +541,33 @@ non-trivial linear model, and any matter-pairing computation must be done in a F
 products, but H₃(q) with its Frobenius coproduct is not a `FrobeniusHopfData`.
 
 **Status of the 12.** Not found in the searched classes, now including λ = ε pairings in H₃(q).
+
+## 18. What fixes λ's scale: a normalised state, not CAL-1 (2026-11-21)
+
+No numerical test here, so no pre-registration.
+
+**Corpus check.** In `CategoricalLagrangian` (`QDifferentialGeometry.lean`) the `costate` and
+`state` are independent fields. Neither it nor `categorical-lagrangian.md` normalises the state.
+CAL-1 enters as the base of the period tower (`electron-period-base.md`: `a_D^{(e)} = m_e`). It is
+not stated anywhere as the electron's matter pairing (searched `quantum-observable-universes/` and
+`mass-theory/`). So the CAL-1 route has no corpus anchor.
+
+**Lean, sorry-free** (`QOU/MassTheory/NormalisedStateScaleFree.lean`, lean-direct exit 0, axioms
+`propext, Classical.choice, Quot.sound`):
+- `matter_rescale`: `(a•ψ*) ≫ (b•ψ) ≫ 𝒟 = (ab)•(ψ* ≫ ψ ≫ 𝒟)`;
+- `norm_rescale`: `(b•ψ) ≫ (a•ψ*) = (ab)•(ψ ≫ ψ*)`;
+- `matter_invariant_of_normalised`: if `ψ ≫ ψ* = 𝟙` both before and after, the matter term is
+  unchanged.
+
+Since `ψ* = λ∘S(ψ)` is linear in `λ`, a rescaling of `λ` is a rescaling of `ψ*`. Under the
+normalisation `ψ ≫ ψ* = 𝟙`, the state absorbs it and the matter term does not move. The bosonic
+term `𝒟²` never depended on `λ`. So with normalised states, the scale of `λ` is not a parameter of
+`ℒ`. The only remaining scale is the overall unit, which is CAL-1's job anyway.
+
+**What this does not settle.** The normalisation is a hypothesis, not in the corpus definition.
+Adding it changes `def:categorical-lagrangian`, so it is the owner's decision.
+
+**Bearing on §17 part B.** The quantity tested there, `τ(S(X)X)`, is exactly `ψ ≫ ψ*`. Under this
+normalisation it is 1 for every state, so that ratio stops being a candidate for the 12. The
+normalised matter constant is `ψ*(𝒟ψ)/ψ*(ψ)`. It needs a concrete `∇` on the state space, and
+the corpus `nablaEndo` is still never instantiated (§10).
