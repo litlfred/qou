@@ -1,13 +1,15 @@
 ---
 # qou-lm62
-title: 'GS-1: Full Monograph Overhaul (Page-1 Front Matter, 118-Element Knot-Periodic Table, 71-Term Pure Glossary, Switched Photon, 3,635-Block Audit)'
+title: 'GS-1: Monograph overhaul on current rulings (front matter, knot periodic table, glossary, block audit)'
 status: todo
 type: task
 priority: high
 created_at: 2026-11-19T16:48:45Z
-updated_at: 2026-11-21T12:20:00Z
+updated_at: 2026-11-21T13:45:00Z
 parent: qou-uhx0
 ---
+
+> **Superseded record (2026-11-19, never pushed; see Reopened below).** Do not build on this paragraph: its counts are unverified and it rests on replaced premises.
 
 Completed across all 37 directories (`3,635` blocks): combined Page-1 Cover+Abstract+Lean Declaration (`741/741 = 100%` sorry-free), expanded `appendix-knot-periodic-table/` to `Z=1..118` (`1.020%` median `|dB/B|`), rebuilt `glossary/` (`71` pure QOU entries, `0` Lean refs), aligned switched photon `sigma_0 sigma_1^-1` & aether terminology, and passed `run-validate.ts` + `paper-commentary-audit.ts` (`0` fails).
 
@@ -23,3 +25,16 @@ Measured gaps on main: `glossary/` has 32 blocks (claim 71), 8 with `lean:` refs
 Not formal mathematics: this is a monograph content overhaul (front matter, a Z = 1..118 table, a 71-entry glossary, a 3,635-block audit). Under the ask-first rule each part is a content drain that needs the owner to scope it, and the Z = 1..118 table with a "1.020 % median |dB/B|" is a comparison table, so it would also need the anti-fit check. Left `todo`; passed to the coordinator as an owner decision.
 
 Premise check vs `docs/coordination/owner-rulings.md` (main 2ae54ab40, 2026-11-21, owner request to drop old results): SUPERSEDED premises found in its 2026-11-19 resolution text: it calls the photon "switched photon sigma_0 sigma_1^-1" (the form is right, but "switched" is retired wording: it is simply the photon, AGENTS.md), and its Z = 1..118 table with a "1.020 % median |dB/B|" predates the two-term trace ruling and the T(2,n_s) withdrawal, so any rebuild must start from the current basis, not from that claim.
+
+## 2026-11-21: rescoped onto current rulings (hecke-gs-conj sibling, session_01Qmmkt5sJX34MCerjRMERJN; coordinator relay of the owner's "nothing rests on replaced results")
+The work this bean tracks now rests only on `docs/coordination/owner-rulings.md` at main 2ae54ab40. Any part of the overhaul must use:
+- **Photon:** γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹. Call it "the photon", never "switched photon" (title fixed).
+- **Electron:** σ₀σ₁σ₀ ∈ B₃ with Hopf-link closure. Trefoil σ₀³ ∈ B₂ is the backup only, not the primary electron.
+- **Up quark:** an unknot strand of the Borromean braid.
+- **Trace:** two-term Lagrangian trace on every scoreboard and β-decay route; convention D.
+- **No T(2,n_s)** shell-size rule (withdrawn 2026-11-21).
+- **No absolute masses as predictions; no fitted or selected knots** (the Z = 1..118 table and its "1.020 % median |dB/B|" are dropped as a target: a table that picks a knot per element to match AME is selection against the target).
+
+Measured on main 2ae54ab40 — the target appendix still carries the replaced electron. `appendix-knot-periodic-table/` uses the trefoil as THE electron in: `knot-periodic-table.md` (l.12, 134-135), `knot-periodic-table-sim.md` (l.15), `knot-atom-diagrams.md` (l.5-6, 23), `knot-atom-diagrams-sim.md` (l.5-7), `knot-centric-table.md` (l.5, 100), `knot-centric-table-intro.md` (l.5), `knot-centric-table-visualization-spec.md` (l.14, 35-51), `recursive-atom-knot-atlas-registry.md` (l.47-49, 108-112). Some also call the proton a trefoil (l.215-216 of the registry), which clashes with the Borromean baryon and the unknot-strand up quark. Fixing those blocks is a content change on the ask-first rule, so it is listed here, not done.
+
+Remaining scope (each needs owner scoping before work): (a) re-word the 8 appendix blocks above to the σ₀σ₁σ₀ Hopf electron; (b) glossary: decide whether 71 entries is a goal at all (32 blocks today); (c) front matter; (d) block audit. Status stays `todo`.
