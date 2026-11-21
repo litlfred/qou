@@ -1146,6 +1146,7 @@ export default chapter({
         "neutron-proton-splitting",
         "flavor-split-habiro-derivation",
         "borromean-baryon-mass-formula",
+        "delta-skein-substrate-identity",
         "lambda-scale-substrate-form",
         "lambda-scale-substrate-form-proof",
         "topological-mass-trefoil",

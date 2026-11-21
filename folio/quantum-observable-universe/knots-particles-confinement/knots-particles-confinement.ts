@@ -150,7 +150,6 @@ export default chapter({
         "borromean-baryon",
         "borromean-topological-confinement",
         "brunnian-property-of-borromean",
-        "delta-skein-substrate-identity",
         "figure-8-muon-mass-cross-check",
         "typed-crossing-operator",
         "nucleon-hecke-element",
