@@ -272,3 +272,30 @@ stay inputs in #8923; R-b remains the open derivation. Corrected R-c comparison 
 any choice: ([4]_q/[2]_q²)·cell = 1.016316 × 0.873537 = 0.887789 MeV (−31.36 % vs m_n − m_p). It lies
 within 0.1 % of the Bring linking-weight value 0.887 MeV (P5), which is built on the fitted δ.
 This is noted, not used.
+
+## Addendum 10 (owner "2": derive μ_d − μ_u from the strands), before code
+
+**Question.** Is μ_d − μ_u, the per-quark input of the convention-D pair-Skein map (#8923), derivable
+from the strand weight, and is the result consistent with the whole-nucleon log map of this thread?
+
+**Premises (stated, not assumed silently).**
+- (S) spectator invariance + continuity, already proved to force E = c·log ε + d.
+- (L) premise L of Addenda 6–8: u carries H = +1, d carries H = −1; a strand of weight H contributes
+  the factor q^H to ε.
+- (Q) *new premise, to be tested*: the per-quark mass μ_a is the log-map energy of the strand's own
+  factor, μ_a = c·log q^{H_a} + d₁.
+
+**Derivations to be done in Lean before any number.**
+1. Under (S)(L)(Q): μ_d − μ_u = −2c·ln q, which is the cell. The proof is the same algebra as the
+   whole-nucleon cell, because the log is additive.
+2. Pair-Skein difference under D with ordering m_N = 𝒮₁₂ + 𝒮₁₃ + 𝒮₂₃, p = (u,u,d), n = (u,d,d):
+   m_n − m_p = ((q² + q⁻²)/[2]_q)(μ_d − μ_u). This holds over a generic field.
+3. Consistency: the pair-Skein route and the whole-nucleon log map agree iff (q² + q⁻²)/[2]_q = 1.
+   Writing s = q + q⁻¹, q² + q⁻² − s = (s − 2)(s + 1), so for real q > 0 with q ≠ 1 they **disagree**.
+
+**Reading of the outcome, fixed now.**
+- If 3 holds as stated, premise (Q) and the pair-Skein mass are not jointly an energy functional of the
+  spectator type at q ≠ 1. That is a scope-(a) statement about this pair of constructions. It does
+  not refute either one alone.
+- The comparison number ([4]/[2]²)·cell = 0.887789 MeV is already recorded (Addendum 9a). No new number
+  is selected.
