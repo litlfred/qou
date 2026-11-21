@@ -168,3 +168,11 @@ Scope (a).
 
 Nothing changes: F_Bor keeps `c_sign`, which is labelled as asserted, and the
 criterion stays a stated working conjecture.
+
+## Disposition (owner: *"All"*, 2026-11-21)
+
+The owner picked all three options. They are reconciled as follows:
+`conj:proton-normaliser-kl-coordinate` is **restated** to show the split
+(criterion on the coordinate only, element scaled by its identity coefficient).
+It is **retired** as a derivation route (status note, tag `retired`), with the
+negative result kept in the block and here. PR #8964 is marked ready for review.
