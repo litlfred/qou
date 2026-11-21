@@ -222,3 +222,42 @@ orderings, exact in q, for the three words. Also the spread (max − min). Tests
   V^{⊗4} it would turn on shapes with three or more rows, which convention D sets to weight 0.
   Building it would be a new construction, not a corpus-derived one, so it goes to the owner
   instead of being run.
+
+## Addendum 9 (owner: "Relax ruling on p-n....explore possibilities. need to derive things, not assert"), before code
+
+**Reading.** The 2026-08-15 ruling R3 (`bring_color_weighted` canonical for p/n) is relaxed to a working
+conjecture. Task: ledger every p–n construction in the corpus as *derived* or *asserted*, keep only the
+derived steps, and name what would have to be derived to use the rest. Nothing is selected by CODATA;
+CODATA numbers appear only in the comparison column.
+
+**Ledger (read from the corpus, before any new code).**
+
+| # | construction | step | status | source |
+|---|---|---|---|---|
+| P1 | n–p cell 2E₀·ln q (this thread) | K-weight ratio ε_n/ε_p = q⁻², log map, kT = E₀ | derived (Lean: `common_factor_log_cell`, `cell_eq_eigen_gap`) | `SpectatorEnergyMap.lean` |
+| P1′ | same | assignment to an observable | **open** (ruling 2026-11-21); bound cell < 2m_e excludes m_n − m_p directly | audit §12 |
+| P2 | prop:flavor-split-substrate | Step 1 pair-Skein difference | asserted twice: the pair-Skein formula takes per-quark masses μ as inputs, and is convention C | `flavor-split-substrate-proof.md`, `pair-skein-mass-formula.md` |
+| P2′ | same | Step 2 (μ_d − μ_u)/μ_avg = h²ℏ/√q | asserted: fitted to experiment (the proof says so) | same |
+| P3 | `flavor_split_subleading` (1 + ℏ³) | — | asserted (marked POSITED) | `_li_2_q_util.py` |
+| P4 | `bring_color_weighted` f_pn = z − h(1/2 − δ/4) | δ = P2′ | asserted by inheritance | `closed_form_tau_M.py` |
+| P5 | Bring linking weight, m_n − m_p = 0.887 MeV | δ and the λ_A absolute-mass fit | asserted by inheritance (two fits) | `2026-06-01-bring-color-weighted-…` audit |
+| P6 | linear map, E₀^full·\|ε_n − ε_p\| = 0.325 MeV | linear map | excluded by spectator invariance | audit §3 |
+
+**Consequence.** P1 is the only p–n quantity whose every step is derived. Everything carrying δ rests on
+one fitted ansatz (P2′).
+
+**Exploration routes (each a derivation target, not a number to adopt).**
+
+- **R-a. Re-derive the pair-Skein crossing trace under convention D.** If the crossing-pair trace gives
+  m_n − m_p = [2]_q·z·(μ_d − μ_u) under z_D, then [2]_q·z_D = q² exactly. Needed: the trace itself, re-derived
+  (the formula's own text says substitution is not valid).
+- **R-b. Derive μ_d − μ_u from the strand weight.** Two readings, measured before any choice:
+  (i) multiplicative, μ_d/μ_u = q^{ΔH} = q², gives (μ_d − μ_u)/μ_avg = 2(q²−1)/(q²+1) = 0.2079 at q₀;
+  (ii) logarithmic, μ_d − μ_u = the cell P1.
+- **R-c. Combine R-a and R-b(ii)** only if both are derived. Comparison values, recorded now so they cannot
+  steer: cell 0.873537 MeV (−32.46 % vs m_n − m_p); q²·cell 1.076243 MeV (−16.79 %); [2]_q·z_C·cell 0.877102
+  MeV (−32.18 %, convention C, excised).
+- **R-d. Assign the cell P1 through the GB reduction** (Addenda 4–8): already measured, scope-(a) negative.
+
+**What will not be done.** No route is adopted because its number is closer. R-c is not a result until R-a
+and R-b(ii) are both derived; the −16.79 % is a comparison, not support.
