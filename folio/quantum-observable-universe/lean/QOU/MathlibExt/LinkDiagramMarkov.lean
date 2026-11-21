@@ -13,8 +13,16 @@ Relabelling the rows of the first closure (`rowRot`) moves the level of `x` to t
 after its closing arcs. The closing arcs carry one turn each, so the turns now sit on the edges
 entering the level of `x`; `turnPast` moves them to the edges leaving it, which gives the second
 closure. On the strands `x` does not touch this uses `merge` (`transferJoins`), on its two strands
-`slide`. Together with the braid relations at word level this gives invariance under
-`β ↦ σ β σ⁻¹`; those, and stabilisation, are not done here.
+`slide`.
+
+**Stabilisation** (`braidClosure_stab`): adding a strand and the letter `σₙ^{±1}` is a kink, removed
+by `r1`. **Cancellation** (`braidClosure_cancel`) is `r2par`; **far commutation**
+(`braidClosure_farComm`) uses two turn slides and the join moves; **the braid relation**
+(`braidClosure_braid`) is `r3`. These are the word-level steps that `LinkDiagramBraidMarkov` uses to
+descend the closure to the braid group.
+
+The turn slide is a primitive move here; whether it follows from the other moves is open (bean
+`qou-slid`).
 
 -- Ref: [kassel2008] Kassel–Turaev, "Braid Groups", GTM 247, §2.5 (closure and Markov moves)
 -/
@@ -124,8 +132,8 @@ theorem transferJoins (top mid bot : P → E) (t t' t₁ t₁' : ℤ) (h : t + t
           Multiset.insert_eq_cons, ← Multiset.singleton_add, add_zero] <;> abel
     refine h₁'.trans (h₂.of_eq rfl ?_)
     refine code_ext ?_ ?_ <;>
-      simp only [ofJs, add_xs, add_js, chainJoins_insert top mid bot _ _ hp,
-        Multiset.insert_eq_cons, ← Multiset.singleton_add, add_zero] <;> abel
+      (simp only [ofJs, add_xs, add_js, chainJoins_insert top mid bot _ _ hp,
+        Multiset.insert_eq_cons, ← Multiset.singleton_add, add_zero]; try abel)
 
 /-- **Moving one turn past a crossing.** On the left, every incoming edge of the crossing region
 carries one turn: the two strands of the crossing on the joins `top u → mid o`, `top o → mid u`
@@ -290,8 +298,8 @@ theorem mergeJoins (top mid bot : P → E) (t t' : ℤ)
           Multiset.insert_eq_cons, ← Multiset.singleton_add, add_zero] <;> abel
     refine h₁'.trans (h₂.of_eq rfl ?_)
     refine code_ext ?_ ?_ <;>
-      simp only [ofJs, add_xs, add_js, Finset.insert_val_of_notMem hp,
-        ← Multiset.singleton_add, Multiset.map_add, Multiset.map_singleton, add_zero] <;> abel
+      (simp only [ofJs, add_xs, add_js, Finset.insert_val_of_notMem hp,
+        ← Multiset.singleton_add, Multiset.map_add, Multiset.map_singleton, add_zero]; try abel)
 
 omit [DecidableEq P] in
 /-- The joins `e 0 → e 1 → ⋯ → e n`, without turns. -/
@@ -699,7 +707,7 @@ theorem closureOf_stab (g : Fin L → Fin m × Bool) (b : Bool) :
       obtain ⟨k, q, hk⟩ := hW _ h
       exact (Fin.castSucc_lt_last k).ne' (Prod.mk.inj hk).1).symm
   rw [castSuccEmb_univ_eq, chainJoins_insert _ _ _ _ _ (by
-    simp [hU, untouched, Fin.succ_last])] at h2
+    simp [untouched, Fin.succ_last])] at h2
   -- Step 3: a kink on strand `m'`.
   set R1 := W + Code.ofJs {(midE L m', botE L m', (1 : ℤ))} +
     Code.ofJs (chainJoins (topE L) (midE L) (botE L) 0 1 U) with hR1
@@ -738,13 +746,13 @@ theorem closureOf_stab (g : Fin L → Fin m × Bool) (b : Bool) :
   refine (h1.trans h2).trans ((h3.of_eq ?_
     (?_ : _ = R2 + Code.ofJs {(midE L M, eM (Fin.last L), (1 : ℤ))})).trans (h4.of_eq rfl ?_))
   · refine code_ext ?_ ?_ <;>
-      simp only [hR1, ofJs, ofXs, add_xs, add_js, Multiset.insert_eq_cons,
-        ← Multiset.singleton_add, add_zero, zero_add] <;> abel
+      (simp only [hR1, ofJs, add_xs, add_js, Multiset.insert_eq_cons,
+        ← Multiset.singleton_add, add_zero]; try abel)
   · have hk : kinkTurn (!b) b = 1 := by cases b <;> rfl
     rw [hk]
     refine code_ext ?_ ?_ <;>
-      simp only [hR1, hR2, ofJs, ofXs, add_xs, add_js, Multiset.insert_eq_cons,
-        ← Multiset.singleton_add, add_zero, zero_add] <;> abel
+      (simp only [hR1, hR2, ofJs, ofXs, add_xs, add_js,
+        add_zero, zero_add]; try abel)
   · rw [closureOf_snoc_eq, wordPart_liftWord, ← kink_stab]
     cases b <;> refine code_ext ?_ ?_ <;>
       simp only [hR2, hWdef, hm', hM, hU, heM, ofJs, ofXs, add_xs, add_js,
@@ -819,12 +827,12 @@ theorem closureOf_snoc_snoc_eq (g : Fin L → Fin m × Bool) (i : Fin m) (b : Bo
           (rowC L (uPos i b)) (rowB L (uPos i b)) (rowB L (oPos i b)) b) := by
   rw [← letterCrossing_pair]
   refine code_ext ?_ ?_
-  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_xs, add_zero, zero_add]
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_xs, add_zero]
     rw [univ_map_castSucc_last, univ_map_castSucc_last, Multiset.map_map]
     simp only [Fin.snoc_castSucc, Fin.snoc_last, Function.comp_def, letterCrossing_row2]
     rw [Multiset.insert_eq_cons, ← Multiset.singleton_add]
     exact add_assoc _ _ _
-  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_js, add_zero, zero_add,
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_js, add_zero,
       Multiset.map_bind]
     rw [univ_bind_castSucc_last, univ_bind_castSucc_last, chainJoins_eq]
     simp only [Fin.snoc_castSucc, Fin.snoc_last, letterJoins_row2]
@@ -925,11 +933,11 @@ theorem closureOf_cancel (g : Fin L → Fin m × Bool) (i : Fin m) (b : Bool) :
   refine (h1.trans h2).trans ((h3.of_eq ?_ ?_).trans (h4.of_eq rfl ?_))
   · rw [chainJoins_eq, univ_map_untouched i (fun p => (rowA L p, rowC L p, (0 : ℤ)))]
     refine code_ext ?_ ?_ <;>
-      simp only [hR3, hCL, ofJs, ofXs, add_xs, add_js, add_zero, zero_add] <;>
-      cases b <;> simp only [uPos, oPos, if_true, if_false, Bool.false_eq_true,
-        Multiset.insert_eq_cons, ← Multiset.singleton_add] <;> abel
+      (simp only [hR3, hCL, ofJs, add_xs, add_js, add_zero]
+       try (cases b <;> simp only [uPos, oPos, if_true, if_false, Bool.false_eq_true,
+        Multiset.insert_eq_cons, ← Multiset.singleton_add] <;> abel))
   · refine code_ext ?_ ?_ <;>
-      simp only [hR3, hR4, hCL, ofJs, ofXs, add_xs, add_js, add_zero, zero_add] <;> abel
+      (simp only [hR3, hR4, hCL, ofJs, add_xs, add_js, add_zero]; try abel)
   · rw [closureOf_snoc_snoc_eq]
 
 theorem braidClosure_cancel_end (w : List (Fin m × Bool)) (i : Fin m) (b : Bool) :
@@ -975,7 +983,7 @@ end Cancel
 
 /-! ### Far commutation -/
 
-omit [Fintype E] in
+omit [Fintype E] [DecidableEq E] in
 /-- A relabelling that fixes every edge of a code leaves the code unchanged. -/
 theorem Code.map_eq_self_of_occurs (f : E → E) (D : Code E) (h : ∀ e, D.Occurs e → f e = e) :
     D.map f = D := by
@@ -1005,7 +1013,7 @@ theorem letterCrossing_rowB (i : Fin m) (b : Bool) :
       ⟨rowB L (uPos i b), rowC L (oPos i b), rowB L (oPos i b), rowC L (uPos i b), b⟩ := by
   cases b <;> simp [letterCrossing, uPos, oPos, Fin.succ_last]
 
-omit [Fintype E] in
+omit [Fintype E] [DecidableEq E] in
 theorem Code.map_add' (f : E → E) (D D' : Code E) :
     (D + D').map f = D.map f + D'.map f := by
   refine code_ext ?_ ?_ <;> simp [Code.map, Multiset.map_add]
@@ -1037,12 +1045,12 @@ theorem closureOf_snoc2_eq (g : Fin L → Fin m × Bool) (x y : Fin m × Bool) :
         Code.ofJs ((untouched x.1).val.map fun p => (rowA L p, rowB L p, (0 : ℤ))) +
         Code.ofJs ((untouched y.1).val.map fun p => (rowB L p, rowC L p, (0 : ℤ))) := by
   refine code_ext ?_ ?_
-  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_xs, add_zero, zero_add]
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_xs, add_zero]
     rw [univ_map_castSucc_last, univ_map_castSucc_last, Multiset.map_map]
     simp only [Fin.snoc_castSucc, Fin.snoc_last, Function.comp_def, letterCrossing_row2]
     rw [Multiset.insert_eq_cons, ← Multiset.singleton_add]
     exact add_assoc _ _ _
-  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_js, add_zero, zero_add,
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_js, add_zero,
       Multiset.map_bind]
     rw [univ_bind_castSucc_last, univ_bind_castSucc_last]
     simp only [Fin.snoc_castSucc, Fin.snoc_last, letterJoins_row2]
@@ -1117,7 +1125,7 @@ theorem closureOf_farComm (g : Fin L → Fin m × Bool) (i j : Fin m) (b c : Boo
       obtain ⟨_, hj, h⟩ := h
       obtain ⟨q, hq, rfl⟩ := Multiset.mem_map.1 hj
       obtain ⟨h1, h2, h3, h4⟩ := hTi q hq
-      rcases h with h | h <;> simp [Fin.ext_iff] at h <;> omega
+      rcases h with h | h <;> (simp [Fin.ext_iff] at h; try omega)
   have h1 : ui ≠ uj := hpos _ (by simp) _ (by simp)
   have h2 : ui ≠ oj := hpos _ (by simp) _ (by simp)
   have h3 : oi ≠ uj := hpos _ (by simp) _ (by simp)
@@ -1458,7 +1466,7 @@ theorem closureOf_snoc3_eq (g : Fin L → Fin m × Bool) (x y z : Fin m × Bool)
     simp only [Fin.snoc_castSucc, Fin.snoc_last, Function.comp_def, letterCrossing_row3]
     simp only [Multiset.insert_eq_cons, ← Multiset.singleton_add]
     abel
-  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_js, add_zero, zero_add,
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_js, add_zero,
       Multiset.map_bind]
     rw [univ_bind_castSucc_last, univ_bind_castSucc_last, univ_bind_castSucc_last]
     simp only [Fin.snoc_castSucc, Fin.snoc_last, letterJoins_row3]
@@ -1483,9 +1491,9 @@ theorem untouched_split_adj {α : Type*} (i k : Fin m) (hk : k.val = i.val + 1)
   have n2 : i.castSucc ∉ untouched i ∩ untouched k := by simp [untouched]
   constructor
   · conv_lhs => rw [h1, Finset.insert_val_of_notMem n1]
-    simp [Multiset.insert_eq_cons, ← Multiset.singleton_add]
+    simp [← Multiset.singleton_add]
   · conv_lhs => rw [h2, Finset.insert_val_of_notMem n2]
-    simp [Multiset.insert_eq_cons, ← Multiset.singleton_add]
+    simp [← Multiset.singleton_add]
 
 set_option maxHeartbeats 2000000 in
 /-- **The braid relation** at the end of a word: the closures of `… σᵢσᵢ₊₁σᵢ` and `… σᵢ₊₁σᵢσᵢ₊₁`
@@ -1506,7 +1514,7 @@ theorem closureOf_braid (g : Fin L → Fin m × Bool) (i k : Fin m) (hk : k.val 
   have hrv : ∀ r, (rows r).val = L + r.val := by
     intro r; fin_cases r <;> simp [hrows]
   have hpv : ∀ p, (pos p).val = i.val + p.val := by
-    intro p; fin_cases p <;> simp [hpos, hk] <;> omega
+    intro p; fin_cases p <;> simp [hpos, hk]
   have he : Function.Injective e := by
     rintro ⟨r, p⟩ ⟨r', p'⟩ h
     obtain ⟨h1, h2⟩ := Prod.mk.inj h
