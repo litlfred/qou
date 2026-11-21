@@ -2,7 +2,7 @@ import Mathlib.Topology.FiberBundle.Basic
 import Mathlib.Topology.Covering
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Tactic.Group
-import Mathlib.AlgebraicTopology.FundamentalGroupoid.Basic
+import Mathlib.AlgebraicTopology.FundamentalGroupoid.FundamentalGroup
 
 /-!
 # Transport of a local cocycle along continuous paths
@@ -259,6 +259,13 @@ theorem transport_symm {x y : X} (γ : Path x y) : C.transport γ.symm = (C.tran
   rw [transport_refl, transport_trans] at h
   exact eq_inv_of_mul_eq_one_right h.symm
 
+theorem transportQ_comp {x y z : X} (p : Path.Homotopic.Quotient x y)
+    (q : Path.Homotopic.Quotient y z) :
+    C.transportQ (p.comp q) = C.transportQ p * C.transportQ q := by
+  induction p using Quotient.inductionOn
+  induction q using Quotient.inductionOn
+  rw [← Path.Homotopic.comp_lift, transportQ_mk, transportQ_mk, transportQ_mk, transport_trans]
+
 /-! ### Gauge between two cocycles with conjugate monodromy
 
 Given two local cocycles `C₁, C₂` and `c : G` with `T₁(λ)⁻¹ · c · T₂(λ) = c` for every loop `λ`
@@ -286,6 +293,45 @@ theorem gaugeAlong_eq (h : ConjMonodromy C₁ C₂ x₀ c) {y : X} (γ γ' : Pat
   unfold gaugeAlong
   nth_rewrite 2 [← hl]
   group
+
+/-- **Conjugacy on generators suffices.**  If the monodromies are conjugate by `c` on a set of
+loop classes generating the fundamental group, they are conjugate on every loop. -/
+theorem conjMonodromy_of_closure (S : Set (FundamentalGroup X x₀))
+    (hS : ∀ g ∈ S, (C₁.transportQ g.hom)⁻¹ * c * C₂.transportQ g.hom = c)
+    (hgen : Subgroup.closure S = ⊤) : ConjMonodromy C₁ C₂ x₀ c := by
+  let K : Subgroup (FundamentalGroup X x₀) :=
+    { carrier := {g | (C₁.transportQ g.hom)⁻¹ * c * C₂.transportQ g.hom = c}
+      one_mem' := by
+        show (C₁.transportQ ⟦Path.refl x₀⟧)⁻¹ * c * C₂.transportQ ⟦Path.refl x₀⟧ = c
+        simp [transportQ_mk, transport_refl]
+      mul_mem' := by
+        intro g h hg hh
+        show (C₁.transportQ (h.hom.comp g.hom))⁻¹ * c * C₂.transportQ (h.hom.comp g.hom) = c
+        rw [C₁.transportQ_comp, C₂.transportQ_comp]
+        simp only [Set.mem_setOf_eq] at hg hh
+        calc (C₁.transportQ h.hom * C₁.transportQ g.hom)⁻¹ * c *
+              (C₂.transportQ h.hom * C₂.transportQ g.hom)
+            = (C₁.transportQ g.hom)⁻¹ * ((C₁.transportQ h.hom)⁻¹ * c * C₂.transportQ h.hom) *
+                C₂.transportQ g.hom := by group
+          _ = c := by rw [hh, hg]
+      inv_mem' := by
+        intro g hg
+        have hid : g.hom.comp g.inv = Quotient.mk _ (Path.refl x₀) := g.hom_inv_id
+        have e₁ := congrArg C₁.transportQ hid
+        have e₂ := congrArg C₂.transportQ hid
+        rw [C₁.transportQ_comp, transportQ_mk, transport_refl] at e₁
+        rw [C₂.transportQ_comp, transportQ_mk, transport_refl] at e₂
+        show (C₁.transportQ g.inv)⁻¹ * c * C₂.transportQ g.inv = c
+        rw [eq_inv_of_mul_eq_one_right e₁, eq_inv_of_mul_eq_one_right e₂]
+        simp only [Set.mem_setOf_eq] at hg
+        conv_lhs => rw [← hg]
+        group }
+  have hK : Subgroup.closure S ≤ K := (Subgroup.closure_le K).mpr hS
+  intro l
+  let g : FundamentalGroup X x₀ :=
+    (CategoryTheory.Groupoid.isoEquivHom _ _).symm (Quotient.mk _ l)
+  have hg : g ∈ K := hK (hgen ▸ Subgroup.mem_top g)
+  exact hg
 
 variable (C₁ C₂ x₀ c) in
 /-- The single-valued gauge on a path-connected space. -/
