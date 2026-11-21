@@ -38,3 +38,12 @@ Also still open: the quark tail is census-derived (qou-ales option 4), and the d
 ## 2026-11-20 — ported to the bean mount (W3)
 
 This bean was a file in PR #7876. Beans are branch-mounted now, so PR #7876 could not merge it. It is written to the mount unchanged. The probe files moved to the port branch `claude/gg-probes-port-2026-11-20`; both producers re-run there and reproduce the committed witness payloads (gluon segment 36/36; quark tail exit 0).
+
+## 2026-11-21 — reconciled with D1 = A (PR #8744)
+
+Branch `claude/gg-gluon-7876-reconcile-2026-11-21`, cut from #7876 and merged with main (the #7876 files were already on main via `cc055a9d88`).
+- Re-run on main: gluon segment 35/36. The failure was check C3, which read the first `Q_beta_MeV` in the scorecard witness; after D1 = A that is the V³ cell (0.3254). Repointed to the `nuc11_interleaved` history cell; now 36/36. Quark tail byte-identical. Only the CODATA denominator moved (0.78233341 → 0.78233355931 MeV, ≤ 1.5e-5 pp).
+- Stands: V is the gluon unit; g_odd = 0 for γγ gluons; reading 3 admits k = 1 only on CORE·TAIL·Vᵏ; the quark-tail placement pattern.
+- Superseded: question 2 (D1 = A scores bare V³; CORE·TAIL·V¹ was offered to the owner and not chosen).
+- Diagnostic (`d1a_functional_arm.py`, not pre-registered): ε_flavour on CORE·TAIL·Vᵏ, k = 0..3 gives 0.2531 / 0.1451 / 0.2680 / 0.2477 MeV; V³ calibrates to the scored cell to 1e-25. Nothing selected.
+- Still open: question 1 (γγ vs H₂-parity σ₀²). It is moot for the scored Q_β, but no ruling closes it for H₂ bond letters or the old-letter binding redo. Bean stays todo (rule 13a).
