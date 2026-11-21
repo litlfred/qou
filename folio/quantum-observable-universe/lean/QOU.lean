@@ -492,6 +492,7 @@ import QOU.SchurWeyl.PiBlockSeparation
 import QOU.SchurWeyl.HeckeProductSurjective
 import QOU.SchurWeyl.HeckeWedderburnGeneral
 import QOU.SchurWeyl.OcneanuMarkovTraceEveryZ
+import QOU.SchurWeyl.OcneanuTraceFaithful
 import QOU.SchurWeyl.SpinSectorMeasure
 import QOU.SchurWeyl.HeckeSemisimpleGeneral
 import QOU.SchurWeyl.HeckeSemisimpleReal
