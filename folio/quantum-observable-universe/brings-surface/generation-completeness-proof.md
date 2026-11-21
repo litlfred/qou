@@ -44,6 +44,6 @@ rapidly.  For $g \leq 4$, the knot tables give:
 | $4$ | $\geq 8{,}000$ | $9_1, 10_{124}, 11a_{367}, \ldots$ |
 
 The vast majority of these are hyperbolic (non-torus) knots.  The
-generation scheme reaches all of them: the $7$ torus knot generators
+generation scheme reaches all of them: the $7$ generating torus knots
 are the *seeds*, and Skein crossing changes explore the full knot
 landscape within the genus bound.

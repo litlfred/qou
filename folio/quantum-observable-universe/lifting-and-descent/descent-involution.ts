@@ -7,5 +7,4 @@ export default definition({
   title: "Descent involution",
   tags: ["descent", "involution", "idempotent"],
   uses: ["lem:descent"],
-  defines: ["descent"],
 });

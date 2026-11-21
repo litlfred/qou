@@ -8,4 +8,5 @@ export default lemma({
   tags: ["descent", "frobenius-hopf", "star-homomorphism"],
   uses: ["def:recursive-brane-tower"],
   proofs: ["prf:descent"],
+  defines: ["descent"],
 });
