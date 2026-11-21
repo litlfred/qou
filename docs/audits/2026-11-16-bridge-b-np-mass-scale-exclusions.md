@@ -184,7 +184,7 @@ second unknown. Scope (a).
 Result in `computations/probes/bridge_b/h7_result.md`.
 
 - **Forms.** Generic Lie-valued forms now exist (`QOU/Mathlib/LieValuedForms.lean`, rewired into
-  `NonAbelianStokes.lean` today). No specific α, β is defined. Stokes is still an assumed class whose
+  `NonAbelianStokes.lean` today). No specific α, β is defined on the form side. A categorical connection `∇ : A → A ⊗ Ω¹(A)` does exist, but the categorical action `ev ∘ ℒ_q ∘ coev` is a closed trace with no boundary datum. Stokes is still an assumed class whose
   only model is trivial, and no wall sits on `cellBoundary`. No hit.
 - **M_QED, carried all-pairs insertion.** It is constant on each weight space, so it factors out of
   the wall trace: n − p = −Y with or without the wall.

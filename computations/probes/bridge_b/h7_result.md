@@ -25,6 +25,18 @@ stale for the infrastructure.
 - The connection 1-form on `O(SU(2))` (`connection-su2.md`) is a noncommutative-calculus object. It
   does not enter the Stokes class.
 
+**Correction (2026-11-21, after the user's note "There is a categorical connection").** The search
+above covered the Lean and differential-form side only. The corpus does define a connection at the
+categorical layer:
+- `def:categorical-connection`: a morphism `∇ : A → A ⊗ Ω¹(A)` satisfying Leibniz, with curvature `∇²`;
+- `def:categorical-q-connection`: `∇_q = q⁻¹∇ + (1 − q⁻¹)(ι_ξ∇)ϴ_A`;
+- the categorical action is `tr(ℒ_q) = ev ∘ (id ⊗ ℒ_q) ∘ coev`, unique up to one scalar λ.
+
+That trace is a **closed** rigid-duality trace, so it has no boundary term by construction. A wall
+would replace `ev`/`coev` at one end by a boundary (module-category) datum, and the corpus does not
+define one. The coefficient `(1 − q⁻¹)` is derived, but it weighs the Reeb direction in the bulk, not
+a boundary.
+
 **Verdict A: no hit.** Criterion 1 (forms) is met only generically. Criteria 2 and 3 (a wall as a
 boundary, and a fixed coefficient) are not met. This is "not found in these paths", not "impossible".
 What would change it is a specific connection on a specific surface that the corpus names.
