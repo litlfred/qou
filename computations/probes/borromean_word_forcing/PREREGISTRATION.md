@@ -56,3 +56,28 @@ stops if it fails). Prediction: none.
 * "The mass cannot tell β_Bor from X": any P2/P3 hit not in β_Bor's orbit.
 * A failed prediction is reported as such; nothing is re-run with a changed
   filter to make it pass.
+
+## Addendum 1 (2026-11-21, after the first run, before the runs it describes)
+
+First-run outcome, recorded before any extension: P1 as predicted (no
+survivor below length 6; the 4 length-6 survivors are the 4 words of
+β_Bor's orbit). At length 8, 56 survivors, all with χ = χ(β_Bor). P2: 4 / 56 /
+300 same-χ words at lengths 6 / 8 / 10, none with tr = −tr_Bor, and every one
+closes to 3 components with zero pairwise linking. P3: no hit.
+
+The orbit used (rotation, flip, inverse, mirror) has only 4 elements, so the
+length-8 and length-10 words are "outside the orbit" only because the orbit
+omits conjugation by non-cyclic elements. Two extensions, stated now:
+
+**E1. Conjugacy.** For each same-χ word w of length 8 and 10, search for a
+conjugator c (reduced, length ≤ 5) with c·β·c⁻¹ = w in B₃ for some β in the
+4-word orbit, testing equality by the Burau matrices (T_i = q·Burau_i(q⁻²);
+the Burau representation of B₃ is faithful, Magnus–Peluso 1969, so matrix
+equality is equality in B₃ — a cited fact, not proved here). Prediction:
+every one is conjugate to β_Bor or to its mirror (σ₀⁻¹σ₁)³ with |c| ≤ 2.
+
+**E2. P1 to length 12.** Prediction: at length 10 every survivor still has
+χ = χ(β_Bor); at length 12 a second character appears (the commutator
+[σ₀⁴, σ₁²]-type Brunnian braids, Milnor invariant 2), so "nontrivial
+zero-linking pure ⇒ Borromean trace" is a statement about the *shortest*
+words only.
