@@ -460,3 +460,21 @@ the cell. Its comparison value, q²·cell = 1.0762 MeV (−16.79 %), is not evid
 **Correction (Addendum 9a).** The pair-Skein trace under z_D is derived in issue #8923:
 m_n − m_p = ([4]_q/[2]_q²)(μ_d − μ_u), not q²(μ_d − μ_u). The q² factor and its −16.79 % above are
 withdrawn. With μ_d − μ_u = cell (still underived), the value is 0.887789 MeV (−31.36 %).
+
+## 19. μ_d − μ_u from the strand weight, combined with the D pair-Skein map (prereg Addendum 10; owner "2", "3")
+
+Lean, `QOU/QBeta/StrandWeightSplit.lean`, lean-direct exit 0, standard axioms only:
+
+- `quark_split_eq_cell`: under premise (Q), μ_a = c·log q^{H_a} + d₁, the split μ_d − μ_u is −2c·ln q,
+  which is the n–p cell. So the split is derived **given (Q)**. (Q) itself is a premise.
+- `pairSkein_diff` (generic field): the D pair-Skein map of #8923 gives
+  m_n − m_p = ((q² + q⁻²)/[2]_q)(μ_d − μ_u) for p = (u,u,d), n = (u,d,d).
+- `pairSkein_factor_ne_one`: for real q > 0, q ≠ 1, that factor is not 1, via
+  q² + q⁻² − s = (s − 2)(s + 1) with s = q + q⁻¹.
+
+**Consequence (scope a).** With (Q), the two routes give different m_n − m_p at every q ≠ 1:
+the whole-nucleon log map gives the cell (0.873537 MeV at the proton q₀), the pair-Skein map gives
+1.016316 × cell = 0.887789 MeV. So (Q), the spectator log map and the D pair-Skein mass cannot all hold
+as one energy functional. At least one of them has to change. This does not say which one, and it
+refutes none of them alone. Both values are below 2m_e = 1.022 MeV < m_n − m_p, so neither reading
+reaches m_n − m_p (1.293 MeV) at this pin.
