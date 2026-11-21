@@ -38,7 +38,7 @@ The core truncation mechanism — driven exclusively by the vanishing of the $q$
 
  where $S$ acts as the modular $S$-matrix. The resulting representation category devolves directly into a **modular tensor category** — identically matching the required algebraic input driving Chern--Simons TQFT cleanly at level $\kappa$.
 3. **$q = 1$ (classical limit).**
- Spans an infinite array of simple objects evaluating $[k]_1 = k$ (strictly polynomial scaling). All truncation ceases. All exponential damping vanishes. This establishes exactly the [regularity breakdown](#conj:regularity-breakdown) regime.
+ Spans an infinite array of simple objects evaluating $[k]_1 = k$ (strictly polynomial scaling). All truncation ceases. All exponential damping vanishes.
 
 **Root-of-unity regularity is stronger than generic.**
 

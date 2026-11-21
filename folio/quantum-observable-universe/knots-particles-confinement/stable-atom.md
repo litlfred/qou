@@ -1,5 +1,5 @@
 **Definition.**
-*Let $K$ be an atom-knot ([atom](#def:atom-knot)) with normal form $T_w \in H_{n(K)}(q)$. Let $\mathrm{G}(q)$ be the Frobenius Gram matrix of the primitive Wedderburn-block operators $\{e_\lambda\}_{\lambda \vdash k,\;k \leq k_{\max}}$ ([mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)). Decompose the normal form in the primitive basis:*
+*Let $K$ be an atom-knot ([atom](#def:atom-knot)) with normal form $T_w \in H_{n(K)}(q)$. Let $\mathrm{G}(q)$ be the Frobenius Gram matrix of the primitive Wedderburn-block operators $\{e_\lambda\}_{\lambda \vdash k,\;k \leq k_{\max}}$. Decompose the normal form in the primitive basis:*
 
 $$
   T_w
