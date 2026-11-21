@@ -4,7 +4,7 @@ This table evaluates the topological knot formulas ([knot formula table](#rem:kn
 
 $$
   q = q_0, \quad
-  \hbar_q = 1 - q^{-1} = 0.09905, \quad
+  \hbar_q = 1 - q^{-1} \approx 0.09908, \quad
   \mathrm{Vol}(4_1) = {{ qou.computations.q-pinning-50-digit.calibration_inputs.Vol_4_1_str | precision: 6 }}.
 $$
 
@@ -14,7 +14,7 @@ $$
 
 See [Table 1](#tbl:mass-comparison-table-table1-data).
 
-The electron mass is an input. It fixes $\mu_{\mathfrak{u}}$ through the pair Skein mass. The muon mass prediction equals $\mathrm{Vol}(4_1)/\hbar_q^2$. This reproduces the CODATA value to six significant figures at $q = q_0$.
+The electron mass is an input: it fixes the MeV scale. The muon--electron ratio equals $\mathrm{Vol}(4_1)/\hbar_q^2$. This is the relation that fixes $q_0$, so it holds by construction rather than as a prediction.
 
 *Hadrons (from pair Skein masses).*
 
@@ -34,7 +34,7 @@ $$
 }
 $$
 
-with $h = q_0 - q_0^{-1}$, $\hbar_q = 1 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$. The energy scale is the tower-summed $E_0$; the order-zero form $m_e/(q_0(q_0-1))$ gives $0.4447$ MeV. This is the ruled convention-D base: $\varepsilon$ is the Markov trace at $z_D$ (owner ruling 2026-09-08). It compares to the CODATA value of $0.7823$ MeV at $-42.59\%$ ($-333.2$ keV). The convention-D $c_k$ correction ladder that would act on this base is not yet derived, and the factor a cosine phase can supply is capped below $1$ ([cos-resummation](#prop:q-beta-cos-resummation)), so the miss is reported as it stands.
+with $h = q_0 - q_0^{-1}$, $\hbar_q = 1 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$. The energy scale is the tower-summed $E_0$; the order-zero form $m_e/(q_0(q_0-1))$ gives $0.4447$ MeV. This is the ruled convention-D base: $\varepsilon$ is the Markov trace at $z_D$. It compares to the CODATA value of $0.7823$ MeV at $-42.59\%$ ($-333.2$ keV). The convention-D $c_k$ correction ladder that would act on this base is not yet derived, and the factor a cosine phase can supply is capped below $1$ ([cos-resummation](#prop:q-beta-cos-resummation)), so the miss is reported as it stands.
 
 The value scored on the L2 scorecard is a different functional on a different element: the $T^3$ weight split of the same $z_D$ trace on the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$, $\mathfrak{Q}_\beta^{\mathrm{scored}} = |\varepsilon_{\mathrm{flavour}}(V^3)|\,E_0 \approx 0.3254$ MeV ($-58.40\%$), which gives $\mathfrak{m}_n - \mathfrak{m}_p \approx 0.8364$ MeV ($-35.3\%$). The $0.4491$ MeV above is kept as an unscored comparison.
 
