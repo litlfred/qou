@@ -405,14 +405,16 @@ def main() -> int:
         cat = DerivedChiCatalogue()
         print("  no existing catalogue — starting fresh")
 
-    upsert_tally: dict[str, int] = {"added": 0, "unchanged": 0, "replaced": 0}
+    upsert_tally: dict[str, int] = {
+        "added": 0, "unchanged": 0, "replaced": 0, "kept_higher_tier": 0,
+    }
     replaced_keys: list[str] = []
     derived_cells: list = []   # everything this run owns, for the idempotence check
 
     def put(c) -> None:
         derived_cells.append(c)
         outcome = cat.upsert(c)
-        upsert_tally[outcome] += 1
+        upsert_tally[outcome] = upsert_tally.get(outcome, 0) + 1
         if outcome == "replaced":
             replaced_keys.append(f"{c.knot}/{c.partition}/{c.atom}")
 
