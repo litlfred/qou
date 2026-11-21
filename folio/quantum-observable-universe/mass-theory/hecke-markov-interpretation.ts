@@ -18,7 +18,6 @@ export default remark({
   cites: [
     "diaconis-ram2000",
     "bufetov2020",
-    "webster-williamson-2014-markov",
     "geck-lambropoulou-2004",
   ],
   uses: [

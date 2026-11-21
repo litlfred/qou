@@ -99,7 +99,7 @@ try {
     console.error("  ✗ folio/schema/references.ts parsed but holds no entries");
     process.exit(1);
   }
-  // Hand the loaded bibliography to the platform's registry — UNDER --strict ONLY.
+  // Hand the loaded bibliography to the platform's registry (was --strict only until 2026-11-21).
   //
   // Without this, `cites-resolve` NO-OPS ("no reference registry configured")
   // and every `cites[]` entry goes unvalidated against `references.ts`. The
@@ -139,15 +139,16 @@ try {
   // So the second class is a convention with no backing, not a typo, and its
   // fix is a decision (alias entry vs. re-key the convention) rather than
   // research. Both are recorded in bean `qou-cite`.
-  if (strict) {
-    configureReferenceRegistry({
-      references: bib.references,
-      referenceMap: bib.referenceMap,
-      CSLEntrySchema: bib.CSLEntrySchema,
-    });
-  }
-  console.log(`  bibliography: ${n} entries, parses`
-    + (strict ? "; registry configured (cites-resolve ON)" : "") + "\n");
+  // UN-GATED 2026-11-21 (bean qou-cite, step 4 of its own plan): every cites[]
+  // key in folio/quantum-observable-universe now resolves, measured under
+  // --strict at platform 82b3899 with zero cites-resolve issues, so the check
+  // runs on every validate. The history below is why it was gated.
+  configureReferenceRegistry({
+    references: bib.references,
+    referenceMap: bib.referenceMap,
+    CSLEntrySchema: bib.CSLEntrySchema,
+  });
+  console.log(`  bibliography: ${n} entries, parses; registry configured (cites-resolve ON)\n`);
 } catch (err) {
   console.error("  ✗ folio/schema/references.ts DOES NOT PARSE — every citation "
     + "in the paper is unresolvable until this is fixed:");

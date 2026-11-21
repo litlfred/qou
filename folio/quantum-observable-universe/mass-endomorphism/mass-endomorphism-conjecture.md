@@ -11,8 +11,7 @@ The scope of this conjecture is as follows:
     \;=\;
     \bigl|\mathrm{tr}_M(\rho(\beta))\bigr|
     \;+\; \sum_{n \ge 0}\!\Bigl(
-      \textstyle\sum_i \Phi_q(|\hat V_i^{(n)}|)
-      + z^2 \sum_{(i,j)} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)
+      \textstyle\sum_i \Phi_q(|\hat V_i^{(n)}|) + z^2 \sum_{(i,j)} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)
     \Bigr).
   $$
 
@@ -33,8 +32,7 @@ $$
   =
   \sum_{i=1}^{N} \Phi_q(z_i)
   =
-  \frac{\mathrm{Vol}(K_\beta)}{\hbar_q^2}
-  -
+  \frac{\mathrm{Vol}(K_\beta)}{\hbar_q^2} -
   \bigl|\mathrm{tr}_M\!\bigl(\rho(\beta)\bigr)\bigr|,
 $$
 
@@ -129,9 +127,9 @@ One tested three single-level approaches for the proton ($uud$) and neutron ($ud
 | $\Phi_q/\hbar_q^2$ | $-89.8$ | $-125.2$ | $1.395$ | $1.001$ |
 | GS energy | $0.852$ | $1.184$ | $1.390$ | $1.001$ |
 
-None of these single-level computations reproduce the neutron-to-proton mass ratio. The quantum dilogarithm $\Phi_q = \sum \log \lvert\hat{V}_i\rvert$ gives the correct binding energy differences between nuclei (Q-values at Level 0), but not single-nucleon absolute masses.
+None of these single-level computations reproduce the neutron-to-proton mass ratio. The quantum dilogarithm $\Phi_q = \sum \log \lvert\hat{V}_i\rvert$ is the candidate for binding-energy differences between nuclei (Q-values at Level 0); it does not give single-nucleon absolute masses, and the binding magnitude remains open.
 
-The proton mass $938.272$ MeV in this paper derives from the pair Skein formula $m_p = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$. This requires the dressed quark mass $\mu_\mathfrak{u} \approx 311$ MeV as input, calibrated from CODATA $m_p$. The structural content (pair formula, splitting isolation, binding energy) is categorically derived; the absolute scale is calibrated — consistent with absolute mass in MeV not being a framework prediction, the predictive content residing in the dimensionless ratios, with $m_e$ (CAL-1) setting the MeV scale by fiat.
+The framework does not predict the proton mass in MeV. The pair Skein formula $m_p = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$ reaches the CODATA value only with the dressed quark mass $\mu_\mathfrak{u} \approx 311$ MeV as an input fitted to CODATA $m_p$, so the MeV value is a fit. The structural content (pair formula, splitting isolation) is categorically derived. The predictive content lies in dimensionless ratios, with $m_e$ (CAL-1) setting the MeV scale.
 
 ## Candidate structures
 

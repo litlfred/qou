@@ -1,0 +1,86 @@
+{
+  "q0": "1.1099785827513808076",
+  "eps_p": "0.4087181793411276168",
+  "eps_n": "0.33173764473976344437",
+  "f": "0.06788212191844927377",
+  "readings": {
+    "order-zero": {
+      "linear": {
+        "lepton_pair_MeV": "-1.59474806325519",
+        "E_n_minus_E_p_MeV": "-0.322239083177756",
+        "E0F_MeV": "1.27250898007744",
+        "Qbeta_reading_consistent": false,
+        "mn_mp_reading_consistent": false
+      },
+      "log sign +1": {
+        "lepton_pair_MeV": "-11.2602169443573",
+        "Q_MeV": "10.3866803229769",
+        "E_n_minus_E_p_MeV": "-0.87353662138046",
+        "both_positive": false
+      },
+      "log sign -1": {
+        "lepton_pair_MeV": "11.2602169443573",
+        "Q_MeV": "-10.3866803229769",
+        "E_n_minus_E_p_MeV": "0.87353662138046",
+        "both_positive": false
+      }
+    },
+    "tower": {
+      "linear": {
+        "lepton_pair_MeV": "-1.61055922344743",
+        "E_n_minus_E_p_MeV": "-0.325433928734692",
+        "E0F_MeV": "1.28512529471274",
+        "Qbeta_reading_consistent": false,
+        "mn_mp_reading_consistent": false
+      },
+      "log sign +1": {
+        "lepton_pair_MeV": "-11.3718565807418",
+        "Q_MeV": "10.4896592638115",
+        "E_n_minus_E_p_MeV": "-0.882197316930225",
+        "both_positive": false
+      },
+      "log sign -1": {
+        "lepton_pair_MeV": "11.3718565807418",
+        "Q_MeV": "-10.4896592638115",
+        "E_n_minus_E_p_MeV": "0.882197316930225",
+        "both_positive": false
+      }
+    }
+  },
+  "checks": [
+    {
+      "check": "order-zero log +1: pair and Q not both positive",
+      "pass": true
+    },
+    {
+      "check": "order-zero log -1: pair and Q not both positive",
+      "pass": true
+    },
+    {
+      "check": "order-zero linear: Q_beta reading inconsistent (pair < 0)",
+      "pass": true
+    },
+    {
+      "check": "order-zero linear: m_n-m_p reading inconsistent (E(n)-E(p) < 0 < E0F)",
+      "pass": true
+    },
+    {
+      "check": "tower log +1: pair and Q not both positive",
+      "pass": true
+    },
+    {
+      "check": "tower log -1: pair and Q not both positive",
+      "pass": true
+    },
+    {
+      "check": "tower linear: Q_beta reading inconsistent (pair < 0)",
+      "pass": true
+    },
+    {
+      "check": "tower linear: m_n-m_p reading inconsistent (E(n)-E(p) < 0 < E0F)",
+      "pass": true
+    }
+  ],
+  "description": "Addendum 3: reading of E0*F for the one-sided nucleon-rule lepton factor. Linear and log energy maps; sign consistency decides, CODATA printed only.",
+  "q0Anchor": "proton"
+}
