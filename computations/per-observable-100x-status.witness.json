@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T04:01:42.923028+00:00",
-  "commitSha": "63fec93d3ec23ed8e485530093a1ed76a2ccda67",
+  "computedAt": "2026-11-21T04:40:34.830799+00:00",
+  "commitSha": "765d0321eb25779a111569f010d7b1a4292471fd",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 6,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "a42e5fc1338a",
-  "scriptCommitSha": "63fec93d3ec23ed8e485530093a1ed76a2ccda67",
+  "scriptHash": "073b736aac90",
+  "scriptCommitSha": "765d0321eb25779a111569f010d7b1a4292471fd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -413,12 +413,12 @@
         },
         "two_term_alternatives_not_scored": {
           "q0_two_term_adjacent_derived_weighting": {
-            "q0": "1.10997858782912318193491643900",
+            "q0_comparison_pin": "1.10997858782912318193491643900",
             "pred": "137.03600341072908380",
             "err_ppb": "30.8950"
           },
           "q0_two_term_adjacent_plain_weighting_8554": {
-            "q0": "1.10997859515088599908756520360",
+            "q0_comparison_pin": "1.10997859515088599908756520360",
             "pred": "137.03600958764939725",
             "err_ppb": "75.9702"
           }
@@ -478,12 +478,12 @@
         },
         "two_term_alternatives_not_scored": {
           "q0_two_term_adjacent_derived_weighting": {
-            "q0": "1.10997858782912318193491643900",
+            "q0_comparison_pin": "1.10997858782912318193491643900",
             "pred": "3.5371186274146212699",
             "err_ppb": "53.2829"
           },
           "q0_two_term_adjacent_plain_weighting_8554": {
-            "q0": "1.10997859515088599908756520360",
+            "q0_comparison_pin": "1.10997859515088599908756520360",
             "pred": "3.5371186366331864186",
             "err_ppb": "55.8891"
           }

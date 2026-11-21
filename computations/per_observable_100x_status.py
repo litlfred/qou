@@ -2097,7 +2097,7 @@ def main() -> dict:
             _r["two_term_own_term"] = {"status": "not_defined",
                                        "reason": _OWN_TERM_NOT_DEFINED[_o]}
             _r["two_term_alternatives_not_scored"] = {
-                _k: {"q0": fmt(_qv, 30),
+                _k: {"q0_comparison_pin": fmt(_qv, 30),
                      "pred": fmt(_pin_eval[_o](_qv), 20),
                      "err_ppb": fmt(rel_error_ppb(_pin_eval[_o](_qv), _codata_val), 6)}
                 for _k, _qv in _pin_alts.items()
