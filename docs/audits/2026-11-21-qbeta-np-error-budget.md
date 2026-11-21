@@ -148,3 +148,51 @@ q = 1 coefficient: (q+1)/q² vs 2 (−14.4 %), 8/[2]³ (−1.6 %), τ/3 (−0.19
 
 `python3 computations/probes/qbeta_error_budget/qbeta_error_budget_probe.py` (sympy, mpmath;
 about 3 minutes, most of it the word enumeration).
+
+## 9. Q_β as an interaction, q = 1 first (owner card 2026-11-21 13:33Z)
+
+Pre-registered in `computations/probes/qbeta_interaction_q1/PREREGISTRATION.md` (questions 1–4,
+then an addendum 5–6 written before `lepton_factor_q1.py` ran). Exact sympy; CODATA last.
+
+**The reduction (Lean, `e0Tower_mul_sub_one`, `e0Tower_mul_order_two`).** E₀^full·(q − 1) =
+q/(2q − 1)·m_e. So for a functional F of order k at q = 1:
+- k ≥ 2: Q_β/m_e → 0 at q = 1. F can only be an O(h) correction.
+- k = 1: Q_β/m_e → F′(1), a finite number (the scored cell: 3/4).
+- k = 0: Q_β ~ E₀·F(1) plus O(m_e) terms of the same size, so q = 1 alone does not decide it.
+
+**Every interaction energy on record is order ≥ 2.** All 67 one-term cross terms
+C₁(X) = tr_D(Xβ) − tr_D(X)tr_D(β) in the pair-creation probes (A = V₁³, B = σ₀σ₁σ₂, B̄, C = σ₂, the
+D family, and their products with P_L and the weak vertex) vanish to order ≥ 2. So none of them
+can supply the ×2.04; as corrections they are O(h). The non-covariant two-term connected terms
+(T2lep) are order 1 with F′(1) = 1/8 or 1/4: added to 3/4 they give at most 1, still short of 1.80.
+The charged-current block entries (transition amplitudes, not energies) are order 1 with
+F′(1) ∈ {±1, ±2, 4}; reading Q_β as E₀·|amplitude| would be a new identification, not a correction.
+
+**One-sided lepton factor (lead from the eigenphase thread, #8836).** If the lepton factor f
+multiplies only the final state, F = ε_n(V³) − ε_p(V³)·f is order 0.
+- K-weight conservation K(n) = K(p)·K(e)·K(ν̄) has no solution without a ν̄ strand. With ν̄ of
+  weight q⁻¹ it forces the electron sector b = 2 (two d strands); with q⁺¹, b = 3.
+- The plain trace of Δ = σ₀σ₁σ₀ is q³ on every sector.
+- F(1) and E₀^full·|F| at q₀ under each rule on record (none chosen):
+
+| lepton factor rule | f(1) | F(1) | E₀^full·\|F\| at q₀ |
+|---|---|---|---|
+| nucleon rule (K × plain sector trace / [2]ⁿ), electron sector forced by K, times ν̄ | 1/16 | 45/128 | 1.28513 MeV |
+| same, b = 3 with ν̄ of weight q⁺¹ | 1/16 | 45/128 | 1.28513 MeV |
+| nucleon rule, no ν̄ factor | 1/8 | 21/64 | 1.14062 MeV |
+| plain per-sector trace | 1/3 | 1/4 | 0.61477 MeV |
+| Markov value t(Δ) | 1/2 | 3/16 | 0.20818 MeV |
+
+The values span 0.21 to 1.29 MeV, so the normalisation of the lepton factor decides the number.
+The O(h) terms are not small here: the Markov row has F(1) = 3/16 but lands at 0.21 MeV.
+The two K-allowed sectors give the same value.
+
+**Comparison (outside any proof).** CODATA Q_β = 0.78233 MeV, m_n − m_p = 1.29333 MeV. The
+nucleon-rule row is −0.63 % from m_n − m_p and +64 % from Q_β. This is reported, not used. The
+2026-11-20 ruling D2 read the old cell as Q_β, and this row would reopen that question. Choosing a
+row because of where it lands would be selection against the target.
+
+**What is settled (scope (b), invariant: order at q = 1).** No interaction energy on record can be
+the missing q = 1 factor. **What is open:** whether the lepton factor is one-sided, and which
+normalisation it carries. The one rule already ruled for ε (the nucleon rule) is the
+corpus-consistent candidate. It is not adopted here.

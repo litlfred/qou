@@ -130,4 +130,32 @@ theorem qbetaOverMe_le_three_quarters {q : ℝ} (hq : 1 < q) : qbetaOverMe q ≤
   rw [qbetaOverMe_eq q (by positivity) (by linarith) (by linarith) (by positivity)]
   exact rClosed_le_three_quarters hq.le
 
+/-! ## Interaction functionals: only first order in `q − 1` survives at `q = 1` -/
+
+section Interaction
+
+variable {R : Type*} [Field R]
+
+/-- **`E₀^full · (q − 1) = q/(2q − 1)`.** So for any functional `F = (q−1)·G`,
+`E₀^full · F / m_e = G · q/(2q−1)`, whose `q = 1` value is `G(1)`: the `q = 1` coefficient of
+`Q_β/m_e = E₀^full·F/m_e` is the first-order coefficient of `F` at `q = 1`. -/
+theorem e0Tower_mul_sub_one (q : R) (hq : q ≠ 0) (hq1 : q - 1 ≠ 0) (h2 : 2 * q - 1 ≠ 0) :
+    e0TowerOverMe q * (q - 1) = q / (2 * q - 1) := by
+  unfold e0TowerOverMe
+  have hT : 1 - (1 - q⁻¹) ^ 2 = (2 * q - 1) / q ^ 2 := by field_simp; ring
+  rw [hT]
+  field_simp
+
+/-- **A functional of order `≥ 2` at `q = 1` has zero `q = 1` coefficient.** If
+`F = (q − 1)²·G` then `E₀^full·F = (q − 1)·q·G/(2q − 1)`, which carries a factor `q − 1`. Every
+one-term cross term `C₁(X)` on record (67 of them, probe `qbeta_interaction_q1`) has this form. -/
+theorem e0Tower_mul_order_two (q G : R) (hq : q ≠ 0) (hq1 : q - 1 ≠ 0) (h2 : 2 * q - 1 ≠ 0) :
+    e0TowerOverMe q * ((q - 1) ^ 2 * G) = (q - 1) * (q * G / (2 * q - 1)) := by
+  have := e0Tower_mul_sub_one q hq hq1 h2
+  calc e0TowerOverMe q * ((q - 1) ^ 2 * G)
+      = (e0TowerOverMe q * (q - 1)) * ((q - 1) * G) := by ring
+    _ = (q - 1) * (q * G / (2 * q - 1)) := by rw [this]; ring
+
+end Interaction
+
 end QOU.QBeta.QBetaErrorBudget
