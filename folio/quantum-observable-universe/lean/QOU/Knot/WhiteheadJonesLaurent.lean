@@ -1,84 +1,63 @@
 import QOU.Knot.WhiteheadBraidVolumeConjecture
 import Mathlib.Algebra.Polynomial.Laurent
+import QOU.MathlibExt.GaussianBinomial
 
 /-!
-# The normalised Whitehead coloured Jones is an integer Laurent polynomial
+# The normalised coloured Jones of the braid `σ₁⁻²σ₂σ₁⁻¹σ₂` is an integer Laurent polynomial
+
+Throughout, "the Whitehead braid" means `whiteheadWord = σ₁⁻²σ₂σ₁⁻¹σ₂ ∈ B₃`, and the invariant is
+the RT coloured Jones of its **Markov class** (`braidJonesRT`). The statements here are about that
+braid class. They become statements about the Whitehead *link* only with Markov's theorem (closures
+are isotopic iff the braids are Markov-equivalent), which this repository does not yet prove
+(issue #8902).
 
 `WhiteheadBraidVolumeConjecture` defines the value of `[N]⁻¹ J_N(β)` at the Kashaev point as a
 punctured limit, because `[N] = 0` there. This file removes that caveat: there is an integer
 Laurent polynomial `P_N ∈ ℤ[s, s⁻¹]` (`s = q`) such that
 
 * at every `σ` where the braid-closure construction is defined, `[N]⁻¹ J_N(p)(σ) = P_N(σ²)` for
-  every braid `p` Markov-equivalent to the Whitehead braid (`braidJonesRT_eq_laurent`);
+  every braid `p` Markov-equivalent to `whiteheadWord` (`braidJonesRT_eq_laurent`);
 * `P_N(e^{πi/N}) = whiteheadLinkKashaev N` (`laurent_at_kashaev_point`).
 
 So the value at the Kashaev point is the evaluation of a Laurent polynomial, as in the standard
 definition of the Kashaev invariant, and the volume limit is a statement about that evaluation
 (`whiteheadLaurent_volume_conjecture`).
 
+**Variables.** `ℤ[s, s⁻¹]` with `s = q` is `ℤ[t^{±1/2}]` in van der Veen's variable `t = s²`.
+Integrality of the normalised coloured Jones of a link is known in general (Lê 2000; Habiro's
+universal invariant for bottom tangles). This file proves it directly for this braid class from
+van der Veen's formula, and does not use those results.
+
 The only non-polynomial piece of van der Veen's formula is the clasp ratio
-`∏_{j<n} (1 − t^{k+j+1}) / (1 − t^{j+1})`, which is the Gaussian binomial `[n+k choose n]_t`.
-`gaussG` is that binomial, built from the q-Pascal recurrence, and `prod_mul_gaussG` proves
-`∏_{j<n}(1 − x^{j+1}) · G_{n,k}(x) = ∏_{j<n}(1 − x^{k+j+1})` over any commutative ring.
+`∏_{j<n} (1 − t^{k+j+1}) / (1 − t^{j+1})`, which is the Gaussian binomial `[n+k choose n]_t`
+(`QOU.MathlibExt.gaussG`, over any commutative ring).
 
 -- Ref: [vanderveen2008] van der Veen, AGT 8 (2008) 603–624, Lemma 1
--- Ref: [kassel1995] Kassel, "Quantum Groups", Ch. IV.2 (Gaussian binomials)
+-- Ref: [le2000] Lê, "Integrality and symmetry of quantum link invariants", Duke Math. J. 102 (2000)
+-- Ref: [habiro2002] Habiro, "Bottom tangles and universal invariants", AGT 6 (2006)
 -/
 
 namespace QOU.Knot.FigureEightVolume
 
 open Polynomial Finset
+open QOU.MathlibExt (gaussG prod_mul_gaussG)
 open QOU.Mass.QuantumSl2
 open QOU.Mass.QuantumSl2.MarkovTrace
 open QOU.IwahoriHecke.BraidGroup (BraidGroupN)
 open QOU.Torsion.MassTraceMarkovClass (artinTower)
 open QOU.MathlibExt.MarkovMoves
 
-/-! ### The Gaussian binomial -/
-
-/-- The Gaussian binomial `G_{n,k} = [n+k choose n]_x ∈ ℤ[x]`, by the q-Pascal recurrence
-`G_{n+1,k+1} = G_{n,k+1} + x^{n+1} G_{n+1,k}`. -/
-noncomputable def gaussG : ℕ → ℕ → ℤ[X]
-  | 0, _ => 1
-  | _ + 1, 0 => 1
-  | n + 1, k + 1 => gaussG n (k + 1) + X ^ (n + 1) * gaussG (n + 1) k
-
-/-- **The Gaussian binomial clears the clasp denominators**, over any commutative ring:
-`∏_{j<n}(1 − x^{j+1}) · G_{n,k}(x) = ∏_{j<n}(1 − x^{k+j+1})`. -/
-theorem prod_mul_gaussG {R : Type*} [CommRing R] (x : R) :
-    ∀ n k : ℕ, (∏ j ∈ range n, (1 - x ^ (j + 1))) * (gaussG n k).eval₂ (Int.castRingHom R) x
-      = ∏ j ∈ range n, (1 - x ^ (k + j + 1))
-  | 0, k => by simp [gaussG]
-  | n + 1, 0 => by simp [gaussG]
-  | n + 1, k + 1 => by
-    have h1 := prod_mul_gaussG x n (k + 1)
-    have h2 := prod_mul_gaussG x (n + 1) k
-    have hP : ∏ j ∈ range (n + 1), (1 - x ^ (j + 1))
-        = (∏ j ∈ range n, (1 - x ^ (j + 1))) * (1 - x ^ (n + 1)) := prod_range_succ _ _
-    have hB : ∏ j ∈ range (n + 1), (1 - x ^ (k + j + 1))
-        = (∏ j ∈ range n, (1 - x ^ (k + 1 + j + 1))) * (1 - x ^ (k + 1)) := by
-      rw [prod_range_succ']
-      congr 1
-      exact prod_congr rfl fun j _ => by rw [show k + (j + 1) + 1 = k + 1 + j + 1 by omega]
-    have hT : ∏ j ∈ range (n + 1), (1 - x ^ (k + 1 + j + 1))
-        = (∏ j ∈ range n, (1 - x ^ (k + 1 + j + 1))) * (1 - x ^ (k + 1 + n + 1)) :=
-      prod_range_succ _ _
-    rw [hP, hB] at h2
-    simp only [gaussG, eval₂_add, eval₂_mul, eval₂_X_pow]
-    rw [hP, hT]
-    linear_combination (1 - x ^ (n + 1)) * h1 + x ^ (n + 1) * h2
-
 /-! ### The clasp product as a Laurent polynomial -/
 
 /-- The clasp product of van der Veen's formula is a Laurent monomial product times the
 Gaussian binomial at `t = s²`, wherever its denominators are nonzero. -/
-theorem clasp_prod_eq {s : ℂ} {N n k : ℕ}
+theorem clasp_prod_eq {K : Type*} [Field K] {s : K} {N n k : ℕ}
     (hden : ∀ j ∈ range n, 1 - s ^ (2 * ((j : ℤ) + 1)) ≠ 0) :
     ∏ j ∈ range n,
         (1 - s ^ (2 * ((N : ℤ) - ((j : ℤ) + 1) - k))) * (1 - s ^ (2 * ((j : ℤ) + 1 + k)))
           / (1 - s ^ (2 * ((j : ℤ) + 1)))
       = (∏ j ∈ range n, (1 - s ^ (2 * ((N : ℤ) - ((j : ℤ) + 1) - k))))
-          * (gaussG n k).eval₂ (Int.castRingHom ℂ) (s ^ 2) := by
+          * (gaussG n k).eval₂ (Int.castRingHom K) (s ^ 2) := by
   have hpow : ∀ a : ℕ, s ^ (2 * (a : ℤ)) = (s ^ 2) ^ a := fun a => by
     rw [← zpow_natCast, ← zpow_natCast, ← zpow_mul]; push_cast; ring_nf
   have hD : ∏ j ∈ range n, (1 - (s ^ 2) ^ (j + 1)) ≠ 0 := by
@@ -162,9 +141,9 @@ theorem braidGeneric_root {m : ℕ} {σ : ℂ} (h : BraidGeneric m σ) :
   have : (σ ^ 2) ^ i * (σ ^ 2) ^ i = 1 := by rw [← pow_add, ← two_mul, h1]
   exact (eq_inv_of_mul_eq_one_left this)
 
-/-- **The normalised coloured Jones of the Whitehead braid is a Laurent polynomial in `q`.** For
-every braid `p` Markov-equivalent to the Whitehead braid and every `σ` where the construction is
-defined, `[N]⁻¹ J_N(p)(σ) = P_N(σ²)` with `P_N = whiteheadLaurent N ∈ ℤ[q, q⁻¹]`. -/
+/-- **The normalised coloured Jones of the Markov class of `whiteheadWord` is a Laurent polynomial
+in `q`.** For every braid `p` Markov-equivalent to `whiteheadWord` and every `σ` where the
+construction is defined, `[N]⁻¹ J_N(p)(σ) = P_N(σ²)` with `P_N = whiteheadLaurent N ∈ ℤ[q, q⁻¹]`. -/
 theorem braidJonesRT_eq_laurent {m : ℕ} {p : Tot BraidGroupN}
     (hp : QOU.MathlibExt.MarkovMoves.MarkovEquiv
       QOU.Torsion.MassTraceMarkovClass.artinTower ⟨2, whiteheadWord⟩ p)
@@ -179,9 +158,9 @@ theorem laurent_at_kashaev_point {N : ℕ} (hN : 1 ≤ N) :
   rw [← vdvWhiteheadLinkJones_eq_laurent _ fun i h1 h2 => kashaev_pow_ne_one h1 h2,
     vdvWhiteheadLinkJones_at_kashaev_point hN]
 
-/-- **The volume conjecture for the Whitehead braid, with the Kashaev value as an evaluation.**
-`(2π/N) log ‖P_N(e^{πi/N})‖ → Vol(W) = Vol(Borromean)/2`, where `P_N ∈ ℤ[q, q⁻¹]` is the
-Laurent polynomial that equals `[N]⁻¹ J_N` of the Whitehead braid at every generic `q`. -/
+/-- **The volume conjecture for the Markov class of `whiteheadWord`, with the Kashaev value as an
+evaluation.** `(2π/N) log ‖P_N(e^{πi/N})‖ → Vol(W) = Vol(Borromean)/2`, where
+`P_N ∈ ℤ[q, q⁻¹]` is the Laurent polynomial that equals `[N]⁻¹ J_N` of that braid class at every generic `q`. -/
 theorem whiteheadLaurent_volume_conjecture :
     Filter.Tendsto
       (fun N : ℕ => (2 * Real.pi / N) * Real.log ‖evalL
