@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T10:32:43Z
-updated_at: 2026-10-04T15:25:08Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-nu9d
 blocking:
     - qou-4w5b
@@ -78,3 +78,10 @@ exception and say so in the PR rather than discovering it at merge time.
   **Confounded; not bisected.** What would separate them: a small PR carrying
   one merge commit. Fails -> merge commits. Succeeds -> size.
 - Whether it is GitHub, the MCP github server, or the agent proxy.
+
+
+## 2026-11-21 — status check (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
+
+- Recorded as a TRAP in the agent-memory files on branch `claude/agent-ops-traps-2026-11-21` (commit 64a3e7902), PR pending owner approval. Close this bean when that PR merges. Any script or producer fix named above stays open here.

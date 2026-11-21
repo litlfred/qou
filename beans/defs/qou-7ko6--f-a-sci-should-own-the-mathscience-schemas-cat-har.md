@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-27T05:52:03Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-n4r9
 ---
 
@@ -485,3 +485,10 @@ and `content/pipeline/qa-agent-entry.ts` (which configure nothing), against
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+
+## 2026-11-21 — status check (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
+
+- Not started. This story is owner-gated (AGENTS.md 'ask the owner before changing things') and needs work in a platform repo as well as qou, so it was not started in the wave-1 drain.

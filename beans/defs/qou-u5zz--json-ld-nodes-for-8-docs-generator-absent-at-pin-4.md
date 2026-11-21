@@ -6,7 +6,7 @@ type: task
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:23Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-n4r9
 ---
 
@@ -29,3 +29,10 @@ Extracted 2026-10-04 from the prose of session log `qou-m6sp` (work had no bean)
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8167, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-21 — status check (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
+
+- Not started. This story is owner-gated (AGENTS.md 'ask the owner before changing things') and needs work in a platform repo as well as qou, so it was not started in the wave-1 drain.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-11T07:33:48Z
-updated_at: 2026-10-11T07:34:40Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-n4r9
 ---
 
@@ -179,3 +179,10 @@ than when I wrote it: the 95 closed queue entries are records that *should* keep
 their historical paths, and most of the rest are prose in bean bodies that no
 tool reads. **Status: `todo`**, holding only the 789 question, which nothing
 depends on.
+
+
+## 2026-11-21 — status check (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
+
+- Unchanged: only the 789-path question remains, which this bean already recommends leaving. Nothing depends on it.

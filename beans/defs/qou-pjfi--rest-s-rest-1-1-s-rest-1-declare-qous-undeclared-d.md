@@ -9,7 +9,7 @@ tags:
     - rest
     - upstream-fa
 created_at: 2026-10-04T16:35:58Z
-updated_at: 2026-10-04T16:54:29Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-n4r9
 ---
 
@@ -32,3 +32,10 @@ Checked against the platform graph-kind registry at 26c5d37: `docs` is renderabl
 - Outstanding-work docs (docs/backlog/, plans, attack-option lists) go to beans (agent work) or todos/ (the owner's own work).
 - Math notes (derivation notes, cheat sheets, proofs, refutations) are NOT todos: filing them there would count finished derivations as open work. They wait for a working-notes graph kind, filed upstream as folio-assistant bean folio-assistant-8npa (child of 8jt6), or move into folio/ blocks only by an owner-approved verbatim move.
 - Handoffs and coordination logs go to beans/notes; status surveys to beans/surveys (classify first, move by rename after approval).
+
+
+## 2026-11-21 — status check (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
+
+- Not started. This story is owner-gated (AGENTS.md 'ask the owner before changing things') and needs work in a platform repo as well as qou, so it was not started in the wave-1 drain.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T23:25:01Z
-updated_at: 2026-10-04T15:24:09Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-n4r9
 ---
 
@@ -87,3 +87,10 @@ and the shell result is what I believed.
 
 Left open rather than scrapped, because class 4 is a real improvement to a
 selector worth keeping. The original claim is dead.
+
+
+## 2026-11-21 — status check (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
+
+- The original claim is retracted (title says so). What is left is the selector improvement (resolve symlinks before calling a path missing). Not started.

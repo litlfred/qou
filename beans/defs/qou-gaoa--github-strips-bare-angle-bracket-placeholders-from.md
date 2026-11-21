@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T23:05:29Z
-updated_at: 2026-10-04T15:20:38Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-nu9d
 ---
 
@@ -171,3 +171,10 @@ and `pickup` is good evidence they are unaffected, not proof.
 One pass over `coordinate.md`'s 7 template blocks, replacing the 35 bracketed
 placeholders with a syntax that survives — `#NNN`, `{one sentence}`,
 `COMMIT-SHA`. Not the other two files.
+
+
+## 2026-11-21 — status check (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
+
+- Recorded as a TRAP in the agent-memory files on branch `claude/agent-ops-traps-2026-11-21` (commit 64a3e7902), PR pending owner approval. Close this bean when that PR merges. Any script or producer fix named above stays open here.

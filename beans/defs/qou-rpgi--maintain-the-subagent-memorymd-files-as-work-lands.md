@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T10:24:44Z
-updated_at: 2026-10-04T15:21:26Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-nu9d
 ---
 
@@ -183,3 +183,10 @@ back in full — so the instruction lives there too.
    not need the agent* — and it makes memory **write-only**, so a new
    resolved-topic row would never reach anyone. Read-when-relevant fails the
    same way: deciding a TRAP is irrelevant requires already knowing it.
+
+
+## 2026-11-21 — status check (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
+
+- Ongoing by nature. This session added TRAP entries to `merge-coordinator/` and `compute-precision-auditor/MEMORY.md` on branch `claude/agent-ops-traps-2026-11-21` (PR pending owner approval).

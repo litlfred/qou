@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T15:34:11Z
-updated_at: 2026-10-04T15:25:09Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-nu9d
 ---
 
@@ -45,3 +45,10 @@ is the documented behaviour and callers must defend against it.
 
 NOT CLAIMED: that y_lam does or does not vanish on >2-row partitions. The float
 path cannot separate "exactly 0" from "1e-31", so this bean does not settle it.
+
+
+## 2026-11-21 — status check (bean drain wave 1, cat-harness-migr)
+
+Session: https://claude.ai/code/session_01Qmmkt7b8yRZEmMY5Qwa33W. Checked against `origin/main` `2ae54ab4010`. Status unchanged.
+
+- Recorded as a TRAP in the agent-memory files on branch `claude/agent-ops-traps-2026-11-21` (commit 64a3e7902), PR pending owner approval. Close this bean when that PR merges. Any script or producer fix named above stays open here.
