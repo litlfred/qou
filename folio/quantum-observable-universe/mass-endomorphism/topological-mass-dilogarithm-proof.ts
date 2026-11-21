@@ -6,7 +6,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:topological-mass-dilogarithm-sketch",
   renamedFrom: ["prf:topological-mass-dilogarithm"],
-  title: "Argument sketch for the quantum dilogarithm evaluation",
+  title: "Argument sketch for the symmetric $q$-dilogarithm evaluation",
   interprets: "conj:topological-mass-dilogarithm",
   uses: ["conj:topological-mass-dilogarithm"],
 });

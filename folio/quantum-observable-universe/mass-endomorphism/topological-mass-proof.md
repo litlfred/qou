@@ -39,6 +39,6 @@ in both inequalities above. Both are open: neither is forced by the disc
 splitting and support hypotheses.  If each
 exceptional-divisor summand equals the symmetric $q$-dilogarithm
 $-\mathrm{Li}_2^q(-z_i)$, as the
-[quantum dilogarithm evaluation](#conj:topological-mass-dilogarithm) conjectures,
+[symmetric $q$-dilogarithm evaluation](#conj:topological-mass-dilogarithm) conjectures,
 then the bound reads
 $\mathfrak{m}(\varrho) \le \lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert + \sum_{i=1}^{N} \bigl(-\mathrm{Li}_2^q(-z_i)\bigr)$.  $\square$
