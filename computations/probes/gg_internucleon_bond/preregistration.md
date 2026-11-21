@@ -118,3 +118,17 @@ Changing the space, the order, the level range, the tolerance or the outcome rul
 results; using AME binding energies, the trace ratio or any downstream number to choose a word,
 site or power. No number here is compared to experiment. Scope (a) throughout: this space, this
 word order, convention D, proton pin.
+
+## Addendum (2026-11-21, after the D and partial T runs, before any ⁴He word was evaluated)
+
+**Deviation from §3 step 3, made for run time only.** All 1702 arm-C words pass at D, so the
+T-uniform survivor list is about 1730 words. At ~30–45 s per ⁴He word on the two cores here, §3
+step 3 as written is ~14–20 h. ⁴He is therefore run on: every arm-A and arm-B T survivor, and the
+arm-C T survivors of length 2 and 4. Arm-C words of length 6 are **not** run at ⁴He. This is
+decided by word length and arm only, before any ⁴He result exists; it cannot change the outcome
+(arm C is not selectable). Arm C at ⁴He covers at most 52 of its 1702 words.
+
+Also noted before reading further: at D the arm-A word `LR` reduces in the braid group to
+`σ_{g−1}σ_{g+1}⁻¹` (the `σ_g⁻¹σ_g` cancels). The pre-registered cost is the γγ word's letter
+count, not the reduced braid length; both are reported, the outcome uses the former as
+pre-registered.
