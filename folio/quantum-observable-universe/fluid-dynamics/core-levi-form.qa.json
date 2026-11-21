@@ -1273,6 +1273,24 @@
         "severity": "minor",
         "evidence": "Lean encodes the pointwise algebra of (c) and (d) over a generic ring with C abstracting curl ξ and g abstracting ∇f: faithful core. Warn: (b) (the wedge identity) and the identification C = curl ξ are not in Lean. Inline proof checked: v×w ∥ ξ for v,w ⊥ ξ ✓; curl(\\|ω\\|ξ) = \\|ω\\|curl ξ + ∇\\|ω\\|×ξ ✓",
         "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "02596952deac",
+          "ts": "e5dbd47438ab",
+          "lean": "983df022b07f",
+          "lean_statement": "51d5f051c31b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:55:06.180Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: a pointer to conj:levi-degeneracy was removed. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Lean encodes the pointwise algebra of (c) and (d) over a generic ring with C abstracting curl ξ and g abstracting ∇f: faithful core. Warn: (b) (the wedge identity) and the identification C = curl ξ are not in Lean. Inline proof checked: v×w ∥ ξ for v,w ⊥ ξ ✓; curl(\\|ω\\|ξ) = \\|ω\\|curl ξ + ∇\\|ω\\|×ξ ✓"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2546,6 +2564,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:11.059Z",
+  "updated_at": "2026-11-21T07:55:06.180Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
