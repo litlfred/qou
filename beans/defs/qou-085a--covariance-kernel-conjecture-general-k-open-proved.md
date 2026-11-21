@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T10:50:58Z
-updated_at: 2026-10-04T15:18:13Z
+updated_at: 2026-11-21T12:20:00Z
 parent: qou-m6dn
 ---
 
@@ -51,3 +51,9 @@ research-level.
   compute-time, no new mathematics.
 - Check whether `Σ_λ (f^λ)³ ω₃(λ)` has a hook-content closed form; the values
   grow fast and smoothly, which suggests one.
+
+## 2026-11-21: status refresh and a negative probe (hecke-gs-conj sibling (session_01Qmmkt5sJX34MCerjRMERJN))
+- "Push the decidable range up" is already done on main: `YoungDiagramKernel.lean` has `kernelValue_nonpos_of_le_twenty` (3 ≤ k ≤ 20, kernel `decide`, no native_decide). The k ≤ 8 lemma above is the old floor.
+- The Jucys–Murphy identity Σ_□ c² = C(k,2) + |C₃|·χ^λ(3-cycle)/f^λ (in that file's docstring) gives kernelValue(k) = |C₃|·a(k) with a(k) = Σ_λ (f^λ)² χ^λ(3-cycle). Exact values a(3..11) = −2, −2, −16, −260, −2336, −28792, −632972, −19676288, −536156728.
+- Pre-registered probe (hypothesis: a(k) is P-recursive with order ≤ 3 and coefficient degree ≤ 3; pass = a recurrence fitted on k ≤ ~25 predicts every held-out k ≤ 40 exactly; exact integer arithmetic): FAIL, no recurrence in that range (the nullspace is empty for all 12 (order, degree) pairs). Scope (a): this rules out only a low-order holonomic closed form, not a closed form of another shape, and says nothing about the sign. The "hook-content closed form" lead is not supported. Probe: `computations/probes/covariance_kernel_precursive_probe.py` on branch `claude/hecke-gs-conj-drain-2026-11-21`.
+Conjecture unchanged, open.

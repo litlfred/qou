@@ -1,11 +1,11 @@
 ---
 # qou-2och
 title: 'GS-2: H_3(q) Confluence, n=4 Bokut-Shiao Overlap, Block-Ordered Nuclear Induction, Critical Lyapunov alpha_crit = q_0 & GPMT Radical Separation'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T16:48:46Z
-updated_at: 2026-11-20T16:10:00Z
+updated_at: 2026-11-21T12:20:00Z
 parent: qou-uhx0
 ---
 
@@ -26,3 +26,10 @@ What exists and what does not:
 - Still open here: `local_confluence` (the last Diamond-Lemma axiom); the block-locality induction for the Hecke-only nuclear reduction (`GSNormalForm.lean` honest-scope items 1–3).
 - Split out: alpha_crit = q_0 Lyapunov → bean qou-a7cr (owner-scoped, do not start); GPMT radical separation → bean qou-gp9r.
 - The content claim that {Hecke, YB, far-comm} is the GS basis (`prop:nuclear-groebner-reduction`) is fixed on PR (W12, owner Option 1).
+
+## 2026-11-21: completed, the GS parts are on main (hecke-gs-conj sibling (session_01Qmmkt5sJX34MCerjRMERJN))
+Checked on main 2ae54ab40, file by file:
+- n = 4 Bokut–Shiao overlap: `UGB/GrobnerShirshov/HeckeGS.lean:652` `hecke_not_gs_basis_four` (the naive {Hecke, YB, far-comm} is not GS) and `HeckeCompletion.lean:18740` `heckeCompleted_isGrobnerShirshovBasis` (the completed system is GS for every n, so H_3(q) included).
+- Confluence: `local_confluence`, `confluence` and `normal_form_unique` in `CompositionLemma.lean` are theorems (up to CoeffEq), from `DiamondLemma.lean:966` `reductionUnique` (bean qou-lc7q). No `axiom` left in CompositionLemma / DiamondLemma / HeckeGS / HeckeCompletion / HeckeChain*.
+- Block-ordered nuclear induction: `HeckeChainNormalForm.lean` (PR #8619) and `HeckeChainEveryPath.lean:216` `chainXi_every_reduction_heckeOnly` (PR #8641); the C(A−1,2) count is a block-multiplication count (`chainXi_L3_needs_two_steps`, owner reworded statement 1).
+The two parts of the title that are not GS mathematics were split out and stay open: alpha_crit = q_0 → qou-a7cr (owner scope), GPMT radical separation → qou-gp9r. The 872-line file the 2026-11-19 resolution named still does not exist; this completion rests on the files above, not on it.

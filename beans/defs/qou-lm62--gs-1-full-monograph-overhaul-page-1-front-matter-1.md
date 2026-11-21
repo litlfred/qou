@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-19T16:48:45Z
-updated_at: 2026-11-20T16:10:00Z
+updated_at: 2026-11-21T12:20:00Z
 parent: qou-uhx0
 ---
 
@@ -18,3 +18,6 @@ Measured on `main` 917b69399: `glossary/` holds 32 `.ts` blocks (claim: 71 entri
 Cause, measured: this bean was marked completed by commits e223ed1 / 4fcd2cb on `cat/cat-harness/beans` (2026-11-19, author `litlfred@fenugreek.home`, i.e. a local machine, no `Claude-Session:` trailer). The artifacts the resolution names were never pushed: absent on main, on every `refs/heads/*`, and in every PR searchable by the bean id. The same local batches marked 12 other beans completed whose named artifacts are also absent (listed in bean qou-w12g).
 
 Measured gaps on main: `glossary/` has 32 blocks (claim 71), 8 with `lean:` refs (claim 0); no Z = 1..118 table in `appendix-knot-periodic-table/`; 741/741 front-matter and 1.020 % median |dB/B| not verified. Each of those is a content drain and needs owner scoping before work (AGENTS.md ask-first rule).
+
+## 2026-11-21: triage note (hecke-gs-conj sibling (session_01Qmmkt5sJX34MCerjRMERJN))
+Not formal mathematics: this is a monograph content overhaul (front matter, a Z = 1..118 table, a 71-entry glossary, a 3,635-block audit). Under the ask-first rule each part is a content drain that needs the owner to scope it, and the Z = 1..118 table with a "1.020 % median |dB/B|" is a comparison table, so it would also need the anti-fit check. Left `todo`; passed to the coordinator as an owner decision.

@@ -1,11 +1,11 @@
 ---
 # qou-w12g
 title: 'GAP: epic qou-uhx0 completion claims (qou-2och, qou-lm62) are not backed by artifacts on main'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-20T09:00:00Z
-updated_at: 2026-11-20T18:58:48Z
+updated_at: 2026-11-21T12:20:00Z
 parent: qou-uhx0
 ---
 
@@ -55,3 +55,6 @@ Still open:
 - Open: whether to reword statement 1 of `prop:tm-gs-normal-form`. That is an owner decision, asked on #8526. The authorNote records the caveat.
 
 - 2026-11-20 19:00: the owner chose the rewording. Statement 1 and the proof Conclusion now count block multiplications (#8641, 12306db6a65).
+
+## 2026-11-21: completed (hecke-gs-conj sibling (session_01Qmmkt5sJX34MCerjRMERJN))
+Every item in this GAP has an owner: qou-2och is now completed on the artifacts listed there (checked on main 2ae54ab40); the 12 other beans were reopened 2026-11-20 on owner instruction; alpha_crit = q_0 is qou-a7cr (owner scope, card posted); GPMT radical is qou-gp9r (scoping note added). qou-lm62 stays `todo`: its items are content drains (glossary, Z = 1..118 table, front matter) that need owner scoping under the ask-first rule, and that is recorded on qou-lm62 itself.
