@@ -237,7 +237,6 @@ export default chapter({
         "intro-hecke-baer-star-chirality",
         "hecke-baer-star-generic",
         "hecke-baer-star-generic-proof",
-        "hecke-baer-star-generic-interpretation",
         "explicit-central-idempotent-cross-checks",
         "explicit-central-idempotent",
         "hecke-baer-star-generic-corollary",

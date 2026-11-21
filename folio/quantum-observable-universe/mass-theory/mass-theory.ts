@@ -554,6 +554,7 @@ export default chapter({
         "cl3-zeta5-geometric-realization",
         "bring-figure-eight-depth-2-witness",
         "vc-as-depth-2-instance",
+        "hecke-baer-star-generic-interpretation",
         "crossed-module-euler-characteristic",
         "crossed-module-euler-characteristic-proof",
         "geom-bridge-status",
