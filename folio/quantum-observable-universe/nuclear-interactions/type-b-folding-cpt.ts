@@ -21,6 +21,7 @@ export default conjecture({
     "brundankleshchev2009",
     "lecouvey2007",
     "geck-lambropoulou-2004",
+    "lusztig2003",
   ],
   authorNotes: [
     {
