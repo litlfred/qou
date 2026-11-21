@@ -420,4 +420,14 @@ theorem covariance_kernel_le_zero_of_le_eight (k : ℕ) (hk : k ≤ 8) :
     kernelValue k ≤ 0 := by
   interval_cases k <;> decide
 
+
+/-- **Exact polynomial relation between `M₆(n)` and `3 · M₄(n)` (`qou-2fdj`).**
+For every `n : ℤ`, `5 * M6 n = 7 * (3 * n - 8) * threeM4 n`, and at the minimal threshold
+`n = 3`, `threeM4 3 = 30` and `M6 3 = 42`. -/
+theorem five_mul_M6_eq_seven_mul_threeM4 (n : ℤ) :
+    5 * M6 n = 7 * (3 * n - 8) * threeM4 n ∧
+      threeM4 3 = 30 ∧
+      M6 3 = 42 := by
+  refine ⟨by unfold M6 threeM4; ring, by decide, by decide⟩
+
 end QOU.BraidsAndKnots.YoungDiagramKernel
