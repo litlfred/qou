@@ -66,7 +66,15 @@ from gamma_gamma_isospin_channel_probe import VERTICES, nucleon  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
-QV = sp.Rational(Q_50_DIGIT_STR)
+# BOTH LAYERS MUST CARRY THE SAME q. This was `sp.Rational(Q_50_DIGIT_STR)` while the
+# mpmath side below is `Q_MP` (70 digits) -- so the probe computed its H_6 characters and
+# Markov weights at one q and its `laws()` arithmetic at another, a 2.13e-50 internal
+# straddle. That gap is exactly what broke the three 1e-50 cross-witness checks
+# (H6_traces / D2_log / D4_ratios): the values agreed to 48 digits and the tolerance asks
+# for 51. Fixed at the producer per the owner's ruling (option D, 2026-11-21), not by
+# widening the tolerance -- a bound sized to its own miss is a fit.
+with mp.workdps(DPS + 15):
+    QV = sp.Rational(mp.nstr(Q_MP, DPS + 10, strip_zeros=False))
 S2 = [(2, "sigma")]
 PAIRS = ("pp", "pn", "np", "nn")
 HERE = Path(__file__).resolve().parent

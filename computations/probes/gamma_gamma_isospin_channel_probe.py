@@ -166,7 +166,11 @@ AME_COMPARISON = {  # labelled comparison only; feeds nothing
 def main() -> int:
     t0 = time.time()
     q = Q_MP
-    qv = sp.Rational(Q_50_DIGIT_STR)
+    # Same straddle as two_nucleon_binding_law_comparison_probe: the mpmath side is
+    # Q_MP (70 digits) and this sympy side was the 50-digit string, a 2.13e-50 gap
+    # inside one computation. Owner ruling option D, 2026-11-21.
+    with mp.workdps(DPS + 15):
+        qv = sp.Rational(mp.nstr(Q_MP, DPS + 10, strip_zeros=False))
     from qou_substrate.constants import M_E_MEV  # noqa: PLC0415
     me = mp.mpf(str(M_E_MEV))
     hbar_q = 1 - 1 / q
