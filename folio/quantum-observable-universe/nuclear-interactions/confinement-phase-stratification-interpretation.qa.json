@@ -7,7 +7,7 @@
     "md": "folio/quantum-observable-universe/nuclear-interactions/confinement-phase-stratification-interpretation.md"
   },
   "source_hashes": {
-    "md": "f2e39e667f4a",
+    "md": "d6151972c8f6",
     "ts": "1150ce68c5c2"
   },
   "criteria": {
@@ -39,6 +39,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-emoji-content": [
@@ -57,6 +74,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-first-person-work": [
@@ -75,6 +109,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-time-stamped-notes": [
@@ -93,6 +144,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-unicode-crash": [
@@ -111,6 +179,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-editorializing": [
@@ -129,6 +214,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-scholarly-default": [
@@ -162,6 +264,38 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "voice-title-scholarly": [
@@ -180,6 +314,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-ai-slop": [
@@ -213,6 +364,38 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "voice-author-notes-pollution": [
@@ -231,6 +414,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:54.315Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-status-section": [
@@ -249,6 +449,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:54.315Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "framework-canonical": [
@@ -267,6 +484,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "wall-side-correct": [
@@ -285,6 +519,24 @@
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
         "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -419,6 +671,25 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
       }
     ],
     "canonical-calibration-count": [
@@ -437,6 +708,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-no-numerology": [
@@ -455,6 +743,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-witness-pinned": [
@@ -473,6 +778,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -491,6 +813,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -509,6 +848,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -527,6 +883,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -545,6 +918,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -563,6 +953,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "compute-witness-exists": [
@@ -581,6 +988,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "compute-lp-dual-present": [
@@ -599,6 +1023,23 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "detangler-no-forward-ref": [
@@ -617,6 +1058,24 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "detangler-section-band": [
@@ -635,6 +1094,24 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -653,6 +1130,25 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -671,6 +1167,25 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -703,6 +1218,37 @@
           "edge_span_mean": 2,
           "worst_target": ""
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 0,
+          "cone_size": 6,
+          "depth": 5,
+          "pagerank": 7.6e-05,
+          "edge_span_max": 2,
+          "edge_span_mean": 2,
+          "worst_target": ""
+        }
       }
     ],
     "detangler-graph-energy": [
@@ -726,6 +1272,29 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "detangler-topic-coherence": [
@@ -744,6 +1313,24 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -762,6 +1349,24 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "bib-cite-resolves": [
@@ -781,6 +1386,25 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -802,6 +1426,25 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -822,6 +1465,25 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -841,6 +1503,25 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -902,6 +1583,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-false-claim": [
@@ -947,6 +1643,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-vacuous": [
@@ -992,6 +1718,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-circular": [
@@ -1037,6 +1793,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-overclaim": [
@@ -1082,6 +1868,37 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The edit (G -> R_{>1}) is correct and introduces nothing. Already on main and not introduced by this PR: the remark states as fact that for simple particles Omega(P) is a single connected interval of R_{>1} containing q0, but the proposition it interprets (prop:confinement-phase-stratification) proves only openness and constancy on a phase. Connectedness, and q0 lying in Omega(P), are not shown there. Suggest 'is expected to form'."
       }
     ],
     "da-hidden-dof": [
@@ -1127,6 +1944,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-non-sequitur": [
@@ -1172,6 +2019,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1217,6 +2094,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-citation-misuse": [
@@ -1262,6 +2169,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1307,6 +2244,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-empirical-fragility": [
@@ -1352,6 +2319,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-physical-implausibility": [
@@ -1397,6 +2394,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-reproducibility": [
@@ -1442,6 +2469,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "da-referee-verdict": [
@@ -1487,6 +2544,36 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1511,6 +2598,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:54.315Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "cite-named-theorem": [
@@ -1529,6 +2633,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:54.315Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "voice-agent-speak": [
@@ -1547,6 +2668,23 @@
         },
         "reviewed_at": "2026-08-09T11:32:54.315Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "expo-milnor-clarity": [
@@ -1601,6 +2739,29 @@
           "broken_edges": 0,
           "redundant_edges": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
       }
     ],
     "uses-formal-coverage": [
@@ -1621,6 +2782,25 @@
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
@@ -1640,6 +2820,24 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
       }
     ],
     "trap-negation-contrast": [
@@ -1674,6 +2872,21 @@
         "reviewed_at": "2026-08-15T12:14:07.826Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full read; no assert-by-denial construction; contrasts present are substantive mathematical content."
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1708,6 +2921,21 @@
         "reviewed_at": "2026-08-15T12:14:07.865Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full read; no setup-then-reframe pivot construction."
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-em-dash": [
@@ -1742,6 +2970,21 @@
         "reviewed_at": "2026-08-15T12:14:07.903Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full read; no load-bearing spaced em-dashes; density nil."
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-triples": [
@@ -1776,6 +3019,21 @@
         "reviewed_at": "2026-08-15T12:14:07.941Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full read; enumerations present are substantive, not reflex three-item lists."
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-closing-aphorism": [
@@ -1810,6 +3068,21 @@
         "reviewed_at": "2026-08-15T12:14:07.989Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full read; final line is technical or bookkeeping, not a quotable closer."
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-meta-commentary": [
@@ -1844,6 +3117,21 @@
         "reviewed_at": "2026-08-15T12:14:08.024Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full read; no narration of own emphasis."
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-thesis-restatement": [
@@ -1878,6 +3166,21 @@
         "reviewed_at": "2026-08-15T12:14:08.061Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full read; no block-final restatement of already-established content."
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-performed-warmth": [
@@ -1912,6 +3215,21 @@
         "reviewed_at": "2026-08-15T12:14:08.097Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full read; register institutional throughout, no personal warmth."
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-superlative": [
@@ -1946,6 +3264,21 @@
         "reviewed_at": "2026-08-15T12:14:08.134Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full read; no unqualified maximum-strength claims."
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "trap-nonspeakable": [
@@ -1980,6 +3313,21 @@
         "reviewed_at": "2026-08-15T12:14:08.173Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full read; sentences parse aloud; no noun-chain pileups."
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f50ee4d123c16258153252f238f0c13c1c419a07",
+        "evidence": "Re-read at f50ee4d. The only change replaces 'a single connected interval of G' (G was the generic locus, which the proposition no longer introduces) with 'a single connected interval of R_{>1}'. That matches the proposition, where q now ranges over R_{>1}. Nothing else changed. No issue for this criterion."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1999,6 +3347,223 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2",
+          "graph": "8cd776f2efc7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "d6151972c8f6",
+          "ts": "1150ce68c5c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4cd91bc2f6f8ad4e572733d2deede29df9811c13",
+        "notes": "unchanged since origin/main"
       }
     ]
   },
