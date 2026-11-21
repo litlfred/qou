@@ -77,10 +77,12 @@ def proton_neutron_mass_mev() -> tuple[float, float]:
     recomputed m_p from the F_Bor identity but derived m_n from the
     ``q_beta_toroidal_mev()`` near-match tower, whose Q_β (0.7823334279…)
     *diverges* from the canonical witness Q_β (0.7823343865… =
-    ``q_beta_kashiwara_n2_mev``, which is the RETIRED MIXED BASE — z = 1
-    Form A with a convention-D phase, labelled 2026-11-16; its +501 ppb on
-    m_n is not a convention-D result, see
-    ``qbeta/qbeta-mn-mixed-base-d-cells.witness.json``). A missing witness therefore raises with a
+    ``q_beta_kashiwara_n2_mev``, the RETIRED MIXED BASE: z = 1 Form A with
+    a convention-D phase, labelled 2026-11-16; its +501 ppb on m_n is not a
+    convention-D result). Since 2026-11-21 (owner decision, issue #8769) the
+    witness m_n uses the SCORED D1 = A Q_β ``q_beta_scored_mev`` =
+    |ε_flavour(V³)|·E₀ (m_n −486 ppm, conditional on conjectures C1–C3);
+    the retired value survives only as a labelled witness diagnostic. A missing witness therefore raises with a
     regeneration instruction rather than silently substituting a
     non-canonical m_n. (Toroidal-tower over-claim audit:
     docs/audits/2026-07-19-qbeta-toroidal-tower-overclaim-audit.md; the
@@ -95,7 +97,7 @@ def proton_neutron_mass_mev() -> tuple[float, float]:
             "    python3 computations/m_p_substrate_identity_50dps.py\n"
             "No formula fallback is provided — the canonical (m_p, m_n) come "
             "only from this witness (muon-anchored F_Bor identity + the "
-            "canonical Kashiwara-N2 Q_β for m_n)."
+            "scored D1 = A Q_β for m_n)."
         )
     return result
 
@@ -143,15 +145,16 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
     from m_p_substrate_identity_50dps import F_Bor
     from q_parameter import Q_MP as q0, vol_4_1_at
     from codata_constants import M_E_MEV
-    from derived_masses import q_beta_kashiwara_n2_mev
+    from derived_masses import q_beta_scored_mev
     q = mp.mpf(str(q0)); m_e = mp.mpf(str(M_E_MEV))
     vol41 = vol_4_1_at(50)
 
     def constit(qq, mee):
         m_p = 2 * (mee * vol41 / ((qq - 1) / qq) ** 2 * F_Bor(qq) - 6 * mee)
-        # RETIRED MIXED BASE (owner 2026-11-16): not a convention-D Q_β; see
-        # qbeta/qbeta-mn-mixed-base-d-cells.witness.json for the D cells.
-        m_n = m_p + q_beta_kashiwara_n2_mev() + mee  # Kashiwara b² Q_β (const in FD)
+        # Scored D1 = A Q_β (owner decision 2026-11-21, issue #8769), which
+        # depends on q and m_e through ε_flavour(V³) and E₀, so it now moves
+        # with the finite difference (the retired base was held constant).
+        m_n = m_p + q_beta_scored_mev(qq, mee) + mee
         return Z * m_p + N * m_n
 
     base = constit(q, m_e)
