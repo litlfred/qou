@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-21T13:34:19.857802+00:00",
-  "commitSha": "133f1d8d6052e5ade569db8bb9d9a869163586f6",
+  "computedAt": "2026-11-21T13:37:16.348118+00:00",
+  "commitSha": "1ce94ffaba7ed23d05edf80d17580314f1d3144f",
   "assertions": [
     {
       "name": "F1_every_electron_sector_has_trace_q_cubed",
@@ -51,14 +51,22 @@
       "passed": true,
       "tolerance": "exact",
       "source": "exact series in h to O(h^3): {'Markov': '7*hh**3/16 + 11*hh**2/16 + 3*hh/4 + 1/2', 'b=0': '13*hh**3/32 + 33*hh**2/64 + 3*hh/8 + 1/8', 'b=1': 'hh**3/16 + 13*hh**2/64 + hh/4 + 1/8', 'b=2': '-hh**3/32 + hh**2/64 + hh/8 + 1/8', 'b=3': '1/8 - 3*hh**2/64'}. Ratio f(q0)/f(1) (the size of the O(h) tail at the proton pin): {'Markov': '1.3823329567168890523', 'b=0': '1.8399591842728116277', 'b=1': '1.493409779794785216', 'b=2': '1.2121316545769774313', 'b=3': '0.98383120822298193423'}. The b=3 sector has no O(h) term. These are kept regardless of size (owner 2026-11-21); which one applies waits on the q = 1 coefficient of the interaction (#8868)."
+    },
+    {
+      "name": "F7_conservation_allowed_row_O_h",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "b=2 with nu-bar q^-1 and b=3 with nu-bar q^+1 both give f = q/[2]^4, f(1) = 1/16 (matches #8868). Exact series in h: -hh**3/64 - 3*hh**2/128 + hh/32 + 1/16. f(q0)/f(1) = 1.08611395069519. Conditional on the owner's normalisation ruling; not selected."
     }
   ],
   "allPassed": true,
   "durationMs": 17,
   "computation": "qbeta-lepton-factor",
   "scriptFile": "qbeta_lepton_factor_probe.py",
-  "scriptHash": "14a7eeb31565",
-  "scriptCommitSha": "133f1d8d6052e5ade569db8bb9d9a869163586f6",
+  "scriptHash": "135511b5f14b",
+  "scriptCommitSha": "1ce94ffaba7ed23d05edf80d17580314f1d3144f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -184,14 +192,16 @@
     "b=0": "13*hh**3/32 + 33*hh**2/64 + 3*hh/8 + 1/8",
     "b=1": "hh**3/16 + 13*hh**2/64 + hh/4 + 1/8",
     "b=2": "-hh**3/32 + hh**2/64 + hh/8 + 1/8",
-    "b=3": "1/8 - 3*hh**2/64"
+    "b=3": "1/8 - 3*hh**2/64",
+    "conservation q/[2]^4": "-hh**3/64 - 3*hh**2/128 + hh/32 + 1/16"
   },
   "ratio_f_q0_over_f_1": {
     "Markov": "1.3823329567168890523",
     "b=0": "1.8399591842728116277",
     "b=1": "1.493409779794785216",
     "b=2": "1.2121316545769774313",
-    "b=3": "0.98383120822298193423"
+    "b=3": "0.98383120822298193423",
+    "conservation q/[2]^4": "1.0861139506951883803"
   },
   "scope": "(a): disjoint electron only; linked words are in qbeta-lepton-strand."
 }

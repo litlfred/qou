@@ -146,6 +146,23 @@ def main() -> int:
           "kept regardless of size (owner 2026-11-21); which one applies waits on the q = 1 "
           "coefficient of the interaction (#8868).")
 
+    # F7: the K-conservation-allowed row (#8868 audit section 9, b493e9002): a one-strand
+    # nu-bar of weight q^-1 forces b = 2, of weight q^+1 forces b = 3, and both give
+    # f = q / [2]^4 under the nucleon rule (K x plain sector trace / [2]^n). Its O(h) series,
+    # ready for when the owner rules the normalisation. Not selected.
+    f_cons_b2 = (q ** 2 / D2 ** 3) * (q ** -1 / D2)
+    f_cons_b3 = (q ** 0 / D2 ** 3) * (q / D2)
+    f_cons = q / D2 ** 4
+    same = sp.simplify(f_cons_b2 - f_cons) == 0 and sp.simplify(f_cons_b3 - f_cons) == 0
+    ser7 = sp.expand(sp.series(sp.simplify(f_cons.subs(q, qh)), hh, 0, 4).removeO())
+    r7 = mpv(f_cons) * 16
+    check("F7_conservation_allowed_row_O_h", same and sp.limit(f_cons, q, 1) == sp.Rational(1, 16),
+          f"b=2 with nu-bar q^-1 and b=3 with nu-bar q^+1 both give f = q/[2]^4, f(1) = 1/16 "
+          f"(matches #8868). Exact series in h: {ser7}. f(q0)/f(1) = {mp.nstr(r7, 15)}. "
+          "Conditional on the owner's normalisation ruling; not selected.")
+    hseries["conservation q/[2]^4"] = str(ser7)
+    ratio_q0["conservation q/[2]^4"] = mp.nstr(r7, 20)
+
     allp = all(ok for _, ok, _ in RESULTS)
     print(f"  {sum(ok for _, ok, _ in RESULTS)}/{len(RESULTS)} checks passed")
     wb = WitnessBuilder("qbeta-lepton-factor", engine="mpmath")
