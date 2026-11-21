@@ -1,4 +1,4 @@
-**Proof.**
+**Sketch.**
 
 > **Scope of the asymptotic expansion.** Two sub-steps in the Taylor comparison are conditional: First, the order-$h^2$ term of $\ln(V_{\mathrm{pp}}/V_{\mathrm{nn}})$: the step $z h + O(h^2) = \ln(1 + zh) + O(h^3)$ needs the $h^2$ coefficient to be $-z^2/2$, which is not computed. Second, the exponential remainder rests on conj:archimedean-remainder-exponential-decay, a conjecture, so the remainder bound is conditional. The $+1.31$ keV residual and the CODATA $7\%$ agreement are empirical comparisons, not proof steps.
 
@@ -61,7 +61,7 @@ The exponential-remainder bound dampens the eigenfunction (conj:archimedean-rema
 
 ## Provenance
 
-This proposition is verified numerically at 50 decimal places:
+This conjecture is checked numerically at 50 decimal places:
 
 See [Table](#tbl:q-beta-spectral-bridge-table-data).
 

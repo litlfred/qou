@@ -354,7 +354,7 @@
 | [prop:q-beta-bar-even-kernel-typeclass](#prop:q-beta-bar-even-kernel-typeclass) | $\mathfrak{Q}_\beta$ formalize-first unified typeclass — `BarEvenKernel` bundles all four $\S 4$ invariants (bar-even, radius-of-convergence, q=1 shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt | Ch 27 |
 | [prop:q-beta-bar-even-kernel-invariant](#prop:q-beta-bar-even-kernel-invariant) | $\mathfrak{Q}_\beta$ precision-ladder $\bar{}$-even discriminant — the kernel $R(q,\xi)$ produces a clean integer-$u$ ladder $\prod_k(1+c_k\,u^k)$ if and only if $R$ is even under $t \mapsto -t$ ($t = q-1$); $(1-u^2)$ at N=2 is the prototype | Ch 11 |
 | [prop:q-beta-q-eq-one-shadow-gate](#prop:q-beta-q-eq-one-shadow-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \to -1$ (the structural N=2 anchor) and $c_3 \to J_{\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED | Ch 11 |
-| [prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge) | $\mathfrak{Q}_\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases | Ch 12 |
+| [conj:q-beta-spectral-bridge](#conj:q-beta-spectral-bridge) | $\mathfrak{Q}_\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases | Ch 12 |
 | [prop:tau-M-asymptotic-rep-theory](#prop:tau-M-asymptotic-rep-theory) | $\mathrm{tr}_M^{V_\lambda}(\beta) = \mathrm{Tr}\,\rho_\lambda(\beta) \cdot \cos(\alpha_\lambda - b_\lambda\hbar_q^2/2) \cdot \prod_k(1 + c_k^{(\lambda)} u_\lambda^k)$: canonical $u$-ladder of the Markov-traced character | Ch 9 |
 | [prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction) | $\mathrm{U}(1)$-equivariant reduction of the exceptional divisor | Ch 2 |
 | [prop:vol-through-tau](#prop:vol-through-tau) | $\mathrm{Vol}(K)$ factors strictly through the fibre functor $\tau$ | Ch 11 |
@@ -698,7 +698,7 @@
 | [prop:generator-volume-decomposition](#prop:generator-volume-decomposition) | Nuclear energy as a sum of generator volumes via Chebyshev recurrence | Ch 12 |
 | [prop:quantum-dilogarithm-volume](#prop:quantum-dilogarithm-volume) | Nuclear energy from the quantum dilogarithm of the Markov trace | Ch 14 |
 | [prop:nuclear-spin-parity](#prop:nuclear-spin-parity) | Nuclear spin is integral for even $A$ and half-integral for odd $A$ | Ch 14 |
-| [prop:four-term-pair-nucleon](#prop:four-term-pair-nucleon) | Nucleon derivation from 4-term photon pair production | Ch 7 |
+| [conj:four-term-pair-nucleon](#conj:four-term-pair-nucleon) | Nucleon derivation from 4-term photon pair production | Ch 7 |
 | [prop:knot-operator-transition](#prop:knot-operator-transition) | Nucleon-addition operators: Hopf link at $A{=}3$, trefoil at $A{=}4$ | Ch 11 |
 | [prop:nucleon-ordering-factorization](#prop:nucleon-ordering-factorization) | Nucleon-level ordering factorization via jet-descended confinement | Ch 12 |
 | [prop:observation-energy](#prop:observation-energy) | Observation increases quantum energy and deforms the action | Ch 2 |
