@@ -42,3 +42,65 @@ for every candidate.
 Lean: K1, K2 (at a specialisation, see below), K3, K4, K5, K7. K6 is not in Lean
 (hyperbolic volume is not in Mathlib); it is computed at 50 dps and the containment
 Γ_L ⊂ PSL(2,ℤ[i]) is cited.
+
+## 2. Result
+
+Probe: `computations/probes/proton_two_twelve_count_probe.py` (sympy over ℚ(q); mpmath 50 dps for K6;
+no float), output in `proton_two_twelve_count_probe.out.txt`. Lean:
+`folio/quantum-observable-universe/lean/QOU/MassTheory/ProtonTwoTwelveCounts.lean`, core Lean 4.24.0
+only, `lean` exit 0, no `sorry`, `#print axioms` on the main theorems: no axioms.
+
+**Every prediction held. No candidate gives 12. Two give 2.**
+
+| id | value | Lean | equals 2? | equals 12? |
+|---|---|---|---|---|
+| K1 centraliser dim | 4 | at q = 2 (`bor21_not_scalar`, `bor_one_dim_blocks`); generic q by sympy | no | no |
+| K2 dim ℚ(q)[P] | 3 | at q = 2 (`bor21_no_eigenvalue_one`); generic q by sympy | no | no |
+| K3 crossings per component pair | 2, 2, 2 (no self-crossings) | `pairCrossings_bor` | **yes** | no |
+| K4 components | 3 | `components_bor` | no | no |
+| K5 Seifert χ | −3 | `seifertChi_bor` | no | no |
+| K6 [PSL(2,ℤ[i]) : Γ_L] | 24 (exactly: Vol(L) = 2V_oct = 8G, covol = G/3, G Catalan) | not in Lean | no | no |
+| K7 rotation orbit of the word | 2 | `rotationOrbit_bor` | **yes** | no |
+
+Generic q for K1, K2. On the (2,1) block P has determinant 1 and characteristic polynomial
+x² − t x + 1 with t ≠ 2 (sympy, exact), so P is not scalar there and 1 is not an eigenvalue;
+P acts as 1 on the blocks (3) and (1,1,1). Hence dim Z(P) = 1 + 2 + 1 = 4 and the minimal
+polynomial is (x − 1)(x² − t x + 1), degree 3. The Lean proofs check these facts at q = 2.
+They pass to generic q because "not scalar" and "1 is not an eigenvalue" are each the
+nonvanishing of a rational function of q, and a rational function nonzero at q = 2 is not
+identically zero.
+
+### Criterion (ii): does any corpus map put a count in the slot?
+
+No. Searched `computations/**/*.py` outside `probes/` for an integer times `m_e`. Every hit
+for `12*m_e` or `6*m_e` is the identity itself or an attempt to read it
+(`phase5/phase2b_dim_v21_bridge_derivation.py`, `phase2b2_dim_v21_categorical_bridge.py`,
+`phase2c_derive_correction_tower.py`, `me_additive_term_structure.py`). None of them computes
+a count of the kinds above and feeds it into the formula. The mass map in the corpus is
+m = m_e·Vol(K)/ℏ_q²·F; no map turns a count on β_Bor into an m_e-scale term. This is a
+search result over that surface, not a proof that no such map can exist.
+
+### Verdict
+
+- **The 12.** Scope (a): none of the seven pre-registered counts equals 12, and none is
+  placed in the m_e slot by any corpus map. Together with PR #8804 and the 2026-11-21 −12 audit,
+  the count families named in the brief (representation dimensions and multiplicities,
+  crossing and strand counts of β_Bor, Euler characteristic, index and orbit counts) do not
+  produce 12 under a single definition. The 12 stays a selected constant.
+- **The 2.** Over-determined. 2 = crossings per component pair (K3) = rotation orbit of the
+  word (K7) = dim V_(2,1) (recorded) = size of the bar pair {(3),(1,1,1)}
+  (`phase2b2_dim_v21_categorical_bridge.py`, a sketch). Several unrelated structures give 2,
+  and no corpus map selects one of them as the multiplier of m_μ·F_Bor. So the 2 is a
+  reading too.
+- **Not considered, by the pre-registration.** 24 = 2·12 (K6) is a product. The Whitehead link,
+  a different link, has index 12 in PSL(2,ℤ[i]); using it would change the object, so it
+  is out of scope and is not evidence.
+
+### What would count as a derivation
+
+Unchanged from the −12 audit: a map in the framework that produces m_e·N with N a
+q-independent integer, N = 12 on β_Bor, by construction. This survey adds that the map
+cannot be "take one standard count of β_Bor, its closure, or H₃(q)": none of the seven
+equals 12.
+
+No number moves.
