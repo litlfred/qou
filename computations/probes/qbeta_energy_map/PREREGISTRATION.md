@@ -299,3 +299,23 @@ from the strand weight, and is the result consistent with the whole-nucleon log 
   not refute either one alone.
 - The comparison number ([4]/[2]²)·cell = 0.887789 MeV is already recorded (Addendum 9a). No new number
   is selected.
+
+## Addendum 11 (owner ",2": does the pair-Skein mass pass the spectator test on its own?), before code
+
+S as defined in `SpectatorEnergyMap.lean` is a property of a map from trace values to energies. The
+pair-Skein mass is a map from per-quark energies to a nucleon energy, so S does not apply verbatim.
+Two analogues are pre-registered; both are structural and use no measured value.
+
+- **T1 (spectator position).** The n–p difference from flipping one u → d must not depend on where the
+  flipped strand sits among its spectators. Write m_N = w₁μ₁ + w₂μ₂ + w₃μ₃; T1 holds iff w₁ = w₂ = w₃.
+- **T2 (Borromean symmetry).** The three Borromean components are interchangeable, and a Markov trace is
+  conjugation invariant, so a traced nucleon mass must be invariant under the cyclic relabelling
+  (μ₁, μ₂, μ₃) → (μ₂, μ₃, μ₁).
+
+Expected from the formula, to be proved: w = (2q², q² + q⁻², 2q⁻²)/[2]_q, and the cyclic difference is
+(q − q⁻¹)(2μ₁ − μ₂ − μ₃). The whole-nucleon log map, which is a plain sum Σμ_a, passes both.
+
+**Reading fixed now.** If T1 and T2 fail for q ≠ 1, the ordered-pair sum is not invariant under
+the symmetry a trace must have. That locates the inconsistency of §19 in the pair-Skein sum as written
+(scope a). It does not refute the D crossing trace of #8923, which may need a symmetrised sum over the
+braid's crossings rather than the three fixed ordered pairs.
