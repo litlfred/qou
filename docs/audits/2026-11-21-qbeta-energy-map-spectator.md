@@ -478,3 +478,24 @@ the whole-nucleon log map gives the cell (0.873537 MeV at the proton q₀), the 
 as one energy functional. At least one of them has to change. This does not say which one, and it
 refutes none of them alone. Both values are below 2m_e = 1.022 MeV < m_n − m_p, so neither reading
 reaches m_n − m_p (1.293 MeV) at this pin.
+
+## 20. Does the pair-Skein mass pass the spectator test on its own? (prereg Addendum 11; owner ",2")
+
+S is defined for maps on trace values, so two analogues were pre-registered for the pair-Skein mass,
+which maps per-quark energies to a nucleon energy. Lean, `StrandWeightSplit.lean`, lean-direct exit 0,
+standard axioms only:
+
+- `nucleon_weights` (generic field): m_N = (2q²μ₁ + (q² + q⁻²)μ₂ + 2q⁻²μ₃)/[2]_q.
+- **T1 fails** (`weights_first_ne_last`): for real q > 0, q ≠ 1, the first and last position weights
+  differ, so the n–p difference depends on where the flipped strand sits among its spectators.
+- **T2 fails** (`nucleon_cyclic_diff`, `nucleon_not_cyclic`): cyclic relabelling of the three
+  Borromean components changes the mass by (q − q⁻¹)(2μ₁ − μ₂ − μ₃), which is nonzero for the proton
+  (u,u,d) whenever μ_u ≠ μ_d.
+
+The whole-nucleon log map is a plain sum and passes both. **Consequence (scope a):** the §19
+inconsistency sits in the pair-Skein sum over the three fixed ordered pairs. That sum lacks the
+cyclic symmetry a traced Borromean mass must have. The D crossing trace of #8923 is not refuted; what
+fails is summing it over (1,2), (1,3), (2,3) with a fixed orientation. A symmetrised sum, for example over
+both orientations or over the braid word's actual crossings, is the open derivation. The bare
+symmetrisation (𝒮_ab + 𝒮_ba)/2 = (q² + q⁻²)(μ_a + μ_b)/(2[2]_q) gives m_N ∝ Σμ_a, and so gives
+n–p factor (q² + q⁻²)/[2]_q again. Symmetry alone does not remove the factor.

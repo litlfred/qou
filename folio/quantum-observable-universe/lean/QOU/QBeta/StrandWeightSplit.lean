@@ -70,4 +70,61 @@ theorem pairSkein_factor_ne_one (q : ℝ) (hq : 0 < q) (h1 : q ≠ 1) :
   have : 0 < ((q + q⁻¹) - 2) * ((q + q⁻¹) + 1) := by positivity
   linarith
 
+section Symmetry
+
+variable {R : Type*} [Field R]
+
+/-- The pair-Skein nucleon mass is a weighted sum with position weights
+`(2q², q² + q⁻², 2q⁻²)/[2]_q`. -/
+theorem nucleon_weights (q μ₁ μ₂ μ₃ : R) :
+    nucleon q μ₁ μ₂ μ₃
+      = (2 * q ^ 2 * μ₁ + (q ^ 2 + q⁻¹ ^ 2) * μ₂ + 2 * q⁻¹ ^ 2 * μ₃) / (q + q⁻¹) := by
+  unfold nucleon pairSkein
+  ring
+
+/-- **T2.** Cyclic relabelling of the three Borromean components changes the mass by
+`(q − q⁻¹)(2μ₁ − μ₂ − μ₃)`. -/
+theorem nucleon_cyclic_diff (q μ₁ μ₂ μ₃ : R) (hs : q + q⁻¹ ≠ 0) :
+    nucleon q μ₁ μ₂ μ₃ - nucleon q μ₂ μ₃ μ₁ = (q - q⁻¹) * (2 * μ₁ - μ₂ - μ₃) := by
+  rw [nucleon_weights, nucleon_weights, ← sub_div, div_eq_iff hs]
+  ring
+
+end Symmetry
+
+/-- **T2 fails** for real `q > 0`, `q ≠ 1`, whenever `2μ₁ ≠ μ₂ + μ₃` (e.g. the proton `(u,u,d)`
+with `μ_u ≠ μ_d`). -/
+theorem nucleon_not_cyclic (q μ₁ μ₂ μ₃ : ℝ) (hq : 0 < q) (h1 : q ≠ 1)
+    (hμ : 2 * μ₁ - μ₂ - μ₃ ≠ 0) :
+    nucleon q μ₁ μ₂ μ₃ ≠ nucleon q μ₂ μ₃ μ₁ := by
+  intro h
+  have hs : q + q⁻¹ ≠ 0 := by positivity
+  have hd := nucleon_cyclic_diff q μ₁ μ₂ μ₃ hs
+  rw [h, sub_self] at hd
+  have hh : q - q⁻¹ ≠ 0 := by
+    intro h0
+    have : q * q = 1 := by
+      have := congrArg (· * q) h0
+      simp only [sub_mul, inv_mul_cancel₀ hq.ne', zero_mul] at this
+      linarith
+    have : q = 1 := by nlinarith
+    exact h1 this
+  exact mul_ne_zero hh hμ hd.symm
+
+/-- **T1 fails**: the first and last position weights differ for real `q > 0`, `q ≠ 1`, so the n–p
+difference depends on where the flipped strand sits. -/
+theorem weights_first_ne_last (q : ℝ) (hq : 0 < q) (h1 : q ≠ 1) :
+    2 * q ^ 2 / (q + q⁻¹) ≠ 2 * q⁻¹ ^ 2 / (q + q⁻¹) := by
+  have hs : 0 < q + q⁻¹ := by positivity
+  intro h
+  rw [div_left_inj' hs.ne'] at h
+  have h2 : q ^ 2 = q⁻¹ ^ 2 := by linarith
+  have hinv : q ^ 2 * q⁻¹ ^ 2 = 1 := by
+    rw [← mul_pow, mul_inv_cancel₀ hq.ne', one_pow]
+  have h4 : q ^ 2 * q ^ 2 = 1 := by
+    calc q ^ 2 * q ^ 2 = q ^ 2 * q⁻¹ ^ 2 := by rw [← h2]
+      _ = 1 := hinv
+  have hq2 : q ^ 2 = 1 := by nlinarith [sq_nonneg (q ^ 2 - 1), pow_pos hq 2]
+  have : q = 1 := by nlinarith [sq_nonneg (q - 1)]
+  exact h1 this
+
 end QOU.QBeta.StrandWeightSplit
