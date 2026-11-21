@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T08:33:29Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-v2om
 ---
 
@@ -183,3 +183,9 @@ asserting 'unstable' would itself be flaky.
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8269, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-05: "beans(qou-07ts): 4He wobbles too — the 'unmeasured' caveat resolves the wrong way"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). No superseded premise (determinism of the Rust kernel).
+
+**Re-measured 2026-11-21, pyhecke_native built from tools/pyhecke-native at main `2ae54ab40`:** `compute_atom_chi_rust.py 3He`, 10 consecutive runs, sha256 over `data.atom` + `data.free` with the volatile `compute_time_sec` masked: **1 distinct output in 10, equal to the committed witness** (`df49ce523c7fe59e`). Note an unmasked hash changes every run, through `compute_time_sec` alone. T and 4He: see the next note.

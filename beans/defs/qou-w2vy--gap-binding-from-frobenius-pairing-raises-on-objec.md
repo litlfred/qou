@@ -1,14 +1,14 @@
 ---
 # qou-w2vy
 title: 'GAP: binding_from_frobenius_pairing raises on object dtype -- latent behind term 1''s hang'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-31T04:44:27Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-v2om
 ---
 
@@ -423,3 +423,9 @@ nothing validates that a bean file carries the header its name implies.
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8181, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-04: "beans(qou-w2vy): retract my own "input precision NOT measured" — the corpus closed it on 2026-08-31"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). No superseded premise: dtype crash in sparse accumulation, basis-independent.
+
+**Completed.** The headline `TypeError` is gone on main: `hecke_core_legacy.atom_character_raw` carries the object-dtype COO accumulation (`np.zeros(..., dtype=object)`, ~line 2643) plus the `_lp_kernel_steps` Rust path (line ~2600), landed in d943f2acfac and 815b2a46a08. The float64 return contract of `atom_character_raw` is a separate, known item recorded above, not this bean's gap. The binding sign question lives in `qou-sv7h`.

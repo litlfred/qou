@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-26T12:21:32Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-v2om
 ---
 
@@ -243,3 +243,7 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8296, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). **Superseded premise found:** the producer implements the REFUTED Δtr law and the old letters; route (c) (SUPERSEDED banner) is on main (`derive_binding_bond_type.py` line 2). Defect C (hardcoded `<`) is also fixed on main (line 156-161 computes the operator). Recommend: scrap, pointing at the banner; route (b) would be a new arc on the γγ word.

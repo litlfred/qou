@@ -1,13 +1,13 @@
 ---
 # qou-9ohz
 title: 'PERF: per_generator_V_hat_3A -- one mpf coefficient forces an object-dtype O(dim^3) matmul; the word collapses to alpha*sigma+beta'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T18:57:13Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-v2om
 ---
 
@@ -285,3 +285,9 @@ Was in-progress with no bean update since 2026-08-25 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8308, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). No superseded premise for the fix itself (an exact Hecke-quadratic scalar collapse; the word it is applied to may be old-letter, which does not affect the code).
+
+**Completed.** The per-generator scalar collapse is on main: `computations/mass_at_3A_proper.py` line ~1082 ("σ_i, so the factors commute, and σ_i obeys the Hecke quadratic relation"). The bean's own 2026-08-25 section already records 3H in 0.21 s against 2.5 h unpatched.

@@ -1,14 +1,14 @@
 ---
 # qou-yaqm
 title: 'BUG: hecke offset drops generator sign in load_atom_braids (delta_lambda_jsj_phase3)'
-status: todo
-pr: 8344
+status: in-progress
+pr: 8849
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:03:20Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-v2om
 ---
 
@@ -38,3 +38,9 @@ Fix is unchanged: sign(g)*(abs(g)+k).
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8344, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). The fix is basis-independent: it is how any signed sub-word is translated. The words the two consumers build use the pre-γγ interface letters, so their outputs stay records of the superseded word.
+
+**Fixed in draft PR #8849 (issue #8848), branch `claude/binding-hygiene-2026-11-21`, commit 2cf8025d6.** New `atom_braid_words.shift_word` keeps the sign at all 11 sites. Self-test PASS 18/18 (4 new checks); SnapPy-inferred strands now 6/9/9/12 for D/T/3He/4He (were 5/8/8/11). Witnesses NOT regenerated: a re-run moves the D JSJ volume 12.776 -> 26.158 and writes 19 raw float64 SnapPy fields. Close on merge.

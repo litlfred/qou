@@ -1,13 +1,13 @@
 ---
 # qou-5ovu
 title: he4_binding_k_stage2 Leg B cache has no parameter guard; Leg A does
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T17:14:15Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-v2om
 ---
 
@@ -71,3 +71,9 @@ this class corpus-wide and found it otherwise under control.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8273, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). No superseded premise: cache parameter guard, basis-independent.
+
+**Completed, verified on main today.** `computations/deltalambda/he4_binding_k_stage2_probe.py` lines 396-399: Leg B now reads `_b.get("st")` and drops any entry whose stamp differs from `_stamp` (word / pin / dps), the same guard Leg A has at line 273-277. Legacy unstamped entries warn via `_legacy_cache_warning`.

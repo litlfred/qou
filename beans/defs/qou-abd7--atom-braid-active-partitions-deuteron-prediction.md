@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-10-13T00:00:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-v2om
 ---
 
@@ -64,3 +64,7 @@ Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bea
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8313, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). **Superseded premise found:** this bean's numbers are computed on the pre-2026-11-15 interface letters of `atom_braid_word_3A`, which the γγ ruling superseded (`docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`; redo waits on the γγ-selected nucleon word, PR #7876). The vacuous-PASS repair (2026-10-13) stands as code hygiene; the D/T/3He active-partition counts are on the old word.

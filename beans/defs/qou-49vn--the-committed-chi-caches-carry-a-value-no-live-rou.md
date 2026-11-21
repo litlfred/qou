@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T19:13:20Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-v2om
 ---
 
@@ -533,3 +533,7 @@ shift is byte-identical after the edit).
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8269, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-06: "resolve(qou-49vn): the tension was my arithmetic -- and Rust is now the likelier outlier, two routes against one"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). **Superseded premise found:** this bean's numbers are computed on the pre-2026-11-15 interface letters of `atom_braid_word_3A`, which the γγ ruling superseded (`docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`; redo waits on the γγ-selected nucleon word, PR #7876). The localised defect (the Rust kernel encodes the p–n interface crossing as plain averaged, dropping the `bring_color_weighted` shift) is about an interface letter the γγ rule replaced. Not fixed: patching the kernel to reproduce a superseded letter would be work on an old basis. Re-check once the γγ word defines its interface crossings.

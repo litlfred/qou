@@ -1,14 +1,14 @@
 ---
 # qou-xzda
 title: 'B_sym: the chain closed form is NOT the trace — L_pn is overridden by a Reeb bound, worth a constant 1.6561 MeV'
-status: in-progress
+status: todo
 pr: 8265
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T21:46:07Z
-updated_at: 2026-10-04T15:15:35Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-v2om
 ---
 
@@ -44,3 +44,7 @@ Either way the current state -- claiming agreement to 1e-13 while carrying a 1.6
 The dashboard's `chain_resid` column already SHOWS 1.7e+00 for every isotope. It was computed, printed, and read past.
 
 Acceptance: `chain_resid` either goes to ~1e-13, or the docstring states the hybrid and explains the substitution.
+
+## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
+
+Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). **Superseded premise found:** the L_pn / Reeb-bound comparison is a statement about the old p–n interface letter (same γγ rescope). The docstring-vs-number contradiction is real, but the acceptance test (`chain_resid` -> 1e-13) is defined on the old letter. Not reworked; owner decision listed in the drain report.
