@@ -408,3 +408,32 @@ Not formalized, and the reason is stated here.
 the asymmetry word-independent or ordering-independent. The GB-reduction reading of Q_β, as
 measured by A, therefore rests on two inputs the corpus does not derive: the β-decay word, and the
 choice of normal form for counting (σ leading is the corpus convention, but a convention).
+
+## 17. Ordering-averaged asymmetry and colour on strands (prereg Addendum 8; owner "Both")
+
+**(a) Averaging over the 8 per-generator orderings** (colour order fixed, u < d). Probe
+`qbeta_gb_ordering_reversal_probe.py`, 9/9. A·E₀ in MeV:
+
+| X | mean of 8 | spread of the 8 (max − min) |
+|---|---|---|
+| V₁³ | −0.358 | 7.36 |
+| V₀V₁V₀V₁ | +0.024 | 0.40 |
+| V₁V₀V₁V₀ | −0.292 | 0.66 |
+
+Not word-independent, and the sign is not even common to the three words. For V₁³ the spread across
+orderings (7.4 MeV) is eleven times the standard-ordering value. **Result, scope (a):** the
+forward/reverse reduction asymmetry is a property of the counting ordering at least as much as of
+the word. The averaged version does not repair it. On this evidence A is not a candidate for a
+derived Q_β; §15's "right order of magnitude" was specific to one ordering.
+
+**(b) Colour on strands, against the corpus.**
+- `bring_color_weighted` is the inter-nucleon p–n interface factor, f_pn = z − h(1/2 − δ/4). It does
+  not act inside a single-nucleon β-decay word.
+- The colour frame σᵢ^{sl} = q^{−1/N}σᵢ multiplies a word by q^{−writhe/N}. All three W have writhe 0
+  (checked), so the frame changes nothing here. That is a consequence of the γγ rule:
+  `writhe_eq_zero`.
+- A flavour ⊗ colour strand space (dim 6, gl₆ Jimbo Ř) is not defined in the corpus, and would
+  give weight to three-row shapes, which convention D sets to 0. Not built; put to the owner.
+
+So in the corpus as it stands, colour does not enter this computation at all: one ruled
+colour object acts between nucleons, the other is trivial on writhe-0 words.

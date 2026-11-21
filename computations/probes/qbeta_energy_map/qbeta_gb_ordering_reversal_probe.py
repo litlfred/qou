@@ -72,6 +72,8 @@ def Rinv(b, i, r2):
 
 
 def gen_terms(b, i, inv, r1, r2):
+    if isinstance(r1, tuple):
+        r1 = r1[i]
     if not r1:          # σ leading: σ = Ř, σ⁻¹ = Ř − h (the −h is a firing)
         t = R(b, i, r2)
         return t + [(b, -HK, 1)] if inv else t
@@ -157,12 +159,43 @@ for n in WORDS:
 print("  R2 maps A -> -A:", OUT["R2_is_minus_A"])
 print("  R1 changes A:   ", OUT["R1_changes_A"])
 
+print("Addendum 8(a): mean over the 8 per-generator orderings (colour order u < d)")
+import itertools  # noqa: E402
+Abar: dict = {}
+for name, X in WORDS.items():
+    W = X + BP.BETA
+    vals = []
+    for flags in itertools.product((False, True), repeat=3):
+        mf, _ = mean_k(block(W, NIN, POUT, flags, False))
+        mr, _ = mean_k(block(W, POUT, NIN, flags, False))
+        vals.append(mf - mr)
+    ab = sum(vals, KF.zero) / 8
+    Abar[name] = ab
+    vq = [ev(v) for v in vals]
+    OUT.setdefault("A_mean8", {})[name] = {"exact": BP.fx(ab) if ab != 0 else "0", "q0": mp.nstr(ev(ab), 12),
+                                           "times_E0_MeV": mp.nstr(ev(ab) * E0, 12),
+                                           "spread_times_E0_MeV": mp.nstr((max(vq) - min(vq)) * E0, 12),
+                                           "all8_times_E0_MeV": [mp.nstr(v * E0, 8) for v in vq]}
+    print(f"  {name:9s} mean A·E0 = {mp.nstr(ev(ab) * E0, 10):>14s} MeV, spread·E0 = {mp.nstr((max(vq) - min(vq)) * E0, 8)}")
+ab = list(Abar.values())
+OUT["A_mean8_word_independent"] = all(v == ab[0] for v in ab)
+print("  word-independent:", OUT["A_mean8_word_independent"])
+
+print("Addendum 8(b): writhe of each W (colour frame q^(-w/N) is the identity iff w = 0)")
+for name, X in WORDS.items():
+    W = X + BP.BETA
+    wr = sum(1 if g >= 0 else -1 for g in W)
+    check(f"{name}: writhe(W) = 0", wr == 0, str(wr))
+
 print("Comparison with CODATA (last; nothing selected)")
 mn, mpp = mp.mpf(C.M_N_MEV_STR), mp.mpf(C.M_P_MEV_STR)
 Qb = mn - mpp - ME
 for (n, o), A in Aex.items():
     v = ev(A) * E0
     OUT["comparison"][f"{n}|{o}"] = {"A_E0_MeV": mp.nstr(v, 12), "abs_vs_Q_beta_pct": mp.nstr(100 * (abs(v) / Qb - 1), 6)}
+for n, ab_ in Abar.items():
+    v = ev(ab_) * E0
+    OUT["comparison"][f"{n}|mean8"] = {"A_E0_MeV": mp.nstr(v, 12), "abs_vs_Q_beta_pct": mp.nstr(100 * (abs(v) / Qb - 1), 6)}
 OUT["ok"] = not FAILED
 (_HERE / "qbeta-gb-ordering-reversal.witness.json").write_text(json.dumps(OUT, indent=2, ensure_ascii=False) + "\n")
 print(f"{len(OUT['checks']) - len(FAILED)}/{len(OUT['checks'])} checks passed")
