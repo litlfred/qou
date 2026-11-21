@@ -1,0 +1,418 @@
+{
+ "source": "PR #8836 branch claude/d-eigenphase-real-or-imaginary-2026-11-16, qbeta-lepton-normalisation.witness.json (1560 words, 59 distinct x_hat at q0); one representative word per class",
+ "classes": [
+  {
+   "kind": "e-nubar",
+   "lepton": "V3V3V4",
+   "junction": "",
+   "x_hat_q0_prefix": "0.3037447811",
+   "words_in_class": 118
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V3V3V4",
+   "junction": "V1V1V1",
+   "x_hat_q0_prefix": "0.3037219204",
+   "words_in_class": 147
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V3V3V4",
+   "junction": "V1V2V1V2",
+   "x_hat_q0_prefix": "0.2945769143",
+   "words_in_class": 29
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V3V3V4",
+   "junction": "V2V1V2V1",
+   "x_hat_q0_prefix": "0.3138363931",
+   "words_in_class": 29
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V3V3V4",
+   "junction": "V1V1V1V1V1V1",
+   "x_hat_q0_prefix": "0.3027296816",
+   "words_in_class": 60
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V3V3V4",
+   "junction": "V1V1V2V2V2V1",
+   "x_hat_q0_prefix": "0.3036937549",
+   "words_in_class": 29
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V3V3V4",
+   "junction": "V2V2V2V1V1V1",
+   "x_hat_q0_prefix": "0.3036467323",
+   "words_in_class": 29
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V3V3V4",
+   "junction": "V2V2V2V2V2V2",
+   "x_hat_q0_prefix": "0.3029535681",
+   "words_in_class": 29
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "",
+   "x_hat_q0_prefix": "0.5680628903",
+   "words_in_class": 60
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "V1V1V1",
+   "x_hat_q0_prefix": "0.5680201363",
+   "words_in_class": 60
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "V2V2V2",
+   "x_hat_q0_prefix": "0.5744395736",
+   "words_in_class": 27
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "V1V2V1V2",
+   "x_hat_q0_prefix": "0.4094219974",
+   "words_in_class": 27
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "V2V1V2V1",
+   "x_hat_q0_prefix": "0.5883830030",
+   "words_in_class": 27
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "V1V1V1V1V1V1",
+   "x_hat_q0_prefix": "0.5661644533",
+   "words_in_class": 60
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "V1V1V1V2V2V2",
+   "x_hat_q0_prefix": "0.5744114081",
+   "words_in_class": 81
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "V1V1V2V2V2V1",
+   "x_hat_q0_prefix": "0.5679045943",
+   "words_in_class": 27
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "V2V1V1V1V2V2",
+   "x_hat_q0_prefix": "0.5796926880",
+   "words_in_class": 27
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "V2V2V2V1V1V1",
+   "x_hat_q0_prefix": "0.5737127525",
+   "words_in_class": 27
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V3V4V4",
+   "junction": "V2V2V2V2V2V2",
+   "x_hat_q0_prefix": "0.5805004811",
+   "words_in_class": 27
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V3V3",
+   "junction": "V2V2V2",
+   "x_hat_q0_prefix": "0.3091466485",
+   "words_in_class": 6
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V3V3",
+   "junction": "V1V2V1V2",
+   "x_hat_q0_prefix": "0.1747123881",
+   "words_in_class": 6
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V3V3",
+   "junction": "V2V1V2V1",
+   "x_hat_q0_prefix": "0.3150620179",
+   "words_in_class": 6
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V3V3",
+   "junction": "V1V1V1V2V2V2",
+   "x_hat_q0_prefix": "0.3091361461",
+   "words_in_class": 18
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V3V3",
+   "junction": "V1V1V2V2V2V1",
+   "x_hat_q0_prefix": "0.3036404986",
+   "words_in_class": 6
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V3V3",
+   "junction": "V2V1V1V1V2V2",
+   "x_hat_q0_prefix": "0.3135967091",
+   "words_in_class": 6
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V3V3",
+   "junction": "V2V2V2V1V1V1",
+   "x_hat_q0_prefix": "0.3085882276",
+   "words_in_class": 6
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V3V3",
+   "junction": "V2V2V2V2V2V2",
+   "x_hat_q0_prefix": "0.3147433169",
+   "words_in_class": 6
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V4V3",
+   "junction": "V2V2V2",
+   "x_hat_q0_prefix": "0.5668093737",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V4V3",
+   "junction": "V1V2V1V2",
+   "x_hat_q0_prefix": "0.5787320214",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V4V3",
+   "junction": "V2V1V2V1",
+   "x_hat_q0_prefix": "0.5866517939",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V4V3",
+   "junction": "V1V1V1V2V2V2",
+   "x_hat_q0_prefix": "0.5667637520",
+   "words_in_class": 3
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V4V3",
+   "junction": "V1V1V2V2V2V1",
+   "x_hat_q0_prefix": "0.5679798195",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V4V3",
+   "junction": "V2V1V1V1V2V2",
+   "x_hat_q0_prefix": "0.5657767262",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V4V3",
+   "junction": "V2V2V2V1V1V1",
+   "x_hat_q0_prefix": "0.5667328335",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V4V3",
+   "junction": "V2V2V2V2V2V2",
+   "x_hat_q0_prefix": "0.5638473251",
+   "words_in_class": 1
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V4V5",
+   "junction": "V2V2V2",
+   "x_hat_q0_prefix": "0.3033080458",
+   "words_in_class": 25
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V4V5",
+   "junction": "V1V2V1V2",
+   "x_hat_q0_prefix": "0.3042678336",
+   "words_in_class": 25
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V4V5",
+   "junction": "V2V1V2V1",
+   "x_hat_q0_prefix": "0.3137373026",
+   "words_in_class": 25
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V4V5",
+   "junction": "V1V1V1V2V2V2",
+   "x_hat_q0_prefix": "0.3032841861",
+   "words_in_class": 75
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V4V5",
+   "junction": "V1V1V2V2V2V1",
+   "x_hat_q0_prefix": "0.3036980606",
+   "words_in_class": 25
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V4V5",
+   "junction": "V2V1V1V1V2V2",
+   "x_hat_q0_prefix": "0.3029482632",
+   "words_in_class": 25
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V4V5",
+   "junction": "V2V2V2V1V1V1",
+   "x_hat_q0_prefix": "0.3032472177",
+   "words_in_class": 25
+  },
+  {
+   "kind": "e-nubar",
+   "lepton": "V4V4V5",
+   "junction": "V2V2V2V2V2V2",
+   "x_hat_q0_prefix": "0.3020003794",
+   "words_in_class": 25
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V5",
+   "junction": "V2V2V2",
+   "x_hat_q0_prefix": "0.5672461089",
+   "words_in_class": 31
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V5",
+   "junction": "V1V2V1V2",
+   "x_hat_q0_prefix": "0.5690411021",
+   "words_in_class": 31
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V5",
+   "junction": "V2V1V2V1",
+   "x_hat_q0_prefix": "0.5867508843",
+   "words_in_class": 31
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V5",
+   "junction": "V1V1V1V2V2V2",
+   "x_hat_q0_prefix": "0.5672014863",
+   "words_in_class": 93
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V5",
+   "junction": "V1V1V2V2V2V1",
+   "x_hat_q0_prefix": "0.5679755138",
+   "words_in_class": 31
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V5",
+   "junction": "V2V1V1V1V2V2",
+   "x_hat_q0_prefix": "0.5665732441",
+   "words_in_class": 31
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V5",
+   "junction": "V2V2V2V1V1V1",
+   "x_hat_q0_prefix": "0.5671323482",
+   "words_in_class": 31
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V5",
+   "junction": "V2V2V2V2V2V2",
+   "x_hat_q0_prefix": "0.5648005137",
+   "words_in_class": 31
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V4V5V3",
+   "junction": "V2V2V2",
+   "x_hat_q0_prefix": "0.5719850327",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V4V5V3",
+   "junction": "V1V2V1V2",
+   "x_hat_q0_prefix": "0.4638869383",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V4V5V3",
+   "junction": "V2V1V2V1",
+   "x_hat_q0_prefix": "0.5878260944",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V4V5V3",
+   "junction": "V1V1V1V2V2V2",
+   "x_hat_q0_prefix": "0.5719512517",
+   "words_in_class": 3
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V4V5V3",
+   "junction": "V1V1V2V2V2V1",
+   "x_hat_q0_prefix": "0.5679287933",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V4V5V3",
+   "junction": "V2V1V1V1V2V2",
+   "x_hat_q0_prefix": "0.5752160952",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V4V5V3",
+   "junction": "V2V2V2V1V1V1",
+   "x_hat_q0_prefix": "0.5714673989",
+   "words_in_class": 1
+  },
+  {
+   "kind": "mirror",
+   "lepton": "V4V5V4V5V3",
+   "junction": "V2V2V2V2V2V2",
+   "x_hat_q0_prefix": "0.5751433668",
+   "words_in_class": 1
+  }
+ ]
+}

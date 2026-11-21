@@ -51,3 +51,23 @@ claim that no γγ final state lands in the window: that rests on the 1560-word 
 - *Charged 5-strand vacuum* (option 1 on the eigenphase card). Not computed.
 - *Shared placement with a log map* (thread on the E₀/ε→MeV map). There the cell becomes −2c·log q
   for any word, which bypasses the lepton factor entirely.
+
+## Linked words, exact (added 2026-11-21)
+
+Probe `computations/probes/qbeta_lepton_linked_exact/` (preregistered; a scratch run came first,
+and the preregistration says so). The 1560 linked words fall into 59 classes by final-state trace.
+Each class trace x̂(q) = Tr(K⁹(P_p⊗1)ρ(W))/[2]⁷ is computed as an exact Laurent polynomial in q,
+and window crossings are found by exact real-root isolation of x̂ − ε_n and x̂ − ε_p on
+q ∈ (1, 23/20].
+
+- All 59 class values reproduce the earlier q₀ values.
+- x̂(1) = 3/8 for every class.
+- **e⁻ν̄ (24 classes): x̂ < ε_n on the whole range (1, 23/20].** No e⁻ν̄ linked word enters the
+  window for any q in range. Scope (b) on this finite set: exact root isolation, no float.
+- **Mirror e⁺ν (2 classes enter the window for part of the range):**
+  - lepton V3V4V4, junction V1V2V1V2, 27 words: inside for q < 1.10487, x̂(q₀) = 0.40942.
+    The boundary sits just below the proton pin 1.10998, which is the 0.0007 near-miss at q₀.
+  - lepton V4V5V4V5V3, junction V1V2V1V2, 1 word: inside for q < 1.02211.
+
+These are wrong-charge words for n → p e⁻ ν̄, so they are not a candidate, and nothing is adopted.
+The first open item above (linked words) is now closed for e⁻ν̄ on the finite γγ set.
