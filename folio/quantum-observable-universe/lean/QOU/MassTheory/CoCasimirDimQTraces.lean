@@ -2,6 +2,7 @@ import QOU.MassTheory.CoCasimirHeckeBridge
 import QOU.SchurWeyl.HeckeSchurElements
 import QOU.SchurWeyl.MolienBalancedForm
 import QOU.SchurWeyl.SpinSectorMeasure
+import QOU.Mass.QHookDimensionDiagram
 
 /-!
 # Which trace each `dim_q` belongs to
@@ -35,7 +36,9 @@ The symmetrising trace `τ₀(T_w) = δ_{w,1}` (`HeckeCoset.symTrace`) is a diff
 `symTrace_primIdem`: `τ₀(e_{λ,i}) = q^{−κ(λ)} / ∏_{x ∈ λ} [h(x)]_q`, with `κ` the content sum.
 Multiplying by `[n+1]_q!` gives `q^{−κ(λ)} · [n+1]_q! / ∏ [h(x)]_q`
 (`qFact_mul_symTrace_primIdem`). That is the q-hook-length formula `dim_q` used in production,
-times the twist `q^{−κ(λ)}`.
+times the twist `q^{−κ(λ)}`. `qFact_mul_symTrace_primIdem_eq_dimQ` states this with the production
+function itself: `[n+1]_q! · τ₀(e_{λ,i}) = q^{−κ(λ)} · QOU.Mass.dimQ q (parts of λ)`, via the
+encoding bridge `QOU.Mass.QHookDiagram.dimQ_partition_eq`.
 
 So the hook formula is the per-simple weight of `τ₀` (up to `q^{−κ}`), and the `sl₂` dimension is
 the per-simple weight of the convention-D Markov trace. `def:mass-identity` uses the second. The
@@ -45,9 +48,7 @@ two are not proportional (`CoCasimirDimQNotForced`).
 
 Everything above is a theorem about the two traces. That Term 4 of the mass formula should be
 built from the mass definition's own trace is a modelling reading of `def:mass-identity`, not a
-theorem. This file does not connect the diagram hook product here to the list-based
-`QOU.Mass.dimQ` used by the production code; the two encode the same hook-length formula with
-different hook bookkeeping.
+theorem.
 
 ## Base ring (§7c)
 
@@ -186,6 +187,17 @@ theorem qFact_mul_symTrace_primIdem (lam : Nat.Partition (n + 1)) (i : Fin (dim 
                 QOU.QInteger.qIntBal q (QOU.QBeta.WenzlWeight.hook (partitionShape lam) x)) := by
   rw [symTrace_primIdem]
   ring
+
+/-- **Production's `dim_q` is the symmetrising trace's weight, up to `q^{−κ}`.** With the
+production function `QOU.Mass.dimQ` on the sorted parts of `λ`:
+`[n+1]_q! · τ₀(e_{λ,i}) = q^{−κ(λ)} · dimQ q λ`. -/
+theorem qFact_mul_symTrace_primIdem_eq_dimQ (lam : Nat.Partition (n + 1)) (i : Fin (dim n lam)) :
+    (∏ j ∈ range (n + 1), QOU.QInteger.qIntBal q (j + 1))
+        * HeckeCoset.symTrace q q⁻¹ n (primIdem q hq0 hq2 n lam i)
+      = q ^ (-molienContentSum (partitionShape lam))
+          * QOU.Mass.dimQ q (lam.parts.sort (· ≥ ·)) := by
+  rw [qFact_mul_symTrace_primIdem,
+    QOU.Mass.QHookDiagram.dimQ_partition_eq q hq0 (GenericParameter.sq_ne_one hq2) lam]
 
 end
 
