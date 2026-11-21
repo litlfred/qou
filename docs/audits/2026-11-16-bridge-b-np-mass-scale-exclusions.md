@@ -261,6 +261,10 @@ H15: the KL-level check of §10k passes for n = 3..7. Even n folds to B_{n/2} wi
 
 H16: the six-strand V³ word (H9), folded by Lusztig's descent and traced by the H8 functional, gives D = 0.94911520554914481986 at q₀, i.e. reading B to 20 digits. The naive untwisted projection agrees only mod 2 and gives D = 0.93900102455152553557; the two agree at q → 1. D is a trace ratio, not a mass. Necessary-condition check, not a proof. Details: `computations/probes/bridge_b/h16_result.md`.
 
+### 10m. The descent at n = 4 and n = 5 (H17, 2026-11-21)
+
+Both cases fold to B₂: bulk b of weight 2, and wall w of weight 1 at n = 4 or 3 at n = 5. On the stand-in word (T_b T_w⁻¹)³, Lusztig's descent and the naive projection agree mod 2 and differ as Laurent polynomials at both n. This matches H16 at n = 6, so the weight-3 wall added to conj:type-b-folding-cpt passes the same necessary check. The two-strand trace model satisfies the B₂ relation for every wall parameter, so it cannot test the weight. B₂ has no second bulk letter, so this is not the photon vertex. Details: `computations/probes/bridge_b/h17_result.md`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
