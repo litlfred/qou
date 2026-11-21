@@ -116,4 +116,16 @@ theorem not_integralSlopeSetting_bindingKernel :
     ¬ IntegralSlopeSetting 1 (fun _ => 1) :=
   not_integralSlopeSetting_one _
 
+
+/-- **Explicit two-slope isoformal dimension formula `r₀ r₁ (μ₁ - μ₀)` and equal-slope vanishing (`qou-dk8a`).** -/
+theorem isoformalDim_two_slope_closed_form (r₀ r₁ μ₀ μ₁ : ℤ) :
+    rszIsoformalDim 2 ![r₀, r₁] ![μ₀, μ₁] = r₀ * r₁ * (μ₁ - μ₀) ∧
+      rszIsoformalDim 2 ![r₀, r₁] ![μ₀, μ₀] = 0 := by
+  refine ⟨?_, ?_⟩
+  · rw [rszIsoformalDim_two]
+    rfl
+  · rw [rszIsoformalDim_two]
+    change r₀ * r₁ * (μ₀ - μ₀) = 0
+    ring
+
 end QOU.Mass.BindingNoAlienPlane

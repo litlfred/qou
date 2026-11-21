@@ -139,4 +139,17 @@ theorem duality_gap_le_of_residual_bounds
       _ = (m : ℝ) * ε := by simp [Finset.sum_const, mul_comm]
   linarith
 
+
+/-- **Zero slack residuals force zero duality gap (`qou-fr4d`).**
+When every primal complementary-slackness residual `(c_j - (Aᵀy)_j) x_j` and every dual
+residual `y_i ((Ax)_i - b_i)` vanishes, the primal-dual gap `∑ c_j x_j - ∑ b_i y_i` is zero. -/
+theorem duality_gap_eq_zero_of_zero_residuals
+    (A : Fin m → Fin n → ℝ) (b : Fin m → ℝ) (c : Fin n → ℝ)
+    (x : Fin n → ℝ) (y : Fin m → ℝ)
+    (hp : ∀ j, (c j - ∑ i, y i * A i j) * x j = 0)
+    (hd : ∀ i, y i * ((∑ j, A i j * x j) - b i) = 0) :
+    (∑ j, c j * x j) - (∑ i, b i * y i) = 0 := by
+  rw [duality_gap_decomposition A b c x y]
+  simp [hp, hd]
+
 end QOU.Mathlib.LPDuality
