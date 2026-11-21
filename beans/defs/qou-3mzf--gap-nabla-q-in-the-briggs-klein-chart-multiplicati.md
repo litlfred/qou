@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-21T20:24:54Z
+updated_at: 2026-11-21T22:35:42Z
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -45,3 +45,11 @@ Bean stays open (open conjecture).
 - The only poles are over z = infinity, with residues 0, +5i/16, -5i/16 (sheets X ~ -z, -iz, +iz; sum 0). Purely imaginary, not 1. Rescaling by 16/(5i) to get residue 1 would be a chosen normalisation, i.e. a fit, and is not done.
 - Weight: a primitive of X dz gives elliptic periods plus logs (weight <= 1). -Li_2^q(-z) is an iterated integral (Jackson primitive of the classical primitive of ds/(1+s)), weight 2. One prolongation step of X dz cannot supply both the missing pole at -1 and the second integration unless the q-prolongation itself raises weight, which conj:qdifference-kernel-prolongation-symbol does not specify.
 Scope (a): this construction, with the classical form X dz on the colour cubic, does not give the D_q ln_q(1+t) shape. Not a structural exclusion; the prolongation is still undefined. Bean stays open.
+
+
+2026-11-21 (N2 thread), second form with a pole over z = -1:
+- F(0,z) = (z+1)(z^2+1), so X has a simple zero on one sheet over z = -1: X = -2(z+1) + 5(z+1)^3 + ... (sympy). Hence dlog X has residue exactly 1 there, with no normalisation chosen: the curve supplies the ds/(1+s) pole intrinsically. The trace of dlog X over the three sheets is dlog((z+1)(z^2+1)), so the same form also has poles over z = +-i.
+- Weight-2 test (classical, not q): I(z) = int_0^z log(-X(t))/t dt on the real sheet (X(0) = -1, X(-1) = 0). It is NOT -Li2(-z): z=0.5: 0.244628 vs 0.448414; z=1: 0.493480 vs 0.822467; z=2: 0.982559 vs 1.436746 (mpmath, 40 dps).
+- Striking: I(1) = pi^2/20 to 50 digits (-Li2(-1) = pi^2/12; ratio 3/5). Not explained. F(X,z)(1-z)(X-1)(X-z) = (1-z)X^5 - (1-z^5)X + z(1-z^4), a quintic, so a fifth-root-of-unity structure is plausible but unproved.
+- PSLQ at z = 2, 1/2, 1/4 (60 dps, coeffs <= 500) on {I, pi^2, log^2 z, log z log(1+z), Li2(-z), Li2(-z^5), log z log X(z), Li2(-X), Li2(-X^5), log^2 X} found no relation. Absence of evidence in that basis only.
+Scope (a): the curve provides the right pole (residue 1 over z=-1) but the classical iterated integral built from it is a different function from -Li2(-z). Bean stays open.
