@@ -111,3 +111,32 @@ element, including the selected word (`twoTerm_connected_zero`; probe agrees). T
 two-term parts on `w` differ (`−1/3` on `N`, `−(1 − h²)` on `P`), but the raw part is not
 the ruled two-term trace. Not derivable here, so not included: a lepton-sector constant in place of
 the `−12`, and the coupling `c_em` (it multiplies 0 in any case).
+
+## Two-term Lagrangian under a connection (added 2026-11-21; details in LITERATURE-COMPARISON §17–§27)
+
+ℒ = 𝒟² + ψ*⊗𝒟ψ, 𝒟 = q⁻¹∇ + (1 − q⁻¹)ι_ξ∇. All results below are symbolic in q. No measured
+value enters, and none is compared.
+
+**Derived (Lean, sorry-free, standard axioms).**
+
+| file | result |
+|---|---|
+| `CounitIsFrobeniusForm` | coev = η≫Δ forces ε = λ (no braiding). The scale of λ stays free. |
+| `NormalisedStateScaleFree`, `NormalisedLagrangian` | a normalised state (ψ≫ψ* = 1, owner trial ruling 2026-11-21) removes λ's scale; the matter trace becomes the ∇-eigenvalue μ (Cartan-weighted: wμ). |
+| `HolonomyConnectionSplit` | with ∇ = hol − 1, hol = (σ₀σ₁⁻¹)³: neutron hol = P·(proton hol)·P⁻¹, so the spectra are equal; the Cartan weights give μ_n = q⁻²μ_p; tr hol_p − 3 = −h⁴[3]_q. |
+| `DeltaNPMatrixIdentity` | for any connection F with conjugate neutron block: tr(𝒟_n²) − tr(𝒟_p²) = −2q⁻¹(1 − q⁻¹)·tr F_p (cross term only). With F = hol − 1: Δ = 2q⁻¹(1 − q⁻¹)h⁴[3]_q = 3h⁵ + O(h⁶). |
+| `HolonomyTLStateSum` | in the mass identity's expansion T(σ^{±1}) = q^{±1}·1 − e, hol − 1 for (σ₀σ₁⁻¹)³ is exactly the sum of the 63 states with at least one Temperley–Lieb generator (any R-algebra). |
+| `TwelveNotHolonomyMultiple` | h⁴[3]_q and Δ vanish at q = 1, so no q-independent κ gives κ·f = 12. |
+
+**Negatives (scope (a), each one pre-registered definition).**
+- SU(2) calculus with flat ∇: μ = 0 on the horizontal part.
+- 𝒟² leading count: N = tr(D₁²) = 3/8 (D₁ = T³/2; holonomy is O(h²)). Not 12.
+- n − p of tr(𝒟²): 3h⁵. Not 12.
+- The 12 in m_p = 2m_μF_Bor − 12m_e is ruled a fit (2026-11-18), and nothing here derives it.
+
+**Open, owner's call.** The connection. The p/n conjugacy and the q⁻² split hold for every F(hol).
+A nonzero Δ needs a connection with nonzero trace: hol − 1 has one, while log hol and the part odd
+under hol ↦ hol⁻¹ give Δ = 0. The corpus reason for hol − 1 is `HolonomyTLStateSum`: the mass
+identity consumes hol linearly, and hol − 1 is its Temperley–Lieb part. The reason against is that
+a classical connection is a Lie-algebra 1-form, i.e. log hol. The corpus defines ∇ : A → A ⊗ Ω¹ as
+given, so neither is forced. Also not derived: a map from the dimensionless Δ or μ to MeV.
