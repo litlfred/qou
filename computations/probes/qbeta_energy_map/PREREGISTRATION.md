@@ -182,3 +182,21 @@ twice. **C**: the input lepton strand is u (premise L). **B**: no lepton is pres
 state, so the input lepton-strand colour is not fixed; the B block sums over both input colours
 {u, d} on strand 3 → p⊗e⁻. Under B the closed-form bound Q_β ≤ cell − m_e = 0.362538 MeV (§13) is
 printed beside, with E(ν̄) left open.
+
+## Addendum 7 (owner: "Can we reverse the GB ordering to go between p and n? If so, does that fix it?"), before code
+
+Two orderings enter the state-level count, and each is reversed separately.
+- **R1, generator order.** Take σ⁻¹ as the leading generator: σ⁻¹ acts by Ř⁻¹ (uu ↦ q⁻¹uu,
+  ud ↦ du − h·ud, du ↦ ud, dd ↦ q⁻¹dd), and σ = Ř⁻¹ + h. Firings are the −h·ud branch and the
+  +h term. The same matrices, a different marking.
+- **R2, colour order (u < d reversed to d < u).** The branch moves from du to ud:
+  Ř′: uu ↦ q uu, du ↦ ud, ud ↦ du + h·ud, dd ↦ q dd. Ř′ is the Jimbo Ř with u and d exchanged, so
+  it intertwines the n-sector with the p-sector. This is the reading of "reverse to go between p
+  and n".
+- **R1+R2** both.
+
+For each of the three words and each ordering: ⟨k⟩_f, ⟨k⟩_r, A = ⟨k⟩_f − ⟨k⟩_r, exact and at q₀.
+**What "fixes it" means, fixed now, without reading Q_β:** (i) A becomes word-independent across
+the three admissible words; or (ii) A has a closed form shared by the three words. Also
+reported: whether R2 maps A ↦ −A (the expected p ↔ n swap), and whether R1 changes A at all.
+The comparison with Q_β is printed last and does not decide (i) or (ii).
