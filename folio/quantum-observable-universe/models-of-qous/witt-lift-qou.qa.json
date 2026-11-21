@@ -1425,6 +1425,21 @@
         "reviewed_tree": "847271057d7e110aea52ed7579164d7bcdead73e",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/models-of-qous/witt-lift-qou.ts:0: forward ref: uses ex:finite-field-realisation (manifest pos 50) which appears after this block (pos 48) in the chapter"
+      },
+      {
+        "field_hash": {
+          "md": "eb7e60d68a8a",
+          "ts": "3741d0f929af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:honesty-audits-pass2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T23:00:00.000Z",
+        "severity": "major",
+        "evidence": "Dropped the uses edge to ex:finite-field-realisation (manifest pos 50). The .md never links it; it mentions the F_p fibre algebra only in prose. Remaining in-chapter uses (prop:skew-poisson-integration, ex:p-adic-realisation, sec:enveloping-algebras-models) all precede pos 48. qa-sweep at the pinned platform did not emit this criterion, so this is a hand check."
       }
     ],
     "detangler-section-band": [
