@@ -79,9 +79,9 @@ cites them as "derived on an unmerged branch".
   - At the element level the mirror vertex is already a photon: `1 + c·V̄₀ = γ(hc, −hc, c)`
     (`one_add_mirror_eq_photon`). The element-level reading of γγ is therefore vacuous, because
     photons generate all of `⟨σ₀, σ₁⟩` (`photon_adjoin_eq`).
-* **Measured earlier, not proved.** The swap `ι: σ ↦ −σ⁻¹` sends `V` to `V̄` on even words, so the
-  `V`/`V̄` bit is the chirality mirror (bean `qou-a1hh`, 2026-11-15; the Lean lemma `ι(V) = V̄` is
-  not yet written).
+* **Proved (corrected 2026-11-21).** The swap `ι: σ ↦ −σ⁻¹` sends `V` to `V̄`
+  (`QOU.QuarkState.Helicity.iota_vertex`, `ChiralityPairBit.lean`, on `main` since `34751d6d4a`).
+  This brief first said that lemma was "not yet written"; that was wrong.
 * **Would be new.** Ruling either way is a new choice. *Out* keeps the current definition and
   adds a stated reason for it. *In* changes the definition.
 
@@ -92,8 +92,12 @@ cites them as "derived on an unmerged branch".
   equal amplitude. If `V̄` is the corpus's P or CP image of `V`, a grammar that produces `V³` but
   not `V̄³` builds parity violation into the electromagnetic production step. Nature puts parity
   violation only in the weak sector.
-* **But the corpus has not ruled which map is P, C or CP.** Four involutions are in play and they
-  are distinct:
+* **Corrected 2026-11-21: the corpus HAS ruled on this, in part.** Owner decision D-H5 = D
+  (2026-11-15, `docs/audits/2026-11-15-helicity-common-source-flavour-chirality.md` §10.5): no
+  letter-level map realises P at fixed `q`. See the section "Which map is parity" below, which
+  also finds that the profile table behind D-H5 changes under the ruled left line. This brief
+  first said "the corpus has not ruled which map is P", and did not cite D-H5. Four involutions
+  are in play and they are distinct:
   - bar, `q ↦ q⁻¹`, which sends `V ↦ V̄`;
   - `ι: σ ↦ −σ⁻¹`, which sends `V ↦ V̄`;
   - the group inverse, which sends `V ↦ V⁻¹ = σ₁σ₀⁻¹`, a different word;
@@ -204,6 +208,194 @@ swap is the group inverse, not `V̄`, so the exception does **not** carry over a
 
 **Default (nothing ruled):** (d)-out in effect. The definition stands, nothing is re-run, and the
 scored row is unchanged.
+
+---
+
+## Which map is parity? (added 2026-11-21, owner: "Settle which map is parity")
+
+### The answer, in four lines
+
+* **No map on the Hecke algebra is parity P.** This was already ruled on 2026-11-15
+  (D-H5 = D) and nothing here changes it.
+* **The mirror vertex `V̄` is the image of `V` under the CP-profile map `ι` and under the bar map.**
+  With the ruled left line, bar reads as CPT if `q ↦ q⁻¹` is read as antilinear; that reading
+  needs your definition. The map with the closest-to-P profile, `neg`, fixes `V`.
+* **So "QED conserves P, therefore the γγ grammar needs `V̄`" has no P to act with.** The argument
+  that does bite is CP or CPT. Even that argument does not reach the nucleon: `V̄³` is conjugate to
+  `V³`, so every trace and every closure treats the two identically.
+* **(d) stays an owner choice. Nothing in the symmetry analysis forces it either way for the
+  nucleon.**
+
+### The maps, with what each one does (all proved unless marked)
+
+`h = q − q⁻¹`. Lean: `QOU/QBeta/ParityMapCandidates.lean` (new, sorry-free, lean-direct exit 0,
+`#print axioms` clean on all 16 declarations) and the corpus's `HelicityCommonSource.lean` /
+`ChiralityPairBit.lean`. Exact probe: `computations/probes/pair_word_brief/parity_map_probe.py`
+(33/33, exact `ℚ(q)`, no float).
+
+| map | `q` | linear at fixed `q₀`? | ruled left line | `V ↦` | photon `γ(φ₀,φ₁,φ₀₁) ↦` | convention-D trace |
+|---|---|---|---|---|---|---|
+| corpus "P": braid mirror `σ ↦ σ⁻¹`, `q` fixed | fixed | **not a map of `H_n(q)`** (`no_linear_flip`) | — | `V̄` (word level only) | — | `z_D ↦ z_D − h ≠ z_D` (`zD_sub_h_ne`) |
+| **bar** `σ ↦ σ⁻¹`, `q ↦ q⁻¹` | inverted | no (semilinear) | **exchanged** (`bar_leftLine`) | `V̄` | `(1−h(φ₀+φ₁))·1 + γ(φ₀+hφ₀₁, φ₁−hφ₀₁, φ₀₁) − 1` (`bar_photon`) | covariant: `tr_{D,q}(x̄) = tr_{D,1/q}(x)` (`zD_sub_h`, probe, all 6 basis words) |
+| **`ι`** `σ ↦ h − σ = −σ⁻¹` | fixed | **yes** (`swap_hecke`, `iota_heckeH3Rel`) | **exchanged** (`iota_leftLine`) | `V̄` (`iota_vertex`) | `(1+h(φ₀+φ₁))·1 + γ(hφ₀₁−φ₀, −φ₁−hφ₀₁, φ₀₁) − 1` (`iota_photon`) | **not preserved**: `z_D ↦ h − z_D = −z_D(1/q)` (`h_sub_zD_ne`); **does not descend to the Jimbo image** (`iota_not_descend` + probe) |
+| **`neg`** `σ ↦ −σ`, `q ↦ q⁻¹` | inverted | no (`no_linear_neg`) | **kept** (`neg_leftLine`) | **`V` (fixed)** (`neg_vertex`) | `γ(−φ₀, −φ₁, φ₀₁)` (`neg_photon`) | transposed convention (bean `qou-hlxp`, exact probe) |
+| corpus "T": word reversal | fixed | linear anti-automorphism | kept | `σ₁⁻¹σ₀`, **outside** the photon span (probe) | leaves the photon family | preserved (probe, 6 basis words) |
+| group inverse = corpus P·T | inverted | no | — | `σ₁σ₀⁻¹`, outside the photon span | leaves the photon family | — |
+| `u ↔ d` flip | — | not a map of `H_n`; on Jimbo it **is** bar: `R(1/q) = (X⊗X)R(q)⁻¹(X⊗X)` (probe; `flip_diag`, #8706) | — | — | — | — |
+
+Two notes on the table:
+
+* **Charges.** None of the Hecke-letter maps touches the strand colour labels. All of them
+  therefore preserve `Q` and the `T³` content of each strand. The `u ↔ d` flip sends
+  `T³ ↦ −T³` but sends `Q = 2/3 ↦ −1/3`, not to `−2/3`. So it is an isospin reflection, not C.
+  The corpus's C (`conj:c-from-color-flavor-swap`, `u ↔ ū`) has no Hecke action at all.
+* **`e_R`.** `e_R` sits on the right line of the lepton crossing (#8694, open). `ι` and bar move
+  `P_R` to the left line of the image letter, so they send `e_R` to an `e_L`-line object. `neg`
+  keeps `e_R` on its line. No map moves a strand's matter⊗Higgs label; that is untouched by all
+  of them.
+
+### What changed against the 2026-11-15 profile table (D-H5)
+
+The D-H5 analysis took the **eigenvalue-labelled** projector `P₊` as helicity. On that basis it
+classified the braid mirror as C/CT, `ι` as CP, and `neg` as P (under reading R2) or PT (under
+R1). The owner's left-line ruling of the same day defines helicity differently: **the line on
+which the letter's eigenvalue has modulus > 1** (`LeftLineDefinition.lean`). With that definition
+the helicity column changes for the two maps that move `q`:
+
+| map | particle (`e⁻ = σ₀σ₁σ₀ ↦`) | ruled helicity | profile, R1 (`q ↦ q⁻¹` antilinear) | profile, R2 (`q ↦ q⁻¹` no content) |
+|---|---|---|---|---|
+| bar | `e⁺` | exchanged | **CPT** | CP |
+| `ι` | `−e⁺` | exchanged | **CP** | CP |
+| `neg` | `−e⁻` | kept | **T** | no profile (a nontrivial map with the identity's profile) |
+
+* **Under R1 the three involutions get three distinct physical profiles, and the group closes.**
+  Bar∘`ι` = `neg` (`flip_swap`), and CPT·CP = T. So `{1, CP, T, CPT}` is a Klein four-group.
+* **Under R2 the assignment degenerates.** Two different maps both get CP, and `neg` gets the
+  identity's profile while not being the identity.
+* **Which reading holds is not derived.** It is a premise. My judgement is that R1 is the only
+  consistent reading, but that is an argument from consistency, not a proof.
+
+Under either reading:
+
+* **P alone and C alone are not letter maps.** This agrees with D-H5 = D.
+* **The correction to D-H5's table is that `neg` no longer has P's profile** under the ruled left
+  line, because it keeps the left line. That weakens the motivation of bean `qou-hlxp` ("parity
+  via the neg route").
+
+### The corpus's CPT conjecture, measured against this
+
+`conj:cpt-d6-d7-d8-closure` asks that P (the braid mirror, `q` fixed), C (`u ↔ ū`) and T (word
+reversal) each preserve `tr_M`.
+
+* **Its P component fails at `n = 2`, for `β = σ`, whenever `h ≠ 0`.** The braid mirror sends
+  `tr(σ) = z` to `tr(σ⁻¹) = z − h` (`trace_flip`, `zD_sub_h_ne`). Scope (b); the invariant is the
+  Hecke relation. Classically this is the statement that the Jones polynomial detects chirality.
+* **The claim "bar = C·P·T" fails on the scalars.** P and T fix `q`, and C has no Hecke action,
+  so their composite fixes `q`, while bar inverts it.
+
+These are reported here and not edited into the conjecture. The edit is a corpus change, and it
+waits on you.
+
+### Consequence for (d), stated as conditionals
+
+1. **P.** "If the parity map sends `V` to `V̄`, and the QED production step must be
+   P-invariant, then the grammar must contain `V̄`."
+   - *Premise status:* false as a corpus statement. No letter map is P (D-H5).
+   - Under the ruled left line, the nearest candidate, `neg`, **fixes** `V` (`neg_vertex`). So a
+     V-only grammar is `neg`-closed.
+   - **P gives no reason for (d)-in.**
+2. **CP.** "If `ι` is CP, and the QED step must be CP-invariant, then the grammar must be
+   `ι`-closed, i.e. contain `V̄`."
+   - *Premise status:* `ι` is the unique linear map with CP's profile (derived, given the
+     Breit–Wheeler `e⁺` and the ruled left line).
+   - But the model's own observable is **not** `ι`-invariant. The convention-D trace goes to the
+     transposed convention (`h_sub_zD_ne`), and `ι` does not even act on the Jimbo state space
+     (`iota_not_descend`).
+   - So demanding CP of the grammar while the trace breaks CP is a mixed requirement.
+3. **CPT.** "If bar is CPT (reading R1), then CPT-closure of the admitted set needs `V̄`."
+   - True word by word.
+   - **False at the level of what any observable sees, for the nucleon.** `V̄ = (σ₁σ₀)·V·(σ₁σ₀)⁻¹`
+     in any group with the braid relation (`mirror_conj`), so `V̄ᵏ` is conjugate to `Vᵏ`
+     (`mirror_pow_conj`). Every trace therefore agrees on them (`trace_mirror_pow`; probe:
+     `tr_D(V̄³) = tr_D(V³)`), and their closures are the same link.
+   - So **the V-only nucleon set `{Vᵏ}` on `B₃` is already CPT-closed up to conjugacy**.
+   - Scope: this is proved only for powers of a single vertex. For multi-index words on four or
+     five strands (the β⁻ candidates) it is **not established**, because each `Vᵢ` has its own
+     conjugator.
+   - The corpus's own P·T (the group inverse) behaves the same way. It maps `V₀ᵏ` to a
+     half-twist conjugate of itself (`inverse_conj`, `cpt_rotation_vpow`), while the grammar is
+     not closed under the corpus's P, T or P·T word by word (`not_gg_mirror`, `not_gg_rev`,
+     `not_gg_inv`).
+
+**Consequence for the nucleon selection.**
+
+* If (d) goes *in*, the 8-way length-6 tie becomes at most **three closed-braid classes**:
+  - `{V³ ~ V̄³}`, which is one conjugacy class (proved);
+  - the cyclic class of `VVV̄`;
+  - the cyclic class of `V̄V̄V`.
+
+  Whether the last two are conjugate to each other is not settled. The convention-D trace gives
+  them the same value.
+* **The scored `Q_β` row is identical on `V³` and `V̄³`.** That was measured before. It is now
+  explained for any conjugation-invariant functional, which a trace is. The scored `ε_flavour`
+  equality itself stays measured, not derived from the conjugacy, because the flavour labels are
+  per strand and the conjugator `σ₁σ₀` permutes strands.
+
+### The (d) decision, re-framed by this result
+
+**Decision:** whether the production grammar admits `V̄ᵢ`. It needs you because no corpus symmetry
+forces it: P is not realised, and CP and CPT force it only word by word, not at the level of
+closures or traces.
+
+**(d)-out — keep V-only; record the reason as "closure-level CPT holds".**
+* *What it means:* production vertices have one orientation. The CPT image `V̄ᵏ` of `Vᵏ` is
+  admitted as a closed braid because it is conjugate to `Vᵏ`.
+* *What it costs:*
+  - one sentence in bean `qou-ales`, citing `mirror_pow_conj`;
+  - nothing is re-run.
+* *What it risks:*
+  - a referee reading words rather than closures sees a CP-odd grammar;
+  - for multi-index β⁻ words, closure-level CPT is unproved;
+  - the nucleon and the scored row are unaffected.
+* *What it commits to:* words are bookkeeping, and closures/traces are physical. That has to stay
+  true wherever the grammar is used.
+
+**(d)-in — admit `V̄ᵢ`.**
+* *What it means:* the grammar is closed under `ι` (CP profile) and bar (CPT under R1) word by
+  word.
+* *What it costs:*
+  - the redefinition and sweep listed under (d) above;
+  - a tie-break, now among at most three closed-braid classes rather than eight words.
+* *What it risks:*
+  - a tie-break chosen by numbers is fitting;
+  - it imposes CP on the grammar while the convention-D trace is CP-odd.
+* *What it commits to:* reading `ι` as CP and requiring QED-step CP invariance at the word level.
+
+**(d)-in modulo conjugacy — admit `V̄`, select on conjugacy classes.**
+* *What it means:* the grammar is closed under CP and CPT, and selection works on closed braids.
+* *What it costs:* the same as (d)-in, but the pure class is then a single candidate, `V³ ~ V̄³`.
+* *What it risks:* two mixed classes remain to separate.
+* *What it commits to:* the same as (d)-out's commitment, that closures are what is physical.
+
+**Default (nothing ruled):** (d)-out in effect. Nothing is re-run, and the scored row is
+unchanged.
+
+**Recommendation (my judgement, not a finding): (d)-out, with the reason recorded as
+closure-level CPT (`mirror_pow_conj`).**
+* It is the one option whose stated reason is a proved theorem rather than a reading.
+* It costs nothing.
+* The multi-index gap should be measured, for instance whether `V̄₀V̄₁` is conjugate to a V-word on
+  `B₄`, before the β⁻ search relies on it.
+* R1 versus R2 should be ruled separately. It decides whether bar is CPT or CP and is independent
+  of (d).
+
+### What this section does NOT establish
+
+* Reading R1 or R2: a premise.
+* That `ι` *is* physical CP: a profile match, not an identification. The scope is (a).
+* Closure-level CPT for multi-index words.
+* The Jimbo hypotheses of `iota_not_descend` are checked by exact computation, not proved in Lean.
+* `ε_flavour(V̄³) = ε_flavour(V³)` is measured, not derived.
 
 ---
 
@@ -366,14 +558,21 @@ carry the left-line orientation"**, for three reasons:
 
 Revisit once a P/CP map is ruled.
 
+**Update 2026-11-21 (after "Which map is parity").** The measurement asked for above is done. No
+letter map is P. The maps that send `V` to `V̄` are the CP-profile map and the CPT-profile map
+(the latter under reading R1). `V̄³` is conjugate to `V³`. The recommendation stays **(d)-out**, and
+the reason to record changes from "left-line orientation" to "closure-level CPT"
+(`mirror_pow_conj`).
+
 On **(b)** I would not rule "chiral" until the adjointness of A's two blocks is checked (cheap).
 The physics question is whether the word is the amplitude or the Hamiltonian, and #8696's
 "chiral" answers the first while V−A is about something else.
 
 ## What is NOT established
 
-* Which corpus involution is P, C or CP. Without that, "(d)-out breaks CPT" is neither shown nor
-  refuted.
+* ~~Which corpus involution is P, C or CP.~~ Settled as far as the corpus allows. See "Which map is
+  parity": no letter map is P; `ι` has CP's profile; bar is CPT under reading R1. Under R1, the V-only
+  nucleon set is CPT-closed up to conjugacy.
 * Whether A's `n→p` and `p→n` blocks are adjoints of each other (not computed).
 * Chirality and reading 3 of the five-strand length-4 mirror words (not computed).
 * Whether cost should count grammar letters or reduced crossings.
