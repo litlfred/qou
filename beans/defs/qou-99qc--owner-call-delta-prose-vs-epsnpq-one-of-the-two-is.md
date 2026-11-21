@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T02:33:50Z
+updated_at: 2026-11-21T02:34:39Z
 parent: qou-10v9
 ---
 
@@ -4365,3 +4365,10 @@ Owner ruling 2026-11-21 (option 1 of `docs/audits/2026-11-20-up-quark-electron-k
 - Content: dictionary prop+proof+authorNote; knot-notation-convention (+table 1 charm row); also q-chromaticity and strangelet-merger-signature (two quark=trefoil sites #8677 did not list), with re-scoping flags.
 - Compute: meson_braid_length_cap_probe docstring only — the 14-crossing cap premise is not supplied by the ruling; scriptHash drift, not re-run. weak-isospin-t3-grading / meson-braid-length-cap witnesses untouched.
 - m_K/m_π row unaffected: per_observable_100x_status.py reads none of these files or witnesses.
+
+## 2026-11-21 — route Y: Higgs-vacuum Yukawa-type pairing with doublet strands (PR #8694, draft)
+Owner route Y. Pre-reg `76ddb991d3`. Lean `QOU/QuarkState/YukawaVacuumPairing.lean` (sorry-free, generic field; axioms propext/choice/Quot.sound). Probe 23/23, witness proton q₀ 70 dps.
+- Forced: an operator commuting with the unbroken grading is weight-diagonal (`eq_diag_of_commute`); a trace-1 idempotent is P_u or P_d (`idem_commute_trace_one`). tr e_H = 1 puts the vev in a grading-weight-0 slot (`vev_charge_zero_of_trace_one`); impossible on bare q^{2T³} (`no_vev_on_bare_T3`).
+- Type-blind pairings (one morphism on all strands) give split 0 (`split_typeBlind`). Compressed a·1+b·Ř: diag(a, a+bq) vev d, diag(a+bq, a+b(q−q⁻¹)) vev u. General diagonal: split = (a_q−b_q)−(a_ℓ−b_ℓ), 4 free.
+- Charge selection (only non-type-blind candidate): q^{3Q}-invariant 2-point pairing with the neutral vev vanishes on charged slots — quark couplings 0 (`pairing_quark_zero`), e⁻ 0 (`pairing_lepton`), ν free (`nu_coupling_free`); split = y_ν² (`split_neutral`), order q⁰, ≠ 0 at q=1. Gives energy to ν: opposite of SM (needs a right-handed singlet the strand model lacks).
+- No magnitude forced → no Q_β number (pre-registered). Comparison only: CODATA Q_β/m_e = 1.53099. Premise L assumed in arms 3–4, still open.
