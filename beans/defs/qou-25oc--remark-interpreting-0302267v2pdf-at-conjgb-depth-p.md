@@ -1,13 +1,13 @@
 ---
 # qou-25oc
 title: Remark interpreting 0302267v2.pdf at conj:gb-depth-period-correspondence
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:12:37Z
-updated_at: 2026-10-04T15:23:25Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-aqfj
 ---
 
@@ -28,3 +28,7 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Groupes fondamentaux motiviques de Tate mixte
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [deligne-goncharov2005] as the citation key when you do it.
+
+## 2026-11-21T13:00:00Z expo-remarks drain
+
+Verified on main 2ae54ab40: already addressed on main before this drain (cite present at the site); close as completed. Superseded-premise check: none found.

@@ -1,13 +1,13 @@
 ---
 # qou-ophe
 title: Remark interpreting [kucharski-reineke-stosic-sulkowski2017] at prop:stokes-dt-bps-bridge
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:16Z
-updated_at: 2026-10-04T15:23:53Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-aqfj
 ---
 
@@ -23,3 +23,7 @@ Source: `library/arxiv-1707.02991v1/1707.02991v1.pdf` (`kucharski-reineke-stosic
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-21T13:00:00Z expo-remarks drain
+
+Verified on main 2ae54ab40: already addressed on main (cite present at the site). Close as completed. Superseded-premise check: none found.

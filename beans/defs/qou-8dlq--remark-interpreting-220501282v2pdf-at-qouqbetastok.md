@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:19Z
-updated_at: 2026-10-04T15:13:46Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-aqfj
 ---
 
@@ -61,3 +61,7 @@ Re-close it when the work its body names is actually done.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-21T13:00:00Z expo-remarks drain
+
+Not worked. Stays open per AGENTS 13a: its subject (Stokes data for Q_beta) is an open conjecture; a remark does not close it.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:43Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-aqfj
 ---
 
@@ -32,3 +32,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8439, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21T13:00:00Z expo-remarks drain
+
+Not worked. Superseded premise found: the bean asks to interpret the source at rem:dictionary via the 'trefoil electron / T(2,2k+1) leptons' reading. The owner ruling makes the electron sigma0 sigma1 sigma0 with Hopf closure (trefoil is backup only), so the remark as specified would restate a superseded identification. Needs re-scoping before anyone writes it.

@@ -1,14 +1,14 @@
 ---
 # qou-y4c6
 title: Remark interpreting [garoufalidis-gu-marino2023peacock] at prop:stokes-dt-bps-bridge
-status: todo
+status: completed
 pr: 8435
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:16Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T13:00:00Z
 parent: qou-vva9
 ---
 
@@ -32,3 +32,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8435, closed o
 ## 2026-11-21 — handed to the exposition-remarks thread
 
 The cite-remarks drain (issue litlfred/qou#8806) and the exposition-remarks drain (issue litlfred/qou#8803) split shared targets by file; mass-theory/stokes-dt-bps-bridge* belongs to the exposition-remarks thread, which folds this bean's ask into its edit there. Not touched by cite-remarks.
+
+## 2026-11-21T13:00:00Z expo-remarks drain
+
+Verified on main 2ae54ab40: handed over from cite-remarks; the site already carries the cite on main. Close as completed. Superseded-premise check: none found.
