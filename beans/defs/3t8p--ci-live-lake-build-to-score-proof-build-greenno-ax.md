@@ -77,3 +77,9 @@ Full measurement, the two further stub checkers found the same way
 into `ab_methodology_metrics` M5: bean `qou-306p`.
 
 - **Round 93 PR (`litlfred/qou#8497`)**: Formalized `InertCheckerVerdictLedger`, `canonicalInertCheckerVerdictLedger`, `inert_checker_quadratic_balance`, `inert_checker_imbalance_sq_nonneg`, and `inert_checker_active_and_evaluated_recovery` in `QOU.Foundations.InertCheckerVerdictAuditPerPartitionAtomWordGateNoFitChiralitySeparationNormalFormHypothesisBridgeSeventySevenPartitionCompletion` with 80-dps witness (`HEAD = 25e6a2cd52af041cf68fa20d385161f4542be774`, `scriptCommitSha = b25d0e225db433dedb54ef57a788c05ae89960c1`, `scriptHash = 8abb07ac1693146e31fad47a5cfd80a80064de9f2fffcba92912d9ae413ecf74`).
+
+## 2026-11-21 — owner chose RETIRE (issue litlfred/qou#8914)
+
+The two stubs now live in folio-assistant-sci `pipeline/qa-checkers-extended.ts`. Retired in litlfred/folio-assistant-sci#211 (functions, dispatch entries, qa-checkers JSONs, test, skill docs) and litlfred/cat-harness-tools#2484 (registry entries). Tests in a mounted platform: sci 301/0, registry + sci 426/0. `proof-lean-compiles` stays; axiom status is `scripts/lean-axiom-guard.py`. Out of scope: the two detangler stubs (bean qou-306p).
+
+Complete after: both PRs merge, the folio-assistant lock is bumped, and qou's `.folio-assistant-pin` moves past it.

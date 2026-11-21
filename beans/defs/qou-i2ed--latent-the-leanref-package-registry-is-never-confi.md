@@ -207,3 +207,11 @@ configured — see `qou-7ko6`. Mechanism made audible in the meantime:
 `schemas/formal-ref.ts` now emits a one-shot stderr warning when anything
 resolves against no installed layer, which is what printed above the numbers in
 this very measurement.
+
+## 2026-11-21 — the pin gate was already cleared; fix in qou PR #8915 (issue #8914)
+
+Superseded-premise check: "gated on the platform pin advancing past formal-ref" is stale. The pin passed it at 378a100 (2026-09-30) and is now 82b389982. `qa-agent-entry.ts` already configures the layer. The two remaining consumers, `scripts/check-wall-side.ts` and `scripts/check-base-ring.ts`, also crashed at the current pin (the wall checkers moved to `folio-assistant-sci/pipeline/qa-checkers-wall.ts`). PR #8915 fixes both.
+
+Measured (platform at pin, qou main 4e8ceb10): refs with no sibling `.lean` that resolve 0/425 -> 422/425; wall-side sweep 860/867 -> 1249/1289 pass; base-ring 827/867 (254 hits) -> 1167/1238 (529 hits). New failures are library `.lean` files scored for the first time, not fixed here.
+
+Still open: option 2 (a `leanPackagesConfigured()` guard at the 8 platform sites) was not done. Stays in-progress until #8915 merges.
