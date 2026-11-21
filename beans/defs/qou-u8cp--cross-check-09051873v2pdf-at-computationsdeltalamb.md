@@ -41,3 +41,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8404, closed o
 Answered: probe and TjonSimplexForm use 0.300 MeV as the N3LO long-range estimate, which Jurgenson et al. p.3 give as 'a rough estimate in Ref. [20] ... of order a few hundred keV' (a range); the 50 keV SRG-induced number is used separately. ×34 depends on the 0.300 pick; the >10× verdict holds below 1.02 MeV. Comment added in the probe on the branch. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): FINDING F4: mu4_target_exceeds_n3lo_bound puts an empirical literature value and AME B(D) inside a Lean theorem; flagged for the owner, not changed.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21 — F4 resolved (owner decision)
+
+Owner chose "Move them out of Lean": `mu4_target_exceeds_n3lo_bound` and `mu4_target_exceeds_35_percent_of_B4He` removed from TjonSimplexForm.lean on branch `claude/expo-cite-xcheck-2026-11-21` (PR #8852); arithmetic stays in the probe and witness. Ruling row added to docs/coordination/owner-rulings.md.
