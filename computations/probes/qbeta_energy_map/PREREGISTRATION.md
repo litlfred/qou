@@ -408,3 +408,21 @@ Not a preregistration in the strict sense: it records that the claims stated in 
 convention-D Markov trace) were proved in `WeightSpaceMarkov.lean` after a sympy check. Option 2 (a
 derived term for the gap between the cell and m_n − m_p) starts with the corpus-grep checklist; no
 term will be added unless the corpus derives it.
+
+### Addendum 16 (owner "1": test the cell against Q_β; what must the decay vertex add?)
+
+Written before any Lean or new number. Uses premise (G) of Addendum 14 and route T (k_B T = E₀).
+Units m_e = 1 inside Lean (CAL-1).
+
+Claims to prove:
+1. Placement C (active lepton strand, premise L: ν weight +1, e⁻ weight −1), per factor under (G):
+   (E_n − E_p) + (E_ν − E_e) = 0. The lepton's weight step cancels the nucleon cell exactly.
+   So under C the whole of Q_β must come from the vertex.
+2. Placement B (lepton energy from CAL-1, E(e⁻) = m_e, E(ν̄) ≥ 0): Q_β^B = cell − m_e − E(ν̄) < m_e·(2/q − 1)
+   < m_e for every q > 1, from `log_cell_bounds`. So without a vertex term B gives Q_β < m_e at every q.
+3. Hence for any comparison value Q ≥ m_e, the vertex must add V = Q − Q_β^B > Q − m_e·(2/q − 1) > 0.
+
+Expected outcome: no derived vertex energy is produced here. The result is the size of what the vertex
+must supply under each placement (B: 0.41980 MeV at the proton q₀, which equals the m_n − m_p gap by
+construction; C: all of Q_β = 0.78233 MeV), printed after the Lean. Any corpus quantity that lands near
+either figure will be reported as a near-match only, not adopted.
