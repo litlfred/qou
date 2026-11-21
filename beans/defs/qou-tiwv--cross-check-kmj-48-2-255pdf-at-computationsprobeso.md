@@ -1,14 +1,14 @@
 ---
 # qou-tiwv
 title: Cross-check KMJ-48-2-255.pdf at computations/probes/one_loop_ohtsuki_5_2_crosscheck_probe.py
-status: todo
+status: completed
 pr: 8404
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:58Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T14:48:37Z
 parent: qou-8hur
 ---
 
@@ -35,3 +35,12 @@ In-progress in PR #8404 (`feat/qou-t8mi-tcgv-tiwv-u33z-u8cp-round68`, `QOU.QBeta
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8404, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-21T14:48:37Z cross-check result
+
+Probe `computations/probes/takata_twist_knot_colored_jones_probe.py` (branch claude/expo-cite-xcheck-wave2-2026-11-21, commit 08e18fb7fd3), pre-registered, sympy exact plus mpmath 60 dps. ALL PASS.
+
+- [takata2008] Corollary 5 at n = 2 gives the Jones polynomials of S(3,1), S(5,3), S(7,3), matching an independent Kauffman-bracket state sum for 3_1, 4_1, 5_2 (5_2 under q = 1/t: Schubert notation picks the mirror).
+- Kashaev invariant of 5_2 from (15) at N = 64..120, divided by N^{3/2} e^{N Vol/2pi}, Neville-extrapolated in 1/N: |omega| = 0.6562033703 (spread over fit orders about 1e-9). Ohtsuki's printed 0.65620337047 agrees to rel 2.8e-10; the corpus closed form (2|tau(5_2)|)^{-1/2} agrees to rel 3.5e-10. So the 5_2 one-loop cross-check in computations/probes/one_loop_ohtsuki_5_2_crosscheck_probe.py now has a second, compute-based source.
+- FINDING (source): the Habiro/Le form printed on p. 278 has a spurious (q)_m in the denominator; as printed it does not equal the paper's own (14) for n >= 2 (checked against the page image). Without (q)_m it agrees for n = 1..6.
