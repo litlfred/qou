@@ -52,11 +52,22 @@ identification is cited, not imported, so this file depends on Mathlib only).
    `y_d² c̃ + y_ν² c − y_u² c − y_e² c̃`, `(c, c̃)` the two entries of 6. Equal strengths give 0.
    No strength is derived.
 
+## Owner ruling (2026-11-21): the reading is adopted
+
+The owner adopted option 1 on 2026-11-21: the right line of the (matter ⊗ Higgs) crossing is
+read AS the right-handed field (`e_R` for lepton ⊗ `Φ̃`; `d_R`, `u_R`, `ν_R` likewise). `e_R` is
+therefore a two-strand (lepton ⊗ Higgs) channel, not an elementary strand. This is an
+identification adopted by ruling, not a theorem of this file: the Lean proves the quantum
+numbers and the vertex shape, and the ruling supplies the name.
+
+Still open after the ruling: the strand ORDER (matter left or Higgs left, item 6) and the four
+Yukawa strengths (item 7). Neither is fixed by anything in the corpus.
+
 ## What is NOT claimed
 
-* That this line IS the right-handed electron. Reading it so makes `e_R` a two-strand
-  (lepton ⊗ Higgs) channel rather than a strand: an identification, scope (a), put to the owner.
-* Any Yukawa strength, any MeV number, any identification of a split with `Q_β`.
+* That the identification is derived. It is adopted by owner ruling (above).
+* A strand order, or any Yukawa strength.
+* Any MeV number, or any identification of a split with `Q_β`.
 * The Standard-Model charges are input labels (as in #8676), and Premise L (lepton = doublet
   strand) is assumed for the lepton rows.
 

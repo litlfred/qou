@@ -79,3 +79,11 @@ input labels (as in #8676 and route Y):
   to the owner, not adopted.
 * No Yukawa strength is fitted, chosen or tuned. No selection between the two orders by how a
   number lands. CODATA `Q_β` is quoted for comparison only.
+
+## Post-registration note (2026-11-21, added after the run; nothing above was changed)
+
+The owner adopted the reading (option 1 of PR #8694) on 2026-11-21: the right line of the
+matter ⊗ Higgs crossing is read as the right-handed field, so `e_R` is a two-strand
+(lepton ⊗ Higgs) channel. The strand order and the four Yukawa strengths stay open. The probe and
+witness above still say "owner call" because they record the state at run time; they were not
+re-run for this note.
