@@ -5,7 +5,7 @@ Step 2 of the [derived atom](#def:derived-atom) disposes of the antiquarks in si
 | Channel | Products | Constituent knot | $\mathrm{Vol}_{\mathrm{hyp}}$ |
 |---|---|---|---|
 | **A** | nucleon $+$ antinucleon | Borromean rings $L6a4$, twice | $8G \approx 7.328$ each |
-| **B** | three mesons | Hopf link $L_+$, three times | $0$ each |
+| **B** | three mesons | $L_+$, three times | $0$ each |
 | **C** | annihilation back to $\gamma\gamma$ | — | — |
 
 Channel C is the corpus's "annihilate"; channel A is its "form antinucleons". Channel B is the one step 2 omits.

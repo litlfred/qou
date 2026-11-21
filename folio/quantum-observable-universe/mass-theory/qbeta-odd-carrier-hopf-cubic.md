@@ -40,7 +40,7 @@ the origin of the cubic:
 | virtual ($\sigma_0, \sigma_1$) | 1 | $0$ |
 | electron ($\sigma_0\sigma_1\sigma_0$) | 3 | $0$ |
 | unknot ($\mathbf{1}$) | 0 | $\frac{h}{4} \cdot (2y^2 - 7y + 4) = \frac{h}{4} \cdot C_{\mathrm{unknot}}(y)$ |
-| Hopf ($\sigma_0\sigma_1 + \sigma_1\sigma_0$) | 2 | $\frac{h}{4} \cdot (y^3 - 6y^2 + 10y - 6) = \frac{h}{4} \cdot C_{\mathrm{Hopf}}(y)$ |
+| $L_\pm$ ($\sigma_0\sigma_1 + \sigma_1\sigma_0$) | 2 | $\frac{h}{4} \cdot (y^3 - 6y^2 + 10y - 6) = \frac{h}{4} \cdot C_{\mathrm{Hopf}}(y)$ |
 
 with $C = C_{\mathrm{Hopf}} + C_{\mathrm{unknot}}$. The odd-crossing sectors
 (virtual, electron) are bar-even and vanish; the identity contributes only a

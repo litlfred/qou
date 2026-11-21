@@ -49,7 +49,7 @@ namespace QOU.Interactions
 inductive NuclearBindingRegime
   /-- Regime I: shell filling — the braid `(σ₀σ₁)²σ₀` (closure `T(2,4)`). -/
   | shellFilling
-  /-- Regime II: magic shell closure — Hopf link `L_±`. -/
+  /-- Regime II: magic shell closure — `L_±` (closure in `B₃`: unknot). -/
   | magicClosure
   /-- Regime III: open shell — bare typed crossing `C`. -/
   | openShell
@@ -67,7 +67,7 @@ def observedRegime : ℕ → NuclearBindingRegime
 /-- **Three operator regimes for nuclear binding** ([`prop:nuclear-operator-regimes`]).
 
     The observed `A ≤ 6` transition sequence is `I, II, II, II, III`: shell
-    filling (`(σ₀σ₁)²σ₀`) → magic closure (Hopf `L₊`/`L₋`) → open shell (bare
+    filling (`(σ₀σ₁)²σ₀`) → magic closure (`L₊`/`L₋`) → open shell (bare
     crossing `C_pn`). All three regimes are realised; the `I → II → III`
     transition is exhibited. -/
 -- Ref: [leitner2026] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.md
