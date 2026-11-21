@@ -176,3 +176,32 @@ proof): +11.66 % against Q_β; it cannot be m_n − m_p (below 2m_e at every q).
 with Δ(F), Δ³(F) intertwines the two quark sectors, so ε_p = q²·ε_n. Its extension to the
 K-weighted partial trace over extra strands is checked numerically (q = 2, 3/2, 79 gluon words),
 not proved. Its epsP/epsN match this file's, so the two can be joined.
+
+## 10. Spectator invariance is a consequence, not an axiom (owner, 18:00Z)
+
+Owner: S "should follow from QOU, no hidden symmetry axioms". It does, from two facts the corpus
+already holds:
+
+1. **The trace multiplies over disjoint parts.** `markov-axioms-primitive` derives
+   tr_M(K₁ ⊔ K₂) = tr_M(K₁)·tr_M(K₂) from the Markov axioms. For the convention-D quantum trace it
+   is `trace_kron`: K^{⊗(n+m)} = K^{⊗n} ⊗ K^{⊗m} because K is grouplike (Δ(K) = K ⊗ K), and
+   [2]^{n+m} = [2]^n·[2]^m.
+2. **Energy adds over non-interacting parts.** The corpus's own energy reading of the trace,
+   `prop:beta-eq-ln-q-dictionary` (E = −ln y/β), is additive outright. More basically, the generator
+   H = log_q K of the grouplike weight is primitive, so weights q^i, q^j combine to exponent i + j
+   (`grouplike_weight`).
+
+Then `spectator_of_additive`: additive energy on a multiplicative trace satisfies S. A spectator is
+just a non-interacting part: an unlinked lepton factor, an idle strand, a global normalisation.
+With continuity, S and additivity are equivalent, and both force the log (§1). So the chain is
+"trace multiplies + energy adds ⇒ energy = c·log(trace)". No symmetry is assumed beyond the
+grouplike K of U_q(sl₂), which is the corpus's convention D.
+
+**Direct route, without Φ.** Because the energy generator is H = log_q K, the n–p cell can be read
+without any map of the full trace: n and p differ by ΔH = 2 (one u → d), and the plain traces are
+equal (`trace_word_eq`), so the Gibbs energy difference is 2·k_B T·ln q = 2E₀·ln q (§8–9).
+
+**What is still assumed.** That the n–p energy is an energy of the Gibbs state the trace
+defines, i.e. the corpus's partition-function reading applied to the T³ sectors. The dictionary
+block states it for Wedderburn blocks; applying it to weight-space sectors is one step beyond
+that block, and is named here rather than hidden.
