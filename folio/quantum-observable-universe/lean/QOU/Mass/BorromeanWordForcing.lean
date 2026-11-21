@@ -62,7 +62,7 @@ only. "Closure of `β_Bor` is not the unlink" also needs a link invariant
   conjugate to `β_Bor` (many are).
 * That `χ` separates `β_Bor`'s conjugacy class. The probe
   `computations/probes/borromean_word_forcing/` (exact Laurent arithmetic,
-  pre-registered) finds every writhe-0 word of length `≤ 14` with `χ = χ(β_Bor)`
+  pre-registered) finds every writhe-0 word of length `≤ 16` with `χ = χ(β_Bor)`
   conjugate to `β_Bor` (Burau faithfulness on `B₃`, Magnus–Peluso, cited), and no word
   with `tr_M = −tr_M(β_Bor)`. This is a finite measurement, not a theorem.
 * **Brunnian alone does not force `β_Bor`.** The same probe finds twenty pure,
