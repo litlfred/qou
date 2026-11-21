@@ -29,7 +29,7 @@ The lepton sector is algebraically distinguished as the only level where matter-
 
 | $H_n$ | Irrep dimensions | $C$ vs bar | Physical sector |
 |--------|-----------------|------------|-----------------|
-| $H_2$ | $1, 1$ | $C = \mathrm{bar}$ | leptons |
+| $H_2$ | $1, 1$ | $C = \mathrm{bar}$ | — |
 | $H_3$ | $1, 2, 1$ | $C \ne \mathrm{bar}$ | mesons + baryons |
 | $H_4$ | $1, 3, 2, 3, 1$ | $C \ne \mathrm{bar}$ | nuclear binding |
 
