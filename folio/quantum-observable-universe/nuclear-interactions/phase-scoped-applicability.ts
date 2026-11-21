@@ -12,5 +12,5 @@ export default remark({
     "regime-switch",
     "open-set",
   ],
-  interprets: "prop:confinement-phase-stratification",
+  interprets: "conj:confinement-phase-boundaries",
 });

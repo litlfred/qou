@@ -481,7 +481,7 @@
 | [conj:confinement-frobenius-reciprocity](#conj:confinement-frobenius-reciprocity) | Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings | Ch 12 |
 | [prop:confinement-topological](#prop:confinement-topological) | Confinement is topological (LP proof) | Ch 12 |
 | [prop:confinement-operator-selection](#prop:confinement-operator-selection) | Confinement operator selection via topological Brunnian minimality | Ch 12 |
-| [prop:confinement-phase-stratification](#prop:confinement-phase-stratification) | Confinement phases are open strata of the generic $q$-locus | Ch 7 |
+| [prop:confinement-phase-stratification](#prop:confinement-phase-stratification) | The confinement locus is open, and the active support is constant on a strictly complementary phase | Ch 7 |
 | [prop:confinement-universality](#prop:confinement-universality) | Confinement universality: the confinement stage depends only on the flavours | Ch 7 |
 | [prop:horizon-conformal-invariance](#prop:horizon-conformal-invariance) | Conformal invariance at the jet horizon | Ch 20 |
 | [prop:topological-decomposition-mass](#prop:topological-decomposition-mass) | Conjectural Topological Decomposition of Mass | Ch 9 |
@@ -1088,6 +1088,7 @@
 | [conj:schwinger-measure-computational-time](#conj:schwinger-measure-computational-time) | Computational-time identification: the binding Borel variable is the loop proper time | Ch 14 |
 | [conj:confinement-nf-structure-forcing](#conj:confinement-nf-structure-forcing) | Confinement → NF-structure forcing: $\mathrm{shift}_{\mathrm{NF}}(\beta_1 \star I \star \beta_2) = \alpha_{\mathrm{shift}}(I) + \Delta$ with $|\Delta|$ bounded by the LP duality gap | Ch 11 |
 | [conj:confinement-grading-correspondence](#conj:confinement-grading-correspondence) | Confinement levels coincide with KLR $\mathbb{Z}$-grading shifts | Ch 7 |
+| [conj:confinement-phase-boundaries](#conj:confinement-phase-boundaries) | Phase boundaries of the confinement locus | Ch 7 |
 | [conj:rho-k-pair-gen-canonical-form](#conj:rho-k-pair-gen-canonical-form) | Conjectural canonical form of the pair-gen piece $\rho_K^{\text{pair-gen}}$ in the graded $\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \hat V_i, \hat V_j)$ such that $\rho_K^{\text{pair-gen}} = \sum_{i<j} f_2(q, \hat V_i^{\text{full}}, \hat V_j^{\text{full}})$ recovering the six-term theorem's Kashaev limit at sub-percent accuracy. | Ch 9 |
 | [conj:diagrammatic-double-magic-lr-fusion](#conj:diagrammatic-double-magic-lr-fusion) | Conjecture (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$ | Ch 15 |
 | [conj:double-magic-delta-i-bound](#conj:double-magic-delta-i-bound) | Conjecture: Empirical double-magic isotopes satisfy $|\Delta i| \leq 1$ across Bring shell indices | Ch 15 |
