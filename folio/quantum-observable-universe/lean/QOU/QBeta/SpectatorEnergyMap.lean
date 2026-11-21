@@ -322,4 +322,27 @@ theorem grouplike_weight (q : ℝ) (hq : 0 < q) (i j : ℤ) :
   rw [Real.log_mul (zpow_pos hq i).ne' (zpow_pos hq j).ne', Real.log_zpow, Real.log_zpow]
   ring
 
+/-! ## The Gibbs reading on T³ sectors (the step named in §10)
+
+The dictionary is stated for Wedderburn blocks λ with weight y_λ. Under Schur–Weyl a block's
+ factor  has a -eigenbasis with weights , so the block's own weight is
+already a sum over those states: . Each  is a Boltzmann weight at
+ with energy  (). So the  sectors are the microstates the block
+weight is built from, not a new reading. -/
+
+/-- **A -weight state is a Boltzmann state at :** . -/
+theorem state_weight (q : ℝ) (hq : 0 < q) (μ : ℤ) :
+    Real.exp (-Real.log q * (-(μ : ℝ))) = q ^ μ := by
+  rw [show -Real.log q * (-(μ : ℝ)) = (μ : ℝ) * Real.log q by ring,
+    ← Real.log_zpow, Real.exp_log (zpow_pos hq μ)]
+
+/-- **One strand:**  is the partition function of the two weight states
+ at . -/
+theorem qd2_is_partition (q : ℝ) (hq : 0 < q) :
+    Real.exp (-Real.log q * (-(1 : ℝ))) + Real.exp (-Real.log q * (-(-1 : ℝ))) = q + q⁻¹ := by
+  have h1 := state_weight q hq 1
+  have h2 := state_weight q hq (-1)
+  push_cast at h1 h2
+  rw [h1, h2, zpow_one, zpow_neg_one]
+
 end QOU.QBeta.SpectatorEnergyMap
