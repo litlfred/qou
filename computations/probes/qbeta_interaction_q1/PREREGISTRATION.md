@@ -60,3 +60,10 @@ map — linear, |·|, ±log, ℏ/𝔇 (1/x), power x^k (k = ±1, ±2, ±1/2), an
 with its q = 1 value subtracted, E = E₀(ε(q) − ε(1)) — the lepton-pair energy and Q, with a pass
 iff both are positive; (l) the density jump ρ_final/ρ_p > [2]⁴/q needed by the ρ-weighted map.
 CODATA printed last only.
+
+## Addendum 5 (before `nonproduct_window_probe.py` ran; owner: the final-state trace may not be a product because of flavour/colour terms)
+
+With x = ε(p e⁻ ν̄) free: (m) the window ε_n < x < ε_p that every strictly decreasing map needs
+(Lean `NonProductFinalState.decreasing_window`), and the lift x − ε_p f it requires; (n) for −log
+and 1/x, E(n) − E(p), which does not depend on x; (o) the x that would give the lepton pair m_e
+under each map, and the Q_β that follows. CODATA printed last only; nothing is adopted.
