@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T20:22:43Z
+updated_at: 2026-11-21T02:33:50Z
 parent: qou-10v9
 ---
 
@@ -4355,3 +4355,13 @@ So B can separate p from n, but the split is set by the free blob data (Q, y), w
 - The same obstruction is already on record for ³H/³He: docs/audits/2026-06-03-em-linking-invariant.md names the missing object as "a categorical brane-separation / nuclear-charge-radius length scale" (3.2× factor = r_strong/r_charge). The nucleon EM gap is the same class.
 - Other corpus energy units (E₀, α_bind = 8G·m_e) exist but none is derived as the unit of a Coulomb term; choosing one by its result would be a fit. Not computed.
 - Status: OPEN. Needs a derived categorical length (or crossing-energy) scale for the nucleon. Not closable by trace or weighting choices.
+
+## 2026-11-21 — owner option 1 applied: meson/weak-isospin quark 3/5/7 are lepton-partner labels (PR #8698)
+
+Owner ruling 2026-11-21 (option 1 of `docs/audits/2026-11-20-up-quark-electron-knot-clash.md` §"Still open"): the ±3/±5/±7 carried by quarks in the meson cluster is re-read as the LEPTON PARTNER's crossing count (generation label); the sign is the quark strand's crossing orientation. Prose and docstrings only.
+- Lean (all lean-direct exit 0, `-DautoImplicit=false -s 65536`, imports Mathlib only): WeakIsospinT3Grading, MesonOperatorSelectionT3, MesonFluxTubeReduction, MesonFusionIndexSelection, lepton-meson-torus-knot-dictionary.lean. No theorem statement or def body changed; none asserts a quark is a torus knot (all are integer arithmetic). Identifiers `signedWrithe`/`genWinding`/`quarkTorusIndex` kept as names.
+- `scanPair_four_not_dictionary_index` ("4 is not a quark index"): premise lost as a statement about quarks; dated docstring note, kept.
+- For the owner: `CanonicalWeakIsospinFromBowtie.writhe_magnitude_is_generation` can no longer be met by a quark strand's own net crossing (±1); only via the partner label. Docstring note added, statement unchanged.
+- Content: dictionary prop+proof+authorNote; knot-notation-convention (+table 1 charm row); also q-chromaticity and strangelet-merger-signature (two quark=trefoil sites #8677 did not list), with re-scoping flags.
+- Compute: meson_braid_length_cap_probe docstring only — the 14-crossing cap premise is not supplied by the ruling; scriptHash drift, not re-run. weak-isospin-t3-grading / meson-braid-length-cap witnesses untouched.
+- m_K/m_π row unaffected: per_observable_100x_status.py reads none of these files or witnesses.
