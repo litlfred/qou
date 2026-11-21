@@ -113,8 +113,14 @@ def WellFormed (D : Code E) : Prop :=
 
 end Code
 
-/-- A code bundled with its edge type. -/
-def Bundled : Type (u + 1) := Σ E : Type u, Code E
+/-- A code bundled with its edge type, which is finite with decidable equality. -/
+structure Bundled : Type (u + 1) where
+  E : Type u
+  [fin : Fintype E]
+  [dec : DecidableEq E]
+  code : Code E
+
+attribute [instance] Bundled.fin Bundled.dec
 
 variable {E : Type u}
 
@@ -144,21 +150,22 @@ def triR (a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ : E) : Multiset (Crossing
 the symmetric, transitive closure. In each local move the new internal edges are required to be
 fresh, i.e. not to occur in the rest `R` of the code and to be distinct from the boundary edges. -/
 inductive Move : Bundled.{u} → Bundled.{u} → Prop
-  | embed {E F : Type u} (f : E ↪ F) (D : Code E) : Move ⟨E, D⟩ ⟨F, D.map f⟩
-  | contract {E : Type u} [DecidableEq E] (R : Code E) (a b : E) (hab : a ≠ b) :
+  | embed {E F : Type u} [Fintype E] [DecidableEq E] [Fintype F] [DecidableEq F]
+      (f : E ↪ F) (D : Code E) : Move ⟨E, D⟩ ⟨F, D.map f⟩
+  | contract {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b : E) (hab : a ≠ b) :
       Move ⟨E, R + Code.ofJs {(a, b)}⟩ ⟨E, R.map (Function.update id b a)⟩
-  | r1 {E : Type u} (R : Code E) (a b ℓ : E) (u s : Bool)
+  | r1 {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b ℓ : E) (u s : Bool)
       (hℓ : ¬ R.Occurs ℓ) (ha : ℓ ≠ a) (hb : ℓ ≠ b) :
       Move ⟨E, R + Code.ofJs {(a, b)}⟩ ⟨E, R + Code.ofXs {kink a b ℓ u s}⟩
-  | r2par {E : Type u} (R : Code E) (a b c d e₁ f₁ : E) (s : Bool)
+  | r2par {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b c d e₁ f₁ : E) (s : Bool)
       (he : ¬ R.Occurs e₁) (hf : ¬ R.Occurs f₁) (hef : e₁ ≠ f₁)
       (hbd : ∀ x ∈ ({a, b, c, d} : Set E), x ≠ e₁ ∧ x ≠ f₁) :
       Move ⟨E, R + Code.ofJs {(a, b), (c, d)}⟩ ⟨E, R + Code.ofXs (bigonPar a b c d e₁ f₁ s)⟩
-  | r2anti {E : Type u} (R : Code E) (a b c d e₁ f₁ : E) (s : Bool)
+  | r2anti {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b c d e₁ f₁ : E) (s : Bool)
       (he : ¬ R.Occurs e₁) (hf : ¬ R.Occurs f₁) (hef : e₁ ≠ f₁)
       (hbd : ∀ x ∈ ({a, b, c, d} : Set E), x ≠ e₁ ∧ x ≠ f₁) :
       Move ⟨E, R + Code.ofJs {(a, b), (c, d)}⟩ ⟨E, R + Code.ofXs (bigonAnti a b c d e₁ f₁ s)⟩
-  | r3 {E : Type u} (R : Code E) (a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ : E)
+  | r3 {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ : E)
       (hint : ∀ x ∈ ({a₁, b₁, c₁} : Set E), ¬ R.Occurs x) :
       Move ⟨E, R + Code.ofXs (triL a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂)⟩
         ⟨E, R + Code.ofXs (triR a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂)⟩
@@ -183,7 +190,8 @@ theorem ReidemeisterEquiv.of_move {D D' : Bundled.{u}} (h : Move D D') :
     ReidemeisterEquiv D D' := Relation.EqvGen.rel _ _ h
 
 /-- Relabelling along an equivalence of edge types is a Reidemeister equivalence. -/
-theorem ReidemeisterEquiv.of_equiv {E F : Type u} (e : E ≃ F) (D : Code E) :
+theorem ReidemeisterEquiv.of_equiv {E F : Type u} [Fintype E] [DecidableEq E] [Fintype F]
+    [DecidableEq F] (e : E ≃ F) (D : Code E) :
     ReidemeisterEquiv ⟨E, D⟩ ⟨F, D.map e⟩ :=
   .of_move (Move.embed e.toEmbedding D)
 
