@@ -9,8 +9,8 @@ import QOU.FlavorDressing.PivotSplitOrder
 
 Categorical bridge from the discrete category **Flavor** of quark
 flavors to the positive reals carrying dressed-quark mass values.
-Substrate-pure derivation of the down–up splitting from
-`prop:flavor-split-substrate` lives here; the splitting-only
+Derivation of the down–up splitting, conditional on
+`conj:flavor-split-substrate-mass` lives here; the splitting-only
 substrate bound theorem is included.
 
 ## Members

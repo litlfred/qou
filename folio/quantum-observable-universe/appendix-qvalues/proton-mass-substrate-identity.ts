@@ -15,7 +15,7 @@ import { conjecture } from "../../schema/builders";
  * specialisation: at q = q_0, with m_e and m_μ in MeV from CAL-1 /
  * CAL-2.
  *
- * Combined with prop:flavor-split-substrate (canonically-derived
+ * Combined with conj:flavor-split-substrate-mass (canonically-derived
  * Hecke-skein flavor split), this gives a full m_p + m_n derivation
  * from only (m_e, m_μ, q_0) — CAL-3 ($\\mathfrak{Q}$_β) becomes a DERIVED quantity,
  * not an input.
@@ -33,7 +33,7 @@ export default conjecture({
   uses: [
     "conj:proton-borromean-assembly",
     "def:f-bor-borromean-observable",
-    "prop:flavor-split-substrate",
+    "conj:flavor-split-substrate-mass",
   ],
   lean: {
     // §3b-cond conditional: the theorem takes the [ProtonBorromeanAssembly]

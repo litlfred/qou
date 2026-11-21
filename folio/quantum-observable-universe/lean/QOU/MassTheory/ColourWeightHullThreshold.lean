@@ -4,7 +4,7 @@ hull exactly when |δ| ≤ 2, and a target above the ceiling forces it outside.
 
 CONTEXT.  The atom word's proton–neutron letter is the Hecke element
 `σ − h(½ − δ/4)·1` with `δ = flavor_split_leading(q)`
-(`prop:flavor-split-substrate`).  Using `σ⁻¹ = σ − h` it is the AFFINE
+(`conj:flavor-split-substrate-mass`).  Using `σ⁻¹ = σ − h` it is the AFFINE
 combination
 
     (½ + δ/4)·σ  +  (½ − δ/4)·σ⁻¹,

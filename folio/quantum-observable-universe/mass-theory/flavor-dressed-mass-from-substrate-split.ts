@@ -52,7 +52,7 @@ export default proposition({
   ],
   uses: [
     "def:flavor-dressing-functor",
-    "prop:flavor-split-substrate",
+    "conj:flavor-split-substrate-mass",
     "lem:pair-skein-mass-formula",
   ],
   computation: {
