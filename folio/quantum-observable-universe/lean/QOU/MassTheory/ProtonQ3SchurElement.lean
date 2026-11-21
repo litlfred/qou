@@ -546,4 +546,54 @@ theorem hasDerivAt_trXMinus_idempotent_coord {q : 𝕜} (h0 : q ≠ 0) (h1 : q ^
 
 end Derivative
 
+/-! ### A canonical-coordinate criterion: integral and bar-invariant
+
+A coordinate on the family of Markov traces that is itself a trace,
+`c = tr(b)` with `b = u·σ + v ∈ H₂`, is affine in `z`: `c = u z + v`, so
+`−∂_c tr(x₋) = −u⁻¹ ∂_z tr(x₋) = u⁻¹ q⁻³` at `z_D`. Wenzl's `a` is not of this
+form, and the idempotent `τ(P₋)` has `u = −[2]_q⁻¹`, which is not in the integral
+form `ℤ[q, q⁻¹]`.
+
+Ask that `b` generate `H₂` over `ℤ[q, q⁻¹]` together with `1` (so `u` is a unit,
+`u = ε q^m`, `ε = ±1`; this is the standard description of the units of a Laurent
+ring and is an input here, not proved) and that `b` be bar-invariant (the
+Kazhdan–Lusztig condition; `bar σ = σ⁻¹ = σ − (q − q⁻¹)`, `bar q = q⁻¹`). The
+`σ`-coefficient of `bar b` is `bar u = ε q^{−m}`, so bar-invariance forces
+`q^{−m} = q^m`, hence `m = 0` (`kl_unit_exponent_zero`), and then
+`|u⁻¹ q⁻³| = q⁻³` (`kl_coordinate_derivative`). Both
+`C'_s = σ + q⁻¹` and `C_s = σ − q` qualify. So **under "integral and
+bar-invariant", the coordinate is forced up to sign and the derivative is
+`±q⁻³`.** The criterion itself is a choice, stated. -/
+
+section KLCoordinate
+
+variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+
+/-- Bar-invariance of `ε q^m σ + v` forces `m = 0` (for `q > 1`). -/
+theorem kl_unit_exponent_zero {q : K} (hq : 1 < q) (ε : K) (hε : ε ≠ 0) (m : ℤ)
+    (hbar : ε * q ^ (-m) = ε * q ^ m) : m = 0 := by
+  have h0 : 0 < q := lt_trans zero_lt_one hq
+  have h := mul_left_cancel₀ hε hbar
+  have := (zpow_right_injective₀ h0 hq.ne').eq_iff.mp h
+  omega
+
+/-- With `u = ε = ±1` the coordinate derivative is `ε·q⁻³`, so its absolute
+value is `q⁻³`. -/
+theorem kl_coordinate_derivative {q : K} (hq : 0 < q) (ε : K) (hε : ε = 1 ∨ ε = -1) :
+    |ε⁻¹ * (q ^ 3)⁻¹| = (q ^ 3)⁻¹ := by
+  have : 0 < (q ^ 3)⁻¹ := by positivity
+  rcases hε with h | h <;> subst h <;> simp [abs_of_pos this]
+
+omit [LinearOrder K] [IsStrictOrderedRing K] in
+/-- Both Kazhdan–Lusztig elements `C'_s = σ + q⁻¹` and `C_s = σ − q` are
+bar-invariant: with `bar σ = σ − (q − q⁻¹)` and `bar q = q⁻¹`, the constant terms
+match. -/
+theorem kl_elements_bar_invariant (q : K) :
+    (-(q - q⁻¹) + q⁻¹⁻¹ = q⁻¹) ∧ (-(q - q⁻¹) - q⁻¹ = -q) := by
+  refine ⟨?_, ?_⟩
+  · rw [inv_inv]; ring
+  · ring
+
+end KLCoordinate
+
 end QOU.MassTheory.ProtonQ3Schur
