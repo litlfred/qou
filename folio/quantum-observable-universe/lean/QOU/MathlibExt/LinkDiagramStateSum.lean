@@ -143,15 +143,16 @@ noncomputable def loc (T : Finset E) (S : Code E) (L : E → ι) : R :=
 def glue (T : Finset E) (u : { e // e ∈ T } → ι) (v : { e // e ∉ T } → ι) : E → ι :=
   (Equiv.piEquivPiSubtypeProd (· ∈ T) (fun _ => ι)).symm (u, v)
 
-/-- **Local replacement.** Replacing a local piece `S` by `S'` does not change the value, provided
-the internal edges `T` do not occur in the rest `R`, the two pieces have the same edges outside
-`T`, and the local sums over the internal labels agree for every boundary labelling. -/
-theorem value_local (R₀ S S' : Code E) (T : Finset E)
+/-- **Local replacement up to a scalar.** Replacing a local piece `S` by `S'` multiplies the value
+by `κ`, provided the internal edges `T` do not occur in the rest `R₀`, the two pieces have the same
+edges outside `T`, and for every boundary labelling the local sum for `S'` is `κ` times the local
+sum for `S`. -/
+theorem value_local_smul (R₀ S S' : Code E) (T : Finset E) (κ : R)
     (hR : ∀ e ∈ T, ¬ R₀.Occurs e)
     (hocc : ∀ e ∉ T, (S.Occurs e ↔ S'.Occurs e))
     (hloc : ∀ v : { e // e ∉ T } → ι,
-      ∑ u, loc M T S (glue T u v) = ∑ u, loc M T S' (glue T u v)) :
-    value M (R₀ + S) = value M (R₀ + S') := by
+      ∑ u, loc M T S' (glue T u v) = κ * ∑ u, loc M T S (glue T u v)) :
+    value M (R₀ + S') = κ * value M (R₀ + S) := by
   classical
   -- the part of the weight outside the local piece
   let A : (E → ι) → R := fun L =>
@@ -198,13 +199,26 @@ theorem value_local (R₀ S S' : Code E) (T : Finset E)
       Fintype.sum_prod_type, Finset.sum_comm]
     rfl
   unfold value
-  rw [Finset.sum_congr rfl fun L _ => hS L, Finset.sum_congr rfl fun L _ => hS' L, hsum, hsum]
+  rw [Finset.sum_congr rfl fun L _ => hS L, Finset.sum_congr rfl fun L _ => hS' L, hsum, hsum,
+    Finset.mul_sum]
   refine Finset.sum_congr rfl fun v _ => ?_
   have hfac : ∀ S₁ : Code E, ∑ u, A (glue T u v) * loc M T S₁ (glue T u v)
       = A (glue T (fun _ => M.base) v) * ∑ u, loc M T S₁ (glue T u v) := fun S₁ => by
     rw [Finset.mul_sum]
     exact Finset.sum_congr rfl fun u _ => by rw [hA u (fun _ => M.base) v]
   rw [hfac, hfac, hloc v]
+  ring
+
+/-- **Local replacement.** The case `κ = 1` of `value_local_smul`. -/
+theorem value_local (R₀ S S' : Code E) (T : Finset E)
+    (hR : ∀ e ∈ T, ¬ R₀.Occurs e)
+    (hocc : ∀ e ∉ T, (S.Occurs e ↔ S'.Occurs e))
+    (hloc : ∀ v : { e // e ∉ T } → ι,
+      ∑ u, loc M T S (glue T u v) = ∑ u, loc M T S' (glue T u v)) :
+    value M (R₀ + S) = value M (R₀ + S') := by
+  have := value_local_smul M R₀ S' S T 1 hR (fun e he => (hocc e he).symm)
+    (fun v => by rw [one_mul, hloc v])
+  rw [this, one_mul]
 
 end Value
 
@@ -262,15 +276,19 @@ theorem occurs_ofXs_bigonPar (a b c d e₁ f₁ e : E) (s : Bool) :
   simp
   tauto
 
-/-- **Second Reidemeister move, parallel strands.** If the crossing tensors of signs `s` and `!s`
-compose to the identity in the sense of `hX`, the value is unchanged by `r2par`. -/
-theorem value_r2par (R₀ : Code E) (a b c d e₁ f₁ : E) (s : Bool)
+/-- **Replacing two joins by a two-crossing piece.** Let `xs` be crossings mentioning exactly the
+edges `a, b, c, d, e₁, f₁`, with weight `G` of their labels. If summing `G` over the labels of the
+internal edges `e₁, f₁` gives `1` when `a, b` and `c, d` carry equal labels and `0` otherwise, then
+replacing the joins `(a, b), (c, d)` by `xs` does not change the value. -/
+theorem value_pair_of (R₀ : Code E) (xs : Multiset (Crossing E)) (a b c d e₁ f₁ : E)
+    (G : ι → ι → ι → ι → ι → ι → R)
     (he : ¬ R₀.Occurs e₁) (hf : ¬ R₀.Occurs f₁) (hef : e₁ ≠ f₁)
     (hbd : ∀ x ∈ ({a, b, c, d} : Set E), x ≠ e₁ ∧ x ≠ f₁)
-    (hX : ∀ a b c d : ι, ∑ i, ∑ j, M.X s c j a i * M.X (!s) j d i b =
-      if a = b ∧ c = d then 1 else 0) :
-    value M (R₀ + Code.ofJs {(a, b), (c, d)}) =
-      value M (R₀ + Code.ofXs (bigonPar a b c d e₁ f₁ s)) := by
+    (hocc : ∀ e, (Code.ofXs xs).Occurs e ↔
+      ((a = e ∨ b = e) ∨ (c = e ∨ d = e)) ∨ (e₁ = e ∨ f₁ = e))
+    (hxw : ∀ L : E → ι, xw M xs L = G (L a) (L b) (L c) (L d) (L e₁) (L f₁))
+    (hG : ∀ a b c d : ι, ∑ i, ∑ j, G a b c d i j = if a = b ∧ c = d then 1 else 0) :
+    value M (R₀ + Code.ofJs {(a, b), (c, d)}) = value M (R₀ + Code.ofXs xs) := by
   classical
   obtain ⟨hae, haf⟩ := hbd a (by simp)
   obtain ⟨hbe, hbf⟩ := hbd b (by simp)
@@ -282,19 +300,19 @@ theorem value_r2par (R₀ : Code E) (a b c d e₁ f₁ : E) (s : Bool)
     rcases heT with rfl | rfl <;> assumption
   · intro e heT
     simp only [Finset.mem_insert, Finset.mem_singleton, not_or] at heT
-    rw [occurs_ofJs_pair, occurs_ofXs_bigonPar]
+    rw [occurs_ofJs_pair, hocc]
     have h1 : e₁ ≠ e := Ne.symm heT.1
     have h2 : f₁ ≠ e := Ne.symm heT.2
     tauto
   · intro v
     rw [sum_glue_pair e₁ f₁ hef M.base, sum_glue_pair e₁ f₁ hef M.base]
-    set L₀ := glue {e₁, f₁} (fun _ => M.base) v with hL₀
-    have hL₀e : L₀ e₁ = M.base := by
-      simp [hL₀, glue, Equiv.piEquivPiSubtypeProd_symm_apply]
-    have hL₀f : L₀ f₁ = M.base := by
-      simp [hL₀, glue, Equiv.piEquivPiSubtypeProd_symm_apply]
+    set L₀ := glue {e₁, f₁} (fun _ => M.base) v
     have hnot : e₁ ∉ ({f₁} : Finset E) := by simpa using hef
-    -- left side: only the base labels on `e₁, f₁` survive
+    have hupd : ∀ i j,
+        (Function.update (Function.update L₀ e₁ i) f₁ j e₁ = i ∧
+          Function.update (Function.update L₀ e₁ i) f₁ j f₁ = j) ∧
+        ∀ x, x ≠ e₁ → x ≠ f₁ → Function.update (Function.update L₀ e₁ i) f₁ j x = L₀ x :=
+      fun i j => ⟨⟨by simp [hef], by simp⟩, fun x h1 h2 => by simp [h1, h2]⟩
     have hlhs : ∀ i j, loc M {e₁, f₁} (Code.ofJs {(a, b), (c, d)})
         (Function.update (Function.update L₀ e₁ i) f₁ j) =
         if i = M.base then if j = M.base then
@@ -304,43 +322,67 @@ theorem value_r2par (R₀ : Code E) (a b c d e₁ f₁ : E) (s : Bool)
         rw [occurs_ofJs_pair]; tauto
       have hn2 : ¬ (Code.ofJs {(a, b), (c, d)} : Code E).Occurs f₁ := by
         rw [occurs_ofJs_pair]; tauto
+      obtain ⟨⟨h1, h2⟩, hx⟩ := hupd i j
       simp only [loc]
       rw [Finset.prod_insert hnot, Finset.prod_singleton]
       simp only [uf, if_neg hn1, if_neg hn2]
-      have h1 : Function.update (Function.update L₀ e₁ i) f₁ j e₁ = i := by
-        simp [hef]
-      have h2 : Function.update (Function.update L₀ e₁ i) f₁ j f₁ = j := by simp
-      have hx : ∀ x, x ≠ e₁ → x ≠ f₁ → Function.update (Function.update L₀ e₁ i) f₁ j x = L₀ x :=
-        fun x h1 h2 => by simp [h1, h2]
       rw [h1, h2]
       simp only [xw, jw, Code.ofJs, Multiset.map_zero, Multiset.prod_zero, one_mul,
         Multiset.insert_eq_cons, Multiset.map_cons, Multiset.map_singleton, Multiset.prod_cons,
         Multiset.prod_singleton, hx a hae haf, hx b hbe hbf, hx c hce hcf, hx d hde hdf]
       by_cases hi : i = M.base <;> by_cases hj : j = M.base <;> simp [hi, hj]
-    have hrhs : ∀ i j, loc M {e₁, f₁} (Code.ofXs (bigonPar a b c d e₁ f₁ s))
+    have hrhs : ∀ i j, loc M {e₁, f₁} (Code.ofXs xs)
         (Function.update (Function.update L₀ e₁ i) f₁ j) =
-        M.X s (L₀ c) j (L₀ a) i * M.X (!s) j (L₀ d) i (L₀ b) := by
+        G (L₀ a) (L₀ b) (L₀ c) (L₀ d) i j := by
       intro i j
-      have ho1 : (Code.ofXs (bigonPar a b c d e₁ f₁ s)).Occurs e₁ := by
-        rw [occurs_ofXs_bigonPar]; tauto
-      have ho2 : (Code.ofXs (bigonPar a b c d e₁ f₁ s)).Occurs f₁ := by
-        rw [occurs_ofXs_bigonPar]; tauto
+      have ho1 : (Code.ofXs xs).Occurs e₁ := by rw [hocc]; tauto
+      have ho2 : (Code.ofXs xs).Occurs f₁ := by rw [hocc]; tauto
+      obtain ⟨⟨h1, h2⟩, hx⟩ := hupd i j
       simp only [loc]
       rw [Finset.prod_insert hnot, Finset.prod_singleton]
       simp only [uf, if_pos ho1, if_pos ho2, mul_one]
-      have h1 : Function.update (Function.update L₀ e₁ i) f₁ j e₁ = i := by
-        simp [hef]
-      have h2 : Function.update (Function.update L₀ e₁ i) f₁ j f₁ = j := by simp
-      have hx : ∀ x, x ≠ e₁ → x ≠ f₁ → Function.update (Function.update L₀ e₁ i) f₁ j x = L₀ x :=
-        fun x h1 h2 => by simp [h1, h2]
-      simp only [xw, jw, Code.ofXs, bigonPar, Multiset.map_zero, Multiset.prod_zero, mul_one,
-        Multiset.insert_eq_cons, Multiset.map_cons, Multiset.map_singleton, Multiset.prod_cons,
-        Multiset.prod_singleton, h1, h2, hx a hae haf, hx b hbe hbf, hx c hce hcf, hx d hde hdf]
+      have hxs : (Code.ofXs xs).xs = xs := rfl
+      rw [hxs, hxw, h1, h2, hx a hae haf, hx b hbe hbf, hx c hce hcf, hx d hde hdf]
+      simp [jw, Code.ofXs]
     simp only [hlhs, hrhs]
-    rw [hX]
+    rw [hG]
     rw [Fintype.sum_eq_single M.base fun x hx => by simp [hx],
       Fintype.sum_eq_single M.base fun x hx => by simp [hx]]
     by_cases hab : L₀ a = L₀ b <;> by_cases hcd : L₀ c = L₀ d <;> simp [hab, hcd]
+
+omit [Fintype ι] [DecidableEq ι] [Fintype E] [DecidableEq E] in
+theorem occurs_ofXs_bigonAnti (a b c d e₁ f₁ e : E) (s : Bool) :
+    (Code.ofXs (bigonAnti a b c d e₁ f₁ s)).Occurs e ↔
+      f₁ = e ∨ d = e ∨ a = e ∨ e₁ = e ∨ c = e ∨ b = e := by
+  simp only [Code.Occurs, Code.ofXs, bigonAnti, Crossing.Mentions]
+  simp
+  tauto
+
+/-- **Second Reidemeister move, parallel strands.** If the crossing tensors of signs `s` and `!s`
+compose to the identity in the sense of `hX`, the value is unchanged by `r2par`. -/
+theorem value_r2par (R₀ : Code E) (a b c d e₁ f₁ : E) (s : Bool)
+    (he : ¬ R₀.Occurs e₁) (hf : ¬ R₀.Occurs f₁) (hef : e₁ ≠ f₁)
+    (hbd : ∀ x ∈ ({a, b, c, d} : Set E), x ≠ e₁ ∧ x ≠ f₁)
+    (hX : ∀ a b c d : ι, ∑ i, ∑ j, M.X s c j a i * M.X (!s) j d i b =
+      if a = b ∧ c = d then 1 else 0) :
+    value M (R₀ + Code.ofJs {(a, b), (c, d)}) =
+      value M (R₀ + Code.ofXs (bigonPar a b c d e₁ f₁ s)) :=
+  value_pair_of M R₀ _ a b c d e₁ f₁ (fun a b c d i j => M.X s c j a i * M.X (!s) j d i b)
+    he hf hef hbd (fun e => by rw [occurs_ofXs_bigonPar]; tauto)
+    (fun L => by simp [xw, bigonPar]) hX
+
+/-- **Second Reidemeister move, antiparallel strands.** If the crossing tensors of signs `s` and
+`!s` satisfy the antiparallel identity `hX`, the value is unchanged by `r2anti`. -/
+theorem value_r2anti (R₀ : Code E) (a b c d e₁ f₁ : E) (s : Bool)
+    (he : ¬ R₀.Occurs e₁) (hf : ¬ R₀.Occurs f₁) (hef : e₁ ≠ f₁)
+    (hbd : ∀ x ∈ ({a, b, c, d} : Set E), x ≠ e₁ ∧ x ≠ f₁)
+    (hX : ∀ a b c d : ι, ∑ i, ∑ j, M.X s j d a i * M.X (!s) c j i b =
+      if a = b ∧ c = d then 1 else 0) :
+    value M (R₀ + Code.ofJs {(a, b), (c, d)}) =
+      value M (R₀ + Code.ofXs (bigonAnti a b c d e₁ f₁ s)) :=
+  value_pair_of M R₀ _ a b c d e₁ f₁ (fun a b c d i j => M.X s j d a i * M.X (!s) c j i b)
+    he hf hef hbd (fun e => by rw [occurs_ofXs_bigonAnti]; tauto)
+    (fun L => by simp [xw, bigonAnti]) hX
 
 end R2
 
