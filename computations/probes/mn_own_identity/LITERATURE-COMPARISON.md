@@ -571,3 +571,30 @@ Adding it changes `def:categorical-lagrangian`, so it is the owner's decision.
 normalisation it is 1 for every state, so that ratio stops being a candidate for the 12. The
 normalised matter constant is `ψ*(𝒟ψ)/ψ*(ψ)`. It needs a concrete `∇` on the state space, and
 the corpus `nablaEndo` is still never instantiated (§10).
+
+## 19. Trial: normalised states, downstream (2026-11-21)
+
+Owner: *"Try 1 for now, see if it helps downsteam"*. Logged as a trial in
+`docs/coordination/owner-rulings.md`. `def:categorical-lagrangian` is unchanged; the trial is the
+separate structure `NormalisedCategoricalLagrangian` (`QOU/MassTheory/NormalisedLagrangian.lean`,
+sorry-free, lean-direct exit 0, axioms `propext, Classical.choice, Quot.sound`).
+
+**What it gives.**
+- `matter_projector_idempotent`: `ψ* ≫ ψ` is idempotent, so the matter term is `𝒟` compressed
+  onto the state's line.
+- `matter_trace_eq_eigenvalue`: in the matrix model, `φψ = 1` and `Dψ = μψ` give `tr(Dψφ) = μ`.
+- `weighted_matter_trace_eq_eigenvalue`: with `Kψ = wψ`, `tr(Kψφ D) = wμ`.
+- So the own-sector constant `c` of §10 becomes the `∇`-eigenvalue `μ` of the normalised nucleon
+  state (its expectation value when the state is not an eigenvector), with no scale attached. The
+  neutron/proton horizontal split is `q⁻¹(q⁻¹ − q)μ` (`nucleon_horizontal_split`).
+
+**What it does not give.**
+- No number. The corpus has no concrete `∇` on the nucleon state space: `nablaEndo` is a free
+  field, and the nucleon weight-space files (`NucleonWeightSpaceTwoTerm` and siblings) supply braid
+  generators and charge operators, not a connection. Choosing one would be a new modelling choice,
+  so I did not.
+- It sharpens, not removes, the §10 conflict: with normalisation, the bridge's `hHoriz` plus the
+  weight-vector and intertwiner conditions give `μ = 0` (`matrix_element_zero_of_equal_traces`),
+  i.e. a vanishing own-sector constant.
+- No 12. The 12 would now have to be the `∇`-eigenvalue of the nucleon state (in units where the
+  overall scale is CAL-1), which makes the open question spectral and scale-free.
