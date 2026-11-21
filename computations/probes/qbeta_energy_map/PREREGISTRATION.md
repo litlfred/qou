@@ -200,3 +200,25 @@ For each of the three words and each ordering: ⟨k⟩_f, ⟨k⟩_r, A = ⟨k⟩
 the three admissible words; or (ii) A has a closed form shared by the three words. Also
 reported: whether R2 maps A ↦ −A (the expected p ↔ n swap), and whether R1 changes A at all.
 The comparison with Q_β is printed last and does not decide (i) or (ii).
+
+## Addendum 8 (owner "Both": flavour + colour on strands, and an ordering-independent asymmetry), before code
+
+**(a) Ordering-independent asymmetry, flavour only.** The generator-order choice can be made per
+generator: for each i ∈ {0, 1, 2}, σᵢ or σᵢ⁻¹ is leading (2³ = 8 orderings; the "standard" and R1 of
+Addendum 7 are two of them). The colour order stays u < d, because reversing it is the p ↔ n swap
+(§16), so averaging over it would give 0 by construction. Measure: Ā = mean of A over the 8
+orderings, exact in q, for the three words. Also the spread (max − min). Tests, fixed now:
+Ā word-independent? Ā equal to a simple closed form shared by the words?
+
+**(b) Colour on strands: what the corpus defines, checked before building anything.**
+- `bring_color_weighted` (ruled 2026-08-15) is a convention for the p–n *interface* factor between
+  nucleons in binding, f_pn = z − h(1/2 − δ/4) (`closed_form_tau_M.py`). It acts between nucleons,
+  not on quark strands inside one nucleon word. So it does not enter a single-nucleon β-decay word.
+- The colour frame (`sl-n-color-frame-scope`) reads colour observables with σᵢ^{sl} = q^{−1/N}σᵢ.
+  On a word of writhe w this multiplies the element by q^{−w/N}. Every γγ word has writhe 0
+  (`writhe_eq_zero`), so the frame is the identity on β_Bor, on all three X, and on W. Test, fixed
+  now: check writhe(W) = 0 for the three W.
+- A strand space V = flavour ⊗ colour (dim 6, Jimbo Ř of gl₆) is not defined in the corpus, and on
+  V^{⊗4} it would turn on shapes with three or more rows, which convention D sets to weight 0.
+  Building it would be a new construction, not a corpus-derived one, so it goes to the owner
+  instead of being run.
