@@ -42,7 +42,10 @@ theorem D_of_T3_nonpos {T1 T2 T3 W E : ℝ}
 covariance `Cov ≤ 0`, itself equal (via the Kerov polynomial `Σ̂₃ = R₄ + R₂`, `E_Planch[R₄] = −k`)
 to `Cov_Planch(f^λ, R₄) ≤ 0`. Here `cov ≤ 0` stands for that kernel and `hlink : 6(W−E) = −4·cov`
 for the exact identity after `T₂ = 0` and `T₃ = (3/(k)₃)·(k!·cov)`-type normalization is absorbed
-into `cov`. Kept abstract: the combinatorial `T₁,…` live outside Mathlib's current reach. -/
+into `cov`. Kept abstract: the combinatorial `T₁,…` live outside Mathlib's current reach.
+Ref: [sniady2006asymptotics] §4.5, second-order expansion of characters (Biane's
+conjecture), at `n = 4`: `Σ̂₃ = R₄ + R₂ + (terms of degree ≤ 0)`; the constant vanishes
+because `Σ̂₃` and every `R_k` vanish on the empty diagram. -/
 theorem D_of_cov_nonpos {W E cov : ℝ}
     (hlink : 6 * (W - E) = -4 * cov) (hcov : cov ≤ 0) : E ≤ W := by
   linarith
