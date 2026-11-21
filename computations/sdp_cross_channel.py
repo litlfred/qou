@@ -48,6 +48,7 @@ References
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import math
+import mpmath as _mpm
 import numpy as np
 
 try:
@@ -230,6 +231,21 @@ def sdp_with_atom_observables(Z, N, partition_entries, pair_couplings):
     # Normalized observables: block masses sum to 1
     phi_diag = {i: chi_sq[i] / total_mass_sq for i in chi_sq}
 
+    # Exact twin of the same quantities in mpf. The pair couplings below are
+    # fixed by a HARD equality, c_ij == target_c, and the problem is always
+    # feasible and bounded (y0 -> -inf makes every 2x2 block PSD; y0 <= mu_i
+    # bounds it), so the solver's c_ij IS target_c up to its tolerance. The
+    # closed form is therefore the exact c_ij, computed here at working
+    # precision without any solver. The float values above stay as the
+    # solver's input.
+    with _mpm.workdps(_mpm.mp.dps + 10):
+        _max_log_x = max((_mpm.mpf(v) for v in log_norms.values()), default=_mpm.mpf(0))
+        _chi_x = {i: _mpm.mpf(chi_data[i]) * _mpm.exp(_mpm.mpf(log_norms[i]) - _max_log_x)
+                  for i in chi_data}
+        _sq_x = {i: _chi_x[i] ** 2 for i in _chi_x}
+        _tot_x = _mpm.fsum(_sq_x.values())
+        _phi_x = {i: _sq_x[i] / _tot_x for i in _sq_x}
+
     # Primal variables: Φ_λλ (diagonal, fixed by observable) + Φ_λλ' (free)
     # We use a "large" block matrix: vector of diagonals + pair off-diagonals.
     n = len(partition_entries)
@@ -266,6 +282,7 @@ def sdp_with_atom_observables(Z, N, partition_entries, pair_couplings):
     # complementary slackness at PAIR level.  If partition i is
     # "heavily occupied" (phi_diag[i] large), its y_λ contribution is
     # small; coupling c_ij is driven by SQRT of the product.
+    c_exact = {}
     for key in pair_list_keys:
         i, j = key
         # Target coupling: c_ij ~ sqrt(phi_diag[i] · phi_diag[j]) · (μ_i + μ_j)/2
@@ -278,6 +295,11 @@ def sdp_with_atom_observables(Z, N, partition_entries, pair_couplings):
         # Scale by observed chi_i · chi_j sign
         sign_ij = 1 if chi_rescaled[i] * chi_rescaled[j] >= 0 else -1
         target_c = sign_ij * target_c
+        with _mpm.workdps(_mpm.mp.dps + 10):
+            _mu_i = _mpm.mpf(partition_entries[i]['q_laplacian_eigenvalue'])
+            _mu_j = _mpm.mpf(partition_entries[j]['q_laplacian_eigenvalue'])
+            _sgn = 1 if _chi_x[i] * _chi_x[j] >= 0 else -1
+            c_exact[key] = _sgn * _mpm.sqrt(_phi_x[i] * _phi_x[j]) * (_mu_i + _mu_j) / 2
         # Soft: c_ij ≈ target_c as an objective penalty
         # (Can't use soft in cvxpy easily; use HARD equality instead)
         constraints.append(c_pair[key] == target_c)
@@ -305,6 +327,8 @@ def sdp_with_atom_observables(Z, N, partition_entries, pair_couplings):
             'lambda_i': list(partition_entries[i]['partition']),
             'lambda_j': list(partition_entries[j]['partition']),
             'c_ij': float(c_pair[key].value or 0.0),
+            # exact closed form of the equality-fixed coupling (mpf)
+            'c_ij_exact': +c_exact[key],
             'phi_i': phi_diag[i],
             'phi_j': phi_diag[j],
         })

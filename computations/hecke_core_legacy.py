@@ -3318,10 +3318,12 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None, *, as_mpf=Fal
     `as_mpf=True` accumulates in mpf. The self-conjugate h/2 terms are then
     exact algebra at the working precision (`_H_MP`, mpf `M_E_MEV`, mpf
     Wedderburn weight). The cross-block couplings `c_ij` are the output of a
-    float64 conic solver (cvxpy / SCS), so their digits past the solver
-    tolerance carry no information; they are carried as `mpf(str(c))`, which
-    adds no error but cannot add precision either. Callers that serialise the
-    total must report that part separately (see `binding_energy(parts=...)`).
+    float64 conic solver (cvxpy / SCS), but each is pinned by a hard equality
+    constraint (`c_ij == target_c`) in a problem that is always feasible and
+    bounded, so its exact value is the closed form. Under as_mpf that closed
+    form (`c_ij_exact`, computed in mpf by `sdp_with_atom_observables`) is
+    used, and no solver digit reaches the total. The solver still runs; its
+    status gates the term exactly as before.
     """
     zero = _mp.mpf(0) if as_mpf else 0.0
     if k_cap is None:
@@ -3371,7 +3373,9 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None, *, as_mpf=Fal
     for cb in sol['cross_blocks']:
         c = cb['c_ij']
         if as_mpf:
-            c = _mp.mpf(str(c))  # float64 solver output; see docstring
+            # c_ij is fixed by a hard equality in the SDP, so its exact value
+            # is the closed form `c_ij_exact` (mpf), not the SCS iterate.
+            c = cb['c_ij_exact']
         contribution = M_E_MEV * abs(c)
         total_mev += contribution
         per_pair.append({
@@ -3379,7 +3383,7 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None, *, as_mpf=Fal
             'lambda_j': cb['lambda_j'],
             'c_ij': c,
             'contribution_MeV': contribution,
-            'solver_limited': True,
+            'solver_limited': not as_mpf,
         })
 
     # Self-conjugate h/2 contribution (Wigner-2): exact algebra, so under
