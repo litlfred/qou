@@ -10,7 +10,6 @@ export default proposition({
   },
   title: "Local Value of the Substrate Parameter",
   uses: [
-    "prop:terminal-resolution",
     "rem:photonic-hall",
   ],
   examples: [

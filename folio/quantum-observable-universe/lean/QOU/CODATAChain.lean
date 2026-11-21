@@ -174,11 +174,6 @@ theorem end_to_end :
     |derived_q - substrate_q| < 0.001 :=
   substrate_error_bound
 
-/-- The proton–neutron mass splitting is exactly 1.29333251 MeV. -/
-theorem end_to_end_splitting :
-    neutron_topological - proton_topological = 1.29333251 :=
-  proton_neutron_mass_difference
-
 /-- The nucleon mass ratio m_n/m_p matches CODATA to 6 decimal places. -/
 theorem end_to_end_nucleon_ratio :
     |neutron_mass_MeV / proton_mass_MeV - 1.0013784| < 1e-6 :=  -- noqa: P31 - re-export of nucleon_mass_ratio_approx; same deliberate round
@@ -194,7 +189,6 @@ The theorems in this file depend on:
 - `ArchimedeanMassFormula.mass_pos` — positivity
 - `Calculations.substrate_error_bound` — interval arithmetic
 - `Calculations.full_derivation_chain` — repackaging
-- `HadronicMass.proton_neutron_mass_difference` — norm_num
 - `HadronicMass.nucleon_mass_ratio_approx` — norm_num
 - All bridge theorems in §1–§2 — rfl / rw
 

@@ -19,7 +19,7 @@ In beta decay $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1)$, a neutron $
 **Conjecture.**
 *The shell energy scale equals the crossing energy of the threading link $L_0$.*
 
-The shell energy is determined by the pair Skein mass $\mathcal{S}_{ab}(q)$ evaluated on the threading link $L_0$, using the terminal resolution ([terminal resolution](#prop:terminal-resolution)).
+The shell energy is determined by the pair Skein mass $\mathcal{S}_{ab}(q)$ evaluated on the threading link $L_0$, using the pair Skein mass formula ([pair Skein mass formula](#lem:pair-skein-mass-formula)).
 
 **The threading link $L_0$.**
 

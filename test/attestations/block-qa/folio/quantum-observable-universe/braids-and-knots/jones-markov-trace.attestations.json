@@ -1,0 +1,1283 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace",
+    "path": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "53cd4ed1b251",
+          "ts": "172b3ff4ecc2",
+          "lean": "908314bbfb9f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "53cd4ed1b251",
+          "ts": "172b3ff4ecc2",
+          "lean": "908314bbfb9f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "19319a499088",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:21.233Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "e63cba14f5f2",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "jones-markov-trace.md:32-33 'The formal goal is to verify that downstream theorems ... follow from these axiomatized structure fields. The trace's required properties are isolated as axiomatic structure fields, separating the external existence proof from the internal verification...'",
+        "notes": "The theorem statement (Jones existence/non-degeneracy/link-invariance) is clean, but the closing paragraph (md:32-33) is formalization-strategy/motivation prose appended in the same block with no interprets: remark to hold it. It is methodological commentary rather than physical interpretation, so minor/borderline."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "19319a499088",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:21.598Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In 'The Hecke quotient' subsection of the Hecke/knot-eigenbasis section; the Markov-trace existence theorem is foundational there."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "19319a499088",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:22.004Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is over q ∈ ℂ^× not a root of unity (categorical/fibre level); Lean uses R_q = LaurentPolynomial ℤ and explicitly comments out the archimedean q_pos/root-of-unity fields as 'not meaningful over R_q'. Generic-ring, matches chapter regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "19319a499088",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:22.374Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Result is taken as an external axiom (Jones 1987); no proof body, no archimedean machinery. The structure/axiom encoding stays over R_q."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "41e1b8ff5fbe",
+          "ts": "172b3ff4ecc2",
+          "lean": "e50af2acea10",
+          "lean_statement": "e903d7abea84"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:05:10.965Z",
+        "reviewed_sha": "d452093fabf877690aeba624197ad015c6b9aa74",
+        "severity": "major",
+        "evidence": "lean.ref is the structure JonesMarkovTrace (z free, nondeg vacuous, 2 sorries). The repair jonesMarkov_H3 is existence at n=3 only with z free. Not encoded: uniqueness, vanishing for rows>=3, the TL quotient, the Catalan count; the md states all n."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "19d5a41514a4",
+          "lean": "e50af2acea10",
+          "lean_statement": "e903d7abea84"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:53:40.497Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-16 review: Lean file and declaration pointers removed from the prose. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: lean.ref is the structure JonesMarkovTrace (z free, nondeg vacuous, 2 sorries). The repair jonesMarkov_H3 is existence at n=3 only with z free. Not encoded: uniqueness, vanishing for rows>=3, the TL quotient, the Catalan count; the md states all n."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Re-read at 68ebfb21a05: #8889 adds cites only; the mathematics and the Lean are unchanged, so the 2026-11-21 verdict stands. lean.ref is the structure JonesMarkovTrace (z free, nondeg vacuous, 2 sorries); jonesMarkov_H3 is existence at n=3 with z free. Not encoded: uniqueness, vanishing for rows >= 3, the TL quotient, the Catalan count; the md states all n.",
+        "notes": "Pre-existing, not introduced by #8889.",
+        "severity": "major"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim '**(Jones, 1987, Theorem 5.1 and Corollary 5.3.)**' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
+        "severity": "major",
+        "evidence": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies ['prop:braid-action-tensor', 'prop:braiding-eigenvalue-extraction'] for 'thm:jones-markov-trace' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'thm:jones-markov-trace' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of '**(Jones, 1987, Theorem 5.1 and Corollary 5.3.)**' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
+        "severity": "minor",
+        "evidence": "Lean sibling fails to compile, leading to divergence from the stated narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All references and uses ['prop:braid-action-tensor', 'prop:braiding-eigenvalue-extraction'] cited in 'thm:jones-markov-trace' are used in accordance with their established mathematical definitions.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'thm:jones-markov-trace' are uniquely defined or standard.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'thm:jones-markov-trace' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'thm:jones-markov-trace' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:1 — folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling fails compilation with error: folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity across all blocks in seq3. Removed verbose narrative framing. Clarified structural properties and eliminated speculative forward references.",
+        "reviewed_at": "2026-07-07T14:26:55.366453Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.366453Z"
+        },
+        "field_hash": {
+          "md": "bdde0d6a9d83",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound definition of the Markov trace parameters for the Jones evaluation.",
+        "reviewed_at": "2026-07-08T09:23:55.000Z",
+        "reviewed_sha": "328206780a211a71825db63343186d9e41e6d9d6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0bcaa8c7b15e",
+          "ts": "172b3ff4ecc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:14.462Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "'not interchangeable' / 'not a defect convention D introduced; it is what convention D means' / 'forced rather than stipulated' — each guards a documented C-vs-D convention confusion (owner ruling 2026-08-09); load-bearing disambiguation, substantive."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation.",
+        "notes": "'The degeneracy is not a defect convention D introduced; it is what convention D means.' is a negation-contrast reframe inside a theorem block. The preceding sentence already states the radical/TL fact; this one can be deleted. Pre-existing, not introduced by #8889.",
+        "severity": "minor"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0bcaa8c7b15e",
+          "ts": "172b3ff4ecc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:14.507Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no rhetorical-pivot construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0bcaa8c7b15e",
+          "ts": "172b3ff4ecc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:14.549Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no load-bearing em-dash construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0bcaa8c7b15e",
+          "ts": "172b3ff4ecc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:14.590Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no compulsive-triple construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0bcaa8c7b15e",
+          "ts": "172b3ff4ecc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:14.633Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no closing-aphorism construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0bcaa8c7b15e",
+          "ts": "172b3ff4ecc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:14.686Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no meta-commentary construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0bcaa8c7b15e",
+          "ts": "172b3ff4ecc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:14.740Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no thesis-restatement construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0bcaa8c7b15e",
+          "ts": "172b3ff4ecc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:14.803Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no performed-warmth construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0bcaa8c7b15e",
+          "ts": "172b3ff4ecc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:14.849Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no superlative-inflation construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0bcaa8c7b15e",
+          "ts": "172b3ff4ecc2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:14.892Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no non-speakable syntax construction present."
+      },
+      {
+        "field_hash": {
+          "md": "91f39c1f4c2b",
+          "ts": "1ce6633e2e12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:49:16.000Z",
+        "reviewed_sha": "68ebfb21a05c58a51fa7d62fe1fa0fb5e4abbe6b",
+        "evidence": "Full read of jones-markov-trace.md at 68ebfb21a05 (#8889 changed only the .ts cites: + jones1987, kimlee2018; both resolve, and Kim-Lee 2018 Prop. 2.9 states dim TL_n = C_n, matching the md's Catalan count 2, 5, 14, 42, 132, 429). Declarative theorem prose; one em-dash introducing the Catalan list; no reflex triple, pivot, warmth, superlative or unspeakable notation."
+      }
+    ]
+  }
+}

@@ -29,7 +29,7 @@ $$
 where $m_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$
 and $m_{\mathfrak{n}} = 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ are
 the nucleon masses from the pair Skein formula
-([terminal resolution](#prop:terminal-resolution)), $B/A$ is the
+([pair Skein mass formula](#lem:pair-skein-mass-formula)), $B/A$ is the
 binding energy per nucleon from the Skein polynomial of the
 multi-nucleon Hopf link (AME2020 values used here), and
 $m_e \approx 0.511$ MeV is the electron mass.
