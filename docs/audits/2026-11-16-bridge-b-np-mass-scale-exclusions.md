@@ -269,6 +269,10 @@ Both cases fold to B₂: bulk b of weight 2, and wall w of weight 1 at n = 4 or 
 
 The ambient Jimbo module (C²)^{⊗n} is used with ι realised as J = (spin flip)·(strand reversal). The twisted power sums tr(J A^k) of each orbit generator then fix its weight from the ambient operator alone. At n = 4 and 6 the weight is forced, to 1 for the fixed root and 2 for swapped pairs, and every wrong weight fails. The swapped pairs carry the sign +v⁻² rather than Lusztig's −v⁻², a sign-normalisation question (§16.4) that is left open. At n = 5 and 7 every twisted power sum vanishes, because the module has zero twisted character at odd n. The weight-3 wall is therefore neither tested nor refuted. A spin-1 module would test it. Details: `computations/probes/bridge_b/h18_result.md`.
 
+### 10o. The weight-3 wall on a three-state module (H19, 2026-11-21)
+
+H18's test was re-run on the three-state Hecke module (C³)^{⊗n} with the gl₃ Jimbo Ř. The spin-1 sl₂ R-matrix has three eigenvalues and is not a Hecke representation, so this gl₃ module stands in for it. The N = 2 control reproduces H18 exactly. At n = 4..7 every orbit's weight is forced to its ambient length: 1 for the fixed root, 2 for swapped pairs, and 3 for the middle orbit s_m s_{m+1} s_m at n = 5 and 7, whose twisted power sums are now non-zero. The weight-3 wall carries Lusztig's sign −v⁻³. The swapped pairs still carry +v⁻² against Lusztig's −v⁻², the same open normalisation question as H18. Necessary-condition check, not a proof. Details: `computations/probes/bridge_b/h19_result.md`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
