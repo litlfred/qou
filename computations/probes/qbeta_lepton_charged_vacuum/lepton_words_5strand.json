@@ -1,0 +1,435 @@
+{
+ "source": "PR #8836 computations/probes/qbeta_gg_lepton_pair/qbeta-gg-lepton-pair.witness.json (candidates, n = 5, matches only)",
+ "words": [
+  {
+   "word": "V0V0V1",
+   "vertices": 3,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V0",
+   "vertices": 3,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V1",
+   "vertices": 3,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V0V0",
+   "vertices": 3,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V0V1",
+   "vertices": 3,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V1V0",
+   "vertices": 3,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V1V2",
+   "vertices": 3,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V2V1",
+   "vertices": 3,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V2V2",
+   "vertices": 3,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V1V1",
+   "vertices": 3,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V2V1V2",
+   "vertices": 3,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V2V1",
+   "vertices": 3,
+   "kind": "mirror"
+  },
+  {
+   "word": "V0V0V1V2",
+   "vertices": 4,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V0V2",
+   "vertices": 4,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V2V0",
+   "vertices": 4,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V2V2",
+   "vertices": 4,
+   "kind": "mirror"
+  },
+  {
+   "word": "V0V2V0V1",
+   "vertices": 4,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V2V1V2",
+   "vertices": 4,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V0V2V0",
+   "vertices": 4,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V2V0V0",
+   "vertices": 4,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V2V0V2",
+   "vertices": 4,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V2V2V0",
+   "vertices": 4,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V0V0V1",
+   "vertices": 4,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V2V0V1V0",
+   "vertices": 4,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V2V0V1V2",
+   "vertices": 4,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V0V2V1",
+   "vertices": 4,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V1V2V0",
+   "vertices": 4,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V2V0V1",
+   "vertices": 4,
+   "kind": "mirror"
+  },
+  {
+   "word": "V0V1V0V1V2",
+   "vertices": 5,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V2V0V1",
+   "vertices": 5,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V2V1V2",
+   "vertices": 5,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V0V1V2V0",
+   "vertices": 5,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V2V0V1V0",
+   "vertices": 5,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V2V0V1V2",
+   "vertices": 5,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V2V1V2V0",
+   "vertices": 5,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V0V1V0V1",
+   "vertices": 5,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V2V0V1V2V1",
+   "vertices": 5,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V1V2V0V1",
+   "vertices": 5,
+   "kind": "mirror"
+  },
+  {
+   "word": "V0V0V0V1V1V2",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V0V0V1V2V1",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V0V1V1V2V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V0V1V2V1V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V0V1V2V1V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V0V0V2V0V1V1",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V0V1V2V2",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V1V0V0V2",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V1V2V0V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V1V2V2V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V0V1V2V1V0V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V2V1V2V0",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V0V1V2V2V0V1",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V1V2V2V2V1",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V0V2V0V1V1V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V0V2V2V1V1V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V0V0V0V1V2",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V0V0V2V0V1",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V0V1V2V2V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V0V1V2V2V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V1V0V0V2V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V1V2V0V0V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V1V2V0V2V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V1V2V2V2V0",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V2V0V0V0V1",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V2V0V0V1V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V2V0V2V2V1",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V2V1V0V0V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V2V1V2V0V0",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V2V2V0V1V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V1V2V2V2V0V1",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V1V2V2V2V1V0",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V0V0V0V1V1",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V2V0V0V1V2V1",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V0V1V0V1V2",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V2V0V1V1V0V0",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V2V0V1V1V2V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V0V2V2V1V1",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V1V0V0V0V1",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V2V1V0V1V2V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V1V1V2V0V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V1V2V0V0V1",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V2V0V1V0V1",
+   "vertices": 6,
+   "kind": "e-nubar"
+  },
+  {
+   "word": "V2V2V0V1V1V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V2V1V0V1V2",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V2V1V1V2V0",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V2V2V0V1V1",
+   "vertices": 6,
+   "kind": "mirror"
+  },
+  {
+   "word": "V2V2V2V1V0V1",
+   "vertices": 6,
+   "kind": "mirror"
+  }
+ ]
+}
