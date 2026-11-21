@@ -1,13 +1,13 @@
 ---
 # qou-7q3s
 title: Cross-check 0401068v1 (1).pdf at computations/aj_masbaum_crosscheck.py
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:12:44Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-21T14:50:33Z
 pr: 8325
 parent: qou-8hur
 ---
@@ -44,3 +44,14 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8325, closed o
 Not run this wave. Bean text error: 'Vol(4_1) = 2 Lambda(pi/3)' should be 6Λ(π/3) = 2Cl2(π/3) ≈ 2.0299 (finding F8); use the corrected value when running. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none beyond F8.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+
+## 2026-11-21T14:50:33Z cross-check result
+
+Probe `computations/probes/takata2004_masbaum_twist_knot_probe.py` (branch claude/expo-cite-xcheck-wave2-2026-11-21), pre-registered, sympy exact plus mpmath 60 dps. ALL PASS after two documented amendments.
+
+- The rearranged Masbaum formula of [takata2004] equals the corpus 4_1 Habiro tower (corpus_fig8 in computations/aj_masbaum_crosscheck.py) for n = 1..6 and the corpus trefoil Rosso-Jones tower for n = 1..5. So the corpus towers now agree with a second published transcription.
+- K_2 matches Takata 2008 for 5_2 (n = 2, 3); K_-2 at n = 2 matches the 6_1 Jones polynomial.
+- The Theorem 2.2 elimination contains the printed Hoste-Shanahan A_{K_p} for p = 1, -1, 2, and A_{K_-1} equals minus the corpus 4_1 A-polynomial.
+- Eq. (16) at q = exp(2 pi i/N) equals the corpus 4_1 tower (N = 5..9, rel 1e-61). The 4_1 Kashaev asymptotic |J_N|/(N^{3/2} e^{N Vol/2pi}) extrapolates to 3^{-1/4} (rel 2e-10). SnapPy Vol(4_1) = 2 Cl_2(pi/3) to 1e-50. Vol was an input only; no anchor value adopted.
+- FINDINGS (source): eq. (2) as printed carries an extra (-1)^{k+1} (it gives J(1) = -1); eq. (4) has (1 - q^k) where the ratio is (1 - q^{k+1}). Page images checked. Neither reaches Theorem 2.2, since both factors agree at q = 1.
