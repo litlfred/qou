@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-20T15:44:52.672054+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "computedAt": "2026-11-21T02:39:48.761364+00:00",
+  "commitSha": "d34f5008caaabe3ca716f526770e044774652c30",
   "assertions": [
     {
       "name": "deuteron_dressed_subpercent",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 17,
+  "durationMs": 20,
   "computation": "probe-d-dressing-cross-a",
   "scriptFile": "probe_d_dressing_cross_a.py",
-  "scriptHash": "67b369525da0",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "3f173960818d",
+  "scriptCommitSha": "8a51be2e1185d397db5b6dafc674326efda41dce",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,6 +31,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
     "pyhecke_native_build": "930c010e26215e56"
   },
