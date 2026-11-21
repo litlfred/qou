@@ -1,13 +1,13 @@
 ---
 # qou-56qy
 title: lean-direct exit 0 is a claim about the olean snapshot, not about the library source (305 modules stale)
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-11-21T17:39:53Z
+updated_at: 2026-11-21T18:02:37Z
 parent: qou-5vkl
 ---
 
@@ -579,3 +579,5 @@ worth knowing before someone plans it as an idle-pass job.
 2026-11-21 (lean-build-red drain, issue #8817): a lean-direct-cone --all sweep from source on main 42ca186dad found only the QOU.lean root red (fixed in PR #8878). Reseed (remedy 2) and the AGENTS.md wording are still open.
 
 2026-11-21: remedy 2 (reseed) done. Cache head is 7c61a1ba876: a fresh incremental lake build of main 9428c3511c, every olean traced, and a clean restore rebuilds 0 modules. AGENTS.md records it on PR #8885. Item 3, the AGENTS wording on finding your dirty files, is still an owner call.
+
+2026-11-21: item 3 (AGENTS.md stale-olean check note) merged via PR #8909 on owner approval. Reseed done earlier (7c61a1ba876). Closing.
