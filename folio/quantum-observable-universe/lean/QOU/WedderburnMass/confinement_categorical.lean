@@ -89,11 +89,6 @@ class ConfinementCategoricalContext extends QOU.Shared.MarkovTraceContext where
   /-- Predicate "`x : A` is a physical observable" — survives the
       GB-filtration spectral sequence collapse. -/
   observable : A → Prop
-  /-- Missing input: confinement categorical ident -/
-  confinement_ident : E_infinity_00 = (Finset.range n_blocks).sum
-                          (fun lam => e_block lam) ∧
-    (∀ x : A, integral x = integral (pi_centre x)) ∧
-    (∀ x : A, observable x → pi_centre x = x)
 
 /-- **Categorical confinement** ([`prop:confinement-categorical`]).
 
@@ -105,35 +100,16 @@ The proof requires the semisimple-algebra Hochschild vanishing
 (`HH^k(A) = 0`, `k ≥ 1`) and the Wedderburn decomposition of `A`,
 neither of which is in Mathlib.
 
-## 🛑 The tripwire in this docstring fired, and nobody was watching (2026-09-03)
+## Status (2026-11-21, owner ruling on PR #8819 follow-up)
 
-The paragraph that stood here said the body was "an honest `sorry` + `-- Ref:`",
-that "no class field posits this conclusion, so the statement cannot be
-discharged by projection", and — as an explicit alarm —
+The body is an honest `sorry` + `-- Ref:`. The class field
+`confinement_ident`, which carried this whole conclusion and was returned
+by the body, is deleted for the second time (it was deleted 2026-08-08 and
+came back). No class field now states the conclusion.
 
-> *"Verify with `#print axioms`, which must report `sorryAx`; if it ever stops
-> doing so without this docstring changing, the projection has come back."*
-
-**That is exactly what happened.** The body is `ctx.confinement_ident`, a class
-field carrying the whole three-clause conclusion, and the prescribed check now
-reports
-
-    'QOU.WedderburnMass.confinement_categorical' depends on axioms:
-      [propext, Classical.choice, Quot.sound]
-
-with **no `sorryAx`**. The projection came back, the docstring did not change,
-and the alarm went unread until the `proof-docstring-sorry-mismatch` audit
-flagged the file.
-
-**Why only the prose is corrected here.** Restoring the `sorry` the docstring
-demands would propagate `sorryAx` to this theorem's external consumers, which is
-a change to proof content rather than to documentation; the projection itself is
-the `proof-no-self-assuming-projection` question tracked in bean `qou-z9ws` and
-owned elsewhere. What is fixed is the false claim.
-
-**Keep the tripwire, and read it.** The check above is still the right test —
-its failure mode was never the test, it was that nothing ran it. The audit now
-does: `bun run content/pipeline/lean-vacuity-axiom-audit.ts`. -/
+Tripwire: `#print axioms confinement_categorical` must report `sorryAx`.
+If it stops doing so while this docstring is unchanged, the projection has
+come back again. Bean `qou-mtc9`. -/
 -- Ref: [leitner2026] quantum-observable-universe/mass-theory/confinement-categorical.md
 -- Ref: [leitner2026] prop:spectral-sequence-collapse (HH^k(A)=0, k≥1, Whitehead's lemma)
 theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
@@ -141,7 +117,7 @@ theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
     ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum
                           (fun lam => ctx.e_block lam) ∧
     (∀ x : ctx.A, ctx.integral x = ctx.integral (ctx.pi_centre x)) ∧
-    (∀ x : ctx.A, ctx.observable x → ctx.pi_centre x = x) :=
-  ctx.confinement_ident
+    (∀ x : ctx.A, ctx.observable x → ctx.pi_centre x = x) := by
+  sorry
 
 end QOU.WedderburnMass
