@@ -289,3 +289,42 @@ of E₀·F = 1.28513 MeV to CODATA m_n − m_p (−0.63 %, §11) has no derivati
 be quoted as evidence. This does not exclude an energy map that is neither linear nor logarithmic;
 none is on record. What a one-sided placement would need is a map under which the lepton factor
 carries a positive rest energy. That is the open item, not the choice between the two readings.
+
+## 13. Nonlinear energy maps (owner: "Q_beta I don't think is a linear map")
+
+**Question.** §12 tested a linear and a log map. Is there any map E(X) = g(ε(X)) of the trace
+under which the one-sided lepton factor carries positive energy (lepton pair g(ε_p f) − g(ε_p) > 0)
+while Q_β = g(ε_n) − g(ε_p f) > 0? Pre-registered as Addendum 4; probe
+`nonlinear_maps_probe.py` 11/11; Lean `QOU/QBeta/OneSidedNonlinearMaps.lean`.
+
+**The deciding fact is an ordering, not a formula.** On 1 < q ≤ 23/20,
+ε_p·f < ε_n < ε_p (Lean `ordering`). Its two halves are ε_n = ε_p/q² (`epsN_V3B_eq`) and
+f < q⁻² (`leptonFactor_lt_inv_sq`, true for every q > 1 because q³ < [2]⁴).
+
+**Result 1, scope (b), invariant = the ordering.** For **every** monotone or antitone g, the two
+conditions cannot both hold (Lean `monotone_excluded`). An increasing g makes the lepton pair
+negative; a decreasing g makes Q_β negative. This covers every map on record that is a function
+of the trace: linear, |tr_M| (the corpus mass form m_e·ρ·|tr_M| at fixed ρ), ±log (the binding
+form), 1/x (the Q_β = ℏ/𝔇_β form), and all powers. It also covers every additive map
+g(xy) = g(x) + g(y) that is monotone, and the continuous ones of those are c·log. Numbers in the
+witness: e.g. 1/x gives lepton pair +142 MeV and Q_β −140 MeV.
+
+**Result 2.** A g that meets both conditions must rise and then fall across the three points
+ε_p f < ε_n < ε_p (Lean `nonmonotone_needed`). No such map is on record. Picking one to make the
+signs work would be a fit.
+
+**Result 3, maps that are not functions of the trace alone.**
+- *Density-weighted* E = c·ρ_X·ε(X): a positive lepton pair forces ρ_final/ρ_p > 1/f = [2]⁴/q
+  ≈ 14.73 at q₀ (Lean `weighted_needs_density_jump`). No density rule on record assigns the
+  final state such a jump.
+- *Proton-style affine*, with each state's q = 1 value subtracted: lepton pair −0.124 MeV,
+  Q_β −0.201 MeV. Fails.
+
+**What is left open.** An energy that is not a function of the product trace at all. One example
+is an energy that is additive over the outgoing particles, with the electron carrying its own
+m_e (CAL-1). That is the two-sided kinematic reading already on record (m_n − m_p = Q_β + m_e),
+and in it the lepton factor does not set the electron's rest energy. So under the multiplicative
+one-sided trace, **no map on record gives the lepton factor a positive rest energy**. A one-sided
+placement would need the final-state trace to stop being a plain product, for example through
+the γγ construction of the ν̄ the owner asked for. That is the next question, not a choice of
+map.
