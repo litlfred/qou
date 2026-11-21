@@ -93,3 +93,17 @@ units). If so, E_nat = (β_D/β_q)·E_D = ℏ_q·ln q·E_D, and the dictionary's
 Lean: the weight equality ⇔ the unit relation; the converted route-D cell = route-T cell.
 What would refute it: any corpus block that states T = 1/ln q in natural units (grep, before Lean).
 Grep result (done before writing this): no block states that.
+
+## Addendum 3 (owner "Both": the tower factor, and the reading), written before new code
+
+**Q1, tower.** The tower factor T = 1/(1 − ℏ_q²) = Σ_N ℏ_q^{2N} is word-independent and the same
+for n and p. Under the full-tower ruling (2026-09-03) it belongs to the fibre object, i.e. to the
+partition function, not to k_B T. Test: (a) in the Gibbs reading a common factor of Z is a
+spectator, so it should cancel from the cell exactly (Lean); (b) the alternative, T rescaling
+k_B T, is the corpus's current E₀^full and is reported beside it. No new number is chosen.
+
+**Q2, reading.** Under the ruled shared placement the lepton factor L multiplies both nucleons, so
+the cell is E(n⊗L) − E(p⊗L) = E(n) − E(p): a nucleon energy difference that contains no electron
+rest energy. Test: state that in Lean as the spectator corollary, and compare the cell with
+m_n − m_p using the existing all-q bound (cell < 2m_e). The D2 ruling (cell = Q_β) was made for the
+linear cell; if the derivation points elsewhere, that goes to the owner, not changed here.
