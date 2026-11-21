@@ -87,20 +87,31 @@ class MarkovTrace (R H : Type*) [CommRing R] [Ring H] [Algebra R H]
 
 /-! ## Jones-Wenzl projector + Markov-trace evaluation -/
 
-/-- The **Jones-Wenzl projector** `p_n ∈ H_n(q)` is the idempotent
-projecting onto the (n)-irreducible component.
+/-- The **Jones-Wenzl projector** `p_n ∈ H_n(q)`: the nonzero idempotent that
+kills every Jones projection `e_i`, `i < n-1`.
 
-Idempotence (`p·p = p`) is now **enforced** as a Lean proposition over
-the `(p : H)` parameter.  The strand-killing relation
-(`p·σ_i = -q⁻¹·p` for `i < n-1`) needs the generators `σ_i` — absent from
-this class's signature — so it remains documentation for the eventual
-instance, not an enforced field. -/
+Restated 2026-11-21 (owner "Fix", bean `qou-c8p8`). The earlier form had the
+single field `p * p = p`, with `q` and `n` occurring in no field, so `1` and `0`
+inhabited it at every rank. The generators are now a parameter `σ`, and the
+strand-killing relation is enforced.
+
+**Convention (derived from the corpus, not chosen).** The Jones projection is
+`QOU.Machinery.HeckeTower.jonesIdempotent q σ = (q+q⁻¹)⁻¹ • (q•1 − σ)`. So
+`p · e_i = 0` is `p · (q•1 − σ_i) = 0`, i.e. `p σ_i = q p`. The comment this
+replaces said `p σ_i = −q⁻¹ p`. That is the opposite eigenchannel and
+contradicts the corpus's own `e`. The relation is written with `q•1 − σ_i`
+rather than with `e_i`, so it needs no `q⁻¹` and holds over a `CommRing`;
+when `q + q⁻¹ ≠ 0` the two forms are equivalent. -/
 class JonesWenzlProjector (R H : Type*) [CommRing R] [Ring H] [Algebra R H]
-    (q : R) (n : ℕ) (p : H) : Prop where
+    (q : R) (σ : ℕ → H) (n : ℕ) (p : H) : Prop where
   /-- Idempotence of the projector: `p · p = p`. -/
   idempotent : p * p = p
-  -- Strand-killing `p·σ_i = -q⁻¹·p` (i < n-1) needs the generators `σ_i`,
-  -- absent from this signature — documented, not enforced.
+  /-- The projector is not zero. -/
+  ne_zero : p ≠ 0
+  /-- Right strand-killing: `p · (q•1 − σ_i) = 0` for `i < n − 1`. -/
+  kill_right : ∀ i, i + 1 < n → p * (q • (1 : H) - σ i) = 0
+  /-- Left strand-killing: `(q•1 − σ_i) · p = 0` for `i < n − 1`. -/
+  kill_left : ∀ i, i + 1 < n → (q • (1 : H) - σ i) * p = 0
 
 /-! ## Open: residue A as a Markov-trace residue
 
