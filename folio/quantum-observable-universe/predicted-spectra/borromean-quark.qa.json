@@ -8,7 +8,7 @@
     "lean": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean"
   },
   "source_hashes": {
-    "md": "f069c3088ef5",
+    "md": "538ddc465d1b",
     "ts": "b194448b1f3b",
     "lean": "523355d5a744",
     "lean_statement": "5703c5ac2cdf"
@@ -63,6 +63,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "voice-emoji-content": [
@@ -102,6 +121,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "voice-first-person-work": [
@@ -141,6 +179,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "voice-time-stamped-notes": [
@@ -180,6 +237,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "voice-unicode-crash": [
@@ -219,6 +295,25 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "voice-editorializing": [
@@ -258,6 +353,25 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "voice-scholarly-default": [
@@ -312,6 +426,25 @@
           "def_hash": "90af5388e1e9"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "voice-title-scholarly": [
@@ -405,6 +538,25 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "voice-author-notes-pollution": [
@@ -444,6 +596,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "voice-status-section": [
@@ -483,6 +654,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "framework-canonical": [
@@ -522,6 +712,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "wall-side-correct": [
@@ -561,6 +770,25 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "q-usage-regime-detected": [
@@ -720,6 +948,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "canonical-no-numerology": [
@@ -759,6 +1006,25 @@
           "def_hash": "bfbb93c220cc"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "canonical-witness-pinned": [
@@ -798,6 +1064,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -876,6 +1161,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -915,6 +1219,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -954,6 +1277,25 @@
           "def_hash": "b5e2fdf9d66a"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -993,6 +1335,25 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "compute-witness-exists": [
@@ -1151,6 +1512,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf",
+          "graph": "02522a740ccf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1192,6 +1573,27 @@
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf",
+          "graph": "02522a740ccf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1232,6 +1634,27 @@
           "def_hash": "19a5005a8bb6"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf",
+          "graph": "02522a740ccf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1389,6 +1812,26 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf",
+          "graph": "02522a740ccf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1470,6 +1913,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1511,6 +1974,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1552,6 +2035,26 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1674,6 +2177,26 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "fit-section-chapter": [
@@ -1727,6 +2250,23 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. Conjecture on quark structure sits in predicted-spectra with the T(2,n) spectrum table; placement unchanged by the edit."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1767,6 +2307,24 @@
         "notes": "No false claims identified in 'Quarks as Borromean-linked unknots in the exceptional divisor': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Only the skein-consistency paragraph changed; it now states the decomposition as conditional and claims nothing the cited blocks do not supply."
       }
     ],
     "da-vacuous": [
@@ -1788,6 +2346,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claims in 'Quarks as Borromean-linked unknots in the exceptional divisor' are non-vacuous as they make concrete conjectures about 'Quarks are not fundamental knots.  A quark is a **neutrino (...'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. The conjecture names concrete objects (B_3 of three unknots in colour tubes, Hopf binding) and is falsifiable; unchanged."
       }
     ],
     "da-circular": [
@@ -1810,6 +2386,24 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. No step of the skein paragraph assumes its conclusion; the decomposition is now an explicit hypothesis."
       }
     ],
     "da-overclaim": [
@@ -1832,6 +2426,23 @@
         "notes": "The prose in 'Quarks as Borromean-linked unknots in the exceptional divisor' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor",
         "evidence": "The prose in 'Quarks as Borromean-linked unknots in the exceptional divisor' presents the result as established, but the Lean formalization is incomplete (has sorry)."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. Resolved: the unknot/Hopf decomposition is now stated as conditional on the specialisation that rem:skein-generation-hadron-reading says prop:skein-generation does not fix."
       }
     ],
     "da-hidden-dof": [
@@ -1854,6 +2465,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. The edit adds no parameter; the open specialisation (a = 1 vs a = q) is now named rather than hidden."
       }
     ],
     "da-non-sequitur": [
@@ -1892,6 +2521,23 @@
         "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
         "severity": "minor",
         "evidence": "Independent QA of #8908 at f60933ebae. The displayed mass decomposition is presented as following from the cited skein resolution. The cited remark leaves the required specialisation (a = 1 vs a = q) open, so the step from module resolution to a mass polynomial is not supplied by the citation. It was not supplied by the previous target prop:terminal-resolution either."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. Resolves the #8908 warn: the paragraph now says the skein reading needs a specialisation in which the Hopf link is not identified with the unknot, that prop:skein-generation does not fix one, and that the displayed decomposition is conditional on that choice. The inference is no longer presented as following from the citation."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1913,6 +2559,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean uses a class-conjecture pattern, matching the conjectural nature of 'Quarks as Borromean-linked unknots in the exceptional divisor'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Lean carrier QOU.ParticleInteractions.BorromeanQuark is partial by its own authorNote (net-coefficient sub-aspect only); the md edit does not touch that scope. Unchanged."
       }
     ],
     "da-citation-misuse": [
@@ -1951,6 +2615,24 @@
         "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
         "severity": "minor",
         "evidence": "Independent QA of #8908 at f60933ebae. The retargeted paragraph says the hadron reading of skein generation 'writes the mass of a hadronic link as a polynomial in unknot and Hopf-link masses' and displays sum_j P_j(q) m(nu) + sum_k Q_k(q) m(L_H). rem:skein-generation-hadron-reading gives the mass reading as Q(q) m(L_Hopf) + sum_i Vol(K_i)/hbar_q^2 via lem:skein-mass-from-linking, and says the specialisation in which it holds 'is not fixed by the proposition'. prop:skein-generation resolves every link to a multiple of the unknot alone. The cited pair supports the decomposition only conditionally, and in a different form. Conjecture block, so minor."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. The #8908 issue is resolved: the citation of rem:skein-generation-hadron-reading now matches the remark, which itself says the specialisation is not fixed. Residual, minor: the remark gives the mass reading as Q(q) m(L_Hopf) + sum Vol(K_i)/hbar_q^2, while this paragraph displays sum_j P_j(q) m(nu) + sum_k Q_k(q) m(L_H). The two agree only after Vol(unknot) = 0 and m(nu) ~ 0, which the paragraph applies one sentence later."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1991,6 +2673,24 @@
         "severity": "minor",
         "evidence": "file:103: This explains why quarks are never observed in isolation... Pulling a quark out... unlinks the remaining two",
         "notes": "While the Borromean unlinking property is mathematically exact, mapping it 1:1 to QCD color confinement and hadronization is a significant interpretative leap that relies on equating topological breakage with particle pair-production thresholds."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Carried over: \"re-confines\" and the extraction/pair-creation sentence in the habitat section remain informal; not touched by this PR."
       }
     ],
     "da-empirical-fragility": [
@@ -2013,6 +2713,24 @@
         "notes": "The algebraic and logical relations in 'Quarks as Borromean-linked unknots in the exceptional divisor' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. No numeric comparison changed. The 99 % / 10 MeV QCD sentence is unchanged context."
       }
     ],
     "da-physical-implausibility": [
@@ -2035,6 +2753,24 @@
         "notes": "The physical concepts described in 'Quarks as Borromean-linked unknots in the exceptional divisor' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. No change to physical content beyond scoping the skein decomposition."
       }
     ],
     "da-reproducibility": [
@@ -2072,6 +2808,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'borromean-quark.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. No computation or Lean statement changed for this block."
       }
     ],
     "da-referee-verdict": [
@@ -2096,6 +2849,24 @@
         "referee_argument": "The conjectured algebraic or physical relations in 'Quarks as Borromean-linked unknots in the exceptional divisor' remain unproven and are represented as sorry stubs in the formalization.",
         "severity": "minor",
         "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "severity": "minor",
+        "evidence": "QA of #8917 at d18147eb9d. Conjecture remains open; Lean carrier is partial. The PR made the skein paragraph more honest. Observation for the owner: the electron ruling gives the electron a Hopf-link closure, and this block names the gluon as the Hopf link T(2,2); two particles share a closure link type. Not a ruling violation, but a referee would ask."
       }
     ],
     "bib-cite-resolves": [
@@ -2137,6 +2908,26 @@
           "def_hash": "e703243fe06f"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2156,6 +2947,23 @@
           "ts": "cfa37e0d3c3e",
           "lean": "be105ada9166"
         }
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. The rewritten paragraph is one sentence longer but reads in order: premise, missing choice, conditional decomposition."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2336,6 +3144,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "cite-named-theorem": [
@@ -2375,6 +3202,25 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "voice-agent-speak": [
@@ -2414,6 +3260,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "expo-milnor-clarity": [
@@ -2646,6 +3511,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2697,6 +3579,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
       }
     ],
     "trap-em-dash": [
@@ -2748,6 +3647,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
       }
     ],
     "trap-triples": [
@@ -2799,6 +3715,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
       }
     ],
     "trap-closing-aphorism": [
@@ -2850,6 +3783,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
       }
     ],
     "trap-meta-commentary": [
@@ -2901,6 +3851,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
       }
     ],
     "trap-thesis-restatement": [
@@ -2952,6 +3919,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
       }
     ],
     "trap-performed-warmth": [
@@ -3003,6 +3987,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
       }
     ],
     "trap-superlative": [
@@ -3055,6 +4056,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
       }
     ],
     "trap-nonspeakable": [
@@ -3106,6 +4124,23 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-followups-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:17:40.000Z",
+        "reviewed_sha": "d9481767a920abe26924edf74d797812567da13c",
+        "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph. No instance."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3166,6 +4201,25 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "proof-no-placeholder-stub": [
@@ -3209,6 +4263,26 @@
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
         "notes": "3 acronym(s) are candidates for the glossary: QCD, MeV, SU. Run glossary:acronyms for the folio-wide list with expansions."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7",
+        "notes": "3 acronym(s) are candidates for the glossary: QCD, MeV, SU. Run glossary:acronyms for the folio-wide list with expansions."
       }
     ],
     "foreshadows-point-forward": [
@@ -3231,6 +4305,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf",
+          "graph": "02522a740ccf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7"
       }
     ],
     "dak-companion-present": [
@@ -3249,6 +4343,23 @@
           "version": "v1"
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
@@ -3326,6 +4437,23 @@
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
         "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "781d221ec3c4474d53d993cdb01c2badcad225c7",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
       }
     ],
     "id-unique": [
@@ -3387,9 +4515,26 @@
         "reviewed_at": "2026-11-21T17:55:08.000Z",
         "reviewed_sha": "5d946066acee0ea26cd843f8b9a9a8c3df021b86",
         "evidence": "Re-read of the 'Consistency with the Skein mass relation' paragraph after retargeting the citation to prop:skein-generation and rem:skein-generation-hadron-reading. Added prop:skein-generation and rem:skein-generation-hadron-reading to uses[]."
+      },
+      {
+        "field_hash": {
+          "md": "538ddc465d1b",
+          "ts": "b194448b1f3b",
+          "lean": "523355d5a744",
+          "lean_statement": "5703c5ac2cdf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:05:00.000Z",
+        "reviewed_sha": "d18147eb9d88b8d429d0df0eea55939d2c633173",
+        "evidence": "QA of #8917 at d18147eb9d. uses[] lists prop:skein-generation and rem:skein-generation-hadron-reading, the two blocks the paragraph cites."
       }
     ]
   },
-  "updated_at": "2026-11-21T17:55:08.000Z",
+  "updated_at": "2026-11-21T18:17:40.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

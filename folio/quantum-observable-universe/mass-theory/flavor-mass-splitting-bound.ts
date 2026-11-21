@@ -13,7 +13,7 @@ export default theorem({
     "substrate-bound",
     "splitting-only",
   ],
-  uses: ["prop:flavor-dressed-mass-from-substrate-split"],
+  uses: ["prop:flavor-dressed-mass-from-substrate-split", "conj:flavor-split-substrate-mass"],
   computation: {
     engine: "mpmath",
     script: "computations/probe_flavor_dressed_mass_from_substrate_split.py",

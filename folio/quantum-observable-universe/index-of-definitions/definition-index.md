@@ -785,7 +785,7 @@
 | [conj:proton-mass-substrate-identity](#conj:proton-mass-substrate-identity) | Substrate evaluation: $m_p = 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) - 12 \cdot m_e$ to $0.24\,\mathrm{ppm}$ at $q = q_0$ | Ch 24 |
 | [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Substrate parameter as the radial coordinate | Ch 2 |
 | [prop:bar-t-duality-substrate](#prop:bar-t-duality-substrate) | Substrate-level bar T-duality: $\mathcal{E}_q \leftrightarrow \mathcal{E}_{1/q}$ | Ch 14 |
-| [prop:flavor-split-substrate](#prop:flavor-split-substrate) | Substrate-pure derivation of the $u$--$d$ flavor split | Ch 15 |
+| [prop:flavor-split-substrate](#prop:flavor-split-substrate) | Closed and factored forms of the substrate flavor split | Ch 15 |
 | [prop:flavor-dressed-mass-from-substrate-split](#prop:flavor-dressed-mass-from-substrate-split) | Substrate-pure derivation of the dressed-quark mass splitting | Ch 11 |
 | [prop:surreal-rate-calculus](#prop:surreal-rate-calculus) | Surreal rate calculus for the classical-limit scaling laws | Ch 25 |
 | [prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic) | Symbolic $Q$-value of free neutron decay | Ch 12 |
@@ -1030,6 +1030,7 @@
 | [conj:dilogarithm-archimedean-limit](#conj:dilogarithm-archimedean-limit) | $(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$ | Ch 11 |
 | [conj:electroweak-higgs-torus-link-triplet](#conj:electroweak-higgs-torus-link-triplet) | $(W^\pm, Z, H) \leftrightarrow (T(2,4), T(2,6), T(2,8))$ — non-Bring even-twist 2-component torus-link triplet | Ch 7 |
 | [conj:cp-violation-spectral-form](#conj:cp-violation-spectral-form) | $\delta_{\mathrm{CP}}$ as imaginary part of the alternating-block character | Ch 15 |
+| [conj:flavor-split-substrate-mass](#conj:flavor-split-substrate-mass) | The nucleon mass split equals the substrate flavor-split formula | Ch 15 |
 | [conj:q-beta-radius-of-convergence-gate](#conj:q-beta-radius-of-convergence-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(a)$ gate — the log-correction generating function $g(u) = \sum_{k \ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\text{substrate}}$ (convention-C frame) | Ch 11 |
 | [conj:p-vs-np-boundary](#conj:p-vs-np-boundary) | $\mathrm{P} \neq \mathrm{NP}$ as jet horizon opacity | Ch 20 |
 | [conj:qou-p-neq-np](#conj:qou-p-neq-np) | $\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$ | Ch 20 |

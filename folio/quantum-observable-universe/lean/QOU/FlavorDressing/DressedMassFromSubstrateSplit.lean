@@ -12,7 +12,7 @@ mass splitting:
             + O((Δm/M_N)²)
 ```
 
-This is the categorical lift of `prop:flavor-split-substrate` to
+This is the categorical lift of `conj:flavor-split-substrate-mass` to
 the level of the flavor-dressing functor.
 
 LaTeX: `\label{prop:flavor-dressed-mass-from-substrate-split}`
@@ -43,7 +43,7 @@ noncomputable def substrate_split_factor (q : ℝ) : ℝ :=
 
     Combined with the substrate identity
     `(m_n − m_p)/M_N = (q-1)² · (1 − q⁻⁴) / 3` (from
-    `prop:flavor-split-substrate`), this rearranges to
+    `conj:flavor-split-substrate-mass`), this rearranges to
     `μ_d − μ_u = M_N · substrate_split_factor q`.  The closed-form
     statement is recorded as this axiom; promoting it to a theorem
     requires Lean formalisations of both upstream lemmas.
@@ -93,7 +93,7 @@ class DressedMassSubstrateSplit
   q_gt_one : 1 < q
   /-- The closed form itself: `μ_d − μ_u = M_N · s(q)`, for *this* `M_N`
       (the nucleon-mass scale of *this* dressing `F`) — the content of
-      `prop:flavor-split-substrate` combined with
+      `conj:flavor-split-substrate-mass` combined with
       `lem:pair-skein-mass-formula`, pending Lean formalisations of both. -/
   split : F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q
 
@@ -115,14 +115,14 @@ theorem dressed_mass_down_eq_up_add_split
   linarith [h.split]
 
 /-- **Substrate-pure derivation of the dressed-quark mass
-    splitting.**  Combines `prop:flavor-split-substrate` (substrate
+    splitting.**  Combines `conj:flavor-split-substrate-mass` (substrate
     side) with `lem:pair-skein-mass-formula` (Skein side) to
     express `μ_d − μ_u` and `μ_d` in terms of `M_N` and `q` alone.
 
     **Assumed, not derived here:** the closed-form splitting
     `F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q` is
     carried as the `split` field of the explicit `[DressedMassSubstrateSplit F M_N q]`
-    hypothesis class (pending Lean formalisations of `prop:flavor-split-substrate`
+    hypothesis class (pending Lean formalisations of `conj:flavor-split-substrate-mass`
     and `lem:pair-skein-mass-formula`); this theorem pairs `h.split` with the
     derived additive decomposition `dressed_mass_down_eq_up_add_split`
     (bean `qou-bvo3`).
