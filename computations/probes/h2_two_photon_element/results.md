@@ -68,12 +68,44 @@ it follows both from the γγ grammar (`writhe_eq_zero`) and from U(1) neutralit
 pairwise linking number vanishes, which is what the Borromean `V³` satisfies and the Hopf clasp
 `σ₅²` does not.
 
+## Writhe 0 from two candidate sources (2026-11-21, later)
+
+**(A) The bond is achiral.** Lean `QOU/Molecular/H2BondMirror.lean`, sorry-free, axioms
+`propext, Classical.choice, Quot.sound`:
+
+- `mirror n : BraidGroup n →* BraidGroup n`, `σᵢ ↦ σᵢ⁻¹`, built on the Artin presentation (both
+  relator families checked). In the Hecke algebra this is the bar involution on the braid part.
+- `exponentSum_mirror`: the mirror negates the writhe.
+- `writhe_eq_zero_of_conj_mirror`: a braid conjugate to its own mirror has writhe `0`.
+- `mirror_vPow_three_conj`: `Vᵢ³ = (σᵢσᵢ₊₁⁻¹)³` is conjugate to its mirror, by
+  `c = (σᵢσᵢ₊₁σᵢ)⁻¹σᵢ₊₁⁻¹` (conjugation by `Δ = σᵢσᵢ₊₁σᵢ` swaps `σᵢ` and `σᵢ₊₁`).
+- `sq_not_conj_mirror`: `σᵢ²` is not.
+
+So **pure + achiral selects `V³`**: among the 155 bonds, achiral implies writhe 0, the pure
+writhe-0 bonds are exactly `V₄³, V₅³` (`pure_writhe_zero_bonds`), and both are achiral. This
+replaces the γγ-grammar and neutrality premises with one that needs no particle content: the
+bond has no handedness. The step from the `BondLetter` list to the braid group element is by
+hand (each letter is `σ` or `V` at a fixed site); it is not a Lean bridge yet.
+
+Status: achirality of the bond is a reading, as purity is. It is not stated as a rule in the
+corpus. Its natural source is that the H₂ ground state is invariant under the bar involution
+`q ↦ q⁻¹`, which the corpus uses for parity questions but has not ruled for bonds.
+
+**(B) The two-term charge insertion cannot supply writhe 0.** This is a scope-(b) negative with
+a proved invariant: `derived_insertion_closed_form` (`H2RuledElectronBond.lean`) shows the
+derived insertion is a scalar on each total-weight space of `V^{⊗N}`, whichever strands carry
+the leptons, and `derived_insertion_eq_of_total_eq` makes it equal across those choices. A
+braid word preserves total weight, so the insertion commutes with every word and its connected
+part is `0` on every bond. It therefore assigns the same value to `V³` and to `σ₅²`, and to
+every bond of every writhe. It cannot constrain the writhe.
+
 ## Status of each step
 
 - γγ grammar for the bond: a proved invariant (writhe), applied under the 2026-09-08 rule that
   canonical words are γγ-produced. Not derived for bonds specifically.
 - Neutrality: the table is proved; that a bond must be neutral is the working conjecture of
   PR #8835, and its scope (bond vs. whole word) is not settled.
+- Achirality (A above): proved to imply writhe 0; that a bond must be achiral is a reading.
 - Purity as "the bond preserves the particles": a reading of what a bonded state of the same
   constituents is. Natural, but not stated as a rule in the corpus.
 - The selection is a computation at `q₀` over at most three photons, not a proof.
