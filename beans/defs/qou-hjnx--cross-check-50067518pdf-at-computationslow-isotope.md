@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:35Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T15:15:34Z
 parent: qou-8hur
 ---
 
@@ -40,3 +40,14 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8380, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21T15:15:34Z premise check (wave-2 cite/x-check drain) — NOT run, left open
+
+The comparison was not run, because its input is superseded.
+
+- The framework's triton, 3He and 4He binding values come from computations/canonical-mass-table-extended.witness.json (via low_isotope_mass_table.py). Their braid_word_canonical is atom_canonical_crossings(Z, N), which carries the inter-nucleon bond letters ('averaged', 'averaged_weighted') between nucleons.
+- Owner ruling 2026-11-15 (decision A, plus "Re-scope now, redo after #7876"; docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md): the gamma-gamma rule covers the nuclear bond letters, so every binding magnitude computed on those letters is a record of a superseded word, not a current result.
+- So placing the current numbers (3H 8.4686, 4He 29.9557 MeV) on the Tjon band would test a superseded word. Doing it now would launder an old result into a fresh cross-check.
+- The deuteron value (2.2488 MeV) is on the same superseded bond letter, so the second use (lattice deuteron reference) waits too.
+- What is ready for the redo: the Tjon band sits in [klein-fewbody] sections sec-030 (The Tjon band in nuclear lattice EFT), sec-034 (results) and sec-041 (The Tjon band).
+- Unblocks when: a gamma-gamma-selected word per nucleus is ruled (#7876; candidate V = s0 s1^-1 in PR #7741 is not ruled). Then recompute 3H and 4He on it and compare with the band, keeping the caveat in the body (the band comes from tuning an EFT interaction; a miss is the informative outcome).
