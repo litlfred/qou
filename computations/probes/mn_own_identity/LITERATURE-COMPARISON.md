@@ -142,3 +142,30 @@ closure.
 
 Every derivable term in these arms is included; the two terms above that are absent (a
 m_d − m_u parameter and c_em) are absent because nothing in the corpus derives them.
+
+## 4. The two open pieces: why q⁻², why 12 (2026-11-21, coordinator relay of the owner's "keep deriving")
+
+**The q⁻² is now derived from one premise.** Lean `QOU/MassTheory/NeutronSectorQTraceConstant.lean`
+(sorry-free, `lean -DautoImplicit=false -s 65536` exit 0, axioms `propext, Classical.choice,
+Quot.sound`). Premise: the constant term is the convention-D quantum trace of some braid element,
+taken on the nucleon's **own** weight space, with a normalisation κ that is the same for p and n.
+(The volume term is the whole-space Markov trace and stays blind.) Then, **for every signed braid
+word and every κ**, the neutron's constant is q⁻² times the proton's (`neutron_constant_ratio`).
+This comes from `restrictedTrace_ratio` (T_p = q² T_n, via the intertwiner P) and is not a choice.
+Fixing the proton at 12 mₑ gives 12 q⁻² mₑ for the neutron, m_n − m_p = 12(1 − q⁻²) mₑ =
+1.15494 MeV (`split_of_sector_qtrace`), and the neutron is heavier for q > 1
+(`neutron_heavier_of_sector_qtrace`). With the bare sector trace there is no split
+(`bare_sector_constant_no_split`). So the proton-normalised reading of §2(g) is not an extra
+normalisation choice: it is what any own-sector quantum trace gives once the proton value is
+fixed. What remains assumed is the premise itself: that the constant is an own-sector trace while
+the volume term is a whole-space trace.
+
+**The 12 is not derived.** Under the premise the proton constant is κ·q·tr_{W_p}(w). The −12 audit
+requires it to be independent of q. A search of all 1457 reduced signed words in σ₁^{±1}, σ₂^{±1}
+up to length 6 (`mn_sector_count_probe.py`, pre-registered in its docstring, exact sympy) finds
+**no** word with q·tr_{W_p}(w) independent of q. On W_p the trace is q^{e(w)} + χ_(2,1)(w), where
+e is the exponent sum: one copy of the quartet and one copy of the doublet. So a pure number κ
+would need a specific linear combination of words, and nothing in the corpus names one. Scope (a):
+words up to length 6, single words only. The 12 stays a count with several readings
+(2·F_Bor(1) = 4·F_e(1) = 2·|S₃| = dim V_(2,1)·dim H₃), none of them selected by the framework
+(issue #8809).
