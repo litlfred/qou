@@ -85,7 +85,8 @@ abbrev FueledTracer (R : Type u) : Type u :=
     `tracer` such that for every input `(n, β)` and every fuel
     bound `fuel ≥ β.length + n`, the tracer returns `some _`.
 
-    Justification (delegated to references): the recursive
+    Justification (not formalised; proved in prose in the `.md`
+    sibling, section Correctness): the recursive
     algorithm has well-founded structure on the lex order
     `(n, ℓ(w))`. Each peeling step removes exactly one `σ_{n-2}`
     factor (decreasing ℓ by 1); each truncation decreases the
@@ -107,7 +108,7 @@ abbrev FueledTracer (R : Type u) : Type u :=
     `[Inhabited R]` hypothesis only inhabits the return type. The
     concrete tracer corresponding to `markov_trace_recursive.py`, and the
     well-founded-recursion argument on `(n, ℓ(w))` that it terminates,
-    are delegated to the references above. -/
+    are given in prose in the `.md` sibling and are not formalised. -/
 theorem markovTraceRecursiveReducer_terminates {R : Type*} [Inhabited R] :
     ∃ (tracer : FueledTracer R),
       ∀ (n : ℕ) (β : List ℤ) (fuel : ℕ),
@@ -267,8 +268,8 @@ theorem markovTrace_sq_gen {R : Type*} [CommRing R]
   rw [h1, hmT.normalised]; ring
 
 /-- **Disjoint product for an ascending run.** For `α ∈ H_{k+1}` and `β` the
-    ascending run `σ_0 ⋯ σ_{m-1}` shifted past the separating slot onto
-    `σ_{k+1} ⋯ σ_{k+m}`, `tr(α ⊗ β) = tr(α) · tr(β)`.  A genuine special case of
+    ascending run `σ_0 ⋯ σ_{m-1}` shifted onto `σ_{k+1} ⋯ σ_{k+m}`
+    (so the two clusters share one strand), `tr(α · β↑) = tr(α) · tr(β)`.  A genuine special case of
     the disjoint-product law, proved from the axioms. -/
 theorem markovTrace_disjointProduct_ascendingRun {R : Type*} [CommRing R]
     {mT : ℕ → List ℤ → R} {embedRight : List ℤ → ℕ → List ℤ} {z h : R}
@@ -290,7 +291,7 @@ theorem markovTrace_disjointProduct_ascendingRun {R : Type*} [CommRing R]
   rw [Nat.zero_add] at this
   rw [this, mul_comm]
 
-/-- **The general disjoint-product law** — `tr(α ⊗ β) = tr(α) tr(β)` for `α`
+/-- **The general disjoint-product law** — `tr(α · β↑) = tr(α) tr(β)` for `α`
     a word on the generators `σ_0, …, σ_k` and `β` any positive word, shifted
     by `k + 1`, so that its lowest generator lands on `σ_{k+1}`.  Proved from
     the axioms below (`markovTrace_disjointProduct`, 2026-11-21).  Before
