@@ -15,9 +15,10 @@
   "kind": "remark",
   "title": "Comparison of the flavor-split formula with CODATA",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate"
+    "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate",
+    "papers/quantum-observable-universe/blocks/conj-flavor-split-substrate-mass"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-flavor-split-substrate-mass",
   "tags": [
     "flavor-split",
     "codata-comparison",

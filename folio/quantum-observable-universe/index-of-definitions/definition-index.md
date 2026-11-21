@@ -1,4 +1,4 @@
-**1320** indexed entries across 7 categories.
+**1321** indexed entries across 7 categories.
 
 ## Definitions
 
