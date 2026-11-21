@@ -34,16 +34,48 @@ was edited. Nothing here may enter a Lean proof.
 The library holds no source on self-similar Navier–Stokes. `grep -ai` over `library/INDEX.md`,
 `library/*/sections/` and `library/*/ocr/` for `self-similar | Tsai | Nečas | Chae | Wolf | Leray`
 returns only unrelated documents (Painlevé, Q-balls, an Oberwolfach knot report).
-`folio/references/` holds `necas-ruzicka-sverak1996` and `tsai1998`. Network access to arXiv was
-refused in this container, so the two Chae papers below are cited as the coordinator relayed them
-(issue #8864). I have **not** read their statements here.
+`folio/references/` holds `necas-ruzicka-sverak1996` and `tsai1998`.
 
-| result | excludes | status here |
+**Phase 2 (same day): the web was reachable, so the two Chae papers and two Bradshaw–Tsai papers
+were read at abstract or theorem level.** What was read, and from where:
+
+- Chae–Wolf, arXiv:1610.09464 v2, HTML version, theorem statements read.
+- Chae, arXiv:1306.0305, abstract only.
+- Bradshaw–Tsai, arXiv:1703.03480 (APDE 2019), introduction read.
+- Pineau–Vicol, arXiv:2607.09619, abstract only.
+- The Bradshaw–Tsai survey, arXiv:1802.0038, was **not** read: the fetch was rate-limited twice.
+
+| result | what it says about backward DSS | read here |
 |---|---|---|
-| Nečas–Růžička–Šverák 1996 | steady (backward self-similar) profiles `V ∈ L³(ℝ³)` | bib entry held, text not held |
-| Tsai 1998 | steady profiles with `V ∈ L^q`, `3 < q < ∞` (and local-energy variants) | bib entry held, text not held |
-| Chae, arXiv:1306.0305, Thm 1.1 (with Seregin, CMP 2012) | backward DSS blow-up with `v ∈ C((−∞,0); L³)`, any scale factor `λ ≠ 1` | relayed by the coordinator, not verified |
-| Chae–Wolf, arXiv:1610.09464 | DSS with scale factor `λ` near 1 (under their hypotheses) | relayed by the coordinator, not verified |
+| Nečas–Růžička–Šverák 1996 | no nontrivial steady (self-similar) profile in `L³` | bib entry only |
+| Tsai 1998 | steady profiles trivial if in `L^q`, `3 < q ≤ ∞`, or under local energy | bib entry only, scope as quoted by Chae–Wolf |
+| Chae, arXiv:1306.0305 | no locally *asymptotically* DSS blow-up when the time-periodic profile lies in `C¹(ℝ; L³ ∩ C²)` | abstract |
+| Chae–Wolf, arXiv:1610.09464, Thm 1.1 | a smooth `λ`-DSS solution with `u ∈ C((−∞,0); L^p)`, `3 ≤ p < ∞`, any `λ > 1`, is regular off `(0,0)` and obeys `|u| ≤ C/(√−t + |x|)`. This is regularity, not exclusion | theorem read |
+| Chae–Wolf, Thm 1.3 | for each `C* > 0` there is `λ*(C*) > 1` such that a `λ`-DSS solution with `|u| ≤ C*/(√−t+|x|)` and `λ ∈ (1, λ*)` vanishes. No `L^p` hypothesis | theorem read |
+| Chae–Wolf, introduction (2017) | "such nonexistence result for the nontrivial discretely self-similar solutions is still not available in the literature" (Navier–Stokes) | read |
+| Bradshaw–Tsai, arXiv:1703.03480 | works with forward solutions only, and states "the existence of non-trivial backward DSS solutions remains open" | read |
+| Pineau–Vicol, arXiv:2607.09619 (2026) | rotated self-similar / rotated DSS solutions are trivial under a Type I bound, for extreme rotation and for `λ` near 1 | abstract only. Exact spaces not checked |
+
+What this settles about the search class `|V| ~ |y|⁻¹` with nonzero oscillation:
+
+- **Chae (L³) does not apply.** A `|y|⁻¹` tail is not in `L³`.
+- **Chae–Wolf Thm 1.1 applies but excludes nothing.**
+  - A smooth time-periodic profile with `|V| ≲ (1+|y|)⁻¹` gives `u(t) ∈ L^p` for every `p > 3`, so
+    the hypotheses hold.
+  - The conclusion is the bound `|V(y,s)| ≤ C/(1+|y|)`. That is exactly the decay class searched
+    here, so it is a consistency check, not an exclusion.
+- **Chae–Wolf Thm 1.3 excludes `λ ∈ (1, λ*(C*))`.**
+  - `λ*` depends on the bound constant `C*` and is not explicit.
+  - So the result removes a `C*`-dependent neighbourhood of `λ = 1`, and nothing more.
+- **Pineau–Vicol (2026) does not change this, as far as its abstract shows.**
+  - It treats the rotated generalisation with `λ` near 1.
+  - I did not read its body. I have not checked whether its Type I hypothesis is weaker than the
+    `C*/(√−t+|x|)` bound.
+- **Net (verified to the level stated above):** no result I read excludes a **non-steady backward DSS
+  profile with a nonzero `|y|⁻¹` tail and `λ ≥ λ*(C*)`**. Two sources state the question is open:
+  Chae–Wolf in 2017 and Bradshaw–Tsai in 2017/19.
+- **Not checked:** whether a post-2019 paper closes it. I made one web search with no hit; that is not
+  a literature review. The Bradshaw–Tsai survey (arXiv:1802.0038) is the next thing to read.
 
 Consequences for the search:
 
@@ -54,8 +86,8 @@ Consequences for the search:
    excludes it. Any steady solution of a truncation in this class is therefore not an
    approximation of a genuine profile. It is either an artefact or a sign that the scheme is not
    converging.
-3. The class not excluded by the four results above is **non-steady DSS with a nonzero `|y|⁻¹` tail**.
-   I have not determined whether some other result in the literature excludes it.
+3. The class not excluded is **non-steady DSS with a nonzero `|y|⁻¹` tail and `λ ≥ λ*(C*)`**.
+   See the table above for how far this was verified.
 4. The relation between the period and the scale factor is `S = 2 log λ`, so `λ = e^{S/2}`. No
    identification of `S` with any `q`-dependent quantity is made.
 
