@@ -8885,3 +8885,11 @@ Measured (probe computations/probes/pair_word_brief/mirror_vertex_nucleon_probe.
 - #8696 "chiral" = zero reverse block = directionality, NOT V-A handedness. The SM H_W is Hermitian: electron capture is its h.c. term. Open, cheap check: are A's two blocks adjoints?
 - Which corpus involution is P/CP is unruled (bar and iota send V to Vbar; the group inverse and C do not). "(d)-out breaks CPT" is neither shown nor refuted.
 - Recommendation (judgement): (d)-out for now, with a stated reason; hold (b) until the adjointness check is done.
+
+## 2026-11-21 e_R strand order + Yukawa strengths — derivation attempt (PR #8740, stacked on #8694)
+
+Pre-registered (`computations/probes/qbeta_yukawa_strand_order/PREREGISTRATION.md`, 0629a1398d); Lean `QOU/QuarkState/YukawaStrandOrder.lean` (sorry-free, generic Field); probe 21/21.
+- **Strand order: NOT forced.** `Cc_Rc_Cc`: C·Ř·C = P·Ř·P, so the two orders are charge conjugates and swap the vev entries q²/(q²+1) ↔ 1/(q²+1) (= q↦q⁻¹). A fixed coproduct fixes the singlet inside each tensor product; nothing in the corpus places the Higgs strand (#8638's quark-left/lepton-right is a quark–lepton convention). The weak insertion −h·P_L kills the singlet in both orders. The only order-free reduction, the pivotal partial trace over the Higgs strand, is [2]⁻¹·1 (module map iff weight ratio q²) but sums BOTH Higgs slots, so it does not use the vacuum; with the vacuum and tr e_H = 1 it is the order-dependent compression.
+- **Strengths: NOT derived.** Generation label (all four carry 3), channel qdim (all 1), tr e_H = 1: all slot/type-blind ⇒ split 0, and each would be a NEW rule. Partner-knot Vol·ρ = 0 (unknot, Hopf link, trefoil). Vol(4₁)/ℏ_q² is a μ/e ratio. No CategoricalHiggsIdempotent Yukawa field.
+- Split classes: slot-only ⇒ 0 (both orders); type-only ⇒ −(y_q²−y_ℓ²)(q²−1)/(q²+1) matter-left, + Higgs-left (order-odd); balanced pivotal ⇒ (y_d²−y_e²+y_ν²−y_u²)/[2]. At proton q₀: (q²−1)/(q²+1) = 0.10396371005…, q→1 order t. No Q_β number, no CODATA comparison.
+- OPEN, owner: which (if any) rule fixes the strengths; strand order. Bean stays todo (rule 13a).
