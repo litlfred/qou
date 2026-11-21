@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-24T06:35:32Z
-updated_at: 2026-11-20T14:43:42Z
+updated_at: 2026-11-21T06:44:08Z
 parent: qou-rtxm
 ---
 
@@ -221,3 +221,11 @@ Uninhabited `Prop` classes in QOU/{Mathlib,MathlibExt,Machinery} (declaration-sp
 ## 2026-11-20 — after owner ruling (PR #8579)
 
 Uninhabited Prop class fields in Mathlib-shaped dirs: 14 / 21 -> 13 / 20 (HasArgumentPrinciple removed, its theorem now a cited sorry). Corpus-wide one more field discharged: ShellFillingRuleContext.strong_duality (derived from LP strong duality).
+
+## 2026-11-21 — four defective classes fixed (PR #8748, owner "Fix")
+
+- `TransferLemmas`: restated in L-length; the topDeg form was unsatisfiable. New open brick: the BOTTOM-degree half of L-length division (mirror of B3 using a unit trailing coefficient) — provable, not yet done.
+- `JonesBasicConstruction`: three levels; non-degenerate bottom inhabitant.
+- `JonesWenzlProjector`: generators + p ≠ 0 + strand-killing (sign from corpus `jonesIdempotent`).
+- `KLRSpectralSequenceAtE2`: deleted (field was `True`).
+- Still open, need owner decision: `SchurElementCriterion` (free `semisimple` predicate; needs general H_n(q)), `MarkovStabilization` (free parameters).
