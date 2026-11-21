@@ -1,30 +1,23 @@
 import QOU.Machinery.StrongAJFigureEight
 
 /-!
-# `TransferLemmas` is unsatisfiable over any nontrivial coefficient ring
+# `TransferLemmas`: why the `topDeg` form was unsatisfiable, and the L-length form
 
-**What is proved (sorry-free).** `not_transferLemmas`: for every nontrivial
-coefficient ring `A`, every left ideal `I` of the quantum torus
-`QuantumTorus A = A⟨L^±⟩` and every `Aop`, the class
-`QOU.Machinery.StrongAJFigureEight.TransferLemmas I Aop` has **no** instance.
+**History.** Until 2026-11-21 the `minimality` field read "every element of `I`
+of smaller `topDeg` than `Â` is `0`". On the Laurent ring `A⟨L^±⟩` that is
+unsatisfiable: `L` is a unit, so `L⁻¹ · Â ∈ I`, it is nonzero, and its `topDeg`
+is one less. The class was restated in L-length (owner "Fix", bean `qou-c8p8`).
 
-**Why.** `L` is a unit of the torus (`Lgen_mul_Linv`). If `Aop ≠ 0` lies in
-the left ideal `I`, then `L⁻¹ · Aop` also lies in `I`, is nonzero, and has
-`topDeg` one less than `Aop` — so the `minimality` field (every element of `I`
-of smaller `topDeg` is `0`) fails. If `Aop = 0`, the `division` field fails at
-`P = 1`, since no remainder can have `topDeg < topDeg 0 = ⊥`.
+**What is proved (sorry-free).**
+* `topDeg_minimality_forces_zero` — over a nontrivial ring, if `Aop ∈ I` and
+  every element of `I` of smaller `topDeg` vanishes, then `Aop = 0`. So the old
+  `minimality` field could hold only at `Â = 0`, where the old `division` field
+  fails. This is the defect, kept as a plain lemma.
+* `transferLemmas_top` — the restated class is consistent: `I = ⊤`, `Â = 1` is
+  an instance. This is a consistency witness only. It says nothing about the
+  recurrence ideal of `4₁`.
 
-**Consequence.** `strong_aj_figure_eight_of_transfer` is a theorem with an
-uninhabitable hypothesis, so it is vacuous as stated. The defect is in the
-`minimality` field: on a Laurent ring in `L`, `topDeg` is not a well-founded
-measure of "order" on a left ideal (multiplying by `L⁻¹` lowers it forever).
-Nguyen–Tran's minimality is about the *L-order* (the length
-`topDeg − bottomDeg` of the L-support), or equivalently about the ideal of the
-non-localized ring `A⟨L⟩`. Restating the field that way is a refactor of the
-source class and needs owner approval; it is NOT done here.
-
-**What is not proved.** Nothing about the strong AJ conjecture for `4₁`
-itself; only that this encoding of its transfer inputs cannot be instantiated.
+**What is not proved.** Strong AJ for `4₁`; an instance at the AJ operator.
 
 -- Ref: [leitner2026] QOU.Machinery.StrongAJFigureEight; [nguyen-tran-2021]
 -- Theorem 1 and Lemmas 2.1–2.2 (the order there is the L-length, not topDeg).
@@ -74,25 +67,19 @@ theorem Linv_mul_ne_zero (f : QuantumTorus A) (hf : f ≠ 0) : Linv * f ≠ 0 :=
   apply hf
   rw [← one_mul f, ← Lgen_mul_Linv (A := A), mul_assoc, h, mul_zero]
 
-/-- **`TransferLemmas` has no instance over a nontrivial coefficient ring.** -/
-theorem not_transferLemmas [Nontrivial A] (I : Ideal (QuantumTorus A))
-    (Aop : QuantumTorus A) : ¬ TransferLemmas I Aop := by
-  intro h
-  by_cases h0 : Aop = 0
-  · obtain ⟨q, r, hqr, hr⟩ := h.division 1
-    rw [h0, mul_zero, zero_add] at hqr
-    rcases hr with hr | hr
-    · exact torus_one_ne_zero (hqr.trans hr)
-    · rw [h0, topDeg_zero] at hr
-      exact not_lt_bot hr
-  · have hmem : Linv * Aop ∈ I := I.mul_mem_left Linv h.aj_mem
-    exact Linv_mul_ne_zero Aop h0
-      (h.minimality _ hmem (topDeg_Linv_mul_lt Aop h0))
+/-- **The old `topDeg` minimality forces `Â = 0`** over a nontrivial ring. -/
+theorem topDeg_minimality_forces_zero [Nontrivial A] (I : Ideal (QuantumTorus A))
+    (Aop : QuantumTorus A) (hmem : Aop ∈ I)
+    (hmin : ∀ r ∈ I, topDeg r < topDeg Aop → r = 0) : Aop = 0 := by
+  by_contra h0
+  exact Linv_mul_ne_zero Aop h0
+    (hmin _ (I.mul_mem_left Linv hmem) (topDeg_Linv_mul_lt Aop h0))
 
-/-- Hence the conditional strong-AJ theorem is vacuous: its class hypothesis
-can never be supplied when `A` is nontrivial. -/
-theorem transferLemmas_isEmpty [Nontrivial A] (I : Ideal (QuantumTorus A))
-    (Aop : QuantumTorus A) : IsEmpty (TransferLemmas I Aop) :=
-  ⟨not_transferLemmas I Aop⟩
+/-- **The restated class is consistent**: `I = ⊤`, `Â = 1`. -/
+theorem transferLemmas_top [Nontrivial A] :
+    TransferLemmas (⊤ : Ideal (QuantumTorus A)) 1 where
+  aj_mem := Submodule.mem_top
+  division P := ⟨P, 0, by rw [mul_one, add_zero], Or.inl rfl⟩
+  minimality _ _ _ := by rw [lLength_one]; exact Nat.zero_le _
 
 end QOU.Machinery.StrongAJFigureEight.Instances

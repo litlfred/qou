@@ -12,6 +12,13 @@ paper obtains this by CITING Tran's transfer machinery.  This file records what
 is honestly formalizable now, and — in the companion audit
 `docs/audits/2026-07-20-tl-minimality-wall.md` — what is a genuine wall.
 
+**Note (2026-11-21).** `TransferLemmas.minimality` is now stated in L-length
+(`lLength`), not `topDeg`: the `topDeg` form had no instance over a nontrivial
+ring (`StrongAJFigureEight.Instances.topDeg_minimality_forces_zero`). The
+`topDeg` facts below are still correct and still necessary, but "order" in the
+class now means L-length, and `principal_of_measure lLength` replaces
+`principal_of_division_minimality` as the composing lemma.
+
 ## What [Tr4] = arXiv:1404.0331 Lemmas 3.1–3.3 actually prove (honest reading)
 
 Tran, "The strong AJ conjecture for cables of torus knots".  §3 (case `s` odd,

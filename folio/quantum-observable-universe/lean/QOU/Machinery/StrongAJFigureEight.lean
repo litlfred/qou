@@ -29,42 +29,41 @@ Proof"):
   behind "the annihilator ideal is principal" — it genuinely *composes* the two
   inputs; it is **not** a projection of the conclusion.
 
-* **`TransferLemmas` (§3b-cond class — content-bearing INPUT hypotheses).** The
-  three genuine inputs Nguyen–Tran compose, encoded as real `Prop` fields (the
-  actual lemma statements, NOT `True`, NOT empty, NOT the conclusion):
-    - `aj_mem` — `Â` annihilates the tower (`Â ∈ I`).  Corpus-**PROVED**
-      (`QOU.BraidKnot.AJFigureEightAnnihilation.figureEightOperator_annihilates`,
-      division-free qZeilberger telescope) once translated to the torus.
-    - `division` — skew-Euclidean right-division by `Â` (brick B3
-      `exists_skew_right_division`, now **PROVED sorry-free** in
-      `QuantumTorusDivision` — 2026-07-20).
-    - `minimality` — `Â` is the minimal-order annihilator ([Tr4, L3.1–3.3]: the
+* **`principal_of_measure` (PROVED sorry-free).** The same argument with the
+  measure as a parameter; this is what the conditional theorem uses.
+
+* **`TransferLemmas` (§3b-cond class — content-bearing INPUT hypotheses),
+  stated in L-length (`lLength`, restated 2026-11-21).** The three inputs
+  Nguyen–Tran compose:
+    - `aj_mem` — `Â ∈ I`. Corpus-PROVED
+      (`QOU.BraidKnot.AJFigureEightAnnihilation.figureEightOperator_annihilates`)
+      once translated to the torus.
+    - `division` — right-division by `Â` with a remainder of smaller L-length.
+      Brick B3 (`exists_skew_right_division`, PROVED) is the top-degree half;
+      the bottom-degree half is not yet proved.
+    - `minimality` — `Â` has minimal L-length in `I` ([Tr4, L3.1–3.3]: the
       paper's cited, un-reproved transfer input).
+  The earlier `topDeg` form had **no instance over any nontrivial ring**: `L` is
+  a unit, so `L⁻¹·Â ∈ I` has smaller `topDeg` and is nonzero
+  (`Instances.topDeg_minimality_forces_zero`). That made the conditional
+  theorem below vacuous until 2026-11-21.
 
 * **`strong_aj_figure_eight_of_transfer` (the §3b-cond conditional theorem).**
-  `[TransferLemmas I Â] → I = Ideal.span {Â}`.  DERIVED by feeding the class
-  fields to `principal_of_division_minimality` — a real composition, not
-  `:= h.claim`.  This is a *rigorous conditional result* (fully Lean-verified
-  modulo the three named inputs), NOT a claim that strong AJ is proved.
+  `[TransferLemmas I Â] → I = Ideal.span {Â}`, DERIVED by
+  `principal_of_measure lLength` — a real composition, not `:= h.claim`.
 
-* **`division_of_skew_division` (PROVED sorry-free).** Shows the `division`
-  field is *exactly* brick B3's `exists_skew_right_division` specialised to the
-  divisor `Â` — so the only genuinely-new inputs beyond the B1–B3 infra are the
-  corpus-PROVED `aj_mem` and the [Tr4] `minimality` wall.
+* **`division_of_skew_division` (PROVED sorry-free).** Brick B3 specialised to
+  the divisor `Â`: the top-degree half of the `division` input.
 
-**No `TransferLemmas` instance is provided** — providing one is the open work
-(`aj_mem` needs the torus module action + operator lift; `division` is now
-**discharged sorry-free** by brick B3's `exists_skew_right_division`;
-`minimality` is the [Tr4] wall).  Per the anti-laundering rule, the absence of
-an instance is the honest "primary conjecture open" state — with the B3
-division wall now removed, the two remaining inputs are `aj_mem` and the [Tr4]
-`minimality` transfer.
+**No `TransferLemmas` instance at the AJ operator is provided** — that is the
+open work: the torus translation of `aj_mem`, the bottom-degree half of
+`division`, and the [Tr4] `minimality` wall.
 
 ## Base ring (§7c)
 
 Generic `{A : Type*} [CommRing A]` coefficient ring with the σ-action; no `ℝ`,
-no ordering, no archimedean construct.  The degree is the B2 `topDeg` over
-`WithBot ℤ`.
+no ordering, no archimedean construct.  The order is `lLength`, built from the
+B2 L-support; `topDeg` is over `WithBot ℤ`.
 -/
 
 noncomputable section
@@ -111,18 +110,74 @@ theorem principal_of_division_minimality
     rw [Ideal.span_le, Set.singleton_subset_iff]
     exact ha
 
+/-! ### L-length: the order the transfer inputs are stated in
+
+On the Laurent ring `A⟨L^±⟩`, `L` is a unit, so `topDeg` is not a measure of
+"order" on a left ideal: `L⁻¹ · f` lies in the same ideal and has `topDeg` one
+lower, without end. Nguyen–Tran's order is the **L-length**, the width
+`topDeg − bottomDeg` of the L-support, which multiplication by `L^{±1}` does
+not change. Restated 2026-11-21 (owner "Fix", bean `qou-c8p8`); see
+`QOU.Machinery.StrongAJFigureEight.Instances` for why the `topDeg` form failed. -/
+
+/-- **L-length** of `f`: `max − min` of its L-exponents; `0` for `0` and for
+monomials. -/
+def lLength (f : QuantumTorus A) : ℕ :=
+  ((expSupport f).max.unbotD 0 - (expSupport f).min.untopD 0).toNat
+
+theorem expSupport_one [Nontrivial A] : expSupport (1 : QuantumTorus A) = {0} := by
+  rw [expSupport, SkewMonoidAlgebra.one_def, support_single_of_ne one_ne_zero]
+  simp
+
+theorem lLength_one [Nontrivial A] : lLength (1 : QuantumTorus A) = 0 := by
+  rw [lLength, expSupport_one]
+  simp
+
+/-- **Principal generation from division + minimality, for any `ℕ`-valued
+    measure (PROVED).** The same Euclidean argument as
+    `principal_of_division_minimality`, with the measure a parameter and
+    minimality stated as "every nonzero element of `I` has measure at least
+    that of `a`". -/
+theorem principal_of_measure (μ : QuantumTorus A → ℕ)
+    (I : Ideal (QuantumTorus A)) (a : QuantumTorus A)
+    (ha : a ∈ I)
+    (hdiv : ∀ P : QuantumTorus A, ∃ q r, P = q * a + r ∧ (r = 0 ∨ μ r < μ a))
+    (hmin : ∀ r ∈ I, r ≠ 0 → μ a ≤ μ r) :
+    I = Ideal.span {a} := by
+  apply le_antisymm
+  · intro P hP
+    obtain ⟨q, r, hPqr, hr⟩ := hdiv P
+    have hqa : q * a ∈ I := I.mul_mem_left q ha
+    have hrmem : r ∈ I := by
+      have hrsub : r = P - q * a := by rw [hPqr]; abel
+      rw [hrsub]; exact I.sub_mem hP hqa
+    have hr0 : r = 0 := by
+      rcases hr with h | h
+      · exact h
+      · by_contra hne
+        exact absurd (hmin r hrmem hne) (not_le.mpr h)
+    rw [hPqr, hr0, add_zero]
+    exact Ideal.mem_span_singleton'.mpr ⟨q, rfl⟩
+  · rw [Ideal.span_le, Set.singleton_subset_iff]
+    exact ha
+
 /-- **[Tr4] transfer inputs for figure-eight strong-AJ generation (§3b-cond
     class).**  The three genuine INPUTS Nguyen–Tran compose to prove Theorem 1
     at the ideal level, for a left ideal `I` (the recurrence ideal `A_{4₁}`) and
-    the AJ operator `Aop` (`Â`):
+    the AJ operator `Aop` (`Â`). Orders are **L-lengths** (`lLength`):
 
     * `aj_mem` — `Â` annihilates the colored Jones tower (`Â ∈ I`).  This is the
       corpus-PROVED `figureEightOperator_annihilates`, translated to the torus.
-    * `division` — right-division by `Â` in the localized torus terminates with a
-      strictly-smaller-`topDeg` remainder (brick B3).
-    * `minimality` — `Â` is the minimal-order annihilator: every element of `I`
-      of smaller `topDeg` is `0`.  This is the paper's cited [Tr4, Lemmas
-      3.1–3.3] transfer input.
+    * `division` — right-division by `Â` leaves a remainder of strictly smaller
+      L-length. Brick B3 (`exists_skew_right_division`) supplies only the
+      top-degree half of this; the bottom-degree reduction (trailing coefficient
+      a unit) is the remaining half and is NOT yet proved.
+    * `minimality` — `Â` has minimal L-length among the nonzero elements of `I`.
+      This is the paper's cited [Tr4, Lemmas 3.1–3.3] transfer input.
+
+    Restated 2026-11-21: the earlier fields used `topDeg`, and with them the
+    class had no instance over any nontrivial ring
+    (`Instances.topDeg_minimality_forces_zero`). With L-lengths it is
+    consistent (`Instances.transferLemmas_top`).
 
     None of these fields is the conclusion `I = span {Â}`; each is a genuine
     sub-hypothesis, so the downstream theorem is non-degenerate (§3b-cond item 5,
@@ -132,22 +187,20 @@ class TransferLemmas (I : Ideal (QuantumTorus A)) (Aop : QuantumTorus A) : Prop 
   /-- `Â` annihilates the tower — it lies in the recurrence ideal.
       (Corpus-PROVED `figureEightOperator_annihilates`, translated.) -/
   aj_mem : Aop ∈ I
-  /-- Skew-Euclidean right-division by `Â` (brick B3 `exists_skew_right_division`). -/
+  /-- Right-division by `Â` with a remainder of smaller L-length. -/
   division : ∀ P : QuantumTorus A,
-    ∃ q r, P = q * Aop + r ∧ (r = 0 ∨ topDeg r < topDeg Aop)
-  /-- `Â` is the minimal-order annihilator ([Tr4, Lemmas 3.1–3.3]). -/
-  minimality : ∀ r ∈ I, topDeg r < topDeg Aop → r = 0
+    ∃ q r, P = q * Aop + r ∧ (r = 0 ∨ lLength r < lLength Aop)
+  /-- `Â` has minimal L-length among nonzero elements of `I` ([Tr4, L3.1–3.3]). -/
+  minimality : ∀ r ∈ I, r ≠ 0 → lLength Aop ≤ lLength r
 
 /-- **Strong AJ for the figure eight — ideal generation (Theorem, CONDITIONAL on
     the [Tr4] transfer lemmas).**  The recurrence ideal `A_{4₁} = I` is the
     principal left ideal generated by the AJ operator `Â`:
     `I = Ideal.span {Â}`.
 
-    DERIVED from the class fields via `principal_of_division_minimality` — a real
+    DERIVED from the class fields via `principal_of_measure lLength` — a real
     composition of the three inputs, **not** a projection of the conclusion.
-    Fully Lean-verified modulo the single class instance, which is *not* provided
-    here (the honest "open" state): `aj_mem` is corpus-PROVED-but-untranslated,
-    `division` inherits the two B3 `sorry`s, `minimality` is the [Tr4] wall.
+    No instance at the AJ operator is provided (the honest "open" state).
 
     Per the anti-laundering rule this is a *rigorous conditional result*, NOT a
     claim that strong AJ is proved in Lean.
@@ -156,14 +209,14 @@ theorem strong_aj_figure_eight_of_transfer
     (I : Ideal (QuantumTorus A)) (Aop : QuantumTorus A)
     [h : TransferLemmas I Aop] :
     I = Ideal.span {Aop} :=
-  principal_of_division_minimality I Aop h.aj_mem h.division h.minimality
+  principal_of_measure lLength I Aop h.aj_mem h.division h.minimality
 
-/-- **The `division` field is exactly brick B3 (PROVED, modulo the B3 gap).**
-    When `Â`'s top L-coefficient is a unit (the localized-torus condition), the
-    `TransferLemmas.division` hypothesis is `exists_skew_right_division`
-    specialised to the divisor `Â`.  So beyond the B1–B3 skew-Laurent infra the
-    only genuinely-new inputs the conditional theorem needs are the
-    corpus-PROVED `aj_mem` and the [Tr4] `minimality` wall.
+/-- **Top-degree division by `Â` (brick B3, PROVED).**
+    When `Â`'s top L-coefficient is a unit (the localized-torus condition),
+    `exists_skew_right_division` specialised to the divisor `Â` reduces any `P`
+    to a remainder of smaller `topDeg`. Since 2026-11-21 this is only the
+    top-degree half of `TransferLemmas.division`, which is stated in L-length;
+    the bottom-degree half is not yet proved.
 
     (This lemma is sorry-free; it *depends on* `exists_skew_right_division`,
     which carries the two documented B3 `sorry`s — an honest dependency, per the
