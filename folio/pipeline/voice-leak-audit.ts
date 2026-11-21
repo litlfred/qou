@@ -27,7 +27,8 @@
  *       introduced. An `outro-*` block may name what the next chapter
  *       introduces;
  *       (L4b) a `](#label)` link to a block later in reading order.
- *       Links to back matter and to the block's own table sibling are not
+ *       Links to back matter, to the block's own table sibling, and links
+ *       inside a "conditional on" banner (owner ruling 2026-11-21) are not
  *       counted.
  *       Both fail in EVERY chapter (owner ruling 2026-11-20: "All the
  *       chapters should be strict"), except the introduction, which
@@ -217,6 +218,25 @@ export async function readingOrder(paperDir: string): Promise<BlockRec[]> {
 }
 
 const LINK_RE = /\]\(#([^)\s]+)\)/g;
+/**
+ * A "conditional on" banner: the bold heading that opens a statement block
+ * and names the conjecture it depends on, e.g.
+ * `**Proposition (conditional on [..](#conj:x)).**`. Owner ruling 2026-11-21
+ * ("Allow banner links"): a banner may point to a later conjecture, because
+ * dropping it would make a conditional result read as unconditional.
+ */
+const BANNER_RE = /\*\*\s*(?:Theorem|Proposition|Lemma|Corollary|Conjecture|Definition)\b[^*]*?\(conditional on[\s\S]*?\)\s*\.?\s*\*\*/gi;
+
+/** 0-based line indices covered by conditional banners in `src`. */
+export function bannerLines(src: string): Set<number> {
+  const out = new Set<number>();
+  for (const m of src.matchAll(BANNER_RE)) {
+    const start = src.slice(0, m.index).split("\n").length - 1;
+    const end = start + m[0].split("\n").length - 1;
+    for (let i = start; i <= end; i++) out.add(i);
+  }
+  return out;
+}
 export interface FileReport { file: string; chapter: string; hits: LeakHit[] }
 
 export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<{ scanned: number; reports: FileReport[] }> {
@@ -238,8 +258,10 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
       .filter((h) => classes.has(h.cls))
       .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2")))
       .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")));
+    const banners = bannerLines(src);
     if (classes.has("L4") && !preview)
       unfence(src).forEach((raw, i) => {
+        if (banners.has(i)) return;
         for (const m of raw.matchAll(LINK_RE)) {
           const t = labelIdx.get(m[1]!);
           if (t === undefined || t <= b.idx) continue;
