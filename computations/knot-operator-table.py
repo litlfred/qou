@@ -10,7 +10,7 @@ Knot operators (braid words):
   T_{2,1}: σ₀  (single crossing)
   T_{2,2}: σ₀² = hσ₀ + 𝟏  (Hopf link)
   T_{2,2}^{(3)}: σ₀σ₁σ₀  (= e⁻ basis word; closure is the HOPF LINK, see below)
-  T_{2,5}: (σ₀σ₁)²σ₀  (label pending owner decision; closure is T(2,4), see below)
+  T_{2,4}^{(3)}: (σ₀σ₁)²σ₀  (closure is the T(2,4) torus link, see below; was mislabelled T_{2,5})
 
 Closure of σ₀σ₁σ₀ ∈ B_3 (relabelled 2026-11-21, owner ruling (C)): the
 permutation is a transposition, so the closure has 2 components; σ₀σ₁σ₀ is
@@ -25,8 +25,13 @@ claim, and putting σ₀³ under that key would change what that claim tests.
 
 Same check on (σ₀σ₁)²σ₀ ∈ B_3: 2 components, Jones
 −t^{11/2} + t^{9/2} − t^{7/2} − t^{3/2} = that of σ₀⁴ ∈ B_2, i.e. the
-T(2,4) torus link, not the cinquefoil T(2,5) = σ₀⁵. Its key is left as
-"T_{2,5}" pending an owner decision (ruling (C) covers σ₀σ₁σ₀ only).
+T(2,4) torus link, not the cinquefoil T(2,5) = σ₀⁵. Relabelled 2026-11-21
+T_{2,5} -> T_{2,4}^{(3)}, following the T_{2,2}^{(3)} pattern above (the
+superscript records that the word lives in B_3). Re-verified independently
+in computations/probes/electron_word_gs_interactions_probe.py's Kauffman
+bracket: 2 components, Jones equal to that of σ₀⁴ ∈ B_2 and not to that of
+σ₀⁵. The cinquefoil braid σ₀⁵ is NOT added here; no consumer reads this
+key (no witness of this producer has ever been committed).
 
 Output: JSON witness + markdown table for inclusion in content.
 
@@ -145,7 +150,7 @@ KNOT_OPERATORS = {
     "T_{2,1}": (0,),                  # σ₀
     "T_{2,2}": (0, 0),               # σ₀² (reduces to hσ₀ + 𝟏)
     "T_{2,2}^{(3)}": (0, 1, 0),      # σ₀σ₁σ₀: closure is the Hopf link (was mislabelled T_{2,3})
-    "T_{2,5}": (0, 1, 0, 1, 0),      # (σ₀σ₁)²σ₀: closure is T(2,4), NOT the cinquefoil (label pending owner)
+    "T_{2,4}^{(3)}": (0, 1, 0, 1, 0),  # (σ₀σ₁)²σ₀: closure is the T(2,4) link (was mislabelled T_{2,5})
 }
 
 KNOT_LATEX = {
@@ -153,7 +158,7 @@ KNOT_LATEX = {
     "T_{2,1}": r"T_{2,1}",
     "T_{2,2}": r"T_{2,2}",
     "T_{2,2}^{(3)}": r"T_{2,2}^{(3)}",
-    "T_{2,5}": r"T_{2,5}",
+    "T_{2,4}^{(3)}": r"T_{2,4}^{(3)}",
 }
 
 KNOT_PHYS = {
@@ -161,7 +166,7 @@ KNOT_PHYS = {
     "T_{2,1}": "single crossing",
     "T_{2,2}": "Hopf link (gluon)",
     "T_{2,2}^{(3)}": "Hopf link (closure of σ₀σ₁σ₀ ∈ B_3; e⁻ basis word; not the trefoil)",
-    "T_{2,5}": "cinquefoil (muon)",
+    "T_{2,4}^{(3)}": "T(2,4) torus link (closure of (σ₀σ₁)²σ₀ ∈ B_3; not the cinquefoil)",
 }
 
 
