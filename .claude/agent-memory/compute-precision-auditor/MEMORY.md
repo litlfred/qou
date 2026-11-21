@@ -809,3 +809,14 @@ TRAPs.
   k<=12 exact-maximiser witness; committed copy saw k<=10). Run the upstream with its
   committed env (`REV_EXACT_KMAX=12`) first. (4) parallel agents share
   `<scratch>/maturin.log`/`cargo.log`; name logs per agent.
+
+## TRAP — `y_lambda_at` returns sympy `Float` on exact `Rational` input (bean `qou-g1gz`)
+`wedderburn_jones_markov.y_lambda_at(4, Rational(3,2))[(2,1,1)]` is `Float` `0.0`:
+`sympy.simplify(v) == 0` is **False** and `sympy.nsimplify(v) == 0` is **True**.
+Re-measured 2026-11-21 on main `2ae54ab4010` (sympy installed fresh): same result.
+A zero test on this producer's output therefore depends on which normalisation
+you pick; it flipped a structural verdict twice in one session (2026-08-22).
+Never `== 0` it bare: rationalise first or state a tolerance, and say which. While
+the producer returns floats on exact input, no probe over `y_lambda` can claim an
+exact identity, only agreement to the arithmetic used. The exact path (hook-content
+formula is rational in q) is the producer owner's fix, not done here.
