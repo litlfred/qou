@@ -60,6 +60,16 @@ neutron-heavier result of the right size needs a breaking parameter of order 10�
 current objects do not contain. (h⁴ = 1.91 × 10⁻³ is of that order; that is an observation of
 magnitude only, not a derivation, and nothing here proposes it.)
 
+> **Correction (2026-11-21, later the same day).** "Needs a breaking parameter of order 10⁻³ that
+> the current objects do not contain" was wrong. The identity itself contains one: the ratio of its
+> constant term to its volume term, 12 mₑ / m_p = 6.5 × 10⁻³. If the Cartan weight sits on the
+> constant term instead of the volume term, the split is h · 12 mₑ ≈ 1.28 MeV, with the neutron
+> heavier. See §2(g). I also missed two corpus results in the first pass:
+> `prop:flavor-split-substrate` already gives (m_n − m_p)/M_N ≈ (q−1)²(1−q⁻⁴)/3 to −0.1 %, but its
+> own proof (Step 2) labels the input a phenomenological ansatz chosen to agree with experiment,
+> and it is convention C. `NucleonIsospinExclusions` (`trace_sword_eq`, `restrictedTrace_ratio`)
+> already proves, for every braid word, equal bare sector traces and quantum-trace ratio q².
+
 **(e) The two-term trace removes exactly the term that carries the EM splitting.** On a
 nucleon, the pair charge Σ_{i<j} Q_iQ_j is a scalar on each weight space: 0 on uud, −1/3 on udd.
 The ruled (connected) two-term trace subtracts that scalar, so it is 0 for both nucleons
@@ -76,11 +86,42 @@ scalar charge part for an EM self-energy is a question for the owner; nothing is
 **(f) L-C is a structural mismatch, not a size error.** The convention-D trace multiplies over a
 split union (tr_D(σ₀σ₁σ₀) = 0.691), masses add. Nothing in the literature corresponds.
 
+**(g) Which term of the mass formula can carry the split (added 2026-11-21).** Pre-registration
+[`PREREGISTRATION-cartan-constant.md`](PREREGISTRATION-cartan-constant.md); probe
+[`mn_cartan_constant_probe.py`](mn_cartan_constant_probe.py) (8/8 exact checks); Lean
+`QOU/MassTheory/NeutronCartanConstant.lean` (sorry-free, axioms `propext, Classical.choice,
+Quot.sound`).
+
+The production identity has two terms, +2 m_μ F_Bor and −12 mₑ. The volume term is a braid-class
+function and the γγ word is the same for p and n, so it is isospin-blind. On the nucleon weight
+spaces the only state-sensitive factor is the Cartan weight, q on uud and q⁻¹ on udd. Proved
+(`split`, `neutron_heavier_iff`): for any assembly of bare and Cartan-weighted terms,
+m_n − m_p = −s(q − q⁻¹) × (net weighted coefficient), so for q > 1 **the neutron is heavier
+exactly when the weighted part is net negative**. Weighting the volume term gives the neutron
+lighter (`volume_weighted_neutron_lighter`, this is N1). Weighting the −12 mₑ term gives the neutron
+heavier (`const_weighted_neutron_heavier`).
+
+| reading | m_n − m_p (muon pin) | vs 1.29333 | m_p | m_n |
+|---|---|---|---|---|
+| volume weighted (N1) | −177.87 MeV | wrong sign | −0.24 ppm | −19 % |
+| constant weighted, proton-normalised (s = q⁻¹): 12(1 − q⁻²) mₑ | **1.15494 MeV** | −10.70 % | −0.24 ppm | −147.5 ppm |
+| constant weighted, plain K^⊗3 (s = 1): 12 h mₑ | **1.28196 MeV** | −0.88 % | −719 ppm | −730 ppm |
+
+The proton pin agrees to the shown digits. Against the literature, this is the shape QCD has: an
+isospin-blind gluon energy plus a small flavour-sensitive term. The literature total is
+1.29 (experiment), 1.51(16)(23) (BMW 2015), 1.35(18)(8) (QCDSF-UKQCD 2015). Both readings land
+inside or near those error bars. The sign and the size h · 12 mₑ do not depend on which reading is
+taken. What is **not derived**: that the −12 mₑ term carries a Cartan weight at all, and the
+normalisation s. The −12 itself is underived (#8809). The proton-normalised reading keeps m_p but
+needs an extra q⁻¹. The plain K^⊗3 reading has no extra factor, but it moves m_p by
+−12(q − 1) mₑ = −0.67 MeV, which breaks the proton round trip. Choosing between them by residual
+would be selection against the target, so neither is adopted.
+
 ## 3. Summary of the error, term by term
 
 | literature term (n − p) | this compute | status |
 |---|---|---|
-| QCD, m_d − m_u: ≈ +1.9 to +2.5 MeV | no quark-mass parameter; K/crossing asymmetry gives 30–140× too much | missing as a separate small parameter |
+| QCD, m_d − m_u: ≈ +1.9 to +2.5 MeV | weighting the volume term gives the wrong sign (×137); weighting the −12 mₑ term gives the neutron heavier, 1.15–1.28 MeV in total (§2g) | candidate term identified; that it carries a weight, and the normalisation, are not derived |
 | QED, mainly elastic: ≈ −0.6 to −1.3 MeV | present in the raw two-term part with the right sign; removed by the connected subtraction; coupling not derived | removed by a ruling, size underived |
 | isospin-symmetric mass ≈ (m_p+m_n)/2 | identity gives m_p to 0.24 ppm; 1.27 m_e offset sits in the −12 | constant carries a proton-specific piece |
 | proton calibration | −244 ppb, 9.5σ μ–p tension | not the source (5600× smaller) |
