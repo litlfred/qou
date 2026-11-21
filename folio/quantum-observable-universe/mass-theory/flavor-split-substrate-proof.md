@@ -1,5 +1,7 @@
 **Proof.**
 
+Step 5 proves the identity: dividing (4) by 3 gives it, and it holds for every nonzero $q$. Steps 1 to 4 and 6 show how its two sides arise as the substrate formula for $(m_n - m_p)/M_N$, under the pair-Skein formula and the ansatz of Step 2. Those steps are not needed for the identity.
+
 *Step 1 (Pair-Skein difference, exact).*
 
 Apply [Pair Skein mass and crossing-by-crossing recursion](pair-skein-mass-formula.md) to the Borromean baryon braids of the proton ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$) and neutron ($\mathfrak{u}\mathfrak{d}\mathfrak{d}$). This gives the exact relation:
@@ -38,7 +40,7 @@ $$
 This is the minimal substrate-atom combination satisfying three conditions:
 (a) Bar-involution antisymmetry under $q \mapsto q^{-1}$ (consistent with the antisymmetry of the splitting under flavor exchange $\mathfrak{u} \leftrightarrow \mathfrak{d}$).
 (b) Leading order $(q-1)^3$ at the classical limit.
-(c) Numerical agreement to $-0.67\%$ at $q = q_0$.
+(c) Numerical agreement to $-0.13\%$ at the proton pin $q = q_0$.
 
 **Scope of Step 2.** Equation (2) is a phenomenological ansatz rather than a derived identity: Condition (c) chooses the form because it agrees with experiment, which is selection against the target. Conditions (a) and (b) do not single it out:
 
@@ -61,7 +63,7 @@ $$
   z_0,
 $$
 
-and $\hbar_q \cdot \sqrt{q} = (q - 1)/\sqrt{q} = q^{1/2} - q^{-1/2} = z_0$. So $h_q \cdot z_{\text{mkv}} = z_0 = \hbar_q \cdot \sqrt{q}$. The first equality holds for the convention-C weight only: at the canonical weight $h_q z \approx 0.1281$ at $q_0$, against $q_0^{1/2} - q_0^{-1/2} \approx 0.1044$. This gives the chain of equivalent forms:
+and $\hbar_q \cdot \sqrt{q} = (q - 1)/\sqrt{q} = q^{1/2} - q^{-1/2} = z_0$. So $h_q \cdot z_{\text{mkv}} = z_0 = \hbar_q \cdot \sqrt{q}$. The first equality holds for the convention-C weight only: at the canonical weight $h_q z \approx 0.1281$ at the proton pin $q_0$, against $q_0^{1/2} - q_0^{-1/2} \approx 0.1044$. This gives the chain of equivalent forms:
 
 $$
   h_q^2 \cdot \frac{\hbar_q}{\sqrt{q}}
@@ -121,20 +123,4 @@ $$
   \frac{\hbar_q^2 \cdot h_q \cdot [2]_q}{3}
   \;=\;
   \frac{(q-1)^2 \, (1 - q^{-4})}{3}. \tag{5}
-$$
-
-*Step 7 (Empirical evaluation).*
-
-At $q = q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps):
-
-$$
-  (q_0 - 1)^2 \cdot (1 - q_0^{-4}) / 3
-  \;\approx\;
-  (0.10998)^2 \cdot (1 - 0.6585) / 3
-  \;\approx\;
-  0.01210 \cdot 0.3415 / 3
-  \;\approx\;
-  1.376 \times 10^{-3},
-$$
-
-This matches the CODATA value $1.293 / 938.92 \approx 1.377 \times 10^{-3}$ to $-0.10\%$. $\square$
+$$ $\square$
