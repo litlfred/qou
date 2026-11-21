@@ -972,6 +972,7 @@ export default chapter({
         "chi-lambda-w0-sign-weighting-proof",
         "atom-knot-mass-derivation",
         "atom-knot-mass-derivation-table1-data",
+        "antiquark-channel-ledger",
         "kashaev-density-equals-sdp-multiplicity",
       ],
     }),

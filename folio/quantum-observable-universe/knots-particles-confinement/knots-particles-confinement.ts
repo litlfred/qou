@@ -353,7 +353,6 @@ export default chapter({
         // the only one that does not split the `meson-scale-independence`
         // statement / calibration / proof triple.
         "pion-mass-hyperbolic-threshold",
-        "antiquark-channel-ledger",
       ],
     }),
   ],
