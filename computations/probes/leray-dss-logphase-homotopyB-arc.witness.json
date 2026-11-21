@@ -1,0 +1,171 @@
+{
+ "description": "Pseudo-arclength continuation of orbit B in theta (log-phase tail weight), L2N2K4, dps 60",
+ "provenance": "TRANSCRIBED FROM THE RUN LOG. The run (computations/probes/leray_dss_logphase_search.py homotopyB with LERAY_ARC=1) was stopped at the 2 h compute budget before it wrote its own witness; the numbers below are copied verbatim from its log lines (printed digits only).",
+ "verdict": "stopped_at_compute_budget",
+ "arc_steps": [
+  {
+   "step": 0,
+   "theta": "0.028224053",
+   "period_S": "0.9503826267286793",
+   "amp": "77.268326",
+   "residual": "4.7819e-42",
+   "folds": 0
+  },
+  {
+   "step": 1,
+   "theta": "0.039843453",
+   "period_S": "0.9593078865276009",
+   "amp": "85.068361",
+   "residual": "6.4822e-42",
+   "folds": 0
+  },
+  {
+   "step": 2,
+   "theta": "0.044623227",
+   "period_S": "0.9167985953143553",
+   "amp": "99.589808",
+   "residual": "3.1115e-41",
+   "folds": 0
+  },
+  {
+   "step": 3,
+   "theta": "0.043646023",
+   "period_S": "0.8081237371431225",
+   "amp": "124.09967",
+   "residual": "1.8045e-41",
+   "folds": 1
+  },
+  {
+   "step": 4,
+   "theta": "0.036762454",
+   "period_S": "0.6594368711851622",
+   "amp": "162.52201",
+   "residual": "3.2616e-40",
+   "folds": 1
+  },
+  {
+   "step": 5,
+   "theta": "0.022062394",
+   "period_S": "0.5364075481058583",
+   "amp": "219.72383",
+   "residual": "9.2476e-41",
+   "folds": 1
+  },
+  {
+   "step": 6,
+   "corrector_fails": true,
+   "ds_after": "32.30"
+  },
+  {
+   "step": 7,
+   "corrector_fails": true,
+   "ds_after": "16.15"
+  },
+  {
+   "step": 8,
+   "corrector_fails": true,
+   "ds_after": "8.075"
+  },
+  {
+   "step": 9,
+   "theta": "0.020786923",
+   "period_S": "0.5399775565536244",
+   "amp": "225.05495",
+   "residual": "4.3406e-39",
+   "folds": 1
+  },
+  {
+   "step": 10,
+   "corrector_fails": true,
+   "ds_after": "6.056"
+  },
+  {
+   "step": 11,
+   "theta": "0.020238808",
+   "period_S": "0.5613943634644413",
+   "amp": "224.80830",
+   "residual": "5.2216e-40",
+   "folds": 1
+  },
+  {
+   "step": 12,
+   "theta": "0.021338711",
+   "period_S": "0.6341232766829042",
+   "amp": "210.41657",
+   "residual": "1.5311e-40",
+   "folds": 2
+  },
+  {
+   "step": 13,
+   "theta": "0.022922784",
+   "period_S": "0.6944499315253387",
+   "amp": "197.25403",
+   "residual": "1.2075e-40",
+   "folds": 2
+  },
+  {
+   "step": 14,
+   "theta": "0.025872927",
+   "period_S": "0.7865333734787814",
+   "amp": "178.38006",
+   "residual": "1.1478e-38",
+   "folds": 2
+  },
+  {
+   "step": 15,
+   "corrector_fails": true,
+   "ds_after": "15.33"
+  },
+  {
+   "step": 16,
+   "theta": "0.028585434",
+   "period_S": "0.8592607724263385",
+   "amp": "164.49806",
+   "residual": "6.9438e-39",
+   "folds": 2
+  },
+  {
+   "step": 17,
+   "theta": "0.033386914",
+   "period_S": "0.9698690790362212",
+   "amp": "144.10291",
+   "residual": "9.1313e-39",
+   "folds": 2
+  },
+  {
+   "step": 18,
+   "theta": "0.042122039",
+   "period_S": "1.1291071330005664",
+   "amp": "113.99019",
+   "residual": "2.5195e-39",
+   "folds": 2
+  },
+  {
+   "step": 19,
+   "corrector_fails": true,
+   "ds_after": "25.87"
+  },
+  {
+   "step": 20,
+   "theta": "0.050107405",
+   "period_S": "1.2437357924959620",
+   "amp": "92.428590",
+   "residual": "8.7996e-39",
+   "folds": 2
+  }
+ ],
+ "log_tail": [
+  "   arc step 9: theta=0.020786923 S=0.5399775565536244 |A|=225.05495 res=4.3406e-39 folds=1",
+  "   arc step 10: corrector fails, ds -> 6.056",
+  "   arc step 11: theta=0.020238808 S=0.5613943634644413 |A|=224.80830 res=5.2216e-40 folds=1",
+  "   arc step 12: theta=0.021338711 S=0.6341232766829042 |A|=210.41657 res=1.5311e-40 folds=2",
+  "   arc step 13: theta=0.022922784 S=0.6944499315253387 |A|=197.25403 res=1.2075e-40 folds=2",
+  "   arc step 14: theta=0.025872927 S=0.7865333734787814 |A|=178.38006 res=1.1478e-38 folds=2",
+  "   arc step 15: corrector fails, ds -> 15.33",
+  "   arc step 16: theta=0.028585434 S=0.8592607724263385 |A|=164.49806 res=6.9438e-39 folds=2",
+  "   arc step 17: theta=0.033386914 S=0.9698690790362212 |A|=144.10291 res=9.1313e-39 folds=2",
+  "   arc step 18: theta=0.042122039 S=1.1291071330005664 |A|=113.99019 res=2.5195e-39 folds=2",
+  "   arc step 19: corrector fails, ds -> 25.87",
+  "   arc step 20: theta=0.050107405 S=1.2437357924959620 |A|=92.428590 res=8.7996e-39 folds=2"
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "description": "Pseudo-arclength continuation of orbit C in theta (log-phase tail weight), L2N3K4, dps 60",
+ "provenance": "TRANSCRIBED FROM THE RUN LOG. The run (computations/probes/leray_dss_logphase_search.py homotopyC with LERAY_ARC=1, LERAY_TMAX=1800); its time budget is checked only between arclength steps, and the first corrector attempts at L2N3K4 ran past it, so it was stopped at the 2 h compute budget before it wrote its own witness; the numbers below are copied verbatim from its log lines (printed digits only).",
+ "verdict": "stopped_at_compute_budget",
+ "arc_steps": [
+  {
+   "step": 0,
+   "corrector_fails": true,
+   "ds_after": "18.19"
+  },
+  {
+   "step": 1,
+   "theta": "0.019860977",
+   "period_S": "0.5836691519500682",
+   "amp": "156.10857",
+   "residual": "7.1993e-43",
+   "folds": 0
+  }
+ ],
+ "log_tail": [
+  "    it=4 |F|=1.236e-43 |A|=115.871 S=0.4712083214466819 nodes=408",
+  "    it=0 |F|=4.076e+3 |A|=115.871 S=0.4712083214466819 nodes=408",
+  "    it=1 |F|=2.566e+3 |A|=143.310 S=0.5193266069761414 nodes=408",
+  "    it=2 |F|=476.5 |A|=130.885 S=0.4990292364389287 nodes=408",
+  "    it=3 |F|=752.4 |A|=142.838 S=0.5449121299219465 nodes=408",
+  "    it=4 |F|=13.25 |A|=141.554 S=0.5399088375552899 nodes=408",
+  "    it=5 |F|=0.008170 |A|=141.571 S=0.5399746575491684 nodes=408",
+  "    it=6 |F|=1.000e-7 |A|=141.571 S=0.5399751928227993 nodes=408",
+  "    it=7 |F|=1.713e-18 |A|=141.571 S=0.5399751928205521 nodes=408",
+  "    it=8 |F|=1.942e-40 |A|=141.571 S=0.5399751928205521 nodes=408",
+  "   arc step 0: corrector fails, ds -> 18.19",
+  "   arc step 1: theta=0.019860977 S=0.5836691519500682 |A|=156.10857 res=7.1993e-43 folds=0"
+ ]
+}

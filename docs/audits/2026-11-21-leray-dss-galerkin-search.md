@@ -38,6 +38,20 @@ the true problem forbids (they do not continue into the log-phase basis). A Gale
 (test = trial) scheme has no clean pressure elimination in the periodic sector (§9.2). The
 literature (§1) still leaves non-steady DSS with a nonzero `|y|⁻¹` tail open.
 
+**Phase 3 (§10, 60-digit Arb arithmetic).** I rebuilt the search on a trial basis whose mode `m` carries
+the tail `(1+ρ)^{−iθmω}` inside the radial factor.
+
+- **Basis.** The fields are exactly divergence-free for every `θ`. The phase-2 log-phase basis was not,
+  for poloidal fields (§10.1). The test fields still eliminate the pressure exactly (§10.2).
+- **Quadrature.** The radial quadrature (`r = sinh u`, phase-adapted Gauss–Legendre panels) is stable
+  to 1e-41 or better under refinement.
+- **Orbits B and C.** Continued from `θ = 0`, both pass through folds in `θ`. The runs were stopped at
+  the 2 h budget, at `θ ≈ 0.050` (B, after two folds) and `θ ≈ 0.020` (C).
+- **Random starts.** 22 starts directly at the admissible tail (`θ = 1`, zonal, L2N2, L2N3, L3N2) found
+  no orbit.
+- **Refinement.** No candidate existed to refine, so nothing persisted across refinements.
+- **Scope.** All of this is scope (a).
+
 ## 1. Literature: which classes are already excluded
 
 The library holds no source on self-similar Navier–Stokes. `grep -ai` over `library/INDEX.md`,
@@ -475,3 +489,180 @@ open.
 The full script on `origin/main` at `b17e0551c53` shows the **same five red gates**. They come
 from main, not from this branch, which touches no `q₀` witness. The seven tree-measuring
 witnesses the script rewrote were reverted and are not committed.
+
+## 10. Phase 3: a search built on the log-phase tail (arbitrary precision)
+
+Probe: [`computations/probes/leray_dss_logphase_search.py`](../../computations/probes/leray_dss_logphase_search.py).
+Witnesses: `computations/probes/leray-dss-logphase-{validate,homotopyB,homotopyC,random-L2,random-L3N2}.witness.json`,
+and `-homotopyB-arc` / `-homotopyC-arc` for the arclength runs (see §10.5 for how each was written).
+
+**Arithmetic.** Every number in this section is computed in Arb/Acb ball arithmetic (python-flint 0.9.0) at
+60 decimal digits, with midpoints carried through Newton. It does not use mpmath, for a measured reason:
+the container has no `gmpy2`, and pure-Python mpmath at 30 dps cost 43 min per Newton step on orbit D
+(§9.4). The same Newton step costs about 15 s in Arb at 60 dps. Arb is at least as precise as mpmath, and
+no float64 enters any committed number.
+
+### 10.1 Basis: the tail is in the trial radial function, and the fields stay exactly divergence-free
+
+For Fourier mode `m` of a periodic profile with frequency `ω = 2π/S`, the trial radial factor is
+
+`R_m(ρ) = (1+ρ)^{−q}`, with `q = p + iθmω`.
+
+Here `p = (l+1)/2 + n` for toroidal fields and `p = l/2 + n` for poloidal fields. The fields are built
+from `R` by the same constructions as in phase 1:
+
+- toroidal: `R·(∇H × y)`;
+- poloidal: `S·∇H − 2l·R'·H·y`, with `S = (l+1)R + 2ρR'`.
+
+Both are divergence-free for **any** complex radial function `R`, so every trial field is exactly
+solenoidal for every `θ`. At `θ = 1`, mode `m` decays like `|y|^{−1−2imω}`, which is the tail that the
+transport `½ + ½y·∇` forces (§9.5). At `θ = 0` the system is the phase-1 system.
+
+**Correction to phase 2.** The phase-2 log-phase basis (§9.5, item 2) multiplied the whole field by
+`f_m = (c₂+ρ)^{−imω}`. For poloidal fields that product is **not** divergence-free; §9.2 recorded the same
+defect on the test side. So the phase-2 log-phase homotopy results were obtained outside the solenoidal
+class:
+- B fails at `θ = 0.05`;
+- C falls onto a steady solution at `θ = 0.05`.
+
+Phase 3 replaces them (§10.4). The phase-2 qualitative conclusion, that neither orbit continues to the
+admissible tail, is not overturned, but its evidence is now the phase-3 runs.
+
+### 10.2 Pressure
+
+The test fields are the phase-1 Gaussian divergence-free fields `ρⁿe^{−ρ/4}` times the same angular
+constructions. They do not carry the log-phase factor. Hence `⟨∇P, ψ⟩ = −⟨P, div ψ⟩ = 0` for every test
+field `ψ`. The pressure is eliminated exactly, and no pressure unknown or projection is needed.
+
+### 10.3 Radial quadrature
+
+**Substitution.** `r = sinh u`, so `1+ρ = cosh²u`. The trial phase `θmω·log(1+ρ)` then grows at most like
+`2θmω·u`.
+
+**Rule.** Composite Gauss–Legendre on `u ∈ [0, U]`:
+- 24 nodes per panel;
+- panel width at most `min(¼, 12 rad / (4Kωθ))`;
+- `U` chosen so that `ρ_max = 4·ln10·(DPS+15)`. The test Gaussian `e^{−ρ/4}` is then below `10^{−(DPS+15)}`
+  at the cut-off, so the neglected tail is below the working precision.
+
+**Stability.** Measured in the validate witness: change of every assembled matrix under refinement at
+`θ = 1`. The refinement was 24 → 36 nodes per panel, together with a panel phase of 12 → 8 rad.
+
+| truncation | S | nodes | max |ΔL| (max |L|) | max |ΔS-tensor| (max |S|) |
+|---|---|---|---|---|
+| L2N2K4 | 0.47 | 1728 → 3852 | 1.5e-46 (2.2e3) | 1.3e-47 (8.7e5) |
+| L2N3K3 | 0.8 | 792 → 1728 | 1.0e-44 (1.7e4) | 2.9e-46 (1.6e6) |
+| L3N2K3 | 1.0 | 624 → 1404 | 8.5e-42 (3.4e4) | 2.9e-43 (6.7e5) |
+
+All entries are far below the 1e-30 bar. This replaces the phase-2 Q24 rule (1.7e-7 at `m = 5`,
+1.3e-4 at `m = 6`).
+
+**Validation at θ = 0.** The new system reproduces the phase-1 mpmath steady solutions (L2N2 and L2N3)
+to residuals of 4.9e-46 to 2.8e-45. That floor is set by the 50-digit stored coefficients. Orbit B
+re-converges quadratically at K = 4: `|F|` goes 14.1 → 3e-42, with `S = 0.8313389737222178`.
+
+### 10.4 Homotopy θ: 0 → 1 of orbits B and C (K = 4, full space, not axisymmetric)
+
+**Natural-parameter continuation.** Steps of 0.1, halved on failure down to 1/80.
+
+| orbit | θ = 0 | converged | fails at |
+|---|---|---|---|
+| B (L2N2) | S = 0.8313389737, res 3.1e-42 | θ = 0.025 (S 0.94542), 0.0375 (S 0.96016) | θ = 0.05 |
+| C (L2N3) | S = 0.4712083214, res 1.2e-43 | θ = 0.0125 (S 0.53998), 0.025 (S 0.62927) | θ = 0.0375 |
+
+Neither orbit collapses onto a steady solution in the solenoidal basis. That differs from the phase-2
+C result, which was obtained in the non-solenoidal basis.
+
+**Pseudo-arclength continuation (secant predictor, `y = (x, Wθ)`, `W = |x(θ=0)|`).** This tells a fold
+in `θ` apart from a breakdown.
+
+- **Orbit B.** The branch has a **fold at θ ≈ 0.0446**. After it, `θ` decreases while `|A|` grows:
+
+  | θ | S | \|A\| |
+  |---|---|---|
+  | 0.0436 | 0.808 | 124 |
+  | 0.0368 | 0.659 | 163 |
+  | 0.0221 | 0.536 | 220 |
+
+  A **second fold at θ ≈ 0.0202** follows, after which `θ` increases again:
+
+  | θ | S | \|A\| |
+  |---|---|---|
+  | 0.0229 | 0.694 | 197 |
+  | 0.0286 | 0.859 | 164 |
+  | 0.0334 | 0.970 | 144 |
+
+  Residuals stay at 1e-38 to 1e-41 along the whole path. The branch passes `θ = 0.05`, where
+  natural-parameter continuation failed. At θ = 0.0421 it has S = 1.129 and |A| = 114, and at θ = 0.0501
+  it has S = 1.244 and |A| = 92.4, so the amplitude is falling back towards its θ = 0 value. The run was
+  stopped at the 2 h compute budget **at θ ≈ 0.0501, after two folds**. It did not reach `θ = 1`, and
+  where it goes next is unknown.
+- **Orbit C.** The first natural step converged at θ = 0.0125, with S = 0.53998. The first arclength
+  corrector failed and was halved. The second step converged at **θ = 0.01986**, with S = 0.58367,
+  |A| = 156 and residual 7.2e-43, and no fold so far. Each corrector attempt at L2N3K4 (n = 48 per mode)
+  took about 15–20 min, so the run was stopped at the budget after one accepted step.
+
+**Reading, scope (a).** In these truncations, the phase-1 periodic orbits continue into the solenoidal
+log-phase family only along a path with folds. Within the 2 h budget, neither path came near the
+admissible tail `θ = 1`. This does **not** show that the branch cannot reach `θ = 1`: an S-shaped path
+can continue past further folds. Nor does it say anything about orbits that are not connected to B or
+C. The cost per arclength step (about 3–4 min at L2N2K4, and far more at L2N3K4) is the reason the
+continuation stopped.
+
+### 10.5 Random starts at θ = 1, axisymmetric (zonal) subspace, K = 3
+
+In each start:
+- the initial period `S₀` is cycled through {0.5, 0.75, 1, 1.5, 2, 3, 4, 6, 8, 12};
+- the amplitude is log-uniform;
+- the coefficients are random;
+- Newton runs at `θ = 1` directly.
+
+| truncation | starts | converged (periodic / steady / trivial) | failed |
+|---|---|---|---|
+| L2N2K3 zonal | 8 | 0 / 0 / 0 | 8 |
+| L2N3K3 zonal | 8 | 0 / 0 / 0 | 8 |
+| L3N2K3 zonal | 6 | 0 / 0 / 0 | 6 |
+
+Every start ended with residual 1e6 to 1e15 after 8–21 iterations. With no candidates, the refinement
+chain (K, then N, then L) was never triggered. The wall cost was 140–990 s per start. That limited the
+number of starts, and it is why N4, L3N3 and full-space random starts were **not** run.
+
+**How the witnesses were written.**
+- `validate`, `homotopyB`, `homotopyC`, `random-L2` and `random-L3N2` were written by the probe.
+- `homotopyB-arc` and `homotopyC-arc` were **transcribed from the run logs**. Both runs were stopped by
+  hand at the 2 h compute budget:
+  - B had no time budget;
+  - C's `LERAY_TMAX` is checked only between arclength steps, and one L2N3 corrector outlasted it.
+
+  Their `provenance` fields say so, and they carry only the printed digits (θ to 8 digits, S to 16).
+  The transcription script is not committed; it copies the log lines with a regular expression.
+
+### 10.6 Phase-3 verdict and what was not run
+
+- **No candidate was found, so nothing persisted across even one refinement.** The stop-and-report
+  condition was not triggered.
+- Orbits B and C continue into the solenoidal log-phase basis only along folded paths, and were stopped
+  at `θ ≤ 0.05`. The random search at the admissible tail found no orbit in 22 starts.
+- All of this is **scope (a)**: these truncations, these starts and this budget. No structural exclusion
+  is claimed.
+
+**Not run within the budget.**
+- N4 systems and L3N3.
+- Full-space (non-zonal) random starts.
+- Continuation of B and C beyond the reported `θ`.
+- S beyond 12.
+
+**Compute bottleneck.** Arb matrix assembly is rebuilt at every Newton step, and once more for each
+`ω` and `θ` finite difference. Node counts grow like `Kωθ`.
+
+### 10.7 Precision gates (phase 3)
+
+`scripts/precision-gates.sh --changed` on this branch shows the same five red gates as §9.7:
+- q0-anchor flip;
+- q0-anchor refill;
+- reference-literal;
+- witness-value copy;
+- q0-value drift.
+
+All five were confirmed red on `origin/main` at `b17e0551c53`. None of the gate output names a file
+from this branch. The seven tree-measuring witnesses the script rewrote were reverted.
