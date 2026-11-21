@@ -371,7 +371,7 @@ if __name__ == "__main__":
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": float(Q0_FLOAT),
+            "q_0": fmt(Q_MP),  # was float(Q0_FLOAT): a 16-digit record of a 70-digit pin
             "tau_lambda_implementation": (
                 "Wigner-2 closed form (h/2) for self-conjugate λ; "
                 "approximate q^{c̄} − q^{−c̄} for non-self-conjugate "
