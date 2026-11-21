@@ -540,6 +540,8 @@ fn main() {
     if let Some(path) = out {
         let json = serde_json::json!({
             "q0": Q0_STR,
+            "q0Anchor": "proton",
+            "q0Value": Q0_STR,
             "z": "q^3/(q^2+1)",
             "method": "two-row seminormal characters, column-by-column (two-row-tower-trace, Rust/MPFR)",
             "prec_bits": prec,

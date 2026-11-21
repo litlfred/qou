@@ -218,7 +218,7 @@ def main() -> int:
             Z, N, return_per_step=True, k_exact=KEXACT, k_max=KEXACT)
         last = per_step[-1]
         raw_prod = mp.mpf(last["raw_total_MeV"])
-        gated_prod = mp.mpf(last["gated_total_MeV"])
+        gated_prod = mp.mpf(last["gated_total_DISPROVED_SELECTION_MeV"])
 
         # independent mpf reconstruction from the final traces alone
         ung = mp.mpf(0)

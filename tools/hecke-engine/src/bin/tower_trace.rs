@@ -778,6 +778,10 @@ fn main() {
             "python_reference_producer": "computations/probes/markov_trace_two_row_tower_probe.py",
             "q0": Q0_STR,
             "q0_anchor": "proton",
+            // camelCase is the key the q0-anchor audits read; the snake_case
+            // field above is kept for existing readers.
+            "q0Anchor": "proton",
+            "q0Value": Q0_STR,
             "z": "q^3/(q^2+1)",
             "dps": dps,
             "check_dps": check_dps,
