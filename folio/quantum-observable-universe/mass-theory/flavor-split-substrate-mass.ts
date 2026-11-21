@@ -3,6 +3,10 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:flavor-split-substrate-mass",
   title: "The nucleon mass split equals the substrate flavor-split formula",
+  lean: {
+    ref: "qou:QOU.FlavorDressing.FlavorSplitSubstrateMass",
+    validation: "not_checked",
+  },
   tags: ["flavor-split", "u-d-splitting", "fitted-ansatz", "conjecture"],
   uses: [
     "prop:flavor-split-substrate",
