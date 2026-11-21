@@ -397,3 +397,52 @@ nucleon mass and the difference from the same trace overshoots:
 `E₀` with CAL-1 and CAL-2 alone makes it fit-free in form. It does not make it a step of the
 chain. The open question is now which element of `m_e·ℚ(q₀)` the decay channel's scale is,
 and why. That is a gap, not a closure. Probe: same file, last block.
+
+## 15. At what order can an n/p splitting appear? (owner "keep exploring", 2026-11-21)
+
+§14 found that every n/p construction on record is first order in `h` relative to the
+nucleon. That covers the typed-crossing `Δ_S` (`|Δt|/t_p = 0.341`) and the four-strand state
+difference of PR #8636 (first order in `q − 1`). The physical ratio
+`(Q_β + m_e)/m_p = 1.378e-3` is 248× smaller. This section asks where a first-order term
+comes from and what would remove it. It is a structural reading with order counting. It is
+not a derivation, and it selects no knot.
+
+**(a) The first-order term is a writhe change.** Replacing a `uu` crossing `σ` by a `dd`
+crossing `σ⁻¹` lowers the writhe by 2. §13(c) showed the framing-corrected trace cannot see
+that change. The γγ vertex `σ₀σ₁⁻¹` has writhe 0, and so does every γγ word, including the
+Borromean base `V³`. For words of equal strand count and equal writhe, the raw Markov trace
+is the framing-corrected one times a common factor (`def:mass-identity`, braid classes).
+So a difference between two γγ words is a difference of **link invariants**.
+
+**(b) Link-invariant differences start at second order.** For knots, the Jones polynomial
+in `x = t − 1` is `1 + 0·x + c₂x² + …`: `V(1) = 1` and `V′(1) = 0` [jones1987]. The
+coefficient of `x^k` is a Vassiliev invariant of order ≤ k [birmanlin1993], and it is an
+integer. Two knots read with one shared scale therefore differ first at the order `k ≥ 2`
+where their coefficients first differ. Checked in the probe for 0₁, 3₁, 4₁, 5₁, 5₂
+(`c₂ = −3a₂`).
+
+**(c) Order counting at the proton pin, `x = q₀² − 1 = 0.23205`.** If the leading term were
+`d_k x^k`, the physical ratio would need:
+
+| order `k` | `x^k` | needed `|d_k|` |
+|---|---|---|
+| 2 | 0.05385 | 0.0256 |
+| 3 | 0.01250 | 0.110 |
+| 4 | 0.002900 | 0.475 |
+| 5 | 0.000673 | 2.05 |
+
+The `d_k` are integers, so orders 2 and 3 cannot carry the splitting as a leading term. The
+first order that could is 4 or 5. Caveat: this is heuristic. Jones coefficients grow by about
+2–4× per order while `x = 0.23`, so the tail is not small. A claim about a specific pair has to
+evaluate the full polynomial, not its leading term.
+
+**What this gives.** A test that can be stated before any candidate is chosen. A single-scale
+route, with no separate `E₀`, is consistent with CODATA only if the n and p links have equal
+Jones coefficients through `x³` (or equal finite-type data through order 3) and differ from
+order 4 on. Every construction on record fails this:
+- typed crossings change the writhe (order 1);
+- #8636's state-weighted split is a projected trace, not a link invariant (order 1);
+- at `q₀` the γγ selection gives the same word for n and p (difference 0).
+
+The test is a requirement on a future γγ-derived n/p pair, not a lead on any specific pair.
+Probe: `computations/qbeta/qbeta_framed_splitting_order_probe.py` (8/8 checks).
