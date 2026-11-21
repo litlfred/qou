@@ -254,7 +254,9 @@ def isNeutralByParity (c : EWCarrier) : Prop := ewCharge (R := R) c = 0
 This is a **recorded label table, not derived** from `σ`. `Z ↦ 0` rests on the
 Weinberg `(W³,B) → (Z,γ)` mixing (`weinberg-angle-categorical`), and `H ↦ 0` is
 the model's assignment (the Standard Model gives the neutral Higgs component
-`T₃ = −½`). -/
+`T₃ = −½`). The values `W± ↦ ±1` read as `2·T₃` give `T₃ = ±½`, the doublet
+values of `def:spin-involution`, not the triplet values `T₃ = ±1` (the `.md` now
+states the table as `2·T₃`); the table is compared with `σ` in `IsospinFromSkew` / `OrderedSign`. -/
 def ewT3Double : EWCarrier → ℤ
   | .Wp => 1
   | .Wm => -1
@@ -991,5 +993,205 @@ theorem GradedSpin.spinTwo_toSector :
   decide
 
 end SpinTwoNoGo
+
+/-! ## Isospin `T₃` against the skew charge (2026-11-20)
+
+The recorded table `ewT3Double` is compared with what `σ` and the skew
+functional compute. Three results:
+
+* **No-go (generic field).** `ewT3Double` is not an affine function `λ·Q + μ` of
+  the skew charge. The `H` row forces `μ = 0`, the `Z` row (`Q(Z) ≠ 0`,
+  `z_not_neutral_by_parity`) forces `λ = 0`, and the `W⁺` row then reads `1 = 0`.
+* **Normalised skew (generic field).** `Q(c)/Q(W⁺)` equals `1, −1, 0` on
+  `W⁺, W⁻, H`, and is nonzero on `Z`. It agrees with the table except at `Z`.
+* **Sign rule (ordered field).** `def:spin-involution` sets `2T₃ = 0` on `A₊`
+  and `2T₃ = ±1` on `A₋`, with the sign an input there (`isospinT3` takes
+  `sgn : ℤ`). Reading the sign as the sign of the skew charge gives
+  `H ↦ 0`, `W± ↦ ±1`, `Z ↦ +1` when the eigenvalues exceed `1`. It agrees with
+  the table on `W±, H` and disagrees at `Z`.
+
+In every reading the obstruction is the same: `Z ∈ A₋` has nonzero skew. -/
+
+section IsospinFromSkew
+
+/-- **No-go: the `T₃` table is not affine in the skew charge.** There are no
+`λ μ : R` with `ewT3Double c = λ · Q(c) + μ` for every carrier. -/
+theorem ewT3Double_not_affine_in_charge [Invertible (2 : R)] :
+    ¬ ∃ lam mu : R, ∀ c : EWCarrier,
+      ((ewT3Double c : ℤ) : R) = lam * ewCharge (R := R) c + mu := by
+  rintro ⟨lam, mu, h⟩
+  have hH := h EWCarrier.H
+  have hZ := h EWCarrier.Z
+  have hW := h EWCarrier.Wp
+  rw [higgs_neutral] at hH
+  simp only [ewT3Double, Int.cast_zero, Int.cast_one, mul_zero, zero_add] at hH hZ hW
+  rw [← hH, add_zero] at hZ hW
+  have hQZ : ewCharge (R := R) EWCarrier.Z ≠ 0 := z_not_neutral_by_parity
+  have hlam : lam = 0 := by
+    rcases mul_eq_zero.mp hZ.symm with h0 | h0
+    · exact h0
+    · exact absurd h0 hQZ
+  rw [hlam, zero_mul] at hW
+  exact one_ne_zero hW
+
+/-- Skew charge normalised by the `W⁺` charge. -/
+def t3OfSkew (c : EWCarrier) : R :=
+  ewCharge (R := R) c / ewCharge (R := R) EWCarrier.Wp
+
+/-- **Normalised skew on the four carriers.** `W⁺ ↦ 1`, `W⁻ ↦ −1`, `H ↦ 0`,
+and `Z ↦` a nonzero value. Agreement with `ewT3Double` on `W±, H`; disagreement
+at `Z`. -/
+theorem t3OfSkew_values [Invertible (2 : R)] :
+    t3OfSkew (R := R) EWCarrier.Wp = 1 ∧
+    t3OfSkew (R := R) EWCarrier.Wm = -1 ∧
+    t3OfSkew (R := R) EWCarrier.H = 0 ∧
+    t3OfSkew (R := R) EWCarrier.Z ≠ 0 := by
+  have hW : ewCharge (R := R) EWCarrier.Wp ≠ 0 := wPlus_charged
+  refine ⟨div_self hW, ?_, ?_, ?_⟩
+  · unfold t3OfSkew; rw [wMinus_charge_neg, neg_div, div_self hW]
+  · unfold t3OfSkew; rw [higgs_neutral, zero_div]
+  · exact div_ne_zero z_not_neutral_by_parity hW
+
+end IsospinFromSkew
+
+section OrderedSign
+
+variable [LinearOrder R] [IsStrictOrderedRing R]
+
+omit [EWSectorSelection R] in
+/-- For `a > 1` the skew `a − a⁻¹` is positive. -/
+theorem sub_inv_pos_of_one_lt (a : Rˣ) (h : 1 < (a : R)) : 0 < (a : R) - (a : R)⁻¹ := by
+  have ha : (0 : R) < a := lt_trans zero_lt_one h
+  have hi : (a : R)⁻¹ < 1 := inv_lt_one_of_one_lt₀ h
+  linarith
+
+/-- **Doubled `T₃` by the spin-involution sign rule**: the sign of the skew
+charge. It is `0` exactly on the `σ`-even sector (`sgnT3Double_eq_zero_iff`). -/
+def sgnT3Double (c : EWCarrier) : ℤ := (SignType.sign (ewCharge (R := R) c) : ℤ)
+
+omit [IsStrictOrderedRing R] in
+/-- The sign rule vanishes exactly on `A₊`. -/
+theorem sgnT3Double_eq_zero_iff [Invertible (2 : R)] (c : EWCarrier) :
+    sgnT3Double (R := R) c = 0 ↔ EWSectorSelection.isSinglet (R := R) c = true := by
+  unfold sgnT3Double
+  have hcast : ∀ t : SignType, ((t : ℤ) = 0 ↔ t = 0) := by
+    intro t; cases t <;> decide
+  rw [hcast, sign_eq_zero_iff]
+  constructor
+  · intro h0
+    cases hc : EWSectorSelection.isSinglet (R := R) c
+    · rw [ewCharge_of_doublet hc] at h0
+      exact absurd h0 (sub_inv_ne_zero_of_sq_ne_one _ (EWSectorSelection.eig_sq_ne_one c))
+    · rfl
+  · intro hc; exact ewCharge_of_singlet hc
+
+/-- **Sign rule on the four carriers.** With `1 < a_{W⁺}` and `1 < a_Z`
+(`a = q^{2k}`, `q > 1`, `k ≥ 1`): `H ↦ 0`, `W⁺ ↦ 1`, `W⁻ ↦ −1`, `Z ↦ 1`. -/
+theorem sgnT3Double_values [Invertible (2 : R)]
+    (hW : 1 < (EWSectorSelection.eig (R := R) EWCarrier.Wp : R))
+    (hZ : 1 < (EWSectorSelection.eig (R := R) EWCarrier.Z : R)) :
+    sgnT3Double (R := R) EWCarrier.H = 0 ∧
+    sgnT3Double (R := R) EWCarrier.Wp = 1 ∧
+    sgnT3Double (R := R) EWCarrier.Wm = -1 ∧
+    sgnT3Double (R := R) EWCarrier.Z = 1 := by
+  have pW : 0 < ewCharge (R := R) EWCarrier.Wp := by
+    rw [ewCharge_of_doublet EWSectorSelection.wPlus_doublet]
+    exact sub_inv_pos_of_one_lt _ hW
+  have pZ : 0 < ewCharge (R := R) EWCarrier.Z := by
+    rw [ewCharge_of_doublet EWSectorSelection.z_doublet]
+    exact sub_inv_pos_of_one_lt _ hZ
+  have nM : ewCharge (R := R) EWCarrier.Wm < 0 := by
+    rw [wMinus_charge_neg]; linarith
+  unfold sgnT3Double
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · rw [higgs_neutral, sign_zero]; rfl
+  · rw [sign_pos pW]; rfl
+  · rw [sign_neg nM]; rfl
+  · rw [sign_pos pZ]; rfl
+
+/-- **The sign rule agrees with the recorded table on `W±, H` and disagrees at
+`Z`.** -/
+theorem sgnT3Double_vs_table [Invertible (2 : R)]
+    (hW : 1 < (EWSectorSelection.eig (R := R) EWCarrier.Wp : R))
+    (hZ : 1 < (EWSectorSelection.eig (R := R) EWCarrier.Z : R)) :
+    sgnT3Double (R := R) EWCarrier.H = ewT3Double EWCarrier.H ∧
+    sgnT3Double (R := R) EWCarrier.Wp = ewT3Double EWCarrier.Wp ∧
+    sgnT3Double (R := R) EWCarrier.Wm = ewT3Double EWCarrier.Wm ∧
+    sgnT3Double (R := R) EWCarrier.Z ≠ ewT3Double EWCarrier.Z := by
+  obtain ⟨h1, h2, h3, h4⟩ := sgnT3Double_values (R := R) hW hZ
+  refine ⟨h1, h2, h3, ?_⟩
+  rw [h4]; decide
+
+end OrderedSign
+
+/-! ## The `(W³, B) → (Z, γ)` rotation and a linear charge (2026-11-20)
+
+`weinberg-angle-categorical` names the rotation but does not formalise it. Here
+it is the rotation `Z = c·W³ − s·B`, `γ = s·W³ + c·B` with `c² + s² = 1`, and a
+charge functional extended linearly from its values `x = Q(W³)`, `y = Q(B)`.
+The rotation preserves `x² + y²`, so it cannot make both `Z` and `γ` neutral
+unless `x = y = 0`. At the corpus angle `c = cot θ_W · s`, `Q(Z) = 0` holds iff
+`cot θ_W · x = y`. -/
+
+section WeinbergMixing
+
+variable {K : Type*} [Field K]
+
+/-- Linear charge of `Z = c·W³ − s·B`. -/
+def mixChargeZ (c s x y : K) : K := c * x - s * y
+
+/-- Linear charge of `γ = s·W³ + c·B`. -/
+def mixChargeGamma (c s x y : K) : K := s * x + c * y
+
+/-- The rotation preserves the charge norm `x² + y²`. -/
+theorem mixCharge_norm (c s x y : K) (h : c ^ 2 + s ^ 2 = 1) :
+    mixChargeZ c s x y ^ 2 + mixChargeGamma c s x y ^ 2 = x ^ 2 + y ^ 2 := by
+  unfold mixChargeZ mixChargeGamma
+  linear_combination (x ^ 2 + y ^ 2) * h
+
+/-- **No-go: mixing cannot neutralise both `Z` and `γ`.** If both rotated charges
+vanish, then `Q(W³) = Q(B) = 0`. -/
+theorem mixing_neutral_both_iff (c s x y : K) (h : c ^ 2 + s ^ 2 = 1) :
+    (mixChargeZ c s x y = 0 ∧ mixChargeGamma c s x y = 0) ↔ (x = 0 ∧ y = 0) := by
+  unfold mixChargeZ mixChargeGamma
+  constructor
+  · rintro ⟨hZ, hG⟩
+    exact ⟨by linear_combination c * hZ + s * hG - x * h,
+      by linear_combination (-s) * hZ + c * hG - y * h⟩
+  · rintro ⟨rfl, rfl⟩; constructor <;> ring
+
+/-- If `Z` is neutral, the photon carries the whole charge norm:
+`Q(γ)² = x² + y²`. -/
+theorem mixChargeGamma_sq_of_Z_neutral (c s x y : K) (h : c ^ 2 + s ^ 2 = 1)
+    (hZ : mixChargeZ c s x y = 0) :
+    mixChargeGamma c s x y ^ 2 = x ^ 2 + y ^ 2 := by
+  have := mixCharge_norm c s x y h
+  rw [hZ] at this
+  linear_combination this
+
+/-- **`Z` is neutral at the corpus angle iff `cot θ_W · Q(W³) = Q(B)`.** With
+`c = cot θ_W · s` and `s ≠ 0` (the parametrisation of
+`weinberg-angle-categorical`, `cot_identification`). -/
+theorem mixChargeZ_eq_zero_iff_cot (cotW s x y : K) (hs : s ≠ 0) :
+    mixChargeZ (cotW * s) s x y = 0 ↔ cotW * x = y := by
+  unfold mixChargeZ
+  have e : cotW * s * x - s * y = s * (cotW * x - y) := by ring
+  rw [e, mul_eq_zero, sub_eq_zero]
+  exact ⟨fun h => h.resolve_left hs, Or.inr⟩
+
+/-- **In the model, both pre-mixing charges are nonzero.** If `W³` and `B` are
+`σ`-odd sector vectors of non-degenerate eigenvalues `a, b` (the `σ₅⁸` grading
+puts `B ∈ A₋`), their skew charges `a − a⁻¹`, `b − b⁻¹` are nonzero, so no
+rotation makes both `Z` and `γ` neutral. -/
+theorem mixing_cannot_neutralise_model [Invertible (2 : K)] (a b : Kˣ)
+    (ha : (a : K) ^ 2 ≠ 1) (c s : K) (h : c ^ 2 + s ^ 2 = 1) :
+    ¬ (mixChargeZ c s (skew (minusPart (carrier a))) (skew (minusPart (carrier b))) = 0 ∧
+       mixChargeGamma c s (skew (minusPart (carrier a))) (skew (minusPart (carrier b))) = 0) := by
+  intro hb
+  have hx := ((mixing_neutral_both_iff c s _ _ h).mp hb).1
+  rw [skew_minusPart_carrier] at hx
+  exact sub_inv_ne_zero_of_sq_ne_one a ha hx
+
+end WeinbergMixing
 
 end QOU.ParticleInteractions

@@ -20,3 +20,12 @@ $$
 The sign is not fixed: for $|h|\,(\ell - 1) < 2$ the step lowers the energy.
 
 **Archimedean specialisation.** The absolute values in $E$ are taken over $\mathbb{R}$, so the functional sits on the archimedean side of the substrate wall. Near the substrate value, $h \approx 0.21$, so a Hecke step on a short word lowers the energy.
+
+**β decay in the short typed-crossing model.** In $H_3(q)$ take the short-model nucleon normal forms $p = \sigma_1\sigma_2 - (h/2)\,\sigma_1$ and $n = \sigma_1\sigma_2 - h\,\sigma_1 - (h/2)\,\sigma_2 + h^2/2$. Then
+
+$$
+  E(p) - E(n) = -|h|,
+$$
+
+so for $q > 1$ the daughter proton has the lower energy. The statement is specific to this model. In the 11-letter typed-crossing model the nucleon-only change has the opposite sign at the substrate value, and on the common base $(\sigma_1\sigma_2^{-1})^3$ it is zero, so no model-free sign of the β-decay energy change follows from $E$.
+

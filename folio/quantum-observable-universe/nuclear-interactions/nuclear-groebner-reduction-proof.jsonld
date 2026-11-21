@@ -15,7 +15,12 @@
   "kind": "proof",
   "title": "Proof of nuclear groebner reduction",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-nuclear-groebner-reduction"
+    "papers/quantum-observable-universe/blocks/prop-nuclear-groebner-reduction",
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form"
+  ],
+  "cites": [
+    "references/bokut2001",
+    "references/bergman1978"
   ],
   "text": "nuclear-groebner-reduction-proof.md",
   "provenance": "authored"
