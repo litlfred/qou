@@ -241,7 +241,7 @@ CODATA numbers appear only in the comparison column.
 | P3 | `flavor_split_subleading` (1 + ℏ³) | — | asserted (marked POSITED) | `_li_2_q_util.py` |
 | P4 | `bring_color_weighted` f_pn = z − h(1/2 − δ/4) | δ = P2′ | asserted by inheritance | `closed_form_tau_M.py` |
 | P5 | Bring linking weight, m_n − m_p = 0.887 MeV | δ and the λ_A absolute-mass fit | asserted by inheritance (two fits) | `2026-06-01-bring-color-weighted-…` audit |
-| P6 | linear map, E₀^full·\|ε_n − ε_p\| = 0.325 MeV | linear map | excluded by spectator invariance | audit §3 |
+| P6 | linear map, E₀^full·\|ε_n − ε_p\| = 0.325 MeV | linear map | fails spectator invariance S (`linear_not_spectatorInvariant`); excluded if S is accepted as a premise | audit §1, §5 |
 
 **Consequence.** P1 is the only p–n quantity whose every step is derived. Everything carrying δ rests on
 one fitted ansatz (P2′).
