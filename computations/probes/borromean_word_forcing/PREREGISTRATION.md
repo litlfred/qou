@@ -45,7 +45,7 @@ property. No prediction on that.
 
 **P3. Writhe ≠ 0.** The same check for |e| ≤ 4 words up to length 8 whose
 tr_M equals ± tr_M(β_Bor) as a rational function of q, with y₍₃₎ = q³/[3]_q!,
-y₍₂,₁₎ = 1/[2]_q², y₍₁³₎ = 1 − y₍₃₎ − 2y₍₂,₁₎ (the convention-D weights that
+y₍₂,₁₎ = 1/[2]_q², y₍₁³₎ = 1 − y₍₃₎ − 2y₍₂,₁₎ (the corpus F_Bor weights that — NOT convention D, see Addendum 3 —
 reproduce the corpus tr_M(β_Bor) above; this is checked first, and the run
 stops if it fails). Prediction: none.
 
@@ -95,3 +95,21 @@ closure data (components, pairwise linking).
 **E4. Brunnian characters to length 14.** Count the distinct non-trivial
 characters among pure zero-linking words at lengths 12 and 14. No prediction
 beyond: β_Bor's character stays the only one at length 6–8.
+
+## Addendum 3 (2026-11-21, after QA review, written before the run it describes)
+
+**Correction to P3's label.** P3 above calls y₍₃₎ = q³/[3]_q!, y₍₁³₎ = 1 − y₍₃₎ − 2y₍₂,₁₎
+"the convention-D weights". That is wrong. Convention D (z = q³/(q²+1)) forces
+y₍₁³₎ = 0 and so y₍₃₎ = 1 − 2y₍₂,₁₎ = (q² + q⁻²)/[2]_q² (≈ 0.505 at q₀), not
+q³/[3]_q! (≈ 0.223). The P3 weights are the ones the corpus closed form for
+tr_M(β_Bor) and F_Bor = |tr_M|·[3]_q!/q³ use. The P3 run is kept and relabelled
+"corpus F_Bor weights, not convention D". P1, P2, E1–E4 are writhe 0, where
+tr = 1 + y₍₂,₁₎(χ − 2) under both weight sets (only y₍₃₎ + y₍₁³₎ enters), so
+they are unaffected.
+
+**P3-D. Writhe ≠ 0 with true convention-D weights.** Same word set as P3
+(reduced, length 1..8, 0 < |e| ≤ 4), with y₍₁³₎ = 0, y₍₂,₁₎ = 1/[2]_q²,
+y₍₃₎ = 1 − 2/[2]_q². Count words with tr_M = ± tr_M^D(β_Bor) exactly as rational
+functions of q. Under these weights tr = y₍₃₎q^e + y₍₂,₁₎χ, so a hit needs
+χ = χ(β_Bor) − (q² + q⁻²)(q^e − 1) (or the − analogue). No prediction.
+Also record tr_M^D(β_Bor) in closed form next to the corpus value.

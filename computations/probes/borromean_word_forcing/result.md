@@ -13,7 +13,7 @@ No measured value is used anywhere.
 | `minimal_pure_zeroLinking` | A reduced word in the B₃ letters that is pure with all three pairwise linking numbers zero has length 0 or ≥ 6; at length 6 it is the identity of B₃ or conjugate in B₃ to β_Bor; and β_Bor ≠ 1. |
 | `pureZeroLinking_six` | Exactly 16 such words of length 6: the 4 Borromean words (β_Bor, its rotation, its mirror, the mirror's rotation) and 12 rotations of σ₀σ₁σ₀(σ₁σ₀σ₁)⁻¹ or its inverse. |
 | `eval_trivSix` | The 12 are the identity (braid relation). |
-| `eval_borOrbit_conj`, `conj_flip`, `conj_mirror` | The 4 Borromean words are conjugate in B₃ (the mirror is conjugate to β_Bor via Δ = σ₀σ₁σ₀). |
+| `eval_borOrbit_conj`, `conj_flip`, `conj_mirror` | The 4 Borromean words are conjugate in B₃ (the flip s₀↔s₁ is conjugation by Δ = σ₀σ₁σ₀, `conj_flip`; the mirror is a cyclic rotation followed by the flip, `conj_mirror`). |
 | `eval_borromean_ne_one` | β_Bor ↦ [[13, 8], [8, 5]] under the integer Burau representation at t = −1. |
 | `markovTrace_writhe_zero` | With y₍₃₎ + 2y₍₂,₁₎ + y₍₁³₎ = 1, a writhe-0 word has tr = 1 + y₍₂,₁₎(χ − 2), χ its (2,1) character. |
 
@@ -34,7 +34,18 @@ closure can be Brunnian.**
   Magnus–Peluso, cited). So up to length 10 the F_Bor value picks out exactly
   β_Bor's conjugacy class.
 * P3 (predicted, held): no word with writhe ≠ 0, |e| ≤ 4, length ≤ 8 has
-  tr_M = ±tr_M(β_Bor) as a rational function of q.
+  tr_M = ±tr_M(β_Bor) as a rational function of q. **Label corrected
+  (Addendum 3):** these weights, y₍₃₎ = q³/[3]_q!, are the corpus F_Bor weights,
+  *not* convention D, which has y₍₁³₎ = 0 and y₍₃₎ = 1 − 2/[2]_q².
+* P3-D (Addendum 3, no prediction): rerun with true convention-D weights,
+  `p3_convention_d.py`, 46 s, log `p3d.log`, witness `p3-convention-d.result.json`.
+  **0 hits** at every length 1..8 (2 to 50 distinct (writhe, χ) classes per length).
+  tr_M^D(β_Bor) equals the corpus closed form exactly, as it must at writhe 0.
+  So the writhe ≠ 0 answer is the same under both weight sets.
+* Side note for the /q³ question: F_Bor = |tr_M|·[3]_q!/q³ divides by the corpus
+  y₍₃₎ = q³/[3]_q!. Under convention D the trivial-block weight is
+  y₍₃₎ = (q² + q⁻²)/[2]_q² instead (≈ 0.505 vs ≈ 0.223 at q₀). This file does not
+  decide which normalisation is right; it only records that the two differ.
 * E2 (prediction failed in the timing): a **second Brunnian character appears at
   length 10, not 12** — 20 words, e.g. σ₀³σ₁⁻¹σ₀σ₁⁻³σ₀σ₁⁻¹; at length 12 three
   more characters, including (σ₀σ₁⁻¹)⁶ = β_Bor². So "Brunnian" alone does not fix
@@ -59,8 +70,10 @@ growing (1, 1, 2, 4, 9 at lengths 6, 8, 10, 12, 14).
 * β_Bor is **singled out** by: three strands + pure + zero pairwise linking +
   non-trivial + **minimal crossing number**. The last is the input: it is the same
   cost (crossing count) that the γγ route minimises
-  (`QOU.Mass.GammaGammaSelectionAllK.frobeniusSelected_borromean_all`), so the two
-  routes rest on the same cost axiom, reached from different premises.
+  (`QOU.Mass.GammaGammaSelectionAllK.frobeniusSelected_borromean_all`) and the
+  U(1)-neutral cut (owner ruling of 2026-11-21 on whole-word U(1) neutrality, `QOU/PhotonU1NeutralCut.lean`, PR #8835,
+  which selects V³ = β_Bor up to 10 crossings by enumeration), so these routes rest
+  on the same cost axiom, reached from different premises.
 * The γγ route (already in the corpus, sorry-free) selects β_Bor among all γγ words
   of H₃, conditional on the vertex σᵢσᵢ₊₁⁻¹, reading 3 (Frobenius positivity, owner's
   provisional choice) and 1 < q ≤ 23/20. This file's route uses none of those.
