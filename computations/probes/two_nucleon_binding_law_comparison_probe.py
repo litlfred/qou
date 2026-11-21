@@ -138,9 +138,43 @@ def sign(x):
     return "bound" if x > 0 else ("unbound" if x < 0 else "marginal")
 
 
+#: Relative width below which two law values are reported as TIED rather than ordered.
+#: DERIVED from the probe's own arithmetic (DPS = 60, less a 10-digit guard), NOT sized to
+#: any observed miss -- a bound sized to its own miss is a fit. The two margins bracket it
+#: by a wide gap in both directions, which is what makes it safe:
+#:   * the spurious gaps it must absorb are ~1e-61 (round-off),      11 orders BELOW it;
+#:   * the smallest genuine gap in this probe is 0.0132 (D3 V3),     48 orders ABOVE it.
+#: So no choice inside ~1e-13..1e-58 changes any verdict here.
+ORDER_TIE_REL = mp.mpf(10) ** -(DPS - 10)
+
+
 def order_desc(d):
+    """Descending order of the law values, with TIES MADE EXPLICIT as `a = b`.
+
+    The strict-order version of this function made the `log_and_mayer_orders_identical`
+    check decide on round-off. At D3 vertices V1 and V2 the `nn` and `pn` values are
+    mathematically EQUAL; the committed 50-digit witness had both laws carrying a ~6.6e-61
+    residual that happened to point the SAME way, so the check passed by coincidence.
+    Closing the Q_MP/sympy straddle left `L_log` with a 3.3e-61 residual while `L_mayer`'s
+    became exactly 0.0, so one law broke the tie and the other did not, and the check
+    failed -- also by coincidence. A verdict decided at the 61st digit is not a verdict.
+
+    Same class as detector-blindness taxonomy row 59 (a tie-sorted list permuted by a
+    precision change at digit ~60), one level up: there the TIE moved, here it is the
+    ORDERING OVER a tie that is being compared.
+    """
     items = sorted(((k, v) for k, v in d.items() if v is not None), key=lambda kv: -kv[1])
-    return " > ".join(k for k, _ in items)
+    if not items:
+        return ""
+    groups = [[items[0]]]
+    for k, v in items[1:]:
+        ref = groups[-1][0][1]
+        scale = max(abs(ref), abs(v))
+        if scale == 0 or abs(ref - v) <= ORDER_TIE_REL * scale:
+            groups[-1].append((k, v))
+        else:
+            groups.append([(k, v)])
+    return " > ".join(" = ".join(sorted(k for k, _ in g)) for g in groups)
 
 
 def main() -> int:
