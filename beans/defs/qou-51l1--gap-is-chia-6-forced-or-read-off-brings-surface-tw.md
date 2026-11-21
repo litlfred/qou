@@ -221,3 +221,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8443, closed o
 ## 2026-11-21 — physics-scope re-check on main 2ae54ab40 (bean-drain sibling, issue #8810)
 
 Resolved on main. `introduction/chapter-overview.md:30` now reads "The lifting obstructions reduce to the genus of the base curve: χ_eu(M₀) = 2 − 2g with g ≥ 1, and the Descartes condition fixes g = 4" — the honest wording this bean recommended (option 2). Whole-folio grep for "force[sd] the Descartes" returns nothing. The open mathematical item (derive the branch-point count 6 from the axioms without reading it off Bring) is unchanged and remains tracked elsewhere (qou-1vau / qou-uy5c lineage); this bean's question, the contradiction between the two prose sites, is closed. Audit: `docs/audits/2026-11-21-physics-claim-scope-recheck.md` on branch `claude/physics-scope-audit-2026-11-21` (4df574c79).
+
+## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
+
+Checked against `docs/coordination/owner-rulings.md` on main: no superseded premise found (L± photon, virtual photons, pre-Nov-15 γγ letters, T(2,n_s), convention C, one-term trace, trefoil-as-electron, c₂ = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory).

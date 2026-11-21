@@ -403,3 +403,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8467, closed o
 ## 2026-11-21 — physics-scope re-check on main 2ae54ab40 (bean-drain sibling, issue #8810)
 
 Re-read, no change on main. The bar-even exclusion is scope (b) for counting objects built from q-integers only, with the invariant cited; no density coupling derived or excluded. The η_obs comparisons in this bean are empirical context and must not enter a formal statement. Audit: `docs/audits/2026-11-21-physics-claim-scope-recheck.md` on branch `claude/physics-scope-audit-2026-11-21` (4df574c79).
+
+## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
+
+No superseded premise: L₊ − L₋ = (q − q⁻¹)L₀ in this bean is the skein relation on crossings, not the photon's L±; z = q³/(q²+1) is z_D (convention D). The η_obs comparisons stay out of any formal statement.

@@ -28,3 +28,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8467, closed o
 ## 2026-11-21 — physics-scope re-check on main 2ae54ab40 (bean-drain sibling, issue #8810)
 
 Blocker still live: `observations/cosmological-chirality-flip.md:18` still says e and μ have "vanishing masses" at q → 1, against this bean's measured Σ y_λ → 3/4 (so m/m_e diverges as ℏ_q → 0; scope (a), the sum not per-knot ρ). Proposed: drop the phrase (audit §6 item 4), awaiting owner card. Audit: `docs/audits/2026-11-21-physics-claim-scope-recheck.md` on branch `claude/physics-scope-audit-2026-11-21` (4df574c79).
+
+## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
+
+Superseded basis found: ρ is the ONE-TERM trace. The owner's 2026-11-21 ruling scores the two-term Lagrangian trace; its second term c_em·t₂ has not been evaluated as q → 1, so 'barrier, not door' is established for the one-term trace only. Convention is not an issue: Σ y_λ(H₃) → 3/4 is the same under C and D (both z → 1/2 at q = 1; exact S₃ weights 1/2, 1/4, 0, re-derived this session). The proposed removal of 'vanishing masses' stands under either trace (needs the trace to vanish at order (q−1)², shown for neither). Do not extend this bean on the one-term trace; rework on the two-term trace.

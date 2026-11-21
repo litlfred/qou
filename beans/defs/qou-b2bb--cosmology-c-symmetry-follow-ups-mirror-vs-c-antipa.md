@@ -19,3 +19,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8472, closed o
 ## 2026-11-21 — physics-scope re-check on main 2ae54ab40 (bean-drain sibling, issue #8810)
 
 Untouched on main. Of the four follow-ups, the Vol(mirror) lemma is pure mathematics (hyperbolic volume is mirror-invariant) and is the cheapest; the others need scoping first. No Lean toolchain in this container, so not attempted here. Audit: `docs/audits/2026-11-21-physics-claim-scope-recheck.md` on branch `claude/physics-scope-audit-2026-11-21` (4df574c79).
+
+## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
+
+Superseded-basis risk: 'C-equivariance of gamma-gamma production' was extracted 2026-10-04, before the current photon ruling. Any work must use γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹ and no virtual photons; do not reuse earlier γγ interface letters.

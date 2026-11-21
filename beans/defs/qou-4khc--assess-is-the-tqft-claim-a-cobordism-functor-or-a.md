@@ -30,3 +30,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8443, closed o
 ## 2026-11-21 — physics-scope re-check on main 2ae54ab40 (bean-drain sibling, issue #8810)
 
 Verdict still holds on main: no Lean declaration named Cob/Bordism; `tqft-context.md` still says "grounded in TQFT" and "the associated 3d TQFT"; `root-of-unity-truncation.md` still says generic q > 1 has infinitely many simples (not modular). Superseded sub-finding: `massEnergyEquivalence` (E = E) was withdrawn 2026-11-15 (`mass-energy-equivalence.lean` header, bean qou-078y). Scoping edit proposed (audit §6 item 2), awaiting owner card. Audit: `docs/audits/2026-11-21-physics-claim-scope-recheck.md` on branch `claude/physics-scope-audit-2026-11-21` (4df574c79).
+
+## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
+
+Checked against `docs/coordination/owner-rulings.md` on main: no superseded premise found (L± photon, virtual photons, pre-Nov-15 γγ letters, T(2,n_s), convention C, one-term trace, trefoil-as-electron, c₂ = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory).

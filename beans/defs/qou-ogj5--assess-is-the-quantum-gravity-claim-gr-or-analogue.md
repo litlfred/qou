@@ -26,3 +26,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8462, closed o
 ## 2026-11-21 — physics-scope re-check on main 2ae54ab40 (bean-drain sibling, issue #8810)
 
 Partly superseded: the Newton-G glyph collision was withdrawn 2026-09-14 (`gravity-spectral-prefactor.md` now says G is Catalan's constant). Still holds: `variational-equations.md` says varying ∫_A *yields* the Einstein equation, but `hasCategoricalEOM_of_facts` (`GaugeTheory.lean:208-218`) takes it as a `Fact`; `archimedean-realisations.md:5` asserts a reduction to Ric = T with no Ricci tensor in Lean. No gravitational observable anywhere. Scoping edit proposed (audit §6 item 3). Audit: `docs/audits/2026-11-21-physics-claim-scope-recheck.md` on branch `claude/physics-scope-audit-2026-11-21` (4df574c79).
+
+## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
+
+Checked against `docs/coordination/owner-rulings.md` on main: no superseded premise found (L± photon, virtual photons, pre-Nov-15 γγ letters, T(2,n_s), convention C, one-term trace, trefoil-as-electron, c₂ = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory).
