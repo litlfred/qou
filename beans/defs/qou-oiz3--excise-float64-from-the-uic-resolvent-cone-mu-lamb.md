@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-21T02:58:00Z
+updated_at: 2026-11-21T03:35:00Z
 parent: qou-9nnz
 ---
 
@@ -498,3 +498,32 @@ So the gate compared the fresh run against a **pre-merge** `HEAD`, and main has 
 **Deliberately not run.** Re-running the producer now would write a witness into the working tree, and the refresh driver scans `git status --porcelain` after every producer and would gate my file as its own output. Queued instead: re-measure `hbar_q_order_of_binding_observables_probe` against the **post-merge** baseline once D finishes, and only then diagnose.
 
 Also logged by D-r2 and subject to the same caveat going forward (it is post-merge, so this one is sound): `probe-d-symbolic-prospects` gated out at worst `1.81e-03`.
+
+### 2026-11-21 — the value gate was BLIND to provenance regression; found by following a producer's refusal
+
+`97f6f00912e` — [`computations/audits/witness_environment_regression_check.py`](../../computations/audits/witness_environment_regression_check.py), `--selftest` **6/6**.
+
+**The gap, and it is in my own gate rather than in the corpus.** The refresh gate keeps a witness when nothing numeric moved, and to answer that question at all it must mask the fields that change every run — `computedAt`, `durationMs`, `commitSha`, and **`environment`**. Masking `environment` is correct for the *value* question and wrong for the *provenance* question: a witness regenerated in a weaker container can be numerically identical and still record **less** than the file it replaces, and the gate then says KEEP.
+
+`qou_substrate.witness._check_environment_regression` already guards the write path, and its own message states the stakes — *"the numbers can be identical while the provenance silently degrades."* But it is **warn-only by design** and prints to stderr, and the driver reports only `last[-1][:110]` of a **non-zero** run, so the `bits` list is truncated away and a run that exits 0 never shows it at all. The new check reads the committed block out of git and compares directly, so the answer does not depend on catching a warning.
+
+**How it surfaced.** `two_nucleon_binding_law_comparison_probe` exited rc=1 with `⚠ environment: … records LESS than the witness on disk`. First hypothesis — a missing library — was **wrong**: this container has clarabel 0.11.1, mpmath 1.4.1, numpy 2.4.6, scipy 1.17.1, sympy 1.14.0, pyhecke_native 0.9.0, and `cvxpy` is recorded `absent` in all 8 witnesses that mention it, so absent is *correct*. The real cause is a **version downgrade**: that witness was written under **python 3.13.16 / numpy 2.5.3** and this container runs **3.11.18 / 2.4.6**.
+
+**Measured across the queue: 7 of the 47 remaining producers have committed witnesses written under python 3.13**, so refreshing them here downgrades both keys — invisible to the value gate.
+
+| recorded python | witnesses |
+|---|---:|
+| 3.11.15 | 27 |
+| (none recorded) | 7 |
+| 3.11.18 | 6 |
+| **3.13.16 / 3.13.18 / 3.13.12** | **4 / 2 / 1** |
+
+**A CORRECTION OF MINE, and the trap worth keeping.** `python3.13` (3.13.18, with *newer* numpy 2.5.3 and scipy 1.18.1) **is** installed here, so rerunning those 7 under it looks like the fix. I checked their import cones and concluded **2 of 7** need neither `sympy` nor `pyhecke_native` and were therefore "py3.13 safe". **That is the wrong instrument.** `capture_environment()` records a **fixed package list** read from installed **metadata** and **omits** what is missing — it does not record what the producer imports. Under 3.13 here neither library has metadata, so both keys would be **dropped**, and a *stripped* key ranks worse than a *downgraded* one. Those two witnesses record both libraries precisely because both are installed under 3.11. So **no producer can move to 3.13 without installing sympy and pyhecke_native there first**, and nothing was installed mid-flight.
+
+**Calibrated, not self-certified.** The selftest asserts six cases on real recorded blocks: the measured downgrade fires, the strip trap fires, `cvxpy` installed→absent reads as a downgrade (matching `witness.py`'s own sentinel, where `absent` orders below every version), absent→installed reads as a *repair*, and a pure upgrade and an identical block both do **not** fire. The last three matter as much as the first — an audit that only demonstrates its positives is how a 45 % undercount shipped behind a hardcoded-`True` calibration elsewhere in this corpus.
+
+**First live use confirms it discriminates direction**, which selftest alone cannot: of the five witnesses committed since, every one reports an **upgrade** (`mpmath 1.3.0→1.4.1`, `python 3.11.15→3.11.18`, `pyhecke_native 0.4.0→0.9.0`), not a regression. A checker that fired on everything would be useless here, where most of the queue legitimately upgrades.
+
+**Two producer refusals in the same window, neither a defect** — both guards exiting non-zero by design, which AGENTS.md records as *"a non-zero exit is not a defect"*: `qbeta_ladder_verification_1ppq` (*"Run its producer first."* — a witness dependency it will not fabricate), and the environment guard above.
+
+**Process change for the rest of this refresh:** every batch is verified against **both** gates before commit, not the value gate alone.
