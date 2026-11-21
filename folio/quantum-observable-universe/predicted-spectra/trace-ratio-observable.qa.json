@@ -3,9 +3,9 @@
   "label": "prop:trace-ratio-observable",
   "kind": "proposition",
   "paths": {
-    "ts": "folio/quantum-observable-universe/observations/trace-ratio-observable.ts",
-    "md": "folio/quantum-observable-universe/observations/trace-ratio-observable.md",
-    "lean": "folio/quantum-observable-universe/observations/trace-ratio-observable.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/trace-ratio-observable.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/trace-ratio-observable.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/trace-ratio-observable.lean"
   },
   "source_hashes": {
     "md": "5d4d19763a2d",
@@ -354,7 +354,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"real-positive\"],\"chapter\":\"observations\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"real-positive\"],\"chapter\":\"predicted-spectra\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [

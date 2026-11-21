@@ -215,8 +215,6 @@ export default chapter({
       blocks: [
         "beta-decay-magic-shells-intro",
         "nitrogen-14-threading",
-        "trace-ratio-observable",
-        "trace-ratio-observable-proof",
         "trace-ratio-interpretation",
         // Detangler R3 (2026-05-23): 6-row verification-nuclei
         // trace-ratio table extracted from
@@ -286,7 +284,6 @@ export default chapter({
         // Detangler R3 (2026-05-23): 7-row representative-isotopes
         // table extracted from valley-table.md.
         "valley-table-data",
-        "golden-ratio-degeneration",
         "hydrogen-knot-structure",
 
         "hydrogen-knot-structure-table1-data",

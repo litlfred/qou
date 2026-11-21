@@ -253,6 +253,8 @@ export default chapter({
       label: "sec:nuclear-stability-decay-hadron-half-life",
       blocks: [
         "nuclear-stability-decay-hadron-half-life-intro",
+        "trace-ratio-observable",
+        "trace-ratio-observable-proof",
         "hadron-half-life",
         "hadron-half-life-proof",
         "hadron-half-life-fermi",
@@ -389,6 +391,7 @@ export default chapter({
         "implications-algebraic-dependence",
         "baryon-product-from-alt",
         "baryon-product-from-alt-proof",
+        "golden-ratio-degeneration",
         "golden-skew-dual-node",
         "golden-skew-dual-node-table-data",
         "golden-skew-dual-node-proof",
