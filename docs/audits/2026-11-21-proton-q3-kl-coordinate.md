@@ -83,9 +83,38 @@ that observables factor through the integral, bar-symmetric form.
 > `b` spans H₂ with `1` over ℤ[q, q⁻¹] and is bar-invariant.
 
 Status: conditional result proved; the criterion is not derived. Recorded in
-the F_Bor block's text as a working conjecture, not as a `conj:` block. A
-separate `conj:` block with a Lean class carrier would be the next step if the
-owner wants it tracked formally.
+the F_Bor block's text, and (owner: *"1 2"*, second round) as the block
+`conj:proton-normaliser-kl-coordinate`
+(`braids-and-knots/proton-normaliser-kl-coordinate.{ts,md,lean}`). Its Lean
+sibling carries conditions (A) and (B) as the content-bearing class
+`KLCoordinateConjecture u v` and derives `u = ±1` (`unit_eq_pm_one`). The class is
+satisfiable (`kl_element_meets_conditions`). What no Lean term carries is the
+identification that `F_Bor` is read in such a coordinate; that is the open part.
+
+## Second round: looking for the factorisation principle
+
+The owner asked for a theorem that observables factor through the integral,
+bar-symmetric form, which would derive the criterion. **Not found.** What the
+attempt produced is a check of the rule on a second block:
+
+| Block | Trace zero | Derivative there (standard/KL coordinate) | Schur element |
+|---|---|---|---|
+| sign, `x₋` | `z_D = q³/(q²+1)` | `−q⁻³` (`hasDerivAt_trXMinus_zD`) | `c_sign = q⁻³·[3]_q!` |
+| trivial, `x₊` | `z₊ = −1/(q³+q)` | `+q³` (`hasDerivAt_trXPlus_zero`) | `c_triv = q³·[3]_q!` |
+
+`linear_blocks_derivative_rule` states both: in the KL coordinates, each
+linear Schur element is ±(derivative)·[3]_q!. In the idempotent coordinate the
+same rule fails for both blocks. This is consistent with the criterion, and the
+second block could have contradicted it. It does not derive the criterion, and
+the rule was formulated on the sign block first, so the trivial block is one
+independent check, not more. The reflection block (`c_refl = [3]_q`, 2-dimensional)
+is not tested.
+
+What a derivation would need: a statement that every observable is a
+ℤ[q,q⁻¹]-linear functional on the integral Hecke algebra commuting with the
+bar involution up to a fixed twist. No such statement is in the corpus axioms,
+and I did not find one in the ingested library on a targeted search.
+Scope (a).
 
 ## Related
 
