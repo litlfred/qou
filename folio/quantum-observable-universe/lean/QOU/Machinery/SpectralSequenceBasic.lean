@@ -77,10 +77,12 @@ theorem not_e2Degenerates_of_d2_ne_zero (S : SpectralSequencePage)
 Specific to the residue A path D: the KLR spectral sequence collapses
 at E₂ to give the canonical basis decomposition. -/
 
-/-- Conditional class: KLR spectral sequence at E₂ recovers the
-canonical basis. NEAR-MATCH tier; instance not constructed. -/
-class KLRSpectralSequenceAtE2 (S : SpectralSequencePage) : Prop where
-  /-- E₂ page is the canonical basis decomposition (opaque marker). -/
-  e2_is_canonical_basis : True
+/-! **Removed 2026-11-21 (owner "Fix", bean `qou-c8p8`): `KLRSpectralSequenceAtE2`.**
+Its only field was `e2_is_canonical_basis : True`, so every page satisfied it
+and it asserted nothing. "The E₂ page of the KLR spectral sequence is the
+canonical-basis decomposition" cannot be stated until that spectral sequence is
+constructed: `SpectralSequencePage` is bare data, with no `d ∘ d = 0` and no
+`E_{r+1} = H(E_r, d_r)`. The claim stays open; it is tracked in the bean, not
+in a class with no content. -/
 
 end QOU.Machinery
