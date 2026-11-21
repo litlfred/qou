@@ -957,7 +957,7 @@
 | [conj:bond-order-eq-jet-degree](#conj:bond-order-eq-jet-degree) | Body order equals jet degree: the n-nucleon cluster sits at jet vertical degree n | Ch 11 |
 | [lem:degree-one-braid-trivial-volume](#lem:degree-one-braid-trivial-volume) | Braid words of a degree-one element have non-hyperbolic closures | Ch 11 |
 | [lem:mi-sw-abelianisation-cartan](#lem:mi-sw-abelianisation-cartan) | Cartan reduction recovers the SW differential | Ch 6 |
-| [lem:jet-prolongation-categorical-jet](#lem:jet-prolongation-categorical-jet) | Categorical jet object $J^1(A)$ inherits the Frobenius--Hopf structure | Ch 4 |
+| [lem:jet-prolongation-categorical-jet](#lem:jet-prolongation-categorical-jet) | The jet object $J^1(A)$ is built from a direct summand of $A \otimes A$ | Ch 4 |
 | [lem:chebyshev-degree-genus](#lem:chebyshev-degree-genus) | Chebyshev degree equals Seifert genus for $T_{2,p}$ | Ch 6 |
 | [lem:mobius-energy-frobenius-kernel](#lem:mobius-energy-frobenius-kernel) | Classical limit of the Frobenius--Hopf kernel is the repulsive $1/r^2$ | Ch 10 |
 | [lem:crossing-application-chains](#lem:crossing-application-chains) | Closed chains of crossing applications on words and on states | Ch 2 |

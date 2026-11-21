@@ -20,6 +20,9 @@ with `m` not injective, for instance every group algebra `R[G]` of a nontrivial 
 (`g ⊗ g⁻¹ − 1 ⊗ 1 ∈ Ω¹`). This refutes Step 2 of the former proof of
 `lem:jet-prolongation-categorical-jet`.
 
+`kahlerOmega_isCompl` proves the part that does hold: `Ω¹(A)` is a direct summand of
+`A ⊗ A` for any algebra `A`.
+
 No `sorry`, no axiom beyond Lean's three.
 -/
 
@@ -71,5 +74,38 @@ theorem exists_comul_not_mem_of_kahlerOmega_ne_bot (hne : kahlerOmega R A ≠ �
   by_contra hc
   push_neg at hc
   exact hne (kahlerOmega_eq_bot_of_comul_restricts R A hc)
+
+section Summand
+
+variable (R A : Type*) [CommRing R] [Ring A] [Algebra R A]
+
+/-- `a ↦ a ⊗ 1`, a right inverse of `m`. -/
+noncomputable def tensorOne : A →ₗ[R] A ⊗[R] A := (TensorProduct.mk R A A).flip 1
+
+theorem mul'_tensorOne (a : A) : LinearMap.mul' R A (tensorOne R A a) = a := by
+  simp [tensorOne]
+
+/-- **`Ω¹(A)` is a direct summand of `A ⊗ A`.** A complement is the image of `a ↦ a ⊗ 1`.
+So `J¹(A) = A ⊗ Ω¹(A)` is built from a summand of `A ⊗ A`; no Frobenius or Hopf
+structure is needed for this. -/
+theorem kahlerOmega_isCompl :
+    IsCompl (LinearMap.range (tensorOne R A ∘ₗ LinearMap.mul' R A))
+      (LinearMap.ker (LinearMap.mul' R A)) := by
+  set T := tensorOne R A ∘ₗ LinearMap.mul' R A
+  have hT : ∀ x, LinearMap.mul' R A (T x) = LinearMap.mul' R A x := fun x => by
+    simp [T, mul'_tensorOne]
+  refine ⟨?_, ?_⟩
+  · rw [Submodule.disjoint_def]
+    rintro x ⟨y, rfl⟩ hx
+    rw [LinearMap.mem_ker, hT] at hx
+    simp [T, hx]
+  · rw [codisjoint_iff, eq_top_iff]
+    intro x _
+    have hx : x = T x + (x - T x) := by abel
+    rw [hx]
+    refine Submodule.add_mem_sup (LinearMap.mem_range_self T x) ?_
+    rw [LinearMap.mem_ker, map_sub, hT, sub_self]
+
+end Summand
 
 end QOU.LiftingDescent
