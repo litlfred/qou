@@ -191,6 +191,17 @@ Result in `computations/probes/bridge_b/h7_result.md`.
 - **Slot-averaged exchange.** It is a virtual-photon model, which is not admissible (no virtual
   photons); comparison only.
 
+### 10c. An open categorical trace with a boundary object (H8, 2026-11-21)
+
+Result in `computations/probes/bridge_b/h8_result.md`. If the boundary inherits the action's λ, the
+wall's effect beyond the pivot is set by `s = x + y` alone. No corpus statement fixes `s`.
+
+- Folding (`s = h`, conditional on `conj:type-b-folding-cpt` plus an eigenvalue-matching reading)
+  gives an order-`h` effect that vanishes at q = 1: `D(q₀) = 0.93996`.
+- The Markov and quantum-dimension conventions give order-1 effects (5/7 at q = 1).
+
+No hit.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
