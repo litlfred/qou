@@ -1,0 +1,26 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "dd0bd54acb19",
+          "ts": "f2f8f7a4b524",
+          "lean": "80cdeaf92e18",
+          "lean_statement": "4b760925427c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:05:24.096Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "[first review 2026-11-21] The statement bounds m(rho) by norm tr_desc + sum_i norm tr_trans(rho, p_i). lean.ref QOU.Torsion.mass_upper_bound_localised resolves to the sibling. It proves, over any seminormed additive commutative group, that hsplit : total = descended + sum transient implies norm total <= norm descended + sum norm transient (norm_add_le, norm_sum_le); it is sorry-free. This is the inequality the statement asserts, with the split as a hypothesis. Not encoded: the split itself (tr(alpha) = tr_desc + sum tr_trans, supplied by the cat-eigenspace and cat-transient lemmas), and the identification m(rho) = norm of tr(alpha). Both are disclosed in the ts scope note, so this is an honest partial formalisation rather than a mismatch. The extra lemma transient_trace_eq_zero_of_global_compat is correct and relevant: under global trace compatibility every transient term vanishes. The module docstring calls the descent map an idempotent, a small slip; it is an involution whose +1 projection is idempotent."
+      }
+    ]
+  },
+  "updated_at": "2026-11-21T08:05:24.096Z"
+}
