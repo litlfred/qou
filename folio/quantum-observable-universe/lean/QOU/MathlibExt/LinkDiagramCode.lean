@@ -13,17 +13,26 @@ A combinatorial model of oriented link diagrams, meant as the diagram layer of t
 
 A `Code E` over an edge type `E` is a finite multiset of oriented crossings and a finite multiset of
 joins. A crossing records its under strand `uin → uout`, its over strand `oin → oout` and a sign.
-A join `(a, b)` says that edge `a` continues as edge `b` with no crossing in between. Joins let braid
-closure and the local moves be written without renumbering edges; `contract` removes them.
+A join `(a, b, t)` says that edge `a` continues as edge `b` with no crossing in between, turning
+through `t` full turns. Joins let braid closure and the local moves be written without renumbering
+edges; `contract` removes a join with no turn and `merge` composes two joins.
+
+The turn numbers are the rotation data a planar diagram carries implicitly. A state-sum model such
+as the quantum `sl₂` one needs them: without them the kink of Reidemeister I is not a scalar and a
+free circle evaluates to the dimension of the label set rather than to the quantum dimension.
 
 The moves:
 
 * `embed`: relabel the edges along an injection (this also adds unused edges);
-* `contract`: remove a join `(a, b)` with `a ≠ b` by identifying `b` with `a`, when `a` or `b`
+* `contract`: remove a join `(a, b, 0)` with `a ≠ b` by identifying `b` with `a`, when `a` or `b`
   occurs elsewhere (true in every well-formed code; it excludes a dangling join, which no state
   sum can remove without changing the value);
-* `r1`: a join becomes a kink (four kinds: sign, and whether the strand passes under or over first);
-* `r2par` / `r2anti`: two joins become a bigon, with the strands parallel or antiparallel;
+* `merge`: two consecutive joins `(a, b, t)`, `(b, c, t')` through an otherwise unused edge `b`
+  become one join `(a, c, t + t')`;
+* `r1`: a join becomes a kink (four kinds: sign, and whether the strand passes under or over
+  first), whose loop carries the turn `kinkTurn`;
+* `r2par` / `r2anti`: two joins become a bigon, with the strands parallel or antiparallel; the
+  antiparallel bigon carries the turn `bigonTurn` on its over strand on both sides;
 * `r3`: the braid-like positive triangle move, read off `σ₁σ₂σ₁ = σ₂σ₁σ₂`.
 
 `ReidemeisterEquiv` is the equivalence relation they generate on bundled codes.
@@ -35,7 +44,7 @@ not claimed here. Polyak's minimal generating sets are the reference for that co
 
 -- Ref: [polyak2010] Polyak, "Minimal generating sets of Reidemeister moves",
 --   Quantum Topol. 1 (2010) 399–411
--- Ref: [kassel-turaev2008] Kassel–Turaev, "Braid Groups", GTM 247, Ch. 2–3 (closure, Markov)
+-- Ref: [kassel2008] Kassel–Turaev, "Braid Groups", GTM 247, Ch. 2–3 (closure, Markov)
 -/
 
 namespace QOU.MathlibExt.PL.Diagram
@@ -70,10 +79,11 @@ def Mentions (x : Crossing E) (e : E) : Prop :=
 
 end Crossing
 
-/-- An oriented link diagram code over the edge type `E`. -/
+/-- An oriented link diagram code over the edge type `E`. A join `(a, b, t)` says that edge `a`
+continues as edge `b`, turning through `t` full turns on the way; an ordinary join has `t = 0`. -/
 structure Code (E : Type u) where
   xs : Multiset (Crossing E)
-  js : Multiset (E × E)
+  js : Multiset (E × E × ℤ)
 
 namespace Code
 
@@ -81,7 +91,7 @@ variable {E F G : Type u}
 
 /-- Relabel the edges of a code. -/
 def map (f : E → F) (D : Code E) : Code F :=
-  ⟨D.xs.map (Crossing.map f), D.js.map (Prod.map f f)⟩
+  ⟨D.xs.map (Crossing.map f), D.js.map (Prod.map f (Prod.map f id))⟩
 
 @[simp] theorem map_id (D : Code E) : D.map id = D := by
   cases D; simp [map]
@@ -99,11 +109,11 @@ instance : Add (Code E) := ⟨fun D D' => ⟨D.xs + D'.xs, D.js + D'.js⟩⟩
 def ofXs (xs : Multiset (Crossing E)) : Code E := ⟨xs, 0⟩
 
 /-- The code with the given joins and no crossings. -/
-def ofJs (js : Multiset (E × E)) : Code E := ⟨0, js⟩
+def ofJs (js : Multiset (E × E × ℤ)) : Code E := ⟨0, js⟩
 
 /-- `e` occurs somewhere in the code. -/
 def Occurs (D : Code E) (e : E) : Prop :=
-  (∃ x ∈ D.xs, x.Mentions e) ∨ (∃ j ∈ D.js, j.1 = e ∨ j.2 = e)
+  (∃ x ∈ D.xs, x.Mentions e) ∨ (∃ j ∈ D.js, j.1 = e ∨ j.2.1 = e)
 
 open Classical in
 /-- Each edge has exactly one head and one tail: it leaves exactly one crossing or join and enters
@@ -111,7 +121,7 @@ exactly one. This is what makes a code describe a closed oriented 1-manifold. -/
 def WellFormed (D : Code E) : Prop :=
   ∀ e : E, Occurs D e →
     (D.xs.countP (fun x => x.uout = e ∨ x.oout = e) + D.js.countP (fun j => j.1 = e) = 1) ∧
-    (D.xs.countP (fun x => x.uin = e ∨ x.oin = e) + D.js.countP (fun j => j.2 = e) = 1)
+    (D.xs.countP (fun x => x.uin = e ∨ x.oin = e) + D.js.countP (fun j => j.2.1 = e) = 1)
 
 end Code
 
@@ -126,18 +136,28 @@ attribute [instance] Bundled.fin Bundled.dec
 
 variable {E : Type u}
 
-/-- The four kinks of Reidemeister I on a join `a → b`, with loop edge `ℓ`. -/
-def kink (a b ℓ : E) (underFirst s : Bool) : Crossing E :=
-  if underFirst then ⟨a, ℓ, ℓ, b, s⟩ else ⟨ℓ, b, a, ℓ, s⟩
+/-- The crossing of the four kinks of Reidemeister I on a join `a → b`. The loop leaves the
+crossing along `ℓ₁` and returns along `ℓ₂`; the join `(ℓ₁, ℓ₂, kinkTurn u s)` closes it. -/
+def kink (a b ℓ₁ ℓ₂ : E) (underFirst s : Bool) : Crossing E :=
+  if underFirst then ⟨a, ℓ₁, ℓ₂, b, s⟩ else ⟨ℓ₂, b, a, ℓ₁, s⟩
+
+/-- The turn of the loop of a kink: `-1` when the strand passes first under a positive crossing or
+first over a negative one, `+1` otherwise. -/
+def kinkTurn (underFirst s : Bool) : ℤ := if underFirst = s then -1 else 1
+
+/-- The turn that the antiparallel bigon of sign `s` carries on its over strand. -/
+def bigonTurn (s : Bool) : ℤ := if s then 1 else -1
 
 /-- The parallel bigon of Reidemeister II: the strand `a → b` passes over `c → d` twice,
 through the new edges `e₁` (over) and `f₁` (under), with opposite signs. -/
 def bigonPar (a b c d e₁ f₁ : E) (s : Bool) : Multiset (Crossing E) :=
   {⟨c, f₁, a, e₁, s⟩, ⟨f₁, d, e₁, b, !s⟩}
 
-/-- The antiparallel bigon of Reidemeister II. -/
-def bigonAnti (a b c d e₁ f₁ : E) (s : Bool) : Multiset (Crossing E) :=
-  {⟨f₁, d, a, e₁, s⟩, ⟨c, f₁, e₁, b, !s⟩}
+/-- The antiparallel bigon of Reidemeister II: the strand `a → b` passes over `c → d` twice, but
+the under strand meets the second crossing first. The over strand runs `a → e₁`, then the join
+`(e₁, e₂, bigonTurn s)`, then `e₂ → b`; the under strand runs `c → f₁ → d`. -/
+def bigonAnti (a b c d e₁ e₂ f₁ : E) (s : Bool) : Multiset (Crossing E) :=
+  {⟨f₁, d, a, e₁, s⟩, ⟨c, f₁, e₂, b, !s⟩}
 
 /-- The left side of the braid-like Reidemeister III move, the closure pattern of `σ₁σ₂σ₁`:
 strand `A` (`a₀ → a₁ → a₂`) is over both others, `C` (`c₀ → c₁ → c₂`) under both. -/
@@ -156,18 +176,26 @@ inductive Move : Bundled.{u} → Bundled.{u} → Prop
       (f : E ↪ F) (D : Code E) : Move ⟨E, D⟩ ⟨F, D.map f⟩
   | contract {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b : E) (hab : a ≠ b)
       (hR : R.Occurs a ∨ R.Occurs b) :
-      Move ⟨E, R + Code.ofJs {(a, b)}⟩ ⟨E, R.map (Function.update id b a)⟩
-  | r1 {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b ℓ : E) (u s : Bool)
-      (hℓ : ¬ R.Occurs ℓ) (ha : ℓ ≠ a) (hb : ℓ ≠ b) :
-      Move ⟨E, R + Code.ofJs {(a, b)}⟩ ⟨E, R + Code.ofXs {kink a b ℓ u s}⟩
+      Move ⟨E, R + Code.ofJs {(a, b, 0)}⟩ ⟨E, R.map (Function.update id b a)⟩
+  | merge {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b c : E) (t t' : ℤ)
+      (hb : ¬ R.Occurs b) (hab : b ≠ a) (hcb : b ≠ c) :
+      Move ⟨E, R + Code.ofJs {(a, b, t), (b, c, t')}⟩ ⟨E, R + Code.ofJs {(a, c, t + t')}⟩
+  | r1 {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b ℓ₁ ℓ₂ : E) (u s : Bool)
+      (h₁ : ¬ R.Occurs ℓ₁) (h₂ : ¬ R.Occurs ℓ₂) (h₁₂ : ℓ₁ ≠ ℓ₂)
+      (hbd : ∀ x ∈ ({a, b} : Set E), x ≠ ℓ₁ ∧ x ≠ ℓ₂) :
+      Move ⟨E, R + Code.ofJs {(a, b, 0)}⟩
+        ⟨E, R + (Code.ofXs {kink a b ℓ₁ ℓ₂ u s} + Code.ofJs {(ℓ₁, ℓ₂, kinkTurn u s)})⟩
   | r2par {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b c d e₁ f₁ : E) (s : Bool)
       (he : ¬ R.Occurs e₁) (hf : ¬ R.Occurs f₁) (hef : e₁ ≠ f₁)
       (hbd : ∀ x ∈ ({a, b, c, d} : Set E), x ≠ e₁ ∧ x ≠ f₁) :
-      Move ⟨E, R + Code.ofJs {(a, b), (c, d)}⟩ ⟨E, R + Code.ofXs (bigonPar a b c d e₁ f₁ s)⟩
-  | r2anti {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b c d e₁ f₁ : E) (s : Bool)
-      (he : ¬ R.Occurs e₁) (hf : ¬ R.Occurs f₁) (hef : e₁ ≠ f₁)
-      (hbd : ∀ x ∈ ({a, b, c, d} : Set E), x ≠ e₁ ∧ x ≠ f₁) :
-      Move ⟨E, R + Code.ofJs {(a, b), (c, d)}⟩ ⟨E, R + Code.ofXs (bigonAnti a b c d e₁ f₁ s)⟩
+      Move ⟨E, R + Code.ofJs {(a, b, 0), (c, d, 0)}⟩
+        ⟨E, R + Code.ofXs (bigonPar a b c d e₁ f₁ s)⟩
+  | r2anti {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a b c d e₁ e₂ f₁ : E) (s : Bool)
+      (hint : ∀ x ∈ ({e₁, e₂, f₁} : Set E), ¬ R.Occurs x)
+      (h12 : e₁ ≠ e₂) (h1f : e₁ ≠ f₁) (h2f : e₂ ≠ f₁)
+      (hbd : ∀ x ∈ ({a, b, c, d} : Set E), x ≠ e₁ ∧ x ≠ e₂ ∧ x ≠ f₁) :
+      Move ⟨E, R + Code.ofJs {(a, b, bigonTurn s), (c, d, 0)}⟩
+        ⟨E, R + (Code.ofXs (bigonAnti a b c d e₁ e₂ f₁ s) + Code.ofJs {(e₁, e₂, bigonTurn s)})⟩
   | r3 {E : Type u} [Fintype E] [DecidableEq E] (R : Code E) (a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ : E)
       (hint : ∀ x ∈ ({a₁, b₁, c₁} : Set E), ¬ R.Occurs x)
       (hab : a₁ ≠ b₁) (hac : a₁ ≠ c₁) (hbc : b₁ ≠ c₁)
@@ -214,16 +242,17 @@ def letterCrossing {L m : ℕ} (k : Fin L) (i : Fin m) (b : Bool) :
 
 /-- The pass-through joins at level `k`: every position not touched by the letter `(i, _)`. -/
 def letterJoins {L m : ℕ} (k : Fin L) (i : Fin m) :
-    Multiset ((Fin (L + 1) × Fin (m + 1)) × (Fin (L + 1) × Fin (m + 1))) :=
+    Multiset ((Fin (L + 1) × Fin (m + 1)) × (Fin (L + 1) × Fin (m + 1)) × ℤ) :=
   ((Finset.univ.filter fun p : Fin (m + 1) => p ≠ i.castSucc ∧ p ≠ i.succ).val).map
-    fun p => ((k.castSucc, p), (k.succ, p))
+    fun p => ((k.castSucc, p), (k.succ, p), 0)
 
 /-- The closure of a braid word `w` on `m + 1` strands: the letter at level `k` gives a crossing
-and pass-through joins, and the bottom of every position is joined back to its top. -/
+and pass-through joins, and the bottom of every position is joined back to its top by an arc that
+turns once. -/
 def braidClosure {m : ℕ} (w : List (Fin m × Bool)) : Code (Fin (w.length + 1) × Fin (m + 1)) where
   xs := (Finset.univ.val : Multiset (Fin w.length)).map fun k =>
     letterCrossing k (w.get k).1 (w.get k).2
   js := (Finset.univ.val : Multiset (Fin w.length)).bind (fun k => letterJoins k (w.get k).1) +
-    (Finset.univ.val : Multiset (Fin (m + 1))).map fun p => ((Fin.last _, p), (0, p))
+    (Finset.univ.val : Multiset (Fin (m + 1))).map fun p => ((Fin.last _, p), (0, p), 1)
 
 end QOU.MathlibExt.PL.Diagram
