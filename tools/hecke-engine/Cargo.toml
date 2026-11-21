@@ -223,6 +223,12 @@ clarabel-bigrational = ["dep:clarabel", "clarabel?/bigrational", "clarabel?/serd
 # Opt-in: run-time MPFR float backend (Phase 8b).  Provides MpfrFloat
 # at arbitrary precision; recommended path for QOU §S4-S6 (50-dps SDP).
 clarabel-mpfr = ["dep:clarabel", "clarabel?/mpfr", "clarabel?/serde"]
+# Opt-in: MPFR SDP (PSD cones) at 50+ digits. The fork's MpfrFloat carries
+# native Cholesky / Jacobi eigen / Jacobi SVD (fork PR #7, rev 37f06c3), so the
+# PSD cone runs fully in MPFR; netlib is linked only for the f64 path and so
+# needs gfortran like `clarabel-sdp`. Checked to 1e-50 against mpmath for
+# n = 3, 4, 5 in the fork's tests/mpfr_sdp_50digit.rs.
+clarabel-mpfr-sdp = ["clarabel-mpfr", "clarabel?/sdp-netlib"]
 
 [build-dependencies]
 
@@ -234,7 +240,9 @@ clarabel-mpfr = ["dep:clarabel", "clarabel?/mpfr", "clarabel?/serde"]
 # that lets seminormal_mpfr's rug::Float outputs flow into the solver
 # without an f64 round-trip.  See CLARABEL_PRECISION_PLAN.md.
 #
-# Validated at 9673209 (Round 4 + Phase 8a/8b): 71/71 hecke-engine
+# Bumped 2026-11-21 to 37f06c3 (fork main: PRs #2-#7, incl. the native
+# MPFR SVD that lets PSD cones of any size solve at MPFR precision).
+# Previously validated at 9673209 (Round 4 + Phase 8a/8b): 71/71 hecke-engine
 # tests pass under `cargo test --features clarabel-sdp`.  This pin
 # is the branch HEAD and includes Phase 8a (denom-bit log), Phase 8b
 # (run-time MpfrFloat backend), and Round 4 (BlockDiagPSDConeT,
@@ -245,7 +253,7 @@ clarabel-mpfr = ["dep:clarabel", "clarabel?/mpfr", "clarabel?/serde"]
 # Will be lifted once the fork merges to its own main and a release
 # is cut on crates.io.
 [patch.crates-io]
-clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "9673209" }
+clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "37f06c3" }
 
 [profile.release]
 opt-level = 3

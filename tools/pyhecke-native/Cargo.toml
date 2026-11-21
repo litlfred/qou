@@ -53,4 +53,4 @@ lto = true
 # the clarabel `mpfr` feature — present only on the litlfred fork, not
 # crates.io 0.11 — would otherwise be unresolvable.  Keep the rev in sync
 # with tools/hecke-engine/Cargo.toml.
-clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "9673209" }
+clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "37f06c3" }
