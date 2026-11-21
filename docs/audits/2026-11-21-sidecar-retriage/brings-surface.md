@@ -46,3 +46,14 @@ kept. Each new verdict names the diff and repeats the earlier evidence.
 
 None in this chapter. After this commit, all 20 Lean-backed statements and all
 23 proof blocks have fresh verdicts.
+
+## Check against the current owner rulings
+
+Every block was checked against `docs/coordination/owner-rulings.md`: the photon
+1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹ with no virtual photons, the electron as σ₀σ₁σ₀
+with Hopf-link closure, and the two-term Lagrangian trace. None of these 18
+blocks uses the photon form, an electron braid word or the Lagrangian trace.
+jet-sw-tau-decomposition says "electron period", but only as a name for the
+n = 0 term. So no re-stamp here keeps a verdict that rests on a superseded
+definition. Every later chapter gets the same check, and a block built on an
+old form is reviewed in full rather than re-stamped.
