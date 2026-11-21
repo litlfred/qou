@@ -223,6 +223,7 @@ export default chapter({
         "cpt-orbit-closure-density",
         "cpt-d6-d7-d8-closure",
         "t-from-trace-cyclicity",
+        "p-from-braid-mirror",
         "type-b-folding-cpt",
         "bar-involution-invariance",
         "bar-involution-invariance-proof",

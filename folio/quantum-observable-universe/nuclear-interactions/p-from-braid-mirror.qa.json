@@ -3,9 +3,9 @@
   "label": "conj:p-from-braid-mirror",
   "kind": "conjecture",
   "paths": {
-    "ts": "folio/quantum-observable-universe/mass-theory/p-from-braid-mirror.ts",
-    "md": "folio/quantum-observable-universe/mass-theory/p-from-braid-mirror.md",
-    "lean": "folio/quantum-observable-universe/mass-theory/p-from-braid-mirror.lean"
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/p-from-braid-mirror.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/p-from-braid-mirror.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/p-from-braid-mirror.lean"
   },
   "source_hashes": {
     "md": "89ca1af9982d",
@@ -814,7 +814,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"nuclear-interactions\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -1202,7 +1202,7 @@
         "reviewed_at": "2026-09-05T07:21:12.237Z",
         "reviewed_sha": "5c6b356ee6ec359e668df2f9efececef049f52df",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/mass-theory/p-from-braid-mirror.ts:0: forward ref: uses prop:chirality-writhe-ribbon-derivation (manifest pos 618) which appears after this block (pos 367) in the chapter"
+        "evidence": "folio/quantum-observable-universe/nuclear-interactions/p-from-braid-mirror.ts:0: forward ref: uses prop:chirality-writhe-ribbon-derivation (manifest pos 618) which appears after this block (pos 367) in the chapter"
       }
     ],
     "detangler-section-band": [

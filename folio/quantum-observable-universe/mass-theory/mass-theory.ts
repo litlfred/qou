@@ -927,7 +927,6 @@ export default chapter({
         "e-infinity-page-identifications-table-data",
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
-        "p-from-braid-mirror",
         "gram-matrix-spectral-connection",
         "weak-spectral-completeness",
         "weak-symmetric-normalization",
