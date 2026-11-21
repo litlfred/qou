@@ -344,4 +344,39 @@ theorem qd2_is_partition (q : ℝ) (hq : 0 < q) :
   push_cast at h1 h2
   rw [h1, h2, zpow_one, zpow_neg_one]
 
+/-! ## Addendum 3: the tower factor and the reading of the cell
+
+In the Gibbs reading a common factor of the partition function is a spectator. The tower
+factor `T = 1/(1 − ℏ_q²)` and the shared lepton factor `L` both multiply `ε_n` and `ε_p`
+alike, so neither enters the cell. -/
+
+/-- **A common positive factor (tower `T`, shared lepton `L`, or their product) drops out of
+the log cell.** The cell stays `−2c·log q`. -/
+theorem common_factor_log_cell (c d q t D T : ℝ) (hq : 0 < q) (ht : 0 < t) (hD : 0 < D)
+    (hT : 0 < T) :
+    (c * Real.log (T * epsN q t D) + d) - (c * Real.log (T * epsP q t D) + d)
+      = -2 * c * Real.log q := by
+  have hP : 0 < epsP q t D := by unfold epsP; positivity
+  have hN : 0 < epsN q t D := by unfold epsN; positivity
+  rw [Real.log_mul hT.ne' hN.ne', Real.log_mul hT.ne' hP.ne']
+  have := log_cell c d q t D hq ht hD
+  linarith
+
+/-- The tower factor `1/(1 − ℏ_q²)` is positive for `q > 1`, so `common_factor_log_cell`
+applies to it. -/
+theorem tower_factor_pos (q : ℝ) (hq : 1 < q) : 0 < 1 / (1 - (1 - q⁻¹) ^ 2) := by
+  have hq0 : 0 < q := by linarith
+  have hT : 1 - (1 - q⁻¹) ^ 2 = (2 * q - 1) / q ^ 2 := by field_simp; ring
+  rw [hT]
+  have : 0 < 2 * q - 1 := by linarith
+  positivity
+
+/-- **The cell is the free-energy gap of the two eigen-channels of one crossing.** The Hecke
+generator has eigenvalues `q` and `−q⁻¹`; their ratio has size `q / q⁻¹ = q²`, and
+`−2c·log q = −c·log (q / q⁻¹)`. -/
+theorem cell_eq_eigen_gap (c q : ℝ) (hq : 0 < q) :
+    -2 * c * Real.log q = -c * Real.log (q / q⁻¹) := by
+  rw [Real.log_div hq.ne' (inv_ne_zero hq.ne'), Real.log_inv]
+  ring
+
 end QOU.QBeta.SpectatorEnergyMap

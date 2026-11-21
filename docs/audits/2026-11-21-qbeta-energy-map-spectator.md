@@ -227,3 +227,38 @@ k_B T·ln q.
 
 **Still open:** the tower factor (ruled, +1 %); the reading of the cell (Q_β or m_n − m_p). The
 cell ignores the β-decay word (§3).
+
+## 12. Owner "Both": the tower factor, and the reading of the cell (prereg Addendum 3)
+
+**Q1, tower factor.** The tower factor T = 1/(1 − ℏ_q²) = Σ_N ℏ_q^{2N} is word-independent and
+the same for n and p. Under the full-tower ruling (2026-09-03) it belongs to the fibre object,
+that is, to the partition function, and a common factor of Z is a spectator. So it cancels from the
+cell exactly: `common_factor_log_cell` (any T > 0) with `tower_factor_pos` (T > 0 for q > 1).
+The derived cell is therefore the order-zero **2E₀·ln q = 0.873537 MeV**, not 2E₀^full·ln q.
+
+The alternative, T rescaling k_B T, is the corpus's current E₀^full and gives 0.882197 MeV. Nothing
+in the chain of §10–11 puts T into k_B T: `def:quantum-temperature` is ℏ_q with no tower sum.
+That reading is reported beside the derived one and is not chosen.
+
+**Q2, reading.** Under the ruled shared placement (owner 2026-11-21, "not one-sided yet") the
+lepton factor L multiplies both nucleons, so by the same lemma the cell is
+E(n⊗L) − E(p⊗L) = E(n) − E(p). That is a nucleon energy difference with no electron rest energy
+in it, i.e. the shape of m_n − m_p, not of Q_β = m_n − m_p − m_e.
+
+But the cell cannot be m_n − m_p at any q. `log_cell_bounds` and `log_cell_tower_lt_two` give
+cell < 2·m_e for every q > 1. Measured m_n − m_p is 2.531 m_e (CODATA, compared only in the
+probe, not in Lean). So under the derived map the m_n − m_p reading is excluded for every q,
+scope (b), invariant `log_cell_bounds`. The Q_β reading is +11.66 % (order zero) or +12.77 %
+(tower).
+
+**Tension with D2.** D2 (Q_β) was ruled for the linear cell. The derivation's own placement points
+at m_n − m_p, which the bound excludes. Both statements are true. Which one the cell is goes to the
+owner; it is not changed here.
+
+**Structural reading (new, proved as an identity only).** −2c·ln q = −c·ln(q/q⁻¹)
+(`cell_eq_eigen_gap`): q and −q⁻¹ are the two eigenvalues of one Hecke crossing, so in the Gibbs
+reading the cell is k_B T times the log-ratio of the symmetric and antisymmetric channels of
+one reduction σ² → hσ + 1. With `E0ReductionWordCount` (E₀/m_e = the q⁻¹-weighted count of words
+that need that reduction), this links the cell to the owner's GB proposal (2026-11-21: β-decay as
+the difference between the unreduced and reduced interaction word). That link is an observation,
+not a derivation. It is the next preregistered item.
