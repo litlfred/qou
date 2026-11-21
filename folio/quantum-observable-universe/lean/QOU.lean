@@ -1800,3 +1800,11 @@ import QOU.ShellCondensation.SelectorPrune
 import QOU.ShellCondensation.BringLatticeRanks
 import QOU.ShellCondensation.CoefficientPurity
 import QOU.ShellCondensation.GammaGammaAtom
+import QOU.Machinery.HeckeBraidedCategoryScaffoldInstances
+import QOU.Machinery.HeckeTowerBasicConstructionInstances
+import QOU.Machinery.KashiwaraCrystalBasicInstances
+import QOU.Machinery.MarkovTraceOnHeckeInstances
+import QOU.Machinery.SpectralSequenceBasicInstances
+import QOU.Machinery.StrongAJFigureEightInstances
+import QOU.MathlibExt.RSZIsoformalInterfaceInstances
+import QOU.MathlibExt.WenzlSchurElementInstances
