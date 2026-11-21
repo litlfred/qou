@@ -7,6 +7,7 @@ export default definition({
   defines: ["photon", "bare-photon", "colour-weights"],
   lean: { ref: "qou:QOU.Photon.photon", validation: "not_checked" },
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): 4. The Borromean braid is a product of two photons that carry only their vertex term: $(\\sigma_0\\sigma_1^{-1})^3 = \\gamma(0,0,qh)\\,\\gamma(0,0,-q^{-1}h)$ ([two-photon factorisation](#prop:borromean-two-photon-factorisation))." },
     {
       kind: "status",
       date: "2026-11-20",

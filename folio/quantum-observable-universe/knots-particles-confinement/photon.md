@@ -14,9 +14,8 @@ In the normal-form basis of $H_3(R,q)$ the support of a photon is therefore cont
 
 The :defterm[bare photon]{#bare-photon} is $\gamma(0,0,0) = \mathbf{1}$, the empty knot. It is the identity element, not the unknot $0_1$, which is a closed strand and denotes the neutrino ([notation](#prose:notation-collisions)).
 
-Four consequences of the definition fix how the word is used elsewhere:
+Three consequences of the definition fix how the word is used elsewhere:
 
 1. A single crossing $\sigma_i$ is not a photon. It is the $\sigma_i$-term of a photon's support.
 2. The form $\mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$ is the specialisation $\varphi_{01} = 0$, not a second definition.
 3. $L_- = \sigma_1\sigma_0$ and $e^- = \sigma_0\sigma_1\sigma_0$ are not in the normal-form support of one photon.
-4. The Borromean braid is a product of two photons that carry only their vertex term: $(\sigma_0\sigma_1^{-1})^3 = \gamma(0,0,qh)\,\gamma(0,0,-q^{-1}h)$ ([two-photon factorisation](#prop:borromean-two-photon-factorisation)).
