@@ -448,6 +448,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:53.000Z",
+        "reviewed_sha": "96874d030c6a066b4ef4d26783e43b7d6b3d1447",
+        "severity": "minor",
+        "evidence": "Re-read of the edited paragraph (158ac1a4a) and its neighbours at PR #8892 head 96874d030c. The new paragraph states the absolute 938.272 MeV as a fit (μ_u fitted to CODATA m_p), which matches the absolute-mass excision ruling. Two pre-existing claims nearby are not supported in this block: 'The structural content (pair formula, splitting isolation, binding energy) is categorically derived', and the previous paragraph's 'Φ_q ... gives the correct binding energy differences between nuclei'. The binding magnitude is open in the corpus (qou-brng). Cross-block: observations/terminal-resolution-proof.md still says 'the hadronic masses are determined without free parameters', which this paragraph now contradicts.",
+        "notes": "Report only."
       }
     ],
     "da-hidden-dof": [
@@ -3025,6 +3044,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6"
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
       }
     ],
     "detangler-section-band": [
@@ -3066,6 +3105,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6"
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -3108,6 +3167,27 @@
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -3149,6 +3229,27 @@
           "def_hash": "19a5005a8bb6"
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -3217,6 +3318,39 @@
           "edge_span_mean": 0,
           "worst_target": "emits fwd-ref to quantum-observable-universe/mass-theory: def:qz-bicompletion"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2",
+        "metrics": {
+          "fwd_emitted": 2,
+          "fwd_received": 0,
+          "tanglement_score": 2,
+          "out_degree": 3,
+          "in_degree": 9,
+          "cone_size": 25,
+          "depth": 11,
+          "pagerank": 0.000834,
+          "edge_span_max": 0,
+          "edge_span_mean": 0,
+          "worst_target": "emits fwd-ref to quantum-observable-universe/mass-theory: def:qz-bicompletion"
+        }
       }
     ],
     "detangler-graph-energy": [
@@ -3268,6 +3402,31 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "detangler-topic-coherence": [
@@ -3309,6 +3468,26 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6"
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -3350,6 +3529,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6"
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -3847,6 +4046,24 @@
         "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
         "evidence": "Many negations, all substantive scoping: \"not load-bearing\", \"It does not depend on the closed-form conjecture below\", \"not required for the structural derivations\", \"It is not a finite element of H_n(R,q) for any n\", \"without any complex-analytic limit\", \"not single-nucleon absolute masses\". Every one marks a real limitation the block imposes on itself, which is this block's central virtue.",
         "notes": "No change."
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:53.000Z",
+        "reviewed_sha": "96874d030c6a066b4ef4d26783e43b7d6b3d1447",
+        "severity": "minor",
+        "evidence": "Re-read of the edited paragraph (158ac1a4a) and its neighbours at PR #8892 head 96874d030c. 'so the MeV value is a fit, not a prediction' follows 'The framework does not predict the proton mass in MeV' two clauses earlier; the second negation repeats the first."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -4357,6 +4574,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6"
+      },
+      {
+        "field_hash": {
+          "md": "7532588eb09f",
+          "ts": "1c0ba0fe3092",
+          "lean": "42c7d546262a",
+          "lean_statement": "742d2f1255d3",
+          "graph": "b9500bf32f74"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
       }
     ],
     "dak-companion-present": [
@@ -4765,6 +5002,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:45:24.000Z",
+  "updated_at": "2026-11-21T15:50:53.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
