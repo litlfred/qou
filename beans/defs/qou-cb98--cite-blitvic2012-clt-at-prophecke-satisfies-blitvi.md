@@ -25,3 +25,6 @@ Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-v
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8486, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+2026-11-21 (expo-chapter): BLOCKED on source. blitvic2012-clt (arXiv:1205.4003) is not in library/ (no INDEX row, no directory) and arxiv.org is refused by this session egress proxy, so Thm 2 eq. (12) cannot be checked. The json note says library/blitvic2012.pdf holds this paper; that file does not exist on main. Next step: ingest the PDF (uploads/ -> library/), then swap the locator at hecke-satisfies-blitvic-hypothesis-proof.md:82.
