@@ -1,13 +1,13 @@
 ---
 # qou-hatf
 title: Cite [avrin-2012] at rem:knot-formula-table
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:46Z
-updated_at: 2026-10-04T15:17:24Z
+updated_at: 2026-11-21T13:06:19Z
 parent: qou-1qhv
 ---
 
@@ -21,3 +21,5 @@ Source: `library/symmetry-04-00039-v3/symmetry-04-00039-v3.pdf` (`avrin-2012`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+2026-11-21: cited avrin-2012 in predicted-spectra/knot-formula-table.md (commit ca4c804db15, PR #8861), scoped to the dictionary idea only; the electron and quark assignments follow the 2026-11-20 rulings.
