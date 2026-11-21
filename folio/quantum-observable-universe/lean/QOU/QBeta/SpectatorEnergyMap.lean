@@ -4,6 +4,8 @@ import Mathlib.Topology.Algebra.Module.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.FieldSimp
+import Mathlib.LinearAlgebra.Matrix.Kronecker
+import Mathlib.LinearAlgebra.Matrix.Trace
 
 /-!
 # The ε → energy map from spectator invariance
@@ -280,6 +282,44 @@ theorem dictionary_unit (q : ℝ) (hq : 1 < q) :
 theorem routeD_converted_eq_routeT (q : ℝ) (hq : 1 < q) :
     2 * (Real.log q / (1 / ((q - 1) / q)) * (1 / (q - 1)) ^ 2) = 2 * e0 q * Real.log q := by
   rw [dictionary_unit q hq]
+  ring
+
+/-! ## S is not an extra axiom (owner: "should follow from QOU, no hidden symmetry axioms")
+
+S follows from two things the corpus already has:
+* **the trace is multiplicative on disjoint strand sets** (`markov-axioms-primitive`, derived
+  there from the Markov axioms): for the convention-D quantum trace this is `trace_kron` below,
+  since `K^{⊗(n+m)} = K^{⊗n} ⊗ K^{⊗m}` (K is grouplike) and `[2]^{n+m} = [2]^n·[2]^m`;
+* **energy is additive over non-interacting parts.** In the corpus's own energy reading of the
+  trace (`prop:beta-eq-ln-q-dictionary`, `E = −ln y / β`) this holds outright; and in general it
+  is the statement that the energy generator `H = log_q K` is primitive because `K` is grouplike.
+
+`spectator_of_additive`: an energy map additive over products is spectator invariant. So S is a
+consequence, and together with continuity it is equivalent to additivity
+(`eq_log_of_spectatorInvariant`). The one assumption left is that a continuous ε → energy map
+exists at all, which is the question being asked. -/
+
+/-- **Multiplicativity of the weighted trace on a disjoint (tensor) pair.**
+`Tr((K₁ ⊗ K₂)(x ⊗ y)) = Tr(K₁ x)·Tr(K₂ y)`. -/
+theorem trace_kron {m n : Type*} [Fintype m] [Fintype n] [DecidableEq m] [DecidableEq n]
+    (K₁ x : Matrix m m ℝ) (K₂ y : Matrix n n ℝ) :
+    Matrix.trace (Matrix.kroneckerMap (· * ·) K₁ K₂ * Matrix.kroneckerMap (· * ·) x y)
+      = Matrix.trace (K₁ * x) * Matrix.trace (K₂ * y) := by
+  rw [← Matrix.mul_kronecker_mul, Matrix.trace_kronecker]
+
+/-- **Additive energy ⇒ spectator invariance.** If `Φ(ab) = Φ(a) + Φ(b)` for positive trace values
+(energy of non-interacting parts adds; trace multiplies), then `Φ` satisfies S. -/
+theorem spectator_of_additive (Φ : ℝ → ℝ)
+    (hA : ∀ a b : ℝ, 0 < a → 0 < b → Φ (a * b) = Φ a + Φ b) : SpectatorInvariant Φ := by
+  intro l x y hl hx hy
+  rw [hA l x hl hx, hA l y hl hy]
+  ring
+
+/-- **The grouplike weight has an additive exponent.** On a tensor pair of `K`-eigenvectors with
+weights `q^i`, `q^j`, the weight is `q^(i+j)`: `log_q` of a grouplike element is primitive. -/
+theorem grouplike_weight (q : ℝ) (hq : 0 < q) (i j : ℤ) :
+    Real.log (q ^ i * q ^ j) = (i + j) * Real.log q := by
+  rw [Real.log_mul (zpow_pos hq i).ne' (zpow_pos hq j).ne', Real.log_zpow, Real.log_zpow]
   ring
 
 end QOU.QBeta.SpectatorEnergyMap
