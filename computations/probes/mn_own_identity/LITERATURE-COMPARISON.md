@@ -770,3 +770,36 @@ so no κ independent of q gives κ·f(q) = 12 on a domain containing 1. The cont
 elementary, because it is only evaluation at q = 1. It does not exclude a κ that depends on q,
 or a 12 from outside this class. The Lean proves facts about the closed form; the matrix
 identity Δ = 2q⁻¹(1−q⁻¹)h⁴[3]_q is checked in sympy only.
+
+## §26 Δ proved on the weight blocks; what the choice ∇ = hol − 1 commits to
+
+**Lean** `QOU/MassTheory/DeltaNPMatrixIdentity.lean` (sorry-free; axioms propext /
+Classical.choice / Quot.sound; generic field, characteristic ≠ 2):
+- `delta_np_general`: for any connection F_p on the proton block and the conjugate P F_p P⁻¹
+  on the neutron block, tr(𝒟_n²) − tr(𝒟_p²) = −2q⁻¹(1 − q⁻¹)·tr F_p. Only the cross term
+  survives, so only the trace of the chosen connection matters.
+- `delta_np_eq`: with F = hol − 1 on the actual 3×3 blocks (via `Vn3_conj`,
+  `trace_Vp3_sub_three`), Δ = 2q⁻¹(1 − q⁻¹)(q² − 1)⁴(q⁴ + q² + 1)/q⁶. This closes the gap §25
+  left, where the matrix identity was checked in sympy only.
+
+**Exploration of the connection choice** (`mn_connection_alternatives_probe.py`; not a target
+test). hol on W_p has eigenvalues {1, e^{iθ}, e^{−iθ}} and det = 1. By `delta_np_general`, Δ
+depends only on tr F:
+
+| connection F(hol) | tr_p F | Δ |
+|---|---|---|
+| hol − 1 | −h⁴[3]_q | 2q⁻¹(1−q⁻¹)h⁴[3]_q |
+| (hol + hol⁻¹)/2 − 1 (even under hol ↦ hol⁻¹) | −h⁴[3]_q | same |
+| (hol − hol⁻¹)/2 (odd under hol ↦ hol⁻¹) | 0 | 0 |
+| log hol (principal branch, elliptic range) | 0 | 0 |
+
+"Even/odd" here means under hol ↦ hol⁻¹, not the q ↦ q⁻¹ bar involution.
+
+**What choosing ∇ = hol − 1 commits to.** The p/n conjugacy, the eigenvalue equality and the
+q⁻² Cartan split hold for every F(hol), so they do not depend on the choice. The nonzero Δ
+does: it exists only because hol − 1 has a nonzero inversion-even trace. The two most natural
+alternatives give Δ = 0:
+- log hol, the Lie-algebra connection whose exponential is the holonomy;
+- the inversion-odd part, which is the analogue of σ − σ⁻¹ = h.
+
+Which connection is the right one is not settled in the corpus. It is left for the owner to decide.
