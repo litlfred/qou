@@ -24,6 +24,7 @@ carrier), then try to prove and derive it.
 | 2026-11-21 | **The scoreboard and all β-decay routes use the two-term Lagrangian trace**, not only the one-term trace. | this ledger |
 | 2026-11-21 | **Nuclear Regime-I shell-size rule T(2,n_s) withdrawn.** Its basis was a mislabel: (σ₀σ₁)²σ₀ closes to T(2,4), not the cinquefoil T(2,5). Kept withdrawn until derived. | `nuclear-interactions/nuclear-operator-regimes.ts` (caveat); `docs/audits/2026-11-21-electron-word-gs-interactions.md` §7 |
 | 2026-11-21 | **Spin-involution LP-dual statement corrected (card: "Correct the conclusion").** It concludes y₀*(σ(β)*) = y₀*(β), assuming σ commutes with * and n_target(σ(β)*) = n_target(β); not y₀*(σ(β)) = y₀*(β). | `mass-theory/spin-involution-lp-dual-invariance.md`; PR #8765 |
+| 2026-11-21 | **Physics claims are scoped to what is proved (cards on issue #8810).** (1) Narrow over-claiming prose: CCC proposition states CCC-1/CCC-3 only with CCC-2 conjectural; "TQFT" names the algebraic model, no 3d TQFT is constructed; the categorical Einstein equation is postulated (a class field), not derived; no "vanishing masses" at q → 1. (2) **The perturbative-QFT epic `qou-3fjn` is re-scoped to math only**: pure-mathematics targets (Herm₂(ℂ) ≅ ℝ^{1,3}, Cl(1,3) traces, su(3) structure constants, sin²θ_W = 3/8 as a trace ratio, g_A⁽⁰⁾ = 5/3, 4T/chord jet); no empirical pins in formal targets and no constructions needing virtual quanta; `qou-n1ks` scrapped as subsumed. | `docs/audits/2026-11-21-physics-claim-scope-recheck.md` |
 
 ## Working instructions for agents
 
