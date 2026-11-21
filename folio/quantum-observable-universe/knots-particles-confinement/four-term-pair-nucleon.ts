@@ -42,6 +42,14 @@ export default proposition({
         "Symbolic γγ NF for the ruled photon: `tbl:trivial-knot-photon-interpretation-table5-data`, Lean `QOU.QuarkState.pairNFChiral_eq`.",
       see: "https://github.com/litlfred/qou/pull/8583",
     },
+    {
+      kind: "caveat",
+      date: "2026-11-21",
+      body:
+        "**Construction predates the 2026-11-21 γγ selection ruling.** The owner now rules that the γγ word is selected by whole-word U(1) neutrality, which picks V³ = (σ₀σ₁⁻¹)³ = β_Bor uniquely up to 10 crossings (`docs/coordination/owner-rulings.md`; `QOU/PhotonU1NeutralCut.lean`). " +
+        "This block instead builds each nucleon as 𝓑₃ times three pair words whose flavours (u,u,d) / (u,d,d) are supplied by hand, so the p/n difference is an input, not a selection. " +
+        "Its Lean theorem `four_term_pair_nucleon` returns the two net values from fields of `FourTermPairNucleonContext` (a self-assuming carrier); nothing in Lean computes 0.999 or 0.811.",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([photon](#def:photon))" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([confinement universality](#prop:confinement-universality))" },
   ],
