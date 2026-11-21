@@ -364,19 +364,46 @@ theorem partner_flips_T3_same_generation (q : Quark) :
     simp only [partner, T3, writheSign_up, writheSign_charm, writheSign_top,
       writheSign_down, writheSign_strange, writheSign_bottom] <;> norm_num
 
+/-! ### The lepton partner's crossing count (owner rulings 2026-11-20 / 2026-11-21) -/
+
+/-- **Crossing count of the quark's lepton partner** `T(2,n)`: the electron
+    trefoil `T(2,3)` for the first generation, `T(2,5)` for the second,
+    `T(2,7)` for the third.  Stated by generation, not read off
+    `signedWrithe`, so that `genWinding_eq_partnerCrossings` below is a check
+    and not a tautology. -/
+def partnerCrossings : Quark → ℕ
+  | .up => 3 | .down => 3
+  | .charm => 5 | .strange => 5
+  | .top => 7 | .bottom => 7
+
+/-- The generation label `|κ|` equals the partner's crossing count, flavour by
+    flavour. -/
+theorem genWinding_eq_partnerCrossings (q : Quark) :
+    genWinding q = partnerCrossings q := by
+  cases q <;> rfl
+
 /-! ### The honest open remainder — conjecture class, NO instance (§3b-tax) -/
 
 /-- **Primary conjecture (open — deliberately NO instance).**
 
     The arithmetic above is proved unconditionally.  What is *conjectural* is
-    that the writhe-sign grading `T₃` is the **canonical** weak isospin — i.e.
-    that there is a framework-intrinsic net-signed-crossing map
-    `κ : Quark → ℤ`, arising from the *actual* canonical meson/`⋈_K` braids
-    (not entered as data), such that:
+    that the sign grading `T₃` is the **canonical** weak isospin — i.e. that
+    the framework supplies, from the *actual* canonical meson/`⋈_K` braids
+    (not entered as data), a strand orientation `ε : Quark → ℤ` and a signed
+    label `κ : Quark → ℤ` such that:
 
-    * `writhe_magnitude_is_generation` — its magnitude is the generation
-      winding (so the split is genuinely into (generation)×(sign));
-    * `sign_forced_by_bowtie` — its sign is *forced* by the strong-isospin
+    * `strand_single_crossing` — `ε q ∈ {+1, −1}`: the net signed crossing
+      of the quark strand itself.  Under the owner rulings of 2026-11-20 /
+      2026-11-21 a quark is an unknot strand carrying one crossing letter, so
+      its own net signed crossing has magnitude `1`, never `n`;
+    * `kappa_is_orientation_times_partner` — `κ q = ε q · n(q)` with `n(q)`
+      the crossing count of the quark's lepton partner `T(2,n)`
+      (`partnerCrossings`).  This is the **restated** form of the former
+      field `writhe_magnitude_is_generation : |κ q| = genWinding q`, which
+      was written expecting `|κ|` to be the quark's own crossing count; the
+      owner chose this restatement on 2026-11-21.  The old field is now the
+      derived lemma `CanonicalWeakIsospinFromBowtie.natAbs_eq_genWinding`;
+    * `sign_forced_by_bowtie` — the sign is *forced* by the strong-isospin
       `⋈_K` orientation (`pp = σ_g` positive ⇒ up-type positive), not merely
       consistent with it;
     * `gmn_with_derived_hypercharge` — GMN closes with a *framework-derived*
@@ -385,30 +412,32 @@ theorem partner_flips_T3_same_generation (q : Quark) :
 
     Content-bearing (each field is a `∀`-quantified constraint in the shape of
     the claim), and **no instance is provided**: constructing the canonical
-    `κ` from the braid category and the derived `Y` is the open step, which
-    reduces to the SU(3)-flavour / CKM sector.  A trivial `κ := signedWrithe`,
-    `Y := hyperchargeLeft` would *fabricate* closure over this finite toy and
-    is forbidden (§3b-tax: do not fabricate an instance to close an open
-    primary; the openness is physical, not formal).
-
-    **Note (2026-11-21, owner rulings 2026-11-20 / 2026-11-21).** Under the
-    ruling that a quark is an unknot strand carrying one crossing letter, the
-    net signed crossing of the quark strand in `B₃` has magnitude `1`, not
-    `n`.  So `writhe_magnitude_is_generation` can no longer be met by reading
-    `κ` off the quark strand's own crossings; its magnitude has to come from
-    the lepton partner `T(2,n)`.  The field's statement is unchanged; what
-    changes is that "net-signed-crossing map from the canonical braids" above
-    now means "orientation of the quark strand times its partner's crossing
-    count".  Whether a framework-intrinsic map of that composite kind exists
-    is the open question this class records. -/
+    `ε`, the partner pairing and the derived `Y` from the braid category is the
+    open step, which reduces to the SU(3)-flavour / CKM sector.  A trivial
+    `ε := sign ∘ signedWrithe`, `κ := signedWrithe`, `Y := hyperchargeLeft`
+    would *fabricate* closure over this finite toy and is forbidden (§3b-tax:
+    do not fabricate an instance to close an open primary; the openness is
+    physical, not formal). -/
 class CanonicalWeakIsospinFromBowtie
-    (κ : Quark → ℤ) (Y : Quark → ℚ) : Prop where
-  /-- |κ| recovers the generation winding: κ splits as (generation)×(sign). -/
-  writhe_magnitude_is_generation : ∀ q, (κ q).natAbs = genWinding q
+    (ε κ : Quark → ℤ) (Y : Quark → ℚ) : Prop where
+  /-- the quark strand's own net signed crossing is a single crossing. -/
+  strand_single_crossing : ∀ q, ε q = 1 ∨ ε q = -1
+  /-- κ = (strand orientation) × (lepton partner's crossing count). -/
+  kappa_is_orientation_times_partner :
+    ∀ q, κ q = ε q * (partnerCrossings q : ℤ)
   /-- the sign is the `⋈_K`-forced up/down orientation. -/
   sign_forced_by_bowtie : ∀ q, (0 < κ q ↔ weakType q = WeakType.upType)
   /-- GMN closes with the framework-derived hypercharge `Y`. -/
   gmn_with_derived_hypercharge :
     ∀ q, emCharge q = ((κ q).sign : ℚ) / 2 + Y q / 2
+
+/-- **The former field, now derived.** Under the restated conjecture, `|κ|`
+    is the generation label: `|ε · n| = n` because `ε = ±1`. -/
+theorem CanonicalWeakIsospinFromBowtie.natAbs_eq_genWinding
+    {ε κ : Quark → ℤ} {Y : Quark → ℚ}
+    [h : CanonicalWeakIsospinFromBowtie ε κ Y] (q : Quark) :
+    (κ q).natAbs = genWinding q := by
+  rw [h.kappa_is_orientation_times_partner q, genWinding_eq_partnerCrossings]
+  rcases h.strand_single_crossing q with he | he <;> simp [he]
 
 end QOU.ParticleInteractions.WeakIsospinT3
