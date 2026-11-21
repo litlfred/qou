@@ -323,7 +323,6 @@ export default chapter({
         "variational-equations",
         "variational-equations-proof",
         "wavefront-propagation",
-        "photon-wavefront-example",
       ],
     }),
 
