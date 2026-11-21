@@ -144,3 +144,11 @@ bookkeeping; NF(W) reproduces the 17-term normal form recorded in the pair-creat
 **Comparison, last and outside any proof:** each M in MeV (M1, M2 times E₀; M3 as is) against Q_β
 and m_n − m_p. Nothing is selected by it. Contamination: I know the cell 2E₀·ln q and the B bound
 0.3625 MeV; neither is a row here.
+
+## Addendum 5 (written after Addendum 4's numbers, before this computation)
+
+Defect in Addendum 4: M1 and M2 count every reduction in W = X·β_Bor, including those inside the
+nucleon core β_Bor (present in the initial state, the same for n and p) and inside X alone. The
+interaction's own reductions are the cross part ΔM = M(X·β_Bor) − M(β_Bor) − M(X), for both
+strategies, and for M2 also exactly in q. Contamination, stated: Addendum 4's numbers (M1·E₀ ≈ 318
+MeV, M2·E₀ ≈ 229 MeV, M3 ≈ 12.3 MeV) were printed before this was written. ΔM is the only new row.
