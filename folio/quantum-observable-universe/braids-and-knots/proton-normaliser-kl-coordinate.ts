@@ -29,15 +29,16 @@ export default conjecture({
       kind: "status",
       date: "2026-11-21",
       body:
-        "**Retired as a derivation route** (owner: \"All\", picking retire, " +
-        "restate and ready). The derivative reading returns the chosen element's " +
+        "**Kept as a conjecture that does not derive the normaliser** (owner: " +
+        "\"All\", picking retire-as-derivation-route, restate and ready). The block " +
+        "stays kind conjecture to record the negative result. The derivative reading returns the chosen element's " +
         "square constant over $[3]_q!$, so the $q^{-3}$ comes from scaling $x_-$ by " +
         "its identity coefficient. The same criterion applied to the element selects " +
         "$k = 0$. Audit: docs/audits/2026-11-21-proton-q3-kl-coordinate.md.",
     },
   ],
   tags: [
-    "retired",
+    "negative-result",
     "proton",
     "schur-element",
     "kazhdan-lusztig",
