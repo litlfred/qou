@@ -20,6 +20,7 @@ export default theorem({
     "prop:vdw-pskew-isolation",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): At the angle $c = \\cot\\theta_W \\cdot s$ of the [Weinberg-angle conjecture](#conj:weinberg-angle-categorical), $Q(Z) = 0$ holds if and only if $\\cot\\theta_W \\cdot x = y$." },
     {
       kind: "note",
       date: "2026-11-20",

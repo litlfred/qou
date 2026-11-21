@@ -58,7 +58,6 @@ export default chapter({
           title: "The Hecke quotient",
           label: "sec:categorical-braiding-hecke-quotient",
           blocks: [
-            "skein-resolution-obstruction",
             "markov-axioms-primitive",
             "jones-markov-trace",
             "jones-markov-trace-stabilisation",
@@ -148,6 +147,7 @@ export default chapter({
         // su2-generators relocated to archimedean-universe/ (PR #823 fit-section-chapter audit)
         "so3-generators",
         "quaternion-so3-motivation",
+        "su2-generators",
       ],
     }),
 

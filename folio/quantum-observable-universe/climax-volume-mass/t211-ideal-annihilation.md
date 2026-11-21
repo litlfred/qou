@@ -52,7 +52,7 @@ It retains no transient component, yields no input to the obstruction $\kappa_n$
 
 ## 3. No :refterm[descent]{#descent} to shells
 
-The transfer matrix eigenvalues $\lambda_\pm$ of $T_{\gamma e}(q)$ command the shell structure ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)). The torus knot $T_{2,11}$ evaluates to:
+The torus knot $T_{2,11}$ evaluates to:
 
 $$
   \mathcal{T}_{T_{2,11}}(q) = \mathbf{I}_{2 \times 2},
