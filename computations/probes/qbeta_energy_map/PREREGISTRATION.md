@@ -176,3 +176,9 @@ and E_d(1); NF of each W is strategy-independent.
 
 **Comparison** last, against Q_β and m_n − m_p, nothing selected. Contamination: Addendum 4–5
 numbers for V₁³ are known (100–400× Q_β; M3 = 12.3 MeV).
+
+**6b (owner card "Compute both B and C"), still before code.** Every Addendum 6 measure is run
+twice. **C**: the input lepton strand is u (premise L). **B**: no lepton is present in the initial
+state, so the input lepton-strand colour is not fixed; the B block sums over both input colours
+{u, d} on strand 3 → p⊗e⁻. Under B the closed-form bound Q_β ≤ cell − m_e = 0.362538 MeV (§13) is
+printed beside, with E(ν̄) left open.
