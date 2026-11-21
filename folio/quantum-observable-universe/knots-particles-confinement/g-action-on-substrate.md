@@ -106,7 +106,7 @@ This is none of readings (a) and (b) and differs from the slot value $[4]_q\,[6]
 
 ### The anchor value is not a host trace
 
-The anchor value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ is defined as $N_v / \prod_{k=2,3,4} [2k]_q^2/[2]_q$, with $N_v = v/(E_\times \mu_0)$. Since the electron [trefoil](#rem:building-block-knots) has three crossings, $m_e = 3\,E_\times \mu_0$, so this $N_v$ is $v$ counted in crossings, $3v/m_e$. Writing it through the weak scale $v/m_p$ of [the torus-link identification](#conj:electroweak-higgs-torus-link-triplet) gives the identity
+The anchor value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ is defined as $N_v / \prod_{k=2,3,4} [2k]_q^2/[2]_q$, with $N_v = v/(E_\times \mu_0)$. Since the electron [trefoil](#prop:lepton-meson-torus-knot-dictionary) $T(2,3)$ has three crossings, $m_e = 3\,E_\times \mu_0$, so this $N_v$ is $v$ counted in crossings, $3v/m_e$. Writing it through the weak scale $v/m_p$ of [the torus-link identification](#conj:electroweak-higgs-torus-link-triplet) gives the identity
 
 $$
   \mathcal{N}_{\rm sym}^{\rm anchor} \;=\; 3\,\frac{m_p}{m_e}\cdot\frac{v}{m_p}\cdot\frac{[2]_q^3}{\bigl([4]_q\,[6]_q\,[8]_q\bigr)^2}.

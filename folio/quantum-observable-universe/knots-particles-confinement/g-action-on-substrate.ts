@@ -37,6 +37,11 @@ export default conjecture({
     status: "not_run",
   },
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-21",
+      body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner: fix issues): Section \"The anchor value is not a host trace\" read \"Since the electron [trefoil](#rem:building-block-knots) has three crossings\"; the link now points to the earlier proposition that states the electron is the trefoil T(2,3) with three crossings.",
+    },
     { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): and in [weak spectral completeness](#prop:weak-spectral-completeness)" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The nearest corpus object is the disjoint-strand-pair realisation of [the Hoefsmit cell-content theorem](#thm:hoefsmit-ew-cell-content), where $W$, $Z$ and $H$ act on separate strand pairs of $V^{\\otimes 6}$. That object has a single $W$ slot rather than separate $W^+$ and $W^-$ hosts, and it assigns $H$ the link $T(2,8)$, not the $q$-dimension $[2]_q$ of (G-2). So it does not establish reading (a)." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): , Lean `VacuumPairing.tr_proj_eq_one`) | that `computations/n_sym_numerical_anchor.py` obtains by dividing" },
