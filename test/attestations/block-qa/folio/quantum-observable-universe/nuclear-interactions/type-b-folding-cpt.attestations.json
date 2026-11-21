@@ -17,6 +17,23 @@
           "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:51.421Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "No tracker ids or branch names in the prose."
       }
     ],
     "voice-ai-slop": [
@@ -35,6 +52,23 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:51.368Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit. No issue found."
       }
     ],
     "fit-section-chapter": [
@@ -84,6 +118,23 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.155Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -102,6 +153,23 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.573Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "da-false-claim": [
@@ -137,6 +205,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.232Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). The new paragraph's Coxeter-level claims match Lusztig 2003: Sec. 16.2 (quasisplit case, L = restricted length) and Sec. 25 Case 3 (W of type B_n from A_2n or A_2n+1). Weights 1/2/3 verified at KL level for n = 3..7 (probe h15)."
       }
     ],
     "da-vacuous": [
@@ -171,6 +256,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.271Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "da-circular": [
@@ -206,6 +308,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.302Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "da-overclaim": [
@@ -241,6 +360,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:51.210Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "severity": "minor",
+        "evidence": "type-b-folding-cpt.md:2 'The sl_n Cartan datum ... folds into a Type-B Cartan datum B_{floor(n/2)}'. For odd n = 2m+1 the diagram automorphism of A_{2m} puts the adjacent roots alpha_m, alpha_{m+1} in one orbit, so it is not admissible in the sense of Lusztig's quantum-groups folding of Cartan data (recalled, Lusztig 1993; not checked against a held copy). The Coxeter-group fold to B_m holds (lusztig2003 Sec. 16.2, Sec. 25 Case 3), and md:10 states the claim at that level.",
+        "notes": "Proposed fix (owner decision): scope the statement's 'Cartan datum' to even n, or restate it at the Coxeter / Hecke level for all n."
       }
     ],
     "da-hidden-dof": [
@@ -276,6 +414,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.334Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). The one free choice (which type-B Markov trace T uses) is stated openly in the block."
       }
     ],
     "da-non-sequitur": [
@@ -311,6 +466,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.365Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -345,6 +517,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:51.279Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "severity": "minor",
+        "evidence": "type-b-folding-cpt.lean:89 and :175 docstrings say 'the block's own B_{n/2}', while md:2 now reads B_{floor(n/2)}. The Lean uses N division, so n / 2 is already floor(n/2) and the theorems are unaffected; only the docstring wording lags.",
+        "notes": "Proposed fix: docstrings to 'B_{n/2} (N division, = floor(n/2))'. Needs lean-direct after the edit."
       }
     ],
     "da-citation-misuse": [
@@ -380,6 +571,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.427Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). lusztig2003 Sec. 16.2 is the quasisplit definition cited; the type-B_n identification is also stated in its Sec. 25, Case 3. geck-lambropoulou-2004 citation unchanged."
       }
     ],
     "da-definitional-ambiguity": [
@@ -415,6 +623,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:51.314Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "severity": "minor",
+        "evidence": "md:10 heading 'Rank and wall weight' uses 'wall', which the block never defines; the body says 'middle generator'.",
+        "notes": "Proposed fix: heading 'Rank and weights', or define the wall as the middle generator."
       }
     ],
     "da-empirical-fragility": [
@@ -450,6 +677,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:41.293Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
       }
     ],
     "da-physical-implausibility": [
@@ -485,6 +729,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.457Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). For odd n no simple root is iota-fixed (Lean typeBFold_label_free_of_odd_strands), so 'stable matter = fixed points' has no label-level shadow there; the block does not claim one."
       }
     ],
     "da-reproducibility": [
@@ -520,6 +781,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.484Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). Rank and weights are reproduced by computations/probes/bridge_b/h15_folding_all_n_probe.py (n = 3..7)."
       }
     ],
     "da-referee-verdict": [
@@ -557,6 +835,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:51.242Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "severity": "minor",
+        "evidence": "Same as da-overclaim: md:2 claims a Cartan-datum fold for every n, while the support in md:10 is Coxeter-level. A referee would ask for the odd-n statement to be scoped.",
+        "notes": "Otherwise the block is honestly scoped: conjecture kind, content-bearing Lean carrier, no instance."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -719,6 +1016,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.514Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "milnor-brevity": [
@@ -734,6 +1048,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.543Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "trap-negation-contrast": [
@@ -751,6 +1082,23 @@
         "reviewed_at": "2026-08-22T06:13:07.861Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.603Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -768,6 +1116,23 @@
         "reviewed_at": "2026-08-22T06:13:07.941Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.633Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "trap-em-dash": [
@@ -785,6 +1150,23 @@
         "reviewed_at": "2026-08-22T06:13:08.010Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.662Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "trap-triples": [
@@ -802,6 +1184,23 @@
         "reviewed_at": "2026-08-22T06:13:08.084Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.698Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "trap-closing-aphorism": [
@@ -819,6 +1218,23 @@
         "reviewed_at": "2026-08-22T06:13:08.170Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.731Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "trap-meta-commentary": [
@@ -836,6 +1252,23 @@
         "reviewed_at": "2026-08-22T06:13:08.262Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.766Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "trap-thesis-restatement": [
@@ -853,6 +1286,23 @@
         "reviewed_at": "2026-08-22T06:13:08.342Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.805Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "trap-performed-warmth": [
@@ -870,6 +1320,23 @@
         "reviewed_at": "2026-08-22T06:13:08.420Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.840Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "trap-superlative": [
@@ -887,6 +1354,23 @@
         "reviewed_at": "2026-08-22T06:13:08.490Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.872Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
       }
     ],
     "trap-nonspeakable": [
@@ -904,6 +1388,251 @@
         "reviewed_at": "2026-08-22T06:13:08.577Z",
         "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
         "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      },
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.906Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.200Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.398Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "Read the block in full after the rank/wall-weight edit (commit 8cef4d0c971). No issue found."
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.937Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:40.975Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:41.007Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:41.053Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:41.092Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:41.131Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:41.172Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:41.207Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:41.239Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "0717656a1da2",
+          "ts": "0f8d578b3b03",
+          "lean": "295ae8c5371d",
+          "lean_statement": "a050af936d84"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bridge-b-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:42:41.267Z",
+        "reviewed_sha": "2de7f987b96cb63966e55e508a9d8cc4c1853666",
+        "notes": "The block carries no code and makes no empirical claim."
       }
     ]
   }
