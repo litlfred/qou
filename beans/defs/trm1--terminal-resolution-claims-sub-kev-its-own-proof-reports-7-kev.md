@@ -95,3 +95,5 @@ Caption fixed (PR #5008). Still open: p/n rows reproduce an input (μ̄ ≈ M_N/
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
 
 Ruling check: the finding (p/n rows reproduce the M_N input) is about the table's honesty, not about which trace or knot is used; the formula column's Hopf-link wording predates the electron ruling and is a separate label question, not relied on here.
+
+Fix applied on owner card (2026-11-21) in PR #8825 (branch claude/paper-structure-drain-2026-11-21). Close when it merges.

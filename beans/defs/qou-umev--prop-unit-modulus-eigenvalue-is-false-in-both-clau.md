@@ -116,3 +116,5 @@ Mostly fixed on main (conditional statement, σ₁² counterexample, 120° row, 
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
 
 Ruling check: the bean's own corrected value 2 − 3h⁴ − h⁶ is the current one; the leftover '2 − h⁴' sentence on main is exactly the superseded χ value, so the proposed fix removes it. No other superseded premise.
+
+Fix applied on owner card (2026-11-21) in PR #8825 (branch claude/paper-structure-drain-2026-11-21). Close when it merges.

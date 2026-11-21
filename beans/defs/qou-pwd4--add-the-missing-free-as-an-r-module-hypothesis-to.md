@@ -61,3 +61,5 @@ Live on main: both cor:pbw and cor:ugb-pbw (buchberger-and-pbw/ugb-pbw-corollary
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
 
 Ruling check (owner-rulings.md on main 2ae54ab401, 2026-11-21): no superseded premise (photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ = 2 − h⁴, fitted values in proofs) is used by this bean's finding.
+
+Fix applied on owner card (2026-11-21) in PR #8825 (branch claude/paper-structure-drain-2026-11-21). Close when it merges.

@@ -36,3 +36,5 @@ B_vol legend row now DEPRECATED on main. Same defect one row up: B_gate legend s
 Report: docs/audits/2026-11-21-paper-structure-bean-drain.md on branch claude/paper-structure-drain-2026-11-21.
 
 Ruling check: the dashboard is EXPLORATORY and B_gate/B_vol are deprecated; whether its trace is the two-term Lagrangian trace was not checked and does not affect the legend finding.
+
+Fix applied on owner card (2026-11-21) in PR #8825 (branch claude/paper-structure-drain-2026-11-21). Close when it merges.
