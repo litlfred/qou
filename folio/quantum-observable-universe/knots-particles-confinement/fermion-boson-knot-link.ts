@@ -17,7 +17,7 @@ export default proposition({
     "reeb-flow",
     "vertical",
   ],
-  lean: { ref: "qou:QOU.Braiding.fermion_boson_knot_link",
+  lean: { ref: "qou:fermion_iff_odd",
     validation: "not_checked",
   },
   uses: ["def:borromean-baryon"],
