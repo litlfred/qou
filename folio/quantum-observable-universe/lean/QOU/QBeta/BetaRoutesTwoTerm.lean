@@ -116,6 +116,18 @@ theorem pairSum_sub_of_total_eq {ι R : Type*} [DecidableEq ι] [CommRing R] (s 
     exact Finset.sum_congr rfl fun i _ => by ring
   linear_combination -hXY
 
+/-- **Disjoint blocks.** The pair sum over two disjoint strand sets is the two block pair sums
+plus the cross term `2·(Σ_s f)(Σ_{s'} f)`. With one charge type per block (§2), every term is a
+function of the block totals, so the insertion is a scalar on each joint block-weight sector and
+its sector-connected part vanishes against every word. -/
+theorem pairSum_union {ι R : Type*} [DecidableEq ι] [CommRing R] (s s' : Finset ι)
+    (hd : Disjoint s s') (f : ι → R) :
+    ∑ p ∈ (s ∪ s').offDiag, f p.1 * f p.2 =
+      ∑ p ∈ s.offDiag, f p.1 * f p.2 + ∑ p ∈ s'.offDiag, f p.1 * f p.2 +
+        2 * (∑ i ∈ s, f i) * (∑ i ∈ s', f i) := by
+  rw [offDiag_sum_eq, offDiag_sum_eq, offDiag_sum_eq, Finset.sum_union hd, Finset.sum_union hd]
+  ring
+
 /-! ## 4. One quark strand and one lepton strand -/
 
 variable {R : Type*} [Field R]
