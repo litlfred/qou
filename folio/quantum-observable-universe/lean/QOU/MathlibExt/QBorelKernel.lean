@@ -22,6 +22,10 @@ C1's slope ½, the `d`-th roots `B₁,B₂`, and the actual Stokes matrices
 §7c: generic `Monoid` (commutativity unused). Sorry-free. No fit; nothing wired.
 
 -- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3, q-Borel transform)
+-- Ref: [morita2012b] https://arxiv.org/abs/1205.1453 (§3.2, Thm 1 and the q-elliptic
+--      connection coefficient C(x;q) after it): a worked first-kind q-Borel–Laplace
+--      resummation of the divergent bilateral ₁ψ₀ whose dependence on the direction λ
+--      sits entirely in a theta quotient. Precedent only; not used by the proofs here.
 -/
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Algebra.Group.Basic
