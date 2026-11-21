@@ -32,7 +32,9 @@ yet"), from an idle strand, and from the choice of global normalisation `[2]³`.
 5. `shared_factor_cancels` / `linear_shared_factor`: a common factor `f` leaves an S-map's cell
    unchanged and multiplies the linear cell by `f`.
 6. E₀ (in units of `m_e`, `e0 q = 1/(q(q−1))`): `tower_ratio` (`E₀^full/E₀ = q²/(2q−1)`) and
-   `log_cell_bounds`: for every `q > 1`, `2/q² < 2·e0(q)·log q < 2/q`.
+   `log_cell_bounds`: for every `q > 1`, `2/q² < 2·e0(q)·log q < 2/q`;
+   `log_cell_tower_lt_two`: with the tower-summed `E₀`, the log cell is `< 2·m_e` for every
+   `q > 1`.
 
 ## What is NOT claimed
 
@@ -188,5 +190,21 @@ theorem log_cell_bounds (q : ℝ) (hq : 1 < q) :
     have h2 : 2 / q * (q * (q - 1)) = 2 * (q - 1) := by field_simp
     rw [h2]
     linarith
+
+/-- **With the tower-summed `E₀` the log cell stays below `2·m_e` for every `q > 1`.**
+`2·(E₀^full/m_e)·log q < 2q/(2q−1) ≤ 2`. -/
+theorem log_cell_tower_lt_two (q : ℝ) (hq : 1 < q) : 2 * e0Tower q * Real.log q < 2 := by
+  have hb := (log_cell_bounds q hq).2
+  have hq0 : 0 < q := by linarith
+  have h21 : 0 < 2 * q - 1 := by linarith
+  have hr : 0 < q ^ 2 / (2 * q - 1) := by positivity
+  rw [tower_ratio q hq]
+  have e : 2 * (e0 q * (q ^ 2 / (2 * q - 1))) * Real.log q
+      = (2 * e0 q * Real.log q) * (q ^ 2 / (2 * q - 1)) := by ring
+  rw [e]
+  calc (2 * e0 q * Real.log q) * (q ^ 2 / (2 * q - 1))
+      < 2 / q * (q ^ 2 / (2 * q - 1)) := mul_lt_mul_of_pos_right hb hr
+    _ = 2 * q / (2 * q - 1) := by field_simp; ring
+    _ ≤ 2 := by rw [div_le_iff₀ h21]; linarith
 
 end QOU.QBeta.SpectatorEnergyMap
