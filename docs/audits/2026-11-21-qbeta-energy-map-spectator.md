@@ -679,3 +679,40 @@ evidence.
 The electron: m_n − m_p − m_e = Q_β = 0.78233 MeV, and the cell is 11.66 % above that. Whether the
 cell is a Q_β cell or an m_n − m_p cell is the question this audit started from; §1–§9 treat it as the
 Q_β cell. Nothing here derives an m_e term in m_n − m_p.
+
+## 27. The cell against Q_β: what the decay vertex must add (prereg Addendum 16; owner "1")
+
+Lean, `QOU/QBeta/BetaVertexBudget.lean` (imports `SpectatorEnergyMap`, `WeightSpaceNucleon`),
+lean-direct exit 0, no `sorry`, standard axioms only. Units m_e = 1.
+
+- `lepton_cancels_cell` (placement C, premise L): under (G) the lepton strand's weight step,
+  E_ν − E_e = −2E₀ ln q, cancels the nucleon cell exactly. With an active lepton strand the K-grading
+  contributes nothing to Q_β, so **the vertex must supply all of it**.
+- `qbeta_B_lt` (placement B, E(e⁻) = m_e by CAL-1, E(ν̄) ≥ 0): Q_β = cell − m_e − E(ν̄) < m_e(2/q − 1)
+  < m_e for every q > 1. Measured Q_β is 1.531 m_e, so **B without a vertex term is excluded at every
+  q**, scope (b), invariant `log_cell_bounds`.
+- `vertex_needed_B`: for any comparison value Q ≥ m_e the vertex must add more than Q − m_e(2/q − 1) > 0.
+
+Numbers at the proton q₀ (rendering, after the Lean):
+
+| placement | Q_β without vertex | vertex must add |
+|---|---|---|
+| B | 0.36254 MeV (bound 0.40974) | 0.41979 MeV |
+| C | 0 | 0.78233 MeV |
+
+The B figure equals the m_n − m_p gap of §26 by construction (Q_β = m_n − m_p − m_e on both sides).
+
+**What the corpus offers for the vertex.** §14–17 measured reduction counts of the β-decay word: the
+element-level counts are 100× too large, and the one state-level quantity with the right sign
+(the forward/reverse asymmetry A) depends on the counting ordering and on an unruled word. None of
+these is a derived vertex energy. The convention-D ruled base |τ_D(Δ)|·E₀ is a linear-map quantity,
+and §1 retires the linear map as an energy under S, so it is not used here.
+
+**Consequence.** Under (G) the K-weight cannot produce Q_β: with the lepton active it cancels; with
+the lepton booked by CAL-1 it falls below m_e. Whatever the vertex is, it has to distinguish states
+**within** a weight space (for example the Young channel of the nucleon factor), because everything
+graded by weight alone is already counted above. That is the derivation still open.
+
+**Correction to §24.** `trace_plus_eq_minus` there is a special case of the corpus theorem
+`QOU.BraidsAndKnots.NucleonWeightSpaceTraces.trace_word_eq` (equal weight-space traces for every
+word), which §1 already cites. §24 should have cited it instead of presenting the equality as new.
