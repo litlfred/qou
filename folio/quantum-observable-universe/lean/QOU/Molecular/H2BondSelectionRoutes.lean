@@ -153,5 +153,36 @@ theorem neutral_table :
     ¬ Neutral (localWord [.v5, .v5, .v4]) := by
   decide
 
+/-! ## 3. Pure and writhe-zero bonds
+
+A bond is **pure** when its permutation of the junction strands is the identity, so the closure
+of the bonded word has the same components as the bare word (no particle is merged or split).
+Among all 155 bonds of one to three letters, the pure bonds with writhe `0` are exactly `V₄³`
+and `V₅³` (`pure_writhe_zero_bonds`). -/
+
+/-- `true` when the bond's local word permutes no junction strand. -/
+def isPure (l : List BondLetter) : Bool := finalPos (localWord l) [0, 1, 2, 3] == [0, 1, 2, 3]
+
+/-- The writhe of the local word. -/
+def localWrithe (l : List BondLetter) : Int := ((localWord l).map Prod.snd).sum
+
+/-- The five letters. -/
+def allLetters : List BondLetter := [.s4, .s5, .s6, .v4, .v5]
+
+/-- All bonds of one, two and three letters (`5 + 25 + 125 = 155`). -/
+def allBonds : List (List BondLetter) :=
+  (allLetters.map fun a => [a]) ++
+  (allLetters.flatMap fun a => allLetters.map fun b => [a, b]) ++
+  (allLetters.flatMap fun a => allLetters.flatMap fun b => allLetters.map fun c => [a, b, c])
+
+set_option maxRecDepth 8000 in
+theorem allBonds_length : allBonds.length = 155 := by decide
+
+/-- **The pure, writhe-zero bonds are `V₄³` and `V₅³`.** -/
+theorem pure_writhe_zero_bonds :
+    allBonds.filter (fun l => isPure l && localWrithe l == 0) =
+      [[.v4, .v4, .v4], [.v5, .v5, .v5]] := by
+  decide
+
 end QOU.Molecular.H2BondSelection
 

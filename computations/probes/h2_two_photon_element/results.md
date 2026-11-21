@@ -49,12 +49,33 @@ Neutrality of the bond selects `V³` uniquely (up to the site) among the 155 bon
 of the whole H₂ word selects nothing, because the electron `σ₀σ₁σ₀` closes to a Hopf link and is
 itself not neutral (self-writhe 1, linking 2 in each atom).
 
+## A third filter: the bond preserves the particles
+
+A bond is **pure** if it permutes no junction strand. Then the closure of the bonded word has
+exactly the components of the bare word: no constituent is merged with or split from another.
+Measured against `h2-ruled-electron.witness.json`:
+
+- The pure bonds are 11 of the 155 (`σ₄², σ₅², σ₆²`, `V₄³`, `V₅³`, and six three-letter words
+  such as `σ₄V₄σ₅`). All 11 pass reading 3 in all four cells, and they are exactly the passing
+  bonds that leave the component partition of the H₂ closure unchanged.
+- Lean `pure_writhe_zero_bonds` (`decide`, over all 155 bonds, `allBonds_length`): the pure bonds
+  with writhe `0` are exactly `V₄³` and `V₅³`.
+
+So **purity + writhe 0 selects `V³`** without reading 3 doing any of the selecting: every pure
+bond already passes. Purity replaces the neutrality step; writhe 0 is the one premise left, and
+it follows both from the γγ grammar (`writhe_eq_zero`) and from U(1) neutrality
+(`writhe_eq_zero_of_neutral`, #8835). On a pure bond, neutrality is the statement that every
+pairwise linking number vanishes, which is what the Borromean `V³` satisfies and the Hopf clasp
+`σ₅²` does not.
+
 ## Status of each step
 
 - γγ grammar for the bond: a proved invariant (writhe), applied under the 2026-09-08 rule that
   canonical words are γγ-produced. Not derived for bonds specifically.
 - Neutrality: the table is proved; that a bond must be neutral is the working conjecture of
   PR #8835, and its scope (bond vs. whole word) is not settled.
+- Purity as "the bond preserves the particles": a reading of what a bonded state of the same
+  constituents is. Natural, but not stated as a rule in the corpus.
 - The selection is a computation at `q₀` over at most three photons, not a proof.
 
 ## Not done
