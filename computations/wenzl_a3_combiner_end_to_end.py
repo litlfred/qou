@@ -99,8 +99,11 @@ def main() -> int:
     rmu = {m: word_matrix(rho6[m], inner_fac) for m in p6}
     rnu = {n: word_matrix(rho3[n], outer_fac) for n in p3}
 
+    # y_λ at the same 50-dps q as the matrices. It was y_lambda_at(9,
+    # float(Q0)): every other factor here is 50 dps, so the float64 y_λ capped
+    # tr_M at ~1e-16 (f64_into_mpmath_audit F64_CAST, 2026-11-21).
     y_dict = {tuple(k): mp.mpf(mp.nstr(v, DPS)) if not isinstance(v, complex)
-              else mp.mpc(v) for k, v in y_lambda_at(9, float(Q0)).items()}
+              else mp.mpc(v) for k, v in y_lambda_at(9, q).items()}
 
     # Residual print precision is tied to the working precision (Gemini #2371):
     # never silently truncate below the configured dps.
