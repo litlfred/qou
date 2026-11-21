@@ -1,14 +1,14 @@
 ---
 # qou-2pp7
 title: Cross-check 9811173v1.pdf at computations/binding_link_volumes.py
-status: todo
+status: completed
 pr: 8347
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:38Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T14:58:49Z
 parent: qou-8hur
 ---
 
@@ -33,3 +33,13 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8347, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21T14:58:49Z cross-check result
+
+Probe computations/probes/broadhurst_dedekind_zeta_volume_probe.py (branch claude/expo-cite-xcheck-wave2-2026-11-21, head 06a66eeb823). ALL PASS. No external number was adopted into any witness.
+- Broadhurst's Z_K (eq ZK, via PARI zeta_K(2)) and his quadratic Clausen form (eq ZKq) agree to 60 digits for D = -3, -4, -7.
+- The source's a/b = 1 (4_1, 5^2_1) and a/b = 2 (6^3_1) are reproduced with SnapPy volumes to 1e-60.
+- Corpus binding-link-volumes witness: Vol_B3_8G = 8G gives a/b = 1/2 against Z_4 (rel 1.6e-17, limited by its 15 digits), and SnapPy L6a4 gives it exactly. The witness's 8_11 volume matches SnapPy to 10 digits.
+- 8_11 (the witness's 3H knot): its shape field is degree 10 with 5 complex places. Broadhurst's single-complex-place formula does not apply, so his tables cannot cross-check that volume.
+Harness note: cypari's Python-level lfun returns only ~19 digits regardless of realprecision, so the probe uses the string call. Documented as an amendment.
+Premise finding: the witness's binding rows assign vol_eff = Vol(B3) to the deuteron (Hopf, Vol 0) and use census picks 8_11 and L6a4. AGENTS.md records owner ruling A (2026-08-29: the deuteron binding is not a volume term) and the 2026-09-05 retirement of census selection. That witness's binding rows therefore rest on superseded premises. Its volumes are correct.
