@@ -45,3 +45,15 @@ Both arms stay recorded.
 **Conditional hit for the parameter:** `Q = q^{1/2}` follows from folding plus a literature theorem,
 with no number chosen. **Not a hit for a splitting.** `D` still needs a trace-to-mass map, the
 photon parameters, and the folding conjecture.
+
+## Source check (2026-11-21, after the owner chose "Get the Lusztig source")
+
+**Not obtained.** Lusztig, *Hecke algebras with unequal parameters* (CRM Monograph Series 18; arXiv math/0208154) is not in `library/` (INDEX.md, `sections/` and `ocr/` grepped). Fetching it from arxiv.org and export.arxiv.org failed: the environment's network policy denied both hosts (CONNECT 403).
+
+**What the held sources do confirm** (Geck, *Hecke algebras of finite type are cellular*, `library/arxiv-math-0611941v3`, §2):
+- A weight function satisfies L(ww') = L(w) + L(w') whenever l(ww') = l(w) + l(w'), and L(s) = L(t) for conjugate s, t.
+- The generic algebra H_A(W, L) has T_s T_w = T_{sw} + (v^{L(s)} − v^{−L(s)}) T_w when l(sw) < l(w).
+
+So *given* L(bulk) = 2 and L(wall) = 1, the step "wall parameter = v = q^{1/2} when bulk q = v²" is confirmed from a held source.
+
+**What remains unconfirmed:** the folding rule itself, that the weight function on the fixed-point group W^σ of a quasi-split folding is the restriction L = ℓ|_{W^σ} of the ambient length. That is Lusztig's monograph, Chapter 16 as recalled; no held source states it. The conditionality of Q = q^{1/2} is therefore unchanged on that point.
