@@ -51,12 +51,12 @@ content from the index it is written under. This is the corpus rule *defined
 residual ≠ derived decomposition* applied to this file's own vocabulary.
 Narrative twin: `rem:tjon-universality-external`.
 
-`mu4_target_exceeds_n3lo_bound` certifies the numeric claim behind the
-GAP-9 probe: the corpus target `μ₄ = −4.591` (in units of `B(D) = 2.224566 MeV`)
-exceeds `34 ×` the N³LO four-nucleon estimate of `0.300 MeV`
-(Jurgenson–Navrátil–Furnstahl, `[jurgenson2009srg]`, `arXiv:0905.1873`, which
-measures the SRG-induced four-body force at `λ = 2 fm⁻¹` as "about 50 keV net"
-and quotes the N³LO long-range estimate as "of order a few hundred keV").
+The numeric claim behind the GAP-9 probe (the corpus target `μ₄ = −4.591`, in
+units of `B(D) = 2.224566 MeV`, against the N³LO four-nucleon estimate "of order a
+few hundred keV" of `[jurgenson2009srg]`) is **not** stated in Lean. It compares
+measured MeV values, and the owner ruled on 2026-11-21 that such comparisons stay
+out of Lean; it lives in `computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py`
+and its witness.
 
 `§UniversalLimitCrossCheck` at the foot of the file adds the external check that
 the framing above needs: the field's own parameter-free four-body answer
@@ -148,23 +148,6 @@ theorem below_tjon_of_mu4_neg {μ₂ μ₃ μ₄ : R} (h : μ₄ < 0) :
 
 end Sign
 
-section NumericCertification
-
-/-- **The GAP-9 magnitude claim, certified.** The corpus target `μ₄ = −4.591`
-in units of `B(D) = 2.224566 MeV` is `10.213 MeV`, which exceeds `34 ×` the
-N³LO four-nucleon estimate of `0.300 MeV`. Over `ℝ`, as a numeric statement must
-be; this is a certification of the probe's arithmetic, not a structural theorem. -/
--- Ref: [jurgenson2009srg] https://doi.org/10.1103/PhysRevLett.103.082501
-theorem mu4_target_exceeds_n3lo_bound :
-    (34 : ℝ) * 0.300 < 4.591 * 2.224566 := by norm_num
-
-/-- The same target as a fraction of `B(⁴He) = 28.295662 MeV`: it exceeds `35 %`
-of the total binding energy — three orders above the `~1 %` the N³LO four-nucleon
-force is estimated to supply. -/
-theorem mu4_target_exceeds_35_percent_of_B4He :
-    (0.35 : ℝ) * 28.295662 < 4.591 * 2.224566 := by norm_num
-
-end NumericCertification
 
 
 section SignBlindness
