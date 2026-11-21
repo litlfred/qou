@@ -11,6 +11,7 @@ export default proposition({
   cites: [
     "faddeev1995",
     "faddeev1994",
+    "faddeev-kashaev-volkov2000",
   ],
   tags: [
     "faddeev",

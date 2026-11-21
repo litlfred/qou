@@ -4,13 +4,19 @@ import QOU.MathlibExt.QIntegerCanonical
 /-!
 # QOU.BraidKnot.AJTrefoil
 
-**The AJ conjecture at the QOU electron knot (trefoil), stated concretely.**
+**The AJ conjecture at the trefoil, stated concretely.** (The trefoil is the
+*backup* electron candidate: by the owner ruling of 2026-11-21 the electron is
+σ₀σ₁σ₀ ∈ B₃ with Hopf-link closure — `docs/coordination/owner-rulings.md`.)
 
 Companion to `QOU.BraidKnot.AJFigureEight`, completing the AJ statement
 layer for the QOU knot set ("do the same for the trefoil", bean `3eeq`;
 audit: `docs/audits/2026-07-03-aj-conjecture-dialog-assessment.md`
 §"Prove AJ in QOU, fully").  AJ for the trefoil is literature-established
-(two-bridge knots — Lê 2006; Ref: [garoufalidis2004] for the statement);
+(two-bridge knots — Lê 2006; Ref: [garoufalidis2004] for the statement).
+The *strong* AJ conjecture (Sikora's form, on the σ-invariant part of the
+recurrence ideal) is recorded as confirmed for the trefoil (Sikora) and for
+all torus knots (Tran) in Ref: [tran2014] §0.3, whose Thm 1 extends it to
+most cables of torus knots;
 the corpus-side reconstruction + verification is
 `computations/aj_trefoil_operator_construct_verify.py` (witness
 `aj-trefoil-operator-construct-verify.witness.json`): the tower is the
@@ -108,7 +114,9 @@ def trUnit (M : K) : K := (1 - M ^ 2) / M ^ 10
 
 /-- **Strong AJ for the trefoil (§3b class; literature theorem).**
     Fields mirror `StrongAJFigureEight`, at order 1, against the concrete
-    Rosso–Jones tower (parameterized by `w`, `q = w⁴`). -/
+    Rosso–Jones tower (parameterized by `w`, `q = w⁴`).
+    Ref: [tran2014] §0.3 (strong AJ confirmed for the trefoil, Sikora, and
+    all torus knots, Tran); Ref: [garoufalidis2004] (the ordinary AJ form). -/
 class StrongAJTrefoil (K : Type*) [Field K] where
   /-- The annihilating operator. -/
   op : QDifferenceOperator K

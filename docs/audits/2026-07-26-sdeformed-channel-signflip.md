@@ -20,8 +20,9 @@ New Lean file
 sorry-free**.
 
 **The literature object.** The generalized volume conjecture for `4₁` is a
-theorem (Gukov 2003; H. Murakami; Ohtsuki 2016; Murakami–Yokota):
-`J_N(4₁; e^{(2πi+u)/N}) → 𝔙(u) = Vol(u) + i·CS(u)`, `u` = log meridian holonomy.
+theorem (Gukov 2003; H. Murakami; Ohtsuki 2016; Murakami–Yokota; citable
+restatement [`murakami2006`] §1, which states it for `r` near 1, i.e. small `u`):
+the limit `H(u) = (u + 2πi)·lim_N log J_N(4₁; e^{(u+2πi)/N})/N` exists for `u` near 0 and gives the complex volume `𝔙(u) = Vol(u) + i·CS(u)` of the `u`-deformed structure (up to the correction terms of [`murakami2006`] §2), `u` = log meridian holonomy. *(Corrected 2026-11-21: this line previously wrote `J_N → 𝔙(u)`, dropping the `log`/`N` and the small-`u` scope; finding F2 of `2026-11-21-expo-cite-xcheck-findings.md`.)*
 Its Neumann–Zagier leading term is fixed by the figure-eight **cusp modulus** —
 the leading longitude coefficient
 

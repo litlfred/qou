@@ -8,7 +8,7 @@ Every entry carries a **methodology tag** recording its derivation method.
 
 | Tag | Definition | Examples |
 |---|---|---|
-| `principled-derivation` | Knot is the closure of an explicit $\sigma$-braid word in $H_{n_0}(q_0)$ from [Confined particle](#def:confined-particle); $\mathrm{Vol}_{\mathrm{hyp}}$ computed at $\geq 50$ decimal digits via `hp_volume_of_link_closure(braid_word, digits=50)`. | electron $\sigma_1^3$ $\to$ $3_1$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ $\to$ $\mathcal{B}_3$. |
+| `principled-derivation` | Knot is the closure of an explicit $\sigma$-braid word in $H_{n_0}(q_0)$ from [Confined particle](#def:confined-particle); $\mathrm{Vol}_{\mathrm{hyp}}$ computed at $\geq 50$ decimal digits via `hp_volume_of_link_closure(braid_word, digits=50)`. | electron $\sigma_0\sigma_1\sigma_0$ $\to$ Hopf link $L_H$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ $\to$ $\mathcal{B}_3$. |
 | `principled-gb-nf` | Trivial-NF entries: a single strand (unknot $0_1$) or the pure identity $\mathbf{1}$. | neutrino ($0_1$), quark; the bare photon (identity $\mathbf{1}$, not the unknot). |
 | `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed. **⚠ This tier is AME-inverted**: the knot was chosen as the one whose volume is closest to $B_\mathrm{AME}/\rho$, which is a form of AME-driven fitting — so binding figures quoted from these volumes are **circular, not predictions**. | ${}^2$H = $6_2$, ${}^{3}$H = $8_{11}$, ${}^{3}$He = $L_{6a4}$. |
 | `magic-A-formula` | Algebraic shell-closure formula $A \cdot 8G$ for double-magic light nuclei; no single hyperbolic knot. | ${}^{4}$He. |
@@ -46,7 +46,7 @@ The following closures appear in the atlas, providing the braid word and its clo
 
 ### $\widehat{\sigma_1^3}$ in $B_2$ — the **trefoil $3_1 = T_{2, 3}$**
 
-Word: $\sigma_1^3$. Closure: the **trefoil knot** ($T_{2, 3}$, left-handed, or simplest nontrivial prime knot). Used for: the **electron** ($e^-$), and as the nucleon binding factor in $H_3$. Hyperbolic volume: $0$ (torus knot).
+Word: $\sigma_1^3$. Closure: the **trefoil knot** ($T_{2, 3}$, left-handed, or simplest nontrivial prime knot). Used for: the backup reading of the electron ($e^-$; the ruled electron is $\sigma_0\sigma_1\sigma_0$, below), and as the nucleon binding factor in $H_3$. Hyperbolic volume: $0$ (torus knot).
 
 ### $\widehat{(\sigma_1 \sigma_2^{-1})^3}$ in $B_3$ — **Borromean rings $\mathcal{B}_3$**
 
@@ -105,11 +105,11 @@ This inventory lists hyperbolic-knot identifications and their methodology tags.
 
 ### $\ell = 1$ — single-nucleon / lepton
 
-**Electron $e^-$** (trefoil)
+**Electron $e^-$** (Hopf-link closure)
 
 | Row | Content |
 |--:|---|
-| Braid (NF) | $T_w = \sigma_1^3 \in H_2(q_0)$. Closure $\widehat{T_w} = T_{2, 3} = 3_1$ (trefoil). |
+| Braid (NF) | $T_w = \sigma_0\sigma_1\sigma_0 \in H_3(q_0)$ ($\sigma_1\sigma_2\sigma_1$ in the $1$-based labels of the gallery above). Closure $\widehat{T_w} = L_H$, the Hopf link. Backup reading: $\sigma_1^3 \in H_2(q_0)$, closure the trefoil $3_1$. |
 | Prediction | $m_e = 0.51099895$ MeV (calibration anchor; CODATA exact). |
 
 **Proton $\mathfrak{p}$**
@@ -237,9 +237,9 @@ forms differ by $h\delta/4 \approx 7.190 \times 10^{-5}$ at the substrate anchor
 
 | Closure | Braid word | Application |
 |---|---|---|
-| Hopf link $L_H$ | $\sigma_1^2$ | photon polarisation pair |
+| Hopf link $L_H$ | $\sigma_1^2$; also the closure of $\sigma_0\sigma_1\sigma_0 \in B_3$ | photon polarisation pair; electron $e^-$ |
 | Borromean baryon $\mathcal{B}_3$ | $(\sigma_1 \sigma_2^{-1})^3$ | proton / neutron |
-| Trefoil $3_1$ | $\sigma_1^3$ | electron |
+| Trefoil $3_1$ | $\sigma_1^3$ | electron (backup reading) |
 | Figure-eight $4_1$ | $(\sigma_1 \sigma_2^{-1})^2$ | (notation, not currently used for matter) |
 | Connected sum $K \mathbin{\#} K'$ | concatenation | composite atoms (recursive) |
 
