@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T06:49:46Z
+updated_at: 2026-11-21T06:59:28Z
 parent: qou-10v9
 ---
 
@@ -4399,7 +4399,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T12:00:00Z
+updated_at: 2026-11-21T06:59:28Z
 parent: qou-10v9
 ---
 
@@ -8904,3 +8904,12 @@ Pre-registered (`computations/probes/qbeta_yukawa_strand_order/PREREGISTRATION.m
 **2026-11-21 — lepton two-term DERIVED from Lagrangian + non-abelian Stokes (PR #8743, owner: "Do the same for the lepton").** Pre-reg e4ad92f18d. The Stokes step carries the matter (QED) charge insertion round the closed boundary word, so it must be carried through EVERY crossing with each strand's charge moving with the strand. That is the full braid group on all strands with species carried, not either #8707 reading. Lean `QOU.QBeta.LeptonTwoTermStokesCovariance` (24 thms, generic Field, sorry-free, lean-direct exit 0). (1) One crossing: α₁Q₁²+α₂Q₂²+βQ₁Q₂ is carried ⇔ h·((2α₁−β)y₁−(2α₂−β)y₂)=0 (`quad_carry_iff`), and a spectator strand forces uniform pair weights (`pairWeight_uniform`). (2) Pairs-only (16:44 object) is carried at quark–quark crossings and NOT at quark–lepton ones (`pairOnly_quark_lepton_not_carried`; probe 0/6); scope (b) within species-weighted quadratic insertions. (3) The carried family is (β/2)Q_tot²+κΣQ²/y. The nucleon ruling forces κ=−βy_q/2, so the lepton insertion is all pairs + (2/3)Q_ℓ² (`lepton_self_weight_forced`, `natural_family_lepton`). It is a function of T³_tot and the species content (`natVal_eq_totals`), hence scalar on every W_m: connected two-term ≡ 0 on every word, and n⊗ν = p⊗e⁻ = −1/3 (`natural_beta_split_zero`). (4) A charge-0 neutral doublet is inadmissible (`singleCharge_not_carried`). Probe 15/15: scored two-term = one-term exactly on all 91 route quantities (P1/P4, P2 A/D, N2; route L moves 0). The derived two-term contributes NOTHING to Q_β. #8707's H_N non-zeros come from projecting a positional charge the lepton strand does not carry. Premise L (lepton = braided strand) is still undecided, but L′ also gives 0. Not identified with Q_β. Bean stays todo (rule 13a). Audit docs/audits/2026-11-21-lepton-two-term-from-lagrangian-stokes.md.
 
 2026-11-21T06:50Z — CORRECTION of my 05:10Z note, part (2). Main ALREADY scores Q_beta, m_n, Delta_pn on the two-term trace (owner ruling 2026-11-20 "Put two term in scorecards and ALL compute"), with the ruled covariant all-pairs insertion whose connected part is exactly 0 on V^3. So the two-term score = Cartan term alone = 0.3254 MeV (-58.4 %). The raw static all-pairs term (-0.0565 MeV -> 0.2689 MeV, -65.6 %) is a labelled unscored row. My claim "the matter term is not included" was wrong; fixed in PR #8754 (note + Lean docstring), correction posted to the 19 sibling PRs. Open owner question is now only: raw (static) vs connected all-pairs.
+
+**2026-11-21 — which map is parity (owner: "Settle which map is parity"; PR #8742, branch `claude/pair-word-derivation-context-2026-11-21`).** Lean `QOU/QBeta/ParityMapCandidates.lean`, 16 declarations, sorry-free, lean-direct exit 0. Exact probe `computations/probes/pair_word_brief/parity_map_probe.py`, 33/33 checks.
+- No letter map is parity P. D-H5 = D (2026-11-15) stands. Under the RULED left line (eigenvalue modulus > 1), bar (`σ ↦ σ⁻¹`, `q ↦ q⁻¹`) and `ι` (`σ ↦ −σ⁻¹`) exchange the left and right lines, while `neg` (`σ ↦ −σ`) keeps them (`neg_leftLine`). This changes the helicity column of the D-H5 table, which took `P₊` as helicity.
+- Under reading R1 (`q ↦ q⁻¹` antilinear) the assignment is CP = `ι`, T = `neg`, CPT = bar, a closed Klein group. Under reading R2 the assignment degenerates. Which reading holds is a premise. `neg` loses P's profile, which bears on bean `qou-hlxp`.
+- `neg` fixes `V` (`neg_vertex`). So a P argument cannot force the mirror vertices into the grammar. `ι` and bar send `V ↦ V̄`.
+- `V̄ = (σ₁σ₀)V(σ₁σ₀)⁻¹` (`mirror_conj`). So `V̄ᵏ` is conjugate to `Vᵏ`, and every trace agrees on them (`trace_mirror_pow`). The V-only nucleon set is therefore CPT-closed up to conjugacy. This is proved only for powers of a single vertex; the multi-index β⁻ words are not covered.
+- `ι` moves `z_D` to `h − z_D = −z_D(1/q)` and does not descend to the Jimbo image (`iota_not_descend`, with its hypotheses checked exactly in the probe). The corpus's P (braid mirror at fixed `q`) fails the trace-preservation component of `conj:cpt-d6-d7-d8-closure` at `n = 2`. This is reported only; the conjecture was not edited.
+- Recommendation (judgement): (d)-out, with the reason recorded as closure-level CPT. The brief section "Which map is parity" gives the six-part frame. Still open: reading R1 vs R2, and conjugacy for multi-index words.
+- Correction: the brief first said that the lemma `ι(V) = V̄` was unwritten (it is `ChiralityPairBit.iota_vertex`) and that the corpus had not ruled on P (it had: D-H5). Both are corrected in the brief. Neither claim appears in the PR body or in this bean.
