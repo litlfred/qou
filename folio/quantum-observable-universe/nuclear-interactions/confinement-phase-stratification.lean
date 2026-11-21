@@ -18,12 +18,13 @@ deconfinement or regime switches.
 per-phase invariants `mu` / `sigmaF` are `opaque` (their closed form
 is the numerical SDP solution at each `q`, not available in Lean).
 The two stratification claims — openness of the locus and local
-constancy of `mu` on connected components — are therefore stated as
-honest `sorry` theorems (disposition B): establishing them requires
-the Slater-strict SDP feasibility topology and continuity of the
-constraint matrices in `q`, neither formalised here.  The headline
-theorem derives from the two sub-theorems, so its content is exactly
-their two open obligations.
+constancy of `mu` on connected components — are carried as the two
+fields of `ConfinementPhaseStratificationContext`, and the theorems below
+return those fields.  They are not proved: with `confined` and `mu`
+opaque, neither can be.  Establishing them requires the Slater-strict SDP
+feasibility topology and continuity of the constraint matrices in `q`,
+neither formalised here.  (Until 2026-11-21 this paragraph said they were
+"honest `sorry` theorems"; there is no `sorry`, only the projection.)
 
 LaTeX: `\label{prop:confinement-phase-stratification}`
 -/
@@ -74,8 +75,8 @@ theorem ConfinementPhaseStratification_open (P : ConfinedParticleTy) [ctx : Conf
 /-- **Phase stratification, claim (3) — local constancy of μ.**
     On each connected component of `Ω(P)`, binding multiplicity is constant.
     
-    This theorem requires massive infrastructure (Slater-strict SDP feasibility
-    topology and continuity of constraint matrices) and is left as a sorry. -/
+    This needs Slater-strict SDP feasibility topology and continuity of the
+    constraint matrices; it is not proved, and returns the class field. -/
 -- Ref: [leitner2026] prop:confinement-phase-stratification
 theorem ConfinementPhaseStratification_mu_constant
     (P : ConfinedParticleTy) [ctx : ConfinementPhaseStratificationContext P] (C : Set ℝ)
