@@ -60,11 +60,15 @@ only. "Closure of `β_Bor` is not the unlink" also needs a link invariant
   shortest length is 6 and every length-6 solution is conjugate to `β_Bor`. It does
   not enumerate `B₃` conjugacy classes, and it does not say a longer word is never
   conjugate to `β_Bor` (many are).
-* That `χ` separates `β_Bor`'s conjugacy class. The probe
-  `computations/probes/borromean_word_forcing/` (exact Laurent arithmetic,
-  pre-registered) finds every writhe-0 word of length `≤ 16` with `χ = χ(β_Bor)`
-  conjugate to `β_Bor` (Burau faithfulness on `B₃`, Magnus–Peluso, cited), and no word
-  with `tr_M = −tr_M(β_Bor)`. This is a finite measurement, not a theorem.
+* That `χ` separates `β_Bor`'s conjugacy class, **in Lean**. The companion
+  `computations/probes/borromean_word_forcing/result.md` gives an all-length argument.
+  It reduces to SL(2,ℤ) via Burau at `t = −1`, and it cites two facts: that this map is
+  onto SL(2,ℤ) with kernel `⟨Δ⁴⟩`, and that hyperbolic classes are cyclic positive
+  `R/L` words. A finite list of the 8 trace-18 classes then shows that a writhe-0 word
+  with `χ = χ(β_Bor)` is conjugate to `β_Bor` at any length. Brute-force searches to
+  length 16 agree. Neither the two cited facts nor the class list is formalised here.
+  The same probe shows the general statement is false: a braid and its reverse share
+  `χ`, and `σ₀σ₁⁻¹σ₀²σ₁⁻²` is not conjugate to its reverse.
 * **Brunnian alone does not force `β_Bor`.** The same probe finds twenty pure,
   zero-linking words of length 10 with a different character (other Brunnian
   closed three-braids), and more at length 12. What singles out `β_Bor` is
