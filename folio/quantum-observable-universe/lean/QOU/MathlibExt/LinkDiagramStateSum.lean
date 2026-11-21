@@ -24,9 +24,8 @@ the tensors into invariance of the value under the moves of `LinkDiagramCode`, a
 writhe-normalised value is a `ReidemeisterEquiv` invariant for every model satisfying them
 (`normValue_eq`). The identity model `idModel` satisfies them.
 
-**Not yet here.** The quantum `sl₂` model (the R-matrix of `QuantumSl2` with `K = diag(q, q⁻¹)`)
-is not yet shown to satisfy `Model.Invariant`; until it is, no Jones-polynomial statement follows
-from this file.
+The quantum `sl₂` model, with `K = diag(q, q⁻¹)`, is an instance: see `LinkDiagramSl2`. No
+Jones-polynomial statement follows from this file alone; that needs the value of a braid closure.
 
 -- Ref: [kauffman1987] Kauffman, "State models and the Jones polynomial", Topology 26 (1987)
 -- Ref: [turaev1988] Turaev, "The Yang–Baxter equation and invariants of links", Invent. Math. 92
