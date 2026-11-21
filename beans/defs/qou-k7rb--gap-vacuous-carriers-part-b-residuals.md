@@ -27,3 +27,10 @@ PR #8690 tied part-B carriers to corpus definitions where they exist. Open:
 7. **DiscreteVortexSpectrumContext** — main's #8180 repair (qou-klr1) leaves qInt a free field and
    classical_limit vacuous for q ≠ 1. Replace qInt with QInteger.qIntBalCl, require q > 1.
 8. docs/audits/lean-vacuity-review-ledger.json entries for the changed files are sha-stale.
+
+## 2026-11-21T04:33:19Z — which trace (owner prompt, PR #8726)
+
+Items 3 and 5 were worded around a single trace. The corpus's mass functional is the two-term
+Lagrangian trace tau(L) = tau(D^2) + tau(psi* D psi) (qou-7xl8), with tau the Jimbo quantum
+trace = convention-D Markov trace. A real repair of TopologicalMassDecomposition and
+TrefoilElectronMassConj must state both terms; the matter term for the electron is not formalised.
