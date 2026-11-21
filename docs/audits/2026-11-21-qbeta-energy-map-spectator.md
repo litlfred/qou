@@ -555,3 +555,36 @@ is Σμ_a with weight exactly 1. Consistency therefore requires the crossing rul
 So under route T, §19's mismatch stands: premise (Q) plus the #8923 weights are not one Gibbs
 energy at q ≠ 1. The §20 "log map up to scale" escape is closed, because the scale is not free.
 Scope (a): this does not say which of (Q) or the #8923 weights changes.
+
+## 23. Can the Markov trace supply crossing weights that sum to 1? (prereg Addendum 13; owner "1")
+
+Lean, `QOU/QBeta/CrossingTraceWeights.lean`, lean-direct exit 0, no `sorry`, standard axioms only.
+Setup: H₂(q), σ² = hσ + 1, h = q − q⁻¹, trace τ(1) = 1, τ(σ) = z_D = q³/(q² + 1), so
+τ(σ⁻¹) = τ(σ − h) = z_D − h.
+
+Generic field:
+- `trSigma_eq`, `trSigmaInv_eq`: τ(σ) = q²/[2]_q and τ(σ⁻¹) = q⁻²/[2]_q.
+- `pairSkein_eq_trace`: #8923's pair-Skein mass is exactly τ(σ)μ_a + τ(σ⁻¹)μ_b. **So the #8923
+  weights are trace values, not a choice.** What remains a reading is only which strand takes τ(σ).
+- `crossing_sum_eq`: τ(σ) + τ(σ⁻¹) = (q² + q⁻²)/[2]_q, the §19 factor. It is τ(σ + σ⁻¹), not τ(1).
+- `channel_y2_eq`, `channel_y11_eq`, `channel_sum`, `channel_trSigma`: the channel weights are
+  y₍₂₎ = [3]_q/[2]_q² and y₍₁,₁₎ = 1/[2]_q². They sum to τ(1) = 1 and reproduce τ(σ) = q·y₍₂₎ − q⁻¹·y₍₁,₁₎.
+
+Real q > 0, q ≠ 1:
+- `crossing_sum_ne_one_D`: τ(σ) + τ(σ⁻¹) ≠ 1 at z_D.
+- `crossing_sum_ne_one_q`: at the other admissible root z = q the sum is [2]_q > 2, so also ≠ 1.
+
+At the proton q₀ (rendering only, not in any proof): τ(σ) ≈ 0.6126880, τ(σ⁻¹) ≈ 0.4036277, sum
+≈ 1.0163158; y₍₂₎ ≈ 0.7527021, y₍₁,₁₎ ≈ 0.2472979.
+
+**Consequence (scope a).** The trace gives two kinds of weight, and neither does both jobs.
+- On the crossing elements σ, σ⁻¹ it gives the #8923 weights. They distinguish over from under, but
+  they sum to τ(σ + σ⁻¹), which is 1 only at q = 1, at both admissible Markov parameters.
+- On a partition of unity (the two channel idempotents) it gives weights that sum to 1. But each
+  channel is symmetric in the two strands, so these weights cannot say which strand takes more.
+
+So the trace does not supply per-crossing weights with W = 1 that also tell the strands apart. Under
+route T, then, at least one of these three must change: (Q); one temperature shared by quark and
+nucleon energies; or reading the nucleon energy as a linear sum of crossing trace values. This result
+does not choose among them. Dividing the crossing weights by τ(σ + σ⁻¹) would force W = 1, but that
+divisor is picked to meet the constraint, so it is not a derivation.
