@@ -10,11 +10,6 @@ $$
 $$
 where $\tau$ is the flip of tensor factors.
 
-For the tensor algebra of a Lie algebra $\mathfrak{g}$ with the diagonal
-comultiplication, the $\pi \otimes \pi$ term vanishes on $\mathfrak{g}$ and the
-condition reduces to the usual multiplicativity of a Lie bialgebra
-(\cite{leitner2006}, Remark 1.12).
-
 **Consequence** (\cite{leitner2006}, Proposition 1.13). If each $A_i$ carries
 an algebra map $\Delta_i \colon A_i \to A_i \otimes A_i$ and the induced
 $\Delta$ on $T$ is strongly multiplicative, then $\Delta$ descends to an

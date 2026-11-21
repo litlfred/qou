@@ -29,6 +29,7 @@ export default chapter({
       blocks: [
         "skewed-poisson-structure",
         "strong-multiplicativity",
+        "strong-multiplicativity-poisson-lie",
       ],
     }),
 
