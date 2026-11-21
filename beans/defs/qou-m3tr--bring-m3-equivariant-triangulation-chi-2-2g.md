@@ -9,7 +9,7 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-21T05:00:00Z
+updated_at: 2026-11-21T05:40:00Z
 parent: qou-qhcr
 ---
 **For agy.** Written 2026-11-18 by the Bring-foundations thread at ofri's request ("bean up for agy to do: C + A"). Parent bean `qou-qhcr` must never be closed.
@@ -119,3 +119,15 @@ Open:
 - `exists_genus_nonneg`: chi = 2 - 2g with g : N.
 
 Combinatorial M3 is now steps 1+2. **Open:** step 3, triangulation of a compact Riemann surface (Mathlib gap).
+
+## 2026-11-21 — W9: step 3 interface, PR #8719
+
+#8715 (Ree / g >= 0) was merged as `52f65d5c35`.
+
+`QOU/BringsSurface/GenusFourFromEquivariantMap.lean`, sorry-free:
+- hX and hY of the capstone are derived from a connected combinatorial map with G-actions;
+- `chi_eq_neg_six_of_equivariant_map` gives chi = -6 for an A5/S5-equivariant map with cyclic stabilisers and chi in the H^1 = 2W window.
+
+**The only topological gap left in M3:** existence of a G-equivariant map (triangulation with branch points at vertices) for a compact Riemann surface with a holomorphic G-action. This is Rado plus an equivariant refinement. It is a large Mathlib gap and not attempted.
+
+Bean stays open.
