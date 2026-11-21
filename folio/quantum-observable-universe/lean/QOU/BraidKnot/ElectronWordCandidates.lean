@@ -149,6 +149,16 @@ theorem numCycles_s0cubed : numCycles (permOf [0, 0, 0]) = 2 :=
 theorem numCycles_s0s1_sq : numCycles (permOf [0, 1, 0, 1]) = 1 := by
   rw [permOf_eq]; decide
 
+/-- `L₊ = σ₀σ₁` closes in `B₃` to one component, so its closure is not the
+Hopf link (two components). Supports the Regime-II wording of
+`nuclear-operator-regimes` (closure: the unknot). -/
+theorem numCycles_Lplus : numCycles (permOf [0, 1]) = 1 := by
+  rw [permOf_eq]; decide
+
+/-- `L₋ = σ₁σ₀` closes in `B₃` to one component (twin of `numCycles_Lplus`). -/
+theorem numCycles_Lminus : numCycles (permOf [1, 0]) = 1 := by
+  rw [permOf_eq]; decide
+
 /-! ### 2. `σ₀³` is a rescaled photon -/
 
 variable {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
