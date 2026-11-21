@@ -35,6 +35,8 @@ of the symbol $\{l,m\}$ in $K_2(\mathbb{C}(Y))$
 Bloch group, so the passage from $\mathfrak{B}(q)$ to the regulator
 above is not covered by it.
 
+Two published constructions sit beside this picture, each with a limit. On the classical side, the branch ambiguity of the dilogarithm is resolved by the extended Bloch group $\widehat{\mathcal{B}}(\mathbb{C})$ of flattened shape parameters: the extended Rogers dilogarithm gives a well-defined map $R\colon\widehat{\mathcal{B}}(\mathbb{C})\to\mathbb{C}/\pi^2\mathbb{Z}$, and its composite with $H_3(\mathrm{PSL}(2,\mathbb{C});\mathbb{Z})\to\widehat{\mathcal{B}}(\mathbb{C})$ computes volume and Chern--Simons invariant together, where the ordinary Bloch group fixes the Chern--Simons part only up to an additive ambiguity \cite[\S1]{neumann2004}. On the $q$-side, for a number field $F$ Garoufalidis, Scholze, Wheeler and Zagier construct a Habiro ring of $F$ and a regulator $K_3(F)\to\mathrm{Pic}$ of that ring, whose image line bundles carry $q$-series from perturbative Chern--Simons theory as sections; this geometry disappears after $(q-1)$-completion \cite[\S1.1]{wagner2025}. Neither construction is the quantum Bloch group $\mathfrak{B}(q)$ of this paper: the first is classical, and the second lives over the Habiro ring of a number field rather than over $\widehat{\mathbb{Z}[q]}$ with the bar involution. They are recorded as the nearest literature statements of the same shape, not as cases of the claim above.
+
 The **Kashaev invariant** is the state sum version:
 $\langle K \rangle = \sum_j \prod_{\text{tetrahedra}}
 \Phi_q(x_j)^{\pm 1}$, living in the Habiro ring.  For the
