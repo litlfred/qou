@@ -37,6 +37,11 @@ evaluation of `d_q` lives downstream past the wall.
 
 -- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -- Ref: [beasleywitten2005] https://doi.org/10.4310/jdg/1143593746
+-- Ref: [rozansky1995] Prop 1.1 (Ohtsuki invariants <-> trivial-connection loop
+--      corrections, S_1 = 6 λ_CW), eq. (1.6) (Kirby–Melvin surgery sum with
+--      sin(πα/K) colour weights) and §4 (verified for lens spaces and Seifert
+--      manifolds). Documents the perturbative form of the (RT) hypothesis; it
+--      does not discharge it.
 -/
 import QOU.BraidKnot.BWVacuumRowIsHecke
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic

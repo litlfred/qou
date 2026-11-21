@@ -2,6 +2,7 @@ import { corollary } from "../../schema/builders";
 
 export default corollary({
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Electron ruling (owner, 2026-11-21): relabelled the electron from the trefoil T_{2,3} to the word sigma_0 sigma_1 sigma_0 in B_3 (closure: Hopf link). Wording only; no number moved. The factor m_e/3 is unchanged: sigma_0 sigma_1 sigma_0 has 3 letters, as the backup trefoil has 3 crossings." },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "cor:spectral-decomposition-qvalue",
