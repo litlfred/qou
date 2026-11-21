@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T11:14:56Z
-updated_at: 2026-11-21T02:29:11Z
+updated_at: 2026-11-21T04:29:34Z
 parent: qou-5vkl
 ---
 
@@ -568,3 +568,7 @@ byte-identity above, not a measurement of those two files.
 ## 2026-11-21 (PR #8697)
 
 binding-a3plus-full-theta-assembly and binding-a3plus-joint-ji-combiner re-run on the 2026-09-13 Reeb witness (y_λ unchanged, every Δθ moved). ³He volume-scaled μ₀ |rel_err| 4.9 % → 78.5 %; D 264 % → 19.6 %. Combiner read-check now reads the assembly witness live (was literal 0.7587) and passes.
+
+## 2026-11-21 owner card + #8722
+
+#8697 merged with a scope note: the A≥3 numbers are on atom_braid_word_3A (Borromean intra order, 2026-09-05) whose bond letters the 2026-11-15 γγ ruling supersedes; the old ³He 4.9 % was the grouped word. Comparison arm on the #7741 candidate (nucleon V³, bond V³, two site arms) in #8722: μ₀ |rel_err| 90.8/95.5/95.7/97.0 % (D/T/³He/⁴He) vs production 19.6/82.1/78.5/93.3 %; arms agree to 1e-4; adopts nothing. Real redo waits on #7876.
