@@ -48,12 +48,10 @@ of particles that failure can carry. Gravity itself is taken up in
 its own chapter
 ([Gravity and Spacetime Emergence](#chap:gravity-spacetime-emergence)).
 
-As Heisenberg put it, what we observe is never nature itself but
-nature exposed to our method of questioning. So the question is not what
+Heisenberg wrote that "what we observe is not nature in itself but nature exposed to our method of questioning" \cite{heisenberg1958}. So the question is not what
 the universe *is* but what its mechanics *do* — how its processes
 compose and transform. Wigner found the effectiveness of mathematics
-in describing nature "unreasonable", a gift we "neither understand
-nor deserve" \cite{wigner1960}. The approach of this paper is to take
+in describing nature "unreasonable", a "wonderful gift which we neither understand nor deserve" \cite{wigner1960}. The approach of this paper is to take
 that unreasonableness not as a mystery to be explained but as a
 principle to be *axiomatised*: the paper posits that the observable universe
 *is* the mathematical structure its own observations force, so that
