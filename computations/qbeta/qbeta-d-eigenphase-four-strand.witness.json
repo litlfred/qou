@@ -1,0 +1,138 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T13:05:38.221830+00:00",
+  "commitSha": "2bbe346b9347264e3e07f49cfd494883be89edd1",
+  "assertions": [
+    {
+      "name": "jimbo_rep_is_H4",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "sigma^2 = h sigma + 1 for all three generators and both braid relations hold exactly on (C^2)^{x4}."
+    },
+    {
+      "name": "block_split_exact",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "for every word, charpoly on #d=1 is (lam-1) x cubic (3,1), and charpoly on #d=2 is charpoly(#d=1) x quadratic (2,2), exactly in Q(q)."
+    },
+    {
+      "name": "minimal_word_V1cubed_is_elliptic",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the minimal G^CC^R3 word V1^3 * beta_Bor has unit-circle spectrum on (3,1) and (2,2): real phase, no cosh lever (as on three strands)."
+    },
+    {
+      "name": "non_minimal_words_have_an_imaginary_phase_on_31",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "['V0V1V0V1', 'V1V0V1V0'] have REAL POSITIVE spectrum on the (3,1) block: the first imaginary eigenphase found on any gamma-gamma-admitted word. Their (2,2) block stays on the unit circle."
+    },
+    {
+      "name": "imaginary_phase_still_too_small",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "largest |a| = |log lambda| on those blocks = 0.410395029642253 (cosh a = 1.08540064039); the scored cell needs a = 1.52389720716 (F = 2.403970026): 3.71324x short. And these words are not the minimal one, so G^CC^R3 + minimality does not admit them. Diagnostic only."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "qbeta-d-eigenphase-four-strand",
+  "scriptFile": "qbeta_d_eigenphase_four_strand_probe.py",
+  "scriptHash": "bb157799fafe",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_eigenphase_four_strand_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_eigenphase_four_strand_probe.py"
+  },
+  "description": "Eigenphase type (real vs imaginary) of the G^CC^R3 four-strand process words X * beta_Bor on the H_4 blocks (3,1) and (2,2). Candidate list from docs/audits/2026-11-21-beta-pair-creation-word-proposal.md; nothing selected or scored.",
+  "beans": [
+    "qou-cds1",
+    "qou-pdix",
+    "qou-99qc"
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "words": [
+    {
+      "word": "V1^3 * beta_Bor",
+      "split_exact": true,
+      "charpoly_31": "(lam - 1)*(lam**2*q**8 + lam*q**16 - 2*lam*q**14 + 2*lam*q**10 - 4*lam*q**8 + 2*lam*q**6 - 2*lam*q**2 + lam + q**8)/q**8",
+      "charpoly_22": "(lam - 1)**2",
+      "roots_31": [
+        "1.0",
+        "(0.992106777766917892951671238358 - 0.125395938965117177402343930992j)",
+        "(0.992106777766917892951671238358 + 0.125395938965117177402343930992j)"
+      ],
+      "type_31": "REAL phase (unit circle)",
+      "roots_22": [
+        "1.0",
+        "1.0"
+      ],
+      "type_22": "REAL phase (unit circle)"
+    },
+    {
+      "word": "V0V1V0V1 * beta_Bor",
+      "split_exact": true,
+      "charpoly_31": "-(-lam**3*q**10 - lam**2*q**18 + 3*lam**2*q**16 - 2*lam**2*q**14 + 5*lam**2*q**10 - 6*lam**2*q**8 + 6*lam**2*q**6 - 4*lam**2*q**4 + 3*lam**2*q**2 - lam**2 + lam*q**20 - 3*lam*q**18 + 4*lam*q**16 - 6*lam*q**14 + 6*lam*q**12 - 5*lam*q**10 + 2*lam*q**6 - 3*lam*q**4 + lam*q**2 + q**10)/q**10",
+      "charpoly_22": "(lam**2*q**6 + lam*q**12 - 3*lam*q**10 + 3*lam*q**8 - 4*lam*q**6 + 3*lam*q**4 - 3*lam*q**2 + lam + q**6)/q**6",
+      "roots_31": [
+        "0.677259686116996779074683716144",
+        "0.979518128700184955558263563993",
+        "1.50741314038719531823012427101"
+      ],
+      "type_31": "IMAGINARY phase (real positive spectrum)",
+      "roots_22": [
+        "(0.997092906489982043364099684009 - 0.0761953793045216407134599823487j)",
+        "(0.997092906489982043364099684009 + 0.0761953793045216407134599823487j)"
+      ],
+      "type_22": "REAL phase (unit circle)"
+    },
+    {
+      "word": "V1V0V1V0 * beta_Bor",
+      "split_exact": true,
+      "charpoly_31": "-(-lam**3*q**10 - lam**2*q**18 + 3*lam**2*q**16 - 2*lam**2*q**14 + 5*lam**2*q**10 - 6*lam**2*q**8 + 6*lam**2*q**6 - 4*lam**2*q**4 + 3*lam**2*q**2 - lam**2 + lam*q**20 - 3*lam*q**18 + 4*lam*q**16 - 6*lam*q**14 + 6*lam*q**12 - 5*lam*q**10 + 2*lam*q**6 - 3*lam*q**4 + lam*q**2 + q**10)/q**10",
+      "charpoly_22": "(lam**2*q**6 + lam*q**12 - 3*lam*q**10 + 3*lam*q**8 - 4*lam*q**6 + 3*lam*q**4 - 3*lam*q**2 + lam + q**6)/q**6",
+      "roots_31": [
+        "0.677259686116996779074683716144",
+        "0.979518128700184955558263563993",
+        "1.50741314038719531823012427101"
+      ],
+      "type_31": "IMAGINARY phase (real positive spectrum)",
+      "roots_22": [
+        "(0.997092906489982043364099684009 - 0.0761953793045216407134599823487j)",
+        "(0.997092906489982043364099684009 + 0.0761953793045216407134599823487j)"
+      ],
+      "type_22": "REAL phase (unit circle)"
+    }
+  ],
+  "a_max": "0.410395029642252770845889946084",
+  "a_needed": "1.52389720716359829033765579748",
+  "F_required": "2.4039700256262867515",
+  "scope": "(a): these three words; no claim about other four-strand words."
+}
