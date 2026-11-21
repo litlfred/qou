@@ -84,12 +84,13 @@ def load_atom_braids() -> dict:
         _proton_braid_word,
         _neutron_braid_word,
         he4_compositional_braids,
+        shift_word,
     )
     p = _proton_braid_word()
     n = _neutron_braid_word()
-    D = list(p) + [3] + [g + 3 for g in n]
-    T = list(p) + [3] + [g + 3 for g in n] + [-6] + [g + 6 for g in n]
-    He3 = list(p) + [3] + [g + 3 for g in p] + [6] + [g + 6 for g in n]
+    D = list(p) + [3] + shift_word(n, 3)
+    T = list(p) + [3] + shift_word(n, 3) + [-6] + shift_word(n, 6)
+    He3 = list(p) + [3] + shift_word(p, 3) + [6] + shift_word(n, 6)
     He4 = he4_compositional_braids()["canonical_pppnnn"][0]
     return {
         "D":   (D,   6),
