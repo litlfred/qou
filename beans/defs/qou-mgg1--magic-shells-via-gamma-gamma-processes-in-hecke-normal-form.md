@@ -20,3 +20,6 @@ phi = (phi0, phi1, phi01) is NOT derived. It is carried as a variable; binding i
 
 ## 2026-11-21 — first results (PR #8710, merged 94459335c9)
 Complexity smooth (W_k 6*4^(k-2) terms, O_k 2^k+4), no closure feature to k=7. Bare atom positivity: binds Z=1,2, fails Z=3..10 only in (Z-1,2) block (first exists at Z=3) -> block-appearance artifact, not a closure signal. No change at Z=10. SDP-value test awaiting a per-element definition (owner). Next: owner choices on model variants.
+
+## 2026-11-21 — phi region + margin (PR #8718, merged 3d0525196f)
+Binding region never vanishes/reopens; parity alternation (odd Z 10-13/27, even 8/27), no Z=2/Z=10 feature; margins smooth. Scope (a) for this capture rule. Next: owner choice of capture-rule variant.
