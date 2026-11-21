@@ -187,3 +187,31 @@ All lean-direct exit 0, no warnings, axioms `propext, Classical.choice, Quot.sou
    (`isFormB_existsUnique_small`): for `T > 0`, `q > 0` and `2·c·h² ≤ T + 2/(3π)`,
    exactly one `α ∈ (0, 1/(T + 2/(3π))]`; any other positive root has `c·h²·α > 1`
    (`formB_large_root`).
+
+## 9. Why the photon carries `(1, 0, −1)`: two findings and one negative (owner picked items 1 and 2)
+
+The open question from §8 item 1 is where the Markov weights `(1, 0, −1)` on the
+blocks `(3), (2,1), (1³)` of `H₃(q)` come from. Two Lean results and one exact probe.
+
+**Finding A, the chiral vertex is invisible to the supertrace**
+(`QOU/AlphaEM/PhotonBlockCharacters.lean`, `photon_supertrace`). With the ruled
+photon `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹`, `σ₀σ₁⁻¹` acts as `1` on both
+one-dimensional blocks, so `χ_(3)(γ) − χ_(1³)(γ) = (φ₀ + φ₁)·[2]_q` with no `φ₀₁`.
+
+**Finding B, γ's own characters are proportional to `(1, 0, −1)` only without
+the chiral vertex** (`photon_chars_supertrace_iff`). For `q ≠ 0` and
+`q² + 1 + q⁻² ≠ 0`: `χ_(3) + χ_(1³) = 0` and `χ_(2,1) = 0` iff `φ₀₁ = 0` and
+`(φ₀ + φ₁)(q − q⁻¹) = −2`. So the photon, read as a functional through its own
+characters, does not supply the weights while it carries its fourth term. Scope (a).
+
+**Negative, the `U_q(gl(1|1))` supertrace** (exact probe
+`computations/alpha_em/photon_gl11_supertrace_weights_probe.py`, 8/8). Hecke, braid
+and the Markov twist `μ = 1` check. The full supertrace on `V^{⊗3}` vanishes on all
+of `H₃(q)`. The cut supertrace (one strand open) has weights
+`q²/[3]_q · (1, −1, 1)`, the Alexander normalisation, and gives
+`q²/[3]_q (q¹⁰ + 1 + q⁻¹⁰)` on `(σ₁σ₂)⁵`, not `(q − q⁻¹)[10]_q`. Scope (a): this
+representation alone. The sign alternates on the hook, so it does not zero `(2,1)`.
+
+Lean: lean-direct exit 0, axioms `propext, Classical.choice, Quot.sound`. Still open:
+a construction that zeros the hook block and gives the two one-dimensional blocks
+opposite signs.
