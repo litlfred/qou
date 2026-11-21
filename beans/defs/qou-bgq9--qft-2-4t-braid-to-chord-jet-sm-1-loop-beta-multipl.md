@@ -1,11 +1,11 @@
 ---
 # qou-bgq9
-title: 'QFT-2: 4T Braid-to-Chord Jet, SM 1-Loop Beta Multiplicities (7, 19/6, -41/10), (g-2)_e Pin Audit & DIS Valence Moments'
+title: 'QFT-2 (math): 4T relations and the braid-to-chord-diagram jet (Drinfeld–Kohno / Kontsevich)'
 status: todo
 type: task
 priority: critical
 created_at: 2026-11-19T16:48:44Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-21T12:15:00Z
 parent: qou-3fjn
 ---
 
@@ -21,3 +21,9 @@ Re-checked on main: the Lean/probe files this bean's resolution text names are a
 ## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
 
 Superseded basis found: Feynman perturbation theory relies on virtual quanta, excluded by the 2026-11-21 ruling (no virtual photons), and the title's targets are CODATA/PDG comparisons. Do not work this bean on that basis; disposition on the owner card (re-scope to math-only / scrap / leave).
+
+## 2026-11-21 — RE-SCOPED to math only (owner card "Re-scope to math only", 12:09Z; issue #8810)
+
+Previous title: 'QFT-2: 4T Braid-to-Chord Jet, SM 1-Loop Beta Multiplicities (7, 19/6, -41/10), (g-2)_e Pin Audit & DIS Valence Moments'
+
+Target: the 4T relations among chord diagrams and the associated graded of the braid group algebra (pure braids, Drinfeld–Kohno) as the target of the braid-to-chord jet. Dropped: SM 1-loop β multiplicities (defined by loops), (g−2)_e pin audit (CODATA comparison, virtual photons), DIS valence moments.

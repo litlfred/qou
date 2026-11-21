@@ -1,11 +1,11 @@
 ---
 # qou-n1ks
 title: 'QFT-6: 4-Loop MSbar QCD Running through 14 TeV, 3-Loop Heavy-Quark Decoupling & 2-Loop SM Weinberg RGE'
-status: todo
+status: scrapped
 type: task
 priority: high
 created_at: 2026-11-19T16:48:45Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-21T12:15:00Z
 parent: qou-3fjn
 ---
 
@@ -22,3 +22,7 @@ Re-checked on main: the Lean/probe files this bean's resolution text names are a
 ## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
 
 Superseded basis found: Feynman perturbation theory relies on virtual quanta, excluded by the 2026-11-21 ruling (no virtual photons), and the title's targets are CODATA/PDG comparisons. Do not work this bean on that basis; disposition on the owner card (re-scope to math-only / scrap / leave).
+
+## 2026-11-21 — RE-SCOPED to math only (owner card "Re-scope to math only", 12:09Z; issue #8810)
+
+Nothing survives the re-scope: every item is a running coupling (defined by loops) or an imported loop coefficient (van Ritbergen–Vermaseren–Larin β₀..β₃, Chetyrkin–Kniehl–Steinhauser decoupling, Machacek–Vaughn RGE). The only pure-math piece, the UV value 3/8, lives in qou-txc1. Scrapped as subsumed by qou-txc1 under the owner's re-scope choice; the Lean/probe this bean's resolution names never existed on main.

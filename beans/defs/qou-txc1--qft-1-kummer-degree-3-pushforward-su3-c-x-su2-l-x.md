@@ -1,11 +1,11 @@
 ---
 # qou-txc1
-title: 'QFT-1: Kummer Degree-3 Pushforward SU(3)_c x SU(2)_L x U(1)_Y / Z_6 & UV sin^2(theta_W) = 3/8'
+title: 'QFT-1 (math): S(U(3)×U(2)) ≅ (SU(3)×SU(2)×U(1))/Z₆ and sin²θ_W = 3/8 as a hypercharge trace ratio; Bring pushforward producing the embedding as a conjecture'
 status: todo
 type: task
 priority: high
 created_at: 2026-11-19T16:48:44Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-21T12:15:00Z
 parent: qou-3fjn
 ---
 
@@ -21,3 +21,9 @@ Re-checked on main: the Lean/probe files this bean's resolution text names are a
 ## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
 
 Superseded basis found: Feynman perturbation theory relies on virtual quanta, excluded by the 2026-11-21 ruling (no virtual photons), and the title's targets are CODATA/PDG comparisons. Do not work this bean on that basis; disposition on the owner card (re-scope to math-only / scrap / leave).
+
+## 2026-11-21 — RE-SCOPED to math only (owner card "Re-scope to math only", 12:09Z; issue #8810)
+
+Previous title: 'QFT-1: Kummer Degree-3 Pushforward SU(3)_c x SU(2)_L x U(1)_Y / Z_6 & UV sin^2(theta_W) = 3/8'
+
+Target: (a) the group isomorphism S(U(3)×U(2)) ≅ (SU(3)×SU(2)×U(1))/Z₆; (b) for the standard embedding in SU(5), the trace ratio Tr(T₃²)/Tr(Q²) = 3/8 on the 5̄ ⊕ 10, as representation theory. (c) 'the Kummer degree-3 pushforward on Bring's surface yields this embedding' is the QOU content and is stated as a conjecture. No running, no comparison with measured sin²θ_W.

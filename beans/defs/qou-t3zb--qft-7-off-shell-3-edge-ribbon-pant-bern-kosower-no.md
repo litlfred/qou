@@ -1,11 +1,11 @@
 ---
 # qou-t3zb
-title: 'QFT-7: Off-Shell 3-Edge Ribbon Pant / Bern-Kosower Non-Abelian Gluon Worldline Vertex V_3(T_1,T_2,T_3)'
+title: 'QFT-7 (math): su(3) structure constants — Gell-Mann Fierz completeness, Jacobi identity, total antisymmetry of f^{abc}'
 status: todo
 type: task
 priority: high
 created_at: 2026-11-19T16:48:45Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-21T12:15:00Z
 parent: qou-3fjn
 ---
 
@@ -21,3 +21,9 @@ Re-checked on main: the Lean/probe files this bean's resolution text names are a
 ## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
 
 Superseded basis found: Feynman perturbation theory relies on virtual quanta, excluded by the 2026-11-21 ruling (no virtual photons), and the title's targets are CODATA/PDG comparisons. Do not work this bean on that basis; disposition on the owner card (re-scope to math-only / scrap / leave).
+
+## 2026-11-21 — RE-SCOPED to math only (owner card "Re-scope to math only", 12:09Z; issue #8810)
+
+Previous title: 'QFT-7: Off-Shell 3-Edge Ribbon Pant / Bern-Kosower Non-Abelian Gluon Worldline Vertex V_3(T_1,T_2,T_3)'
+
+Target: Lie-algebra facts about su(3) in the Gell-Mann basis (Fierz completeness of λ^a, Jacobi for f^{abc}, S₃ antisymmetry, d^{abc} symmetry). Dropped: the off-shell Bern–Kosower gluon vertex and the Slavnov–Taylor identity as QFT objects (virtual gluons).

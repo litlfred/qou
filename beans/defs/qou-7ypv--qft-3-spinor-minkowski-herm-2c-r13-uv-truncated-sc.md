@@ -1,11 +1,11 @@
 ---
 # qou-7ypv
-title: 'QFT-3: Spinor-Minkowski Herm_2(C) ~= R^{1,3}, UV-Truncated Schwinger Propagator & Pius-Sen Cutkosky Unitarity'
+title: 'QFT-3 (math): Herm₂(ℂ) ≅ ℝ^{1,3} with det the Minkowski form; SL₂(ℂ) acts by isometries (double cover of SO⁺(1,3))'
 status: todo
 type: task
 priority: critical
 created_at: 2026-11-19T16:48:44Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-21T12:15:00Z
 parent: qou-3fjn
 ---
 
@@ -25,3 +25,9 @@ Re-checked on main: the Lean/probe files this bean's resolution text names are a
 ## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
 
 Superseded basis found: Feynman perturbation theory relies on virtual quanta, excluded by the 2026-11-21 ruling (no virtual photons), and the title's targets are CODATA/PDG comparisons. Do not work this bean on that basis; disposition on the owner card (re-scope to math-only / scrap / leave).
+
+## 2026-11-21 — RE-SCOPED to math only (owner card "Re-scope to math only", 12:09Z; issue #8810)
+
+Previous title: 'QFT-3: Spinor-Minkowski Herm_2(C) ~= R^{1,3}, UV-Truncated Schwinger Propagator & Pius-Sen Cutkosky Unitarity'
+
+Target: the real-linear isomorphism Herm₂(ℂ) ≅ ℝ⁴ under which det is the Minkowski quadratic form, and X ↦ AXA* for A ∈ SL₂(ℂ) preserves it, kernel ±1. Dropped: UV-truncated Schwinger propagator, worldline bubble and Cutkosky threshold (virtual loops).
