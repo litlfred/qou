@@ -93,6 +93,8 @@ export default chapter({
       blocks: [
         "hadron-algebra-intro",
         "hadron",
+        "categorical-proton",
+        "categorical-proton-properties",
         "hadron-exists",
         "hadron-exists-proof",
         "hadron-unique",
@@ -319,16 +321,16 @@ export default chapter({
       ],
     }),
 
-    // ── §12. Categorical proton, neutron, and meson ───────────────
+    // ── §12. Categorical neutron and meson (proton def + properties moved
+    // to sec:hadron-algebra after def:hadron, reading-order drain L4
+    // 2026-11-21: prf:hadron-exists uses the proton as its witness) ──
     // The definitional blocks from the former orphan-reconnect section.
     // Structural definitions of composite hadrons: their categorical
     // construction and Reidemeister-invariant properties.
     section({
-      title: "Categorical proton, neutron, and meson",
+      title: "Categorical neutron and meson",
       label: "sec:categorical-hadrons",
       blocks: [
-        "categorical-proton",
-        "categorical-proton-properties",
         // Moved here from §2 on 2026-08-24, the day it landed, on the
         // detangler's measurement rather than on topic. It was placed in §2
         // because it `interprets: def:derived-atom` and explains that
