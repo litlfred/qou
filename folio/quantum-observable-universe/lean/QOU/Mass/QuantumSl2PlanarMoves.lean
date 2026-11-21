@@ -12,6 +12,7 @@ that relate two closed diagrams of the same link:
   `(Z ⊗ 1)(1 ⊗ cup) = (1 ⊗ rot Z)(cup ⊗ 1)` for every `Z` (`slide_cup`), so with crossing
   symmetry `(Ř ⊗ 1)(1 ⊗ cup) = (1 ⊗ Ř⁻¹)(cup ⊗ 1)`;
 * **Reidemeister I** `Ř · cup = (−1)^m s^{−m(m+2)} cup` (`rCheck_cupVec`);
+* **rotation inside a trace** `tr(W · rot M) = tr(nat W · M)` (`trace_mul_rotOp`);
 * **trace as closure** `cap (A ⊗ 1) cup = (−1)^m tr(K A)` (`cap_closure_eq_trace`): the
   quantum trace with `K` is the cup/cap closure up to the Kauffman sign `(−1)^m`. This is the
   source of the `(−1)^{N−1}` between the braid-closure trace and van der Veen's printed formula.
@@ -146,6 +147,37 @@ theorem rCheck_cupVec (hint : ∀ i, 0 < i → i ≤ m → qint (s ^ 2) i ≠ 0)
   ring_nf
 
 end ReidemeisterI
+
+section RotTrace
+
+variable (q : 𝕜) (m : ℕ)
+
+/-- Rotation of the *other* operator inside a trace: bend the first output of `W` down to the
+left and its second input up to the right. -/
+def natOp (W : Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜) :
+    Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜 :=
+  fun y x => ∑ a : Fin (m + 1), ∑ d : Fin (m + 1),
+    capVec q m (a, x.1) * W (a, y.1) (x.2, d) * cupVec q m (y.2, d)
+
+/-- **Rotation inside a trace.** `tr(W · rot M) = tr(nat W · M)`. -/
+theorem trace_mul_rotOp (W M : Matrix (Fin (m + 1) × Fin (m + 1)) (Fin (m + 1) × Fin (m + 1)) 𝕜) :
+    trace (W * rotOp q m M) = trace (natOp q m W * M) := by
+  simp only [trace, diag, mul_apply, rotOp_apply, natOp, Fintype.sum_prod_type,
+    Finset.mul_sum, Finset.sum_mul]
+  rw [Finset.sum_comm]
+  conv_lhs => enter [2, x0, 2, x1, 2, x2, 2, x3]; rw [Finset.sum_comm]
+  conv_lhs => enter [2, x0, 2, x1, 2, x2]; rw [Finset.sum_comm]
+  conv_lhs => enter [2, x0, 2, x1]; rw [Finset.sum_comm]
+  conv_lhs => enter [2, x0]; rw [Finset.sum_comm]
+  conv_lhs => enter [2, x0, 2, x1, 2, x2, 2, x3]; rw [Finset.sum_comm]
+  conv_lhs => enter [2, x0, 2, x1, 2, x2]; rw [Finset.sum_comm]
+  conv_lhs => enter [2, x0, 2, x1]; rw [Finset.sum_comm]
+  conv_lhs => enter [2, x0, 2, x1, 2, x2]; rw [Finset.sum_comm]
+  refine Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ =>
+    Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ => ?_
+  ring
+
+end RotTrace
 
 end QOU.Mass.QuantumSl2
 
