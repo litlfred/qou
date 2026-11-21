@@ -1,14 +1,14 @@
 ---
 # qou-cp1x
 title: Cross-check 1104.0755v2.pdf at computations/probes/awzero_asymptotics_probe.py
-status: todo
+status: completed
 pr: 8347
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:04Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T15:00:26Z
 parent: qou-8hur
 ---
 
@@ -33,3 +33,12 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8347, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21T15:00:26Z cross-check result
+
+Probe computations/probes/morita_ramanujan_qairy_connection_probe.py (branch claude/expo-cite-xcheck-wave2-2026-11-21, head 289952cb1ba). ALL PASS.
+- The theorem as printed holds to 8e-40 at q = 0.3, sqrt(0.7) and sqrt(1/q0_proton), for four complex x. Morita's A_q is the corpus A_w (q = w).
+- Zeros of the corpus A_w found by findroot from w^{1-2n} are zeros of Morita's bracket theta(x/q) Ai_q(-x) + theta(-x/q) Ai_q(x), at x = i sqrt(q^3/zeta) (relative residual <= 4e-42), for w = 0.49, 0.7 and w_p = 1/q0.
+- With Ai_q -> 1 the bracket vanishes exactly at x^2 = -q^{4n+1}, i.e. zeta_n = w^{1-2n}. These are the corpus tropical corners, so the corpus theta-limit G is the leading term of an exact formula.
+- Refinement, reported only: (zeta_n/w^{1-2n} - 1)/(-kappa w^n) is 1.000006 at w = 0.49, n = 6 and 1.0005 at w = 0.7, n = 6. This agrees with the corpus's measured theta_n = -kappa w^n + O(w^{3n}). At w_p and n <= 6 the ratio is far from 1 (-0.08 to -0.43), consistent with the corpus's own threshold n0(w) (10 already at w = 0.7). Those zeros are pre-asymptotic, not a mismatch.
+No normalisation mismatch between the corpus A_w and Morita's A_q.
