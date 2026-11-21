@@ -972,4 +972,265 @@ theorem braidClosure_conj (w : List (Fin m × Bool)) (i : Fin m) (b : Bool) :
 
 end Cancel
 
+/-! ### Far commutation -/
+
+omit [Fintype E] in
+/-- A relabelling that fixes every edge of a code leaves the code unchanged. -/
+theorem Code.map_eq_self_of_occurs (f : E → E) (D : Code E) (h : ∀ e, D.Occurs e → f e = e) :
+    D.map f = D := by
+  refine code_ext ?_ ?_
+  · conv_rhs => rw [← Multiset.map_id D.xs]
+    refine Multiset.map_congr rfl fun x hx => ?_
+    have hm : ∀ e, x.Mentions e → f e = e := fun e he => h e (Or.inl ⟨x, hx, he⟩)
+    simp only [Crossing.map, id]
+    rw [hm _ (Or.inl rfl), hm _ (Or.inr (Or.inl rfl)), hm _ (Or.inr (Or.inr (Or.inl rfl))),
+      hm _ (Or.inr (Or.inr (Or.inr rfl)))]
+  · conv_rhs => rw [← Multiset.map_id D.js]
+    refine Multiset.map_congr rfl fun j hj => ?_
+    simp only [Prod.map, id]
+    rw [h _ (Or.inr ⟨j, hj, Or.inl rfl⟩), h _ (Or.inr ⟨j, hj, Or.inr rfl⟩)]
+
+section FarComm
+
+variable {m L : ℕ}
+
+theorem letterCrossing_rowA (i : Fin m) (b : Bool) :
+    letterCrossing (L := L + 1 + 1) (Fin.last L).castSucc i b =
+      ⟨rowA L (uPos i b), rowB L (oPos i b), rowA L (oPos i b), rowB L (uPos i b), b⟩ := by
+  cases b <;> simp [letterCrossing, uPos, oPos, Fin.succ_castSucc, Fin.succ_last]
+
+theorem letterCrossing_rowB (i : Fin m) (b : Bool) :
+    letterCrossing (L := L + 1 + 1) (Fin.last (L + 1)) i b =
+      ⟨rowB L (uPos i b), rowC L (oPos i b), rowB L (oPos i b), rowC L (uPos i b), b⟩ := by
+  cases b <;> simp [letterCrossing, uPos, oPos, Fin.succ_last]
+
+omit [Fintype E] in
+theorem Code.map_add' (f : E → E) (D D' : Code E) :
+    (D + D').map f = D.map f + D'.map f := by
+  refine code_ext ?_ ?_ <;> simp [Code.map, Multiset.map_add]
+
+theorem untouched_split {α : Type*} (i j : Fin m) (c : Bool)
+    (h : i.val + 2 ≤ j.val ∨ j.val + 2 ≤ i.val) (f : Fin (m + 1) → α) :
+    (untouched i).val.map f =
+      {f (uPos j c), f (oPos j c)} + (untouched i ∩ untouched j).val.map f := by
+  have hs : untouched i = insert (uPos j c) (insert (oPos j c) (untouched i ∩ untouched j)) := by
+    ext p
+    simp only [untouched, Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_insert,
+      Finset.mem_inter, ne_eq, Fin.ext_iff, Fin.coe_castSucc, Fin.val_succ]
+    cases c <;> simp only [uPos, oPos, if_true, if_false, Bool.false_eq_true, Fin.coe_castSucc,
+      Fin.val_succ] <;> omega
+  have hu : uPos j c ∉ insert (oPos j c) (untouched i ∩ untouched j) := by
+    cases c <;> simp [uPos, oPos, untouched, Fin.ext_iff]
+  have ho : oPos j c ∉ untouched i ∩ untouched j := by
+    cases c <;> simp [oPos, untouched]
+  conv_lhs => rw [hs, Finset.insert_val_of_notMem hu, Finset.insert_val_of_notMem ho]
+  simp [Multiset.insert_eq_cons, ← Multiset.singleton_add, add_assoc]
+
+/-- The closure of a word ending in two letters, written out. -/
+theorem closureOf_snoc2_eq (g : Fin L → Fin m × Bool) (x y : Fin m × Bool) :
+    closureOf (Fin.snoc (Fin.snoc g x) y : Fin (L + 1 + 1) → Fin m × Bool) =
+      (wordCode g).map rowEmb2 + Code.ofJs ((Finset.univ.val : Multiset (Fin (m + 1))).map
+        fun p => (rowC L p, rowZ L p, (1 : ℤ))) +
+        Code.ofXs {letterCrossing (Fin.last L).castSucc x.1 x.2,
+          letterCrossing (Fin.last (L + 1)) y.1 y.2} +
+        Code.ofJs ((untouched x.1).val.map fun p => (rowA L p, rowB L p, (0 : ℤ))) +
+        Code.ofJs ((untouched y.1).val.map fun p => (rowB L p, rowC L p, (0 : ℤ))) := by
+  refine code_ext ?_ ?_
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_xs, add_zero, zero_add]
+    rw [univ_map_castSucc_last, univ_map_castSucc_last, Multiset.map_map]
+    simp only [Fin.snoc_castSucc, Fin.snoc_last, Function.comp_def, letterCrossing_row2]
+    rw [Multiset.insert_eq_cons, ← Multiset.singleton_add]
+    exact add_assoc _ _ _
+  · simp only [closureOf, wordCode, Code.map, ofXs, ofJs, add_js, add_zero, zero_add,
+      Multiset.map_bind]
+    rw [univ_bind_castSucc_last, univ_bind_castSucc_last]
+    simp only [Fin.snoc_castSucc, Fin.snoc_last, letterJoins_row2]
+    have h₁ : letterJoins (L := L + 1 + 1) (Fin.last L).castSucc x.1 =
+        (untouched x.1).val.map fun p => (rowA L p, rowB L p, (0 : ℤ)) := by
+      rw [letterJoins, untouched]
+      refine Multiset.map_congr rfl fun p _ => ?_
+      simp only [Fin.succ_castSucc, Fin.succ_last]
+    have h₂ : letterJoins (L := L + 1 + 1) (Fin.last (L + 1)) y.1 =
+        (untouched y.1).val.map fun p => (rowB L p, rowC L p, (0 : ℤ)) := by
+      rw [letterJoins, untouched]
+      refine Multiset.map_congr rfl fun p _ => ?_
+      simp only [Fin.succ_last]
+    rw [h₁, h₂]
+    abel
+
+set_option maxHeartbeats 2000000 in
+/-- **Far commutation.** Two letters on strands at least two apart can be swapped at the end of a
+word without changing the closure up to Reidemeister equivalence (two turn slides and a
+relabelling). -/
+theorem closureOf_farComm (g : Fin L → Fin m × Bool) (i j : Fin m) (b c : Bool)
+    (hij : i.val + 2 ≤ j.val ∨ j.val + 2 ≤ i.val) :
+    ReidemeisterEquiv
+      ⟨_, closureOf (Fin.snoc (Fin.snoc g (j, c)) (i, b) : Fin (L + 1 + 1) → Fin m × Bool)⟩
+      ⟨_, closureOf (Fin.snoc (Fin.snoc g (i, b)) (j, c) : Fin (L + 1 + 1) → Fin m × Bool)⟩ := by
+  set ui := uPos i b with hui
+  set oi := oPos i b with hoi
+  set uj := uPos j c with huj
+  set oj := oPos j c with hoj
+  set T := untouched i ∩ untouched j with hT
+  set Wg := (wordCode g).map (rowEmb2 (m := m) (L := L)) with hWg
+  set CL : Multiset ((Fin (L + 1 + 1 + 1) × Fin (m + 1)) × (Fin (L + 1 + 1 + 1) × Fin (m + 1)) × ℤ) :=
+    (Finset.univ.val : Multiset (Fin (m + 1))).map fun p => (rowC L p, rowZ L p, 1) with hCL
+  have hji : j.val + 2 ≤ i.val ∨ i.val + 2 ≤ j.val := hij.symm
+  -- Strand facts.
+  have hpos : ∀ p ∈ ({ui, oi} : Set (Fin (m + 1))), ∀ q ∈ ({uj, oj} : Set (Fin (m + 1))), p ≠ q := by
+    intro p hp q hq
+    simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hp hq
+    rcases hp with rfl | rfl <;> rcases hq with rfl | rfl <;>
+      cases b <;> cases c <;> simp [ui, oi, uj, oj, uPos, oPos, Fin.ext_iff] <;> omega
+  have hpi : ui ≠ oi := by
+    have hcs : i.castSucc ≠ i.succ := (Fin.castSucc_lt_succ i).ne
+    cases b <;> simp [ui, oi, uPos, oPos, hcs, hcs.symm]
+  have hpj : uj ≠ oj := by
+    have hcs : j.castSucc ≠ j.succ := (Fin.castSucc_lt_succ j).ne
+    cases c <;> simp [uj, oj, uPos, oPos, hcs, hcs.symm]
+  have hTi : ∀ p ∈ T, p ≠ ui ∧ p ≠ oi ∧ p ≠ uj ∧ p ≠ oj := by
+    intro p hp
+    simp only [hT, untouched, Finset.mem_inter, Finset.mem_filter, Finset.mem_univ, true_and] at hp
+    refine ⟨?_, ?_, ?_, ?_⟩ <;> [cases b; cases b; cases c; cases c] <;>
+      simp [ui, oi, uj, oj, uPos, oPos, hp.1.1, hp.1.2, hp.2.1, hp.2.2]
+  -- The rest that the moves leave alone, and the four edges they touch.
+  set Rfix := Wg + Code.ofJs CL + Code.ofJs (T.val.map fun p => (rowA L p, rowB L p, (0 : ℤ))) +
+    Code.ofJs (T.val.map fun p => (rowB L p, rowC L p, (0 : ℤ))) with hRfix
+  have hval : ∀ k : Fin (L + 1), (k.castSucc.castSucc : Fin (L + 1 + 1 + 1)).val ≤ L := by
+    intro k; simp only [Fin.coe_castSucc]; omega
+  have hRfixB : ∀ e, Rfix.Occurs e → ∀ p, p = ui ∨ p = oi ∨ p = uj ∨ p = oj → e ≠ rowB L p := by
+    intro e he p hp
+    rintro rfl
+    simp only [hRfix, occurs_add] at he
+    rcases he with ((h | h) | h) | h
+    · obtain ⟨x, -, hx⟩ := (occurs_map _ _ _).1 h
+      have := congrArg (fun e => e.1.val) hx
+      simp only [rowEmb2_apply] at this
+      have := hval x.1; simp at *
+    · rw [occurs_ofJs] at h
+      obtain ⟨_, hj, h⟩ := h
+      obtain ⟨q, -, rfl⟩ := Multiset.mem_map.1 hj
+      rcases h with h | h <;> simp [Fin.ext_iff] at h
+    all_goals
+      rw [occurs_ofJs] at h
+      obtain ⟨_, hj, h⟩ := h
+      obtain ⟨q, hq, rfl⟩ := Multiset.mem_map.1 hj
+      obtain ⟨h1, h2, h3, h4⟩ := hTi q hq
+      rcases h with h | h <;> simp [Fin.ext_iff] at h <;> omega
+  have h1 : ui ≠ uj := hpos _ (by simp) _ (by simp)
+  have h2 : ui ≠ oj := hpos _ (by simp) _ (by simp)
+  have h3 : oi ≠ uj := hpos _ (by simp) _ (by simp)
+  have h4 : oi ≠ oj := hpos _ (by simp) _ (by simp)
+  have hBne : ∀ {p q : Fin (m + 1)}, p ≠ q → rowB L p ≠ rowB L q := fun h h' =>
+    h (Prod.mk.inj h').2
+  have hAB : ∀ p q : Fin (m + 1), rowA L p ≠ rowB L q := fun p q h => by
+    have := congrArg (fun e => e.1.val) h; simp at this
+  have hCB : ∀ p q : Fin (m + 1), rowC L p ≠ rowB L q := fun p q h => by
+    have := congrArg (fun e => e.1.val) h; simp at this
+  have hBT : ∀ p ∈ T, ∀ q, q = ui ∨ q = oi ∨ q = uj ∨ q = oj → p ≠ q := by
+    intro p hp q hq
+    obtain ⟨a1, a2, a3, a4⟩ := hTi p hp
+    rcases hq with rfl | rfl | rfl | rfl <;> assumption
+  have hBij : ∀ p q, (p = ui ∨ p = oi) → (q = uj ∨ q = oj) → rowB L p ≠ rowB L q := by
+    intro p q hp hq h
+    rcases hp with rfl | rfl <;> rcases hq with rfl | rfl
+    exacts [h1 (Prod.mk.inj h).2, h2 (Prod.mk.inj h).2, h3 (Prod.mk.inj h).2, h4 (Prod.mk.inj h).2]
+  -- Slide the `i` crossing up.
+  set R1 := Rfix + (Code.ofXs {⟨rowA L uj, rowB L oj, rowA L oj, rowB L uj, c⟩} +
+    Code.ofJs {(rowB L uj, rowC L uj, (0 : ℤ)), (rowB L oj, rowC L oj, 0)}) with hR1
+  have hR1B : ∀ p, p = ui ∨ p = oi → ¬ R1.Occurs (rowB L p) := by
+    intro p hp h
+    simp only [hR1, occurs_add, occurs_ofJs_pair] at h
+    rcases h with h | h | h
+    · exact hRfixB _ h p (by tauto) rfl
+    · simp only [Code.Occurs, Code.ofXs, Multiset.mem_singleton, Crossing.Mentions,
+        exists_eq_left, Multiset.notMem_zero, false_and, exists_false, or_false] at h
+      rcases h with h | h | h | h <;>
+        first | exact hAB _ _ h | exact hBij p _ hp (by tauto) h.symm
+    · rcases h with (h | h) | (h | h) <;>
+        first | exact hCB _ _ h | exact hBij p _ hp (by tauto) h.symm
+  have s1 := ReidemeisterEquiv.of_move (Move.slide R1 (rowA L ui) (rowC L oi) (rowA L oi)
+    (rowC L ui) (rowB L ui) (rowB L oi) b 0 (hR1B _ (Or.inl rfl)) (hR1B _ (Or.inr rfl))
+    (hBne hpi) (by
+      intro x hx
+      simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hx
+      rcases hx with rfl | rfl | rfl | rfl
+      exacts [⟨hAB _ _, hAB _ _⟩, ⟨hCB _ _, hCB _ _⟩, ⟨hAB _ _, hAB _ _⟩, ⟨hCB _ _, hCB _ _⟩]))
+  -- Slide the `j` crossing down.
+  set R2 := Rfix + (Code.ofXs {⟨rowA L ui, rowB L ui, rowA L oi, rowB L oi, b⟩} +
+    Code.ofJs {(rowB L ui, rowC L oi, (0 : ℤ)), (rowB L oi, rowC L ui, 0)}) with hR2
+  have hR2B : ∀ p, p = uj ∨ p = oj → ¬ R2.Occurs (rowB L p) := by
+    intro p hp h
+    simp only [hR2, occurs_add, occurs_ofJs_pair] at h
+    rcases h with h | h | h
+    · exact hRfixB _ h p (by tauto) rfl
+    · simp only [Code.Occurs, Code.ofXs, Multiset.mem_singleton, Crossing.Mentions,
+        exists_eq_left, Multiset.notMem_zero, false_and, exists_false, or_false] at h
+      rcases h with h | h | h | h <;>
+        first | exact hAB _ _ h | exact hBij _ p (by tauto) hp h
+    · rcases h with (h | h) | (h | h) <;>
+        first | exact hCB _ _ h | exact hBij _ p (by tauto) hp h
+  have s2 := (ReidemeisterEquiv.of_move (Move.slide R2 (rowA L uj) (rowC L oj) (rowA L oj)
+    (rowC L uj) (rowB L oj) (rowB L uj) c 0 (hR2B _ (Or.inr rfl)) (hR2B _ (Or.inl rfl))
+    (hBne hpj.symm) (by
+      intro x hx
+      simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hx
+      rcases hx with rfl | rfl | rfl | rfl
+      exacts [⟨hAB _ _, hAB _ _⟩, ⟨hCB _ _, hCB _ _⟩, ⟨hAB _ _, hAB _ _⟩, ⟨hCB _ _, hCB _ _⟩]))).symm
+  -- Relabel the middle row.
+  set σ := (Equiv.swap (rowB L ui) (rowB L oi)).trans (Equiv.swap (rowB L uj) (rowB L oj)) with hσ
+  have s3 := ReidemeisterEquiv.of_equiv σ (R2 + (Code.ofXs {⟨rowB L oj, rowC L oj, rowB L uj,
+    rowC L uj, c⟩} + Code.ofJs {(rowA L uj, rowB L oj, (0 : ℤ)), (rowA L oj, rowB L uj, 0)}))
+  have hfix : Rfix.map σ = Rfix := Code.map_eq_self_of_occurs _ _ fun e he => by
+    simp only [hσ, Equiv.trans_apply]
+    rw [Equiv.swap_apply_of_ne_of_ne (hRfixB e he ui (by tauto)) (hRfixB e he oi (by tauto)),
+      Equiv.swap_apply_of_ne_of_ne (hRfixB e he uj (by tauto)) (hRfixB e he oj (by tauto))]
+  have hTji : untouched j ∩ untouched i = T := Finset.inter_comm _ _
+  refine (s1.of_eq ?_ ?_).trans (s2.trans (s3.of_eq rfl ?_))
+  · rw [closureOf_snoc2_eq, letterCrossing_rowA, letterCrossing_rowB, untouched_split j i b hji,
+      untouched_split i j c hij, hTji]
+    refine code_ext ?_ ?_ <;>
+      simp only [hR1, hRfix, ofJs, ofXs, add_xs, add_js, add_zero, zero_add,
+        Multiset.insert_eq_cons, ← Multiset.singleton_add] <;> abel
+  · refine code_ext ?_ ?_ <;>
+      simp only [hR1, hR2, ofJs, ofXs, add_xs, add_js, add_zero, zero_add,
+        Multiset.insert_eq_cons, ← Multiset.singleton_add] <;> abel
+  · rw [closureOf_snoc2_eq, letterCrossing_rowA, letterCrossing_rowB, untouched_split i j c hij,
+      untouched_split j i b hji, hTji]
+    have hBB : ∀ {p q : Fin (m + 1)}, rowB L p = rowB L q ↔ p = q :=
+      fun {p q} => ⟨fun h => (Prod.mk.inj h).2, fun h => h ▸ rfl⟩
+    simp only [hR2, Code.map_add', hfix]
+    refine code_ext ?_ ?_ <;>
+      simp only [hRfix, hWg, hCL, Code.map, ofJs, ofXs, add_xs, add_js, add_zero, zero_add,
+        Multiset.map_zero, Multiset.map_add, Multiset.insert_eq_cons, Multiset.map_cons,
+        Multiset.map_singleton, Crossing.map, Prod.map,
+        id, hσ, Equiv.trans_apply, Equiv.swap_apply_def, hBB, hpi, hpj, hpi.symm, hpj.symm,
+        h1, h2, h3, h4, h1.symm, h2.symm, h3.symm, h4.symm, hAB, hCB, if_true, if_false,
+        ← Multiset.singleton_add] <;> abel
+
+theorem braidClosure_snoc2 (w : List (Fin m × Bool)) (x y : Fin m × Bool) :
+    ReidemeisterEquiv ⟨_, closureOf (Fin.snoc (Fin.snoc w.get x) y :
+        Fin (w.length + 1 + 1) → Fin m × Bool)⟩ ⟨_, braidClosure (w ++ [x, y])⟩ := by
+  rw [braidClosure_eq_closureOf]
+  exact closureOf_congr (m := m) (by simp) _ _ fun k => by
+    refine Fin.lastCases ?_ (fun j => ?_) k
+    · simp
+    · refine Fin.lastCases ?_ (fun j => ?_) j
+      · simp
+      · simp [List.getElem_append_left]
+
+/-- **Far commutation anywhere.** Letters on strands at least two apart commute in a closure. -/
+theorem braidClosure_farComm (u v : List (Fin m × Bool)) (i j : Fin m) (b c : Bool)
+    (hij : i.val + 2 ≤ j.val ∨ j.val + 2 ≤ i.val) :
+    ReidemeisterEquiv ⟨_, braidClosure (u ++ [(j, c), (i, b)] ++ v)⟩
+      ⟨_, braidClosure (u ++ [(i, b), (j, c)] ++ v)⟩ :=
+  (braidClosure_append_comm (u ++ [(j, c), (i, b)]) v).trans
+    ((braidClosure_congr (by simp)).trans
+      ((braidClosure_snoc2 (v ++ u) (j, c) (i, b)).symm.trans
+        ((closureOf_farComm (v ++ u).get i j b c hij).trans
+          ((braidClosure_snoc2 (v ++ u) (i, b) (j, c)).trans
+            ((braidClosure_congr (by simp)).trans (braidClosure_append_comm v _))))))
+
+end FarComm
+
 end QOU.MathlibExt.PL.Diagram
