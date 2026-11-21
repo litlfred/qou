@@ -88,3 +88,8 @@ Not a closure of anything here. Proved (sorry-free, `QOU/Torsion/TopologicalMass
 - §3b violators: 82 on main at the start of the day, 32 on #8720.
 - Compute drift is flagged on #8720 (nv-pslq, phase3-deuteron, qbeta-row-cap, plus two mpf.__format__ crashes).
 - Still open: lem:bond-order-eq-jet-degree, which carries the many-body chain to conj:jet-prefix-gb-filtration, and the 2πi mismatch in binding-closure.
+
+## 2026-11-21 — #8720 merged; #8745
+- #8745 demotes lem:bond-order-eq-jet-degree, because it reads the GS length through the conjectural jet-prefix order.
+- binding-closure is now stated as conditional on (C) and (B), and gains the missing 2πi.
+- Sec 3b: 32 -> 30.
