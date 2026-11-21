@@ -118,4 +118,17 @@ theorem dt_moduliDim_underdetermined :
     canonical_dt_realization, shifted_dt_realization,
     fun p => by show p.nStat ≠ p.nStat + 2; omega⟩
 
+
+/-- **Arbitrary even-shift DT realization family (`qou-nmpr`).**
+For every `k : ℕ`, shifting the Springer dimension by `2 * k` (`md p = p.nStat + 2 * k`)
+preserves the Behrend sign `(-1)^{md p}` and therefore realizes `Δ_λ` on every `p : PartitionOf5`. -/
+theorem even_shifted_dt_realization (k : ℕ) :
+    IsDTRealization (fun p => PartitionOf5.nStat p + 2 * k) PartitionOf5.dim := by
+  intro p
+  have hpar : (-1 : ℤ) ^ (p.nStat + 2 * k) = (-1 : ℤ) ^ p.nStat := by
+    rw [pow_add, pow_mul]
+    norm_num
+  rw [hpar]
+  exact canonical_dt_realization p
+
 end QOU.BraidsAndKnots

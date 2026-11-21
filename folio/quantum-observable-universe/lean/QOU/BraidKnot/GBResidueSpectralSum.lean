@@ -176,4 +176,13 @@ def fromCrystalData
   mass := |descended| + ∑ ℓ : Fin levelBound, residue ℓ
   spectral_decomposition := rfl
 
+
+/-- **Total cyclotomic residue sum equals `mass - |descended|` (`qou-rdg8`).**
+For any `S : GBResidueSpectralSum R`, subtracting the descended Markov trace magnitude
+`|S.descended|` from `S.mass` isolates the finite sum of cyclotomic residues
+`∑ ℓ : Fin S.levelBound, S.residue ℓ`. -/
+theorem mass_sub_abs_descended_eq_sum_residue (S : GBResidueSpectralSum R) :
+    S.mass - |S.descended| = ∑ ℓ : Fin S.levelBound, S.residue ℓ := by
+  rw [S.spectral_decomposition, add_sub_cancel_left]
+
 end QOU.BraidKnot
