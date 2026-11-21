@@ -3293,6 +3293,21 @@
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "036f8dafb9fa",
+          "ts": "62f5981035f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
+        "evidence": "Independent QA of #8908 at f60933ebae. Step 4 now attributes the action evaluation to prop:skein-generation (composite-link resolution) and lem:pair-skein-mass-formula (S_ab). Both are correct targets and both are in uses[]. The lemma's own convention-C scope is pre-existing."
       }
     ],
     "da-definitional-ambiguity": [

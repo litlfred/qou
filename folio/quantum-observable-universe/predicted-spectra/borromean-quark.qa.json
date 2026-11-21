@@ -1876,6 +1876,22 @@
         "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
+        "severity": "minor",
+        "evidence": "Independent QA of #8908 at f60933ebae. The displayed mass decomposition is presented as following from the cited skein resolution. The cited remark leaves the required specialisation (a = 1 vs a = q) open, so the step from module resolution to a mass polynomial is not supplied by the citation. It was not supplied by the previous target prop:terminal-resolution either."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1919,6 +1935,22 @@
         "notes": "No citations are present in 'Quarks as Borromean-linked unknots in the exceptional divisor', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/predicted-spectra/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f069c3088ef5",
+          "ts": "b194448b1f3b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
+        "severity": "minor",
+        "evidence": "Independent QA of #8908 at f60933ebae. The retargeted paragraph says the hadron reading of skein generation 'writes the mass of a hadronic link as a polynomial in unknot and Hopf-link masses' and displays sum_j P_j(q) m(nu) + sum_k Q_k(q) m(L_H). rem:skein-generation-hadron-reading gives the mass reading as Q(q) m(L_Hopf) + sum_i Vol(K_i)/hbar_q^2 via lem:skein-mass-from-linking, and says the specialisation in which it holds 'is not fixed by the proposition'. prop:skein-generation resolves every link to a multiple of the unknot alone. The cited pair supports the decomposition only conditionally, and in a different form. Conjecture block, so minor."
       }
     ],
     "da-definitional-ambiguity": [

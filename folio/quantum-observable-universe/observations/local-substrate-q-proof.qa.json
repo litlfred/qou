@@ -2838,6 +2838,24 @@
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
         "notes": "unchanged since origin/main"
       }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "a3f9fd79dabe",
+          "ts": "f804984ed74c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
+        "severity": "minor",
+        "evidence": "Independent QA of #8908 at f60933ebae. The PR removed the terminal-resolution alignment claim correctly. Pre-existing: the .md links rem:photonic-hall, conj:topological-mass-formula, def:algebraic-quantum-volume and prop:topological-mass-formula-algebraic, none of which is in uses[]."
+      }
     ]
   },
   "updated_at": "2026-11-21T17:55:08.000Z",

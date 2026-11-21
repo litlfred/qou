@@ -1777,6 +1777,21 @@
         },
         "reviewed_tree": "1b3c908ab84d33554976d3571d9420b547b45b04",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "442647867002",
+          "ts": "d39445a43989"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
+        "evidence": "Independent QA of #8908 at f60933ebae. prop:skein-generation plus rem:skein-generation-hadron-reading do support 'writes each hadronic link in terms of unknots and Hopf links' (they generate the skein module), and the HOMFLYPT coefficients depend on the constituents. Both labels are added to uses[]. Pre-existing note: the cited remark reads the trefoil as the electron, whereas the owner ruling is sigma0 sigma1 sigma0 with Hopf closure. That is outside this PR."
       }
     ],
     "da-definitional-ambiguity": [

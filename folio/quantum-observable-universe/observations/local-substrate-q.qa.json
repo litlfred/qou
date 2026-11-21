@@ -2451,6 +2451,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "78ceb196e7ce",
+          "ts": "4ae13fdca64e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
+        "evidence": "Independent QA of #8908 at f60933ebae. The prop:terminal-resolution edge is dropped from uses[]. The .md never cited it, and the edge supported no claim here."
       }
     ],
     "da-referee-verdict": [

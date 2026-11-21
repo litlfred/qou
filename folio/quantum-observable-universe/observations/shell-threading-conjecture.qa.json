@@ -1752,6 +1752,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e4906db2fb4c",
+          "ts": "1c9d86f24a70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
+        "evidence": "Independent QA of #8908 at f60933ebae. The sentence names the formula used for the conjectured shell energy and asserts no consequence beyond the conjecture."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1782,6 +1797,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e4906db2fb4c",
+          "ts": "1c9d86f24a70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f60933ebae4cd2c93b4ac5af617b31b3737edb2f",
+        "evidence": "Independent QA of #8908 at f60933ebae. S_ab(q) is defined in lem:pair-skein-mass-formula, so the retarget is correct and the edge is in uses[]. Note that the lemma states it is a convention-C result (convention D canonical); that scope is pre-existing in the lemma, and this block is a conjecture."
       }
     ],
     "da-definitional-ambiguity": [
