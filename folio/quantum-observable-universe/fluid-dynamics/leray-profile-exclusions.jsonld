@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-leray-profile-exclusions",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:leray-profile-exclusions",
+  "kind": "remark",
+  "title": "Exclusions for discretely self-similar Leray profiles",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-leray-profile",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-leray-profile",
+  "cites": [
+    "references/necas-ruzicka-sverak1996",
+    "references/tsai1998",
+    "references/seregin2012",
+    "references/chae2013adss",
+    "references/chae-wolf2016dss",
+    "references/bradshaw-tsai2018survey"
+  ],
+  "tags": [
+    "leray",
+    "discretely-self-similar",
+    "blowup-profile",
+    "literature"
+  ],
+  "text": "leray-profile-exclusions.md",
+  "provenance": "authored"
+}

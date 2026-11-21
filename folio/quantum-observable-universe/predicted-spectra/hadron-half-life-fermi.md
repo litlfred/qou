@@ -2,7 +2,7 @@
 
 Standard Fermi theory sets the decay rate as $\Gamma = G_F^2m_e^5/(2\pi^3) \cdot |M|^2 \cdot f(Z, Q)$. This effective theory formula packages two distinct mass scales. The crossing energy is $\mathfrak{E}_{\times} = \frac{1}{2}(q - q^{-1})$. The weak scale is $v \approx 246$ GeV, entering via $G_F = 1/(\sqrt{2}v^2)$.
 
-Both scales originate from distinct knot structures: $m_e$ from the $3$ crossings of the trefoil, and $v$ from the electroweak topology. The parameters $q$ and $\mu_0$ fix both scales. The pure number ratio $v / m_e \approx 4.8 \times 10^5$ derives strictly from topology.
+In the backup model $m_e$ was read off the $3$ crossings of the trefoil and $v$ off the electroweak topology. In the corpus $m_e$ is the CAL-1 leptonic mass-scale input, not derived from a knot ([electron](#def:electron-knot)), so the ratio $v / m_e \approx 4.8 \times 10^5$ is not derived here.
 
 The half-life depends on the combination
 
@@ -38,4 +38,4 @@ The half-life formula depends on $q$ (the substrate parameter, fixed by the muon
 ## Open computations
 
 1. **Weak scale crossing count** $N_v$. This must be derived (equivalently, $v$) from the Skein algebra. The $T_{3,5}$ knot mediates the weak interaction, with the mass scale $v$ emerging from the $10$-crossing structure of the $T_{3,5}$ braid: the vertex form factor $\mathcal{W}(q)$ supplies the coupling and $v$ provides the range.
-2. **Weak vertex form factor** $\mathcal{W}(q)$, the Markov trace of $(\sigma_1\sigma_2)^5$ in $H_3(q)$. What remains open is its use: the half-life tables still carry the single-crossing approximation $s^2$, and whether replacing $s^2$ by $|\mathcal{W}(q)|^2$ resolves the systematic $10$–$17\%$ overshoot in heavy-nucleus half-life predictions has not been computed.
+2. **Weak vertex form factor** $\mathcal{W}_2(q) = t_1 + c_{\mathrm{em}}\,t_2$, the two-term trace of $(\sigma_1\sigma_2)^5$ ([proof](#prf:hadron-half-life)); its one-term part $t_1 = \mathcal{W}(q)$ is the Markov trace in $H_3(q)$. The charges on the three vertex strands and $c_{\mathrm{em}}$ are not derived. What remains open is also its use: the half-life tables still carry the single-crossing approximation $s^2$, and whether replacing $s^2$ by $|\mathcal{W}(q)|^2$ resolves the systematic $10$–$17\%$ overshoot in heavy-nucleus half-life predictions has not been computed.

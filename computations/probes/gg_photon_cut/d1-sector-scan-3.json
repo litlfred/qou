@@ -1,0 +1,707 @@
+{
+ "max_crossings": 3,
+ "q_values": [
+  "2",
+  "3/2"
+ ],
+ "words_tested": 52,
+ "extra_words": [
+  "V^3 (done)",
+  "V^2 (not finished: stopped after 1 h of Groebner)"
+ ],
+ "non_products": [
+  "s1s0",
+  "s0^-1s1s0",
+  "s0s1s0",
+  "s1s0s1^-1",
+  "s1s0s1"
+ ],
+ "hits": [
+  {
+   "word": "s0^-1",
+   "crossings": 1,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0",
+   "crossings": 1,
+   "writhe": 1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1",
+   "crossings": 1,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1",
+   "crossings": 1,
+   "writhe": 1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s0^-1",
+   "crossings": 2,
+   "writhe": -2,
+   "components": 3,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s1^-1",
+   "crossings": 2,
+   "writhe": -2,
+   "components": 1,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s1",
+   "crossings": 2,
+   "writhe": 0,
+   "components": 1,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s0",
+   "crossings": 2,
+   "writhe": 2,
+   "components": 3,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s1^-1",
+   "crossings": 2,
+   "writhe": 0,
+   "components": 1,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s1",
+   "crossings": 2,
+   "writhe": 2,
+   "components": 1,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s0^-1",
+   "crossings": 2,
+   "writhe": -2,
+   "components": 1,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s0",
+   "crossings": 2,
+   "writhe": 0,
+   "components": 1,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s1^-1",
+   "crossings": 2,
+   "writhe": -2,
+   "components": 3,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1s0^-1",
+   "crossings": 2,
+   "writhe": 0,
+   "components": 1,
+   "q=2": {
+    "in_sector": true,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": true,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1s1",
+   "crossings": 2,
+   "writhe": 2,
+   "components": 3,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s0^-1s0^-1",
+   "crossings": 3,
+   "writhe": -3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s0^-1s1^-1",
+   "crossings": 3,
+   "writhe": -3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s0^-1s1",
+   "crossings": 3,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s1^-1s0^-1",
+   "crossings": 3,
+   "writhe": -3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s1^-1s0",
+   "crossings": 3,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s1^-1s1^-1",
+   "crossings": 3,
+   "writhe": -3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s1s0^-1",
+   "crossings": 3,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0^-1s1s1",
+   "crossings": 3,
+   "writhe": 1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s0s0",
+   "crossings": 3,
+   "writhe": 3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s0s1^-1",
+   "crossings": 3,
+   "writhe": 1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s0s1",
+   "crossings": 3,
+   "writhe": 3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s1^-1s0^-1",
+   "crossings": 3,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s1^-1s0",
+   "crossings": 3,
+   "writhe": 1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s1^-1s1^-1",
+   "crossings": 3,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s1s0^-1",
+   "crossings": 3,
+   "writhe": 1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s1s1",
+   "crossings": 3,
+   "writhe": 3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s0^-1s0^-1",
+   "crossings": 3,
+   "writhe": -3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s0^-1s1^-1",
+   "crossings": 3,
+   "writhe": -3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s0^-1s1",
+   "crossings": 3,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s0s0",
+   "crossings": 3,
+   "writhe": 1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s0s1^-1",
+   "crossings": 3,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s0s1",
+   "crossings": 3,
+   "writhe": 1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s1^-1s0^-1",
+   "crossings": 3,
+   "writhe": -3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s1^-1s0",
+   "crossings": 3,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1^-1s1^-1s1^-1",
+   "crossings": 3,
+   "writhe": -3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1s0^-1s0^-1",
+   "crossings": 3,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1s0^-1s1^-1",
+   "crossings": 3,
+   "writhe": -1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1s0^-1s1",
+   "crossings": 3,
+   "writhe": 1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1s0s0",
+   "crossings": 3,
+   "writhe": 3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1s1s0^-1",
+   "crossings": 3,
+   "writhe": 1,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1s1s0",
+   "crossings": 3,
+   "writhe": 3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s1s1s1",
+   "crossings": 3,
+   "writhe": 3,
+   "components": 2,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s1^-1s0s1^-1s0s1^-1",
+   "crossings": 6,
+   "writhe": 0,
+   "components": 3,
+   "q=2": {
+    "in_sector": true,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": true,
+    "out_of_sector": true
+   }
+  },
+  {
+   "word": "s0s1^-1s0s1^-1",
+   "crossings": 4,
+   "writhe": 0,
+   "components": 1,
+   "q=2": {
+    "in_sector": false,
+    "out_of_sector": true
+   },
+   "q=3/2": {
+    "in_sector": false,
+    "out_of_sector": true
+   }
+  }
+ ]
+}

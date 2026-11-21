@@ -1,5 +1,6 @@
 import Mathlib.Tactic
 import QOU.BringCone
+import QOU.BringConeIcosahedral
 
 /-!
 # The unit `u` of the chirality grading is a gauge choice — and exactly when
@@ -56,8 +57,10 @@ variable {R : Type*} [CommRing R]
 
 /-! ## 1. Gauge transformations of the chirality grading -/
 
-/-- The quaternionic unit `j`. -/
-def unitJ : BringCone R := ⟨0, 0, 1, 0⟩
+-- `unitJ` (the quaternionic unit `j`, `⟨0, 0, 1, 0⟩`) is defined in
+-- `QOU.BringConeIcosahedral`, imported above.  A second, identical `def` here made
+-- `QOU.lean`, which imports both files, fail with "environment already contains
+-- 'QOU.Tetraplectic.unitJ'".
 
 /-- Euclidean dot product of the imaginary parts. -/
 def imDot (u v : BringCone R) : R := u.imI * v.imI + u.imJ * v.imJ + u.imK * v.imK

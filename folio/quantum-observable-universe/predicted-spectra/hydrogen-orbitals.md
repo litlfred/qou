@@ -1,12 +1,10 @@
 **The picture.**
 
-Hydrogen couples a large trefoil electron to a small Borromean proton. The proton occupies the center as a compact $\mathcal{B}_3$ formed of three unknots with $\mathrm{Vol} \approx 7.328$. The electron $T_{2,3}$ loops around the proton. They Hopf-link. The electron passes through the proton's Seifert surface exactly once.
-
-The trefoil spins around the Borromean anchor. This motion sweeps out the electron cloud. The trefoil writhe and wrapping determine the cloud shape.
+Hydrogen couples an electron to a small Borromean proton. The proton occupies the center as a compact $\mathcal{B}_3$ formed of three unknots with $\mathrm{Vol} \approx 7.328$. The electron is the word $e^- = \sigma_0\sigma_1\sigma_0 \in B_3$ ([electron knot](#def:electron-knot)), whose closure is the Hopf link. It loops around the proton and Hopf-links to it.
 
 ```tex
 \begin{tikzcd}[row sep=4em, column sep=5em]
-  & \underset{\text{\normalsize large } T_{2,3}}{\bigcirc\!\!\!\bigcirc\!\!\!\bigcirc}
+  & \underset{\text{\normalsize electron } e^- = \sigma_0\sigma_1\sigma_0}{\bigcirc\!\!\!\bigcirc}
     \ar[d, "\oplus"', "\text{Hopf}", dashed] & \\
   & \underset{\text{\normalsize small } \mathcal{B}_3}{\bullet}
     & \\
@@ -14,34 +12,38 @@ The trefoil spins around the Borromean anchor. This motion sweeps out the electr
 \end{tikzcd}
 ```
 
-The Borromean volume pins the massive proton in place. The zero volume of the trefoil keeps the electron light. Vacuum drag alone supplies its mass. The Hopf link $\oplus$ provides the electromagnetic binding.
+The Borromean volume pins the massive proton in place. The Hopf link has no hyperbolic volume. The electron mass $m_e$ is the CAL-1 input, not derived here. The Hopf link $\oplus$ provides the electromagnetic binding.
 
-**Shell transitions as Reidemeister I moves.**
+**Shell transitions as strand-adding curls.**
 
-The minimal diagram of the trefoil $T_{2,3}$ has writhe $w = +3$. Photon absorption executes a Reidemeister I move on the trefoil embedding within the Hopf link. This adds a curl at the exceptional divisor and increases the writhe by $+2$.
+The ground state is $e_1 = e^- = \sigma_0\sigma_1\sigma_0$, with writhe $w = 3$. Photon absorption is the strand-adding curl: it appends the next generator,
+
+$$
+  e_n = \sigma_0\sigma_1\sigma_0\,\sigma_2\cdots\sigma_n \in B_{n+2}
+  \;\longmapsto\;
+  e_{n+1} = e_n\,\sigma_{n+1} \in B_{n+3}.
+$$
+
+Appending $\sigma_{n+1}$ is a Markov stabilisation, so the closure stays the Hopf link. The word stays Gröbner–Shirshov reduced, and the level shows as its length. Each curl raises the writhe by $1$:
 
 $$
   n \to n + 1
   \qquad\Longleftrightarrow\qquad
-  w \to w + 2
-  \qquad\Longleftrightarrow\qquad
-  \text{two R-I moves at exceptional divisor.}
+  w \to w + 1,
+  \qquad\text{so}\qquad
+  n = w - 2 = 1, 2, 3, \ldots
+  \quad\text{for}\quad w = 3, 4, 5, \ldots
 $$
 
-The topological mass $m_e \approx 0.511$ MeV remains unchanged. Reidemeister moves preserve knot type (the Reidemeister mass-invariance conjecture). The binding energy $E_n = -13.6/n^2$ eV changes because R-I moves alter the embedding. The electron remains a trefoil but shifts to a higher writhe state.
+This is [the shell--writhe correspondence](#conj:hydrogen-shell-writhe), item 1, proved in Lean. Where the added curls sit in the brane tower is not re-derived for the ruled electron.
 
-The shell number $n$ matches the writhe level:
+**Backup reading.** If the electron is the trefoil $\sigma_0^3 \in B_2$, a level step adds two Reidemeister I curls on the same strand, $w \to w + 2$, and $n = (w - 1)/2$. That reading puts the ground state ($w = 3$) in the base space $\mathcal{S}_0$ and the extra curls of $w = 5$ in the blow-up $\mathcal{S}_1$. The sub-shell count below is also built on it.
 
-$$
-  n =  \frac{w - 1}{2} =  1, 2, 3, 4, \ldots
-  \qquad\text{for}\quad w = 3, 5, 7, 9, \ldots
-$$
+**Sub-shells from resonance modes (backup reading).**
 
-The added curls localize at the exceptional divisor of the brane tower. The ground-state trefoil ($w = 3$) lies in the base space $\mathcal{S}_0$. An excited trefoil ($w = 5$) places extra curls in the blow-up $\mathcal{S}_1$.
+This count has not been re-derived for the ruled electron. Its closure has two components, and no counterpart of the trefoil normal-bundle construction below is on record for it.
 
-**Sub-shells from resonance modes.**
-
-The embedded trefoil $T_{2,3}$ vibrates transversely within its normal bundle $N_{T_{2,3}}$ in the Bring surface. Laplacian eigenvalues on the trefoil curve govern the resonance frequencies. The mode integers $\ell = 0, 1, 2, \ldots$ label the standing-wave patterns:
+The embedded backup trefoil $T_{2,3}$ vibrates transversely within its normal bundle $N_{T_{2,3}}$ in the Bring surface. Laplacian eigenvalues on the trefoil curve govern the resonance frequencies. The mode integers $\ell = 0, 1, 2, \ldots$ label the standing-wave patterns:
 
 - Mode $\ell = 0$: Uniform (no oscillation) — the $s$ orbital.
 - Mode $\ell = 1$: One wavelength around the curve — the $p$ orbital.
@@ -58,7 +60,7 @@ This sum reproduces the observed capacity for all $n$.
 
 **Note on geometric counting.**
 
-The sum $\sum(2\ell + 1) = n^2$ matches standard quantum mechanics. The topological model identifies $\ell$ with trefoil resonance modes and $n$ with the writhe framing number. The remaining step requires a proof:
+The sum $\sum(2\ell + 1) = n^2$ matches standard quantum mechanics. The backup trefoil model identifies $\ell$ with trefoil resonance modes and $n$ with the writhe framing number. The remaining step requires a proof:
 
 *The space of sections of the normal bundle $N_{T_{2,3}}$ of the trefoil in the Bring's surface, at total framing twist $k = 2(n-1)$, has dimension $n^2$.*
 
