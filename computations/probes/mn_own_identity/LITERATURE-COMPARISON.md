@@ -289,6 +289,37 @@ reading (proton weight 1, neutron `q⁻²`) needs a further overall `q⁻¹`, st
 Two consequences for §7–8. (i) A diagonal pivotal trace on `V^{⊗n}` always gives `z = z_D`, so the
 `z = q` normalisation the labelled count needs is not a pivotal trace on `V`; it is the trivial
 (one-row) channel, which is the only channel the labelled closure of a permutation braid sees,
-since consistent labellings only meet same-label crossings where `Ř` acts by `q`. (ii) The ratio
-`q⁻²` (from `z_D`) and the count `6` (from `z = q`) therefore come from two different traces. Whether
-one mass functional can use both is open.
+since consistent labellings only meet same-label crossings where `Ř` acts by `q`. (ii) The `z = q`
+count is therefore not the scoreboard's trace.
+
+**Correction (2026-11-21, owner: "We have two term trace....it is derived. What other trace do you
+mean?").** An earlier version of (ii) said the ratio `q⁻²` and the count `6` "come from two different
+traces" and asked whether one mass functional can use both. That framing was wrong. There is one
+derived trace, the two-term Lagrangian trace (owner ruling 2026-11-21), and §10 works inside it. The
+`z = q` closure of §7–8 is a probe of the count, not a second mass functional.
+
+## 10. Inside the two-term Lagrangian trace (`TwoTermMatterOwnSector.lean`, sorry-free)
+
+The two-term Lagrangian is `ℒ = 𝒟² + ψ*·𝒟ψ`, `𝒟 = q⁻¹∇ + (1 − q⁻¹)Reeb`
+(`CategoricalLagrangianTwoTermBridge.lean`).
+
+- **Separation of the terms.** `𝒟²` contains no nucleon state, so with a shared `𝒟` it cancels in
+  `n − p` (`trace_lagrangian_diff_shared_dirac`, already on `main`). The matter term `ψ*·𝒟ψ` contains
+  the nucleon's own state, so it is the own-sector piece. This is the structural reason the volume
+  term is shared while the constant is own-sector.
+- **The extra `q⁻¹`.** The horizontal coefficient of the matter term is `q⁻¹`. If the horizontal
+  matter trace is the own-sector trace of a common `c` (Cartan weight `q` on the proton sector,
+  `q⁻¹` on the neutron, as `Kp`/`Kn`), the horizontal contribution is `c` for the proton and
+  `q⁻² · c` for the neutron (`horizontal_matter_proton_of_own_sector`,
+  `horizontal_matter_neutron_of_own_sector`). That is exactly K1, the reading that survived the
+  proton test. `nucleon_diff_of_own_sector_horizontal` gives the whole difference:
+  `(q⁻² − 1)·c + (1 − q⁻¹)·(Reeb matter difference)`.
+
+What is assumed, and stated as Lean hypotheses (`hHorizP`, `hHorizN`): that the horizontal matter
+trace is the own-sector trace of one common `c`. What is not derived: the value of `c`. The naive
+choice, the identity on the 3-dimensional nucleon weight space, gives `q⁻¹ · 3q = 3`, not the `12`
+of the production identity. So the count is still open, now as a precise question: which element
+of the horizontal matter term has own-sector trace `12`.
+
+Note that the bridge on `main` already puts the pairwise Coulomb charge in the Reeb matter piece
+(`trace_matter_diff_coulomb_specialization`), so the horizontal piece is not otherwise occupied.
