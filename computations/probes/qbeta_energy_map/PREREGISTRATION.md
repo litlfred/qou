@@ -152,3 +152,27 @@ nucleon core β_Bor (present in the initial state, the same for n and p) and ins
 interaction's own reductions are the cross part ΔM = M(X·β_Bor) − M(β_Bor) − M(X), for both
 strategies, and for M2 also exactly in q. Contamination, stated: Addendum 4's numbers (M1·E₀ ≈ 318
 MeV, M2·E₀ ≈ 229 MeV, M3 ≈ 12.3 MeV) were printed before this was written. ΔM is the only new row.
+
+## Addendum 6 (owner "1 2"), written before any code
+
+**(1) State-level reduction count.** The module is V^{⊗4} with the Jimbo Ř (`jimbo.py`):
+uu ↦ q uu, ud ↦ du, du ↦ ud + h·du, dd ↦ q dd, and Ř⁻¹ = Ř − h. A *firing* is a step whose weight
+comes from the reduction: the h·du branch, or the −h term of an inverse. Mark each firing with a
+formal t. For a transition |i⟩ → |f⟩, E(t) = Σ_paths (product of weights)·t^(firings), computed
+exactly by dynamic programming over (state, t-degree). Summed over the CC block (n⊗ν inputs udd,dud,ddu ⊗ u
+→ p⊗e⁻ outputs, strand-tracked as in `analyse_element`) this gives E_f(t). The reverse block
+(p⊗e⁻ → n⊗ν) gives E_r(t), and the diagonal n⊗ν → n⊗ν block gives E_d(t).
+- **SA, weighted mean reductions** ⟨k⟩ = E′(1)/E(1) for f, r, d. Asymmetry A = ⟨k⟩_f − ⟨k⟩_r.
+  Energies ⟨k⟩·E₀ and A·E₀ (E₀ = energy per reduction step, `rem:energy-scale-planck`).
+- **SB, unweighted paths.** Number of nonzero-edge paths P and total firings F over them, for f and r.
+  Energies (F/P)·E₀.
+
+**(2) Other admissible words.** The two other G ∧ CC ∧ R3 words of the pair-creation proposal,
+V₀V₁V₀V₁ and V₁V₀V₁V₀ (Vᵢ = σᵢσᵢ₊₁⁻¹), each times β_Bor. Run Addendum 4–5 measures (M1, M2, ΔM,
+M3) and Addendum 6 measures (SA, SB) on all three words. No word is selected by any number.
+
+**Checks fixed now:** E_f(1) equals the CC block sum from `analyse_element`; the same for E_r(1)
+and E_d(1); NF of each W is strategy-independent.
+
+**Comparison** last, against Q_β and m_n − m_p, nothing selected. Contamination: Addendum 4–5
+numbers for V₁³ are known (100–400× Q_β; M3 = 12.3 MeV).
