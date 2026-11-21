@@ -1,4 +1,4 @@
-The **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ is defined categorically: it is the fibre functor image of the mass integrand $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. The open problem consists of computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly—expressing its NF decomposition in the basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific braid words.
+The **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ is defined categorically: it is the fibre functor image of the mass integrand $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. The open problem consists of computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly—expressing its NF decomposition in the basis $\{\mathbf{1}, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific braid words.
 
 ## Scope: convenience target, not load-bearing
 
@@ -135,6 +135,6 @@ The proton mass $938.272$ MeV in this paper derives from the pair Skein formula 
 
 ## Candidate structures
 
-**(a) Figure-eight $4_1$ as Higgs coupling.** The figure-eight knot $4_1 = (\sigma_0\sigma_1^{-1})^2$ is the gluon unit squared. Its NF is $h^2\gamma + h^3\sigma_0 - h\sigma_1 - h^2 L_+ + L_-$ with zero electron content. As a mass operator, the pairing $\mathrm{tr}_M(e^- \cdot 4_1) = hz^2 + z = \mathrm{tr}_M(e^-)$ does not produce the correct mass ratios. The figure-eight encodes the mass mechanism (amphichiral, hyperbolic, $\mathrm{Vol} = 2.0299$) but acts as the identity on the trefoil in $H_3(R, q)$.
+**(a) Figure-eight $4_1$ as Higgs coupling.** The figure-eight knot $4_1 = (\sigma_0\sigma_1^{-1})^2$ is the gluon unit squared. Its NF is $h^2\,\mathbf{1} + h^3\sigma_0 - h\sigma_1 - h^2 L_+ + L_-$ with zero electron content. As a mass operator, the pairing $\mathrm{tr}_M(e^- \cdot 4_1) = hz^2 + z = \mathrm{tr}_M(e^-)$ does not produce the correct mass ratios. The figure-eight encodes the mass mechanism (amphichiral, hyperbolic, $\mathrm{Vol} = 2.0299$) but acts as the identity on the trefoil in $H_3(R, q)$.
 
 **(b) Tower-accumulated operator.** The mass endomorphism may equal the product $\Phi_{\mathrm{mass}} = \prod_{n=0}^{N} (1 + \Phi_q(z_n))$ of Hecke elements at each brane level, composed via the comultiplication. This forms an element of $H_n(R, q)$ growing with $N$—a categorically defined object, but not a fixed element independent of the knot.

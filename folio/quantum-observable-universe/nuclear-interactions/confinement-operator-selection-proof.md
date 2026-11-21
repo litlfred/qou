@@ -2,7 +2,7 @@
 
 A topological principle selects the Borromean braid $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ as the confinement operator. Confinement requires that no proper subset of the three quarks can be isolated. Equivalently, the braid closure must be a Brunnian link. $\mathcal{B}_3$ provides the crossing-minimal such link.
 
-This selection occurs on braid space, not on the Frobenius Gram matrix. A minimum-action functional on that matrix does not select $\mathcal{B}_3$. Because $\mathrm{NF}(\mathcal{B}_3)$ is $\approx 99.8\%$ the identity $\gamma$, any cost-minimising operator-space program selects the smallest-cost mesonic channel $L_\pm$. The Gram and Markov-trace data serve strictly as a consistency check.
+This selection occurs on braid space, not on the Frobenius Gram matrix. A minimum-action functional on that matrix does not select $\mathcal{B}_3$. Because $\mathrm{NF}(\mathcal{B}_3)$ is $\approx 99.8\%$ the identity $\mathbf{1}$, any cost-minimising operator-space program selects the smallest-cost mesonic channel $L_\pm$. The Gram and Markov-trace data serve strictly as a consistency check.
 
 ## Three unconfined quarks are unstable
 
@@ -11,20 +11,20 @@ In $H_3(q)$, the unconfined proton quarks $(\mathfrak{u}, \mathfrak{u}, \mathfra
 $$
   \mathrm{NF}(\sigma_0 \cdot (\sigma_0 - \tfrac{1}{2}h_{\mathrm{A}}) \cdot (\sigma_1 - \tfrac{1}{2}h_{\mathrm{A}}))
   =
-  -0.105\gamma - 0.011\sigma_0 + 1.000\sigma_1 + 0.105 L_+.
+  -0.105\,\mathbf{1} - 0.011\sigma_0 + 1.000\sigma_1 + 0.105 L_+.
 $$
 
-The demand profile $\{\gamma = -0.105, \sigma_0 = -0.011\}$ signals instability. The unconfined state requires vacuum energy ($\gamma$) and crossing content ($\sigma_0$) from its environment.
+The demand profile $\{[\mathbf{1}] = -0.105, \sigma_0 = -0.011\}$ (with $[\mathbf{1}]$ the coefficient of the identity word $\mathbf{1}$) signals instability. The unconfined state requires vacuum energy ($\mathbf{1}$) and crossing content ($\sigma_0$) from its environment.
 
 For unconfined neutron quarks $(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$:
 
 $$
   \mathrm{NF}(\text{unconfined } \mathfrak{n})
   =
-  -0.211\gamma + 1.011\sigma_1,
+  -0.211\,\mathbf{1} + 1.011\sigma_1,
 $$
 
-with demand $\{\gamma = -0.211\}$. This larger vacuum deficit reflects the extra down quark's $-h_{\mathrm{A}}$ shift.
+with demand $\{[\mathbf{1}] = -0.211\}$. This larger vacuum deficit reflects the extra down quark's $-h_{\mathrm{A}}$ shift.
 
 ## Candidate operator comparison
 
