@@ -1355,6 +1355,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6"
+      },
+      {
+        "field_hash": {
+          "md": "0d46ea3c5b54",
+          "ts": "9178e64f4bc7",
+          "graph": "ba9b3251b965"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1391,6 +1409,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "0d46ea3c5b54",
+          "ts": "9178e64f4bc7",
+          "graph": "ba9b3251b965"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1574,6 +1611,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6"
+      },
+      {
+        "field_hash": {
+          "md": "0d46ea3c5b54",
+          "ts": "9178e64f4bc7",
+          "graph": "ba9b3251b965"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2043,6 +2098,23 @@
         },
         "reviewed_tree": "838c6b8883d2aaf90c6b706f250705bb609d5b7c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0d46ea3c5b54",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:53.000Z",
+        "reviewed_sha": "96874d030c6a066b4ef4d26783e43b7d6b3d1447",
+        "severity": "major",
+        "evidence": "Full re-read of the block at PR #8892 head 96874d030c after d18cf2eb2 (E0 = Q/Δ_A stated as a fit; Model A's row 'not a test'; table ranks models only relative to A). Arithmetic checked: -0.1883×4.155 = -0.7824, -0.3521×4.155 = -1.4630, -0.78233/-0.3521 = 2.222. The first sentence still concludes 'The nucleon NF requires no explicit gluon factors L± beyond B_3. Five candidate models illustrate this.' After this PR the table cannot illustrate it: E0 is fitted to Model A, and each model's own implied E0 (last column) would reproduce Q exactly, so the numbers do not discriminate between models. The remaining support is the double-counting argument in the Interpretation, which is structural. The opening sentence should rest on that argument, or be stated as the model's choice.",
+        "notes": "Left by the PR: its own new sentence contradicts the block's headline claim. Report only."
       }
     ],
     "da-overclaim": [
@@ -2088,6 +2160,21 @@
         },
         "reviewed_tree": "838c6b8883d2aaf90c6b706f250705bb609d5b7c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0d46ea3c5b54",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:53.000Z",
+        "reviewed_sha": "96874d030c6a066b4ef4d26783e43b7d6b3d1447",
+        "evidence": "Full re-read of the block at PR #8892 head 96874d030c after d18cf2eb2 (E0 = Q/Δ_A stated as a fit; Model A's row 'not a test'; table ranks models only relative to A). Arithmetic checked: -0.1883×4.155 = -0.7824, -0.3521×4.155 = -1.4630, -0.78233/-0.3521 = 2.222. The overclaims the PR targets are gone: 'matches CODATA exactly', 'calibrates E0', 'NF are confirmed', 'completely encodes', and exact color neutrality. The remaining overclaim is the opening sentence, recorded under da-circular."
       }
     ],
     "da-hidden-dof": [
@@ -2313,6 +2400,23 @@
         },
         "reviewed_tree": "838c6b8883d2aaf90c6b706f250705bb609d5b7c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "0d46ea3c5b54",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:53.000Z",
+        "reviewed_sha": "96874d030c6a066b4ef4d26783e43b7d6b3d1447",
+        "severity": "minor",
+        "evidence": "Full re-read of the block at PR #8892 head 96874d030c after d18cf2eb2 (E0 = Q/Δ_A stated as a fit; Model A's row 'not a test'; table ranks models only relative to A). Arithmetic checked: -0.1883×4.155 = -0.7824, -0.3521×4.155 = -1.4630, -0.78233/-0.3521 = 2.222. 'triples |Δ × E0| to −2.51 MeV' sets an absolute value equal to a negative number, and -2.51/-0.7823 = 3.2, not 3. Pre-existing wording in a sentence the PR edited.",
+        "notes": "Report only."
       }
     ],
     "da-empirical-fragility": [
@@ -2856,6 +2960,21 @@
         "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
         "evidence": "'intrinsic ..., not an additional factor' + 'single-crossing unknots, not full trefoils'",
         "notes": "substantive mathematical contrast: intrinsic-vs-double-counted Hopf factor and the trefoil-vs-crossing assignment ARE the block's claims, backed by the Table K.3 numbers; kept"
+      },
+      {
+        "field_hash": {
+          "md": "0d46ea3c5b54",
+          "ts": "9178e64f4bc7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:50:53.000Z",
+        "reviewed_sha": "96874d030c6a066b4ef4d26783e43b7d6b3d1447",
+        "evidence": "Full re-read of the block at PR #8892 head 96874d030c after d18cf2eb2 (E0 = Q/Δ_A stated as a fit; Model A's row 'not a test'; table ranks models only relative to A). Arithmetic checked: -0.1883×4.155 = -0.7824, -0.3521×4.155 = -1.4630, -0.78233/-0.3521 = 2.222. New negations ('its row is not a test', 'a fitted scale, not one of the calibrations CAL-1/2/3', 'This is a fit') carry information a reader needs about the comparison boundary, so they are not the trap. The older ', not an additional factor' was judged pass by agent:q00 and is unchanged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -3309,6 +3428,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a67a1283b2d2ce59712d101df3beff7579f830a6"
+      },
+      {
+        "field_hash": {
+          "md": "0d46ea3c5b54",
+          "ts": "9178e64f4bc7",
+          "graph": "ba9b3251b965"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "4f7f5d0c431b9bcf798093fc752943963b88c4c2"
       }
     ],
     "da-arity-conflation": [
@@ -3498,6 +3635,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:45:24.000Z",
+  "updated_at": "2026-11-21T15:50:53.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
