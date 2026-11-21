@@ -570,6 +570,8 @@ re-converges quadratically at K = 4: `|F|` goes 14.1 → 3e-42, with `S = 0.8313
 | B (L2N2) | S = 0.8313389737, res 3.1e-42 | θ = 0.025 (S 0.94542), 0.0375 (S 0.96016) | θ = 0.05 |
 | C (L2N3) | S = 0.4712083214, res 1.2e-43 | θ = 0.0125 (S 0.53998), 0.025 (S 0.62927) | θ = 0.0375 |
 
+**Correction (commit `25d4d89d8a2`).** That commit's message lists θ = 0.0125 (S = 0.9166) among the natural-parameter points of B. That point came from the first natural step of the *arclength* run. The natural-parameter path recorded in `homotopyB.witness.json` is 0 → 0.025 → 0.0375, failing at 0.05, as in the table above. The history is not rewritten; this note is the correction.
+
 Neither orbit collapses onto a steady solution in the solenoidal basis. That differs from the phase-2
 C result, which was obtained in the non-solenoidal basis.
 

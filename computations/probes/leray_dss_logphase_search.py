@@ -627,9 +627,9 @@ def theta_omega_columns(sy, x, th, pj, sd, F, hstep):
     Fom = [mid(th / om * Fth[i] + E[i]) for i in range(len(F))]
     return Fth, Fom
 
-def corrector_chord(sy, y_pred, t, W, pj, maxit=14, log=LOG):
-    """Pseudo-arclength corrector, chord Newton: the bordered Jacobian is refreshed only when the
-    residual drops by less than a factor 4 per iteration. Returns (y, nf, ok, its)."""
+def corrector_chord(sy, y_pred, t, W, pj, maxit=10, log=LOG):
+    """Pseudo-arclength corrector: full Newton until |F| < 1e-15(1+|A|), then the bordered Jacobian is
+    frozen while each iteration gains >= 6 digits. Returns (y, nf, ok, its)."""
     n, K = sy.n, sy.K
     tol = arb(10) ** (-(DPS - 20)); hstep = arb(10) ** (-(DPS // 2))
     y = [mid(v) for v in y_pred]; D = len(y) - 1
@@ -645,8 +645,9 @@ def corrector_chord(sy, y_pred, t, W, pj, maxit=14, log=LOG):
         nf = mid(norm(F + [cons])); xn = mid(norm(x[:-1]))
         if nf < tol * (1 + xn): return y, nf, True, it
         if it == maxit or not (nf < arb(10) ** 12): return y, nf, False, it
-        if prev is not None and not (nf < prev): return y, nf, False, it
-        if Mfac is None or (prev is not None and nf > prev / 4):
+        # full Newton while far from the solution; chord (reuse) only once the residual is tiny
+        # and contracting fast, where a frozen Jacobian still gains >= 6 digits per iteration
+        if Mfac is None or nf > arb(10) ** -15 * (1 + xn) or (prev is not None and nf > prev / 10 ** 6):
             Fth, Fom = theta_omega_columns(sy, x, th, pj, sd, F, hstep)
             Jx = jacobian(sy, x, th, pj, sd, F, G, hstep, omega_col=Fom)
             Mb = arb_mat(D + 1, D + 1)
