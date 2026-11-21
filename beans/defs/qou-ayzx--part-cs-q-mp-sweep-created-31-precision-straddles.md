@@ -4,7 +4,7 @@ title: 'Part C''s Q_MP sweep created 31 PRECISION STRADDLES: mpmath side moved t
 status: todo
 type: task
 created_at: 2026-11-21T04:30:36Z
-updated_at: 2026-11-21T04:45:00Z
+updated_at: 2026-11-21T05:05:00Z
 parent: qou-9nnz
 ---
 
@@ -49,3 +49,22 @@ Both upstream witnesses are among the **7 py3.13 provenance-blocked** producers 
 2. Close the straddle in all **31** files, not just the 2 in this chain. The other 29 are silent today because nothing asserts at 1e-50 — they are wrong numbers waiting for a tight enough check.
 3. **Do NOT widen any tolerance** to close this. AGENTS.md: a bound sized to its own miss is a fit.
 4. Decide whether a sweep like Part C's should refuse to patch a file that also carries a sympy path, rather than creating the straddle silently. The classifier already carves out 207 deliberate 50-digit consumers; this is the same idea one spelling over.
+
+### CORRECTION, same day — "each computes one quantity from two values of q" was an OVERCLAIM
+
+The section above states that each of the 31 *"now computes **one quantity** from two different values of `q`"*. **Only one of them is confirmed to do that.** What is measured is that each file *carries* both values; whether they MEET inside a single computed quantity is a per-file question I checked on exactly one.
+
+Re-measured from `HEAD` (so my own working-tree edits do not contaminate it):
+
+| | files |
+|---|---:|
+| straddles at HEAD (carry a sympy 50-digit `q` **and** `Q_MP`) | **37** |
+| of those, the sympy branch is converted into mpmath somewhere (`to_mp` / `mp.mpf(str(` / `sp.N(`) — the **necessary** condition for the two to meet | **34** |
+| of those, it is not — the two stay in parallel pipelines | 3 |
+| **confirmed** to mix inside one quantity | **1** |
+
+The confirmed one is `two_nucleon_binding_law_comparison_probe`: its `tr`/`ph` come from `QV` (sympy, 50 digits) and are combined with `E0`, `me`, `h`, `z` from `Q_MP` (70 digits) inside `laws()`. That is a genuine single-quantity straddle and it is why three 1e-50 checks broke.
+
+**"Crosses into mpmath" is necessary, not sufficient**, so the other 33 are *candidates*, not established defects — a file could convert the sympy value and still never combine it with a `Q_MP`-derived one. Do not quote 31 or 34 as a defect count; quote them as the population to triage, with 1 confirmed.
+
+This matters for prioritisation: if most of the 33 turn out to keep the two values in separate quantities, the fix is small. If they mix, each one is a wrong number at the 1e-50 level that nothing currently asserts tightly enough to catch.
