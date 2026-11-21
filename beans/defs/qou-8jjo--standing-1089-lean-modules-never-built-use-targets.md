@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T03:33:19Z
-updated_at: 2026-11-21T14:33:40Z
+updated_at: 2026-11-21T19:30:00Z
 parent: qou-5vkl
 ---
 
@@ -216,3 +216,7 @@ Was in-progress with no bean update since 2026-09-06 and no main commit naming i
 ## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
 
 **Fresh whole-library measurement, QOU package only.** `scripts/lean-direct-cone.sh --all -k -j4` at main `2ae54ab401`, on a fresh `lake-cache/qou-v4-24-0` restore plus `scripts/lean-restore-gap-oleans.sh` (222 oleans): **3435 modules; 3420 ok, 5 error, 10 blocked.** All 5 errors were `object file ... does not exist` for Mathlib modules that exist at the pinned rev `f897ebcf72` but are in neither cache branch (`Analysis.Calculus.DifferentialForm.Basic`, `Analysis.Complex.JensenFormula`, `Probability.Distributions.Gaussian.Real`, `Geometry.Manifold.MFDeriv.Atlas`, and their cones: 66 oleans). Built from pinned source with `scripts/lean-build-mathlib-gap-cone.py`, 0 failed. Re-check of the 15: all ok except the library root `QOU`, which was a genuine red: `unitJ` defined in both `BringConeGauge` and `BringConeIcosahedral` (since 2026-11-15). Fixed on branch `claude/lean-build-red-2026-11-21` (`d07507f2df`); after it `QOU` ok. Wall time about 2 h 20 min on 4 cores. UGB and Fred2005 were not swept.
+
+## 2026-11-21 (thread "Fix Lean tooling beans")
+
+Triaged 2026-11-21 in docs/audits/2026-11-21-lean-tooling-beans.md (PR #8928): 104-file delta since the last full sweep (55 added, 49 modified). Delta-sweep marker proposed, not built (changes the shared gate; owner call).

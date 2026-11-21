@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T11:48:55Z
-updated_at: 2026-10-04T15:14:12Z
+updated_at: 2026-11-21T19:30:00Z
 parent: qou-5vkl
 ---
 
@@ -389,3 +389,7 @@ is an owner call under the 2026-09-07 ASK-BEFORE-CHANGING directive.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-21 (thread "Fix Lean tooling beans")
+
+Label/cascade half done on PR #8928 (draft), commit b7b78c6e36: skipped split into SKIPPED (behind RED) and BLOCKED (not judged), VERDICT line, exit 8 = INCOMPLETE. Tested with a fake lean (RED / INCOMPLETE / GREEN). Owner-authorised via the coordinator dispatch "Both - dispatch siblings". Close when #8928 merges.

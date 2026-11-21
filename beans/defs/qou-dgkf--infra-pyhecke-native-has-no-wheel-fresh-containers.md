@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T00:45:42Z
-updated_at: 2026-10-04T15:20:52Z
+updated_at: 2026-11-21T19:30:00Z
 parent: qou-5vkl
 ---
 
@@ -67,3 +67,7 @@ Filed under "infra" per the request to bean up infra/Mathlib gaps. No Mathlib
 shortfall was hit in this arc — every Lean obligation for `Mu3SlotExclusion` closed
 with existing Mathlib (`Finset.exists_lt_of_sum_lt`, `Finset.sum_nonneg`,
 `nlinarith`). This is purely a Python/Rust environment-provisioning gap.
+
+## 2026-11-21 (thread "Fix Lean tooling beans")
+
+Owner 2026-11-21: "Cache wheel on a branch", then "Use cat-harness infra for repo branch cache". Done on PR #8928 (commit 7f4614f82c): qou.json `wheel-cache` family (cat/qou/wheel-cache/, keyedBy family), kind in qou typologies/, scripts/wheel-cache.sh, build-pyhecke-native.sh restores first (1.9 s vs ~2.5 min) and seeds after a gated build. Seeded pyhecke-native-0.9.0-cp313-linux_x86_64-e4aa6f046952. Close when #8928 merges.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T17:38:02Z
-updated_at: 2026-10-04T15:16:29Z
+updated_at: 2026-11-21T19:30:00Z
 parent: qou-5vkl
 ---
 
@@ -139,3 +139,7 @@ claim, rebuild the cone from source with the lakefile's flags — a restored cac
 report both phantom sorries and phantom cleanliness.
 
 - **Round 94 (`litlfred/qou#8424`)**: Advanced in `feat/round94-parity-level-lever1depth2-tauclosed-chainlog-43c1` (Commit 1 `c1698951b30460bb111c1e97552482f0b0622bd0`, Commit 2 `5a166eac86b999ab31c9bdd39f5908e1c848e122`, probe sha256 `1438398dfd335d3f6e9ebdcaa8df8fdc4613a507b4d480b0c9dde22e4b3c8bcb`).
+
+## 2026-11-21 (thread "Fix Lean tooling beans")
+
+Owner card 2026-11-21: "Fix references, close bean". PR #8928 commit cf9c86db5f rewrites 35 lines / 24 living files to the current names; witnesses, six commented producers (scriptHash) and dated records left. Also fixed gen_atomic_mass.py drift (template name + ame_u CODATA 2018 value under a 2022 label). Audit: docs/audits/2026-11-21-lean-tooling-beans.md. Close when #8928 merges.
