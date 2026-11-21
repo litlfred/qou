@@ -1,13 +1,13 @@
 ---
 # qou-pdgc
 title: 'The Hecke oleans were 3 months stale: 3 defs read as AXIOMS and wenzlBridge carried a retracted form'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T17:29:43Z
-updated_at: 2026-10-04T15:24:55Z
+updated_at: 2026-11-21T15:20:53Z
 parent: qou-5vkl
 ---
 
@@ -199,3 +199,5 @@ required `ok=`. Ground truth — does the olean exist — says all 40 built.
 The remaining 1089 never-built modules are a standing condition rather than this
 bean's task, and are carried by `qou-8jjo` with the method and the do-not-do
 (no more `--all` sweeps).
+
+2026-11-21 (lean-build-red drain, issue #8817): closed. Body already records it as completed on 2026-09-06; the rest is carried by qou-8jjo. Today's full QOU lean-direct sweep found no red outside the QOU.lean root, which PR #8878 fixed.

@@ -1,13 +1,13 @@
 ---
 # qou-ekgf
 title: fix the four content-block sibling reds outside qou-e7xv's sweep (confinement-level-exists, euler-char-stability, localized-knot, qz-bicompletion)
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T20:48:19Z
-updated_at: 2026-10-04T15:12:36Z
+updated_at: 2026-11-21T15:20:53Z
 parent: qou-5vkl
 ---
 
@@ -31,3 +31,5 @@ Recipe correction recorded in the lean-verifier memory; seed-commit closure (1,4
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+2026-11-21 (lean-build-red drain, issue #8817): closed. lean-direct (-DautoImplicit=false -s 65536) on main 1ec5ab23d9: confinement-level-exists, euler-char-stability, localized-knot and qz-bicompletion all exit 0 with 0 errors and no sorry. The qz-bicompletion gap is gone too.

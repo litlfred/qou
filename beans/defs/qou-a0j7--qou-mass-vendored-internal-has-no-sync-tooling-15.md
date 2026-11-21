@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T14:18:01Z
-updated_at: 2026-10-04T15:23:05Z
+updated_at: 2026-11-21T15:20:54Z
 parent: qou-5vkl
 ---
 
@@ -130,3 +130,5 @@ grep showed a stale classifier and I inferred the rest. One import would have
 corrected it, and I escalated to the owner twice instead.
 
 In-progress in Round 98 PR litlfred/qou#8442.
+
+2026-11-21 (lean-build-red drain, issue #8817): sync tooling exists (scripts/sync-qou-mass-vendor.py), so the systemic finding is fixed. --check on main 1ec5ab23d9 reports 4 drifted: cal-3-q-beta.witness.json, codata-2022-validation-masses.witness.json, canonical_braid_crossings, experimental_constants. Running --apply changes packaged data, so it waits on the owner. Kept open.

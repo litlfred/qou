@@ -1,13 +1,13 @@
 ---
 # qou-lsib
 title: 'Content-block Lean siblings: 34 unverified as of 2026-08-28, and nothing in CI builds them'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T20:45:00Z
-updated_at: 2026-10-04T15:10:52Z
+updated_at: 2026-11-21T15:20:53Z
 parent: qou-5vkl
 ---
 
@@ -295,3 +295,5 @@ stronger than the cache check) — which `/prepare-merge` already names.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+2026-11-21 (lean-build-red drain, issue #8817): closed. The repair backlog was already empty (32 clean, 2 deleted). Enforcement is lean-content-sweep.sh under /prepare-merge, because CI is dispatch-only by owner directive. Today's full QOU sweep agrees.

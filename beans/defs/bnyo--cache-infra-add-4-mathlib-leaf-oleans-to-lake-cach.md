@@ -1,13 +1,13 @@
 ---
 # bnyo
 title: 'Cache infra: add 4 Mathlib leaf oleans to lake-cache cone (5 cache-artifact files genuinely use them)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-06-27T13:09:47Z
-updated_at: 2026-10-04T15:16:51Z
+updated_at: 2026-11-21T15:20:54Z
 parent: qou-5vkl
 ---
 
@@ -114,3 +114,5 @@ restores from this seed onward (kept per the never-delete-branches directive).
 Skill note updated. Bean goal achieved; closing is the owner's call.
 
 - **Round 94 PR (`litlfred/qou#8500`)**: Formalized `LeafOleanConeBatchingLedger`, `canonicalLeafOleanConeBatchingLedger`, `leaf_cone_parallelogram_identity`, `leaf_cone_discrepancy_sq_nonneg`, and `leaf_cone_positive_leverage_and_recovery` in `QOU.Foundations.LeafOleanConeBatchingDeferredStructuralCleanupSiblingVerificationClassificationFamilyChainErrorPartitionSubstrateProbeCancelHotspot` with 80-dps witness (`HEAD = 37841388326f8fad43c7ffaa9f1c59e901153736`, `scriptCommitSha = 79b2648932653702ea6a8cbefa5ff6493ff25e46`, `scriptHash = 310095425a857ae1cba47494cdbd7491b7846f82f292c4df8b8288ba0a130fe0`).
+
+2026-11-21 (lean-build-red drain, issue #8817): closed. Body says goal achieved: the 2026-07-02 reseed folded the leaf oleans into the base branch. Gap addon fe9ce69 adds 66 more.
