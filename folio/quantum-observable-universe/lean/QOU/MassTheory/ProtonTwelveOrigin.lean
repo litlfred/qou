@@ -144,4 +144,57 @@ theorem reebSlot_one : reebSlot (1 : K) = -3 := by
 theorem reebSlot_one_ne_neg_twelve : reebSlot (1 : K) ≠ -12 := by
   rw [reebSlot_one]; norm_num
 
+/-! ## The Reeb-square slot as the `−12`
+
+For the Reeb square to *be* the `−12 m_e` term, `τ(R_p∘R_p)` must be `−12` for
+every `q`. Two statements follow. (1) The corpus hypothesis `hReebP` cannot play
+that role at any normalisation, because `q·tr(V³_A)` is not constant. (2) If the
+Reeb generator acts as a circle action of integer weight `k` (`R∘R = −k²·𝟙`), the
+trace is `−k²·dim`; on the 3-dimensional proton weight space that `hReebP` traces
+over, `−12` forces `k = ±2`, while with a normalised trace (`τ(𝟙) = 1`) no integer
+weight gives `−12`. So the `−12` reduces to "the proton's Reeb weight is 2", which
+nothing in the corpus fixes. That is a reduction, not a derivation. -/
+
+/-- `q·tr(V³_A)` takes different values at `q = 1` and `q = 2`. -/
+theorem reebSlot_one_ne_two : reebSlot (1 : K) ≠ reebSlot 2 := by
+  simp only [reebSlot, trV3A]
+  norm_num
+
+/-- **`hReebP` cannot be a constant term**: no constant equals `q·tr(V³_A)` for
+all `q`. Scope (b) for the `hReebP` reading of the `−12`: a nonconstant function
+of `q` is not a constant. -/
+theorem reebSlot_not_constant : ¬ ∃ c : K, ∀ q : K, reebSlot q = c := by
+  rintro ⟨c, hc⟩
+  exact reebSlot_one_ne_two (by rw [hc 1, hc 2])
+
+omit [CharZero K] in
+/-- A scalar Reeb square has trace `c·n` on an `n`-dimensional space. -/
+theorem trace_scalar_square {n : ℕ} (R : Matrix (Fin n) (Fin n) K) (c : K)
+    (hR : R * R = c • (1 : Matrix (Fin n) (Fin n) K)) :
+    Matrix.trace (R * R) = c * n := by
+  rw [hR, Matrix.trace_smul, Matrix.trace_one, Fintype.card_fin, smul_eq_mul]
+
+/-- **On the 3-dimensional proton weight space, `−12` forces Reeb weight `±2`.** -/
+theorem weight_space_weight_eq_two (k : ℤ) :
+    -((k : ℚ) ^ 2) * 3 = -12 ↔ k = 2 ∨ k = -2 := by
+  constructor
+  · intro h
+    have h4 : (k : ℚ) ^ 2 = 4 := by linarith
+    have : k ^ 2 = 4 := by exact_mod_cast h4
+    have : (k - 2) * (k + 2) = 0 := by ring_nf; linarith
+    rcases mul_eq_zero.mp this with h | h
+    · left; linarith
+    · right; linarith
+  · rintro (rfl | rfl) <;> norm_num
+
+/-- **With a normalised trace (`τ(𝟙) = 1`) no integer Reeb weight gives `−12`.** -/
+theorem normalised_no_integer_weight (k : ℤ) : -(k ^ 2) ≠ (-12 : ℤ) := by
+  intro h
+  have h12 : k ^ 2 = 12 := by linarith
+  have hk : k.natAbs ^ 2 = 12 := by
+    have := congrArg Int.natAbs h12
+    simpa [Int.natAbs_pow] using this
+  have hle : k.natAbs ≤ 3 := by nlinarith
+  interval_cases (k.natAbs) <;> omega
+
 end QOU.MassTheory.ProtonTwelveOrigin
