@@ -21,3 +21,5 @@ Measured gaps on main: `glossary/` has 32 blocks (claim 71), 8 with `lean:` refs
 
 ## 2026-11-21: triage note (hecke-gs-conj sibling (session_01Qmmkt5sJX34MCerjRMERJN))
 Not formal mathematics: this is a monograph content overhaul (front matter, a Z = 1..118 table, a 71-entry glossary, a 3,635-block audit). Under the ask-first rule each part is a content drain that needs the owner to scope it, and the Z = 1..118 table with a "1.020 % median |dB/B|" is a comparison table, so it would also need the anti-fit check. Left `todo`; passed to the coordinator as an owner decision.
+
+Premise check vs `docs/coordination/owner-rulings.md` (main 2ae54ab40, 2026-11-21, owner request to drop old results): SUPERSEDED premises found in its 2026-11-19 resolution text: it calls the photon "switched photon sigma_0 sigma_1^-1" (the form is right, but "switched" is retired wording: it is simply the photon, AGENTS.md), and its Z = 1..118 table with a "1.020 % median |dB/B|" predates the two-term trace ruling and the T(2,n_s) withdrawal, so any rebuild must start from the current basis, not from that claim.

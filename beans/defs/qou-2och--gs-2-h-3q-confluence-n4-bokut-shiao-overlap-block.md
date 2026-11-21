@@ -33,3 +33,5 @@ Checked on main 2ae54ab40, file by file:
 - Confluence: `local_confluence`, `confluence` and `normal_form_unique` in `CompositionLemma.lean` are theorems (up to CoeffEq), from `DiamondLemma.lean:966` `reductionUnique` (bean qou-lc7q). No `axiom` left in CompositionLemma / DiamondLemma / HeckeGS / HeckeCompletion / HeckeChain*.
 - Block-ordered nuclear induction: `HeckeChainNormalForm.lean` (PR #8619) and `HeckeChainEveryPath.lean:216` `chainXi_every_reduction_heckeOnly` (PR #8641); the C(A−1,2) count is a block-multiplication count (`chainXi_L3_needs_two_steps`, owner reworded statement 1).
 The two parts of the title that are not GS mathematics were split out and stay open: alpha_crit = q_0 → qou-a7cr (owner scope), GPMT radical separation → qou-gp9r. The 872-line file the 2026-11-19 resolution named still does not exist; this completion rests on the files above, not on it.
+
+Premise check vs `docs/coordination/owner-rulings.md` (main 2ae54ab40, 2026-11-21, owner request to drop old results): no superseded premise. The GS results are pure Hecke-algebra rewriting (generic HeckeParams), with no photon, electron, trace convention or fitted constant in them.

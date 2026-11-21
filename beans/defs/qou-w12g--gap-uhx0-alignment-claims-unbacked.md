@@ -58,3 +58,5 @@ Still open:
 
 ## 2026-11-21: completed (hecke-gs-conj sibling (session_01Qmmkt5sJX34MCerjRMERJN))
 Every item in this GAP has an owner: qou-2och is now completed on the artifacts listed there (checked on main 2ae54ab40); the 12 other beans were reopened 2026-11-20 on owner instruction; alpha_crit = q_0 is qou-a7cr (owner scope, card posted); GPMT radical is qou-gp9r (scoping note added). qou-lm62 stays `todo`: its items are content drains (glossary, Z = 1..118 table, front matter) that need owner scoping under the ask-first rule, and that is recorded on qou-lm62 itself.
+
+Premise check vs `docs/coordination/owner-rulings.md` (main 2ae54ab40, 2026-11-21, owner request to drop old results): no superseded premise; this bean is about missing artifacts, not physics.
