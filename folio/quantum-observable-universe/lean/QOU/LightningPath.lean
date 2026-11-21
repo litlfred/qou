@@ -141,7 +141,8 @@ theorem lightning_path_synthesis :
     ∧ (∀ {M : Type*} (tmd : TopologicalMassDecomposition M),
         tmd.totalMass = tmd.baselineHolonomy +
           (Finset.univ.sum fun i => tmd.exceptionalContribution i))
-    -- Pillar 4: CODATA end-to-end (all four hadronic rows match)
+    -- Pillar 4: CODATA-pinned hadronic rows (hold by construction; see
+    -- HadronicMass §5 — these are not predictions)
     ∧ (|proton_topological - proton_mass_MeV| < 1e-3 ∧
        |neutron_topological - neutron_mass_MeV| < 1e-3 ∧
        |deuteron_topological - deuteron_mass_MeV| < 1e-3 ∧
