@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T15:11:06.643438+00:00",
-  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-21T02:51:12.934482+00:00",
+  "commitSha": "28488bb4f7c533dea5ff310ea41d0cc4c50c6bd8",
   "assertions": [
     {
       "name": "per_cell_weight_matches_alpha_em",
@@ -17,8 +17,8 @@
   "durationMs": 3,
   "computation": "yekutieli-per-cell-alpha-em-derivation-probe",
   "scriptFile": "yekutieli_per_cell_alpha_em_derivation_probe.py",
-  "scriptHash": "17402bb2c4fd",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "910b5b6bc201",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/yekutieli_per_cell_alpha_em_derivation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/yekutieli_per_cell_alpha_em_derivation_probe.py"
   },
   "description": "Session A probe: applies τ_q action to ONE ideal octahedron at h² order under the Reading-A geometrised scaffold (PR #1628). Checks if the resulting per-cell coupling weight matches the hypothesized α_em/π factor (the Bring-zero-mode analog). Pre-stated failure signature: weight is a rational times G (Catalan's constant) without an α_em factor.",
   "contentBlock": "prop:yekutieli-non-abelian-stokes",

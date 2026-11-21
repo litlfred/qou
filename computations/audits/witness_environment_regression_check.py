@@ -49,6 +49,40 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
+# A value is ORDERABLE only if it looks like a dotted version. Anything else -- a build
+# hash above all -- is a CHANGE with no direction, and must never be ranked.
+#
+# WHY, measured 2026-11-21 within an hour of this file landing. The first version scraped
+# digits out of every value with `re.findall(r"\d+", ...)`. On `pyhecke_native_build` that
+# turns `9916510690677ea8` into `(9916510690677, 8)` and `930c010e26215e56` into
+# `(930, 10, 26215, 56)`, so the pair ranks as a DOWNGRADE -- and the same two hashes with
+# their digits falling the other way would have ranked as an UPGRADE. Both labels are
+# noise. It produced one false refusal (`yekutieli-half-h2-observable-hunt`, refused on the
+# hash alone while its value diff was 0.00e+00 over zero fields) before being caught.
+#
+# The failure mode was one-sided and that is why nothing was mis-committed: a misranked
+# hash yields "no regression", so it can only ever over-REFUSE, never admit a regression.
+#
+# AGENTS.md explains why the field exists at all: `pyhecke_native` is built from this
+# repo's own `tools/hecke-engine` and is unpublished, so its version string is a
+# hand-maintained crate number that measurably did NOT move across 21 commits that changed
+# numbers. The build hash is the only signal there -- which makes "it changed" the whole
+# message, and any ordering of it a fiction.
+_ORDERABLE = re.compile(r"^\d+(\.\d+)*$")
+
+#: Fields that are identities, not versions. Never ranked, always reported as changed.
+UNORDERED_FIELDS = frozenset({"pyhecke_native_build"})
+
+
+def is_orderable(key: str, value) -> bool:
+    """True iff a transition in this field has a meaningful direction."""
+    if key in UNORDERED_FIELDS:
+        return False
+    if value is None or value == "absent":
+        return True
+    return bool(_ORDERABLE.match(str(value)))
+
+
 def _version_tuple(v) -> tuple:
     """`absent` and None order below every real version, per witness.py."""
     if v is None or v == "absent":
@@ -60,12 +94,17 @@ def compare(old: dict, new: dict) -> dict:
     """Classify an environment transition. Pure; this is what --selftest exercises."""
     stripped = sorted(set(old) - set(new))
     both = set(old) & set(new)
-    downgraded = sorted(f"{k} {old[k]}->{new[k]}" for k in both
+    ranked = [k for k in both
+              if is_orderable(k, old[k]) and is_orderable(k, new[k])]
+    unranked = sorted(f"{k} {old[k]}->{new[k]}" for k in both
+                      if k not in ranked and old[k] != new[k])
+    downgraded = sorted(f"{k} {old[k]}->{new[k]}" for k in ranked
                         if _version_tuple(new[k]) < _version_tuple(old[k]))
-    upgraded = sorted(f"{k} {old[k]}->{new[k]}" for k in both
+    upgraded = sorted(f"{k} {old[k]}->{new[k]}" for k in ranked
                       if _version_tuple(new[k]) > _version_tuple(old[k]))
+    # `changed` is reported but is NOT a regression: an identity has no direction.
     return {"stripped": stripped, "downgraded": downgraded, "upgraded": upgraded,
-            "regression": bool(stripped or downgraded)}
+            "changed": unranked, "regression": bool(stripped or downgraded)}
 
 
 def _selftest() -> int:
@@ -96,6 +135,18 @@ def _selftest() -> int:
         # identical must not fire
         ("identical does not fire", {"python": "3.11.18"}, {"python": "3.11.18"},
          False, [], []),
+        # THE REGRESSION THIS FILE SHIPPED WITH: a build hash is not a version.
+        ("build hash does not fire either way",
+         {"pyhecke_native_build": "9916510690677ea8"},
+         {"pyhecke_native_build": "930c010e26215e56"}, False, [], []),
+        ("build hash reversed also does not fire",
+         {"pyhecke_native_build": "930c010e26215e56"},
+         {"pyhecke_native_build": "9916510690677ea8"}, False, [], []),
+        # a real downgrade alongside a hash change must STILL fire, on the version only
+        ("hash change does not mask a real downgrade",
+         {"python": "3.13.16", "pyhecke_native_build": "aaa111"},
+         {"python": "3.11.18", "pyhecke_native_build": "bbb222"},
+         True, ["python 3.13.16->3.11.18"], []),
     ]
     ok = True
     for name, old, new, want_reg, want_down, want_strip in cases:
@@ -143,7 +194,12 @@ def main(argv: list[str]) -> int:
             if r["downgraded"]:
                 print(f"        downgraded: {'; '.join(r['downgraded'])}")
         else:
-            tag = f"  (upgraded: {'; '.join(r['upgraded'])})" if r["upgraded"] else ""
+            notes = []
+            if r["upgraded"]:
+                notes.append("upgraded: " + "; ".join(r["upgraded"]))
+            if r.get("changed"):
+                notes.append("changed (unranked): " + "; ".join(r["changed"]))
+            tag = f"  ({' | '.join(notes)})" if notes else ""
             print(f"  [prov OK] {os.path.basename(f)}{tag}")
     print(f"\n  {bad} of {len(files)} dirty witnesses carry a provenance regression")
     return 1 if bad else 0

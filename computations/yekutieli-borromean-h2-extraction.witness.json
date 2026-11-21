@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-05T06:30:36.686036+00:00",
-  "commitSha": "9eef5a6c831aaa906c35b945a42bd4c3b921a396",
+  "computedAt": "2026-11-21T02:51:10.022880+00:00",
+  "commitSha": "28488bb4f7c533dea5ff310ea41d0cc4c50c6bd8",
   "assertions": [
     {
       "name": "kappa_is_three_sixteenths",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "yekutieli-borromean-h2-extraction",
   "scriptFile": "yekutieli_borromean_h2_extraction.py",
-  "scriptHash": "7d04647328f6",
-  "scriptCommitSha": "913a677057c51f5dfda5c0f79f43b052c5091cb8",
+  "scriptHash": "7027be7c2921",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
