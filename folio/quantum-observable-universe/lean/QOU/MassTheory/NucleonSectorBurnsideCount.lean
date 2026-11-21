@@ -102,3 +102,46 @@ theorem labelled_count_uuu (q : R) (hq : q ≠ 0) :
   ring
 
 end QOU.MassTheory.NucleonSectorBurnsideCount
+
+/-!
+## The closure weight as an Ocneanu normalisation, and which Markov parameter it needs
+
+The weight `q^{c − n}` is `1 / τ_z(T_{w_C})` at `z = q`, where `τ_z` is the Ocneanu trace and
+`w_C` the minimal-length element of `σ`'s conjugacy class (`τ_z(T_{w_C}) = z^{n − c}`; probe
+`mn_closure_weight_ocneanu_probe.py`). With a general Markov parameter `z` the class-normalised
+labelled count on a nucleon sector is `3 + 3 q z⁻¹` (identity: 3; the three transposition
+classes each give `q · z⁻¹`; 3-cycles: no consistent labelling).
+
+`labelled_count_eq_six_iff`: that count is `6 = |S_3|` exactly when `z = q`.
+`labelled_count_zD`: at the canonical `z_D = q³/(q² + 1)` it is `6 + 3/q²`.
+So the weight is derived from the Ocneanu trace **at `z = q`**, not at `z_D`.
+-/
+
+namespace QOU.MassTheory.NucleonSectorBurnsideCount
+
+variable {R : Type*} [Field R]
+
+/-- Class-normalised labelled count on a nucleon sector, Markov parameter `z`. -/
+def labelledCount (q z : R) : R := 3 + 3 * q * z⁻¹
+
+theorem labelled_count_eq_six_iff (q z : R) (hz : z ≠ 0) (h3 : (3 : R) ≠ 0) :
+    labelledCount q z = 6 ↔ z = q := by
+  unfold labelledCount
+  constructor
+  · intro h
+    have e : (3 : R) * q * z⁻¹ * z = 3 * z := by
+      have : 3 * q * z⁻¹ = 3 := by linear_combination h
+      rw [this]
+    rw [mul_assoc, inv_mul_cancel₀ hz, mul_one] at e
+    exact (mul_left_cancel₀ h3 e).symm
+  · rintro rfl
+    field_simp
+    ring
+
+theorem labelled_count_zD (q : R) (hq : q ≠ 0) :
+    labelledCount q (q ^ 3 / (q ^ 2 + 1)) = 6 + 3 / q ^ 2 := by
+  unfold labelledCount
+  field_simp
+  ring
+
+end QOU.MassTheory.NucleonSectorBurnsideCount

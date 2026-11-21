@@ -244,3 +244,26 @@ sector appears, which would make the proton constant `2 × 6` and keeps it off t
 It does not give the neutron's `q⁻²` (the labelled count is `6` on both sectors; the `q⁻²`
 still needs the `K^{⊗3}` weight with the extra `q⁻¹`), it does not explain the factor 2, and it
 does not show the constant term is this count. Those stay open.
+
+## 8. The closure weight from the Ocneanu trace; the factor 2 (`mn_closure_weight_ocneanu_probe.py` 4/4)
+
+**Weight.** The weight `q^{c − n}` of §7 is `1/τ_z(T_{w_C})`, where `τ_z` is the Ocneanu trace
+and `w_C` the minimal-length element of `σ`'s conjugacy class, for which `τ_z(T_{w_C}) = z^{n−c}`.
+With a general Markov parameter the class-normalised labelled count on a nucleon sector is
+`3 + 3q/z`, and it equals `6 = |S_3|` **iff `z = q`** (`labelled_count_eq_six_iff`, sorry-free).
+At the canonical `z_D = q³/(q² + 1)` it is `6 + 3/q²` (`labelled_count_zD`), and no extra factor
+`q^{k(n−c)}` (k = −6…6) makes the `z_D` count q-independent. So the weight is no longer a free
+choice: it is the Ocneanu normalisation, and it needs `z = q` (the other admissible point under
+convention D, the augmentation), not `z_D`. Normalising by the full trace `τ_z(T_σ)` instead of
+the class representative gives no constant at either point. Which Markov parameter governs the
+mass channel is a framework question this probe does not settle.
+
+**Factor 2.** The production identity already reads
+`m_p/m_e = dim V_(2,1) · ((m_μ/m_e) F_Bor − |S_3|)` with `dim V_(2,1) = 2`. The 2 multiplies the
+volume term as well, so the constant inside the bracket is `6`, which is the labelled count. The
+factor 2 is the identity's overall prefactor, not a separate piece of the constant. (Its own
+origin, `dim V_(2,1)`, belongs to the volume-term derivation, not to this thread.)
+
+**Still open.** The neutron's `q⁻²`: the labelled count is 6 on both sectors, so the split still
+needs the `K^{⊗3}` weight with the extra `q⁻¹` (K1). And why the constant term is the labelled
+count of the `S_3` permutation braids at all.
