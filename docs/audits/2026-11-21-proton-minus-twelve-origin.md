@@ -109,3 +109,30 @@ hypothesis in the bridge file).
 ### Lean status
 
 `ProtonTwelveOrigin.lean` compiles with lean-direct (Lean 4.24.0, restored Mathlib cache), exit 0, no warnings, no `sorry`. `#print axioms` on the five main theorems: `propext, Classical.choice, Quot.sound` only.
+
+## 3. The Reeb square τ(R_p∘R_p) as the −12
+
+Pre-registered before any computation (R1–R3): for the Reeb-square slot to *be* the −12 m_e term,
+τ(R_p∘R_p) must equal −12 for every q.
+
+Corpus grep (2026-11-21): τ(R∘R) is never derived. It appears only as the hypothesis `hReebP`
+(τ(R_p∘R_p) = q·tr(V³_A)) in `CategoricalLagrangianTwoTermBridge.lean`, and as the Stokes
+hypothesis `hStokes` (R∘R = leftMul(hol w) ≫ massIntegrand, with w free) in
+`reeb_holonomy_leftTrace_eq_functional_hol`. No file fixes a Reeb weight or charge for the proton.
+
+Results (all in `ProtonTwelveOrigin.lean`, sorry-free, axioms propext/Classical.choice/Quot.sound):
+
+- **R1, `reebSlot_not_constant`.** No constant equals q·tr(V³_A) for all q (−3 at q = 1,
+  1509/32 at q = 2). So `hReebP` cannot be the −12 term at any normalisation. Scope (b), by
+  non-constancy, for the `hReebP` reading only.
+- **R2, `trace_scalar_square`, `weight_space_weight_eq_two`, `normalised_no_integer_weight`.**
+  If the Reeb generator acts as a circle action of integer weight k (R∘R = −k²·𝟙), then
+  τ(R∘R) = −k²·dim. On the 3-dimensional (2,1) weight space that `hReebP` traces over, −12 forces
+  k = ±2. With a normalised trace (τ(𝟙) = 1) no integer weight gives −12. A Casimir reading
+  (−ℓ(ℓ+1), ℓ = 3, the T₂/G level in `ReebChiralitySeparation.lean`) gives 12 too.
+- **R3.** R1 and R2 are incompatible: a scalar Reeb square has constant trace, `hReebP` does not.
+
+**Verdict.** The Reeb-square route does not derive the −12. It reduces it to one statement,
+"the proton's Reeb weight on its weight space is 2", which nothing in the corpus fixes, and it
+shows that `hReebP` must be dropped if the −12 is to come from this slot. This is a reduction,
+not a derivation; the −12 stays a selected constant.
