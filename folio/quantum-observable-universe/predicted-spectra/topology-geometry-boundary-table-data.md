@@ -11,6 +11,6 @@
 | Shell blocking | $e_i p_n = 0$ in TL (Jones--Wenzl kills smoothing) | Algebraic |
 | Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | Not predicted: the two dressed quark masses can reproduce any $(m_\mathfrak{p}, m_\mathfrak{n})$ |
 | Mass splitting | $m_n - m_p = [2]_q(\mu_\mathfrak{d} - \mu_\mathfrak{u})/(q^{1/2} + q^{-1/2})$ | Exact identity (convention C); the per-quark split itself is a fitted ansatz |
-| Deuteron binding | $B_d \approx 1.29$ MeV from Vol($\mathcal{B}_3 \bowtie_\text{Hopf} \mathcal{B}_3$) / $\hbar_q^2$ | Retired: the deuteron binding is not a hyperbolic-volume term |
+| Deuteron binding | Vol($\mathcal{B}_3 \bowtie_\text{Hopf} \mathcal{B}_3$) / $\hbar_q^2$ | Retired: the deuteron binding is not a hyperbolic-volume term |
 | Relative decay rates | $\propto \prod_{i \leq p} \lvert\hat{V}_i^{\mathrm{par}}/\hat{V}_i^{\mathrm{dau}}\rvert^2$ | Computed |
 | Environmental $q$-shift | $q(p) = 1 + \lvert\langle L_\varTheta, F_A^+\rangle\rvert$ | Predicted |
