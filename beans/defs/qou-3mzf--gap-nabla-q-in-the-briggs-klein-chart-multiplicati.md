@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-21T19:47:08Z
-updated_at: 2026-11-21T22:39:42Z
+updated_at: 2026-11-21T22:59:27Z
 ---
 
 Open input of conj:topological-mass-dilogarithm (folio/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md; Lean QOU/LiftingDescent/tm_dilogarithm_evaluation.lean, class TmDivisorChartInputs.chart_eval).
@@ -59,3 +59,5 @@ Scope (a): the curve provides the right pole (residue 1 over z=-1) but the class
 - Structure found: the colour cubic is F(X,t) = (s(X) - s(t))/(X - t) with s(u) = u + u^2 + u^3 + u^4 (sympy, exact). So the curve is [5]_X = [5]_t, i.e. (X^5-1)/(X-1) = (t^5-1)/(t-1), minus the diagonal, and it is symmetric under X <-> t. The real branch through (0,-1) and (-1,0) is swapped with itself, with fixed point at s'(t) = 0, t ~ -0.606.
 - pi^2/20 is still NOT explained. PSLQ at z = 2 and 1/2 (60 dps, coeffs <= 1000) on a non-redundant 11-term basis including Li2 of fifth powers of z and X(z) found no relation.
 - q-version test, answered by continuity: any q-deformation of I(z) that tends to I(z) as q -> 1 cannot equal -Li2^q(-z), because -Li2^q(-z) tends to -Li2(-z) and I(z) != -Li2(-z) (e.g. z = 1: pi^2/20 vs pi^2/12). So this route can match only through a deformation that is discontinuous at q = 1, or a different inner form. Scope (a).
+
+2026-11-21: pi^2/20 is the n=5 case of a family. On the curve [n]_X = [n]_t (n odd), the real branch X(t) on t in [0,1] gives I_n(1) = int_0^1 log(-X)/t dt = pi^2/(4n): measured n=3 (1/12, exact: I=-Li2(-1)), 5 (1/20, 40 digits), 7 (1/28), 9 (1/36), 11 (1/44), mpmath quad 20-30 digits + identify. Even n: no negative real branch. For n=5 the two complex branches give Re = 3pi^2/80 each; all three sum to pi^2/8 = int log([4]_t) dlog t. Symbol reduction: t[4]_t = X[4]_X gives X^t = -X^[4]_t mod Steinberg; the quotient by X<->t is rational, v=Xt=(u+1)(u^2+1)/(2u+1), u=X+t. So the 5 in pi^2/20 comes from n, not from a fifth-root dilog value. Open: prove I_n(1)=pi^2/(4n); not proved, numeric only.
