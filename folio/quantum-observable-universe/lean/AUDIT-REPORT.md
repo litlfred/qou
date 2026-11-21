@@ -33,8 +33,6 @@ No violations of the `-- Ref:` rule. Most common references:
 
 | File | Declaration | Reason |
 |------|-------------|--------|
-| `HadronicMass.lean:404` | `proton_pair_skein_approx` | `Real.rpow` not decidable by `norm_num` |
-| `HadronicMass.lean:419` | `neutron_pair_skein_approx` | Same `Real.rpow` limitation |
 | `HadronicMass.lean:547` | `skein_mass_relation_holds` | Same `Real.rpow` limitation |
 | `Torsion/MassGap.lean:214` | `yangMillsMassGap_construction` | Millennium conjecture (intentional) |
 

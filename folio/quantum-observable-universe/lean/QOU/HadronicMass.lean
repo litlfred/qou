@@ -366,49 +366,13 @@ theorem pair_skein_splitting_formula :
   unfold S_dd S_uu pair_skein_mass
   ring
 
-/-- The dressed quark mass difference `μ_d − μ_u = 1.29 MeV` is consistent
-    with the CODATA neutron-proton splitting of `1.293 MeV` to within
-    the precision of the dressed-mass determination. -/
-theorem dressed_quark_mass_difference :
-    dressed_mass_down - dressed_mass_up = 1.29 := by
-  unfold dressed_mass_down dressed_mass_up
-  norm_num
+/-! ### The former pair-Skein agreement bounds
 
-/-! ### Pair-Skein agreement — PROVED, and the classes it needed are gone
-
-**History (2026-08-31).**  These two bounds were carried by
-`ProtonPairSkeinApprox` / `NeutronPairSkeinApprox`, a pair of context classes
-whose single field was the bound itself, handed back by projection — §3b-cond
-item 5, and two entries in the self-assuming-projection ledger.  The stated
-reason was that *"the full proof reduces to a numerical evaluation of
-`Real.rpow` at `(substrate_q, 1/2)`, which `norm_num` cannot yet discharge"*.
-That is true of `norm_num` alone and is not a reason the bound cannot be proved.
-
-`q^{1/2}` is eliminated rather than evaluated.  Writing `s = q^{1/2}`, the only
-facts needed are `s > 0` and `s * s = q`; the denominator collapses to
-`s + s⁻¹ = (q + 1)/s`, so every `pair_skein_mass` is *linear* in `s`, and
-`s ∈ (1.0534, 1.0535)` follows from `s * s = 1.1097` by `nlinarith`.  Both
-bounds then close by `field_simp; nlinarith`.  The classes are deleted; nothing
-outside this file referenced them.
-
-**The side hypothesis both classes bound was FALSE**, and is recorded below as
-`pair_skein_denom_hypothesis_false`.  `q^{1/2} + q^{-1/2} = 2.0027092783…`, so
-`|denom − 2.00228| = 4.293e-4` — **4.3× the 1e-4 tolerance the hypothesis
-asserted**.  Since that hypothesis was an explicit argument of both theorems,
-neither could ever be invoked: no proof of it exists to supply.  So the two
-declarations were not merely conditional on nothing, they were unreachable.
-
-**Corrected numbers** (mpmath, 50 dps; the docstrings previously here did not
-reproduce).  `√1.1097 = 1.0534230…`, not `1.05341`; denom `2.0027093`, not
-`2.00228`; `S_uu = 312.3637`, `S_ud = 312.9442` (was stated `312.89`),
-`S_dd = 313.6590`.  Hence `proton_from_pair_skein = 938.25205` (was stated
-`938.15`) and `neutron_from_pair_skein = 939.54729` (was stated `939.46`).  The
-agreements are **better** than claimed, not worse: `0.0200 MeV` and
-`0.0181 MeV` against the stated `0.12` and `0.10`.
-
-Ref: NIST CODATA 2022 — proton 938.272 089 43(29), neutron 939.565 421 94(48)
-MeV/c². -/
--- Ref: [codata2022] https://physics.nist.gov/cuu/Constants/
+`proton_pair_skein_approx` and `neutron_pair_skein_approx` bounded the pair-Skein
+proton and neutron values against the CODATA masses.  They were removed (owner
+decision, PR #8917): this file states no comparison with measured values.  The
+lemma below, about the side hypothesis those bounds once carried, makes no
+such comparison and is kept. -/
 
 /-- **The denominator hypothesis the two former context classes bound is false.**
 `q^{1/2} + q^{-1/2} = 2.0027092783…` at `q = 1.1097`, so its distance from
@@ -432,48 +396,6 @@ theorem pair_skein_denom_hypothesis_false :
   push_neg
   intro _
   nlinarith [hinv, hs0, hub, hlb, hs2]
-
-/-- **Proton pair-Skein agreement — proved.**
-`|proton_from_pair_skein − proton_topological| = 0.0200 MeV < 0.5`. -/
-theorem proton_pair_skein_approx :
-    |proton_from_pair_skein - proton_topological| < 0.5 := by
-  have hxp : (0:ℝ) < 11097/10000 := by norm_num
-  have hx : (0:ℝ) ≤ 11097/10000 := by norm_num
-  have hq : substrate_q = 11097/10000 := by unfold substrate_q; norm_num
-  set s : ℝ := (11097/10000 : ℝ) ^ (1/2 : ℝ) with hsdef
-  have hs0 : 0 < s := Real.rpow_pos_of_pos hxp _
-  have hs2 : s * s = 11097/10000 := by rw [hsdef, ← Real.rpow_add hxp]; norm_num
-  have hneg : (11097/10000 : ℝ) ^ (-(1/2) : ℝ) = s⁻¹ := by
-    rw [hsdef, ← Real.rpow_neg hx]
-  have hsne : s ≠ 0 := ne_of_gt hs0
-  have hub : s < 10535/10000 := by nlinarith
-  have hlb : 10534/10000 < s := by nlinarith
-  have hD : s + s⁻¹ = (21097/10000) / s := by field_simp; nlinarith [hs2]
-  unfold proton_from_pair_skein S_uu S_ud pair_skein_mass proton_topological
-    proton_quarks proton_mass_MeV dressed_mass_up dressed_mass_down
-  rw [hq, hneg, hD, abs_lt]
-  constructor <;> · rw [div_div_eq_mul_div]; field_simp; nlinarith [hlb, hub, hs0]
-
-/-- **Neutron pair-Skein agreement — proved.**
-`|neutron_from_pair_skein − neutron_topological| = 0.0181 MeV < 0.5`. -/
-theorem neutron_pair_skein_approx :
-    |neutron_from_pair_skein - neutron_topological| < 0.5 := by
-  have hxp : (0:ℝ) < 11097/10000 := by norm_num
-  have hx : (0:ℝ) ≤ 11097/10000 := by norm_num
-  have hq : substrate_q = 11097/10000 := by unfold substrate_q; norm_num
-  set s : ℝ := (11097/10000 : ℝ) ^ (1/2 : ℝ) with hsdef
-  have hs0 : 0 < s := Real.rpow_pos_of_pos hxp _
-  have hs2 : s * s = 11097/10000 := by rw [hsdef, ← Real.rpow_add hxp]; norm_num
-  have hneg : (11097/10000 : ℝ) ^ (-(1/2) : ℝ) = s⁻¹ := by
-    rw [hsdef, ← Real.rpow_neg hx]
-  have hsne : s ≠ 0 := ne_of_gt hs0
-  have hub : s < 10535/10000 := by nlinarith
-  have hlb : 10534/10000 < s := by nlinarith
-  have hD : s + s⁻¹ = (21097/10000) / s := by field_simp; nlinarith [hs2]
-  unfold neutron_from_pair_skein S_ud S_dd pair_skein_mass neutron_topological
-    neutron_quarks neutron_mass_MeV dressed_mass_up dressed_mass_down
-  rw [hq, hneg, hD, abs_lt]
-  constructor <;> · rw [div_div_eq_mul_div]; field_simp; nlinarith [hlb, hub, hs0]
 
 /-! ## Section 6: Cross-Row Consistency Checks -/
 
@@ -550,7 +472,6 @@ noncomputable def borromean_mass_ratio : ℝ :=
 ### Cross-checks proved:
 - `mass_sum_rule`: m_D + ΔE = m_p + m_n  ✓
 - `pair_skein_mass_splitting`: m_n − m_p = S_dd − S_uu  ✓
-- `dressed_quark_mass_difference`: μ_d − μ_u = 1.29 MeV  ✓
 -/
 
 /-! ## Section 9: Named Propositions
@@ -679,27 +600,27 @@ Companion content blocks:
     integration -/
 
 /-- The Hecke crossing scale `h_q = q - q⁻¹`. -/
-noncomputable def h_q_substrate (q : ℝ) : ℝ := q - q⁻¹
+def h_q_substrate {K : Type*} [Field K] (q : K) : K := q - q⁻¹
 
 /-- The doublet quantum integer `[2]_q = q + q⁻¹`. -/
-noncomputable def bracket_2_q (q : ℝ) : ℝ := q + q⁻¹
+def bracket_2_q {K : Type*} [Field K] (q : K) : K := q + q⁻¹
 
 /-- The substrate Planck constant `ℏ_q = (q - 1)/q`. -/
-noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
+def hbarQ {K : Type*} [Field K] (q : K) : K := 1 - q⁻¹
 
 /-- The substrate-pure formula for `Δm / M_N`, in closed polynomial form. -/
-noncomputable def delta_m_over_M_N_substrate (q : ℝ) : ℝ :=
+def delta_m_over_M_N_substrate {K : Type*} [Field K] (q : K) : K :=
   (q - 1)^2 * (q^4 - 1) / (3 * q^4)
 
 /-- The substrate-pure formula for `Δm / μ_avg`, in factored Hecke-atom form. -/
-noncomputable def delta_m_over_mu_avg_factored (q : ℝ) : ℝ :=
+def delta_m_over_mu_avg_factored {K : Type*} [Field K] (q : K) : K :=
   hbarQ q ^ 2 * h_q_substrate q * bracket_2_q q
 
 /-- **Algebraic identity**: the factored Hecke-atom form for `Δm / μ_avg`
     coincides with `(q - 1)² · (q⁴ - 1) / q⁴` (the closed polynomial form).
 
     Proven by `field_simp` + `ring` after clearing the inverse. -/
-theorem delta_m_factored_eq_closed (q : ℝ) (hq : q ≠ 0) :
+theorem delta_m_factored_eq_closed {K : Type*} [Field K] (q : K) (hq : q ≠ 0) :
     delta_m_over_mu_avg_factored q = (q - 1)^2 * (q^4 - 1) / q^4 := by
   unfold delta_m_over_mu_avg_factored hbarQ h_q_substrate bracket_2_q
   field_simp
@@ -707,7 +628,7 @@ theorem delta_m_factored_eq_closed (q : ℝ) (hq : q ≠ 0) :
 
 /-- **Closed-to-factored identity**: the per-nucleon split is `1/3` of the
     per-quark factored form. -/
-theorem delta_m_over_M_N_eq_factored_over_3 (q : ℝ) (hq : q ≠ 0) :
+theorem delta_m_over_M_N_eq_factored_over_3 {K : Type*} [Field K] (q : K) (hq : q ≠ 0) :
     delta_m_over_M_N_substrate q = delta_m_over_mu_avg_factored q / 3 := by
   unfold delta_m_over_M_N_substrate
   rw [delta_m_factored_eq_closed q hq]
@@ -715,7 +636,7 @@ theorem delta_m_over_M_N_eq_factored_over_3 (q : ℝ) (hq : q ≠ 0) :
 
 /-- **Substrate-pure flavor split** — the closed polynomial form of
     `Δm / M_N` is one third of the factored Hecke-atom form, for every
-    nonzero `q`.
+    nonzero `q` in any field.
 
     The pair-Skein ansatz behind the formula (per-quark split
     `h_q² · ℏ_q / √q`, decomposition `Δm = (μ_d - μ_u) · [2]_q · z_mkv`)
@@ -723,7 +644,7 @@ theorem delta_m_over_M_N_eq_factored_over_3 (q : ℝ) (hq : q ≠ 0) :
     identity between the two forms.
 
     LaTeX: `\label{prop:flavor-split-substrate}` -/
-theorem flavor_split_substrate (q : ℝ) (hq : q ≠ 0) :
+theorem flavor_split_substrate {K : Type*} [Field K] (q : K) (hq : q ≠ 0) :
     delta_m_over_M_N_substrate q = delta_m_over_mu_avg_factored q / 3 :=
   delta_m_over_M_N_eq_factored_over_3 q hq
 

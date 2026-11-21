@@ -181,8 +181,6 @@ The theorems in this file depend on:
 - `KnotRegistry.borromeanRingsEntry` — nucleon = Borromean (6₂³)
 
 ### Formerly assumed, now PROVED (2026-08-31)
-- `proton_pair_skein_approx` — pair Skein ↔ proton
-- `neutron_pair_skein_approx` — pair Skein ↔ neutron
 
 Both were context classes whose single field was the bound itself, on the
 stated ground of a "`Real.rpow` limitation". The root is eliminated rather
