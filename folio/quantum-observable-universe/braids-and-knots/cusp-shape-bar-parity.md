@@ -1,4 +1,4 @@
-The cusp shape of the figure-eight knot $4_1$ is $\omega = e^{i\pi/3}$, a primitive sixth root of unity — the root of the cyclotomic polynomial $\Phi_6(z) = z^2 - z + 1$ in the upper half-plane, with trace field $\mathbb{Q}(\sqrt{-3})$. Split $\omega$ along the bar-involution $\sigma\colon x \mapsto x^{-1}$ into its symmetric and antisymmetric shapes:
+The cusp shape of the figure-eight knot $4_1$ is $\omega = e^{i\pi/3}$, a primitive sixth root of unity — the root of the cyclotomic polynomial $\Phi_6(z) = z^2 - z + 1$ in the upper half-plane, with trace field $\mathbb{Q}(\sqrt{-3})$ \cite{neumann-reid}. Split $\omega$ along the bar-involution $\sigma\colon x \mapsto x^{-1}$ into its symmetric and antisymmetric shapes:
 $$
   \mathrm{barEven}(x) = x + x^{-1}, \qquad \mathrm{barOdd}(x) = x - x^{-1}.
 $$

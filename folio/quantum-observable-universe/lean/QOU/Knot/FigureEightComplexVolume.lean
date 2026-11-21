@@ -55,6 +55,10 @@
   Archimedean (ℂ/ℝ): genuinely archimedean (Real.sqrt, Complex) — §7c.
 
   -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
+  -- Ref: [murakami2006] §1 (records the Murakami–Yokota theorem: for 4₁ the limit
+  --      of log J_N(4₁; exp(2πr√−1))/N exists for r near 1 and gives the volume of
+  --      the corresponding Dehn-surgered manifold; Gukov's version differs by the
+  --      choice of polarization)
   -- Ref: [murakami2004] figure-eight & Dehn surgery spaces (math/0401084)
   -- Ref: [leitner2026] conj:binding-qbeta-complex-volume;
        docs/audits/2026-07-11-complex-volume-conditional-mass-binding.md;

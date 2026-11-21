@@ -59,6 +59,10 @@
 
   -- Ref: [fantini-wheeler2024] arXiv:2410.20973, eq. (14) and the
   --      "max{A,B} independent integrals" corollary (§1.2).
+  -- Ref: [dimofte-gukov-lenells-zagier-2009] arXiv:0903.2472, §3 (the state-integral
+  --      model for perturbative SL(2,ℂ) Chern–Simons theory on an ideal
+  --      triangulation, built from Faddeev's quantum dilogarithm, §3.3): the
+  --      earliest held source for the state-integral form used here.
 -/
 import Mathlib.LinearAlgebra.Span.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic

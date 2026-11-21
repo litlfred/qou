@@ -52,6 +52,10 @@ spacetime are two computations of the same hyperbolic invariant.
 
 1. Identify the 3d $\mathcal{N}{=}2$ theory $T[\mathcal{B}_3]$
    explicitly (Dimofte–Gaiotto–Gukov 2014 provides the construction).
+   The DGG theory realises only part of the flat $SL(2,\mathbb{C})$
+   connections as vacua, and the closing (Dehn-filling) operation on it is
+   identified in \cite{arxiv-1803.04009v2} (§2.3, §4.1); both are stated for a
+   single torus boundary, while $\mathcal{B}_3$ has three cusps.
 2. Cross-check the $h^4 = -3/4$ coefficient as a 4-loop contribution
    in $T[\mathcal{B}_3]$ partition function.
 3. Closing the conjecture remains distant: the QFT-side

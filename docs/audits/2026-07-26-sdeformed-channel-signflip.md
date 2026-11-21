@@ -20,7 +20,8 @@ New Lean file
 sorry-free**.
 
 **The literature object.** The generalized volume conjecture for `4₁` is a
-theorem (Gukov 2003; H. Murakami; Ohtsuki 2016; Murakami–Yokota):
+theorem (Gukov 2003; H. Murakami; Ohtsuki 2016; Murakami–Yokota; citable
+restatement [`murakami2006`] §1, which states it for `r` near 1, i.e. small `u`):
 `J_N(4₁; e^{(2πi+u)/N}) → 𝔙(u) = Vol(u) + i·CS(u)`, `u` = log meridian holonomy.
 Its Neumann–Zagier leading term is fixed by the figure-eight **cusp modulus** —
 the leading longitude coefficient
