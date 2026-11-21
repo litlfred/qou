@@ -708,6 +708,8 @@ def arclength_run(sy, x0, pj, checkpoint, state=None, th1=arb(1) / 80, log=LOG,
             if ds < dsmin: return finish(f"step_underflow_at_theta_{s40(y1[-1] / W, 8)}", y1[:-1])
             continue
         D = len(y) - 1; th = y[D] / W
+        new_sec = [y[i] - y1[i] for i in range(D + 1)]
+        reversed_ = sum((new_sec[i] * t[i] for i in range(D + 1)), arb(0)) < 0
         rec = summary(y[:D], sy, nf, True, th); rec['amp'] = s40(norm(y[:D - 1]), 20); rec['corrector_its'] = its
         sgn = 1 if th > y1[D] / W else -1
         if sgn != state['dth_sign']:
@@ -723,6 +725,10 @@ def arclength_run(sy, x0, pj, checkpoint, state=None, th1=arb(1) / 80, log=LOG,
         g = arb(2) if its <= 5 else (arb(3) / 2 if its <= 7 else (arb(1) if its <= 9 else arb(7) / 10))
         ds = min(ds * g, dsmax); state['ds'] = s40(ds, 30)
         checkpoint(state)
+        if reversed_:
+            # the accepted point lies behind the previous one along the secant: the corrector has
+            # landed back on the incoming path (it is not a fold in theta, which keeps the secant's sign)
+            return finish(f"continuation_reversed_at_theta_{s40(y0[-1] / W, 8)}", y[:D])
         if rec['cls'] != 'periodic': return finish('collapsed_to_' + rec['cls'], y[:D])
         if not (om > 0) or (2 * arb.pi() / om) > S_hi: return finish('escape_S_to_infinity_or_omega_to_0', y[:D])
         if (2 * arb.pi() / om) < S_lo: return finish('escape_S_to_0', y[:D])
@@ -828,6 +834,11 @@ def main():
             prev = json.load(open(outf))
             if prev.get('state', {}).get('verdict', '').startswith(('running', 'time_budget')):
                 state = prev['state']; state['verdict'] = 'running'
+                if os.environ.get('LERAY_REVERSE'):
+                    # walk back along the stored secant with a small step to resolve a sharp turn
+                    state['y0'], state['y1'] = state['y1'], state['y0']
+                    state['ds'] = s40(arb(state['ds_init']) / 4, 30)
+                    state.setdefault('reversed_at_steps', []).append(state['steps'])
                 state.setdefault('resumed_at_steps', []).append(state['steps'])
                 LOG(f"RESUME from step {state['steps']}")
         out.update(L=L, N=N, K=K, seed=cs['source'], phase_condition_index=pj,
