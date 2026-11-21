@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-11-21T23:18:14Z
+updated_at: 2026-11-21T23:45:59Z
 parent: qou-5p7n
 ---
 
@@ -368,3 +368,7 @@ markovTrace_disjointProduct proves DisjointProductLaw from the restricted IsMark
 2026-11-21: trWord_hecke and trWord_far_comm proved on #8972 (383bb60e87c), sorry-free. Proved for trWord: normalised, stable, hecke, far_comm; embed_disjoint is about the shift map only. Open: strip, cyclic, braid. Method: trComb_mulGens linearity reduces each relation to one basis permutation.
 
 2026-11-21: trWord_braid (a31dfc95927) and trWord_strip (789b9226494) proved on #8972. Every IsMarkovTrace field now holds for trWord except cyclic. Cyclic checked by #eval on 40 rotated test words in H_4 at (z,h)=(5,3): all equal. A proof needs a left action of generators on the basis (swap values a, a+1) commuting with the right action, plus tr(T_s T_w) = tr(T_w T_s) by induction on n via the trBasis recursion; this is the Ocneanu existence argument (Kassel-Turaev Thm 4.5). Open.
+
+
+
+2026-11-21: CYCLICITY PROVED (commit f6c33e00f04, PR #8972). trWord satisfies all IsMarkovTrace axioms (trWord_isMarkovTrace); exists_isMarkovTrace (Ocneanu existence, any CommRing, any z h); isMarkovTrace_eq_trWord. Sorry-free. Remaining for this bean: shift invariance (split form of the product law), complexity bound, link to markov_trace_recursive.py output.
