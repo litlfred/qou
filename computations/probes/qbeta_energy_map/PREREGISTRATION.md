@@ -261,3 +261,14 @@ one fitted ansatz (P2′).
 
 **What will not be done.** No route is adopted because its number is closer. R-c is not a result until R-a
 and R-b(ii) are both derived; the −16.79 % is a comparison, not support.
+
+### Addendum 9a (correction, coordinator relay 2026-11-21), before code
+
+R-a is already done in a sibling thread (issue #8923): over a generic field,
+𝒮_ab = (q − z_D)(q²μ_a + q⁻²μ_b) = (q²μ_a + q⁻²μ_b)/[2]_q, and m_n − m_p = ([4]_q/[2]_q²)(μ_d − μ_u).
+**So the D factor is [4]_q/[2]_q², not q².** The q² in R-a and R-c above came from substituting z_D into
+the convention-C formula, which that formula's own text forbids. It is withdrawn. The per-quark masses
+stay inputs in #8923; R-b remains the open derivation. Corrected R-c comparison value, recorded before
+any choice: ([4]_q/[2]_q²)·cell = 1.016316 × 0.873537 = 0.887789 MeV (−31.36 % vs m_n − m_p). It lies
+within 0.1 % of the Bring linking-weight value 0.887 MeV (P5), which is built on the fitted δ.
+This is noted, not used.

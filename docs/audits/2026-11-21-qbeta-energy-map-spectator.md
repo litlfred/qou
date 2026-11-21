@@ -456,3 +456,7 @@ Derivation routes R-a to R-d are listed in Addendum 9 with their comparison valu
 The only route that ties the derived cell to m_n − m_p, R-c, needs two derivations not yet done: the
 pair-Skein crossing trace under z_D (which would give [2]_q·z_D = q² exactly), and μ_d − μ_u equal to
 the cell. Its comparison value, q²·cell = 1.0762 MeV (−16.79 %), is not evidence for it.
+
+**Correction (Addendum 9a).** The pair-Skein trace under z_D is derived in issue #8923:
+m_n − m_p = ([4]_q/[2]_q²)(μ_d − μ_u), not q²(μ_d − μ_u). The q² factor and its −16.79 % above are
+withdrawn. With μ_d − μ_u = cell (still underived), the value is 0.887789 MeV (−31.36 %).
