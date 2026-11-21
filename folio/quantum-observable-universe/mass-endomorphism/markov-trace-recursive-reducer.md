@@ -91,14 +91,16 @@ The product law fails at $k = 0$, $n = 2$, $\alpha = \beta = 1$, where the left
 side is $4$ and the right is $2^0 \cdot 2^1 = 2$. So a trace that grows with the
 ambient index alone is not excluded by stripping and rearrangement.
 
-With normalisation and stability added, the product law is a **consequence**
-rather than a further axiom: stability makes the value independent of the
-ambient index, stripping then peels one generator for a factor of $z$, and
-induction from the right gives $z^{\ell(\beta)}$ on both sides. The separating
-slot $\sigma_{k+1}$ plays no role in that argument, and the generator indices of
-$\beta$ must be non-negative for the peel to apply — a word on the upper cluster
-satisfies this, which is what the support condition $\{k+2, \ldots, n\}$ above
-amounts to in the index encoding.
+Normalisation and stability are therefore part of the axiom set, but they are
+not enough either: if stripping, stability and cyclicity are quantified over
+every word, they force $\mathrm{tr}_M(\beta) = z^{\ell(\beta)}$, which
+contradicts $\mathrm{tr}_M(\sigma_1^2) = hz + 1$. The Lean formalisation
+therefore restricts stripping, stability and cyclicity to words of $H_n$ and adds
+the Hecke quadratic, braid and far-commutation relations. From these axioms it
+proves $\mathrm{tr}_M(\sigma_n^2) = hz + 1$ and the product law when $\beta$ is
+an ascending run $\sigma_{k+1}\cdots\sigma_{k+m}$. The general product law
+requires reducing $\beta$ to a Hecke normal form. That reduction is Ocneanu's
+uniqueness argument, and it is not formalised.
 
 ## Empirical verification
 

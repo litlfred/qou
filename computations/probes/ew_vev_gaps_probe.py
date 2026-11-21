@@ -13,7 +13,7 @@ FORCES, and reports the resulting N_v and its miss against v/m_p. It does not
 pick among rules by agreement. Rules are fixed in the source before the
 comparison is printed; the comparison is printed last.
 
-Exact arithmetic: mpmath at 60 dps. Inputs: proton-pinned q0 (literal below),
+Exact arithmetic: mpmath at 60 dps. Inputs: proton-pinned q0 (q_parameter.Q_50_DIGIT_STR),
 G_F and m_p from library/codata-2022/values.json, m_W (PDG 2024, used only for
 the alpha_2 reading of the loop coupling, an imported measured value, not fit).
 No witness is written.
@@ -21,6 +21,7 @@ No witness is written.
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import mpmath as mp
@@ -28,6 +29,8 @@ from mpmath import mpf
 
 mp.mp.dps = 60
 ROOT = Path(__file__).resolve().parents[2]
+sys.path[:0] = [str(ROOT / "computations"), str(ROOT / "computations" / "substrate")]
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
 def codata(key: str) -> tuple[mpf, mpf]:
@@ -37,7 +40,8 @@ def codata(key: str) -> tuple[mpf, mpf]:
 
 
 def main() -> int:
-    q = mpf("1.10997858275138080759166909561")  # proton pin (AGENTS.md q0 convention)
+    # Proton pin, read at 50 digits; it was a typed 30-digit copy.
+    q = mpf(Q_50_DIGIT_STR)
     qi = 1 / q
     h = q - qi
     hbar = 1 - qi
