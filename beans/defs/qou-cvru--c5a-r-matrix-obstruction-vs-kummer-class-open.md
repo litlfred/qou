@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T17:35:00Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-21T13:20:00Z
 parent: qou-lx8f
 ---
 
@@ -49,3 +49,7 @@ The Kummer class of C-5a is now a defined colimit class. `cechKummer_eq_map_cher
 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
 No change: R2 (a non-jet Ř⁽ⁿ⁾ fixed before computing) has no derivation in the corpus. R3 side advanced for g = 0 only (PR #7969). Stays open (rule 13a).
+
+## 2026-11-21 R2 candidates A and B excluded in Lean (PR #8865)
+
+`QOU/SchurWeyl/R2TwistTower.lean` (sorry-free). Candidate A (strand tower, full twist, convention D): κ₁ = (q²−1)(q⁸+q⁶+q⁴+1)/(q²+1)² ≠ 0 for real q ≠ 0, q² ≠ 1, so its zero set is not {n ∣ 6}. Scope (a): this tower with this element only. Candidate B (jet in q): a level-independent κ cannot vanish exactly at n ∣ 6. Scope (b), invariant = level-independence. Candidate C (roots of unity) has the target built in and was not adopted. No candidate realises C-5a, so this bean stays open.
