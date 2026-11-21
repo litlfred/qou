@@ -53,3 +53,10 @@ No physics premise in this bean is affected by the rulings in docs/coordination/
 
 ## 2026-11-21: moment skeleton proved insufficient (hecke-gs-conj sibling, session_01Qmmkt5sJX34MCerjRMERJN)
 Formalize-first prune for the global A2 route. `QOU/BraidsAndKnots/YoungDiagramKernelA2MomentSkeleton.lean`, `moments_do_not_imply_a2` (branch claude/a2-moment-skeleton-2026-11-21, commit faa4f4d2a4c, lean-direct exit 0, axioms [propext, Classical.choice, Quot.sound], no sorryAx): the signed measure ν = (1-2/99, -1, 2/99) on {1, 2, 100} has Σν = 0, M_k > 0 for every k ≥ 1, and Σ ν log v < 0. Scope (b), a method exclusion: no proof of A2 can use only M_0 = 0 and the signs of M_k. Via Frullani, Σ ν log v = -∫_0^∞ G(-s)/s ds, so the needed input is on the negative half-line of G, which the moment signs do not reach. Next honest step: find the extra Plancherel identity (e.g. exact M_2 = |C₃| plus the shifted-symmetric even moments) that does. A2 remains open.
+
+## 2026-11-21: second test-function class also fails (hecke-gs-conj sibling, session_01Qmmkt5sJX34MCerjRMERJN)
+Pre-registered exact probe `computations/probes/covariance_kernel_a2_concave_order_probe.py` (int/Fraction only; ν validated by M_2 = n(n-1)(n-2)/3 at n = 6, 13, 20, and A2 > 0 there). Hypothesis: concave-order dominance T_w = Σ_{v≤w} S_v ≤ 0 ∀w (which by two Abel summations gives Σ ν φ ≥ 0 for EVERY increasing concave φ, hence A2). RESULT: FAIL, first at n = 13, w = 3 (T_3 = 229247/544320 > 0), and at every n from 15 to 40; holds only for n ≤ 12 and n = 14. Equivalently Σ ν_v min(v, 4) < 0 at n = 13 while Σ ν_v log v > 0.
+Synthesis (scope a, method): log lies in two natural test-function classes and A2 fails as a "for all φ in the class" statement for both:
+- increasing concave φ: fails from n = 13 (this probe);
+- Bernstein φ (φ' completely monotone): fails from n = 29 (the pointwise P(e^{-s}) ≤ 0 falsification, 2026-07-25 audit).
+Plus: moment signs alone cannot give it (main, YoungDiagramKernelA2MomentSkeleton.lean). So a proof of A2 must use log itself, e.g. the exact Frullani integral with the Plancherel identities for the moments, not a class certificate. A2 remains open.
