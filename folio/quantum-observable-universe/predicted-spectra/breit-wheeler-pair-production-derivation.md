@@ -92,6 +92,4 @@ $$
   \varphi_{01}\psi_0 + \varphi_1\psi_{01},
 $$
 
-so the trefoil channel needs the vertex term of one photon and a single-crossing term of the other. For the eigenvalue-pair weights $\gamma(0, 0, qh)\,\gamma(0, 0, -q^{-1}h) = (\sigma_0\sigma_1^{-1})^3$ ([Borromean two-photon factorisation](#prop:borromean-two-photon-factorisation)) that coefficient is zero. The 6-term normal form is in [the $\gamma\gamma$ generation proposition](#prop:gamma-gamma-generates-particles). The coefficients are recomputed exactly over $\mathbb{Q}(q)$ in `computations/probes/photon_chiral/photon_chiral_ports_probe.py`.
-
-**Witness:** `computations/probes/photon_chiral/photon-chiral-ports.witness.json`. The earlier citation `breit-wheeler-nucleon-nf.witness.json` does not exist in the repository.
+so the trefoil channel needs the vertex term of one photon and a single-crossing term of the other. For the eigenvalue-pair weights $\gamma(0, 0, qh)\,\gamma(0, 0, -q^{-1}h) = (\sigma_0\sigma_1^{-1})^3$ ([Borromean two-photon factorisation](#prop:borromean-two-photon-factorisation)) that coefficient is zero. The 6-term normal form is in [the $\gamma\gamma$ generation proposition](#prop:gamma-gamma-generates-particles). The coefficients are recomputed exactly over $\mathbb{Q}(q)$.
