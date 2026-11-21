@@ -1,6 +1,7 @@
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic.Linarith
 
 /-!
 # QOU.ParticleInteractions.parity_regime_selection
@@ -56,5 +57,20 @@ theorem parity_regime_selection_sign (a b : R) (ha : a < 0) (hb : b < 0)
     parity_regime_selection a b ha hb Z N hN, ?_⟩
   rw [← mul_assoc, ← pow_add, ← two_mul, pow_mul]
   simp
+
+/-- **Spectator-amplitude asymmetry numerator is positive for `q > 1`.**
+    `a − b = (q² − 1)(3(q² + 1)² − 2q²) / (4q³)`, so this numerator fixes
+    `|b| > |a|` (used by `rem:parity-regime-dispatch`). Lemma taken from the
+    group-8 batch port (PR #8761), restated over a generic ordered field. -/
+theorem spectator_asymmetry_num_pos {q : R} (hq : 1 < q) :
+    0 < (q ^ 2 - 1) * (3 * (q ^ 2 + 1) ^ 2 - 2 * q ^ 2) := by
+  have hq0 : 0 < q := lt_trans zero_lt_one hq
+  have hq2 : 1 < q ^ 2 := by nlinarith
+  have h1 : 0 < q ^ 2 - 1 := by linarith
+  have h2 : 0 < 3 * (q ^ 2 + 1) ^ 2 - 2 * q ^ 2 := by
+    have : 3 * (q ^ 2 + 1) ^ 2 - 2 * q ^ 2 = 3 * q ^ 4 + 4 * q ^ 2 + 3 := by ring
+    rw [this]
+    positivity
+  exact mul_pos h1 h2
 
 end QOU.ParticleInteractions
