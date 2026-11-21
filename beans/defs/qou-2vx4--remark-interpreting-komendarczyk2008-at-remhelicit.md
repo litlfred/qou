@@ -21,3 +21,10 @@ Source: `library/arxiv-0808.1533v3/0808.1533v3.pdf` (`komendarczyk2008`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-21 — cite-remarks bean drain (thread "Interpret citation remarks", issue litlfred/qou#8806)
+
+rem:helicity-physical now cites komendarczyk2008 (v3 locators: Rem. 2.3 antisymmetry, §6 eqs. (6.1)/(6.6) flux formula, §7 Thm 7.1 eqs. (7.6)-(7.7), eq. (7.8) Freedman-He). Note: the registry note's locators (Thm 6.1, eq. (43), Rem. 2.6) follow v1; the registered PDF is v3.
+
+Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
+Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.

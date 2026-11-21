@@ -1,7 +1,7 @@
 ---
 # qou-ssly
 title: Cite 2203.17029v1.pdf at prop:habiro-tail-archimedean-action
-status: todo
+status: in-progress
 pr: 8397
 type: task
 priority: normal
@@ -35,3 +35,10 @@ In-progress in PR #8397 (`feat/qou-r6ki-sf0s-spds-ssly-t579-round67`, `QOU.QBeta
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8397, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — cite-remarks bean drain (thread "Interpret citation remarks", issue litlfred/qou#8806)
+
+prop:habiro-tail-archimedean-action: paragraph citing garoufalidis-wheeler-modular (= arXiv:2203.17029, already an alternate of that key) §1.5 Thm 1.7 and §§5.1-5.8 for the 4_1 q-difference equation.
+
+Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
+Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.

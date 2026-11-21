@@ -1,7 +1,7 @@
 ---
 # qou-scxq
 title: Remark interpreting 0111022v1.pdf at rem:q-dilog-three-contexts
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -28,3 +28,10 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Some remarks on q-deformed multiple polylogarithms
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [schlesinger2001] as the citation key when you do it.
+
+## 2026-11-21 — cite-remarks bean drain (thread "Interpret citation remarks", issue litlfred/qou#8806)
+
+rem:q-dilog-three-contexts: paragraph on the hopf-algebra tag citing schlesinger2001 §2 Lemma 2, Cor. 3, recording that the normalisation there (sum z^k/(1-q^k)^2) differs from Li_2^q = sum x^n/(n[n]_q).
+
+Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
+Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.

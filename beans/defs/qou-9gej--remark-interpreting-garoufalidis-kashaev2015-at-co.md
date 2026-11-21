@@ -17,3 +17,7 @@ Source: `library/arxiv-1411.6062v2/1411.6062v2.pdf` (`garoufalidis-kashaev2015`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-21 — handed to the exposition-remarks thread
+
+The cite-remarks drain (issue litlfred/qou#8806) and the exposition-remarks drain (issue litlfred/qou#8803) split shared targets by file; mass-theory/stokes-dt-bps-bridge* belongs to the exposition-remarks thread, which folds this bean's ask into its edit there. Not touched by cite-remarks.

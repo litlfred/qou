@@ -1,7 +1,7 @@
 ---
 # qou-5le3
 title: Cite 2304.07001v3.pdf at conj:kashaev-surreal
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -36,3 +36,10 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8315, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — cite-remarks bean drain (thread "Interpret citation remarks", issue litlfred/qou#8806)
+
+conj:kashaev-surreal now cites crew2023 Conj. 1.1, Cor. 1.5. Correction: the source's second family is T(3,2^k) (exponent; see its eq. (3.19)), not T(3,2k) as this bean says.
+
+Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
+Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.

@@ -28,3 +28,10 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Modular q-holonomic modules
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [garoufalidis-wheeler-modular] as the citation key when you do it.
+
+## 2026-11-21 — cite-remarks bean drain (thread "Interpret citation remarks", issue litlfred/qou#8806)
+
+rem:phi-q-aj-machinery-identification-details: paragraph citing garoufalidis-wheeler-modular Def. 1.1 + comment 1, Thm 1.2(a), Thm 1.4, §1.5 Thms 1.5-1.7; records that modularity of A-hat_K is the source's conjecture (comment 5), not a theorem.
+
+Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
+Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.

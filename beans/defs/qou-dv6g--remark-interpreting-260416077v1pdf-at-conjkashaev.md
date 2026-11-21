@@ -1,7 +1,7 @@
 ---
 # qou-dv6g
 title: Remark interpreting 2604.16077v1.pdf at conj:kashaev-volume-conjecture
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -28,3 +28,10 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [baseilhac2026] as the citation key when you do it.
+
+## 2026-11-21 — cite-remarks bean drain (thread "Interpret citation remarks", issue litlfred/qou#8806)
+
+conj:kashaev-volume-conjecture: paragraph citing baseilhac2026 §1.1 Thm 1.1 and App. A. Correction: the source normalises the limit as (2pi/N)Log|H_N| -> Vol(M) (case a), not Vol/2pi. Its QHI of the cusped manifold are not the Kashaev invariant (which is the QHI of the pair (S^3,L)); recorded as a neighbouring statement, not an instance of the class.
+
+Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
+Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.

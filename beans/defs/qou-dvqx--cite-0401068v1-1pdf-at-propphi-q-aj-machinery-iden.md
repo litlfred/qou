@@ -1,7 +1,7 @@
 ---
 # qou-dvqx
 title: Cite 0401068v1 (1).pdf at prop:phi-q-aj-machinery-identification
-status: todo
+status: in-progress
 pr: 8347
 type: task
 priority: normal
@@ -33,3 +33,10 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8347, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — cite-remarks bean drain (thread "Interpret citation remarks", issue litlfred/qou#8806)
+
+prop:phi-q-aj-machinery-identification now cites takata2004 Thm 2.2 and §4 (5_2, 6_1 recorded as a computer-algebra observation, as the source says). le2006 NOT cited: no library copy, so its hypotheses could not be checked; left for cite-intake.
+
+Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
+Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.

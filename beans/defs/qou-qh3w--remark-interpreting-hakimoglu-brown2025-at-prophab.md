@@ -1,7 +1,7 @@
 ---
 # qou-qh3w
 title: Remark interpreting [hakimoglu-brown2025] at prop:habiro-tail-archimedean-action
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -21,3 +21,10 @@ Source: `library/arxiv-2506.10206v2/2506.10206v2.pdf` (`hakimoglu-brown2025`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## 2026-11-21 — cite-remarks bean drain (thread "Interpret citation remarks", issue litlfred/qou#8806)
+
+Content half done: habiro-tail-archimedean-action.md no longer says the dilog equations are 'analytically proved in' hakimoglu-brown2025; it cites zagier-dilogarithm Ch. I §2 for them and hakimoglu-brown2025 §6 Thm 3 / Ex. 4 for its own pi^2/100 result. Lean half still open: HabiroTailAction.lean:124-127 docstring needs the same rewording (needs a lean-direct run; not done in this session).
+
+Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
+Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.

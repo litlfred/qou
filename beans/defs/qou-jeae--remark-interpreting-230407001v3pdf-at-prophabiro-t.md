@@ -28,3 +28,10 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [crew2023] as the citation key when you do it.
+
+## 2026-11-21 — cite-remarks bean drain (thread "Interpret citation remarks", issue litlfred/qou#8806)
+
+prop:habiro-tail-archimedean-action: scope paragraph citing crew2023 §1 eqs. (1.3)-(1.8), Conj. 1.1, Thm 1.2, Cor. 1.5; 4_1 outside the proved class.
+
+Done on branch `claude/cite-remarks-2026-11-21` at 3b2491716; status stays in-progress until that branch merges.
+Owner-ruling check (docs/coordination/owner-rulings.md, main 2ae54ab40): no superseded premise found; this is a citation item and touches none of the photon, electron, trace, convention, chi or T(2,n_s) rulings.
