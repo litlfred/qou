@@ -1,4 +1,6 @@
 import Mathlib.LinearAlgebra.Matrix.Trace
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.FieldSimp
 
 /-!
 # The own-sector weight of the matter term comes from the state being a weight vector
@@ -56,5 +58,29 @@ theorem nucleon_matter_qtraces (K P Mp Mn : Matrix n n R)
   refine ⟨qtrace_rank_one K Mp ψp φp q hKp, ?_⟩
   rw [qtrace_rank_one K Mn ψn φn qi hKn,
     matrix_element_eq_of_intertwiner P Mp Mn ψp ψn φp φn hψ hφ hPM]
+
+/-- **The bridge's equal-horizontal-trace hypothesis forces the matrix element to vanish.**
+`CategoricalLagrangianTwoTermBridge` assumes the proton and neutron horizontal matter traces
+are equal (`hHoriz`). If the states are `K`-weight vectors of weights `q` and `q⁻¹` and the
+flip intertwines the connections, the two traces are `q·m` and `q⁻¹·m`. They are equal only if
+`m = 0` (for `q² ≠ 1`). So under (a) and (b), `hHoriz` leaves no horizontal own-sector constant. -/
+theorem matrix_element_zero_of_equal_traces {F : Type*} [Field F] {n : Type*} [Fintype n]
+    (K P Mp Mn : Matrix n n F)
+    (ψp ψn : Matrix n (Fin 1) F) (φp φn : Matrix (Fin 1) n F) (q : F)
+    (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+    (hKp : K * ψp = q • ψp) (hKn : K * ψn = q⁻¹ • ψn)
+    (hψ : P * ψp = ψn) (hφ : φn * P = φp) (hPM : P * Mp = Mn * P)
+    (hHoriz : trace (K * (ψn * φn) * Mn) = trace (K * (ψp * φp) * Mp)) :
+    trace (φp * Mp * ψp) = 0 := by
+  obtain ⟨hp, hn⟩ := nucleon_matter_qtraces K P Mp Mn ψp ψn φp φn q q⁻¹ hKp hKn hψ hφ hPM
+  rw [hp, hn] at hHoriz
+  have h : (q ^ 2 - 1) * trace (φp * Mp * ψp) = 0 := by
+    have hqq : q * q⁻¹ = 1 := mul_inv_cancel₀ hq
+    have := congrArg (fun x => q * x) hHoriz
+    simp only at this
+    linear_combination (-1 : F) * this + (trace (φp * Mp * ψp)) * hqq
+  rcases mul_eq_zero.mp h with h1 | h1
+  · exact absurd (sub_eq_zero.mp h1) hq2
+  · exact h1
 
 end QOU.MassTheory.MatterTraceWeightVector

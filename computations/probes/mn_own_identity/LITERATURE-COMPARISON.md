@@ -342,3 +342,33 @@ so it has not been done.
 
 Note that the bridge on `main` already puts the pairwise Coulomb charge in the Reeb matter piece
 (`trace_matter_diff_coulomb_specialization`), so the horizontal piece is not otherwise occupied.
+
+## 11. Checking (b) and the state's normalisation against the corpus (2026-11-21)
+
+**(b), the connection.** `nablaEndo` is never instantiated in the Lean tree. It appears only as a
+field of `CategoricalDiracOperator` and in hypotheses of `CategoricalLagrangianTwoTermBridge`. So
+there is no corpus `∇` to check (b) against. What can be said: if `∇` on the weight space is built
+from braid generators, (b) holds automatically, because the corpus flip `P` already satisfies
+`P A₁ = B₁ P` and `P A₂ = B₂ P` (`NucleonWeightSpaceTraces.intertwine₁/₂`). On the bridge's weight
+spaces `Kp = q • 1` and `Kn = q⁻¹ • 1`, so (a) holds for every state too.
+
+**A conflict with the bridge.** The concrete bridge theorem
+`trace_lagrangian_diff_concrete_borromean_weight_space` assumes `hHoriz`: equal horizontal matter
+traces for proton and neutron. Under (a) and (b) the two traces are `q·m` and `q⁻¹·m`, so
+`matrix_element_zero_of_equal_traces` (sorry-free) proves `hHoriz` forces `m = 0` when `q² ≠ 1`.
+So the bridge's concrete theorem, as stated, carries no horizontal own-sector constant at all. One
+of the two has to give: either `hHoriz` (and then the horizontal piece is the K1 constant) or the
+K1 lead. This is not resolved here.
+
+A related inconsistency inside the bridge: the bosonic Reeb² hypotheses carry the Cartan weight
+(`hReebP : … = q * trace V³_A`), but the matter Reeb hypotheses do not
+(`hMatReebP : … = trace ((Q₁₂ + Q₂₃) V³_A)`). By `qtrace_rank_one`, a matter trace on a weight-`q`
+state carries the weight `q` too. The Coulomb piece of the bridge should be re-checked for that.
+
+**The normalisation.** `categorical-lagrangian.md` defines `ψ* = λ ∘ S(ψ)` with `λ` the Frobenius
+form. In `FrobeniusHopfData` the form `λ` is constrained only by the two snake identities with the
+coevaluation. Those are unchanged under `λ ↦ sλ`, `coev ↦ s⁻¹ coev`, so the axioms do not fix the
+scale of `ψ* ψ`. (Read off the structure; not yet a Lean theorem.) So the corpus does not currently
+fix `φ ψ`, and therefore does not fix `c = 12` through the normalisation either. A normalisation
+law for `λ` (for instance the Markov `τ(1) = 1`, which fixes a trace, not `λ`) would have to be added
+or derived.
