@@ -1,14 +1,14 @@
 ---
 # qou-g5sp
 title: The entire Bruhat / Coxeter-order component is unreachable from QOU.lean (9 modules, includes merged main work)
-status: in-progress
+status: completed
 pr: 8333
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-10-04T15:14:11Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -621,3 +621,7 @@ Was in-progress with no bean update since 2026-09-13 and no main commit naming i
 
 ## Round 56 Implementation (PR #8333)
 - Implemented on branch `claude/round56-trd0-9nnz-fixes` (commit `e33bff7d43b72a19e618441a16ae41a21af05e0e`, https://github.com/litlfred/qou/pull/8333).
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+**Completed.** This bean's own 2026-09-13 entries already record that its premise was false: the QOU lakefile has `globs = ["QOU", "QOU.+"]` (qou-rc7b), so `lake build QOU` builds the Bruhat component. Today's whole-library lean-direct sweep at main `2ae54ab401` compiled every module under `lean/QOU` (see issue #8817; 3420 ok on the first pass, the rest blocked only on Mathlib cache gaps), including the nine Bruhat/Coxeter modules. Open PR #8333 still proposes wiring them into `QOU.lean`; that is a root-import choice, not a coverage gap.

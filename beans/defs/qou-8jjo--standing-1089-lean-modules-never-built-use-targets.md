@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T03:33:19Z
-updated_at: 2026-10-04T15:13:58Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -212,3 +212,7 @@ question, not a measurement, and it is not started.
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
 
 - **Round 97 (`litlfred/qou#8432`)**: Advanced in `feat/round97-monotone-multbound-ncpart-nonuniform-onebody-43c1` (Commit 1 `e883e42fdde30a6d22e385b72041c6f52899312f`, Commit 2 `56d66b28962228fdc58ad152218bdd3754f7c059`, probe sha256 `e41a92695f7287bc24947a7f23e2cb1aff6e02fcb3b0e34fb76f50f0c076b259`).
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+**Fresh whole-library measurement, QOU package only.** `scripts/lean-direct-cone.sh --all -k -j4` at main `2ae54ab401`, on a fresh `lake-cache/qou-v4-24-0` restore plus `scripts/lean-restore-gap-oleans.sh` (222 oleans): **3435 modules; 3420 ok, 5 error, 10 blocked.** All 5 errors were `object file ... does not exist` for Mathlib modules that exist at the pinned rev `f897ebcf72` but are in neither cache branch (`Analysis.Calculus.DifferentialForm.Basic`, `Analysis.Complex.JensenFormula`, `Probability.Distributions.Gaussian.Real`, `Geometry.Manifold.MFDeriv.Atlas`, and their cones: 66 oleans). Built from pinned source with `scripts/lean-build-mathlib-gap-cone.py`, 0 failed. Re-check of the 15: all ok except the library root `QOU`, which was a genuine red: `unitJ` defined in both `BringConeGauge` and `BringConeIcosahedral` (since 2026-11-15). Fixed on branch `claude/lean-build-red-2026-11-21` (`d07507f2df`); after it `QOU` ok. Wall time about 2 h 20 min on 4 cores. UGB and Fred2005 were not swept.

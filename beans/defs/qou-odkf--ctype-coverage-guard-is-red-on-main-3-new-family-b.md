@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T21:03:40Z
-updated_at: 2026-10-04T15:15:39Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -298,3 +298,7 @@ lengths unchanged (11 / 23 / 47).
 
 That is the outcome a baseline should produce when someone finally reads the
 entry: not a better reason, but one fewer entry.
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+**Part E is green now; the guard is red for a different reason.** `python3 computations/test_ctype_consumer_coverage.py` at main `2ae54ab401` exits 1 with **24** failures, none in Part E: new private ctype vocabularies (Part B) and private ctype tables in importers (Part C) in about 20 `computations/probes/*` files added since, plus Part F call sites requesting `pn_convention='strict_averaged'` (e.g. `meson/delta_freedom_buys_no_magnitude_probe.py`). The three sites this bean names no longer fail. The new 24 are a compute-side sweep across other threads' probes, so not taken here (ask-owner-before-changing). Left `todo`.

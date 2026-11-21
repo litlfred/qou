@@ -1,13 +1,13 @@
 ---
 # qou-py7e
 title: 'GAP: lake-cache/qou-v4-24-0-new olean set is incomplete (missing Mathlib.Algebra.Module.LinearMap.Polynomial)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T15:19:39Z
-updated_at: 2026-10-04T15:20:08Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -80,3 +80,7 @@ Three traps recorded there, each of which cost time:
 demand — instead record the covered module set alongside the tarball so a
 restoring agent can see the 58% up front rather than discovering it as a
 mystery build error.
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+**Completed.** The restored `lake-cache/qou-v4-24-0` now carries `Mathlib/Algebra/Module/LinearMap/Polynomial.olean` (checked after a fresh restore, 3631 mathlib oleans).

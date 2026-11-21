@@ -1,13 +1,13 @@
 ---
 # qou-fjcd
 title: 'METHOD DEFECT: lean-direct consumer verification reads STALE oleans'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T15:43:36Z
-updated_at: 2026-10-04T15:21:35Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -82,3 +82,7 @@ bottom-up first. `lake build -R <Module>` does this correctly but is the
   there, stale deps invented failures; here, stale deps hide them. Both
   say the same thing — **an olean-backed check is only as fresh as its
   oleans.**
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+**Completed.** The correct recipe exists on main: `scripts/lean-verify-cone.sh` (edited files rebuilt first, consumers checked after) and `scripts/lean-direct-cone.sh` with freshness from `scripts/lean_freshness.py`. This session's whole-library sweep used the latter, so consumers were checked against freshly rebuilt oleans.

@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T18:28:14Z
-updated_at: 2026-11-17T08:47:00Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -85,3 +85,7 @@ that would silently move numbers in every producer listed above.
 ## Progress 2026-11-17 (PR #8290)
 
 Updated `nucleon_gen_chains` and `build_nucleon_nf` docstrings in `tools/pyhecke/python/pyhecke/atom.py` on PR #8290 (`1c907342f24ac048c99eb24f30832b0b87b024b0`) to state the ordering distinction between `nucleon_gen_chains` (per-generator partitioned `(g0_chain, g1_chain)` of lengths `(7, 4)`, matching `grouped_word_from_chains`) and `build_nucleon_nf` / `nucleon_braid_word` (alternating `(sigma_0 sigma_1^-1)^3` Borromean braid order).
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+Still open on main: `tools/pyhecke/python/pyhecke/atom.py` `nucleon_gen_chains` docstring at `2ae54ab401` still says "matching build_nucleon_nf". The docstring fix is on open PR #8290 (not merged). Not duplicated here.

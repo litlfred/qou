@@ -1,13 +1,13 @@
 ---
 # qou-plb2
 title: lean-build-bg.sh anti-eviction guard is INERT in both directions on a trace-paired restore
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T05:41:01Z
-updated_at: 2026-10-04T15:21:10Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -89,3 +89,7 @@ library, so this stands, but it should not be read in isolation.
 
 Three open-or-recent beans now touch this one script. That density is itself
 worth noting to whoever next edits it.
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+**Completed.** `scripts/lean-build-bg.sh` on main has an early guard (owner OK 2026-11-15, lines ~176-196) that skips lake update / cache get / build whenever a restored Mathlib tree holds more than 3000 oleans, whatever the trace state, unless `QOU_FORCE_LAKE_BUILD=1`. That makes it act in both directions. The root cause of the eviction it guards against is now measured and fixed separately: see qou-r13s (missing `.git` in restored package dirs).

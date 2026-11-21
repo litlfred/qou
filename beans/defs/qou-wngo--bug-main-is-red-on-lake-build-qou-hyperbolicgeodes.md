@@ -1,13 +1,13 @@
 ---
 # qou-wngo
 title: 'BUG: main is RED on lake build QOU — HyperbolicGeodesicZAxis.lean, 4 errors, 2 of them one-word fixes'
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T14:02:16Z
-updated_at: 2026-10-04T15:11:35Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -177,3 +177,7 @@ a four-token defect, live on `main`, invisible to every gate.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+**Completed.** Fixed on main by `30c17e3d3f` (four `{a b : ℝ}` binders). Re-verified at main `2ae54ab401`: `lean-direct-cone.sh QOU.Archimedean.HyperbolicGeodesicZAxis -B` forced rebuild of the cone, ok, 0 errors.

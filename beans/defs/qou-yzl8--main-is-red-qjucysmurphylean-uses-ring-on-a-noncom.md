@@ -1,13 +1,13 @@
 ---
 # qou-yzl8
 title: 'main is RED: QJucysMurphy.lean uses ring on a NONCOMMUTATIVE algebra — 6 sites, none compile'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T13:30:42Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -59,3 +59,7 @@ bean or its code.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8510, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+**Completed: main is green here.** At main `2ae54ab401`, `scripts/lean-direct-cone.sh QOU.SchurWeyl.QJucysMurphy -B` (forced rebuild of the whole 10-module cone, lean-direct, no lake) gives ok=10, 0 errors. The six `ring` sites in `qJM_mul_qJMInv` / `qJMInv_mul_qJM` are now `simp only [mul_assoc, one_mul]` / `mul_one` calc steps; the remaining `ring` calls are in `rhoTriv`/`rhoSign` images, which land in the commutative base ring `K`. Also in the whole-library sweep of the same day, module ok.

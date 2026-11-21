@@ -8,7 +8,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T16:26:11Z
-updated_at: 2026-10-04T15:19:39Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -67,3 +67,7 @@ is not.
 
 ## Round 56 Implementation (PR #8333)
 - Implemented on branch `claude/round56-trd0-9nnz-fixes` (commit `e33bff7d43b72a19e618441a16ae41a21af05e0e`, https://github.com/litlfred/qou/pull/8333).
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+Still open on main: no rename/transitive-consumer guard script under `scripts/` at `2ae54ab401`. A guard is proposed on open PR #8333 (not merged). Note that today's whole-library lean-direct sweep (`lean-direct-cone.sh --all -k`, see issue #8817) is the corpus-wide check this bean says `lean QOU.lean` is not; it is about 2 h on 4 cores.

@@ -10,7 +10,7 @@ tags:
     - 8f-gen
     - 8f-open
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-8lxd
 ---
 
@@ -496,3 +496,7 @@ Session: https://claude.ai/code/session_01A1NHnUY3QMcdoxDYQmLCXB
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8200, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+`QOU.BringConeGauge` and `QOU.BringConeIcosahedral` (both from this bean, 2026-11-15) each defined `QOU.Tetraplectic.unitJ`, so the library root `QOU.lean` failed with "environment already contains 'QOU.Tetraplectic.unitJ'". Minimal fix on branch `claude/lean-build-red-2026-11-21` (`d07507f2df`): `BringConeGauge` imports `BringConeIcosahedral` and drops its identical def. No statement changed; axioms clean.

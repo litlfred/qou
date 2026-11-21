@@ -1,13 +1,13 @@
 ---
 # qou-rc7b
 title: 'BUILD COVERAGE: `lake build` reaches only 853 of 1618 QOU Lean modules — 47% never compiled'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:29:19Z
-updated_at: 2026-10-04T15:14:41Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -275,3 +275,7 @@ undercount by construction.
       `docs/audits/2026-06-28-content-sibling-compile-sweep.md` and
       `.github/workflows/lean-content-siblings.yml`.
 - [ ] Re-run the corpus sorry/vacuity audit (qou-joo5) against 34/28.
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+**Completed.** The fix (`globs = ["QOU", "QOU.+"]` in the QOU lakefile) is on main at `2ae54ab401`. Today's sweep, `scripts/lean-direct-cone.sh --all -k -j4`, enumerated and compiled all 3435 modules of the library (results on issue #8817), not only the root closure.

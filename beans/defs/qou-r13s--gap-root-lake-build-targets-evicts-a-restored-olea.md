@@ -1,13 +1,13 @@
 ---
 # qou-r13s
 title: 'GAP: root `lake build <targets>` EVICTS a restored olean cache — 6990 to 334 measured'
-status: todo
+status: in-progress
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T21:04:18Z
-updated_at: 2026-10-04T15:10:43Z
+updated_at: 2026-11-21T14:33:40Z
 parent: qou-5vkl
 ---
 
@@ -144,3 +144,15 @@ PR #6636.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
+
+**Root cause measured, and it is not the traces.** On a byte copy of a fresh `lake-cache/qou-v4-24-0` restore (3915 oleans in `.lake/packages`), `lake build --no-build Mathlib.Algebra.Group.Defs` printed, for all 8 restored packages,
+
+    info: mathlib: URL has changed; deleting '.../.lake/packages/mathlib' and cloning again
+
+and left **2** oleans. `--no-build` did not prevent it: the deletion happens while Lake resolves dependencies, before any build. The tarball carries oleans and traces but no `.git` and no sources, so Lake cannot read the package remote. `lean_mathlib_url_fix` (`scripts/lib/lean-env.sh`) returns early when `.git` is absent, so it is a no-op after every tarball restore.
+
+**Answer to the open question in this bean** ("whether lake build on a TRACED restore still evicts is UNTESTED"): with `.git` and sources at the manifest rev, it does not. Same copy, after restoring the oleans into lake-cloned package dirs: `lake build --no-build Mathlib.Analysis.Complex.Basic Mathlib.Tactic Mathlib.RepresentationTheory.Basic` exit 0, "All targets up-to-date (3086 jobs)", olean count unchanged.
+
+**Fix on branch `claude/lean-build-red-2026-11-21`** (`33a0869e7c`): new `scripts/lake-restore-package-git.sh` gives each restored git package a shallow checkout at its manifest rev (about 11 s for all 8); `lean-cache-restore.sh` calls it on both paths, non-fatal. Re-tested from a clean copy: script exit 0, then `lake build --no-build Mathlib.Tactic Mathlib.Analysis.Complex.Basic` "All targets up-to-date (3085 jobs)". Scope: dependency oleans only. QOU oleans rebuilt by lean-direct have no matching traces, so `lake build QOU` still recompiles QOU (without evicting Mathlib). Stays in-progress until the branch merges.
