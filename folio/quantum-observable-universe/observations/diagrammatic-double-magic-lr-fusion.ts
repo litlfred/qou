@@ -34,4 +34,7 @@ export default conjecture({
     "littlewood-richardson",
     "open-problem",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh; Lean talk out of prose): The Lean carrier proves this (`not_doubleMagicConjecture`), with the conjugation symmetry kept as a hypothesis of the class because it is not yet formalised there." },
+  ],
 });
