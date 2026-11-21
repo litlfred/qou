@@ -21,8 +21,6 @@ class ExistsAxiom2ObservabilityContext where
   total_hom_dim : ℕ
   /-- Modulo the unit summand means we subtract 1 from the total dimension. -/
   hom_dim_eq : hom_dim = total_hom_dim - 1
-  /-- The only invariants are scalars, so the total invariant space has dimension 1. -/
-  total_hom_dim_eq : total_hom_dim = 1
 
 /-- **Lemma statement** (from manuscript):
 
@@ -32,10 +30,17 @@ $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
 modulo the unit, verifying axiom~(2) of
 [quantum observable universe](#def:quantum-observable-universe).
 
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
+    Stated, not proved. Until 2026-11-21 the class also carried
+    `total_hom_dim_eq : total_hom_dim = 1`, which is the conclusion, and the
+    proof only subtracted (round-trip audit pass 2, C06). That field is
+    deleted. Note the claim needs a reading: for the adjoint coaction of
+    `𝒪_q(G)` on itself the invariants are the class functions, one per
+    dominant weight by Peter–Weyl, so `total_hom_dim` is infinite in that
+    reading. The claim holds for the Lie-algebra adjoint of semisimple `𝔤`. -/
 -- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.ts
 theorem exists_axiom_2_observability [ctx : ExistsAxiom2ObservabilityContext] :
     ctx.hom_dim = 0 := by
-  rw [ctx.hom_dim_eq, ctx.total_hom_dim_eq]
+  -- Ref: [kassel1995] Quantum Groups, Ch. VII (Peter–Weyl for 𝒪_q(G))
+  sorry
 
 end QOU.QuantumObservableUniverse
