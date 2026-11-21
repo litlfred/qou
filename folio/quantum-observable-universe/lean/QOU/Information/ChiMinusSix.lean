@@ -60,9 +60,13 @@ class QOUCohomology where
   /-- Frobenius–Hopf self-duality: `HH² ≅ k` is rank one. -/
   frobeniusHopf_duality : hh2 = 1
 
-/-- **The obstruction is a single scalar (sorry-free).**  Because
-    `HH²(A) ≅ k` is rank one, the universal obstruction class lives in a
-    one-dimensional space — a single element of `k`. -/
+/-- **The obstruction is a single scalar.**  Because `HH²(A) ≅ k` is
+    rank one, the universal obstruction class lives in a one-dimensional
+    space — a single element of `k`.  This is an accessor for the
+    `frobeniusHopf_duality` field, not a derivation: the rank-one claim is
+    an input (the Wigner axiom, `conj:wigner-axiom`; see the class
+    docstring).  Until 2026-11-21 the title read "(sorry-free)", which
+    advertised the projection as a result. -/
 theorem obstruction_rank_one [Q : QOUCohomology] : Q.hh2 = 1 :=
   Q.frobeniusHopf_duality
 
