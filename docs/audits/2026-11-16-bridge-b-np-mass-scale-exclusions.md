@@ -224,6 +224,17 @@ Result in `computations/probes/bridge_b/h9b_result.md`.
 - The Hecke-level reading (type B with equal parameters: the H5 wall with eigenvalues `{q, −q⁻¹}`, H8
   N1, `D(q₀) = 0.939957`) keeps the bulk Hecke.
 
+### 10f. The wall's Hecke parameter from folding (H10, 2026-11-21)
+
+Result in `computations/probes/bridge_b/h10_result.md`. In the folding, the bulk type-B generator is a
+length-2 pair and the wall has length 1. With Lusztig's weight function `L = ℓ` restricted to the
+fixed-point group, the wall's parameter is the square root of the bulk's: `Q = q^{1/2}`. That gives
+`D(q₀) = 0.968071` on V³ and `D = 1` at q = 1.
+
+It is a conditional derivation: it rests on `conj:type-b-folding-cpt`, on the boundary sharing λ, and on
+the Lusztig monograph, which is not held. Equal parameters (`0.939957`) has no corpus support. A
+Markov condition fixes a trace value, not `Q`.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
