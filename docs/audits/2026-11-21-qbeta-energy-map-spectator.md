@@ -507,3 +507,30 @@ are required to share one c. Without that requirement, the symmetrised pair-Skei
 S, and its only content is a scale factor 1.016316 at the proton q₀. What survives is narrower:
 (i) the ordered-pair sum fails T1/T2; (ii) a symmetrised sum is a log map up to scale; (iii) the scale
 |c| is still open, as it was in §1.
+
+## 21. The nucleon mass over β_Bor's own crossings, and the scale |c| (prereg Addendum 12; owner "Both")
+
+**Correction to §20.** #8923 orients each pair by flavour: m_p = 𝒮(u,u) + 2𝒮(u,d) and
+m_n = 2𝒮(u,d) + 𝒮(d,d). That formula is invariant under relabelling by construction. T1 and T2 fail
+only for the position-ordered reading (1,2),(1,3),(2,3) that §20 tested. They are not failures of the
+#8923 formula. The open point in #8923 is a different one: why u always takes the q² weight.
+
+**Crossings of β_Bor = (σ₀σ₁⁻¹)³** (Lean, `StrandWeightSplit.lean`, section `BraidCrossings`). Each
+pair of strands meets twice, once at σ and once at σ⁻¹, with left and right swapped. For any linear
+crossing rule 𝒮₊ = αμ_left + βμ_right and 𝒮₋ = γμ_left + δμ_right:
+
+- `borromeanCrossingSum_eq`: Σ_crossings = (α + β + γ + δ)(μ₀ + μ₁ + μ₂).
+- `borromeanCrossingSum_cyclic`: invariant under relabelling the components.
+- `borromean_np`: m_n − m_p = W(μ_d − μ_u), W = α + β + γ + δ, independent of positions.
+
+So the braid's own crossings remove the orientation question entirely. They give a plain sum, which
+is a log map up to the scale W. With #8923's σ weights (q², q⁻²)/[2]_q, and either σ⁻¹ rule (same
+weights, or bar-swapped), W = 2(q² + q⁻²)/[2]_q. That is twice #8923's factor, because each pair
+meets at two crossings.
+
+**The scale |c|.** `reduction_step_preserves_channels`: the step σ² → hσ + 1 that the corpus uses to
+define E₀ leaves the value of σ² unchanged in both eigen-channels. It changes no trace value ε, so
+no map Φ(ε) can be calibrated by it. The corpus does not fix |c|. Readings L (E₀ per unit ln ε, cell
+0.8735 MeV) and S (E₀ per factor q, cell 2E₀ = 8.37 MeV) both remain, together with the per-crossing
+normalisation W above. This is a statement about what the corpus contains. It does not show that |c|
+is underivable.

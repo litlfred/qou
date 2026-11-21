@@ -127,4 +127,45 @@ theorem weights_first_ne_last (q : ℝ) (hq : 0 < q) (h1 : q ≠ 1) :
   have : q = 1 := by nlinarith [sq_nonneg (q - 1)]
   exact h1 this
 
+section BraidCrossings
+
+variable {R : Type*} [Field R]
+
+/-- The six crossings of `β_Bor = (σ₀σ₁⁻¹)³`, read left to right with strands tracked by
+starting position. The σ crossings meet `(0,1), (1,2), (2,0)` and the σ⁻¹ crossings meet
+`(0,2), (1,0), (2,1)`, each written `(left, right)`. `α, β` weight a σ crossing and
+`γ, δ` a σ⁻¹ crossing. -/
+def borromeanCrossingSum (α β γ δ μ₀ μ₁ μ₂ : R) : R :=
+  (α * μ₀ + β * μ₁) + (γ * μ₀ + δ * μ₂) + (α * μ₁ + β * μ₂) +
+  (γ * μ₁ + δ * μ₀) + (α * μ₂ + β * μ₀) + (γ * μ₂ + δ * μ₁)
+
+/-- **The braid's own crossings give a plain sum.** For every linear crossing rule the
+Borromean crossing sum is `(α + β + γ + δ)(μ₀ + μ₁ + μ₂)`. -/
+theorem borromeanCrossingSum_eq (α β γ δ μ₀ μ₁ μ₂ : R) :
+    borromeanCrossingSum α β γ δ μ₀ μ₁ μ₂ = (α + β + γ + δ) * (μ₀ + μ₁ + μ₂) := by
+  unfold borromeanCrossingSum
+  ring
+
+/-- Hence it is invariant under every relabelling of the three components; cyclic case. -/
+theorem borromeanCrossingSum_cyclic (α β γ δ μ₀ μ₁ μ₂ : R) :
+    borromeanCrossingSum α β γ δ μ₀ μ₁ μ₂ = borromeanCrossingSum α β γ δ μ₁ μ₂ μ₀ := by
+  rw [borromeanCrossingSum_eq, borromeanCrossingSum_eq]
+  ring
+
+/-- `m_n − m_p` for `p = (u,u,d)`, `n = (u,d,d)` in any positions: `W (μ_d − μ_u)`. -/
+theorem borromean_np (α β γ δ μu μd : R) :
+    borromeanCrossingSum α β γ δ μu μd μd - borromeanCrossingSum α β γ δ μu μu μd
+      = (α + β + γ + δ) * (μd - μu) := by
+  rw [borromeanCrossingSum_eq, borromeanCrossingSum_eq]
+  ring
+
+/-- **The reduction step `σ² → hσ + 1` changes no eigen-channel value.** With `h = q − q⁻¹`,
+`q² = h q + 1` (symmetric channel, eigenvalue `q`) and `q⁻² = h(−q⁻¹) + 1` (antisymmetric
+channel, eigenvalue `−q⁻¹`). So the step that defines `E₀` leaves every trace value fixed. -/
+theorem reduction_step_preserves_channels (q : R) (hq : q ≠ 0) :
+    q ^ 2 = (q - q⁻¹) * q + 1 ∧ q⁻¹ ^ 2 = (q - q⁻¹) * (-q⁻¹) + 1 := by
+  constructor <;> field_simp <;> ring
+
+end BraidCrossings
+
 end QOU.QBeta.StrandWeightSplit
