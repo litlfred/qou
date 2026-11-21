@@ -70,7 +70,7 @@ from witness_polynomial import expose_polynomial  # noqa: F401
 from sympy import Symbol, Rational, Integer, Matrix, simplify, sqrt, together
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as _Q_CANONICAL
+from q_parameter import Q as _Q_CANONICAL, Q_50_DIGIT_STR as _Q_50_DIGIT_STR
 from murnaghan_nakayama import (
     partitions_of, dim_specht, hook_lengths,
     atomic_braid_word,
@@ -399,7 +399,7 @@ if __name__ == "__main__":
     print("=" * 80)
 
     q = sp.Symbol('q', positive=True, real=True)
-    q0 = Rational(int(_Q_CANONICAL * 10 ** 16), 10 ** 16)
+    q0 = Rational(_Q_50_DIGIT_STR)  # was a 16-digit truncation of float Q (F64_CAST, 2026-11-21)
 
     # A = 1 full test: proton and neutron
     print("\n── A = 1 q-character across all 3 partitions ──")
@@ -488,7 +488,7 @@ if __name__ == "__main__":
         "scope": "A = 1 only (p, n) — demonstrates q-character distinguishes.",
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": str(float(_Q_CANONICAL)),
+            "q_0": _Q_50_DIGIT_STR,
             "engine": "sympy Matrix (exact in q)",
         },
         "results": results,
