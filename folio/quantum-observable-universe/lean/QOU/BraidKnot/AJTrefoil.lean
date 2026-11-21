@@ -4,7 +4,9 @@ import QOU.MathlibExt.QIntegerCanonical
 /-!
 # QOU.BraidKnot.AJTrefoil
 
-**The AJ conjecture at the QOU electron knot (trefoil), stated concretely.**
+**The AJ conjecture at the trefoil, stated concretely.** (The trefoil is the
+*backup* electron candidate: by the owner ruling of 2026-11-21 the electron is
+σ₀σ₁σ₀ ∈ B₃ with Hopf-link closure — `docs/coordination/owner-rulings.md`.)
 
 Companion to `QOU.BraidKnot.AJFigureEight`, completing the AJ statement
 layer for the QOU knot set ("do the same for the trefoil", bean `3eeq`;
