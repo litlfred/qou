@@ -36,7 +36,14 @@ modulo the unit, verifying axiom~(2) of
     deleted. Note the claim needs a reading: for the adjoint coaction of
     `𝒪_q(G)` on itself the invariants are the class functions, one per
     dominant weight by Peter–Weyl, so `total_hom_dim` is infinite in that
-    reading. The claim holds for the Lie-algebra adjoint of semisimple `𝔤`. -/
+    reading. The claim holds for the Lie-algebra adjoint of semisimple `𝔤`.
+
+    **Not closable as stated (QA on #8888, 2026-11-21).** `total_hom_dim`
+    is a free natural number, so `hom_dim = total_hom_dim - 1 = 0` is false
+    for a generic instance (take `total_hom_dim = 5`). Closing it needs the
+    class to carry the representation itself, e.g. the adjoint module of
+    `sl₂` with `total_hom_dim` defined as the dimension of its invariants
+    plus the unit summand; Schur's lemma then gives the value. -/
 -- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.ts
 theorem exists_axiom_2_observability [ctx : ExistsAxiom2ObservabilityContext] :
     ctx.hom_dim = 0 := by

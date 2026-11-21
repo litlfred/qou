@@ -70,7 +70,15 @@ class IsPieriShift (P : PieriInterface) where
     `support_subset` that held the conclusion itself (a self-assuming
     projection, round-trip audit pass 2, C04). The field is deleted;
     the proof needs the q-Pieri rule for Specht modules of `H_n(q)`,
-    which Mathlib does not carry. -/
+    which Mathlib does not carry.
+
+    **Not closable as stated (QA on #8888, 2026-11-21).** `PieriInterface`
+    and `IsPieriShift` leave `oneBoxShift` and `support_after` as arbitrary
+    functions: nothing ties them to Young's lattice, to `H_n(q)` or to the
+    photon. For a generic instance the inclusion is false, so the q-Pieri
+    rule alone would not close it. The interface must first define both
+    sets from the Hecke-algebra data (Wedderburn support of `γ·β` and the
+    partitions containing `λ`, as in the content-block proof). -/
 -- Ref: [leitner2026] prop:pieri-photon-shift
 -- Ref: [fulton1997] Young Tableaux, Ch. 2
 -- Ref: [kassel1995] Quantum Groups, Ch. XI

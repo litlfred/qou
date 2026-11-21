@@ -56,6 +56,14 @@ Wedderburn decomposition) and have the theorem *derive* the three
 clauses from them.  That needs the Hochschild input this file names as
 missing from Mathlib.  Bean `qou-mtc9`.
 
+**The `sorry` cannot be closed as stated (QA on #8888, 2026-11-21).**
+The context leaves `pi_centre`, `observable`, `integral`, `e_block` and
+`E_infinity_00` as unconstrained data: nothing ties `pi_centre` to the
+centre of `A`, `integral` to the Markov trace, or `E_infinity_00` to the
+sum of the `e_block`. For a generic instance the three clauses are false.
+Closing the `sorry` therefore needs the class strengthened first (the
+§3b-cond restructure above), not only the Hochschild input.
+
 -- Ref: [leitner2026] quantum-observable-universe/mass-theory/confinement-categorical.md
 -/
 
