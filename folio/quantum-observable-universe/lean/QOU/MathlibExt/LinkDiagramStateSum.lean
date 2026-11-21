@@ -766,4 +766,87 @@ theorem value_contract [Fintype E] [DecidableEq E] (R₀ : Code E) (a b : E) (ha
 
 end Relabel
 
+/-! ### Reidemeister invariance of the normalised value -/
+
+section Invariance
+
+/-- The writhe of a code: positive crossings minus negative crossings. -/
+def writhe {E : Type*} (D : Code E) : ℤ := (D.xs.map fun x => if x.pos then (1 : ℤ) else -1).sum
+
+theorem writhe_add {E : Type*} (D D' : Code E) : writhe (D + D') = writhe D + writhe D' := by
+  simp [writhe, Multiset.map_add, Multiset.sum_add]
+
+theorem writhe_ofJs {E : Type*} (js : Multiset (E × E)) : writhe (Code.ofJs js) = 0 := by
+  simp [writhe, Code.ofJs]
+
+theorem writhe_map {E F : Type u} (f : E → F) (D : Code E) : writhe (D.map f) = writhe D := by
+  simp [writhe, Code.map, Multiset.map_map, Crossing.map]
+
+/-- The sign `±1` of a crossing sign, as an integer. -/
+def signZ (s : Bool) : ℤ := if s then 1 else -1
+
+/-- **The local identities of an invariant model.** `θ` is the framing factor of a kink. -/
+structure Model.Invariant (M : Model R ι) (θ : Rˣ) : Prop where
+  r1 : ∀ u s : Bool, ∀ x y : ι,
+    ∑ i, kinkW M u s x y i = ((θ ^ signZ s : Rˣ) : R) * if x = y then 1 else 0
+  r2par : ∀ s : Bool, ∀ a b c d : ι,
+    ∑ i, ∑ j, M.X s c j a i * M.X (!s) j d i b = if a = b ∧ c = d then 1 else 0
+  r2anti : ∀ s : Bool, ∀ a b c d : ι,
+    ∑ i, ∑ j, M.X s j d a i * M.X (!s) c j i b = if a = b ∧ c = d then 1 else 0
+  r3 : ∀ a₀ a₂ b₀ b₂ c₀ c₂ : ι,
+    ∑ i, ∑ j, ∑ k, M.X true b₀ j a₀ i * M.X true c₀ k i a₂ * M.X true k c₂ j b₂ =
+    ∑ i, ∑ j, ∑ k, M.X true c₀ k b₀ j * M.X true k c₂ a₀ i * M.X true j b₂ i a₂
+
+/-- **The writhe-normalised value** of a bundled code. -/
+noncomputable def normValue (M : Model R ι) (θ : Rˣ) (D : Bundled.{u}) : R :=
+  ((θ⁻¹ ^ writhe D.code : Rˣ) : R) * value M D.code
+
+variable {M : Model R ι} {θ : Rˣ}
+
+theorem normValue_eq_of_move (hM : M.Invariant θ) {D D' : Bundled.{u}} (h : Move D D') :
+    normValue M θ D = normValue M θ D' := by
+  cases h with
+  | embed f D =>
+    simp only [normValue, writhe_map, value_embed]
+  | contract R₀ a b hab hR =>
+    simp only [normValue, writhe_map, writhe_add, writhe_ofJs, add_zero,
+      value_contract M R₀ a b hab hR]
+  | r1 R₀ a b ℓ u s hℓ ha hb =>
+    simp only [normValue]
+    rw [value_r1 M R₀ a b ℓ u s _ hℓ ha hb (hM.r1 u s), writhe_add, writhe_add, writhe_ofJs]
+    have hw : writhe (Code.ofXs {kink a b ℓ u s} : Code _) = signZ s := by
+      cases u <;> simp [writhe, Code.ofXs, kink, signZ]
+    rw [hw, ← mul_assoc, ← Units.val_mul, add_zero]
+    congr 2
+    rw [inv_zpow', inv_zpow', ← zpow_add, neg_add, add_assoc, neg_add_cancel, add_zero]
+  | r2par R₀ a b c d e₁ f₁ s he hf hef hbd =>
+    simp only [normValue]
+    rw [← value_r2par M R₀ a b c d e₁ f₁ s he hf hef hbd (hM.r2par s), writhe_add, writhe_add,
+      writhe_ofJs]
+    congr 4
+    cases s <;> simp [writhe, Code.ofXs, bigonPar]
+  | r2anti R₀ a b c d e₁ f₁ s he hf hef hbd =>
+    simp only [normValue]
+    rw [← value_r2anti M R₀ a b c d e₁ f₁ s he hf hef hbd (hM.r2anti s), writhe_add, writhe_add,
+      writhe_ofJs]
+    congr 4
+    cases s <;> simp [writhe, Code.ofXs, bigonAnti]
+  | r3 R₀ a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ hint hab hac hbc hbd =>
+    simp only [normValue]
+    rw [value_r3 M R₀ a₀ a₁ a₂ b₀ b₁ b₂ c₀ c₁ c₂ hint hab hac hbc hbd hM.r3, writhe_add,
+      writhe_add]
+    rfl
+
+/-- **Invariance.** For a model satisfying the local identities, the writhe-normalised value is an
+invariant of Reidemeister equivalence. -/
+theorem normValue_eq (hM : M.Invariant θ) {D D' : Bundled.{u}} (h : ReidemeisterEquiv D D') :
+    normValue M θ D = normValue M θ D' := by
+  induction h with
+  | rel _ _ h => exact normValue_eq_of_move hM h
+  | refl => rfl
+  | symm _ _ _ ih => exact ih.symm
+  | trans _ _ _ _ _ ih₁ ih₂ => exact ih₁.trans ih₂
+
+end Invariance
+
 end QOU.MathlibExt.PL.Diagram
