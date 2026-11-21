@@ -34,6 +34,7 @@ export default proposition({
     "shadow-price",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, every chapter strict): ([demand profile](#def:demand-profile))" },
     {
       kind: "status",
       date: "2026-11-21",

@@ -7,9 +7,7 @@ $\mathrm{Geom}(K)$
 ([topological mass formula](#conj:topological-mass-formula))
 is the evaluation of the Yekutieli rigid dualizing complex
 $\omega_A^\bullet$ on the algebraic stratification of the braid
-$\beta$ with closure $K = \widehat\beta$ (per
-[algebraic stratification](#prop:phi-q-tower-algebraic-stratification);
-the τ-image of this evaluation is the geometric reading on
+$\beta$ with closure $K = \widehat\beta$ (the τ-image of this evaluation is the geometric reading on
 $S^3 \setminus K$, classified by Thurston's geometrization at the
 τ-side):*
 

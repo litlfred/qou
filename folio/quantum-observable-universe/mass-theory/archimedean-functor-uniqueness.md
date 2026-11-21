@@ -23,8 +23,8 @@ $z \in \mathbb{C} \setminus \{0,1\}$, where:*
    functional on $B(\mathbb{C})$ — the structural content provided by
    the cosimplicial / Yekutieli triple machinery
    ([Cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid))
-   together with the archimedean limit
-   ([$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit)).*
+   together with the archimedean limit assumed in the opening
+   banner.*
 - *(C2) Bloch-Suslin pentagon-uniqueness [`suslin1991`,
    `bloch2000`]: any continuous antisymmetric pentagon-coherent
    real-valued function on $\mathbb{C} \setminus \{0,1\}$ is a

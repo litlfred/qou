@@ -30,7 +30,7 @@ THE ARGUMENT (standard representation theory, not fitted).
         (2,2)     -- the UNIQUE self-transpose summand = the parity-symmetric,
                      Frobenius-self-dual (antipode-closed) BOUND-STATE channel,
         (2,1,1)   -- transpose of (3,1); the FORCE-CARRIER channel that
-                     prop:force-carrier-intertwining-correspondence assigns to
+                     conj:force-carrier-intertwining-correspondence assigns to
                      T_{2,9} on a 4-strand braid (corroboration, not used as input),
         (1,1,1,1) -- fully antisymmetric = the DECOUPLED / separated-atom channel.
   * A covalent bound state has definite (symmetric) parity, hence is closed under
@@ -51,7 +51,7 @@ WHAT THIS DELIVERS vs WHAT REMAINS (honest, critical-distance).
   of the core (2,2)=EM conditional, not its elimination.
 
 NON-CIRCULARITY.  prop:em-coupling-projection (sgn = EM singlet) is upstream of
-conj:e-hartree (no circularity).  prop:force-carrier-intertwining-correspondence
+conj:e-hartree (no circularity).  conj:force-carrier-intertwining-correspondence
 is itself e-hartree-conditional, so the (2,1,1)=force-carrier coincidence is
 recorded only as CORROBORATION, never used to prove anything.
 

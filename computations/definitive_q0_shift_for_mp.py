@@ -57,7 +57,7 @@ def main():
         "of 11.5 ppb. All correction towers are Taylor expansions of "
         "this shift. 1 ppb m_p requires deriving q₀ to 12 ppb."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
     w.add_data("q0_current", mp.nstr(q0, 25))
     w.add_data("q0_exact_for_mp", mp.nstr(q_exact, 25))
     w.add_data("shift_absolute", mp.nstr(shift, 15))

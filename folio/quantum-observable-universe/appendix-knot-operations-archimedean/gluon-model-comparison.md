@@ -1,4 +1,4 @@
-The nucleon normal form (NF) requires no explicit Hopf-link gluon factors beyond the Borromean braid $B_3 = (\sigma_0\sigma_1^{-1})^3$. Five candidate models illustrate this.
+The nucleon normal form (NF) requires no explicit gluon factors $L_\pm$ beyond the Borromean braid $B_3 = (\sigma_0\sigma_1^{-1})^3$. Five candidate models illustrate this.
 
 **Definition recall** ([Borromean baryon](#def:borromean-baryon)).
 $B = \mathcal{B}_3(K_{0_1}, K_{0_1}, K_{0_1}) \oplus \mathcal{L}_H$.
@@ -11,8 +11,8 @@ The three constituents are unknots; the Hopf link $\mathcal{L}_H$ binds them. Fl
 | A | $B_3 \cdot \mathrm{cx}$ | Borromean only (no extra gluons) |
 | B | $B_3 \cdot \prod [\sigma_i^2 \cdot \mathrm{cx}_{ij}]$ | Hopf gluon $\sigma_i^2$ per quark pair |
 | C | $B_3 \cdot \sigma_0^2 \sigma_1^2 \cdot \mathrm{cx}$ | Global Hopf dressing |
-| D | $B_3 \cdot L_+ \cdot \mathrm{cx}$ | Single Hopf link element |
-| E | $B_3 \cdot L_+ L_- \cdot \mathrm{cx}$ | Hopf pair (both orientations) |
+| D | $B_3 \cdot L_+ \cdot \mathrm{cx}$ | Single $L_+$ element |
+| E | $B_3 \cdot L_+ L_- \cdot \mathrm{cx}$ | $L_+L_-$ pair (both orientations) |
 
 where $\mathrm{cx} = \mathrm{cx}(q_0,q_1) \cdot \mathrm{cx}(q_0,q_2) \cdot \mathrm{cx}(q_1,q_2)$ are the pairwise typed crossings ($\sigma$ for $\mathfrak{u}\mathfrak{u}$, $\sigma^{-1}$ for $\mathfrak{d}\mathfrak{d}$, $\tfrac{1}{2}(\sigma + \sigma^{-1})$ for $\mathfrak{u}\mathfrak{d}$).
 
@@ -30,7 +30,7 @@ where $\mathrm{cx} = \mathrm{cx}(q_0,q_1) \cdot \mathrm{cx}(q_0,q_2) \cdot \math
 
 Model A matches CODATA exactly (residual $< 10^{-6}$ MeV). The other models overshoot $|\Delta|$, giving $|Q| > 0.87$ MeV.
 
-Quarks interact as single-crossing unknots, not as full trefoils (Definition 4.27.1): replacing each crossing with a full trefoil braid word ($\sigma_0\sigma_1\sigma_0$ for $\mathfrak{u}$, $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ for $\mathfrak{d}$) triples $|\Delta \times E_0|$ to $-2.51$ MeV, away from CODATA.
+Quarks interact as single-crossing unknots, not as full three-crossing words (Definition 4.27.1): replacing each crossing with the electron word ($\sigma_0\sigma_1\sigma_0$ for $\mathfrak{u}$, $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ for $\mathfrak{d}$) triples $|\Delta \times E_0|$ to $-2.51$ MeV, away from CODATA.
 
 **Interpretation.**
 The Borromean braid $B_3$ has NF:

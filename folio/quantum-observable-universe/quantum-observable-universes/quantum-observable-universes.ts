@@ -24,16 +24,6 @@ export default chapter({
         "qou-definition-intro",
         "quantum-observable-universe",
         "qou-axioms-physical-reading",
-        "quantum-observable-universe-exists",
-        "qou-exists-axiom-1",
-        "qou-exists-axiom-1-proof",
-        "qou-exists-axiom-2",
-        "qou-exists-axiom-2-proof",
-        "qou-exists-axiom-3",
-        "qou-exists-axiom-3-proof",
-        "qou-exists-axiom-4",
-        "qou-exists-axiom-4-proof",
-        "quantum-observable-universe-exists-proof",
         "braiding-induced-ordering",
         "braiding-induced-ordering-proof",
         "braiding-induced-ordering-interpretation",
@@ -176,6 +166,7 @@ export default chapter({
         "substrate-parameter-brings",
         "quantum-universe-explication",
         "quantum-gauge-group",
+        "su2-characters-and-quantum-dimension",
         "quantum-planck-constant",
         "planck-limits",
         "q-hodge-star",
@@ -193,20 +184,24 @@ export default chapter({
       ],
     }),
 
-    // ── G-action on the substrate ─────────────────────────────────────
-    // Moved here from sec:emergence (reading-order drain, qou-d4kh,
-    // 2026-11-20): the conjecture is stated in q-dimensions [n]_q, so it
-    // must follow sec:substrate-parameter, where q is introduced. The
-    // idempotent proposition precedes the conjecture that cites it.
+    // ── Existence of a quantum observable universe ───────────────────
+    // Moved here from sec:qou-definition (reading-order drain L4,
+    // 2026-11-21): the existence proof exhibits Rep(U_q(g)) with O_q(G),
+    // so it follows sec:substrate-parameter, where q is introduced.
     section({
-      title: "The $G$-action on the substrate",
-      label: "sec:emergence-g-action",
+      title: "Existence of a quantum observable universe",
+      label: "sec:qou-existence",
       blocks: [
-        "higgs-vacuum-residual-idempotent",
-        "g-action-on-substrate",
-        "g-action-on-substrate-table1-data",
-        "g-action-on-substrate-table2-data",
-        "higgs-vacuum-residual-graviton",
+        "quantum-observable-universe-exists",
+        "qou-exists-axiom-1",
+        "qou-exists-axiom-1-proof",
+        "qou-exists-axiom-2",
+        "qou-exists-axiom-2-proof",
+        "qou-exists-axiom-3",
+        "qou-exists-axiom-3-proof",
+        "qou-exists-axiom-4",
+        "qou-exists-axiom-4-proof",
+        "quantum-observable-universe-exists-proof",
       ],
     }),
 

@@ -330,8 +330,9 @@ def main() -> int:
                     computed=fmt(builder_max_rel), expected="0", tolerance="1e-13",
                     source="float64 pyhecke.atom.build_atom_nf, cross-check only")
     w.add_assertion(name="one_dot_v_nonzero",
-                    computed=fmt(abs(one_dot_v)), expected=fmt(abs(one_dot_v)),
-                    tolerance="1e-50",
+                    computed="1" if abs(one_dot_v) > mp.mpf("1e-30") else "0",
+                    expected="1",
+                    tolerance="0",
                     source="1'v != 0 => the net row is satisfiable along the kernel "
                            "whenever Gx = nf is; recorded so the value is on file")
     w.add_assertion(name="no_candidate_in_range_of_gram",

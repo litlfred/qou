@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:16:44.107614+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:38:11.048003+00:00",
+  "commitSha": "2f9ef58d2792aa97b41d03bd00bd30c583911694",
   "assertions": [
     {
       "name": "q_deformation_improves",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 27,
+  "durationMs": 11,
   "computation": "phase2c-derive-correction-tower",
   "scriptFile": "phase2c_derive_correction_tower.py",
-  "scriptHash": "49c5de18f601",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "139607fb6a9a",
+  "scriptCommitSha": "4368f190768ffff142d30a9a01fc47befb68ba1c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -42,7 +42,7 @@
     "reproduce": "python3 -u computations/phase5/phase2c_derive_correction_tower.py"
   },
   "description": "Investigates whether the ℏ_q correction tower can be DERIVED (not fitted) by replacing integer coefficients with their q-deformed analogues: 2 → [2]_q, 6 → [3]_q!. Tests multiple q-deformation hypotheses against CODATA.",
-  "contentBlock": "prop:proton-mass-substrate-identity",
+  "contentBlock": "conj:proton-mass-substrate-identity",
   "data": {
     "best_q_deformed_formula": {
       "name": "2·m_μ·F − 12·m_e (current)",

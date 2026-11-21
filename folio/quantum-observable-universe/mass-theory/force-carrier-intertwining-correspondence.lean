@@ -3,7 +3,7 @@ The force-carrier intertwining correspondence:
   T_{p,q} (genus-4 torus knot) acting on an n-strand braid lands on
   Wedderburn channel λ = (p, 1, ..., 1) of H_n(q).
 
-LaTeX label: `prop:force-carrier-intertwining-correspondence`
+LaTeX label: `conj:force-carrier-intertwining-correspondence`
 Computational evidence:
   computations/delta-q-decoration.witness.json
 -/

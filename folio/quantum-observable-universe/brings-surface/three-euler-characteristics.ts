@@ -13,6 +13,8 @@ export default remark({
   cites: ["hartshorne-1977", "loday-1998"],
   tags: ["euler-characteristic", "hochschild-homology", "quantum-dimension", "notation", "brings-surface"],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): | $w(A)$ | obstruction class of the Wigner axiom | the substrate | pairs to $\\chi_{\\mathrm{eu}}(M_0) = -6$ under the axiom |" },
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): **The obstruction class** $w(A)$ of the [Wigner axiom](#conj:wigner-axiom) is the fourth object. It lives in the classical-limit obstruction space, is a class rather than a number, and becomes an integer only through its archimedean image, the Euler class $e(TM_0) \\in H^2(M_0; \\mathbb{Z})$, whose integral is once more $\\chi_{\\mathrm{eu}}(M_0)$. That the obstruction space is a line is the axiom, not a consequence of the axioms of a quantum observable universe." },
     {
       kind: "status",
       date: "2026-09-15",

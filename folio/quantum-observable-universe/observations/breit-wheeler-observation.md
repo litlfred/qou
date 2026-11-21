@@ -18,7 +18,7 @@ Evaluate the limits:
 | Configuration | $S$ | $E_0$ | Character |
 |---|---|---|---|
 | Same mode ($\phi_1 = \phi_2$) | $1$ | $\approx 4.22 \mathrm{MeV}$ | Hecke-reduced; no pair in the model |
-| Distinct modes ($\phi_1 \neq \phi_2$) | $0$ | $\approx 2.27 \mathrm{MeV}$ | Hopf link $L_\pm$; pair |
+| Distinct modes ($\phi_1 \neq \phi_2$) | $0$ | $\approx 2.27 \mathrm{MeV}$ | $L_\pm$; pair |
 
 For unpolarised beams, the cross-section averages over $\phi_1,\phi_2$ and develops a $\cos(2\phi)$ azimuthal modulation in the $e^-e^+$ opening-angle distribution. The amplitude is proportional to $\langle C_+ - C_- \rangle = \langle \phi_1 - \phi_2 \rangle^2$.
 

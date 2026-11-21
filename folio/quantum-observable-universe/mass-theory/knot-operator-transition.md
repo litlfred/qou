@@ -3,8 +3,8 @@
 | Transition | Operator | Dominant NF | Knot type |
 |:----------:|:--------:|:-----------:|:---------:|
 | $p \to D$ | $\sigma_0 - h/2$ | $\sigma_0$ | single crossing |
-| $D \to {}^3\!H$ | $\sigma_1^{-1}(\sigma_0{-}h/2)$ | $L_-$ | Hopf link |
-| $D \to {}^3\!\mathrm{He}$ | $(\sigma_1{-}h/2)\sigma_0$ | $L_-$ | Hopf link |
+| $D \to {}^3\!H$ | $\sigma_1^{-1}(\sigma_0{-}h/2)$ | $L_-$ | unknot (closure in $B_3$) |
+| $D \to {}^3\!\mathrm{He}$ | $(\sigma_1{-}h/2)\sigma_0$ | $L_-$ | unknot (closure in $B_3$) |
 | ${}^3\!H \to {}^4\!\mathrm{He}$ | $(\sigma_0{-}h/2)(\sigma_1{-}h/2)\sigma_0$ | $e^-$ | trefoil |
 | ${}^3\!\mathrm{He} \to {}^4\!\mathrm{He}$ | $(\sigma_0{-}h/2)\sigma_1^{-1}(\sigma_0{-}h/2)$ | $e^-$ | trefoil |
 

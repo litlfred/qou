@@ -2,6 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): per [algebraic stratification](#prop:phi-q-tower-algebraic-stratification);" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([figure-eight BW coefficients](#conj:six-term-mass-formula-complete))" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): `rem:baryon-period-ratio`).**" },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },

@@ -12,9 +12,9 @@ discussion is in
 | $\gamma$ | point $\varnothing$ | $\mathbf{1}$ | $+1$ | — | — | — | — | — | $+1.000$ |
 | $\sigma_0$ | virtual | $\sigma_0$ | — | $+1$ | — | — | — | — | $+1.000$ |
 | $\sigma_1$ | virtual | $\sigma_1$ | — | — | $+1$ | — | — | — | $+1.000$ |
-| $L_+$ (gluon) | Hopf $T(2,2)$ | $\sigma_0\sigma_1$ | — | — | — | $+1$ | — | — | $+1.000$ |
-| $L_-$ (gluon) | Hopf $T(2,2)$ | $\sigma_1\sigma_0$ | — | — | — | — | $+1$ | — | $+1.000$ |
-| $e^-$ | trefoil $3_1$ | $\sigma_0\sigma_1\sigma_0$ | — | — | — | — | — | $+1$ | $+1.000$ |
-| $e^+$ | mirror $3_1$ | $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ | $-0.218$ | $+0.044$ | $+0.044$ | $-0.209$ | $-0.209$ | $+1$ | $+0.451$ |
+| $L_+$ (gluon) | unknot (closure in $B_3$) | $\sigma_0\sigma_1$ | — | — | — | $+1$ | — | — | $+1.000$ |
+| $L_-$ (gluon) | unknot (closure in $B_3$) | $\sigma_1\sigma_0$ | — | — | — | — | $+1$ | — | $+1.000$ |
+| $e^-$ | Hopf link (closure in $B_3$) | $\sigma_0\sigma_1\sigma_0$ | — | — | — | — | — | $+1$ | $+1.000$ |
+| $e^+$ | mirror Hopf link | $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ | $-0.218$ | $+0.044$ | $+0.044$ | $-0.209$ | $-0.209$ | $+1$ | $+0.451$ |
 | $\mathfrak{u}$ | unknot $(+)$ | $\sigma_0$ | — | $+1$ | — | — | — | — | $+1.000$ |
 | $\mathfrak{d}$ | unknot $(-)$ | $\sigma_0^{-1}$ | $-0.209$ | $+1$ | — | — | — | — | $+0.791$ |

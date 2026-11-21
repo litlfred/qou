@@ -316,7 +316,7 @@ def build_atom(Z, N):
     nucleus_nf = dict(elem)
 
     # Add Z electrons via Hopf links
-    electron = {(0, 1, 0): 1.0}  # trefoil T_{2,3} = σ₀σ₁σ₀
+    electron = {(0, 1, 0): 1.0}  # e⁻ = σ₀σ₁σ₀ (closure: Hopf link)
     atom_elem = dict(nucleus_nf)
     for e_idx in range(Z):
         gen = e_idx % max(A - 1, 1)

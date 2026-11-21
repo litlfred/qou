@@ -9,9 +9,9 @@ Symbolic proofs over ℤ[t, t⁻¹] (where q = t²).
 
 ## Proved theorems
 
-- `hopfPlus_entry_00`: L₊(0,0) = 0
-- `hopfMinus_entry_00`: L₋(0,0) = -1
-- `hopf_ne`: L₊ ≠ L₋ (they differ at entry (0,0))
+- `lPlus_entry_00`: L₊(0,0) = 0
+- `lMinus_entry_00`: L₋(0,0) = -1
+- `lPlus_ne_lMinus`: L₊ ≠ L₋ (they differ at entry (0,0))
 - `borromeanUnit_trace`: tr(σ₀σ₁⁻¹) = 1 − q² − q⁻²
 - `borromeanUnit_entry_00`: (σ₀σ₁⁻¹)(0,0) = 1 − q²
 - `borromeanUnit_entry_01`: (σ₀σ₁⁻¹)(0,1) = q⁻¹
@@ -27,14 +27,18 @@ namespace QOU.Interactions
 
 open QOU.Archimedean Matrix
 
-/-! ## §1  Hopf links L₊ and L₋ -/
+/-! ## §1  L₊ = σ₀σ₁ and L₋ = σ₁σ₀
+
+Each closes in `B₃` to ONE component, the unknot: its permutation is a
+3-cycle. They were called "Hopf links" until 2026-11-21; the Hopf link is the
+closure of `σ₀²` in `B₂` (or of `σ₀σ₁σ₀` in `B₃`). -/
 
 /-- L₊ = σ₀σ₁ in the standard representation. -/
-noncomputable def hopfPlus : TMatrix :=
+noncomputable def lPlus : TMatrix :=
   stdRep3_gen0 * stdRep3_gen1
 
 /-- L₋ = σ₁σ₀ in the standard representation. -/
-noncomputable def hopfMinus : TMatrix :=
+noncomputable def lMinus : TMatrix :=
   stdRep3_gen1 * stdRep3_gen0
 
 /-- L₊(0,0) = 0 in ℤ[t,t⁻¹].
@@ -44,8 +48,8 @@ noncomputable def hopfMinus : TMatrix :=
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem hopfPlus_entry_00 : hopfPlus 0 0 = 0 := by
-  simp [hopfPlus, stdRep3_gen0, stdRep3_gen1,
+theorem lPlus_entry_00 : lPlus 0 0 = 0 := by
+  simp [lPlus, stdRep3_gen0, stdRep3_gen1,
         mul_apply, Fin.sum_univ_two]
   rw [q_from_t_mul_q_inv_from_t]
   ring
@@ -57,8 +61,8 @@ theorem hopfPlus_entry_00 : hopfPlus 0 0 = 0 := by
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem hopfMinus_entry_00 : hopfMinus 0 0 = -1 := by
-  simp [hopfMinus, stdRep3_gen0, stdRep3_gen1,
+theorem lMinus_entry_00 : lMinus 0 0 = -1 := by
+  simp [lMinus, stdRep3_gen0, stdRep3_gen1,
         mul_apply, Fin.sum_univ_two]
   rw [mul_comm]
   rw [q_from_t_mul_q_inv_from_t]
@@ -70,10 +74,10 @@ theorem hopfMinus_entry_00 : hopfMinus 0 0 = -1 := by
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem hopf_ne : hopfPlus ≠ hopfMinus := by
+theorem lPlus_ne_lMinus : lPlus ≠ lMinus := by
   intro h
   have h00 := congr_fun (congr_fun h 0) 0
-  rw [hopfPlus_entry_00, hopfMinus_entry_00] at h00
+  rw [lPlus_entry_00, lMinus_entry_00] at h00
   have h00_eval := congrArg (fun f : ℤ →₀ ℤ => f 0) h00
   change (0 : ℤ) = -((Finsupp.single 0 1 : ℤ →₀ ℤ) 0) at h00_eval
   simp only [Finsupp.single_apply, if_true] at h00_eval

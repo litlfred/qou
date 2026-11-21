@@ -31,7 +31,7 @@ export default chapter({
     section({
       title: "Positioning against canonical quantum-gravity programmes",
       label: "sec:gravity-spacetime-lqg-comparison",
-      blocks: ["intro-gravity-spacetime-lqg-comparison", "lqg-adm-ashtekar-comparison", "lqg-entropy-qdim-partition-pole", "einstein-nonsymmetric-metric-comparison", "sym2-adjoint-spin-two-gauge-not-lorentz", "outro-gravity-spacetime"],
+      blocks: ["intro-gravity-spacetime-lqg-comparison", "lqg-adm-ashtekar-comparison", "lqg-entropy-qdim-partition-pole", "sym2-adjoint-spin-two-gauge-not-lorentz", "outro-gravity-spacetime"],
     }),
   ],
 });

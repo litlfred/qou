@@ -44,7 +44,7 @@ The components $\sigma_0$ and $\sigma_1$ determine the independent polarization 
 | $E$-mode polarization | $\varphi_{0,k} - \varphi_{1,k}$ (polarization asymmetry) | Difference of $\sigma_0, \sigma_1$ modes |
 | $B$-mode polarization | Cross-terms $\varphi_{0,k}\varphi_{1,j}$ ($k \neq j$) | Degree-$2$ Hopf-link contributions ($L_{\pm}$) |
 
-The degree-$2$ data ($A_2/A_0$) detects linking between photons. It isolates the Hopf-link terms $L_{\pm} = \sigma_0\sigma_1$ and $\sigma_1\sigma_0$ from the product formula . These pairwise correlations generate the CMB power spectrum.
+The degree-$2$ data ($A_2/A_0$) detects linking between photons. It isolates the terms $L_{\pm} = \sigma_0\sigma_1$ and $\sigma_1\sigma_0$ from the product formula . These pairwise correlations generate the CMB power spectrum.
 
 ## Condensation
 
