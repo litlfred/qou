@@ -1,7 +1,7 @@
 ---
 # qou-zyr2
 title: Cite 1604.02688v1.pdf at computations/probes/figure_eight_3d_index.py
-status: in-progress
+status: completed
 pr: 8445
 type: task
 priority: normal
@@ -41,3 +41,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8445, closed o
 `[garoufalidis-hodgson-hoffman-rubinstein2016]` key added to figure_eight_3d_index.py docstring; probe re-run, payload byte-identical. Cor 10.21 = §10.3 corollary `1-efficient_degrees` (degree ≥ 1 for nonzero irreducible closed normal classes). Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

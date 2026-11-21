@@ -1,7 +1,7 @@
 ---
 # qou-otpa
 title: Cite 0811.1338v1.pdf at computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py
-status: in-progress
+status: completed
 pr: 8386
 type: task
 priority: normal
@@ -46,3 +46,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8386, closed o
 Bare strings in mu4_vs_nuclear_4n_force_bound_probe.py and its witness references now carry `[jurgenson2009srg]` / `[epelbaum2008]`; probe re-run, numbers byte-identical. Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): see qou-u8cp (empirical number inside a Lean theorem).
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

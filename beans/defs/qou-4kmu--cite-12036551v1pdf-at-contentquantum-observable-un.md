@@ -1,7 +1,7 @@
 ---
 # qou-4kmu
 title: Cite 1203.6551v1.pdf at folio/quantum-observable-universe/mass-theory/hyperbolic-knot-positive-…
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -36,3 +36,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 Cite `[hodgson2012]` added at hyperbolic-knot-positive-volume-via-reeb.md after checking §1 (Cao–Meyerhoff). Finding F1: the block's unqualified 'minimal hyperbolic volume' is minimal among orientable cusped manifolds only (shared with m003; Weeks is smaller); sentence not changed. Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

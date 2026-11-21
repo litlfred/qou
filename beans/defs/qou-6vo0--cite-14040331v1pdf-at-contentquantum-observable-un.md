@@ -1,7 +1,7 @@
 ---
 # qou-6vo0
 title: Cite 1404.0331v1.pdf at folio/quantum-observable-universe/lean/QOU/BraidKnot/AJTrefoil.lean (cl…
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -33,3 +33,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 `Ref: [tran2014] §0.3` added to AJTrefoil.lean header and StrongAJTrefoil docstring (strong AJ: trefoil by Sikora, torus knots by Tran). Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): the file called the trefoil 'the QOU electron knot' (superseded by the Hopf-electron ruling); relabelled as the backup candidate in the same branch. Completes on merge.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

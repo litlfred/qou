@@ -1,7 +1,7 @@
 ---
 # qou-7neb
 title: Cite nrarith.pdf at folio/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -34,3 +34,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 Cite `[neumann-reid]` added at cusp-shape-bar-parity.md (Thm 2.2 framework; p.35 figure-eight group in PGL2(O3)). Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

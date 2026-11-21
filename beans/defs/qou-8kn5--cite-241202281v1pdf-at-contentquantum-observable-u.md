@@ -1,7 +1,7 @@
 ---
 # qou-8kn5
 title: Cite 2412.02281v1.pdf at folio/quantum-observable-universe/lean/QOU/QBeta/C1ConnectionPoles.lean
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -30,3 +30,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 `Ref: [lin2024]` added to C1ConnectionPoles.lean, stating that applicability to the C1 module is not checked. Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

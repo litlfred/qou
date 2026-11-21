@@ -1,7 +1,7 @@
 ---
 # qou-afzu
 title: Cite 1511.00400v2.pdf at folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean (--…
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -30,3 +30,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 `Ref: [porti2015] §5.1 prop:change` added to OneLoopEdgeLattice.lean (change-of-curve law checked in the held text). Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

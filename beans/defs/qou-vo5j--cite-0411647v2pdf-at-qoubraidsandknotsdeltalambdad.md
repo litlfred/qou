@@ -1,7 +1,7 @@
 ---
 # qou-vo5j
 title: Cite 0411647v2.pdf at QOU.BraidsAndKnots.DeltaLambdaDReduction (docstring) and computations/delta…
-status: in-progress
+status: completed
 pr: 8420
 type: task
 priority: normal
@@ -41,3 +41,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8420, closed o
 `Ref: [sniady2006asymptotics] §4.5` added to DeltaLambdaDReduction.lean: second-order expansion at n=4 gives Σ̂3 = R4 + R2 + const, const = 0 on the empty diagram. 'Thm 4.14' not confirmable from held text. Witness description not edited (would need producer re-run). Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

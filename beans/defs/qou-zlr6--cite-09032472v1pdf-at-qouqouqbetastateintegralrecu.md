@@ -1,7 +1,7 @@
 ---
 # qou-zlr6
 title: Cite 0903.2472v1.pdf at qou:QOU.QBeta.StateIntegralRecursionLattice
-status: in-progress
+status: completed
 pr: 8289
 type: task
 priority: normal
@@ -41,3 +41,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8289, closed o
 `Ref: [dimofte-gukov-lenells-zagier-2009] §3` added to StateIntegralRecursionLattice.lean. Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

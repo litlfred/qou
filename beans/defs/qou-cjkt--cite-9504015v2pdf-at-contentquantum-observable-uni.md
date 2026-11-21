@@ -1,7 +1,7 @@
 ---
 # qou-cjkt
 title: Cite 9504015v2.pdf at folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRTSurgeryCon…
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -36,3 +36,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 `Ref: [rozansky1995]` added to KeystoneRTSurgeryConstruction.lean (Prop 1.1 is on p.6 of the held copy, not p.5); honest-scope banner unchanged. Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

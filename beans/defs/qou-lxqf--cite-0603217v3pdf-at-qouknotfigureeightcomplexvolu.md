@@ -1,7 +1,7 @@
 ---
 # qou-lxqf
 title: Cite 0603217v3.pdf at QOU.Knot.FigureEightComplexVolume (docstring) and docs/audits/2026-07-26-sd…
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -30,3 +30,7 @@ The library registration backlog is drained to zero. NOT closing this bean — t
 `[murakami2006] §1` added to FigureEightComplexVolume.lean and the 2026-07-26 audit. Finding F2: both write J_N → 𝔙(u) without log/N and call it a theorem without the r-near-1 scope. Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

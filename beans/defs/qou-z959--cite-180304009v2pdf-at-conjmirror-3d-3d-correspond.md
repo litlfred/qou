@@ -1,7 +1,7 @@
 ---
 # qou-z959
 title: Cite 1803.04009v2.pdf at conj:mirror-3d-3d-correspondence
-status: in-progress
+status: completed
 pr: 8440
 type: task
 priority: normal
@@ -43,3 +43,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8440, closed o
 `arxiv-1803.04009v2` cited (md + ts) at Open Question 1 of mirror-3d-3d-correspondence, with the single-torus-boundary vs three-cusp caveat. Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).

@@ -1,7 +1,7 @@
 ---
 # qou-xiaj
 title: Cite 2402.04839v2 (1).pdf at fundamental-knots-operator-basis
-status: in-progress
+status: completed
 pr: 8435
 type: task
 priority: normal
@@ -41,3 +41,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8435, closed o
 `\cite{kegel2024}` added at three-calibration-inputs-proof.md 'simplest hyperbolic knot invariant' (figure-eight unique minimiser, held text). The table in fundamental-knots-operator-basis does not use the phrase, so no cite there. Universal-link fact not added (new exposition, owner's call). Completes on merge. Superseded-premise check against docs/coordination/owner-rulings.md (2026-11-21): none.
 
 Evidence: branch `claude/expo-cite-xcheck-2026-11-21` (issue #8802); findings in docs/audits/2026-11-21-expo-cite-xcheck-findings.md.
+
+## 2026-11-21: merged
+
+Completed: PR #8852 merged (merge 4d8767a1c).
