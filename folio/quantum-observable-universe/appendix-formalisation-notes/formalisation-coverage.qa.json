@@ -8,7 +8,7 @@
   },
   "source_hashes": {
     "md": "07e7955a9474",
-    "ts": "b775d5ebaab4"
+    "ts": "fcbaf8cae9c8"
   },
   "criteria": {
     "voice-status-leak": [
@@ -28,6 +28,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "voice-probe-narrative": [
@@ -218,6 +235,23 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "voice-ai-slop": [
@@ -333,6 +367,24 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "block has no .lean sibling"
       }
     ],
     "wall-base-ring-minimal": [
@@ -412,6 +464,23 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "canonical-witness-pinned": [
@@ -431,6 +500,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -450,6 +536,23 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -469,6 +572,23 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -507,6 +627,23 @@
           "def_hash": "791b80875ca1"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "compute-witness-exists": [
@@ -526,6 +663,23 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "compute-lp-dual-present": [
@@ -545,6 +699,23 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "detangler-no-forward-ref": [
@@ -765,6 +936,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "uses-formal-coverage": [
@@ -786,6 +975,25 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
@@ -806,6 +1014,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "bib-cite-resolves": [
@@ -907,6 +1133,21 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-vacuous": [
@@ -923,6 +1164,21 @@
           "version": "v1"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -941,6 +1197,21 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-overclaim": [
@@ -957,6 +1228,21 @@
           "version": "v1"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -975,6 +1261,21 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-non-sequitur": [
@@ -991,6 +1292,21 @@
           "version": "v1"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1009,6 +1325,21 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1025,6 +1356,21 @@
           "version": "v1"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1043,6 +1389,21 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1059,6 +1420,21 @@
           "version": "v1"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1077,6 +1453,21 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-physical-implausibility": [
@@ -1093,6 +1484,21 @@
           "version": "v1"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1111,6 +1517,21 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-referee-verdict": [
@@ -1128,6 +1549,21 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "block has no .lean sibling"
       }
     ],
     "dak-companion-present": [
@@ -1144,6 +1580,21 @@
           "version": "v1"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"prose\" is document"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
         "notes": "criterion applies to dak; block kind \"prose\" is document"
       }
     ],
@@ -1196,6 +1647,21 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "criterion applies to dak; block kind \"prose\" is document"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
+        "notes": "criterion applies to dak; block kind \"prose\" is document"
       }
     ],
     "dak-label-prefix-matches-kind": [
@@ -1212,6 +1678,21 @@
           "version": "v1"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"prose\" is document"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91",
         "notes": "criterion applies to dak; block kind \"prose\" is document"
       }
     ],
@@ -1232,6 +1713,23 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "id-stable": [
@@ -1252,6 +1750,23 @@
         },
         "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "unchanged since origin/main"
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "c39c87d0fbc84de49a1251386687b33540d73e91"
       }
     ],
     "does_not_default_to_float": [
@@ -1269,6 +1784,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Code-quality criterion; the block is prose with no code."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "compute_no_mpf_to_float_cast": [
@@ -1286,6 +1816,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Code-quality criterion; the block is prose with no code."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "respects_archimedean_wall": [
@@ -1303,6 +1848,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Code-quality criterion; the block is prose with no code."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "code_is_commented": [
@@ -1320,6 +1880,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Code-quality criterion; the block is prose with no code."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "variables_typed": [
@@ -1337,6 +1912,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Code-quality criterion; the block is prose with no code."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "has_references_to_paper": [
@@ -1354,6 +1944,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Code-quality criterion; the block is prose with no code."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "connected_to_ci_pipeline": [
@@ -1371,6 +1976,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Code-quality criterion; the block is prose with no code."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "deprecated": [
@@ -1388,6 +2008,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Code-quality criterion; the block is prose with no code."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "uses_library_framework_appropriately": [
@@ -1405,6 +2040,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Code-quality criterion; the block is prose with no code."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "assertions_are_falsifiable": [
@@ -1422,6 +2072,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Code-quality criterion; the block is prose with no code."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "fit-section-chapter": [
@@ -1439,6 +2104,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Coverage figures belong in the formalisation-notes appendix, where the owner moved them (W14b, qou-d4kh)."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "uses-editorial-completeness": [
@@ -1456,6 +2136,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. The block cites no other block and needs no uses edge; the figures come from the lean-coverage witness introduction/lean-coverage.json."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "expo-milnor-clarity": [
@@ -1473,6 +2168,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. One paragraph, figures with their denominators, and how open conjectures are carried."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "milnor-brevity": [
@@ -1490,6 +2200,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Short."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "trap-negation-contrast": [
@@ -1507,6 +2232,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1524,6 +2264,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -1541,6 +2296,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. One parenthetical em-dash pair (the tally exclusion); not a pattern."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -1558,6 +2328,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -1575,6 +2360,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Ends with the repository URL."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -1592,6 +2392,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -1609,6 +2424,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -1626,6 +2456,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -1643,6 +2488,21 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. No superlatives."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -1660,8 +2520,23 @@
         "reviewed_at": "2026-11-21T16:40:12.000Z",
         "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
         "evidence": "Reviewed at ba9d2404287 (ba9d2404). New sidecar; the block's .md was refreshed by scripts/refresh-authors-note.ts (bun scripts/refresh-authors-note.ts --check reports current): 705 of 720 (97.9%) provable claims with full Lean proofs, 97 primary conjectures, 72 (74.2%) class-axiomatised. Prose block, no Lean, no code. Figures are speakable."
+      },
+      {
+        "field_hash": {
+          "md": "07e7955a9474",
+          "ts": "fcbaf8cae9c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:46.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "evidence": "Re-read at d973e91a678. Only the .ts changed (7ef229ee25a): JSDoc and authorNote now say the counts were re-measured 2026-11-21 with scripts/refresh-authors-note.ts (705/720, 97 primary conjectures, 72 class-axiomatised). Note: after 63e97e855c6 made confinement_categorical sorry-free, `bun scripts/refresh-authors-note.ts --check` at this head reports the note STALE: live is 706 of 720 (98.1%), the .md and authorNote say 705 of 720 (97.9%). Reported in the PR comment; not a verdict change for this criterion. No instance of this criterion at this head; the earlier verdict stands."
       }
     ]
   },
-  "updated_at": "2026-11-21T16:40:12.000Z"
+  "updated_at": "2026-11-21T17:07:07.000Z"
 }
