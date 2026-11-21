@@ -30,8 +30,9 @@ The algorithm:
 We formalise:
 
   • A computable evaluator `trWord` (section `Evaluator`), structurally
-    recursive and so terminating by Lean's own check; that it satisfies the
-    `IsMarkovTrace` axioms is not proved.
+    recursive and so terminating by Lean's own check. It satisfies every
+    `IsMarkovTrace` axiom (`trWord_isMarkovTrace`), so a Markov trace exists
+    for every `z, h` (Ocneanu existence, `exists_isMarkovTrace`).
   • A terminating *shape* only (`markovTraceRecursiveReducer_terminates`):
     it is met by a constant tracer, so it says nothing about the actual
     reducer. Termination of the algorithm is proved in the `.md` sibling,
@@ -44,7 +45,8 @@ We formalise:
     formalised.
   • Uniqueness `markovTrace_unique`: the axioms of `IsMarkovTrace` fix the
     trace on every positive word, so the reducer's output, which uses only
-    those axioms, is the trace.
+    those axioms, is the trace. With existence, every Markov trace equals the
+    evaluator (`isMarkovTrace_eq_trWord`).
 
 Ref: [jones1987] Hecke algebra representations of braid groups,
 Annals of Math. 126, 335-388.
@@ -870,12 +872,11 @@ with `x'` fixing the top point and lengths adding, so
 `tr(T_x) = z · tr(T_{x'} T_c)` one level down.
 
 Every definition here is structurally recursive, so Lean's own termination
-check is the termination proof: the evaluator is a total function. What is
-NOT proved is that `trWord` satisfies all axioms of `IsMarkovTrace` (proved
-below: all but `cyclic`); that is
-the existence half (Ocneanu). By `markovTrace_unique`, if it does, it is the
-trace. The `example`s below are kernel-checked computations, not proofs of the
-axioms: the Hecke quadratic, a braid relation, the product law, and agreement
+check is the termination proof: the evaluator is a total function. Below,
+`trWord` is proved to satisfy every axiom of `IsMarkovTrace`
+(`trWord_isMarkovTrace`); that is the existence half (Ocneanu), and with
+`markovTrace_unique` it is the trace. The `example`s below are kernel-checked
+computations, independent of those proofs: the Hecke quadratic, a braid relation, the product law, and agreement
 with the length-power trace `(-1)^{|w|}` at `q = -1`. -/
 
 section Evaluator
@@ -1512,6 +1513,714 @@ theorem trWord_strip (n : ℕ) (w : List ℤ) (hw : Supp n w) :
   exact key
 
 end StripProof
+
+
+/-! ### The chain Markov property for the evaluator
+
+`trWord_chain`: appending the descending chain `σ_n σ_{n-1} ⋯ σ_k` to a word of
+`H_{n+1}` multiplies the trace by `z` and drops `σ_n`. This is the step of
+`trBasis` read backwards, and it is what the cyclicity proof uses. -/
+
+section ChainProof
+variable {R : Type*} [CommRing R] (z h : R)
+
+theorem chain_mulGens (c : R) (M : ℕ) : ∀ (d : ℕ) (A B T : List ℕ), B.length = d →
+    (∀ x ∈ B, x < M) →
+    mulGens h [(c, A ++ B ++ [M] ++ T)] (List.range' A.length d).reverse
+      = [(c, A ++ [M] ++ B ++ T)]
+  | 0, A, B, T, hB, _ => by
+    rw [List.length_eq_zero_iff.mp hB]; simp [mulGens]
+  | d + 1, A, B, T, hB, hv => by
+    obtain ⟨B', b, rfl⟩ : ∃ B' b, B = B' ++ [b] := by
+      rcases List.eq_nil_or_concat B with h0 | ⟨B', b, h0⟩
+      · subst h0; simp at hB
+      · exact ⟨B', b, by simpa using h0⟩
+    have hB' : B'.length = d := by simpa using hB
+    have hb : b < M := hv b (by simp)
+    rw [List.range'_concat, List.reverse_append]
+    simp only [List.reverse_cons, List.reverse_nil, List.nil_append, List.singleton_append]
+    have g0 : (A ++ (B' ++ [b]) ++ [M] ++ T).getD (A.length + d) 0 = b := by
+      have := getD_mid (A ++ B') (M :: T) b; simp only [List.length_append, hB'] at this
+      simpa using this
+    have g1 : (A ++ (B' ++ [b]) ++ [M] ++ T).getD (A.length + d + 1) 0 = M := by
+      have := getD_mid (A ++ B' ++ [b]) T M; simp only [List.length_append, hB'] at this
+      simpa [Nat.add_assoc] using this
+    have sw : swapAt (A ++ (B' ++ [b]) ++ [M] ++ T) (A.length + d)
+        = A ++ B' ++ [M] ++ (b :: T) := by
+      have := swapAt_mid (A ++ B') T b M; simp only [List.length_append, hB'] at this
+      simpa using this
+    have step : mulGen h [(c, A ++ (B' ++ [b]) ++ [M] ++ T)] (A.length + d)
+        = [(c, A ++ B' ++ [M] ++ (b :: T))] := by
+      simp only [mulGen, List.flatMap_cons, List.flatMap_nil, List.append_nil, g0, g1,
+        if_pos hb, sw]
+    rw [Nat.one_mul, show ∀ (e : List (R × List ℕ)) (a : ℕ) (l : List ℕ),
+      mulGens h e (a :: l) = mulGens h (mulGen h e a) l from fun _ _ _ => rfl, step]
+    rw [chain_mulGens c M d A B' (b :: T) hB' (fun x hx => hv x (by simp [hx]))]
+    simp
+
+theorem chain_foldl (M : ℕ) : ∀ (d : ℕ) (A B T : List ℕ), B.length = d →
+    (List.range' A.length d).foldl swapAt (A ++ [M] ++ B ++ T) = A ++ B ++ [M] ++ T
+  | 0, A, B, T, hB => by rw [List.length_eq_zero_iff.mp hB]; simp
+  | d + 1, A, b :: B, T, hB => by
+    have hB' : B.length = d := by simpa using hB
+    rw [List.range'_succ, List.foldl_cons]
+    have sw : swapAt (A ++ [M] ++ b :: B ++ T) A.length = (A ++ [b]) ++ [M] ++ B ++ T := by
+      have := swapAt_mid A (B ++ T) M b; simpa using this
+    rw [sw]
+    have := chain_foldl M d (A ++ [b]) B T hB'
+    simp only [List.length_append, List.length_singleton] at this
+    rw [this]; simp
+
+theorem trBasis_chain (n k : ℕ) (hk : k ≤ n) (p : List ℕ) (hl : p.length = n + 1)
+    (hv : ∀ y ∈ p, y < n + 1) :
+    trBasis z h (n + 2) (p.take k ++ [n + 1] ++ p.drop k)
+      = z * trComb z h (n + 1) (mulGens h [((1 : R), p)] (List.range' k (n - k)).reverse) := by
+  have hA : (p.take k).length = k := by simp; omega
+  have hB : (p.drop k).length = n + 1 - k := by simp [hl]
+  obtain ⟨B', x, hBx⟩ : ∃ B' x, p.drop k = B' ++ [x] := by
+    rcases List.eq_nil_or_concat (p.drop k) with h0 | ⟨B', x, h0⟩
+    · rw [h0] at hB; simp at hB; omega
+    · exact ⟨B', x, by simpa using h0⟩
+  have hB' : B'.length = n - k := by rw [hBx] at hB; simp at hB; omega
+  have hx : x < n + 1 := by
+    have hm : x ∈ p.drop k := by rw [hBx]; simp
+    exact hv x (List.mem_of_mem_drop hm)
+  have hnA : (n + 1) ∉ p.take k := fun hm => by
+    have := hv _ (List.mem_of_mem_take hm); omega
+  have e1 : (p.take k ++ [n + 1] ++ p.drop k).getD (n + 1) 0 = x := by
+    rw [hBx]
+    have := getD_mid (p.take k ++ [n + 1] ++ B') [] x
+    simp only [List.length_append, hA, hB', List.length_singleton] at this
+    rw [show k + 1 + (n - k) = n + 1 by omega] at this
+    simpa using this
+  have e2 : (p.take k ++ [n + 1] ++ p.drop k).idxOf (n + 1) = k := by
+    rw [List.append_assoc, List.idxOf_append, if_neg hnA, hA]; simp
+  have e3 : (List.range' k (n + 1 - k)).foldl swapAt (p.take k ++ [n + 1] ++ p.drop k)
+      = p ++ [n + 1] := by
+    have := chain_foldl (n + 1) (n + 1 - k) (p.take k) (p.drop k) [] hB
+    rw [hA] at this; simpa using this
+  have e4 : (p ++ [n + 1]).take (n + 1) = p := by
+    rw [List.take_append, hl, List.take_of_length_le (by omega)]; simp
+  show trBasis z h (n + 1 + 1) _ = _
+  simp only [trBasis, e1, show x ≠ n + 1 by omega, if_false, e2, e3, e4,
+    show n + 1 - 1 - k = n - k by omega]
+  rfl
+
+theorem chain_comb (n k : ℕ) (hk : k ≤ n) : ∀ E : List (R × List ℕ), PermR (n + 1) E →
+    trComb z h (n + 2) (mulGens h (E.map (appTop (n + 1))) (List.range' k (n + 1 - k)).reverse)
+      = z * trComb z h (n + 1) (mulGens h E (List.range' k (n - k)).reverse)
+  | [], _ => by simp [mulGens_nil_left, trComb]
+  | p :: E, hE => by
+    have ih := chain_comb n k hk E (fun q hq => hE q (by simp [hq]))
+    have hp := hE p (by simp)
+    have hl : p.2.length = n + 1 := by simpa using hp.length_eq
+    have hv : ∀ y ∈ p.2, y < n + 1 := fun y hy => by simpa using hp.subset hy
+    have hA : (p.2.take k).length = k := by simp; omega
+    have hB : (p.2.drop k).length = n + 1 - k := by simp [hl]
+    have cm := chain_mulGens h p.1 (n + 1) (n + 1 - k) (p.2.take k) (p.2.drop k) []
+      hB (fun y hy => hv y (List.mem_of_mem_drop hy))
+    rw [hA] at cm
+    have hs := trBasis_chain z h n k hk p.2 hl hv
+    have hp1 : [p] = [((1 : R), p.2)].map (scaleTerm p.1) := by simp [scaleTerm]
+    rw [show p :: E = [p] ++ E from rfl, List.map_append, mulGens_app, mulGens_app,
+      evalC_app, evalC_app, ih]
+    rw [hp1, mulGens_sc, evalC_sc]
+    simp only [List.map_cons, List.map_nil, scaleTerm, appTop, mul_one]
+    rw [show p.2 ++ [n + 1] = p.2.take k ++ p.2.drop k ++ [n + 1] ++ [] by simp, cm]
+    simp only [trComb, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, List.append_nil]
+    rw [hs]; simp only [trComb]; ring
+
+theorem trWord_chain (n k : ℕ) (hk : k ≤ n) (x : List ℤ) (hx : Supp n x) :
+    trWord z h (n + 1) (x ++ ((List.range' k (n + 1 - k)).reverse.map Int.ofNat))
+      = z * trWord z h n (x ++ ((List.range' k (n - k)).reverse.map Int.ofNat)) := by
+  have hl : ∀ i ∈ x.map Int.toNat, i + 1 < n + 1 := by
+    intro i hi
+    obtain ⟨c, hc, rfl⟩ := List.mem_map.mp hi
+    have := hx c hc; omega
+  have hr : List.range (n + 1 + 1) = List.range (n + 1) ++ [n + 1] := List.range_succ
+  have h0 : [((1 : R), List.range (n + 1 + 1))]
+      = [((1 : R), List.range (n + 1))].map (appTop (n + 1)) := by
+    simp [appTop, hr]
+  obtain ⟨m1, -⟩ := mulGens_append h (n + 1) (n + 1) (x.map Int.toNat)
+    [((1 : R), List.range (n + 1))] hl (by simp)
+  have hP : PermR (n + 1) (mulGens h [((1 : R), List.range (n + 1))] (x.map Int.toNat)) :=
+    mulGens_permR h (n + 1) _ _ hl (by intro p hp; simp at hp; subst hp; exact List.Perm.refl _)
+  have key := chain_comb z h n k hk _ hP
+  unfold trWord
+  simp only [List.map_append, List.map_map, mulGens_cat, h0, m1]
+  have e : ∀ l : List ℕ, List.map (Int.toNat ∘ Int.ofNat) l = l := by
+    intro l; simp [Function.comp_def]
+  rw [e, e]
+  exact key
+
+end ChainProof
+
+
+/-! ### Cyclicity (Ocneanu existence)
+
+The proof follows Ocneanu, by induction on the level `n`.
+
+* `trWord_chain_ctx`: the chain Markov property in context; its `k = n` case is
+  `trWord_markov`, `tr(x σ_n y) = z · tr(x y)` for `x, y` on lower letters.
+* A function of a word that satisfies the in-context Hecke, braid and
+  far-commutation relations is determined by its values on words using the top
+  generator at most once (`HeckeRel.reduce`). Both sides of every identity
+  below are such functions.
+* `symAll`: `tr(a σ b σ) = tr(b σ a σ)` for `σ = σ_{m+1}`, from cyclicity one
+  level down (`F_low`, `F_mid` compute both sides once `a`, `b` use `σ_m` at
+  most once).
+* `trWord_cyc1`: rotating one letter, by induction on the level; letters below
+  the top use the Markov property and the induction hypothesis, the top letter
+  uses `symAll`. `trWord_cyclic` rotates blocks letter by letter. -/
+
+section CyclicProof
+variable {R : Type*} [CommRing R] (z h : R)
+
+/-- `trWord` in a fixed context satisfies the in-context Hecke-tower relations. -/
+theorem trWord_heckeRel_ctx (N k : ℕ) (hk : k ≤ N) (pre suf : List ℤ) (hpre : Supp N pre)
+    (hsuf : Supp N suf) : HeckeRel k h (fun y => trWord z h N (pre ++ y ++ suf)) := by
+  refine ⟨?_, ?_, ?_⟩
+  · intro u v i hs
+    have hs' : Supp N ((pre ++ u) ++ [i] ++ (v ++ suf)) := by
+      have := hs.mono hk
+      simp only [supp_append_iff] at this hpre hsuf ⊢; tauto
+    have := trWord_hecke z h N (pre ++ u) (v ++ suf) i hs'
+    simp only [List.append_assoc, List.cons_append, List.singleton_append, List.nil_append]
+      at this ⊢
+    exact this
+  · intro u v i hs
+    have hs' : Supp N ((pre ++ u) ++ [i, i + 1] ++ (v ++ suf)) := by
+      have := hs.mono hk
+      simp only [supp_append_iff] at this hpre hsuf ⊢; tauto
+    have := trWord_braid z h N (pre ++ u) (v ++ suf) i hs'
+    simp only [List.append_assoc, List.cons_append, List.singleton_append, List.nil_append]
+      at this ⊢
+    exact this
+  · intro u v i j hij hs
+    have hs' : Supp N ((pre ++ u) ++ [i, j] ++ (v ++ suf)) := by
+      have := hs.mono hk
+      simp only [supp_append_iff] at this hpre hsuf ⊢; tauto
+    have := trWord_far_comm z h N (pre ++ u) (v ++ suf) i j hij hs'
+    simp only [List.append_assoc, List.cons_append, List.singleton_append, List.nil_append]
+      at this ⊢
+    exact this
+
+theorem HeckeRel.congr {k : ℕ} {G G' : List ℤ → R} (hG : HeckeRel k h G)
+    (e : ∀ y, G y = G' y) : HeckeRel k h G' := by
+  have : G = G' := funext e
+  exact this ▸ hG
+
+theorem HeckeRel.sub_smul {k : ℕ} {G₁ G₂ : List ℤ → R} (c : R) (h₁ : HeckeRel k h G₁)
+    (h₂ : HeckeRel k h G₂) : HeckeRel k h (fun y => G₁ y - c * G₂ y) := by
+  refine ⟨?_, ?_, ?_⟩
+  · intro u v i hs
+    simp only [h₁.1 u v i hs, h₂.1 u v i hs]; ring
+  · intro u v i hs
+    simp only [h₁.2.1 u v i hs, h₂.2.1 u v i hs]
+  · intro u v i j hij hs
+    simp only [h₁.2.2 u v i j hij hs, h₂.2.2 u v i j hij hs]
+
+/-- A block `c` all of whose letters are far from all letters of `y` commutes past `y`. -/
+theorem HeckeRel.block {N : ℕ} {G : List ℤ → R} (hG : HeckeRel N h G) :
+    ∀ (c y u v : List ℤ), (∀ a ∈ c, ∀ b ∈ y, 2 ≤ |a - b|) →
+      Supp N (u ++ c ++ y ++ v) → G (u ++ c ++ y ++ v) = G (u ++ y ++ c ++ v)
+  | [], y, u, v, _, _ => by simp
+  | T :: c, y, u, v, hcy, hs => by
+    have ih := HeckeRel.block hG c y (u ++ [T]) v (fun a ha b hb => hcy a (by simp [ha]) b hb)
+      (by simpa using hs)
+    have hm := HeckeRel.move hG T y u (c ++ v) (fun b hb => hcy T (by simp) b hb)
+      (by
+        have : Supp N (u ++ (T :: c) ++ y ++ v) := hs
+        simp only [supp_append_iff, supp_cons_iff] at this ⊢; tauto)
+    simp only [List.append_assoc, List.cons_append, List.singleton_append, List.nil_append]
+      at ih hm ⊢
+    rw [ih, hm]
+
+/-- The descending chain `σ_n ⋯ σ_k`, as integer letters. -/
+def chainZ (n k : ℕ) : List ℤ := (List.range' k (n + 1 - k)).reverse.map Int.ofNat
+
+theorem chainZ_split (n k : ℕ) (hk : k ≤ n) :
+    chainZ n k = chainZ n (k + 1) ++ [(k : ℤ)] := by
+  unfold chainZ
+  rw [show n + 1 - k = (n + 1 - (k + 1)) + 1 by omega, List.range'_succ]
+  simp
+
+theorem chainZ'_split (n k : ℕ) (hk : k + 1 ≤ n) :
+    (List.range' k (n - k)).reverse.map Int.ofNat
+      = (List.range' (k + 1) (n - (k + 1))).reverse.map Int.ofNat ++ [(k : ℤ)] := by
+  rw [show n - k = (n - (k + 1)) + 1 by omega, List.range'_succ]
+  simp
+
+theorem mem_chainZ {n k : ℕ} {a : ℤ} (ha : a ∈ chainZ n k) : (k : ℤ) ≤ a ∧ a ≤ n := by
+  unfold chainZ at ha
+  simp only [List.mem_map, List.mem_reverse, List.mem_range'_1] at ha
+  obtain ⟨b, hb, rfl⟩ := ha
+  simp only [Int.ofNat_eq_coe]; omega
+
+theorem mem_chainZ' {n k : ℕ} {a : ℤ} (ha : a ∈ (List.range' k (n - k)).reverse.map Int.ofNat) :
+    (k : ℤ) ≤ a ∧ a + 1 ≤ n := by
+  simp only [List.mem_map, List.mem_reverse, List.mem_range'_1] at ha
+  obtain ⟨b, hb, rfl⟩ := ha
+  simp only [Int.ofNat_eq_coe]; omega
+
+theorem supp_split_low {k : ℕ} {l : List ℤ} (hl : Supp (k + 1) l) (hm : (k : ℤ) ∉ l) :
+    Supp k l := by
+  intro d hd
+  have := hl d hd
+  have hne : d ≠ (k : ℤ) := fun e => hm (e ▸ hd)
+  push_cast at this; omega
+
+/-- **Generalised chain Markov property.** -/
+theorem trWord_chain_ctx (n : ℕ) : ∀ k : ℕ, k ≤ n → ∀ x y : List ℤ, Supp n x → Supp k y →
+    trWord z h (n + 1) (x ++ chainZ n k ++ y)
+      = z * trWord z h n (x ++ (List.range' k (n - k)).reverse.map Int.ofNat ++ y)
+  | 0, _, x, y, hx, hy => by
+    have hy0 : y = [] := by
+      cases y with
+      | nil => rfl
+      | cons c y => have := hy c (by simp); push_cast at this; omega
+    subst hy0
+    simpa [chainZ] using trWord_chain z h n 0 (Nat.zero_le _) x hx
+  | k + 1, hk, x, y, hx, hy => by
+    let G : List ℤ → R := fun y => trWord z h (n + 1) (x ++ chainZ n (k + 1) ++ y)
+      - z * trWord z h n (x ++ (List.range' (k + 1) (n - (k + 1))).reverse.map Int.ofNat ++ y)
+    have hch : Supp (n + 1) (chainZ n (k + 1)) := by
+      intro a ha
+      obtain ⟨h1, h2⟩ := mem_chainZ ha
+      push_cast at h1 h2 ⊢
+      exact ⟨by omega, by omega⟩
+    have hch' : Supp n ((List.range' (k + 1) (n - (k + 1))).reverse.map Int.ofNat) := by
+      intro a ha
+      obtain ⟨h1, h2⟩ := mem_chainZ' ha
+      push_cast at h1 h2 ⊢
+      exact ⟨by omega, by omega⟩
+    have hxs : Supp (n + 1) x := hx.mono (Nat.le_succ _)
+    have hG : HeckeRel (k + 1) h G := by
+      have A := trWord_heckeRel_ctx z h (n + 1) (k + 1) (by omega) (x ++ chainZ n (k + 1)) []
+        (supp_append_iff.mpr ⟨hxs, hch⟩) supp_nil
+      have B := trWord_heckeRel_ctx z h n (k + 1) hk
+        (x ++ (List.range' (k + 1) (n - (k + 1))).reverse.map Int.ofNat) []
+        (supp_append_iff.mpr ⟨hx, hch'⟩) supp_nil
+      exact (HeckeRel.sub_smul h z A B).congr h (fun y => by
+        simp only [G, List.append_nil])
+    have hT1 : HeckeRel (n + 1) h (trWord z h (n + 1)) := by
+      simpa using trWord_heckeRel_ctx z h (n + 1) (n + 1) le_rfl [] [] supp_nil supp_nil
+    have hT0 : HeckeRel n h (trWord z h n) := by
+      simpa using trWord_heckeRel_ctx z h n n le_rfl [] [] supp_nil supp_nil
+    have hcn : ((k + 1 : ℕ) : ℤ) - 1 = (k : ℤ) := by push_cast; ring
+    have h0 : ∀ γ, Supp (k + 1) γ → γ.length ≤ y.length →
+        γ.count (((k + 1 : ℕ) : ℤ) - 1) ≤ 1 → G γ = 0 := by
+      intro γ hγ _ hγc
+      rw [hcn] at hγc
+      rcases Nat.le_one_iff_eq_zero_or_eq_one.mp hγc with hγc | hγc
+      · -- no σ_k: γ commutes past both chains
+        have hγk : Supp k γ := supp_split_low hγ (fun hm => by
+          have : 0 < γ.count (k : ℤ) := List.count_pos_iff.mpr hm; omega)
+        have far1 : ∀ a ∈ chainZ n (k + 1), ∀ b ∈ γ, 2 ≤ |a - b| := by
+          intro a ha b hb
+          have := mem_chainZ ha; have := hγk b hb
+          rw [abs_of_nonneg (by push_cast at *; omega)]; push_cast at *; omega
+        have far0 : ∀ a ∈ (List.range' (k + 1) (n - (k + 1))).reverse.map Int.ofNat,
+            ∀ b ∈ γ, 2 ≤ |a - b| := by
+          intro a ha b hb
+          have := mem_chainZ' ha; have := hγk b hb
+          rw [abs_of_nonneg (by omega)]; omega
+        have hγn : Supp n γ := hγk.mono (by omega)
+        have e1 := hT1.block h _ γ x [] far1
+          (by simpa using supp_append_iff.mpr ⟨supp_append_iff.mpr ⟨hxs, hch⟩,
+            hγn.mono (Nat.le_succ _)⟩)
+        have e0 := hT0.block h _ γ x [] far0
+          (by simpa using supp_append_iff.mpr ⟨supp_append_iff.mpr ⟨hx, hch'⟩, hγn⟩)
+        have st := trWord_chain z h n (k + 1) hk (x ++ γ) (supp_append_iff.mpr ⟨hx, hγn⟩)
+        simp only [List.append_nil] at e1 e0
+        simp only [G, e1, e0]
+        simp only [chainZ, List.append_assoc] at st ⊢
+        rw [st]; ring
+      · obtain ⟨p, q, rfl, hp⟩ := exists_split_first (k : ℤ) γ
+          (List.count_pos_iff.mp (by omega))
+        have hγ' := hγ
+        simp only [supp_append_iff, supp_cons_iff] at hγ'
+        obtain ⟨hP, -, hQ⟩ := hγ'
+        have hq : (k : ℤ) ∉ q := by
+          intro hm
+          have e1 : 0 < q.count (k : ℤ) := List.count_pos_iff.mpr hm
+          have e2 : p.count (k : ℤ) = 0 := List.count_eq_zero_of_not_mem hp
+          simp only [List.count_append, List.count_cons, beq_self_eq_true, if_true] at hγc
+          omega
+        have hPk := supp_split_low hP hp
+        have hQk := supp_split_low hQ hq
+        have hPn : Supp n p := hPk.mono (by omega)
+        have far1 : ∀ a ∈ chainZ n (k + 1), ∀ b ∈ p, 2 ≤ |a - b| := by
+          intro a ha b hb
+          have := mem_chainZ ha; have := hPk b hb
+          rw [abs_of_nonneg (by push_cast at *; omega)]; push_cast at *; omega
+        have far0 : ∀ a ∈ (List.range' (k + 1) (n - (k + 1))).reverse.map Int.ofNat,
+            ∀ b ∈ p, 2 ≤ |a - b| := by
+          intro a ha b hb
+          have := mem_chainZ' ha; have := hPk b hb
+          rw [abs_of_nonneg (by omega)]; omega
+        have hkq : Supp (n + 1) ((k : ℤ) :: q) := supp_cons_iff.mpr
+          ⟨⟨by omega, by push_cast; omega⟩, (hQk.mono (by omega))⟩
+        have hkq0 : Supp n ((k : ℤ) :: q) := supp_cons_iff.mpr
+          ⟨⟨by omega, by omega⟩, (hQk.mono (by omega))⟩
+        have e1 := hT1.block h _ p x ((k : ℤ) :: q) far1
+          (by simpa using supp_append_iff.mpr ⟨supp_append_iff.mpr ⟨supp_append_iff.mpr
+            ⟨hxs, hch⟩, hPn.mono (Nat.le_succ _)⟩, hkq⟩)
+        have e0 := hT0.block h _ p x ((k : ℤ) :: q) far0
+          (by simpa using supp_append_iff.mpr ⟨supp_append_iff.mpr ⟨supp_append_iff.mpr
+            ⟨hx, hch'⟩, hPn⟩, hkq0⟩)
+        have ih := trWord_chain_ctx n k (by omega) (x ++ p) q (supp_append_iff.mpr ⟨hx, hPn⟩) hQk
+        rw [chainZ_split n k (by omega), chainZ'_split n k hk] at ih
+        simp only [G]
+        simp only [List.append_assoc, List.cons_append, List.singleton_append,
+          List.nil_append] at e1 e0 ih ⊢
+        rw [e1, e0, ih]; ring
+    exact sub_eq_zero.mp (HeckeRel.reduce h (k + 1) G hG y.length h0 y hy le_rfl)
+
+theorem trWord_heckeRel (N : ℕ) : HeckeRel N h (trWord z h N) :=
+  (trWord_heckeRel_ctx z h N N le_rfl [] [] supp_nil supp_nil).congr h (fun y => by simp)
+
+/-- **Markov property in context.** -/
+theorem trWord_markov (n : ℕ) (x y : List ℤ) (hx : Supp n x) (hy : Supp n y) :
+    trWord z h (n + 1) (x ++ [(n : ℤ)] ++ y) = z * trWord z h n (x ++ y) := by
+  have := trWord_chain_ctx z h n n le_rfl x y hx hy
+  simpa [chainZ] using this
+
+theorem supp_one {n : ℕ} {c : ℤ} (h0 : 0 ≤ c) (h1 : c < n) : Supp n [c] := by
+  intro d hd
+  simp only [List.mem_singleton] at hd
+  subst hd; exact ⟨h0, h1⟩
+
+theorem suppN (m : ℕ) : Supp (m + 1 + 1) [((m + 1 : ℕ) : ℤ)] :=
+  supp_one (by omega) (by push_cast; omega)
+
+theorem suppM {m k : ℕ} (hk : m < k) : Supp k [(m : ℤ)] :=
+  supp_one (by omega) (by exact_mod_cast hk)
+
+theorem split_top (m : ℕ) (γ : List ℤ) (hγ : Supp (m + 1) γ)
+    (hc : γ.count (((m + 1 : ℕ) : ℤ) - 1) ≤ 1) :
+    Supp m γ ∨ ∃ p q, γ = p ++ [(m : ℤ)] ++ q ∧ Supp m p ∧ Supp m q := by
+  have hcn : ((m + 1 : ℕ) : ℤ) - 1 = (m : ℤ) := by push_cast; ring
+  rw [hcn] at hc
+  by_cases hm : (m : ℤ) ∈ γ
+  · right
+    obtain ⟨p, q, rfl, hp⟩ := exists_split_first (m : ℤ) γ hm
+    have hγ' := hγ
+    simp only [supp_append_iff, supp_cons_iff] at hγ'
+    obtain ⟨hP, -, hQ⟩ := hγ'
+    have hq : (m : ℤ) ∉ q := by
+      intro hmq
+      have e1 : 0 < q.count (m : ℤ) := List.count_pos_iff.mpr hmq
+      have e2 : p.count (m : ℤ) = 0 := List.count_eq_zero_of_not_mem hp
+      simp [List.count_append] at hc
+      omega
+    exact ⟨p, q, by simp, supp_split_low hP hp, supp_split_low hQ hq⟩
+  · left; exact supp_split_low hγ hm
+
+theorem far_top {m : ℕ} {y : List ℤ} (hy : Supp m y) :
+    ∀ a ∈ [((m + 1 : ℕ) : ℤ)], ∀ b ∈ y, 2 ≤ |a - b| := by
+  intro a ha b hb
+  simp only [List.mem_singleton] at ha; subst ha
+  have := hy b hb
+  rw [abs_of_nonneg (by push_cast; omega)]; push_cast; omega
+
+theorem far_top' {m : ℕ} {y : List ℤ} (hy : Supp m y) :
+    ∀ a ∈ y, ∀ b ∈ [((m + 1 : ℕ) : ℤ)], 2 ≤ |a - b| := by
+  intro a ha b hb
+  simp only [List.mem_singleton] at hb; subst hb
+  have := hy a ha
+  rw [abs_of_nonpos (by push_cast; omega)]; push_cast; omega
+
+/-- `tr(a σ_{m+1} b σ_{m+1})` when `b` avoids `σ_m`. -/
+theorem F_low (m : ℕ) (a b : List ℤ) (ha : Supp (m + 1) a) (hb : Supp m b) :
+    trWord z h (m + 1 + 1) (a ++ [((m + 1 : ℕ) : ℤ)] ++ b ++ [((m + 1 : ℕ) : ℤ)])
+      = h * z * trWord z h (m + 1) (a ++ b) + trWord z h (m + 1) (a ++ b) := by
+  have hT := trWord_heckeRel z h (m + 1 + 1)
+  have hab : Supp (m + 1) (a ++ b) := ha.append (hb.mono (Nat.le_succ _))
+  have e1 := hT.block h [((m + 1 : ℕ) : ℤ)] b a [((m + 1 : ℕ) : ℤ)] (far_top hb)
+    ((((ha.mono (by omega)).append (suppN m)).append (hb.mono (by omega))).append (suppN m))
+  have e2 := hT.1 (a ++ b) [] ((m + 1 : ℕ) : ℤ)
+    (((hab.mono (Nat.le_succ _)).append (suppN m)).append supp_nil)
+  have e3 := trWord_strip z h (m + 1) (a ++ b) hab
+  have e4 := trWord_stable z h (m + 1) (a ++ b) hab
+  simp only [Int.ofNat_eq_coe, List.append_nil, List.append_assoc, List.cons_append,
+    List.singleton_append, List.nil_append] at e1 e2 e3 e4 ⊢
+  rw [e1, e2, e3, e4]; ring
+
+/-- `tr(a σ_{m+1} b σ_{m+1})` when `b = b₁ σ_m b₂`. -/
+theorem F_mid (m : ℕ) (a b1 b2 : List ℤ) (ha : Supp (m + 1) a) (hb1 : Supp m b1)
+    (hb2 : Supp m b2) :
+    trWord z h (m + 1 + 1)
+        (a ++ [((m + 1 : ℕ) : ℤ)] ++ (b1 ++ [(m : ℤ)] ++ b2) ++ [((m + 1 : ℕ) : ℤ)])
+      = z * h * trWord z h (m + 1) (a ++ (b1 ++ [(m : ℤ)] ++ b2))
+        + z * trWord z h (m + 1) (a ++ b1 ++ b2) := by
+  have hT := trWord_heckeRel z h (m + 1 + 1)
+  have hT0 := trWord_heckeRel z h (m + 1)
+  have hs1 : Supp (m + 1) b1 := hb1.mono (Nat.le_succ _)
+  have hs2 : Supp (m + 1) b2 := hb2.mono (Nat.le_succ _)
+  have hm : Supp (m + 1) [(m : ℤ)] := suppM (Nat.lt_succ_self m)
+  have hm2 : Supp (m + 1 + 1) [(m : ℤ)] := suppM (by omega)
+  have e1 := hT.block h [((m + 1 : ℕ) : ℤ)] b1 a ([(m : ℤ)] ++ b2 ++ [((m + 1 : ℕ) : ℤ)])
+    (far_top hb1)
+    ((((ha.mono (by omega)).append (suppN m)).append (hb1.mono (by omega))).append
+      ((hm2.append (hb2.mono (by omega))).append (suppN m)))
+  have e2 := hT.block h b2 [((m + 1 : ℕ) : ℤ)]
+    (a ++ b1 ++ [((m + 1 : ℕ) : ℤ)] ++ [(m : ℤ)]) [] (far_top' hb2)
+    ((((((ha.mono (by omega)).append (hb1.mono (by omega))).append (suppN m)).append hm2).append
+      (hb2.mono (by omega))).append (suppN m) |>.append supp_nil)
+  have hcast : ((m + 1 : ℕ) : ℤ) = (m : ℤ) + 1 := by push_cast; ring
+  have e3 := hT.2.1 (a ++ b1) b2 (m : ℤ)
+    ((((ha.mono (by omega)).append (hb1.mono (by omega))).append
+      (supp_cons_iff.mpr ⟨⟨by omega, by push_cast; omega⟩, supp_one (by omega)
+        (by push_cast; omega)⟩)).append (hb2.mono (by omega)))
+  have e4 := trWord_markov z h (m + 1) (a ++ b1 ++ [(m : ℤ)]) ([(m : ℤ)] ++ b2)
+    ((ha.append hs1).append hm) (hm.append hs2)
+  have e5 := hT0.1 (a ++ b1) b2 (m : ℤ) (((ha.append hs1).append hm).append hs2)
+  rw [← hcast] at e3
+  simp only [List.append_nil, List.append_assoc, List.cons_append,
+    List.singleton_append, List.nil_append] at e1 e2 e3 e4 e5 ⊢
+  rw [e1, e2, ← e3, e4, e5]; ring
+
+/-- Symmetry `tr(a σ b σ) = tr(b σ a σ)` (`σ = σ_{m+1}`) when `b` avoids `σ_m`. -/
+theorem symB (m : ℕ)
+    (hFC : ∀ u v, Supp (m + 1) u → Supp (m + 1) v →
+      trWord z h (m + 1) (u ++ v) = trWord z h (m + 1) (v ++ u))
+    (b : List ℤ) (hb : Supp m b) (a : List ℤ) (ha : Supp (m + 1) a) :
+    trWord z h (m + 1 + 1) (a ++ [((m + 1 : ℕ) : ℤ)] ++ b ++ [((m + 1 : ℕ) : ℤ)])
+      = trWord z h (m + 1 + 1) (b ++ [((m + 1 : ℕ) : ℤ)] ++ a ++ [((m + 1 : ℕ) : ℤ)]) := by
+  let G : List ℤ → R := fun y =>
+    trWord z h (m + 1 + 1) (y ++ [((m + 1 : ℕ) : ℤ)] ++ b ++ [((m + 1 : ℕ) : ℤ)])
+      - trWord z h (m + 1 + 1) (b ++ [((m + 1 : ℕ) : ℤ)] ++ y ++ [((m + 1 : ℕ) : ℤ)])
+  have hbs : Supp (m + 1 + 1) b := hb.mono (by omega)
+  have hb1 : Supp (m + 1) b := hb.mono (Nat.le_succ _)
+  have hG : HeckeRel (m + 1) h G := by
+    have A := trWord_heckeRel_ctx z h (m + 1 + 1) (m + 1) (by omega) []
+      ([((m + 1 : ℕ) : ℤ)] ++ b ++ [((m + 1 : ℕ) : ℤ)]) supp_nil
+      (((suppN m).append hbs).append (suppN m))
+    have B := trWord_heckeRel_ctx z h (m + 1 + 1) (m + 1) (by omega)
+      (b ++ [((m + 1 : ℕ) : ℤ)]) [((m + 1 : ℕ) : ℤ)] (hbs.append (suppN m)) (suppN m)
+    exact (HeckeRel.sub_smul h 1 A B).congr h (fun y => by
+      simp only [G, one_mul, List.nil_append, List.append_assoc])
+  have h0 : ∀ γ, Supp (m + 1) γ → γ.length ≤ a.length →
+      γ.count (((m + 1 : ℕ) : ℤ) - 1) ≤ 1 → G γ = 0 := by
+    intro γ hγ _ hc
+    rcases split_top m γ hγ hc with hγm | ⟨p, q, rfl, hp, hq⟩
+    · simp only [G]
+      rw [F_low z h m γ b hγ hb, F_low z h m b γ hb1 hγm, hFC γ b hγ hb1]
+      ring
+    · simp only [G]
+      rw [F_low z h m _ b hγ hb, F_mid z h m b p q hb1 hp hq]
+      have e1 := hFC (p ++ [(m : ℤ)] ++ q) b hγ hb1
+      have e2 := trWord_markov z h m p (q ++ b) hp (hq.append hb)
+      have e3 := hFC b (p ++ q) hb1 ((hp.append hq).mono (Nat.le_succ _))
+      have e4 := trWord_stable z h m (p ++ q ++ b) ((hp.append hq).append hb)
+      simp only [List.append_assoc, List.cons_append, List.nil_append] at e1 e2 e3 e4 ⊢
+      rw [← e1, e2, e3, e4]; ring
+  exact sub_eq_zero.mp (HeckeRel.reduce h (m + 1) G hG a.length h0 a ha le_rfl)
+
+/-- Symmetry when `b = b₁ σ_m b₂`. -/
+theorem symMid (m : ℕ)
+    (hFC : ∀ u v, Supp (m + 1) u → Supp (m + 1) v →
+      trWord z h (m + 1) (u ++ v) = trWord z h (m + 1) (v ++ u))
+    (b1 b2 : List ℤ) (hb1 : Supp m b1) (hb2 : Supp m b2) (a : List ℤ) (ha : Supp (m + 1) a) :
+    trWord z h (m + 1 + 1)
+        (a ++ [((m + 1 : ℕ) : ℤ)] ++ (b1 ++ [(m : ℤ)] ++ b2) ++ [((m + 1 : ℕ) : ℤ)])
+      = trWord z h (m + 1 + 1)
+        ((b1 ++ [(m : ℤ)] ++ b2) ++ [((m + 1 : ℕ) : ℤ)] ++ a ++ [((m + 1 : ℕ) : ℤ)]) := by
+  have hb : Supp (m + 1) (b1 ++ [(m : ℤ)] ++ b2) :=
+    ((hb1.mono (Nat.le_succ _)).append (suppM (Nat.lt_succ_self m))).append
+      (hb2.mono (Nat.le_succ _))
+  let G : List ℤ → R := fun y =>
+    trWord z h (m + 1 + 1)
+        (y ++ [((m + 1 : ℕ) : ℤ)] ++ (b1 ++ [(m : ℤ)] ++ b2) ++ [((m + 1 : ℕ) : ℤ)])
+      - trWord z h (m + 1 + 1)
+        ((b1 ++ [(m : ℤ)] ++ b2) ++ [((m + 1 : ℕ) : ℤ)] ++ y ++ [((m + 1 : ℕ) : ℤ)])
+  have hbs : Supp (m + 1 + 1) (b1 ++ [(m : ℤ)] ++ b2) := hb.mono (by omega)
+  have hG : HeckeRel (m + 1) h G := by
+    have A := trWord_heckeRel_ctx z h (m + 1 + 1) (m + 1) (by omega) []
+      ([((m + 1 : ℕ) : ℤ)] ++ (b1 ++ [(m : ℤ)] ++ b2) ++ [((m + 1 : ℕ) : ℤ)]) supp_nil
+      (((suppN m).append hbs).append (suppN m))
+    have B := trWord_heckeRel_ctx z h (m + 1 + 1) (m + 1) (by omega)
+      ((b1 ++ [(m : ℤ)] ++ b2) ++ [((m + 1 : ℕ) : ℤ)]) [((m + 1 : ℕ) : ℤ)]
+      (hbs.append (suppN m)) (suppN m)
+    exact (HeckeRel.sub_smul h 1 A B).congr h (fun y => by
+      simp only [G, one_mul, List.nil_append, List.append_assoc])
+  have h0 : ∀ γ, Supp (m + 1) γ → γ.length ≤ a.length →
+      γ.count (((m + 1 : ℕ) : ℤ) - 1) ≤ 1 → G γ = 0 := by
+    intro γ hγ _ hc
+    rcases split_top m γ hγ hc with hγm | ⟨p, q, rfl, hp, hq⟩
+    · simp only [G]
+      rw [symB z h m hFC γ hγm _ hb]; ring
+    · simp only [G]
+      rw [F_mid z h m _ b1 b2 hγ hb1 hb2, F_mid z h m _ p q hb hp hq]
+      have e1 := hFC (p ++ [(m : ℤ)] ++ q) _ hγ hb
+      have e2 := trWord_markov z h m p (q ++ b1 ++ b2) hp ((hq.append hb1).append hb2)
+      have e3 := trWord_markov z h m b1 (b2 ++ p ++ q) hb1 ((hb2.append hp).append hq)
+      have e4 := trWord_stable z h m (p ++ q ++ (b1 ++ b2)) ((hp.append hq).append (hb1.append hb2))
+      have e5 := trWord_stable z h m (b1 ++ b2 ++ (p ++ q)) ((hb1.append hb2).append (hp.append hq))
+      have e6 := hFC (p ++ q) (b1 ++ b2) ((hp.append hq).mono (Nat.le_succ _))
+        ((hb1.append hb2).mono (Nat.le_succ _))
+      simp only [List.append_assoc, List.cons_append, List.nil_append] at e1 e2 e3 e4 e5 e6 ⊢
+      rw [← e1, e2, e3, ← e4, ← e5, e6]; ring
+  exact sub_eq_zero.mp (HeckeRel.reduce h (m + 1) G hG a.length h0 a ha le_rfl)
+
+/-- **Two-crossing symmetry** `tr(a σ b σ) = tr(b σ a σ)`, `σ = σ_{m+1}`,
+    `a, b ∈ H_{m+2}`, given full cyclicity one level down. -/
+theorem symAll (m : ℕ)
+    (hFC : ∀ u v, Supp (m + 1) u → Supp (m + 1) v →
+      trWord z h (m + 1) (u ++ v) = trWord z h (m + 1) (v ++ u))
+    (a : List ℤ) (ha : Supp (m + 1) a) (b : List ℤ) (hb : Supp (m + 1) b) :
+    trWord z h (m + 1 + 1) (a ++ [((m + 1 : ℕ) : ℤ)] ++ b ++ [((m + 1 : ℕ) : ℤ)])
+      = trWord z h (m + 1 + 1) (b ++ [((m + 1 : ℕ) : ℤ)] ++ a ++ [((m + 1 : ℕ) : ℤ)]) := by
+  let G : List ℤ → R := fun y =>
+    trWord z h (m + 1 + 1) (a ++ [((m + 1 : ℕ) : ℤ)] ++ y ++ [((m + 1 : ℕ) : ℤ)])
+      - trWord z h (m + 1 + 1) (y ++ [((m + 1 : ℕ) : ℤ)] ++ a ++ [((m + 1 : ℕ) : ℤ)])
+  have has : Supp (m + 1 + 1) a := ha.mono (by omega)
+  have hG : HeckeRel (m + 1) h G := by
+    have A := trWord_heckeRel_ctx z h (m + 1 + 1) (m + 1) (by omega)
+      (a ++ [((m + 1 : ℕ) : ℤ)]) [((m + 1 : ℕ) : ℤ)] (has.append (suppN m)) (suppN m)
+    have B := trWord_heckeRel_ctx z h (m + 1 + 1) (m + 1) (by omega) []
+      ([((m + 1 : ℕ) : ℤ)] ++ a ++ [((m + 1 : ℕ) : ℤ)]) supp_nil
+      (((suppN m).append has).append (suppN m))
+    exact (HeckeRel.sub_smul h 1 A B).congr h (fun y => by
+      simp only [G, one_mul, List.nil_append, List.append_assoc])
+  have h0 : ∀ γ, Supp (m + 1) γ → γ.length ≤ b.length →
+      γ.count (((m + 1 : ℕ) : ℤ) - 1) ≤ 1 → G γ = 0 := by
+    intro γ hγ _ hc
+    rcases split_top m γ hγ hc with hγm | ⟨p, q, rfl, hp, hq⟩
+    · simp only [G]; rw [symB z h m hFC γ hγm a ha]; ring
+    · simp only [G]; rw [symMid z h m hFC p q hp hq a ha]; ring
+  exact sub_eq_zero.mp (HeckeRel.reduce h (m + 1) G hG b.length h0 b hb le_rfl)
+
+/-- Rotating a block of letters that each rotate singly. -/
+theorem rot_of_single (N : ℕ) (S : ℤ → Prop)
+    (hS : ∀ c w, S c → Supp N (c :: w) → trWord z h N (w ++ [c]) = trWord z h N (c :: w)) :
+    ∀ u v, (∀ c ∈ u, S c) → Supp N (u ++ v) → trWord z h N (u ++ v) = trWord z h N (v ++ u)
+  | [], v, _, _ => by simp
+  | c :: u, v, hu, hs => by
+    have h1 := hS c (u ++ v) (hu c (by simp)) (by simpa using hs)
+    have h2 := rot_of_single N S hS u (v ++ [c]) (fun d hd => hu d (by simp [hd])) (by
+      intro d hd; apply hs d; simp only [List.mem_append, List.mem_cons, List.mem_singleton,
+        List.cons_append] at hd ⊢; tauto)
+    simp only [List.cons_append, List.append_assoc, List.singleton_append, List.nil_append]
+      at h1 h2 ⊢
+    rw [← h1, h2]
+
+/-- **Single-letter cyclicity** of the evaluator at every level. -/
+theorem trWord_cyc1 : ∀ n : ℕ, ∀ c w, Supp n (c :: w) →
+    trWord z h n (w ++ [c]) = trWord z h n (c :: w)
+  | 0, c, w, hs => by
+    have := hs c (by simp); push_cast at this; omega
+  | n + 1, c, w, hs => by
+    have IH := trWord_cyc1 n
+    have hFC : ∀ u v, Supp n u → Supp n v → trWord z h n (u ++ v) = trWord z h n (v ++ u) :=
+      fun u v hu hv => rot_of_single z h n (fun _ => True) (fun c w _ hs => IH c w hs) u v
+        (fun _ _ => trivial) (hu.append hv)
+    -- the generic reduction, for any letter `c`
+    have core : ∀ c, 0 ≤ c → c < (n : ℤ) + 1 →
+        (∀ γ, Supp n γ → trWord z h (n + 1) (γ ++ [c]) = trWord z h (n + 1) (c :: γ)) →
+        (∀ p q, Supp n p → Supp n q →
+          trWord z h (n + 1) (p ++ [(n : ℤ)] ++ q ++ [c])
+            = trWord z h (n + 1) (c :: (p ++ [(n : ℤ)] ++ q))) →
+        ∀ w, Supp (n + 1) w → trWord z h (n + 1) (w ++ [c]) = trWord z h (n + 1) (c :: w) := by
+      intro c hc0 hc1 hA hB w hw
+      have hcs : Supp (n + 1) [c] := supp_one hc0 (by push_cast; omega)
+      let G : List ℤ → R := fun y =>
+        trWord z h (n + 1) (y ++ [c]) - trWord z h (n + 1) (c :: y)
+      have hG : HeckeRel (n + 1) h G := by
+        have A := trWord_heckeRel_ctx z h (n + 1) (n + 1) le_rfl [] [c] supp_nil hcs
+        have B := trWord_heckeRel_ctx z h (n + 1) (n + 1) le_rfl [c] [] hcs supp_nil
+        exact (HeckeRel.sub_smul h 1 A B).congr h (fun y => by
+          simp only [G, one_mul, List.nil_append, List.append_nil, List.singleton_append])
+      have h0 : ∀ γ, Supp (n + 1) γ → γ.length ≤ w.length →
+          γ.count (((n + 1 : ℕ) : ℤ) - 1) ≤ 1 → G γ = 0 := by
+        intro γ hγ _ hcnt
+        rcases split_top n γ hγ hcnt with hγn | ⟨p, q, rfl, hp, hq⟩
+        · simp only [G]; rw [hA γ hγn]; ring
+        · simp only [G]; rw [hB p q hp hq]; ring
+      exact sub_eq_zero.mp (HeckeRel.reduce h (n + 1) G hG w.length h0 w hw le_rfl)
+    -- letters below the top
+    have low : ∀ c, 0 ≤ c → c < (n : ℤ) →
+        ∀ w, Supp (n + 1) w → trWord z h (n + 1) (w ++ [c]) = trWord z h (n + 1) (c :: w) := by
+      intro c hc0 hc1
+      have hcn : Supp n [c] := supp_one hc0 hc1
+      refine core c hc0 (by omega) ?_ ?_
+      · intro γ hγ
+        rw [trWord_stable z h n _ (hγ.append hcn),
+          trWord_stable z h n _ (by simpa using hcn.append hγ)]
+        exact IH c γ (by simpa using hcn.append hγ)
+      · intro p q hp hq
+        have e1 := trWord_markov z h n p (q ++ [c]) hp (hq.append hcn)
+        have e2 := trWord_markov z h n (c :: p) q (by simpa using hcn.append hp) hq
+        have e3 := IH c (p ++ q) (by simpa using hcn.append (hp.append hq))
+        simp only [List.append_assoc, List.cons_append, List.singleton_append] at e1 e2 e3 ⊢
+        rw [e1, e2, e3]
+    obtain ⟨hc0, hc1⟩ := (supp_cons_iff.mp hs).1
+    have hw : Supp (n + 1) w := (supp_cons_iff.mp hs).2
+    by_cases hcl : c < (n : ℤ)
+    · exact low c hc0 hcl w hw
+    have hcn : c = (n : ℤ) := by push_cast at hc1; omega
+    subst hcn
+    have rotLow := rot_of_single z h (n + 1) (fun c => 0 ≤ c ∧ c < (n : ℤ))
+      (fun c w hc hs => low c hc.1 hc.2 w (supp_cons_iff.mp hs).2)
+    refine core (n : ℤ) hc0 (by omega) ?_ ?_ w hw
+    · intro γ hγ
+      have e1 := trWord_strip z h n γ hγ
+      have e2 := trWord_markov z h n [] γ supp_nil hγ
+      simp only [Int.ofNat_eq_coe, List.nil_append, List.singleton_append] at e1 e2
+      rw [e1, e2]
+    · intro p q hp hq
+      have hpqs : Supp (n + 1) ([(n : ℤ)] ++ p ++ [(n : ℤ)]) :=
+        ((suppM (Nat.lt_succ_self n)).append (hp.mono (Nat.le_succ _))).append
+          (suppM (Nat.lt_succ_self n))
+      have e1 := rotLow q ([(n : ℤ)] ++ p ++ [(n : ℤ)]) (fun d hd => hq d hd)
+        ((hq.mono (Nat.le_succ _)).append hpqs)
+      cases n with
+      | zero =>
+        have hp0 : p = [] := List.eq_nil_iff_forall_not_mem.mpr (fun d hd => by
+          have := hp d hd; push_cast at this; omega)
+        have hq0 : q = [] := List.eq_nil_iff_forall_not_mem.mpr (fun d hd => by
+          have := hq d hd; push_cast at this; omega)
+        subst hp0; subst hq0; rfl
+      | succ m =>
+        have hFC' : ∀ u v, Supp (m + 1) u → Supp (m + 1) v →
+            trWord z h (m + 1) (u ++ v) = trWord z h (m + 1) (v ++ u) := hFC
+        have e2 := symAll z h m hFC' p hp q hq
+        simp only [List.append_assoc, List.cons_append, List.singleton_append,
+          List.nil_append] at e1 e2 ⊢
+        rw [e2, ← e1]
+
+/-- **Cyclicity** of the evaluator: `tr(uv) = tr(vu)`. -/
+theorem trWord_cyclic (n : ℕ) (u v : List ℤ) (hu : Supp n u) (hv : Supp n v) :
+    trWord z h n (u ++ v) = trWord z h n (v ++ u) :=
+  rot_of_single z h n (fun _ => True) (fun c w _ hs => trWord_cyc1 z h n c w hs) u v
+    (fun _ _ => trivial) (hu.append hv)
+
+/-- **Ocneanu existence.** The recursive evaluator satisfies every axiom of
+    `IsMarkovTrace`, for every commutative ring `R` and every `z, h : R`. -/
+theorem trWord_isMarkovTrace :
+    IsMarkovTrace (fun n w => trWord z h n w) (fun β j => β.map (· + Int.ofNat j)) z h where
+  strip := trWord_strip z h
+  cyclic := trWord_cyclic z h
+  embed_disjoint := fun _ _ => rfl
+  normalised := trWord_nil z h
+  stable := trWord_stable z h
+  hecke := trWord_hecke z h
+  braid := trWord_braid z h
+  far_comm := trWord_far_comm z h
+
+/-- A Markov trace exists for every `z, h`. -/
+theorem exists_isMarkovTrace :
+    ∃ (mT : ℕ → List ℤ → R) (e : List ℤ → ℕ → List ℤ), IsMarkovTrace mT e z h :=
+  ⟨_, _, trWord_isMarkovTrace z h⟩
+
+/-- Every Markov trace is the evaluator (existence + `markovTrace_unique`). -/
+theorem isMarkovTrace_eq_trWord {mT : ℕ → List ℤ → R} {e : List ℤ → ℕ → List ℤ}
+    (hmT : IsMarkovTrace mT e z h) (n : ℕ) (w : List ℤ) (hw : Supp n w) :
+    mT n w = trWord z h n w :=
+  markovTrace_unique hmT (trWord_isMarkovTrace z h) n w hw
+
+end CyclicProof
 
 end Evaluator
 
