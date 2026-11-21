@@ -38,6 +38,7 @@ export default proposition({
   authorNotes: [
     { kind: "note", date: "2026-11-21", body: "Moved out of the prose by the voice-leak drain (qou-d4kh, W14b, 2026-11-21): the restricted axiom set (stripping, stability and cyclicity on words of H_n, plus the Hecke quadratic, braid and far-commutation relations) is the one the Lean formalisation uses." },
     { kind: "status", date: "2026-11-21", body: "The general disjoint-product law is now proved from the restricted axioms (Lean `QOU.BraidKnot.markovTrace_disjointProduct`, sorry-free, axioms propext/Classical.choice/Quot.sound). The proof is Ocneanu's reduction, `HeckeRel.reduce`: a function on positive words that satisfies the in-context Hecke, braid and far-commutation relations and vanishes on words using the top generator at most once vanishes everywhere. The Lean form has the two clusters sharing one strand (connected sum); the split case in the statement additionally needs shift invariance of the trace, which is not formalised. Thread N2 Lean foundations." },
+    { kind: "status", date: "2026-11-21", body: "`lean.ref` now points at `markovTrace_disjointProduct` in this block's own `.lean` sibling. It used to point at the library item `QOU.BraidKnot.markovTraceRecursiveReducer`, which only returned a class field that already contained the whole claim (termination, correctness and the product law). That file is removed. What Lean covers here: the disjoint-product law, proved. Not covered: termination of the actual reducer (the `_terminates` lemma is satisfied by a constant tracer and says nothing about `markov_trace_recursive.py`), the `O(ℓ(β)·n!)` bound, and correctness of its output. Bean qou-tmmt." },
   ],
   title:
     "Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property",
@@ -65,7 +66,7 @@ export default proposition({
     requires: ["sympy"],
   },
   lean: {
-    ref: "qou:QOU.BraidKnot.markovTraceRecursiveReducer",
+    ref: "qou:QOU.BraidKnot.markovTrace_disjointProduct",
     validation: "not_checked",
   },
   tags: [
