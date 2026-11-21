@@ -644,3 +644,38 @@ Option 1, T against the convention-D Markov trace:
 trace is the normalised K-weighted sum over all four weight spaces. The nucleon Gibbs weight of §24 is
 its (m = ±1) slice, q^{±1}·T. At the proton q₀ (rendering only): T ≈ 2.994186, τ_D(β_Bor) ≈ 0.998562.
 This fixes the flavour-independent binding term −E₀·ln T. It does not change n − p.
+
+## 26. A derived term for the rest of m_n − m_p? (owner "2y")
+
+Gap: m_n − m_p − cell = 1.29333 − 0.87354 = 0.41980 MeV (comparison values; rendering only).
+
+Corpus search (paths 2 and 1: `folio/` and `docs/audits/`, grep on Coulomb / electromagnetic /
+Δ_pn). The two carriers found:
+- `rem:categorical-neutron-properties` states m_n − m_p = 𝒮_dd − 𝒮_uu ≈ 1.293 MeV. It is a remark
+  and names the measured value. It does not derive it.
+- `rem:skein-crossing-asymmetry` gives a per-crossing correction δ_Coulomb = (q − q⁻¹)/2. It is a
+  remark, and it is stated for composites of the same charge, not for the p/n pair.
+- `def:down-quark` and `rem:categorical-neutron-properties` both record that the corpus's own charge
+  mechanism is mirror-odd, so Q(n) = −Q(p), and that the SM quark charges are adopted, not derived.
+
+Lean, `QOU/QBeta/NucleonChargeTerms.lean`, lean-direct exit 0, standard axioms only:
+- `mirror_charges`, `mirror_neutral_forces_zero`: with Q(d) = −Q(u), Q(n) = −Q(p), and a neutral
+  neutron forces Q(u) = 0.
+- `mirror_even_energy_cancels`: under the mirror-odd charges, any energy depending on charge through
+  an even function (e.g. c·Q²) is the same for p and n, so it contributes 0 to m_n − m_p.
+- `adopted_selfenergy_sign`: with the adopted charges Q(p) = 1, Q(n) = 0, a self-energy c·Q², c > 0,
+  gives E_n − E_p = −c. It lowers m_n − m_p, the wrong direction for a model value already below it.
+
+**Consequence (scope a).** The corpus holds no derived term for the 0.42 MeV gap, and a Coulomb
+self-energy cannot supply it under either charge assignment: zero under the mirror-odd charges, wrong
+sign under the adopted ones. Under (G) the cell 2E₀ ln q is itself the only flavour-odd term, and it
+comes from the K-grading m, which is the mirror-odd charge.
+
+**Near-match, flagged and not adopted.** E₀·(q − q⁻¹)/2 = 0.43756 MeV at the proton q₀, 4.2 % from the
+gap. This is δ_Coulomb scaled by E₀. It is not derived as an n–p term, and choosing it because it lands
+near the gap would be selection against the target. It is recorded only so nobody rediscovers it as
+evidence.
+
+The electron: m_n − m_p − m_e = Q_β = 0.78233 MeV, and the cell is 11.66 % above that. Whether the
+cell is a Q_β cell or an m_n − m_p cell is the question this audit started from; §1–§9 treat it as the
+Q_β cell. Nothing here derives an m_e term in m_n − m_p.
