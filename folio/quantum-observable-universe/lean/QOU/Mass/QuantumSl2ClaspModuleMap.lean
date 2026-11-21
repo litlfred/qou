@@ -253,4 +253,140 @@ theorem clasp_deltaE (m : ℕ) (hint : ∀ i, 0 < i → i ≤ m → qint (s ^ 2)
 
 end Clasp
 
+section Eigenvalue
+
+variable (s : 𝕜) (hs : s ≠ 0)
+
+/-- **Coordinates of the clasp.** -/
+theorem clasp_apply (m : ℕ) (f g c d : Fin (m + 1)) :
+    clasp s hs m (f, g) (c, d)
+      = ∑ e : Fin (m + 1), ∑ p : Fin (m + 1),
+          capVec (s ^ 2) m (c, e) * mono s hs m m (e, f) (d, p) * cupVec (s ^ 2) m (p, g) := by
+  simp only [clasp, claspBig, cap4, mid4, cup4, capRow, cupCol, regroup, submatrix_apply,
+    Equiv.coe_fn_mk, mul_apply, kroneckerMap_apply, of_apply, one_apply, Fintype.sum_prod_type,
+    Equiv.punitProd_symm_apply, Equiv.prodPUnit_symm_apply, Prod.mk.injEq, ite_and, mul_ite,
+    ite_mul, mul_one, one_mul, mul_zero, zero_mul, Finset.sum_ite_eq',
+    Finset.mem_univ, if_true, Finset.sum_singleton]
+  simp only [Finset.sum_ite_irrel, Finset.sum_const_zero, Finset.sum_ite_eq, Finset.sum_ite_eq',
+    Finset.mem_univ, if_true, Finset.sum_mul, ite_mul, zero_mul]
+  rw [Finset.sum_comm]
+
+theorem clasp_grade (m : ℕ) (x y : Fin (m + 1) × Fin (m + 1))
+    (h : (x.1 : ℕ) + x.2 ≠ y.1 + y.2) : clasp s hs m x y = 0 := by
+  obtain ⟨f, g⟩ := x
+  obtain ⟨c, d⟩ := y
+  rw [clasp_apply]
+  refine Finset.sum_eq_zero fun e _ => Finset.sum_eq_zero fun p _ => ?_
+  unfold capVec cupVec hwVec
+  by_cases h1 : (c : ℕ) + e = m
+  · by_cases h2 : (p : ℕ) + g = m
+    · rw [mono_grade s hs m m _ _ (by dsimp only at h ⊢; omega)]; simp
+    · simp [h2]
+  · simp [h1]
+
+theorem hwCoef_ne_zero_of_le (q : 𝕜) (hq : q ≠ 0) (m j : ℕ) (hj : j ≤ m)
+    (hint : ∀ i, 0 < i → i ≤ m → qint q i ≠ 0) (p : ℕ) (hp : p ≤ j) :
+    hwCoef q m m j p ≠ 0 := by
+  induction p with
+  | zero => simp [hwCoef]
+  | succ p ih =>
+    rw [hwCoef]
+    exact div_ne_zero (neg_ne_zero.mpr (mul_ne_zero (mul_ne_zero (ih (by omega))
+      (hint _ (by omega) (by omega))) (zpow_ne_zero _ hq))) (hint _ (by omega) (by omega))
+
+/-- The `c`-th summand of the clasp at output `v_j ⊗ v_0` on the highest-weight vector `w_j`. -/
+def claspRow (j n c : ℕ) : 𝕜 :=
+  hwCoef (s ^ 2) (j + n) (j + n) j c * capCoef s (j + n) c * cupCoef s (j + n) (j + n)
+    * mono s hs (j + n) (j + n) (⟨j + n - c, by omega⟩, ⟨j, by omega⟩)
+        (⟨j - c, by omega⟩, ⟨j + n, by omega⟩)
+
+theorem clasp_hw_row (j n : ℕ) (c : Fin (j + n + 1)) :
+    ∑ d : Fin (j + n + 1), clasp s hs (j + n) (⟨j, by omega⟩, ⟨0, by omega⟩) (c, d)
+      * hwVec (s ^ 2) (j + n) (j + n) j (c, d)
+      = if (c : ℕ) ≤ j then claspRow s hs j n c else 0 := by
+  unfold claspRow
+  split_ifs with hc
+  · have hd : ∀ d : Fin (j + n + 1), d ≠ ⟨j - c, by omega⟩ →
+        clasp s hs (j + n) (⟨j, by omega⟩, ⟨0, by omega⟩) (c, d)
+          * hwVec (s ^ 2) (j + n) (j + n) j (c, d) = 0 := by
+      intro d hd
+      have : (c : ℕ) + d ≠ j := fun h => hd (Fin.ext (by simp only; omega))
+      simp [hwVec, this]
+    have he : ∀ e : Fin (j + n + 1), e ≠ ⟨j + n - c, by omega⟩ →
+        ∑ p : Fin (j + n + 1), capVec (s ^ 2) (j + n) (c, e)
+          * mono s hs (j + n) (j + n) (e, ⟨j, by omega⟩) (⟨j - c, by omega⟩, p)
+          * cupVec (s ^ 2) (j + n) (p, ⟨0, by omega⟩) = 0 := by
+      intro e he
+      have : (c : ℕ) + e ≠ j + n := fun h => he (Fin.ext (by simp only; omega))
+      simp [capVec, this]
+    have hp : ∀ p : Fin (j + n + 1), p ≠ ⟨j + n, by omega⟩ →
+        capVec (s ^ 2) (j + n) (c, ⟨j + n - c, by omega⟩)
+          * mono s hs (j + n) (j + n) (⟨j + n - c, by omega⟩, ⟨j, by omega⟩) (⟨j - c, by omega⟩, p)
+          * cupVec (s ^ 2) (j + n) (p, ⟨0, by omega⟩) = 0 := by
+      intro p hp
+      have : (p : ℕ) ≠ j + n := fun h => hp (Fin.ext h)
+      simp [cupVec, hwVec, this]
+    rw [Fintype.sum_eq_single _ hd, clasp_apply, Fintype.sum_eq_single _ he,
+      Fintype.sum_eq_single _ hp]
+    simp only [capVec, cupVec, hwVec, capCoef_eq, cupCoef,
+      if_pos (show (c : ℕ) + (j + n - c) = j + n by omega),
+      if_pos (show j + n + 0 = j + n by omega), if_pos (show (c : ℕ) + (j - c) = j by omega)]
+    ring
+  · refine Finset.sum_eq_zero fun d _ => ?_
+    simp [hwVec, show ¬ ((c : ℕ) + d = j) by omega]
+
+theorem claspRow_div (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (j n k : ℕ) (hk : k ≤ j)
+    (hint : ∀ i, 0 < i → i ≤ j + n → qint (s ^ 2) i ≠ 0) :
+    claspRow s hs j n k / hwCoef (s ^ 2) (j + n) (j + n) j j = vdvTerm s k (j - k) n := by
+  obtain ⟨a, rfl⟩ := Nat.exists_eq_add_of_le hk
+  have hH := hwCoef_ne_zero_of_le (s ^ 2) (pow_ne_zero 2 hs) (k + a + n) (k + a) (by omega)
+    hint (k + a) le_rfl
+  rw [Nat.add_sub_cancel_left, ← claspTerm_eq_vdvTerm s hs hq2 k a n hint, div_eq_iff hH]
+  unfold claspRow claspTerm
+  field_simp
+
+/-- **The clasp acts on the highest-weight vector `w_j` by van der Veen's scalar**
+`Σ_{k=0}^{j} vdvTerm k (j−k) n`, with `m = j + n`. -/
+theorem clasp_hwVec (hq2 : s ^ 2 - (s ^ 2)⁻¹ ≠ 0) (j n : ℕ)
+    (hint : ∀ i, 0 < i → i ≤ j + n → qint (s ^ 2) i ≠ 0) :
+    clasp s hs (j + n) *ᵥ hwVec (s ^ 2) (j + n) (j + n) j
+      = (∑ k ∈ Finset.range (j + 1), vdvTerm s k (j - k) n)
+          • hwVec (s ^ 2) (j + n) (j + n) j := by
+  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  have hint' : ∀ p < j, qint (s ^ 2) (j + n - p) ≠ 0 := fun p hp => hint _ (by omega) (by omega)
+  have hE : deltaE (s ^ 2) (j + n) (j + n)
+      *ᵥ (clasp s hs (j + n) *ᵥ hwVec (s ^ 2) (j + n) (j + n) j) = 0 := by
+    rw [mulVec_mulVec, ← clasp_deltaE s hs hq2 (j + n) hint, ← mulVec_mulVec]
+    rw [show deltaE (s ^ 2) (j + n) (j + n) *ᵥ hwVec (s ^ 2) (j + n) (j + n) j = 0 from
+      hwVec_E (s ^ 2) hq (j + n) (j + n) j (by omega) (by omega) hint', mulVec_zero]
+  have hsupp : ∀ x : Fin (j + n + 1) × Fin (j + n + 1), (x.1 : ℕ) + x.2 ≠ j →
+      (clasp s hs (j + n) *ᵥ hwVec (s ^ 2) (j + n) (j + n) j) x = 0 := by
+    intro x hx
+    simp only [mulVec, dotProduct]
+    refine Finset.sum_eq_zero fun y _ => ?_
+    by_cases hy : (y.1 : ℕ) + y.2 = j
+    · rw [clasp_grade s hs _ x y (by omega), zero_mul]
+    · simp [hwVec, hy]
+  have hu := hw_unique (s ^ 2) hq (j + n) (j + n) j (by omega) hint' _ hsupp hE
+  rw [hu]
+  congr 1
+  have hH := hwCoef_ne_zero_of_le (s ^ 2) hq (j + n) j (by omega) hint j le_rfl
+  have hj0 := congrFun hu (⟨j, by omega⟩, ⟨0, by omega⟩)
+  simp only [Pi.smul_apply, smul_eq_mul, hwVec, Nat.add_zero, if_true] at hj0
+  rw [eq_div_of_mul_eq hH hj0.symm]
+  rw [show (clasp s hs (j + n) *ᵥ hwVec (s ^ 2) (j + n) (j + n) j) (⟨j, by omega⟩, ⟨0, by omega⟩)
+      = ∑ c : Fin (j + n + 1), ∑ d : Fin (j + n + 1),
+          clasp s hs (j + n) (⟨j, by omega⟩, ⟨0, by omega⟩) (c, d)
+            * hwVec (s ^ 2) (j + n) (j + n) j (c, d) by
+    simp only [mulVec, dotProduct, Fintype.sum_prod_type]]
+  simp only [clasp_hw_row]
+  rw [Fin.sum_univ_eq_sum_range (fun c => if c ≤ j then claspRow s hs j n c else 0),
+    Finset.sum_ite, Finset.sum_const_zero, add_zero, div_eq_mul_inv, Finset.sum_mul,
+    show (Finset.range (j + n + 1)).filter (· ≤ j) = Finset.range (j + 1) by
+      ext c; simp only [Finset.mem_filter, Finset.mem_range]; omega]
+  exact Finset.sum_congr rfl fun k hk => by
+    rw [← div_eq_mul_inv]; exact claspRow_div s hs hq2 j n k (by have := Finset.mem_range.mp hk; omega) hint
+
+end Eigenvalue
+
 end QOU.Mass.QuantumSl2
