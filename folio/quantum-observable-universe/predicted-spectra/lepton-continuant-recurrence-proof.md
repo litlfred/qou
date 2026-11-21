@@ -27,4 +27,4 @@ The recurrence is exact in $\mathbb{Z}[q^{\pm 1}]$. The decimal values are evalu
 
 ## Structural content
 
-Each additional factor of $\sigma_0^2$ in $T_{2,n+2}$ applies the Hecke relation once. This adds exactly $(q - q^{-1}) b_n$ to the $\sigma_0$ coefficient and shifts the identity coefficient by $b_n$. The lepton generations form a discrete tower indexed by odd $n$. The inter-generation spacing is controlled by $h = q - q^{-1}$.
+Each additional factor of $\sigma_0^2$ in $T_{2,n+2}$ applies the Hecke relation once. This adds exactly $(q - q^{-1}) b_n$ to the $\sigma_0$ coefficient and shifts the identity coefficient by $b_n$. The braid powers $\sigma_0^n$ with odd $n$ form a discrete tower. This tower indexes the lepton generations only in the backup trefoil reading: the [electron](#def:electron-knot) is $\sigma_0\sigma_1\sigma_0 \in B_3$, and the muon and tau words are not ruled. The inter-generation spacing is controlled by $h = q - q^{-1}$.

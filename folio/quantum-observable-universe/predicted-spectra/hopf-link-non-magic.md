@@ -36,8 +36,8 @@ The [torus-knot shell-binding proposition](#prop:torus-knot-shell-binding)
 proposed that the active operator at each magic $n$ is one of the six
 Bring-embeddable torus knots
 $\{T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}\}$, none of
-which is Hopf-decomposable. Its shell-size rule $T_{2,n_s}$ is withdrawn
-(owner ruling 2026-11-21), so that proposition does not establish which
+which is Hopf-decomposable. Its shell-size rule $T_{2,n_s}$ is withdrawn,
+so that proposition does not establish which
 operator is active at a magic $n$.
 
 **Operational reading of the magic predicate.**

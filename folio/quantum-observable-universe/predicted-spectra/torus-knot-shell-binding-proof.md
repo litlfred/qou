@@ -1,6 +1,6 @@
 ## Proof
 
-**Withdrawn (owner ruling 2026-11-21).** The shell-size rule used here, that a closing shell of size $n_s$ is bound by the torus knot $T_{2,n_s}$, is withdrawn. Its basis was a mislabel: $(\sigma_0\sigma_1)^2\sigma_0$ closes to $T(2,4)$, not to the cinquefoil $T(2,5)$. The rule stays withdrawn until it is derived. Steps (i) and (v) use the rule directly, so this argument does not establish the [proposition](#prop:torus-knot-shell-binding).
+**Withdrawn.** The shell-size rule used here, that a closing shell of size $n_s$ is bound by the torus knot $T_{2,n_s}$, is withdrawn. Its basis was a mislabel: $(\sigma_0\sigma_1)^2\sigma_0$ closes to $T(2,4)$, not to the cinquefoil $T(2,5)$. The rule stays withdrawn until it is derived. Steps (i) and (v) use the rule directly, so this argument does not establish the [proposition](#prop:torus-knot-shell-binding).
 
 The construction proceeds by induction on nucleon count, with shell closures detected by palindromic word-length histograms.
 
