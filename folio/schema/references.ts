@@ -334,6 +334,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "garoufalidis-le-2005" },
 
   // ── Lê 2006 — AJ conjecture proved for a large class of 2-bridge knots ──
+  { id: "le2000" },
   { id: "le2006" },
 
   // ── Garoufalidis–Lê 2011 — asymptotics; Borromean VC via Habiro expansion ──
