@@ -268,11 +268,14 @@ def run_sequence(H, nuc, cands, seq, cost_kind):
             r = H.mul(H.mul(N, op), nuc[t])
             d = demand(r)
             c = d if cost_kind == "K1" else (d / l1(r) if l1(r) != 0 else mp.mpf(0))
-            rows.append((c, H.trace(r), name, tidx, r))
+            rows.append((c, H.trace(r), name, tidx, r, H.trace(r, "C")))
         rows.sort(key=lambda x: (x[0], x[1]))
         y0 = rows[0][0]
         tol = mp.mpf(10) ** -40
         selected = [x for x in rows if x[0] - y0 <= tol]
+        n_cost_tied = len(selected)
+        tminC = min(x[5] for x in selected)
+        sel_C = [x[2] for x in selected if x[5] - tminC <= tol]
         if len(selected) > 1:   # tie-break by tr_M
             tmin = min(x[1] for x in selected)
             selected = [x for x in selected if x[1] - tmin <= tol]
@@ -294,6 +297,9 @@ def run_sequence(H, nuc, cands, seq, cost_kind):
             "runner_up": others[0][2] if others else None,
             "gap_to_runner_up": mp.nstr(gap, 12) if gap is not None else None,
             "tied": len(selected) > 1,
+            "n_candidates_at_min_cost": n_cost_tied,
+            "selected_if_conv_C_tiebreak": sel_C,
+            "decided_by": "cost" if n_cost_tied == 1 else "tr_M tie-break",
             "lp_dual": {
                 "y0_star": mp.nstr(y0, 30),
                 "y_star": {x[2]: mp.nstr(x[0] - y0, 20) for x in rows},
@@ -357,7 +363,7 @@ def main():
             print(f"  k={s['step']:2d} +{s['added']} (#{s['same_type_count']:2d}, n_s={s['shell_size']:2d})"
                   f"  → {sel}  idx={s['selected_torus_index']}"
                   f"  {'PASS' if s['rule_T2_ns_passes'] else 'fail'}"
-                  f"  gap={s['gap_to_runner_up']}")
+                  f"  gap={s['gap_to_runner_up']}  min-cost-ties={s['n_candidates_at_min_cost']}")
 
     # Nucleon NFs, for the record
     nucl = {t: [mp.nstr(x, 30) for x in v] for t, v in nuc.items()}
