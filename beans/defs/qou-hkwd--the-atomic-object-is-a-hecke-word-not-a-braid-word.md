@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T12:25:33Z
-updated_at: 2026-10-10T07:01:41Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-mub3
 ---
 
@@ -89,3 +89,8 @@ Was in-progress with no bean update since 2026-09-06 and no main commit naming i
 ## 2026-10-10 — pointer
 
 Tracked under carrier M9 (qou-jgg0) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+
+## 2026-11-21 — expo-chapter drain (session https://claude.ai/code/session_01Qmmkt5JeUvGF2FboRQJbLN, issue #8826)
+
+Re-measured on main 2ae54ab40. The detector `computations/audits/braid_vs_hecke_word_audit.py` grepped `content/`, which no longer exists after the content/ -> folio/ move, so on main it reported 0 defects and 0 correct sites (1/3 assertions): a silent gate, not a clean one. Pointed at `folio/` it found 3 lines. One was real and new since 2026-09-06: `mass-theory/rho-k-h3a-refinement.md:3` ("braid word B_K in B_{3A}"). Two are the notation-register A vs B_K entry, which states B_K in H_{3A}(q) and quotes the old B_{3A+Z} wording only as history (adjudicated correct). PR #6821 has merged, so `atomic-mass-gb-nf.md:6` is no longer sibling-owned; it still said "nuclear-core braid B_K in B_n" and is fixed too. Both now read "nuclear-core Hecke word B_K in H_n(q)", per the register. Branch `claude/expo-chapter-drain-2026-11-21` (269b643c0, 1ae09428d); detector now 3/3, 0 defects, 10 correct files. Residual, not done: `rho-k-h3a-refinement.lean:55` docstring says `β_K ∈ B_{3A}` (needs lean-direct). Status stays todo until the PR merges.

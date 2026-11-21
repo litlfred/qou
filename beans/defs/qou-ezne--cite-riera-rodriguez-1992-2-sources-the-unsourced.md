@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:03:28Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-mub3
 ---
 
@@ -68,3 +68,8 @@ first spotted in `docs/audits/2026-09-04-how-the-hyperbolic-volume-could-arise-f
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8480, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-21 — expo-chapter drain (session https://claude.ai/code/session_01Qmmkt5JeUvGF2FboRQJbLN, issue #8826)
+
+Done on branch `claude/expo-chapter-drain-2026-11-21` (354d4bddc): `riera-rodriguez-1992` added to `em-coupling-bring-zero-mode.ts` cites. Locator checked in the held copy: `library/pjm-v154-n1-p09-s/sections/page-003.md`–`page-004.md` = journal pp. 180–181 (the bean's "pp. 2–8" is PDF pagination): Γ* the (2,4,5) triangle group from the 20-gon with angles π/5, π/4, π/2; φ: Γ* → S₅; Γ = ker φ torsion-free; B = Δ/Γ genus 4. Not done: the two `-- Ref: [riera-rodriguez-1992] pp. 180–181` lines in `EmCouplingBringZeroMode.lean` (need lean-direct).

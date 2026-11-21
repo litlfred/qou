@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:11Z
-updated_at: 2026-10-04T15:17:42Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-mub3
 ---
 
@@ -25,3 +25,8 @@ Source: `library/arxiv-0808.1533v1/0808.1533v1.pdf` (`komendarczyk2008`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+
+## 2026-11-21 — expo-chapter drain (session https://claude.ai/code/session_01Qmmkt5JeUvGF2FboRQJbLN, issue #8826)
+
+Done on branch `claude/expo-chapter-drain-2026-11-21` (6aed9705a): `[komendarczyk2008]` written at the Round 3 heading of `docs/audits/2026-08-01-em-linking-reads-round1.md`, where Thm 6.1 / Rem 2.6 are stated. Key resolves to `library/arxiv-0808.1533v3`.

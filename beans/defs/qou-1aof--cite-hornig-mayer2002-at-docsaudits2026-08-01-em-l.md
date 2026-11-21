@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:34:09Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-mub3
 ---
 
@@ -27,3 +27,8 @@ Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-v
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8475, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-21 — expo-chapter drain (session https://claude.ai/code/session_01Qmmkt5JeUvGF2FboRQJbLN, issue #8826)
+
+Done on branch `claude/expo-chapter-drain-2026-11-21` (6aed9705a): `[hornig-mayer2002]` written where Round 4 of `docs/audits/2026-08-01-em-linking-reads-round1.md` quotes the antisymmetry sentence. Key resolves to `library/arxiv-physics-0203048v1`. Page locator: the audit says p. 11 (PDF), the bean says pp. 715–716 (journal); both left as written.

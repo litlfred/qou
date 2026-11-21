@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T09:55:00Z
-updated_at: 2026-10-04T15:14:34Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-mub3
 ---
 
@@ -458,3 +458,8 @@ touches the KG the owner has made authoritative), plus the generated
 
 **Status stays `todo`.** Per AGENTS.md §13a the ruling settles *what* to do, not
 that it is done.
+
+
+## 2026-11-21 — expo-chapter drain (session https://claude.ai/code/session_01Qmmkt5JeUvGF2FboRQJbLN, issue #8826)
+
+Re-measured on main 2ae54ab40 by importing `folio/schema/references.ts` (973 entries) and checking every `cites:[...]` key in `folio/quantum-observable-universe/**/*.ts` (keys with `:` skipped as cross-paper): **0 unresolved**. `faddeev1996` and `bokut1978` are no longer cited anywhere; the two `manuscript` blocks now cite `leitner2026`. The citation debt this bean was filed for is gone. What remains is not citation work: (1) the owner's 2026-09-26 ruling to move `leitner2026` into `folio/` (with `qou-yqko`); (2) the missing `manuscript` / `:` carve-outs in folio-assistant's `cites-resolve`; (3) moving `configureReferenceRegistry` out of `if (strict)` in `scripts/run-validate.ts`, which this session could not verify because the light platform lacks `unist-util-visit` for the validator. Recommend closing this bean once (3) is done by someone with the full platform.

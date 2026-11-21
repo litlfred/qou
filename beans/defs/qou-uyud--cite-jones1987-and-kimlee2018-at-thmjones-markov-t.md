@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T18:29:45Z
-updated_at: 2026-10-04T15:17:40Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-mub3
 ---
 
@@ -42,3 +42,8 @@ NOT closed by this: the open identity sum_k m_k^2 = Catalan(n) with
 m_k = C(n,k) - C(n,k-1). Converting dim TL_n = C_n into it needs semisimplicity
 of TL_n at delta = 2.0108969 and the two-row indexing of the Wedderburn blocks,
 neither of which [kimlee2018] states.
+
+
+## 2026-11-21 — expo-chapter drain (session https://claude.ai/code/session_01Qmmkt5JeUvGF2FboRQJbLN, issue #8826)
+
+Done on branch `claude/expo-chapter-drain-2026-11-21` (bd9168d5a): `cites: ["jones1987", "kimlee2018"]` on `jones-markov-trace.ts`. Kim–Lee checked in the held copy (`library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-003.md`, page-004): the standard-monomial count is the Catalan number C_n. Not done: Fan 1997 (not registered), the Catalan citation at `markov-trace-frobenius-selection.md:82`, and a `-- Ref:` on `TemperleyLiebTower.lean` (needs lean-direct).
