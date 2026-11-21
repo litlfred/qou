@@ -26,7 +26,7 @@ control mesh. The identification of any realised complex with Bring's curve is
 a citation, and `hχ` (Poincaré–Hopf) stays a hypothesis downstream.
 Bean `qou-skn4`.
 
--- Ref: [manuscript] lifting-and-descent, route R3, surface step S3/S4
+-- Ref: [leitner2026] lifting-and-descent, route R3, surface step S3/S4
 -/
 open Topology TopologicalSpace
 
