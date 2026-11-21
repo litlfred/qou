@@ -1,0 +1,133 @@
+# Round-trip blind audit, pass 2 (2026-11-21)
+
+Bean epic `qou-ncxf`. Owner ruling on the PR #8819 follow-up (2026-11-21):
+run pass 2 on the next 20 blocks, restore the honest `sorry` in
+`confinement_categorical`, and restate the nine pass-1 disclosed blocks to
+what their Lean proves. This document records all three.
+
+## 1. Method
+
+Sampler: `scripts/roundtrip-blind-sample.py 20 --offset 15`. Population 419
+eligible provable blocks (statement `.md`, a proof block with a non-empty
+`.md`, a `qou:` `lean.ref` naming a theorem/lemma that is not `: True` and
+contains no `sorry`). Order: sha256(label). Pass 1 consumed the first 15.
+Five labels in the window were skipped as `decl-not-found` and the sampler
+moved on:
+
+- `prop:borromean-hopf-energy-crossover`
+- `prop:frobenius-pairing-exists`
+- `prop:unified-curvature-rank-mass-formula`
+- `prop:hadron-half-life`
+- `prop:q-rogers-pentagon-archimedean`
+
+A `decl-not-found` lean.ref is itself a finding for the ref audit of
+PR #8819; it is not re-litigated here.
+
+Four blind legs, each by a separate agent that saw only its own input:
+
+| leg | input | output |
+|---|---|---|
+| RT-1 A | Lean statement, comments stripped, decl renamed `thm` | English statement |
+| RT-2 B | Lean proof term | narrative of the proof, and where its content lives |
+| RT-3 A | `.md` proof only | inferred statement |
+| RT-3 B | `.md` statement only | proof obligations and flags |
+
+Adjudication against the real blocks is mine and is **not** blind.
+Every Class-A or narrative finding below that is called "verified" was
+checked by me against the file named; the rest are agent findings recorded
+as such.
+
+### Packet limitations (fixed or noted)
+
+- **Statement split.** The sampler cut the Lean statement at the first
+  `:=`, which for C05, C13 and C14 fell inside a `haveI :=` / `let :=` in
+  the statement, so RT-1 A saw a truncated statement. Fixed in this PR: the
+  cut now skips a `:=` preceded on its line by `let` / `have` / `haveI` /
+  `letI`.
+- **Renaming in context.** Renaming the target to `thm` also rewrote
+  structure field names in the context (`claim_thm`, `thm_axiom`). RT-2 B
+  reported "name mismatch" for C09 and C12 on that basis; those two
+  findings are packet artifacts and are discarded.
+- **Dotted names / empty context.** C01 and C03 needed hand patching
+  (dotted theorem name not renamed; structure context empty).
+
+## 2. Results
+
+Classes: **A** the Lean conclusion is assumed (a hypothesis or class field is
+returned); **T** the Lean is a tautology / `rfl` on a definition; **B** the
+Lean is weaker than the `.md` claim; **C** the narrative proof does not prove
+the statement; **E** an empirical value inside a formal result.
+
+| # | label | Lean | narrative / statement |
+|---|---|---|---|
+| C01 | `prop:q-heat-equation-unique` | genuine | C (minor): assumes semisimplicity; statement leaves Δ_q, the space and the notion of solution implicit |
+| C02 | `prop:x5-z5-automorphism` | genuine | minor: primitivity of ζ₅ unstated |
+| C03 | `prop:atom-knot-unique` | **T** (structure ext) | C: treats the Hecke quadratic relation as Reidemeister II, an isotopy it is not; equal Hecke images do not give isotopic closures |
+| C04 | `prop:pieri-photon-shift` | **A** (field `support_subset`) | C: misses the a = n case and the third induced component; tower levels mixed. Uses the correct photon σ_aσ_b⁻¹ |
+| C05 | `prop:confinement-categorical` | **A** (field `confinement_ident`) → **fixed: honest `sorry`** | statement undefined objects (filtration, "colored") |
+| C06 | `lem:qou-exists-axiom-2` | **A** (hom_dim from two fields, 1 − 1 = 0) | standard Schur fact |
+| C07 | `prop:p-bandwidth-bound` | **A** (iff from two fields) | ill-posed: P is a property of a family, not one link; Planck-time cost in the claim |
+| C08 | `prop:binding-error-amplification` | genuine | minor: label `M_atom` reused for nuclear mass; garbled corollary sentence |
+| C09 | `prop:frobenius-relation` | **A** (field `claim_frobenius_relation`) | **C, verified**: pairs a map A⊗A → A⊗A with a single test element c ∈ A, and equates μ(b₁⊗b₂) terms with no argument. Also conflicts with C10 if the pairing is the Markov trace (degenerate on H_n, n ≥ 3) |
+| C10 | `prop:markov-trace-frobenius-selection` | genuine (derivation from moment equations) | (ii) stated for all n, proved at n = 3, numerical for n ≤ 7 |
+| C11 | `prop:alpha-shift-torus-knot` | **T** (`rfl` on `alphaShift = k(p−1)`; class unused) | α(T_{p,k}) presented as a knot invariant but defined from one braid; T_{p,k} ≅ T_{k,p} gives k(p−1) vs p(k−1) |
+| C12 | `prop:wigner-coefficient-derivation` | **A + E, verified**: discharged by `axiom wigner_coefficient_axiom` stating \|[5]_q!·m_e − 68.896\|/68.896 < 0.03 at `q₀ = 1.109978595554181` | E: an empirical 3 % bound inside a formal result, at the retired CODATA-2018 muon pin; the narrative calls 68.9 fitted. "Term 9" of a "seven-term" formula |
+| C13 | `prop:positive-definite-dagger` | genuine | **C, verified**: "non-degeneracy forces ⟨f,f⟩ ≠ 0" is false (isotropic vectors); "pivotal ⇒ S² = id" is not general; ⟨f,f⟩ = s² is asserted, not shown; positivity of ∫_A is not a hypothesis |
+| C14 | `thm:gauge-conformal-invariance` | genuine but trivial cancellation | statement vacuous with α unconstrained; physics prose |
+| C15 | `prop:cell-depth-truncation` | genuine | item 4 rests on unformalised Kazhdan–Lusztig facts, as stated |
+| C16 | `prop:genus-maximal-descent` | conjunct 2 **A** (projects hypothesis `hhurwitz`); conjunct 1 arithmetic | "maximal genus consistent with the Hurwitz bound" is meaningless (the bound holds for every g ≥ 2; Bring's curve has 120 automorphisms, not 252) |
+| C17 | `prop:skew-poisson-integration` | **A** (three claim fields) | "skewed-Poisson" undefined; Frobenius relation vs bialgebra compatibility conflated |
+| C18 | `lem:mi-sw-abelianisation-cartan` | **A** (four fields + ext) | H, E± span sl₂(ℂ), not su(2); a gauge-dependent A⁰ equated with λ_SW |
+| C19 | `prop:h3-frobenius-casimir-markov-trace` | genuine | clean. **An agent report that item 4 writes [3]!/[3] as 1/[2] instead of [2] is wrong**: item 4 is a sum of 1/dim_q, and dim_q(2,1) = [3]!/[3] = [2], so 1/[2] is correct; 1 + 1/[2] = (q²+q+1)/(q²+1) checks |
+| C20 | `lem:bring-cone-reeb-quaternionic-twist` | genuine (ring identities) | **An agent report of a sign error is wrong**: the `.md` defines [M_x,M_y] := M_y∘M_x − M_x∘M_y, the same order as the Lean, and (p·i)·j − (p·j)·i = 2·(p·k). Remaining flags: "Reeb flow is the geodesic flow" vs the Boothby–Wang fibre rotation; degree of α∧(dα)ⁿ; singular cone vertex |
+
+Tally: Class A in 9 of 20 (C04, C05, C06, C07, C09, C12, C16 partial, C17,
+C18), tautology in 2 (C03, C11), genuine Lean in 9 (C01, C02, C08, C10, C13,
+C14, C15, C19, C20). Pass 1 found Class A in roughly the same proportion.
+
+### Old-premise check (the owner's 2026-11-21 instruction)
+
+Only **C12** rests on a superseded input: the retired CODATA-2018 muon pin
+`1.109978595554181` and a fitted 68.896 MeV. C04's narrative uses the
+current photon form σ₀σ₁⁻¹. No block in this window uses the old σ₀σ₁
+photon, the trefoil electron as primary, or T(2,n_s).
+
+## 3. Restatements (owner ruling: "Restate to what Lean proves")
+
+Each `.md` statement now says only what its `lean.ref` theorem proves, and
+each `.ts` caveat note opens with "Statement restated 2026-11-21 …".
+
+| block | bean | new statement (summary) |
+|---|---|---|
+| `prop:unstable-atom-decay-channel` | `qou-ni0g` | off the boundary variety and given the LP-duality selection input: minimisers coincide; IVT crossing for continuous E. Existence of λ* not claimed |
+| `prop:su2-emergence-dagger-unitarity` | `qou-1iit` | a 2×2 matrix preserving the standard Hermitian product lies in U(2); the categorical identification is a stated hypothesis |
+| `prop:mobius-energy-frobenius-kernel` | `qou-n3xv` | given the Hodge-star and Killing-form reductions as hypotheses, K_FH → 1/r² |
+| `prop:golden-quartet-galois` | `qou-k9tf` | root set of x⁴ − 3x² + 1, φ·(1/φ) = 1, √5 ↦ −√5 substitutions; orbit/action facts named as informal |
+| `prop:alpha-em-shift-multiplicative-chain` | `qou-tdhw` | the index identity [α_shift(T_{2,9}), α_shift(T_{3,5})] = [9, 10]; α_EM left to `prop:em-coupling-projection` |
+| `prop:crossed-module-euler-characteristic` | `qou-zxuy` | the Borromean quaternion h² trace is −12 by finite computation over ℤ[i]; the match with dim V·χ(Σ₄) is recorded, not derived |
+| `prop:staircase-corner-hook` | `qou-pwo1` | for ρ_k = (k,…,1), arm = leg = k − 1, so the corner hook is 2k − 1 |
+| `prop:c5-involution-leibniz-decomposition` | `qou-xxa9` | defines c₅^dec = −b² − 1/2 and proves c₅^dec = −3/2 + 1/[2]_q²; not identified with the ladder rung c₅ |
+| `prop:confinement-categorical` | `qou-mtc9` | statement unchanged; the Lean now states it with an honest `sorry` (field `confinement_ident` deleted a second time) |
+
+The beans stay open: each restatement narrows a claim to what is proved and
+leaves the original, stronger claim unproved.
+
+## 4. Verification of this PR
+
+- Render-QA grep battery on the eight edited math `.md` files: balanced
+  `$`, `$$` and braces; no `+`/`-`/`*` list-hijack line inside a `$$` block.
+  The pipeline render was not run.
+- `c5` identity checked by hand: b² = (q⁴+q²+1)/(q²+1)² = 1 − q²/(q²+1)²,
+  and b²(1+√2) = (21+14√2)/(24+16√2) = 7/8.
+- `confinement_categorical.lean`: lean-direct and `#print axioms` result is
+  recorded in the PR body (expected `sorryAx`).
+- `.qa.json` sidecars of the edited blocks will show source-hash drift;
+  `qa-sweep` does not load at the pinned platform (bean `qou-4jhp`).
+
+## 5. New findings to bean
+
+- C12: an `axiom` carrying a numeric empirical bound at a retired pin.
+- C09, C13: narrative proofs that do not prove the statement.
+- C03, C11: tautological Lean behind a substantive-sounding statement.
+- C04, C06, C07, C16, C17, C18: Class A projections.
+- Sampler: five `decl-not-found` refs in the window.
