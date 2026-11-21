@@ -3,8 +3,8 @@
   "label": "rem:unmapped-torus-knots",
   "kind": "remark",
   "paths": {
-    "ts": "folio/quantum-observable-universe/predicted-spectra/unmapped-torus-knots.ts",
-    "md": "folio/quantum-observable-universe/predicted-spectra/unmapped-torus-knots.md"
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/unmapped-torus-knots.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/unmapped-torus-knots.md"
   },
   "source_hashes": {
     "md": "5602b0f90506",
@@ -302,7 +302,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"na\"],\"chapter\":\"predicted-spectra\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"na\"],\"chapter\":\"knots-particles-confinement\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -598,7 +598,7 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/predicted-spectra/unmapped-torus-knots.ts:0: forward ref: uses rem:knot-formula-table (manifest pos 254) which appears after this block (pos 47) in the chapter"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/unmapped-torus-knots.ts:0: forward ref: uses rem:knot-formula-table (manifest pos 254) which appears after this block (pos 47) in the chapter"
       }
     ],
     "detangler-section-band": [

@@ -104,7 +104,6 @@ export default chapter({
         "stable-nucleus-valley",
         "torus-hopf-stability",
         "torus-hopf-stability-proof",
-        "unmapped-torus-knots",
         "torus-knot-prime-powers",
         "force-knot-identification",
         "weak-vertex-left-projector",
