@@ -48,6 +48,7 @@ import QOU.MathlibExt.MarkovTrace
 import QOU.MathlibExt.HeckeToTemperleyLieb
 import QOU.MathlibExt.TraceRadicalNondegenerate
 import QOU.MathlibExt.LocalCocycleTransport
+import QOU.MathlibExt.LocalCocycleGenerated
 import QOU.MathlibExt.TemperleyLiebSpanning
 import QOU.MathlibExt.TemperleyLiebWedderburn
 import QOU.MathlibExt.TemperleyLiebNormalForm
@@ -1801,6 +1802,8 @@ import QOU.Mass.KZHolonomy.FlatCocycle
 import QOU.Mass.KZHolonomy.FlatGauge
 import QOU.Mass.KZHolonomy.ODETransport
 import QOU.Mass.KZHolonomy.SmoothGauge
+import QOU.Mass.KZHolonomy.ConfConnected
+import QOU.Mass.KZHolonomy.BraidGauge
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
