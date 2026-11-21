@@ -42,6 +42,21 @@
       "note": "1.6233075 < 1.709468523 < 1.8018366"
     },
     {
+      "name": "route T: m_e c_q^2 hbar_q = E0",
+      "ok": true,
+      "note": "4.1859813632945"
+    },
+    {
+      "name": "route D: -ln(eps_n)/ln q + ln(eps_p)/ln q = 2",
+      "ok": true,
+      "note": "exact 2"
+    },
+    {
+      "name": "two inverse temperatures differ: ln q < 1/hbar_q",
+      "ok": true,
+      "note": "0.10434072 vs 10.092679"
+    },
+    {
       "name": "shared factor: log cell unchanged",
       "ok": true,
       "note": "0.88219731693023"
@@ -69,7 +84,9 @@
       "L0_log_E0": "0.87353662138",
       "LT_log_E0full": "0.88219731693",
       "S0_perstep_E0": "8.37196272659",
-      "ST_perstep_E0full": "8.45496671126"
+      "ST_perstep_E0full": "8.45496671126",
+      "D_unit_me_cq2": "84.4955362183",
+      "D_unit_me": "1.02199790138"
     },
     "rows_over_me": {
       "linear_E0": "0.630606154362",
@@ -77,7 +94,9 @@
       "L0_log_E0": "1.70946852278",
       "LT_log_E0full": "1.72641708117",
       "S0_perstep_E0": "16.3835223444",
-      "ST_perstep_E0full": "16.5459570902"
+      "ST_perstep_E0full": "16.5459570902",
+      "D_unit_me_cq2": "165.353639385",
+      "D_unit_me": "2.0"
     }
   },
   "comparison": {
@@ -107,6 +126,14 @@
       "ST_perstep_E0full": {
         "vs_Q_beta_pct": "980.737",
         "vs_mn_minus_mp_pct": "553.735"
+      },
+      "D_unit_me_cq2": {
+        "vs_Q_beta_pct": "10700.5",
+        "vs_mn_minus_mp_pct": "6433.16"
+      },
+      "D_unit_me": {
+        "vs_Q_beta_pct": "30.6346",
+        "vs_mn_minus_mp_pct": "-20.9795"
       }
     }
   },

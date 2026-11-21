@@ -108,3 +108,38 @@ is recorded in the PR or commit that lands it.
    stays and the ×2.4 hunt continues on PR #8836 / #8868.
 2. **The scale.** S leaves |c| free. The corpus has only E₀. A derivation would have to say what
    energy one unit of log-weight costs, from CAL-1 and CAL-2. None is on record.
+
+## 8. Deriving the scale |c| (owner: "Try to derive"; pre-registration addendum 1)
+
+**What S already forces.** A scale that rescaled with ε would break S, so |c| cannot carry the
+trace normalisation. It is m_e·φ(q), built from CAL-1 and CAL-2 only. This excludes the one
+scale that would make the log map agree with the linear map at small differences
+(|c| = E₀·ε̄, which gives back the linear cell).
+
+**The corpus reads the trace as a partition function, so |c| is a temperature:**
+E(X) = −k_B T·log ε(X), the free energy. Two definitions on record give T, and they disagree.
+
+| route | temperature | |c| | cell | status |
+|---|---|---|---|---|
+| **T** | `def:quantum-temperature`: k_B T_q = ℏ_q in natural units; energy unit m_e·c_q² (`def:information-speed-of-light`, CAL-1) | m_e·c_q²·ℏ_q = **E₀ exactly** (`kT_eq_e0`) | 2E₀·log q = **0.873537 MeV** (`routeT_cell`) | derived from three definitions on record |
+| **D** | `prop:beta-eq-ln-q-dictionary`: β = ln q | 1/ln q in the dictionary's units | **exactly 2 units** (`routeD_cell`) | the dictionary fixes no MeV unit |
+
+So route T **derives** |c| = E₀ (order zero), and with it the base E₀ itself acquires a reading:
+E₀ = m_e·c_q²·ℏ_q is the thermal energy k_B T_q, not only "energy per Planck tick". The tower
+factor does not come out of route T; it stays ruled, not derived.
+
+**The two temperatures conflict.** β = ln q (dictionary) is strictly below β_q = 1/ℏ_q
+(`def:quantum-temperature`) for every 1 < q < 2 (`dictionary_beta_lt_quantum_beta`); at q₀ they
+are 0.1043 and 10.093. They are not two forms of one definition. This is a corpus inconsistency,
+recorded here, not resolved. Route D's cell in MeV depends on an unstated unit: 2m_e = 1.022 MeV,
+or 2m_e·c_q² = 84.5 MeV (diagnostics only).
+
+**Comparison (outside any proof).** Route T: +11.66 % against Q_β; it is below 2m_e for every q,
+so it cannot be m_n − m_p (2.531 m_e). Route D with unit m_e: +30.6 % against Q_β, −21.0 %
+against m_n − m_p. Nothing selected.
+
+**What is derived and what is not.**
+- Derived, given S and the partition-function reading: the log form, the sign, word-independence,
+  and |c| = E₀ via route T.
+- Not derived: which corpus temperature is the physical one (T or D); whether the tower factor
+  belongs; and the reading (Q_β or m_n − m_p) of the cell.

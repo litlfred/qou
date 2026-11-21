@@ -207,4 +207,47 @@ theorem log_cell_tower_lt_two (q : ℝ) (hq : 1 < q) : 2 * e0Tower q * Real.log 
     _ = 2 * q / (2 * q - 1) := by field_simp; ring
     _ ≤ 2 := by rw [div_le_iff₀ h21]; linarith
 
+/-! ## The scale as a temperature (pre-registration addendum 1)
+
+Route T: `def:quantum-temperature` gives `k_B T_q = ℏ_q = (q−1)/q` in natural units, and
+`def:information-speed-of-light` converts mass to energy with `c_q² = 1/(q−1)²`. With the CAL-1
+mass unit `m_e`, `k_B T_q` in units of `m_e` is `c_q²·ℏ_q`. Route D: the `β = ln q` dictionary
+(`QBetaEnergyDictionary.energyOf`) reads energies as `−ln y / ln q`. -/
+
+/-- **Route T: the thermal energy `m_e·c_q²·ℏ_q` is exactly `E₀`.** -/
+theorem kT_eq_e0 (q : ℝ) (hq : 1 < q) : (1 / (q - 1)) ^ 2 * ((q - 1) / q) = e0 q := by
+  unfold e0
+  have h1 : q - 1 ≠ 0 := by linarith
+  have h0 : q ≠ 0 := by linarith
+  field_simp
+
+/-- **Route T cell.** The free-energy map `E = −k_B T_q·log ε` gives `2·(E₀/m_e)·log q`. -/
+theorem routeT_cell (q t D : ℝ) (hq : 1 < q) (ht : 0 < t) (hD : 0 < D) :
+    (-(e0 q) * Real.log (epsN q t D)) - (-(e0 q) * Real.log (epsP q t D))
+      = 2 * e0 q * Real.log q := by
+  have := log_cell (-(e0 q)) 0 q t D (by linarith) ht hD
+  simp only [add_zero] at this
+  rw [this]; ring
+
+/-- **Route D cell.** In the `β = ln q` dictionary's units the cell is exactly `2`. -/
+theorem routeD_cell (q t D : ℝ) (hq : 1 < q) (ht : 0 < t) (hD : 0 < D) :
+    (-Real.log (epsN q t D) / Real.log q) - (-Real.log (epsP q t D) / Real.log q) = 2 := by
+  have hl : Real.log q ≠ 0 := (Real.log_pos hq).ne'
+  have := log_cell (-1) 0 q t D (by linarith) ht hD
+  simp only [add_zero, neg_one_mul] at this
+  rw [← sub_div, this]
+  field_simp
+  ring
+
+/-- **The two corpus temperatures disagree.** For `1 < q < 2` the dictionary's inverse temperature
+`ln q` is strictly below `def:quantum-temperature`'s `β_q = 1/ℏ_q = q/(q−1)`. -/
+theorem dictionary_beta_lt_quantum_beta (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
+    Real.log q < q / (q - 1) := by
+  have hq0 : 0 < q := by linarith
+  have h1 : Real.log q < q - 1 := by
+    have := Real.log_lt_sub_one_of_pos hq0 (ne_of_gt hq); linarith
+  have h2 : 1 < q / (q - 1) := by
+    rw [lt_div_iff₀ (by linarith)]; linarith
+  linarith
+
 end QOU.QBeta.SpectatorEnergyMap
