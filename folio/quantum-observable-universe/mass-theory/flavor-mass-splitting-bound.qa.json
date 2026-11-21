@@ -115,6 +115,21 @@
         },
         "reviewed_tree": "63f64f571de9aeae758b5706b992424371ec586a",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "minor. lean.ref QOU.FlavorDressing.flavor_mass_splitting_bound. The bound matches the Lean conclusion. The banner says 'the closed form ... enters as an explicit hypothesis'; in the referenced declaration it is derived from [FlavorSplitSubstrateMass m_p m_n q] and the hypothesis PairSkeinNucleonSplit, and M_N is (m_p+m_n)/2. Only flavor_mass_splitting_bound_of_split takes the closed form as a hypothesis."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -335,6 +350,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). Fits mass-theory."
       }
     ],
     "da-false-claim": [
@@ -3081,6 +3111,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). No instance."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -3132,6 +3177,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). No instance."
       }
     ],
     "trap-em-dash": [
@@ -3183,6 +3243,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 34 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). No instance."
       }
     ],
     "trap-triples": [
@@ -3234,6 +3309,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 34 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). No instance."
       }
     ],
     "trap-closing-aphorism": [
@@ -3285,6 +3375,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). No instance."
       }
     ],
     "trap-meta-commentary": [
@@ -3336,6 +3441,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). No instance."
       }
     ],
     "trap-thesis-restatement": [
@@ -3387,6 +3507,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). No instance."
       }
     ],
     "trap-performed-warmth": [
@@ -3438,6 +3573,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). No instance."
       }
     ],
     "trap-superlative": [
@@ -3489,6 +3639,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). No instance."
       }
     ],
     "trap-nonspeakable": [
@@ -3540,6 +3705,21 @@
         "reviewed_at": "2026-08-15T10:31:00.350Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). No instance."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3857,8 +4037,76 @@
         },
         "reviewed_tree": "63f64f571de9aeae758b5706b992424371ec586a"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). Italic statement is the bound and the symbol definitions only."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "Full read of thm:flavor-mass-splitting-bound (.md unchanged by #8953; .ts gained a status authorNote). Ordering on R, q > 1; archimedean side."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "No proof text in the block; Lean proof over R."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "5777aa5c3d81",
+          "ts": "11dbcc5540c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:40:00.000Z",
+        "reviewed_sha": "f493e2fc0ddd999cbea98bdbd33246cc8cce5483",
+        "evidence": "uses = [prop:flavor-dressed-mass-from-substrate-split, conj:flavor-split-substrate-mass]; the conj edge is the §3b-cond item 4 edge, transitive but deliberate."
+      }
     ]
   },
-  "updated_at": "2026-11-21T08:16:53.788Z",
+  "updated_at": "2026-11-21T20:40:00.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
