@@ -103,6 +103,10 @@ check("route T: m_e c_q^2 hbar_q = E0", abs(kT - E0) < mp.mpf("1e-50"), s(kT))
 check("route D: -ln(eps_n)/ln q + ln(eps_p)/ln q = 2", abs((mp.log(eP) - mp.log(eN)) / L - 2) < mp.mpf("1e-50"), "exact 2")
 check("two inverse temperatures differ: ln q < 1/hbar_q", L < 1 / hb, f"{s(L,8)} vs {s(1/hb,8)}")
 
+unitD = (L / (1 / hb)) * me / (q0 - 1) ** 2  # addendum 2: dictionary unit in MeV
+check("addendum 2: dictionary unit = E0 ln q", abs(unitD - E0 * L) < mp.mpf("1e-50"), s(unitD))
+check("addendum 2: route D converted = route T", abs(2 * unitD - rows["L0_log_E0"]) < mp.mpf("1e-50"), s(2 * unitD))
+
 # A common factor: linear cell rescales, log cell does not (S in numbers).
 fL = mp.mpf(3) / 4  # an arbitrary common factor; the identity holds for every f > 0
 lin_shared = E0T * abs(fL * eN - fL * eP)
