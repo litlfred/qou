@@ -26,7 +26,10 @@ in the type.
 The class reads the conjecture's `≈` as equality of the leading-order
 term. That is the strongest reading, so every result proved from it is
 conditional on the leading-order statement and says nothing about the
-higher-order correction.
+higher-order correction. At the physical masses the equality is not met
+exactly (`rem:flavor-split-substrate-codata-comparison`), so the class is a
+model hypothesis: results proved from it are statements about the model
+under this reading, not about measured masses.
 
 This is the archimedean side of the §7c wall: the statement compares
 real masses and uses the ordering `1 < q`, so it is stated over `ℝ`.
