@@ -16,6 +16,6 @@ export default definition({
   tags: [
     "bonding-capacity",
     "valence",
-    "trefoil",
+    "hopf-link",
   ],
 });

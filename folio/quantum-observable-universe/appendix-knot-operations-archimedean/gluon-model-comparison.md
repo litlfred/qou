@@ -30,7 +30,7 @@ where $\mathrm{cx} = \mathrm{cx}(q_0,q_1) \cdot \mathrm{cx}(q_0,q_2) \cdot \math
 
 Model A matches CODATA exactly (residual $< 10^{-6}$ MeV). The other models overshoot $|\Delta|$, giving $|Q| > 0.87$ MeV.
 
-Quarks interact as single-crossing unknots, not as full trefoils (Definition 4.27.1): replacing each crossing with a full trefoil braid word ($\sigma_0\sigma_1\sigma_0$ for $\mathfrak{u}$, $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ for $\mathfrak{d}$) triples $|\Delta \times E_0|$ to $-2.51$ MeV, away from CODATA.
+Quarks interact as single-crossing unknots, not as full three-crossing words (Definition 4.27.1): replacing each crossing with the electron word ($\sigma_0\sigma_1\sigma_0$ for $\mathfrak{u}$, $\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ for $\mathfrak{d}$) triples $|\Delta \times E_0|$ to $-2.51$ MeV, away from CODATA.
 
 **Interpretation.**
 The Borromean braid $B_3$ has NF:

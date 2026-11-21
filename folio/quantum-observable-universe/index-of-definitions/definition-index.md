@@ -98,7 +98,7 @@
 | [def:ccg-cosimplicial-identities](#def:ccg-cosimplicial-identities) | Cosimplicial identities for the jet/descent face and degeneracy maps | Ch 4 |
 | [def:coulomb-charge](#def:coulomb-charge) | Coulomb charge of a knot composite | Ch 7 |
 | [def:covalent-bond-types](#def:covalent-bond-types) | Covalent bond (shared Hopf links) | Ch 17 |
-| [def:covalent-bond-shared-trefoil](#def:covalent-bond-shared-trefoil) | Covalent bond as shared electron trefoil | Ch 16 |
+| [def:covalent-bond-shared-trefoil](#def:covalent-bond-shared-trefoil) | Covalent bond as shared electrons | Ch 16 |
 | [def:crossing-energy](#def:crossing-energy) | Crossing energy of a knot composite | Ch 7 |
 | [def:curvature-rank](#def:curvature-rank) | Curvature-rank $r(T_w)$ | Ch 11 |
 | [def:brane-boundary](#def:brane-boundary) | Defining boundary of the brane | Ch 4 |

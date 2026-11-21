@@ -8,7 +8,7 @@ vanishing coefficient.
 
 **Notation.** $h = q - q^{-1}$ (Hecke amplitude). The NF basis is
 $\{\ \gamma,\ \sigma_0,\ \sigma_1,\ L_+,\ L_-,\ e^-\ \}$, with
-$e^- = \sigma_0\sigma_1\sigma_0$ (the trefoil). The operator $\gamma$
+$e^- = \sigma_0\sigma_1\sigma_0$ (closure: the Hopf link). The operator $\gamma$
 is the two-sided identity: $\gamma \cdot b_j = b_j$ and
 $b_i \cdot \gamma = b_i$. The identity rows below (the header row
 $\gamma \cdot b_j$ and the right-multiply rows $b_i \cdot \gamma$)
