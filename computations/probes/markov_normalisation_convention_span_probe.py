@@ -202,7 +202,9 @@ def main() -> int:
         "corpus_fixes": STRANDS_PER_NUCLEON,
     })
     # ---- the scale correction, and the withdrawal it forces -----------------
-    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    # _qbeta_e0 is imported at module level (line 98); a function-local re-import
+    # here bound it as a LOCAL of main(), so the earlier use at line ~178 raised
+    # UnboundLocalError and this producer could not run at all.
     e0 = _qbeta_e0.order_zero_scaled(M_E_MEV, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     lo_e0, hi_e0 = lo * e0 / M_E_MEV, hi * e0 / M_E_MEV
     w.add_data("SCALE_CORRECTION_2026_08_31_VERDICT_WITHDRAWN", {
