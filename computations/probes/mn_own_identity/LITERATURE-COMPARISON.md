@@ -751,3 +751,22 @@ hol − 1 is O(h²), so the holonomy drops out at this order and only the Reeb t
 Verdict, as registered: scope-(a) negative for this one definition. N is not 12. The rank 6
 only counts the nucleon states, and the registration did not allow multiplying it by anything.
 All checks pass (Hecke relation, invariance of the weight spaces, limit equal to tr(D₁²)).
+
+## §25 The n − p difference of tr(𝒟²) (pre-registered 6f6fa5fb819), and the "12 ≠ κμ" lemma
+
+Probe `mn_d2_np_difference_probe.py`. Exact result:
+
+Δ(q) = tr_{W_n}(𝒟²) − tr_{W_p}(𝒟²) = 2(q−1)⁵(q+1)⁴(q⁴+q²+1)/q⁸ = **2 q⁻¹(1 − q⁻¹) h⁴[3]_q**
+= 2 q⁻¹(1 − q⁻¹)|μ|².
+
+- The holonomy-squared part is 0 and the Reeb-squared part is 0. Only the **cross term**
+  survives: the Reeb amplitude times the holonomy modulus |μ|².
+- Leading order: Δ = 3h⁵ + O(h⁶). No 12 appears as the order or the coefficient. It is listed
+  as such and not pursued further.
+
+Lean: `QOU/MassTheory/TwelveNotHolonomyMultiple.lean`, sorry-free, axioms propext /
+Classical.choice / Quot.sound, generic field. It proves h⁴[3]_q and Δ both vanish at q = 1,
+so no κ independent of q gives κ·f(q) = 12 on a domain containing 1. The content is
+elementary, because it is only evaluation at q = 1. It does not exclude a κ that depends on q,
+or a 12 from outside this class. The Lean proves facts about the closed form; the matrix
+identity Δ = 2q⁻¹(1−q⁻¹)h⁴[3]_q is checked in sympy only.
