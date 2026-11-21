@@ -8766,3 +8766,11 @@ Owner route Y. Pre-reg `76ddb991d3`. Lean `QOU/QuarkState/YukawaVacuumPairing.le
 
 ## 2026-11-21 (PR #8699): E_gs β-decay sign, short model only
 The P3 side finding about `beta_decay_energy_negative` is resolved in Lean: the vacuous existential is removed and replaced by the sorry-free short-model statement E(p) − E(n) = −|h|. It does not bear on Q_β. The sign is model-dependent (11-letter +0.064, V³ 0, per #8682), so nothing about which nucleon element is canonical follows. Nothing wired.
+
+## 2026-11-21 owner rulings (routes V/L/W/Y)
+
+- **V (#8699): merged** (4bd48b65ca). Vacuous `beta_decay_energy_negative` replaced by the proved short-model theorem E(p) − E(n) = −|h|.
+- **L (#8693): STOPPED as an energy theory** (owner option 3) until the nucleon and lepton words are derived. κ·log|tr| is additive for every κ, so it fixes neither scale nor sign; +E₀ gives Q = −0.489 MeV. PR stays draft as a recorded result.
+- **W (#8696): all four words kept open** (D mirror-vertex grammar, A V₁³, B passage σ₀σ₁σ₂, C σ₂). Owner asked for the implications of each and which can be ruled out; follow-up agent dispatched.
+- **Y (#8694): owner asked whether a right-handed singlet strand is consistent with physics**; answered in chat, no ruling yet.
+- #8698 (meson cluster, option 1) merged with the conjecture restated (option A): κ = ε · partnerCrossings.
