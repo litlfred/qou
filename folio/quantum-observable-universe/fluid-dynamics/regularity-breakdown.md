@@ -1,29 +1,35 @@
-*Within a QOU $(\mathbf{C}, A, \tau)$.* The statements below concern the QOU's internal $q$-Navier--Stokes flow; identifying that internal flow with the classical $\mathbb{R}^3$ equation is the separate open categorical-to-classical bridge and is not asserted here.
+*Within a QOU $(\mathbf{C}, A, \tau)$.* Part A below concerns the QOU's internal $q$-Navier--Stokes flow. Part B is a statement about the classical Navier--Stokes equation on $\mathbb{R}^3$. Identifying the internal flow with the classical equation is the separate open categorical-to-classical bridge and is not asserted here.
 
-The global regularity theorem holds for every $q > 1$. The classical Navier--Stokes regularity problem asks what happens at $q = 1$. The QOU framework dictates that $q = 1$ is a **critical point** where regularity undergoes a phase transition.
+The global regularity theorem ([$q$-NS well-posedness](#thm:q-ns-wellposedness)) holds for every $q > 1$. This block records what is expected at the endpoint $q = 1$. The two parts must be kept apart: Part A is about the $q$-family, Part B is a classical blow-up scenario, and neither implies the other without the bridge.
 
 **Conjecture (regularity breakdown).**
-There exist smooth, finite-energy initial data $v_0$ such that the classical Navier--Stokes equation develops a singularity in finite time. Specifically:
 
-1. **Blowup of enstrophy.** There exists a time $T^* < \infty$ such that $\lim_{t \to T^{*-}} \int_{\mathbb{R}^3} |\omega(x, t)|^2dx = +\infty$, where $\omega = \nabla \times v$ is the vorticity.
-2. **Vortex sheet concentration.** The blowup occurs by concentration of vorticity onto a codimension-1 surface (vortex sheet). The *spatial* Hausdorff dimension of the sheet is $d_H = 2$. This is not, a priori, in contradiction with the Caffarelli--Kohn--Nirenberg bound (the *parabolic* Hausdorff dimension of the space--time singular set of a suitable weak solution is $\leq 1$): the two measure different sets. A single-instant $2$-dimensional spatial concentration would violate the CKN bound, so compatibility requires the sheet to be read scale-by-scale along the discretely self-similar approach (item 3), which spreads the concentration through space--time rather than onto one time slice; establishing that the resulting space--time set stays within the CKN bound is a required reconciliation, not yet carried out.
-3. **Discretely self-similar asymptotics.** Near the blowup time, the solution approaches a *discretely* self-similar profile: in Leray's similarity variables $y = (x - x_0)/\sqrt{T^* - t}$, $s = -\log(T^* - t)$, the profile is periodic in $s$ (with period set by the root-of-unity scaling $\lambda_\kappa$) rather than steady. The continuous ($s$-independent) self-similar profile solving the Leray equations is excluded \cite{necas-ruzicka-sverak1996}; see [Discretely self-similar blowup profile: the Leray equations with $\mathrm{SU}_q(2)$ constraints](#prop:leray-profile).
+*Part A (the $q$-family).* Define the enstrophy order parameter
+$$
+\Omega(q) = \sup_{t \geq 0} \sum_k [k]_q^2\, |\hat{v}_k(t)|^2 .
+$$
+For each $q > 1$, $\Omega(q) < \infty$. Part A asserts that, for suitable data, $\Omega(q) \to +\infty$ as $q \to 1^+$, with $\Omega(q) \sim (q - 1)^{-\alpha}$ for some critical exponent $\alpha > 0$.
 
-**The three obstructions.**
+*Part B (classical model).* There exists a nonzero backward discretely self-similar solution of the classical Navier--Stokes equation on $\mathbb{R}^3$ with fixed viscosity, in the sense of [the discretely self-similar Leray profile](#def:leray-profile): a smooth profile $V(y, s)$, periodic in $s = -\log(T^* - t)$ with some period $P > 0$, with $|V(y, s)| = O(|y|^{-1})$ as $|y| \to \infty$ and $V(\cdot, s) \notin L^3(\mathbb{R}^3)$. No value of $P$ is asserted.
 
-**Obstruction 1: Loss of UV regularisation.** At $q = 1$, the $q$-Laplacian eigenvalues degenerate from exponential to polynomial: $[k]_1 = k$. The dissipation rate grows only quadratically, insufficient to control the cubic nonlinearity in the enstrophy equation. The $q$-deformation provides a spectral gap that closes at $q = 1$.
+**Consequences and constraints.**
 
-**Obstruction 2: Viscosity vanishes.** The quantum viscosity $\nu_q = (q-1)/(2q) \to 0$ as $q \to 1$. The classical limit is infinitely turbulent. The finite-dimensional reduction fails because $N_{\mathrm{eff}} \to \infty$.
+1. **Enstrophy blow-up is a consequence of Part B.** The enstrophy of the field is $(T^* - t)^{-1/2} E(s)$ with $E(s) = \|\nabla_y V(\cdot, s)\|_{L^2}^2$. A periodic $E$ that is positive somewhere makes the enstrophy unbounded as $t \to T^{*-}$ (Lean `lerayEnstrophy_blowup`). Independently, at any blow-up time $\|\nabla v(t)\|_{L^2}^2 \geq c\,(T^* - t)^{-1/2}$ \cite{leray1934}.
+2. **The singular set is a point.** A discretely self-similar blow-up has a single singular point $(x_0, T^*)$ \cite{chae-wolf2016dss}. The earlier claim of concentration on a vortex sheet of spatial Hausdorff dimension $2$ is withdrawn; it is incompatible with this and with $d_H = 1$ in [the counterexample conjecture](#conj:ns-counterexample).
+3. **The decay class is forced.** A steady profile in $L^3$ is trivial \cite{necas-ruzicka-sverak1996}, extended to $L^q$, $3 < q \leq \infty$, and to local energy estimates \cite{tsai1998}. The $L^3$ norm is invariant under the Leray rescaling, so along a discretely self-similar solution it is periodic in $s$; if it is continuous it is bounded (Lean `dss_L3_norm_not_tendsto_atTop`), while $\|v(t)\|_{L^3} \to \infty$ at any blow-up time \cite{seregin2012}. Hence no discretely self-similar blow-up has a profile continuous in $s$ with values in $L^3$ \cite{chae2013adss}. A bounded square-integrable profile lies in $L^3$, so it is excluded as well. Faster decay than $|y|^{-1}$ puts the profile in $L^3$; slower decay makes $v(\cdot, T^*)$ unbounded away from $x_0$. This leaves $|V| \sim |y|^{-1}$.
+4. **The scaling factor.** Write $P = 2 \log \lambda$ with $\lambda > 1$. Scaling factors $\lambda$ close to $1$ are excluded under a scale-critical bound \cite{chae-wolf2016dss}; the case of $\lambda$ well above $1$ is open \cite{bradshaw-tsai2018survey}. The period is not tied to the root-of-unity ladder $q_\kappa = e^{i\pi/\kappa}$: $q_\kappa^{2\kappa} = 1$ (Lean `qKappa_pow_two_kappa`), and [the substrate parameter](#def:substrate-parameter) is not a root of unity.
+5. **Integer angular degrees only.** On the spin-$j$ summand the central element $-1 \in \mathrm{SU}(2)$ acts by $(-1)^{2j}$, and on velocity fields on $\mathbb{R}^3$ it acts trivially, since the action factors through $\mathrm{SO}(3)$. So only integer $j$ occur (Lean `IntegerSpin.even_of_neg_one_pow_eq_one`).
 
-**Obstruction 3: Cascade becomes continuous.** The $q$-turbulence spectrum has discrete transfer rates with exponentially decreasing amplitude. At $q = 1$, the cascade becomes continuous and the transfer rate $T_{k \to k+1} \to \varepsilon_k^{-1/3}$, allowing energy to reach arbitrarily high wavenumbers in finite time.
+**Heuristics for Part A.** The following explain why Part A is expected; none is a proof ingredient.
 
-**Critical exponents.**
-The transition at $q = 1$ has the structure of a second-order phase transition. Define:
-- **Enstrophy order parameter**: $\Omega(q) = \sup_{t \geq 0} \sum_k [k]_q^2|\hat{v}_k(t)|^2$. For $q > 1$, $\Omega(q) < \infty$. At $q = 1$, $\Omega(1) = +\infty$.
-- **Critical exponent**: $\Omega(q) \sim (q - 1)^{-\alpha}$ as $q \to 1^+$.
-- **Correlation length**: The maximum active wavenumber $k_{\max}(q) \sim \log_q(\mathrm{Re}_q^{3/4}) \to \infty$ as $q \to 1^+$.
+*Loss of UV regularisation.* At $q = 1$ the $q$-Laplacian eigenvalues degenerate from exponential to polynomial growth, $[k]_1 = k$, so the spectral gap that controls the cubic term in the enstrophy equation closes.
 
-**Relation to the Clay problem.**
-The QOU framework reframes the Clay formulation as a degeneration problem. The $q$-NS equation is globally regular for all $q > 1$, and the Clay question asks whether this regularity survives the limit $q \to 1$. The three obstructions above suggest it does not. The classical Navier--Stokes equation is the critical point of a one-parameter family of well-posed equations. Singularity formation is the mechanism by which infinite-dimensional classical dynamics emerge from finite-dimensional $q$-deformed dynamics.
+*Viscosity vanishes.* The quantum viscosity is $\nu_q = (q - 1)/(2q)$, and $\nu_q \to 0$ as $q \to 1^+$. The formal $q \to 1$ endpoint of the $q$-family is therefore the Euler equation, not the Navier--Stokes equation with fixed viscosity. This is why Part A does not by itself say anything about Part B.
+
+*Cascade becomes continuous.* The discrete transfer rates of [the $q$-turbulence spectrum](#prop:q-turbulence-spectrum) merge into a continuous cascade at $q = 1$.
+
+**What $\Omega(1) = +\infty$ does and does not mean.** $\Omega(q)$ is a supremum over all $t \geq 0$. A quantity can be unbounded on $[0, \infty)$ while bounded on every $[0, T]$ (Lean `sup_unbounded_without_finite_time_blowup`), so divergence of $\Omega$ is not finite-time blow-up. The analogy with a second-order phase transition, with $q$ in the role of temperature and $\Omega$ as order parameter, is a heuristic; it is not derived from the QOU axioms.
+
+**Relation to the Clay problem.** The Clay problem asks whether smooth finite-energy data for the Navier--Stokes equation with fixed viscosity can blow up in finite time. A discretely self-similar solution with $|V| \sim |y|^{-1}$ has infinite global energy, so Part B is relevant to the Clay problem only as the local profile of a finite-energy blow-up near $(x_0, T^*)$; local asymptotics of this kind with profile continuous in $s$ with values in $L^3 \cap C^2$ are again excluded \cite{chae2013adss}. Part B is a scenario for a positive answer that survives the exclusions listed above; it is open. Part A concerns a family whose $q \to 1$ endpoint is Euler, so it does not reframe the Clay problem as a statement about the limit $q \to 1$.
 
 **Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
