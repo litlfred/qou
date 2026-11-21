@@ -97,6 +97,29 @@ ground state. Which reading is meant is an owner question (bean note).
 Scope (a), not (b): neither construction alone produces a `1/n²` ladder. Stabilisation gives the
 geometric trace factor `z_D^k`; this says nothing about a closure with further terms.
 
+## 4a. Under the owner's electron ruling (added 2026-11-21, same day)
+
+**The electron is `σ₀σ₁σ₀` and its closure is the Hopf link** (owner, 2026-11-21, "for now";
+the trefoil `σ₀³` on `B₂` is kept as the backup reading). PR #8724 (merged) measured the same
+fact: every odd-length word in `B₃` closes to two components, and `σ₀σ₁σ₀` closes to the Hopf
+link. §4 above judged the two constructions against a trefoil electron, which this ruling
+retires as the primary reading. Restated against it:
+
+- **Ground state.** `σ₀σ₁σ₀` is the longest element `w₀` of `S₃`, so in `H₃` a photon cannot
+  raise it: every product `γ·e` or `e·γ` needs rewriting and stays at length ≤ 3 (§3). In `H₃`,
+  "non-reduced" means the product is already at the top. It does not mean excited.
+- **Strand-adding curl** (`transfer-matrix-operator-properties.md`): `σ₀σ₁σ₀ → σ₀σ₁σ₀σ₂ → …`
+  is Markov stabilisation, so the closure **stays the Hopf link**. The excited word is
+  **reduced**; the level shows as word length (+1 per absorption) and as a factor `z_D` on the
+  Markov trace. This construction is consistent with the ruling.
+- **Same-strand writhe +2** (`hydrogen-orbitals.md`) applies only to the backup trefoil reading
+  (`σ^{2n+1}` on `B₂`, closing to `T(2, 2n+1)`). Under the primary ruling it does not describe
+  the electron.
+
+So, under the ruling: **an excited electron is not a non-reduced word.** It is a reduced word on
+more strands, with the same closure. The non-reduced products arise only when the photon acts
+inside `H₃`.
+
 ## 5. Related work
 
 - PR #8724 (other session): which word is the electron; GS interaction criteria, measure only.
