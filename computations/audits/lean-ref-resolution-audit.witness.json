@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T18:30:40.026870+00:00",
-  "commitSha": "e83049d005b98b587b41e948f0c66ef2d7ac1778",
+  "computedAt": "2026-11-21T20:06:28.473877+00:00",
+  "commitSha": "f67bc83e0266bc95fee4ee0018d39a779564a648",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -16,7 +16,7 @@
     {
       "name": "ok_count_matches_total_minus_failures",
       "computed": "1302",
-      "expected": "1328",
+      "expected": "1327",
       "passed": false,
       "tolerance": "0",
       "unit": "count (gates only at full closure)",
@@ -28,7 +28,7 @@
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "3fd7261456a0",
-  "scriptCommitSha": "e83049d005b98b587b41e948f0c66ef2d7ac1778",
+  "scriptCommitSha": "f67bc83e0266bc95fee4ee0018d39a779564a648",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,7 +52,7 @@
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_blocks_with_lean_ref": 1328
+    "total_blocks_with_lean_ref": 1327
   },
   "data": {
     "by_result": {
@@ -60,7 +60,7 @@
       "lake_root_no_decl": 4,
       "grep_no_match": 7,
       "sibling_no_decl": 13,
-      "lake_root_missing_grep_hit": 2
+      "lake_root_missing_grep_hit": 1
     },
     "rows": [
       {
@@ -6777,7 +6777,7 @@
       {
         "path": "folio/quantum-observable-universe/knots-particles-confinement/four-term-pair-nucleon.ts",
         "ref": "qou:QOU.ParticleInteractions.four_term_pair_nucleon",
-        "kind": "proposition",
+        "kind": "conjecture",
         "pkg": "qou",
         "decl_path": "QOU.ParticleInteractions.four_term_pair_nucleon",
         "sibling_exists": false,
@@ -18336,7 +18336,7 @@
       {
         "path": "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.ts",
         "ref": "qou:QOU.Interactions.q_beta_spectral_bridge",
-        "kind": "proposition",
+        "kind": "conjecture",
         "pkg": "qou",
         "decl_path": "QOU.Interactions.q_beta_spectral_bridge",
         "sibling_exists": true,
@@ -19341,24 +19341,6 @@
         "grep_hit_under_lake_root": false,
         "result": "ok",
         "resolved_via": "sibling"
-      },
-      {
-        "path": "folio/quantum-observable-universe/observations/terminal-resolution-proof.ts",
-        "ref": "qou:QOU.MassTheory.PairSkeinNucleon.terminal_resolution",
-        "kind": "proof",
-        "pkg": "qou",
-        "decl_path": "QOU.MassTheory.PairSkeinNucleon.terminal_resolution",
-        "sibling_exists": false,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hits": [
-          "folio/quantum-observable-universe/mass-theory/terminal-resolution.lean"
-        ],
-        "grep_hit": true,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_missing_grep_hit"
       },
       {
         "path": "folio/quantum-observable-universe/observations/three-calibration-discipline.ts",
