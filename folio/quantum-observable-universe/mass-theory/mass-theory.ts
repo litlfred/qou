@@ -151,8 +151,6 @@ export default chapter({
             "frobenius-gram-matrix-table2-data",
             "frobenius-gram-matrix-context",
             "frobenius-gram-matrix-proof",
-            "cs-gram-determinant-ratio",
-            "gram-determinant-plancherel-ratio",
             "em-spectral-completeness",
             "em-spectral-completeness-proof",
             "borromean-markov-trace-closed-form",

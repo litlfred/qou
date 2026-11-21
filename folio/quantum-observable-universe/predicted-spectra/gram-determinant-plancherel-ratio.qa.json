@@ -3,9 +3,9 @@
   "label": "prop:gram-determinant-plancherel-ratio",
   "kind": "proposition",
   "paths": {
-    "ts": "folio/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.ts",
-    "md": "folio/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.md",
-    "lean": "folio/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.lean"
+    "ts": "folio/quantum-observable-universe/predicted-spectra/gram-determinant-plancherel-ratio.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/gram-determinant-plancherel-ratio.md",
+    "lean": "folio/quantum-observable-universe/predicted-spectra/gram-determinant-plancherel-ratio.lean"
   },
   "source_hashes": {
     "md": "5c2d5e50b5a2",
@@ -867,7 +867,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"fixed-q0\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"fixed-q0\",\"symbolic\"],\"chapter\":\"predicted-spectra\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -1415,7 +1415,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.ts:0: forward ref: uses rem:gram-matrix-spectral-connection (manifest pos 580) which appears after this block (pos 84) in the chapter"
+        "evidence": "folio/quantum-observable-universe/predicted-spectra/gram-determinant-plancherel-ratio.ts:0: forward ref: uses rem:gram-matrix-spectral-connection (manifest pos 580) which appears after this block (pos 84) in the chapter"
       }
     ],
     "detangler-section-band": [

@@ -130,6 +130,8 @@ export default chapter({
         "em-coupling-projection-table2-data",
         "em-coupling-projection-interpretation",
         "em-coupling-chern-simons",
+        "cs-gram-determinant-ratio",
+        "gram-determinant-plancherel-ratio",
         "gram-kappa-spectral-interpretation",
         "chern-simons-as-knot-invariant",
         "em-coupling-bring-zero-mode",
