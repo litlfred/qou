@@ -20,6 +20,11 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "status",
+      date: "2026-11-21",
+      body: "**Open, with no known reading under which it has content** (owner: keep open, 2026-11-21; bean `qou-6qbv`). Six readings have been made precise and none selects the magic numbers: (1) generic Hecke $H_n$ with Coxeter length and Hochschild cohomology, true for every $n$ (`cor:hecke-length-limit-page-vanishing`); (2) $H_n$ at a root of unity, whose semisimplicity is upward closed in $n$; (3) Bialynicki-Birula purity on a smooth projective variety, which always holds; (4) seven natural coefficient bimodules, each giving a predicate constant for $n \\geq 2$ (`QOU.ShellCondensation.CoefficientPurity`); (5) $S_5$-stable Bring lattices, whose ranks are all divisible by 4 since $H_1 = 2(\\mathrm{std} \\otimes \\mathrm{sgn})$ (`QOU.ShellCondensation.BringLatticeRanks`); (6) any rule preserved by $n \\mapsto n \\pm 1$ (`QOU.ShellCondensation.SelectorPrune`). A working reading needs purity, not mere vanishing, and a truth set in $n$ that is neither upward nor downward closed. `docs/audits/2026-11-20-homological-shell-condensation-well-posedness.md` sections 6-8.",
+    },
+    {
       kind: "note",
       date: "2026-11-20",
       body: "Formalize-first derivation (`QOU.ShellCondensation.SelectorPrune`, sorry-free). (i) `offDiag_vanish_iff_pure`: the statement is equivalent to purity of the induced filtration on cohomology, every $H^k$ sitting in filtration degree $k$; it is not the vanishing of $H^{\\geq 1}$. (ii) `not_upward_closed` / `not_downward_closed`: no predicate on $n$ that is preserved by $n \\mapsto n+1$, or by its reverse, matches the magic set on $0..126$. Semisimplicity of $H_n$ at a root of unity is upward closed in $n$, so it cannot be the selector. Open readings: Hochschild with a chosen coefficient module, and the Bring-surface lattices of `conj:magic-numbers-bring`. Bean `qou-6qbv`.",
