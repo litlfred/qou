@@ -1203,6 +1203,7 @@ import QOU.Mathlib.HadamardFactorization
 import QOU.Mathlib.JensenZeroCounting
 import QOU.Mathlib.ExponentOfConvergence
 import QOU.Mathlib.HadamardZeroFree
+import QOU.Mathlib.C1GevreyLinearCoeff
 import QOU.Mathlib.CanonicalProductGrowth
 import QOU.Mathlib.HadamardQuotient
 import QOU.Mathlib.HadamardMinimumModulus
