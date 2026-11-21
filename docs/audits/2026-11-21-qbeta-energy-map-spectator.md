@@ -170,3 +170,9 @@ Result: n − p cell = 2E₀·ln q = 2m_e·ln q/(q(q−1)) = **0.873537 MeV** at
 lies in (2m_e/q², 2m_e/q) for every q > 1. No fitted or selected quantity enters. Still not
 derived: the tower factor (ruled, +1 %), and which observable the cell is. Comparison (outside any
 proof): +11.66 % against Q_β; it cannot be m_n − m_p (below 2m_e at every q).
+
+**Note (eigenphase thread, PR #8836 commit 6222f1f6c1).** `QOU/QBeta/QuarkWeightTrace.lean`
+(sorry-free there) gives the same-trace premise a representation-theoretic proof: Jimbo R commutes
+with Δ(F), Δ³(F) intertwines the two quark sectors, so ε_p = q²·ε_n. Its extension to the
+K-weighted partial trace over extra strands is checked numerically (q = 2, 3/2, 79 gluon words),
+not proved. Its epsP/epsN match this file's, so the two can be joined.
