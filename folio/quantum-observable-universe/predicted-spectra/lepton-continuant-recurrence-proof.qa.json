@@ -7,7 +7,7 @@
     "md": "folio/quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence-proof.md"
   },
   "source_hashes": {
-    "md": "43cddcc29340",
+    "md": "fbfe1b392f70",
     "ts": "352dd7d8630a"
   },
   "criteria": {
@@ -41,6 +41,25 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "voice-status-leak": [
@@ -59,6 +78,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-probe-narrative": [
@@ -77,6 +113,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "cite-named-theorem": [
@@ -95,6 +148,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-agent-speak": [
@@ -113,6 +183,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-emoji-content": [
@@ -131,6 +218,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-first-person-work": [
@@ -149,6 +253,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-time-stamped-notes": [
@@ -167,6 +288,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-unicode-crash": [
@@ -185,6 +323,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-editorializing": [
@@ -203,6 +358,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-scholarly-default": [
@@ -236,6 +408,23 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-title-scholarly": [
@@ -254,6 +443,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-ai-slop": [
@@ -287,6 +493,23 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-author-notes-pollution": [
@@ -305,6 +528,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "voice-status-section": [
@@ -323,6 +563,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "framework-canonical": [
@@ -341,6 +598,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "wall-side-correct": [
@@ -359,6 +633,24 @@
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
         "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -493,6 +785,25 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "canonical-calibration-count": [
@@ -511,6 +822,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-witness-pinned": [
@@ -529,6 +857,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -547,6 +892,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -565,6 +927,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -583,6 +962,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "compute-witness-exists": [
@@ -601,6 +997,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "compute-lp-dual-present": [
@@ -619,6 +1032,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "detangler-no-forward-ref": [
@@ -637,6 +1067,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a",
+          "graph": "0beb7af586c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "detangler-section-band": [
@@ -655,6 +1103,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a",
+          "graph": "0beb7af586c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -673,6 +1139,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a",
+          "graph": "0beb7af586c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -691,6 +1176,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a",
+          "graph": "0beb7af586c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -718,7 +1222,38 @@
           "in_degree": 0,
           "cone_size": 85,
           "depth": 16,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
+          "worst_target": ""
+        }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a",
+          "graph": "0beb7af586c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 0,
+          "cone_size": 72,
+          "depth": 23,
+          "pagerank": 7.5e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -746,6 +1281,29 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a",
+          "graph": "0beb7af586c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "detangler-topic-coherence": [
@@ -764,6 +1322,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a",
+          "graph": "0beb7af586c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -782,6 +1358,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a",
+          "graph": "0beb7af586c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -801,6 +1395,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -822,6 +1435,25 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -841,6 +1473,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -884,6 +1535,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-vacuous": [
@@ -899,6 +1565,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-circular": [
@@ -914,6 +1595,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-overclaim": [
@@ -929,6 +1625,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-hidden-dof": [
@@ -944,6 +1655,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-non-sequitur": [
@@ -973,6 +1699,37 @@
         },
         "reviewed_at": "2026-11-15T21:56:04.396Z",
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Re-read after the table relabel. σ₀^{n+1} = σ₀(a_n + b_nσ₀) with σ₀² = hσ₀ + 1 gives a_{n+1} = b_n, b_{n+1} = a_n + hb_n = b_{n−1} + hb_n; initial conditions (1,0), (0,1). Every step follows.",
+        "notes": "Pre-existing, not graded here: decimal evaluations at the calibrated q₀ ≈ 1.1100 sit inside a proof block."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -988,6 +1745,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-citation-misuse": [
@@ -1003,6 +1775,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1018,6 +1805,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-empirical-fragility": [
@@ -1033,6 +1835,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-physical-implausibility": [
@@ -1048,6 +1865,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-reproducibility": [
@@ -1063,6 +1895,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-referee-verdict": [
@@ -1078,6 +1925,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "expo-milnor-clarity": [
@@ -1132,6 +1994,29 @@
           "broken_edges": 0,
           "redundant_edges": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
       }
     ],
     "uses-formal-coverage": [
@@ -1152,6 +2037,25 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
@@ -1171,6 +2075,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
       }
     ],
     "trap-negation-contrast": [
@@ -1206,6 +2128,21 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read after the relabel of the lepton-tower table (e⁻ backup, μ⁻/τ⁻ not ruled). Recomputed a₃ = h ≈ 0.209, b₃ = 1 + h² ≈ 1.044 at q₀ ≈ 1.10998. No negation contrast instance found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1241,6 +2178,21 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read after the relabel of the lepton-tower table (e⁻ backup, μ⁻/τ⁻ not ruled). Recomputed a₃ = h ≈ 0.209, b₃ = 1 + h² ≈ 1.044 at q₀ ≈ 1.10998. No rhetorical pivot instance found."
       }
     ],
     "trap-em-dash": [
@@ -1276,6 +2228,21 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read after the relabel of the lepton-tower table (e⁻ backup, μ⁻/τ⁻ not ruled). Recomputed a₃ = h ≈ 0.209, b₃ = 1 + h² ≈ 1.044 at q₀ ≈ 1.10998. No em dash instance found."
       }
     ],
     "trap-triples": [
@@ -1311,6 +2278,21 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read after the relabel of the lepton-tower table (e⁻ backup, μ⁻/τ⁻ not ruled). Recomputed a₃ = h ≈ 0.209, b₃ = 1 + h² ≈ 1.044 at q₀ ≈ 1.10998. No triples instance found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1346,6 +2328,21 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read after the relabel of the lepton-tower table (e⁻ backup, μ⁻/τ⁻ not ruled). Recomputed a₃ = h ≈ 0.209, b₃ = 1 + h² ≈ 1.044 at q₀ ≈ 1.10998. No closing aphorism instance found."
       }
     ],
     "trap-meta-commentary": [
@@ -1381,6 +2378,21 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read after the relabel of the lepton-tower table (e⁻ backup, μ⁻/τ⁻ not ruled). Recomputed a₃ = h ≈ 0.209, b₃ = 1 + h² ≈ 1.044 at q₀ ≈ 1.10998. No meta commentary instance found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1417,6 +2429,22 @@
         "severity": "major",
         "evidence": "The paragraph closing the 'lepton tower' section restated, in weaker words, the two things the two preceding lines had just said: 'The recurrence relations underlying this lepton tower are elementary identities in $\\mathbb{Z}[q^{\\pm 1}]$' duplicated the immediately preceding 'The recurrence is exact in $\\mathbb{Z}[q^{\\pm 1}]$', and 'satisfy a standard induction over $n$ via the quadratic Hecke relation' duplicated the section-1 derivation that ends 'This completes the induction.' It carried no fact not already on the page.",
         "notes": "FIXED inline (2 sentences, pure prose, both facts stated verbatim elsewhere in the same block, no meaning change). before -> 'The recurrence is exact in $\\mathbb{Z}[q^{\\pm 1}]$. The decimal values are evaluations at $q = q_0$.\\n\\nThe recurrence relations underlying this lepton tower are elementary identities in $\\mathbb{Z}[q^{\\pm 1}]$. The Morgan-Voyce sequences $\\{a_n\\}$ and $\\{b_n\\}$ satisfy a standard induction over $n$ via the quadratic Hecke relation.\\n\\n## Structural content' ; after -> 'The recurrence is exact in $\\mathbb{Z}[q^{\\pm 1}]$. The decimal values are evaluations at $q = q_0$.\\n\\n## Structural content'. Math delimiters re-checked after the edit: 1 display pair, balanced inline. Separately: the block also spelled the name 'Morgan-Voyce' with a hyphen against 'Morgan--Voyce' in the parent proposition; the deletion removes that inconsistency incidentally. See the Morgan--Voyce misattribution finding recorded on prop:lepton-continuant-recurrence — the sequences are the Fibonacci polynomials, not Morgan--Voyce."
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "The sentences the earlier fail quoted ('elementary identities in ℤ[q^{±1}]', 'standard induction') are no longer in the block. The closing 'Structural content' lines add the per-step increment (q − q⁻¹)b_n and the odd-n indexing rather than restating the section.",
+        "notes": "Ruling (reported separately, not graded under this criterion): 'The lepton generations form a discrete tower indexed by odd n' still presents the σ₀ⁿ tower as the lepton generations, unqualified, while the table above it now marks e⁻ as backup and μ/τ as not ruled."
       }
     ],
     "trap-performed-warmth": [
@@ -1452,6 +2480,21 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read after the relabel of the lepton-tower table (e⁻ backup, μ⁻/τ⁻ not ruled). Recomputed a₃ = h ≈ 0.209, b₃ = 1 + h² ≈ 1.044 at q₀ ≈ 1.10998. No performed warmth instance found."
       }
     ],
     "trap-superlative": [
@@ -1487,6 +2530,21 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read after the relabel of the lepton-tower table (e⁻ backup, μ⁻/τ⁻ not ruled). Recomputed a₃ = h ≈ 0.209, b₃ = 1 + h² ≈ 1.044 at q₀ ≈ 1.10998. No superlative instance found."
       }
     ],
     "trap-nonspeakable": [
@@ -1522,6 +2580,21 @@
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "Full read of the proof, the lepton-tower table and the structural-content paragraph, after the fix recorded under trap-thesis-restatement. Recomputed the whole table at 40 dps from the block's own recurrence: n=3 (0.20906, 1.04371, 1.25277), n=5 (0.427258, 1.13303, 1.56029), n=7 (0.664129, 1.27187, 1.93600) — all nine printed values correct. Pin discrimination: 'q_0 approx 1.1100' and the table are reproduced identically by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 (they agree to 8 digits); the erroneous rounding 1.1097 gives net(n=3)=1.252 and net(n=7)=1.933 against the printed 1.253 and 1.936, so the table EXCLUDES 1.1097 while discriminating nothing among the three live pins. The 'This completes the induction.' closer is standard proof bookkeeping, not a trap.",
         "notes": "no trap of this class; full-context read"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read after the relabel of the lepton-tower table (e⁻ backup, μ⁻/τ⁻ not ruled). Recomputed a₃ = h ≈ 0.209, b₃ = 1 + h² ≈ 1.044 at q₀ ≈ 1.10998. No nonspeakable instance found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1541,9 +2614,226 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a",
+          "graph": "0beb7af586c3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "fbfe1b392f70",
+          "ts": "352dd7d8630a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "2de81a0a4859e80fd50fb203169339400f181b0b",
+        "notes": "unchanged since origin/main"
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:04.396Z",
+  "updated_at": "2026-11-21T12:54:52.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
