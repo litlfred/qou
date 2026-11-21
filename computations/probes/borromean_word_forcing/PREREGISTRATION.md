@@ -125,3 +125,26 @@ Why (ii) is not automatic: at t = −1 the image of β_Bor is [[13, 8], [8, 5]],
 and trace alone does not fix SL(2,ℤ) conjugacy in general. A same-χ word with no
 conjugator found is reported as "not found within |c| ≤ 7", with its closure data, and
 then checked separately; it is not called "not conjugate" without a proof.
+
+## Addendum 5 (2026-11-21 23:10Z, owner chose "1 2"; written before any computation)
+
+**E6. All lengths, by reduction to SL(2,ℤ).** Cited standard facts (not proved here):
+(F1) Burau at t = −1 (σ₀ ↦ R = [[1,1],[0,1]], σ₁⁻¹ ↦ L = [[1,0],[1,1]]) is onto SL(2,ℤ)
+with kernel ⟨Δ⁴⟩, Δ = σ₀σ₁σ₀, writhe(Δ⁴) = 12. (F2) Every SL(2,ℤ) conjugacy class with
+trace > 2 contains a positive word in R, L, unique up to cyclic rotation.
+Consequences used: writhe is a homomorphism and ⟨Δ⁴⟩ meets writhe 0 trivially, so
+writhe-0 braids map injectively to SL(2,ℤ), and two writhe-0 braids are conjugate in B₃
+iff their images are conjugate in SL(2,ℤ) (lift the conjugator). For writhe 0,
+T(w) = q^writhe·Burau_{t=q⁻²}(w) = Burau(w), so χ(w) at q = i is tr of the t = −1 image;
+χ(β_Bor)(i) = 18. So any writhe-0 w with χ(w) = χ(β_Bor) has image of trace 18.
+
+Plan: list all cyclic positive R/L-words of trace 18 (finite), lift each to the
+braid σ₀^{a₁}σ₁^{−b₁}…, keep the classes with a writhe-0 lift (writhe ≡ 0 mod 12, then
+multiply by Δ^{−4k}), and compute the generic χ of each. Prediction: exactly one such
+class has χ = χ(β_Bor), namely β_Bor's (R L)³ ↔ trace of [[13,8],[8,5]]. If it holds,
+"same χ at writhe 0 ⇒ conjugate to β_Bor" holds at **every length**, given F1 and F2.
+If another class has χ = χ(β_Bor), that is a counterexample at some length > 16, and
+it will be reported with its word.
+
+**E7 (side check, no prediction).** Whether "same χ ⇒ conjugate" fails for *some*
+writhe-0 class in general (other traces), e.g. via a braid and its reverse.
