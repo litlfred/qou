@@ -588,3 +588,32 @@ route T, then, at least one of these three must change: (Q); one temperature sha
 nucleon energies; or reading the nucleon energy as a linear sum of crossing trace values. This result
 does not choose among them. Dividing the crossing weights by τ(σ + σ⁻¹) would force W = 1, but that
 divisor is picked to meet the constraint, so it is not a derivation.
+
+## 24. Nucleon energy from the weight-space trace (prereg Addendum 14; owner "Drop nucleon energy is sum")
+
+The owner dropped the reading "nucleon energy = linear sum of crossing trace values". (Q) and route T
+are kept. Replacement premise (G), which is a premise and is not derived: the nucleon's Gibbs weight is
+the trace of K^{⊗3}·β_Bor over the weight space of its flavour content in V^{⊗3}, with u of weight +1
+and d of weight −1. On that space K^{⊗3} is the scalar q^m, so w_N = q^{m_N}·T_{m_N}(β_Bor).
+p = (u,u,d) has m = +1 and n = (u,d,d) has m = −1.
+
+Lean, `QOU/QBeta/WeightSpaceNucleon.lean`, lean-direct exit 0, no `sorry`, standard axioms only:
+- `hecke_plus0/1`, `hecke_minus0/1`, `braid_plus`, `braid_minus` (generic field, from q² = hq + 1):
+  the restricted 3×3 matrices satisfy the Hecke and braid relations, so σ⁻¹ = σ − h.
+- `trace_plus_eq_minus`: the trace of β_Bor = (σ₀σ₁⁻¹)³ is the same on M₊₁ and M₋₁. Without the
+  Hecke relation they differ by 3h⁴(hq − q² + 1), which it kills.
+- `trace_plus_closed`: with h = q − q⁻¹ that trace is
+  T = −(q¹² − 3q¹⁰ + 3q⁸ − 5q⁶ + 3q⁴ − 3q² + 1)/q⁶ (T = 3 at q = 1; T ≈ 2.994186 at the proton q₀,
+  a rendering, not in any proof).
+- `np_eq_cell` (real, T > 0): with E = −E₀·ln(q^m·T), E_n − E_p = 2E₀·ln q, the n–p cell.
+
+**Consequence.** Under (G) the trace no longer weights the quark masses. It enters only as the
+flavour-independent term −E₀·ln T, which cancels in n − p. The quark split gets total weight 1 by
+construction, so the §19/§22/§23 mismatch does not arise. The resulting n − p is the cell,
+0.873537 MeV at the proton q₀. Against the comparison value m_n − m_p = 1.29333 MeV that is −32.46 %.
+So (G) gives consistency, not accuracy: the gap to m_n − m_p is unchanged from the whole-nucleon log map.
+
+What (G) adds over the whole-nucleon log map: that map was a premise; here it follows from the
+weight-space trace plus the m ↔ −m symmetry of β_Bor's trace, which is proved for this braid only.
+What stays a premise: (G) itself, (L), and that the weight-space trace (not the convention-D Markov
+trace) is the Gibbs weight. How T relates to τ_D(β_Bor) is not settled here; it does not affect n − p.
