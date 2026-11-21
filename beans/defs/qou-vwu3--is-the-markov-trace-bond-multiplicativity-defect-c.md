@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T17:46:48Z
-updated_at: 2026-11-17T23:08:22Z
+updated_at: 2026-11-21T06:30:00Z
 parent: qou-v2om
 ---
 
@@ -214,3 +214,82 @@ The owner ruled that the γγ selection rule also covers the nuclear bond letter
 ## 2026-11-17 sibling sweep
 See qou-078y: cyclic-square cross-term branch is related (dressing-blind cross term).
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+
+## 2026-09-14 note, ported 2026-11-21 from the stranded branch `claude/cyclic-square-cross-term-is-dressing-blind-2026-09-14` (commit c8aacf3343, old `.beans/` path). Superseded-word caveat of 2026-11-15 above applies to any old-letter numbers below; the Lean is for generic bond weights.
+
+## FOLLOW-ON 2026-09-14 — the MECHANISM behind "d₀ and d₁ are absent", now proved
+
+The n=4 measurement above reported, without a mechanism, that Δ₄ = (z + d₂)(z² − hz − 1)
+with **d₀ and d₁ absent**. The mechanism is not an n=4 fact at all. By
+`interleaved_eq_stab_cyclicSquare` the n=4 word is the three-strand cyclic square
+`(g_m g_{m+1})²` **stabilised once**, and the stabilisation contributes exactly the
+`(z + d₂)`. So the real claim is about **n = 3**:
+
+> **The cyclic square's cross term is BLIND to the square's own dressings.**
+
+**Lean** (sorry-free, `[propext, Classical.choice, Quot.sound]`):
+`QOU.MathlibExt.RevisitClass.cyclicSquare_cross_term_dressed` — for `b₀ = g_m + s·1`,
+`b₁ = g_{m+1} + t·1`,
+
+    tr(x b₀b₁b₀b₁) − tr(x b₀² b₁²) = (z² − h z − 1) · tr x
+
+the **same value as for bare generators**; `cyclicSquare_cross_term` is the `s = t = 0`
+case. Generic `CommRing R` / `Ring A` / `Algebra R A`, no ℝ, no anchor.
+
+### Why it is true — and the file already contained the reason
+
+`dressed_difference_expand` (new, pure ring identity): expanding the dressed difference
+leaves exactly four brackets, with **no** `s²`, `t²`, `s²t` or `st²` term, because each
+of those multiplies the *same* monomial in `a, c` in both words:
+
+    (acac − a²c²) + t(aca − a²c) + s(cac − ac²) + st(ca − ac)
+
+and the three brackets that could have carried the dressing are precisely the three that
+`RevisitClassCrossTerm`'s own revisit-class table already lists as cross-term-free:
+
+| bracket | coeff | value | by |
+|---|---|---|---|
+| `acac − a²c²` | 1 | `(z² − hz − 1)·tr x` | `cyclicSquare_cross_term` (already there) |
+| `aca − a²c` | `t` | 0 | `oneStepRevisit_eq_monotone` (already there) |
+| `cac − ac²` | `s` | 0 | `mirrorRevisit_eq_monotone` (**new**) |
+| `ca − ac` | `s·t` | 0 | `tr_bondCommutator` (**new**) |
+
+`mirrorRevisit_eq_monotone` is the one-step identity read through `hbraid`, then one
+Hecke collapse per side; both sides are `h z² tr x + z tr x`. `tr_bondCommutator` is
+cyclicity alone, using the same `hxc` commutation `cyclicSquare_cross_term` already
+assumes. So the blindness is the revisit-class table read **one degree down**, not a
+coincidence of one computation.
+
+**Probe** `computations/probes/cyclic_square_cross_term_dressing_blind_probe.py`, 12/12,
+exact sympy over ℚ(q,d₀,d₁), zero floating point. Measured (reported, not asserted):
+
+    Δ₃(d₀,d₁) = −(q²−q+1)(q²+q+1)/(q²+1)²      free symbols = ['q']
+
+and it re-derives the merged n=4 closed form `Δ₄ = (z+d₂)·Δ₃` at exact rational sample
+points, so the two measurements are now one statement.
+
+### What it prunes — scope (b) for this word class
+
+A quantity free of `d₀, d₁` is trivially even under the charge conjugation
+`M : d ↦ −h − d`, so the square's own letters carry **no** charge-odd part. A cyclically
+braided triple contributes the identical cross term whatever charges sit on its two
+alternating letters: **this word class cannot distinguish pp from nn** and is not a
+candidate carrier for a charge-antisymmetric (EM / mirror) term, however it is wired.
+Scope (b) — the exclusion rests on a proved bracket identity plus three proved
+vanishings, not on a numerical miss.
+
+### 🛑 CORRECTION to the Status paragraph above — wrong bean cited
+
+The closing line cites **`qou-5vhf`** as the carrier of "which word class a nucleus
+actually is". **That is the wrong bean.** `qou-5vhf` is `completed` and is about *the
+substrate complexity bound cannot select a link* — a different question. The live
+carriers for item 3 are **`qou-sorn`** (which non-monotone words carry a cross term)
+and **`qou-kru4`** (the bond-multiplicativity defect itself). Item 3 is unchanged and is
+still the one that matters; the production atom word is sequential, so no production
+number moves either way.
+
+
+## 2026-11-21: revived on `claude/cyclic-square-dressing-blind-revive-2026-11-17`
+
+Three commits cherry-picked onto current main (the q0-anchor fix was dropped: main already fixed it). `RevisitClassCrossTerm.lean` builds against main with `lean -DautoImplicit=false -s 65536`, sorry-free, axioms propext/Classical.choice/Quot.sound; the probe passes 12/12. No PR yet: waiting for the owner. The bean stays open.
