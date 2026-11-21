@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-11-21T20:19:36Z
+updated_at: 2026-11-21T20:24:03Z
 parent: qou-5p7n
 ---
 
@@ -356,3 +356,6 @@ Owner chose "port #6681" in the project thread "Settle open-problem leftovers". 
 
 ## 2026-11-21: DisjointProductLaw proved (PR #8958)
 markovTrace_disjointProduct proves DisjointProductLaw from the restricted IsMarkovTrace axioms via HeckeRel.reduce (Ocneanu's reduction). Sorry-free. The clusters share one strand; the split case needs shift invariance (not formalised). Still open in this bean: the item-5 projection QOU.BraidKnot.markovTraceRecursiveReducer (library) remains the block's lean.ref.
+
+
+2026-11-21 (N2 thread): item-5 projection fixed in PR #8958 commit 3393c8cfa85. The library item QOU.BraidKnot.markovTraceRecursiveReducer (class field projection, no importers) is deleted, and the block's lean.ref now names markovTrace_disjointProduct (sorry-free). Not formalised: the real reducer's termination (the _terminates lemma is met by a constant tracer), its O(l n!) bound, and the correctness of its output. Those stay open here.
