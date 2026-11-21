@@ -8975,3 +8975,5 @@ Caveats (stay in force):
 2. V and V² close to ONE component, which cannot carry three different uud charges (pre-reg Q3) — so neutrality here is the trivially-charged case.
 3. Ruled weights (qh, −q⁻¹h) still not derived. Scope (a), ≤10 crossings for R-word.
 Bean stays OPEN.
+
+### OWNER (2026-11-21T14:33Z) — card "Adopt": whole-word U(1) neutrality is the γγ selection rule (working conjecture). Recorded in docs/coordination/owner-rulings.md (4ccd95c546f). Open: >10 crossings; derive weights qh, −q⁻¹h. Bean stays OPEN.
