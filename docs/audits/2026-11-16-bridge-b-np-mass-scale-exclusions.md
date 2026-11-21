@@ -179,6 +179,18 @@ One exact fact sharpens the gap. Strand reversal composed with the flavour swap 
 `Ř` and inverts the pivot `K`. So the end choice is the same bit as the sign of n − p. It is not a
 second unknown. Scope (a).
 
+### 10b. Forms for a Stokes boundary, and the M_QED wall term (H7, 2026-11-21)
+
+Result in `computations/probes/bridge_b/h7_result.md`.
+
+- **Forms.** Generic Lie-valued forms now exist (`QOU/Mathlib/LieValuedForms.lean`, rewired into
+  `NonAbelianStokes.lean` today). No specific α, β is defined. Stokes is still an assumed class whose
+  only model is trivial, and no wall sits on `cellBoundary`. No hit.
+- **M_QED, carried all-pairs insertion.** It is constant on each weight space, so it factors out of
+  the wall trace: n − p = −Y with or without the wall.
+- **Slot-averaged exchange.** It is a virtual-photon model, which is not admissible (no virtual
+  photons); comparison only.
+
 ## 11. What remains open
 
 - A symmetry-breaking object (a vacuum or boundary choice in the Higgs role) that distinguishes u from d inside the
