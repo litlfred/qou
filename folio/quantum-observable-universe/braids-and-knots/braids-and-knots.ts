@@ -148,6 +148,7 @@ export default chapter({
         // su2-generators relocated to archimedean-universe/ (PR #823 fit-section-chapter audit)
         "so3-generators",
         "quaternion-so3-motivation",
+        "su2-generators",
       ],
     }),
 

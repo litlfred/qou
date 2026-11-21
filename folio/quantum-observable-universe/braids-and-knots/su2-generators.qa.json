@@ -3,9 +3,9 @@
   "label": "def:su2-generators",
   "kind": "definition",
   "paths": {
-    "ts": "folio/quantum-observable-universe/brings-surface/su2-generators.ts",
-    "md": "folio/quantum-observable-universe/brings-surface/su2-generators.md",
-    "lean": "folio/quantum-observable-universe/brings-surface/su2-generators.lean"
+    "ts": "folio/quantum-observable-universe/braids-and-knots/su2-generators.ts",
+    "md": "folio/quantum-observable-universe/braids-and-knots/su2-generators.md",
+    "lean": "folio/quantum-observable-universe/braids-and-knots/su2-generators.lean"
   },
   "source_hashes": {
     "md": "9055f54fc83f",
@@ -331,7 +331,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"real-positive\"],\"chapter\":\"brings-surface\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"real-positive\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -1225,8 +1225,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.115425Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/su2-generators.lean:57:2: error: No goals to be solved",
-        "evidence": "folio/quantum-observable-universe/brings-surface/su2-generators.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/braids-and-knots/su2-generators.lean:57:2: error: No goals to be solved",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/su2-generators.lean:1",
         "severity": "minor"
       },
       {
@@ -1391,8 +1391,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.115425Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/su2-generators.lean:57:2: error: No goals to be solved",
-        "evidence": "folio/quantum-observable-universe/brings-surface/su2-generators.lean:1",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/braids-and-knots/su2-generators.lean:57:2: error: No goals to be solved",
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/su2-generators.lean:1",
         "severity": "major"
       },
       {
@@ -1425,11 +1425,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.115425Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/su2-generators.lean:57:2: error: No goals to be solved",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/braids-and-knots/su2-generators.lean:57:2: error: No goals to be solved",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/su2-generators.lean:57:2: error: No goals to be solved",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/braids-and-knots/su2-generators.lean:57:2: error: No goals to be solved",
         "severity": "critical",
-        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/su2-generators.lean:57:2: error: No goals to be solved"
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/braids-and-knots/su2-generators.lean:57:2: error: No goals to be solved"
       },
       {
         "result": "pass",

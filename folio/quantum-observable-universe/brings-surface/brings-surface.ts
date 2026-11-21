@@ -47,7 +47,6 @@ export default chapter({
       label: "sec:bring-algebraic-substructure",
       blocks: [
         "bring-algebraic-substructure-intro",
-        "su2-generators",
         "hyperelliptic-quintic",
         "x5-z5-automorphism",
         "x5-z5-automorphism-proof",
