@@ -9,9 +9,9 @@
   },
   "source_hashes": {
     "md": "2ba856f9e63f",
-    "ts": "d9fa99418d1c",
-    "lean": "e75152086b52",
-    "lean_statement": "002245063013"
+    "ts": "20f5a6ce7be3",
+    "lean": "9291a848c309",
+    "lean_statement": "2bac6de310ae"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -41,6 +41,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-status-leak": [
@@ -78,6 +95,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "voice-emoji-content": [
@@ -352,6 +388,42 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-title-scholarly": [
@@ -389,6 +461,25 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "voice-ai-slop": [
@@ -458,6 +549,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-author-notes-pollution": [
@@ -626,6 +734,25 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "q-usage-regime-detected": [
@@ -783,6 +910,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "canonical-no-numerology": [
@@ -857,6 +1003,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -894,6 +1059,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -931,6 +1115,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1005,6 +1208,25 @@
           "def_hash": "b5e2fdf9d66a"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1042,6 +1264,25 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -1079,6 +1320,25 @@
           "def_hash": "791b80875ca1"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "compute-prop-has-probe": [
@@ -1136,6 +1396,25 @@
           "def_hash": "4e3f006a8480"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38950cd4dd0c",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1193,6 +1472,25 @@
           "def_hash": "4e3f006a8480"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8a3b3418b1c5",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "compute-witness-exists": [
@@ -1230,6 +1528,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "compute-lp-dual-present": [
@@ -1267,6 +1584,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1306,6 +1642,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "detangler-section-band": [
@@ -1383,6 +1739,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1463,6 +1839,27 @@
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1523,6 +1920,27 @@
           "def_hash": "19a5005a8bb6"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1589,6 +2007,39 @@
           "edge_span_mean": 13,
           "worst_target": ""
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 2,
+          "in_degree": 7,
+          "cone_size": 6,
+          "depth": 4,
+          "pagerank": 0.001363,
+          "edge_span_max": 25,
+          "edge_span_mean": 13,
+          "worst_target": ""
+        }
       }
     ],
     "detangler-graph-energy": [
@@ -1633,6 +2084,31 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1715,6 +2191,26 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1754,6 +2250,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "bib-cite-resolves": [
@@ -1814,6 +2330,26 @@
           "def_hash": "e703243fe06f"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1874,6 +2410,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1934,6 +2490,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1994,6 +2570,26 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -2054,6 +2650,26 @@
           "def_hash": "83422bec2bb4"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "proof-no-bare-sorries": [
@@ -2111,6 +2727,25 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2d2fc456ab53",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "proof-no-axiom-growth": [
@@ -2168,6 +2803,26 @@
           "def_hash": "a4466d93bf08"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f48af2ee9be8",
+          "script_commit_sha": "unknown",
+          "def_hash": "a4466d93bf08"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -2227,6 +2882,26 @@
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-substantive": [
@@ -2284,6 +2959,25 @@
           "def_hash": "928b5cc3cbd7"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "7b935d9f5fec",
+          "script_commit_sha": "unknown",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "proof-no-conj-propagation-violation": [
@@ -2323,6 +3017,26 @@
           "def_hash": "e49f4f5d3843"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8edc99dd3099",
+          "script_commit_sha": "unknown",
+          "deps_hash": "22292b18c779",
+          "def_hash": "e49f4f5d3843"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "proof-conditional-class-banner": [
@@ -2383,6 +3097,26 @@
           "def_hash": "ddae4938d951"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b1fd3fd4bb84",
+          "script_commit_sha": "unknown",
+          "deps_hash": "8285870ddd65",
+          "def_hash": "ddae4938d951"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "proof-lean-compiles": [
@@ -2443,6 +3177,26 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2528,6 +3282,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "fit-section-chapter": [
@@ -2624,6 +3395,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-side-statement": [
@@ -2693,6 +3481,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-side-proof": [
@@ -2762,6 +3567,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2842,6 +3664,25 @@
         "severity": "major",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. The finding is unchanged at this head.",
         "notes": "Carried forward from the earlier agent review: The Lean checks only the scalar case f = z*id on C^2 (f^dagger f = |z|^2 id), as the new authorNote says; it does not state the general involutivity or positivity. Pre-existing on main; disclosed by this PR, not introduced."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "severity": "major",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone.",
+        "notes": "Earlier fail/major (scalar C^2 check only) is resolved in substance: the Lean now states and proves general clauses. Residual gaps against the .md: (a) the .md is categorical (quantum universe (C, A), morphisms f : 1 -> X for any X); the Lean models only f in A, i.e. X = A in a concrete R-algebra. (b) The .md claims dagger is an involutive structure (def:involutive-structure); the Lean proves the adjoint formula and uniqueness for left-multiplication operators and states in a docstring that with S^2 = id this makes dagger involutive and contravariant, but involution and contravariance of dagger are not stated or proved. (c) 'restricts to S on End(1)' is formalised as S fixing scalars, which is a different statement (it shows S is trivial on End(1), not that dagger equals S there). (d) Clause 4 is the hypothesis hpos read through the rfl lemma f-dagger f = h(f,f), as in the .md."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2892,6 +3733,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2927,6 +3785,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-novelty": [
@@ -2977,6 +3852,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-statement-integrity": [
@@ -3028,6 +3920,25 @@
         "severity": "major",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. The finding is unchanged at this head.",
         "notes": "Carried forward from the earlier agent review: The Lean checks only the scalar case f = z*id on C^2 (f^dagger f = |z|^2 id), as the new authorNote says; it does not state the general involutivity or positivity. Pre-existing on main; disclosed by this PR, not introduced."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "severity": "minor",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone.",
+        "notes": "Earlier fail/major resolved: clauses 1-3 are derived from the class axioms, not projected; clause 4 is honestly a hypothesis, as in the .md. Minor because the involutive-structure clause of the .md is not among the proved conjuncts (gap b)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -3060,6 +3971,25 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "severity": "minor",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone.",
+        "notes": "Clause 4 is discharged by fun f hf => hpos f hf through the definitional f-dagger f = h(f,f); the conclusion is the hypothesis. This mirrors the .md, which also states positivity of dagger as a reading of positivity of h; clauses 1-3 are genuine derivations."
       }
     ],
     "proof-no-trivial-true": [
@@ -3092,6 +4022,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No True conclusion; clauses 1-3 are nontrivial."
       }
     ],
     "proof-no-false-premise": [
@@ -3124,6 +4071,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. The hypotheses are satisfiable, e.g. A = R with eps = id, S = id, h(a,b) = ab positive definite on an ordered field."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -3156,6 +4120,25 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "severity": "minor",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone.",
+        "notes": "FrobeniusAntipodeData.S_invol (S^2 = id) is used by no declaration in the file, and the .md's 'self-adjoint for the pairing' hypothesis is dropped (the docstring says it is not needed). S_invol is unused precisely because the involutivity of dagger it would serve is not proved (gap b)."
       }
     ],
     "proof-no-decide-masking": [
@@ -3188,6 +4171,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No decide or native_decide."
       }
     ],
     "da-false-claim": [
@@ -3254,6 +4254,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-vacuous": [
@@ -3339,6 +4356,25 @@
         "severity": "minor",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. The finding is unchanged at this head.",
         "notes": "Carried forward from the earlier agent review: The positivity clause is the hypothesis 'h positive definite' read back through f^dagger f = h(f,f)."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "severity": "minor",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone.",
+        "notes": "Carried: the positivity clause is the hypothesis 'h positive definite' read back through f-dagger f = h(f,f); now also so in the Lean (clause 4)."
       }
     ],
     "da-circular": [
@@ -3405,6 +4441,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-overclaim": [
@@ -3490,6 +4543,25 @@
         "severity": "minor",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. The finding is unchanged at this head.",
         "notes": "Carried forward from the earlier agent review: Title 'Frobenius dagger is positive-definite' is now conditional on positive-definiteness of h."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "severity": "minor",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone.",
+        "notes": "Carried: the title 'Frobenius dagger is positive-definite' is conditional on positive-definiteness of h."
       }
     ],
     "da-hidden-dof": [
@@ -3556,6 +4628,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-non-sequitur": [
@@ -3622,6 +4711,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -3707,6 +4813,25 @@
         "severity": "major",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. The finding is unchanged at this head.",
         "notes": "Carried forward from the earlier agent review: The Lean checks only the scalar case f = z*id on C^2 (f^dagger f = |z|^2 id), as the new authorNote says; it does not state the general involutivity or positivity. Pre-existing on main; disclosed by this PR, not introduced."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "severity": "major",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone.",
+        "notes": "Earlier fail/major narrowed. Residual gaps against the .md: (a) the .md is categorical (quantum universe (C, A), morphisms f : 1 -> X for any X); the Lean models only f in A, i.e. X = A in a concrete R-algebra. (b) The .md claims dagger is an involutive structure (def:involutive-structure); the Lean proves the adjoint formula and uniqueness for left-multiplication operators and states in a docstring that with S^2 = id this makes dagger involutive and contravariant, but involution and contravariance of dagger are not stated or proved. (c) 'restricts to S on End(1)' is formalised as S fixing scalars, which is a different statement (it shows S is trivial on End(1), not that dagger equals S there). (d) Clause 4 is the hypothesis hpos read through the rfl lemma f-dagger f = h(f,f), as in the .md."
       }
     ],
     "da-citation-misuse": [
@@ -3773,6 +4898,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-definitional-ambiguity": [
@@ -3839,6 +4981,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-empirical-fragility": [
@@ -3905,6 +5064,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-physical-implausibility": [
@@ -3971,6 +5147,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-reproducibility": [
@@ -4037,6 +5230,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-referee-verdict": [
@@ -4105,6 +5315,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -4140,6 +5367,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-probe-narrative": [
@@ -4333,6 +5577,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "milnor-brevity": [
@@ -4380,6 +5641,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-not-machine-trivial": [
@@ -4448,6 +5726,30 @@
           "oracle": "lean-tactic-ladder(trivial|rfl|simp|decide|omega|aesop)",
           "oracle_closed": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-triviality.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "1eebf87b3f20",
+          "script_commit_sha": "unknown",
+          "deps_hash": "458b1a3606a3",
+          "def_hash": "30a1a029710e"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
+        "metrics": {
+          "oracle": "lean-tactic-ladder(trivial|rfl|simp|decide|omega|aesop)",
+          "oracle_closed": 0
+        }
       }
     ],
     "proof-compile-cost": [
@@ -4509,6 +5811,27 @@
           "def_hash": "6ed1c90f444f"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
         "notes": "no docs/audits/lean-profile.json"
       }
     ],
@@ -4572,6 +5895,27 @@
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "96b9bdc29ac9",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
+        "notes": "no docs/audits/lean-profile.json"
       }
     ],
     "uses-editorial-hygiene": [
@@ -4616,6 +5960,31 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "metrics": {
+          "uses_count": 2,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
         "metrics": {
           "uses_count": 2,
           "broken_edges": 0,
@@ -4691,6 +6060,31 @@
           "editorial_only_count": 2,
           "formal_only_sample": "prop:habiro-tail-star-identity"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
+        "metrics": {
+          "formal_only_count": 1,
+          "editorial_only_count": 2,
+          "formal_only_sample": "prop:habiro-tail-star-identity"
+        }
       }
     ],
     "lean-ref-owns-decl": [
@@ -4733,6 +6127,29 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
         "metrics": {
           "decl_claimants": 1
         }
@@ -4805,6 +6222,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -4874,6 +6308,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -4943,6 +6394,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -5012,6 +6480,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -5081,6 +6566,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -5150,6 +6652,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -5219,6 +6738,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -5288,6 +6824,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -5357,6 +6910,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -5426,6 +6996,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:42:24.000Z",
+        "reviewed_sha": "d8fcd84f614786bb26283d98a53335ac75c38404",
+        "evidence": "Re-read at d8fcd84f614 (dadeaa4a). The .md is unchanged; the .ts authorNote and the Lean changed. lean/QOU/frobenius_dagger_positive_definite.lean now works over an R-algebra A with class FrobeniusAntipodeData (eps : A ->l R, S : A ->l A with S_invol, S_anti, S_one), h(a,b) = eps(S a * b), f-dagger = eps o mulLeft (S f). The theorem, over an ordered field and assuming hpos (h(a,a) > 0 for a != 0), proves: (1) h(x a, b) = h(a, S x b); (2) uniqueness of that adjoint among R-linear U; (3) S fixes algebraMap R A r; (4) 0 < f-dagger f for f != 0. lean-direct -DautoImplicit=false -s 65536 exit 0 (this QA, against the main olean snapshot; the file imports only Mathlib); #print axioms frobenius_dagger_positive_definite [propext, Classical.choice, Quot.sound], frobeniusHerm_mul_left and antipode_algebraMap [propext, Quot.sound]. The scalar C^2 check is gone. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -5483,6 +7070,25 @@
           "def_hash": "10db4d17cd96"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "render-math-mode-envelope": [
@@ -5577,6 +7183,25 @@
           "def_hash": "670f26d08110"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d86b94a3a99c",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "lean-no-definitional-laundering": [
@@ -5644,6 +7269,30 @@
           "lambda_constant_fields": 0,
           "definitional_identities": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f2d0ac51567e",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
+        "metrics": {
+          "constant_prop_defs": 0,
+          "lambda_constant_fields": 0,
+          "definitional_identities": 0
+        }
       }
     ],
     "lean-docstring-honesty": [
@@ -5701,6 +7350,25 @@
           "def_hash": "e9d9f6de595f"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f16e4db88c07",
+          "script_commit_sha": "unknown",
+          "def_hash": "e9d9f6de595f"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "foreshadows-point-forward": [
@@ -5778,6 +7446,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "dak-companion-present": [
@@ -5845,6 +7533,23 @@
           "version": "v1"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
         "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
       }
     ],
@@ -5924,6 +7629,23 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
+        "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
       }
     ],
     "dak-label-prefix-matches-kind": [
@@ -5992,6 +7714,23 @@
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6",
+        "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
       }
     ],
     "acronym-in-glossary": [
@@ -6030,6 +7769,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "id-stable": [
@@ -6049,6 +7807,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "proof-no-placeholder-stub": [
@@ -6088,6 +7865,25 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "20f5a6ce7be3",
+          "lean": "9291a848c309",
+          "lean_statement": "2bac6de310ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "de28cc8fe753",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "5fbe4323fc1c6f5a83edbbe2f6a5b8338f1209c6"
       }
     ],
     "da-arity-conflation": [
@@ -6108,6 +7904,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T16:29:49.000Z",
+  "updated_at": "2026-11-21T16:42:24.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

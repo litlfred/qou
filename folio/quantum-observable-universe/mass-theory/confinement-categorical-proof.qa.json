@@ -7,8 +7,8 @@
     "md": "folio/quantum-observable-universe/mass-theory/confinement-categorical-proof.md"
   },
   "source_hashes": {
-    "md": "14abbd8a950f",
-    "ts": "788b37457743"
+    "md": "78243a03c719",
+    "ts": "1db8a17ea4ed"
   },
   "criteria": {
     "da-referee-verdict": [
@@ -41,6 +41,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "fit-section-chapter": [
@@ -73,6 +103,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -90,6 +135,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-vacuous": [
@@ -107,6 +182,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-circular": [
@@ -124,6 +229,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-overclaim": [
@@ -141,6 +276,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-hidden-dof": [
@@ -158,6 +323,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-non-sequitur": [
@@ -191,6 +386,38 @@
         "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
         "severity": "minor",
         "evidence": "Full review 2026-11-21 (earlier evidence was empty). Steps (1)-(3) are standard and sound for A = H_n(q) semisimple at generic q: Hochschild cohomology of a separable algebra vanishes in degree >= 1, so only HH^0 = Z(A) survives; a trace vanishes on [A,A] and HH_0 = A/[A,A] is identified with Z(A) for a symmetric semisimple algebra; Wedderburn splits the integral blockwise. Gaps: (a) the statement's 'colored non-central elements vanish cohomologically' conflates HH^0 = Z(A) (a cohomology group) with elements of A; the proof shows the former, not a statement about elements. (b) mu(e_lambda) = w_lambda names the weight without saying which trace it is (Markov y_lambda times dim, or a Plancherel/Molien weight), so the identification is notational. (c) After the box, the 'confinement reading' and the Vol(B3) = 8G matching dim su(3) = 8 sentence are interpretation and numerology, not premises of the proof; they are not used as steps. No empirical premise; no ruling conflict."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "severity": "minor",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. The finding is unchanged at this head.",
+        "notes": "Carried forward from the earlier agent review: Full review 2026-11-21 (earlier evidence was empty). Steps (1)-(3) are standard and sound for A = H_n(q) semisimple at generic q: Hochschild cohomology of a separable algebra vanishes in degree >= 1, so only HH^0 = Z(A) survives; a trace vanishes on [A,A] and HH_0 = A/[A,A] is identified with Z(A) for a symmetric semisimple algebra; Wedderburn splits the integral blockwise. Gaps: (a) the statement"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -208,6 +435,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-citation-misuse": [
@@ -225,6 +482,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-definitional-ambiguity": [
@@ -242,6 +529,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-empirical-fragility": [
@@ -259,6 +576,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-physical-implausibility": [
@@ -276,6 +623,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-reproducibility": [
@@ -293,6 +670,36 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "bib-cite-resolves": [
@@ -313,6 +720,25 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
       }
     ],
     "voice-status-leak": [
@@ -331,6 +757,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-probe-narrative": [
@@ -349,6 +792,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:08.299Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "cite-named-theorem": [
@@ -367,6 +827,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:08.299Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-agent-speak": [
@@ -385,6 +862,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:08.299Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-emoji-content": [
@@ -403,6 +897,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-first-person-work": [
@@ -421,6 +932,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-time-stamped-notes": [
@@ -439,6 +967,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-unicode-crash": [
@@ -457,6 +1002,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-editorializing": [
@@ -475,6 +1037,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-scholarly-default": [
@@ -508,6 +1087,38 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-title-scholarly": [
@@ -526,6 +1137,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-ai-slop": [
@@ -559,6 +1187,38 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-author-notes-pollution": [
@@ -577,6 +1237,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:08.299Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-status-section": [
@@ -595,6 +1272,23 @@
         },
         "reviewed_at": "2026-08-09T11:33:08.299Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "framework-canonical": [
@@ -613,6 +1307,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "wall-side-correct": [
@@ -631,6 +1342,24 @@
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
         "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -765,6 +1494,25 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
       }
     ],
     "canonical-calibration-count": [
@@ -783,6 +1531,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-witness-pinned": [
@@ -801,6 +1566,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -819,6 +1601,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -837,6 +1636,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -855,6 +1671,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "compute-witness-exists": [
@@ -873,6 +1706,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "compute-lp-dual-present": [
@@ -891,6 +1741,23 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "detangler-no-forward-ref": [
@@ -909,6 +1776,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed",
+          "graph": "6ba7fcea55b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "detangler-section-band": [
@@ -927,6 +1812,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed",
+          "graph": "6ba7fcea55b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -945,6 +1848,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed",
+          "graph": "6ba7fcea55b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -963,6 +1885,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed",
+          "graph": "6ba7fcea55b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -990,9 +1931,40 @@
           "in_degree": 0,
           "cone_size": 12,
           "depth": 10,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
+          "worst_target": ""
+        }
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed",
+          "graph": "6ba7fcea55b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 2,
+          "in_degree": 0,
+          "cone_size": 7,
+          "depth": 6,
+          "pagerank": 7.5e-05,
+          "edge_span_max": 9,
+          "edge_span_mean": 5.5,
           "worst_target": ""
         }
       }
@@ -1018,6 +1990,29 @@
           "fwd_edge_count": 0,
           "worst_span": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed",
+          "graph": "6ba7fcea55b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
       }
     ],
     "detangler-topic-coherence": [
@@ -1036,6 +2031,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed",
+          "graph": "6ba7fcea55b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1054,6 +2067,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed",
+          "graph": "6ba7fcea55b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1073,6 +2104,25 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1094,6 +2144,25 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1114,6 +2183,25 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
       }
     ],
     "voice-branch-jargon": [
@@ -1126,6 +2214,21 @@
           "id": "local/branch-jargon-sweep",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "uses-editorial-hygiene": [
@@ -1150,6 +2253,29 @@
           "broken_edges": 0,
           "redundant_edges": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "metrics": {
+          "uses_count": 2,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
       }
     ],
     "uses-formal-coverage": [
@@ -1170,6 +2296,25 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
@@ -1189,6 +2334,24 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "trap-negation-contrast": [
@@ -1225,6 +2388,21 @@
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
         "evidence": "'are confinement residues, not independent ingredients' is the section's substantive claim about the rank-3 and rank->=4 terms.",
         "notes": "Reported separately: two parenthetical placeholders where references stood -- '(q-Dirac cell scanner witness)' and '(Q-beta path A extended witness)'."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1259,6 +2437,21 @@
         "reviewed_at": "2026-08-21T14:57:52.282Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
         "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no setup-then-reframe pivot."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -1293,6 +2486,21 @@
         "reviewed_at": "2026-08-21T14:57:52.316Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
         "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. em-dash use is ranges/true parentheticals only, not load-bearing."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -1327,6 +2535,21 @@
         "reviewed_at": "2026-08-21T14:57:52.351Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
         "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no reflex three-item list; enumerations are substantive."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -1361,6 +2584,21 @@
         "reviewed_at": "2026-08-21T14:57:52.387Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
         "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. final line is technical/cross-reference, not a quotable closer."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -1395,6 +2633,21 @@
         "reviewed_at": "2026-08-21T14:57:52.422Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
         "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no narrating of own emphasis."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -1429,6 +2682,21 @@
         "reviewed_at": "2026-08-21T14:57:52.456Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
         "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no block-final restatement of what the text established."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -1463,6 +2731,21 @@
         "reviewed_at": "2026-08-21T14:57:52.490Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
         "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. institutional register; no personal warmth vocabulary."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -1499,6 +2782,23 @@
         "severity": "minor",
         "evidence": "'At $k = 0$ (the centre) elements are completely free' and 'is --- read through this proposition --- literally a sum over confinement layers'. 'literally' is doing register work, not mathematics, in a sentence whose whole point is that the reading is an analogy.",
         "notes": "proposed: drop 'completely' and 'literally'."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "severity": "minor",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. The finding is unchanged at this head.",
+        "notes": "Carried forward from the earlier agent review: proposed: drop 'completely' and 'literally'."
       }
     ],
     "trap-nonspeakable": [
@@ -1533,6 +2833,21 @@
         "reviewed_at": "2026-08-21T14:57:52.556Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
         "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. prose parses aloud; noun chains stay within technical necessity."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,9 +2867,226 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "3 acronym(s) are candidates for the glossary: HH, QCD, GB. Run glossary:acronyms for the folio-wide list with expansions."
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed",
+          "graph": "6ba7fcea55b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ]
   },
-  "updated_at": "2026-11-21T08:17:36.660Z",
+  "updated_at": "2026-11-21T16:40:12.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

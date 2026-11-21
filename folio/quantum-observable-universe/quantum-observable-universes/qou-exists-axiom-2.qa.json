@@ -8,8 +8,8 @@
     "lean": "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean"
   },
   "source_hashes": {
-    "md": "f634e4aa3a7f",
-    "ts": "206d5d01728b",
+    "md": "2c41f540ad6a",
+    "ts": "3b5e31eb5c85",
     "lean": "b46199461eb8",
     "lean_statement": "857d057234be"
   },
@@ -41,6 +41,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-status-leak": [
@@ -99,6 +116,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-emoji-content": [
@@ -138,6 +174,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-first-person-work": [
@@ -177,6 +232,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-time-stamped-notes": [
@@ -216,6 +290,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-unicode-crash": [
@@ -255,6 +348,25 @@
           "def_hash": "63a6e57fead9"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-editorializing": [
@@ -294,6 +406,25 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-scholarly-default": [
@@ -420,6 +551,42 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-title-scholarly": [
@@ -478,6 +645,25 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-ai-slop": [
@@ -565,6 +751,42 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-author-notes-pollution": [
@@ -604,6 +826,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-status-section": [
@@ -643,6 +884,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5b0082576ba9",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "framework-canonical": [
@@ -682,6 +942,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "wall-side-correct": [
@@ -759,6 +1038,25 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "q-usage-regime-detected": [
@@ -937,6 +1235,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-no-numerology": [
@@ -976,6 +1293,25 @@
           "def_hash": "bfbb93c220cc"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-witness-pinned": [
@@ -1034,6 +1370,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -1092,6 +1447,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -1150,6 +1524,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1189,6 +1582,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -1247,6 +1659,25 @@
           "def_hash": "b5e2fdf9d66a"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1305,6 +1736,25 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -1363,6 +1813,25 @@
           "def_hash": "791b80875ca1"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "compute-prop-has-probe": [
@@ -1442,6 +1911,25 @@
           "def_hash": "4e3f006a8480"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38950cd4dd0c",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1521,6 +2009,25 @@
           "def_hash": "4e3f006a8480"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8a3b3418b1c5",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "compute-witness-exists": [
@@ -1579,6 +2086,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "compute-lp-dual-present": [
@@ -1637,6 +2163,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1697,6 +2242,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be",
+          "graph": "500fcede11d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "detangler-section-band": [
@@ -1797,6 +2362,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1900,6 +2485,27 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -2005,6 +2611,27 @@
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-block-tanglement": [
@@ -2104,6 +2731,39 @@
           "edge_span_mean": 0,
           "worst_target": ""
         }
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be",
+          "graph": "500fcede11d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 0,
+          "in_degree": 2,
+          "cone_size": 0,
+          "depth": 0,
+          "pagerank": 0.000152,
+          "edge_span_max": 0,
+          "edge_span_mean": 0,
+          "worst_target": ""
+        }
       }
     ],
     "detangler-graph-energy": [
@@ -2174,6 +2834,31 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be",
+          "graph": "500fcede11d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -2279,6 +2964,26 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2339,6 +3044,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be",
+          "graph": "500fcede11d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "bib-cite-resolves": [
@@ -2420,6 +3145,26 @@
           "def_hash": "e703243fe06f"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -2501,6 +3246,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -2582,6 +3347,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -2663,6 +3448,26 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -2921,6 +3726,26 @@
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f48af2ee9be8",
+          "script_commit_sha": "unknown",
+          "def_hash": "a4466d93bf08"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-build-green": [
@@ -3020,6 +3845,26 @@
           "def_hash": "670f26d08110"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -3159,6 +4004,26 @@
           "def_hash": "e49f4f5d3843"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8edc99dd3099",
+          "script_commit_sha": "unknown",
+          "deps_hash": "22292b18c779",
+          "def_hash": "e49f4f5d3843"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "proof-conditional-class-banner": [
@@ -3240,6 +4105,26 @@
           "def_hash": "ddae4938d951"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b1fd3fd4bb84",
+          "script_commit_sha": "unknown",
+          "deps_hash": "8285870ddd65",
+          "def_hash": "ddae4938d951"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "proof-lean-compiles": [
@@ -3342,6 +4227,26 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -3414,6 +4319,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). The second sentence restricts scope; it is not interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -3515,6 +4437,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-side-statement": [
@@ -3587,6 +4526,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-side-proof": [
@@ -3659,6 +4615,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -3767,6 +4740,25 @@
         "severity": "minor",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say.",
         "notes": "Earlier fail/major is resolved: the Lean now proves the .md claim Hom(1, V_1) = 0 (as maxTrivSubmodule = ⊥) for the sl2 adjoint. Remaining scope gap: q = 1 and char != 2 only; the generic-q U_q(sl2) statement, which the narrative proof uses, is cited, not formalised."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "severity": "minor",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since).",
+        "notes": "Narrowed: the main sentence now matches the Lean exactly (sl2, char != 2). Remaining gap: the parenthetical U_q(sl2) at generic q is part of the stated scope and is cited [kassel1995], not formalised."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3837,6 +4829,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -3907,6 +4916,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-novelty": [
@@ -3977,6 +5003,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. A standard Schur-lemma fact, formalised by direct computation."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-statement-integrity": [
@@ -4047,6 +5090,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. The Lean statement says what the .md says, for the stated Lie algebra; it is not weakened relative to the previous statement (that one did not encode the representation)."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -4116,6 +5176,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. The proof derives the conclusion from matrix entries; there is no hypothesis class."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-trivial-true": [
@@ -4183,6 +5260,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. The conclusion is a nontrivial equality of Lie submodules, false in characteristic 2 (the docstring gives the identity matrix as the invariant)."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-false-premise": [
@@ -4250,6 +5344,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -4317,6 +5428,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. h2 : (2 : K) != 0 is used twice (mul_eq_zero.resolve_left)."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-decide-masking": [
@@ -4384,6 +5512,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. The only decide calls discharge index inequalities 0 != 1 in Fin 2."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -4471,6 +5616,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-vacuous": [
@@ -4558,6 +5720,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-circular": [
@@ -4645,6 +5824,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-overclaim": [
@@ -4732,6 +5928,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. The .md sentence claims only Hom(1, V_1) = 0 for the spin-1 adjoint, which the Lean proves at q = 1."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-hidden-dof": [
@@ -4819,6 +6032,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-non-sequitur": [
@@ -4906,6 +6136,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -4998,6 +6245,25 @@
         "severity": "minor",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say.",
         "notes": "Earlier fail/major is resolved. The Lean is the q = 1 case; the block's title and the qou framing are about generic q, with the U_q step cited."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "severity": "minor",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since).",
+        "notes": "Same residual as proof-narrative-lean-equiv: the U_q(sl2) generic-q clause is cited, the Lean is the Lie-algebra case."
       }
     ],
     "da-citation-misuse": [
@@ -5085,6 +6351,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-definitional-ambiguity": [
@@ -5177,6 +6460,24 @@
         "severity": "major",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say.",
         "notes": "Unchanged: the title 'Axiom 2 — observability via Peter--Weyl decomposition' and the cites (woronowicz1988) frame the lemma as axiom 2 for A = O_q(G), a reading in which the proof block says the claim is false. The .md and Lean are about the sl2 adjoint. The block should name its algebra in the title/statement."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). The earlier warn/major (title and Peter-Weyl framing read the lemma as axiom 2 for O_q(G), where the claim is false) is resolved: title and statement name sl2 and exclude the O_q(G) coaction reading explicitly.",
+        "notes": "Residue, not a finding on this block: tags still include peter-weyl and compact-quantum-group, and the authorNote still says 'The statement needs a reading' and that condition (3) of the parent definition inherits the ambiguity; the parent definition is outside this block."
       }
     ],
     "da-empirical-fragility": [
@@ -5264,6 +6565,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-physical-implausibility": [
@@ -5351,6 +6669,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-reproducibility": [
@@ -5438,6 +6773,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-referee-verdict": [
@@ -5527,6 +6879,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -5598,6 +6967,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-probe-narrative": [
@@ -5637,6 +7023,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "cite-named-theorem": [
@@ -5676,6 +7081,25 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "voice-agent-speak": [
@@ -5715,6 +7139,25 @@
           "def_hash": "2cfefc829099"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "expo-milnor-clarity": [
@@ -5818,6 +7261,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "milnor-brevity": [
@@ -5885,6 +7345,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-not-machine-trivial": [
@@ -6088,6 +7565,27 @@
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "no docs/audits/lean-profile.json"
       }
     ],
     "proof-no-cost-regression": [
@@ -6194,6 +7692,27 @@
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "96b9bdc29ac9",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "no docs/audits/lean-profile.json"
       }
     ],
     "uses-editorial-hygiene": [
@@ -6255,6 +7774,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "uses-formal-coverage": [
@@ -6352,6 +7891,30 @@
           "formal_only_count": 0,
           "editorial_only_count": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 0
+        }
       }
     ],
     "lean-ref-owns-decl": [
@@ -6419,6 +7982,29 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "metrics": {
           "decl_claimants": 1
         }
@@ -6509,6 +8095,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). The 'concerns X, not Y' sentence is a mathematical scope restriction with a stated reason (the O_q(G) invariants are nonzero), not a rhetorical contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -6596,6 +8199,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -6683,6 +8303,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -6770,6 +8407,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -6857,6 +8511,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -6944,6 +8615,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -7031,6 +8719,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -7118,6 +8823,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -7205,6 +8927,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -7292,6 +9031,23 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -7390,6 +9146,25 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "proof-no-placeholder-stub": [
@@ -7662,6 +9437,25 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "foreshadows-point-forward": [
@@ -7724,6 +9518,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "dak-companion-present": [
@@ -7776,6 +9590,23 @@
           "version": "v1"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
         "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
       }
     ],
@@ -7851,6 +9682,23 @@
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
       }
     ],
     "dak-label-prefix-matches-kind": [
@@ -7904,6 +9752,23 @@
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
       }
     ],
     "id-unique": [
@@ -7944,6 +9809,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "id-stable": [
@@ -7984,6 +9868,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee"
       }
     ],
     "da-arity-conflation": [
@@ -8038,9 +9941,26 @@
         "reviewed_at": "2026-11-21T16:29:49.000Z",
         "reviewed_sha": "d8c74f6949d",
         "evidence": "Re-read at d8c74f6949d (ce19621f). .md unchanged: Hom(1, V_1) = 0 for the spin-1 adjoint. lean.ref resolves to lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean (no sibling, no leanSource in .jsonld). The theorem now states, over a field K with 2 != 0, LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ and proves it by testing x against E01, E10 and the trace condition (2*x00 = 0, x01 = x10 = 0, 2*x11 = 0). No class, no field projection, no True. lean-direct -DautoImplicit=false exit 0; #print axioms [propext, Classical.choice, Quot.sound]. The earlier class of free naturals (hom_dim = total_hom_dim - 1, sorry) is gone, so the new statement is strictly stronger and is the .md claim at q = 1. The U_q(sl2) generic-q step is cited [kassel1995], not formalised, as the docstring and authorNote say. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2c41f540ad6a",
+          "ts": "3b5e31eb5c85",
+          "lean": "b46199461eb8",
+          "lean_statement": "857d057234be"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Title now 'Axiom 2 — the adjoint representation of sl2 has no invariants'; .md now states: for g = sl2 over a field of characteristic != 2 the adjoint representation is V_1 and Hom(1, V_1) = 0, and says the claim is about the adjoint representation of the Lie algebra (or U_q(sl2) at generic q), not the adjoint coaction of O_q(G), whose invariants are nonzero. Lean (lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean) unchanged since 3bd40ba6be: LieModule.maxTrivSubmodule K sl2 sl2 = ⊥ for a field K with 2 != 0, sorry-free (verified at d8c74f69; no .lean changed since). No instance at this head; the earlier verdict stands."
       }
     ]
   },
-  "updated_at": "2026-11-21T16:29:49.000Z",
+  "updated_at": "2026-11-21T16:40:12.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
