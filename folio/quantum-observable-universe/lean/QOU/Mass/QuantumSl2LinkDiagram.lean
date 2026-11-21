@@ -17,11 +17,9 @@ For the Whitehead word this is the braid-closure trace of van der Veen's formula
 
     vdvWhiteheadLinkJones q N = [N]⁻¹ · θ · value (rModel) (closure)  (`vdvWhiteheadLinkJones_eq_value`).
 
-**Not done here.** Reidemeister invariance of `rModel` (`Model.Invariant`) for every `N`: the
-parallel R2 and R3 identities follow from `Ř Ř⁻¹ = 1` and the braid relation, but R1 with the loop
-traced on the left and the antiparallel R2 are new identities. Once they are proved,
-`normValue_eq` turns the last formula into a statement about every code Reidemeister-equivalent to
-the Whitehead closure.
+Parallel R2, R3 and R1 with the loop on the right are proved here from the braid action. The
+remaining identities, and Reidemeister invariance of `rModel` for every `N`, are in
+`QuantumSl2LinkDiagramInvariant`.
 
 -- Ref: [turaev1988] Turaev, "The Yang–Baxter equation and invariants of links", Invent. Math. 92
 -- Ref: [vanderveen2008] van der Veen, AGT 8 (2008) 603–624, Lemma 1
