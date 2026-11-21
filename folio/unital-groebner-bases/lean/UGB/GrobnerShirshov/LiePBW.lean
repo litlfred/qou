@@ -146,6 +146,7 @@ noncomputable def LieConstants.splay (L : LieConstants G k) (rk : G → ℕ)
     have : (x, y) ∈ liePairs rk := mem_liePairs.mpr h
     rw [h0] at this; simp at this
   π := L.br
+  cf _ _ := 1
   swap_lt p hp := hgen _ _ (mem_liePairs.mp hp)
   pi_lt p _ w hw := hdeg _ _ (by rw [L.br_support hw]; simp)
   trans a b c hab hbc := mem_liePairs.mpr
@@ -167,7 +168,8 @@ theorem LieConstants.K_mem (L : LieConstants G k) (rk : G → ℕ) (hrk : Functi
     simp only [ofW_nil, one_mul, mul_one] at this
     convert this using 1
     simp only [LieConstants.K, SplayData.relMA, ← ofW_append, List.cons_append, List.nil_append]
-    rfl
+    show _ = ofW [x, y] - (1 : k) • ofW [y, x] - L.br x y
+    rw [one_smul]
   · rw [hrk h]
     simp only [LieConstants.K, sub_self, L.br_self]
     exact JM.zero
@@ -175,8 +177,8 @@ theorem LieConstants.K_mem (L : LieConstants G k) (rk : G → ℕ) (hrk : Functi
     simp only [ofW_nil, one_mul, mul_one] at this
     convert this.neg using 1
     simp only [LieConstants.K, SplayData.relMA, ← ofW_append, List.cons_append, List.nil_append]
-    show _ = -(_ - _ - L.br y x)
-    rw [L.br_skew]; abel
+    show _ = -(ofW [y, x] - (1 : k) • ofW [x, y] - L.br y x)
+    rw [one_smul, L.br_skew]; abel
 
 /-- **The Jacobi identity discharges the composition condition.** -/
 theorem LieConstants.jacobiCondition (L : LieConstants G k) (rk : G → ℕ)
@@ -185,9 +187,10 @@ theorem LieConstants.jacobiCondition (L : LieConstants G k) (rk : G → ℕ)
     (hgen : ∀ x y : G, rk y < rk x → ord.lt [y, x] [x, y]) :
     (L.splay rk hne hdeg hgen).JacobiCondition := by
   intro a b c _ _
-  show JM ord _ [a, b, c] (ofW [a] * L.br b c - L.br b c * ofW [a] + ofW [c] * L.br a b
-    - L.br a b * ofW [c] + L.br a c * ofW [b] - ofW [b] * L.br a c)
-  rw [L.jacobi_eq a b c]
+  have e : (L.splay rk hne hdeg hgen).jacobi a b c = ofW [a] * L.br b c - L.br b c * ofW [a]
+      + ofW [c] * L.br a b - L.br a b * ofW [c] + L.br a c * ofW [b] - ofW [b] * L.br a c := by
+    simp only [SplayData.jacobi, LieConstants.splay, mul_one, one_smul]
+  rw [e, L.jacobi_eq a b c]
   have hK := L.K_mem rk hrk hne hdeg hgen [a, b, c] rfl
   exact JM.sum _ _ (fun e _ => (((hK a e).smul _).add ((hK c e).smul _)).add ((hK e b).smul _))
 

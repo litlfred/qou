@@ -1,5 +1,6 @@
 import UGB.GrobnerShirshov.DiamondLemma
 import UGB.GrobnerShirshov.NormalFormBasisProof
+import Mathlib.Tactic.Module
 
 set_option linter.unusedSectionVars false
 
@@ -9,9 +10,10 @@ set_option linter.unusedSectionVars false
 A **splay rewriting system** has one rule per ordered pair `(a, b)` of
 generators with `a ≫ b`:
 
-    a b  ↦  b a + π(a, b),
+    a b  ↦  cf(a, b) · b a + π(a, b),
 
-where `π(a, b)` is an arbitrary element of the free algebra whose monomials all
+where `cf(a, b) ∈ k` is a scalar twist (`cf = 1` untwisted; `cf = q^m` a
+`q`-commutation rule such as `K E ↦ q² E K` in `U_q(sl₂)`) and `π(a, b)` is an arbitrary element of the free algebra whose monomials all
 lie strictly below `a b` in the admissible order. Commutative polynomial blocks
 are the case `π = 0`; a Lie algebra is the case where `π(a, b)` is the linear
 bracket `Σ_e c^e_{ab} e`; the splay algebras of [leitner2006] are the case where
@@ -21,10 +23,13 @@ bracket `Σ_e c^e_{ab} e`; the splay algebras of [leitner2006] are the case wher
 
 * `rule_lm`, `rule_lc` — each rule leads on `a b` with coefficient `1`
   (§1). This is where the filtration hypothesis `π(a, b) < a b` enters.
-* `spoly_overlap_eq` — the overlap of the rules for `(a, b)` and `(b, c)`
+* `overlap_sub_jacobi_mem` — the overlap of the rules for `(a, b)` and `(b, c)`
   is, modulo the span below `a b c`, exactly the *Jacobi element*
 
-      J(a, b, c) = a π(b,c) − π(b,c) a + c π(a,b) − π(a,b) c + π(a,c) b − b π(a,c).
+      J(a, b, c) = a π(b,c) − c_{ab} c_{ac} π(b,c) a + c_{bc} c_{ac} c π(a,b) − π(a,b) c
+                   + c_{bc} π(a,c) b − c_{ab} b π(a,c),
+
+  with `c_{xy} = cf(x, y)`; at `cf = 1` this is the classical Jacobi element.
 
 * `compositionsTrivial_iff` — **the composition condition for a splay
   system is the Jacobi condition**: the system has trivial compositions
@@ -62,6 +67,10 @@ structure SplayData (G : Type u) [DecidableEq G] (k : Type v) [CommRing k]
   pairs_ne : pairs ≠ []
   /-- The correction term of each rule. -/
   π : G → G → MA G k
+  /-- The **twist** of each rule, `a b ↦ cf(a,b) · b a + π(a,b)`. Any scalar is
+      allowed; `cf = 1` is the untwisted (Lie, commutative) case and a unit
+      `cf = q^m` is a `q`-commutation rule. -/
+  cf : G → G → k
   /-- The swapped word is smaller. -/
   swap_lt : ∀ p ∈ pairs, ord.lt [p.2, p.1] [p.1, p.2]
   /-- **Strong filtration**: every monomial of `π(a, b)` is below `a b`. -/
@@ -76,13 +85,15 @@ namespace SplayData
 
 variable (d : SplayData G k ord)
 
-/-- The relation `a b − b a − π(a, b)` of a pair, in the monoid algebra. -/
-noncomputable def relMA (a b : G) : MA G k := ofW [a, b] - ofW [b, a] - d.π a b
+/-- The relation `a b − cf(a,b) · b a − π(a, b)` of a pair, in the monoid algebra. -/
+noncomputable def relMA (a b : G) : MA G k := ofW [a, b] - d.cf a b • ofW [b, a] - d.π a b
 
-/-- The Jacobi element of a chain `a ≫ b ≫ c`. -/
+/-- The (twisted) Jacobi element of a chain `a ≫ b ≫ c`. With `cf = 1` it is
+    `a π(b,c) − π(b,c) a + c π(a,b) − π(a,b) c + π(a,c) b − b π(a,c)`. -/
 noncomputable def jacobi (a b c : G) : MA G k :=
-  ofW [a] * d.π b c - d.π b c * ofW [a] + ofW [c] * d.π a b - d.π a b * ofW [c]
-    + d.π a c * ofW [b] - ofW [b] * d.π a c
+  ofW [a] * d.π b c - (d.cf a b * d.cf a c) • (d.π b c * ofW [a])
+    + (d.cf b c * d.cf a c) • (ofW [c] * d.π a b) - d.π a b * ofW [c]
+    + d.cf b c • (d.π a c * ofW [b]) - d.cf a b • (ofW [b] * d.π a c)
 
 theorem pi_apply_self {p : G × G} (hp : p ∈ d.pairs) :
     (d.π p.1 p.2) (FreeMonoid.ofList [p.1, p.2]) = 0 := by
@@ -101,8 +112,8 @@ theorem relMA_apply_self [Nontrivial k] {p : G × G} (hp : p ∈ d.pairs) :
     d.relMA p.1 p.2 (FreeMonoid.ofList [p.1, p.2]) = 1 := by
   have hne : ([p.2, p.1] : List G) ≠ [p.1, p.2] := by
     intro h; exact d.ne_of_mem hp (List.cons.inj h).1.symm
-  rw [relMA, Finsupp.sub_apply, Finsupp.sub_apply, ofW_apply, ofW_apply, if_pos rfl,
-    if_neg hne, d.pi_apply_self hp, sub_zero, sub_zero]
+  rw [relMA, Finsupp.sub_apply, Finsupp.sub_apply, Finsupp.smul_apply, ofW_apply, ofW_apply,
+    if_pos rfl, if_neg hne, d.pi_apply_self hp, smul_zero, sub_zero, sub_zero]
 
 variable [Nontrivial k]
 
@@ -133,10 +144,11 @@ theorem rule_lm (p : {p : G × G // p ∈ d.pairs}) :
     obtain ⟨w, hw, rfl⟩ := Finset.mem_image.mp hm
     rw [Finsupp.mem_support_iff, ← FreeMonoid.ofList_toList w] at hw
     set m := FreeMonoid.toList w
-    rw [relMA, Finsupp.sub_apply, Finsupp.sub_apply, ofW_apply, ofW_apply] at hw
+    rw [relMA, Finsupp.sub_apply, Finsupp.sub_apply, Finsupp.smul_apply, ofW_apply,
+      ofW_apply] at hw
     by_cases h2 : [p.1.2, p.1.1] = m
     · rw [← h2]; exact d.swap_lt _ p.2
-    · rw [if_neg (Ne.symm hne), if_neg h2, zero_sub, sub_eq_add_neg, ← neg_add,
+    · rw [if_neg (Ne.symm hne), if_neg h2, smul_zero, zero_sub, sub_eq_add_neg, ← neg_add,
         zero_add, neg_ne_zero] at hw
       have := d.pi_lt _ p.2 (FreeMonoid.ofList m) (Finsupp.mem_support_iff.mpr hw)
       rwa [FreeMonoid.toList_ofList] at this
@@ -186,11 +198,12 @@ theorem jm_rule {v : Monomial G} (p : {p : G × G // p ∈ d.pairs}) (x y : Mono
 /-- The overlap S-polynomial of `(a, b)` and `(b, c)`, in the monoid algebra. -/
 theorem overlap_expr (a b c : G) :
     d.relMA a b * ofW [c] - ofW [a] * d.relMA b c =
-      -(ofW [b] * d.relMA a c) - d.relMA b c * ofW [a] + d.relMA a c * ofW [b]
-        + ofW [c] * d.relMA a b + d.jacobi a b c := by
-  simp only [relMA, jacobi, mul_sub, sub_mul, ← ofW_append]
+      -(d.cf a b • (ofW [b] * d.relMA a c)) - (d.cf a b * d.cf a c) • (d.relMA b c * ofW [a])
+        + d.cf b c • (d.relMA a c * ofW [b]) + (d.cf b c * d.cf a c) • (ofW [c] * d.relMA a b)
+        + d.jacobi a b c := by
+  simp only [relMA, jacobi, mul_sub, sub_mul, mul_smul_comm, smul_mul_assoc, ← ofW_append]
   simp only [List.cons_append, List.nil_append]
-  abel
+  module
 
 theorem chain_lts (a b c : G) (hab : (a, b) ∈ d.pairs) (hbc : (b, c) ∈ d.pairs)
     (hac : (a, c) ∈ d.pairs) :
@@ -219,7 +232,7 @@ theorem overlap_sub_jacobi_mem (a b c : G) (hab : (a, b) ∈ d.pairs)
   have g3 := d.jm_rule (v := [a, b, c]) ⟨(a, c), hac⟩ [] [b] (by simpa using h2)
   have g4 := d.jm_rule (v := [a, b, c]) ⟨(a, b), hab⟩ [c] [] (by simpa using h4)
   simp only [ofW_nil, mul_one, one_mul] at g1 g2 g3 g4
-  exact ((((g1.neg).sub g2).add g3).add g4)
+  exact ((((g1.smul _).neg.sub (g2.smul _)).add (g3.smul _)).add (g4.smul _))
 
 /-! ## §4  Classification of compositions -/
 
@@ -355,6 +368,19 @@ theorem normalFormBasis [DecidableEq k] (hj : d.JacobiCondition) :
     NormalFormBasis ord d.sys :=
   NFBasis.normalFormBasis_of_isGrobnerShirshovBasis (d.isGrobnerShirshovBasis_iff.mpr hj)
     d.lc_isUnit
+
+/-- With no correction terms the Jacobi element vanishes, so the Jacobi condition
+    holds for **every** twist. -/
+theorem jacobiCondition_of_pi_eq_zero (h : ∀ a b, d.π a b = 0) : d.JacobiCondition := by
+  intro a b c _ _
+  have : d.jacobi a b c = 0 := by simp [jacobi, h]
+  rw [this]; exact JM.zero
+
+/-- **Multiparameter quantum affine space.** For `π = 0` and any twist `cf`, the
+    sorted words are a `k`-basis of `k⟨G⟩ / (a b − cf(a,b) · b a)`. -/
+theorem normalFormBasis_of_pi_eq_zero [DecidableEq k] (h : ∀ a b, d.π a b = 0) :
+    NormalFormBasis ord d.sys :=
+  d.normalFormBasis (d.jacobiCondition_of_pi_eq_zero h)
 
 end SplayData
 
