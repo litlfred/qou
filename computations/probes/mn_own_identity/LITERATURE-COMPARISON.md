@@ -169,3 +169,35 @@ would need a specific linear combination of words, and nothing in the corpus nam
 words up to length 6, single words only. The 12 stays a count with several readings
 (2·F_Bor(1) = 4·F_e(1) = 2·|S₃| = dim V_(2,1)·dim H₃), none of them selected by the framework
 (issue #8809).
+
+## 5. Sums of words, and whether the own-sector premise follows from the QOU axioms (2026-11-21)
+
+Pre-registered in `PREREGISTRATION-sums-and-premise.md` (with a disclosure of an exploratory run).
+
+**Sums of words (`mn_sector_sums_probe.py`, 7/7).** Over all 1457 reduced signed words of
+length ≤ 6, the integer span of the own-sector traces `T_p = q·tr_{W_p}` reaches exactly the
+constants `3ℤ`. The minimum is `σ₁ + 2σ₁⁻¹` (`T_p = 3`); `σ₂ + 2σ₂⁻¹` gives the same value; and
+`4σ₁ + 8σ₁⁻¹` gives 12. So sums **allow** 12 but do not **force** it: every multiple of 3 is
+reachable, and choosing multiplicities to hit 12 would be selection against the target. No
+canonical element of `H_3` (symmetriser, `Σ T_w`, `Σ q^{-ℓ} T_w`, full twist, Jucys–Murphy
+sum) has a q-independent nonzero `T_p`; the antisymmetriser gives 0, as `W_p` has no `(1³)`
+part. The three `S_3` sums give `6 = |S_3|` at `q = 1`, so `12 = 2|S_3|` is suggested at the
+classical point only. Scope (a): words of length ≤ 6.
+
+**The premise (`OwnSectorFromWeightGrading.lean`, sorry-free).**
+
+- *Forced.* The maximal torus (`def:maximal-torus`) acts diagonally on weight spaces. With a
+  torus pivotal element `K = Σ λ_N π_N`, the quantum trace is the `λ`-weighted sum of sector
+  traces (`qtrace_eq_sum_sectors`), and for a weight-preserving `x` each sector trace is the
+  trace on the sector (`sector_trace_eq_restriction`). For `K^{⊗3}`, `λ_p = q`, `λ_n = q⁻¹`.
+  So *if* a term is read sector by sector, its weights and the `q²` ratio are forced.
+- *Not forced.* A rule that treats the volume and constant terms alike cannot make the
+  neutron heavier once the proton mass is positive (`uniform_rule_neutron_not_heavier`). The
+  premise therefore needs the term-specific rule "constant per sector, volume whole-space",
+  and nothing in the weight structure of the axioms distinguishes the two terms.
+- *Also not forced.* The sector trace gives normalisation `s = 1` (K2), which the proton test
+  falsified. K1 needs an extra `q⁻¹`.
+
+Verdict: the premise is **not derivable** from the QOU axioms as they stand. What is derivable
+is the sector weighting once a term is resolved; what is missing is a reason why only the
+constant term is resolved, and why with an extra `q⁻¹`.
