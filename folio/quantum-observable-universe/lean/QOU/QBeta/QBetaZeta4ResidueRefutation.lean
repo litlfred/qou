@@ -170,12 +170,13 @@ theorem cubicC_rrt_candidates_all_nonzero :
 
 Where does the cubic field come from? The bar-odd part of the net decay-width
 carrier `Δ_net = Δ(neutron) − Δ(proton)` on the H₃ normal-form basis
-`{𝟏, σ₀, σ₁, σ₀σ₁, σ₁σ₀, σ₀σ₁σ₀}` (knots unknot / virtual / Hopf / trefoil)
+`{𝟏, σ₀, σ₁, σ₀σ₁, σ₁σ₀, σ₀σ₁σ₀}` (sectors unknot / virtual / Hopf / electron word `e⁻`; the closure of `σ₀σ₁σ₀` on three
+strands is the Hopf link, not the trefoil — owner ruling 2026-11-21: electron = σ₀σ₁σ₀, closure the Hopf link; the trefoil σ₀³ ∈ B₂ is the backup)
 decomposes **exactly** by knot sector (reproducible exact Laurent arithmetic,
 probe `qbeta_odd_carrier_sector_decomposition.py`, from
 `free-neutron-decay.witness.json`):
 
-- **virtual (σ₀, σ₁; 1 crossing) → 0** and **trefoil (σ₀σ₁σ₀; 3 crossings) → 0**:
+- **virtual (σ₀, σ₁; 1 crossing) → 0** and **electron word (σ₀σ₁σ₀; 3 crossings) → 0**:
   the odd-crossing sectors are bar-EVEN, contributing nothing to the bar-odd
   carrier.
 - **unknot (𝟏; identity) → a quadratic** `C_unknot(y) = 2y² − 7y + 4`

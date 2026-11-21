@@ -693,7 +693,7 @@ In the 6-element Hecke normal-form basis `{1, σ₀, σ₁, L₊ = σ₀σ₁, L
 1. Because `A₁, A₂` (and `B₁, B₂`) are symmetric matrices, `L₋ = (L₊)ᵀ`, so `L₊` and `L₋` share
    identical diagonal entries and identical traces against ANY diagonal charge operator `D`
    (`trace_diag_LminusA_eq_LplusA`, `trace_diag_LminusB_eq_LplusB`).
-2. On the Borromean nucleon `V³ = (σ₀ σ₁⁻¹)³`, the trefoil electron coefficient `c_{e⁻}` is
+2. On the Borromean nucleon `V³ = (σ₀ σ₁⁻¹)³`, the electron-word coefficient `c_{e⁻}` (`e⁻ = σ₀σ₁σ₀`, closure the Hopf link) is
    identically `0`, and the `L₊` and `L₋` coefficients `c_{L₊} = h²(h² + 1)` and `c_{L₋} = -h²`
    cancel their `O(h²)` pieces under any diagonal trace, collapsing to `c_{L₊} + c_{L₋} = h⁴`
    (`borromeanV3A_nf_expansion`, `borromeanV3B_nf_expansion`, `borromeanV3_nf_cL_sum`). -/
