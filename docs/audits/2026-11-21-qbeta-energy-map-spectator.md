@@ -296,3 +296,35 @@ the CC block of the process word, i.e. from the GB reduction itself. Premise L i
 cancels in C, a cell with an excluded reading in A, and an input to a bound in B. In none of
 the three is it Q_β by itself. That moves the weight of the question onto the GB reduction, as the
 owner ruled.
+
+## 14. β-decay as a GB reduction: first measurement (prereg Addenda 4–5)
+
+Owner proposal: β-decay as the difference between the unreduced and reduced interaction word.
+Worked under placement C (active lepton strand, premise L), which is pending the owner's card. The
+word is the pair-creation proposal's minimal G ∧ CC ∧ R3 candidate X = V₁³ = (σ₁σ₂⁻¹)³, not ruled,
+acting on β_Bor: W = X·β_Bor, 24 letters, normal form 17 terms (reproduces the pair-creation
+witness). Probe `qbeta_gb_reduction_probe.py`, 6/6 checks; witness
+`qbeta-gb-reduction.witness.json`. Exact in ℚ(q), proton q₀, 60 dps.
+
+| measure | S1 (right mult.) | S2 (left mult.) | × E₀ (MeV) | vs Q_β |
+|---|---|---|---|---|
+| M1 rule firings in W | 76 | 78 | 318 / 327 | ×400 |
+| M2 q⁻¹-weighted firings | 54.62 | 55.76 | 229 / 233 | ×290 |
+| ΔM1 = M1(Xβ) − M1(β) − M1(X) | 48 | 46 | 201 / 193 | ×250 |
+| ΔM2 (exact: (4q⁴+19q³+18q²+3q+4)/q⁶ and (q+1)(q⁴+4q³+6q²+10q+2)/q⁶) | 32.92 | 31.00 | 138 / 130 | ×170 |
+| M3 kT·ln(‖CC block‖/‖diag block‖) | −12.31 MeV | | | ×16 |
+
+**Result, scope (a).** With E₀ as the energy per reduction step, this word and these measures
+give energies two orders of magnitude above Q_β (M3 one order). The counts also depend on the
+rewriting strategy (76 vs 78, 48 vs 46), so a raw count is not yet a well-defined invariant.
+
+**Structural point (why the counts cannot be the n–p cell).** M1, M2 and ΔM are functions of the
+algebra element W alone. They take no state as input, so they are the same for n⊗ν → p⊗e⁻, for
+the reverse, and for every other transition the word mediates. An n–p asymmetry can only come
+from a quantity evaluated on states (the module V^{⊗4}): M3, or the T³ weight, which cancels under
+premise L (§13 C). So within this route the GB reading has to be taken on the module, not on the
+algebra. That is a statement about these measures. It does not exclude a state-level reduction
+count (e.g. counting reductions in the matrix entry ⟨p⊗e⁻|ρ(W)|n⊗ν⟩ term by term), which was not
+preregistered and is not run here.
+
+Contamination: Addendum 5 (ΔM) was written after Addendum 4's numbers were printed.
