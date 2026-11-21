@@ -17,9 +17,13 @@ The mechanism, in the steps this file proves:
   `Δ³(F)` has the same trace `t` on both sectors.
 * `epsP_eq_q_sq_mul_epsN` : with `K`-weights `q` and `q⁻¹` on the two sectors, `ε_p = q² ε_n`.
 
-Not proved here: that the `K`-weighted partial trace over the gluon strands keeps the
-commutation with `Δ³(F)` (the standard fact that a partial quantum trace of an intertwiner is
-an intertwiner). It is checked exactly in `computations/probes/qbeta_shared_factor`.
+* `ptr_intertwines` : the `K`-weighted partial trace over extra (gluon) strands of an operator
+  commuting with `Δ(F) = F ⊗ K + 1 ⊗ F` commutes with `F` on the remaining (quark) strands.
+
+Not formalised here: lifting `jimboR_comm_coprodF` from two strands to `Δⁿ(F)` on `n` strands
+(each `Rᵢ` commutes with the terms of `Δⁿ(F)` away from strands `i, i+1` because it preserves
+weight, and with the two terms on them by the two-strand lemma). Checked exactly, word by word,
+in `computations/probes/qbeta_shared_factor`.
 
 Generic field, no ordering, no empirical input.
 -/
@@ -98,5 +102,81 @@ theorem epsP_eq_q_sq_mul_epsN_of_intertwine (q D : R) (hq : q ≠ 0) (h2 : q ^ 2
     q * Y₁.trace / D = q ^ 2 * (q⁻¹ * Y₂.trace / D) := by
   rw [← trace_eq_of_intertwine _ _ _ (lowerQuark_isUnit_det q hq h2) h]
   exact epsP_eq_q_sq_mul_epsN q _ D hq
+
+/-! ## Partial trace over extra strands -/
+
+section PartialTrace
+
+variable {a b : Type*} [Fintype a] [Fintype b] [DecidableEq a] [DecidableEq b]
+
+/-- Partial trace over the second factor. -/
+def ptr (N : Matrix (a × b) (a × b) R) : Matrix a a R := fun i j => ∑ β, N (i, β) (j, β)
+
+/-- `B` acting on the second factor only (`1 ⊗ B`). -/
+def onW (B : Matrix b b R) : Matrix (a × b) (a × b) R :=
+  fun x y => if x.1 = y.1 then B x.2 y.2 else 0
+
+/-- `A ⊗ B`. -/
+def kr (A : Matrix a a R) (B : Matrix b b R) : Matrix (a × b) (a × b) R :=
+  fun x y => A x.1 y.1 * B x.2 y.2
+
+theorem onW_mul_apply (B : Matrix b b R) (M : Matrix (a × b) (a × b) R) (x y : a × b) :
+    (onW B * M : Matrix (a × b) (a × b) R) x y = ∑ γ, B x.2 γ * M (x.1, γ) y := by
+  simp only [onW, Matrix.mul_apply, Fintype.sum_prod_type, ite_mul, zero_mul]
+  rw [Finset.sum_comm]
+  simp
+
+theorem mul_onW_apply (B : Matrix b b R) (M : Matrix (a × b) (a × b) R) (x y : a × b) :
+    (M * onW B : Matrix (a × b) (a × b) R) x y = ∑ γ, M x (y.1, γ) * B γ y.2 := by
+  simp only [onW, Matrix.mul_apply, Fintype.sum_prod_type, mul_ite, mul_zero]
+  rw [Finset.sum_comm]
+  simp [eq_comm]
+
+theorem ptr_onW_mul_apply (B : Matrix b b R) (M : Matrix (a × b) (a × b) R) (i j : a) :
+    ptr (onW B * M) i j = ∑ β, ∑ γ, B β γ * M (i, γ) (j, β) := by
+  simp only [ptr, onW_mul_apply]
+
+theorem ptr_kr_mul (A : Matrix a a R) (B : Matrix b b R) (M : Matrix (a × b) (a × b) R) :
+    ptr (kr A B * M) = A * ptr (onW B * M) := by
+  ext i j
+  rw [Matrix.mul_apply]
+  simp only [ptr_onW_mul_apply, Finset.mul_sum]
+  simp only [ptr, kr, Matrix.mul_apply, Fintype.sum_prod_type]
+  rw [Finset.sum_comm]
+  exact Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ =>
+    Finset.sum_congr rfl fun _ _ => by ring
+
+theorem ptr_mul_kr (A : Matrix a a R) (B : Matrix b b R) (M : Matrix (a × b) (a × b) R) :
+    ptr (M * kr A B) = ptr (onW B * M) * A := by
+  ext i j
+  rw [Matrix.mul_apply]
+  simp only [ptr_onW_mul_apply, Finset.sum_mul]
+  simp only [ptr, kr, Matrix.mul_apply, Fintype.sum_prod_type]
+  rw [Finset.sum_comm]
+  refine Finset.sum_congr rfl fun _ _ => ?_
+  rw [Finset.sum_comm]
+  exact Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ => by ring
+
+theorem ptr_onW_comm (B : Matrix b b R) (M : Matrix (a × b) (a × b) R) :
+    ptr (onW B * M) = ptr (M * onW B) := by
+  ext i j
+  simp only [ptr, onW_mul_apply, mul_onW_apply]
+  rw [Finset.sum_comm]
+  exact Finset.sum_congr rfl fun _ _ => Finset.sum_congr rfl fun _ _ => mul_comm _ _
+
+/-- **A partial trace of an intertwiner is an intertwiner.** If `M` on `V ⊗ W` commutes with
+`Δ(F) = F_V ⊗ K_W + 1 ⊗ F_W`, then `Y = Tr_W((1 ⊗ K_W) M)` commutes with `F_V`. -/
+theorem ptr_intertwines (FV : Matrix a a R) (KW FW : Matrix b b R)
+    (M : Matrix (a × b) (a × b) R)
+    (h : (kr FV KW + onW FW) * M = M * (kr FV KW + onW FW)) :
+    FV * ptr (onW KW * M) = ptr (onW KW * M) * FV := by
+  have h2 := congrArg ptr h
+  simp only [Matrix.add_mul, Matrix.mul_add] at h2
+  have hadd : ∀ N P : Matrix (a × b) (a × b) R, ptr (N + P) = ptr N + ptr P := by
+    intro N P; ext i j; simp [ptr, Finset.sum_add_distrib]
+  rw [hadd, hadd, ptr_kr_mul, ptr_mul_kr, ptr_onW_comm FW M] at h2
+  exact add_right_cancel h2
+
+end PartialTrace
 
 end QOU.QBeta.QuarkWeightTrace
