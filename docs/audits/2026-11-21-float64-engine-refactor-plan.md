@@ -162,6 +162,8 @@ Any remaining T1 caller can switch with a one-line change.
 
 None is a substitution that adds digits to a published number.
 
-**Held for the owner (stale witnesses, not precision):**
-1. `hecke-character-symbolic.witness.json`: (2,1) characters move up to 7×.
-2. `fr-pullback-cosh-h.witness.json`: the verdict flips, as above.
+**Stale witnesses, refreshed on owner instruction ("Refresh both", commit `744ca678f7b`):**
+1. `hecke-character-symbolic.witness.json`: the (2,1) characters change
+   symbolic form and sign at q₀ (p 1.8077 → −0.2806, n 1.7009 → −0.3720).
+2. `fr-pullback-cosh-h.witness.json`: the verdict now reads "HELPS at
+   v5_alpha_2_div_cosh_h, +1.1%", where it read "NEUTRAL" before.
