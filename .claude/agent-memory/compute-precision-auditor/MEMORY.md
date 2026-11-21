@@ -117,6 +117,18 @@ a 9-sig-fig measurement to 60 digits — emit the source's decimal **text verbat
 is not automatically a drain (`mp.dps` defaults to **15**); raising dps *manufactures*
 digits against a ±1e-12 divisor; a 2⁻⁵⁴/2⁻⁵⁵ residue is the arithmetic floor.
 
+## TRAP — a `nohup … &` long compute dies at TURN END (see `measurement-hygiene-traps.md`)
+
+Launching a long sweep as `nohup … &` inside a `run_in_background: true` Bash call
+orphans it from the harness: it dies at the turn boundary, and the completion
+notification's `exit code 0` describes the **wrapper**, not the compute. Measured twice
+in one session (bean `qou-oiz3`) — both deaths coincided with the turn ending, on two
+different producers, which is why both looked like probe failures. Pass the compute to
+`run_in_background` **directly**, no `nohup`, no `&`. Before reporting progress on any
+background sweep, check `pgrep -f <driver>` and the log's age — a tail alone cannot tell
+"running slowly" from "dead six hours ago". Full write-up, and the stateless-driver
+corollary that saved the run, in **`measurement-hygiene-traps.md`**.
+
 ## TRAP — producers write SIBLING witnesses
 
 The isotope producer rewrote 21 `canonical-isotope-witness-Z*.json` files
