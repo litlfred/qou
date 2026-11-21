@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-11-16T07:30:00Z
+updated_at: 2026-11-21T04:40:00Z
 parent: qou-wxhi
 ---
 
@@ -8798,3 +8798,32 @@ Probe `qbeta_d_ladder_gap_recovery_probe.py` (60 dps, 6/6 PASS). The only derive
 ## 2026-11-20 — W2 cross-workstream briefing (owner: "make sure they know")
 Full briefing: PR #8526 comment 7047864732 and docs/coordination/2026-11-20-w2-qbeta-ud-briefing.md. Record: docs/audits/2026-11-20-qbeta-epsilon-is-ruled-not-derived.md sections 1-11.
 Key points: Q_beta = (h[2]/2)*y3*E0 and sees only the isospin-3/2 block. The ruled epsilon (z_D, -43%) = label-A round trip = whole-space quantum trace. Label B (J4, strand-4 gamma-gamma) gives +0.33% and is NOT adopted (it labels isospin multiplicity, not n<->p). Label C gives 1/3, 0 and 0.202, none close. The owner made no label ruling ("3 2"). u/d are separate lines of the (3,1) rep of H4, not orientation-only (def:up/down-quark are stale). Convention-D volumes lie past the Phi_q pole. The six-term -2.43e15 was a truncated divergent series (fixed). The +0.17% / ~1 ppm Q_beta values and the April BW run are superseded or circular.
+
+### 2026-11-21 — the 4.50e+04 gate-out IS the convention C → D switch, at 1.9e8 gain
+
+`d5cbc0146ee`, [`qbeta_c4_gate_out_is_the_convention_switch_probe.py`](../../computations/qbeta/qbeta_c4_gate_out_is_the_convention_switch_probe.py), **9/9**, exit 0. Scope (a); nothing fitted, nothing wired, no witness refreshed.
+
+**The chain, reproduced rather than argued.** `Q_N1` in the upstream witness `q-beta-operator-valued-N3.witness.json` is `Q_A·cos(α_eff)` with `α = (z−1)·h/2` — so it depends on **`z`, the Markov parameter**, i.e. on the convention. The owner ruled convention D canonical on **2026-08-15**, after the committed witness was written on **2026-06-28**:
+
+| | convention C | convention D |
+|---|---|---|
+| `z` | `0.499320334184` | `0.612688037146` |
+| `α = (z−1)h/2` | `−0.05233612027` | `−0.04048577734` (22.6 % change) |
+| `Q_N1 = Q_A cos(α_eff)` | `0.7823911675028` | `0.78286150492739` (**6.01e-4** relative) |
+
+The peel **pins** `c_2 = −1` and `c_3 = −2`, so the entire discrepancy lands on the next free rung at a gain of `1/u⁴ = 1.90023e+8`:
+
+    c_4 from the sha-era upstream : -2.543811724   (HEAD records -2.537865912)
+    c_4 from the HEAD upstream    : -114136.1531   (the fresh run recorded -114136.0)
+
+**Convention D reproduces the live `Q_N1` to 2.96e-52**; convention C reproduces the committed one to `3.03e-8`, the residual being the `Q_A` precision difference between the two upstreams. So the move is neither drift, nor environment, nor precision — **a 6.01e-4 move upstream becomes a 44867× move in a recorded "tower coefficient."**
+
+**What is already the corpus's.** `docs/coordination/1ppq-qbeta.md` calls this producer *"form-fitting iterative peel"* (2026-05-31), and `qbeta_habiro_integrality_kill_test.py` states that `c_4`/`c_5` have *"NO scheme-independent empirical value … every recorded c_4/c_5 number presupposes a structural choice at a lower rung (extended-ck imposes c_3 = −2)"*. **This producer is that variant.** New here is the exact cause and the two defects below.
+
+**It is a measured case for a standing warning.** AGENTS.md says the ladder *"must be RE-DERIVED under D, and that is NOT a z-swap"*. This is what a z-swap produces: `c_4 = −114136` where the C frame had `−2.54`, with the integrality claim gone vacuous.
+
+**Defect 1 — the integrality test is RELATIVE, so it goes vacuous as `c_k` grows.** Not found in the corpus. `frac = |c − round(c)|/|c| · 100 < 5` admits **±0.127** at `c_4 = −2.54` but **±5706.8** at `−114136`, so *"c_k is an integer"* carries no information there — and the producer then **continues peeling with the rounded value**, so the next rung absorbs the rounding error. The `1 ppQ ACHIEVED` banner is likewise unfalsifiable: `c_k := (R−1)/u^k` followed by `R /= (1 + c_k u^k)` gives `R/R = 1` exactly, so the residual is zero **by construction** at any anchor — the same inversion AGENTS.md records for `qbeta_ck_cache.py`.
+
+**Defect 2 — found by the probe failing its own first version.** The witness's `commitSha` (`69f7ec22fef`) holds `c_4 = −1.14353678` while **HEAD** holds `−2.537865912`: it was re-committed after that sha was stamped, so `commitSha` does not identify the content at HEAD. AGENTS.md records this class for `scriptCommitSha`; it applies to `commitSha` too, and it is why a gate must baseline against **HEAD**, not the recorded sha. Asserted as a check so it cannot silently stop being true.
+
+**Attribution is NOT available, and saying so is part of the result.** The only commit this clone's log attributes to the upstream witness in the window is `806d5146227`, which **is** a shallow boundary (checked against `.git/shallow`), so the log is truncated there. The values are reliable — both read out of git — but which commit moved `Q_N1` cannot be determined here. **Do not quote `806d5146227` as the cause.**
