@@ -68,7 +68,7 @@ opaque z : ℕ → ℝ
 /-- The Faddeev–Kashaev quantum dilogarithm, **defined** by its
     integral representation `Φ_q(w) = ∫₀^{w} ln_q(1+t)/t dt` (the
     .md's second equality) as a Mathlib interval integral. -/
--- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394002446
+-- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394000447
 noncomputable def Phi_q (w : ℝ) : ℝ := ∫ t in (0 : ℝ)..w, lnq (1 + t) / t
 
 /-- **Integral representation of `Φ_q`** — the .md's second equality,
@@ -85,7 +85,7 @@ class TmDivisorChartInputs : Prop where
     multiplicative-integral norm evaluates to the q-dilogarithm
     integral at `z_i`.  Needs Yekutieli multiplicative integration and
     the Faddeev–Kashaev evaluation (neither in Mathlib). -/
--- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394002446
+-- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394000447
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 theorem tm_divisor_chart_evaluation [ctx : TmDivisorChartInputs] :
     ∀ i : ℕ, MI i = ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t :=

@@ -1242,8 +1242,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "(S↔P column of thm:ew-triplet-charge-spin-from-involution row) Class `EWSectorSelection` carries the T₃ values as fields, and `ew_charge_spin_forced` returns them; spin is *defined* from the sector. So the conclusion is a field or a definition, not derived. The statement says charge \"follows\" from the postulate, but T₃ *is* the postulate. Proof: \"neutrality is forced by bar-parity\" is contradicted by its own Z case (bar-odd yet neutral). §3 uses the measured spins of H and B as \"independent physical inputs\" (empirical content in a proof)"
+      },
+      {
+        "field_hash": {
+          "md": "67c988d91536",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:43:54.423Z",
+        "reviewed_sha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "evidence": "[full review 2026-11-21] The proof was rewritten and the 2026-11-15 objections are gone. The bar-parity claim that clashed with its own Z case is dropped; the proof now says sigma-parity makes Z charged. Charge and sector label are computed from the sector vector: the even part is fixed with zero skew, and the odd part is nonzero with skew a - a^-1 given 2 invertible and a^2 != 1. W- has the opposite charge because its eigenvalue is a^-1. Each step follows and matches the Lean. The isospin section is correct: H gives mu = 0, Z gives lambda = 0, and W+ then fails. So is the mixing section, where (c,s) rotation gives cQ(Z) + sQ(gamma) = x and -sQ(Z) + cQ(gamma) = y. Minor point: the last section, on the sigma_5^8 grading, argues a different claim from the one stated. It reads H as scalar and B as vector and takes both as inputs, so it adds an interpretive premise rather than a step of this proof."
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:04.697Z"
+  "updated_at": "2026-11-21T07:43:54.423Z"
 }

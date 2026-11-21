@@ -12,7 +12,7 @@ export default conjecture({
     "def:borromean-baryon",
     "rem:borromean-topological-confinement",
   ],
-  cites: ["kawauchi1996"],
+  cites: ["kawauchi1996", "dgkmsv2009"],
   tags: [
     "tier:S",
     "borromean",

@@ -271,7 +271,7 @@ $$
   \bigr).
 $$
 
-The obstruction persists: $\kappa_n \neq 0$ at every level, so the $R$-matrix possesses a nonzero transient component. Braiding at level $n{+}1$ is **not** exclusively determined by level $n$.
+This expression is a difference of two scalars: by J-3, $\kappa_n = \mathrm{tr}_M^{(n+1)}(\check{R}^{(n+1)}) - \mathrm{tr}_M^{(n)}(\check{R}^{(n)})$. It vanishes whenever $\check{R}^{(n+1)} = \ell_n(\check{R}^{(n)})$, in particular for $\check{R}^{(n)} = \sigma_i^{(n)}$, since $\ell_n(\sigma_i^{(n)}) = \sigma_i^{(n+1)}$ (`QOU.JetObstruction.kappa_eq_zero_of_descended`). A nonzero value therefore needs a level-$(n{+}1)$ $R$-matrix that is not a jet image, and no such $R$-matrix is defined here. The earlier assertion that $\kappa_n \neq 0$ at every level rested on the retracted jet-tower form of item 3 of [QU-to-QOU](#thm:qu-to-qou) and is withdrawn; item 3 now concerns the Kummer tower, where the obstruction $\chi(\mathcal{S}) \bmod n$ vanishes exactly for $n \mid 6$.
 
 ### JC-5: Betti numbers across levels
 

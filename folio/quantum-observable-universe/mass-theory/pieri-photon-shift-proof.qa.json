@@ -254,6 +254,22 @@
         "reviewed_at": "2026-11-18T04:05:50.324Z",
         "reviewed_sha": "eb91bc14719e82c5b1b1de645aa5cf69c972bc9f",
         "evidence": "Statement narrowed to two-row shapes, where the SU_q(2) Schur-Weyl step of the proof applies; steps 1-4 follow."
+      },
+      {
+        "field_hash": {
+          "md": "b9a5719d249f",
+          "ts": "97969dc49e22"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:16:09.049Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "Full review 2026-11-21. The proof now uses the ruled four-term photon 1 + phi0 s_a + phi1 s_b + phi01 s_a s_b^{-1} (no ruling conflict) and handles the vertex term via s_b^{-1} = s_b - h. Case b <= n-1 is correct: all terms lie in H_n(q) and commute with the central idempotent e_lambda. Case b = n is correct in substance but compressed: the old Steps 2-4 (Clebsch-Gordan / Pieri) are replaced by one sentence that terms with s_n act on the module induced from V_lambda with isotypic components lambda +/- box; the needed fact (left support of y*e_lambda for y in H_{n+1} lies in {mu covering lambda}, truncated to two rows by Schur-Weyl on V^{otimes n+1}) is asserted, not argued. Gap: the statement places the photon on 'three consecutive strands of the tower' but the proof covers only b <= n; a placement with a >= n (terms at level n+2) is not treated, so the statement should restrict b <= n. No empirical premises."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1617,6 +1633,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-18T04:05:50.324Z",
+  "updated_at": "2026-11-21T08:16:09.049Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1064,6 +1064,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "he4-channel-active-set.lean:101-105 fields `primal_saturating_unique`, `active_set_eq`, `dual_ordering` = statement items 1–3; no LP encoded",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "a55250143577",
+          "ts": "cd6c1a88eb4a",
+          "lean": "b7c8a1af2d5d",
+          "lean_statement": "5105192f8e45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:57.150Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: md only: witness-file names removed, cross-ref labels replaced by titles, first-person phrasing rewritten; the three statement items are unchanged and the Lean (class fields equal to items 1-3) is unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: he4-channel-active-set.lean:101-105 fields `primal_saturating_unique`, `active_set_eq`, `dual_ordering` = statement items 1–3; no LP encoded"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2135,6 +2152,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:35.179Z",
+  "updated_at": "2026-11-21T08:17:57.150Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

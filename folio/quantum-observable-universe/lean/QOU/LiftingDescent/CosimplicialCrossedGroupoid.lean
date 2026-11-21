@@ -23,7 +23,7 @@ LaTeX label: `prop:cosimplicial-crossed-groupoid`
 
 ## References
 
-- [yekutieli2010] Central Extensions of Gerbes, §3–4
+- [yekutieli2014-descent] Combinatorial Descent Data for Gerbes, §1 (Defs 1.2, 1.5)
 - [yekutieli2015] Nonabelian Multiplicative Integration on Surfaces
 - [leitner2026] §3 Lifting and Descent
 -/
@@ -47,10 +47,10 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     instead of two definitions that could drift apart. The generic structure
     asks only for `[Zero R]` precisely so a `CommRing` without total inverses
     can instantiate it. -/
--- Ref: [yekutieli2010] §3
+-- Ref: [yekutieli2014-descent] Def 1.5 (combinatorial descent datum (x, g, a))
 abbrev YekutieliTriple (M : Type*) := QOU.Torsion.YekutieliTriple R_q M
 
-/-- A crossed module in the sense of Yekutieli [yekutieli2010]:
+/-- A crossed module in the sense of Yekutieli [yekutieli2014-descent]:
     a pair of (possibly non-abelian) groups `N`, `G`, a boundary
     homomorphism `∂ : N → G`, and a conjugation action of `G` on
     `N` satisfying the Peiffer identity
@@ -61,7 +61,7 @@ abbrev YekutieliTriple (M : Type*) := QOU.Torsion.YekutieliTriple R_q M
     enters only through the *image* of `∂` when an instance is
     realised over the deformation parameter. Cf. gemini-code-assist
     review on PR #535. -/
--- Ref: [yekutieli2010] §2, Definition 2.1
+-- Ref: [yekutieli2014-descent] Def 1.2 (crossed groupoid; one object = crossed module, Rem 1.3)
 structure CrossedModule where
   N : Type
   G : Type
@@ -75,7 +75,7 @@ structure CrossedModule where
 attribute [instance] CrossedModule.grpN CrossedModule.grpG
 
 /-- **Cosimplicial crossed groupoid** for the brane tower. -/
--- Ref: [yekutieli2010] §4, [leitner2026] §3
+-- Ref: [yekutieli2014-descent] §1, text after Def 1.4, [leitner2026] §3
 structure CosimplicialCrossedGroupoid (M : Type*) where
   tripleAt : (n : ℕ) → YekutieliTriple M
   coface : (n : ℕ) → YekutieliTriple M → YekutieliTriple M
@@ -91,7 +91,7 @@ structure CosimplicialCrossedGroupoid (M : Type*) where
     (codegeneracy n (codegeneracy n t)).level
 
 /-- The assignment `[n] ↦ 𝔊ₙ` extends to a cosimplicial crossed groupoid. -/
--- Ref: [yekutieli2010] §4, Theorem 4.2
+-- Ref: [yekutieli2014-descent] §1, text after Def 1.4 (cosimplicial crossed groupoid = object of Δ(CrGrpd)); existence on the brane tower is ours, not Yekutieli's
 -- Ref: [leitner2026] §3, Proposition: Cosimplicial crossed groupoid
 theorem cosimplicial_crossed_groupoid_exists (M : Type*)
     [inst : Nonempty M] :

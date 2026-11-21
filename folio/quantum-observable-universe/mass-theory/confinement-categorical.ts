@@ -1,6 +1,13 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-21",
+      body: "**Lean scope (disclosure, not a change of claim).** The `lean.ref` theorem `confinement_categorical` is a self-assuming projection (AGENTS.md §3b-cond item 5): its body is `ctx.confinement_ident`, a field of `ConfinementCategoricalContext` that states the theorem's three-clause conclusion verbatim (survival on E_∞^{0,0}, factorisation of the integral through the centre projector, centrality of observables). The Lean therefore derives nothing; `#print axioms` shows no `sorryAx`, so a status audit reads it as proved. The inputs the proof needs, semisimple Hochschild vanishing HH^k(A) = 0 for k ≥ 1 and the Wedderburn decomposition of A, are not formalised. The projection was removed on 2026-08-08 (bean qou-mtc9, option 1: honest `sorry`) and has since returned as the field `confinement_ident`; the Lean file's own docstring records this. Bean qou-mtc9.",
+    },
+  ],
   label: "prop:confinement-categorical",
   title: "Confinement = spectral-sequence collapse (only Wedderburn-central observables survive)",
   lean: {

@@ -1261,6 +1261,24 @@
         "severity": "major",
         "evidence": "The conclusion is the class field `exists_instance`, so it is self-assuming. The witness O_q(SU(2)) breaks the axioms in four ways: (1) it is infinite-dimensional, so it has no coevaluation; (2) it has infinitely many blocks, against axiom 4; (3) its Haar state is KMS, not tracial; (4) it is not symmetric Frobenius. The axiom lemmas below confirm the gaps.",
         "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "92e8222e9cb6",
+          "ts": "6d107c613e53",
+          "lean": "a3a27399f120",
+          "lean_statement": "070dd24583b8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:07:44.740Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[full review 2026-11-21; Lean changed] The existence theorem no longer returns the class field exists_instance; it is now a sorry citing [kassel1995] and [wenzl1988] (bean qou-6qbv), so the Lean is honest: stated, not proved. The md is unchanged and still names O_q(SU(2)) as the witness, which breaks the axioms in the four ways recorded before. It is infinite-dimensional, so it has no coevaluation. It has infinitely many blocks. Its Haar state is KMS, not tracial. It is not symmetric Frobenius. The Lean docstring itself says the obstruction qou_needs_nongenerating_unit rules out a module-category witness and that the sorry is unchanged."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2528,6 +2546,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:12.638Z",
+  "updated_at": "2026-11-21T08:07:44.740Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

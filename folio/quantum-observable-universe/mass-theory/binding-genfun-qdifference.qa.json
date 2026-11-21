@@ -1243,6 +1243,24 @@
         "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
         "severity": "minor",
         "evidence": "Lean proves the q-holonomic -> q-recursive step from an annihilation hypothesis, matching item 1 (I checked G(qx)=(1-x)G(x) gives B_n=1/(q;q)_n = 1,-1,1/3,-1/21,1/315 at q=2). Item 2 (archimedean limit to a differential equation) is not encoded."
+      },
+      {
+        "field_hash": {
+          "md": "edcdef4b5b7f",
+          "ts": "6caa0e20f5b9",
+          "lean": "3270bb60c50f",
+          "lean_statement": "e2da6098620f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:25.421Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "Full review 2026-11-21. Diff dropped 'conditional on conj:binding-manybody-eq-jet-filtration' from the banner and replaced two Lean-name citations by 'proved'; the .ts uses[] agrees (items 1-2 hold for any R; the conjecture only names B_n), so the unconditional banner is justified. Lean ref QOU.Mass.binding_qdifference_recurrence (binding-genfun-qdifference.lean) derives B_{n+d} = sum_{j<d} (-c_{n,j}/c_{n,d}) B_{n+j} from the structure fields annihilates and leading_ne_zero (premises, not the conclusion) - this matches item 1 (md:16-25), but in coefficient form: the passage from G(qx)=R(q,x)G(x) to the coefficient identity is assumed, not proved. Item 2 (archimedean image as a Dirac-type differential equation, md:26-29) is still not encoded, and the rank-1 exclusion in the scope box (now worded 'This exclusion is proved') is not part of this ref. Same verdict as before; no regression. No owner-ruling conflict."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2482,6 +2500,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:06:46.230Z",
+  "updated_at": "2026-11-21T08:17:25.421Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
