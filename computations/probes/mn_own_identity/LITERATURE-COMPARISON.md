@@ -398,3 +398,30 @@ of `c`, and the units in which these traces become MeV, are not fixed here.
 normalisation of `ψ*ψ`, and the constant `c = φ∇ψ` inherits that freedom. Fixing `c = 12` needs a
 normalisation law for `λ` that the current `FrobeniusHopfData` does not contain. Adding one is an
 axiom change and is an owner decision; nothing here proposes a value.
+
+## 13. Does existing structure already pin λ? (2026-11-21, owner: "1")
+
+Read `FrobeniusHopfData` (`CategoricalFoundations.lean`) law by law. Only three laws mention `λ`:
+the two snake identities and `antipode_frobeniusForm : S ≫ λ = λ`. The last is linear in `λ`, so
+it is invariant under `λ ↦ sλ` as well. None of the unit, counit, (co)associativity, Frobenius or
+other antipode laws mentions `λ`. So **no axiom pins the scale of λ**. With §12 this is now a
+complete check of the structure, not a sample.
+
+Two things the structure does pin, and why they matter:
+
+- **The categorical trace is scale-free** (`leftTrace_rescale`, sorry-free). `leftTrace f =
+  coev ≫ (f ▷ A) ≫ μ ≫ λ` is unchanged by `λ ↦ sλ`, `coev ↦ s⁻¹coev`, because the closed loop
+  contains one of each. So any constant that is a *closed* trace has a fixed value. The open
+  pairing `ψ* ψ` contains `λ` but not `coev`, so it is not fixed. This sharpens the question: the
+  constant `c` is fixed by the current axioms if and only if it can be written as a closed trace
+  rather than as `φ ∇ ψ` with a free normalisation of `ψ`.
+- **The counit `ε` is pinned** by the counit laws (a comonoid has a unique counit; standard, not
+  re-proved here). The corpus already uses the hypothesis `λ = ε` in
+  `MassTraceIdentity.massTrace_eq_functional_hol_of_frobeniusForm_eq_counit` and in the bridge's
+  `reeb_holonomy_leftTrace_eq_functional_hol`. Under that hypothesis the scale of `λ` is fixed. It is
+  a hypothesis of those theorems, not an axiom. Whether `λ = ε` is compatible with the snake
+  identities on the intended models has not been checked here, and the value it gives `ψ* ψ`
+  also depends on `ψ`, which is still free.
+
+The Markov normalisation `τ(1) = 1` fixes a trace on the Hecke tower, not `λ`; by
+`leftTrace_rescale` the categorical trace is already scale-free, so it adds nothing to `λ` either.

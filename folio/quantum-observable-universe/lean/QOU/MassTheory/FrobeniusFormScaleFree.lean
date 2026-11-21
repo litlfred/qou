@@ -46,4 +46,13 @@ omit [MonoidalPreadditive C] [MonoidalLinear F C] in
 theorem pairing_rescale (A : C) (lam : A ⟶ 𝟙_ C) (x : 𝟙_ C ⟶ A) (s : F) :
     x ≫ (s • lam) = s • (x ≫ lam) := Linear.comp_smul _ _ _ _ _ _
 
+omit [MonoidalPreadditive C] [MonoidalLinear F C] in
+/-- **The categorical trace is scale-free.** `leftTrace f = coev ≫ (f ▷ A) ≫ μ ≫ λ` is unchanged
+by `λ ↦ s • λ`, `coev ↦ s⁻¹ • coev`. So the closed-loop trace, unlike the open pairing `ψ* ψ`, is
+fixed by the axioms. -/
+theorem leftTrace_rescale (A : C) (mul : A ⊗ A ⟶ A) (lam : A ⟶ 𝟙_ C)
+    (coev : 𝟙_ C ⟶ A ⊗ A) (f : A ⟶ A) (s : F) (hs : s ≠ 0) :
+    (s⁻¹ • coev) ≫ (f ▷ A) ≫ mul ≫ (s • lam) = coev ≫ (f ▷ A) ≫ mul ≫ lam := by
+  simp only [Linear.smul_comp, Linear.comp_smul, smul_smul, mul_inv_cancel₀ hs, one_smul]
+
 end QOU.MassTheory.FrobeniusFormScaleFree
