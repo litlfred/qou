@@ -19,7 +19,7 @@ $$
   (3q + q^{-1})(q + 3q^{-1}) - (2q^{-1})(2q) = 3q^2 + 6 + 3q^{-2} = 3\,[2]_q^2 .
 $$
 
-Dividing by $D^2$ gives the determinant of the map. When $[2]_q \neq 0$, Cramer's rule gives the inverse
+Dividing by $D^2$ gives the determinant of the map. Under the hypotheses ($3$, $D$ and $[2]_q$ invertible), the determinant is invertible, and Cramer's rule gives the two-sided inverse
 
 $$
   \mu_{\mathfrak{u}} = \frac{D\bigl((q + 3q^{-1})\,m_p - 2q^{-1}\,m_n\bigr)}{3\,[2]_q^2},
@@ -27,4 +27,4 @@ $$
   \mu_{\mathfrak{d}} = \frac{D\bigl((3q + q^{-1})\,m_n - 2q\,m_p\bigr)}{3\,[2]_q^2}.
 $$
 
-Both parts are identities in $q$; no value of $q$ and no measured mass is used. $\square$
+Substituting these into the linear form returns $(m_p, m_n)$, and substituting the linear form into these returns $(\mu_{\mathfrak{u}}, \mu_{\mathfrak{d}})$, so the map is a bijection. Both parts are identities in $q$; no value of $q$ and no measured mass is used. $\square$
