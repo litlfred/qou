@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: low
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-21T13:00:00Z
+updated_at: 2026-11-21T16:00:00Z
 parent: qou-ncxf
 ---
 
@@ -24,3 +24,7 @@ qou-ncxf pass-1 (docs/audits/2026-11-20-roundtrip-blind-audit-pass1.md, block B0
 - Disclosed, not fixed: a dated `caveat` authorNote on the block's `.ts` (commit 24c44167e) says exactly what the Lean proves and what it does not. Kind, prose, `uses[]` and Lean untouched.
 - The kind change / restatement / demotion is an owner decision (ask-first rule); framed in the coordinator report. Stays open until the claim is re-derived or restated.
 - Superseded-premise check (owner 2026-11-21, against docs/coordination/owner-rulings.md on main 2ae54ab40; list: L± photon, virtual photons, pre-Nov-15 γγ letters, T(2,n_s), convention C, single-term trace, trefoil-primary electron, 'c_2 = −1 PROVED', χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean's premises or in the files it names.
+
+## 2026-11-21 (honesty-audits sibling)
+
+Statement restated to what the Lean proves (owner ruling 2026-11-21, PR #8888; record in docs/audits/2026-11-21-roundtrip-blind-audit-pass2.md §3). The `.md` no longer claims more than the `lean.ref` theorem. Left open on purpose: the original, stronger claim is still unproved, and the narrative-proof defects noted above are not yet fixed.

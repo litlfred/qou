@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: critical
 created_at: 2026-11-19T16:50:58Z
-updated_at: 2026-11-20T08:50:00Z
+updated_at: 2026-11-21T16:00:00Z
 ---
 
 End-to-end blind multi-agent round-trip audit architecture across all 741 provable claims (and definitions/conjectures) in QOU, using strictly isolated, tool-free blind agents at every leg plus deterministic comment/spoiler scrubbing (`folio/pipeline/roundtrip-blind-packets.ts`).
@@ -19,3 +19,7 @@ Stalled-claim takeover: last touch 2026-11-19T17:42Z (>3 h); no backing branch o
 - Calibration: the blind legs independently reproduced qou-vkm6 (B07).
 - New beans: qou-27ys, qou-ni0g, qou-1iit, qou-n3xv, qou-tdhw, qou-zxuy, qou-xxa9, qou-5d0x, qou-k9tf, qou-pwo1.
 - Remaining: 425 blocks. The adjudicator is not yet a separate agent. The sampler misses dotted decl names. Stays in-progress.
+
+## 2026-11-21 (honesty-audits sibling)
+
+Pass 2 done (20 blocks, offset 15; PR #8888, docs/audits/2026-11-21-roundtrip-blind-audit-pass2.md). Class A in 9/20, tautology 2, genuine 9. New: C12 `wigner_coefficient_axiom` is an axiom carrying an empirical 3 % bound at the retired CODATA-2018 muon pin (see also qou-wg3c); C09 and C13 narrative proofs verified wrong; C19/C20 agent findings checked and rejected. Five decl-not-found refs in the window. Pass-1 restatements and the confinement sorry also landed in #8888. Next cursor: offset 40.
