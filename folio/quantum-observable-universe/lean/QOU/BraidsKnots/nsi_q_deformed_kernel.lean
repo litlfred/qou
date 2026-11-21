@@ -44,10 +44,15 @@ the lemma into its two honest parts:
   reciprocal diverges.
 - `nsi_q_kernel_identification` — that the trace-side kernel the
   categorical mass of the filament inherits *is*
-  `qDeformedKernel q ‖ϱ(s) − ϱ(t)‖` — is the genuinely open part
-  (the `q`-deformed commutator / `q`-Hodge star are not yet
-  formalised); it is an honest `sorry` carrying the manuscript
-  citation per AGENTS.md §1.
+  `qDeformedKernel q ‖ϱ(s) − ϱ(t)‖` — is **derived conditionally** on
+  `NsiQDeformedKernelContext` from `K_cat_eq` (the categorical kernel
+  is the `q`-deformed commutator evaluated at the chord separation
+  `‖ϱ(s) − ϱ(t)‖`) and `qDeformedCommutator_eq` (for `q ≠ 1`, the
+  `q`-deformed commutator agrees with `qDeformedKernel q r`).
+- `qDeformedKernel_one` proves the classical `q = 1` recovery
+  `qDeformedKernel 1 r = 2 / r²` (`ℏ_1 = 0`, `[2]_1 = 2`), and
+  `canonicalNsiQDeformedKernelContext` exhibits a concrete inhabited
+  filament model at `q = 2` (`nonempty_nsiQDeformedKernelContext`).
 
 The resolving declaration `nsi_q_deformed_kernel` conjoins the two.
 -/
@@ -199,5 +204,56 @@ theorem nsi_q_deformed_kernel {E : Type*} [NormedAddCommGroup E]
       (nhdsWithin (hbarQ ctx.q) {r : ℝ | r ≠ hbarQ ctx.q}) Filter.atTop :=
   ⟨nsi_q_kernel_identification s t hq1,
    nsi_q_kernel_hard_singularity hq0 hq1⟩
+
+/-! ### Classical `q = 1` limit recovery and inhabited filament witness -/
+
+/-- At `q = 1`, the `q`-Planck constant `ℏ_1 = 1 − 1⁻¹ = 0` vanishes. -/
+theorem hbarQ_one : hbarQ 1 = 0 := by
+  unfold hbarQ
+  norm_num
+
+/-- At `q = 1`, the `q`-integer `[2]_1 = 1 + 1⁻¹ = 2`. -/
+theorem qInt2_one : qInt2 1 = 2 := by
+  unfold qInt2
+  norm_num
+
+/-- **Classical inverse-square recovery at `q = 1`**: the `q`-Planck
+    regularisation `ℏ_q²` vanishes and `qDeformedKernel 1 r = 2 / r²`. -/
+theorem qDeformedKernel_one (r : ℝ) :
+    qDeformedKernel 1 r = 2 / r ^ 2 := by
+  unfold qDeformedKernel
+  rw [qInt2_one, hbarQ_one]
+  ring
+
+/-- **Concrete inhabited witness** for `NsiQDeformedKernelContext ℝ`
+    (bean `nsi_q_deformed_kernel` under `qou-uot9`).
+    Models a straight vortex filament `ϱ(s) = s` in `E = ℝ` at substrate
+    parameter `q = 2` (`ℏ_2 = 1/2`, `[2]_2 = 5/2`). -/
+noncomputable def canonicalNsiQDeformedKernelContext :
+    NsiQDeformedKernelContext ℝ where
+  q := 2
+  ϱ := id
+  K_cat := fun s t => qDeformedKernel 2 ‖s - t‖
+  qDeformedCommutator := qDeformedKernel
+  K_cat_eq := fun _ _ => rfl
+  qDeformedCommutator_eq := fun _ _ => rfl
+
+/-- `NsiQDeformedKernelContext ℝ` is inhabited. -/
+theorem nonempty_nsiQDeformedKernelContext :
+    Nonempty (NsiQDeformedKernelContext ℝ) :=
+  ⟨canonicalNsiQDeformedKernelContext⟩
+
+/-- **Unconditional specialization of `nsi_q_deformed_kernel`** on the
+    concrete filament model `canonicalNsiQDeformedKernelContext` at `q = 2`. -/
+theorem canonical_nsi_q_deformed_kernel (s t : ℝ) :
+    letI : NsiQDeformedKernelContext ℝ := canonicalNsiQDeformedKernelContext
+    canonicalNsiQDeformedKernelContext.K_cat s t =
+      qDeformedKernel 2 ‖s - t‖ ∧
+    Filter.Tendsto (fun r => |qDeformedKernel 2 r|)
+      (nhdsWithin (hbarQ 2) {r : ℝ | r ≠ hbarQ 2}) Filter.atTop := by
+  letI : NsiQDeformedKernelContext ℝ := canonicalNsiQDeformedKernelContext
+  exact nsi_q_deformed_kernel s t
+    (by show (2 : ℝ) ≠ 0; norm_num)
+    (by show (2 : ℝ) ≠ 1; norm_num)
 
 end QOU.BraidsKnots

@@ -235,4 +235,44 @@ theorem q_turbulence_spectrum [cm : QTurbulenceCascadeModel] :
   ⟨fun _ _ => rfl, fun _ => rfl,
    QTurbulence.finite_cascade_depth_of_cutoff, QTurbulence.ΔE_gap_pos⟩
 
+/-- **Concrete multi-mode inhabited witness** for `QTurbulenceCascadeModel`
+    (bean `q_turbulence_spectrum` under `qou-uot9`).
+    At `q = 9/8 > 1`, the Planck–Reynolds number is
+    `Re_q = 2 / (9/8 − 1) = 16 = 2⁴`, so the Kolmogorov dissipation scale is
+    `Re_q^{3/4} = (2⁴)^{3/4} = 2³ = 8`.  With `N_modes = 3` active modes,
+    `q^3 = (9/8)^3 = 729/512 ≤ 8 = Re_q^{3/4}`, discharging `cutoff` with
+    strictly positive mode count `N_modes = 3`. -/
+noncomputable def canonicalQTurbulenceCascadeModel : QTurbulenceCascadeModel where
+  q := 9 / 8
+  q_gt_one := by norm_num
+  Re_q := 2 / (9 / 8 - 1)
+  Re_q_eq := rfl
+  N_modes := 3
+  ε := 1
+  ε_pos := by norm_num
+  C_q := 1
+  C_q_pos := by norm_num
+  cutoff := by
+    have h16 : (2 / (9 / 8 - 1) : ℝ) = (2 : ℝ) ^ (4 : ℝ) := by norm_num
+    rw [h16, ← Real.rpow_mul (by norm_num : (0 : ℝ) ≤ 2)]
+    norm_num
+
+/-- `QTurbulenceCascadeModel` is inhabited by a 3-mode cascade witness. -/
+theorem nonempty_qTurbulenceCascadeModel :
+    Nonempty QTurbulenceCascadeModel :=
+  ⟨canonicalQTurbulenceCascadeModel⟩
+
+/-- **Unconditional instantiation of `q_turbulence_spectrum`** on the
+    3-mode witness `canonicalQTurbulenceCascadeModel`, verifying that the
+    cascade-depth bound `3 ≤ ¾ · log 16 / log (9/8)` and positive spectral
+    gap `0 < ΔE_gap` hold unconditionally on a concrete model. -/
+theorem canonical_q_turbulence_spectrum :
+    letI : QTurbulenceCascadeModel := canonicalQTurbulenceCascadeModel
+    ((canonicalQTurbulenceCascadeModel.N_modes : ℝ) ≤
+      (3 : ℝ) / 4 * Real.log canonicalQTurbulenceCascadeModel.Re_q /
+        Real.log canonicalQTurbulenceCascadeModel.q) ∧
+    0 < (QTurbulence.ΔE_gap (ctx := canonicalQTurbulenceCascadeModel.toQTurbulenceSpectrumContext) : ℝ) := by
+  letI : QTurbulenceCascadeModel := canonicalQTurbulenceCascadeModel
+  exact ⟨(q_turbulence_spectrum).2.2.1, (q_turbulence_spectrum).2.2.2⟩
+
 end QOU.FluidDynamics
