@@ -60,8 +60,10 @@ def chi_writhe0_lift(pairs):
 
 def main():
     self_check()
-    # monotonicity check used for pruning: appending R or L never lowers the trace of a
-    # nonneg matrix with det 1 (entries >= 0), checked on the fly by assertion below.
+    # The `tr > t: return` pruning in classes_with_trace is justified by a proof, not a
+    # runtime check: for non-negative SL(2,Z) matrices with diagonal >= 1,
+    # tr(MN) >= tr M + tr N - 2, and tr(R^a L^b) >= 3, so appending a block never lowers
+    # the trace (result.md, "All lengths", step 4).
     chi_bor = lkey(char(BOR))
     # Delta^4 acts as a scalar in the (2,1) rep:
     D = IDM

@@ -30,8 +30,10 @@ force it, and which freedom the mass identity leaves.
   Burau representation at `t = −1` (`burauNeg`), where `β_Bor ↦ [[13, 8], [8, 5]]`.
 * `two_strand_pureZeroLinking` — a word in `σ₀^{±1}` alone (two strands moving) that is
   pure with zero linking is the identity. So three is the smallest strand count with a
-  non-trivial pure zero-linking braid. (Four or more strands need at least 14 crossings
-  for a Brunnian braid; that is a search result in the companion probe, not proved here.)
+  non-trivial pure zero-linking braid. (The companion probe finds no Brunnian braid on
+  4, 5 or 6 strands of length ≤ 6, and a counting argument excludes 7 or more strands
+  at that length, so four or more strands need at least 8 letters; the first 4-strand
+  examples have length 14. These are search results, not proved here.)
 * `minimal_pure_zeroLinking` — **combining these: the shortest reduced three-strand
   words that are pure, have zero pairwise linking, and are not the identity of `B₃`
   have length 6, and every one of them is conjugate in `B₃` to `β_Bor`.**
