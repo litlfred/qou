@@ -3,8 +3,8 @@
   "label": "conj:g-action-on-substrate",
   "kind": "conjecture",
   "paths": {
-    "ts": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts",
-    "md": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md",
+    "ts": "folio/quantum-observable-universe/knots-particles-confinement/g-action-on-substrate.ts",
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/g-action-on-substrate.md",
     "lean": "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean"
   },
   "source_hashes": {
@@ -333,7 +333,7 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"fixed-q0\"],\"chapter\":\"quantum-observable-universes\",\"expected\":[\"generic-R\",\"na\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"fixed-q0\"],\"chapter\":\"knots-particles-confinement\",\"expected\":[\"generic-R\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -437,7 +437,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md:1 — detected regime [fixed-q0] is disjoint from chapter 'quantum-observable-universes' expected [generic-R, na, real-positive, symbolic]"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/g-action-on-substrate.md:1 — detected regime [fixed-q0] is disjoint from chapter 'quantum-observable-universes' expected [generic-R, na, real-positive, symbolic]"
       }
     ],
     "canonical-calibration-count": [
@@ -659,7 +659,7 @@
         "reviewed_at": "2026-08-09T13:01:47.990Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts:0: forward ref: uses def:frobenius-hopf-substrate (manifest pos 105) which appears after this block (pos 37) in the chapter | folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.ts:0: forward ref: uses def:categorical-action (manifest pos 129) which appears after this block (pos 37) in the chapter"
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/g-action-on-substrate.ts:0: forward ref: uses def:frobenius-hopf-substrate (manifest pos 105) which appears after this block (pos 37) in the chapter | folio/quantum-observable-universe/knots-particles-confinement/g-action-on-substrate.ts:0: forward ref: uses def:categorical-action (manifest pos 129) which appears after this block (pos 37) in the chapter"
       }
     ],
     "detangler-section-band": [

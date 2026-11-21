@@ -229,6 +229,10 @@ export default chapter({
         "electroweak-higgs-torus-link-triplet-table1-data",
         "electroweak-higgs-torus-link-triplet-table2-data",
         "electroweak-higgs-torus-link-triplet-table3-data",
+        "higgs-vacuum-residual-idempotent",
+        "g-action-on-substrate",
+        "g-action-on-substrate-table1-data",
+        "g-action-on-substrate-table2-data",
       ],
     }),
 

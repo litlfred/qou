@@ -204,23 +204,6 @@ export default chapter({
       ],
     }),
 
-    // ── G-action on the substrate ─────────────────────────────────────
-    // Moved here from sec:emergence (reading-order drain, qou-d4kh,
-    // 2026-11-20): the conjecture is stated in q-dimensions [n]_q, so it
-    // must follow sec:substrate-parameter, where q is introduced. The
-    // idempotent proposition precedes the conjecture that cites it.
-    section({
-      title: "The $G$-action on the substrate",
-      label: "sec:emergence-g-action",
-      blocks: [
-        "higgs-vacuum-residual-idempotent",
-        "g-action-on-substrate",
-        "g-action-on-substrate-table1-data",
-        "g-action-on-substrate-table2-data",
-        "higgs-vacuum-residual-graviton",
-      ],
-    }),
-
     // ── Heisenberg commutator ────────────────────────────────────────
     // Relocated from models-of-qous/sec:categorical-differential-bridge
     // per Phase 3 of chapter-restructure-2026-05-25. The Heisenberg

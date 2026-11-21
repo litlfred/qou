@@ -39,6 +39,7 @@ export default chapter({
           label: "sec:mass-endomorphism-mass-identity",
           blocks: [
             "mass-endomorphism-conjecture",
+            "higgs-vacuum-residual-graviton",
             "pairing-gauge-fluctuation-massless",
             "pairing-gauge-fluctuation-massless-interpretation",
             "mass-identity",
