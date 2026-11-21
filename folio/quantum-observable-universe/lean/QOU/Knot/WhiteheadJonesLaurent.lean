@@ -40,46 +40,12 @@ The only non-polynomial piece of van der Veen's formula is the clasp ratio
 namespace QOU.Knot.FigureEightVolume
 
 open Polynomial Finset
-open QOU.MathlibExt (gaussG prod_mul_gaussG)
+open QOU.MathlibExt (gaussG prod_mul_gaussG clasp_prod_eq)
 open QOU.Mass.QuantumSl2
 open QOU.Mass.QuantumSl2.MarkovTrace
 open QOU.IwahoriHecke.BraidGroup (BraidGroupN)
 open QOU.Torsion.MassTraceMarkovClass (artinTower)
 open QOU.MathlibExt.MarkovMoves
-
-/-! ### The clasp product as a Laurent polynomial -/
-
-/-- The clasp product of van der Veen's formula is a Laurent monomial product times the
-Gaussian binomial at `t = s²`, wherever its denominators are nonzero. -/
-theorem clasp_prod_eq {K : Type*} [Field K] {s : K} {N n k : ℕ}
-    (hden : ∀ j ∈ range n, 1 - s ^ (2 * ((j : ℤ) + 1)) ≠ 0) :
-    ∏ j ∈ range n,
-        (1 - s ^ (2 * ((N : ℤ) - ((j : ℤ) + 1) - k))) * (1 - s ^ (2 * ((j : ℤ) + 1 + k)))
-          / (1 - s ^ (2 * ((j : ℤ) + 1)))
-      = (∏ j ∈ range n, (1 - s ^ (2 * ((N : ℤ) - ((j : ℤ) + 1) - k))))
-          * (gaussG n k).eval₂ (Int.castRingHom K) (s ^ 2) := by
-  have hpow : ∀ a : ℕ, s ^ (2 * (a : ℤ)) = (s ^ 2) ^ a := fun a => by
-    rw [← zpow_natCast, ← zpow_natCast, ← zpow_mul]; push_cast; ring_nf
-  have hD : ∏ j ∈ range n, (1 - (s ^ 2) ^ (j + 1)) ≠ 0 := by
-    rw [prod_ne_zero_iff]
-    intro j hj
-    have := hden j hj
-    rwa [show (2 * ((j : ℤ) + 1)) = 2 * ((j + 1 : ℕ) : ℤ) by push_cast; ring, hpow] at this
-  rw [prod_div_distrib, prod_mul_distrib, mul_div_assoc]
-  congr 1
-  rw [div_eq_iff (by
-    convert hD using 2 with j hj
-    rw [show (2 * ((j : ℤ) + 1)) = 2 * ((j + 1 : ℕ) : ℤ) by push_cast; ring, hpow])]
-  have key := prod_mul_gaussG (s ^ 2) n k
-  have lhs : ∏ j ∈ range n, (1 - s ^ (2 * ((j : ℤ) + 1 + k)))
-      = ∏ j ∈ range n, (1 - (s ^ 2) ^ (k + j + 1)) := by
-    refine prod_congr rfl fun j _ => ?_
-    rw [show (2 * ((j : ℤ) + 1 + k)) = 2 * ((k + j + 1 : ℕ) : ℤ) by push_cast; ring, hpow]
-  have rhs : ∏ j ∈ range n, (1 - s ^ (2 * ((j : ℤ) + 1)))
-      = ∏ j ∈ range n, (1 - (s ^ 2) ^ (j + 1)) := by
-    refine prod_congr rfl fun j _ => ?_
-    rw [show (2 * ((j : ℤ) + 1)) = 2 * ((j + 1 : ℕ) : ℤ) by push_cast; ring, hpow]
-  rw [lhs, rhs, ← key, mul_comm]
 
 /-! ### The Laurent polynomial -/
 
@@ -159,7 +125,7 @@ theorem laurent_at_kashaev_point {N : ℕ} (hN : 1 ≤ N) :
     vdvWhiteheadLinkJones_at_kashaev_point hN]
 
 /-- **The volume conjecture for the Markov class of `whiteheadWord`, with the Kashaev value as an
-evaluation.** `(2π/N) log ‖P_N(e^{πi/N})‖ → Vol(W) = Vol(Borromean)/2`, where
+evaluation.** `(2π/N) log ‖P_N(e^{πi/N})‖ → Vol_Borromean / 2`, where
 `P_N ∈ ℤ[q, q⁻¹]` is the Laurent polynomial that equals `[N]⁻¹ J_N` of that braid class at every generic `q`. -/
 theorem whiteheadLaurent_volume_conjecture :
     Filter.Tendsto
