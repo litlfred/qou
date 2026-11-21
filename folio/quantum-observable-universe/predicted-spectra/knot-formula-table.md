@@ -1,4 +1,4 @@
-Introduce a compact notation to express the knot content of composite particles. 
+Introduce a compact notation to express the knot content of composite particles. A dictionary assigning elementary particles to knots has precedent in Avrin's model of knots on a torus \cite{avrin-2012}, which reduces fermions and bosons, leptons and hadrons, to two knots on a torus, the unknot and the trefoil. The notation below takes only the idea of such a dictionary from that work; the knot assignments and the Hecke-algebra content are this paper's.
 
 **Compact notation.**
 
