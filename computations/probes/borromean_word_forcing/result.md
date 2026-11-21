@@ -112,6 +112,38 @@ writhe-0 classes with the same χ. The first is at trace 15: RL R²L² and RL² 
 the braids are not conjugate in B₃. A braid and its reverse always share χ. So the
 uniqueness above is specific to β_Bor, whose reverse is conjugate to itself.
 
+### Why three strands (pre-registered Addendum 6)
+
+"Brunnian braid" means the braid is non-trivial and deleting any one strand gives the
+identity. On three strands this is exactly pure, zero linking and non-trivial.
+
+* **E8 (Lean, `two_strand_pureZeroLinking`).** On two strands every pure zero-linking
+  braid is the identity, so no two-strand braid is Brunnian.
+* **E9 (counting proof).** At length ≤ 6 at most 6 strands can take part. A strand in
+  no crossing can be deleted without changing the braid. In a pure braid each pair
+  crosses an even number of times, so every strand that takes part is in at least two
+  crossings.
+* **E10 (search, prediction held).** There is no Brunnian braid on 4, 5 or 6 strands of
+  length ≤ 6 (`why_three_strands.py`, log `why3.log`, witness
+  `why-three-strands.result.json`). Triviality is tested by the Artin action on the free
+  group, which is faithful on every B_m, so there is no faithfulness caveat. As a
+  self-check the same code finds exactly the 4 Borromean words on 3 strands.
+* **E11 (no prediction).** The shortest Brunnian 4-strand braids have **length 14**.
+  There are none up to length 12 and 1232 reduced words at length 14, for example
+  σ₀²σ₁σ₂⁻¹σ₁σ₀⁻¹σ₁σ₂⁻²σ₁⁻¹σ₀σ₁⁻¹σ₂σ₁⁻¹ (78 M nodes, 620 s).
+
+**Result.** Over all strand counts, the Brunnian braids of minimal length are exactly
+β_Bor's class: length 6 on three strands. Two strands allow none, and four or more
+need at least 8 letters (none at length ≤ 6 on 4–6 strands; seven or more strands
+need ≥ 8 by E9). On four strands the minimum is 14. So **the same minimal-crossing
+cost that picks β_Bor among 3-braids also picks three strands**. Both still rest on
+that one cost input.
+
+Scope: this is the braid-level notion. The link-level notion (every proper sub-link
+an unlink) agrees with it for three-strand sub-braids, because the 3-component unlink's
+only 3-braid representative up to conjugacy is the identity (Birman–Menasco, cited).
+For 5- and 6-strand candidates the link-level reading is not checked here.
+
 ## 3. What this does and does not settle
 
 * β_Bor is **singled out** by: three strands + pure + zero pairwise linking +
@@ -129,6 +161,6 @@ uniqueness above is specific to β_Bor, whose reverse is conjugate to itself.
   reduction above, given the cited F1 and F2). Words with other characters (the length-10
   Brunnian braids, β_Bor²) give different F values, so the identity's agreement
   is specific to β_Bor among the Brunnian candidates.
-* Not addressed: why three strands (the baryon number), and the colour-singlet
+* Why three strands: see the section above (minimal crossing cost again). Not addressed: the colour-singlet
   reading ("zero signed gluon sum", `borromean-gluon-content.md`), which β_Bor
   does not satisfy exactly at q₀ by the corpus's own account.

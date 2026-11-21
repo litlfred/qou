@@ -28,6 +28,10 @@ force it, and which freedom the mass identity leaves.
   mirror is a cyclic rotation followed by that swap).
 * `eval_borromean_ne_one` — `β_Bor ≠ 1` in `B₃`. The witness is the integer
   Burau representation at `t = −1` (`burauNeg`), where `β_Bor ↦ [[13, 8], [8, 5]]`.
+* `two_strand_pureZeroLinking` — a word in `σ₀^{±1}` alone (two strands moving) that is
+  pure with zero linking is the identity. So three is the smallest strand count with a
+  non-trivial pure zero-linking braid. (Four or more strands need at least 14 crossings
+  for a Brunnian braid; that is a search result in the companion probe, not proved here.)
 * `minimal_pure_zeroLinking` — **combining these: the shortest reduced three-strand
   words that are pure, have zero pairwise linking, and are not the identity of `B₃`
   have length 6, and every one of them is conjugate in `B₃` to `β_Bor`.**
@@ -211,6 +215,63 @@ def evalLetter (c : Crossing) : BraidGroup 2 :=
 
 /-- A word as an element of `B₃`. -/
 def eval (w : Word) : BraidGroup 2 := (w.map evalLetter).prod
+
+/-! ### Two strands cannot carry a Brunnian braid
+
+A word in `σ₀^{±1}` alone moves two strands and leaves the third idle. Its pairwise
+linking count on strands `0, 1` is its writhe, so zero linking forces it to be the
+identity. Hence the smallest strand count with a non-trivial pure zero-linking braid is
+three. -/
+
+/-- Along a word in `σ₀^{±1}` alone, strand `2` stays put, the `0`–`1` count grows by the
+writhe, and the other two counts do not move. -/
+theorem foldl_step_gen0 (w : Word) (hw : ∀ c ∈ w, c.gen = 0) (st : St) (h2 : st.p2 = 2)
+    (h01 : (st.p0 = 0 ∧ st.p1 = 1) ∨ (st.p0 = 1 ∧ st.p1 = 0)) :
+    (w.foldl step st).l01 = st.l01 + writhe w ∧ (w.foldl step st).l02 = st.l02 ∧
+      (w.foldl step st).l12 = st.l12 := by
+  induction w generalizing st with
+  | nil => simp [writhe]
+  | cons c w ih =>
+    have hc : c.gen = 0 := hw c (by simp)
+    have hw' : ∀ d ∈ w, d.gen = 0 := fun d hd => hw d (by simp [hd])
+    have hwr : writhe (c :: w) = sign c + writhe w := by simp [writhe]
+    rw [List.foldl_cons, hwr]
+    rcases h01 with ⟨ha, hb⟩ | ⟨ha, hb⟩
+    · obtain ⟨e1, e2, e3⟩ := ih hw' (step st c)
+        (by simp [step, hc, bump, ha, hb, h2]) (by right; simp [step, hc, bump, ha, hb])
+      refine ⟨?_, ?_, ?_⟩
+      · rw [e1]; cases hp : c.pos <;> simp [step, hc, bump, ha, hb, sign, hp] <;> ring
+      · rw [e2]; simp [step, hc, bump, ha, hb]
+      · rw [e3]; simp [step, hc, bump, ha, hb]
+    · obtain ⟨e1, e2, e3⟩ := ih hw' (step st c)
+        (by simp [step, hc, bump, ha, hb, h2]) (by left; simp [step, hc, bump, ha, hb])
+      refine ⟨?_, ?_, ?_⟩
+      · rw [e1]; cases hp : c.pos <;> simp [step, hc, bump, ha, hb, sign, hp] <;> ring
+      · rw [e2]; simp [step, hc, bump, ha, hb]
+      · rw [e3]; simp [step, hc, bump, ha, hb]
+
+theorem eval_gen0 (w : Word) (hw : ∀ c ∈ w, c.gen = 0) :
+    eval w = (σ 0 : BraidGroup 2) ^ writhe w := by
+  induction w with
+  | nil => simp [eval, writhe]
+  | cons c w ih =>
+    have hc : c.gen = 0 := hw c (by simp)
+    have hw' : ∀ d ∈ w, d.gen = 0 := fun d hd => hw d (by simp [hd])
+    have hwr : writhe (c :: w) = sign c + writhe w := by simp [writhe]
+    rw [show eval (c :: w) = evalLetter c * eval w by simp [eval], ih hw', hwr, zpow_add]
+    cases hp : c.pos <;> simp [evalLetter, hc, hp, sign]
+
+/-- **Two strands carry no non-trivial pure zero-linking braid.** -/
+theorem two_strand_pureZeroLinking (w : Word) (hw : ∀ c ∈ w, c.gen = 0)
+    (h : PureZeroLinking w = true) : eval w = 1 := by
+  have hrun : run w = St.init := by simpa [PureZeroLinking] using h
+  obtain ⟨e1, -, -⟩ := foldl_step_gen0 w hw St.init rfl (Or.inl ⟨rfl, rfl⟩)
+  have : writhe w = 0 := by
+    have := congrArg St.l01 hrun
+    simp only [run] at this
+    rw [e1] at this
+    simpa [St.init] using this
+  rw [eval_gen0 w hw, this, zpow_zero]
 
 /-- The braid relation `σ₀σ₁σ₀ = σ₁σ₀σ₁` in `B₃`. -/
 theorem braid_rel : (σ 0 * σ 1 * σ 0 : BraidGroup 2) = σ 1 * σ 0 * σ 1 := by

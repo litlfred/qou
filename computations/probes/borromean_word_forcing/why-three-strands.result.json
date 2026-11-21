@@ -1,0 +1,181 @@
+{
+ "E10": {
+  "4": {
+   "maxlen": 6,
+   "nodes": 2217,
+   "wall_s": 0.0,
+   "by_length": {
+    "4": {
+     "pure_zero_lk_all_deletions_trivial": 8,
+     "brunnian": 0,
+     "examples": []
+    },
+    "6": {
+     "pure_zero_lk_all_deletions_trivial": 80,
+     "brunnian": 0,
+     "examples": []
+    }
+   }
+  },
+  "5": {
+   "maxlen": 6,
+   "nodes": 9977,
+   "wall_s": 0.0,
+   "by_length": {
+    "4": {
+     "pure_zero_lk_all_deletions_trivial": 24,
+     "brunnian": 0,
+     "examples": []
+    },
+    "6": {
+     "pure_zero_lk_all_deletions_trivial": 348,
+     "brunnian": 0,
+     "examples": []
+    }
+   }
+  },
+  "6": {
+   "maxlen": 6,
+   "nodes": 31673,
+   "wall_s": 0.2,
+   "by_length": {
+    "4": {
+     "pure_zero_lk_all_deletions_trivial": 48,
+     "brunnian": 0,
+     "examples": []
+    },
+    "6": {
+     "pure_zero_lk_all_deletions_trivial": 1056,
+     "brunnian": 0,
+     "examples": []
+    }
+   }
+  }
+ },
+ "E11": {
+  "len8": {
+   "maxlen": 8,
+   "nodes": 25527,
+   "wall_s": 0.1,
+   "by_length": {
+    "4": {
+     "pure_zero_lk_all_deletions_trivial": 8,
+     "brunnian": 0,
+     "examples": []
+    },
+    "6": {
+     "pure_zero_lk_all_deletions_trivial": 80,
+     "brunnian": 0,
+     "examples": []
+    },
+    "8": {
+     "pure_zero_lk_all_deletions_trivial": 824,
+     "brunnian": 0,
+     "examples": []
+    }
+   }
+  },
+  "len10": {
+   "maxlen": 10,
+   "nodes": 335517,
+   "wall_s": 1.9,
+   "by_length": {
+    "4": {
+     "pure_zero_lk_all_deletions_trivial": 8,
+     "brunnian": 0,
+     "examples": []
+    },
+    "6": {
+     "pure_zero_lk_all_deletions_trivial": 80,
+     "brunnian": 0,
+     "examples": []
+    },
+    "8": {
+     "pure_zero_lk_all_deletions_trivial": 824,
+     "brunnian": 0,
+     "examples": []
+    },
+    "10": {
+     "pure_zero_lk_all_deletions_trivial": 9968,
+     "brunnian": 0,
+     "examples": []
+    }
+   }
+  },
+  "len12": {
+   "maxlen": 12,
+   "nodes": 4915107,
+   "wall_s": 33.1,
+   "by_length": {
+    "4": {
+     "pure_zero_lk_all_deletions_trivial": 8,
+     "brunnian": 0,
+     "examples": []
+    },
+    "6": {
+     "pure_zero_lk_all_deletions_trivial": 80,
+     "brunnian": 0,
+     "examples": []
+    },
+    "8": {
+     "pure_zero_lk_all_deletions_trivial": 824,
+     "brunnian": 0,
+     "examples": []
+    },
+    "10": {
+     "pure_zero_lk_all_deletions_trivial": 9968,
+     "brunnian": 0,
+     "examples": []
+    },
+    "12": {
+     "pure_zero_lk_all_deletions_trivial": 124672,
+     "brunnian": 0,
+     "examples": []
+    }
+   }
+  },
+  "len14": {
+   "maxlen": 14,
+   "nodes": 78055297,
+   "wall_s": 619.8,
+   "by_length": {
+    "4": {
+     "pure_zero_lk_all_deletions_trivial": 8,
+     "brunnian": 0,
+     "examples": []
+    },
+    "6": {
+     "pure_zero_lk_all_deletions_trivial": 80,
+     "brunnian": 0,
+     "examples": []
+    },
+    "8": {
+     "pure_zero_lk_all_deletions_trivial": 824,
+     "brunnian": 0,
+     "examples": []
+    },
+    "10": {
+     "pure_zero_lk_all_deletions_trivial": 9968,
+     "brunnian": 0,
+     "examples": []
+    },
+    "12": {
+     "pure_zero_lk_all_deletions_trivial": 124672,
+     "brunnian": 0,
+     "examples": []
+    },
+    "14": {
+     "pure_zero_lk_all_deletions_trivial": 1650448,
+     "brunnian": 1232,
+     "examples": [
+      "s0s0s1s2's1s0's1s2's2's1's0s1's2s1'",
+      "s0s0s1s2's1s0's2's1's1's0s2s1's2s1'",
+      "s0s0s1s2's1s0's2's1's1's2s0s1's2s1'",
+      "s0s0s1s2's1s2's0's1's1's0s2s1's2s1'",
+      "s0s0s1s2's1s2's0's1's1's2s0s1's2s1'"
+     ]
+    }
+   }
+  }
+ }
+}
