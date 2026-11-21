@@ -9,7 +9,9 @@
   },
   "source_hashes": {
     "md": "6d9616cd553a",
-    "ts": "46b4cd940ffc"
+    "ts": "46b4cd940ffc",
+    "lean": "504af772fe75",
+    "lean_statement": "7c6cb87a9008"
   },
   "criteria": {
     "voice-status-leak": [
@@ -380,6 +382,25 @@
           "def_hash": "90af5388e1e9"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "voice-title-scholarly": [
@@ -603,6 +624,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "wall-base-ring-minimal": [
@@ -641,6 +681,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-bare-sorries": [
@@ -679,6 +738,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2d2fc456ab53",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-axiom-growth": [
@@ -717,6 +795,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f48af2ee9be8",
+          "script_commit_sha": "unknown",
+          "def_hash": "a4466d93bf08"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-build-green": [
@@ -755,6 +853,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-substantive": [
@@ -793,6 +911,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "7b935d9f5fec",
+          "script_commit_sha": "unknown",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-conj-propagation-violation": [
@@ -872,6 +1009,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-conditional-class-banner": [
@@ -912,6 +1069,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b1fd3fd4bb84",
+          "script_commit_sha": "unknown",
+          "deps_hash": "8285870ddd65",
+          "def_hash": "ddae4938d951"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-lean-compiles": [
@@ -952,6 +1129,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-not-machine-trivial": [
@@ -993,6 +1190,27 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-triviality.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "1eebf87b3f20",
+          "script_commit_sha": "unknown",
+          "deps_hash": "458b1a3606a3",
+          "def_hash": "30a1a029710e"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "no oracle run for QOU.Tetraplectic.reeb_twist_ij"
       }
     ],
     "proof-compile-cost": [
@@ -1034,6 +1252,27 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "no docs/audits/lean-profile.json"
       }
     ],
     "proof-no-cost-regression": [
@@ -1075,6 +1314,27 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "96b9bdc29ac9",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "no docs/audits/lean-profile.json"
       }
     ],
     "canonical-calibration-count": [
@@ -1446,6 +1706,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38950cd4dd0c",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1484,6 +1763,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8a3b3418b1c5",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "compute-witness-exists": [
@@ -1654,6 +1952,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "detangler-section-band": [
@@ -1711,6 +2029,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1770,6 +2108,27 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1810,6 +2169,27 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-block-tanglement": [
@@ -1981,6 +2361,26 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2113,6 +2513,30 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 1
+        }
       }
     ],
     "lean-ref-owns-decl": [
@@ -2198,6 +2622,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -2238,6 +2682,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -2278,6 +2742,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -2318,6 +2802,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "render-math-mode-envelope": [
@@ -2405,6 +2909,23 @@
           "version": "v1"
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
       }
     ],
@@ -2535,6 +3056,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
       }
     ],
     "acronym-in-glossary": [
@@ -2614,6 +3152,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "de28cc8fe753",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2753,6 +3310,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d86b94a3a99c",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "lean-no-definitional-laundering": [
@@ -2773,6 +3349,30 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f2d0ac51567e",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "constant_prop_defs": 0,
+          "lambda_constant_fields": 0,
+          "definitional_identities": 0
+        }
       }
     ],
     "lean-docstring-honesty": [
@@ -2793,6 +3393,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f16e4db88c07",
+          "script_commit_sha": "unknown",
+          "def_hash": "e9d9f6de595f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-false-premise": [
@@ -3099,6 +3718,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "fit-section-chapter": [
@@ -3116,6 +3752,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-side-statement": [
@@ -3133,6 +3786,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-side-proof": [
@@ -3150,6 +3820,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "expo-milnor-clarity": [
@@ -3167,6 +3854,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "milnor-brevity": [
@@ -3184,6 +3888,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-negation-contrast": [
@@ -3201,6 +3922,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -3218,6 +3956,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -3235,6 +3990,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -3252,6 +4024,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -3269,6 +4058,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -3286,6 +4092,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -3303,6 +4126,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -3320,6 +4160,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -3337,6 +4194,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -3354,8 +4228,25 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "lean": "504af772fe75",
+          "lean_statement": "7c6cb87a9008"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/BringCone.lean because this sweep ran with --preload scripts/preload-registry.ts; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ]
   },
-  "updated_at": "2026-11-21T16:07:04.000Z"
+  "updated_at": "2026-11-21T16:29:49.000Z"
 }

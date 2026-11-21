@@ -9,9 +9,9 @@
   },
   "source_hashes": {
     "md": "6372bd3d152b",
-    "ts": "ecb4ff6dd61d",
-    "lean": "1ebe47c3131f",
-    "lean_statement": "fdfcb66cc150"
+    "ts": "d1d93d798f64",
+    "lean": "582089ebda6c",
+    "lean_statement": "0361b575acdc"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -24,6 +24,23 @@
           "id": "local/branch-jargon-sweep",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-status-leak": [
@@ -63,6 +80,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "5af6856733f3",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "voice-emoji-content": [
@@ -365,6 +401,42 @@
           "def_hash": "90af5388e1e9"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-title-scholarly": [
@@ -404,6 +476,25 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9566207ee882",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "voice-ai-slop": [
@@ -474,6 +565,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No filler, hype or stock AI phrasing."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-author-notes-pollution": [
@@ -667,6 +775,25 @@
           "def_hash": "2ff53167ead5"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "q-usage-regime-detected": [
@@ -826,6 +953,25 @@
           "def_hash": "e7148867194b"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "canonical-no-numerology": [
@@ -904,6 +1050,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -943,6 +1108,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "canonical-dilogarithm-context": [
@@ -982,6 +1166,25 @@
           "def_hash": "5d8325c49fea"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1060,6 +1263,25 @@
           "def_hash": "b5e2fdf9d66a"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1099,6 +1321,25 @@
           "def_hash": "c8836d721722"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -1138,6 +1379,25 @@
           "def_hash": "791b80875ca1"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "compute-prop-has-probe": [
@@ -1216,6 +1476,25 @@
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-relation.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38950cd4dd0c",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1294,6 +1573,25 @@
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/quantum-universes/frobenius-relation.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8a3b3418b1c5",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "compute-witness-exists": [
@@ -1333,6 +1631,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "compute-lp-dual-present": [
@@ -1372,6 +1689,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "detangler-no-forward-ref": [
@@ -1413,6 +1749,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "detangler-section-band": [
@@ -1492,6 +1848,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1573,6 +1949,27 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1656,6 +2053,27 @@
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-block-tanglement": [
@@ -1723,6 +2141,39 @@
           "edge_span_mean": 21,
           "worst_target": ""
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 1,
+          "in_degree": 3,
+          "cone_size": 5,
+          "depth": 4,
+          "pagerank": 0.000256,
+          "edge_span_max": 21,
+          "edge_span_mean": 21,
+          "worst_target": ""
+        }
       }
     ],
     "detangler-graph-energy": [
@@ -1769,6 +2220,31 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1853,6 +2329,26 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1894,6 +2390,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1974,6 +2490,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -2054,6 +2590,26 @@
           "def_hash": "e08cc9c741f6"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -2134,6 +2690,26 @@
           "def_hash": "17f40a4ba0f4"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -2214,6 +2790,26 @@
           "def_hash": "83422bec2bb4"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-bare-sorries": [
@@ -2290,6 +2886,25 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2d2fc456ab53",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-axiom-growth": [
@@ -2367,6 +2982,26 @@
           "def_hash": "a4466d93bf08"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f48af2ee9be8",
+          "script_commit_sha": "unknown",
+          "def_hash": "a4466d93bf08"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -2446,6 +3081,26 @@
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-substantive": [
@@ -2522,6 +3177,25 @@
           "def_hash": "928b5cc3cbd7"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "7b935d9f5fec",
+          "script_commit_sha": "unknown",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-conj-propagation-violation": [
@@ -2563,6 +3237,26 @@
           "def_hash": "e49f4f5d3843"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8edc99dd3099",
+          "script_commit_sha": "unknown",
+          "deps_hash": "22292b18c779",
+          "def_hash": "e49f4f5d3843"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-conditional-class-banner": [
@@ -2643,6 +3337,26 @@
           "def_hash": "ddae4938d951"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b1fd3fd4bb84",
+          "script_commit_sha": "unknown",
+          "deps_hash": "8285870ddd65",
+          "def_hash": "ddae4938d951"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-lean-compiles": [
@@ -2724,6 +3438,26 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2779,6 +3513,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. The statement carries the claim; no interpretive asides."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "fit-section-chapter": [
@@ -2863,6 +3614,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Placement unchanged and fits the section."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-side-statement": [
@@ -2918,6 +3686,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Wall side of the statement unchanged by this edit."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-side-proof": [
@@ -2973,6 +3758,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Wall side of the proof unchanged by this edit."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -3093,6 +3895,25 @@
         "severity": "major",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: QA major 2 on #8888 (shadowing sibling) is resolved. Remaining: the resolved library theorem is a sorry over FrobeniusRelationContext, which has no pairing or copairing axioms, so the statement is not provable as stated; the docstring says so. Same class as the C04/C05/C06 sorrys."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "severity": "minor",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim.",
+        "notes": "Two scope gaps, both disclosed in the docstring and authorNote: (1) Lean is for an R-algebra (C = R-modules), not a Frobenius object in a general monoidal C of a quantum universe; (2) Delta_mu is defined in copairing form, and its identification with the transpose of mu is cited [kock2004, §2.3], not formalised."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3126,6 +3947,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -3144,6 +3982,23 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-novelty": [
@@ -3177,6 +4032,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-statement-integrity": [
@@ -3228,6 +4100,23 @@
         "severity": "major",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Consistent with proof-narrative-lean-equiv fail/major on this block: the Lean does not derive the .md claim (structure extensionality / rfl on a definition / weaker statement / unfolding / unconstrained context, as recorded there). Disclosed in the block's authorNotes or Lean docstring."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. Earlier fail/major (sorry over a context with no pairing axioms) is resolved: the Lean states and proves the displayed equation."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -3243,6 +4132,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No field is the conclusion; the class has eps, gamma, snake, none of which states the relation."
       }
     ],
     "proof-no-trivial-true": [
@@ -3258,6 +4164,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. The conclusion is an equality of linear maps proved by tensor induction."
       }
     ],
     "proof-no-false-premise": [
@@ -3273,6 +4196,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. FrobeniusCopairingData is inhabited (e.g. A = R, eps = id, gamma = 1 ⊗ 1)."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -3288,6 +4228,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "severity": "minor",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim.",
+        "notes": "The class fields eps and snake are not used by frobenius_relation: the proved identity holds for every gamma in A ⊗ A, i.e. it is the left-module half of the Frobenius condition, which needs no Frobenius structure. The snake identity only matters for the cited transpose identification and for the other half (id ⊗ mu)(Delta ⊗ id) = Delta mu, which is not stated. The .md states only this half, so the theorem is true to the .md, but the class carries data the proof does not exercise."
       }
     ],
     "proof-no-decide-masking": [
@@ -3303,6 +4262,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No decide or native_decide."
       }
     ],
     "da-false-claim": [
@@ -3353,6 +4329,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-vacuous": [
@@ -3403,6 +4396,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-circular": [
@@ -3453,6 +4463,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-overclaim": [
@@ -3503,6 +4530,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-hidden-dof": [
@@ -3553,6 +4597,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-non-sequitur": [
@@ -3603,6 +4664,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -3689,6 +4767,25 @@
         "severity": "major",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Consistent with proof-narrative-lean-equiv fail/major on this block: the Lean does not derive the .md claim (structure extensionality / rfl on a definition / weaker statement / unfolding / unconstrained context, as recorded there). Disclosed in the block's authorNotes or Lean docstring."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "severity": "minor",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim.",
+        "notes": "Same two scope gaps as proof-narrative-lean-equiv: concrete algebra instead of a monoidal category, transpose identification cited."
       }
     ],
     "da-citation-misuse": [
@@ -3739,6 +4836,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-definitional-ambiguity": [
@@ -3789,6 +4903,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-empirical-fragility": [
@@ -3839,6 +4970,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-physical-implausibility": [
@@ -3889,6 +5037,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-reproducibility": [
@@ -3939,6 +5104,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-referee-verdict": [
@@ -3991,6 +5173,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "bib-cite-resolves": [
@@ -4071,6 +5270,26 @@
           "def_hash": "e703243fe06f"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -4125,6 +5344,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. Flow of the block unchanged in structure; the edit adds scope text in place."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-probe-narrative": [
@@ -4329,6 +5565,23 @@
         "severity": "major",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. .md unchanged, so the earlier findings stand: \"This compatibility makes A a Frobenius algebra\" precedes any stated compatibility, and the closing sentence does not say what the diagram asserts."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. Earlier fail/major (sidecar pointed at a deleted path; nothing to judge) is moot: the block's .md and the resolved Lean are now consistent and readable."
       }
     ],
     "milnor-brevity": [
@@ -4377,6 +5630,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-read at b7fc183094e: a692cafe and 7a954ae1 delete the content sibling quantum-universes/frobenius-relation.lean (which proved the relation by exact fh.frobenius_relation) and the stale leanSource. lean.ref now resolves to lean/QOU/frobenius_relation.lean: honest sorry, docstring says the context has no pairing axioms so the statement is not provable from it; #print axioms [sorryAx]. No remainin"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-not-machine-trivial": [
@@ -4469,6 +5739,30 @@
           "oracle": "lean-tactic-ladder(trivial|rfl|simp|decide|omega|aesop)",
           "oracle_closed": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-triviality.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "1eebf87b3f20",
+          "script_commit_sha": "unknown",
+          "deps_hash": "458b1a3606a3",
+          "def_hash": "30a1a029710e"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "oracle": "lean-tactic-ladder(trivial|rfl|simp|decide|omega|aesop)",
+          "oracle_closed": 0
+        }
       }
     ],
     "proof-compile-cost": [
@@ -4551,6 +5845,27 @@
           "def_hash": "6ed1c90f444f"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba",
+        "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "no docs/audits/lean-profile.json"
       }
     ],
@@ -4635,6 +5950,27 @@
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba",
         "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "96b9bdc29ac9",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "no docs/audits/lean-profile.json"
       }
     ],
     "uses-editorial-hygiene": [
@@ -4681,6 +6017,31 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f",
+        "metrics": {
+          "uses_count": 1,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "34af1d8a2365",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "metrics": {
           "uses_count": 1,
           "broken_edges": 0,
@@ -4778,6 +6139,30 @@
           "formal_only_count": 0,
           "editorial_only_count": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 1
+        }
       }
     ],
     "lean-ref-owns-decl": [
@@ -4822,6 +6207,29 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "metrics": {
           "decl_claimants": 1
         }
@@ -4896,6 +6304,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -4967,6 +6392,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -5038,6 +6480,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -5109,6 +6568,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -5180,6 +6656,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -5251,6 +6744,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -5322,6 +6832,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -5393,6 +6920,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -5464,6 +7008,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -5535,6 +7096,23 @@
         "reviewed_sha": "65c48a6ed95bb012c9e8c01ba7be37f8d1782f27",
         "evidence": "Sidecar path fix at 65c48a6ed95: paths.lean still named the deleted content sibling quantum-universes/frobenius-relation.lean and source_hashes carried no lean hash, because the prior sweep ran without the repo preload and resolved no Lean. Re-swept with --preload scripts/preload-registry.ts; lean.ref resolves to lean/QOU/frobenius_relation.lean, the file the b7fc183094e agent review already read. .md, .ts and that file are unchanged since b7fc183094e.",
         "notes": "Verdict carried from the b7fc183094e review: Re-review after #8888 commit e69e683b (C09): claim_frobenius_relation deleted; library QOU.frobenius_relation now sorry (lean-direct exit 0; axioms [sorryAx]). The .md is unchanged. No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d (d8c74f69). .md unchanged. lean.ref resolves to lean/QOU/frobenius_relation.lean. FrobeniusCopairingData carries eps : A ->l R, gamma : A ⊗ A and the snake identity on an R-algebra (CommRing R, Ring A); frobeniusComul := (mu ⊗ id) ∘ assoc^-1 ∘ (- ⊗ gamma). frobenius_relation states (mu ⊗ id) ∘ assoc^-1 ∘ (id ⊗ Delta) = Delta ∘ mu as linear maps A ⊗ A -> A ⊗ A and proves it by TensorProduct.ext' and induction on gamma with mul_assoc. Not a projection, not True. lean-direct exit 0; #print axioms [propext, Quot.sound]. The proof is the narrative proof's associativity computation verbatim. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -5611,6 +7189,25 @@
           "def_hash": "10db4d17cd96"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "render-math-mode-envelope": [
@@ -5726,6 +7323,25 @@
           "def_hash": "670f26d08110"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d86b94a3a99c",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "lean-no-definitional-laundering": [
@@ -5817,6 +7433,30 @@
           "lambda_constant_fields": 0,
           "definitional_identities": 0
         }
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f2d0ac51567e",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "constant_prop_defs": 0,
+          "lambda_constant_fields": 0,
+          "definitional_identities": 0
+        }
       }
     ],
     "lean-docstring-honesty": [
@@ -5893,6 +7533,25 @@
           "def_hash": "e9d9f6de595f"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f16e4db88c07",
+          "script_commit_sha": "unknown",
+          "def_hash": "e9d9f6de595f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "foreshadows-point-forward": [
@@ -5972,6 +7631,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "dak-companion-present": [
@@ -6041,6 +7720,23 @@
           "version": "v1"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba",
+        "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
       }
     ],
@@ -6122,6 +7818,23 @@
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f",
         "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
       }
     ],
     "dak-label-prefix-matches-kind": [
@@ -6192,6 +7905,23 @@
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba",
         "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
       }
     ],
     "proof-no-placeholder-stub": [
@@ -6250,6 +7980,25 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "ca1499609900ccc1a917577736bdc2bc307ad3ba"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "de28cc8fe753",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "acronym-in-glossary": [
@@ -6292,6 +8041,25 @@
           "def_hash": "bcd452a1177c"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "id-stable": [
@@ -6313,6 +8081,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "4cc960f373ac2058b120c04c27eeb76f6167871f"
+      },
+      {
+        "field_hash": {
+          "md": "6372bd3d152b",
+          "ts": "d1d93d798f64",
+          "lean": "582089ebda6c",
+          "lean_statement": "0361b575acdc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "da-arity-conflation": [
@@ -6333,6 +8120,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T16:40:00.000Z",
+  "updated_at": "2026-11-21T16:29:49.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

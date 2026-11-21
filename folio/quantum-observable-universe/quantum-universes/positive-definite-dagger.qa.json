@@ -9,7 +9,9 @@
   },
   "source_hashes": {
     "md": "2ba856f9e63f",
-    "ts": "d9fa99418d1c"
+    "ts": "d9fa99418d1c",
+    "lean": "e75152086b52",
+    "lean_statement": "002245063013"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -22,6 +24,23 @@
           "id": "local/branch-jargon-sweep",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-status-leak": [
@@ -297,6 +316,42 @@
           "def_hash": "90af5388e1e9"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d33e313ad147",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-title-scholarly": [
@@ -386,6 +441,23 @@
           "def_hash": "440226b73b33"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-author-notes-pollution": [
@@ -535,6 +607,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "q-usage-regime-detected": [
@@ -1026,6 +1117,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38950cd4dd0c",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1064,6 +1174,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8a3b3418b1c5",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "compute-witness-exists": [
@@ -1234,6 +1363,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1293,6 +1442,27 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1333,6 +1503,27 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-block-tanglement": [
@@ -1504,6 +1695,26 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1583,6 +1794,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1623,6 +1854,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1663,6 +1914,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1703,6 +1974,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1743,6 +2034,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1781,6 +2092,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2d2fc456ab53",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1819,6 +2149,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f48af2ee9be8",
+          "script_commit_sha": "unknown",
+          "def_hash": "a4466d93bf08"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-build-green": [
@@ -1857,6 +2207,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-substantive": [
@@ -1895,6 +2265,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "7b935d9f5fec",
+          "script_commit_sha": "unknown",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-no-conj-propagation-violation": [
@@ -1974,6 +2363,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b1fd3fd4bb84",
+          "script_commit_sha": "unknown",
+          "deps_hash": "8285870ddd65",
+          "def_hash": "ddae4938d951"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "proof-lean-compiles": [
@@ -2014,6 +2423,26 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2082,6 +2511,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "fit-section-chapter": [
@@ -2161,6 +2607,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-side-statement": [
@@ -2213,6 +2676,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-side-proof": [
@@ -2265,6 +2745,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2326,6 +2823,25 @@
         "severity": "major",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2.",
         "notes": "The Lean checks only the scalar case f = z*id on C^2 (f^dagger f = |z|^2 id), as the new authorNote says; it does not state the general involutivity or positivity. Pre-existing on main; disclosed by this PR, not introduced."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "severity": "major",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. The finding is unchanged at this head.",
+        "notes": "Carried forward from the earlier agent review: The Lean checks only the scalar case f = z*id on C^2 (f^dagger f = |z|^2 id), as the new authorNote says; it does not state the general involutivity or positivity. Pre-existing on main; disclosed by this PR, not introduced."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2359,6 +2875,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2377,6 +2910,23 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-novelty": [
@@ -2410,6 +2960,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-statement-integrity": [
@@ -2442,6 +3009,25 @@
         "severity": "major",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2.",
         "notes": "The Lean checks only the scalar case f = z*id on C^2 (f^dagger f = |z|^2 id), as the new authorNote says; it does not state the general involutivity or positivity. Pre-existing on main; disclosed by this PR, not introduced."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "severity": "major",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. The finding is unchanged at this head.",
+        "notes": "Carried forward from the earlier agent review: The Lean checks only the scalar case f = z*id on C^2 (f^dagger f = |z|^2 id), as the new authorNote says; it does not state the general involutivity or positivity. Pre-existing on main; disclosed by this PR, not introduced."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -2457,6 +3043,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-trivial-true": [
@@ -2472,6 +3075,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-false-premise": [
@@ -2487,6 +3107,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -2502,6 +3139,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-decide-masking": [
@@ -2517,6 +3171,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -2566,6 +3237,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-vacuous": [
@@ -2632,6 +3320,25 @@
         "severity": "minor",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2.",
         "notes": "The positivity clause is the hypothesis 'h positive definite' read back through f^dagger f = h(f,f)."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "severity": "minor",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. The finding is unchanged at this head.",
+        "notes": "Carried forward from the earlier agent review: The positivity clause is the hypothesis 'h positive definite' read back through f^dagger f = h(f,f)."
       }
     ],
     "da-circular": [
@@ -2681,6 +3388,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-overclaim": [
@@ -2747,6 +3471,25 @@
         "severity": "minor",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2.",
         "notes": "Title 'Frobenius dagger is positive-definite' is now conditional on positive-definiteness of h."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "severity": "minor",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. The finding is unchanged at this head.",
+        "notes": "Carried forward from the earlier agent review: Title 'Frobenius dagger is positive-definite' is now conditional on positive-definiteness of h."
       }
     ],
     "da-hidden-dof": [
@@ -2796,6 +3539,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-non-sequitur": [
@@ -2845,6 +3605,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2911,6 +3688,25 @@
         "severity": "major",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2.",
         "notes": "The Lean checks only the scalar case f = z*id on C^2 (f^dagger f = |z|^2 id), as the new authorNote says; it does not state the general involutivity or positivity. Pre-existing on main; disclosed by this PR, not introduced."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "severity": "major",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. The finding is unchanged at this head.",
+        "notes": "Carried forward from the earlier agent review: The Lean checks only the scalar case f = z*id on C^2 (f^dagger f = |z|^2 id), as the new authorNote says; it does not state the general involutivity or positivity. Pre-existing on main; disclosed by this PR, not introduced."
       }
     ],
     "da-citation-misuse": [
@@ -2960,6 +3756,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-definitional-ambiguity": [
@@ -3009,6 +3822,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-empirical-fragility": [
@@ -3058,6 +3888,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-physical-implausibility": [
@@ -3107,6 +3954,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-reproducibility": [
@@ -3156,6 +4020,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-referee-verdict": [
@@ -3207,6 +4088,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -3225,6 +4123,23 @@
           "md": "9f0179ed588b",
           "ts": "5f55ba2fe404"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-probe-narrative": [
@@ -3401,6 +4316,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "milnor-brevity": [
@@ -3431,6 +4363,23 @@
         "reviewed_at": "2026-11-21T16:07:04.000Z",
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-not-machine-trivial": [
@@ -3475,6 +4424,30 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-triviality.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "1eebf87b3f20",
+          "script_commit_sha": "unknown",
+          "deps_hash": "458b1a3606a3",
+          "def_hash": "30a1a029710e"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "oracle": "lean-tactic-ladder(trivial|rfl|simp|decide|omega|aesop)",
+          "oracle_closed": 0
+        }
       }
     ],
     "proof-compile-cost": [
@@ -3516,6 +4489,27 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "no docs/audits/lean-profile.json"
       }
     ],
     "proof-no-cost-regression": [
@@ -3557,6 +4551,27 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "96b9bdc29ac9",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "no docs/audits/lean-profile.json"
       }
     ],
     "uses-editorial-hygiene": [
@@ -3651,6 +4666,31 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "formal_only_count": 1,
+          "editorial_only_count": 2,
+          "formal_only_sample": "prop:habiro-tail-star-identity"
+        }
       }
     ],
     "lean-ref-owns-decl": [
@@ -3748,6 +4788,23 @@
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "severity": "major",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -3800,6 +4857,23 @@
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "severity": "major",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -3852,6 +4926,23 @@
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "severity": "minor",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -3904,6 +4995,23 @@
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "severity": "minor",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -3956,6 +5064,23 @@
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "severity": "major",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -4008,6 +5133,23 @@
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "severity": "major",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -4060,6 +5202,23 @@
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "severity": "major",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -4112,6 +5271,23 @@
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "severity": "minor",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -4164,6 +5340,23 @@
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "severity": "minor",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -4216,6 +5409,23 @@
         "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
         "severity": "minor",
         "evidence": "Full read at b7fc183094e: statement now takes S^2 = id and positive-definiteness of h(f,g) = int_A mu(S(f) ⊗ g) as hypotheses and concludes dagger is involutive with f^dagger f = h(f,f), positive definite when h is. The .ts note says the Lean frobenius_dagger_positive_definite checks only f = z*id on C^2. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:29:49.000Z",
+        "reviewed_sha": "d8c74f6949d",
+        "evidence": "Re-read at d8c74f6949d. .md and .ts unchanged since the b7fc183094e agent review. The source_hashes now carry a lean hash for lean/QOU/frobenius_dagger_positive_definite.lean because this sweep ran with --preload; the earlier sweep resolved no Lean. That Lean file is not touched by #8888 since b7fc. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -4254,6 +5464,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "render-math-mode-envelope": [
@@ -4329,6 +5558,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d86b94a3a99c",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "lean-no-definitional-laundering": [
@@ -4372,6 +5620,30 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f2d0ac51567e",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "metrics": {
+          "constant_prop_defs": 0,
+          "lambda_constant_fields": 0,
+          "definitional_identities": 0
+        }
       }
     ],
     "lean-docstring-honesty": [
@@ -4410,6 +5682,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f16e4db88c07",
+          "script_commit_sha": "unknown",
+          "def_hash": "e9d9f6de595f"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "foreshadows-point-forward": [
@@ -4467,6 +5758,26 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "dak-companion-present": [
@@ -4517,6 +5828,23 @@
           "version": "v1"
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
         "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
       }
     ],
@@ -4647,6 +5975,23 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a",
+        "notes": "criterion applies to dak; block kind \"proposition\" is mathpaper"
       }
     ],
     "acronym-in-glossary": [
@@ -4724,6 +6069,25 @@
         },
         "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2ba856f9e63f",
+          "ts": "d9fa99418d1c",
+          "lean": "e75152086b52",
+          "lean_statement": "002245063013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "de28cc8fe753",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "6c6babbb2432ee1524e7cd0364485d100cd0f00a"
       }
     ],
     "da-arity-conflation": [
@@ -4744,6 +6108,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T16:07:04.000Z",
+  "updated_at": "2026-11-21T16:29:49.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
