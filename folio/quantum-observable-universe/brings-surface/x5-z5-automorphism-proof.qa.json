@@ -100,6 +100,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -1765,6 +1780,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1801,6 +1834,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1984,6 +2036,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2260,6 +2330,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "trap-negation-contrast": [
@@ -2294,6 +2382,21 @@
         "reviewed_at": "2026-08-15T12:13:25.077Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full-text read; no negation-contrast construction found in context."
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2328,6 +2431,21 @@
         "reviewed_at": "2026-08-15T12:13:25.115Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full-text read; no rhetorical-pivot construction found in context."
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -2362,6 +2480,21 @@
         "reviewed_at": "2026-08-15T12:13:25.154Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full-text read; no em-dash construction found in context."
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -2396,6 +2529,21 @@
         "reviewed_at": "2026-08-15T12:13:25.192Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full-text read; no triples construction found in context."
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -2430,6 +2578,21 @@
         "reviewed_at": "2026-08-15T12:13:25.233Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full-text read; no closing-aphorism construction found in context."
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -2464,6 +2627,21 @@
         "reviewed_at": "2026-08-15T12:13:25.270Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full-text read; no meta-commentary construction found in context."
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -2498,6 +2676,21 @@
         "reviewed_at": "2026-08-15T12:13:25.306Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full-text read; no thesis-restatement construction found in context."
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -2532,6 +2725,21 @@
         "reviewed_at": "2026-08-15T12:13:25.345Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full-text read; no performed-warmth construction found in context."
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -2566,6 +2774,21 @@
         "reviewed_at": "2026-08-15T12:13:25.381Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full-text read; no superlative construction found in context."
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -2600,6 +2823,21 @@
         "reviewed_at": "2026-08-15T12:13:25.418Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
         "evidence": "Full-text read; no nonspeakable construction found in context."
+      },
+      {
+        "field_hash": {
+          "md": "2f39ab94f4b3",
+          "ts": "b450a008ffcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: order 5 is now argued at the point (2, sqrt 31) of y^2 = x^5 - 1, bijectivity via the inverse phi^4, and the extension to the smooth projective model fixing the point at infinity. Correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2839,6 +3077,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:53:58.000Z",
+  "updated_at": "2026-11-21T16:07:04.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

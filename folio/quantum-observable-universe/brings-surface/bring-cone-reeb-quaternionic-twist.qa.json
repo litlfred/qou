@@ -9,9 +9,7 @@
   },
   "source_hashes": {
     "md": "6d9616cd553a",
-    "ts": "46b4cd940ffc",
-    "lean": "e77a74ecf027",
-    "lean_statement": "e3de85d804c7"
+    "ts": "46b4cd940ffc"
   },
   "criteria": {
     "voice-status-leak": [
@@ -587,6 +585,24 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "wall-base-ring-minimal": [
@@ -607,6 +623,24 @@
         },
         "reviewed_at": "2026-08-29T19:40:38.767Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-bare-sorries": [
@@ -627,6 +661,24 @@
         },
         "reviewed_at": "2026-08-24T18:47:36.557Z",
         "reviewed_sha": "33785eecc406bfcf537efe41898f84213d453138"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2d2fc456ab53",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-axiom-growth": [
@@ -647,6 +699,24 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f48af2ee9be8",
+          "script_commit_sha": "unknown",
+          "def_hash": "a4466d93bf08"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-build-green": [
@@ -667,6 +737,24 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-substantive": [
@@ -687,6 +775,24 @@
         },
         "reviewed_at": "2026-08-24T18:47:36.557Z",
         "reviewed_sha": "33785eecc406bfcf537efe41898f84213d453138"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "7b935d9f5fec",
+          "script_commit_sha": "unknown",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-conj-propagation-violation": [
@@ -747,6 +853,25 @@
         },
         "reviewed_at": "2026-08-24T18:47:36.557Z",
         "reviewed_sha": "33785eecc406bfcf537efe41898f84213d453138"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-conditional-class-banner": [
@@ -768,6 +893,25 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b1fd3fd4bb84",
+          "script_commit_sha": "unknown",
+          "deps_hash": "8285870ddd65",
+          "def_hash": "ddae4938d951"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-lean-compiles": [
@@ -789,6 +933,25 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-not-machine-trivial": [
@@ -811,6 +974,25 @@
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f",
         "notes": "no oracle run for QOU.Tetraplectic.reeb_twist_ij"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-triviality.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "1eebf87b3f20",
+          "script_commit_sha": "unknown",
+          "deps_hash": "458b1a3606a3",
+          "def_hash": "30a1a029710e"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-compile-cost": [
@@ -833,6 +1015,25 @@
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f",
         "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-cost-regression": [
@@ -855,6 +1056,25 @@
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f",
         "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "96b9bdc29ac9",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "canonical-calibration-count": [
@@ -1208,6 +1428,24 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "38950cd4dd0c",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1228,6 +1466,24 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "8a3b3418b1c5",
+          "script_commit_sha": "unknown",
+          "def_hash": "4e3f006a8480"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "compute-witness-exists": [
@@ -1380,6 +1636,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-section-band": [
@@ -1419,6 +1693,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1459,6 +1751,25 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1480,6 +1791,25 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "detangler-block-tanglement": [
@@ -1633,6 +1963,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1746,6 +2094,25 @@
           "formal_only_count": 0,
           "editorial_only_count": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
@@ -1812,6 +2179,25 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1833,6 +2219,25 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1854,6 +2259,25 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1875,6 +2299,25 @@
         },
         "reviewed_at": "2026-08-29T19:43:42.563Z",
         "reviewed_sha": "fbc2be0054ae0bbc25ef80999af93c64a9dfb13f"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
       }
     ],
     "render-math-mode-envelope": [
@@ -1947,6 +2390,21 @@
           "version": "v1"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
       }
     ],
@@ -2062,6 +2520,21 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "criterion applies to dak; block kind \"lemma\" is mathpaper"
       }
     ],
     "acronym-in-glossary": [
@@ -2122,7 +2595,767 @@
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "unchanged since origin/main"
       }
+    ],
+    "proof-no-placeholder-stub": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "de28cc8fe753",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "lean-no-vacuous-instance-data": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d86b94a3a99c",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "lean-no-definitional-laundering": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f2d0ac51567e",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "lean-docstring-honesty": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-vacuity.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f16e4db88c07",
+          "script_commit_sha": "unknown",
+          "def_hash": "e9d9f6de595f"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "6d9616cd553a",
+          "ts": "46b4cd940ffc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read of the statement at b7fc183094e after 0b38345..edec245: real dimension 4 stated, vertex singular, the Boothby-Wang form (Reeb = fibre rotation) separated from the Liouville form (Reeb = geodesic flow), the sl2(R) triad named as geodesic + two horocycle flows, and the quaternionic-contact definition corrected to 1-forms with rank-4n common kernel. Checked: Euler number -6 = chi(Sigma_4); Conner-Raymond excludes effective SU(2) actions on closed aspherical 3-manifolds; qc structures need dim 4n+3 with n >= 1. No instance."
+      }
     ]
   },
-  "updated_at": "2026-11-21T15:53:58.000Z"
+  "updated_at": "2026-11-21T16:07:04.000Z"
 }

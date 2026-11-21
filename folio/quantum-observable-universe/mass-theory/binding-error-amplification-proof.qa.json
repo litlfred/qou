@@ -88,6 +88,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -377,6 +392,21 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. The earlier warn ('binding to experimental precision') is resolved by the relative-precision restatement."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1769,6 +1799,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9",
+          "graph": "93886548d0e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1805,6 +1853,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9",
+          "graph": "93886548d0e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1988,6 +2055,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9",
+          "graph": "93886548d0e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2276,6 +2361,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "trap-negation-contrast": [
@@ -2311,6 +2414,21 @@
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "'are not independent problems'; 'assumes nothing about the q-deformation, the calibration inputs, or the knot assignment'; 'rather than a cancellation of two large ones'.",
         "notes": "All substantive: the first is the corollary's claim, the second delimits the proof's hypotheses, the third contrasts two computational routes. Table arithmetic verified against AME/CODATA: 1875.6/2.225 = 843, 2808.9/8.482 = 331, 2808.4/7.718 = 364, 3727.4/28.296 = 132 - all four amplification factors correct, and the mass formula is quoted in its canonical form m_e Vol(K) rho(K)/hbar_q^2."
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2345,6 +2463,21 @@
         "reviewed_at": "2026-08-19T21:39:37.142Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no setup-then-reframe pivot found."
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -2380,6 +2513,21 @@
         "reviewed_at": "2026-08-19T21:39:37.197Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no load-bearing spaced em-dash found."
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -2414,6 +2562,21 @@
         "reviewed_at": "2026-08-19T21:39:37.245Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no compulsive three-item cadence found."
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -2449,6 +2612,21 @@
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "'Forming the difference object *before* evaluating - so that binding is computed as a single quantity rather than a cancellation of two large ones - is the structural way to avoid the amplification.'",
         "notes": "Prescriptive, but it states a concrete methodological consequence that follows from the amplification factor just derived. Substantive, not quotable filler."
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -2483,6 +2661,21 @@
         "reviewed_at": "2026-08-19T21:39:37.341Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no narration of own emphasis found."
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -2519,6 +2712,23 @@
         "severity": "minor",
         "evidence": "The Corollary paragraph opened 'The per-knot mass-prediction accuracy and the binding-energy accuracy are not independent problems.' and then closed the same paragraph with '- i.e. the binding problem depends on the mass problem and is not separable from it', which restates the opening sentence in different words with nothing added in between beyond the quantitative requirement.",
         "notes": "fix applied: deleted the trailing clause, so the paragraph now ends on the quantitative requirement ('... finer than $B/M_{atom} \\approx 0.1\\%-0.8\\%$ of the experimental binding target.'). The corollary's claim survives in its opening sentence; only the duplicate was removed. Kept: 'Binding is the amplified shadow of the bound-state mass error' - a figure, but it introduces the mechanism the rest of the sentence spells out."
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'.",
+        "notes": "'Binding is the amplified shadow of the bound-state mass error: any residual ... is magnified by A' restates the proposition just proved. Pre-existing."
       }
     ],
     "trap-performed-warmth": [
@@ -2553,6 +2763,21 @@
         "reviewed_at": "2026-08-19T21:39:37.442Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no personal / warm register in institutional prose found."
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -2587,6 +2812,21 @@
         "reviewed_at": "2026-08-19T21:39:37.484Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proof + light-nuclei amplification table + corollary); no unqualified maximum-strength claim found."
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -2623,6 +2863,21 @@
         "severity": "minor",
         "evidence": "'This also explains why computing binding as a difference of two large Markov traces ... is canonical hostile:' - 'canonical hostile' is not grammatical. The intended word is almost certainly 'numerically' (the sentence is about catastrophic cancellation), and the same substitution appears seven times across this batch ('canonical evaluation points/values', 'The canonical evidence', 'canonical evaluation-rebuild cost').",
         "notes": "NOT fixed - repairing it means asserting which word was replaced, and the same token has to be reverted consistently across nine files. Recorded as anomaly 8 (systematic sweep substitution) in the batch report, where the full 19-occurrence census is given. proposed: 'is numerically hostile:'."
+      },
+      {
+        "field_hash": {
+          "md": "d37c3693b4a6",
+          "ts": "1ecce19ad7d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: rename to M_bound; table relabelled nuclear mass (values match AME nuclear masses); the corollary now says the mass needs relative precision eps*B/M_bound, i.e. 130 to 840 times finer than the binding target (B/M = 0.119 % deuteron, 0.759 % He-4, checked). 'canonical hostile' is now 'numerically hostile'. The 'canonical hostile' substitution is gone."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2863,6 +3118,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:53:58.000Z",
+  "updated_at": "2026-11-21T16:07:04.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -938,6 +938,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -974,6 +992,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1157,6 +1194,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1422,6 +1477,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -1657,6 +1727,21 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. Earlier fail/major concerned the Lean and the old Peter-Weyl argument; the narrative proof is now sound for sl2."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2125,6 +2210,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "trap-negation-contrast": [
@@ -2160,6 +2263,21 @@
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no assertion-by-denial; proof, Peter-Weyl decomposition + one display.",
         "notes": "clean"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2195,6 +2313,21 @@
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no setup-then-reframe construction; proof, Peter-Weyl decomposition + one display.",
         "notes": "clean"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -2230,6 +2363,21 @@
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). em-dash count 0 in the block; proof, Peter-Weyl decomposition + one display.",
         "notes": "clean"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -2265,6 +2413,21 @@
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no reflex three-item list; proof, Peter-Weyl decomposition + one display.",
         "notes": "clean"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -2300,6 +2463,21 @@
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). final sentence is substantive, not a quotable placed for closure; proof, Peter-Weyl decomposition + one display.",
         "notes": "clean"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -2335,6 +2513,21 @@
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no narration of the author's own emphasis; proof, Peter-Weyl decomposition + one display.",
         "notes": "clean"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -2370,6 +2563,21 @@
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no block-final restatement of what the text established; proof, Peter-Weyl decomposition + one display.",
         "notes": "clean"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -2405,6 +2613,21 @@
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no personal or institutional-warmth register; proof, Peter-Weyl decomposition + one display.",
         "notes": "clean"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -2440,6 +2663,21 @@
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no unqualified maximum-strength claim; proof, Peter-Weyl decomposition + one display.",
         "notes": "clean"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -2475,6 +2713,21 @@
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). reads aloud without stalling; proof, Peter-Weyl decomposition + one display.",
         "notes": "clean"
+      },
+      {
+        "field_hash": {
+          "md": "e9e5c6b2acf4",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: proof now argues sl2 (adjoint = V_1 of highest weight 2, Schur gives Hom(1, V_1) = 0) and states that for the adjoint coaction of O_q(G) the invariants are the class functions, so that reading is false. The steps are valid. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2733,6 +2986,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:53:58.000Z",
+  "updated_at": "2026-11-21T16:07:04.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

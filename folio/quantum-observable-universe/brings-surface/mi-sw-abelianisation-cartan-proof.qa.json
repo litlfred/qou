@@ -1259,6 +1259,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1314,6 +1332,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1515,6 +1552,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1885,6 +1940,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). Placement unchanged and fits the section."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -3016,6 +3086,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "trap-negation-contrast": [
@@ -3065,6 +3153,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -3114,6 +3217,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -3163,6 +3281,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -3212,6 +3345,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -3261,6 +3409,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -3310,6 +3473,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -3359,6 +3537,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -3408,6 +3601,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -3457,6 +3665,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -3506,6 +3729,21 @@
         "reviewed_at": "2026-11-21T15:50:01.000Z",
         "reviewed_sha": "80343b17f5eb4b7602b01d951ca3a83583167b1e",
         "evidence": "Full read of the proof after #8888 commit 794e9a00 (C18). No instance of this pattern."
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: only display spacing changed since the last review. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3655,6 +3893,24 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5",
+          "graph": "a0eecdf38ee3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "da-arity-conflation": [
@@ -3718,6 +3974,21 @@
           "version": "v1"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
       }
     ],
@@ -3802,6 +4073,21 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "11320a420806",
+          "ts": "598de976e8d5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
       }
     ],
     "id-unique": [
@@ -3844,6 +4130,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:53:58.000Z",
+  "updated_at": "2026-11-21T16:07:04.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

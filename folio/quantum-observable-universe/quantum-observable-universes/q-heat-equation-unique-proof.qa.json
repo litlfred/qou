@@ -938,6 +938,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -974,6 +992,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1157,6 +1194,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf",
+          "graph": "500fcede11d2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1435,6 +1490,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -1710,6 +1780,21 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. Earlier warn/minor is resolved."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2286,6 +2371,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "trap-negation-contrast": [
@@ -2321,6 +2424,21 @@
         "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
         "evidence": "Checked every clause for assertion-by-denial ('not X but Y', 'X, not Y'). Block is uniqueness proof by isotypic ODE projection; no negation-contrast construction present.",
         "notes": "No fix needed."
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2356,6 +2474,21 @@
         "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
         "evidence": "Checked for setup-then-reframe where a second clause carries the claim. Block is uniqueness proof by isotypic ODE projection; sentences assert directly.",
         "notes": "No fix needed."
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -2391,6 +2524,21 @@
         "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
         "evidence": "Counted true em/en dashes: 0 in the block. Block is uniqueness proof by isotypic ODE projection; no dash substituting for sentence structure.",
         "notes": "No fix needed."
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -2426,6 +2574,21 @@
         "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
         "evidence": "Checked every enumeration for reflex three-item shape. Block is uniqueness proof by isotypic ODE projection; no three-item enumeration present.",
         "notes": "No fix needed."
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -2461,6 +2624,21 @@
         "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
         "evidence": "Read the final sentence for a quotable-sounding closer. Block is uniqueness proof by isotypic ODE projection; the closer is mathematical content.",
         "notes": "No fix needed."
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -2496,6 +2674,21 @@
         "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
         "evidence": "Checked for narrated emphasis ('note the framing', 'we emphasize', 'the key takeaway'). Block is uniqueness proof by isotypic ODE projection; none present.",
         "notes": "No fix needed."
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -2531,6 +2724,21 @@
         "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
         "evidence": "Checked whether the final sentence restates what the block already established. Block is uniqueness proof by isotypic ODE projection; it does not.",
         "notes": "No fix needed."
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -2566,6 +2774,21 @@
         "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
         "evidence": "Checked register for personal/institutional warmth ('thank you', 'excited', 'journey'). Block is uniqueness proof by isotypic ODE projection; register is institutional throughout.",
         "notes": "No fix needed."
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -2601,6 +2824,21 @@
         "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
         "evidence": "Checked for unqualified maximum-strength claims. Block is uniqueness proof by isotypic ODE projection; no superlative inflation.",
         "notes": "No fix needed."
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -2636,6 +2874,21 @@
         "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
         "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is uniqueness proof by isotypic ODE projection; sentences are speakable.",
         "notes": "No fix needed."
+      },
+      {
+        "field_hash": {
+          "md": "5304b2421c4f",
+          "ts": "b2bb664e03bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: existence by the componentwise exponential (finitely many nonzero components keep u(t) in V); uniqueness by w(t) = exp(t Delta|V_j) pi_j u(t), whose derivative is 0. Correct; no semisimplicity used. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2876,6 +3129,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:53:58.000Z",
+  "updated_at": "2026-11-21T16:07:04.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

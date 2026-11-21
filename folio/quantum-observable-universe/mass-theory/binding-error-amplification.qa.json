@@ -86,6 +86,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "binding-error-amplification.lean:33-37 over ℝ",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -120,6 +137,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -135,6 +169,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-trivial-true": [
@@ -150,6 +201,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-false-premise": [
@@ -165,6 +233,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-decide-masking": [
@@ -180,6 +265,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -195,6 +297,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -213,6 +332,23 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -231,6 +367,23 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "proof-rater-novelty": [
@@ -249,6 +402,23 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "fit-section-chapter": [
@@ -276,6 +446,23 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -291,6 +478,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-vacuous": [
@@ -306,6 +510,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-circular": [
@@ -321,6 +542,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-overclaim": [
@@ -336,6 +574,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-hidden-dof": [
@@ -351,6 +606,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-non-sequitur": [
@@ -366,6 +638,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -381,6 +670,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-citation-misuse": [
@@ -396,6 +702,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-definitional-ambiguity": [
@@ -411,6 +734,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-empirical-fragility": [
@@ -426,6 +766,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-physical-implausibility": [
@@ -441,6 +798,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-reproducibility": [
@@ -456,6 +830,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-referee-verdict": [
@@ -471,6 +862,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "expo-milnor-clarity": [
@@ -486,6 +894,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "milnor-brevity": [
@@ -501,6 +926,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "voice-status-leak": [
@@ -1356,6 +1798,26 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "f48af2ee9be8",
+          "script_commit_sha": "unknown",
+          "def_hash": "a4466d93bf08"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "not implemented: stub checker"
       }
     ],
     "proof-build-green": [
@@ -1395,6 +1857,26 @@
           "def_hash": "670f26d08110"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "0b437d66ec19",
+          "script_commit_sha": "unknown",
+          "def_hash": "670f26d08110"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1599,6 +2081,26 @@
           "def_hash": "a1e400281510"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "canonical-calibration-count": [
@@ -2186,6 +2688,26 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33",
+          "graph": "93886548d0e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -2227,6 +2749,27 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33",
+          "graph": "93886548d0e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
@@ -2267,6 +2810,27 @@
           "def_hash": "19a5005a8bb6"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33",
+          "graph": "93886548d0e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -2424,6 +2988,26 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33",
+          "graph": "93886548d0e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2691,6 +3275,27 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "3eb5d65c22b2",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "6ed1c90f444f"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
+        "notes": "no docs/audits/lean-profile.json"
       }
     ],
     "proof-no-cost-regression": [
@@ -2733,6 +3338,27 @@
           "def_hash": "928b5cc3cbd7"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "no docs/audits/lean-profile.json"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-cost.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "96b9bdc29ac9",
+          "script_commit_sha": "unknown",
+          "deps_hash": "4df6f652b039",
+          "def_hash": "928b5cc3cbd7"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "no docs/audits/lean-profile.json"
       }
     ],
@@ -2910,6 +3536,23 @@
         "reviewed_at": "2026-08-19T21:39:36.614Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proposition, binding error amplification A = M_atom/B); no assert-by-denying / 'not X but Y' found."
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2944,6 +3587,23 @@
         "reviewed_at": "2026-08-19T21:39:36.667Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proposition, binding error amplification A = M_atom/B); no setup-then-reframe pivot found."
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -2979,6 +3639,23 @@
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "One dash pair, inside the boilerplate archimedean-specialisation note: 'real- or complex-analytic constructs - real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$.'",
         "notes": "Boilerplate shared across the chapter; the dash introduces the enumeration it glosses. Kept. (The note's 'What follows' has no referent - it is the block's last line - recorded as anomaly 7 in the batch report.)"
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -3013,6 +3690,23 @@
         "reviewed_at": "2026-08-19T21:39:36.768Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proposition, binding error amplification A = M_atom/B); no compulsive three-item cadence found."
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -3047,6 +3741,23 @@
         "reviewed_at": "2026-08-19T21:39:36.816Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proposition, binding error amplification A = M_atom/B); no quotable closing line found."
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -3081,6 +3792,23 @@
         "reviewed_at": "2026-08-19T21:39:36.858Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proposition, binding error amplification A = M_atom/B); no narration of own emphasis found."
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -3115,6 +3843,23 @@
         "reviewed_at": "2026-08-19T21:39:36.910Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proposition, binding error amplification A = M_atom/B); no block-final restatement of what is already established found."
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -3149,6 +3894,23 @@
         "reviewed_at": "2026-08-19T21:39:36.953Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proposition, binding error amplification A = M_atom/B); no personal / warm register in institutional prose found."
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -3183,6 +3945,23 @@
         "reviewed_at": "2026-08-19T21:39:37.002Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proposition, binding error amplification A = M_atom/B); no unqualified maximum-strength claim found."
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -3217,6 +3996,23 @@
         "reviewed_at": "2026-08-19T21:39:37.049Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "evidence": "Read in full (proposition, binding error amplification A = M_atom/B); no noun-chain syntax that stalls when read aloud found."
+      },
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3548,8 +4344,84 @@
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "unchanged since origin/main"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "ef3f3e315223",
+          "ts": "f4ef066f587a",
+          "lean": "913d0ddc8888",
+          "lean_statement": "803811b4cd33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: M_atom renamed M_bound (nuclear mass, no electrons). Algebra unchanged and correct. No instance."
+      }
     ]
   },
-  "updated_at": "2026-11-21T15:53:58.000Z",
+  "updated_at": "2026-11-21T16:07:04.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -938,6 +938,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -974,6 +992,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1157,6 +1194,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1448,6 +1503,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -1839,6 +1909,23 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras).",
+        "notes": "Earlier critical (positivity from non-degeneracy) is resolved. Remaining: the involutivity step is a sketch, and f^dagger = int_A mu(S(f) ⊗ -) is only typed for f with values in A, while the statement quantifies over f: 1 -> X."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2536,6 +2623,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "trap-negation-contrast": [
@@ -2572,6 +2677,22 @@
         "severity": "major",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md (40 lines, kind=proof, title=\"Proof that the Frobenius dagger is positive-definite\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2608,6 +2729,22 @@
         "severity": "major",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md (40 lines, kind=proof, title=\"Proof that the Frobenius dagger is positive-definite\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -2644,6 +2781,22 @@
         "severity": "minor",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md (40 lines, kind=proof, title=\"Proof that the Frobenius dagger is positive-definite\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -2680,6 +2833,22 @@
         "severity": "minor",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md (40 lines, kind=proof, title=\"Proof that the Frobenius dagger is positive-definite\"). The three-item accounting matches the three hypotheses actually stated in prop:positive-definite-dagger one-to-one.",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -2716,6 +2885,22 @@
         "severity": "major",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md (40 lines, kind=proof, title=\"Proof that the Frobenius dagger is positive-definite\"). final sentence is \"$\\square$\" - a substantive statement, not a placed quotable closer",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -2752,6 +2937,22 @@
         "severity": "major",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md (40 lines, kind=proof, title=\"Proof that the Frobenius dagger is positive-definite\"). 'The three hypotheses are exactly the inputs the argument consumes: non-degeneracy gives ..., the pivotal adjoint identification gives the square, and formal reality turns a non-zero square into a positive element.' is dependency accounting - it states which hypothesis each step uses - not narration of the author's own emphasis.",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -2788,6 +2989,22 @@
         "severity": "major",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md (40 lines, kind=proof, title=\"Proof that the Frobenius dagger is positive-definite\"). final sentence is \"$\\square$\" - it advances or points forward rather than restating what the block already established",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -2824,6 +3041,22 @@
         "severity": "minor",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md (40 lines, kind=proof, title=\"Proof that the Frobenius dagger is positive-definite\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -2860,6 +3093,22 @@
         "severity": "minor",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md (40 lines, kind=proof, title=\"Proof that the Frobenius dagger is positive-definite\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -2896,6 +3145,22 @@
         "severity": "minor",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md (40 lines, kind=proof, title=\"Proof that the Frobenius dagger is positive-definite\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "03bee3a4f14d",
+          "ts": "f500ad113f7d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: positivity is now an explicit input, with the isotropic counterexample x1y2 + x2y1 explaining why non-degeneracy is not enough; S^2 = id stated as a hypothesis (true only for involutory Hopf algebras). No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -3136,6 +3401,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:53:58.000Z",
+  "updated_at": "2026-11-21T16:07:04.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

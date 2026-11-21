@@ -88,6 +88,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -375,6 +390,21 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. Earlier warn/minor (case b = n) is resolved."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1667,6 +1697,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22",
+          "graph": "93886548d0e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1703,6 +1751,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22",
+          "graph": "93886548d0e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1886,6 +1953,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22",
+          "graph": "93886548d0e7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -2174,6 +2259,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "trap-negation-contrast": [
@@ -2210,6 +2313,22 @@
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "severity": "minor",
         "evidence": "Two contrast constructions, both substantive: 'a *containment* of supports, not equality' (a real scope limitation, matching the displayed $\\subseteq$) and 'it tracks how $\\gamma$ moves the Wedderburn support without itself contributing to the archimedean volume' (the actual relation to lem:degree-one-braid-trivial-volume)."
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2244,6 +2363,21 @@
         "reviewed_at": "2026-08-21T21:58:50.730Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Four numbered proof steps plus Scope and Relation notes; every paragraph advances the argument, none is a setup-then-reframe."
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -2278,6 +2412,21 @@
         "reviewed_at": "2026-08-21T21:58:50.815Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "One spaced em-dash pair, a true parenthetical apposition: 'The quantum Clebsch-Gordan rule for SU_q(2) at generic q -- the one-box case of the Pieri rule -- decomposes'. Not load-bearing, and density is one pair in a ~700-word proof."
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -2312,6 +2461,21 @@
         "reviewed_at": "2026-08-21T21:58:50.870Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "No rhetorical triple. 'Combining Steps 1-3' is a reference to the actual step count."
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -2346,6 +2510,21 @@
         "reviewed_at": "2026-08-21T21:58:50.920Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Ends on a technical comparison with the volume-vanishing lemma, not a flourish."
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -2380,6 +2559,21 @@
         "reviewed_at": "2026-08-21T21:58:50.967Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "'we do not compute them here' is a factual scope statement about the 6j-symbols, not narrated emphasis. 'Support convention.' and 'Scope.' are structural headers."
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -2414,6 +2608,21 @@
         "reviewed_at": "2026-08-21T21:58:51.102Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "'which is the claimed containment' before the QED box is standard proof bookkeeping; the two sections after it add scope and cross-reference rather than restating."
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -2448,6 +2657,21 @@
         "reviewed_at": "2026-08-21T21:58:51.179Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Institutional register throughout."
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -2482,6 +2706,21 @@
         "reviewed_at": "2026-08-21T21:58:51.236Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "'exactly one crossing', 'multiplicity one', 'a fortiori' all have definite technical referents; no unqualified maximum-strength claims."
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -2517,6 +2756,22 @@
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "severity": "minor",
         "evidence": "Dense but speakable; the longest nominal chain ('matrix elements of the basis change between the seminormal basis and the inclusion basis') is a parenthetical gloss of 6j-symbols and is standard usage."
+      },
+      {
+        "field_hash": {
+          "md": "8294d2b9a8f4",
+          "ts": "97969dc49e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: case b <= n-1 via centrality of e_lambda; case b = n via e_mu e_lambda = 0 unless mu ⊃ lambda (branching at generic q) and Schur-Weyl killing the three-row block on V^{⊗(n+1)}. Correct for the stated cases. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2757,6 +3012,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:53:58.000Z",
+  "updated_at": "2026-11-21T16:07:04.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

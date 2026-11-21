@@ -938,6 +938,24 @@
           "def_hash": "a88562c76c07"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -974,6 +992,25 @@
           "def_hash": "f0a866b13629"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
+        "notes": "not implemented: stub checker"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa",
         "notes": "not implemented: stub checker"
       }
     ],
@@ -1157,6 +1194,24 @@
           "def_hash": "340b4b0dd5c5"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca",
+          "graph": "b1d2e609bf6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1422,6 +1477,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "da-false-claim": [
@@ -1641,6 +1711,21 @@
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. The 2026-11-15 fail/major (single test element pairing) is resolved by the rewrite."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2109,6 +2194,24 @@
           "def_hash": "d292915cbf8a"
         },
         "reviewed_tree": "a75fca1b4d31bd672eb6e6338c0671e390581ed8"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
+        },
+        "reviewed_tree": "0ede7f09ac50d7933a6c9c7fc84286ebf9c26afa"
       }
     ],
     "trap-negation-contrast": [
@@ -2145,6 +2248,22 @@
         "severity": "major",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-relation-proof.md (29 lines, kind=proof, title=\"Proof of Frobenius relation\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2181,6 +2300,22 @@
         "severity": "major",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-relation-proof.md (29 lines, kind=proof, title=\"Proof of Frobenius relation\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-em-dash": [
@@ -2217,6 +2352,22 @@
         "severity": "minor",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-relation-proof.md (29 lines, kind=proof, title=\"Proof of Frobenius relation\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-triples": [
@@ -2253,6 +2404,22 @@
         "severity": "minor",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-relation-proof.md (29 lines, kind=proof, title=\"Proof of Frobenius relation\"). no reflex three-item list; enumerations present are content-determined",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-closing-aphorism": [
@@ -2289,6 +2456,22 @@
         "severity": "major",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-relation-proof.md (29 lines, kind=proof, title=\"Proof of Frobenius relation\"). final sentence is \"$\\square$\" - a substantive statement, not a placed quotable closer",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-meta-commentary": [
@@ -2325,6 +2508,22 @@
         "severity": "major",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-relation-proof.md (29 lines, kind=proof, title=\"Proof of Frobenius relation\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-thesis-restatement": [
@@ -2361,6 +2560,22 @@
         "severity": "major",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-relation-proof.md (29 lines, kind=proof, title=\"Proof of Frobenius relation\"). final sentence is \"$\\square$\" - it advances or points forward rather than restating what the block already established",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "major",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-performed-warmth": [
@@ -2397,6 +2612,22 @@
         "severity": "minor",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-relation-proof.md (29 lines, kind=proof, title=\"Proof of Frobenius relation\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-superlative": [
@@ -2433,6 +2664,22 @@
         "severity": "minor",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-relation-proof.md (29 lines, kind=proof, title=\"Proof of Frobenius relation\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "trap-nonspeakable": [
@@ -2469,6 +2716,22 @@
         "severity": "minor",
         "evidence": "Full-context read of folio/quantum-observable-universe/quantum-universes/frobenius-relation-proof.md (29 lines, kind=proof, title=\"Proof of Frobenius relation\"). prose reads aloud without stalling; no noun-chain built for the eye only",
         "notes": "no fix needed"
+      },
+      {
+        "field_hash": {
+          "md": "9b3ce180a97f",
+          "ts": "73fe37e8adca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:07:04.000Z",
+        "reviewed_sha": "b7fc183094ee2ee0b28e69e9985cab712ba75c4a",
+        "severity": "minor",
+        "evidence": "Full read at b7fc183094e: copairing gamma from non-degeneracy, Delta(b) = sum mu(b ⊗ gamma') ⊗ gamma'', and the relation reduces to associativity. Checked the three-step computation; correct. No instance at this head; the earlier verdict stands."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2727,6 +2990,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-21T15:53:58.000Z",
+  "updated_at": "2026-11-21T16:07:04.000Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
