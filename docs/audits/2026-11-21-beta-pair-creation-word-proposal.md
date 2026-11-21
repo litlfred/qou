@@ -125,8 +125,13 @@ Lean `QOU/QBeta/PairCreationExclusions.lean` (sorry-free, no `sorryAx`).
 * Under T2lep the insertion stops being a scalar (`lepton_allPairs_not_scalar`), and the connected
   term is already non-zero on `β` alone, before any wrapping:
   `conn(β) = −(q²−1)⁵(q⁴+q²+1)/(6q⁴(q²+1)³)`.
-* The ring-coloured Borromean trace (sibling branch `claude/borromean-ring-coloured-trace-np-2026-11-21`)
-  is not on the remote, so it is not evaluated.
+* The ring-coloured Borromean trace (PR #8706, branch
+  `claude/borromean-ring-coloured-trace-np-2026-11-21`) is **open, not merged**, so it is not
+  evaluated for A. Correction to part 3 §5, which said the branch was not on the remote: my
+  `git ls-remote` pattern was wrong; the PR exists. One consequence can be read off without computing:
+  in #8706's W-free strict colouring each closure component keeps its flavour, and A's process word is
+  pure with zero signed crossings between the lepton and every quark strand (L `linkCountA`), so under
+  that colouring A carries no `n → p` amplitude at all. Not computed; to be added if #8706 lands.
 
 ### 3.2 The table
 
