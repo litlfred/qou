@@ -290,3 +290,71 @@ theorem integrationBasis [DecidableEq k] :
 end Model
 
 end UGB.GrobnerShirshov.BlockSplay
+
+/-! ### Presentations by a quadratic system
+
+`QRel d` is the relation `a b ~ R(a, b)` of a quadratic data `d`. The kernel of the
+quotient map `MA G k → RingQuot (QRel d)` lies in the ideal of `d.sys`. This is what
+identifies an algebra given by generators and a multiplication table (such as a free
+product of algebras with chosen bases) with the free algebra modulo `d.sys`. -/
+
+namespace UGB.GrobnerShirshov.Quadratic
+
+open UGB.GrobnerShirshov UGB.GrobnerShirshov.Diamond
+
+variable {G : Type*} [DecidableEq G] {k : Type*} [CommRing k] {ord : AdmissibleOrder G}
+
+/-- The relation `a b ~ R(a, b)` of a quadratic data. -/
+inductive QRel (d : QuadData G k ord) : MA G k → MA G k → Prop
+  | of (p : d.pairs) : QRel d (ofW [p.1.1, p.1.2]) (d.R p.1.1 p.1.2)
+
+/-- Two algebra maps out of the free algebra agree when they agree on letters. -/
+theorem MA_algHom_ext {B : Type*} [Semiring B] [Algebra k B] {f g : MA G k →ₐ[k] B}
+    (h : ∀ a, f (ofW [a]) = g (ofW [a])) : f = g :=
+  MonoidAlgebra.algHom_ext' (FreeMonoid.hom_eq fun a => h a)
+
+/-- The span of the rules in context lies in the ideal predicate `InId`. -/
+theorem inId_of_mem_ctxSpan (sys : RewritingSystem G k) {X : MA G k}
+    (h : X ∈ ctxSpan (sysRels sys)) : InId sys X := by
+  induction h using Submodule.span_induction with
+  | mem y hy =>
+    obtain ⟨x, ⟨r, hr, rfl⟩, a, b, rfl⟩ := hy
+    exact InId.gen a b r hr
+  | zero => exact InId.zero
+  | add _ _ _ _ h₁ h₂ => exact h₁.add h₂
+  | smul c _ _ h => exact h.smul c
+
+variable [Nontrivial k] (d : QuadData G k ord)
+
+theorem QuadData.relMA_mem_ctxSpan (p : d.pairs) :
+    d.relMA p.1.1 p.1.2 ∈ ctxSpan (sysRels d.sys) :=
+  Submodule.subset_span ⟨_, ⟨d.rule p, d.rule_mem p, (d.toMA_rule p).symm⟩,
+    [], [], by rw [ofW_nil, one_mul, mul_one]⟩
+
+theorem QuadData.sub_mem_ctxSpan_of_eqvGen {X Y : MA G k}
+    (h : Relation.EqvGen (RingQuot.Rel (QRel d)) X Y) :
+    X - Y ∈ ctxSpan (sysRels d.sys) := by
+  induction h with
+  | rel a b h =>
+    induction h with
+    | of h => cases h with | of p => exact d.relMA_mem_ctxSpan p
+    | add_left _ ih => rwa [add_sub_add_right_eq_sub]
+    | mul_left _ ih => rw [← sub_mul]; exact ctxSpan_mul_right _ ih _
+    | mul_right _ ih => rw [← mul_sub]; exact ctxSpan_mul_left _ ih _
+  | refl a => rw [sub_self]; exact zero_mem _
+  | symm a b _ ih => rw [← neg_sub]; exact neg_mem ih
+  | trans a b c _ _ ih₁ ih₂ => rw [← sub_add_sub_cancel a b c]; exact add_mem ih₁ ih₂
+
+/-- **The kernel of `MA G k → RingQuot (QRel d)` lies in the ideal of `d.sys`.** -/
+theorem QuadData.inId_of_mk_eq_zero {X : MA G k}
+    (h : RingQuot.mkAlgHom k (QRel d) X = 0) : InId d.sys X := by
+  have key : ∀ x : MA G k, RingQuot.mkAlgHom k (QRel d) x = ⟨Quot.mk _ x⟩ := by
+    intro x; simp [RingQuot.mkAlgHom_def, RingQuot.mkRingHom_def]
+  have h' : RingQuot.mkAlgHom k (QRel d) X = RingQuot.mkAlgHom k (QRel d) 0 := by
+    rw [map_zero]; exact h
+  rw [key, key] at h'
+  have := d.sub_mem_ctxSpan_of_eqvGen (Quot.eqvGen_exact (RingQuot.mk.inj h'))
+  rw [sub_zero] at this
+  exact inId_of_mem_ctxSpan _ this
+
+end UGB.GrobnerShirshov.Quadratic
