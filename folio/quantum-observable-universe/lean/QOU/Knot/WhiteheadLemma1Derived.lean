@@ -17,9 +17,10 @@ the framing factor and `tr_q(Y) = tr(Δ(K) Y)` (`whiteheadLinkJones_eq_trace`). 
 
 **The sign `(−1)^{N−1}`.** The cup and cap of `V_N` carry the factor `(−1)^{N−1}`
 (`capCoefQ`), so the clasp scalar is `(−1)^{N−1}` times van der Veen's printed `C(n,t)`.
-At `N = 2` the trace side gives the Jones polynomial with `V(1) = −2`, the standard value for
-a two-component link, while the printed formula gives `+2`. The sign does not affect `|J_N|`,
-hence not the volume conjecture.
+This is a normalisation convention: these cup and cap give `V_N` the quantum dimension
+`(−1)^{N−1}[N]` (Kauffman-bracket normalisation, `V(1) = −2` at `N = 2`), while the printed
+formula uses quantum dimension `[N]`, the normalisation of the braid-closure quantum trace with
+`K` on each strand. The sign does not affect `|J_N|`, hence not the volume conjecture.
 
 **The Kashaev point.** At `s = e^{πi/N}`, `[N] = 0` and the identity above does not apply.
 `whiteheadTraceSide_tendsto_kashaev` shows that the trace side tends to `whiteheadLinkKashaev N`
