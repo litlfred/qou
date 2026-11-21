@@ -8,6 +8,7 @@ import QOU.RiemannSurface.GermStabiliserCyclic
 import QOU.RiemannSurface.CombinatorialMapQuotient
 import QOU.RiemannSurface.CombinatorialMapEuler
 import QOU.RiemannSurface.CycleCountSwap
+import QOU.RiemannSurface.MapGenusNonneg
 import QOU.BringsSurface.GenusFourFromGermStabilisers
 import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
 import QOU.Eightfold.CommutativeImageDegeneration
