@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-15T17:35:00Z
-updated_at: 2026-11-15T17:55:17Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-lx8f
 ---
 
@@ -44,3 +44,8 @@ strand tower. With the relations as written, κ_n ≡ 0.
 ## 2026-11-15 R3 conditional theorem (PR #7945)
 
 The Kummer class of C-5a is now a defined colimit class. `cechKummer_eq_map_chern` (sorry-free) proves it is the Chern class reduced mod n. Conditional on `KummerSurfaceData` and deg c₁(T_S) = χ, it is trivial iff n ∣ χ, which for Bring's curve is n ∣ 6. The link to an R-matrix trace is NOT made; that is still R2. This bean stays open.
+
+## 2026-11-21 (bean-drain sibling bring-gerbe-ns, session_01Qmmkt6JCxoNkQcgaG1tFNF, issue #8808)
+
+Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
+No change: R2 (a non-jet Ř⁽ⁿ⁾ fixed before computing) has no derivation in the corpus. R3 side advanced for g = 0 only (PR #7969). Stays open (rule 13a).

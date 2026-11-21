@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T20:57:49Z
-updated_at: 2026-11-20T08:32:31Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-vo9t
 ---
 
@@ -30,3 +30,8 @@ The three content blocks are now scoped to Euler. Minimal edits, in the existing
 
 
 **2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch B):** in-progress → todo. Stale claim (session ended); work not finished — see docs/coordination/2026-11-20-dangling-claims-proposal.md.
+
+## 2026-11-21 (bean-drain sibling bring-gerbe-ns, session_01Qmmkt6JCxoNkQcgaG1tFNF, issue #8808)
+
+Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
+Open item 'Markov-I / non-pure component linking' is now PROVED on branch claude/vortex-markov-i-2026-11-21 (commit 830342938, issue #8808, PR pending owner approval): QOU/FluidDynamics/VortexLinkMarkov.lean. run_relabel, rotate_letter, rotate, run_inv_append, and markovI_conj: for g w g⁻¹ a label permutation e carries every component assignment κ of its closure to one (κ ∘ e) of the closure of w with all component crossing sums equal; this covers non-pure braids. lean-direct -DautoImplicit=false exit 0, no warnings, #print axioms [propext, Classical.choice, Quot.sound] on all seven headline declarations. Still open: Markov II (stabilisation). ('Trefoil' in this bean is a vortex-tube framing example, not the electron.)

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T20:08:02Z
-updated_at: 2026-11-15T21:40:00Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-vo9t
 ---
 
@@ -47,3 +47,8 @@ The label is kept; the title is now "Topology of the Reeb bundle of the Descarte
 ## 2026-11-15 — Consumers and interpretive blocks updated under owner ruling `Q-VO9T-2 = 1` (PR `litlfred/qou#7982`, commit `f67322a50a`)
 
 Updated `ns-regular-qou.{md,ts,lean}`, `ns-obstruction.{md,ts,lean}`, `ns-obstruction-computation-interpretation.{md,ts}`, `leray-profile.{md,ts}`, `torus-ns-regular.{md,ts}`, `torus-ns-regular-table-data.{md,ts}`, `observability-independent-motivation.{md,ts}`, and `QOU/GaugeFieldFluidDynamics.lean` to use the global surface Euler class `NS(A) = e(ξ) ∈ H²(S, ℤ) ≅ ℤ` of degree `χ(A)` (matching `thm:ns-singularity-descartes` item 1) and to scope out any unproved 3D classical Navier–Stokes regularity or blow-up inference per `qou-hjl0`.
+
+## 2026-11-21 (bean-drain sibling bring-gerbe-ns, session_01Qmmkt6JCxoNkQcgaG1tFNF, issue #8808)
+
+Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
+State on main: PR #7982 merged 2026-11-15 (NS(A) = global Euler class, consumers re-scoped, 3D bridge scoped open). Every item listed above as owner-pending has been applied. What remains is the open dynamical/Clay question, which this bean cannot close. Recommend (judgement) completing this bean with that evidence and leaving the open question to qou-ocof; not done here because status changes on in-progress beans with an open conjecture go through the owner.

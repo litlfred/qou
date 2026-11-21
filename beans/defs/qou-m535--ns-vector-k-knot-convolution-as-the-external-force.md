@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T21:00:36Z
-updated_at: 2026-11-20T08:32:31Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-vo9t
 ---
 
@@ -23,3 +23,8 @@ Verdict: (d) as stated. A narrow conditional (a) can be stated but adds nothing 
 
 
 **2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch C):** in-progress → todo. Open conjecture: stale claim released; never to be completed while the conjecture is open (AGENTS rule 13a).
+
+## 2026-11-21 (bean-drain sibling bring-gerbe-ns, session_01Qmmkt6JCxoNkQcgaG1tFNF, issue #8808)
+
+Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
+No change; the optional amplitude-budget lemma (audit §5c) was not written. Stays open.

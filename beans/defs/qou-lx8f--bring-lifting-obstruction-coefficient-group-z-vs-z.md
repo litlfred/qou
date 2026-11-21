@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:14:41Z
-updated_at: 2026-11-15T11:50:00Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-vo9t
 ---
 
@@ -99,3 +99,8 @@ and substrate-gm-torsion already carries a Scope paragraph; left as is.
 Old text of blocks whose schema drops authorNotes (prose/table) is recorded here:
 - climax-volume-mass/vertex-algebra-relations-table3-data: "\neq 0$ | Perpetual obstruction |"
 - introduction/chapter-overview: "revealing a perpetual obstruction $\kappa_0$ that blocks infinite jet refinement."
+
+## 2026-11-21 (bean-drain sibling bring-gerbe-ns, session_01Qmmkt6JCxoNkQcgaG1tFNF, issue #8808)
+
+Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
+State on main: PR #7747 merged 2026-11-15 (perpetual obstruction scoped, axiom yekutieli_perpetual removed). The cohomological side of route R3 has advanced since the last note: PR #7969 (merged 2026-11-15 22:09) proves Čech H² of S² over ALL open covers equals the coefficient group (CechSphereGood.hemiComputesCech, kummerSurfaceData_sphere', sorry-free). So KummerSurfaceData is now inhabited unconditionally for g = 0. Bring (g = 4) still needs a cover of Σ₄ and Ȟ²(Σ₄, G) ≅ G; no Σ_g model exists in Mathlib or the repo. The 'which band' question remains the owner's; nothing in this bean is closable today.

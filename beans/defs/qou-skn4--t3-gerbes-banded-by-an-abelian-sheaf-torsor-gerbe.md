@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:48:14Z
-updated_at: 2026-11-15T20:20:00Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-533l
 ---
 
@@ -83,3 +83,8 @@ Per owner ruling `Q-VO9T-1 = 3` (session `session_012EE90758AE4945AC814D43`), pr
   - `equivariantHom_of_sections`, `localIsoSieve`, `torsor_locallyConnected`
   - `SiteGerbeData J A` and `torsorSiteGerbe J A hA hAsheaf`
 - **Still open (keep `status: in-progress`, do NOT close):** C2/C3 surface colimit and effective descent of objects / central extension of gerbes (Yekutieli Def 3.21 / Thm 4.17).
+
+## 2026-11-21 (bean-drain sibling bring-gerbe-ns, session_01Qmmkt6JCxoNkQcgaG1tFNF, issue #8808)
+
+Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
+Not recorded above: step C2 is DONE. PR #7969 (merged 2026-11-15 22:09, commit ae9bfdc319) proves the four-hemisphere cover computes Ȟ²(S², G) over all open covers for every discrete commutative G, without Leray: CechNerveValues (P1), CechSplit (P2), CechSameNerve + CechSphereBoxes (P3a/b), CechSphereFine (P3c/d), CechSphereGood (P4, Lebesgue number) and CechGoodRefinement (generic reduction). C3 (kummerSurfaceData_sphere') is therefore unconditional on S². Open: the genus-4 analogue (a cover of Σ₄ with connected overlaps and Ȟ²(Σ₄, G) ≅ G); this needs a model of Σ_g that neither Mathlib nor the repo has. Effective descent of objects and the central extension of gerbes remain open (qou-t1dx, qou-0xk8).

@@ -5,7 +5,7 @@ status: todo
 type: feature
 priority: high
 created_at: 2026-10-12T19:14:51Z
-updated_at: 2026-11-20T08:32:31Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-vo9t
 ---
 
@@ -28,3 +28,8 @@ Mathlib has no gerbes and no nonabelian H^2. Planned tiers, each sorry-free befo
 
 
 **2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch B):** in-progress → todo. Stale claim (session ended); work not finished — see docs/coordination/2026-11-20-dangling-claims-proposal.md.
+
+## 2026-11-21 (bean-drain sibling bring-gerbe-ns, session_01Qmmkt6JCxoNkQcgaG1tFNF, issue #8808)
+
+Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
+Tier status on main: T1 (CentralExtensionObstruction), T2/T2b (PresheafCentralExtensionObstruction, CechCentralExtensionObstruction), T3 partial (StackGerbe M1–M3, CechGerbe cocycle form, Čech colimit, S² comparison). T4 holds at cocycle level only, with gerbe ≃ cocycle assumed. T5 (jet tower) is moot as stated: the jet-tower perpetual obstruction was retracted for the degree condition (qou-lx8f, 2026-11-15). Open conjecture-level feature; stays todo.

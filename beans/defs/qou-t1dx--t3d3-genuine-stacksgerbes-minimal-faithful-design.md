@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T20:38:55Z
-updated_at: 2026-11-15T20:20:00Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-533l
 ---
 
@@ -37,3 +37,8 @@ Per owner ruling `Q-VO9T-1 = 3` (session `session_012EE90758AE4945AC814D43`), ex
   - `equivariantHom_of_sections`, `localIsoSieve`, `torsor_locallyConnected`
   - `SiteGerbeData J A` and `torsorSiteGerbe J A hA hAsheaf`
 - **Remaining open (bean stays `in-progress`):** effective descent of objects (gluing torsors from 1-cocycles on a `J`-sieve) and nonabelian/gerbe lifting obstruction comparison (S5).
+
+## 2026-11-21 (bean-drain sibling bring-gerbe-ns, session_01Qmmkt6JCxoNkQcgaG1tFNF, issue #8808)
+
+Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
+State on main unchanged since 2026-11-15: StackGerbe.lean Milestones 1–3 (PR #7985). Open: effective descent of objects (gluing torsors from 1-cocycles on a J-sieve) and the comparison with the Čech obstruction. Not attempted in this pass; estimate from the 2026-10-12 audit still applies (multi-session).

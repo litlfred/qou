@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:30:20Z
-updated_at: 2026-11-16T18:35:00Z
+updated_at: 2026-11-21T12:40:00Z
 parent: qou-vo9t
 ---
 
@@ -23,3 +23,8 @@ Route 2 of qou-lx8f (owner, 2026-10-12: pursue in parallel; band deferred).
   - `bring_integral_euler_nonzero` and `bring_z_persists_while_z2_vanishes`: at `g = 4`, the integral Euler / Chern class under `0 → ℤ → ℝ → U(1) → 1` is `κ₀(Σ₄) = -6 ≠ 0` (`|κ₀(Σ₄)| = 6`, matching `H₁(UT(Σ₄))_tors ≅ ℤ/6ℤ` and chiral Seifert linking residue `∓1/6 ∈ ℚ/ℤ`), while its mod-2 Stiefel–Whitney reduction `ρ₂(-6) = 0` vanishes identically.
   - `bring_admissible_kummer_levels` and `bring_kummer_fibre_torsion_orders`: under the Kummer sequence `1 → ℤ/nℤ → U(1) → U(1) → 1`, the admissible `n`-th root levels in `{1..6}` are `{1, 2, 3, 6}` (with `n = 4, 5` obstructed) and the fibre torsion orders are `|-6/n| ∈ {6, 3, 2, 1}`.
 - **50-dps / Exact Probe + Witness:** `computations/probes/bring_lifting_obstruction_routes_z2_vs_z_probe.py` and `.witness.json` (12/12 assertions passed).
+
+## 2026-11-21 (bean-drain sibling bring-gerbe-ns, session_01Qmmkt6JCxoNkQcgaG1tFNF, issue #8808)
+
+Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
+Same PR #8150 as qou-2a2o, same verification and the same caveat: bring_integral_euler_nonzero is surfaceEulerChar 4 = −6 by rfl; kappa_0 = e is still not derived from a Z-kernel central extension. The cochain-level derivation that exists is CechChernClass (expExtension Z → R → U(1), chernClass, kummer_obstruction obs_n = c_1 mod n), merged earlier; what is missing is (i) local real lifts (IsRealLift is a hypothesis) and (ii) deg c_1(TΣ₄) = χ. Bean stays open.
